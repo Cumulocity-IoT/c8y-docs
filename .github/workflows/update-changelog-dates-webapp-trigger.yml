@@ -13,7 +13,7 @@ jobs:
     name: Get component details from helm charts
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    environment: pipeline-read
+    environment: build-pipeline
     outputs:
       matrix: ${{ steps.component-details.outputs.matrix }}
     steps:
@@ -23,50 +23,44 @@ jobs:
           path: docs
           fetch-depth: 1
 
-      - name: Creating github access token #TODO: use our github app instead
+      - name: Creating github access token #TODO: use c8y github app instead
         id: token
-        run: |
-          githubAppID="${{ vars.APP_ID }}"
-          githubAppPrivateKey="${{ secrets.APP_SECRET_KEY_PM }}" 
-          githubAppInstallationId="${{ vars.APP_INSTALL_ID }}"
-          githubApiUrl="${{ vars.GH_SERVER_API_URL }}"
-          iat=$(date +%s)
-          # Expire 9 minutes in the future. 10 minutes is the max for GitHub
-          exp=$((iat + 540))
-          # Generate encoded JWT header
-          jwtHeaderRaw='{"alg":"RS256"}'
-          jwtHeader=$( echo -n "${jwtHeaderRaw}" | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n' )
-          # Generate encoded JWT payload
-          jwtPayloadRaw='{"iat":'"${iat}"',"exp":'"${exp}"',"iss":'"${githubAppID}"'}'
-          jwtPayload=$( echo -n "${jwtPayloadRaw}" | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n' )
-          # Generate encoded JWT signature
-          jwtSignature=$( openssl dgst -sha256 -sign <(echo -n "${githubAppPrivateKey}") <(echo -n "${jwtHeader}.${jwtPayload}") | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n' )
-          jwtToken=${jwtHeader}.${jwtPayload}.${jwtSignature}                              
-          token=$(curl --fail --silent -X POST -H "Authorization: Bearer ${jwtToken}" -H "Accept: application/vnd.github.v3+json" "${githubApiUrl}/app/installations/${githubAppInstallationId}/access_tokens" | jq -r .token)
-          echo "jwt=${jwtToken}" 
-          echo "token=${token}" 
-          echo "jwt=${jwtToken}" >> "${GITHUB_OUTPUT}"
-          echo "token=${token}" >> "${GITHUB_OUTPUT}"
+        uses: Cumulocity-IoT/github-app-token@v1
+        with:
+          app_id: ${{ vars.APP_ID }}
+          installation_id: ${{ secrets.APP_PRIVATE_KEY }}
+          private_key: ${{ vars.APP_INSTALL_ID }}
 
       - name: Checkout c8y-iot-build-pipeline repository
         uses: actions/checkout@v4
         with:
-          repository: ${{ vars.FORKED_REPO }}
+          repository: vars.REPOSITORY
           fetch-depth: 1
-          ref: ${{ vars.BRANCH }}
+          ref: vars.BRANCH
           token: ${{ steps.token.outputs.token }}
           path: pipeline
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
 
       - name: Get component details from helm charts
         id: component-details
         run: |
-          python docs/scripts/get-component-details-from-chart.py
-          echo "matrix=$(cat components_to_update.json | jq -c .)" >> $GITHUB_OUTPUT
+          buildartifacts=$(cat docs/data/buildartifact.json | jq '.options[].option' | xargs)
+          echo "[]" > output.json
+          for artifact in $buildartifacts ;
+          do
+              cat pipeline/clusters/helm_charts_data.json | jq --arg artifact "$artifact" '[to_entries[] | select(.value.component_name==$artifact)][0].value.zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com"]' > details.json
+              versionOfArtifact=$(cat details.json | jq '.version' | xargs)
+              timestamp=$(cat details.json | jq '.updated_at' | xargs)
+              rm details.json
+              if [[ $versionOfArtifact == 'null' ]]; then
+                  echo "$artifact is currently not deployed"
+              else
+                  echo "$artifact is currently deployed in version: $versionOfArtifact and was deployed at $timestamp"
+                  cat output.json | jq --arg artifact "$artifact" --arg version "$versionOfArtifact" --arg timestamp "$timestamp" '. += [{"artifact": $artifact, "version": $version, "timestamp": $timestamp}]' > output.tmp
+                  mv output.tmp output.json
+              fi
+          
+          done
+          echo "matrix=$(cat output.json | jq -c .)" >> $GITHUB_OUTPUT
 
   trigger-update-changelog:
     uses: ./.github/workflows/update-changelog-dates.yml
@@ -78,5 +72,3 @@ jobs:
       version: ${{ matrix.component_version }}
       component: ${{ matrix.component_name }}
       date: ${{ matrix.component_update_date }}
-
-

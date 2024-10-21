@@ -38,6 +38,7 @@ async function processFile(filePath: string): Promise<boolean> {
   if (!valid(data.version) && data.version.split('.').length==4){
     const parts = data.version.split('.');
     const normalizedVersion = `${parts[0]}${parts[1]}.${parts[2]}.${parts[3]}`;
+    console.warn("Non-semantic version: ", data.version ,"converted to semantic version format: ", normalizedVersion);
     data.version=normalizedVersion ;
     }
 
