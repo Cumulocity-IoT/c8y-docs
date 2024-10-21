@@ -16,5 +16,5 @@ version: 10.20.596.0
 ---
 The deprecated JWT authentication with {{< product-c8y-iot >}} has been removed.
 This change will only impact you if your organization used an early version of single sign on (SSO) on {{< product-c8y-iot >}}.
-More details can be seen in the early published [announcement](https://cumulocity.com/docs/change-logs/?#cumulocity-10-20-removal-of-deprecated-jwt-login-mode)
+For details, refer to the earlier [announcement](https://cumulocity.com/docs/change-logs/?#cumulocity-10-20-removal-of-deprecated-jwt-login-mode).
 
