@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-10-17'
 title: Data grid deletion no longer redirects to the first page
 product_area: Device management & connectivity
 change_type:

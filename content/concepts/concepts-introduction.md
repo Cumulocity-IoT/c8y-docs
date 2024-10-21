@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Introduction to our IoT platform
+title: Introduction to the Cumulocity IoT platform
 layout: bundle
 aliases:
   - /concepts/introduction/
@@ -8,19 +8,20 @@ sector:
   - getting_started
 ---
 
-{{< product-c8y-iot >}} gives you very fast visibility and control over your remote assets, be these houses, cars, machines or any other assets that you want to manage.
+{{< product-c8y-iot >}} is a robust, secure and scalable Internet of Things (IoT) platform designed to empower businesses in the following aspects:
 
-{{< product-c8y-iot >}} provides
+- **[Device integration](/concepts/concepts-introduction/#device-integration)**: Connect any type of device, from simple sensors to complex machinery, ensuring reliable and secure data transmission.
 
-* Certified software libraries you can use to bring your remote assets into the cloud.
-* Device management, data visualization and remote control functionality through the web.
-* Rapid customization of these functionalities through [real-time processing](/concepts/realtime) and [applications](/concepts/applications).
-* APIs for extending the existing functionality or interfacing {{< product-c8y-iot >}} with your other IT services such as ERP or CRM systems. {{< product-c8y-iot >}} can also host your HTML5 applications.
+- **[Device management](/concepts/concepts-introduction/#device-management)**: Monitor, control, and manage all remotely connected equipment throughout its entire lifecycle, from deployment to retirement.
 
-These features are provided through a cloud-based subscription service making the creation of Internet of Things (IoT) solutions with {{< product-c8y-iot >}} fundamentally different from bespoke development and RAD (rapid application development). You can start immediately with a large amount of existing functionality, and you can start for free. You do not need to worry about IT infrastructure (hosting, networking, security, storage and backup) and IT management (all software is available to your users).
+- **[IoT data management](/concepts/concepts-introduction/#iot-data-management)**: Prepare, normalize, and enrich real-time and historical data, creating a unified view of your equipment.
 
-{{< product-c8y-iot >}} works with any network architecture, but is specifically designed to work out of the box with mobile networks. In the following sections, we will give a short overview of the different functional areas with references to more detailed descriptions.
+- **[Application enablement](/concepts/concepts-introduction/#application-enablement)**: Visualize and analyze IoT data, integrate it with existing business systems, and rapidly build custom IoT applications and solutions to meet your business needs.
 
-![Solution building](/images/concepts-guide/solution.gif)
+- **[Analytics](/concepts/concepts-introduction/#analytics)**: Automate, optimize, and remotely control equipment operations using intelligent analytics and real-time decision-making.
 
-Terms and Conditions to use {{< product-c8y-iot >}} are described at [{{< link-sag-terms >}}]({{< link-sag-terms >}}).
+- **[Platform management](/concepts/concepts-introduction/#platform-management)**: Manage configurations, security settings, and tenant structures in the cloud, or deploy the platform on your premises for full control.
+
+![Platform overview](/images/concepts-guide/platform_overview.png)
+
+This section introduces the core concepts and capabilities of {{< product-c8y-iot >}}, catering to IoT architects, automation engineers, industrial engineers, and developers.

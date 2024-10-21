@@ -1,6 +1,6 @@
 ---
 date: 2024-10-04
-title: Spring Boot version update for Microservice SDK  
+title: Upcoming Spring Boot version update for Microservice SDK  
 change_type:
   - value: change-inv-3bw8e
     label: Announcement
@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ---
-The Spring Boot version used in the Microservice SDK has been upgraded to 3.3.3. This update also necessitated upgrading several third-party libraries and frameworks. The mandatory updates include:
+We are pleased to announce an upcoming update to the Spring Boot version used in the Microservice SDK. The new version will be Spring Boot 3.3.3, which will also bring updates to several third-party libraries and frameworks. These mandatory changes will include:
 
 * Minimum required Java version: **17** (currently Java 8)
 
@@ -26,7 +26,7 @@ The Spring Boot version used in the Microservice SDK has been upgraded to 3.3.3.
 
 **Impact**: Each of these updates may impact your microservices, potentially requiring code changes.
 
-**Rollout**: The update will be available in Continuous Deployment (CD) versions higher than 1020.128.0 and in versions of the next annual release 2025.
+**Rollout**: The update will be available in Continuous Deployment (CD) versions starting in Q4 2024 and in versions of the next annual release 2025. A separate announcement will be made to confirm the CD version containing the change.
 
 **Migration Resources**: Refer to the following guides for assistance with the changes:
 

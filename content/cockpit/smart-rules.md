@@ -32,10 +32,12 @@ Smart rules are parameterized. There are two sources for parameters:
 - **Object parameters** are stored in the group or device. These parameters can be edited after the smart rule has been created. An example includes min and max values for thresholds.
 
 There are two different types of smart rules:
+- Global smart rules
+- Local smart rules
 
-- **Global smart rules**
+**Global smart rules**
 
-  Global smart rules are created in a global context (**Smart rules** page, alarms, data explorer, and so on).
+  Global smart rules are created in a global context (**Smart rules** page, alarms, data explorer, and so on). Rules created as global monitor the whole inventory (any asset type such as groups, devices, configurations, applications).
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS for global smart rules:
@@ -47,9 +49,13 @@ ROLES & PERMISSIONS for global smart rules:
 - To delete a global smart rule: ADMIN permission for permission type "Global smart rules" or "CEP management" and ADMIN permission for permission type "Inventory"
 {{< /c8y-admon-req >}}
 
-- **Local smart rules**
+Depending on the initial configuration of a global smart rule, there are two types possible:
+- Global smart rules enabled for all assets by default: When no asset is selected in the initial configuration. Such a smart rule is automatically applied to each asset available in the system, including assets added later in time.
+- Global smart rules disabled for all assets by default: When at least one asset is selected in the initial configuration. Such a smart rule is automatically disabled for any other assets except the ones selected during creation. You can manually enable it for other existing or newly added assets.
 
-  Local smart rules are created in either a group or a device. They are visible to everyone with access to the group/device.
+**Local smart rules**
+
+  Local smart rules are created from a group or a device. A local rule only affects the asset in which it was created and may affect all child assets depending on the configuration.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS for local smart rules:
@@ -60,7 +66,7 @@ ROLES & PERMISSIONS for local smart rules:
 - To delete a local smart rule: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in the inventory roles
 {{< /c8y-admon-req >}}
 
-Smart rules can be seen in two places:
+Smart rules can be seen in three places:
 
 - In the **Global smart rules** page accessible from the **Configuration** menu.
 
@@ -73,6 +79,14 @@ Smart rules can be seen in two places:
   ![Smart rules info tab](/images/users-guide/cockpit/cockpit-smartrule-info-tab.png)
 
   In a local context (group or device) the local smart rules are shown. For users with the relevant permissions, both local and global smart rules are shown.
+
+- In the **Status** tab of the owned microservice.
+
+  The microservice details show the global and local smart rules (considering the permissions of the user). Here it is possible to configure a limited number of types of smart rules. Rules selection here is mainly focused on alarms that might be created by the microservice while transitioning through different deployment states.
+
+{{< c8y-admon-info >}}
+From the context of a group or device, or in the **Status** tab of the owned microservice, you can only modify local smart rules. Editing global smart rules is only possible on the **Global smart rules** page.
+{{< /c8y-admon-info >}}
 
 {{< c8y-admon-related >}}
 - [Platform administration > {{< standard-tenant >}} administration > Alarm mapping](/standard-tenant/alarm-mapping/) for details on managing smart rules for your devices.

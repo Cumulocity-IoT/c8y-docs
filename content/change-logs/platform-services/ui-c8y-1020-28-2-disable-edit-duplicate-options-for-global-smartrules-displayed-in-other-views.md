@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Edit and duplicate options for global smart rules disabled outside the Global smart rules page
+date: '2024-10-17'
+title: >-
+  Edit and duplicate options for global smart rules disabled outside the Global
+  smart rules page
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

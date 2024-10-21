@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-10-17'
 title: Improved information on time filtering in Audit logs page
 product_area: Platform services
 change_type:

@@ -131,7 +131,7 @@ The output ports are:
 
 You can use the Analytics Builder Block SDK to write, test, and package custom blocks and to upload these blocks into Analytics Builder.
 
-The Block SDK is available from GitHub at [https://github.com/SoftwareAG/apama-analytics-builder-block-sdk](https://github.com/SoftwareAG/apama-analytics-builder-block-sdk). See the documentation in GitHub for detailed information.
+The Block SDK is available from GitHub at [https://github.com/Cumulocity-IoT/apama-analytics-builder-block-sdk](https://github.com/Cumulocity-IoT/apama-analytics-builder-block-sdk). See the documentation in GitHub for detailed information.
 
 You write the custom blocks in Apama's Event Processing Language \(EPL\). Once you have written a block, you can package it into an extension and upload it. An example command line to build and upload an extension is:
 
