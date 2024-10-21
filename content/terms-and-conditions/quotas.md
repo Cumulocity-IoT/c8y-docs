@@ -16,7 +16,7 @@ The following types of quotas are used:
 * **Soft**: Services are guaranteed to operate within the specified service-level agreements as long as the quotas are not exceeded; however, exceeding the quotas may result in a degraded user experience and no assurance of meeting the service-level agreements.
 <!-- * **Configurable**: Services enforce this quota, but a change of the quota may be requested through technical support. A change in the quota may impact the service price.-->
 
-The quotas listed here reflect the maximum values for the standard cloud subscription unless indicated otherwise. For edge deployments, please consult the [{{< product-c8y-iot >}} Edge documentation](/edge).
+The quotas listed here reflect the maximum values for the cloud subscriptions unless indicated otherwise. If you're unsure whether a specific cloud service quota is sufficient for your use case, we recommend reaching out to your sales contact to discuss your needs and explore potential options. Some quotas may be adjustable through professional services, depending on the system dimensioning and your specific requirements. For edge deployments, please consult the [{{< product-c8y-iot >}} Edge documentation](/edge).
 
 ### Platform
 
