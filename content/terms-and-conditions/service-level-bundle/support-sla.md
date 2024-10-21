@@ -68,7 +68,9 @@ The services are defined as follows:
 
 ### Processing customer requests
 
-#### General
+#### General support processing
+
+The following conditions apply to all support levels:
 
 * Customer requests will be received by Global Support and will be documented in Support Portal for further processing. The Customer will be given a reference processing number for future reference.
 * When reaching Global Support by telephone, Customer is to provide the incident/ticket number so that work on the incident can commence.
@@ -76,13 +78,18 @@ The services are defined as follows:
 
 #### Additional Silver support processing
 
+The following conditions apply to Silver level support:
+
 * Critical Incidents will be reported daily unless otherwise agreed with Global Support on a case-by-case basis. Other incidents will be reported as agreed between Global Support and Customer on a case-by-case basis.
 * Customer is provided with a timeline for Error Correction.
 
 #### Additional Gold support processing
 
+The following conditions apply to Gold level support:
+
 * On non-Business Days Customer must always report critical and standard incidents through Support Portal and must follow up with Global Support service provider via telephone in order to receive an initial response from Global Support based on the agreed upon reaction time. The response time is measured from the time the Customer gets in contact with a Support Engineer.
 * Reporting is carried out as agreed between Global Support and Customer.
+* For Crisis Incidents, economically justifiable effort within standard scope of resources is applied. For other incidents, reasonable effort within standard scope of resources is applied.
 * For Crisis Incidents, a resolution plan provided within first four (4) hours after receipt of Crisis incident to include - in Provider's sole discretion - either:
   * a definition of the intended solution to the problem, or
   * a definition of a work-around while Provider develops or defines a solution, or
@@ -92,8 +99,6 @@ The services are defined as follows:
     * responsible Provider resource(s)
     * Customer obligations (for example, provisioning of log files)
 * For other incidents, Customer is provided with a timeline for Error Correction.
-* For Crisis Incidents, economically justifiable effort within standard scope of resources is applied.
-* For other incidents, reasonable effort within standard scope of resources is applied.
 
 ### Customer responsibilities
 
