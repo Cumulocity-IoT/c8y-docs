@@ -1,5 +1,5 @@
 ---
-title: "About this documentation"
+title: "Terms and conditions"
 icon: "c8y-icon c8y-icon-notification"
 weight: 80
 svg: '<svg
@@ -469,4 +469,4 @@ svg: '<svg
 </svg>'
 ---
 
-Find details on the scope of the {{< product-c8y-iot >}} product documentation and on legal information.
+Find a collection of various legal documents, our Service Level Agreements, and documentation-related details.

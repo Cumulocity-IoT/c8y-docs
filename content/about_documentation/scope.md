@@ -3,10 +3,8 @@ weight: 10
 title: Scope
 layout: bundle
 sector:
-  - about_website
+  - terms_conditions
 ---
-
-<!-- content to be reworked -->
 
 This documentation reflects the latest state of the {{< product-c8y-iot >}} platform. It includes all latest features and functionalities (see the [Change logs](/change-logs/) for details) and is continuously updated to align with recent software updates.
 
