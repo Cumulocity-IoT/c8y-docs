@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-58756
 version: 10.20.596.0
 ---
-Deprecated JWT authentication with {{< product-c8y-iot >}} has been removed.
+The deprecated JWT authentication with {{< product-c8y-iot >}} has been removed.
 This change will only impact you if your organization used an early version of SSO on {{< product-c8y-iot >}}.
 More details can be seen in the early published [announcement](https://cumulocity.com/docs/change-logs/?#cumulocity-10-20-removal-of-deprecated-jwt-login-mode)
 
