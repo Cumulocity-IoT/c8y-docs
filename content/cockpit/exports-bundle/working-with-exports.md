@@ -1,5 +1,5 @@
 ---
-weight: 50
+weight: 20
 title: Working with exports
 layout: bundle
 outputs:
@@ -9,12 +9,7 @@ sector:
   - app_enablement
 ---
 
-The **Export** feature allows you to save **Data points** information to external files. You can export data in formats such as:
-
-- **CSV** (Comma-Separated Values)
-- **Microsoft Excel** spreadsheets
-
-While **Export** is a standalone feature, it works in conjunction with other features that allow you to select **Data points**. For example, you can use **Export** with the [Data points table](/cockpit/widgets-collection/#data-point-table) widget, but first it must be integrated with such feature.
+While the export functionality itself is a standalone feature, you can combine it with other features that allow you to select data points. To use the export functionality in this way, you must integrate it with the respective feature, for example, the [Data points table](/cockpit/widgets-collection/#data-point-table) widget.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
@@ -24,15 +19,13 @@ ROLES & PERMISSIONS:
 
 ### To create an export {#to-create-an-export}
 
-{{< c8y-admon-info >}}
-Note that in the example below, **Export** is integrated with the **Data points table** widget.
-{{< /c8y-admon-info >}}
+The following example shows you how to integrate the export functionality with the [Data point table](/cockpit/widgets-collection/#data-point-table) widget.
 
-1. Click the **Export** button:
+1. Click the export icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the top right of your data point table:
 
    <br>![Add export](/images/users-guide/cockpit/cockpit-exports-button.png)<br>
 
-2. You see the **Generate export** dialog window, which allows you to configure the export further. 
+2. You see the **Generate export** dialog window, which allows you to configure the export further.
 
    <br>![Export configuration](/images/users-guide/cockpit/cockpit-exports-configuration.png)<br>
    In this dialog window you can configure the following options:
@@ -52,9 +45,12 @@ Note that in the example below, **Export** is integrated with the **Data points 
 
 3. Click the **Download** button. Note that the download result depends on your chosen export mode.
 
-### Differences between export modes {#differences-between-export-modes}
+### Export modes {#export-modes}
 
-See below for the details of each export mode available to you. 
+The export functionality integrated in a widget offers you a number of export modes.
+
+See below for the details of each export mode available to you:
+
 - **Compact**:
   - Processes up to 5,000 records per data point, or up to the data retention limit
   - Creates a single merged file containing all the data
@@ -68,18 +64,14 @@ See below for the details of each export mode available to you.
   - Preview is available
   - Does not support data aggregation
 
-### Handling data points with over one million records {#data-points-with-over-one-million-records-to-process}
+#### Export for data points with over one million records {#export-for-data-points-with-over-one-million-records}
 
-When using **Full** export mode, if you select a single **Data point** that contains more than one million records (our processing limit), the download option will be disabled. To proceed with the export, you'll need to reduce the number of records by narrowing the time range. In this situation, until then, you'll see the following message:
+When you have selected the **Full** export mode for a data point that contains more than one million records (our processing limit), the download option is disabled. To proceed with the export, you must reduce the number of records by narrowing the time range. Until you have done this, you see the following message:
 
 <br>![Export exceeded one million records](/images/users-guide/cockpit/cockpit-exports-one-million-for-single-data-point.png)<br>
 
-When selecting multiple **Data points** for export in **Full** mode, if any individual **Data point** exceeds the one million record limit **per Data point**:
+If you select multiple data points for export in the **Full** mode and one or more individual data points exceed the one million record limit (per data point), narrow the time range to reduce the number. Data points within the limit are not affected.
 
-- The **Data points** exceeding the limit will be **excluded** from the export.
-- All other **Data points** within the limit remain exportable.
-- To include the excluded **Data points**, you need to narrow the time range.
-
-In this case, you will see a more detailed informational message explaining how many **Data points** are affected and why:
+In this case, you will see a more detailed informational message explaining how many data points are affected and why:
 
 <br>![Export exceeded one million records](/images/users-guide/cockpit/cockpit-exports-one-million-for-single-data-point-with-other-data-points.png)<br>

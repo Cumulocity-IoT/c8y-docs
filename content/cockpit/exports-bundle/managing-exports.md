@@ -1,5 +1,5 @@
 ---
-weight: 65
+weight: 10
 title: Managing exports
 layout: bundle
 outputs:
