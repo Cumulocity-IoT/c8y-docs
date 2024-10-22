@@ -48,7 +48,7 @@ The migration of measurements can be cancelled when a tenant has the status **Qu
 |Verifying|no| Indicates that the verification of the migrated data is in progress.|
 |Verified|yes| The state indicates that all migration processes are finished and user approval is required to acknowledge it.|
 |Completed|no|Indicates that the migration is completed and the legacy collection is removed in 7 days.|
-|Failed|no| The state indicates that an error occurred during migration process. The information provided in error message should be forwarded together with support ticket.|
+|Failed|no| Indicates that an error occurred during the migration process. The information provided in the error message should be forwarded together with the support ticket.|
 
 ### Description and progress monitoring {#description-and-progress-monitoring}
 
