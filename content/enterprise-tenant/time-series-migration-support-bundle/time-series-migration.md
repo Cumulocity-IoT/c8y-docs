@@ -4,7 +4,12 @@ title: Time series migration
 layout: redirect
 ---
 
-Tenant administrator user can schedule his tenant or any subtenant for time series collection migration. To have functionality available tenant should be subscribed to **Timeseries-migration** microservice and **c8y-timeseries-migration-plugin** extension should be subscribed for custom application. 
+Tenant administrator users can schedule their tenant or any subtenant for time series collection migration. The time series format of measurements brings the following benefits:
+
+* better performance for measurements queries,
+* less storage consumption.
+
+Note that certain limitations are induced in the API which are described in [Enhanced time series support](#enhanced-time-series-support).
 
 {{<c8y-admon-req>}}
 The user must have following permissions for "Tenant management":
