@@ -12,38 +12,12 @@ The availability of this feature is governed by two feature flags:
 
 - `streaming-analytics.messaging` <br>
     In addition to this, if you are using one of the variants of the Apama-ctrl microservice, you must also set this feature flag. You then need to resubscribe the Apama-ctrl microservice to pick up changes to the feature flag.
+    Use the [feature toggles REST API](https://{{< domain-c8y >}}/api/core/{{< docs-version >}}/#tag/Feature-toggles-API) to do so.
     <!-- For further information on these feature flags and on feature flags in general, see (TODO: this doc has not yet been written). -->
 
 If you are using a custom microservice, you must also add the `ROLE_NOTIFICATION_2_ADMIN` permission to the microservice manifest once the `notification2.streaming-analytics` feature flag has been activated; see also [Required settings in the microservice manifest](/streaming-analytics/epl-apps/#required-settings-in-the-microservice-manifest).
 For the Apama-ctrl microservices, it is not required to add this permission manually as it is set as the default; see also [Modifying microservice permissions and resource usage](/streaming-analytics/analytics-customization/#microservice-permissions).
 
-### Toggling the streaming-analytics.messaging feature flag using the REST API
-
- <!-- TODO: once the feature flag documentation has been written, remove most of this section and replace with a link to the feature flag documentation. -->
-If you are using one of the standard Apama-ctrl microservices, you must also set the `streaming-analytics.messaging` flag to activate how the microservice receives notifications. You do this using the REST API as shown below.
-
-To find all existing feature toggles for the current tenant, together with their values, make a `GET` request to this endpoint:
-
-```http
-/features
-```
-
-To find out the existing feature toggle for the `streaming-analytics.messaging` feature flag for the current tenant, make a `GET` request to this endpoint:
-
-```http
-/features/streaming-analytics.messaging
-```
-
-To toggle the `streaming-analytics.messaging` feature flag for the current tenant, make a `PUT` request to this endpoint:
-
-```http
-/features/streaming-analytics.messaging/by-tenant
-```
-
-To toggle the `streaming-analytics.messaging` feature flag for the specified tenant ID, make a `PUT` request to this endpoint:
-
-```http
-/features/streaming-analytics.messaging/by-tenant/{tenant-id}
-```
-
+{{< c8y-admon-info >}}
 Keep in mind that you must also resubscribe the microservice to pick up changes to the feature flag.
+{{< /c8y-admon-info >}}
