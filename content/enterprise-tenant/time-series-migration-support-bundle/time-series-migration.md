@@ -21,7 +21,7 @@ To start the tenant migration follow the steps below:
 3. Hover over the row of the tenant in the tenant list, then click **Add to queue** and confirm the operation. The tenant migration status should be updated to **Queued**, which means that tenant is added into the migration queue.
 
 {{< c8y-admon-important >}}
-You can add more than one tenant into the migration queue, but migration is executed only for one tenant at a time. It means that the migration of the next tenant in the queue will not start until you approve the previously migrated tenant to transition from **Verified** to **Complete** status.
+You can add more than one tenant into the migration queue, but the migration is executed only for one tenant at a time. The migration of the next tenant in the queue will not start until you approve the previously migrated tenant to transition from **Verified** to **Complete** status.
 {{< /c8y-admon-important >}}
 
 4. When the migration process is triggered its status for the tenant changes from **Queued** to **In progress**.
