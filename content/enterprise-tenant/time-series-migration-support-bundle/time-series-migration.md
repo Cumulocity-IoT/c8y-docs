@@ -27,7 +27,7 @@ You can add more than one tenant into the migration queue, but migration is exec
 4. When the migration process is triggered its status for the tenant changes from **Queued** to **In progress**.
 After the data is processed, verified and migrated to the new collection status of migration should be updated to **Verified** and **Approve and finish migration** button should be visible in 2 parts of the page in **Ongoing migration** section and in tenant list section after hoveover the tenant row. So now the user can confirm progress and click the button **Approve and finish migration**.
 5. A confirmation pop-up shows up providing the following information:
-* the new format for time series measurements, which is going to be used after confirming the data migration process.
+* The new format for time series measurements, which is used after confirming the data migration process.
 * That after seven days the legacy collection is removed.
 * That the action of approval is irreversible. 
 If the user agreeds with the progress of the process **Confirm** button should be clicked.
