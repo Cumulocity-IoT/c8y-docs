@@ -35,7 +35,7 @@ After the data is processed, verified and migrated to the new collection the sta
 * The new format for time series measurements, which is used after confirming the data migration process.
 * That after seven days the legacy collection is removed.
 * That the action of approval is irreversible. 
-If the user agreeds with the progress of the process **Confirm** button should be clicked.
+Click **Confirm**. This will change the status of the migration to **Approved**.
 Accepting the confirmation pop-up changes the status of the migration to **Approved**.
 6. After seven days, the legacy measurements collection is going to be deleted and the migration status will change to **Completed**.
 
