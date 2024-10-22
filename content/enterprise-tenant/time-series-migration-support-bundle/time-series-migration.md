@@ -24,7 +24,7 @@ To start the tenant migration follow the steps below:
 You can add more than one tenant into the migration queue, but migration is executed only for one tenant at a time. It means that the migration of the next tenant in the queue will not start until you approve the previously migrated tenant to transition from **Verified** to **Complete** status.
 {{< /c8y-admon-important >}}
 
-4. When the migration process is triggered its status for the tenant should be changed from **Queued** to **In progress**.
+4. When the migration process is triggered its status for the tenant changes from **Queued** to **In progress**.
 After the data is processed, verified and migrated to the new collection status of migration should be updated to **Verified** and **Approve and finish migration** button should be visible in 2 parts of the page in **Ongoing migration** section and in tenant list section after hoveover the tenant row. So now the user can confirm progress and click the button **Approve and finish migration**.
 5. A confirmation pop-up informs user about:
 * the new format for time series measurements, which is going to be used after confirming the data migration process.
