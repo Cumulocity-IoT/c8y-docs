@@ -45,7 +45,7 @@ The migration of measurements can be cancelled when a tenant has the status **Qu
 ### Migration states {#migration-states}
 |State|Managable by user|Description|
 |:-----|:-----|:------|
-|Legacy measurements|yes|state which indicates that tenant is not being migrated yet. In case if tenant is using legacy measurements, it will be scheduled for migration.|
+|Legacy measurements|yes|Indicates that the tenant is not being migrated yet. If the tenant uses legacy measurements, it will be scheduled for migration.|
 |Queued|yes|state which indicates that tenant is being added to the migration queue. Such tenant is available to be picked up by migration service to perform the activity. It is possible to **Cancel migration** from this state.|
 |In progress|no| The state indicates that migration of measurements collection is currently in progress.|
 |Migrated|no| Indicates that the migration of the measurements collection is done.|
