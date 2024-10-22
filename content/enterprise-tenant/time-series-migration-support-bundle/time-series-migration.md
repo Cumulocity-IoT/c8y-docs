@@ -36,7 +36,7 @@ After the data is processed, verified and migrated to the new collection the sta
 * That after seven days the legacy collection is removed.
 * That the action of approval is irreversible. 
 Click **Confirm**. This will change the status of the migration to **Approved**.
-6. After seven days, the legacy measurements collection is going to be deleted and the migration status will change to **Completed**.
+6. After seven days the legacy measurements collection is deleted and the migration status changes to **Completed**.
 
 {{< c8y-admon-info >}}
 The migration of measurements can be cancelled when a tenant has the status **Queued**. After the status is changed to **In progress**, the process can no longer be stopped. However, if the user do not approve the migration manually when it's in the **Verified** state the migration progress stops.
