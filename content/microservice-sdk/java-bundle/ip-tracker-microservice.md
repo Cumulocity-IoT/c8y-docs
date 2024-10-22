@@ -459,4 +459,4 @@ For instance, using <http://localhost:8082/location/locations> will return all t
 
 ### Source code {#source-code}
 
-The code of our [iptracker-microservice](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/microservices/iptracker-microservice) can be found in our public GitHub repositories.
+The code of our [iptracker-microservice]({{< link-c8y-github >}}/cumulocity-examples/tree/develop/microservices/iptracker-microservice) can be found in our public GitHub repositories.

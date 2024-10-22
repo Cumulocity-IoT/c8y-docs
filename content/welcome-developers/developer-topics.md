@@ -44,6 +44,6 @@ To simplify the interaction with the platform for developers, the {{< product-c8
 Check out further resources for developers like
 
 - [{{< company-sag >}}{{< sag-dev-community >}}]({{< link-sag-dev-community >}}) - to collaborate with {{< product-c8y-iot >}} experts
-- [{{< company-sag >}}'s official GitHub organization](https://github.com/softwareag)
+- [{{< company-sag >}}'s official GitHub organization]({{< link-c8y-github >}})
 
 See also [Additional resources](/additional-resources/).

@@ -95,7 +95,7 @@ Below is an example where the “connectivity:updateRssi” custom action is sel
 
 ##### Decoder microservices
 
-{{< product-c8y-iot >}} LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary {{< product-c8y-iot >}} microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We provide an according example how to write such a decoder microservice in our public [GitHub repository](https://github.com/SoftwareAG/cumulocity-examples).
+{{< product-c8y-iot >}} LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary {{< product-c8y-iot >}} microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We provide an according example how to write such a decoder microservice in our public [GitHub repository]({{< link-c8y-github >}}/cumulocity-examples).
 
 
 The LWM2M agent serializes different LWM2M data types to binary data depending on the type of the corresponding resource:

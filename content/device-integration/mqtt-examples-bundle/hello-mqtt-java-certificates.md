@@ -6,7 +6,7 @@ layout: redirect
 
 In this tutorial, you will learn how to use the Java MQTT client with {{< product-c8y-iot >}} using X.509 certificates for authentication.
 
-In the GitHub repository [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/mqtt-client), you can find a sample Java MQTT client using X.509 certificates and all necessary scripts used in this tutorial.
+In the GitHub repository [cumulocity-examples]({{< link-c8y-github >}}/cumulocity-examples/tree/develop/mqtt-client), you can find a sample Java MQTT client using X.509 certificates and all necessary scripts used in this tutorial.
 
 ### Prerequisites {#prerequisites}
 
@@ -20,7 +20,7 @@ In order to follow this tutorial, check the following prerequisites:
 
 If you don't have a valid certificate, you can generate one for testing purposes, following the instructions below.
 
-1.  Download the scripts from the [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/mqtt-client/scripts) repository.
+1.  Download the scripts from the [cumulocity-examples]({{< link-c8y-github >}}/cumulocity-examples/tree/develop/mqtt-client/scripts) repository.
 2.  Create a root self-signed certificate (execute the script *00createRootSelfSignedCertificate.sh*) and upload it to your tenant. You can do it via [the Device management application in the UI](/device-management-application/managing-device-data/#managing-trusted-certificates) or via [REST](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API).
 3.  Create and sign the certificate (execute the script *01createSignedCertificate.sh*).
 4.  Move the certificates to keystore (execute the script *02moveCertificatesToKeystore.sh*). Additionally, if only the device leaf certificate is needed in the keystore, use the --leafonly option.

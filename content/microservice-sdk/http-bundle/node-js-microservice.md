@@ -341,4 +341,4 @@ If there are active alarms on your tenant, your Slack channel will get notified.
 
 ### Source code {#source-code}
 
-The code of this [node-microservice](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/microservices/node-microservice) can be found in our public GitHub repositories.
+The code of this [node-microservice]({{< link-c8y-github >}}/cumulocity-examples/tree/develop/microservices/node-microservice) can be found in our public GitHub repositories.

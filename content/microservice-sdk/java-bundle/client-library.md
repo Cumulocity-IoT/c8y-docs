@@ -327,7 +327,7 @@ subscriptionApi.deleteTenantSubscriptions();
 subscriptionApi.deleteBySource(mo.getId().getValue());
 ```
 
-There is a sample microservice available in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) with more details on the API usage.
+There is a sample microservice available in the [cumulocity-examples repository]({{< link-c8y-github >}}/cumulocity-examples/tree/develop/hello-world-notification-microservice) with more details on the API usage.
 
 ### Reliability features {#reliability-features}
 
