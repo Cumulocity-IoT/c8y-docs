@@ -12,4 +12,4 @@ build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ---
-The documentation of the SNMP device protocol has been moved from the [user documentation](https://cumulocity.com/docs) to the public GitHub repository: [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/snmp). 
+The documentation of the SNMP device protocol has been moved from the [user documentation](https://cumulocity.com/docs) to the public GitHub repository: [cumulocity-examples]({{< link-c8y-github >}}/cumulocity-examples/snmp). 

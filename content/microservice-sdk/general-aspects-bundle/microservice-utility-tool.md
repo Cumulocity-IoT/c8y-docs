@@ -69,7 +69,7 @@ or
 
 ### Configure the microservice utility tool {#configure-the-microservice-utility-tool}
 
-The script can be found in the GitHub repository: [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/blob/develop/microservices/scripts/microservice).
+The script can be found in the GitHub repository: [cumulocity-examples]({{< link-c8y-github >}}/cumulocity-examples/blob/develop/microservices/scripts/microservice).
 
 Change the mode to allow the script to be executed:
 

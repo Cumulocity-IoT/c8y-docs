@@ -23,7 +23,7 @@ Maven can be downloaded from the [Maven website](http://maven.apache.org).
 
 ### Copy a Maven project {#copy-a-maven-project}
 
-Copy a Java project which is configured with Maven from [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/x509-rest-client) repository and execute the following command:
+Copy a Java project which is configured with Maven from [cumulocity-examples]({{< link-c8y-github >}}/cumulocity-examples/tree/develop/x509-rest-client) repository and execute the following command:
 
     $ mvn clean install
 
@@ -33,7 +33,7 @@ This will compile the project.
 
 If you don't have a valid certificate, you can generate one for testing purposes, following the instructions below.
 
-1.  Download the scripts from the [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/mqtt-client/scripts) repository.
+1.  Download the scripts from the [cumulocity-examples]({{< link-c8y-github >}}/cumulocity-examples/tree/develop/mqtt-client/scripts) repository.
 2.  Create a root self-signed certificate (execute the script *00createRootSelfSignedCertificate.sh*) and upload it to your tenant. You can do it via [the Device management application in the UI](/device-management-application/managing-device-data/#managing-trusted-certificates) or via [REST](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API).
 3.  Create and sign the certificate (execute the script *01createSignedCertificate.sh*).
 4.  Move the certificates to keystore (execute the script *02moveCertificatesToKeystore.sh*).
