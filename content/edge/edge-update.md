@@ -2,6 +2,8 @@
 weight: 30
 title: Updating Edge
 layout: bundle
+sector:
+  - edge_server
 ---
 
 This section describes how to update {{< product-c8y-iot >}} Edge using the GUI and the REST API. An update refers to applying a patch/fix to an existing {{< product-c8y-iot >}} Edge installation or updating your Edge appliance to a higher version.
