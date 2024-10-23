@@ -1,0 +1,13 @@
+on:
+  pull_request:
+name: link-check
+jobs:
+  linkinator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: JustinBeckwith/linkinator-action@v1.10.4
+        with:
+          paths: "content/microservice-sdk/**-bundle/*.md"
+          concurrency: 1
+          markdown: true

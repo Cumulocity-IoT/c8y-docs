@@ -1,0 +1,19 @@
+{
+  "ignorePatterns": [
+    {
+       "pattern": "images/"
+     }
+     ,{
+        "pattern": "/#"
+      }
+      ,{
+         "pattern": "/^#"
+       }
+  ],
+  "replacementPatterns": [
+    {
+      "pattern": "^-bundle",
+      "replacement": ""
+    },
+  ]
+}
