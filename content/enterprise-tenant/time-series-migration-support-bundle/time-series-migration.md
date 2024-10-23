@@ -12,6 +12,9 @@ Tenant administrator users can schedule their tenant or any subtenant for time s
 Note that certain limitations are induced in the API which are described in [Enhanced time series support](#enhanced-time-series-support).
 
 {{<c8y-admon-req>}}
+To have functionality available tenant should be subscribed to **Timeseries-migration** microservice.
+Administration application should have subscribed extension **c8y-timeseries-migration-plugin**.
+
 The user must have following permissions for "Tenant management":
 * To view all tenants: READ permission.
 * To perform migration activity: ADMIN permission.
