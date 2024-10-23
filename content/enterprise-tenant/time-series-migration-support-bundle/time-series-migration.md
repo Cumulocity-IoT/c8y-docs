@@ -57,7 +57,7 @@ The migration of measurements can be cancelled when a tenant has the status **Qu
 ### Description and progress monitoring {#description-and-progress-monitoring}
 
 **Time series migration** page is divided into 2 sections.
-The top one is called **Ongoing migration** and represents data of selected tenant with enabled ongoing migration. This section is designed for monitoring the progress and controlling the process by user by interacting with buttons, which context and availability differs from the tenant's migration status. Section is populated with the information only after the migration is started and is in the **In progress** state.
+The top one is called **Ongoing migration** and displays current state of ongoing migration for respective tenant. This section provides controls over active process. The information is displayed only after the migration is started and is in one of the progressing states (eg.: In progress, Migrated, Verifying, Verified).
 
 Here, you can see: 
 * **Tenant** field with tenant name which idicates the tenant the migration process is triggered for.
