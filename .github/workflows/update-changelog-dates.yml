@@ -30,10 +30,7 @@ on:
         description: 'The name of the component that has been deployed to the environment.'
         required: true
         default: 'ui-c8y'
-        type: choice
-        options:
-          - 'ui-c8y'
-          - 'cumulocity'
+        type: string
 
 permissions:
   pull-requests: write
@@ -49,47 +46,65 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-    - name: Checking out
-      uses: actions/checkout@v4
+      - name: logging-inputs
+        run: echo ${{inputs.component}} ${{inputs.version}} ${{inputs.date}}
 
-    - name: Set git user
-      run: |
-        git config --global user.name "${GITHUB_ACTOR}"
-        git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+      - name: Checking out
+        uses: actions/checkout@v4
 
-    - name: Generate branch name
-      id: branch-name
-      run: echo "branch-name=update-changelog-dates/${{ inputs.component }}_${{ inputs.version }}_${{ inputs.date }}" >> $GITHUB_OUTPUT
+      - name: Set git user
+        run: |
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
-    - name: Checkout branch
-      run: |
-        git checkout -b ${{ steps.branch-name.outputs.branch-name }}
+      - name: Generate branch name
+        id: branch-name
+        run: echo "branch-name=update-changelog-dates/${{ inputs.component }}_${{ inputs.version }}_${{ inputs.date }}" | sed  's/\s/_/g' | sed  's/:/_/g' >> $GITHUB_OUTPUT
 
-    - name: Use Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
+      - name: Checkout branch
+        run: |
+          git checkout -b "${{ steps.branch-name.outputs.branch-name }}"
 
-    - name: Update changelog files
-      run: |
-        cd add-release-dates
-        npm ci
-        npm start ${{ inputs.component }} ${{ inputs.version }} ${{ inputs.date }}
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-    - name: Git add
-      run: |
-        git add content/change-logs
+      - name: Update changelog files
+        run: |
+          cd add-release-dates
+          npm ci
+          npm start "${{ inputs.component }}" "${{ inputs.version }}" "${{ inputs.date }}"
 
-    - name: Git commit
-      run: |
-        git commit -m "Update ${{ inputs.component }} changelog dates to ${{ inputs.date }} as version ${{ inputs.version }} was released"
+      - name: Git add
+        id: git-add
+        run: |
+          git add content/change-logs
+          echo "stagedFiles=$(git diff --cached --numstat | wc -l)" >> $GITHUB_OUTPUT
 
-    - name: Git push
-      run: |
-        git push -u origin ${{ steps.branch-name.outputs.branch-name }}
+      - name:
+        if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
+        run: |
+          echo "::notice :: Updated ${{ steps.git-add.outputs.stagedFiles }} changelog entries for ${{ inputs.component }}@${{ inputs.version }}"
 
-    - name: Create pull request
-      env: 
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        gh pr create -B ${{ github.ref }} -H ${{ steps.branch-name.outputs.branch-name }} --title 'Update ${{ inputs.component }} changelog dates to ${{ inputs.date }} as version ${{ inputs.version }} was released' --body 'Created by [Github action](${{ github.server_url }}/${{ github.repository_owner }}/${{ github.event.repository.name }}/actions/workflows/update-changelog-dates.yml)' --assignee ${{ github.actor }}
+      - name:
+        if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) == 0 }}
+        run: |
+          echo "::warning :: No new changelog entries found for ${{ inputs.component }}@${{ inputs.version }}"
+
+      - name: Git commit
+        if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
+        run: |
+          git commit -m "Update ${{ inputs.component }} changelog dates to ${{ inputs.date }} as version ${{ inputs.version }} was released"
+
+      - name: Git push
+        if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
+        run: |
+          git push -u origin "${{ steps.branch-name.outputs.branch-name }}"
+
+      - name: Create pull request
+        if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create -B ${{ github.ref }} -H "${{ steps.branch-name.outputs.branch-name }}" --title 'Update ${{ inputs.component }} changelog dates to ${{ inputs.date }} as version ${{ inputs.version }} was released' --body 'Created by [Github action](${{ github.server_url }}/${{ github.repository_owner }}/${{ github.event.repository.name }}/actions/workflows/update-changelog-dates.yml)' --assignee ${{ github.actor }}
