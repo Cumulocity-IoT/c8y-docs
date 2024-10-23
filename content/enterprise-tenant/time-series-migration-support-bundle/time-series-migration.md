@@ -88,4 +88,3 @@ After hoverover on the tenant row user can see one of three buttons according to
 * **Cancel migration** if tenant is in **Queued** state.
 * **Approve and finish migration** if the tenant has **Verified** state and progress is parked until the user approve the continuation of the migration flow
 
-The same buttons are available on loader bar in **Ongoing migration** section except **Add to queue**, adding a new tenant to the migration queue is possible only from tenant list. 
