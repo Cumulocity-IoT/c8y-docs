@@ -42,6 +42,7 @@ The following is a list of the alarms. The information further down below explai
 - [Connection to correlator lost](#connection-to-correlator-lost)
 - [Performance alarms](#performance-alarms)
 - [Parent tenant not subscribed](#parent-tenant-not-subscribed)
+- [Analytics Builder dropped events](#analytics-builder-dropped-events)
 
 Once the cause of an alarm is resolved, you must acknowledge and clear the alarm in the {{< product-c8y-iot >}} tenant. Otherwise, you will continue to see the alarm until a further restart of the Apama-ctrl microservice.
 
@@ -397,3 +398,16 @@ The Apama-ctrl microservice allows you to subscribe to tenants in any order.
 However, as long as the parent tenant is not subscribed, the microservice functionality will not work on the subtenant.
 
 This alarm is cleared once the parent tenant is subscribed.
+
+
+#### Analytics Builder dropped events {#analytics-builder-dropped-events}
+
+This alarm is raised when an Analytics Builder model drops an event because of it being delayed beyond the reorder buffer duration.
+
+- Alarm type: `analyticsbuilder_dropped_events`
+- Alarm text: Analytics Builder dropped &lt;number&gt; events due to they being delayed beyond the reorder buffer duration. The last dropped event was received at &lt;system time&gt; (&lt;number&gt; seconds old): '&lt;last dropped event string&gt;'.
+- Alarm severity: WARNING
+
+Analytics Builder models use buffers to reorder incoming events by their source timestamp and process them in order. By default, input blocks reorder events delayed up to 1 second. If an event is received after a delay of more than the reorder buffer duration, the event may be dropped without any processing. See [Input blocks and event timing](/streaming-analytics/analytics-builder/#input-blocks-and-event-timing) for detailed information.
+
+To resolve the issue, you can either disable the reordering of input events or increase the duration of reorder buffer. The reordering on input events can be disabled by enabling the Ignore Timestamp parameter of input blocks. When the Ignore Timestamp parameter is enabled, the input events are processed as soon as possible without any reordering. The duration of the reorder buffer can be increased by changing the `timedelay_secs` tenant option in the `analytics.builder` category. For more information on `timedelay_secs`, see [Keys for model timeouts](/streaming-analytics/analytics-builder/#keys-for-model-timeouts).
