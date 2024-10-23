@@ -16,9 +16,10 @@ To have functionality available tenant should be subscribed to **Timeseries-migr
 Administration application should have subscribed extension **c8y-timeseries-migration-plugin**.
 
 The user must have following permissions for "Tenant management":
-* To view all tenants: READ permission.
-* To perform migration activity: ADMIN permission.
-{{</c8y-admon-req>}}
+
+- To view all tenants: READ permission.
+- To perform migration activity: ADMIN permission.
+  {{</c8y-admon-req>}}
 
 ### To trigger time series migration {#to-trigger-time-series-migration}
 
@@ -46,6 +47,7 @@ The migration of measurements can be cancelled when a tenant has the status **Qu
 {{< /c8y-admon-info >}}
 
 ### Migration states {#migration-states}
+
 |State|Managable by user|Description|
 |:-----|:-----|:------|
 |Legacy measurements|yes|Indicates that the tenant is not being migrated yet. If the tenant uses legacy measurements, it will be scheduled for migration.|
@@ -62,15 +64,12 @@ The migration of measurements can be cancelled when a tenant has the status **Qu
 **Time series migration** page is divided into 2 sections.
 The top one is called **Ongoing migration** and displays current state of ongoing migration for respective tenant. This section provides controls over active process. The information is displayed only after the migration is started and is in one of the progressing states (eg.: In progress, Migrated, Verifying, Verified).
 
-Here, you can see: 
-* **Tenant** field with tenant name which idicates the tenant the migration process is triggered for.
-* **Requested by** field shows the user name who started the migration. 
-* **Migration range** expose date range, where start date is the date of the oldest measuremet to migrate and end date is the date of the newest measurement (it's also the point in time when migration was started).
-*  Loader bar on the right side consists of status (visual progress in percentage indicating how much data has already been migrated to the new collection), state (visual presentation of current state) and buttons for the user to interact with the migration.
+Here, you can see:
 
-Under the **Ongoing migration** section is located **Tenants** list, second part of the **Time series migration** page.
-This area displays a list of subtenants in the table grid with more detail information about each subtenant and it's current migration status.
-In this section user can select the tenant to enable migration for.
+- **Tenant** field with tenant name which idicates the tenant the migration process is triggered for.
+- **Requested by** field shows the user name who started the migration.
+- **Migration range** expose date range, where start date is the date of the oldest measuremet to migrate and end date is the date of the newest measurement (it's also the point in time when migration was started).
+  **Migration status** - bar displayed on the right is multipurpose. Depending on state it provides either visual information on the actual state of the ongoing process or allows to control certain process states. For details of states, see [Migration states](/#migration-states).
 
 For each tenant following information is displayed: 
 * **Tenant** - value of tenant id.
@@ -84,7 +83,6 @@ For each tenant following information is displayed:
 * **ApprovedBy** - tenant id and tenant name of the user which approved the migration.
 
 After hoverover on the tenant row user can see one of three buttons according to migration state to controll the flow:
-* **Add to queue** if tenant has **Legacy measurement** state.
-* **Cancel migration** if tenant is in **Queued** state.
-* **Approve and finish migration** if the tenant has **Verified** state and progress is parked until the user approve the continuation of the migration flow
-
+- **Add to queue** - To assign the tenant to the migration queue when it is in **Legacy measurement** state
+- **Cancel migration** - To resign tenant from migration queue when it is in **Queued** state. Note that when progress starts, it is not possible to resign from migration.
+- **Approve and finish migration** - To approve the migration when it is in **Verified** state. Note that no other migration will start if there is a tenant pending acceptance.
