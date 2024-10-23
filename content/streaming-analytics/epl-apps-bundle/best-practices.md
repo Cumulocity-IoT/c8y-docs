@@ -57,7 +57,7 @@ When designing an Apama solution to be deployed within any form of {{< product-c
 * For scalability, a correlator may move between hosts and therefore does not have access to a persistent file system. It is a standard {{< product-c8y-iot >}} constraint that all microservices (either provided by the platform, or custom) must be stateless, see [Microservices](/concepts/applications#microservices).
 	The Apama features affected by this include:
 	* Correlator persistence.
-	* MemoryStore persistence. 
+	* MemoryStore persistence.
 * Non-HTTP/REST connections to an external system or process are mostly impractical. Although if a service is available over the internet, then it can be used (for example, an HTTP client inside Apama could connect to publicly accessible HTTP servers).
 	The Apama features affected by this include:
 	* Apama Database Connector (ADBC).
@@ -70,7 +70,7 @@ When designing an Apama solution to be deployed within any form of {{< product-c
 	* Engine Management API, Event Service API, Scenario Service API.
 	* Connecting to adapters running out-of-process in an IAF.
 	* Dashboards (provided in-the-box with Apama).
-	* Debugging from {{< sag-designer >}}. Instead, debug your app running in a local correlator.
+	* Debugging from {{< apama-plugin >}}. Instead, debug your app running in a local correlator.
 	* Correlator REST interface.
 * To reduce both the memory usage of an application during startup and the application's startup time,
   ensure the application is completely initialized before injecting monitors that automatically unload,
@@ -92,6 +92,6 @@ When designing an Apama solution to be deployed within any form of {{< product-c
 	* A \*.mon file must not contain a package statement (to do so is an error).
 	* It is not possible to share event definitions between separate \*.mon files.
 	* It is not possible to use Apama queries.
-	* You can only use the bundles listed in [Developing apps with {{< sag-designer >}}](/streaming-analytics/epl-apps/#sag-designer).
+	* You can only use the bundles listed in [Developing apps with {{< apama-plugin >}}](/streaming-analytics/epl-apps/#apama-plugin).
 
 All of these restrictions are implemented to ensure the smooth and secure operation of EPL apps within {{< product-c8y-iot >}}.
