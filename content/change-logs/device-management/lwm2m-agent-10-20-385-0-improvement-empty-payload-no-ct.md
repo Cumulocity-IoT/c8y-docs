@@ -1,5 +1,5 @@
 ---
-date:
+date: '2024-10-24'
 title: Allowing LWM2M device to send empty payload without content-type data
 change_type:
   - value: change-2c7RdTdXo4
@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-ggH2M4hf3
     label: lwm2m-agent
 ticket: DM-3989
-version: 10.20.385.0
+version: 1020.385.0
 ---
 
 The LWM2M specification allows devices to send an empty payload when there is no data to report. 
