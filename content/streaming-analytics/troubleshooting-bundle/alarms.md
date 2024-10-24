@@ -405,7 +405,7 @@ This alarm is cleared once the parent tenant is subscribed.
 This alarm is raised when an Analytics Builder model drops an event because of it being delayed beyond the reorder buffer duration.
 
 - Alarm type: `analyticsbuilder_dropped_events`
-- Alarm text: Analytics Builder dropped &lt;number&gt; events due to they being delayed beyond the reorder buffer duration. The last dropped event was received at &lt;system time&gt; (&lt;number&gt; seconds old): '&lt;last dropped event string&gt;'.
+- Alarm text: Analytics Builder dropped &lt;number&gt; events because they were delayed beyond the reorder buffer duration. The last dropped event was received at &lt;system time&gt; (&lt;number&gt; seconds old): '&lt;last dropped event string&gt;'.
 - Alarm severity: WARNING
 
 Analytics Builder models use buffers to reorder incoming events by their source timestamp and process them in order. By default, input blocks reorder events delayed up to 1 second. If an event is received after a delay of more than the reorder buffer duration, the event may be dropped without any processing. See [Input blocks and event timing](/streaming-analytics/analytics-builder/#input-blocks-and-event-timing) for detailed information.
