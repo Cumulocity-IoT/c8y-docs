@@ -12,7 +12,7 @@ The availability of this feature is governed by two feature flags:
 
 - `streaming-analytics.messaging` <br>
     In addition to this, if you are using one of the variants of the Apama-ctrl microservice, you must also set this feature flag. You then need to resubscribe the Apama-ctrl microservice to pick up changes to the feature flag.
-    Use the [feature toggles REST API](https://{{< domain-c8y >}}/api/core/{{< docs-version >}}/#tag/Feature-toggles-API) to do so.
+    Use the feature toggles REST API to do so; see [Feature toggles API](https://{{< domain-c8y >}}/api/core/#tag/Feature-toggles-API) in the {{< openapi >}}.
     <!-- For further information on these feature flags and on feature flags in general, see (TODO: this doc has not yet been written). -->
 
 If you are using a custom microservice, you must also add the `ROLE_NOTIFICATION_2_ADMIN` permission to the microservice manifest once the `notification2.streaming-analytics` feature flag has been activated; see also [Required settings in the microservice manifest](/streaming-analytics/epl-apps/#required-settings-in-the-microservice-manifest).
