@@ -125,9 +125,14 @@ Exposes predefined generic events used by the HTTP client connectivity plug-in.
 This starts all connectivity plug-ins immediately on start up.
 * **HTTP Client > JSON with generic request/response event definitions** <br>
 Allows EPL apps to make HTTP calls.
-* **Cumulocity IoT > Cumulocity Client** <br>
-Exposes the {{< product-c8y-iot >}} client to EPL apps.
+* **Cumulocity IoT > Cumulocity Notifications 2.0** <br>
+Exposes the {{< product-c8y-iot >}} client to EPL apps using the Notifications 2.0 mechanism.
+For general information on how to receive {{< product-c8y-iot >}} update notifications, see [Receiving update notifications]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_receiving_update_notifications.html) in the Apama documentation.
 
+{{< c8y-admon-info >}}
+The **Cumulocity Notifications 2.0** connectivity bundle has been added for receiving notifications from {{< product-c8y-iot >}} using the Notifications 2.0 mechanism. The existing **Cumulocity Client** connectivity bundle that uses the legacy long-polling mechanism is deprecated in favor of this new bundle. In addition, it is now possible to add the **Cumulocity REST Support** connectivity bundle if you do not receive any notifications. You must only add one of these three bundles to your project.
+For information on how to migrate existing Apama projects to Notifications 2.0, see [Migrating from Cumulocity Client to Cumulocity Notifications 2.0]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ApaRelNot_10155_migrate-to-notifications.html) in the Apama documentation.
+{{< /c8y-admon-info >}}
 
 The bundles above are the only ones that are permissible in an EPL app, so be careful not to add any other bundles or your app may not work when activated in {{< product-c8y-iot >}}.
 
@@ -240,6 +245,12 @@ The following permissions are required by the microservice in order to start up 
 - ROLE_OPTION_MANAGEMENT_READ
 - ROLE_BULK_OPERATION_READ
 - ROLE_SMS_ADMIN
+
+{{< c8y-admon-info>}}
+To take advantage of the {{< product-c8y-iot >}} Notifications 2.0 reliable data forwarding capability to receive notifications, you must also add the following permission to the manifest of the custom microservice and contact [product support](/additional-resources/contacting-support/) to set the the `notification2.streaming-analytics` feature flag.
+
+- ROLE_NOTIFICATION_2_ADMIN
+{{< /c8y-admon-info>}}
 
 {{< c8y-admon-info >}}
 The above is the minimum list of permissions that a custom Apama microservice needs. If you are developing a custom microservice, you may add more permissions to the microservice manifest.
