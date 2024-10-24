@@ -18,10 +18,10 @@ Using these links from your smartphone takes you to the app's install page:
 Alternatively, you can open the Apple App Store or Google Play Store from your smartphone, search for **{{< sensor-app >}}** and install the app.
 
 You need a {{< product-c8y-iot >}} account to send measurements to the platform.
-If you don't have one yet, you can create a free trial account at [{{< sag-cloud >}}]({{< link-sag-cloud >}}).
+If you don't have one yet, you can create a free trial account from [https://{{< domain-c8y >}}/pages/free-trial/](from here: https://{{< domain-c8y >}}/pages/free-trial/).
 Click the **Login** button at the top right of the page and follow the instructions to create a new account.
 There are no limitations within a {{< product-c8y-iot >}} free trial.
 
 {{< c8y-admon-info >}}
-This mobile app does not collect any personal data. The app collects only mobile phone sensor data and anonymous app usage data. If you do not agree with {{< company-sag >}} collecting this data, do not connect the app with {{< product-c8y-iot >}} and delete it from your device.
+This mobile app does not collect any personal data. The app collects only mobile phone sensor data and anonymous app usage data. If you do not agree with {{< company-c8y >}} collecting this data, do not connect the app with {{< product-c8y-iot >}} and delete it from your device.
 {{< /c8y-admon-info >}}
