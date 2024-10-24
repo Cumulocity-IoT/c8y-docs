@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-10-24'
 title: Selected item IDs are now passed to the bulk action control
 product_area: Application enablement & solutions
 change_type:

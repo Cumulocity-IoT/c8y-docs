@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-10-24'
 title: Enabled edit mode when opening a newly created dashboard
 product_area: Application enablement & solutions
 change_type:

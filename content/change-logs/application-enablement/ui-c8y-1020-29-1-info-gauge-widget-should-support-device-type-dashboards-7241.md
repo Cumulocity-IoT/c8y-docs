@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-10-24'
 title: Info gauge widget now supports device type dashboards
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-10-24'
 title: Bookmark title now uses globalTitle if set
 product_area: Application enablement & solutions
 change_type:
