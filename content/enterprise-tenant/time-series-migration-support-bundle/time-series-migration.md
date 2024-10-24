@@ -73,10 +73,10 @@ Here you can see the following information:
 
 For each tenant the following information is displayed:
  
-* **Tenant** - value of tenant id.
-* **ID** - value of tenant id. 
-* **Domain** - value of tenant domain.
-* **Parent tenant ID** - value of parent tenant id. 
+* **Tenant** - tenant name.
+* **ID** - tenant id. 
+* **Domain** - tenant domain.
+* **Parent tenant ID** - parent tenant id. 
 * **Status** - current state of migration for given tenant.
 * **RequestedDate** - date when tenant being added to queue for migration.
 * **RequestedBy** - tenant id and tenant user which requested migration
