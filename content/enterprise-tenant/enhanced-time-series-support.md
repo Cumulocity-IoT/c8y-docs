@@ -58,7 +58,7 @@ To prevent such situations, configure the property only at the beginning of a te
 Migration and seamless configuration will be part of future releases.
 
 {{< c8y-admon-important >}}
-Once enabled, avoid switching the property back to `DISABLED` as this can lead to experience data loss. Do this only in case of an issue or emergency.
+**Once enabled, avoid switching the property back to `DISABLED` as this can lead to experience data loss. Switching back to `DISABLED` generates integration issue with third part systems. Do this only in case of an issue or emergency.**
 {{< /c8y-admon-important >}}
 
 ### Unsupported APIs {#unsupported-apis}
