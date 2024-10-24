@@ -1,5 +1,5 @@
 ---
-date:
+date: '2024-10-24'
 title: LWM2M location data handling has been improved
 change_type:
   - value: change-2c7RdTdXo4
@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-ggH2M4hf3
     label: lwm2m-agent
 ticket: DM-3915
-version: 10.20.386.0
+version: 1020.386.0
 ---
 
 In earlier LWM2M agent versions, device location updates occurred only when the device provided complete location object data. 
