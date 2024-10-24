@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-ticket: DM-4048
+ticket: DM-2812
 version: 10.18.540.229
 ---
 When bulk registering LWM2M devices to the LWM2M service, the wizard provides default bulk registration templates.
