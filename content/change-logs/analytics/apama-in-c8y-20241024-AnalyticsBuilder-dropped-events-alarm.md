@@ -1,6 +1,6 @@
 ---
 date: 2024-10-24
-title: Alarm is now raised for delayed input events dropped by Analytics Builder models
+title: New alarm for delayed input events that are dropped from Analytics Builder model
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
