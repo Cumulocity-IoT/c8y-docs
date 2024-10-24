@@ -402,7 +402,7 @@ This alarm is cleared once the parent tenant is subscribed.
 
 #### Analytics Builder dropped events {#analytics-builder-dropped-events}
 
-This alarm is raised when an Analytics Builder model drops an event because of it being delayed beyond the reorder buffer duration.
+This alarm is raised when an Analytics Builder model drops an event because it is delayed beyond the reorder buffer duration.
 
 - Alarm type: `analyticsbuilder_dropped_events`
 - Alarm text: Analytics Builder dropped &lt;number&gt; events because they were delayed beyond the reorder buffer duration. The last dropped event was received at &lt;system time&gt; (&lt;number&gt; seconds old): '&lt;last dropped event string&gt;'.
