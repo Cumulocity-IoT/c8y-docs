@@ -13,7 +13,7 @@ Note that certain limitations are induced in the API which are described in [Enh
 
 {{<c8y-admon-req>}}
 To have this functionality available the tenant must be subscribed to the Timeseries-migration microservice.
-Administration application should have subscribed extension **c8y-timeseries-migration-plugin**.
+The Administration application must have subscribed the extension c8y-timeseries-migration-plugin.
 
 The user must have following permissions for "Tenant management":
 
