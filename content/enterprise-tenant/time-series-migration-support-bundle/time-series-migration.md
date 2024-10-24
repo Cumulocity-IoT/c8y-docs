@@ -15,7 +15,7 @@ Note that certain limitations are induced in the API which are described in [Enh
 To have this functionality available the tenant must be subscribed to the Timeseries-migration microservice.
 The Administration application must have subscribed the extension c8y-timeseries-migration-plugin.
 
-The user must have following permissions for "Tenant management":
+The user must have the following permissions for the permission type "Tenant management":
 
 - To view all tenants: READ permission.
 - To perform migration activity: ADMIN permission.
