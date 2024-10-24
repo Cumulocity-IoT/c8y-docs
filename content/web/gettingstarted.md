@@ -9,7 +9,7 @@ sector:
 This guide will setup your first application. The first step is to install the `@angular/cli` in the right version.
 
 ```bash
-npx @angular/cli@v17-lts new --style=less --standalone=false
+npx @angular/cli@18 new --style=less
 ```
 
 Second, navigate to the folder and add the `@c8y/websdk` package to your Angular application:
