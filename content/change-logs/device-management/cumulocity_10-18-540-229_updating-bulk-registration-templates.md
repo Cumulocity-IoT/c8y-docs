@@ -14,6 +14,6 @@ build_artifact:
 ticket: DM-2812
 version: 10.18.540.229
 ---
-When bulk registering LWM2M devices to the LWM2M service, the wizard provides default bulk registration templates.
-These bulk device registration templates have been updated to reflect new properties including X.509 security
+The wizard for bulk registering LWM2M devices to Cumulocity provides default bulk registration templates.
+These templates have been updated to reflect new properties including the X.509 security
 mode.
