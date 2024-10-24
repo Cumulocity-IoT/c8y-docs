@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-52692
 version: 10.18.495.0
 ---
-Fixed an issue with the email template for scheduled exports not being propagated from an Enterprise tenant's setting to its subtenants.
+Fixed an issue with the email template for scheduled exports not being propagated from an {{< enterprise-tenant >}}'s setting to its subtenants.

@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3308
 version: 1019.24.6
 ---
-In Cumulocity IoT, the `hookDeviceListColumns` API allows customizing the columns displayed in the device list. However, when using this API with a factory, a type error occurred, and explicit type casting was needed. This issue has now been resolved.
+In {{< product-c8y-iot >}}, the `hookDeviceListColumns` API allows customizing the columns displayed in the device list. However, when using this API with a factory, a type error occurred, and explicit type casting was needed. This issue has now been resolved.

@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-54617
 version: 10.18.497.8
 ---
-On logging into the platform as a support user, the redirection to the Management tenant has been removed. The platform, despite authentication in the context of the Management tenant, sets a cookie for the domain of the logged-in tenant.
+On logging into the platform as a support user, the redirection to the {{< management-tenant >}} has been removed. The platform, despite authentication in the context of the {{< management-tenant >}}, sets a cookie for the domain of the logged-in tenant.

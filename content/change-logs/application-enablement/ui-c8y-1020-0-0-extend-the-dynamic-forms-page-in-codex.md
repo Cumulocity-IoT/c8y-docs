@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3282
 version: 1020.0.0
 ---
-The Codex documentation provides information about developing applications with the Cumulocity IoT platform. To make it easier for users to understand and use dynamic forms in their applications, the **Dynamic forms** page in the Codex documentation has been extended. For details, refer to the [{{< product-c8y-iot >}} Codex](https://styleguide.cumulocity.com/apps/codex/#/components/forms/dynamic-forms/overview).
+The Codex documentation provides information about developing applications with the {{< product-c8y-iot >}} platform. To make it easier for users to understand and use dynamic forms in their applications, the **Dynamic forms** page in the Codex documentation has been extended. For details, refer to the [{{< product-c8y-iot >}} Codex](https://styleguide.cumulocity.com/apps/codex/#/components/forms/dynamic-forms/overview).

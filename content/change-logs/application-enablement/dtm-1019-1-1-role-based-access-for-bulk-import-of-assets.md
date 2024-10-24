@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-649, CTM-729
 version: 1019.1.1
 ---
-Access to the bulk import feature can now be controlled using Cumulocity IoT global and inventory roles.
+Access to the bulk import feature can now be controlled using {{< product-c8y-iot >}} global and inventory roles.

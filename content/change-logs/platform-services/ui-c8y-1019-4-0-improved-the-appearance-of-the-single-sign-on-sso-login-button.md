@@ -1,5 +1,5 @@
 ---
-date: 
+date:
 title: Fixed the appearance of the SSO (Single Sign-On) login button
 product_area: Platform services
 change_type:
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57675
 version:
 ---
-The appearance of the SSO (single-sign-on) login button has been unified with the Cumulocity IoT application styles.
+The appearance of the SSO (single-sign-on) login button has been unified with the {{< product-c8y-iot >}} application styles.

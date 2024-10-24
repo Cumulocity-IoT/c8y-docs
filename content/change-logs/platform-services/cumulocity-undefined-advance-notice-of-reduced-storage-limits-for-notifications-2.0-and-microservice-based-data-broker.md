@@ -13,7 +13,7 @@ build_artifact:
     label: cumulocity
 ---
 
-Messages processed by Notifications 2.0 are stored persistently by the Cumulocity IoT Messaging Service until they have been delivered to, and acknowledged by, all interested consumers. Likewise, messages processed by the microservice-based data broker are stored persistently until they have been delivered successfully to the destination tenant.
+Messages processed by Notifications 2.0 are stored persistently by the {{< product-c8y-iot >}} Messaging Service until they have been delivered to, and acknowledged by, all interested consumers. Likewise, messages processed by the microservice-based data broker are stored persistently until they have been delivered successfully to the destination tenant.
 
 The current persistent storage limits for these services are considered too large for typical use cases, which can lead to excessive resource consumption and consumers being forced to process outdated messages after a disconnection.
 
@@ -49,11 +49,6 @@ Alongside the backlog quota reduction, a new default message “time-to-live" (T
 
 **Additional details**
 
-The message backlog quota and TTL are configurable for each Cumulocity IoT tenant. Message backlog usage will be monitored during the three-month transition period, to identify tenants that may exceed the new limits when they are enabled. The owners of such tenants will be contacted to understand their use cases and whether a non-default limit could be appropriate.
+The message backlog quota and TTL are configurable for each {{< product-c8y-iot >}} tenant. Message backlog usage will be monitored during the three-month transition period, to identify tenants that may exceed the new limits when they are enabled. The owners of such tenants will be contacted to understand their use cases and whether a non-default limit could be appropriate.
 
 Please contact [product support](/additional-resources/contacting-support/) if you have any questions or concerns about these changes.
-
-
-
-
-

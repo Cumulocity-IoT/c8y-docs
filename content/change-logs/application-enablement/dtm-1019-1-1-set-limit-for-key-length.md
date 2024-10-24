@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-646,CTM-673,CTM-658
 version: 1019.1.1
 ---
-The key for assets, properties and models is set to 254 characters maximum to ensure consistent behavior with other Cumulocity IoT applications.
+The key for assets, properties and models is set to 254 characters maximum to ensure consistent behavior with other {{< product-c8y-iot >}} applications.

@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-50050
 version: 1020.0.0
 ---
-In some situations, managed object operations in Cumulocity IoT could take an unexpectedly long time without providing any feedback to the user. For more transparency, an alert is now shown in the UI when a certain operation exceeds a specific duration.
+In some situations, managed object operations in {{< product-c8y-iot >}} could take an unexpectedly long time without providing any feedback to the user. For more transparency, an alert is now shown in the UI when a certain operation exceeds a specific duration.

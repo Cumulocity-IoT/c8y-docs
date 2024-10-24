@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59422
 version: 10.20.409.0
 ---
-This fix addresses a critical security issue that whilst has the ability to impact the integrity of Cumulocity IoT, is random in nature and is therefore not targetable.
+This fix addresses a critical security issue that whilst has the ability to impact the integrity of {{< product-c8y-iot >}}, is random in nature and is therefore not targetable.

@@ -87,7 +87,7 @@ Following are the supported command line arguments which can be used while invok
 
 * -hw or --hardware: Allows the script to collect only the hardware information
 * -sw or --software: Allows the script to collect only the software information
-* -c8y or --cumulocity: Allows the script to collect only the {{< product-c8y >}} information
+* -c8y or --cumulocity: Allows the script to collect only the {{< product-c8y-iot >}} information
 * -h: Displays the help message
 
 ### Microservices log file locations {#microservices-log-file-locations}

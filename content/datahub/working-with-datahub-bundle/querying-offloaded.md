@@ -64,7 +64,7 @@ Note that the API might change any time and {{< company-sag >}} does not provide
 
 ### Connecting via {{< product-c8y-iot >}} DataHub REST API {#connecting-via-datahub-rest-api}
 
-The {{< product-c8y-iot >}} DataHub server also can handle REST requests for Dremio query processing, serving as a proxy to Dremio. {{< product-c8y-iot >}} DataHub offers two REST APIs for running queries against Dremio. The standard REST API for small to moderate query result sizes and a high-performance REST API for large query result sizes. See the [{{< product-c8y-iot >}} DataHub REST API documentation](https://{{< domain-c8y >}}/api/datahub/) in the *{{< product-c8y-iot >}} OpenAPI specification* for details on the endpoints. When using this API, you authenticate with your {{< product-c8y-iot >}} account, not with your Dremio account.
+The {{< product-c8y-iot >}} DataHub server also can handle REST requests for Dremio query processing, serving as a proxy to Dremio. {{< product-c8y-iot >}} DataHub offers two REST APIs for running queries against Dremio. The standard REST API for small to moderate query result sizes and a high-performance REST API for large query result sizes. See the [{{< product-c8y-iot >}} DataHub REST API documentation](https://{{< domain-c8y >}}/api/datahub/) in the {{< openapi >}} for details on the endpoints. When using this API, you authenticate with your {{< product-c8y-iot >}} account, not with your Dremio account.
 
 ### Connecting other clients {#connecting-other-clients}
 

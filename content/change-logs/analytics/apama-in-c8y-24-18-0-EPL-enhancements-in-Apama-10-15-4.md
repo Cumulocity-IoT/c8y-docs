@@ -115,7 +115,7 @@ If you have an action that is called from within a stream query (for example, as
 
 ##### Updated events in com.apama.cumulocity
 
-To avoid confusion as to whether events were being sent towards Cumulocity IoT or being received back as updates from Cumulocity IoT, the Cumulocity event definitions API was changed in a previous release (10.5.2.0) so that the existing `CHANNEL` constant was deprecated and replaced by either `SEND_CHANNEL` or `SUBSCRIBE_CHANNEL` constants as appropriate. Some events were omitted from these changes and this has now been rectified. Therefore, the `CHANNEL` constant is deprecated on the following events:
+To avoid confusion as to whether events were being sent towards {{< product-c8y-iot >}} or being received back as updates from {{< product-c8y-iot >}}, the {{< product-c8y-iot >}} event definitions API was changed in a previous release (10.5.2.0) so that the existing `CHANNEL` constant was deprecated and replaced by either `SEND_CHANNEL` or `SUBSCRIBE_CHANNEL` constants as appropriate. Some events were omitted from these changes and this has now been rectified. Therefore, the `CHANNEL` constant is deprecated on the following events:
 
 * `SubscribeMeasurements`
 * `UnsubscribeMeasurements`
