@@ -14,4 +14,8 @@ build_artifact:
 ticket: DM-3770
 version: 1020.40.0
 ---
-Avoid unnecessary unavailability alarms for LwM2M device GRAFT (#7391)
+"Automatic setting of required interval" option is added to LwM2M device's LWM2M Configuration UI Device.
+This is made configurable so that unavailability alarms will only be triggered when an LwM2M device is truly unavailable, reducing the number of false alarms.
+When this setting is enabled, the LWM2M service automatically sets the interval to device's registration lifetime plus 2 minutes.
+When this setting is disabled, user can define a required interval for the device from the Device Info dashboard.
+When this setting is set to default, it will use the default behavior of LWM2M service.
