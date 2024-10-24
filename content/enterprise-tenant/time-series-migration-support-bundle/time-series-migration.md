@@ -66,7 +66,7 @@ The top one is called **Ongoing migration** and displays current state of ongoin
 
 Here you can see the following information:
 
-- **Tenant** field with tenant name which idicates the tenant the migration process is triggered for.
+- **Tenant** - Tenant name of the tenant the migration process is triggered for.
 - **Requested by** field shows the user name who started the migration.
 - **Migration range** expose date range, where start date is the date of the oldest measuremet to migrate and end date is the date of the newest measurement (it's also the point in time when migration was started).
   **Migration status** - bar displayed on the right is multipurpose. Depending on state it provides either visual information on the actual state of the ongoing process or allows to control certain process states. For details of states, see [Migration states](/#migration-states).
