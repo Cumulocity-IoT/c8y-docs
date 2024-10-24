@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-10-24'
 title: Field now updated when selecting an item from a typeahead list
 product_area: Device management & connectivity
 change_type:

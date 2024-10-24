@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-10-24'
 title: Fixed issue with Karma tests against @c8y/ngx-components library
 product_area: Application enablement & solutions
 change_type:
