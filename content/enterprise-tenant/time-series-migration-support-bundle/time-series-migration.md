@@ -83,7 +83,7 @@ For each tenant the following information is displayed:
 * **ApprovedDate** - date when migration being approved by administrator.
 * **ApprovedBy** - tenant id and tenant name of the user which approved the migration.
 
-After hoverover on the tenant row user can see one of three buttons according to migration state to controll the flow:
+On hovering over a tenant row, you can see one of three buttons according to migration state to control the flow:
 - **Add to queue** - To assign the tenant to the migration queue when it is in **Legacy measurement** state
 - **Cancel migration** - To resign tenant from migration queue when it is in **Queued** state. Note that when progress starts, it is not possible to resign from migration.
 - **Approve and finish migration** - To approve the migration when it is in **Verified** state. Note that no other migration will start if there is a tenant pending acceptance.
