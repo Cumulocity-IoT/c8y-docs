@@ -13,14 +13,14 @@ The **Limits** tab allows you to view and edit resource limits for the tenant, a
 
 ### To limit subtenant request rate {#to-limit-subtenant-request-rate}
 
-Platform administrators can limit the request rate of each subtenant via the following custom properties:
+Platform administrators can limit the request rate of each subtenant via the following properties:
 
-* Limit HTTP queue: limit of the HTTP request queue for the tenant
-* Limit HTTP requests: limit of the HTTP requests for the tenant per second
-* Limit stream queue: limit of the MQTT request queue for the tenant
-* Limit stream requests: limit of the MQTT requests for the tenant per second
+* **Limit HTTP queue**: limit of the HTTP request queue for the tenant.
+* **Limit HTTP requests**: limit of the HTTP requests for the tenant per second.
+* **Limit stream queue**: limit of the MQTT request queue for the tenant.
+* **Limit stream requests**: limit of the MQTT requests for the tenant per second.
 
-The request throttling mechanism is only enabled when both HTTP properties (limit HTTP queue and limit HTTP requests) are configured. If one of the values is omitted, it does not work.
+The request throttling mechanism is only enabled when both HTTP properties (**Limit HTTP queue** and **Limit HTTP requests**) are configured. If one of the values is omitted, the other one is ignored and throttling remains disabled.
 
 {{< c8y-admon-important >}}
 Rate limiting can be an effective countermeasure against threats like brute force login attempts, API abuse and request flooding thus reducing the number of malicious/unwanted traffic. This helps in protecting against DoS (Denial of Service) attacks and saving the available bandwidth for legitimate requests.
@@ -30,7 +30,7 @@ You can also customize the buffer size for the CEP queue and the data broker que
 
 ### To limit subtenant device number {#to-limit-subtenant-device-number}
 
-Platform administrators can limit the count of concurrently registered root devices or simply all devices (including child devices) via the custom property "Limit number of devices".
+Platform administrators can limit the count of concurrently registered root devices or simply all devices (including child devices) via the property "Limit number of devices".
 
 You can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the [Usage statistics](/enterprise-tenant/usage-and-billing/) page.
 
