@@ -12,9 +12,11 @@ if (process.argv.length < 4) {
 let [component, version, dateString] = process.argv.slice(2);
 
 if (!valid(version)) {
+
   console.error("Invalid version:", version);
   process.exit(1);
 }
+
 const dateObj = dateString ? new Date(dateString) : new Date();
 const date = dateObj.toISOString().substring(0, 10);
 console.log(component, version, date);
@@ -32,19 +34,25 @@ async function processFile(filePath: string): Promise<boolean> {
     console.warn("No version set in: ", filePath, "Skipping..");
     return false;
   }
-  if (!valid(data.version)) {
-    console.debug(
-      "Version in file: ",
-      filePath,
-      "is not a valid semver. Skipping.."
-    );
+
+  if (!valid(data.version) && data.version.split('.').length==4) {
+    const parts = data.version.split('.');
+    const normalizedVersion = `${parts[0]}${parts[1]}.${parts[2]}.${parts[3]}`;
+    console.warn("Non-semantic version: ", data.version ,"converted to semantic version format: ", normalizedVersion);
+    data.version=normalizedVersion ;
+  }
+
+  if(!valid(data.version)) {
+    console.debug("Version in file: ",filePath,"is not a valid semver. Skipping..");
     return false;
   }
+
+
   if (lt(version, data.version)) {
     console.debug(
       "Version in file: ",
       filePath,
-      " not jet reached. Skipping.."
+      " not yet reached. Skipping.."
     );
     return false;
   }
