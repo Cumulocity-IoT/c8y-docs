@@ -78,10 +78,10 @@ For each tenant the following information is displayed:
 * **Domain** - tenant domain.
 * **Parent tenant ID** - parent tenant id. 
 * **Status** - current state of migration for given tenant.
-* **RequestedDate** - date when tenant being added to queue for migration.
-* **RequestedBy** - tenant id and tenant user which requested migration
-* **ApprovedDate** - date when migration being approved by administrator.
-* **ApprovedBy** - tenant id and tenant name of the user which approved the migration.
+* **Requested date** - date when tenant being added to queue for migration.
+* **Requested by** - tenant id and tenant user which requested migration
+* **Approved date** - date when migration being approved by administrator.
+* **Approved by** - tenant id and tenant name of the user which approved the migration.
 
 On hovering over a tenant row, you can see one of three buttons according to migration state to control the flow:
 - **Add to queue** - To assign the tenant to the migration queue when it is in **Legacy measurement** state
