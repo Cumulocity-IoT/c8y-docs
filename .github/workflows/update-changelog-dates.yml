@@ -104,7 +104,7 @@ jobs:
       run: |
         if  [[ -z $(git ls-remote --heads origin "${{ steps.branch-name.outputs.branch-name }}") ]];
         then
-        git push git -u origin "${{ steps.branch-name.outputs.branch-name }}"
+        git push -u origin "${{ steps.branch-name.outputs.branch-name }}"
         else
         echo "${{ steps.branch-name.outputs.branch-name }} branch already exists, please merge it"
         fi
