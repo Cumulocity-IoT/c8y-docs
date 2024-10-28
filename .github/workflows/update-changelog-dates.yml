@@ -102,7 +102,12 @@ jobs:
     - name: Git push
       if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
       run: |
-        git push -u origin "${{ steps.branch-name.outputs.branch-name }}"
+        if git ls-remote --heads --exit-code origin "${{ steps.branch-name.outputs.branch-name }}" > /dev/null ;
+        then
+        echo "${{ steps.branch-name.outputs.branch-name }} branch already exists, please merge it"
+        else
+        git push git -u origin "${{ steps.branch-name.outputs.branch-name }}"
+        fi
 
     - name: Create pull request
       if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
