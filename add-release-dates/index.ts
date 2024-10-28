@@ -36,10 +36,7 @@ async function processFile(filePath: string): Promise<boolean> {
   }
 
   if (!valid(data.version) && data.version.split('.').length==4) {
-    const parts = data.version.split('.');
-    const normalizedVersion = `${parts[0]}${parts[1]}.${parts[2]}.${parts[3]}`;
-    console.warn("Non-semantic version: ", data.version ,"converted to semantic version format: ", normalizedVersion);
-    data.version=normalizedVersion ;
+    data.version=convertVersionFormat(data.version); // converts from non semantic to semantic version format
   }
 
   if(!valid(data.version)) {
@@ -56,6 +53,8 @@ async function processFile(filePath: string): Promise<boolean> {
     );
     return false;
   }
+
+  data.version = convertVersionFormat(data.version) // converts from semantic semantic to non-semantic version format
   data.date = date;
   const newContent = matterStringify({ content }, data);
   await writeFile(filePath, newContent, { encoding: "utf-8" });
@@ -92,4 +91,20 @@ async function processFiles() {
   console.log(
     `Updated ${updatedFiles} out of ${changeLogFilesOfComponent.length} files for component ${component}.`
   );
+}
+
+function convertVersionFormat(version: string){ // used to toggle version format between semantic and non-semantic formats
+    if (version.split('.').length == 4){
+        const versionParts = version.split('.');
+        const semanticVersion = `${versionParts[0]}${versionParts[1]}.${versionParts[2]}.${versionParts[3]}`;
+        console.debug("Non-Semantic version format:",version,"converted to semantic format",semanticVersion,"for processing")
+        return semanticVersion
+    }
+    else if (version.split('.').length == 3){
+        const versionParts = version.split('.');
+        const majorVersion = versionParts[0]
+        const nonSemanticVersion = `${majorVersion.slice(0,2)}.${majorVersion.slice(2,4)}.${versionParts[1]}.${versionParts[2]}`;
+        console.debug("Semantic version format:",version,"converted to non-semantic format",nonSemanticVersion,"for output")
+        return nonSemanticVersion;
+    }
 }
