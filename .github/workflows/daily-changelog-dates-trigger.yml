@@ -13,7 +13,7 @@ jobs:
     name: Get component details from helm charts
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    environment: build-pipeline
+    environment: pipeline-read
     outputs:
       matrix: ${{ steps.component-details.outputs.matrix }}
     steps:
