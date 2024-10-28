@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-51072
 version: 10.18.30.0
 ---
-Fixed an issue where the Cumulocity IoT REST API returned a 500 HTTP error code in case of an invalid <code>pageSize</code> or <code>currentPage</code> parameter. The API now returns a 422 HTTP error code in such cases.
+Fixed an issue where the {{< product-c8y-iot >}} REST API returned a 500 HTTP error code in case of an invalid <code>pageSize</code> or <code>currentPage</code> parameter. The API now returns a 422 HTTP error code in such cases.

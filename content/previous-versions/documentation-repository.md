@@ -27,7 +27,7 @@ Documentation ZIP files are available in the **Releases** section for the follow
 #### Add the documentation as custom application to your tenant {#add-the-documentation-as-custom-application-to-your-tenant}
 
 1. In the [Releases](https://github.com/SoftwareAG/c8y-docs/releases) section of the c8y-docs repository, select the release version and download the ZIP file (*c8y-guides-&lt;release-version&gt;.zip*) from the Assets list.
-2. Log in to your Cumulocity IoT tenant.
+2. Log in to your {{< product-c8y-iot >}} tenant.
 3. In the Administration application, navigate to **Ecosystem** > **Applications**.
 4. Click **Add application** on the top right and select **Upload web application**.
 5. Drop the downloaded ZIP file and follow the prompts to complete the upload.
