@@ -100,18 +100,21 @@ jobs:
         git commit -m "Update ${{ inputs.component }} changelog dates to ${{ inputs.date }} as version ${{ inputs.version }} was released"
 
     - name: Git push
+      id: git-push
       if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
       run: |
         if  [[ -z $(git ls-remote --heads origin "${{ steps.branch-name.outputs.branch-name }}") ]];
         then
         git push -u origin "${{ steps.branch-name.outputs.branch-name }}"
+        echo "uniqueBranchFlag=true" >> $GITHUB_OUTPUT
         else
         echo "${{ steps.branch-name.outputs.branch-name }} branch already exists, please merge it"
+        echo "uniqueBranchFlag=false" >> $GITHUB_OUTPUT
         fi
 
 
     - name: Create pull request
-      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
+      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 && steps.git-push.outputs.uniqueBranchFlag}}
       env: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
