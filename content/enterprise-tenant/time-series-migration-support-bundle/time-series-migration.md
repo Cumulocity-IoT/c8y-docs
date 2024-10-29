@@ -73,7 +73,7 @@ Here you can see the following information:
 
 For each tenant the following information is displayed:
  
-* **Tenant** - tenant name.
+* **Tenant** - Tenant name.
 * **ID** - tenant id. 
 * **Domain** - tenant domain.
 * **Parent tenant ID** - parent tenant id. 
