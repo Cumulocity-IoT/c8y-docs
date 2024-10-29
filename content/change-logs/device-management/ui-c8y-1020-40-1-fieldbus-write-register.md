@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4002
 version: 1020.40.1
 ---
-In the "Fieldbus device" widget, modifying registers and coils by clicking the **Set** button did not work properly. This issue has been fixed and an operation for changing values for registers and coils will be created after clicking **Set**.```
+In the "Fieldbus device" widget, modifying registers and coils by clicking the **Set** button did not work properly. This issue has been fixed and an operation for changing values for registers and coils will be created after clicking **Set**.
