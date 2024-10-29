@@ -74,7 +74,7 @@ Here you can see the following information:
 For each tenant the following information is displayed:
  
 * **Tenant** - Tenant name.
-* **ID** - tenant id. 
+* **ID** - Tenant ID. 
 * **Domain** - tenant domain.
 * **Parent tenant ID** - parent tenant id. 
 * **Status** - Current migration state for the given tenant.
