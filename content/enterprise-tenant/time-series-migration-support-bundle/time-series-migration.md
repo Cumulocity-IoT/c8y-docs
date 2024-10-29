@@ -69,7 +69,7 @@ Here you can see the following information:
 - **Tenant** - Tenant name of the tenant the migration process is triggered for.
 - **Requested by** - Name of the user that started the migration.
 - **Migration range** - Date range. Start date is the date of the oldest measurement to be migrated and end date is the date of the newest measurement. This is also the point in time when the migration has started.
-  **Migration status** - bar displayed on the right is multipurpose. Depending on state it provides either visual information on the actual state of the ongoing process or allows to control certain process states. For details of states, see [Migration states](/#migration-states).
+  **Migration status** - This bar displayed at the right has various functions. Depending on the state it provides either visual information on the actual state of the ongoing process or allows to control certain process states. For details of states, see [Migration states](/#migration-states).
 
 For each tenant the following information is displayed:
  
