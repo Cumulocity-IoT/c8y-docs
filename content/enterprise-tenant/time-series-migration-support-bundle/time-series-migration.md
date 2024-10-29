@@ -78,7 +78,7 @@ For each tenant the following information is displayed:
 * **Domain** - tenant domain.
 * **Parent tenant ID** - parent tenant id. 
 * **Status** - Current migration state for the given tenant.
-* **Requested date** - date when tenant being added to queue for migration.
+* **Requested date** - Date when the tenant will be added to the queue for migration.
 * **Requested by** - tenant id and tenant user which requested migration
 * **Approved date** - date when migration being approved by administrator.
 * **Approved by** - tenant id and tenant name of the user which approved the migration.
