@@ -75,7 +75,7 @@ For each tenant the following information is displayed:
  
 * **Tenant** - Tenant name.
 * **ID** - Tenant ID. 
-* **Domain** - tenant domain.
+* **Domain** - Tenant domain.
 * **Parent tenant ID** - parent tenant id. 
 * **Status** - Current migration state for the given tenant.
 * **Requested date** - Date when the tenant will be added to the queue for migration.
