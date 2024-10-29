@@ -17,7 +17,7 @@ The Administration application must have subscribed the extension c8y-timeseries
 
 The user must have the following permissions for the permission type "Tenant management":
 
-- To view all tenants: READ permission.
+- To view migration status for all subtenants: READ permission.
 - To perform migration activity: ADMIN permission.
   {{</c8y-admon-req>}}
 
