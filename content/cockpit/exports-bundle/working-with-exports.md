@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Adding exports to widgets
+title: Exports integration with Data Points based features
 layout: bundle
 outputs:
   - html
@@ -19,7 +19,7 @@ ROLES & PERMISSIONS:
 
 ### To create an export in a widget {#to-create-an-export-in-a-widget}
 
-The following example shows you how to integrate the export functionality with the [Data point table](/cockpit/widgets-collection/#data-point-table) widget.
+The following example shows you how the export functionality is integrated with the [Data point table](/cockpit/widgets-collection/#data-point-table) widget.
 
 1. Click the export icon <i class="dlt-c8y-icon-data-export text-primary icon-20"></i> at the top right of your data point table:
 
