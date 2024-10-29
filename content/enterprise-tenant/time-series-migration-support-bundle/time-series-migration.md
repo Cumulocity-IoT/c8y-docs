@@ -80,7 +80,7 @@ For each tenant the following information is displayed:
 * **Status** - Current migration state for the given tenant.
 * **Requested date** - Date when the tenant will be added to the queue for migration.
 * **Requested by** - Tenant ID and tenant user requesting the migration.
-* **Approved date** - date when migration being approved by administrator.
+* **Approved date** - Date when the migration has been approved by the administrator.
 * **Approved by** - tenant id and tenant name of the user which approved the migration.
 
 On hovering over a tenant row, you can see one of the following buttons according to the migration state:
