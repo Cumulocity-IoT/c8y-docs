@@ -15,7 +15,7 @@ The support user access feature enables {{< product-c8y-iot >}} platform provide
 {{< c8y-admon-req >}}
 To use this feature, support user access must be configured and the required support users must be created in the {{< management-tenant >}}. Contact your Operations team on how to configure this feature according to your needs.
 
-On the {{< product-c8y-iot >}} public cloud instances, the support user functionality can only be used by the [{{< sag-support >}}](/additional-resources/contacting-support/) team for providing customer support. It is not available for {{< enterprise-tenant >}} customers to support their customers/subtenants.
+On the {{< product-c8y-iot >}} public cloud instances, the support user functionality can only be used by the {{< company-c8y- >}} team for providing customer support. It is not available for {{< enterprise-tenant >}} customers to support their customers/subtenants.
 {{< /c8y-admon-req >}}
 
 
