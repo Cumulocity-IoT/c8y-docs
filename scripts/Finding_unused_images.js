@@ -6,38 +6,18 @@ const imageExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg'];
 
 // Function to collect a list of all images in the specified folder and its subfolders
 async function getImagesFromSpecificPath(imageFolder, imageExtensions) {
-    let imageList = [];
-    const walk = async (dir) => {
-        const files = await fs.readdir(dir, { withFileTypes: true });
-        for (const file of files) {
-            const filePath = path.join(dir, file.name);
-            if (file.isDirectory()) {
-                await walk(filePath);
-            } else if (imageExtensions.some(ext => file.name.toLowerCase().endsWith(ext))) {
-                imageList.push(filePath);
-            }
-        }
-    };
-    await walk(imageFolder);
-    return imageList;
+    const allFiles = await fs.readdir(imageFolder, { recursive: true });
+    return allFiles
+        .map(file => path.join(imageFolder, file))
+        .filter(file => imageExtensions.some(ext => file.toLowerCase().endsWith(ext)));
 }
 
 // Function to collect a list of all files with the specified extensions in the project folder
 async function getFilesByExtension(projectFolder, extensions) {
-    let fileList = [];
-    const walk = async (dir) => {
-        const files = await fs.readdir(dir, { withFileTypes: true });
-        for (const file of files) {
-            const filePath = path.join(dir, file.name);
-            if (file.isDirectory()) {
-                await walk(filePath);
-            } else if (extensions.some(ext => file.name.toLowerCase().endsWith(ext))) {
-                fileList.push(filePath);
-            }
-        }
-    };
-    await walk(projectFolder);
-    return fileList;
+    const allFiles = await fs.readdir(projectFolder, { recursive: true });
+    return allFiles
+        .map(file => path.join(projectFolder, file))
+        .filter(file => extensions.some(ext => file.toLowerCase().endsWith(ext)));
 }
 
 // Function to find image references in the specified files
