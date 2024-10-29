@@ -84,6 +84,6 @@ For each tenant the following information is displayed:
 * **Approved by** - Tenant ID and tenant name of the user which approved the migration.
 
 On hovering over a tenant row, you can see one of the following buttons according to the migration state:
-- **Add to queue** - To assign the tenant to the migration queue when it is in **Legacy measurement** state.
+- **Add to queue** - To assign the tenant to the migration queue when it is in **Legacy measurements** state.
 - **Cancel migration** - To remove the tenant from the migration queue when it is in **Queued** state. Note that if the progress has already started, it is not possible to resign from migration.
 - **Approve and finish migration** - To approve the migration when it is in **Verified** state. Note that no other migration will start if there is a tenant pending acceptance.
