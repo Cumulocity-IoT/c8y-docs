@@ -56,7 +56,8 @@ The migration of measurements can be cancelled when a tenant has the status **Qu
 |Migrated|no| Indicates that the migration of the measurements collection is done.|
 |Verifying|no| Indicates that the verification of the migrated data is in progress.|
 |Verified|yes| Indicates that all migration processes are completed and user approval is required.|
-|Completed|no|Indicates that the migration is completed and the legacy collection is removed in 7 days.|
+|Approved|no|Indicates that the migration is completed and the legacy collection will be removed in 7 days.|
+|Completed|no|Indicates that the migration is completed and the legacy collection is removed.|
 |Failed|no| Indicates that an error occurred during the migration process. The information provided in the error message should be forwarded together with the support ticket.|
 
 ### Description and progress monitoring {#description-and-progress-monitoring}
