@@ -79,7 +79,7 @@ For each tenant the following information is displayed:
 * **Parent tenant ID** - Parent tenant ID. 
 * **Status** - Current migration state for the given tenant.
 * **Requested date** - Date when the tenant will be added to the queue for migration.
-* **Requested by** - Tenant ID and tenant user requesting the migration.
+* **Requested by** - Tenant ID and name of the user who requested the migration.
 * **Approved date** - Date when the migration was approved by the administrator.
 * **Approved by** - Tenant ID and name of the user who approved the migration.
 
