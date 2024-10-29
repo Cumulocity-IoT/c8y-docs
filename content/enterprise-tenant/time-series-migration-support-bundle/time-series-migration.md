@@ -81,7 +81,7 @@ For each tenant the following information is displayed:
 * **Requested date** - Date when the tenant will be added to the queue for migration.
 * **Requested by** - Tenant ID and tenant user requesting the migration.
 * **Approved date** - Date when the migration has been approved by the administrator.
-* **Approved by** - tenant id and tenant name of the user which approved the migration.
+* **Approved by** - Tenant ID and tenant name of the user which approved the migration.
 
 On hovering over a tenant row, you can see one of the following buttons according to the migration state:
 - **Add to queue** - To assign the tenant to the migration queue when it is in **Legacy measurement** state.
