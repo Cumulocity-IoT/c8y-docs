@@ -39,7 +39,7 @@ Single devices are not managed in the Cockpit application. They are managed in t
 {{< c8y-admon-related >}}
 - [Getting started > Technical concepts > {{< product-c8y-iot >}}'s domain model](/concepts/domain-model/) for details on {{< product-c8y-iot >}}'s domain model.
 - [Device management > Device management application](/device-management-application/) for details on working with devices in {{< product-c8y-iot >}}.
-- Refer to the [{{< product-c8y-iot >}} Codex](https://styleguide.cumulocity.com/apps/codex/#/) for more information on developing applications in the {{< product-c8y-iot >}} environment. Moreover find various related tutorials in the [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}).
+- Refer to the [{{< product-c8y-iot >}} Codex](https://styleguide.cumulocity.com/apps/codex/#/) for more information on developing applications in the {{< product-c8y-iot >}} environment. Moreover find various related tutorials in the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}).
 {{< /c8y-admon-related >}}
 
 ### Asset hierarchy versus device hierarchy {#asset-hierarchy-versus-device-hierarchy}

@@ -157,4 +157,4 @@ example `C8Y_USER` for the `-U` flag.
 
 ### Next steps
 
-- Refer to the [{{< product-c8y-iot >}} Codex](https://styleguide.cumulocity.com/apps/codex/#/) for more information on developing applications in the {{< product-c8y-iot >}} environment. Moreover find various related tutorials in the [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}).
+- Refer to the [{{< product-c8y-iot >}} Codex](https://styleguide.cumulocity.com/apps/codex/#/) for more information on developing applications in the {{< product-c8y-iot >}} environment. Moreover find various related tutorials in the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}).

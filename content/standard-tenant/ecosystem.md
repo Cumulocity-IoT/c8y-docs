@@ -43,7 +43,7 @@ Note that for complete application management some additional permission types w
 - [Application enablement & solutions > Cockpit > Widgets collection > Applications](/cockpit/widgets-collection/#applications) for information on the "Applications" widget.
 - [Getting started > Technical concepts > Developing applications](/concepts/applications) for an overview on the basic concepts of applications in {{< product-c8y-iot >}}.
 - [Application enablement & solutions > Web SDK](/web/introduction/) for information on how to develop web applications on top of {{< product-c8y-iot >}} and how to [customize](/web/application-configuration) existing applications.
-- Refer to the [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}) for a tutorial on how to extend an existing application using the Web SDK.
+- Refer to the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) for a tutorial on how to extend an existing application using the Web SDK.
 - [Application enablement & solutions > Microservice SDK](/microservice-sdk/microservice-sdk-introduction/) for general aspects of using microservices on top of {{< product-c8y-iot >}} and information on developing and deploying microservices using our SDKs or the REST interface.
 - [Applications](https://{{< domain-c8y >}}/api/core/#tag/Applications) in the {{< openapi >}} for managing applications via REST.
 {{< /c8y-admon-related >}}
