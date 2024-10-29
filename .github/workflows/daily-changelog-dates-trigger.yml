@@ -1,0 +1,75 @@
+name: daily-changelogs-dates-trigger
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 00 19 * * *
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  get-component-details:
+    name: Get component details from helm charts
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: build-pipeline
+    outputs:
+      matrix: ${{ steps.component-details.outputs.matrix }}
+    steps:
+      - name: checkout docs repository
+        uses: actions/checkout@v4
+        with:
+          path: docs
+          fetch-depth: 1
+
+      - name: Creating github access token
+        id: token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+
+      - name: Checkout c8y-iot-build-pipeline repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.REPOSITORY }}
+          fetch-depth: 1
+          ref: ${{ vars.BRANCH }}
+          token: ${{ steps.token.outputs.token }}
+          path: pipeline
+
+      - name: Get component details from helm charts
+        id: component-details
+        run: |
+          buildartifacts=$(cat docs/data/buildartifact.json | jq '.options[].option' | xargs)
+          echo "[]" > output.json
+           for artifact in $buildartifacts ;
+           do
+               cat pipeline/clusters/helm_charts_data.json | jq --arg artifact "$artifact" '[to_entries[] | select(.value.component_name==$artifact)][0].value.zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com"]' > details.json
+               versionOfArtifact=$(cat details.json | jq '.version' | xargs)
+               timestamp=$(cat details.json | jq '.updated_at' | xargs)
+               rm details.json
+               if [[ $versionOfArtifact == 'null' ]]; then
+                   echo "$artifact is currently not deployed"
+               else
+                   echo "$artifact is currently deployed in version: $versionOfArtifact and was deployed at $timestamp"
+                   cat output.json | jq --arg artifact "$artifact" --arg version "$versionOfArtifact" --arg timestamp "$timestamp" '. += [{"component_name": $artifact, "component_version": $version, "component_update_date": $timestamp}]' > output.tmp
+                   mv output.tmp output.json
+               fi
+          done
+          echo "matrix=$(cat output.json | jq -c .)" >> $GITHUB_OUTPUT
+
+  trigger-update-changelog:
+    uses: ./.github/workflows/update-changelog-dates.yml
+    needs: [ get-component-details ]
+    strategy:
+      matrix:
+        include: ${{ fromJson(needs.get-component-details.outputs.matrix) }}
+    with:
+      version: ${{ matrix.component_version }}
+      component: ${{ matrix.component_name }}
+      date: ${{ matrix.component_update_date }}
+
+

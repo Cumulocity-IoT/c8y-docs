@@ -15,4 +15,4 @@ build_artifact:
 ticket: MTM-56126
 version: 10.20.131.0
 ---
-Previously, when creating an external ID, if the associated global ID did not exist, it would incorrectly create a managed object with the global ID automatically. This has changed - now if the global ID does not exist when creating an external ID, a 404 error will be returned instead of implicitly creating a new managed object. This behavior can be reverted from the Management tenant.
+Previously, when creating an external ID, if the associated global ID did not exist, it would incorrectly create a managed object with the global ID automatically. This has changed - now if the global ID does not exist when creating an external ID, a 404 error will be returned instead of implicitly creating a new managed object. This behavior can be reverted from the {{< management-tenant >}}.

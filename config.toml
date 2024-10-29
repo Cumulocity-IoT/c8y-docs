@@ -69,16 +69,16 @@ relativeURLs = true
     link = "https://empower.softwareag.com/"
 
   [[params.additionalResources]]
-    name = "Device Partner Ecosystem"
+    name = "Partner Devices"
     link = "https://ecosystem.cumulocity.com/devices/?filter_cumulocity_certified=yes"
 
   [[params.additionalResources]]
-    name = "Solutions Portal"
-    link = "https://iotsolutions.softwareag.com/"
+    name = "Partner Solutions"
+    link = "https://ecosystem.cumulocity.com/solution-partner-ecosystem-portal/"
 
   [[params.additionalResources]]
     name = "Learning Portal"
-    link = "https://learn.softwareag.com/totara/dashboard/index.php"
+    link = "https://cumulocity.moodlecloud.com/"
 
   [[params.additionalResources]]
     name = "Product Support"

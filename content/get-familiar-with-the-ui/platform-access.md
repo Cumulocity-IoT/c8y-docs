@@ -77,7 +77,7 @@ The cookie banner is turned on by default on the {{< product-c8y-iot >}} public 
 
 
 {{< c8y-admon-info >}}
-If you have enabled functional cookies you can opt-out from the product experience tracking later on via the **User settings** dialog, see [User options and settings](/getting-started/user-settings/).
+If you have enabled functional cookies you can opt-out from the product experience tracking later on via the **User settings** dialog, see [User options and settings](/get-familiar-with-the-ui/user-settings/).
 {{< /c8y-admon-info >}}
 
 Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between {{< product-c8y-iot >}} applications, as the {{< product-c8y-iot >}} platform will request you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.

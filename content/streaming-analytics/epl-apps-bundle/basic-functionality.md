@@ -295,7 +295,7 @@ you must either change the `FROM` lines in the Dockerfile appropriately
 
 You can use the Apama EPL Apps Tools on GitHub to script uploads of your EPL apps and manage them for  CI/CD (continuous integration and continuous delivery) use cases. This tooling also provides extensions to the PySys test framework to allow you to simply write tests for your EPL apps and to run them automatically.
 
-Apama EPL Apps Tools is available from [https://github.com/SoftwareAG/apama-eplapps-tools](https://github.com/SoftwareAG/apama-eplapps-tools). See the [EPL Apps Tools documentation](https://open-source.softwareag.com/apama-eplapps-tools/) for detailed information.
+Apama EPL Apps Tools is available from [https://github.com/Cumulocity-IoT/apama-eplapps-tools](https://github.com/Cumulocity-IoT/apama-eplapps-tools). See the [EPL Apps Tools documentation](https://cumulocity-iot.github.io/apama-eplapps-tools/) for detailed information.
 
 For more information on PySys, see the [API Reference for Python]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ApaDoc_pydoc_documentation.html) that you can access from the Apama documentation.
 

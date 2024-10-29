@@ -1,17 +1,15 @@
 ---
+weight: 30
 title: Device management
-weight: 40
 ---
 
-{{< product-c8y-iot >}} provides extensive device management for fully certified devices. This includes:
+Effectively managing devices is a critical yet often overlooked aspect of deploying IoT solutions. Without proper device management in place, it will become increasingly difficult to keep your devices healthy and up-to-date over time, leading to security risks, operational failures, and increased maintenance costs. This is especially true once you start scaling up your fleet of devices as well as adding new functionalities and thereby complexity to your deployment.
 
-* Hardware and modem information.
-* Connection monitoring.
-* Centralized fault management and service level monitoring.
-* Configuration management.
-* Software and firmware management.
-* Graphs of device statistics.
-* Frequently used remote controls (such as restart button and switches).
-* Troubleshooting features such as events list and operations queue.
+Connecting equipment to the internet requires secure and robust device management practices. {{< product-c8y-iot >}} greatly reduces the complexity and time required to manage a heterogeneous fleet of connected devices across its lifecycle through its comprehensive device management features:
 
-The level of depth in device management may depend on device features (for example if a device does not support remote firmware upgrade, it will also not be available through {{< product-c8y-iot >}}). For interfacing devices not yet certified with {{< product-c8y-iot >}}, the [fragment library](/device-integration/fragment-library/) and [Device integration](/device-integration/introduction) are publicly available.
+- **[Device onboarding](/device-management-application/registering-devices/)**: Register and integrate any number of devices in just one go.
+- **Over-the-air (OTA) [firmware](/device-management-application/managing-device-data/#managing-firmware) and [software](/device-management-application/managing-device-data/#managing-software) updates**: Keep your devices secure and up to date by efficiently rolling out the latest available software or firmware version.
+- **[Configuration management](/device-management-application/managing-device-data/#managing-configurations)**: Easily change the settings of your devices by applying new configurations.
+- **[Connection](/device-management-application/monitoring-and-controlling-devices/#connection-monitoring) and [connectivity](/device-management-application/connectivity/) monitoring**: Quickly identify devices that stopped communicating and identify the underlying issue.
+- **[Remote troubleshooting](/cloud-remote-access/cra-general-aspects/)**: Use a set of tools to resolve identified issues and minimize downtimes.
+- **[Device replacement](/device-management-application/viewing-all-devices/#to-replace-a-device)**: Replace your physical devices without loosing the data history.

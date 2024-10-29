@@ -22,7 +22,7 @@ pipeline {
   stages {
     stage('Checkout') {
             steps {
-                git branch: "${params.BRANCH}", credentialsId: "jenkins-master", url:'git@github.com:SoftwareAG/c8y-docs.git'
+                git branch: "${params.BRANCH}", credentialsId: "Jenkins_ssh_ghec", url:'git@github.com:CumulocityIoT/c8y-docs.git'
             }
         }
     stage('Build') {

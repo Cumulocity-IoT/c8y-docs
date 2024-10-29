@@ -18,7 +18,7 @@ Subscriptions may use a wildcard value (`*`) for the API selector, indicating th
 If the API selector is omitted from a subscription request, it is treated as equivalent to using the wildcard value.
 
 Currently, a tenant context subscription using the wildcard API selector will deliver updates from a subset of the available APIs.
-See the Notifications 2.0 subscription [REST API documentation](https://cumulocity.com/api/core/#operation/postNotificationSubscriptionResource) for details of the current tenant context subscription behaviour.
+See the Notifications 2.0 subscription [REST API documentation](https://cumulocity.com/api/core/#operation/postNotificationSubscriptionResource) for details on the current tenant context subscription behaviour.
 
 In future, such subscriptions will also deliver updates from the `operations` API.
 This applies to subscriptions that were created before the change is enabled, as well as new subscriptions.
@@ -46,6 +46,6 @@ To avoid disruption, application developers should either:
 before this change is enabled.
 
 
-The change will be enabled in the {{< product-c8y-iot >}}  CD release line no earlier than January 15, 2025.
+The change will be enabled in the {{< product-c8y-iot >}}  CD deployments no earlier than January 15, 2025.
 It will also be included in the 2025 yearly release.
 A further announcement will be published when the change is enabled.

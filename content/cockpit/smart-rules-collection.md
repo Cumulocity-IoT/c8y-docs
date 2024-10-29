@@ -25,7 +25,9 @@ In certain rule parameters, various trigger fields can be used as variables, see
 If an alarm is created, an SMS is sent.
 
 {{< c8y-admon-req >}}
-This rule is only available if your tenant has a configured SMS provider.
+This smart rule is only available if:
+- Your tenant has configured an SMS provider.
+- Your user has a READ permission for the permission type "Option management".
 {{< /c8y-admon-req >}}
 
 **Parameters**
@@ -155,7 +157,9 @@ For details on enabling/disabling a smart rule, see <a href="/cockpit/smart-rule
 If an alarm is created, sends email or SMS.
 
 {{< c8y-admon-req >}}
-This rule is only available if your tenant has a configured SMS provider.
+This smart rule is only available if:
+- Your tenant has configured an SMS provider.
+- Your user has a READ permission for the permission type "Option management".
 {{< /c8y-admon-req >}}
 
 **Parameters**
