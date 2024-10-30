@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Acivating user switch reworked.
+title: Rework user switch activation
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
