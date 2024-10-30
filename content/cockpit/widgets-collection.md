@@ -6,7 +6,7 @@ sector:
   - app_enablement
 ---
 
-The Cockpit application includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed.
+The Cockpit application includes pre-set widget types. Each widget type provides different parameters to configure and different data to be displayed.
 
 
 {{< c8y-admon-related >}}
@@ -178,6 +178,8 @@ At the top right of the data point list, an **Auto scroll** toggle determines th
 * Auto-scroll off - When a new measurement arrives, the display does not change and the table still shows the same snippet of data.
 
 ![Auto-scroll toogle](/images/users-guide/cockpit/cockpit-data-point-table-widget-with-auto-scroll.png)
+
+You can also export data from the data point table. For more information see [Exports integration with data based features](/cockpit/exports-bundle/working-with-exports).
 
 ### Event list {#event-list}
 
