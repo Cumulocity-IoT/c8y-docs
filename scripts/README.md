@@ -23,7 +23,7 @@
     node Finding_unused_images.js
     ```
 
-    **Note:** Ensure Nodejs is installed.
+    **Note:** Ensure Node.js is installed with version 20 and more.
 
 - After the script executes, a file named `unused_images.csv` will be generated. This file contains a list of all the unused images in the project.
 
