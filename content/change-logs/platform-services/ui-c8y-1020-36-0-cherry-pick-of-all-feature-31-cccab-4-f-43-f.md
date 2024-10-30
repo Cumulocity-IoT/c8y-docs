@@ -1,6 +1,6 @@
 ---
 date: ""
-title: cherry-pick of all feature: 31cccab4f43f2bcc51a132dcb402b1a… (#7309)
+title: Logging out all users when deleting/changing global roles.
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-56510
 version: 1020.36.0
 ---
-cherry-pick of all feature: 31cccab4f43f2bcc51a132dcb402b1a… (#7309)
+When deleting or modifying a global role, the administrator has the option to log out all users assigned to that role.
