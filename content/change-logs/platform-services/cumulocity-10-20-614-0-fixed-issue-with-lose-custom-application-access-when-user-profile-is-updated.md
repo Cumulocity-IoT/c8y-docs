@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61368
 version: 10.20.614.0
 ---
-Fixed an issue where a user's custom applications were cleared when other fields in a user profile were updated. 
+Fixed an issue where the custom applications in a user profile were cleared when other fields in the user profile were updated. 
