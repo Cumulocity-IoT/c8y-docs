@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3875
 version: 1021.0.0
 ---
-Acivating user switch reworked.
+To simplify the user experience when switching between users, the user switch activation has been reworked. Previously, the user had to manually activate the user switch in a separate step after selecting the user to switch to. Now, the user switch is automatically activated when selecting the user from the user switch dropdown menu. This change simplifies the user switching process and makes it more intuitive for users.
