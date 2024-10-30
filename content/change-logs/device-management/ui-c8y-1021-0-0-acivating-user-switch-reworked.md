@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Activating user in the Device credentials tab fixed
+title: Activating user in the Device credentials tab
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
