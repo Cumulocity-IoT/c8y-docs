@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Rework user switch activation
+title: Activating user in the Device credentials tab fixed
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
