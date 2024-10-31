@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Device name goes missing when switching to smart rule tab (#7206)
+title: Device name missing when switching to smart rule tab
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60471
 version: 1021.0.0
 ---
-Device name goes missing when switching to smart rule tab (#7206)
+Device name in page title was missing when switching to 'Smart rules' tab. It is displayed properly now.
