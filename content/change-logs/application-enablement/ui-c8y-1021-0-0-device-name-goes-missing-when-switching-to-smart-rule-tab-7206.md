@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60471
 version: 1021.0.0
 ---
-Device name in page title was missing when switching to 'Smart rules' tab. It is displayed properly now.
+Device name in Cockpit page title was missing when switching to 'Smart rules' tab. It is displayed properly now.
