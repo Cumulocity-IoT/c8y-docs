@@ -54,7 +54,7 @@ async function processFile(filePath: string): Promise<boolean> {
     return false;
   }
 
-  data.version = originalVersion
+  data.version = originalVersion;
   data.date = date;
   const newContent = matterStringify({ content }, data);
   await writeFile(filePath, newContent, { encoding: "utf-8" });
