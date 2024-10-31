@@ -34,7 +34,7 @@ async function processFile(filePath: string): Promise<boolean> {
     console.warn("No version set in: ", filePath, "Skipping..");
     return false;
   }
-  originalVersion = data.version;
+  const originalVersion = data.version;
 
   if (!valid(data.version) && data.version.split('.').length==4) {
     data.version=toSemverFormat(data.version);
