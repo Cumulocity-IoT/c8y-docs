@@ -1,6 +1,6 @@
 ---
 title: "Terms and conditions"
-icon: "c8y-icon c8y-icon-notification"
+icon: "dlt-c8y-icon-gavel"
 weight: 80
 svg: '<svg
   viewBox="0 0 881 577"
@@ -469,4 +469,4 @@ svg: '<svg
 </svg>'
 ---
 
-Find a collection of various legal documents, our Service Level Agreements, and documentation-related details.
+Find a collection of various legal documents, such as our Privacy Notice and Imprint, and documentation-related details.
