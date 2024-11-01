@@ -70,7 +70,7 @@ When designing an Apama solution to be deployed within any form of {{< product-c
 	* Engine Management API, Event Service API, Scenario Service API.
 	* Connecting to adapters running out-of-process in an IAF.
 	* Dashboards (provided in-the-box with Apama).
-	* Debugging from {{< apama-plugin >}}. Instead, debug your app running in a local correlator.
+	* Debugging from {{< apama-plugin-for-eclipse >}}. Instead, debug your app running in a local correlator.
 	* Correlator REST interface.
 * To reduce both the memory usage of an application during startup and the application's startup time,
   ensure the application is completely initialized before injecting monitors that automatically unload,
@@ -92,6 +92,6 @@ When designing an Apama solution to be deployed within any form of {{< product-c
 	* A \*.mon file must not contain a package statement (to do so is an error).
 	* It is not possible to share event definitions between separate \*.mon files.
 	* It is not possible to use Apama queries.
-	* You can only use the bundles listed in [Developing apps with {{< apama-plugin >}}](/streaming-analytics/epl-apps/#apama-plugin).
+	* You can only use the bundles listed in [Developing apps with {{< apama-plugin-for-eclipse >}}](/streaming-analytics/epl-apps/#apama-plugin).
 
 All of these restrictions are implemented to ensure the smooth and secure operation of EPL apps within {{< product-c8y-iot >}}.
