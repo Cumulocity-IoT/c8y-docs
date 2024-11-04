@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Enhanced time series support
+title: Enhanced time series configuration
 layout: redirect
 helpcontent:
   - label: enhanced-time-series-support

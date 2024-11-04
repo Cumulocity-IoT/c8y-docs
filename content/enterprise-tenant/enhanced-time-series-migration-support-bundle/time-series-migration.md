@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Time series migration
+title: Enhanced time series migration
 layout: redirect
 ---
 
