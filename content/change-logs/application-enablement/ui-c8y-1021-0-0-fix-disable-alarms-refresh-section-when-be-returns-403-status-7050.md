@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix: disable alarms refresh section when BE returns 403 status (#7050)
+title: Disable alarms refresh button when user lacks access to any alarms
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59579
 version: 1021.0.0
 ---
-fix: disable alarms refresh section when BE returns 403 status (#7050)
+The alarms refresh section is now disabled when users lack permission to refresh alarms.
