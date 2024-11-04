@@ -13,7 +13,7 @@ Tenant administrator users can schedule their tenant or any subtenant for time s
 * better performance for measurements queries,
 * less storage consumption.
 
-Note that certain limitations are induced in the API which are described in [Enhanced time series configuration](#enhanced-time-series-configuration).
+Note that certain limitations are induced in the API which are described in [General configuration](#general-configuration).
 
 {{<c8y-admon-req>}}
 To have this functionality available the tenant must be subscribed to the Timeseries-migration microservice.
