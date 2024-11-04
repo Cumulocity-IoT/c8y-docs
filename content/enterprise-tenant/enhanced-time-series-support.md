@@ -1,5 +1,5 @@
 ---
-title: Enhanced time series migration support
+title: Enhanced time series support
 layout: bundle
 outputs:
   - html
