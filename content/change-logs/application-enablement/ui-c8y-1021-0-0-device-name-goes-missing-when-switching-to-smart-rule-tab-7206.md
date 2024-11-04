@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Device name missing when switching to smart rule tab
+title: Device name displayed properly when switching to the Smart rules tab
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60471
 version: 1021.0.0
 ---
-Device name in Cockpit page title was missing when switching to 'Smart rules' tab. It is displayed properly now.
+In the Cockpit application, when switching to the **Smart rules** tab of a device in a group, the device name was missing in the page title. This issue has been fixed and the device name is displayed properly now.
