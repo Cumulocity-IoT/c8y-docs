@@ -1,6 +1,6 @@
 ---
-title: "About this documentation"
-icon: "c8y-icon c8y-icon-notification"
+title: "Terms and conditions"
+icon: "dlt-c8y-icon-gavel"
 weight: 80
 svg: '<svg
   viewBox="0 0 881 577"
@@ -469,4 +469,4 @@ svg: '<svg
 </svg>'
 ---
 
-Find details on the scope of the {{< product-c8y-iot >}} product documentation and on legal information.
+Find a collection of various legal documents, such as our Privacy Notice and Imprint, and documentation-related details.

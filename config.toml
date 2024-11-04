@@ -87,5 +87,5 @@ relativeURLs = true
 
 # Customize
   [params.footer]
-    copyright = "Software AG, Darmstadt, Germany and/or Software AG USA Inc., Reston, VA, USA, and/or its subsidiaries and/or its affiliates and/or their licensors. | <a href='https://www.softwareag.com/en_corporate/impressum.html'> Imprint</a> | <a href='https://www.softwareag.com/en_corporate/privacy.html'>Privacy policy</a>"
+    copyright = "Cumulocity GmbH | <a href='/legal-notices/imprint/'> Imprint</a> | <a href='/legal-notices/privacy-notice/'>Privacy notice</a>"
     c8ylink = "https://www.softwareag.cloud/site/product/cumulocity-iot.html"
