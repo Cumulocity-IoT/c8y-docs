@@ -59,12 +59,12 @@ The export functionality integrated in a widget offers you a number of export mo
 
 #### Export for data points with over one million records {#export-for-data-points-with-over-one-million-records}
 
-When you have selected the **Full** export mode for a data point that contains more than one million records (our processing limit), the download option is disabled. To proceed with the export, you must reduce the number of records by narrowing the time range. Until you have done this, you see the following message:
-
-<br>![Export exceeded one million records](/images/users-guide/cockpit/cockpit-exports-one-million-for-single-data-point.png)<br>
+When you have selected the **Full** export mode for a data point that contains more than one million records (our processing limit), the download option is disabled. To proceed with the export, you'll need to reduce the number of records by narrowing the time range. Until the number is reduced, you will see a warning message.
 
 If you select multiple data points for export in the **Full** mode and one or more individual data points exceed the one million record limit (per data point), narrow the time range to reduce the number. Data points within the limit are not affected.
 
-In this case, you will see a more detailed informational message explaining how many data points are affected and why:
+In this case, you will see a detailed informational message describing how many data points are affected and why. The message is dynamic and may include the following details:
 
-<br>![Export exceeded one million records](/images/users-guide/cockpit/cockpit-exports-one-million-for-single-data-point-with-other-data-points.png)<br>
+- **Downloadable item count**: data points that can be exported directly and downloaded in a single file from the browser.
+- **Email deliverable item count**: data points that require further processing. These files will be sent to you in separate emails once ready, which may take some time.
+- **Non-retrievable item count**: data points exceeding 1,000,000 records, which is the processing limit. To export this data, narrow down the date range, as these files cannot be downloaded or sent via email if the limit is exceeded.
