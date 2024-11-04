@@ -1,7 +1,11 @@
 ---
 weight: 20
-title: Enhanced time series migration
+title: Migration process description
 layout: redirect
+helpcontent:
+  - label: enhanced-time-series-support
+    title: Time series migration
+    content: "The **Time series migration** page displays the migration status for the current tenant and its subtenants. From this page, you can schedule the selected tenants for migration. Migrated tenants require user approval and their legacy measurement collections are removed after seven days.\nNote that you might observe difficulties during migration if the DataHub application is subscribed. To learn more refer to [Analytics > DataHub](https://cumulocity.com/docs/datahub/datahub-overview/)."
 ---
 
 Tenant administrator users can schedule their tenant or any subtenant for time series collection migration. The time series format of measurements brings the following benefits:
@@ -9,7 +13,7 @@ Tenant administrator users can schedule their tenant or any subtenant for time s
 * better performance for measurements queries,
 * less storage consumption.
 
-Note that certain limitations are induced in the API which are described in [Enhanced time series support](#enhanced-time-series-support).
+Note that certain limitations are induced in the API which are described in [Enhanced time series configuration](#enhanced-time-series-configuration).
 
 {{<c8y-admon-req>}}
 To have this functionality available the tenant must be subscribed to the Timeseries-migration microservice.
@@ -70,7 +74,7 @@ Here you can see the following information:
 - **Tenant** - Tenant name of the tenant the migration process is triggered for.
 - **Requested by** - Name of the user that started the migration.
 - **Migration range** - Date range. Start date is the date of the oldest measurement to be migrated and end date is the date of the newest measurement. This is also the point in time when the migration has started.
-  **Migration status** - This bar displayed at the right has various functions. Depending on the state it provides either visual information on the current state of the ongoing process or allows to control certain process states. For details of states, see [Migration states](/#migration-states).
+  **Migration status** - This bar displayed at the right has various functions. Depending on the state it provides either visual information on the current state of the ongoing process or allows to control certain process states. For details of states, see [Migration states](#migration-states).
 
 For each tenant the following information is displayed:
  
