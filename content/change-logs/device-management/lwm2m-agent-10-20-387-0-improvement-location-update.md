@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-ggH2M4hf3
     label: lwm2m-agent
 ticket: DM-3915
-version: 1020.386.0
+version: 10.20.386.0
 ---
 
 In earlier LWM2M agent versions, device location updates occurred only when the device provided complete location object data. 
