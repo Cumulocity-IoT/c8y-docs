@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix: do not remove scripts from the svg in the scada widget when none option is set (#7397) (#7463)
+title: script tags are preserved in SCADA widget when 'none' option is selected
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61415
 version: 1021.0.2
 ---
-fix: do not remove scripts from the svg in the scada widget when none option is set (#7397) (#7463)
+SCADA widget preserves script tags when 'none' option is selected.
