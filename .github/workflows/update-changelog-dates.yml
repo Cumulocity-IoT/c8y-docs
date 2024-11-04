@@ -101,11 +101,20 @@ jobs:
 
     - name: Git push
       if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
+      id: git-push
       run: |
+        if  [[ -z $(git ls-remote --heads origin "${{ steps.branch-name.outputs.branch-name }}") ]];
+        then
         git push -u origin "${{ steps.branch-name.outputs.branch-name }}"
+        echo "uniqueBranchFlag=true" >> $GITHUB_OUTPUT
+        else
+        echo "::warning :: ${{ steps.branch-name.outputs.branch-name }} branch already exists, no new branch created for this change"
+        echo "uniqueBranchFlag=false" >> $GITHUB_OUTPUT
+        fi
+        
 
     - name: Create pull request
-      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
+      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 && steps.git-push.outputs.uniqueBranchFlag == 'true' }}
       env: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |

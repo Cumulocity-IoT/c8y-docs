@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Delete popup now closing correctly when hitting another delete button in the bookmark edit view
+date: '2024-10-31'
+title: >-
+  Delete popup now closing correctly when hitting another delete button in the
+  bookmark edit view
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
