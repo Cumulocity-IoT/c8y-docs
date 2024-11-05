@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1625"
 version: "1.2.0"
 ---
-A new asset properties widget module has been added to the DTM plugins component, which includes official DTM plugins and enables integration with both default and custom web applications. This module allows users to create multiple asset property widgets.
+A new asset properties widget module has been added to the DTM plugins component. This module allows users to create multiple asset property widgets with the selected asset or device data and displays the same in the widget. User can choose what properties to display and also has an option to display custom label for each property.
