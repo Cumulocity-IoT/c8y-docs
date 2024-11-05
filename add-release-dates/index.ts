@@ -34,19 +34,16 @@ async function processFile(filePath: string): Promise<boolean> {
     console.warn("No version set in: ", filePath, "Skipping..");
     return false;
   }
+  const originalVersion = data.version;
 
   if (!valid(data.version) && data.version.split('.').length==4) {
-    const parts = data.version.split('.');
-    const normalizedVersion = `${parts[0]}${parts[1]}.${parts[2]}.${parts[3]}`;
-    console.warn("Non-semantic version: ", data.version ,"converted to semantic version format: ", normalizedVersion);
-    data.version=normalizedVersion ;
+    data.version=toSemverFormat(data.version);
   }
 
   if(!valid(data.version)) {
     console.debug("Version in file: ",filePath,"is not a valid semver. Skipping..");
     return false;
   }
-
 
   if (lt(version, data.version)) {
     console.debug(
@@ -56,6 +53,8 @@ async function processFile(filePath: string): Promise<boolean> {
     );
     return false;
   }
+
+  data.version = originalVersion;
   data.date = date;
   const newContent = matterStringify({ content }, data);
   await writeFile(filePath, newContent, { encoding: "utf-8" });
@@ -92,4 +91,11 @@ async function processFiles() {
   console.log(
     `Updated ${updatedFiles} out of ${changeLogFilesOfComponent.length} files for component ${component}.`
   );
+}
+
+function toSemverFormat(version: string){
+    const versionParts = version.split('.');
+    const semanticVersion = `${versionParts[0]}${versionParts[1]}.${versionParts[2]}.${versionParts[3]}`;
+    console.debug("Non-Semantic version format:",version,"converted to semantic format",semanticVersion,"for processing")
+    return semanticVersion
 }

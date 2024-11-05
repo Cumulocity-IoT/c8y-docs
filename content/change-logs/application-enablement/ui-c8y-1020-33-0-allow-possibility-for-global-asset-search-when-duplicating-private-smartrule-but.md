@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-10-31'
 title: Allow global asset search when duplicating a local smart rule
 product_area: Application enablement & solutions
 change_type:
