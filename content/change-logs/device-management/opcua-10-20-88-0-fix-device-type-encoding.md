@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2024-10-24'
 title: Special character encoding in OPC UA device types is now available
 product_area: Device management & connectivity
 change_type:

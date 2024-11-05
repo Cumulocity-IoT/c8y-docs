@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-10-31'
 title: Typeahead control validation fixed when using JSON path in 'displayProperty'
 product_area: Application enablement & solutions
 change_type:

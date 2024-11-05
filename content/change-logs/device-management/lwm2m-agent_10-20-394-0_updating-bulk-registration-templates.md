@@ -1,5 +1,5 @@
 ---
-date:
+date: '2024-10-31'
 title: Updated LWM2M bulk registration templates
 product_area: Device management & connectivity
 change_type:
