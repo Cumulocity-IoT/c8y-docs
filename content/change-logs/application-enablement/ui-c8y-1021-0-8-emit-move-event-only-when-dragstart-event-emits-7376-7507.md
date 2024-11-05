@@ -1,6 +1,6 @@
 ---
 date: ""
-title: emit move event only when dragstart event emits (#7376) (#7507)
+title: The map widget's center coordinate inputs in the configuration should not trigger move events when modified
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58182
 version: 1021.0.8
 ---
-emit move event only when dragstart event emits (#7376) (#7507)
+The map widget's center coordinate inputs in the configuration should not trigger move events when modified. This issue was leading to a situation where a move event was emitted, which resulted in updates to the center coordinate inputs.
