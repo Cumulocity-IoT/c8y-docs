@@ -14,4 +14,4 @@ build_artifact:
 ticket: PAM-35075
 version: 25.298.0
 ---
-When using a large number of client connections with the client.numClients tenant option, there was a potential deadlock when a large number of requests are waiting to be flushed. This has been fixed.
+When using a large number of client connections with the `client.numClients` tenant option, there was a potential deadlock when a large number of requests were waiting to be flushed. This has been fixed.
