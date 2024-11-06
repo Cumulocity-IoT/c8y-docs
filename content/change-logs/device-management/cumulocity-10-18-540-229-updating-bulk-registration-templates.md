@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2024-11-04
 title: Updated LWM2M bulk registration templates
 product_area: Device management & connectivity
 change_type:
