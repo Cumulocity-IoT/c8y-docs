@@ -1,5 +1,5 @@
 ---
-date:
+date: '2024-10-31'
 title: LWM2M location data handling has been improved
 change_type:
   - value: change-2c7RdTdXo4
