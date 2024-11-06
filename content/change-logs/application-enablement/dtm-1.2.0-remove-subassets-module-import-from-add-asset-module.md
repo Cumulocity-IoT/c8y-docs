@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1597"
 version: "1.2.0"
 ---
-The SubassetsModule is imported into the AddAssetModule, making it functional even when its plugin is not installed in the DTM. This unintended behavior occurs because installing the AddAssetModule implicitly includes the SubassetsModule.
+The AddAssetModule was automatically importing the SubassetsModule, creating an unwanted dependency. This caused the SubassetsModule to remain active even after its plugin was uninstalled from DTM. With this change we have removed the automatic import of SubassetsModule from AddAssetModule.
