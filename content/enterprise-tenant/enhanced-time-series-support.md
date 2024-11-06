@@ -1,6 +1,5 @@
 ---
-title: Time series migration support
-icon: "c8y-icon c8y-icon-cumulocity-iot"
+title: Enhanced time series support
 layout: bundle
 outputs:
   - html
