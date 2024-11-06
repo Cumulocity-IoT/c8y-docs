@@ -149,7 +149,7 @@ To create a root asset model follow a bottom-up approach by defining all child a
 
 This root asset model can then be used to create an asset hierarchy, which then defines all the assets, subassets, asset properties and devices in the DTM application.
 
-As a result you can use the asset hierarchy in other {{< product-c8y-iot >}} applications, such as the {{< product-c8y-iot >}} OEE or the {{< product-c8y-iot >}} Machine Portal.
+As a result you can use the asset hierarchy in other {{< product-c8y-iot >}} applications, such as the {{< product-c8y-iot >}} Cockpit.
 
 ### To create an asset model for the entire hierarchy {#to-create-an-asset-model-for-the-entire-hierarchy}
 

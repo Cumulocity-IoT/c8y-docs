@@ -13,4 +13,4 @@ build_artifact:
     label: CumulocityIoTEdge-Appliance
 version: 10.18.0
 ---
-The Cumulocity IoT Edge Appliance VM version of the 2024 release is identical to the version of the 10.18 release. For details on the release see the [10.18 release notes](https://cumulocity.com/releasenotes/release-10-18-0/edge-10-18-0/). You can find the documentation for **Cumulocity IoT Edge Appliance VM** at https://cumulocity.com/docs/edge/edge-introduction/.
+The {{< product-c8y-iot >}} Edge Appliance VM version of the 2024 release is identical to the version of the 10.18 release. For details on the release see the [10.18 release notes](https://cumulocity.com/releasenotes/release-10-18-0/edge-10-18-0/). You can find the documentation for **{{< product-c8y-iot >}} Edge Appliance VM** at https://cumulocity.com/docs/edge/edge-introduction/.
