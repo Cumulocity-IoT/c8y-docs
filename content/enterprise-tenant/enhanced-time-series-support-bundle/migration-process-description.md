@@ -3,7 +3,7 @@ weight: 20
 title: Migration process description
 layout: redirect
 helpcontent:
-  - label: enhanced-time-series-support
+  - label: migration-process-description
     title: Time series migration
     content: "The **Time series migration** page displays the migration status for the current tenant and its subtenants. From this page, you can schedule the selected tenants for migration. Migrated tenants require user approval and their legacy measurement collections are removed after seven days.\nNote that you might observe difficulties during migration if the DataHub application is subscribed. To learn more refer to [Analytics > DataHub](https://cumulocity.com/docs/datahub/datahub-overview/)."
 ---
