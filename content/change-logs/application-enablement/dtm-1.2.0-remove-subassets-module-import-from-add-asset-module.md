@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Remove SubassetsModule Import from AddAssetModule"
+title: "Removed unintended SubassetsModule import from AddAssetModule"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
