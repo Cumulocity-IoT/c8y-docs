@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Remove ILabels interface (#7239)
+title: Remove deprecated ILabels interface
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-34821
 version: 1021.0.0
 ---
-Remove ILabels interface (#7239)
+The ILabels interface has been removed. Use ModalLabels interface instead.
