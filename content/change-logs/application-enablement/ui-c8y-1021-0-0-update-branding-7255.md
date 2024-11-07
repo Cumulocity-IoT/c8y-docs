@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Update branding colors and logo
+title: Updated branding colors and logo
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
