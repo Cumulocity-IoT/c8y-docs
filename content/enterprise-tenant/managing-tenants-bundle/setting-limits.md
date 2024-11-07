@@ -11,14 +11,14 @@ helpcontent:
 
 The **Limits** tab allows you to view and edit resource limits for the tenant, as well as to assign an "External reference" and to enable/disable the Gainsight product experience tracking.
 
-### To limit subtenant request rate {#to-limit-subtenant-request-rate}
+### To limit the subtenant request rate {#to-limit-the-subtenant-request-rate}
 
 Platform administrators can limit the request rate of each subtenant via the following properties:
 
-* **Limit HTTP queue**: limit of the HTTP request queue for the tenant.
-* **Limit HTTP requests**: limit of the HTTP requests for the tenant per second.
-* **Limit stream queue**: limit of the MQTT request queue for the tenant.
-* **Limit stream requests**: limit of the MQTT requests for the tenant per second.
+* **Limit HTTP queue**: Limit of the HTTP request queue for the tenant.
+* **Limit HTTP requests**: Limit of the HTTP requests for the tenant per second.
+* **Limit stream queue**: Limit of the MQTT request queue for the tenant.
+* **Limit stream requests**: Limit of the MQTT requests for the tenant per second.
 
 The request throttling mechanism is only enabled when both HTTP properties (**Limit HTTP queue** and **Limit HTTP requests**) are configured. If one of the values is omitted, the other one is ignored and throttling remains disabled.
 
@@ -28,7 +28,7 @@ Rate limiting can be an effective countermeasure against threats like brute forc
 
 You can also customize the buffer size for the CEP queue and the data broker queue for a particular tenant. This can be done from the {{< management-tenant >}}. Contact your Operations team on how to configure this setting according to your needs.
 
-### To limit subtenant device number {#to-limit-subtenant-device-number}
+### To limit the subtenant device number {#to-limit-the-subtenant-device-number}
 
 Platform administrators can limit the count of concurrently registered root devices or simply all devices (including child devices) via the property "Limit number of devices".
 
@@ -36,7 +36,7 @@ You can view the peak number of concurrently registered devices, root devices an
 
 ### Product experience tracking {#product-experience-tracking}
 
-In the parent tenant, use the checkbox **Enable Gainsight product experience tracking** to enable/disable the product experience tracking through the [Gainsight PX](https://www.gainsight.com/product-experience/) product experience software for the given child tenant.
+In the parent tenant, check the checkbox **Enable Gainsight product experience tracking** to enable/disable the product experience tracking through the [Gainsight PX](https://www.gainsight.com/product-experience/) product experience software for the given child tenant.
 
 At the tenant level, you can disable the product experience tracking by Gainsight by turning off the cookie banner on the **Branding** page. For more information, see [Branding](/enterprise-tenant/customization/#branding).
 
