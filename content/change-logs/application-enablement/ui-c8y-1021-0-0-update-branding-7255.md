@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61407
 version: 1021.0.0
 ---
-update branding (#7255)
+As part of ongoing efforts to modernize the look and feel of the application, the branding colors and logo have been updated. The previous color scheme and logo were outdated and did not align with current design trends. With this change, users will notice a refreshed visual appearance throughout the application, featuring a new color palette and an updated logo. This update brings a more contemporary and professional look to the application without impacting existing functionality or user workflows.
