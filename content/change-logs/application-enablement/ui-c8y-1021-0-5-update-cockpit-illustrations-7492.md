@@ -1,6 +1,6 @@
 ---
 date: ""
-title: update Cockpit illustrations (#7492)
+title: Update illustrations in Cockpit
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
