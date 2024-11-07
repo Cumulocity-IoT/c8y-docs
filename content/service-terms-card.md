@@ -1,11 +1,11 @@
 ---
-title: Terms and conditions
-bundlefolder: terms-and-conditions
+title: Service terms
+bundlefolder: service-terms
 icon: "c8y-icon c8y-icon-notification"
 type: root
 layout: redirect
 sector:
-  - about_website
+  - terms_conditions
 weight: 5
 ---
 

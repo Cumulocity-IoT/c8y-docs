@@ -2,7 +2,7 @@
 title: Service Quotas
 layout: bundle
 sector:
-  - about_website
+  - terms_conditions
 weight: 100
 aliases:
   - /concepts/limits/

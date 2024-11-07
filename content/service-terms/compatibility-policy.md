@@ -2,7 +2,7 @@
 title: Compatibility policy
 layout: bundle
 sector:
-  - about_website
+  - terms_conditions
 aliases:
   - /concepts-introduction/
   - /concepts/compatibility-policy/
