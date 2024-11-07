@@ -32,7 +32,7 @@ You can also follow the events raised for the Edge CR by running the command bel
 kubectl get events -n c8yedge --field-selector involvedObject.name=c8yedge --watch
 ```
 
-The **Events** section in the output of the `describe edge` command specifies the installation progress and the **Status** section displays the generation of the Edge CR which is being installed and its current state. Once the installation succeeds, the **Status** section also displays the generation of the CR which is deployed, Edge version, last deployed time/age, validation warnings, if any and some help commands for downloading the diagnostic logs, extracting the Root CA of the Edge operator generated TLS certificates.
+The **Events** section in the output of the `describe edge` command specifies the installation progress and the **Status** section displays the generation of the Edge CR which is being installed and its current state. Once the installation succeeds, the **Status** section also displays the generation of the CR which is deployed, Edge version, last deployed time/age, validation warnings, if any and some help commands for downloading the diagnostic logs, extracting the Root CA of the Edge operator generated TLS/SSL certificates.
 
 A sample status output:
 ```yaml

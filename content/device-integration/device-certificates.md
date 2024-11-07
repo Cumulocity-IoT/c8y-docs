@@ -31,6 +31,7 @@ In order to follow this tutorial, check if the following prerequisites are met:
 * Uploaded certificates must have set `BasicConstraints:[CA:true]`.
 * Devices must trust the {{< product-c8y-iot >}} server certificate.
 * Certificates used by devices must contain the certificate chain that includes the uploaded CA certificate.
+* If only the device certificate is provided, then the immediate issuer certificate must be uploaded to the platform’s truststore.
 * Certificates used by devices must be signed either by uploaded CA certificates or by intermediate certificates signed by uploaded CA certificates.
 
 ### Registering devices using certificates {#registering-devices-using-certificates}

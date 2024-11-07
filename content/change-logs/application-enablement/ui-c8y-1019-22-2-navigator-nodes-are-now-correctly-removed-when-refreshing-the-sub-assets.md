@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58562
 version: 1019.22.2
 ---
-In the Cumulocity IoT user interface, the navigator did not always update correctly after removing a group or device via the subassets view. This caused the navigator to still show the removed groups or devices and made the UI inconsistent. With this fix, the navigator now correctly refreshes after a group or device has been removed through the subassets view, ensuring the user interface stays in sync and provides an accurate view of the current inventory.
+In the {{< product-c8y-iot >}} user interface, the navigator did not always update correctly after removing a group or device via the subassets view. This caused the navigator to still show the removed groups or devices and made the UI inconsistent. With this fix, the navigator now correctly refreshes after a group or device has been removed through the subassets view, ensuring the user interface stays in sync and provides an accurate view of the current inventory.

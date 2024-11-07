@@ -380,6 +380,20 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
+<td style="text-align: left">Automatic setting of required interval</td>
+<td style="text-align: left">autoManageAvailabilityRequiredInterval</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">This setting is configurable so that unavailability alarms will only be triggered when an LWM2M device is truly unavailable, reducing the number of false alarms. When true (default), the LWM2M service automatically sets the interval to registration lifetime plus 2 minutes. When false, the user can define a required interval using Availability required interval value "availabilityRequiredInterval" property during device registration or on the "Info" tab in the device details after device creation. If value is not provided ("null"), the default behavior of the LWM2M service will be used.</td>
+<td style="text-align: left">Optional, default = true</td>
+</tr>
+<tr>
+<td style="text-align: left">Availability required interval value</td>
+<td style="text-align: left">availabilityRequiredInterval</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">If not empty, this value will be used as the initial required interval in the created device.</td>
+<td style="text-align: left">Optional, default = empty</td>
+</tr>
+<tr>
 <td style="text-align: left">Binary delivery encoding</td>
 <td style="text-align: left">binaryDeliveryEncoding</td>
 <td style="text-align: left">String</td>
@@ -471,10 +485,12 @@ Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M age
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
-<td style="text-align: left">Firmware update URL</td>
+<td style="text-align: left">Firmware update URL (DEPRECATED)</td>
 <td style="text-align: left">fwUpdateURL</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Indicates the firmware update URL from where the LWM2M device can download the firmware package.</td>
+<td style="text-align: left"><b>DEPRECATED</b>: Use the regular firmware repository to specify the firmware version that links to an external URL. This field will be removed in a future update. 
+
+Indicates the firmware update URL from where the LWM2M device can download the firmware package.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>

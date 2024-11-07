@@ -39,7 +39,7 @@ For each template, the following information is provided:
 * Number of send messages
 * Number of responses
 
-There are two ways to add a SmartRest template:
+There are two ways to add a SmartREST template:
 
 - Import an already existing template
 - Create a new template
@@ -60,7 +60,7 @@ There are two ways to add a SmartRest template:
 
 #### To add a message {#to-add-a-message}
 
-The message template contains all necessary information to convert the SmartRest request into a corresponding REST API call which is then sent to the platform.
+The message template contains all necessary information to convert the SmartREST request into a corresponding REST API call which is then sent to the platform.
 
 1. To add a new message, navigate to the **Messages** tab in your desired SmartREST template and click **Add message**.
 

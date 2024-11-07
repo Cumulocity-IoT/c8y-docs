@@ -904,7 +904,7 @@ Full payload data structure explained:
 <td>browsePath</td>
 <td>array<string></string></td>
 <td>yes</td>
-<td>The browse path. The path can be the exact browse path or a regular expression of the browse path. If it is a regular expression, it must be wrapped inside *regex(...)*. For example: `regex(2:Objects)` or `regex(urn:test.namespace:Objects\\d)`. Note that the namespace index and the namespace URI are not part of the regular expression itself but they will be quoted as literal strings. When using a regular expression, keep in mind that it might be matching many nodes in the address space and resulting in unexpected incoming data. Our recommendation is to use it with great care and together with other exact browse paths in the same mapping if possible. For example, `&#91;"2:Objects", "regex(2:MyDevice\\d)", "..."&#93;`</td>
+<td>The browse path. The path can be the exact browse path or a regular expression of the browse path. Each browse path in the list of mappings must be unique. Duplication is not allowed by the API. If it is a regular expression, it must be wrapped inside *regex(...)*. For example: `regex(2:Objects)` or `regex(urn:test.namespace:Objects\\d)`. Note that the namespace index and the namespace URI are not part of the regular expression itself but they will be quoted as literal strings. When using a regular expression, keep in mind that it might be matching many nodes in the address space and resulting in unexpected incoming data. Our recommendation is to use it with great care and together with other exact browse paths in the same mapping if possible. For example, `&#91;"2:Objects", "regex(2:MyDevice\\d)", "..."&#93;`</td>
 </tr>
 <tr>
 <td>measurementCreation</td>

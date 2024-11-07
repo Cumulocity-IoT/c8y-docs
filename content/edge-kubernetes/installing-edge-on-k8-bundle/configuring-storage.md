@@ -28,7 +28,7 @@ The Edge operator requests three PVCs, as outlined in the table below. Each of t
 
 - If you explicitly specify an empty StorageClass as **`""`**, the Edge operator requests PVCs with an empty StorageClass, thereby instructing Kubernetes to carry out static provisioning.
 
-- Finally, if you specify the name of an existing StorageClass for which dynamic provisioning is enabled, the Operator requests PVCs with that same class name, thereby instructing Kubernetes to utilize dynamic provisioning according to the specified class.
+- Finally, if you specify the name of an existing StorageClass for which dynamic provisioning is enabled, the Operator requests PVCs with that class name, thereby instructing Kubernetes to utilize dynamic provisioning according to the specified class.
 
 |<div style="width:120px">Persistent volume</div>|<div style="width:250px">Persistent Volume Claim</div>|Description
 |:---|:---|:---

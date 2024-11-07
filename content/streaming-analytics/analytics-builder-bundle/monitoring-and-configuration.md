@@ -422,12 +422,6 @@ After you have changed a tenant option using a REST request, the correlator will
     <td><code>simulation.maxInstances</code></td>
     <td>The maximum number of simulation models to be deployed at a time. The default value is 3 models. See also <a href="/streaming-analytics/analytics-builder/#configuring-the-maximum-number-of-simulation-models">Configuring the maximum number of simulation models</a>.</td>
   </tr>
-  <tr>
-    <td><code>simulation.dataSource.url</code><br>
-    <code>simulation.dataSource.username</code><br>
-    <code>simulation.dataSource.password</code></td>
-    <td>The URL of an alternative data source for simulation. This also requires a user name and password for HTTP basic authentication. See also <a href="/streaming-analytics/analytics-builder/#configuring-an-alternative-data-source-for-simulation">Configuring an alternative data source for simulation</a>.</td>
-  </tr>
 </tbody>
 </table>
 

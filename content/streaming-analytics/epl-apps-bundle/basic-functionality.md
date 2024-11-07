@@ -57,14 +57,14 @@ From this page, you can:
 ##### Step 2 - Create an EPL app {#step-2---create-an-epl-app}
 
 Click **New EPL app** in the top menu bar. In the resulting **Create app** dialog box, enter a unique app name.
-You can also enter a description which will be shown on the card that is created for the new app. Click **OK**. 
+You can also enter a description which will be shown on the card that is created for the new app. Click **OK**.
 
 The EPL editor appears. The EPL code for the new app already contains the typical basic event definitions and utilities that are required for working with {{< product-c8y-iot >}}. You can adapt them as required for your app. Consult the documentation and samples for more details.
 
 {{< c8y-admon-info>}}
-When you click **Cancel** without specifying an app name, the EPL editor also appears and the default name "App#" is then shown.
+When you click **Cancel** without specifying an app name, the EPL editor also appears and the default name "New" is then shown in the breadcrumb.
 You can edit the EPL code, but as long as you do not specify an app name, you will not be able to save the app.
-Click the default name "App#" and specify an app name in the resulting dialog box.
+Click **App settings** and specify an app name in the resulting dialog box.
 {{< /c8y-admon-info>}}
 
 ![EPL editor](/images/streaming-analytics/epl-apps/epl-apps-editor.png)
@@ -295,7 +295,7 @@ you must either change the `FROM` lines in the Dockerfile appropriately
 
 You can use the Apama EPL Apps Tools on GitHub to script uploads of your EPL apps and manage them for  CI/CD (continuous integration and continuous delivery) use cases. This tooling also provides extensions to the PySys test framework to allow you to simply write tests for your EPL apps and to run them automatically.
 
-Apama EPL Apps Tools is available from [https://github.com/SoftwareAG/apama-eplapps-tools](https://github.com/SoftwareAG/apama-eplapps-tools). See the [EPL Apps Tools documentation](https://open-source.softwareag.com/apama-eplapps-tools/) for detailed information.
+Apama EPL Apps Tools is available from [https://github.com/Cumulocity-IoT/apama-eplapps-tools](https://github.com/Cumulocity-IoT/apama-eplapps-tools). See the [EPL Apps Tools documentation](https://cumulocity-iot.github.io/apama-eplapps-tools/) for detailed information.
 
 For more information on PySys, see the [API Reference for Python]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ApaDoc_pydoc_documentation.html) that you can access from the Apama documentation.
 

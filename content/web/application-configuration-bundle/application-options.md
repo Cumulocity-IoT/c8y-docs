@@ -52,8 +52,6 @@ export default {
 [...]
 ```
 
-The options in the `cumulocity.config.ts` file can also be set dynamically at build time by e.g. accessing environment variables:
-```suggestion
 The options in the `cumulocity.config.ts` file can also be set dynamically at build time, for example, by accessing the environment variables:
 
 ```ts

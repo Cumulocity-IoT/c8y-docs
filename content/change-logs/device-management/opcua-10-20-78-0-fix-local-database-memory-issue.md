@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-09-02
 title: Optimization of storage management for OPC UA gateway
 product_area: Device management & connectivity
 change_type:

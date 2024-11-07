@@ -4,10 +4,10 @@ title: Managing software remotely
 layout: redirect
 ---
 
-You can remotely manage the **applications**, **microservices** and **extensions** installed on Edge using the {{< product-c8y-iot >}} software management feature. This process requires you to first upload an application, microservice or extension to the software repository before installing them. For more information on uploading items to the software repository, see [To add a new software or software version](/device-management-application/managing-device-data/#to-add-a-new-software-or-software-version). For more information about the software management feature in general, see [Managing device software](/device-management-application/managing-device-data/#managing-software).
+You can remotely manage the **applications**, **microservices** and **extensions** installed on Edge using the {{< product-c8y-iot >}} [advanced software management](/device-integration/fragment-library/#advanced-software-management) feature. This process requires you to first upload an application, microservice or extension to the software repository before installing them. For more information on uploading items to the software repository, see [To add a new software or software version](/device-management-application/managing-device-data/#to-add-a-new-software-or-software-version). For more information about the software management feature in general, see [Managing device software](/device-management-application/managing-device-data/#managing-software).
 
 {{< c8y-admon-important >}}
-The [advanced software management](/device-integration/fragment-library/#advanced-software-management) microservice must be deployed to manage software remotely. The microservice name is _advanced-software-mgmt_. It is packaged as a standard {{< product-c8y-iot >}} microservice ZIP file. The ZIP file must be deployed as a microservice to {{< product-c8y-iot >}} using the UI or any of the other deployment options provided by the platform.
+To use the {{< product-c8y-iot >}} [advanced software management](/device-integration/fragment-library/#advanced-software-management) feature, your {{< product-c8y-iot >}} cloud tenant's subscription plan must include the _advanced-software-mgmt_ microservice.
 {{< /c8y-admon-important >}}
 
 - Applications - You need a {{< product-c8y-iot >}} application, see [Web SDK](/web/introduction/) for details. Upload the application zip to the software repository with the software type _c8yedge_application_

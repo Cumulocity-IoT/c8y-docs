@@ -39,8 +39,6 @@ On tenant creation, there are default roles available that can be used as a samp
 Note that when subscribed to the "feature-user-hierachy" application, the CREATE permission allows to manage (display, create, edit, delete, disable/enable, delegate, manage permissions) underlying users. For details see [Managing user hierarchies](/enterprise-tenant/managing-user-hierarchies).
 {{< /c8y-admon-req >}}
 
-If your tenant is configured for using single sign-on (SSO) in {{< sag-cloud >}}, new users should be created under **My Cloud**, accessible through the application switcher in the upper right corner, so that they are able to use the single sign-on feature.
-
 For users created via an external authorization server, updating the following settings in {{< product-c8y-iot >}} will have no effect (will be reset on the next user re-login):
 
 * user info (login alias, email, first name, last name, telephone)

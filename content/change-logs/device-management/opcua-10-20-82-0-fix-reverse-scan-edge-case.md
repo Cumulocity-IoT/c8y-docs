@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-09-02
 title: Fixed issue with OPC UA address space scanning
 product_area: Device management & connectivity
 change_type:

@@ -28,7 +28,7 @@ Here are some examples of what you can achieve with these tools:
 
 #### Zapier
 
-This [article](https://tech.forums.softwareag.com/t/cumulocity-iot-google-spreadsheet-no-code-integration-guide/287731&) explains how to integrate {{< product-c8y-iot >}} with Google Sheets to automatically export sensor data for further analysis.
+This [article](https://tech.forums.softwareag.com/t/cumulocity-iot-google-spreadsheet-no-code-integration-guide/287731) explains how to integrate {{< product-c8y-iot >}} with Google Sheets to automatically export sensor data for further analysis.
 
 #### n8n.io
 

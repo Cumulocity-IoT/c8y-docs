@@ -1,6 +1,6 @@
 ---
 date: 2023-12-20
-title: New toggle for switching off empty data
+title: New toggle for switching off empty data in LWM2M device protocol
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP

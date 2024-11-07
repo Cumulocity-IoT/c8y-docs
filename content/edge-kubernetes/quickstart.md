@@ -14,19 +14,30 @@ This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s
 
    ```shell
    USER_NAME=$(whoami)
+   USER_HOME=$(eval echo ~${USER_NAME})
    sudo sh -c '
-   echo "vm.panic_on_oom=0\nvm.overcommit_memory=1\nkernel.panic=10\nkernel.panic_on_oops=1" >> /etc/sysctl.d/90-kubelet.conf && \
-   sysctl -p /etc/sysctl.d/90-kubelet.conf && \
-   curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.25.13+k3s1 sh -s - \
-      --disable=traefik \
-      --write-kubeconfig-mode 644 \
-      --protect-kernel-defaults true  \
-      --kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook && \
-   mkdir -p '"$HOME"'/.kube && \
-   cp /etc/rancher/k3s/k3s.yaml '"$HOME"'/.kube/config && \
-   chown '"$USER_NAME:"' '"$HOME"'/.kube/config && \
-   chmod 600 '"$HOME"'/.kube/config && \
-   echo -e "\e[32mSuccessfully installed k3s!\e[0m"
+      touch /etc/sysctl.d/90-kubelet.conf  && \
+      sed -i "/^vm\.panic_on_oom=/d; /^vm\.overcommit_memory=/d; /^kernel\.panic=/d; /^kernel\.panic_on_oops=/d" /etc/sysctl.d/90-kubelet.conf && \
+      printf "vm.panic_on_oom=0\nvm.overcommit_memory=1\nkernel.panic=10\nkernel.panic_on_oops=1\n" | tee -a /etc/sysctl.d/90-kubelet.conf && \
+
+      sysctl -p /etc/sysctl.d/90-kubelet.conf && \
+
+      curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.25.13+k3s1 sh -s - \
+         --write-kubeconfig-mode 644 \
+         --disable=traefik \
+         --protect-kernel-defaults true \
+         --kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook && \
+      
+      mkdir -p '"$USER_HOME"'/.kube && \
+      cp /etc/rancher/k3s/k3s.yaml '"$USER_HOME"'/.kube/config && \
+      chown '"$USER_NAME:"' '"$USER_HOME"'/.kube/config && \
+      chmod 600 '"$USER_HOME"'/.kube/config && \
+
+      printf "\e[32mSuccessfully installed k3s!\e[0m\n" && \
+      
+      k3s crictl pull rancher/klipper-lb:v0.4.4 && \
+      k3s crictl pull rancher/mirrored-metrics-server:v0.6.3 && \
+      k3s crictl pull rancher/local-path-provisioner:v0.0.24
    '
    ```
 

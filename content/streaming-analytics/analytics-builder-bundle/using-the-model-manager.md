@@ -107,9 +107,9 @@ You can also create a new model from a sample. See [Creating a model from a samp
     The model editor appears. See [Overview of steps for adding a model](/streaming-analytics/analytics-builder/#overview-of-steps-for-adding-a-model) for a brief overview of how to add blocks and wires to the new model.
 
 {{< c8y-admon-info>}}
-When you click **Cancel** without specifying a model name, the model editor also appears and the default name "Model#" is then shown.
+When you click **Cancel** without specifying a model name, the model editor also appears and the default name "New" is then shown in the breadcrumb.
 You can add blocks to the model, but as long as you do not specify a model name, you will not be able to save the model.
-Click the default name "Model#" and specify a model name. See also [Changing the name, description, and tags of a model](/streaming-analytics/analytics-builder/#changing-the-name-description-and-tags-of-a-model).
+Click **Model settings** and specify a model name. See also [Changing the name, description, and tags of a model](/streaming-analytics/analytics-builder/#changing-the-name-description-and-tags-of-a-model).
 {{< /c8y-admon-info>}}
 
 ### Editing an existing model {#editing-an-existing-model}

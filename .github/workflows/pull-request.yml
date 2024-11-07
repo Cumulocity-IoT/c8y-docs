@@ -44,7 +44,7 @@ jobs:
 
     - name: Checkout
       if: ${{ github.event.pull_request.state != 'closed' }}
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         submodules: recursive
         fetch-depth: 1
@@ -59,9 +59,9 @@ jobs:
         hugo \
           --baseURL "${{ env.BASEURL }}/"
 
-    - uses: actions/setup-node@v3
+    - uses: actions/setup-node@v4
       with:
-        node-version: 16
+        node-version: 20
 
     - run: npm install -g surge
 
@@ -81,7 +81,7 @@ jobs:
 
     - name: Add Comment to PR
       if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' }}
-      uses: actions/github-script@v6
+      uses: actions/github-script@v7
       with:
         script: |
           github.rest.issues.createComment({

@@ -1,6 +1,6 @@
 ---
 date: "2024-02-06"
-title: Improved information on "Use source timestamp" configuration
+title: Improved information on LWM2M "Use source timestamp" configuration
 product_area: Device management & connectivity
 change_type:
   - value: change-2c7RdTdXo4
