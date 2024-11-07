@@ -102,6 +102,7 @@ As our releases are bound to the Angular versioning, you must to ensure that you
 
 | Angular version | Web SDK version | Comment |
 | --- | --- | --- |
+| 18.x.x | 1021.x.x | No support for the standalone flag |
 | 17.x.x | 1020.x.x | No support for the standalone flag |
 | 16.x.x | 1019.x.x | Using [Angular CLI tooling](https://angular.io/cli). |
 | 15.x.x | 1018.1.x - 1018.x.x | Using `c8ycli` tooling, only yearly release |
