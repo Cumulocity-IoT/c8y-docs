@@ -1,12 +1,12 @@
 ---
 title: Legal notices
 bundlefolder: legal-notices
-icon: "c8y-icon c8y-icon-notification"
+icon: "dlt-c8y-icon-gavel"
 type: root
 layout: redirect
 sector:
-  - about_website
-weight: 50
+  - terms_conditions
+weight: 10
 ---
 
-Read our copyright information.
+This is a collection of legal documents for Cumulocity GmbH and the Cumulocity IoT platform.

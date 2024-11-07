@@ -6,9 +6,9 @@ sector:
   - getting_started
 ---
 
-### OpenAPI Specification {#openapi-specification}
+### {{< openapi >}} {#openapi-specification}
 
-A complete OpenAPI Specification for the {{< product-c8y-iot >}} REST API is available at [https://{{< domain-c8y >}}/api/core/](https://{{< domain-c8y >}}/api/core). The OpenAPI Specification describes the {{< product-c8y-iot >}} REST API (that is, available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
+A complete OpenAPI Specification for the {{< product-c8y-iot >}} REST API is available at [https://{{< domain-c8y >}}/api/core/](https://{{< domain-c8y >}}/api/core). The {{< openapi >}} describes the {{< product-c8y-iot >}} REST API (that is, available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
 
 
 ### {{< product-c8y-iot >}} CLI {#cumulocity-iot-cli}
