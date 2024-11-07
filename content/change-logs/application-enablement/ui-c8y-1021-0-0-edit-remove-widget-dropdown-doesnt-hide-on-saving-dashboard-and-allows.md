@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59669
 version: 1021.0.0
 ---
-Edit/remove widget dropdown doesnt hide on saving dashboard and allows to modify it after (#7131)
+Previously, after making changes to a widget on a dashboard and saving the dashboard, the widget's edit/remove dropdown menu would remain open. This could lead to unintended modifications if the user accidentally interacted with the open dropdown. With this change, the widget's edit/remove dropdown menu now automatically closes after saving the dashboard. This prevents the dropdown from staying open and reduces the risk of inadvertent changes to the widget after the dashboard has been saved.
