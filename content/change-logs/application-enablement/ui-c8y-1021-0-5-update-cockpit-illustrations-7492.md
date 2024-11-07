@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61486
 version: 1021.0.5
 ---
-update Cockpit illustrations (#7492)
+As part of continuous improvement efforts, the illustrations used in various sections of the Cockpit user interface have been updated. The new illustrations provide a fresh and modern look while still effectively conveying the intended message or concept. This change enhances the visual appeal and user experience of the Cockpit interface without impacting any functionality or existing user workflows.
