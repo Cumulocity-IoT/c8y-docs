@@ -383,7 +383,7 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">Automatic setting of required interval</td>
 <td style="text-align: left">autoManageAvailabilityRequiredInterval</td>
 <td style="text-align: left">Boolean</td>
-<td style="text-align: left">When true (default), the LWM2M agent automatically sets the interval to registration lifetime plus 2 minutes.</td>
+<td style="text-align: left">This setting is configurable so that unavailability alarms will only be triggered when an LWM2M device is truly unavailable, reducing the number of false alarms. When true (default), the LWM2M service automatically sets the interval to registration lifetime plus 2 minutes. When false, the user can define a required interval using Availability required interval value "availabilityRequiredInterval" property during device registration or on the "Info" tab in the device details after device creation. If value is not provided ("null"), the default behavior of the LWM2M service will be used.</td>
 <td style="text-align: left">Optional, default = true</td>
 </tr>
 <tr>
