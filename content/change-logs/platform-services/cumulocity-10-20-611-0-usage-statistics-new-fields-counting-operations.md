@@ -14,8 +14,8 @@ build_artifact:
 ticket: MTM-61325
 version: 10.20.611.0
 ---
-Two new properties: `operationsCreatedCount`, `operationsUpdateCount` were added to all REST endpoints returning usage statistics detailed requests counters. 
-At the first step of this new feature {{< product-c8y-iot >}} returns those values always equal `0`. 
-Implementation of counting logic in reaction to REST requests and MQTT messages creating and updating operations will be added in the following changes to the 10.20 release.  
+Two new properties `operationsCreatedCount`, `operationsUpdateCount` have been added to all REST endpoints which will return detailed request counters for usage statistics. 
+In a first implementation step, the {{< product-c8y-iot >}} platform returns these properties with `0` values. 
+In a future implementation, counting logic in reaction to REST requests and MQTT messages creating and updating operations will be added.  
 
 
