@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Change label of the position input in the dashboard settings (#7240)
+title: Rename "Position in navigator" field to "Position in tabs" in dashboard settings
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60191
 version: 1021.0.0
 ---
-Change label of the position input in the dashboard settings (#7240)
+The "Position in navigator" field in dashboard settings is now labeled as "Position in tabs" for better clarity.
