@@ -6,7 +6,7 @@ sector:
   - device_management
 ---
 
-The **Connectivity** tab integrates with a 3rd party SIM management platform to provide SIM management functionality within the {{< product-c8y-iot >}} Device management application. The tab appears for a device when all of the following criteria are met:
+The **Connectivity** tab integrates with a 3rd party SIM management platform to provide SIM management functionality within the {{< product-c8y-iot >}} Device Management application. The tab appears for a device when all of the following criteria are met:
 
 1. Connectivity microservice is subscribed and configured
 2. The device managed object contains the ```c8y_Mobile``` fragment with the MSISDN or ICCID property set

@@ -187,4 +187,4 @@ You will only see such changes in the navigator of the application, in which you
 
 **Example**
 
-If you unassign a device from a group in the Device management application it is immediately removed from the group in the navigator of your current application. However, if you have another window open with another Device management application, you won't see the changes, but will only see the changes after a refresh or another request (expanding a group in the navigator for example).
+If you unassign a device from a group in the Device Management application it is immediately removed from the group in the navigator of your current application. However, if you have another window open with another Device Management application, you won't see the changes, but will only see the changes after a refresh or another request (expanding a group in the navigator for example).
