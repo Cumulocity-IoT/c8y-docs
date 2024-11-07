@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-To register a LoRa device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device management application, click **Register device** at the top right and select **Single device registration** > **Actility LoRa** from the dropdown.
+To register a LoRa device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Single device registration** > **Actility LoRa** from the dropdown.
 
 ![Register devices](/images/device-protocols/lora-actility/lora-selection.png)
 
@@ -34,7 +34,7 @@ The provision status is shown under **Device data** in the **Info** tab of the d
 
 ![Device data](/images/device-protocols/lora-actility/lora-devices-devicedata.png)
 
-For more information on viewing and managing your connected devices, also refer to the [Device management application](/device-management-application).
+For more information on viewing and managing your connected devices, also refer to the [Device Management application](/device-management-application).
 
 In order to migrate the device from one LNS Connection to another, the device must be re-registered.
 Navigate to the **LPWAN** tab of the Device.

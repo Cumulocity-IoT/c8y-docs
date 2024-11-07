@@ -6,7 +6,7 @@ layout: redirect
 
 {{< product-c8y-iot >}} can interface with LoRa devices through Actility's ThingPark Wireless, Enterprise or Community edition. You can:
 
-* Provision and deprovision LoRa devices easily using the {{< product-c8y-iot >}} Device management application. No interaction in the ThingPark user interface is required.
+* Provision and deprovision LoRa devices easily using the {{< product-c8y-iot >}} Device Management application. No interaction in the ThingPark user interface is required.
 * Decode upstream payload packets using a web-based user interface.
 * Debug and postprocess raw device data through {{< product-c8y-iot >}} events.
 * Send downstream data to the device using {{< product-c8y-iot >}} operations.
