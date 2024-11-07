@@ -1,0 +1,17 @@
+---
+date: ""
+title: Updated branding colors and logo
+product_area: Application enablement & solutions
+change_type:
+  - value: change-QHu1GdukP
+    label: Feature
+component:
+  - value: component-YbYJ3gLU_
+    label: Web SDK
+build_artifact:
+  - value: tc-pjJiURv9Y
+    label: ui-c8y
+ticket: MTM-61407
+version: 1021.0.0
+---
+As part of ongoing efforts to modernize the look and feel of the {{< product-c8y-iot >}} UI, the branding colors and the logo have been updated. The previous color scheme and logo were outdated and did not align with current design trends. This change provides a refreshed visual appearance throughout the {{< product-c8y-iot >}} UI, without impacting existing functionality or user workflows.
