@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2024-11-04
 title: Fixed special characters encoding in OPC UA device types
 product_area: Device management & connectivity
 change_type:
