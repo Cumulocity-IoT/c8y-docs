@@ -5,7 +5,7 @@ layout: redirect
 helpcontent:
   - label: setting-limits
     title: Limits
-    content: "This tab allows you to view and edit resource limits for this tenant."
+    content: "This tab allows you to view and edit resource limits for this tenant as well as to configure Gainsight tracking for your individual product experience."
 ---
 
 
