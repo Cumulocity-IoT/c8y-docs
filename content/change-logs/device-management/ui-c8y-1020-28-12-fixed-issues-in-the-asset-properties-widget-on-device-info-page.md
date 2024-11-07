@@ -1,9 +1,8 @@
 ---
-date: ""
-title: Asset properties widget in device details correctly displays all relevant properties
-
-
-
+date: '2024-10-17'
+title: >-
+  Asset properties widget in device details correctly displays all relevant
+  properties
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

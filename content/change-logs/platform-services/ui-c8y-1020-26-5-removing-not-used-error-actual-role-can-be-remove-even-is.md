@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-10-17'
 title: Correct error message when deleting an inventory role or a global role
 product_area: Platform services
 change_type:

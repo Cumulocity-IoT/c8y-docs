@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-10-17'
 title: Configuration repository migrated to a data grid
 product_area: Device management & connectivity
 change_type:

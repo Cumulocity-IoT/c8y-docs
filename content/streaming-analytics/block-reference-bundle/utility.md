@@ -413,19 +413,23 @@ If multiple signals are received at the same time, they are processed in the ord
 `apama.analyticskit.blocks.core.ExtractProperty`
 
 <p>Extracts the specified property from the input value and converts it to the specified type.</p>
-<p>The value in the Value input named by the Property Path parameter should be a string, number or boolean.
+<p>The value in the Value input named by the Property Path parameter must be a string, number or boolean.
 <p></p>
-You can specify a period (.) as part of the Property Path parameter to extract nested values from a dictionary.
+You can specify square brackets as part of the Property Path parameter to extract a specific element from a sequence.
 <p></p>
-For example: If the input is <tt>{ "location" : { "city" : "Cambridge" } }</tt> (in JSON form), then you can extract that value by specifying <tt>location.city</tt> as the Property Path parameter.
+You can also specify a period (.) as part of the Property Path parameter to extract nested values from a dictionary.
 <p></p>
-You can also specify square brackets as part of the Property Path parameter to extract a specific element from a sequence.
+If you want to ignore the periods (.) and square brackets in the Property Path parameter and treat them as any other character, then you must select the Ignore Separators In Property Path checkbox.
+<p></p>
+For example: <ul> <li>If the input is <tt>{ "users" : [ { "age" : 40.375 } ] }</tt> (in JSON form), then you can extract the value of <tt>age</tt> by specifying <tt>users[0].age</tt> as the Property Path parameter.</li>
+<p></p>
+<li>If the input is <tt>{ "location" : { "city" : "Cambridge" } }</tt> (in JSON form), then you can extract the value of <tt>city</tt> by specifying <tt>location.city</tt> as the Property Path parameter.</li>
+<p></p>
+<li>If the input is <tt>{ "location.city" : "Cambridge" }</tt> (in JSON form), then you can extract the value of <tt>location.city</tt> by specifying <tt>location.city</tt> as the Property Path parameter and selecting the Ignore Separators In Property Path checkbox.</li>
+<p></p>
+<li>If the input is <tt>{ "a.b" : { "c.d" : "foo" } }</tt> (in JSON form) and you want to extract the value of <tt>c.d</tt>, then you must use two Extract Property blocks in a chain, both with the Ignore Separators In Property Path checkbox selected: the first block to extract the value of <tt>a.b</tt> and the second block to extract the value of <tt>c.d</tt>.</li> </ul>
 <p></p>
 If the value is an object, then the properties of that object are output as properties on the Extracted Value output port.
-<p></p>
-For example: If the input is <tt>{ "users" : [ { "age" : 40.375 } ] }</tt> (in JSON form), then you can extract that value by specifying <tt>users[0].age</tt> as the Property Path parameter.
-<p></p>
-The block does not support extracting entries from a dictionary whose key contains special characters like the period (.) or square brackets. Also it does not support extracting entries from a sequence without using square brackets, for example, <tt>users.0.id</tt> must be written as <tt>users[0].id</tt>.
 <p></p>
 In converting a string to a float, this block treats an empty string as a value of 0.0, rather than as not parseable.
 <p></p>
@@ -476,6 +480,14 @@ Note: To extract a custom property from the Measurement Input block, you must ad
 <tr>
 <th scope="row">Clear On Missing</th>
 <td><span>If selected, the default value of the specified type is output if the Property Path parameter was not specified or if the value cannot be converted into the specified type.</span>
+</td>
+<td><span>boolean</span>
+</td>
+<td><span>Default: False</span></td>
+</tr>
+<tr>
+<th scope="row">Ignore Separators In Property Path</th>
+<td><span>If selected, the value of the Property Path parameter is treated as a property name. For example, if Ignore Separators In Property Path is selected and the Property Path parameter is specified as <tt>location.city</tt>, then the property name <tt>location.city</tt> is extracted from the input value.</span>
 </td>
 <td><span>boolean</span>
 </td>
