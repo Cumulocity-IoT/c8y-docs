@@ -1,6 +1,6 @@
 ---
 date: ""
-title: script tags are preserved in SCADA widget when 'none' option is selected
+title: Script tags are preserved in SCADA widgets
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61415
 version: 1021.0.2
 ---
-SCADA widget preserves script tags when 'none' option is selected.
+The SCADA widget now preserves script tags if the code sanitization option is set to "none".
