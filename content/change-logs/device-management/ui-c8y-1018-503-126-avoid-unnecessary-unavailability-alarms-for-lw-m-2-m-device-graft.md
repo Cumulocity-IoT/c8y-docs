@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Avoid unnecessary unavailability alarms for LwM2M device GRAFT (#7392)
+title: Added new option to avoid unnecessary unavailability alarms for LWM2M devices
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
