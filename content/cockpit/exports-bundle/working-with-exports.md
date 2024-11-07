@@ -9,7 +9,7 @@ sector:
   - app_enablement
 ---
 
-While the export functionality itself is a standalone feature, you can combine it with other features that allow you to select data points. To use the export functionality in this way, you must integrate it with the respective feature, for example, the [Data points table](/cockpit/widgets-collection/#data-point-table) widget.
+While the export functionality itself is a standalone feature, you can combine it with other features that allow you to select data points. To use the export functionality in this way, you must integrate it in the respective feature, for example, the [Data points table](/cockpit/widgets-collection/#data-point-table) widget.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
