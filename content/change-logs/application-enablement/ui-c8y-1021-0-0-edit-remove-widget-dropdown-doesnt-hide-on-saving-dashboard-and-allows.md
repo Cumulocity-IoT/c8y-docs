@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Edit/remove widget dropdown doesnt hide on saving dashboard and allows to modify it after (#7131)
+title: Widget edit/remove dropdown no longer hides automatically after saving dashboard
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
