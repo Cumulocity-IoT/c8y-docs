@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Upgrade to Angular 18 (#6833)
+title: Upgrade to Angular 18
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
