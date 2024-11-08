@@ -6,7 +6,7 @@ aliases:
   - /support-sla/
 ---
 
-**This Agreement** is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who wishes to use support services for {{< product-c8y-iot >}}.
+This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who wishes to use support services for {{< product-c8y-iot >}}.
 
 ### Service description
 
@@ -16,8 +16,8 @@ This document outlines the maintenance and support services provided for differe
 
 The following terms apply across all support levels unless otherwise specified:
 
-* **Business Day**: Monday to Friday, excluding public holidays, in the country specified in the Customer address field of the Cloud Services order form, corresponding with Provider's Global Support operating days.
-* **Business Hour**: 8:00 AM to 5:00 PM on a Business Day of the main support hub within the Customer's region. Global Support operating hours may change from time to time.
+* **Business Day**: Monday to Friday, excluding public holidays, in the country specified in the Customer address field of the Cloud Services order form, corresponding with Provider's Support operating days.
+* **Business Hour**: 8:00 AM to 5:00 PM on a Business Day of the main support hub within the Customer's region. Support operating hours may change from time to time.
   * EMEA: Central European Time (CET).
   * APJ: Malaysia Time (MYT).
   * US: Mountain Time (MT).
@@ -28,12 +28,12 @@ The following terms apply across all support levels unless otherwise specified:
   3. any bug, defect, or error in third-party software used with the Cloud Services.
 * **Error Correction**:  A modification, addition, or deletion that brings the Cloud Services into substantial conformance with specifications or reduces the adverse effect of the Error. It may include a workaround, service update, or solution provided by the Provider.
 * **Authorized Technical Contact (ATC)**: An uniquely identified individual authorized by the Customer to access the Provider’s Support Portal, submit support requests, and receive support-related communications, with appropriate professional and technical qualifications. Shared group accounts are not allowed.
-* **Global Support**: The Provider’s Global Support Organization responsible for delivering maintenance and support services to the Customer.
+* **Support**: The Provider’s global support Organization responsible for delivering maintenance and support services to the Customer.
 * **Support Portal**: The Provider’s web-based support system that provides access to information, documentation and Error Corrections, and permits browsing and submitting incidents.
 
 ### Incident classification
 
-Global Support will classify incidents into three levels of severity according to the following table:
+Support will classify incidents into three levels of severity according to the following table:
 
 * **Crisis Incidents**: Customer’s problem has a severe business impact, such as production down. Customer is unable to use the Cloud Services, resulting in a major impact on Customer’s operations. Work cannot reasonably continue.
 * **Critical Incidents**: Customer’s problem has a significant business impact; however, operations can continue in a restricted fashion. The Cloud Services are usable but severely limited. There is no acceptable workaround available. Customer is experiencing a significant loss of service.
@@ -72,23 +72,23 @@ The services are defined as follows:
 
 The following conditions apply to all support levels:
 
-* Customer requests will be received by Global Support and will be documented in Support Portal for further processing. The Customer will be given a reference processing number for future reference.
-* When reaching Global Support by telephone, Customer is to provide the incident/ticket number so that work on the incident can commence.
-* Global Support has no obligation to solve the Customer’s issue within the response or any other time frame.
+* Customer requests will be received by Support and will be documented in Support Portal for further processing. The Customer will be given a reference processing number for future reference.
+* When reaching Support by telephone, Customer is to provide the incident/ticket number so that work on the incident can commence.
+* Support has no obligation to solve the Customer’s issue within the response or any other time frame.
 
 #### Additional Silver support processing
 
 The following conditions apply to Silver level support:
 
-* Critical Incidents will be reported daily unless otherwise agreed with Global Support on a case-by-case basis. Other incidents will be reported as agreed between Global Support and Customer on a case-by-case basis.
+* Critical Incidents will be reported daily unless otherwise agreed with Support on a case-by-case basis. Other incidents will be reported as agreed between Support and Customer on a case-by-case basis.
 * Customer is provided with a timeline for Error Correction.
 
 #### Additional Gold support processing
 
 The following conditions apply to Gold level support:
 
-* On non-Business Days Customer must always report critical and standard incidents through Support Portal and must follow up with Global Support service provider via telephone in order to receive an initial response from Global Support based on the agreed upon reaction time. The response time is measured from the time the Customer gets in contact with a Support Engineer.
-* Reporting is carried out as agreed between Global Support and Customer.
+* On non-Business Days Customer must always report critical and standard incidents through Support Portal and must follow up with Support service provider via telephone in order to receive an initial response from Support based on the agreed upon reaction time. The response time is measured from the time the Customer gets in contact with a Support Engineer.
+* Reporting is carried out as agreed between Support and Customer.
 * For Crisis Incidents, economically justifiable effort within standard scope of resources is applied. For other incidents, reasonable effort within standard scope of resources is applied.
 * For Crisis Incidents, a resolution plan provided within first four (4) hours after receipt of Crisis incident to include - in Provider's sole discretion - either:
   * a definition of the intended solution to the problem, or
@@ -103,6 +103,6 @@ The following conditions apply to Gold level support:
 ### Customer responsibilities
 
 * Customer assigns Authorized Technical Contacts (ATCs) and communicates any changes to the list of ATCs to Provider.
-* Customer's ATC is responsible for cooperating with Provider's Global Support and providing necessary information to reproduce, troubleshoot and resolve the experienced error.
+* Customer's ATC is responsible for cooperating with Provider's Support and providing necessary information to reproduce, troubleshoot and resolve the experienced error.
 * When an incident is submitted by an ATC to Provider's Support Portal, Customer authorizes Provider, for the purposes of troubleshooting and resolving such incident, to access Customer’s cloud environment for the duration of the submitted incident.
 
