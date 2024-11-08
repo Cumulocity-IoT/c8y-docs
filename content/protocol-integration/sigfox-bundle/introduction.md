@@ -6,7 +6,7 @@ layout: redirect
 
 {{< product-c8y-iot >}} can interface with Sigfox devices through the Sigfox Cloud. You can:
 
-- Provision Sigfox devices easily using {{< product-c8y-iot >}} Device management application.
+- Provision Sigfox devices easily using {{< product-c8y-iot >}} Device Management application.
 - Decode upstream payload packets using a web-based user interface.
 - Debug and post-process raw device data through {{< product-c8y-iot >}} events.
 - Send downstream data to the device using {{< product-c8y-iot >}} operations.

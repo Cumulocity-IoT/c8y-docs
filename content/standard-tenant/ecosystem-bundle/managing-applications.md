@@ -60,7 +60,7 @@ Click the application or click the menu icon <i class="dlt-c8y-icon-menu-vertica
 In the **Properties** tab, several fields can be modified, depending on the application type (see [Application properties](#application-properties)).
 
 {{< c8y-admon-important >}}
-Never change the system application names (such as "Device management", "Cockpit"). Otherwise, tenant initialization will fail.
+Never change the system application names (such as "Device Management", "Cockpit"). Otherwise, tenant initialization will fail.
 {{< /c8y-admon-important >}}
 
 ### To delete an application {#to-delete-an-application}
