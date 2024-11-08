@@ -6,5 +6,5 @@ outputs:
   - json
 sector:
   - platform_administration
-weight: 11
+weight: 80
 ---
