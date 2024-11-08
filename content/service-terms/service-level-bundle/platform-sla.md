@@ -59,7 +59,7 @@ As a Customer of the {{< product-c8y-iot >}} platform, we request your acknowled
 * **Soft quotas:** Customer acknowledges the existence of "soft quotas" as documented in [Service quotas](/service-terms/quotas/). These quotas are not strictly enforced but exceeding them may lead to a reduced service level, and Customer is advised to operate within these guidelines.
 * **Data retention management:** Data storage is included as part of Customer’s subscription. Customer is responsible for configuring appropriate data retention rules within the {{< product-c8y-iot >}} Administration application, balancing their specific use case requirements with budgetary considerations.
 
-For details on non-permitted uses of {{< product-c8y-iot >}}, please refer to the {{< product-c8y-iot >}} Terms of Service.
+For details on non-permitted uses of {{< product-c8y-iot >}}, refer to the {{< product-c8y-iot >}} Terms of Service.
 
 ### Limitations and constraints
 
