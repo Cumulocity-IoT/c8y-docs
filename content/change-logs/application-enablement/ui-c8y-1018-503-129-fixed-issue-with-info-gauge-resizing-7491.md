@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61448
 version: 1018.503.129
 ---
-Fixed issue with info gauge resizing. (#7491)
+Info gauges in dashboards were not resizing correctly when changing the browser window size, leading to a poor user experience. This issue has been fixed and info gauges now properly resize to fit the available space when the browser window is resized. This change improves the usability and appearance of dashboards containing info gauges for all users.
