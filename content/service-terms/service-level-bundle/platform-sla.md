@@ -40,7 +40,7 @@ The {{< product-c8y-iot >}} platform offers a comprehensive set of features desi
 * **Data ownership and portability:** As the data processor, {{< product-c8y-iot >}} ensures that Customer retains full ownership of their data. Customer can export their data at any time using the provided APIs, ensuring control and flexibility over their information.
 * **Continuous maintenance and upgrades:** The platform undergoes regular maintenance and upgrades to ensure optimal performance and security. These upgrades happen transparently and without involving Customer.
 
-For customers with legacy service agreements, these features may differ in accordance with the terms of their original agreements.
+For Customers with legacy service agreements, these features may differ in accordance with the terms of their original agreements.
 
 ### Customer responsibilities
 
