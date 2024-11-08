@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Rename "Position in navigator" field to "Position in tabs" in dashboard settings
+title: Renamed "Position in navigator" field in the dashboard settings
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
