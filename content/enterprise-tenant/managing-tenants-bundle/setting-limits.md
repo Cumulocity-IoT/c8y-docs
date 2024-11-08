@@ -30,7 +30,7 @@ You can also customize the buffer size for the CEP queue and the data broker que
 
 ### To limit the subtenant device number {#to-limit-the-subtenant-device-number}
 
-Platform administrators can limit the count of concurrently registered root devices or simply all devices (including child devices) via the property "Limit number of devices".
+Platform administrators can limit the count of concurrently registered root devices or simply all devices (including child devices) via the property **Limit number of devices**.
 
 You can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the [Usage statistics](/enterprise-tenant/usage-and-billing/) page.
 
