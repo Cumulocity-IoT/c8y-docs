@@ -8,7 +8,7 @@ aliases:
   - /concepts/limits/
 ---
 
-Your {{< product-c8y-iot >}} service includes so-called ``quotas``. These quotas ensure that the service operates within the guarantees of the {{< product-c8y-iot >}} service-level agreements.
+Your {{< product-c8y-iot >}} service includes so-called **quotas**. These quotas ensure that the service operates within the guarantees of the {{< product-c8y-iot >}} service-level agreements.
 
 The following types of quotas are used:
 
