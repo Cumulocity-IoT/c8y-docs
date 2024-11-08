@@ -65,7 +65,7 @@ For details on non-permitted uses of {{< product-c8y-iot >}}, refer to the {{< p
 
 In the interest of transparency and to ensure a mutual understanding of the service capabilities, we kindly ask Customer to acknowledge the following limitations and constraints of the {{< product-c8y-iot >}} platform:
 
-* **Hard quotas:** Customer acknowledges the existence of hard quotas as detailed in the {{< product-c8y-iot >}} documentation [here](/concepts/limits/). These quotas define maximum thresholds that the platform can support and are essential for maintaining overall system stability.
+* **Hard quotas:** Customer acknowledges the existence of hard quotas as detailed in [Service quotas](/service-terms/quotas/). These quotas define maximum thresholds that the platform can support and are essential for maintaining overall system stability.
 * **Shared environment considerations:** Customers not utilizing {{< product-c8y-iot >}} Dedicated plans should be aware that their tenant is hosted within a shared environment. As a result, response times may occasionally vary due to shared resource usage, and Customer acknowledges such variations. Furthermore, infrastructure-level information such as HTTP or MQTT access logs cannot be shared with Customer.
 * **Data retention and storage costs:** Customer acknowledges that reducing data retention periods does not immediately lead to the reclamation of storage space or a reduction in storage costs due to technical processing requirements.
 * **Distributed IoT system:** Customer acknowledges that IoT systems, by nature, are distributed and internet-based:
