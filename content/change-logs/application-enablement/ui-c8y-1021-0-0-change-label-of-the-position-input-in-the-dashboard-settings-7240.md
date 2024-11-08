@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60191
 version: 1021.0.0
 ---
-The "Position in navigator" field in dashboard settings is now labeled as "Position in tabs" for better clarity.
+For better clarity, the **Position in navigator** field in the dashboard settings has been renamed to **Position in tabs**.
