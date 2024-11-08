@@ -7,7 +7,7 @@ aliases:
   - /microservices-sla/
 ---
 
-**This Agreement** is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who utilizes {{< product-c8y-iot >}} Microservices ("Service", “Container-as-a-Service") for deploying Customer Microservices ("Microservices") on {{< product-c8y-iot >}} cloud instances.
+This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who utilizes {{< product-c8y-iot >}} Microservices ("Service", “Container-as-a-Service") for deploying Customer Microservices ("Microservices") on {{< product-c8y-iot >}} cloud instances.
 
 ### Service description
 
