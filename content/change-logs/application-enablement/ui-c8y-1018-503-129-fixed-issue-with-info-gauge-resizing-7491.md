@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issue with info gauge resizing. (#7491)
+title: Fixed info gauge resizing issue
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
