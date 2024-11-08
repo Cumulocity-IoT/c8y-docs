@@ -56,7 +56,7 @@ As a Customer of the {{< product-c8y-iot >}} platform, we request your acknowled
 ##### **Capacity management**
 
 * **Scalability considerations:** While the {{< product-c8y-iot >}} platform is designed to be scalable, it may not be able to accommodate sudden, extreme capacity demands (for example, all devices attempting to connect simultaneously after a connectivity outage, or all devices being upgraded at the same time). Customer acknowledges that such requests may be delayed or declined by the platform to maintain overall service stability. Customer is advised to implement an [exponential backoff strategy](https://en.wikipedia.org/wiki/Exponential_backoff).
-* **Soft quotas:** Customer acknowledges the existence of "soft quotas" as documented in the {{< product-c8y-iot >}} documentation [here](/concepts/limits/). These quotas are not strictly enforced but exceeding them may lead to a reduced service level, and Customer is advised to operate within these guidelines.
+* **Soft quotas:** Customer acknowledges the existence of "soft quotas" as documented in [Service quotas](/service-terms/quotas/). These quotas are not strictly enforced but exceeding them may lead to a reduced service level, and Customer is advised to operate within these guidelines.
 * **Data retention management:** Data storage is included as part of Customer’s subscription. Customer is responsible for configuring appropriate data retention rules within the {{< product-c8y-iot >}} Administration application, balancing their specific use case requirements with budgetary considerations.
 
 For details on non-permitted uses of {{< product-c8y-iot >}}, please refer to the {{< product-c8y-iot >}} Terms of Service.
