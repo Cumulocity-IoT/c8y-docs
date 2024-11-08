@@ -1,6 +1,6 @@
 ---
 date: ""
-title: adding filtering for alarm types in the alarm overview (#6667)
+title: Add filtering for alarm types in alarm overview
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
