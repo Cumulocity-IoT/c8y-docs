@@ -1,5 +1,5 @@
 ---
-title: Service Quotas
+title: Service quotas
 layout: bundle
 sector:
   - terms_conditions
