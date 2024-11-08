@@ -8,7 +8,7 @@ helpcontent:
     content: "The **Time series migration** page displays the migration status for the current tenant and its subtenants. From this page, you can schedule the selected tenants for migration. Migrated tenants require user approval and their legacy measurement collections are removed after seven days.\nNote that you might observe difficulties during migration if the DataHub application is subscribed. To learn more refer to [Analytics > DataHub](https://cumulocity.com/docs/datahub/datahub-overview/)."
 ---
 
-Tenant administrator users can schedule their tenant or any subtenant for time series collection migration. The time series format of measurements brings the following benefits:
+Tenant administrators can schedule their tenant or any subtenant for time series collection migration. The time series format of measurements brings the following benefits:
 
 * better performance for measurements queries,
 * less storage consumption.
