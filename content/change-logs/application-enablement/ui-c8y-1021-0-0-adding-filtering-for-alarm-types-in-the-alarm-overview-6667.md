@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59391
 version: 1021.0.0
 ---
-To improve the usability of the alarm overview, filtering for specific alarm types has been added. Users can now select which alarm types they want to see in the overview by using the new filter options. This allows users to focus on the alarms that are most relevant to them, making it easier to identify and address critical issues in a timely manner.
+To improve the usability of the alarms overview, filtering for specific alarm types has been added. Users can now select which alarm types they want to see in the overview by using the new filter options. This allows users to focus on the alarms that are most relevant to them, making it easier to identify and address critical issues in a timely manner.
