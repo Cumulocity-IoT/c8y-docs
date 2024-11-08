@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed info gauge resizing issue
+title: Info gauges resize properly when the window size changes
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
