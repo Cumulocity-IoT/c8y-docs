@@ -163,7 +163,7 @@ service availability requirements are set forth in this service credit commitmen
 
 #### **Support**
 
-* **Customer support:** Support is provided in accordance with Customer’s selected support plan (Starter, Standard, or Enterprise Active Support), as detailed in a separate support agreement.
+* **Customer support:** Support is provided in accordance with Customer’s selected support plan (Starter, Standard, or Enterprise Active Support), as detailed in the [support agreement](/service-terms/service-level/#support-sla).
 * **Pre-production environments:** For pre-production environments, Starter-level support is generally provided, with support tickets handled at standard priority.
 
 #### **Maintenance**
