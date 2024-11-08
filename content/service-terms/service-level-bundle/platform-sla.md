@@ -44,7 +44,7 @@ For Customers with legacy service agreements, these features may differ in accor
 
 ### Customer responsibilities
 
-As a Customer of the {{< product-c8y-iot >}} platform, we request your acknowledgment of the following responsibilities to ensure the continued security, performance, and efficiency of the service:
+As a Customer of the {{< product-c8y-iot >}} platform, we request your acknowledgment of the following responsibilities to ensure the continued security, performance, and efficiency of the service.
 
 ##### **Security management**
 
