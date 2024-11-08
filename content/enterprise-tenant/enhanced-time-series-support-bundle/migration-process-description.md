@@ -32,10 +32,9 @@ To start the tenant migration follow the steps below:
 1. Navigate to **Migration > Time series** in the application where the plugin is installed. By default this is the Administration application.
 2. Select the tenant you want to trigger the migration for from the list of available tenants.
 3. Hover over the row of the tenant in the tenant list, then click **Add to queue** and confirm the operation. The tenant migration status should be updated to **Queued**, which means that tenant is added into the migration queue.
-
-{{< c8y-admon-important >}}
-You can add more than one tenant into the migration queue, but the migration is executed only for one tenant at a time. The migration of the next tenant in the queue will not start until you approve the previously migrated tenant.
-{{< /c8y-admon-important >}}
+  {{< c8y-admon-important >}}
+  You can add more than one tenant into the migration queue, but the migration is executed only for one tenant at a time. The migration of the next tenant in the queue will not start until you approve the previously migrated tenant.
+  {{< /c8y-admon-important >}}
 
 4. When the migration process is triggered its status for the tenant changes from **Queued** to **In progress**.
 After the data is processed, verified and migrated to the new collection the status of the migration changes to **Verified** and the **Approve and finish migration** button is visible in the **Ongoing migration** section and in the tenant list on hovering over the tenant row. Click **Approve and finish migration** to confirm the process.
@@ -76,7 +75,7 @@ Here you can see the following information:
 - **Migration range** - Date range. Start date is the date of the oldest measurement to be migrated and end date is the date of the newest measurement. This is also the point in time when the migration has started.
   **Migration status** - This bar displayed at the right has various functions. Depending on the state it provides either visual information on the current state of the ongoing process or allows to control certain process states. For details of states, see [Migration states](#migration-states).
 
-For each tenant the following information is displayed:
+The second section displays **List of tenants** with the next infomation for each tenant:
  
 * **Tenant** - Tenant name.
 * **ID** - Tenant ID. 

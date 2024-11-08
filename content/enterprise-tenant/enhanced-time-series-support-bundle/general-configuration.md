@@ -63,7 +63,7 @@ The following API is partially supported:
 
 * `DEL /measurements/measurement/`
 
-In release 10.16+ the parameters `dateFrom` and `dateTo` are supported and must be truncated to full hours (for example, `2022-08-19T14:00:00.000Z`), otherwise an error is returned.
+The parameters `dateFrom` and `dateTo` are supported and must be truncated to full hours (for example, `2022-08-19T14:00:00.000Z`), otherwise an error is returned.
 
 ### To check whether time series collections are enabled {#to-check-whether-time-series-collections-are-enabled}
 
