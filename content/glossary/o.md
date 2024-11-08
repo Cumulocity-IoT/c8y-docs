@@ -13,7 +13,7 @@ OPC Unified Architecture (OPC UA) is a standard to enable the communication betw
 
 One component of the OPC UA integration in {{< product-c8y-iot >}} is the OPC UA device gateway. The OPC UA device gateway is a stand-alone Java program that communicates with OPC UA server(s) and the {{< product-c8y-iot >}} platform. It stores data into the {{< product-c8y-iot >}} database via REST. The gateway must be registered as {{< product-c8y-iot >}} device.
 
-For details see [Device management > Protocol integration > OPC UA](/protocol-integration/opcua).
+For details see [Device management & connectivity > Protocol integration > OPC UA](/protocol-integration/opcua).
 
 
 ### Operations {#operations}

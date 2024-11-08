@@ -7,11 +7,11 @@ sector:
 ---
 
 {{< c8y-admon-related >}}
-* [Device management > Device integration > Fragment library > Connectivity](/device-integration/fragment-library/#connectivity) for details on the `c8y_Mobile` fragment used in managed objects.
+* [Device management & connectivity > Device integration > Fragment library > Connectivity](/device-integration/fragment-library/#connectivity) for details on the `c8y_Mobile` fragment used in managed objects.
 * [Platform administration > {{< standard-tenant >}} administration > Changing settings > Connectivity](/standard-tenant/changing-settings/#connectivity) for information on how to change the connectivity settings via the UI.
 {{< /c8y-admon-related >}}
 
-The Connectivity agent, which works from within the {{< product-c8y-iot >}} Device management application, provides basic information on mobile devices and additional connectivity details.
+The Connectivity agent, which works from within the {{< product-c8y-iot >}} Device Management application, provides basic information on mobile devices and additional connectivity details.
 
 The {{< product-c8y-iot >}} platform integrates with the SIM connectivity platforms Comarch, Ericsson, Jasper and Kite.
 
@@ -47,7 +47,7 @@ The following sections describe:
 * How to configure the [connectivity for the SIM provider](#configuring-the-connectivity-for-the-sim-provider) in your {{< product-c8y-iot >}} tenant.
 * How to [link SIMs and mobile devices](#linking-sims-and-mobile-devices).
 * Which information is shown in the [Connectivity tab](#connectivity-tab).
-* How to [manage connectivity](#checking-connectivity) from the Device management application.
+* How to [manage connectivity](#checking-connectivity) from the Device Management application.
 
 ### Setting up your Jasper Control Center account {#setting-up-your-jasper-control-center-account}
 
@@ -94,7 +94,7 @@ A longer cache duration means less traffic to your SIM provider while a shorter 
 
 ### Linking SIMs and mobile devices {#linking-sims-and-mobile-devices}
 
-Switch to the Device management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown, one of the following applies:
+Switch to the Device Management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown, one of the following applies:
 
 * Your user does not have permissions for Connectivity.
 * The device is not linked to a SIM card.

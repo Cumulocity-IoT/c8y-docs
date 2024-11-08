@@ -4,7 +4,7 @@ weight: 20
 layout: bundle
 ---
 
-In the Device management application in the {{< product-c8y-iot >}} platform, click **All devices** in the **Devices** menu and select the desired gateway from the device list.
+In the Device Management application in the {{< product-c8y-iot >}} platform, click **All devices** in the **Devices** menu and select the desired gateway from the device list.
 
 When you open the gateway you will find the **Remote access** tab in its tab list.
 

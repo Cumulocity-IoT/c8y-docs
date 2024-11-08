@@ -79,7 +79,7 @@ When you create a new asset you have the option of assigning one or more devices
 
 ![Assigning devices to an asset](/images/dtm/assets/dtm-assets-assign-devices.png)
 
-To add a new device, add it through the Device management application.
+To add a new device, add it through the Device Management application.
 Refer to [Registering devices](/device-management-application/registering-devices/) for further information.
 
 {{< c8y-admon-info>}}

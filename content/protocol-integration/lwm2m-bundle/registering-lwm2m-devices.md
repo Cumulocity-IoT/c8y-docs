@@ -17,7 +17,7 @@ You can register a LWM2M device in {{< product-c8y-iot >}} in two ways:
 
 ### Single device registration {#single-device-registration}
 
-To register a LWM2M device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device management application, click **Register device** at the top right and select **Single device registration** > **LWM2M** from the dropdown.
+To register a LWM2M device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Single device registration** > **LWM2M** from the dropdown.
 
 The LWM2M device registration wizard has four steps:
 * **Device** - configuration of globally unique device identifier.
@@ -36,7 +36,7 @@ The UI will display a confirmation message.
 
 If there is a number of devices to be registered at the same time, it is more convenient to use bulk device registration.
 
-To register the LWM2M devices in {{< product-c8y-iot >}}, navigate to **Devices** > **Registration** in the Device management application, click **Register device** at the top right and select **Bulk device registration** > **LWM2M** from the dropdown.
+To register the LWM2M devices in {{< product-c8y-iot >}}, navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Bulk device registration** > **LWM2M** from the dropdown.
 Upload a CSV file with the registration data in the resulting bulk registration dialog.
 The dialog also contains CSV template links.
 Refer to [Device settings](#device-settings), [Security settings](#security-settings),

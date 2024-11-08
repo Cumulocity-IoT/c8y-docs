@@ -10,7 +10,7 @@ The **Device information** tab is a predefined dashboard with several widgets th
 
 ### Device marker {#device-marker}
 
- A device is marked in the inventory with a ```c8y_IsDevice``` fragment in its own managed object. Only devices with this fragment appear in the all **All devices** list in the Device management application.
+ A device is marked in the inventory with a ```c8y_IsDevice``` fragment in its own managed object. Only devices with this fragment appear in the all **All devices** list in the Device Management application.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>
@@ -48,7 +48,7 @@ Devices capable of restarting remotely can announce this capability by adding th
 
 #### Restart operation {#restart-operation}
 
-Upon clicking the **Restart** button in the Device management application an operation as follows is sent:
+Upon clicking the **Restart** button in the Device Management application an operation as follows is sent:
 
 ```json
 {
