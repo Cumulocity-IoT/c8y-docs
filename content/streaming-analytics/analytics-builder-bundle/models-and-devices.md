@@ -87,7 +87,7 @@ By default, the virtual devices are kept for 30 days. If you want to change this
 
 See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 
-Virtual devices are not shown in the Device management application. Use [REST](/smartrest/smartrest-introduction/) operations to find these entries.
+Virtual devices are not shown in the Device Management application. Use [REST](/smartrest/smartrest-introduction/) operations to find these entries.
 
 ### Connections between models {#connections-between-models}
 

@@ -33,7 +33,7 @@ QR codes not supported by the {{< sensor-app >}} are highlighted using a red reg
 
 ### Manual registration {#manual-registration}
 
-1.  On a desktop or laptop computer, open a web browser and log in to your {{< product-c8y-iot >}} tenant. In the Device management application, select **Devices > Registration** from the navigator.
+1.  On a desktop or laptop computer, open a web browser and log in to your {{< product-c8y-iot >}} tenant. In the Device Management application, select **Devices > Registration** from the navigator.
 
     ![Manual registration](/images/users-guide/csa/csa-device-registration.png)
 

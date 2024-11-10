@@ -9,9 +9,9 @@ Steps to build the example codec `lora-codec-lansitec` microservice.
 1. Clone the https://github.com/SoftwareAG/cumulocity-examples.git repository.
 2. Build the microservice using `mvn clean install`. This creates a ZIP file of the lanitec codec microservice.
 3. Deploy the microservice by uploading the ZIP file using the {{< product-c8y-iot >}} Administration UI.
-4. Open the Device management application. Under **Device protocols**, you should now see the device protocols with type "lpwan" created by the lansitec codec microservice.
+4. Open the Device Management application. Under **Device protocols**, you should now see the device protocols with type "lpwan" created by the lansitec codec microservice.
 
-The image below shows the device protocols option in the Device management application.
+The image below shows the device protocols option in the Device Management application.
 
 ![Device Protocols Page](/images/device-protocols/lpwan-custom-codec/lpwan-device-protocols-page.png)
 

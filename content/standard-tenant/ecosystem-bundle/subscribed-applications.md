@@ -49,7 +49,7 @@ Below all applications are listed which are by default available in the {{< stan
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/device-management-application/" class="no-ajaxy">Device management</a></td>
+<td style="text-align:left"><a href="/device-management-application/" class="no-ajaxy">Device Management</a></td>
 <td style="text-align:left">Manage and monitor devices, and control and troubleshoot devices remotely</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Web application</td>
