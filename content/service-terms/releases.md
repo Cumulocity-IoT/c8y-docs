@@ -17,7 +17,7 @@ This document is provided as a courtesy to {{< product-c8y-iot >}} customers, ac
 * IoT hardware devices and legacy industry protocols can be highly sensitive to even compatible changes and may require thorough testing. For instance, IoT device security stacks often lag in adopting recent secure communication ciphers, which {{< product-c8y-iot >}} must support for security reasons.
 * Customers who are not accustomed to cloud release models, or those operating in regulated industries, may need to closely monitor and report on changes.
 
-To address these considerations, this document outlines the various upgrade models available and answers frequently asked questions. It begins with an overview of the standard {{< product-c8y-iot >}} continuous deployment model, explains how customers can integrate this model into their own continuous deployment processes, and describes the alternative annual deployment model. Additionally, it discusses how customers can opt to gain early access to {{< product-c8y-iot >}}'s new features through private and public previews.
+To address these considerations, this document outlines the various upgrade models available and answers frequently asked questions. It begins with an overview of the standard {{< product-c8y-iot >}} continuous deployment model, explains how customers can integrate this model into their own continuous deployment processes, and describes the alternative annual deployment model.
 
 ### Continuous deployment
 
@@ -63,7 +63,9 @@ Additional considerations:
 
 #### Can I check when a particular change is available in my tenant?
 
-Due to the staged upgrade process for {{< product-c8y-iot >}} instances, this is currently not generally possible. The change log indicates the time when a change is made available on the first deployment to eu-latest.cumulocity.com only.
+Due to the staged upgrade process for {{< product-c8y-iot >}} continuous deployment instances, this is currently not generally possible. The change log indicates the time when a change is made available on the first deployment to eu-latest.cumulocity.com only.
+
+For customers using the annual deployment model, release notes for the annual release will be provided.
 
 #### Can I receive notifications when something is deployed?
 
