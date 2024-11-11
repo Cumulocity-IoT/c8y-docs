@@ -62,16 +62,16 @@ for the SUBSCRIBE packets, where the reason code is `0x80`.
 #### Error Topic {#error-topic}
 
 MQTT Service provides clients the ability to review errors through messages received by subscribing to the error topic, `$debug/$error`.
-When subscribing to the topic it will act as a per-client topic in that clients will only receive messages relating to their client id. For example
+When subscribing to the topic it will act as a per-client topic in that clients will only receive messages relating to their client ID. For example
 if a client was attempting to subscribe to a new topic, and the creation of the topic would exceed the topic limit, only that client would receive an error.
 
 Due to the behaviour of MQTT 3.1 and 3.1.1 there are some edge cases which may result in client being disconnected before receiving messages from the error topic:
 
 * Server implementation does not authorise a PUBLISH from the client.
-* Bits within fixed portions of a packet are incorrectly set e.g. fixed headers. MQTT specification treats the entire packet as malformed and closes the connection.
+* Bits within fixed portions of a packet are incorrectly set, for example, fixed headers. MQTT specification treats the entire packet as malformed and closes the connection.
 
 In such instances MQTT clients must reconnect to be able to receive error messages from error topic via subscription. Error messages received after this reconnection
-are from the previous session which can lead to confusion when attempting corrective actions. Therefore it is highly recommended that to build a microservice using
+are from the previous session which can lead to confusion when attempting corrective actions. Therefore, it is highly recommended to build a microservice which uses
 the MQTT Service SDK to consume error messages, or use MQTT 5 for clients and make use of the reason codes feature.
 
 #### Topic cleanup {#topic-cleanup}
