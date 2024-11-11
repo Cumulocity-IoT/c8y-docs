@@ -14,4 +14,4 @@ build_artifact:
 ticket: PAM-35027
 version: 25.298.0
 ---
-If the `client.numClients` tenant option were set to a value less than zero, the Streaming Analytics microservice would be unable to communicate with the Cumulocity platform. Now, a warning will be logged and a default value of 1 will be set to ensure the microservice can communicate.
+If the `client.numClients` tenant option was set to a value less than zero, the Apama-ctrl microservice was unable to communicate with the Cumulocity IoT platform. Now, a warning is logged and a default value of 1 is set to ensure the microservice can communicate.
