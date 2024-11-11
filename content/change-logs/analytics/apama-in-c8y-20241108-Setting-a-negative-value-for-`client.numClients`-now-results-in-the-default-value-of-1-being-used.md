@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAM-35027
-version: 25.298.0
+version: 25.296.0
 ---
 If the `client.numClients` tenant option was set to a value less than zero, the Apama-ctrl microservice was unable to communicate with the Cumulocity IoT platform. Now, a warning is logged and a default value of 1 is set to ensure the microservice can communicate.
