@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-11-11
 title: Added new option to avoid unnecessary unavailability alarms for LWM2M devices
 product_area: Device management & connectivity
 change_type:

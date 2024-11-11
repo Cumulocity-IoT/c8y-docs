@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-11-11
 title: Info gauges resize properly when the window size changes
 product_area: Application enablement & solutions
 change_type:

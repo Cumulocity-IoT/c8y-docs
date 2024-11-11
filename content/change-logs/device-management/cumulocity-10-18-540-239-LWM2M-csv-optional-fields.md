@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2024-11-11
 title: Improved LWM2M CSV bulk device registration
 product_area: Device management & connectivity
 change_type:
