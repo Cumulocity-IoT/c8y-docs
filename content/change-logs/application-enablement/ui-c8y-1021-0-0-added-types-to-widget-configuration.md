@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add type information to widget configuration
+title: Added type information to widget configuration
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
