@@ -96,7 +96,7 @@ We use the following types of cookies on our websites and online services:
 You can choose how we use functional and advertising cookies by changing the cookie settings. To do so, please go to "Cookie preferences" at the bottom of this page. In the cookie settings, you will also find an overview of the third parties that place cookies on our websites. In addition, you can control and restrict the placement of cookies via the browser settings. In this context, you can also delete existing cookies. However, deselecting functional and advertising cookies may lead to a restriction of the functionalities of our websites. Essential cookies are set automatically and cannot be deselected, otherwise the websites would not work properly.
 
 ### 5\. Google Analytics
-This website uses functions of the web analysis service Google Analytics. The provider of this service is Google Ireland Limited (“Google”), Gordon House, Barrow Street, Dublin 4, Ireland.
+The Cumulocity websites use functions of the web analysis service Google Analytics. The provider of this service is Google Ireland Limited (“Google”), Gordon House, Barrow Street, Dublin 4, Ireland.
 
 Google Analytics enables the website operator to analyze the behavior patterns of website visitors. To that end, the website operator receives a variety of user data, such as pages accessed, time spent on the page, the utilized operating system and the user’s origin. This data is assigned to the respective end device of the user. An assignment to a user ID does not take place.
 
