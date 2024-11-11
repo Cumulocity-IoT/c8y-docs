@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59579
 version: 1021.0.0
 ---
-The alarms refresh section is now disabled when users lack permission to refresh alarms.
+The auto-refresh controls and the manual refresh button are now disabled when the user lacks access to alarms.
