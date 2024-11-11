@@ -102,7 +102,7 @@ Google Analytics enables the website operator to analyze the behavior patterns o
 
 Furthermore, Google Analytics allows us to record your mouse and scroll movements and clicks, among other things. Google Analytics uses various modeling approaches to augment the collected data sets and uses machine learning technologies in data analysis.
 
-Google Analytics uses technologies that make the recognition of the user for the purpose of analyzing the user behavior patterns (e.g., cookies or device fingerprinting). The website use information recorded by Google is, as a rule transferred to a Google server in the United States, where it is stored.
+Google Analytics uses technologies that make the recognition of the user for the purpose of analyzing the user behavior patterns (for example, cookies or device fingerprinting). The website use information recorded by Google is, as a rule transferred to a Google server in the United States, where it is stored.
 
 The use of these services occurs on the basis of your consent pursuant to Art. 6(1)(a) GDPR and § 25(1) TTDSG. You may revoke your consent at any time.
 
