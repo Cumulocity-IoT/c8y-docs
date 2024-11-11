@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Disable alarms refresh button when user lacks access to any alarms
+title: Disable alarms refresh controls when user lacks access to alarms
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
