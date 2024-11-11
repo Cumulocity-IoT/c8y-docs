@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3875
 version: 1021.0.0
 ---
-Fixed issue in device credentials functionality allowing reliable user activation and deactivation.
+In the **Device credentials** page, user activation did not work properly. This issue has been fixed an activating or deactivating users now works reliably.
