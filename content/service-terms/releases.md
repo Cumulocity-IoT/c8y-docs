@@ -67,7 +67,7 @@ Due to the staged upgrade process for {{< product-c8y-iot >}} instances, this is
 
 #### Can I receive notifications when something is deployed?
 
-You can subscribe to updates on the status page of your cloud instance (e.g., [status.cumulocity.com](https://status.cumulocity.com/)), which includes announcements for scheduled maintenance and other important updates.
+You can subscribe to updates on the status page of your cloud instance (for example, [status.cumulocity.com](https://status.cumulocity.com/)), which includes announcements for scheduled maintenance and other important updates.
 
 #### Can I select specific changes to be applied to my tenant?
 
