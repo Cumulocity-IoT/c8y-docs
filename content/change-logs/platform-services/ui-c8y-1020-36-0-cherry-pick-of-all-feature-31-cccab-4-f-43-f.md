@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-56510
 version: 1020.36.0
 ---
-When deleting or modifying a global role, the administrator has the option to log out all users who are assigned to that role.
+When deleting or modifying a global role, the administrator has the option to log out all users that are assigned to that role.
