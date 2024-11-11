@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-38876
 version: 1021.0.0
 ---
-To provide more clarity and improve validation when configuring widgets, type information has been added to the widget configuration. Previously, the widget configuration did not include any type information, which could lead to confusion and misconfiguration. With this change, each configuration property now specifies its expected type, such as string, number, or boolean. This enhancement helps users to correctly configure widgets and catch potential errors early in the configuration process, leading to a smoother widget setup experience.
+To provide more clarity and improve validation when configuring widgets, type information has been added to the widget configuration. Previously, the widget configuration did not include any type information, which could lead to confusion and misconfiguration. With this change, each configuration property now specifies its expected type, such as string, number, or Boolean. 
