@@ -6,7 +6,7 @@ sector:
   - getting_started
 ---
 
-Product support for {{< product-c8y-iot >}} is provided to licensed customers via the [{{< c8y-support >}}]({{< c8y-support-link >}}). The services on this portal require that you have an account. If you do not yet have one, you can send a request by email to [{{< c8y-support-email >}}]({{< c8y-support-email >}}).
+Product support for {{< product-c8y-iot >}} is provided to licensed customers via the [{{< c8y-support-portal >}}]({{< c8y-support-link >}}). The services on this portal require that you have an account. If you do not yet have one, you can send a request by email to [{{< c8y-support-email >}}]({{< c8y-support-email >}}).
 
 Once you have an account, and depending on role-associated permissions, you can:
 
