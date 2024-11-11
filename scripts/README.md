@@ -1,46 +1,36 @@
 # Steps for finding and deleting unused images
 
-## 1. Navigate to the *scripts* folder:
-- Open the *c8y-docs* folder, then locate the *scripts* folder. This is where the necessary scripts for finding and deleting unused images are stored.
+## Prerequisites
+- Node.js with version 20 and more is required to execute the scripts.
 
-## 2. Copy the scripts:
-- Copy the *Finding_unused_images.js* and *Delete_unused_images.js* scripts.
-- Paste them under the *c8y-docs* folder.
+## 1. Navigate to the *scripts* folder:
+- Create a main directory, In the main directory please clone your *c8y-docs* repository.
+- Open the *c8y-docs* folder and look for the *scripts* folder. In the scripts folder, Finding_unused_images.js and Delete_unused_images.js files are stored.
+
+## 2. Copy the JavaScriipt Files:
+- Copy the *Finding_unused_images.js* and *Delete_unused_images.js* files and come back to your main directory.
+- Paste the  *Finding_unused_images.js* and *Delete_unused_images.js* files back into the main directory under the *c8y-docs* folder.
 
 ## 3. Run the script to find unused images:
-- Open the command prompt (or terminal).
-- Navigate to your project directory using the command:
-
-   ```
-    cd your_filepath
-    ```
-
-    **Note:** Make sure you navigate to the folder where *c8y-docs*, *Finding_unused_images.js*, and *Delete_unused_images.js* are located.
-
+- Open your windows command line prompt(cmd.exe) or Git Bash
+- In the Command line or Git Bash, Navigate to your main project directory where *c8y-docs*, *Finding_unused_images.js*, and *Delete_unused_images.js* are located.
 - To identify unused images, run the following command:
 
     ```
     node Finding_unused_images.js
     ```
+  **Note:** If Node.js with version 20 and more is not installed, the above command will fail to execute as it relies on Node.js to run JavaScript files
 
-     Make sure that you have Nodejs installed with version 20 and more.
-
-- After the script executes, a file named *unused_images.csv* will be generated. This file contains a list of all the unused images in the project.
+- After the script executes, you see a newly generated file named *unused_images.csv*. This file contains a list of all the unused images in the current project.
 
 ## 4. Run the script to delete unused images:
-- Open the command prompt and navigate to the *c8y-docs* folder:
-
-    ```
-    cd your_filepath
-    ```
-
 - To run the deletion script execute:
 
     ```
     node Delete_unused_images.js
     ```
 
-- The script will delete all the unused images listed in the *unused_images.csv* file.
+- The script deletes all the unused images listed in the *unused_images.csv* file.
 
 ## 5. Verification:
-After deleting the unused images, you can run the *Finding_unused_images.js* script again to confirm that the unused images have been successfully removed. Running the script will update the *unused_images.csv* file, allowing you to see the updated list of unused images after deletion.
+After deleting the unused images, run the *Finding_unused_images.js* script again to confirm that the unused images have been successfully removed. This updates the *unused_images.csv* file, allowing you to see the updated list of unused images after deletion.
