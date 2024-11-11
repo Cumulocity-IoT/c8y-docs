@@ -108,7 +108,7 @@ The use of these services occurs on the basis of your consent pursuant to Art. 6
 
 Data transmission to the US is based on the Standard Contractual Clauses (SCC) of the European Commission. Details can be found here: https://privacy.google.com/businesses/controllerterms/mccs/.
 
-#### Browser plug-in
+#### Browser plugin
 You can prevent the recording and processing of your data by Google by downloading and installing the browser plugin available under the following link: https://tools.google.com/dlpage/gaoptout?hl=en.
 
 For more information about the handling of user data by Google Analytics, please consult Google’s Data Privacy Declaration at: https://support.google.com/analytics/answer/6004245?hl=en.
