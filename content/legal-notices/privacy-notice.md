@@ -95,8 +95,29 @@ We use the following types of cookies on our websites and online services:
 
 You can choose how we use functional and advertising cookies by changing the cookie settings. To do so, please go to "Cookie preferences" at the bottom of this page. In the cookie settings, you will also find an overview of the third parties that place cookies on our websites. In addition, you can control and restrict the placement of cookies via the browser settings. In this context, you can also delete existing cookies. However, deselecting functional and advertising cookies may lead to a restriction of the functionalities of our websites. Essential cookies are set automatically and cannot be deselected, otherwise the websites would not work properly.
 
+### 5\. Google Analytics
+This website uses functions of the web analysis service Google Analytics. The provider of this service is Google Ireland Limited (“Google”), Gordon House, Barrow Street, Dublin 4, Ireland.
 
-### 5\. How do we share your data and how is it transferred to third countries?
+Google Analytics enables the website operator to analyze the behavior patterns of website visitors. To that end, the website operator receives a variety of user data, such as pages accessed, time spent on the page, the utilized operating system and the user’s origin. This data is assigned to the respective end device of the user. An assignment to a user-ID does not take place.
+
+Furthermore, Google Analytics allows us to record your mouse and scroll movements and clicks, among other things. Google Analytics uses various modeling approaches to augment the collected data sets and uses machine learning technologies in data analysis.
+
+Google Analytics uses technologies that make the recognition of the user for the purpose of analyzing the user behavior patterns (e.g., cookies or device fingerprinting). The website use information recorded by Google is, as a rule transferred to a Google server in the United States, where it is stored.
+
+The use of these services occurs on the basis of your consent pursuant to Art. 6(1)(a) GDPR and § 25(1) TTDSG. You may revoke your consent at any time.
+
+Data transmission to the US is based on the Standard Contractual Clauses (SCC) of the European Commission. Details can be found here: https://privacy.google.com/businesses/controllerterms/mccs/.
+
+#### Browser plug-in
+You can prevent the recording and processing of your data by Google by downloading and installing the browser plugin available under the following link: https://tools.google.com/dlpage/gaoptout?hl=en.
+
+For more information about the handling of user data by Google Analytics, please consult Google’s Data Privacy Declaration at: https://support.google.com/analytics/answer/6004245?hl=en.
+
+#### Contract data processing
+We have executed a contract data processing agreement with Google and are implementing the stringent provisions of the German data protection agencies to the fullest when using Google Analytics.
+
+
+### 6\. How do we share your data and how is it transferred to third countries?
 
 We only share your personal data with recipients if this is necessary for fulfillment of the respective purpose. Your personal data may be transferred to and processed by:
 
@@ -113,13 +134,13 @@ We only share your personal data with recipients if this is necessary for fulfil
   The transfer of personal data to recipients located in a country outside the EEA for which the EU Commission has not issued an adequacy decision is based on the EU Standard Contractual Clauses.
 
 
-### 6\. How long do we store your personal data?
+### 7\. How long do we store your personal data?
 
 We will delete or anonymize your personal data as soon as it is no longer required for the purposes stated in this Privacy Notice, or if you have requested us to do so and there is a right to data deletion. An exception may occur if legal retention obligations require a storage period that deviates from this.
 
 If you have applied for a job or provided your data for future job postings, we will keep your personal data for one year after the last activity. This could be any activity, for example, your recruiter had to send you a rejection because there was no match. If there was no match, but your application was interesting to us, the recruiter will move your record to a candidate pool, which is exempt from purge. You will be notified by email, when this is the case. If you do not agree with the further storage of your data, you can simply send us a reply email and your data will be purged.
 
-### 7\. Which rights do you have?
+### 8\. Which rights do you have?
 
 You may contact us at any time and free of charge to exercise your following rights:
 
@@ -134,26 +155,26 @@ You may contact us at any time and free of charge to exercise your following rig
 
 In addition, you have the right to file a complaint with a supervisory authority (for more details, see section 11).
 
-### 8\. To whom can you address your right to object to the processing of personal data?
+### 9\. To whom can you address your right to object to the processing of personal data?
 
 An objection to processing based on our legitimate interest may be lodged at any time. In this case, processing will be terminated unless it serves our compelling interests that are worthy of protection and outweigh your interests.
 
 Please direct corresponding inquiries to the contact specified under section 1 of this Privacy Notice.
 
-### 9\. Who can you contact if we process your personal data as a processor on behalf of a customer?
+### 10\. Who can you contact if we process your personal data as a processor on behalf of a customer?
 
 Your personal data may be processed as part of the Online Services that we provide to customers. The customer is responsible for compliance with the protection of your personal data processed in these services in its role as a so-called data controller. This Privacy Notice does not apply where we process personal data in direct connection with the provision of Cloud Services, Maintenance & Support Services or Professional Services on behalf of a customer as a processor.
 
 In this case, please address your inquiries directly to the relevant controller.
 
-### 10\. Local regulations
+### 11\. Local regulations
 
 For residents of the United States of America the respective local privacy notices apply in addition to this Privacy Notice.
 
 * [US State Privacy Notice](/legal-notices/us-state-privacy-notice/)
 
 
-### 11\. Where can you address complaints to?
+### 12\. Where can you address complaints to?
 
 You have a right of appeal to the data protection supervisory authorities pursuant to Art. 77 GDPR. The competent supervisory authority for Cumulocity is:
 
