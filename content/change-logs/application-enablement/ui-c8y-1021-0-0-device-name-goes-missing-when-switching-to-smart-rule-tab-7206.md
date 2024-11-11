@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-11-11'
 title: Device name displayed properly when switching to the Smart rules tab
 product_area: Application enablement & solutions
 change_type:
