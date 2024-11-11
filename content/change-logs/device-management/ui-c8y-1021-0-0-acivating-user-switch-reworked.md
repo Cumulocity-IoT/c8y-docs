@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Activating user in the Device credentials tab
+title: Activating or deactivating users in the Device credentials page works reliably
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
