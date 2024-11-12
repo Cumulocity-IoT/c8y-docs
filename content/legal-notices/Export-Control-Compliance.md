@@ -19,7 +19,7 @@ In compliance with international sanctions/embargoes, Cumulocity GmbH's products
 * Syria  
 * Ukraine Regions (Crimea / Cherson / Saporischschja Region / Donetsk People’s Republic (DNR) / Luhansk People’s Republic (LNR))
 
-#### End Users Restrictions
+### End users restrictions
 Cumulocity GmbH's products, services and SaaS are not available to entities or individuals with whom transactions are prohibited under applicable export control and sanctions laws, including those listed on any applicable sanction lists.
 
 ### End-use restrictions
