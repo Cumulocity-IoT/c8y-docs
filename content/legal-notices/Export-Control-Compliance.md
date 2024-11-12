@@ -10,7 +10,7 @@ Disclaimer: This information is provided for guidance only. Cumulocity GmbH make
 
 Cumulocity GmbH's products, services and SaaS are subject to the export control laws of various countries, including without limitation, the laws of Germany, the European Union, and the United States of America.
 
-#### Territory Restrictions
+### Territory restrictions
 In compliance with international sanctions/embargoes, Cumulocity GmbH's products, services and SaaS are not available for export, re-export, transfer and/or use in the following countries/regions (subject to change without notice):
 
 * Cuba  
