@@ -22,7 +22,7 @@ In compliance with international sanctions/embargoes, Cumulocity GmbH's products
 #### End Users Restrictions
 Cumulocity GmbH's products, services and SaaS are not available to entities or individuals with whom transactions are prohibited under applicable export control and sanctions laws, including those listed on any applicable sanction lists.
 
-#### End-Use Restrictions
+### End-use restrictions
 Cumulocity GmbH's products, services and SaaS may not be used for/in
 
 * air traffic control, mass transit systems, critical medical purposes, the operation of nuclear facilities or any other use which could result in a high risk of safety or property damage;  
