@@ -29,7 +29,7 @@ The following example shows you how the export functionality is integrated with 
    - **Data scope**:
      - **Export mode**:  
        - Compact (selected by default) - all data will be exported to one file and downloaded directly by your browser.
-       - Full - depending on the number of records to be processed, the data will either be available in a single ZIP file (containing one file per **Data point**), sent by email or not exportable at all.
+       - Full - depending on the number of records to be processed, the data will either be available in a single ZIP file (containing one file per data point), sent by email or not exportable at all.
        Refer to [Export modes](#export-modes) for further details.
      - **Aggregation**: Only available when you select the **Compact** mode. The default value is the same as in the widget's configuration. The following four options are available:
        - None
