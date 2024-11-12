@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61407
 version: 1021.0.0
 ---
-As part of ongoing efforts to modernize the look and feel of the {{< product-c8y-iot >}} UI, the branding colors and the logo have been updated. The previous color scheme and logo were outdated and did not align with current design trends. This change provides a refreshed visual appearance throughout the {{< product-c8y-iot >}} UI, without impacting existing functionality or user workflows.
+As part of ongoing efforts to modernize the look and feel of the {{< product-c8y-iot >}} UI, the branding colors and the logo have been updated. The previous color scheme and logo were outdated and did not align with current design trends. This change provides a refreshed visual appearance throughout the {{< product-c8y-iot >}} UI, without impacting existing functionality or user workflows, but it could imply a need to review any custom branding applied as some design tokens have been updated or removed. Additionally, the link color is no longer related to the branding color and needs to be updated if a branded link color is wanted.
