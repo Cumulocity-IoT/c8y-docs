@@ -21,7 +21,7 @@ Cumulocity GmbH takes no responsibility for any Customer or User content created
 
 Customer shall not use the Cumulocity GmbH Services and Infrastructure to transmit, distribute or store material that is inappropriate (including online gambling), as reasonably determined by Cumulocity GmbH, or material that is illegal, defamatory, libelous, indecent, obscene, pornographic, enables online gambling or inconsistent with the generally accepted practises of the internet community. Customer shall ensure that its and its Users’ use of the Cumulocity GmbH Services and Infrastructure and all content transmitted, distributed or stored on the Cumulocity GmbH Infrastructure does not violate any applicable domestic or foreign laws or regulations including but not limited to laws relating to content distribution, encryption or export or any rights of any third party. Customer shall not use the Cumulocity GmbH Services and Infrastructure to transmit, distribute or store material that contains a virus, worm, Trojan horse or other component harmful to the Cumulocity Services and Infrastructure, any other infrastructure or equipment, or other Users.
 
-### Intellectual Property
+### Intellectual property
 
 Customer shall not use the Cumulocity GmbH Services and Infrastructure in any manner that would infringe, dilute, misappropriate or otherwise violate any privacy or other personal rights or any intellectual property rights, including but not limited to, copyrights and laws protecting patents, trademarks, trade secrets or other proprietary information. If Customer uses a domain name in connection with its use of the Cumulocity GmbH Services and Infrastructure, such domain name must not violate any trademark, service mark, or other rights of any third party.
 
