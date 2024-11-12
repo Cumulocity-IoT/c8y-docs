@@ -5,7 +5,6 @@ layout: bundle
 sector:
   - terms_conditions
 ---
-### Cumulocity GmbH - Export Control Compliance
 Disclaimer: This information is provided for guidance only. Cumulocity GmbH makes the information available for informational purposes only. It may not reflect the most current legal developments. The information is provided "AS IS," and Cumulocity GmbH does not represent, warrant or guarantee that the information is complete, accurate, or up-to-date. The information is not intended to constitute legal advice or to be used as a substitute for specific legal advice from a licensed attorney. You should not act (or refrain from acting) based on information provided without obtaining professional advice regarding your particular facts and circumstances. Any use of the information by you is without recourse to Cumulocity GmbH and is at your own risk.IN NO EVENT SHALL CUMULOCITY GMBH BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES INCURRED BY YOU OR ANY THIRD PARTY, WHETHER IN AN ACTION IN CONTRACT OR TORT, ARISING FROM YOUR USE OF THE INFORMATION.
 
 Cumulocity GmbH's products, services and SaaS are subject to the export control laws of various countries, including without limitation, the laws of Germany, the European Union, and the United States of America.
