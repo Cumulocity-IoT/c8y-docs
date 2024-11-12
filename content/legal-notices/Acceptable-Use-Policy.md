@@ -29,7 +29,7 @@ Customer shall not use the Cumulocity GmbH Services and Infrastructure in any ma
 
 Customer shall not use the Cumulocity GmbH Services and Infrastructure to transmit or distribute material containing fraudulent offers for goods or services, or any advertising or promotional materials that contain false, deceptive, or misleading statements, claims or representations.
 
-### Email and Spam
+### Email and spam
 
 Customer shall not use the Cumulocity GmbH Services and Infrastructure to send unsolicited email messages, including without limitation, bulk commercial advertising or informational announcements (“spam”).  Further, Customer is prohibited from using the service of another provider to send spam or to otherwise promote a site hosted on or connected to the Cumulocity GmbH Infrastructure.  In addition, Customer shall not use the Cumulocity GmbH Services and Infrastructure to (a) send email messages which are excessive and/or intended to harass or annoy others, (b) continue to send email messages to a recipient who has indicated that he/she does not wish to receive them, © send email messages with forged header information, or (d) send malicious email messages, including, without limitation, “mailbombing”.  Cumulocity GmbH reserves the right to charge Customer at Cumulocity GmbH’s standard rates for time required to handle any complaints that Customer or User violate this Email and Spam section.  For the purpose of this Policy and in the event of doubt, the legislation of the recipient shall apply for any classification of the above prohibited usages.
 
