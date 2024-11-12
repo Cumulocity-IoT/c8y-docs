@@ -13,7 +13,7 @@ This Acceptable Use Policy (“AUP”) sets forth guidelines for acceptable use 
 
 Customer must use the Cumulocity GmbH Services and Infrastructure in a manner consistent with the permitted use of such Cumulocity GmbH Services and Infrastructure. Unless otherwise expressly permitted in writing by Cumulocity GmbH, Customer may not assign, transfer, distribute, resell, lease or otherwise provide access to any third party to the Cumulocity GmbH Services and Infrastructure, or use the Cumulocity GmbH Services and Infrastructure with or for hte benefit of any third party (other than Internet end users). Customer may only use the Cumulocity GmbH Services and Infrastructure for lawful purposes and in accordance with this AUP.
 
-### Responsibility for Content
+### Responsibility for content
 
 Cumulocity GmbH takes no responsibility for any Customer or User content created, accessible or delivered on or through the Cumulocity GmbH Services and Infrastructure. Cumulocity GmbH does not monitor or exercise any editorial control over such content. Customer is solely responsible for (i) any content published or made available through the Cumulocity GmbH Services and Infrastructure by Customer and its Users and (ii) compliance with all laws applicable to the publication and distribution of such content.
 
