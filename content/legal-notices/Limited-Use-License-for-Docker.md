@@ -9,7 +9,7 @@ sector:
 
 This Agreement grants you a license for an indefinite period of time, subject to termination, as provided in this Agreement. The license will however limit your use of the Product to certain features, platforms or restrictions in capacity or other limitations incorporated by default, or \- if applicable \- by definition in the respective Product documentation. You accept these limitations and will in no event bypass these, whether by reverse engineering or other means.
 
-### Intellectual Property
+### Intellectual property
 
 Except with respect to the Third Party Applications, Cumulocity GmbH or its affiliates and licensors are the sole owners of the intellectual property rights or industrial rights in and to the Product and accompanying user documentation or have the respective distribution rights. References made in or on the Product to the copyright or to other intellectual property or industrial property rights must not be altered, deleted or obliterated in any manner. Except for the limited license granted in this Agreement, Cumulocity GmbH, its affiliates, and licensors reserve all other right, title, and interest in the Product. The name Cumulocity GmbH and all Cumulocity GmbH product names are either trademarks registered trademarks of Cumulocity GmbH and/or Cumulocity Inc. and/or its subsidiaries and/or its affiliates and/or their licensors. Other company and product names mentioned herein may be trademarks of their respective owners. No right, title or interest in any trademark or trade names of Cumulocity GmbH or its subsidiaries or its licensors is granted hereunder.
 
