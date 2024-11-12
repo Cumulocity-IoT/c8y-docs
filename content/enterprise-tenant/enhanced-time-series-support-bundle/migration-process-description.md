@@ -75,7 +75,7 @@ Here you can see the following information:
 - **Migration range** - Date range. Start date is the date of the oldest measurement to be migrated and end date is the date of the newest measurement. This is also the point in time when the migration has started.
   **Migration status** - This bar displayed at the right has various functions. Depending on the state it provides either visual information on the current state of the ongoing process or allows to control certain process states. For details of states, see [Migration states](#migration-states).
 
-The second section displays **List of tenants** with the next infomation for each tenant:
+The second section shows the **List of tenants** with the following infomation for each tenant:
  
 * **Tenant** - Tenant name.
 * **ID** - Tenant ID. 
