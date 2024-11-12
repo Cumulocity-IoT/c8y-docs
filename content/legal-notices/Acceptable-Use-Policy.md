@@ -15,7 +15,7 @@ Customer must use the Cumulocity GmbH Services and Infrastructure in a manner co
 
 ### Responsibility for Content
 
-Cumulocity GmbH takes no responsibility for any Customer or User content created, accessible or delivered on or through the Cumulocity GmbH Services and Infrastructure.  Cumulocity GmbH does not monitor or exercise any editorial control over such content. Customer is solely responsible for (i) any content published or made available through the Cumulocity GmbH Services and Infrastructure by Customer and its Users and (ii) compliance with all laws applicable to the publication and distribution of such content.
+Cumulocity GmbH takes no responsibility for any Customer or User content created, accessible or delivered on or through the Cumulocity GmbH Services and Infrastructure. Cumulocity GmbH does not monitor or exercise any editorial control over such content. Customer is solely responsible for (i) any content published or made available through the Cumulocity GmbH Services and Infrastructure by Customer and its Users and (ii) compliance with all laws applicable to the publication and distribution of such content.
 
 ### Inappropriate and Illegal Content
 
