@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-34821
 version: 1021.0.0
 ---
-The ILabels interface has been removed. Use ModalLabels interface instead.
+The deprecated ILabels interface has been removed from the Web SDK. Instead, the ModalLabels interface is used.
