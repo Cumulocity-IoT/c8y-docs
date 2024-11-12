@@ -23,7 +23,7 @@ Customer shall not use the Cumulocity GmbH Services and Infrastructure to transm
 
 ### Intellectual Property
 
-Customer shall not use the Cumulocity GmbH Services and Infrastructure in any manner that would infringe, dilute, misappropriate or otherwise violate any privacy or other personal rights or any intellectual property rights, including but not limited to, copyrights and laws protecting patents, trademarks, trade secrets or other proprietary information.  If Customer uses a domain name in connection with its use of the Cumulocity GmbH Services and Infrastructure, such domain name must not violate any trademark, service mark, or other rights of any third party.
+Customer shall not use the Cumulocity GmbH Services and Infrastructure in any manner that would infringe, dilute, misappropriate or otherwise violate any privacy or other personal rights or any intellectual property rights, including but not limited to, copyrights and laws protecting patents, trademarks, trade secrets or other proprietary information. If Customer uses a domain name in connection with its use of the Cumulocity GmbH Services and Infrastructure, such domain name must not violate any trademark, service mark, or other rights of any third party.
 
 ### Fraudulent/Misleading Content
 
