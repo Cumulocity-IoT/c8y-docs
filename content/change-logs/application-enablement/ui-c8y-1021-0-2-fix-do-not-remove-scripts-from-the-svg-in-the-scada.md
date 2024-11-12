@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-11-11'
 title: Script tags are preserved in SCADA widgets
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-11-11'
 title: Upgrade to Angular 18
 product_area: Application enablement & solutions
 change_type:
