@@ -62,7 +62,7 @@ for the SUBSCRIBE packets, where the reason code is `0x80`.
 #### Error Topic {#error-topic}
 
 MQTT Service provides clients the ability to review errors through messages received by subscribing to the error topic, `$debug/$error`.
-When subscribing to the topic it will act as a per-client topic in that clients will only receive messages relating to their client ID. For example
+When subscribing to the topic it will act as a per-client topic, meaning the client will only receive messages exclusively related to their client ID. For example
 if a client was attempting to subscribe to a new topic, and the creation of the topic would exceed the topic limit, only that client would receive an error.
 
 Due to the behaviour of MQTT 3.1 and 3.1.1 there are some edge cases which may result in client being disconnected before receiving messages from the error topic:
