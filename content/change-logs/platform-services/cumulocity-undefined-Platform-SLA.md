@@ -12,4 +12,4 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ---
-The [Service-level agreement for Platforms](/concepts/platform-sla/) now provides a more precise definition on how {{< company-c8y >}} manages the {{< product-c8y-iot >}} platform service for your tenants and what might be possible limitations and responsibilities that you should be aware of.
+The [Platform service-level agreement](/service-terms/service-level/#platform-sla) now provides a more precise definition on how {{< company-c8y >}} manages the {{< product-c8y-iot >}} platform service for your tenants and what might be possible limitations and responsibilities that you should be aware of.
