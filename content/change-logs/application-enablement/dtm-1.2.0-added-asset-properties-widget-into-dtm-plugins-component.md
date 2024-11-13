@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Added asset properties widget into DTM plugins component"
+title: "Added Asset properties widget into DTM plugins component"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
