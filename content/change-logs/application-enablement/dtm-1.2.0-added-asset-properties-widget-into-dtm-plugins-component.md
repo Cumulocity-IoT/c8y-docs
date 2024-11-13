@@ -19,4 +19,4 @@ The DTM plugins component now includes a new Asset Properties widget module, whi
  - Support for listing properties of type: file
  - Ability to preview images attached to properties of type: file 
  - The widget has been migrated to Angular.
-The module is designed for easy integration into any {{< product-c8y >}} application. In future releases, this widget will replace the current Properties widget across all {{< product-c8y >}} applications.
+The module is designed for easy integration into any {{< product-c8y >}} application. In future releases, this widget will replace the current "Asset properties" widget across all {{< product-c8y >}} applications.
