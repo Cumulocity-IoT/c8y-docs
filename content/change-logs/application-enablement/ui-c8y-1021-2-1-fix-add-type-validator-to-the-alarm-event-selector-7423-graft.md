@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61126
 version: 1021.2.1
 ---
-The alarm and event selector in the Cumulocity IoT user interface previously allowed invalid input to be entered. With this fix, input validation has been added to the alarm and event selector to ensure only valid input is accepted. This change improves the user experience and prevents potential errors or unexpected behavior when using the alarm and event selector.
+The alarm and event selector in the {{< product-c8y-iot >}} UI previously allowed to enter invalid input. With this fix, input validation has been added to the alarm and event selector to ensure that only valid input is accepted. This change improves the user experience and prevents potential errors or unexpected behavior when using the alarm and event selector.
