@@ -13,7 +13,7 @@ helpcontent:
     content: "With the simulator you can create devices that simulate the same level of functionality as connected hardware devices.
 
 
-  A simulator uses a playlist to simulate messages that the device sends to the Cumulocity IoT platform. A playlist is a series of instructions that the simulator executes one after the other.
+  A simulator uses a playlist to simulate messages that the device sends to the Cumulocity platform. A playlist is a series of instructions that the simulator executes one after the other.
 
   An instruction can either send a message (measurements, alarms, events, and inventory) or wait for a specified time (sleep). For each simulator, you can create instructions specifying what the simulator is supposed to do.
 

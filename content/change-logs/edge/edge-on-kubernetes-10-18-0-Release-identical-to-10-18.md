@@ -1,6 +1,6 @@
 ---
 date: 2024-05-08
-title: 2024 release of Cumulocity IoT Edge on Kubernetes identical to 10.18 release
+title: 2024 release of Cumulocity Edge on Kubernetes identical to 10.18 release
 change_type:
   - value: change-inv-3bw8e
     label: Announcement
