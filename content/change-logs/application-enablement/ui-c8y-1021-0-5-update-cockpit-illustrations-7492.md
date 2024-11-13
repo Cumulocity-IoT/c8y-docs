@@ -3,8 +3,8 @@ date: ""
 title: Update illustrations in Cockpit
 product_area: Application enablement & solutions
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+  - value: change-QHu1GdukP
+    label: Feature
 component:
   - value: component-YbYJ3gLU_
     label: Web SDK
