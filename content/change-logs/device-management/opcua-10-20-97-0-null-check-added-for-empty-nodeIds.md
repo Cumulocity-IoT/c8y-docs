@@ -1,6 +1,6 @@
 ---
 date: 
-title: Creating a device type with auto-apply constraints now works without the matchedNodeIds List
+title: Creating a device type with auto-apply constraints now works without the matchedNodeIds list
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
