@@ -15,4 +15,4 @@ ticket: DM-4085
 version: 10.20.96.0
 ---
 
-In previous versions, the operation `c8y_ua_command_ProcessMappingsForDeviceValues` would fail entirely if any single mapping failed. The new behavior allows the operation to continue reading nodes even if some cannot be read due to bad status codes. Although the operation will still be marked as failed, all readable nodes will be mapped. Additionally, the result and failure messages have been improved to indicate which nodes failed and which were successful.
+In previous versions, the operation `c8y_ua_command_ProcessMappingsForDeviceValues` failed entirely if any single mapping failed. The new behavior allows the operation to continue reading nodes even if some nodes cannot be read due to bad status codes. Although the operation will still be marked as failed, all readable nodes will be mapped. Additionally, the result and failure messages have been improved to indicate which nodes failed and which were successful.
