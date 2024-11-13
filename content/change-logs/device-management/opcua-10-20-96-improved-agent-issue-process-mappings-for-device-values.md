@@ -1,6 +1,6 @@
 ---
 date: 
-title: Improve OPC UA operation ProcessMappingsForDeviceValues
+title: Improved OPC UA operation ProcessMappingsForDeviceValues
 product_area: Device management & connectivity
 change_type:
   - value: change-2c7RdTdXo4
