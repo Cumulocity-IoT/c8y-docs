@@ -9,4 +9,4 @@ sector:
 weight: 10
 ---
 
-This is a collection of legal documents for Cumulocity GmbH and the Cumulocity IoT platform.
+Collection of legal documents for Cumulocity GmbH and the Cumulocity IoT platform, including copyright, privacy notice and license agreements.

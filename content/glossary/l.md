@@ -10,4 +10,4 @@ sector:
 
 Lightweight M2M (LWM2M) is a traffic and resource-optimized protocol to remotely manage IoT devices. {{< product-c8y-iot >}} provides support for easily connecting any LWM2M device to the platform.
 
-For details see [Device management > Protocol integration > LWM2M](/protocol-integration/lwm2m).
+For details see [Device management & connectivity > Protocol integration > LWM2M](/protocol-integration/lwm2m).

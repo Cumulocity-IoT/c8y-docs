@@ -17,7 +17,7 @@ The following protocols are supported:
 
 See [Supported protocols and gateways](/cloud-remote-access/communication/#supported-protocols) for details.
 
-Cloud Remote Access works as in the illustration below. The remotely controlled device runs a VNC, SSH or Telnet server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the Device management application in {{< product-c8y-iot >}}. More information about registering devices and instructions can be found in [Registering devices](/device-management-application/registering-devices).
+Cloud Remote Access works as in the illustration below. The remotely controlled device runs a VNC, SSH or Telnet server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the Device Management application in {{< product-c8y-iot >}}. More information about registering devices and instructions can be found in [Registering devices](/device-management-application/registering-devices).
 
 ![Cloud Remote Access - VNC](/images/cra/cra-VNC2.png)
 
