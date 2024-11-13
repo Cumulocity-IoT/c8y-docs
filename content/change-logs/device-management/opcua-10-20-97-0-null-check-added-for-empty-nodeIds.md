@@ -1,5 +1,5 @@
 ---
-date: '2024-11-13'
+date: 
 title: Creating a Device Type With "ApplyConstraints" Can Now Be Used Without the "matchedNodeIds" List
 product_area: Device management & connectivity
 change_type:
