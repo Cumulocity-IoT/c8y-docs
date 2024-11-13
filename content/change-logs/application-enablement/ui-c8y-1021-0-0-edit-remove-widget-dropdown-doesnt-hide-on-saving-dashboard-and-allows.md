@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Widget edit/remove dropdown automatically closes after saving a dashboard
+title: Widget action dropdown closes properly after saving a dashboard
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
