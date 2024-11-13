@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add Codex example for CountdownInterval component
+title: Added Codex example for CountdownInterval component
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
