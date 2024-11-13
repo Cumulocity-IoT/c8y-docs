@@ -131,12 +131,12 @@ body{
     margin: 0 auto;
     &__content{
       h1{
-        font-size: 4rem;
+        // font-size: 4rem;
         margin: 2rem 0;
       }
       p{
         max-width: 70ch;
-        font-size: 1.15rem;
+        font-size: $lead-font-size;
       }
     }
   }
