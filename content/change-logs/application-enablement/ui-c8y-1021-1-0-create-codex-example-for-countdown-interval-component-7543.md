@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Create Codex example for CountdownInterval component (#7543)
+title: Add Codex example for CountdownInterval component
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61568
 version: 1021.1.0
 ---
-Create Codex example for CountdownInterval component (#7543)
+To improve the documentation of UI components, a Codex example has been added for the CountdownInterval component. This example demonstrates how to use the CountdownInterval component in an application, showcasing its functionality and configuration options. Developers can now refer to this example to better understand how to integrate the CountdownInterval component into their projects, making it easier to implement countdown functionality in their applications.
