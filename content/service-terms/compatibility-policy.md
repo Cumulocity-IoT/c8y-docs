@@ -45,6 +45,19 @@ In some cases we may have to change an API due to external factors, for example 
 
 To maintain API and product quality we may, from time to time, hold back new APIs in a preview state to make sure that they are robust, properly documented, and provide the capability required. These APIs may change without a prior announcement. Please keep this in mind if you start using APIs that are documented as beta in our [API documentation](https://{{< domain-c8y >}}/api/core/).
 
+#### Data model compatibility
+
+While one of {{< product-c8y-iot >}}'s strengths lies in handling complex, dynamic and evolving IoT data models, some limitations apply when evolving data models and managing multiple versions of a data model within a single tenant. This section outlines specific limitations and best practices to help you maintain compatibility for the data models you provide within {{< product-c8y-iot >}}.
+
+When designing data models, we recommend starting in a dedicated development tenant. Development and testing often involve experimentation with data structures, and a development environment allows for flexibility without the risks of compatibility issues or the accumulation of outdated data that might affect production workflows.
+
+Your data model should extend the standard [Cumulocity data model](/concepts/domain-model/) and remain within the cardinality limits specified in the [service quotas](/service-terms/quotas/). Note that additional constraints apply when working with {{< product-c8y-iot >}} DataHub, which requires alignment between data modeling and offloading capabilities as detailed in the [DataHub documentation](/datahub/working-with-datahub/#aligning-data-modeling-and-offloading).
+
+If your model uses the [fragment library](/device-integration/fragment-library/), it’s essential to ensure that data types in your model align with those specified in the library. For instance, the “c8y_Position” fragment requires coordinate data to be numeric; therefore, any location data you send should adhere to this numeric format rather than using, for example, string values. Likewise, if you configure properties in the [properties library](/standard-tenant/changing-settings/#properties-library), the data types of your properties must correspond to the predefined types.
+
+Changes to data types for a given property — such as switching from a number to a text string, or from a text string to an array of strings — can invalidate property definitions, rules, offloading configurations, and other settings that depend on the original data type. Although certain areas of {{< product-c8y-iot >}} may still function with these changes, maintaining multiple data types for the same property within a single tenant is currently unsupported and can lead to unforeseen issues.
+
+
 #### SDK and client library compatibility {#sdk-and-client-library-compatibility}
 
 {{< product-c8y-iot >}} developer libraries and SDKs (like Java, JavaScript) may be changed. The libraries and SDKs help developers to access the {{< product-c8y-iot >}} APIs in their custom implementation and are typically bundled with the custom implementation. The programming interfaces for {{< product-c8y-iot >}} developer libraries and SDKs might change with new versions, requiring the custom implementation using these libraries or SDKs to be changed. It is not required to upgrade the custom implementation since the underlying REST and MQTT APIs remain compatible as long as no breaking changes to the APIs happen (see [API compatibility](#api-compatibility)).
