@@ -52,6 +52,7 @@ h2,
 h3,
 .h3 {
   font-size: $h3-font-size;
+  text-transform: uppercase;
   @media(min-width: $grid-breakpoint){
       font-size: 24px;
     }
@@ -184,11 +185,46 @@ hr{
   border-bottom: 0;
 }
 
-a{
-  color: var(--c8y-link-color);
-  text-decoration: none;
-  &:hover{
-    text-decoration: underline;
-    color: var(--c8y-link-color-hover);
+
+a:not([class]):not([data-ps2id-api]):not(:has(>button)){
+
+  &,
+  &:visited {
+    color: currentColor!important;
+    text-decoration: underline 1px;
+    text-decoration-color: var(--c8y-palette-gray-50);
+    text-underline-offset: .5ch;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      transform-origin: 100% 50%;
+      transform: scale3d(0, 1, 1);
+      transition: transform 0.3s;
+      position: absolute;
+      width: clamp(3ch, 100%, 100%);
+      height: .2em;
+      background: var(--link-underline, var(--c8y-palette-yellow-60));
+      top: 1.35em;
+      left: 0;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    &:hover,
+    &:focus {
+      z-index: 1;
+      &::after {
+        transform-origin: 0% 50%;
+        transform: scale3d(1, 1, 1);
+      }
+    }
+    .bg-yellow--60 &{
+      &::after{
+        background: var(--c8y-palette-yellow-40);
+      }
+    }
   }
+
 }

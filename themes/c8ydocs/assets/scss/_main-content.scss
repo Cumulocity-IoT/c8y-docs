@@ -118,6 +118,20 @@
     top: 74px;
     max-height: calc(100vh - 74px);
     overflow: auto;
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+      transition: all 0.5s ease;
+      
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 1rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $text-muted;
+      border-radius: 16px;
+    }
     // min-height: calc(100vh - 74px);
   }
   .article-list h3{

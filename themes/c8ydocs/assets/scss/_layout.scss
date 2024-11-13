@@ -126,7 +126,7 @@ body{
   }
   @media(min-width: $screen-md-min){
     padding: 2rem;
-    grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
     max-width: $screen-lg-max;
     margin: 0 auto;
     &__content{
@@ -205,6 +205,7 @@ body:has(>main > .home-top){
   }
   h2{
     font-size: 24px;
+    transition: color .25s ease;
   }
   p{
     font-size: 14px;
@@ -212,6 +213,7 @@ body:has(>main > .home-top){
    &:hover, &:focus{
     box-shadow: var(--c8y-elevation-hover);
     text-decoration: none;
+    color: currentColor;
     h2{
       color: var(--c8y-brand-primary);
     }
