@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix: add type validator to the alarm/event selector (#7423) [GRAFT][release/cd] (#7558)
+title: Alarm and event selector input validation added
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61126
 version: 1021.2.1
 ---
-fix: add type validator to the alarm/event selector (#7423) [GRAFT][release/cd] (#7558)
+The alarm and event selector in the Cumulocity IoT user interface previously allowed invalid input to be entered. With this fix, input validation has been added to the alarm and event selector to ensure only valid input is accepted. This change improves the user experience and prevents potential errors or unexpected behavior when using the alarm and event selector.
