@@ -90,7 +90,7 @@ See also [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
 
 ##### Step 1 - Install Apama {#step-1---install-apama}
 
-If you have licensed Apama, install it using {{< sag-installer >}}.
+If you have licensed Apama, install it using Software AG Installer.
 
 You can also use a freemium version of Apama which runs with reduced capabilities and several restrictions. If you want to use this, download the Apama Community Edition from [https://www.apamacommunity.com/downloads/](https://www.apamacommunity.com/downloads/) and install it.
 
