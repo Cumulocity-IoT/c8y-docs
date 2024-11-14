@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Get context dashboards fix (#7570) [GRAFT][release/cd] (#7573)
+title: Fix retrieving device context dashboards
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61691
 version: 1021.3.0
 ---
-Get context dashboards fix (#7570) [GRAFT][release/cd] (#7573)
+Retrieving device context dashboards did not work as expected if device had space in it's name, so it was impossible to view device view as dashboard is by default first route for device in Cockpit. This has now been fixed.
