@@ -14,6 +14,6 @@ You can also use [MQTT](/device-integration/mqtt) and [SmartREST](/smartrest/sma
 
 Refer to [Device integration using REST](/device-integration/device-integration-rest/) for detailed information on integrating via REST.
 
-An up-to-date open source reference implementation of a {{< product-c8y-iot >}} agent for embedded Linux systems with many device management features can be found at [https://github.com/SoftwareAG/cumulocity-agents-linux](https://github.com/SoftwareAG/cumulocity-agents-linux). Note that the reference implementation currently uses SmartREST 1 with the choice to switch between HTTP and MQTT as transport protocol.
+An up-to-date open source reference implementation of a {{< product-c8y-iot >}} agent for embedded Linux systems with many device management features can be found at [{{< link-c8y-github >}}/cumulocity-agents-linux]({{< link-c8y-github >}}/cumulocity-agents-linux). Note that the reference implementation currently uses SmartREST 1 with the choice to switch between HTTP and MQTT as transport protocol.
 
 For information on the general concept of agents being used for interfacing IoT data sources with {{< product-c8y-iot >}}, refer to [Interfacing devices](/concepts/interfacing-devices/).
