@@ -161,10 +161,17 @@ function buildToc() {
       });
     } else {
       let tocLinks = '';
+      let month = '';
       articles.forEach(article => {
         let h2 = article.querySelector('h5');
         let target = h2.parentNode.nextElementSibling;
         if (target && h2.textContent.length) {
+          let curMonth = h2.textContent.split(' ')[0];
+          let curYear = h2.textContent.split(' ')[2];
+          if (month !== curMonth) {
+             tocLinks += `<div class="list-group-item p-t-16"><p><strong>${curMonth} ${curYear}</strong></p></div>`;
+              month = curMonth;
+          }
           tocLinks += `<div class="list-group-item"><a class="toc-link" href="#${target.id}" data-refid="${h2.parentNode.id}" title="${h2.textContent}">${h2.textContent}</a></div>`;
         }
       })
