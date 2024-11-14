@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-11-11'
 title: Widget action dropdown closes properly after saving a dashboard
 product_area: Application enablement & solutions
 change_type:

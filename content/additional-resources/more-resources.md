@@ -29,7 +29,7 @@ Here you can:
 * Ask questions, brainstorm solutions or discuss best practices in our discussion forum.
 * Get the latest {{< company-sag >}} news and announcements.
 
-Moreover you will find links to further resources like [GitHub](https://github.com/softwareag).
+Moreover you will find links to further resources like [GitHub]({{< link-c8y-github >}}).
 
 
 ### Product training {#product-training}
