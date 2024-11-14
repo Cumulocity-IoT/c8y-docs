@@ -14,7 +14,8 @@
   {{ range $sortedsections }}
   {{ $pages := where .Pages "Type" "!=" "page" }}
   {{ $page := index $pages 0 }}
-    <a href='{{ if eq .Page.Params.type "change-log"}}/change-logs{{else}}{{.Page.Permalink}}{{end}}' class="product-card">
+    <a href='{{ if eq .Page.Params.type "change-log"}}/change-logs{{else if .Page.Params.external}}{{.Page.Params.external}}{{else}}{{.Page.Permalink}}{{end}}' 
+      class="product-card">
       <div class="product-card__header">
         <i class="c8y-icon-duocolor {{.Page.Params.icon}}"></i>
         {{ if eq .Page.Title "Change logs"}}

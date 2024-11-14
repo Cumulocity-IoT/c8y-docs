@@ -198,6 +198,8 @@ body:has(>main > .home-top){
 
 .product-card{
   background-color: var(--c8y-palette-high);
+  background-color: rgba(255,255,255,.75);
+  backdrop-filter: blur(4px);
   box-shadow: var(--c8y-elevation-sm);
   padding: 1rem;
   transition: all .25s ease;
@@ -220,6 +222,8 @@ body:has(>main > .home-top){
     font-size: 14px;
   }
    &:hover, &:focus{
+    background-color: var(--c8y-palette-high);
+    backdrop-filter: none;
     box-shadow: var(--c8y-elevation-hover);
     text-decoration: none;
     color: currentColor;
