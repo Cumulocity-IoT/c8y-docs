@@ -6,7 +6,6 @@ product_area: Platform services
 change_type:
 - value: change-VSkj2iV9m
   label: Fix
-  component:
 - value: component-V6J_FcOT2
   label: Data broker
   build_artifact:
