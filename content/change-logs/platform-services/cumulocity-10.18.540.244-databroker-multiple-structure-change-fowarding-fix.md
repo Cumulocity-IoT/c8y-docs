@@ -13,6 +13,6 @@ change_type:
 - value: tc-QHwMfWtBk7
   label: cumulocity
   ticket: MTM-58684
-  version: 10.18.TBC.TBC
+  version: 10.18.540.244
 ---
 When a data broker connection synchronizes a structural change that adds multiple child assets or devices to a group, all assets or devices are now sent immediately. Previously, only one asset or device would sent immediately and others would not be synchronized until the periodic consistency check next ran. This behaviour is most commonly seen when assigning multiple assets or devices in a Device management groups page, when the group is within the scope of a data broker connection filter.
