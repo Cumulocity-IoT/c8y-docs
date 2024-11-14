@@ -15,3 +15,7 @@ Wherever possible, the REST resources and its representations are maintained in 
 This API is not covered by the general {{< product-c8y-iot >}} API backwards compatibility statement mentioned in [Compatibility policy](/concepts/compatibility-policy).
 
 {{< /c8y-admon-important >}}
+
+---
+Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
+Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

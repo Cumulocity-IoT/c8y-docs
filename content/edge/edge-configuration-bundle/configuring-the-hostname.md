@@ -22,3 +22,7 @@ The default hostname of the Edge appliance is **iot-edge-server**. You can defin
 ### Configuring the hostname using the REST APIs {#configuring-the-hostname-using-the-rest-apis}
 
 To configure the hostname using the REST APIs, see the `/edge/configuration/hostname` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/#operation/edgeHostnameConfig).
+
+---
+Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
+Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

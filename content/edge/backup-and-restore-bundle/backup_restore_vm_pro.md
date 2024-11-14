@@ -25,3 +25,7 @@ sector:
 2. Select the Edge appliance that you want to restore and click **Open**.
 
 3. Click **Import**.
+
+---
+Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
+Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

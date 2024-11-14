@@ -65,3 +65,7 @@ The key pods that should be running are `pulsar-bookie-0`, `pulsar-broker-0`, `p
 For more information on installing and troubleshooting the Messaging Service see the [Messaging Service Installation & operations guide]({{< link-sag-portal >}}sl24sec/SecuredServices/document/java/cumulocity_iot_platform/iot10-15-0/10-15-0_Messaging_Service_Installation_and_Operations_guide.pdf).
 
 For more information on configuring and using the microservice-based data broker, see [Microservice-based data broker](/data-broker/ms-data-broker/).
+
+---
+Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
+Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

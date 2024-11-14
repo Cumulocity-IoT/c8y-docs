@@ -103,3 +103,7 @@ These are the minimum system requirements to enable the microservice hosting fea
 {{< c8y-admon-info >}}
 This does not cover host operating system hardware requirements. The host operating system resource requirements must be sized independently and should be over and above the resource allocated to the virtual machines.
 {{< /c8y-admon-info >}}
+
+---
+Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
+Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

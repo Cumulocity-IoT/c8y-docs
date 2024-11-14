@@ -16,3 +16,7 @@ To configure the "reset password" template and email server settings, perform th
 	- Password: password provided during the installation
 
 2. Update the email server details and templates as mentioned in [Password reset](/enterprise-tenant/customization/#password-reset) and [Email server](/enterprise-tenant/customization/#email-server).
+
+---
+Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
+Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

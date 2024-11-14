@@ -69,3 +69,7 @@ The following functionalities are available in Edge and described in detail in t
 |[Alarm mapping](/standard-tenant/alarm-mapping/)|Change the severity and text of alarms to adapt them to your business priorities.
 |[Managing data](/standard-tenant/managing-data/)|How to manage and configure [retention rules](/standard-tenant/managing-data/#retention-rules) for your data and how to [manage stored files](/standard-tenant/managing-data/#file-repository) in the file repository.
 |[Changing settings](/standard-tenant/changing-settings/)|How to change account settings like [application settings](/standard-tenant/changing-settings/#application), manage the [properties library](/standard-tenant/changing-settings/#properties-library), enable [SMS provider](/standard-tenant/changing-settings/#sms-provider) features like user notifications and two-factor authentication, and [manage credentials for different providers](/standard-tenant/changing-settings/#connectivity).
+
+---
+Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
+Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

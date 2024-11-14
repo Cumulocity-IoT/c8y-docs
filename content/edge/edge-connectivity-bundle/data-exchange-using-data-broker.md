@@ -47,3 +47,7 @@ To create a data connector and upload the data to the tenant account, perform th
    You can now navigate to the Device Management application or the Cockpit application. You will find a new "virtual group" with a specific icon showing the forwarded devices. The group will have the same name as your subscription.
 
 For more information about sending and receiving data in {{< product-c8y-iot >}}, see [Using the data broker](/data-broker/data-broker-application/#using-data-broker).
+
+---
+Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
+Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

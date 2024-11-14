@@ -61,3 +61,7 @@ In the Edge appliance, run the following commands as admin user.
 |Start|sudo service apama start
 |Stop|sudo service apama stop
 |Restart|sudo service apama restart  
+
+---
+Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
+Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

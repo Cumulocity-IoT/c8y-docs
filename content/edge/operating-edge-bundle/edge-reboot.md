@@ -28,3 +28,7 @@ To restart your Edge appliance:
 ### Restarting the Edge appliance using the REST APIs {#restarting-the-edge-appliance-using-the-rest-apis}
 
 To restart the Edge appliance using the REST APIs, see the `edge/reboot` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/#operation/edgeReboot).
+
+---
+Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
+Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

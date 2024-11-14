@@ -111,3 +111,7 @@ Adjust the log levels by changing the level attribute according to the following
 |DEBUG|Log all internal debug information
 
 Save the file. It is re-read by the application every few minutes so you do not have to restart the Java process.
+
+---
+Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
+Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

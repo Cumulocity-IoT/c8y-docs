@@ -30,3 +30,7 @@ In the Device Management application, click **All devices** in the navigator and
 ### How to connect Modbus devices {#how-to-connect-modbus-devices}
 
 For more information about connecting and managing Modbus devices, see [Cloud Fieldbus](/protocol-integration/cloud-fieldbus/).
+
+---
+Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
+Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

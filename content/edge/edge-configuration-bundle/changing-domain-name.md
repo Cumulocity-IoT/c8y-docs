@@ -55,3 +55,7 @@ The example below describes a scenario where an existing license or certificate 
 - If you have a license for the domain myown.iot.com, you can change the domain to myown.iot.com and any single level subdomain, for example sub.myown.iot.com
 
 - If you have a certificate for the domain myown.iot.com, then you can only set the domain to myown.iot.com. If you have a wildcard certificate like *.myown.iot.com, then you must set the domain name to any single level subdomain of myown.iot.com, that is sub.myown.iot.com, but not myown.iot.com itself.
+
+---
+Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
+Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

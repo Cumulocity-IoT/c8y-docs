@@ -17,3 +17,7 @@ In your {{< product-c8y-iot >}} cloud tenant, you can monitor the measurements o
 To monitor the metrics in your {{< product-c8y-iot >}} tenant, you can create a dashboard and add widgets in the Cockpit application of your tenant. For more information about creating dashboards, see [Working with dashboards](/cockpit/working-with-dashboards/).
 
 Also, you can define smart rules to create alerts or raise alarms for the metrics. For example, when the free disk space is less than 5 GB, create an alert. For more information about smart rules, see [Smart rules](/cockpit/smart-rules/).  
+
+---
+Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
+Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

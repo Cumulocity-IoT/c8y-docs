@@ -62,3 +62,7 @@ Once enabled, you cannot disable the auditing system configuration.
 ### Configuring security using the REST APIs {#configuring-security-using-the-rest-apis}
 
 To configure security using the REST APIs, see the `/edge/configuration/security` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/#operation/postSecurityConfiguration).
+
+---
+Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
+Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

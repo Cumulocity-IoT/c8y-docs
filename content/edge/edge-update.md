@@ -11,3 +11,7 @@ This section describes how to update {{< product-c8y-iot >}} Edge using the GUI 
 Keeping your Edge appliance updated ensures that the Edge appliance is running the latest version with new features and enhancements, and helps in improving the security vulnerabilities and performance of the Edge appliance.
 
 You can update the Edge appliance using [the GUI](/edge/edge-update/#updating-edge-gui) or [the REST API](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/#tag/Update).
+
+---
+Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
+Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.
