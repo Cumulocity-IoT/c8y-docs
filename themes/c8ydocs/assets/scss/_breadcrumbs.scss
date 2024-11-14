@@ -3,9 +3,8 @@
   flex-wrap: nowrap;
   align-items: center;
   font-size: var(--c8y-font-size-small);
-  background-color: var(--c8y-palette-high);
-  
-  span{
+  padding: .5rem 1rem;
+  span{ 
     display: flex;
     align-items: center;
     &:last-child{
@@ -45,4 +44,28 @@
         transform: scale3d(1, 1, 1);
       }
     }
+}
+
+
+.breadcrumbs-container{
+  margin: 0 auto 1rem;
+  position: sticky;
+  top: 56px;
+  z-index: 10;
+  display: none;
+  background-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(2px);
+  &:hover,
+  &:focus-within {
+    background-color: white;
+  }
+
+  @media(min-width: $screen-sm-min){
+    margin: 0 auto;
+    display: block;
+    .breadcrumbs{
+      padding: 1rem 2rem;
+    }
+
+  }
 }

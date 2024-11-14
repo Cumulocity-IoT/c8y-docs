@@ -10,6 +10,9 @@ body{
   background-color: $body-bg-color;
   position: relative;
   padding-top: 56px;
+  &:has(.home-top){
+    background-color: var(--c8y-palette-gray-100);
+  }
   &.open{
     overflow-x: hidden;
   }
@@ -119,10 +122,13 @@ body{
   padding: 2rem 1rem 1rem;
   gap: 1rem;
   overflow: hidden;
+  position: relative;
+  z-index: 10;
   svg{
-    height: 100%;
-    width: auto;
+    height: auto;
+    width: 100%;
     max-height: 33vh;
+    margin: 0 auto;
   }
   @media(min-width: $screen-md-min){
     padding: 2rem;
@@ -130,40 +136,41 @@ body{
     max-width: $screen-lg-max;
     margin: 0 auto;
     &__content{
+      position: relative;
+      z-index: 10;
       h1{
-        // font-size: 4rem;
+        font-size: clamp(2rem, 4vw, 4rem);
         margin: 2rem 0;
+        text-wrap: pretty;
       }
       p{
         max-width: 70ch;
         font-size: $lead-font-size;
       }
     }
+    svg{
+      width: auto;
+      height: auto;
+      max-height: unset;
+      max-width: 50%;
+      position: fixed;
+      z-index: 0;
+      right: 0;
+      top: 120px;
+    }
   }
 }
 
-.breadcrumbs-container{
-    margin: 0 auto 1rem;
-    position: sticky;
-    top: 56px;
-    z-index: 10;
-    display: none;
-    .breadcrumbs{
-      padding: .5rem 1rem;
-    }
-    @media(min-width: $screen-sm-min){
-      margin: 0 auto;
-      display: block;
-      .breadcrumbs{
-        padding: 1rem 0;
-      }
 
-    }
-}
 
 body:has(>main > .home-top){
   .breadcrumbs-container{
+    background-color: var(--c8y-palette-gray-100);
+    z-index: 20;
+  }
+  .breadcrumbs-container .breadcrumbs{
     max-width: $screen-lg-max;
+    margin: 0 auto
   }
   .main-footer{
     max-width:  $screen-lg-max;
@@ -184,6 +191,8 @@ body:has(>main > .home-top){
     padding: 2rem;
     gap: 1.5rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    position: relative;
+    z-index: 10;
   }
 }
 
