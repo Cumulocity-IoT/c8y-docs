@@ -2,9 +2,10 @@
 title: Compatibility policy
 layout: bundle
 sector:
-  - getting_started
+  - terms_conditions
 aliases:
   - /concepts-introduction/
+  - /concepts/compatibility-policy/
 weight: 95
 ---
 
