@@ -6,10 +6,10 @@
 # These owners will be the default owners for everything in the repo.
 * @BeateRixen @MWindel
 
-/content/change-logs/application-enablement/ @rahultsag @janhommes @BeateRixen @MWindel
+/content/change-logs/application-enablement/ @rahultc8y @janhommes @BeateRixen @MWindel
 /content/change-logs/device-management/ @Oezge-Akin @aaronraab @l2p- @BeateRixen @MWindel
 /content/change-logs/platform-services/ @iiar-c8y @martin-c8y @mgrumann @saran-govindarajan @scmi-c8y @JanePorter @BeateRixen @MWindel
-/content/change-logs/application-enablement/dtm* @rahultsag @pavanshivajirao @lara-c8y @BeateRixen @MWindel
+/content/change-logs/application-enablement/dtm* @rahultc8y @pavanshivajirao @lara-c8y @BeateRixen @MWindel
 /content/change-logs/analytics/apama-in-c8y* @kailol-sag @Rob-J-SAG @BeateRixen @MWindel @skom-c8y
 /content/change-logs/analytics/cdh* @cheinz-sag @ChrisFurlong @BeateRixen @MWindel
 
