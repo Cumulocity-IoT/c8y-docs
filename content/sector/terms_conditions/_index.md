@@ -469,4 +469,4 @@ svg: '<svg
 </svg>'
 ---
 
-Find a collection of various legal documents, such as our Privacy Notice and Imprint, and documentation-related details.
+Find the Cumulocity service terms, legal notices and documentation-related information here.

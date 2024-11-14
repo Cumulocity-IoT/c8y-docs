@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-11-11'
 title: Renamed "Position in navigator" field in the dashboard settings
 product_area: Application enablement & solutions
 change_type:

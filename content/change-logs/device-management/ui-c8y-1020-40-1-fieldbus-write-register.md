@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Values for registers and coils in the "Fieldbus device" widget can be modified properly
+date: '2024-11-11'
+title: >-
+  Values for registers and coils in the "Fieldbus device" widget can be modified
+  properly
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
