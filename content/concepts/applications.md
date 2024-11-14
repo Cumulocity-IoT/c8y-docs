@@ -11,7 +11,7 @@ sector:
 {{< product-c8y-iot >}} includes the following application types:
 
  * [Web applications or extensions](#web-applications) - web-based user interface applications
- * [Microservices](#microservices) - server-side business logic
+ * [Microservices](/microservice-sdk/general-aspects/) - server-side business logic
 
 Web applications are HTML5 single page applications, that appear in the {{< product-c8y-iot >}} application switcher and that are hosted in the {{< product-c8y-iot >}} platform. You can either develop your own web application or extend existing applications with plugins.
 
