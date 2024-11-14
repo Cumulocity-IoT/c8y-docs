@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-11-11'
 title: Added type information to widget configuration
 product_area: Application enablement & solutions
 change_type:
