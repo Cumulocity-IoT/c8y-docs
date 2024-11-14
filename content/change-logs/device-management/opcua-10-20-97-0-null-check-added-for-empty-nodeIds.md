@@ -1,6 +1,6 @@
 ---
 date: 
-title: Creating OPC UA device type without the matchedNodeIds list for apply constraints
+title: Creating OPC UA device type without the matchedNodeIds list for applyConstraints
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
