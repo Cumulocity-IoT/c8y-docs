@@ -2,9 +2,9 @@
 <footer class="main-footer">
   <div class="copyright">
     <div class="text-center">
-      <p class="small ">Copyright &copy; 2019-{{ now.Format "2006" }} {{ with .Site.Params.footer.copyright }}{{ . | safeHTML }}{{ end }}.</p>
+      <p class="small ">Copyright &copy; {{ now.Format "2006" }} {{ with .Site.Params.footer.copyright }}{{ . | safeHTML }}{{ end }}.</p>
     </div>
-  </div>  
+  </div>
 </footer>
 
 {{ "<!-- Essential Scripts -->" | safeHTML }}
@@ -21,7 +21,7 @@
 {{/*  <script src="{{ "js/vendor/util.js" | absURL }}"></script>
 <script src="{{ "js/vendor/scrollspy.js" | absURL }}"></script>  */}}
 
-{{/*  
+{{/*
 {{ with .Site.Data.settings.tracking.footer_scripts }}
   {{ . | safeHTML }}
 {{ end }}  */}}

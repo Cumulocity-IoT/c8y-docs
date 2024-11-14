@@ -139,7 +139,7 @@ BODY:
 You will get the ID of your managed object in the response.
 Assign this ID to the `"tracker.id"` key in your _cumulocity.json_ file.
 
-On the {{< product-c8y-iot >}} platform, navigate to **Devices** > **All devices** in the Device management application to verify that your device has been created and its location is displayed on the map.
+On the {{< product-c8y-iot >}} platform, navigate to **Devices** > **All devices** in the Device Management application to verify that your device has been created and its location is displayed on the map.
 
 ![Microservice tracking](/images/microservices-sdk/ms-tracking-newdevice.png)
 
@@ -436,7 +436,7 @@ The response will be similar to:
 Using the endpoint <kbd>location/locations</kbd> will return five stored events by default.
 You can use the `max` parameter to specify a higher number.
 
-In the Device management application, navigate to **Devices** > **All devices** and locate your microservice tracker.
+In the Device Management application, navigate to **Devices** > **All devices** and locate your microservice tracker.
 Under **Tracking** you will see a map with the tracked locations.
 You can also develop your own web application and customize a map widget.
 Refer to [Application library](/web/libraries/#application-library).

@@ -44,7 +44,7 @@ Devices are a special type of [asset](/glossary/a/#asset). They can constitute a
 The Device Management application is one of the default applications of {{< product-c8y-iot >}}.
 The Device Management application provides functionalities for connecting, managing and monitoring devices and allows to control and troubleshoot devices remotely.
 
-For details see [Device management > Device management application](/device-management-application/).
+For details see [Device management & connectivity > Device Management application](/device-management-application/).
 
 
 ### Device protocol {#device-protocol}
@@ -52,7 +52,7 @@ For details see [Device management > Device management application](/device-mana
 A device protocol defines how data from a specific device type should be transferred into the {{< product-c8y-iot >}} platform. It contains protocol-specific information about where the data is obtained from, how to transform it, and how to store it in {{< product-c8y-iot >}}.
 The definition of the device protocol differs based on the underlying protocol used by the device (for example, Modbus, LoRa, OPC UA or LWM2M).
 
-For details see [Device management > Protocol integration](/protocol-integration/).
+For details see [Device management & connectivity > Protocol integration](/protocol-integration/).
 
 
 ### Digital twin {#digital-twin}

@@ -303,7 +303,7 @@ The above icons are only enabled when there is an operation that can be undone o
 
 #### Replacing sources or destinations {#replacing-sources-or-destinations}
 
-You can find the input sources or output destinations that are used in the current model and replace them with other input sources or output destinations that are currently registered in the {{< product-c8y-iot >}} inventory \(visualized in the Device management application\).
+You can find the input sources or output destinations that are used in the current model and replace them with other input sources or output destinations that are currently registered in the {{< product-c8y-iot >}} inventory \(visualized in the Device Management application\).
 
 {{< c8y-admon-info>}}
 In the rules below, the term device refers to a device or other asset \(but not to a group\).

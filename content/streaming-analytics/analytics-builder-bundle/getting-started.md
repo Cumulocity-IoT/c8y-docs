@@ -28,7 +28,7 @@ The model that you add will contain three blocks:
 
 -   An input block which receives measurement values from a device.
 -   A block that calculates the mean of the measurement values over time.
--   An output block that sends the calculated mean values to {{< product-c8y-iot >}}'s Device management application so that they can be viewed there.
+-   An output block that sends the calculated mean values to {{< product-c8y-iot >}}'s Device Management application so that they can be viewed there.
 
 When you have completed all steps below, your model will look similar to the following:
 
@@ -113,11 +113,11 @@ A card for the newly added model is shown on the **Models** tab of the model man
 1. Click the drop-down menu on the card which currently shows **Draft** and select **Production**.
 2. Click the toggle button on the card which currently shows **Inactive**. This changes the state to **Active**.
 
-#### Step 9: Go to the Device management and view the measurements {#step-9-go-to-the-device-management-and-view-the-measurements}
+#### Step 9: Go to the Device Management application and view the measurements {#step-9-go-to-the-device-management-and-view-the-measurements}
 
-To view the measurements that are sent from your active model, you must switch to the Device management application. See [Device management application](/device-management-application/) for detailed information.
+To view the measurements that are sent from your active model, you must switch to the Device Management application. See [Device Management application](/device-management-application/) for detailed information.
 
-1. Go to the Device management application.
+1. Go to the Device Management application.
 2. In the navigator on the left, click **Devices** and then **All devices**.
 3. Locate your device and click its name to display the device details.
 4. Click **Measurements** on the left. This is a dynamic tab which is only shown when measurements are available for the device.
@@ -205,12 +205,12 @@ Once the instance has been activated, send in the data from your device. The ins
 
 For our example case with the gyroscope measurements from a smartphone, it should be sufficient that you simply turn off the smartphone display while the {{< sensor-app >}} is still running.
 
-#### Step 6: Go to the Device management application and view the alarms {#step-6-go-to-the-device-management-application-and-view-the-alarms}
+#### Step 6: Go to the Device Management application and view the alarms {#step-6-go-to-the-device-management-application-and-view-the-alarms}
 
-To view the alarms that are sent from your active instance, you must switch to the Device management application.
-See [Device management application](/device-management-application/) for detailed information.
+To view the alarms that are sent from your active instance, you must switch to the Device Management application.
+See [Device Management application](/device-management-application/) for detailed information.
 
-1. Go to the Device management application.
+1. Go to the Device Management application.
 2. In the navigator on the left, click **Devices** and then **All devices**.
 3. Locate your device and click its name to display the device details.
 4. Click **Alarms** on the left.

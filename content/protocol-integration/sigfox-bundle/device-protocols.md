@@ -18,7 +18,7 @@ Device protocol mapping only supports decoding for fixed byte positions based on
 The length for the device payload parts, which is set in the **Number of bits** field, can be maximum 32 bits (4 bytes).
 {{< /c8y-admon-info >}}
 
-To create device protocols, select **Device protocols** in the **Device types** menu in the navigator of the Device management application. You can either import an existing device protocol or create a new one.
+To create device protocols, select **Device protocols** in the **Device types** menu in the navigator of the Device Management application. You can either import an existing device protocol or create a new one.
 
 ### Importing a device protocol {#importing-a-device-protocol}
 

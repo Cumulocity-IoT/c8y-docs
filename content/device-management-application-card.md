@@ -1,5 +1,5 @@
 ---
-title: Device management application
+title: Device Management application
 icon: "c8y-icon c8y-icon-device-management"
 type: root
 layout: redirect
@@ -13,4 +13,4 @@ outputs:
 - html
 ---
 
-The Device management application enables you to manage and monitor devices and to control and troubleshoot devices remotely.
+The Device Management application enables you to manage and monitor devices and to control and troubleshoot devices remotely.

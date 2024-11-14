@@ -127,7 +127,7 @@ Installation needs to be done only once. Afterwards, you only must execute the f
 $ npm start
 ```
 
-You should see a new registered device in the Device management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
+You should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), related information about it will be printed to the console.
 
