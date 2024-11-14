@@ -29,9 +29,9 @@ The current compatibility statements are described as follows.
 {{< product-c8y-iot >}} is continually improving the user experience and product capabilities and may improve the API from time-to-time. In general, applications must always obey a few basic rules:
 
 * Clients must only use documented API methods and documented behavior. Do not rely on undocumented but observed behavior.
-* Clients must only rely on behavior that is explicitly described in the documentation. For instance, clients shall not rely on a sequence of results if no sort order is guaranteed.
+* Clients must only rely on behavior that is explicitly described in the documentation. For instance, clients shall not rely on a sequence of results if no sort order is guaranteed, or on the order of properties in a JSON object.
 * Clients can rely on a stable inventory API where they can manage their inventory objects. However, the data structures for objects owned by the {{< product-c8y-iot >}} platform can change.
-* APIs will evolve within the boundaries of backward compatibility; as examples optional fields might be added in the request and APIs might return additional JSON fields. Therefore, clients must be written in a way that they ignore such changes.
+* APIs will evolve within the boundaries of backward compatibility; as examples optional fields might be added in the request and APIs might return additional JSON fields. Therefore, clients must be written in a way that they ignore such changes and should not assume an upper limit on such changes.
 * There is no forward compatibility specified for the {{< product-c8y-iot >}} APIs, therefore newer clients built against a newer API (or SDK) are not guaranteed to work with older {{< product-c8y-iot >}} APIs.
 
 
@@ -57,6 +57,7 @@ If your model uses the [fragment library](/device-integration/fragment-library/)
 
 Changes to data types for a given property — such as switching from a number to a text string, or from a text string to an array of strings — can invalidate property definitions, rules, offloading configurations, and other settings that depend on the original data type. Although certain areas of {{< product-c8y-iot >}} may still function with these changes, maintaining multiple data types for the same property within a single tenant is currently unsupported and can lead to unforeseen issues.
 
+While {{< product-c8y-iot >}} does not strictly enforce adherence to these guidelines, following them is strongly recommended to ensure the proper processing of your data.
 
 #### SDK and client library compatibility {#sdk-and-client-library-compatibility}
 
