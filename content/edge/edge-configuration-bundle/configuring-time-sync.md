@@ -26,7 +26,3 @@ Once the time synchronization is enabled, you can specify the NTP servers and th
 ### Configuring the time synchronization using the REST APIs {#configuring-the-time-synchronization-using-the-rest-apis}
 
 To configure the time synchronization using the REST APIs, see the `/edge/configuration/time-sync` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/#operation/configureTimeSync).
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

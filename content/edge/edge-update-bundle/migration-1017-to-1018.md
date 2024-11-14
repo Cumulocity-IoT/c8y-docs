@@ -146,7 +146,3 @@ For detailed guidance on configuring the Edge 10.18 appliance, consult [Configur
 6. Follow the steps outlined in [Updating Edge](/edge/edge-update) to finalize the data migration process.
 
 7. Refer to [Configuring Edge 10.18 after data migration](/edge/edge-update/#configuring-edge-1018-after-data-migration) for instructions on configuring the new Edge appliance.
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

@@ -29,7 +29,3 @@ export NODE_EXTRA_CA_CERTS=<path-to-the-certificate>/certificate.pem
 ```
 
  For more information on the {{< product-c8y-iot >}} web application development, see [Web SDK](/web/introduction/).
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

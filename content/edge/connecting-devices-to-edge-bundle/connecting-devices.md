@@ -19,7 +19,3 @@ For details on how to integrate devices using Modbus and OPC UA protocols, see [
 {{< c8y-admon-info >}}
 Currently, only the Modbus and OPC UA protocols are supported.
 {{< /c8y-admon-info >}}
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

@@ -28,7 +28,3 @@ You can expand the disk size of the installation disk and the data disk using th
 ### Expanding the disk size using the REST APIs {#expanding-the-disk-size-using-the-rest-apis}
 
 To expand the disk size using the REST APIs, see the `edge/expand-disk` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/#operation/expandDiskSize).
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

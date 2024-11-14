@@ -19,7 +19,3 @@ The {{< product-c8y-iot >}} tenant allows you to remotely restart your Edge appl
 5. Click **Restart device**.
 
    <img src="/images/edge/edge-remote-restart.png" alt="Remote restart" style="max-width: 100%">
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

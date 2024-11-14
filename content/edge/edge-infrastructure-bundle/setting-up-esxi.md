@@ -37,7 +37,3 @@ A VM with the provided name, for example, "EDGE-server", should now show up in t
 * Edit VM Settings -> General Options: Set guest OS to CentOs 7 (64bit)
 
 Next, perform the Edge appliance installation. See, [Installing Edge](/edge/edge-installation/).
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

@@ -72,7 +72,3 @@ Do not use the **Send Ctrl+Alt+Del** button in the VNC interface. If you do so
 ### Changing the VNC password {#changing-the-vnc-password}
 
 You can change the VNC password for the current user by running the *vnc-user-setup.sh* script. After changing the password, you must update the password in the remote access endpoint.
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

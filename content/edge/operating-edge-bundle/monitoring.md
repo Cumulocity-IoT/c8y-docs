@@ -54,7 +54,3 @@ The monitor can be started by running the *run_monitor.py* script located under 
 The monitor script supports only one optional startup parameter:
 
 `-s` or `--skipDataCollector` allows you to skip the data collection even if one or more monitored components are not working.
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

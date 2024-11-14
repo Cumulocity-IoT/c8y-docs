@@ -28,7 +28,3 @@ sudo kubectl get pods --namespace kube-system
 If any pod in the list show its status as evicted, the most probable cause is that the system ran out of disk space. Expand the disk size through [the GUI](/edge/operating-edge/#expanding-the-disk-size) or [the REST API](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/#operation/expandDiskSize). Enable the microservice hosting feature after disk expansion.
 
 When running any kubectl command (for example `sudo kubectl get pods --namespace kube-system`), if the message `-bash: kubectl: command not found` is seen then the microservice hosting feature has not been enabled or the process to enable the microservice hosting feature has failed. Attempt to enable the microservice hosting feature through [the GUI](/edge/edge-configuration/#enabling-or-disabling-the-microservice-hosting-feature-using-the-ui) or [the REST API](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/#tag/Microservice-hosting-feature).
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

@@ -91,7 +91,3 @@ In your tenant account, you can update multiple Edge appliances using the bulk o
    ![Edge schedule bulk operation](/images/edge/edge-schedule-bulk-operation.png)
 
 For more information about bulk operations, see [Working with operations](/device-management-application/monitoring-and-controlling-devices/#working-with-operations).
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

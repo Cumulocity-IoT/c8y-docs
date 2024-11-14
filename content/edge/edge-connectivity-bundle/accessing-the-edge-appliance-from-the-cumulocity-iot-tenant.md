@@ -32,7 +32,3 @@ Starting with Edge Release 10.15, the support for the Telnet protocol has been r
 {{< /c8y-admon-important >}}
 
 For more information about remote access, see [Cloud Remote Access](/cloud-remote-access/cra-general-aspects).
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

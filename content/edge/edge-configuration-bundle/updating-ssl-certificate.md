@@ -32,7 +32,3 @@ You must always have a valid SSL certificate for your domain name that is config
 ### Updating the SSL certificate using the REST APIs {#updating-the-ssl-certificate-using-the-rest-apis}
 
 To update the SSL certificate using the REST APIs, see the `/edge/configuration/certificate` API in the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/#operation/updateEdgeCertificate).
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

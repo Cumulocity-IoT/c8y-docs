@@ -79,7 +79,3 @@ To upload and subscribe to a microservice with API version 1 in the "edge" tenan
 4. Go to **Applications** and subscribe to the **Feature-privileged-microservice-hosting** application from the **Available applications**.
    {{< c8y-admon-info >}} It might take up to ten minutes until the "edge" tenant is able to upload and subscribe to privileged microservices. {{< /c8y-admon-info >}}
 5. Log in to the "edge" tenant and upload a microservice with API version 1.
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

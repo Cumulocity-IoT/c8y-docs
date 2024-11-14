@@ -23,7 +23,3 @@ To download the diagnostics report from your tenant account:
 	![Diagnostics report remotely](/images/edge/remote-diagnostics.png)
 
 6. Click the ZIP file link to download the diagnostic report.
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

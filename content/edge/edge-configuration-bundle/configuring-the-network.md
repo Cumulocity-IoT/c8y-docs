@@ -73,7 +73,3 @@ To troubleshoot these scenarios:
 1. Configure the Edge appliance's network and gateway to a different network range. Configuring the Edge appliance to a different network disconnects the Edge appliance from the existing network.
 2. Configure the network CIDR to a new non-conflicting value.
 3. Configure the Edge appliance's network and gateway back to the network range.
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

@@ -140,7 +140,3 @@ For information about resetting the password, see [How to reset your password](/
 ### How to access pages using URLs {#how-to-access-pages-using-urls}
 
 For information about accessing pages using the URLs, see [How to access pages using URLs](/get-familiar-with-the-ui/platform-access/#url).
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

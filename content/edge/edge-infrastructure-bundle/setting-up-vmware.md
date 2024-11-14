@@ -53,7 +53,3 @@ The following example illustrates the network configuration on a Windows platfor
 <img src="/images/edge/edge-vmware-07.png" name="Setting up VMware"/>
 
 9. Click **OK** to save your settings.
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

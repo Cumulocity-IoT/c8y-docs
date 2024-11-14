@@ -13,7 +13,3 @@ Log in to the {{< management-tenant >}} using the Edge administrator credentials
 Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="Application switcher" style="display: inline; float: none">**.
 
 Go to **Settings** > **{{< enterprise-tenant >}}** and follow the instructions detailed in [Branding](/enterprise-tenant/customization/#branding).
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

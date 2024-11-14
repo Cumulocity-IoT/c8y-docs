@@ -75,7 +75,3 @@ Next, click **Open Cumulocity IoT Edge**.
 {{< c8y-admon-important >}}
 In case you need to reset the password, you must configure the "reset password" template and email server settings to receive the password reset email. For more information, see [Password reset](/enterprise-tenant/customization/#password-reset) and [Email server](/enterprise-tenant/customization/#email-server).
 {{< /c8y-admon-important >}}
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.

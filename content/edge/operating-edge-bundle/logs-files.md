@@ -43,7 +43,3 @@ sudo docker logs apama-ctrl-edge
 ### DataHub log file locations {#datahub-log-file-locations}
 
 See [Log files](/datahub/running-datahub-on-the-edge/#log-files) for details on DataHub log files.
-
----
-Copyright (c) 2024-present Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors. 
-Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Cumulocity GmbH.
