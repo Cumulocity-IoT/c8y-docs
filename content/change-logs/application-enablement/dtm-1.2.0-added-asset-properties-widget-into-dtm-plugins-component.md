@@ -14,7 +14,7 @@ build_artifact:
 ticket: "CTM-1625"
 version: "1.2.0"
 ---
-The DTM plugins component now includes a new "Asset properties" widget module, which enhances the functionality of the existing "Asset properties" widget. This includes:
+The DTM plugins component now includes a new asset properties widget module, which enhances the functionality of the existing "Asset properties" widget. This includes:
  - Simplified selection of the modelled properties for assets.
  - Support for listing properties of type: file
  - Ability to preview images attached to properties of type: file 
