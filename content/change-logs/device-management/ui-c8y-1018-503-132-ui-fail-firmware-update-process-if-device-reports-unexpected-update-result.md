@@ -1,6 +1,6 @@
 ---
 date: ""
-title: [UI] Fail firmware update process if device reports unexpected UPDATE_RESULT [GRAFT] (#7500) [GRAFT][release/y2024] (#7581)
+title: Terminate the firmware update process if an unexpected situation is detected
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,6 @@ build_artifact:
 ticket: DM-4050
 version: 1018.503.132
 ---
-[UI] Fail firmware update process if device reports unexpected UPDATE_RESULT [GRAFT] (#7500) [GRAFT][release/y2024] (#7581)
+Before the change if a device reported an unexpected status or result during a firmware update,
+the process would simply wait for a valid state. Now, you can configure LWM2M devices to fail the firmware update
+process when an unexpected situation is detected.
