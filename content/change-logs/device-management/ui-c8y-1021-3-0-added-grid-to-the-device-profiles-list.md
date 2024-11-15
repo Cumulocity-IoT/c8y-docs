@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Device profiles list now shows a grid
+title: Device profiles list migrated to grid view
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
