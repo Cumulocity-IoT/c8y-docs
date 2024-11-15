@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added grid to the device profiles list.
+title: Device profiles list now shows a grid
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
