@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3766
 version: 1021.3.0
 ---
-To provide a better overview of the device profiles, a grid has been added to the device profiles list in the UI. The grid shows additional properties of the device profiles such as the manufacturer or model which were not visible in the list before. This change makes it easier for users to find and manage specific device profiles without having to open the details of each device profile.
+The device profiles view has been migrated to a data grid. The data grid provides a more modern and user-friendly way to view and manage device profile items compared to the previous list view. The data grid offers enhanced features such as sorting, filtering, and pagination, making it easier to find and work with specific items.
