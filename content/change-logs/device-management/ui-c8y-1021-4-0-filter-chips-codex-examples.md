@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Filter chips codex examples.
+title: Add filter chips codex examples
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
