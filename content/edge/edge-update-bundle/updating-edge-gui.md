@@ -6,7 +6,7 @@ layout: redirect
 
 You can update Edge or apply fixes to your existing installation using the Administration application in the {{< management-tenant >}}.
 
-Download the Edge archive file **Cumulocity Edge (*version*) Update** from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}).
+Download the Edge archive file **{{< product-c8y-iot >}} Edge (*version*) Update** from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}).
 
 When you update your Edge appliance, the update also applies operating system patches and fixes for security vulnerabilities. {{< company-sag >}} recommends you to create a backup of your existing Edge installation before performing any update.
 
