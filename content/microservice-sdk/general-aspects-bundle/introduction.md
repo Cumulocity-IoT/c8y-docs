@@ -4,7 +4,7 @@ title: Introduction
 layout: redirect
 ---
 
-Microservices are server-side applications. You can extend the {{< product-c8y-iot >}} platform with customer-specific functionality by deploying microservices. For instance, you can develop integrations to third-party software or provide server-side business logic. A microservice-based architecture introduces change that is often well received by those developing modern applications, and solutions can be delivered much more quickly to those requesting flexible and scalable applications. Microservices bring significant benefits such as deployability, reliability, availability, scalability, modifiability and management.
+{{< product-c8y-iot >}} Microservices are server-side applications fully integrated into {{< product-c8y-iot >}}'s hosting, security and API management, optionally providing high availability, scalability and multi-tenancy. You can develop your own microservices to, for example, integrate IoT-related processes into your back office software, running batch analytics on IoT data with your custom analysis logic, writing message decoders for message from your devices and many other backend use cases.
 
 Microservices use standard REST APIs with full authentication and authorization to communicate with {{< product-c8y-iot >}}. They are, in most cases, multi-tenant, meaning they must be able to strictly separate tenants and connect to multiple tenants at the same time.
 
