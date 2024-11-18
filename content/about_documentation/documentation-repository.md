@@ -32,7 +32,7 @@ Documentation ZIP files are available in the **Releases** section for the follow
 4. Click **Add application** on the top right and select **Upload web application**.
 5. Drop the downloaded ZIP file and follow the prompts to complete the upload.
 
-Once uploaded, the application is created and available in the application list of your Cumulocity tenant.
+Once uploaded, the application is created and available in the application list of your {{< product-c8y-iot >}} tenant.
 
 #### Access the documentation in a web browser {#access-the-documentation-in-a-web-browser}
 
