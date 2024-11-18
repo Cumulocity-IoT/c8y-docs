@@ -7,6 +7,6 @@ weight: 55
 
 ---
 
-The Cumulocity OpenAPI Specifications represent a language-agnostic interface to the Cumulocity
+The {{< openapi >}} represents a language-agnostic interface to the {{< product-c8y-iot >}}
 RESTful API which allows – both humans and computers – to discover and understand the capabilities
 of the platform.
