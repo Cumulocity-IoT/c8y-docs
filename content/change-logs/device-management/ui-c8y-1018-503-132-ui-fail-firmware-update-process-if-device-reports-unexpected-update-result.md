@@ -15,5 +15,5 @@ ticket: DM-4050
 version: 1018.503.132
 ---
 Before the change if a device reported an unexpected status or result during a firmware update,
-the process would simply wait for a valid state. Now, you can configure LWM2M devices to fail the firmware update
+the process simply waited for a valid state. Now, you can configure LWM2M devices to fail the firmware update
 process when an unexpected situation is detected.
