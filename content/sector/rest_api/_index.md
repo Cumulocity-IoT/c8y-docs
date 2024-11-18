@@ -3,7 +3,7 @@ title: "Rest API"
 icon: "dlt-c8y-icon-rest-api"
 type: external
 external: https://www.cumulocity.com/api/
-weight: 55
+weight: 45
 
 ---
 
