@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add filter chips codex examples
+title: Added filter chips examples to the Cumulocity Codex
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
