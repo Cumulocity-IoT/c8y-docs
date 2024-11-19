@@ -1,6 +1,6 @@
 ---
 date: ""
-title: The correct icon is now displayed when in root group context. (#6983) [GRAFT][release/y2024] (#7572)
+title: Correct icon displayed for root groups
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
