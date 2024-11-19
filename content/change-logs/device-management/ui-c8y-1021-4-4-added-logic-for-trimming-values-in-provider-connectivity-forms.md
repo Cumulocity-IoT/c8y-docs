@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4076
 version: 1021.4.4
 ---
-Added logic for trimming values in provider connectivity forms.
+To improve data quality and consistency, the provider connectivity forms have been enhanced. The entered values are now automatically trimmed, removing any leading or trailing whitespace characters. This change ensures that unintended spaces do not impact the data stored and processed by the system. Users should be aware that any extra spaces they may have previously entered will now be removed automatically when submitting the form.
