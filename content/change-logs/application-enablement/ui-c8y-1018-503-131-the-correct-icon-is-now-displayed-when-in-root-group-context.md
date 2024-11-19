@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60388
 version: 1018.503.131
 ---
-The correct icon is now displayed when in root group context. (#6983) [GRAFT][release/y2024] (#7572)
+Previously, an incorrect device icon was displayed for the root group, which could lead to confusion for users about their current location within the group hierarchy. With this change, the correct icon is now shown, providing a clear visual indication to users that they are at the root level of the group structure.
