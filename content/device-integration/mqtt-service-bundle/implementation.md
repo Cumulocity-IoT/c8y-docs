@@ -70,9 +70,9 @@ Due to the behaviour of MQTT 3.1 and 3.1.1 there are some edge cases which may r
 * Server implementation does not authorise a PUBLISH from the client.
 * Bits within fixed portions of a packet are incorrectly set, for example, fixed headers. MQTT specification treats the entire packet as malformed and closes the connection.
 
-In such instances MQTT clients must reconnect to be able to receive error messages from error topic via subscription. Error messages received after this reconnection
-are from the previous session which can lead to confusion when attempting corrective actions. Therefore, it is highly recommended to build a microservice which uses
-the MQTT Service SDK to consume error messages, or use MQTT 5 for clients and make use of the reason codes feature.
+In such instances MQTT clients must reconnect to be able to receive error messages from the error topic via the subscription. Error messages received after this reconnection
+are from the previous session which can lead to confusion when attempting corrective actions. Therefore, we highly recommend to build a microservice which uses
+the MQTT Service SDK to consume error messages, or use MQTT 5 for clients and make to use of the reason codes feature.
 
 #### Topic cleanup {#topic-cleanup}
 
