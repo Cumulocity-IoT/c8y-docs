@@ -8,7 +8,7 @@
 
 /content/change-logs/application-enablement/ @rahulc8y @janhommes @BeateRixen @MWindel
 /content/change-logs/device-management/ @Oezge-Akin @aaronraab @l2p- @BeateRixen @MWindel
-/content/change-logs/platform-services/ @iiar-c8y @martin-c8y @mgrumann @saran-govindarajan @scmi-c8y @JanePorter @BeateRixen @MWindel
+/content/change-logs/platform-services/ @iiar-c8y @martin-c8y @mgrumann @saran-govindarajan @kowa-c8y @scmi-c8y @JanePorter @BeateRixen @MWindel
 /content/change-logs/application-enablement/dtm* @rahulc8y @pavanshivajirao @lara-c8y @BeateRixen @MWindel
 /content/change-logs/analytics/apama-in-c8y* @kailol-sag @Rob-J-SAG @BeateRixen @MWindel @skom-c8y
 /content/change-logs/analytics/cdh* @cheinz-sag @ChrisFurlong @BeateRixen @MWindel
@@ -16,7 +16,7 @@
 /content/datahub/ @cheinz-sag @BeateRixen @MWindel
 /content/device-management-application/ @Oezge-Akin @l2p- @BeateRixen
 /content/dtm/ @pavanshivajirao @lara-c8y @BeateRixen @MWindel
-content/authentication @BeateRixen
+content/authentication @kowa-c8y @BeateRixen
 
 /content/streaming-analytics/ @kailol-sag @BeateRixen @MWindel @skom-sag
 # 'block-reference-bundle' is automatically and frequently committed to - don't bother _too many_ CODEOWNERS
