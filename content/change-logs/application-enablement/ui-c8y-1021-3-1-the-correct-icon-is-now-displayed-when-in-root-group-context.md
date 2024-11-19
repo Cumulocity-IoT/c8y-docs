@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Correct icon now displayed in root group context
+title: Correct icon now displayed for root groups
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
