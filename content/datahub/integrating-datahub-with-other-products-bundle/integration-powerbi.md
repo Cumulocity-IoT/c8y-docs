@@ -1,13 +1,13 @@
 ---
 weight: 30
-title: Integrating Cumulocity IoT DataHub with Microsoft Power BI
+title: Integrating Cumulocity DataHub with Microsoft Power BI
 helpcontent:
   - label: configuring-powerbi-access
     title: Configuring access to Microsoft Power BI reports
     content: "Microsoft Power BI is a business intelligence tool which allows you to create and use interactive reports for data from various sources. In particular, the reports can consume your IoT data stored in a data lake using Dremio as query and data access layer.
 
 
-    To view those reports in Cumulocity IoT DataHub, you need an **Azure Active Directory tenant** with an application that can interact with Microsoft Power BI. You neither must sign in to Microsoft Power BI nor do you need a Microsoft Power BI license to access the reports. For access authentication an **Azure Active Directory service principal** object with an application secret is used.
+    To view those reports in Cumulocity DataHub, you need an **Azure Active Directory tenant** with an application that can interact with Microsoft Power BI. You neither must sign in to Microsoft Power BI nor do you need a Microsoft Power BI license to access the reports. For access authentication an **Azure Active Directory service principal** object with an application secret is used.
 
 
     Once you have configured the Microsoft Power BI connection, you can access corresponding workspaces and published reports under **Microsoft Power BI** in the **Navigator**."

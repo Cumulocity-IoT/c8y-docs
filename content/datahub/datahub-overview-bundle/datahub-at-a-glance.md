@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Cumulocity IoT DataHub at a glance
+title: Cumulocity DataHub at a glance
 layout: redirect
 ---
 

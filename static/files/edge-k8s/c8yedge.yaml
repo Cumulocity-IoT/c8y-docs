@@ -3,7 +3,7 @@
 ########################################################################################################################
 ---
 ##
-## This Custom Resource (CR) YAML file has the Cumulocity IoT Edge deployment settings.
+## This Custom Resource (CR) YAML file has the Cumulocity Edge deployment settings.
 ## You can edit this file and apply it to your Kubernetes cluster to deploy or update your Edge.
 ##
 ## For more information about the CR specification, 
@@ -50,7 +50,7 @@ spec:
   ##             to providing the Common Name (CN), Organization (O), and other required details, you must specify the 
   ##             Subject Alternative Name (SAN) to request a multi-domain certificate. Ensure that the SAN includes the 
   ##             domain names for the "edge" tenant and {{< management-tenant >}}. If you plan to install 
-  ##             Cumulocity IoT DataHub, include its domain name as well. 
+  ##             Cumulocity DataHub, include its domain name as well. 
   ##             For instance, if your Edge domain is myown.iot.com, make sure myown.iot.com, management.myown.iot.com, 
   ##             and datahub.myown.iot.com are listed in the SAN field.
   ##
@@ -67,9 +67,9 @@ spec:
   ## This is an optional field and if not provided the Edge operator will generate self-signed certificates.
   # tlsSecretName: myown-iot-com-tls
 
-  ## Cumulocity IoT Cloud tenant details to configure and manage Edge remotely.
+  ## Cumulocity Cloud tenant details to configure and manage Edge remotely.
   # cloudTenant:
-      ## Cumulocity IoT cloud tenant domain. For example, <tenantid>.cumulocity.com
+      ## Cumulocity cloud tenant domain. For example, <tenantid>.cumulocity.com
       # domain: <TENANT-ID>.cumulocity.com
 
       ## Name of the Kubernetes secret containing the TLS/SSL private key and certificates with which Edge connects to the cloud through 
@@ -89,7 +89,7 @@ spec:
       ##
       ## You can also reuse the secret name provided in the 'spec.tlsSecretName' provided that the TLS/SSL certificate it references is issued 
       ## by an intermediate Certificate Authority (CA) within your organization and can be added to the trusted certificate list of your 
-      ## Cumulocity IoT cloud tenant.
+      ## Cumulocity cloud tenant.
       ##
       ## This is an optional field and if not provided the Edge operator will generate self-signed certificates.
       # tlsSecretName: edge-device-tls
@@ -109,9 +109,9 @@ spec:
   ##      with that class name, thereby instructing Kubernetes to utilize dynamic provisioning according to the specified class.
   # storageClassName: <STORAGE-CLASS>
 
-  ## Cumulocity IoT platform configurations.
+  ## Cumulocity platform configurations.
   # core:
-    ##  Resource limits for the Cumulocity IoT Core container.
+    ##  Resource limits for the Cumulocity Core container.
     # resources:
       # limits:
         ## CPU limit in CPU units. For example, 1000m or 1M. Defaults to 3000m.
@@ -153,7 +153,7 @@ spec:
         ## Defaults to 75 GB.
         # storage: 75G
 
-  ## Resources to allocate to each of the default Cumulocity IoT microservices (apama-ctrl, smartrule 
+  ## Resources to allocate to each of the default Cumulocity microservices (apama-ctrl, smartrule 
   ## and opcua-mgmt-service microservices) deployed.
   ## Default CPU limit is 1000m and memory limit is 1024M.
   # microservices:
@@ -207,7 +207,7 @@ spec:
 ##
 ## You can also reuse the secret provided in the 'spec.tlsSecretName' provided that the TLS/SSL certificate 
 ## it references is issued by an intermediate Certificate Authority (CA) within your organization and can 
-## be added to the trusted certificate list of your Cumulocity IoT cloud tenant.
+## be added to the trusted certificate list of your Cumulocity cloud tenant.
 ##
 ## This secret is optional. If not provided the Edge operator generates self-signed TLS/SSL private key and certificates.
 ##

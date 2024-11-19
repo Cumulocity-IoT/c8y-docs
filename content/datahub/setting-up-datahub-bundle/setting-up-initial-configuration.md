@@ -5,10 +5,10 @@ layout: redirect
 helpcontent:
   - label: setting-up-initial-configuration
     title: Setting up the initial configuration
-    content: "The setup of Cumulocity IoT DataHub requires you to configure a **Dremio API user** and access to a **data lake**. The Dremio API user is required for connecting to Dremio and letting you run queries against the data lake contents via JDBC, ODBC, or REST API.
+    content: "The setup of Cumulocity DataHub requires you to configure a **Dremio API user** and access to a **data lake**. The Dremio API user is required for connecting to Dremio and letting you run queries against the data lake contents via JDBC, ODBC, or REST API.
 
 
-    A data lake is required to store the data being offloaded from a Cumulocity IoT base collection. You must specify the location in the data lake under which the offloaded data will reside."
+    A data lake is required to store the data being offloaded from a Cumulocity base collection. You must specify the location in the data lake under which the offloaded data will reside."
 ---
 
 The setup of {{< product-c8y-iot >}} DataHub requires you to configure a Dremio API user and access to a data lake. In the navigator, select **Initial configuration** under **Settings** to define those settings.
