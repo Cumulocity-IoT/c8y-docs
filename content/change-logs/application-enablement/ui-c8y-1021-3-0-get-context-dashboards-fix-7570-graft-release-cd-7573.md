@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61691
 version: 1021.3.0
 ---
-Retrieving the device context dashboards did not work as expected if the device had a space in its name. As a result, it was impossible to view such devices as the dashboard is by default the initial view for devices in the Cockpit application. This issue has been fixed and the device dashboard is always displayed properly.
+Retrieving the device context dashboards did not work as expected if the device had a space in its name. As a result, it was impossible to view such devices as the dashboard is by default the initial view for devices in the Cockpit application. This issue has been fixed and the device dashboard is always displayed.
