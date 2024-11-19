@@ -29,9 +29,9 @@ The current compatibility statements are described as follows.
 {{< product-c8y-iot >}} is continually improving the user experience and product capabilities and may improve the API from time-to-time. In general, applications must always obey a few basic rules:
 
 * Clients must only use documented API methods and documented behavior. Do not rely on undocumented but observed behavior.
-* Clients must only rely on behavior that is explicitly described in the documentation. For instance, clients shall not rely on a sequence of results if no sort order is guaranteed.
+* Clients must only rely on behavior that is explicitly described in the documentation. For instance, clients shall not rely on a sequence of results if no sort order is guaranteed, or on the order of properties in a JSON object.
 * Clients can rely on a stable inventory API where they can manage their inventory objects. However, the data structures for objects owned by the {{< product-c8y-iot >}} platform can change.
-* APIs will evolve within the boundaries of backward compatibility; as examples optional fields might be added in the request and APIs might return additional JSON fields. Therefore, clients must be written in a way that they ignore such changes.
+* APIs will evolve within the boundaries of backward compatibility; as examples optional fields might be added in the request and APIs might return additional JSON fields. Therefore, clients must be written in a way that they ignore such changes and should not assume an upper limit on such changes.
 * There is no forward compatibility specified for the {{< product-c8y-iot >}} APIs, therefore newer clients built against a newer API (or SDK) are not guaranteed to work with older {{< product-c8y-iot >}} APIs.
 
 
@@ -44,6 +44,22 @@ In some cases we may have to change an API due to external factors, for example 
 #### Preview APIs {#preview-apis}
 
 To maintain API and product quality we may, from time to time, hold back new APIs in a preview state to make sure that they are robust, properly documented, and provide the capability required. These APIs may change without a prior announcement. Please keep this in mind if you start using APIs that are documented as beta in our [API documentation](https://{{< domain-c8y >}}/api/core/).
+
+#### Data model compatibility
+
+While one of {{< product-c8y-iot >}}'s strengths lies in handling complex, dynamic and evolving IoT data models, some limitations apply when evolving data models and managing multiple versions of a data model within a single tenant. This section outlines specific limitations and best practices to help you maintain compatibility for the data models you provide within {{< product-c8y-iot >}}.
+
+When designing data models, we recommend you to start in a dedicated development tenant. Development and testing often involve experimentation with data structures, and a development environment allows for flexibility without the risks of compatibility issues or the accumulation of outdated data that might affect production workflows.
+
+Your data model should extend the standard [{{< product-c8y-iot >}} data model](/concepts/domain-model/). To avoid conflicts or compatibility issues between customers and vendors, we recommend to use vendor prefixes as described in the [naming conventions](/concepts/domain-model/#naming-conventions-of-fragments).
+
+Remain within the cardinality limits specified in the [service quotas](/service-terms/quotas/). Note that additional constraints apply when working with {{< product-c8y-iot >}} DataHub, which requires alignment between data modeling and offloading capabilities as detailed in the [DataHub documentation](/datahub/working-with-datahub/#aligning-data-modeling-and-offloading).
+
+If your model uses the [fragment library](/device-integration/fragment-library/), it’s essential to ensure that data types in your model align with those specified in the library. For instance, the `c8y_Position` fragment requires coordinate data to be numeric; therefore, any location data you send should adhere to this numeric format rather than using, for example, string values. Likewise, if you configure properties in the [properties library](/standard-tenant/changing-settings/#properties-library), the data types of your properties must correspond to the predefined types.
+
+Changes to data types for a given property — such as switching from a number to a text string, or from a text string to an array of strings — can invalidate property definitions, rules, offloading configurations, and other settings that depend on the original data type. Although certain areas of {{< product-c8y-iot >}} may still function with these changes, maintaining multiple data types for the same property within a single tenant is currently unsupported and can lead to unforeseen issues.
+
+While {{< product-c8y-iot >}} does not strictly enforce adherence to these guidelines, following them is strongly recommended to ensure the proper processing of your data.
 
 #### SDK and client library compatibility {#sdk-and-client-library-compatibility}
 
