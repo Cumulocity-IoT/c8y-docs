@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix retrieving device context dashboards
+title: Device dashboards displayed for all devices
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
