@@ -49,7 +49,7 @@ To maintain API and product quality we may, from time to time, hold back new API
 
 While one of {{< product-c8y-iot >}}'s strengths lies in handling complex, dynamic and evolving IoT data models, some limitations apply when evolving data models and managing multiple versions of a data model within a single tenant. This section outlines specific limitations and best practices to help you maintain compatibility for the data models you provide within {{< product-c8y-iot >}}.
 
-When designing data models, we recommend starting in a dedicated development tenant. Development and testing often involve experimentation with data structures, and a development environment allows for flexibility without the risks of compatibility issues or the accumulation of outdated data that might affect production workflows.
+When designing data models, we recommend you to start in a dedicated development tenant. Development and testing often involve experimentation with data structures, and a development environment allows for flexibility without the risks of compatibility issues or the accumulation of outdated data that might affect production workflows.
 
 Your data model should extend the standard [{{< product-c8y-iot >}} data model](/concepts/domain-model/) and remain within the cardinality limits specified in the [service quotas](/service-terms/quotas/). Note that additional constraints apply when working with {{< product-c8y-iot >}} DataHub, which requires alignment between data modeling and offloading capabilities as detailed in the [DataHub documentation](/datahub/working-with-datahub/#aligning-data-modeling-and-offloading).
 
