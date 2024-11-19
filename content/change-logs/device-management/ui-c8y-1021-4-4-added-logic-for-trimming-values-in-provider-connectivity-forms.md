@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Trim values in provider connectivity forms
+title: Trimmed values in connectivity provider forms
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
