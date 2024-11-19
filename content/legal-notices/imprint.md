@@ -13,10 +13,7 @@ We are committed to transparency and open communication both inside and outside 
 **Managing Directors**:  Bernd Rüdiger Groß, Damian Dawid Roj
 
 **Postal address**:
-Cumulocity GmbH
-Toulouser Allee 25
-40211 Düsseldorf
-Germany
+Cumulocity GmbH, Toulouser Allee 25, 40211 Düsseldorf, Germany
 
 **Email:** info@cumulocity.com
 
