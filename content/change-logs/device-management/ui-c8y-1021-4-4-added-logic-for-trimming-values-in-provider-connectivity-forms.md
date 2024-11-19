@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4076
 version: 1021.4.4
 ---
- Implemented logic to automatically trim whitespace from input values in the connectivity provider form within the Administration Connectivity tab.
+ In the **Connectivity** tab, whitespaces are now automatically trimmed from input values in the connectivity provider forms.
