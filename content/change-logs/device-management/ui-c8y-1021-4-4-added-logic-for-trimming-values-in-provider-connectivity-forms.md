@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added logic for trimming values in provider connectivity forms.
+title: Trim values in provider connectivity forms
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
