@@ -5,7 +5,7 @@ layout: redirect
 helpcontent:
   - label: query-log
     title: Query log
-    content: "Offloading pipelines moving data from a Cumulocity IoT base collection to a data lake basically rely on queries executed by **Dremio**. Other than for these offloading queries Dremio can also be leveraged to run ad-hoc queries against the data lake. Both kinds of queries are monitored with respect to their runtime and the data scanned. The **query log** comprises those details for offloading and ad-hoc queries.
+    content: "Offloading pipelines moving data from a Cumulocity base collection to a data lake basically rely on queries executed by **Dremio**. Other than for these offloading queries Dremio can also be leveraged to run ad-hoc queries against the data lake. Both kinds of queries are monitored with respect to their runtime and the data scanned. The **query log** comprises those details for offloading and ad-hoc queries.
 
 
     The query audit log provides controls to select the query type and to limit the corresponding log entries being shown."

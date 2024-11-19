@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Offloading Cumulocity IoT base collections
+title: Offloading Cumulocity base collections
 layout: redirect
 ---
 

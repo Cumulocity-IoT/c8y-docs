@@ -1,5 +1,5 @@
 ---
-title: Cumulocity IoT Codex
+title: Cumulocity Codex
 icon: "dlt-c8y-icon-programming"
 type: root
 layout: redirect
