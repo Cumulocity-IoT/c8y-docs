@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60388
 version: 1021.3.1
 ---
-Previously, an incorrect device icon was displayed for the root group, which could lead to confusion for users about their current location within the group hierarchy. With this change, the correct icon is now shown, providing a clear visual indication to users that they are at the root level of the group structure. This improvement enhances the user experience by ensuring the interface accurately reflects the user's position within the group hierarchy.
+Previously, an incorrect device icon was displayed for the root group, which could lead to confusion for users about their current location within the group hierarchy. With this change, the correct icon is now shown, providing a clear visual indication to users that they are at the root level of the group structure.
