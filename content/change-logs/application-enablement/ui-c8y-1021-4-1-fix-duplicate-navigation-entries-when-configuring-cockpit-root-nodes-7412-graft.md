@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix duplicate navigation entries when configuring cockpit root nodes (#7412) [GRAFT][release/cd] (#7584)
+title: Prevent duplicate entries in navigation when configuring top level nodes
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61026
 version: 1021.4.1
 ---
-Fix duplicate navigation entries when configuring cockpit root nodes (#7412) [GRAFT][release/cd] (#7584)
+Fixed an issue where editing top level nodes in the "Application configuration" would create duplicate entries in the main navigation menu. The navigator now properly updates without creating redundant menu items.
