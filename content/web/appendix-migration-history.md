@@ -199,7 +199,7 @@ import './plugins/mywidget/cumulocity.json';
 
 #### Running an existing application with @c8y/cli {#running-an-existing-application-with-c8ycli}
 
-As observed in [this diff](https://github.com/SoftwareAG/cumulocity-ui-plugin-examples/compare/master...next) the changes to include the new tooling to an existing project are quite concise.
+As observed in [this diff]({{< link-c8y-github >}}/cumulocity-ui-plugin-examples/compare/master...next) the changes to include the new tooling to an existing project are quite concise.
 
 In [@c8y/cli](/web/development-tools/#c8y-cli), the entry point of an application can be a cumulocity.json application manifest or a plain Javascript file.
 

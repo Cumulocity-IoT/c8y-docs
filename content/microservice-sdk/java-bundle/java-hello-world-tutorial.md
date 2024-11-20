@@ -62,7 +62,7 @@ Server: Docker Engine - Community
 
 ### Developing the "Hello world" microservice {#developing-the-hello-world-microservice}
 
-You can download the source code of this example from our [GitHub](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-microservice) repository to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step for you to have a better understanding of the code and what must be done/configured.
+You can download the source code of this example from our [GitHub]({{< link-c8y-github >}}/cumulocity-examples/tree/develop/hello-world-microservice) repository to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step for you to have a better understanding of the code and what must be done/configured.
 
 {{< c8y-admon-important >}}
 This microservice example has been tested under macOS, Ubuntu and Windows 10 with Java 17, Maven 3.8.5, Docker 20.10.14; latest version of IntelliJ IDEA as IDE. Other tools or Java versions may require different configurations.

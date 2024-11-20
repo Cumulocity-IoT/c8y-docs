@@ -407,7 +407,7 @@ If administrators cannot carry out this process on their own for organizational 
 
 ### MQTT example client {#mqtt-example-client}
 
-The code of the {{< product-c8y-iot >}} MQTT example client implemented in Java, which connects to the platform using x.509 certificates, is available here: https://github.com/SoftwareAG/cumulocity-examples/tree/develop/mqtt-client.
+The code of the {{< product-c8y-iot >}} MQTT example client implemented in Java, which connects to the platform using x.509 certificates, is available here: {{< link-c8y-github >}}/cumulocity-examples/tree/develop/mqtt-client.
 This example client uses the implementation of Eclipse Paho, which is described in detail on their website: https://www.eclipse.org/paho/index.php?page=documentation.php.
 
 Here is an example that shows how to add the needed dependency in Maven to use Eclipse Paho client:
