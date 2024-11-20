@@ -67,7 +67,7 @@ The {{< management-tenant >}} builds the highest level of the {{< product-c8y-io
 
 Every {{< product-c8y-iot >}} deployment is delivered with a {{< management-tenant >}}. The {{< management-tenant >}} is used to administer all tenants within the same deployment on platform level and thus provides full control of the platform.
 
-On the {{< product-c8y-iot >}} cloud instances, the {{< management-tenant >}} can only be accessed by the {{< company-sag >}} cloud operations team.
+On the {{< product-c8y-iot >}} cloud instances, the {{< management-tenant >}} can only be accessed by the {{< company-c8y >}} cloud operations team.
 
 You will only have access to the {{< management-tenant >}}, when you setup your own {{< product-c8y-iot >}} instance either as a dedicated/hosted cloud deployment, an on-prem deployment, or the {{< product-c8y-iot >}} Edge offering.
 
