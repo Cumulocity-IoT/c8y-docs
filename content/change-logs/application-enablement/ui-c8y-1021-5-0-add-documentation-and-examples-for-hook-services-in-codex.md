@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add documentation and examples for hookServices in Cumulocity Codex
+title: Added documentation and examples for hookServices in the Cumulocity Codex
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
