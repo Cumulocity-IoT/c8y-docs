@@ -255,7 +255,7 @@ For blueprints, you will get a notification that suggests to update the applicat
 
 From version 10.19.0. we also provide an additional version matrix showing exactly which version of a plugin is compatible with which version of the Web SDK.
 
-For plugin developers who want to always provide the most compatible version of their plugin, we recommend our [community plugin Github project]({{< link-sag-community-plugins >}}), which includes some CI/CD workflows to test and verify that the newest version of a plugin still works.
+For plugin developers who want to always provide the most compatible version of their plugin, we recommend our [community plugin Github project]({{< link-c8y-github >}}/cumulocity-community-plugins), which includes some CI/CD workflows to test and verify that the newest version of a plugin still works.
 
 #### How to use repository connect {#how-to-use-repository-connect}
 
@@ -263,7 +263,7 @@ Repository connect is a microservice which synchronizes plugins or blueprints wi
 It must be installed on the {{< management-tenant >}} and you can connect multiple repositories.
 Currently, only our {{< company-c8y >}} public GitHub is connected.
 You can participate and share blueprints or plugins in multiple ways:
- 1. Contribute to our open source plugins. A list can be found in our [{{< product-c8y-iot >}} GitHub packages](https://github.com/topics/cumulocity-package). There is an [official repository]({{< link-sag-community-plugins >}}) which is managed by the internal R&D team of {{< product-c8y-iot >}}.
+ 1. Contribute to our open source plugins. A list can be found in our [{{< product-c8y-iot >}} GitHub packages](https://github.com/topics/cumulocity-package). There is an [official repository]({{< link-c8y-github >}}/cumulocity-community-plugins) which is managed by the internal R&D team of {{< product-c8y-iot >}}.
  2. Configure repository connect on your on-prem instance and point it to your organization.
  3. Ask our product manager to add your repository as a partner repository.
 
