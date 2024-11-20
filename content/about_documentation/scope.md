@@ -6,7 +6,7 @@ sector:
   - terms_conditions
 ---
 
-This documentation describes the 2024 release of the Cumulocity IoT platform. It includes all new features and functionality introduced with release 2024 (see [Release notes](/change-logs/) for details).
+This documentation describes the 2024 release of the {{< product-c8y-iot >}} platform. It includes all new features and functionality introduced with release 2024 (see [Release notes](/change-logs/) for details).
 
 {{< c8y-admon-important >}}
 Depending on the {{< product-c8y-iot >}} plan your organization has purchased, only a subset of the features and functionalities described in this documentation might be available to you.

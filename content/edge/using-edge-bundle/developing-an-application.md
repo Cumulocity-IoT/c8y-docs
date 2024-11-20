@@ -1,6 +1,6 @@
 ---
 weight: 85
-title: Developing Cumulocity IoT web applications
+title: Developing Cumulocity web applications
 layout: redirect
 ---
 

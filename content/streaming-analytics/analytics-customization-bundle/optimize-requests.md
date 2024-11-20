@@ -9,7 +9,7 @@ This can provide improved performance, but may also change the ordering in which
 By default, the {{< product-c8y-iot >}} transport tries to use multiple connections and restricts ordering to avoid races that may affect your EPL application.
 
 An attempt is made to ensure order is maintained when required. For example, all updates to a single managed object are performed serially in the order they were sent to the transport.
-For more details see [Optimizing requests to Cumulocity IoT with concurrent connections]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_optimizing_requests_to_cumulocity_iot_with_concurrent_connections.html) in the Apama documentation.
+For more details see [Optimizing requests to {{< product-c8y-iot >}} with concurrent connections]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_optimizing_requests_to_cumulocity_iot_with_concurrent_connections.html) in the Apama documentation.
 
 You can adjust the default number of client connections with the `client.numClients` tenant option in the `streaminganalytics` category. For example:
 

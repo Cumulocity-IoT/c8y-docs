@@ -5,7 +5,7 @@ layout: redirect
 helpcontent:
   - label: configuring-offloading-jobs
     title: Configuring offloading jobs
-    content: "Offloading refers to moving data from a **Cumulocity IoT base collection** to a data lake. The document-based entities of the base collection are transformed into a relational format by flattening the entries and mapping them to relational rows. The mapping automatically extracts a standard set of attributes from each entity and transforms them into columns in the data lake table. Contents of measurement fragments and non-standard fields can be offloaded as well. As a result of these extraction and transformation steps, the flattened data is stored in Parquet files in the data lake.
+    content: "Offloading refers to moving data from a **Cumulocity base collection** to a data lake. The document-based entities of the base collection are transformed into a relational format by flattening the entries and mapping them to relational rows. The mapping automatically extracts a standard set of attributes from each entity and transforms them into columns in the data lake table. Contents of measurement fragments and non-standard fields can be offloaded as well. As a result of these extraction and transformation steps, the flattened data is stored in Parquet files in the data lake.
 
 
     For each **offloading pipeline**, a **target table** is created in Dremio that points to the corresponding data folders in the data lake. These target tables are used to run queries with Dremio against the offloaded data. Each active pipeline is executed in a periodic manner and offloads newly arrived data from the base collection to the data lake.

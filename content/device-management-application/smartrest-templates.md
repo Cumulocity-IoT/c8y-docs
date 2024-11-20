@@ -10,7 +10,7 @@ sector:
 helpcontent:
   - label: smartrest-templates
     title: SmartREST templates
-    content: "SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity IoT Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time. To add a new template, you may either import an existing template or create a new one.
+    content: "SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time. To add a new template, you may either import an existing template or create a new one.
 
 
     To import a template, click **Import template** at the top right, select a file to be uploaded and provide a name and unique ID.

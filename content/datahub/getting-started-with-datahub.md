@@ -1,5 +1,5 @@
 ---
-title: Getting started with Cumulocity IoT DataHub
+title: Getting started with Cumulocity DataHub
 weight: 20
 layout: bundle
 sector: 

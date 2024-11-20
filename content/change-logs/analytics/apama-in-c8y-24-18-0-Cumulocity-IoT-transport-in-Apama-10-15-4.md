@@ -1,6 +1,6 @@
 ---
 date: 2024-03-26T15:50:29.942Z
-title: Cumulocity IoT transport in Apama 10.15.4
+title: Cumulocity transport in Apama 10.15.4
 change_type:
   - value: change-QHu1GdukP
     label: Feature

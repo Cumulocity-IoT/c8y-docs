@@ -35,7 +35,7 @@ The `CumulocityRequestInterface` instance has an action on it to create a reques
 ```java
 /**
 * Allows creation of a request on a transport that
-* has been configured for a Cumulocity IoT connection.
+* has been configured for a {{< product-c8y-iot >}} connection.
 *
 * @param method The type of HTTP request, for example "GET".
 * @param path A specific path to be appended to the request.

@@ -17,7 +17,7 @@ var main = (function ($) {
         class: 'admonition preview'
       }).insertAfter(elem);
       $('<h4 class="title">Preview</h4>').appendTo('#preview-banner');
-      $('<span>This is a preview of the documentation for the Cumulocity IoT '+ docsPreview +' release.</span>').appendTo('#preview-banner');
+      $('<span>This is a preview of the documentation for the Cumulocity '+ docsPreview +' release.</span>').appendTo('#preview-banner');
    }
 
     //Toggle side navigation
@@ -144,11 +144,11 @@ function buildToc() {
 
           if (tocLinks.length) {
             const existingTocContainer = article.querySelector('.list-group');
-        
+
             if (!existingTocContainer) {
               const tocContainer = document.createElement('div');
               tocContainer.classList.add('toc-container');
-          
+
               const listGroup = document.createElement('div');
               listGroup.classList.add('list-group');
               listGroup.classList.add('toc');
@@ -209,13 +209,13 @@ function buildToc() {
           const srcEl = document.getElementById(findVisibleElement(targetElement.id));
           const rect = srcEl.getBoundingClientRect();
           const windowHeight = window.innerHeight;
-    
+
           // Calculate the top threshold for activation (top third of the viewport)
           const topThreshold = windowHeight / 3;
-    
+
           // Check if the element's top position is within the top threshold
           const elementTopInTopThird = rect.top <= topThreshold;
-    
+
           if (elementTopInTopThird) {
             let tempActive = document.querySelectorAll('.toc .active');
             tempActive.forEach(temp => {

@@ -10,7 +10,7 @@ weight: 10
 helpcontent:
 - label: dtm-introduction
   title: Digital Twin Manager
-  content: "The DTM application allows you to create and manage assets around your physical connected devices in Cumulocity IoT through the digital representation of a physical hierarchy of assets and devices.
+  content: "The DTM application allows you to create and manage assets around your physical connected devices in Cumulocity through the digital representation of a physical hierarchy of assets and devices.
 
 
   To create an asset, use asset models as the blueprint, which consist of one or more asset properties as well as one or more child asset models.  
