@@ -8,11 +8,11 @@ sector:
 
 This {{< product-c8y-iot >}} documentation website provides the documentation for the SaaS cloud offering and for the yearly releases under maintenance. Documentation for previous releases is accessible as described below.
 
-### Releases out of maintenance {#release-out-of-maintenance}
+### Product documentation for previous releases {#product-documentation-for-previous-releases}
 
 The user documentation for previous releases which are out of maintenance is available in a  GitHub repository called [c8y-docs]({{< link-c8y-github >}}/c8y-docs) which stores the documentation sources. The c8y-docs repository is public which means that no credentials are required to access it.
 
-The user documentation is available in the [Releases]({{< link-c8y-github >}}/c8y-docs/releases) section of the repository for all release versions that are no longer maintained. It is provided as a ZIP file called *c8y-guides-&lt;release-version&gt;.zip*, for example, *c8y-guides-10-16-0.zip*.
+The user documentation is available in the [Releases]({{< link-c8y-github >}}/c8y-docs/releases) section of the repository for all release versions that are no longer maintained. It is provided as a ZIP file called *c8y-guides-&lt;release-version&gt;.zip*, for example, *c8y-guides-10-18-0.zip*.
 
 {{< c8y-admon-info >}}
 Documentation ZIP files are available in the **Releases** section for the following {{< product-c8y-iot >}} release versions:
