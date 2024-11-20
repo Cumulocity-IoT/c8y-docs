@@ -45,7 +45,7 @@ While configuring the network on VMware based hypervisors, do not us the IP addr
 7. Provide a password for the root user of the guest operating system below **Guest OS root**, and click **Next**.
 
     {{< c8y-admon-important >}}
-Do not use the root credentials to perform any task. The root credentials must be used only when asked by {{< company-sag >}} support personnel. Using it otherwise might void the appliance support.
+Do not use the root credentials to perform any task. The root credentials must be used only when asked by {{< company-c8y >}} support personnel. Using it otherwise might void the appliance support.
     {{< /c8y-admon-important >}}
 
 8. Create an administrator account to access the "edge" tenant and the {{< management-tenant >}}, and click **Next**.
