@@ -52,7 +52,7 @@ Following is a list which explains the use cases of each package.
 
 #### @c8y/client: Accessing data
 
-The @c8y/client is an isomorphic (node and browser) Javascript client library for the [Cumulocity IoT](http://www.cumulocity.com) REST API. It can be used for getting data from the platform. In an Angular application you will mostly use the injected services from `@c8y/ngx-components`.
+The @c8y/client is an isomorphic (node and browser) Javascript client library for the [{{< product-c8y-iot >}}](http://www.cumulocity.com) REST API. It can be used for getting data from the platform. In an Angular application you will mostly use the injected services from `@c8y/ngx-components`.
 
 #### @c8y/ngx-components: The component library
 

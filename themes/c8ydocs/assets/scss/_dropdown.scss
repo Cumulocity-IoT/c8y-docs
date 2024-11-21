@@ -44,7 +44,7 @@
   background-clip: padding-box;
   list-style: none;
   text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
-  font-size: $font-size-base;
+  font-size: var(--c8y-font-size-small);
   box-shadow: var(--c8y-elevation-md-bottom);
 
   //.box-shadow(0 6px 12px rgba(0,0,0,.175));
@@ -69,6 +69,11 @@
     white-space: nowrap; // prevent links from randomly breaking onto new lines
     font-weight: normal;
     line-height: 1.42857143;
+    text-decoration: none!important;
+    width: 100%;
+    &::after{
+      display: none!important;
+    }
   }
 }
 
@@ -78,8 +83,8 @@
 
   &:hover,
   &:focus {
-    background-color: $dropdown-link-hover-bg;
-    color: $dropdown-link-hover-color;
+    background-color: $dropdown-link-hover-bg!important;
+    color: $dropdown-link-hover-color!important;
     text-decoration: none;
   }
 }

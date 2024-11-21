@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Defining Cumulocity IoT DataHub permissions and roles
+title: Defining Cumulocity DataHub permissions and roles
 layout: redirect
 ---
 
