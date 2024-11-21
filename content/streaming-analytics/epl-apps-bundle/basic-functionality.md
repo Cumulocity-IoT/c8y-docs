@@ -275,7 +275,7 @@ If you still use the images from the previous location, you must migrate them.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-important >}}
-Apama 10.15.0 introduces several new container images provided via Amazon ECR and some of the existing container images have changed content.
+Apama 10.15.0 introduces several new container images, and some of the existing container images have changed content. As of December 2024, these images are provided via Amazon ECR Public Gallery.
 When building images for use as a {{< product-c8y-iot >}} microservice, this is now different to earlier releases.
 You must now use the
 [public.ecr.aws/apama/apama-cumulocity-jre](https://gallery.ecr.aws/apama/apama-cumulocity-jre) image with the
