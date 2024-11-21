@@ -267,7 +267,7 @@ If you want to use a link in the **HTML code** field, for example a link to a da
 
 ### KPI {#kpi}
 
-The "KPI" widget visualizes on data point as a label.
+The "KPI" widget visualizes a data point as a label. It is meant as a simple visualization for mainly KPIs (Key Performance Indicators).
 
 ![KPI widget](/images/users-guide/cockpit/cockpit-widget-kpi.png)
 
