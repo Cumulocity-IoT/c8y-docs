@@ -267,7 +267,7 @@ If you want to use a link in the **HTML code** field, for example a link to a da
 
 ### KPI {#kpi}
 
-The "KPI" (Key Performance Indicators) widget visualizes a data point as a label. Such a data point could for example be the temperature of a device.
+The "KPI" (Key Performance Indicators) widget visualizes a data point as a label, for example, a data point for the temperature of a device.
 
 ![KPI widget](/images/users-guide/cockpit/cockpit-widget-kpi.png)
 
