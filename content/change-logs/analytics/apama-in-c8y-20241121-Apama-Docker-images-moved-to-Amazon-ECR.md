@@ -2,7 +2,7 @@
 date:
 title: Apama Docker images moving to Amazon ECR
 change_type:
-  - value: change-VSkj2iV9m
+  - value: change-QHu1GdukP
     label: Feature
 product_area: Analytics
 component:
