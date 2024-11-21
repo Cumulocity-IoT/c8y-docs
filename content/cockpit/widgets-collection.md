@@ -267,17 +267,17 @@ If you want to use a link in the **HTML code** field, for example a link to a da
 
 ### KPI {#kpi}
 
-The "KPI" widget visualizes a data point as a label. It is meant as a simple visualization for mainly KPIs (Key Performance Indicators).
+The "KPI" (Key Performance Indicators) widget visualizes a data point as a label. Such a data point could for example be the temperature of a device.
 
 ![KPI widget](/images/users-guide/cockpit/cockpit-widget-kpi.png)
 
 **Parameters to configure**
 
-On the left side, you can select the data point to be displayed.
+On the left side, select the data point you want to display.
 You have to select exactly one active datapoint to create the "KPI" widget.
 
-On the right side, you can adjust how the datapoint is going to be displayed. This includes:
-* Icon: the icon to be displayed next to the data point
+On the right side, you can adjust how the data point is going to be displayed. This includes:
+* Icon: The icon to be displayed next to the data point
 * Number of decimal places
 * Display: Allows to toggle whether the timestamp, icon and trend indicator should be displayed
 * Font size of measurement value
