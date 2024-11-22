@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-11-21
 title: Apama Docker images moving to Amazon ECR
 change_type:
   - value: change-QHu1GdukP
@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAM-35062
-version: 
+version: 25.311.0
 ---
 The Apama Docker images are now available at `public.ecr.aws/apama`, and can be viewed at https://gallery.ecr.aws/apama/. Previously, they were available at `softwareag/`, and viewed at https://hub.docker.com/u/softwareag.
 
