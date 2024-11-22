@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61026
 version: 1021.4.1
 ---
-Fixed an issue where editing top level nodes in the "Application configuration" would create duplicate entries of assets in the main navigation menu. The navigator now properly updates without creating redundant menu items.
+Fixed an issue where editing top level nodes in the **Application configuration** page created duplicate entries of assets in the navigator. Now the navigator updates properly without creating redundant menu items.
