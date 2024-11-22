@@ -270,7 +270,7 @@ The above is the minimum list of permissions that a custom Apama microservice ne
 
 {{< c8y-admon-info >}}
 After December 2024, the location of the Docker images has changed for all supported release trains.
-They are now available at *public.ecr.aws/apama* instead of at Docker Hub.
+They are now available at Amazon ECR Public Gallery instead of at Docker Hub.
 If you still use the images from the previous location, you must migrate them.
 {{< /c8y-admon-info >}}
 
