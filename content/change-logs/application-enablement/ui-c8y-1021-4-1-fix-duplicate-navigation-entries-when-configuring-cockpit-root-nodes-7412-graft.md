@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Prevent duplicate entries in navigation when configuring top level nodes
+title: Prevented duplicate entries in the navigator when configuring top level nodes
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
