@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-11-21'
 title: Map widget's center coordinate inputs work consistently
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-11-21'
 title: Device dashboards displayed for all devices
 product_area: Application enablement & solutions
 change_type:
