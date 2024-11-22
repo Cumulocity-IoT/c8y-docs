@@ -427,7 +427,9 @@ For example: If the input is <tt>{ "users" : [ { "age" : 40.375 } ] }</tt> (in J
 <p></p>
 The block does not support extracting entries from a dictionary whose key contains special characters like the period (.) or square brackets. Also it does not support extracting entries from a sequence without using square brackets, for example, <tt>users.0.id</tt> must be written as <tt>users[0].id</tt>.
 <p></p>
-In converting a string to a float, this block treats an empty string as a value of 0.0, rather than as not parseable.</p>
+In converting a string to a float, this block treats an empty string as a value of 0.0, rather than as not parseable.
+<p></p>
+Note: To extract a custom property from the Measurement Input block, you must add the prefix <tt>measurement_</tt> to the name of the property in the Property Path parameter of the Extract Property block. For example, if the name of the custom property you want to extract is <tt>city</tt>, you must specify <tt>measurement_city</tt> as the Property Path parameter.</p>
 
 
 #### Parameters {#extract-property-parameters}
