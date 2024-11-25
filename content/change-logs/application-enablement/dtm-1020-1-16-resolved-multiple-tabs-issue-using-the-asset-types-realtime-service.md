@@ -1,6 +1,6 @@
 ---
 date: "2024-09-26"
-title: "Improved naming and consistency in asset model samples"
+title: "Improved real-time behavior for changes to asset models"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
@@ -11,7 +11,7 @@ component:
 build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
-ticket: "CTM-1512"
-version: "1020.2.0"
+ticket: "CTM-1546"
+version: "1020.1.16"
 ---
-For simplicity, "model" has been removed from the asset model sample names. Additionally, the descriptions and UI layout have been improved to ensure consistency.
+Real-time updates have been improved to ensure that changes made by concurrent users to asset models are immediately reflected.

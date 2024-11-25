@@ -12,6 +12,6 @@ build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
 ticket: "CTM-1484"
-version: "1020.2.0"
+version: "1020.1.16"
 ---
 The subasset module, which was originally imported from the ngx component, has now been replaced with the official plugin from the dtm-plugins component. This change maintains all existing functionality while enabling easy integration of module with both default and custom web applications.

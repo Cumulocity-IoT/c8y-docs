@@ -12,6 +12,6 @@ build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
 ticket: "CTM-1563"
-version: "1020.2.0"
+version: "1020.1.16"
 ---
 In the **Subassets** page, instead of the key of the default location property, its label is displayed for improved user experience.
