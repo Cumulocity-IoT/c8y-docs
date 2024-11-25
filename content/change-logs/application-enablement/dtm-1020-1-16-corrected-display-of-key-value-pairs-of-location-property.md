@@ -12,6 +12,6 @@ build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
 ticket: "CTM-1422"
-version: "1020.2.0"
+version: "1020.1.16"
 ---
 Previously, on the **Asset Properties** page, viewing the default location property after viewing a complex property with three or more key-value pairs resulted in the altitude key-value pair being displayed multiple times. Now, the key-value pairs are displayed correctly.

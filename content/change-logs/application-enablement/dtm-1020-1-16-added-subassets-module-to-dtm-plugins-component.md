@@ -12,6 +12,6 @@ build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
 ticket: "CTM-1485"
-version: "1.1.0"
+version: "1020.1.16"
 ---
 A new subassets view module has been added to the DTM plugins component, which includes official DTM plugins and enables integration with both default and custom web applications. This module allows users to efficiently view and manage subassets. In future releases, it will replace the existing subassets view in other {{< product-c8y-iot >}} applications.

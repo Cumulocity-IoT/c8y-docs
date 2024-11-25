@@ -12,6 +12,6 @@ build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
 ticket: "CTM-1554"
-version: "1020.2.0"
+version: "1020.1.16"
 ---
 In the **New asset model** page, the **Asset models** and **Asset model samples** tabs have been removed for a more focused user experience as they are not required for creating a new asset model.

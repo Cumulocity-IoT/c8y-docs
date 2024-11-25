@@ -12,6 +12,6 @@ build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
 ticket: "CTM-1534"
-version: "1020.2.0"
+version: "1020.1.16"
 ---
 Previously, on the **Export Asset Models** window, the expand button did not appear for asset models with child models imported via sample or import features. Now, it appears correctly, allowing users to view the entire hierarchy before exporting.
