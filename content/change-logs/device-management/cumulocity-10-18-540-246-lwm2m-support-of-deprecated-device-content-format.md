@@ -1,6 +1,6 @@
 ---
 date:
-title: LWM2M device deprecated content format support in LWM2M agent
+title: Support for deprecated content format enabled again in the LWM2M agent
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
