@@ -70,7 +70,7 @@ which it received the control packet which caused the violation.
 
 In such instances MQTT clients must reconnect to be able to receive error messages from the error topic via the subscription. Error messages received after this reconnection
 are from the previous session. This can lead to confusion when attempting corrective actions. Therefore, we highly recommend you to build a microservice which uses
-the MQTT Service SDK to consume error messages, or use MQTT 5 for clients and make to use of the reason codes feature.
+the MQTT Service SDK to consume error messages, or use MQTT 5 for clients and make use of the reason codes feature.
 
 #### Topic cleanup {#topic-cleanup}
 
