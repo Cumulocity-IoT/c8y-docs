@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3620
 version: 10.18.540.246
 ---
-From 2024.10 version, the deprecated content format TLV with ID 1542 and JSON with ID 1543 support was disabled in the LWM2M agent. This is now re-enabled and LWM2M device data coming with this content formats are being recognized by default.
+With version 2024.10, support for the deprecated content format TLV with ID 1542 and JSON with ID 1543 was disabled in the LWM2M agent. This has now been enabled again and LWM2M device data coming with this content formats is recognized by default.
