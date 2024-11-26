@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61177
 version: 1021.8.0
 ---
-User is now able to disable or enable Dashboard manager from Application configuration in Cockpit Configuration. By default, Dashboard manager is enabled.
+In the Cockpit application, it is now possible to  disable or enable the dashboard manager in the **Application configuration** page. By default, the dashboard manager is enabled.
