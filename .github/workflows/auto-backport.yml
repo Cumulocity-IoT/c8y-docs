@@ -15,10 +15,18 @@ jobs:
         || (github.event.action == 'closed')
       )
     steps:
+      - name: Get GH App token
+        id: app-token
+        uses: Cumulocity-IoT/github-app-token@v3
+        with:
+          app_id: ${{ vars.C8Y_DOCS_AUTOMATIONS_APP_ID }}
+          installation_id: ${{ vars.C8Y_DOCS_AUTOMATIONS_APP_INSTALLATION_ID }}
+          private_key: ${{ secrets.C8Y_DOCS_AUTOMATIONS_APP_PRIVATE_KEY }}
+          
       - name: Backport Action
         uses: sorenlouv/backport-github-action@929f69d04adbc196d982e60f02837b6cc00b3129
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ steps.app-token.outputs.token }}
           auto_backport_label_prefix: auto-backport-to-
           add_original_reviewers: true
 
