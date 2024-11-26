@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Change default Date selection option in widgets to Dashboard time range. [GRAFT][release/cd] (#7631)
+title: Change default Date selection option in widgets to Dashboard time range.
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
