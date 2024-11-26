@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Change default Date selection option in widgets to Dashboard time range.
+title: Changed default date selection option in widgets configuration
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
