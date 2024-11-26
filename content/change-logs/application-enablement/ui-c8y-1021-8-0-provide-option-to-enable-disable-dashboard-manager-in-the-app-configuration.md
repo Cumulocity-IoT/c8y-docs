@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Provide option to enable/disable Dashboard Manager in the App configuration (#7567) [GRAFT][release/cd] (#7640)
+title: Option to enable or disable Dashboard Manager is added to Cockpit Application configuration
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
