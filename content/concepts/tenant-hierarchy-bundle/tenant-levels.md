@@ -18,9 +18,7 @@ The {{< product-c8y-iot >}} tenant concept builds a 3-level hierarchy, including
 These three levels differ in their scope, particularly with regards to administration, see below.
 
 {{< c8y-admon-info >}}
-Refer to the [{{< c8y-pricing >}}]({{< link-c8y-pricing >}}) for details on our related commercial offering.
-
-Refer to your contract for details on your individual subscriptions.
+Please refer to your contract for details on your individual subscriptions.
 {{< /c8y-admon-info >}}
 
 

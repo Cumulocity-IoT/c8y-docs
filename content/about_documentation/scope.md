@@ -9,9 +9,7 @@ sector:
 This documentation describes the 2024 release of the {{< product-c8y-iot >}} platform. It includes all new features and functionality introduced with release 2024 (see [Release notes](/change-logs/) for details).
 
 {{< c8y-admon-important >}}
-Depending on the {{< product-c8y-iot >}} plan your organization has purchased, only a subset of the features and functionalities described in this documentation might be available to you.
-
-Please refer to the [{{< c8y-pricing >}}]({{< link-c8y-pricing >}}) for details on the plans available, and refer to your contract for details on your particular subscriptions.
+Depending on the {{< product-c8y-iot >}} plan your organization has purchased, only a subset of the features and functionalities described in this documentation might be available to you. Please refer to your contract for details on your individual subscriptions.
 {{< /c8y-admon-important >}}
 
 {{< c8y-admon-info >}}
