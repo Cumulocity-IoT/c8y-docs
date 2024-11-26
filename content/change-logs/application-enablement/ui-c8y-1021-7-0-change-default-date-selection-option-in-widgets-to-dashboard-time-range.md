@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61179
 version: 1021.7.0
 ---
-Change default Date selection option in widgets to Dashboard time range. [GRAFT][release/cd] (#7631)
+Default Date selection option for Data points graph, Data points table and Event list widgets is Dashboard time range instead of Widget configuration.
