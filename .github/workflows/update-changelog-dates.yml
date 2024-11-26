@@ -50,19 +50,19 @@ jobs:
         git config --global user.name "c8y-docs-automations[bot]"
         git config --global user.email "c8y-docs-automations[bot]@users.noreply.github.com"
 
-    - name: Get GH App token
-      id: app-token
-      uses: Cumulocity-IoT/github-app-token@v3
+    - name: Creating github access token
+      id: token
+      uses: actions/create-github-app-token@v1
       with:
-        app_id: ${{ vars.C8Y_DOCS_AUTOMATIONS_APP_ID }}
-        installation_id: ${{ vars.C8Y_DOCS_AUTOMATIONS_APP_INSTALLATION_ID }}
-        private_key: ${{ secrets.C8Y_DOCS_AUTOMATIONS_APP_PRIVATE_KEY }}
+        app-id: ${{ vars.C8Y_DOCS_AUTOMATIONS_APP_ID }}
+        private-key: ${{ secrets.C8Y_DOCS_AUTOMATIONS_APP_PRIVATE_KEY }}
+        owner: ${{ github.repository_owner }}
 
     - name: Checking out
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
-        token: ${{ steps.app-token.outputs.token }}
+        token: ${{ steps.token.outputs.token }}
 
     - name: Generate branch name
       id: branch-name
@@ -121,6 +121,6 @@ jobs:
     - name: Create pull request
       if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 && steps.git-push.outputs.uniqueBranchFlag == 'true' }}
       env: 
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ steps.token.outputs.token }}
       run: |
         gh pr create -B ${{ github.ref }} -H "${{ steps.branch-name.outputs.branch-name }}" --title 'Update ${{ inputs.component }} changelog dates to ${{ inputs.date }} as version ${{ inputs.version }} was released' --body 'Created by [Github action](${{ github.server_url }}/${{ github.repository_owner }}/${{ github.event.repository.name }}/actions/workflows/update-changelog-dates.yml)' --assignee BeateRixen
