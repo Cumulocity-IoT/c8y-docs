@@ -18,10 +18,9 @@ This agreement defines the service level of {{< product-c8y-iot >}} Software-as-
 
 {{< product-c8y-iot >}} DataHub provides the following features.
 
-* **Scalable and economic long-term data storage:** {{< product-c8y-iot >}} DataHub offloads data into economic data lake storage for long-term data retention, permitting you to adapt the retention times of your operational store.
-* **Advanced data querying:** Data is made available for in-depth analysis to SQL-based analytics tools such as business intelligence, notebook and dashboarding applications.
-* **Configurable offloading:** So-called "offloaders" permit you to select what data is offloaded and how it is mapped into the data lake for user-friendly querying.
-* TBD: What else to mention here as main points?
+* **Scalable and economic long-term data storage:** {{< product-c8y-iot >}} DataHub offloads data into economic data lake storage outside of the operational store for long-term data retention, permitting you to shorten the retention times of the more costly operational store.
+* **Advanced data querying:** Long-term data is made available for in-depth analysis to SQL-based analytics tools such as business intelligence, notebook and dashboarding applications.
+* **Configurable offloading:** So-called "offloading pipelines" permit you to select what data is offloaded and how it is mapped into the data lake for user-friendly, SQL-based querying.
 
 ### Customer responsibilities
 
