@@ -12,6 +12,6 @@ It is at the core of {{< company-c8y >}}'s mission to make complex technology ac
 
 Their progress and commitments are documented in Accessibility Conformance Reports (ACRs). These reports transparently communicate both our current accessibility features and areas for improvement.
 
-The latest Accessibility Conformance Report can be downloaded here: ![Accessibility Conformance Report](/static/files/ACR_Cumulocity_v10.17.pdf).
+The latest Accessibility Conformance Report can be downloaded here: [Accessibility Conformance Report](/files/ACR_Cumulocity_v10.17.pdf).
 
 {{< company-c8y >}} values feedback. If you have questions or encounter any accessibility issues, please contact our accessibility team at [accessibility@cumulocity.com](mailto:accessibility@cumulocity.com).
