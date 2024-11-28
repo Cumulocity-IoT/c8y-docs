@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-11-28'
 title: Trimmed values in connectivity provider forms
 product_area: Device management & connectivity
 change_type:

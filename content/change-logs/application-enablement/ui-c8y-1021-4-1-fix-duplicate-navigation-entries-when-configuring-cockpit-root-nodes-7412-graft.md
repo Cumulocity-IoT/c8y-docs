@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Prevented duplicate asset entries in the navigator when configuring top level nodes
+date: '2024-11-28'
+title: >-
+  Prevented duplicate asset entries in the navigator when configuring top level
+  nodes
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
