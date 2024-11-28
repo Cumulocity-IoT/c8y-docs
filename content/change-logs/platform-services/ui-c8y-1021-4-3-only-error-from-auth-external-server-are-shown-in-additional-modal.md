@@ -1,6 +1,6 @@
 ---
 date: ""
-title: only error from auth external server are shown in additional modal (#6937) [GRAFT][release/cd] (#7594)
+title: Enhanced display of error messages for external authentication and platform permissions
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
