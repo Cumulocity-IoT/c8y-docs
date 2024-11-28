@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Upgraded angular and webSDK versions"
+title: "Upgraded Angular and Web SDK versions"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
