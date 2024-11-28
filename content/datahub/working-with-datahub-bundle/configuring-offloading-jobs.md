@@ -224,8 +224,9 @@ Second document:
 
 The two paths `c8y_TemperatureMeasurement.T` and `c8y_temperaturemeasurement.T` are equal in terms of case-insensitivity. Without name sanitization, only the column `c8y_TemperatureMeasurement.T.unit` will be created, which stores all unit entries. Analogously, one column `c8y_TemperatureMeasurement.T.value` will be created, which stores all value entries. In the latter case, the column would have a mixed type of DOUBLE and VARCHAR, which Dremio would then coerce to type VARCHAR for the column.
 
-
 The first time an offloading run processes multiple fragments with the corresponding column names being equal with respect to case-insensitivity, the sanitization also generates distinct column names, with each name having a unique suffix.
+
+This handling of duplicate column names does not apply when the time-series data model is used. This model does not support separating incoming names which differ in case. All of them will go to the same data lake column in the offloading process. The case of the column name is determined by the first occurrence that was encountered.
 
 ##### Raising alarms {#raising-alarms}
 
