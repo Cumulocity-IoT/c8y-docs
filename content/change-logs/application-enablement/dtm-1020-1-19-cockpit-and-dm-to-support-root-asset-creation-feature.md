@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Ability to create root asset using Add Asset plugin in Cockpit and Device Management"
+title: "Ability to create root asset using Add Asset Module plugin in Cockpit and Device Management"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
