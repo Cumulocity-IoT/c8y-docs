@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1646"
 version: "1020.1.19"
 ---
-Upgraded angular version to 18.2.11 and webSDK to 1021.0.4
+Angular has been upgraded to version 18.2.11 and the Web SDK has been updated to 1021.0.4.
