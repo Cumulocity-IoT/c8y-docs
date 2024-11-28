@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Logging out all users when deleting or modifying a global role
+title: Option to log out all users when deleting or modifying a global role
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
