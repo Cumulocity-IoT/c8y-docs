@@ -14,7 +14,7 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.event.action == 'opened' }}
+  group: ${{ github.workflow }}-${{ github.event.number }}-${{ github.event.action == 'opened' }}
   cancel-in-progress: true
 
 defaults:
@@ -46,6 +46,7 @@ jobs:
       if: ${{ github.event.pull_request.state != 'closed' }}
       uses: actions/checkout@v4
       with:
+        ref: refs/pull/${{ github.event.number }}/merge
         submodules: recursive
         fetch-depth: 1
 
