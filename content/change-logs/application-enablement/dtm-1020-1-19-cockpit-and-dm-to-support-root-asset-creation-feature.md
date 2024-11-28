@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Cockpit and DM to support Root Asset Creation feature"
+title: "Ability to create root asset using Add Asset plugin in Cockpit and Device Management"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1654"
 version: "1020.1.19"
 ---
-Enables root asset creation capability in Cockpit and Device management, allowing users to create and manage root assets from Cockpit and Device management.
+Enhanced the **Add Asset Module** plugin to enable root asset creation in Cockpit and Device Management. When installed, users can access the **Add Asset** button on the `/groups` and `/assets` pages in both applications, allowing creation of root assets directly from these interfaces.
