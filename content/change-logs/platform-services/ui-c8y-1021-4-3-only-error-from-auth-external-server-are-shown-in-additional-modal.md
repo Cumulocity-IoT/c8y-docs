@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60547
 version: 1021.4.3
 ---
-Previously, errors from external authentication servers were not always displayed to the user, causing confusion when authentication failed without any visible indication. With this update, all errors originating from external authentication servers are now consistently shown in a dedicated error modal dialog. Additionally, errors resulting from insufficient permissions within the platform are now presented clearly and in a user-friendly manner on the login page.
+Previously, errors from external authentication servers were not always displayed to the user, causing confusion when authentication failed without any visible indication. With this update, all errors originating from external authentication servers are now consistently shown in a dedicated error dialog. Additionally, errors resulting from insufficient permissions within the platform are now presented clearly and in a user-friendly manner on the login page.
