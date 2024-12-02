@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fixed data grid group dropdown issues (#7610) [GRAFT][release/cd] (#7642)
+title: Fixed layout issues with data grid group column dropdown
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
