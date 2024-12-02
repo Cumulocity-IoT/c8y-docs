@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-11-28
 title: Support for deprecated content format enabled again in the LWM2M agent
 product_area: Device management & connectivity
 change_type:

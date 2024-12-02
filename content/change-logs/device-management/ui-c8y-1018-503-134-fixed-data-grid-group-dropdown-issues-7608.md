@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-11-28
 title: Fixed layout issues with data grid group column dropdown
 product_area: Device management & connectivity
 change_type:
