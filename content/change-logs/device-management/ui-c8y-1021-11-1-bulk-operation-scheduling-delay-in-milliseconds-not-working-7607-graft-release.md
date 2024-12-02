@@ -1,6 +1,6 @@
 ---
 date: ""
-title: bulk operation scheduling delay in milliseconds not working (#7607) [GRAFT][release/cd] (#7677)
+title: Bulk operation scheduling delay in milliseconds is now working
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
