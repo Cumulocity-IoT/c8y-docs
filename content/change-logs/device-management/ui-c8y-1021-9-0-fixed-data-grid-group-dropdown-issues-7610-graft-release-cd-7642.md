@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4172
 version: 1021.9.0
 ---
-fixed data grid group dropdown issues (#7610) [GRAFT][release/cd] (#7642)
+The data grid component had layout issues with the group column dropdown. These have been resolved by adjusting the dropdown scroll height in relation to the bottom footer and adding a shadow to the dropdown for increased contrast between user interface elements.
