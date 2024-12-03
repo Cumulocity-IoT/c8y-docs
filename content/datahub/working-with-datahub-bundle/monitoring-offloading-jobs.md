@@ -32,7 +32,7 @@ The list shows the execution history, with each execution consisting of the foll
 | Execution mode icon | The type of execution, which is either *scheduled* (calendar icon <i class="dlt-c8y-icon-schedule1 text-muted icon-20"></i> ) or *manual* (user icon <i class="dlt-c8y-icon-supplier text-muted icon-20"></i>)
 | Records | The number of records which have been offloaded during this execution
 | Execution time | The point in time the execution was started
-| Runtime | The runtime of the execution
+| Runtime | The execution runtime of the offloading run
 | Next execution time | The point in time for which the next execution is scheduled, provided offloading is activated; for a manual execution it is empty
 
 The system is configured to keep a limited history of the last job executions.
@@ -53,7 +53,7 @@ In the corresponding list of jobs click the job you are specifically interested 
 
 | Component | Description |
 | ---         | --- |
-| Runtime | The runtime of the execution
+| Runtime | The execution runtime of the offloading run
 | Execution mode | The mode of the execution, which is either *manual* or *scheduled*
 | Start time | The point in time the execution was started
 | End time | The point in time the execution has ended
