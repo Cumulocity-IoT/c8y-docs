@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1654"
 version: "1020.1.19"
 ---
-Enables root asset creation capability in Cockpit and Device management, allowing users to create and manage root assets from Cockpit and Device management.
+Previously, the Add Asset plugin could only create child assets within existing hierarchies through the subassets view. With this update, users can now create root-level assets and as well as the complete asset hierarchies based on predefined asset models. This enhancement provides greater flexibility creating asset hierarchies through the plugin interface.
