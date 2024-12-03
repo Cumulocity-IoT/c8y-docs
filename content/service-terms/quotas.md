@@ -44,13 +44,14 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 | [Document size](/concepts/domain-model/#fragments)                   | Soft |  1 MB |
 | [Array size within document](/concepts/domain-model/#fragments)      | Soft |  1000 |
 | [Children of an inventory object](/concepts/domain-model/#fragments) | Soft |  1000 |
+| Property size                                                        | Soft | 32 KB |
 
 
 ### REST API
 
-| Quota                        | Type |     Value |
-| ---------------------------- | ---- | --------: |
-| Maximum API request duration | Hard | 5 minutes |
+| Quota                | Type |     Value |
+| -------------------- | ---- | --------: |
+| API request duration | Hard | 5 minutes |
 
 ### Realtime APIs
 
@@ -75,3 +76,15 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 | ---------------------------------------------------------------------------------------------- | ---- | ----: |
 | [File size for LWM2M bulk registration](/protocol-integration/lwm2m/#bulk-device-registration) | Hard | 10 MB |
 | [Concurrent pending LWM2M operations](/protocol-integration/lwm2m/#device-operations-handling) | Hard |    10 |
+
+### DataHub
+
+| Quota                                                                                                                              | Type |      Value |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ---- | ---------: |
+| Number of offloaders per tenant                                                                                                    | Soft |        100 |
+| [Offloading frequency](/datahub/working-with-datahub/#configure-additional-settings)                                               | Hard |     hourly |
+| [Offloaded leaf properties](https://docs.dremio.com/current/get-started/cluster-deployments/architecture/limits/#catalog)          | Hard |       6400 |
+| Query time out                                                                                                                     | Hard |        ??? |
+| Query job retention                                                                                                                | Hard |      1 day |
+| [Rows in a query job](https://docs.dremio.com/current/get-started/cluster-deployments/architecture/limits/#execution)              | Hard |    1000000 |
+| [Rows in a high performance query](https://docs.dremio.com/current/get-started/cluster-deployments/architecture/limits/#execution) | Hard | 1073741824 |

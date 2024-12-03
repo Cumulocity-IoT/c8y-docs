@@ -19,70 +19,44 @@ This agreement defines the service level of {{< product-c8y-iot >}} Software-as-
 {{< product-c8y-iot >}} DataHub provides the following features.
 
 * **Scalable and economic long-term data storage:** {{< product-c8y-iot >}} DataHub offloads data into economic data lake storage outside of the operational store for long-term data retention, permitting you to shorten the retention times of the more costly operational store.
-* **Advanced data querying:** Long-term data is made available for in-depth analysis to SQL-based analytics tools such as business intelligence, notebook and dashboarding applications.
+* **Advanced data querying:** Long-term data is made available for in-depth analysis to SQL-based analytics tools such as business intelligence, notebook, and dashboarding applications.
 * **Configurable offloading:** So-called "offloading pipelines" permit you to select what data is offloaded and how it is mapped into the data lake for user-friendly, SQL-based querying.
 
 ### Customer responsibilities
 
-Customer acknowledges the following Customer responsibilities. Customers are encouraged to review the [{{< product-c8y-iot >}} DataHub documentation](/datahub), particularly ... TBD, any limitations/responsbilities related existing docs ...
+Customers are encouraged to review the [{{< product-c8y-iot >}} DataHub documentation](/datahub). In particular, Customer acknowledges the following Customer responsibilities:
 
-
-* **Offloading configuration:** Customer maintains compatibility of offloading configurations with the actual data structures present in the operational store. TBD: Mechanisms that help with schema changes. https://cumulocity.com/docs/datahub/working-with-datahub/#mixed-types
-* **Data lake schema:** Customer maintains compatibility of the data lake schema with tools using the data lake.
-* **Storage cost:** Customers are responsible for managing data retention policies within their configured S3 bucket or Azure Data Lake Storage and ensuring that offloading jobs are configured appropriately to align with their organizational requirements, data management strategies and budgets. TBD: There are instructions to remove data in the docs: http://localhost:1313/docs/datahub/working-with-datahub/#modifying-data-in-the-data-lake
-* Moving files may break the offloading process (e.g., kills watermark). Check docs
-* Data lake provisioning: Customer has to provide the data lake and the user has to provide correct credentials to the data lake storage. Permissions have to be correclty set. https://cumulocity.com/docs/datahub/setting-up-datahub/#permissions-for-data-lake-and-space Use same hyperscaler, same region; otherwise performance is suboptimal.
-* Offloading monitoring: Customer need to respond to offloading alarms. Advice to monitor. If you don't react, you might have data loss.
-* Retention management: Offloading jobs may fail; we advice to have slack space so that data is not lost. Add reaction time.
-* Do not use all users.
-
-
-* TBD Anything related to tenancy, security/(Dremio) users and administration here or in the next section? I.e. customers to manage security of Dremio users and of connections to Dremio? --> Maintain high security, password rules from cumulocity
-  * Basic auth???
-* TBD Anything related to JDBC/ODBC drivers? --> Use drivers linked in the documentation.
-
+* **Data lake provisioning:** Customer provides data lake storage. Customer is responsible for setting correct storage permissions and configuring correct credentials for data lake access in {{< product-c8y-iot >}} DataHub. Please refer to Section ["Permissions for data lake and space"](/datahub/setting-up-datahub/#permissions-for-data-lake-and-space) for more information. We recommend provisioning the data lake in the same hyperscale and hyperscaler region as Customer's {{< product-c8y-iot >}} tenants for the best performance.
+* **Storage cost:** Customer is responsible for managing data retention policies within Customer's configured S3 bucket or Azure Data Lake Storage and ensuring that offloading jobs are configured appropriately to align with Customer's organizational requirements, data management strategies and budgets.
+* **Offloading configuration:** Customer maintains compatibility of offloading configurations with the actual data structures present in the operational store. For more information, please see Section ["Aligning data modeling and offloading"](/datahub/working-with-datahub/#aligning-data-modeling-and-offloading) and Section ["Dealing with mixed types"](/datahub/working-with-datahub/#mixed-types).
+* **Offloading monitoring:** To avoid data loss, Customer is recommended to monitor and respond to offloading alarms as data loss may occur. For example, if the data structures in the operational store change, offloaders configured to ["stop pipeline"](/datahub/working-with-datahub/#mixed-types) will halt. If the offloaders are not reconfigured before the configured retention intervals in the operational store apply, data may be deleted before it is offloaded. For this reason, Customer is advised to configure suitable retention intervals in the operational store to allow for reaction times. Alarms can be, for example, forwarded to email for better visibility.
+* **Data lake modifications:** Customer is responsible for Customer's modifications to the data lake, such as moving or deleting files, as outlined in Section ["Modifying data in the data lake"](/datahub/working-with-datahub/#modifying-data-in-the-data-lake). In particular, moving files may break DataHub offloading jobs.
+* **Data lake schema:** Customer maintains compatibility of the data lake schema with tools querying the data lake.
+* **Security:** Customer is responsible for selecting strong passwords for Dremio access and maintaining the passwords safely. Customer is advised to create Dremio users solely through the {{< product-c8y-iot >}} DataHub to prevent data leaks between tenants.
+* **Driver usage:** For JDBC and ODBC usage, Customer is advised to download drivers using the [links in the documentation](/datahub/working-with-datahub/#connecting-via-jdbc).
 
 ### Limitations and constraints
 
 Customer acknowledges the following limitations and constraints in using Service.
 
-* **Offloading performance;** Offloading jobs may halt if data structures that are incompatible with the offloading configuration are detected. Customers are advised to monitor offloading jobs for alarms (for example, by forwarding alarms to email).
-* **Query performance:** No response time guarantee can be given for queries, as they can be of arbitrarily complex and are scheduled for execution on shared resources.
-* TBD: How long are query jobs kept? When is a long-running query cancelled?
-* **Schema limitations:** TBD: List any schema limitations in the default CDH product configuration here. (Array sizes, nesting depths, ...) --> Refer also to platform soft quota
-
-* Dremio is a cloud/OEM version, some features of Dremio are not available.
-  * Reflections, due to confidentiality limits.
-  * No other data sources can be added. --> Some contradiction to Bernd's migration strategy.
-  *
-
-Query runtime
-"Semi soft"? -> Auf Anfrage hochgeschraubt -> Sollte "configurable limit" sein
-Dremio
-
-Standard dremio limits https://docs.dremio.com/current/get-started/cluster-deployments/architecture/limits/ with explanation ,with exceptions
-Field size in record 32 KB -> Soft limit
-Array size in Parquet 1000
-Dremio: Vereinigung aller blätter 6400 Blätter, also "leaf columns that can be queried" -> Michael sends
-
-Use our API
-Jobs are kept for one day, maximum 1000000 rows
-High performance API has a limit with rows 1073741824
-Nicht häufiger als einmal pro Stunde im Standard plan (soft limit)
-
-Configurable limit for offloading configurations: 100 (on particular customer, problem was coordinator capacity)
+* **Service quotas:** Customer acknowledges the existence of additional quotas as detailed in [service quotas](/service-terms/quotas/#datahub) and in the [Dremio documentation](https://docs.dremio.com/current/get-started/cluster-deployments/architecture/limits/)
+* **Dremio usage:** Customer acknowledges that inside {{< product-c8y-iot >}} DataHub, not all features of Dremio are available for use. In particular, public cloud instances do not currently support the use of Dremio reflections and additional data sources beyond the {{< product-c8y-iot >}} operational store.
+* **Query performance:** No response time guarantee can be given for queries, as they can be of arbitrary complexity and are scheduled for execution on shared resources. Overly long-running or resource-consuming queries may be canceled by {{< product-c8y-iot >}}'s capacity management.
 
 
 ### Service availability
 
-* Can we see historic service availability on one of the existing instances?
-* Otherwise use 99% (max. 7 hours and a bit per month).
+{{< company-c8y >}} is committed to providing reliable service. The specific service availability targets for {{< product-c8y-iot >}} DataHub are as follows:
 
-* Correct offloading configuration and correct data lake configuration: Jobs refresh all the missing data, Jobs have retries, failed offloading. May catch up over time (E.g. first offloading)
-* Instances are partially with only one coordinator and one executor
+* **Production environments:** 99.00% availability
+* **Preproduction environments:** 95.00% availability
+
+Service availability for [{{< product-c8y-iot >}} DataHub APIs](https://www.cumulocity.com/api/datahub/#tag/Standard-API) is calculated as outlined in the [platform's service availability section](/service-terms/service-level/#service-availability).
+
+Offloading jobs may not run at a scheduled time if a previous offloading job is still in progress (for example, due to an initial larger volume upload or after a longer period of inactivity) or during scheduled maintenance. Subsequent offloading jobs will eventually catch up with remaining data.
 
 ### Support and maintenance
 
-* **Technical support:** The Provider will offer [technical support](/additional-resources/contacting-support/) for issues related to the ...
-* **Maintenance windows:** Scheduled maintenance will be communicated in advance through Provider’s status notification system (for example,[ https://status.cumulocity.com/](https://status.cumulocity.com/) for EU, US, EMEA), and efforts will be made to minimize disruption during these periods.
-* Anything to mention here specifically? E.g., regarding troubleshooting of customer schemata?
+Support and maintenance are provided as outlined in the [platform service-level agreement](/service-terms/service-level/#support-and-maintenance).
+
+Support can answer questions about schema evolution and schema compatibility mechanisms in DataHub. However, support can generally not assist with troubleshooting Customer's specific data schemas.
