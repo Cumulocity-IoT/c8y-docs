@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-11-28'
 title: Terminate the firmware update process if an unexpected situation is detected
 product_area: Device management & connectivity
 change_type:

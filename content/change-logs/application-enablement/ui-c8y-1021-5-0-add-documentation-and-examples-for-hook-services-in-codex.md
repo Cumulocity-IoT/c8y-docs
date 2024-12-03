@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-11-28'
 title: Added documentation and examples for hookServices in the Cumulocity Codex
 product_area: Application enablement & solutions
 change_type:
