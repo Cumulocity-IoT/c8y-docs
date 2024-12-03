@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "The configured properties are not visible on the Edit Widget screen."
+title: "Configured properties are now visible when editing the Asset properties widget"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
