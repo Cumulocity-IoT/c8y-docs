@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1666"
 version: "1020.1.20"
 ---
-Previously, configured asset properties were not visible when editing the 'Asset Properties Widget', requiring users to re-add them. Now, users can see existing configured properties on edit and add new properties as needed.
+Previously, configured asset properties were not visible when editing the "Asset properties" widget, requiring users to re-add them. Now, users see existing configured properties on editing and can add new properties as needed.
