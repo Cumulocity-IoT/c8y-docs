@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61090
 version: 1021.9.0
 ---
-"Limits" tab in tenant details (#7260) [GRAFT][release/cd] (#7669)
+To provide a better overview of the resource limits and quotas configured for a tenant, a new "Limits" tab has been added to the tenant details page. This tab allows to configure the maximum number of devices, requests, and queue sizes for the tenant. With this change, tenant administrators can easily view and manage the resource limits for their subtenant in the dedicated tab.
