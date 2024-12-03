@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Limits" tab in tenant details (#7260) [GRAFT][release/cd] (#7669)
+title: Added "Limits" tab to tenant details
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
