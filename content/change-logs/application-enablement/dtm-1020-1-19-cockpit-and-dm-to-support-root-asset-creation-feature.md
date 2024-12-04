@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1654"
 version: "1020.1.19"
 ---
-Previously, the Add Asset plugin could only create child assets within existing hierarchies through the subassets view. With this update, users can now create root-level assets and as well as the complete asset hierarchies based on predefined asset models. This enhancement provides greater flexibility creating asset hierarchies through the plugin interface.
+Previously, the add asset functionality in the subassets view only allowed to create child assets within existing hierarchies. With this change, users can now create root-level assets as well as complete asset hierarchies based on predefined asset models. This enhancement provides greater flexibility creating asset hierarchies through the UI.
