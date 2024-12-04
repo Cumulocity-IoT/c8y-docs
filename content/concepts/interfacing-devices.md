@@ -15,7 +15,7 @@ To interface these systems with {{< product-c8y-iot >}}, a driver software calle
 {{< c8y-admon-related >}}
 
 - [Getting started > Technical concepts > {{< product-c8y-iot >}}´s domain model](/concepts/domain-model) for understanding the data structures exchanged between agents and the {{< product-c8y-iot >}} core.
-- [Device management > Device integration](/device-integration) for understanding in detail how to develop agent software using the REST or MQTT protocols.
+- [Device management & connectivity > Device integration](/device-integration) for understanding in detail how to develop agent software using the REST or MQTT protocols.
 - [REST implementation](https://{{< domain-c8y >}}/api/core/#section/REST-implementation) in the {{< openapi >}}, for a detailed specification of the interfaces between agents and the {{< product-c8y-iot >}} core.
 
 {{< /c8y-admon-related >}}

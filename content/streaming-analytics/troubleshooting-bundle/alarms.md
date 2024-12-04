@@ -42,6 +42,7 @@ The following is a list of the alarms. The information further down below explai
 - [Connection to correlator lost](#connection-to-correlator-lost)
 - [Performance alarms](#performance-alarms)
 - [Parent tenant not subscribed](#parent-tenant-not-subscribed)
+- [Analytics Builder dropped events](#analytics-builder-dropped-events)
 
 Once the cause of an alarm is resolved, you must acknowledge and clear the alarm in the {{< product-c8y-iot >}} tenant. Otherwise, you will continue to see the alarm until a further restart of the Apama-ctrl microservice.
 
@@ -151,7 +152,7 @@ To diagnose high-memory-consuming models and EPL apps, you can try the following
 
 If the memory continues to grow, then when it reaches the limit, the correlator will run out of memory and Apama-ctrl will shut down. To prevent the microservice from going down, you must fix this as a priority.
 
-*** See also [Diagnostic tools for Apama in Cumulocity IoT](https://techcommunity.softwareag.com/techniques-blog/-/blogs/apama-in-cumulocity-iot) in {{< company-sag >}}'s {{< sag-dev-community >}}.
+See also [Diagnostic tools for Apama in Cumulocity](https://techcommunity.softwareag.com/techniques-blog/-/blogs/apama-in-cumulocity-iot) in {{< company-sag >}}'s {{< sag-dev-community >}}.
 
 
 #### Warning or higher level logging from an EPL file {#apama_ctrl_fatalcritwarn}
@@ -397,3 +398,16 @@ The Apama-ctrl microservice allows you to subscribe to tenants in any order.
 However, as long as the parent tenant is not subscribed, the microservice functionality will not work on the subtenant.
 
 This alarm is cleared once the parent tenant is subscribed.
+
+
+#### Analytics Builder dropped events {#analytics-builder-dropped-events}
+
+This alarm is raised when an Analytics Builder model drops an event because it is delayed beyond the reorder buffer duration.
+
+- Alarm type: `analyticsbuilder_dropped_events`
+- Alarm text: Analytics Builder dropped &lt;number&gt; events because they were delayed beyond the reorder buffer duration. The last dropped event was received at &lt;system time&gt; (&lt;number&gt; seconds old): '&lt;last dropped event string&gt;'.
+- Alarm severity: WARNING
+
+Analytics Builder models use buffers to reorder incoming events by their source timestamp and process them in order. By default, input blocks reorder events with a delay of up to 1 second. If an event is received after a delay of more than the reorder buffer duration, the event may be dropped without processing. See [Input blocks and event timing](/streaming-analytics/analytics-builder/#input-blocks-and-event-timing) for detailed information.
+
+To resolve the issue, you can either disable the reordering of input events or increase the duration of the reorder buffer. You can disable the reordering of input events by enabling the **Ignore Timestamp** parameter of the input blocks. When the **Ignore Timestamp** parameter is enabled, the input events are processed as soon as possible without reordering. You can increase the duration of the reorder buffer by changing the `timedelay_secs` tenant option in the `analytics.builder` category. For more information on `timedelay_secs`, see [Keys for model timeouts](/streaming-analytics/analytics-builder/#keys-for-model-timeouts).

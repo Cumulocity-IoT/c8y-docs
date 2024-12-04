@@ -63,7 +63,7 @@ Furthermore, the following pre-configured roles are initially provided.
 </tr>
 <tr>
 <td align="left">Devicemanagement User</td>
-<td align="left">Can access the Device management application. The user will be able to use the simulator and to run bulk operations. In addition, you should add a role providing access to devices.</td>
+<td align="left">Can access the Device Management application. The user will be able to use the simulator and to run bulk operations. In addition, you should add a role providing access to devices.</td>
 </tr>
 <tr>
 <td align="left">Global Manager</td>

@@ -10,7 +10,7 @@ helpcontent:
     content: "In the **Applications** tab, you can see all applications available in your tenant. There are two kinds of applications:
 
 
-    **Subscribed applications** - Applications subscribed to the tenant, either provided by the platform or a service provider. Cumulocity IoT provides a variety of applications for different purposes. Find a list of all applications in the user documentation.
+    **Subscribed applications** - Applications subscribed to the tenant, either provided by the platform or a service provider. Cumulocity provides a variety of applications for different purposes. Find a list of all applications in the user documentation.
 
     **Custom applications** - Applications owned by the tenant. You can add custom applications in various ways as own applications.
 
@@ -60,7 +60,7 @@ Click the application or click the menu icon <i class="dlt-c8y-icon-menu-vertica
 In the **Properties** tab, several fields can be modified, depending on the application type (see [Application properties](#application-properties)).
 
 {{< c8y-admon-important >}}
-Never change the system application names (such as "Device management", "Cockpit"). Otherwise, tenant initialization will fail.
+Never change the system application names (such as "Device Management", "Cockpit"). Otherwise, tenant initialization will fail.
 {{< /c8y-admon-important >}}
 
 ### To delete an application {#to-delete-an-application}

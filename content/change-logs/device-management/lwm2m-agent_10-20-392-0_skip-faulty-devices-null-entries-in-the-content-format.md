@@ -1,6 +1,8 @@
 ---
-date: 
-title: LWM2M agent skips null entries in supported content format reported by LWM2M devices
+date: '2024-10-31'
+title: >-
+  LWM2M agent skips null entries in supported content format reported by LWM2M
+  devices
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

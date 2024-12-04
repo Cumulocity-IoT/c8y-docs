@@ -1,6 +1,6 @@
 ---
 date: 2024-05-08
-title: 2024 release of Cumulocity IoT Edge Appliance VM identical to 10.18 release
+title: 2024 release of Cumulocity Edge Appliance VM identical to 10.18 release
 change_type:
   - value: change-inv-3bw8e
     label: Announcement

@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: First steps with Cumulocity IoT
+title: First steps with Cumulocity
 layout: bundle
 sector:
   - getting_started
@@ -56,7 +56,7 @@ See [User options and settings](/get-familiar-with-the-ui/user-settings/) for de
 
 ### Step 3: Register a device
 
-To connect a device to {{< product-c8y-iot >}}, you must register it in the platform. This is done in the **Device management application**. Under [Registering devices](/device-management-application/registering-devices/) you find a detailed description of the general registration process.
+To connect a device to {{< product-c8y-iot >}}, you must register it in the platform. This is done in the **Device Management application**. Under [Registering devices](/device-management-application/registering-devices/) you find a detailed description of the general registration process.
 
 Moreover, we offer two step-by-step descriptions to easily register a first device to your {{< product-c8y-iot >}} account:
 

@@ -193,7 +193,7 @@ To create a managed object, issue a POST request on the managed objects collecti
 
 The example above contains a number of metadata items for the device:
 
--   "c8y\_IsDevice" marks devices that can be managed using {{< product-c8y-iot >}}'s Device management application.
+-   "c8y\_IsDevice" marks devices that can be managed using {{< product-c8y-iot >}}'s Device Management application.
 -   "com\_cumulocity\_model\_Agent" marks devices running a {{< product-c8y-iot >}} agent. Such devices will receive all operations targeted to themselves and their children for routing.
 -   "c8y\_SupportedOperations" states that this device can be restarted and configured. In addition, it can carry out software and firmware updates.
 
@@ -524,9 +524,9 @@ Do the following:
 1. Turn off the old physical device.
 2. [Register and bootstrap](/device-management-application/registering-devices) the new device just like a regular device.
 3. After the device has created its new managed object, turn the new physical device off.
-4. Open the new device object in [{{< product-c8y-iot >}}'s Device management application](/device-management-application/viewing-device-details/#info) and look up the device owner and the device's external IDs.
+4. Open the new device object in [{{< product-c8y-iot >}}'s Device Management application](/device-management-application/viewing-device-details/#info) and look up the device owner and the device's external IDs.
 5. Remove the external IDs from the device.
-6. Open the old device in {{< product-c8y-iot >}}'s Device management application and change its owner to the one you looked up, and also add the external IDs you removed from the new device.
+6. Open the old device in {{< product-c8y-iot >}}'s Device Management application and change its owner to the one you looked up, and also add the external IDs you removed from the new device.
 7. Remove the new device object that was created earlier but keep the device user.
 9. Turn on the new physical device.
 

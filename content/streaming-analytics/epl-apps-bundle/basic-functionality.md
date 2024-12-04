@@ -111,9 +111,9 @@ Once installed, create an Apama project in {{< sag-designer >}} and enable it fo
 
 Add the following Apama bundles to the newly created Apama project. These are required by {{< product-c8y-iot >}} so that it can activate your app. For instructions on how to add bundles to a project, refer to [Adding bundles to projects]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-UsiApaStu_adding_bundles_to_projects.html) in the Apama documentation.
 
-* **Cumulocity IoT > Event Definitions for Cumulocity** <br>
+* **Cumulocity > Event Definitions for Cumulocity** <br>
 Provides event APIs required for sending and receiving data to/from {{< product-c8y-iot >}}.
-* **Cumulocity IoT > Utilities for Cumulocity** <br>
+* **Cumulocity > Utilities for Cumulocity** <br>
 Provides helper utility functions for working with data received from {{< product-c8y-iot >}}.
 * **Any Extractor** <br>
 Provides support for extracting values from the `any` type.
@@ -125,7 +125,7 @@ Exposes predefined generic events used by the HTTP client connectivity plug-in.
 This starts all connectivity plug-ins immediately on start up.
 * **HTTP Client > JSON with generic request/response event definitions** <br>
 Allows EPL apps to make HTTP calls.
-* **Cumulocity IoT > Cumulocity Client** <br>
+* **Cumulocity > Cumulocity Client** <br>
 Exposes the {{< product-c8y-iot >}} client to EPL apps.
 
 
@@ -137,7 +137,7 @@ To create a new Apama monitor file, refer to [Creating new monitor files for EPL
 
 Before you import the newly created monitor file as an EPL app into {{< product-c8y-iot >}} and activate it there, you might want to test if the monitor file works as expected from within {{< sag-designer >}}.
 
-For further information, see [The Cumulocity IoT Transport Connectivity Plug-in]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_the_cumulocity_connectivity_plug_in.html) in the Apama documentation.
+For further information, see [The Cumulocity Transport Connectivity Plug-in]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_the_cumulocity_connectivity_plug_in.html) in the Apama documentation.
 
 ##### Step 5 - Run and test the monitor file {#step-5---run-and-test-the-monitor-file}
 
@@ -269,24 +269,23 @@ The above is the minimum list of permissions that a custom Apama microservice ne
 5. When you are ready to deploy to {{< product-c8y-iot >}}, upload the application as a microservice. For details, refer to [Managing microservices](/standard-tenant/ecosystem/#managing-microservices).
 
 {{< c8y-admon-info >}}
-After February 2022, the location of the Docker images on Docker Hub has changed for all supported release trains.
-They are now available at *softwareag* instead of within the Docker Hub environment at *store/softwareag*.
+After December 2024, the location of the Docker images has changed for all supported release trains.
+They are now available at Amazon ECR Public Gallery instead of at Docker Hub.
 If you still use the images from the previous location, you must migrate them.
-See also [Apama Docker image availability on Docker Hub]({{< link-sag-tech-forum >}}/t/apama-docker-image-availability-on-docker-hub/260207).
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-important >}}
-Apama 10.15.0 introduces several new container images provided via Docker Hub and some of the existing container images have changed content.
+Apama 10.15.0 introduces several new container images, and some of the existing container images have changed content. As of December 2024, these images are provided via Amazon ECR Public Gallery.
 When building images for use as a {{< product-c8y-iot >}} microservice, this is now different to earlier releases.
 You must now use the
-[softwareag/apama-cumulocity-jre](https://hub.docker.com/r/softwareag/apama-cumulocity-jre) image with the
-[softwareag/apama-cumulocity-builder](https://hub.docker.com/r/softwareag/apama-cumulocity-builder) image as a builder image.
+[public.ecr.aws/apama/apama-cumulocity-jre](https://gallery.ecr.aws/apama/apama-cumulocity-jre) image with the
+[public.ecr.aws/apama/apama-cumulocity-builder](https://gallery.ecr.aws/apama/apama-cumulocity-builder) image as a builder image.
 To do this with the default project Dockerfile created by {{< sag-designer >}} in 10.15.0 and previous versions,
 you must either change the `FROM` lines in the Dockerfile appropriately
 (you only need to do this once) or build using the following flags (you must do this every time):
 
 ```
---build-arg APAMA_BUILDER=softwareag/apama-cumulocity-builder:10.15 --build-arg APAMA_IMAGE=softwareag/apama-cumulocity-jre:10.15
+--build-arg APAMA_BUILDER=public.ecr.aws/apama/apama-cumulocity-builder:10.15 --build-arg APAMA_IMAGE=public.ecr.aws/apama/apama-cumulocity-jre:10.15
 ```
 {{< /c8y-admon-important >}}
 

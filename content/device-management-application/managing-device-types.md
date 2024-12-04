@@ -10,7 +10,7 @@ sector:
 helpcontent:
   - label: managing-device-types
     title: Managing device types
-    content: "To process data from various device types, Cumulocity IoT uses device protocols. Each device protocol is configured for a particular device protocol type (for example Modbus, LoRa, LWM2M).
+    content: "To process data from various device types, Cumulocity uses device protocols. Each device protocol is configured for a particular device protocol type (for example Modbus, LoRa, LWM2M).
 
 
   To add a new device protocol, click **Add device protocol** at the top right, select a device protocol type and configure it following the instructions for the particular type in *Protocol integration* in the user documentation."
@@ -18,7 +18,7 @@ helpcontent:
 
 {{< c8y-admon-related >}}
 * [Getting started > Technical concepts > Interfacing devices](/concepts/interfacing-devices/) for information on the concepts relevant for interfacing IoT devices and other IoT-related data sources with {{< product-c8y-iot >}}.
-* [Device management > Protocol integration](/protocol-integration/) for a list of protocols, parameters and network connectivity options for devices.
+* [Device management & connectivity > Protocol integration](/protocol-integration/) for a list of protocols, parameters and network connectivity options for devices.
 {{< /c8y-admon-related >}}
 
 To process data from various device types, {{< product-c8y-iot >}} uses device protocols which are stored in a database.
