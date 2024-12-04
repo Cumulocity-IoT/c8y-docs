@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Title case for app introduction has been changed to Digital Twin Manager"
+title: "Digital Twin Manager now uses title case, consistent with all other application titles"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
