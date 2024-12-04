@@ -69,4 +69,4 @@ On the {{< product-c8y-iot >}} cloud instances, the {{< management-tenant >}} ca
 
 You will only have access to the {{< management-tenant >}}, when you setup your own {{< product-c8y-iot >}} instance either as a dedicated/hosted cloud deployment, an on-prem deployment, or the {{< product-c8y-iot >}} Edge offering.
 
-For detailed information on the configuration options of a {{< product-c8y-iot >}} deployment on platform level, refer to the *{{< product-c8y-iot >}} Core - Operations guide* available on the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-documentation >}}).
+For detailed information on the configuration options of a {{< product-c8y-iot >}} deployment on platform level, refer to the operations documentation, see [Additional resources](/additional-resources/).
