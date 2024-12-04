@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1548"
 version: "1020.1.20"
 ---
-Previously the application name for DTM is 'Digital twin manager'. Now it has been changed to 'Digital Twin Manager'.
+To improve readability and consistency, the titles of Digital twin manager application now use title case (Digital Twin Manager) instead of sentence case (Digital twin manager). The functionality of the application remains the same, only the casing of the titles has been modified.'.
