@@ -16,7 +16,7 @@ helpcontent:
 Smart groups are groups dynamically constructed based on filtering criteria. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version.
 
 {{< c8y-admon-info >}}
-Smart groups are only available in the Device management application and not visible in the Cockpit application.
+Smart groups are only available in the Device Management application and not visible in the Cockpit application.
 {{< /c8y-admon-info >}}
 
 Smart groups can be created from the device list.

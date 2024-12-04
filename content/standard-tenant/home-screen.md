@@ -34,5 +34,5 @@ The capacity sections show:
 * Device API requests - counting only when the API is called from a device (for example sending a measurement).
 * Storage - the total amount of data stored in your account. This amount can be changed by [retention rules](/standard-tenant/managing-data/#retention-rules) and by the amount and size of [stored files](/standard-tenant/managing-data/#files-repository).
 * Root devices - the number of root devices connected to your account, excluding child devices.
-* Devices - the total number of devices connected to your account. This is the sum of the devices listed in the [All devices](/device-management-application/viewing-all-devices/) page of the Device management application and their direct and indirect child devices.
+* Devices - the total number of devices connected to your account. This is the sum of the devices listed in the [All devices](/device-management-application/viewing-all-devices/) page of the Device Management application and their direct and indirect child devices.
 * Users - the sum of all users configured in this account, active and inactive.

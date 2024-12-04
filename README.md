@@ -1,4 +1,4 @@
-# Cumulocity IoT documentation website
+# Cumulocity documentation website
 
 <https://cumulocity.com/guides> - releases 10.18 and older
 <https://cumulocity.com/docs> - CD and yearly releases
@@ -11,11 +11,11 @@
 - Install Hugo by using snap `snap install hugo --channel=extended`.
 - Open a terminal window in the project directory and type `hugo server`. Specify the subdirectory that contains your content, for example http://localhost:1313/guides/users-guide/. Specifying only http://localhost:1313/guides results in a 404 error.
 
-Details are described in the "How to contribute to the Cumulocity IoT documentation" process document. Contact the Cumulocity IoT documentation team for access.
+Details are described in the "How to contribute to the Cumulocity documentation" process document. Contact the Cumulocity documentation team for access.
 
 ## Structure for /guides (for releases 10.18 and older)
 
-The Cumulocity IoT documentation website architecture has the following structure:
+The Cumulocity documentation website architecture has the following structure:
 
 - 1st level  - for example, *<http://cumulocity.com/guides/users-guide/>*
   - 2nd level - renders as a single page, for example *<http://cumulocity.com/guides/users-guide/administration/>*
@@ -26,7 +26,7 @@ The website is built with a mix of front matter and directory structure.
 
 ## Structure - /docs (for CD and yearly releases)
 
-The Cumulocity IoT documentation website architecture has the following structure:
+The Cumulocity documentation website architecture has the following structure:
 
 - 1st level  - for example, *<http://cumulocity.com/docs/platform_administration>*
   - 2nd level - for example *<http://cumulocity.com/docs/platform_administration/standard-tenant/>*

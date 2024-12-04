@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Cumulocity IoT Edge versus other Cumulocity IoT deployments
+title: Cumulocity Edge versus other Cumulocity deployments
 layout: bundle
 sector:
   - edge_server

@@ -96,6 +96,10 @@
   .brand-logo{
     max-height: 32px;
     width: auto;
+    img{
+      max-height: 32px;
+      width: auto;
+    }
   }
   .dropdown-toggle > i{
     font-size: 24px;

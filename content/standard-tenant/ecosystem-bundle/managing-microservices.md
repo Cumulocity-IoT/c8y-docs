@@ -7,7 +7,7 @@ sector:
 helpcontent:
   - label: managing-microservices
     title: Microservices
-    content: "A microservice is a specific type of application, that is a server-side application used to develop further functionality on top of Cumulocity IoT.
+    content: "A microservice is a specific type of application, that is a server-side application used to develop further functionality on top of Cumulocity.
 
 
     As web applications, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom applications.
