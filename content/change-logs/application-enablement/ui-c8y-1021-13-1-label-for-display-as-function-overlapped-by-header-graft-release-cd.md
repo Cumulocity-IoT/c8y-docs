@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed overlapping label for the "Display as" function in the header
+title: Label for the "Display as" function no longer overlaps with other elements in the header
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
