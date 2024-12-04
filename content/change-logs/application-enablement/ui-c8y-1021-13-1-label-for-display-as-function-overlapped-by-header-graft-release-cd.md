@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61821
 version: 1021.13.1
 ---
-label for 'display-as' function overlapped by header [GRAFT][release/cd] (#7708)
+In the Cumulocity user interface, the label for the "Display as" function in the header was overlapping with other header elements, making it difficult to read and select the desired option. This issue has now been resolved. The label for "Display as" is now properly positioned and no longer overlaps with the header, ensuring a clear and accessible user interface for all users. This change improves the usability and visual clarity of the "Display as" function in the Cumulocity header.
