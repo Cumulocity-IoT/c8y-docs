@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60789
 version: 1021.11.0
 ---
-Migrated custom properties form (#7484) [GRAFT][release/cd] (#7682)
+The "Custom properties" tab has been improved with extraneous information moved to a new "Limits" tab providing a cleaner and more consistent interface.
