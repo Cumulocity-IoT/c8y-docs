@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-11-21'
 title: Device profiles list now displayed as a grid
 product_area: Device management & connectivity
 change_type:

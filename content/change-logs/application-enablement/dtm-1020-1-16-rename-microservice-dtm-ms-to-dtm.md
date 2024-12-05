@@ -12,6 +12,6 @@ build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
 ticket: "CTM-1535"
-version: "1020.2.0"
+version: "1020.1.16"
 ---
 The  DTM microservice has been renamed from "dtm-ms" to "dtm". REST endpoint paths have been updated accordingly, replacing the "dtm-ms" segment with "dtm". Users will not perceive any change. However, they may need to manually unsubscribe and uninstall the older version.

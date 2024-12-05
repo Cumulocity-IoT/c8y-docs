@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-11-28'
 title: Added filter chips examples to the Cumulocity Codex
 product_area: Device management & connectivity
 change_type:
