@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1653"
 version: "1020.1.20"
 ---
-Previously SAG and DTM tags has been added to the samples in 'Asset model samples' page. Now it has been removed.
+Previously, SAG and DTM tags have been added to the samples in the **Asset model samples** page. These tags have now been removed.
