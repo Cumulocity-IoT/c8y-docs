@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Remove the tags from Asset model samples"
+title: "Remove the tags from asset model samples"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
