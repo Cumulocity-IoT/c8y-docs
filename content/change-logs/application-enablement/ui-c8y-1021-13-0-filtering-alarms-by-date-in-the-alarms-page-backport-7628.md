@@ -1,6 +1,6 @@
 ---
 date: ""
-title: It is now possible to filter alarms by date in the alarms page.
+title: Date range filter added in the alarms overview 
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
