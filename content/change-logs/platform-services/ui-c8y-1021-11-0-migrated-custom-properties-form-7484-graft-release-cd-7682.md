@@ -1,6 +1,6 @@
 ---
 date: ""
-title: '"Custom properties" tab improved'
+title: Improved Custom properties tab in the tenant details
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
