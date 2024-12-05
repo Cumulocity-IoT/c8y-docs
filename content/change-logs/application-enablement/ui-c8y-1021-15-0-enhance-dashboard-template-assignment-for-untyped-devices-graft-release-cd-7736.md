@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Enhance Dashboard Template Assignment for Untyped Devices  [GRAFT][release/cd] (#7736)
+title: Enhance dashboard template assignment for untyped devices
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
