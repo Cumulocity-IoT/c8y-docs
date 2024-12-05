@@ -14,7 +14,6 @@ Once you have an account, and depending on role-associated permissions, you have
 - **Feedback**: Share your thoughts and suggestions to help improve features and user experience.
 - **Managed Services**: Access premium platform management, monitoring solutions, and specialized support.
 - Search the Knowledge Base for articles.
-- Open and update support tickets.
 - Share product feedback.
 
 You can refer to {{< company-c8y >}}´s free [Tech Community]({{< link-c8y-tech-community >}}) pages for information sources such as user forums and FAQs.
