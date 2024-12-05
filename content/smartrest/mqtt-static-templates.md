@@ -477,7 +477,7 @@ Allows a device to provide information about the agent running on it.
 **Example**
 
 ```text
-122,thin-edge.io,0.6,https://thin-edge.io,Software AG
+122,thin-edge.io,0.6,https://thin-edge.io,Cumulocity
 ```
 
 ##### Send heartbeat (125) {#125}

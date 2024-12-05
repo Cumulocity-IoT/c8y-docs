@@ -1,3 +1,8 @@
+<!-- Google Tag Manager -->
+<noscript><iframe src="
+  https://www.googletagmanager.com/ns.html?id=GTM-TM3L5WBK"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!--  /Google Tag Manager -->
 <header class="main-top-bar">
   <button
     class="sidebar-toggle"
@@ -9,11 +14,11 @@
     <span>MENU</span>
   </button>
   <div class="brand-logo p-r-16">
-    <a href="/">
+    <a href="/" class="logo">
       <img
         class="no-zoom"
         src="{{ with .Site.Params.logo }}{{ . | absURL }}{{ end }}"
-        alt="Cumulocity IoT"
+        alt="Cumulocity"
       >
     </a>
   </div>
@@ -58,12 +63,11 @@
         role="listbox"
       >
         {{ if site.Data.date_settings.yearly_release}}
-          <li class="text-normal"><a href="//cumulocity.com/docs">Latest version</a></li>
+          <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs">Latest version</a></li>
         {{else}}
-          <li class="text-normal"><a href="//cumulocity.com/docs/2024">Release 2024</a></li>
+          <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs/2024">Release 2024</a></li>
         {{end}}
-        <li class="text-normal"><a href="//cumulocity.com/guides/welcome/intro-documentation/">Release 10.18.0</a></li>
-        <li class="text-normal"><a href="//cumulocity.com/guides/10.17.0/welcome/intro-documentation/">Release 10.17.0</a></li>
+        <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs/about_documentation/documentation-repository/">Previous versions</a></li>
       </ul>
     </div>
     <div class="dropdown version">
@@ -85,7 +89,7 @@
         role="listbox"
       >
         {{ range $index, $resource := .Site.Params.additionalResources }}
-        <li class="text-normal"><a href="{{ $resource.link }}">{{ $resource.name }}</a></li>
+        <li class="text-normal"><a class="dd-link" href="{{ $resource.link }}">{{ $resource.name }}</a></li>
         {{ end }}
       </ul>
     </div>
@@ -134,7 +138,7 @@
         role="listbox"
       >
         <li class="text-normal">
-          <a
+          <a class="dd-link"
             title="REST API documentation"
             href="https://www.cumulocity.com/api/"
           >
@@ -143,18 +147,18 @@
         </li>
         <li class="dropdown-header separator-bottom p-t-8 p-b-8"><b>Releases</b></li>
         <li class="text-normal">
-          <a href="//cumulocity.com/docs/2024"><i class="c8y-icon c8y-icon-cumulocity-iot"></i> Release 2024</a>
+          <a class="dd-link" href="//cumulocity.com/docs/2024"><i class="c8y-icon c8y-icon-cumulocity-iot"></i> Release 2024</a>
         </li>
         <li class="text-normal">
-          <a href="//cumulocity.com/guides/welcome/intro-documentation/"><i class="c8y-icon c8y-icon-cumulocity-iot"></i> Release 10.18.0</a>
+          <a class="dd-link" href="//cumulocity.com/guides/welcome/intro-documentation/"><i class="c8y-icon c8y-icon-cumulocity-iot"></i> Release 10.18.0</a>
         </li>
         <li class="text-normal">
-          <a href="//cumulocity.com/guides/10.17.0/welcome/intro-documentation/"> <i class="c8y-icon c8y-icon-cumulocity-iot"></i> Release 10.17.0</a>
+          <a class="dd-link" href="//cumulocity.com/guides/10.17.0/welcome/intro-documentation/"> <i class="c8y-icon c8y-icon-cumulocity-iot"></i> Release 10.17.0</a>
         </li>
         <li class="dropdown-header separator-bottom p-t-8 p-b-8"><b>Additional resources</b></li>
         {{ range $index, $resource := .Site.Params.additionalResources }}
         <li class="text-normal">
-          <a href="{{ $resource.link }}">
+          <a class="dd-link" href="{{ $resource.link }}">
             {{ $resource.name }}
           </a>
         </li>

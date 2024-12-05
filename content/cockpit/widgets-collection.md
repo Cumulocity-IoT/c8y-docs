@@ -271,11 +271,28 @@ If you want to use a link in the **HTML code** field, for example a link to a da
   <a style="cursor:pointer;" onclick="location.hash = '#/group/<<group-id>>/dashboard/<<dashboard-id>>'">link to another dashboard</a><br />
 ```
 
+### KPI {#kpi}
+
+The "KPI" (Key Performance Indicators) widget visualizes a data point as a label, for example, a data point for the temperature of a device.
+
+![KPI widget](/images/users-guide/cockpit/cockpit-widget-kpi.png)
+
+**Parameters to configure**
+
+On the left side, select the data point you want to display.
+You must select only one active datapoint to create the "KPI" widget. If you select multiple data points at once, you cannot save the configuration.
+
+On the right side, you can adjust how the data point is going to be displayed. This includes:
+* Icon: The icon to be displayed next to the data point
+* Number of decimal places
+* Display: Allows to toggle whether the timestamp, icon and trend indicator should be displayed
+* Font size of measurement value
+
 ### Linear Gauge {#linear-gauge}
 
 The "Linear gauge" widget visualizes data points in form of a linear gauge. Min and max target values are shown on the gauge as well.
 
-![Info gauge widget](/images/users-guide/cockpit/cockpit-widget-linear-gauge.png)
+![Linear gauge widget](/images/users-guide/cockpit/cockpit-widget-linear-gauge.png)
 
 {{< c8y-admon-info >}}
 If a label is not properly readable, you can help yourself by increasing the min and max value of the data point to move the label into the readable range.
@@ -287,7 +304,7 @@ You must enable at least one data point to create the "Linear gauge" widget.
 
 The "Map" widget shows the location of a device or all devices of a group.
 
-![Info gauge widget](/images/users-guide/cockpit/cockpit-widget-map.png)
+![Map widget](/images/users-guide/cockpit/cockpit-widget-map.png)
 
 You can drag the map and move its content, and you can zoom in and out by using the **Plus** and **Minus** buttons.
 

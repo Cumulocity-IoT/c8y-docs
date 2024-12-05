@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Accessing and logging into Cumulocity IoT DataHub
+title: Accessing and logging into Cumulocity DataHub
 layout: redirect
 ---
 

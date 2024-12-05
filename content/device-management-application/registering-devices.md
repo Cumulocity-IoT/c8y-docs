@@ -10,7 +10,7 @@ sector:
 helpcontent:
   - label: registering-devices
     title: Connecting devices
-    content: "To connect devices to Cumulocity IoT they must be registered. To register one or more devices, click **Register device** and follow the instructions in the wizard or in the user documentation.
+    content: "To connect devices to Cumulocity they must be registered. To register one or more devices, click **Register device** and follow the instructions in the wizard or in the user documentation.
 
 
     All devices which are currently in the registration process are displayed with one of the following statuses:

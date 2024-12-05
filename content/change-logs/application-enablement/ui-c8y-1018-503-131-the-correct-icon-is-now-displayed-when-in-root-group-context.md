@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2024-11-28
 title: Correct icon displayed for root groups
 product_area: Application enablement & solutions
 change_type:

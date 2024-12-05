@@ -9,7 +9,7 @@ layout: redirect
 The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled device(s) and the {{< product-c8y-iot >}} platform. It receives SNMP data from the devices, converts the data to {{< product-c8y-iot >}}-based objects based on the device protocol mapping, persists the data locally, and forwards the data to {{< product-c8y-iot >}}. The agent must be registered in {{< product-c8y-iot >}} before serving the device request.
 
 {{< c8y-admon-info >}}
-If you are using one of the {{< company-sag >}} public cloud instances, you must ensure that your tenant is subscribed to the Mibparser microservice.
+If you are using one of the {{< company-c8y >}} public cloud instances, you must ensure that your tenant is subscribed to the Mibparser microservice.
 
 To add the Mibparser microservice to the {{< product-c8y-iot >}} platform,
 

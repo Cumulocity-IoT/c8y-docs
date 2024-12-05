@@ -1,6 +1,6 @@
 ---
 weight: 35
-title: Cumulocity IoT Core
+title: Cumulocity Core
 layout: redirect
 ---
 

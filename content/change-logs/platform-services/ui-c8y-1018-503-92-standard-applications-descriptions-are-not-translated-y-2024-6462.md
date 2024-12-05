@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58015
 version: 1018.503.92
 ---
-In the context of localizing the Cumulocity IoT platform for different languages, it was discovered that the standard application descriptions were not being translated as expected. This change ensures that the standard application descriptions are now properly translated based on the selected platform language.
+In the context of localizing the {{< product-c8y-iot >}} platform for different languages, it was discovered that the standard application descriptions were not being translated as expected. This change ensures that the standard application descriptions are now properly translated based on the selected platform language.

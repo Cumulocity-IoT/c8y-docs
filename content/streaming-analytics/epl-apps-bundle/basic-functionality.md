@@ -104,9 +104,9 @@ Once installed, create an Apama project in {{< sag-designer >}} and enable it fo
 
 Add the following Apama bundles to the newly created Apama project. These are required by {{< product-c8y-iot >}} so that it can activate your app. For instructions on how to add bundles to a project, refer to [Adding bundles to projects]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-UsiApaStu_adding_bundles_to_projects.html) in the Apama documentation.
 
-* **Cumulocity IoT > Event Definitions for Cumulocity** <br>
+* **{{< product-c8y-iot >}} > Event Definitions for {{< product-c8y-iot >}}** <br>
 Provides event APIs required for sending and receiving data to/from {{< product-c8y-iot >}}.
-* **Cumulocity IoT > Utilities for Cumulocity** <br>
+* **{{< product-c8y-iot >}} > Utilities for {{< product-c8y-iot >}}** <br>
 Provides helper utility functions for working with data received from {{< product-c8y-iot >}}.
 * **Any Extractor** <br>
 Provides support for extracting values from the `any` type.
@@ -118,7 +118,7 @@ Exposes predefined generic events used by the HTTP client connectivity plug-in.
 This starts all connectivity plug-ins immediately on start up.
 * **HTTP Client > JSON with generic request/response event definitions** <br>
 Allows EPL apps to make HTTP calls.
-* **Cumulocity IoT > Cumulocity Client** <br>
+* **{{< product-c8y-iot >}} > {{< product-c8y-iot >}} Client** <br>
 Exposes the {{< product-c8y-iot >}} client to EPL apps.
 
 
@@ -130,7 +130,7 @@ To create a new Apama monitor file, refer to [Creating new monitor files for EPL
 
 Before you import the newly created monitor file as an EPL app into {{< product-c8y-iot >}} and activate it there, you might want to test if the monitor file works as expected from within {{< sag-designer >}}.
 
-For further information, see [The Cumulocity IoT Transport Connectivity Plug-in]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_the_cumulocity_connectivity_plug_in.html) in the Apama documentation.
+For further information, see [The {{< product-c8y-iot >}} Transport Connectivity Plug-in]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_the_cumulocity_connectivity_plug_in.html) in the Apama documentation.
 
 ##### Step 5 - Run and test the monitor file {#step-5---run-and-test-the-monitor-file}
 

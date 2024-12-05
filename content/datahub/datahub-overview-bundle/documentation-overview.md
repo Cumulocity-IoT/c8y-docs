@@ -15,6 +15,6 @@ For your convenience, here is an overview of the contents of this document:
 | [Working with {{< product-c8y-iot >}} DataHub](/datahub/working-with-datahub) | Manage offloading pipelines and query the offloaded results |
 | [Operating {{< product-c8y-iot >}} DataHub](/datahub/operating-datahub) | Run administrative tasks |
 | [Running {{< product-c8y-iot >}} DataHub on {{< product-c8y-iot >}} Edge](/datahub/running-datahub-on-the-edge) | Run the Edge edition of {{< product-c8y-iot >}} DataHub |
-| [Integrating {{< product-c8y-iot >}} DataHub with other {{< company-sag >}} products](/datahub/integrating-datahub-with-other-products) | Learn how to integrate {{< product-c8y-iot >}} DataHub with other {{< company-sag >}} products |
+| [Integrating {{< product-c8y-iot >}} DataHub with other products](/datahub/integrating-datahub-with-other-products) | Learn how to integrate {{< product-c8y-iot >}} DataHub with other products |
 
 The [change log](/changes-analytics/?component=.component-datahub) provides an overview on features, changes, and other relevant information.

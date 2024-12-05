@@ -3,7 +3,7 @@ baseURL = "/docs"
 
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
-title = "Cumulocity IoT Guides"
+title = "Cumulocity documentation"
 theme = "c8ydocs"
 paginate = 12
 # canonifyurls = false
@@ -26,7 +26,7 @@ buildFuture = true
   # dateFormat = "2 January 2006"
 
   # Global keywords configuration. Following keywords will be add to every pages
-  keywords = ["Software AG Cloud", "Cumulocity IoT", "Internet of things", "analytics", "devices", "connect"]
+  keywords = ["Cumulocity", "Internet of things", "analytics", "devices", "connect"]
 
   description = "Resources for connecting your machines and devices to the Internet of Things"
   # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
@@ -34,7 +34,7 @@ buildFuture = true
 
   logo = "images/cumulocity-iot.svg"
 
-  guidesRedirect = "https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html"
+  guidesRedirect = "https://cumulocity.com/docs"
 
   # Your favicon path, default is "/favicon.png"
   favicon = "/favicon.ico"
@@ -42,4 +42,4 @@ buildFuture = true
 # Customize
   [params.footer]
     copyright = "Cumulocity GmbH | All rights reserved"
-    c8ylink = "https://www.softwareag.cloud/site/product/cumulocity-iot.html"
+    c8ylink = "https://cumulocity.com"

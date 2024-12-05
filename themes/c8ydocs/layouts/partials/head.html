@@ -16,18 +16,26 @@
     <meta name="keywords" content="{{ with .Keywords }}{{ delimit . ", " }}{{ end }}{{ if .Site.Params.keywords }}, {{ delimit .Site.Params.keywords ", " }}{{ end }}">
 
     <meta property="og:title" content="{{if eq .Title $.Site.Title }}{{ .Title }}{{else}}{{ with .Title }}{{ . }} - {{$.Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}{{end}}">
-    <meta property="og:description" content="This documentation offers comprehensive information on the Cumulocity IoT platform both from a user and from a developer perspective. It reflects the latest state of the Cumulocity IoT platform and is continuously updated to align with recent software updates.">
+    <meta property="og:description" content="This documentation offers comprehensive information on the Cumulocity platform both from a user and from a developer perspective. It reflects the latest state of the Cumulocity platform and is continuously updated to align with recent software updates.">
     <meta property="og:image" content="{{ "images/cumulocity-docs-web.jpg" | absURL}}">
     <meta property="og:url" content="https://cumulocity.com/docs/">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | absURL}}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ "images/favicon-32x32.png" | absURL}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ "images/favicon-16x16.png" | absURL}}">
-    <link rel="manifest" href="{{ "images/site.webmanifest" | absURL }}">
-    <link rel="shortcut icon" href="{{"images/favicon.ico" | absURL}}">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="{{"images/browserconfig.xml" | absURL}}">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/favicon/apple-touch-icon.png" | absURL}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "images/favicon/favicon-32x32.png" | absURL}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "images/favicon/favicon-16x16.png" | absURL}}">
+    <link rel="shortcut icon" href="{{"images/favicon/favicon.ico" | absURL}}">
+    <link rel="mask-icon" href="{{"images/favicon/safari-pinned-tab.svg" | absURL}}" color="#212121">
+    <link rel="manifest" href="{{"images/favicon/site.webmanifest" | absURL}}">
+    <meta name="msapplication-TileColor" content="#212121">
+    <meta name="theme-color" content="#ffbe00">
+    <meta name="msapplication-TileColor" content="#212121">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- / Google fonts -->
+
 
     <!-- Google search console verification -->
     <meta name="google-site-verification" content="PYBroo4kQ0NReeuXOSLmXdIILDuxE6lRWUYjeReIy8E" />
@@ -40,6 +48,16 @@
     {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options  }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <!--STYLES END-->
+
+    <!--  Cookie Bot -->
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="0dcae975-5d79-4c0e-9017-bc4bbe117a7d" data-blockingmode="auto" type="text/javascript"></script>
+    
+    <!--  /Cookie Bot -->
+    
+    <!--  Google Tag Manager -->
+    <script type="text/plain" data-cookieconsent="statistics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TM3L5WBK');</script>
+    <!--  /Google Tag Manager -->
+
     <script src="{{ "js/vendor/highlight.min.js" | absURL }}"></script>
     <!--
     -->

@@ -17,7 +17,7 @@ var main = (function ($) {
         class: 'admonition preview'
       }).insertAfter(elem);
       $('<h4 class="title">Preview</h4>').appendTo('#preview-banner');
-      $('<span>This is a preview of the documentation for the Cumulocity IoT '+ docsPreview +' release.</span>').appendTo('#preview-banner');
+      $('<span>This is a preview of the documentation for the Cumulocity '+ docsPreview +' release.</span>').appendTo('#preview-banner');
    }
 
     //Toggle side navigation
@@ -138,17 +138,17 @@ function buildToc() {
           }
           h3s.forEach(h3 => {
             if (h3.id && h3.textContent.length) {
-              tocLinks += `<div class="list-group-item"><a href="#${h3.id}" title="${h3.textContent}">${h3.textContent}</a></div>`;
+              tocLinks += `<div class="list-group-item"><a class="toc-link" href="#${h3.id}" title="${h3.textContent}">${h3.textContent}</a></div>`;
             }
           });
 
           if (tocLinks.length) {
             const existingTocContainer = article.querySelector('.list-group');
-        
+
             if (!existingTocContainer) {
               const tocContainer = document.createElement('div');
               tocContainer.classList.add('toc-container');
-          
+
               const listGroup = document.createElement('div');
               listGroup.classList.add('list-group');
               listGroup.classList.add('toc');
@@ -165,10 +165,10 @@ function buildToc() {
         let h2 = article.querySelector('h5');
         let target = h2.parentNode.nextElementSibling;
         if (target && h2.textContent.length) {
-          tocLinks += `<div class="list-group-item"><a href="#${target.id}" data-refid="${h2.parentNode.id}" title="${h2.textContent}">${h2.textContent}</a></div>`;
+          tocLinks += `<div class="list-group-item"><a class="toc-link" href="#${target.id}" data-refid="${h2.parentNode.id}" title="${h2.textContent}">${h2.textContent}</a></div>`;
         }
-      })
-      // console.log("tocLinks", tocLinks);
+      });
+
       if (tocLinks.length) {
         const tocContainer = document.createElement('div');
         tocContainer.classList.add('toc-container');
@@ -209,13 +209,13 @@ function buildToc() {
           const srcEl = document.getElementById(findVisibleElement(targetElement.id));
           const rect = srcEl.getBoundingClientRect();
           const windowHeight = window.innerHeight;
-    
+
           // Calculate the top threshold for activation (top third of the viewport)
           const topThreshold = windowHeight / 3;
-    
+
           // Check if the element's top position is within the top threshold
           const elementTopInTopThird = rect.top <= topThreshold;
-    
+
           if (elementTopInTopThird) {
             let tempActive = document.querySelectorAll('.toc .active');
             tempActive.forEach(temp => {

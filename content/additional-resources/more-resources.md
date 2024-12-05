@@ -27,9 +27,9 @@ Here you can:
 
 * Browse through our vast knowledge base of tutorials, articles, code samples, tips and tricks.
 * Ask questions, brainstorm solutions or discuss best practices in our discussion forum.
-* Get the latest {{< company-sag >}} news and announcements.
+* Get the latest {{< company-c8y >}} news and announcements.
 
-Moreover you will find links to further resources like [GitHub](https://github.com/softwareag).
+Moreover you will find links to further resources like [GitHub]({{< link-c8y-github >}}).
 
 
 ### Product training {#product-training}

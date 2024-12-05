@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: First steps with Cumulocity IoT
+title: First steps with Cumulocity
 layout: bundle
 sector:
   - getting_started

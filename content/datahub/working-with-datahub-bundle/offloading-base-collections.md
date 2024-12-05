@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Offloading Cumulocity IoT base collections
+title: Offloading Cumulocity base collections
 layout: redirect
 ---
 
@@ -256,5 +256,3 @@ In addition to the table **c8y_cdh_tm_measurements**, the table **c8y_cdh_tm_tag
 | unit | VARCHAR |
 | datatype | VARCHAR |
 | latestCreationTime | TIMESTAMP |
-
-For more details on the interaction of TrendMiner and {{< product-c8y-iot >}} DataHub see also [Integrating {{< product-c8y-iot >}} DataHub with TrendMiner](/datahub/integrating-datahub-with-other-products/#integration-trendminer).
