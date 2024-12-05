@@ -1,6 +1,6 @@
 ---
 date: ""
-title: bulk operation scheduling delay in milliseconds not working (#7607) [GRAFT][release/y2024] (#7678)
+title: Scheduling bulk operations with a precise delay now works properly
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
