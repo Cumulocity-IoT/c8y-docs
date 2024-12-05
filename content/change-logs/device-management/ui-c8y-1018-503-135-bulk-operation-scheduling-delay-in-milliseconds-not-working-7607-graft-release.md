@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4183
 version: 1018.503.135
 ---
-bulk operation scheduling delay in milliseconds not working (#7607) [GRAFT][release/y2024] (#7678)
+In the {{< product-c8y-iot >}} platform, bulk operations allow performing actions on multiple devices simultaneously. However, scheduling these operations with a delay in milliseconds was not working as expected. This issue has now been resolved. With this fix, bulk operations can now be scheduled with precise delays specified in milliseconds, enhancing the reliability and efficiency of device management tasks.
