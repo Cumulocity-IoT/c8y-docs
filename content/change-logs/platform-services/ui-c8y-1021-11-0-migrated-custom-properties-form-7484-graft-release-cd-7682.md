@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Migrated custom properties form (#7484) [GRAFT][release/cd] (#7682)
+title: '"Custom properties" tab improved'
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
