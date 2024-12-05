@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4183
 version: 1021.11.1
 ---
-bulk operation scheduling delay in milliseconds not working (#7607) [GRAFT][release/cd] (#7677)
+In the Cumulocity IoT platform, bulk operations allow performing actions on multiple devices simultaneously. However, the scheduling delay in milliseconds for these operations was not working as expected. This issue has now been resolved. With this fix, bulk operations can be scheduled with a delay specified in milliseconds, providing more precise control over when the operations are executed on the target devices. This improvement ensures that bulk operations are carried out according to the specified delay, enhancing the reliability and efficiency of device management tasks.
