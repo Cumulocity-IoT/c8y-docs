@@ -2,6 +2,10 @@
 weight: 30
 title: Custom properties
 layout: redirect
+helpcontent:
+  - label: custom-properties
+    title: Custom properties
+    content: "This tab allows you to view and edit values of tenant custom properties defined in the properties library."
 ---
 
 
