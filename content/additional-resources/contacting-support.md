@@ -10,9 +10,9 @@ Product support for {{< product-c8y-iot >}} is provided to licensed customers vi
 
 Once you have an account, and depending on role-associated permissions, you have the following options:
 
-- ** Support**: Access technical assistance, documentation, and submit support tickets.
-- **Feedback**: Share your thoughts and suggestions to help improve features and user experience.
-- **Managed Services**: Access premium platform management, monitoring solutions, and specialized support.
+- **Support** - Access technical assistance, documentation, and submit support tickets.
+- **Feedback** - Share your thoughts and suggestions to help improve features and user experience.
+- **Managed Services** - Access premium platform management, monitoring solutions, and specialized support.
 
 You can refer to {{< company-c8y >}}´s free [Tech Community]({{< c8y-tech-community-link >}}) pages for information sources such as user forums and FAQs.
 
