@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Bulk operation scheduling delay in milliseconds is now working
+title: Bulk operation scheduling delay in milliseconds now properly
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
