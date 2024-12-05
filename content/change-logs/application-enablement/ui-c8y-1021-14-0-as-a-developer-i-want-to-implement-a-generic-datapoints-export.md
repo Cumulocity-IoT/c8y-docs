@@ -1,6 +1,6 @@
 ---
 date: ""
-title: New datapoint export selector
+title: New datapoint export component
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
