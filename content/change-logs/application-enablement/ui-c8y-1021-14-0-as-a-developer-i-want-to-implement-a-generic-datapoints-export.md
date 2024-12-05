@@ -1,6 +1,6 @@
 ---
 date: ""
-title: As a developer, I want to implement a generic datapoints export component (#7129) [GRAFT][release/cd]  (#7721)
+title: New datapoint export selector
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
