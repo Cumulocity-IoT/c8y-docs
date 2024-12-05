@@ -12,7 +12,7 @@ This agreement is made between {{< company-c8y >}} ("Provider") and the Customer
 
 {{< product-c8y-iot >}} DataHub is a component of the {{< product-c8y-iot >}} platform that enables efficient long-term storage and analysis of IoT data. It offloads data from the operational store to a data lake, allowing for scalable SQL-based querying via standard interfaces like ODBC and JDBC.
 
-This agreement defines the service level of {{< product-c8y-iot >}} Software-as-a-Service operated by {{< company-c8y >}}. {{< product-c8y-iot >}} Software-Operated-as-a-Service and {{< product-c8y-iot >}} Edge are outside the scope of this agreement.
+This agreement defines the service level of {{< product-c8y-iot >}} Software-as-a-Service operated by {{< company-c8y >}}. {{< product-c8y-iot >}} Edge is outside the scope of this agreement.
 
 ### Service features
 
