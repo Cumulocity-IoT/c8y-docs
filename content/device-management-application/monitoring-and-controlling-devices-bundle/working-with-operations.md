@@ -40,19 +40,19 @@ See the list of single operations in the **Single operations** tab.
 
 Single operations can have one of the following four statuses:
 
-| Status      | Description |
-| :-----     | :---------- |
+| Status     | Description                                                                      |
+| :--------- | :------------------------------------------------------------------------------- |
 | PENDING    | The operation has just been created and is waiting for the device to pick it up. |
-| EXECUTING  | The operation has been picked up by the device and is being executed. |
-| SUCCESSFUL | The operation has been successfully executed by the device. |
-| FAILED     | The operation could not be executed by the device. |
+| EXECUTING  | The operation has been picked up by the device and is being executed.            |
+| SUCCESSFUL | The operation has been successfully executed by the device.                      |
+| FAILED     | The operation could not be executed by the device.                               |
 
 In each row, the following information for an operation is provided:
 
-| Info   | Description |
-| :----- | :---------- |
-| Status  | One of PENDING, EXECUTING, SUCCESSFUL, FAILED (see above). |
-| Name   | Name of the operation. |
+| Info   | Description                                                                             |
+| :----- | :-------------------------------------------------------------------------------------- |
+| Status | One of PENDING, EXECUTING, SUCCESSFUL, FAILED (see above).                              |
+| Name   | Name of the operation.                                                                  |
 | Device | The name of the device. Clicking the name leads you to the detailed view of the device. |
 
 Clicking a row expands it and displays further details on the operation.
@@ -102,34 +102,34 @@ Bulk operations have an operation type and status.
 
 You can add bulk operations of the following operation types with the [bulk operation wizard](#to-add-a-bulk-operation-using-the-wizard):
 
-| Operation type          | Description |
-| :---------------------- | :---------- |
-| Configuration update    | The bulk operation updates the configuration of the selected devices. |
-| Firmware update         | The bulk operation updates the firmware on the selected devices. |
-| Software update         | The bulk operation updates the software on the selected devices. |
-| Apply device profile    | The bulk operation applies a device profile on the selected devices. |
+| Operation type       | Description                                                           |
+| :------------------- | :-------------------------------------------------------------------- |
+| Configuration update | The bulk operation updates the configuration of the selected devices. |
+| Firmware update      | The bulk operation updates the firmware on the selected devices.      |
+| Software update      | The bulk operation updates the software on the selected devices.      |
+| Apply device profile | The bulk operation applies a device profile on the selected devices.  |
 
 Bulk operations can have other operation types as well, for example when you [schedule a single operation as bulk operation](#to-schedule-a-single-operation-as-bulk-operation) and the single operation has a different operation type.
 
 Bulk operations can have one of the following statuses:
 
-| Status                   | Description |
-| :---------------------- | :---------- |
+| Status                  | Description                                                                  |
+| :---------------------- | :--------------------------------------------------------------------------- |
 | SCHEDULED               | The bulk operation has been created and is on hold until the scheduled time. |
-| EXECUTING               | The bulk operation is being executed. |
-| CANCELED               | The bulk operation was created but canceled before the scheduled time. |
-| COMPLETED WITH FAILURES | The bulk operation completed with failures for some devices. |
-| COMPLETED SUCCESSFULLY  | The bulk operation has been successfully executed on all devices. |
+| EXECUTING               | The bulk operation is being executed.                                        |
+| CANCELED                | The bulk operation was created but canceled before the scheduled time.       |
+| COMPLETED WITH FAILURES | The bulk operation completed with failures for some devices.                 |
+| COMPLETED SUCCESSFULLY  | The bulk operation has been successfully executed on all devices.            |
 
 In each row, the following information for a bulk operation is provided:
 
-| Info   | Description |
-| :----- | :---------- |
-| Status  | One of SCHEDULED, EXECUTING, CANCELED, COMPLETED WITH FAILURES, COMPLETED SUCCESSFULLY (see above). |
-| Name   | Name of the operation. |
-| Progress bar | Only for executing and completed bulk operations. Shows the operation's progress in percent. |
+| Info                   | Description                                                                                                                                                |
+| :--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Status                 | One of SCHEDULED, EXECUTING, CANCELED, COMPLETED WITH FAILURES, COMPLETED SUCCESSFULLY (see above).                                                        |
+| Name                   | Name of the operation.                                                                                                                                     |
+| Progress bar           | Only for executing and completed bulk operations. Shows the operation's progress in percent.                                                               |
 | Start and finish dates | Only for executing and completed bulk operations. For executing bulk operations, the finish date is an approximation based on the bulk operation settings. |
-| Refresh button | Only for executing bulk operations. Updates the progress bar. |
+| Refresh button         | Only for executing bulk operations. Updates the progress bar.                                                                                              |
 
 Clicking the arrow button at the right in a row expands the row and displays further details on the bulk operation.
 
@@ -227,9 +227,9 @@ This may be useful if the operation is generally a success, but contains operati
 **Calculation of completion percentage**
 
 The completion percentage is determined by comparing the total number of initiated operations to the number of operations that have reached a final state (success or failure). The total count is established at operation creation and remains static thereafter. This static value may lead to inaccuracies in the completion percentage if the overall number of operations subsequently changes.
-{{< /c8y-admon-info >}}
 
 * **Operation removal**: Operations can be implicitly removed when their associated devices are deleted. This deletion goes unaccounted for in the completion percentage calculation.
 * **Operation addition**: Retrying failed operations can introduce new entries without modifying the original total count. This again results in a misrepresentation of the completion percentage.
 
 The completion percentage is calculated based on the information available at the time an operation is created and further changes are not applied.
+{{< /c8y-admon-info >}}

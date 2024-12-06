@@ -1,5 +1,5 @@
 ---
-title: Cumulocity IoT DataHub overview
+title: Cumulocity DataHub overview
 weight: 10
 layout: bundle
 sector:

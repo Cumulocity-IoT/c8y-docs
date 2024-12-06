@@ -1,6 +1,6 @@
 ---
 weight: 25
-title: Device registration via Cumulocity IoT
+title: Device registration via Cumulocity
 layout: redirect
 ---
 

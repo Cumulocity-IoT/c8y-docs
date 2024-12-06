@@ -6,7 +6,7 @@ sector:
   - terms_conditions
 ---
 
-This content applies to the Cumulocity IoT SaaS cloud deployments.
+This content applies to the {{< product-c8y-iot >}} SaaS cloud deployments.
 
 Specifications contained herein are subject to change and these changes will be reported in subsequent versions.
 

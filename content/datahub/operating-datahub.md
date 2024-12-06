@@ -1,5 +1,5 @@
 ---
-title: Operating Cumulocity IoT DataHub
+title: Operating Cumulocity DataHub
 weight: 50
 layout: bundle
 outputs:

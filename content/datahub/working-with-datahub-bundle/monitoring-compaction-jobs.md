@@ -5,7 +5,7 @@ layout: redirect
 helpcontent:
   - label: monitoring-compaction-jobs
     title: Monitoring compaction jobs
-    content: "During offloading, data from a Cumulocity IoT base collection is written into files in the data lake. In order to ensure a compact physical layout of those files, the system automatically runs periodic **compaction jobs** in the background for each offloading pipeline. The execution status of each compaction run is monitored and provides details on execution schedule, runtime and so on.
+    content: "During offloading, data from a Cumulocity base collection is written into files in the data lake. In order to ensure a compact physical layout of those files, the system automatically runs periodic **compaction jobs** in the background for each offloading pipeline. The execution status of each compaction run is monitored and provides details on execution schedule, runtime and so on.
 
     The **job history** list shows an overview of the last compaction runs for the selected offloading pipeline with options to filter the list by different criteria. To get more details for a specific run, click on the corresponding entry in the list.
 

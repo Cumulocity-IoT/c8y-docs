@@ -5,8 +5,7 @@ on:
     - cron: 00 19 * * *
 
 permissions:
-  pull-requests: write
-  contents: write
+  contents: read
 
 jobs:
   get-component-details:
@@ -71,5 +70,6 @@ jobs:
       version: ${{ matrix.component_version }}
       component: ${{ matrix.component_name }}
       date: ${{ matrix.component_update_date }}
+    secrets: inherit
 
 

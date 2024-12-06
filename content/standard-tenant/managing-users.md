@@ -10,7 +10,7 @@ sector:
 helpcontent:
   - label: managing-users
     title: Managing users
-    content: "The Cumulocity IoT user management allows you to manage the users within your tenant. You can create new users, assign usernames and passwords, store user details, or configure the login and security options.  
+    content: "The Cumulocity user management allows you to manage the users within your tenant. You can create new users, assign usernames and passwords, store user details, or configure the login and security options.  
 
 
     Moreover you can select the global roles for a user, see also *Managing permissions* in the user documentation."

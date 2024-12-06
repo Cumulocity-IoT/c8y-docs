@@ -11,8 +11,15 @@
         {{ .p1.Title}}
       {{else}}
         {{ if ne .p1.Title .p2.Title }}
-          <a href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>
-          <i class="dlt-c8y-icon-forward"></i>
+          {{ if eq .p1.Title "Cumulocity documentation" }}
+            
+          <a href="{{ .p1.Permalink }}" class="breadcrumbs-link"><i class="dlt-c8y-icon-home"></i></a>
+
+            <i class="dlt-c8y-icon-forward"></i>
+          {{ else }}
+            <a href="{{ .p1.Permalink }}" class="breadcrumbs-link">{{ .p1.Title }}</a>
+            <i class="dlt-c8y-icon-forward"></i>
+          {{ end }}
         {{ end }}
       {{ end }}
     </span>
