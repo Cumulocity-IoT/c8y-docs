@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58878
 version: 1021.18.0
 ---
-Enable global context for "auto refresh" (#6203) [GRAFT][release/cd]  (#7739)
+Previously, auto refresh was only available in certain parts of the application, such as the alarms view and widgets and map widgets. With this change, auto refresh can now be enabled globally in any dashboard. This means that the data displayed in widgets, that support and enabled this functionality, will be automatically updated at set and common intervals, without the need to manually refresh or set their intervals separately. The impact of this change is an improved user experience as users will always see the most up-to-date information without having to take any additional action.
