@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Enable global context for "auto refresh" (#6203) [GRAFT][release/cd]  (#7739)
+title: Auto refresh can now be enabled in any dashboard
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
