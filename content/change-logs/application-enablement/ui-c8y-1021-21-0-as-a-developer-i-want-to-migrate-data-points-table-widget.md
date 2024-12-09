@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58987
 version: 1021.21.0
 ---
-As part of the ongoing modernization efforts to migrate the UI to Angular, the data points table widget has now been migrated from the AngularJS to Angular. This change improves the performance, maintainability and consistency of the widget with the rest of the application. The functionality and behavior of the data points table widget remains the same, so there should be no impact on end users.
+As part of the ongoing modernization efforts to migrate the UI to Angular, the "Data points table" widget has now been migrated from AngularJS to Angular. This change improves the performance, maintainability and consistency of the widget with the rest of the application. The functionality and behavior of the "Data points table" widget remains the same, so there is no impact on users.
