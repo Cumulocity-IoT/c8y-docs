@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Alarms list widget can now use date range filtering.
+title: Alarms list widget now offers date range filtering
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
