@@ -74,7 +74,7 @@ relativeURLs = true
 
   [[params.additionalResources]]
     name = "Solution Partners"
-    link = "https://ecosystem.cumulocity.com/solution-partner-ecosystem-portal/"
+    link = "https://ecosystem.cumulocity.com/solution-partners/"
 
   [[params.additionalResources]]
     name = "Learning Portal"
@@ -82,7 +82,7 @@ relativeURLs = true
 
   [[params.additionalResources]]
     name = "Product Support"
-    link = "https://empower.softwareag.com/"
+    link = "https://cumulocity.atlassian.net/servicedesk/customer/portals"
 
 
 # Customize
