@@ -280,7 +280,7 @@ When building images for use as a {{< product-c8y-iot >}} microservice, this is 
 You must now use the
 [public.ecr.aws/apama/apama-cumulocity-jre](https://gallery.ecr.aws/apama/apama-cumulocity-jre) image with the
 [public.ecr.aws/apama/apama-cumulocity-builder](https://gallery.ecr.aws/apama/apama-cumulocity-builder) image as a builder image.
-To do this with the default project Dockerfile created by {{< sag-designer >}} in 10.15.0 and previous versions,
+To do this with the default project Dockerfile created by {{< apama-plugin-for-eclipse >}} in 10.15.0 and previous versions,
 you must either change the `FROM` lines in the Dockerfile appropriately
 (you only need to do this once) or build using the following flags (you must do this every time):
 
