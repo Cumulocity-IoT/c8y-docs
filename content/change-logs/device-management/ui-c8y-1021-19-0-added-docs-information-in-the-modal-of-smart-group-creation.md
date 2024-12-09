@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4130
 version: 1021.19.0
 ---
-To support users when creating smart groups, a link to the smart group documentation has been added to the smart group creation modal. This allows users to quickly access helpful information.
+To support users when creating smart groups, a link to the user documentation has been added to the smart group creation modal. This allows users to quickly access helpful information.
