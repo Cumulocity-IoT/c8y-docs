@@ -10,7 +10,7 @@ The **Device information** tab is a predefined dashboard with several widgets th
 
 ### Device marker {#device-marker}
 
- A device is marked in the inventory with a ```c8y_IsDevice``` fragment in its own managed object. Only devices with this fragment appear in the all **All devices** list in the Device management application.
+ A device is marked in the inventory with a ```c8y_IsDevice``` fragment in its own managed object. Only devices with this fragment appear in the all **All devices** list in the Device Management application.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>
@@ -48,7 +48,7 @@ Devices capable of restarting remotely can announce this capability by adding th
 
 #### Restart operation {#restart-operation}
 
-Upon clicking the **Restart** button in the Device management application an operation as follows is sent:
+Upon clicking the **Restart** button in the Device Management application an operation as follows is sent:
 
 ```json
 {
@@ -120,7 +120,7 @@ PUT /inventory/managedObjects/<deviceId>
        "name": "thin-edge.io",
        "version": "0.6",
        "url": "https://thin-edge.io/",
-       "maintainer": "Software AG"
+       "maintainer": "Cumulocity"
    }
 }
 ```
@@ -136,6 +136,6 @@ PUT /inventory/managedObjects/<deviceId>
 
 Upload agent details using the [122](/smartrest/mqtt-static-templates/#122) static template:
 
-`122,thin-edge.io,0.6,https://thin-edge.io/,Software AG`
+`122,thin-edge.io,0.6,https://thin-edge.io/,Cumulocity`
 
 Do this once at agent initialization.

@@ -14,7 +14,7 @@ To connect a Modbus/RTU device, follow these steps:
 1. Physically connect the Modbus/RTU device through a RS-485 or RS-232 cable to the terminal.
 2. Assign the device a unique Modbus address according to the instructions provided with the Modbus device (for example by setting a jumper on the device).
 3. Check the serial communication settings of the device according to the instructions provided with the Modbus device (that is, baud rates and communication protocol). These must match with all devices on the bus.
-4. In the Device management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Modbus** tab.
+4. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Modbus** tab.
 5. Change the communication settings shown in the **Serial communication** section to match the settings on the bus, if needed.
 6. Change the transmit rate and the polling rate according to your requirements. The transmit rate is the frequency where measurements are sent to {{< product-c8y-iot >}}. The polling rate is the frequency at which the Modbus devices are polled for changes.
 7. Click **Save** to save your settings.
@@ -35,7 +35,7 @@ To connect a Modbus/TCP device, follow these steps:
 
 1. Make sure that the Modbus/TCP device is connected to the terminal, that is, directly through an Ethernet cable or through a switch. If you are using a Modbus gateway, configure the gateway in a way it can communicate with the Modbus devices behind the gateway.
 2. Check the network settings of the device using the instructions provided with the device.
-3. In the Device management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Network** tab. Verify that the LAN settings of the terminal match the settings of the device so that TCP communication can be established.
+3. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Network** tab. Verify that the LAN settings of the terminal match the settings of the device so that TCP communication can be established.
 4. Switch to the **Modbus** tab.
 5. Change the transmit rate and the polling rate according to your requirements. The transmit rate is the frequency at which measurements are sent to {{< product-c8y-iot >}}. The polling rate is the frequency at which the Modbus devices are polled for changes.
 6. Click **Save** to save your settings.
@@ -60,7 +60,7 @@ To connect a CAN device, follow these steps:
 
 1. Physically connect the CAN device to the terminal.
 2. Check the serial communication baud rate of the device according to the instructions provided with the device. These must match all devices on the bus.
-3. In the Device management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **CAN Bus** tab.
+3. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **CAN Bus** tab.
 4. Change the baud rate setting shown in the section **CAN Bus communication** to match the settings on the bus, if needed.
 5. Change the transmit rate according to your requirements. The transmit rate is the frequency where measurements are sent to {{< product-c8y-iot >}}.
 6. Click **Save** to save your settings.
@@ -84,7 +84,7 @@ Connecting Profibus devices slightly differs from the regular plug & play approa
 To connect a Profibus device, follow these steps:
 
 1. Physically wire the Profibus device to the terminal.
-2. In the Device management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Profibus** tab.
+2. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Profibus** tab.
 3. The baud rate is automatically detected by the gateway and it is displayed here.
 4. Change the transmit rate according to your requirements. The transmit rate is the interval at which measurements are sent to {{< product-c8y-iot >}}.
 5. Set the device address of the terminal.

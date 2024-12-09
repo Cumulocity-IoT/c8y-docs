@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Introduction to the Cumulocity IoT platform
+title: Introduction to the Cumulocity platform
 layout: bundle
 aliases:
   - /concepts/introduction/

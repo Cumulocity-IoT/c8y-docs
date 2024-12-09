@@ -203,7 +203,7 @@ Only one Y-axis is rendered if the measurements belong to the same series.
 To see detailed information about the measured values, hover over the chart. A tooltip will be displayed with detailed information on the measurement next to your cursor (the tooltip will "snap" to the closest measurement).
 
 {{< c8y-admon-info >}}
-We recommend you to have max. 20 series per measurement for optimal performance and readability of a single graph in Device management (the graph displays all available series). If you need to display only a few series from the measurement, we advise you to use Data explorer in Cockpit where you can select series to be shown in the graph.
+We recommend you to have max. 20 series per measurement for optimal performance and readability of a single graph in the Device Management application (the graph displays all available series). If you need to display only a few series from the measurement, we advise you to use Data explorer in Cockpit where you can select series to be shown in the graph.
 {{< /c8y-admon-info >}}
 
 **Time range and aggregation**

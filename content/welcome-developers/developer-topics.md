@@ -30,7 +30,6 @@ Check out the following sections if you are looking for step-by-step instruction
 
 ### {{< openapi >}} {#openapi-Specification}
 
-
 A complete OpenAPI Specification for the {{< product-c8y-iot >}} REST API is available at [https://{{< domain-c8y >}}/api/core](https://{{< domain-c8y >}}/api/core). The {{< openapi >}} describes the entire {{< product-c8y-iot >}} REST API (that is, available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
 
 ### {{< product-c8y-iot >}} CLI {#cumulocity-iot-cli}
@@ -44,6 +43,6 @@ To simplify the interaction with the platform for developers, the {{< product-c8
 Check out further resources for developers like
 
 - [{{< company-sag >}}{{< sag-dev-community >}}]({{< link-sag-dev-community >}}) - to collaborate with {{< product-c8y-iot >}} experts
-- [{{< company-sag >}}'s official GitHub organization](https://github.com/softwareag)
+- [{{< company-c8y >}}'s official GitHub organization]({{< link-c8y-github >}})
 
 See also [Additional resources](/additional-resources/).

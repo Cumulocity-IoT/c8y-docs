@@ -1,5 +1,5 @@
 ---
-title: Running Cumulocity IoT DataHub on Cumulocity IoT Edge
+title: Running Cumulocity DataHub on Cumulocity Edge
 weight: 60
 layout: bundle
 sector: 

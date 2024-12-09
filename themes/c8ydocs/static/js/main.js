@@ -17,7 +17,7 @@ var main = (function ($) {
         class: 'admonition preview'
       }).insertAfter(elem);
       $('<h4 class="title">Preview</h4>').appendTo('#preview-banner');
-      $('<span>This is a preview of the documentation for the Cumulocity IoT '+ docsPreview +' deployments.</span>').appendTo('#preview-banner');
+      $('<span>This is a preview of the documentation for the Cumulocity '+ docsPreview +' deployments.</span>').appendTo('#preview-banner');
    }
 
     //Toggle side navigation
@@ -138,7 +138,7 @@ function buildToc() {
           }
           h3s.forEach(h3 => {
             if (h3.id && h3.textContent.length) {
-              tocLinks += `<div class="list-group-item"><a href="#${h3.id}" title="${h3.textContent}">${h3.textContent}</a></div>`;
+              tocLinks += `<div class="list-group-item"><a class="toc-link" href="#${h3.id}" title="${h3.textContent}">${h3.textContent}</a></div>`;
             }
           });
 
@@ -161,14 +161,21 @@ function buildToc() {
       });
     } else {
       let tocLinks = '';
+      let month = '';
       articles.forEach(article => {
         let h2 = article.querySelector('h5');
         let target = h2.parentNode.nextElementSibling;
         if (target && h2.textContent.length) {
-          tocLinks += `<div class="list-group-item"><a href="#${target.id}" data-refid="${h2.parentNode.id}" title="${h2.textContent}">${h2.textContent}</a></div>`;
+          let curMonth = h2.textContent.split(' ')[0];
+          let curYear = h2.textContent.split(' ')[2];
+          if (month !== curMonth) {
+            tocLinks += `<div class="list-group-item p-t-16"><p><strong>${curMonth} ${curYear}</strong></p></div>`;
+            month = curMonth;
+          }
+          tocLinks += `<div class="list-group-item"><a class="toc-link" href="#${target.id}" data-refid="${h2.parentNode.id}" title="${h2.textContent}">${h2.textContent}</a></div>`;
         }
-      })
-      // console.log("tocLinks", tocLinks);
+      });
+
       if (tocLinks.length) {
         const tocContainer = document.createElement('div');
         tocContainer.classList.add('toc-container');

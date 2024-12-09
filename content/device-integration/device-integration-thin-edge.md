@@ -18,7 +18,7 @@ Follow the tutorial [Getting started with thin-edge.io](https://thin-edge.github
 
 As a sample device, a Raspberry Pi can be used. The Raspberry Pi is a relatively simple and cheap yet powerful device. This makes it ideal for testing and trying out as well as some production use cases.
 
-This tutorial explains in small steps to reach the goal of sending data to Cumulocity IoT and performing some additional device management tasks.
+This tutorial explains in small steps to reach the goal of sending data to {{< product-c8y-iot >}} and performing some additional device management tasks.
 
 
 ### thin-edge.io on a Revolution Pi
@@ -28,6 +28,6 @@ Refer to [Getting started with thin-edge.io on a RevPi from Kunbus]({{< link-sag
 The Revolution PI is an open, modular and cost-effective industrial PC based on the well-known Raspberry Pi.
 Housed in a slim DIN rail case, the three available base modules can be seamlessly expanded with a variety of matching I/O modules and fieldbus gateways.
 
-Kunbus got their {{< product-c8y-iot >}} device management certification and is listed as a partner within the Device Catalog of [certified devices](https://devicepartnerportal.softwareag.com/devices?search=kunbus&page=1).
+Kunbus got their {{< product-c8y-iot >}} device management certification and is listed as a partner within the Device Catalog of [certified devices](https://ecosystem.cumulocity.com/product/revpi-connect-4/).
 
 You can get more information about Kunbus and the Revolution Pi on the [Revolution PI website](https://revolutionpi.de/).

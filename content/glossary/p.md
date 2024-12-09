@@ -23,7 +23,7 @@ See also [General Availability](/glossary/g/#ga) and [Public Preview](/glossary/
 
 ### Product area {#product-area}
 
-In the change logs (or release notes for yearly releases respectively) changes can be filtered for various parameters one of which is the product area. The product area is a high-level functional area, for example, "Device Management & connectivity". 
+In the change logs (or release notes for yearly releases respectively) changes can be filtered for various parameters one of which is the product area. The product area is a high-level functional area, for example, "Device management & connectivity". 
 
 See also [Components](/glossary/c/#components).
 

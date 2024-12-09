@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 
-# Install Cumulocity IoT Edge operator
+# Install Cumulocity Edge operator
 # Usage:
 #   ./c8yedge-operator-install.sh [-v C8YEDGE_OPERATOR_VERSION] [-n C8YEDGE_OPERATOR_NAMESPACE] [-i C8YEDGE_IMAGE_PULL_POLICY] [-r C8YEDGE_REGISTRY_HOST] -u C8YEDGE_REGISTRY_USERNAME -p C8YEDGE_REGISTRY_PASSWORD
 #       or
@@ -125,7 +125,7 @@ fi
 # Stop on errors
 set -e
 
-echo -e "\n\nInstalling Cumulocity IoT Edge operator, version ${C8YEDGE_OPERATOR_VERSION} from ${C8YEDGE_REGISTRY_HOST}\n\n"
+echo -e "\n\nInstalling Cumulocity Edge operator, version ${C8YEDGE_OPERATOR_VERSION} from ${C8YEDGE_REGISTRY_HOST}\n\n"
 
 # Install or upgrade Edge operator 
 helm upgrade --install c8yedge-operator oci://${C8YEDGE_REGISTRY_HOST}/edge/helm-charts/cumulocity-iot-edge-operator \
