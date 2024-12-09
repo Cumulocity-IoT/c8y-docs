@@ -1,6 +1,6 @@
 ---
 date: ""
-title: As a developer i want to migrate data points table widget to the angular (#6391) [GRAFT][release/cd] (#7745)
+title: Migrated Data points table widget to Angular
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
