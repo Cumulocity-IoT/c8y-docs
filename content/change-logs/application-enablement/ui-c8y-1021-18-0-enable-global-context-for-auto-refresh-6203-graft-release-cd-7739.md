@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Auto refresh can now be enabled in any dashboard
+title: Auto refresh can now be enabled globally in dashboards
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
