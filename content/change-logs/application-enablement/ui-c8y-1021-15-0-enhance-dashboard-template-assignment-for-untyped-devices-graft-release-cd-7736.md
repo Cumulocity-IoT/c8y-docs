@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Enhance dashboard template assignment for untyped devices
+title: Dashboard template setting now visible for devices without type property
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
