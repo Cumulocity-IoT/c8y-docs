@@ -18,4 +18,4 @@ To simplify the interaction with the platform for developers, the {{< product-c8
 
 ### Installation and operations documentation {#installation-and-operations-documentation}
 
-The Installation and operations documentation for the {{< product-c8y-iot >}} platform is not publicly available. It is provided on the [{{< c8y-resources-server >}}]({{< c8y-resources-server-link >}}) for all releases in maintenance or recently in maintenance. You need credentials to access the relevant folders. For the operations documentation of older releases [contact Cumulocity support](/additional-resources/contacting-support/).
+The Installation and operations documentation for the {{< product-c8y-iot >}} platform is not publicly available. It is provided on the [{{< c8y-resources-server >}}]({{< c8y-resources-server-link >}}) for all releases in maintenance or recently in maintenance. You need credentials to access the relevant folders. For the operations documentation of older releases [contact Cumulocity Support](/additional-resources/contacting-support/).
