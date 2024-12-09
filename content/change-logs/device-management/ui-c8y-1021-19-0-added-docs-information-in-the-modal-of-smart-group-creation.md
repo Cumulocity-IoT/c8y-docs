@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Helper link with additional documentation about Smart Groups available in the smart group creation modal.
+title: Added link to user documentation in the smart group creation dialog
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
