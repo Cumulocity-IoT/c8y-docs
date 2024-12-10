@@ -1,6 +1,6 @@
 ---
-date: 2024-04-26
-title: Reports page extracted into a separate plugin
+date: 2024-12-10
+title: Dashboard manager extracted into a separate plugin
 product_area: Application enablement & solutions
 change_type:
   - value: change-inv-3bw8e
@@ -11,14 +11,13 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-ticket: MTM-58448
-version: 1020.0.0
+ticket: no-issue
+version: 1021.0.0
 ---
-In the upcoming version the report module is extracted from the Cockpit application and added as a separate plugin.
-This is a first step towards removing the reports module entirely and replacing it with the dashboard manager.
-This change might be a breaking change as the reports module will no longer be part of `@c8y/ngx-components/context-dashboard`, but will be part of `@c8y/ngx-components/report-dashboard`.
+In the upcoming version the dashboard manager module is extracted from the Cockpit application and added as a separate plugin.
+This change might be a breaking change as the dashboard manager module will no longer be part of `@c8y/ngx-components/context-dashboard`, but will be part of `@c8y/ngx-components/dasboard-manager`.
 
 This change does not affect the layout and UX of the Cockpit application nor does it add any new functionalities.
-As a side effect, a performance improvement might be noticed as reports from now on will be loaded lazily (that is, only when users navigate to the **Reports** page).
+As a side effect, a performance improvement might be noticed as dashboard manager from now on will be loaded lazily (that is, only after main application is loaded).
 
 
