@@ -1,6 +1,6 @@
 ---
 date: 2024-12-03
-title: Added new legal notices
+title: Added legal notices to the product documentation
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
