@@ -26,7 +26,7 @@ The {{< product-c8y-iot >}} platform offers a comprehensive set of features desi
     * Optionally, separate environments for pre-production (non-production) activities can be purchased to ensure smooth development and testing processes.
     * {{< product-c8y-iot >}} is hosted in Customer-selected regions (EMEA, APAC, Japan, and the US).
 * **Support services:**
-    * The platform offers tiered product support to meet varying operational needs, including 8x5 support ("Starter Support"), 24x7 support ("Standard Support"), and comprehensive 24x7 support with enhanced SLAs ("Enterprise Active Support").
+    * The platform offers tiered product support to meet varying operational needs as outlined in the [support agreement](/service-terms/service-level/#support-sla).
 * **Proactive monitoring and management:**
     * {{< product-c8y-iot >}} includes 24x7 platform monitoring, with a publicly accessible status page and real-time status notifications to keep you informed.
     * The platform’s availability, capacity, and performance are actively managed to ensure consistent and reliable operation.
@@ -36,7 +36,7 @@ The {{< product-c8y-iot >}} platform offers a comprehensive set of features desi
     * {{< product-c8y-iot >}} adheres to ISO 22301 standards for business continuity management (BCM), ensuring resilience against zone outages with zone redundancy.
     * Regular backups are maintained with a 30-day retention period, a Recovery Time Objective (RTO) of 12 hours, and a Recovery Point Objective (RPO) of 24 hours. Backups are stored in the same region where the service is hosted.
     * {{< company-c8y >}} conducts regular drills to validate its disaster recovery procedures.
-* **API compatibility management:** The platform maintains compatibility of APIs as outlined in its[ Compatibility policy](/service-terms/compatibility-policy/). Transport protocols are managed in accordance with this policy, ensuring consistent and reliable API interactions.
+* **API compatibility management:** The platform maintains compatibility of APIs as outlined in its [Compatibility policy](/service-terms/compatibility-policy/). Transport protocols are managed in accordance with this policy, ensuring consistent and reliable API interactions.
 * **Data ownership and portability:** As the data processor, {{< product-c8y-iot >}} ensures that Customer retains full ownership of their data. Customer can export their data at any time using the provided APIs, ensuring control and flexibility over their information.
 * **Continuous maintenance and upgrades:** The platform undergoes regular maintenance and upgrades to ensure optimal performance and security. These upgrades happen transparently and without involving Customer.
 
@@ -163,7 +163,7 @@ service availability requirements are set forth in this service credit commitmen
 
 #### **Support**
 
-* **Customer support:** Support is provided in accordance with Customer’s selected support plan (Starter, Standard, or Enterprise Active Support), as detailed in the [support agreement](/service-terms/service-level/#support-sla).
+* **Customer support:** Support is provided in accordance with Customer’s selected support plan, as detailed in the [support agreement](/service-terms/service-level/#support-sla).
 * **Pre-production environments:** For pre-production environments, Starter-level support is generally provided, with support tickets handled at standard priority.
 
 #### **Maintenance**
