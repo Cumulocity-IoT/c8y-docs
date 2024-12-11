@@ -11,7 +11,6 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-    label: cdh
 ---
 The section on [Service terms](/service-terms/) has been further enhanced. It now also contains
 
