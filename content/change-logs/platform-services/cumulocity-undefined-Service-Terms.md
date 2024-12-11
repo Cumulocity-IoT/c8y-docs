@@ -14,7 +14,7 @@ The section on [Service terms](/service-terms/) has been further enhanced. It no
 
 * the [Support service-level agreement](/service-terms/service-level/#support-sla),
 * the [DataHub service-level agreement](/service-terms/service-level/#datahub-sla),
-* the [Compatibility policy](/service-terms/compatibility-policy/) (moved from "Getting started"),
+* the [Compatibility policy](/service-terms/compatibility-policy/) (moved from "Technical concepts"),
 * an explanation how {{< product-c8y-iot >}} manages releases in the [Release policy](/service-terms/releases/),
 * an explanation of how features are validated with customers in [Previewing features](/service-terms/previews/),
 * a consolidated page on all [Service quotas](/service-terms/quotas/), and
