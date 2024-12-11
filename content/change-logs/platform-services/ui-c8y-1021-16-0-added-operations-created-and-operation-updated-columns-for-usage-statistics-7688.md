@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added operationsCreated and operationsUpdated columns to usageStatistics view
+title: Added two new columns to the Usage Statistics page
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
