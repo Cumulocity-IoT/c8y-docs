@@ -18,6 +18,6 @@ In an upcoming version the dashboard manager module will be extracted from the C
 This change might be a breaking change as the dashboard manager module will no longer be part of `@c8y/ngx-components/context-dashboard`, but will be part of `@c8y/ngx-components/dasboard-manager`.
 
 This change does not affect the layout and UX of the Cockpit application nor does it add any new functionalities.
-As a side effect, a performance improvement might be noticed as dashboard manager from now on will be loaded lazily (that is, only after main application is loaded).
+As a side effect, a performance improvement might be noticed as the dashboard manager from now on will be loaded lazily (that is, only after main application is loaded).
 
 
