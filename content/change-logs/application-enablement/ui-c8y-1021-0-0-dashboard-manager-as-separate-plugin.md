@@ -14,7 +14,7 @@ build_artifact:
 ticket: no-issue
 version: 1021.0.0
 ---
-In the upcoming version the dashboard manager module is extracted from the Cockpit application and added as a separate plugin.
+In an upcoming version the dashboard manager module will be extracted from the Cockpit application and added as a separate plugin.
 This change might be a breaking change as the dashboard manager module will no longer be part of `@c8y/ngx-components/context-dashboard`, but will be part of `@c8y/ngx-components/dasboard-manager`.
 
 This change does not affect the layout and UX of the Cockpit application nor does it add any new functionalities.
