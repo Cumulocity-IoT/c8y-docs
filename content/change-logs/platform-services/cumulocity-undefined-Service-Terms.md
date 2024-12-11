@@ -10,7 +10,6 @@ component:
     label: Documentation
 build_artifact:
   - value: tc-QHwMfWtBk7
-    label: cumulocity
 ---
 The section on [Service terms](/service-terms/) has been further enhanced. It now also contains
 
