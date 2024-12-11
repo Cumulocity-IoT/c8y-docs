@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Migrated Data points table widget to Angular
+title: Enhanced Data points table widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
