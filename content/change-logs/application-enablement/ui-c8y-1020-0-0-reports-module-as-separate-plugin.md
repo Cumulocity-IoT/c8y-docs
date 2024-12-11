@@ -20,3 +20,4 @@ This change might be a breaking change as the reports module will no longer be p
 
 This change does not affect the layout and UX of the Cockpit application nor does it add any new functionalities.
 As a side effect, a performance improvement might be noticed as reports from now on will be loaded lazily (that is, only when users navigate to the **Reports** page).
+
