@@ -9,7 +9,6 @@ component:
   - value: component-docs-123
     label: Documentation
 build_artifact:
-  - value: tc-QHwMfWtBk7
 ---
 The section on [Service terms](/service-terms/) has been further enhanced. It now also contains
 
