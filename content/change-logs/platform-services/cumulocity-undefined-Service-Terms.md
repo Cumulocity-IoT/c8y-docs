@@ -6,7 +6,7 @@ change_type:
     label: Improvement
 product_area: Platform services
 component:
-  - value: component-9vjGQz8Ag
+  - value: component-docs-123
     label: Core platform
   - value: component-A8vMaVaTg
     label: DataHub
