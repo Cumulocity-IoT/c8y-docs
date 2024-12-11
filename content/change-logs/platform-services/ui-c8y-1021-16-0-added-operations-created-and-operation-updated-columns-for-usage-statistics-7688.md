@@ -1,6 +1,6 @@
 ---
 date: ""
-title: added operationsCreated and operationUpdated columns for usageStatistics (#7688) [GRAFT][release/cd] (#7716)
+title: Added operationsCreated and operationsUpdated columns to usageStatistics view
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
