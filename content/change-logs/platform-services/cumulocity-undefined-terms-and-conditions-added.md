@@ -12,4 +12,4 @@ build_artifact:
   - value:
     label:
 ---
-Several new legal notices documents have been added to the product documentation, such as Privacy Notice, Third Party Information and License Terms and Conditions. For details, see [Legal notices](/docs/legal-notices/copyright/).
+Several legal notices documents have been added to the product documentation, such as Privacy Notice, Third Party Information and License Terms and Conditions. For details, see [Legal notices](/docs/legal-notices/copyright/).
