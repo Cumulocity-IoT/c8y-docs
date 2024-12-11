@@ -8,7 +8,6 @@ product_area: Platform services
 component:
   - value: component-docs-123
     label: Documentation
-    label: DataHub
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
