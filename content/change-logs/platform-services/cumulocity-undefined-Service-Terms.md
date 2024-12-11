@@ -7,7 +7,7 @@ change_type:
 product_area: Platform services
 component:
   - value: component-docs-123
-    label: Core platform
+    label: Documentation
   - value: component-A8vMaVaTg
     label: DataHub
 build_artifact:
