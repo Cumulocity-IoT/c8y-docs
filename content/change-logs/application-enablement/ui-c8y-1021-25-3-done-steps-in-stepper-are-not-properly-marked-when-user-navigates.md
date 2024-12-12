@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60759
 version: 1021.25.3
 ---
-Done steps in stepper are not properly marked when user navigates back and forward (#7762) [GRAFT][release/cd] (#7787)
+In some scenarios, users may navigate back and forth between steps in a stepper component. Previously, when navigating this way, the stepper incorrectly marked and displayed completed steps as incomplete. This has now been fixed so that the stepper component correctly reflects the done steps when the user navigates backwards and forwards through the steps.
