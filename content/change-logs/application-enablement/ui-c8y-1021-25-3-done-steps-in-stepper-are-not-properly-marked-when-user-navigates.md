@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Done steps in stepper are not properly marked when user navigates back and forward (#7762) [GRAFT][release/cd] (#7787)
+title: Stepper navigation marks steps incorrectly when navigating back and forth
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
