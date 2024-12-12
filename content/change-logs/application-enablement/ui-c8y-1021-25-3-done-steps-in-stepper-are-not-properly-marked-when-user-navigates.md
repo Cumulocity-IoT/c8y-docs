@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Stepper navigation marks steps incorrectly when navigating back and forth
+title: Stepper navigation marks steps correctly when navigating back and forth
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
