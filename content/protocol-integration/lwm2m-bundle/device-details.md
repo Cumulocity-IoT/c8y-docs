@@ -92,6 +92,12 @@ The **LWM2M configuration** tab displays all LWM2M settings related to the devic
   * Delivery protocol
   * Reset state machine settings
   * Fail device firmware update on unexpected result (terminate the device firmware update process if an unexpected situation is detected)
+  * Logging event level - the logging levels can be adjusted based on types or completely be disabled for the device. When enabled, log events are visible in the device's events. Levels:
+    * "NONE",
+    * "LIFECYCLE",
+    * "TRAFFIC",
+    * "FIRMWARE",
+    * "VERBOSE"
 
 For a detailed description of the parameters above, see [Registering LWM2M devices](#registering-lwm2m-devices).
 
