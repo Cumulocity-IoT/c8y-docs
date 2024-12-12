@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Support for ID tokens provided by external IAM servers in the SSO authentication process
+date: '2024-12-12'
+title: >-
+  Support for ID tokens provided by external IAM servers in the SSO
+  authentication process
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
