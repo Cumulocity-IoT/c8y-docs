@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Alarm details can now be extended with custom tabs
+title: Added a hook service to allow extension of alarm details view with custom tabs
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
