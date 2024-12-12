@@ -1,6 +1,6 @@
 ---
 date: ""
-title: allow device type dashboards to work for device types containing a dot (#7774)
+title: Device type dashboards can now be used for device types containing a dot
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61863
 version: 1021.24.1
 ---
-allow device type dashboards to work for device types containing a dot (#7774)
+Previously, device type dashboards did not work properly for devices that contained a dot (".") in their type. This has now been fixed.
