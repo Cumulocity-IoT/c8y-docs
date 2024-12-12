@@ -6,7 +6,7 @@ sector:
   - app_enablement
 ---
 
-The Cockpit application includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed.
+The Cockpit application includes pre-set widget types. Each widget type provides different parameters to configure and different data to be displayed.
 
 
 {{< c8y-admon-related >}}

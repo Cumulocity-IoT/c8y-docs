@@ -793,4 +793,4 @@ svg: '<svg width="1103" height="851" viewBox="0 0 1103 851" fill="none" xmlns="h
 '
 ---
 
-Find out about managing and monitoring assets using the Cockpit, developing your own web applications, and explore customizable solutions like Digital twin manager.
+Find out about managing and monitoring assets using the Cockpit, developing your own web applications, and explore customizable solutions like Digital Twin Manager.
