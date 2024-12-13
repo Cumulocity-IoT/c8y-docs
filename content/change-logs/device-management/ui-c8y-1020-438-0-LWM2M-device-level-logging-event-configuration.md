@@ -9,8 +9,8 @@ component:
   - value: component-1KLUzmqfe
     label: LWM2M
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+  - value: tc-ggH2M4hf3
+    label: lwm2m-agent
 ticket: DM-4190
 version: 1020.438.0
 ---
