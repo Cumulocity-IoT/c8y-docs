@@ -14,5 +14,5 @@ build_artifact:
 ticket: DM-4179
 version: 10.20.440.0
 ---
-By default, the LWM2M agent serializes binary data to a byte array JSON string (for example, "[12, 32, 435]"). This functionality is now deprecated and will be changed in the future to HEX format (for example, "41424344"). For now the default serializer is still binary JSON, but this can be changed by setting the `C8Y.lwm2m.operation.legacyBinarySerialization` property to "false" in the agent properties file. 
+By default, the LWM2M service serializes binary data of a resource such as Opaque type to a byte array in {{< product-c8y-iot >}} representations. This functionality is now deprecated and will be changed in the future to hexadecimal string format. For now the default serializer is still serializes to the byte array and the format can be switched only on the instance level. 
 This change affects how the data is represented in {{< product-c8y-iot >}} objects (operations, generic UI data fragments). It does not affect the communication with LWM2M devices. 
