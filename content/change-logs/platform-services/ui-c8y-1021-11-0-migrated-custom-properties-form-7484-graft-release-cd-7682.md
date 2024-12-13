@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-12-12'
 title: Improved Custom properties tab in the tenant details
 product_area: Platform services
 change_type:

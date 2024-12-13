@@ -82,7 +82,7 @@ relativeURLs = true
 
   [[params.additionalResources]]
     name = "Product Support"
-    link = "https://empower.softwareag.com/"
+    link = "https://cumulocity.atlassian.net/servicedesk/customer/portals"
 
 
 # Customize
