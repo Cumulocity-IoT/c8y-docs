@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Hide context indicators in untranslated strings in runtime (#7679) [GRAFT][release/y2024] (#7771)
+title: Hide context indicators in untranslated strings at runtime
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
