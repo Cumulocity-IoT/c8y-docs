@@ -5,7 +5,7 @@ layout: redirect
 helpcontent:
   - label: custom-properties
     title: Custom properties
-    content: "This tab allows you to view and edit values of tenant custom properties defined in the properties library."
+    content: "The Custom properties tab allows you to edit and set only values of tenant custom properties defined earlier by user in the properties library. Fields requirements, types and regular expressions can be changed in the properties library."
 ---
 
 
