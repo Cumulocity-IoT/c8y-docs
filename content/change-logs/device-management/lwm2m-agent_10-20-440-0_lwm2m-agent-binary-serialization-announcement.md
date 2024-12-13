@@ -1,6 +1,6 @@
 ---
 date:
-title: Binary serialization to JSON byte array is now deprecated  
+title: LWM2M Opaque type serialization to byte array is now deprecated  
 product_area: Device management & connectivity
 change_type:
   - value: change-inv-3bw8e
