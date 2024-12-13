@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4251
 version: 10.18.540.262
 ---
-In recent LWM2M agent versions, default firmware update reset mechanism was always set to PACKAGE even if device supported only PULL delivery method. Now default reset method is selected based on firmware delivery method supported by the device.     
+In recent LWM2M agent versions, the default firmware update reset mechanism was always set to PACKAGE even if the device only supported the PULL delivery method. Now the default reset method is selected based on the firmware delivery method supported by the device.     
