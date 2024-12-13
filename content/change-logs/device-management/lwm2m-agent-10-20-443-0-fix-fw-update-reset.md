@@ -1,6 +1,7 @@
 ---
 date: 
-title: Default LWM2M firmware update reset mechanism has been fixed
+title: Fixed default LWM2M firmware update reset mechanism
+
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
