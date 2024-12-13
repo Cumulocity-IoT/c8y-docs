@@ -433,6 +433,16 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">{{< product-c8y-iot >}} implements default handlers for objects 3,4 and 6. For example, they update the device name upon the reception of the corresponding resource in object 3 or update the device location. This flag allows those behaviors to be turned off.</td>
 <td style="text-align: left">Optional</td>
 </tr>
+<tr>
+<td style="text-align: left">Event log level</td>
+<td style="text-align: left">logLevel</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">{{< product-c8y-iot >}} can output detailed logs to event stream. This field configures a log level. Allowed values are: 
+<b>NONE</b> (nothing will be logged as events), <b>LIFECYCLE</b> (only registration, de-registration and registration update events),
+<b>TRAFFIC</b> (LIFECYCLE + sent/received data), <b>FIRMWARE</b> (LIFECYCLE + detailed firmware update information),
+<b>VERBOSE</b> (all above will be logged)</td>
+<td style="text-align: left">Optional</td>
+</tr>
 </tbody>
 </table>
 
