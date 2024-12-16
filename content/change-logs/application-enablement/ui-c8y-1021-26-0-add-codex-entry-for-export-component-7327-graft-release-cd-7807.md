@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add codex entry for export component (#7327) [GRAFT][release/cd] (#7807)
+title: Added Codex entry for the export component
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
