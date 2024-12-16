@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Option added to enable or disable the dashboard manager in the application configuration
+date: '2024-12-12'
+title: >-
+  Option added to enable or disable the dashboard manager in the application
+  configuration
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
