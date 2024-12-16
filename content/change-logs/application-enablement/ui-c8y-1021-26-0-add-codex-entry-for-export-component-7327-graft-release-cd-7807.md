@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60220
 version: 1021.26.0
 ---
-A new entry for the export component has been added to the {{< product-c8y-iot >}} Codex. This change introduces a dedicated page in the codex that provides information about the export component, its purpose, and how it can be used within the {{< product-c8y-iot >}} platform.
+A new entry for the export component has been added to the {{< product-c8y-iot >}} Codex. This change introduces a dedicated page that provides information about the export component, its purpose, and how it can be used within the {{< product-c8y-iot >}} platform.
