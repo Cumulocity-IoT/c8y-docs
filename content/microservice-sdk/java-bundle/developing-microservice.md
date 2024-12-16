@@ -662,7 +662,7 @@ For external/legacy deployment, the following paths will be searched in order to
 
 * To customize the logging configuration for your microservice instead of using the default configuration, create a log
 configuration file in the _configuration_ folder of your microservice project.
-* The file must adhere to the naming convention \<application-name\>-logging.xml. 
+* The file must adhere to the naming convention *\<application-name\>-logging.xml*. 
 This ensures that your custom log configuration replaces the default configuration file 
 with the same name in the resulting Docker image.
 * Once deployed, the customized log configuration file will be located in the /etc/\<artifactId\> 
