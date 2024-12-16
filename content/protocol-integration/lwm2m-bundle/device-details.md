@@ -96,7 +96,7 @@ The **LWM2M configuration** tab displays all LWM2M settings related to the devic
     * NONE - nothing will be logged as events,
     * LIFECYCLE - only registration, de-registration and registration update events
     * TRAFFIC - same as LIFECYCLE plus sent/received data
-    * "FIRMWARE" - same as LIFECYCLE + detailed firmware update information,
+    * FIRMWARE - same as LIFECYCLE plus detailed firmware update information
     * "VERBOSE" - all above details will be logged
 
 For a detailed description of the parameters above, see [Registering LWM2M devices](#registering-lwm2m-devices).
