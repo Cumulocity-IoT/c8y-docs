@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added Gainsight events to export component
+title: Added Gainsight product experience tracking to export component
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
