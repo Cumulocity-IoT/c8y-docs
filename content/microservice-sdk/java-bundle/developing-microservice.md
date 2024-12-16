@@ -670,7 +670,7 @@ directory within the microservice pod.
 
 ##### Locations to be searched for log configuration file
 
-For external/legacy deployment, logging into the application implies using [Spring Logging](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html).
+For external/legacy deployments, logging into the application implies using [Spring Logging](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html).
 The following locations are searched for the logback configuration file:
 
 * {UPPERCASE(application_name)}_CONF_DIR/.{application_name}/*-logging.xml
