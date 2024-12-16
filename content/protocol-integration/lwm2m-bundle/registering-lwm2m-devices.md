@@ -440,7 +440,7 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">{{< product-c8y-iot >}} can output detailed logs to the event stream. This field configures a log level. Allowed values are: 
 <b>NONE</b> (nothing will be logged as events), <b>LIFECYCLE</b> (only registration, de-registration and registration update events),
 <b>TRAFFIC</b> (LIFECYCLE + sent/received data), <b>FIRMWARE</b> (LIFECYCLE + detailed firmware update information),
-<b>VERBOSE</b> (all above will be logged).
+<b>VERBOSE</b> (all of the above will be logged).
 Default is LIFECYCLE.</td>
 <td style="text-align: left">Optional</td>
 </tr>
