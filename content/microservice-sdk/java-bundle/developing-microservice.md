@@ -665,7 +665,7 @@ configuration file in the _configuration_ folder of your microservice project.
 * The file must adhere to the naming convention *\<application-name\>-logging.xml*. 
 This ensures that your custom log configuration replaces the default configuration file 
 with the same name in the resulting Docker image.
-* Once deployed, the customized log configuration file will be located in the /etc/\<artifactId\> 
+* Once deployed, the customized log configuration file will be located in the */etc/\<artifactId\>*
 directory within the microservice pod.
 
 ##### Locations to be searched for log configuration file
