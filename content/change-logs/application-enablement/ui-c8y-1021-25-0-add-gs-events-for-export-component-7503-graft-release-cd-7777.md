@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60216
 version: 1021.25.0
 ---
-Add GS events for export component  (#7503) [GRAFT][release/cd] (#7777)
+Gainsight events were added to the export component to track and analyze data export operations.
