@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Remove the word 'module' from plugin names"
+title: "Remove 'Module' suffix from module names in dtm-plugins"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1661"
 version: "1020.1.21"
 ---
-Remove the word 'module' from plugin names
+Previously, the names of all modules within the dtm-plugins included the word "Module". Now it has been removed.
