@@ -331,7 +331,7 @@ You cannot override a property injected by Spring `@Value("${property.name}")`.
 
 ### Logging {#logging}
 
-The standard output should be used for hosted deployment.
+The standard output should be used for hosted deployments.
 For more details on how to use your own log configuration file refer to [Logging](/microservice-sdk/java/#legacy-logging).
 
 ### Maven plugin {#maven-plugin}
