@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add GS events for export component  (#7503) [GRAFT][release/cd] (#7777)
+title: Added Gainsight events to export component
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
