@@ -10,7 +10,7 @@ This agreement is made between {{< company-c8y >}} ("Provider") and the Customer
 
 ### Service description
 
-{{< product-c8y-iot >}} is a comprehensive Internet of Things (IoT) platform designed to enable seamless connectivity, management, analysis and control of IoT devices. This agreement defines the service level of {{< product-c8y-iot >}} Software-as-a-Service operated by {{< company-c8y >}}. {{< product-c8y-iot >}} Software-Operated-as-a-Service and {{< product-c8y-iot >}} Edge are outside the scope of this agreement.
+{{< product-c8y-iot >}} is a comprehensive Internet of Things (IoT) platform designed to enable seamless connectivity, management, analysis and control of IoT devices. This agreement defines the service level of {{< product-c8y-iot >}} Software-as-a-Service operated by {{< company-c8y >}}. {{< product-c8y-iot >}} Edge is outside the scope of this agreement.
 
 The agreement applies solely to the base platform excluding optional features or features not in general availability. Optional features outside the base platform may require a separate service-level agreement. For custom applications developed using the Microservice Hosting functionality, refer to the [Microservices hosting service-level agreement](/service-terms/service-level/#microservices-sla/).
 
