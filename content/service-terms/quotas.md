@@ -81,7 +81,8 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 | Quota                                                                                                                              | Type |      Value |
 | ---------------------------------------------------------------------------------------------------------------------------------- | ---- | ---------: |
-| Number of offloaders per tenant                                                                                                    | Soft |        100 |
+| Number of active offloaders per tenant                                                                                             | Soft |        100 |
+| Number of offloadings per tenant                                                                                                   |
 | [Offloading frequency](/datahub/working-with-datahub/#configure-additional-settings)                                               | Hard |     hourly |
 | [Offloaded leaf properties](https://docs.dremio.com/current/get-started/cluster-deployments/architecture/limits/#catalog)          | Hard |       6400 |
 | Query time out                                                                                                                     | Hard |        ??? |
