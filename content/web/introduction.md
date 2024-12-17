@@ -52,7 +52,7 @@ Following is a list which explains the use cases of each package.
 
 #### @c8y/client: Accessing data
 
-The @c8y/client is an isomorphic (node and browser) Javascript client library for the [{{< product-c8y-iot >}}](http://www.cumulocity.com) REST API. It can be used for getting data from the platform. In an Angular application you will mostly use the injected services from `@c8y/ngx-components`.
+The @c8y/client is an isomorphic (node and browser) Javascript client library for the [{{< product-c8y-iot >}}](http://cumulocity.com) REST API. It can be used for getting data from the platform. In an Angular application you will mostly use the injected services from `@c8y/ngx-components`.
 
 #### @c8y/ngx-components: The component library
 
@@ -110,7 +110,7 @@ As our releases are bound to the Angular versioning, you must to ensure that you
 
 {{< c8y-admon-info >}}
 If you want to use an older version then `1019.x.x` you must to use our old tooling based on the `c8ycli` tool-set. For more information see [C8Y Command Line Tool (CLI)](/web/upgrade/#c8y-cli).
-{{< /c8y-admon-info >}}  
+{{< /c8y-admon-info >}}
 
 
 ### Next steps

@@ -51,7 +51,7 @@ Customer acknowledges the following limitations and constraints in using Service
 * **Production environments:** 99.00% availability
 * **Preproduction environments:** 95.00% availability
 
-Service availability for [{{< product-c8y-iot >}} DataHub APIs](https://www.cumulocity.com/api/datahub/#tag/Standard-API) is calculated as outlined in the [platform's service availability section](/service-terms/service-level/#service-availability).
+Service availability for [{{< product-c8y-iot >}} DataHub APIs](https://cumulocity.com/api/datahub/#tag/Standard-API) is calculated as outlined in the [platform's service availability section](/service-terms/service-level/#service-availability).
 
 Offloading jobs may not run at a scheduled time if a previous offloading job is still in progress (for example, due to an initial larger volume upload or after a longer period of inactivity) or during scheduled maintenance. Subsequent offloading jobs will eventually catch up with remaining data.
 

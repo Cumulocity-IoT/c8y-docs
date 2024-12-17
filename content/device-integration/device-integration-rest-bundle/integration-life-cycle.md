@@ -245,7 +245,7 @@ For example, the hardware information of a device will usually not change, but t
             "pi-driver": "pi-driver-3.4.6.jar",
             "pi4j-gpio-extension": "pi4j-gpio-extension-0.0.5.jar"
         }
-    }   
+    }
 
     HTTP/1.1 200 OK
 

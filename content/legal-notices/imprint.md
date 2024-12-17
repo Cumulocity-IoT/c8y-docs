@@ -17,7 +17,7 @@ Cumulocity GmbH, Toulouser Allee 25, 40211 Düsseldorf, Germany
 
 **Email:** info@cumulocity.com
 
-**Internet:** www.cumulocity.com
+**Internet:** cumulocity.com
 
 Cumulocity GmbH is entered in the Register of Companies of Düsseldorf Local Court under the No. **HRB 68832**.
 

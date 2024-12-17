@@ -87,8 +87,8 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 | [Offloaded leaf properties](https://docs.dremio.com/current/sonar/query-manage/querying-data/wide-tables/)[^1] | Soft |    6400 |
 | Query time out                                                                                                 | Soft |   4 min |
 | Query job retention                                                                                            | Hard |   1 day |
-| [Rows in a query job](https://www.cumulocity.com/api/datahub/#operation/getJobResultsApiResource)              | Hard | 1000000 |
-| [Rows in a high performance query](https://www.cumulocity.com/api/datahub/#tag/High-performance-API)           | Soft | 1000000 |
+| [Rows in a query job](https://cumulocity.com/api/datahub/#operation/getJobResultsApiResource)                  | Hard | 1000000 |
+| [Rows in a high performance query](https://cumulocity.com/api/datahub/#tag/High-performance-API)               | Soft | 1000000 |
 
 Additional [quotas from the Dremio engine](https://docs.dremio.com/current/get-started/cluster-deployments/architecture/limits/#catalog) may apply.
 
