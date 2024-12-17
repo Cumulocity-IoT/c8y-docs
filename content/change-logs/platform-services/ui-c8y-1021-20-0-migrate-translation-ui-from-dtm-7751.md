@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Migrate localization user interface from DTM application to Administration application
+title: Migrated localization user interface from Digital Twin Manager application to Administration application
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
