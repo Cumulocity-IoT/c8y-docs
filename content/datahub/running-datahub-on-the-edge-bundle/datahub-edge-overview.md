@@ -23,8 +23,6 @@ For your convenience, here is an overview of the contents:
 
 {{< product-c8y-iot >}} DataHub Edge offers the same functionality as the cloud-variant of {{< product-c8y-iot >}} DataHub, but stores the data locally. You can define offloading pipelines, which regularly move data from the Operational Store of {{< product-c8y-iot >}} into a data lake. In the Edge setup, a NAS is used as data lake. Dremio, the internal engine of {{< product-c8y-iot >}} DataHub, can access the data lake and run analytical queries against its contents, using SQL as the query interface.
 
-<img src="/images/datahub-guide/datahub-edge-overview.png" alt="Overview of {{< product-c8y-iot >}} DataHub Edge" style="max-width: 100%">
-
 {{< product-c8y-iot >}} DataHub Edge consists of the following building blocks:
 
 * The {{< product-c8y-iot >}} DataHub UI is deployed as a web application in the {{< product-c8y-iot >}} core. It provides the frontend for defining and managing offloading pipelines.
