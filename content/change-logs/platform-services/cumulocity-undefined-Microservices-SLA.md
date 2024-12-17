@@ -12,4 +12,4 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ---
-The [Service-level agreement for Microservices deployment](/microservice-sdk/microservices-sla/) now provides a more precise definition on what is included in the Microservice Hosting functionality for your custom microservices. It also describes how you can benefit best from the service.
+The [Service-level agreement for Microservices deployment](/service-terms/service-level/#microservices-sla) now provides a more precise definition on what is included in the Microservice Hosting functionality for your custom microservices. It also describes how you can benefit best from the service.
