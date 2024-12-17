@@ -12,11 +12,13 @@
 /content/change-logs/application-enablement/dtm* @rahulc8y @pavanshivajirao @lara-c8y @BeateRixen @MWindel
 /content/change-logs/analytics/apama-in-c8y* @kailol-sag @Rob-J-SAG @BeateRixen @MWindel @skom-c8y
 /content/change-logs/analytics/cdh* @cheinz-sag @ChrisFurlong @BeateRixen @MWindel
+/content/change-logs/edge/ @bbyreddy @rthrippleton @BeateRixen
 
 /content/datahub/ @cheinz-sag @BeateRixen @MWindel
 /content/device-management-application/ @Oezge-Akin @l2p- @BeateRixen
 /content/dtm/ @pavanshivajirao @lara-c8y @BeateRixen @MWindel
 content/authentication @kowa-c8y @BeateRixen
+/content/edge/ @bbyreddy @rthrippleton @BeateRixen
 
 /content/streaming-analytics/ @kailol-sag @BeateRixen @MWindel @skom-sag
 # 'block-reference-bundle' is automatically and frequently committed to - don't bother _too many_ CODEOWNERS
