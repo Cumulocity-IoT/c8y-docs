@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61483
 version: 1021.20.0
 ---
-migrate translation UI from DTM (#7751)
+As part of the ongoing migration efforts, the user interface for managing translations has been migrated from the legacy DTM framework to a new modern framework. The functionality remains the same, allowing users to view, edit and manage translations as before. However, the underlying technology has been updated, providing better performance, stability and maintainability of the translations user interface going forward.
