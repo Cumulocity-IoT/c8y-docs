@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1688"
 version: "1020.1.21"
 ---
-Asset Properties Widget 2.0 displays different list of properties then selected
+In the "Asset properties" widget in dtm-plugins, an issue was identified that resulted in displaying different complex property key-value pairs than those selected during widget configuration. This issue has been fixed.
