@@ -1,6 +1,6 @@
 ---
 date: ""
-title: migrate translation UI from DTM (#7751)
+title: Migrate localization user interface from DTM application to Administration application
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
