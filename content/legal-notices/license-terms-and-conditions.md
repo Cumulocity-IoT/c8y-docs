@@ -22,7 +22,7 @@ You are not allowed to install or use the Product without a corresponding licens
 
 #### Copyright and trademark notice
 
-The name Cumulocity GmbH and all Cumulocity GmbH product names are either trademarks or registered trademarks of Cumulocity GmbH and/or its subsidiaries and/or its affiliates and/or their licensors.
+The name Cumulocity and all Cumulocity GmbH product names are either trademarks or registered trademarks of Cumulocity GmbH and/or its subsidiaries and/or its affiliates and/or their licensors.
 
 Other company and product names mentioned herein may be trademarks of their respective owners. Cumulocity GmbH or its affiliates and subsidiaries are the sole owner of all intellectual property rights to the Products and accompanying user documentation or have the respective distribution rights. References made in or on the Products to the copyright and/or to the industrial property rights must not be altered, deleted or obliterated in any manner.
 
@@ -56,7 +56,7 @@ With this Evaluation License Agreement, Cumulocity GmbH grants you \- free of ch
 
 The Product(s) may contain or be distributed with certain open source, free or commercial third party licensor's components ("Third Party Components"). These Third Party Components, if any, may be identified in, and may be subject to, special license terms and conditions ("Third Party Terms") set forth in "3rd-party-licenses-\*" files included or linked from the installation package, or may be retrieved online for the SaaS cloud deployments of the  Software at [https://cumulocity.com/docs/legal-notices/](https://cumulocity.com/docs/legal-notices/copyright/)
 
-Third Party Terms include important licensing and warranty information and disclaimers of licensors. For the avoidance of doubt, the Third Party Terms do not restrict the rights granted under this Agreement.  
+Third Party Terms include important licensing and warranty information and disclaimers of licensors. For the avoidance of doubt, the Third Party Terms do not restrict the rights granted under this Agreement.
 
 #### License validity
 
@@ -86,7 +86,7 @@ Except where there is a mandatory statutory liability for intent, gross negligen
 
 #### Termination
 
-This Evaluation License Agreement will terminate immediately without notice from Cumulocity GmbH if you fail to comply with any provision of this Evaluation License Agreement. Cumulocity GmbH reserves the right to terminate this agreement immediately for good cause, whereby good cause is understood as any gross breach of this agreement. Upon termination, you must immediately discontinue the use of the Product and destroy the Product and all copies of the Product in physical, electronic or other form. Upon request of Cumulocity GmbH licensee will certify in written that use is discontinued and all copies of the Product are destroyed.  
+This Evaluation License Agreement will terminate immediately without notice from Cumulocity GmbH if you fail to comply with any provision of this Evaluation License Agreement. Cumulocity GmbH reserves the right to terminate this agreement immediately for good cause, whereby good cause is understood as any gross breach of this agreement. Upon termination, you must immediately discontinue the use of the Product and destroy the Product and all copies of the Product in physical, electronic or other form. Upon request of Cumulocity GmbH licensee will certify in written that use is discontinued and all copies of the Product are destroyed.
 
 #### Export
 
@@ -100,4 +100,4 @@ The invalidity of any provision of this agreement shall not affect any other par
 
 ### Part D: Product specific terms for Apama Core Community Edition (Apama Core CE)
 
-You may distribute \- either stand-alone or integrated into your or any third party intellectual property as a combined product \- the Apama Core CE Product to third parties, provided that you do not charge any fee (including but not limited to distribution and maintenance fees) and you undertake to oblige any third party to further distribute the stand-alone or combined Product solely in accordance with the terms of this license agreement (including distribution on a free of charge basis only). Any commercial distribution of the stand-alone or combined Product to any third party requires you to obtain a commercial re-selling or OEM license from Cumulocity GmbH.   
+You may distribute \- either stand-alone or integrated into your or any third party intellectual property as a combined product \- the Apama Core CE Product to third parties, provided that you do not charge any fee (including but not limited to distribution and maintenance fees) and you undertake to oblige any third party to further distribute the stand-alone or combined Product solely in accordance with the terms of this license agreement (including distribution on a free of charge basis only). Any commercial distribution of the stand-alone or combined Product to any third party requires you to obtain a commercial re-selling or OEM license from Cumulocity GmbH.
