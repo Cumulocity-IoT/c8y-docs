@@ -77,7 +77,7 @@ Individual changes cannot be selectively applied; all published changes are roll
 
 #### Can I request a rollback of changes?
 
-{{< company-c8y >}} manages rollbacks automatically if issues are detected in production environments. If you encounter any issues, please contact [Cumulocity support](/additional-resources/contacting-support/) for assistance.
+{{< company-c8y >}} manages rollbacks automatically if issues are detected in production environments. If you encounter any issues, please contact [Cumulocity Support](/additional-resources/contacting-support/) for assistance.
 
 #### Am I eligible for annual deployment?
 

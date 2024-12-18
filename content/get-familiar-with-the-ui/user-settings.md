@@ -55,7 +55,7 @@ Moreover you can click **Detailed info** to download more detailed platform info
 
 The **Bookmarks** section provides links to the most common pages and processes in the platform.
 
-In the **Support** section, the request support item redirects you to the <a href="{{< link-sag-portal >}}" class="no-ajaxy">{{< company-sag >}} {{< sag-portal >}}</a> while the **Documentation** section provides links to the most relevant guides.
+In the **Support** section, the request support item redirects you to the {{< c8y-support-portal >}} {{< c8y-support-link >}} while the **Documentation** section provides links to the most relevant guides.
 
 
 ### To change user settings {#to-change-user-settings}

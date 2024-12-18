@@ -12,7 +12,7 @@ In case of any issues, {{< company-c8y >}} recommends you to follow these steps:
 * Monitor the system processes, see [Monitoring](/edge/operating-edge/#monitoring).
 * Check the log files, see [Logging](/edge/operating-edge/#logs-files).
 
-These steps help you analyze the issue and provide a fix. If you need to contact {{< company-c8y >}} support, include the output of the diagnostics dump. For more information about using the diagnostics, see [Diagnostic utility](#diagnostics).
+These steps help you analyze the issue and provide a fix. If you need to contact {{< company-c8y >}} Support, include the output of the diagnostics dump. For more information about using the diagnostics, see [Diagnostic utility](#diagnostics).
 
 
 ### Troubleshooting Microservices {#troubleshooting-microservices}
