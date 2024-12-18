@@ -1,6 +1,6 @@
 ---
 date: 2024-12-19
-title: LWM2M device level logging event configuration
+title: LWM2M device logging level configuration
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
