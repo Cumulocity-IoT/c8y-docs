@@ -29,7 +29,7 @@ The following default inventory roles are initially available in new tenants:
 ### To add an inventory role {#to-add-an-inventory-role}
 
 Click **Add inventory role** in the **Inventory roles** tab.
-In the **New inventory role** page, provide a **name** and a **description**, and assign the **permissions** for the new inventory role.
+In the **New inventory role** dialog, provide a **name** and a **description**, and assign the **permissions** for the new inventory role.
 
 ![Role details](/images/users-guide/Administration/admin-inventory-role-edit.png)
 
