@@ -14,5 +14,5 @@ build_artifact:
 ticket: DM-4190
 version: 10.20.438.0
 ---
-For LWM2M devices, it is now possible to disable or adjust the granularity of logging events per device during the device registration or from LWM2M Configuration tab of the existing device. When enabled, log events are visible in the device's events. Lifecycle events are the default selected option. The global configuration from LWM2M Service to enabling event logging is removed.
+For LWM2M devices, it is now possible to disable or adjust the granularity of logging events per device during the device registration or from the **LWM2M configuration** tab of the existing device. When enabled, log events are visible in the device's events. Lifecycle events are the default selected option. The global configuration from the LWM2M Service for enabling event logging has been removed.
 For more details see [LWM2M device registration advanced settings](/protocol-integration/lwm2m/#advanced-settings) and [LWM2M configuration](/protocol-integration/lwm2m/#lwm2m-configuration). 
