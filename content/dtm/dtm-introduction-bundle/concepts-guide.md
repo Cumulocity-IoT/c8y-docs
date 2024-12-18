@@ -9,7 +9,7 @@ A digital twin is a virtual representation of a physical object or system. It is
 
 You can use digital twins to simulate and test the performance of complex systems, such as buildings, factories, or even entire cities. By using digital twins, engineers and designers can better understand how a system works and identify potential problems before they occur. 
 
-In the Digital twin manager application, one asset represents one digital twin.
+In the Digital Twin Manager application, one asset represents one digital twin.
 
 ### Digital twin attributes {#digital-twin-attributes}
 

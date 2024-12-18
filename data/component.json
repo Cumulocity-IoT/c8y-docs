@@ -81,6 +81,15 @@
       ]
     },
     {
+      "id": "component-docs-123",
+      "option": "Documentation",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
+    },{
       "id": "component-wWIzHJ12j",
       "option": "Cloud Fieldbus",
       "product_area": [

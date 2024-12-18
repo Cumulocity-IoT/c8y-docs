@@ -65,7 +65,7 @@ Below all applications are listed which are by default available in the {{< stan
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/dtm/dtm-introduction/" class="no-ajaxy">Digital twin manager</a></td>
+<td style="text-align:left"><a href="/dtm/dtm-introduction/" class="no-ajaxy">Digital Twin Manager</a></td>
 <td style="text-align:left">Create and manage basic building blocks for Digital twins: Assets, Asset models and Asset properties </td>
 <td style="text-align:left">digital-twin-manager</td>
 <td style="text-align:left">Web application</td>

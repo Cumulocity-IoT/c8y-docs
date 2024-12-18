@@ -1,6 +1,6 @@
 ---
-date: ""
-title: Date range filter added in the alarms overview 
+date: '2024-12-12'
+title: Date range filter added in the alarms overview
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
