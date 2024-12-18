@@ -16,7 +16,7 @@ If problems occur, you should follow these steps:
 - Check the log files, see [Log files](#log-files)
 - Monitor the system processes, see [Monitoring](#monitoring)
 
-If you need to contact [product support](/additional-resources/contacting-support/), include the output of the diagnostics script. See [Diagnostic utility](https://cumulocity.com/guides/edge/operating-edge/#diagnostics) for details of how to run it.
+If you need to contact [product support](/additional-resources/contacting-support/), include the output of the diagnostics script. See [Diagnostic utility](https://cumulocity.com/docs/edge/operating-edge/#diagnostics) for details of how to run it.
 
 #### Health check {#health-check}
 
@@ -69,7 +69,7 @@ The containers are configured to rotate log files with rotation settings of two 
 
 #### Monitoring {#monitoring}
 
-{{< product-c8y-iot >}} Edge uses **Monit** for management and monitoring of relevant processes. See [Monitoring](https://cumulocity.com/guides/edge/operating-edge/#monitoring) for details. The {{< product-c8y-iot >}} DataHub Edge processes, namely the {{< product-c8y-iot >}} DataHub backend and the Dremio nodes, are also monitored by Monit.
+{{< product-c8y-iot >}} Edge uses **Monit** for management and monitoring of relevant processes. See [Monitoring](https://cumulocity.com/docs/edge/operating-edge/#monitoring) for details. The {{< product-c8y-iot >}} DataHub Edge processes, namely the {{< product-c8y-iot >}} DataHub backend and the Dremio nodes, are also monitored by Monit.
 
 ### Data disk management and monitoring {#data-disk-management-and-monitoring}
 
@@ -97,4 +97,4 @@ Data being deleted from the data lake cannot be recovered anymore.
 
 #### Backup and Restore {#backup-and-restore}
 
-{{< product-c8y-iot >}} DataHub's runtime state as well as the data lake containing offloaded data reside in the {{< product-c8y-iot >}} Edge server VM. In order to back up and restore {{< product-c8y-iot >}} DataHub, its runtime state, and its data we recommend you to back up and recover the {{< product-c8y-iot >}} Edge server VM as described in [Backup and restore](https://cumulocity.com/guides/edge/backup-and-restore/).
+{{< product-c8y-iot >}} DataHub's runtime state as well as the data lake containing offloaded data reside in the {{< product-c8y-iot >}} Edge server VM. In order to back up and restore {{< product-c8y-iot >}} DataHub, its runtime state, and its data we recommend you to back up and recover the {{< product-c8y-iot >}} Edge server VM as described in [Backup and restore](https://cumulocity.com/docs/edge/backup-and-restore/).
