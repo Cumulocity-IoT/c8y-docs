@@ -6,7 +6,7 @@ change_type:
   - value: change-QHu1GdukP
     label: Feature
 component:
-  - value: component-0UgqXH1Ys
+  - value: component-Tl88RYb4A
     label: Digital Twin Manager
 build_artifact:
   - value: tc-pjJiURv9Y
