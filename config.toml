@@ -65,8 +65,8 @@ relativeURLs = true
     link = "https://tech.forums.softwareag.com/tag/Cumulocity-IoT"
 
   [[params.additionalResources]]
-    name = "Empower Portal"
-    link = "https://empower.softwareag.com/"
+    name = "Download Center"
+    link = "https://download.cumulocity.com/"
 
   [[params.additionalResources]]
     name = "Device Partners"
