@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Remove 'Module' suffix from module names in dtm-plugins"
+title: "Removed suffix from module names in dtm-plugins"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
