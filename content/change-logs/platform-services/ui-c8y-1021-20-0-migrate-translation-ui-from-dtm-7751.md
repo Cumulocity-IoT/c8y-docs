@@ -7,7 +7,7 @@ change_type:
     label: Feature
 component:
   - value: component-0UgqXH1Ys
-    label: Administration
+    label: Digital Twin Manager
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
