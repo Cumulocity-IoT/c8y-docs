@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Load translations from a dedicated application
+title: Translations loaded from a dedicated application
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
