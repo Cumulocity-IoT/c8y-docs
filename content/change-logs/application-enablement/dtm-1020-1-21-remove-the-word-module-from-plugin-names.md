@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1661"
 version: "1020.1.21"
 ---
-Previously, the names of all modules within the dtm-plugins included the word "Module". Now it has been removed.
+Previously, the names of all modules within the dtm-plugins included the word "Module". This suffix has now been removed.
