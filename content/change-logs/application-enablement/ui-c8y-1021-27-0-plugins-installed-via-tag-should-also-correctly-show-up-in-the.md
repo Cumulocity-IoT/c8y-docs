@@ -1,6 +1,6 @@
 ---
 date: ""
-title: plugins installed via tag should also correctly show up in the list (#7828)
+title: Plugins installed via tag are now correctly displayed in the list
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
