@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Migrated localization user interface from Digital Twin Manager application to Administration application
+date: '2024-12-19'
+title: >-
+  Migrated localization user interface from Digital Twin Manager application to
+  Administration application
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP

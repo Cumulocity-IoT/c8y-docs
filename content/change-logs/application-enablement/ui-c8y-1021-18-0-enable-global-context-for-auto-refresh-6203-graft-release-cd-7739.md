@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-12-19'
 title: Auto refresh can now be enabled globally in dashboards
 product_area: Application enablement & solutions
 change_type:

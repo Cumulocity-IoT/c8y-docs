@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-12-19'
 title: Added a hook service to allow extension of alarm details view with custom tabs
 product_area: Application enablement & solutions
 change_type:
