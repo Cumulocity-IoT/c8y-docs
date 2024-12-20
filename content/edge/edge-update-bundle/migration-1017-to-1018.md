@@ -121,10 +121,10 @@ For detailed guidance on configuring the Edge 10.18 appliance, consult [Configur
 
 
 ## Sample script to automate the data migration {#sample-script-to-automate-data-migration}
-{{< company-sag >}} provides the `edge-1017-to-1018-data-migration.sh` script as a reference for automating the data migration process. You can customize this script according to your requirements. Click [here](/files/edge/edge-1017-to-1018-data-migration.sh) to download the script.
+{{< company-c8y >}} provides the `edge-1017-to-1018-data-migration.sh` script as a reference for automating the data migration process. You can customize this script according to your requirements. Click [here](/files/edge/edge-1017-to-1018-data-migration.sh) to download the script.
 
 {{< c8y-admon-important >}}
-{{< company-sag >}} does not officially support this migration script. It is provided for reference purposes only.
+{{< company-c8y >}} does not officially support this migration script. It is provided for reference purposes only.
 {{< /c8y-admon-important >}}
 
 ### Using the script {#using-the-script}

@@ -24,7 +24,7 @@ The asset hierarchy is composed of two types of objects:
 
 * **Groups**: Objects which group single devices or other groups. Groups can either be created in the Cockpit application or in the Device Management application.
 
-* **Custom assets**: Objects defined by an asset model and created in the [Digital twin manager](/dtm/dtm-introduction/) application.
+* **Custom assets**: Objects defined by an asset model and created in the [Digital Twin Manager](/dtm/dtm-introduction/) application.
 
 * **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they must be connected to {{< product-c8y-iot >}}. This is done in the Device Management application. For details on connecting devices refer to [Registering devices](/device-management-application/registering-devices/).
 
@@ -82,4 +82,4 @@ If you manage trucks within the {{< product-c8y-iot >}} platform, then each truc
 
 For building management, it is most common that a group of sensors inside a building represents the building as a group communicating with the {{< product-c8y-iot >}} platform.
 
-If you need more properties and better visualization of business assets, we recommend you to use the [Digital twin manager](/dtm/dtm-introduction/) application. A custom asset created via the Digital twin manager application is also shown in the Cockpit application. It uses the chosen icon and additionally shows all properties in a list next to the subassets. These properties can be edited if the user has WRITE permission for the permission type "Inventory".
+If you need more properties and better visualization of business assets, we recommend you to use the [Digital Twin Manager](/dtm/dtm-introduction/) application. A custom asset created via the Digital Twin Manager application is also shown in the Cockpit application. It uses the chosen icon and additionally shows all properties in a list next to the subassets. These properties can be edited if the user has WRITE permission for the permission type "Inventory".

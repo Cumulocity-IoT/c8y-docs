@@ -39,7 +39,7 @@ relativeURLs = true
 
   oldguides = "//cumulocity.com/guides/welcome/intro-documentation/"
 
-  # Boolean to display the admonition stating it is a preview version
+  # Can be a boolean 'false' or a string (example: 'CD' or a release version like '2024'). This flag displays the admonition stating it is a preview version
   docsPreview = false
 
   # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
@@ -65,8 +65,8 @@ relativeURLs = true
     link = "https://techcommunity.cumulocity.com/"
 
   [[params.additionalResources]]
-    name = "Empower Portal"
-    link = "https://empower.softwareag.com/"
+    name = "Download Center"
+    link = "https://download.cumulocity.com/"
 
   [[params.additionalResources]]
     name = "Device Partners"
@@ -82,7 +82,7 @@ relativeURLs = true
 
   [[params.additionalResources]]
     name = "Product Support"
-    link = "https://empower.softwareag.com/"
+    link = "https://cumulocity.atlassian.net/servicedesk/customer/portals"
 
 
 # Customize

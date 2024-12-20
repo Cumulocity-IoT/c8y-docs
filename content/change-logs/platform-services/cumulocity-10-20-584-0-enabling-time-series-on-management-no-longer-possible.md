@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2024-12-12'
 title: Enabling time series support on the Management tenant is no longer possible
 product_area: Platform services
 change_type:

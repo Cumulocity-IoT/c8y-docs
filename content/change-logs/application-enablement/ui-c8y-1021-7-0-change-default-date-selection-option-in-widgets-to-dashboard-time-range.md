@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-12-12'
 title: Changed default date selection option in widgets configuration
 product_area: Application enablement & solutions
 change_type:

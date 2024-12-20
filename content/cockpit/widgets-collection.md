@@ -6,7 +6,7 @@ sector:
   - app_enablement
 ---
 
-The Cockpit application includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed.
+The Cockpit application includes pre-set widget types. Each widget type provides different parameters to configure and different data to be displayed.
 
 
 {{< c8y-admon-related >}}
@@ -171,13 +171,6 @@ The "Data point table" widget displays data based on selected data points, time 
 Out of range values, based on configured yellow and red ranges, are highlighted in the table.
 
 ![Data point table](/images/users-guide/cockpit/cockpit-datapointtable.png)
-
-At the top right of the data point list, an **Auto scroll** toggle determines the display behavior:
-
-* Auto-scroll on - When a new measurement arrives, the widget automatically scrolls to the top so that you can see the latest value.
-* Auto-scroll off - When a new measurement arrives, the display does not change and the table still shows the same snippet of data.
-
-![Auto-scroll toogle](/images/users-guide/cockpit/cockpit-data-point-table-widget-with-auto-scroll.png)
 
 ### Event list {#event-list}
 
