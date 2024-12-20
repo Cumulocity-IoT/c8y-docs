@@ -36,7 +36,7 @@ From an architectural perspective, scenario B looks like this:
 ![Scenario B architecture](/images/machine-learning-guide/scenario-b-architecture.png)
 
 {{< c8y-admon-info >}}
-The following article in the {{< c8y-tech-community >}} illustrates this scenario in more detail: [Performing Machine Learning Inference on {{< product-c8y-iot >}} Data using Open-Source Frameworks]({{< link-sag-tech-forum >}}/t/performing-machine-learning-inference-on-cumulocity-iot-data-using-open-source-frameworks/277988).
+The following article in the {{< c8y-tech-community >}} illustrates this scenario in more detail: [Performing Machine Learning Inference on {{< product-c8y-iot >}} Data using Open-Source Frameworks]({{< c8y-tech-community-link >}}/t/performing-machine-learning-inference-on-cumulocity-iot-data-using-open-source-frameworks/4924).
 {{< /c8y-admon-info >}}
 
 
