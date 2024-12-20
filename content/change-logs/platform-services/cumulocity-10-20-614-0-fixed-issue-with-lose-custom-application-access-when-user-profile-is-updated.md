@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Custom applications are no longer unintentionally cleared on updating a user profile
+date: '2024-12-19'
+title: >-
+  Custom applications are no longer unintentionally cleared on updating a user
+  profile
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

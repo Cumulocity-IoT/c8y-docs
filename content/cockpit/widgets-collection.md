@@ -12,7 +12,7 @@ The Cockpit application includes pre-set widget types. Each widget type provides
 {{< c8y-admon-related >}}
 - [Application enablement & solutions > Cockpit > Data explorer](/cockpit/data-explorer/) for details on visualizing your data when working with widgets.
 - [Platform administration > {{< standard-tenant >}} administration > Managing the ecosystem > Managing applications](/standard-tenant/ecosystem/#managing-applications) for details on managing applications.
-- Refer to the [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}) for a tutorial on customized widgets in the {{< product-c8y-iot >}} environment.
+- Refer to the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) for a tutorial on customized widgets in the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
 ### Alarm list {#alarm-list}
