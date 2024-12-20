@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Label for the "Display as" function no longer overlaps with other elements in the header
+date: '2024-12-12'
+title: >-
+  Label for the "Display as" function no longer overlaps with other elements in
+  the header
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

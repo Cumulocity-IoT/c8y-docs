@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1397"
 version: "1020.1.11"
 ---
-Inconsistent capitalization of labels, error messages and info messages has been unified throughout the Digital twin manager application.
+Inconsistent capitalization of labels, error messages and info messages has been unified throughout the Digital Twin Manager application.
