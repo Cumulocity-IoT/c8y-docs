@@ -62,7 +62,7 @@ relativeURLs = true
 
   [[params.additionalResources]]
     name = "Tech Community"
-    link = "https://tech.forums.softwareag.com/tag/Cumulocity-IoT"
+    link = "https://techcommunity.cumulocity.com/"
 
   [[params.additionalResources]]
     name = "Download Center"

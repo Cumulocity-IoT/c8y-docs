@@ -168,7 +168,7 @@ Next, we will add a widget to the report.
 Widgets can display maps, images, graphs, tables and other graphic representations of data. Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports.  Go to [Widgets collection](/cockpit/widgets-collection/) to see a list of all preset widgets that {{< product-c8y-iot >}} provides.
 
 {{< c8y-admon-info >}}
-You can also develop your own widgets and add them to your {{< product-c8y-iot >}} account. Refer to the [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}) for more information.
+You can also develop your own widgets and add them to your {{< product-c8y-iot >}} account. Refer to the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) for more information.
 {{< /c8y-admon-info >}}
 
 #### To add a widget to a dashboard or a report
