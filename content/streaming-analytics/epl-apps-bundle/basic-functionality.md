@@ -265,7 +265,7 @@ The above is the minimum list of permissions that a custom Apama microservice ne
 After February 2022, the location of the Docker images on Docker Hub has changed for all supported release trains.
 They are now available at *softwareag* instead of within the Docker Hub environment at *store/softwareag*.
 If you still use the images from the previous location, you must migrate them.
-See also [Apama Docker image availability on Docker Hub]({{< link-sag-tech-forum >}}/t/apama-docker-image-availability-on-docker-hub/260207).
+See also [Apama Docker image availability on Docker Hub]({{< c8y-tech-community-link >}}/t/apama-docker-image-availability-on-docker-hub/5724).
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-important >}}

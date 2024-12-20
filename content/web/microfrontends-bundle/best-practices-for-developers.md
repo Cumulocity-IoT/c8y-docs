@@ -275,6 +275,6 @@ For synchronization the microservice searches for all repositories with a certai
 The release should be a single ZIP file containing the plugin or blueprint.
 There is a security mechanism in place which is called scoping which disallows uploading an application without a certain prefix.
 This is to avoid that any synced package can overwrite a default application like cockpit or administration.
-Prefix the `key` and `contextPath` with the configured prefix (for {{< company-sag >}} it's `sag-pkg`).
+Prefix the `key` and `contextPath` with the configured prefix (for Software AG it's `sag-pkg`).
 
 All applications that are uploaded via repository connect are labeled `community` plugins and the user is informed of the license and maintenance agreements on installation (from version 10.18.0).
