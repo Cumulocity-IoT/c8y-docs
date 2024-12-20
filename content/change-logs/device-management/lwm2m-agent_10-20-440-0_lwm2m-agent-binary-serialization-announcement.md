@@ -1,6 +1,6 @@
 ---
-date:
-title: LWM2M Opaque type serialization to byte array is now deprecated  
+date: '2024-12-19'
+title: LWM2M Opaque type serialization to byte array is now deprecated
 product_area: Device management & connectivity
 change_type:
   - value: change-inv-3bw8e
