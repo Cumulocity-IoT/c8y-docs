@@ -36,7 +36,7 @@ A complete OpenAPI Specification for the {{< product-c8y-iot >}} REST API is ava
 
 Check out further resources for developers like
 
-- [{{< company-sag >}}{{< sag-dev-community >}}]({{< link-sag-dev-community >}}) - to collaborate with {{< product-c8y-iot >}} experts
+- [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) - to collaborate with {{< product-c8y-iot >}} experts
 - [{{< company-c8y >}}'s official GitHub organization]({{< link-c8y-github >}})
 
 See also [Additional resources](/additional-resources/).

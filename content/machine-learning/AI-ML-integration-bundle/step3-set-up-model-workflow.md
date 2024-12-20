@@ -14,5 +14,5 @@ Once the AI/ML model is deployed, you need to set up a workflow to:
 To orchestrate the model execution, this workflow can be set up by leveraging the Streaming Analytics tooling, either Analytics Builder or EPL apps. More information on the specific tooling can be found in [Streaming Analytics](/streaming-analytics/introduction-analytics/).
 
 {{< c8y-admon-info >}}
-In the {{< sag-dev-community >}} article for [scenario B](#scenario-b-embedded-hosting-using-custom-microservice), a detailed description on how to create this can be found: [How to create an ML Inference workflow using Streaming Analytics]({{< link-sag-tech-forum >}}/t/performing-machine-learning-inference-on-cumulocity-iot-data-using-open-source-frameworks/277988#how-to-create-an-ml-inference-workflow-using-streaming-analytics-13).
+In the {{< c8y-tech-community >}} article for [scenario B](#scenario-b-embedded-hosting-using-custom-microservice), a detailed description on how to create this can be found: [How to create an ML Inference workflow using Streaming Analytics]({{< c8y-tech-community-link >}}/t/performing-machine-learning-inference-on-cumulocity-iot-data-using-open-source-frameworks/4924).
 {{< /c8y-admon-info >}}

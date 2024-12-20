@@ -20,4 +20,4 @@ These are some useful references to get started with the basic technologies unde
 You must have at least version 11 of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) installed in your development environment as older versions of the JRE and JDK are not updated with the latest security patches and are not recommended for use in production.
 {{< /c8y-admon-important >}}
 
-If you face any issue or need technical support, refer to [{{< company-sag >}} {{< sag-dev-community >}}]({{< link-sag-dev-community >}}). You will find plenty of useful information there.
+If you face any issue or need support, refer to [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}). You will find plenty of useful information there.

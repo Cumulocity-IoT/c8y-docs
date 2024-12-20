@@ -19,9 +19,9 @@ Visit the [{{< product-c8y-iot >}} YouTube channel](https://www.youtube.com/@Cum
 To learn about [what's new in {{< product-c8y-iot >}}](https://www.youtube.com/@CumulocityIoT/playlists?view=50&sort=dd&shelf_id=6), our YouTube channel also offers content which covers the new and enhanced functionality available in a specific product release.
 
 
-### TECH Community {#tech-community}
+### Tech Community {#tech-community}
 
-Collaborate with {{< product-c8y-iot >}} experts on our [{{< company-sag >}} {{< sag-dev-community >}}]({{< link-sag-dev-community >}}) website.
+Collaborate with {{< product-c8y-iot >}} experts on our [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) website.
 
 Here you can:
 
