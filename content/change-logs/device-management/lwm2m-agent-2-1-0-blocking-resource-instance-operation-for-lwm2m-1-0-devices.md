@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-ggH2M4hf3
     label: lwm2m-agent
-ticket: DM-3989
+ticket: DM-4225
 version: 2.1.0
 ---
 
