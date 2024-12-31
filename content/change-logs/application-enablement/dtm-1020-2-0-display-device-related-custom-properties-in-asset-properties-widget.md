@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Display device-related custom properties in Asset Properties  widget"
+title: "Device-related custom properties displayed in Asset properties widget"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1014"
 version: "1020.2.0"
 ---
-Previously, the select property dialog in the asset property widget, displayed only the default and computed properties of a device. With this change, any custom fragments added to the device will also be displayed.
+Previously, the select property dialog in the "Asset properties" widget only displayed the default and computed properties of a device. With this change, all custom fragments added to the device are also displayed.
