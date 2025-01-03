@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Moved the size request into the server side data callback.
+title: Data grid size automatically adjusts when devices are modified
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
