@@ -27,7 +27,7 @@ jobs:
     name: Build Hugo
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.100.1
+      HUGO_VERSION: 0.132.2
     steps:
     - name: Install Hugo CLI
       if: ${{ github.event.pull_request.state != 'closed' }}

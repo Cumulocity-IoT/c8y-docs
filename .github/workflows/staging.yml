@@ -32,7 +32,7 @@ jobs:
       matrix:
         env: [staging-resources,prod]
     env:
-      HUGO_VERSION: 0.100.1
+      HUGO_VERSION: 0.132.2
     environment:
         name: ${{ matrix.env }}
     steps:
