@@ -296,7 +296,7 @@ You can use the Apama EPL Apps Tools on GitHub to script uploads of your EPL app
 
 Apama EPL Apps Tools is available from [https://github.com/Cumulocity-IoT/apama-eplapps-tools](https://github.com/Cumulocity-IoT/apama-eplapps-tools). See the [EPL Apps Tools documentation](https://cumulocity-iot.github.io/apama-eplapps-tools/) for detailed information.
 
-For more information on PySys, see the [API Reference for Python]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ApaDoc_pydoc_documentation.html) that you can access from the Apama documentation.
+For more information on PySys, see the [API Reference for Python]({{< link-apama-webhelp >}}/related/pydoc/index.html) that you can access from the Apama documentation.
 
 ### Supported REST services {#supported-rest-services}
 
