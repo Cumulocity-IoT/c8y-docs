@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4147
 version: 1021.29.0
 ---
-Moved the size request into the server side data callback.
+When the data grid is updated (e.g., creating, deleting, or updating a device), the size is now adjusted automatically. This ensures accurate pagination and reduces unnecessary network requests. Users do not need to take any extra steps.
