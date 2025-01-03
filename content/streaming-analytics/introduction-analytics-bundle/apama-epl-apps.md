@@ -10,4 +10,4 @@ You can develop EPL apps (that is, single \*.mon files) directly within {{< prod
 
 A quick way to get started is to explore the code of the EPL samples that can be accessed from the EPL editor. See [Developing apps with the Streaming Analytics application](/streaming-analytics/epl-apps/#dev-apps-with-sa) for information on how to create an EPL app and access the samples. For a start, use one of the simpler samples with temperature measurements, such as "Create an alarm if a measurement exceeds a threshold value". You can immediately see results using this sample. Add your own EPL code to the sample and try out your changes.
 
-You use the Apama API for interacting with {{< product-c8y-iot >}}. For detailed information, see the `com.apama.cumulocity` package in the  [API Reference for EPL (ApamaDoc)]({{< link-apamadoc-api >}}index.html?com/apama/cumulocity/package-summary.html), which is part of the Apama documentation.
+You use the Apama API for interacting with {{< product-c8y-iot >}}. For detailed information, see the `com.apama.cumulocity` package in the  [API Reference for EPL (ApamaDoc)]({{< link-apamadoc-api >}}), which is part of the Apama documentation.
