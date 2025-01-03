@@ -1,0 +1,19 @@
+---
+date: 2024-03-26T10:33:39.707Z
+title: Separate security modes for Bootstrap and LWM2M server
+change_type:
+  - value: change-QHu1GdukP
+    label: Feature
+product_area: Device management & connectivity
+component:
+  - value: component-1KLUzmqfe
+    label: LWM2M
+build_artifact:
+  - value: tc-QHwMfWtBk7
+    label: cumulocity
+ticket: DM-554
+version: 10.18.288.0
+---
+Now all LWM2M device security modes can be selected separately for Bootstrap server and LWM2M server connections. This can be defined either during the device registration or using the **LWM2M configuration** tab of the device.
+Now in LWM2M bulk device registration, it is required to define security mode for both LWM2M server with securityMode field and bootstrap server with bootstrapSecurityMode field in the CSV file.
+For details, refer to the [LWM2M security fields](/protocol-integration/lwm2m/#all-security-field-details) user documentation.
