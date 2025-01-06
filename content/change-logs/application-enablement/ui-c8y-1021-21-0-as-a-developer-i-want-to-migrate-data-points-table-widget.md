@@ -1,5 +1,5 @@
 ---
-date: 2025-01-06
+date: '2025-01-06'
 title: Enhanced Data points table widget
 product_area: Application enablement & solutions
 change_type:
