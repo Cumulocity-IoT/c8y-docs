@@ -193,4 +193,4 @@ This is not going to influence the other release branches as long as they do not
 
 
 ---
-© Cumulocity GmbH  2025 + All rights reserved.
+© Cumulocity GmbH  2024 + All rights reserved.
