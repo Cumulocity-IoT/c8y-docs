@@ -1,6 +1,6 @@
 ---
 date: 2024-03-26T10:33:39.707Z
-title: Separate security modes for Bootstrap and LWM2M server
+title: Separate security modes for bootstrap and LWM2M server
 change_type:
   - value: change-QHu1GdukP
     label: Feature
