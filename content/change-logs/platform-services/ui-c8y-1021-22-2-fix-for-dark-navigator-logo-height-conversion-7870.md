@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62119
 version: 1021.22.2
 ---
-The navigator logo was not displayed correctly in the dark mode after changing its size. This issue has now been fixed.
+The navigator logo was not displayed correctly in the dark mode after changing its size in the branding editor. This issue has now been fixed.
