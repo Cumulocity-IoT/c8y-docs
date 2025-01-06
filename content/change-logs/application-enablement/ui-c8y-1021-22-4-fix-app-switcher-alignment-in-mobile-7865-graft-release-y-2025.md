@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix-app-switcher-alignment-in-mobile (#7865) [GRAFT][release/y2025] (#7881)
+title: Fixed alignment of app switcher in mobile view
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
