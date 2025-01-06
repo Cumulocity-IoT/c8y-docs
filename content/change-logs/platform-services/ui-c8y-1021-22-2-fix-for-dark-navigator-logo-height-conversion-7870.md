@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix for dark navigator logo height conversion (#7870)
+title: Navigator logo in dark mode correctly displayed after changing its size
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
