@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4147
 version: 1021.29.0
 ---
-When the data grid is updated (e.g., creating, deleting, or updating a device), the size is now adjusted automatically. This ensures accurate pagination and reduces unnecessary network requests. Users do not need to take any extra steps.
+When the device data grid is updated (for example, in case of creating or deleting a device), the size is now adjusted automatically. This ensures accurate pagination and reduces unnecessary network requests. Users do not need to take any extra steps.
