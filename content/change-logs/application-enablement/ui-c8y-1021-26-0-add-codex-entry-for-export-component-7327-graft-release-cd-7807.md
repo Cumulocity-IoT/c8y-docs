@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-01-06
 title: Added Codex entry for the export component
 product_area: Application enablement & solutions
 change_type:

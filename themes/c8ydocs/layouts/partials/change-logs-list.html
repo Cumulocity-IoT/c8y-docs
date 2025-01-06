@@ -19,9 +19,9 @@
           </header>
           <div class="lead">
             {{ .Content }}
-            {{ if site.Data.date_settings.yearly_release}} 
-              <p class="small">Displaying all changes since Release 10.18</p>
-              <hr> 
+            {{ if site.Data.date_settings.yearly_release}}
+              <p class="small">Displaying all changes since Release 2024</p>
+              <hr>
             {{else}}
               <p class="small">Displaying all changes since {{site.Data.date_settings.date.Format "January 2, 2006"}}</p>
             {{end}}
@@ -45,7 +45,7 @@
         {{else}}
         {{ $currentCollections.Set "list" ($headless1.Resources | union $headless2.Resources | union $headless3.Resources | union $headless4.Resources ) }}
       {{end}}
-      
+
       {{ $merged := $currentCollections.Get "list" }}
 
       <div id="emptystate" style="display: none">
@@ -67,7 +67,7 @@
       {{ $dateLimit := site.Data.date_settings.date }}
 
       {{ range where $reusablePages "Date" "ge" $dateLimit}}
-      {{/*  Based on the yearly release boolean, retrives 
+      {{/*  Based on the yearly release boolean, retrives
           * yearly_release: true -  show all entries
           * yearly_release: false - don't show "Fix" entries
          */}}
@@ -157,7 +157,7 @@
                 <small class="text-muted">Product area</small><br>
                 <p>{{.Params.product_area}}</p>
               </button>
-            
+
               <button class="btn-metadata" data-tag="component-{{(index .Params.component 0).label | urlize}}">
                 <small class="text-muted">Component</small>
                 <p>{{(index .Params.component 0).label}}</p>
@@ -177,7 +177,7 @@
               {{end}}
             </div>
           </div>
-          <!-- 
+          <!--
           <div class="change-log__version">
             {{ if site.Data.date_settings.yearly_release}}
                 {{ if .Params.version}}
