@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-554
 version: 10.18.288.0
 ---
-Under **Connectivity** in the **LWM2M configuration** tab, the Bootstrap or LWM2M server connection can be disabled for a device.
+Under **Connectivity** in the **LWM2M configuration** tab, the bootstrap or LWM2M server connection can be disabled for a device.
