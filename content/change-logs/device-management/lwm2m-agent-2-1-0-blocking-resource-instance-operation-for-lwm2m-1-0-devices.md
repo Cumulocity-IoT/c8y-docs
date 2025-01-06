@@ -12,9 +12,8 @@ build_artifact:
   - value: tc-ggH2M4hf3
     label: lwm2m-agent
 ticket: DM-4225
-version: 2.1.0
+version: 1021.0.0
 ---
 
 The LwM2M resource instance level operations have been introduced in LwM2M 1.1 but are not supported by LwM2M 1.0 devices.
-This is now incorporated in {{< product-c8y-iot >}} platform operations.
-When the LwM2M resource instance level operations are created in the {{< product-c8y-iot >}} platform such as read /5/0/8/0 against a LwM2M 1.0 device, the operation will be directly failed by the LWM2M service and not be sent to the device.
+When LwM2M resource instance level operations (Example: `read /5/0/8/0`) against a LwM2M 1.0 device are created, the operation will now directly fail and not be sent to the device.
