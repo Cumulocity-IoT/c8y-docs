@@ -15,5 +15,5 @@ ticket: DM-554
 version: 10.18.288.0
 ---
 All LWM2M device security modes can now be selected separately for bootstrap server and LWM2M server connections. This can be defined either during the device registration or via the respective settings in the **LWM2M configuration** tab of the device.
-Now in LWM2M bulk device registration, it is required to define security mode for both LWM2M server with securityMode field and bootstrap server with bootstrapSecurityMode field in the CSV file.
+For LWM2M bulk device registrations, it is now required to define the security mode for both LWM2M server in the `securityMode` field and the bootstrap server in the `bootstrapSecurityMode` field in the CSV file.
 For details, refer to the [LWM2M security fields](/protocol-integration/lwm2m/#all-security-field-details) user documentation.
