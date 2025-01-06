@@ -15,4 +15,4 @@ ticket: DM-554
 version: 10.18.288.0
 ---
 During device registration, the option "PSK generated" can be selected for the LWM2M server connection. If this option is selected, the LWM2M agent generates the PSK ID and PSK key credentials for the device. These will be set to the device during the bootstrap process.
-For details, refer to [LWM2M security settings](/protocol-integration/lwm2m/#security-settings).
+For details, refer to the [LWM2M security settings](/protocol-integration/lwm2m/#security-settings).
