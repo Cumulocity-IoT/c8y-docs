@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61682
 version: 1021.22.4
 ---
-fix-app-switcher-alignment-in-mobile (#7865) [GRAFT][release/y2025] (#7881)
+The app switcher in the mobile view of Cumulocity was previously not aligned correctly. This issue has now been resolved. Users will now see the app switcher properly aligned in the center when using Cumulocity on mobile devices, improving the overall usability and visual consistency of the platform.
