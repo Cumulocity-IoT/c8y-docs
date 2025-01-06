@@ -16,4 +16,4 @@ version: 10.18.288.0
 ---
 LWM2M device connections with X.509 certificates are now supported.
 The X.509 security mode can be selected separately for the bootstrap server and the LWM2M server either during device registration or, for existing devices, by the respective setting in the **LWM2M configuration** tab.
-The Certificate Authority that issued device certificates must be added and enabled in [trusted certificates](/docs/device-management-application/managing-device-data/#managing-trusted-certificates) in the tenant.
+The Certificate Authority that issued device certificates must be added and enabled in the [trusted certificates](/docs/device-management-application/managing-device-data/#managing-trusted-certificates) in the tenant.
