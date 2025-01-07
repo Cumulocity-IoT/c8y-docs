@@ -127,11 +127,11 @@ This starts all connectivity plug-ins immediately on start up.
 Allows EPL apps to make HTTP calls.
 * **Cumulocity IoT > Cumulocity Notifications 2.0** <br>
 Exposes the {{< product-c8y-iot >}} client to EPL apps using the Notifications 2.0 mechanism.
-For general information on how to receive {{< product-c8y-iot >}} update notifications, see [Receiving update notifications]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_receiving_update_notifications.html) in the Apama documentation.
+For general information on how to receive {{< product-c8y-iot >}} update notifications, see [Receiving update notifications]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in#receiving-update-notifications) in the Apama documentation.
 
 {{< c8y-admon-info >}}
 The **Cumulocity Notifications 2.0** connectivity bundle has been added for receiving notifications from {{< product-c8y-iot >}} using the Notifications 2.0 mechanism. The existing **Cumulocity Client** connectivity bundle that uses the legacy long-polling mechanism is deprecated in favor of this new bundle. In addition, it is now possible to add the **Cumulocity REST Support** connectivity bundle if you do not receive any notifications. You must only add one of these three bundles to your project.
-For information on how to migrate existing Apama projects to Notifications 2.0, see [Migrating from Cumulocity Client to Cumulocity Notifications 2.0]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ApaRelNot_10155_migrate-to-notifications.html) in the Apama documentation.
+For information on how to migrate existing Apama projects to Notifications 2.0, see [Migrating from Cumulocity Client to Cumulocity Notifications 2.0]({{< link-apama-webhelp >}}/change-logs/#10.15/cumulocity-10155-clientbundledeprecated) in the Apama documentation.
 {{< /c8y-admon-info >}}
 
 The bundles above are the only ones that are permissible in an EPL app, so be careful not to add any other bundles or your app may not work when activated in {{< product-c8y-iot >}}.
