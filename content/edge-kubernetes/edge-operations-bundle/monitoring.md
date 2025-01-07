@@ -21,7 +21,7 @@ Metrics related to {{< product-c8y-iot >}} Core, prefixed by **c8yedge_core**
 ### Apama Metrics {#apama-metrics}
 Metrics related to the Apama Microservice, prefixed by **c8yedge_apama**
 
-For more details, see [Monitoring with Prometheus]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DepAndManApaApp_monitoring_with_prometheus.html) in the Apama documentation.
+For more details, see [Monitoring with Prometheus]({{< link-apama-webhelp >}}/deploying-and-managing-apama-applications/monitoring-with-prometheus/) in the Apama documentation.
 
 |<div style="width:450px">Metric</div>|<div style="width:250px">Description</div>|Interpretation
 |:---|:---|:---

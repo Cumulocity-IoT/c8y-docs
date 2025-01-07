@@ -331,7 +331,8 @@ You cannot override a property injected by Spring `@Value("${property.name}")`.
 
 ### Logging {#logging}
 
-The standard output should be used for hosted deployment.
+The standard output should be used for hosted deployments.
+For more details on how to use your own log configuration file refer to [Logging](/microservice-sdk/java/#legacy-logging).
 
 ### Maven plugin {#maven-plugin}
 
@@ -655,18 +656,30 @@ For external/legacy deployment, the following paths will be searched in order to
 * {CONF_DIR}/{application_name}
 * /etc/{application_name}
 
-#### Logging {#logging}
+#### Logging {#legacy-logging}
 
-For external/legacy deployment, logging into the application implies using [Spring Logging](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html).
-The following locations are searched for the Logback configuration file:
+##### Add your own log configuration file
 
-* {UPPERCASE(application_name)}_CONF_DIR/.{application_name}/logging.xml
-* {UPPERCASE(application_name)}_CONF_DIR/{application_name}/logging.xml
-* {user/home}/.{application_name}/logging.xml
-* {user/home}/{application_name}/logging.xml
-* {CONF_DIR}/.{application_name}/logging.xml
-* {CONF_DIR}/{application_name}/logging.xml
-* /etc/{application_name}/logging.xml
+* To customize the logging configuration for your microservice instead of using the default configuration, create a log
+configuration file in the _configuration_ folder of your microservice project.
+* The file must adhere to the naming convention *\<application-name\>-logging.xml*. 
+This ensures that your custom log configuration replaces the default configuration file 
+with the same name in the resulting Docker image.
+* Once deployed, the customized log configuration file will be located in the */etc/\<artifactId\>*
+directory within the microservice pod.
+
+##### Locations to be searched for log configuration file
+
+For external/legacy deployments, logging into the application implies using [Spring Logging](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html).
+The following locations are searched for the logback configuration file:
+
+* {UPPERCASE(application_name)}_CONF_DIR/.{application_name}/*-logging.xml
+* {UPPERCASE(application_name)}_CONF_DIR/{application_name}/*-logging.xml
+* {user/home}/.{application_name}/*-logging.xml
+* {user/home}/{application_name}/*-logging.xml
+* {CONF_DIR}/.{application_name}/*-logging.xml
+* {CONF_DIR}/{application_name}/*-logging.xml
+* /etc/{application_name}/*-logging.xml
 
 ### Upgrade to Microservice SDK 10.13+ {#upgrade-to-microservice-sdk-1013}
 
