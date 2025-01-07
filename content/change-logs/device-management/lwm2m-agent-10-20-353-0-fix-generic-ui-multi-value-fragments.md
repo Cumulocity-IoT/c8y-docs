@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-09-19
 title: LWM2M agent now always stores data from multi-instance resources correctly
 product_area: Device management & connectivity
 change_type:

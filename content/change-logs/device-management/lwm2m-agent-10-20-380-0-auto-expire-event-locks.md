@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-09-19
 title: Improved LWM2M decoder event execution
 product_area: Device management & connectivity
 change_type:

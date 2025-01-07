@@ -62,7 +62,7 @@ The first message sent will create our device. Although the static templates sup
 100,My first MQTT device,c8y_MQTTdevice
 ```
 
-Afterwards, you will find this device in the Device management application as a new device. If you switch to the **Identity** tab of the device you will notice that there was an identity created automatically to link the device to the MQTT ClientId.
+Afterwards, you will find this device in the Device Management application as a new device. If you switch to the **Identity** tab of the device you will notice that there was an identity created automatically to link the device to the MQTT ClientId.
 
 Besides the name and the type, the device does not have more information, so master data must be added.
 
@@ -77,7 +77,7 @@ The required interval can be set with the template `117` and just takes a single
 117,10
 ```
 
-After a reload of the **Info** page of your device in the Device management application, you should see the information we just added.
+After a reload of the **Info** page of your device in the Device Management application, you should see the information we just added.
 
 ##### Creating measurements {#creating-measurements}
 
@@ -106,7 +106,7 @@ Besides the measurements above, we can also use the template `200` to create a m
 200,myCustomTemperatureMeasurement,fahrenheit,75.2,F
 ```
 
-After a reload in the Device management application, you should see 4 graphs with the newly added measurements in the **Measurements** tab of your device.
+After a reload in the Device Management application, you should see 4 graphs with the newly added measurements in the **Measurements** tab of your device.
 
 ##### Creating alarms {#creating-alarms}
 
@@ -148,7 +148,7 @@ The template `401` lets you create location events and takes latitude, longitude
 401,51.227741,6.773456
 ```
 
-In the Device management application, you can see one event in the event list but the location has not been updated. This is because on REST these are different requests. Instead of the template `401`, you can use the template `402` in MQTT. It works exactly the same as `401` but additionally it also updates the position of the device itself.
+In the Device Management application, you can see one event in the event list but the location has not been updated. This is because on REST these are different requests. Instead of the template `401`, you can use the template `402` in MQTT. It works exactly the same as `401` but additionally it also updates the position of the device itself.
 
 ```text
 402,51.227741,6.773456

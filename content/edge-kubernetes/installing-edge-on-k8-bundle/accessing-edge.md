@@ -78,7 +78,7 @@ To access Edge, enter one of the following URLs in the browser:
 
 This will bring up the below login screen. Enter the default credentials username "admin" and password "admin-pass" to log in in to both the "edge" tenant and the {{< management-tenant >}}.
 
-![Login prompt](/files/edge-k8s/edge-k8s-login-banner.png)
+![Login prompt](/images/edge-k8s/edge-k8s-login-banner.png)
 
 On the first login, you see the dialog window below, forcing you to change the password. The email address to change the password is the one you specified in the {{< product-c8y-iot >}} Edge CR (or myown@iot.com if you followed the Quickstart installation steps). Alternatively, run the following command to retrieve the email address:
 
@@ -88,7 +88,7 @@ On the first login, you see the dialog window below, forcing you to change the p
 Substitute the Edge name and namespace name, which is currently **c8yedge** in the command, with the specific Edge name and namespace name you have specified in your Edge CR.
 {{< /c8y-admon-info >}}
 
-![Reset password](/files/edge-k8s/edge-k8s-reset-password.png)
+![Reset password](/images/edge-k8s/edge-k8s-reset-password.png)
 
 {{< c8y-admon-important >}}
 After a successful deployment, it is crucial to access both the {{< management-tenant >}} and the "edge" tenant and change their respective admin credentials.
@@ -96,10 +96,10 @@ After a successful deployment, it is crucial to access both the {{< management-t
 
 If you are logging in for the first time, you will see a cookie banner at the bottom of the login screen:
 
-![Cookie Banner](/files/edge-k8s/edge-k8s-cookie-banner.png)
+![Cookie Banner](/images/edge-k8s/edge-k8s-cookie-banner.png)
 
 {{< c8y-admon-info >}}
-The cookie banner is turned on by default. This feature can be configured. For more information see [Branding](/edge/using-edge/#branding).
+The cookie banner is turned on by default. This feature can be configured. For more information, see [Branding](/edge/using-edge/#branding).
 {{< /c8y-admon-info >}}
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
@@ -107,7 +107,7 @@ The cookie banner is turned on by default. This feature can be configured. For m
 * Click **Preferences** to select your individual cookie preferences:
 	* **Required** - Required to enable core site functionality. They perform a task or operation without which a site's functionality would not be possible. Required cookies cannot be disabled.
 	* **Functional** - Used to track site usage and to process personal data to measure and improve usability and performance. Functional cookies must be actively enabled.
-* Click **See also our Privacy Notice** to open the [{{< company-sag >}} privacy statement]({{< link-sag-privacy-statement >}}) with details on the {{< company-sag >}} privacy policy.
+* Click **See also our Privacy Notice** to open the [{{< company-c8y >}} privacy statement](/legal-notices/privacy-notice/) with details on the {{< company-c8y >}} privacy policy.
 
 {{< c8y-admon-info >}}
 If you have enabled functional cookies you can opt out of the product experience tracking later on via the **User settings** dialog, see [User options and settings](/get-familiar-with-the-ui/user-settings/).

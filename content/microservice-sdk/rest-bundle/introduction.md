@@ -63,7 +63,7 @@ From this point, you can navigate further to the different returned objects. For
 $ curl -u <username>:<password> https://<yourTenant>.{{< domain-c8y >}}/inventory/managedObjects
 ```
 
-You will notice that just a subset of the items in the inventory is actually returned, a so-called "page". More information on page handling can be found under [Rest usage > Query result paging](https://{{< domain-c8y >}}/api/core/#section/REST-implementation/REST-usage) in the {{< openapi >}}.
+You will notice that just a subset of the items in the inventory is actually returned, a so-called "page". More information on page handling can be found under [REST usage > Query result paging](https://{{< domain-c8y >}}/api/core/#section/REST-implementation/REST-usage) in the {{< openapi >}}.
 
 ### Using Postman {#using-postman}
 

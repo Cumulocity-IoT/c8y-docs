@@ -20,7 +20,7 @@ Run the below commands to update the `/etc/hosts` file on every machine (the wor
 
 ```bash
 PRIVATE_REGISTRY_HOSTNAME="<PRIVATE-REGISTRY-HOSTNAME>"  	# Change it with your private registry's domain or hostname
-PRIVATE_REGISTRY_IP_ADDRESS="<PRIVATE-REGISTRY-IP-ADDRESS>" # Change it with your private registry's IP Address 
+PRIVATE_REGISTRY_IP_ADDRESS="<PRIVATE-REGISTRY-IP-ADDRESS>" # Change it with your private registry's IP Address
 
 # Update /etc/hosts to resolve the Harbor domain
 echo "${PRIVATE_REGISTRY_IP_ADDRESS} ${PRIVATE_REGISTRY_HOSTNAME}" | sudo tee -a /etc/hosts
@@ -30,7 +30,7 @@ echo "${PRIVATE_REGISTRY_IP_ADDRESS} ${PRIVATE_REGISTRY_HOSTNAME}" | sudo tee -a
 Run the commands below to modify the CoreDNS configuration of the Kubernetes cluster to enable resolution of the private registry's domain or host:
 ```bash
 PRIVATE_REGISTRY_HOSTNAME="<PRIVATE-REGISTRY-HOSTNAME>"  	# Change it with your private registry's domain or hostname
-PRIVATE_REGISTRY_IP_ADDRESS="<PRIVATE-REGISTRY-IP-ADDRESS>" # Change it with your private registry's IP Address 
+PRIVATE_REGISTRY_IP_ADDRESS="<PRIVATE-REGISTRY-IP-ADDRESS>" # Change it with your private registry's IP Address
 
 # Retrieve the existing NodeHosts value
 EXISTING_NODEHOSTS=$(kubectl get configmap coredns -n kube-system -o jsonpath='{.data.NodeHosts}')
@@ -67,7 +67,7 @@ You should restart the container runtime and Kubernetes cluster after running th
 {{< /c8y-admon-important >}}
 
 ### Download and publish required software to the private registry
-This section outlines the steps to download the required software from the [{{< company-c8y >}} registry](https://registry.c8y.io/) and publish them to the private registry. 
+This section outlines the steps to download the required software from the [{{< company-c8y >}} registry](https://registry.c8y.io/) and publish them to the private registry.
 
 For this you need a workstation with full internet access to download the required software from the remote registry and push them into the private registry. Make sure this workstation meets the following prerequisites.
 
@@ -96,8 +96,8 @@ If your private registry is a Harbor registry, you need to pass an extra option 
 {{< /c8y-admon-info >}}
 
 ```bash
-EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"     	# Edge registry credentials can be obtained from the {{< company-sag >}} logistics team for your region
-EDGE_REGISTRY_PASSWORD="<EDGE-REGISTRY-PASS>" 	# Edge registry credentials can be obtained from the {{< company-sag >}} logistics team for your region
+EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"     	# Edge registry credentials can be obtained from the {{< company-c8y >}} logistics team for your region
+EDGE_REGISTRY_PASSWORD="<EDGE-REGISTRY-PASS>" 	# Edge registry credentials can be obtained from the {{< company-c8y >}} logistics team for your region
 
 PRIVATE_REGISTRY_HOST="<PRIVATE-REGISTRY-HOSTNAME>:<PRIVATE-REGISTRY-PORT>"  # Change it with your private registry domain or hostname:port or ip-address:port
 PRIVATE_REGISTRY_USERNAME="<PRIVATE-REGISTRY-USER>"                          # Change it with the credentials to access your private registry
@@ -107,13 +107,13 @@ c8yedge_registry_sync sync -v {{< c8y-edge-current-version >}}.0.1 -sr registry.
 ```
 
 {{< c8y-admon-info >}}
-To request the Edge registry credentials, contact the {{< company-sag >}} logistics team for your region:
+To request the Edge registry credentials, contact the {{< company-c8y >}} logistics team for your region:
 * North and South America: LogisSrvus@softwareagusa.com
 * All Other Regions: LogisticsServiceCenterGER@softwareag.com
 {{< /c8y-admon-info >}}
 
 ### Update custom-environment-variables ConfigMap
-Run the below commands to create or update the custom-environment-variables ConfigMap with key "ca.crt" for the Edge operator to trust the private regsitry's certificate (if it is configured with a self-signed certificate):
+Run the below commands to create or update the custom-environment-variables ConfigMap with key "ca.crt" for the Edge operator to trust the private registry's certificate (if it is configured with a self-signed certificate):
 
 ```bash
 EDGE_NAMESPACE=c8yedge                    									 # Change namespace name if you want to deploy Edge operator and Edge in a different namespace

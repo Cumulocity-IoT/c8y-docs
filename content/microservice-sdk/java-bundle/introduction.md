@@ -14,10 +14,10 @@ You can develop microservices for {{< product-c8y-iot >}} with any IDE and build
 These are some useful references to get started with the basic technologies underlying the SDK:
 
 - The client libraries use the {{< product-c8y-iot >}} REST interfaces as underlying communication protocol as described in the section [Using the REST interface](/microservice-sdk/rest).
-- All examples are open source and can be reviewed at the [{{< product-c8y-iot >}} microservices examples](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/microservices) repository.
+- All examples are open source and can be reviewed at the [{{< product-c8y-iot >}} microservices examples]({{< link-c8y-github >}}/cumulocity-examples/tree/develop/microservices) repository.
 
 {{< c8y-admon-important >}}
 You must have at least version 11 of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) installed in your development environment as older versions of the JRE and JDK are not updated with the latest security patches and are not recommended for use in production.
 {{< /c8y-admon-important >}}
 
-If you face any issue or need technical support, refer to [{{< company-sag >}} {{< sag-dev-community >}}]({{< link-sag-dev-community >}}). You will find plenty of useful information there.
+If you face any issue or need support, refer to [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}). You will find plenty of useful information there.

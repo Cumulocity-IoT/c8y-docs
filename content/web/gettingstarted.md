@@ -9,7 +9,7 @@ sector:
 This guide will setup your first application. The first step is to install the `@angular/cli` in the right version.
 
 ```bash
-npx @angular/cli@v17-lts new --style=less --standalone=false
+npx @angular/cli@18 new --style=less
 ```
 
 Second, navigate to the folder and add the `@c8y/websdk` package to your Angular application:
@@ -157,4 +157,4 @@ example `C8Y_USER` for the `-U` flag.
 
 ### Next steps
 
-- Refer to the [{{< product-c8y-iot >}} Codex](https://styleguide.cumulocity.com/apps/codex/#/) for more information on developing applications in the {{< product-c8y-iot >}} environment. Moreover find various related tutorials in the [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}).
+- Refer to the [{{< product-c8y-iot >}} Codex](https://styleguide.cumulocity.com/apps/codex/#/) for more information on developing applications in the {{< product-c8y-iot >}} environment. Moreover find various related tutorials in the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}).

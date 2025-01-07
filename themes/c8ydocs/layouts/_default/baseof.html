@@ -4,6 +4,7 @@
   <body data-spy="scroll" data-target="#main-nav" data-offset="400" {{if .IsHome }} class="isHome" {{end}}>
     <script type="text/javascript">
       const docsPreview = {{.Site.Params.docsPreview}};
+      const docsPreviewString = {{.Site.Params.product_c8y_iot}} + ' ' + docsPreview + ' ' + {{if not site.Data.date_settings.yearly_release}} 'deployments' {{else}} 'release' {{end}};
     </script>
     {{- partial "header.html" . -}}
     {{- partial "to-the-top.html" . -}}

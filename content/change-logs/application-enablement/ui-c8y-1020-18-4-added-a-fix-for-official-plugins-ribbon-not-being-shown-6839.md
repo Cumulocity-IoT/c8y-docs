@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-09-05'
 title: Plugins now shown with correct type "official" on the Extensions page
 product_area: Application enablement & solutions
 change_type:

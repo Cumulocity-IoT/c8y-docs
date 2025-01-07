@@ -25,7 +25,7 @@ Enter password to access Edge operator registry:
 ```
 
 {{< c8y-admon-info >}}
-To request the Edge registry credentials, contact the {{< company-sag >}} logistics team for your region:
+To request the Edge registry credentials, contact the {{< company-c8y >}} logistics team for your region:
 * North and South America: LogisSrvus@softwareagusa.com
 * All Other Regions: LogisticsServiceCenterGER@softwareag.com
 {{< /c8y-admon-info >}}

@@ -428,9 +428,13 @@ This must be a finite and positive number.</p>
 `apama.analyticskit.blocks.core.Pulse`
 
 <p>Converts a non-pulse input into a pulse output.</p>
-<p>This is useful with blocks which consume both pulse and non-pulse values, and where the input value is treated as non-pulse without the explicit conversion.
+<p>The block can be configured to send a pulse when the value changes which is also the default conversion behavior, on every input, or on every non-zero value.
 <p></p>
-For example, a numeric value passed to the OR block is treated as <tt>true</tt> if non-zero (as described in the "Type conversions" topic of the Analytics Builder documentation). However, when passing a numeric value to the Pulse block and then connecting the output of the Pulse block to the OR block, the numeric value is converted to a pulse so the OR block sends a pulse.  The block can be configured to send a pulse if the value changes (default pulse conversion behavior), on every input, or on every non-zero value.</p>
+The default conversion behavior sends a pulse if the input is a string or float and the value changes, or if the input is a boolean and the value changes to <tt>true</tt>.
+<p></p>
+This is useful with blocks which consume both pulse and non-pulse values, and where the input value is treated as non-pulse without the explicit conversion.
+<p></p>
+For example, a numeric value passed to the OR block is treated as <tt>true</tt> if non-zero (as described in the "Type conversions" topic of the Analytics Builder documentation). However, when passing a numeric value to the Pulse block and then connecting the output of the Pulse block to the OR block, the numeric value is converted to a pulse so the OR block sends a pulse.</p>
 
 
 #### Parameters {#pulse-parameters}
@@ -457,12 +461,12 @@ For example, a numeric value passed to the OR block is treated as <tt>true</tt> 
 </td>
 <td><span><p>Option - one of:</p>
 <ul>
-<li>On value change</li>
+<li>On value change (excluding to false)</li>
 <li>On every input</li>
 <li>On non-zero values</li></ul>
 </span>
 </td>
-<td><span>Default: On value change</span></td>
+<td><span>Default: On value change (excluding to false)</span></td>
 </tr>
 </tbody>
 </table>

@@ -6,7 +6,7 @@ sector:
   - edge_server
 ---
 
-The diagnostic utility is a script to collect, for example, the journal logs and performance metrics of various components running on the Edge appliance, which are essential for you and the {{< company-sag >}} support team to troubleshoot the problems. The diagnostic utility is enabled by default and is scheduled to run periodically. However, you can also trigger it manually using the command line (below) or the [user interface](/edge/operating-edge/#diagnostic-report-through-ui).
+The diagnostic utility is a script to collect, for example, the journal logs and performance metrics of various components running on the Edge appliance, which are essential for you and the {{< company-c8y >}} Support team to troubleshoot the problems. The diagnostic utility is enabled by default and is scheduled to run periodically. However, you can also trigger it manually using the command line (below) or the [user interface](/edge/operating-edge/#diagnostic-report-through-ui).
 
 	cd /opt/c8y/utilities/diagnostic-utility
 	sudo ./run_data_collector.py
@@ -87,7 +87,7 @@ Following are the supported command line arguments which can be used while invok
 
 * -hw or --hardware: Allows the script to collect only the hardware information
 * -sw or --software: Allows the script to collect only the software information
-* -c8y or --cumulocity: Allows the script to collect only the {{< product-c8y >}} information
+* -c8y or --cumulocity: Allows the script to collect only the {{< product-c8y-iot >}} information
 * -h: Displays the help message
 
 ### Microservices log file locations {#microservices-log-file-locations}

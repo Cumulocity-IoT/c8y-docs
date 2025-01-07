@@ -52,6 +52,13 @@
   }
   &--filters{
     height: calc(100vh - 182px);
+
+    label.c8y-checkbox input[type='checkbox']+span+span,
+    label.c8y-checkbox input[type='radio']+span+span, 
+    label.c8y-radio input[type='checkbox']+span+span, 
+    label.c8y-radio input[type='radio']+span+span{
+      font-size: 12px;
+    }
   }
 }
 
@@ -65,6 +72,7 @@
   h2{
     margin-bottom: 0;
     margin-top:0;
+    text-transform: none;
   }
   &__date{
       position: sticky;

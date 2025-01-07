@@ -2,6 +2,8 @@
 weight: 90
 title: REST APIs for Edge
 layout: bundle
+sector:
+  - edge_server
 ---
 
 For information about the REST APIs for Edge, see the [{{< product-c8y-iot >}} Edge OpenAPI Specification](https://{{< domain-c8y >}}/api/edge/{{< c8y-edge-current-version-alt >}}.0/).

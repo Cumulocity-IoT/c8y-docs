@@ -73,11 +73,11 @@ The cookie banner is turned on by default on the {{< product-c8y-iot >}} public 
 * Click **Preferences** to select your individual cookie preferences:
 	* **Required** - Required to enable core site functionality. They perform a task or operation without which a site's functionality would not be possible. Required cookies cannot be disabled.
 	* **Functional** - Used to track site usage and to process personal data to measure and improve usability and performance. Functional cookies must be actively enabled.
-* Click **See also our Privacy Notice** to open the [{{< company-sag >}} privacy statement]({{< link-sag-privacy-statement >}}) with details on the {{< company-sag >}} privacy policy.
+* Click **See also our Privacy Notice** to open the [{{< company-c8y >}} privacy statement](/legal-notices/privacy-notice/) with details on the {{< company-c8y >}} privacy policy.
 
 
 {{< c8y-admon-info >}}
-If you have enabled functional cookies you can opt-out from the product experience tracking later on via the **User settings** dialog, see [User options and settings](/getting-started/user-settings/).
+If you have enabled functional cookies you can opt-out from the product experience tracking later on via the **User settings** dialog, see [User options and settings](/get-familiar-with-the-ui/user-settings/).
 {{< /c8y-admon-info >}}
 
 Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between {{< product-c8y-iot >}} applications, as the {{< product-c8y-iot >}} platform will request you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.

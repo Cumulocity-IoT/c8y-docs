@@ -30,14 +30,7 @@ on:
         description: 'The name of the component that has been deployed to the environment.'
         required: true
         default: 'ui-c8y'
-        type: choice
-        options:
-          - 'ui-c8y'
-          - 'cumulocity'
-
-permissions:
-  pull-requests: write
-  contents: write
+        type: string
 
 concurrency:
   group: ${{ github.workflow }}-${{ inputs.component }}
@@ -49,21 +42,35 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-    - name: Checking out
-      uses: actions/checkout@v4
+    - name: logging-inputs
+      run: echo ${{inputs.component}} ${{inputs.version}} ${{inputs.date}}
 
     - name: Set git user
       run: |
-        git config --global user.name "${GITHUB_ACTOR}"
-        git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+        git config --global user.name "c8y-docs-automations[bot]"
+        git config --global user.email "c8y-docs-automations[bot]@users.noreply.github.com"
+
+    - name: Creating github access token
+      id: token
+      uses: actions/create-github-app-token@v1
+      with:
+        app-id: ${{ vars.C8Y_DOCS_AUTOMATIONS_APP_ID }}
+        private-key: ${{ secrets.C8Y_DOCS_AUTOMATIONS_APP_PRIVATE_KEY }}
+        owner: ${{ github.repository_owner }}
+
+    - name: Checking out
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ steps.token.outputs.token }}
 
     - name: Generate branch name
       id: branch-name
-      run: echo "branch-name=update-changelog-dates/${{ inputs.component }}_${{ inputs.version }}_${{ inputs.date }}" >> $GITHUB_OUTPUT
+      run: echo "branch-name=update-changelog-dates/${{ inputs.component }}_${{ inputs.version }}_${{ inputs.date }}" | sed  's/\s/_/g' | sed  's/:/_/g' >> $GITHUB_OUTPUT
 
     - name: Checkout branch
       run: |
-        git checkout -b ${{ steps.branch-name.outputs.branch-name }}
+        git checkout -b "${{ steps.branch-name.outputs.branch-name }}"
 
     - name: Use Node.js
       uses: actions/setup-node@v4
@@ -74,22 +81,46 @@ jobs:
       run: |
         cd add-release-dates
         npm ci
-        npm start ${{ inputs.component }} ${{ inputs.version }} ${{ inputs.date }}
+        npm start "${{ inputs.component }}" "${{ inputs.version }}" "${{ inputs.date }}"
 
     - name: Git add
+      id: git-add
       run: |
         git add content/change-logs
+        echo "stagedFiles=$(git diff --cached --numstat | wc -l)" >> $GITHUB_OUTPUT
+
+    - name:
+      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
+      run: |
+        echo "::notice :: Updated ${{ steps.git-add.outputs.stagedFiles }} changelog entries for ${{ inputs.component }}@${{ inputs.version }}"
+
+    - name:
+      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) == 0 }}
+      run: |
+        echo "::warning :: No new changelog entries found for ${{ inputs.component }}@${{ inputs.version }}"
 
     - name: Git commit
+      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
       run: |
         git commit -m "Update ${{ inputs.component }} changelog dates to ${{ inputs.date }} as version ${{ inputs.version }} was released"
 
     - name: Git push
+      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
+      id: git-push
       run: |
-        git push -u origin ${{ steps.branch-name.outputs.branch-name }}
+        if  [[ -z $(git ls-remote --heads origin "${{ steps.branch-name.outputs.branch-name }}") ]];
+        then
+        git push -u origin "${{ steps.branch-name.outputs.branch-name }}"
+        echo "uniqueBranchFlag=true" >> $GITHUB_OUTPUT
+        else
+        echo "::warning :: ${{ steps.branch-name.outputs.branch-name }} branch already exists, no new branch created for this change"
+        echo "uniqueBranchFlag=false" >> $GITHUB_OUTPUT
+        fi
+        
 
     - name: Create pull request
+      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 && steps.git-push.outputs.uniqueBranchFlag == 'true' }}
       env: 
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ steps.token.outputs.token }}
       run: |
-        gh pr create -B ${{ github.ref }} -H ${{ steps.branch-name.outputs.branch-name }} --title 'Update ${{ inputs.component }} changelog dates to ${{ inputs.date }} as version ${{ inputs.version }} was released' --body 'Created by [Github action](${{ github.server_url }}/${{ github.repository_owner }}/${{ github.event.repository.name }}/actions/workflows/update-changelog-dates.yml)' --assignee ${{ github.actor }}
+        gh pr create -B ${{ github.ref }} -H "${{ steps.branch-name.outputs.branch-name }}" --title 'Update ${{ inputs.component }} changelog dates to ${{ inputs.date }} as version ${{ inputs.version }} was released' --body 'Created by [Github action](${{ github.server_url }}/${{ github.repository_owner }}/${{ github.event.repository.name }}/actions/workflows/update-changelog-dates.yml)' --assignee BeateRixen

@@ -1,23 +1,26 @@
 ########################################################################################################################
-#                            Defines the Persistent Volumes with Network File System (NFS)                             #
+##                           Defines the Persistent Volumes with Network File System (NFS)                            ##
 ########################################################################################################################
 ---
-#
-# This PV will be claimed by PVC named 'mongod-data-edge-db-rs0-0' in namespace 'c8yedge' for the MongoDB server to store application data.
-#
+##
+## This PV will be claimed by PVC named 'mongod-data-edge-db-rs0-0' in namespace 'c8yedge' for the MongoDB server to store application data.
+##
 apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: c8yedge-db-pv
 spec:
   capacity:
-    storage: 75G                                # Modify the capacity to match the value you plan to specify in 'spec.mongodb.resources.requests.storage' field of the Edge CR
+    ## Modify the capacity to match the value you plan to specify in 'spec.mongodb.resources.requests.storage' field of the Edge CR
+    storage: 75G
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   nsf:
-    server: <NFS server Hostname or IP Address> # Substitute with NFS server's Hostname or IP Address.
-    path: /c8yedge/app-data                     # Path to a folder on NFS
+    ## Substitute with NFS server's Hostname or IP Address.
+    server: <NFS server Hostname or IP Address>
+    ## Path to a folder on NFS
+    path: /c8yedge/app-data
 
 ---
 #
@@ -34,8 +37,10 @@ spec:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   nfs:
-    server: <NFS server Hostname or IP Address> # Substitute with NFS server's Hostname or IP Address.
-    path: /c8yedge/registry                     # Path to a folder on NFS
+    ## Substitute with NFS server's Hostname or IP Address.
+    server: <NFS server Hostname or IP Address>
+    ## Path to a folder on NFS
+    path: /c8yedge/registry
 
 ---
 #
@@ -52,5 +57,7 @@ spec:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   nfs:
-    server: <NFS server Hostname or IP Address> # Substitute with NFS server's Hostname or IP Address.
-    path: /c8yedge/logs                         # Path to a folder on NFS
+    ## Substitute with NFS server's Hostname or IP Address.
+    server: <NFS server Hostname or IP Address>
+    ## Path to a folder on NFS
+    path: /c8yedge/logs

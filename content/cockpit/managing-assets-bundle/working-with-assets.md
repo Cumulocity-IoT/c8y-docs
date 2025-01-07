@@ -19,7 +19,7 @@ Moreover, subassets are shown in the **Subassets** tab of the particular group w
 {{< c8y-admon-info >}}
 The count displayed on top of the table on the **Subassets** tab shows the total number of child assets assigned to the current group. Any type of managed object can be a child asset. For more details on the counting of objects refer to the operation [Retrieve all child assets of a specific managed object](https://{{< domain-c8y >}}/api/core/#operation/getManagedObjectChildAssetsResource) in the {{< openapi >}}.
 
-If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device management application.
+If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device Management application.
 {{< /c8y-admon-info >}}
 
 Use the navigator, to navigate through the asset hierarchy.
@@ -64,7 +64,7 @@ ROLES & PERMISSIONS in devices context:
 
 If dashboards have been created for a group or device, they will also be added as a tab. See [Working with dashboards](/cockpit/working-with-dashboards/) for details.
 
-Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Refer to the [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}) for a tutorial on adding custom tabs.
+Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Refer to the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) for a tutorial on adding custom tabs.
 
 
 
@@ -96,7 +96,7 @@ In the resulting dialog box, you can select to also delete all devices inside th
 
 ### To assign devices to a group {#to-assign-devices-to-a-group}
 
-Before adding a device to the asset hierarchy, it must be connected to {{< product-c8y-iot >}}. Connecting devices to the platform is done in the Device management application. For details on connecting devices refer to [Device management application](/device-management-application/registering-devices/).
+Before adding a device to the asset hierarchy, it must be connected to {{< product-c8y-iot >}}. Connecting devices to the platform is done in the Device Management application. For details on connecting devices refer to [Device Management application](/device-management-application/registering-devices/).
 
 To assign devices to a group, follow these steps:
 

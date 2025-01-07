@@ -22,7 +22,7 @@ pipeline {
       checkout([
         $class: 'GitSCM', branches: [[name: 'master']],
         extensions: [[$class: 'CleanCheckout']],
-        userRemoteConfigs: [[url: 'git@github.com:SoftwareAG/c8y-docs.git', credentialsId:'jenkins-master']] ])
+        userRemoteConfigs: [[url: 'git@github.com:Cumulocity-IoT/c8y-docs.git', credentialsId:'Jenkins_ssh_ghec']] ])
       }
     }
     stage('Build') {

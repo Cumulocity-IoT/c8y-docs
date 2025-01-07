@@ -6,13 +6,13 @@ sector:
   - app_enablement
 ---
 
-The Cockpit application includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed.
+The Cockpit application includes pre-set widget types. Each widget type provides different parameters to configure and different data to be displayed.
 
 
 {{< c8y-admon-related >}}
 - [Application enablement & solutions > Cockpit > Data explorer](/cockpit/data-explorer/) for details on visualizing your data when working with widgets.
 - [Platform administration > {{< standard-tenant >}} administration > Managing the ecosystem > Managing applications](/standard-tenant/ecosystem/#managing-applications) for details on managing applications.
-- Refer to the [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}) for a tutorial on customized widgets in the {{< product-c8y-iot >}} environment.
+- Refer to the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) for a tutorial on customized widgets in the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
 ### Alarm list {#alarm-list}
@@ -172,13 +172,6 @@ Out of range values, based on configured yellow and red ranges, are highlighted 
 
 ![Data point table](/images/users-guide/cockpit/cockpit-datapointtable.png)
 
-At the top right of the data point list, an **Auto scroll** toggle determines the display behavior:
-
-* Auto-scroll on - When a new measurement arrives, the widget automatically scrolls to the top so that you can see the latest value.
-* Auto-scroll off - When a new measurement arrives, the display does not change and the table still shows the same snippet of data.
-
-![Auto-scroll toogle](/images/users-guide/cockpit/cockpit-data-point-table-widget-with-auto-scroll.png)
-
 ### Event list {#event-list}
 
 The "Event list" widget lets you monitor events for a selected device.
@@ -265,11 +258,28 @@ If you want to use a link in the **HTML code** field, for example a link to a da
   <a style="cursor:pointer;" onclick="location.hash = '#/group/<<group-id>>/dashboard/<<dashboard-id>>'">link to another dashboard</a><br />
 ```
 
+### KPI {#kpi}
+
+The "KPI" (Key Performance Indicators) widget visualizes a data point as a label, for example, a data point for the temperature of a device.
+
+![KPI widget](/images/users-guide/cockpit/cockpit-widget-kpi.png)
+
+**Parameters to configure**
+
+On the left side, select the data point you want to display.
+You must select only one active datapoint to create the "KPI" widget. If you select multiple data points at once, you cannot save the configuration.
+
+On the right side, you can adjust how the data point is going to be displayed. This includes:
+* Icon: The icon to be displayed next to the data point
+* Number of decimal places
+* Display: Allows to toggle whether the timestamp, icon and trend indicator should be displayed
+* Font size of measurement value
+
 ### Linear Gauge {#linear-gauge}
 
 The "Linear gauge" widget visualizes data points in form of a linear gauge. Min and max target values are shown on the gauge as well.
 
-![Info gauge widget](/images/users-guide/cockpit/cockpit-widget-linear-gauge.png)
+![Linear gauge widget](/images/users-guide/cockpit/cockpit-widget-linear-gauge.png)
 
 {{< c8y-admon-info >}}
 If a label is not properly readable, you can help yourself by increasing the min and max value of the data point to move the label into the readable range.
@@ -281,7 +291,7 @@ You must enable at least one data point to create the "Linear gauge" widget.
 
 The "Map" widget shows the location of a device or all devices of a group.
 
-![Info gauge widget](/images/users-guide/cockpit/cockpit-widget-map.png)
+![Map widget](/images/users-guide/cockpit/cockpit-widget-map.png)
 
 You can drag the map and move its content, and you can zoom in and out by using the **Plus** and **Minus** buttons.
 

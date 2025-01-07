@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-09-19
 title: LWM2M firmware images are hosted via HTTP by all LWM2M agents in the cluster 
 product_area: Device management & connectivity
 change_type:

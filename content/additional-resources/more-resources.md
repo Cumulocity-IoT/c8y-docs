@@ -19,24 +19,26 @@ Visit the [{{< product-c8y-iot >}} YouTube channel](https://www.youtube.com/@Cum
 To learn about [what's new in {{< product-c8y-iot >}}](https://www.youtube.com/@CumulocityIoT/playlists?view=50&sort=dd&shelf_id=6), our YouTube channel also offers content which covers the new and enhanced functionality available in a specific product release.
 
 
-### TECH Community {#tech-community}
+### Tech Community {#tech-community}
 
-Collaborate with {{< product-c8y-iot >}} experts on our [{{< company-sag >}} {{< sag-dev-community >}}]({{< link-sag-dev-community >}}) website.
+Collaborate with {{< product-c8y-iot >}} experts on our [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) website.
 
 Here you can:
 
 * Browse through our vast knowledge base of tutorials, articles, code samples, tips and tricks.
 * Ask questions, brainstorm solutions or discuss best practices in our discussion forum.
-* Get the latest {{< company-sag >}} news and announcements.
+* Get the latest {{< company-c8y >}} news and announcements.
 
-Moreover you will find links to further resources like [GitHub](https://github.com/softwareag).
+Moreover you will find links to further resources like [GitHub]({{< link-c8y-github >}}).
 
 
 ### Product training {#product-training}
 
-Visit the [{{< learning-portal >}}]({{< link-sag-training >}}) where you can find helpful eLearning material to get started:
+Visit the [{{< learning-portal >}}]({{< link-c8y-training >}}) and explore the world of {{< product-c8y-iot >}} through our free online courses.
 
-[{{< product-c8y-iot >}} Basic]({{< link-sag-training-basic >}}) is a self-paced training which provides a jump-start into the {{< product-c8y-iot >}} platform offering in the {{< company-sag >}} clouds. Short videos followed by hands-on labs on your free trial {{< product-c8y-iot >}} tenant provide fundamental knowledge on how you can connect and manage your remote assets, use powerful analytics to derive insights and incorporate them into your business processes using the {{< product-c8y-iot >}} platform.
+The {{< learning-portal >}} provides tailored learning experiences to suit your unique journey, providing learning solutions designed to meet your needs. Whether you're just starting or already on your learning journey, we have courses for everyone.
+
+Our learning platform offers structured content across four major categories, ranging from introductory overviews to expert-level learning and covering new product features.
 
 ### Cloud environments status page {#cloud-environments-status-page}
 

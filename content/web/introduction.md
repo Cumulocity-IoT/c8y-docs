@@ -18,7 +18,7 @@ This guide provides information on the Web SDK which enables you to:
 {{< c8y-admon-important >}}
  Web SDK for Angular JS is deprecated. Therefore, its documentation is no longer provided here.  As all {{< product-c8y-iot >}} REST APIs are backward compatible, Angular JS applications will still continue to work.
 
-Web SDK for plugins is based on Angular JS and is also deprecated. For Angular-based development, we recommend you to implement native Angular modules. For more information, refer to the [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}).
+Web SDK for plugins is based on Angular JS and is also deprecated. For Angular-based development, we recommend you to implement native Angular modules. For more information, refer to the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}).
 {{< /c8y-admon-important >}}
 
 ### When can I use the Web SDK?
@@ -52,7 +52,7 @@ Following is a list which explains the use cases of each package.
 
 #### @c8y/client: Accessing data
 
-The @c8y/client is an isomorphic (node and browser) Javascript client library for the [Cumulocity IoT](http://www.cumulocity.com) REST API. It can be used for getting data from the platform. In an Angular application you will mostly use the injected services from `@c8y/ngx-components`.
+The @c8y/client is an isomorphic (node and browser) Javascript client library for the [{{< product-c8y-iot >}} REST API](http://cumulocity.com/api/). It can be used for getting data from the platform. In an Angular application you will mostly use the injected services from `@c8y/ngx-components`.
 
 #### @c8y/ngx-components: The component library
 
@@ -96,12 +96,13 @@ Since version 1019.0.0 the versioning schema of the Web SDK isn't aligned anymor
 As npm and semantic versioning only support three parts in the version number, the WebSDK will not use the commonly seen four parts versioning. For example a version sometimes refered to 10.19.0.0, will in the WebSDK be displayed as 1019.0.0. For simplicity this guide will only show three parts versioning numbers.
 {{< /c8y-admon-info >}}
 
-We recommend to use the `^` or `~` in the `package.json` for all `@c8y` liberaries. When you are using a yealy long term support release, it is best to use the npm tag in your `package.json`. The long term support versions always end with `-lts`.
+We recommend to use the `^` or `~` in the `package.json` for all `@c8y` liberaries. When you are using a yearly long-term support release, it is best to use the npm tag in your `package.json`. The long-term support versions always end with `-lts`.
 
 As our releases are bound to the Angular versioning, you must to ensure that you scaffold the right Angular version. Otherwise the scaffolding process will fail and give you a peer dependency error. The following table shows an overview of the supported versions:
 
 | Angular version | Web SDK version | Comment |
 | --- | --- | --- |
+| 18.x.x | 1021.x.x | No support for the standalone flag |
 | 17.x.x | 1020.x.x | No support for the standalone flag |
 | 16.x.x | 1019.x.x | Using [Angular CLI tooling](https://angular.io/cli). |
 | 15.x.x | 1018.1.x - 1018.x.x | Using `c8ycli` tooling, only yearly release |
@@ -109,7 +110,7 @@ As our releases are bound to the Angular versioning, you must to ensure that you
 
 {{< c8y-admon-info >}}
 If you want to use an older version then `1019.x.x` you must to use our old tooling based on the `c8ycli` tool-set. For more information see [C8Y Command Line Tool (CLI)](/web/upgrade/#c8y-cli).
-{{< /c8y-admon-info >}}  
+{{< /c8y-admon-info >}}
 
 
 ### Next steps

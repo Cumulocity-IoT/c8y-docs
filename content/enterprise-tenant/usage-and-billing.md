@@ -130,8 +130,16 @@ The following information is provided for each subtenant (not completely visible
       <td align="left">Number of measurements created</td>
     </tr>
     <tr>
+      <td align="left">Operations created</td>
+      <td align="left">Number of operations created</td>
+    </tr>
+    <tr>
+      <td align="left">Operations updated</td>
+      <td align="left">Number of updates on operations</td>
+    </tr>
+    <tr>
       <td align="left">Total inbound transfer</td>
-      <td align="left">Sum of all inbound transfers (alarms created, alarms updated, events created, events updated, inventories created, inventories updated, measurements created)</td>
+      <td align="left">Sum of all inbound transfers (alarms created, alarms updated, events created, events updated, inventories created, inventories updated, measurements created, operations created, operations updated)</td>
     </tr>
     <tr>
       <td align="left">CPU (M)</td>
@@ -542,6 +550,18 @@ The table below presents which values are used in each model for billing purpose
     <tr>
       <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Measurements created</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Operations created</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Operations updated</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>
     </tr>

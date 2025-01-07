@@ -6,18 +6,20 @@
 # These owners will be the default owners for everything in the repo.
 * @BeateRixen @MWindel
 
-/content/change-logs/application-enablement/ @rahultsag @janhommes @BeateRixen @MWindel
-/content/change-logs/device-management/ @Oezge-Akin @aaronraab @l2p- @BeateRixen @MWindel
-/content/change-logs/platform-services/ @airdroplet @martin-sag @mgrumann @kgol-c8y @sarangovindarajan @scmi-c8y @pink-mongoose @BeateRixen @MWindel
-/content/change-logs/application-enablement/dtm* @rahultsag @pavanshivajirao @lra-sag @BeateRixen @MWindel
-/content/change-logs/analytics/apama-in-c8y* @kailol-sag @Rob-J-SAG @BeateRixen @MWindel @skom-c8y
-/content/change-logs/analytics/cdh* @cheinz-sag @ChrisFurlongSAG @doernemt @BeateRixen @MWindel
+/content/change-logs/application-enablement/ @rahulc8y @janhommes @BeateRixen
+/content/change-logs/device-management/ @Oezge-Akin @aaronraab @l2p- @BeateRixen
+/content/change-logs/platform-services/ @iiar-c8y @martin-c8y @mgrumann @saran-govindarajan @kowa-c8y @scmi-c8y @JanePorter @BeateRixen
+/content/change-logs/application-enablement/dtm* @rahulc8y @pavanshivajirao @lara-c8y @BeateRixen
+/content/change-logs/analytics/apama-in-c8y* @BeateRixen @skom-c8y
+/content/change-logs/analytics/cdh* @cheinz-sag @ChrisFurlong @BeateRixen
+/content/change-logs/edge/ @bbyreddy @rthrippleton @BeateRixen
 
 /content/datahub/ @cheinz-sag @BeateRixen @MWindel
 /content/device-management-application/ @Oezge-Akin @l2p- @BeateRixen
-/content/dtm/ @pavanshivajirao @lra-sag @BeateRixen @MWindel
-content/authentication @BeateRixen @kgol-c8y
+/content/dtm/ @pavanshivajirao @lara-c8y @BeateRixen @MWindel
+content/authentication @kowa-c8y @BeateRixen
+/content/edge/ @bbyreddy @rthrippleton @BeateRixen
 
-/content/streaming-analytics/ @kailol-sag @BeateRixen @MWindel @skom-c8y
+/content/streaming-analytics/ @BeateRixen @MWindel @skom-c8y
 # 'block-reference-bundle' is automatically and frequently committed to - don't bother _too many_ CODEOWNERS
 /content/streaming-analytics/block-reference-bundle/ @kailol-sag @skom-c8y

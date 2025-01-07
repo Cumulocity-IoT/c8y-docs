@@ -16,7 +16,7 @@ Example:
 PUT /tenant/options/measurement.series.latestvalue
 {
   "c8y_Humidity.H":"", // to enable single series c8y_Humidity.H
-  "c8y_Temperature.*":"", // to able series under fragment c8y_Temperature
+  "c8y_Temperature.*":"", // to enable series under fragment c8y_Temperature
   // or "*":"" to enable all
 }
 ```

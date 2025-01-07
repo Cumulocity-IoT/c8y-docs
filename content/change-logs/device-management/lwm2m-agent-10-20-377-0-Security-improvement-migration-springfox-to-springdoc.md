@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-09-19
 title: Replaced deprecated library to improve LWM2M service security
 change_type:
   - value: change-VSkj2iV9m

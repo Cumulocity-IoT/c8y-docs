@@ -19,7 +19,7 @@ helpcontent:
     The dashboard is locked until the edit mode is enabled. To do so click **Edit widgets** in the top menu bar. On a dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon. Click **Add widget** in the top menu bar to add a new widget to the dashboard or use the cogwheel icon to edit or remove widgets.
 
 
-    Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Widgets collection* in the user documentation for details on each widget type and its configuration."
+    Cumulocity includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Widgets collection* in the user documentation for details on each widget type and its configuration."
 ---
 
 {{< product-c8y-iot >}} allows you to create individualized dashboards for all your groups and devices.
@@ -38,7 +38,7 @@ ROLES & PERMISSIONS:
 {{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}
-- Refer to the [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}) to learn how to develop your own widgets and add them to your {{< product-c8y-iot >}} account.
+- Refer to the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) to learn how to develop your own widgets and add them to your {{< product-c8y-iot >}} account.
 - [Web SDK > Application configuration](/web/application-configuration/) for further information on how to customize the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
@@ -103,7 +103,7 @@ In the widget configuration, you can specify a dashboard time range for your das
 The dashboard time range can be set to any time span, depending on the monitoring needs, by using a custom date picker. The time range is displayed at the top of the dashboard, so you can immediately see the context for which the data is presented. Additionally, you can share dashboards with a specific time context by including the time context parameters in a URL. URL parameters will be set automatically when users set the dashboard time context with the picker.
 
 {{< c8y-admon-info >}}
-This feature is currently available for the following widgets: Event list, Data points graph, Data points table, and Map.
+This feature is currently available for the following widgets: Event list, Data points graph, and Map.
 {{< /c8y-admon-info >}}
 
 <img src="/images/users-guide/cockpit/cockpit-dashboard-global-time.png" name="Global time context"/>

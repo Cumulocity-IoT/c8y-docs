@@ -28,7 +28,7 @@ The model that you add will contain three blocks:
 
 -   An input block which receives measurement values from a device.
 -   A block that calculates the mean of the measurement values over time.
--   An output block that sends the calculated mean values to {{< product-c8y-iot >}}'s Device management application so that they can be viewed there.
+-   An output block that sends the calculated mean values to {{< product-c8y-iot >}}'s Device Management application so that they can be viewed there.
 
 When you have completed all steps below, your model will look similar to the following:
 
@@ -113,11 +113,11 @@ A card for the newly added model is shown on the **Models** tab of the model man
 1. Click the drop-down menu on the card which currently shows **Draft** and select **Production**.
 2. Click the toggle button on the card which currently shows **Inactive**. This changes the state to **Active**.
 
-#### Step 9: Go to the Device management and view the measurements {#step-9-go-to-the-device-management-and-view-the-measurements}
+#### Step 9: Go to the Device Management application and view the measurements {#step-9-go-to-the-device-management-and-view-the-measurements}
 
-To view the measurements that are sent from your active model, you must switch to the Device management application. See [Device management application](/device-management-application/) for detailed information.
+To view the measurements that are sent from your active model, you must switch to the Device Management application. See [Device Management application](/device-management-application/) for detailed information.
 
-1. Go to the Device management application.
+1. Go to the Device Management application.
 2. In the navigator on the left, click **Devices** and then **All devices**.
 3. Locate your device and click its name to display the device details.
 4. Click **Measurements** on the left. This is a dynamic tab which is only shown when measurements are available for the device.
@@ -154,7 +154,7 @@ The **Samples** tab of the model manager lists all sample models that are provid
 1. Go to the **Samples** tab of the model manager.
 2. Click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the **On missing measurements create alarm** sample and then click **Create model from sample**.
    The new model is immediately shown in the model editor. It has the same name, description and tags as the sample.
-3. If you want to rename the model, click the model name which is shown at the left of the toolbar. You can then specify a new name in the resulting dialog box.
+3. If you want to rename the model, click **Model settings** which is shown at the left of the toolbar. You can then specify a new name in the resulting dialog box.
 4. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save the new model.
 5. In the toolbar of the model editor, click the close icon <i class="dlt-c8y-icon-clear icon-20"></i> to leave the model editor and thus to return to the model manager.
    {{< c8y-admon-info>}}
@@ -205,12 +205,12 @@ Once the instance has been activated, send in the data from your device. The ins
 
 For our example case with the gyroscope measurements from a smartphone, it should be sufficient that you simply turn off the smartphone display while the {{< sensor-app >}} is still running.
 
-#### Step 6: Go to the Device management application and view the alarms {#step-6-go-to-the-device-management-application-and-view-the-alarms}
+#### Step 6: Go to the Device Management application and view the alarms {#step-6-go-to-the-device-management-application-and-view-the-alarms}
 
-To view the alarms that are sent from your active instance, you must switch to the Device management application.
-See [Device management application](/device-management-application/) for detailed information.
+To view the alarms that are sent from your active instance, you must switch to the Device Management application.
+See [Device Management application](/device-management-application/) for detailed information.
 
-1. Go to the Device management application.
+1. Go to the Device Management application.
 2. In the navigator on the left, click **Devices** and then **All devices**.
 3. Locate your device and click its name to display the device details.
 4. Click **Alarms** on the left.

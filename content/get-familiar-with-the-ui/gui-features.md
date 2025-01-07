@@ -76,8 +76,6 @@ The application switcher allows you to quickly switch between applications. Clic
 
 The application switcher shows all {{< product-c8y-iot >}} applications you currently have access to. These can be [subscribed applications](/standard-tenant/ecosystem/#subscribed-applications) or [custom applications](/standard-tenant/ecosystem/#custom-applications). Just click the icon for the desired application to open it as active application.
 
-If you are using {{< sag-cloud >}}, the application switcher also shows other {{< sag-cloud >}} applications at the first level, followed by the {{< product-c8y-iot >}} applications.
-
 
 ### Search and filter functionality {#search-and-filter-functionality}
 
@@ -189,4 +187,4 @@ You will only see such changes in the navigator of the application, in which you
 
 **Example**
 
-If you unassign a device from a group in the Device management application it is immediately removed from the group in the navigator of your current application. However, if you have another window open with another Device management application, you won't see the changes, but will only see the changes after a refresh or another request (expanding a group in the navigator for example).
+If you unassign a device from a group in the Device Management application it is immediately removed from the group in the navigator of your current application. However, if you have another window open with another Device Management application, you won't see the changes, but will only see the changes after a refresh or another request (expanding a group in the navigator for example).

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-09-12'
 title: Firmware list migrated to grid view
 product_area: Device management & connectivity
 change_type:

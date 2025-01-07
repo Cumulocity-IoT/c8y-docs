@@ -10,7 +10,7 @@ sector:
 helpcontent:
   - label: smartrest-templates
     title: SmartREST templates
-    content: "SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity IoT REST API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time. To add a new template, you may either import an existing template or create a new one.
+    content: "SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity REST API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time. To add a new template, you may either import an existing template or create a new one.
 
 
     To import a template, click **Import template** at the top right, select a file to be uploaded and provide a name and unique ID.
@@ -24,8 +24,8 @@ SmartREST templates are a collection of request and response templates used to c
 To ease the device integration, {{< product-c8y-iot >}} supports static templates that can be used without the need for creating your own templates. These templates focus only on the most commonly used messages for device management. For further information on static templates, refer to the [MQTT static templates](/smartrest/mqtt-static-templates).
 
 {{< c8y-admon-related >}}
-* [Device management > SmartREST > SmartREST 2.0](/smartrest/smartrest-two/) for details on the SmartREST protocol, the data format used, as well as the anatomy and registration of SmartREST templates.
-* [Device management > Device integration > Device integration using MQTT](/device-integration/mqtt/) for information on integrating devices via MQTT.
+* [Device management & connectivity > SmartREST > SmartREST 2.0](/smartrest/smartrest-two/) for details on the SmartREST protocol, the data format used, as well as the anatomy and registration of SmartREST templates.
+* [Device management & connectivity > Device integration > Device integration using MQTT](/device-integration/mqtt/) for information on integrating devices via MQTT.
 {{< /c8y-admon-related >}}
 
 Open the **SmartREST template** page from the **Device Types** menu in the navigator.
@@ -39,7 +39,7 @@ For each template, the following information is provided:
 * Number of send messages
 * Number of responses
 
-There are two ways to add a SmartRest template:
+There are two ways to add a SmartREST template:
 
 - Import an already existing template
 - Create a new template
@@ -60,7 +60,7 @@ There are two ways to add a SmartRest template:
 
 #### To add a message {#to-add-a-message}
 
-The message template contains all necessary information to convert the SmartRest request into a corresponding REST API call which is then sent to the platform.
+The message template contains all necessary information to convert the SmartREST request into a corresponding REST API call which is then sent to the platform.
 
 1. To add a new message, navigate to the **Messages** tab in your desired SmartREST template and click **Add message**.
 

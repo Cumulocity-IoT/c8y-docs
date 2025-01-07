@@ -31,6 +31,7 @@ In order to follow this tutorial, check if the following prerequisites are met:
 * Uploaded certificates must have set `BasicConstraints:[CA:true]`.
 * Devices must trust the {{< product-c8y-iot >}} server certificate.
 * Certificates used by devices must contain the certificate chain that includes the uploaded CA certificate.
+* If only the device certificate is provided, then the immediate issuer certificate must be uploaded to the platform’s truststore.
 * Certificates used by devices must be signed either by uploaded CA certificates or by intermediate certificates signed by uploaded CA certificates.
 
 ### Registering devices using certificates {#registering-devices-using-certificates}
@@ -52,7 +53,7 @@ The device_user will be created when the API is called for the first time, provi
 
 **Bulk registration**
 
-The user for the device can also be created via the standard [bulk registration](/device-management-application/registering-devices/#to-bulk-register-devices) in the Device management application.
+The user for the device can also be created via the standard [bulk registration](/device-management-application/registering-devices/#to-bulk-register-devices) in the Device Management application.
 
 The CSV file used in bulk registration should meet the requirements described in [Create a bulk device credentials request](https://{{< domain-c8y >}}/api/core/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< openapi >}}. Moreover, it is required that the CSV file has an additional column AUTH_TYPE with value CERTIFICATES, and that the column CREDENTIALS is either not present or has an empty value.
 
@@ -329,7 +330,7 @@ Upload your CA (or intermediate) certificate to the platform. This operation wil
 
 **Via UI:**
 
-1. In the Device management application, navigate to the **Management** menu in the navigator and select **Trusted certificates**.
+1. In the Device Management application, navigate to the **Management** menu in the navigator and select **Trusted certificates**.
 2. In the resulting dialog, enter a custom name for the new certificate.
 3. Drop your CA certificate (caCert.pem or intermediateCert.pem).
 4. Select the **Auto registration** check box.
@@ -376,7 +377,7 @@ To ensure verification of ownership by the uploader, a proof of possession is re
 
 The steps for the proof of possession are as follows:
 
-1. Navigate to **Management** > **Trusted certificates** in the Device management application and verify that the certificate has been uploaded properly.
+1. Navigate to **Management** > **Trusted certificates** in the Device Management application and verify that the certificate has been uploaded properly.
    <br>![Verify certificate](/images/mqtt/mqtt-cert-check.png)
 
 2. In the **Proof of Possession** section of the certificate details, download the verification code.
@@ -394,5 +395,5 @@ The proof of possession is confirmed if the uploaded signed verification code ma
 
 
 {{< c8y-admon-info >}}
-If administrators cannot carry out this process on their own for organizational reasons, they can manually request the proof of possession for the corresponding certificate and the {{< product-c8y-iot >}} support team can complete the proof of possession through a back end API upon reasonable verification.
+If administrators cannot carry out this process on their own for organizational reasons, they can manually request the proof of possession for the corresponding certificate and the {{< company-c8y >}} Support team can complete the proof of possession through a back end API upon reasonable verification.
 {{< /c8y-admon-info >}}

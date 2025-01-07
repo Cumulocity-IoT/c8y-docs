@@ -1,29 +1,31 @@
 ########################################################################################################################
-#                            Defines the Persistent Volumes with local filesystem path                                 #
+##                           Defines the Persistent Volumes with local filesystem path                                ##
 ########################################################################################################################
 ---
-#
-# This PV will be claimed by PVC named 'mongod-data-edge-db-rs0-0' in namespace 'c8yedge' for the MongoDB server to store application data.
-#
+##
+## This PV will be claimed by PVC named 'mongod-data-edge-db-rs0-0' in namespace 'c8yedge' for the MongoDB server to store application data.
+##
 apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: c8yedge-db-pv
 spec:
   capacity:
-    storage: 75G                        # Modify the capacity to match the value you plan to specify in 'spec.mongodb.resources.requests.storage' field of the Edge CR
+    ## Modify the capacity to match the value you plan to specify in 'spec.mongodb.resources.requests.storage' field of the Edge CR
+    storage: 75G
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   volumeMode: Filesystem
   hostPath:
-    path: /c8yedge/app-data             # Map an NFS folder to this path in all the Kubernetes cluster's worker nodes. This prevents data loss in case of node crashes.
+    ## Map an NFS folder to this path in all the Kubernetes cluster's worker nodes. This prevents data loss in case of node crashes.
+    path: /c8yedge/app-data
     type: DirectoryOrCreate
 
 ---
-#
-# This PV will be claimed by PVC named 'microservices-registry-data' in namespace 'c8yedge' for the private docker registry to store microservice images.
-#
+##
+## This PV will be claimed by PVC named 'microservices-registry-data' in namespace 'c8yedge' for the private docker registry to store microservice images.
+##
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -36,13 +38,14 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   volumeMode: Filesystem
   hostPath:
-    path: /c8yedge/registry             # Map an NFS folder to this path in all the Kubernetes cluster's worker nodes. This prevents data loss in case of node crashes.
+    ## Map an NFS folder to this path in all the Kubernetes cluster's worker nodes. This prevents data loss in case of node crashes.
+    path: /c8yedge/registry
     type: DirectoryOrCreate
 
 ---
-#
-# This PV will be claimed by PVC named 'edge-logs' in namespace 'c8yedge' for the logging component to store the application and system logs.
-#
+##
+## This PV will be claimed by PVC named 'edge-logs' in namespace 'c8yedge' for the logging component to store the application and system logs.
+##
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -55,5 +58,6 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   volumeMode: Filesystem
   hostPath:
-    path: /c8yedge/logs                 # Map an NFS folder to this path in all the Kubernetes cluster's worker nodes. This prevents data loss in case of node crashes.
+    ## Map an NFS folder to this path in all the Kubernetes cluster's worker nodes. This prevents data loss in case of node crashes.
+    path: /c8yedge/logs
     type: DirectoryOrCreate

@@ -19,7 +19,7 @@ This authentication method is not to be confused with SSO (single sign-on) or OA
 This change will only impact you if your organization used an early version of SSO on {{< product-c8y-iot >}}.
 For customers on the public cloud instances we will get in touch with you if you are using this type of authentication.
 For self-hosted or self-managed instances you need to do the following:
-Ask your Operations team to run this [script](https://getsupport.softwareag.com/servicedesk/customer/kb/view/429359127). This will verify
+Ask your Operations team to run this [script](https://cumulocity.atlassian.net/servicedesk/customer/portal/5/article/44666909). This will verify
 whether any tenant collections have an `authenticationProviders` configuration and
 if any tenant has the tenant options configured with the category `token.publicKey`.
 If either an `authenticationProvider` configuration or the tenant option `token.publicKey` category exists this indicates that the deprecated JWT is, or was, used in the past. In this case you need to check your external services for use of the JWT authentication and change it to use either SSO or OAI-Secure. These two methods provide a better and more secure approach to authentication.

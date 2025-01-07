@@ -81,6 +81,15 @@
       ]
     },
     {
+      "id": "component-docs-123",
+      "option": "Documentation",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
+    },{
       "id": "component-wWIzHJ12j",
       "option": "Cloud Fieldbus",
       "product_area": [
@@ -193,16 +202,6 @@
     {
       "id": "component-Sv2buFZ5l",
       "option": "Microservice SDK",
-      "product_area": [
-        {
-          "value": "product_area-eC7h0SiQ2b",
-          "label": "Application enablement & solutions"
-        }
-      ]
-    },
-    {
-      "id": "component-Ry7NUJS_4",
-      "option": "OEE",
       "product_area": [
         {
           "value": "product_area-eC7h0SiQ2b",

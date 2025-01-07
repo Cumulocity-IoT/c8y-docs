@@ -45,7 +45,7 @@ While configuring the network on VMware based hypervisors, do not us the IP addr
 7. Provide a password for the root user of the guest operating system below **Guest OS root**, and click **Next**.
 
     {{< c8y-admon-important >}}
-Do not use the root credentials to perform any task. The root credentials must be used only when asked by {{< company-sag >}} support personnel. Using it otherwise might void the appliance support.
+Do not use the root credentials to perform any task. The root credentials must be used only when asked by {{< company-c8y >}} support personnel. Using it otherwise might void the appliance support.
     {{< /c8y-admon-important >}}
 
 8. Create an administrator account to access the "edge" tenant and the {{< management-tenant >}}, and click **Next**.
@@ -64,13 +64,13 @@ Do not use the root credentials to perform any task. The root credentials must b
 
 12. Click **Install**.
 
-During the installation, the certificates are updated in the Edge appliance. If these certificates are not accepted by your browser, the browser does not get the progress of the installation. In such case, you must refresh the browser and follow the browser instructions for more details. The installation takes some time to complete. After the installation is complete, the "Cumulocity IoT Edge installation is now complete" message appears.
+During the installation, the certificates are updated in the Edge appliance. If these certificates are not accepted by your browser, the browser does not get the progress of the installation. In such case, you must refresh the browser and follow the browser instructions for more details. The installation takes some time to complete. After the installation is complete, the "{{< product-c8y-iot >}} Edge installation is now complete" message appears.
 
 {{< c8y-admon-info >}}
 If you still see the installation in progress, refresh the browser.
 {{< /c8y-admon-info >}}
 
-Next, click **Open Cumulocity IoT Edge**.
+Next, click **Open Cumulocity Edge**.
 
 {{< c8y-admon-important >}}
 In case you need to reset the password, you must configure the "reset password" template and email server settings to receive the password reset email. For more information, see [Password reset](/enterprise-tenant/customization/#password-reset) and [Email server](/enterprise-tenant/customization/#email-server).

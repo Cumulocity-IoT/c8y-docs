@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2024-09-19
 title: LWM2M device operations directly go to Pending state
 product_area: Device management & connectivity
 change_type:

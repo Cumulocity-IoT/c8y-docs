@@ -18,7 +18,7 @@ By carefully evaluating these options, organizations can select the integration 
 
 For developers seeking a versatile and flexible integration solution, {{< product-c8y-iot >}}'s microservices approach offers a developer-friendly solution. This method involves creating microservices that connect {{< product-c8y-iot >}} to external systems, allowing for customized data exchange and automation. While requiring initial development effort, the microservices approach provides greater control and adaptability. The option is utilized by many customers for integrating with CRM, ERPs, and FSM tools.
 
-This [article](https://tech.forums.softwareag.com/t/jump-start-your-next-cumulocity-microservice-project-in-java/257641) explains how to set up a {{< product-c8y-iot >}} microservice project in Java, and a corresponding webinar can be found on [YouTube](https://www.youtube.com/watch?v=2j21ULZbtlg).
+This [article]({{< c8y-tech-community-link >}}/t/jump-start-your-next-cumulocity-iot-microservice-project-in-java/2661) explains how to set up a {{< product-c8y-iot >}} microservice project in Java, and a corresponding webinar can be found on [YouTube](https://www.youtube.com/watch?v=2j21ULZbtlg).
 
 ### Workflow automation tools {#workflow-automation-tools}
 
@@ -28,8 +28,8 @@ Here are some examples of what you can achieve with these tools:
 
 #### Zapier
 
-This [article](https://tech.forums.softwareag.com/t/cumulocity-iot-google-spreadsheet-no-code-integration-guide/287731&) explains how to integrate {{< product-c8y-iot >}} with Google Sheets to automatically export sensor data for further analysis.
+This [article]({{< c8y-tech-community-link >}}t/integration-guide-cumulocity-iot-google-spreadsheet-with-zapier-in-a-no-code-approach/3869) explains how to integrate {{< product-c8y-iot >}} with Google Sheets to automatically export sensor data for further analysis.
 
 #### n8n.io
 
-This [article]( https://tech.forums.softwareag.com/t/integration-guide-sending-cumulocity-iot-alarms-to-zendisk-twilio-using-n8n/288085) explains how to create a multi-step automation for {{< product-c8y-iot >}} alarms, generating Zendesk tickets and SMS notifications based on severity.
+This [article]({{< c8y-tech-community-link >}}t/integration-guide-sending-cumulocity-iot-alarms-to-zendesk-twilio-using-n8n/7638) explains how to create a multi-step automation for {{< product-c8y-iot >}} alarms, generating Zendesk tickets and SMS notifications based on severity.

@@ -1,6 +1,6 @@
 ---
-date:
-title: Fix performance regression for count queries and inventory roles 
+date: 2024-09-11
+title: Fix performance regression for count queries and inventory roles
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

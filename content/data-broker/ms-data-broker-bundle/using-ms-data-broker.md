@@ -6,6 +6,22 @@ sector:
   - platform_administration
 ---
 
+### Notice of current storage limits and message TTL for the microservice-based data broker
+
+{{< c8y-admon-important >}}
+
+The microservice-based data broker stores messages persistently until they are successfully delivered to the destination tenant. To optimize resource usage, the storage limits for the microservice-based data broker have been adjusted as follows:
+
+**Message backlog quota**:
+- Each data broker connector can store a maximum of **50 MiB** of unacknowledged messages in its backlog. This is equivalent to approximately 260,000 messages, assuming an average message size of 200 bytes.
+
+**Message time-to-live (TTL)**:
+- A default message TTL of **36 hours** has been introduced. Any unacknowledged messages remaining in the backlog for more than 36 hours will be automatically deleted.
+
+These limits are configurable on a per-tenant basis. If your use case requires a different configuration, or if you have any concerns, please contact [product support](https://cumulocity.com/docs/additional-resources/contacting-support/).
+
+{{< /c8y-admon-important >}}
+
 The microservice-based data broker is powered by the {{< product-c8y-iot >}} Messaging Service that enables reliable, scalable and high-performance movement of IoT data. The microservice-based data broker is similar to the existing data broker in its functionality, except that a microservice, the `databroker-agent-server`, must be enabled to make use of it.
 
 {{< c8y-admon-req >}}
