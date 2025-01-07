@@ -65,8 +65,16 @@ relativeURLs = true
     link = "https://techcommunity.cumulocity.com/"
 
   [[params.additionalResources]]
+    name = "Learning Portal"
+    link = "https://cumulocity.moodlecloud.com/"
+
+  [[params.additionalResources]]
     name = "Download Center"
     link = "https://download.cumulocity.com/"
+
+  [[params.additionalResources]]
+    name = "Platform status"
+    link = "https://status.cumulocity.com/"
 
   [[params.additionalResources]]
     name = "Device Partners"
@@ -75,10 +83,6 @@ relativeURLs = true
   [[params.additionalResources]]
     name = "Solution Partners"
     link = "https://ecosystem.cumulocity.com/solution-partners/"
-
-  [[params.additionalResources]]
-    name = "Learning Portal"
-    link = "https://cumulocity.moodlecloud.com/"
 
   [[params.additionalResources]]
     name = "Product Support"
