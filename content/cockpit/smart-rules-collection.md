@@ -841,7 +841,7 @@ You can use this mechanism for example to insert device names or alarm text into
     <td>#{text}</td>
     <td>Text or message of the trigger.</td>
   </tr>
-</table> 
+</table>
 
 {{< c8y-admon-info >}}
 If using Apama for smart rules (shown by a subscription to Apama-ctrl in <b>Applications</b> > <b>Subscribed Applications</b> in the Administration application),
