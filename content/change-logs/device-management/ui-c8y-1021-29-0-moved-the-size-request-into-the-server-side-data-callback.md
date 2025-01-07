@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data grid size automatically adjusts when devices are modified
+title: Data grid size automatically adjusts when device list is modified
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
