@@ -71,11 +71,11 @@ See [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model/) for more i
 
 Listen for events of type `com.apama.cumulocity.MeasurementFragment` when you require filtering based on measurement fragments or series,
 instead of listening for `com.apama.cumulocity.Measurement` events and looking inside the `measurements` dictionary.
-For more information, see [Using measurement fragments]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_using_measurement_fragments.html) in the Apama documentation.
+For more information, see [Using measurement fragments]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in/#using-measurement-fragments) in the Apama documentation.
 
 ### Listeners {#listeners}
 
-Triggering a statement by an arriving event is not the only possibility. The following sections cover other ways to combine listeners. Refer to [Defining Event Listeners]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_defining_event_listeners.html) in the Apama documentation for full details.
+Triggering a statement by an arriving event is not the only possibility. The following sections cover other ways to combine listeners. Refer to [Defining Event Listeners]({{< link-apama-webhelp >}}/developing-apama-applications-in-epl/defining-event-listeners/) in the Apama documentation for full details.
 
 #### Filters {#filters}
 
@@ -145,7 +145,7 @@ For example:
 }
 ```
 
-See also [Timezone variable](/microservice-sdk/general-aspects/#timezone-variable) in this documentation and [Supported time zones]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html) in the Apama documentation.
+See also [Timezone variable](/microservice-sdk/general-aspects/#timezone-variable) in this documentation and [Supported time zones]({{< link-apama-webhelp >}}/developing-apama-applications-in-epl/using-epl-plug-ins/#supported-time-zones) in the Apama documentation.
 
 
 {{< c8y-admon-info >}}
@@ -184,7 +184,7 @@ from m in all Measurement(type="c8y_TemperatureMeasurement") retain 20 every 20 
 from m in all Measurement(type="c8y_TemperatureMeasurement") retain 20 every 20 select avg(m.measurements["c8y_TemperatureMeasurement"]["T"].value) as avgValue { }
 ```
 
-See the Apama documentation for [built-in aggregate functions]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fre-ApaEplRef_built_in_aggregate_functions.html).
+See the Apama documentation for [built-in aggregate functions]({{< link-apama-webhelp >}}/epl-reference/aggregate-functions/#built-in-aggregate-functions).
 
 
 ### Creating own event types {#creating-own-event-types}

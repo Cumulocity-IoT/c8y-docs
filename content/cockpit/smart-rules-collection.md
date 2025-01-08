@@ -846,9 +846,9 @@ You can use this mechanism for example to insert device names or alarm text into
 {{< c8y-admon-info >}}
 If using Apama for smart rules (shown by a subscription to Apama-ctrl in <b>Applications</b> > <b>Subscribed Applications</b> in the Administration application),
 variables for times can include a time zone and time format to display the time in.
-The variable #{time:TZ=America/New_York,FORMAT=\"HH::mm::ssZ\"} for example displays the time using the time zone for New York in the format HH:mm:ssZ.
-See also [Supported time zones]({{< link-apama-webhelp >}}/index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html)
-and [Format specification for the TimeFormat functions]({{< link-apama-webhelp >}}/index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_format_specification_for_the_time_format_plug_in_functions.html)
+The variable #{time:TZ=America/New_York,FORMAT="HH:mm:ssZ"} for example displays the time using the time zone for New York in the format HH:mm:ssZ.
+See also [Supported time zones]({{< link-apama-webhelp >}}/developing-apama-applications-in-epl/using-epl-plug-ins/#supported-time-zones)
+and [Format specification for the TimeFormat functions]({{< link-apama-webhelp >}}/developing-apama-applications-in-epl/using-epl-plug-ins/#format-specification-for-the-timeformat-functions)
 in the Apama documentation.
 {{< /c8y-admon-info >}}
 
