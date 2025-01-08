@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3089
 version: ""
 ---
-As a result of the Device map component migration to Angular, the obsolete `Device list map` AngularJS module (`c8y.parts.deviceListMap`) has been removed from `@c8y/ng1-modules` package. In case your application uses Device map page, you can use the new `deviceMapFeatureProvider` from '@c8y/ngx-components/device-map' package as a replacement.
+As a result of the device map component migration to Angular, the obsolete device list map AngularJS module (`c8y.parts.deviceListMap`) has been removed from the `@c8y/ng1-modules` package. If your application uses the **Device map** page, you can use the new `deviceMapFeatureProvider` from the `@c8y/ngx-components/device-map` package as a replacement.
