@@ -25,9 +25,7 @@ Enter password to access Edge operator registry:
 ```
 
 {{< c8y-admon-info >}}
-To request the Edge registry credentials, contact the {{< company-c8y >}} logistics team for your region:
-* North and South America: LogisSrvus@softwareagusa.com
-* All Other Regions: LogisticsServiceCenterGER@softwareag.com
+To request the Edge registry credentials, contact support@cumulocity.com
 {{< /c8y-admon-info >}}
 
 By default, the Edge operator is deployed within the **c8yedge** namespace. If you wish to install the Edge operator and Edge in a different namespace, you can specify it using the `-n` option in the installation script.

@@ -107,9 +107,7 @@ c8yedge_registry_sync sync -v {{< c8y-edge-current-version >}}.0.1 -sr registry.
 ```
 
 {{< c8y-admon-info >}}
-To request the Edge registry credentials, contact the {{< company-c8y >}} logistics team for your region:
-* North and South America: LogisSrvus@softwareagusa.com
-* All Other Regions: LogisticsServiceCenterGER@softwareag.com
+To request the Edge registry credentials, contact support@cumulocity.com
 {{< /c8y-admon-info >}}
 
 ### Update custom-environment-variables ConfigMap
