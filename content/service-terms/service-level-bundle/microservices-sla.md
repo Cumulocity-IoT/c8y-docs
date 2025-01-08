@@ -58,11 +58,11 @@ Customer acknowledges the following limitations and constraints in using Service
   * {{< product-c8y-iot >}} may block large capacity requests occurring in a brief period.
   * In case of doubt, please [contact product support](/additional-resources/contacting-support/) for bounds and larger capacity requirements (for example, onboarding a single-tenant Microservice with many customers).
 * **Security and performance management**: Provider may stop or remove Microservices in case of a severe security or performance impact to {{< product-c8y-iot >}}. Customers are expressly prohibited from engaging in any destructive activities on the {{< product-c8y-iot >}} production infrastructure. This includes penetration testing, performance testing, stress testing, or any other activities that may compromise the integrity, performance, or security of our systems.
-* **Quotas** as [documented](/service-terms/service-level/#limitations-and-constraints).
+* **Quotas** as [documented](/service-terms/quotas).
 
 ### Service availability
 
-Service availability of {{< product-c8y-iot >}} Microservices follows the [general service terms](/service-terms/service-level/) of {{< product-c8y-iot >}}.
+Service availability of {{< product-c8y-iot >}} Microservices follows the [general service terms](/service-terms/service-level/#platform-sla) of {{< product-c8y-iot >}}.
 
 ### Support and maintenance
 
