@@ -74,6 +74,9 @@
     &::after{
       display: none!important;
     }
+    &.active{
+      box-shadow: inset 4px 0 0  var(--c8y-brand-primary), inset 0 -1px 0 rgba(black, .1);
+    }
   }
 }
 

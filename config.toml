@@ -7,7 +7,6 @@ languageCode = "en-us"
 defaultContentLanguage = "en-us"
 title = "Cumulocity documentation"
 theme = "c8ydocs"
-paginate = 12
 # canonifyurls = false
 publishDir = "public"
 # googleAnalytics = "UA-xxxxxxxx-x"
