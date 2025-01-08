@@ -1,6 +1,6 @@
 ---
 date: ""
-title: - fix application logs inner-scroll (#7867) [GRAFT][release/cd] (#7892)
+title: Scrolling works properly for application activity logs
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
