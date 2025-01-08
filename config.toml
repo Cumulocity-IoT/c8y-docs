@@ -35,7 +35,7 @@ relativeURLs = true
   # Global keywords configuration. Following keywords will be add to every pages
   keywords = ["Cumulocity", "Internet of things", "analytics", "devices", "connect"]
 
-  description = "This documentation offers comprehensive information on the var-product-c8y-iot platform both from a user and from a developer perspective. It reflects the latest state of the var-product-c8y-iot platform and is continuously updated to align with recent software updates."
+  description = "IMPORTANT - This documentation is a PREVIEW of the var-product-c8y-iot 2025 release documentation. The content and its described features and functionalities may be subject to change without further notice until this version is officially released."
 
   oldguides = "//cumulocity.com/guides/welcome/intro-documentation/"
 
