@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed inner scrolling for application logs
+title: Scrolling works properly for application activity logs
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
