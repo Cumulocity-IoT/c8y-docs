@@ -5,7 +5,6 @@ languageCode = "en-us"
 defaultContentLanguage = "en-us"
 title = "Cumulocity documentation"
 theme = "c8ydocs"
-paginate = 12
 # canonifyurls = false
 # publishDir = "public/site"
 # googleAnalytics = "UA-xxxxxxxx-x"
@@ -42,4 +41,4 @@ buildFuture = true
 # Customize
   [params.footer]
     copyright = "Cumulocity GmbH | All rights reserved"
-    c8ylink = "https://cumulocity.com"
+    c8ylink = "https://www.cumulocity.com"
