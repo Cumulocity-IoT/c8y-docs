@@ -1,6 +1,6 @@
 ---
 date: ""
-title: - fix application logs inner-scroll (#7867) [GRAFT][release/y2025] (#7893)
+title: Fixed inner scrolling for application logs
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
