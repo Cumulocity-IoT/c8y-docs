@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60913
 version: 1021.22.5
 ---
-In the application logs view, users were unable to scroll through the log content when it exceeded the visible area. This issue has been resolved and users can now properly scroll through the full log content, even if it extends beyond the initial visible section. The improved scrolling behavior allows users to easily review and analyze the complete application logs without any limitations.
+On the **Properties** tab of an application, users were unable to scroll through the activities log content when it exceeded the visible area. This issue has been resolved and users can now properly scroll through the full log content, even if it extends beyond the initial visible section.
