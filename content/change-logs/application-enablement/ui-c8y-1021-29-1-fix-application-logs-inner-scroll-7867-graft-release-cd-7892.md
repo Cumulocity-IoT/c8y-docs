@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60913
 version: 1021.29.1
 ---
-- fix application logs inner-scroll (#7867) [GRAFT][release/cd] (#7892)
+On the **Properties** tab of an application, users were unable to scroll through the activities log content when it exceeded the visible area. This issue has been resolved and users can now properly scroll through the full log content, even if it extends beyond the initial visible section.
