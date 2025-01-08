@@ -13,7 +13,7 @@ The {{< product-c8y-iot >}} Cloud Remote Access allows you to remotely access th
 To use Cloud Remote Access, you need:
 
 * "Remote access" permission granted to the tenant user.
-* A {{< product-c8y-iot >}} tenant subscribed to the Cloud Remote Access microservice. To get the subscription, contact [{{< company-sag >}} support](/additional-resources/contacting-support/).
+* A {{< product-c8y-iot >}} tenant subscribed to the Cloud Remote Access microservice. To get the subscription, contact [product support](/additional-resources/contacting-support/).
 
 ### Supported protocols {#supported-protocols}
 
@@ -28,7 +28,7 @@ The following protocols are supported to connect to the Edge appliance through r
 
 {{< c8y-admon-important >}}
 
-Starting with Edge Release 10.15, the support for the Telnet protocol has been removed, as Telnet is considered to be an insecure protocol lacking built-in security measures. For accessing the Edge appliance remotely from the {{< product-c8y-iot >}} tenant, {{< company-sag >}} recommends you to use the SSH protocol instead.
+Starting with Edge Release 10.15, the support for the Telnet protocol has been removed, as Telnet is considered to be an insecure protocol lacking built-in security measures. For accessing the Edge appliance remotely from the {{< product-c8y-iot >}} tenant, {{< company-c8y >}} recommends you to use the SSH protocol instead.
 {{< /c8y-admon-important >}}
 
 For more information about remote access, see [Cloud Remote Access](/cloud-remote-access/cra-general-aspects).

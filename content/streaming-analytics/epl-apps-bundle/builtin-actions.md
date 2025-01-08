@@ -23,13 +23,13 @@ The events listed in the following table are part of the `com.apama.cumulocity` 
 
 |To look up|Request-Response Events|Example|
 |:---------|:-----------------|:---------|
-|ManagedObject|FindManagedObject <br/>FindManagedObjectResponse <br/>FindManagedObjectResponseAck|[Example]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_querying_for_managed_objects.html)|
-|Alarm|FindAlarm <br/>FindAlarmResponse <br/>FindAlarmResponseAck|[Example]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_querying_for_alarms.html)|
-|Event|FindEvent <br/>FindEventResponse <br/>FindEventResponseAck|[Example]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_querying_for_events.html)|
-|Measurement|FindMeasurement <br/>FindMeasurementResponse <br/>FindMeasurementResponseAck|[Example]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_querying_for_measurements.html)|
-|Operation|FindOperation <br/>FindOperationResponse <br/>FindOperationResponseAck|[Example]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_querying_for_operations.html)|
-|CurrentUser|CurrentUser <br/>GetCurrentUser <br/>GetCurrentUserResponse|[Example]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_getting_user_details.html)|
-|TenantOption|TenantOption <br/>FindTenantOptions  <br/>FindTenantOptionsResponse|[Documentation]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_finding_tenant_options.html)|
+|ManagedObject|FindManagedObject <br/>FindManagedObjectResponse <br/>FindManagedObjectResponseAck|[Example]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in/#querying-for-managed-objects)|
+|Alarm|FindAlarm <br/>FindAlarmResponse <br/>FindAlarmResponseAck|[Example]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in/#querying-for-alarms)|
+|Event|FindEvent <br/>FindEventResponse <br/>FindEventResponseAck|[Example]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in/#querying-for-events)|
+|Measurement|FindMeasurement <br/>FindMeasurementResponse <br/>FindMeasurementResponseAck|[Example]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in/#querying-for-measurements)|
+|Operation|FindOperation <br/>FindOperationResponse <br/>FindOperationResponseAck|[Example]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in/#querying-for-operations)|
+|CurrentUser|CurrentUser <br/>GetCurrentUser <br/>GetCurrentUserResponse|[Example]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in/#getting-user-details)|
+|TenantOption|TenantOption <br/>FindTenantOptions  <br/>FindTenantOptionsResponse|[Documentation]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in/#finding-tenant-options)|
 
 
 ### Invoking other parts of the {{< product-c8y-iot >}} REST API {#other-parts}
@@ -48,7 +48,7 @@ This includes personal identifiable information, such as username, email address
 {{< /c8y-admon-info >}}
 
 For more information, see [REST implementation](https://{{< domain-c8y >}}/api/core/#section/REST-implementation) in the {{< openapi >}}
-and [Invoking other parts of the Cumulocity REST API]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_invoking_other_parts_of_the_cumulocity_rest_api.html) in the Apama documentation.
+and [Invoking other parts of the Cumulocity REST API]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in/#invoking-other-parts-of-the-cumulocity-rest-api) in the Apama documentation.
 
 ### Invoking HTTP services {#invoking-http-services}
 
@@ -125,7 +125,7 @@ monitor Example {
 }
 ```
 
-For more information on `TimeFormat` and its functions, see [Using the TimeFormat Event Library]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fre-DevApaAppInEpl_using_the_time_format_plug_in.html) in the Apama documentation and the API Reference for EPL (ApamaDoc).
+For more information on `TimeFormat` and its functions, see [Using the TimeFormat Event Library]({{< link-apama-webhelp >}}/developing-apama-applications-in-epl/using-epl-plug-ins/#using-the-timeformat-event-library) in the Apama documentation and the API Reference for EPL (ApamaDoc).
 
 #### inMaintenanceMode {#inmaintenancemode}
 

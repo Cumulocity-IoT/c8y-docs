@@ -38,19 +38,20 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 ### Domain model
 
-| Quota                                                                | Type | Value |
-| -------------------------------------------------------------------- | ---- | ----: |
-| [Document size](/concepts/domain-model/#fragments)                   | Hard | 16 MB |
-| [Document size](/concepts/domain-model/#fragments)                   | Soft |  1 MB |
-| [Array size within document](/concepts/domain-model/#fragments)      | Soft |  1000 |
-| [Children of an inventory object](/concepts/domain-model/#fragments) | Soft |  1000 |
+| Quota                                                                                                         | Type | Value |
+| ------------------------------------------------------------------------------------------------------------- | ---- | ----: |
+| [Document size](/concepts/domain-model/#fragments)                                                            | Hard | 16 MB |
+| [Document size](/concepts/domain-model/#fragments)                                                            | Soft |  1 MB |
+| [Array size within document](/concepts/domain-model/#fragments)                                               | Soft |  1000 |
+| [Children of an inventory object](/concepts/domain-model/#fragments)                                          | Soft |  1000 |
+| [Property size](https://docs.dremio.com/current/get-started/cluster-deployments/architecture/limits/#catalog) | Soft | 32 KB |
 
 
 ### REST API
 
-| Quota                        | Type |     Value |
-| ---------------------------- | ---- | --------: |
-| Maximum API request duration | Hard | 5 minutes |
+| Quota                | Type |     Value |
+| -------------------- | ---- | --------: |
+| API request duration | Hard | 5 minutes |
 
 ### Realtime APIs
 
@@ -75,3 +76,20 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 | ---------------------------------------------------------------------------------------------- | ---- | ----: |
 | [File size for LWM2M bulk registration](/protocol-integration/lwm2m/#bulk-device-registration) | Hard | 10 MB |
 | [Concurrent pending LWM2M operations](/protocol-integration/lwm2m/#device-operations-handling) | Hard |    10 |
+
+### DataHub
+
+| Quota                                                                                                          | Type |   Value |
+| -------------------------------------------------------------------------------------------------------------- | ---- | ------: |
+| Number of active offloaders per tenant                                                                         | Soft |     100 |
+| Number of offloadings per tenant per hour                                                                      | Soft |      20 |
+| [Offloading frequency](/datahub/working-with-datahub/#configure-additional-settings)                           | Hard |  hourly |
+| [Offloaded leaf properties](https://docs.dremio.com/current/sonar/query-manage/querying-data/wide-tables/)[^1] | Soft |    6400 |
+| Query time out                                                                                                 | Soft |   4 min |
+| Query job retention                                                                                            | Hard |   1 day |
+| [Rows in a query job](https://cumulocity.com/api/datahub/#operation/getJobResultsApiResource)                  | Hard | 1000000 |
+| [Rows in a high performance query](https://cumulocity.com/api/datahub/#tag/High-performance-API)               | Soft | 1000000 |
+
+Additional [quotas from the Dremio engine](https://docs.dremio.com/current/get-started/cluster-deployments/architecture/limits/#catalog) may apply.
+
+[^1]: *Leaf properties* are properties with elementary types (text, number, boolean). The total count of leaf properties offloaded into the same table should not exceed the limit.

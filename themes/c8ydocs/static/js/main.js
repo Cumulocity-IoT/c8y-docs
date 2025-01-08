@@ -17,7 +17,7 @@ var main = (function ($) {
         class: 'admonition preview'
       }).insertAfter(elem);
       $('<h4 class="title">Preview</h4>').appendTo('#preview-banner');
-      $('<span>This is a preview of the documentation for the Cumulocity '+ docsPreview +' deployments.</span>').appendTo('#preview-banner');
+      $('<span>This is a preview of the documentation for the '+ docsPreviewString +'.</span>').appendTo('#preview-banner');
    }
 
     //Toggle side navigation
@@ -166,11 +166,15 @@ function buildToc() {
         let h2 = article.querySelector('h5');
         let target = h2.parentNode.nextElementSibling;
         if (target && h2.textContent.length) {
-          let curMonth = h2.textContent.split(' ')[0];
-          let curYear = h2.textContent.split(' ')[2];
-          if (month !== curMonth) {
-            tocLinks += `<div class="list-group-item p-t-16"><p><strong>${curMonth} ${curYear}</strong></p></div>`;
-            month = curMonth;
+          // Test if the text is a date string used for CD release (example: December 10, 2024) or a version string used for yearly release (example: 2024.12)
+          // Simple check of presence of whitespace in the string can help us check if the string is a date or a version
+          if (/\s/g.test(h2.textContent)) {
+            let curMonth = h2.textContent.split(' ')[0];
+            let curYear = h2.textContent.split(' ')[2];
+            if (month !== curMonth) {
+              tocLinks += `<div class="list-group-item p-t-16"><p><strong>${curMonth} ${curYear}</strong></p></div>`;
+              month = curMonth;
+            }
           }
           tocLinks += `<div class="list-group-item"><a class="toc-link" href="#${target.id}" data-refid="${h2.parentNode.id}" title="${h2.textContent}">${h2.textContent}</a></div>`;
         }
