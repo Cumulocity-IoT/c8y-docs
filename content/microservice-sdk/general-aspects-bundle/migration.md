@@ -4,7 +4,7 @@ title: Microservice migration to API Version 2
 layout: redirect
 ---
 
-**With release 10.15**, {{< company-sag >}} announces the availability of microservice API Version 2 and the deprecation of API Version 1 to comply with new security requirements.
+**With release 10.15**, {{< company-c8y >}} announces the availability of microservice API Version 2 and the deprecation of API Version 1 to comply with new security requirements.
 Microservice API Version 2 provides an improved microservice container security context restricting the invocation of privileged Linux Kernel APIs.
 In details this means that with microservice API Version 2 the microservice container is granted only specific capabilities.
 

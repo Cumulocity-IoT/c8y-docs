@@ -13,5 +13,5 @@ Depending on the {{< product-c8y-iot >}} plan your organization has purchased, o
 {{< /c8y-admon-important >}}
 
 {{< c8y-admon-info >}}
-The **Installation and Operations guides** for the {{< product-c8y-iot >}} platform are not publicly available. They are provided on the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}), see [Additional resources](/additional-resources/).
+The Installation and operations documentation for the {{< product-c8y-iot >}} platform is not publicly available. It is provided on the [{{< c8y-resources-server >}}]({{< c8y-resources-server-link >}}), see [Additional resources](/additional-resources/).
 {{< /c8y-admon-info >}}

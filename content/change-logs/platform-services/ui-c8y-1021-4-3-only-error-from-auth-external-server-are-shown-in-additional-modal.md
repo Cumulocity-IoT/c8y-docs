@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Enhanced display of error messages for external authentication and platform permissions
+date: '2024-11-28'
+title: >-
+  Enhanced display of error messages for external authentication and platform
+  permissions
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

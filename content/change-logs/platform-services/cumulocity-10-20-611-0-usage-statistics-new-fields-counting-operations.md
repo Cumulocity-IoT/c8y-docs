@@ -1,5 +1,5 @@
 ---
-date:
+date: '2024-12-19'
 title: Added operation request counters to usage statistics
 product_area: Platform services
 change_type:

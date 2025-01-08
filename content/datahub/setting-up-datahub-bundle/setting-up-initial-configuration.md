@@ -41,6 +41,10 @@ Your follow-up application might require more than one Dremio user for accessing
 #### Data Lake {#data-lake}
 Depending on the configuration of the environment, the data lake provider is either fixed or you can choose among different providers. For each data lake provider, you must specify corresponding settings to define the data lake to be used.
 
+{{< c8y-admon-req >}}
+The setting **Partition Column Inference** must not be enabled as this lets Dremio assume a specific folder structure, which conflicts with the folder structure used by {{< product-c8y-iot >}} DataHub.
+{{< /c8y-admon-req >}}
+
 The following types of data lakes are currently supported:
 
 ##### Azure Storage {#azure-storage}
