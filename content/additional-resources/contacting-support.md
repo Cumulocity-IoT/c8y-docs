@@ -14,6 +14,6 @@ Once you have an account, and depending on role-associated permissions, you have
 - **Feedback** - Share your thoughts and suggestions to help improve features and user experience.
 - **Managed Services** - Access premium platform management, monitoring solutions, and specialized support.
 
-You can refer to {{< company-c8y >}}´s free [Tech Community](https://tech.forums.softwareag.com/tag/Cumulocity-IoT) pages for information sources such as user forums and FAQs.
+You can refer to {{< company-c8y >}}´s free [Tech Community]({{< c8y-tech-community-link >}}) pages for information sources such as user forums and FAQs.
 
 If you are interested in acquiring a commercial license please contact us at [{{< email-c8y-info >}}](mailto:{{< email-c8y-info >}}).
