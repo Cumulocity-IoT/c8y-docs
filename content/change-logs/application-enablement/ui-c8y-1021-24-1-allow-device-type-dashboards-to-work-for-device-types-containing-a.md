@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-01-09'
 title: Device type dashboards can now be used for device types containing a dot
 product_area: Application enablement & solutions
 change_type:
