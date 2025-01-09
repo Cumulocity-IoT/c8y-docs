@@ -97,7 +97,7 @@ See also [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
 
 ##### Step 1 - Install Apama {#step-1---install-apama}
 
-Download the `apama-c8y-dev` package of Apama from [https://www.apamacommunity.com/downloads/](https://download.cumulocity.com/Apama) and extract it to install Apama. This installs the freemium Apama Community Edition with reduced capabilities and several restrictions. To unlock all features you need a license.
+Download the `apama-c8y-dev` package of Apama from [https://download.cumulocity.com/Apama/](https://download.cumulocity.com/Apama) and extract it to install Apama. This installs the freemium Apama Community Edition with reduced capabilities and several restrictions. To unlock all features you need a license.
 
 If you have a license, copy the license file into the Apama work directory (*APAMA_WORK/license*).
 
