@@ -45,7 +45,7 @@
 
     {{ $options := (dict "targetPath" $cssfile "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules/myscss")) }}
 
-    {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options  }}
+    {{ $style := resources.Get "scss/main.scss" | css.Sass $options  }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <!--STYLES END-->
 
