@@ -8,9 +8,9 @@
 {{ $sortedsections := sort $sections ".Page.Params.weight" }}
 {{ range $sortedsections }}
 {{ $pages := where .Pages "Type" "!=" "page" }}
-{{ if $pages }}
 {{ $page := index $pages 0 }}
 <li><a class='{{if or (eq $currentSection .Page.Data.Term) (eq $current_dataTerm .Page.Data.Term)  }} active {{ end}}'
-  href='{{.Page.Permalink}}'><i class="c8y-icon-duocolor {{.Page.Params.icon}} icon-20 m-r-8"></i>{{.Page.Title}}</a></li>
-{{ end }}
+  href='{{ if eq $page.Type "external" }}{{ $page.Params.external }}{{ else }}{{.Page.Permalink}}{{ end }}'
+  {{ if eq $page.Type "external" }}target="_blank" rel="noopener"{{ end }}>
+  <i class="c8y-icon-duocolor {{.Page.Params.icon}} icon-20 m-r-8"></i>{{.Page.Title}}</a></li>
 {{ end }}
