@@ -1,6 +1,6 @@
 ---
 date: ""
-title: The alarm detail view has been extended with the possibility to add custom tabs.
+title: Enhanced alarm details view with the option to add custom tabs
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
