@@ -40,4 +40,10 @@ Once uploaded, the application is created and available in the application list 
 
 The {{< product-c8y-iot >}} documentation website provides change logs for the SaaS cloud offering and release notes for the yearly releases under maintenance.
 
-Release notes for previous {{< product-c8y-iot >}} releases (back to 10.4.0) are available at [https://cumulocity.com/releasenotes/about/introduction/](https://cumulocity.com/releasenotes/about/introduction/).
+Release notes for previous {{< product-c8y-iot >}} releases (back to 10.4.0) are available via the [{{< c8y-resources-server >}}]({{< c8y-resources-server-link >}}) (credentials required). Please please contact [{{< product-c8y-iot >}} support](/additional-resources/contacting-support) if you do not have access to the {{< c8y-resources-server >}}.
+
+### API documentation for previous releases {#api-documentation-for-previous-versions}
+
+The [{{< open-api >}}](https://.cumulocity.com/api) website provides the API documentation for the SaaS cloud offering and the yearly releases under maintenance.
+
+API documentation for previous {{< product-c8y-iot >}} releases (back to 10.15.0) are available via the [{{< c8y-resources-server >}}]({{< c8y-resources-server-link >}}) (credentials required). Please please contact [{{< product-c8y-iot >}} support](/additional-resources/contacting-support) if you do not have access to the {{< c8y-resources-server >}}.
