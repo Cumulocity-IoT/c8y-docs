@@ -26,7 +26,11 @@
             </h2>
           {{end}}
         {{else}}
-          <h2>{{.Page.Title}}</h2>
+          <h2>{{.Page.Title}} 
+            {{if (isset .Page.Params "external") }}
+            <i class="dlt-c8y-icon-external-link" style="font-size: 14px;" title="External website"></i>
+            {{end}}
+          </h2>
         {{end}}
       </div>
         {{.Page.Content}}
