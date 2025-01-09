@@ -13,3 +13,4 @@
   href='{{ if eq .Page.Params.type "change-log"}}/change-logs{{else if .Page.Params.external}}{{.Page.Params.external}}{{else}}{{.Page.Permalink}}{{end}}' 
   <i class="c8y-icon-duocolor {{.Page.Params.icon}} icon-20 m-r-8"></i>{{.Page.Title}}</a></li>
 {{ end }}
+
