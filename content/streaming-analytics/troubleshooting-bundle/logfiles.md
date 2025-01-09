@@ -14,6 +14,6 @@ There are two ways to get the logs of the Apama-ctrl microservice:
   In case of {{< product-c8y-iot >}} Edge Applicance VM, since Apama-ctrl is not deployed as a microservice in the VM-based distribution, the log file can be retrieved using the diagnostic utility. For more details, see [Apama log file locations](https://cumulocity.com/guides/edge/operating-edge/#apama-log-file-locations) and [Diagnostic utility](https://cumulocity.com/guides/edge/operating-edge/#diagnostics).
     {{< /c8y-admon-info >}}
 
-The correlator log is embedded in the log file of the Apama-ctrl microservice. See also [Descriptions of correlator status log fields]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DepAndManApaApp_logging_correlator_status.html) in the Apama documentation.
+The correlator log is embedded in the log file of the Apama-ctrl microservice. See also [Descriptions of correlator status log fields]({{< link-apama-webhelp >}}/deploying-and-managing-apama-applications/overview-of-deploying-apama-applications/#descriptions-of-correlator-status-log-fields) in the Apama documentation.
 
 Contact [product support](/additional-resources/contacting-support/) if needed.

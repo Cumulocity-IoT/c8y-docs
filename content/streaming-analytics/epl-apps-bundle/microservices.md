@@ -10,7 +10,7 @@ Streaming analytics applications using Apama can make use of applications runnin
 
 We will assume that you are developing an EPL app using the EPL editor that is part of the Streaming Analytics application and demonstrate a request to a microservice. The steps in this guide will also work with any other way you could be creating an Apama application and can be used to interact with any microservice.
 
-We will be making use of the `CumulocityRequestInterface` API. For more technical information about this API, see [Invoking microservices]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_invoking_microservices.html) in the Apama documentation.
+We will be making use of the `CumulocityRequestInterface` API. For more technical information about this API, see [Invoking microservices]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in/#invoking-microservices) in the Apama documentation.
 
 ### Creating an EPL app {#creating-an-epl-app}
 

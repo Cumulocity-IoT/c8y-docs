@@ -38,7 +38,7 @@ ROLES & PERMISSIONS:
 {{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}
-- Refer to the [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}) to learn how to develop your own widgets and add them to your {{< product-c8y-iot >}} account.
+- Refer to the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) to learn how to develop your own widgets and add them to your {{< product-c8y-iot >}} account.
 - [Web SDK > Application configuration](/web/application-configuration/) for further information on how to customize the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 

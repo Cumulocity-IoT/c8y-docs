@@ -198,7 +198,7 @@ window.onload = (event) => {
   
   // Get the hash from the URL and scroll into it
   const hash = window.location.hash;
-  const targt = document.querySelector(hash);
+  const targt = hash ? document.querySelector(hash) : false;
   if (hash && targt) {
     setTimeout(() => {
       targt.scrollIntoView();

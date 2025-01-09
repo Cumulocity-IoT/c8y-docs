@@ -18,7 +18,7 @@ This guide provides information on the Web SDK which enables you to:
 {{< c8y-admon-important >}}
  Web SDK for Angular JS is deprecated. Therefore, its documentation is no longer provided here.  As all {{< product-c8y-iot >}} REST APIs are backward compatible, Angular JS applications will still continue to work.
 
-Web SDK for plugins is based on Angular JS and is also deprecated. For Angular-based development, we recommend you to implement native Angular modules. For more information, refer to the [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}).
+Web SDK for plugins is based on Angular JS and is also deprecated. For Angular-based development, we recommend you to implement native Angular modules. For more information, refer to the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}).
 {{< /c8y-admon-important >}}
 
 ### When can I use the Web SDK?
@@ -52,7 +52,7 @@ Following is a list which explains the use cases of each package.
 
 #### @c8y/client: Accessing data
 
-The @c8y/client is an isomorphic (node and browser) Javascript client library for the [{{< product-c8y-iot >}}](http://www.cumulocity.com) REST API. It can be used for getting data from the platform. In an Angular application you will mostly use the injected services from `@c8y/ngx-components`.
+The @c8y/client is an isomorphic (node and browser) Javascript client library for the [{{< product-c8y-iot >}} REST API](http://cumulocity.com/api/). It can be used for getting data from the platform. In an Angular application you will mostly use the injected services from `@c8y/ngx-components`.
 
 #### @c8y/ngx-components: The component library
 
@@ -110,7 +110,7 @@ As our releases are bound to the Angular versioning, you must to ensure that you
 
 {{< c8y-admon-info >}}
 If you want to use an older version then `1019.x.x` you must to use our old tooling based on the `c8ycli` tool-set. For more information see [C8Y Command Line Tool (CLI)](/web/upgrade/#c8y-cli).
-{{< /c8y-admon-info >}}  
+{{< /c8y-admon-info >}}
 
 
 ### Next steps

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-12-19'
 title: New datapoint export component
 product_area: Application enablement & solutions
 change_type:

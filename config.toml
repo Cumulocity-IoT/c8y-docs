@@ -7,7 +7,6 @@ languageCode = "en-us"
 defaultContentLanguage = "en-us"
 title = "Cumulocity documentation"
 theme = "c8ydocs"
-paginate = 12
 # canonifyurls = false
 publishDir = "public"
 # googleAnalytics = "UA-xxxxxxxx-x"
@@ -57,28 +56,28 @@ relativeURLs = true
   enterprise_tenant = "Enterprise tenant"
 
   [[params.additionalResources]]
-    name = "YouTube"
-    link = "https://www.youtube.com/@CumulocityIoT"
-
-  [[params.additionalResources]]
     name = "Tech Community"
-    link = "https://tech.forums.softwareag.com/tag/Cumulocity-IoT"
-
-  [[params.additionalResources]]
-    name = "Download Center"
-    link = "https://download.cumulocity.com/"
-
-  [[params.additionalResources]]
-    name = "Device Partners"
-    link = "https://ecosystem.cumulocity.com/devices/?filter_cumulocity_certified=yes"
-
-  [[params.additionalResources]]
-    name = "Solution Partners"
-    link = "https://ecosystem.cumulocity.com/solution-partners/"
+    link = "https://techcommunity.cumulocity.com/"
 
   [[params.additionalResources]]
     name = "Learning Portal"
     link = "https://cumulocity.moodlecloud.com/"
+
+  [[params.additionalResources]]
+    name = "YouTube"
+    link = "https://www.youtube.com/@CumulocityIoT"
+
+  [[params.additionalResources]]
+    name = "CLI documentation"
+    link = "https://goc8ycli.netlify.app/docs/introduction/"
+
+    [[params.additionalResources]]
+    name = "Platform status"
+    link = "https://status.cumulocity.com/"
+
+    [[params.additionalResources]]
+      name = "Company website"
+      link = "https://cumulocity.com/"
 
   [[params.additionalResources]]
     name = "Product Support"

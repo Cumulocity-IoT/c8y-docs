@@ -16,7 +16,7 @@ version: 24.18.0
 ##### String concatenation operator + supports non-string operands
 
 If only one operand expression is of type `string`, then string conversion is now performed on the other operand to produce a string at runtime.
-For more details, see [Additive operators](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/pam-webhelp/#page/pam-webhelp%2Fre-ApaEplRef_additive_operators.html) in the Apama documentation.
+For more details, see [Additive operators]({{<link-apama-webhelp>}}/epl-reference/expressions#additive-operators) in the Apama documentation.
 
 ##### New built-in convenience methods on string, sequence and dictionary
 
@@ -50,7 +50,7 @@ The following table lists all new methods:
 | `any.isEmpty()`, `optional.isEmpty()`, `listener.isEmpty()`, `Channel.isEmpty()`, `chunk.isEmpty()` | Aliases for the existing `empty()` methods on these types. It is recommended to use the new `isEmpty()` methods, but the use of `empty()` is not deprecated. |
 | `sequence.getOr()` | Gets the value at the specified index, or a specified fallback value if the index is not valid. |
 
-For more information, see the [API Reference for EPL (ApamaDoc)](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/related/ApamaDoc/index.html).
+For more information, see the [API Reference for EPL (ApamaDoc)]({{<link-apama-webhelp>}}/related/ApamaDoc/index.html).
 
 ##### Support for negative indexes for sequence[...] access
 
@@ -71,7 +71,7 @@ can now be written more simply as
 [12345, "a string"]
 ```
 
-This simplifies the functional example given in [EPL enhancements in 10.15.3](https://documentation.softwareag.com/pam/10.15.3/en/webhelp/pam-webhelp/#page/pam-webhelp%2Fco-ApaRelNot_10153_epl_enhancements.html) in the Apama documentation: the `<any>` is no longer needed in the `setFields` call.
+This simplifies the functional example given in [EPL enhancements in 10.15.3]({{<link-apama-webhelp>}}/change-logs/#10.15/functional-10153-release) in the Apama documentation: the `<any>` is no longer needed in the `setFields` call.
 
 ##### Discarding of unused return values
 
@@ -89,15 +89,15 @@ But now you can write:
 Functional(newAlarms).map(Fn.getEntry("alarm")).map(allAlarms.append);
 ```
 
-See also [Using an expression as a statement](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/pam-webhelp/#page/pam-webhelp%2Fre-ApaEplRef_using_an_expression_as_a_statement.html) in the Apama documentation.
+See also [Using an expression as a statement]({{<link-apama-webhelp>}}/epl-reference/expressions/#using-an-expression-as-a-statement) in the Apama documentation.
 
 ##### Functional operators
 
-The `com.apama.functional.Fn` and `com.apama.functional.Functional` events now have a new method `mapKeys` which can return a dictionary container with modified keys. For more details, see [Functional operators](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/pam-webhelp/#page/pam-webhelp%2Fco-DevApaAppInEpl_functional_operators.html) in the Apama documentation and the [API Reference for EPL (ApamaDoc)](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/related/ApamaDoc/index.html).
+The `com.apama.functional.Fn` and `com.apama.functional.Functional` events now have a new method `mapKeys` which can return a dictionary container with modified keys. For more details, see [Functional operators]({{<link-apama-webhelp>}}/developing-apama-applications-in-epl/using-functional-operations-in-epl/) in the Apama documentation and the [API Reference for EPL (ApamaDoc)]({{<link-apamadoc-api>}}).
 
 ##### Functional listeners
 
-The functional `onTimeout` action now returns the wait listener it creates so that it can be quit if needed. For more details, see [Functional listeners](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/pam-webhelp/#page/pam-webhelp%2Fco-DevApaAppInEpl_functional_listeners.html) in the Apama documentation.
+The functional `onTimeout` action now returns the wait listener it creates so that it can be quit if needed. For more details, see [Functional listeners]({{<link-apama-webhelp>}}/developing-apama-applications-in-epl/using-functional-operations-in-epl/#functional-listeners) in the Apama documentation.
 
 ##### Handling uncaught exceptions
 
@@ -138,4 +138,4 @@ The constants on the following events are instead replaced with `SUBSCRIBE_CHANN
 * `FindMeasurementResponseAck`
 * `GenericResponseComplete`
 
-The [API Reference for EPL (ApamaDoc)](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/related/ApamaDoc/index.html) has been amended to make it clear that acknowledgement events are always received on the same channel as the corresponding response events, and to avoid confusion the `CHANNEL` constant has been deprecated on those acknowledgement events where it had been defined.
+The [API Reference for EPL (ApamaDoc)]({{<link-apamadoc-api>}}) has been amended to make it clear that acknowledgement events are always received on the same channel as the corresponding response events, and to avoid confusion the `CHANNEL` constant has been deprecated on those acknowledgement events where it had been defined.

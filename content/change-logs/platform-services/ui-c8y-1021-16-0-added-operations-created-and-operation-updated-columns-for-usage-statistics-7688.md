@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-12-19'
 title: Added two new columns to the Usage Statistics page
 product_area: Platform services
 change_type:
