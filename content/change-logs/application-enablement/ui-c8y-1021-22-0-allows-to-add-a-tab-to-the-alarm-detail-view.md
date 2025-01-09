@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59811
 version: 1021.22.0
 ---
-In some cases, it may be required to show additional, custom information related to alarms. With this change, it is now possible to extend the alarm details view with custom tabs. This allows developers to display any kind of additional information in the context of an alarm. Existing alarm detail pages will not be affected by this change but it is now possible to enhance them with additional, use case specific tabs.
+It is now possible to extend the alarm details view with custom tabs. This allows developers to display any kind of additional information in the context of an alarm. Existing alarm details remain unchanged but can now be enhanced with additional custom tabs.
