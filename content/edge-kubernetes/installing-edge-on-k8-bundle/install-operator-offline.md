@@ -107,7 +107,7 @@ c8yedge_registry_sync sync -v {{< c8y-edge-current-version >}}.0.1 -sr registry.
 ```
 
 {{< c8y-admon-info >}}
-To request the Edge registry credentials, contact support@cumulocity.com
+To request the Edge registry credentials, [contact product support](/additional-resources/contacting-support/)
 {{< /c8y-admon-info >}}
 
 ### Update custom-environment-variables ConfigMap
