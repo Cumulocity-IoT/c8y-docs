@@ -1,5 +1,5 @@
 ---
-date: 2025-01-08
+date: 2025-01-06
 title: New links in resources dropdown
 change_type:
   - value: change-2c7RdTdXo4
@@ -10,4 +10,4 @@ component:
     label: Documentation
 build_artifact:
 ---
-The **Additional resources** dropdown at the top right of the product documentation website now provides access to the [Company website](https://cumulocity.com/), the [Platform status page](https://status.cumulocity.com/), and the [CLI documentation](https://goc8ycli.netlify.app/docs/introduction/). 
+The **Additional resources** dropdown at the top right of the product documentation website now provides access to the [Company website](https://cumulocity.com/), the [Platform status page](https://status.cumulocity.com/), and the [CLI documentation](https://goc8ycli.netlify.app/docs/introduction/).
