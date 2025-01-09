@@ -32,4 +32,4 @@ This [article](https://tech.forums.softwareag.com/t/cumulocity-iot-google-spread
 
 #### n8n.io
 
-This [article](https://tech.forums.softwareag.com/t/integration-guide-sending-cumulocity-iot-alarms-to-zendisk-twilio-using-n8n/288085) explains how to create a multi-step automation for {{< product-c8y-iot >}} alarms, generating Zendesk tickets and SMS notifications based on severity.
+This [article]({{< c8y-tech-community-link >}}t/integration-guide-sending-cumulocity-iot-alarms-to-zendesk-twilio-using-n8n/7638) explains how to create a multi-step automation for {{< product-c8y-iot >}} alarms, generating Zendesk tickets and SMS notifications based on severity.
