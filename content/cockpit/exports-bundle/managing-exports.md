@@ -190,7 +190,7 @@ To export data to a CSV or XLSX file, select the checkbox in front of the respec
 
 You will receive an email containing links to each export file.
 
-Standard time properties (like time or creationTime in alarms) are exported to the XLSX and CSV files following the date and time format representation defined in [ISO-8601]( https://www.w3.org/TR/NOTE-datetime).
+Standard time properties (like time or creationTime in alarms) are exported to the XLSX and CSV files following the date and time format representation defined in [ISO-8601](https://www.w3.org/TR/NOTE-datetime).
 
 When the export documents limit is reached and the result is truncated due to its limitations, an additional line with an indicator is added at the end of document.
 
@@ -206,7 +206,7 @@ limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceed
 
 Just click the respective row or click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the end of the row and then click **Edit**.
 
-For details on the fields see [To add an export](/cockpit/managing-exports/#to-add-an-export).
+For details on the fields see [To add an export](/cockpit/exports/#to-add-an-export).
 
 
 ### To duplicate an export {#to-duplicate-an-export}
