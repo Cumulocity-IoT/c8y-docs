@@ -14,3 +14,9 @@ Since the default **Group** asset model does not enforce hierarchy, any group as
 
 Once added to a group asset, a non-group asset can be moved back to the root level.
 
+{{< c8y-admon-info>}}
+
+- The Bulk import feature does not support creating group assets in bulk. 
+- Groups created in {{< product-c8y-iot >}} cockpit application are not listed in the Digital Twin Manager application.
+
+{{< /c8y-admon-info>}}
