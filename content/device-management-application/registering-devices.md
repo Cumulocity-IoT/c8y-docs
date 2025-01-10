@@ -39,15 +39,9 @@ helpcontent:
 ---
 
 {{< c8y-admon-related >}}
-<<<<<<< HEAD
 * [Device management > Protocol integration](/protocol-integration/) for details on registering devices using various standard protocol types.
-* [Device management > Device integration](/device-integration/introduction) for step-by-step instructions on registering devices.
+* [Device management > Device integration](/device-integration/device-integration-introduction/) for step-by-step instructions on registering devices.
 * [Device management > Device integration > Device integration using REST](/device-integration/device-integration-rest/) for a detailed descriptions on device integration via REST.
-=======
-* [Device management & connectivity > Protocol integration](/protocol-integration/) for details on registering devices using various standard protocol types.
-* [Device management & connectivity > Device integration](/device-integration/device-integration-introduction/) for step-by-step instructions on registering devices.
-* [Device management & connectivity > Device integration > Device integration using REST](/device-integration/device-integration-rest/) for a detailed descriptions on device integration via REST.
->>>>>>> 83f7850c4 (Merge pull request #2740 from Cumulocity-IoT/fix_broken_links)
 * The [New device requests API](https://{{< domain-c8y >}}/api/core/#tag/New-device-requests) for REST API methods concerning the creation of new devices.
 {{< /c8y-admon-related >}}
 
