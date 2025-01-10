@@ -18,7 +18,6 @@ Second, navigate to the folder and add the `@c8y/websdk` package to your Angular
 ng add @c8y/websdk
 ```
 
-
 {{< c8y-admon-info >}}  
 Required is a node.js installation. If you have the wrong node.js version installed, the `npm install` step will prompt you with the needed version number.
 {{< /c8y-admon-info >}}
@@ -71,13 +70,16 @@ or
  ng serve <appName> -u http://mytenant.acme.iot
 ```
 
-
 When you start the command the application begins to compile. After it is compiled, you can navigate to
 `http://localhost:4200/apps/<<your-app-name>>/` and login to your tenant.
 
 {{< c8y-admon-info >}}  
 You must provide your tenant name or the tenant ID on login (as the application cannot derive it from the URL on localhost). If you don't know your tenant name or the tenant ID you can click on your username in your tenant and get the information from the section Platform Information.
-{{< /c8y-admon-info >}}  
+{{< /c8y-admon-info >}}
+
+{{< c8y-admon-info >}}  
+It is possible that node.js needs more memory to compile the project. If you run into an out-of-memory error, assign more memory by setting the environment variable `NODE_OPTIONS` to `--max_old_space_size=4096`.
+{{< /c8y-admon-info >}}
 
 You are now setup. Any changes you make to your local files will lead to recompiling. After a
 refresh you will see your changes.
@@ -88,14 +90,14 @@ After creating the empty bootstrapping application you might want to start with 
 To do so, add a new component in the `src/app` to your project and save it as `hello.component.ts`:
 
 ```javascript
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-hello',
+  selector: "app-hello",
   template: `
     <c8y-title>Hello World</c8y-title>
     <p>My first content.</p>
-  `
+  `,
 })
 export class HelloComponent {}
 ```
@@ -105,23 +107,23 @@ a route in the `app.module.ts`. In the following example we extended the `applic
 which gives you a very clear application frame.
 
 ```javascript
-import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule as ngRouterModule } from '@angular/router';
-import { CoreModule, BootstrapComponent } from '@c8y/ngx-components';
-import { HelloComponent } from './hello.component';
+import { NgModule } from "@angular/core";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { RouterModule as ngRouterModule } from "@angular/router";
+import { CoreModule, BootstrapComponent } from "@c8y/ngx-components";
+import { HelloComponent } from "./hello.component";
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
     ngRouterModule.forRoot(
-      [{ path: '', component: HelloComponent }], // hook the route here
+      [{ path: "", component: HelloComponent }], // hook the route here
       { enableTracing: false, useHash: true }
     ),
-    CoreModule.forRoot()
+    CoreModule.forRoot(),
   ],
   bootstrap: [BootstrapComponent],
-  declarations: [HelloComponent] // add deceleration here
+  declarations: [HelloComponent], // add deceleration here
 })
 export class AppModule {}
 ```
