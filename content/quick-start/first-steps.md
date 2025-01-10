@@ -140,7 +140,7 @@ Next, we will show you how to create a report to track data.
 
 ### Step 5: Create a report
 
-Reports enable you to track applications, alarms, assets, and other data in a dashboard layout. Reports are global dashboard pages, regardless of the [asset hierarchy](/cockpit/managing-assets/#asset-hierarchy). To work with reports, check if you meet the [requirements](/cockpit/reports/) first.
+Reports enable you to track applications, alarms, assets, and other data in a dashboard layout. Reports are global dashboard pages, regardless of the [asset hierarchy](/cockpit/managing-assets/#asset-hierarchy). To work with reports, check if you meet the [requirements](/cockpit/working-with-reports/) first.
 
 To create a report click **Reports** in the **Navigator** on the left side and following the steps below.
 
