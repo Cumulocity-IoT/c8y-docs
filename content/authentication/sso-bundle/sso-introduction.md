@@ -15,7 +15,7 @@ To use the SSO feature the following requirements must be met:
 * The authorization server you use supports OAuth2 authorization code grant.
 * The access token is issued as JWT and you know what goes into the token content.
 * The JWT must consist of a unique user identifier, "iss" (issuer), "aud" (audience) and "exp" (expiration time) fields.
-* All microservices are built with Microservice Java SDK version 10.4.6 but preferably higher. For custom-built microservices, refer to [Security](/microservice-sdk/concept/#security).
+* All microservices are built with Microservice Java SDK version 10.4.6 but preferably higher. For custom-built microservices, refer to [Security](/microservice-sdk/general-aspects/#security).
 * For on premises installation the domain-based tenant resolution is configured properly.
 * For {{< enterprise-tenant >}}s, the enterprise domain must be set up as redirect URI in the basic configurations. If SSO providers have a list of allowed domains, the enterprise domain should be added to that list.
 * You must assign a role to the user with at least READ permission for "Own user management", otherwise the user cannot log in.
