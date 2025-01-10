@@ -83,6 +83,14 @@ This means that the process 12985 is using the 8080 port and it can be killed if
 
 This is caused mainly by versions incompatibility between the SDK and Spring Boot specified in your _pom.xml_ file. If you want to use a recent version of the SDK, for example, 1016.0.0, the version of Spring Boot must be compatible or equal to version 2.5.4.
 
+##### When using the SDK endpoints /env, /configprops, or /quartz I get return values masked with "******" {#when-using-the-sdk-endpoints-env-configprops-or-quartz-i-get-return-values-masked}
+
+This was introduced with Spring version 3. On how to configure or restore the previous behaviour, please refer to the [Spring Boot documentation](https://docs.spring.io/spring-boot/docs/3.2.2/reference/html/actuator.html#actuator.endpoints.sanitization).
+
+##### Endpoints with a trailng slash like /some/greeting/ are not accepted any more {#endpoints-with-a-trailng-slash-like-some-greeting-are-not-accepted-any-more}
+
+This was introduced with Spring version 3. On how to retain the previous behaviour, please refer to the [Spring Boot migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#web-application-changes).
+
 ##### Missing Docker permissions in Linux {#missing-docker-permissions-in-linux}
 
 When you build a microservice application via `mvn`, you might get this error:
