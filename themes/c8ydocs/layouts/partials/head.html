@@ -16,7 +16,7 @@
     <meta name="keywords" content="{{ with .Keywords }}{{ delimit . ", " }}{{ end }}{{ if .Site.Params.keywords }}, {{ delimit .Site.Params.keywords ", " }}{{ end }}">
 
     <meta property="og:title" content="{{if eq .Title $.Site.Title }}{{ .Title }}{{else}}{{ with .Title }}{{ . }} - {{$.Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}{{end}}">
-    <meta property="og:description" content="This documentation offers comprehensive information on the Cumulocity platform both from a user and from a developer perspective. It reflects the latest state of the Cumulocity platform and is continuously updated to align with recent software updates.">
+    <meta property="og:description" content="This documentation offers comprehensive information on the Cumulocity platform both from a user and from a developer perspective.">
     <meta property="og:image" content="{{ "images/cumulocity-docs-web.jpg" | absURL}}">
     <meta property="og:url" content="https://cumulocity.com/docs/">
 
