@@ -85,7 +85,7 @@ This is caused mainly by versions incompatibility between the SDK and Spring Boo
 
 ##### When using the SDK endpoints /env, /configprops, or /quartz I get return values masked with "******" {#when-using-the-sdk-endpoints-env-configprops-or-quartz-i-get-return-values-masked}
 
-The behavior changed with the update to Spring Boot version 3.2 in the MS SDK. To configure or restore the previous behavior, please refer to the[Spring Boot documentation](https://docs.spring.io/spring-boot/docs/3.2.2/reference/html/actuator.html#actuator.endpoints.sanitization).
+This behavior changed with the update to Spring Boot version 3.2 in the Microservice SDK. To configure or restore the previous behavior, refer to the [Spring Boot documentation](https://docs.spring.io/spring-boot/docs/3.2.2/reference/html/actuator.html#actuator.endpoints.sanitization).
 
 ##### Endpoints with a trailing slash like /some/greeting/ are not accepted any more {#endpoints-with-a-trailng-slash-like-some-greeting-are-not-accepted-any-more}
 
