@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57639
 version: 1021.22.7
 ---
-widget config layout adjustments (#7871) [GRAFT][release/y2025] (#7891)
+The widget configuration layout has been adjusted to improve usability and clarity. The configuration options are now grouped more logically and have additional explanations where needed. This change affects the layout of the widget configuration screen for all users. Existing widget configurations are automatically migrated to the new layout.
