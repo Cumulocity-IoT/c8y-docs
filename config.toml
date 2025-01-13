@@ -68,16 +68,16 @@ relativeURLs = true
     link = "https://www.youtube.com/@CumulocityIoT"
 
   [[params.additionalResources]]
+    name = "REST API documentation"
+    link = "https://cumulocity.com/api/"
+
+  [[params.additionalResources]]
     name = "CLI documentation"
     link = "https://goc8ycli.netlify.app/docs/introduction/"
 
-    [[params.additionalResources]]
+  [[params.additionalResources]]
     name = "Platform status"
     link = "https://status.cumulocity.com/"
-
-    [[params.additionalResources]]
-      name = "Company website"
-      link = "https://www.cumulocity.com/"
 
   [[params.additionalResources]]
     name = "Product Support"
