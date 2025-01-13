@@ -87,7 +87,7 @@ This is caused mainly by versions incompatibility between the SDK and Spring Boo
 
 This was introduced with Spring version 3. On how to configure or restore the previous behaviour, please refer to the [Spring Boot documentation](https://docs.spring.io/spring-boot/docs/3.2.2/reference/html/actuator.html#actuator.endpoints.sanitization).
 
-##### Endpoints with a trailng slash like /some/greeting/ are not accepted any more {#endpoints-with-a-trailng-slash-like-some-greeting-are-not-accepted-any-more}
+##### Endpoints with a trailing slash like /some/greeting/ are not accepted any more {#endpoints-with-a-trailng-slash-like-some-greeting-are-not-accepted-any-more}
 
 This was introduced with Spring version 3. On how to retain the previous behaviour, please refer to the [Spring Boot migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#web-application-changes).
 
