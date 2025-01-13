@@ -3,7 +3,9 @@
 {{ if not .Data.Term }}
 <meta http-equiv="refresh" content='0; URL={{.Site.BaseURL}}'/>
 {{end}}
-
+{{ if .Params.external }}
+  <meta http-equiv="refresh" content='0; URL={{.Params.external}}'/>
+{{else}}
 <main>
   <div class="breadcrumbs-container">
     {{- partial "breadcrumbs.html" . -}}
@@ -75,4 +77,5 @@
   </div>
 </main>
 {{- partial "footer.html" . -}}
+{{ end }}
 {{ end }}
