@@ -38,10 +38,10 @@
     <div class="dropdown version">
       <a
         class="dropdown-toggle version"
-        title="REST API documentation"
-        href="https://cumulocity.com/api/"
+        title="Cumulocity website"
+        href="https://www.cumulocity.com/"
       >
-        <i class="dlt-c8y-icon-rest-api"></i> <span>REST API</span></a>
+        <i class="dlt-c8y-icon-communication-internet"></i> <span>Company website</span></a>
     </div>
     <div class="dropdown version">
       <button
@@ -62,9 +62,12 @@
         aria-labelledby="releasesLinks"
         role="listbox"
       >
-        <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs">Latest version (CD)</a></li>
-        <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs/2024">Release 2024</a></li>
-        <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs/about_documentation/documentation-repository/">Previous releases</a></li>
+        {{ if site.Data.date_settings.yearly_release}}
+          <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs">Latest version</a></li>
+        {{else}}
+          <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs/2024">Release 2024</a></li>
+        {{end}}
+        <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs/about_documentation/documentation-repository/">Previous versions</a></li>
       </ul>
     </div>
     <div class="dropdown version">

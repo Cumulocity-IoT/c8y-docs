@@ -45,15 +45,15 @@
 
     {{ $options := (dict "targetPath" $cssfile "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules/myscss")) }}
 
-    {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options  }}
+    {{ $style := resources.Get "scss/main.scss" | css.Sass $options  }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <!--STYLES END-->
 
     <!--  Cookie Bot -->
     <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="0dcae975-5d79-4c0e-9017-bc4bbe117a7d" data-blockingmode="auto" type="text/javascript"></script>
-
+    
     <!--  /Cookie Bot -->
-
+    
     <!--  Google Tag Manager -->
     <script type="text/plain" data-cookieconsent="statistics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TM3L5WBK');</script>
     <!--  /Google Tag Manager -->

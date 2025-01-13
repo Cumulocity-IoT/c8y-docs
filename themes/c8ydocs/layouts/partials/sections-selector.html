@@ -10,6 +10,7 @@
 {{ $pages := where .Pages "Type" "!=" "page" }}
 {{ $page := index $pages 0 }}
 <li><a class='{{if or (eq $currentSection .Page.Data.Term) (eq $current_dataTerm .Page.Data.Term)  }} active {{ end}}'
-  href='{{.Page.Permalink}}'><i class="c8y-icon-duocolor {{.Page.Params.icon}} icon-20 m-r-8"></i>{{.Page.Title}}</a></li>
+  href='{{if $page.Params.external}} {{- $page.Params.external -}} {{ else }}{{- $page.Permalink -}}{{ end }}'><i class="c8y-icon-duocolor {{.Page.Params.icon}} icon-20 m-r-8"></i>{{.Page.Title}}</a></li>
 {{ end }}
+  
   
