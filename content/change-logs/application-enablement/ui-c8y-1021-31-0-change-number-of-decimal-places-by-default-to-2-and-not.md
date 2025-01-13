@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61670
 version: 1021.31.0
 ---
-Change number of decimal places by default to 2 and not 1 and limit decimal places in the widgets and widget config to 10. [GRAFT][release/cd] (#7933)
+In the past, the default number of decimal places was set to 1 which could lead to inaccurate data display in certain scenarios. To address this, the default number of decimal places has now been changed to 2. Additionally, the maximum number of decimal places configurable in widgets and the widget configuration has been limited to 10.
