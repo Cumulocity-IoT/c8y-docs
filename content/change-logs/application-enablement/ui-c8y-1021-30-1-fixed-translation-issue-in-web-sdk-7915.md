@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issues with custom translations in the Web SDK.
+title: Custom translations for applications now properly displayed 
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
