@@ -57,10 +57,6 @@ relativeURLs = true
   enterprise_tenant = "Enterprise tenant"
 
   [[params.additionalResources]]
-    name = "YouTube"
-    link = "https://www.youtube.com/@CumulocityIoT"
-
-  [[params.additionalResources]]
     name = "Tech Community"
     link = "https://techcommunity.cumulocity.com/"
 
@@ -68,13 +64,21 @@ relativeURLs = true
     name = "Learning Portal"
     link = "https://cumulocity.moodlecloud.com/"
 
-    [[params.additionalResources]]
+  [[params.additionalResources]]
+    name = "YouTube"
+    link = "https://www.youtube.com/@CumulocityIoT"
+
+  [[params.additionalResources]]
+    name = "REST API documentation"
+    link = "https://cumulocity.com/api/"
+
+  [[params.additionalResources]]
+    name = "CLI documentation"
+    link = "https://goc8ycli.netlify.app/docs/introduction/"
+
+  [[params.additionalResources]]
     name = "Platform status"
     link = "https://status.cumulocity.com/"
-
-    [[params.additionalResources]]
-      name = "Company portal"
-      link = "https://cumulocity.com/"
 
   [[params.additionalResources]]
     name = "Product Support"
