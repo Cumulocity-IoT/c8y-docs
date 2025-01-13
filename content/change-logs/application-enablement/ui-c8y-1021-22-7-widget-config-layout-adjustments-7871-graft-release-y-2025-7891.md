@@ -1,6 +1,6 @@
 ---
 date: ""
-title: widget config layout adjustments (#7871) [GRAFT][release/y2025] (#7891)
+title: Improved widget configuration layout
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
