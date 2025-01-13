@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62124
 version: 1021.30.1
 ---
-Applications using custom ngx translations were not being properly translated. The issue has been resolved by correctly merging translations together. With this fix, users of applications built using the web SDK and using custom ngx translations will now see the appropriate translated text for their selected language.
+Applications using custom ngx translations were not properly translated. This issue has been resolved. With this fix, applications built using the Web SDK and using custom ngx translations will now properly display the appropriate translated text for the selected language.
