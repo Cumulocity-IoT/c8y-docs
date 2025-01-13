@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3090
 version: ""
 ---
-As a result of the asset notes widget migration to Angular, the obsolete AngularJS asset notes module has been removed from the `@c8y/ng1-modules` package. If your application uses the **Asset notes widget**, you can use the new asset notes widget from the `@c8y/ngx-components/widget`s definitions as a replacement.
+As a result of the "Asset notes" widget migration to Angular, the obsolete AngularJS asset notes module has been removed from the `@c8y/ng1-modules` package. You can use the new "Asset notes" widget from the `@c8y/ngx-components/widget`s definitions as a replacement.
