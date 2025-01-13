@@ -1,6 +1,6 @@
 ---
 date: ""
-title: alias cannot be empty (#7817) [GRAFT][release/cd] (#7882)
+title: The login alias cannot be an empty string.
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61921
 version: 1021.30.1
 ---
-alias cannot be empty (#7817) [GRAFT][release/cd] (#7882)
+The login alias cannot be an empty string, a string consisting only of whitespace, null, or undefined. If a user does not have a login alias, this field should not be included in the user object.
