@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Backporting alarms filtering in widgets to y2025 branch (#7884)
+title: It is now possible to use date filtering for alarms in the alarms page and in the alarm list widget.```
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
