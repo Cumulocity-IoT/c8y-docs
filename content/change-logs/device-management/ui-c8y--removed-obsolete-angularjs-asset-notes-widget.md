@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Removed obsolete AngularJS asset notes widget
+title: Removed obsolete AngularJS asset notes module
 product_area: Device management & connectivity
 change_type:
   - value: change-3BQrQ6adS
