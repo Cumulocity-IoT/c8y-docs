@@ -89,7 +89,7 @@ This behavior changed with the update to Spring Boot version 3.2 in the Microser
 
 ##### Endpoints with a trailing slash like /some/greeting/ are no longer accepted {#endpoints-with-a-trailng-slash-like-some-greeting-are-not-accepted-any-more}
 
-The behavior changed with the update to Spring Boot version 3.2 in the MS SDK. To configure the previous behaviour, please refer to the [Spring Boot migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#web-application-changes).
+This behavior changed with the update to Spring Boot version 3.2 in the Microservice SDK. To configure the previous behaviour, refer to the [Spring Boot Migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#web-application-changes).
 
 ##### Missing Docker permissions in Linux {#missing-docker-permissions-in-linux}
 
