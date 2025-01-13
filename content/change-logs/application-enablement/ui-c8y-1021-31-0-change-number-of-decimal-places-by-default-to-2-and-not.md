@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Change number of decimal places by default to 2 and not 1 and limit decimal places in the widgets and widget config to 10. [GRAFT][release/cd] (#7933)
+title: Change number of decimal places changed to 2 by default and limited to 10 in widgets and widget config
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
