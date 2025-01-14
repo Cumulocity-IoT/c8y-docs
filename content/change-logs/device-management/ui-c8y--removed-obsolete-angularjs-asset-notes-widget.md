@@ -3,7 +3,7 @@ date: ""
 title: Removed obsolete AngularJS asset notes module
 product_area: Device management & connectivity
 change_type:
-  - value: change-3BQrQ6adS
+  - value: change-inv-3bw8e
     label: Announcement
 component:
   - value: component--KIsStyzM
