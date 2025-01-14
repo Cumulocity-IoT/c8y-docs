@@ -101,6 +101,7 @@ To limit the offloaded inventory objects to devices, use:
 ```
 convert_from(convert_to("_fragments", 'JSON'), 'UTF8') LIKE '%"c8y_IsDevice"%'
 ```
+Better option is to use the *All Devices* view defined in the step [Select collection](/datahub/configuring-offloading-jobs/#select-collection) of the offloading configuration.
 
 ### Querying additional data with {{< product-c8y-iot >}} DataHub {#querying-additional-data-with-datahub}
 Main use case of {{< product-c8y-iot >}} DataHub is to offload data from the internal {{< product-c8y-iot >}} database to a data lake and query the data lake contents afterwards. In some use cases, {{< product-c8y-iot >}} DataHub is required to query additional data which is not kept in the {{< product-c8y-iot >}} platform. For a cloud environment, the

@@ -89,7 +89,7 @@ The views are provided in your Dremio space. For details on views and spaces in 
 
 #### Offloading the inventory collection {#offloading-the-inventory-collection}
 
-The inventory collection keeps track of managed objects. During offloading, the data of the inventory collection is flattened, with the resulting schema being defined as follows:
+The inventory collection keeps track of device-related data, managed objects, and internal data. Internal objects of the {{< product-c8y-iot >}} platform are filtered out, as also done by the {{< product-c8y-iot >}} REST API. During offloading, the data of the inventory collection is flattened, with the resulting schema being defined as follows:
 
 | Column name | Column type
 | ---         |  ---
@@ -109,8 +109,9 @@ The inventory collection keeps track of managed objects. During offloading, the 
 | c8y_IsDevice | BOOLEAN |
 | c8y_IsDeviceGroup | BOOLEAN |
 
-The inventory collection keeps track of managed objects. Note that {{< product-c8y-iot >}} DataHub automatically filters out internal objects of the {{< product-c8y-iot >}} platform. These internal objects are also not returned when using the {{< product-c8y-iot >}} REST API. A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. Therefore an offloading pipeline for the inventory encompasses additional steps:
+This standard schema is the same for all view options listed in step [Select collection](/datahub/configuring-offloading-jobs/##select-collection).
 
+A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. Therefore an offloading pipeline for the inventory encompasses additional steps:
 1. Offload those entries of the inventory collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake.
 2. Additional views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all* and *_latest* respectively. The following examples use *inventory* as target table name:
     * **inventory_all** - A view with the updates between two offloading executions, not including the intermediate updates.

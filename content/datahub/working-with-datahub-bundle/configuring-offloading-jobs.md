@@ -38,11 +38,24 @@ In the dropdown box select one of the {{< product-c8y-iot >}} base collections, 
 * inventory
 * measurements
 
-{{< c8y-admon-info >}}
-You can define multiple offloading pipelines for each {{< product-c8y-iot >}} collection. As an example for multiple pipelines, you can filter the alarms collection by different criteria with each one resulting in a separate pipeline.
-{{< /c8y-admon-info >}}
+In [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections) you will find a summary of the default attributes being offloaded per base collection. You can define multiple offloading pipelines for each {{< product-c8y-iot >}} collection. As an example for multiple pipelines, you can filter the alarms collection by different criteria with each one resulting in a separate pipeline.
 
-In [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections) you will find a summary of the default attributes being offloaded per base collection.
+The alarms and events collections require no further configuration as is required for the inventory and measurements collections.
+
+##### Configuration for inventory collection
+The inventory collection stores device-related data as well other data like managed objects or internal data. Therefore the inventory collection may contain very heterogeneous data, resulting in a potentially complex offloading data model which may be hard to derive. Therefore, preconfigured views separate the data for common use-cases so that you can confine the offloading pipeline to the relevant data. The following views are available:
+* **All Devices**: This view is confined to device-related data. It contains all documents which include the fragment `c8y_isDevice` and exclude the fragment `c8y_DataHubExclude`. This view is selected per default.
+* **All Device Groups**: This view is confined to device groups. It contains all documents which include the fragment `c8y_isDeviceGroup` and exclude the fragment `c8y_DataHubExclude`.
+* **DataHub-tagged Data**: This view captures all documents specifically tagged for DataHub offloading and not related to devices. Each document includes the fragment `c8y_DataHubInclude` and excludes the fragments `c8y_isDevice`, `c8y_isDeviceGroup`, and `c8y_DataHubExclude`.
+
+Click *Show advanced options* to show additional options dedicated for advanced use-cases:
+* **DataHub-excluded Data**: This view captures all documents not related to devices and having no DataHub tags. Each document excludes the fragments `c8y_isDevice`, `c8y_isDeviceGroup`, `c8y_DataHubInclude`, and `c8y_DataHubExclude`.
+* **All Data**: This view provides all documents of the inventory collection which exclude the fragment `c8y_DataHubExclude`. It is not recommended to select this option. It is highly probable that you offload unnecessary data at the expense of higher storage costs and longer offloading execution times.
+* **Direct collection access**: This option provides all documents by querying the inventory collection directly instead of using a view. It is not recommended to select this option. It is highly probable that you offload unnecessary data at the expense of higher storage costs and longer offloading execution times.
+* **Custom View**: For very specific use-cases a custom view on the inventory collection can be provided, which can be requested via support. Specify in the input field the name of that custom view.
+
+##### Configuration for measurements collection
+Measurements in the base collection may have different types. For example, the collection may contain temperature, humidity, and pressure measurements. The target table is designed to contain only measurements of one specific type; measurements of other types are not included. Therefore, you must additionally specify the **measurement type** to which the offloaded measurements are restricted. To identify existing measurement types, {{< product-c8y-iot >}} DataHub automatically inspects a subset of the data, including initial as well as latest data. In the measurement type dropdown box, these auto-detected types are listed. If a specific type you are looking for has not been detected, you can manually enter it in this box. Alternatively you can click **Refresh** next to the dropdown box to manually re-trigger the detection of measurement types. As this might be a performance-intensive process, you should trigger it only if you know that the expected measurement type is present in data recently inserted into the collection. You can trigger such a refresh only every five minutes for performance reasons.
 
 Click **Next** to proceed with the next configuration step. Click **Cancel** to cancel the offloading configuration.
 
@@ -56,10 +69,6 @@ Once you have selected a collection for offloading, you must specify the target 
 * The name must be at least two characters long.
 
 Each pipeline must have its own target table in the data lake. Thus, you must select distinct target table names for each offloading configuration.
-
-For the **alarms**, **events**, and **inventory** collections, you must only specify the target table name in this step.
-
-Measurements in the base collection may have different types. For example, the collection may contain temperature, humidity, and pressure measurements. Depending on your layout choice, measurements are stored differently in the target table. The target tables is designed to contain only measurements of one specific type; measurements of other types are not included. Therefore, you must additionally specify the **measurement type** to which the offloaded measurements are restricted. To identify existing measurement types, {{< product-c8y-iot >}} DataHub automatically inspects a subset of the data, including initial as well as latest data. In the measurement type dropdown box, these auto-detected types are listed. If a specific type you are looking for has not been detected, you can manually enter it in this box. Alternatively you can click **Refresh** next to the dropdown box to manually re-trigger the detection of measurement types. As this might be a performance-intensive process, you should trigger it only if you know that the expected measurement type is present in data recently inserted into the collection. You can trigger such a refresh only every five minutes for performance reasons.  
 
 For each base collection, a default set of data fields is derived. This set defines the default schema of the target table with the columns capturing the data fields. The set is fix for each collection and cannot be modified. Select **Show default schema** to show the columns of the default schema with their corresponding name and type.
 

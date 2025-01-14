@@ -40,7 +40,7 @@ In the context menu of each offloading pipeline, you will find actions for manag
 
 ##### Editing/showing an offloading pipeline {#editingshowing-an-offloading-pipeline}
 
-Click **Edit** to edit the current settings. Only inactive pipelines can be edited. Note that you cannot change the {{< product-c8y-iot >}} base collection selected for this pipeline. For the measurements collection, the target table layout cannot be changed as well. Additional filter predicates and additional result columns can be changed. Note that these changes are not applied to already exported data. A change to the offloading pipeline only affects data to be exported in upcoming offloading runs.
+Click **Edit** to edit the current settings. Only inactive pipelines can be edited. Note that you cannot change the {{< product-c8y-iot >}} base collection selected for this pipeline. Additional filter predicates and additional result columns can be changed. Note that these changes are not applied to already exported data. A change to the offloading pipeline only affects data to be exported in upcoming offloading runs.
 
 For active pipelines, click **Show** to browse through the configuration. You cannot edit the settings.
 
