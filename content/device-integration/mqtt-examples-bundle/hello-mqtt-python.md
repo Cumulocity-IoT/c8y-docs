@@ -107,7 +107,7 @@ def device_loop():
         time.sleep(7)
 
 # connect the client to {{< product-c8y-iot >}} and register a device
-client = mqtt.Client(clientId)
+client = mqtt.Client(client_id=clientId)
 client.username_pw_set(tenant + "/" + username, password)
 client.on_message = on_message
 client.on_publish = on_publish
