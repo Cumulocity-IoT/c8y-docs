@@ -4,7 +4,7 @@ title: Removed obsolete AngularJS asset notes module
 product_area: Device management & connectivity
 change_type:
   - value: change-3BQrQ6adS
-    label: API change
+    label: Announcement
 component:
   - value: component--KIsStyzM
     label: Device Management app
