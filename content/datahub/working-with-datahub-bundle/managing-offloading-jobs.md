@@ -48,8 +48,6 @@ For active pipelines, click **Show** to browse through the configuration. You ca
 
 Click **Copy** to copy the current configuration. The new configuration is an identical copy of the selected configuration except for the task name and the target table, both of which will have a unique suffix appended. You can change the settings according to your needs.
 
-A TrendMiner offloading configuration cannot be copied, as only one TrendMiner configuration is allowed.
-
 ##### Deleting an offloading pipeline {#deleting-an-offloading-pipeline}
 
 Click **Delete** to delete a configuration. Only inactive pipelines can be deleted. Data in the data lake which has already been exported by this offloading pipeline is not deleted. To delete the actual data in your data lake, you must use the tooling offered by the data lake provider such as AWS S3 Console or Azure Storage Explorer.
