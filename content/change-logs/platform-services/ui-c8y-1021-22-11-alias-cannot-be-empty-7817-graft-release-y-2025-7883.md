@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61921
 version: 1021.22.11
 ---
-alias cannot be empty (#7817) [GRAFT][release/y2025] (#7883)
+In some cases, it was possible to create an empty alias for a device, which could lead to unexpected behavior and errors in the system. This issue has now been fixed. Devices can no longer be created with an empty alias. Existing devices with an empty alias will continue to work, but it is recommended to update their aliases to a non-empty value.
