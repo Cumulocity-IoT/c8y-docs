@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61921
 version: 1021.30.1
 ---
-The login alias cannot be an empty string, that is, a string consisting only of whitespace, null, or undefined. If a user does not have a login alias, this field must not be included in the user object.
+The login alias can no longer be an empty string, that is, a string consisting only of whitespace, null, or undefined. If no login alias is provided for the user, this field must not be included in the user object.
