@@ -1,6 +1,6 @@
 ---
 weight: 50
-title: Groups as Assets
+title: Asset Model for Groups
 layout: redirect
 ---
 
@@ -16,7 +16,7 @@ Once added to a group asset, a non-group asset can be moved back to the root lev
 
 {{< c8y-admon-info>}}
 
-- The Bulk import feature does not support creating group assets in bulk. 
+-  Currently, the [bulk import ](/dtm/asset-hierarchy/#creating-assets-bulk-import) feature does not support creating groups in bulk.
 - Groups created in {{< product-c8y-iot >}} cockpit application are not listed in the Digital Twin Manager application.
 
 {{< /c8y-admon-info>}}

@@ -48,7 +48,7 @@ Groups are used in {{< product-c8y-iot >}} to organize devices or other groups. 
 
 ##### Characteristics of Group asset model
 - Available by default, it cannot be deleted.
-- Only a few fields, such as label, description, and icon, can be updated.
+- Allows updating of label, description, and icon for the model
 - Does not support custom asset properties.
 - Since the model doesn't enforce a hierarchy, it does not require the definition of child asset models.
 - The model can be easily identified by the "(Default)" suffix throughout the Digital Twin Manager application.
