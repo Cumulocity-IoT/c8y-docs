@@ -1,6 +1,6 @@
 ---
 date: ""
-title: The login alias cannot be an empty string.
+title: Login alias can no longer be an empty string
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
