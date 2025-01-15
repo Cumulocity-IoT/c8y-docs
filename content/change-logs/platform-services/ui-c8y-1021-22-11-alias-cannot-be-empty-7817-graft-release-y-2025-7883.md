@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61921
 version: 1021.22.11
 ---
-In some cases, it was possible to create an empty alias for a device, which could lead to unexpected behavior and errors in the system. This issue has now been fixed. Devices can no longer be created with an empty alias. Existing devices with an empty alias will continue to work, but it is recommended to update their aliases to a non-empty value.
+The login alias can no longer be an empty string, that is, a string consisting only of whitespace, null, or undefined. If no login alias is provided for the user, this field must not be included in the user object.
