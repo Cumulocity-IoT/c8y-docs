@@ -1,6 +1,6 @@
 ---
 date: ""
-title: alias cannot be empty (#7817) [GRAFT][release/y2025] (#7883)
+title: Login alias can no longer be an empty string
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
