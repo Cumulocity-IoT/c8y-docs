@@ -11,7 +11,7 @@ This gives you the flexibility to handle the data in a way that suits your speci
 
 {{< c8y-admon-info >}}
 If you're new to MQTT Service,
-we recommend reviewing the [MQTT Service documentation](/device-integration/#mqtt-bundle) for a better understanding.
+we recommend reviewing the [MQTT Service documentation](/device-integration/mqtt/) for a better understanding.
 {{< /c8y-admon-info >}}
 
 ### Why Choose MQTT Service?
