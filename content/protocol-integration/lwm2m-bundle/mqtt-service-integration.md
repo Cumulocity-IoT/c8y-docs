@@ -53,7 +53,7 @@ If you need to access data from a different tenant, a separate microservice must
 If you need help getting started, 
 check out this [sample project](https://github.com/Cumulocity-IoT/lwm2m-devicedata-listener) for a detailed walkthrough.
 
-### Understanding MQTT Data Payload
+### Understanding MQTT data payload
 
 The data transmitted via MQTT follows a custom Cumulocity JSON format, which includes:
 
