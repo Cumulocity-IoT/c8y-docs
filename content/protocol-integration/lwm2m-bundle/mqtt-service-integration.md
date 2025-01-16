@@ -38,7 +38,7 @@ Once the microservice is developed, simply share it with your Operations Team, w
 The microservice should be configured to subscribe to the `lwm2m/data` topic, 
 where the {{< product-c8y-iot >}} sends the device data. After deployment, 
 the microservice will authenticate using the tenant credentials associated with the deployment. 
-For the microservice to function correctly, ensure that the following roles are assigned:
+For the microservice to have sufficient rights to connect and consume MQTT Service data, ensure that the following roles are assigned:
 
 - `ROLE_INVENTORY_READ`
 - `ROLE_NOTIFICATION_2_ADMIN`
