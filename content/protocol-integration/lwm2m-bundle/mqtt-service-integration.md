@@ -39,7 +39,7 @@ refer to [Microservice SDK](/microservice-sdk/).
 Once your microservice is ready, deploy it to {{< product-c8y-iot >}} 
 by following the steps outlined in [Managing microservices](/standard-tenant/ecosystem/#managing-microservices).
 
-Your microservice should subscribe to the `lwm2m/data` topic, where the LWM2M Service sends device data. 
+Your microservice should subscribe to the `lwm2m/data` topic, where the LWM2M service sends device data. 
 After deployment, the microservice will authenticate using the tenant credentials associated with your deployment. 
 To ensure the microservice has sufficient permissions to access the MQTT Service data, assign the following roles:
 
