@@ -1,6 +1,8 @@
 ---
-date:
-title: Preventing execution of operations on resource instance level for LWM2M 1.0 devices
+date: '2025-01-16'
+title: >-
+  Preventing execution of operations on resource instance level for LWM2M 1.0
+  devices
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
