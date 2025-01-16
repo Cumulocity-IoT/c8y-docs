@@ -8,11 +8,6 @@ This guide helps you configure the {{< product-c8y-iot >}} to send device data t
 Once configured, you can easily access and process the data using your own microservice, giving you the flexibility 
 to handle the data in a way that suits your specific needs.
 
-{{< c8y-admon-important >}}
-To ensure a smooth setup, please make sure that both Pulsar and the MQTT Service are properly configured and 
-running before starting the {{< product-c8y-iot >}} configuration. Missing these prerequisites may result in excessive log 
-entries indicating that the {{< product-c8y-iot >}} cannot establish a connection to the MQTT Service.
-{{< /c8y-admon-important >}}
 
 {{< c8y-admon-info >}}
 If you are not familiar with MQTT, we recommend reviewing one of the many online resources available. For more 
