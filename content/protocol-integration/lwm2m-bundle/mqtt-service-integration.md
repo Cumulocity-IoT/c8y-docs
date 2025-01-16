@@ -14,7 +14,7 @@ If you're new to MQTT Service,
 we recommend you to review the [MQTT Service documentation](/device-integration/mqtt/) for a better understanding.
 {{< /c8y-admon-info >}}
 
-### Why Choose MQTT Service?
+### Why choose MQTT Service?
 
 Cumulocity's MQTT Service offers several key advantages that can help streamline your IoT operations:
 
