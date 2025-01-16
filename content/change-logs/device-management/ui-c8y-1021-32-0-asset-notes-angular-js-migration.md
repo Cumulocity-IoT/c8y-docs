@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Asset notes AngularJS  migration.
+title: Asset notes widget migrated from AngularJS to Angular
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
