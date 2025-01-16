@@ -55,7 +55,7 @@ check out this [sample project](https://github.com/Cumulocity-IoT/lwm2m-deviceda
 
 ### Understanding MQTT data payload
 
-The data transmitted via MQTT follows a custom Cumulocity JSON format, which includes:
+The data transmitted via MQTT follows a custom {{< product-c8y-iot >}} JSON format, which includes:
 
 | Field                 | Description                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
