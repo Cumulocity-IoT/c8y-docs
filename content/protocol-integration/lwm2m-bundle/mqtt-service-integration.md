@@ -27,7 +27,7 @@ Cumulocity's MQTT Service offers several key advantages that can help streamline
 
 Starting from release 2025, the LWM2M Service can send device data to {{< product-c8y-iot >}}'s MQTT microservice, 
 where it gets queued. This allows you to process and access the data via your custom service 
-and take advantage of Cumulocity’s integrated data analysis tools, if needed.
+and take advantage of {{< product-c8y-iot >}}’s integrated data analysis tools, if needed.
 
 ### How to Retrieve Device Data from MQTT Service Using Your Custom Microservice
 
