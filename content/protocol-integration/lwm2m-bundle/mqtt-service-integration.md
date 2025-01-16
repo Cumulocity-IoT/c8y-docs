@@ -19,7 +19,7 @@ we recommend you to review the [MQTT Service documentation](/device-integration/
 Cumulocity's MQTT Service offers several key advantages that can help streamline your IoT operations:
 
 - **Multi-tenancy support**: Manage multiple tenants with a single endpoint, simplifying operations.
-- **Identity management**: Easily manage service connections using Cumulocity platform credentials.
+- **Identity management**: Easily manage service connections using {{< product-c8y-iot >}} platform credentials.
 - **Efficient communication**: Benefit from low traffic overhead for quick and efficient data transfer.
 - **Secure communication**: Enjoy the flexibility of WebSocket and TLS support for secure communication.
 - **Scalability**: Scale your operations seamlessly as your needs grow.
