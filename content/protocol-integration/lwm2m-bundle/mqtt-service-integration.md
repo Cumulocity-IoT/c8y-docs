@@ -34,7 +34,7 @@ and take advantage of {{< product-c8y-iot >}}’s integrated data analysis tools
 You can retrieve device data from the MQTT Service 
 by creating your own custom microservice tailored to your requirements. 
 To learn how to develop a {{< product-c8y-iot >}} microservice, 
-refer to the [Microservice SDK guide](/microservice-sdk/).
+refer to [Microservice SDK](/microservice-sdk/).
 
 Once your microservice is ready, deploy it to {{< product-c8y-iot >}} 
 by following the steps outlined in [Managing microservices](/standard-tenant/ecosystem/#managing-microservices).
