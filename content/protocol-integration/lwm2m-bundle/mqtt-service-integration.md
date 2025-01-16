@@ -1,6 +1,6 @@
 ---
 weight: 100
-title: Send Device Data to Cumulocity’s MQTT Service
+title: Send device data to Cumulocity’s MQTT Service
 layout: redirect
 ---
 
