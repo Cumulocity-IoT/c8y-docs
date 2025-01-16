@@ -71,7 +71,7 @@ A user list will be displayed, providing the following information for each user
 * The global roles assigned to the user.
 * The [strength](/get-familiar-with-the-ui/user-settings/#to-change-your-password) of the password set for the user
 
-To filter the list by username, you can use the filter field at the left of the top menu bar. With the dropdown list you can filter by global roles. For details on filtering, see [Filtering](/getting-started/gui-features/#filtering).
+To filter the list by username, you can use the filter field at the left of the top menu bar. With the dropdown list you can filter by global roles. For details on filtering, see [Filtering](/get-familiar-with-the-ui/gui-features/#search-and-filter-functionality).
 
 In order to apply the selected filters click **Apply**.
 
@@ -144,7 +144,7 @@ If single sign-on is enabled for your tenant, a message will show up which remin
 
 3. Select the login options for the user.
 	* 	**Two-factor authentication (SMS)** - if selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/authentication/tfa/).
-	* **User must reset password on next login** - if selected, you must provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To change your password](/getting-started/user-settings/#to-change-your-password) for further information on password reset and strength.  
+	* **User must reset password on next login** - if selected, you must provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password) for further information on password reset and strength.  
 	* **Send password reset link as email** - if selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above. This option is only available during user creation.
 <br><br>
 4. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing permissions](/standard-tenant/managing-permissions).

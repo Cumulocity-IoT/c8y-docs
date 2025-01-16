@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-01-09'
 title: Hide context indicators in untranslated strings at runtime
 product_area: Application enablement & solutions
 change_type:

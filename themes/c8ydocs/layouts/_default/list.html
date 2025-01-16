@@ -4,75 +4,80 @@
 <meta http-equiv="refresh" content='0; URL={{.Site.BaseURL}}'/>
 {{end}}
 
-<main>
-  <div class="breadcrumbs-container">
-    {{- partial "breadcrumbs.html" . -}}
-  </div>
-  <div class="home-top">
-    <section class="home-top__content">
-        <h1>{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
+{{/*  redirect when there's an external link defined  */}}
+{{ if .Params.external }}
+  <meta http-equiv="refresh" content='0; URL={{.Params.external}}'/>
+{{else}}
+  <main>
+    <div class="breadcrumbs-container">
+      {{- partial "breadcrumbs.html" . -}}
+    </div>
+    <div class="home-top">
+      <section class="home-top__content">
+          <h1>{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
 
-        {{.Content}}
-    </section>
-    {{.Params.svg | safeHTML}}
-  </div>
-<div class="home-grid">
-  {{$scratch := newScratch}}
-  {{ range where .Pages "Type" "root" }}
-    {{ $subs := where .Site.Pages "Section" .Params.bundlefolder }}
-    {{/* grab the link from the first child page  */}}
-    {{ range $sub := first 1 $subs}}
-      {{ $scratch.Set "url" $sub.Permalink}}
-    {{end}}
-  <a href='
-      {{if (isset .Params "external") }}
-        {{.Params.external}}
-      {{else}}
-        {{$scratch.Get "url"}}
+          {{.Content}}
+      </section>
+      {{.Params.svg | safeHTML}}
+    </div>
+  <div class="home-grid">
+    {{$scratch := newScratch}}
+    {{ range where .Pages "Type" "root" }}
+      {{ $subs := where .Site.Pages "Section" .Params.bundlefolder }}
+      {{/* grab the link from the first child page  */}}
+      {{ range $sub := first 1 $subs}}
+        {{ $scratch.Set "url" $sub.Permalink}}
       {{end}}
-    ' class="product-card">
-      <div class="product-card__header">
-        <i class="c8y-icon-duocolor {{.Params.icon}}"></i>
-        <h2>{{.Title}}
-          {{if (isset .Params "external") }}
-            <i class="dlt-c8y-icon-external-link" style="font-size: 14px;" title="External website"></i>
-          {{end}}
-        </h2>
-      </div>
-        {{.Content }}
-        {{ if (isset .Params "audience")}}
-          <div class="m-t-auto d-flex gap-8 a-i-center">
-            {{ range $t := .Params.audience }}
-              <div class="label 
-                {{if eq $t "Users"}}
-                  label-primary 
-                {{ else if eq $t "Administrators"}}
-                label-success
-                {{ else if eq $t "Developers"}}
-                label-info
-                {{ else if eq $t "Business"}}
-                  label-warning
-                {{end}}
-                  ">
-                <i class='
-                {{if eq $t "Users"}}
-                  dlt-c8y-icon-users
-                {{ else if eq $t "Administrators"}}
-                  dlt-c8y-icon-male-user
-                {{ else if eq $t "Developers"}}
-                  dlt-c8y-icon-programming
-                {{ else if eq $t "Business"}}
-                  dlt-c8y-icon-permanent-job
-                {{end}}
-                '></i> 
-                {{$t}}
-              </div>
-            {{end}}
-          </div>
+    <a href='
+        {{if (isset .Params "external") }}
+          {{.Params.external}}
+        {{else}}
+          {{$scratch.Get "url"}}
         {{end}}
-    </a>
-    {{end}}
-  </div>
-</main>
-{{- partial "footer.html" . -}}
+      ' class="product-card">
+        <div class="product-card__header">
+          <i class="c8y-icon-duocolor {{.Params.icon}}"></i>
+          <h2>{{.Title}}
+            {{if (isset .Params "external") }}
+              <i class="dlt-c8y-icon-external-link" style="font-size: 14px;" title="External website"></i>
+            {{end}}
+          </h2>
+        </div>
+          {{.Content }}
+          {{ if (isset .Params "audience")}}
+            <div class="m-t-auto d-flex gap-8 a-i-center">
+              {{ range $t := .Params.audience }}
+                <div class="label 
+                  {{if eq $t "Users"}}
+                    label-primary 
+                  {{ else if eq $t "Administrators"}}
+                  label-success
+                  {{ else if eq $t "Developers"}}
+                  label-info
+                  {{ else if eq $t "Business"}}
+                    label-warning
+                  {{end}}
+                    ">
+                  <i class='
+                  {{if eq $t "Users"}}
+                    dlt-c8y-icon-users
+                  {{ else if eq $t "Administrators"}}
+                    dlt-c8y-icon-male-user
+                  {{ else if eq $t "Developers"}}
+                    dlt-c8y-icon-programming
+                  {{ else if eq $t "Business"}}
+                    dlt-c8y-icon-permanent-job
+                  {{end}}
+                  '></i> 
+                  {{$t}}
+                </div>
+              {{end}}
+            </div>
+          {{end}}
+      </a>
+      {{end}}
+    </div>
+  </main>
+  {{- partial "footer.html" . -}}
+{{ end }}
 {{ end }}
