@@ -4,7 +4,7 @@ title: Send device data to Cumulocity’s MQTT Service
 layout: redirect
 ---
 
-Alternatively, LWM2M Service can send the device data to {{< product-c8y-iot >}}'s MQTT Service.
+Alternatively, the LWM2M service can send the device data to {{< product-c8y-iot >}}'s MQTT Service.
 Once configured, you can access and process the data using your own microservice. 
 This gives you the flexibility to handle the data in a way that suits your specific needs.
 
