@@ -47,7 +47,7 @@ To ensure the microservice has sufficient permissions to access the MQTT Service
 - `ROLE_NOTIFICATION_2_ADMIN`
 - `ROLE_MQTT_SERVICE_ADMIN`
 
-Please note that the microservice will only have access to data from the specific tenant and its subtenants. 
+Note that the microservice will only have access to data from the specific tenant and its subtenants. 
 If you need to access data from a different tenant, a separate microservice must be deployed for that tenant.
 
 If you need help getting started, 
