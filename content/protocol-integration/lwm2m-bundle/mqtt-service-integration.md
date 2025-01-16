@@ -72,7 +72,7 @@ The data transmitted via MQTT follows a custom {{< product-c8y-iot >}} JSON form
 | `senMLMessage`          | Contains SenML-JSON formatted device measurement data, following the [RFC8428 specification](https://datatracker.ietf.org/doc/html/rfc8428) |
 
 Note that in `senMLMessage` LWM2M's time resource data is always stored as a timestamp in seconds, 
-and the Base Time data is represented in scientific notation, which may include also fractional time information.
+and the base time data is represented in scientific notation, which may include also fractional time information.
 
 Here’s an example of the MQTT payload when a device reports composite data for Object ID 
 6 (Location) and Object ID 3303 (Temperature sensor):
