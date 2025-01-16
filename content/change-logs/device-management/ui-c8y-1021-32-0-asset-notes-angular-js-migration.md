@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3090
 version: 1021.32.0
 ---
-Asset notes AngularJS  migration.
+As part of ongoing improvements to the Device Management application, an asset notes widget has been created in Angular, migrating the existing one.
