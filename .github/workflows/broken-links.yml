@@ -1,0 +1,67 @@
+name: Check Broken Links
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  check-broken-links:
+    name: Broken Link Checker
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: |
+          cd scripts
+          npm install
+
+      - name: Run Broken Link Checker
+        run: |
+          cd scripts
+          node BrokenLinkChecker.js
+
+      - name: Parse and Comment Broken Links
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = './scripts/broken_links_markdown.csv';
+            let body;
+            if (fs.existsSync(path)) {
+              const data = fs.readFileSync(path, 'utf8').trim();
+              if (data.split('\n').length > 1) {
+                body = `The following broken links were found:\n\n${data
+                  .split('\n')
+                  .slice(1) 
+                  .map((line) => {
+                    const [url, file, status] = line.split(',');
+                    return `- **[${url}](${url})** in file \`${file}\` (Status: ${status})`;
+                  })
+                  .join('\n')}`;
+              } else {
+                body = 'No broken links found.';
+              }
+            } else {
+              body = 'Error: Broken link checker did not produce a CSV report.';
+            }
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            });
