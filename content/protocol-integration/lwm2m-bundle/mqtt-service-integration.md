@@ -59,7 +59,7 @@ The data transmitted via MQTT follows a custom {{< product-c8y-iot >}} JSON form
 
 | Field                 | Description                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
-| `timestampDataReceived` | Timestamp when the device data was received from the LWM2M Service          |
+| `timestampDataReceived` | Timestamp when the device data was received from the LWM2M service          |
 | `sourceOfData`          | Describes the type of operation that triggered the data. This can be one of the following: |
 |                       |  - `OBSERVATION_RESPONSE`: Data received in response to an observation request, triggered by the server. |
 |                       |  - `NOTIFICATION`: Data received from the device as a notification, triggered by the device itself. |
