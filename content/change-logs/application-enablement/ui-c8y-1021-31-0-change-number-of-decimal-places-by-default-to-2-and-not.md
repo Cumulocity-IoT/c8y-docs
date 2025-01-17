@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61670
 version: 1021.31.0
 ---
-In the past, the default number of decimal places was set to 1 which could lead to inaccurate data display in certain scenarios. To address this, the default number of decimal places has now been changed to 2. Additionally, the maximum number of decimal places configurable in widgets and the widget configuration has been limited to 10.
+The default number of decimal places in widgets has been increased from 1 to 2, providing more precise data visualization out of the box. Users can now configure decimal places up to a maximum of 10, ensuring consistent and accurate data representation across all widgets. This standardization improves data readability and helps prevent potential misinterpretation of numerical values in dashboards.
