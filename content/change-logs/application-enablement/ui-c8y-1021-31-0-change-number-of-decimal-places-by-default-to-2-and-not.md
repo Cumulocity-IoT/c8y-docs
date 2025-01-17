@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Change number of decimal places changed to 2 by default and limited to 10 in widgets and widget config
+title: Updated Default and Maximum Decimal Places in Widget Configuration
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
