@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Updated Default and Maximum Decimal Places in Widget Configuration
+title: Updated default and maximum decimal places in widget configuration
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
