@@ -17,4 +17,9 @@
 
 <script src="{{ "js/vendor/zoom.js" | absURL }}"></script>
 <script src="{{ "js/main.js" | absURL }}"></script>
+{{ if eq .Title "Change logs" }}
 <script src="{{ "js/vendor/isotope.pkgd.min.js" | absURL }}"></script>
+{{ end }}
+{{ if eq .Title "Release notes" }}
+<script src="{{ "js/vendor/isotope.pkgd.min.js" | absURL }}"></script>
+{{ end }}
