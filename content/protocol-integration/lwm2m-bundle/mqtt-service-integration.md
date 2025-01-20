@@ -25,7 +25,7 @@ Cumulocity's MQTT Service offers several key advantages that can help streamline
 - **Scalability**: Scale your operations seamlessly as your needs grow.
 - **Custom payload formats**: Data is transmitted in JSON format, wrapping SenML-JSON for device-related information.
 
-The LWM2M Service can send device data to {{< product-c8y-iot >}}'s MQTT microservice,
+The LWM2M service can send device data to {{< product-c8y-iot >}}'s MQTT microservice,
 where it gets queued. This allows you to process and access the data via your custom service
 and take advantage of {{< product-c8y-iot >}}’s integrated data analysis tools, if needed.
 
