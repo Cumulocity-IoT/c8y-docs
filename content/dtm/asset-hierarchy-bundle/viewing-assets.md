@@ -2,7 +2,8 @@
 weight: 40
 title: Viewing assets
 layout: redirect
-helpcontent:
+
+helpContent:
   - label: viewing-assets
     title: Managing assets
     content: "Under **Subassets** all assets assigned to a particular asset are listed. Subassets can either be other assets or devices.
