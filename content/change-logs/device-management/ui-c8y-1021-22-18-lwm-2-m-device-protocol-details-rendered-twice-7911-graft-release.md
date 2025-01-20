@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix duplicate rendering of LwM2M device protocol details
+title: Fixed duplicate rendering of LWM2M device protocol details
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
