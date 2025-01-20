@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4332
 version: 1021.22.18
 ---
-lwm2m device protocol details rendered twice (#7911) [GRAFT][release/y2025] (#7994)
+In the LwM2M device protocol details view, some information was incorrectly shown twice, leading to confusion. This change fixes the issue by ensuring the protocol details are only rendered once. Users inspecting the details of LwM2M devices will now see a clear and concise view without duplicate information.
