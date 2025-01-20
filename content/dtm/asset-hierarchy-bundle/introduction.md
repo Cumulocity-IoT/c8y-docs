@@ -5,7 +5,7 @@ layout: redirect
 helpcontent:
 - label: asset-hierarchy
   title: Assets
-  content: "To create an asset, use asset models as the blueprint, which consist of one or more asset properties as well as one or more child asset models.  
+  content: "To create an asset, use asset models as the blueprint, which consists of one or more asset properties as well as one or more child asset models.  
 
 
   An asset hierarchy consist of a root asset model followed by all its subsequent child asset models. Each hierarchy level can consist of asset properties for the asset, as well as its subassets and devices.
