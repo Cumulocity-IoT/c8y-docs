@@ -126,10 +126,6 @@ Authentication types supported by MQTT Service are:
 *   Username and password: The MQTT username must include the tenant ID and username in the format `<tenantID>/<username>`.
 *   Device certificates: Not yet supported. This will be added in a future release.
 
-{{< c8y-admon-req >}}
-The MQTT user which is used to connect to the MQTT Service must have the `MQTT_SERVICE_ADMIN` role assigned.
-{{< /c8y-admon-req >}}
-
 #### ClientId {#client-id}
 
 The **MQTT ClientID** field identifies the connected client. **ClientID** may consist of up to 128 alphanumeric characters.
