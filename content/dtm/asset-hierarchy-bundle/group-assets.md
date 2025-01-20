@@ -12,7 +12,7 @@ To create an asset from the default **Group** asset model, in the **New asset** 
 
 Since the default **Group** asset model does not enforce hierarchy, any group asset can be added to another group asset. However, only root assets created using models other than the default **Group** asset model are allowed under a group asset. 
 
-Once added to a group asset, a non-group asset can be moved back to the root level.
+Any asset added to a group asset can be moved out of it using the "Move to the root" option in the **Move assets** dialog.
 
 {{< c8y-admon-info>}}
 
