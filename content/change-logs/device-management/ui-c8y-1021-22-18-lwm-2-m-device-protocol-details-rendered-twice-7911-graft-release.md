@@ -1,6 +1,6 @@
 ---
 date: ""
-title: lwm2m device protocol details rendered twice (#7911) [GRAFT][release/y2025] (#7994)
+title: Fix duplicate rendering of LwM2M device protocol details
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
