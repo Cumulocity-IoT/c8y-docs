@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1437"
 version: "1021.0.0"
 ---
-The DTM plugins now support creation and viewing of groups created using the default asset model for groups.
+The DTM plugins now support creating groups and viewing groups created using the default asset model for groups.
