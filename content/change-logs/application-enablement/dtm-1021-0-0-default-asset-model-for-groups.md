@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Default Asset Model for Groups"
+title: "Default asset model for groups"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
