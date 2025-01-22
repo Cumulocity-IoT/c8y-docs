@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Update Subassets contextual help to navigate to DTM documentation"
+title: "Updated link to the documentation in contextual help of Subassets page"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
