@@ -140,7 +140,7 @@ Next, we will show you how to create a report to track data.
 
 ### Step 5: Create a report
 
-Reports enable you to track applications, alarms, assets, and other data in a dashboard layout. Reports are global dashboard pages, regardless of the [asset hierarchy](/cockpit/managing-assets/#asset-hierarchy). To work with reports, check if you meet the [requirements](/cockpit/reports/) first.
+Reports enable you to track applications, alarms, assets, and other data in a dashboard layout. Reports are global dashboard pages, regardless of the [asset hierarchy](/cockpit/managing-assets/#asset-hierarchy). To work with reports, check if you meet the [requirements](/cockpit/working-with-reports/) first.
 
 To create a report click **Reports** in the **Navigator** on the left side and following the steps below.
 
@@ -168,7 +168,7 @@ Next, we will add a widget to the report.
 Widgets can display maps, images, graphs, tables and other graphic representations of data. Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports.  Go to [Widgets collection](/cockpit/widgets-collection/) to see a list of all preset widgets that {{< product-c8y-iot >}} provides.
 
 {{< c8y-admon-info >}}
-You can also develop your own widgets and add them to your {{< product-c8y-iot >}} account. Refer to the [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}) for more information.
+You can also develop your own widgets and add them to your {{< product-c8y-iot >}} account. Refer to the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) for more information.
 {{< /c8y-admon-info >}}
 
 #### To add a widget to a dashboard or a report

@@ -2,6 +2,14 @@
 weight: 40
 title: Viewing assets
 layout: redirect
+
+helpContent:
+  - label: viewing-assets
+    title: Subassets
+    content: "Under **Subassets** all assets assigned to a particular asset are listed. Subassets can either be other assets or devices.
+
+
+    Click **Assign devices** at the top right to assign devices to the asset."
 ---
 
 Once the [asset hierarchy](/dtm/asset-hierarchy/#asset-hierarchy) is created by adding assets, they can be viewed in the **Assets** page.

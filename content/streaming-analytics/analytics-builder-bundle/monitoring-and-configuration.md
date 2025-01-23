@@ -98,8 +98,8 @@ This information about each model provides insight into the performance or worki
 
 You can monitor the status using the Apama REST API or the Management interface which is an EPL plug-in. See the following topics in the Apama product documentation for further information:
 
-- [Managing and Monitoring over REST]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DepAndManApaApp_managing_and_monitoring_over_rest.html)
-- [Using the Management interface]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_using_the_management_interface.html)
+- [Managing and Monitoring over REST]({{< link-apama-webhelp >}}/deploying-and-managing-apama-applications/managing-and-monitoring-over-rest/)
+- [Using the Management interface]({{< link-apama-webhelp >}}/developing-apama-applications-in-epl/using-epl-plug-ins#using-the-management-interface)
 
 ##### Chain diagnostics {#chain-diagnostics}
 

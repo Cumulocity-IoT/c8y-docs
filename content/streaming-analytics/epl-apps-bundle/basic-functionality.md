@@ -9,12 +9,12 @@ layout: redirect
 An EPL app is a monitor (\*.mon) file. You can develop EPL apps in two different ways:
 
 * You can use the [Streaming Analytics application](#dev-apps-with-sa) which is available from {{< product-c8y-iot >}}'s application switcher and develop your EPL apps within {{< product-c8y-iot >}}.
-* Or you can install Apama on your local machine and then develop your EPL apps (as monitor files) in [{{< sag-designer >}}](#sag-designer), that is, in a separate environment.
+* Or you can install Apama on your local machine and then develop your EPL apps (as monitor files) in [{{< apama-plugin-for-eclipse >}}](#apama-plugin), that is, in a separate environment.
 
 See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl).
 
 {{< c8y-admon-info >}}
-To be able to develop and deploy EPL apps with the Streaming Analytics application and/or to import monitor files from {{< sag-designer >}} into {{< product-c8y-iot >}},
+To be able to develop and deploy EPL apps with the Streaming Analytics application and/or to import monitor files from {{< apama-plugin-for-eclipse >}} into {{< product-c8y-iot >}},
 your tenant must be subscribed to the Apama-ctrl microservice that supports EPL apps.
 If you do not see the **EPL Apps** page in the Streaming Analytics application and you wish to use EPL apps, contact [product support](/additional-resources/contacting-support/).
 {{< /c8y-admon-info >}}
@@ -45,7 +45,7 @@ From this page, you can:
 
 * Create new EPL apps. See below.
 
-* Import EPL apps. If you prefer to develop your apps outside of {{< product-c8y-iot >}} (for example, using {{< sag-designer >}}), click **Import EPL** in the top menu bar to upload an Apama monitor (\*.mon) file as an app into the Streaming Analytics application.
+* Import EPL apps. If you prefer to develop your apps outside of {{< product-c8y-iot >}} (for example, using {{< apama-plugin-for-eclipse >}}), click **Import EPL** in the top menu bar to upload an Apama monitor (\*.mon) file as an app into the Streaming Analytics application.
 
 * Download EPL apps. Use the **Download** command from the actions menu to download the app as a \*.mon file.
 
@@ -91,25 +91,25 @@ Once your app is activated, you should be able to see the results of it running.
 
 See also [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
 
-#### Developing apps with {{< sag-designer >}} {#sag-designer}
+#### Developing apps with {{< apama-plugin-for-eclipse >}} {#apama-plugin}
 
-{{< sag-designer >}} provides a full development environment and is the tool of choice when you have a complex EPL application. When your EPL app (that is, the monitor file) is ready, you must import it into {{< product-c8y-iot >}}.
+{{< apama-plugin-for-eclipse >}} provides a full development environment and is the tool of choice when you have a complex EPL application. When your EPL app (that is, the monitor file) is ready, you must import it into {{< product-c8y-iot >}}.
 
 ##### Step 1 - Install Apama {#step-1---install-apama}
 
-Download the `apama-c8y-dev` package of Apama from [https://www.apamacommunity.com/downloads/](https://www.apamacommunity.com/downloads/) and extract it to install Apama. This installs the freemium Apama Community Edition with reduced capabilities and several restrictions. To unlock all features you need a license.
+Download the `apama-c8y-dev` package of Apama from [https://download.cumulocity.com/Apama/](https://download.cumulocity.com/Apama) and extract it to install Apama. This installs the freemium Apama Community Edition with reduced capabilities and several restrictions. To unlock all features you need a license.
 
 If you have a license, copy the license file into the Apama work directory (*APAMA_WORK/license*).
 
-The `apama-c8y-dev` package includes {{< sag-designer >}} which is available for both the Apama Community Edition and licensed editions of Apama.
+The `apama-c8y-dev` package includes {{< apama-plugin-for-eclipse >}} which is available for both the Apama Community Edition and licensed editions of Apama.
 
 ##### Step 2 - Create a project {#step-2---create-a-project}
 
-Once installed, create an Apama project in {{< sag-designer >}} and enable it for {{< product-c8y-iot >}} connectivity. For instructions on how to create an Apama project, refer to [Creating Apama projects]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2FWIZARD_NEW_APAMA_PROJECT.html) in the Apama documentation.
+Once installed, create an Apama project in {{< apama-plugin-for-eclipse >}} and enable it for {{< product-c8y-iot >}} connectivity. For instructions on how to create an Apama project, refer to [Creating Apama projects]({{< link-apama-webhelp >}}/using-apama-with-sag-designer/working-with-projects/#creating-apama-projects) in the Apama documentation.
 
 ##### Step 3 - Add Apama bundles to the project {#step-3---add-apama-bundles-to-the-project}
 
-Add the following Apama bundles to the newly created Apama project. These are required by {{< product-c8y-iot >}} so that it can activate your app. For instructions on how to add bundles to a project, refer to [Adding bundles to projects]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-UsiApaStu_adding_bundles_to_projects.html) in the Apama documentation.
+Add the following Apama bundles to the newly created Apama project. These are required by {{< product-c8y-iot >}} so that it can activate your app. For instructions on how to add bundles to a project, refer to [Adding bundles to projects]({{< link-apama-webhelp >}}/using-apama-with-sag-designer/working-with-projects/#adding-bundles-to-projects) in the Apama documentation.
 
 * **Cumulocity > Event Definitions for Cumulocity** <br>
 Provides event APIs required for sending and receiving data to/from {{< product-c8y-iot >}}.
@@ -125,19 +125,24 @@ Exposes predefined generic events used by the HTTP client connectivity plug-in.
 This starts all connectivity plug-ins immediately on start up.
 * **HTTP Client > JSON with generic request/response event definitions** <br>
 Allows EPL apps to make HTTP calls.
-* **Cumulocity > Cumulocity Client** <br>
-Exposes the {{< product-c8y-iot >}} client to EPL apps.
+* **Cumulocity IoT > Cumulocity Notifications 2.0** <br>
+Exposes the {{< product-c8y-iot >}} client to EPL apps using the Notifications 2.0 mechanism.
+For general information on how to receive {{< product-c8y-iot >}} update notifications, see [Receiving update notifications]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in#receiving-update-notifications) in the Apama documentation.
 
+{{< c8y-admon-info >}}
+The **Cumulocity Notifications 2.0** connectivity bundle has been added for receiving notifications from {{< product-c8y-iot >}} using the Notifications 2.0 mechanism. The existing **Cumulocity Client** connectivity bundle that uses the legacy long-polling mechanism is deprecated in favor of this new bundle. In addition, it is now possible to add the **Cumulocity REST Support** connectivity bundle if you do not receive any notifications. You must only add one of these three bundles to your project.
+For information on how to migrate existing Apama projects to Notifications 2.0, see [Migrating from Cumulocity Client to Cumulocity Notifications 2.0]({{< link-apama-webhelp >}}/change-logs/#10.15/cumulocity-10155-clientbundledeprecated) in the Apama documentation.
+{{< /c8y-admon-info >}}
 
 The bundles above are the only ones that are permissible in an EPL app, so be careful not to add any other bundles or your app may not work when activated in {{< product-c8y-iot >}}.
 
 ##### Step 4 - Create a monitor file {#step-4---create-a-monitor-file}
 
-To create a new Apama monitor file, refer to [Creating new monitor files for EPL applications]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2FWIZARD_NEW_MONITORSCRIPT.html) in the Apama documentation.
+To create a new Apama monitor file, refer to [Creating new monitor files for EPL applications]({{< link-apama-webhelp >}}/using-apama-with-sag-designer/working-with-projects/#creating-new-monitor-files-for-epl-applications) in the Apama documentation.
 
-Before you import the newly created monitor file as an EPL app into {{< product-c8y-iot >}} and activate it there, you might want to test if the monitor file works as expected from within {{< sag-designer >}}.
+Before you import the newly created monitor file as an EPL app into {{< product-c8y-iot >}} and activate it there, you might want to test if the monitor file works as expected from within {{< apama-plugin-for-eclipse >}}.
 
-For further information, see [The Cumulocity Transport Connectivity Plug-in]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_the_cumulocity_connectivity_plug_in.html) in the Apama documentation.
+For further information, see [The Cumulocity Transport Connectivity Plug-in]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in/) in the Apama documentation.
 
 ##### Step 5 - Run and test the monitor file {#step-5---run-and-test-the-monitor-file}
 
@@ -175,9 +180,9 @@ CUMULOCITY_MULTI_TENANT_MICROSERVICE_NAME=example-multi-tenant-ms
 ```
 
 In addition, make sure that the monitor files are able to work with the multi-tenant microservice.
-For more information, see [Working with multi-tenant deployments]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_working_with_multi_tenant_deployments.html) in the Apama documentation.
+For more information, see [Working with multi-tenant deployments]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in#working-with-multi-tenant-deployments) in the Apama documentation.
 
-You can now proceed with testing your EPL in {{< sag-designer >}}.
+You can now proceed with testing your EPL in {{< apama-plugin-for-eclipse >}}.
 
 Once the EPL app is ready, refer to [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps) to find out how to deploy it to {{< product-c8y-iot >}}.
 
@@ -186,7 +191,7 @@ Once the EPL app is ready, refer to [Deploying apps](/streaming-analytics/epl-ap
 You can deploy the following to {{< product-c8y-iot >}}:
 
 * EPL apps. You can [develop or import a single \*.mon file with the Streaming Analytics application](#single-mon-file). This is the simplest mechanism for deploying an EPL app.
-* Apama applications. You can upload complex Apama applications (that is, Apama projects developed with {{< sag-designer >}}) to {{< product-c8y-iot >}} and [deploy them as custom microservices](#deploying-as-microservice) using the {{< product-c8y-iot >}} Microservice SDK.
+* Apama applications. You can upload complex Apama applications (that is, Apama projects developed with {{< apama-plugin-for-eclipse >}}) to {{< product-c8y-iot >}} and [deploy them as custom microservices](#deploying-as-microservice) using the {{< product-c8y-iot >}} Microservice SDK.
 
 {{< c8y-admon-info >}}
 In the Streaming Analytics application, the term "activate" is used for deploying an app.
@@ -205,7 +210,7 @@ For more detailed diagnostics of the Apama runtime and any active EPL apps, you 
 
 #### Deploying Apama applications as microservices {#deploying-as-microservice}
 
-Using {{< sag-designer >}}, you can also develop more complex projects which:
+Using {{< apama-plugin-for-eclipse >}}, you can also develop more complex projects which:
 
 * are spread across multiple \*.mon files
 * must be isolated from other Apama applications
@@ -220,7 +225,7 @@ The microservice manifest provides the required settings to manage microservice 
 Apama can be used in either a single-tenant microservice or a multi-tenant microservice.
 Therefore, the microservice manifest must set the isolation level to either PER_TENANT or MULTI_TENANT.
 When Apama is used in a multi-tenant microservice, the Apama application must be written to be multi-tenant aware.
-For more information, see [Working with multi-tenant deployments]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_working_with_multi_tenant_deployments.html) in the Apama documentation.
+For more information, see [Working with multi-tenant deployments]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in#working-with-multi-tenant-deployments) in the Apama documentation.
 
 The following permissions are required by the microservice in order to start up and use all features in the {{< product-c8y-iot >}} transport from EPL. These are set with requiredRoles in the microservice manifest.
 
@@ -241,13 +246,19 @@ The following permissions are required by the microservice in order to start up 
 - ROLE_BULK_OPERATION_READ
 - ROLE_SMS_ADMIN
 
+{{< c8y-admon-info>}}
+To take advantage of the {{< product-c8y-iot >}} Notifications 2.0 reliable data forwarding capability to receive notifications, you must also add the following permission to the manifest of the custom microservice and contact [product support](/additional-resources/contacting-support/) to set the the `notification2.streaming-analytics` feature flag.
+
+- ROLE_NOTIFICATION_2_ADMIN
+{{< /c8y-admon-info>}}
+
 {{< c8y-admon-info >}}
 The above is the minimum list of permissions that a custom Apama microservice needs. If you are developing a custom microservice, you may add more permissions to the microservice manifest.
 {{< /c8y-admon-info >}}
 
 ##### To deploy an Apama application as a microservice {#to-deploy-an-apama-application-as-a-microservice}
 
-1. Develop your application in {{< sag-designer >}} in the usual way.
+1. Develop your application in {{< apama-plugin-for-eclipse >}} in the usual way.
 
 2. You can use Apama's Docker support to turn the entire project into a microservice. In the **Project Explorer** view, right-click the project and select **Apama > Add Docker Support**, which will add a Dockerfile to the root of your project directory.
 	When used for building, it will make use of the Apama images available on Docker Hub. You will need Docker Hub credentials that give you access to the Apama images. Apama Docker images are exclusively Linux-based.
@@ -264,7 +275,7 @@ The above is the minimum list of permissions that a custom Apama microservice ne
 
     You must create the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) manually, but there is no need for anything special in the microservice manifest; no roles or probes are required. However, if you want to configure a liveness or readiness probe, you can configure an `httpGet` probe for the path */ping* on port 15903 (Apama's default port). Enabling auto-scaling is not recommended, as Apama applications are usually stateful and do not automatically partition their input.
 
-    You can pack, deploy and subscribe from this directory, resulting in your Apama application being turned into a running microservice. The behavior of the application when being run outside of {{< product-c8y-iot >}} (from {{< sag-designer >}} or your test environment) will be near-identical to its behavior inside {{< product-c8y-iot >}}. When deployed as a microservice doing requests to the {{< product-c8y-iot >}} API, Apama will automatically pick up the credentials to connect to the tenant you deployed it to, overwriting any other credentials provided to Apama. However, if you wish to receive real-time events, you must have valid credentials specified in the project configuration as you do when connecting to {{< product-c8y-iot >}} from an external Apama environment.
+    You can pack, deploy and subscribe from this directory, resulting in your Apama application being turned into a running microservice. The behavior of the application when being run outside of {{< product-c8y-iot >}} (from {{< apama-plugin-for-eclipse >}} or your test environment) will be near-identical to its behavior inside {{< product-c8y-iot >}}. When deployed as a microservice doing requests to the {{< product-c8y-iot >}} API, Apama will automatically pick up the credentials to connect to the tenant you deployed it to, overwriting any other credentials provided to Apama. However, if you wish to receive real-time events, you must have valid credentials specified in the project configuration as you do when connecting to {{< product-c8y-iot >}} from an external Apama environment.
 
 5. When you are ready to deploy to {{< product-c8y-iot >}}, upload the application as a microservice. For details, refer to [Managing microservices](/standard-tenant/ecosystem/#managing-microservices).
 
@@ -280,7 +291,7 @@ When building images for use as a {{< product-c8y-iot >}} microservice, this is 
 You must now use the
 [public.ecr.aws/apama/apama-cumulocity-jre](https://gallery.ecr.aws/apama/apama-cumulocity-jre) image with the
 [public.ecr.aws/apama/apama-cumulocity-builder](https://gallery.ecr.aws/apama/apama-cumulocity-builder) image as a builder image.
-To do this with the default project Dockerfile created by {{< sag-designer >}} in 10.15.0 and previous versions,
+To do this with the default project Dockerfile created by {{< apama-plugin-for-eclipse >}} in 10.15.0 and previous versions,
 you must either change the `FROM` lines in the Dockerfile appropriately
 (you only need to do this once) or build using the following flags (you must do this every time):
 
@@ -296,7 +307,7 @@ You can use the Apama EPL Apps Tools on GitHub to script uploads of your EPL app
 
 Apama EPL Apps Tools is available from [https://github.com/Cumulocity-IoT/apama-eplapps-tools](https://github.com/Cumulocity-IoT/apama-eplapps-tools). See the [EPL Apps Tools documentation](https://cumulocity-iot.github.io/apama-eplapps-tools/) for detailed information.
 
-For more information on PySys, see the [API Reference for Python]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ApaDoc_pydoc_documentation.html) that you can access from the Apama documentation.
+For more information on PySys, see the [API Reference for Python]({{< link-apama-webhelp >}}/related/pydoc/index.html) that you can access from the Apama documentation.
 
 ### Supported REST services {#supported-rest-services}
 
@@ -656,7 +667,7 @@ where
 In Apama EPL, interactions with the rest of the {{< product-c8y-iot >}} ecosystem are done via events. A number of event definitions is provided for accessing {{< product-c8y-iot >}} data.
 
 {{< c8y-admon-info >}}
-Apama and {{< product-c8y-iot >}} use different "event" concepts. Apama events are used for all interactions with {{< product-c8y-iot >}}, such as listening for and creating device measurements, alarms and ({{< product-c8y-iot >}}) events. For more information on Apama events, see [Defining event types]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2FtutorialEventTypes.html) in the Apama documentation. For more information on {{< product-c8y-iot >}} events, see [Events](https://{{< domain-c8y >}}/api/core/#tag/Events) in the {{< openapi >}}.
+Apama and {{< product-c8y-iot >}} use different "event" concepts. Apama events are used for all interactions with {{< product-c8y-iot >}}, such as listening for and creating device measurements, alarms and ({{< product-c8y-iot >}}) events. For more information on Apama events, see [Defining event types]({{< link-apama-webhelp >}}/developing-apama-applications-in-epl/getting-started-with-apama-epl#defining-event-types) in the Apama documentation. For more information on {{< product-c8y-iot >}} events, see [Events](https://{{< domain-c8y >}}/api/core/#tag/Events) in the {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
 #### Predefined event types {#predefined-event-types}
@@ -743,7 +754,7 @@ on all Alarm() as alarm {
 
 For events that have come from {{< product-c8y-iot >}}, one of `isUpdate()` or `isCreate()` will always return true. Both actions are provided for choice and readability.
 
-For more information, including examples for the different types of objects, see [Receiving update notifications]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_receiving_update_notifications.html) in the Apama documentation.
+For more information, including examples for the different types of objects, see [Receiving update notifications]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in#receiving-update-notifications) in the Apama documentation.
 
 See also the [API Reference for EPL (ApamaDoc)]({{< link-apamadoc-api >}}/com/apama/cumulocity/package-summary.html) for more information about the `isCreate()` and `isUpdate()` actions.
 

@@ -7,7 +7,6 @@ languageCode = "en-us"
 defaultContentLanguage = "en-us"
 title = "Cumulocity documentation"
 theme = "c8ydocs"
-paginate = 12
 # canonifyurls = false
 publishDir = "public"
 # googleAnalytics = "UA-xxxxxxxx-x"
@@ -39,7 +38,7 @@ relativeURLs = true
 
   oldguides = "//cumulocity.com/guides/welcome/intro-documentation/"
 
-  # Boolean to display the admonition stating it is a preview version
+  # Can be a boolean 'false' or a string (example: 'CD' or a release version like '2024'). This flag displays the admonition stating it is a preview version
   docsPreview = false
 
   # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
@@ -57,32 +56,32 @@ relativeURLs = true
   enterprise_tenant = "Enterprise tenant"
 
   [[params.additionalResources]]
-    name = "YouTube"
-    link = "https://www.youtube.com/@CumulocityIoT"
-
-  [[params.additionalResources]]
     name = "Tech Community"
-    link = "https://tech.forums.softwareag.com/tag/Cumulocity-IoT"
-
-  [[params.additionalResources]]
-    name = "Empower Portal"
-    link = "https://empower.softwareag.com/"
-
-  [[params.additionalResources]]
-    name = "Device Partners"
-    link = "https://ecosystem.cumulocity.com/devices/?filter_cumulocity_certified=yes"
-
-  [[params.additionalResources]]
-    name = "Solution Partners"
-    link = "https://ecosystem.cumulocity.com/solution-partner-ecosystem-portal/"
+    link = "https://techcommunity.cumulocity.com/"
 
   [[params.additionalResources]]
     name = "Learning Portal"
     link = "https://cumulocity.moodlecloud.com/"
 
   [[params.additionalResources]]
+    name = "YouTube"
+    link = "https://www.youtube.com/@CumulocityIoT"
+
+  [[params.additionalResources]]
+    name = "REST API documentation"
+    link = "https://cumulocity.com/api/"
+
+  [[params.additionalResources]]
+    name = "CLI documentation"
+    link = "https://goc8ycli.netlify.app/docs/introduction/"
+
+  [[params.additionalResources]]
+    name = "Platform status"
+    link = "https://status.cumulocity.com/"
+
+  [[params.additionalResources]]
     name = "Product Support"
-    link = "https://empower.softwareag.com/"
+    link = "https://cumulocity.atlassian.net/servicedesk/customer/portals"
 
 
 # Customize

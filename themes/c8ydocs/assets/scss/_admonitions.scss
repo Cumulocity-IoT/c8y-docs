@@ -118,13 +118,13 @@
 }
 
 .preview:not(.page-section) {
-  border-color: var(--c8y-palette-status-preview);
-  background-color: var(--c8y-palette-status-preview-high);
+  border-color: var(--c8y-palette-status-info);
+  background-color: var(--c8y-palette-status-info-light);
 }
 
 .preview .title {
-  color: var(--c8y-palette-status-preview);
-  border-color: var(--c8y-palette-status-preview);
+  color: var(--c8y-palette-status-info);
+  border-color: var(--c8y-palette-status-info);
   &:before {
     content: $dlt-c8y-icon-preview;
   }

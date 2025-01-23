@@ -395,5 +395,5 @@ The proof of possession is confirmed if the uploaded signed verification code ma
 
 
 {{< c8y-admon-info >}}
-If administrators cannot carry out this process on their own for organizational reasons, they can manually request the proof of possession for the corresponding certificate and the {{< product-c8y-iot >}} support team can complete the proof of possession through a back end API upon reasonable verification.
+If administrators cannot carry out this process on their own for organizational reasons, they can manually request the proof of possession for the corresponding certificate and the {{< company-c8y >}} Support team can complete the proof of possession through a back end API upon reasonable verification.
 {{< /c8y-admon-info >}}
