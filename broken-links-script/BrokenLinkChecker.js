@@ -21,7 +21,6 @@ const BASE_URL = "https://cumulocity.com/docs";
 
 const shortcodeMapping = {
   "product-c8y-iot": "Cumulocity",
-  "c8y-edge-current-version-alt": "10.18",
   "domain-c8y": "cumulocity.com",
   "link-c8y-github": "https://github.com/Cumulocity-IoT/",
   "c8y-edge-current-version-alt" : "10.18",
@@ -30,7 +29,6 @@ const shortcodeMapping = {
   "link-apamadoc-api" : "https://cumulocity.com/apama/docs/latest/related/ApamaDoc/index.html",
   "link-c8y-doc-baseurl" : ".Page.Site.BaseURL",
   "link-device-portal": "https://ecosystem.cumulocity.com/devices/?filter_cumulocity_certified=yes",
-  "c8y-support-link": "https://cumulocity.atlassian.net/servicedesk/customer/user/login?destination=portals",
   "link-apama-webhelp" : "https://cumulocity.com/apama/docs/latest",
   "link-c8y-training": "https://cumulocity.moodlecloud.com/",
   "c8y-resources-server-link": "https://download.cumulocity.com/",
@@ -83,7 +81,7 @@ const checkLink = async (link, mdFile) => {
 };
 
 (async () => {
-  const projectDir = ".././content"; 
+  const projectDir = "../content"; 
   const markdownFiles = getMarkdownFiles(projectDir);
 
   const brokenLinks = [];

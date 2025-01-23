@@ -22,7 +22,7 @@ jobs:
       - name: Set Up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Install Dependencies
         run: |
@@ -40,29 +40,28 @@ jobs:
           script: |
             const fs = require('fs');
             const path = './broken-links-script/broken_links_markdown.csv';
-            let body;
+
             if (fs.existsSync(path)) {
               const data = fs.readFileSync(path, 'utf8').trim();
               const lines = data.split('\n').slice(1); // Skip the header line
-              const broken404Links = lines.filter(line => line.includes(',404')); // Filter only 404 errors
 
-              if (broken404Links.length > 0) {
-                body = `### :warning: The following 404 broken links were found:\n\n${broken404Links
+              if (lines.length > 0) {
+                const body = `### :warning: The following 404 broken links were found:\n\n${broken404Links
                   .map((line) => {
                     const [url, file, status] = line.split(',');
                     return `- **[${url}](${url})** in file \`${file}\` (Status: ${status})`;
                   })
                   .join('\n')}`;
+
+                github.rest.issues.createComment({
+                  issue_number: context.issue.number,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  body: body
+                });
               } else {
-                body = 'No broken links with 404 status found.';
+                console.log('No broken links with 404 status found');
               }
             } else {
-              body = 'Error: Broken link checker did not produce a CSV report.';
+              console.log('Error: Broken link checker did not produce a CSV report.');
             }
-
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: body
-            });
