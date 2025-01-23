@@ -1,6 +1,6 @@
 ---
 date: ""
-title: properly reset remotes (#8040)
+title: Remote reset functionality fixed
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62327
 version: 1021.32.4
 ---
-properly reset remotes (#8040)
+In certain situations, the reset of remotes did not work properly which could lead to inconsistencies and synchronization issues between systems. This has been fixed now so that remotes are always properly reset when triggered. The fix ensures reliable remote handling and prevents potential problems caused by incomplete resets.
