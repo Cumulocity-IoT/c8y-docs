@@ -1,0 +1,15 @@
+{
+  "name": "broken-links-script",
+  "version": "1.0.0",
+  "main": "BrokenLinkChecker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "p-limit": "^6.2.0"
+  }
+}
