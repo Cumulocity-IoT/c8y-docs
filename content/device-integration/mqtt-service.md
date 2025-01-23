@@ -2,6 +2,6 @@
 weight: 26
 title: MQTT Service
 layout: bundle
-section:
+sector:
   - device_management
 ---
