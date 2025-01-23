@@ -46,7 +46,7 @@ jobs:
               const lines = data.split('\n').slice(1); // Skip the header line
 
               if (lines.length > 0) {
-                const body = `### :warning: The following 404 broken links were found:\n\n${broken404Links
+                const body = `### :warning: The following 404 broken links were found:\n\n${lines
                   .map((line) => {
                     const [url, file, status] = line.split(',');
                     return `- **[${url}](${url})** in file \`${file}\` (Status: ${status})`;
