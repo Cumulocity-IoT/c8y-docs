@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1437"
 version: "1021.0.0"
 ---
-The DTM plugins now support creating groups and viewing groups created using the default asset model for groups.
+DTM plugins now support creating and visualizing groups based on their default asset model. Users can create multiple groups simultaneously and organize devices within these groups. The updated view also displays the current labels and icons assigned to the default asset model for groups.
