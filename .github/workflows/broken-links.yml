@@ -26,12 +26,12 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          cd scripts
+          cd broken-links-script
           npm install
 
       - name: Run Broken Link Checker
         run: |
-          cd scripts
+          cd broken-links-script
           node BrokenLinkChecker.js
 
       - name: Parse and Comment Broken Links
@@ -39,21 +39,22 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const path = './scripts/broken_links_markdown.csv';
+            const path = './broken-links-script/broken_links_markdown.csv';
             let body;
             if (fs.existsSync(path)) {
               const data = fs.readFileSync(path, 'utf8').trim();
-              if (data.split('\n').length > 1) {
-                body = `The following broken links were found:\n\n${data
-                  .split('\n')
-                  .slice(1) 
+              const lines = data.split('\n').slice(1); // Skip the header line
+              const broken404Links = lines.filter(line => line.includes(',404')); // Filter only 404 errors
+
+              if (broken404Links.length > 0) {
+                body = `### :warning: The following 404 broken links were found:\n\n${broken404Links
                   .map((line) => {
                     const [url, file, status] = line.split(',');
                     return `- **[${url}](${url})** in file \`${file}\` (Status: ${status})`;
                   })
                   .join('\n')}`;
               } else {
-                body = 'No broken links found.';
+                body = 'No broken links with 404 status found.';
               }
             } else {
               body = 'Error: Broken link checker did not produce a CSV report.';

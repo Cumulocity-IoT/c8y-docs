@@ -93,7 +93,15 @@ const checkLink = async (link, mdFile) => {
 
   const tasks = markdownFiles.map((mdFile) => {
     const content = fs.readFileSync(mdFile, "utf8");
-  const links = [...content.matchAll(/(?<!\!)\[.*?\]\((.+?)\)/g)].map((match) => match[1]);
+    const links = [...content.matchAll(/(?<!\!)\[.*?\]\((.+?)\)/g)].map(
+      (match) => {
+        let link = match[1];
+        if (link.includes("(") && !link.endsWith(")")) {
+          link += ")"; // Add closing bracket if there's an opening bracket but no closing bracket
+        }
+        return link;
+      }
+    );
 
 
 

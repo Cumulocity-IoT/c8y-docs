@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "- Node.js with version 20 and more is required to execute the scripts.",
   "main": "BrokenLinkChecker.js",
-  "type": "module", 
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,5 +12,8 @@
   "dependencies": {
     "node-fetch": "^3.3.2",
     "p-limit": "^6.2.0"
+  },
+  "devDependencies": {
+    "linkinator": "^6.1.2"
   }
 }
