@@ -218,7 +218,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import jakarta.annotation.PostConstruct;
-import jakarta.servlet.http.HttpServletRequest;;
+import jakarta.servlet.http.HttpServletRequest;
 
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
