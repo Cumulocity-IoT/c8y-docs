@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62327
 version: 1021.32.4
 ---
-In certain situations, the `Reset to default` button (available in the Administration app on the list of plugins installed to a certain application) did not work properly which could lead to inconsistencies. This has been adressed so that the application plugins will be loaded like there was never any modification done to them.
+In certain situations, the **Reset to default** button in the list of plugins installed to a certain application did not work properly which could lead to inconsistencies. This has been addressed so that the default application plugins will be loaded properly on resetting the plugins to default.
