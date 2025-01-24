@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Service management actions added to every service in device tab services list.
+title: Service management actions added to the services list in the device details
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
