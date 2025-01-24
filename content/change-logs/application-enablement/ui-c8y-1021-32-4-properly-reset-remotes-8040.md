@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Reset to default button for installed plugins of an application fixed
+title: Reset to default functionality for application plugins works properly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
