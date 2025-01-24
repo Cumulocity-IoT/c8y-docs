@@ -6,7 +6,7 @@ change_type:
   - value: change-VSkj2iV9m
     label: Fix
 component:
-  - value: component-YbYJ3gLU_
+  - value: component-0UgqXH1Ys
     label: Administration
 build_artifact:
   - value: tc-pjJiURv9Y
