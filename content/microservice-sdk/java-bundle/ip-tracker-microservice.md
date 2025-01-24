@@ -33,7 +33,7 @@ Your *pom.xml* file should contain a snippet similar to:
     <java.version>17</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <spring-boot-dependencies.version>2.5.14</spring-boot-dependencies.version>
+    <spring-boot-dependencies.version>3.3.5</spring-boot-dependencies.version>
     <c8y.version>1016.0.117</c8y.version>
     <microservice.name>iptracker-microservice</microservice.name>
 </properties>
@@ -217,8 +217,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.annotation.PostConstruct;
+import jakarta.servlet.http.HttpServletRequest;
 
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
