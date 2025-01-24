@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Remote reset functionality fixed
+title: Reset to default button for installed plugins of an application fixed
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62327
 version: 1021.32.4
 ---
-In certain situations, the reset of remotes did not work properly which could lead to inconsistencies and synchronization issues between systems. This has been fixed now so that remotes are always properly reset when triggered. The fix ensures reliable remote handling and prevents potential problems caused by incomplete resets.
+In certain situations, the `Reset to default` button (available in the Administration app on the list of plugins installed to a certain application) did not work properly which could lead to inconsistencies. This has been adressed so that the application plugins will be loaded like there was never any modification done to them.
