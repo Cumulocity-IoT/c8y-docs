@@ -87,7 +87,7 @@ You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Ed
     <java.version>17</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <spring-boot-dependencies.version>2.5.14</spring-boot-dependencies.version>
+    <spring-boot-dependencies.version>3.3.5</spring-boot-dependencies.version>
 </properties>
 ```
 
@@ -500,7 +500,7 @@ If your Docker image has run successfully, you shall see the output on the conso
  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
   '  |____| .__|_| |_|_| |_\__, | / / / /
  =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::        (v2.5.14)
+ :: Spring Boot ::        (v3.3.5)
 
 2022-10-21 15:53:07.510  INFO 7 --- [main] c8y.example.App                          : Starting App on dff01acae6d8 with PID 7 (/data/hello-microservice-java.jar started by root in /)
 ...
