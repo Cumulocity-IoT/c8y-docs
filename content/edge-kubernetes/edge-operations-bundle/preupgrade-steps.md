@@ -1,5 +1,8 @@
 ---  
-
+weight: 10
+title: ClusterRole Patch Documentation for Operator Upgrade from 1018.0.1 to 2025.0.0
+layout: redirect
+---
 # **ClusterRole Patch Documentation for Operator Upgrade**  
 
 ## **Table of Contents**  
