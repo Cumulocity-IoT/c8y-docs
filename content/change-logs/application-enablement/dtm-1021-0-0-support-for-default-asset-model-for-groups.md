@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Added support in Dtm-plugins for default asset model for groups"
+title: "Added support in DTM plugins for default asset model for groups"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
