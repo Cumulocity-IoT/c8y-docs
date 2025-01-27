@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Update branding for release 2024 (#8058)
+title: Update branding for 2024 release
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
