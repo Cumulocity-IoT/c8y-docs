@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62342
 version: 1018.503.139
 ---
-Update branding for release 2024 (#8058)
+We have updated the product's visual elements to reflect our company's new brand identity following the recent carve-out. These updates include removing previous company logos and implementing our new corporate color scheme across the application. These visual changes can be seen in various areas of the user interface, such as the login screen, header, and footer. This change is purely cosmetic and does not impact any functionality or existing user data.
