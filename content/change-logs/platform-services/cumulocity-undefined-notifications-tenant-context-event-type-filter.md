@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-60734
-version: 2025.30.0
+version: 2025.0.11
 ---
 
 Notifications 2.0 subscriptions may specify the {{< product-c8y-iot >}} APIs to subscribe to, for example `events` or `measurements`.
