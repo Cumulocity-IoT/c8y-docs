@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62131
 version: 1021.34.1
 ---
-fix markup in the list-display-control (#8069)
+The list display control, which is used to display lists of items in various parts of the application, contained incorrect markup that could lead to display issues. This has now been fixed by correcting the markup in the control. 
