@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix markup in the list-display-control (#8070)
+title: Fixed incorrect markup in the list display control
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
