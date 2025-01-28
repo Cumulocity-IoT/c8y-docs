@@ -3,7 +3,7 @@ date: ""
 title: Updated branding colors and logo
 product_area: Application enablement & solutions
 change_type:
-  - value: change-VSkj2iV9m
+  - value: change-2c7RdTdXo4
     label: Improvement
 component:
   - value: component-YbYJ3gLU_
