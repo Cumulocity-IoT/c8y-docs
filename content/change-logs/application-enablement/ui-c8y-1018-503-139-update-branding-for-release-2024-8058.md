@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Update branding for 2024 release
+title: Updated branding colors and logo
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
