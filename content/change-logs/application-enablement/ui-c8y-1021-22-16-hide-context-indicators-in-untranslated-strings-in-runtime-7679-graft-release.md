@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ticket: MTM-61194
-version: 1021.25.1
+version: 1021.22.16
 ---
 In the past, untranslated strings shown in applications might have included additional context indicators which were confusing for end users and not intended. With this change, context indicators are now hidden for untranslated strings at runtime. This improves the user experience when the strings are not yet translated, as end users will no longer see technical details not relevant to them.

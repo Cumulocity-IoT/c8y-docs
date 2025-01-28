@@ -261,7 +261,16 @@ collections:
             label: Starting from
             widget: datetime
             hint: Starting date to display the change logs (90 days for change logs)
-
+          - name: versions
+            label: Versions
+            widget: list
+            fields:
+              - label: Date
+                name: date
+                widget: string
+              - label: Version
+                name: version
+                widget: string
       - name: component
         label: Component options
         file: data/component.json
