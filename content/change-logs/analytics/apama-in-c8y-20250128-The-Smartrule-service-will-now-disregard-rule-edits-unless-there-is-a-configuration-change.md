@@ -1,6 +1,6 @@
 ---
 date:
-title: The geofence smart rule is not generating duplicate alarms.
+title: Geofence smart rule no longer creates duplicate alarms.
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
