@@ -125,7 +125,7 @@ Click on the desired subtenant or click the edit icon <i class="dlt-c8y-icon-edi
 
 In the **Properties** tab, all fields are editable except of **ID**, **Domain/ URL**, **Administrator's username** and **Administrator's email**. For details on the fields, refer to [To create a subtenant](#to-create-a-subtenant).
 {{<c8y-admon-info>}}
-**Administrator's email** may be changed by logging in to subtenant with **Administrator's username** and changing own email.
+The **Administrator's email** may be changed by logging in to the subtenant with the **Administrator's username** and changing the own email.
 {{</c8y-admon-info>}}
 
 To change the tenant password, click **Change password**, enter the new password in the upcoming fields and click **Save**.
