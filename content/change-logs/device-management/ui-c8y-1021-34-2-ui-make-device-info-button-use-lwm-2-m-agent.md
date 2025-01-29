@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix device delete button in LWM2M device information page
+title: Delete button in Info tab of LWM2M devices works properly
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
