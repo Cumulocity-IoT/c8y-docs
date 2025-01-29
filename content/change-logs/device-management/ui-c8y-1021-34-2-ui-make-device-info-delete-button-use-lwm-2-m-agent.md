@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3538
 version: 1021.22.25
 ---
-Previously, the delete button in the device info page was not working properly for LwM2M devices. With this change, the delete button now uses the LwM2M agent to perform the device deletion. This ensures that LwM2M devices can be properly deleted, providing a consistent user experience for device management across different device types.
+Previously, the **Delete** button on the **Info** tab in the device details did not work properly for LWM2M devices. This issue has been fixed and LWM2M devices can now be properly deleted.
