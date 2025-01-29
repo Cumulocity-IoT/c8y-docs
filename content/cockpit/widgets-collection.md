@@ -194,9 +194,13 @@ The "Help and service" widget displays links to help and service resources. Ther
 
 ### Image {#image}
 
-The "Image" widget lets you display a single image to be selected from your file system by browsing. When the image is uploaded, it is possible to change the image size and alignment.
+The "Image" widget lets you display a single image to be selected from your file system by browsing.
 
 ![Image widget](/images/users-guide/cockpit/cockpit-image-widget.png)
+
+When the image is uploaded, it is possible to change the image size and alignment.
+
+![Image widget configuration](/images/users-guide/cockpit/cockpit-image-widget-config.png)
 
 ### Info Gauge {#info-gauge}
 
