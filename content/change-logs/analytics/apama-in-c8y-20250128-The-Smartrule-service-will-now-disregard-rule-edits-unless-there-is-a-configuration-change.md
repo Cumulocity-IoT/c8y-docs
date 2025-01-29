@@ -1,5 +1,5 @@
 ---
-date: 2025-01-28
+date:
 title: The Smart rule service will now disregard rule edits unless there is a configuration change
 change_type:
   - value: change-2c7RdTdXo4
