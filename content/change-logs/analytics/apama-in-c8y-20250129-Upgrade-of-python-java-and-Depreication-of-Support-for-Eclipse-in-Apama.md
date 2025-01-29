@@ -14,8 +14,5 @@ build_artifact:
 version: 25.339.3
 ---
 
-Java version is updated to Java 17 to support the latest Microservice SDK.
-Python version is updated to v3.9.19 
-
 Eclipse and the Windows development support will be removed in 2025 and Python and Java will be upgraded to newer versions. See (latest Apama change logs)[https://cumulocity.com/apama/docs/latest/change-logs] for more details.
 This will affect the development of Streaming Analytics EPL apps/custom blocks and testing using Pysys locally.
