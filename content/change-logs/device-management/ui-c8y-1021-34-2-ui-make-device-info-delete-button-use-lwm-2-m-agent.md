@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3538
 version: 1021.22.25
 ---
-Previously, the **Delete** button on the **Info** tab in the device details did not work properly for LWM2M devices. This issue has been fixed and LWM2M devices can now be properly deleted.
+Previously, the **Delete** button on the **Info** tab in the device details were not integrated for LWM2M devices and an additional cleanup operation was required. Now this button is integrated for LWM2M device and LWM2M devices can now be properly deleted.
