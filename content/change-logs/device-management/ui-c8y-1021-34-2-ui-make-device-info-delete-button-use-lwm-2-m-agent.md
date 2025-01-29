@@ -1,6 +1,6 @@
 ---
 date: ""
-title: [UI] Make Device Info delete button use LWM2M agent to do delete for LWM2M devices (#7815) [GRAFT][release/cd] (#8061)
+title: Fix device delete button in LWM2M device information page
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3538
 version: 1021.34.2
 ---
-[UI] Make Device Info delete button use LWM2M agent to do delete for LWM2M devices (#7815) [GRAFT][release/cd] (#8061)
+Previously, the delete button in the device info page was not working properly for LwM2M devices. With this change, the delete button now uses the LwM2M agent to perform the device deletion. This ensures that LwM2M devices can be properly deleted, providing a consistent user experience for device management across different device types.
