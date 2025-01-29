@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Delete button in Info tab of LWM2M devices works properly
+title: Integration of delete button in Info tab for LWM2M devices
 product_area: Device management & connectivity
 change_type:
   - value: change-2c7RdTdXo4
