@@ -3,8 +3,8 @@ date: ""
 title: Delete button in Info tab of LWM2M devices works properly
 product_area: Device management & connectivity
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+  - value: change-2c7RdTdXo4
+    label: Improvement
 component:
   - value: component--KIsStyzM
     label: Device Management app
