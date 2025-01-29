@@ -14,4 +14,4 @@ build_artifact:
 ticket: PAB-4691
 version: 26.27.0
 ---
-The **On geofence create alarm** smart rule was periodically creating duplicate alarms if the geofence configuration is triggered. This issue has now been resolved.
+The **On geofence create alarm** smart rule was periodically creating duplicate alarms when the geofence configuration was triggered. This issue has now been resolved.
