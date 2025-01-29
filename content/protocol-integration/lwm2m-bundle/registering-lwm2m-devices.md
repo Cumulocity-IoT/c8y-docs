@@ -593,7 +593,7 @@ For bulk device registrations, the information about duplicate LWM2M devices wil
 
 ### Device deletion {#device-deletion}
 
-To remove a LWM2M device, delete it through the [All devices](/device-management-application/viewing-all-devices/#to-delete-devices) list in the Device Management application.
+To remove a LWM2M device, delete it through the [All devices](/device-management-application/viewing-all-devices/#to-delete-devices) list in the Device Management application or the [Devices Status](/device-management-application/viewing-device-details/#info) card of the device info page.
 
 Alternatively, you can delete a LWM2M device using a REST call. With the managed object ID (device ID) of the device to be deleted, this can be accomplished using the following DELETE request.
 
