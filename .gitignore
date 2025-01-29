@@ -11,3 +11,6 @@ npm-debug.log
 .hugo_build.lock
 static/releases.json
 .hugo_build.lock
+dtm/.env
+dtm/.yalc
+dtm/yalc.lock

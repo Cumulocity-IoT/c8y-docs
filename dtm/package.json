@@ -1,0 +1,12 @@
+{
+  "name": "dtm-automation",
+  "version": "1.0.0",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cumulocity-cypress": "^0.8.1",
+    "cypress": "^14.0.0"
+  }
+}

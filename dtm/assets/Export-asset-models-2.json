@@ -1,0 +1,59 @@
+{
+  "assetModels": [
+    {
+      "c8y_IsAssetType": {
+        "allowedAssetTypes": [{ "id": "332206" }],
+        "isNoneChildAssetsAllowed": "false",
+        "icon": { "name": "", "category": "" },
+        "properties": []
+      },
+      "id": "102207",
+      "label": "AZ-43Z-Rotor",
+      "name": "az-43z-rotor",
+      "description": "",
+      "c8y_Global": {},
+      "depth": 0
+    },
+    {
+      "c8y_IsAssetType": {
+        "allowedAssetTypes": [],
+        "isNoneChildAssetsAllowed": "false",
+        "icon": { "name": "", "category": "" },
+        "properties": [{ "id": "651238" }]
+      },
+      "id": "332206",
+      "label": "AZ-43Z Blade",
+      "name": "az-43z_blade",
+      "description": "Wind turbine blade",
+      "c8y_Global": {},
+      "depth": 1
+    }
+  ],
+  "assetProperties": [
+    {
+      "c8y_IsAssetProperty": {},
+      "c8y_Global": {},
+      "id": "651238",
+      "description": "",
+      "label": "Blade length",
+      "name": "blade_length",
+      "type": "c8y_JsonSchema",
+      "c8y_JsonSchema": {
+        "type": "object",
+        "title": "Blade length",
+        "properties": {
+          "blade_length": {
+            "requiredMinimum": true,
+            "default": 52,
+            "requiredMaximum": true,
+            "maximum": 110,
+            "type": "number",
+            "minimum": 40
+          }
+        },
+        "required": [],
+        "key": "blade_length"
+      }
+    }
+  ]
+}
