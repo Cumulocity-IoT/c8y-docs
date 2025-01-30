@@ -49,7 +49,7 @@ Customer acknowledges the following limitations and constraints in using Service
 {{< company-c8y >}} is committed to providing reliable service. The specific service availability targets for {{< product-c8y-iot >}} DataHub are as follows:
 
 * **Production environments:** 99.00% availability
-* **Preproduction environments:** 95.00% availability
+* **Non-production environments:** 95.00% availability
 
 Service availability for [{{< product-c8y-iot >}} DataHub APIs](https://cumulocity.com/api/datahub/#tag/Standard-API) is calculated as outlined in the [platform's service availability section](/service-terms/service-level/#service-availability).
 
