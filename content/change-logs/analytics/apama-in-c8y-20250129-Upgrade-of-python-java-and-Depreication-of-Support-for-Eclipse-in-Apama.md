@@ -1,6 +1,6 @@
 ---
 date: 2025-01-29
-title: Upgrade of python, java and Depreication of Support for Eclipse in Apama
+title: Upcoming changes to Apama runtime embedded in Streaming Analytics
 change_type:
   - value: change-inv-3bw8e
     label: Announcement
