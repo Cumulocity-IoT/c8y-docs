@@ -1,6 +1,6 @@
 ---
 date: ""
-title: setting password for new user (#7845) (#7995)
+title: When creating a new user, we have the option to choose one of three password setup methods.
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,7 @@ build_artifact:
 ticket: MTM-61426
 version: 1021.33.0
 ---
-setting password for new user (#7845) (#7995)
+The password setup process for new users was unclear. It has been updated and replaced with three distinct options, allowing the user to select one. The available options are:
+- Send password reset link as email
+- Set password that must be changed on the first login
+- Set password for the user (no change required)
