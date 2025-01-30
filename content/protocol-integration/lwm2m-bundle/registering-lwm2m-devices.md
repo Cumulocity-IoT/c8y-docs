@@ -437,7 +437,7 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">Event log level</td>
 <td style="text-align: left">logLevel</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">{{< product-c8y-iot >}} can output detailed logs to the event stream. This field configures a log level. Allowed values are: 
+<td style="text-align: left">{{< product-c8y-iot >}} can output detailed logs to the event stream. This field configures a log level. Allowed values are:
 <b>NONE</b> (nothing will be logged as events), <b>LIFECYCLE</b> (only registration, de-registration and registration update events),
 <b>TRAFFIC</b> (LIFECYCLE + sent/received data), <b>FIRMWARE</b> (LIFECYCLE + detailed firmware update information),
 <b>VERBOSE</b> (all of the above will be logged).
@@ -499,7 +499,7 @@ Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M age
 <td style="text-align: left">Firmware update URL (DEPRECATED)</td>
 <td style="text-align: left">fwUpdateURL</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left"><b>DEPRECATED</b>: Use the regular firmware repository to specify the firmware version that links to an external URL. This field will be removed in a future update. 
+<td style="text-align: left"><b>DEPRECATED</b>: Use the regular firmware repository to specify the firmware version that links to an external URL. This field will be removed in a future update.
 
 Indicates the firmware update URL from where the LWM2M device can download the firmware package.</td>
 <td style="text-align: left">Optional</td>
@@ -593,7 +593,7 @@ For bulk device registrations, the information about duplicate LWM2M devices wil
 
 ### Device deletion {#device-deletion}
 
-To remove a LWM2M device, delete it through the [All devices](/device-management-application/viewing-all-devices/#to-delete-devices) list in the Device Management application.
+To remove a LWM2M device, delete it through the [All devices](/device-management-application/viewing-all-devices/#to-delete-devices) list in the Device Management application via the **Device status** card on the [**Info** tab](/device-management-application/viewing-device-details/#info) in the device details.
 
 Alternatively, you can delete a LWM2M device using a REST call. With the managed object ID (device ID) of the device to be deleted, this can be accomplished using the following DELETE request.
 
