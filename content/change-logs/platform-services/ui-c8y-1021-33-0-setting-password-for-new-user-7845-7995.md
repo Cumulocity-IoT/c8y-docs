@@ -1,6 +1,6 @@
 ---
 date: ""
-title: When creating a new user, we have the option to choose one of three password setup methods.
+title: Improved password setup process for new users
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
