@@ -1,6 +1,6 @@
 ---
 date: ""
-title: It is now possible to hide checkboxes for the asset selector
+title: Asset selector checkboxes can now be hidden
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60988
 version: 1021.35.0
 ---
-It is now possible to hide checkboxes for the asset selector
+The asset selector is a commonly used component that allows users to select one or more assets from a list. Previously, checkboxes were always displayed next to each asset in the list. With this change, it is now possible to hide these checkboxes if desired. This provides more flexibility in the user interface design and can lead to a cleaner look in situations where the checkboxes are not needed. Hiding the checkboxes will not impact the functionality of the asset selector, and assets can still be selected as before.
