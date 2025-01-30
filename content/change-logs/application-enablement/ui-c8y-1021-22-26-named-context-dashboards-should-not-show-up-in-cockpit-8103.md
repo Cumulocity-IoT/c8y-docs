@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Device info dashboards no longer show up in cockpit
+title: Device info dashboards no longer show up in the Cockpit application
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
