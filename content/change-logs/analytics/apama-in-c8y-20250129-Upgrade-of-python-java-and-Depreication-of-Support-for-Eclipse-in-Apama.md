@@ -15,4 +15,4 @@ version: 25.339.3
 ---
 
 Eclipse and the Windows development support will be removed in 2025 and Python and Java will be upgraded to newer versions. See (latest Apama change logs)[https://cumulocity.com/apama/docs/latest/change-logs] for more details.
-This will affect the development of Streaming Analytics EPL apps/custom blocks and testing using Pysys locally.
+The next major releases of Apama will drop support for Windows. It will also mean that Eclipse based development environment will also be unavailable. This will affect the development and testing of EPL apps and Analytics Builder custom blocks natively on Windows.
