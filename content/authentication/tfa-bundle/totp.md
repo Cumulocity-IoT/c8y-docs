@@ -10,6 +10,14 @@ weight: 30
 Users must install a TOTP application on their smartphone (Google Authenticator is recommended), freely available both on App Store and Play Store.
 {{< /c8y-admon-req >}}
 
+### To enable a specific user {#to-enable-a-specific-user}
+
+1. In the Administration application, navigate to **Accounts** > **Users** and select a user in the **Users** page.
+2. Select the checkbox next to **Two-factor authentication(TOTP)**. This option is available only if the user has TOTP configured. If not, select **Enforce TOTP setup for the user**.
+3. Click **Save**.
+
+![Enable TFA](/images/users-guide/Administration/admin-user-enable-tfa-1.png)
+
 ### To set up TOTP {#to-set-up-totp}
 
 Opposed to the SMS strategy TOTP must be set up by each user. By opening **User settings** in the top right corner and then clicking **Set up two-factor authentication** they can start the setup process.
