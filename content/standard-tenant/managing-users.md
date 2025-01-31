@@ -140,16 +140,18 @@ If single sign-on is enabled for your tenant, a message will show up which remin
       </table>
 
       For additional information see [User options and settings](/get-familiar-with-the-ui/user-settings).
+<br><br>
 
 3. Select the login options for the user.
-<br><br>
+
    In case TFA authorization via SMS is enabled for the tenant:
     * **Two-factor authentication (SMS)** - if selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/authentication/tfa/).
 <br><br>
+
    In case TFA authorization via TOTP is enabled for the tenant:
     * **Two-factor authentication (TOTP)** - if selected, the user will have to provide TOTP (Time-Based One-Time Password) from third party authentication application to complete the authentication. For details refer to [Two-factor authentication](/authentication/tfa/).
     * **Enforce TOTP setup for the user** - if selected, the user will have to setup TOTP on the first login. For details refer to [Two-factor authentication](/authentication/tfa/).
-
+<br><br>
 
 4. Select the password options for the user.
    * **Send password reset link as email** - if selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above. This option is only available during user creation.
