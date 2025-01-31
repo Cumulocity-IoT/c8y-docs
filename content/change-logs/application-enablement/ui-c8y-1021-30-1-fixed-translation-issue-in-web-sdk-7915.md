@@ -1,6 +1,6 @@
 ---
-date: ""
-title: Custom translations for applications now properly displayed 
+date: '2025-01-30'
+title: Custom translations for applications now properly displayed
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
