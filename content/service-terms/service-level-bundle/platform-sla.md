@@ -23,7 +23,7 @@ The {{< product-c8y-iot >}} platform offers a comprehensive set of features desi
 * **Real-time and batch data processing and storage:** {{< product-c8y-iot >}} supports both real-time and batch processing of IoT data, enabling users to efficiently manage and analyze large volumes of data as it is generated. Data storage is Customer-configurable, allowing you to define retention periods according to your specific requirements.
 * **Flexible deployment options:**
     * The platform is deployed using shared ("{{< product-c8y-iot >}}") or dedicated cloud instances ("{{< product-c8y-iot >}} Enterprise Dedicated"), tailored to meet the needs of your organization.
-    * Optionally, separate environments for pre-production (non-production) activities can be purchased to ensure smooth development and testing processes.
+    * Optionally, separate environments for non-production activities can be purchased to ensure smooth development and testing processes.
     * {{< product-c8y-iot >}} is hosted in Customer-selected regions (EMEA, APAC, Japan, and the US).
 * **Support services:**
     * The platform offers tiered product support to meet varying operational needs as outlined in the [support agreement](/service-terms/service-level/#support-sla).
@@ -78,7 +78,7 @@ In the interest of transparency and to ensure a mutual understanding of the serv
 {{< company-c8y >}} is committed to providing reliable service. The specific service availability targets are as follows:
 
 * **Production environments:** 99.90% availability
-* **Preproduction environments:** 95.00% availability
+* **Non-production environments:** 95.00% availability
 
 Service availability for {{< product-c8y-iot >}} is calculated as follows:
 
@@ -164,7 +164,7 @@ service availability requirements are set forth in this service credit commitmen
 #### **Support**
 
 * **Customer support:** Support is provided in accordance with Customer’s selected support plan, as detailed in the [support agreement](/service-terms/service-level/#support-sla).
-* **Pre-production environments:** For pre-production environments, Starter-level support is generally provided, with support tickets handled at standard priority.
+* **Non-production environments:** For non-production environments, Starter-level support is generally provided, with support tickets handled at standard priority.
 
 #### **Maintenance**
 
