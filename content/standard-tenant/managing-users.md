@@ -144,7 +144,7 @@ If single sign-on is enabled for your tenant, a message will show up which remin
 
 3. Select the login options for the user.
 
-   In case TFA authorization via SMS is enabled for the tenant:
+   If TFA authorization via SMS is enabled for the tenant:
     * **Two-factor authentication (SMS)** - If selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/authentication/tfa/).
 <br><br>
 
