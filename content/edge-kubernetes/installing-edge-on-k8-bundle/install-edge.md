@@ -45,7 +45,7 @@ Metadata:
   Generation:          1
 
 Spec:
-  Version:             {{< c8y-edge-current-version >}}.0.1
+  Version:             {{< c8y-edge-current-version >}}.0.0
   License Key:         ***************
   Company:             IoT Company
   Domain:              myown.iot.com
@@ -57,7 +57,7 @@ Status:
   Deployed Generation:  1
   Last Deployed Time:  2023-08-11T00:15:00Z
   State:               Ready
-  Version:             {{< c8y-edge-current-version >}}.0.1-XXXX
+  Version:             {{< c8y-edge-current-version >}}.0.0-XXXX
 
   Help Commands:
     Download Logs:   
@@ -87,6 +87,6 @@ Events:
 …………
   Normal   Installing        2m     cumulocityiotedge  finished installing thin-edge
 …………
-  Normal   Ready             1m     cumulocityiotedge  Cumulocity Edge installation is complete, and it's now running version {{< c8y-edge-current-version >}}.0.1-XXXX
+  Normal   Ready             1m     cumulocityiotedge  Cumulocity Edge installation is complete, and it's now running version {{< c8y-edge-current-version >}}.0.0-XXXX
 ```
 Before you continue, wait for the Edge CR status to reach the **Ready** state.

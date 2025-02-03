@@ -7,7 +7,7 @@ After deploying or updating Edge, if the Edge CR status is `InstallationLoopBack
 
 ```shell
 NAME         DOMAIN NAME     VERSION     STATUS     
-c8yedge      myown.iot.com   {{< c8y-edge-current-version >}}.0.1    InstallLoopBackOff
+c8yedge      myown.iot.com   {{< c8y-edge-current-version >}}.0.0    InstallLoopBackOff
 ```
 
 Describe the Edge CR (cumulocity-iot-edge) with the command `kubectl describe edge c8yedge -n c8yedge`.
