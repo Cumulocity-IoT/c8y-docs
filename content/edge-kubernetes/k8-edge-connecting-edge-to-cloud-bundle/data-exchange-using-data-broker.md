@@ -8,37 +8,33 @@ sector:
 
 Data broker lets you upload the data to a {{< product-c8y-iot >}} tenant account selectively. Note that you must first create a {{< product-c8y-iot >}} tenant account.
 
-{{< c8y-admon-important >}}
-Data broker and Edge connectivity are compatible only with the current version and previous two releases of {{< product-c8y-iot >}}.
-{{< product-c8y-iot >}} has a release every three months.
-{{< /c8y-admon-important >}}
-
 You can share the following data with the tenant account:
 
 * Devices (and more generically, managed objects)
 * Events
 * Alarms
 * Measurements
+* Operations
 
-{{< c8y-admon-important >}}
-Data broker in Edge does not support synchronization of the [operations](/concepts/domain-model/#operations).
-{{< /c8y-admon-important >}}
+{{< c8y-admon-info >}}
+Devices, events, alarms, and measurements are forwarded from the Edge to the {{< product-c8y-iot >}} tenant account. In contrast, operations are forwarded from the {{< product-c8y-iot >}} tenant account to the Edge, but only for devices that exist in the {{< product-c8y-iot >}} tenant account due to forwarded data.
+{{< /c8y-admon-info >}}
 
 To upload the data to a {{< product-c8y-iot >}} tenant account, you must first create a data connector in the Edge appliance and subscribe this connector in the tenant account.
 
-A data connector describes the subset of the data that you would like to send to a destination tenant. For more information, see [Data connectors](/data-broker/data-broker-application/#data-connectors).
+A data connector describes the subset of the data that you would like to send to the {{< product-c8y-iot >}} tenant. For more information, see [Data connectors](/data-broker/data-broker-application/#data-connectors).
 
 To create a data connector and upload the data to the tenant account, perform the following steps:
 
-1. In your Edge, log in to the "edge" tenant.
+1. Log in to the "edge" tenant. For more information on, see [To access Edge](/edge-kubernetes/installing-edge-on-k8/#to-access-cumulocity-iot-edge)
 
-2. In your Edge, go to the Administration application. Click **Data broker** > **Data connectors**.
+2. Navigate to the Administration application. Click **Data broker** > **Data connectors**.
 
 3. Click **Add data connector** and provide all the information and filters. See [To add a data connector](/data-broker/data-broker-application/#to-add-a-data-connector).
 
    Note down the security code. This security code will be used to subscribe the connector in the tenant account.
 
-4. Log in to the {{< product-c8y-iot >}} tenant account. For more information on, see [To access Edge](/edge-kubernetes/installing-edge-on-k8/#to-access-cumulocity-iot-edge)
+4. Log in to the {{< product-c8y-iot >}} tenant account.
 
 5. In the tenant account, go to the Administration application. Click **Data broker** > **Data subscriptions** to subscribe the connector created in your Edge appliance.
 
