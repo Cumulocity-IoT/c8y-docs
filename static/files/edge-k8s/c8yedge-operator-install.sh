@@ -8,7 +8,7 @@
 #   ENV_VAR=... ./c8yedge-operator-install.sh
 #
 # Example:
-#   Installing latest version (1018.0.1) into 'c8yedge' namespace:
+#   Installing latest version (2025.0.0) into 'c8yedge' namespace:
 #     ./c8yedge-operator-install.sh -n 'c8yedge' -u 'edge' -p '*******'
 #           or
 #     C8YEDGE_OPERATOR_NAMESPACE='c8yedge' C8YEDGE_REGISTRY_USERNAME='edge' C8YEDGE_REGISTRY_PASSWORD='*******' ./c8yedge-operator-install.sh
@@ -41,7 +41,7 @@ display_usage() {
     echo "  ENV_VAR=... ./c8yedge-operator-install.sh"
     echo ""
     echo "Example:"
-    echo "  Installing latest version (1018.0.1) into 'c8yedge' namespace:"
+    echo "  Installing latest version (2025.0.0) into 'c8yedge' namespace:"
     echo "    ./c8yedge-operator-install.sh -n 'c8yedge' -u 'edge' -p '*******'"
     echo "      or"
     echo "  C8YEDGE_OPERATOR_NAMESPACE='c8yedge' C8YEDGE_REGISTRY_USERNAME='edge' C8YEDGE_REGISTRY_PASSWORD='*******' ./c8yedge-operator-install.sh"
@@ -84,7 +84,7 @@ done
 
 # Set defaults if not specified
 if [ -z "$C8YEDGE_OPERATOR_VERSION" ]; then
-    C8YEDGE_OPERATOR_VERSION="1018.0.1"
+    C8YEDGE_OPERATOR_VERSION="2025.0.0"
 fi
 
 if [ -z "$C8YEDGE_OPERATOR_NAMESPACE" ]; then
