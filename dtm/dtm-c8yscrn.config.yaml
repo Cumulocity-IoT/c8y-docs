@@ -266,6 +266,23 @@ screenshots:
       - highlight: $navbuttons.all
       - highlight: "[role=group] .collapse-btn:not(.invisible):first"
 
+  - image: "dtm/bulk-import/dtm-bulk-import-import-assets-window.png"
+    visit: "/apps/digital-twin-manager/index.html#/assets"
+    only: true
+    actions: 
+      - click: $navigator.configuration.slot
+      - highlight: 
+          selector: .navbar-right .btn:has(.dlt-c8y-icon-import)
+          border: 
+            outline-offset: -2px
+      - highlight: $navigator.assets.slot
+      - click: .navbar-right .btn:has(.dlt-c8y-icon-import)
+      - click: .modal-content .input-group ng-select
+      - click: ng-dropdown-panel .ng-option:first
+      - highlight: 
+          selector: .modal-footer .btn-primary
+          border: 
+            outline-offset: 2px
 
 
   # - image: "dtm/asset-type/dtm-asset-type-upload-test.png"
