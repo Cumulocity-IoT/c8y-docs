@@ -156,7 +156,7 @@ If single sign-on is enabled for your tenant, a message will show up which remin
 4. Select the password options for the user.
    * **Send password reset link as email** - If selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above. This option is only available during user creation.
    * **Set password that must be changed on the first login** - If selected, you must provide a password which the user must reset on the next login.
-   * **Set password for the user (no change required)** - if selected, you must provide a password. A password change is not required by the user.
+   * **Set password for the user (no change required)** - If selected, you must provide a password. A password change is not required by the user.
 
 {{< c8y-admon-info >}}
 While entering the password, the strength of the password is checked. See [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password) for further information on password reset and strength.
