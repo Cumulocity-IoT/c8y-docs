@@ -149,7 +149,7 @@ If single sign-on is enabled for your tenant, a message will show up which remin
 <br><br>
 
    In case TFA authorization via TOTP is enabled for the tenant:
-    * **Two-factor authentication (TOTP)** - if selected, the user will have to provide TOTP (Time-Based One-Time Password) from third party authentication application to complete the authentication. For details refer to [Two-factor authentication](/authentication/tfa/).
+    * **Two-factor authentication (TOTP)** - If selected, the user must provide TOTP from a third-party authentication application to complete the authentication. For details refer to [Two-factor authentication](/authentication/tfa/).
     * **Enforce TOTP setup for the user** - if selected, the user will have to setup TOTP on the first login. For details refer to [Two-factor authentication](/authentication/tfa/).
 <br><br>
 
