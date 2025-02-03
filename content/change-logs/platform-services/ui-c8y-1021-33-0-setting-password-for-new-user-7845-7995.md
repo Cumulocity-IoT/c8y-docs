@@ -18,3 +18,5 @@ The password setup process for new users was unclear. It has been updated and re
 - Send password reset link as email
 - Set password that must be changed on the first login
 - Set password for the user (no change required)
+
+See also [Managing users](/standard-tenant/managing-users/).
