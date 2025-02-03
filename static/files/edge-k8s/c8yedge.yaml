@@ -45,14 +45,11 @@ spec:
   ## specified in the 'spec.domain' field.
   ## This secret must contain two keys:
   ##  - tls.key: TLS/SSL private key in the PEM format.
-  ##             Generate a TLS/SSL key pair and a Certificate Signing Request (CSR) according to your company policies, 
-  ##             and submit it to your internal or external Certificate Authority (CA). When creating the CSR, in addition 
-  ##             to providing the Common Name (CN), Organization (O), and other required details, you must specify the 
-  ##             Subject Alternative Name (SAN) to request a multi-domain certificate. Ensure that the SAN includes the 
-  ##             domain names for the "edge" tenant and {{< management-tenant >}}. If you plan to install 
-  ##             Cumulocity DataHub, include its domain name as well. 
-  ##             For instance, if your Edge domain is myown.iot.com, make sure myown.iot.com, management-myown.iot.com, 
-  ##             and datahub-myown.iot.com are listed in the SAN field.
+  ##             Generate a TLS/SSL key pair and a Certificate Signing Request (CSR) following your organization's policies, 
+  ##             specifying either a wildcard domain in the Common Name (CN) (for example, *.iot.com) or listing required 
+  ##             domains in the Subject Alternative Name (SAN) field, including the edge tenant, {{< management-tenant >}}, 
+  ##             and, if applicable, Cumulocity DataHub domains (for example, myown.iot.com, management-myown.iot.com, 
+  ##             datahub-myown.iot.com).
   ##
   ##  - tls.crt: The TLS/SSL certificate chain associated with the private key in PEM format.
   ##             It’s essential to ensure the certificates are arranged in the correct sequence for TLS/SSL validation to succeed.

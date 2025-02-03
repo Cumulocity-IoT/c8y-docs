@@ -4,7 +4,7 @@
 ---
 ##
 ## This Custom Resource deploys C8y Edge version 2025.0.0 named 'c8yedge' 
-## accessible at 'https://myown.iot.com' domain with self-signed certificates.
+## accessible at 'https://myown.iot.com' URL with self-signed certificates.
 ##
 
 apiVersion: edge.cumulocity.com/v1
