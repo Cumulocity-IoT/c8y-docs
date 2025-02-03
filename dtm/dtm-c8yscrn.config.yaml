@@ -20,8 +20,9 @@ global:
 selectors:
   - $navigator.toggle: "[data-cy=header-bar--main-header-button]"
   - $navigator.assets.slot: .navigatorContent .slot:has(.c8y-icon-modules)
-  - $navigator.configuration.slot: .navigatorContent .slot:has(.dlt-c8y-icon-cog)
+  - $navigator.configuration.slot: .navigatorContent .slot:has(.dlt-c8y-icon-cog) > .link
   - $navigator.home.slot: .navigatorContent .slot:has(.dlt-c8y-icon-home)
+  - $navigator.current.slot: .navigatorContent .slot:has(.active) > .link
 
   - $navbuttons.all: .navbar-right .btn:has(span)
 
@@ -30,6 +31,9 @@ selectors:
   - $treeview.collapseButton.closed: c8y-tree-view-node .collapse-btn:has(i.dlt-c8y-icon-chevron-right):visible
   - $treeview.node.first: c8y-tree-view-node:first
   - $treeview.node.withsubnodes: c8y-tree-view-node:has(.collapse-btn:visible:first)
+
+  - $unfocus: c8y-header-bar .app-view
+
   - $mySelector: c8y-tree-view-root-node c8y-tree-view-node .c8y-tree-view-node__header__collapse:first
 
 screenshots:
@@ -272,7 +276,6 @@ screenshots:
 
   - image: "dtm/bulk-import/dtm-bulk-import-import-assets-window.png"
     visit: "/apps/digital-twin-manager/index.html#/assets"
-    only: true
     actions: 
       - click: $navigator.configuration.slot
       - highlight: 
@@ -288,12 +291,71 @@ screenshots:
           border: 
             outline-offset: 2px
 
+  - image: "dtm/custom-property/dtm-property-library-complex-property.png"
+    visit: /apps/digital-twin-manager/index.html#/assetproperties
+    actions:
+      - click: $navigator.toggle
+      - click: c8y-properties-library button.c8y-stacked-item:has(> span:contains("Object")):first
 
-  # - image: "dtm/asset-type/dtm-asset-type-upload-test.png"
-  #   visit: "/apps/digital-twin-manager/index.html#/assets"
-  #   skip: true
-  #   actions:
-  #     - click: ":nth-child(1) > c8y-tree-view-node > .c8y-tree-view-node > .c8y-tree-view-node__block > .col-md-4 .btn-clean"
-  #     - click: ".d-flex > .btn"
-  #     - fileUpload: assets/Windmills.jpg
-  #     - click: ".card-footer > .btn-primary"
+  - image: "dtm/custom-property/dtm-property-library-create-property.png"
+    visit: /apps/digital-twin-manager/index.html#/assetproperties
+    tags:
+      - properties
+      - final
+    actions:
+      - click: c8y-properties-library .split-view__list .card-footer .btn-default
+      - highlight: 
+          selector: c8y-properties-library .split-view__list .card-footer .btn-default
+          border: 
+            outline-offset: 2px
+      - highlight: 
+          selector: $navigator.configuration.slot, $navigator.current.slot
+          styles: 
+            outline: 2px
+            outline-style: solid
+            outline-offset: -2px
+            outline-color: "#FF9300"
+            z-index: 1000
+
+  - image: "dtm/custom-property/dtm-property-library-export.png"
+    visit: /apps/digital-twin-manager/index.html#/assetproperties
+    tags:
+      - properties
+      - final
+    actions: 
+      - click: $navigator.toggle
+      - click: "[data-cy=export-properties-btn]"
+      - wait: 1000
+      - click: 
+          selector: tbody .cdk-column-checkbox:visible .c8y-checkbox:lt(5)
+          force: true
+          multiple: true
+      - wait: 1000
+      - highlight: 
+          selector: tbody .cdk-column-checkbox:visible .c8y-checkbox:lt(5)
+          border: 
+            outline-offset: 4px
+      - highlight: 
+          selector: "[data-cy=export-properties-export-btn]"
+          border: 
+            outline-offset: 2px
+
+  - image: "dtm/custom-property/dtm-property-library-import.png"
+    visit: /apps/digital-twin-manager/index.html#/assetproperties
+    tags:
+      - properties
+      - final
+    actions: 
+      - click: $navigator.toggle
+      - click: "[data-cy=import-asset-properties-btn]"
+      - wait: 1000
+      - fileUpload: assets/Export-asset-properties.json
+      - wait: 1000
+      - click: .modal-footer .btn-primary
+      - wait: 1000
+      - highlight: 
+          selector: c8y-stepper-buttons .btn
+          border: 
+            outline-offset: 4px
+      - screenshot: 
+          selector: .modal-content

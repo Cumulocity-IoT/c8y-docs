@@ -1,0 +1,29 @@
+{
+  "assetProperties": [
+    {
+      "c8y_IsAssetProperty": {},
+      "c8y_Global": {},
+      "id": "8112312",
+      "description": "Electrical specifications of the turbine",
+      "label": "Electrical",
+      "name": "electrical",
+      "type": "c8y_JsonSchema",
+      "c8y_JsonSchema": {
+        "type": "object",
+        "title": "Electrical",
+        "properties": {
+          "electrical": {
+            "requiredMinimum": true,
+            "default": 52,
+            "requiredMaximum": true,
+            "maximum": 110,
+            "type": "number",
+            "minimum": 40
+          }
+        },
+        "required": [],
+        "key": "electrical"
+      }
+    }
+  ]
+}
