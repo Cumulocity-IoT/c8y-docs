@@ -8,7 +8,7 @@ This section defines the Edge deployment's configurations.
 
 |<div style="width:150px">Field</div>|Required|<div style="width:115px">Type</div>|Default|Description|
 |:---|:---|:---|:---|:---|
-|version|Yes|String| |Edge version to deploy.<br><br>For example, {{< c8y-edge-current-version >}}.0.0 for {{< c8y-edge-current-version-alt >}} and {{< c8y-edge-current-version >}}.0.1 for a fix-1 of {{< c8y-edge-current-version-alt >}}.
+|version|Yes|String| |Edge version to deploy.<br><br>For example, {{< c8y-edge-current-version >}}.0.0 for {{< c8y-edge-current-version >}} and {{< c8y-edge-current-version >}}.0.1 for a fix-1 of {{< c8y-edge-current-version >}}.
 |domain|Yes|String||A fully qualified domain name. <p>For example, *myown.iot.com*. Here, you must have the Edge license for the domain name *iot.com* or *myown.iot.com*.
 |licenseKey|Yes|String||Edge license key you received for the domain. <br>To request the license file for Edge, [contact product support](/additional-resources/contacting-support/)<br>In the email, you must include <p style="margin: 0; padding-left: 2em;">- Your company name, under which the license has been bought <p style="margin: 0; padding-left: 2em;">- The domain name (for example, myown.iot.com), where Edge will be reachable</p><br>For more information, see [Domain name validation for Edge license key generation](/edge/edge-installation/#domain-name-validation-for-edge-license-key-generation).
 |company|Yes|String||Name of the "edge" tenant, for example, the company's name.
