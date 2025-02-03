@@ -209,7 +209,11 @@ screenshots:
       - highlight: 
           selector: .cdk-column-checkbox:visible .c8y-checkbox:lt(6):gt(1)
           border: 
-            outline-offset: 2px
+            outline-offset: 4px
+      - highlight: 
+          selector: .bottom-drawer .card-footer .btn
+          border: 
+            outline-offset: 4px
       - wait: 1000
       - screenshot: dtm/assets/dtm-assets-assign-devices.png
       - click: .drawerOpen .card-footer .btn-primary
