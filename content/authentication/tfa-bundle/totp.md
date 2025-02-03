@@ -13,7 +13,7 @@ Users must install a TOTP application on their smartphone (Google Authenticator 
 ### To enable a specific user {#to-enable-a-specific-user}
 
 1. In the Administration application, navigate to **Accounts** > **Users** and select a user in the **Users** page.
-2. Select the checkbox next to **Two-factor authentication(TOTP)**. This option is available only if the user has TOTP configured. If not, select **Enforce TOTP setup for the user**.
+2. Select the checkbox next to **Two-factor authentication (TOTP)**. This option is available only if the user has TOTP configured. If this is not the case, select **Enforce TOTP setup for the user**.
 3. Click **Save**.
 
 ![Enable TFA](/images/users-guide/Administration/admin-user-enable-tfa-1.png)
