@@ -15,12 +15,12 @@ The Edge operator version `{{< c8y-edge-current-version >}}` leverages the **adm
 - The [validating admission webhook](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#validatingadmissionwebhook) ensures that any changes to the Edge CR comply with required constraints.
 - The [mutating admission webhook](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#mutatingadmissionwebhook) automatically applies custom default values where needed.
 
-To support these admission webhooks, the Edge operator requires additional permissions. Before upgrading, apply the necessary permissions by running the following command to patch the `c8yedge-operator-manager-role` ClusterRole:
+To enable admission webhooks, the Edge operator requires additional permissions. Before upgrading Edge to `{{< c8y-edge-current-version >}}`, run the following command to patch the `c8yedge-operator-manager-role` ClusterRole with the necessary permissions:
 
 ```bash
 kubectl patch clusterrole c8yedge-operator-manager-role --type='json' --patch-file {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-cluster-role-patch-1018.yaml
 ```
-This ensures that the Edge operator can properly enforce validation and mutation rules when Edge CR is created or updated.
+This ensures that the Edge operator can correctly enforce validation and mutation rules when the Edge CR is updated in the following steps.
 
 ### Starting the upgrade {#starting-the-upgrade}
 
