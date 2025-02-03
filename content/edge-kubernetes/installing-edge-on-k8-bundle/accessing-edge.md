@@ -44,7 +44,7 @@ You can access Edge using a domain name in a web browser.
 Access Edge using the domain name configured as part of the installation. There are two ways of configuring the accessibility with the domain names:
 
 * Add an entry of the domain name and IP address mapping in the DNS servers.
-<br>For example, if your domain name is **myown.iot.com**, add an entry for both **myown.iot.com** and **management.myown.iot.com**.<br>
+<br>For example, if your domain name is **myown.iot.com**, add an entry for both **myown.iot.com** and **management-myown.iot.com**.<br>
 * Alternatively, [Add the alias](#add-alias) to access Edge through the domain name provided during installation. This must be performed on each client host on which Edge is accessed.
 
 The first option is always preferable so that Edge is accessible over LAN.
@@ -55,7 +55,7 @@ On Linux machines, add the following entry to */etc/hosts*:
 
 ```text
 <IP address> <domain_name>
-<IP address> management.<domain_name>
+<IP address> management-<domain_name>
 ```
 Use the external IP address fetched by running the command `kubectl get service` in the previous section.
 
@@ -65,7 +65,7 @@ Ping the &#60;domain_name> to verify it.
 
 ```shell
 ping <domain_name>
-ping management.<domain_name>
+ping management-<domain_name>
 ```
 
 If the ping is successful, the DNS resolution is working properly.
@@ -74,7 +74,7 @@ If the ping is successful, the DNS resolution is working properly.
 
 To access Edge, enter one of the following URLs in the browser:
 - For the "edge" tenant, use the URL `https://<domain_name>`.
-- For the {{< management-tenant >}}, use the URL `https://management.<domain_name>`.
+- For the {{< management-tenant >}}, use the URL `https://management-<domain_name>`.
 
 This will bring up the below login screen. Enter the default credentials username "admin" and password "admin-pass" to log in in to both the "edge" tenant and the {{< management-tenant >}}.
 

@@ -51,8 +51,8 @@ spec:
   ##             Subject Alternative Name (SAN) to request a multi-domain certificate. Ensure that the SAN includes the 
   ##             domain names for the "edge" tenant and {{< management-tenant >}}. If you plan to install 
   ##             Cumulocity DataHub, include its domain name as well. 
-  ##             For instance, if your Edge domain is myown.iot.com, make sure myown.iot.com, management.myown.iot.com, 
-  ##             and datahub.myown.iot.com are listed in the SAN field.
+  ##             For instance, if your Edge domain is myown.iot.com, make sure myown.iot.com, management-myown.iot.com, 
+  ##             and datahub-myown.iot.com are listed in the SAN field.
   ##
   ##  - tls.crt: The TLS/SSL certificate chain associated with the private key in PEM format.
   ##             It’s essential to ensure the certificates are arranged in the correct sequence for TLS/SSL validation to succeed.
