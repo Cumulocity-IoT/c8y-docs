@@ -159,7 +159,7 @@ If single sign-on is enabled for your tenant, a message will show up which remin
    * **Set password for the user (no change required)** - if selected, you must provide a password. A password change is not required by the user.
 
 {{< c8y-admon-info >}}
-While entering the password, the strength of the password will be checked. See [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password) for further information on password reset and strength.
+While entering the password, the strength of the password is checked. See [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password) for further information on password reset and strength.
 {{< /c8y-admon-info >}}
 
   <br><br>
