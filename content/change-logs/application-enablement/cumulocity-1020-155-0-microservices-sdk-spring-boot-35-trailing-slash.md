@@ -18,7 +18,7 @@ As previously [announced](https://cumulocity.com/docs/change-logs/?change-type=.
 
 This change affects not only custom microservices, but also Cumulocity provided microservices and the way they are accessed, for example smartrule.
 
-**CHANGES** Rest calls to microservices, including Cumulocity provided microservices (e.g., smartrule), must remove the undocumented usage of a trailing slash, if any. Until now such REST calls have been tolerated by Cumulocity, but with the Spring Boot update, this behavior has changed and similar requests are now rejected.
+**CHANGES** REST calls to microservices, including Cumulocity provided microservices (e.g., smartrule), must remove the undocumented usage of a trailing slash, if any. Until now such REST calls have been tolerated by Cumulocity, but with the Spring Boot update, this behavior has changed and similar requests are now rejected.
 
-For details refer to the [Spring Boot 3.0 Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#upgrade-to-spring-boot-3).
+For details refer to the [Spring Boot 3.0 Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#spring-mvc-and-webflux-url-matching-changes).
 
