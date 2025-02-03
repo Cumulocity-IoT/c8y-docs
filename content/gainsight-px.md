@@ -1,6 +1,7 @@
 ---
 title: Gainsight
 layout: bundle
+hideLeftMenu: true
 ---
 
 ### Overview
@@ -9,9 +10,7 @@ Gainsight PX is integrated into Cumulocity IoT UI through a JavaScript tag activ
 
 In accordance with GDPR and Cookie Policy regulations, we must inform users about the use of cookies and provide them the option to opt-out from personal data collection. However, users cannot opt-out from anonymized tracking, as Cumulocity has established a "legitimate interest" in the context of our legal agreement with the customer or trial user. For more details, refer to the [Privacy Notice](/legal-notices/privacy-notice/).
 
-### Overview
-
-Configuration
+### Configuration
 
 1. Add Gainsight API key to the system options of the management tenant:
 
@@ -24,6 +23,7 @@ Configuration
   "key": "system.gainsight.api.key"
 }
 ```
+
 Note: To obtain an API key, contact our [support](/additional-resources/contacting-support/).
 
 2. Configure cookie banner for all tenants on the instance.
