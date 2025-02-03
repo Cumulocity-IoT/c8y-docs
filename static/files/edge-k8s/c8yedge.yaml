@@ -150,8 +150,8 @@ spec:
         ## Defaults to 75 GB.
         # storage: 75G
 
-  ## Resources to allocate to each of the default Cumulocity microservices (apama-ctrl, smartrule 
-  ## and opcua-mgmt-service microservices) deployed.
+  ## Resources to allocate to each of the default Cumulocity microservices (apama-ctrl, smartrule, 
+  ## opcua-mgmt-service and databroker-agent-server microservices) deployed.
   ## Default CPU limit is 1000m and memory limit is 1024M.
   # microservices:
     # - name: apama-ctrl
@@ -165,6 +165,11 @@ spec:
           # cpu: 1000m
           # memory: 1024M
     # - name: opcua-mgmt-service
+      # resources:
+        # limits:
+          # cpu: 1000m
+          # memory: 1024M
+    # - name: databroker-agent-server
       # resources:
         # limits:
           # cpu: 1000m
