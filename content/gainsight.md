@@ -1,16 +1,13 @@
 ---
-# weight: -1
 title: Gainsight
 layout: bundle
-# sector:
-#   - docs
 ---
 
 ### Overview
 
 Gainsight PX is integrated into Cumulocity IoT UI through a JavaScript tag activated after a user logs into the application. This tag initiates Gainsight PX's anonymized tracking. Additionally, the Knowledge Hub and engagements, represented by the little round box at the bottom right corner (known as the Knowledge Hub), are loaded. These features are optional and can be managed from user settings and directly from Gainsight PX.
 
-In accordance with GDPR and Cookie Policy regulations, we must inform users about the use of cookies and provide them the option to opt-out from personal data collection. However, users cannot opt-out from anonymized tracking, as Cumulocity has established a "legitimate interest" in the context of our legal agreement with the customer or trial user. For more details, refer to the https://cumulocity.com/docs/legal-notices/privacy-notice/.
+In accordance with GDPR and Cookie Policy regulations, we must inform users about the use of cookies and provide them the option to opt-out from personal data collection. However, users cannot opt-out from anonymized tracking, as Cumulocity has established a "legitimate interest" in the context of our legal agreement with the customer or trial user. For more details, refer to the [Privacy Notice](/legal-notices/privacy-notice/).
 
 ### Overview
 
@@ -95,7 +92,7 @@ We use cookies to understand how our services are used so that we can improve th
 
 We adhere to strict privacy policies and comply with relevant data protection laws.
 
-For more information about our Privacy and cookies policy, please read the Cumulocity Policy Notice here: https://cumulocity.com/docs/legal-notices/privacy-notice/
+For more information about our Privacy and cookies policy, please read the Cumulocity [Policy Notice](/legal-notices/privacy-notice/).
 
 ### Can I opt out of the analytics collection?
 
@@ -103,7 +100,7 @@ Yes, you can change your cookie and tracking preferences at any time from your C
 
 ### How can I learn more about your data practices?
 
-For detailed information about our data and cookie practices, refer to our Privacy Notice available on our website https://cumulocity.com/docs/legal-notices/privacy-notice/
+For detailed information about our data and cookie practices, refer to our [Privacy Notice](/legal-notices/privacy-notice/)
 
 ### How can I provide feedback or report issues?
 
