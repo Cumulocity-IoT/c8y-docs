@@ -19,8 +19,8 @@ metadata:
   namespace: c8yedge
 spec:
   ## Edge version you want to install.
-  ## For example, 1018.0.0 for 10.18 and 1018.0.1 for a fix-1 of 10.18.
-  version: "1018.0.1"
+  ## For example, 2025.0.0 for 2025 and 2025.0.1 for a fix-1 of 2025.
+  version: "2025.0.0"
 
   ## A fully qualified domain name.
   ## For example, myown.iot.com. Here, you must have the Edge license for the domain name iot.com or myown.iot.com.
