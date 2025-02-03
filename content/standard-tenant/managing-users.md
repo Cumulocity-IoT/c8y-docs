@@ -148,7 +148,7 @@ If single sign-on is enabled for your tenant, a message will show up which remin
     * **Two-factor authentication (SMS)** - If selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/authentication/tfa/).
 <br><br>
 
-   In case TFA authorization via TOTP is enabled for the tenant:
+   If TFA authorization via TOTP is enabled for the tenant:
     * **Two-factor authentication (TOTP)** - If selected, the user must provide TOTP from a third-party authentication application to complete the authentication. For details refer to [Two-factor authentication](/authentication/tfa/).
     * **Enforce TOTP setup for the user** - If selected, the user must setup TOTP on the first login. For details refer to [Two-factor authentication](/authentication/tfa/).
 <br><br>
