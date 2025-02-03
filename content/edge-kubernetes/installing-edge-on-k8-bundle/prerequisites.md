@@ -35,7 +35,6 @@ sudo sh -c '
         --write-kubeconfig-mode 644 \
         --disable=traefik \
         --protect-kernel-defaults true \
-        --kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook && \
     
     mkdir -p '"$USER_HOME"'/.kube && \
     cp /etc/rancher/k3s/k3s.yaml '"$USER_HOME"'/.kube/config && \
@@ -53,7 +52,6 @@ sudo sh -c '
 For configuration options, see [K3s configuration options](https://docs.k3s.io/installation/configuration).
 
 - Added `--disable=traefik` in the install command to disable Traefik to avoid port conflicts between Traefik and cumulocity-core service, as both are LoadBalancer type services which expose port 443.
-- Added `--kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook` to enable admission controllers. The flag is set to enable the `ValidatingAdmissionWebhook` and `MutatingAdmissionWebhook` admission controllers, as Edge requires them. See [https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/).
 - Added `--protect-kernel-defaults` true to protect the default kernel settings on the host system. It prevents modifications to critical kernel parameters by container workloads running in Kubernetes. For more information, see [https://docs.k3s.io/security/hardening-guide#host-level-requirements](https://docs.k3s.io/security/hardening-guide#host-level-requirements).
 
 {{< c8y-admon-info >}}
