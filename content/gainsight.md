@@ -24,6 +24,7 @@ Configuration
   "key": "system.gainsight.api.key"
 }
 ```
+Note: To obtain an API key, contact our [support](/additional-resources/contacting-support/).
 
 2. Configure cookie banner for all tenants on the instance.
    The cookie banner configuration operates using the same mechanism as application branding. Upload the [public-options-v2](https://drive.google.com/file/d/1pEPVTutEAziWtycklRxsalYlHUmMaNIX/view?usp=sharing), which contains the Cookie Banner configuration, to the management tenant (Administration > Own applications). The zip archive comprises a JSON file that defines the cookie banner title, text, link to the privacy policy page, and the cookie description. Anonymized tracking is activated by default for all tenants and users as a component of the required cookies. If users opt out of the functional cookies, only the anonymized tracking remains enabled.
@@ -104,7 +105,7 @@ For detailed information about our data and cookie practices, refer to our [Priv
 
 ### How can I provide feedback or report issues?
 
-Your input is crucial in helping us understand your needs and continually improve our products. Please feel free to share them in the Feedback Portal in the Cumulocity Customer Service Desk. Cumulocity.com/Support/.
+Your input is crucial in helping us understand your needs and continually improve our products. Please feel free to share them in the Feedback Portal in the [Cumulocity Customer Service Desk](http://www.cumulocity.com/support/).
 
 ### Cookie banner screenshot
 
