@@ -26,7 +26,6 @@ This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s
          --write-kubeconfig-mode 644 \
          --disable=traefik \
          --protect-kernel-defaults true \
-         --kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook && \
       
       mkdir -p '"$USER_HOME"'/.kube && \
       cp /etc/rancher/k3s/k3s.yaml '"$USER_HOME"'/.kube/config && \
