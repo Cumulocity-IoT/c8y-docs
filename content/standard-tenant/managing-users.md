@@ -154,7 +154,7 @@ If single sign-on is enabled for your tenant, a message will show up which remin
 <br><br>
 
 4. Select the password options for the user.
-   * **Send password reset link as email** - if selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above. This option is only available during user creation.
+   * **Send password reset link as email** - If selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above. This option is only available during user creation.
    * **Set password that must be changed on the first login** - if selected, you must provide a password which the user must reset on the next login.
    * **Set password for the user (no change required)** - if selected, you must provide a password. A password change is not required by the user.
 
