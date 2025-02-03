@@ -10,20 +10,36 @@ global:
   language: en
   overwrite: true
   login: admin
+  shell: digital-twin-manager
+  tags:
+    - dtm
+    - c8yscrn
   timeouts:
     pageLoad: 20000
 
 selectors:
-  - treeview.collapseButton.first: ".c8y-tree-view-node .collapse-btn:first"
-  - mySelector: "c8y-tree-view-root-node c8y-tree-view-node .c8y-tree-view-node__header__collapse:first"
+  - $navigator.toggle: "[data-cy=header-bar--main-header-button]"
+  - $navigator.assets.slot: .navigatorContent .slot:has(.c8y-icon-modules)
+  - $navigator.configuration.slot: .navigatorContent .slot:has(.dlt-c8y-icon-cog)
+  - $navigator.home.slot: .navigatorContent .slot:has(.dlt-c8y-icon-home)
+
+  - $navbuttons.all: .navbar-right .btn:has(span)
+
+  - $treeview.collapseButton.first: .c8y-tree-view-node .collapse-btn:visible:first
+  - $treeview.collapseButton.all: c8y-tree-view-node .collapse-btn:visible
+  - $treeview.collapseButton.closed: c8y-tree-view-node .collapse-btn:has(i.dlt-c8y-icon-chevron-right):visible
+  - $treeview.node.first: c8y-tree-view-node:first
+  - $treeview.node.withsubnodes: c8y-tree-view-node:has(.collapse-btn:visible:first)
+  - $mySelector: c8y-tree-view-root-node c8y-tree-view-node .c8y-tree-view-node__header__collapse:first
 
 screenshots:
   - image: "dtm/asset-type/dtm-asset-type-export.png"
     visit: "/apps/digital-twin-manager/index.html#/assetmodels"
-    only: false
+    tags:
+      - asset-type
+      - final
     actions:
-      - click:
-          data-cy: "header-bar--main-header-button"
+      - click: $navigator.toggle
       - click:
           data-cy: "export-asset-models-btn"
           multiple: true
@@ -35,136 +51,228 @@ screenshots:
       - click:
           selector: ".expanded .c8y-checkbox input:first"
           force: true
-      - highlight: mySelector
-    tags:
-      - export
-      - assets
+      - highlight: $mySelector
 
   - image: "dtm/asset-type/dtm-asset-type-import.png"
     visit: "/apps/digital-twin-manager/index.html#/assetmodels"
-    only: false
+    tags:
+      - asset-type
+      - final
     actions:
       - click:
-          data-cy: "import-asset-models-btn"
+          data-cy: import-asset-models-btn
       - wait: 1000
       - fileUpload: assets/Export-asset-models-2.json
       - wait: 1000
       - click:
           data-cy: next
       - click:
-          selector: ".c8y-tree-view-node .collapse-btn"
+          selector: .c8y-tree-view-node .collapse-btn
           multiple: true
           force: true
-      - highlight: treeview.collapseButton.first
+      - highlight: $treeview.collapseButton.first
       - highlight:
           selector: "c8y-stepper-buttons button"
           border:
             "outline-offset": "6px"
+      - screenshot: 
+          selector: div.modal-dialog.modal-lg > div.modal-content
 
   - image: "dtm/asset-type/dtm-asset-type-view.png"
     visit: "/apps/digital-twin-manager/index.html#/assetmodels"
+    tags:
+      - asset-type
+      - final
     actions:
       - wait: 1000
-      # - text:
-      #     selector: "header.navigator-slot-top span"
-      #     value: "DTM"
-      - highlight: ".navbar-right > :nth-child(-n + 3) > .btn"
-      - highlight: ".navigatorContent > :nth-child(4) .link:has(.dlt-c8y-icon-cog, .c8y-icon-enterprise)"
-    tags:
-      - export
-      - assets
-
-  - image: "dtm/asset-type/dtm-asset-type-upload-test.png"
-    visit: "/apps/digital-twin-manager/index.html#/assets"
-    skip: true
-    actions:
-      - click: ":nth-child(1) > c8y-tree-view-node > .c8y-tree-view-node > .c8y-tree-view-node__block > .col-md-4 .btn-clean"
-      - click: ".d-flex > .btn"
-      - fileUpload: assets/Windmills.jpg
-      - click: ".card-footer > .btn-primary"
+      - highlight: $navbuttons.all
+      - highlight: .navigatorContent > :nth-child(4) .link:has(.dlt-c8y-icon-cog, .c8y-icon-enterprise)
 
   - image: "dtm/assets/dtm-assets-view-assets.png"
     visit: "/apps/digital-twin-manager/index.html#/assets"
+    tags:
+      - assets
+      - final
     actions:
-      - wait: 1000
-      - highlight: ".navigatorContent > :nth-child(3) > .slot > .link"
+      - click: $navigator.configuration.slot
+      - click: 
+          selector: $treeview.collapseButton.closed
+          multiple: true
+      - highlight: $navigator.assets.slot
       - highlight:
-          selector: "c8y-tree-view .inner-scroll c8y-tree-view-root-node"
+          selector: c8y-tree-view .inner-scroll c8y-tree-view-root-node
           border:
-            "outline-offset": "2px"
+            "outline-offset": 2px
           width: 0.25
 
   - image: "dtm/assets/dtm-assets-asset-hierarchy.png"
     visit: "/apps/digital-twin-manager/index.html#/assets"
     actions:
-      - click: "c8y-tree-view-node .collapse-btn:visible:first"
-      - click: ".collapse .c8y-checkbox:first"
-      - highlight: "c8y-tree-view-node .collapse-btn:visible:first"
-      - highlight: "c8y-tree-view-node:has(.collapse-btn:visible:first) button.dropdown-toggle:first"
-      - highlight: ".table-data-grid-header-bulk-actions .btnbar"
-      - highlight: "c8y-action-bar .btn:first"
+      - click: $navigator.toggle
+      - click: $treeview.collapseButton.first
+      - click: .collapse .c8y-checkbox:first
+      - highlight:  $treeview.collapseButton.first
+      - highlight: c8y-tree-view-node:has(.collapse-btn:visible:first) button.dropdown-toggle:first
+      - highlight: .table-data-grid-header-bulk-actions .btnbar
+      - highlight: c8y-action-bar .btn:has(.dlt-c8y-icon-plus-circle)
 
   - image: "dtm/assets/dtm-assets-subassets-page.png"
     visit: "/apps/digital-twin-manager/index.html#/assets"
+    tags: 
+      - assets
+      - final
     actions:
-      - click: "c8y-tree-view-node:has(.collapse-btn:visible:first) a.btn-clean"
+      - click: $navigator.toggle
+      - click: $treeview.node.withsubnodes a.btn-clean
       - wait: 1000
-      - highlight: ".navbar-right > :nth-child(-n + 3) > .btn"
+      - highlight: $navbuttons.all
 
   - image: "dtm/assets/dtm-assets-search-assets.png"
     visit: "/apps/digital-twin-manager/index.html#/assets"
+    tags:
+      - assets
+      - final
     actions:
+      - click: $navigator.toggle
       - click:
           data-cy: search-input--search-btn
       - wait: 1000
       - highlight:
-          selector: "c8y-search-outlet.main-header-item i[c8yicon=search]"
+          selector: c8y-search-outlet.main-header-item i[c8yicon=search]
           border:
-            "outline-offset": "6px"
+            outline-offset: 6px
       - type:
           selector: "#searchDropdown .c8y-search-form input[type=text]"
-          value: "SE"
+          value: SE
+      - wait: 1000
       - highlight:
           selector: "[data-cy=search-input--asset-table-btn]"
           border:
-            "outline-offset": "6px"
+            outline-offset: 6px
 
   - image: "dtm/assets/dtm-assets-move-assets.png"
     visit: "/apps/digital-twin-manager/index.html#/assets"
+    tags:
+      - assets
+      - final
     actions:
-      - click: "c8y-tree-view-node .collapse-btn:visible:first"
-      - click: "c8y-tree-view-node:has(.collapse-btn:visible:first) div[role=group] .c8y-checkbox:first"
+      - click: c8y-tree-view-node .collapse-btn:visible:first
+      - click: c8y-tree-view-node:has(.collapse-btn:visible:first) div[role=group] .c8y-checkbox:first
       - highlight:
-          selector: "c8y-tree-view-node:has(.collapse-btn:visible:first) div[role=group] .c8y-checkbox:first"
+          selector: c8y-tree-view-node:has(.collapse-btn:visible:first) div[role=group] .c8y-checkbox:first
           border:
-            "outline-offset": "2px"
+            outline-offset: 2px
       - highlight:
-          selector: "c8y-tree-view-node:has(.collapse-btn:visible:first) div[role=group] .label-info:first"
+          selector: c8y-tree-view-node:has(.collapse-btn:visible:first) div[role=group] .text-truncate:has(.label-info):first
           border:
-            "outline-offset": "2px"
-      - highlight: ".table-data-grid-header-bulk-actions .btnbar button:first"
-      - click: ".table-data-grid-header-bulk-actions .btnbar button:first"
+            outline-offset: 2px
+      - highlight: .table-data-grid-header-bulk-actions .btnbar button:has(.dlt-c8y-icon-group)
+      - click: .table-data-grid-header-bulk-actions .btnbar button:first
       - highlight:
-          selector: "c8y-move-assets-modal .modal-footer button"
+          selector: c8y-move-assets-modal .modal-footer button
           border:
-            "outline-offset": "6px"
+            outline-offset: 6px
       - highlight:
-          selector: "c8y-move-assets-modal .modal-inner-scroll .text-muted"
+          selector: c8y-move-assets-modal .modal-inner-scroll .text-muted
           border:
-            "outline-offset": "2px"
+            outline-offset: 2px
 
-  - image: "dtm/assets/dtm-assets-add-child-asset.png"
+  - image: "dtm/assets/dtm-assets-confirmation-page.png"
     visit: "/apps/digital-twin-manager/index.html#/assets"
+    scrollBehavior: false
+    tags:
+      - assets
+      - final
     actions:
-      - click:
-          data-cy: "header-bar--main-header-button"
-      - click: "c8y-action-bar button:first"
-      - click: "ng-select"
-      - click: "ng-dropdown-panel .ng-option:first"
-      - highlight: "c8y-asset-hierarchy .c8y-list__item:first"
+      - click: $navigator.toggle
+      - click: c8y-action-bar button:has(.dlt-c8y-icon-plus-circle)
+      - click: ng-select
+      - click: ng-dropdown-panel .ng-option:first
+      - highlight: c8y-asset-hierarchy .c8y-list__item:first
+      - screenshot: dtm/assets/dtm-assets-add-child-asset.png
       - type:
-          selector: "c8y-form-group #name"
-          value: "SE-TURBINE-101"
+          selector: "c8y-form-group"
+          value:
+            - [ "SE-TURBINE-101", "3.6MW-105 IEC IA", "AZ-43Y" ]
+      - highlight: 
+          clear: true
+          selector: div.card-block.overflow-visible > ul.dtm-asset-hierarchy__stepper
+          border: 
+            outline-offset: 6px
+      - screenshot: dtm/assets/dtm-assets-new-asset.png
       - click: "#assignDevices"
-      - click: "[data-cy=c8y-data-grid--row-in-data-grid]:first > .cdk-column-checkbox"
-      - click: ".d-col > .card-footer > .btn-primary"
+      - wait: 1000
+      - click: 
+          selector: .cdk-column-checkbox:visible .c8y-checkbox:lt(6):gt(1)
+          force: true
+          multiple: true
+      - highlight: 
+          selector: .cdk-column-checkbox:visible .c8y-checkbox:lt(6):gt(1)
+          border: 
+            outline-offset: 2px
+      - wait: 1000
+      - screenshot: dtm/assets/dtm-assets-assign-devices.png
+      - click: .drawerOpen .card-footer .btn-primary
+      - click: "[data-cy=asset-hierarchy-next-button]"
+      - wait: 1000
+      - type:
+          selector: c8y-form-group
+          value:
+            - ["AZ-43Y Rotor"]
+            - ["AZ-43Y Blade"]
+            - ["AZ-43Y Nacelle"]
+            - ["AZ-43Y High speed shaft"]
+            - ["AZ-43Y Generator"]
+            - ["AZ-43Y Gearbox"]
+            - ["AZ-43Y Low speed shaft"]
+            - ["AZ-43Y Tower"]
+            - ["AZ-43Y Foundation"]
+            - ["AZ-43Y Controller"]
+          submit: "[data-cy=asset-hierarchy-next-button]"
+      - highlight: 
+          clear: true
+          selector: .dtm-asset-hierarchy__step .dtm-asset-hierarchy__step--item
+          width: 32
+          border: 
+            outline-offset: 2px
+      - highlight: 
+          selector: li.c8y-tree__node.c8y-tree__node--nested span:not(:has(*)), li.c8y-tree__node.c8y-tree__node--nested i:not(:has(*))
+          border: 
+            outline-offset: 4px
+      - screenshot: "dtm/assets/dtm-assets-confirmation-page.png"
+      - click: "[data-cy=asset-hierarchy-previous-button]"
+      - highlight: 
+          clear: true
+          selector: c8y-repeat-section .btn-default:has(i.dlt-c8y-icon-plus-circle)
+          border: 
+            outline-offset: 2px
+      - wait: 1000
+      - screenshot: dtm/assets/dtm-assets-add-multiple-instance.png
+  
+  - image: "dtm/assets/dtm-assets-asset-tree-page.png"
+    visit: "/apps/digital-twin-manager/index.html#/assets"
+    tags:
+      - assets
+      - final
+    actions:
+      - click: $navigator.toggle
+      - click: $treeview.node.withsubnodes .btn-clean
+      - click: c8y-tabs-outlet [role=listitem] [href*="asset-tree"]
+      - click:
+          selector: .c8y-tree-view-node .collapse-btn:visible
+          multiple: true
+          force: true
+      - wait: 1000
+      - highlight: $navbuttons.all
+      - highlight: "[role=group] .collapse-btn:not(.invisible):first"
+
+
+
+  # - image: "dtm/asset-type/dtm-asset-type-upload-test.png"
+  #   visit: "/apps/digital-twin-manager/index.html#/assets"
+  #   skip: true
+  #   actions:
+  #     - click: ":nth-child(1) > c8y-tree-view-node > .c8y-tree-view-node > .c8y-tree-view-node__block > .col-md-4 .btn-clean"
+  #     - click: ".d-flex > .btn"
+  #     - fileUpload: assets/Windmills.jpg
+  #     - click: ".card-footer > .btn-primary"
