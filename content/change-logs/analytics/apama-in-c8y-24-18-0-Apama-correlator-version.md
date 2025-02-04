@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T16:01:19.842Z
+date: 2023-12-06
 title: Apama correlator version
 change_type:
   - value: change-2c7RdTdXo4
