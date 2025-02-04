@@ -1,5 +1,5 @@
 ---
-weight: 37
+weight: 38
 title: Resource limits specification
 layout: redirect
 ---

@@ -116,10 +116,15 @@ spec:
         ## Memory limit in memory units. For example, 1000M or 1G. Defaults to 6144M
         # memory: 6144M
 
+  ## Configures the installation of the Messaging Service component, required for the microservice-based data broker and Notifications 2.0.
+  ## This field is optional, and the Messaging Service component is not installed if omitted.
+  # messagingService:
+    # enabled: true
+
   ## This field is necessary for one or more of the following reasons:
   ##    - To specify the MongoDB admin credentials.
-  ##    - To configure an externally hosted MongoDB server.
   ##    - To specify resource limits for the MongoDB server containers deployed by the Edge operator.
+  ##    - To configure Edge with an externally hosted MongoDB server.
   # mongodb:
     ## Name of the Kubernetes Secret containing the database admin credentials with which the Edge operator 
     ## managed MongoDB must be configured or the database admin credentials of the externally hosted MongoDB server.
