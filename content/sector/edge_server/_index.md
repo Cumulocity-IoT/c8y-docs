@@ -1,5 +1,5 @@
 ---
-title: "Edge 2025"
+title: "Edge"
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 weight: 60
 svg: '<svg width="1103" height="880" viewBox="0 0 1103 880" fill="none" xmlns="http://www.w3.org/2000/svg">

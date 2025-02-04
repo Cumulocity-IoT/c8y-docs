@@ -1,5 +1,5 @@
 ---
-title: Edge on Kubernetes
+title: Edge on Kubernetes 2025
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
 layout: redirect
