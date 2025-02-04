@@ -1,5 +1,5 @@
 ---
-weight: 70
+weight: 80
 title: Working with DataHub
 layout: bundle
 sector:

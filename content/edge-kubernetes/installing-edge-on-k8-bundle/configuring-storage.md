@@ -35,9 +35,9 @@ The Edge operator requests three PVCs, as outlined in the table below. Each of t
 |75 GB|`mongod-data-edge-db-rs0-0`|Claimed by the MongoDB server to retain application data. The default size is 75 GB, but this value can be adjusted using the `spec.mongodb.resources.requests.storage` field in the Edge CR file.
 |10 GB|`microservices-registry-data`|Claimed by the private docker registry to store microservice images.
 |5 GB|`edge-logs`|Claimed by the Edge logging component to store the application and system logs.
-|10 Gi|`pulsar-bookie-ledgers-pulsar-bookie-0`|Claimed by the Pulsar Bookkeeper Ledgers pod, which is deployed only when the Messaging Service is enabled (required for the microservice-based data broker and Notifications 2.0).
-|2 Gi|`pulsar-bookie-journal-pulsar-bookie-0`|Claimed by the Pulsar Bookkeeper Journal pod, which is deployed only when the Messaging Service is enabled (required for the microservice-based data broker and Notifications 2.0).
-|2 Gi|`pulsar-zookeeper-data-pulsar-zookeeper-0`|Claimed by the Pulsar Zookeeper pod, which is deployed only when the Messaging Service is enabled (required for the microservice-based data broker and Notifications 2.0).
+|10 GB|`pulsar-bookie-ledgers-pulsar-bookie-0`|Claimed by the Pulsar Bookkeeper Ledgers pod, which is deployed only when the Messaging Service is enabled.
+|2 GB|`pulsar-bookie-journal-pulsar-bookie-0`|Claimed by the Pulsar Bookkeeper Journal pod, which is deployed only when the Messaging Service is enabled.
+|2 GB|`pulsar-zookeeper-data-pulsar-zookeeper-0`|Claimed by the Pulsar Zookeeper pod, which is deployed only when the Messaging Service is enabled.
 
 To guarantee the retention of physical storage even after the PVC is deleted (for example, when Edge is deleted) and to enable future storage expansion if needed, it's crucial to configure the StorageClass and/or the PVs with the following settings:
 
