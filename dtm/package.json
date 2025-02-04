@@ -6,7 +6,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "cumulocity-cypress": "^0.8.3",
+    "cumulocity-cypress": "^0.8.4",
     "cypress": "^14.0.0"
   }
 }

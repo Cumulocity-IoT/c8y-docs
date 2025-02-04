@@ -16,6 +16,13 @@ global:
     - c8yscrn
   timeouts:
     pageLoad: 20000
+  
+  highlightStyle: 
+    outline: 3px
+    outline-style: solid
+    outline-offset: -3px
+    outline-color: "#FF9300"
+    z-index: 9999
 
 selectors:
   - $navigator.toggle: "[data-cy=header-bar--main-header-button]"
@@ -276,6 +283,9 @@ screenshots:
 
   - image: "dtm/bulk-import/dtm-bulk-import-import-assets-window.png"
     visit: "/apps/digital-twin-manager/index.html#/assets"
+    tags:
+      - bulk-import
+      - final
     actions: 
       - click: $navigator.configuration.slot
       - highlight: 
@@ -290,6 +300,13 @@ screenshots:
           selector: .modal-footer .btn-primary
           border: 
             outline-offset: 2px
+      - fileUpload: assets/turbine.csv
+      - wait: 1000
+      - click: .modal-footer .btn-primary
+      - wait: 1000
+      - screenshot: 
+          path: "dtm/bulk-import/dtm-bulk-import-failed-asset-imports"
+          selector: .modal-content
 
   - image: "dtm/custom-property/dtm-property-library-complex-property.png"
     visit: /apps/digital-twin-manager/index.html#/assetproperties
@@ -310,12 +327,28 @@ screenshots:
             outline-offset: 2px
       - highlight: 
           selector: $navigator.configuration.slot, $navigator.current.slot
-          styles: 
-            outline: 2px
-            outline-style: solid
-            outline-offset: -2px
-            outline-color: "#FF9300"
-            z-index: 1000
+      - screenshot: "dtm/custom-property/dtm-property-library-create-property.png"
+      - click: $navigator.toggle
+      - wait: 1000
+      - highlight: 
+          clear: true
+          selector: c8y-properties-library button.c8y-stacked-item span.label-info:not(:contains("Object")):lt(2)
+          border: 
+            outline-offset: 2px
+      - highlight: 
+          selector: c8y-properties-library-manage-property .c8y-switch
+          border: 
+            outline-offset: 2px
+      - screenshot: "dtm/custom-property/dtm-property-library-simple-custom-property.png"
+      - click: c8y-properties-library button.c8y-stacked-item:has(> span:contains("Enum")):first
+      - highlight: 
+          clear: true
+          selector: c8y-properties-library-manage-property c8y-form-group:last formly-group.flex-wrap
+          border: 
+            outline-offset: 2px
+      - click: $unfocus
+      - screenshot: "dtm/custom-property/dtm-property-library-type-enum.png"
+
 
   - image: "dtm/custom-property/dtm-property-library-export.png"
     visit: /apps/digital-twin-manager/index.html#/assetproperties
