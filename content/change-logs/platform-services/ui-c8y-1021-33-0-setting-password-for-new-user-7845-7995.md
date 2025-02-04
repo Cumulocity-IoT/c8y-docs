@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-61426
 version: 1021.33.0
 ---
-The password setup process for new users was unclear. It has been updated and replaced with three distinct options, from which the user can select one. The available options are:
+The password setup process for new users was unclear. It has been updated and replaced with three distinct options, from which the administrator can select one. The available options are:
 - Send password reset link as email
 - Set password that must be changed on the first login
 - Set password for the user (no change required)
