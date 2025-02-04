@@ -14,5 +14,5 @@ build_artifact:
 version: 25.339.3
 ---
 
-We plan to upgrade Python runtime shipped with Apama to >=3.11 and Java runtime to Java 17. See (latest Apama change logs)[https://cumulocity.com/apama/docs/latest/change-logs] for more details.
+The Python runtime shipped with Apama will be upgraded to version >=3.11 and the Java runtime will be upgraded to version Java 17. For details, see (the latest Apama change logs)[https://cumulocity.com/apama/docs/latest/change-logs] in the Apama documentation.
 The next major releases of Apama will drop support for Windows. It will also mean that Eclipse based development environment will also be unavailable. This will affect the development and testing of EPL apps and Analytics Builder custom blocks natively on Windows.
