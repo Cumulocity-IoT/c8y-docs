@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:49:00.513Z
+date: 2023-12-06
 title: HTTP client in Apama 10.15.4 supports truncating responses
 change_type:
   - value: change-2c7RdTdXo4

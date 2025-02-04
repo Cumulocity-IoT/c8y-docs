@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:40:49.474Z
+date: 2023-12-06
 title: EPL enhancements in Apama 10.15.4
 change_type:
   - value: change-QHu1GdukP

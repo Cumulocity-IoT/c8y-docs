@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:55:48.489Z
+date: 2023-12-06
 title: Additional value types for the Constant Value block
 change_type:
   - value: change-QHu1GdukP
