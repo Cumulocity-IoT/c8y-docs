@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2025-01-30'
 title: Fixed issue with asset parent data in Inventory API responses
 product_area: Platform services
 change_type:
