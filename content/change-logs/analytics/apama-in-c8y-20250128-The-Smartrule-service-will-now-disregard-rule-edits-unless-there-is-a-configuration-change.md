@@ -1,5 +1,5 @@
 ---
-date:
+date: 2025-02-06
 title: Geofence smart rule no longer creates duplicate alarms
 change_type:
   - value: change-2c7RdTdXo4
