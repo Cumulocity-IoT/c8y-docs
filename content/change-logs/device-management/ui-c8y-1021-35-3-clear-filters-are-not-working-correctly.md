@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Clear all filters button now resets filter settings properly
+title: Clear all filters button now resets the filter settings properly
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
