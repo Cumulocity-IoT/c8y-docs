@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Clear filters are not working correctly
+title: Clear filters button does not reset filter settings
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4319
 version: 1021.22.28
 ---
-Clear filters are not working correctly
+The **Clear filters** button in the **All devices** grid is intended to reset all filter settings and return the view to its default unfiltered state. However, when clicking the **Clear filters** button, the filter settings were only temporarily reset until the user visited the **All devices** page again and continued to show filtered results instead of all items. This issue has now been resolved.
