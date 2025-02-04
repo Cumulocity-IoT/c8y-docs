@@ -83,9 +83,9 @@ screenshots:
           force: true
       - highlight: $treeview.collapseButton.first
       - highlight:
-          selector: "c8y-stepper-buttons button"
+          selector: c8y-stepper-buttons button
           border:
-            "outline-offset": "6px"
+            outline-offset: "6px"
       - screenshot: 
           selector: div.modal-dialog.modal-lg > div.modal-content
 
@@ -110,11 +110,12 @@ screenshots:
           selector: $treeview.collapseButton.closed
           multiple: true
       - highlight: $navigator.assets.slot
+      - wait: 500
       - highlight:
-          selector: c8y-tree-view .inner-scroll c8y-tree-view-root-node
+          selector: c8y-tree-view .inner-scroll .collapse-btn, c8y-tree-view .inner-scroll a.btn-clean
           border:
-            "outline-offset": 2px
-          width: 0.25
+            outline-offset: 6px
+      - click: $unfocus
 
   - image: "dtm/assets/dtm-assets-asset-hierarchy.png"
     visit: "/apps/digital-twin-manager/index.html#/assets"
@@ -226,6 +227,7 @@ screenshots:
           border: 
             outline-offset: 4px
       - wait: 1000
+      - click: $unfocus
       - screenshot: dtm/assets/dtm-assets-assign-devices.png
       - click: .drawerOpen .card-footer .btn-primary
       - click: "[data-cy=asset-hierarchy-next-button]"
@@ -280,6 +282,7 @@ screenshots:
       - wait: 1000
       - highlight: $navbuttons.all
       - highlight: "[role=group] .collapse-btn:not(.invisible):first"
+      - click: $unfocus
 
   - image: "dtm/bulk-import/dtm-bulk-import-import-assets-window.png"
     visit: "/apps/digital-twin-manager/index.html#/assets"
@@ -326,7 +329,9 @@ screenshots:
           border: 
             outline-offset: 2px
       - highlight: 
-          selector: $navigator.configuration.slot, $navigator.current.slot
+          selector: $navigator.current.slot
+          border: 
+            outline-offset: -2px
       - screenshot: "dtm/custom-property/dtm-property-library-create-property.png"
       - click: $navigator.toggle
       - wait: 1000
@@ -349,7 +354,6 @@ screenshots:
       - click: $unfocus
       - screenshot: "dtm/custom-property/dtm-property-library-type-enum.png"
 
-
   - image: "dtm/custom-property/dtm-property-library-export.png"
     visit: /apps/digital-twin-manager/index.html#/assetproperties
     tags:
@@ -363,6 +367,7 @@ screenshots:
           selector: tbody .cdk-column-checkbox:visible .c8y-checkbox:lt(5)
           force: true
           multiple: true
+      - click: $unfocus
       - wait: 1000
       - highlight: 
           selector: tbody .cdk-column-checkbox:visible .c8y-checkbox:lt(5)
