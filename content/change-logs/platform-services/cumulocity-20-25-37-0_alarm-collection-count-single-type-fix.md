@@ -1,6 +1,6 @@
 ---
 date:
-title: Fixed an issue with type parameter taking only a single value
+title: Type parameter in Alarm API now accepts multiple values
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
