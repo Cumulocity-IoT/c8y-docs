@@ -18,9 +18,7 @@ The {{< product-c8y-iot >}} tenant concept builds a 3-level hierarchy, including
 These three levels differ in their scope, particularly with regards to administration, see below.
 
 {{< c8y-admon-info >}}
-Refer to the [{{< c8y-pricing >}}]({{< link-c8y-pricing >}}) for details on our related commercial offering.
-
-Refer to your contract for details on your individual subscriptions.
+Please refer to your contract for details on your individual subscriptions.
 {{< /c8y-admon-info >}}
 
 
@@ -67,8 +65,8 @@ The {{< management-tenant >}} builds the highest level of the {{< product-c8y-io
 
 Every {{< product-c8y-iot >}} deployment is delivered with a {{< management-tenant >}}. The {{< management-tenant >}} is used to administer all tenants within the same deployment on platform level and thus provides full control of the platform.
 
-On the {{< product-c8y-iot >}} cloud instances, the {{< management-tenant >}} can only be accessed by the {{< company-sag >}} cloud operations team.
+On the {{< product-c8y-iot >}} cloud instances, the {{< management-tenant >}} can only be accessed by the {{< company-c8y >}} Operations team.
 
 You will only have access to the {{< management-tenant >}}, when you setup your own {{< product-c8y-iot >}} instance either as a dedicated/hosted cloud deployment, an on-prem deployment, or the {{< product-c8y-iot >}} Edge offering.
 
-For detailed information on the configuration options of a {{< product-c8y-iot >}} deployment on platform level, refer to the *{{< product-c8y-iot >}} Core - Operations guide* available on the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-documentation >}}).
+For detailed information on the configuration options of a {{< product-c8y-iot >}} deployment on platform level, refer to the operations documentation, see [Additional resources](/additional-resources/).

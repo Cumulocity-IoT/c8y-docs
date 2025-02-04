@@ -6,16 +6,14 @@ sector:
   - getting_started
 ---
 
-Product support for {{< product-c8y-iot >}} is provided to licensed customers via our [{{< sag-portal >}}]({{< link-sag-portal >}}). Many services on this portal require that you have an account. If you do not yet have one, you can request it at [{{< link-sag-portal >}}register]({{< link-sag-portal >}}register).
+Product support for {{< product-c8y-iot >}} is provided to licensed customers via the [{{< c8y-support-portal >}}]({{< c8y-support-link >}}). The services on this portal require that you have an account. If you do not yet have one, you can send a request by email to [{{< c8y-support-email >}}](mailto:{{< c8y-support-email >}}).
 
-Once you have an account, you can, for example:
+Once you have an account, and depending on role-associated permissions, you have the following options:
 
-Download products, updates, and fixes.
-Search the Knowledge Center for technical information and tips.
-Subscribe to early warnings and critical alerts.
-Open and update support incidents.
-Add product feature requests.
+- **Support** - Access technical assistance, documentation, and submit support tickets.
+- **Feedback** - Share your thoughts and suggestions to help improve features and user experience.
+- **Managed Services** - Access premium platform management, monitoring solutions, and specialized support.
 
-If you are using {{< product-c8y-iot >}} on a trial basis, you can refer to our free {{< sag-dev-community >}} pages at [{{< link-sag-dev-community >}}]({{< link-sag-dev-community >}}) for information sources such as user forums and FAQs.
+You can refer to {{< company-c8y >}}´s free [Tech Community]({{< c8y-tech-community-link >}}) pages for information sources such as user forums and FAQs.
 
-If you are interested in acquiring a commercial license please contact us at [https://www.softwareag.com/en_corporate/platform/iot/cumulocity-iot-quickstart.html](https://www.softwareag.com/en_corporate/platform/iot/cumulocity-iot-quickstart.html).
+If you are interested in acquiring a commercial license please contact us at [{{< email-c8y-info >}}](mailto:{{< email-c8y-info >}}).

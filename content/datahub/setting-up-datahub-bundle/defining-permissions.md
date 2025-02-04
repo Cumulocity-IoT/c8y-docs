@@ -40,7 +40,7 @@ The manager manages offloading pipelines such as defining and starting a pipelin
 The user executes SQL queries against the data in the data lake. For details on querying the data lake see [Querying offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub#querying-offloaded). To execute queries the following approaches can be used:
 
 * Dremio UI: The Dremio account defined in [Setting up Dremio users](/datahub/setting-up-datahub/#setting-up-dremio-users) is used for logging into the Dremio UI and executing queries within that UI.
-* Dremio API: Queries can also be executed using the Dremio REST API. The Dremio account defined in [Setting up Dremio users](/datahub/setting-up-datahub/#setting-up-dremio-users) is used for authenticating the requests against that API. {{< company-sag >}} does not recommend directly invoking Dremio APIs; they might be removed or changed at any time without prior notice.
+* Dremio API: Queries can also be executed using the Dremio REST API. The Dremio account defined in [Setting up Dremio users](/datahub/setting-up-datahub/#setting-up-dremio-users) is used for authenticating the requests against that API. Directly invoking Dremio APIs is discouraged; they might be removed or changed at any time without prior notice.
 * {{< product-c8y-iot >}} DataHub proxy API: {{< product-c8y-iot >}} DataHub provides an API which proxies requests to the Dremio API. The {{< product-c8y-iot >}} user needs the role DataHub Reader in order to execute queries using the proxy API. The authentication against Dremio is done behind the scenes.
 
 The permissions for the role DataHub Reader are defined as follows:

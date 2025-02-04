@@ -33,7 +33,7 @@ Your *pom.xml* file should contain a snippet similar to:
     <java.version>17</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <spring-boot-dependencies.version>2.5.14</spring-boot-dependencies.version>
+    <spring-boot-dependencies.version>3.3.5</spring-boot-dependencies.version>
     <c8y.version>1016.0.117</c8y.version>
     <microservice.name>iptracker-microservice</microservice.name>
 </properties>
@@ -217,8 +217,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.annotation.PostConstruct;
+import jakarta.servlet.http.HttpServletRequest;
 
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -438,8 +438,8 @@ You can use the `max` parameter to specify a higher number.
 
 In the Device Management application, navigate to **Devices** > **All devices** and locate your microservice tracker.
 Under **Tracking** you will see a map with the tracked locations.
-You can also develop your own web application and customize a map widget.
-Refer to [Application library](/web/libraries/#application-library).
+You can also develop your own web application and customize a "Map" widget.
+For details, refer to the [Web SDK](/web/introduction) documentation.
 
 ![Microservice tracking](/images/microservices-sdk/ms-tracking-map.png)
 

@@ -1,5 +1,5 @@
 ---
-date:
+date: '2024-12-19'
 title: Improved performance of local smart rules creation and update
 product_area: Platform services
 change_type:

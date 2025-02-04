@@ -40,4 +40,10 @@ Once uploaded, the application is created and available in the application list 
 
 The {{< product-c8y-iot >}} documentation website provides change logs for the SaaS cloud offering and release notes for the yearly releases under maintenance.
 
-Release notes for previous {{< product-c8y-iot >}} releases (back to 10.4.0) are available at [https://cumulocity.com/releasenotes/about/introduction/](https://cumulocity.com/releasenotes/about/introduction/).
+For release notes for previous {{< product-c8y-iot >}} releases, please contact [{{< product-c8y-iot >}} support](/additional-resources/contacting-support).
+
+### API documentation for previous releases {#api-documentation-for-previous-versions}
+
+The [{{< openapi >}}](https://.cumulocity.com/api) website provides the API documentation for the SaaS cloud offering and the yearly releases under maintenance.
+
+For the API documentation for previous {{< product-c8y-iot >}} releases, please contact [{{< product-c8y-iot >}} support](/additional-resources/contacting-support).

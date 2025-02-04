@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2024-11-28'
 title: Improved reliability of real-time operation notifications for LWM2M service
 product_area: Device management & connectivity
 change_type:

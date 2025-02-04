@@ -38,7 +38,7 @@ ROLES & PERMISSIONS:
 {{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}
-- Refer to the [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}) to learn how to develop your own widgets and add them to your {{< product-c8y-iot >}} account.
+- Refer to the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) to learn how to develop your own widgets and add them to your {{< product-c8y-iot >}} account.
 - [Web SDK > Application configuration](/web/application-configuration/) for further information on how to customize the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
@@ -103,7 +103,7 @@ In the widget configuration, you can specify a dashboard time range for your das
 The dashboard time range can be set to any time span, depending on the monitoring needs, by using a custom date picker. The time range is displayed at the top of the dashboard, so you can immediately see the context for which the data is presented. Additionally, you can share dashboards with a specific time context by including the time context parameters in a URL. URL parameters will be set automatically when users set the dashboard time context with the picker.
 
 {{< c8y-admon-info >}}
-This feature is currently available for the following widgets: Event list, Data points graph, Data points table, and Map.
+This feature is currently available for the following widgets: Event list, Data points graph, and Map.
 {{< /c8y-admon-info >}}
 
 <img src="/images/users-guide/cockpit/cockpit-dashboard-global-time.png" name="Global time context"/>

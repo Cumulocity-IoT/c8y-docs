@@ -6,13 +6,13 @@ sector:
   - app_enablement
 ---
 
-The Cockpit application includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed.
+The Cockpit application includes pre-set widget types. Each widget type provides different parameters to configure and different data to be displayed.
 
 
 {{< c8y-admon-related >}}
 - [Application enablement & solutions > Cockpit > Data explorer](/cockpit/data-explorer/) for details on visualizing your data when working with widgets.
 - [Platform administration > {{< standard-tenant >}} administration > Managing the ecosystem > Managing applications](/standard-tenant/ecosystem/#managing-applications) for details on managing applications.
-- Refer to the [{{< sag-dev-community >}}]({{< link-sag-tech-forum >}}) for a tutorial on customized widgets in the {{< product-c8y-iot >}} environment.
+- Refer to the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) for a tutorial on customized widgets in the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
 ### Alarm list {#alarm-list}
@@ -172,13 +172,6 @@ Out of range values, based on configured yellow and red ranges, are highlighted 
 
 ![Data point table](/images/users-guide/cockpit/cockpit-datapointtable.png)
 
-At the top right of the data point list, an **Auto scroll** toggle determines the display behavior:
-
-* Auto-scroll on - When a new measurement arrives, the widget automatically scrolls to the top so that you can see the latest value.
-* Auto-scroll off - When a new measurement arrives, the display does not change and the table still shows the same snippet of data.
-
-![Auto-scroll toogle](/images/users-guide/cockpit/cockpit-data-point-table-widget-with-auto-scroll.png)
-
 ### Event list {#event-list}
 
 The "Event list" widget lets you monitor events for a selected device.
@@ -201,9 +194,13 @@ The "Help and service" widget displays links to help and service resources. Ther
 
 ### Image {#image}
 
-The "Image" widget lets you display a single image to be selected from your file system by browsing. When the image is uploaded, it is possible to change the image size and alignment.
+The "Image" widget lets you display a single image to be selected from your file system by browsing.
 
 ![Image widget](/images/users-guide/cockpit/cockpit-image-widget.png)
+
+When the image is uploaded, it is possible to change the image size and alignment.
+
+![Image widget configuration](/images/users-guide/cockpit/cockpit-image-widget-config.png)
 
 ### Info Gauge {#info-gauge}
 

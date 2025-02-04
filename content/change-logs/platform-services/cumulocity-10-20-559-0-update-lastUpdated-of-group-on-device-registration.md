@@ -1,6 +1,8 @@
 ---
-date: 
-title: lastUpdated fragment of a group is updated correctly when a device is added upon registration
+date: '2024-12-12'
+title: >-
+  lastUpdated fragment of a group is updated correctly when a device is added
+  upon registration
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

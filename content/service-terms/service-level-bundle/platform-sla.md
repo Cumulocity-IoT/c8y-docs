@@ -10,9 +10,9 @@ This agreement is made between {{< company-c8y >}} ("Provider") and the Customer
 
 ### Service description
 
-{{< product-c8y-iot >}} is a comprehensive Internet of Things (IoT) platform designed to enable seamless connectivity, management, analysis and control of IoT devices. This agreement defines the service level of {{< product-c8y-iot >}} Software-as-a-Service operated by {{< company-c8y >}}. {{< product-c8y-iot >}} Software-Operated-as-a-Service and {{< product-c8y-iot >}} Edge are outside the scope of this agreement.
+{{< product-c8y-iot >}} is a comprehensive Internet of Things (IoT) platform designed to enable seamless connectivity, management, analysis and control of IoT devices. This agreement defines the service level of {{< product-c8y-iot >}} Software-as-a-Service operated by {{< company-c8y >}}. {{< product-c8y-iot >}} Edge is outside the scope of this agreement.
 
-The agreement applies solely to the base platform excluding optional features or features not in general availability. Optional features outside the base platform may require a separate service-level agreement. For custom applications developed using the Microservice Hosting functionality, refer to the [Microservices hosting service-level agreement](/microservice-sdk/microservices-sla/).
+The agreement applies solely to the base platform excluding optional features or features not in general availability. Optional features outside the base platform may require a separate service-level agreement. For custom applications developed using the Microservice Hosting functionality, refer to the [Microservices hosting service-level agreement](/service-terms/service-level/#microservices-sla/).
 
 ### Service features
 
@@ -23,10 +23,10 @@ The {{< product-c8y-iot >}} platform offers a comprehensive set of features desi
 * **Real-time and batch data processing and storage:** {{< product-c8y-iot >}} supports both real-time and batch processing of IoT data, enabling users to efficiently manage and analyze large volumes of data as it is generated. Data storage is Customer-configurable, allowing you to define retention periods according to your specific requirements.
 * **Flexible deployment options:**
     * The platform is deployed using shared ("{{< product-c8y-iot >}}") or dedicated cloud instances ("{{< product-c8y-iot >}} Enterprise Dedicated"), tailored to meet the needs of your organization.
-    * Optionally, separate environments for pre-production (non-production) activities can be purchased to ensure smooth development and testing processes.
+    * Optionally, separate environments for non-production activities can be purchased to ensure smooth development and testing processes.
     * {{< product-c8y-iot >}} is hosted in Customer-selected regions (EMEA, APAC, Japan, and the US).
 * **Support services:**
-    * The platform offers tiered product support to meet varying operational needs, including 8x5 support ("Starter Support"), 24x7 support ("Standard Support"), and comprehensive 24x7 support with enhanced SLAs ("Enterprise Active Support").
+    * The platform offers tiered product support to meet varying operational needs as outlined in the [support agreement](/service-terms/service-level/#support-sla).
 * **Proactive monitoring and management:**
     * {{< product-c8y-iot >}} includes 24x7 platform monitoring, with a publicly accessible status page and real-time status notifications to keep you informed.
     * The platform’s availability, capacity, and performance are actively managed to ensure consistent and reliable operation.
@@ -36,7 +36,7 @@ The {{< product-c8y-iot >}} platform offers a comprehensive set of features desi
     * {{< product-c8y-iot >}} adheres to ISO 22301 standards for business continuity management (BCM), ensuring resilience against zone outages with zone redundancy.
     * Regular backups are maintained with a 30-day retention period, a Recovery Time Objective (RTO) of 12 hours, and a Recovery Point Objective (RPO) of 24 hours. Backups are stored in the same region where the service is hosted.
     * {{< company-c8y >}} conducts regular drills to validate its disaster recovery procedures.
-* **API compatibility management:** The platform maintains compatibility of APIs as outlined in its[ Compatibility policy](/concepts/compatibility-policy/). Transport protocols are managed in accordance with this policy, ensuring consistent and reliable API interactions.
+* **API compatibility management:** The platform maintains compatibility of APIs as outlined in its [Compatibility policy](/service-terms/compatibility-policy/). Transport protocols are managed in accordance with this policy, ensuring consistent and reliable API interactions.
 * **Data ownership and portability:** As the data processor, {{< product-c8y-iot >}} ensures that Customer retains full ownership of their data. Customer can export their data at any time using the provided APIs, ensuring control and flexibility over their information.
 * **Continuous maintenance and upgrades:** The platform undergoes regular maintenance and upgrades to ensure optimal performance and security. These upgrades happen transparently and without involving Customer.
 
@@ -78,7 +78,7 @@ In the interest of transparency and to ensure a mutual understanding of the serv
 {{< company-c8y >}} is committed to providing reliable service. The specific service availability targets are as follows:
 
 * **Production environments:** 99.90% availability
-* **Preproduction environments:** 95.00% availability
+* **Non-production environments:** 95.00% availability
 
 Service availability for {{< product-c8y-iot >}} is calculated as follows:
 
@@ -163,8 +163,8 @@ service availability requirements are set forth in this service credit commitmen
 
 #### **Support**
 
-* **Customer support:** Support is provided in accordance with Customer’s selected support plan (Starter, Standard, or Enterprise Active Support), as detailed in the [support agreement](/service-terms/service-level/#support-sla).
-* **Pre-production environments:** For pre-production environments, Starter-level support is generally provided, with support tickets handled at standard priority.
+* **Customer support:** Support is provided in accordance with Customer’s selected support plan, as detailed in the [support agreement](/service-terms/service-level/#support-sla).
+* **Non-production environments:** For non-production environments, Starter-level support is generally provided, with support tickets handled at standard priority.
 
 #### **Maintenance**
 

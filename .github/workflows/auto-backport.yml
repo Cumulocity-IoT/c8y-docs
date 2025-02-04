@@ -15,10 +15,18 @@ jobs:
         || (github.event.action == 'closed')
       )
     steps:
+      - name: Creating github access token
+        id: token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.C8Y_DOCS_AUTOMATIONS_APP_ID }}
+          private-key: ${{ secrets.C8Y_DOCS_AUTOMATIONS_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          
       - name: Backport Action
         uses: sorenlouv/backport-github-action@929f69d04adbc196d982e60f02837b6cc00b3129
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ steps.token.outputs.token }}
           auto_backport_label_prefix: auto-backport-to-
           add_original_reviewers: true
 

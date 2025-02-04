@@ -1,5 +1,5 @@
 ---
-weight: 40
+weight: 50
 title: Modifying microservice permissions and resource usage
 layout: redirect
 ---
@@ -37,5 +37,6 @@ The manifest also specifies the permissions with which the microservice runs. Th
 - ROLE_TENANT_MANAGEMENT_READ
 - ROLE_BULK_OPERATION_ADMIN
 - ROLE_BULK_OPERATION_READ
+- ROLE_NOTIFICATION_2_ADMIN
 
 You can add other roles to this list (or remove them from it) to grant (or remove) permissions to EPL code.

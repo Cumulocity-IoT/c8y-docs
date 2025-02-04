@@ -11,22 +11,22 @@ helpcontent:
   - label: dashboard-manager
     title: Dashboard manager
     content: "This dashboard manager shows a list of device type dashboards by aggregating all dashboards that have a device type assigned. 
-    
+
 
 Dashboards can be deleted via the list. Moreover, you can view all devices that have access to a particular dashboard. Dashboards can be edited by navigating to the device view."
 ---
 
-Dashboard manager shows a list of device type dashboards by aggregating all dashboards that have a device type assigned.
+The dashboard manager shows a list of device type dashboards by aggregating all dashboards that have a device type assigned.
 It also provides information about the number of devices that have access to a particular dashboard, date of creation and last modification date.
 
-To open Dashboard manager, click **Dashboard manager** in the **Configuration** menu of the navigator.
+To open the dashboard manager, click **Dashboard manager** in the **Configuration** menu of the navigator.
 
 <img src="/images/users-guide/cockpit/dashboard-manager.png" name="Dashboard manager"/>
 
 
 ### To add a type dashboard {#to-add-type-dashboard}
 
-To add a new dashboard for a device type select the device from the device list in the **Groups** menu. Refer to [To create a dashboard](/cockpit/working-with-dashboards/#to-create-a-dashboard) and [Dashboard template](/cockpit/working-with-dashboards/#dashboard-template) for more information. 
+To add a new dashboard for a device type select the device from the device list in the **Groups** menu. Refer to [To create a dashboard](/cockpit/working-with-dashboards/#to-create-a-dashboard) and [Dashboard template](/cockpit/working-with-dashboards/#dashboard-template) for more information.
 
 ### To delete type dashboard {#to-delete-type-dashboard}
 

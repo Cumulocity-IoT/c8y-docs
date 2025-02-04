@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2024-11-22'
 title: Security improvement in session cookie management
 product_area: Platform services
 change_type:

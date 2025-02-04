@@ -120,7 +120,7 @@ PUT /inventory/managedObjects/<deviceId>
        "name": "thin-edge.io",
        "version": "0.6",
        "url": "https://thin-edge.io/",
-       "maintainer": "Software AG"
+       "maintainer": "Cumulocity"
    }
 }
 ```
@@ -136,6 +136,6 @@ PUT /inventory/managedObjects/<deviceId>
 
 Upload agent details using the [122](/smartrest/mqtt-static-templates/#122) static template:
 
-`122,thin-edge.io,0.6,https://thin-edge.io/,Software AG`
+`122,thin-edge.io,0.6,https://thin-edge.io/,Cumulocity`
 
 Do this once at agent initialization.

@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T16:01:19.842Z
+date: 2023-12-06
 title: Apama correlator version
 change_type:
   - value: change-2c7RdTdXo4
@@ -14,4 +14,4 @@ build_artifact:
 version: 24.18.0
 ---
 This version of {{< product-c8y-iot >}} Streaming Analytics includes the Apama version 10.15.4 correlator.
-EPL apps developers should also refer to [What's New In Apama 10.15.4](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/pam-webhelp/#page/pam-webhelp%2Fco-WhaNewInApa_10154_top.html) in the Apama documentation.
+EPL apps developers should also refer to [What's New In Apama 10.15.4]({{<link-apama-webhelp>}}/change-logs/?#10.15/cumulocity-10154-alarmstatus) in the Apama documentation.

@@ -23,11 +23,11 @@ This tutorial explains in small steps to reach the goal of sending data to {{< p
 
 ### thin-edge.io on a Revolution Pi
 
-Refer to [Getting started with thin-edge.io on a RevPi from Kunbus]({{< link-sag-tech-forum >}}t/getting-started-with-thin-edge-io-on-a-revpi-from-kunbus/257475) for a tutorial on how to install thin-edge.io on a Revolution Pi from by Kunbus.
+Refer to [Getting started with thin-edge.io on a RevPi from Kunbus]({{< c8y-tech-community-link >}}t/getting-started-with-thin-edge-io-on-a-revpi-from-kunbus/3663) for a tutorial on how to install thin-edge.io on a Revolution Pi from by Kunbus.
 
 The Revolution PI is an open, modular and cost-effective industrial PC based on the well-known Raspberry Pi.
 Housed in a slim DIN rail case, the three available base modules can be seamlessly expanded with a variety of matching I/O modules and fieldbus gateways.
 
-Kunbus got their {{< product-c8y-iot >}} device management certification and is listed as a partner within the Device Catalog of [certified devices](https://devicepartnerportal.softwareag.com/devices?search=kunbus&page=1).
+Kunbus got their {{< product-c8y-iot >}} device management certification and is listed as a partner within the Device Catalog of [certified devices](https://ecosystem.cumulocity.com/product/revpi-connect-4/).
 
 You can get more information about Kunbus and the Revolution Pi on the [Revolution PI website](https://revolutionpi.de/).
