@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4274
 version: 1021.36.0
 ---
-In order to make it easier for users to apply only relevant device profiles, pre-filtering of device profiles by software type supported by the specific device has been implemented in the **Device profile** tab. The **Select device profile** dropdown now only shows profiles that are applicable for that device supported software types. This improves usability, saves time and eliminates errors.
+In order to make it easier for users to apply only relevant device profiles, pre-filtering of device profiles by the software types supported by the specific device has been implemented in the **Device profile** tab. The **Select device profile** dropdown now only shows profiles that are applicable for the software types supported by the device. This improves usability, saves time and eliminates errors.
