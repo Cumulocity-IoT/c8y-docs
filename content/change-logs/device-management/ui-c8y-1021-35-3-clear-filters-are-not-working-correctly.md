@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4319
 version: 1021.35.3
 ---
-The **Clear filters** button in the **All devices** grid is intended to reset all filter settings and return the view to its default unfiltered state. However, when clicking the **Clear filters** button, the filter settings were only temporarily reset until the user visited the **All devices** page again and continued to show filtered results instead of all items. This issue has now been resolved.
+The **Clear all filters** button in the **All devices** page is intended to reset all filter settings and return the view to its default unfiltered state. However, when clicking the **Clear all filters** button, the filter settings were only temporarily reset until the user visited the **All devices** page again and continued to show filtered results instead of all items. This issue has now been resolved.
