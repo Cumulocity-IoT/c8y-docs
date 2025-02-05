@@ -47,7 +47,7 @@ spec:
   ##  - tls.key: TLS/SSL private key in the PEM format.
   ##             Generate a TLS/SSL key pair and a Certificate Signing Request (CSR) following your organization's policies, 
   ##             specifying either a wildcard domain in the Common Name (CN) (for example, *.iot.com) or listing required 
-  ##             domains in the Subject Alternative Name (SAN) field, including the edge tenant, {{< management-tenant >}}, 
+  ##             domains in the Subject Alternative Name (SAN) field, including the Edge tenant, {{< management-tenant >}}, 
   ##             and, if applicable, Cumulocity DataHub domains (for example, myown.iot.com, management-myown.iot.com, 
   ##             datahub-myown.iot.com).
   ##
