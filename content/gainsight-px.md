@@ -95,7 +95,7 @@ We use cookies to understand how our services are used so that we can improve th
 
 We adhere to strict privacy policies and comply with relevant data protection laws.
 
-For more information about our Privacy and cookies policy, please read the Cumulocity [Policy Notice](/legal-notices/privacy-notice/).
+For more information about our privacy and cookies policy, refer to the {{< company-c8y >}} [Privacy Notice](/legal-notices/privacy-notice/).
 
 ##### Can I opt out of the analytics collection?
 
