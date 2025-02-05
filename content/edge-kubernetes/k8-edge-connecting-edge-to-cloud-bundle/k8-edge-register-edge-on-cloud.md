@@ -4,7 +4,7 @@ title: Registering Edge in the cloud tenant
 layout: redirect
 ---
 
-To remotely manage, configure, and monitor Edge through a {{< product-c8y-iot >}} cloud tenant, you must first register it as a device within the cloud tenant. This registration process requires providing the {{< product-c8y-iot >}} cloud tenant URI, along with an optional TLS/SSL key and certificate chain. These credentials authenticate Edge when connecting to the cloud via the MQTT protocol using X.509 certificate-based authentication. You can configure the cloud tenant URI, TLS/SSL key, and certificate chain using the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Cloud Tenant](/edge-kubernetes/edge-custom-resource-definition/#k8-edge-cloud-tenant).
+To remotely manage, configure, and monitor Edge through a {{< product-c8y-iot >}} cloud tenant, you must first register it as a device within the cloud tenant. This registration process requires providing the {{< product-c8y-iot >}} cloud tenant URI, along with an optional TLS/SSL key and certificate chain. These credentials authenticate Edge when connecting to the cloud via the MQTT protocol using X.509 certificate-based authentication. You can configure the cloud tenant URI, TLS/SSL key, and certificate chain using the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Cloud tenant](/edge-kubernetes/edge-custom-resource-definition/#k8-edge-cloud-tenant).
 
 If you do not provide a TLS/SSL key and certificate chain, the Edge operator automatically generates an internal TLS/SSL key and certificate for authentication. In this case, Edge will identify itself using the domain name of the instance.
 
