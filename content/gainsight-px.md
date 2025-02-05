@@ -55,7 +55,7 @@ To obtain an API key, contact the [{{< company-c8y >}} support](/additional-reso
     - If public-options are not present, upload new public-options with this option is set to false.
       Users can still enable sending personal data to the platform by enabling it in the **User** menu.
 
-### Custom user attributes
+### Custom user attributes {#custom-user-attributes}
 
 It's important to note that user preferences attributes cannot be updated via the gainsight javascript Web SDK, as this functionality is not supported. To work around this limitation, a [custom attributes](https://support.gainsight.com/PX/Administration/General/User_and_Account_Model#Custom_Attributes) named “engagements”, “Custom branding”, “Tracking(PII data)”, “isUserCreatedAfterAnonymizationWasActivated” were created:
 
