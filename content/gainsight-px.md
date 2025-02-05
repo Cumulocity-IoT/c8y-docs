@@ -42,7 +42,7 @@ To obtain an API key, contact the [{{< company-c8y >}} support](/additional-reso
 1. We differentiate between required and functional cookies, which users can manage in the cookie preferences dialog. While Gainsight PX anonymized tracking is enabled by default, personalized (non-anonymized) tracking is only active if the user accepts the functional cookies.
    - Required cookies - used by core site functionality. They perform a task or operation without which a site's functionality would not be possible.
    - Functional cookies - used to track site usage and to process user’s personal data to measure and improve site usability and performance.
-2. If a user clicks “Agree and proceed” on the cookie banner without opening the cookie preferences dialog, both required and functional cookies are accepted.
+2. If a user clicks **Agree and proceed** on the cookie banner without opening the cookie preferences dialog, both required and functional cookies are accepted.
 3. The cookie banner can be disabled by a tenant for himself and his sub tenants via Administration > Enterprise Tenant > Branding. In the cookie banner section check “Disable cookie banner”, save and apply the new branding.
 4. A tenant can disable Gainsight PX tracking for the users of his sub tenants from Administration > Subtenants > Tenant custom properties.
 5. Users can manage their Gainsight PX tracking preferences from the Edit User dialog. They can choose to opt-out from personalized tracking, which will result in only anonymous (aggregate data) tracking. Additionally, users can opt-out from in-product engagements such as the Knowledge Hub and other interactions, in which case tracking will continue but "user preferences" will be sent to Gainsight PX.
