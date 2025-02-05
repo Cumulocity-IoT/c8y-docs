@@ -57,6 +57,11 @@ const resolveFullUrl = (link) => {
   return `${BASE_URL.replace(/\/$/, "")}/${resolvedLink.replace(/^\//, "")}`;
 };
 
+const hasUnencodedParentheses = (link) => {
+  const unencodedParenthesesRegex = /[()]/;
+  return unencodedParenthesesRegex.test(link);
+};
+
 const checkLink = async (link) => {
   try {
     let response = await fetch(link, { method: "HEAD" });
@@ -86,6 +91,10 @@ const checkLink = async (link) => {
     const links = [...content.matchAll(/(?<!\!)\[.*?\]\((.+?)\)/g)].map((match) => match[1]);
 
     links.forEach((link) => {
+      if (hasUnencodedParentheses(link)) {
+        throw new Error(`Unencoded parentheses detected in link: "${link}" in file: ${mdFile}`);
+      }
+
       const resolvedLink = resolveFullUrl(link);
       if (resolvedLink) {
         uniqueLinks.add(resolvedLink);
@@ -117,6 +126,6 @@ const checkLink = async (link) => {
     filteredBrokenLinks.map((link) => `${link.url},${link.status},"${link.files.join("; ")}"`).join("\n");
 
   fs.writeFileSync("broken_links_markdown.csv", csvData);
-  console.log("broken links saved to broken_links_markdown.csv");
+  console.log("Broken links saved to broken_links_markdown.csv");
   process.exit(0);
 })();
