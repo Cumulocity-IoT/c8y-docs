@@ -97,7 +97,7 @@ For more information about our Privacy and cookies policy, please read the Cumul
 
 ##### Can I opt out of the analytics collection?
 
-Yes, you can change your cookie and tracking preferences at any time from your Cumulocity IoT profile. You can choose how we use functional cookies by changing the cookie settings. In addition, you can control and restrict the placement of cookies through browser settings. In this context, you can also delete existing cookies. However, this may lead to a restriction of the functionalities of our websites. Required cookies are set automatically and cannot be deselected, as otherwise, the platform might not function properly.
+Yes, you can change your cookie and tracking preferences at any time from your {{< company-c8y >}} profile. You can choose how we use functional cookies by changing the cookie settings. In addition, you can control and restrict the placement of cookies through browser settings. In this context, you can also delete existing cookies. However, this may lead to a restriction of the functionalities of our websites. Required cookies are set automatically and cannot be deselected, as otherwise, the platform might not function properly.
 
 ### How can I learn more about your data practices?
 
