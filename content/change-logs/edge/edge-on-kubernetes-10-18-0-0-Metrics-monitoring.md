@@ -10,7 +10,7 @@ component:
     label: Edge on Kubernetes
 build_artifact:
   - value: tc-nJH2U7g3u
-    label: cumulocity-edge-operator
+    label: edge-operator
 version: 10.18.0.0
 ---
 Edge deployments on Kubernetes can be monitored utilizing Prometheus, an open-source tool designed for monitoring application states. The Edge operator provides a Prometheus-compatible metrics endpoint, allowing you to track a diverse range of resource usage and availability metrics.

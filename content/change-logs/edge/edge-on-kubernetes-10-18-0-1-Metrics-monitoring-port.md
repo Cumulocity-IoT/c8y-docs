@@ -10,7 +10,7 @@ component:
     label: Edge on Kubernetes
 build_artifact:
   - value: tc-nJH2U7g3u
-    label: cumulocity-edge-operator
+    label: edge-operator
 version: 10.18.0.1
 ---
 The Edge operator's Prometheus-compatible metrics port has been changed from 8443 to 3443 due to a conflict with another core component.

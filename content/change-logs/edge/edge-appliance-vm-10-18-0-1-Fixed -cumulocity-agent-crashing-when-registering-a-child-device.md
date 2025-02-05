@@ -10,7 +10,7 @@ component:
     label: Edge Appliance VM
 build_artifact:
   - value: tc-Tk9F8QhaO
-    label: CumulocityEdge-Appliance
+    label: edge-appliance-vm
 version: 10.18.0.1
 ---
 The issue with the {{< product-c8y-iot >}} agent crashing when registering a child device is resolved.

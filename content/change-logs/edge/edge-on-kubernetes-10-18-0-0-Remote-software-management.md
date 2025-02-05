@@ -10,7 +10,7 @@ component:
     label: Edge on Kubernetes
 build_artifact:
   - value: tc-nJH2U7g3u
-    label: cumulocity-edge-operator
+    label: edge-operator
 version: 10.18.0.0
 ---
 Using the {{< product-c8y-iot >}} software management feature, you can now remotely manage applications, microservices, and extensions installed on Edge.

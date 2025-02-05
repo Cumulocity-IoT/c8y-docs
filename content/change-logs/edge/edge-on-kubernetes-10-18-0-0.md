@@ -10,7 +10,7 @@ component:
     label: Edge on Kubernetes
 build_artifact:
   - value: tc-nJH2U7g3u
-    label: cumulocity-edge-operator
+    label: edge-operator
 version: 10.18.0.0
 ---
 {{< product-c8y-iot >}} IoT Edge on Kubernetes has reached General Availability (GA) and is now ready for deployment in production environments.

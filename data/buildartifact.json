@@ -62,11 +62,11 @@
     },
     {
       "id": "tc-nJH2U7g3u",
-      "option": "cumulocity-edge-operator"
+      "option": "edge-operator"
     },
     {
       "id": "tc-Tk9F8QhaO",
-      "option": "CumulocityEdge-Appliance"
+      "option": "edge-appliance-vm"
     }
   ]
 }

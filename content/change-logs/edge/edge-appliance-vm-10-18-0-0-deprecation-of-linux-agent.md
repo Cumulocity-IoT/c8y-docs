@@ -10,7 +10,7 @@ component:
     label: Edge Appliance VM
 build_artifact:
   - value: tc-Tk9F8QhaO
-    label: CumulocityEdge-Appliance
+    label: edge-appliance-vm
 version: 10.18.0.0
 ---
 With the release of {{< product-c8y-iot >}} Edge version 10.18, we are announcing the deprecation of the {{< product-c8y-iot >}} Linux Agent included in the {{< product-c8y-iot >}} Edge offering. Version 10.18 will mark the final release to feature the {{< product-c8y-iot >}} Linux Agent.

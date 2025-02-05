@@ -10,7 +10,7 @@ component:
     label: Edge Appliance VM
 build_artifact:
   - value: tc-Tk9F8QhaO
-    label: CumulocityEdge-Appliance
+    label: edge-appliance-vm
 version: 10.18.0.1
 ---
 This release upgrades the Rocky Linux operating system from version 8.9 to 8.10. For details on updating Edge from version 10.18.0.0 to 10.18.0.1, refer to [Updating Edge](https://cumulocity.com/docs/edge/edge-update/). Due to the inclusion of the new Rocky Linux version in the 10.18.0.1 update archive, the archive size has significantly increased, resulting in a longer update process compared to previous versions.
