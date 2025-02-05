@@ -59,6 +59,12 @@ Additional considerations:
 
 ![Annual upgrade process](../../images/service-terms/annualrelease.png)
 
+### Cumulocity Edge Annual Deployment
+
+Cumulocity Edge follows an Annual Deployment cycle, which occurs one month later than the Cumulocity [Annual Deployment](/service-terms/releases/#annual-deployment). This ensures alignment with broader system updates while providing additional time for Edge-specific testing and stability improvements.
+
+Customers using older Edge versions should refer to the latest documentation for migration guidance. Updates to the documentation will be made available in the Cumulocity Edge Documentation Portal.
+
 ### Frequently asked questions (FAQ)
 
 #### Can I check when a particular change is available in my tenant?
