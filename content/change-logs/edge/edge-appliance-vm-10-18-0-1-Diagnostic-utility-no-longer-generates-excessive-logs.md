@@ -11,6 +11,7 @@ component:
 build_artifact:
   - value: tc-Tk9F8QhaO
     label: edge-appliance-vm
+ticket: CIE-5191    
 version: 10.18.0.1
 ---
 The issue with the diagnostic utility, scheduled to run periodically, generating excessive diagnostic report files filling up the disk space is resolved.

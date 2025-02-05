@@ -11,6 +11,7 @@ component:
 build_artifact:
   - value: tc-nJH2U7g3u
     label: edge-operator
+ticket: CIE-4893
 version: 10.18.0.0
 ---
 Using the {{< product-c8y-iot >}} software management feature, you can now remotely manage applications, microservices, and extensions installed on Edge.

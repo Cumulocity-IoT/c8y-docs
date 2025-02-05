@@ -11,6 +11,7 @@ component:
 build_artifact:
   - value: tc-Tk9F8QhaO
     label: edge-appliance-vm
+ticket: CIEITRAC-2263    
 version: 10.18.0.1
 ---
 The <code>/tmp/cumulocity-core-karaf</code> directory is used by {{< product-c8y-iot >}} core for storing the uploaded application and microservice ZIP files before processing. This directory is monitored and recreated if necessary.
