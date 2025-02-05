@@ -33,7 +33,7 @@ Events:
  Normal  InstallLoopBackOff   1m00s  cumulocityiotedge  waiting for mongo server to be ready
 ```
 
-MongoDB requires a CPU that supports AVX instructions. Ensure that the CPU type of the Kubernetes node supports AVX instructions. Use the command `sudo lscpu` to check whether the CPU supports AVX instructions. 
+MongoDB requires a CPU that supports AVX instructions. Ensure that the CPU type of the Kubernetes node supports AVX instructions. Use the command `lscpu` to check whether the CPU supports AVX instructions. 
 Check the logs of the Edge operator, MongoDB and core pods to get more insights.
 
 The Edge operator logs:
