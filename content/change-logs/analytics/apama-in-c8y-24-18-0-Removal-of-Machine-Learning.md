@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:51:40.813Z
+date: 2023-12-06
 title: Removal of Machine Learning
 change_type:
   - value: change-inv-3bw8e

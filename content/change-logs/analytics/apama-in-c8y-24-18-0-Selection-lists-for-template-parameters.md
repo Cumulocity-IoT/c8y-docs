@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:53:07.850Z
+date: 2023-12-06
 title: Selection lists for template parameters
 change_type:
   - value: change-QHu1GdukP

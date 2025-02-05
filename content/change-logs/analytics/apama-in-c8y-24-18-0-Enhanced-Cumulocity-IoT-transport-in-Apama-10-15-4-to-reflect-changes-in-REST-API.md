@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:49:00.513Z
+date: 2023-12-06
 title: Enhanced Cumulocity transport in Apama 10.15.4 to reflect changes in
   REST API
 change_type:

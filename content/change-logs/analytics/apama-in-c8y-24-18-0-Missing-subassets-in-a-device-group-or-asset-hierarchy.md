@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:52:47.648Z
+date: 2023-12-06
 title: Missing subassets in a device group or asset hierarchy
 change_type:
   - value: change-2c7RdTdXo4
