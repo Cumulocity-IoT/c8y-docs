@@ -50,7 +50,7 @@ To obtain an API key, contact the [{{< company-c8y >}} support](/additional-reso
 7. Tracking can also be disabled using a new application option named “disableTracking”. This option can be included in the public options.
 8. PII (Personally identifiable information) data: email, userName, firstName, lastName.
 9. Custom branding no longer blocks tracking. It only affects user engagement settings and will disable it by default.
-10. If the customer wants to enable only anonymized tracking by default, then follow the instructions:
+10. If the customer wants to enable only anonymized tracking by default, then follow these instructions:
     - Update existing public-options, where options called functional (in the cookiePreferences) is set to false,
     - If public-options are not present, upload new public-options where this option is set to false.
       Users still can enable sending personal data to the platform by enabling it in the user menu.
