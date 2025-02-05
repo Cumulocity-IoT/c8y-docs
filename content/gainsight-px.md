@@ -89,7 +89,7 @@ In addition, we may collect personal data only if you have given your consent (a
 
 ##### How do you collect data?
 
-We use cookies to understand how our services are used so that we can improve them. For example, we use cookies for analytics and diagnostic purposes to improve our products and services and to measure and analyze the use and performance of our services. Based on this technology, we may receive evaluations from our service providers, which may include personal data -only if you have given your consent.
+We use cookies to understand how our services are used so that we can improve them. For example, we use cookies for analytics and diagnostic purposes to improve our products and services and to measure and analyze the use and performance of our services. Based on this technology, we may receive evaluations from our service providers, which may include personal data only if you have given your consent.
 
 ### How is my privacy protected?
 
