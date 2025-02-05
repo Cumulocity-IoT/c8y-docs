@@ -113,7 +113,7 @@ Just keep in mind that you will receive exactly the same set of bytes which was 
 and you have to convert them to {{< product-c8y-iot >}} compatible format.
 
 {{< c8y-admon-info >}}
-For all MQTT connections to the platform, the maximum accepted payload size is 1048576 bytes (1 MiB), which includes
+For all MQTT connections to the platform, the maximum accepted payload size is 131072 bytes (128 KiB), which includes
 both message header and body. The header size varies, but its minimum is 2 bytes.
 {{< /c8y-admon-info >}}
 
