@@ -35,7 +35,6 @@ const shortcodeMapping = {
   "c8y-tech-community-link" : "https://techcommunity.cumulocity.com/",
   "c8y-support-email" : "support@cumulocity.com",
   "email-c8y-info" : "info@cumulocity.com"
-
 };
 
 const resolveHugoShortcode = (link) => {
@@ -58,23 +57,18 @@ const resolveFullUrl = (link) => {
   return `${BASE_URL.replace(/\/$/, "")}/${resolvedLink.replace(/^\//, "")}`;
 };
 
-const checkLink = async (link, mdFile) => {
-  const fullUrl = resolveFullUrl(link);
-  if (!fullUrl) {
-    return null; 
-  }
-
+const checkLink = async (link) => {
   try {
-    let response = await fetch(fullUrl, { method: "HEAD" });
+    let response = await fetch(link, { method: "HEAD" });
     if (response.status === 405) {
-      response = await fetch(fullUrl, { method: "GET" });
+      response = await fetch(link, { method: "GET" });
     }
 
     if (!response.ok) {
-      return { url: fullUrl, file: mdFile, status: response.status };
+      return { url: link, status: response.status };
     }
   } catch (error) {
-    return { url: fullUrl, file: mdFile, status: "Error" };
+    return { url: link, status: "Error" };
   }
 
   return null;
@@ -84,41 +78,45 @@ const checkLink = async (link, mdFile) => {
   const projectDir = "../content"; 
   const markdownFiles = getMarkdownFiles(projectDir);
 
-  const brokenLinks = [];
-  const limit = pLimit(10); 
-  
+  const linkFileMap = new Map();
+  const uniqueLinks = new Set();
 
-  const tasks = markdownFiles.map((mdFile) => {
+  markdownFiles.forEach((mdFile) => {
     const content = fs.readFileSync(mdFile, "utf8");
-    const links = [...content.matchAll(/(?<!\!)\[.*?\]\((.+?)\)/g)].map(
-      (match) => {
-        let link = match[1];
-        if (link.includes("(") && !link.endsWith(")")) {
-          link += ")"; // Add closing bracket if there's an opening bracket but no closing bracket
+    const links = [...content.matchAll(/(?<!\!)\[.*?\]\((.+?)\)/g)].map((match) => match[1]);
+
+    links.forEach((link) => {
+      const resolvedLink = resolveFullUrl(link);
+      if (resolvedLink) {
+        uniqueLinks.add(resolvedLink);
+        if (!linkFileMap.has(resolvedLink)) {
+          linkFileMap.set(resolvedLink, []);
         }
-        return link;
+        linkFileMap.get(resolvedLink).push(mdFile);
       }
-    );
-
-
-
-    return links.map((link) =>
-      limit(async () => {
-        const result = await checkLink(link, mdFile);
-        if (result) brokenLinks.push(result);
-      })
-    );
+    });
   });
 
-  await Promise.all(tasks.flat());
+  const brokenLinks = [];
+  const limit = pLimit(10); 
+
+  await Promise.all([...uniqueLinks].map((link) =>
+    limit(async () => {
+      const result = await checkLink(link);
+      if (result) {
+        result.files = linkFileMap.get(link);
+        brokenLinks.push(result);
+      }
+    })
+  ));
 
   const filteredBrokenLinks = brokenLinks.filter((link) => link.status === 404);
 
   const csvData =
-    "URL,File Path,Status Code\n" +
-    filteredBrokenLinks.map((link) => `${link.url},${link.file},${link.status}`).join("\n");
+    "URL,Status Code,Files\n" +
+    filteredBrokenLinks.map((link) => `${link.url},${link.status},"${link.files.join("; ")}"`).join("\n");
 
   fs.writeFileSync("broken_links_markdown.csv", csvData);
-  console.log("Broken links in markdown files saved to broken_links_markdown.csv");
+  console.log("broken links saved to broken_links_markdown.csv");
   process.exit(0);
 })();
