@@ -62,7 +62,7 @@ It's important to note that user preferences attributes cannot be updated via th
 1. Custom branding: Indicates if the user is using custom branding. Custom branding is recognized when a custom logo is set via branding.
 2. Tracking(PII data): Indicates if the user allowed to send their PII data.
 3. isUserCreatedAfterAnonymizationWasActivated: Indicates if the user uses a version of the application that supports the anonymization feature.
-4. Engagements: An attribute indicating if user allowed to display in-product information and communication (knowledge hub, surveys etc.)
+4. Engagements: Indicates if user allowed to display in-product information and communication (knowledge hub, surveys etc.)
 
 ![Product experience settings](/images/users-guide/gainsight/product-experience-settings.png)
 
