@@ -49,7 +49,7 @@ To obtain an API key, contact the [{{< company-c8y >}} support](/additional-reso
 6. Customers with custom branding have their cookie banner active by default with the default banner text and link to the {{< company-c8y >}} Privacy Policy. Customers can deactivate the cookie banner and, in these cases, Gainsight PX tracking will be disabled.
 7. Tracking can also be disabled using a new application option named “disableTracking”. This option can be included in the public options.
 8. PII (Personally identifiable information) data: email, userName, firstName, lastName.
-9. Custom branding no longer blocks tracking. It only affects user engagement settings and will disable them by default.
+9. Custom branding no longer blocks tracking. It only affects user engagement settings and will disable it by default.
 10. If the customer wants to enable only anonymized tracking by default, then follow the instructions:
     - Update existing public-options, where options called functional (in the cookiePreferences) is set to false,
     - If public-options are not present, upload new public-options where this option is set to false.
