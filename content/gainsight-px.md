@@ -31,7 +31,7 @@ To obtain an API key, contact the [{{< company-c8y >}} support](/additional-reso
 2. Configure the cookie banner for all tenants on the instance.
  The cookie banner configuration operates using the same mechanism as application branding. Upload the [public-options-v2](https://drive.google.com/file/d/1pEPVTutEAziWtycklRxsalYlHUmMaNIX/view?usp=sharing), which contains the cookie banner configuration, to the {{< management-tenant >}} (Administration > Own applications). The ZIP archive comprises a JSON file that defines the cookie banner title, text, link to the privacy policy page, and the cookie description. Anonymized tracking is activated by default for all tenants and users as a component of the required cookies. If users opt out of the functional cookies, only the anonymized tracking remains enabled.
 
-### Limitations
+### Limitations {#limitations}
 
 - Since the cookie banner configuration leverages the standard branding mechanisms, the branding can be redefined by the Enterprise Edition tenants. The branding set by an Enterprise Edition tenant will get a higher priority for the tenant and his subtenant and thus the cookie banner configuration would be ignored. For the users of such tenants, the cookie banner won’t be displayed, thus acceptance won’t be acquired and the users won’t be tracked.
 - Public options are always removed when branding is removed. If this occurs, public options must be re-uploaded, as configuring the cookie banner is necessary.
