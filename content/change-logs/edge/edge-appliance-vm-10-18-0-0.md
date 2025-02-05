@@ -15,5 +15,3 @@ ticket: CIE-4991
 version: 10.18.0.0
 ---
 As CentOS 7 will reach its end-of-life on June 30th, 2024, we are transitioning our support to an alternative Operating System for Edge Appliance users. Starting with this release, the Edge Appliance VM is equipped with [Rocky Linux 8](https://rockylinux.org/). Since the Operating System is changed, the upgrade from earlier versions of Edge entails a side-by-side installation accompanied by data migration. For information on upgrading Edge to 10.18, see [Migrating Edge 10.17 to 10.18](/edge/edge-update/#migration-1017-to-1018).
-
-You can find the documentation for **{{< product-c8y-iot >}} Edge Appliance VM** at https://cumulocity.com/docs/2024/edge/edge-introduction/.
