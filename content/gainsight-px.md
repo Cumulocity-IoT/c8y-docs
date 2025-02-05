@@ -103,7 +103,7 @@ Yes, you can change your cookie and tracking preferences at any time from your {
 
 For detailed information about our data and cookie practices, refer to our [Privacy Notice](/legal-notices/privacy-notice/)
 
-### How can I provide feedback or report issues?
+##### How can I provide feedback or report issues?
 
 Your input is crucial in helping us understand your needs and continually improve our products. Please feel free to share them in the Feedback Portal in the [Cumulocity Customer Service Desk](http://www.cumulocity.com/support/).
 
