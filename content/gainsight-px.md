@@ -24,7 +24,9 @@ In accordance with GDPR and Cookie Policy regulations, we must inform users abou
 }
 ```
 
-Note: To obtain an API key, contact our [support](/additional-resources/contacting-support/).
+{{< c8y-admon-info >}}
+To obtain an API key, contact the [{{< company-c8y >}} support](/additional-resources/contacting-support/).
+{{< /c8y-admon-info >}}
 
 2. Configure cookie banner for all tenants on the instance.
    The cookie banner configuration operates using the same mechanism as application branding. Upload the [public-options-v2](https://drive.google.com/file/d/1pEPVTutEAziWtycklRxsalYlHUmMaNIX/view?usp=sharing), which contains the Cookie Banner configuration, to the management tenant (Administration > Own applications). The zip archive comprises a JSON file that defines the cookie banner title, text, link to the privacy policy page, and the cookie description. Anonymized tracking is activated by default for all tenants and users as a component of the required cookies. If users opt out of the functional cookies, only the anonymized tracking remains enabled.
