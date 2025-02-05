@@ -75,7 +75,7 @@ All attributes were added in versions:
 
 ### Product and user analytics {#product-and-user-analytics}
 
-## FAQ for customers
+#### FAQ for customers {#faq-for-customers}
 
 ### Why do you collect user and product analytics?
 
