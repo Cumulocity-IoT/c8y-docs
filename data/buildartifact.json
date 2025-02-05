@@ -62,11 +62,11 @@
     },
     {
       "id": "tc-nJH2U7g3u",
-      "option": "cumulocity-iot-edge-operator"
+      "option": "cumulocity-edge-operator"
     },
     {
       "id": "tc-Tk9F8QhaO",
-      "option": "CumulocityIoTEdge-Appliance"
+      "option": "CumulocityEdge-Appliance"
     }
   ]
 }
