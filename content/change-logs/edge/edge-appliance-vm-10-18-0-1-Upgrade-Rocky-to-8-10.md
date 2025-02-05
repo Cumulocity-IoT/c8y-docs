@@ -1,5 +1,5 @@
 ---
-date: 2024-09-17
+date: 2024-03-02
 title: Upgrade of Rocky Linux operating system version to 8.10
 change_type:
   - value: change-inv-3bw8e

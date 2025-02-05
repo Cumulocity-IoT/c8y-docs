@@ -1,5 +1,5 @@
 ---
-date: 2024-09-17
+date: 2024-03-02
 title: 2024 release of Cumulocity Edge on Kubernetes identical to 10.18 release
 change_type:
   - value: change-inv-3bw8e

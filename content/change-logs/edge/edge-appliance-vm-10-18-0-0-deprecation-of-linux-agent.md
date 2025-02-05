@@ -1,5 +1,5 @@
 ---
-date: 2024-04-24
+date: 2024-03-01
 title: Deprecation of Cumulocity Linux Agent
 change_type:
   - value: change-inv-3bw8e

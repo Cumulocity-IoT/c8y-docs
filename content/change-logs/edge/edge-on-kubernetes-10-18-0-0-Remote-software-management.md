@@ -1,5 +1,5 @@
 ---
-date: 2024-04-24
+date: 2024-03-01
 title: Remote software management
 change_type:
   - value: change-QHu1GdukP

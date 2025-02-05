@@ -1,5 +1,5 @@
 ---
-date: 2024-09-17
+date: 2024-03-02
 title: Fixed Cumulocity agent crashing when registering a child device
 change_type:
   - value: change-VSkj2iV9m
