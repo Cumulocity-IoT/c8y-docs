@@ -73,7 +73,7 @@ All attributes were added in versions:
 - 10.16.0.482
 - 10.17.0.512
 
-# Product and user analytics
+### Product and user analytics {#product-and-user-analytics}
 
 ## FAQ for customers
 
