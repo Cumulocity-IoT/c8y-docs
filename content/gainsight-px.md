@@ -37,7 +37,7 @@ To obtain an API key, contact the [{{< company-c8y >}} support](/additional-reso
 - Public options are always removed when branding is removed. If this occurs, public options must be re-uploaded, as configuring the cookie banner is necessary.
 - If branding was applied before publishing public options with an already set up Gainsight (referring to the cookie banner configuration), then publishing public options (for example, using a curl command or via the UI) will override the existing public options. Consider public options as an application. Uploading new public options is treated as a new version. To avoid this scenario, download the existing branded public options and adjust them manually by copying and pasting the cookie banner configuration from the public-options-v2 file.
 
-### Support Q&A
+### Support Q&A {#support}
 
 1. We differentiate between required and functional cookies, which users can manage in the cookie preferences dialog. While Gainsight PX anonymized tracking is enabled by default, personalized (non-anonymized) tracking is only active if the user accepts the functional cookies.
    - Required cookies - used by core site functionality. They perform a task or operation without which a site's functionality would not be possible.
