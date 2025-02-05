@@ -6,7 +6,7 @@ layout: redirect
 
 Edge can be managed, configured, and monitored remotely through a {{< product-c8y-iot >}} cloud tenant. You can control and troubleshoot your Edge deployments remotely.
 
-To enable this, you must first register the Edge as a device within the cloud tenant. This registration process requires providing the {{< product-c8y-iot >}} cloud tenant URI, along with an optional TLS/SSL key and certificate chain. These credentials authenticate Edge when connecting to the cloud via the MQTT protocol using X.509 certificate-based authentication.
+To enable this, you must first register Edge as a device within the cloud tenant. This registration process requires providing the {{< product-c8y-iot >}} cloud tenant URI, along with an optional TLS/SSL key and certificate chain. These credentials authenticate Edge when connecting to the cloud via the MQTT protocol using X.509 certificate-based authentication.
 
 If you do not provide a TLS/SSL key and certificate chain, the Edge operator automatically generates an internal TLS/SSL key and certificate for authentication. In this case, Edge will identify itself using the domain name of the instance.
 
