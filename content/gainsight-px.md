@@ -10,7 +10,7 @@ Gainsight PX is integrated into the {{< product-c8y-iot >}} UI through a JavaScr
 
 In accordance with GDPR and Cookie Policy regulations, we must inform users about the use of cookies and provide them the option to opt-out from personal data collection. However, users cannot opt-out from anonymized tracking, as {{< company-c8y >}} has established a "legitimate interest" in the context of our legal agreement with the customer or trial user. For more details, refer to the [Privacy Notice](/legal-notices/privacy-notice/).
 
-### Configuration
+### Configuration {#configuration}
 
 1. Add Gainsight API key to the system options of the management tenant:
 
