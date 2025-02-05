@@ -52,7 +52,7 @@ To obtain an API key, contact the [{{< company-c8y >}} support](/additional-reso
 9. Custom branding no longer blocks tracking. It only affects user engagement settings and will disable it by default.
 10. If the customer wants to enable only anonymized tracking by default, then follow these instructions:
     - Update existing public-options, where options called functional (in the cookiePreferences) is set to false.
-    - If public-options are not present, upload new public-options where this option is set to false.
+    - If public-options are not present, upload new public-options with this option is set to false.
       Users still can enable sending personal data to the platform by enabling it in the user menu.
 
 ### Custom user attributes
