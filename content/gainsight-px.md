@@ -33,7 +33,7 @@ To obtain an API key, contact the [{{< company-c8y >}} support](/additional-reso
 
 ### Limitations {#limitations}
 
-- Since the cookie banner configuration leverages the standard branding mechanisms, the branding can be redefined by the Enterprise Edition tenants. The branding set by an Enterprise Edition tenant will get a higher priority for the tenant and his subtenant and thus the cookie banner configuration would be ignored. For the users of such tenants, the cookie banner won’t be displayed, thus acceptance won’t be acquired and the users won’t be tracked.
+- Since the cookie banner configuration leverages the standard branding mechanisms, the branding can be redefined by {{< enterprise-tenant >}}s. The branding set by an {{< management-tenant >}} will get a higher priority for the tenant and his subtenant and thus the cookie banner configuration would be ignored. For the users of such tenants, the cookie banner won’t be displayed, thus acceptance won’t be acquired and the users won’t be tracked.
 - Public options are always removed when branding is removed. If this occurs, public options must be re-uploaded, as configuring the cookie banner is necessary.
 - If branding was applied before publishing public options with an already set up Gainsight (referring to the cookie banner configuration), then publishing public options (for example, using a curl command or via the UI) will override the existing public options. Please consider public options as an application. Uploading new public options is treated as a new version. To avoid this scenario, please download the existing branded public options and adjust them manually by copying and pasting the cookie banner configuration from the public-options-v2 file.
 
