@@ -57,7 +57,7 @@ To obtain an API key, contact the [{{< company-c8y >}} support](/additional-reso
 
 ### Custom user attributes {#custom-user-attributes}
 
-It's important to note that user preferences attributes cannot be updated via the gainsight javascript Web SDK, as this functionality is not supported. To work around this limitation, a [custom attributes](https://support.gainsight.com/PX/Administration/General/User_and_Account_Model#Custom_Attributes) named “engagements”, “Custom branding”, “Tracking(PII data)”, “isUserCreatedAfterAnonymizationWasActivated” were created:
+It's important to note that user preferences attributes cannot be updated via the Gainsight Javascript Web SDK, as this functionality is not supported. To work around this limitation, [custom attributes](https://support.gainsight.com/PX/Administration/General/User_and_Account_Model#Custom_Attributes) named “engagements”, “Custom branding”, “Tracking(PII data)”, “isUserCreatedAfterAnonymizationWasActivated” were created:
 
 1. Custom branding: An attribute added to indicate if the user is using custom branding. Custom branding is recognized when a custom logo is set via branding.
 2. Tracking(PII data): An attribute indicating that the user allowed to send their PII data.
