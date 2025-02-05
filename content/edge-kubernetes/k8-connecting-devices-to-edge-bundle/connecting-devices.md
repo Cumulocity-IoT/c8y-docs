@@ -12,7 +12,7 @@ Additionally, Edge offers:
 
 * OPC UA protocol. OPC UA protocols support through the OPC UA device gateway and OPC UA management service.
 
-* Cloud Fieldbus functionality to collect data from fieldbus devices and remotely manage them. For example, Modbus protocol. With the release of {{< product-c8y-iot >}} Edge version {{< c8y-edge-current-version-alt >}}, we are announcing the deprecation of the {{< company-c8y >}} Linux Agent included in the {{< product-c8y-iot >}} Edge offering. For further details see the announcement in the [{{< c8y-edge-current-version-alt >}} release notes](https://cumulocity-iot-c8y-docs-build-pr-2896.surge.sh/change-logs/?productarea=.productarea-edge#edge-appliance-vm-10-18-0-0-Deprecation-of-cumulocity-linux-agent-included-in-the-cumulocity-edge).
+* Cloud Fieldbus functionality to collect data from fieldbus devices and remotely manage them. For example, Modbus protocol. With the release of {{< product-c8y-iot >}} Edge version {{< c8y-edge-current-version-alt >}}, we are announcing the deprecation of the {{< product-c8y-iot >}} Linux Agent included in the {{< product-c8y-iot >}} Edge offering. For further details, see the announcement in the [{{< c8y-edge-current-version-alt >}} release notes](https://cumulocity.com/docs/2024/change-logs/?productarea=.productarea-edge#edge-appliance-vm-10-18-0-0-Deprecation-of-cumulocity-linux-agent-included-in-the-cumulocity-edge).
 
 {{< c8y-admon-info >}}
 Currently, only OPC UA protocols are supported.
