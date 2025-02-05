@@ -246,7 +246,6 @@ The following is an example of the status operation data that is published by {{
     "apama_status": {
         "user-analyticsbuilder.slowestChain.models": "\"Model 1\", \"Model 2\", \"Model 3\"",
         "user-analyticsbuilder.slowestChain.delaySec": "3",
-        "user-analytics-oldEventsDropped": "1",
         "numJavaApplications": "1",
         "numMonitors": "27",
         "user-httpServer.eventsTowardsHost": "1646",
@@ -286,9 +285,7 @@ The following is an example of the status operation data that is published by {{
 
 #### Monitoring dropped events {#monitoring-dropped-events}
 
-When a model receives an event, it may be dropped if the correlator delivers or processes it too late. See [Input blocks and event timing](/streaming-analytics/analytics-builder/#input-blocks-and-event-timing).
-
-The total number of dropped events across all models is periodically published as part of the status operation. The count of the number of dropped events is available as a user-defined status value with the name `user-analytics-oldEventsDropped` in the `apama_status` parameter of the status operation. See also [Monitoring periodic status](/streaming-analytics/analytics-builder/#monitoring-periodic-status) for details about the operation.
+When a model receives an event, it may be dropped if the correlator delivers or processes it too late. See [Input blocks and event timing](/streaming-analytics/analytics-builder/#input-blocks-and-event-timing). Alarms are periodically raised with total number of dropped events and sample of the last dropped event.
 
 All dropped input events are also sent to channel `AnalyticsDroppedEvents`, allowing you to implement your own monitoring of the dropped events. A dropped input event sent to the channel `AnalyticsDroppedEvents` is packaged inside an event of type `apama.analyticsbuilder.DroppedEvent`. This allows you to extract the original dropped event and perform any analysis on it, for example, categorizing the number of dropped events per device. This can be achieved by writing EPL that listens for the `DroppedEvent` events, aggregates by device identifier and/or time, and sends measurements to {{< product-c8y-iot >}} that can be monitored. See also [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
 
@@ -441,7 +438,7 @@ After you have changed a tenant option using a REST request, the correlator will
 <tbody>
   <tr>
     <td><code>numWorkerThreads</code></td>
-    <td>The number of worker threads. The default value is 1. See also <a href="/streaming-analytics/analytics-builder/#configuring-the-concurrency-level">Configuring the concurrency level</a>.</td>
+    <td>The number of worker threads. The default value is 1. See also <a href="/streaming-analytics/analytics-builder/#configuring-the-concurrency-level">Configuring the concurrency level</a>. Note that the number of worker threads cannot be changed for the microservice with multi-tenant support.</td>
   </tr>
   <tr>
     <td><code>retention.virtualDevicesMaxDays</code></td>
