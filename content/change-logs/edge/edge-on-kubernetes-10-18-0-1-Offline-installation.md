@@ -16,4 +16,4 @@ version: 10.18.0.1
 ---
 Edge installation on Kubernetes now offers support for installation in an offline or air-gapped environment. This ensures that the required software, Helm charts and Docker images, are available in the disconnected environment through an [Open Container Initiative](https://opencontainers.org/) (OCI) compliant private registry.
 
-For detailed instructions, refer to [Installing the Edge operator (offline)](https://cumulocity.com/docs/2024/edge-kubernetes/installing-edge-on-k8/#install-operator-offline).
+For detailed instructions, refer to [Installing the Edge operator (offline)](/edge-kubernetes/installing-edge-on-k8/#install-operator-offline).

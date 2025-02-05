@@ -16,4 +16,4 @@ version: 10.18.0.0
 ---
 Using the {{< product-c8y-iot >}} software management feature, you can now remotely manage applications, microservices, and extensions installed on Edge.
 
-For detailed instructions, refer to [Managing software remotely](https://cumulocity.com/docs/2024/edge-kubernetes/k8-edge-connecting-edge-to-cloud/#software-management-docs).
+For detailed instructions, refer to [Managing software remotely](/edge-kubernetes/k8-edge-connecting-edge-to-cloud/#software-management-docs).

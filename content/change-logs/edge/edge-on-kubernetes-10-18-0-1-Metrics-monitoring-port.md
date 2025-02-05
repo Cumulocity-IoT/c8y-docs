@@ -16,4 +16,4 @@ version: 10.18.0.1
 ---
 The Edge operator's Prometheus-compatible metrics port has been changed from 8443 to 3443 due to a conflict with another core component.
 
-For more information on Edge monitoring, refer to [Monitoring](https://cumulocity.com/docs/2024/edge-kubernetes/edge-operations/#monitoring).
+For more information on Edge monitoring, refer to [Monitoring](/edge-kubernetes/edge-operations/#monitoring).

@@ -15,4 +15,4 @@ version: 10.18.0.0
 ---
 {{< product-c8y-iot >}} IoT Edge on Kubernetes has reached General Availability (GA) and is now ready for deployment in production environments.
 
-You can find the documentation for **{{< product-c8y-iot >}} Edge on Kubernetes** at https://cumulocity.com/docs/2024/edge-kubernetes/k8-edge-introduction/.
+Refer to the [{{< product-c8y-iot >}} Edge on Kubernetes](/edge-kubernetes/k8-edge-introduction/) documentation.
