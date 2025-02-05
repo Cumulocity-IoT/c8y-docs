@@ -4,7 +4,7 @@ layout: bundle
 hideLeftMenu: true
 ---
 
-### Overview
+### Overview {#overview}
 
 Gainsight PX is integrated into Cumulocity IoT UI through a JavaScript tag activated after a user logs into the application. This tag initiates Gainsight PX's anonymized tracking. Additionally, the Knowledge Hub and engagements, represented by the little round box at the bottom right corner (known as the Knowledge Hub), are loaded. These features are optional and can be managed from user settings and directly from Gainsight PX.
 
