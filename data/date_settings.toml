@@ -2,6 +2,14 @@ yearly_release = true
 date = 2023-07-01T10:32:39.947Z
 
 [[versions]]
+date = "April 24, 2024"
+version = "10.18.0.0"
+
+[[versions]]
+date = "September 17, 2024"
+version = "10.18.0.1"
+
+[[versions]]
 date = "March 26, 2024"
 version = "2024.0"
 
