@@ -12,7 +12,7 @@ In accordance with GDPR and Cookie Policy regulations, we must inform users abou
 
 ### Configuration {#configuration}
 
-1. Add Gainsight API key to the system options of the management tenant:
+1. Add the Gainsight API key to the system options of the {{< management-tenant >}}:
 
    **PUT {{url}}/tenant/options/configuration/system.gainsight.api.key**
 
