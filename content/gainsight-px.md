@@ -77,7 +77,7 @@ All attributes were added in versions:
 
 #### FAQ for customers {#faq-for-customers}
 
-### Why do you collect user and product analytics?
+##### Why do you collect user and product analytics?
 
 We collect user analytics to enhance and improve our products continually. By understanding how users interact with our products, we can identify areas for improvement, address user pain points, and make informed decisions.
 
