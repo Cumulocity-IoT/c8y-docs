@@ -81,7 +81,7 @@ All attributes were added in versions:
 
 We collect user analytics to enhance and improve our products continually. By understanding how users interact with our products, we can identify areas for improvement, address user pain points, and make informed decisions.
 
-### What data is collected?
+##### What data is collected?
 
 We collect anonymized data related to user interactions with our products. This may include feature usage and navigation patterns. Anonymous tracking doesn't collect any Personal Identifiable Information (PII) such as email addresses or names.
 
