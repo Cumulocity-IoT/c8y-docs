@@ -44,7 +44,7 @@ To obtain an API key, contact the [{{< company-c8y >}} support](/additional-reso
    - Functional cookies - used to track site usage and to process user’s personal data to measure and improve site usability and performance.
 2. If a user clicks **Agree and proceed** on the cookie banner without opening the cookie preferences dialog, both required and functional cookies are accepted.
 3. The cookie banner can be disabled by a tenant for itself and its subtenants via Administration > Enterprise tenant > Branding. In the **Cookie banner** section select **Disable cookie banner**, save and apply the new branding.
-4. A tenant can disable Gainsight PX tracking for the users of his sub tenants from Administration > Subtenants > Tenant custom properties.
+4. A tenant can disable Gainsight PX tracking for the users of its subtenants from Administration > Subtenants > Tenant custom properties.
 5. Users can manage their Gainsight PX tracking preferences from the Edit User dialog. They can choose to opt-out from personalized tracking, which will result in only anonymous (aggregate data) tracking. Additionally, users can opt-out from in-product engagements such as the Knowledge Hub and other interactions, in which case tracking will continue but "user preferences" will be sent to Gainsight PX.
 6. Customers with custom branding will have their cookie banner active by default with the default banner text and link to Cumulocity privacy Policy. Customers can deactivate the cookie banner and, in these cases, Gainsight PX tracking will be disabled.
 7. Tracking can also be disabled using a new application option named “disableTracking”. This option can be included in the public options.
