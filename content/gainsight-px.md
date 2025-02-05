@@ -101,7 +101,7 @@ Yes, you can change your cookie and tracking preferences at any time from your {
 
 ##### How can I learn more about your data practices?
 
-For detailed information about our data and cookie practices, refer to our [Privacy Notice](/legal-notices/privacy-notice/)
+For detailed information about our data and cookie practices, refer to the {{< company-c8y >}} [Privacy Notice](/legal-notices/privacy-notice/).
 
 ##### How can I provide feedback or report issues?
 
