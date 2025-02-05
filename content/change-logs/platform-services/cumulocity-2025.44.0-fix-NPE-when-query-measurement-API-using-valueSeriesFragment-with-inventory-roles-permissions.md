@@ -1,6 +1,6 @@
 ---
 date: '2025-02-04'
-title: Fixed NullPointerException when user was queries Measurement API 
+title: Queries to the Measurement API with the filter valueSeriesFragment no longer result in a NullPointerException
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,6 +14,6 @@ build_artifact:
 ticket: MTM-62347
 version: 2025.44.0
 ---
-When user with inventory roles permission for Api: `Measurement`, fragment: `*` was triggering an query to measurement api,
-using filter `valueSeriesFragment` it resulted in NullPointerException and 500 error code.
-The issue was now solved and filter can be used.
+When users with inventory roles permission for the API `Measurement` and the fragment `*` were triggering a query to the Measurement API
+using the filter `valueSeriesFragment`, this resulted in a NullPointerException and error code 500.
+The issue has been fixed and the filter can be used properly.
