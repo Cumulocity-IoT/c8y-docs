@@ -56,7 +56,7 @@ To obtain a *public-options.zip* file, contact the [{{< company-c8y >}} support]
 9. Custom branding no longer blocks tracking. It only affects user engagement settings and will disable it by default.
 10. If the customer wants to enable only anonymized tracking by default, then follow these instructions:
     - Update existing public-options, where options called functional (in the cookiePreferences) is set to false.
-    - If public-options are not present, upload new public-options with this option is set to false.
+    - If public-options are not present, upload new public-options with this option being set to false.
       Users can still enable sending personal data to the platform by enabling it in the **User** menu.
 
 ### Custom user attributes {#custom-user-attributes}
