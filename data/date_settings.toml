@@ -3,11 +3,11 @@ date = 2023-07-01T10:32:39.947Z
 
 [[versions]]
 date = "March 1, 2024"
-version = "10.18.0.0"
+version = "Edge 10.18.0.0"
 
 [[versions]]
 date = "March 2, 2024"
-version = "10.18.0.1"
+version = "Edge 10.18.0.1"
 
 [[versions]]
 date = "March 26, 2024"
