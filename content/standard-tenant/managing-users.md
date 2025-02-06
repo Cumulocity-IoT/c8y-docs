@@ -140,15 +140,30 @@ If single sign-on is enabled for your tenant, a message will show up which remin
       </table>
 
       For additional information see [User options and settings](/get-familiar-with-the-ui/user-settings).
-
+<br><br>
 
 3. Select the login options for the user.
-	* 	**Two-factor authentication (SMS)** - if selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/authentication/tfa/).
-	* **User must reset password on next login** - if selected, you must provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password) for further information on password reset and strength.  
-	* **Send password reset link as email** - if selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above. This option is only available during user creation.
+
+   If TFA authorization via SMS is enabled for the tenant:
+    * **Two-factor authentication (SMS)** - If selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/authentication/tfa/).
 <br><br>
-4. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing permissions](/standard-tenant/managing-permissions).
-5. Click **Save** to save your settings.
+
+   If TFA authorization via TOTP is enabled for the tenant:
+    * **Two-factor authentication (TOTP)** - If selected, the user must provide TOTP from a third-party authentication application to complete the authentication. For details refer to [Two-factor authentication](/authentication/tfa/).
+    * **Enforce TOTP setup for the user** - If selected, the user must setup TOTP on the first login. For details refer to [Two-factor authentication](/authentication/tfa/).
+<br><br>
+
+4. Select the password options for the user.
+   * **Send password reset link as email** - If selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above. This option is only available during user creation.
+   * **Set password that must be changed on the first login** - If selected, you must provide a password which the user must reset on the next login.
+   * **Set password for the user (no change required)** - If selected, you must provide a password. A password change is not required by the user.
+
+    {{< c8y-admon-info >}}
+While entering the password, the strength of the password is checked. See [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password) for further information on password reset and strength.
+    {{< /c8y-admon-info >}}
+
+5. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing permissions](/standard-tenant/managing-permissions).
+6. Click **Save** to save your settings.
 
 The new user will be added to the user list.
 
