@@ -71,7 +71,7 @@ Customers using older Edge versions should refer to the latest documentation for
 <!---
 image source: https://docs.google.com/spreadsheets/d/1S3sCPPBnLpQq9TJZG6Es5X1YKIzp4dAQw6wRB_sws1k/edit?usp=sharing
 -->
-![Annual upgrade process](../../images/service-terms/edgeannualrelease.png)
+![Edge annual upgrade process](../../images/service-terms/edgeannualrelease.png)
 
 ### Frequently asked questions (FAQ)
 
