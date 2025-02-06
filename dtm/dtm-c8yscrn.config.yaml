@@ -314,9 +314,47 @@ screenshots:
 
   - image: "dtm/custom-property/dtm-property-library-complex-property.png"
     visit: /apps/digital-twin-manager/index.html#/assetproperties
+    tags:
+      - properties
+      - final
     actions:
       - click: $navigator.toggle
-      - click: c8y-properties-library button.c8y-stacked-item:has(> span:contains("Object")):first
+      - click: c8y-properties-library .card-footer .btn-default
+      - type: 
+          selector: c8y-properties-library-manage-property input[type=text]:first
+          value: Gearbox specifications
+      - click:
+          selector: 
+            data-cy: manage-property-complex-property-checkbox
+      - wait: 500
+      - type: 
+          selector: c8y-custom-complex-property .c8y-list__item:first input[type=text]:first
+          value: Power
+      - click: c8y-custom-complex-property .c8y-list__item:first .ng-select 
+      - click: ng-dropdown-panel .ng-option:has(div:contains("Number"))
+      - click:
+          selector: 
+            data-cy: complex-property-collapse-btn-0
+      - click:
+          selector: 
+            data-cy: complex-property-add
+      - wait: 500
+      - type: 
+          selector: c8y-custom-complex-property .c8y-list__item:nth-child(2) input[type=text]:first
+          value: Speed ratio
+      - click: c8y-custom-complex-property .c8y-list__item:nth-child(2) .ng-select 
+      - click: 
+          selector: ng-dropdown-panel .ng-option:has(div:contains("Number"))
+          force: true
+      - highlight: 
+          selector: c8y-properties-library-manage-property c8y-form-group:has(.c8y-switch) > *:not(c8y-messages)
+          border: 
+            outline-offset: 2px
+      - highlight: 
+          selector: c8y-properties-library-manage-property div:has(> pre.pre-scrollable) > *
+          border: 
+            outline-offset: 6px
+      - highlight: c8y-properties-library button.c8y-stacked-item:has(span.label-info:contains("Object")):visible:last
 
   - image: "dtm/custom-property/dtm-property-library-create-property.png"
     visit: /apps/digital-twin-manager/index.html#/assetproperties
