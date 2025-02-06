@@ -8,14 +8,14 @@ To begin, create a new single-node Kubernetes cluster with the Kubernetes distri
 
 A script to install the Edge operator is available at [c8yedge-operator-install.sh](/files/edge-k8s/c8yedge-operator-install.sh).
 
-To install the Edge operator, download and run the script, refer to a sample command below. Enter the version (`-v` option, for example, {{< c8y-edge-current-version >}}.0.0) you want to install, registry hostname (`-r` option) and the registry credentials you received along with the license when prompted. *Use `-h` option to display the usage details.*
+To install the Edge operator, download and run the script, refer to a sample command below. Enter the version (`-v` option, for example, {{< c8y-edge-version >}}) you want to install, registry hostname (`-r` option) and the registry credentials you received along with the license when prompted. *Use `-h` option to display the usage details.*
 
 {{< c8y-admon-info >}}
 If you are installing Edge from a local/private registry, provide the hostname (`-r` option) as <registry-hostname>:<registry-port> and the respective credentials when prompted.
 {{< /c8y-admon-info >}}
 
 ```shell
-curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh -v "{{< c8y-edge-current-version >}}.0.0" -r registry.c8y.io
+curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh -v "{{< c8y-edge-version >}}" -r registry.c8y.io
 ```
 Provide the Edge operator registry credentials in the prompt:
 

@@ -7,7 +7,7 @@ After deploying or updating Edge, if the Edge CR status is `InstallationLoopBack
 
 ```shell
 NAME         DOMAIN NAME     VERSION     STATUS     
-c8yedge      myown.iot.com   {{< c8y-edge-current-version >}}.0.0    InstallLoopBackOff
+c8yedge      myown.iot.com   {{< c8y-edge-version >}}    InstallLoopBackOff
 ```
 
 Describe the Edge CR (cumulocity-iot-edge) with the command `kubectl describe edge c8yedge -n c8yedge`.
@@ -27,7 +27,7 @@ Status:
 Events:
  Type    Reason               Age    From               Message
  ------  ------               ----   ----               -------
- Normal  Installing           8m34s  cumulocityiotedge  installing {{< product-c8y-iot >}} Edge version tagged as {{< c8y-edge-current-version >}}.0.0
+ Normal  Installing           8m34s  cumulocityiotedge  installing {{< product-c8y-iot >}} Edge version tagged as {{< c8y-edge-version >}}
 ……
 ……
  Normal  InstallLoopBackOff   1m00s  cumulocityiotedge  waiting for mongo server to be ready
