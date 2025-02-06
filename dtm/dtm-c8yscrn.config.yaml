@@ -303,6 +303,7 @@ screenshots:
           selector: .modal-footer .btn-primary
           border: 
             outline-offset: 2px
+      - screenshot: "dtm/bulk-import/dtm-bulk-import-import-assets-window.png"
       - fileUpload: assets/turbine.csv
       - wait: 1000
       - click: .modal-footer .btn-primary
