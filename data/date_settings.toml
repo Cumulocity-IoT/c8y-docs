@@ -2,5 +2,13 @@ yearly_release = true
 date = 2023-12-07T10:32:39.947Z
 
 [[versions]]
+date = "March 1, 2024"
+version = "Edge-10.18.0.0"
+
+[[versions]]
+date = "March 2, 2024"
+version = "Edge-10.18.0.1"
+
+[[versions]]
 date = "January 6, 2025"
 version = "2025.0"
