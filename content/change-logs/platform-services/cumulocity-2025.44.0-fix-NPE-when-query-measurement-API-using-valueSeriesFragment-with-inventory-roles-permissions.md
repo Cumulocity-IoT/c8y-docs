@@ -1,5 +1,5 @@
 ---
-date: '2025-02-04'
+date: 
 title: Queries to the Measurement API with the filter valueSeriesFragment no longer result in a NullPointerException
 product_area: Platform services
 change_type:
