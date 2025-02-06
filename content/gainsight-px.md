@@ -6,7 +6,7 @@ hideLeftMenu: true
 
 ### Overview {#overview}
 
-Gainsight PX is integrated into the {{< product-c8y-iot >}} UI through a JavaScript tag activated after a user logs into the application. This tag initiates Gainsight PX's anonymized tracking. Additionally, the Knowledge Hub and engagements, represented by the little round box at the bottom right corner (known as the Knowledge Hub), are loaded. These features are optional and can be managed from user settings and directly from Gainsight PX.
+Gainsight PX is integrated into the {{< product-c8y-iot >}} UI through a JavaScript tag activated after a user logs into the application. This tag initiates Gainsight PX's anonymized tracking. Additionally, the [Knowledge Hub](/get-familiar-with-the-ui/knowledge-hub/) and engagements, represented by the little round box at the bottom right corner, are loaded. These features are optional and can be managed from user settings and directly from Gainsight PX.
 
 In accordance with GDPR and cookies policy regulations, we must inform users about the use of cookies and provide them the option to opt-out from personal data collection. However, users cannot opt-out from anonymized tracking, as {{< company-c8y >}} has established a "legitimate interest" in the context of our legal agreement with the customer or trial user. For more details, refer to the [Privacy Notice](/legal-notices/privacy-notice/).
 
