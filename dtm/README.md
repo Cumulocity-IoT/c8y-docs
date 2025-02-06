@@ -17,8 +17,8 @@ npm install -g cumulocity-cypress
 If running directly against a Cumulocity doc tenant, provide authentication information in `dtm/.env` file
 
 ```bash
-C8Y_ADMIN_USERNAME=admin
-C8Y_ADMIN_PASSWORD=...
+admin_username=admin
+admin_password=...
 ```
 
 and configure the screenshot workflow to login using
