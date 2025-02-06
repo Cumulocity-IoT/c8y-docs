@@ -56,7 +56,9 @@ In the annual deployment model:
 Additional considerations:
 * Bug fixes for annual releases under maintenance are deployed manually, not automatically, allowing for more controlled updates.
 * Due to the accumulated changes in each annual release, these upgrades may take longer to complete and present a potentially higher risk compared to the continuous deployment model.
-
+<!---
+image source: https://docs.google.com/spreadsheets/d/1S3sCPPBnLpQq9TJZG6Es5X1YKIzp4dAQw6wRB_sws1k/edit?usp=sharing
+-->
 ![Annual upgrade process](../../images/service-terms/annualrelease.png)
 
 ### Cumulocity Edge Annual Deployment
