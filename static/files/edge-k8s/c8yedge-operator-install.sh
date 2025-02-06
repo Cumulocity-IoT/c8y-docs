@@ -8,7 +8,7 @@
 #   ENV_VAR=... ./c8yedge-operator-install.sh
 #
 # Example:
-#   Installing latest version (2025.0.0) into 'c8yedge' namespace:
+#   Installing latest version (2025.0.0-beta.0) into 'c8yedge' namespace:
 #     ./c8yedge-operator-install.sh -n 'c8yedge' -u 'edge' -p '*******'
 #           or
 #     C8YEDGE_OPERATOR_NAMESPACE='c8yedge' C8YEDGE_REGISTRY_USERNAME='edge' C8YEDGE_REGISTRY_PASSWORD='*******' ./c8yedge-operator-install.sh
@@ -21,7 +21,7 @@
 #     Namespace in which to install. Will install in 'c8yedge' namespace if not specified.
 #
 #   - C8YEDGE_REGISTRY_HOST
-#     Edge operator registry URI. Points to production registry 'registry.c8y.io' if not specified.
+#     Edge operator registry URI. Points to production registry 'registry.stage.c8y.io' if not specified.
 #    
 #   - C8YEDGE_IMAGE_PULL_POLICY
 #     Configures the ImagePullPolicy for the Edge operator. Can be set to 'Always' or 'IfNotPresent', defaults to 'IfNotPresent'.
@@ -41,7 +41,7 @@ display_usage() {
     echo "  ENV_VAR=... ./c8yedge-operator-install.sh"
     echo ""
     echo "Example:"
-    echo "  Installing latest version (2025.0.0) into 'c8yedge' namespace:"
+    echo "  Installing latest version (2025.0.0-beta.0) into 'c8yedge' namespace:"
     echo "    ./c8yedge-operator-install.sh -n 'c8yedge' -u 'edge' -p '*******'"
     echo "      or"
     echo "  C8YEDGE_OPERATOR_NAMESPACE='c8yedge' C8YEDGE_REGISTRY_USERNAME='edge' C8YEDGE_REGISTRY_PASSWORD='*******' ./c8yedge-operator-install.sh"
@@ -54,7 +54,7 @@ display_usage() {
     echo "    Namespace in which to install. Will install in 'c8yedge' namespace if not specified."
     echo ""
     echo "  - C8YEDGE_REGISTRY_HOST"
-    echo "    Edge operator registry URI. Points to production registry 'registry.c8y.io' if not specified."
+    echo "    Edge operator registry URI. Points to production registry 'registry.stage.c8y.io' if not specified."
     echo ""
     echo "  - C8YEDGE_IMAGE_PULL_POLICY"
     echo "    Configures the ImagePullPolicy for the Edge operator. Can be set to 'Always' or 'IfNotPresent', defaults to 'IfNotPresent'."
@@ -84,7 +84,7 @@ done
 
 # Set defaults if not specified
 if [ -z "$C8YEDGE_OPERATOR_VERSION" ]; then
-    C8YEDGE_OPERATOR_VERSION="2025.0.0"
+    C8YEDGE_OPERATOR_VERSION="2025.0.0-beta.0"
 fi
 
 if [ -z "$C8YEDGE_OPERATOR_NAMESPACE" ]; then
@@ -92,7 +92,7 @@ if [ -z "$C8YEDGE_OPERATOR_NAMESPACE" ]; then
 fi
 
 if [ -z "$C8YEDGE_REGISTRY_HOST" ]; then
-    C8YEDGE_REGISTRY_HOST="registry.c8y.io"
+    C8YEDGE_REGISTRY_HOST="registry.stage.c8y.io"
 fi
 
 if [ -z "$C8YEDGE_IMAGE_PULL_POLICY" ]; then

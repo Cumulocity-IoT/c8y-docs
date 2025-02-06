@@ -6,7 +6,7 @@ layout: redirect
 
 Frequently, portions of a data center might not have access to the Internet, even via proxy servers. You can still install Edge in such an environment, but you must make the required software, Helm Charts and Docker images, available to the disconnected environment through an [Open Container Initiative](https://opencontainers.org/) (OCI) compliant private registry.
 
-To enable this, you need to have an OCI compliant registry available in the network which is accessible to the Kubernetes cluster in which you intend to install Edge. You would also need a workstation that has full internet access, to pull the required software from the [{{< company-c8y >}} registry](https://registry.c8y.io/) and push them into the private registry installed or available in the restricted network.
+To enable this, you need to have an OCI compliant registry available in the network which is accessible to the Kubernetes cluster in which you intend to install Edge. You would also need a workstation that has full internet access, to pull the required software from the [{{< company-c8y >}} registry](https://registry.stage.c8y.io/) and push them into the private registry installed or available in the restricted network.
 
 ### Installing a private registry
 Any OCI compliant registry can be used as a private registry, however, the Edge installation is tested with [Harbor](https://goharbor.io/) and [Nexus Repository OSS](https://www.sonatype.com/products/sonatype-nexus-oss).
@@ -67,7 +67,7 @@ You should restart the container runtime and Kubernetes cluster after running th
 {{< /c8y-admon-important >}}
 
 ### Download and publish required software to the private registry
-This section outlines the steps to download the required software from the [{{< company-c8y >}} registry](https://registry.c8y.io/) and publish them to the private registry.
+This section outlines the steps to download the required software from the [{{< company-c8y >}} registry](https://registry.stage.c8y.io/) and publish them to the private registry.
 
 For this you need a workstation with full internet access to download the required software from the remote registry and push them into the private registry. Make sure this workstation meets the following prerequisites.
 
@@ -87,7 +87,7 @@ pip install --force-reinstall {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge
 ```
 
 #### Run registry sync script
-To download the required software from the [{{< company-c8y >}} registry](https://registry.c8y.io/) and publish them to the private registry, run the command below:
+To download the required software from the [{{< company-c8y >}} registry](https://registry.stage.c8y.io/) and publish them to the private registry, run the command below:
 
 {{< c8y-admon-info >}}
 If your private registry is a Harbor registry, you need to pass an extra option `--target-registry-type=HARBOR` to the instruct the script to create the required projects before publishing the required software to it.
@@ -103,7 +103,7 @@ PRIVATE_REGISTRY_HOST="<PRIVATE-REGISTRY-HOSTNAME>:<PRIVATE-REGISTRY-PORT>"  # C
 PRIVATE_REGISTRY_USERNAME="<PRIVATE-REGISTRY-USER>"                          # Change it with the credentials to access your private registry
 PRIVATE_REGISTRY_PASSWORD="<PRIVATE-REGISTRY-PASSWORD>"                      # Change it with the credentials to access your private registry
 
-c8yedge_registry_sync sync -v {{< c8y-edge-version >}} -sr registry.c8y.io -sru "${EDGE_REGISTRY_USER}" -srp "${EDGE_REGISTRY_PASSWORD}" -tr "${PRIVATE_REGISTRY_HOST}" -tru "${PRIVATE_REGISTRY_USERNAME}" -trp "${PRIVATE_REGISTRY_PASSWORD}" --dryrun False
+c8yedge_registry_sync sync -v {{< c8y-edge-version >}} -sr registry.stage.c8y.io -sru "${EDGE_REGISTRY_USER}" -srp "${EDGE_REGISTRY_PASSWORD}" -tr "${PRIVATE_REGISTRY_HOST}" -tru "${PRIVATE_REGISTRY_USERNAME}" -trp "${PRIVATE_REGISTRY_PASSWORD}" --dryrun False
 ```
 
 {{< c8y-admon-info >}}

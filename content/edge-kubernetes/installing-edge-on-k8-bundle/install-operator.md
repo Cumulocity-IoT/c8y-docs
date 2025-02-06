@@ -15,7 +15,7 @@ If you are installing Edge from a local/private registry, provide the hostname (
 {{< /c8y-admon-info >}}
 
 ```shell
-curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh -v "{{< c8y-edge-version >}}" -r registry.c8y.io
+curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh -v "{{< c8y-edge-version >}}" -r registry.stage.c8y.io
 ```
 Provide the Edge operator registry credentials in the prompt:
 

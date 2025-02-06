@@ -3,7 +3,7 @@
 ########################################################################################################################
 ---
 ##
-## This Custom Resource deploys C8y Edge version 2025.0.0 named 'c8yedge' 
+## This Custom Resource deploys C8y Edge version 2025.0.0-beta.0 named 'c8yedge' 
 ## accessible at 'https://myown.iot.com' URL with self-signed certificates.
 ##
 
@@ -13,7 +13,7 @@ metadata:
   name: c8yedge						                                        
   namespace: c8yedge                                                        
 spec:
-  version: "2025.0.0"                                                       
+  version: "2025.0.0-beta.0"                                                       
   licenseKey: aacaffe661936cf13bd297f1c27db66405ca639b48e22b62b37c0090f1b521b8f4dd9edb4fed829b1a12db760a707012ba2329e503453d32c4baaa610da38df3
 
   company: IoT Company                                                      
