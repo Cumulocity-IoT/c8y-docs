@@ -26,7 +26,7 @@ Events:
  Normal    Installing                   8m34s  cumulocityiotedge  installing {{< product-c8y-iot >}} Edge version tagged as {{< c8y-edge-version >}}
 ……
 ……
- Normal    Ready                        1m00s  cumulocityiotedge  {{< product-c8y-iot >}} Edge installation is complete, and it's now running version {{< c8y-edge-version >}}-XXXX
+ Normal    Ready                        1m00s  cumulocityiotedge  {{< product-c8y-iot >}} Edge installation is complete, and it's now running version {{< c8y-edge-version >}}
  Warning   FailedToRegisterCloudDevice  0m30s  cumulocityiotedge  Device failed to connect to <cloud tenant domain>, you might not have uploaded the device certificate to Cumulocity
 ```
 Possible reasons:

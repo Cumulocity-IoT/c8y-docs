@@ -57,7 +57,7 @@ Status:
   Deployed Generation:  1
   Last Deployed Time:  2025-02-04T00:00:01Z
   State:               Ready
-  Version:             {{< c8y-edge-version >}}-XXXX
+  Version:             {{< c8y-edge-version >}}
 
   Help Commands:
     Download Logs:   
@@ -85,6 +85,6 @@ Events:
 …………
   Normal   Installing        2m     cumulocityiotedge  finished installing thin-edge
 …………
-  Normal   Ready             1m     cumulocityiotedge  {{< product-c8y-iot >}} Edge installation is complete, and it's now running version {{< c8y-edge-version >}}-XXXX
+  Normal   Ready             1m     cumulocityiotedge  {{< product-c8y-iot >}} Edge installation is complete, and it's now running version {{< c8y-edge-version >}}
 ```
 Before you continue, wait for the Edge CR status to reach the **Ready** state.
