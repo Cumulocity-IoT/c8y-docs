@@ -32,7 +32,7 @@ To obtain an API key, contact the [{{< company-c8y >}} support](/additional-reso
    The cookie banner configuration operates using the same mechanism as application branding. Upload the **public-options.zip**, which contains the cookie banner configuration, to the {{< management-tenant >}} (Administration > Own applications). The ZIP archive comprises a JSON file that defines the cookie banner title, text, link to the privacy policy page, and the cookie description. Anonymized tracking is activated by default for all tenants and users as a component of the required cookies. If users opt out of the functional cookies, only the anonymized tracking remains enabled.
 
 {{< c8y-admon-info >}}
-To obtain a public-options.zip file, contact the [{{< company-c8y >}} support](/additional-resources/contacting-support/).
+To obtain a *public-options.zip* file, contact the [{{< company-c8y >}} support](/additional-resources/contacting-support/).
 {{< /c8y-admon-info >}}
 
 ### Limitations {#limitations}
