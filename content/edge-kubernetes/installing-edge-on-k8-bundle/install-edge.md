@@ -45,7 +45,7 @@ Metadata:
   Generation:          1
 
 Spec:
-  Version:             {{< c8y-edge-current-version >}}.0.0
+  Version:             {{< c8y-edge-version >}}
   License Key:         ***************
   Company:             IoT Company
   Domain:              myown.iot.com
@@ -57,7 +57,7 @@ Status:
   Deployed Generation:  1
   Last Deployed Time:  2025-02-04T00:00:01Z
   State:               Ready
-  Version:             {{< c8y-edge-current-version >}}.0.0-XXXX
+  Version:             {{< c8y-edge-version >}}
 
   Help Commands:
     Download Logs:   
@@ -71,7 +71,7 @@ A sample set of installation events:
 Events:
   Type     Reason            Age    From               Message
   ----     ------            ----   ----               -------
-  Normal   Installing        15m    cumulocityiotedge  installing {{< product-c8y-iot >}} Edge version tagged as {{< c8y-edge-current-version >}}.0.0
+  Normal   Installing        15m    cumulocityiotedge  installing {{< product-c8y-iot >}} Edge version tagged as {{< c8y-edge-version >}}
 …………
 …………
   Normal   Installing        12m    cumulocityiotedge  finished installing mongo server
@@ -85,6 +85,6 @@ Events:
 …………
   Normal   Installing        2m     cumulocityiotedge  finished installing thin-edge
 …………
-  Normal   Ready             1m     cumulocityiotedge  {{< product-c8y-iot >}} Edge installation is complete, and it's now running version {{< c8y-edge-current-version >}}.0.0-XXXX
+  Normal   Ready             1m     cumulocityiotedge  {{< product-c8y-iot >}} Edge installation is complete, and it's now running version {{< c8y-edge-version >}}
 ```
 Before you continue, wait for the Edge CR status to reach the **Ready** state.

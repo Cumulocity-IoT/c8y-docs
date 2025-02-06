@@ -12,7 +12,7 @@ For this example, assume that Edge is deployed using the [c8yedge-sample.yaml](/
 
 ### Upgrading from Edge version 10.18
 
-Before upgrading Edge to `{{< c8y-edge-current-version >}}`, run the following command to patch the `c8yedge-operator-manager-role` ClusterRole with the necessary permissions:
+Before upgrading Edge to `{{< c8y-edge-version-major >}}`, run the following command to patch the `c8yedge-operator-manager-role` ClusterRole with the necessary permissions:
 
 ```bash
 kubectl patch clusterrole c8yedge-operator-manager-role --type='json' --patch-file {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-cluster-role-patch-1018.yaml
@@ -21,7 +21,7 @@ This step is required to ensure the Edge operator can properly enforce validatio
 
 #### Why this change is needed?
 
-The Edge operator version `{{< c8y-edge-current-version >}}` leverages the **admission webhooks** feature of Kubernetes to enhance validation and enforce default configurations for the Edge CR.
+The Edge operator version `{{< c8y-edge-version-major >}}` leverages the **admission webhooks** feature of Kubernetes to enhance validation and enforce default configurations for the Edge CR.
 - The [validating admission webhook](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#validatingadmissionwebhook) ensures that any changes to the Edge CR comply with required constraints.
 - The [mutating admission webhook](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#mutatingadmissionwebhook) automatically applies custom default values where needed.
 
@@ -29,7 +29,7 @@ The Edge operator to leverage the **admission webhooks** requires additional per
 
 ### Starting the upgrade {#starting-the-upgrade}
 
-To upgrade the Edge deployment, change the `spec.version` field in the Edge CR file to the appropriate version. For example to `{{< c8y-edge-current-version >}}.0.0`.
+To upgrade the Edge deployment, change the `spec.version` field in the Edge CR file to the appropriate version. For example to `{{< c8y-edge-version >}}`.
 
 Save the file and use the command below to apply the changes:
 
