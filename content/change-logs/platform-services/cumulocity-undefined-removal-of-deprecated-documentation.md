@@ -1,5 +1,5 @@
 ---
-date: 2025-01-28
+date: 2025-02-03
 title: Removal of documentation for deprecated releases
 change_type:
   - value: change-inv-3bw8e
