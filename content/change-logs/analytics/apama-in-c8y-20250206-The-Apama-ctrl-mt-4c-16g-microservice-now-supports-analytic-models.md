@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAB-4623
-version: 26.16.0
+version: 25.331.0
 ---
 The **Apama-ctrl-mt-4c-16g** now supports Analytic models. The **Analytics Builder** page is shown for tenants subscribed to the microservice, allowing users to create, deploy and manage analytic models.
