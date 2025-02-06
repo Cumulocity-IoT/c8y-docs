@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add validation to firmware, software and configuration forms to disallow values with only whitespaces
+title: Submitting values with only whitespaces in firmware, software and configuration forms no longer allowed
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4325
 version: 1021.36.1
 ---
-In Device management, it was possible to enter values (e.g. Description, Version, URL, etc.) consisting only of whitespaces for firmware, software and configuration assets in the corresponding repositories. To prevent this, additional validation has been added to the respective forms which disallows submitting such names. This change improves data quality and consistency for newly created firmware, software and configuration assets.
+In the Device management application, it previously was possible to enter values (for example, in the **Description**, **Version**, **URL** fields) consisting only of whitespaces for firmware, software and configuration items in the corresponding repositories. To prevent this, additional validation has been added to the respective forms which disallows submitting such names. This change improves data quality and consistency for newly created firmware, software and configuration items.
