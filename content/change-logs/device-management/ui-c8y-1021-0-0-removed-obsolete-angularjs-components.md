@@ -14,7 +14,7 @@ build_artifact:
 ticket: DM-3707
 version: 1021.0.0
 ---
-As part of our ongoing improvements , we have in a previous version removed several legacy components related to **configuration management, device list handling, and column configuration**. These changes impact outdated services, directives, and templates that have either been **migrated to Angular or deprecated** due to lack of usage.
+As part of our ongoing improvement efforts, in a previous version, we have removed several legacy components related to configuration management, device list handling, and column configuration. These changes impact outdated services, directives, and templates that have either been migrated to Angular or deprecated due to lack of usage.
 
 * **Configuration Repository**: The entire module, including its service, controllers, tests, and UI templates, has been **removed** – now **moved to Angular**.
 * **Configurable Device List Columns**: Services, constants, directives, and modal components related to column customization have been **removed** – now **moved to Angular**.
