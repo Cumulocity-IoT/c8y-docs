@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-62347
-version: 2025.44.0
+version: 10.18.540.279
 ---
 When users with inventory roles permission for the API `Measurement` and the fragment `*` were triggering a query to the Measurement API
 using the filter `valueSeriesFragment`, this resulted in a NullPointerException and error code 500.
