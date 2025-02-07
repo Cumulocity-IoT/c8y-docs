@@ -3,8 +3,8 @@ date: 2024-03-28
 title: Alarms redesign and improvements
 product_area: Application enablement & solutions
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+  - value: change-QHu1GdukP
+    label: Feature
 component:
   - value: component-YbYJ3gLU_
     label: Web SDK
@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-52611
 version: 1020.0.0
 ---
-In the upcoming version, a redesign of the alarms feature will be introduced with both visual and functional enhancements.
+A redesign of the alarms feature was introduced with both visual and functional enhancements.
 
 **Breaking change**
 

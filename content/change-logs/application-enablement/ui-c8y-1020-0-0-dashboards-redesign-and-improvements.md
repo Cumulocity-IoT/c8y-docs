@@ -1,10 +1,10 @@
 ---
-date: 2024-03-28
+date: 2024-05-23
 title: Dashboards redesign and improvements
 product_area: Application enablement & solutions
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+  - value: change-QHu1GdukP
+    label: Feature
 component:
   - value: component-YbYJ3gLU_
     label: Web SDK
@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-56466
 version: 1020.0.0
 ---
-In the upcoming version, we will introduce redesigned dashboards with both visual and functional enhancements as well as new functionalities.
+The redesigned dashboards with both visual and functional enhancements as well as new functionalities has been implemented:
 
 **Visual and UX enhancements**:
 
