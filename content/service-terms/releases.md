@@ -67,7 +67,7 @@ image source: https://docs.google.com/spreadsheets/d/1S3sCPPBnLpQq9TJZG6Es5X1YKI
 
 Unlike the standard {{< product-c8y-iot >}} annual deployment, {{< product-c8y-iot >}} Edge does not include a release candidate phase. Customers are expected to adopt the general availability release directly, ensuring they perform necessary validation in their environments before deployment.
 
-Customers using older Edge versions should refer to the latest documentation for migration guidance. Updates to the documentation will be made available in the Cumulocity Edge documentation portal.
+Customers using older Edge versions should refer to the latest documentation for migration guidance. Updates to the documentation will be made available in the {{< product-c8y-iot >}} Edge documentation.
 <!---
 image source: https://docs.google.com/spreadsheets/d/1S3sCPPBnLpQq9TJZG6Es5X1YKIzp4dAQw6wRB_sws1k/edit?usp=sharing
 -->
