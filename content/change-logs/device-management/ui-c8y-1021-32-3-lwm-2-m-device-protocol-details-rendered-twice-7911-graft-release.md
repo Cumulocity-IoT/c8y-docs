@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-02-06'
 title: Fixed duplicate rendering of LWM2M device protocol details
 product_area: Device management & connectivity
 change_type:
