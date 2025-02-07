@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-56466
 version: 1020.0.0
 ---
-The redesigned dashboards with both visual and functional enhancements as well as new functionalities has been implemented:
+Redesigned dashboards with both visual and functional enhancements as well as new functionalities have been implemented:
 
 **Visual and UX enhancements**:
 
