@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-61873
-version: 20.25.37.0
+version: 2025.37.0
 ---
 Previously, when retrieving the [total number of alarms](https://cumulocity.com/api/core/#operation/getAlarmCollectionCountResource) 
 the `type` parameter could only take a single value, despite the documentation stating otherwise. This issue has been fixed.
