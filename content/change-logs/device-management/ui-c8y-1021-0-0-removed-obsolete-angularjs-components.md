@@ -19,6 +19,6 @@ As part of our ongoing improvement efforts, in a previous version, we have remov
 * **Configuration Repository**: The entire module, including its service, controllers, tests, and UI templates, has been **removed** – now **moved to Angular**.
 * **Configurable Device List Columns**: Services, constants, directives, and modal components related to column customization have been **removed** – now **moved to Angular**.
 * **Device List Handling**: Controllers, directives, and configuration files related to device listings have been **removed** – now **moved to Angular**.
-* **Device Details & Availability**: Several templates and directives managing **device details, availability, group selection, firmware, hardware, and network information** were **removed** – **no longer used**.
+* **Device Details & Availability**: Several templates and directives managing device details, availability, group selection, firmware, hardware, and network information have been **removed** – **no longer used**.
 
 If you were relying on any of the removed components, please migrate to the new **Angular-based** solutions.
