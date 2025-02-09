@@ -61,9 +61,9 @@ image source: https://docs.google.com/spreadsheets/d/1S3sCPPBnLpQq9TJZG6Es5X1YKI
 -->
 ![Annual upgrade process](../../images/service-terms/annualrelease.png)
 
-### Cumulocity Edge annual deployment
+### Cumulocity Edge annual release cycle
 
-{{< product-c8y-iot >}} Edge follows an annual deployment cycle, which occurs one month later than the [{{< product-c8y-iot >}} annual deployment](/service-terms/releases/#annual-deployment). This ensures alignment with broader system updates while providing additional time for Edge-specific testing and stability improvements.
+{{< product-c8y-iot >}} Edge follows an annual release cycle, which occurs one month later than the [{{< product-c8y-iot >}} annual deployment](/service-terms/releases/#annual-deployment). This ensures alignment with broader system updates while providing additional time for Edge-specific testing and stability improvements.
 
 Unlike the standard {{< product-c8y-iot >}} annual deployment, {{< product-c8y-iot >}} Edge does not include a release candidate phase. Customers are expected to adopt the general availability release directly, ensuring they perform necessary validation in their environments before deployment.
 
