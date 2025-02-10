@@ -26,7 +26,7 @@ Platform platform = new PlatformImpl("https://demos.cumulocity.com", CumulocityB
 
 If you use the Java client for developing an application, you must register an application key (through [Managing applications](/standard-tenant/ecosystem/#managing-applications) in the {{< product-c8y-iot >}} Administration application, or through the [Application API](https://{{< domain-c8y >}}/api/core/#tag/Application-API)).
 
-For testing purposes, every tenant is subscribed to the demo application key "uL27no8nhvLlYmW1JIK1CA==". The Platform is then initialized like this:
+For testing purposes, every tenant is subscribed to the demo application key "uL27no8nhvLlYmW1JIK1CA==". The platform is then initialized like this:
 
 ```java
 new PlatformImpl("<URL>", "<TENANT_ID>", "<USERNAME>", "<PASSWORD>", "<APPLICATION_KEY>");
