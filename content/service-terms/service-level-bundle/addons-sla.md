@@ -64,16 +64,43 @@ Customer acknowledges the following limitations and constraints in using Service
 * **Production environments:** 99.90% availability
 * **Non-production environments:** 98.50% availability
 
-For VPN services, {{< company-c8y >}} monitors the availability according to the VPN state (up, down) of the employed hyperscaler.
+{{< company-c8y >}} monitors the availability according to the state (up, down) reported by the employed hyperscaler.
 
 #### Support
 
 * **Customer Support:** Support is provided in accordance with the customer’s selected support plan (Bronze, Silver, or Gold), as detailed in a separate support agreement.
 * **Pre-Production Environments:** For pre-production environments, Bronze-level support is generally provided, with support tickets handled at standard priority.
 
-Cumulocity will not be able to provide logs or packet captures from the VPN or leased line data or signalling.
+{{< company-c8y >}} will not be able to provide logs or packet captures from the VPN or leased line data or signalling.
 
 #### Maintenance
 
 * Maintenance information from the used hyperscaler will be provided to the customer in due course, flagging potential requirements for maintenance windows
 
+### Backup replication
+
+#### Service description
+
+The backup replication service provides automated replication of your cloud virtual machine backups to a secondary geographical region for disaster recovery and business continuity.  {{< company-c8y >}} configures and manages the process, ensuring your backups are securely copied and readily available in another region should your primary region experience an outage. For Amazon Web Services, this includes setup of cross-region copy mechanisms and lifecycle management. For Azure, we leverage Azure Site Recovery or similar services for consistent replication. The service optionally includes testing to validate recoverability.
+
+#### Service features
+
+Key features include:
+
+* **Automated Replication**: Automatically copies your virtual machine backups to a secondary geographical region.
+* **Cross-Platform Support**: Works with both AWS and Azure
+* **Disaster Recovery & Business Continuity**: Enables rapid recovery of your critical systems in a different region in case of a primary region outage.
+* **Secure Copying**: Ensures your backups are transferred and stored securely in the secondary region.
+* **Lifecycle Management**: Manages the lifecycle of your replicated backups, including retention policies and deletion of outdated backups.
+
+#### Limitations and constraints
+
+The second region is selected by {{< company-c8y >}}.
+
+#### Availability
+
+The following SLA are valid for the service
+
+* Data durability: 99,999999999%
+
+RTO and RPO are [the same as for non-replicated backup](/service-terms/service-level/#service-features).
