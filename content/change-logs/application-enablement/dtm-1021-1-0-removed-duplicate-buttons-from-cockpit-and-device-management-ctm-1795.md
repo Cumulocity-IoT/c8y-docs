@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1782,CTM-1795"
 version: "1021.1.0"
 ---
-Previously, in Device Management, there were two **Home** buttons displayed. In the Cockpit application, clicking on any asset resulted in a duplicate **Add Dashboard** button. These issues have now been fixed to avoid confusion for users.
+Fixed a user interface issue where navigation elements appeared twice after installing the Asset Properties widget plugin. This issue caused duplicate menu items, such as "Add Dashboard" in the Cockpit application and "Home" in Device Management. The fix ensures navigation elements appear only once, improving the user interface clarity and navigation experience.
