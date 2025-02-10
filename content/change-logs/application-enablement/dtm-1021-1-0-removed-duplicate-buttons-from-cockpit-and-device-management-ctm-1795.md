@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Removed duplicate buttons from Cockpit and Device Management"
+title: "Fixed an issue where navigation elements were duplicated when using the official plugin: Asset Properties widget "
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
