@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Clicking on simulatorm alarms should not change context. (#8114) [GRAFT][release/cd] (#8203)
+title: Clicking on alarms in the Simulator page no longer redirects to the Alarms page
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
