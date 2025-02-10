@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-02-06'
 title: Fixed incorrect markup in the list display control
 product_area: Application enablement & solutions
 change_type:
