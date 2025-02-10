@@ -285,7 +285,7 @@ The following is an example of the status operation data that is published by {{
 
 #### Monitoring dropped events {#monitoring-dropped-events}
 
-When a model receives an event, it may be dropped if the correlator delivers or processes it too late. See [Input blocks and event timing](/streaming-analytics/analytics-builder/#input-blocks-and-event-timing). Alarms are periodically raised with total number of dropped events and sample of the last dropped event.
+When a model receives an event, it may be dropped if the correlator delivers or processes it too late. See [Input blocks and event timing](/streaming-analytics/analytics-builder/#input-blocks-and-event-timing). Alarms are periodically raised with total number of dropped events and sample of the last dropped event. See [Analytics Builder dropped events](/streaming-analytics/troubleshooting/#analytics-builder-dropped-events) for information on alarms.
 
 All dropped input events are also sent to channel `AnalyticsDroppedEvents`, allowing you to implement your own monitoring of the dropped events. A dropped input event sent to the channel `AnalyticsDroppedEvents` is packaged inside an event of type `apama.analyticsbuilder.DroppedEvent`. This allows you to extract the original dropped event and perform any analysis on it, for example, categorizing the number of dropped events per device. This can be achieved by writing EPL that listens for the `DroppedEvent` events, aggregates by device identifier and/or time, and sends measurements to {{< product-c8y-iot >}} that can be monitored. See also [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
 
