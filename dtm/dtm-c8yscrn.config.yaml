@@ -18,10 +18,6 @@ global:
     pageLoad: 20000
   
   highlightStyle: 
-    outline: 3px
-    outline-style: solid
-    outline-offset: -3px
-    outline-color: "#FF9300"
     z-index: 9999
 
 selectors:
@@ -41,14 +37,11 @@ selectors:
 
   - $unfocus: c8y-header-bar .app-view
 
-  - $mySelector: c8y-tree-view-root-node c8y-tree-view-node .c8y-tree-view-node__header__collapse:first
-
 screenshots:
   - image: "dtm/asset-type/dtm-asset-type-export.png"
     visit: "/apps/digital-twin-manager/index.html#/assetmodels"
     tags:
       - asset-type
-      - final
     actions:
       - click: $navigator.toggle
       - click:
@@ -62,13 +55,16 @@ screenshots:
       - click:
           selector: ".expanded .c8y-checkbox input:first"
           force: true
-      - highlight: $mySelector
+      - highlight: .bottom-drawer c8y-tree-view-root-node .c8y-tree-view-node__header__collapse:first
+      - highlight:
+          selector: .bottom-drawer .card-footer .btn-primary
+          border:
+            outline-offset: 2px
 
   - image: "dtm/asset-type/dtm-asset-type-import.png"
     visit: "/apps/digital-twin-manager/index.html#/assetmodels"
     tags:
       - asset-type
-      - final
     actions:
       - click:
           data-cy: import-asset-models-btn
@@ -93,17 +89,15 @@ screenshots:
     visit: "/apps/digital-twin-manager/index.html#/assetmodels"
     tags:
       - asset-type
-      - final
     actions:
-      - wait: 1000
-      - highlight: $navbuttons.all
-      - highlight: .navigatorContent > :nth-child(4) .link:has(.dlt-c8y-icon-cog, .c8y-icon-enterprise)
+      - highlight:
+          - $navbuttons.all
+          - .navigatorContent > :nth-child(4) .link:has(.dlt-c8y-icon-cog, .c8y-icon-enterprise)
 
   - image: "dtm/assets/dtm-assets-view-assets.png"
     visit: "/apps/digital-twin-manager/index.html#/assets"
     tags:
       - assets
-      - final
     actions:
       - click: $navigator.configuration.slot
       - click: 
@@ -119,20 +113,22 @@ screenshots:
 
   - image: "dtm/assets/dtm-assets-asset-hierarchy.png"
     visit: "/apps/digital-twin-manager/index.html#/assets"
+    tags:
+      - assets
     actions:
       - click: $navigator.toggle
       - click: $treeview.collapseButton.first
       - click: .collapse .c8y-checkbox:first
-      - highlight:  $treeview.collapseButton.first
-      - highlight: c8y-tree-view-node:has(.collapse-btn:visible:first) button.dropdown-toggle:first
-      - highlight: .table-data-grid-header-bulk-actions .btnbar
-      - highlight: c8y-action-bar .btn:has(.dlt-c8y-icon-plus-circle)
+      - highlight:  
+          - $treeview.collapseButton.first
+          - c8y-tree-view-node:has(.collapse-btn:visible:first) button.dropdown-toggle:first
+          - .table-data-grid-header-bulk-actions .btnbar
+          - c8y-action-bar .btn:has(.dlt-c8y-icon-plus-circle)
 
   - image: "dtm/assets/dtm-assets-subassets-page.png"
     visit: "/apps/digital-twin-manager/index.html#/assets"
     tags: 
       - assets
-      - final
     actions:
       - click: $navigator.toggle
       - click: $treeview.node.withsubnodes a.btn-clean
@@ -143,7 +139,6 @@ screenshots:
     visit: "/apps/digital-twin-manager/index.html#/assets"
     tags:
       - assets
-      - final
     actions:
       - click: $navigator.toggle
       - click:
@@ -166,35 +161,31 @@ screenshots:
     visit: "/apps/digital-twin-manager/index.html#/assets"
     tags:
       - assets
-      - final
     actions:
       - click: c8y-tree-view-node .collapse-btn:visible:first
       - click: c8y-tree-view-node:has(.collapse-btn:visible:first) div[role=group] .c8y-checkbox:first
       - highlight:
-          selector: c8y-tree-view-node:has(.collapse-btn:visible:first) div[role=group] .c8y-checkbox:first
-          border:
-            outline-offset: 2px
-      - highlight:
-          selector: c8y-tree-view-node:has(.collapse-btn:visible:first) div[role=group] .text-truncate:has(.label-info):first
-          border:
-            outline-offset: 2px
+          - selector: c8y-tree-view-node:has(.collapse-btn:visible:first) div[role=group] .c8y-checkbox:first
+            border:
+              outline-offset: 2px
+          - selector: c8y-tree-view-node:has(.collapse-btn:visible:first) div[role=group] .text-truncate:has(.label-info):first
+            border:
+              outline-offset: 2px
       - highlight: .table-data-grid-header-bulk-actions .btnbar button:has(.dlt-c8y-icon-group)
       - click: .table-data-grid-header-bulk-actions .btnbar button:first
       - highlight:
-          selector: c8y-move-assets-modal .modal-footer button
-          border:
-            outline-offset: 6px
-      - highlight:
-          selector: c8y-move-assets-modal .modal-inner-scroll .text-muted
-          border:
-            outline-offset: 2px
+          - selector: c8y-move-assets-modal .modal-footer button
+            border:
+              outline-offset: 6px
+          - selector: c8y-move-assets-modal .modal-inner-scroll .text-muted
+            border:
+              outline-offset: 2px
 
   - image: "dtm/assets/dtm-assets-confirmation-page.png"
     visit: "/apps/digital-twin-manager/index.html#/assets"
     scrollBehavior: false
     tags:
       - assets
-      - final
     actions:
       - click: $navigator.toggle
       - click: c8y-action-bar button:has(.dlt-c8y-icon-plus-circle)
@@ -270,7 +261,6 @@ screenshots:
     visit: "/apps/digital-twin-manager/index.html#/assets"
     tags:
       - assets
-      - final
     actions:
       - click: $navigator.toggle
       - click: $treeview.node.withsubnodes .btn-clean
@@ -288,14 +278,8 @@ screenshots:
     visit: "/apps/digital-twin-manager/index.html#/assets"
     tags:
       - bulk-import
-      - final
     actions: 
       - click: $navigator.configuration.slot
-      - highlight: 
-          selector: .navbar-right .btn:has(.dlt-c8y-icon-import)
-          border: 
-            outline-offset: -2px
-      - highlight: $navigator.assets.slot
       - click: .navbar-right .btn:has(.dlt-c8y-icon-import)
       - click: .modal-content .input-group ng-select
       - click: ng-dropdown-panel .ng-option:first
@@ -308,24 +292,31 @@ screenshots:
       - wait: 1000
       - click: .modal-footer .btn-primary
       - wait: 1000
+      - highlight: 
+          - $navigator.assets.slot
+          - selector: .navbar-right .btn:has(.dlt-c8y-icon-import)
+            border: 
+              outline-offset: -2px
       - screenshot: 
           path: "dtm/bulk-import/dtm-bulk-import-failed-asset-imports"
           selector: .modal-content
 
   - image: "dtm/custom-property/dtm-property-library-complex-property.png"
     visit: /apps/digital-twin-manager/index.html#/assetproperties
+    only: true
     tags:
       - properties
-      - final
     actions:
       - click: $navigator.toggle
       - click: c8y-properties-library .card-footer .btn-default
       - type: 
-          selector: c8y-properties-library-manage-property input[type=text]:first
-          value: Gearbox specifications
+          selector: c8y-properties-library-manage-property
+          clear: false
+          value: ["Gearbox specifications"]
       - click:
           selector: 
             data-cy: manage-property-complex-property-checkbox
+          force: true
       - wait: 500
       - type: 
           selector: c8y-custom-complex-property .c8y-list__item:first input[type=text]:first
@@ -360,7 +351,6 @@ screenshots:
     visit: /apps/digital-twin-manager/index.html#/assetproperties
     tags:
       - properties
-      - final
     actions:
       - click: c8y-properties-library .split-view__list .card-footer .btn-default
       - highlight: 
@@ -397,7 +387,6 @@ screenshots:
     visit: /apps/digital-twin-manager/index.html#/assetproperties
     tags:
       - properties
-      - final
     actions: 
       - click: $navigator.toggle
       - click: "[data-cy=export-properties-btn]"
@@ -421,7 +410,6 @@ screenshots:
     visit: /apps/digital-twin-manager/index.html#/assetproperties
     tags:
       - properties
-      - final
     actions: 
       - click: $navigator.toggle
       - click: "[data-cy=import-asset-properties-btn]"
