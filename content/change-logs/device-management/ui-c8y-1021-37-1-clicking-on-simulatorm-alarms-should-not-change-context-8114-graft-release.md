@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62195
 version: 1021.37.1
 ---
-Clicking on simulatorm alarms should not change context. (#8114) [GRAFT][release/cd] (#8203)
+In the **Simulator** page, clicking on alarms previously redirected users to the **Alarms** page instead of showing the alarms in the **Alarms** tab of the **Simulator** page. This behavior has now been corrected. 
