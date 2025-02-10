@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62195
 version: 1021.22.30
 ---
-In the Cumulocity IoT simulator page, clicking on alarms previously caused the application context to change unexpectedly. Users were redirected to the alarms page instead of showing the alarms in the simulator alarms tab. This behavior has now been corrected. This fix ensures a more consistent user experience within the simulator tool. This change improves the usability and predictability of the simulator for users working with alarms in their simulated IoT scenarios.
+In the **Simulator** page, clicking on alarms previously redirected users to the **Alarms** page instead of showing the alarms in the **Alarms** tab of the **Simulator** page. This behavior has now been corrected. 
