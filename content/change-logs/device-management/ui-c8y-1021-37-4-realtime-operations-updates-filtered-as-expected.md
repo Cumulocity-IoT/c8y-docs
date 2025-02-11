@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4323
 version: 1021.37.4
 ---
-In the past, realtime operations updates were not always filtered as expected, which could lead to incorrect or inconsistent information being displayed to users. This issue has now been resolved. With this change, realtime operations updates are properly filtered according to the defined criteria. Users will now see accurate and consistent realtime data in their operations views and reports, ensuring they have the correct information to make informed decisions.
+In Device Control lists operations with updated statuses remained displayed despite an active status filter. Now, operations that no longer match the selected filter are correctly removed from the list in real time.
