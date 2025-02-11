@@ -36,7 +36,7 @@ To establish and maintain a secure site-to-site connection with {{< product-c8y-
   * Managing all necessary internal approvals, including IT security, compliance, and risk management requirements.
   * Completing any internal documentation, approval forms, or security assessments required by Customer’s organization.
   * Ensuring timely alignment with Customer internal IT teams to prevent delays in deployment.
-* **Customer-side configuration.**
+* **Customer-side configuration**
   * Using a device compatible with {{< product-c8y-iot >}} specifications.
   * Configuring network and firewall on Customer side, such as providing a public IP address to the gateway, setting the necessary firewall rules for tunneled traffic, and defining and sharing the internal subnets to be routed over the connection with {{< product-c8y-iot >}}.
   * In case of a VPN: Aligning encryption, authentication and key exchange settings with {{< product-c8y-iot >}} specifications; generating and securely exchanging pre–shared keys or certificates.
