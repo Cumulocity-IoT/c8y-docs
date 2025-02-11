@@ -88,7 +88,7 @@ The backup replication service provides automated replication of your cloud virt
 Key features include:
 
 * **Automated Replication**: Automatically copies your virtual machine backups to a secondary geographical region.
-* **Cross-Platform Support**: Works with both AWS and Azure
+* **Cross-platform support**: Works with both AWS and Azure.
 * **Disaster Recovery & Business Continuity**: Enables rapid recovery of your critical systems in a different region in case of a primary region outage.
 * **Secure Copying**: Ensures your backups are transferred and stored securely in the secondary region.
 * **Lifecycle Management**: Manages the lifecycle of your replicated backups, including retention policies and deletion of outdated backups.
