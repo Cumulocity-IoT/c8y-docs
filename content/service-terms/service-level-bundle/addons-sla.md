@@ -6,7 +6,7 @@ aliases:
   - /addons-sla/
 ---
 
-This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who utilizes one or more of the following additional IT services ("Services") on Provider's cloud instances ("software-as-a-service", "SaaS").
+This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who utilizes one or more of the following additional IT services on Provider's cloud instances ("software-as-a-service", "SaaS").
 
 * VPN and Direct Line services.
 * Backup replication services.
@@ -51,7 +51,7 @@ Failure to meet these responsibilities may impact the availability and performan
 
 #### Limitations and constraints
 
-Customer acknowledges the following limitations and constraints in using Service.
+Customer acknowledges the following limitations and constraints in using the VPN and Direct Line services.
 
  * **Supported VPN types**: Only IPsec VPN tunnels can be used with the VPN service. Data for encryption and keys will be shared via a secure channel between Customer and {{< company-c8y >}}.
  * **CIDR**: {{< product-c8y-iot >}} dedicated SaaS platforms usually use a private address space out of a subrange of 10.0.0.0/8 in IPv4. When using VPN services, the CIDR block for {{< product-c8y-iot >}} must not overlap with Customer network that the VPN connects to. CIDR blocks shall be agreed upon between {{< company-c8y >}} and Customer before the VPN is set up.
@@ -122,7 +122,7 @@ Key features include:
 
 #### Limitations and constraints
 
-Customer acknowledges the following limitations and constraints in using Service.
+Customer acknowledges the following limitations and constraints in using the status page service.
 
 * The statuspage is public. Private statuspage are currently not available.
 * Customer's proprietary services can currently not be added to the statuspage.
