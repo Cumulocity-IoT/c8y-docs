@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Realtime operations updates are now filtered correctly
+title: Operation updates are now displayed in realtime in device control lists
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
