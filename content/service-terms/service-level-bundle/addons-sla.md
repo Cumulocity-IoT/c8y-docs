@@ -16,7 +16,7 @@ This agreement is made between {{< company-c8y >}} ("Provider") and the Customer
 
 #### Service description
 
-{{< product-c8y-iot >}} VPN services connect Customer's existing infrastructure to Customer's dedicated {{< product-c8y-iot >}} SaaS instance through the Internet using secure, encrypted connections. {{< product-c8y-iot >}} VPN service is based on [AWS Site-to-Site VPN](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html) if the SaaS instance is hosted on Amazon Web Service. The VPN service is based on [Azure VPN Gateway](https://azure.microsoft.com/en-US/products/vpn-gateway) if the SaaS instance is hosted on Microsoft Azure.
+{{< product-c8y-iot >}} VPN services connect Customer's existing infrastructure to Customer's dedicated {{< product-c8y-iot >}} SaaS instance through the internet using secure, encrypted connections. {{< product-c8y-iot >}} VPN service is based on [AWS Site-to-Site VPN](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html) if the SaaS instance is hosted on Amazon Web Service. The VPN service is based on [Azure VPN Gateway](https://azure.microsoft.com/en-US/products/vpn-gateway) if the SaaS instance is hosted on Microsoft Azure.
 
 Similarly, {{< product-c8y-iot >}} Direct Line services connect the infrastructure to {{< product-c8y-iot >}} SaaS through secure, encrypted connections, but bypassing the public internet. {{< product-c8y-iot >}} Direct Line service is based on [AWS Direct Connect](https://aws.amazon.com/directconnect/) if the SaaS instance is hosted on Amazon Web Services. The Direct Line service is based on [Azure ExpressRoute](https://azure.microsoft.com/en-US/products/expressroute/) if the SaaS instance is hosted on Microsoft Azure.
 
@@ -32,18 +32,18 @@ Key features include:
 
 To establish and maintain a secure site-to-site connection with {{< product-c8y-iot >}}, Customer is responsible for the following:
 
-* **Customer internal coordination and compliance**.
+* **Customer internal coordination and compliance**
   * Managing all necessary internal approvals, including IT security, compliance, and risk management requirements.
   * Completing any internal documentation, approval forms, or security assessments required by Customer’s organization.
   * Ensuring timely alignment with Customer internal IT teams to prevent delays in deployment.
-* **Customer-side configuration.**
+* **Customer-side configuration**
   * Using a device compatible with {{< product-c8y-iot >}} specifications.
   * Configuring network and firewall on Customer side, such as providing a public IP address to the gateway, setting the necessary firewall rules for tunneled traffic, and defining and sharing the internal subnets to be routed over the connection with {{< product-c8y-iot >}}.
   * In case of a VPN: Aligning encryption, authentication and key exchange settings with {{< product-c8y-iot >}} specifications; generating and securely exchanging pre–shared keys or certificates.
   * Setting up routing as required and in accordance with {{< product-c8y-iot >}} requirements, ensuring proper DNS resolution where required.
-* **Testing and troubleshooting.**
+* **Testing and troubleshooting**
   * Participating in the initial connectivity testing, potentially providing connection logs for troubleshooting connectivity issues, and verifying access to {{< product-c8y-iot >}} services over the connection in a timely manner.
-* **Ongoing monitoring and maintenance.**
+* **Ongoing monitoring and maintenance**
   * Monitoring the VPN or Direct Line availability and resolving issues within Customer infrastructure.
   * Renewing pre-shared keys or certificates and communicating them to {{< product-c8y-iot >}} as required.
 
@@ -68,7 +68,7 @@ Customer acknowledges the following limitations and constraints in using Service
 
 #### Support
 
-* **Customer Support:** Support is provided in accordance with the Customer’s selected support plan (Bronze, Silver, or Gold), as detailed in a separate support agreement.
+* **Customer support:** Support is provided in accordance with the Customer’s selected support plan (Bronze, Silver, or Gold), as detailed in a separate support agreement.
 * **Pre-Production Environments:** For pre-production environments, Bronze-level support is generally provided, with support tickets handled at standard priority.
 
 {{< company-c8y >}} will not be able to provide logs or packet captures from the VPN or leased line data or signalling.
@@ -99,17 +99,17 @@ The second region is selected by {{< company-c8y >}}.
 
 #### Availability
 
-The following SLA are valid for the service
+The following SLA is valid for the service:
 
 * Data durability: 99,999999999%
 
 RTO and RPO are [the same as for non-replicated backup](/service-terms/service-level/#rto-rpo).
 
-### Statuspage
+### Status page
 
 #### Service description
 
-{{< product-c8y-iot >}} Statuspage is a public web page reflecting the current status of a {{< product-c8y-iot >}} dedicated SaaS instance in real-time and any scheduled and unscheduled maintenance. The service is based on [Atlassian Statuspage](https://www.atlassian.com/software/statuspage).
+{{< product-c8y-iot >}} Statuspage is a public web page reflecting the current status of a {{< product-c8y-iot >}} dedicated SaaS instance in realtime and any scheduled and unscheduled maintenance. The service is based on [Atlassian Statuspage](https://www.atlassian.com/software/statuspage).
 
 #### Service features
 
