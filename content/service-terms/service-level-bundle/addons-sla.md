@@ -91,7 +91,7 @@ Key features include:
 * **Cross-platform support**: Works with both AWS and Azure.
 * **Disaster recovery & business continuity**: Enables rapid recovery of your critical systems in a different region in case of a primary region outage.
 * **Secure copying**: Ensures your backups are transferred and stored securely in the secondary region.
-* **Lifecycle Management**: Manages the lifecycle of your replicated backups, including retention policies and deletion of outdated backups.
+* **Lifecycle management**: Manages the lifecycle of your replicated backups, including retention policies and deletion of outdated backups.
 
 #### Limitations and constraints
 
