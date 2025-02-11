@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4323
 version: 1021.37.4
 ---
-In Device Control lists operations with updated statuses remained displayed despite an active status filter. Now, operations that no longer match the selected filter are correctly removed from the list in real time.
+In device control lists, operations with an updated status remained displayed even if they did no longer match the active status filter criteria. Now, operations that no longer match the selected criteria are correctly removed from the list in realtime.
