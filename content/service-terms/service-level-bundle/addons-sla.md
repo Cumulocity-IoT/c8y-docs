@@ -109,7 +109,7 @@ RTO and RPO are [the same as for non-replicated backup](/service-terms/service-l
 
 #### Service description
 
-{{< product-c8y-iot >}} Statuspage is a public web page reflecting the current status of a {{< product-c8y-iot >}} dedicated SaaS instance in real-time and any scheduled and unscheduled maintenance. The service is based on [Atlassian Statuspage](https://www.atlassian.com/software/statuspage).
+{{< product-c8y-iot >}} Statuspage is a public web page reflecting the current status of a {{< product-c8y-iot >}} dedicated SaaS instance in realtime and any scheduled and unscheduled maintenance. The service is based on [Atlassian Statuspage](https://www.atlassian.com/software/statuspage).
 
 #### Service features
 
