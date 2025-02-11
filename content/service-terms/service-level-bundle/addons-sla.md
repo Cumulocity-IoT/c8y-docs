@@ -99,7 +99,7 @@ The second region is selected by {{< company-c8y >}}.
 
 #### Availability
 
-The following SLA are valid for the service
+The following SLA is valid for the service:
 
 * Data durability: 99,999999999%
 
