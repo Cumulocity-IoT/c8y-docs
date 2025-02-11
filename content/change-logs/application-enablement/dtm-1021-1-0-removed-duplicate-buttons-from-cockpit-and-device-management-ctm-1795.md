@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fixed an issue where navigation elements were duplicated when using the official plugin: Asset Properties widget "
+title: Asset properties widget plugin no longer causes duplicate navigation elements
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
