@@ -105,7 +105,7 @@ The following SLA are valid for the service
 
 RTO and RPO are [the same as for non-replicated backup](/service-terms/service-level/#service-features).
 
-### Statuspage
+### Status page
 
 #### Service description
 
