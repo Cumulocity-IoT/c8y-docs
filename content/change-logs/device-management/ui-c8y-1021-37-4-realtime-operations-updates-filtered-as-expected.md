@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4323
 version: 1021.37.4
 ---
-Realtime operations updates filtered as expected.
+In the past, realtime operations updates were not always filtered as expected, which could lead to incorrect or inconsistent information being displayed to users. This issue has now been resolved. With this change, realtime operations updates are properly filtered according to the defined criteria. Users will now see accurate and consistent realtime data in their operations views and reports, ensuring they have the correct information to make informed decisions.
