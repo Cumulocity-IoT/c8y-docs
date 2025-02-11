@@ -1,6 +1,6 @@
 ---
 date: ""
-title: unrelated alarms not shown in alarmstab (#8113) [GRAFT][release/cd] (#8260)
+title: Unrelated alarms are no longer shown in the simulators alarms tab.
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62196
 version: 1021.37.5
 ---
-unrelated alarms not shown in alarmstab (#8113) [GRAFT][release/cd] (#8260)
+In the simulators page, the alarms tab previously displayed alarms that were not directly related to the currently selected asset. This caused confusion for users who expected to only see relevant alarms for the specific asset they were viewing. With this change, the alarms tab now correctly filters out unrelated alarms, ensuring that users only see alarms that are pertinent to the selected asset. This improvement enhances clarity and usability when monitoring and managing alarms within the application.
