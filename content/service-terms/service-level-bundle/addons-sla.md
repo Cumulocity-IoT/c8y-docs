@@ -41,7 +41,7 @@ To establish and maintain a secure site-to-site connection with {{< product-c8y-
   * Configuring network and firewall on Customer side, such as providing a public IP address to the gateway, setting the necessary firewall rules for tunneled traffic, and defining and sharing the internal subnets to be routed over the connection with {{< product-c8y-iot >}}.
   * In case of a VPN: Aligning encryption, authentication and key exchange settings with {{< product-c8y-iot >}} specifications; generating and securely exchanging pre–shared keys or certificates.
   * Setting up routing as required and in accordance with {{< product-c8y-iot >}} requirements, ensuring proper DNS resolution where required.
-* **Testing and troubleshooting.**
+* **Testing and troubleshooting**
   * Participating in the initial connectivity testing, potentially providing connection logs for troubleshooting connectivity issues, and verifying access to {{< product-c8y-iot >}} services over the connection in a timely manner.
 * **Ongoing monitoring and maintenance.**
   * Monitoring the VPN or Direct Line availability and resolving issues within Customer infrastructure.
