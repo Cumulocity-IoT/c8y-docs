@@ -69,7 +69,7 @@ Customer acknowledges the following limitations and constraints in using the VPN
 #### Support
 
 * **Customer support:** Support is provided in accordance with the Customer’s selected support plan (Bronze, Silver, or Gold), as detailed in a separate support agreement.
-* **Pre-Production Environments:** For pre-production environments, Bronze-level support is generally provided, with support tickets handled at standard priority.
+* **Pre-production environments:** For pre-production environments, Bronze-level support is generally provided, with support tickets handled at standard priority.
 
 {{< company-c8y >}} will not be able to provide logs or packet captures from the VPN or leased line data or signalling.
 
