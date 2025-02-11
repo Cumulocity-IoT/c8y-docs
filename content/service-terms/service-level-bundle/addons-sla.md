@@ -32,7 +32,7 @@ Key features include:
 
 To establish and maintain a secure site-to-site connection with {{< product-c8y-iot >}}, Customer is responsible for the following:
 
-* **Customer internal coordination and compliance**.
+* **Customer internal coordination and compliance**
   * Managing all necessary internal approvals, including IT security, compliance, and risk management requirements.
   * Completing any internal documentation, approval forms, or security assessments required by Customer’s organization.
   * Ensuring timely alignment with Customer internal IT teams to prevent delays in deployment.
