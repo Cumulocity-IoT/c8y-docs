@@ -16,7 +16,7 @@ This agreement is made between {{< company-c8y >}} ("Provider") and the Customer
 
 #### Service description
 
-{{< product-c8y-iot >}} VPN services connect Customer's existing infrastructure to Customer's dedicated {{< product-c8y-iot >}} SaaS instance through the Internet using secure, encrypted connections. {{< product-c8y-iot >}} VPN service is based on [AWS Site-to-Site VPN](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html) if the SaaS instance is hosted on Amazon Web Service. The VPN service is based on [Azure VPN Gateway](https://azure.microsoft.com/en-US/products/vpn-gateway) if the SaaS instance is hosted on Microsoft Azure.
+{{< product-c8y-iot >}} VPN services connect Customer's existing infrastructure to Customer's dedicated {{< product-c8y-iot >}} SaaS instance through the internet using secure, encrypted connections. {{< product-c8y-iot >}} VPN service is based on [AWS Site-to-Site VPN](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html) if the SaaS instance is hosted on Amazon Web Service. The VPN service is based on [Azure VPN Gateway](https://azure.microsoft.com/en-US/products/vpn-gateway) if the SaaS instance is hosted on Microsoft Azure.
 
 Similarly, {{< product-c8y-iot >}} Direct Line services connect the infrastructure to {{< product-c8y-iot >}} SaaS through secure, encrypted connections, but bypassing the public internet. {{< product-c8y-iot >}} Direct Line service is based on [AWS Direct Connect](https://aws.amazon.com/directconnect/) if the SaaS instance is hosted on Amazon Web Services. The Direct Line service is based on [Azure ExpressRoute](https://azure.microsoft.com/en-US/products/expressroute/) if the SaaS instance is hosted on Microsoft Azure.
 
