@@ -81,7 +81,7 @@ Customer acknowledges the following limitations and constraints in using the VPN
 
 #### Service description
 
-The backup replication service provides automated replication of your cloud virtual machine backups to a secondary geographical region for disaster recovery and business continuity.  {{< company-c8y >}} configures and manages the process, ensuring your backups are securely copied and readily available in another region should your primary region experience an outage. For Amazon Web Services, this includes setup of cross-region copy mechanisms and lifecycle management. For Azure, we leverage Azure Site Recovery or similar services for consistent replication. The service optionally includes testing to validate recoverability.
+The backup replication service provides automated replication of your cloud virtual machine backups to a secondary geographical region for disaster recovery and business continuity. {{< company-c8y >}} configures and manages the process, ensuring your backups are securely copied and readily available in another region should your primary region experience an outage. For Amazon Web Services, this includes setup of cross-region copy mechanisms and lifecycle management. For Azure, we leverage Azure Site Recovery or similar services for consistent replication. The service optionally includes testing to validate recoverability.
 
 #### Service features
 
