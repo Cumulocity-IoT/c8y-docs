@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62196
 version: 1021.37.5
 ---
-In the simulators page, the alarms tab previously displayed alarms that were not directly related to the currently selected asset. This caused confusion for users who expected to only see relevant alarms for the specific asset they were viewing. With this change, the alarms tab now correctly filters out unrelated alarms, ensuring that users only see alarms that are pertinent to the selected asset. This improvement enhances clarity and usability when monitoring and managing alarms within the application.
+In the **Simulator** page, the **Alarms** tab previously displayed alarms that were not directly related to the selected asset. This caused confusion for users who expected to only see relevant alarms for the specific asset they were viewing. With this change, the **Alarms** tab now correctly filters out unrelated alarms, ensuring that users only see alarms that are pertinent to the selected asset.
