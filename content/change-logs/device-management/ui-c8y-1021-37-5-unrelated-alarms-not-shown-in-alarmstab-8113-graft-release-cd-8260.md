@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Unrelated alarms are no longer shown in the simulators alarms tab.
+title: Alarms tab in the Simulator page only shows alarms related to the selected asset
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
