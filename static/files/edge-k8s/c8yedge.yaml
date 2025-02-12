@@ -27,12 +27,11 @@ spec:
   domain: <DOMAIN-NAME>
 
   ## Edge license key you received for the domain.
-  ## To request the license file for Edge, contact the logistics team for your region:
-  ##    - North and South America: LogisSrvus@softwareagusa.com
-  ##    - All Other Regions: LogisticsServiceCenterGER@softwareag.com
+  ## To request the license file for Edge, contact support - https://cumulocity.com/docs/additional-resources/contacting-support/
+  ##
   ## In the email, you must include
-  ##    - Your company name, under which the license has been bought
-  ##    - The domain name (for example, myown.iot.com), where Edge will be reachable
+  ## - Your company name, under which the license has been bought
+  ## - The domain name (for example, myown.iot.com), where Edge will be reachable
   licenseKey:  <LICENSE-KEY>
 
   ## Name of the “edge” tenant, for example, the company’s name.
