@@ -1,6 +1,6 @@
 ---
 date: ""
-title: unrelated alarms not shown in alarmstab (#8113) [GRAFT][release/y2025] (#8261)
+title: Alarms tab in the Simulator page only shows alarms related to the selected asset
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
