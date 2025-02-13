@@ -202,7 +202,7 @@ The version has an impact on the microservice upload behavior:
 *   If the version is a snapshot, for example, "1.1.0-SNAPSHOT", then Docker will update the image on each ZIP upload.
 
 The "-SNAPSHOT" postfix means that the image build is a snapshot of your application at a given time and it is still under development.
-When the microservice is ready for a production release, the "-SNAPSHOT" postfix must be removed, and a final version number (e.g., "2.1.0") should be used.
+When the microservice is ready for a production release, the "-SNAPSHOT" postfix must be removed, and a final version number (for example, "2.1.0") should be used.
 In production, a new microservice is uploaded whenever a new version is specified different to the previously uploaded versions.
 This approach ensures that each release maintains version uniqueness, preventing unintended overwrites.
 
