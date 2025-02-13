@@ -314,7 +314,7 @@ Devices can record the history of their movements in {{< product-c8y-iot >}}. Th
 The **Tracking** tab only shows up when a device contains `c8y_Position` property.
 {{< /c8y-admon-info >}}
 
-In the dropdown list at the top right you can select a time period (or specify one by selecting "Custom- from the list) and visualize the movements of the device during this period. Movements are shown as red lines in the map.
+In the dropdown list at the top right you can select a time period (or specify one by selecting "Custom- from the list) and visualize the movements of the device during this period. Movements are shown as blue lines in the map.
 
 ![Tracking tab](/images/users-guide/DeviceManagement/devmgmt-devices-tracking.png)
 
