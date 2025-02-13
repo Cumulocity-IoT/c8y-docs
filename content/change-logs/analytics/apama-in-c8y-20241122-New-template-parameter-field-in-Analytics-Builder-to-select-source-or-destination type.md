@@ -1,6 +1,8 @@
 ---
-date:
-title: New template parameter field in Analytics Builder to select source or destination type
+date: '2025-02-13'
+title: >-
+  New template parameter field in Analytics Builder to select source or
+  destination type
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
