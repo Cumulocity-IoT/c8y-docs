@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62551
 version: 1021.37.6
 ---
-Recently, the Cumulocity DataHub was updated to send events to the Cumulocity platform in case an offloading or compaction job finishes. Therefore, new messages for the Cumulocity platform were introduced to translate these events.
+Recently, {{< product-c8y-iot >}} DataHub was updated to send events to the {{< product-c8y-iot >}} platform in case an offloading or compaction job finishes. Therefore, new messages for the {{< product-c8y-iot >}} platform were introduced to translate these events.
