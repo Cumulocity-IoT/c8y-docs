@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add messages for events sent by the Cumulocity DataHub microservice
+title: Added messages for events sent by the DataHub microservice
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
