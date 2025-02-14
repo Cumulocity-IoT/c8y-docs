@@ -42,6 +42,17 @@ ROLES & PERMISSIONS
 - To add/update/delete/import asset models: CREATE/ADMIN permission for permission type "Inventory"
 {{< /c8y-admon-req >}}
 
+### Default asset models
+#### Group asset model
+Groups are used in {{< product-c8y-iot >}} to organize devices or other groups. The default group asset model allows any group to be treated as an asset, providing a unified, flexible, and consistent approach to managing assets. Unlike other asset models in the Digital Twin Manager application, the group asset model does not enforce hierarchical relationships.
+
+##### Characteristics of the group asset model
+- Available by default, it cannot be deleted.
+- Allows updating of label, description, and icon for the model. This can be restricted by setting the value of the flag **isDefaultGroupEditDisabled** to "true" in the application options. For details, refer to [Application options](/docs/web/application-configuration/#application-options).
+- Does not support custom asset properties.
+- Since the model doesn't enforce a hierarchy, it does not require the definition of child asset models.
+- The model can be easily identified by the "(Default)" suffix throughout the Digital Twin Manager application.
+
 ### To create an asset model {#to-create-an-asset-model}
 
 Click **Add asset model** on the top right to create a new asset model. This opens the **New Asset model** page.
