@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62551
 version: 1021.22.35
 ---
-Add messages for texts of events sent by the Cumulocity DataHub microservice. [GRAFT][release/y2025] (#8296)
+Recently, {{< product-c8y-iot >}} DataHub was updated to send events to the {{< product-c8y-iot >}} platform in case an offloading or compaction job finishes. Therefore, new messages for the {{< product-c8y-iot >}} platform were introduced to translate these events.
