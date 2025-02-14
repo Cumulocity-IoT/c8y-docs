@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add messages for texts of events sent by the Cumulocity DataHub microservice. [GRAFT][release/cd] (#8295)
+title: Add messages for events sent by the Cumulocity DataHub microservice
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
