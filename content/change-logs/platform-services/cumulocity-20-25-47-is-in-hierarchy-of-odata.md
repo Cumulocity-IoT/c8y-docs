@@ -20,7 +20,10 @@ The new function
 - matches objects in the hierarchy of the object whose ID is passed as an argument.
 - accepts one or multiple arguments.
 
-For given hierarchy:
+
+**Example** 
+
+For a given hierarchy:
 
 * Group g1
   * Subgroup s1
