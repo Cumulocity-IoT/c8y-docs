@@ -23,30 +23,30 @@ const shortcodeMapping = {
   "product-c8y-iot": "Cumulocity",
   "domain-c8y": "cumulocity.com",
   "link-c8y-github": "https://github.com/Cumulocity-IoT/",
-  "c8y-edge-current-version-alt" : "10.18",
-  "c8y-edge-current-version" : "1018",
-  "c8y-support-link" : "https://cumulocity.com/support",
-  "link-apamadoc-api" : "https://cumulocity.com/apama/docs/latest/related/ApamaDoc/index.html",
-  "link-c8y-doc-baseurl" : ".Page.Site.BaseURL",
+  "c8y-edge-current-version-alt": "10.18",
+  "c8y-edge-current-version": "1018",
+  "c8y-support-link": "https://cumulocity.com/support",
+  "link-apamadoc-api": "https://cumulocity.com/apama/docs/latest/related/ApamaDoc/index.html",
+  "link-c8y-doc-baseurl": ".Page.Site.BaseURL",
   "link-device-portal": "https://ecosystem.cumulocity.com/devices/?filter_cumulocity_certified=yes",
-  "link-apama-webhelp" : "https://cumulocity.com/apama/docs/latest",
+  "link-apama-webhelp": "https://cumulocity.com/apama/docs/latest",
   "link-c8y-training": "https://cumulocity.moodlecloud.com/",
   "c8y-resources-server-link": "https://download.cumulocity.com/",
-  "c8y-tech-community-link" : "https://techcommunity.cumulocity.com/",
-  "c8y-support-email" : "support@cumulocity.com",
-  "email-c8y-info" : "info@cumulocity.com"
+  "c8y-tech-community-link": "https://techcommunity.cumulocity.com/",
+  "c8y-support-email": "support@cumulocity.com",
+  "email-c8y-info": "info@cumulocity.com",
 };
 
 const resolveHugoShortcode = (link) => {
   return link.replace(/\{\{<\s*(.*?)\s*>\}\}/g, (match, shortcode) => {
     const resolvedValue = shortcodeMapping[shortcode];
-    return resolvedValue !== undefined && resolvedValue !== null ? resolvedValue : ""; 
+    return resolvedValue !== undefined && resolvedValue !== null ? resolvedValue : "";
   });
 };
 
 const resolveFullUrl = (link) => {
   if (link.startsWith("mailto:") || link.startsWith("tel:")) {
-    return null; 
+    return null;
   }
 
   const resolvedLink = resolveHugoShortcode(link);
@@ -58,8 +58,7 @@ const resolveFullUrl = (link) => {
 };
 
 const hasUnencodedParentheses = (link) => {
-  const unencodedParenthesesRegex = /[()]/;
-  return unencodedParenthesesRegex.test(link);
+  return /[()]/.test(link);
 };
 
 const checkLink = async (link) => {
@@ -68,23 +67,22 @@ const checkLink = async (link) => {
     if (response.status === 405) {
       response = await fetch(link, { method: "GET" });
     }
-
     if (!response.ok) {
       return { url: link, status: response.status };
     }
   } catch (error) {
     return { url: link, status: "Error" };
   }
-
   return null;
 };
 
 (async () => {
-  const projectDir = "../content"; 
+  const projectDir = "../content";
   const markdownFiles = getMarkdownFiles(projectDir);
 
   const linkFileMap = new Map();
   const uniqueLinks = new Set();
+  const unencodedParenthesesIssues = [];
 
   markdownFiles.forEach((mdFile) => {
     const content = fs.readFileSync(mdFile, "utf8");
@@ -92,7 +90,7 @@ const checkLink = async (link) => {
 
     links.forEach((link) => {
       if (hasUnencodedParentheses(link)) {
-        throw new Error(`Unencoded parentheses detected in link: "${link}" in file: ${mdFile}`);
+        unencodedParenthesesIssues.push({ url: link, file: mdFile });
       }
 
       const resolvedLink = resolveFullUrl(link);
@@ -107,7 +105,7 @@ const checkLink = async (link) => {
   });
 
   const brokenLinks = [];
-  const limit = pLimit(10); 
+  const limit = pLimit(10);
 
   await Promise.all([...uniqueLinks].map((link) =>
     limit(async () => {
@@ -119,13 +117,22 @@ const checkLink = async (link) => {
     })
   ));
 
-  const filteredBrokenLinks = brokenLinks.filter((link) => link.status === 404);
+  let hasErrors = false;
+  
+  if (brokenLinks.length > 0 || unencodedParenthesesIssues.length > 0) {
+    hasErrors = true;
+  }
 
   const csvData =
     "URL,Status Code,Files\n" +
-    filteredBrokenLinks.map((link) => `${link.url},${link.status},"${link.files.join("; ")}"`).join("\n");
+    brokenLinks.map((link) => `${link.url},${link.status},"${link.files.join("; ")}"`).join("\n");
 
   fs.writeFileSync("broken_links_markdown.csv", csvData);
   console.log("Broken links saved to broken_links_markdown.csv");
-  process.exit(0);
+
+  if (hasErrors) {
+    process.exit(1);
+  } else {
+    process.exit(0);
+  }
 })();

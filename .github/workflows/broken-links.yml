@@ -43,13 +43,13 @@ jobs:
 
             if (fs.existsSync(path)) {
               const data = fs.readFileSync(path, 'utf8').trim();
-              const lines = data.split('\n').slice(1); // Skip the header line
+              const lines = data.split('\n').slice(1); 
 
               if (lines.length > 0) {
-                const body = `### :warning: The following 404 broken links were found:\n\n${lines
+                const body = `### :warning: The following issues were found:\n\n${lines
                   .map((line) => {
-                    const [url, file, status] = line.split(',');
-                    return `- **[${url}](${url})** in file \`${file}\` (Status: ${status})`;
+                    const [url, status, files] = line.split(',');
+                    return `- **[${url}](${url})** (Status: ${status}) in \`${files.replace(/;/g, ", ")}\``;
                   })
                   .join('\n')}`;
 
@@ -59,9 +59,5 @@ jobs:
                   repo: context.repo.repo,
                   body: body
                 });
-              } else {
-                console.log('No broken links with 404 status found');
               }
-            } else {
-              console.log('Error: Broken link checker did not produce a CSV report.');
             }
