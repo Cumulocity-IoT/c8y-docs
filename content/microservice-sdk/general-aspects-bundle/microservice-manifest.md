@@ -203,7 +203,6 @@ The version has an impact on the microservice upload behavior:
 
 The "-SNAPSHOT" postfix means that the image build is a snapshot of your application at a given time and it is still under development.
 When the microservice is ready for a production release, the "-SNAPSHOT" postfix must be removed, and the micorservice must be uploaded with a unique (higher) version number (for example, "2.1.0").
-In production, a new microservice is uploaded whenever a new version is specified different to the previously uploaded versions.
 This approach ensures that each release maintains version uniqueness, preventing unintended overwrites.
 
 
