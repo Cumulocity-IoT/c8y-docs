@@ -18,7 +18,7 @@ A new function `isinhierarchyof()` has been added to the [query language](https:
 
 The new function
 - matches objects in the hierarchy of the object whose ID is passed as an argument.
-- Accepts one or multiple arguments.
+- accepts one or multiple arguments.
 
 For given hierarchy:
 
