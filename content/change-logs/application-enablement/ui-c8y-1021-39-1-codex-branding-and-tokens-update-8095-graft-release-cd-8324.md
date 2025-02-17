@@ -1,6 +1,6 @@
 ---
 date: ""
-title: codex branding and tokens update (#8095) [GRAFT][release/cd] (#8324)
+title: Update Codex branding and tokens
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
