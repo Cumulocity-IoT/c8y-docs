@@ -18,4 +18,4 @@ As part of our ongoing improvement efforts, in a previous version, we have migra
 The new Angular based implementation makes the the old AngularJS based implementation obsolete.
 The AngularJS based implementation will therefore be removed from the [@c8y/ng1-modules npm package](https://www.npmjs.com/package/@c8y/ng1-modules) starting with version 1022.0.0.
 
-For customers maintaining their own Devicemanagement application, you can refer to [this git diff](https://github.com/Cumulocity-IoT/devicemanagement/compare/v1021.40.0...v1021.39.1) to identify the required changes to switch to the new implementation.
+For customers maintaining their own Devicemanagement application, you can refer to [this git diff](https://github.com/Cumulocity-IoT/devicemanagement/compare/v1021.39.1...v1021.40.0) to identify the required changes to switch to the new implementation.
