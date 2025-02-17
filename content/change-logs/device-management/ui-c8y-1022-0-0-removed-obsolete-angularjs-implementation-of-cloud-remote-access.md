@@ -15,7 +15,7 @@ ticket: DM-4367
 version: 1022.0.0
 ---
 As part of our ongoing improvement efforts, in a previous version, we have migrated the Cloud Remote Access feature from the older AngularJS framework to the newer Angular framework.
-The new Angular based implementation makes the old AngularJS-based implementation obsolete.
+The new Angular-based implementation makes the old AngularJS-based implementation obsolete.
 The AngularJS-based implementation will therefore be removed from the [@c8y/ng1-modules npm package](https://www.npmjs.com/package/@c8y/ng1-modules) starting with version 1022.0.0.
 
 Customers maintaining their own Device Management application can refer to [this git diff](https://github.com/Cumulocity-IoT/devicemanagement/compare/v1021.39.1...v1021.40.0) to identify the changes required to switch to the new implementation.
