@@ -1,6 +1,6 @@
 ---
 date:
-title: isinhierarchyof() query language function
+title: Added new query language function
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
