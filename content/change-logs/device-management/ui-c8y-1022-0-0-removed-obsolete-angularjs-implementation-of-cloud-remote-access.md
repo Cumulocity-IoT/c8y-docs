@@ -1,6 +1,6 @@
 ---
 date: 2025-02-17
-title: Removed obsolete AngularJS implementation of cloud remote access feature
+title: Removed obsolete AngularJS implementation of Cloud Remote Access feature
 product_area: Device management & connectivity
 change_type:
   - value: change-inv-3bw8e
