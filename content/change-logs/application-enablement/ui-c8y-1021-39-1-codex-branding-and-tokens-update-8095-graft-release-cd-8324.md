@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Update Codex branding and tokens
+title: Updated branding and tokens in the Cumulocity Codex
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
