@@ -16,7 +16,8 @@ version: 2025.47.0
 ---
 A new function `isinhierarchyof()` has been added to the [query language](https://cumulocity.com/api/core/#tag/Query-language). 
 
-- Matches objects in the hierarchy of the object whose ID is passed as an argument.
+The new function
+- matches objects in the hierarchy of the object whose ID is passed as an argument.
 - Accepts one or multiple arguments.
 
 For given hierarchy:
