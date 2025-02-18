@@ -35,7 +35,9 @@ The {{< product-c8y-iot >}} platform offers a comprehensive set of features desi
 * **Business continuity and resilience:**
     * {{< product-c8y-iot >}} adheres to ISO 22301 standards for business continuity management (BCM), ensuring resilience against zone outages with zone redundancy.
     * <a name="rto-rpo"></a>Regular backups are maintained with a 30-day retention period, a Recovery Time Objective (RTO) of 12 hours, and a Recovery Point Objective (RPO) of 24 hours. Backups are stored in the same region where the service is hosted.
-    * {{< company-c8y >}} conducts regular drills to validate its disaster recovery procedures.
+    * {{< company-c8y >}} conducts regular drills to validate its disaster recovery procedures. 
+    * RTO is valid only for the recovery of the whole platform. 
+    * There is no RTO available for the recovery of a single tenant or a number of tenants. Recovery time will depend on the data amount stored in the tenant.   
 * **API compatibility management:** The platform maintains compatibility of APIs as outlined in its [Compatibility policy](/service-terms/compatibility-policy/). Transport protocols are managed in accordance with this policy, ensuring consistent and reliable API interactions.
 * **Data ownership and portability:** As the data processor, {{< product-c8y-iot >}} ensures that Customer retains full ownership of their data. Customer can export their data at any time using the provided APIs, ensuring control and flexibility over their information.
 * **Continuous maintenance and upgrades:** The platform undergoes regular maintenance and upgrades to ensure optimal performance and security. These upgrades happen transparently and without involving Customer.
