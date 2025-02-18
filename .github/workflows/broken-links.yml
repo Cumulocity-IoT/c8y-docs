@@ -39,18 +39,21 @@ jobs:
         with:
           script: |
             const fs = require('fs');
+            const core = require('@actions/core');  
             const reportPath = './broken-links-script/broken_links_report.md';
 
             if (fs.existsSync(reportPath)) {
               const report = fs.readFileSync(reportPath, 'utf8').trim();
               const lines = report.split('\n\n'); 
+              const body = `**Broken Links Found!**\n\n${lines.join('\n')}`;
 
-                await github.rest.issues.createComment({
-                  issue_number: context.issue.number,
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  body: body
-                });
-                core.setFailed("Broken links detected! Please resolve them before merging the PR.");
-              }
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: body
+              });
+
+              core.setFailed("Broken links detected! Please resolve them before merging the PR.");
             }
+
