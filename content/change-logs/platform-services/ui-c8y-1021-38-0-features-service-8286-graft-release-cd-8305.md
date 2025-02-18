@@ -1,6 +1,6 @@
 ---
 date: ""
-title: features-service (#8286) [GRAFT][release/cd] (#8305)
+title: A service providing information about the status of deployed features has been made available.
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62206
 version: 1021.38.0
 ---
-features-service (#8286) [GRAFT][release/cd] (#8305)
+In the @c8y/client library, a new service called FeatureService has been made available. It allows retrieving information about the status of new features.
