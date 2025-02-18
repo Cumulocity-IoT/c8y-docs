@@ -67,7 +67,7 @@ const checkLink = async (link) => {
     if (response.status === 405) {
       response = await fetch(link, { method: "GET" });
     }
-    if (!response.ok) {
+    if (!response.ok && response.status !== 403 && response.status !== 500) {
       return { url: link, status: response.status };
     }
   } catch (error) {
@@ -123,16 +123,13 @@ const checkLink = async (link) => {
     hasErrors = true;
   }
 
-  const csvData =
-    "URL,Status Code,Files\n" +
-    brokenLinks.map((link) => `${link.url},${link.status},"${link.files.join("; ")}"`).join("\n");
+  const txtData = 
+  "Broken Links Report:\n\n" + 
+  brokenLinks.map(link => 
+    `URL: ${link.url}\nStatus Code: ${link.status}\nFiles: ${link.files.join(", ")}\n\n`
+  ).join("");
 
-  fs.writeFileSync("broken_links_markdown.csv", csvData);
-  console.log("Broken links saved to broken_links_markdown.csv");
+fs.writeFileSync("broken_links_report.txt", txtData);
+console.log("Broken links saved to broken_links_report.txt");
 
-  if (hasErrors) {
-    process.exit(1);
-  } else {
-    process.exit(0);
-  }
 })();

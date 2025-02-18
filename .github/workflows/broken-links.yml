@@ -39,25 +39,24 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const path = './broken-links-script/broken_links_markdown.csv';
+            const path = './broken-links-script/broken_links_report.txt';
 
             if (fs.existsSync(path)) {
               const data = fs.readFileSync(path, 'utf8').trim();
-              const lines = data.split('\n').slice(1); 
+              const lines = data.split('\n\n'); 
 
-              if (lines.length > 0) {
-                const body = `### :warning: The following issues were found:\n\n${lines
-                  .map((line) => {
-                    const [url, status, files] = line.split(',');
-                    return `- **[${url}](${url})** (Status: ${status}) in \`${files.replace(/;/g, ", ")}\``;
-                  })
+              if (lines.length > 1) {
+                const body = `### :warning: The following broken links were found:\n\n${lines
+                  .map((line) => `- ${line.replace(/\n/g, " ")}`)
                   .join('\n')}`;
 
-                github.rest.issues.createComment({
+                await github.rest.issues.createComment({
                   issue_number: context.issue.number,
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   body: body
                 });
+                console.log("Broken links detected. PR cannot be merged until resolved.");
+                core.setFailed("Broken links detected");
               }
             }
