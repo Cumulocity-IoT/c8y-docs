@@ -52,7 +52,7 @@ Using multiple specific devices in a model with the concurrency level set to mor
 {{< /c8y-admon-info>}}
 
 {{< c8y-admon-info>}}
-The concurrency level has a fixed value of 1 for microservices with multi-tenant support.
+The concurrency level has a fix value of 1 for microservices with multi-tenant support.
 {{< /c8y-admon-info>}}
 
 ### Broadcast devices {#broadcast-devices}
