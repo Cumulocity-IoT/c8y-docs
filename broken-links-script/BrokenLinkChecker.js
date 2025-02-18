@@ -63,15 +63,16 @@ const hasUnencodedParentheses = (link) => {
 
 const checkLink = async (link) => {
   try {
-    let response = await fetch(link, { method: "HEAD" });
+    const baseUrl = link.split("#")[0];
+    let response = await fetch(baseUrl, { method: "HEAD" });
     if (response.status === 405) {
-      response = await fetch(link, { method: "GET" });
+      response = await fetch(baseUrl, { method: "GET" });
     }
     if (!response.ok && response.status !== 403 && response.status !== 500) {
-      return { url: link, status: response.status };
+      return { type: "notFound404", url: link, status: response.status };
     }
   } catch (error) {
-    return { url: link, status: "Error" };
+    return { type: "error", url: link, status: "Network Error" };
   }
   return null;
 };
@@ -82,54 +83,57 @@ const checkLink = async (link) => {
 
   const linkFileMap = new Map();
   const uniqueLinks = new Set();
-  const unencodedParenthesesIssues = [];
+  const issues = [];
 
   markdownFiles.forEach((mdFile) => {
+    const relativePath = path.relative(projectDir, mdFile);
     const content = fs.readFileSync(mdFile, "utf8");
     const links = [...content.matchAll(/(?<!\!)\[.*?\]\((.+?)\)/g)].map((match) => match[1]);
 
     links.forEach((link) => {
-      if (hasUnencodedParentheses(link)) {
-        unencodedParenthesesIssues.push({ url: link, file: mdFile });
-      }
-
       const resolvedLink = resolveFullUrl(link);
       if (resolvedLink) {
         uniqueLinks.add(resolvedLink);
         if (!linkFileMap.has(resolvedLink)) {
           linkFileMap.set(resolvedLink, []);
         }
-        linkFileMap.get(resolvedLink).push(mdFile);
+        linkFileMap.get(resolvedLink).push(relativePath);
+      }
+      if (hasUnencodedParentheses(link)) {
+        issues.push({
+          type: "unencodedParentheses",
+          url: link,
+          status: "Invalid Character",
+          files: [relativePath],
+        });
       }
     });
   });
 
-  const brokenLinks = [];
   const limit = pLimit(10);
 
   await Promise.all([...uniqueLinks].map((link) =>
     limit(async () => {
       const result = await checkLink(link);
       if (result) {
-        result.files = linkFileMap.get(link);
-        brokenLinks.push(result);
+        result.files = linkFileMap.get(link).map((file) => file);
+        issues.push(result);
       }
     })
   ));
 
-  let hasErrors = false;
-  
-  if (brokenLinks.length > 0 || unencodedParenthesesIssues.length > 0) {
-    hasErrors = true;
+  if (issues.length > 0) {
+    let reportContent = "| URL | Issue | Files Location |\n";
+    reportContent += "| --- | --- | --- |\n";
+    reportContent += issues
+      .map((issue) =>
+        `| ${issue.url} | ${issue.type} | ${issue.files.join(", ")} |`
+      )
+      .join("\n");
+
+    fs.writeFileSync("broken_links_report.md", reportContent);
+    console.log("Issues saved to broken_links_report.md");
+  } else {
+    console.log("No broken links found.");
   }
-
-  const txtData = 
-  "Broken Links Report:\n\n" + 
-  brokenLinks.map(link => 
-    `URL: ${link.url}\nStatus Code: ${link.status}\nFiles: ${link.files.join(", ")}\n\n`
-  ).join("");
-
-fs.writeFileSync("broken_links_report.txt", txtData);
-console.log("Broken links saved to broken_links_report.txt");
-
 })();
