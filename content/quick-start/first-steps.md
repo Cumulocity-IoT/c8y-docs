@@ -148,10 +148,10 @@ To create a report click **Reports** in the **Navigator** on the left side and f
 2. In the **Menu label** field, enter a name for the report. For this tutorial name the report "Smartphone Measurements" and optionally provide a description below.
 3. You can display the report in the navigator with the option **Show in navigator** but we will leave that unchecked in this tutorial.
    ![Add new report](/images/users-guide/getting-started/getting-started-add-new-report-general.png)
-4. In the **Layout** section, change the theme to "Branded" and set the header style to "Border". The changes will be reflected immediately after selection.
+4. In the **Appearance** section, change the theme to "Branded" and set the header style to "Border". The changes will be reflected immediately after selection.
    ![Add new report](/images/users-guide/getting-started/getting-started-add-new-report-appearance.png)
 
-5. Click **Appearance** to create the report and add it to the report list.
+5. Click **Save** to create the report and add it to the report list.
    ![Report created](/images/users-guide/getting-started/getting-started-report-created.png)
 
 You have successfully created a report. See [Working with reports](/cockpit/working-with-reports/) for more details on how to add, edit and delete reports.
