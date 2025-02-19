@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Show only custom properties relevant for tenants in tenant "Custom properties" tab (#8124) [GRAFT][release/cd] (#8300)
+title: Show only tenant-relevant custom properties in tenant "Custom properties" tab
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62291
 version: 1021.38.1
 ---
-Show only custom properties relevant for tenants in tenant "Custom properties" tab (#8124) [GRAFT][release/cd] (#8300)
+Previously, the "Custom properties" tab in the tenant details view showed all custom properties, including those not relevant for tenants, which could be confusing. With this change, only custom properties that are actually relevant for tenants are displayed in this tab. This improves clarity and usability for users managing tenant-specific custom properties.
