@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixing search issues with new select and improving the events fired (#8073) [GRAFT][release/y2025] (#8330)
+title: Fixed search trigger on space key press
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
