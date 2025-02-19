@@ -1,6 +1,6 @@
 ---
 date: 2024-03-01
-title: Deprecation of Cumulocity Linux Agent included in the Cumulocity Edge
+title: Deprecation of Cumulocity Linux agent included in Cumulocity Edge
 change_type:
   - value: change-inv-3bw8e
     label: Announcement
