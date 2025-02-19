@@ -15,4 +15,4 @@ ticket: MTM-61832
 version: 1021.41.0
 ---
 During the login process using OAI-Secure, the UI relied on basic authentication due to logic based on the `/currentTenant` endpoint. As part of this change, basic authentication has been eliminated from the OAI-Secure login process.
-The new login process is available for OAI-SECURE where the tfaSupported flag is enabled. This flag was introduced to ensure backward compatibility.
+The new login process is available for OAI-Secure where the `tfaSupported` flag is enabled. This flag was introduced to ensure backward compatibility.
