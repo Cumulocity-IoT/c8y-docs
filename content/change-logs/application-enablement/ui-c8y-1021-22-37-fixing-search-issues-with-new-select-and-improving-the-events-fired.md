@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed search trigger on space key press
+title: Search is no longer triggered on pressing the space key
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
