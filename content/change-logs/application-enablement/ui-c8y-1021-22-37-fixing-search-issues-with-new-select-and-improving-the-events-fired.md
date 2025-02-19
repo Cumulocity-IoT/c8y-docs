@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62404
 version: 1021.22.37
 ---
-In the past, there were some issues with the search functionality when using the new select component, leading to a suboptimal user experience. This change fixes those search issues, ensuring that the search is not triggered when pressing the space key in the select component, allowing spaces to be used in search terms normally.
+Previously, there were some issues with the search functionality when using the new select component. These issues have been fixed. The search is no longer triggered when pressing the space key in the select component, so that spaces can be used in search terms in the usual way.
