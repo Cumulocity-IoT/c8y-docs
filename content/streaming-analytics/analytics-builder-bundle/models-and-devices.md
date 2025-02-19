@@ -51,6 +51,10 @@ With the concurrency level set to 1, it is still possible to create models which
 Using multiple specific devices in a model with the concurrency level set to more than 1 can lead to connections between models which are deployed across multiple workers. Chains of models using multiple specific devices with high throughput usually scale less well than chains of models all using a single specific device.
 {{< /c8y-admon-info>}}
 
+{{< c8y-admon-info>}}
+The concurrency level has a fix value of 1 for microservices with multi-tenant support.
+{{< /c8y-admon-info>}}
+
 ### Broadcast devices {#broadcast-devices}
 
 It is sometimes useful to have signals that can apply to all models. These may be signals from devices, or from other systems that are presented as if they were signals from a device. Analytics Builder thus supports devices that are referred to as broadcast devices and signals from these devices are available to all models across all devices.
