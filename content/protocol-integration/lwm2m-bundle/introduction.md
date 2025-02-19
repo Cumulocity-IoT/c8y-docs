@@ -4,7 +4,7 @@ title: Introduction
 layout: redirect
 ---
 
-Lightweight M2M (LWM2M) is a traffic and resource-optimized protocol to remotely manage IoT devices. The protocol is standardized by the Open Mobile Alliance. For more information, see [http://openmobilealliance.org/iot/lightweight-m2m-lwm2m](https://openmobilealliance.org/iot/lightweight-m2m-lwm2m).
+Lightweight M2M (LWM2M) is a traffic and resource-optimized protocol to remotely manage IoT devices. The protocol is standardized by the Open Mobile Alliance. For more information, see [https://www.openmobilealliance.org/lwm2m/](https://www.openmobilealliance.org/lwm2m/).
 
 {{< c8y-admon-important >}}
 {{< product-c8y-iot >}} currently supports LWM2M 1.1 over CoAP and UDP.
