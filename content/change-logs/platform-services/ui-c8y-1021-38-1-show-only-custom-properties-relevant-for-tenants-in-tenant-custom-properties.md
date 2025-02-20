@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Show only tenant-relevant custom properties in tenant "Custom properties" tab
+title: Custom properties tab in tenant details only shows tenant-relevant custom properties
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
