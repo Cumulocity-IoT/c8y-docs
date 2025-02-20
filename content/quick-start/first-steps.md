@@ -145,7 +145,7 @@ To create a report click **Reports** in the **Navigator** on the left side and f
 ![Reports](/images/users-guide/getting-started/getting-started-add-a-new-report.png)
 
 1. Click the **Add report** button to open the **Add report** dialog window.
-2. In the **Menu label** field, enter a name for the report. For this tutorial name the report "Smartphone Measurements" and optionally provide a description below.
+2. In the **General** section of the **Dashboard settings**, enter a name for the report in the **Menu label** field.  For this tutorial name the report "Smartphone Measurements" and optionally provide a description below.
 3. You can display the report in the navigator with the option **Show in navigator** but we will leave that unchecked in this tutorial.
    ![Add new report](/images/users-guide/getting-started/getting-started-add-new-report-general.png)
 4. In the **Appearance** section, change the theme to "Branded" and set the header style to "Border". The changes will be reflected immediately after selection.
