@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Allow extension packages to be archived
+title: Extension packages can now be archived
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
