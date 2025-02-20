@@ -2,8 +2,6 @@
 weight: 10
 title: General configuration
 layout: redirect
-aliases:
-  - /enterprise-tenant/enhanced-time-series-support/
 ---
 
 The {{< product-c8y-iot >}} Operational Store provides an enhanced time series support (so-called time series collections) for measurements data. The following section summarizes how to enable/disable this feature.

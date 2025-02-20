@@ -7,4 +7,6 @@ outputs:
 sector:
   - platform_administration
 weight: 80
+aliases:
+  - /enterprise-tenant/enhanced-time-series-support/
 ---
