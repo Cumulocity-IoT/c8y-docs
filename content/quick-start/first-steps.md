@@ -113,7 +113,7 @@ On registering a device in the last step, a dashboard has automatically been cre
 Follow the instructions below to customize the new dashboard of the device you registered in the previous step.
 
 1. In the Cockpit application, select the device you created in the previous step (for example, your smartphone in the **Phones** group). Click the **SensorTag Dashboard** tab.
-2. Click **Edit** in the top menu bar to open the editor.
+2. Click **Edit widgets** in the top menu bar to open the editor.
    ![Customize dashboard](/images/users-guide/getting-started/getting-started-tutorial-dashboard-customize.png)
 
 3. In the dashboard editor, provide the following information:
