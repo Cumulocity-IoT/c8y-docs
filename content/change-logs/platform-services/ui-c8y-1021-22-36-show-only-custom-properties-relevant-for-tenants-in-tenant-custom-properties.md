@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Show only custom properties relevant for tenants in tenant "Custom properties" tab (#8124) [GRAFT][release/y2025] (#8301)
+title: Custom properties tab in tenant details only shows tenant-relevant custom properties
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
