@@ -75,9 +75,9 @@ Open the Apple App Store or Google Play Store from your smartphone and search fo
 
 To connect your smartphone via QR code follow the instructions below:
 
-1.  On a desktop or laptop computer, open a web browser and log in to your {{< product-c8y-iot >}} tenant. From the Cockpit application, click **Connect Smartphone** in the right drawer or in the Welcome widget.
+1.  On a desktop or laptop computer, open a web browser and log in to your {{< product-c8y-iot >}} tenant. From the Cockpit application, click **Connect Smartphone** in the Welcome widget.
 
-    ![Cockpit application](/images/users-guide/csa/csa-connect-smartphone-right-drawer.png)
+    ![Cockpit application](/images/users-guide/csa/csa-connect-smartphone.png)
 
 2.  Follow the instructions in the wizard to step 3, ensuring that the app is installed on the smartphone.
 
