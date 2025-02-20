@@ -1,6 +1,6 @@
 ---
 date: ""
-title: allowing packages to get archived (#7396) [GRAFT][release/cd] (#8174)
+title: Allow extension packages to be archived
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61341
 version: 1021.44.0
 ---
-allowing packages to get archived (#7396) [GRAFT][release/cd] (#8174)
+In the past, extension packages could not be archived in the system which led to challenges with managing obsolete or unused packages. With this change, it is now possible to archive no longer maintained packages. This allows extension package maintainers to mark their package as out of maintenance, while still being able to access archived packages if necessary.
