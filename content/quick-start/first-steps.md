@@ -116,7 +116,7 @@ Follow the instructions below to customize the new dashboard of the device you r
 2. Click **Edit widgets** in the top menu bar to open the editor.
    ![Customize dashboard](/images/users-guide/getting-started/getting-started-tutorial-dashboard-customize.png)
 
-3. In the dashboard editor, provide the following information:
+3. In the **Dashboard settings**, provide the following information:
 
     * In the **General** section, change the menu label to "Phone SensorTag Dashboard".
     ![Dashboard editor](/images/users-guide/getting-started/getting-started-customize-dashboard-general.png)
