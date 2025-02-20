@@ -123,13 +123,28 @@ const checkLink = async (link) => {
   ));
 
   if (issues.length > 0) {
-    let reportContent = "| URL | Issue | Files Location |\n";
-    reportContent += "| --- | --- | --- |\n";
-    reportContent += issues
-      .map((issue) =>
-        `| ${issue.url} | ${issue.type} | ${issue.files.join(", ")} |`
-      )
-      .join("\n");
+    const groupedIssues = issues.reduce((acc, issue) => {
+      if (!acc[issue.type]) {
+        acc[issue.type] = [];
+      }
+      acc[issue.type].push(issue);
+      return acc;
+    }, {});
+
+    let reportContent = '### :warning: Broken links found!\n\n';
+ 
+    for (const [type, issues] of Object.entries(groupedIssues)) {
+      reportContent += `#### ${type}\n`;
+      issues.forEach(issue => {
+        reportContent += `- ${issue.url}\n`;
+        issue.files.forEach(file => {
+          reportContent += `  - ${file}\n`;
+        });
+      });
+      reportContent += '\n';
+    }
+
+    return reportContent.trim();
 
     fs.writeFileSync("broken_links_report.md", reportContent);
     console.log("Issues saved to broken_links_report.md");
