@@ -57,7 +57,11 @@ Once enabled, avoid switching the property back to `DISABLED` as this can lead t
 The following APIs are not supported and do not have a replacement:
 
 * `GET /measurement/measurements/{id}`
+ 
+Alternatively one can use the `GET /measurement/measurements` API to retrieve a list of measurements. By specifying the device(source) id and the exact point in time the measurement was sent by the device, the result set can be reduced significantly. Note, every measurement document returned, does still contain an identifier.  
 * `DEL /measurements/measurement/{id}`
+
+Future versions will add support for the operation.  
 
 The following API is partially supported:
 

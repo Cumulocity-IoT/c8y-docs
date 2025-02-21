@@ -40,9 +40,12 @@ To start the tenant migration follow the steps below:
 After the data is processed, verified and migrated to the new collection the status of the migration changes to **Verified** and the **Approve and finish migration** button is visible in the **Ongoing migration** section and in the tenant list on hovering over the tenant row. Click **Approve and finish migration** to confirm the process.
 5. A confirmation pop-up shows up providing the following information:
 * The new format for time series measurements, which is used after confirming the data migration process.
-* That after seven days the legacy collection is removed.
-* That the action of approval is irreversible. 
+* That after seven days the legacy collection is removed. 
 Click **Confirm**. This will change the status of the migration to **Approved**.
+  {{< c8y-admon-important >}}
+  The action of approval is irreversible! Once the migration is confirmed and the status changes to **Approved** it is no longer possible to switch back to the legacy data format without data loss in case of an issue with the new data format. Enhanced time series support feature is fully enabled with all implications mentioned above. 
+  {{< /c8y-admon-important >}}
+* Until this point in time billing metrics are computed based on the data stored in the legacy data format. After confirmation, billing metrics are computed based on the new time series optimized data format.
 6. After seven days the legacy measurements collection is deleted and the migration status changes to **Completed**.
 
 {{< c8y-admon-info >}}
