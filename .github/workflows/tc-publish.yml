@@ -1,0 +1,74 @@
+name: Tech Community Changelog Publish
+on:
+  workflow_dispatch:
+  #schedule:
+  #  - cron: 00 07 * * *
+
+permissions:
+  contents: read
+
+jobs:
+  get-deployement-details:
+    name: Get deployment details from helm charts
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: build-pipeline
+    outputs:
+      deployment: ${{ steps.component-details.outputs.deployment }}
+    steps:
+      - name: checkout docs repository
+        uses: actions/checkout@v4
+        with:
+          path: docs
+          fetch-depth: 1
+
+      - name: Creating github access token
+        id: token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+
+      - name: Checkout c8y-iot-build-pipeline repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.REPOSITORY }}
+          fetch-depth: 1
+          ref: ${{ vars.BRANCH }}
+          token: ${{ steps.token.outputs.token }}
+          path: pipeline
+
+      - name: Get component details from helm charts
+        id: component-details
+        run: echo "$(cat pipeline/clusters/helm_charts_data.json | jq -c .)" >> $GITHUB_OUTPUT
+
+  changed_files:
+    name: Update changelog dates
+    runs-on: ubuntu-latest
+    needs: [ get-component-details ]
+    timeout-minutes: 15
+    steps:
+      - name: Creating github access token
+        id: token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.C8Y_DOCS_AUTOMATIONS_APP_ID }}
+          private-key: ${{ secrets.C8Y_DOCS_AUTOMATIONS_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+
+      - name: Checking out
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ steps.token.outputs.token }}
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Publish changelog files
+        run: |
+          cd publish-change-logs
+          npm ci
+          npm start ${{ secrets.DISCOURSE_URL }} ${{ secrets.DISCOURSE_API_KEY }} ${{ secrets.DISCOURSE_API_USER }} ${{ fromJson(needs.get-component-details.deployment.matrix) }}

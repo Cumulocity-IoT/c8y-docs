@@ -1,0 +1,21 @@
+{
+  "name": "publish-change-logs",
+  "version": "0.0.1",
+  "description": "Checks change logs and publish them in discourse",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stefan Witschel",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "date-fns": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
