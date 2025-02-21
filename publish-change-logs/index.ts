@@ -277,9 +277,18 @@ async function getRawAndTagsFromFile(filePath: string) {
   }
 
   let version = data.version;
-  let component = data.component[0].label;
-  let buildArtifact = data.build_artifact[0].label;
+  let component = "";
+  if(data.component && data.component.length > 1)
+     data.component[0].label;
+  let buildArtifact = "";
+  if(data.build_artifact && data.build_artifact.length > 1)
+    buildArtifact = data.build_artifact[0].label;
   let ticket = data.ticket;
+  let tags = [];
+  if(changeType) tags.push(renameTag(changeType));
+  if(productArea) tags.push(productArea)
+  if(component) tags.push(component) 
+  if(buildArtifact) tags.push(buildArtifact); 
   let raw: string = `<!-- ${fileName} -->
   **Change Type:** ${changeType}
   **Date:** ${date}
@@ -292,7 +301,7 @@ async function getRawAndTagsFromFile(filePath: string) {
 
   ${content}
   `
-  return {raw: raw, tags: [renameTag(changeType), mapProductAreaToTag(productArea), renameTag(component), buildArtifact].flat()};
+  return {raw: raw, tags: tags.flat()};
 }
 
 function mapProductAreaToTag(productArea: string) {
