@@ -2,6 +2,7 @@ import { readdir, writeFile } from "fs/promises";
 import path, { join, sep, basename } from "path";
 import { stringify as matterStringify, read as matterRead } from "gray-matter";
 import { format } from 'date-fns';
+import { valid, gte } from "semver";
 
 const relativePathToChangeLogs = "../content/change-logs";
 const changeLogCategoryId = 22;
@@ -13,10 +14,13 @@ const requestDelay = 2000;
 let requestsSent = 0;
 
 if (process.argv.length < 4) {
-  console.error("Usage: node index.ts <discourseURL> <discourseApiKey> <discourseUser>");
+  console.error("Usage: node index.ts <discourseURL> <discourseApiKey> <discourseUser> <deploymentJSON>");
   process.exit(1);
 }
-let [discourseURL, discourseApiKey, discourseUser] = process.argv.slice(2);
+let [discourseURL, discourseApiKey, discourseUser, deploymentJSON] = process.argv.slice(2);
+let deploymentObj: { [key: string]: any } = {};
+if(deploymentJSON)
+ deploymentObj = JSON.parse(JSON.parse( deploymentJSON ));
 
 //console.log(discourseURL, discourseApiKey, discourseUser)
 
@@ -79,7 +83,7 @@ async function deleteDiscourseChangeLog(id: number):Promise<any> {
   if (!res.ok) {
     throw new Error(res.statusText);
   }
-  return await res.json();
+  return await res;
 }
 
 async function updateDiscourseChangeLog(id: number, raw: string):Promise<any> {
@@ -206,6 +210,7 @@ async function processFiles() {
     let id:number = fileIdArray[0] as number;
     let pathToFile:string = fileIdArray[1] as string;
     let existingChangeLog = await getDiscourseChangeLog(id);
+    if(requestDelay > 0) await delay(requestDelay);
     let slug = existingChangeLog.slug;
     let posts = existingChangeLog.post_stream.posts;
 
@@ -278,17 +283,28 @@ async function getRawAndTagsFromFile(filePath: string) {
 
   let version = data.version;
   let component = "";
-  if(data.component && data.component.length > 1)
-     data.component[0].label;
+  if(data.component && data.component.length >= 1)
+     component = data.component[0].label;
   let buildArtifact = "";
-  if(data.build_artifact && data.build_artifact.length > 1)
+  if(data.build_artifact && data.build_artifact.length >= 1)
     buildArtifact = data.build_artifact[0].label;
   let ticket = data.ticket;
   let tags = [];
+
+  let formattedContent = ""
+  if(content) formattedContent= content.replace("{{< product-c8y-iot >}}", "Cumulocity");
+ 
   if(changeType) tags.push(renameTag(changeType));
-  if(productArea) tags.push(productArea)
-  if(component) tags.push(component) 
-  if(buildArtifact) tags.push(buildArtifact); 
+  if(productArea) tags.push(mapProductAreaToTag(productArea));
+  if(component) tags.push(renameTag(component)); 
+  let deployments: string[] = [];
+  if(buildArtifact) {
+    tags.push(renameTag(buildArtifact)); 
+    deployments = await getDeploymentsForBuildArtifact(buildArtifact, version);
+  }
+ 
+
+
   let raw: string = `<!-- ${fileName} -->
   **Change Type:** ${changeType}
   **Date:** ${date}
@@ -296,19 +312,36 @@ async function getRawAndTagsFromFile(filePath: string) {
   **Component:** ${component}
   **Build artifact:** ${buildArtifact}
   **Version:** ${version}
-
+  **Deployed at:** ${deployments.toString()}
   ---
 
-  ${content}
+  ${formattedContent}
   `
   return {raw: raw, tags: tags.flat()};
 }
 
 function mapProductAreaToTag(productArea: string) {
-  if(productArea === "Application enablement & solutions")
+  if(productArea.toLowerCase() === "application enablement & solutions")
     return ["app-enablement"];
-  if(productArea === "Device management & connectivity")
+  if(productArea.toLowerCase() === "device management & connectivity")
     return ["device-management", "device-connectivity"];
   else
-    return [productArea];
+    return [renameTag(productArea)];
+}
+
+async function getDeploymentsForBuildArtifact(build_artifact: string, version: string):Promise<string[]>{
+  let deploymentList :string[] = [];
+  if(gte(deploymentObj[build_artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com"].version, version))
+    deploymentList.push("eu-latest-cumulocity-com");
+  if(gte(deploymentObj[build_artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com"].version, version))
+    deploymentList.push("apj-cumulocity-com");
+  if(gte(deploymentObj[build_artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com"].version, version))
+    deploymentList.push("jp-cumulocity-com");
+  if(gte(deploymentObj[build_artifact].zones["c8y-ops-zone-3"].clusters["c8y-cumulocity-com"].version, version))
+    deploymentList.push("c8y-cumulocity-com");
+  if(gte(deploymentObj[build_artifact].zones["c8y-ops-zone-3"].clusters["us-cumulocity-com"].version, version))
+    deploymentList.push("us-cumulocity-com");
+  if(gte(deploymentObj[build_artifact].zones["c8y-ops-zone-3"].clusters["emea-cumulocity-com"].version, version))
+    deploymentList.push("emea-cumulocity-com");
+  return deploymentList;
 }
