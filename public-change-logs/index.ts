@@ -9,6 +9,8 @@ const changeLogCategorySlug = "cumulocity-change-log";
 const toBeCreated = new Map<string, string>();
 const toBeUpdated = new Map<string, (string | number)[]>();
 const toBeDeleted = new Map<string, number>();
+const requestDelay = 2000;
+let requestsSent = 0;
 
 if (process.argv.length < 4) {
   console.error("Usage: node index.ts <discourseURL> <discourseApiKey> <discourseUser>");
@@ -39,6 +41,7 @@ async function createNewChangeLog(raw: string, title: string, tags: string[]) {
     },
     body: JSON.stringify(body)
   });
+  requestsSent++;
   if (!res.ok) {
     console.log(await res.json());
     throw new Error(res.statusText);
@@ -56,6 +59,7 @@ async function getDiscourseChangeLogs():Promise<any> {
       'Api-Username': discourseUser
     },
   });
+  requestsSent++;
   if (!res.ok) {
     throw new Error(res.statusText);
   }
@@ -71,6 +75,7 @@ async function deleteDiscourseChangeLog(id: number):Promise<any> {
       'Api-Username': discourseUser
     },
   });
+  requestsSent++;
   if (!res.ok) {
     throw new Error(res.statusText);
   }
@@ -91,6 +96,7 @@ async function updateDiscourseChangeLog(id: number, raw: string):Promise<any> {
     },
     body: JSON.stringify(body)
   });
+  requestsSent++;
   if (!res.ok) {
     throw new Error(res.statusText);
   }
@@ -112,6 +118,7 @@ async function updateTags(id: number, title: string, tags: string[]):Promise<any
     },
     body: JSON.stringify(body)
   });
+  requestsSent++;
   if (!res.ok) {
     throw new Error(res.statusText);
   }
@@ -127,11 +134,17 @@ async function getDiscourseChangeLog(id: number):Promise<any> {
       'Api-Username': discourseUser
     },
   });
+  requestsSent++;
   if (!res.ok) {
     throw new Error(res.statusText);
   }
   return await res.json();
 }
+
+function delay(ms: number) {
+  return new Promise( resolve => setTimeout(resolve, ms) );
+}
+
 
 async function processFiles() {
   try {
@@ -173,6 +186,7 @@ async function processFiles() {
       const filePath = toBeCreated.get(title) as string;
       let rawAndTags = await getRawAndTagsFromFile(filePath);
       createNewChangeLog(rawAndTags.raw, title, rawAndTags.tags);
+      if(requestDelay > 0) await delay(requestDelay);
   }
   //Delete old articles
   for(const title of toBeDeleted.keys()) {
@@ -180,6 +194,7 @@ async function processFiles() {
     console.log("Deleting article with title "+title+" and id: "+id);
     try {
       deleteDiscourseChangeLog(id);
+      if(requestDelay > 0) await delay(requestDelay);
     } catch(error) {
         console.log("Error on deleting article:"+ error);
     }
@@ -205,7 +220,9 @@ async function processFiles() {
         //Update article
         console.log("Updating article with title "+title+" and id: "+id);
         updateDiscourseChangeLog(postId, fileContent.raw);
+        if(requestDelay > 0) await delay(requestDelay);
         updateTags(id, title, fileContent.tags );
+        if(requestDelay > 0) await delay(requestDelay);
       }
     }
 
@@ -214,6 +231,8 @@ async function processFiles() {
     console.log("Error during processing: "+error);
   }
 }
+
+
 
 async function processFile(filePath: string) {
   const matterResult = await matterRead(filePath);
