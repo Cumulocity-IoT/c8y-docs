@@ -12,6 +12,7 @@ const toBeUpdated = new Map<string, (string | number)[]>();
 const toBeDeleted = new Map<string, number>();
 const requestDelay = 2000;
 let requestsSent = 0;
+const maxRequests = 60;
 
 if (process.argv.length < 4) {
   console.error("Usage: node index.ts <discourseURL> <discourseApiKey> <discourseUser> <deployments.json>");
@@ -197,6 +198,7 @@ async function processFiles() {
   }
   //Create new articles
   for (const title of toBeCreated.keys()) {
+      if(maxRequests >= 0 && requestsSent >= maxRequests) break;
       const filePath = toBeCreated.get(title) as string;
       let rawAndTags = await getRawAndTagsFromFile(filePath);
       createNewChangeLog(rawAndTags.raw, title, rawAndTags.tags);
@@ -204,6 +206,7 @@ async function processFiles() {
   }
   //Delete old articles
   for(const title of toBeDeleted.keys()) {
+    if(maxRequests >= 0 && requestsSent >= maxRequests) break;
     let id = toBeDeleted.get(title) as number;
     console.log("Deleting article with title "+title+" and id: "+id);
     try {
@@ -216,6 +219,7 @@ async function processFiles() {
 
   //Update existing articles
   for(const title of toBeUpdated.keys()) {
+    if(maxRequests >= 0 && requestsSent >= maxRequests) break;
     let fileIdArray = toBeUpdated.get(title) as (string | number)[];
     let id:number = fileIdArray[0] as number;
     let pathToFile:string = fileIdArray[1] as string;
@@ -225,6 +229,7 @@ async function processFiles() {
     let posts = existingChangeLog.post_stream.posts;
 
     if (posts.length > 0) {
+      if(requestsSent >= 60) break;
       const articleContent = posts[0].raw;
       const postId = posts[0].id;
       const fileContent = await getRawAndTagsFromFile(pathToFile);
