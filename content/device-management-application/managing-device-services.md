@@ -58,25 +58,25 @@ The following tabs make up the service details view, each described in detail in
 
 ![Service details](/images/users-guide/DeviceManagement/devmgmt-service-details.png)
 
-### Service Commands {#service-commands}
+### Service commands {#service-commands}
 
 The **Service Commands** tab allows users to send available service commands and track their execution history. If a service supports commands, they will appear as **action buttons** in the services list and as selectable options in the **Service Commands tab**.
 
-#### Sending Commands to Services
+#### Sending commands to services
 For a service to support commands, it must include the `c8y_ServiceCommand` fragment in its supported operations.
 
 Supported services may provide specific command actions, such as:
-- **Start / Stop**
-- **Restart**
+- Start/stop
+- Restart
 - **Custom commands** (e.g., "Flush Cache", "Update", "Reset Settings")
 
-If a service does not specify commands, a **default set** (Start, Stop, Restart) is available.
+If a service does not specify commands, a default set (Start, Stop, Restart) is available.
 
-#### Tracking Service Command History
-The **Service Commands** tab displays a **history** of executed commands, including:
-- The **command type** (Start, Stop, etc.).
-- The **execution status** (Pending, Completed, Failed).
-- **Timestamps** for sent and completed actions.
+#### Tracking service command history
+The **Service commands** tab displays a history of executed commands, including:
+- The command type (Start, Stop, and so on).
+- The execution status (Pending, Completed, Failed).
+- Timestamps for sent and completed actions.
 
 ### Alarms {#alarms}
 

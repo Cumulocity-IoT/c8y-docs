@@ -106,15 +106,15 @@ Or using [SmartREST static template 200](/smartrest/mqtt-static-templates/#200) 
 
 Similarly to measurements, alarms and events associated with the service can also be sent.
 
-### Service Commands {#service-commands}
+### Service commands {#service-commands}
 
 A service can announce its capability to receive commands by adding the ```c8y_ServiceCommand``` operation in its ```c8y_SupportedOperations```.
 This allows the service to execute predefined or custom commands sent from the platform.
 
-#### Available Service Commands
+#### Available service commands
 
-The list of commands a service supports is defined in the **c8y_SupportedServiceCommands** fragment. If this fragment is not present,
-the system assumes a default set of commands: **START, STOP, and RESTART**.
+The list of commands a service supports is defined in the `c8y_SupportedServiceCommands` fragment. If this fragment is not present,
+the system assumes a default set of commands: `START`, `STOP`, and `RESTART`.
 
 ```json
 {
@@ -128,12 +128,12 @@ the system assumes a default set of commands: **START, STOP, and RESTART**.
 
 | Name                          | Type   | Mandatory | Description |
 |--------------------------------|--------|-----------|-------------|
-| `c8y_SupportedOperations`    | Array  | Yes       | Must include `"c8y_ServiceCommand"` to enable command support. |
+| `c8y_SupportedOperations`    | Array  | Yes       | Must include `c8y_ServiceCommand` to enable command support. |
 | `c8y_SupportedServiceCommands` | Array  | No        | List of available commands for the service. If not provided, defaults to `START`, `STOP`, `RESTART`. |
 
-#### Executing Service Commands
+#### Executing service commands
 
-When a command is sent, the following **operation structure** is created:
+When a command is sent, the following operation structure is created:
 
 ```json
 {
@@ -146,4 +146,4 @@ When a command is sent, the following **operation structure** is created:
 }
 ```
 
-The operation is then processed by the device, executing the command and updating its **status** accordingly.
+The operation is then processed by the device, executing the command and updating its status accordingly.
