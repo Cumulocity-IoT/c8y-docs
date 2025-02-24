@@ -70,7 +70,7 @@ Imagine, for example, that you want to describe electric meters from different v
     },
     "c8y_ThreePhaseElectricitySensor": {},
     "c8y_Relay": {
-        "state": "CLOSED"   
+        "state": "CLOSED"
     }
 }
 ```
@@ -83,8 +83,8 @@ The approach also enables developing generic application components. For example
 
 For more information on fragments and how managed objects are structured, see [Fragment library](/device-integration/fragment-library/).
 
-{{< c8y-admon-info >}}
-While designing the data model for the inventory managed object consider the following:
+<a name="document-limits"></a>{{< c8y-admon-info >}}
+While designing the data models, consider the following:
 1. There is no size or length constraint for a single fragment, but there is a limitation for the overall JSON document size, which may not exceed 16MiB for a single managed object entry within the inventory collection. We recommend you to keep it below 1 MiB.
 2. When designing asset hierarchies, use small groups with less than 1000 subassets. Each subitem in the asset hierarchy creates a reference record in the parent item. Therefore keep in mind the first recommendation regarding the JSON document size.
 3. When you include arrays of elements within fragments, keep the length of such collections below 1k elements.
