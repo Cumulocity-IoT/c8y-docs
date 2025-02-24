@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-62312
-version: 2025.72.0
+version: 10.18.540.281
 ---
 Previously, when an {{< enterprise-tenant >}} created a subtenant with a tenant policy that tried to override the default tenant option the tenant creation failed. This issue has been fixed an creating a subtenant with a tenant policy overriding the default tenant option now works properly.
 work as before. 
