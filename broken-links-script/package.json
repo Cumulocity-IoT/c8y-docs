@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "cheerio": "^1.0.0",
+    "jsdom": "^26.0.0",
     "node-fetch": "^3.3.2",
     "p-limit": "^6.2.0"
   }
