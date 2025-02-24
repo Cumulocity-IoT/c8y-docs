@@ -43,7 +43,6 @@ jobs:
 
             if (fs.existsSync(reportPath)) {
               const report = fs.readFileSync(reportPath, 'utf8').trim();
-              const lines = report.split('\n\n'); 
 
               await github.rest.issues.createComment({
                 issue_number: context.issue.number,
