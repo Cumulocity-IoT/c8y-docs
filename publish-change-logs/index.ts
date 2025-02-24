@@ -58,15 +58,16 @@ async function createNewChangeLog(raw: string, title: string, tags: string[]) {
   });
   requestsSent++;
   if (!res.ok) {
+    console.log("Error on creating article with title: "+title + ", Error: "+ res.statusText);
     console.log(await res.json());
-    throw new Error(res.statusText);
-  }
-  return await res.json();
+  } else 
+    return await res.json();
 }
 
 async function getDiscourseChangeLogs():Promise<any> {
-
-  const res = await fetch(`${discourseURL}/c/${changeLogCategorySlug}/${changeLogCategoryId}.json`, {
+  const topics = [];
+  let url = `${discourseURL}/c/${changeLogCategorySlug}/${changeLogCategoryId}.json`;
+  const res = await fetch(url, {
     method: "GET",
     headers: {
       'Accept': 'application/json',
@@ -78,7 +79,27 @@ async function getDiscourseChangeLogs():Promise<any> {
   if (!res.ok) {
     throw new Error(res.statusText);
   }
-  return await res.json();
+  let response = await res.json();
+  topics.push(response.topic_list.topics);
+  while(response.topic_list.more_topics_url) {
+    console.log("Found more pages of topics: Retrieving "+ response.topic_list.more_topics_url +" ...")
+    let moreTopics = await fetch(discourseURL + response.topic_list.more_topics_url, {
+      method: "GET",
+      headers: {
+        'Accept': 'application/json',
+        'Api-Key': discourseApiKey,
+        'Api-Username': discourseUser
+      },
+    });
+    requestsSent++;
+    if (!moreTopics.ok) {
+      throw new Error(moreTopics.statusText);
+    }
+    response = await moreTopics.json();
+    topics.push(response.topic_list.topics);
+  }
+
+  return topics.flat();
 }
 
 async function deleteDiscourseChangeLog(id: number):Promise<any> {
@@ -170,8 +191,7 @@ async function processFiles() {
   const changeLogMarkdownFiles = files.filter(
     (file) => file.endsWith(".md") || file.endsWith(".MD")
   );
-  const existingChangeLogs = await getDiscourseChangeLogs();
-  const existingTopics = existingChangeLogs.topic_list.topics;
+  const existingTopics = await getDiscourseChangeLogs();
   //Checking existing change log topics
   for (const changeLogTopic of existingTopics) {
       const articleTitle = changeLogTopic.title;
@@ -201,7 +221,11 @@ async function processFiles() {
       if(maxRequests >= 0 && requestsSent >= maxRequests) break;
       const filePath = toBeCreated.get(title) as string;
       let rawAndTags = await getRawAndTagsFromFile(filePath);
-      createNewChangeLog(rawAndTags.raw, title, rawAndTags.tags);
+      try {
+        createNewChangeLog(rawAndTags.raw, title, rawAndTags.tags);
+      } catch(error) {
+        console.log("Error on creating article with title: "+title + ", Error: "+ error);
+      }
       if(requestDelay > 0) await delay(requestDelay);
   }
   //Delete old articles
@@ -262,7 +286,7 @@ async function processFile(filePath: string) {
     //console.warn("No date in change-log file: ", filePath, "Skipping..");
     return "";
   }
-  if (!data.version) {
+  if (!data.version || (data.version && data.version === "''")) {
     //console.warn("No version set in: ", filePath, "Skipping..");
     return "";
   }
@@ -277,7 +301,9 @@ async function processFile(filePath: string) {
   if(date instanceof Date) {
     date = format(date, "yyyy-MM-dd");
   }
-  const title = date + " - "+ data.title;
+  if(data.title.endsWith("."))
+    data.title = data.title.slice(0, -1);
+  const title = date + " - "+ data.title.trim();
   return title;
 
 }
@@ -378,9 +404,9 @@ function getDeploymentListString(deploymentList: string[]) {
   let deploymentListstring = "";
   for (let deployment of deploymentList) {
     if(!deploymentListstring)
-      deploymentListstring = deployment.replace("-",".");
+      deploymentListstring = deployment.replaceAll("-",".");
     else {
-      deploymentListstring += ", "+deployment.replace("-",".");
+      deploymentListstring += ", "+deployment.replaceAll("-",".");
     }
   };
   return deploymentListstring;
