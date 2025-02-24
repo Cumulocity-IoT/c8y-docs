@@ -19,7 +19,7 @@ The Device Management application lets you monitor the data that your devices se
 The [Services](/device-management-application/viewing-device-details/#services) tab on the device details view provides an overview of the services running on a given device and acts as an entry point to the service details view.
 There you can see detailed information about measurements, events and alarms sent for every service.
 
-For services that support commands, actions like **Start, Stop, Restart**, or custom commands appear in the menu of each service. This allows users to quickly send commands without opening the full service details view.
+For services that support commands, actions like **Start**, **Stop**, **Restart**, or custom commands appear in the menu of each service. This allows users to quickly send commands without opening the full service details.
 
 ![Services list](/images/users-guide/DeviceManagement/devmgmt-services-list.png)
 
@@ -68,7 +68,7 @@ For a service to support commands, it must include the `c8y_ServiceCommand` frag
 Supported services may provide specific command actions, such as:
 - Start/stop
 - Restart
-- **Custom commands** (e.g., "Flush Cache", "Update", "Reset Settings")
+- Custom commands (for example, "Flush cache", "Update", "Reset settings")
 
 If a service does not specify commands, a default set (Start, Stop, Restart) is available.
 
