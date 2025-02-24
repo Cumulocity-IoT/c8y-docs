@@ -1,4 +1,4 @@
-import { readdir, writeFile } from "fs/promises";
+import { readdir, readFile} from "fs/promises";
 import path, { join, sep, basename } from "path";
 import { stringify as matterStringify, read as matterRead } from "gray-matter";
 import { format } from 'date-fns';
@@ -14,17 +14,27 @@ const requestDelay = 2000;
 let requestsSent = 0;
 
 if (process.argv.length < 4) {
-  console.error("Usage: node index.ts <discourseURL> <discourseApiKey> <discourseUser> <deploymentJSON>");
+  console.error("Usage: node index.ts <discourseURL> <discourseApiKey> <discourseUser> <deployments.json>");
   process.exit(1);
 }
 let [discourseURL, discourseApiKey, discourseUser, deploymentJSON] = process.argv.slice(2);
-let deploymentObj: { [key: string]: any } = {};
-if(deploymentJSON)
- deploymentObj = JSON.parse(JSON.parse( deploymentJSON ));
+let deploymentObj: Record<string, any> = {};
+
+if(deploymentJSON) {
+  readJsonFile(deploymentJSON).then((data) => {
+    //console.log(data);
+    deploymentObj = data;
+  });
+}
 
 //console.log(discourseURL, discourseApiKey, discourseUser)
 
 processFiles();
+
+async function readJsonFile(path:string) {
+  const file = await readFile(path, "utf8");
+  return JSON.parse(file);
+}
 
 async function createNewChangeLog(raw: string, title: string, tags: string[]) {
   console.log("Creating article with title "+title+" ...");
@@ -211,7 +221,7 @@ async function processFiles() {
     let pathToFile:string = fileIdArray[1] as string;
     let existingChangeLog = await getDiscourseChangeLog(id);
     if(requestDelay > 0) await delay(requestDelay);
-    let slug = existingChangeLog.slug;
+    //let slug = existingChangeLog.slug;
     let posts = existingChangeLog.post_stream.posts;
 
     if (posts.length > 0) {
@@ -292,15 +302,14 @@ async function getRawAndTagsFromFile(filePath: string) {
   let tags = [];
 
   let formattedContent = ""
-  if(content) formattedContent= content.replace("{{< product-c8y-iot >}}", "Cumulocity");
- 
+  if(content) formattedContent= content.replaceAll("{{< product-c8y-iot >}}", "Cumulocity").replaceAll("{{< enterprise-tenant >}}", "Enterprise Tenant"); 
   if(changeType) tags.push(renameTag(changeType));
   if(productArea) tags.push(mapProductAreaToTag(productArea));
   if(component) tags.push(renameTag(component)); 
   let deployments: string[] = [];
   if(buildArtifact) {
     tags.push(renameTag(buildArtifact)); 
-    deployments = await getDeploymentsForBuildArtifact(buildArtifact, version);
+    deployments = await getDeploymentsForBuildArtifact(component, buildArtifact, version);
   }
  
 
@@ -312,7 +321,8 @@ async function getRawAndTagsFromFile(filePath: string) {
   **Component:** ${component}
   **Build artifact:** ${buildArtifact}
   **Version:** ${version}
-  **Deployed at:** ${deployments.toString()}
+  **Deployed at:** ${getDeploymentListString(deployments)}
+
   ---
 
   ${formattedContent}
@@ -329,19 +339,51 @@ function mapProductAreaToTag(productArea: string) {
     return [renameTag(productArea)];
 }
 
-async function getDeploymentsForBuildArtifact(build_artifact: string, version: string):Promise<string[]>{
+async function getDeploymentsForBuildArtifact(component: string, build_artifact: string, version: string):Promise<string[]>{
   let deploymentList :string[] = [];
-  if(gte(deploymentObj[build_artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com"].version, version))
-    deploymentList.push("eu-latest-cumulocity-com");
-  if(gte(deploymentObj[build_artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com"].version, version))
-    deploymentList.push("apj-cumulocity-com");
-  if(gte(deploymentObj[build_artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com"].version, version))
-    deploymentList.push("jp-cumulocity-com");
-  if(gte(deploymentObj[build_artifact].zones["c8y-ops-zone-3"].clusters["c8y-cumulocity-com"].version, version))
-    deploymentList.push("c8y-cumulocity-com");
-  if(gte(deploymentObj[build_artifact].zones["c8y-ops-zone-3"].clusters["us-cumulocity-com"].version, version))
-    deploymentList.push("us-cumulocity-com");
-  if(gte(deploymentObj[build_artifact].zones["c8y-ops-zone-3"].clusters["emea-cumulocity-com"].version, version))
-    deploymentList.push("emea-cumulocity-com");
+  //console.log("Checking deployment zones for component: '"+component+"', build artifact: '"+build_artifact + "' and version: '"+version+"'");
+  for(let artifact in deploymentObj) {
+    if(build_artifact === deploymentObj[artifact].component_name) {
+
+      if (!valid(version) && version.split('.').length==4) {
+        version=toSemverFormat(version);
+      }
+
+      if(gte(deploymentObj[artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com"].version, version))
+        deploymentList.push("eu-latest-cumulocity-com");
+      if(gte(deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com"].version, version))
+        deploymentList.push("apj-cumulocity-com");
+      if(gte(deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com"].version, version))
+        deploymentList.push("jp-cumulocity-com");
+      if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["c8y-cumulocity-com"].version, version))
+        deploymentList.push("c8y-cumulocity-com");
+      if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["us-cumulocity-com"].version, version))
+        deploymentList.push("us-cumulocity-com");
+      if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["emea-cumulocity-com"].version, version))
+        deploymentList.push("emea-cumulocity-com");
+       //Abort after first match
+      break;
+    }
+  }
+
   return deploymentList;
+}
+
+function getDeploymentListString(deploymentList: string[]) {
+  let deploymentListstring = "";
+  for (let deployment of deploymentList) {
+    if(!deploymentListstring)
+      deploymentListstring = deployment.replace("-",".");
+    else {
+      deploymentListstring += ", "+deployment.replace("-",".");
+    }
+  };
+  return deploymentListstring;
+}
+
+function toSemverFormat(version: string){
+  const versionParts = version.split('.');
+  const semanticVersion = `${versionParts[0]}${versionParts[1]}.${versionParts[2]}.${versionParts[3]}`;
+  console.debug("Non-Semantic version format:",version,"converted to semantic format",semanticVersion,"for processing")
+  return semanticVersion
 }
