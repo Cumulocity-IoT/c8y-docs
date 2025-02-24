@@ -113,7 +113,7 @@ On registering a device in the last step, a dashboard has automatically been cre
 Follow the instructions below to customize the new dashboard of the device you registered in the previous step.
 
 1. In the Cockpit application, select the device you created in the previous step (for example, your smartphone in the **Phones** group). Click the **SensorTag Dashboard** tab.
-2. Click **Edit widgets** in the top menu bar to open the editor.
+2. Click **Dashboard settings** in the top menu bar to open the editor.
    ![Customize dashboard](/images/users-guide/getting-started/getting-started-tutorial-dashboard-customize.png)
 
 3. In the **Dashboard settings**, provide the following information:
@@ -138,7 +138,7 @@ Next, we will show you how to create a report to track data.
 
 Reports enable you to track applications, alarms, assets, and other data in a dashboard layout. Reports are global dashboard pages, regardless of the [asset hierarchy](/cockpit/managing-assets/#asset-hierarchy). To work with reports, check if you meet the [requirements](/cockpit/working-with-reports/) first.
 
-To create a report click **Reports** in the **Navigator** on the left side and following the steps below.
+To create a report click **Reports** in the **Navigator** on the left side and follow the steps below.
 
 #### Creating a report
 
@@ -150,7 +150,6 @@ To create a report click **Reports** in the **Navigator** on the left side and f
    ![Add new report](/images/users-guide/getting-started/getting-started-add-new-report-general.png)
 4. In the **Appearance** section, change the theme to "Branded" and set the header style to "Border". The changes will be reflected immediately after selection.
    ![Add new report](/images/users-guide/getting-started/getting-started-add-new-report-appearance.png)
-
 5. Click **Save** to create the report and add it to the report list.
    ![Report created](/images/users-guide/getting-started/getting-started-report-created.png)
 
