@@ -189,15 +189,14 @@ function delay(ms: number) {
   return new Promise( resolve => setTimeout(resolve, ms) );
 }
 
-async function sortingFilesByDate(files: string[]) : Promise<{ date: Date, matterResult: matter.GrayMatterFile<string> }[]> {
-  let filesList: { date: Date, matterResult:  matter.GrayMatterFile<string> }[] = [];
+async function getMatterForFiles(files: string[]) : Promise<matter.GrayMatterFile<string>[]> {
+  let filesList: matter.GrayMatterFile<string>[] = [];
   for(const filePath of files) {
     const pathToFile = join(relativePathToChangeLogs, filePath);
     const matterResult = await matterRead(pathToFile);
-    const date = new Date(matterResult.data.date);
-    filesList.push({date: date, matterResult: matterResult});
+    filesList.push(matterResult);
   }
-  return filesList.sort((a, b) => a.date.getTime() - b.date.getTime()); 
+  return filesList;
 }
 
 
@@ -211,7 +210,8 @@ async function processFiles() {
     (file) => file.endsWith(".md") || file.endsWith(".MD")
   );
   console.log("Reading and sorting change log files...");
-  let sortedFileContent = await sortingFilesByDate(changeLogMarkdownFiles);
+  let sortedFileContent = await getMatterForFiles(changeLogMarkdownFiles);
+  //console.log("Change log files sorted by date: ", sortedFileContent);
   console.log("Retreaving Tech Community Change logs ...");
   const existingTopics = await getDiscourseChangeLogs();
   //Checking existing change log topics
@@ -219,11 +219,11 @@ async function processFiles() {
       const articleTitle = changeLogTopic.title;
       if(!articleTitle.startsWith("About"))
         toBeDeleted.set(articleTitle, changeLogTopic.id);
-      for(const file of sortedFileContent) {
-        const fileTitle = await processFile(file.matterResult);
+      for(const matterResult of sortedFileContent) {
+        const fileTitle = await processFile(matterResult);
         if (fileTitle && !toBeUpdated.has(fileTitle)) {
           //Change-log file is valid - create new article
-          toBeCreated.set(fileTitle, file.matterResult);
+          toBeCreated.set(fileTitle, matterResult);
         }
         if(articleTitle === fileTitle) {
           //console.log("Article Title: "+articleTitle+ ", Change Log Title: "+fileTitle);
@@ -232,12 +232,13 @@ async function processFiles() {
           //Article already exists - no new creation
           toBeCreated.delete(fileTitle);
           //Article already exists - check if update is needed
-          toBeUpdated.set(articleTitle, [changeLogTopic.id, file.matterResult]);
+          toBeUpdated.set(articleTitle, [changeLogTopic.id, matterResult]);
         }
       }
   }
+  var toBeCreatedSorted = new Map([...toBeCreated.entries()].sort());
   //Create new articles
-  for (const title of toBeCreated.keys()) {
+  for (const title of toBeCreatedSorted.keys()) {
       if(maxRequests >= 0 && requestsSent >= maxRequests) break;
       const matterResult = toBeCreated.get(title);
       if (matterResult) {
