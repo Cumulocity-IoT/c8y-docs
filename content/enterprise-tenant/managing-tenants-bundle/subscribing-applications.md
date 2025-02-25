@@ -5,9 +5,27 @@ layout: redirect
 ---
 
 
-In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard {{< product-c8y-iot >}} applications.
+### Overview
+
+The application concept of {{< product-c8y-iot >}} includes a basic application marketplace.
+
+Tenants can be subscribed to applications which have been deployed by their superior tenant ({{< management-tenant >}} or {{< enterprise-tenant >}}).
+
+Via the Administration application, you can [grant application access to subtenants](/standard-tenant/managing-permissions/#application-access) and [subscribe to applications](#to-subscribe-an-application).
+
+{{< c8y-admon-info >}}
+Tenants can also have their own applications which can also be subscribed to subtenants. See [Custom applications](/standard-tenant/ecosystem/#custom-applications) for details on how to add custom applications.
+{{< /c8y-admon-info >}}
+
+In the **Applications** tab of a tenant you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard {{< product-c8y-iot >}} applications.
+
+A tenant can have multiple available applications as displayed under **Available applications** but to use an application's functionality a subscription to the application must be established for the tenant. The list of subscribed applications is shown under **Subscribed applications**.
 
 <img src="/images/users-guide/enterprise-tenant/et-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
+
+{{< c8y-admon-info >}}
+Alternatively, you can retrieve the list of subscribed applications for a tenant by using the {{< product-c8y-iot >}} REST API to get [specific tenant information](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API). The subscribed applications will be listed under the <code>applications</code> fragment.
+{{< /c8y-admon-info >}}
 
 ### To subscribe an application {#to-subscribe-an-application}
 
