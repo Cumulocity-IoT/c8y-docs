@@ -2,7 +2,6 @@ import fs from "fs";
 import path from "path";
 import fetch from "node-fetch";
 import pLimit from "p-limit";
-import { JSDOM } from "jsdom";
 
 const getMarkdownFiles = (dir) => {
   const files = fs.readdirSync(dir, { withFileTypes: true });
@@ -28,6 +27,7 @@ const shortcodeMapping = {
   "c8y-edge-current-version": "1018",
   "c8y-support-link": "https://cumulocity.com/support",
   "link-apamadoc-api": "https://cumulocity.com/apama/docs/latest/related/ApamaDoc/index.html",
+  "link-c8y-doc-baseurl": ".Page.Site.BaseURL",
   "link-device-portal": "https://ecosystem.cumulocity.com/devices/?filter_cumulocity_certified=yes",
   "link-apama-webhelp": "https://cumulocity.com/apama/docs/latest",
   "link-c8y-training": "https://cumulocity.moodlecloud.com/",
@@ -39,14 +39,22 @@ const shortcodeMapping = {
 
 const resolveHugoShortcode = (link) => {
   return link.replace(/\{\{<\s*(.*?)\s*>\}\}/g, (match, shortcode) => {
-    return shortcodeMapping[shortcode] || "";
+    const resolvedValue = shortcodeMapping[shortcode];
+    return resolvedValue !== undefined && resolvedValue !== null ? resolvedValue : "";
   });
 };
 
 const resolveFullUrl = (link) => {
-  if (link.startsWith("mailto:") || link.startsWith("tel:")) return null;
+  if (link.startsWith("mailto:") || link.startsWith("tel:")) {
+    return null;
+  }
+  
+  if (link.startsWith("#")) {
+    return null;
+  }
 
   const resolvedLink = resolveHugoShortcode(link);
+
   if (resolvedLink.startsWith("http://") || resolvedLink.startsWith("https://")) {
     return resolvedLink;
   }
@@ -54,64 +62,64 @@ const resolveFullUrl = (link) => {
   return `${BASE_URL.replace(/\/$/, "")}/${resolvedLink.replace(/^\//, "")}`;
 };
 
-const hasUnencodedParentheses = (link) => /[()]/.test(link);
 
-const fetchWithRetries = async (url, attempts = 3) => {
-  const headers = { "User-Agent": "Mozilla/5.0" }; 
-
-  for (let i = 0; i < attempts; i++) {
-    try {
-      if (url.includes("github.com") && url.includes("/issues/")) {
-        const issueExists = await checkGitHubIssue(url);
-        if (issueExists) return null; 
-        return { type: "notFound404", url, status: 404 };
-      }
-
-      let response = await fetch(url, { method: "HEAD", headers });
-      if (response.status === 405) {
-        response = await fetch(url, { method: "GET", headers });
-      }
-      if (response.ok || response.status === 403 || response.status === 500) {
-        return null;
-      }
-      return { type: "notFound404", url, status: response.status };
-    } catch (error) {
-      if (i === attempts - 1) {
-        return null;
-      }
-    }
-  }
-  return null;
+const hasUnencodedParentheses = (link) => {
+  return /[()]/.test(link);
 };
 
+const checkFragmentExists = (htmlContent, fragment) => {
+  const variants = [
+    fragment,
+    fragment.replace(/\//g, "-"),
+    fragment.replace(/\//g, "_")
+  ];
 
-const checkLink = async (link) => {
-  if (hasUnencodedParentheses(link)) {
-    return { type: "unencodedParentheses", url: link, status: "Invalid Character" };
-  }
-  return await fetchWithRetries(link);
+  return variants.some(variant =>
+    new RegExp(`id=["']${variant}["']`).test(htmlContent) ||
+    new RegExp(`href=["']#${variant}["']`).test(htmlContent)
+  );
 };
 
-const checkAnchorExists = async (baseUrl, anchorId) => {
-  if (!baseUrl.includes("cumulocity.com")) return null;
+const shouldSkipFragmentCheck = (url) => {
+  return url.includes('/api/') || url.includes('styleguide.cumulocity.com');
+};
 
+const checkLink = async (link, relativePath) => {
   try {
-    const response = await fetch(baseUrl);
-    if (!response.ok) {
-      return { type: "pageNotFound", url: baseUrl, status: response.status };
+    if (hasUnencodedParentheses(link)) {
+      return {
+        type: "unencodedParentheses",
+        url: link,
+        status: "Invalid Character",
+        files: [relativePath],
+      };
     }
 
-    const html = await response.text();
-    const dom = new JSDOM(html);
-    const anchorElement = dom.window.document.querySelector(`#${anchorId}`);
-
-    if (!anchorElement) {
-      return { type: "missingAnchor", url: `${baseUrl}#${anchorId}`, status: "Anchor Not Found" };
+    const [baseUrl, fragment] = link.split("#");
+    let response = await fetch(baseUrl, { method: "HEAD" });
+    if (response.status === 405) {
+      response = await fetch(baseUrl, { method: "GET" });
     }
+
+    if (!response.ok && response.status !== 403 && response.status !== 500) {
+      return { type: "notFound404", url: link, status: response.status, files: [relativePath] };
+    }
+
+    if (fragment && !shouldSkipFragmentCheck(baseUrl)) {
+      const htmlContent = await fetch(baseUrl).then(res => res.text());
+      if (!checkFragmentExists(htmlContent, fragment)) {
+        return {
+          type: "fragmentNotFound",
+          url: link,
+          status: "Fragment Not Found",
+          files: [relativePath]
+        };
+      }
+    }
+    
   } catch (error) {
-    return null;
+    return { type: "Network error", url: link, status: "Network Error", files: [relativePath] };
   }
-
   return null;
 };
 
@@ -120,7 +128,7 @@ const checkAnchorExists = async (baseUrl, anchorId) => {
   const markdownFiles = getMarkdownFiles(projectDir);
 
   const linkFileMap = new Map();
-  const uniqueLinks = new Map();
+  const uniqueLinks = new Set();
   const issues = [];
 
   markdownFiles.forEach((mdFile) => {
@@ -131,71 +139,29 @@ const checkAnchorExists = async (baseUrl, anchorId) => {
     links.forEach((link) => {
       const resolvedLink = resolveFullUrl(link);
       if (resolvedLink) {
-        const [baseUrl, anchorId] = resolvedLink.split("#");
-        uniqueLinks.set(baseUrl, anchorId || null);
-
+        uniqueLinks.add(resolvedLink);
         if (!linkFileMap.has(resolvedLink)) {
           linkFileMap.set(resolvedLink, new Set());
         }
         linkFileMap.get(resolvedLink).add(relativePath);
       }
-
-      if (hasUnencodedParentheses(link)) {
-        issues.push({
-          type: "unencodedParentheses",
-          url: link,
-          status: "Invalid Character",
-          files: new Set([relativePath]),
-        });
-      }
     });
   });
 
   const limit = pLimit(10);
-  const linkResults = new Map();
 
-  await Promise.all([...uniqueLinks.keys()].map((baseUrl) =>
+  await Promise.all([...uniqueLinks].map((link) =>
     limit(async () => {
-      const result = await checkLink(baseUrl);
+      const result = await checkLink(link, [...linkFileMap.get(link)][0]);
       if (result) {
-        result.files = linkFileMap.get(baseUrl) ? [...linkFileMap.get(baseUrl)] : [];
+        result.files = [...linkFileMap.get(link)];
         issues.push(result);
-      } else {
-        linkResults.set(baseUrl, "OK");
       }
     })
   ));
 
-  await Promise.all([...uniqueLinks.entries()].map(([baseUrl, anchorId]) =>
-    limit(async () => {
-      if (anchorId && baseUrl.includes("cumulocity.com") && linkResults.get(baseUrl) === "OK") {
-        const result = await checkAnchorExists(baseUrl, anchorId);
-        if (result) {
-          result.files = linkFileMap.get(`${baseUrl}#${anchorId}`) ? [...linkFileMap.get(`${baseUrl}#${anchorId}`)] : [];
-          issues.push(result);
-        }
-      }
-    })
-  ));
-
-  const issueMap = new Map();
-  issues.forEach(issue => {
-    const issueKey = `${issue.type}|${issue.url}`;
-    
-    if (!issueMap.has(issueKey)) {
-      issueMap.set(issueKey, { ...issue, files: new Set(issue.files) });
-    } else {
-      issue.files.forEach(file => issueMap.get(issueKey).files.add(file));
-    }
-  });
-
-  const deduplicatedIssues = [...issueMap.values()].map(issue => ({
-  ...issue,
-  files: [...issue.files]
-  }));
-
-  if (deduplicatedIssues.length > 0) {
-    const groupedIssues = deduplicatedIssues.reduce((acc, issue) => {
+  if (issues.length > 0) {
+    const groupedIssues = issues.reduce((acc, issue) => {
       if (!acc[issue.type]) {
         acc[issue.type] = [];
       }
@@ -203,12 +169,12 @@ const checkAnchorExists = async (baseUrl, anchorId) => {
       return acc;
     }, {});
 
-    let reportContent = '### :warning: Broken links and missing anchors found!\n\n';
-
-    for (const [type, issueList] of Object.entries(groupedIssues)) {
+    let reportContent = '### :warning: Broken links found!\n\n';
+ 
+    for (const [type, issues] of Object.entries(groupedIssues)) {
       reportContent += `#### ${type}\n`;
-      issueList.forEach(issue => {
-        reportContent += `- ${issue.url} (${issue.status})\n`;
+      issues.forEach(issue => {
+        reportContent += `- ${issue.url}\n`;
         issue.files.forEach(file => {
           reportContent += `  - ${file}\n`;
         });
@@ -219,6 +185,6 @@ const checkAnchorExists = async (baseUrl, anchorId) => {
     fs.writeFileSync("broken_links_report.md", reportContent);
     console.log("Issues saved to broken_links_report.md");
   } else {
-    console.log("No broken links or missing anchors found.");
+    console.log("No broken links found.");
   }
 })();
