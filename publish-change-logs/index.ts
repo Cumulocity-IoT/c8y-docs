@@ -2,12 +2,13 @@ import { readdir, readFile} from "fs/promises";
 import path, { join, sep, basename } from "path";
 import { stringify as matterStringify, read as matterRead } from "gray-matter";
 import { format } from 'date-fns';
+import matter from "gray-matter";
 import { valid, gte, eq} from "semver";
 
 const relativePathToChangeLogs = "../content/change-logs";
 const changeLogCategoryId = 22;
 const changeLogCategorySlug = "cumulocity-change-log";
-const toBeCreated = new Map<string, string>();
+const toBeCreated = new Map<string, matter.GrayMatterFile<string>>();
 const toBeUpdated = new Map<string, (string | number)[]>();
 const toBeDeleted = new Map<string, number>();
 const requestDelay = 2000;
@@ -188,6 +189,17 @@ function delay(ms: number) {
   return new Promise( resolve => setTimeout(resolve, ms) );
 }
 
+async function sortingFilesByDate(files: string[]) : Promise<{ date: Date, matterResult: matter.GrayMatterFile<string> }[]> {
+  let filesList: { date: Date, matterResult:  matter.GrayMatterFile<string> }[] = [];
+  for(const filePath of files) {
+    const pathToFile = join(relativePathToChangeLogs, filePath);
+    const matterResult = await matterRead(pathToFile);
+    const date = new Date(matterResult.data.date);
+    filesList.push({date: date, matterResult: matterResult});
+  }
+  return filesList.sort((a, b) => a.date.getTime() - b.date.getTime()); 
+}
+
 
 async function processFiles() {
   try {
@@ -198,19 +210,20 @@ async function processFiles() {
   const changeLogMarkdownFiles = files.filter(
     (file) => file.endsWith(".md") || file.endsWith(".MD")
   );
+  console.log("Reading and sorting change log files...");
+  let sortedFileContent = await sortingFilesByDate(changeLogMarkdownFiles);
+  console.log("Retreaving Tech Community Change logs ...");
   const existingTopics = await getDiscourseChangeLogs();
   //Checking existing change log topics
   for (const changeLogTopic of existingTopics) {
       const articleTitle = changeLogTopic.title;
       if(!articleTitle.startsWith("About"))
         toBeDeleted.set(articleTitle, changeLogTopic.id);
-      for(const filePath of changeLogMarkdownFiles) {
-        let fileName = basename(filePath);
-        const pathToFile = join(relativePathToChangeLogs, filePath);
-        const fileTitle = await processFile(pathToFile);
+      for(const file of sortedFileContent) {
+        const fileTitle = await processFile(file.matterResult);
         if (fileTitle && !toBeUpdated.has(fileTitle)) {
           //Change-log file is valid - create new article
-          toBeCreated.set(fileTitle, pathToFile);
+          toBeCreated.set(fileTitle, file.matterResult);
         }
         if(articleTitle === fileTitle) {
           //console.log("Article Title: "+articleTitle+ ", Change Log Title: "+fileTitle);
@@ -219,21 +232,23 @@ async function processFiles() {
           //Article already exists - no new creation
           toBeCreated.delete(fileTitle);
           //Article already exists - check if update is needed
-          toBeUpdated.set(articleTitle, [changeLogTopic.id, pathToFile]);
+          toBeUpdated.set(articleTitle, [changeLogTopic.id, file.matterResult]);
         }
       }
   }
   //Create new articles
   for (const title of toBeCreated.keys()) {
       if(maxRequests >= 0 && requestsSent >= maxRequests) break;
-      const filePath = toBeCreated.get(title) as string;
-      let rawAndTags = await getRawAndTagsFromFile(filePath);
-      try {
-        createNewChangeLog(rawAndTags.raw, title, rawAndTags.category, rawAndTags.tags);
-      } catch(error) {
-        console.log("Error on creating article with title: "+title + ", Error: "+ error);
+      const matterResult = toBeCreated.get(title);
+      if (matterResult) {
+        let rawAndTags = await getRawAndTagsFromFile(matterResult);
+        try {
+          createNewChangeLog(rawAndTags.raw, title, rawAndTags.category, rawAndTags.tags);
+        } catch(error) {
+          console.log("Error on creating article with title: "+title + ", Error: "+ error);
+        }
+        if(requestDelay > 0) await delay(requestDelay);
       }
-      if(requestDelay > 0) await delay(requestDelay);
   }
   //Delete old articles
   for(const title of toBeDeleted.keys()) {
@@ -251,9 +266,10 @@ async function processFiles() {
   //Update existing articles
   for(const title of toBeUpdated.keys()) {
     if(maxRequests >= 0 && requestsSent >= maxRequests) break;
-    let fileIdArray = toBeUpdated.get(title) as (string | number)[];
+    let fileIdArray = toBeUpdated.get(title) as (matter.GrayMatterFile<string> | number)[];
     let id:number = fileIdArray[0] as number;
-    let pathToFile:string = fileIdArray[1] as string;
+    let matterResult = fileIdArray[1] as matter.GrayMatterFile<string>;
+    //let pathToFile:string = fileIdArray[1] as string;
     let existingChangeLog = await getDiscourseChangeLog(id);
     if(requestDelay > 0) await delay(requestDelay);
     //let slug = existingChangeLog.slug;
@@ -263,7 +279,7 @@ async function processFiles() {
       if(requestsSent >= 60) break;
       const articleContent = posts[0].raw;
       const postId = posts[0].id;
-      const fileContent = await getRawAndTagsFromFile(pathToFile);
+      const fileContent = await getRawAndTagsFromFile(matterResult);
       if(articleContent.trim() === fileContent.raw.trim()) {
         //No update needed- ignore
         console.log("No update needed for article with title "+title+" and id: "+id);
@@ -285,8 +301,7 @@ async function processFiles() {
 
 
 
-async function processFile(filePath: string) {
-  const matterResult = await matterRead(filePath);
+async function processFile(matterResult: matter.GrayMatterFile<string>) {
   const { data, content, orig } = matterResult;
   let date = data.date;
   if(!date) {
@@ -318,10 +333,9 @@ function renameTag(tag: string) {
   return tag.replace(/\s+/g, '-').toLowerCase();
 }
 
-async function getRawAndTagsFromFile(filePath: string) {
-  const matterResult = await matterRead(filePath);
+async function getRawAndTagsFromFile(matterResult: matter.GrayMatterFile<string>) {
   const { data, content, orig } = matterResult;
-  let fileName = basename(filePath);
+  //let fileName = basename(filePath);
   let changeType =data.change_type[0].label;
   let productArea = data.product_area;
   let category = changeLogCategoryId;
@@ -358,7 +372,7 @@ async function getRawAndTagsFromFile(filePath: string) {
   }
  
 
-  let raw: string = `<!-- ${fileName} -->
+  let raw: string = `
   **Change Type:** ${changeType}
   **Date:** ${date}
   **Product area:** ${productArea}
