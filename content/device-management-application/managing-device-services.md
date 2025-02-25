@@ -73,7 +73,7 @@ Supported services may provide specific command actions, such as:
 If a service does not specify commands, a default set (Start, Stop, Restart) is available.
 
 #### Tracking service command history
-The **Service commands** tab displays a history of executed commands, including:
+The **Commands** tab displays a history of executed commands, including:
 - The command type (Start, Stop, and so on).
 - The execution status (Pending, Completed, Failed).
 - Timestamps for sent and completed actions.
