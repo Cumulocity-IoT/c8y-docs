@@ -60,7 +60,7 @@ The following tabs make up the service details view, each described in detail in
 
 ### Service commands {#service-commands}
 
-The **Commands** tab allows users to send available service commands and track their execution history. If a service supports commands, they will appear as **action buttons** in the services list and as selectable options in the service **Commands tab**.
+The **Commands** tab allows users to send available service commands and track their execution history. If a service supports commands, they will appear as action buttons in the services list and as selectable options in the service **Commands** tab.
 
 #### Sending commands to services
 For a service to support commands, it must include the `c8y_ServiceCommand` fragment in its supported operations.
