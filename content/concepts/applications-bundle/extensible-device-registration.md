@@ -4,16 +4,16 @@ title: Extensible device registration
 layout: bundle
 ---
 
-To address the growing number of IoT protocols and certain restrictions in the general single or bulk device registration, {{< product-c8y-iot >}} provides an extensible device registration feature.
+To address the growing number of IoT protocols and certain restrictions in the general single or bulk device registration, an extensible device registration is available with release 10.15.
 
 The general concept is based on extending the device registration using a metadata-based approach. Microservices and agents that implement current device registrations can add custom forms to the device registration wizard by providing simple descriptions of the required registration attributes. The metadata is then used by the UI to render a corresponding device registration wizard.
 
 There are two possible ways to extend the UI:
-- with a [single device registration](#single-device-registration) form
-- with a [bulk device registration](#bulk-device-registration) form
+- with a [single device registration](/concepts/applications/#single-device-registration) form
+- with a [bulk device registration](/concepts/applications/#bulk-device-registration) form
 
 {{< c8y-admon-req >}}
-Extensible device registration requires [application extensions](#extension-enabling) to be defined, and the microservice to implement the predefined endpoints used for getting device registration metadata and creating the device.
+Extensible device registration requires [application extensions](/concepts/applications/#extension-enabling) to be defined, and the microservice to implement the predefined endpoints used for getting device registration metadata and creating the device.
 {{< /c8y-admon-req >}}
 
 ### Advantages of extended device registration {#advantages-of-extended-device-registration}
@@ -68,7 +68,7 @@ From now on, everything will be rendered based on data provided via the custom m
 
 `GET /service/<contextPath>/deviceRegistration/metadata&lang=<user-language>`
 
-Make use of the `lang` query parameter in your microservice to respond with the already translated JSON Schema metadata. See also [Limitations](#limitations).
+Make use of the `lang` query parameter in your microservice to respond with the already translated JSON Schema metadata. See also [Limitations](/concepts/applications/#limitations).
 
 
 The UI automatically takes the contextPath for the GET request from the application definition of the microservice:
@@ -126,7 +126,7 @@ The important part is the `pages` array which contains steps of the wizard that 
 
 As a result the following wizard will be displayed:
 
-![example-wizard-single](/images/concepts-guide/extensible-device-registration/extensible-single-device-reg.png)
+![Select guide](/images/concepts-guide/extensible-device-registration/extensible-single-device-reg.png)
 
 In the final step all data collected via the wizard will be sent back to the microservice using the following REST endpoint:
 
@@ -192,7 +192,7 @@ Additionally, the microservice provides the title of the wizard step and example
 
 As a result the following wizard will be displayed:
 
-![example-wizard-bulk](/images/concepts-guide/extensible-device-registration/extensible-bulk-device-reg.png)
+![Select guide](/images/concepts-guide/extensible-device-registration/extensible-bulk-device-reg.png)
 
 #### API specification {#api-specification}
 
