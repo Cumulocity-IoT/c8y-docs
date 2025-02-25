@@ -61,4 +61,4 @@ A digital twin is a digital representation of physical or virtual assets. Device
 
 ### Document {#document}
 
-{{< product-c8y-iot >}} stores all operational data --- such as managed objects, alarms and measurements --- as documents. A document is a versatile JSON structure with a unique identifier, allowing it to be referenced in URLs of web applications or REST APIs. This provides a high degree of flexibility for modeling your data on top of the {{< product-c8y-iot >}} [domain model](/concepts/domain-model/) and the {{< product-c8y-iot >}} [service quotas](/service-terms/quotas/).
+{{< product-c8y-iot >}} stores all operational data - such as managed objects, alarms and measurements - as documents. A document is a versatile JSON structure with a unique identifier, allowing it to be referenced in URLs of web applications or REST APIs. This provides a high degree of flexibility for modeling your data on top of the {{< product-c8y-iot >}} [domain model](/concepts/domain-model/) and the {{< product-c8y-iot >}} [service quotas](/service-terms/quotas/).
