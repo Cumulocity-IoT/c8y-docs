@@ -379,7 +379,7 @@ async function getRawAndTagsFromFile(matterResult: matter.GrayMatterFile<string>
   **Product area:** ${productArea}
   **Component:** ${component}
   **Build artifact:** ${buildArtifact} (${version})
-  **Internal ID:** ${ticket? ticket : ""};
+  **Internal ID:** ${ticket? ticket : ""}
   **Deployed at:** ${getDeploymentListString(deployments, false)}
 
   ---
