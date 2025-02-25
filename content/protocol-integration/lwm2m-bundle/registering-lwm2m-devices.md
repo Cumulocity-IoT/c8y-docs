@@ -437,7 +437,7 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">Event log level</td>
 <td style="text-align: left">logLevel</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">{{< product-c8y-iot >}} can output detailed logs to the event stream. This field configures a log level. Allowed values are: 
+<td style="text-align: left">{{< product-c8y-iot >}} can output detailed logs to the event stream. This field configures a log level. Allowed values are:
 <b>NONE</b> (nothing will be logged as events), <b>LIFECYCLE</b> (only registration, de-registration and registration update events),
 <b>TRAFFIC</b> (LIFECYCLE + sent/received data), <b>FIRMWARE</b> (LIFECYCLE + detailed firmware update information),
 <b>VERBOSE</b> (all of the above will be logged).
@@ -499,7 +499,7 @@ Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M age
 <td style="text-align: left">Firmware update URL (DEPRECATED)</td>
 <td style="text-align: left">fwUpdateURL</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left"><b>DEPRECATED</b>: Use the regular firmware repository to specify the firmware version that links to an external URL. This field will be removed in a future update. 
+<td style="text-align: left"><b>DEPRECATED</b>: Use the regular firmware repository to specify the firmware version that links to an external URL. This field will be removed in a future update.
 
 Indicates the firmware update URL from where the LWM2M device can download the firmware package.</td>
 <td style="text-align: left">Optional</td>
@@ -522,7 +522,7 @@ Firmware updates are also supported for the registration of unsecured devices as
 
 #### Registering LWM2M devices using the REST API {#registering-lwm2m-devices-using-restapi}
 
-LWM2M internally uses our [Extensible Device Registration](/concepts/applications/#extensible-device-registration) feature. It provides an API based on JSON Schema and REST to extend {{< company-c8y >}} with arbitrary wizards for device registration.
+LWM2M internally uses our [Extensible device registration](/device-management-application/registering-devices/#extensible-device-registration) feature. It provides an API based on JSON Schema and REST to extend {{< company-c8y >}} with arbitrary wizards for device registration.
 
 #### REST-based single LWM2M device registration {#rest-lwm2m-single-registration}
 
