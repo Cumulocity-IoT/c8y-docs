@@ -379,6 +379,9 @@ function formatContent(content: string) {
   if(content.includes("{{< c8y-admon-important >}}")) {
     formattedContent = content.replaceAll("{{< c8y-admon-important >}}", "> **Important**").replaceAll("{{< /c8y-admon-important >}}", "");
   }
+  if(content.includes("{{< c8y-admon-note >}}")) {
+    formattedContent = content.replaceAll("{{< c8y-admon-note >}}", "> **Note**").replaceAll("{{< /c8y-admon-note >}}", "");
+  }
   return formattedContent.replaceAll("{{< product-c8y-iot >}}", "Cumulocity").replaceAll("{{< enterprise-tenant >}}", "Enterprise Tenant"); 
 }
 function getSubCategoryFromProductArea(productArea: string): number {
