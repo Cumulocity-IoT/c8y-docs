@@ -14,7 +14,7 @@ Tenants can be subscribed to applications which have been deployed by their supe
 Via the Administration application, you can [grant application access to subtenants](/standard-tenant/managing-permissions/#application-access) and [subscribe to applications](#to-subscribe-an-application).
 
 {{< c8y-admon-info >}}
-Tenants can also have their own applications which can also be subscribed to subtenants. See [Custom applications](/standard-tenant/ecosystem/#custom-applications) for details on how to add custom applications.
+Tenants can also create and deploy their own [Custom applications](/standard-tenant/ecosystem/#custom-applications), which can be made available to their subtenants. 
 {{< /c8y-admon-info >}}
 
 In the **Applications** tab of a tenant you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard {{< product-c8y-iot >}} applications.
