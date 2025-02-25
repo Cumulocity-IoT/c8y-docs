@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Basic authentication has been removed during the login process using OAI-Secure
+title: Enhanced login process using OAI-Secure
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
