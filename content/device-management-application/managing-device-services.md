@@ -50,7 +50,7 @@ The following tabs make up the service details view, each described in detail in
 <td align="left">Provides a default visualization of numeric data of the service in the form of charts.</td>
 </tr>
 <tr>
-<td align="left"><a href="#service-commands">Service Commands</a></td>
+<td align="left"><a href="#service-commands">Commands</a></td>
 <td align="left">Allows users to send command actions to a service and view the history of executed commands.</td>
 </tr>
 </tbody>
