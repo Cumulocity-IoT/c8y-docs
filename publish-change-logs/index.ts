@@ -2,7 +2,7 @@ import { readdir, readFile} from "fs/promises";
 import path, { join, sep, basename } from "path";
 import { stringify as matterStringify, read as matterRead } from "gray-matter";
 import { format } from 'date-fns';
-import { valid, gte } from "semver";
+import { valid, gte, eq} from "semver";
 
 const relativePathToChangeLogs = "../content/change-logs";
 const changeLogCategoryId = 22;
@@ -13,6 +13,13 @@ const toBeDeleted = new Map<string, number>();
 const requestDelay = 2000;
 let requestsSent = 0;
 const maxRequests = 60;
+const categoryMap = {
+  "analytics": 23,
+  "application enablement & solutions": 24,
+  "device management & connectivity": 25,
+  "platform services": 26,
+  "edge": 27
+}
 
 if (process.argv.length < 4) {
   console.error("Usage: node index.ts <discourseURL> <discourseApiKey> <discourseUser> <deployments.json>");
@@ -37,12 +44,12 @@ async function readJsonFile(path:string) {
   return JSON.parse(file);
 }
 
-async function createNewChangeLog(raw: string, title: string, tags: string[]) {
+async function createNewChangeLog(raw: string, title: string, category: number, tags: string[]) {
   console.log("Creating article with title "+title+" ...");
   console.log("Tags: "+tags);
   let body = {
     title: title,
-    category: changeLogCategoryId,
+    category: category,
     raw: raw,
     tags: tags
   }
@@ -222,7 +229,7 @@ async function processFiles() {
       const filePath = toBeCreated.get(title) as string;
       let rawAndTags = await getRawAndTagsFromFile(filePath);
       try {
-        createNewChangeLog(rawAndTags.raw, title, rawAndTags.tags);
+        createNewChangeLog(rawAndTags.raw, title, rawAndTags.category, rawAndTags.tags);
       } catch(error) {
         console.log("Error on creating article with title: "+title + ", Error: "+ error);
       }
@@ -317,6 +324,7 @@ async function getRawAndTagsFromFile(filePath: string) {
   let fileName = basename(filePath);
   let changeType =data.change_type[0].label;
   let productArea = data.product_area;
+  let category = changeLogCategoryId;
   let date = data.date;
   if(date instanceof Date) {
     date = format(date, "yyyy-MM-dd");
@@ -335,30 +343,46 @@ async function getRawAndTagsFromFile(filePath: string) {
   let formattedContent = ""
   if(content) formattedContent= content.replaceAll("{{< product-c8y-iot >}}", "Cumulocity").replaceAll("{{< enterprise-tenant >}}", "Enterprise Tenant"); 
   if(changeType) tags.push(renameTag(changeType));
-  if(productArea) tags.push(mapProductAreaToTag(productArea));
+  if(productArea) {
+    tags.push(mapProductAreaToTag(productArea));
+    category = getSubCategoryFromProductArea(productArea);
+  }
   if(component) tags.push(renameTag(component)); 
-  let deployments: string[] = [];
+  let deployments: Map<string, string> = new Map();
   if(buildArtifact) {
     tags.push(renameTag(buildArtifact)); 
     deployments = await getDeploymentsForBuildArtifact(component, buildArtifact, version);
+    //for(let deployment of deployments.keys()) {
+    //  tags.push(deployment);
+    //}
   }
  
-
 
   let raw: string = `<!-- ${fileName} -->
   **Change Type:** ${changeType}
   **Date:** ${date}
   **Product area:** ${productArea}
   **Component:** ${component}
-  **Build artifact:** ${buildArtifact}
-  **Version:** ${version}
-  **Deployed at:** ${getDeploymentListString(deployments)}
+  **Build artifact:** ${buildArtifact} (${version})
+  **Internal ID:** ${ticket}
+  **Deployed at:** ${getDeploymentListString(deployments, false)}
 
   ---
 
   ${formattedContent}
   `
-  return {raw: raw, tags: tags.flat()};
+  return {raw: raw, category: category, tags: tags.flat()};
+}
+
+function formatContent(content: string) {
+  let formattedContent = "";
+  if(content.includes("{{< c8y-admon-important >}}")) {
+    formattedContent = content.replaceAll("{{< c8y-admon-important >}}", "> **Important**").replaceAll("{{< /c8y-admon-important >}}", "");
+  }
+  return formattedContent.replaceAll("{{< product-c8y-iot >}}", "Cumulocity").replaceAll("{{< enterprise-tenant >}}", "Enterprise Tenant"); 
+}
+function getSubCategoryFromProductArea(productArea: string): number {
+  return categoryMap[productArea.toLocaleLowerCase() as keyof typeof categoryMap];
 }
 
 function mapProductAreaToTag(productArea: string) {
@@ -370,8 +394,8 @@ function mapProductAreaToTag(productArea: string) {
     return [renameTag(productArea)];
 }
 
-async function getDeploymentsForBuildArtifact(component: string, build_artifact: string, version: string):Promise<string[]>{
-  let deploymentList :string[] = [];
+async function getDeploymentsForBuildArtifact(component: string, build_artifact: string, version: string):Promise<Map<string, string>> {
+  const deploymentMap = new Map<string, string>();
   //console.log("Checking deployment zones for component: '"+component+"', build artifact: '"+build_artifact + "' and version: '"+version+"'");
   for(let artifact in deploymentObj) {
     if(build_artifact === deploymentObj[artifact].component_name) {
@@ -379,36 +403,46 @@ async function getDeploymentsForBuildArtifact(component: string, build_artifact:
       if (!valid(version) && version.split('.').length==4) {
         version=toSemverFormat(version);
       }
-
+      
       if(gte(deploymentObj[artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com"].version, version))
-        deploymentList.push("eu-latest-cumulocity-com");
+        //Only retrieve updated date when version is equal
+        deploymentMap.set("eu-latest-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com"].updated_at);
       if(gte(deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com"].version, version))
-        deploymentList.push("apj-cumulocity-com");
+        deploymentMap.set("apj-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com"].updated_at);
       if(gte(deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com"].version, version))
-        deploymentList.push("jp-cumulocity-com");
+        deploymentMap.set("jp-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com"].updated_at);
       if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["c8y-cumulocity-com"].version, version))
-        deploymentList.push("c8y-cumulocity-com");
+        deploymentMap.set("c8y-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["c8y-cumulocity-com"].updated_at);
       if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["us-cumulocity-com"].version, version))
-        deploymentList.push("us-cumulocity-com");
+        deploymentMap.set("us-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["us-cumulocity-com"].updated_at);
       if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["emea-cumulocity-com"].version, version))
-        deploymentList.push("emea-cumulocity-com");
+        deploymentMap.set("emea-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["emea-cumulocity-com"].updated_at);
        //Abort after first match
       break;
     }
   }
-
-  return deploymentList;
+  return deploymentMap;
 }
 
-function getDeploymentListString(deploymentList: string[]) {
+function getDeploymentListString(deploymentMap: Map<string, string>, withDate: boolean) {
   let deploymentListstring = "";
-  for (let deployment of deploymentList) {
-    if(!deploymentListstring)
-      deploymentListstring = deployment.replaceAll("-",".");
-    else {
-      deploymentListstring += ", "+deployment.replaceAll("-",".");
-    }
-  };
+  if(withDate) {
+    for (let deployment of deploymentMap.keys()) {
+      if(!deploymentListstring)
+        deploymentListstring = deployment.replaceAll("-",".") + " ("+deploymentMap.get(deployment)?.slice(0,10)+")";
+      else {
+        deploymentListstring += ", "+deployment.replaceAll("-",".") + " ("+deploymentMap.get(deployment)?.slice(0,10)+")";
+      }
+    };
+  } else {
+    for (let deployment of deploymentMap.keys()) {
+      if(!deploymentListstring)
+        deploymentListstring = deployment.replaceAll("-",".");
+      else {
+        deploymentListstring += ", "+deployment.replaceAll("-",".");
+      }
+    };
+  }
   return deploymentListstring;
 }
 
