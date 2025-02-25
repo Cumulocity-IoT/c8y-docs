@@ -7,7 +7,7 @@ layout: redirect
 
 ### Overview
 
-The application concept of {{< product-c8y-iot >}} includes a basic application marketplace.
+{{< product-c8y-iot >}} features an application marketplace that allows tenants to access and manage various applications.
 
 Tenants can be subscribed to applications which have been deployed by their superior tenant ({{< management-tenant >}} or {{< enterprise-tenant >}}).
 
