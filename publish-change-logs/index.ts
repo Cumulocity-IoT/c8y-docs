@@ -13,7 +13,7 @@ const toBeUpdated = new Map<string, (string | number)[]>();
 const toBeDeleted = new Map<string, number>();
 const requestDelay = 2000;
 let requestsSent = 0;
-const maxRequests = 300;
+const maxRequests = 0;
 const categoryMap = {
   "analytics": 23,
   "application enablement & solutions": 24,
@@ -241,7 +241,7 @@ async function processFiles() {
   var toBeCreatedSorted = new Map([...toBeCreated.entries()].sort());
   //Create new articles
   for (const title of toBeCreatedSorted.keys()) {
-      if(maxRequests >= 0 && requestsSent >= maxRequests) break;
+      if(maxRequests > 0 && requestsSent >= maxRequests) break;
       const matterResult = toBeCreated.get(title);
       if (matterResult) {
         let rawAndTags = await getRawAndTagsFromFile(matterResult);
@@ -255,7 +255,7 @@ async function processFiles() {
   }
   //Delete old articles
   for(const title of toBeDeleted.keys()) {
-    if(maxRequests >= 0 && requestsSent >= maxRequests) break;
+    if(maxRequests > 0 && requestsSent >= maxRequests) break;
     let id = toBeDeleted.get(title) as number;
     console.log("Deleting article with title "+title+" and id: "+id);
     try {
@@ -268,7 +268,7 @@ async function processFiles() {
 
   //Update existing articles
   for(const title of toBeUpdated.keys()) {
-    if(maxRequests >= 0 && requestsSent >= maxRequests) break;
+    if(maxRequests > 0 && requestsSent >= maxRequests) break;
     let fileIdArray = toBeUpdated.get(title) as (matter.GrayMatterFile<string> | number)[];
     let id:number = fileIdArray[0] as number;
     let matterResult = fileIdArray[1] as matter.GrayMatterFile<string>;
@@ -279,7 +279,7 @@ async function processFiles() {
     let posts = existingChangeLog.post_stream.posts;
 
     if (posts.length > 0) {
-      if(requestsSent >= 60) break;
+      if(maxRequests > 0 && requestsSent >= maxRequests) break;
       const articleContent = posts[0].raw;
       const postId = posts[0].id;
       const fileContent = await getRawAndTagsFromFile(matterResult);
