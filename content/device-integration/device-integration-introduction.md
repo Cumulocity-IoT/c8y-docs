@@ -8,7 +8,7 @@ sector:
 
 {{< company-c8y >}} offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the {{< product-c8y-iot >}} platform.
 
-We recommend you to can integrate devices via [thin-edge.io](https://thin-edge.io/). See the tutorial [Getting started with thin-edge.io](https://thin-edge.github.io/thin-edge.io/start/getting-started/) for an easy-to-follow and hands-on example.
+We recommend you to integrate devices via [thin-edge.io](https://thin-edge.io/). See the tutorial [Getting started with thin-edge.io](https://thin-edge.github.io/thin-edge.io/start/getting-started/) for an easy-to-follow and hands-on example.
 
 You can also use [MQTT](/device-integration/mqtt) and [SmartREST](/smartrest/smartrest-two/) to integrate devices, which can be very efficiently implemented using available MQTT client libraries such as [Eclipse Paho](https://www.eclipse.org/paho/).
 
