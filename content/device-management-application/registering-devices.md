@@ -38,12 +38,7 @@ helpcontent:
     To register a device, click **Register device** at the right of the top bar, select an option from the dropdown list and follow the instructions in the device registration wizard."
 ---
 
-{{< c8y-admon-related >}}
-* [Device management & connectivity > Device integration](/device-integration/device-integration-introduction/) for step-by-step instructions on registering devices.
-* [Device management & connectivity > Device integration](/device-integration/) for details on registering devices using various standard protocol types.
-* [Device management & connectivity > Device integration > REST](/device-integration/device-integration-rest/) for a detailed descriptions on device integration via REST.
-* The [New device requests API](https://{{< domain-c8y >}}/api/core/#tag/New-device-requests) for REST API methods concerning the creation of new devices.
-{{< /c8y-admon-related >}}
+### Overview
 
 In the **Device registration** page all devices are displayed which are currently in the registration process.
 
@@ -74,8 +69,13 @@ To register devices, you can select one of the following options:
 * **[Single device registration](#single-device-registration)** - to manually connect one device or several devices one by one.
 * **[Bulk device registration](#bulk-device-registration)** - to register larger amounts of devices in one step.
 
-Microservice developers can also use the [Extensible device registration](/concepts/applications/#extensible-device-registration) and implement a custom registration form that blends seamlessly into the UI.
+Microservice developers can also use the [Extensible device registration](#extensible-device-registration) and implement a custom registration form that blends seamlessly into the UI.
 
 {{< c8y-admon-info >}}
 The following descriptions apply to the general device registration processes. If you subscribe to specific protocol integrations, you will see additional protocol-specific options (for example, for LWM2M or OPC UA). A full list of supported protocols can be found in [Device integration](/device-integration/). It also contains descriptions for the protocol specific registration processes.
 {{< /c8y-admon-info >}}
+
+{{< c8y-admon-related >}}
+* [Device management & connectivity > Device integration](/device-integration/device-integration-introduction/) for step-by-step instructions on registering devices via REST or MQTT, and for details on registering devices using various standard protocol types.
+* The [New device requests API](https://{{< domain-c8y >}}/api/core/#tag/New-device-requests) for REST API methods concerning the creation of new devices.
+{{< /c8y-admon-related >}}
