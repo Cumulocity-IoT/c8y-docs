@@ -1,6 +1,6 @@
 ---
-weight: 80
-title: Sigfox
+weight: 90
+title: Actility LoRa
 layout: bundle
 sector:
   - device_management

@@ -141,4 +141,4 @@ This will be the result:
 
 ### Using custom decoding/encoding {#using-custom-decodingencoding}
 
-The Sigfox agent also supports the decoding/encoding functionality by plugging in Custom microservice. Refer [LPWAN custom codec](/protocol-integration/lpwan-custom-codec) for further details.
+The Sigfox agent also supports the decoding/encoding functionality by plugging in Custom microservice. Refer [LPWAN custom codec](/device-integration/lpwan-custom-codec) for further details.

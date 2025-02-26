@@ -1,6 +1,6 @@
 ---
-weight: 10
-title: OPC UA
+weight: 100
+title: Sigfox
 layout: bundle
 sector:
   - device_management

@@ -17,4 +17,4 @@ version: 10.18.10.0
 
 The performance of the <code>migrateLwm2mDevices</code> operation has been improved. New command line arguments have been introduced with the operation. A list of legacy LWM2M devices can be specified directly from the shell command. Moreover, the migration of the LWM2M client registration objects can be skipped by using an argument.
 
-For details, refer to <a href="/protocol-integration/lwm2m/#migration-of-the-lwm2m-devices" class="no-ajaxy">Migration of the LWM2M devices</a>. [DM-1866]
+For details, refer to <a href="/device-integration/lwm2m/#migration-of-the-lwm2m-devices" class="no-ajaxy">Migration of the LWM2M devices</a>. [DM-1866]
