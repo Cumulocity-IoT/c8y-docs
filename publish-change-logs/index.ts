@@ -13,11 +13,13 @@ const toBeUpdated = new Map<string, (string | number)[]>();
 const toBeDeleted = new Map<string, number>();
 const requestDelay = 2000;
 let requestsSent = 0;
-const maxRequests = 60;
+const maxRequests = 300;
 const categoryMap = {
   "analytics": 23,
   "application enablement & solutions": 24,
   "device management & connectivity": 25,
+  "device management": 25,
+  "device connectivity": 25,
   "platform services": 26,
   "edge": 27
 }
@@ -309,10 +311,10 @@ async function processFile(matterResult: matter.GrayMatterFile<string>) {
     //console.warn("No date in change-log file: ", filePath, "Skipping..");
     return "";
   }
-  if (!data.version || (data.version && data.version === "''")) {
+  //if (!data.version || (data.version && data.version === "''")) {
     //console.warn("No version set in: ", filePath, "Skipping..");
-    return "";
-  }
+  //  return "";
+  //}
   if(!content) {
     //console.warn("No content set in: ", filePath, "Skipping..");
     return "";
@@ -346,6 +348,7 @@ async function getRawAndTagsFromFile(matterResult: matter.GrayMatterFile<string>
   }
 
   let version = data.version;
+  if(version && version === "''") version = "";
   let component = "";
   if(data.component && data.component.length >= 1)
      component = data.component[0].label;
@@ -356,7 +359,9 @@ async function getRawAndTagsFromFile(matterResult: matter.GrayMatterFile<string>
   let tags = [];
 
   let formattedContent = ""
-  if(content) formattedContent= content.replaceAll("{{< product-c8y-iot >}}", "Cumulocity").replaceAll("{{< enterprise-tenant >}}", "Enterprise Tenant"); 
+  if(content)  {
+    formattedContent = formatContent(content);
+  }
   if(changeType) tags.push(renameTag(changeType));
   if(productArea) {
     tags.push(mapProductAreaToTag(productArea));
@@ -378,7 +383,7 @@ async function getRawAndTagsFromFile(matterResult: matter.GrayMatterFile<string>
   **Date:** ${date}
   **Product area:** ${productArea}
   **Component:** ${component}
-  **Build artifact:** ${buildArtifact} (${version})
+  **Build artifact:** ${buildArtifact} ${version? "("+ version +")" : ""}
   **Internal ID:** ${ticket? ticket : ""}
   **Deployed at:** ${getDeploymentListString(deployments, false)}
 
@@ -390,13 +395,19 @@ async function getRawAndTagsFromFile(matterResult: matter.GrayMatterFile<string>
 }
 
 function formatContent(content: string) {
-  let formattedContent = "";
-  if(content.includes("{{< c8y-admon-important >}}")) {
-    formattedContent = content.replaceAll("{{< c8y-admon-important >}}", "> **Important**").replaceAll("{{< /c8y-admon-important >}}", "");
-  }
-  if(content.includes("{{< c8y-admon-note >}}")) {
-    formattedContent = content.replaceAll("{{< c8y-admon-note >}}", "> **Note**").replaceAll("{{< /c8y-admon-note >}}", "");
-  }
+  let formattedContent = content.replaceAll("{{< c8y-admon-important >}}", "> **Important**").replaceAll("{{< /c8y-admon-important >}}", "");
+  formattedContent = formattedContent.replaceAll("{{< c8y-admon-note >}}", "> **Note**").replaceAll("{{< /c8y-admon-note >}}", "");
+  formattedContent = formattedContent.replaceAll("{{< c8y-admon-info >}}", "> **Info**").replaceAll("{{< /c8y-admon-info >}}", "");
+  formattedContent = formattedContent.replaceAll("{{< c8y-admon-tip >}}", "> **Tip**").replaceAll("{{< /c8y-admon-tip >}}", "");
+  formattedContent = formattedContent.replaceAll("{{< c8y-admon-preview >}}", "> **Preview**").replaceAll("{{< /c8y-admon-preview >}}", "");
+  formattedContent = formattedContent.replaceAll("{{< c8y-admon-caution >}}", "> **Caution**").replaceAll("{{< /c8y-admon-caution >}}", "");
+  formattedContent = formattedContent.replaceAll("{{< management-tenant >}}", "Management tenant");
+  formattedContent = formattedContent.replaceAll("{{< enterprise-tenant >}}", "Enterprise tenant");
+  formattedContent = formattedContent.replaceAll("{{< company-c8y >}}", "Cumulocity");
+  formattedContent = formattedContent.replaceAll("{{<link-apama-webhelp>}}", "https://cumulocity.com/apama/docs/latest");
+  formattedContent = formattedContent.replaceAll("{{<link-apamadoc-api>}}", "https://cumulocity.com/apama/docs/latest/related/ApamaDoc/index.html");
+  formattedContent = formattedContent.replaceAll("{{< openapi >}}", "Cumulocity OpenAPI Specification");
+  formattedContent = formattedContent.replaceAll("{{< link-c8y-github >}}", "https://github.com/Cumulocity-IoT");
   return formattedContent.replaceAll("{{< product-c8y-iot >}}", "Cumulocity").replaceAll("{{< enterprise-tenant >}}", "Enterprise Tenant"); 
 }
 function getSubCategoryFromProductArea(productArea: string): number {
@@ -418,25 +429,27 @@ async function getDeploymentsForBuildArtifact(component: string, build_artifact:
   for(let artifact in deploymentObj) {
     if(build_artifact === deploymentObj[artifact].component_name) {
 
-      if (!valid(version) && version.split('.').length==4) {
+      if(version && version === "''") version = "";
+      if (version && !valid(version) && version.split('.').length==4) {
         version=toSemverFormat(version);
       }
-      
-      if(gte(deploymentObj[artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com"].version, version))
-        //Only retrieve updated date when version is equal
-        deploymentMap.set("eu-latest-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com"].updated_at);
-      if(gte(deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com"].version, version))
-        deploymentMap.set("apj-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com"].updated_at);
-      if(gte(deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com"].version, version))
-        deploymentMap.set("jp-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com"].updated_at);
-      if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["c8y-cumulocity-com"].version, version))
-        deploymentMap.set("c8y-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["c8y-cumulocity-com"].updated_at);
-      if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["us-cumulocity-com"].version, version))
-        deploymentMap.set("us-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["us-cumulocity-com"].updated_at);
-      if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["emea-cumulocity-com"].version, version))
-        deploymentMap.set("emea-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["emea-cumulocity-com"].updated_at);
-       //Abort after first match
-      break;
+      if(version) {
+        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com"].version, version))
+          //Only retrieve updated date when version is equal
+          deploymentMap.set("eu-latest-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com"].updated_at);
+        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com"].version, version))
+          deploymentMap.set("apj-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com"].updated_at);
+        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com"].version, version))
+          deploymentMap.set("jp-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com"].updated_at);
+        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["c8y-cumulocity-com"].version, version))
+          deploymentMap.set("c8y-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["c8y-cumulocity-com"].updated_at);
+        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["us-cumulocity-com"].version, version))
+          deploymentMap.set("us-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["us-cumulocity-com"].updated_at);
+        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["emea-cumulocity-com"].version, version))
+          deploymentMap.set("emea-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["emea-cumulocity-com"].updated_at);
+        //Abort after first match
+        break;
+      }
     }
   }
   return deploymentMap;
