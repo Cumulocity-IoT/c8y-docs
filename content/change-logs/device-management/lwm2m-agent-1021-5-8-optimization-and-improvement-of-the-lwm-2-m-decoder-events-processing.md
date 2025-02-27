@@ -14,4 +14,6 @@ build_artifact:
 ticket: DM-4026
 version: 1021.5.8
 ---
-Description:  - Improved the processing of external decoder events in the LWM2M agent by transitioning from a single-threaded per-tenant approach to a multi-threaded implementation.  - Enhanced scalability and performance, enabling faster processing of millions of decoder events.    [DM-1234]: https://cumulocity.atlassian.net/browse/DM-1234?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
+Description:  
+- Improved the processing of external decoder events in the LWM2M agent by transitioning from a single-threaded per-tenant approach to a multi-threaded implementation.
+- Enhanced scalability and performance, enabling faster processing of millions of decoder events.
