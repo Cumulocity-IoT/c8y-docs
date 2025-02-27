@@ -1,6 +1,6 @@
 ---
 date: ""
-title: It is now possible to set 0 as max value for the radial gauge.
+title: Radial gauge can now have 0 as max value
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
