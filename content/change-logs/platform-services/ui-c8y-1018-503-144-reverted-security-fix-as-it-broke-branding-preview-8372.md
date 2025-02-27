@@ -1,6 +1,6 @@
 ---
 date: ""
-title: reverted security fix as it broke branding preview (#8372)
+title: Fixing branding preview functionality
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
