@@ -1,6 +1,6 @@
 ---
-weight: 70
-title: Cloud Fieldbus
+weight: 80
+title: Loriot LoRa
 layout: bundle
 sector:
   - device_management

@@ -13,7 +13,7 @@ Next, establish a connection between the gateway and the OPC UA server.
 4. Enter the **Timeout value** in seconds. The timeout value is calculated for each request. If the timeout value is exceeded the request will be unsuccessful.
 5. Enter the **Status check interval** in seconds. The status check interval specifies how often the gateway actively checks if the server status has changed. These periodic checks are carried out by reading the *ServerStatus* variable on the OPC UA server.
 6. Select the **Security mode** and **Security policy** depending on the server configuration. For more info, see [Security modes](#security-modes).
-7. Select the desired authentication method. For more info, see [Authentication](/protocol-integration/opcua/#authentication).
+7. Select the desired authentication method. For more info, see [Authentication](/device-integration/opcua/#authentication).
 8. Click **Save**.
 
 {{< c8y-admon-info >}}

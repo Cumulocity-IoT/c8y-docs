@@ -50,6 +50,6 @@ If a string is mapped into a measurement and the string value does not follow an
 {{< /c8y-admon-important >}}
 
 To use these integrations, upload the corresponding DDF XML to your tenant.
-For arbitrary protocols, you can configure how LWM2M devices are mapped to {{< product-c8y-iot >}} using device protocols. See [Configuring fieldbus device protocols](/protocol-integration/cloud-fieldbus/#configuring-fieldbus) for more information.
+For arbitrary protocols, you can configure how LWM2M devices are mapped to {{< product-c8y-iot >}} using device protocols. See [Configuring fieldbus device protocols](/device-integration/cloud-fieldbus/#configuring-fieldbus) for more information.
 
 ![Device protocols](/images/device-protocols/lwm2m/lwm2m-deviceprotocol.png)

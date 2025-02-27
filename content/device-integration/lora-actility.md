@@ -1,6 +1,6 @@
 ---
-weight: 40
-title: REST client examples
+weight: 90
+title: Actility LoRa
 layout: bundle
 sector:
   - device_management
