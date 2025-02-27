@@ -43,7 +43,7 @@ After the data is processed, verified and migrated to the new collection the sta
 * That after seven days the legacy collection is removed. 
 Click **Confirm**. This will change the status of the migration to **Approved**.
   {{< c8y-admon-important >}}
-  The action of approval is irreversible! Once the migration is confirmed and the status changes to **Approved** it is no longer possible to switch back to the legacy data format without data loss in case of an issue with the new data format. Enhanced time series support feature is fully enabled with all implications mentioned above. 
+  The approval is irreversible. Once the migration has been confirmed and the status changes to **Approved** it is no longer possible to switch back to the legacy data format without data loss in case of an issue with the new data format. The enhanced time series support feature is fully enabled with all implications mentioned above. 
   {{< /c8y-admon-important >}}
 * Until this point in time billing metrics are computed based on the data stored in the legacy data format. After confirmation, billing metrics are computed based on the new time series optimized data format.
 6. After seven days the legacy measurements collection is deleted and the migration status changes to **Completed**.
