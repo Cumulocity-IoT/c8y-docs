@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61506
 version: 20.25.76.0
 ---
-Enhancing device availability monitoring by adding a safeguard when transitioning into or out of the MAINTENANCE state. Preventing stale lastMessage entries to ensure accurate status tracking and improved data integrity.
+Previously, when turning on or off the maintenance mode in the device status, **Last Communication** could show a wrong date. To fix this issue, the device availability monitoring has been enhanced by adding a safeguard when transitioning into or out of the maintenance mode. This prevents stale ´lastMessage´ entries and ensures accurate status tracking and improved data integrity.
