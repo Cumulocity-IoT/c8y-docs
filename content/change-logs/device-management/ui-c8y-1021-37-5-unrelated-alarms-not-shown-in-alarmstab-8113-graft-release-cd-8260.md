@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Alarms tab in the Simulator page only shows alarms related to the selected asset
+date: '2025-02-27'
+title: >-
+  Alarms tab in the Simulator page only shows alarms related to the selected
+  asset
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
