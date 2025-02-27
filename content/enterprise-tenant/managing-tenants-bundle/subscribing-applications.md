@@ -9,10 +9,10 @@ layout: redirect
 
 {{< product-c8y-iot >}} features an application marketplace that allows tenants to access and manage various applications.
 
-Tenants can be subscribed to applications which have been deployed by their superior tenant ({{< management-tenant >}} or {{< enterprise-tenant >}}).
+{{< management-tenant >}}s and {{< enterprise-tenant >}}s can control application access for their subtenants. Through the Administration application, you can:
 
-Via the Administration application, you can [grant application access to subtenants](/standard-tenant/managing-permissions/#application-access) and [subscribe to applications](#to-subscribe-an-application).
-
+- View and manage existing application subscriptions 
+- [Subscribe subtenants to applications](#to-subscribe-an-application)
 {{< c8y-admon-info >}}
 Tenants can also create and deploy their own [Custom applications](/standard-tenant/ecosystem/#custom-applications), which can be made available to their subtenants. 
 {{< /c8y-admon-info >}}
