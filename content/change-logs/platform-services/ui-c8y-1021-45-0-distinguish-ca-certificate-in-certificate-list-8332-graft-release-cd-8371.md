@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60958
 version: 1021.45.0
 ---
-{{< product-c8y-iot >}} has enhanced certificate management with the ability for {{< product-c8y-iot >}} to sign and issue certificates. This means that when looking at the list of certificates on a tenant you will now see the trust anchor certificates and the {{< product-c8y-iot >}} signed certificates, the latter are identifiable by the words TENANT CA.
+{{< product-c8y-iot >}} has enhanced the certificate management with the ability for {{< product-c8y-iot >}} to sign and issue certificates. This means that the list of certificates in a tenant, which previously only contained the  trust anchor certificates, does now also include the {{< product-c8y-iot >}} signed certificates. The latter are identifiable by the words TENANT CA.
