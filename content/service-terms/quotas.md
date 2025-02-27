@@ -40,10 +40,10 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 | Quota                                                                                                         | Type | Value |
 | ------------------------------------------------------------------------------------------------------------- | ---- | ----: |
-| [Document size](/concepts/domain-model/#fragments)                                                            | Hard | 16 MB |
-| [Document size](/concepts/domain-model/#fragments)                                                            | Soft |  1 MB |
-| [Array size within document](/concepts/domain-model/#fragments)                                               | Soft |  1000 |
-| [Children of an inventory object](/concepts/domain-model/#fragments)                                          | Soft |  1000 |
+| [Document size](/concepts/domain-model/#document-limits)                                                      | Hard | 16 MB |
+| [Document size](/concepts/domain-model/#document-limits)                                                      | Soft |  1 MB |
+| [Array size within document](/concepts/domain-model/#document-limits)                                         | Soft |  1000 |
+| [Children of an inventory object](/concepts/domain-model/#document-limits)                                    | Soft |  1000 |
 | [Property size](https://docs.dremio.com/current/get-started/cluster-deployments/architecture/limits/#catalog) | Soft | 32 KB |
 
 
@@ -77,7 +77,7 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 | [File size for LWM2M bulk registration](/protocol-integration/lwm2m/#bulk-device-registration) | Hard | 10 MB |
 | [Concurrent pending LWM2M operations](/protocol-integration/lwm2m/#device-operations-handling) | Hard |    10 |
 | Maximum number of Loriot devices that can be registered per deployment                         | Soft | 40000 |
-| Maximum number of Loriot devices that can be registered per tenant                             | Soft | 20000  |
+| Maximum number of Loriot devices that can be registered per tenant                             | Soft | 20000 |
 
 ### DataHub
 

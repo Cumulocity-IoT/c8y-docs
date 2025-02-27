@@ -58,3 +58,7 @@ For details see [Device management & connectivity > Protocol integration](/proto
 ### Digital twin {#digital-twin}
 
 A digital twin is a digital representation of physical or virtual assets. Devices, sensors and tools are examples of physical assets, virtual assets can for example be processes or rules. In {{< product-c8y-iot >}} they are represented as [managed objects](/glossary/m/#managed-object).
+
+### Document {#document}
+
+{{< product-c8y-iot >}} stores all operational data - such as managed objects, alarms and measurements - as documents. A document is a versatile JSON structure with a unique identifier, allowing it to be referenced in URLs of web applications or REST APIs. This provides a high degree of flexibility for modeling your data on top of the {{< product-c8y-iot >}} [domain model](/concepts/domain-model/) and the {{< product-c8y-iot >}} [service quotas](/service-terms/quotas/).
