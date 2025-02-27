@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62706
 version: 1021.22.38
 ---
-Previously, the radial gauge widget did not allow setting the maximum value to 0, limiting its flexibility in certain scenarios. With this change, users can now set the max value of the radial gauge to 0 if needed. This enhancement expands the range of values the radial gauge can display, enabling users to represent a wider variety of data points and create visualizations where a maximum value of 0 is required.
+Previously, the "Radial gauge" widget did not allow setting the maximum value to 0, limiting its flexibility in certain scenarios. With this change, users can now set the max value of the radial gauge to 0 if needed. This enhancement expands the range of values the radial gauge can display, enabling users to represent a wider variety of data points and create visualizations where a maximum value of 0 is required.
