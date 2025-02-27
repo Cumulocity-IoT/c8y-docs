@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improved Device Availability Monitoring
+title: Improved device availability monitoring
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
