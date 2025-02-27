@@ -52,7 +52,7 @@ For details see [Device management & connectivity > Device Management applicatio
 A device protocol defines how data from a specific device type should be transferred into the {{< product-c8y-iot >}} platform. It contains protocol-specific information about where the data is obtained from, how to transform it, and how to store it in {{< product-c8y-iot >}}.
 The definition of the device protocol differs based on the underlying protocol used by the device (for example, Modbus, LoRa, OPC UA or LWM2M).
 
-For details see [Device management & connectivity > Protocol integration](/protocol-integration/).
+For details see [Device management & connectivity > Device integration](/device-integration/).
 
 
 ### Digital twin {#digital-twin}

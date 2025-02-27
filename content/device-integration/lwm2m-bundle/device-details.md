@@ -113,7 +113,7 @@ LWM2M client awake time is determined based on the following priority:
 2. (If provided) Registration awake time attribute &ldquo;at&rdquo; in the registration request by the LWM2M client.
 3. Global setting of the LWM2M microservice.
 
-Device managed object &ldquo;awakeTimeRegistrationParameter&rdquo; fragment can be provided during the device registration as explained in [Registering LWM2M devices](/protocol-integration/lwm2m/#registering-lwm2m-devices) or set with the managed object update request as in the example:
+Device managed object &ldquo;awakeTimeRegistrationParameter&rdquo; fragment can be provided during the device registration as explained in [Registering LWM2M devices](/device-integration/lwm2m/#registering-lwm2m-devices) or set with the managed object update request as in the example:
 ```
 PUT /inventory/managedObjects/<device-managed-object-id>
 

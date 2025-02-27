@@ -72,12 +72,10 @@ To register devices, you can select one of the following options:
 Microservice developers can also use the [Extensible device registration](#extensible-device-registration) and implement a custom registration form that blends seamlessly into the UI.
 
 {{< c8y-admon-info >}}
-The following descriptions apply to the general device registration processes. If you subscribe to specific protocol integrations, you will see additional protocol-specific options (for example, for LWM2M or OPC UA). A full list of supported protocols can be found in [Protocol integration](/protocol-integration/). It also contains descriptions for the protocol specific registration processes.
+The following descriptions apply to the general device registration processes. If you subscribe to specific protocol integrations, you will see additional protocol-specific options (for example, for LWM2M or OPC UA). A full list of supported protocols can be found in [Device integration](/device-integration/). It also contains descriptions for the protocol specific registration processes.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-related >}}
-* [Device management & connectivity > Protocol integration](/protocol-integration/) for details on registering devices using various standard protocol types.
-* [Device management & connectivity > Device integration](/device-integration/device-integration-introduction/) for step-by-step instructions on registering devices.
-* [Device management & connectivity > Device integration > Device integration using REST](/device-integration/device-integration-rest/) for a detailed descriptions on device integration via REST.
+* [Device management & connectivity > Device integration](/device-integration/device-integration-introduction/) for step-by-step instructions on registering devices via REST or MQTT, and for details on registering devices using various standard protocol types.
 * The [New device requests API](https://{{< domain-c8y >}}/api/core/#tag/New-device-requests) for REST API methods concerning the creation of new devices.
 {{< /c8y-admon-related >}}

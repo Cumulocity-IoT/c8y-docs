@@ -10,7 +10,7 @@ This can be done in the **LWM2M post-operations** page accessible from the **Dev
 ![Post operations example](/images/device-protocols/lwm2m/lwm2m-post-operations.png)
 
 The above image shows the **LWM2M post-operations** page with a set of sample shell commands.
-More information on shell commands can be found in [Handling LWM2M shell commands](/protocol-integration/lwm2m/#handling-shell-commands).
+More information on shell commands can be found in [Handling LWM2M shell commands](/device-integration/lwm2m/#handling-shell-commands).
 
 ### Device operations handling {#device-operations-handling}
 

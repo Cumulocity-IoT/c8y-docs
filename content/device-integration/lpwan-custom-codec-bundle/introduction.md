@@ -4,7 +4,7 @@ title: Introduction
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} can interface with LPWAN devices through LPWAN network providers via {{< product-c8y-iot >}} LPWAN agents, such as [Actility LoRa](/protocol-integration/lora-actility/).
+{{< product-c8y-iot >}} can interface with LPWAN devices through LPWAN network providers via {{< product-c8y-iot >}} LPWAN agents, such as [Actility LoRa](/device-integration/lora-actility/).
 
 Our LoRa integration allows you to define device protocols in a self-service manner to create a binary mapping of the LoRa sensor data to the {{< product-c8y-iot >}} data model.
 However, this approach does not work for LoRa devices sending dynamic payloads.
