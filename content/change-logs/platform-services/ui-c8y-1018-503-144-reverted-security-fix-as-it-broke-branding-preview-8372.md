@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixing branding preview functionality
+title: Fixed branding preview functionality
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
