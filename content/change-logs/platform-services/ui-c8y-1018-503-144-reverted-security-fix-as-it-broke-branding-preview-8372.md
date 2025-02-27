@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62771
 version: 1018.503.144
 ---
-reverted security fix as it broke branding preview (#8372)
+A recent fix inadvertently caused the branding preview feature to stop working properly. The fix has been reverted to restore this functionality for users. This change ensures that users can once again preview their branding changes before applying them. The initial fix will be re-evaluated and fixed in a future update to avoid impacting the branding preview feature.
