@@ -1,6 +1,6 @@
 ---
 date: ""
-title: distinguish ca certificate in certificate list (#8332) [GRAFT][{release/cd}] (#8371)
+title: Enhanced certificate management with ability to sign and issue certificates
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
