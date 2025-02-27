@@ -38,7 +38,7 @@ To obtain a *public-options.zip* file, contact the [{{< company-c8y >}} support]
 ### Limitations {#limitations}
 
 - Since the cookie banner configuration leverages the standard branding mechanisms, the branding can be redefined by {{< enterprise-tenant >}}s. The branding set by a {{< management-tenant >}} will get a higher priority for the tenant and his subtenant and thus the cookie banner configuration would be ignored. For the users of such tenants, the cookie banner won’t be displayed, thus acceptance won’t be acquired and the users won’t be tracked.
-- Public options are always removed when branding is removed. If this occurs, public options must be re-uploaded, as configuring the cookie banner is necessary.
+- Public options are always removed when branding is removed. If this happens, public options must be re-uploaded, as configuring the cookie banner is necessary.
 - If branding was applied before publishing public options with an already set up Gainsight (referring to the cookie banner configuration), then publishing public options (for example, using a curl command or via the UI) will override the existing public options. Consider public options as an application. Uploading new public options is treated as a new version. To avoid this scenario, download the existing branded public options and adjust them manually by copying and pasting the cookie banner configuration from the public options file.
 
 ### Support Q&A {#support}
@@ -51,12 +51,12 @@ To obtain a *public-options.zip* file, contact the [{{< company-c8y >}} support]
 4. A tenant can disable Gainsight PX tracking for the users of its subtenants from Administration > Subtenants > Tenant custom properties.
 5. Users can manage their Gainsight PX tracking preferences from the **Edit user** dialog. They can choose to opt-out from personalized tracking, which will result in only anonymous (aggregate data) tracking. Additionally, users can opt-out from in-product engagements such as the Knowledge Hub and other interactions, in which case tracking will continue but "user preferences" will be sent to Gainsight PX.
 6. Customers with custom branding have their cookie banner active by default with the default banner text and link to the {{< company-c8y >}} privacy policy. Customers can deactivate the cookie banner and, in these cases, Gainsight PX tracking will be disabled.
-7. Tracking can also be disabled using a new application option named “disableTracking”. This option can be included in the public options.
+7. Tracking can also be disabled using a new application option named `disableTracking`. This option can be included in the public options.
 8. PII (Personally identifiable information) data: email, userName, firstName, lastName.
 9. Custom branding no longer blocks tracking. It only affects user engagement settings and will disable it by default.
 10. If the customer wants to enable only anonymized tracking by default, then follow these instructions:
-    - Update existing public-options, where options called functional (in the cookiePreferences) is set to false.
-    - If public-options are not present, upload new public-options with this option being set to false.
+    - Update the existing public options, where options called functional (in the `cookiePreferences`) is set to false.
+    - If no public options are present, upload new public options with this option being set to false.
       Users can still enable sending personal data to the platform by enabling it in the **User** menu.
 
 ### Custom user attributes {#custom-user-attributes}
@@ -66,7 +66,7 @@ It's important to note that user preferences attributes cannot be updated via th
 1. Custom branding: Indicates if the user is using custom branding. Custom branding is recognized when a custom logo is set via branding.
 2. Tracking(PII data): Indicates if the user allowed to send their PII data.
 3. isUserCreatedAfterAnonymizationWasActivated: Indicates if the user uses a version of the application that supports the anonymization feature.
-4. Engagements: Indicates if user allowed to display in-product information and communication (knowledge hub, surveys etc.)
+4. Engagements: Indicates if user allowed to display in-product information and communication (Knowledge Hub, surveys, etc.)
 
 ![Product experience settings](/images/users-guide/gainsight/product-experience-settings.png)
 
