@@ -128,8 +128,7 @@ the system assumes a default set of commands: `START`, `STOP`, and `RESTART`.
 
 | Name                          | Type   | Mandatory | Description |
 |--------------------------------|--------|-----------|-------------|
-| `c8y_SupportedOperations`    | Array  | Yes       | Must include `c8y_ServiceCommand` to enable command support. |
-| `c8y_SupportedServiceCommands` | Array  | No        | List of available commands for the service. If not provided, defaults to `START`, `STOP`, `RESTART`. |
+| `c8y_SupportedServiceCommands` | Array | No | List of available commands for the service. If not provided, defaults to `START`, `STOP`, `RESTART`. |
 
 #### Executing service commands
 
