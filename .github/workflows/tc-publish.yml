@@ -38,10 +38,10 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-           node-version: 20 
+          node-version: 20
       - name: Publish changelog files
         run: |
             cd publish-change-logs
             npm ci
-            npm start ${{ secrets.DISCOURSE_URL }} ${{ secrets.DISCOURSE_API_KEY }} ${{ secrets.DISCOURSE_API_USER }} pipeline/clusters/helm_charts_data.json
+            npm start ${{ secrets.DISCOURSE_URL }} ${{ secrets.DISCOURSE_API_KEY }} ${{ secrets.DISCOURSE_API_USER }} ../pipeline/clusters/helm_charts_data.json
      
