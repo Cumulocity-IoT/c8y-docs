@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Optimization and improvement of the LWM2M decoder events processing engine
+title: Improved the LWM2M decoder events processing engine
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
