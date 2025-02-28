@@ -14,5 +14,7 @@ build_artifact:
 ticket: DM-4026
 version: 1020.440.9
 ---
+The LWM2M decoder events processing engine has been optimized:
+
 - Improved the processing of external decoder events in the LWM2M agent by transitioning from a single-threaded per-tenant approach to a multi-threaded implementation.
 - Enhanced scalability and performance, enabling faster processing of millions of decoder events.
