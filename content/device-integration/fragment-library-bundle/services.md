@@ -145,4 +145,9 @@ When a command is sent, the following operation structure is created:
 }
 ```
 
-The operation is then processed by the device, executing the command and updating its status accordingly.
+The device is expected to perform the following actions:
+
+1. Set operation status to EXECUTING
+2. Find the service based in the deviceId, the serviceName, and the serviceType included in the operation
+3. Execute the service command with the found service
+4. Set operation status to SUCCESSFUL
