@@ -41,7 +41,7 @@ jobs:
 
       - name: Get component details from helm charts
         id: component-details
-        run: echo "pipeline/clusters/helm_charts_data.json" >> $GITHUB_OUTPUT
+        run: echo "deployment=pipeline/clusters/helm_charts_data.json" >> $GITHUB_OUTPUT
 
   changed_files:
     name: Update changelog dates
