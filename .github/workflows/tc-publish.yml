@@ -8,19 +8,16 @@ permissions:
   contents: read
 
 jobs:
-  get-deployement-details:
-    name: Get deployment details from helm charts
+  publish_tech_community_changelog:
+    name: Publish Tech Community Changelog
     runs-on: ubuntu-latest
     timeout-minutes: 15
     environment: build-pipeline
-    outputs:
-      deployment: ${{ steps.component-details.outputs.deployment }}
     steps:
-      - name: checkout docs repository
+      - name: Checkout docs repository
         uses: actions/checkout@v4
         with:
-          path: docs
-          fetch-depth: 1
+          fetch-depth: 0
 
       - name: Creating github access token
         id: token
@@ -38,28 +35,13 @@ jobs:
           ref: ${{ vars.BRANCH }}
           token: ${{ steps.token.outputs.token }}
           path: pipeline
-
-      - name: Get component details from helm charts
-        id: component-details
-        run: echo "deployment=pipeline/clusters/helm_charts_data.json" >> $GITHUB_OUTPUT
-
-  changed_files:
-    name: Update changelog dates
-    runs-on: ubuntu-latest
-    needs: [get-deployement-details ]
-    timeout-minutes: 15
-    steps:
-      - name: Checking out
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+           node-version: 20 
       - name: Publish changelog files
         run: |
-          cd publish-change-logs
-          npm ci
-          npm start ${{ secrets.DISCOURSE_URL }} ${{ secrets.DISCOURSE_API_KEY }} ${{ secrets.DISCOURSE_API_USER }} ${{ needs.get-deployement-details.deployment }}
+            cd publish-change-logs
+            npm ci
+            npm start ${{ secrets.DISCOURSE_URL }} ${{ secrets.DISCOURSE_API_KEY }} ${{ secrets.DISCOURSE_API_USER }} pipeline/clusters/helm_charts_data.json
+     
