@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-02-27'
 title: Added messages for events sent by the DataHub microservice
 product_area: Application enablement & solutions
 change_type:

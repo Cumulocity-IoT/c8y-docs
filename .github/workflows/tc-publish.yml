@@ -1,0 +1,47 @@
+name: Tech Community Changelog Publish
+on:
+  workflow_dispatch:
+  #schedule:
+  #  - cron: 00 07 * * *
+
+permissions:
+  contents: read
+
+jobs:
+  publish_tech_community_changelog:
+    name: Publish Tech Community Changelog
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: build-pipeline
+    steps:
+      - name: Checkout docs repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Creating github access token
+        id: token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+
+      - name: Checkout c8y-iot-build-pipeline repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.REPOSITORY }}
+          fetch-depth: 1
+          ref: ${{ vars.BRANCH }}
+          token: ${{ steps.token.outputs.token }}
+          path: pipeline
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Publish changelog files
+        run: |
+            cd publish-change-logs
+            npm ci
+            npm start ${{ secrets.DISCOURSE_URL }} ${{ secrets.DISCOURSE_API_KEY }} ${{ secrets.DISCOURSE_API_USER }} ../pipeline/clusters/helm_charts_data.json
+     
