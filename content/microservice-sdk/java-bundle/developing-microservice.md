@@ -43,10 +43,14 @@ Examples on how to use `ContextService` are given below.
 @Autowired
 private ContextService<UserCredentials> contextService;
 @Autowired
-private EventApi eventApi;
+private EventApi userEventApi;
 
-public PagedEventCollectionRepresentation get10Events () {
-  return contextService.runWithinContext(contextService.getContext(), () -> eventApi.getEvents().get(10));
+public List<EventRepresentation> getEvents () {
+  final ArrayList<EventRepresentation> events = new ArrayList<>();
+  contextService.runWithinContext(contextService.getContext(), () -> {
+    userEventApi.getEvents().get().getEvents().forEach(event -> events.add(event));
+  });
+  return events;
 }
 ```
 In this first example, the events are obtained using the credentials of the authenticated user.
@@ -59,8 +63,34 @@ private ContextService<MicroserviceCredentials> contextService;
 @Autowired
 private EventApi eventApi;
 
-public PagedEventCollectionRepresentation get10Events () {
-  return contextService.runWithinContext(contextService.getContext(), () -> eventApi.getEvents().get(10));
+public List<EventRepresentation> getEvents () {
+  final ArrayList<EventRepresentation> events = new ArrayList<>();
+  contextService.runWithinContext(contextService.getContext(), () -> {
+    eventApi.getEvents().get().getEvents().forEach(event -> events.add(event));
+  });
+  return events;
+}
+```
+
+To demonstrate usage of `ContextService` with simple code examples above, `eventApi` and `userEventApi` have been used while they are already attached to the desired context.
+In more complex applications, care must be taken to not use Platform API related beans with tenant scope in a user scope context and vice versa.
+
+Another use case for setting the required context for an arbitrary tenant user is shown in the example below.
+Typically, this user's credentials object already exist within the application and does not need to be created locally like in this example.
+
+```java
+@Autowired
+private ContextService<UserCredentials> contextService;
+@Autowired
+private EventApi userEventApi;
+
+public List<EventRepresentation> getEvents () {
+  UserCredentials myUserContext = new UserCredentials("<tenant>", "<user>", "<password>", ... );
+  final ArrayList<EventRepresentation> events = new ArrayList<>();
+  contextService.runWithinContext(myUserContext, () -> {
+    userEventApi.getEvents().get().getEvents().forEach(event -> events.add(event));
+  });
+  return events;
 }
 ```
 
@@ -121,6 +151,29 @@ private EventApi eventApi;
 ```
 
 Within the user scope, the created beans use the credentials of the authenticated user sending the request instead of the default service user for the communication with the platform.
+
+There are several predefined Platform API related beans with this naming pattern
+* inventoryApi - in tenant scope
+* tenantInventoryApi - in tenant scope
+* userInventoryApi - in user scope
+
+These beans are
+* inventoryApi
+* identityApi
+* measurementApi
+* deviceControlApi
+* alarmApi
+* eventApi
+* eventBinaryApi
+* auditRecordApi
+* deviceCredentialsApi
+* binariesApi
+* userApi
+* tenantOptionApi
+* systemOptionApi
+* tokenApi
+* notificationSubscriptionApi
+
 
 ### Microservice security {#microservice-security}
 
