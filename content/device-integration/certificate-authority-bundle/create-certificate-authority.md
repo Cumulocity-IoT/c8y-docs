@@ -17,7 +17,7 @@ In order to follow this tutorial, check the following prerequisites:
 For creating a new tenant's certificate authority(CA) create certificate authority API need to be called. These following things happen when we call this API:
 
 * A new key pair is created and a certificate is self-signed with `tenantID` as the Common Name (CN).
-* Store the private key in an encrypted tenant option.
+* The private key is stored in an encrypted tenant option.
 * Store the certificate in the trusted certificate repository with auto-registration unchecked by default. The devices can be registered automatically only when device administrator checks this option ON.
 * If the CA certificate is removed from the trusted certificate list, remove the corresponding private key from the database collection.
 * If a CA is already present, return a message indicating the CA is already present.
