@@ -38,7 +38,7 @@ Alternatively, you can retrieve the list of subscribed applications for a tenant
 Expanding an application entry in the **Available applications** list shows the following details:
 
 - Availability - One of MARKET, SHARED or PRIVATE
-- Type - One of HOSTED or MICROSERVIVE
+- Type - One of HOSTED, MICROSERVICE or EXTERNAL
 - Owner - Tenant that owns the application
 
 
