@@ -25,14 +25,14 @@ We may change this Privacy Notice at any time. Previous versions will be archive
 
 ### 1\. Who is the data controller and how can you contact the Data Protection Officer?
 
-**Cumulocity GmbH, Toulouser Allee 25, 40211 Düsseldorf, Germany** is the data controller in accordance with Article 4 of the General Data Protection Regulation (EU) 2016/679 (“GDPR”).
+**Cumulocity GmbH, Marc-Chagall-Straße 2, 40477 Düsseldorf, Germany** is the data controller in accordance with Article 4 of the General Data Protection Regulation (EU) 2016/679 (“GDPR”).
 
 Cumulocity’s Data Protection Officer can be reached by email at [dataprotection@cumulocity.com](mailto:dataprotection@cumulocity.com) or by post at the following address:
 
-Data Protection Officer
-Cumulocity GmbH
-Toulouser Allee 25
-D-40211 Düsseldorf
+Data Protection Officer  
+Cumulocity GmbH  
+Marc-Chagall-Straße 2  
+D-40477 Düsseldorf  
 Germany
 
 ### 2\. What personal data do we process?

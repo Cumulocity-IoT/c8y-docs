@@ -13,7 +13,7 @@ We are committed to transparency and open communication both inside and outside 
 **Managing Directors**: Bernd Rüdiger Groß, Jürgen Krämer, Stefan Vaillant
 
 **Postal address**:
-Cumulocity GmbH, Toulouser Allee 25, 40211 Düsseldorf, Germany
+Cumulocity GmbH, Marc-Chagall-Straße 2, 40477 Düsseldorf, Germany
 
 **Email:** info@cumulocity.com
 

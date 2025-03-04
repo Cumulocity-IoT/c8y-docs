@@ -15,7 +15,7 @@ In order to follow this tutorial, check the following prerequisites:
 
 On creating a new device certificate the device enroll API is called. This triggers the following actions:
 
-* Device enroll API to be used by a device to get a fresh new certificate. The device has to authenticate itself using its tenant, identifier and security token as the BasicAuth realm, user and password. These tenant, identifier and security token must be shared with Cumulocity using a '/devicecontrol/bulkNewDeviceRequests` onboarding endpoint to set the security token for a device.
+* Device enroll API to be used by a device to get a fresh new certificate.
 * If no CA is available an error will be returned.
 * If the request does not contain a valid [CertificateSigningRequest](https://en.wikipedia.org/wiki/Certificate_signing_request)
 
