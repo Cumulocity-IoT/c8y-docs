@@ -24,20 +24,25 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install Dependencies
+      - name: Install Dependencies (Including Cypress)
         run: |
           cd broken-links-script
-          npm install
+          npm ci
+
+      - name: Verify Cypress Installation
+        run: |
+          cd broken-links-script
+          npx cypress --version
 
       - name: Run Broken Link Extraction
         run: |
           cd broken-links-script
-          node BrokenLinkChecker.js  # This generates all_links.json
+          node BrokenLinkChecker.js
 
       - name: Run Cypress Tests
         run: |
           cd broken-links-script
-          npx cypress run --config-file cypress.config.cjs
+          npm run test:headless  
 
       - name: Parse and Comment Broken Links
         uses: actions/github-script@v7
@@ -54,11 +59,11 @@ jobs:
                   issue_number: context.payload.pull_request.number,
                   owner: context.repo.owner,
                   repo: context.repo.repo,
-                  body: `### 🚨 Broken Links Found!\n\n${report}`
+                  body: `### Broken Links Found!\n\n${report}`
                 });
 
                 core.setFailed("Broken links detected! Please resolve them before merging the PR.");
               }
             } else {
-              console.log("✅ No broken links found.");
+              console.log(" No broken links found.");
             }

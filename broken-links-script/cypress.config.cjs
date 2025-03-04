@@ -10,7 +10,7 @@ module.exports = defineConfig({
     pageLoadTimeout: 300000,
     defaultCommandTimeout: 10000,
     requestTimeout: 15000,
-    numTestsKeptInMemory: 10,
+    numTestsKeptInMemory: 0,
     experimentalMemoryManagement: true,
     viewportWidth: 1280,
     viewportHeight: 800,
