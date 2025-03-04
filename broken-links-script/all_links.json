@@ -12,15 +12,24 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/releasenotes/about/introduction/",
+    "link": "https://cumulocity.com/docs/additional-resources/contacting-support",
     "files": [
-      "about_documentation/documentation-repository.md"
+      "about_documentation/documentation-repository.md",
+      "concepts/security-bundle/management-security.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/api",
+    "files": [
+      "about_documentation/documentation-repository.md",
+      "concepts/concepts-introduction-bundle/iot-data-management.md"
     ]
   },
   {
     "link": "https://cumulocity.com/docs/about_documentation/documentation-repository/#product-documentation-for-previous-releases",
     "files": [
-      "about_documentation/documentation-repository.md"
+      "about_documentation/documentation-repository.md",
+      "change-logs/platform-services/cumulocity-undefined-removal-of-deprecated-documentation.md"
     ]
   },
   {
@@ -37,6 +46,12 @@
   },
   {
     "link": "https://cumulocity.com/docs/about_documentation/documentation-repository/#release-notes-for-previous-versions",
+    "files": [
+      "about_documentation/documentation-repository.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/about_documentation/documentation-repository/#api-documentation-for-previous-versions",
     "files": [
       "about_documentation/documentation-repository.md"
     ]
@@ -121,9 +136,17 @@
       "cloud-remote-access/using-cloud-remote-access-bundle/accessing-cra.md",
       "data-broker/ms-data-broker-bundle/using-ms-data-broker.md",
       "datahub/running-datahub-on-the-edge-bundle/operating-datahub-edge.md",
+      "device-integration/cloud-fieldbus-bundle/introduction.md",
       "device-integration/device-integration-rest-bundle/integration-life-cycle.md",
+      "device-integration/lora-actility-bundle/introduction.md",
+      "device-integration/lora-loriot-bundle/loriot-introduction.md",
+      "device-integration/lwm2m-bundle/introduction.md",
+      "device-integration/lwm2m-bundle/post-registration-actions.md",
       "device-integration/mqtt-bundle/implementation.md",
       "device-integration/mqtt-bundle/integration-life-cycle.md",
+      "device-integration/opcua-bundle/introduction.md",
+      "device-integration/opcua-bundle/troubleshooting.md",
+      "device-integration/sigfox-bundle/introduction.md",
       "device-management-application/connectivity.md",
       "edge/edge-connectivity-bundle/accessing-the-edge-appliance-from-the-cumulocity-iot-tenant.md",
       "edge/edge-installation-bundle/prerequisites.md",
@@ -134,16 +157,9 @@
       "edge-kubernetes/k8s-troubleshooting-bundle/edge-k8s-does-not-show-as-device-on-cloud.md",
       "enterprise-tenant/customization-bundle/domain-name.md",
       "enterprise-tenant/support-user-access.md",
+      "gainsight-px.md",
       "get-familiar-with-the-ui/platform-access.md",
       "microservice-sdk/java-bundle/java-hello-world-tutorial.md",
-      "protocol-integration/cloud-fieldbus-bundle/introduction.md",
-      "protocol-integration/lora-actility-bundle/introduction.md",
-      "protocol-integration/lora-loriot-bundle/loriot-introduction.md",
-      "protocol-integration/lwm2m-bundle/introduction.md",
-      "protocol-integration/lwm2m-bundle/post-registration-actions.md",
-      "protocol-integration/opcua-bundle/introduction.md",
-      "protocol-integration/opcua-bundle/troubleshooting.md",
-      "protocol-integration/sigfox-bundle/introduction.md",
       "service-terms/releases.md",
       "service-terms/service-level-bundle/microservices-sla.md",
       "standard-tenant/managing-permissions-bundle/troubleshooting-permissions.md",
@@ -171,7 +187,7 @@
     "link": "https://cumulocity.com/docs/additional-resources/more-documentation/#installation-and-operations-documentation",
     "files": [
       "additional-resources/more-documentation.md",
-      "protocol-integration/lwm2m-bundle/handling-shell-commands.md"
+      "device-integration/lwm2m-bundle/handling-shell-commands.md"
     ]
   },
   {
@@ -265,11 +281,11 @@
     "link": "https://cumulocity.com/api/core/#tag/Tenant-API",
     "files": [
       "authentication/basic-settings.md",
-      "concepts/applications-bundle/application-subscription.md",
       "device-integration/device-integration-rest-bundle/device-authentication.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java-certificates.md",
-      "device-integration/rest-client-examples-bundle/hello-rest-x509.md",
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md",
+      "device-integration/mqtt-bundle/mqtt-examples.md",
       "enterprise-tenant/managing-tenants-bundle/default-subscriptions.md",
+      "enterprise-tenant/managing-tenants-bundle/subscribing-applications.md",
       "streaming-analytics/analytics-customization-bundle/control-access.md",
       "streaming-analytics/troubleshooting-bundle/alarms.md"
     ]
@@ -471,7 +487,8 @@
   {
     "link": "https://cumulocity.com/docs/authentication/tfa/#to-enable-a-specific-user",
     "files": [
-      "authentication/tfa-bundle/sms.md"
+      "authentication/tfa-bundle/sms.md",
+      "authentication/tfa-bundle/totp.md"
     ]
   },
   {
@@ -503,9 +520,9 @@
     "files": [
       "certified-devices/certified-devices.md",
       "cloud-remote-access/communication-bundle/supported-protocols.md",
-      "device-management-application/registering-devices-bundle/single-device-registration.md",
-      "protocol-integration/cloud-fieldbus-bundle/connecting-fieldbus.md",
-      "protocol-integration/cloud-fieldbus-bundle/introduction.md"
+      "device-integration/cloud-fieldbus-bundle/connecting-fieldbus.md",
+      "device-integration/cloud-fieldbus-bundle/introduction.md",
+      "device-management-application/registering-devices-bundle/single-device-registration.md"
     ]
   },
   {
@@ -556,7 +573,18 @@
     "link": "https://cumulocity.com/docs/streaming-analytics/troubleshooting/#analytics-builder-dropped-events",
     "files": [
       "change-logs/analytics/apama-in-c8y-20241024-New-alarm-for-delayed-input-events-that-are-dropped-from-Analytics-Builder-models.md",
+      "streaming-analytics/analytics-builder-bundle/monitoring-and-configuration.md",
       "streaming-analytics/troubleshooting-bundle/alarms.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/streaming-analytics/analytics-builder/#managing-template-parameters",
+    "files": [
+      "change-logs/analytics/apama-in-c8y-20241122-New-template-parameter-field-in-Analytics-Builder-to-select-source-or-destination type.md",
+      "change-logs/analytics/apama-in-c8y-24-18-0-Removing-template-parameters.md",
+      "streaming-analytics/analytics-builder-bundle/using-the-instance-editor.md",
+      "streaming-analytics/analytics-builder-bundle/using-the-model-editor.md",
+      "streaming-analytics/analytics-builder-bundle/using-the-model-manager.md"
     ]
   },
   {
@@ -694,15 +722,6 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/streaming-analytics/analytics-builder/#managing-template-parameters",
-    "files": [
-      "change-logs/analytics/apama-in-c8y-24-18-0-Removing-template-parameters.md",
-      "streaming-analytics/analytics-builder-bundle/using-the-instance-editor.md",
-      "streaming-analytics/analytics-builder-bundle/using-the-model-editor.md",
-      "streaming-analytics/analytics-builder-bundle/using-the-model-manager.md"
-    ]
-  },
-  {
     "link": "https://cumulocity.com/docs/streaming-analytics/analytics-builder/#downloading-a-model",
     "files": [
       "change-logs/analytics/apama-in-c8y-24-18-0-Renamed-commands-for-downloading-analytic-models-and-EPL-apps.md",
@@ -804,7 +823,13 @@
     "link": "https://cumulocity.com/releasenotes/release-10-18-0/announcements-10-18-0",
     "files": [
       "change-logs/application-enablement/cumulocity-undefined-use-of-linux-croup-v2.md",
-      "protocol-integration/lwm2m-bundle/device-details.md"
+      "device-integration/lwm2m-bundle/device-details.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/dtm/asset-types/",
+    "files": [
+      "change-logs/application-enablement/dtm-1021-0-0-default-asset-model-for-groups.md"
     ]
   },
   {
@@ -821,11 +846,11 @@
       "cockpit/home-dashboard.md",
       "cockpit/managing-assets-bundle/working-with-assets.md",
       "concepts/concepts-introduction-bundle/application-enablement.md",
+      "device-integration/cloud-fieldbus-bundle/managing-fieldbus.md",
       "device-management-application/home-dashboard.md",
       "edge/edge-introduction-bundle/iot-platform.md",
       "edge/using-edge-bundle/monitoring-edge-metrics.md",
       "edge-kubernetes/edge-operations-bundle/monitoring-edge-metrics.md",
-      "protocol-integration/cloud-fieldbus-bundle/managing-fieldbus.md",
       "quick-start/first-steps.md",
       "sensor-app/controlling-devices.md"
     ]
@@ -847,13 +872,19 @@
     ]
   },
   {
+    "link": "https://styleguide.cumulocity.com/apps/codex/",
+    "files": [
+      "change-logs/application-enablement/ui-c8y-1021-39-1-codex-branding-and-tokens-update-8095-graft-release-cd-8324.md"
+    ]
+  },
+  {
     "link": "http://resources.cumulocity.com/documentation/websdk/ngx-components/injectables/DeviceGridService.html",
     "files": [
       "change-logs/application-enablement/ui-c8y-undefined-removal-of-deprecated-device-grid-model-classes-column-implementations-and-services.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#device-registration-settings",
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#device-registration-settings",
     "files": [
       "change-logs/device-management/cumulocity-10-18-107-0-New-configuration-flag-in-LWM2M-device-registration-settings-for-firmware-reset.md"
     ]
@@ -863,16 +894,16 @@
     "files": [
       "change-logs/device-management/cumulocity-10-18-288-0-X-509-security-mode-support.md",
       "device-integration/device-certificates.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java-certificates.md",
-      "device-integration/rest-client-examples-bundle/hello-rest-x509.md",
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md",
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md",
+      "device-integration/mqtt-bundle/mqtt-examples.md",
       "edge-kubernetes/edge-custom-resource-definition-bundle/k8-edge-cloud-tenant.md",
       "edge-kubernetes/k8-edge-connecting-edge-to-cloud-bundle/k8-edge-register-edge-on-cloud.md",
-      "edge-kubernetes/k8s-troubleshooting-bundle/edge-k8s-does-not-show-as-device-on-cloud.md",
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+      "edge-kubernetes/k8s-troubleshooting-bundle/edge-k8s-does-not-show-as-device-on-cloud.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/",
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/",
     "files": [
       "change-logs/device-management/cumulocity-10-18-288-0-X-509-security-mode-support.md",
       "change-logs/device-management/cumulocity-10-18-483-0-New-LWM2M-configuration-tab.md",
@@ -880,10 +911,10 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#handling-shell-commands",
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#handling-shell-commands",
     "files": [
       "change-logs/device-management/lwm2m-agent-10-20-373-0-lwm2m-transmit-cwrite-data-in-the-specified-order.md",
-      "protocol-integration/lwm2m-bundle/post-registration-actions.md"
+      "device-integration/lwm2m-bundle/post-registration-actions.md"
     ]
   },
   {
@@ -894,17 +925,16 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#registering-lwm2m-devices",
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#registering-lwm2m-devices",
     "files": [
       "change-logs/device-management/lwm2m-agent-10-20-538-0-LWM2M-REST-documentation-additions.md",
-      "protocol-integration/lwm2m-bundle/device-details.md"
+      "device-integration/lwm2m-bundle/device-details.md"
     ]
   },
   {
     "link": "https://cumulocity.com/docs/protocol-integration/opcua/#device-type-resources",
     "files": [
-      "change-logs/device-management/opcua-10-20-79-0-added-validation-on-device-type.md",
-      "protocol-integration/opcua-bundle/rest-api.md"
+      "change-logs/device-management/opcua-10-20-79-0-added-validation-on-device-type.md"
     ]
   },
   {
@@ -914,26 +944,39 @@
     ]
   },
   {
-    "link": "https://github.com/Cumulocity-IoT//cumulocity-examples/snmp",
+    "link": "https://github.com/Cumulocity-IoT/cumulocity-examples/tree/develop/snmp",
     "files": [
       "change-logs/device-management/SNMP-removed-from-docs.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#lwm2m-configuration",
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#lwm2m-configuration",
     "files": [
       "change-logs/device-management/ui-c8y-1020-40-0-avoid-unnecessary-unavailability-alarms-for-lw-m-2-m-device-graft.md",
       "change-logs/device-management/ui-c8y-1020-438-0-LWM2M-device-level-logging-event-configuration.md",
       "change-logs/device-management/ui-c8y-1021-4-2-ui-fail-firmware-update-process-if-device-reports-unexpected-update-result.md",
-      "protocol-integration/lwm2m-bundle/device-details.md",
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+      "device-integration/lwm2m-bundle/device-details.md",
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#advanced-settings",
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#advanced-settings",
     "files": [
       "change-logs/device-management/ui-c8y-1020-438-0-LWM2M-device-level-logging-event-configuration.md",
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://github.com/Cumulocity-IoT/devicemanagement/compare/v1021.39.1...v1021.40.0",
+    "files": [
+      "change-logs/device-management/ui-c8y-1021-40-0-migrate-cloud-remote-access-feature-from-angular-js-to-angular-and.md",
+      "change-logs/device-management/ui-c8y-1022-0-0-removed-obsolete-angularjs-implementation-of-cloud-remote-access.md"
+    ]
+  },
+  {
+    "link": "https://www.npmjs.com/package/@c8y/ng1-modules",
+    "files": [
+      "change-logs/device-management/ui-c8y-1022-0-0-removed-obsolete-angularjs-implementation-of-cloud-remote-access.md"
     ]
   },
   {
@@ -972,7 +1015,7 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/enterprise-tenant/enhanced-time-series-support/",
+    "link": "https://cumulocity.com/docs/standard-tenant/enhanced-time-series-support/",
     "files": [
       "change-logs/platform-services/cumulocity-10-20-584-0-enabling-time-series-on-management-no-longer-possible.md",
       "datahub/working-with-datahub-bundle/aligning-data-modeling-and-offloading.md"
@@ -1010,6 +1053,18 @@
     ]
   },
   {
+    "link": "https://cumulocity.com/api/core/#operation/getAlarmCollectionCountResource",
+    "files": [
+      "change-logs/platform-services/cumulocity-20-25-37-0_alarm-collection-count-single-type-fix.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/api/core/#tag/Query-language",
+    "files": [
+      "change-logs/platform-services/cumulocity-20-25-47-is-in-hierarchy-of-odata.md"
+    ]
+  },
+  {
     "link": "https://cumulocity.com/docs/enterprise-tenant/usage-and-billing/",
     "files": [
       "change-logs/platform-services/cumulocity-undefined-device-count-in-usage-statistics-detalis-explained.md",
@@ -1041,6 +1096,12 @@
     "link": "https://cumulocity.com/api/core/#operation/postNotificationSubscriptionResource",
     "files": [
       "change-logs/platform-services/cumulocity-undefined-notifications-tenant-context-operations-wildcard-announcement.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/change-logs/?change-type=.change-type-api-change#cumulocity-undefined-notifications-tenant-context-operations-wildcard-announcement",
+    "files": [
+      "change-logs/platform-services/cumulocity-undefined-notifications-tenant-context-operations-wildcard.md"
     ]
   },
   {
@@ -1107,6 +1168,7 @@
     "link": "https://cumulocity.com/docs/service-terms/quotas/",
     "files": [
       "change-logs/platform-services/cumulocity-undefined-Service-Terms.md",
+      "glossary/d.md",
       "service-terms/compatibility-policy.md",
       "service-terms/service-level-bundle/platform-sla.md"
     ]
@@ -1115,6 +1177,15 @@
     "link": "https://cumulocity.com/docs/service-terms/accessibility/",
     "files": [
       "change-logs/platform-services/cumulocity-undefined-Service-Terms.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/standard-tenant/managing-users/",
+    "files": [
+      "change-logs/platform-services/ui-c8y-1021-33-0-setting-password-for-new-user-7845-7995.md",
+      "edge/edge-introduction-bundle/iot-platform.md",
+      "standard-tenant/changing-settings-bundle/application.md",
+      "standard-tenant/standard-tenant-introduction.md"
     ]
   },
   {
@@ -1205,7 +1276,7 @@
     "files": [
       "cloud-remote-access/cra-general-aspects-bundle/when-to-use.md",
       "cloud-remote-access/using-cloud-remote-access.md",
-      "protocol-integration/lora-actility-bundle/registering-lora-devices.md"
+      "device-integration/lora-actility-bundle/registering-lora-devices.md"
     ]
   },
   {
@@ -1219,7 +1290,6 @@
       "device-management-application/connectivity.md",
       "device-management-application/grouping-devices-bundle/managing-groups.md",
       "dtm/asset-hierarchy-bundle/introduction.md",
-      "dtm/localization.md",
       "edge/edge-introduction-bundle/iot-platform.md",
       "microservice-sdk/java-bundle/services-platform-sms-api.md",
       "standard-tenant/standard-tenant-introduction.md",
@@ -1291,7 +1361,7 @@
       "cockpit/widgets-collection.md",
       "data-broker/data-broker-application-bundle/data-connectors.md",
       "datahub/working-with-datahub-bundle/configuring-offloading-jobs.md",
-      "device-management-application/monitoring-device-services.md",
+      "device-management-application/managing-device-services.md",
       "device-management-application/viewing-device-details.md",
       "device-management-application/working-with-simulators.md",
       "edge/edge-introduction-bundle/iot-platform.md",
@@ -1427,7 +1497,7 @@
       "cockpit/data-explorer-bundle/changing-visualization.md",
       "cockpit/data-explorer-bundle/working-with-data-explorer.md",
       "concepts/domain-model-bundle/measurements.md",
-      "device-management-application/monitoring-device-services.md",
+      "device-management-application/managing-device-services.md",
       "smartrest/json-via-mqtt.md"
     ]
   },
@@ -1647,6 +1717,7 @@
       "cockpit/managing-assets-bundle/asset-hierarchy.md",
       "concepts/concepts-introduction-bundle/iot-data-management.md",
       "device-integration/fragment-library-bundle/fragment-ibrary-introduction.md",
+      "glossary/d.md",
       "service-terms/compatibility-policy.md",
       "streaming-analytics/epl-apps-bundle/advanced-features.md"
     ]
@@ -1655,10 +1726,10 @@
     "link": "https://cumulocity.com/docs/device-management-application/",
     "files": [
       "cockpit/managing-assets-bundle/asset-hierarchy.md",
+      "device-integration/lora-loriot-bundle/device-registration-via-platform.md",
+      "device-integration/sigfox-bundle/registering-sigfox-devices.md",
       "get-familiar-with-the-ui/ui-introduction.md",
       "glossary/d.md",
-      "protocol-integration/lora-loriot-bundle/device-registration-via-platform.md",
-      "protocol-integration/sigfox-bundle/registering-sigfox-devices.md",
       "streaming-analytics/analytics-builder-bundle/getting-started.md"
     ]
   },
@@ -1770,8 +1841,8 @@
     "files": [
       "cockpit/smart-rules-collection.md",
       "concepts/domain-model-bundle/events.md",
+      "device-management-application/managing-device-services.md",
       "device-management-application/monitoring-and-controlling-devices.md",
-      "device-management-application/monitoring-device-services.md",
       "smartrest/json-via-mqtt.md",
       "standard-tenant/alarm-mapping.md"
     ]
@@ -1923,12 +1994,6 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/cockpit/smart-rules/#to-debug-a-smart-rule",
-    "files": [
-      "cockpit/smart-rules.md"
-    ]
-  },
-  {
     "link": "https://cumulocity.com/docs/cockpit/smart-rules/#example-defining-explicit-thresholds",
     "files": [
       "cockpit/smart-rules.md"
@@ -2065,17 +2130,17 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#monitoring-the-device-status-using-the-fieldbus-device-widget",
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#monitoring-the-device-status-using-the-fieldbus-device-widget",
     "files": [
       "cockpit/widgets-collection.md",
-      "protocol-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
+      "device-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#monitoring-the-device-status-using-the-scada-widget",
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#monitoring-the-device-status-using-the-scada-widget",
     "files": [
       "cockpit/widgets-collection.md",
-      "protocol-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
+      "device-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
     ]
   },
   {
@@ -2315,111 +2380,6 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/standard-tenant/managing-permissions/#application-access",
-    "files": [
-      "concepts/applications-bundle/application-subscription.md",
-      "edge/edge-introduction-bundle/iot-platform.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/enterprise-tenant/managing-tenants/#subscribing-applications",
-    "files": [
-      "concepts/applications-bundle/application-subscription.md",
-      "concepts/concepts-introduction-bundle/platform-management.md",
-      "dtm/dtm-introduction.md",
-      "service-terms/service-level-bundle/microservices-sla.md",
-      "standard-tenant/ecosystem.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/standard-tenant/ecosystem/#custom-applications",
-    "files": [
-      "concepts/applications-bundle/application-subscription.md",
-      "concepts/applications-bundle/web-applications.md",
-      "get-familiar-with-the-ui/available-applications.md",
-      "get-familiar-with-the-ui/gui-features.md",
-      "standard-tenant/ecosystem-bundle/managing-applications.md",
-      "streaming-analytics/epl-apps-bundle/basic-functionality.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/concepts/applications/#service-discovery",
-    "files": [
-      "concepts/applications-bundle/application-subscription.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/concepts/applications/#single-device-registration",
-    "files": [
-      "concepts/applications-bundle/extensible-device-registration.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/concepts/applications/#bulk-device-registration",
-    "files": [
-      "concepts/applications-bundle/extensible-device-registration.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/concepts/applications/#extension-enabling",
-    "files": [
-      "concepts/applications-bundle/extensible-device-registration.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/concepts/applications/#limitations",
-    "files": [
-      "concepts/applications-bundle/extensible-device-registration.md"
-    ]
-  },
-  {
-    "link": "https://json-schema.org/",
-    "files": [
-      "concepts/applications-bundle/extensible-device-registration.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/concepts/applications/#advantages-of-extended-device-registration",
-    "files": [
-      "concepts/applications-bundle/extensible-device-registration.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/concepts/applications/#api-specification",
-    "files": [
-      "concepts/applications-bundle/extensible-device-registration.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/concepts/applications/#single-device-registration-flow-diagram",
-    "files": [
-      "concepts/applications-bundle/extensible-device-registration.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/concepts/applications/#bulk-flow-diagram",
-    "files": [
-      "concepts/applications-bundle/extensible-device-registration.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/microservice-sdk/microservice-sdk-introduction/",
-    "files": [
-      "concepts/applications-bundle/microservices.md",
-      "edge/edge-configuration-bundle/configuring-microservices.md",
-      "edge-kubernetes/k8-edge-connecting-edge-to-cloud-bundle/software-management-docs.md",
-      "service-terms/service-level-bundle/microservices-sla.md",
-      "standard-tenant/ecosystem.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/microservice-sdk/java",
-    "files": [
-      "concepts/applications-bundle/microservices.md",
-      "microservice-sdk/microservice-sdk-introduction.md"
-    ]
-  },
-  {
     "link": "https://cumulocity.com/docs/web/introduction",
     "files": [
       "concepts/applications-bundle/web-applications.md",
@@ -2430,8 +2390,18 @@
     "link": "https://cumulocity.com/docs/concepts/domain-model/#fragments",
     "files": [
       "concepts/applications-bundle/web-applications.md",
-      "concepts/domain-model-bundle/inventory.md",
-      "service-terms/quotas.md"
+      "concepts/domain-model.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/standard-tenant/ecosystem/#custom-applications",
+    "files": [
+      "concepts/applications-bundle/web-applications.md",
+      "enterprise-tenant/managing-tenants-bundle/subscribing-applications.md",
+      "get-familiar-with-the-ui/available-applications.md",
+      "get-familiar-with-the-ui/gui-features.md",
+      "standard-tenant/ecosystem-bundle/managing-applications.md",
+      "streaming-analytics/epl-apps-bundle/basic-functionality.md"
     ]
   },
   {
@@ -2455,11 +2425,9 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/concepts/applications/#microservices",
+    "link": "https://cumulocity.com/docs/microservice-sdk/general-aspects/",
     "files": [
-      "concepts/applications.md",
-      "device-integration/fragment-library-bundle/software.md",
-      "glossary/m.md"
+      "concepts/applications.md"
     ]
   },
   {
@@ -2480,8 +2448,8 @@
     "files": [
       "concepts/concepts-introduction-bundle/analytics.md",
       "concepts/concepts-introduction-bundle/iot-data-management.md",
-      "enterprise-tenant/enhanced-time-series-support-bundle/migration-process-description.md",
-      "glossary/c.md"
+      "glossary/c.md",
+      "standard-tenant/enhanced-time-series-support-bundle/migration-process-description.md"
     ]
   },
   {
@@ -2512,7 +2480,6 @@
     "files": [
       "concepts/concepts-introduction-bundle/application-enablement.md",
       "concepts/concepts-introduction-bundle/platform-management.md",
-      "dtm/localization.md",
       "edge/edge-installation-bundle/accessing-platform.md",
       "edge/using-edge-bundle/branding.md",
       "edge-kubernetes/k8-using-edge-bundle/branding.md",
@@ -2576,8 +2543,8 @@
       "concepts/concepts-introduction-bundle/device-integration.md",
       "device-integration/device-integration-introduction.md",
       "device-integration/device-integration-thin-edge.md",
+      "device-integration/opcua-bundle/gateway-configuration-and-registration.md",
       "glossary/t.md",
-      "protocol-integration/opcua-bundle/gateway-configuration-and-registration.md",
       "thin-edge/device-integration-thin-edge.md"
     ]
   },
@@ -2594,8 +2561,7 @@
       "concepts/concepts-introduction-bundle/device-integration.md",
       "concepts/interfacing-devices-bundle/support-of-developing-agents.md",
       "device-integration/device-integration-introduction.md",
-      "device-integration/rest-client-examples-bundle/hello-rest.md",
-      "device-management-application/registering-devices.md",
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md",
       "edge/connecting-devices-to-edge-bundle/connecting-devices.md",
       "edge-kubernetes/k8-connecting-devices-to-edge-bundle/connecting-devices.md",
       "microservice-sdk/rest-bundle/introduction.md",
@@ -2613,13 +2579,13 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/",
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/",
     "files": [
       "concepts/concepts-introduction-bundle/device-integration.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/",
+    "link": "https://cumulocity.com/docs/device-integration/opcua/",
     "files": [
       "concepts/concepts-introduction-bundle/device-integration.md",
       "edge/connecting-devices-to-edge-bundle/connecting-opcua-device.md",
@@ -2627,7 +2593,7 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/",
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/",
     "files": [
       "concepts/concepts-introduction-bundle/device-integration.md",
       "edge/connecting-devices-to-edge-bundle/connecting-modbus-device.md"
@@ -2637,11 +2603,11 @@
     "link": "https://cumulocity.com/docs/device-management-application/managing-device-data/#managing-firmware",
     "files": [
       "concepts/concepts-introduction-bundle/device-management.md",
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md",
       "device-management-application/managing-device-data-bundle/managing-device-profiles.md",
       "edge/edge-connectivity-bundle/updating-edge-remotely.md",
       "edge/edge-introduction-bundle/iot-platform.md",
-      "edge-kubernetes/k8-edge-connecting-edge-to-cloud-bundle/k8-edge-upgrading-edge-remotely.md",
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+      "edge-kubernetes/k8-edge-connecting-edge-to-cloud-bundle/k8-edge-upgrading-edge-remotely.md"
     ]
   },
   {
@@ -2697,8 +2663,7 @@
     "files": [
       "concepts/concepts-introduction-bundle/iot-data-management.md",
       "dtm/asset-hierarchy-bundle/creating-assets-bulk-import.md",
-      "dtm/asset-types-bundle/asset-properties.md",
-      "dtm/localization.md"
+      "dtm/asset-types-bundle/asset-properties.md"
     ]
   },
   {
@@ -2722,12 +2687,6 @@
       "concepts/concepts-introduction-bundle/iot-data-management.md",
       "dtm/asset-hierarchy-bundle/creating-assets-ui.md",
       "dtm/asset-hierarchy-bundle/viewing-assets.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/api",
-    "files": [
-      "concepts/concepts-introduction-bundle/iot-data-management.md"
     ]
   },
   {
@@ -2759,7 +2718,6 @@
     "link": "https://cumulocity.com/docs/enterprise-tenant/enterprise-tenant-introduction/",
     "files": [
       "concepts/concepts-introduction-bundle/platform-management.md",
-      "dtm/localization.md",
       "standard-tenant/standard-tenant-introduction.md"
     ]
   },
@@ -2771,10 +2729,21 @@
     ]
   },
   {
+    "link": "https://cumulocity.com/docs/enterprise-tenant/managing-tenants/#subscribing-applications",
+    "files": [
+      "concepts/concepts-introduction-bundle/platform-management.md",
+      "dtm/dtm-introduction.md",
+      "glossary/s.md",
+      "service-terms/service-level-bundle/microservices-sla.md",
+      "standard-tenant/ecosystem.md"
+    ]
+  },
+  {
     "link": "https://cumulocity.com/docs/standard-tenant/ecosystem/#monitoring-microservices",
     "files": [
       "concepts/concepts-introduction-bundle/platform-management.md",
       "datahub/setting-up-datahub-bundle/prerequisites.md",
+      "enterprise-tenant/managing-tenants-bundle/subscribing-applications.md",
       "streaming-analytics/epl-apps-bundle/basic-functionality.md",
       "streaming-analytics/troubleshooting-bundle/alarms.md",
       "streaming-analytics/troubleshooting-bundle/logfiles.md"
@@ -2795,7 +2764,7 @@
     "link": "https://cumulocity.com/docs/device-integration/device-certificates/",
     "files": [
       "concepts/concepts-introduction-bundle/platform-management.md",
-      "device-integration/rest-client-examples-bundle/hello-rest-x509.md"
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md"
     ]
   },
   {
@@ -2866,7 +2835,7 @@
     "link": "https://cumulocity.com/api/core/#tag/Events",
     "files": [
       "concepts/domain-model-bundle/events.md",
-      "device-management-application/monitoring-device-services.md",
+      "device-management-application/managing-device-services.md",
       "smartrest/json-via-mqtt.md",
       "streaming-analytics/epl-apps-bundle/basic-functionality.md"
     ]
@@ -2877,22 +2846,6 @@
       "concepts/domain-model-bundle/events.md",
       "enterprise-tenant/usage-and-billing.md",
       "standard-tenant/audit-logs.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-integration/fragment-library/",
-    "files": [
-      "concepts/domain-model-bundle/inventory.md",
-      "concepts/realtime-bundle/using-epl.md",
-      "device-integration/device-integration-rest-bundle/integration-life-cycle.md",
-      "device-integration/device-integration-rest.md",
-      "device-management-application/viewing-device-details.md",
-      "device-management-application/working-with-simulators.md",
-      "microservice-sdk/rest-bundle/introduction.md",
-      "microservice-sdk/rest-bundle/microservice-development.md",
-      "service-terms/compatibility-policy.md",
-      "standard-tenant/managing-permissions-bundle/inventory-roles.md",
-      "standard-tenant/managing-permissions.md"
     ]
   },
   {
@@ -2912,13 +2865,6 @@
     "link": "https://cumulocity.com/docs/concepts/domain-model/#managed-objects",
     "files": [
       "concepts/domain-model-bundle/inventory.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/concepts/domain-model/#naming-conventions-of-fragments",
-    "files": [
-      "concepts/domain-model-bundle/inventory.md",
-      "service-terms/compatibility-policy.md"
     ]
   },
   {
@@ -2968,6 +2914,29 @@
     "link": "https://cumulocity.com/docs/concepts/domain-model/#designing-operations-for-reliability",
     "files": [
       "concepts/domain-model-bundle/operations.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/fragment-library/",
+    "files": [
+      "concepts/domain-model.md",
+      "concepts/realtime-bundle/using-epl.md",
+      "device-integration/device-integration-rest-bundle/integration-life-cycle.md",
+      "device-integration/device-integration-rest.md",
+      "device-management-application/viewing-device-details.md",
+      "device-management-application/working-with-simulators.md",
+      "microservice-sdk/rest-bundle/introduction.md",
+      "microservice-sdk/rest-bundle/microservice-development.md",
+      "service-terms/compatibility-policy.md",
+      "standard-tenant/managing-permissions-bundle/inventory-roles.md",
+      "standard-tenant/managing-permissions.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/concepts/domain-model/#naming-conventions-of-fragments",
+    "files": [
+      "concepts/domain-model.md",
+      "service-terms/compatibility-policy.md"
     ]
   },
   {
@@ -3191,6 +3160,7 @@
     "link": "https://cumulocity.com/docs/web/application-configuration/#application-options",
     "files": [
       "concepts/security-bundle/application-security.md",
+      "dtm/asset-types-bundle/asset-models.md",
       "web/application-configuration-bundle/languages-customization.md",
       "web/upgrade-bundle/angular-cli.md"
     ]
@@ -3211,12 +3181,6 @@
       "concepts/security-bundle/management-security.md",
       "streaming-analytics/troubleshooting-bundle/alarms.md",
       "streaming-analytics/troubleshooting-bundle/analytics-audit-logs.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/additional-resources/contacting-support",
-    "files": [
-      "concepts/security-bundle/management-security.md"
     ]
   },
   {
@@ -3488,6 +3452,12 @@
     ]
   },
   {
+    "link": "https://cumulocity.com/docs/service-terms/quotas/#realtime-apis",
+    "files": [
+      "data-broker/ms-data-broker-bundle/using-ms-data-broker.md"
+    ]
+  },
+  {
     "link": "https://cumulocity.com/docs/data-broker/ms-data-broker/#to-enable-the-microservice-based-data-broker",
     "files": [
       "data-broker/ms-data-broker-bundle/using-ms-data-broker.md"
@@ -3506,7 +3476,13 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/data-broker/ms-data-broker/#-migrating-existing-data-connectors-to-the-microservice-based-data-broker",
+    "link": "https://cumulocity.com/docs/data-broker/ms-data-broker/#migrating-existing-data-connectors-to-the-microservice-based-data-broker",
+    "files": [
+      "data-broker/ms-data-broker-bundle/using-ms-data-broker.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/data-broker/ms-data-broker/#microservice-based-data-broker-service-quotas",
     "files": [
       "data-broker/ms-data-broker-bundle/using-ms-data-broker.md"
     ]
@@ -4671,6 +4647,201 @@
     ]
   },
   {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#connecting-fieldbus",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/configuring-fieldbus.md",
+      "device-integration/cloud-fieldbus-bundle/introduction.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#configuring-modbus-device-protocols",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#to-add-a-register-definition",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#exporting-importing-protocols",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/configuring-fieldbus.md",
+      "device-integration/cloud-fieldbus-bundle/introduction.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#to-add-a-coil-definition-discrete-outputs",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#to-add-a-discrete-inputs-definition",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#configuring-can-bus-device-protocols",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#configuring-profibus-device-protocols",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#configuring-canopen-device-protocols",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#to-configure-a-variable",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#importing-a-canopen-device-protocol",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#configuring-canopen-device-data",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#configuring-fieldbus",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/connecting-fieldbus.md",
+      "device-integration/cloud-fieldbus-bundle/introduction.md",
+      "device-integration/lwm2m-bundle/introduction.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#connecting-modbusrtu-devices",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/connecting-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#to-add-child-devices",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/connecting-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#connecting-modbustcp-devices",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/connecting-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#connecting-can-devices",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/connecting-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#connecting-profibus-devices",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/connecting-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#managing-fieldbus",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/introduction.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#collect-measurements",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#monitoring-alarms",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#logging-events",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#monitoring-the-device-status",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/cockpit/data-explorer",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/managing-fieldbus.md",
+      "glossary/d.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/cockpit/",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/managing-fieldbus.md",
+      "get-familiar-with-the-ui/platform-access.md",
+      "get-familiar-with-the-ui/ui-introduction.md",
+      "glossary/c.md",
+      "streaming-analytics/troubleshooting-bundle/alarms.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#preparing-svg-files-for-the-scada-widget",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://boxy-svg.com/",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#collecting-measurements",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#placeholders",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#predefined-functions",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus/#example",
+    "files": [
+      "device-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
+    ]
+  },
+  {
     "link": "https://cumulocity.com/docs/device-management-application/registering-devices/#to-bulk-register-devices",
     "files": [
       "device-integration/device-certificates.md",
@@ -4810,8 +4981,7 @@
     "link": "https://cumulocity.com/docs/concepts/interfacing-devices/",
     "files": [
       "device-integration/device-integration-introduction.md",
-      "device-management-application/managing-device-types.md",
-      "streaming-analytics/introduction-analytics.md"
+      "device-management-application/managing-device-types.md"
     ]
   },
   {
@@ -4941,6 +5111,101 @@
     "link": "https://cumulocity.com/docs/device-integration/device-integration-rest/#replacing-a-physical-device",
     "files": [
       "device-integration/device-integration-rest-bundle/integration-life-cycle.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/microservice-sdk/rest",
+    "files": [
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md",
+      "microservice-sdk/java-bundle/introduction.md",
+      "microservice-sdk/microservice-sdk-introduction.md"
+    ]
+  },
+  {
+    "link": "https://swagger.io/specification/#data-types",
+    "files": [
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md"
+    ]
+  },
+  {
+    "link": "http://maven.apache.org",
+    "files": [
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md",
+      "device-integration/mqtt-bundle/mqtt-examples.md"
+    ]
+  },
+  {
+    "link": "https://github.com/Cumulocity-IoT//cumulocity-examples/tree/develop/x509-rest-client",
+    "files": [
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md"
+    ]
+  },
+  {
+    "link": "https://github.com/Cumulocity-IoT//cumulocity-examples/tree/develop/mqtt-client/scripts",
+    "files": [
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md",
+      "device-integration/mqtt-bundle/mqtt-examples.md"
+    ]
+  },
+  {
+    "link": "https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html",
+    "files": [
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md",
+      "device-integration/mqtt-bundle/mqtt-connection.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/device-integration-rest/#prerequisites",
+    "files": [
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/device-integration-rest/#performing-the-rest-calls",
+    "files": [
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/device-integration-rest/#create-a-new-device",
+    "files": [
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/device-integration-rest/#send-measurement-data",
+    "files": [
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/device-integration-rest/#going-further",
+    "files": [
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/device-integration-rest/#copying-a-maven-project",
+    "files": [
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/device-integration-rest/#generating-a-valid-certificate",
+    "files": [
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/device-integration-rest/#changing-the-configuration",
+    "files": [
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/device-integration-rest/#building-and-running-the-application",
+    "files": [
+      "device-integration/device-integration-rest-bundle/rest-client-examples.md"
     ]
   },
   {
@@ -5179,8 +5444,8 @@
     "link": "https://cumulocity.com/docs/device-management-application/viewing-device-details",
     "files": [
       "device-integration/fragment-library-bundle/fragment-ibrary-introduction.md",
-      "protocol-integration/lwm2m-bundle/device-details.md",
-      "protocol-integration/opcua-bundle/gateway-device-details.md"
+      "device-integration/lwm2m-bundle/device-details.md",
+      "device-integration/opcua-bundle/gateway-device-details.md"
     ]
   },
   {
@@ -5361,6 +5626,19 @@
     ]
   },
   {
+    "link": "https://cumulocity.com/docs/device-integration/fragment-library/#service-commands",
+    "files": [
+      "device-integration/fragment-library-bundle/services.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/concepts/applications/#microservices",
+    "files": [
+      "device-integration/fragment-library-bundle/software.md",
+      "glossary/m.md"
+    ]
+  },
+  {
     "link": "https://cumulocity.com/docs/device-integration/fragment-library/#installed-software",
     "files": [
       "device-integration/fragment-library-bundle/software.md"
@@ -5437,6 +5715,614 @@
     "link": "https://cumulocity.com/docs/device-integration/fragment-library/#setting-the-current-position",
     "files": [
       "device-integration/fragment-library-bundle/tracking.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#to-add-a-new-connection",
+    "files": [
+      "device-integration/lora-actility-bundle/configuring-credentials.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#to-update-a-connection",
+    "files": [
+      "device-integration/lora-actility-bundle/configuring-credentials.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#to-delete-a-connection",
+    "files": [
+      "device-integration/lora-actility-bundle/configuring-credentials.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#registering-lora-devices",
+    "files": [
+      "device-integration/lora-actility-bundle/lora-creating-device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#example-with-nested-structure",
+    "files": [
+      "device-integration/lora-actility-bundle/lora-creating-device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lpwan-custom-codec",
+    "files": [
+      "device-integration/lora-actility-bundle/lora-creating-device-protocols.md",
+      "device-integration/lora-loriot-bundle/loriot-creating-device-protocols.md",
+      "device-integration/sigfox-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#importing-a-predefined-device-protocol",
+    "files": [
+      "device-integration/lora-actility-bundle/lora-creating-device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#creating-a-new-device-protocol",
+    "files": [
+      "device-integration/lora-actility-bundle/lora-creating-device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#example-with-single-property",
+    "files": [
+      "device-integration/lora-actility-bundle/lora-creating-device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#using-custom-decodingencoding",
+    "files": [
+      "device-integration/lora-actility-bundle/lora-creating-device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#lora-device-registration-with-activation-by-personalization-abp",
+    "files": [
+      "device-integration/lora-actility-bundle/registering-lora-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#lora-creating-device-protocols",
+    "files": [
+      "device-integration/lora-actility-bundle/registering-lora-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#lora-device-registration-process",
+    "files": [
+      "device-integration/lora-actility-bundle/registering-lora-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#limitations-for-lora-devices-created-with-general-device-registration",
+    "files": [
+      "device-integration/lora-actility-bundle/registering-lora-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#configuring-credentials",
+    "files": [
+      "device-integration/lora-actility-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/managing-device-types",
+    "files": [
+      "device-integration/lora-actility-bundle/troubleshooting.md",
+      "device-integration/lwm2m-bundle/device-protocols.md",
+      "device-integration/sigfox-bundle/sigfox-troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#device-registration",
+    "files": [
+      "device-integration/lora-actility-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#access-to-device-denied",
+    "files": [
+      "device-integration/lora-actility-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#no-lora-provider-settings-found",
+    "files": [
+      "device-integration/lora-actility-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#getting-device-profiles-from-provider-failed",
+    "files": [
+      "device-integration/lora-actility-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#no-device-protocols-configured",
+    "files": [
+      "device-integration/lora-actility-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#no-connectivity-plans-with-free-slots-available",
+    "files": [
+      "device-integration/lora-actility-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#connectivity",
+    "files": [
+      "device-integration/lora-actility-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#authorization-to-the-lora-platform-failed",
+    "files": [
+      "device-integration/lora-actility-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#authentication-to-the-actility-platform-failed-check-if-the-base-url-is-correct",
+    "files": [
+      "device-integration/lora-actility-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#authentication-to-the-actility-platform-failed-with-status-code-400-check-if-the-profile-id-is-correct",
+    "files": [
+      "device-integration/lora-actility-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/#authentication-to-the-actility-platform-failed-with-status-code-401-check-if-the-credentials-are-correct",
+    "files": [
+      "device-integration/lora-actility-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/#loriot-creating-device-protocols",
+    "files": [
+      "device-integration/lora-loriot-bundle/device-registration-via-platform.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/#creation-of-loriot-lns-connection-in-platform",
+    "files": [
+      "device-integration/lora-loriot-bundle/device-registration-via-platform.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/#to-add-a-new-connection",
+    "files": [
+      "device-integration/lora-loriot-bundle/device-registration-via-platform.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/#to-update-a-connection",
+    "files": [
+      "device-integration/lora-loriot-bundle/device-registration-via-platform.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/#to-delete-a-connection",
+    "files": [
+      "device-integration/lora-loriot-bundle/device-registration-via-platform.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/#loriot-device-registration",
+    "files": [
+      "device-integration/lora-loriot-bundle/device-registration-via-platform.md",
+      "device-integration/lora-loriot-bundle/loriot-creating-device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/#device-registration-via-platform",
+    "files": [
+      "device-integration/lora-loriot-bundle/device-registration-via-uplink-message.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/#configuring-the-loriot-endpoint-using-basic-authentication",
+    "files": [
+      "device-integration/lora-loriot-bundle/device-registration-via-uplink-message.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/#device-creation-via-loriot-uplink-message",
+    "files": [
+      "device-integration/lora-loriot-bundle/device-registration-via-uplink-message.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/#example-with-nested-structure",
+    "files": [
+      "device-integration/lora-loriot-bundle/loriot-creating-device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/#importing-a-predefined-device-protocol",
+    "files": [
+      "device-integration/lora-loriot-bundle/loriot-creating-device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/#creating-a-new-device-protocol",
+    "files": [
+      "device-integration/lora-loriot-bundle/loriot-creating-device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/#example-with-single-property",
+    "files": [
+      "device-integration/lora-loriot-bundle/loriot-creating-device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/#using-custom-decoding",
+    "files": [
+      "device-integration/lora-loriot-bundle/loriot-creating-device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/#assigning-loriot-device-protocol",
+    "files": [
+      "device-integration/lora-loriot-bundle/loriot-troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/#device-registration",
+    "files": [
+      "device-integration/lora-loriot-bundle/loriot-troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/#no-lora-device-registered-in-platform-after-configuring-the-loriot-agent-endpoint-in-the-loriot-network-server-account",
+    "files": [
+      "device-integration/lora-loriot-bundle/loriot-troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-loriot/#device-type-error-warning",
+    "files": [
+      "device-integration/lora-loriot-bundle/loriot-troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/files/rest/lpwan-custom-codec-openapi.yaml",
+    "files": [
+      "device-integration/lpwan-custom-codec-bundle/implementing-custom-codec-microservice.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility/",
+    "files": [
+      "device-integration/lpwan-custom-codec-bundle/introduction.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lpwan-custom-codec/#implementing-custom-codec-microservice",
+    "files": [
+      "device-integration/lpwan-custom-codec-bundle/using-the-lpwan-custom-codec-library.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#complex-rulesets",
+    "files": [
+      "device-integration/lwm2m-bundle/adding-validation-rules.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#device-lifecycle-events",
+    "files": [
+      "device-integration/lwm2m-bundle/adding-validation-rules.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#migration-of-the-lwm2m-devices",
+    "files": [
+      "device-integration/lwm2m-bundle/connector-device.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#invalidate-registrations",
+    "files": [
+      "device-integration/lwm2m-bundle/connector-device.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#invalidate-registrations-by-endpoint",
+    "files": [
+      "device-integration/lwm2m-bundle/connector-device.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#invalidate-registrations-by-lwm2m-registration-id",
+    "files": [
+      "device-integration/lwm2m-bundle/connector-device.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#objects",
+    "files": [
+      "device-integration/lwm2m-bundle/device-details.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#audit-configuration",
+    "files": [
+      "device-integration/lwm2m-bundle/device-details.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#lwm2m-client-awake-time",
+    "files": [
+      "device-integration/lwm2m-bundle/device-details.md"
+    ]
+  },
+  {
+    "link": "http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd",
+    "files": [
+      "device-integration/lwm2m-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://github.com/Cumulocity-IoT//cumulocity-examples",
+    "files": [
+      "device-integration/lwm2m-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#creating-lwm2m-device-protocols",
+    "files": [
+      "device-integration/lwm2m-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#adding-additional-functionalities-to-a-resource",
+    "files": [
+      "device-integration/lwm2m-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#send-measurement",
+    "files": [
+      "device-integration/lwm2m-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#create-alarm",
+    "files": [
+      "device-integration/lwm2m-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#send-event",
+    "files": [
+      "device-integration/lwm2m-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#custom-actions",
+    "files": [
+      "device-integration/lwm2m-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#predefined-custom-actions",
+    "files": [
+      "device-integration/lwm2m-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#ignore-empty-values",
+    "files": [
+      "device-integration/lwm2m-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#auto-observe",
+    "files": [
+      "device-integration/lwm2m-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#alarms-on-device-protocol-mapping-failures",
+    "files": [
+      "device-integration/lwm2m-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#firmware-update-state-machine",
+    "files": [
+      "device-integration/lwm2m-bundle/firmware-update.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#resetting-the-state-machine",
+    "files": [
+      "device-integration/lwm2m-bundle/firmware-update.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#querying-the-device-configuration",
+    "files": [
+      "device-integration/lwm2m-bundle/firmware-update.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#firmware-delivery",
+    "files": [
+      "device-integration/lwm2m-bundle/firmware-update.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#triggering-the-firmware-update-on-the-device",
+    "files": [
+      "device-integration/lwm2m-bundle/firmware-update.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#completing-of-the-firmware-update-process",
+    "files": [
+      "device-integration/lwm2m-bundle/firmware-update.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#canceling-the-firmware-update-process",
+    "files": [
+      "device-integration/lwm2m-bundle/firmware-update.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#shell-command-lifecycle",
+    "files": [
+      "device-integration/lwm2m-bundle/handling-shell-commands.md"
+    ]
+  },
+  {
+    "link": "https://www.openmobilealliance.org/lwm2m/",
+    "files": [
+      "device-integration/lwm2m-bundle/introduction.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#device-operations-handling",
+    "files": [
+      "device-integration/lwm2m-bundle/post-registration-actions.md",
+      "service-terms/quotas.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#single-device-registration",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#bulk-device-registration",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md",
+      "service-terms/quotas.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#device-settings",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#security-settings",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#bootstrap-settings",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#connector-device",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://www.openmobilealliance.org/release/LightweightM2M/V1_1-20180612-C/OMA-TS-LightweightM2M_Transport-V1_1-20180612-C.html#5-2-8-3-0-5283-X509-Certificates",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/registering-devices/#extensible-device-registration",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md",
+      "device-management-application/registering-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/viewing-all-devices/#to-delete-devices",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#rest-lwm2m-bulk-registration",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#more-details-on-x509-security",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#trusting-ca-in-the-platform",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#all-security-field-details",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#registration-of-nosec-devices",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#registration-of-secured-devices",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#registering-lwm2m-devices-using-restapi",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#rest-lwm2m-single-registration",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#duplicate-lwm2m-devices",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#device-deletion",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#lwm2m-single-device-deletion-using-restapi",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m/#lwm2m-bulk-device-deletion-using-restapi",
+    "files": [
+      "device-integration/lwm2m-bundle/registering-lwm2m-devices.md"
     ]
   },
   {
@@ -5612,15 +6498,10 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#hello-mqtt",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#hello-mqtt",
     "files": [
       "device-integration/mqtt-bundle/integration-life-cycle.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-c.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-javascript.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-nodejs.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-python.md",
-      "device-integration/mqtt-examples.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
@@ -5644,86 +6525,61 @@
     ]
   },
   {
-    "link": "https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html",
+    "link": "https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf",
     "files": [
-      "device-integration/mqtt-bundle/mqtt-connection.md",
-      "device-integration/rest-client-examples-bundle/hello-rest-x509.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/api/core/#tag/Tenants",
+    "files": [
+      "device-integration/mqtt-bundle/mqtt-examples.md",
+      "device-integration/sigfox-bundle/sigfox-troubleshooting.md",
+      "enterprise-tenant/usage-and-billing.md",
+      "get-familiar-with-the-ui/platform-access.md",
+      "microservice-sdk/java-bundle/java-hello-world-tutorial.md"
+    ]
+  },
+  {
+    "link": "https://www.latlong.net/",
+    "files": [
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
     "link": "http://www.eclipse.org/paho/clients/c/",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-c.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#prerequisites",
+    "link": "https://eclipse.org/paho/clients/java/",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-c.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java-certificates.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-javascript.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-nodejs.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-python.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#developing-the-hello-mqtt-world-client",
+    "link": "https://maven.apache.org/plugins/maven-compiler-plugin/",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-c.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-javascript.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-nodejs.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-python.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#creating-the-application",
-    "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-c.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#building-and-running-the-application",
-    "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-c.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#improving-the-agent",
-    "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-c.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-javascript.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-nodejs.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-python.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
     "link": "https://github.com/Cumulocity-IoT//cumulocity-examples/tree/develop/mqtt-client",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java-certificates.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#hello-mqtt-java",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#hello-mqtt-java",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java-certificates.md",
-      "device-integration/mqtt-examples.md"
-    ]
-  },
-  {
-    "link": "https://github.com/Cumulocity-IoT//cumulocity-examples/tree/develop/mqtt-client/scripts",
-    "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java-certificates.md",
-      "device-integration/rest-client-examples-bundle/hello-rest-x509.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
     "link": "https://cumulocity.com/docs/device-integration/mqtt/#device-certificates",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java-certificates.md",
+      "device-integration/mqtt-bundle/mqtt-examples.md",
       "device-management-application/managing-device-data-bundle/managing-trusted-certificates.md",
       "device-management-application/managing-device-data.md",
       "edge-kubernetes/edge-custom-resource-definition-bundle/k8-edge-cloud-tenant.md",
@@ -5731,243 +6587,201 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#to-generate-a-valid-certificate",
-    "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java-certificates.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#developing-the-hello-mqtt-world-client-with-certificates",
-    "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java-certificates.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#to-copy-and-upload-the-certificate",
-    "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java-certificates.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#to-change-the-configuration",
-    "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java-certificates.md"
-    ]
-  },
-  {
-    "link": "http://maven.apache.org",
-    "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java.md",
-      "device-integration/rest-client-examples-bundle/hello-rest-x509.md"
-    ]
-  },
-  {
-    "link": "https://eclipse.org/paho/clients/java/",
-    "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java.md"
-    ]
-  },
-  {
-    "link": "https://maven.apache.org/plugins/maven-compiler-plugin/",
-    "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#create-a-maven-project",
-    "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#add-the-mqtt-java-client-library",
-    "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#create-a-java-application",
-    "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#build-and-run-the-application",
-    "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-java.md"
-    ]
-  },
-  {
     "link": "https://www.eclipse.org/paho/clients/js/",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-javascript.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#creating-a-javascript-application",
+    "link": "https://cumulocity.com/docs/device-integration/#hello-mqtt",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-javascript.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#running-the-application",
-    "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-javascript.md",
-      "device-integration/mqtt-examples-bundle/hello-mqtt-nodejs.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
     "link": "https://github.com/mqttjs/MQTT.js",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-nodejs.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#creating-a-nodejs-application",
-    "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-nodejs.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
     "link": "https://www.python.org/",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-python.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
     "link": "https://virtualenv.pypa.io/en/latest/user_guide.html",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-python.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
     "link": "http://www.eclipse.org/paho/clients/python/docs/#option-functions",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-python.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
     "link": "https://github.com/eclipse/paho.mqtt.python/issues/354",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-python.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#create-a-python-script",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#prerequisites",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-python.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#run-the-script",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#configuring-the-mqtt-connection",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt-python.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#sending-data",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/api/core/#tag/Tenants",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#create-the-device",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt.md",
-      "enterprise-tenant/usage-and-billing.md",
-      "get-familiar-with-the-ui/platform-access.md",
-      "microservice-sdk/java-bundle/java-hello-world-tutorial.md",
-      "protocol-integration/sigfox-bundle/sigfox-troubleshooting.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://www.latlong.net/",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#create-measurements",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#talking-mqtt",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#create-alarms",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#configuring-the-mqtt-connection",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#create-events",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#sending-data",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#receiving-data",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#creating-the-device",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#receive-operations",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#creating-measurements",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#learning-from-errors",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#creating-alarms",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#developing-the-hello-mqtt-world-client",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#creating-events",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#create-the-application",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#receiving-data",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#build-and-run-the-application",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#receiving-operations",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#improving-the-agent",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#learning-from-errors",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#create-a-maven-project",
     "files": [
-      "device-integration/mqtt-examples-bundle/hello-mqtt.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#hello-mqtt-c",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#add-the-mqtt-java-client-library",
     "files": [
-      "device-integration/mqtt-examples.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#hello-mqtt-javascript",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#create-a-java-application",
     "files": [
-      "device-integration/mqtt-examples.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/mqtt-examples/#hello-mqtt-python",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#to-generate-a-valid-certificate",
     "files": [
-      "device-integration/mqtt-examples.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
-    "link": "https://github.com/Cumulocity-IoT//c8y_hw_mqtt",
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#developing-the-hello-mqtt-world-client-with-certificates",
     "files": [
-      "device-integration/mqtt-examples.md"
+      "device-integration/mqtt-bundle/mqtt-examples.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#to-copy-and-upload-the-certificate",
+    "files": [
+      "device-integration/mqtt-bundle/mqtt-examples.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#to-change-the-configuration",
+    "files": [
+      "device-integration/mqtt-bundle/mqtt-examples.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#create-a-javascript-application",
+    "files": [
+      "device-integration/mqtt-bundle/mqtt-examples.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#run-the-application",
+    "files": [
+      "device-integration/mqtt-bundle/mqtt-examples.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#create-a-nodejs-application",
+    "files": [
+      "device-integration/mqtt-bundle/mqtt-examples.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#create-a-python-script",
+    "files": [
+      "device-integration/mqtt-bundle/mqtt-examples.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/mqtt/#run-the-script",
+    "files": [
+      "device-integration/mqtt-bundle/mqtt-examples.md"
     ]
   },
   {
@@ -5977,78 +6791,538 @@
     ]
   },
   {
-    "link": "https://github.com/Cumulocity-IoT//cumulocity-examples/tree/develop/x509-rest-client",
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#child-devices",
     "files": [
-      "device-integration/rest-client-examples-bundle/hello-rest-x509.md"
+      "device-integration/opcua-bundle/authentication.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/rest-client-examples/#prerequisites",
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#address-space",
     "files": [
-      "device-integration/rest-client-examples-bundle/hello-rest-x509.md",
-      "device-integration/rest-client-examples-bundle/hello-rest.md"
+      "device-integration/opcua-bundle/authentication.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/rest-client-examples/#copy-a-maven-project",
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#monitoring-measurements",
     "files": [
-      "device-integration/rest-client-examples-bundle/hello-rest-x509.md"
+      "device-integration/opcua-bundle/authentication.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/rest-client-examples/#to-generate-a-valid-certificate",
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#monitoring-measurement-details",
     "files": [
-      "device-integration/rest-client-examples-bundle/hello-rest-x509.md"
+      "device-integration/opcua-bundle/authentication.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/rest-client-examples/#to-change-the-configuration",
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#monitoring-alarms",
     "files": [
-      "device-integration/rest-client-examples-bundle/hello-rest-x509.md"
+      "device-integration/opcua-bundle/authentication.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/rest-client-examples/#build-and-run-the-application",
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#monitoring-alarm-details",
     "files": [
-      "device-integration/rest-client-examples-bundle/hello-rest-x509.md"
+      "device-integration/opcua-bundle/authentication.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/microservice-sdk/rest",
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#monitoring-events",
     "files": [
-      "device-integration/rest-client-examples-bundle/hello-rest.md",
-      "microservice-sdk/java-bundle/introduction.md",
-      "microservice-sdk/microservice-sdk-introduction.md"
+      "device-integration/opcua-bundle/authentication.md"
     ]
   },
   {
-    "link": "https://swagger.io/specification/#data-types",
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#monitoring-event-details",
     "files": [
-      "device-integration/rest-client-examples-bundle/hello-rest.md"
+      "device-integration/opcua-bundle/authentication.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/rest-client-examples/#do-the-rest-calls",
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#security-modes",
     "files": [
-      "device-integration/rest-client-examples-bundle/hello-rest.md"
+      "device-integration/opcua-bundle/connecting-gateway.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/rest-client-examples/#creating-a-new-device",
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#authentication",
     "files": [
-      "device-integration/rest-client-examples-bundle/hello-rest.md"
+      "device-integration/opcua-bundle/connecting-gateway.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/rest-client-examples/#sending-measurement-data",
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#applying-constraints",
     "files": [
-      "device-integration/rest-client-examples-bundle/hello-rest.md"
+      "device-integration/opcua-bundle/data-reporting.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/rest-client-examples/#go-further",
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#additional-customizations",
     "files": [
-      "device-integration/rest-client-examples-bundle/hello-rest.md"
+      "device-integration/opcua-bundle/device-protocols.md",
+      "device-integration/opcua-bundle/gateway-configuration-and-registration.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#adding-a-new-device-protocol",
+    "files": [
+      "device-integration/opcua-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#adding-a-new-variable",
+    "files": [
+      "device-integration/opcua-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#monitoring-events-for-device-protocol-application",
+    "files": [
+      "device-integration/opcua-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#device-type-has-been-applied",
+    "files": [
+      "device-integration/opcua-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#device-type-has-been-un-applied",
+    "files": [
+      "device-integration/opcua-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#custom-action-retry-mechanism-on-external-server-failure",
+    "files": [
+      "device-integration/opcua-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "http://logback.qos.ch/manual/configuration.html",
+    "files": [
+      "device-integration/opcua-bundle/gateway-configuration-and-registration.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#thin-edge",
+    "files": [
+      "device-integration/opcua-bundle/gateway-configuration-and-registration.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#configuration-profile-location-on-the-filesystem",
+    "files": [
+      "device-integration/opcua-bundle/gateway-configuration-and-registration.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#logging",
+    "files": [
+      "device-integration/opcua-bundle/gateway-configuration-and-registration.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#deletion-of-gateway",
+    "files": [
+      "device-integration/opcua-bundle/gateway-configuration-and-registration.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#downgrade-to-an-earlier-version",
+    "files": [
+      "device-integration/opcua-bundle/gateway-configuration-and-registration.md"
+    ]
+  },
+  {
+    "link": "http://resources.cumulocity.com/examples/opc-ua/",
+    "files": [
+      "device-integration/opcua-bundle/introduction.md"
+    ]
+  },
+  {
+    "link": "https://www.cumulocity.com/api/#tag/Binaries",
+    "files": [
+      "device-integration/opcua-bundle/operations.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#scanning-the-address-space",
+    "files": [
+      "device-integration/opcua-bundle/operations.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#reading-the-value-of-a-nodenodes",
+    "files": [
+      "device-integration/opcua-bundle/operations.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#reading-all-attributes-of-a-node",
+    "files": [
+      "device-integration/opcua-bundle/operations.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#reading-an-attribute",
+    "files": [
+      "device-integration/opcua-bundle/operations.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#read-complex",
+    "files": [
+      "device-integration/opcua-bundle/operations.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#historic-read",
+    "files": [
+      "device-integration/opcua-bundle/operations.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#historic-data-binary-upload",
+    "files": [
+      "device-integration/opcua-bundle/operations.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#read-file",
+    "files": [
+      "device-integration/opcua-bundle/operations.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#write-value",
+    "files": [
+      "device-integration/opcua-bundle/operations.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#write-attribute",
+    "files": [
+      "device-integration/opcua-bundle/operations.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#get-method-description",
+    "files": [
+      "device-integration/opcua-bundle/operations.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#call-method",
+    "files": [
+      "device-integration/opcua-bundle/operations.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#testing-a-device-type-against-a-node-on-an-opc-ua-server",
+    "files": [
+      "device-integration/opcua-bundle/operations.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#analyzing-the-set-of-nodes-to-which-a-device-type-can-be-applied-dry-run",
+    "files": [
+      "device-integration/opcua-bundle/operations.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#get-the-current-application-state-of-a-device-type",
+    "files": [
+      "device-integration/opcua-bundle/operations.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#expiring-operations",
+    "files": [
+      "device-integration/opcua-bundle/operations.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#opc-ua-server-resources",
+    "files": [
+      "device-integration/opcua-bundle/rest-api.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#connect-a-new-opc-ua-server-to-the-gateway",
+    "files": [
+      "device-integration/opcua-bundle/rest-api.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#get-all-servers-of-a-gateway-device",
+    "files": [
+      "device-integration/opcua-bundle/rest-api.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#delete-and-disconnect-an-opc-ua-server",
+    "files": [
+      "device-integration/opcua-bundle/rest-api.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#address-space-resources",
+    "files": [
+      "device-integration/opcua-bundle/rest-api.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#get-an-address-space-node-by-id",
+    "files": [
+      "device-integration/opcua-bundle/rest-api.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#get-children-of-a-given-node",
+    "files": [
+      "device-integration/opcua-bundle/rest-api.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#browse-a-node",
+    "files": [
+      "device-integration/opcua-bundle/rest-api.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#device-type-resources",
+    "files": [
+      "device-integration/opcua-bundle/rest-api.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#creating-a-new-device-type",
+    "files": [
+      "device-integration/opcua-bundle/rest-api.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#get-all-opc-ua-device-types",
+    "files": [
+      "device-integration/opcua-bundle/rest-api.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#get-a-single-device-type",
+    "files": [
+      "device-integration/opcua-bundle/rest-api.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#updating-a-device-type",
+    "files": [
+      "device-integration/opcua-bundle/rest-api.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#deleting-a-device-type",
+    "files": [
+      "device-integration/opcua-bundle/rest-api.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#adjusting-gateway-memory-settings",
+    "files": [
+      "device-integration/opcua-bundle/running-gateway.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#performance-tuning-for-large-setups",
+    "files": [
+      "device-integration/opcua-bundle/running-gateway.md"
+    ]
+  },
+  {
+    "link": "http://logback.qos.ch/manual/architecture.html#effectiveLevel",
+    "files": [
+      "device-integration/opcua-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#permission-denied-error-when-running-the-gateway-jar-file-on-a-linux-os",
+    "files": [
+      "device-integration/opcua-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#unknown-host-exception-when-running-the-gateway-jar",
+    "files": [
+      "device-integration/opcua-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#failed-to-load-property-source-from-location-when-running-the-gateway-jar",
+    "files": [
+      "device-integration/opcua-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#javanetbindexception-address-already-in-use",
+    "files": [
+      "device-integration/opcua-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#changing-the-log-level-for-troubleshooting",
+    "files": [
+      "device-integration/opcua-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#java-management-extensions-jmx",
+    "files": [
+      "device-integration/opcua-bundle/troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/opcua/#model-change-events",
+    "files": [
+      "device-integration/opcua-bundle/ua-event.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#registering-sigfox-devices",
+    "files": [
+      "device-integration/sigfox-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#nested-structure-example",
+    "files": [
+      "device-integration/sigfox-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#importing-a-device-protocol",
+    "files": [
+      "device-integration/sigfox-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#creating-a-new-device-protocol",
+    "files": [
+      "device-integration/sigfox-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#configuring-values",
+    "files": [
+      "device-integration/sigfox-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#using-custom-decodingencoding",
+    "files": [
+      "device-integration/sigfox-bundle/device-protocols.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#step-1",
+    "files": [
+      "device-integration/sigfox-bundle/managing-connectivity-settings.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#step-2",
+    "files": [
+      "device-integration/sigfox-bundle/managing-connectivity-settings.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#step-3",
+    "files": [
+      "device-integration/sigfox-bundle/managing-connectivity-settings.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#to-update-a-connection",
+    "files": [
+      "device-integration/sigfox-bundle/managing-connectivity-settings.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#-to-delete-a-connection",
+    "files": [
+      "device-integration/sigfox-bundle/managing-connectivity-settings.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#authentication-to-the-sigfox-platform-failed",
+    "files": [
+      "device-integration/sigfox-bundle/managing-connectivity-settings.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#managing-connectivity-settings",
+    "files": [
+      "device-integration/sigfox-bundle/sigfox-troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#sigfox-callbacks-in-backendsigfoxcom-are-not-created-correctly",
+    "files": [
+      "device-integration/sigfox-bundle/sigfox-troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#device-registration",
+    "files": [
+      "device-integration/sigfox-bundle/sigfox-troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#no-active-contracts-with-free-slots-available",
+    "files": [
+      "device-integration/sigfox-bundle/sigfox-troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#no-sigfox-provider-settings-are-found",
+    "files": [
+      "device-integration/sigfox-bundle/sigfox-troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#no-sigfox-device-type-configured",
+    "files": [
+      "device-integration/sigfox-bundle/sigfox-troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#connectivity",
+    "files": [
+      "device-integration/sigfox-bundle/sigfox-troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#no-device-protocols-configured",
+    "files": [
+      "device-integration/sigfox-bundle/sigfox-troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#issues-with-alarm-provisioning",
+    "files": [
+      "device-integration/sigfox-bundle/sigfox-troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#provisioned-status-is-set-to-false",
+    "files": [
+      "device-integration/sigfox-bundle/sigfox-troubleshooting.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/sigfox/#callback-creation-failed",
+    "files": [
+      "device-integration/sigfox-bundle/sigfox-troubleshooting.md"
     ]
   },
   {
@@ -6102,7 +7376,7 @@
     "link": "https://cumulocity.com/docs/device-management-application/viewing-device-details/#measurements",
     "files": [
       "device-management-application/connectivity.md",
-      "device-management-application/monitoring-device-services.md",
+      "device-management-application/managing-device-services.md",
       "device-management-application/viewing-device-details.md",
       "service-terms/quotas.md",
       "streaming-analytics/analytics-builder-bundle/getting-started.md"
@@ -6565,7 +7839,60 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/protocol-integration/",
+    "link": "https://cumulocity.com/docs/device-integration/fragment-library/#alarms",
+    "files": [
+      "device-management-application/managing-device-services.md",
+      "device-management-application/monitoring-and-controlling-devices.md",
+      "streaming-analytics/analytics-builder-bundle/details-of-values-and-blocks.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/fragment-library/#measurements",
+    "files": [
+      "device-management-application/managing-device-services.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/viewing-device-details/#services",
+    "files": [
+      "device-management-application/managing-device-services.md",
+      "device-management-application/viewing-device-details.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/monitoring-and-controlling-devices/#troubleshooting-devices",
+    "files": [
+      "device-management-application/managing-device-services.md",
+      "device-management-application/viewing-device-details.md",
+      "edge/edge-introduction-bundle/iot-platform.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/managing-device-services/#service-commands",
+    "files": [
+      "device-management-application/managing-device-services.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/managing-device-services/#alarms",
+    "files": [
+      "device-management-application/managing-device-services.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/managing-device-services/#events",
+    "files": [
+      "device-management-application/managing-device-services.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/managing-device-services/#measurements",
+    "files": [
+      "device-management-application/managing-device-services.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-integration/",
     "files": [
       "device-management-application/managing-device-types.md",
       "device-management-application/registering-devices.md",
@@ -6714,65 +8041,73 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/fragment-library/#alarms",
-    "files": [
-      "device-management-application/monitoring-and-controlling-devices.md",
-      "device-management-application/monitoring-device-services.md",
-      "streaming-analytics/analytics-builder-bundle/details-of-values-and-blocks.md"
-    ]
-  },
-  {
     "link": "https://cumulocity.com/api/core/#tag/Operations",
     "files": [
       "device-management-application/monitoring-and-controlling-devices.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-integration/fragment-library/#measurements",
-    "files": [
-      "device-management-application/monitoring-device-services.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-management-application/viewing-device-details/#services",
-    "files": [
-      "device-management-application/monitoring-device-services.md",
-      "device-management-application/viewing-device-details.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-management-application/monitoring-and-controlling-devices/#troubleshooting-devices",
-    "files": [
-      "device-management-application/monitoring-device-services.md",
-      "device-management-application/viewing-device-details.md",
-      "edge/edge-introduction-bundle/iot-platform.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-management-application/monitoring-device-services/#alarms",
-    "files": [
-      "device-management-application/monitoring-device-services.md",
-      "edge/edge-introduction-bundle/iot-platform.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-management-application/monitoring-device-services/#events",
-    "files": [
-      "device-management-application/monitoring-device-services.md",
-      "edge/edge-introduction-bundle/iot-platform.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-management-application/monitoring-device-services/#measurements",
-    "files": [
-      "device-management-application/monitoring-device-services.md",
-      "edge/edge-introduction-bundle/iot-platform.md"
-    ]
-  },
-  {
     "link": "https://cumulocity.com/docs/device-management-application/registering-devices/#to-import-csv-data-in-microsoft-excel",
     "files": [
       "device-management-application/registering-devices-bundle/bulk-device-registration.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/registering-devices/#single-device-registration",
+    "files": [
+      "device-management-application/registering-devices-bundle/extensible-device-registration.md",
+      "device-management-application/registering-devices.md",
+      "edge/edge-introduction-bundle/iot-platform.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/registering-devices/#bulk-device-registration",
+    "files": [
+      "device-management-application/registering-devices-bundle/extensible-device-registration.md",
+      "device-management-application/registering-devices.md",
+      "edge/edge-introduction-bundle/iot-platform.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/registering-devices/#extension-enabling",
+    "files": [
+      "device-management-application/registering-devices-bundle/extensible-device-registration.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/registering-devices/#limitations",
+    "files": [
+      "device-management-application/registering-devices-bundle/extensible-device-registration.md"
+    ]
+  },
+  {
+    "link": "https://json-schema.org/",
+    "files": [
+      "device-management-application/registering-devices-bundle/extensible-device-registration.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/registering-devices/#advantages-of-extended-device-registration",
+    "files": [
+      "device-management-application/registering-devices-bundle/extensible-device-registration.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/registering-devices/#api-specification",
+    "files": [
+      "device-management-application/registering-devices-bundle/extensible-device-registration.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/registering-devices/#single-device-registration-flow-diagram",
+    "files": [
+      "device-management-application/registering-devices-bundle/extensible-device-registration.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/registering-devices/#bulk-flow-diagram",
+    "files": [
+      "device-management-application/registering-devices-bundle/extensible-device-registration.md"
     ]
   },
   {
@@ -6825,33 +8160,11 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/device-management-application/registering-devices/#single-device-registration",
-    "files": [
-      "device-management-application/registering-devices.md",
-      "edge/edge-introduction-bundle/iot-platform.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-management-application/registering-devices/#bulk-device-registration",
-    "files": [
-      "device-management-application/registering-devices.md",
-      "edge/edge-introduction-bundle/iot-platform.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/concepts/applications/#extensible-device-registration",
-    "files": [
-      "device-management-application/registering-devices.md",
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
     "link": "https://cumulocity.com/docs/device-integration/mqtt/",
     "files": [
       "device-management-application/smartrest-templates.md",
       "service-terms/compatibility-policy.md",
-      "service-terms/quotas.md",
-      "streaming-analytics/introduction-analytics.md"
+      "service-terms/quotas.md"
     ]
   },
   {
@@ -6945,7 +8258,7 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus",
+    "link": "https://cumulocity.com/docs/device-integration/cloud-fieldbus",
     "files": [
       "device-management-application/viewing-device-details.md"
     ]
@@ -7223,6 +8536,7 @@
     "link": "https://cumulocity.com/docs/dtm/asset-hierarchy/#creating-assets-bulk-import",
     "files": [
       "dtm/asset-hierarchy-bundle/creating-assets-ui.md",
+      "dtm/asset-hierarchy-bundle/group-assets.md",
       "dtm/asset-hierarchy-bundle/viewing-assets.md"
     ]
   },
@@ -7243,6 +8557,7 @@
     "link": "https://cumulocity.com/docs/dtm/asset-hierarchy/#to-create-an-asset",
     "files": [
       "dtm/asset-hierarchy-bundle/creating-assets-ui.md",
+      "dtm/asset-hierarchy-bundle/group-assets.md",
       "dtm/asset-hierarchy-bundle/introduction.md",
       "dtm/asset-types-bundle/asset-models.md"
     ]
@@ -7543,61 +8858,6 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/web/application-configuration/#branding-your-application",
-    "files": [
-      "dtm/localization.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/web/application-configuration/#languages-customization",
-    "files": [
-      "dtm/localization.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/dtm/asset-types/#property-library",
-    "files": [
-      "dtm/localization.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/get-familiar-with-the-ui/user-settings/#to-change-user-settings",
-    "files": [
-      "dtm/localization.md",
-      "get-familiar-with-the-ui/user-settings.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/dtm/localization/#to-use-the-localization-feature",
-    "files": [
-      "dtm/localization.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/dtm/localization/#to-apply-the-branding-setting",
-    "files": [
-      "dtm/localization.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/dtm/localization/#localization",
-    "files": [
-      "dtm/localization.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/dtm/localization/#to-add-new-keys-for-translations",
-    "files": [
-      "dtm/localization.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/dtm/localization/#to-add-and-edit-translations",
-    "files": [
-      "dtm/localization.md"
-    ]
-  },
-  {
     "link": "https://cumulocity.com/docs/edge/edge-infrastructure/#setting-up-esxi",
     "files": [
       "edge/backup-and-restore-bundle/backup_restore_esxi.md",
@@ -7751,6 +9011,15 @@
     "link": "https://cumulocity.com/docs/edge/edge-configuration/#changing-log-level-for-karaf",
     "files": [
       "edge/edge-configuration-bundle/configuring-karaf.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/microservice-sdk/microservice-sdk-introduction/",
+    "files": [
+      "edge/edge-configuration-bundle/configuring-microservices.md",
+      "edge-kubernetes/k8-edge-connecting-edge-to-cloud-bundle/software-management-docs.md",
+      "service-terms/service-level-bundle/microservices-sla.md",
+      "standard-tenant/ecosystem.md"
     ]
   },
   {
@@ -8103,6 +9372,7 @@
     "files": [
       "edge/edge-installation-bundle/accessing-platform.md",
       "edge-kubernetes/installing-edge-on-k8-bundle/accessing-edge.md",
+      "gainsight-px.md",
       "get-familiar-with-the-ui/platform-access.md",
       "legal-notices/Cloud-Trial-Service-Agreement.md"
     ]
@@ -8193,7 +9463,8 @@
   {
     "link": "https://cumulocity.com/docs/get-familiar-with-the-ui/knowledge-hub/",
     "files": [
-      "edge/edge-installation-bundle/knowledge-hub.md"
+      "edge/edge-installation-bundle/knowledge-hub.md",
+      "gainsight-px.md"
     ]
   },
   {
@@ -8272,6 +9543,24 @@
     ]
   },
   {
+    "link": "https://cumulocity.com/docs/device-management-application/monitoring-device-services/#measurements",
+    "files": [
+      "edge/edge-introduction-bundle/iot-platform.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/monitoring-device-services/#events",
+    "files": [
+      "edge/edge-introduction-bundle/iot-platform.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/device-management-application/monitoring-device-services/#alarms",
+    "files": [
+      "edge/edge-introduction-bundle/iot-platform.md"
+    ]
+  },
+  {
     "link": "https://cumulocity.com/docs/device-management-application/managing-device-types/",
     "files": [
       "edge/edge-introduction-bundle/iot-platform.md"
@@ -8329,18 +9618,16 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/standard-tenant/managing-users/",
-    "files": [
-      "edge/edge-introduction-bundle/iot-platform.md",
-      "standard-tenant/changing-settings-bundle/application.md",
-      "standard-tenant/standard-tenant-introduction.md"
-    ]
-  },
-  {
     "link": "https://cumulocity.com/docs/standard-tenant/managing-users/#to-add-a-user",
     "files": [
       "edge/edge-introduction-bundle/iot-platform.md",
       "standard-tenant/managing-users.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/standard-tenant/managing-permissions/#application-access",
+    "files": [
+      "edge/edge-introduction-bundle/iot-platform.md"
     ]
   },
   {
@@ -9547,54 +10834,6 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/enterprise-tenant/enhanced-time-series-support/#to-configure-time-series-support",
-    "files": [
-      "enterprise-tenant/enhanced-time-series-support-bundle/general-configuration.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/enterprise-tenant/enhanced-time-series-support/#implications-of-the-configuration",
-    "files": [
-      "enterprise-tenant/enhanced-time-series-support-bundle/general-configuration.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/enterprise-tenant/enhanced-time-series-support/#unsupported-apis",
-    "files": [
-      "enterprise-tenant/enhanced-time-series-support-bundle/general-configuration.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/enterprise-tenant/enhanced-time-series-support/#to-check-whether-time-series-collections-are-enabled",
-    "files": [
-      "enterprise-tenant/enhanced-time-series-support-bundle/general-configuration.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/enterprise-tenant/enhanced-time-series-support/#general-configuration",
-    "files": [
-      "enterprise-tenant/enhanced-time-series-support-bundle/migration-process-description.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/enterprise-tenant/enhanced-time-series-support/#migration-states",
-    "files": [
-      "enterprise-tenant/enhanced-time-series-support-bundle/migration-process-description.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/enterprise-tenant/enhanced-time-series-support/#to-trigger-time-series-migration",
-    "files": [
-      "enterprise-tenant/enhanced-time-series-support-bundle/migration-process-description.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/enterprise-tenant/enhanced-time-series-support/#description-and-progress-monitoring",
-    "files": [
-      "enterprise-tenant/enhanced-time-series-support-bundle/migration-process-description.md"
-    ]
-  },
-  {
     "link": "https://cumulocity.com/docs/enterprise-tenant/managing-tenants/#to-override-default-subscriptions",
     "files": [
       "enterprise-tenant/managing-tenants-bundle/default-subscriptions.md"
@@ -9687,19 +10926,45 @@
     ]
   },
   {
+    "link": "https://cumulocity.com/docs/to-view-subscribed-applications",
+    "files": [
+      "enterprise-tenant/managing-tenants-bundle/subscribing-applications.md"
+    ]
+  },
+  {
     "link": "https://cumulocity.com/docs/enterprise-tenant/managing-tenants/#to-subscribe-an-application",
     "files": [
       "enterprise-tenant/managing-tenants-bundle/subscribing-applications.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/enterprise-tenant/managing-tenants/#to-unsubscribe-an-application",
+    "link": "https://cumulocity.com/docs/enterprise-tenant/managing-tenants/#to-monitor-the-microservice-status",
     "files": [
       "enterprise-tenant/managing-tenants-bundle/subscribing-applications.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/enterprise-tenant/managing-tenants/#to-monitor-microservices",
+    "link": "https://cumulocity.com/docs/standard-tenant/ecosystem/#applications-subscribed-by-default",
+    "files": [
+      "enterprise-tenant/managing-tenants-bundle/subscribing-applications.md",
+      "get-familiar-with-the-ui/available-applications.md",
+      "standard-tenant/ecosystem-bundle/subscribed-applications.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/enterprise-tenant/managing-tenants/#to-view-subscribed-applications",
+    "files": [
+      "enterprise-tenant/managing-tenants-bundle/subscribing-applications.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/enterprise-tenant/managing-tenants/#to-view-the-application-details",
+    "files": [
+      "enterprise-tenant/managing-tenants-bundle/subscribing-applications.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/enterprise-tenant/managing-tenants/#to-unsubscribe-an-application",
     "files": [
       "enterprise-tenant/managing-tenants-bundle/subscribing-applications.md"
     ]
@@ -9934,10 +11199,57 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/standard-tenant/ecosystem/#applications-subscribed-by-default",
+    "link": "https://support.gainsight.com/PX/Administration/General/User_and_Account_Model#Custom_Attributes",
     "files": [
-      "get-familiar-with-the-ui/available-applications.md",
-      "standard-tenant/ecosystem-bundle/subscribed-applications.md"
+      "gainsight-px.md"
+    ]
+  },
+  {
+    "link": "http://www.cumulocity.com/support/",
+    "files": [
+      "gainsight-px.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/gainsight-px/#overview",
+    "files": [
+      "gainsight-px.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/gainsight-px/#configuration",
+    "files": [
+      "gainsight-px.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/gainsight-px/#limitations",
+    "files": [
+      "gainsight-px.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/gainsight-px/#support",
+    "files": [
+      "gainsight-px.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/gainsight-px/#custom-user-attributes",
+    "files": [
+      "gainsight-px.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/gainsight-px/#product-and-user-analytics",
+    "files": [
+      "gainsight-px.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/gainsight-px/#faq-for-customers",
+    "files": [
+      "gainsight-px.md"
     ]
   },
   {
@@ -10028,16 +11340,6 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/cockpit/",
-    "files": [
-      "get-familiar-with-the-ui/platform-access.md",
-      "get-familiar-with-the-ui/ui-introduction.md",
-      "glossary/c.md",
-      "protocol-integration/cloud-fieldbus-bundle/managing-fieldbus.md",
-      "streaming-analytics/troubleshooting-bundle/alarms.md"
-    ]
-  },
-  {
     "link": "https://cumulocity.com/docs/get-familiar-with-the-ui/platform-access/#supported-browsers",
     "files": [
       "get-familiar-with-the-ui/platform-access.md"
@@ -10087,6 +11389,12 @@
   },
   {
     "link": "https://cumulocity.com/docs/get-familiar-with-the-ui/user-settings/#documentation",
+    "files": [
+      "get-familiar-with-the-ui/user-settings.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/get-familiar-with-the-ui/user-settings/#to-change-user-settings",
     "files": [
       "get-familiar-with-the-ui/user-settings.md"
     ]
@@ -10371,13 +11679,6 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/cockpit/data-explorer",
-    "files": [
-      "glossary/d.md",
-      "protocol-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
-    ]
-  },
-  {
     "link": "https://cumulocity.com/docs/cockpit/data-point-library",
     "files": [
       "glossary/d.md"
@@ -10429,6 +11730,12 @@
   },
   {
     "link": "https://cumulocity.com/docs/glossary/d/#device-protocol",
+    "files": [
+      "glossary/d.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/glossary/d/#document",
     "files": [
       "glossary/d.md"
     ]
@@ -10508,7 +11815,7 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m",
+    "link": "https://cumulocity.com/docs/device-integration/lwm2m",
     "files": [
       "glossary/l.md"
     ]
@@ -10544,7 +11851,7 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua",
+    "link": "https://cumulocity.com/docs/device-integration/opcua",
     "files": [
       "glossary/o.md"
     ]
@@ -10593,12 +11900,6 @@
   },
   {
     "link": "https://cumulocity.com/docs/cockpit/smart-rules",
-    "files": [
-      "glossary/s.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/concepts/applications/#application-subscription",
     "files": [
       "glossary/s.md"
     ]
@@ -11993,6 +13294,12 @@
     ]
   },
   {
+    "link": "https://cumulocity.com/docs/microservice-sdk/java",
+    "files": [
+      "microservice-sdk/microservice-sdk-introduction.md"
+    ]
+  },
+  {
     "link": "https://github.com/Cumulocity-IoT//cumulocity-clients-java/tree/develop/microservice",
     "files": [
       "microservice-sdk/microservices-best-practices.md"
@@ -12194,1314 +13501,6 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#connecting-fieldbus",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/configuring-fieldbus.md",
-      "protocol-integration/cloud-fieldbus-bundle/introduction.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#configuring-modbus-device-protocols",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#to-add-a-register-definition",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#exporting-importing-protocols",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/configuring-fieldbus.md",
-      "protocol-integration/cloud-fieldbus-bundle/introduction.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#to-add-a-coil-definition-discrete-outputs",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#to-add-a-discrete-inputs-definition",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#configuring-can-bus-device-protocols",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#configuring-profibus-device-protocols",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#configuring-canopen-device-protocols",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#to-configure-a-variable",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#importing-a-canopen-device-protocol",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#configuring-canopen-device-data",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/configuring-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#configuring-fieldbus",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/connecting-fieldbus.md",
-      "protocol-integration/cloud-fieldbus-bundle/introduction.md",
-      "protocol-integration/lwm2m-bundle/introduction.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#connecting-modbusrtu-devices",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/connecting-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#to-add-child-devices",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/connecting-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#connecting-modbustcp-devices",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/connecting-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#connecting-can-devices",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/connecting-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#connecting-profibus-devices",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/connecting-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#managing-fieldbus",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/introduction.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#collect-measurements",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#monitoring-alarms",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#logging-events",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#monitoring-the-device-status",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#preparing-svg-files-for-the-scada-widget",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://boxy-svg.com/",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#collecting-measurements",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#placeholders",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#predefined-functions",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/cloud-fieldbus/#example",
-    "files": [
-      "protocol-integration/cloud-fieldbus-bundle/managing-fieldbus.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#to-add-a-new-connection",
-    "files": [
-      "protocol-integration/lora-actility-bundle/configuring-credentials.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#to-update-a-connection",
-    "files": [
-      "protocol-integration/lora-actility-bundle/configuring-credentials.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#to-delete-a-connection",
-    "files": [
-      "protocol-integration/lora-actility-bundle/configuring-credentials.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#registering-lora-devices",
-    "files": [
-      "protocol-integration/lora-actility-bundle/lora-creating-device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#example-with-nested-structure",
-    "files": [
-      "protocol-integration/lora-actility-bundle/lora-creating-device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lpwan-custom-codec",
-    "files": [
-      "protocol-integration/lora-actility-bundle/lora-creating-device-protocols.md",
-      "protocol-integration/lora-loriot-bundle/loriot-creating-device-protocols.md",
-      "protocol-integration/sigfox-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#importing-a-predefined-device-protocol",
-    "files": [
-      "protocol-integration/lora-actility-bundle/lora-creating-device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#creating-a-new-device-protocol",
-    "files": [
-      "protocol-integration/lora-actility-bundle/lora-creating-device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#example-with-single-property",
-    "files": [
-      "protocol-integration/lora-actility-bundle/lora-creating-device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#using-custom-decodingencoding",
-    "files": [
-      "protocol-integration/lora-actility-bundle/lora-creating-device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#lora-device-registration-with-activation-by-personalization-abp",
-    "files": [
-      "protocol-integration/lora-actility-bundle/registering-lora-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#lora-creating-device-protocols",
-    "files": [
-      "protocol-integration/lora-actility-bundle/registering-lora-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#lora-device-registration-process",
-    "files": [
-      "protocol-integration/lora-actility-bundle/registering-lora-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#limitations-for-lora-devices-created-with-general-device-registration",
-    "files": [
-      "protocol-integration/lora-actility-bundle/registering-lora-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#configuring-credentials",
-    "files": [
-      "protocol-integration/lora-actility-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-management-application/managing-device-types",
-    "files": [
-      "protocol-integration/lora-actility-bundle/troubleshooting.md",
-      "protocol-integration/lwm2m-bundle/device-protocols.md",
-      "protocol-integration/sigfox-bundle/sigfox-troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#device-registration",
-    "files": [
-      "protocol-integration/lora-actility-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#access-to-device-denied",
-    "files": [
-      "protocol-integration/lora-actility-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#no-lora-provider-settings-found",
-    "files": [
-      "protocol-integration/lora-actility-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#getting-device-profiles-from-provider-failed",
-    "files": [
-      "protocol-integration/lora-actility-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#no-device-protocols-configured",
-    "files": [
-      "protocol-integration/lora-actility-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#no-connectivity-plans-with-free-slots-available",
-    "files": [
-      "protocol-integration/lora-actility-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#connectivity",
-    "files": [
-      "protocol-integration/lora-actility-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#authorization-to-the-lora-platform-failed",
-    "files": [
-      "protocol-integration/lora-actility-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#authentication-to-the-actility-platform-failed-check-if-the-base-url-is-correct",
-    "files": [
-      "protocol-integration/lora-actility-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#authentication-to-the-actility-platform-failed-with-status-code-400-check-if-the-profile-id-is-correct",
-    "files": [
-      "protocol-integration/lora-actility-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/#authentication-to-the-actility-platform-failed-with-status-code-401-check-if-the-credentials-are-correct",
-    "files": [
-      "protocol-integration/lora-actility-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/#loriot-creating-device-protocols",
-    "files": [
-      "protocol-integration/lora-loriot-bundle/device-registration-via-platform.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/#creation-of-loriot-lns-connection-in-platform",
-    "files": [
-      "protocol-integration/lora-loriot-bundle/device-registration-via-platform.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/#to-add-a-new-connection",
-    "files": [
-      "protocol-integration/lora-loriot-bundle/device-registration-via-platform.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/#to-update-a-connection",
-    "files": [
-      "protocol-integration/lora-loriot-bundle/device-registration-via-platform.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/#to-delete-a-connection",
-    "files": [
-      "protocol-integration/lora-loriot-bundle/device-registration-via-platform.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/#loriot-device-registration",
-    "files": [
-      "protocol-integration/lora-loriot-bundle/device-registration-via-platform.md",
-      "protocol-integration/lora-loriot-bundle/loriot-creating-device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/#device-registration-via-platform",
-    "files": [
-      "protocol-integration/lora-loriot-bundle/device-registration-via-uplink-message.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/#configuring-the-loriot-endpoint-using-basic-authentication",
-    "files": [
-      "protocol-integration/lora-loriot-bundle/device-registration-via-uplink-message.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/#device-creation-via-loriot-uplink-message",
-    "files": [
-      "protocol-integration/lora-loriot-bundle/device-registration-via-uplink-message.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/#example-with-nested-structure",
-    "files": [
-      "protocol-integration/lora-loriot-bundle/loriot-creating-device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/#importing-a-predefined-device-protocol",
-    "files": [
-      "protocol-integration/lora-loriot-bundle/loriot-creating-device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/#creating-a-new-device-protocol",
-    "files": [
-      "protocol-integration/lora-loriot-bundle/loriot-creating-device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/#example-with-single-property",
-    "files": [
-      "protocol-integration/lora-loriot-bundle/loriot-creating-device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/#using-custom-decoding",
-    "files": [
-      "protocol-integration/lora-loriot-bundle/loriot-creating-device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/#assigning-loriot-device-protocol",
-    "files": [
-      "protocol-integration/lora-loriot-bundle/loriot-troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/#device-registration",
-    "files": [
-      "protocol-integration/lora-loriot-bundle/loriot-troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/#no-lora-device-registered-in-platform-after-configuring-the-loriot-agent-endpoint-in-the-loriot-network-server-account",
-    "files": [
-      "protocol-integration/lora-loriot-bundle/loriot-troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-loriot/#device-type-error-warning",
-    "files": [
-      "protocol-integration/lora-loriot-bundle/loriot-troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/files/rest/lpwan-custom-codec-openapi.yaml",
-    "files": [
-      "protocol-integration/lpwan-custom-codec-bundle/implementing-custom-codec-microservice.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility/",
-    "files": [
-      "protocol-integration/lpwan-custom-codec-bundle/introduction.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lpwan-custom-codec/#implementing-custom-codec-microservice",
-    "files": [
-      "protocol-integration/lpwan-custom-codec-bundle/using-the-lpwan-custom-codec-library.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#complex-rulesets",
-    "files": [
-      "protocol-integration/lwm2m-bundle/adding-validation-rules.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#device-lifecycle-events",
-    "files": [
-      "protocol-integration/lwm2m-bundle/adding-validation-rules.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#migration-of-the-lwm2m-devices",
-    "files": [
-      "protocol-integration/lwm2m-bundle/connector-device.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#invalidate-registrations",
-    "files": [
-      "protocol-integration/lwm2m-bundle/connector-device.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#invalidate-registrations-by-endpoint",
-    "files": [
-      "protocol-integration/lwm2m-bundle/connector-device.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#invalidate-registrations-by-lwm2m-registration-id",
-    "files": [
-      "protocol-integration/lwm2m-bundle/connector-device.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#objects",
-    "files": [
-      "protocol-integration/lwm2m-bundle/device-details.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#audit-configuration",
-    "files": [
-      "protocol-integration/lwm2m-bundle/device-details.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#lwm2m-client-awake-time",
-    "files": [
-      "protocol-integration/lwm2m-bundle/device-details.md"
-    ]
-  },
-  {
-    "link": "http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd",
-    "files": [
-      "protocol-integration/lwm2m-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://github.com/Cumulocity-IoT//cumulocity-examples",
-    "files": [
-      "protocol-integration/lwm2m-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#creating-lwm2m-device-protocols",
-    "files": [
-      "protocol-integration/lwm2m-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#adding-additional-functionalities-to-a-resource",
-    "files": [
-      "protocol-integration/lwm2m-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#send-measurement",
-    "files": [
-      "protocol-integration/lwm2m-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#create-alarm",
-    "files": [
-      "protocol-integration/lwm2m-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#send-event",
-    "files": [
-      "protocol-integration/lwm2m-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#custom-actions",
-    "files": [
-      "protocol-integration/lwm2m-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#predefined-custom-actions",
-    "files": [
-      "protocol-integration/lwm2m-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#ignore-empty-values",
-    "files": [
-      "protocol-integration/lwm2m-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#auto-observe",
-    "files": [
-      "protocol-integration/lwm2m-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#alarms-on-device-protocol-mapping-failures",
-    "files": [
-      "protocol-integration/lwm2m-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#firmware-update-state-machine",
-    "files": [
-      "protocol-integration/lwm2m-bundle/firmware-update.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#resetting-the-state-machine",
-    "files": [
-      "protocol-integration/lwm2m-bundle/firmware-update.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#querying-the-device-configuration",
-    "files": [
-      "protocol-integration/lwm2m-bundle/firmware-update.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#firmware-delivery",
-    "files": [
-      "protocol-integration/lwm2m-bundle/firmware-update.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#triggering-the-firmware-update-on-the-device",
-    "files": [
-      "protocol-integration/lwm2m-bundle/firmware-update.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#completing-of-the-firmware-update-process",
-    "files": [
-      "protocol-integration/lwm2m-bundle/firmware-update.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#canceling-the-firmware-update-process",
-    "files": [
-      "protocol-integration/lwm2m-bundle/firmware-update.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#shell-command-lifecycle",
-    "files": [
-      "protocol-integration/lwm2m-bundle/handling-shell-commands.md"
-    ]
-  },
-  {
-    "link": "https://openmobilealliance.org/iot/lightweight-m2m-lwm2m",
-    "files": [
-      "protocol-integration/lwm2m-bundle/introduction.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#device-operations-handling",
-    "files": [
-      "protocol-integration/lwm2m-bundle/post-registration-actions.md",
-      "service-terms/quotas.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#single-device-registration",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#bulk-device-registration",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md",
-      "service-terms/quotas.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#device-settings",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#security-settings",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#bootstrap-settings",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#connector-device",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://www.openmobilealliance.org/release/LightweightM2M/V1_1-20180612-C/OMA-TS-LightweightM2M_Transport-V1_1-20180612-C.html#5-2-8-3-0-5283-X509-Certificates",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/device-management-application/viewing-all-devices/#to-delete-devices",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#rest-lwm2m-bulk-registration",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#more-details-on-x509-security",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#trusting-ca-in-the-platform",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#all-security-field-details",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#registration-of-nosec-devices",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#registration-of-secured-devices",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#registering-lwm2m-devices-using-restapi",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#rest-lwm2m-single-registration",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#duplicate-lwm2m-devices",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#device-deletion",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#lwm2m-single-device-deletion-using-restapi",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/lwm2m/#lwm2m-bulk-device-deletion-using-restapi",
-    "files": [
-      "protocol-integration/lwm2m-bundle/registering-lwm2m-devices.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#child-devices",
-    "files": [
-      "protocol-integration/opcua-bundle/authentication.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#address-space",
-    "files": [
-      "protocol-integration/opcua-bundle/authentication.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#monitoring-measurements",
-    "files": [
-      "protocol-integration/opcua-bundle/authentication.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#monitoring-measurement-details",
-    "files": [
-      "protocol-integration/opcua-bundle/authentication.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#monitoring-alarms",
-    "files": [
-      "protocol-integration/opcua-bundle/authentication.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#monitoring-alarm-details",
-    "files": [
-      "protocol-integration/opcua-bundle/authentication.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#monitoring-events",
-    "files": [
-      "protocol-integration/opcua-bundle/authentication.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#monitoring-event-details",
-    "files": [
-      "protocol-integration/opcua-bundle/authentication.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#security-modes",
-    "files": [
-      "protocol-integration/opcua-bundle/connecting-gateway.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#authentication",
-    "files": [
-      "protocol-integration/opcua-bundle/connecting-gateway.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#applying-constraints",
-    "files": [
-      "protocol-integration/opcua-bundle/data-reporting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#additional-customizations",
-    "files": [
-      "protocol-integration/opcua-bundle/device-protocols.md",
-      "protocol-integration/opcua-bundle/gateway-configuration-and-registration.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#adding-a-new-device-protocol",
-    "files": [
-      "protocol-integration/opcua-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#adding-a-new-variable",
-    "files": [
-      "protocol-integration/opcua-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#monitoring-events-for-device-protocol-application",
-    "files": [
-      "protocol-integration/opcua-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#device-type-has-been-applied",
-    "files": [
-      "protocol-integration/opcua-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#device-type-has-been-un-applied",
-    "files": [
-      "protocol-integration/opcua-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#custom-action-retry-mechanism-on-external-server-failure",
-    "files": [
-      "protocol-integration/opcua-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "http://logback.qos.ch/manual/configuration.html",
-    "files": [
-      "protocol-integration/opcua-bundle/gateway-configuration-and-registration.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#thin-edge",
-    "files": [
-      "protocol-integration/opcua-bundle/gateway-configuration-and-registration.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#configuration-profile-location-on-the-filesystem",
-    "files": [
-      "protocol-integration/opcua-bundle/gateway-configuration-and-registration.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#logging",
-    "files": [
-      "protocol-integration/opcua-bundle/gateway-configuration-and-registration.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#deletion-of-gateway",
-    "files": [
-      "protocol-integration/opcua-bundle/gateway-configuration-and-registration.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#downgrade-to-an-earlier-version",
-    "files": [
-      "protocol-integration/opcua-bundle/gateway-configuration-and-registration.md"
-    ]
-  },
-  {
-    "link": "http://resources.cumulocity.com/examples/opc-ua/",
-    "files": [
-      "protocol-integration/opcua-bundle/introduction.md"
-    ]
-  },
-  {
-    "link": "https://www.cumulocity.com/api/#tag/Binaries",
-    "files": [
-      "protocol-integration/opcua-bundle/operations.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#scanning-the-address-space",
-    "files": [
-      "protocol-integration/opcua-bundle/operations.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#reading-the-value-of-a-nodenodes",
-    "files": [
-      "protocol-integration/opcua-bundle/operations.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#reading-all-attributes-of-a-node",
-    "files": [
-      "protocol-integration/opcua-bundle/operations.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#reading-an-attribute",
-    "files": [
-      "protocol-integration/opcua-bundle/operations.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#read-complex",
-    "files": [
-      "protocol-integration/opcua-bundle/operations.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#historic-read",
-    "files": [
-      "protocol-integration/opcua-bundle/operations.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#historic-data-binary-upload",
-    "files": [
-      "protocol-integration/opcua-bundle/operations.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#read-file",
-    "files": [
-      "protocol-integration/opcua-bundle/operations.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#write-value",
-    "files": [
-      "protocol-integration/opcua-bundle/operations.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#write-attribute",
-    "files": [
-      "protocol-integration/opcua-bundle/operations.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#get-method-description",
-    "files": [
-      "protocol-integration/opcua-bundle/operations.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#call-method",
-    "files": [
-      "protocol-integration/opcua-bundle/operations.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#testing-a-device-type-against-a-node-on-an-opc-ua-server",
-    "files": [
-      "protocol-integration/opcua-bundle/operations.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#analyzing-the-set-of-nodes-to-which-a-device-type-can-be-applied-dry-run",
-    "files": [
-      "protocol-integration/opcua-bundle/operations.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#get-the-current-application-state-of-a-device-type",
-    "files": [
-      "protocol-integration/opcua-bundle/operations.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#expiring-operations",
-    "files": [
-      "protocol-integration/opcua-bundle/operations.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#opc-ua-server-resources",
-    "files": [
-      "protocol-integration/opcua-bundle/rest-api.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#connect-a-new-opc-ua-server-to-the-gateway",
-    "files": [
-      "protocol-integration/opcua-bundle/rest-api.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#get-all-servers-of-a-gateway-device",
-    "files": [
-      "protocol-integration/opcua-bundle/rest-api.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#delete-and-disconnect-an-opc-ua-server",
-    "files": [
-      "protocol-integration/opcua-bundle/rest-api.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#address-space-resources",
-    "files": [
-      "protocol-integration/opcua-bundle/rest-api.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#get-an-address-space-node-by-id",
-    "files": [
-      "protocol-integration/opcua-bundle/rest-api.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#get-children-of-a-given-node",
-    "files": [
-      "protocol-integration/opcua-bundle/rest-api.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#browse-a-node",
-    "files": [
-      "protocol-integration/opcua-bundle/rest-api.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#creating-a-new-device-type",
-    "files": [
-      "protocol-integration/opcua-bundle/rest-api.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#get-all-opc-ua-device-types",
-    "files": [
-      "protocol-integration/opcua-bundle/rest-api.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#get-a-single-device-type",
-    "files": [
-      "protocol-integration/opcua-bundle/rest-api.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#updating-a-device-type",
-    "files": [
-      "protocol-integration/opcua-bundle/rest-api.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#deleting-a-device-type",
-    "files": [
-      "protocol-integration/opcua-bundle/rest-api.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#adjusting-gateway-memory-settings",
-    "files": [
-      "protocol-integration/opcua-bundle/running-gateway.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#performance-tuning-for-large-setups",
-    "files": [
-      "protocol-integration/opcua-bundle/running-gateway.md"
-    ]
-  },
-  {
-    "link": "http://logback.qos.ch/manual/architecture.html#effectiveLevel",
-    "files": [
-      "protocol-integration/opcua-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#permission-denied-error-when-running-the-gateway-jar-file-on-a-linux-os",
-    "files": [
-      "protocol-integration/opcua-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#unknown-host-exception-when-running-the-gateway-jar",
-    "files": [
-      "protocol-integration/opcua-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#failed-to-load-property-source-from-location-when-running-the-gateway-jar",
-    "files": [
-      "protocol-integration/opcua-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#javanetbindexception-address-already-in-use",
-    "files": [
-      "protocol-integration/opcua-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#changing-the-log-level-for-troubleshooting",
-    "files": [
-      "protocol-integration/opcua-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#java-management-extensions-jmx",
-    "files": [
-      "protocol-integration/opcua-bundle/troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/opcua/#model-change-events",
-    "files": [
-      "protocol-integration/opcua-bundle/ua-event.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#registering-sigfox-devices",
-    "files": [
-      "protocol-integration/sigfox-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#nested-structure-example",
-    "files": [
-      "protocol-integration/sigfox-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#importing-a-device-protocol",
-    "files": [
-      "protocol-integration/sigfox-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#creating-a-new-device-protocol",
-    "files": [
-      "protocol-integration/sigfox-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#configuring-values",
-    "files": [
-      "protocol-integration/sigfox-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#using-custom-decodingencoding",
-    "files": [
-      "protocol-integration/sigfox-bundle/device-protocols.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#step-1",
-    "files": [
-      "protocol-integration/sigfox-bundle/managing-connectivity-settings.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#step-2",
-    "files": [
-      "protocol-integration/sigfox-bundle/managing-connectivity-settings.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#step-3",
-    "files": [
-      "protocol-integration/sigfox-bundle/managing-connectivity-settings.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#to-update-a-connection",
-    "files": [
-      "protocol-integration/sigfox-bundle/managing-connectivity-settings.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#-to-delete-a-connection",
-    "files": [
-      "protocol-integration/sigfox-bundle/managing-connectivity-settings.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#authentication-to-the-sigfox-platform-failed",
-    "files": [
-      "protocol-integration/sigfox-bundle/managing-connectivity-settings.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#managing-connectivity-settings",
-    "files": [
-      "protocol-integration/sigfox-bundle/sigfox-troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#sigfox-callbacks-in-backendsigfoxcom-are-not-created-correctly",
-    "files": [
-      "protocol-integration/sigfox-bundle/sigfox-troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#device-registration",
-    "files": [
-      "protocol-integration/sigfox-bundle/sigfox-troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#no-active-contracts-with-free-slots-available",
-    "files": [
-      "protocol-integration/sigfox-bundle/sigfox-troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#no-sigfox-provider-settings-are-found",
-    "files": [
-      "protocol-integration/sigfox-bundle/sigfox-troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#no-sigfox-device-type-configured",
-    "files": [
-      "protocol-integration/sigfox-bundle/sigfox-troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#connectivity",
-    "files": [
-      "protocol-integration/sigfox-bundle/sigfox-troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#no-device-protocols-configured",
-    "files": [
-      "protocol-integration/sigfox-bundle/sigfox-troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#issues-with-alarm-provisioning",
-    "files": [
-      "protocol-integration/sigfox-bundle/sigfox-troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#provisioned-status-is-set-to-false",
-    "files": [
-      "protocol-integration/sigfox-bundle/sigfox-troubleshooting.md"
-    ]
-  },
-  {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox/#callback-creation-failed",
-    "files": [
-      "protocol-integration/sigfox-bundle/sigfox-troubleshooting.md"
-    ]
-  },
-  {
     "link": "https://cumulocity.com/docs/concepts/concepts-introduction/",
     "files": [
       "quick-start/first-steps.md",
@@ -13650,6 +13649,12 @@
     ]
   },
   {
+    "link": "https://cumulocity.com/docs/concepts/domain-model/#document-limits",
+    "files": [
+      "service-terms/quotas.md"
+    ]
+  },
+  {
     "link": "https://docs.dremio.com/current/get-started/cluster-deployments/architecture/limits/#catalog",
     "files": [
       "service-terms/quotas.md"
@@ -13689,6 +13694,48 @@
     "link": "https://cumulocity.com/docs/concepts/compatibility-policy/",
     "files": [
       "service-terms/releases.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/service-terms/releases/#annual-deployment",
+    "files": [
+      "service-terms/releases.md"
+    ]
+  },
+  {
+    "link": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html",
+    "files": [
+      "service-terms/service-level-bundle/addons-sla.md"
+    ]
+  },
+  {
+    "link": "https://azure.microsoft.com/en-US/products/vpn-gateway",
+    "files": [
+      "service-terms/service-level-bundle/addons-sla.md"
+    ]
+  },
+  {
+    "link": "https://aws.amazon.com/directconnect/",
+    "files": [
+      "service-terms/service-level-bundle/addons-sla.md"
+    ]
+  },
+  {
+    "link": "https://azure.microsoft.com/en-US/products/expressroute/",
+    "files": [
+      "service-terms/service-level-bundle/addons-sla.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/service-terms/service-level/#rto-rpo",
+    "files": [
+      "service-terms/service-level-bundle/addons-sla.md"
+    ]
+  },
+  {
+    "link": "https://www.atlassian.com/software/statuspage",
+    "files": [
+      "service-terms/service-level-bundle/addons-sla.md"
     ]
   },
   {
@@ -14736,13 +14783,13 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/protocol-integration/lora-actility",
+    "link": "https://cumulocity.com/docs/device-integration/lora-actility",
     "files": [
       "standard-tenant/changing-settings-bundle/connectivity.md"
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/protocol-integration/sigfox",
+    "link": "https://cumulocity.com/docs/device-integration/sigfox",
     "files": [
       "standard-tenant/changing-settings-bundle/connectivity.md"
     ]
@@ -14933,6 +14980,54 @@
     "link": "https://cumulocity.com/api/core/#tag/Applications",
     "files": [
       "standard-tenant/ecosystem.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/standard-tenant/enhanced-time-series-support/#to-configure-time-series-support",
+    "files": [
+      "standard-tenant/enhanced-time-series-support-bundle/general-configuration.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/standard-tenant/enhanced-time-series-support/#implications-of-the-configuration",
+    "files": [
+      "standard-tenant/enhanced-time-series-support-bundle/general-configuration.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/standard-tenant/enhanced-time-series-support/#unsupported-apis",
+    "files": [
+      "standard-tenant/enhanced-time-series-support-bundle/general-configuration.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/standard-tenant/enhanced-time-series-support/#to-check-whether-time-series-collections-are-enabled",
+    "files": [
+      "standard-tenant/enhanced-time-series-support-bundle/general-configuration.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/standard-tenant/enhanced-time-series-support/#general-configuration",
+    "files": [
+      "standard-tenant/enhanced-time-series-support-bundle/migration-process-description.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/standard-tenant/enhanced-time-series-support/#migration-states",
+    "files": [
+      "standard-tenant/enhanced-time-series-support-bundle/migration-process-description.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/standard-tenant/enhanced-time-series-support/#to-trigger-time-series-migration",
+    "files": [
+      "standard-tenant/enhanced-time-series-support-bundle/migration-process-description.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/standard-tenant/enhanced-time-series-support/#description-and-progress-monitoring",
+    "files": [
+      "standard-tenant/enhanced-time-series-support-bundle/migration-process-description.md"
     ]
   },
   {
@@ -15135,13 +15230,13 @@
     ]
   },
   {
-    "link": "https://en.wikipedia.org/wiki/Sampling_(signal_processing",
+    "link": "https://en.wikipedia.org/wiki/Sampling_%28signal_processing%29",
     "files": [
       "streaming-analytics/analytics-builder-bundle/details-of-values-and-blocks.md"
     ]
   },
   {
-    "link": "https://en.wikipedia.org/wiki/Quantization_(signal_processing",
+    "link": "https://en.wikipedia.org/wiki/Quantization_%28signal_processing%29",
     "files": [
       "streaming-analytics/analytics-builder-bundle/details-of-values-and-blocks.md"
     ]
@@ -15547,12 +15642,6 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/streaming-analytics/analytics-builder/#monitoring-periodic-status",
-    "files": [
-      "streaming-analytics/analytics-builder-bundle/monitoring-and-configuration.md"
-    ]
-  },
-  {
     "link": "https://cumulocity.com/docs/streaming-analytics/epl-apps/#deploying-apps",
     "files": [
       "streaming-analytics/analytics-builder-bundle/monitoring-and-configuration.md",
@@ -15568,6 +15657,12 @@
   },
   {
     "link": "https://cumulocity.com/docs/streaming-analytics/analytics-builder/#monitoring",
+    "files": [
+      "streaming-analytics/analytics-builder-bundle/monitoring-and-configuration.md"
+    ]
+  },
+  {
+    "link": "https://cumulocity.com/docs/streaming-analytics/analytics-builder/#monitoring-periodic-status",
     "files": [
       "streaming-analytics/analytics-builder-bundle/monitoring-and-configuration.md"
     ]
@@ -18056,12 +18151,6 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/section/device_management/",
-    "files": [
-      "streaming-analytics/introduction-analytics.md"
-    ]
-  },
-  {
     "link": "https://cumulocity.com/docs/streaming-analytics/troubleshooting/#tenant_option_change",
     "files": [
       "streaming-analytics/troubleshooting-bundle/alarms.md"
@@ -18196,7 +18285,7 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/apama/docs/latest/deploying-and-managing-apama-applications/deploying-and-managing-apama-applications-how-this-book-is-organized#monitoring-with-prometheus",
+    "link": "https://cumulocity.com/apama/docs/latest/deploying-and-managing-apama-applications/monitoring-with-prometheus",
     "files": [
       "streaming-analytics/troubleshooting-bundle/diagnostics-rest.md",
       "streaming-analytics/troubleshooting-bundle/monitoring-rest.md"
@@ -18398,7 +18487,7 @@
     ]
   },
   {
-    "link": "https://cumulocity.com/docs/<https://en.wikipedia.org/wiki/Glob_(programming",
+    "link": "https://en.wikipedia.org/wiki/Glob_%28programming%29",
     "files": [
       "web/upgrade-bundle/c8y-cli.md"
     ]
