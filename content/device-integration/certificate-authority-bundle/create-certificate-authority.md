@@ -12,7 +12,7 @@ In this tutorial, you will learn how to create a certificate authority (CA) for 
 In order to follow this tutorial, check the following prerequisites:
 
 * You have a valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
-* Certificate Authority feature enabled on instance and tenant level.
+* The Certificate Authority feature is enabled on instance and tenant level.
 
 For creating a new tenant's certificate authority(CA) create certificate authority API need to be called. These following things happen when we call this API:
 
