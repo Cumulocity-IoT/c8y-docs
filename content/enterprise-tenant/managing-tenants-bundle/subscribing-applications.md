@@ -12,18 +12,18 @@ layout: redirect
 {{< management-tenant >}}s and {{< enterprise-tenant >}}s can control application access for their subtenants. In the **Applications** tab of a tenant, they can:
 
 - [View and manage existing application subscriptions](to-view-subscribed-applications)
-- [Subscribe subtenants to applications](#to-subscribe-an-application)
+- [Subscribe applications to tenants](#to-subscribe-an-application)
 - [Monitor the microservice status](#to-monitor-the-microservice-status)
 
 For general information on applications as part of the {{< product-c8y-iot >}} ecosystem, refer to [Managing the ecosystem](standard-tenant/ecosystem/#managing-applications).
 
 {{< c8y-admon-info >}}
-Tenants can also create and deploy their own [Custom applications](/standard-tenant/ecosystem/#custom-applications), which can be made available to their subtenants.
+Tenants can also create and deploy their own [custom applications](/standard-tenant/ecosystem/#custom-applications), which can be made available to their subtenants.
 {{< /c8y-admon-info >}}
 
 ### To view subscribed applications {#to-view-subscribed-applications}
 
-In the **Applications** tab of a tenant you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard {{< product-c8y-iot >}} applications.
+In the **Applications** tab of a tenant you can view all subscribed applications, subscribe applications to tenants, or remove the applications from the tenant. By default, the [standard {{< product-c8y-iot >}} applications](/standard-tenant/ecosystem/#applications-subscribed-by-default) are subscribed to the tenant.
 
 A tenant can have multiple available applications as displayed under **Available applications** but to use an application's functionality a subscription to the application must be established for the tenant. The list of subscribed applications is shown under **Subscribed applications**.
 
