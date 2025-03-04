@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Default source for user data for external user is access token.
+title: Default access mapping retrieves user information from access token
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62110
 version: 1021.45.3
 ---
-For SSO configurations that do not include information about the user data source, the default source is set to Access Token.
+The single sign-on (SSO) configuration has been updated with the default access mapping set to retrieve user information from the access token. This update is required as {{< product-c8y-iot >}} recently enabled user information to be taken from either the access token or the identity token. This change improves backward compatibility.
