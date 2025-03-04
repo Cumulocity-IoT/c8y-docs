@@ -1,5 +1,5 @@
 ---
-weight: 20
+weight: 25
 title: Simple device enrollment
 layout: redirect
 ---
