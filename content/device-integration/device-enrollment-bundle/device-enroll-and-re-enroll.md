@@ -13,7 +13,7 @@ In order to follow this tutorial, check the following prerequisites:
 * You have a valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * Certificate Authority (CA) is already created for this tenant.
 
-For creating a new device certificate device enroll API need to be called. These following things happen when we call this API:
+On creating a new device certificate the device enroll API is called. This triggers the following actions:
 
 * Device enroll API to be used by a device to get a fresh new certificate. The device has to authenticate itself using its tenant, identifier and security token as the BasicAuth realm, user and password. These tenant, identifier and security token must be shared with Cumulocity using a '/devicecontrol/bulkNewDeviceRequests` onboarding endpoint to set the security token for a device.
 * If a CA is not present then it will throw error.
