@@ -1,0 +1,64 @@
+name: Check Broken Links
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  check-broken-links:
+    name: Broken Link Checker
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: |
+          cd broken-links-script
+          npm install
+
+      - name: Run Broken Link Extraction
+        run: |
+          cd broken-links-script
+          node BrokenLinkChecker.js  # This generates all_links.json
+
+      - name: Run Cypress Tests
+        run: |
+          cd broken-links-script
+          npx cypress run --config-file cypress.config.cjs
+
+      - name: Parse and Comment Broken Links
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');  
+            const reportPath = './broken-links-script/broken_links_report.md';
+
+            if (fs.existsSync(reportPath)) {
+              const report = fs.readFileSync(reportPath, 'utf8').trim();
+
+              if (report) {
+                await github.rest.issues.createComment({
+                  issue_number: context.payload.pull_request.number,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  body: `### 🚨 Broken Links Found!\n\n${report}`
+                });
+
+                core.setFailed("Broken links detected! Please resolve them before merging the PR.");
+              }
+            } else {
+              console.log("✅ No broken links found.");
+            }
