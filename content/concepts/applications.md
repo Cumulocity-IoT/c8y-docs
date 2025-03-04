@@ -1,22 +1,51 @@
 ---
-title: Developing applications
+title: Application enablement
 layout: bundle
 weight: 40
 sector:
   - getting_started
 ---
 
-{{< product-c8y-iot >}} is designed to accommodate arbitrary vertical IoT applications in addition to its generic functionality.
+{{< product-c8y-iot >}} provides a robust application enablement platform that allows users to develop, customize, and deploy applications efficiently.
 
-{{< product-c8y-iot >}} includes the following application types:
+The combination of tools and architectural flexibility empowers developers to fully customize and extend their {{< product-c8y-iot >}} applications with ease, ensuring high performance and tailored solutions for diverse business requirements.
 
- * [Web applications or extensions](#web-applications) - web-based user interface applications
- * [Microservices](/microservice-sdk/general-aspects/) - server-side business logic
+### Key capabilities
 
-Web applications are HTML5 single page applications, that appear in the {{< product-c8y-iot >}} application switcher and that are hosted in the {{< product-c8y-iot >}} platform. You can either develop your own web application or extend existing applications with plugins.
+The key capabilities include:
 
-Microservices are Docker containers, hosted by {{< product-c8y-iot >}} and exposing a REST API.
+- **[Cockpit application](/cockpit/cockpit-introduction/)** - Offers no-code tools that enable users to create and manage applications quickly. It features a drag-and-drop interface, a pre-built [widget library](/cockpit/widgets-collection/) and [smart rules](/cockpit/smart-rules/) for creating [dashboards](/cockpit/working-with-dashboards/) and analytics. This allows business users to implement realtime monitoring and data visualization solutions without extensive coding knowledge.
 
-Applications regardless of their form are identified by a so-called *application key*. The application key enables {{< product-c8y-iot >}} to associate a REST request from an application with the particular application. The application key is the unique identifier of the application and should remain unchanged in all versions of that application. See the section on [Application management](https://{{< domain-c8y >}}/api/core/#tag/Application-API) in the {{< openapi >}}.
+- **[Digital Twin Manager](/dtm/dtm-introduction/)** - The centralized modelling application for {{< product-c8y-iot >}} and is used to define and manage data model schemas that act as blueprints for representing assets within the platform. This is supported by dedicated [Asset APIs](https://cumulocity.com/api/core/#tag/Inventory-API), allowing to access defined models, properties, and hierarchical relationships.
 
-Super tenants ({{< management-tenant >}}s or {{< enterprise-tenant >}}s) can subscribe subtenants to {{< product-c8y-iot >}} applications deployed by them. This provides a basic application marketplace.
+- **[Branding manager](/enterprise-tenant/customization/#branding)** - Enables organizations to modify logos, colors, fonts, and [domain names](/enterprise-tenant/customization/#domain-name) for a consistent, white-labeled experience that aligns with their brand identity.
+
+- **[Extensions library](/standard-tenant/ecosystem/#extensions)** - Offers pre-built official & community-supported , open-source plugins that support adding additional functionalities in the platform that can be integrated seamlessly into applications.
+
+
+### Customization & extension
+
+For more advanced customization, {{< product-c8y-iot >}} supports:
+
+- **[Web SDK](/web/introduction/)** - Provides all necessary clients and components to quickly build frontends in {{< product-c8y-iot >}}. Developers can start with a simple UI plugin or scale up to a fully scaffolded web application.
+
+- **Micro frontend architecture & [extension ecosystem](/standard-tenant/ecosystem/#extensions)** - Enables developers to create modular extensions that integrate with any {{< product-c8y-iot >}} application.This dynamic approach allows features to be loaded at runtime, enabling the flexible and scalable extension of Web SDK-based applications.
+
+- **[Codex](https://styleguide.cumulocity.com/apps/codex/#/)** - Offers essential tools for building applications, including UI guidelines, development resources, reusable Angular-based components, styling utilities, and helps ensuring consistency, efficiency, and streamlined development for {{< product-c8y-iot >}} applications.
+
+- **Managed microservices hosting** - Enables developers to deploy [custom backend services](/standard-tenant/ecosystem/#custom-microservices) using the [Microservice SDK](/microservice-sdk/microservice-sdk-introduction/). This allows for efficient development and extension of business logic within a secure, scalable environment, without managing external infrastructure.
+
+### Tenants concept
+
+{{< product-c8y-iot >}} includes built-in **[multi-tenancy](/concepts/tenant-hierarchy/) & [application subscription management](/enterprise-tenant/managing-tenants/#subscribing-applications)** features that allow for:
+
+- Secure data isolation by assigning dedicated [tenants](/enterprise-tenant/managing-tenants/)
+- Customized application features for different client needs
+- Scalable service rollout across multiple customers
+
+
+### Other resources
+
+- [Open APIs](https://cumulocity.com/api/) - Well-documented REST APIs that expose complete platform functionality
+- [Command Line Interface (CLI)](https://goc8ycli.netlify.app/docs/introduction/) - Tools for streamlined development workflows and automation
+- Active Developer Community - A collaborative platform for knowledge sharing and problem-solving through the [Tech Community](https://techcommunity.cumulocity.com/)

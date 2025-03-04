@@ -44,7 +44,7 @@ Microservices are server-side applications. Microservices can be used to develop
 
 Microservices are deployed as Container images to {{< product-c8y-iot >}}, and follow specific conventions. They typically provide one REST API, which is available under /service/<microservice-name> and access {{< product-c8y-iot >}} using this REST API.
 
-For details see [Getting started > Technical concepts > Developing applications > Microservices](/concepts/applications/#microservices).
+For details see [Application enablement & solutions > Microservice SDK](/microservice-sdk/microservice-sdk-introduction/).
 
 
 ### Model {#model}
