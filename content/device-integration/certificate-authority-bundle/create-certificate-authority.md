@@ -21,7 +21,7 @@ For creating a new tenant's certificate authority(CA) create certificate authori
 * Store the certificate in the trusted certificate repository with auto-registration unchecked by default. The devices can be registered automatically only when device administrator checks this option ON.
 * If the CA certificate is removed from the trusted certificate list, remove the corresponding private key from the database collection.
 * If a CA is already present, return a message indicating the CA is already present.
-
+Moreover, if the CA is removed from the trusted certificate list, the corresponding private key is removed from the database collection.
 This is example of REST request:
 
     POST /certificate-authority
