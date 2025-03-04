@@ -4,7 +4,7 @@ title: Create certificate authority
 layout: redirect
 ---
 
-Cumulocity has enhanced certificate management with the ability for Cumulocity to sign and issue certificates. This means that when looking at the list of certificates on a tenant you will now see the trust anchor certificates and the Cumulocity signed certificates, the latter are identifiable by the words TENANT CA.
+The {{< product-c8y-iot >}} certificate management allows {{< product-c8y-iot >}} to sign and issue certificates. Along with the trust anchor certificates the list of certificates in a  tenant shows the {{< product-c8y-iot >}} signed certificates. The {{< product-c8y-iot >}} signed certificates are identifiable by the words TENANT CA.
 In this tutorial, you will learn how to create certificate authority(CA) for tenant with {{< product-c8y-iot >}}.
 
 ### Prerequisites {#prerequisites}
