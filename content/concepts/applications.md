@@ -29,7 +29,7 @@ For more advanced customization, {{< product-c8y-iot >}} supports:
 
 - **[Web SDK](/web/introduction/)** - Provides all necessary clients and components to quickly build frontends in {{< product-c8y-iot >}}. Developers can start with a simple UI plugin or scale up to a fully scaffolded web application.
 
-- **Micro frontend architecture & [extension ecosystem](/standard-tenant/ecosystem/#extensions)** - Enables developers to create modular extensions that integrate with any {{< product-c8y-iot >}} application.This dynamic approach allows features to be loaded at runtime, enabling the flexible and scalable extension of Web SDK-based applications.
+- **Micro frontend architecture & [extension ecosystem](/standard-tenant/ecosystem/#extensions)** - Enables developers to create modular extensions that integrate with any {{< product-c8y-iot >}} application. This dynamic approach allows features to be loaded at runtime, enabling the flexible and scalable extension of Web SDK-based applications.
 
 - **[Codex](https://styleguide.cumulocity.com/apps/codex/#/)** - Offers essential tools for building applications, including UI guidelines, development resources, reusable Angular-based components, styling utilities, and helps ensuring consistency, efficiency, and streamlined development for {{< product-c8y-iot >}} applications.
 
