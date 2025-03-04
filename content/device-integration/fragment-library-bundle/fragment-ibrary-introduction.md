@@ -113,6 +113,10 @@ The following fragments can be added to the ```c8y_SupportedOperations``` fragme
 <td>Allows reloading a configuration through the user interface</td>
 </tr>
 <tr>
+<tr>
+<td><a href="#service-commands">c8y_ServiceCommand</a></td>
+<td>Announces a service capability to receive commands</td>
+</tr>
 <td><a href="#installed-software">c8y_SoftwareList</a></td>
 <td>Contains the entire list of software that is installed on the device</td>
 </tr>

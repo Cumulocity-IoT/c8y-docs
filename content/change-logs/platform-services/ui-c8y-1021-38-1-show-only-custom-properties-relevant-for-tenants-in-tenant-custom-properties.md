@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Custom properties tab in tenant details only shows tenant-relevant custom properties
+date: '2025-02-27'
+title: >-
+  Custom properties tab in tenant details only shows tenant-relevant custom
+  properties
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

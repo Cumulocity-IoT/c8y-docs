@@ -50,4 +50,4 @@ Follow the description in [Registering devices](/device-management-application/r
 
 In the Device Management application, click **All devices** in the navigator and find the OPC UA device in the device list.
 
-For further information about managing and configuring OPC UA devices, see [OPC UA](/protocol-integration/opcua/).
+For further information about managing and configuring OPC UA devices, see [OPC UA](/device-integration/opcua/).
