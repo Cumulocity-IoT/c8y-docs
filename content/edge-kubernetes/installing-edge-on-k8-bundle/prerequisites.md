@@ -17,7 +17,7 @@ layout: redirect
 
 ### Special instructions for K3s {#special-instructions-for-k3s}
 
-To enable the proper functioning of the Edge operator on K3s, you must install K3s with the following configuration options.
+Make configuration changes to your operating system to work with K3S as per [Requirements](https://docs.k3s.io/installation/requirements#operating-systems). To enable the proper functioning of the Edge operator on K3s, you must install K3s with specific configuration options.
 
 Run the command below to install Kubernetes version 1.25.13:
 
@@ -44,9 +44,9 @@ sudo sh -c '
 
     printf "\e[32mSuccessfully installed k3s!\e[0m\n" && \
     
-    k3s crictl pull rancher/klipper-lb:v0.4.4 && \
-    k3s crictl pull rancher/mirrored-metrics-server:v0.6.3 && \
-    k3s crictl pull rancher/local-path-provisioner:v0.0.24
+    /usr/local/bin/k3s crictl pull rancher/klipper-lb:v0.4.4 && \
+    /usr/local/bin/k3s crictl pull rancher/mirrored-metrics-server:v0.6.3 && \
+    /usr/local/bin/k3s crictl pull rancher/local-path-provisioner:v0.0.24
 '
 ```
 
