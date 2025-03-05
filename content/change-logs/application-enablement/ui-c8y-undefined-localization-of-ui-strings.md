@@ -14,7 +14,7 @@ build_artifact:
 ---
 
 
-We are pleased to announce that {{< product-c8y-iot >}} has moved to AI-powered automation for translating our platform UI from English into all [supported languages](/get-familiar-with-the-ui/user-settings/#to-change-the-language-of-the-ui).
+We are pleased to announce that {{< product-c8y-iot >}} has moved to AI-powered automation for translating our entire platform UI from English into all [supported languages](/get-familiar-with-the-ui/user-settings/#to-change-the-language-of-the-ui).
 
 In addition, a regular review is carried out by professional translators for German, French, and Japanese.
 
