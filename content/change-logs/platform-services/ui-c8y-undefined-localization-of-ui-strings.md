@@ -4,7 +4,7 @@ title: AI-powered platform UI translations
 change_type:
   - value: change-inv-3bw8e
     label: Announcement
-product_area: Platform services
+product_area: Application enablement & solutions
 component:
   - value: component-YbYJ3gLU_
     label: Web SDK
