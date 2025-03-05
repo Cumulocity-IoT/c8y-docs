@@ -7,7 +7,7 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     chromeWebSecurity: false, 
-    pageLoadTimeout: 100000000,
+    pageLoadTimeout: 300000,
     defaultCommandTimeout: 10000,
     requestTimeout: 15000,
     numTestsKeptInMemory: 0,
