@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62449
 version: 1021.45.2
 ---
-In the translation editor of the Cumulocity IoT platform, users were previously unable to remove all translations for a specific key. This issue has now been resolved. With this fix, users can successfully remove all translations associated with a key in the translation editor. This change ensures a more consistent and reliable user experience when managing translations within the Cumulocity IoT platform.
+In the translation editor of the {{< product-c8y-iot >}} platform, users were previously unable to remove all translations for a specific key. This issue has now been resolved. With this fix, users can successfully remove all translations associated with a key in the translation editor. This change ensures a more consistent and reliable user experience when managing translations within the {{< product-c8y-iot >}} platform.
