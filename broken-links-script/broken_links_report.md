@@ -1,0 +1,222 @@
+### :warning: Broken Links or Routing Errors
+
+- **https://cumulocity.com/api/core/#section/Authentication/JWT** (status: Expected anchor with href "#section/Authentication/JWT" not found)
+  - Found in: authentication/sso-bundle/configuring-access-tokens.md
+- **https://styleguide.cumulocity.com/apps/codex/#/getting-started/guides/theming/overview#styling-the-shell-application-with-a-plugin** (status: Target view missing [data-cy="c8y-title--title-outlet"] .text-truncate)
+  - Found in: change-logs/application-enablement/ui-c8y-1020-0-0-add-info-on-how-to-style-shell-application-via-plugin-6177.md
+- **https://styleguide.cumulocity.com/apps/codex/#/components/forms/dynamic-forms/overview** (status: Target view missing [data-cy="c8y-title--title-outlet"] .text-truncate)
+  - Found in: change-logs/application-enablement/ui-c8y-1020-0-0-extend-the-dynamic-forms-page-in-codex.md
+- **https://styleguide.cumulocity.com/apps/codex/#/** (status: Target view missing [data-cy="c8y-title--title-outlet"] .text-truncate)
+  - Found in: change-logs/application-enablement/ui-c8y-1020-5-0-new-alarm-event-selector-can-now-be-used-in-custom-applications.md, cockpit/managing-assets-bundle/asset-hierarchy.md, concepts/applications-bundle/web-applications.md, web/gettingstarted.md, web/upgrade-bundle/upgrading-to-angular-15.md
+- **https://styleguide.cumulocity.com/apps/codex/** (status: Target view missing [data-cy="c8y-title--title-outlet"] .text-truncate)
+  - Found in: change-logs/application-enablement/ui-c8y-1021-39-1-codex-branding-and-tokens-update-8095-graft-release-cd-8324.md
+- **https://cumulocity.com/api/core/#operation/getMeasurementSeriesResource** (status: Expected anchor with href "#operation/getMeasurementSeriesResource" not found)
+  - Found in: change-logs/platform-services/cumulocity-10-20-614-0-null-values-empty-series.md
+- **https://cumulocity.com/api/core/#operation/getAlarmCollectionCountResource** (status: Expected anchor with href "#operation/getAlarmCollectionCountResource" not found)
+  - Found in: change-logs/platform-services/cumulocity-20-25-37-0_alarm-collection-count-single-type-fix.md
+- **https://cumulocity.com/api/core/#tag/Query-language** (status: Expected anchor with href "#tag/Query-language" not found)
+  - Found in: change-logs/platform-services/cumulocity-20-25-47-is-in-hierarchy-of-odata.md
+- **https://cumulocity.com/api/core/#operation/postNotificationSubscriptionResource** (status: Expected anchor with href "#operation/postNotificationSubscriptionResource" not found)
+  - Found in: change-logs/platform-services/cumulocity-undefined-notifications-tenant-context-operations-wildcard-announcement.md
+- **https://cumulocity.com/api/core/#tag/Measurements** (status: Expected anchor with href "#tag/Measurements" not found)
+  - Found in: cockpit/data-explorer-bundle/changing-visualization.md, cockpit/data-explorer-bundle/working-with-data-explorer.md, concepts/domain-model-bundle/measurements.md, device-management-application/managing-device-services.md, smartrest/json-via-mqtt.md
+- **https://cumulocity.com/api/core/#operation/getManagedObjectChildAssetsResource** (status: Expected anchor with href "#operation/getManagedObjectChildAssetsResource" not found)
+  - Found in: cockpit/managing-assets-bundle/working-with-assets.md
+- **https://cumulocity.com/api/core/#tag/Alarms** (status: Expected anchor with href "#tag/Alarms" not found)
+  - Found in: cockpit/smart-rules-collection.md, concepts/domain-model-bundle/events.md, device-management-application/managing-device-services.md, device-management-application/monitoring-and-controlling-devices.md, smartrest/json-via-mqtt.md, standard-tenant/alarm-mapping.md
+- **https://cumulocity.com/api/core/#tag/Application-API** (status: Expected anchor with href "#tag/Application-API" not found)
+  - Found in: concepts/applications.md, microservice-sdk/java-bundle/client-library.md
+- **https://cumulocity.com/api/core/#tag/Events** (status: Expected anchor with href "#tag/Events" not found)
+  - Found in: concepts/domain-model-bundle/events.md, device-management-application/managing-device-services.md, smartrest/json-via-mqtt.md, streaming-analytics/epl-apps-bundle/basic-functionality.md
+- **https://cumulocity.com/api/core/#tag/Audits** (status: Expected anchor with href "#tag/Audits" not found)
+  - Found in: concepts/domain-model-bundle/events.md, enterprise-tenant/usage-and-billing.md, standard-tenant/audit-logs.md
+- **https://cumulocity.com/api/core/#tag/Identity-API** (status: Expected anchor with href "#tag/Identity-API" not found)
+  - Found in: concepts/domain-model-bundle/inventory.md, device-integration/device-integration-rest-bundle/integration-life-cycle.md
+- **https://cumulocity.com/api/core/#tag/Inventory-API** (status: Expected anchor with href "#tag/Inventory-API" not found)
+  - Found in: concepts/domain-model-bundle/inventory.md
+- **https://cumulocity.com/api/core/#tag/Device-control-API** (status: Expected anchor with href "#tag/Device-control-API" not found)
+  - Found in: concepts/domain-model-bundle/operations.md, microservice-sdk/rest-bundle/microservice-development.md
+- **https://cumulocity.com/api/core/#section/REST-implementation** (status: Expected anchor with href "#section/REST-implementation" not found)
+  - Found in: concepts/interfacing-devices.md, concepts/security.md, datahub/datahub-overview-bundle/datahub-at-a-glance.md, device-integration/device-integration-rest.md, microservice-sdk/java-bundle/client-library.md, microservice-sdk/rest-bundle/introduction.md, streaming-analytics/epl-apps-bundle/builtin-actions.md
+- **https://cumulocity.com/api/core/#tag/User-API** (status: Expected anchor with href "#tag/User-API" not found)
+  - Found in: concepts/security-bundle/access-control.md, concepts/security.md, microservice-sdk/general-aspects-bundle/security.md
+- **https://cumulocity.com/api/core/#tag/Audit-API** (status: Expected anchor with href "#tag/Audit-API" not found)
+  - Found in: concepts/security-bundle/management-security.md, streaming-analytics/troubleshooting-bundle/alarms.md, streaming-analytics/troubleshooting-bundle/analytics-audit-logs.md
+- **https://cumulocity.com/api/core/#operation/postBulkNewDeviceRequestCollectionResource** (status: Expected anchor with href "#operation/postBulkNewDeviceRequestCollectionResource" not found)
+  - Found in: device-integration/device-certificates.md, device-management-application/registering-devices-bundle/bulk-device-registration.md
+- **https://cumulocity.com/api/core/#tag/Users** (status: Expected anchor with href "#tag/Users" not found)
+  - Found in: device-integration/device-integration-rest-bundle/device-authentication.md, standard-tenant/managing-users.md
+- **https://cumulocity.com/api/core/#tag/Device-control-notification-API** (status: Expected anchor with href "#tag/Device-control-notification-API" not found)
+  - Found in: device-integration/device-integration-rest-bundle/integration-life-cycle.md
+- **https://cumulocity.com/api/core/#operation/postEventBinaryResource** (status: Expected anchor with href "#operation/postEventBinaryResource" not found)
+  - Found in: device-integration/fragment-library-bundle/configuration.md
+- **https://github.com/eclipse/paho.mqtt.python/issues/354** (status: 404)
+  - Found in: device-integration/mqtt-bundle/mqtt-examples.md
+- **https://cumulocity.com/api/edge/10.18.0/#operation/postDomainName** (status: Expected anchor with href "#operation/postDomainName" not found)
+  - Found in: edge/edge-configuration-bundle/changing-domain-name.md
+- **https://cumulocity.com/api/edge/10.18.0/#operation/enableMicroserviceHosting** (status: Expected anchor with href "#operation/enableMicroserviceHosting" not found)
+  - Found in: edge/edge-configuration-bundle/configuring-microservices.md
+- **https://cumulocity.com/api/edge/10.18.0/#operation/postSecurityConfiguration** (status: Expected anchor with href "#operation/postSecurityConfiguration" not found)
+  - Found in: edge/edge-configuration-bundle/configuring-security.md
+- **https://cumulocity.com/api/edge/10.18.0/#operation/edgeHostnameConfig** (status: Expected anchor with href "#operation/edgeHostnameConfig" not found)
+  - Found in: edge/edge-configuration-bundle/configuring-the-hostname.md
+- **https://cumulocity.com/api/edge/10.18.0/#operation/edgeNetworkConfig** (status: Expected anchor with href "#operation/edgeNetworkConfig" not found)
+  - Found in: edge/edge-configuration-bundle/configuring-the-network.md
+- **https://cumulocity.com/api/edge/10.18.0/#operation/configureTimeSync** (status: Expected anchor with href "#operation/configureTimeSync" not found)
+  - Found in: edge/edge-configuration-bundle/configuring-time-sync.md
+- **https://cumulocity.com/api/edge/10.18.0/#operation/updateEdgeCertificate** (status: Expected anchor with href "#operation/updateEdgeCertificate" not found)
+  - Found in: edge/edge-configuration-bundle/updating-ssl-certificate.md
+- **https://cumulocity.com/api/edge/10.18.0/#operation/enableRemoteConnectivity** (status: Expected anchor with href "#operation/enableRemoteConnectivity" not found)
+  - Found in: edge/edge-connectivity-bundle/config-remote-connectivity-rest-api.md
+- **https://cumulocity.com/api/edge/10.18.0/#operation/installEdge** (status: Expected anchor with href "#operation/installEdge" not found)
+  - Found in: edge/edge-installation-bundle/installing-edge-rest.md
+- **https://cumulocity.com/docs/device-management-application/monitoring-device-services/** (status: 404)
+  - Found in: edge/edge-introduction-bundle/iot-platform.md
+- **https://cumulocity.com/docs/device-management-application/monitoring-device-services/#measurements** (status: 404)
+  - Found in: edge/edge-introduction-bundle/iot-platform.md
+- **https://cumulocity.com/docs/device-management-application/monitoring-device-services/#events** (status: 404)
+  - Found in: edge/edge-introduction-bundle/iot-platform.md
+- **https://cumulocity.com/docs/device-management-application/monitoring-device-services/#alarms** (status: 404)
+  - Found in: edge/edge-introduction-bundle/iot-platform.md
+- **https://styleguide.cumulocity.com/apps/codex/#/ui-guidelines/foundations/design-tokens/branding/overview** (status: Target view missing [data-cy="c8y-title--title-outlet"] .text-truncate)
+  - Found in: enterprise-tenant/customization-bundle/branding.md
+- **https://styleguide.cumulocity.com/apps/codex/#/ui-guidelines/foundations/design-tokens/color-palette/overview** (status: Target view missing [data-cy="c8y-title--title-outlet"] .text-truncate)
+  - Found in: enterprise-tenant/customization-bundle/branding.md
+- **https://styleguide.cumulocity.com/apps/codex/#/develop/services/OptionsService/overview** (status: Target view missing [data-cy="c8y-title--title-outlet"] .text-truncate)
+  - Found in: enterprise-tenant/customization-bundle/branding.md
+- **https://cumulocity.com/docs/to-view-subscribed-applications** (status: 404)
+  - Found in: enterprise-tenant/managing-tenants-bundle/subscribing-applications.md
+- **https://cumulocity.com/api/core/#tag/Tenant-applications** (status: Expected anchor with href "#tag/Tenant-applications" not found)
+  - Found in: enterprise-tenant/usage-and-billing.md
+- **https://www.mathworks.com/help/predmaint/ug/remaining-useful-life-estimation-using-convolutional-neural-network.html** (status: 403)
+  - Found in: machine-learning/AI-ML-integration-bundle/step1-create-ai-ml-model.md
+- **https://cumulocity.com/docs/machine-learning/AI-ML-integration/#scenario-b-embedded-hosting-using-custom-microservice** (status: 404)
+  - Found in: machine-learning/AI-ML-integration-bundle/step2-deploy-ai-ml-model.md, machine-learning/AI-ML-integration-bundle/step3-set-up-model-workflow.md
+- **https://cumulocity.com/docs/machine-learning/AI-ML-integration/#scenario-a-external-hosting** (status: 404)
+  - Found in: machine-learning/AI-ML-integration-bundle/step2-deploy-ai-ml-model.md
+- **https://cumulocity.com/docs/machine-learning/AI-ML-integration/#scenario-b-embedded-hosting-using-generic-microservice** (status: 404)
+  - Found in: machine-learning/AI-ML-integration-bundle/step2-deploy-ai-ml-model.md
+- **https://cumulocity.com/api/core/#tag/Options** (status: Expected anchor with href "#tag/Options" not found)
+  - Found in: microservice-sdk/general-aspects-bundle/security.md, streaming-analytics/analytics-builder-bundle/model-simulation.md, streaming-analytics/analytics-builder-bundle/models-and-devices.md, streaming-analytics/analytics-builder-bundle/monitoring-and-configuration.md
+- **https://cumulocity.com/api/core/#operation/postAlarmCollectionResource** (status: Expected anchor with href "#operation/postAlarmCollectionResource" not found)
+  - Found in: microservice-sdk/http-bundle/node-js-microservice.md
+- **https://cumulocity.com/api/core/#tag/Notification-2.0-API** (status: Expected anchor with href "#tag/Notification-2.0-API" not found)
+  - Found in: microservice-sdk/java-bundle/client-library.md
+- **https://cumulocity.com/api/core/#operation/postManagedObjectCollectionResource** (status: Expected anchor with href "#operation/postManagedObjectCollectionResource" not found)
+  - Found in: microservice-sdk/java-bundle/ip-tracker-microservice.md
+- **https://cumulocity.com/api/core/#tag/Child-operations** (status: Expected anchor with href "#tag/Child-operations" not found)
+  - Found in: microservice-sdk/rest-bundle/microservice-development.md
+- **https://cumulocity.com/api/core/#tag/Real-time-notification-API** (status: Expected anchor with href "#tag/Real-time-notification-API" not found)
+  - Found in: microservice-sdk/rest-bundle/microservice-development.md, smartrest/smartrest-one-bundle/smartrest-real-time-notifications.md
+- **https://cumulocity.com/api/datahub/#operation/getJobResultsApiResource** (status: Expected anchor with href "#operation/getJobResultsApiResource" not found)
+  - Found in: service-terms/quotas.md
+- **https://cumulocity.com/api/datahub/#tag/High-performance-API** (status: Expected anchor with href "#tag/High-performance-API" not found)
+  - Found in: service-terms/quotas.md
+- **https://cumulocity.com/api/datahub/#tag/Standard-API** (status: Expected anchor with href "#tag/Standard-API" not found)
+  - Found in: service-terms/service-level-bundle/datahub-sla.md
+- **https://cumulocity.com/api/core/#section/REST-implementation/HTTP-usage** (status: Expected anchor with href "#section/REST-implementation/HTTP-usage" not found)
+  - Found in: smartrest/json-via-mqtt.md
+- **https://cumulocity.com/api/core/#operation/getManagedObjectChildDevicesResource** (status: Expected anchor with href "#operation/getManagedObjectChildDevicesResource" not found)
+  - Found in: smartrest/json-via-mqtt.md
+- **https://cumulocity.com/api/core/#tag/External-IDs** (status: Expected anchor with href "#tag/External-IDs" not found)
+  - Found in: smartrest/json-via-mqtt.md
+- **https://www.cumulocity.com/api/#section/REST-implementation** (status: Expected anchor with href "#section/REST-implementation" not found)
+  - Found in: smartrest/smartrest-one-bundle/the-protocol.md
+- **https://cumulocity.com/api/core/#tag/Applications** (status: Expected anchor with href "#tag/Applications" not found)
+  - Found in: standard-tenant/ecosystem.md
+- **https://cumulocity.com/api/core/#operation/putCategoryOptionResource** (status: Expected anchor with href "#operation/putCategoryOptionResource" not found)
+  - Found in: standard-tenant/managing-data-bundle/latest-value.md
+- **https://www.cumulocity.com/api/core/#operation/getManagedObjectResource** (status: Expected anchor with href "#operation/getManagedObjectResource" not found)
+  - Found in: standard-tenant/managing-data-bundle/latest-value.md
+- **https://www.cumulocity.com/api/core/#tag/Measurement-API** (status: Expected anchor with href "#tag/Measurement-API" not found)
+  - Found in: standard-tenant/managing-data-bundle/latest-value.md
+- **https://cumulocity.com/api/core/#tag/Retention-rules** (status: Expected anchor with href "#tag/Retention-rules" not found)
+  - Found in: standard-tenant/managing-data-bundle/retention-rules.md
+- **https://cumulocity.com/api/core/#operation/postOptionCollectionResource** (status: Expected anchor with href "#operation/postOptionCollectionResource" not found)
+  - Found in: standard-tenant/managing-permissions-bundle/improving-performance.md
+- **https://cumulocity.com/api/core/#tag/Roles** (status: Expected anchor with href "#tag/Roles" not found)
+  - Found in: standard-tenant/managing-permissions.md
+- **https://cumulocity.com/api/core/#tag/Inventory-Roles** (status: Expected anchor with href "#tag/Inventory-Roles" not found)
+  - Found in: standard-tenant/managing-permissions.md
+- **https://cumulocity.com/api/core/#tag/About-notifications-2.0** (status: Expected anchor with href "#tag/About-notifications-2.0" not found)
+  - Found in: streaming-analytics/analytics-customization-bundle/notifications.md
+- **https://cumulocity.com/api/core/#tag/Feature-toggles-API** (status: Expected anchor with href "#tag/Feature-toggles-API" not found)
+  - Found in: streaming-analytics/analytics-customization-bundle/notifications.md
+- **https://cumulocity.com/apama/docs/latest/related/ApamaDoc/index.htmlcom/apama/cumulocity/package-summary.html** (status: 404)
+  - Found in: streaming-analytics/epl-apps-bundle/basic-functionality.md
+- **https://cumulocity.com/apama/docs/latest/related/ApamaDoc/index.html/com/apama/cumulocity/package-summary.html** (status: 404)
+  - Found in: streaming-analytics/epl-apps-bundle/basic-functionality.md
+- **https://cumulocity.com/apama/docs/latest/related/ApamaDoc/index.htmlcom/softwareag/connectivity/httpclient/package-summary.html** (status: 404)
+  - Found in: streaming-analytics/epl-apps-bundle/microservices.md
+- **https://styleguide.cumulocity.com** (status: Target view missing [data-cy="c8y-title--title-outlet"] .text-truncate)
+  - Found in: web/introduction.md
+
+### :warning: Incorrect Traditional Fragments
+
+- **https://cumulocity.com/docs/standard-tenant/managing-permissions/#assign-global-roles** (fragment "assign-global-roles" not found)
+  - Found in: authentication/sso-bundle/custom-template.md
+- **https://cumulocity.com/releasenotes/release-10-16-0/announcements-10-16-0/#machine-learning-deprecation** (fragment "machine-learning-deprecation" not found)
+  - Found in: change-logs/analytics/apama-in-c8y-24-18-0-Removal-of-Machine-Learning.md
+- **https://cumulocity.com/docs/device-integration/lwm2m/#device-registration-settings** (fragment "device-registration-settings" not found)
+  - Found in: change-logs/device-management/cumulocity-10-18-107-0-New-configuration-flag-in-LWM2M-device-registration-settings-for-firmware-reset.md
+- **https://cumulocity.com/docs/microservice-sdk/general-aspects/#setting** (fragment "setting" not found)
+  - Found in: change-logs/platform-services/cumulocity-undefined-microservice-name-validation.md
+- **https://cumulocity.com/docs/welcome-developers/developer-topics/#:~:text=Device%20integration%20using%20thin%2Dedge.io** (fragment ":~:text=Device%20integration%20using%20thin%2Dedge.io" not found)
+  - Found in: concepts/concepts-introduction-bundle/application-enablement.md
+- **https://cumulocity.com/docs/datahub/setting-up-datahub/#setting-up-dremio-datalake** (fragment "setting-up-dremio-datalake" not found)
+  - Found in: datahub/running-datahub-on-the-edge-bundle/setting-up-datahub-edge.md
+- **https://cumulocity.com/docs/concepts/applications/#microservices** (fragment "microservices" not found)
+  - Found in: device-integration/fragment-library-bundle/software.md, glossary/m.md
+- **https://cumulocity.com/docs/device-integration/mqtt/#device-certificates** (fragment "device-certificates" not found)
+  - Found in: device-integration/mqtt-bundle/mqtt-examples.md, device-management-application/managing-device-data-bundle/managing-trusted-certificates.md, device-management-application/managing-device-data.md, edge-kubernetes/edge-custom-resource-definition-bundle/k8-edge-cloud-tenant.md, edge-kubernetes/k8s-troubleshooting-bundle/edge-k8s-does-not-show-as-device-on-cloud.md
+- **https://cumulocity.com/docs/device-integration/#hello-mqtt** (fragment "hello-mqtt" not found)
+  - Found in: device-integration/mqtt-bundle/mqtt-examples.md
+- **http://www.eclipse.org/paho/clients/python/docs/#option-functions** (fragment "option-functions" not found)
+  - Found in: device-integration/mqtt-bundle/mqtt-examples.md
+- **http://logback.qos.ch/manual/architecture.html#effectiveLevel** (fragment "effectiveLevel" not found)
+  - Found in: device-integration/opcua-bundle/troubleshooting.md
+- **https://cumulocity.com/guides/10.17.0/edge/update/#updating-edge-gui** (fragment "updating-edge-gui" not found)
+  - Found in: edge/edge-update-bundle/migration-1017-to-1018.md
+- **https://cumulocity.com/guides/10.17.0/edge/update/#updating-edge-rest** (fragment "updating-edge-rest" not found)
+  - Found in: edge/edge-update-bundle/migration-1017-to-1018.md
+- **https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#defaultstorageclass** (fragment "defaultstorageclass" not found)
+  - Found in: edge-kubernetes/installing-edge-on-k8-bundle/configuring-storage.md
+- **https://cumulocity.com/docs/web/#introduction** (fragment "introduction" not found)
+  - Found in: get-familiar-with-the-ui/gui-features.md
+- **https://cumulocity.com/docs/glossary/c/#product-area** (fragment "product-area" not found)
+  - Found in: glossary/c.md
+- **https://cumulocity.com/docs/glossary/m/#managed-object** (fragment "managed-object" not found)
+  - Found in: glossary/d.md, glossary/i.md
+- **https://cumulocity.com/docs/glossary/c/#continuous_deployment** (fragment "continuous_deployment" not found)
+  - Found in: glossary/p.md
+- **https://cumulocity.com/docs/glossary/c/#components** (fragment "components" not found)
+  - Found in: glossary/p.md
+- **https://cumulocity.com/docs/microservice-sdk/general-aspects/#requirements** (fragment "requirements" not found)
+  - Found in: microservice-sdk/http-bundle/node-js-microservice.md
+- **https://slack.dev/node-slack-sdk/getting-started#getting-a-token-to-use-the-web-api** (fragment "getting-a-token-to-use-the-web-api" not found)
+  - Found in: microservice-sdk/http-bundle/node-js-microservice.md
+- **https://cumulocity.com/docs/microservice-sdk/rest#creating-application** (fragment "creating-application" not found)
+  - Found in: microservice-sdk/java-bundle/developing-microservice.md
+- **https://javadoc.io/doc/io.rest-assured/rest-assured/3.0.0/io/restassured/specification/RequestSpecification.html#content-byte:A-** (fragment "content-byte:A-" not found)
+  - Found in: microservice-sdk/java-bundle/developing-microservice.md
+- **https://cumulocity.com/docs/microservice-sdk/java#java-microservice** (fragment "java-microservice" not found)
+  - Found in: microservice-sdk/microservice-sdk-introduction.md
+- **https://cumulocity.com/docs/concepts/domain-model/#document-limits** (fragment "document-limits" not found)
+  - Found in: service-terms/quotas.md
+- **https://cumulocity.com/docs/service-terms/service-level/#rto-rpo** (fragment "rto-rpo" not found)
+  - Found in: service-terms/service-level-bundle/addons-sla.md
+- **https://cumulocity.com/docs/service-terms/service-level/#microservices-sla/** (fragment "microservices-sla/" not found)
+  - Found in: service-terms/service-level-bundle/platform-sla.md
+- **https://cumulocity.com/docs/device-integration/mqtt/#device-integration** (fragment "device-integration" not found)
+  - Found in: smartrest/json-via-mqtt.md
+- **https://cumulocity.com/docs/standard-tenant/changing-settings/#application-settings** (fragment "application-settings" not found)
+  - Found in: standard-tenant/ecosystem.md
+- **https://cumulocity.com/docs/standard-tenant/managing-data/#files-repository** (fragment "files-repository" not found)
+  - Found in: standard-tenant/home-screen.md
+- **https://cumulocity.com/docs/concepts/applications#microservices** (fragment "microservices" not found)
+  - Found in: streaming-analytics/epl-apps-bundle/best-practices.md
+- **https://cumulocity.com/guides/edge/operating-edge/#apama-log-file-locations** (fragment "apama-log-file-locations" not found)
+  - Found in: streaming-analytics/troubleshooting-bundle/diagnostics-download.md, streaming-analytics/troubleshooting-bundle/logfiles.md
+- **https://cumulocity.com/guides/edge/operating-edge/#diagnostics** (fragment "diagnostics" not found)
+  - Found in: streaming-analytics/troubleshooting-bundle/diagnostics-download.md, streaming-analytics/troubleshooting-bundle/logfiles.md
+

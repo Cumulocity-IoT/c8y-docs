@@ -32,7 +32,7 @@ describe('Link and Routing Validation - Batching URLs', () => {
       return Promise.resolve();
     }
 
-    if (url.includes('styleguide.cumulocity.com')) {
+    if (url.includes('codex/#/')) {
       return cy.visit(url, { failOnStatusCode: false })
         .then(() => cy.document())
         .then((doc) => {

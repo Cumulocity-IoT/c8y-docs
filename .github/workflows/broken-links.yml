@@ -42,7 +42,7 @@ jobs:
       - name: Run Cypress Tests
         run: |
           cd broken-links-script
-          npm run test:headless  
+          npx cypress run 
 
       - name: Parse and Comment Broken Links
         uses: actions/github-script@v7
