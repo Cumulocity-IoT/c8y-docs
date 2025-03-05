@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-ticket: ''
+ticket: MTM-62856
 version: 1022.0.0
 ---
 In a future version of the Web SDK, we will update the Angular version used in the Web SDK to version 19. This update brings improvements and new features, but may also introduce breaking changes that could impact your existing implementations.
