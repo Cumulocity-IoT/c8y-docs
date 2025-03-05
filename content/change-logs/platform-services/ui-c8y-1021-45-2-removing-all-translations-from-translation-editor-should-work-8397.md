@@ -1,6 +1,6 @@
 ---
 date: ""
-title: removing all translations from translation editor should work (#8397)
+title: Fixed an issue with removing all translations in the translation editor
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62449
 version: 1021.45.2
 ---
-removing all translations from translation editor should work (#8397)
+In the translation editor of the Cumulocity IoT platform, users were previously unable to remove all translations for a specific key. This issue has now been resolved. With this fix, users can successfully remove all translations associated with a key in the translation editor. This change ensures a more consistent and reliable user experience when managing translations within the Cumulocity IoT platform.
