@@ -80,3 +80,7 @@ version = "2024.16"
 [[versions]]
 date = "February 3, 2025"
 version = "2024.17"
+
+[[versions]]
+date = "March 5, 2025"
+version = "2024.18"

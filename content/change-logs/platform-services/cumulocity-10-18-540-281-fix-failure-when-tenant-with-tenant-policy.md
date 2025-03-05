@@ -1,5 +1,5 @@
 ---
-date:
+date: 2025-03-05
 title: Tenant creation with tenant policy overriding the default tenant option works properly
 product_area: Platform services
 change_type:
@@ -15,4 +15,4 @@ ticket: MTM-62312
 version: 10.18.540.281
 ---
 Previously, when an {{< enterprise-tenant >}} created a subtenant with a tenant policy that tried to override the default tenant option the tenant creation failed. This issue has been fixed an creating a subtenant with a tenant policy overriding the default tenant option now works properly.
-work as before. 
+work as before.

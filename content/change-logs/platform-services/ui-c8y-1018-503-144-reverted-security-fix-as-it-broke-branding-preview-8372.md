@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-03-05
 title: Fixed branding preview functionality
 product_area: Platform services
 change_type:

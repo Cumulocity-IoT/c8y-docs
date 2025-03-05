@@ -1,5 +1,5 @@
 ---
-date:
+date: 2025-03-05
 title: Type parameter in Alarm API now accepts multiple values
 product_area: Platform services
 change_type:
@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-61873
 version: 10.18.540.274
 ---
-Previously, when retrieving the [total number of alarms](https://cumulocity.com/api/core/#operation/getAlarmCollectionCountResource) 
+Previously, when retrieving the [total number of alarms](https://cumulocity.com/api/core/#operation/getAlarmCollectionCountResource)
 the `type` parameter could only take a single value, despite the documentation stating otherwise. This issue has been fixed.
 The `type` parameter now accepts multiple, comma-separated values.
 

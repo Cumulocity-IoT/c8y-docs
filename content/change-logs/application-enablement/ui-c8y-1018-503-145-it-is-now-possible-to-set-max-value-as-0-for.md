@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-03-05
 title: Radial gauge can now have 0 as max value
 product_area: Application enablement & solutions
 change_type:

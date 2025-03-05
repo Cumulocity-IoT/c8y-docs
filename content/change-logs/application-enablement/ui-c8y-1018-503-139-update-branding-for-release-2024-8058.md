@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-03-05
 title: Updated branding colors and logo
 product_area: Application enablement & solutions
 change_type:
