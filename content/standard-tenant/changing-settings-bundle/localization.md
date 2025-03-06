@@ -54,7 +54,7 @@ Or:
 
 1. Click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> in any row to open the translation editor for the respective identifier.
 2. Add or edit the translations.
-3. Click **Add** to close the the translation editor.
+3. Click **Add** to close the translation editor.
 4. Click **Save & apply** to apply the changes.
 
 To view the added or modified translations in the UI, change the language from the user menu, see [To change user settings](/get-familiar-with-the-ui/user-settings/#to-change-user-settings).
