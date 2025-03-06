@@ -387,17 +387,20 @@ async function getRawAndTagsFromFile(matterResult: matter.GrayMatterFile<string>
  
 
   let raw: string = `
+  ## Change Header
+  ---
   **Change Type:** ${changeType}
   **Date:** ${date}
   **Product area:** ${productArea}
   **Component:** ${component}
   **Deployed at:** ${getDeploymentListString(deployments, false)}
-  [details="Technical details"]
+  [spoiler]
   **Build artifact:** ${buildArtifact} ${version? "("+ version +")" : ""}
   **Internal ID:** ${ticket? ticket : ""}
-  [/details]
+  [/spoiler]
+  
+  ## Change Description
   ---
-
   ${formattedContent}
   `
   return {raw: raw, category: category, tags: tags.flat()};
