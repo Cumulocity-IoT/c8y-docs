@@ -8,12 +8,12 @@ helpcontent:
 - label: localization
   title: Localization
   content: "
-  Use the **Localization** feature to add translations for the existing static text in the application.
+  Use the **Localization** feature to add translations for the existing static text in the platform UI.
 
-   To add a new translation, click **Add translation** on the top menu bar. In the resulting dialog box, add the name of the key, followed by the translation in the respective field.
+   To add a new translation, click **Add translation** on the top menu bar. In the resulting dialog box, add the name of the key, followed by the translations in the respective fields.
 
 ---
-
+Using the **Localization** functionality you can add custom translations for existing static text in the UI.
 {{< c8y-admon-req >}}
 
 - To view the **Localization** page: READ permission for permission type "Application management"
@@ -24,25 +24,23 @@ helpcontent:
 
   {{< /c8y-admon-req >}}
 
-### Localization {#localization}
 
-Click **Localization** in the **Settings** to open localization settings.
+Click **Localization** in the **Settings** menu in the navigator to open the translation editor.
 
-Use the **Localization** feature if you want to add custom translations for the existing static text in the application.
 
 ![Main view localization page](/images/users-guide/Administration/admin-localization-main-page.png)
 
-To add a new translation in the application, you can add the text as key and add the translations as required.
 
-Click **Apply** to apply the changes.
 
 ### To add new identifier for translations {#to-add-new-keys-for-translations}
 
-Add a new identifier and their respective translations using the **Add translation** option on the top right.
+1. Click Add translation on the top menu bar.
+2. In the resulting dialog box, add a name for the new translation key.
+3. Optionally, add translations in the respective fields.
+4. Click Add to close the the translation editor.
+5. Click **Save and apply in the top menu bar to save and the new translation identifier and apply it in the UI.
 
-Fill all the mandatory fields in the **Add translations** dialog and click **Save**. The new key is saved including the added translations.
 
-Next, click **Apply** to apply the changes.
 
 ![localization-add-term](/images/users-guide/Administration/admin-localization-add-term.png)
 
@@ -50,17 +48,17 @@ Next, click **Apply** to apply the changes.
 
 You can add or edit translations for every identifier in two ways:
 
-1. Hover over the respective column for the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> to be visible.
+1. Hover over the respective column to display the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i>.
 2. Click the icon to select the desired language.
 3. Add or edit the translation.
 4. Click **Save**.
-
+5. Click **Save & apply** to apply the changes.
 or:
 
-1. Click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> in each row to open the **Edit translations** dialog window.
+1. Click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> in any row to open the translation editor.
 2. Add or edit the translation for any language.
 3. Click **Save**.
+4. Click **Save & apply** to apply the changes.
+Click **Save & apply** to apply the changes.
 
-Click **Apply** to apply the changes.
-
-Once all your translations are done, you can change the language under **UI settings** to see the translations in action. For more information see [To change user settings](/get-familiar-with-the-ui/user-settings/#to-change-user-settings).
+To view the added or modified translations in the UI, change the language from the user menu, see [To change user settings](/get-familiar-with-the-ui/user-settings/#to-change-user-settings).
