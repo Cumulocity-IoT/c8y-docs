@@ -8,11 +8,7 @@ helpcontent:
 - label: localization
   title: Localization
   content: "
-  Use the **Localization** feature to add translations for asset properties or asset models, as well as to add custom translations for the existing static text in the application.
-
-
-   Once you created all asset properties and asset models, their names are added under **Identifier** in the **Localization** page. You can add further translations as required.  
-
+  Use the **Localization** feature to add translations for the existing static text in the application.
 
    To add a new translation, click **Add translation** on the top menu bar. In the resulting dialog box, add the name of the key, followed by the translation in the respective field.
 
