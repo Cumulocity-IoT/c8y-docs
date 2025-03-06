@@ -45,16 +45,16 @@ Click **Localization** in the **Settings** menu in the navigator to open the tra
 You can add or edit translations for every identifier in two ways:
 
 1. Hover over the respective column to display the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i>.
-2. Click the icon to select the desired language.
+2. Click the edit icon next to the field you want to edit.
 3. Add or edit the translation.
-4. Click **Save**.
+4. Click the green checkmark to save the translation.
 5. Click **Save & apply** to apply the changes.
 
 Or:
 
-1. Click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> in any row to open the translation editor.
-2. Add or edit the translation for any language.
-3. Click **Save**.
+1. Click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> in any row to open the translation editor for the respective identifier.
+2. Add or edit the translations.
+3. Click **Add** to close the the translation editor.
 4. Click **Save & apply** to apply the changes.
 
 To view the added or modified translations in the UI, change the language from the user menu, see [To change user settings](/get-familiar-with-the-ui/user-settings/#to-change-user-settings).
