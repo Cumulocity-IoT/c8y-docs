@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Use new withTotalElements query (#8013) [GRAFT][release/cd] (#8406)
+title: Now using the withTotalElements parameter in queries
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
