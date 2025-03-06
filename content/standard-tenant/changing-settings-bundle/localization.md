@@ -68,9 +68,3 @@ or:
 Click **Apply** to apply the changes.
 
 Once all your translations are done, you can change the language under **UI settings** to see the translations in action. For more information see [To change user settings](/get-familiar-with-the-ui/user-settings/#to-change-user-settings).
-
-{{< c8y-admon-info>}}
-The added translations for an asset model or an asset property is seen only in the **Assets** page.
-
-Translations for other static text of the application are currently available for English and German.
-{{< /c8y-admon-info>}}
