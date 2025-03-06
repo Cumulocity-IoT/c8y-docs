@@ -31,4 +31,4 @@ Cumulocity GmbH's products, services and SaaS may not be used for/in
 * activities related to digital surveillance ("cyber surveillance")
 
 ### Export classification
-Cumulocity GmbH's products are classified under EU Dual-use Regulation and U.S. Export Administration Regulations. Information about such classification is available on request either by mail to Cumulocity GmbH, Toulouser Allee 25, 40211 Düsseldorf, Germany or via email to info@cumulocity.com.
+Cumulocity GmbH's products are classified under EU Dual-use Regulation and U.S. Export Administration Regulations. Information about such classification is available on request either by mail to Cumulocity GmbH, Marc-Chagall-Straße 2, 40477 Düsseldorf, Germany or via email to info@cumulocity.com.

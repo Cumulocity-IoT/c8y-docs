@@ -21,6 +21,6 @@ The details of a LWM2M device now show a <b>LWM2M configuration</b> tab which re
 - Firmware update configurations
 - A set of LWM2M Server configurations that can be written to the device during bootstrap
 
-For details, refer to the [LWM2M](/protocol-integration/lwm2m/) user documentation.
+For details, refer to the [LWM2M](/device-integration/lwm2m/) user documentation.
 
 If the new <b>LWM2M configuration</b> tab is not displayed and the <b>LWM2M bootstrap parameters</b> tab is displayed instead, the LWM2M agent is installed in an older version that does not yet support the new tab.

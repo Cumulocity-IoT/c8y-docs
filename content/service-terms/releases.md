@@ -56,8 +56,22 @@ In the annual deployment model:
 Additional considerations:
 * Bug fixes for annual releases under maintenance are deployed manually, not automatically, allowing for more controlled updates.
 * Due to the accumulated changes in each annual release, these upgrades may take longer to complete and present a potentially higher risk compared to the continuous deployment model.
-
+<!---
+image source: https://docs.google.com/spreadsheets/d/1S3sCPPBnLpQq9TJZG6Es5X1YKIzp4dAQw6wRB_sws1k/edit?usp=sharing
+-->
 ![Annual upgrade process](../../images/service-terms/annualrelease.png)
+
+### Cumulocity Edge annual release cycle
+
+{{< product-c8y-iot >}} Edge follows an annual release cycle, which occurs one month later than the [{{< product-c8y-iot >}} annual deployment](/service-terms/releases/#annual-deployment). This ensures alignment with broader system updates while providing additional time for Edge-specific testing and stability improvements.
+
+Unlike the standard {{< product-c8y-iot >}} annual deployment, {{< product-c8y-iot >}} Edge does not include a release candidate phase. Customers are expected to adopt the general availability release directly, ensuring they perform necessary validation in their environments before deployment.
+
+Customers using older Edge versions should refer to the latest documentation for migration guidance. Updates to the documentation will be made available in the {{< product-c8y-iot >}} Edge documentation.
+<!---
+image source: https://docs.google.com/spreadsheets/d/1S3sCPPBnLpQq9TJZG6Es5X1YKIzp4dAQw6wRB_sws1k/edit?usp=sharing
+-->
+![Edge annual upgrade process](../../images/service-terms/edgeannualrelease.png)
 
 ### Frequently asked questions (FAQ)
 

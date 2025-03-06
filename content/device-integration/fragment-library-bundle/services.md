@@ -14,7 +14,7 @@ have measurements, alarms and events assigned.
 
 Query, update, add and remove services using {{< product-c8y-iot >}} REST API for manipulating managed objects.
 
-**REST API examples**
+### REST API examples
 
 #### Announcing a service to the platform {#announcing-a-service-to-the-platform}
 
@@ -105,3 +105,49 @@ Or using [SmartREST static template 200](/smartrest/mqtt-static-templates/#200) 
 `200,c8y_Memory,allocated,100,MB`
 
 Similarly to measurements, alarms and events associated with the service can also be sent.
+
+### Service commands {#service-commands}
+
+A service can announce its capability to receive commands by adding the ```c8y_ServiceCommand``` operation in its ```c8y_SupportedOperations```.
+This allows the service to execute predefined or custom commands sent from the platform.
+
+#### Available service commands
+
+The list of commands a service supports is defined in the `c8y_SupportedServiceCommands` fragment. If this fragment is not present,
+the system assumes a default set of commands: `START`, `STOP`, and `RESTART`.
+
+```json
+{
+  "c8y_SupportedServiceCommands": [
+    "START",
+    "STOP",
+    "SAVE_SNAPSHOT"
+  ]
+}
+```
+
+| Name                          | Type   | Mandatory | Description |
+|--------------------------------|--------|-----------|-------------|
+| `c8y_SupportedServiceCommands` | Array | No | List of available commands for the service. If not provided, defaults to `START`, `STOP`, `RESTART`. |
+
+#### Executing service commands
+
+When a command is sent, the following operation structure is created:
+
+```json
+{
+  "deviceId": "<serviceManagedObjectId>",
+  "c8y_ServiceCommand": {
+    "command": "START",
+    "serviceName": "Nginx Web Server",
+    "serviceType": "systemd"
+  }
+}
+```
+
+The device is expected to perform the following actions:
+
+1. Set operation status to EXECUTING
+2. Find the service based in the deviceId, the serviceName, and the serviceType included in the operation
+3. Execute the service command with the found service
+4. Set operation status to SUCCESSFUL
