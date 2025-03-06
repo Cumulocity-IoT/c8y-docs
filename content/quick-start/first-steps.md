@@ -75,9 +75,9 @@ Open the Apple App Store or Google Play Store from your smartphone and search fo
 
 To connect your smartphone via QR code follow the instructions below:
 
-1.  On a desktop or laptop computer, open a web browser and log in to your {{< product-c8y-iot >}} tenant. From the Cockpit application, click **Connect Smartphone** in the Welcome widget.
+1.  On a desktop or laptop computer, open a web browser and log in to your {{< product-c8y-iot >}} tenant. From the Cockpit application, click **Connect Smartphone** in the right drawer or in the Welcome widget.
 
-    ![Cockpit application](/images/users-guide/csa/csa-connect-smartphone.png)
+    ![Cockpit application](/images/users-guide/csa/csa-connect-smartphone-right-drawer.png)
 
 2.  Follow the instructions in the wizard to step 3, ensuring that the app is installed on the smartphone.
 
@@ -113,18 +113,22 @@ On registering a device in the last step, a dashboard has automatically been cre
 Follow the instructions below to customize the new dashboard of the device you registered in the previous step.
 
 1. In the Cockpit application, select the device you created in the previous step (for example, your smartphone in the **Phones** group). Click the **SensorTag Dashboard** tab.
-2. Click **Dashboard settings** in the top menu bar to open the editor.
-   ![Customize dashboard](/images/users-guide/getting-started/getting-started-tutorial-dashboard-customize.png)
+2. Click **Edit** in the top menu bar to open the editor.
 
-3. In the **Dashboard settings**, provide the following information:
+![Customize dashboard](/images/users-guide/getting-started/getting-started-tutorial-dashboard-customize.png)
+
+3. In the dashboard editor, provide the following information like in the image below:
 
     * In the **General** section, change the menu label to "Phone SensorTag Dashboard".
-    ![Dashboard editor](/images/users-guide/getting-started/getting-started-customize-dashboard-general.png)
-    * In the **Appearance** section, change the theme to "Dark" and set the header style to "Border". The changes will be reflected immediately after selection.
-    ![Dashboard editor](/images/users-guide/getting-started/getting-started-customize-dashboard-appearance.png)
+    * In the **Layout** section, change the theme to "Dark" and set the header style to "Border".
 <br><br>
 
-4. Click **Save** to confirm and apply the modifications.
+
+  ![Dashboard editor](/images/users-guide/getting-started/getting-started-customize-dashboard.png)
+
+4. In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
+
+5. Click **Save** to save your modifications.
 
 You have successfully customized your first dashboard.
 
@@ -138,19 +142,22 @@ Next, we will show you how to create a report to track data.
 
 Reports enable you to track applications, alarms, assets, and other data in a dashboard layout. Reports are global dashboard pages, regardless of the [asset hierarchy](/cockpit/managing-assets/#asset-hierarchy). To work with reports, check if you meet the [requirements](/cockpit/working-with-reports/) first.
 
-To create a report click **Reports** in the **Navigator** on the left side and follow the steps below.
+To create a report click **Reports** in the **Navigator** on the left side and following the steps below.
 
 #### Creating a report
 
 ![Reports](/images/users-guide/getting-started/getting-started-add-a-new-report.png)
 
 1. Click the **Add report** button to open the **Add report** dialog window.
-2. In the **General** section of the **Dashboard settings**, enter a name for the report in the **Menu label** field.  For this tutorial name the report "Smartphone Measurements" and optionally provide a description below. You can display the report in the navigator with the option **Show in navigator** but we will leave that unchecked in this tutorial.
-   ![Add new report](/images/users-guide/getting-started/getting-started-add-new-report-general.png)
-3. In the **Appearance** section, change the theme to "Branded" and set the header style to "Border". The changes will be reflected immediately after selection.
-   ![Add new report](/images/users-guide/getting-started/getting-started-add-new-report-appearance.png)
-4. Click **Save** to create the report and add it to the report list.
-   ![Report created](/images/users-guide/getting-started/getting-started-report-created.png)
+2. In the **Menu label** field, enter a name for the report. For this tutorial name the report "Smartphone Measurements" and optionally provide a description below.
+3. You can display the report in the navigator with the option **Show in navigator** but we will leave that unchecked in this tutorial.
+4. In the **Layout** section, change the theme to "Branded" and set the header style to "Border". In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
+
+![Reports](/images/users-guide/getting-started/getting-started-add-new-report.png)
+
+5. Click **Save** to create the report and add it to the report list.
+
+![Reports](/images/users-guide/getting-started/getting-started-report-created.png)
 
 You have successfully created a report. See [Working with reports](/cockpit/working-with-reports/) for more details on how to add, edit and delete reports.
 
@@ -167,17 +174,20 @@ You can also develop your own widgets and add them to your {{< product-c8y-iot >
 #### To add a widget to a dashboard or a report
 
 1. Click the **Add widget** button on the main page of the report you have created in the previous step, or click **Add widget** in the top menu bar.
-   ![Add widget](/images/users-guide/getting-started/getting-started-add-widget-to-report.png)
+
+![Add widget](/images/users-guide/getting-started/getting-started-add-widget-to-report.png)
 
 2. In the **Add widget** dialog, select the Map widget type.
 
 3. Next, configure the widget. In the **Asset selection** section, select the Phones group and next select the device that was registered in a previous step "Smartphone Tutorial". Give it the **Title** "Smartphone Location" and set the **Zoom level** to 8.
-   ![Widget configuration](/images/users-guide/getting-started/getting-started-add-widget-to-report-config.png)
+
+![Widget configuration](/images/users-guide/getting-started/getting-started-add-widget-to-report-config.png)
 
 4. In the **Appearence** tab, set the **Theme** to "Light".
 
 5.  Click **Save** to add the widget to the report.
-    ![Widget added on report](/images/users-guide/getting-started/getting-started-add-widget-to-report-done.png)
+
+![Widget added on report](/images/users-guide/getting-started/getting-started-add-widget-to-report-done.png)
 
 You have added a map widget to your report. Similarly, you can add widgets to dashboards.
 
