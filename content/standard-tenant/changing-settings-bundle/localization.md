@@ -10,8 +10,7 @@ helpcontent:
   content: "
   Use the **Localization** feature to add translations for the existing static text in the platform UI.
 
-   To add a new translation, click **Add translation** on the top menu bar. In the resulting dialog box, add the name of the key, followed by the translations in the respective fields.
-
+   To add a new translation, click **Add translation** on the top menu bar. In the resulting dialog box, add the name of the key, followed by the translations in the respective fields."
 ---
 
 Using the **Localization** functionality you can add custom translations for existing static text in the UI.
