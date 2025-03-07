@@ -11,7 +11,7 @@ layout: redirect
 
 {{< management-tenant >}}s and {{< enterprise-tenant >}}s can control application access for their subtenants. In the **Applications** tab of a tenant, they can:
 
-- [View and manage existing application subscriptions](to-view-subscribed-applications)
+- [View and manage existing application subscriptions](#to-view-subscribed-applications)
 - [Subscribe applications to tenants](#to-subscribe-an-application)
 - [Monitor the microservice status](#to-monitor-the-microservice-status)
 

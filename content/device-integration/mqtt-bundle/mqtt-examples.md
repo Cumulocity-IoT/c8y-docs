@@ -664,7 +664,7 @@ private MqttClient connect() throws MqttException {
 }
 ```  
 
-The device can now publish and subscribe as a standard device. Note that before the first connect no other actions are required, for example, creating a user. The user is created during the [auto registration](/device-integration/mqtt/#device-certificates) process.
+The device can now publish and subscribe as a standard device. Note that before the first connect no other actions are required, for example, creating a user. The user is created during the [auto registration](/device-integration/device-certificates/) process.
 
 {{< c8y-admon-info >}}
 You do not need to set a password, user or tenant for the MQTT client connecting using certificates. {{< product-c8y-iot >}} will recognize the tenant and the user by the provided certificate.
@@ -824,7 +824,7 @@ Additionally, if there will be a new operation created for this device (for exam
 
 #### Improving the agent {#improving-the-agent}
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-integration/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
 
 ### Hello MQTT Node.js
 

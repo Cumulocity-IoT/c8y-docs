@@ -16,7 +16,7 @@ For details see [Application enablement & solutions > Cockpit](/cockpit/).
 
 In the change logs (or release notes for yearly releases respectively) changes can be filtered for various parameters one of which is the component. Components reflect functional subcategories from a user perspective, for example, "Administration" or "Authentication".
 
-See also [Product area](/glossary/c/#product-area).
+See also [Product area](/glossary/p/#product-area).
 
 
 ### Continuous Deployment model {#continuous-deplyoment-model}
