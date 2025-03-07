@@ -27,8 +27,6 @@ Using the **Localization** functionality you can add custom translations for exi
 
 Click **Localization** in the **Settings** menu in the navigator to open the translation editor.
 
-![Main view localization page](/images/users-guide/Administration/admin-localization-main-page.png)
-
 ### To add new identifier for translations {#to-add-new-keys-for-translations}
 
 1. Click **Add translation** on the top menu bar.
