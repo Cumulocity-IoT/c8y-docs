@@ -262,7 +262,7 @@ This block is not supported in simulation mode.</p>
 </tr>
 <tr>
 <th scope="row">Time Zone</th>
-<td><span>The time zone to be used. <p> Example: Europe/Berlin. For a full list, see the <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html%23">Supported time zones</a>.</p> <p> The default value is empty which means that the platform's time zone is used.</p></span>
+<td><span>The time zone to be used. <p> Example: Europe/Berlin. For a full list, see the <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}/developing-apama-applications-in-epl/using-epl-plug-ins/#supported-time-zones">Supported time zones</a>.</p> <p> The default value is empty which means that the platform's time zone is used.</p></span>
 </td>
 <td><span>string</span>
 </td>
@@ -937,7 +937,7 @@ Note: The format string for the time must not contain quotes (") and braces ({ a
 <p></p>
 A hash (#) can be specified in the text template by escaping it as follows: <tt>#{#}</tt>.
 <p></p>
-For more information, see the <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html">list of time zones</a> and the <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_format_specification_for_the_time_format_plug_in_functions.html">list of valid time format strings</a>.</p>
+For more information, see the <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}/developing-apama-applications-in-epl/using-epl-plug-ins/#supported-time-zones">list of time zones</a> and the <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}/developing-apama-applications-in-epl/using-epl-plug-ins/#format-specification-for-the-timeformat-functions">list of valid time format strings</a>.</p>
 
 
 #### Parameters {#text-substitution-parameters}
