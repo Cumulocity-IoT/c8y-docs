@@ -10,8 +10,7 @@ helpcontent:
   content: "
   Use the **Localization** feature to add translations for the existing static text in the platform UI.
 
-   To add a new translation, click **Add translation** on the top menu bar. In the resulting dialog box, add the name of the key, followed by the translations in the respective fields.
-
+   To add a new translation, click **Add translation** on the top menu bar. In the resulting dialog box, add the name of the key, followed by the translations in the respective fields."
 ---
 
 Using the **Localization** functionality you can add custom translations for existing static text in the UI.
@@ -27,8 +26,6 @@ Using the **Localization** functionality you can add custom translations for exi
 {{< /c8y-admon-req >}}
 
 Click **Localization** in the **Settings** menu in the navigator to open the translation editor.
-
-![Main view localization page](/images/users-guide/Administration/admin-localization-main-page.png)
 
 ### To add new identifier for translations {#to-add-new-keys-for-translations}
 
