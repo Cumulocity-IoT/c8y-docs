@@ -192,7 +192,7 @@ Note: The Average (Mean) block generates the mean for an individual device. If t
 `apama.analyticskit.blocks.core.Counter`
 
 <p>Gives a count of the total inputs and repeated inputs.</p>
-<p>If two consecutive input values have different types, they are not evaluated as repeat values. All other evaluations for if two values are equal to each other follow the same rules as EPL. For more information, refer <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ApaEplRef_types.html%23">Types</a>.</p>
+<p>If two consecutive input values have different types, they are not evaluated as repeat values. All other evaluations for if two values are equal to each other follow the same rules as EPL. For more information, refer <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}/epl-reference/types/">Types</a>.</p>
 
 
 #### Input Port Details {#counter-inputs}
