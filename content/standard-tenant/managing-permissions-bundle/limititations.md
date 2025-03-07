@@ -21,4 +21,4 @@ In all other cases {{< product-c8y-iot >}} will apply the legacy search algorith
 The legacy algorithm provides the following implications for the REST API: 
 
 - The `currentPage` query parameter will act as offset of scanned documents.
-- The REST API may return empty pages. {{< product-c8y-iot >}} searches the items that are accessible for the user but the scan has a limit per request. If there is no accessible element in the scanned items, the platform will result an empty list. In such case, the `statistics.next` URL should be used to perform a scan of the next chunk. {{< product-c8y-iot >}} will return **statistics.next** until there are items to scan. 
+- The REST API may return empty pages. {{< product-c8y-iot >}} searches the items that are accessible for the user but the scan has a limit per request. If there is no accessible element in the scanned items, the platform will result an empty list. In such case, the `statistics.next` URL should be used to perform a scan of the next chunk. {{< product-c8y-iot >}} will return `statistics.next` until there are items to scan. 
