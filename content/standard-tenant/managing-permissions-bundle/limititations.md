@@ -14,7 +14,7 @@ The [optimized performance](/standard-tenant/managing-permissions/#improving-per
 - The total number of items matching the filters is lower than **2000**. For example, if you are searching only active alarms with a given type and the number of such alarms is below 2000.
 - You are fetching measurements, alarms, events, and control for a specific device.
 
-In other cases platform will apply the Legacy search algorithm.
+In all other cases {{< product-c8y-iot >}} will apply the legacy search algorithm.
 
 ### Legacy 
 
