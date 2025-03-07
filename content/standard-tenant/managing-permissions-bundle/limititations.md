@@ -6,7 +6,7 @@ sector:
   - platform_administration
 ---
 
-The {{< product-c8y-iot >}} platform inventory roles based access have some limitations and may change the behavior of REST API. 
+The {{< product-c8y-iot >}} inventory roles based access has some limitations and may change the behavior of the REST API. 
 
 # [Optimized](https://{{< domain-c8y >}}/docs/standard-tenant/managing-permissions/#improving-performance)
 
