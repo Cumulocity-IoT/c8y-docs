@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issue preventing users in Latin America with locale es-419 from accessing Cumulocity
+title: Users with locale es-419 can again access the Cumulocity platform
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
