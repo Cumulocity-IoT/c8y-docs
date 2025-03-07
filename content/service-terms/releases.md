@@ -49,7 +49,8 @@ To help ensure that applications built on {{< product-c8y-iot >}}  continue to f
 For customers in particularly sensitive industries, {{< company-c8y >}} offers an annual deployment model, designed to provide a predictable, stable upgrade cycle. Each year, {{< company-c8y >}} designates one release as the annual release, which is deployed to customers following a carefully coordinated schedule, as outlined in the example below.
 
 In the annual deployment model:
-* A release candidate is made available on non-production instances for a two-month period, during which customers are required to perform thorough testing. As rollbacks are not available once the release is deployed, this testing period is essential.
+* A release candidate is made available on the last day of January for selected customers on non-production instances for a two-month period.
+* The official release is published on the last day of March.
 * Maintenance for each annual release ends three months after the next annual release becomes generally available (End of Maintenance, or EOM).
 * After EOM, support will continue for up to three additional months (End of Sustained Support, or EOSS); however, no further fixes will be issued during this period. Customers are expected to complete upgrades within this timeframe and will receive dedicated support to facilitate this process.
 
@@ -58,6 +59,18 @@ Additional considerations:
 * Due to the accumulated changes in each annual release, these upgrades may take longer to complete and present a potentially higher risk compared to the continuous deployment model.
 
 ![Annual upgrade process](../../images/service-terms/annualrelease.png)
+
+### Cumulocity Edge annual release cycle
+
+{{< product-c8y-iot >}} Edge follows an annual release cycle, which is published on the last day of April, one month later than the [{{< product-c8y-iot >}} annual release](/service-terms/releases/#annual-deployment). This ensures alignment with broader system updates while providing additional time for Edge-specific testing and stability improvements.
+
+Unlike the standard {{< product-c8y-iot >}} annual deployment, {{< product-c8y-iot >}} Edge does not include a release candidate phase. Customers are expected to adopt the general availability release directly, ensuring they perform necessary validation in their environments before deployment.
+
+Customers upgrading from older Edge versions should refer to the latest documentation for guidance on the upgrade process. Updates to the documentation will be made available in the {{< product-c8y-iot >}} Edge documentation.
+<!---
+image source: https://docs.google.com/spreadsheets/d/1S3sCPPBnLpQq9TJZG6Es5X1YKIzp4dAQw6wRB_sws1k/edit?usp=sharing
+-->
+![Edge annual upgrade process](../../images/service-terms/edgeannualrelease.png)
 
 ### Frequently asked questions (FAQ)
 
