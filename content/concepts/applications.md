@@ -6,7 +6,7 @@ sector:
   - getting_started
 ---
 
-{{< product-c8y-iot >}} provides a robust application enablement platform that allows users to develop, customize, and deploy applications efficiently.
+{{< product-c8y-iot >}} provides a comprehensive application enablement platform that combines no-code tools with advanced development capabilities, enabling users to build and deploy IoT solutions that are tailored to business requirements.
 
 The combination of tools and architectural flexibility empowers developers to fully customize and extend their {{< product-c8y-iot >}} applications with ease, ensuring high performance and tailored solutions for diverse business requirements.
 
