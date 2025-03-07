@@ -8,7 +8,12 @@ sector:
 
 {{< product-c8y-iot >}} provides a comprehensive application enablement platform that combines no-code tools with advanced development capabilities, enabling users to build and deploy IoT solutions that are tailored to business requirements.
 
-The combination of tools and architectural flexibility empowers developers to fully customize and extend their {{< product-c8y-iot >}} applications with ease, ensuring high performance and tailored solutions for diverse business requirements.
+The {{< product-c8y-iot >}} flexible architecture supports different levels of application enablement:
+
+- No-code enablement: Allows users to quickly configure existing applications and extend functionalities through available extensions.
+- Low-code enablement: Enables the creation of custom logic using intuitive tools like Analytics Builder and pre-built components, making development accessible to users with minimal coding experience.
+- Code-based enablement: Provides comprehensive SDK access for developers to build fully customized solutions, offering maximum flexibility and control.
+
 
 ### Key capabilities
 
