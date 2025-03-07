@@ -155,7 +155,7 @@ Within the user scope, the created beans use the credentials of the authenticate
 There are several predefined Platform API related beans with this naming pattern
 * <library-name>Api - in tenant scope like inventoryApi
 * tenant<library-name>Api - in tenant scope like tenantInventoryApi
-* userInventoryApi - in user scope
+* user<library-name>Api - in user scope like userInventoryApi
 
 These beans are
 * inventoryApi
