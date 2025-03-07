@@ -176,3 +176,18 @@ Support for MQTT 5.0 features will be added in the near future.
 
 MQTT Service uses the certificates which are assigned to the main environment domain. It always sends these certificates during TLS handshake to devices.
 Moreover, {{< enterprise-tenant >}}s are not able to customize those certificates via the SSL Management feature.
+
+#### General requirements
+
+Using device certificates with MQTT Service shares the shame requirements as outlined in [Device Certificates](/device-integration/device-certificates)
+with a further requirement of enabling auto-registration when uploading the CA certificate to the platform.
+
+#### Adding and trusting CA certificate
+
+In order to use device certificates for device authentication, the CA or intermediate certificate which signs the device certificates must be uploaded to the platform, and
+added to trusted certificates. Additionally when adding certificates the field `Auto registration` must be enabled. See [Managing Trusted Certificates](/device-management-application/managing-device-data/#managing-trusted-certificates) for detailed instructions on how to add and trust CA certificate.
+
+#### Using certificates
+Once CA certificate has been uploaded and trusted, devices can now authenticate using certificates which have been signed by the CA certificate.
+As an example doing so using mosquitto_pub would look like:
+`mosquitto_pub --cafile ca-cert.pem -d -q 1 -h "cumulocity.com" -p "9883" -i hello -u t00000007 -t "v1/devices/me/telemetry" --key client-key.pem --cert client-cert.pem -m {"temperature":25}`
