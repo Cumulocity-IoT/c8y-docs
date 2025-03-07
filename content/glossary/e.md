@@ -18,10 +18,10 @@ See also [{{< standard-tenant >}}](/glossary/s/#standard-tenant) and [{{< manage
 
 ### Event Processing Language (EPL) {#epl}
 
-On top of {{< product-c8y-iot >}} you can use the Apama streaming analytics engine to define business operations for real-time processing. The operation logic is implemented in Apama’s Event Processing Language (EPL).
+On top of {{< product-c8y-iot >}} you can use the Apama streaming analytics engine to define business operations for real-time processing. The operation logic is implemented in [Apama’s Event Processing Language (EPL)](/streaming-analytics/epl-apps/).
 EPL covers statements, which are organized into actions and monitors. Monitor files can be edited directly from within {{< product-c8y-iot >}} using the [{{< product-c8y-iot >}} Streaming Analytics](/glossary/c/#streaming-analytics) application. Alternatively, you can install Apama on your local machine and develop your applications in an Eclipse-based development environment. You can deploy your monitor files as Apama applications to {{< product-c8y-iot >}}.
 
-For details see [Getting started > Technical concepts > Real-time processing > Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl).
+For more details see the [Apama documentation]({{< link-apama-webhelp >}}).
 
 
 ### EPL Apps {#epl-apps}

@@ -1,5 +1,5 @@
 ---
-weight: 40
+weight: 5
 title: Prerequisites
 layout: redirect
 ---

@@ -11,8 +11,6 @@ An EPL app is a monitor (\*.mon) file. You can develop EPL apps in two different
 * You can use the [Streaming Analytics application](#dev-apps-with-sa) which is available from {{< product-c8y-iot >}}'s application switcher and develop your EPL apps within {{< product-c8y-iot >}}.
 * Or you can install Apama on your local machine and then develop your EPL apps (as monitor files) in [{{< apama-plugin-for-eclipse >}}](#apama-plugin), that is, in a separate environment.
 
-See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl).
-
 {{< c8y-admon-info >}}
 To be able to develop and deploy EPL apps with the Streaming Analytics application and/or to import monitor files from {{< apama-plugin-for-eclipse >}} into {{< product-c8y-iot >}},
 your tenant must be subscribed to the Apama-ctrl microservice that supports EPL apps.
