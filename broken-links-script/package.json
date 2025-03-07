@@ -1,0 +1,20 @@
+{
+  "name": "broken-links-script",
+  "version": "1.0.0",
+  "main": "BrokenLinkChecker.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:headless": "cypress run --browser chrome --spec 'cypress/e2e/link-checker.cy.js'"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "p-limit": "^6.2.0"
+  },
+  "devDependencies": {
+    "cypress": "^14.1.0"
+  }
+}
