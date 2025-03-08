@@ -13,8 +13,8 @@ If you are using a version prior to Edge 10.13, you must first update your Edge 
 
 For information about upgrading from an earlier version to Edge 10.17, see:
 
-- [Updating Edge using the GUI](https://{{< domain-c8y >}}/guides/10.17.0/edge/update/#updating-edge-gui)
-- [Updating Edge using the REST APIs](https://{{< domain-c8y >}}/guides/10.17.0/edge/update/#updating-edge-rest)
+- [Updating Edge using the GUI](/edge/edge-update/#updating-edge-gui)
+- [Updating Edge using the REST APIs](/edge/edge-update/#updating-edge-rest)
 
 in the *10.17.0 {{< product-c8y-iot >}} Edge guide*.
 
