@@ -24,7 +24,7 @@ const shortcodeMapping = {
   "c8y-edge-current-version-alt": "10.18",
   "c8y-edge-current-version": "1018",
   "c8y-support-link": "https://cumulocity.com/support",
-  "link-apamadoc-api": "https://cumulocity.com/apama/docs/latest/related/ApamaDoc/index.html",
+  "link-apamadoc-api": "https://cumulocity.com/apama/docs/latest/related/ApamaDoc/",
   "link-c8y-doc-baseurl": ".Page.Site.BaseURL",
   "link-device-portal": "https://ecosystem.cumulocity.com/devices/?filter_cumulocity_certified=yes",
   "link-apama-webhelp": "https://cumulocity.com/apama/docs/latest",
