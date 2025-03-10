@@ -17,7 +17,7 @@ See also [Global roles](/glossary/g/#global-roles) and [Inventory roles](/glossa
 
 ### Private Preview mode {#private-preview}
 
-In the [Continuous Deployment](/glossary/c/#continuous-deplyoment-model) model, the Private Preview mode refers to a feature which is only made available to selected customers.
+In the [Continuous Deployment](/glossary/c/#continuous-deployment-model) model, the Private Preview mode refers to a feature which is only made available to selected customers.
 
 See also [General Availability](/glossary/g/#ga) and [Public Preview](/glossary/p/#public-preview).
 
