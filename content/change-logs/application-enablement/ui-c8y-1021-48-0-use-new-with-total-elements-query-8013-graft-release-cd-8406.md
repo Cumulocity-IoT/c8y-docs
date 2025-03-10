@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-44459
 version: 1021.48.0
 ---
-Using the `withTotalElements` query parameter we are now able to reduce the number of queries required to retrieve the total number of items. This significantly improves the performance, especially when working with large datasets such as the device list.
+Using the `withTotalElements` query parameter {{< product-c8y-iot >}} can now reduce the number of queries required to retrieve the total number of items. This significantly improves the performance, especially when working with large datasets such as the device list.
