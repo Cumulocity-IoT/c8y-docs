@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-44459
 version: 1021.48.0
 ---
-Use new withTotalElements query (#8013) [GRAFT][release/cd] (#8406)
+This enhancement reduces the number of queries required to retrieve the total number of items and significantly improves performance when working with large data sets such as the device list.
