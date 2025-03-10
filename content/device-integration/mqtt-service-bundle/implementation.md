@@ -182,6 +182,8 @@ Moreover, {{< enterprise-tenant >}}s are not able to customize those certificate
 Using device certificates with MQTT Service shares the shame requirements as outlined in [Device Certificates](/device-integration/device-certificates)
 with a further requirement of enabling auto-registration when uploading the CA certificate to the platform.
 
+When connecting devices to MQTT Service using certificates, the tenant ID must be included in the MQTT CONNECT packet in the User Name field.
+
 #### Adding and trusting CA certificate
 
 In order to use device certificates for device authentication, the CA or intermediate certificate which signs the device certificates must be uploaded to the platform, and
