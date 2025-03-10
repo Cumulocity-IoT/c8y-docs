@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Using new withTotalElements parameter in queries
+title: Using withTotalElements parameter in queries
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
