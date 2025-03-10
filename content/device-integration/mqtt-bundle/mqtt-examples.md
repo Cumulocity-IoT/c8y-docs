@@ -957,7 +957,7 @@ Additionally, if there will be a new operation created for this device (for exam
 
 #### Improving the agent {#improving-the-agent}
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-integration/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
 
 ### Hello MQTT Python
 
@@ -1132,4 +1132,4 @@ Additionally, if there will be a new operation created for this device (for exam
 
 #### Improving the agent {#improving-the-agent}
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-integration/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

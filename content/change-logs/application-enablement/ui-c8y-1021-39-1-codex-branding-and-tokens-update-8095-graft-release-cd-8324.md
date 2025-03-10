@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62193
 version: 1021.39.1
 ---
-As part of ongoing improvements to the Codex design system, the branding and design tokens have been updated. The changes include refreshed colors, typography, and spacing to provide a more modern and consistent look and feel across the user interface. With this change, the [{{< product-c8y-iot >}} Codex documentation](https://styleguide.cumulocity.com/apps/codex/#/) has been updated accordingly and now reflects the latest token updates implemented in the Web SDK."
+As part of ongoing improvements to the Codex design system, the branding and design tokens have been updated. The changes include refreshed colors, typography, and spacing to provide a more modern and consistent look and feel across the user interface. With this change, the [{{< product-c8y-iot >}} Codex documentation](https://styleguide.cumulocity.com/apps/codex/) has been updated accordingly and now reflects the latest token updates implemented in the Web SDK."

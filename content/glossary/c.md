@@ -19,7 +19,7 @@ In the change logs (or release notes for yearly releases respectively) changes c
 See also [Product area](/glossary/p/#product-area).
 
 
-### Continuous Deployment model {#continuous-deplyoment-model}
+### Continuous Deployment model {#continuous-deployment-model}
 
 In the {{< product-c8y-iot >}} Continuous Deployment (CD) model, the different components of the {{< product-c8y-iot >}} platform are updated on a continuous basis. This means a frequent deployment of small incremental improvements. Continuous updates provide customers with a steady stream of enhancements, bug fixes, and new functionalities as they become available.
 
