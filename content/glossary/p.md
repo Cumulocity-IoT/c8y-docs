@@ -29,6 +29,6 @@ See also [Components](/glossary/c/#component).
 
 ### Public Preview mode {#public-preview}
 
-In the [Continuous Deployment](/glossary/c/#continuous-deplyoment-model) model, the Public Preview mode refers to a feature for which customers can opt-in to have the feature activated.
+In the [Continuous Deployment](/glossary/c/#continuous-deployment-model) model, the Public Preview mode refers to a feature for which customers can opt-in to have the feature activated.
 
 See also [General Availability](/glossary/g/#ga) and [Private Preview](/glossary/p/#private-preview).
