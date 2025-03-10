@@ -15,7 +15,7 @@ The {{< product-c8y-iot >}} flexible architecture supports different levels of a
 - Code-based enablement: Provides comprehensive SDK access for developers to build fully customized solutions, offering maximum flexibility and control.
 
 
-### Key capabilities
+### Self-Service Applications
 
 The key capabilities include:
 
