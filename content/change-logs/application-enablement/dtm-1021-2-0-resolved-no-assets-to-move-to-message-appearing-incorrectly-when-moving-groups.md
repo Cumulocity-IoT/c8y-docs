@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1775"
 version: "1021.2.0"
 ---
-Previously, when attempting to move groups within a hierarchy, users would receive an incorrect error message stating "No assets to move to," despite having valid destination locations available. The system now properly displays all available destination options when moving groups.
+Previously, when attempting to move groups within a hierarchy, users received an incorrect error message stating "No assets to move to", despite having valid destination assets available. The system now properly displays all available destination options when moving groups.
