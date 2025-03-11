@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Removed incorrect message appearing when moving groups"
+title: "Fixed incorrect error message showing up on moving groups"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
