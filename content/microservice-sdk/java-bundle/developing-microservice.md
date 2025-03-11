@@ -152,7 +152,7 @@ private EventApi eventApi;
 
 Within the user scope, the created beans use the credentials of the authenticated user sending the request instead of the default service user for the communication with the platform.
 
-There are several predefined Platform API related beans with this naming pattern
+There are several predefined Platform API related beans with this naming pattern:
 * <library-name>Api - in tenant scope like inventoryApi
 * tenant<library-name>Api - in tenant scope like tenantInventoryApi
 * user<library-name>Api - in user scope like userInventoryApi
