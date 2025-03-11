@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Remove copy dashboard button for device-info dashboards
+title: Removal of Disabled "Copy Dashboard" Button in Device Info-Tab
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4405
 version: 1021.49.7
 ---
-remove copy dashboard button for device-info dashboards (#8434) [GRAFT][release/cd] (#8467)
+To improve the user experience by removing redundant or non-functional elements in the UI, the "Copy Dashboard" button has been removed from dashboards in the Device Info-Tab, where it was previously disabled and offered no functional benefit. The "Copy Dashboard" button will still be available and functional for other types of dashboards.
