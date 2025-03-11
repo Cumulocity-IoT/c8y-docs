@@ -1,6 +1,6 @@
 ---
 date: ""
-title: remove copy dashboard button for device-info dashboards (#8434) [GRAFT][release/cd] (#8467)
+title: Remove copy dashboard button for device-info dashboards
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
