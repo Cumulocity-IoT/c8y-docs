@@ -1,9 +1,6 @@
 ---
 title: Localization
 layout: redirect
-outputs:
-  - html
-  - json
 sector:
   - platform_administration
 weight: 50
