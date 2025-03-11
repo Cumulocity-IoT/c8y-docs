@@ -390,7 +390,7 @@ async function getRawAndTagsFromFile(matterResult: matter.GrayMatterFile<string>
   ## Change Header
   ---
   **Change Type:** ${changeType}
-  **Date:** ${date}
+  **Date:** ${date} (first time deployed on eu-latest)
   **Product area:** ${productArea}
   **Component:** ${component}
   **Deployed at:** ${getDeploymentListString(deployments, false)}
