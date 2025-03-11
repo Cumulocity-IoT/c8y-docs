@@ -4,113 +4,115 @@
 {{ with .Params.sector}}
   {{$currentSection =  index . 0}}
 {{end}}
-<nav class="main-nav navbar">
-  <header class="nav-header">
-    {{ $term := .Site.Taxonomies.sector.Get $currentSection }}
-    {{ with $term }}
-      <a href="{{.Page.Permalink}}" class="text-center d-block p-t-8 p-b-8" >
-        <i style="font-size:46px;" class="c8y-icon-duocolor {{ .Page.Params.icon }}"></i>
-        <strong class="text-truncate text-muted" title="{{.Page.Title}}">{{ .Page.Title }}</strong>
-      </a>
-    {{ end }}
-    <div class="dropdown">
-      <button class="dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false">
-        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
-      </button>
-      <div class="dropdown-menu"
-        aria-labelledby="dropdownMenuButton">
-        <div class="navsections-dropdown-menu">
-          {{ $currentBundle := newScratch}}
-          {{$scratch := newScratch}}
-          {{ $pages := where (index .Site.Taxonomies.sector $currentSection) ".Params.type" "root" }}
-          {{ $pages := sort $pages ".Params.weight" }}
-            {{ range $pages }}
-             
-              {{ $subs := where .Site.Pages "Section" .Params.bundlefolder }}
-
-              {{$rootclass := newScratch}}
-              {{/* grab the link from the first child page  */}}
-              {{ range $sub := first 1 $subs}}
-                {{ $scratch.Set "url" $sub.Permalink}}
-              {{end}}
-
-              {{/* Check the current page to highlight the right root section  */}}
-              {{$rootclass.Set "active" "" }}
-              {{ if eq .Params.bundlefolder $current.Section }}
-                {{$rootclass.Set "active" "active" }}
-                <span class="current-app"><i class="{{.Params.icon}}"></i> {{.Title}}</span>
-                {{ $currentBundle.Set "bundle" (printf "/%s-%s" .Params.bundlefolder "bundle") }}
-              {{ else}}
-                {{ if and (eq .Params.layout "single") (eq .Title $current.Title) }}
-                  {{$rootclass.Set "active" "active" }}
-                  <span class="current-app">
-                    <i class="{{.Params.icon}}"></i> {{$current.Title}}
-                  </span>
-                {{ end }}
-              {{ end }}
-              
-              {{ $url := $scratch.Get "url" }}
-              <a class='dropdown-menu-item text-truncate {{ $rootclass.Get "active"}}'
-                href='
-                  {{if (isset .Params "external") }}
-                    {{.Params.external}}
-                  {{else}}
-                    {{$url}}
-                  {{end}}'
-                title="{{.Title}}"><i class="{{.Params.icon}}"></i>{{.Title}}</a>
-            {{ end }}
-        </div>
-      </div>
-    </div>
-  </header>
-
-  {{ $bundle := $currentBundle.Get "bundle" }}
-
-  <nav id="main-nav"
-    class="nav-sections">
-    {{ range $i, $slot := where .Site.Pages "Section" .Section }}
-    {{ if .IsPage }}
-    <div class="{{if eq $current.Permalink .Permalink }} slot-active {{ end}}">
-      {{ $parentUrl := .Permalink }}
-      {{ $bundle := printf "%s-%s" .File.BaseFileName "bundle"  }}
-      {{ $headless := .Site.GetPage $bundle }}
-      
-      {{ if $headless }}
-        <a href="javascript:void(0);"
-          data-toggle="collapse"
-          data-target="#page-nav{{$i}}"
-          class="collapse-btn {{if ne $current.Permalink .Permalink }} collapsed {{ end}}">
-          <i class="fa dlt-c8y-icon-chevron-right "></i>
+{{ if not .Params.hideLeftMenu }}
+  <nav class="main-nav navbar">
+    <header class="nav-header">
+      {{ $term := .Site.Taxonomies.sector.Get $currentSection }}
+      {{ with $term }}
+        <a href="{{.Page.Permalink}}" class="text-center d-block p-t-8 p-b-8" >
+          <i style="font-size:46px;" class="c8y-icon-duocolor {{ .Page.Params.icon }}"></i>
+          <strong class="text-truncate text-muted" title="{{.Page.Title}}">{{ .Page.Title }}</strong>
         </a>
       {{ end }}
-      <a class="{{if eq $current.Permalink .Permalink }} active {{ end}}"
-        href="{{.Permalink}}">{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant) "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</a>
+      <div class="dropdown">
+        <button class="dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+        </button>
+        <div class="dropdown-menu"
+          aria-labelledby="dropdownMenuButton">
+          <div class="navsections-dropdown-menu">
+            {{ $currentBundle := newScratch}}
+            {{$scratch := newScratch}}
+            {{ $pages := where (index .Site.Taxonomies.sector $currentSection) ".Params.type" "root" }}
+            {{ $pages := sort $pages ".Params.weight" }}
+              {{ range $pages }}
+              
+                {{ $subs := where .Site.Pages "Section" .Params.bundlefolder }}
 
-      {{ if $headless }}
-      {{ $reusablePages := sort ($headless.Resources.ByType "page") ".Params.weight" }}
-      <div id="page-nav{{$i}}"
-        class="collapse  {{if eq $current.Permalink $parentUrl }} show {{end}} ">
-        <nav class="list-group nav">
-          {{ range $reusablePages }}
-          {{if eq $current.Permalink $parentUrl }}
-          <a class="list-group-item"
-            href="#{{substr .Name 0 -3}}">{{replace .Title "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</a>
-          {{else}}
+                {{$rootclass := newScratch}}
+                {{/* grab the link from the first child page  */}}
+                {{ range $sub := first 1 $subs}}
+                  {{ $scratch.Set "url" $sub.Permalink}}
+                {{end}}
+
+                {{/* Check the current page to highlight the right root section  */}}
+                {{$rootclass.Set "active" "" }}
+                {{ if eq .Params.bundlefolder $current.Section }}
+                  {{$rootclass.Set "active" "active" }}
+                  <span class="current-app"><i class="{{.Params.icon}}"></i> {{.Title}}</span>
+                  {{ $currentBundle.Set "bundle" (printf "/%s-%s" .Params.bundlefolder "bundle") }}
+                {{ else}}
+                  {{ if and (eq .Params.layout "single") (eq .Title $current.Title) }}
+                    {{$rootclass.Set "active" "active" }}
+                    <span class="current-app">
+                      <i class="{{.Params.icon}}"></i> {{$current.Title}}
+                    </span>
+                  {{ end }}
+                {{ end }}
+                
+                {{ $url := $scratch.Get "url" }}
+                <a class='dropdown-menu-item text-truncate {{ $rootclass.Get "active"}}'
+                  href='
+                    {{if (isset .Params "external") }}
+                      {{.Params.external}}
+                    {{else}}
+                      {{$url}}
+                    {{end}}'
+                  title="{{.Title}}"><i class="{{.Params.icon}}"></i>{{.Title}}</a>
+              {{ end }}
+          </div>
+        </div>
+      </div>
+    </header>
+
+    {{ $bundle := $currentBundle.Get "bundle" }}
+
+    <nav id="main-nav"
+      class="nav-sections">
+      {{ range $i, $slot := where .Site.Pages "Section" .Section }}
+      {{ if .IsPage }}
+      <div class="{{if eq $current.Permalink .Permalink }} slot-active {{ end}}">
+        {{ $parentUrl := .Permalink }}
+        {{ $bundle := printf "%s-%s" .File.BaseFileName "bundle"  }}
+        {{ $headless := .Site.GetPage $bundle }}
+        
+        {{ if $headless }}
+          <a href="javascript:void(0);"
+            data-toggle="collapse"
+            data-target="#page-nav{{$i}}"
+            class="collapse-btn {{if ne $current.Permalink .Permalink }} collapsed {{ end}}">
+            <i class="fa dlt-c8y-icon-chevron-right "></i>
+          </a>
+        {{ end }}
+        <a class="{{if eq $current.Permalink .Permalink }} active {{ end}}"
+          href="{{.Permalink}}">{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant) "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</a>
+
+        {{ if $headless }}
+        {{ $reusablePages := sort ($headless.Resources.ByType "page") ".Params.weight" }}
+        <div id="page-nav{{$i}}"
+          class="collapse  {{if eq $current.Permalink $parentUrl }} show {{end}} ">
+          <nav class="list-group nav">
+            {{ range $reusablePages }}
+            {{if eq $current.Permalink $parentUrl }}
             <a class="list-group-item"
-              href="{{$parentUrl }}#{{substr .Name 0 -3}}">{{.Title}}</a>
-            {{end}}
-            {{ end }}
-        </nav>
+              href="#{{substr .Name 0 -3}}">{{replace .Title "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</a>
+            {{else}}
+              <a class="list-group-item"
+                href="{{$parentUrl }}#{{substr .Name 0 -3}}">{{.Title}}</a>
+              {{end}}
+              {{ end }}
+          </nav>
+        </div>
+        {{ end }}
       </div>
       {{ end }}
-    </div>
-    {{ end }}
-    {{ end }}
+      {{ end }}
+    </nav>
   </nav>
-</nav>
+{{end}}
 <div class="cover"></div>

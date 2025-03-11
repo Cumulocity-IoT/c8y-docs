@@ -51,7 +51,7 @@ The commands must be executed from the root path of the project.
 
 ### Commands {#commands}
 
-All the commands except of `new` take an array of [glob patterns](<https://en.wikipedia.org/wiki/Glob_(programming)>). These will be resolved to directories or entry point manifests.
+All the commands except of `new` take an array of [glob patterns](https://en.wikipedia.org/wiki/Glob_%28programming%29). These will be resolved to directories or entry point manifests.
 
 ```
     new [name] [template]                   Creates a folder to start a new application or extend an existing one

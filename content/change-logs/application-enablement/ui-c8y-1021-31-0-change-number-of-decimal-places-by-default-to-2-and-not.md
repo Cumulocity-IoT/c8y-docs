@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-01-30'
 title: Updated default and maximum decimal places in widget configuration
 product_area: Application enablement & solutions
 change_type:

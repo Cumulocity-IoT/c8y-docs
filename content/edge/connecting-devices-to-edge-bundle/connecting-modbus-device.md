@@ -29,4 +29,4 @@ In the Device Management application, click **All devices** in the navigator and
 
 ### How to connect Modbus devices {#how-to-connect-modbus-devices}
 
-For more information about connecting and managing Modbus devices, see [Cloud Fieldbus](/protocol-integration/cloud-fieldbus/).
+For more information about connecting and managing Modbus devices, see [Cloud Fieldbus](/device-integration/cloud-fieldbus/).

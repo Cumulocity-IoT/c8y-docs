@@ -1,6 +1,6 @@
 ---
 weight: 15
-title: Device integration using thin-edge.io
+title: Thin-edge.io
 layout: bundle
 sector:
   - device_management
