@@ -10,7 +10,7 @@ This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s
 
 1. Verify that your hardware meets the requirements specified in [Prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
 
-2. Make configuration changes to your operating system to work with K3S as per [Requirements](https://docs.k3s.io/installation/requirements#operating-systems). 
+2. Make configuration changes to your operating system to work with K3S as per [Requirements](https://docs.k3s.io/installation/requirements#operating-systems).
 
 3. Run the command below to install K3s.
 

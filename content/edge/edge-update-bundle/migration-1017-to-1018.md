@@ -16,7 +16,6 @@ For information about upgrading from an earlier version to Edge 10.17, see:
 - [Updating Edge using the GUI](/edge/edge-update/#updating-edge-gui)
 - [Updating Edge using the REST APIs](/edge/edge-update/#updating-edge-rest)
 
-in the *10.17.0 {{< product-c8y-iot >}} Edge guide*.
 
 ## Backing Up Data and Configuration on Edge 10.17 {#backing-up-data-on-edge-1017}
 In your Edge 10.17 appliance, back up the MongoDB data, Edge, {{< company-c8y >}} Agent, and OPC UA configurations.
