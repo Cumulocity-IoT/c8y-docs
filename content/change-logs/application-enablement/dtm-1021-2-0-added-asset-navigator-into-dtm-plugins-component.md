@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1759"
 version: "1021.2.0"
 ---
-A new Asset navigator module has been added to the DTM plugins component, which includes official DTM plugins and enables integration with both default and custom web applications. This module allows users to drag and drop assets and devices based on specified conditions. Also user can configure the module as per the requirement.
+A new Asset navigator module has been added to the DTM plugins component, which includes official DTM plugins and enables integration with both default and custom web applications. It adds a navigation entry in the left navigation menu for Assets, making it easy for users to browse through asset hierarchies. Users can also reorganize their assets and devices within these hierarchies using drag-and-drop functionality
