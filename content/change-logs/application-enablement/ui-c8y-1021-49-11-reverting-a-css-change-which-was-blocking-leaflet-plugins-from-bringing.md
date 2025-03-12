@@ -1,6 +1,6 @@
 ---
 date: ""
-title: reverting a css change which was blocking leaflet plugins from bringing their own images
+title: Revert CSS change to allow Leaflet plugins to include their own images
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-60439
 version: 1021.49.11
 ---
-reverting a css change which was blocking leaflet plugins from bringing their own images
+A recent CSS change inadvertently prevented Leaflet plugins from including their own images. This has been reverted to restore the previous behavior. Leaflet plugins can now properly display their custom images again. Installations using Leaflet plugins that include custom images will no longer encounter missing images.
