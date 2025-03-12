@@ -19,7 +19,7 @@ The description is closely linked to the {{< openapi >}}, which describes each i
 
 If you develop applications using Java, check [Microservice SDK for Java](/microservice-sdk/java/#introduction) for even more convenient access to {{< product-c8y-iot >}}'s functionality.
 
-For further information on integrating devices using REST, refer to [Device integration using REST](/device-integration/device-integration-rest/).
+For further information on integrating devices using REST, refer to [REST](/device-integration/device-integration-rest/).
 
 
 ### Using the REST interfaces {#using-the-rest-interfaces}

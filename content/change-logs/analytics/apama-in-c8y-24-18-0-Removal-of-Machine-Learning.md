@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:51:40.813Z
+date: 2023-12-06
 title: Removal of Machine Learning
 change_type:
   - value: change-inv-3bw8e
@@ -14,4 +14,4 @@ build_artifact:
 version: 24.18.0
 ---
 As announced with [release 10.16](https://cumulocity.com/releasenotes/release-10-16-0/announcements-10-16-0), the **Machine Learning** block in Analytics Builder has been removed.
-This is in line with the deprecation of [Machine Learning Engine](https://cumulocity.com/releasenotes/release-10-16-0/announcements-10-16-0/#machine-learning-deprecation) announced in release 10.16.
+This is in line with the deprecation of [Machine Learning Engine](https://cumulocity.com/releasenotes/release-10-16-0/announcements-10-16-0) announced in release 10.16.

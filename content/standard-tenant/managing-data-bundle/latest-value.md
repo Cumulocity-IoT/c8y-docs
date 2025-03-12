@@ -16,7 +16,7 @@ Example:
 PUT /tenant/options/measurement.series.latestvalue
 {
   "c8y_Humidity.H":"", // to enable single series c8y_Humidity.H
-  "c8y_Temperature.*":"", // to enable series under fragment c8y_Temperature
+  "c8y_Temperature.*":"" // to enable series under fragment c8y_Temperature
   // or "*":"" to enable all
 }
 ```
@@ -50,7 +50,7 @@ POST /measurement/measurements
 ```
 then,  considering the example configuration, only `c8y_Temperature.T` is stored as part of the device, while `c8y_Speed.S` is ignored.
 This means, that the measurement is stored like before, only the state update is skipped.
-To read the latest values on device level you must use the Inventory API and explicitly specify the `withLatestValues` parameter. For more information refer to the [{{< openapi >}}](https://www.{{< domain-c8y >}}/api/core/#operation/getManagedObjectResource).
+To read the latest values on device level you must use the Inventory API and explicitly specify the `withLatestValues` parameter. For more information refer to the [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/#operation/getManagedObjectResource).
 To get a single device:
 ```
 GET /inventory/managedObjects/5413?withLatestValues=true
@@ -107,7 +107,7 @@ The latest measurement values are part of the managed object and they follow the
 **Data model**
 
 The latest measurements do not store the measurement type. This information
-can be obtained using the [Measurements API](https://www.{{< domain-c8y >}}/api/core/#tag/Measurement-API).
+can be obtained using the [Measurements API](https://{{< domain-c8y >}}/api/core/#tag/Measurement-API).
 
 **Last value**
 

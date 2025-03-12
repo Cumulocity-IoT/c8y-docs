@@ -131,7 +131,7 @@ The definition and assignment of permissions and roles is done in the same way a
 
 ### Setting up Dremio account and data lake {#setting-up-dremio-account-and-data-lake}
 
-The setup of the Dremio account and the data lake is done in the same way as in a cloud deployment. See [Setting up {{< product-c8y-iot >}} DataHub](/datahub/setting-up-datahub/#setting-up-dremio-datalake) for details.
+The setup of the Dremio account and the data lake is done in the same way as in a cloud deployment. See [Setting up {{< product-c8y-iot >}} DataHub](/datahub/setting-up-datahub/#setting-up-dremio-users) for details.
 
 {{< product-c8y-iot >}} DataHub Edge is configured to use a NAS as data lake. When configuring the NAS use as mount path */datalake*. This path is mounted to */opt/mongodb/cdh-master/datalake*.
 

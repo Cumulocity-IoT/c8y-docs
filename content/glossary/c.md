@@ -16,10 +16,10 @@ For details see [Application enablement & solutions > Cockpit](/cockpit/).
 
 In the change logs (or release notes for yearly releases respectively) changes can be filtered for various parameters one of which is the component. Components reflect functional subcategories from a user perspective, for example, "Administration" or "Authentication".
 
-See also [Product area](/glossary/c/#product-area).
+See also [Product area](/glossary/p/#product-area).
 
 
-### Continuous Deployment model {#continuous-deplyoment-model}
+### Continuous Deployment model {#continuous-deployment-model}
 
 In the {{< product-c8y-iot >}} Continuous Deployment (CD) model, the different components of the {{< product-c8y-iot >}} platform are updated on a continuous basis. This means a frequent deployment of small incremental improvements. Continuous updates provide customers with a steady stream of enhancements, bug fixes, and new functionalities as they become available.
 
@@ -42,7 +42,7 @@ For details see [Analytics > DataHub](/datahub/datahub-overview/).
 
 {{< product-c8y-iot >}} Edge is the onsite solution of {{< product-c8y-iot >}} intended to run as a local software application on industrial PC’s or local servers.
 
-For details see [Edge](https://cumulocity.com/guides/edge/edge-introduction/).
+For details see [Edge](/edge/edge-introduction/).
 
 
 ### {{< product-c8y-iot >}} operational store {#operational-store}

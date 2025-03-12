@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-01-30'
 title: Device profile now includes software type information
 product_area: Device management & connectivity
 change_type:
