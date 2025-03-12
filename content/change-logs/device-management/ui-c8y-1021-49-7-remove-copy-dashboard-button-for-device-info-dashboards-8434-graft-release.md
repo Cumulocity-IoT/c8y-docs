@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4405
 version: 1021.49.7
 ---
-To improve the user experience by removing redundant or non-functional elements in the UI, the "Copy Dashboard" button has been removed from dashboards in the Device Info-Tab, where it was previously disabled and offered no functional benefit. The "Copy Dashboard" button will still be available and functional for other types of dashboards.
+To improve the user experience by removing redundant or non-functional elements in the UI, the **Copy dashboard** button has been removed from dashboards in the **Info** tab in the device details, where it was previously disabled and offered no functional benefit. The **Copy dashboard** button will still be available and functional for other types of dashboards.
