@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3538
 version: 1021.34.2
 ---
-Previously, the **Delete** button on the **Info** tab in the device details was not integrated for LWM2M devices and an additional cleanup operation was required. This button is now integrated for LWM2M devices so that they can be properly deleted. For more details see the [LWM2M user documentation](/protocol-integration/lwm2m/#device-deletion).
+Previously, the **Delete** button on the **Info** tab in the device details was not integrated for LWM2M devices and an additional cleanup operation was required. This button is now integrated for LWM2M devices so that they can be properly deleted. For more details see the [LWM2M user documentation](/device-integration/lwm2m/#device-deletion).
