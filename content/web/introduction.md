@@ -114,4 +114,4 @@ If you want to use an older version then `1019.x.x` you must to use our old tool
 
 
 ### Next steps
-If you just want to get started, we recommend to read the [next chapter](/web/gettingstarted/) which explains how you can setup your first Web SDK based Angular application. If you already have setup an application and want to understand more details of the concept, we recommend to jump to our [Codex developer](https://styleguide.cumulocity.com) documentation which explains the concepts, list all the components and defines guidlines for the styling.
+If you just want to get started, we recommend to read the [next chapter](/web/gettingstarted/) which explains how you can setup your first Web SDK based Angular application. If you already have setup an application and want to understand more details of the concept, we recommend to jump to our [Codex developer](https://styleguide.cumulocity.com/apps/codex/#/) documentation which explains the concepts, list all the components and defines guidlines for the styling.
