@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4405
 version: 1021.22.46
 ---
-remove copy dashboard button for device-info dashboards (#8434) [GRAFT][release/y2025] (#8468)
+To improve the user experience by removing redundant or non-functional elements in the UI, the **Copy dashboard** button has been removed from dashboards in the **Info** tab in the device details, where it was previously disabled and offered no functional benefit. The **Copy dashboard** button will still be available and functional for other types of dashboards.
