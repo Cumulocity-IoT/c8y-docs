@@ -12,7 +12,7 @@ sector:
 {{< c8y-admon-related >}}
 - [Cockpit](/cockpit/cockpit-introduction/) for more details on the {{< product-c8y-iot >}} UI.
 - [Managing applications](/standard-tenant/ecosystem/#managing-applications) for more information on managing applications in {{< product-c8y-iot >}}.
-- [Web SDK guide](/web/#introduction) for details on building web applications on top of {{< product-c8y-iot >}}.
+- [Web SDK guide](/web/introduction) for details on building web applications on top of {{< product-c8y-iot >}}.
 {{< /c8y-admon-related >}}
 
 
