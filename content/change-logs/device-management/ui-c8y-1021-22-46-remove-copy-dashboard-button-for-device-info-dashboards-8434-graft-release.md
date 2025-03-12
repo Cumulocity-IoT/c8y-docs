@@ -1,6 +1,6 @@
 ---
 date: ""
-title: remove copy dashboard button for device-info dashboards (#8434) [GRAFT][release/y2025] (#8468)
+title: Removed disabled "Copy dashboard" button from dashboards 
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
