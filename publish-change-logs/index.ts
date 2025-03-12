@@ -4,6 +4,7 @@ import { stringify as matterStringify, read as matterRead } from "gray-matter";
 import { format } from 'date-fns';
 import matter from "gray-matter";
 import { valid, gte, eq} from "semver";
+import { brotliCompressSync } from "zlib";
 
 const relativePathToChangeLogs = "../content/change-logs";
 const changeLogCategoryId = 22;
@@ -21,7 +22,7 @@ const categoryMap = {
   "device management": 25,
   "device connectivity": 25,
   "platform services": 26,
-  "edge": 27
+  //"edge": 27
 }
 
 if (process.argv.length < 4) {
@@ -238,7 +239,7 @@ async function processFiles() {
         }
       }
   }
-  var toBeCreatedSorted = new Map([...toBeCreated.entries()].sort());
+  var toBeCreatedSorted = new Map([...toBeCreated.entries()].sort((a, b) => Date.parse(a[0].split(" - ")[0]) - Date.parse(b[0].split(" - ")[0])));
   //Create new articles
   for (const title of toBeCreatedSorted.keys()) {
       if(maxRequests > 0 && requestsSent >= maxRequests) break;
@@ -324,8 +325,14 @@ async function processFile(matterResult: matter.GrayMatterFile<string>) {
     return "";
   }
   if(date instanceof Date) {
-    date = format(date, "yyyy-MM-dd");
-  }
+    date = format(date, "MMMM d, yyyy");
+  } else (date instanceof String)
+    date = format(Date.parse(date), "MMMM d, yyyy");
+
+  //Ignoring edge
+  if(data.product_area && data.product_area === 'Edge')
+    return "";
+
   if(data.title.endsWith("."))
     data.title = data.title.slice(0, -1);
   const title = date + " - "+ data.title.trim();
@@ -344,8 +351,9 @@ async function getRawAndTagsFromFile(matterResult: matter.GrayMatterFile<string>
   let category = changeLogCategoryId;
   let date = data.date;
   if(date instanceof Date) {
-    date = format(date, "yyyy-MM-dd");
-  }
+    date = format(date, "MMMM d, yyyy");
+  } else (date instanceof String)
+    date = format(Date.parse(date), "MMMM d, yyyy");
 
   let version = data.version;
   if(version && version === "''") version = "";
@@ -370,7 +378,7 @@ async function getRawAndTagsFromFile(matterResult: matter.GrayMatterFile<string>
   if(component) tags.push(renameTag(component)); 
   let deployments: Map<string, string> = new Map();
   if(buildArtifact) {
-    tags.push(renameTag(buildArtifact)); 
+    //tags.push(renameTag(buildArtifact)); 
     deployments = await getDeploymentsForBuildArtifact(component, buildArtifact, version);
     //for(let deployment of deployments.keys()) {
     //  tags.push(deployment);
@@ -379,16 +387,20 @@ async function getRawAndTagsFromFile(matterResult: matter.GrayMatterFile<string>
  
 
   let raw: string = `
+  ## Change Header
+  ---
   **Change Type:** ${changeType}
-  **Date:** ${date}
+  **Date:** ${date} (first time deployed on eu-latest)
   **Product area:** ${productArea}
   **Component:** ${component}
+  **Deployed at:** ${getDeploymentListString(deployments, false)}
+  [details="Technical details]
   **Build artifact:** ${buildArtifact} ${version? "("+ version +")" : ""}
   **Internal ID:** ${ticket? ticket : ""}
-  **Deployed at:** ${getDeploymentListString(deployments, false)}
-
+  [/details]
+  
+  ## Change Description
   ---
-
   ${formattedContent}
   `
   return {raw: raw, category: category, tags: tags.flat()};
@@ -468,9 +480,9 @@ function getDeploymentListString(deploymentMap: Map<string, string>, withDate: b
   } else {
     for (let deployment of deploymentMap.keys()) {
       if(!deploymentListstring)
-        deploymentListstring = deployment.replaceAll("-",".");
+        deploymentListstring = deployment.replaceAll("-",".").replaceAll("c8y.cumulocity.com","cumulocity.com");
       else {
-        deploymentListstring += ", "+deployment.replaceAll("-",".");
+        deploymentListstring += ", "+deployment.replaceAll("-",".").replaceAll("c8y.cumulocity.com","cumulocity.com");;
       }
     };
   }
