@@ -417,7 +417,7 @@ function formatContent(content: string) {
   formattedContent = formattedContent.replaceAll("{{< enterprise-tenant >}}", "Enterprise tenant");
   formattedContent = formattedContent.replaceAll("{{< company-c8y >}}", "Cumulocity");
   formattedContent = formattedContent.replaceAll("{{<link-apama-webhelp>}}", "https://cumulocity.com/apama/docs/latest");
-  formattedContent = formattedContent.replaceAll("{{<link-apamadoc-api>}}", "https://cumulocity.com/apama/docs/latest/related/ApamaDoc/index.html");
+  formattedContent = formattedContent.replaceAll("{{<link-apamadoc-api>}}", "https://cumulocity.com/apama/docs/latest/related/ApamaDoc/");
   formattedContent = formattedContent.replaceAll("{{< openapi >}}", "Cumulocity OpenAPI Specification");
   formattedContent = formattedContent.replaceAll("{{< link-c8y-github >}}", "https://github.com/Cumulocity-IoT");
   return formattedContent.replaceAll("{{< product-c8y-iot >}}", "Cumulocity").replaceAll("{{< enterprise-tenant >}}", "Enterprise Tenant"); 

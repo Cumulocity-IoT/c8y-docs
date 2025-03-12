@@ -664,7 +664,7 @@ private MqttClient connect() throws MqttException {
 }
 ```  
 
-The device can now publish and subscribe as a standard device. Note that before the first connect no other actions are required, for example, creating a user. The user is created during the [auto registration](/device-integration/mqtt/#device-certificates) process.
+The device can now publish and subscribe as a standard device. Note that before the first connect no other actions are required, for example, creating a user. The user is created during the [auto registration](/device-integration/device-certificates/) process.
 
 {{< c8y-admon-info >}}
 You do not need to set a password, user or tenant for the MQTT client connecting using certificates. {{< product-c8y-iot >}} will recognize the tenant and the user by the provided certificate.
@@ -824,7 +824,7 @@ Additionally, if there will be a new operation created for this device (for exam
 
 #### Improving the agent {#improving-the-agent}
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-integration/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
 
 ### Hello MQTT Node.js
 
@@ -957,7 +957,7 @@ Additionally, if there will be a new operation created for this device (for exam
 
 #### Improving the agent {#improving-the-agent}
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-integration/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
 
 ### Hello MQTT Python
 
@@ -1097,7 +1097,7 @@ Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to sp
 
 {{< product-c8y-iot >}} MQTT protocol supports both unsecured TCP and secured SSL connections, so when configuring  a port remember to use the correct one. No matter which connection type you select, your `serverUrl` should stay the same (like `mqtt.{{< domain-c8y >}}`).
 
-The above example uses a TCP connection. If you would like to use an SSL connection, remember to use the proper configuration from the Paho MQTT client. Further information can be found at [www.eclipse.org](http://www.eclipse.org/paho/clients/python/docs/#option-functions).
+The above example uses a TCP connection. If you would like to use an SSL connection, remember to use the proper configuration from the Paho MQTT client. Further information can be found at [www.eclipse.org](https://eclipse.dev/paho/files/paho.mqtt.python/html/).
 
 What does the script do?
 
@@ -1132,4 +1132,4 @@ Additionally, if there will be a new operation created for this device (for exam
 
 #### Improving the agent {#improving-the-agent}
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-integration/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
