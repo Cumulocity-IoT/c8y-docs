@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62022
 version: 1021.22.47
 ---
-In the **Data broker** connector configuration, there was no warning message displayed when attempting to delete a connector, which could lead to accidental deletions. This change introduces a confirmation dialog that is shown when trying to delete a **Data broker** connector.
+In the data broker connector configuration, there was no warning message displayed when attempting to delete a connector, which could lead to accidental deletions. This change introduces a confirmation dialog that is shown when trying to delete a data broker connector.
