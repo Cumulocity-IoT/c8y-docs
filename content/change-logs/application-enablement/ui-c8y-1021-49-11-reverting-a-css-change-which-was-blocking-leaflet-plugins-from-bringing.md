@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Revert CSS change to allow Leaflet plugins to include their own images
+title: Leaflet plugins can again display their custom images
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
