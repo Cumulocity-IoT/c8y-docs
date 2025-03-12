@@ -721,7 +721,7 @@ This returns a JSON response like this:
 
 Now download is possible with the self link provided inside the managedObjects section of the JSON response.
 
-For further information, refer to [binaries API](https://www.{{< domain-c8y >}}/api/#tag/Binaries) in the {{< openapi >}}.
+For further information, refer to [binaries API](https://{{< domain-c8y >}}/api/core/#tag/Binaries) in the {{< openapi >}}.
 
 
 ### Write value {#write-value}

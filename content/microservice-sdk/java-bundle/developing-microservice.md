@@ -145,7 +145,7 @@ C8Y.bootstrap.user=<username>
 C8Y.bootstrap.password=<password>
 ```
 
-To create an application and acquire credentials, refer to [Creating applications](/microservice-sdk/rest#creating-application) and [Acquiring microservice credentials](/microservice-sdk/rest#acquiring-microservice-credentials) in the **Using the REST interface** section.
+To create an application and acquire credentials, refer to [Creating applications](/microservice-sdk/rest/#creating-applications) and [Acquiring microservice credentials](/microservice-sdk/rest#acquiring-microservice-credentials) in the **Using the REST interface** section.
 
 The subscription package provides means to monitor and it acts upon changes in tenant subscriptions to a microservice. To add a custom behavior, a developer can add an event listener for `MicroserviceSubscriptionAddedEvent` and `MicroserviceSubscriptionRemovedEvent` as the following example:
 
