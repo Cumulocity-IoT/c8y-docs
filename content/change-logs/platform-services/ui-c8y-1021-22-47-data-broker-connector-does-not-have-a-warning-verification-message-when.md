@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added confirmation dialog when deleting data broker connector from its edit view
+title: Added confirmation dialog when deleting "Data broker" connector from its edit view
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
