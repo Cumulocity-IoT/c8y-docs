@@ -36,7 +36,7 @@ For details see [Application enablement & solutions > Cockpit > Data point libra
 
 ### Device {#device}
 
-Devices are a special type of [asset](/glossary/a/#asset). They can constitute a hierarchy of devices. In the {{< product-c8y-iot >}} [inventory](/glossary/i/#inventory) their [digital twins](#digital-twin) are represented as [managed objects](/glossary/m/#managed-object).
+Devices are a special type of [asset](/glossary/a/#asset). They can constitute a hierarchy of devices. In the {{< product-c8y-iot >}} [inventory](/glossary/i/#inventory) their [digital twins](#digital-twin) are represented as [managed objects](/glossary/m/#managed-objects).
 
 
 ### Device Management application {#device-management-application}
@@ -57,7 +57,7 @@ For details see [Device management & connectivity > Device integration](/device-
 
 ### Digital twin {#digital-twin}
 
-A digital twin is a digital representation of physical or virtual assets. Devices, sensors and tools are examples of physical assets, virtual assets can for example be processes or rules. In {{< product-c8y-iot >}} they are represented as [managed objects](/glossary/m/#managed-object).
+A digital twin is a digital representation of physical or virtual assets. Devices, sensors and tools are examples of physical assets, virtual assets can for example be processes or rules. In {{< product-c8y-iot >}} they are represented as [managed objects](/glossary/m/#managed-objects).
 
 ### Document {#document}
 
