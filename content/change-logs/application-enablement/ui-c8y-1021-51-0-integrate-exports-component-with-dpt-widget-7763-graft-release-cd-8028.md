@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Integrate exports component with Data Points Table widget
+title: Integrated export component into Data point table widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
