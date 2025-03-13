@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Service alarm page showed alarms from other sources
+title: Alarm tab of a service no longer shows alarms from other sources
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
