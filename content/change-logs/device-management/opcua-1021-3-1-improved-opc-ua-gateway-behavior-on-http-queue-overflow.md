@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4224
 version: 1021.3.1
 ---
-When the HTTP queue is overflowed, the OPC UA gateway will now temporarily disable server communication until the queue is recovered. This improvement helps prevent potential system overloads and ensures more stable performance during high traffic conditions. Before disabling the OPC UA communication, an alarm will be triggered to notify that the gateway is disabling communication. Once the queue and communication are restored, the previously triggered alarm will be cleared.
+When the HTTP queue is overflowed, the OPC UA gateway now temporarily disables the server communication until the queue is recovered. This improvement helps prevent potential system overloads and ensures more stable performance during high traffic conditions. Before disabling the OPC UA communication, an alarm is triggered to notify that the gateway is disabling communication. Once the queue and communication are restored, the previously triggered alarm is cleared.
