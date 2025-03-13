@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Integrate Exports component with DPT widget (#7763) [GRAFT][release/cd] (#8028)
+title: Integrate exports component with DPT widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
