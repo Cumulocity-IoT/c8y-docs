@@ -12,7 +12,7 @@ This agreement is made between {{< company-c8y >}} ("Provider") and the Customer
 
 {{< product-c8y-iot >}} is a comprehensive Internet of Things (IoT) platform designed to enable seamless connectivity, management, analysis and control of IoT devices. This agreement defines the service level of {{< product-c8y-iot >}} Software-as-a-Service operated by {{< company-c8y >}}. {{< product-c8y-iot >}} Edge is outside the scope of this agreement.
 
-The agreement applies solely to the base platform excluding optional features or features not in general availability. Optional features outside the base platform may require a separate service-level agreement. For custom applications developed using the Microservice Hosting functionality, refer to the [Microservices hosting service-level agreement](/service-terms/service-level/#microservices-sla/).
+The agreement applies solely to the base platform excluding optional features or features not in general availability. Optional features outside the base platform may require a separate service-level agreement. For custom applications developed using the Microservice Hosting functionality, refer to the [Microservices hosting service-level agreement](/service-terms/service-level/#microservices-sla).
 
 ### Service features
 
@@ -34,9 +34,9 @@ The {{< product-c8y-iot >}} platform offers a comprehensive set of features desi
     * We operate the platform in compliance with SOC II and ISO 27001 standards, encompassing a wide range of security measures, including vulnerability management, security incident management, DDoS protection, intrusion detection, and encryption of data both in transit and at rest.
 * **Business continuity and resilience:**
     * {{< product-c8y-iot >}} adheres to ISO 22301 standards for business continuity management (BCM), ensuring resilience against zone outages with zone redundancy.
-    * <a name="rto-rpo"></a>Regular backups are maintained with a 30-day retention period, a Recovery Time Objective (RTO) of 12 hours, and a Recovery Point Objective (RPO) of 24 hours. Backups are stored in the same region where the service is hosted.
-    * {{< company-c8y >}} conducts regular drills to validate its disaster recovery procedures. 
-    * RTO is valid only for the recovery of the whole platform. 
+    * Regular backups are maintained with a 30-day retention period, a Recovery Time Objective (RTO) of 12 hours, and a Recovery Point Objective (RPO) of 24 hours. Backups are stored in the same region where the service is hosted.
+    * {{< company-c8y >}} conducts regular drills to validate its disaster recovery procedures.
+    * RTO is valid only for the recovery of the whole platform.
     * There is no RTO available for the recovery of a single tenant or a number of tenants. Recovery time will depend on the data amount stored in the tenant.   
 * **API compatibility management:** The platform maintains compatibility of APIs as outlined in its [Compatibility policy](/service-terms/compatibility-policy/). Transport protocols are managed in accordance with this policy, ensuring consistent and reliable API interactions.
 * **Data ownership and portability:** As the data processor, {{< product-c8y-iot >}} ensures that Customer retains full ownership of their data. Customer can export their data at any time using the provided APIs, ensuring control and flexibility over their information.
@@ -74,6 +74,7 @@ In the interest of transparency and to ensure a mutual understanding of the serv
     * **Connectivity reliability:** Connectivity may occasionally fail. To ensure reliable communication, Customer devices and clients should implement appropriate reconnect or retry strategies. Singular connection drops or temporary failures are considered normal and do not constitute a service failure. {{< company-c8y >}} is committed to working with Customer to troubleshoot and resolve consistent and repeating communication issues.
     * **Third-party connectivity services:** Connectivity may involve third-party services such as LPWAN or mobile network operators. Customer acknowledges that while {{< product-c8y-iot >}} facilitates the transfer of data through these services, it does not operate, monitor, or troubleshoot these third-party networks. Connectivity between Customer's devices and {{< product-c8y-iot >}} service is in the sole responsibility of Customer.
 * **Data recovery**: While {{< company-c8y >}} maintains backups of data for its own business continuity management, disaster recovery on behalf of Customer (for example, after accidental data deletion by Customer) is a separate service. Customer expressly acknowledges the backup retention period and RPO outline above.
+* **Email notification**:  {{< company-c8y >}} provides a basic notification service via standard SMTP (unencrypted, port 25) for Customer to use via the {{< company-c8y >}} infrastructure components (SMTP relay). This infrastructure has been setup to transfer emails using the {{< company-c8y >}} domain, including, for example, correct SPF records for this domain. Customers using an {{< enterprise-tenant>}} can configure their own email domain and relay and use, for example, encrypted SMTP (STARTTLS) or SMTPS with their own SMTP relay. If Customer uses their own email domain, it is in the responsibility of Customer to configure, for example, the correct SPF records for that domain.
 
 ### Service availability
 

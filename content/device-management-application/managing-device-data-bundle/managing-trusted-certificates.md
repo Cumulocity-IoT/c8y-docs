@@ -11,7 +11,7 @@ helpcontent:
 {{< product-c8y-iot >}} allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be trusted by {{< product-c8y-iot >}}. A certificate is trusted when it is added to the trusted certificates and is in activated state.
 
 {{< c8y-admon-info >}}
-This section describes how to manage trusted certificates. For information on connecting devices using certificates refer to [Device certificates](/device-integration/mqtt/#device-certificates).
+This section describes how to manage trusted certificates. For information on connecting devices using certificates refer to [Device certificates](/device-integration/device-certificates/).
 {{< /c8y-admon-info >}}
 
 Click **Trusted certificates** in the **Management** menu in the navigator.

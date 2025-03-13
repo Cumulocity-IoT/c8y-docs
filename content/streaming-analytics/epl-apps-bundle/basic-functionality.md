@@ -756,7 +756,7 @@ For events that have come from {{< product-c8y-iot >}}, one of `isUpdate()` or `
 
 For more information, including examples for the different types of objects, see [Receiving update notifications]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in#receiving-update-notifications) in the Apama documentation.
 
-See also the [API Reference for EPL (ApamaDoc)]({{< link-apamadoc-api >}}/com/apama/cumulocity/package-summary.html) for more information about the `isCreate()` and `isUpdate()` actions.
+See also the [API Reference for EPL (ApamaDoc)]({{< link-apamadoc-api >}}com/apama/cumulocity/package-summary.html) for more information about the `isCreate()` and `isUpdate()` actions.
 
 
 ### Example {#example}
