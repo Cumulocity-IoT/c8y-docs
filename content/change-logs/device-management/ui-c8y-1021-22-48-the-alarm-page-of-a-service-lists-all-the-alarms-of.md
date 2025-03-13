@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4429
 version: 1021.22.48
 ---
-Previously, the **Alarms** tab  of a service displayed alarms from other sources than the respective service. This issue has been fixed and now only alarms related to the service are displayed.
+Previously, the **Alarms** tab of a service displayed alarms from other sources than the respective service. This issue has been fixed and now only alarms related to the service are displayed.
