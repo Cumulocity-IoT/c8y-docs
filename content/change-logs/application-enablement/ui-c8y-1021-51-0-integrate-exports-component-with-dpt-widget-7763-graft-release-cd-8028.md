@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59872
 version: 1021.51.0
 ---
-The export component has been integrated into the data points table widget. This change allows users to export data directly from the data points table widget. The integration allows users to efficiently generate exports based on the data displayed in the data points table widget.
+The export component has been integrated into the "Data points table" widget. This integration allows users to efficiently generate exports based on the data displayed in the "Data points table" widget.
