@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improved OPC UA Gateway Behavior on HTTP Queue Overflow
+title: Improved OPC UA gateway behavior on HTTP queue overflow
 product_area: Device management & connectivity
 change_type:
   - value: change-2c7RdTdXo4
