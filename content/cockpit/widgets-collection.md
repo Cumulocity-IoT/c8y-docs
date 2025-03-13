@@ -305,7 +305,7 @@ The icons representing the devices are color-coded. The color used follows these
 * Orange = At least one MAJOR alarm
 * Yellow = At least one MINOR alarm
 * Blue = At least one WARNING
-* Green = No alarm
+* Grey = No alarm
 
 Click a device icon, to open a popup with the following information:
 
