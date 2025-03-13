@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59872
 version: 1021.51.0
 ---
-Integrate Exports component with DPT widget (#7763) [GRAFT][release/cd] (#8028)
+The export component has been integrated into the data points table widget. This change allows users to export data directly from the data points table widget. The integration allows users to efficiently generate exports based on the data displayed in the data points table widget.
