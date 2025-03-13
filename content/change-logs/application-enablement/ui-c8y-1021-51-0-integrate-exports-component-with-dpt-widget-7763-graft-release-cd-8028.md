@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Integrate exports component with DPT widget
+title: Integrate exports component with Data Points Table widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
