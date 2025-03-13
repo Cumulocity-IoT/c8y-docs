@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4429
 version: 1021.49.10
 ---
-Previously, the alarm page of a service displayed alarms from other sources except the service in context itself. This has now been fixed and only alarms related to the service are displayed.
+Previously, the **Alarms** tab of a service displayed alarms from other sources than the respective service. This issue has been fixed and now only alarms related to the service are displayed.
