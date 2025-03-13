@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Search not highlighting the first element (#8482) [GRAFT][release/cd] (#8483)
+title: Search highlights the first element not anymore
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62914
 version: 1021.49.12
 ---
-Search not highlighting the first element (#8482) [GRAFT][release/cd] (#8483)
+In certain scenarios, the search functionality in the UI did highlight the first element in the search results. This has now been fixed. The first element in the search results is now not focused. This improves the user experience when searching for a general search term.
