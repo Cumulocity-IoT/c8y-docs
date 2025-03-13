@@ -3,8 +3,8 @@ date: ""
 title: Improved OPC UA Gateway Behavior on HTTP Queue Overflow
 product_area: Device management & connectivity
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+  - value: change-2c7RdTdXo4
+    label: Improvement
 component:
   - value: component-Tf05_KQ-B
     label: OPC UA
