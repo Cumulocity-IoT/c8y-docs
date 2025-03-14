@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Submitting values with only whitespaces in firmware, software and configuration forms no longer allowed
+date: '2025-02-27'
+title: >-
+  Submitting values with only whitespaces in firmware, software and
+  configuration forms no longer allowed
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

@@ -2,8 +2,6 @@
 weight: 10
 title: General configuration
 layout: redirect
-aliases:
-  - /enterprise-tenant/enhanced-time-series-support/
 ---
 
 The {{< product-c8y-iot >}} Operational Store provides an enhanced time series support (so-called time series collections) for measurements data. The following section summarizes how to enable/disable this feature.
@@ -59,7 +57,11 @@ Once enabled, avoid switching the property back to `DISABLED` as this can lead t
 The following APIs are not supported and do not have a replacement:
 
 * `GET /measurement/measurements/{id}`
+ 
+Alternatively, you can use the `GET /measurement/measurements` API to retrieve a list of measurements. By specifying the device (source) ID and the exact point in time when the measurement was sent by the device, the result set can be reduced significantly. Note that every returned measurement document still contains an identifier.  
 * `DEL /measurements/measurement/{id}`
+
+Future versions will add support for the operation.  
 
 The following API is partially supported:
 
