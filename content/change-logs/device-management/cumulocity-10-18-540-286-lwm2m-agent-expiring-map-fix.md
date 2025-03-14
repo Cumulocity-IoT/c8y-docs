@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: DM-4363
-version: 10.18.540.287
+version: 10.18.540.286
 ---
 In previous versions it was possible that expired realtime subscription was considered active by LWM2M agent. It could lead to issues like disconnecting from already disconnected channel or not being able to connect again. This caused the LWM2M device operations not taken in realtime for the device. This issue is now fixed.
