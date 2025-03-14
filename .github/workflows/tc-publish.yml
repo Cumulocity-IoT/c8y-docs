@@ -1,8 +1,8 @@
 name: Tech Community Changelog Publish
 on:
   workflow_dispatch:
-  #schedule:
-  #  - cron: 00 07 * * *
+  schedule:
+    - cron: 00 07 * * *
 
 permissions:
   contents: read

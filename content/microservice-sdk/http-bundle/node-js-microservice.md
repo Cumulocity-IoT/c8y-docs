@@ -4,7 +4,7 @@ title: Node.js microservice
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} provides an SDK for developing microservices using Java. Nevertheless, you are free to choose the tech-stack of your preference to develop a microservice as long as it fulfills the [general requirements](/microservice-sdk/general-aspects/#requirements).
+{{< product-c8y-iot >}} provides an SDK for developing microservices using Java. Nevertheless, you are free to choose the tech-stack of your preference to develop a microservice as long as it fulfills the [general requirements](/microservice-sdk/general-aspects/#requirements-interactions).
 
 In this example you will learn how to create and deploy a Node.js-based microservice. The application exposes endpoints to verify if the microservice is up and running and get some of the environment variables.
 
@@ -118,7 +118,7 @@ module.exports = function(app) {
 
 At this point, your microservice would be accessible via web on its endpoints to return a "Hello world" message, verify that the microservice is up and running and get some environment variables.
 
-In order to implement the controllers, you must first create a Slack app and get a token to use the Web API. Go to [Slack API: Applications](https://api.slack.com/apps?new_app=1) to create a new app. Select your workspace and give your app a name, for example, C8Y Slack bot. Then [get an OAuth access token](https://slack.dev/node-slack-sdk/getting-started#getting-a-token-to-use-the-web-api).
+In order to implement the controllers, you must first create a Slack app and get a token to use the Web API. Go to [Slack API: Applications](https://api.slack.com/apps?new_app=1) to create a new app. Select your workspace and give your app a name, for example, C8Y Slack bot. Then [get an OAuth access token](https://slack.dev/node-slack-sdk/getting-started#get-a-token-to-use-the-web-api).
 
 Once you have your Slack app and token ready, create the *controllers.js* file with the following content:
 
