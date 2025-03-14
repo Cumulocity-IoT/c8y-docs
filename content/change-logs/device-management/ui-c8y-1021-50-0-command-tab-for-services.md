@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4312
 version: 1021.50.0
 ---
-A new **Commands** tab has been implemented in the service details page of device services. The **Commands** tab allows users to send available service commands and track their execution history. For details, see [Service commands](/device-management-application/managing-device-services/#service-commands).
+A new **Commands** tab has been implemented in the service details of device services. The **Commands** tab allows users to send available service commands and track their execution history. For details, see [Service commands](/device-management-application/managing-device-services/#service-commands).
