@@ -36,7 +36,7 @@ For details see [Application enablement & solutions > Cockpit > Data point libra
 
 ### Device {#device}
 
-Devices are a special type of [asset](/glossary/a/#asset). They can constitute a hierarchy of devices. In the {{< product-c8y-iot >}} [inventory](/glossary/i/#inventory) their [digital twins](#digital-twin) are represented as [managed objects](/glossary/m/#managed-object).
+Devices are a special type of [asset](/glossary/a/#asset). They can constitute a hierarchy of devices. In the {{< product-c8y-iot >}} [inventory](/glossary/i/#inventory) their [digital twins](#digital-twin) are represented as [managed objects](/glossary/m/#managed-objects).
 
 
 ### Device Management application {#device-management-application}
@@ -52,12 +52,12 @@ For details see [Device management & connectivity > Device Management applicatio
 A device protocol defines how data from a specific device type should be transferred into the {{< product-c8y-iot >}} platform. It contains protocol-specific information about where the data is obtained from, how to transform it, and how to store it in {{< product-c8y-iot >}}.
 The definition of the device protocol differs based on the underlying protocol used by the device (for example, Modbus, LoRa, OPC UA or LWM2M).
 
-For details see [Device management & connectivity > Protocol integration](/protocol-integration/).
+For details see [Device management & connectivity > Device integration](/device-integration/).
 
 
 ### Digital twin {#digital-twin}
 
-A digital twin is a digital representation of physical or virtual assets. Devices, sensors and tools are examples of physical assets, virtual assets can for example be processes or rules. In {{< product-c8y-iot >}} they are represented as [managed objects](/glossary/m/#managed-object).
+A digital twin is a digital representation of physical or virtual assets. Devices, sensors and tools are examples of physical assets, virtual assets can for example be processes or rules. In {{< product-c8y-iot >}} they are represented as [managed objects](/glossary/m/#managed-objects).
 
 ### Document {#document}
 

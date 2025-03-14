@@ -15,7 +15,7 @@ sector:
 * [Device management & connectivity > Device integration > Fragment library > Configuration](/device-integration/fragment-library/#configuration) for details on text-based configuration, file-based configuration and typed file-based configuration.
 * The [device credentials API](https://{{< domain-c8y >}}/api/core/#tag/Device-credentials) for REST API methods concerning device credentials.
 * [Device management & connectivity > Device integration > Fragment library > Device profile](/device-integration/fragment-library/#device-profile) for details on the `c8y_DeviceProfile` fragment used in managed objects.
-* [Device management & connectivity > Device integration > Device integration using MQTT > Device certificates](/device-integration/mqtt/#device-certificates) for information on device certificates in the context of MQTT.
+* [Device management & connectivity > Device integration > Device certificates](/device-integration/device-certificates/) for information on device certificates in the context of MQTT.
 {{< /c8y-admon-related >}}
 
 The Device Management application provides features that support you in efficiently managing your devices.

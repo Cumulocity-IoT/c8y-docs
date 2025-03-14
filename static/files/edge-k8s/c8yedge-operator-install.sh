@@ -136,4 +136,5 @@ helm upgrade --install c8yedge-operator oci://${C8YEDGE_REGISTRY_HOST}/edge/helm
     --set image.pullPolicy="${C8YEDGE_IMAGE_PULL_POLICY}" \
     --set imageCredentials.registry="${C8YEDGE_REGISTRY_HOST}" \
     --set imageCredentials.username="${C8YEDGE_REGISTRY_USERNAME}" \
-    --set imageCredentials.password="${C8YEDGE_REGISTRY_PASSWORD}"
+    --set imageCredentials.password="${C8YEDGE_REGISTRY_PASSWORD}" \
+    --wait
