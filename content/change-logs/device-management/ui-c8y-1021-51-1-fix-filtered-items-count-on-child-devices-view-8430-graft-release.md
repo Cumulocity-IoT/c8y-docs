@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix filteredItemsCount on child devices view (#8430) [GRAFT][release/cd] (#8500)
+title: Fixed incorrect filtered items count on child devices view
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
