@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62872
 version: 1021.51.1
 ---
-Fix filteredItemsCount on child devices view (#8430) [GRAFT][release/cd] (#8500)
+The number of filtered items was displayed as literal text instead of being replaced with the actual value in a child device view. This now works correctly.
