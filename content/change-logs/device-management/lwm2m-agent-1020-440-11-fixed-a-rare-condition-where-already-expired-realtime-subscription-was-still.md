@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed a rare condition where LWM2M device operation realtime subscription considered active for already expired subscription in LWM2M service
+title: Fixed an issue with expired LWM2M device operation realtime subscriptions
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
