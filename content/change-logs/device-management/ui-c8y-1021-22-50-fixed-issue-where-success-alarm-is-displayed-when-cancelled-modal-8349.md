@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issue where success alarm is displayed when cancelled modal (#8349) [GRAFT][release/y2025] (#8517)
+title: Success message no longer displayed when canceling the creation of a smart group
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
