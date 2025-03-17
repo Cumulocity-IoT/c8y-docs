@@ -15,4 +15,4 @@ ticket: DM-3545
 version: 10.20.538.0
 ---
 
-In the user documentation, information has been added on how to register and delete LWM2M devices using the REST API, see [Registering LWM2M devices](/protocol-integration/lwm2m/#registering-lwm2m-devices).
+In the user documentation, information has been added on how to register and delete LWM2M devices using the REST API, see [Registering LWM2M devices](/device-integration/lwm2m/#registering-lwm2m-devices).

@@ -135,7 +135,7 @@ Only you, or a person authorized to act on your behalf, may make a verifiable co
 
 ### Contact Information
 
-You may appeal a decision relating to your consumer privacy rights request by contacting us by mail at  Cumulocity GmbH, Toulouser Allee 25, 40211 Düsseldorf, Germany, or by email at [dataprotection@cumulocity.com](mailto:dataprotection@cumulocity.com).
+You may appeal a decision relating to your consumer privacy rights request by contacting us by mail at  Cumulocity GmbH, Marc-Chagall-Straße 2, 40477 Düsseldorf, Germany, or by email at [dataprotection@cumulocity.com](mailto:dataprotection@cumulocity.com).
 
 If you would like to submit a verifiable consumer rights request, please do so via one of the two designated methods described above. If you have concerns about the result of an appeal, you may contact the attorney general in the state where you reside.
 

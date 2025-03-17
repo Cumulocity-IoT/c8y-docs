@@ -103,7 +103,7 @@ The following SLA is valid for the service:
 
 * Data durability: 99,999999999%
 
-RTO and RPO are [the same as for non-replicated backup](/service-terms/service-level/#rto-rpo).
+Recovery Time Objective (RTO) and Recovery Point Objective (RPO) are the same as for non-replicated backup.
 
 ### Status page
 

@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Clicking on alarms in the Simulator page no longer redirects to the Alarms page
+date: '2025-02-27'
+title: >-
+  Clicking on alarms in the Simulator page no longer redirects to the Alarms
+  page
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
