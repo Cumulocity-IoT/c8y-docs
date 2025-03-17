@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Success alarm no longer displayed when canceling a create smart group modal.
+title: Success message no longer displayed when canceling the creation of a smart group
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
