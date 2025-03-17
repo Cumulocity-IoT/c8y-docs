@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Search not highlighting the first element (#8482) [GRAFT][release/y2025] (#8484)
+title: Search no longer highlights the first element
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
