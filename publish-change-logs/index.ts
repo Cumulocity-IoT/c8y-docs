@@ -390,19 +390,25 @@ async function getRawAndTagsFromFile(matterResult: matter.GrayMatterFile<string>
   ## Change Header
   ---
   **Change Type:** ${changeType}
-  **Date:** ${date} (first time deployed on eu-latest)
   **Product area:** ${productArea}
   **Component:** ${component}
-  **Deployed at:** ${getDeploymentListString(deployments, false)}
-  [details=Technical details]
-  **Build artifact:** ${buildArtifact} ${version? "("+ version +")" : ""}
-  **Internal ID:** ${ticket? ticket : ""}
-  [/details]
-  
+  `;
+  if(version)
+    raw += `**Deployed at:** `+ getDeploymentListString(deployments, false) + "\n";
+  if(buildArtifact || ticket) {
+    raw += `[details=Technical details]\n`;
+    if(buildArtifact)
+      raw += `**Build artifact:** ${buildArtifact} ${version? "("+ version +")\n" : "\n"}`;
+    if(ticket)
+      raw += `**Internal ID:** ${ticket}` + "\n";
+    raw += `[/details]\n`;
+  }
+  raw += `
   ## Change Description
   ---
   ${formattedContent}
-  `
+  `;
+  
   return {raw: raw, category: category, tags: tags.flat()};
 }
 
@@ -420,6 +426,7 @@ function formatContent(content: string) {
   formattedContent = formattedContent.replaceAll("{{<link-apamadoc-api>}}", "https://cumulocity.com/apama/docs/latest/related/ApamaDoc/");
   formattedContent = formattedContent.replaceAll("{{< openapi >}}", "Cumulocity OpenAPI Specification");
   formattedContent = formattedContent.replaceAll("{{< link-c8y-github >}}", "https://github.com/Cumulocity-IoT");
+  formattedContent = formattedContent.replaceAll("(/", "(https://cumulocity.com/docs/");
   return formattedContent.replaceAll("{{< product-c8y-iot >}}", "Cumulocity").replaceAll("{{< enterprise-tenant >}}", "Enterprise Tenant"); 
 }
 function getSubCategoryFromProductArea(productArea: string): number {
