@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-6235
 version: 1021.52.1
 ---
-When a user opened a create smart group dialog and then canceled it, a success alarm was incorrectly displayed even though no action was actually completed successfully. This has now been fixed. The success alarm will now only be shown when an action is completed as expected.
+When a user opened a create smart group dialog and then canceled it, a success message was incorrectly displayed even though no action was actually completed successfully. This has now been fixed. The success alarm will now only be shown when an action is completed as expected.
