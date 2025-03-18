@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62628
 version: 1021.22.51
 ---
-Context help missing in Administrations Localization section after migration from DTM (#8409) [GRAFT][release/y2025] (#8525)
+During the migration of the localization view to the administration application, the contextual help button was removed. It is now available again.
