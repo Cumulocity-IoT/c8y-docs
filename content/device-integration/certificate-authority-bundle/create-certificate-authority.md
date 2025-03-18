@@ -59,7 +59,7 @@ On creating a new tenant's certificate authority (CA) the certificate authority 
 
 * A new key pair is created and a certificate is self-signed with `tenantID` as the Common Name (CN).
 * The private key is stored in an encrypted tenant option.
-* Store the certificate in the trusted certificate repository with auto-registration unchecked by default. The devices can be registered automatically only when device administrator checks this option ON.
+* The certificate is stored in the trusted certificate repository with auto-registration turned off by default. Devices can only be registered automatically when the administrator turns this option on.
 * If the CA certificate is removed from the trusted certificate list, remove the corresponding private key from the database collection.
 * If a CA is already present, return a message indicating the CA is already present.
 * Tenant CA certificate can also be created via UI
