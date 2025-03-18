@@ -19,7 +19,7 @@ The {{< product-c8y-iot >}} flexible architecture supports different levels of a
 
 The key capabilities include:
 
-- **[Cockpit application](/cockpit/cockpit-introduction/)** - Offers no-code tools that enable users to create and manage applications quickly. It features a drag-and-drop interface, a pre-built [widget library](/cockpit/widgets-collection/) and [smart rules](/cockpit/smart-rules/) for creating [dashboards](/cockpit/working-with-dashboards/) and analytics. This allows business users to implement realtime monitoring and data visualization solutions without extensive coding knowledge.
+- **[Cockpit application](/cockpit/cockpit-introduction/)** - Offers no-code tools that enable users to monitor and visualize IoT data quickly. It features a drag-and-drop interface, a pre-built [widget library](/cockpit/widgets-collection/) and [smart rules](/cockpit/smart-rules/) for creating [dashboards](/cockpit/working-with-dashboards/) and analytics. This allows business users to implement real-time monitoring and data visualization solutions without extensive coding knowledge.
 - **[Digital Twin Manager](/dtm/dtm-introduction/)** - helps users create and manage blueprints of their assets, including its properties, relationships, and connections to sensor and device data. 
 
 - **[Branding manager](/enterprise-tenant/customization/#branding)** - Enables organizations to modify logos, colors, fonts, and [domain names](/enterprise-tenant/customization/#domain-name) for a consistent, white-labeled experience that aligns with their brand identity.
