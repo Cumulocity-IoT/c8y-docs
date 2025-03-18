@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data point explorer and data point graph have been migrated to angular. Both features have been further improved.
+title: Data point explorer and data point graph improved with new capabilities
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
