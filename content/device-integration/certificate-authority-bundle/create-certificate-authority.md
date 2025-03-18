@@ -92,20 +92,19 @@ ROLE_TENANT_MANAGEMENT_READ
 </section>
 {{< /c8y-admon-info >}}
 
-**Via UI:**
+### Creating a CA certificate via the UI {#creating-a-ca-certificate-via-the-ui}
 
-If it is disabled then button `Add CA certificate` is not visible.
+If the Certificate Authority feature is disabled the button **Add CA certificate** is not visible.
 
 ![CA is disabled](/images/certificate-authority/disabledCertificateAuthority.png)
 
-We can simply follow instructions from [Prerequisites](#prerequisites) to enable it. After enabling UI will have button `Add CA certificate`.
+Follow the instructions in [Prerequisites](#prerequisites) to enable it. After enabling the feature, the UI will show the button **Add CA certificate**.
 
 ![CA is enabled](/images/certificate-authority/enabledCertificateAuthority.png)
 
 1. In the Device Management application, navigate to the **Management** menu in the navigator and select **Trusted certificates**.
-2. Right corner there is a button `Add CA certificate`, after clicking this button CA will be created and listed down in page **Trusted certificates**.
-3. Same things will be created when CA is created which is mentioned in API section.
-4. After CA is created button `Add CA certificate` will be disabled. And from API we will not be able to create CA certificate as each tenant can have maximum one tenant CA.
+2. Click **Add CA certificate** at the top right to create the CA certificate.
+3. After the CA has been created the **Add CA certificate** button will be disabled. Moreover, it will not be possible to create a CA via the API as each tenant can have maximum one tenant CA.
 
 Then new CA certificate will be added to the trusted certificates list:
 
