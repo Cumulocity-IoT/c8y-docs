@@ -20,7 +20,7 @@ In order to follow this tutorial, check the following prerequisites:
       Content-Type: application/json
       Authorization: Basic <<Base64 encoded bootstrap credentials>>
 
-If we get 400 or 200 with `active: false` then it is disabled for tenant. 
+If you get a 400 or 200 with `active: false` then the feature is disabled for the tenant. 
 
     HTTP/1.1 200 OK
     Content-Type: application/json
