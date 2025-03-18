@@ -55,7 +55,7 @@ Replace `<username>`, `<password>` with the appropriate credentials given to you
 
 **Via REST:**
 
-For creating a new tenant's certificate authority(CA) create certificate authority API need to be called. These following things happen when we call this API:
+On creating a new tenant's certificate authority (CA) the certificate authority API must be called. This triggers the following actions:
 
 * A new key pair is created and a certificate is self-signed with `tenantID` as the Common Name (CN).
 * The private key is stored in an encrypted tenant option.
