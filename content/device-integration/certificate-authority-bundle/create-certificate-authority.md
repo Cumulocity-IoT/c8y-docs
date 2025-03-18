@@ -13,7 +13,7 @@ In order to follow this tutorial, check the following prerequisites:
 
 * You have a valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * The Certificate Authority feature is enabled on instance and tenant level.
-* For enabling this feature on instance level need to contact support to enable.
+* For enabling this feature on instance level you must contact [product support](/additional-resources/contacting-support/).
 * On tenant level we can simply check with this API:
 
       GET /features/certificate-authority
