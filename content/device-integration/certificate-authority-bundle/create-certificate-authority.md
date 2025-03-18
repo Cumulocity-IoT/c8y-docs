@@ -106,6 +106,6 @@ Follow the instructions in [Prerequisites](#prerequisites) to enable it. After e
 2. Click **Add CA certificate** at the top right to create the CA certificate.
 3. After the CA has been created the **Add CA certificate** button will be disabled. Moreover, it will not be possible to create a CA via the API as each tenant can have maximum one tenant CA.
 
-Then new CA certificate will be added to the trusted certificates list:
+The new CA certificate will be added to the trusted certificates list:
 
 ![Trusted CA certificate added](/images/certificate-authority/trustedCAadded.png)
