@@ -31,7 +31,7 @@ If you get a 400 or 200 with `active: false` then the feature is disabled for th
         "strategy":"TENANT",
         "key":"certificate-authority"
     }
-For enabling this feature we need to call this API
+To enable the feature you must call this API:
 
     PUT /features/certificate-authority/by-tenant
     Content-Type: application/json
