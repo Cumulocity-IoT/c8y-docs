@@ -63,7 +63,7 @@ On creating a new tenant's certificate authority (CA) the certificate authority 
 * If a CA is already present, return a message indicating the CA is already present.
 * Tenant CA certificate can also be created via UI
 Moreover, if the CA is removed from the trusted certificate list, the corresponding private key is removed from the database collection.
-This is example of REST request:
+This is an example of a REST request:
 
     POST /certificate-authority
     Content-Type: application/json
