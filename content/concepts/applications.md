@@ -39,13 +39,7 @@ For more advanced customization, {{< product-c8y-iot >}} supports:
 
 - **Managed microservices hosting** - Enables developers to deploy [custom backend services](/standard-tenant/ecosystem/#custom-microservices) using the [Microservice SDK](/microservice-sdk/microservice-sdk-introduction/). This allows for efficient development and extension of business logic within a secure, scalable environment, without managing external infrastructure.
 
-### Tenants concept
-
-{{< product-c8y-iot >}} includes built-in **[multi-tenancy](/concepts/tenant-hierarchy/) & [application subscription management](/enterprise-tenant/managing-tenants/#subscribing-applications)** features that allow for:
-
-- Secure data isolation by assigning dedicated [tenants](/enterprise-tenant/managing-tenants/)
-- Customized application features for different client needs
-- Scalable service rollout across multiple customers
+These capabilities, combined with {{< product-c8y-iot >}} built-in **[multi-tenancy](/concepts/tenant-hierarchy/) and [application subscription management](/enterprise-tenant/managing-tenants/#subscribing-applications)**, create a robust foundation for scalable and secure application enablement. 
 
 
 ### Other resources
