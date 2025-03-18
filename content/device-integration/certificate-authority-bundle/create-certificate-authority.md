@@ -53,7 +53,7 @@ This call can be done by executing the following curl statement:
 
 Replace `<username>`, `<password>` with the appropriate credentials given to you when registering with {{< product-c8y-iot >}}.
 
-**Via REST:**
+### Creating a CA certificate via REST {#creating-a-ca-certificate-via-the-rest}
 
 On creating a new tenant's certificate authority (CA) the certificate authority API must be called. This triggers the following actions:
 
@@ -61,8 +61,8 @@ On creating a new tenant's certificate authority (CA) the certificate authority 
 * The private key is stored in an encrypted tenant option.
 * The certificate is stored in the trusted certificate repository with auto-registration turned off by default. Devices can only be registered automatically when the administrator turns this option on.
 * If a CA is already present, returns a message indicating the CA is already present.
-* The tenant CA certificate can also be created via the UI.
-Moreover, if the CA is removed from the trusted certificate list, the corresponding private key is removed from the database collection.
+* Moreover, if the CA is removed from the trusted certificate list, the corresponding private key is removed from the database collection.
+
 This is an example of a REST request:
 
     POST /certificate-authority
