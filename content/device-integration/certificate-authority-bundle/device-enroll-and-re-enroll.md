@@ -13,7 +13,9 @@ In order to follow this tutorial, check the following prerequisites:
 * You have a valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * A Certificate Authority (CA) is already created for this tenant.
 
-On creating a new device certificate the device enroll API is called. This triggers the following actions:
+### Enroll a device certificate {#enroll-a-device-certificate}
+
+On creating a new device certificate the Device enroll API is called. This triggers the following actions:
 
 * The Device enroll API is used by a device to get a fresh new certificate.
 * If no CA is available an error will be returned.
