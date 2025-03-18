@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Contextual help is again available for the localization view in the Administration application
+title: Contextual help is available again for the localization view in the Administration application
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
