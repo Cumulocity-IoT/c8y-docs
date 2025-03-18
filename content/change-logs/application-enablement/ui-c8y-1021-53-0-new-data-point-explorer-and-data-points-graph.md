@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data point explorer and data point graph improved with new capabilities
+title: Enhanced data point explorer and data point graph widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
