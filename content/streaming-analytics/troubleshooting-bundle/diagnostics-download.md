@@ -30,7 +30,7 @@ Basic diagnostics information is provided in a ZIP file named *diagnostic-overvi
 - The microservice log file contents, if available, including a record of the correlator's startup logging and the last hour or maximum of 20,000 lines of logging.
 
     {{< c8y-admon-info >}}
-  In case of {{< product-c8y-iot >}} Edge Applicance VM, since Apama-ctrl is not deployed as a microservice in the VM-based distribution, Apama logs can be retrieved using the diagnostic utility. For more details, see [Apama log file locations](https://cumulocity.com/guides/edge/operating-edge/#apama-log-file-locations) and [Diagnostic utility](https://cumulocity.com/guides/edge/operating-edge/#diagnostics).
+  In case of {{< product-c8y-iot >}} Edge Applicance VM, since Apama-ctrl is not deployed as a microservice in the VM-based distribution, Apama logs can be retrieved using the diagnostic utility. For more details, see [Apama log file locations](/edge/operating-edge/#apama-log-file-locations) and [Diagnostic utility](/edge/operating-edge/#diagnostics).
     {{< /c8y-admon-info >}}
 
 - Apama-internal diagnostics information (similar to the `engine_watch` and `engine_inspect` command-line tools available in Apama).

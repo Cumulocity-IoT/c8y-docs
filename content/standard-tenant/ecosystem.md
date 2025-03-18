@@ -38,7 +38,7 @@ Note that for complete application management some additional permission types w
 
 {{< c8y-admon-related >}}
 - [Platform administration > {{< standard-tenant >}} administration > Managing permissions](/standard-tenant/managing-permissions) for details on assigning roles and permissions for the usage of {{< product-c8y-iot >}} applications.
-- [Platform administration > {{< standard-tenant >}} administration > Changing settings > Application](/standard-tenant/changing-settings/#application-settings) for information on changing the application settings for your account.
+- [Platform administration > {{< standard-tenant >}} administration > Changing settings > Application](/standard-tenant/changing-settings/#application) for information on changing the application settings for your account.
 - [Platform administration > {{< enterprise-tenant >}} administration > Managing tenants > Subscribing applications](/enterprise-tenant/managing-tenants/#subscribing-applications) for information on application subscriptions on tenant level.
 - [Application enablement & solutions > Cockpit > Widgets collection > Applications](/cockpit/widgets-collection/#applications) for information on the "Applications" widget.
 - [Getting started > Technical concepts > Developing applications](/concepts/applications) for an overview on the basic concepts of applications in {{< product-c8y-iot >}}.
