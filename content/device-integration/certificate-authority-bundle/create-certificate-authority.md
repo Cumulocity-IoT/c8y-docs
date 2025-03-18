@@ -85,7 +85,7 @@ The following response is returned:
 This certificate identified as a TENANT CA and it has attribute `tenantCertificateAuthority":true`.
 
 {{< c8y-admon-info >}}
-Note that it is possible to call this endpoint without the ROLE_TENANT_MANAGEMENT_ADMIN or ROLE_TENANT_MANAGEMENT_READ role, but only when user is a service user. Otherwise, if the the user does not have the required role, an HTTP response 403 will be returned.
+You can call this endpoint without the ROLE_TENANT_MANAGEMENT_ADMIN or ROLE_TENANT_MANAGEMENT_READ role only, if the user is a service user. Otherwise, if the user does not have the required role, an HTTP response 403 will be returned.
 <section><h5>Required roles</h5>
 ROLE_TENANT_MANAGEMENT_ADMIN
 ROLE_TENANT_MANAGEMENT_READ
