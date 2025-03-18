@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Context help missing in Administrations Localization section after migration from DTM (#8409) [GRAFT][release/y2025] (#8525)
+title: Contextual help is available for the localizations view in administration
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
