@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62872
 version: 1021.51.1
 ---
-The number of filtered items was displayed as literal text instead of being replaced with the actual value in a child device view. This now works correctly.
+Previously, the number of filtered items in the child device view was displayed as text instead of being replaced with the actual value. This issue has been fixed and the actual value is displayed now properly. 
