@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62022
 version: 1018.503.149
 ---
-DataBroker connector does not have a warning verification message when deleting it (#8410) [GRAFT][release/y2024] (#8476)
+When attempting to delete a data broker connector from a connectors list, a warning message will be displayed asking the user to confirm the deletion. This helps prevent accidental deletion of data broker connectors.
