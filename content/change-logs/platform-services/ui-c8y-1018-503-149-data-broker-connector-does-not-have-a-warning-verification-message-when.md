@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62022
 version: 1018.503.149
 ---
-When attempting to delete a data broker connector from a connectors list, a warning message will be displayed asking the user to confirm the deletion. This helps prevent accidental deletion of data broker connectors.
+In the data broker connector configuration, there was no warning message displayed when attempting to delete a connector, which could lead to accidental deletions. This change introduces a confirmation dialog that is shown when trying to delete a data broker connector, ensuring that connectors are no longer unintentionally removed.
