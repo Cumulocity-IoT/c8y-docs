@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62499
 version: 1018.503.150
 ---
-Cumulocity IoT SSO UI bug in 2024.9version (#8412)
+Previously, when users attempted to configure Single Sign-On settings and selected multiple default global roles, multiple default applications, or a combination of both, the form would extend beyond the visible area, making some fields inaccessible. Users can now properly view and complete all form fields regardless of their selection.
