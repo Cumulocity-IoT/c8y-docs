@@ -5,6 +5,10 @@ layout: redirect
 
 ---
 
+The Cumulocity Microservice SDK is a tool kit supporting efficient development of applications
+using the Cumulocity Platform API. The source code is located in the Github repository
+[Cumulocity Java client](https://github.com/Cumulocity-IoT/cumulocity-clients-java).
+
 See below for the different microservice SDK features, including annotations, services, configuration files, logging and the Maven build plugin.
 
 There are two possible deployment types on the platform:
@@ -28,99 +32,142 @@ Annotation | Description
 @EnableMicroservicePlatformInternalApi | Injects the platform API services into Spring context for a microservice to use
 @EnableTenantOptionSettings | Provides microservice configuration within tenant options and allows overriding default properties from files
 
-### Context support {#context-support}
 
-The context support is covered by the annotation `@EnableContextSupport`. It allows to choose between `@TenantScope` and `@UserScope` which is related to the user management of microservices, as described in [General aspects](/microservice-sdk/general-aspects) in {{< product-c8y-iot >}}.
 
-Each microservice has a service user which can be used for the interaction with the platform. The roles associated with this user are specified in the manifest.
-Within the tenant scope, the credentials of this service user are used for the communication with the platform, while within the user scope the credentials of the authenticated user sending the request to the microservice are used.
+### Platform API {#platform-api}
 
-#### Setting the context
-You can explicitly set the context along with the credentials to be used through `ContextService`. To use the credentials of the user sending the request, use `ContextService<UserCredentials>`. Accordingly, `ContextService<MicroserviceCredentials>` can be used for service user credentials.
-Examples on how to use `ContextService` are given below.
+The Cumulocity Microservice SDK package consists of a number of services that are built and injected into Spring context.
+A developer can use them to perform basic operations against the platform. The beans are built based on the properties read from a file. For hosted deployment, most of the properties are provided by the platform.
+
+The API provides the following services:
+
+* Alarm - AlarmApi
+* AuditRecord - AuditRecordApi
+* Operation - DeviceControlApi
+* Event - EventApi
+* EventBinary - EventBinaryApi
+* ExternalID - IdentityApi
+* Binary - BinariesApi
+* ManagedObject - InventoryApi
+* Measurement - MeasurementApi
+* DeviceCredentials - DeviceCredentialsApi
+* User - UserApi
+* TenantOption - TenantOptionApi
+* SystemOption - SystemOptionApi
+* Token - TokenApi
+* Notification - NotificationSubscriptionApi
+
+
+The API provides basic CRUD methods. The following is an alarm interface example:
+
+```java
+// Methods
+AlarmRepresentation create(final AlarmRepresentation alarm)
+Future createAsync(final AlarmRepresentation alarm)
+
+AlarmRepresentation getAlarm(final GId gid)
+AlarmCollection getAlarms()
+AlarmCollection getAlarmsByFilter(final AlarmFilter filter)
+
+AlarmRepresentation update(final AlarmRepresentation alarm)
+```
+
+Sample usage:
 
 ```java
 @Autowired
-private ContextService<UserCredentials> contextService;
-@Autowired
-private EventApi eventApi;
+private AlarmApi alarms;
 
-public PagedEventCollectionRepresentation get10Events () {
-  return contextService.runWithinContext(contextService.getContext(), () -> eventApi.getEvents().get(10));
+public AlarmRepresentation addHelloAlarm (){
+    AlarmRepresentation alarm = new AlarmRepresentation();
+    alarm.setSeverity("CRITICAL");
+    alarm.setStatus("Hello");
+
+    return alarms.create(alarm);
 }
 ```
-In this first example, the events are obtained using the credentials of the authenticated user.
 
 
-In the second example, the credentials of the service user will be utilized to retrieve the events.
+### Using the Platform API
+
+The Cumulocity Microservice SDK provides predefined methods to interact with the Cumulocity platform.
+Several APIs are available to execute basic operations on the platform with corresponding Beans in the SDK,
+like `eventApi`, `inventoryApi`, `measurementApi`, etc.
+
+There are two types of context in which API requests can be executed: tenant scope and user scope.
+Each microservice has a service user which can be used for the interaction with the platform.
+The roles associated with this user are specified in the manifest.
+Within the tenant scope, the credentials of this service user are used for the communication
+with the platform, while within the user scope the credentials of the authenticated user
+sending the request to the microservice are used. By default, the Platform API related beans provided by the Microservice SDK are created in the
+tenant scope.
+
+A basic example shows the usage of the predefined `eventApi` in the tenant scope:
+
 ```java
-@Autowired
-private ContextService<MicroserviceCredentials> contextService;
 @Autowired
 private EventApi eventApi;
 
-public PagedEventCollectionRepresentation get10Events () {
-  return contextService.runWithinContext(contextService.getContext(), () -> eventApi.getEvents().get(10));
+public List<EventRepresentation> getEvents () {
+  return eventApi.getEvents().get().getEvents();
 }
 ```
 
-#### Tenant scope  
-The tenant scope is associated with the usage of the service user credentials and is annotated with `@TenantScope`.
-To create a bean, named `tenantEventApi` in the tenant scope, use the annotation `@TenantScope`, as in the following code example.
-
-```java
-@Autowired
-private Platform platform;
-
-@TenantScope
-@Bean(name = "tenantEventApi")
-public EventApi eventApi (Platform platform) throws SDKException {
-  return platform.getEventApi();
-}  
-```
-
-By default, the Platform API related beans provided by the Microservice SDK are created in the tenant scope and use the service user to communicate with the platform.  
-
-There are predefined beans both in the `@TenantScope` and `@UserScope`.
-The name of a bean in the tenant scope consists of the prefix `"tenant"` and the name of the respective API. Thus, to use the Event API in the tenant scope, you can specify @Qualifier("tenantEventApi"), as shown in the example below. As the tenant scope is the default context for the created beans, the annotation can also be omitted. Therefore, the following two excerpts are equivalent and both suggest that the service user credentials will be used for the communication with the platform.
-
-```java
-@Autowired
-@Qualifier("tenantEventApi")
-private EventApi eventApi;
-```
-
-```java
-@Autowired
-private EventApi eventApi;
-```
-In both cases, beans within the tenant scope will be auto-wired.
-
-#### User scope
-In certain situations the microservice should not use the service user credentials but the credentials of the user sending the request.
-
-To create a bean in the user scope, specify `@UserScope`:
-
-```java
-@Autowired
-private Platform platform;
-
-@UserScope
-@Bean(name = "userEventApi")
-public EventApi eventApi (Platform platform) throws SDKException {
-  return platform.getEventApi();
-}  
-```
-
-Analogously to the tenant scope case, there are predefined beans in the user scope. The name of such beans consists of the prefix "user" and the name of the API. An example of auto-wiring a bean of the `@UserScope` is given below.
+If the request has to be executed within the user scope the bean must be annotated with  
+`@Qualifier("userEventApi")` like in the next example.
 
 ```java
 @Autowired
 @Qualifier("userEventApi")
-private EventApi eventApi;
+private EventApi userEventApi;
+
+public List<EventRepresentation> getEvents () {
+  return userEventApi.getEvents().get().getEvents();
+}
 ```
 
-Within the user scope, the created beans use the credentials of the authenticated user sending the request instead of the default service user for the communication with the platform.
+Default context is the tenant scope also in Java classes with `@RestController` annotations
+and in `EventListener` methods.
+To access a specific tenant, the appropriate context needs to be set by using the
+`MicroserviceSubscriptionsService` like in the next example.
+
+```java
+@Autowired
+private MicroserviceSubscriptionsService subscriptionsService;
+@Autowired
+EventApi eventApi;
+...
+    subscriptionsService.runForTenant("tenant-name", () -> eventApi.getEvents().get().getEvents());
+...
+```
+
+To access the platform services, several predefined beans are available. They can be used with
+this naming scheme analogously to the examples above:
+
+Bean names in tenant scope | Qualifier for user scope
+---------------------------|---------------------------
+inventoryApi, tenantInventoryApi | userInventoryApi
+identityApi, tenantIdentityApi | userIdentityApi
+measurementApi, tenantMeasurementApi | userMeasurementApi
+deviceControlApi, tenantDeviceControlApi | userDeviceControlApi
+alarmApi, tenantAlarmApi | userAlarmApi 
+eventApi, tenantEventApi | userEventApi
+eventBinaryApi, tenantEventBinaryApi | userEventBinaryApi
+auditRecordApi, tenantAuditRecordApi | userAuditRecordApi
+deviceCredentialsApi, tenantDeviceCredentialsApi | userDeviceCredentialsApi
+binariesApi, tenantBinariesApi | userBinariesApi
+userApi, tenantUserApi | userUserApi
+tenantOptionApi, tenantTenantOptionApi | userTenantOptionApi
+systemOptionApi, tenantSystemOptionApi | userSystemOptionApi
+tokenApi, tenantTokenApi | userTokenApi
+notificationSubscriptionApi, tenantNotificationSubscriptionApi | userNotificationSubscriptionApi
+
+Various examples demonstrating use cases of the Platform API can be found in the GitHub repositories
+[Cumulocity microservice templates](https://github.com/Cumulocity-IoT/cumulocity-microservice-templates) and
+[Cumulocity examples](https://github.com/Cumulocity-IoT/cumulocity-examples).
+
+
+
 
 ### Microservice security {#microservice-security}
 
@@ -165,49 +212,6 @@ To calculate heap and perm/metadata, it takes the limit defined on the [microser
 10% is taken for Metaspace, but not less than 64 MB and not more than 1024MB. <br>
 The rest is allocated for heap size.
 
-### Platform API {#platform-api}
-
-The package consists of a number of services that are built and injected into Spring context. A developer can use them to perform basic operations against the platform. The beans are built based on the properties read from a file. For hosted deployment, most of the properties are provided by the platform.
-
-The API provides the following services:
-
-* Alarm - AlarmApi
-* AuditRecord - AuditRecordApi
-* Operation - DeviceControlApi
-* Event - EventApi
-* ExternalID - IdentityApi
-* Binary - BinariesApi
-* ManagedObject - InventoryApi
-* Measurement - MeasurementApi
-
-The API provides basic CRUD methods. The following is an alarm interface example:
-
-```java
-// Methods
-AlarmRepresentation create(final AlarmRepresentation alarm)
-Future createAsync(final AlarmRepresentation alarm)
-
-AlarmRepresentation getAlarm(final GId gid)
-AlarmCollection getAlarms()
-AlarmCollection getAlarmsByFilter(final AlarmFilter filter)
-
-AlarmRepresentation update(final AlarmRepresentation alarm)
-```
-
-Sample usage:
-
-```java
-@Autowired
-private AlarmApi alarms;
-
-public AlarmRepresentation addHelloAlarm (){
-    AlarmRepresentation alarm = new AlarmRepresentation();
-    alarm.setSeverity("CRITICAL");
-    alarm.setStatus("Hello");
-
-    return alarms.create(alarm);
-}
-```
 
 ### Configuration files {#configuration-files}
 
