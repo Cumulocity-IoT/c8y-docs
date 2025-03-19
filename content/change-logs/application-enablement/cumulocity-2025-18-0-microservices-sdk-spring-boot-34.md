@@ -22,7 +22,7 @@ The version 2025.18.0 will also bring along updates to several third-party libra
 These changes will be included in the org.springframework.boot:spring-boot-dependencies:3.4.2 dependency 
 which comes with Microservice SDK.
 
-**Impact**: Each of these updates may impact your microservices, potentially requiring code changes.
+**Impact**: The update may impact your microservices, potentially requiring code changes.
 
 **Migration Resources**: Refer to the following guides for assistance with the changes:
 
