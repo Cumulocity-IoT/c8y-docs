@@ -11,7 +11,7 @@ jobs:
   publish_tech_community_changelog:
     name: Publish Tech Community Changelog
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 120
     environment: build-pipeline
     steps:
       - name: Checkout docs repository
