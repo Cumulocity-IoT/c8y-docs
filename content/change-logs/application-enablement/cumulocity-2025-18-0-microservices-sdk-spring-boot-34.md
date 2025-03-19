@@ -26,6 +26,6 @@ which comes with Microservice SDK.
 
 **Migration Resources**: Refer to the following guides for assistance with the changes:
 
-* [Spring Boot 3.0 Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.4-Release-Notes)
+* [Spring Boot 3.4 Release Notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.4-Release-Notes)
 
 * [Spring Framework 6.2 What's New](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.2-Release-Notes)
