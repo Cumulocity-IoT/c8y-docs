@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Cumulocity IoT SSO UI bug in 2024.9version (#8412)
+title: Fixed an issue where the SSO form would break when selecting multiple default global roles, default applications, or both
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
