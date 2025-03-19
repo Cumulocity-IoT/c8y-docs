@@ -17,7 +17,7 @@ The {{< product-c8y-iot >}} flexible architecture supports different levels of a
 
 ### Self-service applications
 
-This includes:
+For users with no or minimal coding experience, {{< product-c8y-iot >}} includes:
 
 - **[Cockpit application](/cockpit/cockpit-introduction/)** - Offers no-code tools that enable users to monitor and visualize IoT data quickly. It features a drag-and-drop interface, a pre-built [widget library](/cockpit/widgets-collection/) and [smart rules](/cockpit/smart-rules/) for creating [dashboards](/cockpit/working-with-dashboards/) and analytics. This allows business users to implement real-time monitoring and data visualization solutions without extensive coding knowledge.
 - **[Digital Twin Manager](/dtm/dtm-introduction/)** - Helps users create and manage blueprints of their assets, including their properties, relationships, and connections to sensor and device data.
