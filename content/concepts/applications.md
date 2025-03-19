@@ -27,14 +27,15 @@ For users with no or minimal coding experience, {{< product-c8y-iot >}} includes
 
 ### Customization & developer tools
 
-For more advanced customization, {{< product-c8y-iot >}} supports:
+For more advanced customization, {{< product-c8y-iot >}} provides comprehensive development capabilities:
 
-- **[Web SDK](/web/introduction/)** - Provides all necessary clients and components to quickly build frontends in {{< product-c8y-iot >}}. Developers can start with a simple UI plugin or scale up to a fully scaffolded web application.
-- **Micro frontend architecture & [extension ecosystem](/standard-tenant/ecosystem/#extensions)** - Enables developers to create modular extensions that integrate with any {{< product-c8y-iot >}} application. This dynamic approach allows features to be loaded at runtime, enabling the flexible and scalable extension of Web SDK-based applications.
-- **[Codex](https://styleguide.cumulocity.com/apps/codex/#/)** - Offers essential tools for building applications, including UI guidelines, development resources, reusable Angular-based components, styling utilities, and helps ensure consistency, efficiency, and streamlined development for {{< product-c8y-iot >}} applications.
-- **Managed microservices hosting** - Enables developers to deploy [custom backend services](/standard-tenant/ecosystem/#custom-microservices) using the [Microservice SDK](/microservice-sdk/microservice-sdk-introduction/). This allows for efficient development and extension of business logic within a secure, scalable environment, without managing external infrastructure.
+- **[Web SDK](/web/introduction/)** - Provides all necessary clients and components to quickly build frontends in  {{< product-c8y-iot >}} and fully utilize the Microfrontend architecture capabilities. Developers can start with a simple UI plugin or scale up to a fully scaffolded web application.
+- **[Web Application Hosting](/web/introduction/)** - Enables secure deployment and hosting of Web SDK-based applications within the {{< product-c8y-iot >}} platform, with built-in support for the [extension ecosystem](/standard-tenant/ecosystem/#extensions).
+- **[Microservice SDK](/microservice-sdk/microservice-sdk-introduction/)** - Offers tools and libraries for developing custom backend services that extend {{< product-c8y-iot >}}'s functionality.
+- **Managed Microservice Hosting** - Provides secure, scalable hosting for [custom microservices](/standard-tenant/ecosystem/#custom-microservices) within the {{< product-c8y-iot >}} platform infrastructure.
+- **[Codex](https://styleguide.cumulocity.com/apps/codex/#/)** - Comprehensive design system offering UI guidelines, reusable Angular components, and styling utilities to ensure consistent application development.
 
-These capabilities, combined with {{< product-c8y-iot >}} built-in **[multi-tenancy](/concepts/tenant-hierarchy/) and [application subscription management](/enterprise-tenant/managing-tenants/#subscribing-applications)**, create a robust foundation for scalable and secure application enablement. 
+These capabilities, combined with {{< product-c8y-iot >}}'s built-in **[multi-tenancy](/concepts/tenant-hierarchy/)** and **[application subscription management](/enterprise-tenant/managing-tenants/#subscribing-applications)**, provide a robust foundation for scalable application development.
 
 ### Other resources
 
