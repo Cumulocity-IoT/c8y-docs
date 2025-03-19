@@ -4,7 +4,21 @@ title: Simple device enrollment
 layout: redirect
 ---
 
-In this tutorial, you will learn how to create a device certificate which is signed by a tenant's Certificate Authority (CA) with {{< product-c8y-iot >}}.
+In this tutorial, you will learn how to create a device certificate which is signed by a tenant's Certificate Authority (CA) with {{< product-c8y-iot >}} using the existing [bulk device registration](/device-management-application/registering-devices/#bulk-device-registration).
+Some changes made in CSV for bulk device registration for enrollment list.
+
+The CSV files must contain at least the **ID** as device identifier, **AUTH_TYPE** as `CERTIFICATES` and **ENROLLMENT_OTP** as one time password of the devices.
+In addition to these columns the file can also contain other columns like ICCID, NAME, TYPE as shown in the following example:
+
+```
+ID;TYPE;NAME;ICCID;IDTYPE;PATH;SHELL;AUTH_TYPE;ENROLLMENT_OTP
+006064ce800a;c8y_Device;Sample_Device1;+491555555;c8y_Serial;bulk group/subgroup1;1;CERTIFICATES;somePassword@123
+006064ce8077;c8y_Device;Sample_Device2;+491555555;c8y_Serial;bulk group/subgroup2;1;CERTIFICATES;password@345
+```
+
+* These EST devices will be added to the NewDeviceRegistration list, with their status set to Accepted.
+* These enrollment otp act as temporary device user credentials, which will be used for authentication when calling the `/.well-known/est/simpleenroll` endpoint.
+* This enhancement simplifies the enrollment process for multiple devices, ensuring a seamless and secure onboarding experience.
 
 ### Prerequisites {#prerequisites}
 
@@ -19,7 +33,7 @@ On creating a new device certificate the Device enroll API is called. This trigg
 
 * The Device enroll API is used by a device to get a fresh new certificate.
 * If no CA is available an error will be returned.
-* If the request does not contain a valid [CertificateSigningRequest](https://en.wikipedia.org/wiki/Certificate_signing_request)
+* If the request does not contain a valid [CertificateSigningRequest](https://en.wikipedia.org/wiki/Certificate_signing_request) error will be returned.
 
 This is an example of a REST request:
 

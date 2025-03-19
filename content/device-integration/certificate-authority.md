@@ -23,8 +23,8 @@ To streamline certificate management, we propose extending Cumulocity to:
 
 This enhancement will eliminate the need for external PKI management, making it easier for customers to adopt X.509 authentication seamlessly.
 
-* /.well-known/est/simpleenroll to be used by a device to get a fresh new certificate. The device has to authenticate itself using its tenant, identifier and security token as the BasicAuth realm, user and password. These tenant, identifier and security token must be shared with {{< product-c8y-iot >}}.
-* /.well-known/est/simplereenroll to be used by a device to renew its certificate or to substitute for a certificate. The device has to authenticate itself using its password or a JWT token (obtained using its certificate over MQTT).
+* `/.well-known/est/simpleenroll` to be used by a device to get a fresh new certificate. The device has to authenticate itself using its tenant, identifier and security token as the BasicAuth realm, user and password. These tenant, identifier and security token must be shared with {{< product-c8y-iot >}}.
+* `/.well-known/est/simplereenroll` to be used by a device to renew its certificate or to substitute for a certificate. The device has to authenticate itself using its password or a JWT token (obtained using its certificate over MQTT).
 
 {{< c8y-admon-info >}}
 This feature is initially released as a public preview and is disabled by default at both the instance and tenant levels.

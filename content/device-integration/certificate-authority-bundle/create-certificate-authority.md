@@ -109,3 +109,13 @@ Follow the instructions in [Prerequisites](#prerequisites) to enable it. After e
 The new CA certificate will be added to the trusted certificates list:
 
 ![Trusted CA certificate added](/images/certificate-authority/trustedCAadded.png)
+
+### Auto Renewal of CA certificate {#auto-renewal-of-ca-certificate}
+
+Tenant Certificate Authority (CA) is automatically renewed on 2 October at 02:00 AM every year. The renewal process ensures that existing device certificates remain valid until their expiration. This auto-renewal mechanism ensures uninterrupted certificate management while maintaining security and compliance.
+
+* Each CA certificate has a validity of 1095 days (3 years) and undergoes automatic renewal in the background.
+* All CA metadata, private keys, and public keys remain unchanged, ensuring a seamless renewal process. Only `NotAfter` and `NotBefore` wil be changed.
+* Device certificates issued by the CA continue to have 1 year validity from issuance date, and new device certificates can be issued without disruption.
+* If the auto-renewal process fails, and it has near expiration date then error banner will be displayed in the UI for those certificates.
+* Optionally, an email alert can be sent to the Tenant Administrator for immediate action.
