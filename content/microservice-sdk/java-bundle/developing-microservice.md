@@ -72,7 +72,7 @@ public List<EventRepresentation> getEvents () {
 }
 ```
 
-To demonstrate usage of `ContextService` with simple code examples above, `eventApi` and `userEventApi` have been used while they are already attached to the desired context.
+To demonstrate the usage of `ContextService` with simple code examples above, `eventApi` and `userEventApi` have been used while they are already attached to the desired context.
 In more complex applications, care must be taken to not use Platform API related beans with tenant scope in a user scope context and vice versa.
 
 Another use case for setting the required context for an arbitrary tenant user is shown in the example below.
