@@ -1,6 +1,6 @@
 ---
 date: ""
-title: DataBroker connector does not have a warning verification message when deleting it (#8410) [GRAFT][release/y2024] (#8476)
+title: A warning message is shown when deleting a data broker connector
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
