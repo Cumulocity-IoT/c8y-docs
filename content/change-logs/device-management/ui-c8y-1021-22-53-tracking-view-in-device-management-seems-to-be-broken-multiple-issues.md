@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Tracking view in Device Management seems to be broken multiple issues
+title: Issues in the Tracking tab in the device details have been fixed
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4358
 version: 1021.22.53
 ---
-Tracking view in Device Management seems to be broken multiple issues
+In the **Tracking** tab in the device details the device position was not updated in realtime even though the **Realtime** button was activated. This has been fixed and now the device position and the tracking path are both updated in realtime. Moreover, changing the time range and refreshing the list had no effect. This has been fixed and users can again filter events by different time ranges.
