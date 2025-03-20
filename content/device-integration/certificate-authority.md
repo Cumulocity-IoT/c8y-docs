@@ -12,7 +12,6 @@ Without a built-in way to issue and manage certificates on devices, adopting thi
 
 Each device must have a trusted certificate, issued after legitimacy checks.
 These certificates need to be managed over time, including renewal and revocation.
-As thin-edge.io is a key initiative for Cumulocity, customer feedback highlights the need for a simpler approach to certificate management.
 
 To streamline certificate management, we propose extending Cumulocity to:
     Manage signing certificates
