@@ -55,13 +55,13 @@ Replace `<username>`, `<password>` with the appropriate credentials given to you
 
 ### Creating a CA certificate via REST {#creating-a-ca-certificate-via-the-rest}
 
-On creating a new tenant's certificate authority (CA) the certificate authority API must be called. This triggers the following actions:
+To create a new certificate authority (CA) for a tenant the certificate authority API must be called. This triggers the following actions:
 
 * A new key pair is created and a certificate is self-signed with `tenantID` as the Common Name (CN).
 * The private key is stored in an encrypted tenant option.
 * The certificate is stored in the trusted certificate repository with auto-registration turned off by default. Devices can only be registered automatically when the administrator turns this option on.
 * If a CA is already present, returns a message indicating the CA is already present.
-* Moreover, if the CA is removed from the trusted certificate list, the corresponding private key is removed from the database collection.
+* If the CA is removed from the trusted certificate list, the corresponding private key is removed from the database collection.
 
 This is an example of a REST request:
 
@@ -85,7 +85,7 @@ The following response is returned:
 This certificate identified as a TENANT CA and it has attribute `tenantCertificateAuthority":true`.
 
 {{< c8y-admon-info >}}
-You can call this endpoint without the ROLE_TENANT_MANAGEMENT_ADMIN or ROLE_TENANT_MANAGEMENT_READ role only, if the user is a service user. Otherwise, if the user does not have the required role, an HTTP response 403 will be returned.
+In order to call `/certificate-authority` one of the following roles is required: ROLE_TENANT_MANAGEMENT_ADMIN or ROLE_TENANT_MANAGEMENT_READ, otherwise an HTTP response 403 will be returned. The Service User has automatic access to the endpoint.
 <section><h5>Required roles</h5>
 ROLE_TENANT_MANAGEMENT_ADMIN
 ROLE_TENANT_MANAGEMENT_READ
@@ -104,7 +104,7 @@ Follow the instructions in [Prerequisites](#prerequisites) to enable it. After e
 
 1. In the Device Management application, navigate to the **Management** menu in the navigator and select **Trusted certificates**.
 2. Click **Add CA certificate** at the top right to create the CA certificate.
-3. After the CA has been created the **Add CA certificate** button will be disabled. Moreover, it will not be possible to create a CA via the API as each tenant can have maximum one tenant CA.
+3. Once the CA has been created the Add CA Certificate button and the API are both disabled as only one CA is allowed per tenant. If you want to replace the certificate you need to remove the current CA.
 
 The new CA certificate will be added to the trusted certificates list:
 
