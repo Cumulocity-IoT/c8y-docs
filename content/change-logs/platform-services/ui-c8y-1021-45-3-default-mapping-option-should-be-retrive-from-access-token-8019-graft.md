@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-03-20'
 title: Default access mapping retrieves user information from access token
 product_area: Platform services
 change_type:
