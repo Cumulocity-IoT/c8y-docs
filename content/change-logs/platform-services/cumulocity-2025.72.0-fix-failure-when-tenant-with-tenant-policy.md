@@ -1,6 +1,8 @@
 ---
-date:
-title: Tenant creation with tenant policy overriding the default tenant option works properly
+date: '2025-03-20'
+title: >-
+  Tenant creation with tenant policy overriding the default tenant option works
+  properly
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
