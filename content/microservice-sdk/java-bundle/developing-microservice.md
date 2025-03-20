@@ -6,9 +6,8 @@ layout: redirect
 ---
 
 The Cumulocity Microservice SDK is a tool kit supporting efficient development of applications
-using the Cumulocity Platform API. The source code is located in the Github repository
+based on the Cumulocity Platform API. The source code is located in the Github repository
 [Cumulocity Java client](https://github.com/Cumulocity-IoT/cumulocity-clients-java).
-
 See below for the different microservice SDK features, including annotations, services, configuration files, logging and the Maven build plugin.
 
 There are two possible deployment types on the platform:
@@ -58,7 +57,7 @@ The API provides the following services:
 * Notification - NotificationSubscriptionApi
 
 
-The API provides basic CRUD methods. The following is an alarm interface example:
+The API supports basic CRUD methods. The following is an alarm interface example:
 
 ```java
 // Methods
@@ -88,7 +87,7 @@ public AlarmRepresentation addHelloAlarm (){
 ```
 
 
-### Using the Platform API
+### Using the Platform API {#using-platform-api}
 
 The Cumulocity Microservice SDK provides predefined methods to interact with the Cumulocity platform.
 Several APIs are available to execute basic operations on the platform with corresponding Beans in the SDK,
