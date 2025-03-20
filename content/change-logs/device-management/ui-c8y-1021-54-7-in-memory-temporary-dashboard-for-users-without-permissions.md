@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Allow users without permissions to see a fallback temporary dashboard
+title: Display read-only dashboard for users without dashboard creation permission
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4362
 version: 1021.54.7
 ---
-When users lack dashboard creation permissions, a temporary read-only dashboard is displayed to enable data visualization and prevent a blank page. This fallback dashboard is an in-memory one and not persisted in the backend.
+When users do not have the permission to create dashboards, a temporary read-only dashboard is now displayed to enable data visualization and prevent a blank page. This fallback dashboard is an in-memory one and not persisted in the backend.
