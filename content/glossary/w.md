@@ -15,7 +15,7 @@ A {{< product-c8y-iot >}} web application can be:
 
 All subscribed web applications are hosted by {{< product-c8y-iot >}} and the application will be made available through a URL like this: <tenant>.cumulocity.com/apps/<application>.
 
-For details see [Getting started > Technical concepts > Developing applications > Web applications](/concepts/applications/#web-applications).
+See also [Platform administration > {{< standard-tenant >}} administration > Managing the ecosystem](/standard-tenant/ecosystem/).
 
 
 ### Web SDK {#web-sdk}
