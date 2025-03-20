@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4362
 version: 1021.54.7
 ---
-In-memory temporary dashboard for users without permissions.
+To enable users to explore and visualize data without requiring explicit dashboard creation permissions, a new feature has been added that allows users to create temporary dashboards that are stored in memory. Previously, users needed specific permissions to create and save dashboards. With this change, any user can now create temporary dashboards to visualize and analyze data, but these dashboards are not persisted and will be lost when the user session ends. This provides more flexibility for users to work with data without impacting existing permission models or dashboard assets.
