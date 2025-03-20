@@ -1,6 +1,6 @@
 ---
 date: ""
-title: In-memory temporary dashboard for users without permissions.
+title: Allow users without permissions to create temporary dashboards in memory
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
