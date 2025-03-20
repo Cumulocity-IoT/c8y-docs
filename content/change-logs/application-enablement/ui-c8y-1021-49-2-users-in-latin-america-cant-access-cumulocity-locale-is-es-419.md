@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-03-20'
 title: Users with locale es-419 can again access the Cumulocity platform
 product_area: Application enablement & solutions
 change_type:
