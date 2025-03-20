@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Allow users without permissions to create temporary dashboards in memory
+title: Allow users without permissions to see a fallback temporary dashboard
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
