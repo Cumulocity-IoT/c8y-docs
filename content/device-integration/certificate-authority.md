@@ -7,7 +7,7 @@ sector:
 ---
 
 Currently, X.509 certificate authentication in {{< product-c8y-iot >}} requires customers to manage their own PKI infrastructure, creating a significant adoption barrier.
-This is especially challenging for thin-edge.io, where client certificates are a hard requirement for authentication. Without a built-in way to issue and manage certificates on devices, adopting this secure authentication method becomes complex and operationally burdensome.
+Without a built-in way to issue and manage certificates on devices, adopting this secure authentication method becomes complex and operationally burdensome.
 {{< product-c8y-iot >}} already supports certificate-based device authentication, ensuring secure communication through mutual authentication. However, this introduces an additional responsibility:
 
 Each device must have a trusted certificate, issued after legitimacy checks.
