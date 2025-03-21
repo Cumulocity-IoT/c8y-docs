@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-03-20'
 title: Updated branding and tokens in the Cumulocity Codex
 product_area: Application enablement & solutions
 change_type:
