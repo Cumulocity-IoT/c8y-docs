@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fix for root asset movement and duplicate name validation in Asset Navigator"
+title: "Support for moving root assets and duplicate name validation in Asset Navigator"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
