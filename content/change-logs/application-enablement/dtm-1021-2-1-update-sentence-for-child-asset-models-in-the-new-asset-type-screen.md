@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Update sentence for child asset models in the New Asset Type screen"
+title: "Improved info message when no Child Asset Models are selected when creating or updating Asset Models"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
