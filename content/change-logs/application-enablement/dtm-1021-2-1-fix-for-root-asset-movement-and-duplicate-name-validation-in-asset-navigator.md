@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1938"
 version: "1021.2.1"
 ---
-Previously, root-level assets could not be moved under groups created in Cockpit. This has been resolved, allowing such movements. Additionally, validation has been introduced to prevent moving assets or groups into a location where an asset or group with the same name already exists, ensuring consistency and avoiding naming conflicts.
+Root-level assets can now be moved under groups created in Cockpit. Additionally, validation has been added to prevent moving assets or groups to locations where assets or groups with identical names already exist, ensuring consistency and avoiding naming conflicts.
