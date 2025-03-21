@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Display Asset Model label Instead of key in Asset Model column on Assets Page"
+title: "Fixed Asset Model column display to show label Instead of key after page refresh"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
