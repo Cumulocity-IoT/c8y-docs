@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1051"
 version: "1021.2.1"
 ---
-Previously, if no allowed asset models were selected, the message displayed as "No allowed child assets," which caused confusion as the field describes about allowed child asset models. This has now been updated to "No allowed child asset models selected" for better clarity.
+Previously, if no child asset models were selected while creating or updating an Asset Model, the message displayed as 'No allowed child assets,' which was misleading since the field specifically refers to allowed child asset models. To enhance clarity, the message has been updated to 'No allowed child asset models selected,' ensuring better alignment with the field's purpose and reducing potential confusion.
