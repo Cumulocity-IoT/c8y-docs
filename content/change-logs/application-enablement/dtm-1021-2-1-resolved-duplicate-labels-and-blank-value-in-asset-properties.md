@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Resolved duplicate labels and blank value in asset properties"
+title: "Resolved issue with complex property updates causing duplicate labels and empty values"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
