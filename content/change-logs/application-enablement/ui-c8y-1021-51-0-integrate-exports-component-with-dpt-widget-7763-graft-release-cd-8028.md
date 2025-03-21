@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-03-20'
 title: Integrated export component into Data point table widget
 product_area: Application enablement & solutions
 change_type:

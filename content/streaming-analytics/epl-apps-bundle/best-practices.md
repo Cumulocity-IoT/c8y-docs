@@ -54,7 +54,7 @@ When designing an Apama solution to be deployed within any form of {{< product-c
 
 #### General Apama limitations when using EPL apps or a custom microservice {#general-apama-limitations-when-using-epl-apps-or-a-custom-microservice}
 
-* For scalability, a correlator may move between hosts and therefore does not have access to a persistent file system. It is a standard {{< product-c8y-iot >}} constraint that all microservices (either provided by the platform, or custom) must be stateless, see [Microservices SDK](/microservice-sdk/microservice-sdk-introduction/).
+* For scalability, a correlator may move between hosts and therefore does not have access to a persistent file system. It is a standard {{< product-c8y-iot >}} constraint that all microservices (either provided by the platform, or custom) must be stateless, see [Microservice SDK](/microservice-sdk/microservice-sdk-introduction/).
 	The Apama features affected by this include:
 	* Correlator persistence.
 	* MemoryStore persistence.
@@ -64,7 +64,7 @@ When designing an Apama solution to be deployed within any form of {{< product-c
 	* Correlator-integrated support for the Java Message Service (JMS).
 	* Distributed memory stores.
 	* Connections between correlators.
-* For security and implementing user access control, {{< product-c8y-iot >}} does not make the correlator port available to external processes, see [Microservices SDK](/microservice-sdk/microservice-sdk-introduction/).
+* For security and implementing user access control, {{< product-c8y-iot >}} does not make the correlator port available to external processes, see [Microservice SDK](/microservice-sdk/microservice-sdk-introduction/).
 	The following capabilities require access to the correlator port and hence are not compatible with this access control:
 	* Command line tools such as engine_connect, engine_management, engine_send, engine_receive.
 	* Engine Management API, Event Service API, Scenario Service API.

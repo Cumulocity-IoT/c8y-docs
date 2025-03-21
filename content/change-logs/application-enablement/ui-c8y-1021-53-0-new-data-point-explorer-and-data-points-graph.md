@@ -22,6 +22,10 @@ The data point explorer now includes a workspace implementation, allowing users 
 
 ### Data point graph
 
-The data point graph now provides a more interactive and dynamic visualization of data points over time, helping users identify trends, patterns, and anomalies with greater ease. A dashboard-linked time slider has been introduced, allowing users to adjust the time range across the entire dashboard when the widget is bound to the global time context. This ensures a synchronized view of data across multiple widgets, enhancing contextual analysis and decision-making.
+The data point graph now provides a more interactive and dynamic visualization of data points over time, helping users identify trends, patterns, and anomalies with greater ease. Key improvements include:
+
+- A dashboard-linked time slider that adjusts the time range across the entire dashboard when the widget is connected to the global time context, enabling synchronized data views across multiple widgets.
+- Simple click-to-toggle visibility controls for data points, alarms, and events.
++- New configuration options to control alarm icon visibility, overlay multiple measurements on a single graph axis, and customize graph styling options.
 
 These enhancements offer a more intuitive and powerful way to explore IoT data, improving efficiency and collaboration for users managing their deployments within {{< product-c8y-iot >}}.
