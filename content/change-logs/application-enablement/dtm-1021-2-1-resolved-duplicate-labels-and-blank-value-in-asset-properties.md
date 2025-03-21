@@ -14,4 +14,6 @@ build_artifact:
 ticket: "CTM-1899"
 version: "1021.2.1"
 ---
-Previously, updating a file in a complex property would save it as blank, and the date property displayed duplicate labels during asset creation and editing. These have now been resolved.
+Two issues related to complex properties have been fixed:
+- Complex properties containing file-type fields now retain their values during updates instead of being cleared.
+- Date fields within complex properties no longer show duplicate labels when creating or editing assets
