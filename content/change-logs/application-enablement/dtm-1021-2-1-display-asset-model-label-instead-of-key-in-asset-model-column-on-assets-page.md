@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1784"
 version: "1021.2.1"
 ---
-Previously, the Asset Model column on the Assets page would display the asset model key upon refresh. This has been updated to correctly display the label of the asset model instead.
+Previously, upon page refresh, the Asset Model column on the Assets page displayed the asset model key instead of the label. This issue has been fixed, ensuring that the column consistently displays the correct asset model labels, providing a more consistent user experience
