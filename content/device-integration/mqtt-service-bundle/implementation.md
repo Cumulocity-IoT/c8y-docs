@@ -197,7 +197,7 @@ Using the OpenSSL CLI tool create a private key and then generate a self-signed 
 openssl genpkey -algorithm RSA -out ca.key
 openssl req -x509 -new -nodes -key ca.key -sha256 -days 3650 -out ca.crt -subj "/C=US/ST=State/L=City/O=YourCompany/OU=YourOrg/CN=MQTTServiceCA1"
 ```
-Then create private key for the device, generate certificate signing request from this private key, and then sign the CSR.
+Then create a private key for the device, generate the certificate signing request from this private key, and then sign the CSR.
 ```console
 openssl genpkey -algorithm RSA -out client.key
 openssl rsa -in client.key -out client-key.pem -outform PEM
