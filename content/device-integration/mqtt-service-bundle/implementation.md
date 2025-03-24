@@ -187,7 +187,7 @@ When connecting devices to MQTT Service using certificates, the tenant ID must b
 #### Adding and trusting CA certificate
 
 Trust anchors are per tenant. In order to use device certificates for device authentication, the CA or intermediate certificate which signs the device certificates must be uploaded to the platform, and
-added to trusted certificates. Additionally when adding certificates the field `Auto registration` must be enabled. See [Managing Trusted Certificates](/device-management-application/managing-device-data/#managing-trusted-certificates) for detailed instructions on how to add and trust CA certificate.
+added to trusted certificates. Additionally when adding certificates the field **Auto registration** must be enabled. See [Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates) for detailed instructions on how to add and trust CA certificate.
 
 #### Creating self-signed certificates
 
