@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Asset Model column displays label instead of key after page refresh"
+title: "Asset model column displays label instead of key after page refresh"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
