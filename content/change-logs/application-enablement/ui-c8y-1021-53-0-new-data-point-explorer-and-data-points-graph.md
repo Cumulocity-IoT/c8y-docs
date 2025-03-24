@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-61539
 version: 1021.53.0
 ---
-To enhance data analysis and visualization within the {{< product-c8y-iot >}} platform, the data point explorer and data point graph have been upgraded with new capabilities and a modernized architecture. Both features have been migrated from AngularJS to Angular, bringing improved performance, a refreshed interface, and expanded configuration options. Initially, these features will not be included by default and can only be installed as additional plugins. To install them, navigate to your custom application, click **Install plugins**, and search for "Data point explorer" and "Data point graph." 
+To enhance data analysis and visualization within the {{< product-c8y-iot >}} platform, the data point explorer and data point graph have been upgraded with new capabilities and a modernized architecture. Both features have been migrated from AngularJS to Angular, bringing improved performance, a refreshed interface, and expanded configuration options. Initially, these features will not be included by default and can only be installed as additional plugins. To install them, navigate to your custom application, click **Install plugins**, and search for "Data point explorer" and "Data point graph".
 
 ### Data point explorer
 
