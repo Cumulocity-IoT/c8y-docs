@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Improved info message when no Child Asset Models are selected when creating or updating Asset Models"
+title: "Improved info message when no child asset models are selected"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
