@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fixed Asset Model column display to show label Instead of key after page refresh"
+title: "Asset Model column displays label instead of key after page refresh"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1784"
 version: "1021.2.1"
 ---
-Previously, upon page refresh, the Asset Model column on the Assets page displayed the asset model key instead of the label. This issue has been fixed, ensuring that the column consistently displays the correct asset model labels, providing a more consistent user experience
+Previously, upon page refresh, the Asset Model column on the **Assets** page displayed the asset model key instead of the label. This issue has been fixed, ensuring that the column consistently displays the correct asset model labels, providing a more consistent user experience.
