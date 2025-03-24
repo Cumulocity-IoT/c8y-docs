@@ -11,7 +11,7 @@ There is a wide variety of open-source libraries (such as, TensorFlow®, PyTorch
 Some examples of model creation in the mentioned tools that can inspire you:
 
 * [Prediction of Remaining Userful Life with TensorFlow](https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6)  
-* [Anomaly Detection with AWS SageMaker](https://catalog.us-east-1.prod.workshops.aws/workshops/c5661636-bfc3-4771-be38-a4072661bfda/en-US/anomaly-detection-forecasting/sagemaker/sagemaker-anomalies)  
+* [Anomaly Detection with AWS SageMaker](https://aws.amazon.com/blogs/machine-learning/detect-anomalies-in-manufacturing-data-using-amazon-sagemaker-canvas/)  
 * [Image classification with Azure ML Studio](https://learn.microsoft.com/en-us/azure/machine-learning/tutorial-train-deploy-image-classification-model-vscode?view=azureml-api-2)  
 * [Remaining Userful Life Estimation with MATLAB](https://www.mathworks.com/help/predmaint/ug/remaining-useful-life-estimation-using-convolutional-neural-network.html)
 
