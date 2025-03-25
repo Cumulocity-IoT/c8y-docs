@@ -16,7 +16,7 @@ A tenant type in the [{{< product-c8y-iot >}} tenant hierarchy](/glossary/t/#ten
 See also [{{< standard-tenant >}}](/glossary/s/#standard-tenant) and [{{< management-tenant >}}](/glossary/m/#management-tenant).
 
 
-### Edge Serve {#edge-server}
+### Edge Server {#edge-server}
 Edge Server is an informal term sometimes used to refer to Cumulocity Edge, a single-server variant of the Cumulocity platform designed for onsite deployment on industrial PCs or local servers: [Cumulocity Edge Documentation](https://cumulocity.com/docs/sector/edge_server/)
 
 See also [Thick Edge](/glossary/t/#thick-edge)
