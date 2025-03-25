@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62595
 version: 1021.22.57
 ---
-Auto refresh gets stuck when realtime is also added to global date context (#8280) [GRAFT][release/2025] (#8610)
+Fixed an issue where the auto-refresh counter would freeze when a dashboard contained at least two widgets with different refresh mechanisms - one using real-time dashboard contexts and another using auto-refresh dashboard contexts. This combination now works properly for previously failing scenarios.
