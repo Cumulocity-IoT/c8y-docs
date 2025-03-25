@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Restore the dashboard time range selector option and integrate global date context with the data points table widget
+title: Restored dashboard time range selector option for "Data points table" widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
