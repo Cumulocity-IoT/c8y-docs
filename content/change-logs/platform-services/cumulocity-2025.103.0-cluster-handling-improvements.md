@@ -1,5 +1,5 @@
 ---
-date: '2025-03-25'
+date:
 title: >-
   Cluster handling improvements
 product_area: Platform services
