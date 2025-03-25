@@ -17,6 +17,6 @@ version: 2025.103.0
 ---
 Reliability improvements in handling {{< product-c8y-iot >}} cluster membership changes were implemented affecting the following areas:
  - Microservice monitoring
- - data broker
+ - Data broker
  - cache invalidation
  - platform certificate updates
