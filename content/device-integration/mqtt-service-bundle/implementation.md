@@ -206,12 +206,12 @@ openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out c
 openssl x509 -in client.crt -out client.pem -outform PEM
 ```
 
-There are further instruction regarding creating self-signed CA, intermediate, and device certificates certificates under [Generating and signing certificates](/device-integration/device-certificates/#generating-and-signing-certificates).
+There are further instructions regarding creating self-signed CA, intermediate, and device certificates certificates under [Generating and signing certificates](/device-integration/device-certificates/#generating-and-signing-certificates).
 
 #### Using certificates
 
 Once CA certificate has been uploaded and trusted, devices can now authenticate using certificates which have been signed by the CA certificate.
-Using the previously generated certificates, an example doing so using mosquitto_pub would look like:
+Using the previously generated certificates, an example using mosquitto_pub would look like:
 ```console
 mosquitto_pub --cafile ca.crt -d -q 1 -h "cumulocity.com" -p "9883" -i myclient -u t11101 -t "v1/devices/me/telemetry" --key client-key.pem --cert client.pem -m {"temperature":25}
 ```
