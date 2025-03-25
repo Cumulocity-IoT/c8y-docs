@@ -19,4 +19,4 @@ Reliability improvements in handling {{< product-c8y-iot >}} cluster membership 
  - Microservice monitoring
  - Data broker
  - Cache invalidation
- - platform certificate updates
+ - Platform certificate updates
