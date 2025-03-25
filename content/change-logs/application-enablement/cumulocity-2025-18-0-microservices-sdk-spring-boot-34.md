@@ -11,14 +11,14 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-version: 2025.18.0
+version: 2025.0.12
 ticket: MTM-62462
 ---
-Starting from version **2025.18.0**, the Microservice SDK is now using Spring Boot 3.4.2. 
+Starting from version **2025.0.12**, the Microservice SDK is now using Spring Boot 3.4.2. 
 Notice that along with Spring Boot, most other dependencies were also updated to be consistent to 
 the dependencies which Spring Boot uses.
 
-The version 2025.18.0 will also bring along updates to several third-party libraries and frameworks.
+The version 2025.0.12 will also bring along updates to several third-party libraries and frameworks.
 These changes will be included in the org.springframework.boot:spring-boot-dependencies:3.4.2 dependency 
 which comes with Microservice SDK.
 
