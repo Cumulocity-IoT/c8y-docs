@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61920
 version: 1021.22.56
 ---
-Reintroduce dashboard time range and integrate global date context with DPT (#7747) [GRAFT][release/y2025] (#8177)
+In order to ensure the seamless operation of dashboards with global date context and the data point table widget, we have temporarily removed the "Dashboard time range" date selection option from the data point table widget. We are now restoring the "Dashboard time range" option to this widget.
