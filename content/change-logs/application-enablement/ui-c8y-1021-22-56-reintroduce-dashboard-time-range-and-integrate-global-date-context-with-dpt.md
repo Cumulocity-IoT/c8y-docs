@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Reintroduce dashboard time range and integrate global date context with DPT (#7747) [GRAFT][release/y2025] (#8177)
+title: Restore the dashboard time range selector option and integrate global date context with the data points table widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
