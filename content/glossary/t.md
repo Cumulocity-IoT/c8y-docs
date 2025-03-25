@@ -39,10 +39,10 @@ See also [Tenant hierarchy](/concepts/tenant-hierarchy).
 The unique ID of a tenant or subtenant. When a tenant is created, it gets an auto-generated ID, which cannot be changed. The tenant ID is shown in the user dropdown menu in the UI.
 
 
-### Thick Edge aka Edge Server {#thick-edge}
-Thick Edge is an informal term sometimes used to refer to Cumulocity Edge, a single-server variant of the Cumulocity IoT platform designed for onsite deployment on industrial PCs or local servers.
+### Thick Edge {#thick-edge}
+Thick Edge is an informal term sometimes used to refer to Cumulocity Edge, a single-server variant of the Cumulocity IoT platform designed for onsite deployment on industrial PCs or local servers: [Cumulocity Edge Documentation](https://cumulocity.com/docs/sector/edge_server/)
 
-See [Cumulocity Edge Documentation](https://cumulocity.com/docs/sector/edge_server/) for more details.
+See also [Edge Server](/glossary/e/#edge-server)
 
 
 ### Thin Edge {#thin-edge}
