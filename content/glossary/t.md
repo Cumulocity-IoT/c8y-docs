@@ -40,7 +40,7 @@ The unique ID of a tenant or subtenant. When a tenant is created, it gets an aut
 
 
 ### Thick Edge {#thick-edge}
-Thick Edge is an informal term sometimes used to refer to Cumulocity Edge, a single-server variant of the Cumulocity IoT platform designed for onsite deployment on industrial PCs or local servers: [Cumulocity Edge Documentation](https://cumulocity.com/docs/sector/edge_server/)
+Thick Edge is an informal term sometimes used to refer to Cumulocity Edge, a single-server variant of the Cumulocity platform designed for onsite deployment on industrial PCs or local servers: [Cumulocity Edge Documentation](https://cumulocity.com/docs/sector/edge_server/)
 
 See also [Edge Server](/glossary/e/#edge-server)
 
