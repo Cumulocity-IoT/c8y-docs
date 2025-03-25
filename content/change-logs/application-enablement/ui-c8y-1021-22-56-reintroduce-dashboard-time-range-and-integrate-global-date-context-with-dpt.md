@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61920
 version: 1021.22.56
 ---
-In order to ensure seamless operation of dashboards with global date context and the "Data point table" widget, the "Dashboard time range" date selection option had temporarily been removed from the "Data point table" widget. This option has now been restored for this widget.
+In order to ensure seamless operation of dashboards with global date context and the "Data point table" widget, the dashboard time range selection option had temporarily been removed from the "Data point table" widget. This option has now been restored for this widget.
