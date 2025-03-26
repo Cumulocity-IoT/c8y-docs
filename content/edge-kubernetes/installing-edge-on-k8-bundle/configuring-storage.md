@@ -4,6 +4,12 @@ title: Configuring storage
 layout: redirect
 ---
 
+{{< c8y-admon-info >}}
+You can ignore this section if your Kubernetes cluster is already configured for dynamic provisioning of PVs with a default storage class that you are happy with.
+
+For example, a cluster created with [K3s](https://docs.k3s.io/installation) will dynamically provision all of the volumes required by Edge onto the local disk, with no configuration required.
+{{< /c8y-admon-info >}}
+
 Kubernetes makes physical storage devices available to your cluster in the form of two API resources, PersistentVolume and PersistentVolumeClaim.
 
 A Persistent Volume (PV) is a storage resource in Kubernetes that is provisioned and managed independently from the Pods that use it. It provides a way to store data in a durable and persistent manner, even if the Pod that uses it is deleted or restarted.
@@ -19,6 +25,7 @@ PVs represent cluster resources, while PVCs serve as requests for these resource
 - **Static provisioning**: In this method, a cluster administrator manually creates PVs, specifying details about the actual storage available for cluster users. These PVs are registered in the Kubernetes API and are ready for consumption.
 
 - **Dynamic provisioning**: When none of the statically created PVs match a PVC's requirements, the cluster can automatically provision storage on-demand, specifically tailored for the PVC. This dynamic provisioning relies on [StorageClasses](https://kubernetes.io/docs/concepts/storage/storage-classes/). To trigger dynamic provisioning, the PVC must request a StorageClass, and the administrator must have set up and configured that class accordingly. Claims that request an empty string (“”) for the class effectively disable dynamic provisioning for themselves. If no StorageClass is specified in a claim, it falls back to using a default StorageClass if one is configured in the cluster. To enable a default StorageClass, the cluster administrator must activate the `DefaultStorageClass` [admission controller](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#defaultstorageclass) on the API server. This can be achieved, for instance, by ensuring that DefaultStorageClass is included in the comma-delimited, ordered list of values for the --enable-admission-plugins flag of the API server component. For more details on API server command-line flags, refer to the [kube-apiserver](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/) documentation.
+
 
 ### Persistent Volume Claims made by the Edge operator {#persistent-volume-claims-made-by-the-edge-operator}
 
@@ -55,10 +62,6 @@ These warnings serve as reminders to adjust these settings for optimal storage m
 Kubernetes provides a variety of persistent volume types, but two specific types enable Pod containers to access either a Network File System (NFS) or the cluster node's local filesystem (often set up as a NFS drive mapped to a local folder). This configuration is especially prevalent in on-premises deployments.
 
 ### Static provisioning of PVs {#static-provisioning-of-pvs}
-
-{{< c8y-admon-info >}}
-You can skip this section if your Kubernetes cluster is already configured for dynamic provisioning of PVs.
-{{< /c8y-admon-info >}}
 
 This section outlines the steps for configuring the Kubernetes cluster to enable Edge to utilize NFS as a source for the PVs. For additional storage options, refer to the [Kubernetes documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/).
 
