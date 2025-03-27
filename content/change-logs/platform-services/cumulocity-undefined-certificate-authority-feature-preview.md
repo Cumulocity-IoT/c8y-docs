@@ -14,7 +14,13 @@ build_artifact:
 ticket: MTM-62765
 ---
 {{< c8y-admon-preview >}}
-This feature is in Public Preview, that is, it is not enabled by default and maybe subject to change in the future.
+This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
 {{< /c8y-admon-preview >}}
 
-{{< product-c8y-iot >}} has enhanced the certificate management with the ability for {{< product-c8y-iot >}} to sign and issue certificates. This means that the list of certificates in a tenant, which previously only contained the  trust anchor certificates, does now also include the {{< product-c8y-iot >}} signed certificates. The latter are identifiable by the words TENANT CA.
+{{< product-c8y-iot >}} has has been enhanced to function as a Certificate Authority (CA), providing the following capabilities:
+- Manage signing certificates
+- Accept Certificate Signing Requests (CSR)
+- Perform legitimacy checks, as defined by each tenant
+- Issue signed X.509 certificates trusted by the device tenant
+
+For more details about this feature refer to [Certificate Authority (CA)](/device-integration/certificate-authority-bundle/create-certificate-authority.md)
