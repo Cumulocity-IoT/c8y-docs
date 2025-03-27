@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4213
 version: 1021.5.0
 ---
-Now for the OPC UA custom action requests, the timestamp when the node value is received by OPC UA device gateway can be added to the request body. This can be done by adding ${receivedTimestampInMs} placeholder to variables custom action body template in OPC UA device protocol. This allows users to track when a node value is processed within the OPC UA device gateway.
+Now for the OPC UA custom action requests, the timestamp when the node value is received by OPC UA device gateway can be added to the request body. This can be done by adding ${receivedTimestampInMs} placeholder to variable's custom action body template in OPC UA device protocol. This allows users to track when a node value is processed within the OPC UA device gateway.
