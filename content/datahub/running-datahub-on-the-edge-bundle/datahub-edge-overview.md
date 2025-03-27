@@ -18,8 +18,7 @@ For your convenience, here is an overview of the contents:
 | [Operating {{< product-c8y-iot >}} DataHub Edge](/datahub/running-datahub-on-the-edge/#operating-datahub-edge) | Run administrative tasks |
 
 ### {{< product-c8y-iot >}} DataHub Edge at a glance {#datahub-edge-at-a-glance}
-
-{{< product-c8y-iot >}} Edge is an onsite, single-server, and single-tenant variant of the {{< product-c8y-iot >}} Core platform. It is delivered as a [software appliance](/edge/edge-introduction/) as well as a [cloud-native solution](/edge-kubernetes/k8-edge-introduction) designed to run on industrial PCs or local servers. {{< product-c8y-iot >}} DataHub is available as an add-on to {{< product-c8y-iot >}} Edge.
+[{{< product-c8y-iot >}} Edge](/sector/edge_server) is the single-server variant of the {{< product-c8y-iot >}} platform, designed to run in factories on industrial PCs or local servers, that is, in the same site (“onsite”) in which the IoT assets are located. {{< product-c8y-iot >}} DataHub is available as an add-on to {{< product-c8y-iot >}} Edge.
 
 {{< product-c8y-iot >}} DataHub Edge offers the same functionality as the cloud-variant of {{< product-c8y-iot >}} DataHub, but stores the data locally. You can define offloading pipelines, which regularly move data from the Operational Store of {{< product-c8y-iot >}} into a data lake. In the Edge setup, a NAS is used as data lake. Dremio, the internal engine of {{< product-c8y-iot >}} DataHub, can access the data lake and run analytical queries against its contents, using SQL as the query interface.
 

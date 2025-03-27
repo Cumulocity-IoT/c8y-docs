@@ -14,6 +14,6 @@ build_artifact:
 ticket: CIE-5221
 version: 2025.0.0
 ---
-{{< product-c8y-iot >}} Edge operator now supports installing and upgrading {{< product-c8y-iot >}} DataHub Edge. DataHub Edge is an optional component of Edge. DataHub Edge complements the ad-hoc querying of recent device data with analytical querying over long periods of time. For that purpose, data is moved from the Operational Store of Edge to a local data lake, with the data being stored in a concise and query-efficient format. DataHub Edge allows you to run SQL queries against the data lake contents so that you can gain more insights into your device data.
+{{< product-c8y-iot >}} Edge now supports installing and upgrading {{< product-c8y-iot >}} DataHub Edge using the Edge operator.
 
-DataHub Edge is the counterpart of DataHub, the variant for cloud deployments. To learn more about DataHub in general, see [DataHub overview](/datahub/datahub-overview). To learn more about DataHub Edge, see [Running DataHub on the Edge](/datahub/running-datahub-on-the-edge/).
+For more details, see [Setting up DataHub Edge on Kubernetes](/datahub/running-datahub-on-the-edge/#setting-up-datahub-edge-on-k8s).
