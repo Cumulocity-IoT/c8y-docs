@@ -34,6 +34,20 @@ To add a child device to an existing device you must connect the connected devic
 
 `101,uniqueChildId,myChildDevice,myChildType`
 
+The child create template has a new boolean device marker parameter, that makes the child device as a device by adding the c8y_IsDevice fragment. As a result, all the aspects of devices are also applicable to child devices. This enables the querying and filtering of child devices. And the child devices will also be shown in the device lists (eg: All device, groups and bulk operation creation)
+
+If the device marker parameter isnt provided, the c8y_IsDevice fragment is now added by default. 
+
+Examples of the device marker parameter in use:
+
+`101,uniqueChildId,myChildDevice,myChildType,true` -> c8y_IsDevice fragment is added to the child device
+
+`101,uniqueChildId,myChildDevice,myChildType,false` -> c8y_IsDevice fragment is not added to the child device
+
+`101,uniqueChildId,myChildDevice,myChildType` -> Default behaviour. c8y_IsDevice fragment is added to the child device
+
+`101,uniqueChildId,myChildDevice,myChildType,marker_fragment` -> If anything other than true or false is provided, c8y_IsDevice fragment is added to the child device
+
 ### Operating a gateway for child devices {#operating-a-gateway-for-child-devices}
 Using the agent marker fragment ```com_cumulocity_model_Agent``` on the parent device but not on child devices effectively declares the device as a connected gateway for its children. The children are not directly connected to {{< product-c8y-iot >}} but send and receive data through the device and its integration.
 
