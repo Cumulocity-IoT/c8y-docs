@@ -20,92 +20,25 @@ When {{< product-c8y-iot >}} DataHub Edge on Kubernetes is deployed on top, the 
  Hardware requirements for the host OS are excluded.
 
 ### Setting up {{< product-c8y-iot >}} DataHub Edge on Kubernetes
+To install and configure the DataHub Edge on Kubernetes, you need to provide the necessary details to the Edge operator using the `spec.dataHub` field in the Edge CR. 
 
-Subsequently, it is assumed that {{< product-c8y-iot >}} Edge on Kubernetes has been installed using the default Kubernetes namespace ``c8yedge``. If another namespace has been chosen, you must adapt the commands and configuration files accordingly.
-
-Extract the archive *datahub-edgek8s.tar* to a working folder of your choice.
-```
-tar -xvf datahub-edgek8s.tar
-```  
-The folder will contain the following files:
-
-| File | Purpose | Adaptation required |
-| -----   | -----   |-----   |
-| install.sh | Installation script, which requires bash and jq command line tools for execution | | -
-| datahub-config.json | Primary configuration file for DataHub installation | yes |
-| dremio-values.yaml | Deployment configuration for Dremio | yes |
-| dremio-helmchart.tar.gz | Helm chart used for Dremio deployment | - |
-| mysql-values.yaml | Deployment configuration for MySQL database, which is used to store configuration data | yes |
-| datahub-mysql-helmchart.tar.gz | Helm chart used for MySQL deployment  | - |
-| datahub.zip | {{< product-c8y-iot >}} DataHub backend packaged as microservice | - |
-| datahub-webapp.zip | {{< product-c8y-iot >}} DataHub web application | - |
+For more details, see [Edge Custom Resource - DataHub](/edge-kubernetes/edge-custom-resource-definition/#dataHub).
 
 {{< c8y-admon-info >}}
-Internet connectivity is required as the MySQL image, the Dremio image and some auxiliary images (busybox) are downloaded during the installation.
+Substitute the namespace name *c8yedge* in the subsequent commands with the specific namespace name into which you installed Edge .
 {{< /c8y-admon-info >}}
-
-#### Adapting datahub-config.json
-
-You must apply the following changes:
-* If your {{< product-c8y-iot >}} Edge on Kubernetes configuration does not use ``c8yedge`` as namespace, change the Kubernetes namespace accordingly.
-* Specify the username and password for admin access to Dremio. The password must have at least 8 characters, including at least 1 letter and 1 digit.
-* Set the password for the root user in MySQL.
-
-#### Configuring Dremio deployment via dremio-values.yaml
-
-The *dremio-values.yaml* file contains the configuration settings for the Dremio deployment. It needs to be adapted as follows:
-
-The Dremio master uses a persistent volume to persist its metadata. The persistent volume claim is defined in the Dremio helm chart. You have to provide the name of the ``<CRITICAL_STORAGE_CLASS>`` used by that claim.
-
-In addition, either a distributed storage and a datalake storage must be available as volumes mounted into the Dremio master and executor pods. They are mapped to a folder on the single worker node where these pods are running on.
-The respective configuration in *dremio-values.yaml* looks as follows:
-```
-distStorage:
-    type: nfs
-    nfs:
-        hostPath: /datahub/distributedStorage
-
-datalakeNFS:
-    enabled: true
-    hostPath: /datahub/datalake
-```
-The host directories (here: /datahub/distributedStorage and /datahub/datalake) can be changed as needed.
-The directories will be created by the installation.
-
-The ``$DREMIO_USER`` and ``$DREMIO_PASSWORD`` credentials are substituted during installation based on the values provided in *datahub-config.json*.
-
-In case you want to modify resource settings for Dremio master or executor, you must not exceed the following constraints:
-* At maximum 48 GB RAM for each, master and executor
-* Only one executor
-
-These licensing constraints are checked during the installation procedure.
-
-#### Configuring deployment of MySQL via mysql-values.yaml
-
-The *mysql-values.yaml* file contains the configuration settings for the MySQL deployment. It needs to be adapted as follows:
-
-The MySQL database uses a persistent volume to persist its data. The persistent volume claim is defined in the MySQL helm chart. You have to provide the name of the ``<STORAGE_CLASS>`` used by that claim.
-
-The ``$MYSQL_PASSWORD`` is substituted during installation based on the value provided in *datahub-config.json*.
-
-#### Running the installation script
-
-Execute the following command to install {{< product-c8y-iot >}} DataHub Edge on Kubernetes:
-```shell
-./install.sh -a
-```
 
 #### Add entry to /etc/hosts
 
 In order to access Dremio, the following entry needs to be added to ``/etc/hosts``:
 ```
-<IP address>   datahub.<domain_name>
+<IP address>   datahub-<domain_name>
 ```
 where ``domain_name`` is the domain name chosen during the installation of {{< product-c8y-iot >}} Edge on Kubernetes.
 
 The IP address can be obtained using
 ```shell
-kubectl get service -n c8yedge cumulocity-core -o jsonpath={.status.loadBalancer.ingress[*].ip}
+kubectl get service cumulocity-ontoplb -n c8yedge -o jsonpath={.status.loadBalancer.ingress[*].ip}
 ```
 
 #### Using {{< product-c8y-iot >}} DataHub Edge on Kubernetes
