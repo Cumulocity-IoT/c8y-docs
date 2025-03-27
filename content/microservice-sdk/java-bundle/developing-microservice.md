@@ -387,25 +387,40 @@ The package module provides a Maven plugin to prepare a ZIP file required by the
 </plugin>
 ```
 
-#### Package goal {#package-goal}
+### Microservice-Package-Maven-Plugin
 
-The package plugin is responsible for the creation of a Docker container, rpm file and for creating a ZIP file that can be deployed on the platform.
-It can be configured with the following parameters:
+Additionally if you're using the Microservice-SDK for the build of your own microservice you should use the microservice-package-maven-plugin as it provides some goals which might be useful for the build. But how to configure this maven plugin!? Generally you can add additional predefined parameters to the \<configuration> section of the microservice-package-maven-plugin located inside the pom.xml file. In this case please specify the parameters using the short form of the parameters depending on the internal definition:
 
-* name (alias package.name) - defaults to project.artifactId
-* description (alias package.description) - defaults to project.description
+| parameter<br>short form<br>for pom.xml entries<br> in \<configuration> section |                      data type                       |         parmameter command<br>line name          |                                             default value                                              | description                                                                                                                                                                                          | 
+|:------------------------------------------------------------------------------:|:----------------------------------------------------:|:------------------------------------------------:|:------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|                                    \<name>                                     |                        String                        |                -Dpackage.name=...                |                                         ${project.artifactId}                                          | Microservice name                                                                                                                                                                                    |   
+|                                  \<directory>                                  |                        String                        |             -Dpackage.directory=...              |                                         ${project.artifactId}                                          | Microservice folder name                                                                                                                                                                             |   
+|                                 \<description>                                 |                        String                        |            -Dpackage.description=...             |                                         ${project.description}                                         | Microservice description                                                                                                                                                                             |  
+|                                   \<jvmArgs>                                   |                    List\<String>                     |        -Dagent-package.jvmArgs=[...,]...         | "-XX:+UseG1GC <br>-XX:+UseStringDeduplication <br>-XX:MinHeapFreeRatio=25 <br>-XX:MaxHeapFreeRatio=75" | Java runtime arguments for jar start<br>specify with "," separated arguments<br>Default values will be overwritten if other options are provided.<br>Arguments are passed during application startup | 
+|                                  \<arguments>                                  |                    List\<String>                     |       -Dagent-package.arguments=[...,]...        |                                                   ""                                                   | General command line arguments for jar start<br>specify with "," separated arguments                                                                                                                 | 
+|           \<heap><br>\<min>...\</min><br>\<max>...\<max><br>\</heap>           | min, max : \<int>m<br>(for units refer to java docu) |                        --                        |                                                   ""                                                   | heap parameter results into<br>-Xms\<min> -Xmx\<max>                                                                                                                                                 |
+|           \<perm><br>\<min>...\</min><br>\<max>...\<max><br>\</perm>           | min, max : \<int>m<br>(for units refer to java docu) |                        --                        |                                                   ""                                                   | perm parameter is combined<br>with metaspace parameter values<br>results in<br>-XX:MetaspaceSize=\<min>m -XX:MaxMetaspaceSize=\<max>m                                                                |
+|      \<metaspace><br>\<min>...\</min><br>\<max>...\<max><br>\</metaspace>      |                min, max : \<int>m<br>(for units refer to java docu)                |                        --                        |                                                   ""                                                   | metaspace parameter is combined<br>with perm parameter values<br>results in<br>-XX:MetaspaceSize=\<min>m -XX:MaxMetaspaceSize=\<max>m                                                                |
+|                                 \<deleteImage>                                 |                       boolean                        |      -Dmicroservice.package.deleteImage=...      |                                                  true                                                  | Flag to delete image                                                                                                                                                                                 | 
+|                             \<dockerBuildTimeout>                              |                         int                          |  -Dmicroservice.package.dockerBuildTimeout=...   |                                                  360                                                   | Timeout value in seconds for generation of docker build                                                                                                                                              | 
+|                      \<dockerImageInRegistryMaxWaitTime>                       |                         int                          | -Dmicroservice.package.dockerSaveWaitTimeOut=... |                                                  360                                                   | Timeout value in seconds for pushing image into registry                                                                                                                                             | 
+|                                    \<skip>                                     |                       boolean                        |             -Dskip.agent.package=...             |                                                 false                                                  | Skip the whole packaging                                                                                                                                                                             |
+|                                   \<rpmSkip>                                   |                       boolean                        |           -Dskip.agent.package.rpm=...           |                                                  true                                                  | Skip the rpm packaging                                                                                                                                                                               |
+|                                \<containerSkip>                                |                       boolean                        |        -Dskip.agent.package.container=...        |                                                 false                                                  | Skip the container packaging                                                                                                                                                                         |
+|                        \<skipMicroservicePackage>                              |                       boolean                        |         -Dskip.microservice.package=...          |                                                 false                                                  | Skip the microservice packaging                                                                                                                                                                      |
+|                                  \<encoding>                                   |                        String                        |        -Dproject.build.sourceEncoding=...        |                                                 UTF-8                                                  | Define String encoding                                                                                                                                                                               |
+|                                  \<baseImage>                                  |                        String                        |         -Dskip.microservice.package=...          |                                                alpine:3                                                | Name of the base image used for docker builds                                                                                                                                                        |
+|                                 \<registryUrl>                                 |                        String                        |         -Dpackage.docker.registryUrl=...         |                                                   ""                                                   | Url of docker registry where to push images                                                                                                                                                          | 
+|                                \<registryUser>                                 |                        String                        |        -Dpackage.docker.registryUser=...         |                                                   ""                                                   | User name of docker registry credentials                                                                                                                                                             | 
+|                                \<registryPass>                                 |                        String                        |        -Dpackage.docker.registryPass=...         |                                                   ""                                                   | Password of docker registry credentials                                                                                                                                                              | 
+
+
+
+
 * jvmArgs (alias agent-package.jvmArgs) - jvm-gc arguments. The default value is `-XX:+UseG1GC -XX:+UseStringDeduplication -XX:MinHeapFreeRatio=25 -XX:MaxHeapFreeRatio=75`. It will be overwritten if other options are provided
-* arguments (alias agent-package.arguments) - arguments passed during application startup
-* encoding (alias project.build.sourceEncoding) - defaults to UTF-8
-* heap (alias agent-package.heap) - defaults to min = 128MB max = 384MB
-* perm (alias agent-package.perm) - defaults to min = 64MB max = 128MB
-* skip (alias skip.agent.package) - to skip the whole packaging part
-* rpmSkip (alias skip.agent.package.rpm) - to skip rpm file creation. False by default
-* containerSkip (alias skip.agent.package.container) - to skip Docker image creation. True by default
 * manifestFile - points to a manifest file location. Default value: $<basedir>/src/main/configuration/cumulocity.json
-* dockerBuildTimeout - specifies the timeout in seconds for the docker image build. Defaults to 360s
 
-Example configuration:
+Example configuration in pom.xml: 
 
 ```xml
 <configuration>
@@ -421,8 +436,10 @@ Example configuration:
 
 The push plugin is responsible for pushing the Docker image to a registry. The registry can be configured by:
 
-* containerSkip (alias skip.agent.package.container) - Prevents the push to execute. True by default
-* registry (alias agent-package.container.registry) - Docker registry address
+| parameter<br>short form<br>for pom.xml entries<br> in \<configuration> section | data type |    parmameter command<br>line name     | default value | description                                                      | 
+|:------------------------------------------------------------------------------:|:---------:|:--------------------------------------:|:-------------:|:-----------------------------------------------------------------|  
+|                                \<containerSkip>                                |  boolean  |   -Dskip.agent.package.container=...   |     true      | Prevents the push to execute                                     |
+|                                  \<registry>                                   |  boolean  | -Dagent-package.container.registry=... |      ""       | Docker registry address<br>for example http://{yourregistry.com} |
 
 Example configuration:
 
@@ -447,11 +464,14 @@ In case of conflicts, the command line configuration has the highest priority an
 
 To upload a microservice to the server you must configure the following properties:
 
-* url - Mandatory URL that will be used for deployment. Empty by default.
-* username - Mandatory tenant ID and username used for authorization. Empty by default.
-* password - Mandatory password used for authorization. Empty by default.
-* name - Optional name of the uploaded application. By default it is the same as `package.name` property or `artifactId` if `package.name` is not provided.
-* skipMicroserviceUpload (alias `skip.microservice.upload`) - Controls if the microservice upload should be skipped. True by default so for the goal to work it must be set to `false`)
+| parameter<br>short form<br>for pom.xml entries<br> in \<configuration> section | data type | parmameter command<br>line name |     default value     | description                                                                                                                                              | 
+|:------------------------------------------------------------------------------:|:---------:|:-------------------------------:|:---------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|                                 \<packageName>                                 |  String   |       -Dpackage.name=...        | ${project.artifactId} | Optional name of the uploaded application.<br>By default it is the same as `package.name`<br>property or `artifactId` if `package.name` is not provided. |   
+|                           \<skipMicroserviceUpload>                            |  boolean  |  -Dskip.microservice.upload=... |         true          | Controls if the microservice upload should be skipped.<br>True by default so for the goal to work it must be set to `false`                              |
+|                                     \<url>                                     |  String   |        -Dupload.url=...         |          ""           | Mandatory URL that will be used for deployment.<br>Empty by default.                                                                                     | 
+|                                  \<username>                                   |  String   |      -Dupload.username=...      |          ""           | Mandatory tenant ID and username used for authorization.<br>Empty by default.                                                                            | 
+|                                  \<password>                                   |  String   |      -Dupload.password=...      |          ""           | Mandatory password used for authorization.<br>Empty by default.                                                                                         | 
+
 
 #### settings.xml {#settingsxml}
 
