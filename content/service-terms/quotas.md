@@ -72,12 +72,12 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 ### Protocols
 
-| Quota                                                                                          | Type | Value |
-| ---------------------------------------------------------------------------------------------- | ---- | ----: |
+| Quota                                                                                        | Type | Value |
+| -------------------------------------------------------------------------------------------- | ---- | ----: |
 | [File size for LWM2M bulk registration](/device-integration/lwm2m/#bulk-device-registration) | Hard | 10 MB |
 | [Concurrent pending LWM2M operations](/device-integration/lwm2m/#device-operations-handling) | Hard |    10 |
-| Maximum number of Loriot devices that can be registered per deployment                         | Soft | 40000 |
-| Maximum number of Loriot devices that can be registered per tenant                             | Soft | 20000 |
+| Maximum number of Loriot devices that can be registered per deployment                       | Soft | 40000 |
+| Maximum number of Loriot devices that can be registered per tenant                           | Soft | 20000 |
 
 ### DataHub
 
@@ -91,6 +91,7 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 | Query job retention                                                                                            | Hard |   1 day |
 | [Rows in a query job](https://cumulocity.com/api/datahub/#operation/getJobResultsApiResource)                  | Hard | 1000000 |
 | [Rows in a high performance query](https://cumulocity.com/api/datahub/#tag/High-performance-API)               | Soft | 1000000 |
+| Parallel high performance queries per tenant                                                                   | Hard |      18 |
 
 Additional [quotas from the Dremio engine](https://docs.dremio.com/current/get-started/cluster-deployments/architecture/limits/#catalog) may apply.
 

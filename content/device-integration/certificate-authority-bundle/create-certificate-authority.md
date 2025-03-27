@@ -4,14 +4,13 @@ title: Creating a certificate authority (CA)
 layout: redirect
 ---
 
-The {{< product-c8y-iot >}} certificate management allows {{< product-c8y-iot >}} to sign and issue certificates. Along with the trust anchor certificates the list of certificates in a  tenant shows the {{< product-c8y-iot >}} signed certificates. The {{< product-c8y-iot >}} signed certificates are identifiable by the words TENANT CA.
+The {{< product-c8y-iot >}} certificate management allows {{< product-c8y-iot >}} to sign and issue certificates. Along with the trust anchor certificates the list of CA certificates for a tenant shows the {{< product-c8y-iot >}} signed certificates. The {{< product-c8y-iot >}} signed certificates are identifiable by the words TENANT CA.
 In this tutorial, you will learn how to create a certificate authority (CA) for a tenant with {{< product-c8y-iot >}}.
 
 ### Prerequisites {#prerequisites}
 
-In order to follow this tutorial, check the following prerequisites:
+In order to use the Certificate Authority API the following is required.
 
-* You have a valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * The Certificate Authority feature is enabled on instance and tenant level.
 * For enabling this feature on instance level you must contact [product support](/additional-resources/contacting-support/).
 * On tenant level you can check if the Certificate Authority feature is enabled with the following API:
@@ -104,7 +103,7 @@ Follow the instructions in [Prerequisites](#prerequisites) to enable it. After e
 
 1. In the Device Management application, navigate to the **Management** menu in the navigator and select **Trusted certificates**.
 2. Click **Add CA certificate** at the top right to create the CA certificate.
-3. Once the CA has been created the Add CA Certificate button and the API are both disabled as only one CA is allowed per tenant. If you want to replace the certificate you need to remove the current CA.
+3. Once the CA has been created the **Add CA Certificate** button and the API are both disabled as only one CA is allowed per tenant. If you want to replace the certificate you need to remove the current CA.
 
 The new CA certificate will be added to the trusted certificates list:
 
