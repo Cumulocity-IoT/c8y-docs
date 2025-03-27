@@ -166,11 +166,13 @@ Various examples demonstrating use cases of the Platform API can be found in the
 [Cumulocity examples](https://github.com/Cumulocity-IoT/cumulocity-examples).
 
 
-
-
 ### Microservice security {#microservice-security}
 
-The `@EnableMicroserviceSecurity` annotation sets up the standard security configuration for microservices. It requires basic authorization for all endpoints (except for health check endpoint configured using `@EnableHealthIndicator`). A developer can secure its endpoints using standard Spring security annotations, for example, `@PreAuthorize("hasRole('ROLE_A')")` and user's permissions will be validated against user's roles stored on the platform.
+The `@EnableMicroserviceSecurity` annotation sets up the standard security configuration for microservices.
+It requires basic authorization or other standard authentication mechanisms (refer to [Authentication and authorization](/microservice-sdk/general-aspects/#authentication-and-authorization))
+for all endpoints (except for health check endpoint configured using `@EnableHealthIndicator`).
+A developer can secure its endpoints using standard Spring security annotations, for example, `@PreAuthorize("hasRole('ROLE_A')")`
+and user's permissions will be validated against user's roles stored on the platform.
 
 ### Microservice subscription {#microservice-subscription}
 
