@@ -9,17 +9,16 @@ In this tutorial, you will learn how to create a certificate authority (CA) for 
 
 ### Prerequisites {#prerequisites}
 
-In order to use the Certificate Authority API the following is required.
+In order to use the Certificate Authority API the following is required:
 
-* The Certificate Authority feature is enabled on instance and tenant level.
-* For enabling this feature on instance level you must contact [product support](/additional-resources/contacting-support/).
+* The Certificate Authority feature is need to enabled on tenant level.
 * On tenant level you can check if the Certificate Authority feature is enabled with the following API:
 
       GET /features/certificate-authority
       Content-Type: application/json
       Authorization: Basic <<Base64 encoded bootstrap credentials>>
 
-If you get a 400 or 200 with `active: false` then the feature is disabled for the tenant. 
+If you get 200 with `active: false` then the feature is disabled for the tenant. 
 
     HTTP/1.1 200 OK
     Content-Type: application/json
@@ -32,7 +31,7 @@ If you get a 400 or 200 with `active: false` then the feature is disabled for th
     }
 To enable the feature you must call this API:
 
-    PUT /features/certificate-authority/by-tenant
+    PUT /features/certificate-authority/by-tenant/{{tenantId}}
     Content-Type: application/json
     Authorization: Basic <<Base64 encoded bootstrap credentials>>
     ...
@@ -48,9 +47,9 @@ This call can be done by executing the following curl statement:
        -H 'Content-Type: application/json' \
        -X PUT \
        -d '{"phase": "IN_DEVELOPMENT","active": true,"strategy": "TENANT","key": "certificate-authority"}' \
-       https://<{{< product-c8y-iot >}} tenant domain>/features/certificate-authority/by-tenant
+       https://<{{< product-c8y-iot >}} tenant domain>/features/certificate-authority/by-tenant/{{tenantId}}
 
-Replace `<username>`, `<password>` with the appropriate credentials given to you when registering with {{< product-c8y-iot >}}.
+Replace `<username>`, `<password>` with the appropriate credentials given to you when registering with {{< product-c8y-iot >}}. The user must have the `ROLE_TENANT_MANAGEMENT_ADMIN` role or belong to a management tenant.
 
 ### Creating a CA certificate via REST {#creating-a-ca-certificate-via-the-rest}
 
