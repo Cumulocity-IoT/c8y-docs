@@ -20,13 +20,11 @@ When {{< product-c8y-iot >}} DataHub Edge on Kubernetes is deployed on top, the 
  Hardware requirements for the host OS are excluded.
 
 ### Setting up {{< product-c8y-iot >}} DataHub Edge on Kubernetes
-To install and configure the DataHub Edge on Kubernetes, you need to provide the necessary details to the Edge operator using the `spec.dataHub` field in the Edge CR. 
+To install and configure DataHub Edge on Kubernetes, update the `spec.dataHub` field in the Edge Custom Resource (CR) with the necessary configuration details for the Edge operator. After making the changes, apply the updated CR to deploy DataHub Edge.
 
-For more details, see [Edge Custom Resource - DataHub](/edge-kubernetes/edge-custom-resource-definition/#dataHub).
+For more details on the `spec.dataHub` field, refer [Edge Custom Resource - DataHub](/edge-kubernetes/edge-custom-resource-definition/#dataHub).
 
-{{< c8y-admon-info >}}
-Substitute the namespace name *c8yedge* in the subsequent commands with the specific namespace name into which you installed Edge .
-{{< /c8y-admon-info >}}
+For additional guidance, see the [Install Edge](/edge-kubernetes/installing-edge-on-k8/#install-edge) and [Modify Edge](/edge-kubernetes/manage-edge/#modify-edge) sections in the Edge on Kubernetes documentation.
 
 #### Add entry to /etc/hosts
 
@@ -41,6 +39,10 @@ The IP address can be obtained using
 kubectl get service cumulocity-ontoplb -n c8yedge -o jsonpath={.status.loadBalancer.ingress[*].ip}
 ```
 
+{{< c8y-admon-info >}}
+Substitute the namespace name *c8yedge* in the command above with the specific namespace name you have specified in your Edge CR.
+{{< /c8y-admon-info >}}
+
 #### Using {{< product-c8y-iot >}} DataHub Edge on Kubernetes
 
 {{< product-c8y-iot >}} DataHub Edge on Kubernetes behaves like the Cloud and Edge appliance version.
@@ -48,6 +50,10 @@ kubectl get service cumulocity-ontoplb -n c8yedge -o jsonpath={.status.loadBalan
 ### Validation of {{< product-c8y-iot >}} DataHub Installation
 
 If the product doesn't work as intended after the installation, go through the validation steps described below.
+
+{{< c8y-admon-info >}}
+Substitute the namespace name *c8yedge* in the subsequent commands with the specific namespace name into which you installed Edge .
+{{< /c8y-admon-info >}}
 
 #### MySQL
 
