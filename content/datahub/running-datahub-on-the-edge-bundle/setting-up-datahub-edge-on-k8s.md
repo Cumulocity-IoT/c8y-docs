@@ -10,12 +10,12 @@ In this setup the DataHub is deployed into a Kubernetes environment using the Ed
 
 #### Resource requirements
 
-The resource requirements for running a bare {{< product-c8y-iot >}} Edge instance are described in [Requirements](/edge-k8s/installing-edge-on-k8/#prerequisites).
+The resource requirements for running a bare {{< product-c8y-iot >}} Edge instance are described in [Requirements](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
 When {{< product-c8y-iot >}} DataHub Edge on Kubernetes is deployed on top, the resource requirements change by following additional amount:
 
- * 100 GB of free disk space plus sufficient free disk space for the data lake contents
  * Recommended: 16 GB RAM, minimum: 10 GB RAM
  * Recommended: 10 logical CPU cores, minimum: 6 logical CPU cores
+ * 100 GB of free disk space plus sufficient free disk space for the data lake contents. For more information about configuring the storage, see [Configuring storage](/edge-kubernetes/installing-edge-on-k8/#configuring-storage).|
 
  Hardware requirements for the host OS are excluded.
 
