@@ -5,6 +5,7 @@
 ##
 ## This PV will be claimed by PVC named 'mongod-data-edge-db-rs0-0' in namespace 'c8yedge' for the MongoDB server to store application data.
 ##
+
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -23,9 +24,10 @@ spec:
     path: /c8yedge/app-data
 
 ---
-#
-# This PV will be claimed by PVC named 'microservices-registry-data' in namespace 'c8yedge' for the private docker registry to store microservice images.
-#
+##
+## This PV will be claimed by PVC named 'microservices-registry-data' in namespace 'c8yedge' for the private docker registry to store microservice images.
+##
+
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -43,9 +45,10 @@ spec:
     path: /c8yedge/registry
 
 ---
-#
-# This PV will be claimed by PVC named 'edge-logs' in namespace 'c8yedge' for the logging component to store the application and system logs.
-#
+##
+## This PV will be claimed by PVC named 'edge-logs' in namespace 'c8yedge' for the logging component to store the application and system logs.
+##
+
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -61,3 +64,184 @@ spec:
     server: <NFS server Hostname or IP Address>
     ## Path to a folder on NFS
     path: /c8yedge/logs
+
+
+
+########################################################################################################################
+##          The below PVs are required only when you want to install the Cumulocity Messaging Service.                ##
+########################################################################################################################
+---
+##
+## This PV will be claimed by PVC named 'pulsar-bookie-ledgers-pulsar-bookie-0' in namespace 'c8yedge' for 
+## the messaging-service component by the Pulsar Bookkeeper Ledgers.
+##
+
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: c8yedge-pulsar-bookie-ledgers-pv
+# spec:
+#   capacity:
+#     storage: 10G
+#   accessModes:
+#   - ReadWriteOnce
+#   persistentVolumeReclaimPolicy: Retain
+#   nfs:
+#     ## Substitute with NFS server's Hostname or IP Address.
+#     server: <NFS server Hostname or IP Address>
+#     ## Map an NFS folder to this path in all the Kubernetes cluster's worker nodes. This prevents data loss in case of node crashes.
+#     path: /c8yedge/messaging-service/pulsar-bookie-ledgers
+
+---
+##
+## This PV will be claimed by PVC named 'pulsar-bookie-journal-pulsar-bookie-0' in namespace 'c8yedge' for 
+## the messaging-service component by the Pulsar Bookkeeper Journal.
+##
+
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: c8yedge-pulsar-bookie-journal-pv
+# spec:
+#   capacity:
+#     storage: 2G
+#   accessModes:
+#   - ReadWriteOnce
+#   persistentVolumeReclaimPolicy: Retain
+#   nfs:
+#     ## Substitute with NFS server's Hostname or IP Address.
+#     server: <NFS server Hostname or IP Address>
+#     ## Map an NFS folder to this path in all the Kubernetes cluster's worker nodes. This prevents data loss in case of node crashes.
+#     path: /c8yedge/messaging-service/pulsar-bookie-journal
+
+---
+##
+## This PV will be claimed by PVC named 'pulsar-zookeeper-data-pulsar-zookeeper-0' in namespace 'c8yedge' for 
+## the messaging-service component by the Pulsar Zookeeper.
+##
+
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: c8yedge-pulsar-zookeeper-data-pv
+# spec:
+#   capacity:
+#     storage: 2G
+#   accessModes:
+#   - ReadWriteOnce
+#   persistentVolumeReclaimPolicy: Retain
+#   nfs:
+#     ## Substitute with NFS server's Hostname or IP Address.
+#     server: <NFS server Hostname or IP Address>
+#     ## Map an NFS folder to this path in all the Kubernetes cluster's worker nodes. This prevents data loss in case of node crashes.
+#     path: /c8yedge/messaging-service/pulsar-zookeeper-data
+
+
+
+########################################################################################################################
+##          The below PVs are required only when you want to install the Cumulocity DataHub.                          ##
+########################################################################################################################
+---
+##
+## This PV will be claimed by PVC named 'dremio-master-volume-dremio-master-0' in namespace 'c8yedge' for the DataHub by the Dremio master.
+##
+
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: c8yedge-dremio-master-pv
+# spec:
+#   capacity:
+#     storage: 30G
+#   accessModes:
+#   - ReadWriteOnce
+#   persistentVolumeReclaimPolicy: Retain
+#   nfs:
+#     ## Substitute with NFS server's Hostname or IP Address.
+#     server: <NFS server Hostname or IP Address>
+#     ## Map an NFS folder to this path in all the Kubernetes cluster's worker nodes. This prevents data loss in case of node crashes.
+#     path: /c8yedge/datahub/dremio-master
+
+---
+##
+## This PV will be claimed by PVC named 'dremio-executor-volume-dremio-executor-0' in namespace 'c8yedge' for the DataHub by the Dremio executor.
+##
+
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: c8yedge-dremio-executor-pv
+# spec:
+#   capacity:
+#     storage: 30G
+#   accessModes:
+#   - ReadWriteOnce
+#   persistentVolumeReclaimPolicy: Retain
+#   nfs:
+#     ## Substitute with NFS server's Hostname or IP Address.
+#     server: <NFS server Hostname or IP Address>
+#     ## Map an NFS folder to this path in all the Kubernetes cluster's worker nodes. This prevents data loss in case of node crashes.
+#     path: /c8yedge/datahub/dremio-executor
+
+---
+##
+## This PV will be claimed by PVC named 'dremio-executor-cloud-cache-dremio-executor-0' in namespace 'c8yedge' for the DataHub by the Dremio executor.
+##
+
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: c8yedge-dremio-executor-cloud-pv
+# spec:
+#   capacity:
+#     storage: 30G
+#   accessModes:
+#   - ReadWriteOnce
+#   persistentVolumeReclaimPolicy: Retain
+#   nfs:
+#     ## Substitute with NFS server's Hostname or IP Address.
+#     server: <NFS server Hostname or IP Address>
+#     ## Map an NFS folder to this path in all the Kubernetes cluster's worker nodes. This prevents data loss in case of node crashes.
+#     path: /c8yedge/datahub/dremio-executor-cloud
+
+---
+##
+## This PV will be claimed by PVC named 'datadir-zk-0' in namespace 'c8yedge' for the DataHub by the Dremio Zookeeper.
+##
+
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: c8yedge-dremio-datadir-zk-pv
+# spec:
+#   capacity:
+#     storage: 2G
+#   accessModes:
+#   - ReadWriteOnce
+#   persistentVolumeReclaimPolicy: Retain
+#   nfs:
+#     ## Substitute with NFS server's Hostname or IP Address.
+#     server: <NFS server Hostname or IP Address>
+#     ## Map an NFS folder to this path in all the Kubernetes cluster's worker nodes. This prevents data loss in case of node crashes.
+#     path: /c8yedge/datahub/dremio-datadir-zk
+
+---
+##
+## This PV will be claimed by PVC named 'mysql-volume-datahub-mysql-0' in namespace 'c8yedge' for the DataHub by the DataHub MySQL.
+##
+
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: c8yedge-datahub-mysql-pv
+# spec:
+#   capacity:
+#     storage: 5G
+#   accessModes:
+#   - ReadWriteOnce
+#   persistentVolumeReclaimPolicy: Retain
+#   nfs:
+#     ## Substitute with NFS server's Hostname or IP Address.
+#     server: <NFS server Hostname or IP Address>
+#     ## Map an NFS folder to this path in all the Kubernetes cluster's worker nodes. This prevents data loss in case of node crashes.
+#     path: /c8yedge/datahub/mysql
