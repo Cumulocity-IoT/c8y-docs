@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 {{< c8y-admon-info >}}
-You can ignore this section if your Kubernetes cluster is already configured for dynamic provisioning of PVs with a default storage class that you are happy with.
+You can ignore this section if your Kubernetes cluster is already configured for dynamic provisioning of Persistent Volumes (PVs) with a default storage class that you are happy with.
 
 For example, a cluster created with [K3s](https://docs.k3s.io/installation) will dynamically provision all of the volumes required by Edge onto the local disk, with no configuration required.
 {{< /c8y-admon-info >}}
