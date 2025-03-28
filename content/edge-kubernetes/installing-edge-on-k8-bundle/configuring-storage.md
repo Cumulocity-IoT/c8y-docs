@@ -37,7 +37,7 @@ The Edge operator requests three PVCs, as outlined in the table below. Each of t
 
 - Finally, if you specify the name of an existing StorageClass for which dynamic provisioning is enabled, the Operator requests PVCs with that class name, thereby instructing Kubernetes to utilize dynamic provisioning according to the specified class.
 
-|<div style="width:120px">Persistent volume</div>|<div style="width:250px">Persistent Volume Claim</div>|Description
+|<div style="width:75px">Persistent volume</div>|<div style="width:300px">Persistent Volume Claim</div>|Description
 |:---|:---|:---
 |75 GB|`mongod-data-edge-db-rs0-0`|Claimed by the MongoDB server to retain application data. The default size is 75 GB, but this value can be adjusted using the `spec.mongodb.resources.requests.storage` field in the Edge CR file.
 |10 GB|`microservices-registry-data`|Claimed by the private docker registry to store microservice images.
