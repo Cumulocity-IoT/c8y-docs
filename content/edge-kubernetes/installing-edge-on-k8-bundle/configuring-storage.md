@@ -37,19 +37,19 @@ The Edge operator requests three PVCs, as outlined in the table below. Each of t
 
 - Finally, if you specify the name of an existing StorageClass for which dynamic provisioning is enabled, the Operator requests PVCs with that class name, thereby instructing Kubernetes to utilize dynamic provisioning according to the specified class.
 
-|<div style="width:120px">Persistent volume</div>|<div style="width:300px">Persistent Volume Claim</div>|Description
-|:---|:---|:---
-|75 GB|`mongod-data-edge-db-rs0-0`|Claimed by the MongoDB server to retain application data. The default size is 75 GB, but this value can be adjusted using the `spec.mongodb.resources.requests.storage` field in the Edge CR file.
-|10 GB|`microservices-registry-data`|Claimed by the private docker registry to store microservice images.
-|5 GB|`edge-logs`|Claimed by the Edge logging component to store the application and system logs.
-|10 GB|`pulsar-bookie-ledgers-pulsar-bookie-0`|Claimed by the Pulsar Bookkeeper Ledgers pod, which is deployed only when the Messaging Service is enabled.
-|2 GB|`pulsar-bookie-journal-pulsar-bookie-0`|Claimed by the Pulsar Bookkeeper Journal pod, which is deployed only when the Messaging Service is enabled.
-|2 GB|`pulsar-zookeeper-data-pulsar-zookeeper-0`|Claimed by the Pulsar Zookeeper pod, which is deployed only when the Messaging Service is enabled.
-|30 GB|`dremio-master-volume-dremio-master-0`|Claimed by the Dremio master pod, which is deployed only when the DataHub is enabled.
-|30 GB|`dremio-executor-volume-dremio-executor-0`|Claimed by the Dremio executor pod, which is deployed only when the DataHub is enabled.
-|30 GB|`dremio-executor-cloud-cache-dremio-executor-0`|Claimed by the Dremio executor pod, which is deployed only when the DataHub is enabled.
-|2 GB|`datadir-zk-0`|Claimed by the Dremio Zookeeper pod, which is deployed only when the DataHub is enabled.
-|5 GB|`mysql-volume-datahub-mysql-0`|Claimed by the DataHub MySQL pod, which is deployed only when the DataHub is enabled.
+|<div style="width:150px">Persistent Volume</div>|<div style="width:350px">Persistent Volume Claim</div>|<div style="width:500px">Description</div>|
+|:---|:---|:---|
+|75 GB|`mongod-data-edge-db-rs0-0`|Claimed by the MongoDB server to retain application data. The default size is 75 GB, but this value can be adjusted using the `spec.mongodb.resources.requests.storage` field in the Edge CR file.|
+|10 GB|`microservices-registry-data`|Claimed by the private docker registry to store microservice images.|
+|5 GB|`edge-logs`|Claimed by the Edge logging component to store the application and system logs.|
+|10 GB|`pulsar-bookie-ledgers-pulsar-bookie-0`|Claimed by the Pulsar Bookkeeper Ledgers pod, which is deployed only when the Messaging Service is enabled.|
+|2 GB|`pulsar-bookie-journal-pulsar-bookie-0`|Claimed by the Pulsar Bookkeeper Journal pod, which is deployed only when the Messaging Service is enabled.|
+|2 GB|`pulsar-zookeeper-data-pulsar-zookeeper-0`|Claimed by the Pulsar Zookeeper pod, which is deployed only when the Messaging Service is enabled.|
+|30 GB|`dremio-master-volume-dremio-master-0`|Claimed by the Dremio master pod, which is deployed only when the DataHub is enabled.|
+|30 GB|`dremio-executor-volume-dremio-executor-0`|Claimed by the Dremio executor pod, which is deployed only when the DataHub is enabled.|
+|30 GB|`dremio-executor-cloud-cache-dremio-executor-0`|Claimed by the Dremio executor pod, which is deployed only when the DataHub is enabled.|
+|2 GB|`datadir-zk-0`|Claimed by the Dremio Zookeeper pod, which is deployed only when the DataHub is enabled.|
+|5 GB|`mysql-volume-datahub-mysql-0`|Claimed by the DataHub MySQL pod, which is deployed only when the DataHub is enabled.|
 
 To guarantee the retention of physical storage even after the PVC is deleted (for example, when Edge is deleted) and to enable future storage expansion if needed, it's crucial to configure the StorageClass and/or the PVs with the following settings:
 
