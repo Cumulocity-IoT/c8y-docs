@@ -7,4 +7,6 @@ sector:
 ---
 The {{< product-c8y-iot >}} Messaging Service is an optional component of the {{< product-c8y-iot >}} platform, required for enabling the [microservice-based data broker](/data-broker/ms-data-broker) and [Notifications 2.0](https://{{< domain-c8y >}}/api/core/#tag/About-notifications-2.0).
 
-To enable the Messaging Service in Edge, see [Edge Custom Resource - Messaging Service](/edge-kubernetes/edge-custom-resource-definition/#messagingService).
+To enable the Messaging Service in Edge, update the `spec.messagingService` field in the Edge Custom Resource (CR). After making the changes, apply the updated CR. For more details on the `spec.messagingService` field, refer to [Edge Custom Resource - Messaging Service](/edge-kubernetes/edge-custom-resource-definition/#messagingService).
+
+For additional guidance, see the [Install Edge](/edge-kubernetes/installing-edge-on-k8/#install-edge) and [Modify Edge](/edge-kubernetes/manage-edge/#modify-edge) sections in the Edge on Kubernetes documentation.
