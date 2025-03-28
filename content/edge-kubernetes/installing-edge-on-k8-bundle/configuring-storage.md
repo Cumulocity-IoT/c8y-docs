@@ -45,19 +45,16 @@ The Edge operator requests three PVCs, as outlined in the table below. Each of t
 |10 GB|`pulsar-bookie-ledgers-pulsar-bookie-0`|Claimed by the Pulsar Bookkeeper Ledgers pod, which is deployed only when the Messaging Service is enabled.
 |2 GB|`pulsar-bookie-journal-pulsar-bookie-0`|Claimed by the Pulsar Bookkeeper Journal pod, which is deployed only when the Messaging Service is enabled.
 |2 GB|`pulsar-zookeeper-data-pulsar-zookeeper-0`|Claimed by the Pulsar Zookeeper pod, which is deployed only when the Messaging Service is enabled.
+|30 GB|`dremio-master-volume-dremio-master-0`|Claimed by the Dremio master pod, which is deployed only when the DataHub is enabled.
+|30 GB|`dremio-executor-volume-dremio-executor-0`|Claimed by the Dremio executor pod, which is deployed only when the DataHub is enabled.
+|30 GB|`dremio-executor-cloud-cache-dremio-executor-0`|Claimed by the Dremio executor pod, which is deployed only when the DataHub is enabled.
+|2 GB|`datadir-zk-0`|Claimed by the Dremio Zookeeper pod, which is deployed only when the DataHub is enabled.
+|5 GB|`mysql-volume-datahub-mysql-0`|Claimed by the DataHub MySQL pod, which is deployed only when the DataHub is enabled.
 
 To guarantee the retention of physical storage even after the PVC is deleted (for example, when Edge is deleted) and to enable future storage expansion if needed, it's crucial to configure the StorageClass and/or the PVs with the following settings:
 
 1. **Reclaim Policy:** Ensure that the reclaim policy is set to **`Retain`**. This setting preserves the storage even after the PVC deletion.
 2. **Volume Expansion:** Set the volume expansion option to **`true`**. This setting enables the storage to be expanded when necessary.
-
-If these recommended settings are not configured in the StorageClass, in the Edge CR status you receive the warnings below:
-
-- persistent volume reclaim policy of StorageClass [storage-class] is currently set to [Delete] instead of the recommended value [Retain]
-
-- allow volume to expand setting of the StorageClass [storage-class] is currently set to [false] instead of the recommended value [true]
-
-These warnings serve as reminders to adjust these settings for optimal storage management.
 
 Kubernetes provides a variety of persistent volume types, but two specific types enable Pod containers to access either a Network File System (NFS) or the cluster node's local filesystem (often set up as a NFS drive mapped to a local folder). This configuration is especially prevalent in on-premises deployments.
 
