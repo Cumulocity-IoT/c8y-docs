@@ -1,6 +1,7 @@
 yearly_release = true
-date = 2024-12-07T10:32:39.947Z
+yearly_release_name = "2025"
+date = 2023-12-07T10:32:39.947Z
 
 [[versions]]
-date = "January 6, 2025"
+date = "March 31, 2025"
 version = "2025.0"
