@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Make session_state optional in SSO login flow. (#8555) [GRAFT][release/cd] (#8744)
+title: Make session_state optional in SSO login flow
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62824
 version: 1021.56.1
 ---
-Make session_state optional in SSO login flow. (#8555) [GRAFT][release/cd] (#8744)
+When 'Redirect to the user interface application' is enabled, the UI application was requiring 'session_state' and 'code' properties in response to authorization request from the OAuth server. There are cases where 'session_state' is not returned by oauth server but 'code' only and login was failing. Session state is optional now.
