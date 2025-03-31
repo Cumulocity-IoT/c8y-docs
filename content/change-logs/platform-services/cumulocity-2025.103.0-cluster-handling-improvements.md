@@ -1,7 +1,7 @@
 ---
 date:
 title: >-
-  Cluster handling improvements
+  Cluster membership and node discovery improvements
 product_area: Platform services
 change_type:
   - value: change-2c7RdTdXo4
@@ -15,8 +15,4 @@ build_artifact:
 ticket: MTM-62801
 version: 2025.103.0
 ---
-Reliability improvements in handling {{< product-c8y-iot >}} cluster membership changes were implemented affecting the following areas:
- - Microservice monitoring
- - Data broker
- - Cache invalidation
- - Platform certificate updates
+Improvements in the area of handling {{< product-c8y-iot >}} cluster membership and node discover have been implemented that might impact the Microservice monitoring features of the platform.
