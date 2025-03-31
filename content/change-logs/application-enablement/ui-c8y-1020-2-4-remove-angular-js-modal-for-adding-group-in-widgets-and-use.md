@@ -1,5 +1,5 @@
 ---
-date: '2024-07-04'
+date: 2025-03-31T12:00:00.000Z
 title: Replaced group creation dialog in widgets with redirect to Groups page
 product_area: Application enablement & solutions
 change_type:

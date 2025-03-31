@@ -1,5 +1,5 @@
 ---
-date: 2024-06-11
+date: 2025-03-31T12:00:00.000Z
 title: Resizable description field for models in Streaming Analytics application
 change_type:
   - value: change-2c7RdTdXo4

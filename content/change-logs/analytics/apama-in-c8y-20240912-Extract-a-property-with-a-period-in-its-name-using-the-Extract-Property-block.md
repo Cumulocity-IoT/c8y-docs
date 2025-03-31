@@ -1,5 +1,5 @@
 ---
-date: 2024-10-17
+date: 2025-03-31T12:00:00.000Z
 title: Extract a property with a period in its name using the Extract Property block
 change_type:
   - value: change-2c7RdTdXo4

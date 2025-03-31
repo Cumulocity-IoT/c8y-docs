@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-03-31T12:00:00.000Z
 title: Asset properties widget plugin no longer causes duplicate navigation elements
 product_area: "Application enablement & solutions"
 change_type:

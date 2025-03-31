@@ -1,5 +1,5 @@
 ---
-date: 2024-03-14
+date: 2025-03-31T12:00:00.000Z
 title: Dashboard availability setting removed from the Home dashboard
 product_area: Application enablement & solutions
 change_type:

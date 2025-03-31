@@ -1,5 +1,5 @@
 ---
-date: '2024-11-28'
+date: 2025-03-31T12:00:00.000Z
 title: Option to log out all users when deleting or modifying a global role
 product_area: Platform services
 change_type:

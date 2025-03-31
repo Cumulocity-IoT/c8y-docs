@@ -1,5 +1,5 @@
 ---
-date: 2024-06-11
+date: 2025-03-31T12:00:00.000Z
 title: Model editor in Streaming Analytics application displays only valid toolbar icons in read-only mode
 change_type:
   - value: change-2c7RdTdXo4

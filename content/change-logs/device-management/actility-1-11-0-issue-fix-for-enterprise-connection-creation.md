@@ -1,5 +1,5 @@
 ---
-date: 2024-06-12
+date: 2025-03-31T12:00:00.000Z
 title: Actility device registration no longer fails due to issue with enterprise connection
 product_area: Device management & connectivity
 change_type:

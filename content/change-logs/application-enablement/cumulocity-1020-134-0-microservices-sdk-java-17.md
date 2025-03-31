@@ -1,5 +1,5 @@
 ---
-date: 2024-10-15
+date: 2025-03-31T12:00:00.000Z
 title: Microservice SDK updating to Java 17  
 change_type:
   - value: change-inv-3bw8e

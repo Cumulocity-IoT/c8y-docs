@@ -1,5 +1,5 @@
 ---
-date: 2024-03-27T09:47:57.877Z
+date: 2025-03-31T12:00:00.000Z
 title: Reduced storage limits for Notifications 2.0 and microservice-based data broker
 change_type:
   - value: change-inv-3bw8e

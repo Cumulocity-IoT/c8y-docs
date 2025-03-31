@@ -1,5 +1,5 @@
 ---
-date: 2024-05-17
+date: 2025-03-31T12:00:00.000Z
 title: Limit for binaries is now equal to the application versions limit 
 product_area: Platform services
 change_type:

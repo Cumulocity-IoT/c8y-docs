@@ -1,5 +1,5 @@
 ---
-date: '2024-06-06'
+date: 2025-03-31T12:00:00.000Z
 title: Allow self-imported plugins to be added even if a user already has plugins
 product_area: Application enablement & solutions
 change_type:

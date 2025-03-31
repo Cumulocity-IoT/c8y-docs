@@ -14,7 +14,7 @@ Below you can find the links to the most common functionalities of {{< product-c
 
 ### Device Management {#device-management}
 
-The [Device Management application](/device-management-application/home-dashboard/) provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.
+The [Device Management application](/device-management-application/device-management-introduction/) provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.
 
 The following functionalities are available in Edge and described in detail in these sections:
 

@@ -1,6 +1,5 @@
 ---
-date:
-title: The multi-tenant apama-ctrl-mt-4c-16g microservice now supports analytic models
+date: 2025-03-31T12:00:00.000Z
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement

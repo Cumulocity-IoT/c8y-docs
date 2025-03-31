@@ -1,5 +1,5 @@
 ---
-date: '2024-12-12'
+date: 2025-03-31T12:00:00.000Z
 title: Digital Twin Manager application titles now use title case
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: '2024-10-17'
+date: 2025-03-31T12:00:00.000Z
 title: Character limit removed in OPC UA object-mapping functionalities
 product_area: Device management & connectivity
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: 2024-05-13
+date: 2025-03-31T12:00:00.000Z
 title: Range display now shows correct value if datapoint maximum is 0
 product_area: Application enablement & solutions
 change_type:

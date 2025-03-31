@@ -1,5 +1,5 @@
 ---
-date: 2024-06-27
+date: 2025-03-31T12:00:00.000Z
 title: Version numbers in Streaming Analytics application moved to platform details file
 change_type:
   - value: change-2c7RdTdXo4

@@ -257,6 +257,11 @@ collections:
             widget: boolean
             default: false
             hint: If it is a yearly release, switch on
+          - name: yearly_release_name
+            label: Yearly release name
+            widget: string
+            required: false
+            hint: If it is a yearly release, add the name of the release
           - name: date
             label: Starting from
             widget: datetime

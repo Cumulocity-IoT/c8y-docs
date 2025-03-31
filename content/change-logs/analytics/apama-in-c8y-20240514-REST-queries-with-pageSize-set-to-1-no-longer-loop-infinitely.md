@@ -1,5 +1,5 @@
 ---
-date: 2024-06-11
+date: 2025-03-31T12:00:00.000Z
 title: REST queries with pageSize set to 1 no longer loop infinitely
 change_type:
   - value: change-VSkj2iV9m

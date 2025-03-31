@@ -1,5 +1,5 @@
 ---
-date: 2024-04-04
+date: 2025-03-31T12:00:00.000Z
 title: Added information about certificate management
 product_area: Device management & connectivity
 change_type:

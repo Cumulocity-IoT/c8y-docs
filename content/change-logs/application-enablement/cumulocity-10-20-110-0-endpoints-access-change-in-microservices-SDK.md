@@ -1,5 +1,5 @@
 ---
-date: 2024-06-27
+date: 2025-03-31T12:00:00.000Z
 title: Restricting access to Spring Boot actuator endpoints
 product_area: Application enablement & solutions
 change_type:

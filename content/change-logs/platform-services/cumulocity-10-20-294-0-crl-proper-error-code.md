@@ -1,5 +1,5 @@
 ---
-date: 2024-04-04
+date: 2025-03-31T12:00:00.000Z
 title: Correct HTTP response code sent on missing fields in CRL (Certificate Revocation List) entries
 product_area: Platform services
 change_type:

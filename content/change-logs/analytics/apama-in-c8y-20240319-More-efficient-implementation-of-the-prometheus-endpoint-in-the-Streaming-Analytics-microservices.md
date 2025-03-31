@@ -1,5 +1,5 @@
 ---
-date: 2024-03-19
+date: 2025-03-31T12:00:00.000Z
 title: More efficient implementation of the /prometheus endpoint in the Streaming Analytics microservices
 change_type:
   - value: change-VSkj2iV9m

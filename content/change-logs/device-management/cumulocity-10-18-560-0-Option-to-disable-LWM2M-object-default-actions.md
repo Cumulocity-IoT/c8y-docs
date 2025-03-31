@@ -1,5 +1,5 @@
 ---
-date: "2024-02-06"
+date: 2025-03-31T12:00:00.000Z
 title: Option to disable LWM2M object default actions
 product_area: Device management & connectivity
 change_type:

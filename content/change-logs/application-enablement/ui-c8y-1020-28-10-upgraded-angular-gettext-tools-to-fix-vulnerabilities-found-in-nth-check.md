@@ -1,5 +1,5 @@
 ---
-date: '2024-10-17'
+date: 2025-03-31T12:00:00.000Z
 title: Upgraded angular-gettext-tools library to fix vulnerabilities
 product_area: Application enablement & solutions
 change_type:

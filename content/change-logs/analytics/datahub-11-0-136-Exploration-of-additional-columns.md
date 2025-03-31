@@ -1,5 +1,5 @@
 ---
-date: 2024-06-14T00:00:00.000Z
+date: 2025-03-31T12:00:00.000Z
 title: Exploration of additional result columns
 product_area: Analytics
 change_type:

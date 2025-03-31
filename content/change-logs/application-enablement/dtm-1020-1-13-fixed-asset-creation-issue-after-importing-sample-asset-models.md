@@ -1,5 +1,5 @@
 ---
-date: "2024-08-13"
+date: 2025-03-31T12:00:00.000Z
 title: "Asset hierarchy correctly shown in New asset page after importing a sample asset model"
 product_area: "Application enablement & solutions"
 change_type:

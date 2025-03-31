@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-03-31T12:00:00.000Z
 title: Fixed an issue with removing all translations in the translation editor
 product_area: Platform services
 change_type:

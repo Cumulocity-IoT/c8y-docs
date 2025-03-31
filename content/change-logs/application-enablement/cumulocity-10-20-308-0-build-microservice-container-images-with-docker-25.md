@@ -1,5 +1,5 @@
 ---
-date: 2024-05-16
+date: 2025-03-31T12:00:00.000Z
 title: Building microservice container images with Docker 25
 change_type:
   - value: change-VSkj2iV9m

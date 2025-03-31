@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-03-31T12:00:00.000Z
 title: Plugins installed via tag are now correctly displayed in the list
 product_area: Application enablement & solutions
 change_type:

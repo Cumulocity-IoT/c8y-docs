@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-03-31T12:00:00.000Z
 title: Issues in the Tracking tab in the device details have been fixed
 product_area: Device management & connectivity
 change_type:

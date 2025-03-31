@@ -1,5 +1,5 @@
 ---
-date: 2024-08-01
+date: 2025-03-31T12:00:00.000Z
 title: Concatenate each value type with a string type using the Expression block in Analytics Builder
 change_type:
   - value: change-2c7RdTdXo4

@@ -1,5 +1,5 @@
 ---
-date: 2024-09-05
+date: 2025-03-31T12:00:00.000Z
 title: Added breadcrumbs to Streaming Analytics application
 change_type:
   - value: change-2c7RdTdXo4

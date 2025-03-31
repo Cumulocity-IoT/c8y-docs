@@ -1,5 +1,5 @@
 ---
-date: '2024-11-11'
+date: 2025-03-31T12:00:00.000Z
 title: Filtering for alarm types added in the alarms overview
 product_area: Application enablement & solutions
 change_type:

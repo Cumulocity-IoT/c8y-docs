@@ -1,5 +1,5 @@
 ---
-date: 2024-12-02
+date: 2025-03-31T12:00:00.000Z
 title: Microservice SDK updated to Spring Boot 3.3
 change_type:
   - value: change-inv-3bw8e

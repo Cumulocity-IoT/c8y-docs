@@ -1,5 +1,5 @@
 ---
-date: 2024-03-07
+date: 2025-03-31T12:00:00.000Z
 title: Obsolete AngularJS module AssetTrack (c8y.parts.tracking) has been removed
 product_area: Device management & connectivity
 change_type:

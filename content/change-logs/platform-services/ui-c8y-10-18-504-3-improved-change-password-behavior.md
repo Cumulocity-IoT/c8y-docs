@@ -1,5 +1,5 @@
 ---
-date: 2023-12-20
+date: 2025-03-31T12:00:00.000Z
 title: Improved change password behavior
 product_area: Platform services
 change_type:
