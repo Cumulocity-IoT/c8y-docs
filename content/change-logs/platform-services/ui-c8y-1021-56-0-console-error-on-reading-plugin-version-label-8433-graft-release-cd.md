@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Console error on reading plugin version label (#8433) [GRAFT][release/cd] (#8742)
+title: Added plugin label to plugin versions view
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
