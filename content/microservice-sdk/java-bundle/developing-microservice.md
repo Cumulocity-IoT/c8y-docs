@@ -89,7 +89,7 @@ public AlarmRepresentation addHelloAlarm (){
 
 ### Using the Platform API {#using-platform-api}
 
-The Cumulocity Microservice SDK provides predefined methods to interact with the Cumulocity platform.
+The {{< product-c8y-iot >}} Microservice SDK provides predefined methods to interact with the {{< product-c8y-iot >}} platform.
 Several APIs are available to execute basic operations on the platform with corresponding Beans in the SDK,
 like `eventApi`, `inventoryApi`, `measurementApi`, etc.
 
