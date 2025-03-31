@@ -1,5 +1,5 @@
 ---
-date: 2025-03-31
+date: 
 title: Sequential operation processing flow now continues despite failures
 product_area: Device management & connectivity
 change_type:
@@ -15,6 +15,6 @@ ticket: DM-4470
 version: 3.0.18
 ---
 Previously, when operations were retrieved per tenant, all operations were processed sequentially. If any operation failed, 
-the processing would stop, and the error would be returned, blocking the execution of all subsequent operations until the 
+the processing stopped, and an error was returned, blocking the execution of all subsequent operations until the 
 failed operation was resolved. This issue has now been resolved. Only the failed operation is marked as failed, and the 
-processing of remaining operations continues uninterrupted.
+processing of the remaining operations continues uninterrupted.
