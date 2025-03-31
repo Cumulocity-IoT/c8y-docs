@@ -6,17 +6,17 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   let totalTests = 0;
 
   const checkFragmentExists = (htmlContent, fragment) => {
-    const variants = [
-      fragment,
-      fragment.replace(/\//g, '-'),
-      fragment.replace(/\//g, '_')
-    ];
-    return variants.some((variant) => {
-      const regexId = new RegExp(`id=["']${variant}["']`);
-      const regexHref = new RegExp(`href=["']#${variant}["']`);
-      return regexId.test(htmlContent) || regexHref.test(htmlContent);
-    });
+    const escRegExp = (string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const escFragment = escRegExp(fragment);
+  
+    const regexId = new RegExp(`id=["']${escFragment}["']`);
+    if (fragment.includes('/')) {
+      return regexId.test(htmlContent);
+    }
+    const regexHref = new RegExp(`href=["']#${escFragment}["']`);
+    return regexId.test(htmlContent) || regexHref.test(htmlContent);
   };
+  
 
   const validateUrl = (item) => {
     const url = item.link;
