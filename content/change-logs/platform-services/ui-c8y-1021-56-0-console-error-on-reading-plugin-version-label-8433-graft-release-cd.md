@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62700
 version: 1021.56.0
 ---
-Console error on reading plugin version label (#8433) [GRAFT][release/cd] (#8742)
+In the "Package contents" section of the selected plugin version, each plugin listed will have its own label indicating its type. Previously, no label was shown and a console log error was thrown.
