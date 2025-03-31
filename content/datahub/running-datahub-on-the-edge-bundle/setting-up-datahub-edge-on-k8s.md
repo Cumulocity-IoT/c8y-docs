@@ -26,22 +26,7 @@ For more details on the `spec.dataHub` field, refer [Edge Custom Resource - Data
 
 For additional guidance, see the [Install Edge](/edge-kubernetes/installing-edge-on-k8/#install-edge) and [Modify Edge](/edge-kubernetes/manage-edge/#modify-edge) sections in the Edge on Kubernetes documentation.
 
-#### Add entry to /etc/hosts
-
-In order to access Dremio, the following entry needs to be added to ``/etc/hosts``:
-```
-<IP address>   datahub-<domain_name>
-```
-where ``domain_name`` is the domain name chosen during the installation of {{< product-c8y-iot >}} Edge on Kubernetes.
-
-The IP address can be obtained using
-```shell
-kubectl get service cumulocity-ontoplb -n c8yedge -o jsonpath={.status.loadBalancer.ingress[*].ip}
-```
-
-{{< c8y-admon-info >}}
-Substitute the namespace name *c8yedge* in the command above with the specific namespace name you have specified in your Edge CR.
-{{< /c8y-admon-info >}}
+In order to access Dremio, you must also make the domain ``datahub-<domain_name>`` resolvable, just as the configured domain name and ``management-<domain_name>`` were made resolvable in [Accessing Edge](/edge-kubernetes/installing-edge-on-k8/#accessing-edge).
 
 #### Using {{< product-c8y-iot >}} DataHub Edge on Kubernetes
 
