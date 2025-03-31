@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Generate widget schemas for validation purposes. [GRAFT][release/cd]  (#8646)
+title: Generate schemas from types and interfaces in build process
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
