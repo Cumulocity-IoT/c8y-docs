@@ -91,7 +91,7 @@ public AlarmRepresentation addHelloAlarm (){
 
 The {{< product-c8y-iot >}} Microservice SDK provides predefined methods to interact with the {{< product-c8y-iot >}} platform.
 Several APIs are available to execute basic operations on the platform with corresponding beans in the SDK,
-like `eventApi`, `inventoryApi`, `measurementApi`, etc.
+such as `eventApi`, `inventoryApi`, `measurementApi`.
 
 There are two types of context in which API requests can be executed: tenant scope and user scope.
 Each microservice has a service user which can be used for the interaction with the platform.
