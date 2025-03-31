@@ -125,7 +125,7 @@ public List<EventRepresentation> getEvents () {
 }
 ```
 
-Default context is the tenant scope also in Java classes with `@RestController` annotations
+The default context is the tenant scope also in Java classes with `@RestController` annotations
 and in `EventListener` methods.
 To access a specific tenant, the appropriate context needs to be set by using the
 `MicroserviceSubscriptionsService` like in the next example.
