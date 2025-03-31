@@ -287,7 +287,7 @@ spec:
         ## Memory limit in memory units. For example, 1000M or 1G. Defaults to 6144M
         # memory: 6144M
 
-  ## This field enabled installation of the Cumulocity Messaging Service, which is required for 
+  ## This field enables installation of the Cumulocity Messaging Service, which is required for 
   ## using the microservice-based data broker and Notifications 2.0.
   ## This field is optional, and the Messaging Service is not installed if omitted.
   # messagingService:
@@ -358,14 +358,12 @@ spec:
           # cpu: 1000m
           # memory: 1024M
 
-  ## Enables the installation of the Cumulocity DataHub.
-  ## This field is optional, and the DataHub is not installed if omitted.
+  ## This field enables installation and configuration of the Cumulocity DataHub.
+  ## This field is optional, and the Messaging Service is not installed if omitted.  
   # dataHub:
     # enabled: true
-
     ## Name of the Kubernetes Secret containing the credentials for admin access to Dremio.
     # dremioAdminCredentialsSecretName: dremio-admin-credentials
-
     # resources:
       # limits:
         ## CPU limit must be specified as an integer (number of CPUs) without the units, 
