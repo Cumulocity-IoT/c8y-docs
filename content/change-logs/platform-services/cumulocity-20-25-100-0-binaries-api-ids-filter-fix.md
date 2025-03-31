@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62950
 version: 2025.0.69
 ---
-The endpoint for retrieving stored file metadata by id was not returning the correct data, this has now been resolved.
+Previously, the endpoint for retrieving stored file metadata by ID did not return the correct data. This issue has been fixed and the correct data is now returned.
