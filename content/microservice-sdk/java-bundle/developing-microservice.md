@@ -35,7 +35,7 @@ Annotation | Description
 
 ### Platform API {#platform-api}
 
-The Cumulocity Microservice SDK package consists of a number of services that are built and injected into Spring context.
+The {{< product-c8y-iot >}} Microservice SDK package consists of a number of services that are built and injected into the Spring context.
 A developer can use them to perform basic operations against the platform. The beans are built based on the properties read from a file. For hosted deployment, most of the properties are provided by the platform.
 
 The API provides the following services:
