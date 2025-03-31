@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Success message no longer displayed when canceling the creation of a smart group
+date: '2025-03-27'
+title: >-
+  Success message no longer displayed when canceling the creation of a smart
+  group
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
