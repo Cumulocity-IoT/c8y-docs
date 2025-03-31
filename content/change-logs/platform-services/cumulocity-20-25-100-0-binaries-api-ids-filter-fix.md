@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62950
 version: 2025.0.69
 ---
-Previously, the endpoint for retrieving stored file metadata by ID did not return the correct data. This issue has been fixed and the correct data is now returned.
+Previously, the endpoint for retrieving [stored files metadata](https://{{< domain-c8y >}}/api/core/#operation/getBinariesCollectionResource) did not return the correct data when filtering by ID. This issue has been fixed and the correct data is now returned.
