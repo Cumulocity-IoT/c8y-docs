@@ -1,5 +1,5 @@
 ---
-date: '2024-08-15'
+date: 2025-03-31T12:00:00.000Z
 title: >-
   Changing the unit in a data point template is now correctly reflected in
   related "Info gauge" widgets

@@ -1,6 +1,5 @@
 ---
-date:
-title: Changes to Notifications 2.0 tenant context subscriptions with no API filter
+date: 2025-03-31T12:00:00.000Z
 change_type:
   - value: change-3BQrQ6adS
     label: API change

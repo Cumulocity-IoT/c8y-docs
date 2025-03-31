@@ -1,5 +1,5 @@
 ---
-date: "2024-02-06"
+date: 2025-03-31T12:00:00.000Z
 title: Fixed issues with LWM2M registration requests
 product_area: Platform services
 change_type:

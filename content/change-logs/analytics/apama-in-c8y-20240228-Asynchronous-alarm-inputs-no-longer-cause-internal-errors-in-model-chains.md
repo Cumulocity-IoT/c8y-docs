@@ -1,5 +1,5 @@
 ---
-date: 2024-03-21
+date: 2025-03-31T12:00:00.000Z
 title: Asynchronous alarm inputs no longer cause internal errors in Analytics Builder model chains
 change_type:
   - value: change-VSkj2iV9m

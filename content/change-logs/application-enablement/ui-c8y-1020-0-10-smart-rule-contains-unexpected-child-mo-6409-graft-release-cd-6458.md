@@ -1,5 +1,5 @@
 ---
-date: '2024-06-13'
+date: 2025-03-31T12:00:00.000Z
 title: >-
   Smart rules list now always shows the children column properly if child assets
   are assigned to a managed object

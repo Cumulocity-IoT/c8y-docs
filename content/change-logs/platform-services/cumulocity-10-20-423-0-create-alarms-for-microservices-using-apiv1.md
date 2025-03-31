@@ -1,5 +1,5 @@
 ---
-date: 2024-06-10T14:53:24.832Z
+date: 2025-03-31T12:00:00.000Z
 title: Removal of Microservice API version 1 in Cumulocity SaaS instances and next yearly release 2025
 change_type:
   - value: change-3BQrQ6adS

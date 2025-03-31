@@ -1,5 +1,5 @@
 ---
-date: 2024-11-21
+date: 2025-03-31T12:00:00.000Z
 title: Apama Docker images moving to Amazon ECR
 change_type:
   - value: change-QHu1GdukP

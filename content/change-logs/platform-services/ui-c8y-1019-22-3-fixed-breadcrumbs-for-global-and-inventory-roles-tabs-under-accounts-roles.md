@@ -1,5 +1,5 @@
 ---
-date: 2024-05-13
+date: 2025-03-31T12:00:00.000Z
 title: Fixed location information for Global roles and Inventory roles tabs
 product_area: Platform services
 change_type:

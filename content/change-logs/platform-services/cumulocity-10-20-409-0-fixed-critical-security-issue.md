@@ -1,5 +1,5 @@
 ---
-date: 2024-06-17
+date: 2025-03-31T12:00:00.000Z
 title: Fixed critical security issue
 product_area: Platform services
 change_type:

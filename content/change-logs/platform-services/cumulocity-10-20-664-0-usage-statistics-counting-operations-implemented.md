@@ -1,6 +1,5 @@
 ---
-date:
-title: Implemented operation creation and update counters for usage statistics
+date: 2025-03-31T12:00:00.000Z
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP

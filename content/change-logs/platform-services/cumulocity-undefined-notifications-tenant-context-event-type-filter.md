@@ -1,5 +1,5 @@
 ---
-date: 2025-01-30
+date: 2025-03-31T12:00:00.000Z
 title: Changes to Notifications 2.0 tenant context subscriptions with event API filter
 change_type:
   - value: change-QHu1GdukP

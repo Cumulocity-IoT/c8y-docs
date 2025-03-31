@@ -1,5 +1,5 @@
 ---
-date: '2024-12-12'
+date: 2025-03-31T12:00:00.000Z
 title: >-
   Support for ID tokens provided by external IAM servers in the SSO
   authentication process

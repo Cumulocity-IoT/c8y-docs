@@ -1,5 +1,5 @@
 ---
-date: 2024-03-14
+date: 2025-03-31T12:00:00.000Z
 title: Migration of the Tracking tab to Angular
 product_area: Device management & connectivity
 change_type:

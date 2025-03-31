@@ -1,5 +1,5 @@
 ---
-date: 2024-10-31
+date: 2025-03-31T12:00:00.000Z
 title: Improved option name and documentation for Pulse block in Analytics Builder
 change_type:
   - value: change-2c7RdTdXo4

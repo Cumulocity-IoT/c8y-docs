@@ -1,5 +1,5 @@
 ---
-date: '2024-06-06'
+date: 2025-03-31T12:00:00.000Z
 title: Fixed widget dragging in dashboards
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: 2024-05-15
+date: 2025-03-31T12:00:00.000Z
 title: Device count details for usage statistics documented
 
 product_area: Platform services

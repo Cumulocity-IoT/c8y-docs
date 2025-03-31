@@ -1,5 +1,5 @@
 ---
-date: 2024-05-13
+date: 2025-03-31T12:00:00.000Z
 title: Fixed typo in Single sign-on page
 product_area: Platform services
 change_type:

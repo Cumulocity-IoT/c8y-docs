@@ -1,5 +1,5 @@
 ---
-date: 2024-04-26
+date: 2025-03-31T12:00:00.000Z
 title: Reports page extracted into a separate plugin
 product_area: Application enablement & solutions
 change_type:

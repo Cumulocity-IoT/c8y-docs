@@ -1,5 +1,5 @@
 ---
-date: 2024-09-21
+date: 2025-03-31T12:00:00.000Z
 title: Alarm Input and Event Input blocks no longer use incorrect source time for alarm and event updates
 change_type:
   - value: change-2c7RdTdXo4

@@ -1,5 +1,5 @@
 ---
-date: 2025-01-29
+date: 2025-03-31T12:00:00.000Z
 title: Upcoming changes to Apama runtime embedded in Streaming Analytics
 change_type:
   - value: change-inv-3bw8e

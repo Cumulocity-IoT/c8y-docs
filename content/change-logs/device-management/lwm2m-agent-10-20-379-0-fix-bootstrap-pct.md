@@ -1,5 +1,5 @@
 ---
-date: 2024-09-19
+date: 2025-03-31T12:00:00.000Z
 title: LWM2M agent uses preferred content type requested by the device during a LWM2M bootstrap session
 product_area: Device management & connectivity
 change_type:

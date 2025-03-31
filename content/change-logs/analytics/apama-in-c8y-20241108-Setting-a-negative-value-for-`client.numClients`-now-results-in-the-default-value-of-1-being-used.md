@@ -1,5 +1,5 @@
 ---
-date: 2024-11-21
+date: 2025-03-31T12:00:00.000Z
 title: Setting a negative value for the `client.numClients` tenant option now results in the default value of 1 being used
 change_type:
   - value: change-VSkj2iV9m

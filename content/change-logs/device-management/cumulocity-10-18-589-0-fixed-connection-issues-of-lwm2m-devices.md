@@ -1,5 +1,5 @@
 ---
-date: "2024-02-06"
+date: 2025-03-31T12:00:00.000Z
 title: Fixed connection issues of LWM2M devices
 product_area: Device management & connectivity
 change_type:

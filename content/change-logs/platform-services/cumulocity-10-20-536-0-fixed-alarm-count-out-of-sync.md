@@ -1,5 +1,5 @@
 ---
-date: 2024-09-11
+date: 2025-03-31T12:00:00.000Z
 title: Alarms counts in managed objects in sync with alarm counts in the database
 product_area: Platform services
 change_type:

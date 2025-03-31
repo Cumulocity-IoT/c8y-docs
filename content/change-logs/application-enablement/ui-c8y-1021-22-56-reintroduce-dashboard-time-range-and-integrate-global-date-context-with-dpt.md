@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-03-31T12:00:00.000Z
 title: Restored dashboard time range selector option for "Data points table" widget
 product_area: Application enablement & solutions
 change_type:

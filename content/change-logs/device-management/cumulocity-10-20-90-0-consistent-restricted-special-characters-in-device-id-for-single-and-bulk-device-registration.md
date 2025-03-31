@@ -1,5 +1,5 @@
 ---
-date: 2024-04-04
+date: 2025-03-31T12:00:00.000Z
 title: Consistent restriction of special characters in device ID for single and bulk
   device registration
 product_area: Device management & connectivity

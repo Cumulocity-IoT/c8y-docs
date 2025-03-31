@@ -1,5 +1,5 @@
 ---
-date: 2024-12-03
+date: 2025-03-31T12:00:00.000Z
 title: Added legal notices to the product documentation
 change_type:
   - value: change-2c7RdTdXo4

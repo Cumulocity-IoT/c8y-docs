@@ -1,5 +1,5 @@
 ---
-date: 2024-03-21
+date: 2025-03-31T12:00:00.000Z
 title: EPL improvement to string.toDecimal() method
 change_type:
   - value: change-2c7RdTdXo4

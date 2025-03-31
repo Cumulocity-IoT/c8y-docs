@@ -1,5 +1,5 @@
 ---
-date: 2024-09-19
+date: 2025-03-31T12:00:00.000Z
 title: Disabling the automatic configuration of the required interval for LWM2M devices
 change_type:
   - value: change-2c7RdTdXo4

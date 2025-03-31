@@ -1,5 +1,5 @@
 ---
-date: 2023-12-14
+date: 2025-03-31T12:00:00.000Z
 title: Displaying null for empty number values in Asset property page
 product_area: Application enablement & solutions
 change_type:

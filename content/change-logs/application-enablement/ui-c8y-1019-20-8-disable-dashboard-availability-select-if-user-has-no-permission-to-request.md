@@ -1,5 +1,5 @@
 ---
-date: 2024-04-25
+date: 2025-03-31T12:00:00.000Z
 title: Dashboard availability selection is hidden for users who do not have the required permission
 product_area: Application enablement & solutions
 change_type:

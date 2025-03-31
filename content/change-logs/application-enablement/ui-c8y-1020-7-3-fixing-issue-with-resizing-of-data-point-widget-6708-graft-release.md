@@ -1,5 +1,5 @@
 ---
-date: '2024-07-25'
+date: 2025-03-31T12:00:00.000Z
 title: Fixed resizing of "Data point" widget
 product_area: Application enablement & solutions
 change_type:

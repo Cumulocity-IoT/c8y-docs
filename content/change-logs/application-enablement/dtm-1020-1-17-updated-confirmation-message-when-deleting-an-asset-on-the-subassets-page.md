@@ -1,5 +1,5 @@
 ---
-date: '2024-10-24'
+date: 2025-03-31T12:00:00.000Z
 title: Updated confirmation message when deleting an asset on the Subassets page
 product_area: Application enablement & solutions
 change_type:

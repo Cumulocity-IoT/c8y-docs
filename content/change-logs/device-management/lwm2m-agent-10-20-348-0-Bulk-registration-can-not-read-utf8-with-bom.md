@@ -1,5 +1,5 @@
 ---
-date: 2024-09-19
+date: 2025-03-31T12:00:00.000Z
 title: LWM2M agent bulk registration no longer fails when using an Excel-generated CSV file
 change_type:
   - value: change-VSkj2iV9m

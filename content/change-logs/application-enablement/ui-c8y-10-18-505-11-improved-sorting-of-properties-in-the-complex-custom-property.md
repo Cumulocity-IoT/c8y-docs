@@ -1,5 +1,5 @@
 ---
-date: 2024-03-14T14:35:11.175Z
+date: 2025-03-31T12:00:00.000Z
 title: Improved sorting of properties in complex custom property in Digital Twin Manager
 product_area: Application enablement & solutions
 change_type:

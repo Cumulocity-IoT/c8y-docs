@@ -1,5 +1,5 @@
 ---
-date: '2024-07-04'
+date: 2025-03-31T12:00:00.000Z
 title: Pasted dashboards now include linked child additions from source dashboard
 product_area: Application enablement & solutions
 change_type:

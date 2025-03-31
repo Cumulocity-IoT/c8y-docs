@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-03-31T12:00:00.000Z
 title: Clear all filters button now resets the filter settings properly
 product_area: Device management & connectivity
 change_type:

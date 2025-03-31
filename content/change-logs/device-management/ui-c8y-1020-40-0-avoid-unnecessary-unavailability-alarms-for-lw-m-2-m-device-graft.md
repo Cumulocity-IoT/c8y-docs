@@ -1,5 +1,5 @@
 ---
-date: '2024-10-31'
+date: 2025-03-31T12:00:00.000Z
 title: Added new option to avoid unnecessary unavailability alarms for LWM2M devices
 product_area: Device management & connectivity
 change_type:

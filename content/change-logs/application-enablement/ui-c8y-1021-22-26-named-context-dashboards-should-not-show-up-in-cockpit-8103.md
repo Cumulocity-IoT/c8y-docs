@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-03-31T12:00:00.000Z
 title: Device info dashboards no longer show up in the Cockpit application
 product_area: Application enablement & solutions
 change_type:

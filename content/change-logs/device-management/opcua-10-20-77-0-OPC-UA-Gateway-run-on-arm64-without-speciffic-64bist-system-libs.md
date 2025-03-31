@@ -1,5 +1,5 @@
 ---
-date: 2024-08-22
+date: 2025-03-31T12:00:00.000Z
 title: OPC UA gateway no longer fails when attempting to call a missing 64-bit system function
 product_area: Device management & connectivity
 change_type:

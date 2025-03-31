@@ -1,5 +1,5 @@
 ---
-date: 2024-04-04
+date: 2025-03-31T12:00:00.000Z
 title: ZIP option now available when building an application
 product_area: Application enablement & solutions
 change_type:

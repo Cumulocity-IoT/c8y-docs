@@ -1,5 +1,5 @@
 ---
-date: 2024-09-19
+date: 2025-03-31T12:00:00.000Z
 title: LWM2M agent fully supports firmware update using firmware images hosted by external parties
 product_area: Device management & connectivity
 change_type:

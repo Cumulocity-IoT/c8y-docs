@@ -1,5 +1,5 @@
 ---
-date: 2024-05-16
+date: 2025-03-31T12:00:00.000Z
 title: New EPL actions for creating and parsing the c8y_Position fragment
 change_type:
   - value: change-2c7RdTdXo4

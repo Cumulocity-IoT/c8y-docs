@@ -1,5 +1,5 @@
 ---
-date: '2024-12-19'
+date: 2025-03-31T12:00:00.000Z
 title: Dashboard template setting now visible for devices without type property
 product_area: Application enablement & solutions
 change_type:

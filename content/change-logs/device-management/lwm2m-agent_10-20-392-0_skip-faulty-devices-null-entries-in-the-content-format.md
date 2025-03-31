@@ -1,5 +1,5 @@
 ---
-date: '2024-10-31'
+date: 2025-03-31T12:00:00.000Z
 title: >-
   LWM2M agent skips null entries in supported content format reported by LWM2M
   devices

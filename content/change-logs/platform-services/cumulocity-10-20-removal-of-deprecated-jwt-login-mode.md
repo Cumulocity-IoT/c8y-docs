@@ -1,5 +1,5 @@
 ---
-date: 2024-06-03
+date: 2025-03-31T12:00:00.000Z
 title: Removal of deprecated JWT login mode
 product_area: Platform services
 change_type:

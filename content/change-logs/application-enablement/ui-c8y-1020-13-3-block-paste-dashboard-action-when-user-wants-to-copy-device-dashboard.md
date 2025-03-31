@@ -1,5 +1,5 @@
 ---
-date: '2024-08-08'
+date: 2025-03-31T12:00:00.000Z
 title: >-
   Restricted paste action when user attempts to paste device dashboards into
   groups or group dashboards into devices

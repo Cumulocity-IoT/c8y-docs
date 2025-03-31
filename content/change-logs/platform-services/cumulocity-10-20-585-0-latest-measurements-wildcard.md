@@ -1,5 +1,5 @@
 ---
-date: '2024-12-12'
+date: 2025-03-31T12:00:00.000Z
 title: Latest measurement values tenant option now works with wildcard character
 product_area: Platform services
 change_type:
