@@ -1,6 +1,6 @@
 ---
 date:
-title: Fixed an issue with retrieving stored files metadata by ids
+title: Correct data returned when retrieving stored file metadata by ID
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
