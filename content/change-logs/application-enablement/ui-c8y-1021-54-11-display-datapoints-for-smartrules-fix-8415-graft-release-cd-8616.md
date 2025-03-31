@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed an issue with selecting data points for smart rules
+title: Improved the selection of data points in smart rules
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
