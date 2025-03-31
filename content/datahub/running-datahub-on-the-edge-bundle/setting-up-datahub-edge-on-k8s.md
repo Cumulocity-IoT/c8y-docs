@@ -4,14 +4,14 @@ title: Setting up Cumulocity DataHub Edge on Kubernetes
 layout: redirect
 ---
 
-In this setup the DataHub is deployed into a Kubernetes environment using the Edge operator. The {{< product-c8y-iot >}} DataHub backend is run as a microservice within the {{< product-c8y-iot >}} platform. The Dremio master and executor are deployed as a set of the Kubernetes pods.
+In this setup the DataHub is deployed into a Kubernetes environment using the Edge operator. The {{< product-c8y-iot >}} DataHub backend is run as a microservice within the {{< product-c8y-iot >}} platform. The Dremio master and executor are deployed as a set of Kubernetes pods.
 
 ### Prerequisites
 
 #### Resource requirements
 
 The resource requirements for running a bare {{< product-c8y-iot >}} Edge instance are described in [Requirements](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
-When {{< product-c8y-iot >}} DataHub Edge on Kubernetes is deployed on top, the resource requirements change by following additional amount:
+When {{< product-c8y-iot >}} DataHub Edge on Kubernetes is deployed on top, the resource requirements change by the following additional amounts:
 
  * Recommended: 16 GB RAM, minimum: 10 GB RAM
  * Recommended: 10 logical CPU cores, minimum: 6 logical CPU cores
@@ -22,7 +22,7 @@ When {{< product-c8y-iot >}} DataHub Edge on Kubernetes is deployed on top, the 
 ### Setting up {{< product-c8y-iot >}} DataHub Edge on Kubernetes
 To install and configure DataHub Edge on Kubernetes, update the `spec.dataHub` field in the Edge Custom Resource (CR) with the necessary configuration details for the Edge operator. After making the changes, apply the updated CR to deploy DataHub Edge.
 
-For more details on the `spec.dataHub` field, refer [Edge Custom Resource - DataHub](/edge-kubernetes/edge-custom-resource-definition/#dataHub).
+For more details on the `spec.dataHub` field, refer to [Edge Custom Resource - DataHub](/edge-kubernetes/edge-custom-resource-definition/#dataHub).
 
 For additional guidance, see the [Install Edge](/edge-kubernetes/installing-edge-on-k8/#install-edge) and [Modify Edge](/edge-kubernetes/manage-edge/#modify-edge) sections in the Edge on Kubernetes documentation.
 
@@ -32,12 +32,12 @@ In order to access Dremio, you must also make the domain ``datahub-<domain_name>
 
 {{< product-c8y-iot >}} DataHub Edge on Kubernetes behaves like the Cloud and Edge appliance version.
 
-### Validation of {{< product-c8y-iot >}} DataHub Installation
+### Validation of {{< product-c8y-iot >}} DataHub installation
 
 If the product doesn't work as intended after the installation, go through the validation steps described below.
 
 {{< c8y-admon-info >}}
-Substitute the namespace name *c8yedge* in the subsequent commands with the specific namespace name into which you installed Edge .
+Substitute the namespace name *c8yedge* in the subsequent commands with the specific namespace name into which you installed Edge.
 {{< /c8y-admon-info >}}
 
 #### MySQL
@@ -93,7 +93,7 @@ dremio-client     LoadBalancer      XXX.XXX.XXX.XXX         XXX.XXX.XXX.XXX     
 
 #### {{< product-c8y-iot >}} DataHub microservice
 
-When logged into {{< product-c8y-iot >}} UI, the {{< product-c8y-iot >}} DataHub microservice is available under *Administration > Ecosystem > Microservices*.
+When logged into the {{< product-c8y-iot >}} UI, the {{< product-c8y-iot >}} DataHub microservice is available under **Administration > Ecosystem > Microservices**.
 
 You can monitor the startup of the microservice pod "datahub-scope-edge-deployment-...." using
 ```shell
@@ -109,5 +109,5 @@ c8yedge       datahub-scope-edge-deployment-XXXXXXXXXX-YYYYY  1/1     Running   
 
 #### DataHub web application
 
-When logged into the {{< product-c8y-iot >}} UI, the {{< product-c8y-iot >}} DataHub web application is available under *Administration > Ecosystem > Applications*.
+When logged into the {{< product-c8y-iot >}} UI, the {{< product-c8y-iot >}} DataHub web application is available under **Administration > Ecosystem > Applications**.
 It should also be present in the usual {{< product-c8y-iot >}} application switcher.
