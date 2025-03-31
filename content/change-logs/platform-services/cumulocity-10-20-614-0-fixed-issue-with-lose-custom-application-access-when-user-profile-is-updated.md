@@ -1,5 +1,5 @@
 ---
-date: '2024-12-19'
+date: 2025-03-31T12:00:00.000Z
 title: >-
   Custom applications are no longer unintentionally cleared on updating a user
   profile

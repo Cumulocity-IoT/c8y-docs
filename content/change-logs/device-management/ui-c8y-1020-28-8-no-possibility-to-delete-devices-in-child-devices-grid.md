@@ -1,5 +1,5 @@
 ---
-date: '2024-10-17'
+date: 2025-03-31T12:00:00.000Z
 title: Enabled deletion of child devices from the Child devices tab
 product_area: Device management & connectivity
 change_type:

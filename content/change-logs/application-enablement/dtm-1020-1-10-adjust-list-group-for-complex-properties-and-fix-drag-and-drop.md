@@ -1,5 +1,5 @@
 ---
-date: "2024-06-27"
+date: 2025-03-31T12:00:00.000Z
 title: "Adjust list group for complex properties and fix drag and drop"
 product_area: "Application enablement & solutions"
 change_type:

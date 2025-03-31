@@ -1,5 +1,5 @@
 ---
-date: 2024-08-08
+date: 2025-03-31T12:00:00.000Z
 title: Smart rule "On missing measurements create alarm" now sends alarms without delay
 change_type:
   - value: change-VSkj2iV9m

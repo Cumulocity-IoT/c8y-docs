@@ -1,5 +1,5 @@
 ---
-date: "2024-09-26"
+date: 2025-03-31T12:00:00.000Z
 title: "Improved naming and consistency in asset model samples"
 product_area: "Application enablement & solutions"
 change_type:

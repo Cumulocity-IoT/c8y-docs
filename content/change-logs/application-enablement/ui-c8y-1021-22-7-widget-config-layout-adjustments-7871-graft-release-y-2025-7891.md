@@ -1,5 +1,5 @@
 ---
-date: '2025-01-09'
+date: 2025-03-31T12:00:00.000Z
 title: Improved widget configuration layout
 product_area: Application enablement & solutions
 change_type:

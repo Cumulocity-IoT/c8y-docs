@@ -4,7 +4,7 @@ title: Messaging Service
 layout: redirect
 ---
 
-Enables the installation of the {{< product-c8y-iot >}} Messaging Service, which is required for enabling the microservice-based data broker and Notifications 2.0. Enabling the Messaging Service requires additional system resources, including at least 2 extra CPU cores and 4 GB of RAM on the Kubernetes node. Additionally, the Messaging Service will make use of three Persistent Volumes (PVs) for the Pulsar Bookkeeper Ledgers, Pulsar Bookkeeper Journal, and Pulsar Zookeeper pods. See [Configuring storage](/edge-kubernetes/installing-edge-on-k8/#configuring-storage) for more details about Persistent Volumes.
+Specifying this field installs the {{< product-c8y-iot >}} Messaging Service, which is required for using the microservice-based data broker and Notifications 2.0. Installing the Messaging Service requires additional system resources, including at least 2 extra CPU cores and 4 GB of RAM on the Kubernetes node. Additionally, the Messaging Service will make use of three Persistent Volumes (PVs) for the Pulsar Bookkeeper Ledgers, Pulsar Bookkeeper Journal, and Pulsar Zookeeper pods. See [Configuring storage](/edge-kubernetes/installing-edge-on-k8/#configuring-storage) for more details about Persistent Volumes.
 
 This field is optional, and if omitted, the Messaging Service will not be installed.
 

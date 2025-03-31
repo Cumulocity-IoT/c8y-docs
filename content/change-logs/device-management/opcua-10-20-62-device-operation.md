@@ -1,5 +1,5 @@
 ---
-date: 2024-05-16
+date: 2025-03-31T12:00:00.000Z
 title: Support for OPC UA operations directly on generated devices
 product_area: Device management & connectivity
 change_type:

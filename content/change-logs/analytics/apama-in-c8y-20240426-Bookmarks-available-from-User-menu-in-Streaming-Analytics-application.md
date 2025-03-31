@@ -1,5 +1,5 @@
 ---
-date: 2024-05-16
+date: 2025-03-31T12:00:00.000Z
 title: Bookmarks available from User menu in Streaming Analytics application
 change_type:
   - value: change-2c7RdTdXo4

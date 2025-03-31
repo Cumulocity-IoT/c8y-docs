@@ -1,5 +1,5 @@
 ---
-date: 2024-09-19
+date: 2025-03-31T12:00:00.000Z
 title: Composite Write transmits data to the device in the specified order
 product_area: Device management & connectivity
 change_type:

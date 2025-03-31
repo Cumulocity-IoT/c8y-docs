@@ -1,5 +1,5 @@
 ---
-date: 2024-09-19
+date: 2025-03-31T12:00:00.000Z
 title: Added documentation for REST-based LWM2M device registration
 change_type:
   - value: change-2c7RdTdXo4

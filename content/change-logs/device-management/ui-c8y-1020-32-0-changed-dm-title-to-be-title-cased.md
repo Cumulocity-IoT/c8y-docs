@@ -1,5 +1,5 @@
 ---
-date: '2024-10-31'
+date: 2025-03-31T12:00:00.000Z
 title: Device management title now uses title case as all the application titles.
 product_area: Device management & connectivity
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-03-31T12:00:00.000Z
 title: Operation updates are now displayed in realtime in device control lists
 product_area: Device management & connectivity
 change_type:

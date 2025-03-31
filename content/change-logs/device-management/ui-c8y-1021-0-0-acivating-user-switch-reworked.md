@@ -1,5 +1,5 @@
 ---
-date: '2024-11-11'
+date: 2025-03-31T12:00:00.000Z
 title: Activating or deactivating users in the Device credentials page works reliably
 product_area: Device management & connectivity
 change_type:

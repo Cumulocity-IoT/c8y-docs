@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-03-31T12:00:00.000Z
 title: Navigator logo in dark mode correctly displayed after changing its size
 product_area: Platform services
 change_type:

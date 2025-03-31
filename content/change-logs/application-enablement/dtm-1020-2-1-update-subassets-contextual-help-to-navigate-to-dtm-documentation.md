@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-03-31T12:00:00.000Z
 title: "Updated link to the documentation in contextual help of Subassets page"
 product_area: "Application enablement & solutions"
 change_type:

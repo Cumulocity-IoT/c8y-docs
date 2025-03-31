@@ -1,5 +1,5 @@
 ---
-date: '2024-06-06'
+date: 2025-03-31T12:00:00.000Z
 title: >-
   Data points graph realtime is kept enabled when the browser tab is in
   background

@@ -1,5 +1,5 @@
 ---
-date: 2024-09-23
+date: 2025-03-31T12:00:00.000Z
 title: Service-level agreement for Platforms
 change_type:
   - value: change-2c7RdTdXo4

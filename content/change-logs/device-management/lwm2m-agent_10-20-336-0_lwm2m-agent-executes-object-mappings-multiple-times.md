@@ -1,5 +1,5 @@
 ---
-date: 2024-09-19
+date: 2025-03-31T12:00:00.000Z
 title: Object mapping actions no longer executed multiple times on LWM2M 1.1 send request
 product_area: Device management & connectivity
 change_type:

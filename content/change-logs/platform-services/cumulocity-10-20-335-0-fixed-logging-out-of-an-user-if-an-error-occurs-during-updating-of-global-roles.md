@@ -1,5 +1,5 @@
 ---
-date: 2024-04-26
+date: 2025-03-31T12:00:00.000Z
 title: OAI-Secure users are no longer logged out during unsuccessful global roles updates
 product_area: Platform services
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: 2024-04-04
+date: 2025-03-31T12:00:00.000Z
 title: Accurate handling of latitude and longitude inputs in the Map widget
 product_area: Application enablement & solutions
 change_type:

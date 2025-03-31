@@ -1,5 +1,5 @@
 ---
-date: 2024-02-29T12:00:00.000Z
+date: 2025-03-31T12:00:00.000Z
 title: EPL events no longer throw exceptions from the isCreate and isUpdate actions
 change_type:
   - value: change-2c7RdTdXo4

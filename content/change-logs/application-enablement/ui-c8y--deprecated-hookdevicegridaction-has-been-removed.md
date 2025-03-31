@@ -1,5 +1,5 @@
 ---
-date: 2024-05-13
+date: 2025-03-31T12:00:00.000Z
 title: Deprecated hookDeviceGridAction has been removed
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: '2024-06-06'
+date: 2025-03-31T12:00:00.000Z
 title: Added missing German translation in success message for bulk device upload
 product_area: Device management & connectivity
 change_type:

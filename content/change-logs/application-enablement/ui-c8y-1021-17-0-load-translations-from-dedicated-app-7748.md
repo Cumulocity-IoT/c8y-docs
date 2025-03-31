@@ -1,5 +1,5 @@
 ---
-date: '2024-12-19'
+date: 2025-03-31T12:00:00.000Z
 title: Translations loaded from a dedicated application
 product_area: Application enablement & solutions
 change_type:

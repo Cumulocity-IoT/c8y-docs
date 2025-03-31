@@ -1,5 +1,5 @@
 ---
-date: 2024-03-14
+date: 2025-03-31T12:00:00.000Z
 title: CSS variable now correctly sizes the app icon
 product_area: Application enablement & solutions
 change_type:

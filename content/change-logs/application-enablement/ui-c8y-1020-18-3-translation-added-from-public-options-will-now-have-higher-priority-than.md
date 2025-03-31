@@ -1,5 +1,5 @@
 ---
-date: '2024-08-29'
+date: 2025-03-31T12:00:00.000Z
 title: >-
   Public option translations now have higher priority than translations from
   plugin PO files

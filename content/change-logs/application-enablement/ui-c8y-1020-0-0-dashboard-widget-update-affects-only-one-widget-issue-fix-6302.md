@@ -1,5 +1,5 @@
 ---
-date: '2024-06-06'
+date: 2025-03-31T12:00:00.000Z
 title: Changes from all dashboard widgets now properly saved
 product_area: Application enablement & solutions
 change_type:

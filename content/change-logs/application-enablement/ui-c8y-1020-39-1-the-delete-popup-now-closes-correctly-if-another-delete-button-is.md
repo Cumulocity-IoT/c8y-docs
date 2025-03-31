@@ -1,5 +1,5 @@
 ---
-date: '2024-10-31'
+date: 2025-03-31T12:00:00.000Z
 title: >-
   Delete popup now closing correctly when hitting another delete button in the
   bookmark edit view

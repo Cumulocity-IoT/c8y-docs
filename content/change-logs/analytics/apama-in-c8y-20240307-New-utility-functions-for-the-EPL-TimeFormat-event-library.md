@@ -1,5 +1,5 @@
 ---
-date: 2024-04-04
+date: 2025-03-31T12:00:00.000Z
 title: New utility functions for the EPL TimeFormat event library
 change_type:
   - value: change-2c7RdTdXo4

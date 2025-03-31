@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-03-31T12:00:00.000Z
 title: Alarms tab in the Simulator page only shows alarms related to the selected asset
 product_area: Device management & connectivity
 change_type:

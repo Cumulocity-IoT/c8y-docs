@@ -1,5 +1,5 @@
 ---
-date: '2024-07-18'
+date: 2025-03-31T12:00:00.000Z
 title: Widget title and actions aligned with overlay and hidden appearance settings
 product_area: Application enablement & solutions
 change_type:

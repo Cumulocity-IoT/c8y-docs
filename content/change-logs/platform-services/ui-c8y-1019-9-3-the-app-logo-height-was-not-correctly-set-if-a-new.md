@@ -1,5 +1,5 @@
 ---
-date: 2024-03-21
+date: 2025-03-31T12:00:00.000Z
 title: App logo height set properly when creating new branding
 product_area: Platform services
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: '2024-08-22'
+date: 2025-03-31T12:00:00.000Z
 title: >-
   Cumulocity schematics now handle Angular standalone projects by disabling
   standalone mode

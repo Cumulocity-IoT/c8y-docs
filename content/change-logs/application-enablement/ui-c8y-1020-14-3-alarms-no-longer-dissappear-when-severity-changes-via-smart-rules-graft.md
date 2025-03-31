@@ -1,5 +1,5 @@
 ---
-date: '2024-08-08'
+date: 2025-03-31T12:00:00.000Z
 title: Alarms remain visible when the severity changes via a smart rule
 product_area: Application enablement & solutions
 change_type:

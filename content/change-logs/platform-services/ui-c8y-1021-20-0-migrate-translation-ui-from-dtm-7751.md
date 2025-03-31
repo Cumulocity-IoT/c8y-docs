@@ -1,5 +1,5 @@
 ---
-date: '2024-12-19'
+date: 2025-03-31T12:00:00.000Z
 title: >-
   Migrated localization user interface from Digital Twin Manager application to
   Administration application

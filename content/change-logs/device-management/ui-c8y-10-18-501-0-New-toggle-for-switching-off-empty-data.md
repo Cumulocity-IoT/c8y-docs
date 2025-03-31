@@ -1,5 +1,5 @@
 ---
-date: 2023-12-20
+date: 2025-03-31T12:00:00.000Z
 title: New toggle for switching off empty data in LWM2M device protocol
 product_area: Device management & connectivity
 change_type:

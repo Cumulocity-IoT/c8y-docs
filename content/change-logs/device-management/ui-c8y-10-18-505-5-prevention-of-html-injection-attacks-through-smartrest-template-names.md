@@ -1,5 +1,5 @@
 ---
-date: 2024-12-14
+date: 2025-03-31T12:00:00.000Z
 title: Prevention of HTML injection attacks through SmartREST template names
 product_area: Device management & connectivity
 change_type:

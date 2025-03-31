@@ -1,5 +1,5 @@
 ---
-date: 2024-04-26
+date: 2025-03-31T12:00:00.000Z
 title: Installed software packages are no longer emptied after restart of the Advanced software management microservice
 product_area: Device management & connectivity
 change_type:

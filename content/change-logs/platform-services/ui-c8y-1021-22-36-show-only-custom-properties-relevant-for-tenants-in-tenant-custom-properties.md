@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-03-31T12:00:00.000Z
 title: Custom properties tab in tenant details only shows tenant-relevant custom properties
 product_area: Platform services
 change_type:
