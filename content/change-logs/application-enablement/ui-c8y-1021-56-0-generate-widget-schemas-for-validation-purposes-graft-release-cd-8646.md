@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62204
 version: 1021.56.0
 ---
-Generate widget schemas for validation purposes. [GRAFT][release/cd]  (#8646)
+This feature allows to generate schema from types and interfaces from project and then import them later in runtime. It is possible thanks to custom webpack plugin that collects all the types imported with prefix `c8y-schema-loader` during app build process. It opens possibility to e.g. validating widget configuration in runtime (Typescript types are not present in built app).
