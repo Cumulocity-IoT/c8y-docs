@@ -73,7 +73,7 @@
 # stringData:
   ## Database admin username and password with which the MongoDB managed by the Edge operator 
   ## or the username of the externally hosted MongoDB server is configured.
-  # MONGODB_DATABASE_ADMIN_USER: admin
+  # MONGODB_DATABASE_ADMIN_USER: databaseAdmin
   # MONGODB_DATABASE_ADMIN_PASSWORD: admin-pass
 
   ## Only used when MongoDB is deployed and managed by the Edge operator.
@@ -165,9 +165,9 @@
 # type: Opaque
 # stringData:
   ## Dremio admin username and password.
-  # DREMIO_ADMIN_USER: admin
+  # DREMIO_ADMIN_USER: <DREMIO-ADMIN-USER>
   ## The password must be at least 8 letters long, must contain at least one number and one letter.
-  # DREMIO_ADMIN_PASSWORD: admin-pass1234
+  # DREMIO_ADMIN_PASSWORD: <DREMIO-ADMIN-PASSWORD>
 
 
 ########################################################################################################################
