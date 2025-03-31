@@ -5,7 +5,7 @@ layout: redirect
 
 ---
 
-The Cumulocity Microservice SDK is a tool kit supporting efficient development of applications
+The {{< product-c8y-iot >}} Microservice SDK is a tool kit supporting efficient development of applications
 based on the Cumulocity Platform API. The source code is located in the Github repository
 [Cumulocity Java client](https://github.com/Cumulocity-IoT/cumulocity-clients-java).
 See below for the different microservice SDK features, including annotations, services, configuration files, logging and the Maven build plugin.
