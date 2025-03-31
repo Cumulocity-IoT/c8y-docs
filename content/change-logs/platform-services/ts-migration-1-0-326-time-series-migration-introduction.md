@@ -1,7 +1,7 @@
 ---
 date: '2025-03-31'
 title: >-
-  Introduction to the Time Series Migration Application for Default Subscribed Microservices
+Time Series Migration application added to default subscribed microservices
 product_area: Platform services
 change_type:
   - value: change-inv-3bw8e
