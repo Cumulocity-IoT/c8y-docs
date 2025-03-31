@@ -376,7 +376,7 @@ If the value is not set, the awake time is determined by the LWM2M client's regi
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">The timeout used for shell operation requests such as read, write, execute done by the LWM2M microservice to the LWM2M device.
 The value is in milliseconds and can be given to override the default value that is provided in the LWM2M microservice property file with the "C8Y.lwm2mRequestTimeout" property.
-The value must stay within the bounds of min and max values defined in LWM2M microservice properties: "C8Y.lwm2mMinRequestTimeout" and "C8Y.lwm2mMaxRequestTimeout". 
+The value must stay within the bounds of the minimum and maximum values defined in the LWM2M microservice properties: `C8Y.lwm2mMinRequestTimeout` and `C8Y.lwm2mMaxRequestTimeout`. 
 If provided value is lower than minimum, LWM2M agent will ignore it and set allowed minimal value. Analogically, agent will correct the value higher than allowed maximum. 
 <td style="text-align: left">Optional</td>
 </tr>
