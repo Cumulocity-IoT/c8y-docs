@@ -72,5 +72,13 @@ Below all applications are listed which are by default available in the {{< stan
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
+<tr>
+<td style="text-align:left"><a href="/standard-tenant/enhanced-time-series-support/#migration-process-description" class="no-ajaxy">Time Series Migration</a></td>
+<td style="text-align:left">The application facilitates the migration of tenant data from legacy measurements to the new time series storage </td>
+<td style="text-align:left">timeseries-migration</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+</tr>
+
 </tbody>
 </table>

@@ -1,11 +1,10 @@
 ---
 date: '2025-03-31'
-title: >-
-Time Series Migration application added to default subscribed microservices
+title: Time Series Migration application added to default subscribed microservices
 product_area: Platform services
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+  - value: change-QHu1GdukP
+    label: Feature
 component:
   - value: component-OG_650_b2
     label: Platform services
