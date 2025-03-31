@@ -4,7 +4,8 @@ title: MQTT protocol implementation
 layout: redirect
 ---
 
-This section lists the implementation details for the MQTT Service. The MQTT Service implementation supports MQTT Version 3.1.1, support for 5.0 is planned.
+This section lists the implementation details for the MQTT Service.
+The MQTT Service implementation supports clients connecting using MQTT versions 3.1.1 and 5.0, although not all MQTT 5.0 protocol features are supported.
 
 ### Connecting via MQTT {#connecting-via-mqtt}
 
@@ -12,14 +13,16 @@ MQTT Service is supported via TCP. Use your tenant domain as the URL.
 
 Available ports:
 
-| &nbsp; | TCP |
-|:-----|:----|
-| TLS | 9883 |
+| &nbsp; | TCP  |
+|:-------|:-----|
+| TLS    | 9883 |
 | no TLS | 2883 |
 
-Port 9883 is enabled by default. It currently supports one-way SSL meaning that only the client validates the server certificate to ensure its identity.
-The client is authenticated by the server via standard username and password credentials.
-To enable port 2883 please contact [Product support](/additional-resources/contacting-support/).
+Port 9883 is enabled by default.
+Both one-way (server certificate only) and two-way (both client and server certificates) TLS are supported.
+When client certificates are not used, the client is authenticated by the server via standard username and password credentials.
+Port 2883 is not enabled by default as traffic through this port is unencrypted and could risk revealing credentials and other private data.
+To enable port 2883 in a dedicated environment please contact [Product support](/additional-resources/contacting-support/).
 
 ### Topic {#topic}
 
@@ -124,7 +127,7 @@ both message header and body. The header size varies, but its minimum is 2 bytes
 Authentication types supported by MQTT Service are:
 
 *   Username and password: The MQTT username must include the tenant ID and username in the format `<tenantID>/<username>`.
-*   Device certificates: Not yet supported. This will be added in a future release.
+*   Device certificates: The MQTT username must include the tenant ID in the format `<tenantID>`.
 
 #### ClientId {#client-id}
 
@@ -145,7 +148,7 @@ The {{< product-c8y-iot >}} implementation supports two levels of MQTT QoS:
     - It is guaranteed that subscribers will receive a message that was acknowledged by the server.
     - Subscribers may receive more than one copy of a message.
 * QoS 2: Exactly once:
-          - not supported
+    - not supported
 
 For subscriptions, MQTT Service will deliver all messages in the QoS that the client defined when subscribing to the topic.
 
@@ -170,24 +173,30 @@ The return code can be treated similarly to REST API HTTP codes, such as 401.
 
 ### MQTT 5.0 features {#mqtt-50-features}
 
-Support for MQTT 5.0 features will be added in the near future.
+Clients can connect using version 5.0 of the MQTT protocol.
+Support for additional MQTT 5.0 features will be added in future releases.
 
 ### MQTT TLS certificates {#mqtt-tls-certificates}
 
-MQTT Service uses the certificates which are assigned to the main environment domain. It always sends these certificates during TLS handshake to devices.
+#### Server certificates {#server-certificates}
+
+The MQTT Service uses the same server certificates that are assigned to the main {{< product-c8y-iot >}} environment domain.
+It always sends these certificates during TLS handshake to devices.
 Moreover, {{< enterprise-tenant >}}s are not able to customize those certificates via the SSL Management feature.
 
-#### General requirements
+#### Device (client) certificates {#device-certificates}
 
-Using device certificates with MQTT Service shares the same requirements as outlined in [Device certificates](/device-integration/device-certificates/#general-requirements-for-connecting-devices-with-certificates)
+Using device certificates with the MQTT Service shares the same requirements as outlined in [Device certificates](/device-integration/device-certificates/#general-requirements-for-connecting-devices-with-certificates)
 with a further requirement of enabling auto-registration when uploading the CA certificate to the platform.
-
 When connecting devices to MQTT Service using certificates, the tenant ID must be included in the MQTT CONNECT packet in the User Name field.
+This is to ensure that the service can correctly identify the tenant even when multiple tenants are using the same trust anchor.
 
 #### Adding and trusting CA certificate
 
-Trust anchors are per tenant. In order to use device certificates for device authentication, the CA or intermediate certificate which signs the device certificates must be uploaded to the platform, and
-added to trusted certificates. Additionally when adding certificates the field **Auto registration** must be enabled. See [Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates) for detailed instructions on how to add and trust CA certificate.
+TLS trust anchors in the {{< product-c8y-iot >}} platform are defined per tenant.
+In order to use device certificates for device authentication, the CA or intermediate certificate which signs the device certificates must be uploaded to the platform, and added to the trusted certificates for the tenant.
+Additionally when adding certificates the field **Auto registration** must be enabled.
+See [Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates) for detailed instructions on how to add and trust CA certificate.
 
 #### Creating self-signed certificates
 
@@ -211,7 +220,7 @@ There are further instructions regarding creating self-signed CA, intermediate, 
 #### Using certificates
 
 Once CA certificate has been uploaded and trusted, devices can now authenticate using certificates which have been signed by the CA certificate.
-Using the previously generated certificates, an example using mosquitto_pub would look like:
+Using the previously generated certificates, an example using the Mosquitto MQTT client could look like:
 ```console
 mosquitto_pub --cafile ca.crt -d -q 1 -h "cumulocity.com" -p "9883" -i myclient -u t11101 -t "v1/devices/me/telemetry" --key client-key.pem --cert client.pem -m {"temperature":25}
 ```

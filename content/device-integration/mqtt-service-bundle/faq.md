@@ -13,4 +13,4 @@ Q: Does MQTT Service support the SmartREST 2.0 protocol?<br/>
 A: Not yet, support for SmartREST 2.0 will be added in the future.
 
 Q: Why does MQTT Service not use standard MQTT ports 1883 and 8883?<br/>
-A: Those ports are already used by {{< product-c8y-iot >}} MQTT. Both endpoints are working together MQTT Service must use different ports.
+A: Those ports are already used by {{< product-c8y-iot >}} MQTT. While both endpoints are working together the MQTT Service must use different ports.

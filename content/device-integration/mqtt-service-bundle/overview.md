@@ -54,11 +54,11 @@ The table below presents a basic comparison between the standard {{< product-c8y
 | Clean session                | Starting with clean session is recommended              | Starting with clean session is recommended                                        |
 | Retained flag                | Not supported                                           | Not supported                                                                     |
 | Last will                    | Supported                                               | Supported                                                                         |
-| MQTT 5.0 features            | Not supported                                           | Support is planned                                                                |
-| Authentication               | Basic and device certificate                            | Basic authentication is supported, device certificate support is planned          |
+| MQTT 5.0 features            | Not supported                                           | Partial support
+| Authentication               | Basic and TLS device certificates                       | Basic and TLS device certificates                                                 |
 | Scalability                  | Horizontal                                              | Horizontal                                                                        |
 | Topic format                 | Determined by the SmartREST 2.0 protocol                | Unrestricted, SmartREST topic names are reserved and cannot currently be used     |
-| Payload                      | Determined by the SmartREST 2.0 protocol                | Unrestricted, maximum message size is 1048576 bytes (1 MiB) including all headers |
+| Payload                      | Determined by the SmartREST 2.0 protocol                | Unrestricted, maximum message size is 128 KiB including all headers               |
 | Extensibility                | Limited by SmartREST 2.0 custom templates               | Custom mapping microservices can support arbitrary MQTT-based protocols           |
 | Message processors/consumers | Build-in message processor for each SmartREST 2.0 topic | Custom mapping microservices can support multiple processors for a topic          |
 | JSON via MQTT                | Limited feature set                                     | Custom mapping microservices can support arbitrary JSON payloads                  |
