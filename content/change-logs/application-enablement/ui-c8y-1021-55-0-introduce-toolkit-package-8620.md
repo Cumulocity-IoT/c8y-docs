@@ -1,6 +1,6 @@
 ---
 date: ""
-title: New toolkit package introduced
+title: Introduced new toolkit package
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
