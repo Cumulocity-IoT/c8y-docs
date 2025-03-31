@@ -13,6 +13,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-62801
-version: 2025.103.0
+version: 2025.101.0
 ---
 Improvements in the area of handling {{< product-c8y-iot >}} cluster membership and node discover have been implemented that might impact the Microservice monitoring features of the platform.
