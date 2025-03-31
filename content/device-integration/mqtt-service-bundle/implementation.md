@@ -18,11 +18,11 @@ Available ports:
 | TLS    | 9883 |
 | no TLS | 2883 |
 
-Port 9883 is enabled by default.
+Port 9883 (TLS) is enabled by default and should be used for secure communication.
 Both one-way (server certificate only) and two-way (both client and server certificates) TLS are supported.
-When client certificates are not used, the client is authenticated by the server via standard username and password credentials.
-Port 2883 is not enabled by default as traffic through this port is unencrypted and could risk revealing credentials and other private data.
-To enable port 2883 in a dedicated environment please contact [Product support](/additional-resources/contacting-support/).
+When client certificates are not used, the server authenticates the client using standard username and password credentials.
+Port 2883 (no TLS) is disabled by default due to security risks, as traffic is unencrypted.
+To enable port 2883 in a dedicated environment, please contact [Product support](/additional-resources/contacting-support/).
 
 ### Topic {#topic}
 
@@ -186,41 +186,41 @@ Moreover, {{< enterprise-tenant >}}s are not able to customize those certificate
 
 #### Device (client) certificates {#device-certificates}
 
-Using device certificates with the MQTT Service shares the same requirements as outlined in [Device certificates](/device-integration/device-certificates/#general-requirements-for-connecting-devices-with-certificates)
-with a further requirement of enabling auto-registration when uploading the CA certificate to the platform.
-When connecting devices to MQTT Service using certificates, the tenant ID must be included in the MQTT CONNECT packet in the User Name field.
-This is to ensure that the service can correctly identify the tenant even when multiple tenants are using the same trust anchor.
+Using device certificates with the MQTT Service shares the same requirements as outlined in [Device certificates](/device-integration/device-certificates/#general-requirements-for-connecting-devices-with-certificates). Additionally, auto-registration must be enabled when uploading the CA certificate to the platform.
+At this time, manual device registration is not supported in the MQTT Service. Devices must be registered through the auto-registration process. For more details on auto-registration, refer to [Auto-registration](/device-integration/device-certificates/#registering-devices-using-certificates) guide.
+When connecting devices to the MQTT Service using certificates, the tenant ID must be included in the MQTT CONNECT packet in the user name field.
+This is required to correctly identify the tenant.
 
 #### Adding and trusting CA certificate
 
 TLS trust anchors in the {{< product-c8y-iot >}} platform are defined per tenant.
-In order to use device certificates for device authentication, the CA or intermediate certificate which signs the device certificates must be uploaded to the platform, and added to the trusted certificates for the tenant.
-Additionally when adding certificates the field **Auto registration** must be enabled.
-See [Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates) for detailed instructions on how to add and trust CA certificate.
+To use device certificates for authentication, the CA or intermediate certificate that signs the device certificates must be uploaded to the platform and added to the tenant’s list of trusted certificates.
+Additionally, the **Auto registration** field must be enabled when adding certificates.
+For detailed instructions on adding and trusting a CA certificate, see [Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates).
 
 #### Creating self-signed certificates
 
-In order to self-sign the device certificates the root CA certificate needs to be created.
-Using the OpenSSL CLI tool create a private key and then generate a self-signed root certificate from it.
+In order to self-sign the device certificates, the root CA certificate needs to be created.
+Using the OpenSSL CLI tool, create a private key and then generate a self-signed root certificate from it.
 ```console
 openssl genpkey -algorithm RSA -out ca.key
-openssl req -x509 -new -nodes -key ca.key -sha256 -days 3650 -out ca.crt -subj "/C=US/ST=State/L=City/O=YourCompany/OU=YourOrg/CN=MQTTServiceCA1"
+openssl req -x509 -new -nodes -key ca.key -sha256 -days 3650 -out ca.crt -subj "/C=YourCountry/O=YourCompany/OU=YourOrg/CN=MQTTServiceCA"
 ```
 Then create a private key for the device, generate the certificate signing request from this private key, and then sign the CSR.
 ```console
 openssl genpkey -algorithm RSA -out client.key
 openssl rsa -in client.key -out client-key.pem -outform PEM
-openssl req -new -key client.key -out client.csr -subj "/C=US/ST=State/L=City/O=YourCompany/OU=YourOrg/CN=mqtt-client"
+openssl req -new -key client.key -out client.csr -subj "/C=YourCountry/O=YourCompany/OU=YourOrg/CN=mqtt-client"
 openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt -days 3650 -sha256
-openssl x509 -in client.crt -out client.pem -outform PEM
+cat client.crt ca.crt > client-chain.pem
 ```
 
 There are further instructions regarding creating self-signed CA, intermediate, and device certificates certificates under [Generating and signing certificates](/device-integration/device-certificates/#generating-and-signing-certificates).
 
 #### Using certificates
 
-Once CA certificate has been uploaded and trusted, devices can now authenticate using certificates which have been signed by the CA certificate.
+Once the CA certificate has been uploaded and trusted, devices can now authenticate using certificates that have been signed by the CA certificate.
 Using the previously generated certificates, an example using the Mosquitto MQTT client could look like:
 ```console
-mosquitto_pub --cafile ca.crt -d -q 1 -h "cumulocity.com" -p "9883" -i myclient -u t11101 -t "v1/devices/me/telemetry" --key client-key.pem --cert client.pem -m {"temperature":25}
+mosquitto_pub --cafile ca.crt -d -q 1 -h "cumulocity.com" -p "9883" -i myclient -u t11101 -t "v1/devices/me/telemetry" --key client-key.pem --cert client-chain.pem -m {"temperature":25}
 ```
