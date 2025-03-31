@@ -110,7 +110,7 @@ Thereafter, the exception is handled by validating the existence of the source. 
 Custom actions are HTTP POST requests which the gateway will send to a defined custom URL. You can define custom headers and body template with the following placeholders available:
 
 - ${value}: value of specific node
-- ${receivedTimestampInMs}: The timestamp when the node value is received by OPC UA device gateway in milliseconds
+- ${receivedTimestampInMs}: Timestamp when the node value is received by the OPC UA device gateway in milliseconds
 - ${serverId}: ID of OPC-UA server
 - ${nodeId}: ID of source node
 - ${deviceId}: ID of source device
