@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added plugin label to plugin versions view
+title: Added plugin label to package content information for plugin versions
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
