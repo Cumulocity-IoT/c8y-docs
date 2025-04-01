@@ -13,4 +13,4 @@ sector:
 weight: 11
 ---
 
-Find a detailed description of the usage of {{< product-c8y-iot >}} Edge on Kubernetes.
+Find a detailed description of the usage of {{< product-c8y-iot >}} Edge on Kubernetes 2025-beta.
