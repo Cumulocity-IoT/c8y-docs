@@ -1,7 +1,9 @@
 ---
-weight: 41
+weight: 20
 title: Managing trusted certificate settings
-layout: redirect
+layout: bundle
+sector:
+- device_management
 helpcontent:
   - label: managing-trusted-certificate-settings
     title: Trusted certificates settings

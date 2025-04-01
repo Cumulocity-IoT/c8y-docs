@@ -1,9 +1,11 @@
 ---
-weight: 40
+weight: 30
 title: Device certificates
 layout: bundle
 sector:
   - device_management
+aliases:
+  - /device-integration/device-certificates/
 ---
 
 Devices can authenticate to {{< product-c8y-iot >}} using X.509 certificates over REST (port 8443) using mTLS.
@@ -43,7 +45,7 @@ In order to follow this tutorial, check if the following prerequisites are met:
 The user for the device will be created during the first MQTT call, if a device certificate is derived from a trusted certificate which was uploaded to the {{< product-c8y-iot >}} platform with a flag _autoRegistrationEnabled_ with a value of true.
 Auto-registration must be activated for the uploaded certificate.
 If auto-registration is not activated it is required to use the bulk registration (see below).
-To manage the auto registration field of uploaded certificates in the UI refer to [Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates).
+To manage the auto registration field of uploaded certificates in the UI refer to [Managing trusted certificates](/device-certificate-authentication/managing-trusted-certificates/).
 
 The device_user will be created when the API is called for the first time, provided:
 
