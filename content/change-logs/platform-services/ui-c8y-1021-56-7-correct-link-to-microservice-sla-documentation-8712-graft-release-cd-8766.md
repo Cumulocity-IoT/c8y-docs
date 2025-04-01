@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63073
 version: 1021.56.7
 ---
-Correct link to microservice sla documentation (#8712) [GRAFT][release/cd] (#8766)
+In the **Add Microservice** dialog in the Administration application, the link to the Microservice SLA documentation was incorrect. This issue has been fixed and the link now points to the correct URL.
