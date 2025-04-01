@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4487
 version: 10.18.540.287
 ---
-While migrating LWM2M devices to the new (2024 release) data model, it was possible to end up with an invalid data structure in rare cases where legacy data had fragments with blank values. This problem is now fixed.     
+While migrating LWM2M devices to the new data model introduced in the 2024 release, it was possible to end up with an invalid data structure in rare cases where legacy data had fragments with blank values. This problem is now fixed.     
