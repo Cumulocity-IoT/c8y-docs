@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62921
 version: 1021.56.6
 ---
-If a new dashboard is added, the first navigation does not work #8496 [GRAFT][release/cd] (#8641)
+After creating new dashboard, user was navigated to new dashboard but first navigation away from dashboard view was cancelled. It was fixed and navigation works.
