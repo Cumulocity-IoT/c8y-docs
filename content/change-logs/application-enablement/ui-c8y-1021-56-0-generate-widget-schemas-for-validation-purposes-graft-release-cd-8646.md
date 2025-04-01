@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Generate schemas from types and interfaces in build process
+title: Generating schemas from TypeScript types and interfaces in application build process
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62204
 version: 1021.56.0
 ---
-It is now possible to generate schemas from TypeScript types and interfaces in your project, which can then be imported during runtime. A custom webpack plugin makes this functionality possible by collecting all types imported with the `c8y-schema-loader` prefix during the application build process. The enhancement enables runtime validation capabilities, such as validating widget configurations (since TypeScript types are not retained in the build application).This improvements support upcoming advanced dashboard features for improved copying and pasting functionality.
+It is now possible to generate schemas from TypeScript types and interfaces in your project, which can then be imported during runtime. A custom webpack plugin makes this functionality possible by collecting all types imported with the `c8y-schema-loader` prefix during the application build process. The enhancement enables runtime validation capabilities, such as validating widget configurations (since TypeScript types are not retained in the built application).This improvements support upcoming advanced dashboard features for improved copying and pasting functionality.
