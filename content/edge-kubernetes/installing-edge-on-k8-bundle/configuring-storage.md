@@ -39,7 +39,7 @@ The Edge operator requests three PVCs, as outlined in the table below. Each of t
 
 |<div style="width:150px">Persistent Volume</div>|<div style="width:400px">Persistent Volume Claim</div>|<div style="width:500px">Description</div>|
 |:---|:---|:---|
-|75 GB|`mongod-data-edge-db-rs0-0`|Claimed by the MongoDB server to retain application data. The default size is 75 GB, but this value can be adjusted using the `spec.mongodb.resources.requests.storage` field in the Edge CR file. For more detail, see [Edge Custom Resource - MongoDB](/edge-kubernetes/edge-custom-resource-definition/#k8-edge-mongodb)|
+|75 GB|`mongod-data-edge-db-rs0-0`|Claimed by the MongoDB server to retain application data. The default size is 75 GB, but this value can be adjusted using the `spec.mongodb.resources.requests.storage` field in the Edge CR file. For more details, see [Edge Custom Resource - MongoDB](/edge-kubernetes/edge-custom-resource-definition/#k8-edge-mongodb).|
 |10 GB|`microservices-registry-data`|Claimed by the private docker registry to store microservice images.|
 |5 GB|`edge-logs`|Claimed by the Edge logging component to store the application and system logs.|
 |10 GB|`pulsar-bookie-ledgers-pulsar-bookie-0`|Claimed by the Pulsar Bookkeeper Ledgers pod, which is deployed only when the Messaging Service is enabled.|
