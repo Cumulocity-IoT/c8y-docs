@@ -1,6 +1,6 @@
 ---
 date:
-title: Fixed an issue with retrieving stored files metadata by ids
+title: Correct data returned when retrieving stored file metadata by ID
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-62950
 version: 2025.100.0
 ---
-Fixed an issue with the endpoint for retrieving [stored files metadata](https://{{< domain-c8y >}}/api/core/#operation/getBinariesCollectionResource) 
-not returning any results when `ids` filter is used.
+Previously, the endpoint for retrieving [stored files metadata](https://{{< domain-c8y >}}/api/core/#operation/getBinariesCollectionResource) did not return the correct data when filtering by ID. This issue has been fixed and the correct data is now returned.
