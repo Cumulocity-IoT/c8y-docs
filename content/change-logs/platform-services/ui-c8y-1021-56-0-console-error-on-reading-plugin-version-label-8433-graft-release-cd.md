@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62700
 version: 1021.56.0
 ---
-In the "Package contents" section of the selected plugin version, each plugin listed will have its own label indicating its type. Previously, no label was shown and a console log error was thrown.
+In the **Versions** tab of an extension, the **Package contents** section of a selected plugin version now shows a label for each plugin version listed indicating its type. Previously, no label was shown and a console log error was thrown.
