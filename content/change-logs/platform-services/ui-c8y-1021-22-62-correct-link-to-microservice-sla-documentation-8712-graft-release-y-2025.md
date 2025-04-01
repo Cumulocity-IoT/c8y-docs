@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63073
 version: 1021.22.62
 ---
-Correct link to microservice sla documentation (#8712) [GRAFT][release/y2025] (#8767)
+In the **Add Microservice** view in **Administration**, the link to the SLA documentation was incorrect. The link is now updated.
