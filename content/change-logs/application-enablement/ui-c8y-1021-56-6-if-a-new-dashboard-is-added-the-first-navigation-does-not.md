@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed an issue with navigation not working when adding a new dashboard
+title: Fixed an issue with the navigation after adding a new dashboard
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62921
 version: 1021.56.6
 ---
-After creating new dashboard, user was navigated to new dashboard but first navigation away from dashboard view was cancelled. It was fixed and navigation works.
+After creating a new dashboard, when navigating to another menu item in the navigator, the navigation was cancelled. This issue has been fixed and the navigation works properly again.
