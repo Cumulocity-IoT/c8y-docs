@@ -82,7 +82,7 @@ See below for detailed information about available settings.
 <tr>
 <td style="text-align:left">apiVersion</td>
 <td style="text-align:left">String</td>
-<td style="text-align:left">Document type format discriminator. The accepted values are positive integer numbers proceeded by an optional "v", such as "v2" and "2". Values which do not conform to this convention are considered "v1".</td>
+<td style="text-align:left">Document type format discriminator. The accepted values are positive integer numbers proceeded by an optional "v", such as "v2" and "2". Values which do not conform to this convention are considered "v2".</td>
 <td style="text-align:left">Yes</td>
 </tr>
 <tr>
