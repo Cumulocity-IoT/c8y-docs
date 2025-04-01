@@ -1,6 +1,6 @@
 ---
 date: ""
-title: If a new dashboard is added, the first navigation does not work #8496 [GRAFT][release/y2025] (#8640)
+title: Fixed an issue with navigation not working when adding a new dashboard
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
