@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62204
 version: 1021.56.0
 ---
-This feature allows to generate schema from types and interfaces from project and then import them later in runtime. It is possible thanks to custom webpack plugin that collects all the types imported with prefix `c8y-schema-loader` during app build process. It opens possibility to e.g. validating widget configuration in runtime (Typescript types are not present in built app).
+This feature enables the generation of schemas from TypeScript types and interfaces in your project, which can then be imported during runtime. A custom webpack plugin makes this functionality possible by collecting all types imported with the `c8y-schema-loader` prefix during the application build process. The enhancement enables runtime validation capabilities, such as validating widget configurations (since TypeScript types are not retained in the built application).This improvements will support upcoming advanced dashboarding features for improving copying and pasting functionality.
