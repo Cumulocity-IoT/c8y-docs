@@ -17,7 +17,7 @@ See also [{{< standard-tenant >}}](/glossary/s/#standard-tenant) and [{{< manage
 
 
 ### Edge Server {#edge-server}
-Edge Server is an informal term sometimes used to refer to {{< product-c8y-iot >}} Edge, a single-server variant of the {{< product-c8y-iot >}} platform, designed to run in factories on industrial PCs or local servers, that is, in the same site (“onsite”) in which the IoT assets are located. For details, see the {{< product-c8y-iot >}} Edge Documentation](/sector/edge_server/).
+Edge Server is an informal term sometimes used to refer to {{< product-c8y-iot >}} Edge, a single-server variant of the {{< product-c8y-iot >}} platform, designed to run in factories on industrial PCs or local servers, that is, in the same site (“onsite”) in which the IoT assets are located. For details, see the [{{< product-c8y-iot >}} Edge Documentation](/sector/edge_server/).
 See also [Thick Edge](/glossary/t/#thick-edge)
 
 
