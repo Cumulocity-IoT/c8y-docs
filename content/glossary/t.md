@@ -40,7 +40,7 @@ The unique ID of a tenant or subtenant. When a tenant is created, it gets an aut
 
 
 ### Thick Edge {#thick-edge}
-Thick Edge is an informal term sometimes used to refer to {{< product-c8y-iot >}} Edge, a single-server variant of the {{< product-c8y-iot >}} platform, designed to run in factories on industrial PCs or local servers, that is, in the same site (“onsite”) in which the IoT assets are located. For details, see the {{< product-c8y-iot >}} Edge Documentation](/sector/edge_server/).
+Thick Edge is an informal term sometimes used to refer to {{< product-c8y-iot >}} Edge, a single-server variant of the {{< product-c8y-iot >}} platform, designed to run in factories on industrial PCs or local servers, that is, in the same site (“onsite”) in which the IoT assets are located. For details, see the [{{< product-c8y-iot >}} Edge Documentation](/sector/edge_server/).
 
 See also [Edge Server](/glossary/e/#edge-server)
 
