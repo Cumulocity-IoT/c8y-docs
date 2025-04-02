@@ -109,7 +109,7 @@ After migrating data to Edge 10.18, proceed to configure the appliance to the sa
 
 3. If you have enabled the microservice hosting feature in the Edge 10.17 appliance, follow the instructions in [Enabling the microservice hosting feature](/edge/edge-configuration/#configuring-microservices) to enable the same in Edge 10.18.
 
-4. If you have installed {{< product-c8y-iot >}} DataHub in the Edge 10.17 appliance, follow the instructions in [Setting up {{< product-c8y-iot >}} DataHub Edge](/datahub/running-datahub-on-the-edge/#setting-up-datahub-edge) to install the same in Edge 10.18. Before you proceed with installing {{< product-c8y-iot >}} DataHub, change the ownership of the data lake folders using the following command:
+4. If you have installed {{< product-c8y-iot >}} DataHub in the Edge 10.17 appliance, follow the instructions in [Setting up {{< product-c8y-iot >}} DataHub Edge](/edge/running-datahub-on-the-edge/#setting-up-datahub-edge) to install the same in Edge 10.18. Before you proceed with installing {{< product-c8y-iot >}} DataHub, change the ownership of the data lake folders using the following command:
    ```shell
    chown -R systemd-coredump:systemd-coredump /opt/mongodb/cdh-*
    ```
