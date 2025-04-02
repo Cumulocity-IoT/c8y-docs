@@ -32,7 +32,7 @@ If you get 200 with `active: false` then the feature is disabled for the tenant.
         "strategy":"TENANT",
         "key":"certificate-authority"
     }
-To enable the feature you must call this API:
+To enable the feature you must have the role `ROLE_TENANT_MANAGEMENT_ADMIN` and call the following API:
 
     PUT /features/certificate-authority/by-tenant/{{tenantId}}
     Content-Type: application/json
@@ -52,7 +52,7 @@ This call can be done by executing the following curl statement:
        -d '{"phase": "IN_DEVELOPMENT","active": true,"strategy": "TENANT","key": "certificate-authority"}' \
        https://<{{< product-c8y-iot >}} tenant domain>/features/certificate-authority/by-tenant/{{tenantId}}
 
-Replace `<username>`, `<password>` with the appropriate credentials given to you when registering with {{< product-c8y-iot >}}. The user must have the `ROLE_TENANT_MANAGEMENT_ADMIN` role or belong to a management tenant.
+Replace `<username>`, `<password>` with the appropriate credentials given to you when registering with {{< product-c8y-iot >}}.
 
 ### Creating a CA certificate via REST {#creating-a-ca-certificate-via-the-rest}
 
@@ -60,7 +60,7 @@ To create a new CA certificate for a tenant the Certificate Authority API must b
 
 * A new key pair is created and a certificate is self-signed with `tenantID` as the Common Name (CN).
 * The private key is stored in an encrypted tenant option.
-* The certificate is stored in the trusted certificate repository with auto-registration turned off by default. Devices can only be registered automatically when the administrator turns this option on.
+* The certificate is stored in the trusted certificate repository with auto-registration turned on by default. Devices can only be registered automatically when the administrator turns this option on.
 * If a CA is already present, returns a message indicating the CA is already present.
 * If the CA is removed from the trusted certificate list, the corresponding private key is removed from the database collection.
 
