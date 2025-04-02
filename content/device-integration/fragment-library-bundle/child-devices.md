@@ -42,7 +42,7 @@ Examples of the device marker parameter in use:
 
 `101,uniqueChildId,myChildDevice,myChildType,true` - `c8y_IsDevice` fragment is added to the child device
 
-`101,uniqueChildId,myChildDevice,myChildType,false` -> c8y_IsDevice fragment is not added to the child device
+`101,uniqueChildId,myChildDevice,myChildType,false` - `c8y_IsDevice` fragment is not added to the child device
 
 `101,uniqueChildId,myChildDevice,myChildType` -> Default behaviour. c8y_IsDevice fragment is added to the child device
 
