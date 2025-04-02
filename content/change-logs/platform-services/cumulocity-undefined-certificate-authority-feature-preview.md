@@ -23,4 +23,4 @@ This feature is in Public Preview, that is, it is not enabled by default and may
 - Perform legitimacy checks, as defined by each tenant
 - Issue signed X.509 certificates trusted by the device tenant
 
-For more details about this feature refer to [Certificate Authority (CA)](/device-integration/certificate-authority-bundle/create-certificate-authority.md)
+For more details about this feature refer to [Certificate Authority (CA)](/device-integration/certificate-authority-bundle/create-certificate-authority.md).
