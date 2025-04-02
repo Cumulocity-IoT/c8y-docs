@@ -10,7 +10,7 @@ Currently, X.509 certificate authentication in {{< product-c8y-iot >}} requires 
 Without a built-in way to issue and manage certificates on devices, adopting this secure authentication method becomes complex and operationally burdensome.
 {{< product-c8y-iot >}} already supports certificate-based device authentication, ensuring secure communication through mutual authentication. However, this introduces an additional responsibility:
 
-Each device must have a trusted certificate, issued after legitimacy checks.
+- Each device must have a trusted certificate, issued after legitimacy checks.
 These certificates need to be managed over time, including renewal and revocation.
 
 To streamline certificate management, {{< product-c8y-iot >}} has been enhanced to function as a Certificate Authority (CA), providing the following capabilities:
