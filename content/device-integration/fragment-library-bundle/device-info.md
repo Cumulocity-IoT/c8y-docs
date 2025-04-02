@@ -21,7 +21,7 @@ PUT /inventory/managedObjects/<deviceId>
 }
 ```
 
-The devices with this fragment can be queried and filtered for. Along with the **All Devices**, they will also be shown in groups as well as during the creation of bulk operations. 
+The devices with this fragment can be queried and filtered for. Along with the **All devices** list, they will also be shown in groups as well as during the creation of bulk operations. 
 
 All devices including child devices should contain this fragment. 
 
