@@ -17,7 +17,7 @@ ID;TYPE;NAME;ICCID;IDTYPE;PATH;SHELL;AUTH_TYPE;ENROLLMENT_OTP
 ```
 
 * These EST devices will be added to the NewDeviceRegistration list, with their status set to Accepted.
-* These enrollment otp act as temporary device user credentials, which will be used for authentication when calling the `/.well-known/est/simpleenroll` endpoint.
+* These enrollment OTPs (one time passwords) act as temporary device user credentials, which are used for authentication when calling the `/.well-known/est/simpleenroll` endpoint.
 * This enhancement simplifies the enrollment process for multiple devices, ensuring a seamless and secure onboarding experience.
 
 ### Prerequisites {#prerequisites}
@@ -33,7 +33,7 @@ On creating a new device certificate the Device enroll API is called. This trigg
 
 * The Device enroll API is used by a device to get a fresh new certificate.
 * If no CA is available an error will be returned.
-* If the request does not contain a valid [CertificateSigningRequest](https://en.wikipedia.org/wiki/Certificate_signing_request) error will be returned.
+* If the request does not contain a valid [CertificateSigningRequest](https://en.wikipedia.org/wiki/Certificate_signing_request) an error will be returned.
 
 This is an example of a REST request:
 
