@@ -46,7 +46,7 @@ Examples of the device marker parameter in use:
 
 `101,uniqueChildId,myChildDevice,myChildType` - Default behaviour. `c8y_IsDevice` fragment is added to the child device
 
-`101,uniqueChildId,myChildDevice,myChildType,marker_fragment` -> If anything other than true or false is provided, c8y_IsDevice fragment is added to the child device
+`101,uniqueChildId,myChildDevice,myChildType,marker_fragment` - If anything else than true or false is provided, `c8y_IsDevice` fragment is added to the child device
 
 ### Operating a gateway for child devices {#operating-a-gateway-for-child-devices}
 Using the agent marker fragment ```com_cumulocity_model_Agent``` on the parent device but not on child devices effectively declares the device as a connected gateway for its children. The children are not directly connected to {{< product-c8y-iot >}} but send and receive data through the device and its integration.
