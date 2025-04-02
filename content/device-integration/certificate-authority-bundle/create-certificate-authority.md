@@ -4,7 +4,9 @@ title: Creating a certificate authority (CA)
 layout: redirect
 ---
 
-The {{< product-c8y-iot >}} certificate management allows {{< product-c8y-iot >}} to sign and issue certificates. Along with the trust anchor certificates the list of CA certificates for a tenant shows the {{< product-c8y-iot >}} signed certificates. The {{< product-c8y-iot >}} signed certificates are identifiable by the words TENANT CA.
+The {{< product-c8y-iot >}} certificate management allows {{< product-c8y-iot >}} to sign and issue certificates. 
+
+The {{< product-c8y-iot >}} signed certificates are shown in the list of certificate authority (CA) certificates for a tenant along with the trust anchor certificates. In this list, the {{< product-c8y-iot >}} signed certificates are identifiable by the words TENANT CA.
 In this tutorial, you will learn how to create a certificate authority (CA) for a tenant with {{< product-c8y-iot >}}.
 
 ### Prerequisites {#prerequisites}
