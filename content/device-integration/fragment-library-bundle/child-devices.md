@@ -34,7 +34,7 @@ To add a child device to an existing device you must connect the connected devic
 
 `101,uniqueChildId,myChildDevice,myChildType`
 
-The child create template has a new boolean device marker parameter, that makes the child device as a device by adding the c8y_IsDevice fragment. As a result, all the aspects of devices are also applicable to child devices. This enables the querying and filtering of child devices. And the child devices will also be shown in the device lists (eg: All device, groups and bulk operation creation)
+The child create template includes a Boolean device marker parameter, which turns the child device into a device by adding the `c8y_IsDevice` fragment. As a result, all aspects of devices are also applicable to child devices. This enables the querying and filtering of child devices. Moreover, child devices are also shown in the device lists (such as the **All devices** list, and in groups and during the creation of bulk operations). 
 
 If the device marker parameter isnt provided, the c8y_IsDevice fragment is now added by default. 
 
