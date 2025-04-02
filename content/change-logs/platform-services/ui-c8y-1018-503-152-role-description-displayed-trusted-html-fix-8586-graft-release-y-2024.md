@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Role description displayed trusted HTML fix to avoid XSS attacks
+title: Role description displayed as trusted HTML fix to avoid XSS attacks
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
