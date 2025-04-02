@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Role description displayed trusted HTML fix (#8586) [GRAFT][release/y2025] (#8750)
+title: Role description no longer displayed as trusted HTML to improve security
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
