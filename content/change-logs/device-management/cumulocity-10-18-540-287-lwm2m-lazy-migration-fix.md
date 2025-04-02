@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2025-04-02
 title:  Improved migration of LWM2M devices to new data model
 product_area: Device management & connectivity
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-04-02
 title: All fields in single sign-on configuration form accessible when selecting multiple options
 product_area: Platform services
 change_type:

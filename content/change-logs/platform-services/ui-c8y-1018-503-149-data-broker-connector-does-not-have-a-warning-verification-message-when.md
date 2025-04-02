@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-04-02
 title: Added confirmation dialog when deleting a data broker connector
 product_area: Platform services
 change_type:
