@@ -7,13 +7,14 @@ layout: redirect
 The {{< product-c8y-iot >}} certificate management allows {{< product-c8y-iot >}} to sign and issue certificates. 
 
 The {{< product-c8y-iot >}} signed certificates are shown in the list of certificate authority (CA) certificates for a tenant along with the trust anchor certificates. In this list, the {{< product-c8y-iot >}} signed certificates are identifiable by the words TENANT CA.
-In this tutorial, you will learn how to create a certificate authority (CA) for a tenant with {{< product-c8y-iot >}}.
+
+In this tutorial, you will learn how to create a CA for a tenant with {{< product-c8y-iot >}}.
 
 ### Prerequisites {#prerequisites}
 
 In order to use the Certificate Authority API the following is required:
 
-* The Certificate Authority feature is need to enabled on tenant level.
+* The Certificate Authority feature must be enabled on tenant level.
 * On tenant level you can check if the Certificate Authority feature is enabled with the following API:
 
       GET /features/certificate-authority
@@ -55,7 +56,7 @@ Replace `<username>`, `<password>` with the appropriate credentials given to you
 
 ### Creating a CA certificate via REST {#creating-a-ca-certificate-via-the-rest}
 
-To create a new certificate authority (CA) for a tenant the certificate authority API must be called. This triggers the following actions:
+To create a new CA certificate for a tenant the Certificate Authority API must be called. This triggers the following actions:
 
 * A new key pair is created and a certificate is self-signed with `tenantID` as the Common Name (CN).
 * The private key is stored in an encrypted tenant option.
@@ -82,7 +83,7 @@ The following response is returned:
         "status":"ENABLED"
         ....
     }
-This certificate identified as a TENANT CA and it has attribute `tenantCertificateAuthority":true`.
+This certificate is identified as a TENANT CA and it has the attribute `tenantCertificateAuthority":true`.
 
 {{< c8y-admon-info >}}
 In order to call `/certificate-authority` one of the following roles is required: ROLE_TENANT_MANAGEMENT_ADMIN or ROLE_TENANT_MANAGEMENT_READ, otherwise an HTTP response 403 will be returned. The Service User has automatic access to the endpoint.
@@ -104,18 +105,18 @@ Follow the instructions in [Prerequisites](#prerequisites) to enable it. After e
 
 1. In the Device Management application, navigate to the **Management** menu in the navigator and select **Trusted certificates**.
 2. Click **Add CA certificate** at the top right to create the CA certificate.
-3. Once the CA has been created the **Add CA Certificate** button and the API are both disabled as only one CA is allowed per tenant. If you want to replace the certificate you need to remove the current CA.
+3. Once the CA has been created the **Add CA certificate** button and the API are both disabled as only one CA is allowed per tenant. If you want to replace the certificate you need to remove the current CA.
 
 The new CA certificate will be added to the trusted certificates list:
 
 ![Trusted CA certificate added](/images/certificate-authority/trustedCAadded.png)
 
-### Auto Renewal of CA certificate {#auto-renewal-of-ca-certificate}
+### Auto-renewal of CA certificates {#auto-renewal-of-ca-certificate}
 
 Tenant Certificate Authority (CA) is automatically renewed on 2 October at 02:00 AM every year. The renewal process ensures that existing device certificates remain valid until their expiration. This auto-renewal mechanism ensures uninterrupted certificate management while maintaining security and compliance.
 
 * Each CA certificate has a validity of 1095 days (3 years) and undergoes automatic renewal in the background.
 * All CA metadata, private keys, and public keys remain unchanged, ensuring a seamless renewal process. Only `NotAfter` and `NotBefore` wil be changed.
 * Device certificates issued by the CA continue to have 1 year validity from issuance date, and new device certificates can be issued without disruption.
-* If the auto-renewal process fails, and it has near expiration date then error banner will be displayed in the UI for those certificates.
-* Optionally, an email alert can be sent to the Tenant Administrator for immediate action.
+* If the auto-renewal process fails, and it has a near expiration date then an error banner will be displayed in the UI for those certificates.
+* Optionally, an email alert can be sent to the tenant administrator for immediate action.
