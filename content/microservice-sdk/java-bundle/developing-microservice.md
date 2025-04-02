@@ -405,29 +405,21 @@ The package module provides a Maven plugin to prepare a ZIP file required by the
 The package plugin is responsible for the creation of a Docker container, rpm file and for creating a ZIP file that can be deployed on the platform.
 It can be configured with the following parameters:
 
-| parameter<br>short form<br>for pom.xml entries<br> in \<configuration> section |                            data type                             |         parmameter command<br>line name          |                                             default value                                              | description                                                                                                                                                                                                             | 
-|:------------------------------------------------------------------------------:|:----------------------------------------------------------------:|:------------------------------------------------:|:------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
-|                                  \<arguments>                                  |                          List\<String>                           |       -Dagent-package.arguments=[...,]...        |                                                   ""                                                   | General command line arguments for jar start up.<br>Specify with "," separated arguments.                                                                                                                               | 
-|                                  \<baseImage>                                  |                              String                              |         -Dskip.microservice.package=...          |                                                alpine:3                                                | Name of the base image used for docker builds.<br>Specify with \<image-name>:\<image-version-tag>.                                                                                                                      |
-|                                \<containerSkip>                                |                             boolean                              |        -Dskip.agent.package.container=...        |                                                 false                                                  | Skip the container packaging                                                                                                                                                                                            |
-|                                  \<directory>                                  |                              String                              |             -Dpackage.directory=...              |                                         ${project.artifactId}                                          | Microservice folder name                                                                                                                                                                                                |   
-|                                 \<deleteImage>                                 |                             boolean                              |      -Dmicroservice.package.deleteImage=...      |                                                  true                                                  | Flag to delete image                                                                                                                                                                                                    | 
-|                                 \<description>                                 |                              String                              |            -Dpackage.description=...             |                                         ${project.description}                                         | Microservice description                                                                                                                                                                                                |  
-|                             \<dockerBuildTimeout>                              |                               int                                |  -Dmicroservice.package.dockerBuildTimeout=...   |                                                  360                                                   | Timeout value in seconds for generation of docker build                                                                                                                                                                 | 
-|                      \<dockerImageInRegistryMaxWaitTime>                       |                               int                                | -Dmicroservice.package.dockerSaveWaitTimeOut=... |                                                  360                                                   | Timeout value in seconds for pushing image into registry                                                                                                                                                                | 
-|                                  \<encoding>                                   |                              String                              |        -Dproject.build.sourceEncoding=...        |                                                 UTF-8                                                  | Define String encoding                                                                                                                                                                                                  |
-|           \<heap><br>\<min>...\</min><br>\<max>...\<max><br>\</heap>           |       min, max : \<int>m<br>(for units refer to java docu)       |                        --                        |                                                   ""                                                   | heap parameter results to<br>-Xms\<min> -Xmx\<max><br>java runtime arguments<br>for the microservice start                                                                                                              |
-|                                   \<jvmArgs>                                   |                          List\<String>                           |        -Dagent-package.jvmArgs=[...,]...         | "-XX:+UseG1GC <br>-XX:+UseStringDeduplication <br>-XX:MinHeapFreeRatio=25 <br>-XX:MaxHeapFreeRatio=75" | Java runtime arguments for the microservice start<br>specify with "," separated arguments<br>Default values will be overwritten if other options are provided.<br>Arguments are passed during microservice startup      | 
-|                                                \<manifestFile>                 |                              String                              |                -DmanifestFile=...                |                          "${basedir}/src/main/configuration/cumulocity.json"                           | Path to the microservice manifest file location                                                                                                                                                                         | 
-|      \<metaspace><br>\<min>...\</min><br>\<max>...\<max><br>\</metaspace>      | min, max : \<int>m<br>(for units refer to java docu)             |                        --                        |                                                   ""                                                   | \<metaspace> parameter is combined<br>with \<perm> parameter values if available<br> which results in<br>-XX:MetaspaceSize=\<min>m -XX:MaxMetaspaceSize=\<max>m<br>java runtime arguments<br>for the microservice start |
-|                                    \<name>                                     |                              String                              |                -Dpackage.name=...                |                                         ${project.artifactId}                                          | Microservice name                                                                                                                                                                                                       |   
-|           \<perm><br>\<min>...\</min><br>\<max>...\<max><br>\</perm>           |       min, max : \<int>m<br>(for units refer to java docu)       |                        --                        |                                                   ""                                                   | \<perm> parameter is combined<br>with \<metaspace> parameter values if available<br> which results in<br>-XX:MetaspaceSize=\<min>m -XX:MaxMetaspaceSize=\<max>m<br>java runtime arguments<br>for the microservice start |
-|                                 \<registryUrl>                                 |                              String                              |         -Dpackage.docker.registryUrl=...         |                                                   ""                                                   | Url of docker registry where to push images                                                                                                                                                                             | 
-|                                \<registryUser>                                 |                              String                              |        -Dpackage.docker.registryUser=...         |                                                   ""                                                   | User name of docker registry credentials                                                                                                                                                                                | 
-|                                \<registryPass>                                 |                              String                              |        -Dpackage.docker.registryPass=...         |                                                   ""                                                   | Password of docker registry credentials                                                                                                                                                                                 | 
-|                                   \<rpmSkip>                                   |                             boolean                              |           -Dskip.agent.package.rpm=...           |                                                  true                                                  | Skip the rpm packaging                                                                                                                                                                                                  |
-|                                    \<skip>                                     |                             boolean                              |             -Dskip.agent.package=...             |                                                 false                                                  | Skip the whole packaging                                                                                                                                                                                                |
-|                           \<skipMicroservicePackage>                           |                             boolean                              |         -Dskip.microservice.package=...          |                                                 false                                                  | Skip the microservice packaging                                                                                                                                                                                         |
+| parameter<br>short form<br>for pom.xml entries<br> in \<configuration> section |                                data type                                |         parmameter command<br>line name          |                                             default value                                              | description                                                                                                                                                                                                                        | 
+|:------------------------------------------------------------------------------:|:-----------------------------------------------------------------------:|:------------------------------------------------:|:------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|                                  \<arguments>                                  |                              List\<String>                              |       -Dagent-package.arguments=[...,]...        |                                                   ""                                                   | General command line arguments for jar start up.<br>Specify with "," separated arguments.                                                                                                                                          | 
+|                                \<containerSkip>                                |                                 boolean                                 |        -Dskip.agent.package.container=...        |                                                 false                                                  | Skip the container packaging                                                                                                                                                                                                       |
+|                                 \<description>                                 |                                 String                                  |            -Dpackage.description=...             |                                         ${project.description}                                         | Microservice description                                                                                                                                                                                                           |  
+|                             \<dockerBuildTimeout>                              |                                   int                                   |  -Dmicroservice.package.dockerBuildTimeout=...   |                                                  360                                                   | Timeout value in seconds for generation of docker build                                                                                                                                                                            | 
+|                                  \<encoding>                                   |                                 String                                  |        -Dproject.build.sourceEncoding=...        |                                                 UTF-8                                                  | Define String encoding                                                                                                                                                                                                             |
+|           \<heap><br>\<min>...\</min><br>\<max>...\<max><br>\</heap>           | min, max : \<int>m<br>(for available units refer to java documentation) |                        --                        |                                                   ""                                                   | heap parameter results to -Xms\<min> -Xmx\<max> java runtime arguments for the microservice start up                                                                                                                               |
+|                                   \<jvmArgs>                                   |                              List\<String>                              |        -Dagent-package.jvmArgs=[...,]...         | "-XX:+UseG1GC <br>-XX:+UseStringDeduplication <br>-XX:MinHeapFreeRatio=25 <br>-XX:MaxHeapFreeRatio=75" | Java runtime arguments for the microservice start<br>specify with "," separated arguments. Default values will be overwritten if other options are provided. Arguments are passed during microservice startup                      | 
+|                                                \<manifestFile>                 |                                 String                                  |                -DmanifestFile=...                |                          "${basedir}/src/main/configuration/cumulocity.json"                           | Path to the microservice manifest file location                                                                                                                                                                                    | 
+|      \<metaspace><br>\<min>...\</min><br>\<max>...\<max><br>\</metaspace>      | min, max : \<int>m<br>(for available units refer to java documentation) |                        --                        |                                                   ""                                                   | \<metaspace> parameter is combined<br>with \<perm> parameter values if available which results in -XX:MetaspaceSize=\<min> -XX:MaxMetaspaceSize=\<max> java runtime arguments for the microservice start up                        |
+|                                    \<name>                                     |                                 String                                  |                -Dpackage.name=...                |                                         ${project.artifactId}                                          | Microservice name                                                                                                                                                                                                                  |   
+|           \<perm><br>\<min>...\</min><br>\<max>...\<max><br>\</perm>           | min, max : \<int>m<br>(for available units refer to java documentation) |                        --                        |                                                   ""                                                   | \<perm> parameter is combined with \<metaspace> parameter values for compatibility reasons if available which results in -XX:MetaspaceSize=\<min> -XX:MaxMetaspaceSize=\<max> java runtime arguments for the microservice start up |
+|                                   \<rpmSkip>                                   |                                 boolean                                 |           -Dskip.agent.package.rpm=...           |                                                  true                                                  | Skip the rpm packaging                                                                                                                                                                                                             |
+|                                    \<skip>                                     |                                 boolean                                 |             -Dskip.agent.package=...             |                                                 false                                                  | Skip the whole packaging                                                                                                                                                                                                           |
 
 
 Example configuration in pom.xml:
@@ -459,6 +451,71 @@ Example configuration in pom.xml:
   </executions>
 </plugin>
 ...
+```
+
+#### Set heap, perm or metaspace on command line
+
+Properties must be used if you want to specify data of complex data types on command line. This is the case for memory
+data like heap, perm and metaspace. In this case you have to specify each primitive value separately as pom property 
+which is then used inside the configuration of the microservice-package-maven-plugin. Primitive configuration values 
+or lists/arrays can be set on Maven command line directly without usage of properties, for example ‘-Dskip.agent.package.rpm=”true”’.
+
+Example pom.xml
+```xml
+<project … >
+  ...
+  <properties> 
+    ...
+    <custom-property.metaspace.min>200m</custom-property.metaspace.min>
+    <custom-property.metaspace.max>300m</custom-property.metaspace.max>
+    ...
+  </properties>
+  ...
+</project>
+```
+These properties now can be used inside the configuration section of the microservice-package-maven-plugin 
+defined in the pom.xml file of your microservice project.
+
+```xml
+<project … >
+  ...
+  <build>   
+    ...
+    <plugins>
+      ...
+      <plugin>
+        <groupId>com.nsn.cumulocity.clients-java</groupId>
+        <artifactId>microservice-package-maven-plugin</artifactId>
+        <version>…</version>
+        <executions>
+          <execution>
+            <id>package</id>
+            <phase>package</phase>
+            <goals>
+              <goal>package</goal>
+            </goals>
+            <configuration>
+              <name>${microservice.name}</name>
+              <image>${microservice.name}</image>
+              <encoding>UTF-8</encoding>
+              ...
+              <metaspace>
+                <min>${custom-property.metaspace.min}</min>
+                <max>${custom-property.metaspace.max}</max>
+              </metaspace>
+              ...
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+Specify on command line:
+```
+mvn clean install -Dcustom-property.metaspace.min=400m -Dcustom-property.metaspace.max=500m
 ```
 
 #### Push goal {#push-goal}
