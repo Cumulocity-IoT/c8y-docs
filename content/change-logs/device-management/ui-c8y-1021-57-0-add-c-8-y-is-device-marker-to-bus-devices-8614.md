@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Modbus, Profibus, CANBus, and CANopen devices are now marked with c8y_IsDevice fragment
+title: c8y_IsDevice fragment now added to Modbus, Profibus, CANBus, and CANopen devices
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
