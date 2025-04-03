@@ -474,7 +474,7 @@ Example pom.xml
   ...
 </project>
 ```
-These properties now can be used inside the configuration section of the microservice-package-maven-plugin 
+These properties can now be used inside the configuration section of the microservice-package-maven-plugin 
 defined in the pom.xml file of your microservice project.
 
 ```xml
