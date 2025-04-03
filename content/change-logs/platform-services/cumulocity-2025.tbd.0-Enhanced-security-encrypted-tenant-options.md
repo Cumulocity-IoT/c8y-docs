@@ -1,6 +1,6 @@
 ---
-date: '2025-03-31'
-title: Enhanced Security for Encrypted Tenant Options
+date: 
+title: Enhanced security for encrypted tenant options
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -15,6 +15,6 @@ ticket: MTM-62399
 version: 2025.tbd.0
 ---
 Encrypted tenant options with the prefix `credentials.` can only be decrypted by system users (such as bootstrap user and microservice user) if they own those tenant options. This new restriction determines ownership by matching the category of the tenant options in the following order of priority:
-* The category defined in the settingsCategory field in the microservice manifest.
+* The category defined in the `settingsCategory` field in the microservice manifest.
 * The microservice’s context-path.
 * The microservice name.
