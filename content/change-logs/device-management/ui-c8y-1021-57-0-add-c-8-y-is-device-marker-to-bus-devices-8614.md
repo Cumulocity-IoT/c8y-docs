@@ -1,6 +1,6 @@
 ---
 date: ""
-title: add c8y_IsDevice marker to bus-devices (#8614) [GRAFT][release/cd] (#8784)
+title: Modbus, Profibus, CANBus, and CANopen devices are now marked with c8y_IsDevice fragment
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
