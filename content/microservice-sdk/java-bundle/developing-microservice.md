@@ -92,7 +92,7 @@ API requests in {{< product-c8y-iot >}} microservices can run in two authenticat
  * Tenant scope – uses the service user's credentials.
  * User scope – uses the credentials of the authenticated user who triggered the request.
 
-Each microservice has a service user whose roles are defined in the `cumulocity.json` manifest. By default, the Platform API services provided by the Microservice SDK operate in the tenant scope. The following example uses the predefined eventApi bean in tenant scope:
+Each microservice has a service user whose roles are defined in the `cumulocity.json` manifest. By default, the platform API services provided by the Microservice SDK operate in the tenant scope. The following example uses the predefined eventApi bean in tenant scope:
 
 ```java
 @Autowired
@@ -151,7 +151,7 @@ The Microservice SDK provides both tenant-scope and user-scope beans with the fo
 | tokenApi, tenantTokenApi                                       | userTokenApi                    |
 | notificationSubscriptionApi, tenantNotificationSubscriptionApi | userNotificationSubscriptionApi |
 
-Various examples demonstrating use cases of the Platform API can be found in the GitHub repositories
+Various examples demonstrating use cases of the platform API can be found in the GitHub repositories
 [Cumulocity microservice templates](https://github.com/Cumulocity-IoT/cumulocity-microservice-templates) and
 [Cumulocity examples](https://github.com/Cumulocity-IoT/cumulocity-examples).
 
