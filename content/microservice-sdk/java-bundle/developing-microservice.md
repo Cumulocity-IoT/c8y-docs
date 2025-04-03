@@ -456,7 +456,7 @@ Example configuration in pom.xml:
 
 #### Set heap, perm or metaspace on command line
 
-Properties must be used if you want to specify data of complex data types on command line. This is the case for memory
+Properties must be used if you want to specify data of complex data types on the command line. This is the case for memory
 data like heap, perm and metaspace. In this case you have to specify each primitive value separately as pom property 
 which is then used inside the configuration of the microservice-package-maven-plugin. Primitive configuration values 
 or lists/arrays can be set on Maven command line directly without usage of properties, for example ‘-Dskip.agent.package.rpm=”true”’.
