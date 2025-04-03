@@ -16,7 +16,7 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.number }}-${{ github.event.action == 'opened' }}
+  group: ${{ github.workflow }}-${{ github.event.number }}-${{ github.event.action == 'opened' }}-test
   cancel-in-progress: true
 
 defaults:
