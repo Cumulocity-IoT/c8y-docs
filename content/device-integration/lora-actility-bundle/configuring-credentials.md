@@ -15,7 +15,7 @@ If you select **Connectivity** for the first time, you are asked to create a con
 Enter the following information:
 
 
-| Setting Name | Notes |
+| Setting name | Notes |
 |--------------|--------|
 | Name | The name of the Actility connection being created |
 | Description | The description of the Actility connection being created |
@@ -29,21 +29,21 @@ Enter the following information:
 | Password | Your ThingPark account password |
 | Connection Type | The ThingPark account type that is being used (Enterprise or Wireless) |
 
-## Environment-specific information
+#### Environment-specific information
 
 The following settings vary depending on your ThingPark environment:
 
-**ThingPark Community:**
+**ThingPark community:**
 - URL: https://community.thingpark.io/thingpark/dx/
 - Profile ID: community-api
-- Application Server ID and Key: Leave empty (HTTPS used internally)
-- Connection Type: Choose Enterprise
+- Application server ID and key: Leave empty (HTTPS used internally)
+- Connection type: Choose Enterprise
 
-**Other Environments (Enterprise/Wireless):**
+**Other environments (Enterprise/Wireless):**
 - URL: Contact ThingPark support
 - Profile ID: Contact ThingPark support
-- Application Server ID and Key:  Look up in your Application Server Profile in Thingpark or contact Thingpark Support
-- Connection Type: Choose based on your environment (Enterprise or Wireless)
+- Application server ID and key:  Look up in your application server profile in Thingpark or contact Thingpark support
+- Connection type: Choose based on your environment (Enterprise or Wireless)
 
 {{< c8y-admon-info >}}
 Do not use the same ThingPark login (username and password) for other tenants.
