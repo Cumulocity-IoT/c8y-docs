@@ -1,6 +1,6 @@
 ---
 title: Running Cumulocity DataHub on Cumulocity Edge
-weight: 60
+weight: 76
 layout: bundle
 sector: 
   - edge_server
