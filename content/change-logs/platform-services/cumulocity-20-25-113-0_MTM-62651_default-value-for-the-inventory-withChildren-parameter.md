@@ -4,10 +4,6 @@ title: Inventory API – change of the default value for the withChildren parame
 product_area: Platform services
 change_type:
   - value: change-3BQrQ6adS
---
-
-
-</div></b>
     label: API change
 component:
   - value: component-JlFdtOPva
