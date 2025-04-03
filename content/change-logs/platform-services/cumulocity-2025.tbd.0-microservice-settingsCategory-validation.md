@@ -1,6 +1,6 @@
 ---
 date: 2025-03-31T11:11:24.832Z
-title: Microservice manifest "settingsCategory" validator
+title: Added microservice manifest "settingsCategory" validator
 change_type:
   - value: change-inv-3bw8e
     label: Announcement
