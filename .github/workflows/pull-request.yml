@@ -12,7 +12,7 @@ on:
       - closed
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
 
 concurrency:
