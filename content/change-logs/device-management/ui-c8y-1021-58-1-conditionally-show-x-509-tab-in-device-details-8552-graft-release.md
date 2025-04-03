@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Conditionally show "X509" tab in device details (#8552) [GRAFT][release/cd] (#8710)
+title: X.509 certificates tab is now shown only on applicable devices
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62971
 version: 1021.58.1
 ---
-Conditionally show "X509" tab in device details (#8552) [GRAFT][release/cd] (#8710)
+To prevent user confusion, the "x509" certificates tab is now only shown if the device actually contains at least one X.509 certificate. The behavior of the certificates tab itself remains unchanged and it will continue to display any associated X.509 certificates for a device as before.
