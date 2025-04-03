@@ -1,7 +1,9 @@
 name: CI
 on:
   workflow_dispatch:
-  pull_request_target:
+  # TODO - restore this, just needed 'pull_request' for testing
+  #pull_request_target:
+  pull_request:
     types:
       # defaults
       - opened
@@ -20,6 +22,10 @@ concurrency:
 defaults:
   run:
     shell: bash
+
+env:
+  PAGES_BRANCH: 'pages/doc'
+  TMP_BRANCH: 'TEMP_BRANCH'
 
 jobs:
 # Build job
@@ -49,6 +55,7 @@ jobs:
         ref: refs/pull/${{ github.event.number }}/merge
         submodules: recursive
         fetch-depth: 1
+        path: repo
 
     - name: Build with Hugo
       if: ${{ github.event.pull_request.state != 'closed' }}
@@ -57,24 +64,66 @@ jobs:
         HUGO_ENVIRONMENT: production
         HUGO_ENV: production
       run: |
+        cd repo
         hugo \
           --baseURL "${{ env.BASEURL }}/"
+        cd ./public
+        zip ../../hugo.zip -r *
 
-    - uses: actions/setup-node@v4
+    - name: Remove repo dir
+      if: ${{ github.event.pull_request.state != 'closed' }}
+      run: rm -r repo
+
+    - name: Checkout
+      uses: actions/checkout@v3
       with:
-        node-version: 20
+        submodules: recursive
+        fetch-depth: 0
+        path: repo
 
-    - run: npm install -g surge
+    - name: Set git user
+      run: |
+        cd repo
+        git config user.name "c8y-docs"
+        git config user.email "c8y-docs@dev.null"
 
-    - name: Deploy to surge
+    - name: Remove old preview
+      run: |
+        cd repo
+        git checkout $PAGES_BRANCH || (git switch --orphan $PAGES_BRANCH && touch README && git commit -a --allow-empty -m "Initial commit")
+        git checkout --orphan $TMP_BRANCH
+        # remove old PR preview if existing
+        rm -r -f ./preview/PR-${{ github.event.number }}/
+
+    - name: Add new preview
       if: ${{ github.event.pull_request.state != 'closed' }}
       run: |
-        surge ./public ${{ env.BASEURL }} --token ${{ secrets.SURGE_TOKEN }}
+        cd repo
+        # create new pr preview folder
+        mkdir -p ./preview/PR-${{ github.event.number }}/
+        unzip ../hugo.zip -d ./preview/PR-${{ github.event.number }}
 
-    - name: Remove from surge
-      if: ${{ github.event.pull_request.state == 'closed' }}
+    - name: Commit changes
       run: |
-        surge teardown ${{ env.BASEURL }} --token ${{ secrets.SURGE_TOKEN }}
+        cd repo
+        # Add all the files to the temporary branch
+        git add -A
+        # Commit the changes to the temporary branch
+        git commit -am "Update Previews"
+    
+    - name: Replace branch
+      run: |
+        cd repo
+        # Delete the old branch
+        git branch -D $PAGES_BRANCH
+        # Rename the temporary branch
+        git branch -m $PAGES_BRANCH
+    
+    - name: Push changes
+      run: |
+        cd repo
+        git push -f origin $PAGES_BRANCH
+ 
 
     - name: Run Summary
       if: ${{ github.event.pull_request.state != 'closed' }}
