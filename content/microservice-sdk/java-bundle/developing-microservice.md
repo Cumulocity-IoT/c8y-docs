@@ -9,7 +9,7 @@ The {{< product-c8y-iot >}} Microservice SDK is an open source toolkit for build
 [cumulocity-clients-java](https://github.com/Cumulocity-IoT/cumulocity-clients-java) repository.
 
 In this section, you will learn how to:
-* Use SDK annotations to simplify setup.
+* Use SDK annotations to simplify the setup.
 * Access platform APIs via dependency injection.
 * Authenticate towards the platform APIs.
 * Secure access to your microservice APIs.
@@ -21,7 +21,7 @@ In this section, you will learn how to:
 
 ### Using annotations {#annotations}
 
-As shown in the [in the "Hello world" tutorial](/microservice-sdk/java/#create-a-java-application), the easiest way to enable default microservice behavior is to annotate your main class with `@MicroserviceApplication`. This composite annotation includes:
+As shown in the ["Hello world" tutorial](/microservice-sdk/java/#create-a-java-application), the easiest way to enable default microservice behavior is to annotate your main class with `@MicroserviceApplication`. This composite annotation includes:
 
 | Annotation                             | Description                                                                                      |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------ |
@@ -33,7 +33,7 @@ As shown in the [in the "Hello world" tutorial](/microservice-sdk/java/#create-a
 | @EnableMicroservicePlatformInternalApi | Injects platform API services into the Spring context                                            |
 | @EnableTenantOptionSettings            | Allows configuration through tenant options and supports overriding default properties via files |
 
-### Accessing platform APIs {#platform-api}
+### Accessing platform APIs {#acessing-platform-api}
 
 The {{< product-c8y-iot >}} Microservice SDK includes a set of Java APIs that are automatically injected into the Spring context and allow you to operate the REST APIs from Java in a simple manner. The REST APIs correspond to Java APIs as follows:
 
@@ -86,7 +86,7 @@ public AlarmRepresentation addHelloAlarm () {
 
 More details on using the APIs are available in the [Client library](/microservice-sdk/java/#client-library) section.
 
-### Authenticating and authorizing towards the platform {#using-platform-api}
+### Authenticating and authorizing towards the platform {#authenticating-and-authorizing-towards-the-platform}
 
 API requests in {{< product-c8y-iot >}} microservices can run in two authentication scopes:
  * Tenant scope – uses the service user's credentials.
@@ -490,7 +490,7 @@ $ mvn microservice:upload -Dupload.application.name=helloworld -Dupload.url=http
 
 #### Heap and perm/metadata {#heap-and-permmetadata}
 
-To calculate heap and perm/metadata, the SDK takes the limit defined in the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) and converts it into Megabytes (MB). The minimal value is 178MB. 10% is reserved for "system", but not less than 50 MB. 10% is taken for Metaspace, but not less than 64 MB and not more than 1024MB. The rest is allocated for heap size.
+To calculate heap and perm/metadata, the SDK takes the limit defined in the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) and converts it into megabytes (MB). The minimal value is 178MB. 10% is reserved for "system", but not less than 50 MB. 10% is taken for metaspace, but not less than 64 MB and not more than 1024MB. The rest is allocated for heap size.
 
 ### Deployment {#deployment}
 
