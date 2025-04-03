@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4557
 version: 1021.57.0
 ---
-add c8y_IsDevice marker to bus-devices (#8614) [GRAFT][release/cd] (#8784)
+In the past, Modbus, Profibus, CANBus, and CANopen devices created by the device management application were missing the c8y_IsDevice marker which identifies them as devices in the inventory. This change adds the c8y_IsDevice fragment to all bus devices created going forward. Existing bus devices in the inventory are not modified and will still be missing the marker. This improvement makes these devices easier to find and filter in the inventory when querying for devices.
