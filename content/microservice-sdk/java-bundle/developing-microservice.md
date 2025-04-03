@@ -403,7 +403,7 @@ The package module provides a Maven plugin to prepare a ZIP file required by the
 
 #### Package goal {#package-goal}
 
-The package plugin is responsible for the creation of a Docker container, rpm file and for creating a ZIP file that can be deployed on the platform.
+The package plugin is responsible for the creation of a Docker container, RPM file and for creating a ZIP file that can be deployed on the platform.
 It can be configured with the following parameters:
 
 | parameter<br>short form<br>for pom.xml entries<br> in \<configuration> section |                                data type                                |         parmameter command<br>line name          |                                            default value                                            | description                                                                                                                                                                                                                       | 
