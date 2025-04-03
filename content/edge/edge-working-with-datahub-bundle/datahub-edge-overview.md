@@ -12,10 +12,10 @@ For your convenience, here is an overview of the contents:
 
 | Section | Content |
 | -----   | -----   |
-| [ {{< product-c8y-iot >}} DataHub Edge overview](/edge/running-datahub-on-the-edge/#datahub-edge-overview) | Get an overview of {{< product-c8y-iot >}} DataHub Edge |
-| [Setting up {{< product-c8y-iot >}} DataHub Edge](/edge/running-datahub-on-the-edge/#setting-up-datahub-edge) | Set up {{< product-c8y-iot >}} DataHub Edge and its components |
-| [Working with {{< product-c8y-iot >}} DataHub Edge](/edge/running-datahub-on-the-edge/#working-with-datahub-edge) | Manage offloading pipelines and query the offloaded results |
-| [Operating {{< product-c8y-iot >}} DataHub Edge](/edge/running-datahub-on-the-edge/#operating-datahub-edge) | Run administrative tasks |
+| [ {{< product-c8y-iot >}} DataHub Edge overview](/edge/edge-working-with-datahub/#datahub-edge-overview) | Get an overview of {{< product-c8y-iot >}} DataHub Edge |
+| [Setting up {{< product-c8y-iot >}} DataHub Edge](/edge/edge-working-with-datahub/#setting-up-datahub-edge) | Set up {{< product-c8y-iot >}} DataHub Edge and its components |
+| [Working with {{< product-c8y-iot >}} DataHub Edge](/edge/edge-working-with-datahub/#working-with-datahub-edge) | Manage offloading pipelines and query the offloaded results |
+| [Operating {{< product-c8y-iot >}} DataHub Edge](/edge/edge-working-with-datahub/#operating-datahub-edge) | Run administrative tasks |
 
 ### {{< product-c8y-iot >}} DataHub Edge at a glance {#datahub-edge-at-a-glance}
 
