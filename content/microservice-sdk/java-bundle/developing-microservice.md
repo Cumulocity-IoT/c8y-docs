@@ -454,7 +454,7 @@ Example configuration in pom.xml:
 ...
 ```
 
-#### Set heap, perm or metaspace on command line
+#### Set heap or metaspace on command line
 
 Properties must be used if you want to specify data of complex data types on the command line. This is the case for memory
 data like heap, perm and metaspace. In this case you have to specify each primitive value separately as pom property 
