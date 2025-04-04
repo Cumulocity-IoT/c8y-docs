@@ -1,6 +1,6 @@
 ---
 date: 2024-03-14
-title: Improved information on "Use source timestamp" configuration
+title: Improved information on "Use source timestamp" in LWM2M device configuration
 product_area: Device management & connectivity
 change_type:
   - value: change-2c7RdTdXo4
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2494
 version: 10.18.510.0
 ---
-The user documentation and the tooltip for the "Use source timestamp" configuration have been improved to explain how the LWM2M agent makes use of timestamp information if reported by a device.
+The tooltip for the "Use source timestamp" configuration in device's LWM2M Configuration view have been improved to explain how the LWM2M agent makes use of timestamp information if reported by a device.
