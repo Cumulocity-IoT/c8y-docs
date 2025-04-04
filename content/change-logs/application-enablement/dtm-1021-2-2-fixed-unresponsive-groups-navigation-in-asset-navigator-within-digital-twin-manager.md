@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fixed unresponsive "Groups" navigation in Asset Navigator within Digital Twin Manager"
+title: "Fixed unresponsive "Groups" navigation in asset navigator within Digital Twin Manager"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
