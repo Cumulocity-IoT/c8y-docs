@@ -1,6 +1,6 @@
 ---
 date: ""
-title:Proof of possession section for tenant CA certificates now hidden
+title: Proof of possession section for tenant CA certificates now hidden
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
