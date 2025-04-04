@@ -8,15 +8,21 @@ aliases:
   - /device-integration/device-certificates/
 ---
 
-Devices can authenticate to {{< product-c8y-iot >}} using X.509 certificates over REST (port 8443) using mTLS.
+Devices can authenticate to {{< product-c8y-iot >}} using X.509 certificates over REST (port 8443), MQTT and LWM2M using mTLS.
 
-Devices can also generate JWT session tokens by using X.509 certificates for authentication over a defined REST endpoint - device access token API. This session token can be used in subsequent requests to authenticate to {{< product-c8y-iot >}}.
+Each tenant individually defines whom it trusts by uploading the base CA certificate as a trust anchor, these must be unique across the {{}} instance. Devices connecting to the platform with certificates do not need to provide the tenant ID, username and password; authentication information is obtained from the certificates.
 
-Each tenant individually defines whom it trusts by uploading the base CA certificate.
+**HTTP**
 
-Devices can communicate using the MQTT interface of the platform, but MQTT over WebSocket is not supported. The {{< product-c8y-iot >}} platform expects devices to connect using SSL on port 8883.
+Until recently devices wanting to use mTLS over HTTP were required to generate JWT session tokens by using X.509 certificates for authentication over a defined MQTT endpoint - device access token API. This session token can be used in subsequent HTTP requests to authenticate to {{< product-c8y-iot >}}. This is still supported but will be deprecated at some point in the future. It is recommended to use the direct HTTP connection.
 
-Devices connecting to the platform with certificates do not need to provide the tenant ID, username and password. Authentication information will be obtained from the certificates.
+**MQTT**
+
+Devices can communicate using the [MQTT interface](/device-integration/mqtt/) of the platform, but MQTT over WebSocket is not supported. The {{< product-c8y-iot >}} platform expects devices to connect using SSL on port 8883.
+
+**LWM2M**
+
+For the [LWM2M protocol](/device-integration/lwm2m/) you are required to provide the device endpoint ID in the Common Name of the certificate. This is used to identify the tenant to which the device is registered.
 
 
 ### Prerequisites {#prerequisites}
