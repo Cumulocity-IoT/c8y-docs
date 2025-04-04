@@ -1,6 +1,6 @@
 ---
 date: ""
-title: It is now possible to assign child devices during group creation.
+title: Assign child devices when creating a group
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-39947
 version: 1021.59.0
 ---
-It is now possible to assign child devices during group creation.
+To simplify the process of creating device groups, it is now possible to assign child devices directly when creating a new group. Previously, child devices had to be assigned separately after the group was created. This change streamlines the workflow and saves time for users who manage large numbers of devices. Existing device groups are not affected by this change.
