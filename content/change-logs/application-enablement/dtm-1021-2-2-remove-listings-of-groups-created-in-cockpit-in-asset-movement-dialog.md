@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Remove listings of groups created in Cockpit in Asset movement dialog"
+title: "Removed groups created in the Cockpit from asset movement dialog in the Digital Twin Manager"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
