@@ -2,8 +2,8 @@
 date: 
 title: Added microservice manifest "settingsCategory" validator
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+  - value: change-2c7RdTdXo4
+    label: Improvement
 product_area: Application enablement & solutions
 component:
   - value: component-rlV-4nEfO
