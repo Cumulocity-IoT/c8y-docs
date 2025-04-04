@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Hide POP section for tenant CA certificate (#8558) [GRAFT][release/cd] (#8771)
+title: Hide proof of possession section for tenant CA certificate
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62862
 version: 1021.59.1
 ---
-Hide POP section for tenant CA certificate (#8558) [GRAFT][release/cd] (#8771)
+Previously, the proof of possession (POP) section was always displayed for tenant CA certificate even though it was not relevant for this type of certificate. With this change, the POP section is now hidden for tenant CA certificates. This improves the user experience by removing the irrelevant POP section from the view.
