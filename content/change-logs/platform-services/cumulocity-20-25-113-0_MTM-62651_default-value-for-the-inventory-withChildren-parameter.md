@@ -15,4 +15,4 @@ ticket: MTM-62651
 version: 2025.113.0
 ---
 
-The default value of the `withChildren` parameter for the `GET /inventory/managedObjects` endpoint has changed from `true` to `false`. To continue receiving child assets, devices, and additions in the response, clients must explicitly include `?withChildren=true` in their requests. This change aligns with previous announcements and aims to improve performance and response clarity.
+The default value of the `withChildren` parameter for the `GET /inventory/managedObjects` endpoint has changed from `true` to `false`. To continue receiving child assets, devices, and additions in the response, clients must explicitly include `?withChildren=true` in their requests. This change aligns with previous announcements and aims to improve performance and response clarity. For more details, see the [Announcement](https://drive.google.com/file/d/1vukBH7i_8yT-lLcH41k_zYoVdeFArlTs/view?usp=sharing).
