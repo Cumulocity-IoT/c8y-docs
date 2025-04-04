@@ -31,7 +31,8 @@ Do not use the same ThingPark login (username and password) for other tenants.
 The profile ID, username and password are used to retrieve an access token to send further requests to the ThingPark platform. It is possible to renew the access token by replacing the account credentials for a particular connection.
 {{< /c8y-admon-info >}}
 
-![Setting provider credentials](/images/device-protocols/lora-actility/lora-admin-settings.png)
+![Setting provider credentials top](/images/device-protocols/lora-actility/lora-admin-settings-top.png)
+![Setting provider credentials bottom](/images/device-protocols/lora-actility/lora-admin-settings-bottom.png)
 
 Click **Save**. If you have entered the correct information, you see the message "Connection created".
 
@@ -44,7 +45,8 @@ Select the connection to be updated, make your edits, and save the connection.
 
 If there are devices associated with the connection, an error message will appear, stating "Can not update the LNS Connection with `<name of LNS Connection>` as it's associated with `<number of devices>`. Click the link to download the file with the details of the associated devices: `/service/<agent-context-path>/lns-connection/<lns-connection-name>/device`".
 
-![Update connection information](/images/device-protocols/lora-actility/lora-admin-settings-update.png)
+![Update connection information top](/images/device-protocols/lora-actility/lora-admin-settings-update-top.png)
+![Update connection information bottom](/images/device-protocols/lora-actility/lora-admin-settings-update-bottom.png)
 
 ### To delete a connection {#to-delete-a-connection}
 
