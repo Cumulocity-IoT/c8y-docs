@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Assign child devices when creating a group
+title: Assign child devices while creating a group
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
