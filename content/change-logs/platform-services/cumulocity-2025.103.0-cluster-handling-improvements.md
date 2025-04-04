@@ -1,7 +1,6 @@
 ---
-date:
-title: >-
-  Cluster membership and node discovery improvements
+date: '2025-04-03'
+title: Cluster membership and node discovery improvements
 product_area: Platform services
 change_type:
   - value: change-2c7RdTdXo4
