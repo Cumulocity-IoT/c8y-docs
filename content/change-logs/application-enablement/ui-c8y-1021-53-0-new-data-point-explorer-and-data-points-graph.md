@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-03-27'
 title: Enhanced data point explorer and data point graph widgets
 product_area: Application enablement & solutions
 change_type:

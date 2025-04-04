@@ -16,6 +16,12 @@ A tenant type in the [{{< product-c8y-iot >}} tenant hierarchy](/glossary/t/#ten
 See also [{{< standard-tenant >}}](/glossary/s/#standard-tenant) and [{{< management-tenant >}}](/glossary/m/#management-tenant).
 
 
+### Edge Server {#edge-server}
+Edge Server is an informal term sometimes used to refer to {{< product-c8y-iot >}} Edge, a single-server variant of the {{< product-c8y-iot >}} platform, designed to run in factories on industrial PCs or local servers, that is, in the same site (“onsite”) in which the IoT assets are located. For details, see the [{{< product-c8y-iot >}} Edge documentation](/sector/edge_server/).
+
+See also [Thick Edge](/glossary/t/#thick-edge)
+
+
 ### Event Processing Language (EPL) {#epl}
 
 On top of {{< product-c8y-iot >}} you can use the Apama streaming analytics engine to define business operations for real-time processing. The operation logic is implemented in Apama’s Event Processing Language (EPL).
