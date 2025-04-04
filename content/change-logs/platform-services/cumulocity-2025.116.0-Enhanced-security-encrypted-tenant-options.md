@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-62399
-version: 2025.tbd.0
+version: 2025.116.0
 ---
 Security improvements have been implemented for decrypting encrypted tenant options with the `credentials.` prefix. Encrypted tenant options with this prefix can only be decrypted by system users (such as bootstrap user and microservice user) if they own those tenant options. This new restriction determines ownership by matching the category of the tenant options in the following order of priority:
 * The category defined in the `settingsCategory` field in the microservice manifest.
