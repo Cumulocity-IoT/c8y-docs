@@ -30,7 +30,6 @@ Measurements consist of a time when the measurement was taken, the unique identi
 Similar to the inventory model, fragments are used to identify characteristics of particular devices. Each measurement fragment is an object that holds the actual measurements as properties, also known as series. The property name corresponds to the name of the measurement and includes two properties:
 
 -   value: The individual measurement value that is required for every series.
-
 -   unit: The unit associated with the measurement.
 
 In the example above, a three-phase electricity meter sends readings for the different electrical phases. A measurement fragment maps the names of the individual readings (for example, "A+" or "A-") to the actual numeric value and unit of the measurement.
