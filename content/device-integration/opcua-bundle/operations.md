@@ -27,7 +27,7 @@ The twinned address space information is persisted in the {{< product-c8y-iot >}
 
 Once the device gateway knows the address space, it uses it to handle different logics, for example applying device protocols to nodes. So if you already have the address space scanned once and stored in {{< product-c8y-iot >}}, you might want the device gateway to learn one more time about server's address space without synchronizing data into {{< product-c8y-iot >}}. To achieve that, provide `"skipSync": true`.
 
-To do a partial address space scan, you can provide the `nodeIds` property which contains all node IDs that should be scanned.
+To do a partial address space scan, you can provide the `nodeIds` property which contains all node IDs to be scanned.
 The subaddress space starting from those nodes as well as the ancestor nodes are persisted both in the {{< product-c8y-iot >}} inventory, unless `skipSync` is set to `true`, and in the local address space file of the gateway.
 ```
 POST /devicecontrol/operations/
