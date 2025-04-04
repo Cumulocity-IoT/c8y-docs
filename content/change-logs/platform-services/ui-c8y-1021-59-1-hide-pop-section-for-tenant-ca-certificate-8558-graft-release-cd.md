@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62862
 version: 1021.59.1
 ---
-Previously, the proof of possession (POP) section was always displayed for tenant CA certificate even though it was not relevant for this type of certificate. With this change, the POP section is now hidden for tenant CA certificates. This improves the user experience by removing the irrelevant POP section from the view.
+In the trusted certificate details, the **Proof of possession** section was previously also displayed for tenant CA certificates even though it is not relevant for this type of certificate. With this change, the **Proof of possession** section is now hidden for tenant CA certificates. This improves the user experience by removing irrelevant information from the view.
