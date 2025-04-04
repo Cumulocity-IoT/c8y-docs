@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fixed unresponsive "Groups" navigation item in the Digital Twin Manager"
+title: Fixed unresponsive groups navigation item in the Digital Twin Manager
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
