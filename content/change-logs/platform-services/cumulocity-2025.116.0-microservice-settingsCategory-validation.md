@@ -12,5 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-62711
+version: 2025.116.0
 ---
 A validation mechanism has been added to the microservice manifest to ensure the correctness of the `settingsCategory` field. [This field](https://cumulocity.com/docs/microservice-sdk/java/#microservice-settings) is used to define a custom category for tenant options where the microservice stores its configuration. The validation enforces that the category must be unique within the context of a tenant.
