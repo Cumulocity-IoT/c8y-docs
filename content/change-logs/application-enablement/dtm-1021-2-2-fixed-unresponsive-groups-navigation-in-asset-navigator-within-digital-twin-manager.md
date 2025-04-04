@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-1971"
 version: "1021.2.2"
 ---
-Fixed the non-responsive "Groups" navigation item in the Asset Navigator when installed in the Digital Twin Manager application.
+Fixed the unresponsive **Groups** navigation item in the asset navigator when installed in the Digital Twin Manager application.
