@@ -1,6 +1,6 @@
 ---
 date: ""
-title: X.509 certificates tab is now shown only on applicable devices
+title: X.509 certificates tab is now only shown for applicable devices
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
