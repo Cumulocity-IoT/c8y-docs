@@ -164,7 +164,7 @@ To calculate heap and perm/metadata, it takes the limit defined on the [microser
 10% is reserved for "system", but not less than 50 MB. <br>
 10% is taken for Metaspace, but not less than 64 MB and not more than 1024MB. <br>
 The rest is allocated for heap size.
-Please refer to [package goal](/microservice-sdk/general-aspects/##package-goal) how to change heap and metaspace settings.
+Refer to [Package goal](/microservice-sdk/general-aspects/##package-goal) for information on how to change the heap and metaspace settings.
 
 ### Platform API {#platform-api}
 
