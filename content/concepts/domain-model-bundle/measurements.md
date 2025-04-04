@@ -33,7 +33,7 @@ Similar to the inventory model, fragments are used to identify characteristics o
 
 -   unit: The unit associated with the measurement.
 
-In the above example, a three-phase electricity meter sends readings for the different electrical phases. In the example above, such a fragment maps the names of the individual readings (for example, "A+" or "A-") to the actual numeric value and unit of the measurement.
+In the example above, a three-phase electricity meter sends readings for the different electrical phases. A measurement fragment maps the names of the individual readings (for example, "A+" or "A-") to the actual numeric value and unit of the measurement.
 
 Readings can hold various additional information that applications may require.
 
