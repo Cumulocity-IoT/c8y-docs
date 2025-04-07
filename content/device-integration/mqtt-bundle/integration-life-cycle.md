@@ -4,7 +4,7 @@ title: Integration life cycle
 layout: redirect
 ---
 
-The basic life cycle for integrating devices into {{< product-c8y-iot >}} is discussed in [Interfacing devices](/concepts/interfacing-devices).
+The basic life cycle for integrating devices into {{< product-c8y-iot >}} is discussed in [Interfacing devices](/device-integration/interfacing-devices/).
 
 In this section, we will show how this life cycle can be managed using the MQTT implementation.
 
