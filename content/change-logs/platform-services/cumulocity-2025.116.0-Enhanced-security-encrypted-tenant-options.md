@@ -19,4 +19,4 @@ Security improvements have been implemented for decrypting encrypted tenant opti
 * The microservice’s context-path.
 * The microservice name.
 
-**Note**: To assist users who may rely on the old behaviour, there is the ability to revert to the previous behaviour using feature toggle api.
+**Note**: To assist users who may rely on the old behaviour, there is the ability to revert to the previous behaviour using a feature toggle via API.
