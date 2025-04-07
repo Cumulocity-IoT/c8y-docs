@@ -1,6 +1,6 @@
 ---
 date: ''
-title: Retention Rules Now Run for Suspended Tenants
+title: Retention rules now also run for suspended tenants
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63117
 version: 20.25.121.0
 ---
-The retention scheduler has been updated to execute retention rules for tenants with the `SUSPENDED` status in addition to active tenants. This makes sure that data cleanup and storage rules still apply, even if a tenant is not currently active.
+The retention scheduler has been updated to execute retention rules for tenants with the status SUSPENDED in addition to active tenants. This makes sure that data cleanup and storage rules still apply, even if a tenant is not currently active.
