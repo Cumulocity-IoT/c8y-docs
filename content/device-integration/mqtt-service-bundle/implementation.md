@@ -204,13 +204,13 @@ In order to self-sign the device certificates, the root CA certificate needs to 
 Using the OpenSSL CLI tool, create a private key and then generate a self-signed root certificate from it.
 ```console
 openssl genpkey -algorithm RSA -out ca.key
-openssl req -x509 -new -nodes -key ca.key -sha256 -days 3650 -out ca.crt -subj "/C=YourCountry/O=YourCompany/OU=YourOrg/CN=MQTTServiceCA"
+openssl req -x509 -new -nodes -key ca.key -sha256 -days 3650 -out ca.crt -subj "/C=UK/O=YourCompany/OU=YourOrg/CN=MQTTServiceCA"
 ```
 Then create a private key for the device, generate the certificate signing request from this private key, and then sign the CSR.
 ```console
 openssl genpkey -algorithm RSA -out client.key
 openssl rsa -in client.key -out client-key.pem -outform PEM
-openssl req -new -key client.key -out client.csr -subj "/C=YourCountry/O=YourCompany/OU=YourOrg/CN=mqtt-client"
+openssl req -new -key client.key -out client.csr -subj "/C=UK/O=YourCompany/OU=YourOrg/CN=mqtt-client"
 openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt -days 3650 -sha256
 cat client.crt ca.crt > client-chain.pem
 ```
