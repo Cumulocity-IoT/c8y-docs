@@ -208,6 +208,7 @@ There is a mechanism to encrypt the tenant options that afterwards are automatic
 If a tenant option is created with a key name that starts with "credentials.", it is automatically encrypted and can be fetched as unencrypted only by system users. For instance, when you create a tenant option in a category that matches to the application context path, the value is passed to the microservice by the microservice proxy on the platform as a header (key => value). All encrypted options are decrypted and passed. Note that therefore a space (" ") is not allowed as a tenant option value. 
 
 The options can be fetched via REST using the options endpoint at microservice runtime. Encrypted options are decrypted only if the tenant option category matches the category defined by the microservice. This category is determined based on the first non-blank value from:
+
 1. The manifest settings category
 2. The context path
 3. The service name
