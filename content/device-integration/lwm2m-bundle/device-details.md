@@ -95,7 +95,7 @@ The **LWM2M configuration** tab displays all LWM2M settings related to the devic
   * Logging event level - the logging levels can be adjusted based on types or completely be disabled for the device. When enabled, log events are visible in the device's events. Levels:
     * NONE - nothing will be logged as events
     * LIFECYCLE - only registration, de-registration and registration update events
-    * VERBOSE - LIFECYCLE events plus sent/received data and detailed firmware update information
+    * VERBOSE - LIFECYCLE events, sent/received data and detailed firmware update information
 
 For a detailed description of the parameters above, see [Registering LWM2M devices](#registering-lwm2m-devices).
 
