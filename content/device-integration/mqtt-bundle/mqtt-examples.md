@@ -589,7 +589,7 @@ In order to follow this tutorial, check the following prerequisites:
 If you don't have a valid certificate, you can generate one for testing purposes, following the instructions below.
 
 1.  Download the scripts from the [cumulocity-examples]({{< link-c8y-github >}}/cumulocity-examples/tree/develop/mqtt-client/scripts) repository.
-2.  Create a root self-signed certificate (execute the script *00createRootSelfSignedCertificate.sh*) and upload it to your tenant. You can do it via [the Device Management application in the UI](/device-management-application/managing-device-data/#managing-trusted-certificates) or via [REST](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API).
+2.  Create a root self-signed certificate (execute the script *00createRootSelfSignedCertificate.sh*) and upload it to your tenant. You can do it via [the Device Management application in the UI](/device-certificate-authentication/managing-trusted-certificates/) or via [REST](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API).
 3.  Create and sign the certificate (execute the script *01createSignedCertificate.sh*).
 4.  Move the certificates to keystore (execute the script *02moveCertificatesToKeystore.sh*). Additionally, if only the device leaf certificate is needed in the keystore, use the --leafonly option.
 5.  Finally, import the trusted certificate into keystore running the following command:
@@ -664,7 +664,7 @@ private MqttClient connect() throws MqttException {
 }
 ```  
 
-The device can now publish and subscribe as a standard device. Note that before the first connect no other actions are required, for example, creating a user. The user is created during the [auto registration](/device-integration/device-certificates/) process.
+The device can now publish and subscribe as a standard device. Note that before the first connect no other actions are required, for example, creating a user. The user is created during the [auto registration](/device-certificate-authentication/device-certificates/) process.
 
 {{< c8y-admon-info >}}
 You do not need to set a password, user or tenant for the MQTT client connecting using certificates. {{< product-c8y-iot >}} will recognize the tenant and the user by the provided certificate.
