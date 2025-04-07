@@ -219,7 +219,7 @@ There are further instructions regarding creating self-signed CA, intermediate, 
 
 #### Using certificates
 
-Once the CA certificate has been uploaded and trusted in Cumulocity IoT, devices can authenticate using client certificates signed by your trusted CA.
+Once the CA certificate has been uploaded and trusted in {{< product-c8y-iot >}}, devices can authenticate using client certificates signed by your trusted CA.
 To connect using any MQTT client, use the previously generated client certificate and key.
 Here's an example command using using the Mosquitto MQTT client:
 
@@ -234,16 +234,16 @@ mosquitto_pub --cafile cumulocity.com.pem -d -q 1 \
 ```
 
 Explanation:
-- `--cafile cumulocity.com.pem`: This file contains the CA certificate of Cumulocity’s MQTT Service broker, used to validate the server's identity.
+- `--cafile cumulocity.com.pem`: This file contains the CA certificate of {{< product-c8y-iot >}}’s MQTT Service broker, used to validate the server's identity.
 - `--key client-key.pem` and `--cert client-chain.pem`: These are your client certificate and private key, signed by your trusted CA.
 - `-u t11101`: The username must be your tenant ID. In this example, `t11101` is the tenant ID.
 
 Downloading the CA certificate (`cumulocity.com.pem`):
 
-To download the Cumulocity MQTT Service broker's CA certificate:
-1. Open `cumulocity.com` in a browser.
+To download the {{< product-c8y-iot >}} MQTT Service broker's CA certificate:
+1. Open *cumulocity.com* in a browser.
 2. Click the padlock icon in the address bar and view the certificate details.
-3. Download or export the root certificate, and save it as `cumulocity.com.pem`.
+3. Download or export the root certificate, and save it as *cumulocity.com.pem*.
 
 Alternatively, you can use `openssl` to retrieve and extract the certificate:
 
@@ -251,4 +251,6 @@ Alternatively, you can use `openssl` to retrieve and extract the certificate:
 echo | openssl s_client -connect cumulocity.com:9883 -showcerts 2>/dev/null | \
     sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > cumulocity.com.pem
 ```
-**Note:** Cumulocity uses certificates signed by well-known public CAs. Some clients (like Mosquitto) require explicitly providing the CA file, while others (like MQTTX) trust these certificates automatically.
+{{< c8y-admon-info >}}
+{{< product-c8y-iot >}} uses certificates signed by well-known public CAs. Some clients (like Mosquitto) require explicitly providing the CA file, while others (like MQTTX) trust these certificates automatically.
+{{< /c8y-admon-info >}}
