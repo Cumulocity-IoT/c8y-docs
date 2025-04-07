@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2494
 version: 10.18.510.0
 ---
-The tooltip for the "Use source timestamp" configuration in device's LWM2M Configuration view have been improved to explain how the LWM2M agent makes use of timestamp information if reported by a device.
+The tooltip for the "Use source timestamp" in the LWM2M device configuration has been improved to explain how the LWM2M agent makes use of timestamp information if reported by a device.
