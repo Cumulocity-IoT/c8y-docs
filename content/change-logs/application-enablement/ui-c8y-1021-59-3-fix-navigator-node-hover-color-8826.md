@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix navigator node hover color (#8826)
+title: Fixed navigator node hover color
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
