@@ -204,13 +204,13 @@ In order to self-sign the device certificates, the root CA certificate needs to 
 Using the OpenSSL CLI tool, create a private key and then generate a self-signed root certificate from it.
 ```console
 openssl genpkey -algorithm RSA -out ca.key
-openssl req -x509 -new -nodes -key ca.key -sha256 -days 3650 -out ca.crt -subj "/C=YourCountry/O=YourCompany/OU=YourOrg/CN=MQTTServiceCA"
+openssl req -x509 -new -nodes -key ca.key -sha256 -days 3650 -out ca.crt -subj "/C=UK/O=YourCompany/OU=YourOrg/CN=MQTTServiceCA"
 ```
 Then create a private key for the device, generate the certificate signing request from this private key, and then sign the CSR.
 ```console
 openssl genpkey -algorithm RSA -out client.key
 openssl rsa -in client.key -out client-key.pem -outform PEM
-openssl req -new -key client.key -out client.csr -subj "/C=YourCountry/O=YourCompany/OU=YourOrg/CN=mqtt-client"
+openssl req -new -key client.key -out client.csr -subj "/C=UK/O=YourCompany/OU=YourOrg/CN=mqtt-client"
 openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt -days 3650 -sha256
 cat client.crt ca.crt > client-chain.pem
 ```
@@ -219,8 +219,38 @@ There are further instructions regarding creating self-signed CA, intermediate, 
 
 #### Using certificates
 
-Once the CA certificate has been uploaded and trusted, devices can now authenticate using certificates that have been signed by the CA certificate.
-Using the previously generated certificates, an example using the Mosquitto MQTT client could look like:
+Once the CA certificate has been uploaded and trusted in {{< product-c8y-iot >}}, devices can authenticate using client certificates signed by your trusted CA.
+To connect using any MQTT client, use the previously generated client certificate and key.
+Here's an example command using the Mosquitto MQTT client:
+
 ```console
-mosquitto_pub --cafile ca.crt -d -q 1 -h "cumulocity.com" -p "9883" -i myclient -u t11101 -t "v1/devices/me/telemetry" --key client-key.pem --cert client-chain.pem -m {"temperature":25}
+mosquitto_pub --cafile cumulocity.com.pem -d -q 1 \
+  -h "cumulocity.com" -p "9883" -i myclient \
+  -u t11101 \
+  -t "v1/devices/me/telemetry" \
+  --key client-key.pem \
+  --cert client-chain.pem \
+  -m '{"temperature":25}'
 ```
+
+Explanation:
+- `--cafile cumulocity.com.pem`: This file contains the CA certificate of {{< product-c8y-iot >}}’s MQTT Service broker, used to validate the server's identity.
+- `--key client-key.pem` and `--cert client-chain.pem`: These are your client certificate and private key, signed by your trusted CA.
+- `-u t11101`: The username must be your tenant ID. In this example, `t11101` is the tenant ID.
+
+Downloading the CA certificate (`cumulocity.com.pem`):
+
+To download the {{< product-c8y-iot >}} MQTT Service broker's CA certificate:
+1. Open *cumulocity.com* in a browser.
+2. Click the padlock icon in the address bar and view the certificate details.
+3. Download or export the root certificate, and save it as *cumulocity.com.pem*.
+
+Alternatively, you can use `openssl` to retrieve and extract the certificate:
+
+```console
+echo | openssl s_client -connect cumulocity.com:9883 -showcerts 2>/dev/null | \
+    sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > cumulocity.com.pem
+```
+{{< c8y-admon-info >}}
+{{< product-c8y-iot >}} uses certificates signed by well-known public CAs. Some clients (like Mosquitto) require explicitly providing the CA file, while others (like MQTTX) trust these certificates automatically.
+{{< /c8y-admon-info >}}
