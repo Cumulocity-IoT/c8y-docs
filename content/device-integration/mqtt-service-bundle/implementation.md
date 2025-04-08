@@ -221,7 +221,7 @@ There are further instructions regarding creating self-signed CA, intermediate, 
 
 Once the CA certificate has been uploaded and trusted in {{< product-c8y-iot >}}, devices can authenticate using client certificates signed by your trusted CA.
 To connect using any MQTT client, use the previously generated client certificate and key.
-Here's an example command using using the Mosquitto MQTT client:
+Here's an example command using the Mosquitto MQTT client:
 
 ```console
 mosquitto_pub --cafile cumulocity.com.pem -d -q 1 \
