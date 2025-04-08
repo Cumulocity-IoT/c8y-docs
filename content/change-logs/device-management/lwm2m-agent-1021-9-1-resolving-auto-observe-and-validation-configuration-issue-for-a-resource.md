@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Resolving auto-observe and validation configuration issue for certain resources
+title: Resolved auto-observe and validation configuration issue for certain resources
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
