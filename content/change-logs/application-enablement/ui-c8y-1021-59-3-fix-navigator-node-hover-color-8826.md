@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63093
 version: 1021.59.3
 ---
- Hover state now properly inherits both background and text colors from the active state, ensuring visual consistency
+ In the navigator, the hover state now properly inherits both background and text colors from the active state, showing the expected color when hovering over nodes and thus ensuring visual consistency. 
