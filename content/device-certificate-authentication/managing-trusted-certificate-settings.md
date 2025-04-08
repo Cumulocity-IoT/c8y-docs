@@ -3,7 +3,10 @@ weight: 20
 title: Managing trusted certificate settings
 layout: bundle
 sector:
-- device_management
+  - device_management
+outputs:
+  - html
+  - json
 helpcontent:
   - label: managing-trusted-certificate-settings
     title: Trusted certificates settings
@@ -35,7 +38,7 @@ can inform the platform about the revoked certificates in two ways:
    which maintains the CRLs with the list of revoked certificate serial numbers
    and should provide this information in its CDP attribute.
 2. Offline revocation :
-    The trusted CA doesn't maintain the revocation details of the certificates, in which case, the platform users
+   The trusted CA doesn't maintain the revocation details of the certificates, in which case, the platform users
    can manually upload the serial numbers of the revoked certificates.
 
 Note that both online and offline CRL checks are by default **unchecked**.
@@ -64,7 +67,8 @@ Certificate revocation is an irreversible process. So, offline entries once made
    | Field | Description | Example |
    |:------------------|:------------------------------------------------------------|:----------|
    | Serial number | Must be a hexadecimal value.| 0b8a5b9dd501a88775399b9a048811a3 |
-   | Date (optional)       | Date format: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`. | 2024-01-17T10:48:51.000Z |
+   | Date (optional) | Date format: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`. | 2024-01-17T10:48:51.000Z |
+
 4. 4. Click **Save** to confirm your entries.
 
 {{< c8y-admon-info >}}
