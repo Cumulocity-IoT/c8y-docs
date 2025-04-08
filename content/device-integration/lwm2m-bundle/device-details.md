@@ -70,6 +70,10 @@ The **LWM2M configuration** tab displays all LWM2M settings related to the devic
   * Disable the default behavior for object instances of objects 3 (device), 4 (connectivity monitoring) and 6 (location)
   * Automatic setting of required interval 
     * When enabled, the LWM2M service automatically sets the interval to registration lifetime plus 2 minutes. If disabled, the user can define a required interval for the device on the **Info** tab in the device details. If set to default, the default behavior of the LWM2M service will be used.</p>
+  * Logging event level - the logging levels can be adjusted based on types or completely be disabled for the device. When enabled, log events are visible in the device's events. Levels:
+    * NONE - nothing will be logged as events
+    * LIFECYCLE - only registration, de-registration and registration update events
+    * VERBOSE - LIFECYCLE events, sent/received data and detailed firmware update information
 * **Bootstrap settings** - related to LWM2M bootstrap
   * Bootstrap server ID
   * Security instance offset
@@ -92,12 +96,6 @@ The **LWM2M configuration** tab displays all LWM2M settings related to the devic
   * Delivery protocol
   * Reset state machine settings
   * Fail device firmware update on unexpected result (terminate the device firmware update process if an unexpected situation is detected)
-  * Logging event level - the logging levels can be adjusted based on types or completely be disabled for the device. When enabled, log events are visible in the device's events. Levels:
-    * NONE - nothing will be logged as events
-    * LIFECYCLE - only registration, de-registration and registration update events
-    * TRAFFIC - same as LIFECYCLE plus sent/received data
-    * FIRMWARE - same as LIFECYCLE plus detailed firmware update information
-    * VERBOSE - all above details will be logged
 
 For a detailed description of the parameters above, see [Registering LWM2M devices](#registering-lwm2m-devices).
 
