@@ -3,8 +3,8 @@ date: ""
 title: Simplification of logging event levels for LWM2M device configuration
 product_area: Device management & connectivity
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+  - value: change-2c7RdTdXo4
+    label: Improvement
 component:
   - value: component-1KLUzmqfe
     label: LWM2M
