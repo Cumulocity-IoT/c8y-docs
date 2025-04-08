@@ -407,19 +407,19 @@ The package plugin is responsible for the creation of a Docker container, RPM fi
 It can be configured with the following parameters:  
 (If a single xml tag is specified as parameter in the following list, use embracing xml tags like \<tag>...\</tag> to set those parameters. "..." must be replaced by the respective value of the corresponding data type.)
 
-| Parameter<br>short form<br>for pom.xml entries<br> in \<configuration> section |                                      Data type                                       |          Parmameter command<br>line name          |                                               Default value                                         | Description                                                                                                                                                                                                                       | 
+| Parameter<br>short form<br>for pom.xml entries<br> in \<configuration> section |                                      Data type                                       |          Parmameter<br>command<br>line name          |                                            Default value                                            | Description                                                                                                                                                                                                                       | 
 |:------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------:|:-------------------------------------------------:|:---------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
 |                                  \<arguments>                                  |                                    List\<String>                                     |      -Dagent-package.<br>arguments=[...,]...      |                                                 ""                                                  | General command line arguments for jar startup.<br>Specify with "," separated arguments.                                                                                                                                          | 
 |                                \<containerSkip>                                |                                       Boolean                                        |      -Dskip.agent.package.<br>container=...       |                                                false                                                | Skip the container packaging                                                                                                                                                                                                      |
 |                                 \<description>                                 |                                        String                                        |             -Dpackage.description=...             |                                       ${project.description}                                        | Microservice description                                                                                                                                                                                                          |  
 |                             \<dockerBuildTimeout>                              |                                         Int                                          | -Dmicroservice.package.<br>dockerBuildTimeout=... |                                                 360                                                 | Timeout value in seconds for the generation of a docker build                                                                                                                                                                     | 
 |                                  \<encoding>                                   |                                        String                                        |      -Dproject.build.<br>sourceEncoding=...       |                                                UTF-8                                                | Define String encoding                                                                                                                                                                                                            |
-|           \<heap><br>\<min>...\</min><br>\<max>...\<max><br>\</heap>           | min, max : \<Int>m<br>(m:megabytes; for available units refer to Java documentation) |                        --                         |                                                 ""                                                  | \<heap> parameter results to -Xms\<min> \-Xmx\<max> Java runtime arguments for the microservice startup                                                                                                                          |
+|           \<heap><br>\<min>...\</min><br>\<max>...\<max><br>\</heap>           | min, max : \<Int>m<br>(m:megabytes; for available units refer to Java documentation) |                        --                         |                                      min = 128m<br>max = 384m                                       | \<heap> parameter results to -Xms\<min> \-Xmx\<max> Java runtime arguments for the microservice startu.                                                                                                                          |
 |                                   \<jvmArgs>                                   |                                    List\<String>                                     |       -Dagent-package.<br>jvmArgs=[...,]...       | "-XX:+UseG1GC<br>-XX:+UseStringDeduplication<br>-XX:MinHeapFreeRatio=25<br>-XX:MaxHeapFreeRatio=75" | Java runtime arguments for the microservice startup. Specify with "," separated arguments. Default values will be overwritten if other options are provided.                                                                      | 
-|                                \<manifestFile>                                 |                                        String                                        |                -DmanifestFile=...                 |                       "${basedir}/src/main/<br>configuration/cumulocity.json"                       | Path to the microservice manifest file location                                                                                                                                                                                   | 
-|      \<metaspace><br>\<min>...\</min><br>\<max>...\<max><br>\</metaspace>      |       min, max : \<Int>m<br>(m:megabytes; for available units refer to Java documentation)        |                        --                         |                                                 ""                                                  | \<metaspace> parameter is combined<br>with \<perm> parameter values if available which results in -XX:MetaspaceSize=\<min> -XX:MaxMetaspaceSize=\<max> Java runtime arguments for the microservice startup                        |
+|                                \<manifestFile>                                 |                                        String                                        |                -DmanifestFile=...                 |                      "$\{basedir}/src/main/<br>configuration/cumulocity.json"                       | Path to the microservice manifest file location                                                                                                                                                                                   | 
+|      \<metaspace><br>\<min>...\</min><br>\<max>...\<max><br>\</metaspace>      |       min, max : \<Int>m<br>(m:megabytes; for available units refer to Java documentation)        |                        --                         |                                       min = 64m<br>max = 128m                                       | \<metaspace> parameter is combined<br>with \<perm> parameter values if available which results in -XX:MetaspaceSize=\<min> -XX:MaxMetaspaceSize=\<max> Java runtime arguments for the microservice startup                        |
 |                                    \<name>                                     |                                        String                                        |                -Dpackage.name=...                 |                                        ${project.artifactId}                                        | Microservice name                                                                                                                                                                                                                 |   
-|           \<perm><br>\<min>...\</min><br>\<max>...\<max><br>\</perm>           |       min, max : \<Int>m<br>(m:megabytes; for available units refer to Java documentation)        |                        --                         |                                                 ""                                                  | \<perm> parameter is combined with \<metaspace> parameter values for compatibility reasons if available which results in -XX:MetaspaceSize=\<min> -XX:MaxMetaspaceSize=\<max> Java runtime arguments for the microservice startup |
+|           \<perm><br>\<min>...\</min><br>\<max>...\<max><br>\</perm>           |       min, max : \<Int>m<br>(m:megabytes; for available units refer to Java documentation)        |                        --                         |                                       min = 64m<br>max = 128m                                       | \<perm> parameter is combined with \<metaspace> parameter values for compatibility reasons if available which results in -XX:MetaspaceSize=\<min> -XX:MaxMetaspaceSize=\<max> Java runtime arguments for the microservice startup |
 |                                   \<rpmSkip>                                   |                                       Boolean                                        |           -Dskip.agent.package.rpm=...            |                                                true                                                 | Skip the rpm packaging                                                                                                                                                                                                            |
 |                                    \<skip>                                     |                                       Boolean                                        |             -Dskip.agent.package=...              |                                                false                                                | Skip the whole packaging                                                                                                                                                                                                          |
 
@@ -455,18 +455,29 @@ Example configuration in pom.xml:
 ...
 ```
 
-#### Set heap or metaspace on command line
+##### Setting parameters on command line {#package-goal-command-line}
+
+###### Primitive configuration values {#package-goal-command-line-primitive-data}
+
+Primitive configuration values or lists can be set on the Maven command line directly without usage of properties.
+Lists are usually specified with `,` as separation character.
+For example
+```sh
+-Dskip.agent.package.rpm=true
+-Dagent-package.arguments=-XX:+UseG1GC,-XX:+UseStringDeduplication
+```
+
+###### Complex data types as for heap and metaspace parameter {#package-goal-command-line-complex-data}
 
 Properties must be used if you want to specify data of complex data types on the command line. This is the case for memory
-data like heap and metaspace. In this case you have to specify each primitive value separately as pom property 
-which is then used inside the configuration of the microservice-package-maven-plugin. Primitive configuration values 
-or lists can be set on the Maven command line directly without usage of properties, for example ‘-Dskip.agent.package.rpm=”true”’.
+data like heap and metaspace. In this case you have to specify each primitive value separately as pom property
+which is then used inside the configuration of the microservice-package-maven-plugin.
 
-Example pom.xml
+Example for definition of primitive parameters in pom.xml
 ```xml
 <project … >
   ...
-  <properties> 
+  <properties>
     ...
     <custom-property.metaspace.min>200m</custom-property.metaspace.min>
     <custom-property.metaspace.max>300m</custom-property.metaspace.max>
@@ -481,7 +492,7 @@ defined in the pom.xml file of your microservice project.
 ```xml
 <project … >
   ...
-  <build>   
+  <build>
     ...
     <plugins>
       ...
@@ -515,7 +526,7 @@ defined in the pom.xml file of your microservice project.
 </project>
 ```
 
-Specify on command line:
+If you have defined the custom properties in your pom.xml file you can specify those parameters on command line:
 ```
 mvn clean install -Dcustom-property.metaspace.min=400m -Dcustom-property.metaspace.max=500m
 ```
