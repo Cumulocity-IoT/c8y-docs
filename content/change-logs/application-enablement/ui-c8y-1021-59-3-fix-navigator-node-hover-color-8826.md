@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63093
 version: 1021.59.3
 ---
-fix navigator node hover color (#8826)
+ Hover state now properly inherits both background and text colors from the active state, ensuring visual consistency
