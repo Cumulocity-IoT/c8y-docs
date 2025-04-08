@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issue with redirecting to the last viewed tab on dashboards
+title: Redirecting to the last viewed tab on a dashboard now works properly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
