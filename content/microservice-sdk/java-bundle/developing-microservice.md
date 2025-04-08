@@ -464,7 +464,7 @@ Lists are usually specified with `,` as separation character.
 For example
 ```sh
 -Dskip.agent.package.rpm=true
--Dagent-package.arguments=-XX:+UseG1GC,-XX:+UseStringDeduplication
+-Dagent-package.arguments=XX:+PrintCommandLineFlags,-XX:+UseCompressedClassPointers,-XX:+UseCompressedOops
 ```
 
 ###### Complex data types as for heap and metaspace parameter {#package-goal-command-line-complex-data}
