@@ -1,5 +1,5 @@
 ---
-date: '2025-03-27'
+date: 
 title: Enforcing Microservice API version 2 in Cumulocity SaaS instances
 change_type:
   - value: change-3BQrQ6adS
