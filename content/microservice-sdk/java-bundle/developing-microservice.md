@@ -473,7 +473,7 @@ Properties must be used if you want to specify data of complex data types on the
 data like heap and metaspace. In this case you have to specify each primitive value separately as pom property
 which is then used inside the configuration of the microservice-package-maven-plugin.
 
-Example for definition of primitive parameters in pom.xml
+Example for definition of primitive default parameters in pom.xml:
 ```xml
 <project … >
   ...
@@ -487,7 +487,7 @@ Example for definition of primitive parameters in pom.xml
 </project>
 ```
 These properties can now be used inside the configuration section of the microservice-package-maven-plugin 
-defined in the pom.xml file of your microservice project.
+defined in the pom.xml file of your microservice project:
 
 ```xml
 <project … >
