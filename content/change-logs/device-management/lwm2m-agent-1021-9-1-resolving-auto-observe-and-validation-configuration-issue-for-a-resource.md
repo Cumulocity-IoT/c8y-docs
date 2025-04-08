@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Resolving auto observe and validation configuration issue for a resource
+title: Resolving auto-observe and validation configuration issue for certain resources
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4586
 version: 1021.9.1
 ---
-Resources that were supposed to have auto observe in LWM2M device protocol configuration activated could not be properly set up. The auto observe fragment was either always set to false or completely missing from the object. As a result, automatic observation was not executed. The auto observe fragment is now correctly set in the object, resolving the issue and ensuring that automatic observation works as expected.    In addition, we addressed an issue where the empty validation rules configuration is saved for the resource. This caused issues for validations of write operation values before sending it to a LWM2M device. This issue has been resolved to ensure proper validation behavior.
+Resources that were supposed to have auto-observe in the LWM2M device protocol configuration activated could not be properly set up. The auto-observe fragment was either always set to false or completely missing from the object. As a result, automatic observation was not executed. The auto-observe fragment is now correctly set in the object, resolving the issue and ensuring that automatic observation works as expected. In addition, we addressed an issue where the empty validation rules configuration is saved for the resource. This caused issues for validations of write operation values before sending it to a LWM2M device. This issue has been resolved to ensure proper validation behavior.
