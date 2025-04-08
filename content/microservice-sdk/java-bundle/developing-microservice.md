@@ -253,6 +253,7 @@ The microservice settings module provides two features:
 
 By default the microservice loads the tenant options for the category specified by the microservice context path.
 The custom settings category can be specified by the manifest parameter: `settingsCategory`.
+Note that the defined tenant option category must be unique within the tenant.
 When neither settings category nor context path is provided in the microservice manifest, the application name is used.
 
 {{< c8y-admon-info >}}

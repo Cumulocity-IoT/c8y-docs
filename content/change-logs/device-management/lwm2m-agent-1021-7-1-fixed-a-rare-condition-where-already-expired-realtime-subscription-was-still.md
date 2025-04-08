@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-04-03'
 title: Fixed an issue with expired LWM2M device operation realtime subscriptions
 product_area: Device management & connectivity
 change_type:

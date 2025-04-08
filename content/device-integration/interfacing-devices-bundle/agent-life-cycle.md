@@ -2,7 +2,7 @@
 weight: 30
 title: Agent life cycle
 layout: bundle
-sector: 
+sector:
   - device_management
 ---
 
