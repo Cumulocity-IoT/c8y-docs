@@ -16,24 +16,37 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     const regexHref = new RegExp(`href=["']#${escFragment}["']`);
     return regexId.test(htmlContent) || regexHref.test(htmlContent);
   };
-  
 
-  const validateUrl = (item) => {
-    const url = item.link;
+  // New helper function as per feedback
+  const expectFragmentExists = (htmlContent, fragment) => {
+    if (!checkFragmentExists(htmlContent, fragment)) {
+      throw new Error(`Fragment "${fragment}" should exist in the page but was not found.`);
+    }
+  };
+
+  const expectValidUrl = (url) => {
     const unencodedParenthesisPattern = /[()]/;
     if (unencodedParenthesisPattern.test(url)) {
-      if (!brokenLinks.some(link => link.url === url)) {
-        brokenLinks.push({ url, files: item.files, status: "Adjust unencoded parentheses" });
-      }
-      return true;
+      throw Error(`Unencoded parentheses in URL: ${url}`);
     }
-    return false;
   };
+
+  Cypress.on('fail', (error) => {
+    const sourceFiles = Cypress.env('sourceFiles');
+  
+    if (sourceFiles) {
+      const sourceFilesList = `This URL was used in the following files:\n- ${sourceFiles.join('\n -')}`;
+      error.message += `\n\n${sourceFilesList}`;
+    }
+
+    throw error;
+  });
 
   totalTests = urls.length;
 
   urls.forEach((item) => {
     it(`should validate URL: ${item.link}`, () => {
+      Cypress.env('sourceFiles', item.files);
       cy.log(`Starting test for URL: ${item.link}`);
       let url = item.link;
       let baseUrl = url;
@@ -41,11 +54,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       let isCodexPage = false;
       let isFragmentCheckRequired = false;
 
-      if (validateUrl(item)) {
-        expect(validateUrl(item)).to.be.false;
-        completedTests++;
-        return;
-      }
+      expectValidUrl(url);
 
       if (url.includes('#')) {
         const hashParts = url.split('#');
@@ -67,18 +76,13 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         cy.visit(baseUrl, { failOnStatusCode: false, timeout: 10000 });
         cy.get('[data-cy="c8y-title--title-outlet"] .text-truncate', { timeout: 10000 }).then(($el) => {
           cy.document().then((doc) => {
-            const targetElement = $el[0];
-            if (!targetElement) {
-              brokenLinks.push({
-                url,
-                files: item.files, 
-                status: 'Target view missing [data-cy="c8y-title--title-outlet"] .text-truncate'
-              });
-              expect(targetElement, 'Target element should exist').to.exist;
-            } else if (isFragmentCheckRequired && fragment) {
-              if (!checkFragmentExists(doc.body.innerHTML, fragment)) {
+            if (isFragmentCheckRequired && fragment) {
+              // Simplified using expectFragmentExists as per feedback
+              try {
+                expectFragmentExists(doc.body.innerHTML, fragment);
+              } catch (error) {
                 fragmentErrors.push({ url, files: item.files, fragment });
-                expect(checkFragmentExists(doc.body.innerHTML, fragment), 'Fragment should exist in the page').to.be.true;
+                throw error; // Re-throw to fail the test
               }
             }
             completedTests++;
@@ -117,9 +121,11 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
             brokenLinks.push({ url, files: item.files, status: response.status }); 
             expect(response.status, 'Response status should be 200').to.equal(200);
           } else {
-            if (!checkFragmentExists(response.body, fragment)) {
-              fragmentErrors.push({ url, files: item.files, fragment }); 
-              expect(checkFragmentExists(response.body, fragment), 'Fragment should exist in the response body').to.be.true;
+            try {
+              expectFragmentExists(response.body, fragment);
+            } catch (error) {
+              fragmentErrors.push({ url, files: item.files, fragment });
+              throw error; 
             }
           }
           completedTests++;
@@ -139,50 +145,5 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
   afterEach(() => {
     cy.log(`Current progress: ${completedTests}/${totalTests}`);
-  });
-
-  after(() => {
-    cy.log(`Final: completedTests: ${completedTests}, totalTests: ${totalTests}`);
-    
-    let markdownContent = '';
-    const parenthesesErrors = brokenLinks.filter(item => item.status === "Adjust unencoded parentheses");
-    if (parenthesesErrors.length > 0) {
-      markdownContent += '### :warning: Unencoded Parentheses\n\n';
-      parenthesesErrors.forEach((item) => {
-        markdownContent += `- **${item.url}** (status: ${item.status})\n`;
-        markdownContent += `  - Files: ${item.files.join(', ')}\n`;
-      });
-      markdownContent += '\n';
-    }
-
-    const otherErrors = [
-      ...brokenLinks.filter(item => item.status !== "Adjust unencoded parentheses").map((item) => ({
-        url: item.url,
-        files: item.files, 
-        message: `status: ${item.status}`
-      })),
-      ...fragmentErrors.map((item) => ({
-        url: item.url,
-        files: item.files, 
-        message: `fragment "${item.fragment}" not found`
-      }))
-    ];
-    if (otherErrors.length > 0) {
-      markdownContent += '### :warning: Broken Links\n\n';
-      otherErrors.forEach((item) => {
-        markdownContent += `- **${item.url}** (${item.message})\n`;
-        markdownContent += `  - Files: ${item.files.join(', ')}\n`;
-      });
-      markdownContent += '\n';
-    }
-
-    if (!markdownContent) {
-      markdownContent = '### :white_check_mark: No issues found.\n';
-    }
-
-    cy.writeFile('broken_links_report.md', markdownContent, { flag: 'w' })
-      .then(() => {
-        cy.log('Broken links report generated successfully');
-      });
   });
 });
