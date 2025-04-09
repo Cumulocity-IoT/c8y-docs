@@ -133,7 +133,7 @@ screenshot.
 
 The application is using a customized router from the Web SDK and the `CoreModule`. The `CoreModule`
 contains all the necessary components, directives, pipes and services that allow you to
-[extend](#/getting-started/guides/extension-points) the application even further. But first we will
+[extend](https://styleguide.cumulocity.com/apps/codex/#/getting-started/guides/extension-points/overview) the application even further. But first we will
 release the application and deploy it.
 
 ### Deploying your application

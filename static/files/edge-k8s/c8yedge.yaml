@@ -58,7 +58,7 @@
 ## or the database admin credentials of the externally hosted MongoDB server.
 ## Name of this secret should be specified in 'spec.mongodb.credentialsSecretName' field of Edge CR.
 ##
-## Defaults to 'databaseAdmin' and 'admin-pass' as the database admin user and password for the Edge operator managed MongoDB
+## Defaults to 'databaseAdmin' and a generated password as the database admin user and password for the Edge operator managed MongoDB
 ## or fails with validation error for the externally hosted MongoDB server.
 ##
 
@@ -300,7 +300,7 @@ spec:
   # mongodb:
     ## Name of the Kubernetes Secret containing the database admin credentials with which the Edge operator 
     ## managed MongoDB must be configured or the database admin credentials of the externally hosted MongoDB server.
-    ## Defaults to 'databaseAdmin' and 'admin-pass' as the database admin user and password for the Edge operator 
+    ## Defaults to 'databaseAdmin' and a generated password as the database admin user and password for the Edge operator 
     ## managed MongoDB or fails with validation error for the externally hosted MongoDB server.
     # credentialsSecretName: mongodb-credentials
 
@@ -351,7 +351,6 @@ spec:
         # limits:
           # cpu: 1000m
           # memory: 1024M
-
     # - name: datahub
       # resources:
         # limits:
@@ -373,4 +372,4 @@ spec:
         ## Memory limit and must be specified in Mi without the units, 
         ## for example 4096 instead of 4096Mi or 4Gi.
         ## Default 4096
-        # memory: 6144M
+        # memory: 6144M          

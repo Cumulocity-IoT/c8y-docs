@@ -57,7 +57,8 @@ If you select either of the first two options mentioned above, this will also al
 
 The dynamic access mapping configuration allows you to define the rules for assigning roles to users based on JWT claims. The rule that matches the token's value is used to assign the appropriate set of roles to the user.
 
- ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping.png)
+ ![Custom access mapping-1](/images/users-guide/Administration/sso-custom-access-mapping-1.png)
+ ![Custom access mapping-2](/images/users-guide/Administration/sso-custom-access-mapping-2.png)
 
  In the example above, if a user tries to login a decoded JWT claims look like:
 
