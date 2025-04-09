@@ -3,7 +3,7 @@ title: Service quotas
 layout: bundle
 sector:
   - terms_conditions
-weight: 100
+weight: 60
 aliases:
   - /concepts/limits/
 ---

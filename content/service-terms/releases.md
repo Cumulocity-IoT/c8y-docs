@@ -3,7 +3,7 @@ title: Release policy
 layout: bundle
 sector:
   - terms_conditions
-weight: 95
+weight: 30
 ---
 
 ### Introduction
