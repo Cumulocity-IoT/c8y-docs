@@ -128,7 +128,7 @@ spec:
   # mongodb:
     ## Name of the Kubernetes Secret containing the database admin credentials with which the Edge operator 
     ## managed MongoDB must be configured or the database admin credentials of the externally hosted MongoDB server.
-    ## Defaults to 'databaseAdmin' and 'admin-pass' as the database admin user and password for the Edge operator 
+    ## Defaults to 'databaseAdmin' and a generated password as the database admin user and password for the Edge operator 
     ## managed MongoDB or fails with validation error for the externally hosted MongoDB server.
     # credentialsSecretName: mongodb-credentials
 
@@ -240,7 +240,7 @@ spec:
 ## or the database admin credentials of the externally hosted MongoDB server.
 ## Name of this secret should be specified in 'spec.mongodb.credentialsSecretName' field of Edge CR.
 ##
-## Defaults to 'databaseAdmin' and 'admin-pass' as the database admin user and password for the Edge operator managed MongoDB
+## Defaults to 'databaseAdmin' and a generated password as the database admin user and password for the Edge operator managed MongoDB
 ## or fails with validation error for the externally hosted MongoDB server.
 ##
 
@@ -255,8 +255,8 @@ spec:
 # stringData:
   ## Database admin username and password with which the MongoDB managed by the Edge operator 
   ## or the username of the externally hosted MongoDB server is configured.
-  # MONGODB_DATABASE_ADMIN_USER: admin
-  # MONGODB_DATABASE_ADMIN_PASSWORD: admin-pass
+  # MONGODB_DATABASE_ADMIN_USER: databaseAdmin
+  # MONGODB_DATABASE_ADMIN_PASSWORD: <DB-ADMIN-PASSWORD>
 
   ## Only used when MongoDB is deployed and managed by the Edge operator.
   ## Username defaults to 'userAdmin' and password defaults to the value in MONGODB_DATABASE_ADMIN_PASSWORD
