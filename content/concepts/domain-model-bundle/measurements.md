@@ -11,22 +11,28 @@ Measurements consist of a time when the measurement was taken, the unique identi
 
 ```json
 {
-    "time": "2011-01-02T03:04:00.000Z",
-    "source": {
-        "id": "1235"
-    },
+  "source": {
+    "id": "251982"
+  },
+  "time": "2020-03-19T12:03:27.845Z",
+  "type": "c8y_ElectricityMeasurement",
     "c8y_ThreePhaseElectricityMeasurement": {
         "A+": { "value": 435, "unit": "kWh" },
         "A-": { "value": 23, "unit": "kWh" },
         "P+": { "value": 657, "unit": "W" },
         "P-": { "value": 0, "unit": "W" },
         "A+:1": { "value": 123, "unit": "kWh" },
-        "A-:1": { "value": 2, "unit": "kWh" },
+        "A-:1": { "value": 2, "unit": "kWh" }
     }
 }
 ```
 
-Similar to the inventory model, fragments are used to identify characteristics of particular devices. In the above example, a three-phase electricity meter sends readings for the different electrical phases. In the example above, such a fragment maps the names of the individual readings (for example, "A+" or "A-") to the actual numeric value and unit of the measurement.
+Similar to the inventory model, fragments are used to identify characteristics of particular devices. Each measurement fragment is an object that holds the actual measurements as properties, also known as series. The property name corresponds to the name of the measurement and includes two properties:
+
+-   value: The individual measurement value that is required for every series.
+-   unit: The unit associated with the measurement.
+
+In the example above, a three-phase electricity meter sends readings for the different electrical phases. A measurement fragment maps the names of the individual readings (for example, "A+" or "A-") to the actual numeric value and unit of the measurement.
 
 Readings can hold various additional information that applications may require.
 
