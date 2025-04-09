@@ -74,7 +74,7 @@
   ## Database admin username and password with which the MongoDB managed by the Edge operator 
   ## or the username of the externally hosted MongoDB server is configured.
   # MONGODB_DATABASE_ADMIN_USER: databaseAdmin
-  # MONGODB_DATABASE_ADMIN_PASSWORD: admin-pass
+  # MONGODB_DATABASE_ADMIN_PASSWORD: <DB-ADMIN-PASSWORD>
 
   ## Only used when MongoDB is deployed and managed by the Edge operator.
   ## Username defaults to 'userAdmin' and password defaults to the value in MONGODB_DATABASE_ADMIN_PASSWORD
