@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2494
 version: 10.20.31.0
 ---
-The user documentation and the tooltip for the **Use source timestamp** configuration have been improved to explain how the LWM2M agent makes use of timestamp information if reported by a device.
+The user documentation and the tooltip for the **Use source timestamp** in the LWM2M single device registration have been improved to explain how the LWM2M agent makes use of timestamp information if reported by a device.
