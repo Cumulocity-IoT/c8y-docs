@@ -1,7 +1,7 @@
 ---
-weight: 25
+weight: 50
 title: Simple device enrollment
-layout: redirect
+layout: bundle
 ---
 
 In this tutorial, you will learn how to create a device certificate which is signed by a tenant's Certificate Authority (CA) with {{< product-c8y-iot >}} using the existing [bulk device registration](/device-management-application/registering-devices/#bulk-device-registration).
