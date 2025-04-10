@@ -18,7 +18,7 @@ To streamline certificate management, {{< product-c8y-iot >}} includes a Certifi
 - Manage signing certificates
 - Accept Certificate Signing Requests (CSR)
 - Perform legitimacy checks as defined by each tenant
-Issue signed X.509 certificates trusted by the device tenant
+- Issue signed X.509 certificates trusted by the device tenant
 
 This enhancement removes the need for external PKI management, allowing customers to adopt X.509 authentication more easily and seamlessly:
 The {{< product-c8y-iot >}} CA service is based on the EST protocol due to its simple interactions between devices and the CA service. The following REST API endpoints support the provisioning and renewal of device certificates.
