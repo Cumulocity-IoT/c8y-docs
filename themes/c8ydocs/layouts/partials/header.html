@@ -64,7 +64,16 @@
       >
         {{ if site.Data.date_settings.yearly_release}}
           <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs">Latest version</a></li>
+          <li>
+            {{ $siteDate := site.Data.date_settings.yearly_release_name }}
+            {{ if eq $siteDate "2025"}}
+            <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs/2024">Release 2024</a></li>
+            {{ else }}
+            <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs/2025">Release 2025</a></li>
+            {{ end }}
+          </li>
         {{else}}
+          <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs/2025">Release 2025</a></li>
           <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs/2024">Release 2024</a></li>
         {{end}}
         <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs/about_documentation/documentation-repository/">Previous versions</a></li>

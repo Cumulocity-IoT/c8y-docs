@@ -18,3 +18,7 @@ Once a device is connected to {{< product-c8y-iot >}}, it can start streaming eq
 To facilitate the data integration, {{< product-c8y-iot >}} comes with an [OPC UA](/device-integration/opcua/) integration and the [Cloud Fieldbus](/device-integration/cloud-fieldbus/) technology. These provide configuration-driven ways to easily integrate OPC UA-enabled equipment and prominent fieldbus protocols like CAN, Profibus or Modbus.
 
 In addition to this, many {{< company-c8y >}} certified [partner devices](https://ecosystem.{{< domain-c8y >}}/device-ecosystem/) bring their own software stack with support for many other protocols.
+
+{{< c8y-admon-info >}}
+The basic life cycle for integrating devices into {{< product-c8y-iot >}} is described in [Interfacing devices](/device-integration/interfacing-devices/).
+{{< /c8y-admon-info >}}
