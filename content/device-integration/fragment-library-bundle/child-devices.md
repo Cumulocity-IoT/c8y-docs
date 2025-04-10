@@ -8,7 +8,7 @@ sector:
 
 The **Child Devices** tab shows a list of all child devices. It will be available only if the device has any child devices assigned to it.
 
-By default, the child devices will now have the `c8y_IsDevice` fragment included. As a result, all aspects of devices are also applicable to child devices. This enables the querying and filtering of child devices. Moreover, child devices are also shown in the device lists (such as the **All devices** list, and in groups and during the creation of bulk operations). 
+By default, child devices have the `c8y_IsDevice` fragment included. Accordingly, all aspects of devices are also applicable to child devices, for example, querying and filtering of child devices. Moreover, child devices are also shown in the device lists (such as the **All devices** list, and in groups and during the creation of bulk operations). 
 
 ### Assign child device to parent device {#assign-child-device-to-parent-device}
 
