@@ -27,7 +27,7 @@ POST /inventory/managedObjects
 }
 ```
 
-Then in order to link the child device, the parent device must post to its inventory API the following request containing the ID of the child device.
+In order to link the child device, the parent device must post the following request containing the ID of the child device to its inventory API:
 
 ```http
 POST /inventory/managedObjects/<deviceId>/childDevices
