@@ -12,12 +12,11 @@ By default, child devices have the `c8y_IsDevice` fragment included. Accordingly
 
 ### Assign child device to parent device {#assign-child-device-to-parent-device}
 
-Create a child device using a request similar to the example below:
-
-In order to link the child device, the parent device must post to its inventory API the following request containing the ID of the child device.
+In order to link a device the parent device must post to its inventory API the following request containing the ID of the child device.
 
 ```http
 POST /inventory/managedObjects/<deviceId>/childDevices
+Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
 ```
 ```json
 {
