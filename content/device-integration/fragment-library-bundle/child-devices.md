@@ -8,7 +8,7 @@ sector:
 
 The **Child Devices** tab shows a list of all child devices. It will be available only if the device has any child devices assigned to it.
 
-By default, child devices have the `c8y_IsDevice` fragment included. Accordingly, all aspects of devices are also applicable to child devices, for example, querying and filtering of child devices. Moreover, child devices are also shown in the device lists (such as the **All devices** list, and in groups and during the creation of bulk operations). 
+We recommend to include the `c8y_IsDevice` fragment in all child devices. Accordingly, all aspects of devices are also applicable to child devices, for example, querying and filtering of child devices. Moreover, child devices are also shown in the device lists (such as the **All devices** list, and in groups and during the creation of bulk operations). 
 
 ### Assign child device to parent device {#assign-child-device-to-parent-device}
 
@@ -21,7 +21,6 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
 ```json
 {
    "name": "New child object",
-   "owner": "<Username of the device's owner>",
    "c8y_IsDevice": { }
 }
 ```
