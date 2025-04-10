@@ -14,29 +14,16 @@ By default, the child devices will now have the `c8y_IsDevice` fragment included
 
 Create a child device using a request similar to the example below:
 
-```http
-POST /inventory/managedObjects
-```
-```json
-{
-   "name": "MyNewChildDevice", 
-   "c8y_IsDevice": {}, 
-   "type": "my_child_device_type",
-   "c8y_SupportedMeasurements": [
-      "c8y_TemperatureMeasurement"]
-}
-```
-
-Then in order to link the child device, the parent device must post to its inventory API the following request containing the ID of the child device.
+In order to link the child device, the parent device must post to its inventory API the following request containing the ID of the child device.
 
 ```http
 POST /inventory/managedObjects/<deviceId>/childDevices
 ```
 ```json
 {
-   "managedObject": {
-      "id": "28067400"
-   }
+   "name": "New child object",
+   "owner": "<Username of the device's owner>",
+   "c8y_IsDevice": { }
 }
 ```
 
