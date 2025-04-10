@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Generating schemas from TypeScript types and interfaces in application build process
+date: '2025-04-10'
+title: >-
+  Generating schemas from TypeScript types and interfaces in application build
+  process
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
