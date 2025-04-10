@@ -9,6 +9,8 @@ In this section, the billable license metrics for each component of Cumulocity a
 
 Each version of the license metrics will be written with an effective date range. License metrics will not be updated during the duration of an active contract, and the version that is used upon signature will persist even if there are additional versions released afterwards. The start date for a contract will be used as the effective date for license metrics, and the version which is active at the time of the contract start date will be used for the duration of the contract. 
 
+The license metrics contained within this section are valid for "Commit-to-Consume" contracts and are not applicable to other contract types. To identify if your contract is a "Commit-to-Consume" contract, please follow up with your Cumulocity contract or view the contract directly. 
+
 For the purposes of all license metrics, one “gibibyte” is defined as 1,073,741,824 bytes as is abbreviated 'GiB'. A gibibyte may be colloqually referred to as a gigabyte and these names should be treated as the same value.
 
 
