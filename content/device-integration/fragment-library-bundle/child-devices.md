@@ -8,9 +8,26 @@ sector:
 
 The **Child Devices** tab shows a list of all child devices. It will be available only if the device has any child devices assigned to it.
 
+By default, the child devices will now have the `c8y_IsDevice` fragment included. As a result, all aspects of devices are also applicable to child devices. This enables the querying and filtering of child devices. Moreover, child devices are also shown in the device lists (such as the **All devices** list, and in groups and during the creation of bulk operations). 
+
 ### Assign child device to parent device {#assign-child-device-to-parent-device}
 
-In order to link a device the parent device must post to its inventory API the following request containing the ID of the child device.
+Create a child device using a request similar to the example below:
+
+```http
+POST /inventory/managedObjects
+```
+```json
+{
+	"name": "MyNewChildDevice", 
+   "c8y_IsDevice": {}, 
+   "type": "my_child_device_type",
+   "c8y_SupportedMeasurements": [
+      "c8y_TemperatureMeasurement"]
+}
+```
+
+Then in order to link the child device, the parent device must post to its inventory API the following request containing the ID of the child device.
 
 ```http
 POST /inventory/managedObjects/<deviceId>/childDevices
@@ -32,21 +49,7 @@ POST /inventory/managedObjects/<deviceId>/childDevices
 
 To add a child device to an existing device you must connect the connected device and call the child create template:
 
-`101,uniqueChildId,myChildDevice,myChildType`
-
-The child create template includes a Boolean device marker parameter, which turns the child device into a device by adding the `c8y_IsDevice` fragment. As a result, all aspects of devices are also applicable to child devices. This enables the querying and filtering of child devices. Moreover, child devices are also shown in the device lists (such as the **All devices** list, and in groups and during the creation of bulk operations). 
-
-If the device marker parameter is not provided, the `c8y_IsDevice` fragment is added by default. 
-
-Examples of the device marker parameter in use:
-
-`101,uniqueChildId,myChildDevice,myChildType,true` - `c8y_IsDevice` fragment is added to the child device
-
-`101,uniqueChildId,myChildDevice,myChildType,false` - `c8y_IsDevice` fragment is not added to the child device
-
-`101,uniqueChildId,myChildDevice,myChildType` - Default behaviour. `c8y_IsDevice` fragment is added to the child device
-
-`101,uniqueChildId,myChildDevice,myChildType,marker_fragment` - If anything else than true or false is provided, `c8y_IsDevice` fragment is added to the child device
+`101,uniqueChildId,myChildDevice,myChildType` 
 
 ### Operating a gateway for child devices {#operating-a-gateway-for-child-devices}
 Using the agent marker fragment ```com_cumulocity_model_Agent``` on the parent device but not on child devices effectively declares the device as a connected gateway for its children. The children are not directly connected to {{< product-c8y-iot >}} but send and receive data through the device and its integration.

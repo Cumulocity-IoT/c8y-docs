@@ -208,11 +208,18 @@ Create a new child device for the current device. The newly created object will 
 |1|unique child ID|YES|String| &nbsp; |
 |2|device name|NO|String|MQTT Device &lt;serialNumber&gt;|
 |3|device type|NO|String|c8y_MQTTChildDevice|
+|4|child device marker|NO|Boolean|true|
 
 **Example**
 
 ```text
-101,uniqueChildId,myChildDevice,myChildType
+101,uniqueChildId,myChildDevice,myChildType,true - `c8y_IsDevice` fragment is added to the child device
+
+101,uniqueChildId,myChildDevice,myChildType,false - `c8y_IsDevice` fragment is not added to the child device
+
+101,uniqueChildId,myChildDevice,myChildType - Default behaviour. `c8y_IsDevice` fragment is added to the child device
+
+101,uniqueChildId,myChildDevice,myChildType,marker_fragment - If anything else than true or false is provided, `c8y_IsDevice` fragment is added to the child device
 ```
 
 ##### Service creation (102) {#102}
