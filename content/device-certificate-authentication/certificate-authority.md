@@ -112,11 +112,6 @@ This certificate is identified as a TENANT CA and it has the attribute `tenantCe
 
 {{< c8y-admon-info >}}
 In order to call `/certificate-authority` one of the following roles is required: ROLE_TENANT_MANAGEMENT_ADMIN or ROLE_TENANT_MANAGEMENT_READ, otherwise an HTTP response 403 will be returned. The service user has automatic access to the endpoint.
-<section><h5>Required roles</h5>
-ROLE_TENANT_MANAGEMENT_ADMIN
-ROLE_TENANT_MANAGEMENT_READ
-</section>
-{{< /c8y-admon-info >}}
 
 ### Creating a CA certificate via the UI {#creating-a-ca-certificate-via-the-ui}
 
