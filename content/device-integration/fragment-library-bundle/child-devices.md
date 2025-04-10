@@ -19,7 +19,7 @@ POST /inventory/managedObjects
 ```
 ```json
 {
-	"name": "MyNewChildDevice", 
+   "name": "MyNewChildDevice", 
    "c8y_IsDevice": {}, 
    "type": "my_child_device_type",
    "c8y_SupportedMeasurements": [
