@@ -13,7 +13,7 @@ build_artifact:
     label: apama-in-c8y
 version: 26.79.0
 ---
-The apama-analytics-builder-block-sdk and apama-eplapps-tools are no longer supported on native Windows environments.
+The [apama-analytics-builder-block-sdk](https://github.com/Cumulocity-IoT/apama-analytics-builder-block-sdk) and [apama-eplapps-tools](https://github.com/Cumulocity-IoT/apama-eplapps-tools) are no longer supported natively on Windows environments.
 
 Windows users have two options to continue using these tools:
 
