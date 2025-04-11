@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issue with lastUpdated field not shown. BACKPORT (release/cd) (#8856)
+title: Fixed issue with lastUpdated field in the alarm details page being empty.
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62788
 version: 1021.60.1
 ---
-Fixed issue with lastUpdated field not shown. BACKPORT (release/cd) (#8856)
+In the alarm details view, the lastUpdated field was empty which usually shows the time of the last alarm occurrence. This issue has been fixed and the lastUpdated field has been renamed to "Last occurrence" instead. Users can see again when an alarm has been updated by looking at the "Last occurrence" field in the alarm details view.
