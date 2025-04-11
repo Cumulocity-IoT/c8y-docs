@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-04-10'
 title: Added plugin label to package content information for plugin versions
 product_area: Platform services
 change_type:
