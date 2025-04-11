@@ -15,6 +15,6 @@ ticket: CIE-5308
 version: 2025.0.0
 ---
 
-To support the use of a single wildcard certificate across multiple Edge instances, the format of the {{< management-tenant >}} domain has been changed. Instead of using `management.<edge-domain>`, it is now formatted as `management-<edge-domain>`. This change ensures better compatibility with wildcard certificates that match `*.yourdomain.com` but not nested subdomains like `management.edge1.yourdomain.com`.
+To support the use of a single wildcard certificate across multiple Edge instances, the format of the {{< management-tenant >}} domain has been changed. Instead of using `management.<edge-domain>`, it is now formatted as `management-<edge-domain>`. This change ensures better compatibility with wildcard certificates that match `*.yourdomain.com`, which would match `management-edge1.yourdomain.com` but not nested subdomains like `management.edge1.yourdomain.com`.
 Accessing Edge via `management.<edge-domain>` is still supported, provided the domain resolves to the Edge machine. However, in this case, users will be required to explicitly enter the tenant ID (`management`) during sign-in or prefix the username with `management/`, for example, `<tenant ID>/<username>`.
 
