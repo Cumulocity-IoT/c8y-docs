@@ -72,9 +72,9 @@ To disable TOTP for a user follow these steps:
 
 1. In the Administration application, navigate to **Accounts** > **Users** and select the user in the **Users** page.
 2. Scroll down to **Login options**.
-3. Clear the **Enforce TOTP for the user** checkbox.
-4. Click **Revoke TOTP secret**.
-5. Confirm by clicking **Revoke**.
+3. Click **Revoke TOTP secret**.
+4. Confirm by clicking **Revoke**.
+5. Clear the **Enforce TOTP setup for the user** checkbox.
 6. Click **Save** to save your changes.
 
 ![TOTP disable user](/images/users-guide/Administration/admin-user-totp-disable.png)

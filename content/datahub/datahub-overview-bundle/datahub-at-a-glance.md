@@ -14,7 +14,7 @@ With {{< product-c8y-iot >}} DataHub, you can connect existing tools and applica
 
 * Machine learning applications (mainly written in Python using ODBC)
 
-* Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for [web applications](/concepts/applications/#web-applications))
+* Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for web applications)
 
 The main features of the {{< product-c8y-iot >}} DataHub application are:
 

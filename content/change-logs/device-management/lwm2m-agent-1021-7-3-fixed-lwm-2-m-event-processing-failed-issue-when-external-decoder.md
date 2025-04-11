@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Fixed issue with LWM2M external decoders not updating device data fragments properly
+date: '2025-04-03'
+title: >-
+  Fixed issue with LWM2M external decoders not updating device data fragments
+  properly
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
