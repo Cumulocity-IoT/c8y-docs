@@ -1,6 +1,6 @@
 ---
 date: 
-title: Dropping native Windows support for Apama Analytics Builder Block SDJ and Apama EPL Apps Tools
+title: Dropping native Windows support for Apama Analytics Builder Block SDK and Apama EPL Apps Tools
 change_type:
   - value: change-inv-3bw8e
     label: Announcement
