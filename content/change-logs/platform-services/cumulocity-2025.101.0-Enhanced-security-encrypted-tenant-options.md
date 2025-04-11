@@ -3,8 +3,8 @@ date:
 title: Enhanced security for encrypted tenant options
 product_area: Platform services
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+  - value: change-inv-3bw8e
+    label: Announcement
 component:
   - value: component-JlFdtOPva
     label: Rest API
