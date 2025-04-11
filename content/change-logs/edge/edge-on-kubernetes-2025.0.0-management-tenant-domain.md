@@ -1,6 +1,6 @@
 ---
 date: 2025-03-31
-title: Changed {{< management-tenant >}} domain format for wildcard certificate Support 
+title: Changed Management Tenant domain format for wildcard certificate support 
 change_type:
   - value: change-3BQrQ6adS
     label: API change
