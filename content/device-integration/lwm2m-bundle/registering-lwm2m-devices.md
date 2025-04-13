@@ -126,7 +126,7 @@ openssl pkcs8 -topk8 -inform PEM -outform DER -in myDevice.key -out myDevice.der
 
 ##### Trusting CA in {{< product-c8y-iot >}} {#trusting-ca-in-the-platform}
 
-Before devices are able to connect to the platform, CA that issued device certificates must be added to trusted certificates. See [Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates) on how to add and trust CA certificate.
+Before devices are able to connect to the platform, CA that issued device certificates must be added to trusted certificates. See [Managing trusted certificates](/device-certificate-authentication/managing-trusted-certificates/) on how to add and trust CA certificate.
 
 ##### All security field details {#all-security-field-details}
 
@@ -439,8 +439,7 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">String</td>
 <td style="text-align: left">{{< product-c8y-iot >}} can output detailed logs to the event stream. This field configures a log level. Allowed values are:
 <b>NONE</b> (nothing will be logged as events), <b>LIFECYCLE</b> (only registration, de-registration and registration update events),
-<b>TRAFFIC</b> (LIFECYCLE + sent/received data), <b>FIRMWARE</b> (LIFECYCLE + detailed firmware update information),
-<b>VERBOSE</b> (all of the above will be logged).
+<b>VERBOSE</b> (LIFECYCLE + sent/received data + detailed firmware update information).
 Default is LIFECYCLE.</td>
 <td style="text-align: left">Optional</td>
 </tr>

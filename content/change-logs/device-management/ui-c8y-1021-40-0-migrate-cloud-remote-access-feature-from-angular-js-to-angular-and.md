@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Cloud remote access feature migrated to Angular and made extendable via hookService
+date: '2025-03-20'
+title: >-
+  Cloud remote access feature migrated to Angular and made extendable via
+  hookService
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
