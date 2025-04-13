@@ -1,6 +1,6 @@
 ---
-date: ""
-title: Removed disabled "Copy dashboard" button from dashboards 
+date: '2025-03-20'
+title: Removed disabled "Copy dashboard" button from dashboards
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m

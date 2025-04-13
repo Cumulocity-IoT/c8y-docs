@@ -28,4 +28,3 @@ This alarm is raised when latency for message delivery crosses a specified thres
 
 The data broker monitors the data rate at which events are being forwarded. If this rate is lower than a pre-configured threshold, a slow processing alert will be raised. This can occur due to a slow network.
 
-![New Data-Broker Alarms](/images/users-guide/enterprise-tenant/et-new-data-broker-alarms.png)

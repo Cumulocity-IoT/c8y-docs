@@ -4,7 +4,7 @@ title: Integration life cycle
 layout: redirect
 ---
 
-The basic life cycle for integrating devices into {{< product-c8y-iot >}} is discussed in [Interfacing devices](/concepts/interfacing-devices). In this section, we will show how this life cycle is implemented on REST level. The life cycle consists of two phases, a startup phase and a cycle phase.
+The basic life cycle for integrating devices into {{< product-c8y-iot >}} is discussed in [Interfacing devices](/device-integration/interfacing-devices/). In this section, we will show how this life cycle is implemented on REST level. The life cycle consists of two phases, a startup phase and a cycle phase.
 
 The startup phase connects the device to {{< product-c8y-iot >}} and updates the device data in the inventory. It also performs cleanup tasks required for operations. It consists of the following steps:
 
