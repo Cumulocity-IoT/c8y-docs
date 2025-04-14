@@ -19,23 +19,23 @@ Metrics related to {{< product-c8y-iot >}} Core, prefixed by **c8yedge_core**
 |c8yedge_core_sag_c8y_process_files_open_files|The number of files currently open by {{< product-c8y-iot >}} Core process.|Important for monitoring resource utilization and preventing potential exhaustion of file descriptors.
 
 ### Apama Metrics {#apama-metrics}
-Metrics related to the Apama Microservice, prefixed by **c8yedge_apama**
+Metrics related to the Apama Microservice, prefixed by **c8yedge_apama_ctrl**
 
 For more details, see [Monitoring with Prometheus]({{< link-apama-webhelp >}}/deploying-and-managing-apama-applications/monitoring-with-prometheus/) in the Apama documentation.
 
 |<div style="width:450px">Metric</div>|<div style="width:250px">Description</div>|Interpretation
 |:---|:---|:---
-|c8yedge_apama_process_cpu_usage|CPU usage by Apama process.|Essential for understanding how Apama impacts overall system CPU resources.
-|c8yedge_apama_system_cpu_usage|The total CPU usage percentage by the system, including Apama and other process.|Helps gauge the overall CPU load and identify potential bottlenecks.
-|c8yedge_apama_system_load_average_1m|The system's 1-minute load average, including Apama's impact.|Gives an immediate view of system demand, useful for identifying sudden increases in load.
-|c8yedge_apama_sag_apama_in_c8y_uptime_secs|This metric measures the uptime of Apama and its correlator in seconds within the Edge deployment.|These are crucial for tracking the stability and reliability of the Apama service.
-|c8yedge_apama_process_uptime_seconds|Measures how long the Apama process has been running in seconds.|Similar to the uptime metrics above, this provides insights into Apama's process stability.
-|c8yedge_apama_sag_apama_correlator_uptime_seconds|metrics measure the uptime of Apama and its correlator in seconds within the Edge deployment.|These are crucial for tracking the stability and reliability of the Apama service.
-|c8yedge_apama_process_files_open_files|The number of files currently open by Apama process.|Critical for ensuring Apama does not run into file descriptor limits, affecting its ability to operate.
-|c8yedge_apama_jvm_threads_peak_threads|The peak thread count used by Apama's JVM (Java Virtual Machine).|Indicates the maximum concurrency level required by Apama, useful for JVM tuning and performance optimization.
-|c8yedge_apama_process_start_time_seconds|The start time of the Apama process, measured in seconds since the Unix epoch.|Can be used to determine the Apama process's age, correlating with other events or metrics.
-|c8yedge_apama_sag_apama_in_c8y_is_starter_mode|Indicates whether Apama is running in starter mode within Edge.|Starter mode may have different resource usage or limitations compared to full operation mode.
-|c8yedge_apama_sag_apama_in_c8y_is_safe_mode|Flags if Apama is operating in a safe mode within Edge.|Safe mode might restrict certain operations or functions to ensure stability or security.
+|c8yedge_apama_ctrl_process_cpu_usage|CPU usage by Apama process.|Essential for understanding how Apama impacts overall system CPU resources.
+|c8yedge_apama_ctrl_system_cpu_usage|The total CPU usage percentage by the system, including Apama and other process.|Helps gauge the overall CPU load and identify potential bottlenecks.
+|c8yedge_apama_ctrl_system_load_average_1m|The system's 1-minute load average, including Apama's impact.|Gives an immediate view of system demand, useful for identifying sudden increases in load.
+|c8yedge_apama_ctrl_sag_apama_in_c8y_uptime_secs|This metric measures the uptime of Apama and its correlator in seconds within the Edge deployment.|These are crucial for tracking the stability and reliability of the Apama service.
+|c8yedge_apama_ctrl_process_uptime_seconds|Measures how long the Apama process has been running in seconds.|Similar to the uptime metrics above, this provides insights into Apama's process stability.
+|c8yedge_apama_ctrl_sag_apama_correlator_uptime_seconds|metrics measure the uptime of Apama and its correlator in seconds within the Edge deployment.|These are crucial for tracking the stability and reliability of the Apama service.
+|c8yedge_apama_ctrl_process_files_open_files|The number of files currently open by Apama process.|Critical for ensuring Apama does not run into file descriptor limits, affecting its ability to operate.
+|c8yedge_apama_ctrl_jvm_threads_peak_threads|The peak thread count used by Apama's JVM (Java Virtual Machine).|Indicates the maximum concurrency level required by Apama, useful for JVM tuning and performance optimization.
+|c8yedge_apama_ctrl_process_start_time_seconds|The start time of the Apama process, measured in seconds since the Unix epoch.|Can be used to determine the Apama process's age, correlating with other events or metrics.
+|c8yedge_apama_ctrl_sag_apama_in_c8y_is_starter_mode|Indicates whether Apama is running in starter mode within Edge.|Starter mode may have different resource usage or limitations compared to full operation mode.
+|c8yedge_apama_ctrl_sag_apama_in_c8y_is_safe_mode|Flags if Apama is operating in a safe mode within Edge.|Safe mode might restrict certain operations or functions to ensure stability or security.
 
 ### MongoDB Metrics {#mongodb-metrics}
 Metrics related to MongoDB, prefixed by **c8yedge_db**

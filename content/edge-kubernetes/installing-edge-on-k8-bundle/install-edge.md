@@ -41,11 +41,11 @@ Namespace:    c8yedge
 Kind:         CumulocityIoTEdge
 
 Metadata:
-  Creation Timestamp:  2023-08-11T00:00:01Z
+  Creation Timestamp:  2025-02-04T00:00:01Z
   Generation:          1
 
 Spec:
-  Version:             {{< c8y-edge-current-version >}}.0.1
+  Version:             {{< c8y-edge-version >}}
   License Key:         ***************
   Company:             IoT Company
   Domain:              myown.iot.com
@@ -55,9 +55,9 @@ Spec:
 
 Status:
   Deployed Generation:  1
-  Last Deployed Time:  2023-08-11T00:15:00Z
+  Last Deployed Time:  2025-02-04T00:00:01Z
   State:               Ready
-  Version:             {{< c8y-edge-current-version >}}.0.1-XXXX
+  Version:             {{< c8y-edge-version >}}
 
   Help Commands:
     Download Logs:   
@@ -71,9 +71,7 @@ A sample set of installation events:
 Events:
   Type     Reason            Age    From               Message
   ----     ------            ----   ----               -------
-  Normal   Validating        15m    cumulocityiotedge  validating
-  Normal   ValidationPassed  15m    cumulocityiotedge  validation passed
-  Normal   Installing        15m    cumulocityiotedge  installing
+  Normal   Installing        15m    cumulocityiotedge  installing {{< product-c8y-iot >}} Edge version tagged as {{< c8y-edge-version >}}
 …………
 …………
   Normal   Installing        12m    cumulocityiotedge  finished installing mongo server
@@ -87,6 +85,6 @@ Events:
 …………
   Normal   Installing        2m     cumulocityiotedge  finished installing thin-edge
 …………
-  Normal   Ready             1m     cumulocityiotedge  Cumulocity Edge installation is complete, and it's now running version {{< c8y-edge-current-version >}}.0.1-XXXX
+  Normal   Ready             1m     cumulocityiotedge  {{< product-c8y-iot >}} Edge installation is complete, and it's now running version {{< c8y-edge-version >}}
 ```
 Before you continue, wait for the Edge CR status to reach the **Ready** state.
