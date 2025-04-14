@@ -3,6 +3,7 @@ title: Edge on Kubernetes 2025
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
 layout: redirect
+external: "https://cumulocity.com/docs/2025/edge-kubernetes/"
 bundlefolder: edge-kubernetes
 audience:
   - Users
