@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test": "node Extractlinks.js && cypress run --browser chrome --spec 'cypress/e2e/link-checker.cy.js'"
+    "test": "node Extractlinks.js && npx cypress run"
   },
   "author": "",
   "license": "ISC",
