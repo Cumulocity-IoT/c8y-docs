@@ -10,5 +10,5 @@ sector:
 helpcontent:
   - label: monitoring
     title: Monitoring
-    content: "Something something useful here..."
+    content: "Monitoring covers operational health and user activity tracking. This helps administrators proactively manage the system, ensure stability, maintain security, and diagnose issues efficiently across different components."
 ---
