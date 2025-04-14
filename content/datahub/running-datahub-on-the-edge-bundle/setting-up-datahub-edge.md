@@ -16,7 +16,7 @@ Before setting up {{< product-c8y-iot >}} DataHub Edge, you must check the follo
 
 #### Hardware requirements {#hardware-requirements}
 
-The hardware requirements for running a bare {{< product-c8y-iot >}} Edge instance are described in [Requirements](https://cumulocity.com/docs/edge/edge-installation/#prerequisites). When {{< product-c8y-iot >}} DataHub Edge is additionally running, the hardware requirements of the virtual machine are as follows:
+The hardware requirements for running a bare {{< product-c8y-iot >}} Edge instance are described in [Requirements](/2025/edge/edge-installation/#prerequisites). When {{< product-c8y-iot >}} DataHub Edge is additionally running, the hardware requirements of the virtual machine are as follows:
 
 * 100 GB of free disk space plus sufficient free disk space for the data lake contents
 * Intel x86 CPU
@@ -122,7 +122,7 @@ The different {{< product-c8y-iot >}} DataHub Edge interfaces can be accessed in
 </table>
 
 {{< c8y-admon-req >}}
-For JDBC/ODBC you must configure {{< product-c8y-iot >}} Edge so that port 32010 can be accessed from the host system. For instructions on port forwarding see [Installing Edge](https://cumulocity.com/docs/edge/edge-installation/).
+For JDBC/ODBC you must configure {{< product-c8y-iot >}} Edge so that port 32010 can be accessed from the host system. For instructions on port forwarding see [Installing Edge](/2025/edge/edge-installation/).
 {{< /c8y-admon-req >}}
 
 ### Defining {{< product-c8y-iot >}} DataHub permissions and roles {#defining-datahub-permissions-and-roles}
