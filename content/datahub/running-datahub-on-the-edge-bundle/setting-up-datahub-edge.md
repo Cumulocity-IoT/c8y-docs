@@ -10,8 +10,8 @@ Before setting up {{< product-c8y-iot >}} DataHub Edge, you must check the follo
 
 | Item | Details |
 | -----   | -----   |
-| {{< product-c8y-iot >}} Edge | The local version of {{< product-c8y-iot >}} is set up on a Virtual Machine (VM). See also [Installing Edge](/edge/edge-installation/). |
-| {{< product-c8y-iot >}} DataHub Edge archive | You have downloaded the archive with all installation artifacts as described under [Installation requirements](/edge/edge-installation/#installation-requirements). |
+| {{< product-c8y-iot >}} Edge | The local version of {{< product-c8y-iot >}} is set up on a Virtual Machine (VM). See also [Installing Edge](/2025/edge/edge-installation/). |
+| {{< product-c8y-iot >}} DataHub Edge archive | You have downloaded the archive with all installation artifacts as described under [Installation requirements](/2025/edge/edge-installation/#installation-requirements). |
 | Internet access | Internet access is not required. |
 
 #### Hardware requirements {#hardware-requirements}
