@@ -1,10 +1,10 @@
 ---
 date: ""
-title: Simplified logging event levels in LWM2M device configuration
+title: Simplification of logging event levels for LWM2M device configuration
 product_area: Device management & connectivity
 change_type:
-  - value: change-2c7RdTdXo4
-    label: Improvement
+  - value: change-QHu1GdukP
+    label: Feature
 component:
   - value: component-1KLUzmqfe
     label: LWM2M
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4555
 version: 1021.9.0
 ---
-The logging event levels have been updated to simplify the LWM2M device configuration. Previously available logging levels were: NONE, LIFECYCLE, TRAFFIC, FIRMWARE, and VERBOSE. This has now been simplified to NONE, LIFECYCLE, and VERBOSE. TRAFFIC and FIRMWARE log events have been merged with VERBOSE. This configuration will be automatically updated in the device managed object.
+The logging event levels are updated to simplify the device configuration. Previously available logging levels were: NONE, LIFECYCLE, TRAFFIC, FIRMWARE, and VERBOSE. It is now simplified to NONE, LIFECYCLE, and VERBOSE. TRAFFIC and FIRMWARE log events are now merged with VERBOSE and this configuration will be automatically updated in the device managed object.
