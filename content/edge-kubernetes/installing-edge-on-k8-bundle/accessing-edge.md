@@ -4,13 +4,13 @@ title: Accessing Edge
 layout: redirect
 ---
 
-Before you can access Edge, you must first get the external IP address. The Edge operator creates a load balancer service named **cumulocity-core**, which receives an external IP. Clients outside of the cluster can access the Edge through this external IP.
+Before you can access Edge, you must first get the external IP address. The Edge operator creates a load balancer service named **cumulocity-ontoplb**, which receives an external IP. Clients outside of the cluster can access the Edge through this external IP.
 
 ### Assigning an external IP {#assigning-an-external-ip}
 
 To get the external IP to access Edge, run the command below:
 ```shell
-kubectl get service cumulocity-core -n c8yedge
+kubectl get service cumulocity-ontoplb -n c8yedge
 ```
 {{< c8y-admon-info >}}
 Substitute the namespace name *c8yedge* in the command above with the specific namespace name you have specified in your Edge CR.
@@ -19,13 +19,13 @@ Substitute the namespace name *c8yedge* in the command above with the specific n
 Sample output of the `kubectl get service` command:
 
 ```text
-NAME              TYPE           CLUSTER-IP          EXTERNAL-IP         PORT(S)
-cumulocity-core   LoadBalancer   X.X.X.X **REDACTED  X.X.X.X **REDACTED  443:31342/TCP,1883:32751/TCP,8883:32270/TCP
+NAME              	TYPE           CLUSTER-IP          EXTERNAL-IP         PORT(S)
+cumulocity-ontoplb  LoadBalancer   X.X.X.X **REDACTED  X.X.X.X **REDACTED  443:32443/TCP,8443:32442/TCP,1883:32083/TCP,8883:32084/TCP ...
 ```
-Sometimes the external IP displays as `<pending>` or `<none>`. The IP assignment process is dependent on the Kubernetes hosting environment. An external load balancer in the hosting environment handles the IP allocation and any other configurations necessary to route the external traffic to the Kubernetes service. Most on-premise Kubernetes clusters do not have external load balancers that can dynamically allocate IPs. The most common solution is to manually assign an external IP to the service. This can be done in the service’s YAML configuration. You can use the following command to manually assign an external IP to the `cumulocity-core` service (replace `<EXTERNAL-IP>` in the command below with the IP address you want to assign).
+Sometimes the external IP displays as `<pending>` or `<none>`. The IP assignment process is dependent on the Kubernetes hosting environment. An external load balancer in the hosting environment handles the IP allocation and any other configurations necessary to route the external traffic to the Kubernetes service. Most on-premise Kubernetes clusters do not have external load balancers that can dynamically allocate IPs. The most common solution is to manually assign an external IP to the service. This can be done in the service’s YAML configuration. You can use the following command to manually assign an external IP to the `cumulocity-ontoplb` service (replace `<EXTERNAL-IP>` in the command below with the IP address you want to assign).
 
 ```shell
-kubectl patch service cumulocity-core -n c8yedge -p '{"spec":{"type": "LoadBalancer", "externalIPs":["<EXTERNAL-IP>"]}}'
+kubectl patch service cumulocity-ontoplb -n c8yedge -p '{"spec":{"type": "LoadBalancer", "externalIPs":["<EXTERNAL-IP>"]}}'
 ```
 {{< c8y-admon-info >}}
 Substitute the namespace name *c8yedge* in the command above with the specific namespace name you have specified in your Edge CR.
@@ -44,7 +44,7 @@ You can access Edge using a domain name in a web browser.
 Access Edge using the domain name configured as part of the installation. There are two ways of configuring the accessibility with the domain names:
 
 * Add an entry of the domain name and IP address mapping in the DNS servers.
-<br>For example, if your domain name is **myown.iot.com**, add an entry for both **myown.iot.com** and **management.myown.iot.com**.<br>
+<br>For example, if your domain name is **myown.iot.com**, add an entry for both **myown.iot.com** and **management-myown.iot.com**.<br>
 * Alternatively, [Add the alias](#add-alias) to access Edge through the domain name provided during installation. This must be performed on each client host on which Edge is accessed.
 
 The first option is always preferable so that Edge is accessible over LAN.
@@ -55,7 +55,7 @@ On Linux machines, add the following entry to */etc/hosts*:
 
 ```text
 <IP address> <domain_name>
-<IP address> management.<domain_name>
+<IP address> management-<domain_name>
 ```
 Use the external IP address fetched by running the command `kubectl get service` in the previous section.
 
@@ -65,7 +65,7 @@ Ping the &#60;domain_name> to verify it.
 
 ```shell
 ping <domain_name>
-ping management.<domain_name>
+ping management-<domain_name>
 ```
 
 If the ping is successful, the DNS resolution is working properly.
@@ -74,7 +74,7 @@ If the ping is successful, the DNS resolution is working properly.
 
 To access Edge, enter one of the following URLs in the browser:
 - For the "edge" tenant, use the URL `https://<domain_name>`.
-- For the {{< management-tenant >}}, use the URL `https://management.<domain_name>`.
+- For the {{< management-tenant >}}, use the URL `https://management-<domain_name>`.
 
 This will bring up the below login screen. Enter the default credentials username "admin" and password "admin-pass" to log in in to both the "edge" tenant and the {{< management-tenant >}}.
 

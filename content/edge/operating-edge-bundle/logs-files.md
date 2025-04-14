@@ -42,4 +42,4 @@ sudo docker logs apama-ctrl-edge
 
 ### DataHub log file locations {#datahub-log-file-locations}
 
-See [Log files](/datahub/running-datahub-on-the-edge/#log-files) for details on DataHub log files.
+See [Log files](/edge/edge-working-with-datahub/#log-files) for details on DataHub log files.

@@ -10,7 +10,7 @@ This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s
 
 1. Verify that your hardware meets the requirements specified in [Prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
 
-2. Make configuration changes to your operating system to work with K3S as per [Requirements](https://docs.k3s.io/installation/requirements#operating-systems). 
+2. Make configuration changes to your operating system to work with K3S as per [Requirements](https://docs.k3s.io/installation/requirements#operating-systems).
 
 3. Run the command below to install K3s.
 
@@ -28,7 +28,6 @@ This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s
          --write-kubeconfig-mode 644 \
          --disable=traefik \
          --protect-kernel-defaults true \
-         --kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook && \
       
       mkdir -p '"$USER_HOME"'/.kube && \
       cp /etc/rancher/k3s/k3s.yaml '"$USER_HOME"'/.kube/config && \
@@ -55,7 +54,7 @@ This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s
    curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh
    ```
 
-6. Run the command below to apply Edge CR ([c8yedge-sample.yaml](/files/edge-k8s/c8yedge-sample.yaml)) for installing Edge version **{{< c8y-edge-current-version >}}.0.1** named **c8yedge** with the domain **myown.iot.com**.
+6. Run the command below to apply Edge CR ([c8yedge-sample.yaml](/files/edge-k8s/c8yedge-sample.yaml)) for installing Edge version **{{< c8y-edge-version >}}** named **c8yedge** with the domain **myown.iot.com**.
 
    ```shell
    kubectl apply -f {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-sample.yaml

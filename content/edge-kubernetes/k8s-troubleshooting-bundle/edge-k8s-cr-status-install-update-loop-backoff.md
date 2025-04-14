@@ -7,7 +7,7 @@ After deploying or updating Edge, if the Edge CR status is `InstallationLoopBack
 
 ```shell
 NAME         DOMAIN NAME     VERSION     STATUS     
-c8yedge      myown.iot.com   {{< c8y-edge-current-version >}}.0.1    InstallLoopBackOff
+c8yedge      myown.iot.com   {{< c8y-edge-version >}}    InstallLoopBackOff
 ```
 
 Describe the Edge CR (cumulocity-iot-edge) with the command `kubectl describe edge c8yedge -n c8yedge`.
@@ -27,14 +27,13 @@ Status:
 Events:
  Type    Reason               Age    From               Message
  ------  ------               ----   ----               -------
- Normal  Validating           8m37s  cumulocityiotedge  validating
- Normal  ValidationPassed     8m37s  cumulocityiotedge  validation passed
- Normal  Installing           8m34s  cumulocityiotedge  installing
+ Normal  Installing           8m34s  cumulocityiotedge  installing {{< product-c8y-iot >}} Edge version tagged as {{< c8y-edge-version >}}
 ……
 ……
  Normal  InstallLoopBackOff   1m00s  cumulocityiotedge  waiting for mongo server to be ready
 ```
 
+MongoDB requires a CPU that supports AVX instructions. Ensure that the CPU type of the Kubernetes node supports AVX instructions. Use the command `lscpu` to check whether the CPU supports AVX instructions. 
 Check the logs of the Edge operator, MongoDB and core pods to get more insights.
 
 The Edge operator logs:
