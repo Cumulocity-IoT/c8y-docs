@@ -1,8 +1,9 @@
 ---
-title: Edge Appliance VM
+title: Edge Appliance VM 10.18
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
 layout: redirect
+external: "https://cumulocity.com/docs/2025/edge/"
 bundlefolder: edge
 audience:
   - Users
