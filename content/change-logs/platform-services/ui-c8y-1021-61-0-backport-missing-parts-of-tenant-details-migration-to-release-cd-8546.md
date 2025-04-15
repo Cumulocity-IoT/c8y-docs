@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Completed migration of tenant Properties, Custom properties, and Limits tabs to newer version of Angular
+title: Completed migration of Properties, Custom properties, and Limits tabs to newer version of Angular
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
