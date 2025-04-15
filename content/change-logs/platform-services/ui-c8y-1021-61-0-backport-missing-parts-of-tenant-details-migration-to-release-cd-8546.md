@@ -14,4 +14,6 @@ build_artifact:
 ticket: MTM-62997
 version: 1021.61.0
 ---
-Backport missing parts of tenant details migration to `release/cd` (#8546)
+The migration of tenant Properties, Custom properties, and Limits tabs to newer version of Angular has been completed. They still work in the same way from the user perspective, with two exceptions:
+- "External reference" input and "Enable Gainsight product experience tracking" checkbox have been moved into "Properties" tab of a tenant
+- device storage limitation feature has been moved into "Limits" tab of a tenant
