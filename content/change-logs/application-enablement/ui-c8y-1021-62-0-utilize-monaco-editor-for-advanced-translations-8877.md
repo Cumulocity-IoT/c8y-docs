@@ -1,6 +1,6 @@
 ---
 date: ""
-title: utilize monaco editor for advanced translations (#8877)
+title: Advanced translations via Monaco editor for improved editing experience
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62135
 version: 1021.62.0
 ---
-utilize monaco editor for advanced translations (#8877)
+The {{< product-c8y-iot >}} platform provides capabilities to manage translations for the UI in various languages. Previously, the translation editor had limited capabilities for editing multiple translations at once. With this change, the Monaco editor can now be used when editing translations in the Administration application, allowing to bulk edit or import translations easily.
