@@ -14,6 +14,6 @@ build_artifact:
 ticket: MTM-62997
 version: 1021.61.0
 ---
-The migration of the **Properties**, **Custom properties**, and **Limits** tabs in the tenant details to a newer version of Angular has been completed. They still work in the same way from the user perspective, with two exceptions:
+The **Properties**, **Custom properties**, and **Limits** tabs in the tenant details have completely been migrated to a newer version of Angular. They still work in the same way from the user perspective, with two exceptions:
 - The **External reference** field and the **Enable Gainsight product experience tracking** checkbox have been moved into the **Properties** tab.
 - The device storage limitation has been moved into the **Limits** tab.
