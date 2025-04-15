@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Backport missing parts of tenant details migration to `release/cd` (#8546)
+title: Completed migration of tenant Properties, Custom properties, and Limits tabs to newer version of Angular
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
