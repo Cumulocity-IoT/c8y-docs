@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63297
 version: 1021.62.3
 ---
-New user does not see the QR code when setting it up with TOTP 2FA [GRAFT][release/cd] (#8899)
+New user (or user with TOTP secret revoked with user settings) was not able to set up TOTP because of lack of QR code. Issue was fixed, QR code is again visible and user can set up TOTP.
