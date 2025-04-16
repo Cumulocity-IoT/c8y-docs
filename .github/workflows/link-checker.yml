@@ -1,0 +1,79 @@
+name: Link Checker
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'latest'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate links
+        run: node Extractlinks.js
+
+      - name: Run Cypress tests
+        run: npm test
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-results
+          path: |
+            all_links.json
+            cypress-report.json
+
+      - name: Comment on PR with broken links
+        if: github.event_name == 'pull_request' && failure()
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            const cypressReport = JSON.parse(fs.readFileSync('cypress-report.json', 'utf8'));
+            const allLinks = JSON.parse(fs.readFileSync('all_links.json', 'utf8'));
+
+            let brokenLinks = [];
+            cypressReport.tests.forEach(test => {
+              if (test.state === 'failed') {
+                const url = test.title[1]; // Extract URL from test title
+                const linkObj = allLinks.find(link => link.link === url);
+                if (linkObj) {
+                  brokenLinks.push({ url, files: linkObj.files });
+                }
+              }
+            });
+
+            let commentBody = '### Broken Links Found:\n';
+            if (brokenLinks.length > 0) {
+              brokenLinks.forEach(link => {
+                commentBody += `- **URL:** ${link.url}\n  **Files:** ${link.files.join(', ')}\n`;
+              });
+            } else {
+              commentBody += 'No broken links found.';
+            }
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentBody
+            })
