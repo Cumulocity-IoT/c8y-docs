@@ -69,18 +69,23 @@ AlarmRepresentation updateAlarm(AlarmRepresentation alarm) throws SDKException;
 void deleteAlarmsByFilter(AlarmFilter filter) throws IllegalArgumentException, SDKException;
 ```
 
-This is an example of creating an alarm:
+This is an example of retrieving all devices registered in the `management` tenant:
 
 ```java
 @Autowired
-private AlarmApi alarms;
+MicroserviceSubscriptionsService subscriptionsService;
 
-public AlarmRepresentation addHelloAlarm () {
-    AlarmRepresentation alarm = new AlarmRepresentation();
-    alarm.setSeverity("CRITICAL");
-    alarm.setStatus("Hello");
+@Autowired
+InventoryApi inventoryApi;
 
-    return alarms.create(alarm);
+public List<ManagedObjectRepresentation> getAllDevicesTenant2() {
+  List<ManagedObjectRepresentation> managedObjectsList = new ArrayList<>();
+  subscriptionsService.runForTenant("management", () -> {
+    inventoryApi.getManagedObjects().get().allPages().forEach(mor -> {
+      managedObjectsList.add(mor);
+    });
+  });
+  return managedObjectsList;
 }
 ```
 
@@ -92,44 +97,105 @@ API requests in {{< product-c8y-iot >}} microservices can run in two authenticat
  * Tenant scope – uses the service user's credentials.
  * User scope – uses the credentials of the authenticated user who triggered the request.
 
-Each microservice has a service user whose roles are defined in the `cumulocity.json` manifest. By default, the platform API services provided by the Microservice SDK operate in the tenant scope. The following example uses the predefined eventApi bean in tenant scope:
+Each microservice has a service user whose roles are defined in the `cumulocity.json` manifest. 
+
+**API requests must be executed in one of these contexts: tenant scope or user scope**.
+
+To execute API requests in the tenant scope in any thread of the application, the `MicroserviceSubscriptionsService` can be used to wrap the request like in the next example:
 
 ```java
+@Autowired
+MicroserviceSubscriptionsService subscriptionsService;
+
 @Autowired
 private EventApi eventApi;
 
-public List<EventRepresentation> getEvents () {
-  return eventApi.getEvents().get().getEvents();
-}
-```
-
-To switch to user scope, qualify the bean using `@Qualifier("userEventApi")`:
-
-```java
-@Autowired
-@Qualifier("userEventApi")
-private EventApi userEventApi;
-
-public List<EventRepresentation> getEvents () {
-  return userEventApi.getEvents().get().getEvents();
+public List<EventRepresentation> getAllEvents() {
+  List<EventRepresentation> eventsList = new ArrayList<>();
+  subscriptionsService.runForEachTenant( () -> {
+    eventApi.getEvents().get().getEvents().forEach(event -> {
+      eventsList.add(event);
+    });
+  });
+  return eventsList;
 }
 ```
 
 Tenant scope is the default context in:
- * Classes annotated with `@RestController`
- * Methods annotated with `@EventListener`
+* Classes annotated with `@RestController`
+* Methods annotated with `@EventListener`
 
-To switch the context to a specific tenant, use the `MicroserviceSubscriptionsService`:
+In these cases, the `MicroserviceSubscriptionsService` is not needed.
+The API service beans like `eventApi` or `inventoryApi` are executed in the tenant scope by default:
+
+#### @EventListener annotation and scope
+
+Example for `@EventListener` annotation and tenant scope:
 
 ```java
 @Autowired
-private MicroserviceSubscriptionsService subscriptionsService;
-@Autowired
-EventApi eventApi;
-...
-    subscriptionsService.runForTenant("tenant-name", () -> eventApi.getEvents().get().getEvents());
-...
+InventoryApi tenantInventoryApi;
+
+@EventListener
+public void initialize(MicroserviceSubscriptionAddedEvent event) {
+   String tenant = event.getCredentials().getTenant();
+   log.info("Tenant {} - Microservice subscribed", tenant);
+   tenantInventoryApi.getManagedObjects().get().allPages();
+}
 ```
+
+#### @RestController annotation and scope
+
+The next examples show the execution of API calls in tenant scope and user scope for @RestController classes.
+
+Example of an API request in the tenant scope:
+
+```java
+@RestController
+@RequestMapping("/devices")
+public class DeviceController {
+    
+    @Autowired
+    InventoryApi inventoryApi;
+
+    @GetMapping(path = "/devicesTenantScope", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<ManagedObjectRepresentation>> getAllDevicesTenantScope() {
+        List<ManagedObjectRepresentation> managedObjectsList = new ArrayList<>();
+        InventoryFilter filter = new InventoryFilter().byFragmentType(IsDevice.class);
+        inventoryApi.getManagedObjectsByFilter(filter).get().allPages().forEach(mor -> {
+            managedObjectsList.add(mor);
+        });
+        return new ResponseEntity<>(managedObjectsList, HttpStatus.OK);
+    }
+  
+}
+```
+
+To execute an API request in the user scope, the API service bean must be injected with a qualifier annotation like `@Qualifier("userInventoryApi")`:
+
+```java
+@RestController
+@RequestMapping("/devices")
+public class DeviceController {
+
+    @Autowired
+    @Qualifier("userInventoryApi")
+    InventoryApi userInventoryApi;
+
+    @GetMapping(path = "/devicesUserScope", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<ManagedObjectRepresentation>> getAllDevicesUserScope() {
+      List<ManagedObjectRepresentation> managedObjectsList = new ArrayList<>();
+      InventoryFilter filter = new InventoryFilter().byFragmentType(IsDevice.class);
+      userInventoryApi.getManagedObjectsByFilter(filter).get().allPages().forEach(mor -> {
+        managedObjectsList.add(mor);
+      });
+      return new ResponseEntity<>(managedObjectsList, HttpStatus.OK);
+    }
+  
+}
+```
+
+#### API service beans
 
 The Microservice SDK provides both tenant-scope and user-scope beans with the following names:
 
