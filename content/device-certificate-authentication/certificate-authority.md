@@ -86,7 +86,7 @@ To create a new CA certificate for a tenant the Certificate Authority API must b
 * A new key pair is created and a certificate is self-signed with `tenantID` as the Common Name (CN).
 * The private key is stored in an encrypted tenant option.
 * The certificate is stored in the trusted certificate repository with auto-registration turned on by default. Devices can only be registered automatically when the administrator turns this option on.
-* If a CA is already present, returns a message indicating the CA is already present.
+* If a CA is already present, a respective message is returned.
 * If the CA is removed from the trusted certificate list, the corresponding private key is removed from the database collection.
 
 This is an example of a REST request:
@@ -108,10 +108,11 @@ The following response is returned:
         "status":"ENABLED"
         ....
     }
-This certificate is identified as a TENANT CA and it has the attribute `tenantCertificateAuthority":true`.
+This certificate is identified as a TENANT CA and it has the attribute `"tenantCertificateAuthority":true`.
 
 {{< c8y-admon-info >}}
 In order to call `/certificate-authority` one of the following roles is required: ROLE_TENANT_MANAGEMENT_ADMIN or ROLE_TENANT_MANAGEMENT_READ, otherwise an HTTP response 403 will be returned. The service user has automatic access to the endpoint.
+{{< /c8y-admon-info >}}
 
 ### Creating a CA certificate via the UI {#creating-a-ca-certificate-via-the-ui}
 

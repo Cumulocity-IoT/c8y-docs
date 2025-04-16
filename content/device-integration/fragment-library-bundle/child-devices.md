@@ -8,18 +8,20 @@ sector:
 
 The **Child Devices** tab shows a list of all child devices. It will be available only if the device has any child devices assigned to it.
 
+We recommend to include the `c8y_IsDevice` fragment in all child devices. Accordingly, all aspects of devices are also applicable to child devices, for example, querying and filtering of child devices. Moreover, child devices are also shown in the device lists (such as the **All devices** list, and in groups and during the creation of bulk operations). 
+
 ### Assign child device to parent device {#assign-child-device-to-parent-device}
 
 In order to link a device the parent device must post to its inventory API the following request containing the ID of the child device.
 
 ```http
 POST /inventory/managedObjects/<deviceId>/childDevices
+Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
 ```
 ```json
 {
-   "managedObject": {
-      "id": "28067400"
-   }
+   "name": "New child object",
+   "c8y_IsDevice": { }
 }
 ```
 
@@ -32,7 +34,7 @@ POST /inventory/managedObjects/<deviceId>/childDevices
 
 To add a child device to an existing device you must connect the connected device and call the child create template:
 
-`101,uniqueChildId,myChildDevice,myChildType`
+`101,uniqueChildId,myChildDevice,myChildType` 
 
 ### Operating a gateway for child devices {#operating-a-gateway-for-child-devices}
 Using the agent marker fragment ```com_cumulocity_model_Agent``` on the parent device but not on child devices effectively declares the device as a connected gateway for its children. The children are not directly connected to {{< product-c8y-iot >}} but send and receive data through the device and its integration.

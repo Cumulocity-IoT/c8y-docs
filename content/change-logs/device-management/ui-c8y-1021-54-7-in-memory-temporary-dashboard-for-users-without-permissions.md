@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-04-10'
 title: Display read-only dashboard for users without dashboard creation permission
 product_area: Device management & connectivity
 change_type:

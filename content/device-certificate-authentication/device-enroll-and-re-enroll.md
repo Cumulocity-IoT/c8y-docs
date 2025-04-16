@@ -25,7 +25,7 @@ ID;TYPE;NAME;ICCID;IDTYPE;PATH;SHELL;AUTH_TYPE;ENROLLMENT_OTP
 In order to follow this tutorial, check the following prerequisites:
 
 * You have a valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
-* A Certificate Authority (CA) is already created for this tenant.
+* A Certificate Authority (CA) has already been created for this tenant.
 
 ### Enroll a device certificate {#enroll-a-device-certificate}
 
