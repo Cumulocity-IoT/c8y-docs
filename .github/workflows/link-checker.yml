@@ -21,14 +21,20 @@ jobs:
         with:
           node-version: 'latest'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install Dependencies
+        run: |
+          cd broken-links-script
+          npm install
 
       - name: Generate links
-        run: node Extractlinks.js
+        run: |
+          cd broken-links-script
+          node Extractlinks.js
 
       - name: Run Cypress tests
-        run: npm test
+        run: |
+          cd broken-links-script
+          npm test
 
       - name: Upload test results
         if: always()
