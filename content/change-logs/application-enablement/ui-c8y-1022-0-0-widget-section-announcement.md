@@ -24,4 +24,4 @@ Widget developers should start using the `hookWidgetSection` hook to add configu
 
 **Backward compatibility**
 
-The `loadConfigComponent` method continues to work in short term and will add a section named "Settings", but it will be removed in an upcoming major release. We recommend migrating to the new system as soon as possible.
+The `loadConfigComponent` method continues to work in short term and will add a section named "Settings", but it will be removed in an upcoming major release. We recommend migrating to the new approach as soon as possible.
