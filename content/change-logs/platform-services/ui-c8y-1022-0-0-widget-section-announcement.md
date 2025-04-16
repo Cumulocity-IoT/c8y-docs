@@ -14,11 +14,12 @@ build_artifact:
 ticket: MTM-63358
 version: 1022.0.0
 ---
-**What's changing?**
-We're introducing a new hookable multi-section concept for widget configuration, and as a result, we are deprecating the loadConfigComponent method of the widgetHook.
+**What changes?**
+{{< product-c8y-iot >}} introduces a new hookable multi-section concept for the widget configuration, and as a result, the `loadConfigComponent` method of the widgetHook is deprecated.
 
-**What should you do?**
-Widget developers should now use the hookWidgetSection hook to add configuration to their own or existing widgets. This new approach supports multiple configuration sections to be displayed, offering greater flexibility and organization of widget settings.
+**How does this change impact you?**
+Widget developers should start using the `hookWidgetSection` hook to add configuration to their own or existing widgets. This new approach supports multiple configuration sections to be displayed, offering greater flexibility and organization of widget settings.
 
 **Backward compatibility**
-The loadConfigComponent method will continue to work in the short term and will add a section named "Settings", but it will be removed in an upcoming major release. We recommend migrating to the new system as soon as possible.
+
+The `loadConfigComponent` method continues to work in short term and will add a section named "Settings", but it will be removed in an upcoming major release. We recommend migrating to the new system as soon as possible.
