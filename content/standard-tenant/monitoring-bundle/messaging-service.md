@@ -135,7 +135,7 @@ Subscribers created by MQTT clients are deleted automatically once the client di
 
 #### Clearing the backlog {#mqtt-service-clearing-the-backlog}
 
-There are a few ways to clear the backlog from MQTT Service topics.
+There are various ways to clear the backlog from MQTT Service topics.
 
 ##### Consume messages {#mqtt-service-consume-messages}
 
