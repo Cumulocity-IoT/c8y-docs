@@ -199,9 +199,9 @@ Some manifest settings are used exclusively by internal components, and are not 
 The version has an impact on the microservice upload behavior:
 
   * If the version is a snapshot, for example, "1.1.0-SNAPSHOT", then Docker will update the image on each ZIP upload.
-  * If the version is NOT a snapshot, for example, "2.0.0", then Docker will update the image on each ZIP upload, but only for the case that the image version to be uploaded is higher than the last uploaded version.
-  * If a new ZIP file for a microservice is uploaded but the version is the same as the previous, for example, "2.0.0", then this is not supported by the microservice installation. There is no guarantee that the Docker image for the microservice will be updated.
-  * This means rollback of microservices to previously uploaded versions is not possible. In this case you have to delete the microservice and to upload the image again.
+  * If the version is NOT a snapshot, for example, "2.0.0", then Docker will update the image on each ZIP upload, but only if the image version to be uploaded is higher than the last uploaded version.
+  * If a new non-snapshot ZIP file for a microservice is uploaded but the version is the same as the previous, for example, "2.0.0", then this is not supported by the microservice installation.
+  * This means rollback of microservices to previously uploaded versions is not possible. In this case you have to delete the microservice and to upload the previous ZIP file containing an older version again. Or you could create a new ZIP file with the old desired image inside and with a newer version for the upload.
 
 The "-SNAPSHOT" postfix means that the image build is a snapshot of your application at a given time and it is still under development.
 When the microservice is ready for a production release, the "-SNAPSHOT" postfix must be removed, and the micorservice must be uploaded with a unique (higher) version number (for example, "2.1.0").
