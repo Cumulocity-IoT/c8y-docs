@@ -14,8 +14,8 @@ build_artifact:
 ticket: MTM-62313, MTM-62316
 version: 1022.0.0
 ---
-In the upcoming version dashboard settings component will be refactored to use secondary router outlet.
-This approach allows to hook new tab to particular outlet, e.g. 
+In an upcoming version the dashboard settings component will be refactored to use a secondary router outlet.
+This approach allows to hook a new tab to a particular outlet. For example:
 ```ts
 hookTab(
     [
@@ -43,8 +43,8 @@ hookRoute([
   }
 ])
 ```
-It will add additional tab to dashboard settings, and hook route enables it to show view for this tab.
-This is breaking change, as each component that uses context dashboard need to have rootContext: ViewContext.Dashboard in route definition to make these settings tabs and views visible (even if no new tab was added), e.g.
+This will add an additional tab to the dashboard settings, and the hook route allows to display a view for this tab.
+This is breaking change, as each component that uses context dashboards must have ´rootContext: ViewContext.Dashboard´ in the route definition to make these settings tabs and views visible (even if no new tab was added). For example:
 ```ts
 hookRoute({
       path: 'home2',
