@@ -1,6 +1,6 @@
 ---
 date: ""
-title: TOTP 2FA QR code not displayed for new users during setup
+title: TOTP QR code is properly displayed during setup
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63297
 version: 1021.62.3
 ---
-New user (or user with TOTP secret revoked with user settings) was not able to set up TOTP because of lack of QR code. Issue was fixed, QR code is again visible and user can set up TOTP.
+New users (or users with the TOTP secret revoked in the user settings) were not able to set up TOTP because the QR code was missing. This issue has been fixed, and the QR code is again visible so that users can set up TOTP.
