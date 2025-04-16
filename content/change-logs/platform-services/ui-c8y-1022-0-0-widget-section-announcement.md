@@ -1,6 +1,6 @@
 ---
 date: 2025-04-16
-title: Deprecation of loadConfigComponent in favor of new multi-section configuration system
+title: Deprecation of loadConfigComponent in favor of new multi-section configuration
 product_area: Application enablement & solutions
 change_type:
   - value: change-inv-3bw8e
