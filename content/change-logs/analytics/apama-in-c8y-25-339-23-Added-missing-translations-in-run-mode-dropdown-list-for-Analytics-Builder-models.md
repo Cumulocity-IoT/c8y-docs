@@ -1,5 +1,5 @@
 ---
-date: 2025-04-17
+date: 
 title: Added missing translations in run mode dropdown list for Analytics Builder models
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: PAB-4792
 version: 25.339.23
 ---
-The run mode dropdown list in Analytics Builder models was not being properly translated to other languages. This has been fixed to ensure proper translations in all supported languages.
+The run mode dropdown list in Analytics Builder models was not properly translated to other languages. This has been fixed to ensure proper translations in all supported languages.
