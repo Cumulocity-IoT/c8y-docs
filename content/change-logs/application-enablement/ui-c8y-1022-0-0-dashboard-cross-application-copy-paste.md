@@ -1,6 +1,6 @@
 ---
 date: 2025-04-16
-title: Cross application dashboard copy/paste functionality
+title: Support for dashboard copy/paste functionality across applications
 product_area: Application enablement & solutions
 change_type:
   - value: change-inv-3bw8e
@@ -15,8 +15,8 @@ ticket: MTM-62313, MTM-62316
 version: 1022.0.0
 ---
 
-In an upcoming version the dashboard settings will get a new tab "Import/export", which allows to export dashboard to json file, import dashboard from previously exported json and edit dashboard object in editor. It as provided as a 'self-optional' plugin to Cockpit, therefore it has to be installed explictly.
-Dashboard setting component will be refactored to use secondary router outlet in order to make these kind of views hookable.
+In an upcoming version a new **Import/Export** tab will be added to the dashboard settings, which allows to export dashboards to JSON files, import dashboards from previously exported JSON files and edit the dashboard  in an editor. It is provided as a "self-optional" plugin to the Cockpit application, thus it has to be installed explicitly.
+The dashboard setting component will be refactored to use a secondary router outlet in order to make these type of views hookable.
 This approach allows to hook a new tab to a particular outlet. For example:
 ```ts
 hookTab(
@@ -45,7 +45,7 @@ hookRoute([
   }
 ])
 ```
-This will add an additional tab to the dashboard settings, and the hook route allows to display a view for this tab.
+In this example an additional tab is added to the dashboard settings, and the hook route allows to display a view for this tab.
 This is breaking change, as each component that uses context dashboards must have ´rootContext: ViewContext.Dashboard´ in the route definition to make these settings tabs and views visible (even if no new tab was added). For example:
 ```ts
 hookRoute({
