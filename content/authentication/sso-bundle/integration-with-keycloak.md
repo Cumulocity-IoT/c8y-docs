@@ -50,13 +50,3 @@ Moreover, it is only sent for those tenants where the client being used as a con
 In the **Session** tab, the Keycloak administrator can also check how many active sessions exist on the respective client and estimate how many tenants and users will be affected by the logout event.
 
 To confirm if the logout event for all users or a single user has been received by the tenant, the {{< product-c8y-iot >}} administrator can verify if there is information about the logout event in the audit logs. The audit logs are available in the Administration application under **Accounts** in the **Audit Logs** tab.
-
-### Troubleshooting {#troubleshooting}
-
-It can be particularly helpful to inspect the content of the authorization token sent to the platform as some of its fields contain the information required for the correct configuration described above.
-
-In Administration application, after clicking on **Accounts** > **Audit logs** you can filter by the category "Single sign-on" and look for entries "Json web token claims".
-
-The contexts of the token will be presented in JSON format.
-
-![Audit token content](/images/users-guide/Administration/admin-sso-audit-token.png)
