@@ -12,7 +12,7 @@ For this example, assume that Edge is deployed using the [c8yedge-sample.yaml](/
 
 ### Upgrading from Edge version 10.18
 
-Before upgrading Edge to `{{< c8y-edge-version-major >}}`, run the following command to patch the `c8yedge-operator-manager-role` ClusterRole with the necessary permissions:
+Before upgrading Edge to `{{< c8y-edge-version-major >}}`, run the following command to patch the [`c8yedge-operator-manager-role`]({{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-cluster-role-patch-1018.yaml) ClusterRole with the necessary permissions:
 
 ```bash
 kubectl patch clusterrole c8yedge-operator-manager-role --patch --type='json' "$(curl -s {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-cluster-role-patch-1018.yaml)"
