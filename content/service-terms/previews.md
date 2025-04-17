@@ -3,7 +3,7 @@ title: Previewing features
 layout: bundle
 sector:
   - terms_conditions
-weight: 98
+weight: 40
 ---
 
 {{< product-c8y-iot >}} offers a preview program allowing customers early access to new features before they become generally available (GA). The goal is to gather customer feedback to refine the features, identify bugs, evaluate usability, and ensure the features meet customer needs.
@@ -25,4 +25,3 @@ The program is divided into two stages: *Private preview* and *public preview*. 
 * **Documentation**: Documentation is publicly accessible and clearly marked as relevant to preview features. It will be integrated into the main documentation once the feature reaches GA.
 * **Support**: Similar to private preview, limited support is provided, and SLAs do not apply.
 * **Feedback**: Customers are encouraged to provide feedback through the customer support portal.
-
