@@ -1,6 +1,6 @@
 ---
 date: 2025-04-16
-title: Reports page extracted into a separate plugin
+title: Cross application dashboard copy/paste functionality
 product_area: Application enablement & solutions
 change_type:
   - value: change-inv-3bw8e
@@ -14,7 +14,9 @@ build_artifact:
 ticket: MTM-62313, MTM-62316
 version: 1022.0.0
 ---
-In an upcoming version the dashboard settings component will be refactored to use a secondary router outlet.
+
+In an upcoming version the dashboard settings will get a new tab "Import/export", which allows to export dashboard to json file, import dashboard from previously exported json and edit dashboard object in editor. It as provided as a 'self-optional' plugin to Cockpit, therefore it has to be installed explictly.
+Dashboard setting component will be refactored to use secondary router outlet in order to make these kind of views hookable.
 This approach allows to hook a new tab to a particular outlet. For example:
 ```ts
 hookTab(
@@ -47,8 +49,8 @@ This will add an additional tab to the dashboard settings, and the hook route al
 This is breaking change, as each component that uses context dashboards must have ´rootContext: ViewContext.Dashboard´ in the route definition to make these settings tabs and views visible (even if no new tab was added). For example:
 ```ts
 hookRoute({
-      path: 'home2',
-      component: CockpitDashboardComponent,
-      rootContext: ViewContext.Dashboard
-    })
+  path: "home2",
+  component: CockpitDashboardComponent,
+  rootContext: ViewContext.Dashboard,
+});
 ```
