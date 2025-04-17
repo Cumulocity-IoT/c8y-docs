@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63161
 version: 1021.62.4
 ---
-When user is searching for device and presses enter group gets created (#8841) [GRAFT][release/cd] (#8901)
+Fixed a bug where pressing Enter while searching for devices to add to a new group would create this group instantly, instead of performing the search. Enter now correctly executes the search when typing device names.
