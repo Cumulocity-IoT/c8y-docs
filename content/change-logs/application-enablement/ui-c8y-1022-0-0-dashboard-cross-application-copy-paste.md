@@ -1,6 +1,6 @@
 ---
 date: 2025-04-16
-title: Support for dashboard copy/paste functionality across applications
+title: Support for cross application dashboard import/export functionality
 product_area: Application enablement & solutions
 change_type:
   - value: change-inv-3bw8e
