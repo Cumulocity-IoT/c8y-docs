@@ -15,7 +15,7 @@ ticket: MTM-62313, MTM-62316
 version: 1022.0.0
 ---
 
-In an upcoming version a new **Import/Export** tab will be added to the dashboard settings, which allows to export dashboards to JSON files, import dashboards from previously exported JSON files and edit the dashboard  in an editor. It is provided as a "self-optional" plugin to the Cockpit application, thus it has to be installed explicitly.
+In an upcoming version a new **Import/Export** tab will be added to the dashboard settings, which allows to export dashboards to JSON files, import dashboards from previously exported JSON files and edit the dashboard in an editor. It is provided as a "self-optional" plugin to the Cockpit application, thus it has to be installed explicitly.
 The dashboard setting component will be refactored to use a secondary router outlet in order to make these type of views hookable.
 This approach allows to hook a new tab to a particular outlet. For example:
 ```ts
