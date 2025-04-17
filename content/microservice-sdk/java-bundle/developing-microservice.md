@@ -69,7 +69,7 @@ AlarmRepresentation updateAlarm(AlarmRepresentation alarm) throws SDKException;
 void deleteAlarmsByFilter(AlarmFilter filter) throws IllegalArgumentException, SDKException;
 ```
 
-This is an example of retrieving all devices registered in the `management` tenant:
+This is an example of retrieving all devices registered in all subscribed tenants:
 
 ```java
 @Autowired
@@ -78,10 +78,11 @@ MicroserviceSubscriptionsService subscriptionsService;
 @Autowired
 InventoryApi inventoryApi;
 
-public List<ManagedObjectRepresentation> getAllDevicesTenant2() {
+public List<ManagedObjectRepresentation> getAllDevicesTenants() {
   List<ManagedObjectRepresentation> managedObjectsList = new ArrayList<>();
-  subscriptionsService.runForTenant("management", () -> {
-    inventoryApi.getManagedObjects().get().allPages().forEach(mor -> {
+  InventoryFilter filter = new InventoryFilter().byFragmentType(IsDevice.class);
+  subscriptionsService.runForEachTenant( () -> {
+    inventoryApi.getManagedObjectsByFilter(filter).get().allPages().forEach(mor -> {
       managedObjectsList.add(mor);
     });
   });
