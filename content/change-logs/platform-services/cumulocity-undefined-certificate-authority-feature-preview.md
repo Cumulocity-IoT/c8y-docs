@@ -16,7 +16,7 @@ ticket: MTM-62765
 {{< c8y-admon-preview >}}
 This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
 
-In order to determine if the feature is enabled go to the Device Management app and look at the Management/Trusted Certificates page. If on the top right of the page you see `Add CA Certificate` then the feature is enabled. If it is not enabled please contact Global Support to request the feature to be enabled.
+To determine whether the feature is enabled, go to the Device Management application and navigate to Management → Trusted Certificates. If you see Add CA Certificate in the top-right corner of the page, the feature is enabled. If it is not enabled, please use the Feature Toggles REST endpoints or contact Global Support to enable the feature.
 {{< /c8y-admon-preview >}}
 
 {{< product-c8y-iot >}} has has been enhanced to function as a Certificate Authority (CA), providing the following capabilities:
