@@ -2,8 +2,8 @@
 date: 2025-04-17
 title: Added missing translations in run mode dropdown list for Analytics Builder models
 change_type:
-  - value: change-2c7RdTdXo4
-    label: Improvement
+  - value: change-VSkj2iV9m
+    label: Fix
 product_area: Analytics
 component:
   - value: component-M5-cepIIS
