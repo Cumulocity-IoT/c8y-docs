@@ -1,6 +1,6 @@
 ---
 date: ""
-title: When user is searching for device and presses enter group gets created (#8841) [GRAFT][release/cd] (#8901)
+title: Prevent unintended device group creation when users press Enter while searching for devices
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
