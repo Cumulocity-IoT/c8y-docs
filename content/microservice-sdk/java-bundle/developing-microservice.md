@@ -160,7 +160,7 @@ On application startup, the `MicroserviceSubscriptionAddedEvent` is triggered fo
 
 ### Heap and perm/metadata {#heap-and-permmetadata}
 
-To calculate heap and perm/metadata, it takes the limit defined on the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) (`resources/memory`) and it is converted into Megabytes (MB). For Java applications developed using the Java Microservice SDK the minimal value is 178MB. <br>
+To calculate heap and perm/metadata, it takes the limit defined in the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) (`resources/memory`) and it is converted into Megabytes (MB). For Java applications developed using the Java Microservice SDK the minimal value is 178MB. <br>
 10% is reserved for "system", but not less than 50 MB. <br>
 10% is taken for Metaspace, but not less than 64 MB and not more than 1024MB. <br>
 The rest is allocated for heap size.<br>
@@ -456,7 +456,7 @@ Example configuration in pom.xml:
 ...
 ```
 {{< c8y-admon-info >}}
-Note: Settings for heap and metaspace must be aligned with your settings of `resources/memory` in microservice manifest
+Note: Settings for heap and metaspace must be aligned with your settings of `resources/memory` in the microservice manifest
 file `cumulocity.json`. You have to be sure about the effect those parameters might have. Those parameters are directly
 used for the microservice start without further verification. For example be sure that the heap values meet the
 condition: Xms < Xmx.
@@ -464,8 +464,8 @@ condition: Xms < Xmx.
 
 ##### Setting parameters on command line {#package-goal-command-line}
 
-For information about how and whether it is possible to set parameters on command line refer to column
-"Parameter command line name" of table in chapter [Package goal](/microservice-sdk/java/#package-goal).
+For information on how and whether it is possible to set parameters on the command line refer to the column
+"Parameter command line name" in the table in [Package goal](/microservice-sdk/java/#package-goal).
 
 ###### Primitive configuration values {#package-goal-command-line-primitive-data}
 
