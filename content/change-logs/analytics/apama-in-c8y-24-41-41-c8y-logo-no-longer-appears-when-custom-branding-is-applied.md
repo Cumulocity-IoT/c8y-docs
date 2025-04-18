@@ -1,6 +1,6 @@
 ---
 date: 
-title: Cumulocity logo no longer appears when custom branding is applied
+title: Streaming Analytics now respects custom branding without showing default logo
 product_area: Analytics
 change_type:
   - value: change-VSkj2iV9m
