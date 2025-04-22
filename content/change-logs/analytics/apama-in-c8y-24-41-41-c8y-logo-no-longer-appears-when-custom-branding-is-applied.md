@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2025-04-22
 title: Streaming Analytics now respects custom branding without showing default logo
 product_area: Analytics
 change_type:
