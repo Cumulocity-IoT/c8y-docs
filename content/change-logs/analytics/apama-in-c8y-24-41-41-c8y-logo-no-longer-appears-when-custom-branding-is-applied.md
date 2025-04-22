@@ -14,4 +14,4 @@ build_artifact:
 ticket: PAB-4764
 version: 24.41.41
 ---
-Navigating to the Streaming Analytics with custom branding used to momentarily display the default Cumulocity logo. The transition now respects the applied branding and doesn't show the default logo.
+Navigating to the Streaming Analytics application with custom branding used to momentarily display the default {{< product-c8y-iot >}} logo. The transition now respects the applied branding and doesn't show the default logo.
