@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix dropdown max-width (#8914) [GRAFT][release/cd] (#8916)
+title: Dropdown menu maximum width adjusted
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63333
 version: 1021.62.10
 ---
-Fix dropdown max-width (#8914) [GRAFT][release/cd] (#8916)
+The maximum width for dropdown menus has been adjusted to accommodate the date picker.
