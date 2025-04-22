@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63298
 version: 1021.62.9
 ---
-Remove `pointer-events: none` from read-only textarea (#8883) [GRAFT][release/cd] (#8884)
+Previously, read-only textareas had the CSS property `pointer-events: none` which prevented any pointer interactions such as clicking, selecting text or scrolling. With this change, the `pointer-events: none` CSS property is removed from read-only textareas. This allows users to interact with read-only textareas using pointer events like clicking to focus or scrolling the textarea content if it overflows, thereby providing a more intuitive and consistent user experience.
