@@ -5,3 +5,7 @@ date = 2023-12-07T10:32:39.947Z
 [[versions]]
 date = "March 31, 2025"
 version = "2025.0"
+
+[[versions]]
+date = "April 22, 2025"
+version = "2025.1"
