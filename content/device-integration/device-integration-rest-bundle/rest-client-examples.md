@@ -156,7 +156,7 @@ Refer to the section on [Device integration](/device-integration/device-integrat
 ### Hello X509 REST
 
 In this section, we will learn how to generate a JWT token using mTLS protocol with {{< product-c8y-iot >}}.
-For authentication with {{< product-c8y-iot >}} we use X.509 certificates. To know more about X.509 certificates please refer [Device certificates](/device-certificate-authentication/device-certificates/). Device access token API is only accessible on port 8443.
+For authentication with {{< product-c8y-iot >}} we use X.509 certificates. To learn more about X.509 certificates refer to [Device certificates](/device-certificate-authentication/device-certificates/). The Device access token API is only accessible on port 8443.
 
 #### Prerequisites {#prerequisites}
 
