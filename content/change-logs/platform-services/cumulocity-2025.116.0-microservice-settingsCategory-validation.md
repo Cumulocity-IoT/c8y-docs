@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2025-04-17'
 title: Added microservice manifest "settingsCategory" validator
 change_type:
   - value: change-2c7RdTdXo4
