@@ -1,6 +1,6 @@
 ---
 date: ""
-title: adjust date range styling (#8882) [GRAFT][release/y2025] (#8898)
+title: Improved date range picker styling
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62617
 version: 1021.22.74
 ---
-adjust date range styling (#8882) [GRAFT][release/y2025] (#8898)
+This change adjusts the styling of the date range picker in the UI to improve the alignment and spacing of the elements.
