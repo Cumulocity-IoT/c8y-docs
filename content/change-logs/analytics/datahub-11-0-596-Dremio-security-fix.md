@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-H-tuq-8Es
     label: datahub
 ticket: CDH-5350
-version: 11.0.596
+version: 10.18.0.24.595
 ---
 Dremio has been upgraded to address recent security vulnerabilities in the Dremio software used as part of Cumulocity DataHub:
 
