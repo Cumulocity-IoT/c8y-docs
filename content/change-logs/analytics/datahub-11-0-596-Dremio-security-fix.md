@@ -14,7 +14,6 @@ build_artifact:
 ticket: CDH-5350
 version: 11.0.596
 ---
-Dremio has been upgraded to address recent security vulnerabilities in the Dremio software used as part of Cumulocity DataHub:
+Dremio has been upgraded to address a recent security vulnerability in the Dremio software used as part of Cumulocity DataHub:
 
 - CVE-2025-2298
-- CVE-2025-30065
