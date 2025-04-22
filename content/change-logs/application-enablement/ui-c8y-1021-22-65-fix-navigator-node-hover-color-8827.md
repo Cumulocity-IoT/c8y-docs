@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-04-22
 title: Fixed navigator node hover color
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-04-22
 title: Last occurrence of an alarm now properly shown in alarm details
 product_area: Application enablement & solutions
 change_type:
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62788
 version: 1021.22.68
 ---
-In the alarm details view, the **Last updated** field, which usually shows the time of the last alarm occurrence, was empty. This issue has been fixed. Moreover, the field has been renamed to **Last occurrence**. 
+In the alarm details view, the **Last updated** field, which usually shows the time of the last alarm occurrence, was empty. This issue has been fixed. Moreover, the field has been renamed to **Last occurrence**.

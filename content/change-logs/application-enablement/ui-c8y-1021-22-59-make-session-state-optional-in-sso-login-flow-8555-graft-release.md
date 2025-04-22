@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-04-22
 title: Changed session_state property to be optional in the SSO login flow
 product_area: Application enablement & solutions
 change_type:
