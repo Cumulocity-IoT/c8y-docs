@@ -24,7 +24,7 @@ For details see [Application enablement & solutions > Cockpit > Data explorer](/
 
 Used in the context of [DataHub](/glossary/c/#datahub).
 
-A data lake serves as a storage container for offloaded data either on the basis of ADLS Gen2/Azure Storage (Azure), S3 (Amazon), NAS, or HDFS.
+A data lake serves as a storage container for offloaded data either on the basis of ADLS Gen2/Azure Storage (Azure), S3 (Amazon), NAS.
 
 
 ### Data point library {#data-point-library}
