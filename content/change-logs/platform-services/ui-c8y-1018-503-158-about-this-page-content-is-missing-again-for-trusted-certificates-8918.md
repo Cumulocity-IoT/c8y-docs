@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "About this page" content is missing for Trusted certificates page
+title: Help content on Trusted certificates page is displayed again
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63405
 version: 1018.503.158
 ---
-"About this page" content was missing for Trusted certificates page because of outdated link to documetation. New link was provided and help content is visible again.
+The help content which shows up on clicking the info icon was missing on the **Trusted certificates** as the link to the documentation was outdated. The link has been updated and the help content is visible again.
