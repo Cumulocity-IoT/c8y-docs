@@ -25,4 +25,4 @@ To determine whether the feature is enabled, go to the Device Management applica
 - Perform legitimacy checks, as defined by each tenant
 - Issue signed X.509 certificates trusted by the device tenant
 
-For more details about this feature refer to [Certificate Authority (CA)](/device-integration/certificate-authority-bundle/create-certificate-authority.md).
+For more details about this feature refer to [Certificate Authority (CA)](/device-certificate-authentication/certificate-authority).
