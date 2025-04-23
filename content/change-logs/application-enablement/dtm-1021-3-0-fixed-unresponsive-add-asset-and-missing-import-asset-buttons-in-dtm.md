@@ -14,12 +14,4 @@ build_artifact:
 ticket: "CTM-2012"
 version: "1021.3.0"
 ---
-* Fix for CTM-2012 and CTM-2009
-
-* Fix for linting error
-
-* Fix for e2e tests
-
-* Updated the testcase number
-
-* Added an additional test case to cover on Add group button.
+Previously, the 'Add Asset' button was unresponsive and the 'Import Asset' button was missing when the Asset Navigator was installed in the Digital Twin Manager. These issues have now been resolved.
