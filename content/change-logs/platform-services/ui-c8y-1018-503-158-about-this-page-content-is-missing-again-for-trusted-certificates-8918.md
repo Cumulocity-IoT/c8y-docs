@@ -1,6 +1,6 @@
 ---
 date: ""
-title: About this page content is missing again for trusted certificates (#8918)
+title: "About this page" content is missing for Trusted certificates page
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
