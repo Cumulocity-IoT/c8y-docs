@@ -70,9 +70,6 @@ If a parameter is in square brackets, it is optional.
 + <a href="#306">306,alarmTypeToBeCleared</a>
 + <a href="#307">307,alarmType,fragmentToBeRemoved1,fragment2,...</a>
 
-</td>
-<td>
-
 <strong><a href="#event-templates">Event templates</a></strong>
 + <a href="#400">400,eventType,text[,time]</a>
 + <a href="#401">401,latitude,longitude,altitude,accuracy[,time]</a>
