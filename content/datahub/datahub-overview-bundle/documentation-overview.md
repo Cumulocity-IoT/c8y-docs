@@ -17,4 +17,4 @@ For your convenience, here is an overview of the contents of this document:
 | [Running {{< product-c8y-iot >}} DataHub on {{< product-c8y-iot >}} Edge](/datahub/running-datahub-on-the-edge) | Run the Edge edition of {{< product-c8y-iot >}} DataHub |
 | [Integrating {{< product-c8y-iot >}} DataHub with other products](/datahub/integrating-datahub-with-other-products) | Learn how to integrate {{< product-c8y-iot >}} DataHub with other products |
 
-The [change log](/changes-analytics/?component=.component-datahub) provides an overview on features, changes, and other relevant information.
+The [change log](/change-logs/?component=.component-datahub) provides an overview on features, changes, and other relevant information.
