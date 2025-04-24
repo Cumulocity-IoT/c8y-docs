@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 10
 title: Device certificates
 layout: bundle
 sector:
