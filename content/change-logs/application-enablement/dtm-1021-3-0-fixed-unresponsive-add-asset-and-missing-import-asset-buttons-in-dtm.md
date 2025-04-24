@@ -1,6 +1,6 @@
 ---
 date: "2025-04-23"
-title: "Fixed unresponsive 'Add Asset' and missing 'Import Asset' buttons in DTM."
+title: "Add asset button and Import asset button now work properly"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
