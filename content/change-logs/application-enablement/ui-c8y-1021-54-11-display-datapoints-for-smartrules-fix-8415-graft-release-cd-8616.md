@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-04-10'
 title: Improved the selection of data points in smart rules
 product_area: Application enablement & solutions
 change_type:

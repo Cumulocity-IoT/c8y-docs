@@ -1,6 +1,6 @@
 ---
-weight: 20
-title: Managing trusted certificate settings
+weight: 30
+title: Managing trusted certificate CRL settings
 layout: bundle
 sector:
   - device_management
