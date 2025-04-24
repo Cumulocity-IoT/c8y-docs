@@ -1,6 +1,6 @@
 ---
 date: ""
-title: As a solution architect, I want to see more details of the plugin I want to install as readme for particular plugin.
+title: Added option to provide a readme file for particular plugins in a package
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
@@ -14,9 +14,9 @@ build_artifact:
 ticket: MTM-62166
 version: 1021.64.0
 ---
-Until now, readme file was possible to be added only once, to the whole package. All you had to do is to put README.md file in root folder of package. This new feature adds possibility to provide README.md file for particular plugins in package. 
+Previously, the readme file could only be added once to the whole package by storing the *README.md* file in the root folder of the package. This feature adds the option to provide a readme file for particular plugins in the package. 
 
-To add readme for the plugin, README.md file needs to be provided in plugin codebase (recommended place is the same folder as exposed plugin module) and `readmePath` property (indicating path to this file) needs to be added to exports, for example:
+To add the readme for the plugin, the **README.md** file must be provided in the plugin codebase (the recommended place is the same folder as the exposed plugin module) and  the`readmePath` property (indicating the path to this file) must be added to the exports. For example:
 ```ts
 {
   name: 'Example widget plugin',
@@ -26,4 +26,4 @@ To add readme for the plugin, README.md file needs to be provided in plugin code
   description: 'Adds a custom widget to the shell application'
 }
 ```
-When package is deployed, readme can be viewed in package details view, package versions view (readme for specific version), installed plugins list and available plugins list to be installed.
+When the package is deployed, the readme can be viewed in the package details, the package versions view (readme for specific version), the installed plugins list and the available plugins list.
