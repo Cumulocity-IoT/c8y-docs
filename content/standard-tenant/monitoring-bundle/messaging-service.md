@@ -13,12 +13,16 @@ helpcontent:
     content: "Monitor the Messaging Service resources. Track resource usage like topics, subscribers, and backlogs for features such as Notifications 2.0 and the MQTT Service. Select features and topics to view detailed statistics, check limits, and identify potential bottlenecks or inactive consumers."
 ---
 
+{{< c8y-admon-preview >}}
+This feature is in Public Preview, that is, it is not enabled by default and maybe subject to change in the future.
+{{< /c8y-admon-preview >}}
+
 The **Messaging Service** is a [publish/subscribe messaging](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) and message streaming component embedded in the {{< product-c8y-iot >}} platform.
 It provides asynchronous communication between platform components and user-facing features for moving real-time data into and out of the platform.
 The features that use the Messaging Service include the microservice-based data broker, Notifications 2.0, and the MQTT Service.
 
 Topics are the core concept underlying all of the features using the Messaging Service.
-A topic is a called a logical channel for delivering messages from publishers to subscribers.
+A topic is a logical channel for delivering messages from publishers to subscribers.
 Each topic may have any number of publishers and subscribers, and in general, every subscriber receives the messages sent by every publisher.
 All subscribers of a topic receive the published messages in the same order.
 The topic persistently stores published messages until every subscriber has acknowledged that they have successfully received them.
@@ -54,7 +58,7 @@ Refer to the feature-specific documentation below for more information on how to
 All the backlog limits visible at the top of the topics list view are applied per topic. This means if the backlog quota is set to 25MB, each topic will queue messages until it reaches the configured limit.
 Limits are {{< product-c8y-iot >}} platform wide, and only the Operations team can change them.
 
-### To view the topic details {#to-view-the-topics-details}
+### To view the topic details {#to-view-the-topic-details}
 
 Click on a selected topic name to navigate to the topic details view.
 The view contains information about the topic at the top and the list of all subscribers for that topic below.
@@ -92,7 +96,10 @@ Refer to the [consumer lifecycle](https://{{< domain-c8y >}}/api/core/#section/O
 
 #### Clearing the backlog {#notifications-clearing-the-backlog}
 
-There are various ways to clear the backlog from Notifications 2.0 topics.
+When the Messaging Service backlog is full, no new messages can be added to the backlog until it is cleared.
+REST requests that are also supposed to produce a notification will fail with a 500 status code and a message saying that the backlog quota has been reached.
+Clients working with {{< product-c8y-iot >}} must be aware of this situation and handle the error appropriately.
+In this situation, the backlog must be cleared before continuing work. There are various ways to clear the backlog from Notifications 2.0 topics.
 
 ##### Consume messages {#notifications-consume-messages}
 
@@ -135,7 +142,13 @@ Subscribers created by MQTT clients are deleted automatically once the client di
 
 #### Clearing the backlog {#mqtt-service-clearing-the-backlog}
 
-There are various ways to clear the backlog from MQTT Service topics.
+When the Messaging Service backlog is full, no new messages can be added to the backlog until it is cleared.
+In this situation, client behavior depends on the MQTT protocol version used:
+* An MQTT client using protocol version 3.1.1 will simply be disconnected.
+* An MQTT client using protocol version 5 will get negative PUBACK response with `0x97` (quota exceeded) reason code, but it will still remain connected.
+
+Implementations connecting to the MQTT Service must be aware of this and handle these errors appropriately.
+In either case, the backlog must be cleared before continuing work. There are various ways to clear the backlog from MQTT Service topics.
 
 ##### Consume messages {#mqtt-service-consume-messages}
 
@@ -156,13 +169,7 @@ If the subscriber is no longer needed and there are no valuable messages that sh
 To do this, select the subscriber from the subscriber list in the **Messaging Service** page and click the unsubscribe icon.
 This action is equivalent to [unsubscribing the subscriber using the MQTT Service SDK](#unsubscribe-the-subscriber-using-mqtt-service-sdk).
 
-### Frequently Asked Questions (FAQ) {#monitoring-mqtt-service-faq}
-
-#### What happens when the backlog is full?
-
-When the Messaging Service backlog is full, no new messages can be added to the backlog until it is cleared.
-This may result in requests being rejected or other unexpected behavior.
-Clear the backlog before continuing work with the Messaging Service.
+### Frequently Asked Questions (FAQ) {#messaging-service-monitoring-faq}
 
 #### What should I do when encountering a high number of topics?
 
