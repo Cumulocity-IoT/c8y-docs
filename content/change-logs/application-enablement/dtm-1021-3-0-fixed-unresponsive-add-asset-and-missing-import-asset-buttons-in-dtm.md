@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2012"
 version: "1021.3.0"
 ---
-Previously, the 'Add Asset' button was unresponsive and the 'Import Asset' button was missing when the Asset Navigator was installed in the Digital Twin Manager. These issues have now been resolved.
+Previously,  when the asset navigator was installed in the Digital Twin Manager, the **Add asset** button was unresponsive and the **Import asset** button was missing. These issues have now been resolved and both buttons work properly.
