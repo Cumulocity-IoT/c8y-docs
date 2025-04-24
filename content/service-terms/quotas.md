@@ -3,7 +3,7 @@ title: Service quotas
 layout: bundle
 sector:
   - terms_conditions
-weight: 100
+weight: 60
 aliases:
   - /concepts/limits/
 ---
@@ -16,7 +16,7 @@ The following types of quotas are used:
 * **Soft**: Services are guaranteed to operate within the specified service-level agreements as long as the quotas are not exceeded; however, exceeding the quotas may result in a degraded user experience and no assurance of meeting the service-level agreements.
 <!-- * **Configurable**: Services enforce this quota, but a change of the quota may be requested through technical support. A change in the quota may impact the service price.-->
 
-The quotas listed here reflect the maximum values for the cloud subscriptions unless indicated otherwise. If you're unsure whether a specific cloud service quota is sufficient for your use case, we recommend reaching out to your sales contact to discuss your needs and explore potential options. Some quotas may be adjustable through professional services, depending on the system dimensioning and your specific requirements. For Edge deployments, consult the [{{< product-c8y-iot >}} Edge documentation](/edge).
+The quotas listed here reflect the maximum values for the cloud subscriptions unless indicated otherwise. If you're unsure whether a specific cloud service quota is sufficient for your use case, we recommend reaching out to your sales contact to discuss your needs and explore potential options. Some quotas may be adjustable through professional services, depending on the system dimensioning and your specific requirements. For Edge deployments, consult the [{{< product-c8y-iot >}} Edge documentation](/{{< c8y-edge-version-major >}}/edge).
 
 ### Platform
 
@@ -38,13 +38,13 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 ### Domain model
 
-| Quota                                                                                                         | Type | Value |
-| ------------------------------------------------------------------------------------------------------------- | ---- | ----: |
-| [Document size](/concepts/domain-model/#document-limits)                                                      | Hard | 16 MB |
-| [Document size](/concepts/domain-model/#document-limits)                                                      | Soft |  1 MB |
-| [Array size within document](/concepts/domain-model/#document-limits)                                         | Soft |  1000 |
-| [Children of an inventory object](/concepts/domain-model/#document-limits)                                    | Soft |  1000 |
-| [Property size](https://docs.dremio.com/current/get-started/cluster-deployments/architecture/limits/#catalog) | Soft | 32 KB |
+| Quota                                                                      | Type | Value |
+| -------------------------------------------------------------------------- | ---- | ----: |
+| [Document size](/concepts/domain-model/#document-limits)                   | Hard | 16 MB |
+| [Document size](/concepts/domain-model/#document-limits)                   | Soft |  1 MB |
+| [Array size within document](/concepts/domain-model/#document-limits)      | Soft |  1000 |
+| [Children of an inventory object](/concepts/domain-model/#document-limits) | Soft |  1000 |
+| Property size                                                              | Soft | 32 KB |
 
 
 ### REST API
@@ -81,18 +81,18 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 ### DataHub
 
-| Quota                                                                                                          | Type |   Value |
-| -------------------------------------------------------------------------------------------------------------- | ---- | ------: |
-| Number of active offloaders per tenant                                                                         | Soft |     100 |
-| Number of offloadings per tenant per hour                                                                      | Soft |      20 |
-| [Offloading frequency](/datahub/working-with-datahub/#configure-additional-settings)                           | Hard |  hourly |
-| [Offloaded leaf properties](https://docs.dremio.com/current/sonar/query-manage/querying-data/wide-tables/)[^1] | Soft |    6400 |
-| Query time out                                                                                                 | Soft |   4 min |
-| Query job retention                                                                                            | Hard |   1 day |
-| [Rows in a query job](https://cumulocity.com/api/datahub/#operation/getJobResultsApiResource)                  | Hard | 1000000 |
-| [Rows in a high performance query](https://cumulocity.com/api/datahub/#tag/High-performance-API)               | Soft | 1000000 |
-| Parallel high performance queries per tenant                                                                   | Hard |      18 |
+| Quota                                                                                            | Type |   Value |
+| ------------------------------------------------------------------------------------------------ | ---- | ------: |
+| Number of active offloaders per tenant                                                           | Soft |     100 |
+| Number of offloadings per tenant per hour                                                        | Soft |      20 |
+| [Offloading frequency](/datahub/working-with-datahub/#configure-additional-settings)             | Hard |  hourly |
+| Offloaded leaf properties[^1]                                                                    | Soft |    6400 |
+| Query time out                                                                                   | Soft |   4 min |
+| Query job retention                                                                              | Hard |   1 day |
+| [Rows in a query job](https://cumulocity.com/api/datahub/#operation/getJobResultsApiResource)    | Hard | 1000000 |
+| [Rows in a high performance query](https://cumulocity.com/api/datahub/#tag/High-performance-API) | Soft | 1000000 |
+| Parallel high performance queries per tenant                                                     | Hard |      18 |
 
-Additional [quotas from the Dremio engine](https://docs.dremio.com/current/get-started/cluster-deployments/architecture/limits/#catalog) may apply.
+Additional [quotas from the Dremio engine](https://docs.dremio.com/current/help-support/limits/) may apply for DataHub customers.
 
 [^1]: *Leaf properties* are properties with elementary types (text, number, boolean). The total count of leaf properties offloaded into the same table should not exceed the limit.
