@@ -164,9 +164,9 @@ The following information is displayed here:
 
 ### To suspend a subtenant {#to-suspend-a-subtenant}
 
-Suspending a tenant blocks any access to this tenant, regardless whether the access is from devices, users or other applications. In addition all its microservices are undeployed, and if the tenant is reactivated all its microservices are re-deployed.
+Suspending a tenant blocks any access to this tenant, regardless whether the access is from devices, users or other applications. In addition, all its microservices are undeployed, and if the tenant is reactivated all its microservices are re-deployed.
 
-The tenant's data remains in the database and can be made available later by clicking **Activate**.
+Device-related data continues to be subject of the retention rules and will be gradually removed. The rest of the tenant's data remains in the Operational Store and can be made available later by clicking **Activate**.
 
 Refer to [Lifecycle](/enterprise-tenant/usage-and-billing/#lifecycle) for details on the billing perspective of suspended tenants.
 
