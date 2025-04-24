@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Completed migration of Properties, Custom properties, and Limits tabs to newer version of Angular
+date: '2025-04-24'
+title: >-
+  Completed migration of Properties, Custom properties, and Limits tabs to newer
+  version of Angular
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
