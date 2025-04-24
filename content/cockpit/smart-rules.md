@@ -126,16 +126,6 @@ For details on the fields see [To create a smart rule](#to-create-a-smart-rule).
 
 Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of an entry and then click **Delete**.
 
-### To debug a smart rule {#to-debug-a-smart-rule}
-
-{{< c8y-admon-info >}}
-This feature is not available with Apama.
-{{< /c8y-admon-info >}}
-
-For easier debugging, there is a direct link from a smart rule to the corresponding event processing module.
-
-Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of an entry and then click **Inspect** to use this link.
-
 ### To enable/disable a smart rule {#to-enabledisable-a-smart-rule}
 
 If a smart rule is set to **Enabled** in the edit dialog (accessible from the **Global smart rules** page and the **Smart rules** tab of a particular device/group), it is globally "turned on" (that means, its underlying module gets deployed) so that the rule is available for devices and groups.

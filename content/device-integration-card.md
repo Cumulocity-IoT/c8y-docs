@@ -11,4 +11,4 @@ sector:
 weight: 50
 ---
 
-Read about device integration options like REST or MQTT, or browse reference libraries for fragments used in managed objects (devices) or for device sensors.
+Read about device integration options such as REST or MQTT, or using one of the supported device protocols, for example, LWM2M or OPCUA.

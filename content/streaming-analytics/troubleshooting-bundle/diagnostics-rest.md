@@ -12,7 +12,7 @@ The following diagnostics endpoints are available for REST requests. These requi
 
 - `/service/cep/diagnostics/metrics`  
     GET only. Plain text format.  
-    Prometheus metrics from the correlator. For details, see [Monitoring with Prometheus]({{< link-apama-webhelp >}}/deploying-and-managing-apama-applications/deploying-and-managing-apama-applications-how-this-book-is-organized#monitoring-with-prometheus) in the Apama documentation.
+    Prometheus metrics from the correlator. For details, see [Monitoring with Prometheus]({{< link-apama-webhelp >}}/deploying-and-managing-apama-applications/monitoring-with-prometheus) in the Apama documentation.
 - `/service/cep/diagnostics/overview`  
     GET only. ZIP file download.  
     Obtains the *diagnostic-overview&lt;timestamp&gt;.zip* file as described above.

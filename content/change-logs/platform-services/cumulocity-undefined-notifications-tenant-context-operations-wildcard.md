@@ -1,5 +1,5 @@
 ---
-date:
+date: '2025-01-30'
 title: Changes to Notifications 2.0 tenant context subscriptions with no API filter
 change_type:
   - value: change-3BQrQ6adS

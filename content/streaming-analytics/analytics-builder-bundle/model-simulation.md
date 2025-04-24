@@ -55,4 +55,4 @@ See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 
 ### Monitoring dropped inputs {#monitoring-dropped-inputs}
 
-The simulated model may drop delayed input events in exceptional cases. The number of input events dropped across all the models is exposed as a user-defined status with the name `user-analytics-oldEventsDropped`. See also [Monitoring dropped events](/streaming-analytics/analytics-builder/#monitoring-dropped-events).
+The simulated model may drop delayed input events in exceptional cases. Alarms are periodically raised with the number of input events dropped across all the models. See also [Monitoring dropped events](/streaming-analytics/analytics-builder/#monitoring-dropped-events).

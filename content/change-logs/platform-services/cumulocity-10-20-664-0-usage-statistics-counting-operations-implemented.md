@@ -1,5 +1,5 @@
 ---
-date:
+date: '2025-01-30'
 title: Implemented operation creation and update counters for usage statistics
 product_area: Platform services
 change_type:

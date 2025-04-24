@@ -72,7 +72,6 @@ If the user is authenticated with OAI-Secure, the following REST request can rea
 ```
 GET https://cumulocity.default.svc.cluster.local/test HTTP/1.1
 accept: */*
-authorization: Basic dGVuYW50X2lkL3VzZXJuYW1lOjxmYWtlIHBhc3N3b3JkPgo=
 connection: close
 content-length: 0
 cookie: authorization=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0YzAwMGVlOC1hYjY5LTRiMzYtYWNhNC0xNzM4ZGYwZWNhZGIiLCJpc3MiOiJjdW11bG9jaXR5LmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiLCJhdWQiOiJjdW11bG9jaXR5LmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiLCJzdWIiOiJhZG1pbiIsInRjaSI6IjMxMWM3YjZiLWM1MmQtNGEzMC1iZDFlLWNiODdlMjNlODQyOSIsImlhdCI6MTY0NjkyODgxMywibmJmIjoxNjQ2OTI4ODEzLCJleHAiOjE2NDgxMzg0MTMsInRmYSI6ZmFsc2UsInRlbiI6Im1hbmFnZW1lbnQiLCJ4c3JmVG9rZW4iOiJHU0l6VFB4b2JQS1FJQmV2Uk1SWiJ9.NL5b9-iHSc3SLaPu87oazBd2_kjNiwO9tM_bXS3qCUd0_wTZ-BKc3q6sRHTKO_LNbtCQg3G6-7ZhD6TyvqjTLsyiZTsgMRtAE7ZiRPtXaFOA0_SDQ9kG_MztAZ3U9O008akgXcjEEAdphVv5eey_lADrg1BmIlqiBFoKts2JGSv1xFtXKIxpcVtRDGUkb-2qb8OhaHamT7b3HL628NSiH4VqfO38vkLLkimHEz-roqmbFGQ355TvA3-s_erO96j3rHbBPDsluFqFN0eOTCidBffKt6OvyKw-_64MaHHs6R9Ulsv-LuY-YAvlTZVxYwFAi3yn3mWlpXEAzvGYHMrx8A
@@ -206,6 +205,12 @@ Steps:
 
 There is a mechanism to encrypt the tenant options that afterwards are automatically decrypted when injecting them into microservices requests.
 
-If a tenant option is created with a key name that starts with "credentials.", it is automatically encrypted and can be fetched as unencrypted only by system users. For instance, when you create a tenant option in a category that matches to the application context path, the value is passed to the microservice by the microservice proxy on the platform as a header (key => value). Note that therefore a space (" ") is not allowed as a tenant option value. All encrypted options are decrypted and passed. Moreover, the options can be fetched via REST using the options endpoint at microservice runtime.
+If a tenant option is created with a key name that starts with "credentials.", it is automatically encrypted and can be fetched as unencrypted only by system users. For instance, when you create a tenant option in a category that matches to the application context path, the value is passed to the microservice by the microservice proxy on the platform as a header (key => value). All encrypted options are decrypted and passed. Note that therefore a space (" ") is not allowed as a tenant option value. 
+
+The options can be fetched via REST using the options endpoint at microservice runtime. Encrypted options are decrypted only if the tenant option category matches the category defined by the microservice. This category is determined based on the first non-blank value from:
+
+1. The manifest settings category
+2. The context path
+3. The service name
 
 Refer to tenant options in the [Tenant API](https://{{< domain-c8y >}}/api/core/#tag/Options) in the {{< openapi >}} for more details.

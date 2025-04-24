@@ -6,7 +6,7 @@ sector:
 aliases:
   - /concepts-introduction/
   - /concepts/compatibility-policy/
-weight: 95
+weight: 20
 ---
 
 {{< product-c8y-iot >}} provides the highest possible level of compatibility to make sure that your investments into developing solutions with {{< product-c8y-iot >}} are maintained.
@@ -23,7 +23,7 @@ The current compatibility statements are described as follows.
 
 * [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/)
 * [SmartREST 2.0](/smartrest/smartrest-two/)
-* [Device integration using MQTT](/device-integration/mqtt/)
+* [MQTT](/device-integration/mqtt/)
 
 
 {{< product-c8y-iot >}} is continually improving the user experience and product capabilities and may improve the API from time-to-time. In general, applications must always obey a few basic rules:

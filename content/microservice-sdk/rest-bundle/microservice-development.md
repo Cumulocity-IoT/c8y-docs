@@ -443,7 +443,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedobjectcollection+json; c
 
 Now you could, for example, use the `c8y_Position` property to locate/pin the object on a map. Standard fragments are defined in the [fragment library](/device-integration/fragment-library/).
 
-Querying the <kbd>/platform</kbd> resource will show you further possibilities for querying your data (see also [Device integration using REST](/device-integration/device-integration-rest/)).
+Querying the <kbd>/platform</kbd> resource will show you further possibilities for querying your data (see also [REST](/device-integration/device-integration-rest/)).
 
 Note that queries do not necessarily return all query results at once, but only a page of the results. For more information on paging, refer to [REST implementation > REST usage > Query result paging](https://{{< domain-c8y >}}/api/core/#section/REST-implementation/REST-usage) in the {{< openapi >}}. The optional parameter `withTotalPages` will make the query contain full page statistics at the expense of slightly slower performance.
 

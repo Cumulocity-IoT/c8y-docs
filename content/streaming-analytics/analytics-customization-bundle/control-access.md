@@ -14,16 +14,16 @@ Which pages are available also depends on the variant of the Apama-ctrl microser
 and only a card with information about smart rules is shown on the home screen.
 - If the Apama-ctrl-starter microservice is running, the **EPL Apps** page is not shown (and cannot be enabled)
 as the EPL apps functionality is not available in Apama-ctrl-starter.
-- If the Apama-ctrl-mt-4c-16g microservice is running, the **Analytics Builder** page is not shown (and cannot be enabled).
-In this case, only the **EPL Apps** page is shown.
+- If the Apama-ctrl-mt-4c-16g microservice is running, the **Analytics Builder** page is shown for all subscribed tenants. The **EPL Apps** page is shown 
+on the tenant that owns the microservice, but not shown (and cannot be enabled) on the subtenants.
 - If the Apama-ctrl-smartrules or Apama-ctrl-smartrulesmt microservice is running, neither the **Analytics Builder** nor the **EPL Apps** page is shown (and cannot be enabled).
 In this case, only the card with information about smart rules is shown on the home screen.
 - For other variants of the Apama-ctrl microservice, both the **Analytics Builder** and **EPL Apps** pages are shown by default.
 
 For an entire tenant, if a "feature application" named `feature-disable-analyticsbuilder` and/or `feature-disable-eplapps` is
-available within the tenant, then the relevant part is disabled. This can be done either within a tenant or by an {{< enterprise-tenant >}} or {{< management-tenant >}} (see also [Managing tenants](/enterprise-tenant/managing-tenants/))
+available within the tenant, then the relevant part is disabled. This can be done by an {{< enterprise-tenant >}} or {{< management-tenant >}} (see also [Managing tenants](/enterprise-tenant/managing-tenants/))
 and then subscribing to subtenants (the subtenant administrators are then not able to unsubscribe this application if the parent tenant wishes
-to restrict access to the functionality). To create such a "feature application" within a tenant, send a POST request to `/application/applications`
+to restrict access to the functionality). To create such a "feature application", send a POST request to `/application/applications`
 (as an administrator with the permission to create applications). For example, to disable Analytics Builder:
 
 ```

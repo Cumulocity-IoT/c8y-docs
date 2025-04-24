@@ -10,10 +10,10 @@ We are committed to transparency and open communication both inside and outside 
 
 **Cumulocity GmbH** is a limited liability company under German law with statutory seat and headquarters in Düsseldorf, Germany.
 
-**Managing Directors**:  Bernd Rüdiger Groß, Damian Dawid Roj
+**Managing Directors**: Bernd Rüdiger Groß, Jürgen Krämer, Stefan Vaillant
 
 **Postal address**:
-Cumulocity GmbH, Toulouser Allee 25, 40211 Düsseldorf, Germany
+Cumulocity GmbH, Marc-Chagall-Straße 2, 40477 Düsseldorf, Germany
 
 **Email:** info@cumulocity.com
 

@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:56:42.169Z
+date: 2023-12-06
 title: Receive input from all input sources
 change_type:
   - value: change-QHu1GdukP

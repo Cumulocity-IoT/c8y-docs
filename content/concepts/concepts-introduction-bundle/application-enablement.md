@@ -22,7 +22,7 @@ For this, {{< product-c8y-iot >}} provides many self-service customization optio
 
 {{< product-c8y-iot >}} has also been designed with easy extensibility by developers in mind. This is enabled through well-documented open [APIs](https://{{< domain-c8y >}}/api/) exposing the complete platform functionality along with a [Command Line Interface (CLI)](https://goc8ycli.netlify.app/docs/introduction/) for efficient development workflows and an active [developer community]({{< c8y-tech-community-link >}}) providing a platform for knowledge sharing and problem-solving. All aspects of the platform are extensible:
 
-1. **Device-side logic**: Developers can use the [thin-edge.io](/welcome-developers/developer-topics/#:~:text=Device%20integration%20using%20thin%2Dedge.io) framework for integrating device-side logic.
+1. **Device-side logic**: Developers can use the [thin-edge.io](/device-integration/device-integration-thin-edge/) framework for integrating device-side logic.
 
 2. **UI applications**: The [Web SDK](/web/) allows developers to seamlessly extend any UI application with new functionality or leverage any {{< product-c8y-iot >}} UI component for your entirely own UI application.
 

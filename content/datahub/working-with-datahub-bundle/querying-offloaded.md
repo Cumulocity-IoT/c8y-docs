@@ -68,6 +68,6 @@ The {{< product-c8y-iot >}} DataHub server also can handle REST requests for Dre
 
 ### Connecting other clients {#connecting-other-clients}
 
-Dremio offers support for connecting a variety of clients, including reporting tools like PowerBI and common analytics languages like Python. The [Dremio documentation](https://docs.dremio.com/current/sonar/client-applications/clients/) discusses how to connect these clients to Dremio and leverage its query capabilities.
+Dremio offers support for connecting a variety of clients, including reporting tools like PowerBI and common analytics languages like Python. The [Dremio documentation](https://docs.dremio.com/current/client-applications/) discusses how to connect these clients to Dremio and leverage its query capabilities.
 
 See also [Integrating {{< product-c8y-iot >}} DataHub with other products](/datahub/integrating-datahub-with-other-products) to learn how other products can connect to {{< product-c8y-iot >}} DataHub and leverage its query capabilities.

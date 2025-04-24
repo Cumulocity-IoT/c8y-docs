@@ -16,5 +16,5 @@ version: 1021.4.2
 ---
 Previously, if a device reported an unexpected status or result during a firmware update,
 the process simply waited for a valid state. Now, you can configure LWM2M devices to fail the firmware update
-process when an unexpected situation is detected. For more details see [LWM2M configuration](/protocol-integration/lwm2m/#lwm2m-configuration).
+process when an unexpected situation is detected. For more details see [LWM2M configuration](/device-integration/lwm2m/#lwm2m-configuration).
 

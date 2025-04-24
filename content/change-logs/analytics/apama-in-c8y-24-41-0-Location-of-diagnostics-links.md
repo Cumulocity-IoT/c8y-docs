@@ -1,5 +1,5 @@
 ---
-date: 2023-12-13T16:00:12.550Z
+date: 2023-12-13
 title: Location of diagnostics links
 change_type:
   - value: change-2c7RdTdXo4

@@ -20,8 +20,8 @@ To set or remove connectivity provider configurations: ADMIN permission for the 
 
 The following provider settings may currently be specified:
 
-- [Actility LoRa](/protocol-integration/lora-actility)
-- [Sigfox](/protocol-integration/sigfox)
+- [Actility LoRa](/device-integration/lora-actility)
+- [Sigfox](/device-integration/sigfox)
 - [SIM](/device-management-application/connectivity)
 
 ### To provide or replace credentials {#to-provide-or-replace-credentials}
@@ -31,4 +31,4 @@ The following provider settings may currently be specified:
 3. Enter the credentials of your provider platform. Depending on the provider, these credentials will be either the credentials of your account in the provider platform or the credentials with which you can register in the {{< product-c8y-iot >}} connectivity page, will be displayed in your account in the provider platform.
 4. Finally, click **Save** to save your settings.
 
-Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Protocol integration](/protocol-integration/).
+Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Device integration](/device-integration/).

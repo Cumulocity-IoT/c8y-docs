@@ -58,7 +58,7 @@ The following examples illustrate the rules stated above:
 
 ### Processing mode {#processing-mode}
 
-Similar to [{{< product-c8y-iot >}} REST implementation](https://www.{{< domain-c8y >}}/api/#section/REST-implementation) every communication in SmartREST which can lead to data update (i. e., POST, PUT, DELETE) supports four processing modes, PERSISTENT, TRANSIENT, QUIESCENT or CEP.
+Similar to [{{< product-c8y-iot >}} REST implementation](https://{{< domain-c8y >}}/api/core/#section/REST-implementation) every communication in SmartREST which can lead to data update (i. e., POST, PUT, DELETE) supports four processing modes, PERSISTENT, TRANSIENT, QUIESCENT or CEP.
 
 If the data sent to the SmartREST endpoint must be both stored in {{< product-c8y-iot >}} database and be transferred to real-time processing, then PERSISTENT mode should be set. It is also enabled by default and does not require additional configuration.
 

@@ -39,6 +39,12 @@ See also [Tenant hierarchy](/concepts/tenant-hierarchy).
 The unique ID of a tenant or subtenant. When a tenant is created, it gets an auto-generated ID, which cannot be changed. The tenant ID is shown in the user dropdown menu in the UI.
 
 
+### Thick Edge {#thick-edge}
+Thick Edge is an informal term sometimes used to refer to {{< product-c8y-iot >}} Edge, a single-server variant of the {{< product-c8y-iot >}} platform, designed to run in factories on industrial PCs or local servers, that is, in the same site (“onsite”) in which the IoT assets are located. For details, see the [{{< product-c8y-iot >}} Edge documentation](/{{< c8y-edge-version-major >}}/sector/edge_server/).
+
+See also [Edge Server](/glossary/e/#edge-server)
+
+
 ### Thin Edge {#thin-edge}
 
 [Thin-edge.io](https://thin-edge.io/) is an open-source and cloud-agnostic IoT framework designed for lightweight IoT devices. It offers simple and secure device connectivity, freedom of the cloud platform, for example {{< product-c8y-iot >}}, and freedom of the programming language.

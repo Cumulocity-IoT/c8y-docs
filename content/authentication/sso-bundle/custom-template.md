@@ -53,11 +53,12 @@ Under **Dynamic access mapping principle** you can select one of the following o
 
 * **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be cleared**: This is the default. Dynamic access mapping assigns user roles, based on the token, on every user login. It is not possible to change the user roles inside {{< product-c8y-iot >}} as they would be overwritten on the next user login. To change this behavior, select one of the remaining options.
 
-If you select either of the first two options mentioned above, this will also allow administrators to edit the roles of SSO users in the user management. For details, refer to [Managing permissions](/standard-tenant/managing-permissions/#assign-global-roles).
+If you select either of the first two options mentioned above, this will also allow administrators to edit the roles of SSO users in the user management. For details, refer to [Managing permissions](/standard-tenant/managing-permissions/#to-assign-global-roles).
 
 The dynamic access mapping configuration allows you to define the rules for assigning roles to users based on JWT claims. The rule that matches the token's value is used to assign the appropriate set of roles to the user.
 
- ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping.png)
+ ![Custom access mapping-1](/images/users-guide/Administration/sso-custom-access-mapping-1.png)
+ ![Custom access mapping-2](/images/users-guide/Administration/sso-custom-access-mapping-2.png)
 
  In the example above, if a user tries to login a decoded JWT claims look like:
 

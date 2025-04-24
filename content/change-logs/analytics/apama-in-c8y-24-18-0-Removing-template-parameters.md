@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:54:54.308Z
+date: 2023-12-06
 title: Removing template parameters
 change_type:
   - value: change-2c7RdTdXo4

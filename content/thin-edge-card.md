@@ -3,7 +3,7 @@ title: thin-edge.io
 icon: "dlt-c8y-icon-thin-client"
 type: root
 layout: redirect
-external: "https://thin-edge.io"
+external: "https://thin-edge.github.io/thin-edge.io/"
 audience:
   - Developers
 bundlefolder: thin-edge

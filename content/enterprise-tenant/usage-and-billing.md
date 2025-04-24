@@ -404,7 +404,7 @@ Tenants should also be able to see the full application lifecyle in the applicat
 There is no event in the **Events** section when the microservice has reached the state "Ready" as this happens according to the readiness probe.
 {{< /c8y-admon-info >}}
 
-  <img src="/images/users-guide/enterprise-tenant/et-ms-billing-events.png" name="Microservice details - Events"/>
+  <img src="/images/users-guide/Administration/admin-microservice-status.png" name="Microservice details - Events"/>
 
 Audit logs and events are stored at tenant space according to the isolation level. For multi-tenant isolated microservices this is the tenant that is the owner of the microservice and in case of per-tenant isolation level it is the subscribed tenant.
 

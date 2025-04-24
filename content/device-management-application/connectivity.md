@@ -129,8 +129,6 @@ In the **Connectivity** tab you will find the following sections:
 * Sessions
 * Audit logs
 
-![Connectivity tab](/images/users-guide/connectivity/connectivity-tab.png)
-
 {{< c8y-admon-info >}}
 Some sections may not appear or may be empty. For example, if there have been no SMS sent and you do not have permission to send SMS, you will not see the SMS section.
 {{< /c8y-admon-info >}}

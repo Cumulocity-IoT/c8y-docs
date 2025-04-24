@@ -25,7 +25,7 @@ To ease the device integration, {{< product-c8y-iot >}} supports static template
 
 {{< c8y-admon-related >}}
 * [Device management & connectivity > SmartREST > SmartREST 2.0](/smartrest/smartrest-two/) for details on the SmartREST protocol, the data format used, as well as the anatomy and registration of SmartREST templates.
-* [Device management & connectivity > Device integration > Device integration using MQTT](/device-integration/mqtt/) for information on integrating devices via MQTT.
+* [Device management & connectivity > Device integration > MQTT](/device-integration/mqtt/) for information on integrating devices via MQTT.
 {{< /c8y-admon-related >}}
 
 Open the **SmartREST template** page from the **Device Types** menu in the navigator.

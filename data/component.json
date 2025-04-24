@@ -238,26 +238,6 @@
           "label": "Analytics"
         }
       ]
-    },
-    {
-      "id": "component-IpOEfM7nQ",
-      "option": "Edge VM Appliance",
-      "product_area": [
-        {
-          "value": "product_area-v8mvxKJVc",
-          "label": "Edge"
-        }
-      ]
-    },
-    {
-      "id": "component-g7hnfbu4J",
-      "option": "Edge on Kubernetes",
-      "product_area": [
-        {
-          "value": "product_area-v8mvxKJVc",
-          "label": "Edge"
-        }
-      ]
     }
   ]
 }

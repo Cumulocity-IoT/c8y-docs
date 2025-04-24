@@ -1,5 +1,5 @@
 ---
-date: 2024-02-29T12:00:00.000Z
+date: 2024-02-29
 title: Streaming Analytics microservices upgraded to use Red Hat UBI 9
 change_type:
   - value: change-2c7RdTdXo4

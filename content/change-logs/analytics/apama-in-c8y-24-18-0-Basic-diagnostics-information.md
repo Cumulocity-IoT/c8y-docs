@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:59:37.951Z
+date: 2023-12-06
 title: Basic diagnostics information
 change_type:
   - value: change-2c7RdTdXo4

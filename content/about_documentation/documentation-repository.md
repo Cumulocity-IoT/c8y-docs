@@ -44,6 +44,6 @@ For release notes for previous {{< product-c8y-iot >}} releases, please contact 
 
 ### API documentation for previous releases {#api-documentation-for-previous-versions}
 
-The [{{< openapi >}}](https://.cumulocity.com/api) website provides the API documentation for the SaaS cloud offering and the yearly releases under maintenance.
+The [{{< openapi >}}](https://cumulocity.com/api) website provides the API documentation for the SaaS cloud offering and the yearly releases under maintenance.
 
 For the API documentation for previous {{< product-c8y-iot >}} releases, please contact [{{< product-c8y-iot >}} support](/additional-resources/contacting-support).

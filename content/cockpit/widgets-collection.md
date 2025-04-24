@@ -184,7 +184,7 @@ Additionally, a specific date range can be set and the events can be monitored i
 
 The "Fieldbus device" widget lets you see the status of a modbus device and operate it.
 
-For details on the "Fieldbus device" widget, refer to [Monitoring the device status using the Fieldbus device widget](/protocol-integration/cloud-fieldbus/#monitoring-the-device-status-using-the-fieldbus-device-widget).
+For details on the "Fieldbus device" widget, refer to [Monitoring the device status using the Fieldbus device widget](/device-integration/cloud-fieldbus/#monitoring-the-device-status-using-the-fieldbus-device-widget).
 
 ### Help and service {#help-and-service}
 
@@ -305,7 +305,7 @@ The icons representing the devices are color-coded. The color used follows these
 * Orange = At least one MAJOR alarm
 * Yellow = At least one MINOR alarm
 * Blue = At least one WARNING
-* Green = No alarm
+* Grey = No alarm
 
 Click a device icon, to open a popup with the following information:
 
@@ -409,7 +409,7 @@ In the "Rotation" widget you can rotate the object by dragging and moving it aro
 
 The "SCADA" widget provides a graphic representation of the status of a device.
 
-For details on the "SCADA" widget, refer to [Monitoring the device status using the SCADA widget](/protocol-integration/cloud-fieldbus/#monitoring-the-device-status-using-the-scada-widget).
+For details on the "SCADA" widget, refer to [Monitoring the device status using the SCADA widget](/device-integration/cloud-fieldbus/#monitoring-the-device-status-using-the-scada-widget).
 
 The following code sanitization options can be selected:
  - strict - Does not allow any JS or angularjs directives.

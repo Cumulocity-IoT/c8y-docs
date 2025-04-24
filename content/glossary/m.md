@@ -44,7 +44,7 @@ Microservices are server-side applications. Microservices can be used to develop
 
 Microservices are deployed as Container images to {{< product-c8y-iot >}}, and follow specific conventions. They typically provide one REST API, which is available under /service/<microservice-name> and access {{< product-c8y-iot >}} using this REST API.
 
-For details see [Getting started > Technical concepts > Developing applications > Microservices](/concepts/applications/#microservices).
+For details see [Platform administration > Standard tenant administration > Managing the ecosystem > Managing microservices](/standard-tenant/ecosystem/#managing-microservices) and [Application enablement & solutions > Microservice SDK](/microservice-sdk/microservice-sdk-introduction/).
 
 
 ### Model {#model}
@@ -59,7 +59,7 @@ The behavior of a block inside a model does not depend on other blocks. There ca
 
 {{< product-c8y-iot >}} supports MQTT, an OASIS standard messaging protocol, for device integration.
 
-For details see [Device management & connectivity > Device integration > Device integration using MQTT](/device-integration/mqtt).
+For details see [Device management & connectivity > Device integration > MQTT](/device-integration/mqtt).
 
 
 ### Multi-tenancy {#multi-tenancy}

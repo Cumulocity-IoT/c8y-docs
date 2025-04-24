@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:50:29.942Z
+date: 2023-12-06
 title: Cumulocity transport in Apama 10.15.4
 change_type:
   - value: change-QHu1GdukP

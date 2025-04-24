@@ -4,7 +4,7 @@ title: Integration life cycle
 layout: redirect
 ---
 
-The basic life cycle for integrating devices into {{< product-c8y-iot >}} is discussed in [Interfacing devices](/concepts/interfacing-devices).
+The basic life cycle for integrating devices into {{< product-c8y-iot >}} is discussed in [Interfacing devices](/device-integration/interfacing-devices/).
 
 In this section, we will show how this life cycle can be managed using the MQTT implementation.
 
@@ -43,7 +43,7 @@ To establish a connection you must configure the following parameters:
 - User: &lt;tenantID>/&lt;username> (user alias is not supported)
 - Password: &lt;your&#95;cumulocity_password>
 
-For more information, refer to the [Hello MQTT](/device-integration/mqtt-examples/#hello-mqtt) section.
+For more information, refer to the [Hello MQTT](/device-integration/mqtt/#hello-mqtt) section.
 
 The process works as follows:
 

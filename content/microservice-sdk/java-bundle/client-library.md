@@ -15,22 +15,29 @@ The client library is tightly linked to the design of the REST interfaces, which
 The root interface for connecting to {{< product-c8y-iot >}} from Java is called Platform (see Root interface in [REST implementation](https://{{< domain-c8y >}}/api/core/#section/REST-implementation) in the {{< openapi >}}). It provides access to all other interfaces of the platform, such as the inventory. In its simplest form, it is instantiated as follows:
 
 ```java
-Platform platform = new PlatformImpl("<URL>", new CumulocityCredentials("<USERNAME>", "<PASSWORD>"));
+Platform platform = new PlatformImpl("<URL>", CumulocityBasicCredentials.from("<TENANT_ID>/<USERNAME>:<PASSWORD>"));
 ```
 
 As an example:
 
 ```java
-Platform platform = new PlatformImpl("https://demos.cumulocity.com", new CumulocityCredentials("myuser", "mypassword"));
+Platform platform = new PlatformImpl("https://demos.cumulocity.com", CumulocityBasicCredentials.from("mytenant/myuser:mypassword"));
 ```
 
 If you use the Java client for developing an application, you must register an application key (through [Managing applications](/standard-tenant/ecosystem/#managing-applications) in the {{< product-c8y-iot >}} Administration application, or through the [Application API](https://{{< domain-c8y >}}/api/core/#tag/Application-API)).
 
-For testing purposes, every tenant is subscribed to the demo application key "uL27no8nhvLlYmW1JIK1CA==". The constructor for `PlatformImpl` also allows you to specify the default number of objects returned from the server in one reply with the parameter `pageSize`.
+For testing purposes, every tenant is subscribed to the demo application key "uL27no8nhvLlYmW1JIK1CA==". The platform is then initialized like this:
 
 ```java
-new CumulocityCredentials("<TENANT_ID>", "<USERNAME>", "<PASSWORD>", "<APPLICATION_KEY>")
+new PlatformImpl("<URL>", "<TENANT_ID>", "<USERNAME>", "<PASSWORD>", "<APPLICATION_KEY>");
 ```
+
+The constructor for `PlatformImpl` also allows you to specify the default number of objects returned from the server in one reply with the parameter `pageSize`:
+
+```java
+new PlatformImpl("<URL>", "<TENANT_ID>", "<USERNAME>", "<PASSWORD>", "<APPLICATION_KEY>", <PAGE_SIZE>);
+```
+
 
 ### Accessing the inventory {#accessing-the-inventory}
 

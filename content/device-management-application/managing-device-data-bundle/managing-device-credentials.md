@@ -44,4 +44,4 @@ Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i
 
 The device credentials will be permanently deleted.
 
-Deleting device credentials might be required if you have carried out a factory reset on a device. In this case, the device will often loose its assigned credentials. Delete it and continue with the normal [registration process](/device-management-application/registering-devices) to re-register the device.
+Deleting device credentials might be required if you have carried out a factory reset on a device. In this case, the device will often loose its assigned credentials. Delete the device credentials and continue with the normal [registration process](/device-management-application/registering-devices) to re-register the device.

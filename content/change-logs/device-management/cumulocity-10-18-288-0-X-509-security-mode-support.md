@@ -16,7 +16,7 @@ version: 10.18.288.0
 ---
 LWM2M device connections with X.509 certificates are now supported.
 The X.509 security mode can be selected separately for the Bootstrap server and the LWM2M server either during device registration or, for existing devices, by using the new **LWM2M configuration** tab.
-The Certificate Authority that issued device certificates must be added and enabled in [trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates) in the tenant.
+The Certificate Authority that issued device certificates must be added and enabled in the [trusted certificates](/device-certificate-authentication/managing-trusted-certificates/) in the tenant.
 
 Together with this change also the following changes are introduced:
 
@@ -31,4 +31,4 @@ Under **Connectivity** in the **LWM2M configuration** tab, the Bootstrap or LWM2
 ##### PSK-generated option for LWM2M server security mode
 
 During device registration, the "PSK generated" option can be selected for LWM2M Server connection to make LWM2M agent to generate the PSK ID and PSK key credentials for the device. These will be set to the device during the bootstrap process.
-For details, refer to the [LWM2M](/protocol-integration/lwm2m/) user documentation.
+For details, refer to the [LWM2M](/device-integration/lwm2m/) user documentation.

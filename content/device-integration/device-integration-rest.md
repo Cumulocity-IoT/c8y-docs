@@ -1,6 +1,6 @@
 ---
-weight: 35
-title: Device integration using REST
+weight: 30
+title: REST
 layout: bundle
 sector:
   - device_management

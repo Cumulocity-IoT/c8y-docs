@@ -59,7 +59,7 @@ pipeline {
         https://cumulocity.com/guides/concepts/ \
         https://cumulocity.com/guides/users-guide/ \
         https://cumulocity.com/guides/benutzerhandbuch/ \
-        https://cumulocity.com/guides/protocol-integration/ \
+        https://cumulocity.com/guides/device-integration/ \
         https://cumulocity.com/guides/device-tutorials/ \
         https://cumulocity.com/guides/edge/ \
         https://cumulocity.com/guides/thin-edge/ \

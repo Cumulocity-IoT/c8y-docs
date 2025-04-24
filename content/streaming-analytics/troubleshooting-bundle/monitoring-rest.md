@@ -16,4 +16,4 @@ The following monitoring endpoints are available for REST requests. These requir
     {{< /c8y-admon-info >}}
 - `/service/cep/prometheus`  
     GET only. Plain text format.  
-    Prometheus metrics from the correlator and microservice. For details, see [Monitoring with Prometheus]({{< link-apama-webhelp >}}/deploying-and-managing-apama-applications/deploying-and-managing-apama-applications-how-this-book-is-organized#monitoring-with-prometheus) in the Apama documentation.
+    Prometheus metrics from the correlator and microservice. For details, see [Monitoring with Prometheus]({{< link-apama-webhelp >}}/deploying-and-managing-apama-applications/monitoring-with-prometheus) in the Apama documentation.

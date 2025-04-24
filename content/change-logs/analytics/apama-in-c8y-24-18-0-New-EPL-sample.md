@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:57:53.323Z
+date: 2023-12-06
 title: New EPL sample
 change_type:
   - value: change-QHu1GdukP

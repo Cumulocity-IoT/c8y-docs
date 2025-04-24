@@ -42,7 +42,7 @@ The {{< product-c8y-iot >}} User Interface (UI) is based on applications. By def
 * web-based user interface applications (web applications)
 * server-side business logic through microservices (microservices)
 
-For details see [Getting started > Technical concepts > Developing applications](/concepts/applications/).
+For details see [Getting started > Technical concepts > Application enablement](/concepts/applications/).
 
 
 ### Application switcher {#application-switcher}

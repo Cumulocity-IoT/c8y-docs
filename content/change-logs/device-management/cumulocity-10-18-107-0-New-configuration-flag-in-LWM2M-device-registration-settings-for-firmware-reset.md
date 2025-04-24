@@ -14,4 +14,4 @@ build_artifact:
 ticket: " DM-2292"
 version: 10.18.107.0
 ---
-The configuration flag <code>fwResetStateMachineOnStart</code> has been added to control if the LWM2M agent resets the firmware update state machine on the client at the beginning of a firmware update. The default of this flag is <code>true</code> which matches the existing behaviour of the LWM2M agent. It is available in the [device registration settings](/protocol-integration/lwm2m/#device-registration-settings).
+The configuration flag <code>fwResetStateMachineOnStart</code> has been added to control if the LWM2M agent resets the firmware update state machine on the client at the beginning of a firmware update. The default of this flag is <code>true</code> which matches the existing behaviour of the LWM2M agent. It is available in the [device registration settings](/device-integration/lwm2m/#single-device-registration).

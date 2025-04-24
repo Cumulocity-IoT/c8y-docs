@@ -14,7 +14,7 @@ With {{< product-c8y-iot >}} DataHub, you can connect existing tools and applica
 
 * Machine learning applications (mainly written in Python using ODBC)
 
-* Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for [web applications](/concepts/applications/#web-applications))
+* Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for web applications)
 
 The main features of the {{< product-c8y-iot >}} DataHub application are:
 
@@ -40,7 +40,7 @@ The table below summarizes the main terms used throughout this documentation.
 | {{< product-c8y-iot >}} DataHub | {{< product-c8y-iot >}} application for offloading data from the Operational Store of {{< product-c8y-iot >}} to a data lake and querying the data lake contents; scheduler component (deployed as microservice) for triggering periodic offloading and UI component (deployed as web application) for defining, managing, and monitoring offloading pipelines
 | {{< product-c8y-iot >}} Operational Store | Internal datastore of {{< product-c8y-iot >}} where all data (alarms, events, inventory, measurements, ...) is stored in so-called base collections
 | Dremio | Internal SQL engine for extracting data from the {{< product-c8y-iot >}} Operational Store and writing to and reading from the data lake
-| Data lake | Storage container for offloaded data either on the basis of ADLS Gen2/Azure Storage (Azure), S3 (Amazon), NAS, or HDFS
+| Data lake | Storage container for offloaded data either on the basis of ADLS Gen2/Azure Storage (Azure), S3 (Amazon), NAS
 
 {{< c8y-admon-info >}}
 Google Cloud Storage (GCS) is currently not supported.

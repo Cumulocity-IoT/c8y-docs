@@ -12,7 +12,7 @@ sector:
 {{< c8y-admon-related >}}
 - [Cockpit](/cockpit/cockpit-introduction/) for more details on the {{< product-c8y-iot >}} UI.
 - [Managing applications](/standard-tenant/ecosystem/#managing-applications) for more information on managing applications in {{< product-c8y-iot >}}.
-- [Web SDK guide](/web/#introduction) for details on building web applications on top of {{< product-c8y-iot >}}.
+- [Web SDK guide](/web/introduction) for details on building web applications on top of {{< product-c8y-iot >}}.
 {{< /c8y-admon-related >}}
 
 
@@ -89,6 +89,8 @@ On entering a search term into the textbox at the top of the **Search** window, 
 <img src="/images/users-guide/getting-started/getting-started-search-result.png" alt="Search result" style="max-width: 100%">
 
 Under **Search results**, the assets matching the search criteria are shown. To see more details click **Go to the assets table** at the bottom right. This will show the entire search results in a table format.
+
+You can navigate through the search items with your keyboard by using the arrow keys. Selecting a particular item with the tab key will navigate you to the item selected. Hitting the "Enter" key will navigate you to the asset table with a predefined start-with filter based on what you selected with the arrow keys.
 
 The Search window only lists a limited number of matches. In case of more matches, to see the complete results you must switch to the asset table.
 
