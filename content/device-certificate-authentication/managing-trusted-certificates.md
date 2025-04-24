@@ -1,5 +1,5 @@
 ---
-weight: 10
+weight: 20
 title: Managing trusted certificates
 layout: bundle
 sector:
