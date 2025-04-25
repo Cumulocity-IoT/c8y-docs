@@ -6,12 +6,12 @@ weight: 430
 
 Angular 19 is supported from version `1022.0.0`. The following configuration changes are required before you can run the application:
 
-{{< c8y-admon-important >}}
-Since Angular 19, each component decorator must have `standalone` property with value `true` or `false`. It also applies
-to module federation plugins.
-{{< /c8y-admon-important >}}
-
 - Run the command `ng update @angular/core@19 @angular/cli@19` to update Angular core and CLI to version 19.
+{{< c8y-admon-important >}}
+Angular directives, components and pipes are now standalone by default. Specify `standalone: false` for declarations that are currently declared in an NgModule. 
+
+It also applies to module federation plugins, including plugins that uses earlier versions of Angular, but are utilized in application migrated to Angular 19.
+{{< /c8y-admon-important >}}
 - Update all `@c8y` dependencies to version `1022.x.x` in your *package.json*.
 - Update `ngx-bootstrap` to version `19.0.2`.
 - Update `@angular/cdk` to version `19.x.x`.
