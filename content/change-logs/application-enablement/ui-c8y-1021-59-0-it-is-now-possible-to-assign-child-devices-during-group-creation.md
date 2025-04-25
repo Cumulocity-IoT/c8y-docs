@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-04-24'
 title: Assign child devices while creating a group
 product_area: Application enablement & solutions
 change_type:

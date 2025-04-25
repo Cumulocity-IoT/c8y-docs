@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-04-24'
 title: Simplified logging event levels in LWM2M device configuration
 product_area: Device management & connectivity
 change_type:
