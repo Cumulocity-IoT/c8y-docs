@@ -17,4 +17,4 @@ version: 1021.65.0
 It is now possible to view change logs of deployed packages. These change log can be viewed in:
 - A **Change log** tab in the package details 
 - A change log section in the package version details 
-- update installed plugin modal
+- The update installed plugin modal
