@@ -1,6 +1,6 @@
 ---
 date: ""
-title: As a solution architect, I want to see what changed on a package. [GRAFT][release/cd] (#8931)
+title: As a solution architect, I want to see what changed on a package by viewing package changelog
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
