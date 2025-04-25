@@ -1,6 +1,6 @@
 ---
 date: ""
-title: As a solution architect, I want to see what changed on a package by viewing package changelog
+title: Option added to view change logs of deployed packages
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-62165
 version: 1021.65.0
 ---
-This new feature adds possibility to view changelog of deployed package. It allows to view changelog in:
-- package details "Changelog" tab
-- package varsions "Changelog" section after selecting specific version
+It is now possible to view change logs of deployed packages. These change log can be viewed in:
+- A **Change log** tab in the package details 
+- A change log section in the package version details 
 - update installed plugin modal
