@@ -14,4 +14,7 @@ build_artifact:
 ticket: MTM-62165
 version: 1021.65.0
 ---
-As a solution architect, I want to see what changed on a package. [GRAFT][release/cd] (#8931)
+This new feature adds possibility to view changelog of deployed package. It allows to view changelog in:
+- package details "Changelog" tab
+- package varsions "Changelog" section after selecting specific version
+- update installed plugin modal
