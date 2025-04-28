@@ -4,12 +4,13 @@ title: MQTT protocol implementation
 layout: redirect
 ---
 
-This section lists the implementation details for the MQTT Service.
-The MQTT Service implementation supports clients connecting using MQTT versions 3.1.1 and 5.0, although not all MQTT 5.0 protocol features are supported.
+This section covers some implementation details of the MQTT Service.
+The MQTT Service implementation supports clients connecting using MQTT versions 3.1, 3.1.1 and 5.0, although not all MQTT 5.0 protocol features are currently supported.
 
-### Connecting via MQTT {#connecting-via-mqtt}
+### Connecting to the service {#connecting-via-mqtt}
 
-MQTT Service is supported via TCP. Use your tenant domain as the URL.
+MQTT connections to the MQTT Service must use TCP.
+Use your tenant domain as the target host for the connection, for example `{my-tenant}.cumulocity.com`.
 
 Available ports:
 
@@ -18,13 +19,13 @@ Available ports:
 | TLS    | 9883 |
 | no TLS | 2883 |
 
-Port 9883 (TLS) is enabled by default and should be used for secure communication.
+Port 9883 (TLS) is the default port and should be used for secure, encrypted communication.
 Both one-way (server certificate only) and two-way (both client and server certificates) TLS are supported.
 When client certificates are not used, the server authenticates the client using standard username and password credentials.
-Port 2883 (no TLS) is disabled by default due to security risks, as traffic is unencrypted.
+Port 2883 (no TLS) is not enabled in {{< product-c8y-iot >}} shared public environments due to the security risks of unencrypted traffic.
 To enable port 2883 in a dedicated environment, please contact [Product support](/additional-resources/contacting-support/).
 
-### Topic {#topic}
+### Topics {#topic}
 
 MQTT Service topics are mapped to the Messaging Service subscriptions with identical names, including additional URL encoding.
 The Messaging Service subscriptions reliably store the topic messages for asynchronous processing.
@@ -186,8 +187,8 @@ Moreover, {{< enterprise-tenant >}}s are not able to customize those certificate
 
 #### Device (client) certificates {#device-certificates}
 
-Using device certificates with the MQTT Service shares the same requirements as outlined in [Device certificates](/device-integration/device-certificates/#general-requirements-for-connecting-devices-with-certificates). Additionally, auto-registration must be enabled when uploading the CA certificate to the platform.
-At this time, manual device registration is not supported in the MQTT Service. Devices must be registered through the auto-registration process. For more details on auto-registration, refer to [Auto-registration](/device-integration/device-certificates/#registering-devices-using-certificates) guide.
+Using device certificates with the MQTT Service shares the same requirements as outlined in [Device certificates](/device-certificate-authentication/device-certificates#general-requirements-for-connecting-devices-with-certificates). Additionally, auto-registration must be enabled when uploading the CA certificate to the platform.
+At this time, manual device registration is not supported in the MQTT Service. Devices must be registered through the auto-registration process. For more details on auto-registration, refer to [Auto-registration](/device-certificate-authentication/device-certificates#registering-devices-using-certificates) guide.
 When connecting devices to the MQTT Service using certificates, the tenant ID must be included in the MQTT CONNECT packet in the user name field.
 This is required to correctly identify the tenant.
 
@@ -196,7 +197,7 @@ This is required to correctly identify the tenant.
 TLS trust anchors in the {{< product-c8y-iot >}} platform are defined per tenant.
 To use device certificates for authentication, the CA or intermediate certificate that signs the device certificates must be uploaded to the platform and added to the tenant’s list of trusted certificates.
 Additionally, the **Auto registration** field must be enabled when adding certificates.
-For detailed instructions on adding and trusting a CA certificate, see [Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates).
+For detailed instructions on adding and trusting a CA certificate, see [Managing trusted certificates](/device-certificate-authentication/managing-trusted-certificates).
 
 #### Creating self-signed certificates
 
@@ -215,7 +216,7 @@ openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out c
 cat client.crt ca.crt > client-chain.pem
 ```
 
-There are further instructions regarding creating self-signed CA, intermediate, and device certificates certificates under [Generating and signing certificates](/device-integration/device-certificates/#generating-and-signing-certificates).
+There are further instructions regarding creating self-signed CA, intermediate, and device certificates certificates under [Generating and signing certificates](/device-certificate-authentication/device-certificates#generating-and-signing-certificates).
 
 #### Using certificates
 
