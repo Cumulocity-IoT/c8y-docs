@@ -16,4 +16,4 @@ version: 2025.0.1
 ---
 You cannot explicitly set a Mongo database password (`mongodb.credentialsSecretName`) that contains a literal double-quote `"`. Due to a bug in a third-party library, this will results in a hang during initial installation of Edge.
 
-This will be resolved when the third-party bug has been resolved.
+This issue will be resolved when the third-party bug has been fixed.
