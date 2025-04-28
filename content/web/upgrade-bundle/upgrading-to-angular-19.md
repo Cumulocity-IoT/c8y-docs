@@ -4,7 +4,7 @@ layout: redirect
 weight: 430
 ---
 
-Angular 19 is supported from version `1022.0.0`. The following configuration changes are required before you can run the application:
+Angular 19 is supported from version `1022.0.0` of Web SDK. The following configuration changes are required before you can run the application:
 
 - Run the command `ng update @angular/core@19 @angular/cli@19` to update Angular core and CLI to version 19.
 {{< c8y-admon-important >}}
