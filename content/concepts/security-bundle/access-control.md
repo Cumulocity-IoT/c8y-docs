@@ -57,4 +57,4 @@ For details on permission management using the API refer to [the User API](https
 
 ### Globally accessible objects {#globally-accessible-objects}
 
-To make a managed object, such as an inventory object, accessible to all users regardless of their individual permissions, add the `c8y_Global` fragment to the object.
+To make a managed object, such as an inventory object, accessible to all users regardless of their individual permissions, add the c8y_Global fragment to the object. This applies only to inventory objects, not to alarms, events, etc., and the visibility does not extend to the object's children.
