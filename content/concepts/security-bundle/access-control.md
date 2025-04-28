@@ -57,4 +57,4 @@ For details on permission management using the API refer to [the User API](https
 
 ### Globally accessible objects {#globally-accessible-objects}
 
-It is possible to make any object accessible by any user without specific rights. To grant those rights just add a new fragment called `c8y_Global` to the object.
+To make a managed object, such as an inventory object, accessible to all users regardless of their individual permissions, add the `c8y_Global` fragment to the object.
