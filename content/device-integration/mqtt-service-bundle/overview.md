@@ -35,15 +35,15 @@ then to a user-provided microservice where it is converted to the final {{< prod
 ![MQTT Service send](/images/mqtt-service/mqtt-service-send.svg)
 
 All MQTT messages coming to MQTT Service are forwarded to the Messaging Service, where they are persisted, waiting to be consumed.
-A custom microservice that understands the topic and payload structure can, with the help of [Java Client](/device-integration/mqtt-service#java-client), 
+A custom microservice that understands the topic and payload structure can, with the help of the [Java Client](/device-integration/mqtt-service#java-client), 
 consume the MQTT messages, translate them to the {{< product-c8y-iot >}} format, and then use the [Microservice SDK](/microservice-sdk/java) to push them into {{< product-c8y-iot >}}.
 
 Similarly, messages can be sent to devices, as shown in the diagram below.
 
 ![MQTT Service push](/images/mqtt-service/mqtt-service-push.svg)
 
-Like with the message coming from the device the same solution can be also applied when trying to communicate with the device.
-Given the MQTT client ID and the topic, a microservice can push any MQTT message to a device via [Java Client](/device-integration/mqtt-service#java-client).
+As with the messages coming from the device, a similar approach can be used to send messages back to the device.
+Given the MQTT topic name, a microservice can push any MQTT message to a device using the [Java Client](/device-integration/mqtt-service#java-client).
 
 ### MQTT Service vs {{< product-c8y-iot >}} MQTT {#mqtt-service-vs-cumulocity-iot-mqtt}
 
