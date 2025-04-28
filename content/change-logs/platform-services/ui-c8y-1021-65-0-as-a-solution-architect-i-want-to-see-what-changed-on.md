@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-62165
 version: 1021.65.0
 ---
-It is now possible to view change logs of deployed packages. These change log can be viewed in:
+It is now possible to view change logs of deployed packages. These change logs can be viewed in:
 - A **Change log** tab in the package details 
 - A change log section in the package version details 
-- The update installed plugin modal
+- In the **Update plugin** dialog for installed plugins
