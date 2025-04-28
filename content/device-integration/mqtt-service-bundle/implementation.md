@@ -154,7 +154,7 @@ For subscriptions, MQTT Service will deliver all messages in the QoS that the cl
 
 #### Clean session {#clean-session}
 
-MQTT Service requires clean session to be set to "1" (true). We cannot guarantee that disabling clean session will work reliably, hence we recommend you to always enable clean session.
+MQTT Service requires clean session to be set to "1" (true). Disabling clean session has no effect, meaning that a reconnecting client will not see any messages that it missed since the last disconnection.
 
 #### Retained flag {#retained-flag}
 
