@@ -22,6 +22,6 @@ Ownership is determined based on the category of the tenant option, in the follo
 2. The microservice’s context path.
 3. The microservice name.
 
-This change is currently **disabled by default** and can be **enabled via a feature toggle** "secure-tenant-options" through the [API](https://cumulocity.com/api/core/#operation/setCurrentTenantFeatureToggleValue)
+This change is currently disabled by default and can be enabled via a feature toggle "secure-tenant-options" through the [API](https://cumulocity.com/api/core/#operation/setCurrentTenantFeatureToggleValue).
 
 > ⚠️ **Important:** In Q4 2025 for the SaaS instances and in 2026 for the yearly releases, this restriction will become **mandatory**. We strongly recommend reviewing your microservices now to ensure compatibility with the upcoming enforcement. This gives microservice developers time to adapt, especially if their services depend on reading `credentials.*` options in categories **not owned** by the microservice.
