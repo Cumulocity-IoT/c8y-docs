@@ -5,14 +5,16 @@ title: Overview
 ---
 
 {{< c8y-admon-preview >}}
-This feature is in Private Preview, that is, it is not enabled by default and maybe subject to change in the future.
-Please reach out to the [product support](/additional-resources/contacting-support/) if you are interested in this feature.
+This feature is in **Public Preview**.
+That is, it is not yet generally available and may be subject to change in the future.
 {{< /c8y-admon-preview >}}
 
 {{< c8y-admon-req >}}
-To work with the MQTT Service, the following requirements have to be met:
-* The {{< product-c8y-iot >}} Messaging Service must be available on your {{< product-c8y-iot >}} platform.
-* MQTT Service must be enabled for your tenant.
+To work with the MQTT Service, the following requirements must be met:
+* The {{< product-c8y-iot >}} Messaging Service must be deployed in your {{< product-c8y-iot >}} environment.
+* The {{< product-c8y-iot >}} MQTT Service must be deployed in your {{< product-c8y-iot >}} environment.
+
+No additional steps are required to enable the MQTT Service for an individual tenant.
 {{< /c8y-admon-req >}}
 
 MQTT Service is the new MQTT endpoint implementation of {{< product-c8y-iot >}} which provides the following benefits:
