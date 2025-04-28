@@ -6,22 +6,24 @@ title: Overview
 
 ### Architecture {#architecture}
 
-MQTT Service works together with the Messaging Service to provide a framework for highly customizable and flexible MQTT message processing solutions.
+The MQTT Service works together with the Messaging Service to provide a framework for highly customizable and flexible MQTT message processing solutions.
 The diagram below illustrates how a message flows, starting from the device, through the Messaging Service, 
-then to a user-provided microservice where it is converted to the final {{< product-c8y-iot >}} REST request.
+then to a user-provided microservice where it is converted to the {{< product-c8y-iot >}} JSON format and
+delivered to {{< product-c8y-iot >}} using the standard REST API.
 
 ![MQTT Service send](/images/mqtt-service/mqtt-service-send.svg)
 
-All MQTT messages coming to MQTT Service are forwarded to the Messaging Service, where they are persisted, waiting to be consumed.
+All MQTT messages published to the MQTT Service are forwarded to the Messaging Service, where they are persisted, waiting to be consumed.
 A custom microservice that understands the topic and payload structure can, with the help of the [Java Client](/device-integration/mqtt-service#java-client), 
 consume the MQTT messages, translate them to the {{< product-c8y-iot >}} format, and then use the [Microservice SDK](/microservice-sdk/java) to push them into {{< product-c8y-iot >}}.
 
 Similarly, messages can be sent to devices, as shown in the diagram below.
+In this case, the user-provided microservice receives messages from {{< product-c8y-iot >}} through a Notifications 2.0 subscription.
+These messages are mapped to the payload structure used by the MQTT devices, then published to MQTT topics using the [Java Client](/device-integration/mqtt-service#java-client).
 
 ![MQTT Service push](/images/mqtt-service/mqtt-service-push.svg)
 
-As with the messages coming from the device, a similar approach can be used to send messages back to the device.
-Given the MQTT topic name, a microservice can push any MQTT message to a device using the [Java Client](/device-integration/mqtt-service#java-client).
+As with MQTT messages published by devices, messages published from a microservice will be forwarded to the Messaging Service, where they can be consumed by MQTT devices subscribed to the relevant topics.
 
 ### MQTT Service compared to Core MQTT {#mqtt-service-vs-cumulocity-iot-mqtt}
 
