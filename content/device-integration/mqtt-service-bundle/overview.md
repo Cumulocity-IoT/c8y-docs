@@ -19,19 +19,18 @@ No additional steps are required to enable the MQTT Service for an individual te
 
 MQTT Service is the new MQTT endpoint implementation of {{< product-c8y-iot >}} which provides the following benefits:
 
-* Support for publishing and subscribing arbitrary payloads on any MQTT topic. The topics that are used by the existing {{< product-c8y-iot >}} MQTT implementation are not permitted for use with MQTT Service.
+* Support for sending and receiving arbitrary payloads on any MQTT topic. The topics that are used by the existing {{< product-c8y-iot >}} MQTT implementation are not permitted for use with MQTT Service.
 * Support for subscribing to the data stream from MQTT Service and mapping it to {{< product-c8y-iot >}} compatible one or routing them to a different service.
 * Multi-tenancy support: A single endpoint serves multiple tenants.
-* Full horizontal scalability.
 
 This section does not describe the basics of MQTT communication. If you are unfamiliar with MQTT, we recommend 
-you to consult one of the numerous introductions on the internet. Some references can be found on the [MQTT website](https://mqtt.org/mqtt-specification/).
+you to consult one of the numerous introductions on the internet. Some references can be found on the <a href="https://mqtt.org/mqtt-specification/" target="_blank">MQTT website</a>.
 
 ### Architecture {#architecture}
 
 MQTT Service works together with the Messaging Service to provide a framework for highly customizable and flexible MQTT message processing solutions.
 The diagram below illustrates how a message flows, starting from the device, through the Messaging Service, 
-then to the microservice where it is converted to the final {{< product-c8y-iot >}} REST request.
+then to a user-provided microservice where it is converted to the final {{< product-c8y-iot >}} REST request.
 
 ![MQTT Service send](/images/mqtt-service/mqtt-service-send.svg)
 
