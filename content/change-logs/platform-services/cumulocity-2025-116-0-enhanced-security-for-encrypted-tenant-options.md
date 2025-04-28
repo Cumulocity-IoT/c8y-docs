@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-62399
 version: 2025.116.0
 ---
-A new **security feature** has been introduced to restrict the decryption of encrypted tenant options with the `credentials.` prefix. These options can now **only be decrypted by system users (e.g., bootstrap or microservice users)** **if they own the options**.
+A new security feature has been introduced to restrict the decryption of encrypted tenant options with the `credentials.` prefix. These options can now only be decrypted by system users (such as bootstrap or microservice users) if they own the options.
 
 Ownership is determined based on the category of the tenant option, in the following priority:
 
