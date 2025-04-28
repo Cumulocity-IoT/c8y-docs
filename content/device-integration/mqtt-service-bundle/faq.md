@@ -1,16 +1,24 @@
 ---
 weight: 90
 layout: redirect
-title: FAQ
+title: Frequently Asked Questions
 ---
 
-Q: How to obtain device credential?<br/>
-A: MQTT Service does not support a device bootstrap process yet. Instead, follow the [Integration life cycle](/device-integration/mqtt/#integration-life-cycle)
-to bootstrap the device and obtain device credentials. Once the device credentials are obtained, ensure that they have `Mqtt Service` `ADMIN` permission.
-You can achieve this for all devices by granting this permission to the `devices` global role.
+Q: How can I map my MQTT device payloads to {{< product-c8y-iot >}} without developing a custom microservice?<br/>
+A: One option is to use the <a href="https://github.com/Cumulocity-IoT/cumulocity-dynamic-mapper/" target="_blank">Dynamic Mapping Service for Cumulocity</a>.
+This is a community-supported open-source component that allows many different payload formats and encodings to be mapped to the {{< product-c8y-iot >}} domain model.
+Mappings can be configured using a graphical UI or by writing JavaScript code.
 
-Q: Does MQTT Service support the SmartREST 2.0 protocol?<br/>
-A: Not yet, support for SmartREST 2.0 will be added in the future.
+Q: How can I obtain device credentials for my MQTT devices?<br/>
+A: The MQTT Service is not yet integrated with the {{< product-c8y-iot >}} device bootstrap process.
+This support is planned for a future release.
+In the meantime, follow the [Integration life cycle](/device-integration/mqtt/#integration-life-cycle) to bootstrap the device and obtain device credentials.
+Once the device credentials are obtained, the device can use them to connect to the MQTT Service.
 
-Q: Why does MQTT Service not use standard MQTT ports 1883 and 8883?<br/>
-A: Those ports are already used by {{< product-c8y-iot >}} MQTT. While both endpoints are working together the MQTT Service must use different ports.
+Q: Does the MQTT Service support the SmartREST 2.0 protocol?<br/>
+A: Not yet.
+Support for SmartREST 2.0 is planned for a future release.
+
+Q: Why does the MQTT Service not use the standard MQTT ports 1883 and 8883?<br/>
+A: Those ports are already used by {{< product-c8y-iot >}} Core MQTT.
+While both MQTT implementations are operating in parallel, the MQTT Service must use different ports.
