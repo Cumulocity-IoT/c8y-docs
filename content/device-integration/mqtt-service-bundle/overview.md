@@ -49,17 +49,17 @@ Given the MQTT client ID and the topic, a microservice can push any MQTT message
 
 The table below presents a basic comparison between the standard {{< product-c8y-iot >}} MQTT functionality and that of MQTT Service.
 
-|                              | {{< product-c8y-iot >}} MQTT                            | MQTT Service                                                                      |
-|:-----------------------------|:--------------------------------------------------------|:----------------------------------------------------------------------------------|
-| QoS                          | 0, 1, 2                                                 | 0, 1                                                                              |
-| Clean session                | Starting with clean session is recommended              | Starting with clean session is recommended                                        |
-| Retained flag                | Not supported                                           | Not supported                                                                     |
-| Last will                    | Supported                                               | Supported                                                                         |
-| MQTT 5.0 features            | Not supported                                           | Partial support
-| Authentication               | Basic and TLS device certificates                       | Basic and TLS device certificates                                                 |
-| Scalability                  | Horizontal                                              | Horizontal                                                                        |
-| Topic format                 | Determined by the SmartREST 2.0 protocol                | Unrestricted, SmartREST topic names are reserved and cannot currently be used     |
-| Payload                      | Determined by the SmartREST 2.0 protocol                | Unrestricted, maximum message size is 128 KiB including all headers               |
-| Extensibility                | Limited by SmartREST 2.0 custom templates               | Custom mapping microservices can support arbitrary MQTT-based protocols           |
-| Message processors/consumers | Build-in message processor for each SmartREST 2.0 topic | Custom mapping microservices can support multiple processors for a topic          |
-| JSON via MQTT                | Limited feature set                                     | Custom mapping microservices can support arbitrary JSON payloads                  |
+|                              | {{< product-c8y-iot >}} MQTT                            | MQTT Service                                                                        |
+|:-----------------------------|:--------------------------------------------------------|:------------------------------------------------------------------------------------|
+| QoS                          | 0, 1, 2                                                 | 0, 1                                                                                |
+| Clean session                | Starting with clean session is recommended              | Starting with clean session is required                                             |
+| Retained flag                | Not supported                                           | Not supported                                                                       |
+| Last will                    | Supported                                               | Supported                                                                           |
+| MQTT 5.0 features            | Not supported                                           | MQTT 5.0 clients can connect. Partial support for MQTT 5.0 features                 |
+| Authentication               | Basic and TLS device certificates                       | Basic and TLS device certificates                                                   |
+| Scalability                  | Horizontal                                              | Currently a single instance. Horizontal scaling will be available in the GA release |
+| Topic format                 | Determined by the SmartREST 2.0 protocol                | Unrestricted. SmartREST topic names are reserved and cannot currently be used       |
+| Payload                      | Determined by the SmartREST 2.0 protocol                | Unrestricted. The maximum message size is 128 KiB including all headers             |
+| Extensibility                | Limited by SmartREST 2.0 custom templates               | Custom mapping microservices can support arbitrary MQTT-based protocols             |
+| Message processors/consumers | Built-in message processor for each SmartREST 2.0 topic | Custom mapping microservices can support multiple processors for a topic            |
+| JSON via MQTT                | Limited feature set                                     | Custom mapping microservices can support arbitrary JSON payloads                    |
