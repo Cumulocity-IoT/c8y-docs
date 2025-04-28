@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improved certificate list in device details view
+title: Improved certificate list in device details
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63113
 version: 1021.62.5
 ---
-The X.509 certificates list in the device details view has been improved by the use of a data grid, which provides a better overview and responsiveness on various screen sizes. This change improves the user experience when working with X.509 certificates of a device.
+The X.509 certificates list in the device details has been improved by the use of a data grid, which provides a better overview and responsiveness on various screen sizes. This change improves the user experience when working with X.509 certificates of a device.
