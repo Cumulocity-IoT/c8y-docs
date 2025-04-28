@@ -15,7 +15,7 @@ const getMarkdownFiles = (dir) => {
   return markdownFiles;
 };
 
-const BASE_URL = "https://cumulocity.com/docs";
+const BASE_URL = "https://cumulocity-iot-c8y-docs-build-pr-3269.surge.sh";
 
 const shortcodeMapping = {
   "product-c8y-iot": "Cumulocity",
@@ -120,7 +120,7 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
   });
 
   // Convert the map into an array of objects.
-  const result = Object.keys(linkMap).map(link => ({
+  const result = Object.keys(linkMap).filter(link => link.includes('smart-rules')).map(link => ({
     link,
     files: Array.from(linkMap[link])
   }));
