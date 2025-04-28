@@ -84,7 +84,7 @@ for it to be automatically deleted.
 
 ### Payload {#payload}
 
-The original MQTT messages are re-packed into MQTT Service message format which includes the original payload and additional metadata fields.
+The original MQTT messages map bidirectionally to the MQTT Service message format which includes the original payload and additional metadata fields.
 Assuming Java types, the packed message structure looks as follows:
 
 `MqttServiceMessage`
