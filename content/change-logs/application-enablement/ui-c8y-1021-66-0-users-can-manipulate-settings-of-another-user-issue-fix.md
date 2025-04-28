@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Users can manipulate settings of another user issue fix.
+title: Fixed issue where users could manipulate settings of other users
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
