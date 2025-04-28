@@ -17,143 +17,125 @@ You must subscribe to the topic <kbd>s/ds</kbd> to receive operations with the s
 Click the commands below to see more information on the respective template.
 If a parameter is in square brackets, it is optional.
 
-<table>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td>
-
 <strong><a href="#inventory-templates">Inventory templates</a></strong>
-+ <a href="#100">100,createdDeviceName,deviceType</a>
-+ <a href="#101">101,createdChildId,childName,childType</a>
-+ <a href="#102">102,serviceExternalId,serviceType,serviceName,serviceStatus</a>
-+ <a href="#104">104,serviceStatus</a>
-+ <a href="#105">105 (Get children, reply: 106,child1,child2,…)</a>
-+ <a href="#107">107,fragmenttoBeUninstalled1,fragment2,...</a>
-+ <a href="#110">110,serialNumber,hardwareModel,revision</a>
-+ <a href="#111">111,IMEI,ICCID,IMSI,MCC,MNC,LAC,cellId</a>
-+ <a href="#112">112,latitude,longitude,altitude,accuracy</a>
-+ <a href="#113">113,&quot;configProp1=val1\nprop2=val2\n…&quot;</a>
-+ <a href="#114">114,supportedOperation1,operation2,…</a>
-+ <a href="#115">115,currentFirmwareName,version,url</a>
-+ <a href="#116">116,currentSoftwareName1,version1,url1,name2,…</a>
-+ <a href="#117">117,requiredInterval</a>
-+ <a href="#118">118,supportedLog1,log2,...</a>
-+ <a href="#119">119,supportedConfiguration1,config2,...</a>
-+ <a href="#120">120,configType,url,filename[,time]</a>
-+ <a href="#121">121,profileExecuted,profileID</a>
-+ <a href="#122">122,agentName,agentVersion,agentURL,agentMaintainer</a>
-+ <a href="#123">123 (Retrieve the internal ID, reply: "124,id")</a>
-+ <a href="#125">125 (send heartbeat)</a>
-+ <a href="#140">140,setAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
-+ <a href="#141">141,appendAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
-+ <a href="#142">142,deleteAdvancedSWname1,AdvancedSWVersion1,sw2,ver2,...</a>
-+ <a href="#143">143,supportedSoftwareType1,supportedSoftwareType2,...</a>
-+ <a href="#150">150,cloudRemoteAccessProtocol1,cloudRemoteAccessProtocol2,... </a>
+<ul>
+<li><a href="#100">100,createdDeviceName,deviceType</a></li>
+<li><a href="#101">101,createdChildId,childName,childType</a></li>
+<li><a href="#102">102,serviceExternalId,serviceType,serviceName,serviceStatus</a></li>
+<li><a href="#104">104,serviceStatus</a></li>
+<li><a href="#105">105 (Get children, reply: 106,child1,child2,…)</a></li>
+<li><a href="#107">107,fragmenttoBeUninstalled1,fragment2,...</a></li>
+<li><a href="#110">110,serialNumber,hardwareModel,revision</a></li>
+<li><a href="#111">111,IMEI,ICCID,IMSI,MCC,MNC,LAC,cellId</a></li>
+<li><a href="#112">112,latitude,longitude,altitude,accuracy</a></li>
+<li><a href="#113">113,&quot;configProp1=val1\nprop2=val2\n…&quot;</a></li>
+<li><a href="#114">114,supportedOperation1,operation2,…</a></li>
+<li><a href="#115">115,currentFirmwareName,version,url</a></li>
+<li><a href="#116">116,currentSoftwareName1,version1,url1,name2,…</a></li>
+<li><a href="#117">117,requiredInterval</a></li>
+<li><a href="#118">118,supportedLog1,log2,...</a></li>
+<li><a href="#119">119,supportedConfiguration1,config2,...</a></li>
+<li><a href="#120">120,configType,url,filename[,time]</a></li>
+<li><a href="#121">121,profileExecuted,profileID</a></li>
+<li><a href="#122">122,agentName,agentVersion,agentURL,agentMaintainer</a></li>
+<li><a href="#123">123 (Retrieve the internal ID, reply: "124,id")</a></li>
+<li><a href="#125">125 (send heartbeat)</a></li>
+<li><a href="#140">140,setAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a></li>
+<li><a href="#141">141,appendAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a></li>
+<li><a href="#142">142,deleteAdvancedSWname1,AdvancedSWVersion1,sw2,ver2,...</a></li>
+<li><a href="#143">143,supportedSoftwareType1,supportedSoftwareType2,...</a></li>
+<li><a href="#150">150,cloudRemoteAccessProtocol1,cloudRemoteAccessProtocol2,... </a></li>
+</ul>
 
 <strong><a href="#measurement-templates">Measurement templates</a></strong>
-+ <a href="#200">200,fragment,series,value[,unit,time]</a>
-+ <a href="#201">201,type,[time],fragment1,series1,value1,[unit1],...</a>
-+ <a href="#210">210,rssi,ber[,time]</a>
-+ <a href="#211">211,temperature[,time]</a>
-+ <a href="#212">212,battery[,time]</a>
+<ul>
+<li><a href="#200">200,fragment,series,value[,unit,time]</a></li>
+<li><a href="#201">201,type,[time],fragment1,series1,value1,[unit1],...</a></li>
+<li><a href="#210">210,rssi,ber[,time]</a></li>
+<li><a href="#211">211,temperature[,time]</a></li>
+<li><a href="#212">212,battery[,time]</a></li>
+</ul>
 
 <strong><a href="#alarm-templates">Alarm templates</a></strong>
-+ <a href="#301">301,criticalAlarmType[,text][,time]</a>
-+ <a href="#302">302,majorAlarmType[,text][,time]</a>
-+ <a href="#303">303,minorAlarmType[,text][,time]</a>
-+ <a href="#304">304,warningAlarmType[,text][,time]</a>
-+ <a href="#305">305,alarmType,newSeverity</a>
-+ <a href="#306">306,alarmTypeToBeCleared</a>
-+ <a href="#307">307,alarmType,fragmentToBeRemoved1,fragment2,...</a>
+<ul>
+<li><a href="#301">301,criticalAlarmType[,text][,time]</a></li>
+<li><a href="#302">302,majorAlarmType[,text][,time]</a></li>
+<li><a href="#303">303,minorAlarmType[,text][,time]</a></li>
+<li><a href="#304">304,warningAlarmType[,text][,time]</a></li>
+<li><a href="#305">305,alarmType,newSeverity</a></li>
+<li><a href="#306">306,alarmTypeToBeCleared</a></li>
+<li><a href="#307">307,alarmType,fragmentToBeRemoved1,fragment2,...</a></li>
+</ul>
 
-</td>
-<td>
-
-<strong><a href="#event-templates">Event templates</a></strong>
-+ <a href="#400">400,eventType,text[,time]</a>
-+ <a href="#401">401,latitude,longitude,altitude,accuracy[,time]</a>
-+ <a href="#402">402,latitude,longitude,altitude,accuracy[,time] (incl. inv. update)</a>
-+ <a href="#407">407,eventType,fragmentToBeRemoved1,fragment2,...</a>
+<strong><a href="#event-templates">Event templates</a></strong></li>
+<ul>
+<li><a href="#400">400,eventType,text[,time]</a></li>
+<li><a href="#401">401,latitude,longitude,altitude,accuracy[,time]</a></li>
+<li><a href="#402">402,latitude,longitude,altitude,accuracy[,time] (incl. inv. update)</a></li>
+<li><a href="#407">407,eventType,fragmentToBeRemoved1,fragment2,...</a></li>
+</ul>
 
 <strong><a href="#operation-templates">Operation templates</a></strong>
-+ <a href="#500">500 (get pending)</a>
-+ <a href="#501">501,typeToSetToExecuting</a>
-+ <a href="#502">502,typeToSetToFailed,failureReason</a>
-+ <a href="#503">503,typeToSetToSuccessful,parameters</a>
-+ <a href="#504">504,operationId</a>
-+ <a href="#505">505,operationId,failureReason</a>
-+ <a href="#506">506,operationId,parameters</a>
-+ <a href="#507">507,typeToSetToExecuting,failureReason</a>
-+ <a href="#510">510,serial (restart)</a>
-+ <a href="#511">511,serial,commandToExecute</a>
-+ <a href="#513">513,serial,configurationText</a>
-+ <a href="#515">515,serial,firmwareToBeInstalled,version,url</a>
-+ <a href="#516">516,serial,softwareToBeInstalled1,version1,url1,sw2,ver2,url2,...</a>
-+ <a href="#517">517,serial,measurementToBeSent</a>
-+ <a href="#518">518,serial,relayStatusToBeSet [OPEN/CLOSED]</a>
-+ <a href="#519">519,serial,relay1Status,relay2Status,...</a>
-+ <a href="#520">520,serial (upload your current configuration)</a>
-+ <a href="#521">521,serial,url (download configuration)</a>
-+ <a href="#522">522,serial,logFileToBeSend,start,stop,searchText,maxLines</a>
-+ <a href="#523">523,serial,communicationMode (SMS/IP)</a>
-+ <a href="#524">524,serial,url,configType</a>
-+ <a href="#525">525,serial,currentFirmwareName,version,url,dependency</a>
-+ <a href="#526">526,serial,configType</a>
-+ <a href="#527">527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type</a>
-+ <a href="#528">528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...</a>
-+ <a href="#529">529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...</a>
-+ <a href="#530">530,serial,hostname,port,connectionKey</a>
-
-</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><a href="#500">500 (get pending)</a></li>
+<li><a href="#501">501,typeToSetToExecuting</a></li>
+<li><a href="#502">502,typeToSetToFailed,failureReason</a></li>
+<li><a href="#503">503,typeToSetToSuccessful,parameters</a></li>
+<li><a href="#504">504,operationId</a></li>
+<li><a href="#505">505,operationId,failureReason</a></li>
+<li><a href="#506">506,operationId,parameters</a></li>
+<li><a href="#507">507,typeToSetToExecuting,failureReason</a></li>
+<li><a href="#510">510,serial (restart)</a></li>
+<li><a href="#511">511,serial,commandToExecute</a></li>
+<li><a href="#513">513,serial,configurationText</a></li>
+<li><a href="#515">515,serial,firmwareToBeInstalled,version,url</a></li>
+<li><a href="#516">516,serial,softwareToBeInstalled1,version1,url1,sw2,ver2,url2,...</a></li>
+<li><a href="#517">517,serial,measurementToBeSent</a></li>
+<li><a href="#518">518,serial,relayStatusToBeSet [OPEN/CLOSED]</a></li>
+<li><a href="#519">519,serial,relay1Status,relay2Status,...</a></li>
+<li><a href="#520">520,serial (upload your current configuration)</a></li>
+<li><a href="#521">521,serial,url (download configuration)</a></li>
+<li><a href="#522">522,serial,logFileToBeSend,start,stop,searchText,maxLines</a></li>
+<li><a href="#523">523,serial,communicationMode (SMS/IP)</a></li>
+<li><a href="#524">524,serial,url,configType</a></li>
+<li><a href="#525">525,serial,currentFirmwareName,version,url,dependency</a></li>
+<li><a href="#526">526,serial,configType</a></li>
+<li><a href="#527">527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type</a></li>
+<li><a href="#528">528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...</a></li>
+<li><a href="#529">529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...</a></li>
+<li><a href="#530">530,serial,hostname,port,connectionKey</a></li>
+</ul>
 
 The client can receive the following templates when subscribing to <kbd>s/ds</kbd>.
 
-<table>
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td>
+<strong><a href="#subscribe-inventory">Inventory templates</a></strong>
+<ul>
+<li>[106,child1,child2,…](#106)</li>
+<li>[124,id](#124)</li>
+</ul>
 
-**[Inventory templates](#subscribe-inventory)**
-
-+ [106,child1,child2,…](#106)
-+ [124,id](#124)
-
-**[Operation templates](#subscribe-operations)**
-
-+ [510,serial (restart)](#510)
-+ [511,serial,commandToExecute](#511)
-+ [513,serial,configurationText](#513)
-+ [515,serial,firmwareToBeInstalled,version,url](#515)
-+ [516,serial,softwareToBeInstalled1,version1,url1,sw2,ver2,url2,...](#516)
-+ [517,serial,measurementToBeSent](#517)
-+ [518,serial,relayStatusToBeSet [OPEN/CLOSED]](#518)
-+ [519,serial,relay1Status,relay2Status,...](#519)
-+ [520,serial (upload your current configuration)](#520)
-+ [521,serial,url (download configuration)](#521)
-+ [522,serial,logFileToBeSend,start,stop,searchText,maxLines](#522)
-+ [523,serial,communicationMode (SMS/IP)](#523)
-+ [524,serial,url,configType](#524)
-+ [525,serial,currentFirmwareName,version,url,dependency](#525)
-+ [526,serial,configType](#526)
-+ [527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type](#527)
-+ [528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...](#528)
-+ [529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...](#529)
-+ [530,serial,hostname,port,connectionKey](#530)
-
-</td>
-</tr>
-</tbody>
-</table>
+<strong><a href="#subscribe-operations">Operation templates</a></strong>
+<ul>
+<li>[510,serial (restart)](#510)</li>
+<li>[511,serial,commandToExecute](#511)</li>
+<li>[513,serial,configurationText](#513)</li>
+<li>[515,serial,firmwareToBeInstalled,version,url](#515)</li>
+<li>[516,serial,softwareToBeInstalled1,version1,url1,sw2,ver2,url2,...](#516)</li>
+<li>[517,serial,measurementToBeSent](#517)</li>
+<li>[518,serial,relayStatusToBeSet [OPEN/CLOSED]](#518)</li>
+<li>[519,serial,relay1Status,relay2Status,...](#519)</li>
+<li>[520,serial (upload your current configuration)](#520)</li>
+<li>[521,serial,url (download configuration)](#521)</li>
+<li>[522,serial,logFileToBeSend,start,stop,searchText,maxLines](#522)</li>
+<li>[523,serial,communicationMode (SMS/IP)](#523)</li>
+<li>[524,serial,url,configType](#524)</li>
+<li>[525,serial,currentFirmwareName,version,url,dependency](#525)</li>
+<li>[526,serial,configType](#526)</li>
+<li>[527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type](#527)</li>
+<li>[528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...](#528)</li>
+<li>[529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...](#529)</li>
+<li>[530,serial,hostname,port,connectionKey](#530)</li>
+</ul>
 
 ### Automatic device creation {#automatic-device-creation}
 

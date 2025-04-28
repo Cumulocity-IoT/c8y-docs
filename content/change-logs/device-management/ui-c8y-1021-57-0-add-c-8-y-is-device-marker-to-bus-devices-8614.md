@@ -1,6 +1,8 @@
 ---
-date: ""
-title: c8y_IsDevice fragment now added to Modbus, Profibus, CANBus, and CANopen devices
+date: '2025-04-24'
+title: >-
+  c8y_IsDevice fragment now added to Modbus, Profibus, CANBus, and CANopen
+  devices
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
