@@ -803,7 +803,7 @@ For details on enabling/disabling a smart rule, see <a href="/cockpit/smart-rule
 * ​Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
 {{< /c8y-admon-info >}}
 
-### Smart rule variables {#smart-rule-variables}
+### Smart rule variables changed {#smart-rule-variables-changed}
 
 In certain rule parameters, various trigger fields can be used as variables. When a rule is triggered, the variables are replaced by the actual values of these trigger fields.
 
