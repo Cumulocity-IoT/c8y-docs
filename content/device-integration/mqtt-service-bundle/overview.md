@@ -30,7 +30,7 @@ The MQTT Service is a new MQTT endpoint implementation for {{< product-c8y-iot >
 
 The MQTT Service does not replace the existing [Core MQTT](/device-integration/mqtt/) capability of {{< product-c8y-iot >}} which supports sending device data already in the {{< product-c8y-iot >}} format directly into the {{< product-c8y-iot >}} platform.
 The new capability provided by the MQTT Service allows for easier integration of MQTT devices that cannot use the {{< product-c8y-iot >}} format.
-It also supports more flexible communication patterns between devices, applications, and the {{< product-c8y-iot >}} platform, controlled by user-proviced microservices.
+It also supports more flexible communication patterns between devices, applications, and the {{< product-c8y-iot >}} platform, controlled by user-provided microservices.
 
 This documentation does not describe the basics of MQTT communication.
 If you are unfamiliar with MQTT, we recommend you to consult one of the numerous introductions on the internet.
