@@ -1,6 +1,6 @@
 ---
 date: 2025-04-29
-title: Cumulocity Streaming Analytics will switch to a new “26.x” version
+title: Cumulocity Streaming Analytics will switch to a new “26.x” version of Apama engine
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
