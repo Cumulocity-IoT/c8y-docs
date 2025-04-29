@@ -23,33 +23,33 @@ We expect that **most applications to be unaffected**. However if you use **cust
 
 If you use Apama in a Cumulocity **custom microservice** there is less urgency, but you should plan to switch to the latest (26.x) base image at some point over the next year.
 
-## Release Changes
+#### Release Changes
 
-### Windows support
+##### Windows support
 
 Installation is no longer supported on **Windows**, and therefore the Apama plug-in for **Eclipse** is no longer provided.
 * Instead, to work with Apama applications on Windows (for example to build EPL Apps, execute the Block SDK, or build PySys tests for your application), you can use Windows Subsystem for Linux (WSL) to create a Debian instance, then install Apama using our [Debian Package Repository](https://download.cumulocity.com/Apama/Debian/).
 * For an environment to develop your EPL applications and blocks, instead of Eclipse you can use the community-maintained [Apama Extension for Visual Studio Code](https://cumulocity.com/apama/docs/latest/vscode/apama-extension-for-vscode/) (for example, using an Apama installation in WSL).
 * If you are using Windows for an automated CI/CD workflow, we advise switching to our Debian-based Docker images.
  
-### Docker base image update
+##### Docker base image update
 
 The Apama **Docker images** now use Debian 12 (Bookworm) for the base image instead of Red Hat UBI. These images can be used for both development and as a base image for custom Cumulocity microservices. The names and tags of some Docker images have changed, as has the directory where Apama is installed. If you need to install any extra packages on your image, the command line for doing so will need to be changed for Debian.
 
-### Supported operating systems changes
+##### Supported operating systems changes
 
 For users who need to install Apama onto a Linux machine without docker, the installation options have changed. Debian is now the only supported distribution for **installing Apama**, and the Apama packages must be installed from our [Debian Package Repository](https://download.cumulocity.com/Apama/Debian/) as we no longer publish .zip or .tar.gz packages. Support for installing Apama on Red Hat Enterprise Linux and Ubuntu is removed. In addition to the usual x86 packages, support for ARMv8 (64-bit) has been added and replaces ARMv7HF (32-bit).
 
-### Java upgrade
+##### Java upgrade
 
 This release of Apama comes with **Java 17** instead of Java 11. All Java code executed within the correlator is now executed with Java 17, so if you have any custom EPL plug-ins or connectivity plug-ins you should recompile them with Java 17 and test that they are still working as expected. If you use Java in a block uploaded to an apama-ctrl microservice, any required changes should be performed immediately so you are ready when the update is rolled out to SaaS environments.
 
 See online resources such as the [JDK release notes](https://www.oracle.com/java/technologies/javase/17-relnote-issues.html) for detailed information about breaking changes and new features in Java 17. Some applications may be affected by the different [locale data](https://openjdk.org/jeps/252) provided in this version of Java, or may require updates to third party library dependencies, but we expect that in most cases Apama plug-ins will continue to work without changes.
 
-### Python upgrade
+##### Python upgrade
 
 **Python** will soon be upgraded from 3.9 to a newer version (likely 3.13). We advise customers using Python to review [What’s New in Python](https://docs.python.org/3/whatsnew/index.html) to familiarise themselves with any changes that may affect their application. If Python is being used within a block uploaded to an apama-ctrl microservice, any required changes should be performed immediately so you are ready when the update is rolled out to SaaS environments.
 
-## References & Feedback
+##### References & Feedback
 
 For more information on these and other changes, please review the [Apama Change Logs](https://cumulocity.com/apama/docs/latest/change-logs/). If you have any questions, feel free to post to the [streaming-analytics-apama](https://techcommunity.cumulocity.com/tag/streaming-analytics-apama) tag on the Cumulocity Tech Community.
