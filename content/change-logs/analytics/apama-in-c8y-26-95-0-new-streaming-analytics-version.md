@@ -15,22 +15,19 @@ ticket: PAM-35184
 version: 26.95.0
 ---
 
-Over the coming weeks, Cumulocity Streaming Analytics will switch to a new “26.x” version of the Apama engine. The new release is focused around the real-world needs of Cumulocity customers, delivering a simplified and more relevant feature set. Non-Cumulocity users of Apama are expected to remain on the 10.15 release line.
+Cumulocity Streaming Analytics is switching to the new “26.x” version of the Apama engine. The 26.x release is focused around the real-world needs of Cumulocity customers, delivering a simplified and more relevant feature set. 
 
-The new version includes some installation and third party changes that may affect customers with their own custom EPL or connectivity plug-ins, as well as those who build and test analytics applications using their **own installation of Apama** (for example, on Windows).
+The new version includes some changes that may affect customers with their own custom EPL or connectivity plug-ins, as well as those who build and test analytics applications using their own installation of Apama (for example, on Windows).
 
 We expect that **most applications to be unaffected**. However if you use **custom Python or Java plug-ins in an Analytics Builder Block** that you have uploaded to the apama-ctrl microservice, it’s important to prepare for these changes immediately, so you are ready when the update is rolled out to SaaS environments over the coming weeks.
 
 If you use Apama in a Cumulocity **custom microservice** there is less urgency, but you should plan to switch to the latest (26.x) base image at some point over the next year.
 
-#### Release Changes
-
 ##### Windows support
 
-Installation is no longer supported on **Windows**, and therefore the Apama plug-in for **Eclipse** is no longer provided.
+Installation of the Apama engine is no longer supported on **Windows**, and the Apama plug-in for **Eclipse** is removed.
 * Instead, to work with Apama applications on Windows (for example to build EPL Apps, execute the Block SDK, or build PySys tests for your application), you can use Windows Subsystem for Linux (WSL) to create a Debian instance, then install Apama using our [Debian Package Repository](https://download.cumulocity.com/Apama/Debian/).
-* For an environment to develop your EPL applications and blocks, instead of Eclipse you can use the community-maintained [Apama Extension for Visual Studio Code](https://cumulocity.com/apama/docs/latest/vscode/apama-extension-for-vscode/) (for example, using an Apama installation in WSL).
-* If you are using Windows for an automated CI/CD workflow, we advise switching to our Debian-based Docker images.
+* For a development environment to build your EPL applications and blocks, instead of Eclipse you can use the community-maintained [Apama Extension for Visual Studio Code](https://cumulocity.com/apama/docs/latest/vscode/apama-extension-for-vscode/) (for example, using an Apama installation in WSL).
  
 ##### Docker base image update
 
@@ -38,7 +35,7 @@ The Apama **Docker images** now use Debian 12 (Bookworm) for the base image inst
 
 ##### Supported operating systems changes
 
-For users who need to install Apama onto a Linux machine without docker, the installation options have changed. Debian is now the only supported distribution for **installing Apama**, and the Apama packages must be installed from our [Debian Package Repository](https://download.cumulocity.com/Apama/Debian/) as we no longer publish .zip or .tar.gz packages. Support for installing Apama on Red Hat Enterprise Linux and Ubuntu is removed. In addition to the usual x86 packages, support for ARMv8 (64-bit) has been added and replaces ARMv7HF (32-bit).
+For users who need to install Apama onto a Linux machine without Docker for development purposes, the installation options have changed. Debian is now the only supported distribution for **installing Apama**, and the Apama packages must be installed from our [Debian Package Repository](https://download.cumulocity.com/Apama/Debian/) as we no longer publish .zip or .tar.gz packages. Support for installing Apama on Red Hat Enterprise Linux and Ubuntu is removed. In addition to the usual x86 packages, support for ARMv8 (64-bit) has been added and replaces ARMv7HF (32-bit).
 
 ##### Java upgrade
 
