@@ -19,7 +19,7 @@ Cumulocity Streaming Analytics is switching to the new “26.x” version of the
 
 The new version includes some changes that may affect customers with their own custom EPL or connectivity plug-ins, as well as those who build and test analytics applications using their own installation of Apama (for example, on Windows).
 
-We expect that **most applications to be unaffected**. However if you use **custom Python or Java plug-ins in an Analytics Builder Block** that you have uploaded to the apama-ctrl microservice, it’s important to prepare for these changes immediately, so you are ready when the update is rolled out to SaaS environments over the coming weeks.
+We expect **most applications to be unaffected**. However if you use **custom Python or Java plug-ins in an Analytics Builder Block** that you have uploaded to the apama-ctrl microservice, it’s important to prepare for these changes immediately, so you are ready when the update is rolled out to SaaS environments over the coming weeks.
 
 If you use Apama in a Cumulocity **custom microservice** there is less urgency, but you should plan to switch to the latest (26.x) base image at some point over the next year.
 
