@@ -8,8 +8,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     const escRegExp = (string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const escFragment = escRegExp(fragment);
     const regexId = new RegExp(`id=["']${escFragment}["']`);
-    const regexHref = new RegExp(`href=["']#${escFragment}["']`);
-    return regexId.test(htmlContent) || regexHref.test(htmlContent);
+    return regexId.test(htmlContent);
   };
 
   const expectFragmentExists = (htmlContent, fragment) => {
