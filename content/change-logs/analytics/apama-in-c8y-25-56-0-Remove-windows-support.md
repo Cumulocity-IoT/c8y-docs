@@ -1,6 +1,6 @@
 ---
 date: 
-title: Dropping native Windows support for Apama Analytics Builder Block SDK and Apama EPL Apps Tools
+title: Changes to the development workflow on Windows for Apama Analytics Builder Block SDK and Apama EPL Apps Tools
 change_type:
   - value: change-inv-3bw8e
     label: Announcement
@@ -21,5 +21,5 @@ Windows users have two options to continue using these tools:
       Set up WSL (Windows Subsystem for Linux) with a Debian distribution using [Apama Debian Package](https://download.cumulocity.com/Apama/Debian) of 26.x+. This provides a compatible and supported environment for using both the Analytics Builder Block SDK and EPL Apps Tools. 
 
   - **Use the rel/y2025 branch with Apama 10.15**:
-      Alternatively, use the rel/y2025 branch of the respective repositories along with Apama 10.15 for continued support on Windows.
+      In the short term, it is possible to continue using Apama 10.15 and the rel/y2025 branch of the respective repositories; however, customers are encouraged to transition to the new approach when possible.
 
