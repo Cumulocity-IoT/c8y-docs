@@ -34,19 +34,19 @@ The general structure common to all {{< product-c8y-iot >}} applications include
 <tbody>
 <tr>
 <td style="text-align:left"><b>Navigator</b></td>
-<td style="text-align:left">On the left you find the navigator. At the top of the navigator the name and logo of the application is displayed, indicating which application you are currently using. Below you find a list of entries leading to the various pages of the application. The entries are grouped into menus and menu items. You can collapse or expand menus in the navigator by clicking the menu name. Clicking the small arrow at the very left of the top bar will hide/or unhide the navigator. Per default, it is visible.</td>
+<td style="text-align:left">On the left you find the navigator. At the top of the navigator the name and logo of the application is displayed, indicating which application you are currently using. Below you find a list of entries leading to the various pages of the application. The entries are grouped into menus and menu items. You can collapse or expand menus in the navigator by clicking the menu name. Clicking the small arrow at the very left of the top bar hides/or unhides the navigator. Per default, it is visible.</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Page</b></td>
-<td style="text-align:left">"Page" actually refer to the main area in the application. The content provided here depends on the menu item selected in the dashboard. The structuring of the content differs from page to page. Data can for example be displayed in a list with a row for each object or you can find it being presented in a grid in which objects are represented by cards. </td>
+<td style="text-align:left">"Page" actually refer to the main area in the application. The content provided here depends on the menu item selected in the dashboard. The structuring of the content differs from page to page. Data can, for example, be displayed in a list with a row for each object or you can find it being presented in a grid in which objects are represented by cards. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Tabs</b></td>
-<td style="text-align:left">Some pages, for example the page of any particular device, are divided into several tabs, either displayed vertically or horizontally.</td>
+<td style="text-align:left">Some pages, for example, the page of any particular device, are divided into several tabs, either displayed vertically or horizontally.</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Top bar</b></td>
-<td style="text-align:left"><b>Page title</b><br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><i class="dlt-c8y-icon-search icon-20"></i> <b>Search button</b><br> Clicking the <b>Search</b> button opens a search field to enter text for a full-text search. For details, see <a href="/get-familiar-with-the-ui/gui-features/#search-and-filter-functionality" class="no-ajaxy">Search and filter functionality</a>. Not always available. <br><br><i class="dlt-c8y-icon-app-switcher icon-20"></i> <b>Application Switcher button</b><br> Clicking the <b>Application Switcher</b> button opens the <a href="#application-switcher" class="no-ajaxy">application switcher</a> which allows you to quickly switch between applications. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Right from the Application Switcher button you will find the <b>User</b> button with your username. Clicking it will open up a context menu with commands related to your account settings. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. </td>
+<td style="text-align:left"><b>Page title</b><br> At the left of the top bar the title of the active page is displayed, if any. <br><br><b>Breadcrumbs</b><br> Below the title you find the breadcrumbs, that is, the hierarchical path the user has taken to reach the current page. For example: "Devices > All devices > Device 001 > Info". <br> <br><i class="dlt-c8y-icon-search icon-20"></i> <b>Search button</b><br> Clicking the <b>Search</b> button opens a search field to enter text for a full-text search. For details, see <a href="/get-familiar-with-the-ui/gui-features/#search-and-filter-functionality" class="no-ajaxy">Search and filter functionality</a>. Not always available. <br><br><i class="dlt-c8y-icon-app-switcher icon-20"></i> <b>Application Switcher button</b><br> Clicking the <b>Application Switcher</b> button opens the <a href="#application-switcher" class="no-ajaxy">application switcher</a> which allows you to quickly switch between applications. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Right from the Application Switcher button you find the <b>User</b> button with your username. Clicking it opens a context menu with commands related to your account settings. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Top menu bar</b></td>
@@ -54,7 +54,7 @@ The general structure common to all {{< product-c8y-iot >}} applications include
 </tr>
 <tr>
 <td style="text-align:left"><b>Right drawer</b></td>
-<td style="text-align:left">Clicking the user icon at the very right of the top bar will unhide/hide the right drawer, offering access to the user settings, quick links to other applications and to relevant documentation. Per default, the right drawer is hidden.</td>
+<td style="text-align:left">Clicking the user icon at the very right of the top bar unhides/hides the right drawer, offering access to the user settings, quick links to other applications and to relevant documentation. Per default, the right drawer is hidden.</td>
 </tr>
 </tbody>
 </table>
@@ -88,7 +88,7 @@ On entering a search term into the textbox at the top of the **Search** window, 
 
 <img src="/images/users-guide/getting-started/getting-started-search-result.png" alt="Search result" style="max-width: 100%">
 
-Under **Search results**, the assets matching the search criteria are shown. To see more details click **Go to the assets table** at the bottom right. This will show the entire search results in a table format.
+Under **Search results**, the assets matching the search criteria are shown. To see more details click **Go to the assets table** at the bottom right. This shows the entire search results in a table format.
 
 The Search window only lists a limited number of matches. In case of more matches, to see the complete results you must switch to the asset table.
 
@@ -164,10 +164,10 @@ In other cases you may enter * as wildcard character to return all objects start
 cl*
 ```
 
-The list will immediately be reduced to the selected objects.
+The list is immediately reduced to the selected objects.
 
 {{< c8y-admon-important >}}
-On certain pages, the filter mechanism only searches through items shown on a page. This means that if an item is not listed on the respective page, it will not appear in the results. You must load all results first to search through all items. This behavior applies to the following pages:
+On certain pages, the filter mechanism only searches through items shown on a page. This means that if an item is not listed on the respective page, it does not appear in the results. You must load all results first to search through all items. This behavior applies to the following pages:
 
 * Device protocols
 * Firmware repository
@@ -181,10 +181,10 @@ For details on the filtering mechanism in the devices list refer to [To filter d
 
 ### Real-time behavior of the navigator {#real-time-behavior-of-the-navigator}
 
-In the navigator, changes are not updated in real time, meaning new, removed or renamed devices or groups will not be updated immediately.
+In the navigator, changes are not updated in real time, meaning new, removed or renamed devices or groups are not updated immediately.
 
-You will only see such changes in the navigator of the application, in which you have made the changes.
+You only see such changes in the navigator of the application, in which you have made the changes.
 
 **Example**
 
-If you unassign a device from a group in the Device Management application it is immediately removed from the group in the navigator of your current application. However, if you have another window open with another Device Management application, you won't see the changes, but will only see the changes after a refresh or another request (expanding a group in the navigator for example).
+If you unassign a device from a group in the Device Management application it is immediately removed from the group in the navigator of your current application. However, if you have another window open with another Device Management application, you won't see the changes, but will only see the changes after a refresh or another request (expanding a group in the navigator, for example).
