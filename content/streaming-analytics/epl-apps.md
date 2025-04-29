@@ -1,5 +1,5 @@
 ---
-title: EPL Apps
+title: EPL apps
 layout: bundle
 sector:
   - data_analytics
