@@ -15,7 +15,7 @@ ticket: PAM-35184
 version: 26.95.0
 ---
 
-Cumulocity Streaming Analytics is switching to the new “26.x” version of the Apama engine. The 26.x release is focused around the real-world needs of Cumulocity customers, delivering a simplified and more relevant feature set. 
+{{< product-c8y-iot >}} Streaming Analytics is switching to the new “26.x” version of the Apama engine. The 26.x release is focused around the real-world needs of {{< product-c8y-iot >}} customers, delivering a simplified and more relevant feature set. 
 
 The new version includes some changes that may affect customers with their own custom EPL or connectivity plug-ins, as well as those who build and test analytics applications using their own installation of Apama (for example, on Windows).
 
