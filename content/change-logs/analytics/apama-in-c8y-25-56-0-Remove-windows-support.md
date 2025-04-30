@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
-version: 26.79.0
+version: 26.97.0
 ---
 The [Apama Analytics Builder Block SDK](https://github.com/Cumulocity-IoT/apama-analytics-builder-block-sdk) and [Apama EPL Apps Tools](https://github.com/Cumulocity-IoT/apama-eplapps-tools) are no longer supported natively on Windows environments.
 
