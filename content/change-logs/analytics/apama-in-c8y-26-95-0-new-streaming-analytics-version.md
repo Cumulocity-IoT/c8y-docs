@@ -49,6 +49,6 @@ See online resources such as the [JDK release notes](https://www.oracle.com/java
 
 Python will soon be upgraded from 3.9 to a newer version (likely 3.13). We advise customers using Python to review [What’s New in Python](https://docs.python.org/3/whatsnew/index.html) to familiarize themselves with any changes that may affect their application. If Python is being used within a block uploaded to an apama-ctrl microservice, any required changes should be performed immediately so you are ready when the update is rolled out to SaaS environments.
 
-### References & Feedback
+### References & feedback
 
 For more information on these and other changes, please review the [Apama Change Logs](https://cumulocity.com/apama/docs/latest/change-logs/). If you have any questions, feel free to post to the [streaming-analytics-apama](https://techcommunity.cumulocity.com/tag/streaming-analytics-apama) tag on the {{< product-c8y-iot >}} Tech Community.
