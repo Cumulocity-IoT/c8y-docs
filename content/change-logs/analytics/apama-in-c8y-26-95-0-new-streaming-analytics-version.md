@@ -19,9 +19,9 @@ version: 26.95.0
 
 The new version includes some changes that may affect customers with their own custom EPL or connectivity plugins, as well as those who build and test analytics applications using their own installation of Apama (for example, on Windows).
 
-We expect **most applications to be unaffected**. However if you use **custom Python or Java plugins in an Analytics Builder Block** that you have uploaded to the apama-ctrl microservice, it’s important to prepare for these changes immediately, so you are ready when the update is rolled out to SaaS environments over the coming weeks.
+We expect **most applications to be unaffected**. However if you use **custom Python or Java plugins in an Analytics Builder Block** that you have uploaded to the apama-ctrl microservice, it is important to prepare for these changes immediately, so you are ready when the update is rolled out to SaaS environments over the coming weeks.
 
-If you use Apama in a {{< product-c8y-iot >}} **custom microservice** there is less urgency, but you should plan to switch to the latest (26.x) base image at some point over the next year.
+If you use Apama in a {{< product-c8y-iot >}} **custom microservice** there is less urgency, but you should plan to switch to the new (`latest` or `26.X.X`) [Apama base image](https://gallery.ecr.aws/apama) at some point over the next year.
 
 ## Release Changes
 
@@ -37,7 +37,7 @@ The Apama **Docker images** now use Debian 12 (Bookworm) for the base image inst
 
 ### Supported operating systems changes
 
-For users who need to install Apama onto a Linux machine without Docker for development purposes, the installation options have changed. Debian is now the only supported distribution for **installing Apama**, and the Apama packages must be installed from our [Debian Package Repository](https://download.cumulocity.com/Apama/Debian/) as we no longer publish .zip or .tar.gz packages. Support for installing Apama on Red Hat Enterprise Linux and Ubuntu is removed. In addition to the usual x86 packages, support for ARMv8 (64-bit) has been added and replaces ARMv7HF (32-bit).
+For users who need to install Apama onto a Linux machine without Docker for development purposes, the installation options have changed. Debian 12 (Bookworm) is now the only supported distribution for **installing Apama**, and the Apama packages must be installed from our [Debian Package Repository](https://download.cumulocity.com/Apama/Debian/) as we no longer publish .zip or .tar.gz packages. Support for installing Apama on Red Hat Enterprise Linux and Ubuntu is removed. In addition to the usual x86 packages, support for ARMv8 (64-bit) has been added and replaces ARMv7HF (32-bit).
 
 ### Java upgrade
 
