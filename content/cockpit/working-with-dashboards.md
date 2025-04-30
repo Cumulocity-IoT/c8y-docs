@@ -140,7 +140,7 @@ When a new version is created in the version history, it includes a brief descri
 An alternative way to copy a dashboard is to use the
 "dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type, see [To share a dashboard](#dashboard-template).
 
-### To export a dashboard to JSON file and import it {#to-export-a-dashboard-to-json-file-and-import-it}
+### To export a dashboard to a JSON file and import it {#to-export-a-dashboard-to-json-file-and-import-it}
 
 For more advanced users there is a feature that allows more complex operations on dashboards.
 To access it, you need to install **Dashboard details advanced tab** plugin to your Cockpit first (it is plugin with scope `self-optional`, so it has to be installed manually), then navigate to the dashboard settings and open the **Import/export** tab.
