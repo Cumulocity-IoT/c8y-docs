@@ -15,6 +15,3 @@ ticket: MTM-55712
 version: 1021.66.0
 ---
 Previously, user could access or change another user's settings. This issue has been fixed. Now only the user that is currently logged in can read/write its user preferences.
-
-
-For backwards compatibility, preferences from managed object are still read from when needed, but currentUser preferences are updated as soon as these properties are read from managed object. If user has no role to edit its own user, preferences are saved in local storage.
