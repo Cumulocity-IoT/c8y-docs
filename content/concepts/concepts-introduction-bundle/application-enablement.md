@@ -17,7 +17,7 @@ For this, {{< product-c8y-iot >}} provides many self-service customization optio
 
 3. **Real-time analytics**: The Analytics Builder application enables users to define visual [real-time rules](/streaming-analytics/analytics-builder/#using-the-model-editor) for data processing and decision-making.
 
-4. **Plug-ins and extensions**: A wide array of [plug-ins and extensions](/standard-tenant/ecosystem/#extensions) is available to enhance platform functionality.
+4. **Plugins and extensions**: A wide array of [plugins and extensions](/standard-tenant/ecosystem/#extensions) is available to enhance platform functionality.
 
 
 {{< product-c8y-iot >}} has also been designed with easy extensibility by developers in mind. This is enabled through well-documented open [APIs](https://{{< domain-c8y >}}/api/) exposing the complete platform functionality along with a [Command Line Interface (CLI)](https://goc8ycli.netlify.app/docs/introduction/) for efficient development workflows and an active [developer community]({{< c8y-tech-community-link >}}) providing a platform for knowledge sharing and problem-solving. All aspects of the platform are extensible:
