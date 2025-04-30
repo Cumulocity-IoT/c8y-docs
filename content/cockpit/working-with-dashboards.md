@@ -140,6 +140,16 @@ When a new version is created in the version history, it includes a brief descri
 An alternative way to copy a dashboard is to use the
 "dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type, see [To share a dashboard](#dashboard-template).
 
+### To export a dashboard to JSON file and import it {#to-export-a-dashboard-to-json-file-and-import-it}
+
+For more advanced users there is a feature that allows more complex operations on dashboards.
+To access it, you need to install **Dashboard details advanced tab** plugin to your Cockpit first (it is plugin with scope `self-optional`, so it has to be installed manually), then navigate to the dashboard settings and open the **Import/export** tab.
+
+It is powerful tool that allows to edit dashboard as JSON with incorporated code editor- keep in mind that it requires knowledge of `ContextDashboard` and widgets configs interaces. It also allows to export dashboard to JSON file (with some additional data that helps particular widgets in importing process, e.g. helps to suggest suitable widget device or takes care of image uploaded for widget) and then to import dashboard from JSON file. This is much more flexible approach than one described in [To copy a dashboard from one object to another](#to-copy-a-dashboard-from-one-object-to-another) as it allows to share dashboards not only between same type of assets in scope of the same tenant, but also to share dashboards between different asset types and different tenants. On the other hand it may not provide so much consistency due to lack of limitation like sharing dashboards between group and device and dashboard might need to be reviewed after import.
+
+<img src="/images/users-guide/cockpit/cockpit-dashboard-import-export.png" name="Restore dashboard state"/>
+
+
 ### To delete a dashboard {#to-delete-a-dashboard}
 
 To delete a dashboard from an object, click **More...** in the top menu bar and from the context menu select **Delete dashboard**.
