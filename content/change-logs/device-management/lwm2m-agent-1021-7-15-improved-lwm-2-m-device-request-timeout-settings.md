@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-04-24'
 title: Improved LWM2M device request timeout settings
 product_area: Device management & connectivity
 change_type:

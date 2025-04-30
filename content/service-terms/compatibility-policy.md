@@ -6,7 +6,7 @@ sector:
 aliases:
   - /concepts-introduction/
   - /concepts/compatibility-policy/
-weight: 95
+weight: 20
 ---
 
 {{< product-c8y-iot >}} provides the highest possible level of compatibility to make sure that your investments into developing solutions with {{< product-c8y-iot >}} are maintained.

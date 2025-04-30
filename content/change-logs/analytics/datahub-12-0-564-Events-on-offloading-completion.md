@@ -10,7 +10,7 @@ component:
     label: DataHub
 build_artifact:
   - value: tc-H-tuq-8Es
-    label: cdh
+    label: datahub
 version: 12.0.564
 ---
 

@@ -17,17 +17,17 @@ See also [{{< standard-tenant >}}](/glossary/s/#standard-tenant) and [{{< manage
 
 
 ### Edge Server {#edge-server}
-Edge Server is an informal term sometimes used to refer to {{< product-c8y-iot >}} Edge, a single-server variant of the {{< product-c8y-iot >}} platform, designed to run in factories on industrial PCs or local servers, that is, in the same site (“onsite”) in which the IoT assets are located. For details, see the [{{< product-c8y-iot >}} Edge documentation](/sector/edge_server/).
+Edge Server is an informal term sometimes used to refer to {{< product-c8y-iot >}} Edge, a single-server variant of the {{< product-c8y-iot >}} platform, designed to run in factories on industrial PCs or local servers, that is, in the same site (“onsite”) in which the IoT assets are located. For details, see the [{{< product-c8y-iot >}} Edge documentation](/{{< c8y-edge-version-major >}}/sector/edge_server/).
 
 See also [Thick Edge](/glossary/t/#thick-edge)
 
 
 ### Event Processing Language (EPL) {#epl}
 
-On top of {{< product-c8y-iot >}} you can use the Apama streaming analytics engine to define business operations for real-time processing. The operation logic is implemented in Apama’s Event Processing Language (EPL).
+On top of {{< product-c8y-iot >}} you can use the Apama streaming analytics engine to define business operations for real-time processing. The operation logic is implemented in [Apama’s Event Processing Language (EPL)](/streaming-analytics/epl-apps/).
 EPL covers statements, which are organized into actions and monitors. Monitor files can be edited directly from within {{< product-c8y-iot >}} using the [{{< product-c8y-iot >}} Streaming Analytics](/glossary/c/#streaming-analytics) application. Alternatively, you can install Apama on your local machine and develop your applications in an Eclipse-based development environment. You can deploy your monitor files as Apama applications to {{< product-c8y-iot >}}.
 
-For details see [Getting started > Technical concepts > Real-time processing > Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl).
+For more details see the [Apama documentation]({{< link-apama-webhelp >}}).
 
 
 ### EPL Apps {#epl-apps}
