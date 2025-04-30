@@ -33,59 +33,60 @@ The messages stored on these subscriptions can be consumed using a dedicated [Ja
 
 #### Topic restrictions {#topic-restrictions}
 
-MQTT Service does not impose any topic structure. There are just a few topic names which are reserved for historic purposes and future use, namely:
+The MQTT Service does not impose any topic structure.
+There are just a few topic names which are reserved for historic purposes and future use, namely:
 * All [SmartREST 2.0](/smartrest/smartrest-two) related topics
 * `error`
 * `devicecontrol/notifications`
 
-Other than that you are free to use any topic name which is compatible with the [MQTT specification](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718106).
-
 {{< c8y-admon-info >}}
-Wildcard topics (`+`, `#`) and system topics starting with `$` are not supported.
+Wildcard topics (`+`, `#`) and system topics starting with `$` are not currently supported.
 {{< /c8y-admon-info >}}
+
+Other than these restrictions you are free to use any topic name which is compatible with the <a href=http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718106 target=_blank>MQTT specification</a>.
 
 #### Topic limit {#topic-limit}
 
-MQTT Service has the ability to limit the total number of topics that a single tenant can create. The current default is no limit.
-When the creation of a new topic, either by creating it via the client publishing a message or subscribing to a non-existent topic, would breach the topic limit
-the delivery of the packet is prevented.
+The MQTT Service has the ability to limit the total number of topics that a single tenant can create.
+The current default is 300 topics per tenant.
+When the creation of a new topic, either by creating it via the client publishing a message or subscribing to a non-existent topic, would breach the topic limit the delivery of the packet is prevented.
 
-The different MQTT protocols provide the following feedback.
+The different MQTT protocol versions provide different feedback when the limit is exceeded.
 
 MQTT 5 clients:
 
-* Have access to the reason code and reason string describing the failure when using QoS 1 with acknowledgements,
-reason code being `QUOTA_EXCEEDED: 0x97`.
+* Have access to the reason code and reason string describing the failure when using QoS 1 with acknowledgements, where the reason code is `QUOTA_EXCEEDED: 0x97`.
 
 MQTT 3.1 and 3.1.1 clients:
 
-* Clients only have access to the reason code describing the failure when using QoS 1 with acknowledgements and only
-for the SUBSCRIBE packets, where the reason code is `0x80`.
-* For the PUBLISH packets, the client will be disconnected with no further information as per the MQTT specification.
+* Clients only have access to the reason code describing the failure when using QoS 1 with acknowledgements and only for SUBSCRIBE packets, where the reason code is `0x80`.
+* For PUBLISH packets, the client will be disconnected with no further information as per the MQTT specification.
 
 #### Error Topic {#error-topic}
 
-MQTT Service provides clients the ability to review errors through messages received by subscribing to the error topic, `$debug/$error`.
-When subscribing to the topic it will act as a per-client topic, meaning the client will only receive messages exclusively related to their client ID. For example,
-if a client was attempting to subscribe to a new topic, and the creation of the topic would exceed the topic limit, only that client would receive an error.
+The MQTT Service provides clients the ability to review errors through messages received by subscribing to the error topic, `$debug/$error`.
+When subscribing to the topic it will act as a per-client topic, meaning the client will only receive messages exclusively related to their client ID.
+For example, if a client was attempting to subscribe to a new topic, and the creation of the topic would exceed the topic limit, only that client would receive an error.
 
 According to the MQTT 3.1.1 specification, if either the server or the client encounters a protocol violation, it must close the network connection on
 which it received the control packet which caused the violation.
 
-In such instances MQTT clients must reconnect to be able to receive error messages from the error topic via the subscription. Error messages received after this reconnection
-are from the previous session. This can lead to confusion when attempting corrective actions. Therefore, we highly recommend you to build a microservice which uses
-the MQTT Service SDK to consume error messages, or use MQTT 5 for clients and make use of the reason codes feature.
+In such instances MQTT clients must reconnect to be able to receive error messages from the error topic via the subscription.
+Error messages received after this reconnection are from the previous session.
+This can lead to confusion when attempting corrective actions.
+Therefore, we highly recommend you to build a microservice which uses the MQTT Service SDK to consume error messages, or use MQTT 5 for clients and make use of the reason codes feature.
 
 #### Topic cleanup {#topic-cleanup}
 
-The MQTT service will automatically remove topics which are no longer active. Topics are recognized as inactive when there are no subscriptions and
-the internal publisher to the topic is closed. The publisher is responsible for publishing the modified MQTT service messages to the correct topic.
-The publishers live within a cache, where the publisher expires after one hour. Due to this it can take up to an hour after removing all subscriptions from a topic
-for it to be automatically deleted.
+The MQTT service will automatically remove topics which are no longer active.
+Topics are recognized as inactive when there are no subscriptions and the internal publisher to the topic is closed.
+The publisher is responsible for publishing the modified MQTT service messages to the correct topic.
+The publishers live within a cache, where the publisher expires after one hour.
+Due to this it can take up to an hour after removing all subscriptions from a topic for it to be automatically deleted.
 
 ### Payload {#payload}
 
-The original MQTT messages map bidirectionally to the MQTT Service message format which includes the original payload and additional metadata fields.
+MQTT protocol messages map bidirectionally to the internal MQTT Service message format which includes the original payload and additional metadata fields.
 Assuming Java types, the packed message structure looks as follows:
 
 `MqttServiceMessage`
@@ -111,38 +112,38 @@ The [Java Client](/device-integration/mqtt-service#java-client) contains classes
 
 #### Payload restrictions {#payload-restrictions}
 
-MQTT Service doesn't force you to use any specific payload format. 
+The MQTT Service does not impose any specific payload format. 
 All the incoming MQTT messages must meet the specification in terms of fixed and variable headers, but the payload for published messages is unrestricted.
-Just keep in mind that you will receive exactly the same set of bytes which was sent from the device in your custom microservice
-and you have to convert them to {{< product-c8y-iot >}} compatible format.
+A custom microservice will receive the exact same set of bytes that was sent by an MQTT device, and is responsible for converting these to {{< product-c8y-iot >}} compatible format.
 
 {{< c8y-admon-info >}}
-For all MQTT connections to the platform, the maximum accepted payload size is 131072 bytes (128 KiB), which includes
-both message header and body. The header size varies, but its minimum is 2 bytes.
+For all MQTT connections to the platform, the maximum accepted payload size is 131072 bytes (128 KiB), which includes both message header and body.
+The header size varies, but its minimum is 2 bytes.
 {{< /c8y-admon-info >}}
 
 ### Features {#features}
 
 #### Authentication and authorization {#authentication-and-authorization}
 
-Authentication types supported by MQTT Service are:
+The authentication types supported by the MQTT Service are:
 
 *   Username and password: The MQTT username must include the tenant ID and username in the format `<tenantID>/<username>`.
 *   Device certificates: The MQTT username must include the tenant ID in the format `<tenantID>`.
 
 #### ClientId {#client-id}
 
-The **MQTT ClientID** field identifies the connected client. **ClientID** may consist of up to 128 alphanumeric characters.
-Each client connecting to MQTT Service must have a unique client identifier, connecting a second client with the same identifier will result in the previous client's disconnection.
+The MQTT **ClientID** field identifies the connected client.
+**ClientID** may consist of up to 128 alphanumeric characters.
+Each client connecting to the MQTT Service must have a unique client identifier, connecting a second client with the same identifier will result in the previous client's disconnection.
 
 #### Quality of Service (QoS) {#quality-of-service-qos}
 
-The {{< product-c8y-iot >}} implementation supports two levels of MQTT QoS:
+The MQTT Service implementation supports two levels of MQTT QoS:
 
 * QoS 0: At most once:
-    - The client just sends the message once (fire and forget).
-    - No response from the server.
-    - No guarantee that subscribers will receive the message.
+    - The client sends the message once (fire and forget).
+    - There is no response from the server.
+    - There is no guarantee that subscribers will receive the message.
 * QoS 1: At least once:
     - The client awaits server acknowledgment for each published message.
     - The client should re-send the message if there was no acknowledgement from the server.
@@ -151,25 +152,27 @@ The {{< product-c8y-iot >}} implementation supports two levels of MQTT QoS:
 * QoS 2: Exactly once:
     - not supported
 
-For subscriptions, MQTT Service will deliver all messages in the QoS that the client defined when subscribing to the topic.
+For subscriptions, the MQTT Service will deliver messages in the QoS that the client defined when subscribing to the topic (QoS 0 or 1).
 
 #### Clean session {#clean-session}
 
-MQTT Service requires clean session to be set to "1" (true). Disabling clean session has no effect, meaning that a reconnecting client will not see any messages that it missed since the last disconnection.
+The MQTT Service **requires** the clean session flag to be set to "1" (true).
+Disabling clean session has no effect, meaning that a reconnecting client will not see any messages that it missed since the last disconnection, regardless of how it sets this flag.
 
 #### Retained flag {#retained-flag}
 
-Retained flag is ignored. Publishing data with the retained flag on the topic is allowed but has no practical difference to sending it without the flag.
+The retained flag is currently ignored.
+Publishing data with the retained flag on the topic is allowed but has no practical difference to sending it without the flag.
 
 #### Last will {#last-will}
 
 In MQTT, the "last will" is a message that is specified at connection time and that is executed when the client loses the connection. 
-Last will is fully supported by MQTT Service and like with any other publish messages you can use any unreserved topic and any payload.
+Last will is fully supported by the MQTT Service, and as with with any other publish messages you can use any unreserved topic and any payload.
 
 ### Return codes {#return-codes}
 
-MQTT Service follows the MQTT specification for server responses. For example, if invalid credentials are sent in the `CONNECT` message,
-the server response `CONNACK` message contains the `0x05` return code.
+The MQTT Service follows the MQTT specification for server responses.
+For example, if invalid credentials are sent in the `CONNECT` message, the server response `CONNACK` message contains the `0x05` return code.
 The return code can be treated similarly to REST API HTTP codes, such as 401.
 
 ### MQTT 5.0 features {#mqtt-50-features}
@@ -187,9 +190,12 @@ Moreover, {{< enterprise-tenant >}}s are not able to customize those certificate
 
 #### Device (client) certificates {#device-certificates}
 
-Using device certificates with the MQTT Service shares the same requirements as outlined in [Device certificates](/device-certificate-authentication/device-certificates#general-requirements-for-connecting-devices-with-certificates). Additionally, auto-registration must be enabled when uploading the CA certificate to the platform.
-At this time, manual device registration is not supported in the MQTT Service. Devices must be registered through the auto-registration process. For more details on auto-registration, refer to [Auto-registration](/device-certificate-authentication/device-certificates#registering-devices-using-certificates) guide.
-When connecting devices to the MQTT Service using certificates, the tenant ID must be included in the MQTT CONNECT packet in the user name field.
+Using device certificates with the MQTT Service shares the same requirements as outlined in [Device certificates](/device-certificate-authentication/device-certificates#general-requirements-for-connecting-devices-with-certificates).
+Additionally, auto-registration must be enabled when uploading the CA certificate to the platform.
+At this time, manual device registration is not supported in the MQTT Service.
+Devices must be registered through the auto-registration process.
+For more details on auto-registration, refer to [Auto-registration](/device-certificate-authentication/device-certificates#registering-devices-using-certificates) guide.
+When connecting devices to the MQTT Service using certificates, the tenant ID **must** be included in the MQTT CONNECT packet in the user name field.
 This is required to correctly identify the tenant.
 
 #### Adding and trusting CA certificate
@@ -222,7 +228,7 @@ There are further instructions regarding creating self-signed CA, intermediate, 
 
 Once the CA certificate has been uploaded and trusted in {{< product-c8y-iot >}}, devices can authenticate using client certificates signed by your trusted CA.
 To connect using any MQTT client, use the previously generated client certificate and key.
-Here's an example command using the Mosquitto MQTT client:
+This example uses the Mosquitto MQTT client:
 
 ```console
 mosquitto_pub --cafile cumulocity.com.pem -d -q 1 \
@@ -253,5 +259,6 @@ echo | openssl s_client -connect cumulocity.com:9883 -showcerts 2>/dev/null | \
     sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > cumulocity.com.pem
 ```
 {{< c8y-admon-info >}}
-{{< product-c8y-iot >}} uses certificates signed by well-known public CAs. Some clients (like Mosquitto) require explicitly providing the CA file, while others (like MQTTX) trust these certificates automatically.
+{{< product-c8y-iot >}} uses certificates signed by well-known public CAs.
+Some clients (like Mosquitto) require explicitly providing the CA file, while others (like MQTTX) trust these certificates automatically.
 {{< /c8y-admon-info >}}
