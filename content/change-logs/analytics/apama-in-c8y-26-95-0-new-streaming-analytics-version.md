@@ -17,9 +17,9 @@ version: 26.95.0
 
 {{< product-c8y-iot >}} Streaming Analytics is switching to the new “26.x” version of the Apama engine. The 26.x release is focused around the real-world needs of {{< product-c8y-iot >}} customers, delivering a simplified and more relevant feature set. 
 
-The new version includes some changes that may affect customers with their own custom EPL or connectivity plug-ins, as well as those who build and test analytics applications using their own installation of Apama (for example, on Windows).
+The new version includes some changes that may affect customers with their own custom EPL or connectivity plugins, as well as those who build and test analytics applications using their own installation of Apama (for example, on Windows).
 
-We expect **most applications to be unaffected**. However if you use **custom Python or Java plug-ins in an Analytics Builder Block** that you have uploaded to the apama-ctrl microservice, it’s important to prepare for these changes immediately, so you are ready when the update is rolled out to SaaS environments over the coming weeks.
+We expect **most applications to be unaffected**. However if you use **custom Python or Java plugins in an Analytics Builder Block** that you have uploaded to the apama-ctrl microservice, it’s important to prepare for these changes immediately, so you are ready when the update is rolled out to SaaS environments over the coming weeks.
 
 If you use Apama in a {{< product-c8y-iot >}} **custom microservice** there is less urgency, but you should plan to switch to the latest (26.x) base image at some point over the next year.
 
@@ -39,9 +39,9 @@ For users who need to install Apama onto a Linux machine without Docker for deve
 
 ##### Java upgrade
 
-This release of Apama comes with **Java 17** instead of Java 11. All Java code executed within the correlator is now executed with Java 17, so if you have any custom EPL plug-ins or connectivity plug-ins you should recompile them with Java 17 and test that they are still working as expected. If you use Java in a block uploaded to an apama-ctrl microservice, any required changes should be performed immediately so you are ready when the update is rolled out to SaaS environments.
+This release of Apama comes with **Java 17** instead of Java 11. All Java code executed within the correlator is now executed with Java 17, so if you have any custom EPL plugins or connectivity plugins you should recompile them with Java 17 and test that they are still working as expected. If you use Java in a block uploaded to an apama-ctrl microservice, any required changes should be performed immediately so you are ready when the update is rolled out to SaaS environments.
 
-See online resources such as the [JDK release notes](https://www.oracle.com/java/technologies/javase/17-relnote-issues.html) for detailed information about breaking changes and new features in Java 17. Some applications may be affected by the different [locale data](https://openjdk.org/jeps/252) provided in this version of Java, or may require updates to third party library dependencies, but we expect that in most cases Apama plug-ins will continue to work without changes.
+See online resources such as the [JDK release notes](https://www.oracle.com/java/technologies/javase/17-relnote-issues.html) for detailed information about breaking changes and new features in Java 17. Some applications may be affected by the different [locale data](https://openjdk.org/jeps/252) provided in this version of Java, or may require updates to third party library dependencies, but we expect that in most cases Apama plugins will continue to work without changes.
 
 ##### Python upgrade
 
