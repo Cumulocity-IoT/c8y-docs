@@ -45,13 +45,15 @@ Wildcard topics (`+`, `#`) and system topics starting with `$` are not currently
 
 Other than these restrictions you are free to use any topic name which is compatible with the <a href=http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718106 target=_blank>MQTT specification</a>.
 
-#### Topic limit {#topic-limit}
+#### Topic limits {#topic-limit}
 
-The MQTT Service has the ability to limit the total number of topics that a single tenant can create.
-The current default is 300 topics per tenant.
+The MQTT Service imposes several topic-related limits.
+See the [Service Quotas](/service-terms/quotas#mqtt-service) section for details of the current limits in force.
+
+There is a limit on the total number of topics that a single tenant can create.
 When the creation of a new topic, either by creating it via the client publishing a message or subscribing to a non-existent topic, would breach the topic limit the delivery of the packet is prevented.
 
-The different MQTT protocol versions provide different feedback when the limit is exceeded.
+The different MQTT protocol versions provide different feedback when this limit is exceeded.
 
 MQTT 5 clients:
 
@@ -61,6 +63,14 @@ MQTT 3.1 and 3.1.1 clients:
 
 * Clients only have access to the reason code describing the failure when using QoS 1 with acknowledgements and only for SUBSCRIBE packets, where the reason code is `0x80`.
 * For PUBLISH packets, the client will be disconnected with no further information as per the MQTT specification.
+
+In addition to the topic count, the MQTT Service also limits the size of the message backlog on each topic.
+The message backlog contains all messages that have been published on the topic but not yet received and acknowledged by all subscribers to the topic.
+When the backlog limit is reached, further attempts to publish to the topic will fail until some messages have been consumed.
+
+Each message in a topic backlog also has a time-to-live (TTL) that starts at the moment the message is published.
+When the TTL of a message expires, that messages will be deleted from the backlog regardless of whether all subscribers have received it or not.
+MQTT clients do not receive any notification that messages have been discarded from a backlog due to TTL expiry.
 
 #### Error Topic {#error-topic}
 
@@ -116,10 +126,9 @@ The MQTT Service does not impose any specific payload format.
 All the incoming MQTT messages must meet the specification in terms of fixed and variable headers, but the payload for published messages is unrestricted.
 A custom microservice will receive the exact same set of bytes that was sent by an MQTT device, and is responsible for converting these to {{< product-c8y-iot >}} compatible format.
 
-{{< c8y-admon-info >}}
-For all MQTT connections to the platform, the maximum accepted payload size is 131072 bytes (128 KiB), which includes both message header and body.
-The header size varies, but its minimum is 2 bytes.
-{{< /c8y-admon-info >}}
+The size of the MQTT payload is limited to a maximum value that includes both the message header and body.
+The size of an MQTT packet header varies, but it will be at least 2 bytes.
+See the [Service Quotas](/service-terms/quotas#mqtt-service) section for details of the current limit in force.
 
 ### Features {#features}
 

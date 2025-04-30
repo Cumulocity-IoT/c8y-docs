@@ -57,11 +57,20 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 | Quota                                                                                                                                                                                   | Type |    Value |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | -------: |
-| [MQTT message size](/device-integration/mqtt/)                                                                                                                                          | Hard |    16 KB |
-| [Notifications 2.0 message backlog](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker)              | Hard |    25 MB |
+| [MQTT message size](/device-integration/mqtt/) (Core MQTT)                                                                                                                              | Hard |    16 KB |
+| [Notifications 2.0 message backlog](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker)              | Hard |   25 MiB |
 | [Notifications 2.0 time-to-live](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker)                 | Hard | 36 hours |
-| [Microservice-based data broker message backlog](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker) | Hard |    50 MB |
+| [Microservice-based data broker message backlog](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker) | Hard |   50 MiB |
 | [Microservice-based data broker time-to-live](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker)    | Hard | 36 hours |
+
+### MQTT Service
+
+| Quota                                                                                           | Type |     Value |
+| ----------------------------------------------------------------------------------------------- | ---- | --------: |
+| [MQTT message size](/device-integration/mqtt-service/#payload-restrictions)                     | Hard |   128 KiB |
+| [Topics per tenant](/device-integration/mqtt-service/#topic-limit)                              | Hard |       300 |
+| [Per-topic message backlog](/device-integration/mqtt-service/#topic-limit)                      | Hard |    25 MiB |
+| [Per-topic time-to-live](/device-integration/mqtt-service/#topic-limit)                         | Hard |  36 hours |
 
 ### Applications and services
 
