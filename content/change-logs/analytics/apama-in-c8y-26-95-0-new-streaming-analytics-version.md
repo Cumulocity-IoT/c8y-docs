@@ -21,7 +21,7 @@ The new version includes some changes that may affect customers with their own c
 
 We expect **most applications to be unaffected**. However if you use **custom Python or Java plug-ins in an Analytics Builder Block** that you have uploaded to the apama-ctrl microservice, it’s important to prepare for these changes immediately, so you are ready when the update is rolled out to SaaS environments over the coming weeks.
 
-If you use Apama in a Cumulocity **custom microservice** there is less urgency, but you should plan to switch to the latest (26.x) base image at some point over the next year.
+If you use Apama in a {{< product-c8y-iot >}} **custom microservice** there is less urgency, but you should plan to switch to the latest (26.x) base image at some point over the next year.
 
 ##### Windows support
 
@@ -31,7 +31,7 @@ Installation of the Apama engine is no longer supported on **Windows**, and the 
  
 ##### Docker base image update
 
-The Apama **Docker images** now use Debian 12 (Bookworm) for the base image instead of Red Hat UBI. These images can be used for both development and as a base image for custom Cumulocity microservices. The names and tags of some Docker images have changed, as has the directory where Apama is installed. If you need to install any extra packages on your image, the command line for doing so will need to be changed for Debian.
+The Apama **Docker images** now use Debian 12 (Bookworm) for the base image instead of Red Hat UBI. These images can be used for both development and as a base image for custom {{< product-c8y-iot >}} microservices. The names and tags of some Docker images have changed, as has the directory where Apama is installed. If you need to install any extra packages on your image, the command line for doing so will need to be changed for Debian.
 
 ##### Supported operating systems changes
 
@@ -49,4 +49,4 @@ See online resources such as the [JDK release notes](https://www.oracle.com/java
 
 ##### References & Feedback
 
-For more information on these and other changes, please review the [Apama Change Logs](https://cumulocity.com/apama/docs/latest/change-logs/). If you have any questions, feel free to post to the [streaming-analytics-apama](https://techcommunity.cumulocity.com/tag/streaming-analytics-apama) tag on the Cumulocity Tech Community.
+For more information on these and other changes, please review the [Apama Change Logs](https://cumulocity.com/apama/docs/latest/change-logs/). If you have any questions, feel free to post to the [streaming-analytics-apama](https://techcommunity.cumulocity.com/tag/streaming-analytics-apama) tag on the {{< product-c8y-iot >}} Tech Community.
