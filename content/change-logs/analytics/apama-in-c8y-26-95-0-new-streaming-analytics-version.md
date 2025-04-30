@@ -21,7 +21,7 @@ The new version includes some changes that may affect customers with their own c
 
 We expect **most applications to be unaffected**. However if you use **custom Python or Java plugins in an Analytics Builder Block** that you have uploaded to the apama-ctrl microservice, it’s important to prepare for these changes immediately, so you are ready when the update is rolled out to SaaS environments over the coming weeks.
 
-If you use Apama in a Cumulocity **custom microservice** there is less urgency, but you should plan to switch to the latest (26.x) base image at some point over the next year.
+If you use Apama in a {{< product-c8y-iot >}} **custom microservice** there is less urgency, but you should plan to switch to the latest (26.x) base image at some point over the next year.
 
 ## Release Changes
 
