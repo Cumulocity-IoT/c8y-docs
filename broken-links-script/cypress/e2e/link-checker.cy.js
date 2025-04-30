@@ -68,7 +68,6 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         }
       }
       
-
       else if (isApiPage) {
         cy.visit(url, { timeout: 20000 });
 
@@ -77,20 +76,50 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         }
       }
 
+      else if (url.includes('github.com')) {
+        cy.visit(url, { timeout: 20000 });
+      
+        if (fragment) {
+          const normalizedFragment = fragment.toLowerCase().replace(/[^\w\-]+/g, '-').replace(/^-+|-+$/g, '');
+          cy.document().then((doc) => {
+            const anchorExists = Array.from(doc.querySelectorAll('a'))
+              .some(a => a.getAttribute('href') === `#${normalizedFragment}`);
+            
+            expect(anchorExists, `Fragment "#${normalizedFragment}" should exist in href attribute of an <a> tag`).to.be.true;
+            const allFragments = Array.from(doc.querySelectorAll('a'))
+              .map(a => a.getAttribute('href'))
+              .filter(href => href && href.startsWith('#'));
+            cy.log(`Available fragments on page:\n${allFragments.join('\n')}`);
+          });
+        }
+      }
+    
       else if (fragment) {
-        const baseUrl = url.split('#')[0];
-        cy.request({ url: baseUrl, timeout: 10000 }).then((response) => {
-          expect(response.status).to.equal(200);
-          expectFragmentExists(response.body, fragment);
+        cy.visit(url, { timeout: 20000 });
+      
+        cy.document().then((doc) => {
+          const escRegExp = (string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const escFragment = escRegExp(fragment);
+          const regexId = new RegExp(`id=["']${escFragment}["']`);
+      
+          const html = doc.documentElement.innerHTML;
+          const found = regexId.test(html);
+      
+          expect(found, `Fragment "${fragment}" should exist in HTML as an id`).to.be.true;
+      
+          // Optional: log all available IDs
+          const ids = Array.from(doc.querySelectorAll('[id]')).map(el => el.id);
+          cy.log(`Available IDs:\n${ids.join('\n')}`);
         });
       }
-
+      
       else {
-        cy.request({ url, timeout: 10000 }).then((response) => {
-          expect(response.status).to.equal(200);
-        });
+        cy.visit(url, { timeout: 20000 });
+      
+        // Optional: confirm page is not blank or 404
+        cy.document().its('body').should('not.be.empty');
       }
-
+      
       completedTests++;
     });
   });
