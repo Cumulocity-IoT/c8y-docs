@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-55712
 version: 1021.66.0
 ---
-Previously, user could overwrite another user preferences because preferences were stored in managed object marked with this user name. Due to database limitation, user name with "." (dot) has dot transformed to "__" (double underscore) for saving and accessing preferences, therefore it could lead to conflict with similar user with "__" in its name.
+Previously, user could access or change another user's settings. This issue has been fixed. Now only the user that is currently logged in can read/write its user preferences.
 
 With new approach, user preferences are saved in current user object customProperties ("/user/currentUser") which ensures that only user that is currently logged in has access to read and write preferences of its own user.
 
