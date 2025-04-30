@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-04-24'
 title: Last occurrence of an alarm now properly shown in alarm details
 product_area: Application enablement & solutions
 change_type:
