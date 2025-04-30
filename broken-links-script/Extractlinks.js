@@ -104,19 +104,6 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
         linkMap[resolvedLink].add(relativePath);
       }
     });
-
-    // Find header anchors
-    const headerAnchorMatches = [...content.matchAll(/^#{1,6}.*\{#([^}]+)\}/gm)];
-    headerAnchorMatches.forEach(match => {
-      const anchor = "#" + match[1];
-      const resolvedAnchorLink = resolveFullUrl(anchor, relativePath, content);
-      if (resolvedAnchorLink) {
-        if (!linkMap[resolvedAnchorLink]) {
-          linkMap[resolvedAnchorLink] = new Set();
-        }
-        linkMap[resolvedAnchorLink].add(relativePath);
-      }
-    });
   });
 
   // Convert the map into an array of objects.
