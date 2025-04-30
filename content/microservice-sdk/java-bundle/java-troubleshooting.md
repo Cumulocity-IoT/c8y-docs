@@ -48,9 +48,9 @@ This error occurs due to a bug in particular Eclipse versions. As a workaround, 
 
 ##### The microservice or application won't start {#the-microservice-or-application-wont-start}
 
-Verify that all required plug-ins are checked in your launch configuration. Go to **Run** > **Run Configurations** and select the **OSGi Framework** launch configuration. Click **Select All** and try running it again.
+Verify that all required plugins are checked in your launch configuration. Go to **Run** > **Run Configurations** and select the **OSGi Framework** launch configuration. Click **Select All** and try running it again.
 
-Check if the required plug-ins are started. While the application or microservice is running, type "ss" into the console and hit the return key. All listed plug-ins should be either in the ACTIVE or RESOLVED state.
+Check if the required plugins are started. While the application or microservice is running, type "ss" into the console and hit the return key. All listed plugins should be either in the ACTIVE or RESOLVED state.
 
 Check if you are using the correct target platform. Go to the **Target Platform** page in the preferences and check if "{{< company-c8y >}} runtime" is checked.
 
