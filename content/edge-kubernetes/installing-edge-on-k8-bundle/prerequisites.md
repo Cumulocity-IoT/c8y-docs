@@ -7,7 +7,7 @@ layout: redirect
 |<div style="width:140px">Item</div>|Details|
 |:---|:---|
 |Hardware|CPU: 6 cores<br>RAM: 10 GB<br>CPU Architecture: x86-64 <p>An additional **2 CPU cores** and **4 GB RAM** are required if the {{< product-c8y-iot >}} Messaging Service is enabled, which is required for using the microservice-based data broker and Notifications 2.0. <br><br>**Info:** If you plan to install {{< product-c8y-iot >}} DataHub Edge, ensure your system meets the additional resource requirements outlined in the [DataHub Edge prerequisites](/datahub/setting-up-datahub-edge-on-k8s/#prerequisites).<br><br>**Info:** These are the minimum system requirements for deploying Edge. If a custom microservice requires additional resources, you must allocate them on top of the minimum requirements. For example, if a microservice needs 2 CPU cores and 4 GB RAM, the Kubernetes node must have an additional 2 CPU cores and 4 GB RAM. <br><br>**Important:** MongoDB requires a CPU that supports AVX instructions. Ensure that the CPU type of the Kubernetes node supports AVX instructions. Use the command `lscpu` to check whether the CPU supports AVX instructions.|
-|Kubernetes|Version 1.25.x has been tested (with potential compatibility for subsequent versions) and is supported across the following platforms:<p style="margin: 0; padding-left: 2em;">- [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation). To enable the proper functioning of the Edge operator on K3s, you must install K3s with the following configuration options. For more information, see [Special instructions for K3s](/edge-kubernetes/installing-edge-on-k8/#special-instructions-for-k3s). <p style="margin: 0; padding-left: 2em;">- [Kubernetes (K8s)](https://kubernetes.io/docs/setup/)<p style="margin: 0; padding-left: 2em;">- [Amazon Elastic Kubernetes Service (EKS)](https://docs.aws.amazon.com/eks/latest/userguide/create-cluster.html)<p style="margin: 0; padding-left: 2em;">- [Microsoft Azure Kubernetes Service (AKS)](https://learn.microsoft.com/en-us/azure/aks/learn/quick-kubernetes-deploy-portal?tabs=azure-cli) <p><p>**Info:** Edge on Kubernetes has undergone testing on the Kubernetes platforms mentioned above, using the Containerd, CRI-O, and Docker container runtimes. {{< c8y-admon-important >}} Edge on Kubernetes is tested and supported on single-node Kubernetes clusters. {{< /c8y-admon-important >}}|
+|Kubernetes| Edge on Kubernetes is tested and supported on Kubernetes versions 1.30.x, 1.31.x, and 1.32.x, with potential compatibility for future versions across the following platforms:<p style="margin: 0; padding-left: 2em;">- [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation). To ensure proper operation of the Edge on K3s, you must install K3s with specific configuration options. See [Special instructions for K3s](/edge-kubernetes/installing-edge-on-k8/#special-instructions-for-k3s) for more details. <p style="margin: 0; padding-left: 2em;">- [Kubernetes (K8s)](https://kubernetes.io/docs/setup/)<p style="margin: 0; padding-left: 2em;">- [Amazon Elastic Kubernetes Service (EKS)](https://docs.aws.amazon.com/eks/latest/userguide/create-cluster.html)<p style="margin: 0; padding-left: 2em;">- [Microsoft Azure Kubernetes Service (AKS)](https://learn.microsoft.com/en-us/azure/aks/learn/quick-kubernetes-deploy-portal?tabs=azure-cli) {{< c8y-admon-important >}} Edge on Kubernetes is tested and supported on single-node Kubernetes clusters. {{< /c8y-admon-important >}}|
 |Helm version 3.x|Refer to [Installing Helm](https://helm.sh/docs/intro/install/) for the installation instructions.|
 |Disk space|100 GB <p>An additional **15 GB** is required for Pulsar’s persistent message storage if the {{< product-c8y-iot >}} Messaging Service is enabled, which is required for using the microservice-based data broker and Notifications 2.0. <br><br>**Info:** If you plan to install {{< product-c8y-iot >}} DataHub Edge, ensure your system meets the additional resource requirements outlined in the [DataHub Edge prerequisites](/datahub/setting-up-datahub-edge-on-k8s/#prerequisites). <p>For more information about configuring the storage, see [Configuring storage](/edge-kubernetes/installing-edge-on-k8/#configuring-storage).|
 |Edge license file|To request the license file for Edge, [contact product support](/additional-resources/contacting-support/)<br>In the email, you must include <p style="margin: 0; padding-left: 2em;">- Your company name, under which the license has been bought <p style="margin: 0; padding-left: 2em;">- The domain name (for example, myown.iot.com), where Edge will be reachable</p><br>For more information, see [Domain name validation for Edge license key generation](/edge/edge-installation/#domain-name-validation-for-edge-license-key-generation).|
@@ -17,13 +17,14 @@ layout: redirect
 
 ### Special instructions for K3s {#special-instructions-for-k3s}
 
-Make configuration changes to your operating system to work with K3S as per [Requirements](https://docs.k3s.io/installation/requirements#operating-systems). To enable the proper functioning of the Edge operator on K3s, you must install K3s with specific configuration options.
+Make configuration changes to your operating system to work with K3s as per [Requirements](https://docs.k3s.io/installation/requirements#operating-systems). To enable the proper functioning of the Edge operator on K3s, you must install K3s with specific configuration options.
 
-Run the command below to install Kubernetes version 1.25.13:
+Run the command below to install Kubernetes version 1.32.3:
 
 ```shell
 USER_NAME=$(whoami)
 USER_HOME=$(eval echo ~${USER_NAME})
+K3S_VERSION=v1.32.3+k3s1
 sudo sh -c '
    touch /etc/sysctl.d/90-kubelet.conf  && \
    sed -i "/^vm\.panic_on_oom=/d; /^vm\.overcommit_memory=/d; /^kernel\.panic=/d; /^kernel\.panic_on_oops=/d" /etc/sysctl.d/90-kubelet.conf && \
@@ -31,7 +32,7 @@ sudo sh -c '
 
    sysctl -p /etc/sysctl.d/90-kubelet.conf && \
 
-   curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.25.13+k3s1 sh -s - \
+   curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=${K3S_VERSION} sh -s - \
       --write-kubeconfig-mode 644 \
       --disable=traefik \
       --protect-kernel-defaults true \
@@ -42,10 +43,6 @@ sudo sh -c '
    chmod 600 '"$USER_HOME"'/.kube/config && \
 
    printf "\e[32mSuccessfully installed k3s!\e[0m\n" && \
-
-    /usr/local/bin/k3s crictl pull rancher/klipper-lb:v0.4.4 && \
-    /usr/local/bin/k3s crictl pull rancher/mirrored-metrics-server:v0.6.3 && \
-    /usr/local/bin/k3s crictl pull rancher/local-path-provisioner:v0.0.24
 '
 ```
 
