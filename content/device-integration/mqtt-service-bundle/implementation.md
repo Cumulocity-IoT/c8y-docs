@@ -201,9 +201,6 @@ Moreover, {{< enterprise-tenant >}}s are not able to customize those certificate
 
 Using device certificates with the MQTT Service shares the same requirements as outlined in [Device certificates](/device-certificate-authentication/device-certificates#general-requirements-for-connecting-devices-with-certificates).
 Additionally, auto-registration must be enabled when uploading the CA certificate to the platform.
-At this time, manual device registration is not supported in the MQTT Service.
-Devices must be registered through the auto-registration process.
-For more details on auto-registration, refer to [Auto-registration](/device-certificate-authentication/device-certificates#registering-devices-using-certificates) guide.
 When connecting devices to the MQTT Service using certificates, the tenant ID **must** be included in the MQTT CONNECT packet in the user name field.
 This is required to correctly identify the tenant.
 
