@@ -12,7 +12,7 @@ For this example, assume that Edge is deployed using the [c8yedge-sample.yaml](/
 
 {{< c8y-admon-info >}}
 To upgrade your Kubernetes version, follow the official upgrade instructions for your platform. If you're using K3s, refer to the [K3 upgrade guide](https://docs.k3s.io/upgrades).
-For supported Kubernetes versions, see the [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
+<br>For supported Kubernetes versions, see the [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
 {{< /c8y-admon-info >}}
 
 ### Upgrading from Edge version 10.18

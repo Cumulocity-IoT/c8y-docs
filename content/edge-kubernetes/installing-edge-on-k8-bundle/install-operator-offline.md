@@ -36,9 +36,9 @@ PRIVATE_REGISTRY_IP_ADDRESS="<PRIVATE-REGISTRY-IP-ADDRESS>" # Change it with you
 # The [fallthrough] directive allows the query to continue to the next server block if the name doesn’t match
 COREDNS_CUSTOM_CONFIGMAP_NAME="coredns-custom"
 KUBE_SYSTEM_NAMESPACE="kube-system"
-KEY_NAME="local-registry.server"
+KEY_NAME="private-registry.server"
 KEY_VALUE=$(cat <<EOF
-${LOCAL_REGISTRY_HOST}:53 {
+${PRIVATE_REGISTRY_HOSTNAME}:53 {
   hosts {
     ${PRIVATE_REGISTRY_IP_ADDRESS} ${PRIVATE_REGISTRY_HOSTNAME}
     fallthrough
