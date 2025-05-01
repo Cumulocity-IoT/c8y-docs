@@ -22,10 +22,11 @@ Make configuration changes to your operating system to work with K3s as per [Req
 Run the command below to install Kubernetes version 1.32.3:
 
 ```shell
-USER_NAME=$(whoami)
-USER_HOME=$(eval echo ~${USER_NAME})
-K3S_VERSION=v1.32.3+k3s1
 sudo sh -c '
+   USER_NAME=$(whoami)
+   USER_HOME=$(eval echo ~${USER_NAME})
+   K3S_VERSION=v1.32.3+k3s1
+
    touch /etc/sysctl.d/90-kubelet.conf  && \
    sed -i "/^vm\.panic_on_oom=/d; /^vm\.overcommit_memory=/d; /^kernel\.panic=/d; /^kernel\.panic_on_oops=/d" /etc/sysctl.d/90-kubelet.conf && \
    printf "vm.panic_on_oom=0\nvm.overcommit_memory=1\nkernel.panic=10\nkernel.panic_on_oops=1\n" | tee -a /etc/sysctl.d/90-kubelet.conf && \
