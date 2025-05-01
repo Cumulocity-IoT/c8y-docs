@@ -4,7 +4,7 @@ title: Installing the Edge operator
 layout: redirect
 ---
 
-To begin, create a new single-node Kubernetes cluster with the Kubernetes distribution of your choice, and configure `kubectl` to use that cluster. See [Prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) for the supported Kubernetes distributions and versions.
+To begin, create a new single-node Kubernetes cluster with the Kubernetes version and the platform of your choice, and configure `kubectl` to use that cluster. See the [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) for the supported Kubernetes versions and platforms.
 
 A script to install the Edge operator is available at [c8yedge-operator-install.sh](/files/edge-k8s/c8yedge-operator-install.sh).
 

@@ -8,7 +8,7 @@ sector:
 
 This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation) cluster with default options. For detailed instructions, see [Installing Edge on Kubernetes](/edge-kubernetes/installing-edge-on-k8/).
 
-1. Verify that your hardware meets the requirements specified in [Prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
+1. Verify that your hardware meets the requirements specified in the [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
 
 2. Make configuration changes to your operating system to work with K3s as per [Requirements](https://docs.k3s.io/installation/requirements#operating-systems).
 
