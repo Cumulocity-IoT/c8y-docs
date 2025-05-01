@@ -35,7 +35,7 @@ This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s
       chown '"$USER_NAME:"' '"$USER_HOME"'/.kube/config && \
       chmod 600 '"$USER_HOME"'/.kube/config && \
 
-      printf "\e[32mSuccessfully installed k3s!\e[0m\n" && \
+      printf "\e[32mSuccessfully installed k3s!\e[0m\n"
    '
    ```
 

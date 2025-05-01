@@ -42,7 +42,7 @@ sudo sh -c '
    chown '"$USER_NAME:"' '"$USER_HOME"'/.kube/config && \
    chmod 600 '"$USER_HOME"'/.kube/config && \
 
-   printf "\e[32mSuccessfully installed k3s!\e[0m\n" && \
+   printf "\e[32mSuccessfully installed k3s!\e[0m\n"
 '
 ```
 
@@ -53,6 +53,6 @@ For configuration options, see [K3s configuration options](https://docs.k3s.io/i
 
 {{< c8y-admon-info >}}
 
-To install a later version of Kubernetes, update the environment variable `INSTALL_K3S_VERSION`.
+To install a later version of Kubernetes, update the variable `K3S_VERSION` in the script.
 
 {{< /c8y-admon-info >}}
