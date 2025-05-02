@@ -4,7 +4,7 @@ title: Installing Edge
 layout: redirect
 ---
 
-Before you start the installation, ensure that you have fulfilled the [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) and configured the storage as described in [Configuring storage](/edge-kubernetes/installing-edge-on-k8/#configuring-storage).
+Before you start the installation, ensure that you have fulfilled [Prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) and configured the storage as described in [Configuring storage](/edge-kubernetes/installing-edge-on-k8/#configuring-storage).
 
 Download and edit the Edge CR ([c8yedge.yaml](/files/edge-k8s/c8yedge.yaml)), before applying it to your Kubernetes cluster by running the command below:
 
