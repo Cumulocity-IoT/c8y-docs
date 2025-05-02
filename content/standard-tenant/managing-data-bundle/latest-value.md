@@ -20,7 +20,9 @@ PUT /tenant/options/measurement.series.latestvalue
   // or "*":"" to enable all
 }
 ```
-where the key is a filter of measurement series that must be persistent and its value must always be an empty string (left for a future use case).
+where the key is a filter of measurement series that must be persistent and its value must always be an empty string (left for a future use case).  
+
+**⚠️ Important:** Property names used for fragment and series must not contain whitespaces nor the special characters ``` $ & + , / : ; = ? @ " < > # % { } | \ ^ ~ [ ] ` ```. This is necessary to ensure the new tenant option is processed correctly and saved successfully.
 
 ### How it works
 
