@@ -18,7 +18,7 @@ This feature is in Public Preview, that is, it is not enabled by default and may
 
 To determine whether the feature is available for your tenant, open the Administration application and navigate to Ecosystem → Microservices.
 If you see the `Mqtt-service` microservice subscription for your tenant, the feature is already available.
-Otherwise, please contact [Global Support](/additional-resources/contacting-support/) to request the microservice subscription for your tenant.
+Otherwise, please contact [product support](/additional-resources/contacting-support/) to request the microservice subscription for your tenant.
 {{< /c8y-admon-preview >}}
 
 ![MQTT Service subscription](/images/mqtt-service/admin-mqtt-service-subscription.png)
