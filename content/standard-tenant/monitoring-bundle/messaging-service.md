@@ -15,6 +15,8 @@ helpcontent:
 
 {{< c8y-admon-preview >}}
 This feature is in Public Preview, that is, it is not enabled by default and maybe subject to change in the future.
+
+See the [Feature toggles API](https://{{< domain-c8y >}}/api/core/#tag/Feature-toggles-API) for more details on how to enable it.
 {{< /c8y-admon-preview >}}
 
 The **Messaging Service** is a [publish/subscribe messaging](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) and message streaming component embedded in the {{< product-c8y-iot >}} platform.
@@ -94,7 +96,7 @@ However, once the subscriber is created it will not be deleted even if the WebSo
 That is, the Messaging Service will collect and persist the messages under the given topic until either they are consumed, they reach the configured time-to-live (TTL) interval, or the [subscriber is explicitly unsubscribed](https://{{< domain-c8y >}}/api/core/#operation/postNotificationTokenUnsubscribeResource) from the topic.
 Refer to the [consumer lifecycle](https://{{< domain-c8y >}}/api/core/#section/Overview/Consumer-lifecycle) for more details.
 
-#### Clearing the backlog {#notifications-clearing-the-backlog}
+#### Clear the backlog {#notifications-clear-the-backlog}
 
 When the Messaging Service backlog is full, no new messages can be added to the backlog until it is cleared.
 REST requests that are also supposed to produce a notification will fail with a 500 status code and a message saying that the backlog quota has been reached.
@@ -140,7 +142,7 @@ When working with the [MQTT Service SDK]({{< link-c8y-github >}}/cumulocity-clie
 
 Subscribers created by MQTT clients are deleted automatically once the client disconnects, so it is unlikely that they will persist for a long time and require manual cleanup.
 
-#### Clearing the backlog {#mqtt-service-clearing-the-backlog}
+#### Clear the backlog {#mqtt-service-clear-the-backlog}
 
 When the Messaging Service backlog is full, no new messages can be added to the backlog until it is cleared.
 In this situation, client behavior depends on the MQTT protocol version used:
