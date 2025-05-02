@@ -228,7 +228,7 @@ openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out c
 cat client.crt ca.crt > client-chain.pem
 ```
 
-There are further instructions regarding creating self-signed CA, intermediate, and device certificates certificates under [Generating and signing certificates](/device-certificate-authentication/device-certificates#generating-and-signing-certificates).
+If you have more advanced requirements regarding certificate creation, see [Generating and signing certificates](/device-certificate-authentication/device-certificates#generating-and-signing-certificates).
 
 #### Using certificates
 
