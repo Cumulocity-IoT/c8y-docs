@@ -19,20 +19,24 @@ To work with the MQTT Service, the following requirements must be met:
 No additional steps are required to enable the MQTT Service for an individual tenant.
 {{< /c8y-admon-req >}}
 
-The MQTT Service is a new MQTT endpoint implementation for {{< product-c8y-iot >}} which provides the following benefits:
+The MQTT Service is a new MQTT endpoint implementation for {{< product-c8y-iot >}} that provides the following benefits:
 
-* Support for sending and receiving arbitrary payloads on any MQTT topic.
-  Note that the topics that are used by the existing {{< product-c8y-iot >}} [Core MQTT](/device-integration/mqtt/) implementation cannot be used with the MQTT Service.
-* Support for user-provided microservices that can send and receive messages on MQTT topics.
+* Sending and receiving arbitrary payloads on any MQTT topic.
+  Note that the topics used by the {{< product-c8y-iot >}} [Core MQTT](/device-integration/mqtt/) implementation currently cannot be used with the MQTT Service.
+* User-provided microservices can send and receive messages on MQTT topics, and map messages to and from the {{< product-c8y-iot >}} data model.
   The typical use case for such a microservice is to map between MQTT device payloads, and the {{< product-c8y-iot >}} REST and Notifications 2.0 APIs.
 * Multi-tenancy support.
   A single endpoint serves multiple tenants and tenants are completely isolated from each other.
-* TLS support.
-* Authentication using client X.509 certificates.
+* Bi-directional TLS support.
+  All MQTT traffic is encrypted and clients can authenticate using X.509 certificates.
 
-The MQTT Service does not replace the existing [Core MQTT](/device-integration/mqtt/) capability of {{< product-c8y-iot >}} which supports sending device data already in the {{< product-c8y-iot >}} format directly into the {{< product-c8y-iot >}} platform.
-The new capability provided by the MQTT Service allows for easier integration of MQTT devices that cannot use the {{< product-c8y-iot >}} format.
+The MQTT Service does not replace the existing [Core MQTT](/device-integration/mqtt/) capability of {{< product-c8y-iot >}} that supports sending device data already in the {{< product-c8y-iot >}} domain model directly into the platform.
+The new capability provided by the MQTT Service allows for easier integration of MQTT devices that cannot use the {{< product-c8y-iot >}} domain model.
 It also supports more flexible communication patterns between devices, applications, and the {{< product-c8y-iot >}} platform, controlled by user-provided microservices.
+
+Note that in the public preview, MQTT Service clients *within a tenant* are **not** isolated from one another.
+That is, an MQTT client can subscribe to topic(s) that another client is publishing on, and receive the messages sent by that client.
+Full device isolation will be available in the first General Availability release of the MQTT Service.
 
 This documentation does not describe the basics of MQTT communication.
 If you are unfamiliar with MQTT, we recommend you to consult one of the numerous introductions on the internet.

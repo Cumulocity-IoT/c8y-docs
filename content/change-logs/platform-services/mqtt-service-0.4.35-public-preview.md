@@ -26,7 +26,7 @@ Otherwise, please contact [product support](/additional-resources/contacting-sup
 The {{< product-c8y-iot >}} MQTT Service is a new MQTT endpoint implementation for {{< product-c8y-iot >}} that provides the following benefits:
 
 * Sending and receiving arbitrary payloads on any MQTT topic.
-* User-provided microservices can send and receive messages on MQTT topics, and map message to and from the {{< product-c8y-iot >}} data model.
+* User-provided microservices can send and receive messages on MQTT topics, and map messages to and from the {{< product-c8y-iot >}} data model.
 * Multi-tenant support with full tenant isolation.
 * Bi-directional TLS including authentication with X.509 client certificates.
 
@@ -34,7 +34,7 @@ The MQTT Service does not replace the existing [Core MQTT](/device-integration/m
 The new capability provided by the MQTT Service allows for easier integration of MQTT devices that cannot use the {{< product-c8y-iot >}} domain model.
 It also supports more flexible communication patterns between devices, applications, and the {{< product-c8y-iot >}} platform, controlled by user-provided microservices.
 
-Please note that in the public preview, MQTT Service clients *within a tenant* are **not** isolated from one another.
+Note that in the public preview, MQTT Service clients *within a tenant* are **not** isolated from one another.
 That is, an MQTT client can subscribe to topic(s) that another client is publishing on, and receive the messages sent by that client.
 Full device isolation will be available in the first General Availability release of the MQTT Service.
 
