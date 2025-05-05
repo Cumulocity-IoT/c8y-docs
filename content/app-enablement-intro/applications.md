@@ -1,9 +1,9 @@
 ---
 title: Application enablement
 layout: bundle
-weight: 40
+weight: 10
 sector:
-  - getting_started
+  - app_enablement
 ---
 
 {{< product-c8y-iot >}} provides a comprehensive application enablement platform that combines no-code tools with advanced development capabilities, enabling users to build and deploy IoT solutions that are tailored to business requirements.
