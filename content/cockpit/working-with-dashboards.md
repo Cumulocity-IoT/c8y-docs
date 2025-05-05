@@ -143,7 +143,7 @@ An alternative way to copy a dashboard is to use the
 ### To export a dashboard to a JSON file and import it {#to-export-a-dashboard-to-json-file-and-import-it}
 
 For more advanced users there is a feature that allows more complex operations on dashboards.
-To access it, you need to install **Dashboard details advanced tab** plugin to your Cockpit first (it is plugin with scope `self-optional`, so it has to be installed manually), then navigate to the dashboard settings and open the **Import/export** tab.
+To access it, you must first install the "Dashboard details advanced tab" plugin to your Cockpit. This is a plugin with the scope `self-optional`, so it has to be installed manually. Then navigate to the dashboard settings and open the **Import/export** tab.
 
 It is powerful tool that allows to edit dashboard as JSON with incorporated code editor- keep in mind that it requires knowledge of `ContextDashboard` and widgets configs interaces. It also allows to export dashboard to JSON file (with some additional data that helps particular widgets in importing process, e.g. helps to suggest suitable widget device or takes care of image uploaded for widget) and then to import dashboard from JSON file. This is much more flexible approach than one described in [To copy a dashboard from one object to another](#to-copy-a-dashboard-from-one-object-to-another) as it allows to share dashboards not only between same type of assets in scope of the same tenant, but also to share dashboards between different asset types and different tenants. On the other hand it may not provide so much consistency due to lack of limitation like sharing dashboards between group and device and dashboard might need to be reviewed after import.
 
