@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Improve the messaging shown to users in the confirmation dialog when deleting assets."
+title: "Improved the message in the confirmation dialog when deleting assets
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
