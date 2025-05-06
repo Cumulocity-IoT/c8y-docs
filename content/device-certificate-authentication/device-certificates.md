@@ -22,7 +22,7 @@ Devices can communicate using the [Core MQTT interface](/device-integration/mqtt
 
 **MQTT Service**
 
-Devices can communicate using the [MQTT Service](/device-integration/mqtt-service/). The {{< product-c8y-iot >}} platform expects devices to connect using SSL on port 8883.
+Devices can communicate using the [MQTT Service](/device-integration/mqtt-service/). The {{< product-c8y-iot >}} platform expects devices to connect using SSL on port 9883.
 
 **LWM2M**
 
