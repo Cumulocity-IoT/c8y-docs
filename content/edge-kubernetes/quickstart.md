@@ -10,21 +10,23 @@ This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s
 
 1. Verify that your hardware meets the requirements specified in [Prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
 
-2. Make configuration changes to your operating system to work with K3S as per [Requirements](https://docs.k3s.io/installation/requirements#operating-systems).
+2. Make configuration changes to your operating system to work with K3s as per [Requirements](https://docs.k3s.io/installation/requirements#operating-systems).
 
 3. Run the command below to install K3s.
 
    ```shell
-   USER_NAME=$(whoami)
-   USER_HOME=$(eval echo ~${USER_NAME})
    sudo sh -c '
+      USER_NAME=$(whoami)
+      USER_HOME=$(eval echo ~${USER_NAME})
+      K3S_VERSION=v1.32.3+k3s1
+
       touch /etc/sysctl.d/90-kubelet.conf  && \
       sed -i "/^vm\.panic_on_oom=/d; /^vm\.overcommit_memory=/d; /^kernel\.panic=/d; /^kernel\.panic_on_oops=/d" /etc/sysctl.d/90-kubelet.conf && \
       printf "vm.panic_on_oom=0\nvm.overcommit_memory=1\nkernel.panic=10\nkernel.panic_on_oops=1\n" | tee -a /etc/sysctl.d/90-kubelet.conf && \
 
       sysctl -p /etc/sysctl.d/90-kubelet.conf && \
 
-      curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.25.13+k3s1 sh -s - \
+      curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=${K3S_VERSION} sh -s - \
          --write-kubeconfig-mode 644 \
          --disable=traefik \
          --protect-kernel-defaults true \
@@ -34,11 +36,7 @@ This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s
       chown '"$USER_NAME:"' '"$USER_HOME"'/.kube/config && \
       chmod 600 '"$USER_HOME"'/.kube/config && \
 
-      printf "\e[32mSuccessfully installed k3s!\e[0m\n" && \
-      
-      /usr/local/bin/k3s crictl pull rancher/klipper-lb:v0.4.4 && \
-      /usr/local/bin/k3s crictl pull rancher/mirrored-metrics-server:v0.6.3 && \
-      /usr/local/bin/k3s crictl pull rancher/local-path-provisioner:v0.0.24
+      printf "\e[32mSuccessfully installed k3s!\e[0m\n"
    '
    ```
 

@@ -27,20 +27,43 @@ echo "${PRIVATE_REGISTRY_IP_ADDRESS} ${PRIVATE_REGISTRY_HOSTNAME}" | sudo tee -a
 ```
 
 ### Update CoreDNS configuration
-Run the commands below to modify the CoreDNS configuration of the Kubernetes cluster to enable resolution of the private registry's domain or host:
+Run the commands below to extend the CoreDNS configuration of the Kubernetes cluster to enable resolution of the private registry's domain or host:
 ```bash
 PRIVATE_REGISTRY_HOSTNAME="<PRIVATE-REGISTRY-HOSTNAME>"  	# Change it with your private registry's domain or hostname
 PRIVATE_REGISTRY_IP_ADDRESS="<PRIVATE-REGISTRY-IP-ADDRESS>" # Change it with your private registry's IP Address
 
-# Retrieve the existing NodeHosts value
-EXISTING_NODEHOSTS=$(kubectl get configmap coredns -n kube-system -o jsonpath='{.data.NodeHosts}')
-EXISTING_NODEHOSTS=$(echo -n "${EXISTING_NODEHOSTS}" | sed ':a;N;$!ba;s/\n/\\n/g')
+# Uses the hosts plugin to resolve the private registry's domain or hostname to its IP address
+# The [fallthrough] directive allows the query to continue to the next server block if the name doesn’t match
+COREDNS_CUSTOM_CONFIGMAP_NAME="coredns-custom"
+KUBE_SYSTEM_NAMESPACE="kube-system"
+KEY_NAME="private-registry.server"
+KEY_VALUE=$(cat <<EOF
+${PRIVATE_REGISTRY_HOSTNAME}:53 {
+  hosts {
+    ${PRIVATE_REGISTRY_IP_ADDRESS} ${PRIVATE_REGISTRY_HOSTNAME}
+    fallthrough
+  }
+}
+EOF
+)
 
-# Append the new domain and IP address to the existing NodeHosts value
-UPDATED_NODEHOSTS=$(echo "${EXISTING_NODEHOSTS}\\n${PRIVATE_REGISTRY_IP_ADDRESS} ${PRIVATE_REGISTRY_HOSTNAME}")
+# Create or Patch the 'coredns-custom' ConfigMap
+if ! kubectl get configmap "$COREDNS_CUSTOM_CONFIGMAP_NAME" -n "$KUBE_SYSTEM_NAMESPACE" >/dev/null 2>&1; then
+  # Create the configmap
+  kubectl create configmap "$COREDNS_CUSTOM_CONFIGMAP_NAME" -n "$KUBE_SYSTEM_NAMESPACE" \
+    --from-literal="$KEY_NAME=$KEY_VALUE"
+else
+  # Patch the configmap
+  kubectl patch configmap "$COREDNS_CUSTOM_CONFIGMAP_NAME" \
+    -n "$KUBE_SYSTEM_NAMESPACE" --type merge \
+    -p "{\"data\": {\"$KEY_NAME\": \"$(echo "$KEY_VALUE" | sed ':a;N;$!ba;s/\n/\\n/g')\"}}"
+fi
 
-# Patch the CoreDNS ConfigMap with the updated NodeHosts value
-kubectl patch configmap coredns -n kube-system --type merge -p "{\"data\":{\"NodeHosts\":\"${UPDATED_NODEHOSTS}\"}}"
+# Restart CoreDNS Deployment to apply changes
+kubectl rollout restart deployment coredns -n kube-system
+
+# Wait until CoreDNS pods are ready
+kubectl rollout status deployment coredns -n kube-system
 ```
 
 ### Trust the private registry's certificate
