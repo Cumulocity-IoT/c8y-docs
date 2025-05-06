@@ -32,7 +32,7 @@ Run the commands below to extend the CoreDNS configuration of the Kubernetes clu
 PRIVATE_REGISTRY_HOSTNAME="<PRIVATE-REGISTRY-HOSTNAME>"  	# Change it with your private registry's domain or hostname
 PRIVATE_REGISTRY_IP_ADDRESS="<PRIVATE-REGISTRY-IP-ADDRESS>" # Change it with your private registry's IP Address
 
-# Uses the hosts plugin to resolve the private registry's domain or hostname to it's IP Address
+# Uses the hosts plugin to resolve the private registry's domain or hostname to its IP address
 # The [fallthrough] directive allows the query to continue to the next server block if the name doesn’t match
 COREDNS_CUSTOM_CONFIGMAP_NAME="coredns-custom"
 KUBE_SYSTEM_NAMESPACE="kube-system"
