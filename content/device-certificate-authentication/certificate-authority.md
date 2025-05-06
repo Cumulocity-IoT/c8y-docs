@@ -76,7 +76,7 @@ This call can be done by executing the following curl statement:
 
 Replace `<username>`, `<password>` with the appropriate credentials given to you when registering with {{< product-c8y-iot >}}.
 
-To enable the feature for `subtenant` you must have the role `ROLE_TENANT_MANAGEMENT_ADMIN` and call the following API:
+To enable the feature for a subtenant you must have the role `ROLE_TENANT_MANAGEMENT_ADMIN` and call the following API:
 
     PUT /features/certificate-authority/by-tenant
     Content-Type: application/json
