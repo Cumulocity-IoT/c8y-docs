@@ -111,7 +111,7 @@ Each field represents the claim name that is used to retrieve the data from JWT.
 Mapping for alias is not available because it is not used in the context of SSO login.
 
 The username claim name can be configured in the **User ID** configuration window.
-The user ID can be set to any top-level field of the authorization token payload sent from the authorization server to the platform during the login process. We recommend you inspect the authorization token in the audit logs to make sure the correct field is used (see [Troubleshooting](#troubleshooting)).
+The user ID can be set to any top-level field of the authorization token payload sent from the authorization server to the platform during the login process. We recommend you inspect the authorization token in the audit logs to make sure the correct field is used (see [Troubleshooting](#sso-troubleshooting)).
 
 If you check the **Use constant value** checkbox, a constant user ID is used for all users who log in to the {{< product-c8y-iot >}} platform via SSO. This means that all users who log in via SSO share the same user account in the {{< product-c8y-iot >}} platform. We do not recommend you to use this option.
 
