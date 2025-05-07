@@ -16,7 +16,7 @@ build_artifact:
 {{< c8y-admon-preview >}}
 This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
 
-To determine whether the feature is available for your tenant, open the Administration application and navigate to Ecosystem → Microservices.
+To determine whether the feature is available for your tenant, open the Administration application and navigate to **Ecosystem** > **Microservices**.
 If you see the `Mqtt-service` microservice subscription for your tenant, the feature is already available.
 Otherwise, please contact [product support](/additional-resources/contacting-support/) to request the microservice subscription for your tenant.
 {{< /c8y-admon-preview >}}
