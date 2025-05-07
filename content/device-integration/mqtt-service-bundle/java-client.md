@@ -9,7 +9,7 @@ The following operations are supported by the client:
 * Publishing messages to the MQTT Service via a WebSocket protocol.
 * Subscribing to messages from the MQTT Service via a WebSocket protocol
 
-#### Repositories and dependencies {#repositories-and-dependencies}
+### Repositories and dependencies {#repositories-and-dependencies}
 
 Follow the [Microservice SDK](/microservice-sdk/java/#add-repositories-and-dependencies) documentation for guidance on how to configure Maven repositories.
 To include the MQTT Service Java Client into your project, add the following dependency inside the `<dependencies>` node:
@@ -21,7 +21,7 @@ To include the MQTT Service Java Client into your project, add the following dep
 </dependency>
 ```
 
-#### Examples {#example}
+### Examples {#example}
 
 Example of publishing messages to the MQTT Service via WebSocket:
 ```java

@@ -72,7 +72,7 @@ Each message in a topic backlog also has a time-to-live (TTL) that starts at the
 When the TTL of a message expires, that messages will be deleted from the backlog regardless of whether all subscribers have received it or not.
 MQTT clients do not receive any notification that messages have been discarded from a backlog due to TTL expiry.
 
-#### Error Topic {#error-topic}
+#### Error topic {#error-topic}
 
 The MQTT Service provides clients the ability to review errors through messages received by subscribing to the error topic, `$debug/$error`.
 When subscribing to the topic it will act as a per-client topic, meaning the client will only receive messages exclusively related to their client ID.
