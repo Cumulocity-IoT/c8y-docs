@@ -1,6 +1,6 @@
 ---
 date: ""
-title: drop-up directive now checks for available space at the top (#8952) [GRAFT][release/y2025] (#8991)
+title: The drop-up directive checks for available space at the top
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
