@@ -175,3 +175,11 @@ Using this mechanism, it is possible to create a chain of smart rules.
 {{< c8y-admon-info >}}
 If you create a rule chain keep in mind how much data will be created and avoid overload or excessive amount of data.
 {{< /c8y-admon-info >}}
+
+### Smart Rules Memory Limitation Guidelines {#chain-rule-execution smart-rules-memory-limitation-guidelines}
+
+When creating Smart Rules, users should be aware of memory usage limitations to help prevent service instability or memory-related outages. The following guidelines provide approximate memory consumption values and recommended limits.
+
+**Memory Usage Estimates (Per Rule)**
+Each Smart Rule instance typically consumes approximately 70 KB of memory.
+Additionally, device-specific storage for each Smart Rule instance requires around 30 KB.
