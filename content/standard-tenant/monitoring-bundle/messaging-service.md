@@ -44,16 +44,16 @@ Select a feature and click it to see the details. This displays a list of all to
 
 The topic list shows the following information for each topic:
 
-| Column name              | Description                                                                                                                                                                                                     | Alarm threshold |
-|--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
-| Name                     | Topic name. See the feature-specific documentation below for more information on mapping this to a specific source.                                                                                             | -               |
-| Message rate in (msg/s)  | Total rate of messages published on the topic per second.                                                                                                                                                       | -               |
-| Message rate out (msg/s) | Total rate of messages dispatched to the subscribers for the topic per second. Dispatch includes additional batching and queuing mechanisms, so this rate could differ from the subscriber acknowledgment rate. | -               |
-| Subscribers              | Total number of registered subscribers. This includes both actively consuming subscribers and those that are currently disconnected and not consuming any messages.                                             | > 5             |
-| Message backlog          | Backlog size in bytes which corresponds to the size occupied by unconsumed messages.                                                                                                                            | > 20 MB         |
-| Used backlog             | Percentage usage of the backlog quota limit.                                                                                                                                                                    | > 80%           |
+| Column name              | Description                                                                                                                                                                                                     | Unsafe range |
+|--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| Name                     | Topic name. See the feature-specific documentation below for more information on mapping this to a specific source.                                                                                             | -            |
+| Message rate in (msg/s)  | Total rate of messages published on the topic per second.                                                                                                                                                       | -            |
+| Message rate out (msg/s) | Total rate of messages dispatched to the subscribers for the topic per second. Dispatch includes additional batching and queuing mechanisms, so this rate could differ from the subscriber acknowledgment rate. | -            |
+| Subscribers              | Total number of registered subscribers. This includes both actively consuming subscribers and those that are currently disconnected and not consuming any messages.                                             | > 5          |
+| Message backlog          | Backlog size in bytes which corresponds to the size occupied by unconsumed messages.                                                                                                                            | > 20 MB      |
+| Used backlog             | Percentage usage of the backlog quota limit.                                                                                                                                                                    | > 80%        |
 
-Refer to the feature-specific documentation below for more information on how to map the topic name to the source and how to clear the backlog when reaching the alarm threshold.
+Refer to the feature-specific documentation below for more information on how to map the topic name to the source and how to clear the backlog when reaching the unsafe range.
 
 #### Messaging Service limits {#messaging-service-limits}
 
@@ -71,16 +71,16 @@ The view contains information about the topic at the top and the list of all sub
 
 The subscriber list shows the following information for each subscriber:
 
-| Column name                 | Description                                                                                                                   | Alarm threshold |
-|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------|-----------------|
-| Name                        | Subscriber name. See the feature-specific documentation below for more information on mapping this to a specific destination. | -               |
-| Connected clients           | Number of clients that are currently connected and consuming messages.                                                        | -               |
-| Acknowledgment rate (msg/s) | Current rate per second of messages fully processed (consumed, processed, and acknowledged) by the consumers.                 | -               |
-| Last acknowledged           | Latest timestamp when a message was fully processed by the consumer.                                                          | >= 1 day        |
-| Unacknowledged messages     | Number of unconsumed messages for this subscriber.                                                                            | > 1000          |
-| Used backlog                | Percentage usage of the backlog quota limit by the subscriber.                                                                | > 80%           |
+| Column name                 | Description                                                                                                                   | Unsafe range |
+|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------|--------------|
+| Name                        | Subscriber name. See the feature-specific documentation below for more information on mapping this to a specific destination. | -            |
+| Connected clients           | Number of clients that are currently connected and consuming messages.                                                        | -            |
+| Acknowledgment rate (msg/s) | Current rate per second of messages fully processed (consumed, processed, and acknowledged) by the consumers.                 | -            |
+| Last acknowledged           | Latest timestamp when a message was fully processed by the consumer.                                                          | >= 1 day     |
+| Unacknowledged messages     | Number of unconsumed messages for this subscriber.                                                                            | > 1000       |
+| Used backlog                | Percentage usage of the backlog quota limit by the subscriber.                                                                | > 80%        |
 
-Refer to the feature-specific documentation below for more information on how to map the subscriber name to the destination and how to clear the backlog when reaching the alarm threshold.
+Refer to the feature-specific documentation below for more information on how to map the subscriber name to the destination and how to clear the backlog when reaching the unsafe range.
 
 ### Monitoring Notifications 2.0 {#monitoring-notifications-2.0}
 
