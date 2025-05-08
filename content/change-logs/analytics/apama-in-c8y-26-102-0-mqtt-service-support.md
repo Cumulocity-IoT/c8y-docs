@@ -17,4 +17,6 @@ version: 26.102.0
 
 EPL Apps now has support for connecting to {{< product-c8y-iot >}} MQTT Service. This allows handling of device-native messages sent to the MQTT Service within {{< product-c8y-iot >}} EPL Apps. For more details see [{{Using < product-c8y-iot >}} MQTT Service](/streaming-analytics/epl-apps/#using-cumulocity-mqtt-service).
 
-**Note:** The {{< product-c8y-iot >}} MQTT Service feature is currently in private preview. If you would like to have it enabled for your tenant or read more documentation about it, please contact {{< product-c8y-iot >}} Operations.
+{{< c8y-admon-info >}}
+The {{< product-c8y-iot >}} MQTT Service feature is currently in private preview. If you would like to have it enabled for your tenant or read more documentation about it, please contact {{< product-c8y-iot >}} [product support](/additional-resources/contacting-support/).
+{{< /c8y-admon-info >}}
