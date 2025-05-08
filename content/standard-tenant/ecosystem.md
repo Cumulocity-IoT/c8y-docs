@@ -10,7 +10,7 @@ sector:
 weight: 30
 ---
 
-The {{< product-c8y-iot >}} platform distinguishes between applications and microservices, see also [Application enablement](/concepts/concepts-introduction/#application-enablement).
+The {{< product-c8y-iot >}} platform distinguishes between applications and microservices:
 
 * [Applications](#managing-applications) -  all web applications either subscribed to the tenant or owned by the tenant.
 
