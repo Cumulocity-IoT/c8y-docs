@@ -362,7 +362,7 @@ This alarm is raised for both the input and output queues:
   Slowest context queue size: &lt;size&gt;.
 - Alarm severity: MAJOR
 
-See also [List of correlator status statistics]({{< link-apama-webhelp >}}/deploying-and-managing-apama-applications/overview-of-deploying-apama-applications/#list-of-correlator-status-statistics) in the Apama documentation.
+See also [List of correlator status statistics]({{< link-apama-webhelp >}}/command-line-tools/engine_watch/#list-of-correlator-status-statistics) in the Apama documentation.
 
 Check the text from the above alarms to get an indication of which queue is blocking.
 A problem is likely to trigger these alarms, followed by this alarm:
