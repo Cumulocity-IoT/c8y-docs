@@ -77,7 +77,7 @@ Download the [API examples](/files/rest/Cumulocity_API.postman_collection.json) 
 
 Now, click the **Collections** tab on the top left of Postman. You should see a folder _{{< product-c8y-iot >}} API_ with the examples. Open that folder and the subfolder _Alarms_, then click **Get collection of alarms**. This shows an example on how to get alarms from {{< product-c8y-iot >}}.
 
-Note that the example contains placeholders, in this case a placeholder _{{url}}_ in <kbd>{{url}}/alarm/alarms</kbd>. You must tell Postman how to fill these placeholders and by this, how to connect to your {{< product-c8y-iot >}} account. To do so, create an [environment](https://www.getpostman.com/docs/environments) and configure the placeholders.
+Note that the example contains placeholders, in this case a placeholder _{{url}}_ in <kbd>{{url}}/alarm/alarms</kbd>. You must tell Postman how to fill these placeholders and by this, how to connect to your {{< product-c8y-iot >}} account. To do so, create an [environment](https://learning.postman.com/docs/sending-requests/variables/managing-environments/) and configure the placeholders.
 
 * Click the cogwheel on the top right and select **Manage Environments**, then click **Add**.
 * Enter a name for the environment (for example, your tenant ID), then add values for the placeholders.

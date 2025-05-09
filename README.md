@@ -112,7 +112,7 @@ weight: 10 # to set the position in the page
 
 * Certified hardware kits and software libraries you can use to bring your remote assets into the cloud.
 * Device management, data visualization and remote control functionality through the web.
-* Rapid customization of the above through [real-time processing](/concepts/realtime) and [Cumulocity applications](/concepts/applications).
+* Rapid customization of the above through [real-time processing](/concepts/realtime) and [Cumulocity applications](/concepts-introduction/#application-enablement).
 * APIs for extending the existing functionality or interfacing Cumulocity with your other IT services such as ERP or CRM systems. Cumulocity can also host your HTML5 applications.
 […]
 ```
