@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-05-08'
 title: Added option to provide a readme file for particular plugins in a package
 product_area: Platform services
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-05-08'
 title: Allow pre-filling of single device registration form via query parameters
 product_area: Device management & connectivity
 change_type:
