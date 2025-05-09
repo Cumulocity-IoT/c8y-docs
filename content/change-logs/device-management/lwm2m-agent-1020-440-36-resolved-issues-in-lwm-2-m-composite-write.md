@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Resolved Issues in LWM2M Composite Write
+title: LWM2M Composite Write operation correctly displays multiple resource values
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4560
 version: 1020.440.36
 ---
-Fixed an issue where a LwM2M Composite Write operation, although correctly writing multiple resource values to the device, incorrectly displayed them as a single consolidated resource object.
+Fixed an issue where a LWM2M Composite Write operation, although correctly writing multiple resource values to the device, incorrectly displayed them as a single consolidated resource object.
