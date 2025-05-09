@@ -514,7 +514,7 @@ In contrast to events, alarms can be updated. If an issue is resolved (for examp
 
     HTTP/1.1 200 OK
 
-If you are uncertain on whether to send an event or raise an alarm, you can simply just raise an event and let the user decide with a [Real-time rule](/concepts/realtime) if they want to convert the event into an alarm.
+If you are uncertain on whether to send an event or raise an alarm, you can simply just raise an event and let the user decide with a [Real-time rule](/concepts/concepts-introduction/#analytics) if they want to convert the event into an alarm.
 
 ### Replacing a physical device {#replacing-a-physical-device}
 

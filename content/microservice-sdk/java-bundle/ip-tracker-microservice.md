@@ -113,7 +113,7 @@ An alarm must be associated with a source and it requires an ID.
 Hence, you must [create a managed object](https://{{< domain-c8y >}}/api/core/#operation/postManagedObjectCollectionResource) to be your source and use its ID in your microservice application.
 The same managed object will track the locations when the microservice gets accessed on a particular endpoint.
 
-First, get your current location (latitude, longitude) using a free service, for example, [My Current Location](https://mycurrentlocation.net).
+First, get your current location (latitude, longitude) using any free service.
 
 Create a managed object as a device named "Microservice tracker" via POST request as follows:
 
