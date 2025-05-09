@@ -16,9 +16,13 @@ Each tenant individually defines whom it trusts by uploading the base CA certifi
 
 Until recently devices wanting to use mTLS over HTTP were required to generate JWT session tokens by using X.509 certificates for authentication over a defined MQTT endpoint - device access token API. This session token can be used in subsequent HTTP requests to authenticate to {{< product-c8y-iot >}}. This is still supported but will be deprecated at some point in the future. It is recommended to use the direct HTTP connection.
 
-**MQTT**
+**Core MQTT**
 
-Devices can communicate using the [MQTT interface](/device-integration/mqtt/) of the platform, but MQTT over WebSocket is not supported. The {{< product-c8y-iot >}} platform expects devices to connect using SSL on port 8883.
+Devices can communicate using the [Core MQTT interface](/device-integration/mqtt/) of the platform, but MQTT over WebSocket is not supported. The {{< product-c8y-iot >}} platform expects devices to connect using SSL on port 8883.
+
+**MQTT Service**
+
+Devices can communicate using the [MQTT Service](/device-integration/mqtt-service/). The {{< product-c8y-iot >}} platform expects devices to connect using SSL on port 9883, and provide the tenant ID as the MQTT username.
 
 **LWM2M**
 
@@ -43,6 +47,10 @@ In order to follow this tutorial, check if the following prerequisites are met:
 * Certificates used by devices must be signed either by uploaded CA certificates or by intermediate certificates signed by uploaded CA certificates.
 
 ### Registering devices using certificates {#registering-devices-using-certificates}
+
+{{< c8y-admon-info >}}
+Device registration does not occur when using the [MQTT Service](/device-integration/mqtt-service/).
+{{< /c8y-admon-info >}}
 
 {{< product-c8y-iot >}} supports two ways to register devices which will be able to connect using certificates:
 
