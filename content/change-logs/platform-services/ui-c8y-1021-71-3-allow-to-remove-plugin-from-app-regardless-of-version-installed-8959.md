@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Allow to remove plugin from app regardless of version installed. (#8959) [GRAFT][release/cd] (#9027)
+title: Allow removing plugins from app on package details view regardless of installed version.
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
