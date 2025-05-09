@@ -34,6 +34,6 @@ Similar to the inventory model, fragments are used to identify characteristics o
 
 The example above represents a three-phase electricity meter that sends readings for the different electrical phases. A measurement fragment maps the names of the individual readings (for example, "A+" or "A-") to the actual numeric value and unit of the measurement.
 
-In addition to value and unit, readings can hold various additional information that applications may require. However, detailed custom attributes are to be avoided in measurements. Instead, we recommend using the [events](./#events) domain model.
+In addition to value and unit, readings can hold various additional information that applications may require. However, detailed custom attributes are to be avoided in measurements. Instead, we recommend using the [events](/concepts/domain-model/#events) domain model.
 
 More detailed information can be found in [Measurements](https://{{< domain-c8y >}}/api/core/#tag/Measurements) in the {{< openapi >}}.

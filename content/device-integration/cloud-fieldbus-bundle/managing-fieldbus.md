@@ -9,7 +9,7 @@ Once connected, you can now manage your device. Switch to the **Child devices** 
 
 Depending on the capabilities of the device and its configuration in {{< product-c8y-iot >}}, you can:
 
-* [Collect measurements](#collect-measurements)
+* [Collect measurements](#collecting-measurements)
 * [Send alarms on coil or register changes](#monitoring-alarms)
 * [Log coil and register changes as events](#logging-events)
 * [Monitor the status of coils and registers](#monitoring-the-device-status)
