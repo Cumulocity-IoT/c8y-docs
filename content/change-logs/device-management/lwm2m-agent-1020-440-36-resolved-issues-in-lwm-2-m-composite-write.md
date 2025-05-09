@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4560
 version: 1020.440.36
 ---
-Fixed an issue where a LWM2M Composite Write operation, although correctly writing multiple resource values to the device, incorrectly displayed them as a single consolidated resource object.
+The LWM2M Composite Write operation, although correctly writing multiple resource values to the device, incorrectly displayed them as a single consolidated resource object. This issue has been fixed.
