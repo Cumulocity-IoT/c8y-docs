@@ -1,6 +1,6 @@
 ---
 date: ""
-title: LWM2M Composite Write operation correctly displays multiple resource values
+title: Resolved issue in LWM2M composite write operation
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
