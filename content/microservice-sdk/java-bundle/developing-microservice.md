@@ -5,130 +5,234 @@ layout: redirect
 
 ---
 
-See below for the different microservice SDK features, including annotations, services, configuration files, logging and the Maven build plugin.
+The {{< product-c8y-iot >}} Microservice SDK is an open source toolkit for building microservices using the popular [Spring Boot](https://spring.io/projects/spring-boot) framework and the {{< product-c8y-iot >}} [platform APIs](https://{{< domain-c8y >}}/api/core). It accelerates development by offering preconfigured annotations, built-in services, and a Maven plugin for creating Docker containers and {{< product-c8y-iot >}} applications. The SDK source code is available on GitHub in the
+[cumulocity-clients-java](https://github.com/Cumulocity-IoT/cumulocity-clients-java) repository.
 
-There are two possible deployment types on the platform:
+In this section, you will learn how to:
+* Use SDK annotations to simplify the setup.
+* Access platform APIs via dependency injection.
+* Authenticate towards the platform APIs.
+* Secure access to your microservice APIs.
+* Handle subscriptions and multi-tenant access.
+* Configure your microservice.
+* Upload and run your microservice.
+* Manage and monitor your microservice.
+* Set up external or legacy deployments.
 
-* Hosted deployment - The default for microservices and the suggested one for typical use cases.
-* External/legacy deployment - Requires custom installation of the platform and agent.
+### Using annotations {#annotations}
 
-For development and testing purposes, one can deploy a microservice on a local Docker container.
+As shown in the ["Hello world" tutorial](/microservice-sdk/java/#create-a-java-application), the easiest way to enable default microservice behavior is to annotate your main class with `@MicroserviceApplication`. This composite annotation includes:
 
-### Annotations {#annotations}
+| Annotation                             | Description                                                                                      |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| @SpringBootApplication                 | Enables Spring Boot’s auto-configuration                                                         |
+| @EnableContextSupport                  | Allows use of @UserScope and @TenantScope for method-level context switching                     |
+| @EnableHealthIndicator                 | Exposes a standard health endpoint for platform monitoring                                       |
+| @EnableMicroserviceSecurity            | Enables security by verifying users and roles against the platform                               |
+| @EnableMicroserviceSubscription        | Manages subscriptions, metadata updates, and listens to tenant subscription changes              |
+| @EnableMicroservicePlatformInternalApi | Injects platform API services into the Spring context                                            |
+| @EnableTenantOptionSettings            | Allows configuration through tenant options and supports overriding default properties via files |
 
-The simplest way to add required behavior to your application is to annotate a main class with `@MicroserviceApplication`. This is a collective annotation consisting of:
+### Accessing platform APIs {#acessing-platform-api}
 
-Annotation | Description
------------|------------
-@SpringBootApplication | Comes from Spring Boot auto configure package
-@EnableContextSupport | Required to use `@UserScope` or `@TenantScope` scopes for method invocations
-@EnableHealthIndicator | Provides a standard health endpoint used by the platform to monitor the microservice availability
-@EnableMicroserviceSecurity | Provides a standard security mechanism, verifying user and roles against the platform
-@EnableMicroserviceSubscription | Responsible for subscribing microservices to the platform, updating metadata and listening to tenant subscription change events
-@EnableMicroservicePlatformInternalApi | Injects the platform API services into Spring context for a microservice to use
-@EnableTenantOptionSettings | Provides microservice configuration within tenant options and allows overriding default properties from files
+The {{< product-c8y-iot >}} Microservice SDK includes a set of Java APIs that are automatically injected into the Spring context and allow you to operate the REST APIs from Java in a simple manner. The REST APIs correspond to Java APIs as follows:
 
-### Context support {#context-support}
+* Alarm - AlarmApi
+* AuditRecord - AuditRecordApi
+* Operation - DeviceControlApi
+* Event - EventApi
+* EventBinary - EventBinaryApi
+* ExternalID - IdentityApi
+* Binary - BinariesApi
+* ManagedObject - InventoryApi
+* Measurement - MeasurementApi
+* DeviceCredentials - DeviceCredentialsApi
+* User - UserApi
+* TenantOption - TenantOptionApi
+* SystemOption - SystemOptionApi
+* Token - TokenApi
+* Notification - NotificationSubscriptionApi
 
-The context support is covered by the annotation `@EnableContextSupport`. It allows to choose between `@TenantScope` and `@UserScope` which is related to the user management of microservices, as described in [General aspects](/microservice-sdk/general-aspects) in {{< product-c8y-iot >}}.
+Each API supports standard "CRUD" operations (create, read, update, delete). For example, the `AlarmApi` interface provides:
 
-Each microservice has a service user which can be used for the interaction with the platform. The roles associated with this user are specified in the manifest.
-Within the tenant scope, the credentials of this service user are used for the communication with the platform, while within the user scope the credentials of the authenticated user sending the request to the microservice are used.
+```java
+// Create
+AlarmRepresentation create(AlarmRepresentation alarm) throws SDKException;
+Future createAsync(AlarmRepresentation alarm) throws SDKException;
+// Read
+AlarmRepresentation getAlarm(GId gid) throws SDKException;
+AlarmCollection getAlarms() throws SDKException;
+AlarmCollection getAlarmsByFilter(AlarmFilter filter) throws SDKException;
+// Update
+AlarmRepresentation updateAlarm(AlarmRepresentation alarm) throws SDKException;
+// Delete
+void deleteAlarmsByFilter(AlarmFilter filter) throws IllegalArgumentException, SDKException;
+```
 
-#### Setting the context
-You can explicitly set the context along with the credentials to be used through `ContextService`. To use the credentials of the user sending the request, use `ContextService<UserCredentials>`. Accordingly, `ContextService<MicroserviceCredentials>` can be used for service user credentials.
-Examples on how to use `ContextService` are given below.
+This is an example of retrieving all devices registered in all subscribed tenants:
 
 ```java
 @Autowired
-private ContextService<UserCredentials> contextService;
-@Autowired
-private EventApi eventApi;
+MicroserviceSubscriptionsService subscriptionsService;
 
-public PagedEventCollectionRepresentation get10Events () {
-  return contextService.runWithinContext(contextService.getContext(), () -> eventApi.getEvents().get(10));
+@Autowired
+InventoryApi inventoryApi;
+
+public List<ManagedObjectRepresentation> getAllDevicesTenants() {
+  List<ManagedObjectRepresentation> managedObjectsList = new ArrayList<>();
+  InventoryFilter filter = new InventoryFilter().byFragmentType(IsDevice.class);
+  subscriptionsService.runForEachTenant( () -> {
+    inventoryApi.getManagedObjectsByFilter(filter).get().allPages().forEach(mor -> {
+      managedObjectsList.add(mor);
+    });
+  });
+  return managedObjectsList;
 }
 ```
-In this first example, the events are obtained using the credentials of the authenticated user.
 
+More details on using the APIs are available in the [Client library](/microservice-sdk/java/#client-library) section.
 
-In the second example, the credentials of the service user will be utilized to retrieve the events.
+### Authenticating and authorizing towards the platform {#authenticating-and-authorizing-towards-the-platform}
+
+API requests in {{< product-c8y-iot >}} microservices can run in two authentication scopes:
+ * Tenant scope – uses the service user's credentials.
+ * User scope – uses the credentials of the authenticated user who triggered the request.
+
+Each microservice has a service user whose roles are defined in the `cumulocity.json` manifest.
+
+**API requests must be executed in one of these contexts: tenant scope or user scope**.
+
+To execute API requests in the tenant scope in any thread of the application, the `MicroserviceSubscriptionsService` can be used to wrap the request like in the next example:
+
 ```java
 @Autowired
-private ContextService<MicroserviceCredentials> contextService;
+MicroserviceSubscriptionsService subscriptionsService;
+
 @Autowired
 private EventApi eventApi;
 
-public PagedEventCollectionRepresentation get10Events () {
-  return contextService.runWithinContext(contextService.getContext(), () -> eventApi.getEvents().get(10));
+public List<EventRepresentation> getAllEvents() {
+  List<EventRepresentation> eventsList = new ArrayList<>();
+  subscriptionsService.runForEachTenant( () -> {
+    eventApi.getEvents().get().getEvents().forEach(event -> {
+      eventsList.add(event);
+    });
+  });
+  return eventsList;
 }
 ```
 
-#### Tenant scope  
-The tenant scope is associated with the usage of the service user credentials and is annotated with `@TenantScope`.
-To create a bean, named `tenantEventApi` in the tenant scope, use the annotation `@TenantScope`, as in the following code example.
+Tenant scope is the default context in:
+* Classes annotated with `@RestController`
+* Methods annotated with `@EventListener`
+
+In these cases, the `MicroserviceSubscriptionsService` is not needed.
+The API service beans like `eventApi` or `inventoryApi` are executed in the tenant scope by default:
+
+#### @EventListener annotation and scope
+
+Example for `@EventListener` annotation and tenant scope:
 
 ```java
 @Autowired
-private Platform platform;
+InventoryApi tenantInventoryApi;
 
-@TenantScope
-@Bean(name = "tenantEventApi")
-public EventApi eventApi (Platform platform) throws SDKException {
-  return platform.getEventApi();
-}  
+@EventListener
+public void initialize(MicroserviceSubscriptionAddedEvent event) {
+   String tenant = event.getCredentials().getTenant();
+   log.info("Tenant {} - Microservice subscribed", tenant);
+   tenantInventoryApi.getManagedObjects().get().allPages();
+}
 ```
 
-By default, the Platform API related beans provided by the Microservice SDK are created in the tenant scope and use the service user to communicate with the platform.  
+#### @RestController annotation and scope
 
-There are predefined beans both in the `@TenantScope` and `@UserScope`.
-The name of a bean in the tenant scope consists of the prefix `"tenant"` and the name of the respective API. Thus, to use the Event API in the tenant scope, you can specify @Qualifier("tenantEventApi"), as shown in the example below. As the tenant scope is the default context for the created beans, the annotation can also be omitted. Therefore, the following two excerpts are equivalent and both suggest that the service user credentials will be used for the communication with the platform.
+The next examples show the execution of API calls in tenant scope and user scope for @RestController classes.
+
+Example of an API request in the tenant scope:
 
 ```java
-@Autowired
-@Qualifier("tenantEventApi")
-private EventApi eventApi;
+@RestController
+@RequestMapping("/devices")
+public class DeviceController {
+
+    @Autowired
+    InventoryApi inventoryApi;
+
+    @GetMapping(path = "/devicesTenantScope", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<ManagedObjectRepresentation>> getAllDevicesTenantScope() {
+        List<ManagedObjectRepresentation> managedObjectsList = new ArrayList<>();
+        InventoryFilter filter = new InventoryFilter().byFragmentType(IsDevice.class);
+        inventoryApi.getManagedObjectsByFilter(filter).get().allPages().forEach(mor -> {
+            managedObjectsList.add(mor);
+        });
+        return new ResponseEntity<>(managedObjectsList, HttpStatus.OK);
+    }
+
+}
 ```
+
+To execute an API request in the user scope, the API service bean must be injected with a qualifier annotation like `@Qualifier("userInventoryApi")`:
 
 ```java
-@Autowired
-private EventApi eventApi;
-```
-In both cases, beans within the tenant scope will be auto-wired.
+@RestController
+@RequestMapping("/devices")
+public class DeviceController {
 
-#### User scope
-In certain situations the microservice should not use the service user credentials but the credentials of the user sending the request.
+    @Autowired
+    @Qualifier("userInventoryApi")
+    InventoryApi userInventoryApi;
 
-To create a bean in the user scope, specify `@UserScope`:
+    @GetMapping(path = "/devicesUserScope", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<ManagedObjectRepresentation>> getAllDevicesUserScope() {
+      List<ManagedObjectRepresentation> managedObjectsList = new ArrayList<>();
+      InventoryFilter filter = new InventoryFilter().byFragmentType(IsDevice.class);
+      userInventoryApi.getManagedObjectsByFilter(filter).get().allPages().forEach(mor -> {
+        managedObjectsList.add(mor);
+      });
+      return new ResponseEntity<>(managedObjectsList, HttpStatus.OK);
+    }
 
-```java
-@Autowired
-private Platform platform;
-
-@UserScope
-@Bean(name = "userEventApi")
-public EventApi eventApi (Platform platform) throws SDKException {
-  return platform.getEventApi();
-}  
-```
-
-Analogously to the tenant scope case, there are predefined beans in the user scope. The name of such beans consists of the prefix "user" and the name of the API. An example of auto-wiring a bean of the `@UserScope` is given below.
-
-```java
-@Autowired
-@Qualifier("userEventApi")
-private EventApi eventApi;
+}
 ```
 
-Within the user scope, the created beans use the credentials of the authenticated user sending the request instead of the default service user for the communication with the platform.
+#### API service beans
 
-### Microservice security {#microservice-security}
+The Microservice SDK provides both tenant-scope and user-scope beans with the following names:
 
-The `@EnableMicroserviceSecurity` annotation sets up the standard security configuration for microservices. It requires basic authorization for all endpoints (except for health check endpoint configured using `@EnableHealthIndicator`). A developer can secure its endpoints using standard Spring security annotations, for example, `@PreAuthorize("hasRole('ROLE_A')")` and user's permissions will be validated against user's roles stored on the platform.
+| Bean names in tenant scope                                     | Qualifier for user scope        |
+| -------------------------------------------------------------- | ------------------------------- |
+| inventoryApi, tenantInventoryApi                               | userInventoryApi                |
+| identityApi, tenantIdentityApi                                 | userIdentityApi                 |
+| measurementApi, tenantMeasurementApi                           | userMeasurementApi              |
+| deviceControlApi, tenantDeviceControlApi                       | userDeviceControlApi            |
+| alarmApi, tenantAlarmApi                                       | userAlarmApi                    |
+| eventApi, tenantEventApi                                       | userEventApi                    |
+| eventBinaryApi, tenantEventBinaryApi                           | userEventBinaryApi              |
+| auditRecordApi, tenantAuditRecordApi                           | userAuditRecordApi              |
+| deviceCredentialsApi, tenantDeviceCredentialsApi               | userDeviceCredentialsApi        |
+| binariesApi, tenantBinariesApi                                 | userBinariesApi                 |
+| userApi, tenantUserApi                                         | userUserApi                     |
+| tenantOptionApi, tenantTenantOptionApi                         | userTenantOptionApi             |
+| systemOptionApi, tenantSystemOptionApi                         | userSystemOptionApi             |
+| tokenApi, tenantTokenApi                                       | userTokenApi                    |
+| notificationSubscriptionApi, tenantNotificationSubscriptionApi | userNotificationSubscriptionApi |
+
+Various examples demonstrating use cases of the platform API can be found in the GitHub repositories
+[Cumulocity microservice templates](https://github.com/Cumulocity-IoT/cumulocity-microservice-templates) and
+[Cumulocity examples](https://github.com/Cumulocity-IoT/cumulocity-examples).
+
+### Securing your microservice {#microservice-security}
+
+The `@EnableMicroserviceSecurity` annotation sets up the standard security configuration for microservices.
+It enforces basic authentication or other standard authentication mechanisms (refer to [Authentication and authorization](/microservice-sdk/general-aspects/#authentication-and-authorization))
+for all endpoints -- except for the health check endpoint configured via `@EnableHealthIndicator`.
+
+You can configure security for your endpoints using standard Spring Security annotations. For example, you can restrict access based on platform roles using `@PreAuthorize("hasRole('ROLE_A')")`.
 
 ### Microservice subscription {#microservice-subscription}
 
-The microservice subscription module is responsible for two main features:
+The microservice subscription module handles two core functions:
 
 * Registration
 * Tenant subscription event listening
@@ -270,13 +374,13 @@ When the access attempt occurs to fetch settings without the tenant context bein
 For security reasons, the functionality is not available when running the microservice in legacy mode, that is, local development or RPM installation.
 {{< /c8y-admon-info >}}
 
-Tenant option settings can be accessed in two ways:  
+Tenant option settings can be accessed in two ways:
 
 Using Environment:
 
 ```java
 @Autowired
-private Environment environment;  
+private Environment environment;
 
 public int getAccessTimeout() {
     return environment.getProperty("access.timeout", Integer.class, 30);
@@ -497,7 +601,7 @@ Example for the definition of primitive default parameters in pom.xml:
   ...
 </project>
 ```
-The properties can be used inside the configuration section of the microservice-package-maven-plugin 
+The properties can be used inside the configuration section of the microservice-package-maven-plugin
 defined in the pom.xml file of your microservice project:
 
 ```xml
@@ -627,6 +731,10 @@ To pass the configuration only to the particular build, execute the following co
 $ mvn microservice:upload -Dupload.application.name=helloworld -Dupload.url=https://demos.cumulocity.com -Dupload.username=demos/username -Dupload.password=****** -Dskip.microservice.upload=false
 ```
 
+#### Heap and perm/metadata {#heap-and-permmetadata}
+
+To calculate heap and perm/metadata, the SDK takes the limit defined in the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) and converts it into megabytes (MB). The minimal value is 178MB. 10% is reserved for "system", but not less than 50 MB. 10% is taken for metaspace, but not less than 64 MB and not more than 1024MB. The rest is allocated for heap size.
+Refer to [Package goal](/microservice-sdk/java/#package-goal) for information on how to change the heap and metaspace settings.
 
 ### Deployment {#deployment}
 
@@ -787,8 +895,8 @@ For external/legacy deployment, the following paths will be searched in order to
 
 * To customize the logging configuration for your microservice instead of using the default configuration, create a log
 configuration file in the _configuration_ folder of your microservice project.
-* The file must adhere to the naming convention *\<application-name\>-logging.xml*. 
-This ensures that your custom log configuration replaces the default configuration file 
+* The file must adhere to the naming convention *\<application-name\>-logging.xml*.
+This ensures that your custom log configuration replaces the default configuration file
 with the same name in the resulting Docker image.
 * Once deployed, the customized log configuration file will be located in the */etc/\<artifactId\>*
 directory within the microservice pod.
@@ -848,6 +956,7 @@ A Spring Boot library was upgraded to 2.5.8, hence upgrading Microservice SDK to
    server.error.include-message=ALWAYS
    server.error.include-binding-errors=ALWAYS
    ```
+
 ### Upgrade to Microservice SDK 10.17+ {#upgrade-to-microservice-sdk-1017}
 
 A Spring Boot library was upgraded to 2.7.6, hence upgrading Microservice SDK to 10.17+ may require some additional development.

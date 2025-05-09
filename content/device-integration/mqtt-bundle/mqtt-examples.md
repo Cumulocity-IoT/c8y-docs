@@ -586,7 +586,7 @@ In order to follow this tutorial, check the following prerequisites:
 
 ##### To generate a valid certificate {#to-generate-a-valid-certificate}
 
-If you don't have a valid certificate, you can generate one for testing purposes, following the instructions below.
+If you don't have a valid certificate, you can generate one for testing purposes following the instructions in [Device certificates](/device-certificate-authentication/device-certificates/).
 
 1.  Download the scripts from the [cumulocity-examples]({{< link-c8y-github >}}/cumulocity-examples/tree/develop/mqtt-client/scripts) repository.
 2.  Create a root self-signed certificate (execute the script *00createRootSelfSignedCertificate.sh*) and upload it to your tenant. You can do it via [the Device Management application in the UI](/device-certificate-authentication/managing-trusted-certificates/) or via [REST](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API).

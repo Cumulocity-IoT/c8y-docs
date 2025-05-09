@@ -37,4 +37,4 @@ For your convenience, here is an overview of the contents:
 | Dremio cluster setup | 1 master, 1 executor | Minimum 1 master, 1 executor |
 | Dremio container management |  Kubernetes | Kubernetes |
 | {{< product-c8y-iot >}} DataHub backend container management | Microservice in {{< product-c8y-iot >}} Edge | Microservice in {{< product-c8y-iot >}} Core |
-| Data lakes | NAS | Azure Storage, S3, HDFS, (NAS) |
+| Data lakes | NAS | Azure Storage, S3, (NAS) |
