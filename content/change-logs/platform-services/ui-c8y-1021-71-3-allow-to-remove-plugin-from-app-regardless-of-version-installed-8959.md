@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63479
 version: 1021.71.3
 ---
-Allow to remove plugin from app regardless of version installed. (#8959) [GRAFT][release/cd] (#9027)
+There was an issue with uninstalling plugin from application on package details view. If plugin was installed in version that was later removed from package (but package is still accessible because of newer version), it could not be uninstalled from package details view. This issue has been fixed now.
