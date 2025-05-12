@@ -361,7 +361,7 @@ The "Pie chart" widget displays data points (measurements) with current values i
 
 ### Quick links {#quick-links}
 
-The "Quick Links" widget displays links in either a grid or list format.
+The "Quick links" widget displays links in either a grid or list format.
 
 ![Quick links widget](/images/users-guide/cockpit/cockpit-widget-quick-links.png)
 
