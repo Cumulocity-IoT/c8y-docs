@@ -14,13 +14,8 @@ build_artifact:
 ticket: MTM-63361
 version: 1022.0.0
 ---
-As part of the major version 1022.0.0 the Web SDK will no longer provide the login functionality as part of every application.
-Instead there will be a separate login application dedicated to the login functionality.
-
-Web applications built on top of the Web SDK version 1022.0.0 or higher will redirect to this login application if required.
-
-Customers writing their own UI applications can benefit from this change since they no longer have to reimplement the login functionality on their own. They can now just redirect to this dedicated application.
-
-As part of these changes, the login page also received a redesign.
-
-Customers which have been embedding the UI in an iframe and need to login within that iframe might need to perform some adjustments to the login page.
+Starting with major version 1022.0.0, the Web SDK no longer includes built-in login functionality within each application. Instead, a separate login application now manages all authentication flows.
+Web applications developed using Web SDK version 1022.0.0 or later will automatically redirect users to this standalone login application whenever authentication is needed.
+This change benefits customers creating their own UI applications, as they no longer need to implement custom login flows. They can simply redirect users to the new login application.
+The login page has also been redesigned as part of this update, improving its usability and visual appeal.
+Note: Customers who embed the UI within an iframe and require in-iframe login may need to modify their implementation to support this new login flow.
