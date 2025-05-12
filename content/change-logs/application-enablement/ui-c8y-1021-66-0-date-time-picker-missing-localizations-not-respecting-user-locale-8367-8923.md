@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62659
 version: 1021.66.0
 ---
-The date picker component did not respect the user´s locale setting, resulting in missing localizations. This issue has been fixed. Users will now see the date picker in their preferred language and format, providing a more intuitive and localized user experience.
+The date-time picker component did not respect the user´s locale setting, resulting in missing localizations. This issue has been fixed. Users will now not only see the date-time picker in their preferred language and format but every date and time displayed in the UI.
