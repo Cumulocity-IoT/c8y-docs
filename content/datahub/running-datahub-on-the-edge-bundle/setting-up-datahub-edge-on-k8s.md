@@ -8,7 +8,7 @@ In this setup, {{< product-c8y-iot >}} DataHub is deployed into a Kubernetes env
 
 ### Prerequisites {#prerequisites}
 
-#### Resource requirements {#resource requirements}
+#### Resource requirements {#resource-requirements}
 
 The resource requirements for running a bare {{< product-c8y-iot >}} Edge instance are described in [Prerequisites](/{{< c8y-edge-version-major >}}/edge-kubernetes/installing-edge-on-k8/#prerequisites).
 When {{< product-c8y-iot >}} DataHub Edge on Kubernetes is deployed on top, the resource requirements change by the following additional amounts:
