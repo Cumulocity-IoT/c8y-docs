@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4560
 version: 1021.10.7
 ---
-A LWM2M composite write operation that correctly wrote multiple resource data to the device but incorrectly consolidated the values into a single LWM2M resource object in the displayed data, along with an issue where event's binary data in multiple resource instances was not properly represented during LWM2M read, have both been resolved.
+The LWM2M Composite Write operation successfully updated multiple resources on the device, but incorrectly displayed the values as a single consolidated resource object. This issue has been fixed. Additionally, an issue with the incorrect representation of binary data in multiple resource instances during LWM2M read operations has been fixed.
