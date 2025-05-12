@@ -34,14 +34,6 @@ The "Alarm list" widget shows a list of alarms, filtered by objects, alarm sever
 |Auto refresh|Enables you to automatically refresh the alarm list at the frequency you select.
 |Show alarms from child devices|Show or hide the alarms of child devices.
 
-### Applications {#applications}
-
-The "Applications" widget shows a list of links to all available applications. Apart from the title, there are no additional parameters to be configured.
-
-![Applications widget](/images/users-guide/cockpit/cockpit-widget-applications.png)
-
-For details on applications, refer to [Managing applications](/standard-tenant/ecosystem/#managing-applications).
-
 ### Asset notes {#asset-notes}
 
 The "Asset notes" widget displays messages provided by the administrative user to all owners of the current widget.
@@ -185,12 +177,6 @@ Additionally, a specific date range can be set and the events can be monitored i
 The "Fieldbus device" widget lets you see the status of a modbus device and operate it.
 
 For details on the "Fieldbus device" widget, refer to [Monitoring the device status using the Fieldbus device widget](/device-integration/cloud-fieldbus/#monitoring-the-device-status-using-the-fieldbus-device-widget).
-
-### Help and service {#help-and-service}
-
-The "Help and service" widget displays links to help and service resources. There are no additional parameters to be configured.
-
-![Help and service widget](/images/users-guide/cockpit/cockpit-widget-help-service.png)
 
 ### Image {#image}
 
@@ -372,6 +358,14 @@ The "Pie chart" widget displays data points (measurements) with current values i
 </tr>
 </tbody>
 </table>
+
+### Quick links {#quick-links}
+
+The "Quick Links" widget displays links in either a grid or list format.
+
+![Quick links widget](/images/users-guide/cockpit/cockpit-widget-quick-links.png)
+
+You can add, edit, or remove links to customize the widget according to your needs.
 
 ### Radial Gauge {#radial-gauge}
 
