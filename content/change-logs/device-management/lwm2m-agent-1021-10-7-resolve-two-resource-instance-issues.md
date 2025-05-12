@@ -1,6 +1,6 @@
 ---
 date: 
-title: Resolved Issues in LWM2M Composite Write and Binary Data Read
+title: Resolved issues in LWM2M composite write and binary data read operations
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
