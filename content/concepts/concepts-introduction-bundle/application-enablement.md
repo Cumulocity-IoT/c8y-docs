@@ -27,3 +27,5 @@ For this, {{< product-c8y-iot >}} provides many self-service customization optio
 2. **UI applications**: The [Web SDK](/web/) allows developers to seamlessly extend any UI application with new functionality or leverage any {{< product-c8y-iot >}} UI component for your entirely own UI application.
 
 3. **Backend services**: The [managed microservices hosting](/standard-tenant/ecosystem/#custom-microservices) together with the [Microservice SDK](/microservice-sdk/microservice-sdk-introduction) makes it easy to develop, deploy and operate custom backend services.
+
+For further reading, see the [Application enablement & solutions](/sector/app_enablement/) section. 

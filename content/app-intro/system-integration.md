@@ -1,11 +1,12 @@
 ---
-title: System integration options
+title: System integration
 layout: bundle
 sector:
   - app_enablement
-weight: 10
+weight: 20
 aliases:
   - /webmethods-io/webmethods-io/
+  - /system-integration/
 ---
 
 This section guides you to available options and resources for integrating cloud applications and services using various cloud integration platforms. This enables you to automate tasks by connecting cloud applications and services (such as Marketo, Salesforce, Evernote, and Gmail) without writing any code.

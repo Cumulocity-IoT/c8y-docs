@@ -43,7 +43,7 @@ The following description is primarily based on Jasper, but the same configurati
 
 The following sections describe:
 
-* How to [set up your Jasper Control Center account](#setting-up-your-jasper-contro-center-account) (examplarily).
+* How to [set up your Jasper Control Center account](#setting-up-your-jasper-control-center-account) (examplarily).
 * How to configure the [connectivity for the SIM provider](#configuring-the-connectivity-for-the-sim-provider) in your {{< product-c8y-iot >}} tenant.
 * How to [link SIMs and mobile devices](#linking-sims-and-mobile-devices).
 * Which information is shown in the [Connectivity tab](#connectivity-tab).

@@ -71,7 +71,7 @@ can now be written more simply as
 [12345, "a string"]
 ```
 
-This simplifies the functional example given in [EPL enhancements in 10.15.3]({{<link-apama-webhelp>}}/change-logs/#10.15/functional-10153-release) in the Apama documentation: the `<any>` is no longer needed in the `setFields` call.
+This simplifies the functional example given in [EPL enhancements in 10.15.3](https://cumulocity.com/apama/docs/10.15/change-logs/#10.15/functional-10153-release) in the Apama documentation: the `<any>` is no longer needed in the `setFields` call.
 
 ##### Discarding of unused return values
 

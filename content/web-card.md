@@ -8,7 +8,7 @@ sector:
 bundlefolder: web
 audience:
   - Developers
-weight: 20
+weight: 50
 ---
 
 Discover how to develop web applications using the Web SDK and integrate default or branded UI components into your custom application.

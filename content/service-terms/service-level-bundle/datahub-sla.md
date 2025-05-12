@@ -39,7 +39,7 @@ Customers are encouraged to review the [{{< product-c8y-iot >}} DataHub document
 
 Customer acknowledges the following limitations and constraints in using Service.
 
-* **Service quotas:** Customer acknowledges the existence of additional quotas as detailed in [service quotas](/service-terms/quotas/#datahub) and in the [Dremio documentation](https://docs.dremio.com/current/get-started/cluster-deployments/architecture/limits/)
+* **Service quotas:** Customer acknowledges the existence of additional quotas as detailed in [service quotas](/service-terms/quotas/#datahub) and in the [Dremio documentation](https://docs.dremio.com/25.x/get-started/cluster-deployments/architecture/limits/)
 * **Dremio usage:** Customer acknowledges that inside {{< product-c8y-iot >}} DataHub, not all features of Dremio are available for use. In particular, public cloud instances do not currently support the use of Dremio reflections and additional data sources beyond the {{< product-c8y-iot >}} operational store.
 * **Query performance:** No response time guarantee can be given for queries, as they can be of arbitrary complexity and are scheduled for execution on shared resources. Overly long-running or resource-consuming queries may be canceled by {{< product-c8y-iot >}}'s capacity management.
 
