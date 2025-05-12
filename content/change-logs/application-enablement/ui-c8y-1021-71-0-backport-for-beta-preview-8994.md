@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Experiment with Upcoming Features Using the New Beta Feature Preview
+title: New beta feature preview functionality
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
