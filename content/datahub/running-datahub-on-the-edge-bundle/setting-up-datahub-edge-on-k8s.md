@@ -24,7 +24,7 @@ To install and configure DataHub Edge on Kubernetes, update the `spec.dataHub` f
 
 For more details on the `spec.dataHub` field, refer to [Edge Custom Resource - DataHub](/{{< c8y-edge-version-major >}}/edge-kubernetes/edge-custom-resource-definition/#k8-edge-dataHub).
 
-For additional guidance, see the [Install Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/installing-edge-on-k8/#install-edge) and [Modify Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/manage-edge/#modify-edge) sections in the Edge on Kubernetes documentation.
+For additional guidance, see the [Installing Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/installing-edge-on-k8/#install-edge) and [Modifying Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/manage-edge/#modify-edge) sections in the Edge on Kubernetes documentation.
 
 In order to access Dremio, you must also make the domain ``datahub-<domain_name>`` resolvable, just as the configured domain name and ``management-<domain_name>`` were made resolvable in [Accessing Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/installing-edge-on-k8/#accessing-edge).
 
