@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Date picker now respects user locale and includes missing localizations
+title: Date-time picker now respects user locale and includes missing localizations
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
