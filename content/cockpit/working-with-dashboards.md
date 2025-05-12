@@ -147,7 +147,7 @@ To access it, you must first install the "Dashboard details advanced tab" plugin
 
 The advanced feature allows to edit dashboards as JSON with the incorporated code editor. Keep in mind that this requires knowledge of `ContextDashboard` and widgets configuration interfaces. It also allows to export a dashboard to a JSON file (with some additional data that supports particular widgets in the importing process, for example, that helps to suggest a suitable widget device or takes care of images uploaded for the widget) and then to import the dashboard from the JSON file. This is a much more flexible approach than the one described in [To copy a dashboard from one object to another](#to-copy-a-dashboard-from-one-object-to-another) as it allows to share dashboards not only between the same type of assets in scope of the same tenant, but also to share dashboards between different asset types and different tenants. However, if you share dashboards between different types like groups and devices, for example, a review might be required after the import.
 
-<img src="/images/users-guide/cockpit/cockpit-dashboard-import-export.png" name="Restore dashboard state"/>
+<img src="/images/users-guide/cockpit/cockpit-dashboard-advanced-tab.png" name="Dashboard details Import/Export tab"/>
 
 
 ### To delete a dashboard {#to-delete-a-dashboard}
