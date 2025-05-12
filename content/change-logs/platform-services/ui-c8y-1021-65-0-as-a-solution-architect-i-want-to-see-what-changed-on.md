@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-05-08'
 title: Option added to view change logs of deployed packages
 product_area: Platform services
 change_type:
