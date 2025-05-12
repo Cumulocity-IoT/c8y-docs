@@ -23,4 +23,4 @@ Customers writing their own UI applications can benefit from this change since t
 
 As part of these changes, the login page also received a redesign.
 
-Customers which have been embedding the UI in an iframe and need to login within that iframe might need to perfrom some adjustments to the login page.
+Customers which have been embedding the UI in an iframe and need to login within that iframe might need to perform some adjustments to the login page.
