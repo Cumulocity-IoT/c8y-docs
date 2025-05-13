@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Radial gauge has been improved with better visualisation and more customizations
+date: '2025-05-08'
+title: >-
+  Radial gauge has been improved with better visualisation and more
+  customizations
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
