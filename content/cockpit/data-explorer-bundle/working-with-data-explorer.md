@@ -19,6 +19,13 @@ helpcontent:
     The data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."
 ---
 
+<div class="beta-toggle-box">
+  <label>
+    <input type="checkbox" id="beta-toggle" onchange="toggleBetaContent()">
+    <strong>Beta documentation available for Data Explorer</strong><br>
+  </label>
+</div>
+
 In the data explorer, data points (measurements or sensor data) can be visualized.
 
 {{< c8y-admon-req >}}
@@ -43,15 +50,21 @@ In the data explorer, you see a list of available data points at the right. The 
 
 On the left, in the main card, you see its visualization.
 
+{{< c8y-admon-stable >}}
 ![Data explorer](/images/users-guide/cockpit/cockpit-dataexplorer.png)
+{{< /c8y-admon-stable >}}
+
+{{< c8y-admon-beta >}}
+![Data explorer](/images/users-guide/cockpit/cockpit-dataexplorer-v2.png)
+{{< /c8y-admon-beta >}}
 
 The visualization is generated based on data point properties.
 
 The data points properties are pre-filled as follows:
 
-* If these properties have been customized previously, these values are used, see [To customize data point properties](#to-customize-data-point-properties).
+- If these properties have been customized previously, these values are used, see [To customize data point properties](#to-customize-data-point-properties).
 
-* If the data points have a matching definition in the data point library, the values from the data point library are used.
+- If the data points have a matching definition in the data point library, the values from the data point library are used.
 
 There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system.
 
@@ -67,7 +80,7 @@ Data points are visible to all authenticated users of the tenant, regardless of 
 
 {{< c8y-admon-related >}}
 
-- [Measurements](https://{{< domain-c8y >}}/api/core/#tag/Measurements) in the *{{< openapi >}}* for further details on uploading data to {{< product-c8y-iot >}}.
+- [Measurements](https://{{< domain-c8y >}}/api/core/#tag/Measurements) in the _{{< openapi >}}_ for further details on uploading data to {{< product-c8y-iot >}}.
 
 {{< /c8y-admon-related >}}
 
@@ -142,6 +155,29 @@ The following fields may be modified:
 </tbody>
 </table>
 
+{{< c8y-admon-beta >}}
+
+### To add or clone a workspace {#to-add-or-clone-workspaces}
+
+Workspaces in the Data Explorer let you create, save, and manage different configurations tailored to your specific needs—whether for individual devices, projects, or use cases. Each workspace stores your selected data points, chart layout, time range, and all visual customizations. Workspaces are saved automatically in your browser's local storage, so any updates (like adding or removing data points or changing the visualization) are preserved instantly.
+
+You can switch between multiple workspaces using the configuration menu, located at the top left of the Data Explorer page. This menu provides the following actions:
+
+- Create new configuration – Start from a blank workspace with no data points or settings applied.
+
+- Clone a configuration – Duplicate the current workspace to use it as a starting point for a new setup.
+
+- Delete all configurations (except the active one) – Clean up your saved configurations by removing all others, keeping only the currently active workspace.
+
+- Share workspace – Each workspace has a unique URL that can be shared with other users. To view the shared workspace, users must have access to the same devices and data points.
+
+![Data explorer workspaces](/images/users-guide/cockpit/cockpit-dataexplorer-workspaces.png)
+
+{{< c8y-admon-info >}}
+Since workspaces are stored locally, they are tied to your browser and device. Clearing browser data will remove them.
+{{< /c8y-admon-info >}}
+
+{{< /c8y-admon-beta >}}
 
 ### Y-axis behaviour {#y-axis-behaviour}
 
@@ -149,7 +185,7 @@ Per default, the first data point is positioned to the left y-axis and the remai
 
 Each data point is shown on its own y-axis, unless the following condition is met:
 
-* Two data points having the same minimum and the same maximum value.
+- Two data points having the same minimum and the same maximum value.
 
 In this case, both data points share the same y-axis. This y-axis only shows the unit (or multiple units, in case they are different). The label is not shown.
 
@@ -171,13 +207,23 @@ As with data points, you can turn the visibility of an alarm/ event in the data 
 
 You may download measurement data as CSV or Excel files. The exported data shows the following information, divided into columns:
 
- - Time when the specific measurement was taken
- - Source of the measurement
- - Name of the device being used
- - Fragment series (for example `c8y_SpeedMeasurement`)
- - Value of the measurement
- - Unit used for a particular measurement (for example "C", "km/h", "sec")
+- Time when the specific measurement was taken
+- Source of the measurement
+- Name of the device being used
+- Fragment series (for example `c8y_SpeedMeasurement`)
+- Value of the measurement
+- Unit used for a particular measurement (for example "C", "km/h", "sec")
+
+{{< c8y-admon-stable >}}
 
 To export measurement data, click the **More...** button in the top menu bar and select either **Download as CSV** or **Download as Excel**, according to your preferences.
 
-The download will be generated, as shown in the upcoming dialog. This may take a while, depending on the number of data points added to the data explorer. Once the loading has been completed, click **Download**.
+{{< /c8y-admon-stable >}}
+
+{{< c8y-admon-beta >}}
+
+To export measurement data, click the export button in the top menu bar and select your desired time range and data scope. Finally, select the checkbox to **Download as CSV** or **Download as Excel**, according to your preferences.
+
+Click **Download** to generate and save the file to your computer
+
+{{< /c8y-admon-beta >}}
