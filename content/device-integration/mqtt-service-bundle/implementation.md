@@ -9,6 +9,10 @@ The MQTT Service implementation supports clients connecting using MQTT versions 
 
 ### Connecting to the service {#connecting-via-mqtt}
 
+{{< c8y-admon-important >}}
+MQTT Service requires clients to connect with clean start flag enabled, set to "1" (true), otherwise the client connection is rejected by the server.
+{{< /c8y-admon-important >}}
+
 MQTT connections to the MQTT Service must use TCP.
 Use your tenant domain as the target host for the connection, for example `{my-tenant}.cumulocity.com`.
 
@@ -166,7 +170,7 @@ For subscriptions, the MQTT Service will deliver messages in the QoS that the cl
 #### Clean session {#clean-session}
 
 The MQTT Service **requires** the clean session flag to be set to "1" (true).
-Disabling clean session has no effect, meaning that a reconnecting client will not see any messages that it missed since the last disconnection, regardless of how it sets this flag.
+Disabling clean session will result in client connections being rejected by the server.
 
 #### Retained flag {#retained-flag}
 
