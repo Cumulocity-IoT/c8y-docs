@@ -3,12 +3,6 @@ weight: 90
 layout: redirect
 title: Frequently Asked Questions
 ---
-
-Q: How can I map my MQTT device payloads to {{< product-c8y-iot >}} without developing a custom microservice?<br/>
-A: One option is to use the <a href="https://github.com/Cumulocity-IoT/cumulocity-dynamic-mapper/" target="_blank">Dynamic Mapping Service for Cumulocity</a>.
-This is a community-supported open-source component that allows many different payload formats and encodings to be mapped to the {{< product-c8y-iot >}} domain model.
-Mappings can be configured using a graphical UI or by writing JavaScript code.
-
 Q: How can I obtain device credentials for my MQTT devices?<br/>
 A: The MQTT Service is not yet integrated with the {{< product-c8y-iot >}} device bootstrap process.
 This support is planned for a future release.
