@@ -681,7 +681,7 @@ $ mvn microservice:upload -Dupload.application.name=helloworld -Dupload.url=http
 
 ### Heap and perm/metadata {#heap-and-permmetadata}
 
-To calculate heap and perm/metadata, it takes the limit defined on the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) (`resources/memory`) and it is converted into Megabytes (MB). For Java applications developed using the Java Microservice SDK the minimal value is 178MB. <br>
+To calculate heap and perm/metadata, it takes the limit defined in the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) (`resources/memory`) and it is converted into Megabytes (MB). For Java applications developed using the Java Microservice SDK the minimal value is 178MB. <br>
 10% is reserved for "system", but not less than 50 MB. <br>
 10% is taken for metaspace, but not less than 64 MB and not more than 1024MB. <br>
 The rest is allocated for heap size.<br>
