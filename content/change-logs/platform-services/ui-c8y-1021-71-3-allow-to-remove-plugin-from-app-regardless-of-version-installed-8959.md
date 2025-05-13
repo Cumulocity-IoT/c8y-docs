@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63479
 version: 1021.71.3
 ---
-There was an issue with uninstalling plugin from application on package details view. If plugin was installed in version that was later removed from package (but package is still accessible because of newer version), it could not be uninstalled from package details view. This issue has been fixed now.
+Previously, if a plugin version was removed but the package remained accessible due to newer versions, the plugin would enter a "revoked" state. Attempting to uninstall such plugins appeared successful in the UI, but the plugin was not actually removed. With this fix, uninstallation of revoked plugins is now processed correctly and accurately reflected in the UI. Users can now reliably remove revoked plugins and upgrade to newer, available versions.```
