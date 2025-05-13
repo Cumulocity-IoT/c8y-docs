@@ -14,4 +14,4 @@ build_artifact:
 version: 24.18.0
 ---
 This version of {{< product-c8y-iot >}} Streaming Analytics includes the Apama version 10.15.4 correlator.
-EPL apps developers should also refer to [What's New In Apama 10.15.4]({{<link-apama-webhelp>}}/change-logs/?#10.15/cumulocity-10154-alarmstatus) in the Apama documentation.
+EPL apps developers should also refer to [What's New In Apama 10.15.4](https://cumulocity.com/apama/docs/10.15/change-logs/#10.15/cumulocity-10154-alarmstatus) in the Apama documentation.

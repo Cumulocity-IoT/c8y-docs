@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-04-24'
 title: X.509 certificates tab is now only shown for applicable devices
 product_area: Device management & connectivity
 change_type:
