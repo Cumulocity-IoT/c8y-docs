@@ -21,3 +21,4 @@ This also applies to module federation plugins, including plugins that use earli
 The Web SDK version 1022.0.0 introduces multiple breaking changes:
 
 - The dashboard setting component will be refactored to use a secondary router outlet in order to make these type of views hookable. This requires adding `rootContext: ViewContext.Dashboard` to the context dashboard routes. For details, refer to [Support for cross application dashboard import/export functionality](/change-logs/#ui-c8y-1022-0-0-dashboard-cross-application-copy-paste).
+- The login flow has been changed. The Web SDK no longer includes built-in login functionality in each application. Instead, a separate login application now manages all authentication flows. For details, refer to [Separate login application now manages all authentication flows](/change-logs/#ui-c8y-1022-0-0-separate-login-application).
