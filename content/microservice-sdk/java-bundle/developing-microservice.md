@@ -508,7 +508,7 @@ Example configuration in pom.xml:
 ...
 ```
 {{< c8y-admon-info >}}
-Note: Settings for heap and metaspace must be aligned with your settings of `resources/memory` in microservice manifest
+Settings for heap and metaspace must be aligned with your settings of `resources/memory` in the microservice manifest
 file `cumulocity.json`. You have to be sure about the effect those parameters might have. Those parameters are directly
 used for the microservice start without further verification. For example be sure that the heap values meet the
 condition: Xms < Xmx.
