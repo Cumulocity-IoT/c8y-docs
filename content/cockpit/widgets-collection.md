@@ -8,12 +8,12 @@ sector:
 
 The Cockpit application includes pre-set widget types. Each widget type provides different parameters to configure and different data to be displayed.
 
-
 {{< c8y-admon-related >}}
+
 - [Application enablement & solutions > Cockpit > Data explorer](/cockpit/data-explorer/) for details on visualizing your data when working with widgets.
 - [Platform administration > {{< standard-tenant >}} administration > Managing the ecosystem > Managing applications](/standard-tenant/ecosystem/#managing-applications) for details on managing applications.
 - Refer to the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) for a tutorial on customized widgets in the {{< product-c8y-iot >}} environment.
-{{< /c8y-admon-related >}}
+  {{< /c8y-admon-related >}}
 
 ### Alarm list {#alarm-list}
 
@@ -23,16 +23,16 @@ The "Alarm list" widget shows a list of alarms, filtered by objects, alarm sever
 
 **Parameters to configure**
 
-|Field|Description|
-|:---|:---|
-|Title|Widget title. By default, the widget type is used as title.
-|Target assets or devices|Select groups or devices, optional HTML expressions which should be evaluated.
-|Status|Only show devices with alarms of of the selected alarm status.
-|Type|Only show alarms of the specified type(s). Details can be seen when clicking once on an alarm.
-|Severities|Only show alarms of the selected alarm severity.
-|Order|Alarms may be ordered by the active status (followed by severity and time, the default), by date (followed by time, either in descending or ascending order), or by severity (followed by time).
-|Auto refresh|Enables you to automatically refresh the alarm list at the frequency you select.
-|Show alarms from child devices|Show or hide the alarms of child devices.
+| Field                          | Description                                                                                                                                                                                      |
+| :----------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Title                          | Widget title. By default, the widget type is used as title.                                                                                                                                      |
+| Target assets or devices       | Select groups or devices, optional HTML expressions which should be evaluated.                                                                                                                   |
+| Status                         | Only show devices with alarms of of the selected alarm status.                                                                                                                                   |
+| Type                           | Only show alarms of the specified type(s). Details can be seen when clicking once on an alarm.                                                                                                   |
+| Severities                     | Only show alarms of the selected alarm severity.                                                                                                                                                 |
+| Order                          | Alarms may be ordered by the active status (followed by severity and time, the default), by date (followed by time, either in descending or ascending order), or by severity (followed by time). |
+| Auto refresh                   | Enables you to automatically refresh the alarm list at the frequency you select.                                                                                                                 |
+| Show alarms from child devices | Show or hide the alarms of child devices.                                                                                                                                                        |
 
 ### Applications {#applications}
 
@@ -56,14 +56,13 @@ The "Asset properties" widget displays a user-defined list of attributes of the 
 
 ![Asset properties widget](/images/users-guide/cockpit/cockpit-widget-asset-properties.png)
 
-
 **Parameters to configure**
 
-|Field|Description|
-|:---|:---|
-|Title|Widget title. By default, the widget type is used as title.
-|Target assets or devices|Select groups or devices.
-|Properties|List of properties, see [Asset table](#asset-table).
+| Field                    | Description                                                 |
+| :----------------------- | :---------------------------------------------------------- |
+| Title                    | Widget title. By default, the widget type is used as title. |
+| Target assets or devices | Select groups or devices.                                   |
+| Properties               | List of properties, see [Asset table](#asset-table).        |
 
 {{< c8y-admon-info >}}
 In the view mode, this widget only displays the properties which are not empty.
@@ -75,11 +74,11 @@ The "Asset table" widget shows details of a selected asset and all its child dev
 
 **Parameters to configure**
 
-|Field|Description|
-|:---|:---|
-|Title|Widget title. By default, the widget type is simply used as title.
-|Target assets or devices|Select for which object all child devices should be shown. This is typically a group object.
-|Properties|Select properties or actions of an object to visualize them as columns in the table.
+| Field                    | Description                                                                                  |
+| :----------------------- | :------------------------------------------------------------------------------------------- |
+| Title                    | Widget title. By default, the widget type is simply used as title.                           |
+| Target assets or devices | Select for which object all child devices should be shown. This is typically a group object. |
+| Properties               | Select properties or actions of an object to visualize them as columns in the table.         |
 
 **Example**
 
@@ -218,37 +217,38 @@ The "HTML" widget shows user-defined content. The content can be formatted using
 
 **Parameters to configure**
 
-* Target assets or devices: Select the objects for which optional HTML expressions are evaluated.
+- Target assets or devices: Select the objects for which optional HTML expressions are evaluated.
 
-* HTML code
+- HTML code
 
-	The following variables can be used inside the HTML content:
+  The following variables can be used inside the HTML content:
 
-	* {{devicesCount}}: Total number of devices.
+  - {{devicesCount}}: Total number of devices.
 
-	* {{usersCount}}: Total number of users.
+  - {{usersCount}}: Total number of users.
 
-	* {{deviceGroupsCount}}: Total number of groups.
+  - {{deviceGroupsCount}}: Total number of groups.
 
-	* {{device.name}}: The name of the device.
+  - {{device.name}}: The name of the device.
 
-	* {{device.*property*}}: More general form of the above. You can address any property of the device.
+  - {{device.*property*}}: More general form of the above. You can address any property of the device.
 
-	* {{device.c8y_Hardware.model}}: The model of the device.
+  - {{device.c8y_Hardware.model}}: The model of the device.
 
-	* {{device.*fragment*.*property*}}: More general form of the above. You can address any property of any fragment of the device.
+  - {{device.*fragment*.*property*}}: More general form of the above. You can address any property of any fragment of the device.
 
-	* {{devices[*deviceId*].name}}: The name of the device at the specified index.
+  - {{devices[*deviceId*].name}}: The name of the device at the specified index.
 
-	* {{devices[*deviceId*].*property*}}: More general form of the above. You can address any property of the device at the specified index.
+  - {{devices[*deviceId*].*property*}}: More general form of the above. You can address any property of the device at the specified index.
 
 "Device" refers to the target device, as selected in the widget configuration parameter.<br>
 "fragment.property" refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or "Asset table" widget and click **+Add property** in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column **Property**. Generated properties of these widgets are not available in the HTML widgets.
 
 The following code sanitization options can be selected:
- - strict - Does not allow any JS or angularjs directives.
- - lax (default) - Allows partly JS (events) and all angularjs directives.
- - none - Allows everything.
+
+- strict - Does not allow any JS or angularjs directives.
+- lax (default) - Allows partly JS (events) and all angularjs directives.
+- none - Allows everything.
 
 {{< c8y-admon-info >}}
 The sanitization option "lax" includes a defined list of directives that are excluded from sanitization. For more examples on how to customize the sanitization options, see the help text toggle in the **HTML code** section.
@@ -259,7 +259,11 @@ The sanitization option "lax" includes a defined list of directives that are exc
 If you want to use a link in the **HTML code** field, for example a link to a dashboard, you must use the following format:
 
 ```html
-  <a style="cursor:pointer;" onclick="location.hash = '#/group/<<group-id>>/dashboard/<<dashboard-id>>'">link to another dashboard</a><br />
+<a
+  style="cursor:pointer;"
+  onclick="location.hash = '#/group/<<group-id>>/dashboard/<<dashboard-id>>'"
+  >link to another dashboard</a
+><br />
 ```
 
 ### KPI {#kpi}
@@ -274,10 +278,11 @@ On the left side, select the data point you want to display.
 You must select only one active datapoint to create the "KPI" widget. If you select multiple data points at once, you cannot save the configuration.
 
 On the right side, you can adjust how the data point is going to be displayed. This includes:
-* Icon: The icon to be displayed next to the data point
-* Number of decimal places
-* Display: Allows to toggle whether the timestamp, icon and trend indicator should be displayed
-* Font size of measurement value
+
+- Icon: The icon to be displayed next to the data point
+- Number of decimal places
+- Display: Allows to toggle whether the timestamp, icon and trend indicator should be displayed
+- Font size of measurement value
 
 ### Linear Gauge {#linear-gauge}
 
@@ -301,24 +306,24 @@ You can drag the map and move its content, and you can zoom in and out by using 
 
 The icons representing the devices are color-coded. The color used follows these rules:
 
-* Red = At least one CRITICAL alarm
-* Orange = At least one MAJOR alarm
-* Yellow = At least one MINOR alarm
-* Blue = At least one WARNING
-* Grey = No alarm
+- Red = At least one CRITICAL alarm
+- Orange = At least one MAJOR alarm
+- Yellow = At least one MINOR alarm
+- Blue = At least one WARNING
+- Grey = No alarm
 
 Click a device icon, to open a popup with the following information:
 
-* The device name. When clicked, the application navigates to the device.
-* The date at which the device last reported its location, if available.
+- The device name. When clicked, the application navigates to the device.
+- The date at which the device last reported its location, if available.
 
 **Parameters to configure**
 
-* Target assets or devices: Select which devices are shown on the map. If a group is selected, all devices in that group (but not in any subgroups) are visible.
-* Marker icon: Icon of the marker on the map.
-* Zoom level: Default zoom level of the map.
-* Center bound: The default map coordinates.
-* Refresh interval: The refresh interval for the selected device or asset. If only one device is selected, instead of refresh interval, realtime option can be selected together with "follow selected" device toggle which would follow the device after location update.
+- Target assets or devices: Select which devices are shown on the map. If a group is selected, all devices in that group (but not in any subgroups) are visible.
+- Marker icon: Icon of the marker on the map.
+- Zoom level: Default zoom level of the map.
+- Center bound: The default map coordinates.
+- Refresh interval: The refresh interval for the selected device or asset. If only one device is selected, instead of refresh interval, realtime option can be selected together with "follow selected" device toggle which would follow the device after location update.
 
 {{< c8y-admon-info >}}
 If none of the target device(s) has a known location, then the widget shows a world map without icons.
@@ -332,9 +337,9 @@ The "Markdown" widget can be used to display markdown content. Using the “Mark
 
 There are several ways to provide markdown content:
 
-* Upload a markdown file.
-* Provide a URL to an external source.
-* Add "/README.md" as a relative file path in order to provide the README file of the current application as source.
+- Upload a markdown file.
+- Provide a URL to an external source.
+- Add "/README.md" as a relative file path in order to provide the README file of the current application as source.
 
 ### Message sending {#message-sending}
 
@@ -375,11 +380,61 @@ The "Pie chart" widget displays data points (measurements) with current values i
 
 ### Radial Gauge {#radial-gauge}
 
-The "Radial gauge" widget visualizes data points in form of a radial gauge.
+The Radial gauge widget visualizes data points in the form of a radial gauge, making it ideal for monitoring values like temperature, pressure, or performance metrics at a glance.
+
+Presets and Customization
+You can choose from various preset styles such as Default, Pointer, Progress Bar, Progress Indicator, and Grade Rating. Each preset provides a distinct visual design.
 
 ![Radial gauge widget](/images/users-guide/cockpit/cockpit-widget-radial-gauge.png)
 
 You must enable at least one data point to create the "Radial gauge" widget.
+
+For full control, click “Show advanced options” to customize the gauge’s appearance and behavior.
+
+**Advanced options reference**
+
+| Category         | Property                                             | Description                                           |
+| ---------------- | ---------------------------------------------------- | ----------------------------------------------------- |
+| **General**      | `name`                                               | Name of the gauge preset                              |
+|                  | `radius`                                             | Radius of the gauge (e.g., "90%")                     |
+|                  | `center`                                             | Center position of the gauge (e.g., `["50%", "50%"]`) |
+|                  | `startAngle`, `endAngle`                             | Start and end angles of the gauge arc                 |
+| **Split Lines**  | `splitNumber`                                        | Number of segments in the gauge                       |
+|                  | `splitLineLength`, `splitLineLengthRatio`            | Length of split lines (absolute or ratio)             |
+|                  | `splitLineDistance`, `splitLineDistanceRatio`        | Distance of split lines from axis (absolute or ratio) |
+|                  | `splitLineColor`, `splitLineWidth`                   | Color and width of the split lines                    |
+| **Ticks**        | `tickShow`                                           | Whether to show ticks                                 |
+|                  | `tickWidth`, `tickColor`                             | Width and color of ticks                              |
+|                  | `tickDistance`, `tickDistanceRatio`                  | Distance of ticks from center (absolute or ratio)     |
+|                  | `tickLength`, `tickLengthRatio`                      | Length of ticks (absolute or ratio)                   |
+| **Axis**         | `axisLabelDistance`, `axisLabelDistanceRatio`        | Distance of axis labels from center                   |
+|                  | `axisLabelColor`                                     | Color of axis labels                                  |
+|                  | `axisLabelFontSize`, `axisLabelFontSizeRatio`        | Font size of labels (absolute or ratio)               |
+|                  | `axisLabelFontSizeMin`, `axisLabelFontSizeMax`       | Minimum and maximum font size for labels              |
+|                  | `axisLineWidth`, `axisLineWidthRatio`                | Width of the axis line (absolute or ratio)            |
+| **Pointer**      | `showPointer`                                        | Whether to show the pointer                           |
+|                  | `pointerStyle`, `pointerColor`                       | Style and color of the pointer                        |
+|                  | `pointerWidth`, `pointerWidthRatio`                  | Width of pointer (absolute or ratio)                  |
+|                  | `pointerLength`, `pointerLenghtRatio`                | Length of pointer (absolute or ratio)                 |
+|                  | `pointerOffset`                                      | Offset of pointer from center                         |
+| **Progress Bar** | `progressBar`                                        | Enable progress bar                                   |
+|                  | `progressBarWidth`                                   | Width of the progress bar                             |
+|                  | `progressBarRoundCap`                                | Rounded caps on progress bar ends                     |
+|                  | `progressBarColor`                                   | Color of the progress bar                             |
+|                  | `additionalGaugeColors`                              | Extra colors for segmented gauge bars                 |
+| **Typography**   | `measurementValueFontRatio`                          | Font size ratio of the measurement value              |
+|                  | `measurementValueFontMin`, `measurementValueFontMax` | Min and max font size for measurement value           |
+|                  | `measurementValueColor`                              | Color of the measurement value text                   |
+|                  | `unitFontSize`, `unitFontRatio`                      | Font size or ratio of the unit label                  |
+|                  | `unitFontMin`, `unitFontMax`                         | Min and max font size for the unit label              |
+|                  | `unitColor`                                          | Color of the unit label                               |
+|                  | `dateFontSize`, `dateFontRatio`                      | Font size or ratio of the timestamp                   |
+|                  | `dateFontMin`, `dateFontMax`                         | Min and max font size for the timestamp               |
+|                  | `dateColor`                                          | Color of the timestamp                                |
+| **Details**      | `showDetail`                                         | Show detailed information like value or markers       |
+|                  | `valueFontSize`                                      | Font size for the displayed value                     |
+|                  | `detailOffsetCenter`                                 | Offset of detail from center                          |
+|                  | `showMarkPoint`                                      | Show mark points on the gauge                         |
 
 ### Relay array control {#relay-array-control}
 
@@ -395,13 +450,13 @@ The "Rotation" widget lets you render an object model of a device.
 
 **Parameters to configure**
 
-|Field|Description|
-|:---|:---|
-|Title|Widget title. By default, the widget type is simply used as title.
-|Target assets or devices|Select group or device to be displayed.
-|Object model for rendering|Select an object model type for rendering. May be one of "Box model" or "Phone model".
-|Wireframe|Turn "Wireframe" on or off (default = on). The "wireframe" mode displays the object in a skeletal representation.
-|Camera type|Select the type of camera to be used. May be one of "Orthographic camera" or "Perspective camera".
+| Field                      | Description                                                                                                       |
+| :------------------------- | :---------------------------------------------------------------------------------------------------------------- |
+| Title                      | Widget title. By default, the widget type is simply used as title.                                                |
+| Target assets or devices   | Select group or device to be displayed.                                                                           |
+| Object model for rendering | Select an object model type for rendering. May be one of "Box model" or "Phone model".                            |
+| Wireframe                  | Turn "Wireframe" on or off (default = on). The "wireframe" mode displays the object in a skeletal representation. |
+| Camera type                | Select the type of camera to be used. May be one of "Orthographic camera" or "Perspective camera".                |
 
 In the "Rotation" widget you can rotate the object by dragging and moving it around. Zoom in and out by using the mouse.
 
@@ -412,9 +467,10 @@ The "SCADA" widget provides a graphic representation of the status of a device.
 For details on the "SCADA" widget, refer to [Monitoring the device status using the SCADA widget](/device-integration/cloud-fieldbus/#monitoring-the-device-status-using-the-scada-widget).
 
 The following code sanitization options can be selected:
- - strict - Does not allow any JS or angularjs directives.
- - lax (default) - Allows partly JS (events) and all angularjs directives.
- - none - Allows everything.
+
+- strict - Does not allow any JS or angularjs directives.
+- lax (default) - Allows partly JS (events) and all angularjs directives.
+- none - Allows everything.
 
 ![SCADA widget](/images/users-guide/cockpit/cockpit-widget-scada.png)
 
@@ -453,8 +509,8 @@ The "Traffic light" widget visualizes the states of a device as traffic light.
 
 **Parameters to configure**
 
-|Field|Description|
-|:---|:---|
-|Title|Widget title. By default, the widget type is simply used as title.
-|Target assets or devices|Select group or device to be displayed.
-|States mapping|Select a property for each light. The value of the property must be one of the following to have the respective light on: true, 1, any non-empty string, any non-null number.
+| Field                    | Description                                                                                                                                                                   |
+| :----------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Title                    | Widget title. By default, the widget type is simply used as title.                                                                                                            |
+| Target assets or devices | Select group or device to be displayed.                                                                                                                                       |
+| States mapping           | Select a property for each light. The value of the property must be one of the following to have the respective light on: true, 1, any non-empty string, any non-null number. |
