@@ -398,7 +398,7 @@ For full control, click **Show advanced options** to customize the gauge’s app
 | **Split lines**  | `splitNumber`                                        | Number of segments in the gauge                       |
 |                  | `splitLineLength`, `splitLineLengthRatio`            | Length of split lines (absolute or ratio)             |
 |                  | `splitLineDistance`, `splitLineDistanceRatio`        | Distance of split lines from axis (absolute or ratio) |
-|                  | `splitLineColor`, `splitLineWidth`                   | Color and width of split lines                    |
+|                  | `splitLineColor`, `splitLineWidth`                   | Color and width of split lines                        |
 | **Ticks**        | `tickShow`                                           | Whether to show ticks                                 |
 |                  | `tickWidth`, `tickColor`                             | Width and color of ticks                              |
 |                  | `tickDistance`, `tickDistanceRatio`                  | Distance of ticks from center (absolute or ratio)     |
