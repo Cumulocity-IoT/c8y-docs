@@ -4,8 +4,10 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   let completedTests = 0;
   const totalTests = urls.length;
 
+
+  const escRegExp = (string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  
   const checkFragmentExists = (htmlContent, fragment) => {
-    const escRegExp = (string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const escFragment = escRegExp(fragment);
     const regexId = new RegExp(`id=["']${escFragment}["']`);
     return regexId.test(htmlContent);
@@ -17,6 +19,30 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
   const expectNoUnencodedParentheses = (url) => {
     cy.wrap(url).should('not.match', /[()]/, `URL should not contain unencoded parentheses: ${url}`);
+  };
+
+  const checkGithubFragment = (fragment) => {
+    const normalizedFragment = fragment.toLowerCase().replace(/[^\w\-]+/g, '-').replace(/^-+|-+$/g, '');
+    cy.document().then((doc) => {
+      const anchorExists = Array.from(doc.querySelectorAll('a'))
+        .some(a => a.getAttribute('href') === `#${normalizedFragment}`);
+      
+      expect(anchorExists, `Fragment "#${normalizedFragment}" should exist in href attribute of an <a> tag`).to.be.true;
+      const allFragments = Array.from(doc.querySelectorAll('a'))
+        .map(a => a.getAttribute('href'))
+        .filter(href => href && href.startsWith('#'));
+      cy.log(`Available fragments on page:\n${allFragments.join('\n')}`);
+    });
+  };
+
+  const checkRegularFragment = (fragment) => {
+    cy.document().then((doc) => {
+      const html = doc.documentElement.innerHTML;
+      expectFragmentExists(html, fragment);
+      
+      const ids = Array.from(doc.querySelectorAll('[id]')).map(el => el.id);
+      cy.log(`Available IDs:\n${ids.join('\n')}`);
+    });
   };
 
   Cypress.on('fail', (error) => {
@@ -33,32 +59,47 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       const fragment = url.includes('#') ? url.split('#').slice(-1)[0] : null;
       const isCodexPage = url.includes('codex/#/');
       const isApiPage = url.includes('/api/');
+      const isGithubPage = url.includes('github.com');
+      const nonHtmlExtensions = ['.txt','.json','.pdf','.zip','.csv','.xml','.not','.bin','.dat','.tar','.gz','.rar','.xsd','.yaml'];
 
+      const hasNonHtmlExtension = nonHtmlExtensions.some(ext => url.endsWith(ext));
+      const isNonHtmlResource = hasNonHtmlExtension || url.includes('/files/') || url.includes('/downloads/');
+  
       Cypress.env('sourceFiles', item.files);
       expectNoUnencodedParentheses(url);
+  
+      if (isNonHtmlResource) {
+        cy.log(`Validating non-HTML resource: ${url}`);
+        cy.request({
+          url: url,
+          failOnStatusCode: false 
+        }).then((response) => {
+          expect(response.status).to.be.oneOf([200, 304]);
+  
+          if (url.endsWith('.json')) {
+            expect(response.body).to.be.an('object');
+          }
+        });
+        completedTests++;
+        return;
+      }
 
       if (isCodexPage) {
         cy.visit(url, { timeout: 20000 });
       
-        // Check that the page loaded and isn't a 404
         cy.get('[data-cy="c8y-title--title-outlet"] .text-truncate', { timeout: 20000 })
           .invoke('text')
           .should('not.be.empty')
       
-        // Validate the URL matches exactly what was provided (including fragment)
         cy.url().should('eq', url);
       
         if (fragment) {
-          // Check if the fragment is a route (starts with '/') or an actual DOM ID
           if (fragment.startsWith('/')) {
-            // For route-like fragments, validate the URL hash
             cy.location('hash').should('eq', `#${fragment}`, `URL hash should match the fragment: #${fragment}`);
           } else {
-            // For actual DOM IDs, check if the element exists
             cy.get(`#${fragment}`, { timeout: 10000 })
               .should('exist', `Fragment "${fragment}" does not exist on the page`)
               .then(() => {
-                // Log available IDs for debugging
                 cy.document().then((doc) => {
                   const ids = Array.from(doc.querySelectorAll('[id]')).map((el) => el.id);
                   cy.log(`Available IDs on the page:\n${ids.join('\n')}`);
@@ -67,56 +108,22 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
           }
         }
       }
-      
       else if (isApiPage) {
         cy.visit(url, { timeout: 20000 });
-
         if (fragment) {
-          cy.get(`[id="${fragment}"]`, { timeout: 10000 }).should('exist', `Element with ID "${fragment}" should exist`);
+          cy.get(`[id="${fragment}"]`, { timeout: 10000 }).should('exist');
         }
       }
-
-      else if (url.includes('github.com')) {
+      else if (isGithubPage && fragment) {
         cy.visit(url, { timeout: 20000 });
-      
-        if (fragment) {
-          const normalizedFragment = fragment.toLowerCase().replace(/[^\w\-]+/g, '-').replace(/^-+|-+$/g, '');
-          cy.document().then((doc) => {
-            const anchorExists = Array.from(doc.querySelectorAll('a'))
-              .some(a => a.getAttribute('href') === `#${normalizedFragment}`);
-            
-            expect(anchorExists, `Fragment "#${normalizedFragment}" should exist in href attribute of an <a> tag`).to.be.true;
-            const allFragments = Array.from(doc.querySelectorAll('a'))
-              .map(a => a.getAttribute('href'))
-              .filter(href => href && href.startsWith('#'));
-            cy.log(`Available fragments on page:\n${allFragments.join('\n')}`);
-          });
-        }
+        checkGithubFragment(fragment);
       }
-    
       else if (fragment) {
         cy.visit(url, { timeout: 20000 });
-      
-        cy.document().then((doc) => {
-          const escRegExp = (string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-          const escFragment = escRegExp(fragment);
-          const regexId = new RegExp(`id=["']${escFragment}["']`);
-      
-          const html = doc.documentElement.innerHTML;
-          const found = regexId.test(html);
-      
-          expect(found, `Fragment "${fragment}" should exist in HTML as an id`).to.be.true;
-      
-          // Optional: log all available IDs
-          const ids = Array.from(doc.querySelectorAll('[id]')).map(el => el.id);
-          cy.log(`Available IDs:\n${ids.join('\n')}`);
-        });
+        checkRegularFragment(fragment);
       }
-      
       else {
         cy.visit(url, { timeout: 20000 });
-      
-        // Optional: confirm page is not blank or 404
         cy.document().its('body').should('not.be.empty');
       }
       

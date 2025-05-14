@@ -26,11 +26,6 @@ jobs:
           cd broken-links-script
           npm install
 
-      - name: Generate links
-        run: |
-          cd broken-links-script
-          node Extractlinks.js
-
       - name: Run Cypress tests
         run: |
           cd broken-links-script

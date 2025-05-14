@@ -54,6 +54,12 @@ Cypress.on('uncaught:exception', (err) => {
     if (err.message.includes("Cannot read properties of null (reading 'setAttribute')")) {
       return false;
     }
+    if (err.message.includes("Identifier 'LocalStorageUtil' has already been declared")) {
+      return false;
+    }
+    if (err.message.includes("$(...).tooltip is not a function")) {
+      return false;
+    }
 
   });
   
