@@ -15,7 +15,7 @@ const getMarkdownFiles = (dir) => {
   return markdownFiles;
 };
 
-const BASE_URL = "https://cumulocity.com/docs";
+const BASE_URL = "https://cumulocity.com/docs/2025";
 
 const shortcodeMapping = {
   "apama-plugin-for-eclipse": "Apama Plugin for Eclipse",
