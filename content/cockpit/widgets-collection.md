@@ -413,7 +413,7 @@ For full control, click **Show advanced options** to customize the gauge’s app
 |                  | `pointerWidth`, `pointerWidthRatio`                  | Width of pointer (absolute or ratio)                  |
 |                  | `pointerLength`, `pointerLenghtRatio`                | Length of pointer (absolute or ratio)                 |
 |                  | `pointerOffset`                                      | Offset of pointer from center                         |
-| **Progress Bar** | `progressBar`                                        | Enable progress bar                                   |
+| **Progress bar** | `progressBar`                                        | Enable progress bar                                   |
 |                  | `progressBarWidth`                                   | Width of the progress bar                             |
 |                  | `progressBarRoundCap`                                | Rounded caps on progress bar ends                     |
 |                  | `progressBarColor`                                   | Color of the progress bar                             |
