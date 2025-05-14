@@ -1,7 +1,7 @@
 ---
 date: ""
 title: Date-time picker automatically corrects invalid hour and minute values
-product_area: Device management & connectivity
+product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
