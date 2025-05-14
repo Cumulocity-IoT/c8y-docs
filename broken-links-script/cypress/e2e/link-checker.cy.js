@@ -6,15 +6,12 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
 
   const escRegExp = (string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  
-  const checkFragmentExists = (htmlContent, fragment) => {
-    const escFragment = escRegExp(fragment);
-    const regexId = new RegExp(`id=["']${escFragment}["']`);
-    return regexId.test(htmlContent);
-  };
 
   const expectFragmentExists = (htmlContent, fragment) => {
-    expect(checkFragmentExists(htmlContent, fragment), `Fragment "${fragment}" should exist in HTML`).to.be.true;
+    const escFragment = escRegExp(fragment);
+    const regex = new RegExp(`(id=["']${escFragment}["']|name=["']${escFragment}["'])`);
+    const exists = regex.test(htmlContent);
+    expect(exists, `Fragment "${fragment}" should exist in HTML`).to.be.true;
   };
 
   const expectNoUnencodedParentheses = (url) => {
@@ -39,9 +36,10 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     cy.document().then((doc) => {
       const html = doc.documentElement.innerHTML;
       expectFragmentExists(html, fragment);
-      
       const ids = Array.from(doc.querySelectorAll('[id]')).map(el => el.id);
-      cy.log(`Available IDs:\n${ids.join('\n')}`);
+      const names = Array.from(doc.querySelectorAll('a[name]')).map(a => a.getAttribute('name'));
+      const allFragments = [...ids, ...names];
+      cy.log(`Available fragments on page:\n${allFragments.join('\n')}`);
     });
   };
 
@@ -60,7 +58,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       const isCodexPage = url.includes('codex/#/');
       const isApiPage = url.includes('/api/');
       const isGithubPage = url.includes('github.com');
-      const nonHtmlExtensions = ['.txt','.json','.pdf','.zip','.csv','.xml','.not','.bin','.dat','.tar','.gz','.rar','.xsd','.yaml'];
+      const nonHtmlExtensions = ['.txt','.json','.pdf','.zip','.csv','.xml','.not','.bin','.dat','.tar','.gz','.rar','.xsd','.yaml','pot'];
 
       const hasNonHtmlExtension = nonHtmlExtensions.some(ext => url.endsWith(ext));
       const isNonHtmlResource = hasNonHtmlExtension || url.includes('/files/') || url.includes('/downloads/');
