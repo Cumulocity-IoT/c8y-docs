@@ -392,7 +392,7 @@ For full control, click **Show advanced options** to customize the gauge’s app
 | Category         | Property                                             | Description                                           |
 | ---------------- | ---------------------------------------------------- | ----------------------------------------------------- |
 | **General**      | `name`                                               | Name of the gauge preset                              |
-|                  | `radius`                                             | Radius of the gauge (for example, "90%")               |
+|                  | `radius`                                             | Radius of the gauge (for example, "90%")              |
 |                  | `center`                                             | Center position of the gauge (for example, `["50%", "50%"]`) |
 |                  | `startAngle`, `endAngle`                             | Start and end angles of the gauge arc                 |
 | **Split lines**  | `splitNumber`                                        | Number of segments in the gauge                       |
