@@ -19,12 +19,9 @@ helpcontent:
     The data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."
 ---
 
-<div class="beta-toggle-box">
-  <label>
-    <input type="checkbox" id="beta-toggle" onchange="toggleBetaContent()">
-    <strong>Beta documentation available for Data Explorer</strong><br>
-  </label>
-</div>
+{{< c8y-admon-beta-toggle >}}
+  Toggle between stable and beta documentation to preview upcoming changes to the data explorer.
+{{< /c8y-admon-beta-toggle >}}
 
 In the data explorer, data points (measurements or sensor data) can be visualized.
 

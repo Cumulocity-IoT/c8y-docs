@@ -23,26 +23,3 @@
 {{ if eq .Title "Release notes" }}
 <script src="{{ "js/vendor/isotope.pkgd.min.js" | absURL }}"></script>
 {{ end }}
-
-
-<script>
-function toggleBetaContent() {
-  const checked = document.getElementById('beta-toggle').checked;
-  document.querySelectorAll('.beta-content').forEach(el => {
-    el.style.display = checked ? 'block' : 'none';
-  });
-  document.querySelectorAll('.stable-content').forEach(el => {
-    el.style.display = checked ? 'none' : 'block';
-  });
-  localStorage.setItem('showBetaContent', checked);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const checkbox = document.getElementById('beta-toggle');
-  const showBeta = localStorage.getItem('showBetaContent') === 'true';
-  if (checkbox) {
-    checkbox.checked = showBeta;
-    toggleBetaContent();
-  }
-});
-</script>

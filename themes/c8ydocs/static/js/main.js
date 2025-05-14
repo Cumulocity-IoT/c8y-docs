@@ -101,6 +101,8 @@ var main = (function ($) {
       $('[autocomplete="off"][name="search"]').attr('placeholder', 'Search...');
     }, 500);
 
+    
+
   }
   return {
     init: initializer
@@ -298,3 +300,24 @@ function clipboardCode() {
     }, 1500);
   });
 }
+
+// Toggle Beta content
+function toggleBetaContent() {
+  const checked = document.getElementById('beta-toggle').checked;
+  document.querySelectorAll('.beta-content').forEach(el => {
+    el.style.display = checked ? 'block' : 'none';
+  });
+  document.querySelectorAll('.stable-content').forEach(el => {
+    el.style.display = checked ? 'none' : 'block';
+  });
+  localStorage.setItem('showBetaContent', checked);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const checkbox = document.getElementById('beta-toggle');
+  const showBeta = localStorage.getItem('showBetaContent') === 'true';
+  if (checkbox) {
+    checkbox.checked = showBeta;
+    toggleBetaContent();
+  }
+});
