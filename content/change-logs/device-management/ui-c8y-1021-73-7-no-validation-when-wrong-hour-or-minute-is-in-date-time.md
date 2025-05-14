@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61596
 version: 1021.73.7
 ---
-The date and time picker component now automatically corrects invalid hour and minute values to 00.
+The date-time picker component now automatically corrects invalid hour and minute values to "00".
