@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63399
 version: 1021.73.2
 ---
-Previously, the final message displayed after completed device registration via EST was the same as in case of regular registation, which was confusing for the users. With this change, the displayed message is more relevant for devices registered via EST, i.e. that they can directly request the signed certificates and use them to authenticate to the platform without any further manual acceptance process.
+Previously, the message displayed after completion of the device registration via EST (Enrollment over Secure Transport protocol) was the same as in case of the regular device registration, which was confusing. With this change, the displayed message is specific for devices registered via EST, that is, they can directly request the signed certificates and use them to authenticate to the platform without any further manual acceptance process.
