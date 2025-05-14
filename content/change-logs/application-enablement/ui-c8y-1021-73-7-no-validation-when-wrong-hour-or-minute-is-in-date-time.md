@@ -6,7 +6,7 @@ change_type:
   - value: change-VSkj2iV9m
     label: Fix
 component:
-  - value: component--KIsStyzM
+  - value: component-YbYJ3gLU_
     label: Web SDK
 build_artifact:
   - value: tc-pjJiURv9Y
