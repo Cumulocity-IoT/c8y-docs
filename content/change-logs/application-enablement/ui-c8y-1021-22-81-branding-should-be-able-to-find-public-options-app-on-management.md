@@ -14,5 +14,5 @@ build_artifact:
 ticket: MTM-63601
 version: 1021.22.81
 ---
-Previously, the branding manager was in certain cases unable to locate the public-options application on the management tenant, preventing the user from custimizing the branding.
+Previously, the branding manager was in certain cases unable to locate the public-options application on the {{< management-tenant >}}, preventing the user from customizing the branding.
 This issue has now been resolved.
