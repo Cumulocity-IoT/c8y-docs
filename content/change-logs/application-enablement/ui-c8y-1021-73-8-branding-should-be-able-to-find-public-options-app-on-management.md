@@ -14,5 +14,5 @@ build_artifact:
 ticket: MTM-63601
 version: 1021.73.8
 ---
-Previously, the branding manager was in certain cases unable to locate the public-options application on the {{< product-c8y-iot >}}, preventing the user from customizing the branding.
+Previously, the branding manager was in certain cases unable to locate the public-options application on the {{< management-tenant >}}, preventing the user from customizing the branding.
 This issue has now been resolved.
