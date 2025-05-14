@@ -58,7 +58,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       const isCodexPage = url.includes('codex/#/');
       const isApiPage = url.includes('/api/');
       const isGithubPage = url.includes('github.com');
-      const nonHtmlExtensions = ['.txt','.json','.pdf','.zip','.csv','.xml','.not','.bin','.dat','.tar','.gz','.rar','.xsd','.yaml','pot'];
+      const nonHtmlExtensions = ['.txt','.json','.pdf','.zip','.csv','.xml','.not','.bin','.dat','.tar','.gz','.rar','.xsd','.yaml','.pot'];
 
       const hasNonHtmlExtension = nonHtmlExtensions.some(ext => url.endsWith(ext));
       const isNonHtmlResource = hasNonHtmlExtension || url.includes('/files/') || url.includes('/downloads/');
