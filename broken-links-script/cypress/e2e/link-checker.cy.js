@@ -11,7 +11,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     const escFragment = escRegExp(fragment);
     const regex = new RegExp(`(id=["']${escFragment}["']|name=["']${escFragment}["'])`);
     const exists = regex.test(htmlContent);
-    expect(exists, `Fragment "${fragment}" should exist in HTML`).to.be.true;
+    expect(exists, `An element with id or name "${fragment}" should exist in HTML`).to.be.true;
   };
 
   const expectNoUnencodedParentheses = (url) => {
@@ -39,7 +39,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       const ids = Array.from(doc.querySelectorAll('[id]')).map(el => el.id);
       const names = Array.from(doc.querySelectorAll('a[name]')).map(a => a.getAttribute('name'));
       const allFragments = [...ids, ...names];
-      cy.log(`Available fragments on page:\n${allFragments.join('\n')}`);
+      cy.log(`Available elements on page with ids and names:\n${allFragments.join('\n')}`);
     });
   };
 
@@ -100,7 +100,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
               .then(() => {
                 cy.document().then((doc) => {
                   const ids = Array.from(doc.querySelectorAll('[id]')).map((el) => el.id);
-                  cy.log(`Available IDs on the page:\n${ids.join('\n')}`);
+                  cy.log(`Available elements with IDs on the page:\n${ids.join('\n')}`);
                 });
               });
           }
