@@ -4,7 +4,7 @@ title: Using Cumulocity MQTT Service
 layout: redirect
 ---
 
-The {{< product-c8y-iot >}} MQTT Service is an MQTT endpoint to {{< product-c8y-iot >}} which supports publishing and subscribing arbitrary payloads. These need to be processed within {{< product-c8y-iot >}} into a format that can be consumed by the platform. This connectivity allows for that processing to be done in Streaming Analytics. The MQTT Service allows for messages to be processed by Streaming Analytics before being stored in the platform.
+The {{< product-c8y-iot >}} MQTT Service is an MQTT endpoint to {{< product-c8y-iot >}} which supports publishing and subscribing arbitrary payloads. These need to be processed within {{< product-c8y-iot >}} into a format that can be consumed by the platform. This connectivity allows for that processing to be done in Streaming Analytics. The MQTT Service allows for messages to be processed by Streaming Analytics before being stored in the platform and for Streaming Analytics to send messages to the device.
 
 {{< c8y-admon-info >}}The {{< product-c8y-iot >}} MQTT Service feature is currently in private preview. If you would like to have it enabled for your tenant, please contact {{< product-c8y-iot >}} [product support](/additional-resources/contacting-support/).{{< /c8y-admon-info >}}
 
