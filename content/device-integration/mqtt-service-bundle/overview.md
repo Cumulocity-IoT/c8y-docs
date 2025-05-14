@@ -14,9 +14,9 @@ delivered to {{< product-c8y-iot >}} using the standard REST API.
 ![MQTT Service send](/images/mqtt-service/mqtt-service-send.svg)
 
 All MQTT messages published to the MQTT Service are forwarded to the Messaging Service, where they are persisted, waiting to be consumed.
-A custom microservice or [Streaming Analytics application](/streaming-analytics/epl-apps-bundle/using-cumulocity-mqtt-service) that understands the topic and payload structure can consume the MQTT messages, and then translate and push them into {{< product-c8y-iot >}}.
+A custom microservice or [Streaming Analytics application](/streaming-analytics/epl-apps/#using-cumulocity-mqtt-service) that understands the topic and payload structure can consume the MQTT messages, and then translate and push them into {{< product-c8y-iot >}}.
 
-Similarly, messages can be sent to devices, as shown in the diagram below.
+Similarly, a custom microservice or Streaming Analytics application can send messages to devices, as shown in the diagram below.
 In this case, the user-provided microservice receives messages from {{< product-c8y-iot >}} through a Notifications 2.0 subscription.
 These messages are mapped to the payload structure used by the MQTT devices, then published to MQTT topics.
 
