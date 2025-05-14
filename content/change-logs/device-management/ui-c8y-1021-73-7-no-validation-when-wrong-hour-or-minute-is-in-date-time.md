@@ -1,6 +1,6 @@
 ---
 date: ""
-title: The date and time picker no longer accepts invalid hour or minute values
+title: Date-time picker automatically corrects invalid hour and minute values
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
