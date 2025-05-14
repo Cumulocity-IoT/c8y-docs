@@ -52,6 +52,11 @@ In the **Platform info** section, you find information on the infrastructure of 
 - The ID of your tenant, which might be required if you request support. Click the clipboard icon next to the tenant ID to copy it to the clipboard.
 - Version information for the deployed components. For information on the version numbers of the different components, click the **Download platform details** button and then open the downloaded JSON file.
 
+#### Beta features {#beta-features}
+
+When a new beta feature becomes available, the user settings icon in the top right corner of the interface will flash to draw your attention. Beta features can be easily enabled for your user through the Beta features modal in the user settings. 
+These previews allow early access to upcoming capabilities so you can explore and provide feedback before general release.
+
 #### Bookmarks {#bookmarks}
 
 The **Bookmarks** section provides links to the most common pages and processes in the platform. Click **Add current page** to add a custom bookmark to the list.
