@@ -54,6 +54,15 @@ In the **Platform info** section, you find information on the infrastructure of 
 
 #### Beta features {#beta-features}
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+To see the **Beta features** menu section, you must have ADMIN permission for the "Tenant management" permission type or be the first admin user created in the tenant.
+
+For easier user access management, the above permission(s) are/is included in the global role(s) created by default in every new tenant:
+- Tenant manager - manages tenant-wide configurations like applications, tenant options and retention rules.
+{{< /c8y-admon-req >}}
+
 When a new beta feature becomes available, the user settings icon in the top right corner of the interface will flash to draw your attention. Beta features can be easily enabled for your user through the Beta features modal in the user settings. 
 These previews allow early access to upcoming capabilities so you can explore and provide feedback before general release.
 
