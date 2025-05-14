@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61596
 version: 1021.73.7
 ---
-No validation when wrong hour or minute is in date time picker (#8829) [GRAFT][release/cd] (#8949)
+The date and time picker component now automatically corrects invalid hour and minute values to 00.
