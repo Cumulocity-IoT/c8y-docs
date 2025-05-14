@@ -1,6 +1,6 @@
 ---
 date: ""
-title: branding should be able to find public options app on management tenant (#9091)
+title: Branding can now find public options app on management tenant
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,5 @@ build_artifact:
 ticket: MTM-63601
 version: 1021.22.81
 ---
-branding should be able to find public options app on management tenant (#9091)
+Previously, the branding manager was in certain cases unable to locate the public-options application on the management tenant, preventing the user from custimizing the branding.
+This has now been resolved.
