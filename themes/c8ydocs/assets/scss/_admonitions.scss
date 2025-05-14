@@ -175,3 +175,18 @@
   }
 }
 
+.beta-content{
+  outline: 1px dashed var(--c8y-brand-30);
+  outline-offset: 1rem;
+  border-radius: 1rem;
+  margin: 2rem 0;
+  &:before{
+    content: "beta";
+    display: inline-block;
+    font-size: .675rem;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    transform: translate(1rem,-0.5rem);
+    color: var(--c8y-brand-30);
+  }
+}
