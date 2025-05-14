@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Branding can now find public options app on management tenant
+title: Resolved issues with branding manager which prevented customizing the branding
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,5 +14,5 @@ build_artifact:
 ticket: MTM-63601
 version: 1021.73.8
 ---
-Previously, the branding manager was in certain cases unable to locate the public-options application on the management tenant, preventing the user from custimizing the branding.
-This has now been resolved.
+Previously, the branding manager was in certain cases unable to locate the public-options application on the {{< product-c8y-iot >}}, preventing the user from customizing the branding.
+This issue has now been resolved.
