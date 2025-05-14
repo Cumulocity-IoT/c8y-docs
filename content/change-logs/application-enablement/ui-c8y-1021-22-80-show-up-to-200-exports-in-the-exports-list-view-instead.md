@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Increase number of visible exports in list view to 200
+title: Increased number of visible exports in the exports list
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63576
 version: 1021.22.80
 ---
-Previously, the exports list view in the Cumulocity IoT platform was limited to displaying only the first 100 exports. To provide users with a more comprehensive overview of their available exports, the number of visible exports in the list view has now been increased to 200. This change allows users to see and manage a larger number of their exports directly from the list view without the need for additional navigation or filtering.
+ew of their data exports, the number of visible exports in the list has now been increased to 200. This change allows users to see and manage a larger number of their data exports directly in the list without the need for additional navigation or filtering.
