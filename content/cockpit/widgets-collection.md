@@ -375,29 +375,30 @@ The "Pie chart" widget displays data points (measurements) with current values i
 
 ### Radial Gauge {#radial-gauge}
 
-The Radial gauge widget visualizes data points in the form of a radial gauge, making it ideal for monitoring values like temperature, pressure, or performance metrics at a glance.
+The "Radial gauge" widget visualizes data points in the form of a radial gauge, making it ideal for monitoring values like temperature, pressure, or performance metrics at a glance.
 
-Presets and Customization
-You can choose from various preset styles such as Default, Pointer, Progress Bar, Progress Indicator, and Grade Rating. Each preset provides a distinct visual design.
+#### Presets and customization
+
+You can choose from various preset styles such as "Default", "Pointer", "Progress bar", "Progress indicator", and "Grade rating". Each preset provides a distinct visual design.
 
 ![Radial gauge widget](/images/users-guide/cockpit/cockpit-widget-radial-gauge.png)
 
 You must enable at least one data point to create the "Radial gauge" widget.
 
-For full control, click “Show advanced options” to customize the gauge’s appearance and behavior.
+For full control, click **Show advanced options** to customize the gauge’s appearance and behavior.
 
 **Advanced options reference**
 
 | Category         | Property                                             | Description                                           |
 | ---------------- | ---------------------------------------------------- | ----------------------------------------------------- |
 | **General**      | `name`                                               | Name of the gauge preset                              |
-|                  | `radius`                                             | Radius of the gauge (e.g., "90%")                     |
-|                  | `center`                                             | Center position of the gauge (e.g., `["50%", "50%"]`) |
+|                  | `radius`                                             | Radius of the gauge (for example, "90%")                     |
+|                  | `center`                                             | Center position of the gauge (for example, `["50%", "50%"]`) |
 |                  | `startAngle`, `endAngle`                             | Start and end angles of the gauge arc                 |
-| **Split Lines**  | `splitNumber`                                        | Number of segments in the gauge                       |
+| **Split lines**  | `splitNumber`                                        | Number of segments in the gauge                       |
 |                  | `splitLineLength`, `splitLineLengthRatio`            | Length of split lines (absolute or ratio)             |
 |                  | `splitLineDistance`, `splitLineDistanceRatio`        | Distance of split lines from axis (absolute or ratio) |
-|                  | `splitLineColor`, `splitLineWidth`                   | Color and width of the split lines                    |
+|                  | `splitLineColor`, `splitLineWidth`                   | Color and width of split lines                    |
 | **Ticks**        | `tickShow`                                           | Whether to show ticks                                 |
 |                  | `tickWidth`, `tickColor`                             | Width and color of ticks                              |
 |                  | `tickDistance`, `tickDistanceRatio`                  | Distance of ticks from center (absolute or ratio)     |
