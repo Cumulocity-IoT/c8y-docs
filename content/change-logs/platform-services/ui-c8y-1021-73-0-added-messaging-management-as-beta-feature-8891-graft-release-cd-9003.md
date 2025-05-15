@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Messaging service - monitoring and management feature available as public preview
+title: Messaging Service monitoring and management feature available as public preview
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
