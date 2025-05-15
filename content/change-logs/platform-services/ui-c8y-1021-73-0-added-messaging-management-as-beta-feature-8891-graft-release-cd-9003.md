@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63290
 version: 1021.73.0
 ---
-It provides a public preview of a new feature: Messaging service - monitoring and management, which allows to monitor and manage the usage of messaging service. You can activate it in Administration using "Manage beta features" option in the user menu. Find out more about the feature in its user documentation: https://cumulocity.com/docs/standard-tenant/monitoring/#messaging-service
+The Messaging Service, the messaging component embedded in the {{< product-c8y-iot >}} platform, has been enhanced by a new monitoring and management feature which allows to monitor and manage the usage of the Messaging Service resources. This new feature is currently in public preview. You can activate it in the platform UI via the **Manage beta features** option in the user menu. Find out more about the feature in its [user documentation](/standard-tenant/monitoring/#messaging-service).
