@@ -547,7 +547,7 @@ Sets the supported software types of the device. Ignores empty elements. An empt
 143,yum,docker
 ```
 
-##### Set supported software types (150) {#150}
+##### Set supported remote access protocols (150) {#150}
 
 Sets the list of Cloud Remote Access protocols supported by the device. Possible values are `SSH`,`TELNET`,`VNC` and `PASSTHROUGH`. Empty elements are ignored. An empty list removes the `c8y_RemoteAccessSupportedProtocols` fragment entirely.
 
