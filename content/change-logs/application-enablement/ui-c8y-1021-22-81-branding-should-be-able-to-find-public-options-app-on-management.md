@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Branding can now find public options app on management tenant
+title: Resolved issues with branding manager which prevented customizing the branding
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
