@@ -10,7 +10,7 @@ aliases:
 
 Devices can authenticate to {{< product-c8y-iot >}} using X.509 certificates over REST (port 8443), MQTT and LWM2M using mTLS.
 
-Each tenant individually defines whom it trusts by uploading the base CA certificate as a trust anchor, these must be unique across the {{}} instance. Devices connecting to the platform with certificates do not need to provide the tenant ID, username and password; authentication information is obtained from the certificates.
+Each tenant individually defines whom it trusts by uploading the base CA certificate as a trust anchor, these must be unique across the {{< product-c8y-iot >}} instance. Devices connecting to the platform with certificates do not need to provide the tenant ID, username and password; authentication information is obtained from the certificates.
 
 **HTTP**
 
