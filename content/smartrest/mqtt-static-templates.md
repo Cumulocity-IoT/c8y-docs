@@ -106,7 +106,7 @@ If a parameter is in square brackets, it is optional.
 <li><a href="#530">530,serial,hostname,port,connectionKey</a></li>
 </ul>
 
-<strong><a href="#device-parameter-templates">Device Parameter templates</strong>
+<strong><a href="#device-parameter-templates">Device parameter templates</strong>
 <ul>
 <li><a href="#600">600 (Retrieve the platform version, reply: "601, platform version")</a></li>
 </ul>
@@ -142,7 +142,7 @@ The client can receive the following templates when subscribing to <kbd>s/ds</kb
 <li>[530,serial,hostname,port,connectionKey](#530)</li>
 </ul>
 
-<strong><a href="#subscribe-device-parameter">Device Parameter templates</a></strong>
+<strong><a href="#subscribe-device-parameter">Device parameter templates</a></strong>
 <ul>
 <li>[601, platform version](#601)</li>
 </ul>
@@ -959,7 +959,7 @@ If the fragment parameter is empty, all EXECUTING operations are set to FAILED.
 
 
 
-#### Device Parameter templates (6xx) {#device-parameter-templates}
+#### Device parameter templates (6xx) {#device-parameter-templates}
 
 ##### Get the platform version (600) {#600}
 
@@ -1320,7 +1320,7 @@ Establish tunneling by Remote Access device agent.
 
 
 
-#### Device Parameter templates (6xx) {#subscribe-device-parameter} 
+#### Device parameter templates (6xx) {#subscribe-device-parameter} 
 
 ##### Get the platform version (601) {#601}
 

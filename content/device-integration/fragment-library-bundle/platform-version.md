@@ -6,7 +6,7 @@ sector:
   - device_management
 ---
 
-In order to understand the capabilities of the platform like support of API interfaces or behaviour of requests to them, we need to read the platform version
+In order to understand the capabilities of the platform such as the support of API interfaces or the behaviour of requests to them, we must read the platform version.
 
 ```http
 POST /tenant/system/options/system/version
@@ -14,7 +14,7 @@ POST /tenant/system/options/system/version
 
 **SmartREST example**
 
-To read the platform version the following SmartREST template must be called
+To read the platform version the following SmartREST template must be called:
 
 `600`
 
