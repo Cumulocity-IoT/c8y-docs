@@ -6,7 +6,7 @@ sector:
   - device_management
 ---
 
-In order to understand the capabilities of the platform such as the support of API interfaces or the behaviour of requests to them, we must read the platform version.
+In order to understand the capabilities of the platform, such as the support of API interfaces or the behaviour of requests to them, we must read the platform version.
 
 ```http
 POST /tenant/system/options/system/version
