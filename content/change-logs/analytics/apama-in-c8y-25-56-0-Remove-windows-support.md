@@ -1,6 +1,8 @@
 ---
-date: 
-title: Changes to the development workflow on Windows for Apama Analytics Builder Block SDK and Apama EPL Apps Tools
+date: '2025-05-15'
+title: >-
+  Changes to the development workflow on Windows for Apama Analytics Builder
+  Block SDK and Apama EPL Apps Tools
 change_type:
   - value: change-inv-3bw8e
     label: Announcement
