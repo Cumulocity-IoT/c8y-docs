@@ -6,56 +6,123 @@ sector:
   - edge_server
 ---
 
-This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation) cluster with default options. For detailed instructions, see [Installing Edge on Kubernetes](/edge-kubernetes/installing-edge-on-k8/).
+This section helps you to quickly install Cumulocity IoT Edge on a [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation) cluster using the `c8yedge` installer CLI. This tool automates the setup of K3s, Helm, Edge Operator, and the Edge instance itself.
 
-1. Verify that your hardware meets the requirements specified in [Prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
+## 1. Download and install the `c8yedge` CLI
 
-2. Make configuration changes to your operating system to work with K3s as per [Requirements](https://docs.k3s.io/installation/requirements#operating-systems).
+Download the installer from the official source:
 
-3. Run the command below to install K3s.
+```shell
+curl -LO https://download.cumulocity.com/edge/<c8yedge>
+chmod +x c8yedge
+sudo mv c8yedge /usr/bin/
+```
 
-   ```shell
-   sudo sh -c '
-      USER_NAME=$(whoami)
-      USER_HOME=$(eval echo ~${USER_NAME})
-      K3S_VERSION=v1.32.3+k3s1
+## 2. View available commands
 
-      touch /etc/sysctl.d/90-kubelet.conf  && \
-      sed -i "/^vm\.panic_on_oom=/d; /^vm\.overcommit_memory=/d; /^kernel\.panic=/d; /^kernel\.panic_on_oops=/d" /etc/sysctl.d/90-kubelet.conf && \
-      printf "vm.panic_on_oom=0\nvm.overcommit_memory=1\nkernel.panic=10\nkernel.panic_on_oops=1\n" | tee -a /etc/sysctl.d/90-kubelet.conf && \
+To list all available commands and options, run:
 
-      sysctl -p /etc/sysctl.d/90-kubelet.conf && \
+```shell
+c8yedge help
+```
 
-      curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=${K3S_VERSION} sh -s - \
-         --write-kubeconfig-mode 644 \
-         --disable=traefik \
-         --protect-kernel-defaults true \
-      
-      mkdir -p '"$USER_HOME"'/.kube && \
-      cp /etc/rancher/k3s/k3s.yaml '"$USER_HOME"'/.kube/config && \
-      chown '"$USER_NAME:"' '"$USER_HOME"'/.kube/config && \
-      chmod 600 '"$USER_HOME"'/.kube/config && \
+Expected output:
 
-      printf "\e[32mSuccessfully installed k3s!\e[0m\n"
-   '
-   ```
+```
+This is a CLI tool for installation and maintaining of
+Cumulocity Edge on Kubernetes.
 
-4. Run the command below to install Helm v3.
+Usage:
+  c8yedge [command]
 
-   ```shell
-   curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
-   ```
+Available Commands:
+  completion  Generate the autocompletion script for the specified shell
+  help        Help about any command
+  install     Install Cumulocity Edge on Kubernetes
+  remove      Uninstall Cumulocity Edge and Kubernetes
+  version     Default version of Cumulocity Edge on Kubernetes to install, modify it with --version flag when calling install command
 
-5. Run the command below to install the Edge operator and provide the registry credentials when prompted.
+Flags:
+  -h, --help   help for c8yedge
 
-   ```shell
-   curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh
-   ```
+Use "c8yedge [command] --help" for more information about a command.
+```
 
-6. Run the command below to apply Edge CR ([c8yedge-sample.yaml](/files/edge-k8s/c8yedge-sample.yaml)) for installing Edge version **{{< c8y-edge-version >}}** named **c8yedge** with the domain **myown.iot.com**.
+## 3. check the version before we start (optional)
 
-   ```shell
-   kubectl apply -f {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-sample.yaml
-   ```
+To show the version of cli, run:
 
-7. See [Verifying the Edge installation](/edge-kubernetes/installing-edge-on-k8/#verifying-the-edge-installation) and [Accessing Edge](/edge-kubernetes/installing-edge-on-k8/#accessing-edge) to sign into Edge.
+```shell
+c8yedge version
+```
+
+Expected output:
+
+```
+Cumulocity Edge installer version: 2025.0.2
+```
+
+
+## 4. Install Edge
+
+Run the install command and follow the prompts. You can either pass flags explicitly or enter them interactively.
+
+### Option 1: Interactive
+
+```shell
+c8yedge install
+```
+
+You'll be asked to confirm system readiness. Enter `yes` to proceed.
+
+Example output:
+
+```shell
+Set to 'yes' to confirm that system requirements are met [yes/no]: yes
+Registry Host: registry.c8y.io
+Registry User: <YourUsername>
+Registry Password: <YourPassword>
+```
+
+### Option 2: With Flags
+
+```shell
+c8yedge install   --registry-host registry.c8y.io   --username <YourUsername>   --password  <YourPassword>   --version 2025   --confirm-system-requirements yes
+```
+
+
+Once complete, you will see the operator and edge deployment running:
+
+```shell
+kubectl get pods -A
+```
+
+Expected pods:
+
+```
+NAMESPACE     NAME                                                   READY   STATUS    RESTARTS   AGE
+c8yedge       c8yedge-operator-controller-manager-xxxx               1/1     Running   0          47s
+kube-system   coredns-xxxxx                                          1/1     Running   0          49s
+...
+```
+
+## 5. What’s next?
+
+Visit:
+
+- [Verifying the Edge installation](/edge-kubernetes/installing-edge-on-k8/#verifying-the-edge-installation)
+- [Accessing Edge](/edge-kubernetes/installing-edge-on-k8/#accessing-edge)
+
+to log in and start using your Edge instance.
+
+## 6. Uninstalling Edge
+
+> ⚠️ Warning: Uninstalling Edge using the CLI is **non-recoverable**. It will remove both the Edge instance and the K3s cluster from the node. Backup any important data beforehand.
+
+```shell
+c8yedge remove
+Do You really want to remove Cumulocity Edge? This includes all platform data and will be non recoverable. [yes/no]: yes
+
+To confirm Cumulocity Edge uninstallation use this random value: <random-text> , to cancel type any other string.
+Confirm by typing the random value from above sentence: <random-text>
+```
