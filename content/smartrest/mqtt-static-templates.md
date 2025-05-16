@@ -1328,7 +1328,7 @@ Retrieve the platform version
 
 |Position|Parameter|Type|
 |:-------|:-------|:---|
-|1|id|String|
+|1|version|String|
 
 **Example**
 
