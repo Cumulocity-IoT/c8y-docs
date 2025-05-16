@@ -28,7 +28,7 @@ c8yedge help
 
 Expected output:
 
-```
+```shell
 This is a CLI tool for installation and maintaining of
 Cumulocity Edge on Kubernetes.
 
@@ -58,7 +58,7 @@ c8yedge version
 
 Expected output:
 
-```
+```shell
 Cumulocity Edge installer version: 2025.0.2
 ```
 
@@ -99,7 +99,7 @@ kubectl get pods -A
 
 Expected pods:
 
-```
+```shell
 NAMESPACE     NAME                                                   READY   STATUS    RESTARTS   AGE
 c8yedge       c8yedge-operator-controller-manager-xxxx               1/1     Running   0          47s
 kube-system   coredns-xxxxx                                          1/1     Running   0          49s
@@ -116,9 +116,9 @@ Visit:
 to log in and start using your Edge instance.
 
 ## 6. Uninstalling Edge
-
-> ⚠️ Warning: Uninstalling Edge using the CLI is **non-recoverable**. It will remove both the Edge instance and the K3s cluster from the node. Backup any important data beforehand.
-
+{{< c8y-admon-important >}}
+Uninstalling Edge using the CLI is **non-recoverable**. It will remove both the Edge instance and the K3s cluster from the node. Backup any important data beforehand.
+{{< /c8y-admon-important >}}
 ```shell
 c8yedge remove
 Do You really want to remove Cumulocity Edge? This includes all platform data and will be non recoverable. [yes/no]: yes
