@@ -6,19 +6,19 @@ sector:
   - edge_server
 ---
 
-This section helps you to quickly install Cumulocity IoT Edge on a [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation) cluster using the `c8yedge` installer CLI. This tool automates the setup of K3s, Helm, Edge Operator, and the Edge instance itself.
+This section helps you to quickly install {{< product-c8y-iot >}} Edge on a [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation) cluster using the `c8yedge` installer CLI. This tool automates the setup of K3s, Helm, Edge Operator, and the Edge instance itself.
 
-## 1. Download and install the `c8yedge` CLI
+### 1. Download and install the `c8yedge` CLI
 
 Download the installer from the official source:
 
 ```shell
-curl -LO https://download.cumulocity.com/edge/<c8yedge>
+curl -LO https://download.{{< product-c8y-iot >}}.com/edge/<c8yedge>
 chmod +x c8yedge
 sudo mv c8yedge /usr/bin/
 ```
 
-## 2. View available commands
+### 2. View available commands
 
 To list all available commands and options, run:
 
@@ -29,8 +29,8 @@ c8yedge help
 Expected output:
 
 ```shell
-This is a CLI tool for installation and maintaining of
-Cumulocity Edge on Kubernetes.
+This is a CLI tool for installation and maintenance of
+{{< product-c8y-iot >}} Edge on Kubernetes.
 
 Usage:
   c8yedge [command]
@@ -38,9 +38,9 @@ Usage:
 Available Commands:
   completion  Generate the autocompletion script for the specified shell
   help        Help about any command
-  install     Install Cumulocity Edge on Kubernetes
-  remove      Uninstall Cumulocity Edge and Kubernetes
-  version     Default version of Cumulocity Edge on Kubernetes to install, modify it with --version flag when calling install command
+  install     Install {{< product-c8y-iot >}} Edge on Kubernetes
+  remove      Uninstall {{< product-c8y-iot >}} Edge and Kubernetes
+  version     Default version of {{< product-c8y-iot >}} Edge on Kubernetes to install, modify it with --version flag when calling install command
 
 Flags:
   -h, --help   help for c8yedge
@@ -48,9 +48,9 @@ Flags:
 Use "c8yedge [command] --help" for more information about a command.
 ```
 
-## 3. check the version before we start (optional)
+### 3. Check the version before starting (optional)
 
-To show the version of cli, run:
+To show the version of the CLI, run:
 
 ```shell
 c8yedge version
@@ -59,15 +59,15 @@ c8yedge version
 Expected output:
 
 ```shell
-Cumulocity Edge installer version: 2025.0.2
+{{< product-c8y-iot >}} Edge installer version: 2025.0.2
 ```
 
 
-## 4. Install Edge
+### 4. Install Edge
 
 Run the install command and follow the prompts. You can either pass flags explicitly or enter them interactively.
 
-### Option 1: Interactive
+#### Option 1: Interactive
 
 ```shell
 c8yedge install
@@ -84,14 +84,14 @@ Registry User: <YourUsername>
 Registry Password: <YourPassword>
 ```
 
-### Option 2: With Flags
+#### Option 2: With flags
 
 ```shell
 c8yedge install   --registry-host registry.c8y.io   --username <YourUsername>   --password  <YourPassword>   --version 2025   --confirm-system-requirements yes
 ```
 
 
-Once complete, you will see the operator and edge deployment running:
+Once complete, you will see the operator and Edge deployment running:
 
 ```shell
 kubectl get pods -A
@@ -106,7 +106,7 @@ kube-system   coredns-xxxxx                                          1/1     Run
 ...
 ```
 
-## 5. What’s next?
+### 5. What’s next?
 
 Visit:
 
@@ -121,8 +121,8 @@ Uninstalling Edge using the CLI is **non-recoverable**. It will remove both the 
 {{< /c8y-admon-important >}}
 ```shell
 c8yedge remove
-Do You really want to remove Cumulocity Edge? This includes all platform data and will be non recoverable. [yes/no]: yes
+Do You really want to remove {{< product-c8y-iot >}} Edge? This includes all platform data and will be non recoverable. [yes/no]: yes
 
-To confirm Cumulocity Edge uninstallation use this random value: <random-text> , to cancel type any other string.
-Confirm by typing the random value from above sentence: <random-text>
+To confirm {{< product-c8y-iot >}} Edge uninstallation use this random value: <random-text> , to cancel type any other string.
+Confirm by typing the random value from the above sentence: <random-text>
 ```
