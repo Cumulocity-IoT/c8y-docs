@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed a special character issue during device registration via EST
+title: Special characters are now correctly escaped in the device registration process via EST
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
