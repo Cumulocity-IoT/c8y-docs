@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added filter option for DataHub entries to the audit log list
+title: Added filter option for DataHub entries to the audit logs list
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63667
 version: 1021.75.0
 ---
-A new filter option for entries created by DataHub has been added to the audit log list. Previously, the audit log list did not allow filtering of DataHub-related entries specifically.
+A new filter option for entries created by DataHub has been added to the audit logs list. Previously, the audit logs list did not allow filtering of DataHub-related entries specifically.
