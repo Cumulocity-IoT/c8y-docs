@@ -221,6 +221,6 @@ To export measurement data, click the **More...** button in the top menu bar and
 
 To export measurement data, click the export button in the top menu bar and select your desired time range and data scope. Finally, select the checkbox to **Download as CSV** or **Download as Excel**, according to your preferences.
 
-Click **Download** to generate and save the file to your computer
+Click **Download** to generate and save the file to your computer.
 
 {{< /c8y-admon-beta >}}
