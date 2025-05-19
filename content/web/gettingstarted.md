@@ -149,7 +149,7 @@ providing this information as parameters. Use the following code to build and de
 without prompting:
 
 ```bash
-ng deploy -- -u http://yourtenant.cumulocity.com -T t12345 -U acme -P "*******"
+ng deploy -u http://yourtenant.cumulocity.com -T t12345 -U acme -P "*******"
 ```
 
 In this example we use the custom deploy command added to Angular. You need to provide the option
