@@ -76,7 +76,7 @@ You can select a single group or a single device (just one, not multiple). To en
 
 **Troubleshooting**
 
-* Ensure that a new alarm was actually created. Notifications are only sent for newly created alarms, not for updates to existing active alarms of the same type. If an alarm of the same type is already active for the device, no additional notification will be triggered.
+* Ensure that a new alarm was created. Notifications are only sent for newly created alarms, not for updates to existing active alarms of the same type. If an alarm of the same type is already active for the device, no additional notification will be triggered.
 
 * Check if the device is in [maintenance mode](/device-management-application/monitoring-and-controlling-devices/#to-monitor-the-connection-for-multiple-devices). In this case no new alarm will be created because of suppression policy.
 
@@ -140,7 +140,7 @@ For details on enabling/disabling a smart rule, see <a href="/cockpit/smart-rule
 </tbody>
 </table>
 
-* Ensure that a new alarm was actually created. Notifications are only sent for newly created alarms, not for updates to existing active alarms of the same type. If an alarm of the same type is already active for the device, no additional notification will be triggered.
+* Ensure that a new alarm was created. Notifications are only sent for newly created alarms, not for updates to existing active alarms of the same type. If an alarm of the same type is already active for the device, no additional notification will be triggered.
 
 * Check if the device is in [maintenance mode](/device-management-application/monitoring-and-controlling-devices/#to-monitor-the-connection-for-multiple-devices). In this case no new alarm will be created because of suppression policy.
 
@@ -205,7 +205,7 @@ For details on enabling/disabling a smart rule, see <a href="/cockpit/smart-rule
 
 **Troubleshooting**
 
-* Ensure that a new alarm was actually created. Notifications are only sent for newly created alarms, not for updates to existing active alarms of the same type. If an alarm of the same type is already active for the device, no additional notification will be triggered.
+* Ensure that a new alarm was created. Notifications are only sent for newly created alarms, not for updates to existing active alarms of the same type. If an alarm of the same type is already active for the device, no additional notification will be triggered.
 
 * Check if the device is in [maintenance mode](/device-management-application/monitoring-and-controlling-devices/#to-monitor-the-connection-for-multiple-devices). In this case no new alarm will be created because of suppression policy.
 
@@ -709,7 +709,7 @@ Range values defined in the source object have a higher priority than those defi
 
 **Troubleshooting**
 
-* Ensure that a new alarm was actually created. Notifications are only sent for newly created alarms, not for updates to existing active alarms of the same type. If an alarm of the same type is already active for the device, no additional notification will be triggered.
+* Ensure that a new alarm was created. Notifications are only sent for newly created alarms, not for updates to existing active alarms of the same type. If an alarm of the same type is already active for the device, no additional notification will be triggered.
 
 * Check if the device is in [maintenance mode](/device-management-application/monitoring-and-controlling-devices/#to-monitor-the-connection-for-multiple-devices). In this case no new alarm will be created because of suppression policy.
 
@@ -785,7 +785,7 @@ For details on enabling/disabling a smart rule, see <a href="/cockpit/smart-rule
 
 **Troubleshooting**
 
-* Ensure that a new alarm was actually created. Notifications are only sent for newly created alarms, not for updates to existing active alarms of the same type. If an alarm of the same type is already active for the device, no additional notification will be triggered.
+* Ensure that a new alarm was created. Notifications are only sent for newly created alarms, not for updates to existing active alarms of the same type. If an alarm of the same type is already active for the device, no additional notification will be triggered.
 
 * Check if the device is in [maintenance mode](/device-management-application/monitoring-and-controlling-devices/#to-monitor-the-connection-for-multiple-devices). In this case no new alarm will be created because of suppression policy.
 
