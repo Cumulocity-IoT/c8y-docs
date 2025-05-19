@@ -303,7 +303,7 @@ function clipboardCode() {
 
 // Toggle Beta content
 function toggleBetaContent() {
-  const checked = document.getElementById('beta-toggle').checked;
+  const checked = document.getElementById('preview-toggle').checked;
   document.querySelectorAll('.beta-content').forEach(el => {
     el.style.display = checked ? 'block' : 'none';
   });
@@ -314,7 +314,7 @@ function toggleBetaContent() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const checkbox = document.getElementById('beta-toggle');
+  const checkbox = document.getElementById('preview-toggle');
   const showBeta = localStorage.getItem('showBetaContent') === 'true';
   if (checkbox) {
     checkbox.checked = showBeta;

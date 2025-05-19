@@ -19,9 +19,9 @@ helpcontent:
     The data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."
 ---
 
-{{< c8y-admon-beta-toggle >}}
-  Toggle between stable and beta documentation to preview upcoming changes to the data explorer.
-{{< /c8y-admon-beta-toggle >}}
+{{< c8y-admon-preview-toggle >}}
+Toggle between stable and preview documentation to see upcoming changes to the data explorer.
+{{< /c8y-admon-preview-toggle >}}
 
 In the data explorer, data points (measurements or sensor data) can be visualized.
 

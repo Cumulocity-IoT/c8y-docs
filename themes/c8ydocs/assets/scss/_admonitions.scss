@@ -136,7 +136,7 @@
 }
 
 
-.admonition.beta-content-toggle{
+.admonition.preview-content-toggle{
   position: sticky;
   top: 110px;
   z-index: 100;
@@ -181,7 +181,7 @@
   border-radius: 1rem;
   margin: 2rem 0;
   &:before{
-    content: "beta";
+    content: "preview";
     display: inline-block;
     font-size: .675rem;
     letter-spacing: .03em;
