@@ -463,7 +463,7 @@ condition: Xms < Xmx.
 ##### Setting parameters on command line {#package-goal-command-line}
 
 For information about how and whether it is possible to set parameters on command line refer to column
-"Parameter command line name" of table in chapter [Package goal](/microservice-sdk/java/#package-goal).
+"Parameter command line name" of the table in chapter [Package goal](/microservice-sdk/java/#package-goal).
 
 ###### Primitive configuration values {#package-goal-command-line-primitive-data}
 
