@@ -14,4 +14,5 @@ build_artifact:
 ticket: DM-4774
 version: 1020.440.39
 ---
-Previously, when a devices realtime subscription was marked as non-autoretriable and its session was redirected from one core node to another, the new core node did not inherit the existing subscription. As a result, the subscription was lost, and only a warning was logged without triggering a resubscription.  This issue has been resolved. Now, in such cases, the realtime session will be properly resubscribed on the new core node, ensuring continued data flow and improved reliability.      [DM-4007]: https://cumulocity.atlassian.net/browse/DM-4007?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
+Previously, when a device's realtime subscription was marked as non-autoretriable and its session was redirected from one core node to another, the new core node did not inherit the existing subscription. As a result, the subscription was lost, and only a warning was logged without triggering a resubscription.  
+This issue has been resolved. Now, in such cases, the realtime session will be properly resubscribed on the new core node, ensuring continued data flow and improved reliability.
