@@ -1,6 +1,6 @@
 ---
 date: ""
-title: adjust device registration modal size and fix input-group-array (#8940) [GRAFT][release/cd] (#8960)
+title: Improved device registration modal and fixed input group array
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62860
 version: 1021.72.2
 ---
-The modal size has been adjusted to better fit the content and the input group array has been fixed. Users will now have a better experience when registering devices.
+The modal size for device registration has been adjusted to better fit the content. Additionally, the input group array has been fixed. This improves the user experience when registering devices.
