@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-05-22
 title: LWM2M device broken real-time operation subscriptions during Core upgrades
 product_area: Device management & connectivity
 change_type:
