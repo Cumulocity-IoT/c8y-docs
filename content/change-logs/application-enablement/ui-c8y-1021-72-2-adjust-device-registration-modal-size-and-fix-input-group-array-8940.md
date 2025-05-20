@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62860
 version: 1021.72.2
 ---
-adjust device registration modal size and fix input-group-array (#8940) [GRAFT][release/cd] (#8960)
+The modal size has been adjusted to better fit the content and the input group array has been fixed. Users will now have a better experience when registering devices.
