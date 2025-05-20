@@ -14,5 +14,5 @@ build_artifact:
 ticket: DM-4774
 version: 1020.440.39
 ---
-When the Core platform is upgraded/restarted, in LWM2M Service this caused a side-effect of not having an active real-time subscription for operations anymore. It required a LWM2M new registration or operation subscription time to live duration to be expired to recover from this state.
+When the core platform was upgraded/restarted, this caused the LWM2M service no longer having an active real-time subscription for operations. It required a LWM2M new registration or the expiration of an operation subscription time-to-live duration to recover from this state.
 This issue has been resolved. Now, in such cases, the real-time session will be properly resubscribed on the new core node, ensuring continued data flow and improved reliability.
