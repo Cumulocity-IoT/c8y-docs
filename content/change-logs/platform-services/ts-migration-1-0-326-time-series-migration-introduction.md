@@ -1,5 +1,5 @@
 ---
-date: '2025-03-31'
+date: 2025-03-31
 title: Time Series Migration application added to default subscribed microservices
 product_area: Platform services
 change_type:
@@ -7,7 +7,7 @@ change_type:
     label: Feature
 component:
   - value: component-OG_650_b2
-    label: Platform services
+    label: Core platform
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
