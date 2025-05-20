@@ -1,6 +1,6 @@
 ---
 date: 2025-05-22
-title: LWM2M device broken real-time operation subscriptions during Core upgrades
+title: LWM2M device real-time operation subscriptions no longer break during core upgrades
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
