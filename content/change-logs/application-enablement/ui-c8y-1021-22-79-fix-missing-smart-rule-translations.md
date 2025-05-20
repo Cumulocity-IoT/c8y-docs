@@ -15,4 +15,4 @@ ticket: MTM-63542
 version: 1021.22.79
 ---
 
-Fixed missing translations for smart rule related views in Web SDK based applications.
+Missing translations in smart rules related views in Web SDK based applications have been fixed.
