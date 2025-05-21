@@ -80,7 +80,7 @@ This will bring up the below login screen. Enter the default credentials usernam
 
 ![Login prompt](/images/edge-k8s/edge-k8s-login-banner.png)
 
-On the first login, you see the dialog window below, forcing you to change the password. The email address to change the password is the one you specified in the {{< product-c8y-iot >}} Edge CR (or myown@iot.com if you followed the Quickstart installation steps). Alternatively, run the following command to retrieve the email address:
+On the first login, you see the dialog window below, forcing you to change the password. The email address to change the password is the one you specified in the {{< product-c8y-iot >}} Edge CR (or company@edgebootstrap.example if you followed the Quickstart installation steps). Alternatively, run the following command to retrieve the email address:
 
 `kubectl get edge c8yedge -n c8yedge -o jsonpath='{.spec.email}' && echo`
 
