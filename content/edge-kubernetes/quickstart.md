@@ -46,7 +46,7 @@ Visit:
 to log in and start using your Edge instance.
 
 ## 3. Uninstalling Edge
-{{< {?c8y-admon-important >}}
+{{< c8y-admon-important >}}
 Uninstalling Edge using the CLI is **non-recoverable**. It will remove both the Edge instance and the K3s cluster from the node. Backup any important data beforehand.
 {{< /c8y-admon-important >}}
 
