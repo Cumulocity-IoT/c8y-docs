@@ -17,7 +17,7 @@ Use the registry credentials supplied to you along with your {{< product-c8y-iot
 {{< /c8y-admon-info >}}
 
 ```shell
-curl -sfLO https://download.{{< product-c8y-iot >}}.com/Cumulocity-Edge/Installer/c8yedge && chmod +x c8yedge && ./c8yedge install --registry-host registry.c8y.io --username <YourUsername> --password <YourPassword> --version 2025 --confirm-system-requirements yes
+curl -sfLO https://download.cumulocity.com/Cumulocity-Edge/Installer/c8yedge && chmod +x c8yedge && ./c8yedge install --registry-host registry.c8y.io --username <YourUsername> --password <YourPassword> --version 2025 --confirm-system-requirements yes
 ```
 
 The installer automatically:
