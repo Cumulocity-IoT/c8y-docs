@@ -91,7 +91,7 @@ c8yedge remove
 
 You’ll be prompted for confirmation:
 
-```
+```shell
 Do you really want to remove {{< product-c8y-iot >}} Edge? This includes all platform data and will be non-recoverable. [yes/no]: yes
 To confirm {{< product-c8y-iot >}} Edge uninstallation use this random value: <random-text>, to cancel type any other string.
 Confirm by typing the random value from the above sentence: <random-text>
