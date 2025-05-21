@@ -49,7 +49,7 @@ Spec:
   License Key:         ***************
   Company:             IoT Company
   Domain:              myown.iot.com
-  Email:               myown@iot.com
+  Email:               company@edgebootstrap.example
   ....
   ....
 

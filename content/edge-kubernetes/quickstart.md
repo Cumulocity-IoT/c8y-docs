@@ -65,7 +65,7 @@ After installation:
 
 - Refer to [**Verifying the Edge installation**](/edge-kubernetes/installing-edge-on-k8/#verifying-the-edge-installation) to ensure the setup is complete.
 - Modify the default configuration (such as domain and license) to suit your environment. See [**Modifying Edge**](/edge-kubernetes/manage-edge/#modify-edge).
-- Access the platform using the credentials sent to your bootstrap email (e.g., `bootstrap@example.com`). See [**Accessing Edge**](/edge-kubernetes/installing-edge-on-k8/#accessing-edge).
+- Refer to [**Accessing Edge**](/edge-kubernetes/installing-edge-on-k8/#accessing-edge) to sign into Edge.
 
 ---
 
