@@ -14,9 +14,9 @@ helpcontent:
 ---
 
 {{< c8y-admon-preview >}}
-This feature is in Public Preview, that is, it is not enabled by default and maybe subject to change in the future.
+This feature is in **Public Preview** status, that is, it is not enabled by default and may be subject to change in the future.
 
-See the [Feature toggles API](https://{{< domain-c8y >}}/api/core/#tag/Feature-toggles-API) for more details on how to enable it.
+The feature can be enabled for your tenant using the **Manage beta features** option on the user menu in the **Administration** application.
 {{< /c8y-admon-preview >}}
 
 The **Messaging Service** is a [publish/subscribe messaging](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) and message streaming component embedded in the {{< product-c8y-iot >}} platform.
