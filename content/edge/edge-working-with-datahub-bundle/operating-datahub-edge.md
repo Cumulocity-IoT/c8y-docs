@@ -16,7 +16,7 @@ If problems occur, you should follow these steps:
 - Check the log files, see [Log files](#log-files)
 - Monitor the system processes, see [Monitoring](#monitoring)
 
-If you need to contact [product support](/additional-resources/contacting-support/), include the output of the diagnostics script. See [Diagnostic utility](https://cumulocity.com/docs/2025/edge/operating-edge/#diagnostics) for details of how to run it.
+If you need to contact [product support](/additional-resources/contacting-support/), include the output of the diagnostics script. See [Diagnostic utility](/edge/operating-edge/#diagnostics) for details of how to run it.
 
 #### Health check {#health-check}
 
