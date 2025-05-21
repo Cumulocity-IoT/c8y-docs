@@ -17,10 +17,20 @@ Use the registry credentials supplied to you along with your {{< product-c8y-iot
 {{< /c8y-admon-info >}}
 
 ```shell
-curl -sfLO https://download.cumulocity.com/Cumulocity-Edge/Installer/c8yedge && chmod +x c8yedge && ./c8yedge install --registry-host registry.c8y.io --username <YourUsername> --password <YourPassword> --version 2025 --confirm-system-requirements yes
+curl -sfLO https://download.cumulocity.com/Cumulocity-Edge/Installer/c8yedge && chmod +x c8yedge && ./c8yedge install --registry-host registry.c8y.io --username <YourUsername> --password <YourPassword>
 ```
 
-The installer automatically:
+You will be prompted to verify whether your system meets the installation requirements. Please follow the on-screen instructions carefully.
+
+When prompted, visit the given link to review the system requirements.
+
+After confirming that your system complies with the prerequisites, type yes and press Enter to proceed.
+
+```shell
+Set to 'yes' to confirm that system requirements are met (https://docs.k3s.io/installation/requirements#operating-systems) [yes/no]:yes
+```
+
+The installer will then automatically perform the following steps:
 
 - Sets up a K3s cluster
 - Deploys the Edge Operator
