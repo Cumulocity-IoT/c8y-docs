@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-05-22'
 title: Improved confirmation message after device registration via EST
 product_area: Device management & connectivity
 change_type:
