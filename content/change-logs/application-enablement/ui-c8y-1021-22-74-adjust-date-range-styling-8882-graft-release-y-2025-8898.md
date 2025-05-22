@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-05-22
 title: Improved date range picker styling
 product_area: Application enablement & solutions
 change_type:

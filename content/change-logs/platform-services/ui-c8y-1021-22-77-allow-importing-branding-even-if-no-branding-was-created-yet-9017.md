@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-05-22
 title: Branding can now be imported for tenants without existing branding
 product_area: Platform services
 change_type:
