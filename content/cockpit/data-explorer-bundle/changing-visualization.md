@@ -48,13 +48,13 @@ To turn realtime updating on or off, click **Realtime** in the top menu bar. A g
 
 For each data point, its visibility can be switched on or off by using the toggle left from the data point name.
 
-{{< c8y-admon-beta >}}
+{{< c8y-admon-prevew-feature >}}
 
 #### Interactive legend (available only for the "Data point graph" widget)
 
 The legend, located above the chart, provides quick control over what's visible in your chart. You can toggle visibility of individual data points or alarms/events by clicking their name.
 
-### Changing the chart options {#changing-the-chart-options}
+#### Changing the chart options {#changing-the-chart-options}
 
 You can customize the chart options to control how your data is visualized, including settings like line type, aggregation, and display preferences. These options can be adjusted directly in the data explorer (below the chart) or in the configuration of the "Data point graph" widget.
 
@@ -68,9 +68,9 @@ You can customize the chart options to control how your data is visualized, incl
 | **Chart**           | Display labels and units on Y-axis          | Displays axis labels and measurement units for each data point on the Y-axis.                                    |
 |                     | Show slider                                 | Toggles the visibility of the data slider below the chart. See section below for more info.                      |
 
-### Working with the data slider {#working-with-the-data-slider}
+#### Working with the data slider {#working-with-the-data-slider}
 
 The data slider, located at the bottom of the chart, provides an overview of a longer time range than the currently selected one - offering a summarized view to help navigate large datasets. For example, if "Last hour" is selected, the slider might display data from the past 24 hours.
 You can zoom into any portion of the slider and pan across the range to adjust the visible data in the main chart, making it easier to explore and focus on specific periods of interest.
 
-{{< /c8y-admon-beta >}}
+{{< /c8y-admon-prevew-feature >}}

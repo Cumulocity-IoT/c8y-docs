@@ -2,10 +2,10 @@
   padding: 1.5rem;
   margin-bottom: 2.5rem;
   margin-left: 1px;
-  border-left: .5rem solid transparent;
+  border-left: 0.5rem solid transparent;
   font-weight: normal;
   font-size: 14px;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   box-shadow: var(--c8y-elevation-sm);
 }
 
@@ -20,10 +20,9 @@
   font-size: 1.125rem;
   &:before {
     @extend .dlt-c8y-icon;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
 }
-
 
 .info {
   border-color: var(--c8y-palette-status-info);
@@ -32,7 +31,7 @@
 
 .info .title {
   color: var(--c8y-palette-status-info);
-  border-color: rgba(0, 0, 0, .2);
+  border-color: rgba(0, 0, 0, 0.2);
 
   &:before {
     content: $dlt-c8y-icon-info-circle;
@@ -75,7 +74,7 @@
   border-color: var(--c8y-palette-status-info);
   &:before {
     content: $dlt-c8y-icon-info-circle;
-}
+  }
 }
 
 .howto {
@@ -112,7 +111,7 @@
 .important .title {
   color: var(--c8y-palette-status-danger);
   border-color: var(--c8y-palette-status-danger);
-    &:before {
+  &:before {
     content: $dlt-c8y-icon-exclamation-circle;
   }
 }
@@ -130,13 +129,12 @@
   }
 }
 
-#preview-banner{
+#preview-banner {
   max-width: 105ch;
   margin: 0 auto 1rem;
 }
 
-
-.admonition.preview-content-toggle{
+.admonition.preview-content-toggle {
   position: sticky;
   top: 110px;
   z-index: 100;
@@ -145,10 +143,10 @@
   // color: white;
   --c8y-form-control-color-default: currentColor;
   display: flex;
-   align-items: center;
-   flex-wrap: wrap;
-   padding: 1rem 1.5rem;
-  .title{
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 1.5rem;
+  .title {
     text-transform: none;
     font-weight: 400;
     display: flex;
@@ -159,13 +157,13 @@
     line-height: 1.3;
     &:before {
       @extend .dlt-c8y-icon;
-      margin-right: .5rem;
+      margin-right: 0.5rem;
       content: $dlt-c8y-icon-file-preview;
       font-size: 2.5rem;
     }
   }
 
-  .toggle-wrapper{
+  .toggle-wrapper {
     background: white;
     border-radius: 40px;
     display: inline-flex;
@@ -175,18 +173,18 @@
   }
 }
 
-.beta-content{
+.preview-content {
   outline: 1px dashed var(--c8y-brand-30);
   outline-offset: 2rem;
   border-radius: 1rem;
   margin: 2rem 0;
-  &:before{
+  &:before {
     content: "preview";
     display: inline-block;
-    font-size: .675rem;
-    letter-spacing: .03em;
+    font-size: 0.675rem;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
-    transform: translate(1rem,-0.5rem);
+    transform: translate(1rem, -0.5rem);
     color: var(--c8y-brand-30);
   }
 }

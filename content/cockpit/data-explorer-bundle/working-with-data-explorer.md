@@ -47,13 +47,13 @@ In the data explorer, you see a list of available data points at the right. The 
 
 On the left, in the main card, you see its visualization.
 
-{{< c8y-admon-stable >}}
+{{< c8y-admon-ga >}}
 ![Data explorer](/images/users-guide/cockpit/cockpit-dataexplorer.png)
-{{< /c8y-admon-stable >}}
+{{< /c8y-admon-ga >}}
 
-{{< c8y-admon-beta >}}
+{{< c8y-admon-prevew-feature >}}
 ![Data explorer](/images/users-guide/cockpit/cockpit-dataexplorer-v2.png)
-{{< /c8y-admon-beta >}}
+{{< /c8y-admon-prevew-feature >}}
 
 The visualization is generated based on data point properties.
 
@@ -152,7 +152,7 @@ The following fields may be modified:
 </tbody>
 </table>
 
-{{< c8y-admon-beta >}}
+{{< c8y-admon-prevew-feature >}}
 
 ### To add or clone a workspace {#to-add-or-clone-a-workspace}
 
@@ -174,7 +174,7 @@ You can switch between multiple workspaces using the configuration menu, located
 Since workspaces are stored locally, they are tied to your browser and device. Clearing browser data will remove them.
 {{< /c8y-admon-info >}}
 
-{{< /c8y-admon-beta >}}
+{{< /c8y-admon-prevew-feature >}}
 
 ### Y-axis behaviour {#y-axis-behaviour}
 
@@ -211,16 +211,16 @@ You may download measurement data as CSV or Excel files. The exported data shows
 - Value of the measurement
 - Unit used for a particular measurement (for example "C", "km/h", "sec")
 
-{{< c8y-admon-stable >}}
+{{< c8y-admon-ga >}}
 
 To export measurement data, click the **More...** button in the top menu bar and select either **Download as CSV** or **Download as Excel**, according to your preferences.
 
-{{< /c8y-admon-stable >}}
+{{< /c8y-admon-ga >}}
 
-{{< c8y-admon-beta >}}
+{{< c8y-admon-prevew-feature >}}
 
 To export measurement data, click the **Export** button in the top menu bar and select your desired time range and data scope. Finally, select the checkbox to **Download as CSV** or **Download as Excel**, according to your preferences.
 
 Click **Download** to generate and save the file to your computer.
 
-{{< /c8y-admon-beta >}}
+{{< /c8y-admon-prevew-feature >}}
