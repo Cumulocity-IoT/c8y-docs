@@ -1,5 +1,5 @@
 ---
-date: '2025-05-22'
+date: 2025-05-22
 title: Fixed the verification process for partial certificate chains used in device authentication
 product_area: Platform services
 change_type:
