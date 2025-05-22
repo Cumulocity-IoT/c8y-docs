@@ -22,7 +22,7 @@ When {{< product-c8y-iot >}} DataHub Edge on Kubernetes is deployed on top, the 
 ### Setting up {{< product-c8y-iot >}} DataHub Edge on Kubernetes {#setting-up-datahub-edge-on-kubernetes}
 To install and configure DataHub Edge on Kubernetes, update the `spec.dataHub` field in the Edge Custom Resource (CR) with the necessary configuration details for the Edge operator. After making the changes, apply the updated CR to deploy DataHub Edge.
 
-For more details on the `spec.dataHub` field, refer to [Edge Custom Resource - DataHub](/edge-kubernetes/edge-custom-resource-definition/#k8-edge-dataHub).
+For more details on the `spec.dataHub` field, refer to [Edge Custom Resource - DataHub](/edge-kubernetes/edge-custom-resource-definition/#k8-edge-datahub).
 
 For additional guidance, see the [Install Edge](/edge-kubernetes/installing-edge-on-k8/#install-edge) and [Modify Edge](/edge-kubernetes/manage-edge/#modify-edge) sections in the Edge on Kubernetes documentation.
 
