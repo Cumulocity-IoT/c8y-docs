@@ -48,7 +48,7 @@ To turn realtime updating on or off, click **Realtime** in the top menu bar. A g
 
 For each data point, its visibility can be switched on or off by using the toggle left from the data point name.
 
-{{< c8y-admon-prevew-feature >}}
+{{< c8y-admon-preview-feature >}}
 
 #### Interactive legend (available only for the "Data point graph" widget)
 
@@ -73,4 +73,4 @@ You can customize the chart options to control how your data is visualized, incl
 The data slider, located at the bottom of the chart, provides an overview of a longer time range than the currently selected one - offering a summarized view to help navigate large datasets. For example, if "Last hour" is selected, the slider might display data from the past 24 hours.
 You can zoom into any portion of the slider and pan across the range to adjust the visible data in the main chart, making it easier to explore and focus on specific periods of interest.
 
-{{< /c8y-admon-prevew-feature >}}
+{{< /c8y-admon-preview-feature >}}

@@ -51,9 +51,9 @@ On the left, in the main card, you see its visualization.
 ![Data explorer](/images/users-guide/cockpit/cockpit-dataexplorer.png)
 {{< /c8y-admon-ga >}}
 
-{{< c8y-admon-prevew-feature >}}
+{{< c8y-admon-preview-feature >}}
 ![Data explorer](/images/users-guide/cockpit/cockpit-dataexplorer-v2.png)
-{{< /c8y-admon-prevew-feature >}}
+{{< /c8y-admon-preview-feature >}}
 
 The visualization is generated based on data point properties.
 
@@ -152,7 +152,7 @@ The following fields may be modified:
 </tbody>
 </table>
 
-{{< c8y-admon-prevew-feature >}}
+{{< c8y-admon-preview-feature >}}
 
 ### To add or clone a workspace {#to-add-or-clone-a-workspace}
 
@@ -174,7 +174,7 @@ You can switch between multiple workspaces using the configuration menu, located
 Since workspaces are stored locally, they are tied to your browser and device. Clearing browser data will remove them.
 {{< /c8y-admon-info >}}
 
-{{< /c8y-admon-prevew-feature >}}
+{{< /c8y-admon-preview-feature >}}
 
 ### Y-axis behaviour {#y-axis-behaviour}
 
@@ -217,10 +217,10 @@ To export measurement data, click the **More...** button in the top menu bar and
 
 {{< /c8y-admon-ga >}}
 
-{{< c8y-admon-prevew-feature >}}
+{{< c8y-admon-preview-feature >}}
 
 To export measurement data, click the **Export** button in the top menu bar and select your desired time range and data scope. Finally, select the checkbox to **Download as CSV** or **Download as Excel**, according to your preferences.
 
 Click **Download** to generate and save the file to your computer.
 
-{{< /c8y-admon-prevew-feature >}}
+{{< /c8y-admon-preview-feature >}}
