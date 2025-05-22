@@ -1,6 +1,8 @@
 ---
-date:
-title: Fixed the verification process for partial certificate chains used in device authentication
+date: '2025-05-22'
+title: >-
+  Fixed the verification process for partial certificate chains used in device
+  authentication
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
