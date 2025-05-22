@@ -20,7 +20,7 @@ helpcontent:
 ---
 
 {{< c8y-admon-preview-toggle >}}
-Toggle between ga and preview features documentation to see upcoming changes to the data explorer.
+Toggle on the preview feature documentation to see upcoming changes to the existing functionality.
 {{< /c8y-admon-preview-toggle >}}
 
 In the data explorer, data points (measurements or sensor data) can be visualized.
