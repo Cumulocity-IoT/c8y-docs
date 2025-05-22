@@ -50,27 +50,27 @@ For each data point, its visibility can be switched on or off by using the toggl
 
 {{< c8y-admon-beta >}}
 
-#### Interactive Legend (available only for the data point graph widget)
+#### Interactive legend (available only for the "Data point graph" widget)
 
 The legend, located above the chart, provides quick control over what's visible in your chart. You can toggle visibility of individual data points or alarms/events by clicking their name.
 
-### Changing the chart options
+### Changing the chart options {#changing-the-chart-options}
 
-You can customize the chart options to control how your data is visualized, including settings like line type, aggregation, and display preferences. These options can be adjusted directly in the Data Explorer (below the chart) or in the configuration of the data point graph widget.
+You can customize the chart options to control how your data is visualized, including settings like line type, aggregation, and display preferences. These options can be adjusted directly in the data explorer (below the chart) or in the configuration of the "Data point graph" widget.
 
 | **Category**        | **Option**                                  | **Description**                                                                                                  |
 | ------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | **Axis**            | Y-axis helper lines                         | Displays horizontal guide lines along the Y-axis for easier value alignment.                                     |
 |                     | X-axis helper lines                         | Displays vertical guide lines along the X-axis for easier time alignment.                                        |
 |                     | Merge matching data points into single axis | Groups data points with the same min/max values onto one Y-axis for clarity. The min and max values must be set. |
-| **Alarms & Events** | Show vertical line on every occurrence      | Displays a vertical line on the chart at each alarm or event timestamp.                                          |
+| **Alarms & events** | Show vertical line on every occurrence      | Displays a vertical line on the chart at each alarm or event timestamp.                                          |
 |                     | Show icon when triggered                    | Shows an icon on the chart where alarms or events have occurred.                                                 |
 | **Chart**           | Display labels and units on Y-axis          | Displays axis labels and measurement units for each data point on the Y-axis.                                    |
 |                     | Show slider                                 | Toggles the visibility of the data slider below the chart. See section below for more info.                      |
 
-### Working with the data slider
+### Working with the data slider {#working-with-the-data-slider}
 
-The data slider, located at the bottom of the chart, provides an overview of a longer time range than the currently selected timeframe—offering a summarized view to help navigate large datasets. For example, if "Last hour" is selected, the slider might display data from the past 24 hours.
-You can zoom in on any portion of the slider and pan across the range to adjust the visible data in the main chart, making it easier to explore and focus on specific periods of interest.
+The data slider, located at the bottom of the chart, provides an overview of a longer time range than the currently selected one - offering a summarized view to help navigate large datasets. For example, if "Last hour" is selected, the slider might display data from the past 24 hours.
+You can zoom into any portion of the slider and pan across the range to adjust the visible data in the main chart, making it easier to explore and focus on specific periods of interest.
 
 {{< /c8y-admon-beta >}}

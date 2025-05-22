@@ -154,11 +154,11 @@ The following fields may be modified:
 
 {{< c8y-admon-beta >}}
 
-### To add or clone a workspace {#to-add-or-clone-workspaces}
+### To add or clone a workspace {#to-add-or-clone-a-workspace}
 
-Workspaces in the Data Explorer let you create, save, and manage different configurations tailored to your specific needs—whether for individual devices, projects, or use cases. Each workspace stores your selected data points, chart layout, time range, and all visual customizations. Workspaces are saved automatically in your browser's local storage, so any updates (like adding or removing data points or changing the visualization) are preserved instantly.
+Workspaces in the data explorer let you create, save, and manage different configurations tailored to your specific needs - whether for individual devices, projects, or use cases. Each workspace stores your selected data points, chart layout, time range, and all visual customizations. Workspaces are saved automatically in your browser's local storage, so any updates (like adding or removing data points or changing the visualization) are preserved instantly.
 
-You can switch between multiple workspaces using the configuration menu, located at the top left of the Data Explorer page. This menu provides the following actions:
+You can switch between multiple workspaces using the configuration menu, located at the top left of the **Data explorer** page. This menu provides the following actions:
 
 - Create new configuration – Start from a blank workspace with no data points or settings applied.
 
@@ -219,7 +219,7 @@ To export measurement data, click the **More...** button in the top menu bar and
 
 {{< c8y-admon-beta >}}
 
-To export measurement data, click the export button in the top menu bar and select your desired time range and data scope. Finally, select the checkbox to **Download as CSV** or **Download as Excel**, according to your preferences.
+To export measurement data, click the **Export** button in the top menu bar and select your desired time range and data scope. Finally, select the checkbox to **Download as CSV** or **Download as Excel**, according to your preferences.
 
 Click **Download** to generate and save the file to your computer.
 
