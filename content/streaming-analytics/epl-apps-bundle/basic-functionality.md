@@ -43,7 +43,7 @@ From this page, you can:
 
 * Create new EPL apps. See below.
 
-* Import EPL apps. If you prefer to develop your apps outside of {{< product-c8y-iot >}} (for example, using {{< apama-vscode >}}), click **Import EPL** in the top menu bar to upload an Apama EPL (\*.mon) file as an app into the Streaming Analytics application.
+* Import EPL apps. If you prefer to develop your apps outside of {{< product-c8y-iot >}} (for example, using the {{< apama-vscode >}}), click **Import EPL** in the top menu bar to upload an Apama EPL (\*.mon) file as an app into the Streaming Analytics application.
 
 * Download EPL apps. Use the **Download** command from the actions menu to download the app as a \*.mon file.
 
@@ -91,14 +91,14 @@ See also [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
 
 For information about a more systematic and automated approach to testing EPL apps, see [Testing apps](/streaming-analytics/epl-apps/#testing-apps).
 
-#### Developing apps with {{< apama-vscode >}} {#apama-local-dev}
+#### Developing apps with the {{< apama-vscode >}} {#apama-local-dev}
 
-{{< apama-vscode >}} provides a full development environment and is the tool of choice when you have a complex EPL application. When your EPL app (that is, the \*.mon file) is ready, you must import (deploy) it into {{< product-c8y-iot >}}.
+The {{< apama-vscode >}} provides a full development environment and is the tool of choice when you have a complex EPL application. When your EPL app (that is, the \*.mon file) is ready, you must import (deploy) it into {{< product-c8y-iot >}}.
 
-##### Step 1 - Install {{< apama-vscode >}} {#step-1---install-apama-vscode}
+##### Step 1 - Install the {{< apama-vscode >}} {#step-1---install-apama-vscode}
 
-1. **Install Visual Studio Code**: Download and install `Visual Studio Code <https://code.visualstudio.com/>`_.
-2. **Install Apama Extension**: Install the `Apama extension <https://marketplace.visualstudio.com/items?itemName=ApamaCommunity.apama-extensions>`_ from the Visual Studio Code Marketplace.
+1. **Install Visual Studio Code**: Download and install [Microsoft Visual Studio Code](https://code.visualstudio.com/>).
+2. **Install Apama Extension**: Install the [Apama extension](https://marketplace.visualstudio.com/items?itemName=ApamaCommunity.apama-extensions>) from the Visual Studio Code Marketplace.
 3. Following the steps listed on the extension page to setup WSL (if using Windows) and to install a container engine for running Apama inside a container, or else install Apama locally.
 
 ##### Step 2 - Create a project and repository {#step-2---create-a-project}
@@ -115,7 +115,7 @@ so that it can be opened in a VS Code Dev Container.
 
 To open your Git repository in VS Code, open the VS Code command palette (`F1`), run `Dev Containers: Clone Repository in Container Volume` 
 and then enter the `https://` link to your GitHub repository. This assumes you have a Docker-compliant container engine installed; if not see the 
-`Apama extension <https://marketplace.visualstudio.com/items?itemName=ApamaCommunity.apama-extensions>` documentation for 
+[Apama extension](https://marketplace.visualstudio.com/items?itemName=ApamaCommunity.apama-extensions>) documentation for 
 information about how to work with project folders using a local installation of Apama. 
 
 Instead of using VS Code you can use a web browser to open the repository in [GitHub Codespaces](https://github.com/features/codespaces) without installing anything at all. 
@@ -128,9 +128,9 @@ For more information about interacting with Cumulocity from your application, se
 
 ##### Step 5 - Test the EPL {#step-5---run-and-test-the-monitor-file}
 
-Before you import the newly created file as an EPL app into {{< product-c8y-iot >}} and activate it there, you might want to test if the file works as expected from within {{< apama-vscode >}}. 
+Before you import the newly created file as an EPL app into {{< product-c8y-iot >}} and activate it there, you might want to test if the file works as expected from within the {{< apama-vscode >}}. 
 
-First, check the "Problems" view for any basic errors such as incorrect syntax. Then, create a [test](/streaming-analytics/epl-apps/#testing-apps) that runs the your application in a local correlator. If you used the template to create your repository you will find a sample test to get started under the `tests/` directory. 
+First, check the "Problems" view for any basic errors such as incorrect syntax. Then, create a [test](/streaming-analytics/epl-apps/#testing-apps) that runs your application in a local correlator. If you used the template to create your repository you will find a sample test to get started under the `tests/` directory. 
 
 Once the EPL app is ready, refer to [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps) to find out how to deploy it to {{< product-c8y-iot >}}.
 
@@ -139,7 +139,7 @@ Once the EPL app is ready, refer to [Deploying apps](/streaming-analytics/epl-ap
 You can deploy the following to {{< product-c8y-iot >}}:
 
 * EPL apps. You can [develop or import a single \*.mon file with the Streaming Analytics application](#single-mon-file). This is the simplest mechanism for deploying an EPL app.
-* Apama applications in a custom microservice. You can upload complex Apama applications (that is, Apama projects developed with {{< apama-vscode >}}) to {{< product-c8y-iot >}} and [deploy them as custom microservices](#deploying-as-microservice) using the {{< product-c8y-iot >}} Microservice SDK.
+* Apama applications in a custom microservice. You can upload complex Apama projects (typically developed with the {{< apama-vscode >}}) to {{< product-c8y-iot >}} and [deploy them as custom microservices](#deploying-as-microservice) using the {{< product-c8y-iot >}} Microservice SDK.
 
 {{< c8y-admon-info >}}
 In the Streaming Analytics application, the term "activate" is used for deploying an app.
@@ -158,7 +158,7 @@ For more detailed diagnostics of the Apama runtime and any active EPL apps, you 
 
 #### Deploying Apama applications as custom microservices {#deploying-as-microservice}
 
-Using {{< apama-vscode >}}, you can also develop more complex projects which:
+Using the {{< apama-vscode >}}, you can also develop more complex projects which:
 
 * are spread across multiple \*.mon files
 * must be isolated from other Apama applications
@@ -206,7 +206,7 @@ The above is the minimum list of permissions that a custom Apama microservice ne
 
 ##### To deploy an Apama application as a microservice {#to-deploy-an-apama-application-as-a-microservice}
 
-1. Develop your application in {{< apama-vscode >}}.
+1. Develop your application in the {{< apama-vscode >}}.
 
 2. Add a `Dockerfile` as described by [Deploying Apama Applications with Docker]({{< link-apama-webhelp >}}/deploying-and-managing-apama-applications/overview-of-deploying-apama-applications/). The sample file in the `Apama/etc/Dockerfile.project` directory of the Apama installation is a good starting point. 
 
@@ -222,7 +222,7 @@ The above is the minimum list of permissions that a custom Apama microservice ne
 
     You must create the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) manually, but there is no need for anything special in the microservice manifest; no roles or probes are required. However, if you want to configure a liveness or readiness probe, you can configure an `httpGet` probe for the path */ping* on port 15903 (Apama's default port). Enabling auto-scaling is not recommended, as Apama applications are usually stateful and do not automatically partition their input.
 
-    You can pack, deploy and subscribe from this directory, resulting in your Apama application being turned into a running microservice. The behavior of the application when being run outside of {{< product-c8y-iot >}} (from {{< apama-vscode >}} or your test environment) will be near-identical to its behavior inside {{< product-c8y-iot >}}. When deployed as a microservice doing requests to the {{< product-c8y-iot >}} API, Apama will automatically pick up the credentials to connect to the tenant you deployed it to, overwriting any other credentials provided to Apama. However, if you wish to receive real-time events, you must have valid credentials specified in the project configuration as you do when connecting to {{< product-c8y-iot >}} from an external Apama environment.
+    You can pack, deploy and subscribe from this directory, resulting in your Apama application being turned into a running microservice. The behavior of the application when being run outside of {{< product-c8y-iot >}} (from the {{< apama-vscode >}} or your test environment) will be near-identical to its behavior inside {{< product-c8y-iot >}}. When deployed as a microservice doing requests to the {{< product-c8y-iot >}} API, Apama will automatically pick up the credentials to connect to the tenant you deployed it to, overwriting any other credentials provided to Apama. However, if you wish to receive real-time events, you must have valid credentials specified in the project configuration as you do when connecting to {{< product-c8y-iot >}} from an external Apama environment.
 
 5. When you are ready to deploy to {{< product-c8y-iot >}}, upload the application as a microservice. For details, refer to [Managing microservices](/standard-tenant/ecosystem/#managing-microservices).
 
