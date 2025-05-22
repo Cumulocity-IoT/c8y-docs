@@ -1,5 +1,5 @@
 ---
-date: '2025-04-01'
+date: 2025-05-22
 title: Raising of events on offloading completion
 product_area: Analytics
 change_type:
