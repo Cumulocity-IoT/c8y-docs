@@ -1,5 +1,5 @@
 ---
-date: 2025-05-13
+date: 2025-05-22
 title: Fixed missing smart rule translations
 product_area: Application enablement & solutions
 change_type:
