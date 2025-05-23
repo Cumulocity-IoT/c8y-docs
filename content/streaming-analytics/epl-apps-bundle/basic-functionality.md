@@ -97,8 +97,8 @@ The {{< apama-vscode >}} provides a full development environment and is the tool
 
 ##### Step 1 - Install the {{< apama-vscode >}} {#step-1---install-apama-vscode}
 
-1. **Install Visual Studio Code**: Download and install [Microsoft Visual Studio Code](https://code.visualstudio.com/>).
-2. **Install Apama Extension**: Install the [Apama Extension](https://marketplace.visualstudio.com/items?itemName=ApamaCommunity.apama-extensions>) from the Visual Studio Code Marketplace.
+1. **Install Visual Studio Code**: Download and install [Microsoft Visual Studio Code](https://code.visualstudio.com/).
+2. **Install Apama Extension**: Install the [Apama Extension](https://marketplace.visualstudio.com/items?itemName=ApamaCommunity.apama-extensions) from the Visual Studio Code Marketplace.
 3. Following the steps listed on the extension page to setup WSL (if using Windows) and to install a container engine for running Apama inside a container, or else install Apama locally.
 
 ##### Step 2 - Create a project and repository {#step-2---create-a-project}
@@ -115,7 +115,7 @@ so that it can be opened in a VS Code Dev Container.
 
 To open your Git repository in VS Code, open the VS Code command palette (`F1`), run `Dev Containers: Clone Repository in Container Volume` 
 and then enter the `https://` link to your GitHub repository. This assumes you have a Docker-compliant container engine installed; if not see the 
-[Apama Extension](https://marketplace.visualstudio.com/items?itemName=ApamaCommunity.apama-extensions>) documentation for 
+[Apama Extension](https://marketplace.visualstudio.com/items?itemName=ApamaCommunity.apama-extensions) documentation for 
 information about how to work with project folders using a local installation of Apama. 
 
 Instead of using VS Code you can use a web browser to open the repository in [GitHub Codespaces](https://github.com/features/codespaces) without installing anything at all. 
