@@ -249,7 +249,7 @@ CUMULOCITY_PASSWORD=<PASSWORD>
 
 As well as running tests locally during development, you can script deployment and testing of your EPL apps for CI/CD (continuous integration and continuous delivery) purposes.
 
-### Connectivity bundles for communicating with Cumulocity
+### Connectivity bundles for communicating with Cumulocity {#connectivity-bundles}
 
 The **Cumulocity IoT > Cumulocity Notifications 2.0** bundle exposes the {{< product-c8y-iot >}} client to EPL apps using the Notifications 2.0 mechanism.
 
