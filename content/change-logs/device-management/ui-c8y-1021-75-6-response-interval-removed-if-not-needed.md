@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Response interval removed if not needed.
+title: Response interval value removed when user clears the input
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
