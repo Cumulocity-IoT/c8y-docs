@@ -108,7 +108,7 @@ If a parameter is in square brackets, it is optional.
 
 <strong><a href="#device-parameter-templates">Device parameter templates</strong>
 <ul>
-<li><a href="#600">600 (Retrieve the platform version, reply: "601, platform version")</a></li>
+<li><a href="#600">600 (Retrieve the platform version, reply: "601, platformVersion")</a></li>
 </ul>
 
 The client can receive the following templates when subscribing to <kbd>s/ds</kbd>.
@@ -144,7 +144,7 @@ The client can receive the following templates when subscribing to <kbd>s/ds</kb
 
 <strong><a href="#subscribe-device-parameter">Device parameter templates</a></strong>
 <ul>
-<li>[601, platform version](#601)</li>
+<li>[601, platformVersion](#601)</li>
 </ul>
 
 
@@ -959,7 +959,7 @@ If the fragment parameter is empty, all EXECUTING operations are set to FAILED.
 
 
 
-#### Device parameter templates (6xx) {#device-parameter-templates}
+#### Platform capabilities templates (6xx) {#platform-capabilities-templates}
 
 ##### Get the platform version (600) {#600}
 
@@ -1320,11 +1320,11 @@ Establish tunneling by Remote Access device agent.
 
 
 
-#### Device parameter templates (6xx) {#subscribe-device-parameter} 
+#### Platform capabilities templates (6xx) {#subscribe-platform-capabilities} 
 
-##### Get the platform version (601) {#601}
+##### Return platform version (601) {#601}
 
-Retrieve the platform version
+Returns the platform version after a request using 600.
 
 |Position|Parameter|Type|
 |:-------|:-------|:---|
