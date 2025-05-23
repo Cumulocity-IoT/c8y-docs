@@ -237,7 +237,7 @@ If you still use the images from the previous location, you must migrate them.
 
 The best way to check your EPL applications behave correctly is to create automated tests for them. 
 
-The [Apama EPL Apps Tools](https://github.com/Cumulocity-IoT/apama-eplapps-tools) GitHub repository includes extensions for the PySys test framework that allow you to simply write tests for your EPL apps and to run them automatically, either by uploading the EPL to Cumulocity, or by running inside a local correlator communicating with Cumulocity. See the [EPL Apps Tools documentation](https://cumulocity-iot.github.io/apama-eplapps-tools/) for detailed information. For more information on PySys, see the [API Reference for Python]({{< link-apama-webhelp >}}/related/pydoc/index.html) in the main Apama documentation.
+The [Apama EPL Apps Tools](https://github.com/Cumulocity-IoT/apama-eplapps-tools) GitHub repository includes extensions for the PySys test framework that allow you to simply write tests for your EPL apps and to run them automatically, either by uploading the EPL to {{< product-c8y-iot >}}, or by running inside a local correlator communicating with {{< product-c8y-iot >}}. See the [EPL Apps Tools documentation](https://cumulocity-iot.github.io/apama-eplapps-tools/) for detailed information. For more information on PySys, see the [API Reference for Python]({{< link-apama-webhelp >}}/related/pydoc/index.html) in the main Apama documentation.
 
 To provide the credentials and server URL for your {{< product-c8y-iot >}} tenant, you need to set some environment variables when running the tests:
 
