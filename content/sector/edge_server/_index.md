@@ -1,5 +1,5 @@
 ---
-title: Edge on Kubernetes 2025
+title: Edge
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
 layout: redirect
@@ -10,7 +10,7 @@ audience:
   - Developers
 sector:
   - edge_server
-weight: 11
+weight: 60
 ---
 
-Find a detailed description of the usage of {{< product-c8y-iot >}} Edge on Kubernetes.
+{{< product-c8y-iot >}} Edge is the single-server variant of the {{< product-c8y-iot >}} platform, designed to run in factories on industrial PCs or local servers, that is, in the same site (“onsite”) in which the IoT assets are located.
