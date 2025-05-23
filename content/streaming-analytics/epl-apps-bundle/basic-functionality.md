@@ -124,7 +124,7 @@ Instead of using VS Code you can use a web browser to open the repository in [Gi
 
 If using the template repository, you will find a sample EPL app in the `src/` directory of your repository. This is a good starting point for your own EPL apps. Feel free to customize that file, or replace it with your own application, perhaps based on the other samples in the [EPL Apps Tools](https://github.com/Cumulocity-IoT/apama-eplapps-tools) repository. You can also create additional `.mon` files, one for each EPL app. 
 
-For more information about interacting with Cumulocity from your application, see [The Cumulocity Transport Connectivity Plug-in]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in/) in the Apama documentation.
+For more information about interacting with {{< product-c8y-iot >}} from your application, see [The Cumulocity Transport Connectivity Plug-in]({{< link-apama-webhelp >}}/standard-connectivity-plugins/the-cumulocity-iot-transport-connectivity-plug-in/) in the Apama documentation.
 
 ##### Step 5 - Test the EPL {#step-5---run-and-test-the-monitor-file}
 
