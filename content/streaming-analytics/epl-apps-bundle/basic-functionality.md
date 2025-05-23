@@ -105,7 +105,7 @@ The {{< apama-vscode >}} provides a full development environment and is the tool
 
 The best way to start EPL Apps development is to create a new Git repository based on the 
 [Streaming Analytics Sample Repository Template](https://github.com/Cumulocity-IoT/streaming-analytics-sample-repo-template). 
-Go to that page in GitHub, and click the button to "Use this template" and then "Create a new repository". 
+Go to that page in GitHub, and click **Use this template** and then **Create a new repository**. 
 Projects created from the template already have the main bundles you will need for EPL apps. 
 
 If you already have a Git repository and Apama project for your application, just copy across the `.devcontainer` directory from the template repository 
