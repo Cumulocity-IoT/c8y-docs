@@ -208,7 +208,7 @@ The above is the minimum list of permissions that a custom Apama microservice ne
 
 1. Develop your application in the {{< apama-vscode >}}.
 
-2. Add a `Dockerfile` as described by [Deploying Apama Applications with Docker]({{< link-apama-webhelp >}}/deploying-and-managing-apama-applications/overview-of-deploying-apama-applications/). The sample file in the `Apama/etc/Dockerfile.project` directory of the Apama installation is a good starting point. 
+2. Add a Dockerfile as described by [Deploying Apama Applications with Docker]({{< link-apama-webhelp >}}/deploying-and-managing-apama-applications/overview-of-deploying-apama-applications/). The sample file in the *Apama/etc/Dockerfile.project* directory of the Apama installation is a good starting point. 
 
 3. Add any custom steps to the Dockerfile that might be necessary, for example, building a custom plug-in.
 
