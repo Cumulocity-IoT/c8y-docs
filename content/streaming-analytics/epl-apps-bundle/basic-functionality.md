@@ -130,7 +130,7 @@ For more information about interacting with {{< product-c8y-iot >}} from your ap
 
 Before you import the newly created file as an EPL app into {{< product-c8y-iot >}} and activate it there, you might want to test if the file works as expected from within the {{< apama-vscode >}}. 
 
-First, check the "Problems" view for any basic errors such as incorrect syntax. Then, create a [test](/streaming-analytics/epl-apps/#testing-apps) that runs your application in a local correlator. If you used the template to create your repository you will find a sample test to get started under the `tests/` directory. 
+First, check the "Problems" view for any basic errors such as incorrect syntax. Then, create a [test](/streaming-analytics/epl-apps/#testing-apps) that runs your application in a local correlator. If you used the template to create your repository you will find a sample test to get started under the *tests/* directory. 
 
 Once the EPL app is ready, refer to [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps) to find out how to deploy it to {{< product-c8y-iot >}}.
 
