@@ -28,8 +28,8 @@ If you use Apama in a {{< product-c8y-iot >}} **custom microservice** there is l
 ### Windows and Eclipse support
 
 Installation of the Apama engine is no longer supported on Windows, and the Apama plugin for Eclipse is removed.
-* Instead, to work with Apama applications on Windows (for example to build EPL Apps, execute the Block SDK, or build PySys tests for your application), you can use Windows Subsystem for Linux (WSL) to create a Debian instance, then install Apama using our [Debian Package Repository](https://download.cumulocity.com/Apama/Debian/).
-* For a development environment to build your EPL applications and blocks, instead of Eclipse you can use the community-maintained [Apama Extension for Visual Studio Code](https://cumulocity.com/apama/docs/latest/vscode/apama-extension-for-vscode/) (for example, using an Apama installation in WSL).
+* Instead, to develop Apama applications on Windows (for example to build EPL Apps, execute the Block SDK, or build PySys tests for your application), instead of Eclipse you can use the community-maintained [Apama Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ApamaCommunity.apama-extensions).
+* It is also possible to install Apama using our [Debian Package Repository](https://download.cumulocity.com/Apama/Debian/) into a Windows Subsystem for Linux (WSL) instance of Debian.
  
 ### Docker base image update
 
