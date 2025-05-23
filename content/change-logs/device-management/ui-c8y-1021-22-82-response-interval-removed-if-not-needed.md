@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4743
 version: 1021.22.82
 ---
-Clearing the input now deletes the fragment, so c8y_RequiredAvailability exists only when an interval is actually configured.
+Clearing the Required Interval input in the Device Info widget now deletes the c8y_RequiredAvailability fragment, so the fragment is present only when an interval is explicitly configured.
