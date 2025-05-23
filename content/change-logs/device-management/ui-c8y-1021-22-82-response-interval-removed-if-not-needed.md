@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4743
 version: 1021.22.82
 ---
-In some cases, the response interval was shown even when it was not needed, for example, when there was no response expected from the device. This has now been changed so that the response interval is only shown when it is actually needed based on the operation being performed. This change improves clarity for users by not displaying unnecessary information.
+Clearing the input now deletes the fragment, so c8y_RequiredAvailability exists only when an interval is actually configured.
