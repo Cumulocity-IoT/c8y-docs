@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-05-22'
 title: Improved device registration modal and fixed input group array
 product_area: Application enablement & solutions
 change_type:
