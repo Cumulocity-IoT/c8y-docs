@@ -25,7 +25,7 @@ The features that use the Messaging Service include the microservice-based data 
 
 Topics are the core concept underlying all of the features using the Messaging Service.
 A topic is a logical channel for delivering messages from publishers to subscribers.
-Each topic may have any number of publishers and subscribers, and in general, every subscriber receives the messages sent by every publisher.
+Each topic may have any number of publishers and subscribers, and in general, every subscriber to a topic receives the messages sent by every publisher to that topic.
 All subscribers of a topic receive the published messages in the same order.
 The topic persistently stores published messages until every subscriber has acknowledged that they have successfully received them.
 This means that the Messaging Service can guarantee the delivery of every published message to every subscriber.
