@@ -6,7 +6,7 @@ layout: redirect
 
 ### Developing apps {#developing-apps}
 
-An EPL app is a Cumulocity application written in a single EPL (\*.mon) file. You can develop EPL apps in two different ways:
+An EPL app is a {{< product-c8y-iot >}} application written in a single EPL (\*.mon) file. You can develop EPL apps in two different ways:
 
 * You can use the [Streaming Analytics application](#dev-apps-with-sa) which is available from {{< product-c8y-iot >}}'s application switcher and develop your EPL apps within {{< product-c8y-iot >}}.
 * Or you can create a Git repository for your EPL apps and develop it on your local machine with the [Apama Extension](#apama-local-dev) for Microsoft Visual Studio Code. This approach also works for larger EPL applications deployed to a custom microservice. 
