@@ -15,5 +15,5 @@ ticket: MTM-63148
 version: 1021.76.0
 ---
 New functionality has been added to the "Map" widget that allows to fit all selected assets (or all assets if none is defined for a widget) on a map. It can be used in two places:
-- In the "Map" widget configuration- using it will recalculate the center and zoom level in the configuration
+- In the "Map" widget configuration - using it will recalculate the center and zoom level in the configuration
 - In the "Map" widget view
