@@ -12,9 +12,21 @@ Devices may require information about platform capabilities. To enable new devic
 To enable functionality that requires a minumum {{< product-c8y-iot >}} platform version it is best practice to first query this version before attempting to use a newly added API. 
 
 ```http
-```http
 GET /tenant/system/options/system/version
+
+{
+    "category": "system",
+    "value": "2025.0.0",
+    "key": "version"
+}
 ```
+
+| Field    | Data type | Details                                                  |
+|----------|-----------|----------------------------------------------------------|
+| category | string    | Category of the system option (always "system")         |
+| value    | string    | Platform version                                         |
+| key      | string    | Key of the system option (always "version")             |
+
 
 **SmartREST example**
 
