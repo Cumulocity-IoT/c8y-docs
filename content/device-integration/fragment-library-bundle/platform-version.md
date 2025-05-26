@@ -6,7 +6,7 @@ sector:
   - device_management
 ---
 
-Devices may require information about platform capabilities. To enable new device side functionality new API or optional components may be required. For this purpose Cumulocity provides dedicated interfaces.
+Devices may require information about platform capabilities. To enable new device-side functionality, a new API or optional components may be required. For this purpose, {{< product-c8y-iot >}} provides dedicated interfaces.
 ### Platform version {#platform-version}
 
 To enable functionality that requires a minumum Cumulocity platform version it is best practice to first query this version before attempting to use newly added API. 
