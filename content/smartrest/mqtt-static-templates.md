@@ -961,7 +961,7 @@ If the fragment parameter is empty, all EXECUTING operations are set to FAILED.
 
 #### Platform capabilities templates (6xx) {#platform-capabilities-templates}
 
-##### Get the platform version (600) {#600}
+##### Get platform version (600) {#600}
 
 Retrieve the platform version. Used to evaluate if the platform supports API interfaces or what kind of behaviour to expect from requests to them. 
 
