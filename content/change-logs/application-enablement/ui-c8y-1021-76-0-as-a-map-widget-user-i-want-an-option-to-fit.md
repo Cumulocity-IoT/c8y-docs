@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Map widget provides option to fit all assets on map
+title: Map widget provides option to fit all assets on a map
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
