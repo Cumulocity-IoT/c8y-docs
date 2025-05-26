@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Messaging Service monitoring and management feature available as a Public Preview
+title: Messaging Service monitoring and management feature available as Public Preview
 product_area: Platform services
 change_type:
   - value: change-pXAlHAWka
