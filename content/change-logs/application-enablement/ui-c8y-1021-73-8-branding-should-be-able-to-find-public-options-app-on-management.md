@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-05-22'
 title: Resolved issues with branding manager which prevented customizing the branding
 product_area: Application enablement & solutions
 change_type:

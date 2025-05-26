@@ -1,6 +1,6 @@
 ---
 date: '2025-05-22'
-title: Date-time picker automatically corrects invalid hour and minute values
+title: Fixed missing smart rule translations
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -11,7 +11,8 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-ticket: MTM-61596
-version: 1021.73.7
+ticket: MTM-63542
+version: 1021.73.4
 ---
-The date-time picker component now automatically corrects invalid hour and minute values to "00".
+
+Missing translations in smart rules related views in Web SDK based applications have been fixed.
