@@ -1,6 +1,6 @@
 ---
 date: ""
-title: As a map widget user, I want an option to fit all my assets in map (#8942) [GRAFT][release/cd] (#9183)
+title: Map widget provides option to fit all assets on map
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
