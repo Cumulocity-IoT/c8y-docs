@@ -1,5 +1,5 @@
 ---
-weight: 160
+weight: 145
 title: Platform capabilities
 layout: bundle
 sector: 
