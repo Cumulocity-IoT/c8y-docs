@@ -124,7 +124,7 @@ The [Java Client](/device-integration/mqtt-service#java-client) contains classes
 
 The MQTT Service does not impose any specific payload format. 
 All the incoming MQTT messages must meet the specification in terms of fixed and variable headers, but the payload for published messages is unrestricted.
-A Streaming Analytics app or a custom microservice will receive the exact same set of bytes that was sent by an MQTT device, and are responsible for converting these to a {{< product-c8y-iot >}} compatible format.
+A Streaming Analytics app or a custom microservice will receive the exact same set of bytes that was sent by an MQTT device, and is responsible for converting these to a {{< product-c8y-iot >}} compatible format.
 
 The size of the MQTT payload is limited to a maximum value that includes both the message header and body.
 The size of an MQTT packet header varies, but it will be at least 2 bytes.
