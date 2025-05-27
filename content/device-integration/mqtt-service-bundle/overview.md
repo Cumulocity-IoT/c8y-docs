@@ -14,9 +14,9 @@ delivered to {{< product-c8y-iot >}} using the standard REST API.
 ![MQTT Service send](/images/mqtt-service/mqtt-service-send.svg)
 
 All MQTT messages published to the MQTT Service are forwarded to the Messaging Service, where they are persisted, waiting to be consumed.
-A custom microservice or [Streaming Analytics application](/streaming-analytics/epl-apps/#using-cumulocity-mqtt-service) that understands the topic and payload structure can consume the MQTT messages, and then translate and push them into {{< product-c8y-iot >}}.
+A custom microservice or [Streaming Analytics app](/streaming-analytics/epl-apps/#using-cumulocity-mqtt-service) that understands the topic and payload structure can consume the MQTT messages, and then translate and push them into {{< product-c8y-iot >}}.
 
-Similarly, a custom microservice or Streaming Analytics application can send messages to devices, as shown in the diagram below.
+Similarly, a custom microservice or Streaming Analytics app can send messages to devices, as shown in the diagram below.
 In this case, the user-provided microservice receives messages from {{< product-c8y-iot >}} through a Notifications 2.0 subscription.
 These messages are mapped to the payload structure used by the MQTT devices, then published to MQTT topics.
 
@@ -41,6 +41,6 @@ The table below presents a basic comparison between the {{< product-c8y-iot >}} 
 | Scalability                  | Horizontal                                              | Currently a single instance. Horizontal scaling will be available in the GA release |
 | Topic format                 | Determined by the SmartREST 2.0 protocol                | Unrestricted. SmartREST topic names are reserved and cannot currently be used       |
 | Payload                      | Determined by the SmartREST 2.0 protocol                | Unrestricted. The maximum message size is 128 KiB including all headers             |
-| Extensibility                | Limited by SmartREST 2.0 custom templates               | Streaming Analytics applications or custom mapping microservices can support arbitrary MQTT-based protocols             |
-| Message processors/consumers | Built-in message processor for each SmartREST 2.0 topic | Streaming Analytics applications or custom mapping microservices can support multiple processors for a topic            |
-| JSON via MQTT                | Limited feature set                                     | Streaming Analytics applications or custom mapping microservices can support arbitrary JSON payloads                    |
+| Extensibility                | Limited by SmartREST 2.0 custom templates               | Streaming Analytics apps or custom mapping microservices can support arbitrary MQTT-based protocols             |
+| Message processors/consumers | Built-in message processor for each SmartREST 2.0 topic | Streaming Analytics apps or custom mapping microservices can support multiple processors for a topic            |
+| JSON via MQTT                | Limited feature set                                     | Streaming Analytics apps or custom mapping microservices can support arbitrary JSON payloads                    |

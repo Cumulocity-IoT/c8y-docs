@@ -17,7 +17,7 @@ Q: Why does the MQTT Service not use the standard MQTT ports 1883 and 8883?<br/>
 A: Those ports are already used by {{< product-c8y-iot >}} Core MQTT.
 While both MQTT implementations are operating in parallel, the MQTT Service must use different ports.
 
-Q: What other ways are there to map my MQTT device payloads to {{< product-c8y-iot >}}, other than Streaming Analytics or a custom microservice?<br/>
+Q: What other ways are there to map my MQTT device payloads to {{< product-c8y-iot >}}, other than a Streaming Analytics app or a custom microservice?<br/>
 A: One option is to use the <a href="https://github.com/Cumulocity-IoT/cumulocity-dynamic-mapper/" target="_blank">Dynamic Mapping Service for Cumulocity</a>.
 This is a community-supported open-source component that allows many different payload formats and encodings to be mapped to the {{< product-c8y-iot >}} domain model.
 Mappings can be configured using a graphical UI or by writing JavaScript code.
