@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Installing Edge
+title: Installation
 layout: bundle
 sector:
   - edge_server
@@ -10,7 +10,7 @@ This documentation explains how to install {{< product-c8y-iot >}} Edge.
 
 Edge can be installed using one of two supported methods. The method you choose depends on whether you already have a Kubernetes environment or would like the tool to provision one for you.
 
-## Installing with `c8yedge` (Recommended for first-time or simplified setups)
+## Installing with c8yedge tool (Recommended for first-time or simplified setups)
 This method is ideal if you **do not already have a Kubernetes cluster** and want a simplified, self-contained setup.
 The `c8yedge` command-line tool automates the entire process of preparing the environment and installing Edge. Specifically, it:
   - Installs [K3s](https://docs.k3s.io/installation), a lightweight Kubernetes distribution optimized for edge environments.

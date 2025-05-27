@@ -7,7 +7,7 @@ layout: redirect
 Before you start the installation, ensure that you have fulfilled the [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) and configured the storage as described in [Configuring storage](/edge-kubernetes/installing-edge-on-k8/#configuring-storage).
 
 
-## Installing with `c8yedge` (Recommended for first-time or simplified setups) {#install-with-c8yedge-tool}
+## Installing with c8yedge tool (Recommended for first-time or simplified setups) {#install-with-c8yedge-tool}
 
 
 
