@@ -11,7 +11,7 @@ To use Cloud Remote Access, you need
 * the Cloud Remote Access microservice included into your subscription plan.
 
 ### Set up your device
-{#set-up-your-device}
+
 
 To configure your device for compatibility with Cloud Remote Access functionality you need to install thin-edge.io. This solution is fully integrated with Cloud Remote Access and can be easily deployed on any Linux-based device, eliminating the need for any custom integration.
 
@@ -21,7 +21,7 @@ Furthermore, devices can report their supported protocols using SmartREST templa
 2. It enables administrators to restrict the use of potentially vulnerable protocols, such as Telnet, thereby enhancing the overall security of your deployment.
 
 ### User Authorization
-{#user-authorization}
+
 
 The Cloud Remote Access feature is a powerful tool that requires careful management. Due to its potential for significant system impact, access should be restricted to experienced administrators 
 who fully understand its capabilities and risks.
