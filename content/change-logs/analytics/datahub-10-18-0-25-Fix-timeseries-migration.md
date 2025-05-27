@@ -1,5 +1,5 @@
 ---
-date:
+date: 2025-05-27
 title: Fixed offloading failures during time series migration
 product_area: Analytics
 change_type:
