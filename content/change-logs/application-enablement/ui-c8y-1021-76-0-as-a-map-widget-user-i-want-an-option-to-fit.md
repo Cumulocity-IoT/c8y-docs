@@ -19,4 +19,4 @@ The "Map" widget has been enhanced with a new feature that allows to fit all ass
 - **Widget configuration:** Allows to adjust the map's center and zoom level to include all relevant assets.
 - **Widget view:** Allows users to fit all assets into the view during normal dashboard usage.
 
-This feature improves usability by ensuring all tracked assets are visible with a single action.
+This feature improves the usability by ensuring all tracked assets are visible with a single action.
