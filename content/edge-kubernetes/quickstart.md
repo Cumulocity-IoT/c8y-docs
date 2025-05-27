@@ -5,10 +5,11 @@ layout: bundle
 sector:
   - edge_server
 ---
-
-Edge provides a Command Line Installation tool `c8yedge` that is a convenient way to install it on a [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation) cluster. This tool is available at https://download.cumulocity.com/Cumulocity-Edge/Installer. 
+This section helps you quickly install {{< product-c8y-iot >}} Edge with default configuration. The [installation](/edge-kubernetes/installing-edge-on-k8/) section covers in greater detail how to install and configure Edge for production deployments.
 
 ## Install Edge
+Edge provides a Command Line Installation tool `c8yedge` that is a convenient way to install it on a [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation) cluster. This tool is available at https://download.cumulocity.com/Cumulocity-Edge/Installer. 
+
 Make sure your hardware meets the requirements specified in [Prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) before proceeding.
 
 {{< c8y-admon-info >}}
