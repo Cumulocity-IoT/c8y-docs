@@ -3,7 +3,7 @@ weight: 10
 title: Monitoring
 layout: redirect
 ---
-Edge on Kubernetes allows for monitoring of the Edge deployment using Prometheus, an open-source project that is used for monitoring application state. See https://prometheus.io/ for detailed information on Prometheus and how to use it.
+Edge allows for monitoring of the Edge deployment using Prometheus, an open-source project that is used for monitoring application state. See https://prometheus.io/ for detailed information on Prometheus and how to use it.
 
 The Edge operator exposes a Prometheus-compatible metrics endpoint, `https://\<domain>:3443/metrics`, where the domain is the one you specified in the Edge CR (or myown.iot.com if you followed the Quickstart installation steps).
 You can monitor the recommended list of metrics below, with more available at the above endpoint.
