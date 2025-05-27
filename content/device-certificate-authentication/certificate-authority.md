@@ -19,7 +19,7 @@ The {{< product-c8y-iot >}} CA service is based on the EST protocol due to its s
 * `/.well-known/est/simplereenroll` to be used by a device to renew its certificate or to substitute for a certificate. The device has to authenticate itself using its password or a JWT token (obtained using its certificate over MQTT).
 
 {{< c8y-admon-info >}}
-This feature is currently released as a public preview and is disabled by default at both the instance and tenant levels.
+This feature is currently released as Public Preview and is disabled by default at both the instance and tenant levels.
 {{< /c8y-admon-info >}}
 
 The {{< product-c8y-iot >}} certificate management allows {{< product-c8y-iot >}} to sign and issue certificates.
