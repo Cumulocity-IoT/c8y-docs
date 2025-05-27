@@ -1,5 +1,5 @@
 ---
-date: 2025-05-27
+date: 
 title: New SmartREST template for reading the platform version
 change_type:
   - value: change-2c7RdTdXo4
