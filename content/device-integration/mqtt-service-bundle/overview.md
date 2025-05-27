@@ -24,7 +24,7 @@ These messages are mapped to the payload structure used by the MQTT devices, the
 
 As with MQTT messages published by devices, messages published from a microservice will be forwarded to the Messaging Service, where they can be consumed by MQTT devices subscribed to the relevant topics.
 
-Custom microservices may use the [Java Client](/device-integration/mqtt-service#java-client) to publish to or consume from MQTT topics. They can use the [Microservice SDK](/microservice-sdk/java) to push data into {{< product-c8y-iot >}}.
+Custom microservices may use the [Java client](/device-integration/mqtt-service#java-client) to publish to or consume from MQTT topics. They can use the [Microservice SDK](/microservice-sdk/java) to push data into {{< product-c8y-iot >}}.
 
 ### MQTT Service compared to Core MQTT {#mqtt-service-vs-cumulocity-iot-mqtt}
 
