@@ -1,5 +1,5 @@
 ---
-title: Using Cloud Remote Access
+title: Setting Up Cloud Remote Access
 weight: 30
 layout: bundle
 sector:
