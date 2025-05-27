@@ -10,7 +10,7 @@ The MQTT Service implementation supports clients connecting using MQTT versions 
 ### Connecting to the service {#connecting-via-mqtt}
 
 {{< c8y-admon-important >}}
-MQTT Service requires clients to connect with clean start flag enabled, set to "1" (true), otherwise the client connection is rejected by the server.
+MQTT Service requires clients to connect with clean session flag enabled, set to "1" (true), otherwise the client connection is rejected by the server.
 {{< /c8y-admon-important >}}
 
 MQTT connections to the MQTT Service must use TCP.
