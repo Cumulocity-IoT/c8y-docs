@@ -6,7 +6,7 @@ layout: bundle
 
 This versatile feature offers two primary connection methods:
 1. **Direct device access:** Establish a seamless connection to devices directly linked to {{< product-c8y-iot >}}. 
-2. **Gateway-Enabled Remote Access:** Leverage a connected device as a gateway to access any device that is reachable within its local area network, expanding your reach to manage multiple devices through a single entry point.
+2. **Gateway-enabled remote access:** Leverage a connected device as a gateway to access any device that is reachable within its local area network, expanding your reach to manage multiple devices through a single entry point.
 
 The connection is always initiated by the device. The feature operates through a microservice running within {{< product-c8y-iot >}}, which tunnels all protocols through a secure WebSocket connection and manages authentication without the need to open any port. This approach provides a level of security comparable to traditional VPN tunnels while offering greater simplicity and ease of use.
 
