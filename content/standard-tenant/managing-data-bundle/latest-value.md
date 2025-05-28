@@ -94,7 +94,7 @@ GET /inventory/managedObjects?withLatestValues=true&query=$filter=c8y_LatestMeas
 }
 ```
 
-However, in scenarios where measurements are delayed in arriving (due to network latency or other factors), the system may incorrectly display them as the latest measurement, even though they are technically out of order.  
+In scenarios where measurements are delayed in arriving (due to network latency or other factors), the system may incorrectly display them as the latest measurement, even though they are technically out of order.  
 To address this, we've introduced a new toggle, `strongConsistency`. When this toggle is enabled (set to true), late-arriving measurements will not be shown as the latest data for the device, regardless of when they were actually received. Instead, only measurements that arrive in the correct order will be treated as the latest, ensuring that the most accurate, timely data is always presented.  
 
 The toggle can be enabled individually for each measurement fragment to allow fine-grained control over which measurement fragments are affected:
