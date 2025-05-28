@@ -28,7 +28,7 @@ Enter password to access Edge operator registry:
 ```
 
 {{< c8y-admon-info >}}
-To request the Edge registry credentials, [contact product support](/additional-resources/contacting-support/).
+[Contact product support](/additional-resources/contacting-support/) to request the Edge registry credentials.
 {{< /c8y-admon-info >}}
 
 By default, the Edge operator is deployed within the **c8yedge** namespace. If you wish to install the Edge operator and Edge in a different namespace, you can specify it using the `-n` option in the installation script.
@@ -41,7 +41,7 @@ kubectl logs -f -n c8yedge deployment/c8yedge-operator-controller-manager manage
 Substitute the namespace name *c8yedge* in the command above with the namespace name where you have installed the Edge operator.
 {{< /c8y-admon-info >}}
 
-### Installing the Edge operator (offline)
+### Installing the Edge operator (offline) {#installing-edge-operator-offline}
 Frequently, portions of a data center might not have access to the Internet, even via proxy servers. You can still install Edge in such an environment, but you must make the required software, Helm Charts and Docker images, available to the disconnected environment through an [Open Container Initiative](https://opencontainers.org/) (OCI) compliant private registry.
 
 To enable this, you need to have an OCI compliant registry available in the network which is accessible to the Kubernetes cluster in which you intend to install Edge. You would also need a workstation that has full internet access, to pull the required software from the [{{< company-c8y >}} registry](https://registry.c8y.io/) and push them into the private registry installed or available in the restricted network.
@@ -168,7 +168,7 @@ c8yedge_registry_sync sync -v {{< c8y-edge-version >}} -sr registry.c8y.io -sru 
 ```
 
 {{< c8y-admon-info >}}
-To request the Edge registry credentials, [contact product support](/additional-resources/contacting-support/).
+[Contact product support](/additional-resources/contacting-support/) to request the Edge registry credentials.
 {{< /c8y-admon-info >}}
 
 #### Update custom-environment-variables ConfigMap
