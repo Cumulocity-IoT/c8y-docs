@@ -14,5 +14,5 @@ build_artifact:
 ticket: MTM-63747
 version: 1021.76.6
 ---
-For tenants using Single Sign On-redirect as a default login method, after an upgrade from y2024 release (or earlier) to y2025 release (or newer) user logins might fail.
-The reason is that older versions were using authorization token for subdomains (e.g. ".test.eu-latest.cumulocity.com") and newer one are using domain specific token ("test.eu-latest.cumulocity.com", without dot at the beginning) and presence of them both was causing conflict. Currently, if old cookie is detected, cookies are cleared with logout and users can log in again successfuly.
+For tenants using single sign-on as a default login method, after an upgrade from the y2024 release (or earlier) user logins might fail.
+The reason is that older versions used authorization tokens for subdomains (for example, *.test.eu-latest.cumulocity.com*) while newer versions use domain-specific tokens (*test.eu-latest.cumulocity.com*, without dot at the beginning). Having both in place was causing a conflict. Now, if an old cookie is detected, cookies are cleared with logout and users can log in again without issues.
