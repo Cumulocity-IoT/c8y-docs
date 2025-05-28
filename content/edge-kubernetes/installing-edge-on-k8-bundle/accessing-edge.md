@@ -1,5 +1,5 @@
 ---
-weight: 25
+weight: 60
 title: Accessing Edge
 layout: redirect
 ---
