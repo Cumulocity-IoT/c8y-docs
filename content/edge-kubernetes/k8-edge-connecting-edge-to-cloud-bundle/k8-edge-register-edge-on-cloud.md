@@ -8,7 +8,7 @@ To remotely manage, configure, and monitor Edge through a {{< product-c8y-iot >}
 
 If you do not provide a TLS/SSL key and certificate chain, the Edge operator automatically generates an internal TLS/SSL key and certificate for authentication. In this case, Edge will identify itself using the domain name of the instance.
 
-To complete the registration process, you must sign in to your cloud tenant and follow the steps outlined in [Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates) to add the appropriate Certificate Authority (CA) certificate to your tenant’s trusted certificate list.
+To complete the registration process, you must sign in to your cloud tenant and follow the steps outlined in [certificates](/device-certificate-authentication/device-certificates/) to add the appropriate Certificate Authority (CA) certificate to your tenant’s trusted certificate list.
 
 If Edge uses an internally generated TLS/SSL key and certificate, you can download the corresponding CA certificate by running the following command:
 
