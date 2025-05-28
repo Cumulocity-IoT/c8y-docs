@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Clear cookies when 401 is received on currentTenant on login (#9189)
+title: SSO Login Issues after upgrade - automatic cookie cleanup implemented
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
