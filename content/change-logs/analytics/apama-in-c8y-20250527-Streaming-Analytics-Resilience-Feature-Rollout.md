@@ -1,7 +1,7 @@
 ---
 date: '2025-05-27'
 title: >-
-  Reliabile notifications and Smart Rule resiliency features now in public preview
+  Reliable notifications and smart rule resiliency features now in public preview
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
