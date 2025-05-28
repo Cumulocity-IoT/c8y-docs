@@ -79,14 +79,14 @@ The following algorithms are supported when adding new keys:
 
 {{< c8y-admon-info >}}
 Limitations:
-* Character Support:
+* Character support:
 International characters are not supported.
 Only a limited set of control characters is functional.
-* Input Restrictions:
+* Input restrictions:
 Mouse movements are not supported.
-* Protocol Compatibility:
+* Protocol compatibility:
 SSH version 1 is not supported; only SSH version 2 is available.
-* Display Behavior:
+* Display behavior:
 Text reflow does not occur when the window width changes.
 {{< /c8y-admon-info >}}
 
