@@ -30,7 +30,7 @@ In order to access Dremio, you must also make the domain ``datahub-<domain_name>
 
 #### Using {{< product-c8y-iot >}} DataHub Edge {#using-datahub-edge-on-kubernetes}
 
-{{< product-c8y-iot >}} DataHub Edge behaves like the Cloud and Edge appliance version.
+{{< product-c8y-iot >}} DataHub Edge behaves like the Cloud version.
 
 ### Validation of the {{< product-c8y-iot >}} DataHub installation {#validation-of-the-datahub-edge-installation}
 
