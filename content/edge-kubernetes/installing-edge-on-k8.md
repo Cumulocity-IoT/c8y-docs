@@ -13,7 +13,7 @@ Edge can be installed using one of two supported methods. The method you choose 
     <br/>
     The `c8yedge` command-line tool automates the entire process of preparing the environment and installing Edge. Specifically, it:
     - Installs [K3s](https://docs.k3s.io/installation), a lightweight Kubernetes distribution optimized for edge environments.
-    - Deploys the Edge Operator and uses it to install {{< product-c8y-iot >}} Edge with the following default configuration values (which can be modified later to suit your environment).
+    - Deploys the Edge operator and uses it to install {{< product-c8y-iot >}} Edge with the following default configuration values (which can be modified later to suit your environment).
       - **Name**: `c8yedge`
       - **Company**: `Edge Bootstrap`
       - **Domain**: `edgebootstrap.example`
@@ -24,7 +24,7 @@ Edge can be installed using one of two supported methods. The method you choose 
     <br/>
     <br/>
 
-  - **[Installing with the Edge Operator](#install-edge-with-edge-operator) (For users with an existing Kubernetes setup)**
+  - **[Installing with the Edge operator](#install-edge-with-edge-operator) (For users with an existing Kubernetes setup)**
     <br/>
     This method is suitable for users who already have a Kubernetes cluster and want to install Edge using the Kubernetes-native approach. Even a single-node Kubernetes cluster will suffice, but is not required.
     <br/>
