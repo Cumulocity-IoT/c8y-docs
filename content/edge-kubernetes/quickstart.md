@@ -13,7 +13,7 @@ Edge provides a command-line tool (`c8yedge`), a convenient way to install Edge 
 
 ```shell
 curl -sfL https://download.cumulocity.com/Cumulocity-Edge/Installer/c8yedge -o c8yedge
-chmod +x c8yedge
+sudo chmod +x c8yedge
 sudo mv c8yedge /usr/local/bin/
 ```
 <br/>

@@ -8,7 +8,7 @@ The `c8yedge` command-line tool automates the entire process of preparing the en
 
 ```shell
 curl -sfL https://download.cumulocity.com/Cumulocity-Edge/Installer/c8yedge -o c8yedge
-chmod +x c8yedge
+sudo chmod +x c8yedge
 sudo mv c8yedge /usr/local/bin/
 ```
 
