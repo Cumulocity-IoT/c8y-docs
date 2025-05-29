@@ -1,5 +1,5 @@
 ---
-weight: 11
+weight: 20
 title: Configuring proxy
 layout: redirect
 ---

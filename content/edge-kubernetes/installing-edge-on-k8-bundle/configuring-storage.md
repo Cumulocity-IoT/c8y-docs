@@ -1,5 +1,5 @@
 ---
-weight: 12
+weight: 30
 title: Configuring storage
 layout: redirect
 ---

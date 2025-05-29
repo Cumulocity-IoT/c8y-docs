@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Setting up Cumulocity DataHub Edge on Kubernetes
+title: Setting up Cumulocity DataHub Edge
 layout: redirect
 ---
 
@@ -11,7 +11,7 @@ In this setup, {{< product-c8y-iot >}} DataHub is deployed into a Kubernetes env
 #### Resource requirements {#resource-requirements}
 
 The resource requirements for running a bare {{< product-c8y-iot >}} Edge instance are described in [Prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
-When {{< product-c8y-iot >}} DataHub Edge on Kubernetes is deployed on top, the resource requirements change by the following additional amounts:
+When {{< product-c8y-iot >}} DataHub Edge is deployed on top, the resource requirements change by the following additional amounts:
 
  * Recommended: 16 GB RAM, minimum: 10 GB RAM
  * Recommended: 10 logical CPU cores, minimum: 6 logical CPU cores
@@ -19,18 +19,18 @@ When {{< product-c8y-iot >}} DataHub Edge on Kubernetes is deployed on top, the 
 
  Hardware requirements for the host OS are excluded.
 
-### Setting up {{< product-c8y-iot >}} DataHub Edge on Kubernetes {#setting-up-datahub-edge-on-kubernetes}
-To install and configure DataHub Edge on Kubernetes, update the `spec.dataHub` field in the Edge Custom Resource (CR) with the necessary configuration details for the Edge operator. After making the changes, apply the updated CR to deploy DataHub Edge.
+### Setting up {{< product-c8y-iot >}} DataHub Edge {#setting-up-datahub-edge-on-kubernetes}
+To install and configure DataHub Edge, update the `spec.dataHub` field in the Edge Custom Resource (CR) with the necessary configuration details for the Edge operator. After making the changes, apply the updated CR to deploy DataHub Edge.
 
 For more details on the `spec.dataHub` field, refer to [Edge Custom Resource - DataHub](/edge-kubernetes/edge-custom-resource-definition/#k8-edge-datahub).
 
-For additional guidance, see the [Install Edge](/edge-kubernetes/installing-edge-on-k8/#install-edge) and [Modify Edge](/edge-kubernetes/manage-edge/#modify-edge) sections in the Edge on Kubernetes documentation.
+For additional guidance, see the [Install Edge](/edge-kubernetes/installing-edge-on-k8/#install-edge) and [Modify Edge](/edge-kubernetes/manage-edge/#modify-edge) sections in the Edge documentation.
 
 In order to access Dremio, you must also make the domain ``datahub-<domain_name>`` resolvable, just as the configured domain name and ``management-<domain_name>`` were made resolvable in [Accessing Edge](/edge-kubernetes/installing-edge-on-k8/#accessing-edge).
 
-#### Using {{< product-c8y-iot >}} DataHub Edge on Kubernetes {#using-datahub-edge-on-kubernetes}
+#### Using {{< product-c8y-iot >}} DataHub Edge {#using-datahub-edge-on-kubernetes}
 
-{{< product-c8y-iot >}} DataHub Edge on Kubernetes behaves like the Cloud and Edge appliance version.
+{{< product-c8y-iot >}} DataHub Edge behaves like the Cloud version.
 
 ### Validation of the {{< product-c8y-iot >}} DataHub installation {#validation-of-the-datahub-edge-installation}
 
