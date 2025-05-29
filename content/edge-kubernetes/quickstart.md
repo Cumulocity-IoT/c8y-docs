@@ -6,27 +6,56 @@ sector:
   - edge_server
 ---
 
-This section helps you quickly install {{< product-c8y-iot >}} Edge with default configuration. The [installation](/edge-kubernetes/installing-edge-on-k8/) section covers in greater detail how to install and configure Edge for production deployments.
+This section helps you to quickly install Edge on a [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation) cluster with default options. For detailed instructions, see [Installing Edge on Kubernetes](/edge-kubernetes/installing-edge-on-k8/).
 
-## Install Edge
-Edge provides a command-line tool (`c8yedge`), a convenient way to install Edge on a [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation) cluster using a guided CLI-based workflow. You can download the tool from the [{{< company-c8y >}} Download Center](https://download.cumulocity.com/Cumulocity-Edge/Installer) or by running the following commands:
+1. Verify that your hardware meets the requirements specified in [Prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
 
-```shell
-curl -sfL https://download.cumulocity.com/Cumulocity-Edge/Installer/c8yedge -o c8yedge
-chmod +x c8yedge
-sudo mv c8yedge /usr/local/bin/
-```
-<br/>
-Before proceeding, ensure all [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) are met.
+2. Make configuration changes to your operating system to work with K3s as per [Requirements](https://docs.k3s.io/installation/requirements#operating-systems).
 
-To install Edge, execute the following command and follow the interactive prompts:
-```shell
-sudo c8yedge install
-```
-{{< c8y-admon-info >}}
-[Contact product support](/additional-resources/contacting-support/) to request the Edge registry credentials.
-{{< /c8y-admon-info >}}
+3. Run the command below to install K3s.
 
-Upon successful installation, the tool will exit automatically.
+   ```shell
+   sudo sh -c '
+      USER_NAME=$(whoami)
+      USER_HOME=$(eval echo ~${USER_NAME})
+      K3S_VERSION=v1.32.3+k3s1
 
-To sign in to Edge, refer to the [**Accessing Edge**](/edge-kubernetes/installing-edge-on-k8/#accessing-edge) section. The initial installation uses a bootstrap domain (`edgebootstrap.example`) along with a default license and email (`company@edgebootstrap.example`). Use this domain, email and the default credentials username “admin” and password “admin-pass” to access Edge for the first time. You can later update the bootstrap domain and license to match your environment by following the steps outlined in [**Modifying Edge**](/edge-kubernetes/manage-edge/#modify-edge).
+      touch /etc/sysctl.d/90-kubelet.conf  && \
+      sed -i "/^vm\.panic_on_oom=/d; /^vm\.overcommit_memory=/d; /^kernel\.panic=/d; /^kernel\.panic_on_oops=/d" /etc/sysctl.d/90-kubelet.conf && \
+      printf "vm.panic_on_oom=0\nvm.overcommit_memory=1\nkernel.panic=10\nkernel.panic_on_oops=1\n" | tee -a /etc/sysctl.d/90-kubelet.conf && \
+
+      sysctl -p /etc/sysctl.d/90-kubelet.conf && \
+
+      curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=${K3S_VERSION} sh -s - \
+         --write-kubeconfig-mode 644 \
+         --disable=traefik \
+         --protect-kernel-defaults true \
+      
+      mkdir -p '"$USER_HOME"'/.kube && \
+      cp /etc/rancher/k3s/k3s.yaml '"$USER_HOME"'/.kube/config && \
+      chown '"$USER_NAME:"' '"$USER_HOME"'/.kube/config && \
+      chmod 600 '"$USER_HOME"'/.kube/config && \
+
+      printf "\e[32mSuccessfully installed k3s!\e[0m\n"
+   '
+   ```
+
+4. Run the command below to install Helm v3.
+
+   ```shell
+   curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+   ```
+
+5. Run the command below to install the Edge operator and provide the registry credentials when prompted.
+
+   ```shell
+   curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh
+   ```
+
+6. Run the command below to apply Edge CR ([c8yedge-sample.yaml](/files/edge-k8s/c8yedge-sample.yaml)) for installing Edge version **{{< c8y-edge-version >}}** named **c8yedge** with the domain **myown.iot.com**.
+
+   ```shell
+   kubectl apply -f {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-sample.yaml
+   ```
+
+7. See [Verifying the Edge installation](/edge-kubernetes/installing-edge-on-k8/#verifying-the-edge-installation) and [Accessing Edge](/edge-kubernetes/installing-edge-on-k8/#accessing-edge) to sign into Edge.
