@@ -29,7 +29,7 @@ Edge can be installed using one of two supported methods. The method you choose 
     This method is suitable for users who already have a Kubernetes cluster and want to install Edge using the Kubernetes-native approach. Even a single-node Kubernetes cluster will suffice, but is not required.
     <br/>
     In this case, you are expected to:
-    - Set up and manage the Kubernetes cluster yourself (including K3s or any compatible Kubernetes distribution).
+    - Set up and manage the Kubernetes cluster yourself (using K3s or any compatible Kubernetes distribution).
     - Install any [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites)
     - Deploy the Edge Operator using Helm.
     - Install Edge by creating and applying the Edge Custom Resource (CR)
