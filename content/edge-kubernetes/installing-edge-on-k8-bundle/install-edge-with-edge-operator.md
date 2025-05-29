@@ -51,7 +51,7 @@ Any OCI compliant registry can be used as a private registry, however, the Edge 
 
 Refer to [Harbor Installation and Configuration](https://goharbor.io/docs/2.11.0/install-config/) for installing Harbor and [Nexus Installation and Upgrades](https://help.sonatype.com/en/install-nexus-repository.html) for installing Nexus.
 
-After installing and configuring a private registry, ensure that all the machines (the workstation and the Kubernetes cluster nodes) which need access to the private registry can resolve its domain or host and trust the private regsitry's certificate (if it is configured with a self-signed certificate).
+After installing and configuring a private registry, ensure that all the machines (the workstation and the Kubernetes cluster nodes) which need access to the private registry can resolve its domain or host and trust the private registry's certificate (if it is configured with a self-signed certificate).
 
 #### Update /etc/hosts to resolve the domain
 Run the below commands to update the `/etc/hosts` file on every machine (the workstation and the Kubernetes cluster nodes) which needs access to the private registry can resolve its domain or host:
