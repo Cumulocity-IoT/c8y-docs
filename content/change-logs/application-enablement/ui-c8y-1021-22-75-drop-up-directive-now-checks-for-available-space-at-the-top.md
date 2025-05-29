@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-05-22
 title: Dropdown menus now always fully visible and accessible
 product_area: Application enablement & solutions
 change_type:

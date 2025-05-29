@@ -1,6 +1,6 @@
 ---
 date: 2025-05-22
-title: Dropdown menu maximum width adjusted
+title: Fixed missing smart rule translations
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -11,7 +11,8 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-ticket: MTM-63333
-version: 1021.22.73
+ticket: MTM-63542
+version: 1021.22.79
 ---
-The maximum width for dropdown menus has been adjusted to accommodate the date picker.
+
+Missing translations in smart rules related views in Web SDK based applications have been fixed.

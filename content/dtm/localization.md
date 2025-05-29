@@ -55,7 +55,7 @@ You must have administrator access to the tenant to install the Public-options a
 
 To open the **Localization** page, navigate to **Configuration > Localization**.
 
-If you want to add translations for the created [asset properties](/dtm/asset-types/#property-library) or [asset models](/dtm/asset-types/#asset-models), or if you want to add custom translations for the existing static text in the DTM application, use the **Localization** feature.
+If you want to add translations for the created [asset properties](/dtm/asset-types/#asset-properties) or [asset models](/dtm/asset-types/#asset-models), or if you want to add custom translations for the existing static text in the DTM application, use the **Localization** feature.
 
 ![Main view localization page](/images/dtm/localization/dtm-localization-main-page.png)
 
