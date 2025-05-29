@@ -14,7 +14,7 @@ A script to install the Edge operator is available at [c8yedge-operator-install.
 To install the Edge operator, download and run the script, refer to a sample command below. Enter the version (`-v` option, for example, {{< c8y-edge-version >}}) you want to install, registry hostname (`-r` option) and the registry credentials you received along with the license when prompted. *Use `-h` option to display the usage details.*
 
 {{< c8y-admon-info >}}
-If you are installing Edge from a local/private registry, provide the hostname (`-r` option) as <registry-hostname>:<registry-port> and the respective credentials when prompted.
+If you are installing Edge from a [local/private registry](/edge-kubernetes/installing-edge-on-k8/#installing-edge-operator-offline), provide the hostname (`-r` option) as <registry-hostname>:<registry-port> and the respective credentials when prompted.
 {{< /c8y-admon-info >}}
 
 ```shell
