@@ -1,15 +1,7 @@
 ---
 title: Edge
 icon: "c8y-icon c8y-icon-cumulocity-iot"
-type: root
-layout: redirect
 bundlefolder: edge-kubernetes
-audience:
-  - Users
-  - Administrators
-  - Developers
-sector:
-  - edge_server
 weight: 60
 ---
 
