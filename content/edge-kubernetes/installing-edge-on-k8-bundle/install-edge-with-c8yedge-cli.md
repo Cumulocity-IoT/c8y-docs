@@ -7,7 +7,7 @@ layout: redirect
 The `c8yedge` command-line tool automates the entire process of preparing the environment and installing Edge. You can download the tool from the [{{< company-c8y >}} Download Center](https://download.cumulocity.com/Cumulocity-Edge/Installer) or by running the following commands:
 
 ```shell
-curl -sfL https://download.cumulocity.com/Cumulocity-Edge/Installer/c8yedge -o c8yedge
+curl -sfL https://download.cumulocity.com/Cumulocity-Edge/Installer/{{< c8y-edge-version-major >}}/c8yedge -o c8yedge
 sudo chmod +x c8yedge
 sudo mv c8yedge /usr/local/bin/
 ```

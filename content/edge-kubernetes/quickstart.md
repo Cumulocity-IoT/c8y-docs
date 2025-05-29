@@ -12,7 +12,7 @@ This section helps you quickly install {{< product-c8y-iot >}} Edge with default
 Edge provides a command-line tool (`c8yedge`), a convenient way to install Edge on a [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation) cluster using a guided CLI-based workflow. You can download the tool from the [{{< company-c8y >}} Download Center](https://download.cumulocity.com/Cumulocity-Edge/Installer) or by running the following commands:
 
 ```shell
-curl -sfL https://download.cumulocity.com/Cumulocity-Edge/Installer/c8yedge -o c8yedge
+curl -sfL https://download.cumulocity.com/Cumulocity-Edge/Installer/{{< c8y-edge-version-major >}}/c8yedge -o c8yedge
 sudo chmod +x c8yedge
 sudo mv c8yedge /usr/local/bin/
 ```
