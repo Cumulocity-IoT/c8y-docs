@@ -1,5 +1,5 @@
 ---
-date: 2025-05-29
+date: 
 title: Cumulocity Streaming Analytics Python upgrade to 3.13
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,8 +11,7 @@ component:
 build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
-ticket: PAM-35298
-version: 26.95.0
+version: 
 ---
 
 The version of Python used in {{< product-c8y-iot >}} Streaming Analytics has been upgraded to version 3.13. Customers with extensions containing Python code should test that they are still working as expected. Virtual environments used to provide additional Python libraries may need to be recreated. If possible make these changes before the corresponding build gets rolled out to production SaaS environments.
