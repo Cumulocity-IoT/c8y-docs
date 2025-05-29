@@ -1,5 +1,5 @@
 ---
-weight: 15
+weight: 50
 title: Kubernetes Operator
 layout: redirect
 ---

@@ -39,7 +39,3 @@ Update the [sample version file](/files/edge-k8s/c8y-edge-version.yaml) to speci
    ![Edge version](/images/edge-k8s/edge-k8s-check-remote-update-status.png)
    - To check the details of the update, click the text outlined in red in the figure below:
    ![Edge version](/images/edge-k8s/edge-k8s-check-remote-update-full-log.png)
-
-### Updating Edge appliances using bulk operations {#updating-edge-appliances-using-bulk-operations}
-
-For information about updating Edge using bulk operations, see [Updating Edge using bulk operations](/edge/edge-connectivity/#updating-edge-appliances-using-bulk-operations).

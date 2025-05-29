@@ -20,7 +20,7 @@ You can share the following data with the tenant account:
 Devices, events, alarms, and measurements are forwarded from Edge to the {{< product-c8y-iot >}} tenant account. In contrast, operations are forwarded from the {{< product-c8y-iot >}} tenant account to Edge, but only for devices that exist in the {{< product-c8y-iot >}} tenant account due to forwarded data.
 {{< /c8y-admon-info >}}
 
-To upload the data to a {{< product-c8y-iot >}} tenant account, you must first create a data connector in the Edge appliance and subscribe this connector in the tenant account.
+To upload the data to a {{< product-c8y-iot >}} tenant account, you must first create a data connector in the Edge and subscribe this connector in the tenant account.
 
 A data connector describes the subset of the data that you would like to send to the {{< product-c8y-iot >}} tenant. For more information, see [Data connectors](/data-broker/data-broker-application/#data-connectors).
 
@@ -36,7 +36,7 @@ To create a data connector and upload the data to the tenant account, perform th
 
 4. Log in to the {{< product-c8y-iot >}} tenant account.
 
-5. In the tenant account, go to the Administration application. Click **Data broker** > **Data subscriptions** to subscribe the connector created in your Edge appliance.
+5. In the tenant account, go to the Administration application. Click **Data broker** > **Data subscriptions** to subscribe the connector created in your Edge.
 
    Click **Add data subscription** and provide the security code. Click **Submit** and accept the subscription. See [Data subscriptions](/data-broker/data-broker-application/#data-subscriptions).
 
