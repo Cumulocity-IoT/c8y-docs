@@ -4,7 +4,7 @@ title: Installing with Edge operator
 layout: redirect
 ---
 
-Before you start the installation, ensure that you have fulfilled the [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) and configured the storage as described in [Configuring storage](#configuring-storage).
+This method is suitable for users who already have a Kubernetes cluster and want to install Edge using the Kubernetes-native approach. Before you start the installation, ensure that you have met the [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) and configured the storage as described in [Configuring storage](#configuring-storage).
 
 ### Installing the Edge operator {#installing-edge-operator}
 A script to install the Edge operator is available at [c8yedge-operator-install.sh](/files/edge-k8s/c8yedge-operator-install.sh).

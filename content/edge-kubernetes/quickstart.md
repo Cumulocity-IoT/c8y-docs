@@ -17,7 +17,7 @@ sudo chmod +x c8yedge
 sudo mv c8yedge /usr/local/bin/
 ```
 <br/>
-Before proceeding, ensure all [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) are met.
+Before proceeding, ensure that you have met the [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) and applied the necessary [OS configurations required by K3s](https://docs.k3s.io/installation/requirements/#operating-systems).
 
 To install Edge, execute the following command and follow the interactive prompts:
 ```shell
@@ -30,4 +30,3 @@ sudo c8yedge install
 Upon successful installation, the tool will exit automatically.
 
 To sign in to Edge, refer to the [**Accessing Edge**](/edge-kubernetes/installing-edge-on-k8/#accessing-edge) section. The initial installation uses default values for domain (`edgebootstrap.example`) and email (`company@edgebootstrap.example`). Use this domain, email with the default credentials username “**admin**” and password “**admin-pass**” to access Edge for the first time. You can later update the domain and license to match your environment by following the steps outlined in [**Modifying Edge**](/edge-kubernetes/manage-edge/#modify-edge).
-
