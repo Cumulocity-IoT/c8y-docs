@@ -11,7 +11,7 @@ Recreating update strategy is an all-or-nothing process that updates all aspects
 For this example, assume that Edge is deployed using the [c8yedge-sample.yaml](/files/edge-k8s/c8yedge-sample.yaml).
 
 {{< c8y-admon-info >}}
-To upgrade your Kubernetes version, follow the official upgrade instructions for your platform. If you're using K3s, refer to the [K3 upgrade guide](https://docs.k3s.io/upgrades).
+To upgrade your Kubernetes version, follow the official upgrade instructions for your platform.
 <br>See [Prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) for the supported Kubernetes versions and platforms.
 {{< /c8y-admon-info >}}
 
