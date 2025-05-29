@@ -9,13 +9,19 @@ sector:
 This section helps you quickly install {{< product-c8y-iot >}} Edge with default configuration. The [installation](/edge-kubernetes/installing-edge-on-k8/) section covers in greater detail how to install and configure Edge for production deployments.
 
 ## Install Edge
-Edge provides a command-line tool (`c8yedge`), a convenient way to install Edge on a [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation) cluster using a guided CLI-based workflow. You can download the tool from the [{{< company-c8y >}} Download Center](https://download.cumulocity.com/Cumulocity-Edge/Installer). 
+Edge provides a command-line tool (`c8yedge`), a convenient way to install Edge on a [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation) cluster using a guided CLI-based workflow. You can download the tool from the [{{< company-c8y >}} Download Center](https://download.cumulocity.com/Cumulocity-Edge/Installer) or by running the following commands:
 
+```shell
+curl -sfL https://download.cumulocity.com/Cumulocity-Edge/Installer/c8yedge -o c8yedge
+chmod +x c8yedge
+sudo mv c8yedge /usr/local/bin/
+```
+<br/>
 Before proceeding, ensure all [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) are met.
 
 To install Edge, execute the following command and follow the interactive prompts:
 ```shell
-curl -sfL https://download.cumulocity.com/Cumulocity-Edge/Installer/c8yedge -O && sudo ./c8yedge install
+sudo c8yedge install
 ```
 {{< c8y-admon-info >}}
 [Contact product support](/additional-resources/contacting-support/) to request the Edge registry credentials.
