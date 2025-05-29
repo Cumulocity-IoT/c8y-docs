@@ -6,8 +6,6 @@ layout: redirect
 
 Before you start the installation, ensure that you have fulfilled the [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) and configured the storage as described in [Configuring storage](#configuring-storage).
 
-To begin, create a new single-node Kubernetes cluster with the Kubernetes version and the platform of your choice, and configure `kubectl` to use that cluster. See [Prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) for the supported Kubernetes versions and platforms.
-
 ### Installing the Edge operator {#installing-edge-operator}
 A script to install the Edge operator is available at [c8yedge-operator-install.sh](/files/edge-k8s/c8yedge-operator-install.sh).
 
