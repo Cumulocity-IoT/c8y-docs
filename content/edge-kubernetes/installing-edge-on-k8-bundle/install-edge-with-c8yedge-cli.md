@@ -19,7 +19,7 @@ sudo c8yedge [command] [flags]
 For more information about the tool, run `c8yedge --help` or `c8yedge [command] --help`.
 
 ### Install Edge
-Before proceeding, ensure that you have met the [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) and applied the necessary [OS configurations required by K3s](https://docs.k3s.io/installation/requirements/#operating-systems).
+Before proceeding, ensure that you have met the [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) and applied the necessary [operating system configurations required by K3s](https://docs.k3s.io/installation/requirements/#operating-systems).
 
 To install Edge, execute the following command and follow the interactive prompts:
 ```shell
