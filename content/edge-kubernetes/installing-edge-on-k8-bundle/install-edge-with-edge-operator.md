@@ -1,6 +1,6 @@
 ---
 weight: 50
-title: Installing with the Edge Operator
+title: Installing with Edge operator
 layout: redirect
 ---
 
