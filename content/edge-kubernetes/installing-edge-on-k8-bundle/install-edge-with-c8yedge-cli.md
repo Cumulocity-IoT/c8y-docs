@@ -1,5 +1,5 @@
 ---
-weight: 40
+weight: 20
 title: Installing with c8yedge tool
 layout: redirect
 ---
