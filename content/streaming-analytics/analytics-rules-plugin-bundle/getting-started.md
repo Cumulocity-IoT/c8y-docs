@@ -92,7 +92,7 @@ Only one template parameter per model can have "From Context" value selection.
 2. Go to **Devices** > **All devices** and select a device.
 3. Click on the **Analytics rules** tab (embedded as one of the device details tabs). You will see the empty analytics rules page.
    ![Analytics rule tab](/images/streaming-analytics/analytics-rules-plugin/empty-analytics-rule.png)
-4. Click **Add rule** to open the Add analytics rule dialog box. Select your configured model and click **OK**.
+4. Click **Add rule** to open the Add analytics rule dialog box. Only models that have been configured with **From Context** template parameters restricted to **Device** will be listed. Select your configured model and click **OK**.
    ![Add rule for the selected model](/images/streaming-analytics/analytics-rules-plugin/add-rule-for-selected-model.png)
 5. Configure the rule parameters:
    - Update the rule name if needed.
