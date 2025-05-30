@@ -17,9 +17,7 @@ version: 26.97.0
 ---
 The [Apama Analytics Builder Block SDK](https://github.com/Cumulocity-IoT/apama-analytics-builder-block-sdk) and [Apama EPL Apps Tools](https://github.com/Cumulocity-IoT/apama-eplapps-tools) are no longer supported natively on Windows environments.
 
-The new approach is to set up WSL (Windows Subsystem for Linux) with a Debian distribution using the 26.x Apama packages from our [Debian Package Repository](https://download.cumulocity.com/Apama/Debian). This provides a compatible and supported environment for using both the Analytics Builder Block SDK and EPL Apps Tools. 
-
-You may wish to use the community-maintained [Apama Extension for Visual Studio Code](https://cumulocity.com/apama/docs/latest/vscode/apama-extension-for-vscode/) which provides a useful development environment for writing EPL, and can easily be used with WSL (or alternatively, a Dev Container). 
+The new approach is to use the community-maintained [Apama Extension for Microsoft Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ApamaCommunity.apama-extensions) which provides a productive development environment for writing EPL, including a workflow for starting Apama application on Windows using a Dev Container using WSL (Windows Subsystem for Linux). 
 
 Alternatively, in the short term, it is possible to continue using Apama 10.15 and the `rel/y2025` branch of the respective repositories; however, customers are encouraged to transition to the new approach when possible.
 
