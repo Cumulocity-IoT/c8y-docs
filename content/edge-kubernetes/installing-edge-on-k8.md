@@ -7,7 +7,7 @@ sector:
 ---
 
 Edge can be installed using one of two supported methods. The method you choose depends on whether you already have a Kubernetes environment or would like the tool to provision one for you.
-  - **[Installing with c8yedge tool](#install-edge-with-c8yedge-cli) (Recommended for first-time or simplified setups)**
+  - **[Installing with the c8yedge tool](#install-edge-with-c8yedge-cli) (Recommended for first-time or simplified setups)**
     <br/>
     This method is ideal if you **do not already have a Kubernetes cluster** and want a simplified, self-contained setup.
     <br/>
