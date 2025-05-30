@@ -70,7 +70,7 @@ This validation applies only to models configured with template parameters where
 {{< /c8y-admon-info>}}
 
 - When the instance name is empty, Production mode is disabled in the dropdown and displays the message **Set distinct instance name to select production mode** below the mode field.
-- If you enter a duplicate instance name, the system shows **Instance name already exists** below the instance name field and prevents you from proceeding.
+- If you enter a duplicate instance name, an error message **Instance name already exists** appears below the instance name field and prevents you from proceeding.
 
 ![Production mode validation](/images/streaming-analytics/analytics-rules-plugin/production-mode-validation.png)
 
