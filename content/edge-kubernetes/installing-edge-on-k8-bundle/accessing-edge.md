@@ -4,9 +4,11 @@ title: Accessing Edge
 layout: redirect
 ---
 
-Before you can access Edge, you must first get the external IP address. The Edge operator creates a load balancer service named **cumulocity-ontoplb**, which receives an external IP. Clients outside of the cluster can access the Edge through this external IP.
+If you have installed Edge on your local machine, then you should be able to immediately access Edge in your browser with the URL `http://localhost`. If it is on a remote machine with a simple network setup and no firewall in the way, you can use `http://<IP of remote machine>`.
 
-### Assigning an external IP {#assigning-an-external-ip}
+For more sophisticated setups, especially those where you are using a domain name to access Edge, read on.
+
+### Accessing Edge via an external IP {#assigning-an-external-ip}
 
 To get the external IP to access Edge, run the command below:
 ```shell

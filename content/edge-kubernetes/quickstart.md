@@ -29,4 +29,4 @@ sudo c8yedge install
 
 Upon successful installation, the tool will exit automatically.
 
-To sign in to Edge, refer to the [**Accessing Edge**](/edge-kubernetes/installing-edge-on-k8/#accessing-edge) section. The initial installation uses default values for domain (`edgebootstrap.example`) and email (`company@edgebootstrap.example`). Use this domain, email with the default credentials username “**admin**” and password “**admin-pass**” to access Edge for the first time. You can later update the domain and license to match your environment by following the steps outlined in [**Modifying Edge**](/edge-kubernetes/manage-edge/#modify-edge).
+To sign in to Edge, refer to the instructions at the start of the [**Accessing Edge**](/edge-kubernetes/installing-edge-on-k8/#accessing-edge) section. Use with the default credentials username “**admin**” and password “**admin-pass**” to access Edge for the first time, along with the default email address `company@edgebootstrap.example`. You can later update the domain and license to match your environment by following the steps outlined in [**Modifying Edge**](/edge-kubernetes/manage-edge/#modify-edge).
