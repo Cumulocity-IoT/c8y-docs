@@ -27,7 +27,7 @@ The model that you add will contain three blocks:
 - An alarm output block which creates an alarm object for specified device, groups or Assets.
 
 
-#### Step 1: Create a Model
+#### Step 1: Create an Analytics model
 
 This section walks you through creating a simple temperature monitoring model. For more detailed Analytics Builder model, refer to the [Understanding models](/streaming-analytics/analytics-builder/#understanding-models).
 
@@ -45,7 +45,7 @@ When completed, your model will look similar to this:
 
 ![Create model for alarms](/images/streaming-analytics/analytics-rules-plugin/create-alarm-model.png)
 
-#### Step 2: Template Parameter Setup
+#### Step 2: Template parameter setup
 
 1. To create rules for a model using the Analytics Rules plugin, proper template parameter configuration of the model is essential. In the toolbar of the model editor, click the icon <i class="c8y-icon c8y-icon-parameters-on c8y-icon-duocolor icon-20"></i> to open the template parameter dialog.
 
@@ -102,17 +102,17 @@ Only one template parameter per model can have "From Context" value selection.
 
 **Congratulations!** You have successfully created and deployed your first analytics rule using the Analytics Rules plugin.
 
-### Creating Analytics Rule for Existing Samples
+### Creating Analytics rule for existing samples
 
 You can also create analytics rules using pre-built sample models from Analytics Builder. The process is similar to creating from scratch but faster since the model logic is already defined.
 
-#### Step 1: Create Model from Sample
+#### Step 1: Create model from sample
 1. Navigate to **Analytics Builder** > **Samples** page.
 2. Click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of your desired sample (e.g., "On alarm execute operation") and select **Create model from sample**
    ![Create model from sample](/images/streaming-analytics/analytics-rules-plugin/create-model-from-sample.png)
 3. The model editor opens with the sample model ready for use.
 
-#### Step 2: Configure Template Parameters
+#### Step 2: Configure template parameters
 1. Click the template parameter icon <i class="c8y-icon c8y-icon-parameters-on c8y-icon-duocolor icon-20"></i> in the toolbar.
 2. Ensure one template parameter is configured with:
    - **Type**: Source or Destination
@@ -120,5 +120,5 @@ You can also create analytics rules using pre-built sample models from Analytics
    - **Restrict to**: Device, Groups, or both as needed
 3. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save the model.
 
-#### Step 3: Create Rule from Device Management application
+#### Step 3: Create rule from Device Management application
 Follow the same steps as described in [Step 4: Create Analytics Rule from Device management](#step-4-create-analytics-rule-from-device-management) above.
