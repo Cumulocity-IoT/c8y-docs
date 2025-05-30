@@ -15,7 +15,7 @@ metadata:
   namespace: c8yedge
 spec:
   ## Edge version you want to install.
-  ## For example, 2025.0.0 for 2025 and 2025.0.1 for a fix-1 of 2025.
+  ## For example, 2025.0.0 for 2025 and 2025.0.2 for a fix-2 of 2025.
   version: "2025.0.2"
 
   ## A fully qualified domain name.
