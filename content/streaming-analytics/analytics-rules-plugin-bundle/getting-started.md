@@ -32,7 +32,7 @@ The model that you add will contain three blocks:
 This section walks you through creating a simple temperature monitoring model. For more detailed Analytics Builder model, refer to the [Understanding models](/streaming-analytics/analytics-builder/#understanding-models).
 
 1. Open Streaming Analytics application and navigate to **Analytics Builder** > **Models** page.
-2. On the toolbar, click **New Model**, enter a model name (e.g., "Create alarm on threshold") and click **OK**.
+2. On the toolbar, click **New Model**, enter a model name (e.g., "Create alarm on threshold breach") and click **OK**.
 3. From the palette on the left, expand **Input** and drag the **Measurement Input** block onto the canvas. In the block parameter editor, enter the Fragment and Series as **T=>C** (this refers to temperature measurements in Celsius from your device).
 4. Expand **Calculation** and drag the **Threshold** block onto the canvas. Enter a threshold value (e.g., 90) - this is the temperature limit that will trigger an alarm.
 5. Expand **Output** and drag the **Alarm Output** block onto the canvas. In the block parameter editor, specify the Alarm Type as **c8y_Temperature**. Select the **severity** block parameter as **Major** from the dropdown list.
@@ -69,7 +69,6 @@ For a model to be available for rule creation in the plugin, it must have exactl
 
 - The template parameter **Type** must specifically be "Source or Destination".
 - When you select "Source or Destination" type, specify the context restrictions: Device, Groups, or both (multi-selectable). In our example, we selected only Device.
-- Only one template parameter per model can have "From Context" value selection.
 
 For detailed information about creating and managing template parameters in Analytics Builder, refer to the [Managing Template Parameters documentation](/streaming-analytics/analytics-builder/#managing-template-parameters).
 
@@ -87,7 +86,7 @@ Only one template parameter per model can have "From Context" value selection.
 
 3. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save the model.
 
-#### Step 4: Create Analytics Rule from Device management
+#### Step 4: Create Analytics Rule from Device Management application
 
 1. Navigate to **Device Management** application.
 2. Go to **Devices** > **All devices** and select a device.
@@ -118,8 +117,8 @@ You can also create analytics rules using pre-built sample models from Analytics
 2. Ensure one template parameter is configured with:
    - **Type**: Source or Destination
    - **Value Selection**: From Context
-   - **Restrict to**: Device, Groups, or Assets as needed
+   - **Restrict to**: Device, Groups, or both as needed
 3. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save the model.
 
-#### Step 3: Create Rule in Device Management
+#### Step 3: Create Rule from Device Management application
 Follow the same steps as described in [Step 4: Create Analytics Rule from Device management](#step-4-create-analytics-rule-from-device-management) above.
