@@ -1,6 +1,6 @@
 ---
 weight: 50
-title: Installing with Edge operator
+title: Installing with the Kubernetes-native approach
 layout: redirect
 ---
 
