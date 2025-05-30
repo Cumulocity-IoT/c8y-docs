@@ -6,6 +6,8 @@ layout: redirect
 
 If you have installed Edge on your local machine, then you should be able to immediately access Edge in your browser with the URL `http://localhost`. If it is on a remote machine with a simple network setup and no firewall in the way, you can use `http://<IP of remote machine>`.
 
+To sign in to Edge for the first time, use the default credentials username “**admin**” and password “**admin-pass**”. If you have installed using the `c8yedge` tool, the email address will have been initially configured to `company@edgebootstrap.example` which you will also need when signing in for the first time. These credentials are set for both the `management` and `edge` Cumulocity tenants, and should be changed on both even if you do not intend to use the `management` tenant.
+
 For more sophisticated setups, especially those where you are using a domain name to access Edge, read on.
 
 ### Accessing Edge via an external IP {#assigning-an-external-ip}
