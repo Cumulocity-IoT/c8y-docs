@@ -142,7 +142,7 @@ For this you need a workstation with full internet access to download the requir
 To install registry synchronization script, run the commands below:
 
 ```bash
-pip install --force-reinstall {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge_registry_sync-{{< c8y-edge-version >}}-py3-none-any.whl
+pip install --force-reinstall https://download.cumulocity.com/Cumulocity-Edge/Installer/{{< c8y-edge-version-major >}}/c8yedge_registry_sync-{{< c8y-edge-version-major >}}-py3-none-any.whl
 ```
 
 ##### Run registry sync script
