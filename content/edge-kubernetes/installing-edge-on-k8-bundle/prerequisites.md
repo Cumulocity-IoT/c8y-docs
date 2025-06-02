@@ -64,7 +64,7 @@ To procure the Edge license, you must provide the right domain name to the {{< c
 
 When you provide the domain name, consider the following points:
 
-* The domain name does not need to be a Fully Qualified Domain Name (FQDN). For example, to access the Edge with the domain name **myown.iot.com**, request the Edge license for **myown.iot.com** or **iot.com** (without the subdomain **myown**).
+* The domain name does not need to be a Fully Qualified Domain Name (FQDN). For example, to access Edge with the domain name **myown.iot.com**, request the Edge license for **myown.iot.com** or **iot.com** (without the subdomain **myown**).
 
 * If you exclude the subdomain from the domain name in the Edge license, you must possess a wildcard SSL certificate which can be used with multiple subdomains (**myown** or others) of the domain (**iot.com**).<br>
 For example, if you provide **iot.com** as the domain name, you must possess an SSL certificate for **.iot.com**.
