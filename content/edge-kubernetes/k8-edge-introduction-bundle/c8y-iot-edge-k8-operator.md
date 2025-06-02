@@ -15,7 +15,7 @@ Reasons for using an onsite installation of Edge include:
 Features of Edge include:
 
 * Edge Agent, which enables remote monitoring and management of an Edge instance from the {{< product-c8y-iot >}} tenant.
-* Data Broker to send IoT data to the cloud and receive operations from the cloud, with web-based UI to filter data.
+* Data broker to send IoT data to the cloud and receive operations from the cloud, with web-based UI to filter data.
 * Streaming Analytics engine for real-time local data analysis including the {{< product-c8y-iot >}} Analytics Builder.
 * Ready-to-use Cockpit and Device Management applications.
 * Native protocol support for MQTT and REST.
