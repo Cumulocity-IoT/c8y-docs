@@ -10,7 +10,7 @@ Reasons for using an onsite installation of Edge include:
 
 * **Autonomy**: Even if there is no cloud connection, tasks like data collection and data analysis can still be performed.
 * **Data reduction**: Data is analyzed and aggregated close to assets, and thus less data needs to be sent to the cloud.
-* **Reactivity**: Both Edge and {{< product-c8y-iot >}} platform include real-time streaming analytics engines. However, placing the rule execution in Edge reduces latency, because the round-trip to cloud is omitted.
+* **Reactivity**: Both Edge and the {{< product-c8y-iot >}} platform include real-time streaming analytics engines. However, placing the rule execution in Edge reduces latency, because the round-trip to cloud is omitted.
 
 Features of Edge include:
 
