@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4670
 version: 2025.186.0
 ---
-When bulk device operation was executed later than expected (i.e. because of core restart), it was executed on all devices at once not respecting configured delay time. This problem is now fixed.
+If bulk device operations were executed later than expected (for example, due to a core restart), they were executed on all devices at once, not respecting the configured delay time. This issue has now been fixed.
