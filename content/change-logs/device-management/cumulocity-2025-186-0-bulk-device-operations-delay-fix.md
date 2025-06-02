@@ -1,6 +1,6 @@
 ---
 date: 
-title: Fixed bulk device operations delay
+title: Fixed issue in bulk device operations delay
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
