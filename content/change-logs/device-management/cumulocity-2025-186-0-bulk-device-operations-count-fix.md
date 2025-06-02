@@ -1,6 +1,6 @@
 ---
 date: 
-title: Fixed bulk device operations count
+title: Fixed multiple execution of bulk device operations
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
