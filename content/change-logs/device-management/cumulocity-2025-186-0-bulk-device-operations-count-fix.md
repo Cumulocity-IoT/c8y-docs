@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4670
 version: 2025.186.0
 ---
-In specific conditions it was possible for bulk device operation to be executed more than once on a single device. This problem is now fixed.
+In certain scenarios, bulk device operations were executed multiple times on a single device. This issue has now been fixed.
