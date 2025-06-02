@@ -4,7 +4,7 @@ title: Overview
 layout: redirect
 ---
 
-Edge is a cloud-native solution for the delivery, deployment, and management of the single-server variant of the {{< product-c8y-iot >}} platform. In contrast to {{< product-c8y-iot >}} platform, which is available in the cloud (for example, using AWS, Azure or other data centers), Edge is installed in factories, that is, in the same site ("onsite") in which the IoT assets are located.
+Edge is a cloud-native solution for the delivery, deployment, and management of the single-server variant of the {{< product-c8y-iot >}} platform. In contrast to the {{< product-c8y-iot >}} platform, which is available in the cloud (for example, using AWS, Azure, or other data centers), Edge is installed in factories, that is, in the same site ("onsite") in which the IoT assets are located.
 
 Reasons for using an onsite installation of Edge include:
 
