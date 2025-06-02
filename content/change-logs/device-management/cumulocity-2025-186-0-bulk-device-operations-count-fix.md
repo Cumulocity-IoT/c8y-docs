@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4670
 version: 2025.186.0
 ---
-In certain scenarios, bulk device operations were executed multiple times on a single device. This issue has now been fixed.
+The mechanism that ensures that scheduled bulk operations are resumed after failure scenarios was unintentionally picking up ongoing bulk operations. This caused that multiple operations were created for individual devices in some scenarios. This has been solved by correcting the conditions under which a bulk operation needs to be resumed.  
