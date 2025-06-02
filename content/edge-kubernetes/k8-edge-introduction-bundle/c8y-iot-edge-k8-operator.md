@@ -21,7 +21,7 @@ Features of Edge include:
 * Native protocol support for MQTT and REST.
 * Edge database for operational data storage.
 * [OPC UA](/device-integration/opcua/) with web-based UI for efficient connection management and seamless integration of industrial automation systems.
-* Easy installation and upgrades
+* Easy installation and upgrades.
 * Microservice hosting, which allows to run server-side applications which may be used to extend the {{< product-c8y-iot >}} platform with customer-specific functionality (optional component).
 * [DataHub](/edge-kubernetes/k8-edge-working-with-datahub/) for historical data storage and analytics (optional component).
 
