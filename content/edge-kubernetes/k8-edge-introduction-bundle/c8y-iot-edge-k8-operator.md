@@ -27,7 +27,7 @@ Features of Edge include:
 
 Kubernetes offers an efficient platform for deploying, scaling, and managing containerized applications using a centralized control plane. Given this, containers orchestrated by Kubernetes have become standard in contemporary IT, fitting a broad spectrum of deployment contexts. Edge capitalizes on these orchestration and management benefits, streamlining the operations of the Edge servers with other containerized applications in your deployment landscape.
 
-Edge captures all the highlighted advantages of a cloud-native deployment strategy by using a Kubernetes Operator, known as the Edge operator. This Edge operator serves as the central controller and facilitates the deployment and management of the Edge on a single-node Kubernetes cluster. This equips you with:
+Edge captures all the highlighted advantages of a cloud-native deployment strategy by using a Kubernetes operator, known as the Edge operator. This Edge operator serves as the central controller and facilitates the deployment and management of the Edge on a single-node Kubernetes cluster. This equips you with:
 
 - **Unified Management**: Manage Edge through an Edge Custom Resource (CR) in accordance with standard Kubernetes resources. This approach provides a unified and familiar interface for administrators and operators.
 - **Desired State Management**: Specify the desired state of Edge through Edge CR. The Edge operator then ensures that the actual state matches the desired state, simplifying operations and reducing the need for manual intervention.
