@@ -60,7 +60,7 @@ To install a later version of Kubernetes, update the variable `K3S_VERSION` in t
 
 ### Domain name validation for Edge license key generation
 
-To procure the Edge license, you must provide the right domain name to the {{< company-c8y >}}'s logistics team for Edge license key generation.
+To procure the Edge license, you must provide the right domain name to product support for Edge license key generation.
 
 When you provide the domain name, consider the following points:
 
