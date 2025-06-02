@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-05-29'
 title: Added filter option for DataHub entries to the audit logs list
 product_area: Platform services
 change_type:
