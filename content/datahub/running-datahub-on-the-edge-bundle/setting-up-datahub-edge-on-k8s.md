@@ -19,7 +19,7 @@ When {{< product-c8y-iot >}} DataHub Edge is deployed on top, the resource requi
 
  Hardware requirements for the host OS are excluded.
 
-### Setting up {{< product-c8y-iot >}} DataHub Edge {#setting-up-datahub-edge-on-kubernetes}
+### Setting up {{< product-c8y-iot >}} DataHub Edge {#setting-up-datahub-edge}
 To install and configure DataHub Edge, update the `spec.dataHub` field in the Edge Custom Resource (CR) with the necessary configuration details for the Edge operator. After making the changes, apply the updated CR to deploy DataHub Edge.
 
 For more details on the `spec.dataHub` field, refer to [Edge Custom Resource - DataHub](/edge-kubernetes/edge-custom-resource-definition/#k8-edge-datahub).
@@ -28,7 +28,7 @@ For additional guidance, see the [Install Edge](/edge-kubernetes/installing-edge
 
 In order to access Dremio, you must also make the domain ``datahub-<domain_name>`` resolvable, just as the configured domain name and ``management-<domain_name>`` were made resolvable in [Accessing Edge](/edge-kubernetes/installing-edge-on-k8/#accessing-edge).
 
-#### Using {{< product-c8y-iot >}} DataHub Edge {#using-datahub-edge-on-kubernetes}
+#### Using {{< product-c8y-iot >}} DataHub Edge {#using-datahub-edge}
 
 {{< product-c8y-iot >}} DataHub Edge behaves like the Cloud version.
 
