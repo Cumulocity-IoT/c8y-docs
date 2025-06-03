@@ -12,174 +12,150 @@ This section describes how to migrate from **Edge 10.17** to **Edge 10.18 on Kub
 If you're using an Edge version earlier than **10.17**, upgrade first to **10.13**, then to **10.17**, before proceeding to **10.18**.
 {{< /c8y-admon-important >}}
 
-## Prerequisites
+## Time series conversion & Backing Up Data
 
-- Schedule a downtime.
-- Clone your Edge 10.17 VM to prevent data loss.
-- Get registry credentials with access to the `platform` repo.
-- Configure MongoDB to allow connections without TLS.
-- Assign the following Cumulocity roles to your migration user:
-  - `ROLE_INVENTORY_READ`
-  - `ROLE_OPTION_MANAGEMENT_READ`
-  - `ROLE_OPTION_MANAGEMENT_ADMIN`
-  - `ROLE_TENANT_MANAGEMENT_ADMIN`
-  - `ROLE_APPLICATION_MANAGEMENT_SUBSCRIPTIONS_READ`
+### Pre Requisites
 
-Ref: https://cumulocity.com/api/core/#operation/postGroupsRoleReferenceCollectionResource
+- Plan a downtime to avoid any loss due to data in transit
+- Clone the VM to avoid data loss of source.
+- Get credentials to the production registry with permissions to read platform repo
+- Config MongoDB to allow connections without TLS.
+- Required/Assign user roles:
+  ```json
+  [
+    "ROLE_INVENTORY_READ",
+    "ROLE_OPTION_MANAGEMENT_READ",
+    "ROLE_OPTION_MANAGEMENT_ADMIN",
+    "ROLE_TENANT_MANAGEMENT_ADMIN",
+    "ROLE_APPLICATION_MANAGEMENT_SUBSCRIPTIONS_READ"
+  ]
+  ```
+  Ref: https://cumulocity.com/api/core/#operation/postGroupsRoleReferenceCollectionResource
 
-## Step 1: Backup from Edge 10.17
-
-Run these commands on Edge 10.17:
-
-```shell
-monit unmonitor all && \
-systemctl stop installation-service opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf
+#### MongoDB TLS Requirement
+Ensure MongoDB is configured with:
+```yaml
+net:
+  tls:
+    mode: preferTLS
+    allowConnectionsWithoutCertificates: true
 ```
 
-If DataHub is installed:
-
-```shell
-service cdh-console stop && \
-service cdh-master stop && \
-service cdh-executor stop
+```sh
+systemctl restart mongod
+systemctl status mongod
 ```
 
-Backup MongoDB and relevant directories:
+### Timeseries Conversion of Edge Appliance Data
 
-```shell
+There are two approaches to convert data on Edge appliance:
+1. Microservice deployment on Docker
+
+### Docker Install
+
+Ensure Docker is running on the system and healthy.
+
+```sh
+docker login registry.c8y.io
+```
+
+> **Note**: `172.17.0.1` is Docker gateway and assigned as host IP for appliance.
+
+```sh
+docker run -d   --name timeseries-migration   --network bridge   -p 8888:8080   -p 8001:8001   -e C8Y_BASEURL=http://172.17.0.1:8111   -e SPRING_DATA_MONGODB_URI=mongodb://c8y-root:mongodb-password@172.17.0.1:27017/admin   -e C8Y_BOOTSTRAP_USER=edgevm   -e C8Y_BOOTSTRAP_PASSWORD=Edgevmadmin@123   -e C8Y_BOOTSTRAP_TENANT=management   -e MICROSERVICE_URL=http://172.17.0.1:8888   registry.c8y.io/platform/timeseries-migration-server:1.0.326
+```
+
+Once the container is created, check logs for reference startup:
+
+```sh
+docker logs -f timeseries-migration
+```
+
+### Triggering Timeseries Conversion & Troubleshooting
+
+#### Check migration status:
+
+```sh
+curl -X GET https://{tenantId}.cumulocity.com/service/timeseries-migration/migrations/{tenantId} -H "authorization: Basic {auth}" -H "accept: application/json"
+```
+
+#### Check readiness:
+
+```sh
+curl -X GET https://{tenantId}.cumulocity.com/service/timeseries-migration/actuator/health/readiness -H "accept: application/json" -H "authorization: Basic {auth}"
+```
+
+#### List migration statuses:
+
+```sh
+curl -X GET https://{tenantId}.cumulocity.com/service/timeseries-migration/migrations -H "accept: application/json" -H "authorization: Basic {auth}"
+```
+
+#### Schedule tenants for migration:
+
+```sh
+curl -X PUT https://{tenantId}.cumulocity.com/service/timeseries-migration/migrations -H "authorization: Basic {auth}" -H "content-type: application/json" -d '{ "state": "SCHEDULED", "tenants": [ "t123", "t321" ] }'
+```
+
+States:
+- `SCHEDULED`
+- `DISABLED`
+- `APPROVED`
+
+---
+
+## Backing up Edge 10.17
+
+```sh
+monit unmonitor all && systemctl stop installation-service opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf
+```
+
+If DataHub installed:
+
+```sh
+service cdh-console stop && service cdh-master stop && service cdh-executor stop
+```
+
+Backup:
+
+```sh
 mongodump --uri="mongodb://c8y-root:mongodb-password@localhost:27017/edge?authSource=admin" --out=/path/to/mongo_bkp
+
 tar -zcf /opt/edge-1017-backup.tar /opt/softwareag /path/to/mongo_bkp /var/lib/cumulocity-agent /usr/edge /opt/opcua
 ```
 
-Copy the tar file to a network location accessible by the new Edge.
+Copy backup to accessible location. Shutdown Edge 10.17.
 
-## Step 2: Deploy Edge on K8s
+## Deploy Edge on K8s
 
-Refer to [Edge on K8s Introduction](/edge-kubernetes/k8-edge-introduction/) for installation details. Ensure K8s storage matches data requirements from the backup.
+Refer: https://cumulocity.com/docs/edge-kubernetes/k8-edge-introduction/
 
-## Step 3: Restore Data to Edge 10.18
+## Restore Data on K8s
 
-Transfer and extract the backup:
+### Export Users Collection
 
-```shell
-scp edge-1017-backup.tar <edge-10.18-ip>:/opt
-tar -xf /opt/edge-1017-backup.tar -C /
+```sh
+mongoexport   --host localhost   --port 27017   --username <user>   --password mongoPassword   --authenticationDatabase admin   --db edge   --collection users   --out users.json
 ```
 
-Clean MongoDB before restore:
+### Restore MongoDB
 
-```shell
-rm -rf /opt/mongodb/*
+```sh
+mongorestore   --username userAdmin   --password mongoPassword   --authenticationDatabase admin   --db edge   /tmp/monog_bkp/edge/   --drop
 ```
 
-Restore MongoDB:
+### Import Users
 
-```shell
-mongorestore \
-  --username userAdmin \
-  --password mongoPassword \
-  --authenticationDatabase admin \
-  --db edge \
-  /tmp/mongo_bkp/edge/ \
-  --drop
+```sh
+mongoimport   --host localhost   --port 27017   --username userAdmin   --password mongoPassword   --authenticationDatabase admin   --db edge   --collection users   --file users.json
 ```
 
-Restore specific collection (optional):
+### Restart Operator
 
-```shell
-mongoimport \
-  --host localhost \
-  --port 27017 \
-  --username userAdmin \
-  --password mongoPassword \
-  --authenticationDatabase admin \
-  --db edge \
-  --collection users \
-  --file users.json
-```
-
-Restart the operator:
-
-```shell
+```sh
 kubectl rollout restart deployment -n c8yedge c8yedge-operator-controller-manager
 ```
 
-## Step 4: Migrate Time Series Data
+## WebApps and Custom Microservices
 
-### Option A: Helm Deployment on K8s
-
-1. Create required secrets `timeseries-migration-mongo` and `timeseries-migration-bootstrap`.
-2. Prepare `values.yaml`.
-
-```yaml
-imagePullSecrets:
-  name: regcred
-deployment:
-  image:
-    repository: registry.c8y.io/platform/timeseries-migration-server
-  c8y:
-    baseURL: "http://cumulocity.cumulocity-single-node.svc.cluster.local:8111"
-  envFrom:
-    mongo-credentials:
-      type: secret
-      nameSuffix: mongo
-    bootstrap-credentials:
-      type: secret
-      nameSuffix: bootstrap
-```
-
-3. Install the Helm chart:
-
-```shell
-helm install timeseries-migration platform/timeseries-migration \
-  -f ./values.yaml \
-  --namespace cumulocity-single-node
-```
-
-### Option B: Docker Deployment
-
-```shell
-docker run -d \
-  --name timeseries-migration \
-  --network bridge \
-  -p 8888:8080 -p 8001:8001 \
-  -e C8Y_BASEURL=http://172.17.0.1:8111 \
-  -e SPRING_DATA_MONGODB_URI=mongodb://c8y-root:mongodb-password@172.17.0.1:27017/admin \
-  -e C8Y_BOOTSTRAP_USER=EDGE_USER \
-  -e C8Y_BOOTSTRAP_PASSWORD=EDGE_PASSWORD \
-  -e C8Y_BOOTSTRAP_TENANT=management \
-  -e MICROSERVICE_URL=http://172.17.0.1:8888 \
-  registry.c8y.io/platform/timeseries-migration-server:1.0.326
-```
-
-## Step 5: Trigger and Monitor Migration
-
-Get migration status:
-
-```shell
-curl -X GET https://{tenantId}.cumulocity.com/service/timeseries-migration/migrations/{tenantId} \
-  -H "authorization: Basic {auth}" \
-  -H "accept: application/json"
-```
-
-Schedule migration:
-
-```shell
-curl -X PUT https://{tenantId}.cumulocity.com/service/timeseries-migration/migrations \
-  -H "authorization: Basic {auth}" \
-  -H "content-type: application/json" \
-  -d '{ "state": "SCHEDULED", "tenants": [ "t123", "t321" ] }'
-```
-
-## Step 6: Post-Migration Configuration
-
-After reboot, configure:
-
-- **Time sync**: [Configuring time synchronization](/edge-kubernetes/configuring-time/)
-- **Network**: [Network settings](/edge-kubernetes/configuring-network/)
-- **Microservice hosting** (if needed)
-- **DataHub ownership**:
-
-```shell
-chown -R systemd-coredump:systemd-coredump /opt/mongodb/cdh-*
-```
+Get a copy of custom microservices in advance. And post migration upload the WebApps and MicroServices as needed.
