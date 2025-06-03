@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-63706
 version: 1021.77.1
 ---
-Co-authored-by: Lukasz Janusz <114157358+luja-c8y@users.noreply.github.com>
-Co-authored-by: Lukasz Janusz <lukasz.janusz@cumuloicty.com>
+Previously, measurements without unit resulted in exports containing only headers while omitting the actual measurement values. This bug has been fixed, ensuring complete data export including both headers and values.
