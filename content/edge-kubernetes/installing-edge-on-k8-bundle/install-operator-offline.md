@@ -1,5 +1,5 @@
 ---
-weight: 17
+weight: 50
 title: Installing the Edge operator (offline)
 layout: redirect
 ---
@@ -119,8 +119,8 @@ If your private registry is a Harbor registry, you need to pass an extra option 
 {{< /c8y-admon-info >}}
 
 ```bash
-EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"     	# Edge registry credentials can be obtained from the {{< company-c8y >}} logistics team for your region
-EDGE_REGISTRY_PASSWORD="<EDGE-REGISTRY-PASS>" 	# Edge registry credentials can be obtained from the {{< company-c8y >}} logistics team for your region
+EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"     	# Edge registry credentials can be obtained from product support
+EDGE_REGISTRY_PASSWORD="<EDGE-REGISTRY-PASS>" 	# Edge registry credentials can be obtained from product support
 
 PRIVATE_REGISTRY_HOST="<PRIVATE-REGISTRY-HOSTNAME>:<PRIVATE-REGISTRY-PORT>"  # Change it with your private registry domain or hostname:port or ip-address:port
 PRIVATE_REGISTRY_USERNAME="<PRIVATE-REGISTRY-USER>"                          # Change it with the credentials to access your private registry
@@ -151,4 +151,4 @@ kubectl create configmap custom-environment-variables -n "${EDGE_NAMESPACE}" --f
 ```
 
 ### Installing the Edge operator
-Continue with installing the Edge operator by following the instructions in [Installing the Edge operator](/edge-kubernetes/installing-edge-on-k8/#install-operator)  passing the private registry's host (`-r` option) as &lt;private-registry-hostname&gt;:&lt;private-registry-port&gt; and the respective registry credentials when prompted.
+Continue with installing the Edge operator by following the instructions in [Installing the Edge operator](/edge-kubernetes/installing-edge-on-k8/#install-operator) passing the private registry's host (`-r` option) as &lt;private-registry-hostname&gt;:&lt;private-registry-port&gt; and the respective registry credentials when prompted.

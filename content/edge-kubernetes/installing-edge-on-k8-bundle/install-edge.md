@@ -1,5 +1,5 @@
 ---
-weight: 20
+weight: 55
 title: Installing Edge
 layout: redirect
 ---
