@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Replace single operations list with data grid in bulk operations overview
+title: List reload loop in bulk operation details view has been fixed
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
