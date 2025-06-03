@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-63058
-version: 2025.176.0
+version: 2025.45.0
 ---
 
 The Notifications 2.0 SDK `deleteByFilter()` method takes a `NotificationSubscriptionFilter` parameter that specifies which subscriptions should be deleted.
