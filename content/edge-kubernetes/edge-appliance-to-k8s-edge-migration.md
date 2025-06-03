@@ -6,10 +6,10 @@ sector:
   - edge_server
 ---
 
-This section describes how to migrate from **Edge 10.17** to **Edge 10.18 on Kubernetes**. The process includes installation of the new K8s-based version and the migration of data.
+This section describes how to migrate from **Appliance Edge 10.17**/**Appliance Edge 10.18** to **Edge 10.18 on Kubernetes**. The process includes installation of the new K8s-based version and the migration of data.
 
 {{< c8y-admon-important >}}
-If you're using an Edge version earlier than **10.17**, upgrade first to **10.13**, then to **10.17**, before proceeding to **10.18**.
+- If you're using an Edge version earlier than **10.17**, upgrade first to **10.13**, then to **10.17**, before proceeding to **10.18**.
 {{< /c8y-admon-important >}}
 
 ## Time series conversion & Backing Up Data
@@ -20,7 +20,8 @@ If you're using an Edge version earlier than **10.17**, upgrade first to **10.13
 - Clone the VM to avoid data loss of source.
 - Get credentials to the production registry with permissions to read platform repo
 - Config MongoDB to allow connections without TLS.
-- Required/Assign user roles:
+- Ensure your data disk is twice the size of mongodb.
+- [Required/Assign user rols](https://{{< domain-c8y >}}/api/core/#operation/postGroupsRoleReferenceCollectionResource):
   ```json
   [
     "ROLE_INVENTORY_READ",
@@ -30,9 +31,9 @@ If you're using an Edge version earlier than **10.17**, upgrade first to **10.13
     "ROLE_APPLICATION_MANAGEMENT_SUBSCRIPTIONS_READ"
   ]
   ```
-  Ref: https://cumulocity.com/api/core/#operation/postGroupsRoleReferenceCollectionResource
+  
 
-#### MongoDB TLS Requirement
+### MongoDB TLS Requirement
 Ensure MongoDB is configured with:
 ```yaml
 net:
@@ -48,8 +49,7 @@ systemctl status mongod
 
 ### Timeseries Conversion of Edge Appliance Data
 
-There are two approaches to convert data on Edge appliance:
-1. Microservice deployment on Docker
+The timeseries data from the Edge appliance can be converted using a Docker-based microservice deployment. This is the recommended and supported approach for Edge 10.17/10.18 environments.
 
 ### Docker Install
 
@@ -58,8 +58,9 @@ Ensure Docker is running on the system and healthy.
 ```sh
 docker login registry.c8y.io
 ```
-
-> **Note**: `172.17.0.1` is Docker gateway and assigned as host IP for appliance.
+{{< c8y-admon-info >}}
+**Note**: `172.17.0.1` is Docker gateway and assigned as host IP for appliance.
+{{< /c8y-admon-info >}}
 
 ```sh
 docker run -d   --name timeseries-migration   --network bridge   -p 8888:8080   -p 8001:8001   -e C8Y_BASEURL=http://172.17.0.1:8111   -e SPRING_DATA_MONGODB_URI=mongodb://c8y-root:mongodb-password@172.17.0.1:27017/admin   -e C8Y_BOOTSTRAP_USER=edgevm   -e C8Y_BOOTSTRAP_PASSWORD=Edgevmadmin@123   -e C8Y_BOOTSTRAP_TENANT=management   -e MICROSERVICE_URL=http://172.17.0.1:8888   registry.c8y.io/platform/timeseries-migration-server:1.0.326
@@ -97,6 +98,12 @@ curl -X GET https://{tenantId}.cumulocity.com/service/timeseries-migration/migra
 curl -X PUT https://{tenantId}.cumulocity.com/service/timeseries-migration/migrations -H "authorization: Basic {auth}" -H "content-type: application/json" -d '{ "state": "SCHEDULED", "tenants": [ "t123", "t321" ] }'
 ```
 
+#### Approve migration once completed:
+
+```sh
+curl -X PUT https://{tenantId}.cumulocity.com/service/timeseries-migration/migrations -H "authorization: Basic {auth}" -H "content-type: application/json" -d '{ "state": "APPROVED", "tenants": [ "t123", "t321" ] }'
+```
+
 States:
 - `SCHEDULED`
 - `DISABLED`
@@ -128,7 +135,7 @@ Copy backup to accessible location. Shutdown Edge 10.17.
 
 ## Deploy Edge on K8s
 
-Refer: https://cumulocity.com/docs/edge-kubernetes/k8-edge-introduction/
+For guidance, see the [Install Edge](/edge-kubernetes/installing-edge-on-k8/#install-edge) and [Modify Edge](/edge-kubernetes/manage-edge/#modify-edge) sections in the Edge documentation.
 
 ## Restore Data on K8s
 
