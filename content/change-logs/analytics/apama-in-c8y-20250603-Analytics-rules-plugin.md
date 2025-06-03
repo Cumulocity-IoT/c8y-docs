@@ -1,5 +1,5 @@
 ---
-date: 2025-06-03
+date:
 title: Analytics Rules Plugin
 change_type:
   - value: change-QHu1GdukP
