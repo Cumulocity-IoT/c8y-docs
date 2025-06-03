@@ -1,5 +1,5 @@
 ---
-date: 2025-06-03
+date: 2025-06-04
 title: Notifications 2.0 SDK `deleteByFilter()` method is deprecated
 product_area: Application enablement & solutions
 change_type:
