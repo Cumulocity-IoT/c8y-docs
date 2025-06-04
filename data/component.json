@@ -240,18 +240,8 @@
       ]
     },
     {
-      "id": "component-IpOEfM7nQ",
-      "option": "Edge Appliance VM",
-      "product_area": [
-        {
-          "value": "product_area-v8mvxKJVc",
-          "label": "Edge"
-        }
-      ]
-    },
-    {
       "id": "component-g7hnfbu4J",
-      "option": "Edge on Kubernetes",
+      "option": "Edge",
       "product_area": [
         {
           "value": "product_area-v8mvxKJVc",

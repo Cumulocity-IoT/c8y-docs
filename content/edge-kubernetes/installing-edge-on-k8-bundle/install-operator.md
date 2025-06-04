@@ -1,5 +1,5 @@
 ---
-weight: 15
+weight: 40
 title: Installing the Edge operator
 layout: redirect
 ---

@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Installing Edge on Kubernetes
+title: Installation
 layout: bundle
 sector:
   - edge_server
