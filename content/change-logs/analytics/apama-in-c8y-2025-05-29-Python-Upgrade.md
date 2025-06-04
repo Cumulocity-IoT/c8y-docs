@@ -1,6 +1,6 @@
 ---
 date: 
-title: Cumulocity Streaming Analytics Python upgrade to 3.13
+title: Streaming Analytics Python upgrade to 3.13
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
