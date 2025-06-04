@@ -33,11 +33,11 @@ Perform the following steps to accomplish the migration.
 
 2. Run the following commands to install and run the `timeseries-migration-server` microservice:
 
-  {{< c8y-admon-info >}}
-  ????
-  ????
-  `172.17.0.1` is Docker gateway and assigned as host IP for appliance.
-  {{< /c8y-admon-info >}}
+   {{< c8y-admon-info >}}
+   ????
+   ????
+   `172.17.0.1` is Docker gateway and assigned as host IP for appliance.
+   {{< /c8y-admon-info >}}
 
    ```shell
    docker run -d \
