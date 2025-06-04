@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: DM-4670
-version: 2025.186.0
+version: 2025.191.0
 ---
 The mechanism that ensures that scheduled bulk operations are resumed after failure scenarios was unintentionally picking up ongoing bulk operations. This resulted in multiple operations being created for individual devices in some scenarios. This issue has been resolved by adjusting the conditions under which a bulk operation must be resumed.  

@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: DM-4670
-version: 2025.186.0
+version: 2025.191.0
 ---
 If bulk device operations were executed later than expected (for example, due to a core restart), they were executed on all devices at once, not respecting the configured delay time. This issue has now been fixed.
