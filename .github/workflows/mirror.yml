@@ -16,20 +16,21 @@ permissions:
 
 jobs:
   sync:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        submodules: recursive
-        fetch-depth: 1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 1
 
-    - shell: bash
-      run: |
-        for branch in `git branch --list release/* ; echo develop`
-        do
-          git checkout $branch
-          git pull --unshallow
-          git remote add c8y-docs-public git@github.com:rthrippleton/c8y-docs-public.git
-          # git push c8y-docs-public $branch
-        done
+      - shell: bash
+        run: |
+          for branch in `git branch --list release/* ; echo develop`
+          do
+            git checkout $branch
+            git pull --unshallow
+            git remote add c8y-docs-public git@github.com:rthrippleton/c8y-docs-public.git
+            # git push c8y-docs-public $branch
+          done
         
 
