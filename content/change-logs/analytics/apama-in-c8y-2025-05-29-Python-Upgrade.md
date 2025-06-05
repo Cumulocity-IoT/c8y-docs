@@ -1,6 +1,6 @@
 ---
 date: 
-title: Streaming Analytics Python upgrade to 3.13
+title: Python used by Streaming Analytics upgraded to version 3.13 
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
