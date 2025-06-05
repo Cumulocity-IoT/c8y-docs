@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Hide custom properties on user details view if user has none. (#9118) [GRAFT][release/cd] (#9309)
+title: Hide custom properties section on user details view if user has no custom properties.
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
