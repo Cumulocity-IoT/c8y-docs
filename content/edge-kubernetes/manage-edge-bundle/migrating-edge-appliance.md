@@ -128,13 +128,12 @@ Perform the following steps to accomplish the time series migration.
 
 
 10. Execute the command below to remove legacy legacy collection:
-
-   ```shell
-   mongo \
-      --host localhost:27017 \
-      edge \
-      --eval 'db.pmdata.drop()'
-   ```
+      ```shell
+      mongo \
+         --host localhost:27017 \
+         edge \
+         --eval 'db.pmdata.drop()'
+      ```
 
 
 ## Backing Up Data and Configuration of Edge appliance
