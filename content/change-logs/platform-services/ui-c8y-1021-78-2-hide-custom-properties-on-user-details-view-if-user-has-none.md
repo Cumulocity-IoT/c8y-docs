@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63700
 version: 1021.78.2
 ---
-If user has no custom properties, on it's details view custom properties section are not displayed
+If user has no custom properties, on its details view custom properties section is not displayed
