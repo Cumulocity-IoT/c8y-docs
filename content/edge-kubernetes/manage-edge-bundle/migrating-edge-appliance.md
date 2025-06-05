@@ -25,59 +25,96 @@ Before continuing with the rest of the steps,
 The {{< product-c8y-iot >}} Operational Store provides an enhanced time series support (so-called time series collections) for measurements data. This configuration is enabled in the Edge 2025, hence you have to first migrate the non time series collections in the Edge appliance VM to time series collections. For more details on time series, refer to [enhanced time series support](/standard-tenant/enhanced-time-series-support/).
 
 Perform the following steps to accomplish the migration.
-1. Run the following command to authenticate to the {{< product-c8y-iot >}} registry with a username and password:
+1. Ensure that the {{< management-tenant >}} admin user you use in this process has the following roles assigned:
+   - ROLE_INVENTORY_READ
+   - ROLE_OPTION_MANAGEMENT_READ
+   - ROLE_OPTION_MANAGEMENT_ADMIN
+   - ROLE_TENANT_MANAGEMENT_ADMIN
+   - ROLE_APPLICATION_MANAGEMENT_SUBSCRIPTIONS_READ
+
+2. Set `ADMIN_USER` and `ADMIN_PASSWORD` environment variables used in the subsequent commands:
+   ```shell
+   export ADMIN_USER="<ADMIN-USER>"          # Replace with {{< management-tenant >}} admin user
+   export ADMIN_PASSWORD="<ADMIN-PASSWORD>"  # Replace with {{< management-tenant >}} admin user's password
+   ```
+3. Run the following command to authenticate to the {{< product-c8y-iot >}} registry. Provide the Edge registry credentials when prompted:
 
    ```shell
    docker login registry.c8y.io
    ```
 
-2. Run the following commands to install and run the `timeseries-migration-server` microservice:
-
    {{< c8y-admon-info >}}
-   ????
-   ????
-   `172.17.0.1` is Docker gateway and assigned as host IP for appliance.
-   {{< /c8y-admon-info >}}
+   To request the Edge registry credentials, [contact product support](/additional-resources/contacting-support/).
+   {{< /c8y-admon-info >}}   
+
+4. Run the following commands to install and run the `timeseries-migration` microservice:
 
    ```shell
+   DOCKER_GATEWAY_IP=docker network inspect bridge --format='{{(index .IPAM.Config 0).Gateway}}'
    docker run -d \
       --name timeseries-migration \
       --network bridge \
       -p 8888:8080 \
       -p 8001:8001 \
-      -e C8Y_BASEURL=http://172.17.0.1:8111 \
-      -e SPRING_DATA_MONGODB_URI=mongodb://172.17.0.1:27017/admin \
-      -e C8Y_BOOTSTRAP_USER=edgevm \
-      -e C8Y_BOOTSTRAP_PASSWORD=Edgevmadmin@123 \
+      -e C8Y_BASEURL=http://${DOCKER_GATEWAY_IP}:8111 \
+      -e SPRING_DATA_MONGODB_URI=mongodb://${DOCKER_GATEWAY_IP}:27017/admin \
       -e C8Y_BOOTSTRAP_TENANT=management \
-      -e MICROSERVICE_URL=http://172.17.0.1:8888 \
+      -e C8Y_BOOTSTRAP_USER=${ADMIN_USER} \
+      -e C8Y_BOOTSTRAP_PASSWORD=${ADMIN_PASSWORD} \
+      -e MICROSERVICE_URL=http://${DOCKER_GATEWAY_IP}:8888 \
       registry.c8y.io/platform/timeseries-migration-server:1.0.326
    ```
 
-3. Follow the container logs using the following command and wait until the message `c.s.m.t.TimeseriesMigrationApplicationKt : Started TimeseriesMigrationApplicationKt ...` appears.
+5. Follow the container logs using the following command and wait until the message `c.s.m.t.TimeseriesMigrationApplicationKt : Started TimeseriesMigrationApplicationKt ...` appears.
 
    ```shell
-   docker timeseries-migration registry.c8y.io
+   docker logs -f timeseries-migration
    ```
 
-4. Run the below commands to trigger the time series migration:
+6. Run the below command to trigger the time series migration:
 
    ```shell
-   curl -X PUT https://172.17.0.1/service/timeseries-migration/migrations -H "authorization: Basic {auth}" -H "content-type: application/json" -d '{ "state": "SCHEDULED", "tenants": [ "edge" ] }'
+   curl -k -X PUT \
+      https://localhost/service/timeseries-migration/migrations \
+      -u "management/${ADMIN_USER}:${ADMIN_PASSWORD}" \
+      -H "Accept: application/json" \
+      -H "Content-Type: application/json" \
+      -d '{ "state": "SCHEDULED", "tenants": [ "edge" ] }'
    ```
 
-5. Chaeck the migration status:
+7. Run the command below to check the migration status and wait until it reaches either `MIGRATED` or `VERIFIED` state:
 
    ```shell
-   curl -X GET https://172.17.0.1/service/timeseries-migration/migrations/edge -H "authorization: Basic {auth}" -H "accept: application/json"
+   curl -k -X GET \
+      https://localhost/service/timeseries-migration/migrations/edge \
+      -u "management/${ADMIN_USER}:${ADMIN_PASSWORD}" \
+      -H "Accept: application/json"
    ```
-????
+   The response returned should contain the state as `MIGRATED` against the Edge tenant.
 
-6. Approve migration once completed:
+8. Approve the migration once completed by running the command below:
 
    ```shell
-    curl -X PUT https://172.17.0.1/service/timeseries-migration/migrations -H "authorization: Basic {auth}" -H "content-type: application/json" -d '{ "state": "APPROVED", "tenants": [ "edge" ] }'
+   curl -k -X PUT \
+      https://localhost/service/timeseries-migration/migrations \
+      -u "management/${ADMIN_USER}:${ADMIN_PASSWORD}" \
+      -H "Accept: application/json" \
+      -H "Content-Type: application/json" \
+      -d '{ "state": "APPROVED", "tenants": [ "edge" ] }'
     ```
+9. Run the command below to check the migration status and wait until it reaches `APPROVED` state:
+
+   ```shell
+   curl -k -X GET \
+      https://localhost/service/timeseries-migration/migrations/edge \
+      -u "management/${ADMIN_USER}:${ADMIN_PASSWORD}" \
+      -H "Accept: application/json"
+   ```
+   The response returned should contain the state as `APPROVED` against the Edge tenant.
+
+
+
+
 
 ## Backing Up Data and Configuration of Edge appliance
 In your Edge appliance VM, back up the MongoDB data, data lake contents from the DataHub if present, and OPC UA configurations.
