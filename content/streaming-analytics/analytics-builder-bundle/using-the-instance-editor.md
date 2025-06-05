@@ -41,11 +41,13 @@ When you add a new instance, a new row is added to the instance editor table. Yo
 1.  In the toolbar of the instance editor, click **New Instance**.
     This adds a new row at the bottom of the table. New instances \(rows\) are shown with a background color until they have been saved.
 
-2.  Fill in the template parameter values, as defined by the model. See also [Editing an instance](/streaming-analytics/analytics-builder/#editing-an-instance).
+2.  Fill in the instance name and template parameter values, as defined by the model. See also [Editing an instance](/streaming-analytics/analytics-builder/#editing-an-instance).
 
 ### Editing an instance {#editing-an-instance}
 
 You provide the parameter values for instances in the same way as you provide values for blocks in the model editor \(see also [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block)\).
+
+**Instance Name and Note**: Each instance can have a descriptive name and an optional note. The instance name helps identify the purpose of the instance, while the note field can contain additional information about the instance.
 
 The instance editor table provides different types of input controls, depending on the type of template parameter:
 
