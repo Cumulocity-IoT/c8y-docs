@@ -4,7 +4,26 @@ title: Installing with the c8yedge tool
 layout: redirect
 ---
 
-This method is ideal if you do not already have a Kubernetes cluster and want a simplified, self-contained setup. The `c8yedge` command-line tool automates the entire process of preparing the environment and installing Edge. You can download the tool from the [{{< company-c8y >}} Download Center](https://download.cumulocity.com/Cumulocity-Edge/Installer) or by running the following commands:
+This method is ideal if you do not already have a Kubernetes cluster and want a simplified, self-contained setup. The `c8yedge` command-line tool automates the entire process of preparing the environment and installing Edge on a Linux environment.
+
+### Configuring the environment
+
+Edge can be installed on any modern x86-64 Linux environment, virtualised or otherwise.
+
+First, choose your environment. It can be a physical machine, or it can be a virtual machine, using the technology of your choice. For example, VMWare Workstation Player, VMWare ESXi or HyperV. Create a virtual machine, referring to the documentation from your VM technology vendor as necessary.
+
+Whether a virtual or physical machine, ensure that all hardware and storage requirements for Edge are met, based on [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
+
+Install the Linux distribution of your choice. Because the `c8yedge`-based install provisions Edge on [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation), you should consult the [operating system configurations required by K3s](https://docs.k3s.io/installation/requirements/#operating-systems) to help your choose and configure your operating system.
+
+{{< c8y-admon-info >}}
+Although the virtual or physical nature of the platform is unimportant to Edge, the advantage of most virtual machine technologies is that a running image can be exported to be run in another environment without further configuration.
+
+For example, you could install and customize Edge on a virtual machine in your development environment. You can then then hand-off a self-contained virtual machine image to be installed at a remote site in a reliable and reproducable way.
+{{< /c8y-admon-info >}}
+
+### Downloading c8yedge
+You can download the tool from the [{{< company-c8y >}} Download Center](https://download.cumulocity.com/Cumulocity-Edge/Installer) or by running the following commands:
 
 ```shell
 curl -sfL https://download.cumulocity.com/Cumulocity-Edge/Installer/{{< c8y-edge-version-major >}}/c8yedge -o c8yedge
@@ -12,14 +31,13 @@ sudo chmod +x c8yedge
 sudo mv c8yedge /usr/local/bin/
 ```
 
-### General usage
+The tool takes commands of the form
 ```shell
 sudo c8yedge [command] [flags]
 ```
 For more information about the tool, run `c8yedge --help` or `c8yedge [command] --help`.
 
 ### Install Edge
-Before proceeding, ensure that you have met the [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) and applied the necessary [operating system configurations required by K3s](https://docs.k3s.io/installation/requirements/#operating-systems).
 
 To install Edge, execute the following command and follow the interactive prompts:
 ```shell
