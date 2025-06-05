@@ -32,11 +32,14 @@ Perform the following steps to accomplish the migration.
    - ROLE_TENANT_MANAGEMENT_ADMIN
    - ROLE_APPLICATION_MANAGEMENT_SUBSCRIPTIONS_READ
 
+
 2. Set `ADMIN_USER` and `ADMIN_PASSWORD` environment variables used in the subsequent commands:
    ```shell
    export ADMIN_USER="<ADMIN-USER>"          # Replace with {{< management-tenant >}} admin user
    export ADMIN_PASSWORD="<ADMIN-PASSWORD>"  # Replace with {{< management-tenant >}} admin user's password
    ```
+
+
 3. Run the following command to authenticate to the {{< product-c8y-iot >}} registry. Provide the Edge registry credentials when prompted:
 
    ```shell
@@ -46,6 +49,7 @@ Perform the following steps to accomplish the migration.
    {{< c8y-admon-info >}}
    To request the Edge registry credentials, [contact product support](/additional-resources/contacting-support/).
    {{< /c8y-admon-info >}}   
+
 
 4. Run the following commands to install and run the `timeseries-migration` microservice:
 
@@ -65,11 +69,13 @@ Perform the following steps to accomplish the migration.
       registry.c8y.io/platform/timeseries-migration-server:1.0.326
    ```
 
+
 5. Follow the container logs using the following command and wait until the message `c.s.m.t.TimeseriesMigrationApplicationKt : Started TimeseriesMigrationApplicationKt ...` appears.
 
    ```shell
    docker logs -f timeseries-migration
    ```
+
 
 6. Run the below command to trigger the time series migration:
 
@@ -82,6 +88,7 @@ Perform the following steps to accomplish the migration.
       -d '{ "state": "SCHEDULED", "tenants": [ "edge" ] }'
    ```
 
+
 7. Run the command below to check the migration status and wait until it reaches either `MIGRATED` or `VERIFIED` state:
 
    ```shell
@@ -91,6 +98,7 @@ Perform the following steps to accomplish the migration.
       -H "Accept: application/json"
    ```
    The response returned should contain the state as `MIGRATED` against the Edge tenant.
+
 
 8. Approve the migration once completed by running the command below:
 
@@ -102,6 +110,8 @@ Perform the following steps to accomplish the migration.
       -H "Content-Type: application/json" \
       -d '{ "state": "APPROVED", "tenants": [ "edge" ] }'
     ```
+
+    
 9. Run the command below to check the migration status and wait until it reaches `APPROVED` state:
 
    ```shell
