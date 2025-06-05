@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4670
 version: 2025.191.0
 ---
-If bulk device operations were executed later than expected (for example, due to a core restart), they were executed on all devices at once, not respecting the configured delay time. This issue has now been fixed.
+When bulk device operation is resumed after a failure scenario the mechanism previously scheduled the remaining operations from the original scheduling date. This meant that the configured delay was no longer respected in these scenarios and the operations were created as quickly as possible. This has been corrected by scheduling remaining operations with the configured form the time the operation is resumed instead.
