@@ -14,7 +14,7 @@ First, choose your environment. It can be a physical machine, or it can be a vir
 
 Whether a virtual or physical machine, ensure that all hardware and storage requirements for Edge are met, based on [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
 
-Install the Linux distribution of your choice. Because the `c8yedge`-based install provisions Edge on [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation), you should consult the [operating system configurations required by K3s](https://docs.k3s.io/installation/requirements/#operating-systems) to help your choose and configure your operating system.
+Install the Linux distribution of your choice. Because the `c8yedge`-based install provisions Edge on [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation), you should consult the [operating system configurations required by K3s](https://docs.k3s.io/installation/requirements/#operating-systems) to help you choose and configure your operating system.
 
 {{< c8y-admon-info >}}
 Although the virtual or physical nature of the platform is unimportant to Edge, the advantage of most virtual machine technologies is that a running image can be exported to be run in another environment without further configuration.
