@@ -93,7 +93,7 @@ You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Ed
 
 #### Add the microservice library {#add-the-microservice-library}
 
-You must specify the version of the {{< product-c8y-iot >}}'s microservice library to be used. This version is based on the platform version ("cumulocity"). To find the platform version, click the user icon at the top right and in the right drawer, under  **Platform info**, download the platform details.  
+You must specify the version of the {{< product-c8y-iot >}}'s microservice library to be used. This version is based on the platform version ("cumulocity"). To find the platform version, click the user icon at the top right and in the right drawer, under **Platform info**, download the platform details.  
 
 Alternatively, you can retrieve the backend version with a GET request to <kbd><URL>/tenant/system/options/system/version</kbd>.
 
