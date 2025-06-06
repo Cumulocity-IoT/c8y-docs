@@ -78,8 +78,9 @@ Perform the following steps to accomplish the time series migration.
       --network bridge \
       -p 8888:8080 \
       -p 8001:8001 \
+      -v /opt/edge-pki/ca.crt:/certs/ca.crt:ro \
       -e C8Y_BASEURL=http://${DOCKER_GATEWAY_IP}:8111 \
-      -e SPRING_DATA_MONGODB_URI=mongodb://${DOCKER_GATEWAY_IP}:27017/admin \
+      -e SPRING_DATA_MONGODB_URI="mongodb://${DOCKER_GATEWAY_IP}:27017/admin?tls=true&tlsCAFile=/certs/ca.crt" \
       -e C8Y_BOOTSTRAP_TENANT=management \
       -e C8Y_BOOTSTRAP_USER=${MANAGEMENT_ADMIN_USER} \
       -e C8Y_BOOTSTRAP_PASSWORD=${MANAGEMENT_ADMIN_PASSWORD} \
