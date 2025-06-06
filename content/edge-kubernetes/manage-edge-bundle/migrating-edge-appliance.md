@@ -25,20 +25,38 @@ Before continuing with the rest of the steps,
 The {{< product-c8y-iot >}} Operational Store provides an enhanced time series support (so-called time series collections) for measurements data. This configuration is enabled in the Edge 2025, hence you have to first migrate the non time series collections in the Edge appliance VM to time series collections. For more details on time series, refer to [enhanced time series support](/standard-tenant/enhanced-time-series-support/).
 
 Perform the following steps to accomplish the time series migration.
-1. Ensure that the {{< management-tenant >}} admin user you use in this process has the following roles assigned:
+1. Set `MANAGEMENT_ADMIN_USER` and `MANAGEMENT_ADMIN_PASSWORD` environment variables used in the subsequent commands:
+   ```shell
+   export MANAGEMENT_ADMIN_USER="<MANAGEMENT-ADMIN-USER>"          # Replace with {{< management-tenant >}} admin user
+   export MANAGEMENT_ADMIN_PASSWORD="<MANAGEMENT-ADMIN-PASSWORD>"  # Replace with {{< management-tenant >}} admin user's password
+   ```
+
+2. Ensure that the {{< management-tenant >}} admin user you use in this process has the following roles assigned:
    * ROLE_INVENTORY_READ
    * ROLE_OPTION_MANAGEMENT_READ
    * ROLE_OPTION_MANAGEMENT_ADMIN
    * ROLE_TENANT_MANAGEMENT_ADMIN
    * ROLE_APPLICATION_MANAGEMENT_SUBSCRIPTIONS_READ
 
-
-2. Set `ADMIN_USER` and `ADMIN_PASSWORD` environment variables used in the subsequent commands:
    ```shell
-   export ADMIN_USER="<ADMIN-USER>"          # Replace with {{< management-tenant >}} admin user
-   export ADMIN_PASSWORD="<ADMIN-PASSWORD>"  # Replace with {{< management-tenant >}} admin user's password
+   ROLES=(
+      "ROLE_INVENTORY_READ"
+      "ROLE_OPTION_MANAGEMENT_READ"
+      "ROLE_OPTION_MANAGEMENT_ADMIN"
+      "ROLE_TENANT_MANAGEMENT_ADMIN"
+      "ROLE_APPLICATION_MANAGEMENT_SUBSCRIPTIONS_READ"
+   )
+   for ROLE_ID in "${ROLES[@]}"; do
+      echo "Assigning role ${ROLE_ID} to Admin User group"
+      curl -k -X POST \
+         https://localhost/user/management/groups/2/roles \
+         -u "management/${MANAGEMENT_ADMIN_USER}:${MANAGEMENT_ADMIN_PASSWORD}" \
+         -H "Accept: application/json" \
+         -H "Content-Type: application/vnd.com.nsn.cumulocity.rolereference+json" \
+         -d "{\"role\": {\"self\": \"/user/roles/${ROLE_ID}\"}}"
+      echo -e "\n"
+   done    
    ```
-
 
 3. Run the following command to authenticate to the {{< product-c8y-iot >}} registry. Provide the Edge registry credentials when prompted:
 
@@ -63,8 +81,8 @@ Perform the following steps to accomplish the time series migration.
       -e C8Y_BASEURL=http://${DOCKER_GATEWAY_IP}:8111 \
       -e SPRING_DATA_MONGODB_URI=mongodb://${DOCKER_GATEWAY_IP}:27017/admin \
       -e C8Y_BOOTSTRAP_TENANT=management \
-      -e C8Y_BOOTSTRAP_USER=${ADMIN_USER} \
-      -e C8Y_BOOTSTRAP_PASSWORD=${ADMIN_PASSWORD} \
+      -e C8Y_BOOTSTRAP_USER=${MANAGEMENT_ADMIN_USER} \
+      -e C8Y_BOOTSTRAP_PASSWORD=${MANAGEMENT_ADMIN_PASSWORD} \
       -e MICROSERVICE_URL=http://${DOCKER_GATEWAY_IP}:8888 \
       registry.c8y.io/platform/timeseries-migration-server:1.0.326
    ```
@@ -82,7 +100,7 @@ Perform the following steps to accomplish the time series migration.
    ```shell
    curl -k -X PUT \
       https://localhost/service/timeseries-migration/migrations \
-      -u "management/${ADMIN_USER}:${ADMIN_PASSWORD}" \
+      -u "management/${MANAGEMENT_ADMIN_USER}:${MANAGEMENT_ADMIN_PASSWORD}" \
       -H "Accept: application/json" \
       -H "Content-Type: application/json" \
       -d '{ "state": "SCHEDULED", "tenants": [ "edge" ] }'
@@ -95,7 +113,7 @@ Perform the following steps to accomplish the time series migration.
    ```shell
    curl -k -X GET \
       https://localhost/service/timeseries-migration/migrations/edge \
-      -u "management/${ADMIN_USER}:${ADMIN_PASSWORD}" \
+      -u "management/${MANAGEMENT_ADMIN_USER}:${MANAGEMENT_ADMIN_PASSWORD}" \
       -H "Accept: application/json"
    ```
 
@@ -107,7 +125,7 @@ Perform the following steps to accomplish the time series migration.
    ```shell
    curl -k -X PUT \
       https://localhost/service/timeseries-migration/migrations \
-      -u "management/${ADMIN_USER}:${ADMIN_PASSWORD}" \
+      -u "management/${MANAGEMENT_ADMIN_USER}:${MANAGEMENT_ADMIN_PASSWORD}" \
       -H "Accept: application/json" \
       -H "Content-Type: application/json" \
       -d '{ "state": "APPROVED", "tenants": [ "edge" ] }'
@@ -121,7 +139,7 @@ Perform the following steps to accomplish the time series migration.
    ```shell
    curl -k -X GET \
       https://localhost/service/timeseries-migration/migrations/edge \
-      -u "management/${ADMIN_USER}:${ADMIN_PASSWORD}" \
+      -u "management/${MANAGEMENT_ADMIN_USER}:${MANAGEMENT_ADMIN_PASSWORD}" \
       -H "Accept: application/json"
    ```
    The response returned should contain the state as `APPROVED` against the Edge tenant.
