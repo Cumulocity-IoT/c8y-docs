@@ -21,7 +21,7 @@ Before continuing with the rest of the steps,
   * ensure that there is sufficient disk space to store the backup in your Edge appliance
 {{< /c8y-admon-important >}}
 
-### Time series conversion
+### 1. Time series conversion of Edge appliance data
 The {{< product-c8y-iot >}} Operational Store provides an enhanced time series support (so-called time series collections) for measurements data. This configuration is enabled in the Edge 2025, hence you have to first migrate the non time series collections in the Edge appliance VM to time series collections. For more details on time series, refer to [enhanced time series support](/standard-tenant/enhanced-time-series-support/).
 
 Perform the following steps to accomplish the time series migration.
@@ -136,7 +136,7 @@ Perform the following steps to accomplish the time series migration.
       ```
 
 
-### Backing Up Data and Configuration of Edge appliance
+### 2. Backing Up Data and Configuration of Edge appliance
 In your Edge appliance VM, back up the MongoDB data, data lake contents from the DataHub if present.
 
 Perform the following steps as a `root` user on your Edge appliance.
@@ -173,7 +173,7 @@ Perform the following steps as a `root` user on your Edge appliance.
 5. After creating the `/opt/edge-appliance-backup.tar` file, copy it to a network drive or storage location that is accessible from the machine on which you will install Edge 2025 in the next step. Once the backup file is safely stored, shut down the Edge appliance to prevent any further changes to the system during the migration process. This step is optional and if not performed, you need to copy the backup file into the target machine once it is created.
 
 
-### Install Edge 2025
+### 3. Install Edge 2025
 Follow the steps document at [Installing Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/installing-edge-on-k8/) to install and configure Edge 2025.
 
 {{< c8y-admon-important >}}
@@ -183,7 +183,7 @@ For more details, see [Configuring storage](/{{< c8y-edge-version-major >}}/edge
 
 After installing Edge 2025, configure the Edge domain and License to match that of the Edge Appliance VM you are migrating. For details, refer to [Modifying Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/manage-edge/#modify-edge)
 
-### Restore MongoDB data from the backup
+### 4. Restore MongoDB data from the backup
 After installing and configuring Edge 2025, proceed to migrate the data backed up from the Edge Appliance VM.
 
 1. Transfer the backup file `/opt/edge-appliance-backup.tar` from the Edge Appliance VM to your Edge 2025.
@@ -259,10 +259,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    Ensure you are able to access Edge before continuing with the subsequent steps.
 
 
-### Configuring Edge 2025 post migration
+### 5. Configuring Edge 2025 post migration
 After migrating data to Edge 2025, proceed to configure it to the same level as Edge Appliance VM.
 
-1. If you have connected your Edge appliance VM to cloud, follow the instructions [Connecting Edge to the cloud](/{{< c8y-edge-version-major >}}/edge-kubernetes/k8-edge-connecting-edge-to-cloud/) to do the same in Edge 2025. 
-
-
-
+  * If you have connected your Edge appliance VM to cloud, follow the instructions [Connecting Edge to the cloud](/{{< c8y-edge-version-major >}}/edge-kubernetes/k8-edge-connecting-edge-to-cloud/) to do the same in Edge 2025. 
