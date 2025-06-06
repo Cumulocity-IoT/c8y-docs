@@ -10,16 +10,16 @@ This method is ideal if you do not already have a Kubernetes cluster and want a 
 
 Edge can be installed on any modern x86-64 Linux environment, virtualised or otherwise.
 
-First, choose your environment. It can be a physical machine, or it can be a virtual machine, using the technology of your choice. For example, VMWare Workstation Player, VMWare ESXi or HyperV. Create a virtual machine, referring to the documentation from your VM technology vendor as necessary.
+First, choose your environment. It can be a physical machine, or it can be a virtual machine (VM), using the technology of your choice. For example, VMWare Workstation Player, VMWare ESXi or HyperV. Create a VM, referring to the documentation from your VM technology vendor as necessary.
 
-Whether a virtual or physical machine, ensure that all hardware and storage requirements for Edge are met, based on [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
+Whether a VM or physical machine, ensure that all hardware and storage requirements for Edge are met, based on [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
 
 Install the Linux distribution of your choice. Because the `c8yedge`-based install provisions Edge on [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation), you should consult the [operating system configurations required by K3s](https://docs.k3s.io/installation/requirements/#operating-systems) to help you choose and configure your operating system.
 
 {{< c8y-admon-info >}}
-Although the virtual or physical nature of the platform is unimportant to Edge, the advantage of most virtual machine technologies is that a running image can be exported to be run in another environment without further configuration.
+Although the virtual or physical nature of the platform is unimportant to Edge, the advantage of most VM technologies is that a running image can be exported to be run in another environment without further configuration.
 
-For example, you could install and customize Edge on a virtual machine in your development environment. You can then then hand-off a self-contained virtual machine image to be installed at a remote site in a reliable and reproducable way.
+For example, you could install and customize Edge on a VM in your development environment. You can then then hand-off a self-contained VM image to be installed at a remote site in a reliable and reproducable way.
 {{< /c8y-admon-info >}}
 
 ### Downloading c8yedge
