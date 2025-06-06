@@ -1,6 +1,6 @@
 ---
 date: ""
-title: It is now possible to limit decimal places for the **new** data point graph and data point explorer.
+title: New option for limiting the number of decimal places in data point graph and data explorer
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
