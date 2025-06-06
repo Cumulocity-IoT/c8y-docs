@@ -157,14 +157,12 @@ Perform the following steps as a `root` user on your Edge appliance.
    ```
 
 3. Run the below commands to export the MongoDB data using `mongodump` utility:
-   * Export the MongoDB data:
-
-      ```shell
-      mongodump \
-         --host localhost:27017 \
-         --db edge --collection users \
-         --out=/opt/appliance-edgedb-backup
-      ```
+   ```shell
+   mongodump \
+      --host localhost:27017 \
+      --db edge --collection users \
+      --out=/opt/appliance-edgedb-backup
+   ```
 
 4. Tar the MongoDB data and data lake contents from the DataHub if present using the following command to create the `/opt/edge-appliance-backup.tar` file:
 
