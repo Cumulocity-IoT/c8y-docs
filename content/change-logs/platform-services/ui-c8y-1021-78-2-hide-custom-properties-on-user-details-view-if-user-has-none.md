@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63700
 version: 1021.78.2
 ---
-If a user does not have any custom properties, the custom properties section is hidden in the user details.
+If a user does not have any custom properties, the custom properties section is no longer displayed in the user details but hidden instead.
