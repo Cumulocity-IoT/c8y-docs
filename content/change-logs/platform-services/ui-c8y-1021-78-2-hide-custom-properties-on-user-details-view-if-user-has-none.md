@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Hide custom properties section on user details view if user has no custom properties.
+title: Custom properties section hidden for users without custom properties
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63700
 version: 1021.78.2
 ---
-If user has no custom properties, on its details view custom properties section is not displayed
+If a user does not have any custom properties, the custom properties section is hidden in the user details.
