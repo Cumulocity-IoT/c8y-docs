@@ -1,5 +1,5 @@
 ---
-date: 
+date:
 title: Fixed issue in bulk device operations delay
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4670
 version: 2025.0.101
 ---
-When bulk device operation is resumed after a failure scenario the mechanism previously scheduled the remaining operations from the original scheduling date. This meant that the configured delay was no longer respected in these scenarios and the operations were created as quickly as possible. This has been corrected by scheduling remaining operations with the configured form the time the operation is resumed instead.
+Previously, when a bulk device operation was resumed after a failure scenario, the mechanism scheduled the remaining operations from the original scheduling date. This meant that any configured delay was not respected but the operations were created as quickly as possible. This has been corrected by scheduling the remaining operations with the configured delay from the time the operation is resumed.
