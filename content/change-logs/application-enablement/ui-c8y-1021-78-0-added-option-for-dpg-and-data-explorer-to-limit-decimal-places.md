@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added option for dpg and data explorer to limit decimal places (#8981) [GRAFT][release/cd] (#9284)
+title: It is now possible to limit decimal places for the data point graph and data point explorer.
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-63149
 version: 1021.78.0
 ---
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
+Context: Previously, data point graphs and the data explorer displayed all available decimal places for measurement values, which could lead to reduced readability. Change: A new configuration option has been added to limit the number of decimal places displayed in data point graphs and the data explorer. Impact: Users can now improve the readability of data visualizations by setting a maximum number of decimal places to display, making it easier to interpret measurement values at a glance.
