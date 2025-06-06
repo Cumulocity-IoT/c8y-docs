@@ -198,7 +198,7 @@ Some manifest settings are used exclusively by internal components, and are not 
 
 The version has an impact on the microservice upload behavior:
 
-* If the version specified in the microservices manifest is a snapshot version, for example, "1.1.0-SNAPSHOT", the microservices image will be pushed to the registry on each upload. 
+* If the version specified in the manifest is a snapshot version, for example, "1.1.0-SNAPSHOT", the microservices image will be pushed to the registry on each upload. 
 
 * If the version specified in the manifest is NOT a snapshot version, for example, "2.0.0", and no microservice image with this version exists in the registry, the upload will be successful.
 
