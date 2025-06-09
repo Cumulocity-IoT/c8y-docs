@@ -190,7 +190,7 @@ Perform the following steps as a root user on your Edge appliance.
    tar -zcf /opt/edge-appliance-backup.tar /opt/appliance-edgedb-backup /opt/softwareag
    ```
 
-5. After creating the `/opt/edge-appliance-backup.tar` file, copy it to a network drive or storage location that is accessible from the machine on which you will install Edge 2025 in the next step. Once the backup file is safely stored, shut down the Edge appliance to prevent any further changes to the system during the migration process. This step is optional and if not performed, you need to copy the backup file into the target machine once it is created.
+5. After creating the */opt/edge-appliance-backup.tar* file, copy it to a network drive or storage location that is accessible from the machine on which you will install Edge 2025 in the next step. Once the backup file is safely stored, shut down the Edge appliance to prevent any further changes to the system during the migration process. This step is optional, and if not performed, you must copy the backup file into the target machine once it is created.
 
 
 ### 3. Install Edge 2025
