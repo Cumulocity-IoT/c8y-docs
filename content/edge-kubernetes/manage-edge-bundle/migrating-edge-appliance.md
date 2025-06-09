@@ -155,7 +155,8 @@ Perform the following steps to accomplish the time series migration.
       ```
 
 
-### 2. Backing Up Data and Configuration of Edge appliance
+### 2. Backing up data and configuration of Edge appliance
+
 In your Edge appliance VM, back up the MongoDB data, data lake contents from the DataHub if present.
 
 Perform the following steps as a `root` user on your Edge appliance.
