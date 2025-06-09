@@ -194,7 +194,7 @@ Perform the following steps as a root user on your Edge appliance.
 
 
 ### 3. Install Edge 2025
-Follow the steps document at [Installing Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/installing-edge-on-k8/) to install and configure Edge 2025.
+Follow the steps documented at [Installing Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/installing-edge-on-k8/) to install and configure Edge 2025.
 
 {{< c8y-admon-important >}}
 Ensure that there is sufficient disk space available on the machine in which you intend to install Edge 2025.
