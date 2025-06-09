@@ -13,12 +13,8 @@ For information about upgrading from an earlier version to Edge 10.17, see:
   * [Updating Edge using the GUI](/2024/edge/edge-update/#updating-edge-gui)
   * [Updating Edge using the REST APIs](/2024/edge/edge-update/#updating-edge-rest)
 in the 2024 Cumulocity Edge documentation.
-{{< /c8y-admon-important >}}
 
-{{< c8y-admon-important >}}
-Before continuing with the rest of the steps,
-  * create a backup of your Edge appliance VM,
-  * ensure that there is sufficient disk space to store the backup in your Edge appliance.
+Before proceeding, back up your Edge appliance VM and make sure there is enough disk space to store the MongoDB and DataHub (data lake) backups. For instructions on expanding disk size, refer to [Expanding the disk size](/2024/edge/operating-edge/#expanding-the-disk-size).
 {{< /c8y-admon-important >}}
 
 ### 1. Time series conversion of Edge appliance data
@@ -146,7 +142,7 @@ Perform the following steps to accomplish the time series migration.
    The response returned should contain the state as `APPROVED` against the Edge tenant.
 
 
-10. Execute the command below to remove legacy legacy collection:
+10. Execute the command below to remove legacy collection:
       ```shell
       mongo \
          --host localhost:27017 \
@@ -157,7 +153,7 @@ Perform the following steps to accomplish the time series migration.
 
 ### 2. Backing up data and configuration of Edge appliance
 
-In your Edge appliance VM, back up the MongoDB data, data lake contents from the DataHub if present.
+In your Edge appliance VM, back up the MongoDB data, data lake contents from DataHub if present.
 
 Perform the following steps as a root user on your Edge appliance.
 
