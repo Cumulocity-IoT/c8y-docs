@@ -17,7 +17,7 @@ in the 2024 Cumulocity Edge documentation.
 
 {{< c8y-admon-important >}}
 Before continuing with the rest of the steps,
-  * create a backup of your Edge appliance VM
+  * create a backup of your Edge appliance VM,
   * ensure that there is sufficient disk space to store the backup in your Edge appliance
 {{< /c8y-admon-important >}}
 
