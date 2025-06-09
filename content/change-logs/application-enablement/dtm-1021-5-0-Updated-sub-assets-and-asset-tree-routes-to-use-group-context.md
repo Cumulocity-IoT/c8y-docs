@@ -1,6 +1,6 @@
 ---
 date: ''
-title: Updated sub-assets and asset tree routes to use '/group/:id' context
+title: Updated subassets and asset tree routes to use the /group/:id context
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
