@@ -12,7 +12,7 @@ If you are using an Edge appliance VM version earlier than 10.17, you must first
 For information about upgrading from an earlier version to Edge 10.17, see:
   * [Updating Edge using the GUI](/2024/edge/edge-update/#updating-edge-gui)
   * [Updating Edge using the REST APIs](/2024/edge/edge-update/#updating-edge-rest)
-in the 10.17.0 Cumulocity Edge guide.
+in the 2024 Cumulocity Edge documentation.
 {{< /c8y-admon-important >}}
 
 {{< c8y-admon-important >}}
