@@ -255,7 +255,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
             appliance-edgedb-backup
       ```
 
-   * Reimport the users from the `edge-users-export.json` file created earlier:
+   * Reimport the users from the *edge-users-export.json* file created earlier:
 
       ```shell
       kubectl cp ./edge-users-export.json ${NAMESPACE}/edge-db-rs0-0:edge-users-export.json  -c mongod
