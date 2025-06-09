@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-1997
 version: 1021.4.0
 ---
-Previously, integrating Subassets with other tab-based plugins led to action-related errors during tab switching. This has been resolved. Path to access subassets is now changed from /asset/:id/subassets to /group/:id/subassets
+Previously, integrating subassets with other tab-based plugins led to action-related errors during tab switching. This issue has been resolved. The path to access subassets has been changed from `/asset/:id/subassets` to `/group/:id/subassets`. 
