@@ -11,11 +11,6 @@ You will need Helm version 3.x available on your system. Refer to [Installing He
 {{< c8y-admon-info >}}
 Edge has been tested and officially supported on Kubernetes version 1.32.x, the latest GA version at the time of release. Support is limited to this version. We aim to support deployments on CNCF-certified Kubernetes distributions provided they use upstream Kubernetes version 1.32.x and meet the documented resource and environment prerequisites. We are committed to maintaining alignment with the Kubernetes support lifecycle and will validate and support newer versions in future maintenance releases, ensuring continuity when version 1.32.x reaches end-of-life.
 
-* [Upstream Kubernetes (K8s)](https://kubernetes.io/docs/setup/)
-* [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation): To ensure proper operation of Edge on K3s, you must install K3s with specific configuration options. See [Special instructions for K3s](/edge-kubernetes/installing-edge-on-k8/#special-instructions-for-k3s) for more details.
-
-To upgrade your Kubernetes version, follow the official upgrade instructions for your platform. If you're using K3s, refer to the [K3 upgrade guide](https://docs.k3s.io/upgrades).
-
 **Important:** Edge is tested and supported on **single-node Kubernetes clusters** only.
 {{< /c8y-admon-info >}}
 
