@@ -184,7 +184,7 @@ Perform the following steps as a root user on your Edge appliance.
       --out=/opt/appliance-edgedb-backup
    ```
 
-4. Tar the MongoDB data and data lake contents from the DataHub if present using the following command to create the `/opt/edge-appliance-backup.tar` file:
+4. Tar the MongoDB data and data lake contents from DataHub if present using the following command to create the */opt/edge-appliance-backup.tar* file:
 
    ```shell
    tar -zcf /opt/edge-appliance-backup.tar /opt/appliance-edgedb-backup /opt/softwareag
