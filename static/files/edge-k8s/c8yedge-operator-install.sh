@@ -21,16 +21,16 @@
 #     Namespace in which to install. Will install in 'c8yedge' namespace if not specified.
 #
 #   - C8YEDGE_REGISTRY_HOST
-#     Edge operator registry URI. Points to production registry 'registry.c8y.io' if not specified.
+#     Edge registry URI. Points to production registry 'registry.c8y.io' if not specified.
 #    
 #   - C8YEDGE_IMAGE_PULL_POLICY
 #     Configures the ImagePullPolicy for the Edge operator. Can be set to 'Always' or 'IfNotPresent', defaults to 'IfNotPresent'.
 #
 #   - C8YEDGE_REGISTRY_USERNAME
-#     Username to access Edge operator registry. Prompted if not specified.
+#     Username to access Edge registry. Prompted if not specified.
 #
 #   - C8YEDGE_REGISTRY_PASSWORD
-#     Password to access Edge operator registry. Prompted if not specified.
+#     Password to access Edge registry. Prompted if not specified.
 #
 
 display_usage() {
@@ -54,16 +54,16 @@ display_usage() {
     echo "    Namespace in which to install. Will install in 'c8yedge' namespace if not specified."
     echo ""
     echo "  - C8YEDGE_REGISTRY_HOST"
-    echo "    Edge operator registry URI. Points to production registry 'registry.c8y.io' if not specified."
+    echo "    Edge registry URI. Points to production registry 'registry.c8y.io' if not specified."
     echo ""
     echo "  - C8YEDGE_IMAGE_PULL_POLICY"
     echo "    Configures the ImagePullPolicy for the Edge operator. Can be set to 'Always' or 'IfNotPresent', defaults to 'IfNotPresent'."
     echo ""
     echo "  - C8YEDGE_REGISTRY_USERNAME"
-    echo "    Username to access Edge operator registry. Prompted if not specified."
+    echo "    Username to access Edge registry. Prompted if not specified."
     echo ""
     echo "  - C8YEDGE_REGISTRY_PASSWORD"
-    echo "    Password to access Edge operator registry. Prompted if not specified."
+    echo "    Password to access Edge registry. Prompted if not specified."
     echo ""
     exit 1
 }
@@ -100,11 +100,11 @@ if [ -z "$C8YEDGE_IMAGE_PULL_POLICY" ]; then
 fi
 
 if [ -z "$C8YEDGE_REGISTRY_USERNAME" ]; then
-    read -p "Enter username to access Edge operator registry: " C8YEDGE_REGISTRY_USERNAME
+    read -p "Enter username to access Edge registry: " C8YEDGE_REGISTRY_USERNAME
 fi
 
 if [ -z "$C8YEDGE_REGISTRY_PASSWORD" ]; then
-    read -s -p "Enter password to access Edge operator registry: " C8YEDGE_REGISTRY_PASSWORD
+    read -s -p "Enter password to access Edge registry: " C8YEDGE_REGISTRY_PASSWORD
 fi
 
 # Attempt to login to the registry using provided credentials
@@ -114,10 +114,10 @@ login_output=$(echo "$C8YEDGE_REGISTRY_PASSWORD" | helm registry login -u "$C8YE
 if ! echo "$login_output" | grep -qi "Login Succeeded"; then
 	echo -e "\n\n$login_output\n"
 	if echo "$login_output" | grep -qi "unauthorized"; then
-		echo -e "Error: Invalid credentials provided for the Edge operator registry \"${C8YEDGE_REGISTRY_HOST}\"."
+		echo -e "Error: Invalid credentials provided for the Edge registry \"${C8YEDGE_REGISTRY_HOST}\"."
 		exit 1
 	else
-		echo -e "Error: Unable to establish a connection with the Edge operator registry \"${C8YEDGE_REGISTRY_HOST}\"."
+		echo -e "Error: Unable to establish a connection with the Edge registry \"${C8YEDGE_REGISTRY_HOST}\"."
 		exit 1
 	fi
 fi

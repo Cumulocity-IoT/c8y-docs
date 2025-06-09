@@ -6,6 +6,14 @@ layout: redirect
 
 This method is suitable for users who already have a Kubernetes cluster and want to install Edge using the Kubernetes-native approach. Before you start the installation, ensure that you have met the [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) and configured the storage as described in [Configuring storage](#configuring-storage).
 
+You will need Helm version 3.x available on your system. Refer to [Installing Helm](https://helm.sh/docs/intro/install/) for the installation instructions.
+
+{{< c8y-admon-info >}}
+Edge has been tested and officially supported on Kubernetes version 1.32.x, the latest GA version at the time of release. Support is limited to this version. We aim to support deployments on CNCF-certified Kubernetes distributions provided they use upstream Kubernetes version 1.32.x and meet the documented resource and environment prerequisites. We are committed to maintaining alignment with the Kubernetes support lifecycle and will validate and support newer versions in future maintenance releases, ensuring continuity when version 1.32.x reaches end-of-life.
+
+**Important:** Edge is tested and supported on **single-node Kubernetes clusters** only.
+{{< /c8y-admon-info >}}
+
 ### Installing the Edge operator {#installing-edge-operator}
 A script to install the Edge operator is available at [c8yedge-operator-install.sh](/files/edge-k8s/c8yedge-operator-install.sh).
 
@@ -18,11 +26,11 @@ If you are installing Edge from a [local/private registry](/edge-kubernetes/inst
 ```shell
 curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh -v "{{< c8y-edge-version >}}" -r registry.c8y.io
 ```
-Provide the Edge operator registry credentials in the prompt:
+Provide the Edge registry credentials in the prompt:
 
 ```text
-Enter username to access Edge operator registry:  
-Enter password to access Edge operator registry:
+Enter username to access Edge registry:  
+Enter password to access Edge registry:
 ```
 
 {{< c8y-admon-info >}}
