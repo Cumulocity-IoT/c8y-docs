@@ -26,11 +26,11 @@ If you are installing Edge from a [local/private registry](/edge-kubernetes/inst
 ```shell
 curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh -v "{{< c8y-edge-version >}}" -r registry.c8y.io
 ```
-Provide the Edge operator registry credentials in the prompt:
+Provide the Edge registry credentials in the prompt:
 
 ```text
-Enter username to access Edge operator registry:  
-Enter password to access Edge operator registry:
+Enter username to access Edge registry:  
+Enter password to access Edge registry:
 ```
 
 {{< c8y-admon-info >}}
