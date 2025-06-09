@@ -159,7 +159,7 @@ Perform the following steps to accomplish the time series migration.
 
 In your Edge appliance VM, back up the MongoDB data, data lake contents from the DataHub if present.
 
-Perform the following steps as a `root` user on your Edge appliance.
+Perform the following steps as a root user on your Edge appliance.
 
 1. Run the following commands to unmonitor and stop all services except the `mongod` service:
 
