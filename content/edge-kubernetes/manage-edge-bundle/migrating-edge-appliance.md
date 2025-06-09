@@ -206,7 +206,7 @@ After installing Edge 2025, configure the Edge domain and license to match those
 ### 4. Restore MongoDB data from the backup
 After installing and configuring Edge 2025, proceed to migrate the data backed up from the Edge Appliance VM.
 
-1. Transfer the backup file `/opt/edge-appliance-backup.tar` from the Edge Appliance VM to your Edge 2025.
+1. Transfer the backup file */opt/edge-appliance-backup.tar* from the Edge Appliance VM to your Edge 2025.
 
 2. Untar the backup file using the following command:
 
