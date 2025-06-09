@@ -15,6 +15,6 @@ ticket: PAB-4742
 version: 26.106.0
 ---
 
-Introduced the Analytics Rules plugin that enables users to create and manage analytics rules directly from device and group contexts within Device Management and Cockpit applications. Instead of switching between applications, users can create analytics rules from the context they are already working in, making the process more intuitive and efficient. The plugin supports models configured with "From Context" template parameters and maintains seamless bidirectional integration with the Analytics Builder instance editor.
+Analytics rules plugin extends Analytics Builder capabilities within Streaming Analytics by enabling users to create and manage analytics builder instances directly from device and group contexts within applications such as Device Management and Cockpit.
 
 For more details about the Analytics rules plugin, refer to [Analytics rules plugin](/streaming-analytics/analytics-rules-plugin#what-is-analytics-rules-plugin).
