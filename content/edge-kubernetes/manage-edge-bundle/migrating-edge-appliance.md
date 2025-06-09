@@ -201,7 +201,7 @@ Ensure that there is sufficient disk space available on the machine in which you
 For more details, see [Configuring storage](/{{< c8y-edge-version-major >}}/edge-kubernetes/installing-edge-on-k8/#configuring-storage).
 {{< /c8y-admon-important >}}
 
-After installing Edge 2025, configure the Edge domain and License to match that of the Edge Appliance VM you are migrating. For details, refer to [Modifying Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/manage-edge/#modify-edge)
+After installing Edge 2025, configure the Edge domain and license to match those of the Edge Appliance VM you are migrating. For details, refer to [Modifying Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/manage-edge/#modify-edge)
 
 ### 4. Restore MongoDB data from the backup
 After installing and configuring Edge 2025, proceed to migrate the data backed up from the Edge Appliance VM.
