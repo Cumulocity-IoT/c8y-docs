@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 ### What is Analytics Rules Plugin {#what-is-analytics-rules-plugin}
-The Analytics Rules plugin extends Analytics Builder's capabilities by enabling users to create and manage analytics rules directly from device and group contexts within applications like Device Management and Cockpit. Instead of switching between applications, users can create analytics rules from the context they are already working in, making the process more intuitive and efficient.
+Analytics rules plugin extends Analytics Builder capabilities within Streaming Analytics by enabling users to create and manage analytics builder instances directly from device and group contexts within applications such as Device Management and Cockpit.
 
 For more details about Analytics Builder, please refer to [Analytics Builder](/streaming-analytics/analytics-builder/#getting-started).
 
@@ -17,7 +17,7 @@ Before using the Analytics Rules plugin, ensure that the following requirements 
 
 ### Creating your first analytics rule
 
-This topic provides the basic workflow for creating your first analytics rule using the plugin from host applications like Device Management. You will create a simple analytics model that creates an alarm when temperature breaches a given threshold value. The steps below require that at least one device is already registered in {{< product-c8y-iot >}}. Preferably, this device is already sending measurement values to {{< product-c8y-iot >}}.
+This topic provides the basic workflow for creating your first analytics rule using the plugin from shell applications like Device Management. You will create a simple analytics model that creates an alarm when temperature breaches a given threshold value. The steps below require that at least one device is already registered in {{< product-c8y-iot >}}. Preferably, this device is already sending measurement values to {{< product-c8y-iot >}}.
 
 The model that you add will contain three blocks:
 - An input block which receives measurements from devices, groups, or assets.
