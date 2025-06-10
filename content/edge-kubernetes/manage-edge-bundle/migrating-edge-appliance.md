@@ -142,9 +142,9 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
 
 10. Stop the `timeseries-migration` microservice:
 
-   ```shell
-   docker stop timeseries-migration
-   ```
+      ```shell
+      docker stop timeseries-migration
+      ```
 
 11. Execute the command below to remove legacy collection:
       ```shell
