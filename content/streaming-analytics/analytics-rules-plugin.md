@@ -1,5 +1,5 @@
 ---
-weight: 25
+weight: 35
 title: Analytics Rules Plugin
 layout: bundle
 sector:

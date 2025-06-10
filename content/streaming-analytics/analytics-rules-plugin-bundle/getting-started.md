@@ -13,8 +13,7 @@ For more details about Analytics Builder, please refer to [Analytics Builder](/s
 
 Before using the Analytics Rules plugin, ensure that the following requirements are met:
 - Tenant has subscribed to Streaming Analytics application and has access to Analytics Builder application.
-- Tenant has subscribed to host application (Device Management, Cockpit).
-- Appropriate user permissions for analytics model access and rule creation. Please refer to the [Permissions](/streaming-analytics/introduction-analytics/#permissions).
+- User privileges to access Analytics Builder models and create new instances of Analytics builder templated models. Please refer to the [Permissions](/streaming-analytics/introduction-analytics/#permissions).
 
 ### Creating your first analytics rule
 
