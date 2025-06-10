@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed missing translations for Bookmarks section in the right drawer (#9187) [GRAFT][release/cd] (#9298)
+title: "Fixed missing translations for \"Bookmarks\" section in right drawer"
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
