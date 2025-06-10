@@ -20,12 +20,20 @@ Before proceeding, back up your Edge appliance VM and make sure there is enough 
 ### 1. Time series conversion of Edge appliance data
 The {{< product-c8y-iot >}} Operational Store provides an enhanced time series support (so-called time series collections) for measurements data. This configuration is enabled in the Edge 2025, hence you have to first migrate the non time series collections in the Edge appliance VM to time series collections. For more details on time series, refer to [enhanced time series support](/standard-tenant/enhanced-time-series-support/).
 
-Perform the following steps to accomplish the time series migration.
+Perform the following steps as a `root` user on your Edge appliance VM to accomplish the time series migration.
+
 1. Set `MANAGEMENT_ADMIN_USER` and `MANAGEMENT_ADMIN_PASSWORD` environment variables used in the subsequent commands:
    ```shell
    export MANAGEMENT_ADMIN_USER="<MANAGEMENT-ADMIN-USER>"          # Replace with {{< management-tenant >}} admin user
    export MANAGEMENT_ADMIN_PASSWORD="<MANAGEMENT-ADMIN-PASSWORD>"  # Replace with {{< management-tenant >}} admin user's password
+
+   export EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"                # Replace with Edge registry username 
+   export EDGE_REGISTRY_PASSWORD="<EDGE-REGISTRY-PASSWORD>"        # Replace with Edge registry password 
    ```
+
+   {{< c8y-admon-info >}}
+   To request the Edge registry credentials, [contact product support](/additional-resources/contacting-support/).
+   {{< /c8y-admon-info >}}   
 
 2. Ensure that the {{< management-tenant >}} admin user you use in this process has the following roles assigned:
    * ROLE_INVENTORY_READ
@@ -54,29 +62,19 @@ Perform the following steps to accomplish the time series migration.
    done    
    ```
 
-3. Run the following command to authenticate to the {{< product-c8y-iot >}} registry. Provide the Edge registry credentials when prompted:
-
-   ```shell
-   docker login registry.c8y.io
-   ```
-
-   {{< c8y-admon-info >}}
-   To request the Edge registry credentials, [contact product support](/additional-resources/contacting-support/).
-   {{< /c8y-admon-info >}}   
-
+3. To allow MongoDB to accept both TLS and non-TLS connections, edit */etc/mongod.conf* file and change `requireTLS` to `preferTLS` in the `net.tls.mode` setting, then restart MongoDB with `systemctl restart mongod`.
 
 4. Run the following commands to install and run the `timeseries-migration` microservice:
-
    ```shell
+   docker login registry.c8y.io --username "${EDGE_REGISTRY_USER}" --password "${EDGE_REGISTRY_PASSWORD}"
    DOCKER_GATEWAY_IP=$(docker network inspect bridge --format='{{(index .IPAM.Config 0).Gateway}}')
    docker run -d \
       --name timeseries-migration \
       --network bridge \
       -p 8888:8080 \
       -p 8001:8001 \
-      -v /opt/edge-pki/ca.crt:/certs/ca.crt:ro \
       -e C8Y_BASEURL=http://${DOCKER_GATEWAY_IP}:8111 \
-      -e SPRING_DATA_MONGODB_URI="mongodb://${DOCKER_GATEWAY_IP}:27017/admin?tls=true&tlsAllowInvalidCertificates=true&tlsCAFile=/certs/ca.crt" \
+      -e SPRING_DATA_MONGODB_URI="mongodb://${DOCKER_GATEWAY_IP}:27017/admin" \
       -e C8Y_BOOTSTRAP_TENANT=management \
       -e C8Y_BOOTSTRAP_USER=${MANAGEMENT_ADMIN_USER} \
       -e C8Y_BOOTSTRAP_PASSWORD=${MANAGEMENT_ADMIN_PASSWORD} \
@@ -84,13 +82,11 @@ Perform the following steps to accomplish the time series migration.
       registry.c8y.io/platform/timeseries-migration-server:1.0.326
    ```
 
-
 5. Follow the container logs using the following command and wait until the message `c.s.m.t.TimeseriesMigrationApplicationKt : Started TimeseriesMigrationApplicationKt ...` appears.
 
    ```shell
    docker logs -f timeseries-migration
    ```
-
 
 6. Run the below command to trigger the time series migration:
 
