@@ -1,6 +1,6 @@
 ---
 date: ""
-title: List reload loop in bulk operation details view has been fixed
+title: Improved operations list reload loop in bulk operations details
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
