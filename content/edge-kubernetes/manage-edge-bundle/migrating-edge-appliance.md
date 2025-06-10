@@ -209,70 +209,24 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    ```shell
    tar -xf /opt/edge-1017-backup.tar -C /
    ```
+   
+3. Run the following command to restore the MongoDB data. This command deploys a pod named `edge-appliance-migration`:
 
-3. Import the MongoDB data:
-   * Set `NAMESPACE`, `DB_USER`  and `DB_PASSWORD` environment variables used in the subsequent commands:
-      ```shell
-      export NAMESPACE=c8yedge     # Replace with the namespace name where you have installed the Edge. Default is c8yedge.
-      export DB_USER=$(kubectl get secret internal-edge-db-users -n ${NAMESPACE} -o jsonpath="{.data.MONGODB_DATABASE_ADMIN_USER}" | base64 --decode)
-      export DB_PASSWORD=$(kubectl get secret internal-edge-db-users -n ${NAMESPACE} -o jsonpath="{.data.MONGODB_DATABASE_ADMIN_PASSWORD}" | base64 --decode)
-      ```
+   ```shell
+   curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-appliance-migration-db-restore.sh -O && bash ./c8yedge-appliance-migration-db-restore.sh
+   ```
 
-   * Export the users collection from the `edge` DB:
-
-      ```shell
-      kubectl exec -it edge-db-rs0-0 -n ${NAMESPACE} -c mongod -- \
-         mongoexport \
-            --host localhost:27017 \
-            --authenticationDatabase=admin \
-            --username ${DB_USER} \
-            --password ${DB_PASSWORD} \
-            --ssl --tlsInsecure \
-            --db edge --collection users \
-            --out edge-users-export.json
-
-      kubectl cp ${NAMESPACE}/edge-db-rs0-0:edge-users-export.json ./edge-users-export.json -c mongod
-      ```
-
-   * Restore the `edge` DB with the data from the Edge Appliance VM:
-
-      ```shell
-      kubectl cp /opt/appliance-edgedb-backup ${NAMESPACE}/edge-db-rs0-0:appliance-edgedb-backup -c mongod
-
-      kubectl exec -it edge-db-rs0-0 -n ${NAMESPACE} -c mongod -- \
-         mongorestore \
-            --host localhost:27017 \
-            --authenticationDatabase=admin \
-            --username ${DB_USER} \
-            --password ${DB_PASSWORD} \
-            --ssl --tlsInsecure \
-            --db edge \
-            --drop \
-            appliance-edgedb-backup
-      ```
-
-   * Reimport the users from the *edge-users-export.json* file created earlier:
-
-      ```shell
-      kubectl cp ./edge-users-export.json ${NAMESPACE}/edge-db-rs0-0:edge-users-export.json  -c mongod
-
-      kubectl exec -it edge-db-rs0-0 -n ${NAMESPACE} -c mongod -- \
-         mongorestore \
-            --host localhost:27017 \
-            --authenticationDatabase=admin \
-            --username ${DB_USER} \
-            --password ${DB_PASSWORD} \
-            --ssl --tlsInsecure \
-            --db edge --collection users \
-            --file edge-users-export.json
-       ```
+   Then, monitor the logs using the command below. Wait until the message `>> Edge DB restore finished.` appears before proceeding to the next step:
+   ```shell
+   kubectl logs -f pod/$POD_NAME -n $NAMESPACE
+   ```
 
 4. Run the command below to restart Edge:
 
    ```shell
    kubectl rollout restart deployment -n ${NAMESPACE} c8yedge-operator-controller-manager
    ```
-   Ensure you are able to access Edge before continuing with the subsequent steps.
+   Ensure you are able to [access Edge](/edge-kubernetes/installing-edge-on-k8/#accessing-edge) before continuing with the subsequent steps.
 
 
 ### 5. Configuring Edge 2025 post migration
