@@ -1,6 +1,6 @@
 ---
 date:
-title: New Analytics rules plugin enables creation and management of Analytics Builder instances from device and group contexts.
+title: New Analytics rules plugin is in Public Preview
 change_type:
   - value: change-pXAlHAWka
     label: Preview
