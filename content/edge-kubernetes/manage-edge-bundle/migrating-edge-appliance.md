@@ -211,61 +211,27 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    ```
 
 3. Import the MongoDB data:
-   * Set `NAMESPACE`, `DB_USER`  and `DB_PASSWORD` environment variables used in the subsequent commands:
-      ```shell
-      export NAMESPACE=c8yedge     # Replace with the namespace name where you have installed the Edge. Default is c8yedge.
-      export DB_USER="databaseAdmin"
-      export DB_PASSWORD=$(kubectl get secret internal-generated-tls-certificates -n ${NAMESPACE} -o jsonpath="{.data.password}" | base64 --decode)
-      ```
+   * Run the command below to commense mongo migration.
 
-   * Export the users collection from the `edge` DB:
-
-      ```shell
-      kubectl exec -it edge-db-rs0-0 -n ${NAMESPACE} -c mongod -- \
-         mongoexport \
-            --host localhost:27017 \
-            --authenticationDatabase=admin \
-            --username ${DB_USER} \
-            --password ${DB_PASSWORD} \
-            --ssl --tlsInsecure \
-            --db edge --collection users \
-            --out edge-users-export.json
-
-      kubectl cp ${NAMESPACE}/edge-db-rs0-0:edge-users-export.json ./edge-users-export.json -c mongod
-      ```
-
-   * Restore the `edge` DB with the data from the Edge Appliance VM:
-
-      ```shell
-      kubectl cp /opt/appliance-edgedb-backup ${NAMESPACE}/edge-db-rs0-0:appliance-edgedb-backup -c mongod
-
-      kubectl exec -it edge-db-rs0-0 -n ${NAMESPACE} -c mongod -- \
-         mongorestore \
-            --host localhost:27017 \
-            --authenticationDatabase=admin \
-            --username ${DB_USER} \
-            --password ${DB_PASSWORD} \
-            --ssl --tlsInsecure \
-            --db edge \
-            --drop \
-            appliance-edgedb-backup
-      ```
-
-   * Reimport the users from the *edge-users-export.json* file created earlier:
-
-      ```shell
-      kubectl cp ./edge-users-export.json ${NAMESPACE}/edge-db-rs0-0:edge-users-export.json  -c mongod
-
-      kubectl exec -it edge-db-rs0-0 -n ${NAMESPACE} -c mongod -- \
-         mongorestore \
-            --host localhost:27017 \
-            --authenticationDatabase=admin \
-            --username ${DB_USER} \
-            --password ${DB_PASSWORD} \
-            --ssl --tlsInsecure \
-            --db edge --collection users \
-            --file edge-users-export.json
-       ```
+   ```shell
+   curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-migration.sh -O && bash ./c8yedge-migration.sh <KUBECONFIG_PATH>
+   ```
+   Output:
+   ```shell
+   [2025-06-10 05:31:18] Detecting namespace from PSMDB resource...
+   [2025-06-10 05:31:18] Using detected namespace: c8yedge
+   [2025-06-10 05:31:18] Extracting MongoDB service info from PerconaServerMongoDB...
+   [2025-06-10 05:31:18] Mongo image: docker.io/percona/percona-server-mongodb:7.0.15-9
+   [2025-06-10 05:31:18] Mongo service: edge-db-rs0.c8yedge.svc.cluster.local
+   [2025-06-10 05:31:18] Secret name: internal-mongo-credentials-and-tls-70258d9060648fd89e6d08cdc9c5ae46949d3d02a235057fb02f65ed2d924f3e
+   [2025-06-10 05:31:18] Fetching credentials from secret...
+   [2025-06-10 05:31:19] Cleaning up existing pod if any...
+   pod "migration" deleted
+   [2025-06-10 05:31:49] Constructing Mongo shell command...
+   [2025-06-10 05:31:49] Launching pod for MongoDB backup/restore...
+   pod/migration created
+   [2025-06-10 05:31:49] Pod 'migration' created. Run 'kubectl logs -f pod/migration -n c8yedge' to watch output.
+   ```
 
 4. Run the command below to restart Edge:
 
