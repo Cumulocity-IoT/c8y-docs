@@ -209,7 +209,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    ```shell
    tar -xf /opt/edge-1017-backup.tar -C /
    ```
-
+   
 3. Run the command below to restore the MongoDB data from the backup. Running this command deploys a pod named `edge-appliance-migration`.
 
    ```shell
