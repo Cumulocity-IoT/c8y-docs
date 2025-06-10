@@ -214,8 +214,8 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    * Set `NAMESPACE`, `DB_USER`  and `DB_PASSWORD` environment variables used in the subsequent commands:
       ```shell
       export NAMESPACE=c8yedge     # Replace with the namespace name where you have installed the Edge. Default is c8yedge.
-      export DB_USER="databaseAdmin"
-      export DB_PASSWORD=$(kubectl get secret internal-generated-tls-certificates -n ${NAMESPACE} -o jsonpath="{.data.password}" | base64 --decode)
+      export DB_USER=$(kubectl get secret internal-edge-db-users -n ${NAMESPACE} -o jsonpath="{.data.MONGODB_DATABASE_ADMIN_USER}" | base64 --decode)
+      export DB_PASSWORD=$(kubectl get secret internal-edge-db-users -n ${NAMESPACE} -o jsonpath="{.data.MONGODB_DATABASE_ADMIN_PASSWORD}" | base64 --decode)
       ```
 
    * Export the users collection from the `edge` DB:
