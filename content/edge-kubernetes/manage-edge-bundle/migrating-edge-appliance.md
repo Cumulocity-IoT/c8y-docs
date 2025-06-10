@@ -65,6 +65,7 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
 3. To allow MongoDB to accept both TLS and non-TLS connections, edit */etc/mongod.conf* file and change `requireTLS` to `preferTLS` in the `net.tls.mode` setting, then restart MongoDB with `systemctl restart mongod`.
 
 4. Run the following commands to install and run the `timeseries-migration` microservice:
+
    ```shell
    docker login registry.c8y.io --username "${EDGE_REGISTRY_USER}" --password "${EDGE_REGISTRY_PASSWORD}"
    DOCKER_GATEWAY_IP=$(docker network inspect bridge --format='{{(index .IPAM.Config 0).Gateway}}')
@@ -127,7 +128,6 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
 
     This will change the status of the migration to `APPROVED`.
 
-
 9. Run the command below to check the migration status and wait until it is changed to `APPROVED`:
 
    ```shell
@@ -174,6 +174,7 @@ Perform the following steps as a root user on your Edge appliance.
    ```
 
 3. Run the below commands to export the MongoDB data using `mongodump` utility:
+
    ```shell
    mongodump \
       --host localhost:27017 \
