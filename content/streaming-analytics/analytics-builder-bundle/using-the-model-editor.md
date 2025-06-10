@@ -389,7 +389,7 @@ Models with no template parameters can be directly activated in the model manage
     -   **Value Selection**. Select one of the following options from the dropdown:
         -   **Required** (default). Instance deployment requires a value for this template parameter.
         -   **Optional**. The template parameter can remain blank or can be set later by the instance maintainer. When you select this option, it is not possible to specify a default value.
-        -   **From Context**. Available only for Source or Destination type. The input will be automatically chosen based on the location where the instance is created. 
+        -   **From Context**. Applicable only for **Source or Destination type**. The input will be automatically chosen based on the context where the instance is created. Example: Device context or Groups context.
     
     -   **Default Value**. You can only specify a default value when the **Value Selection** option is set to **Required**.
 

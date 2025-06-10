@@ -47,8 +47,6 @@ When you add a new instance, a new row is added to the instance editor table. Yo
 
 You provide the parameter values for instances in the same way as you provide values for blocks in the model editor \(see also [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block)\).
 
-**Instance Name and Note**: Each instance can have a descriptive name and an optional note. The instance name helps identify the purpose of the instance, while the note field can contain additional information about the instance.
-
 The instance editor table provides different types of input controls, depending on the type of template parameter:
 
 -   Text boxes are provided in which you can enter values, depending on the setting of the template parameter \(for example, a string or a float or a multi-line string\). Your input is validated as you type. For example, it is not possible to enter a string value in a text box that expects a float value.
