@@ -210,27 +210,15 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    tar -xf /opt/edge-1017-backup.tar -C /
    ```
 
-3. Import the MongoDB data:
-   * Run the command below to commense mongo migration.
+3. Run the command below to restore the MongoDB data from the backup. Running this command deploys a pod named `edge-appliance-migration`.
 
    ```shell
-   curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-migration.sh -O && bash ./c8yedge-migration.sh <KUBECONFIG_PATH>
+   curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-appliance-migration-db-restore.sh -O && bash ./c8yedge-appliance-migration-db-restore.sh
    ```
-   Output:
+
+   Execute the below command to monitor the logs and wait for the message `>> Edge DB restore finished.` to appear in the logs before proceeding with the subsequent steps.
    ```shell
-   [2025-06-10 05:31:18] Detecting namespace from PSMDB resource...
-   [2025-06-10 05:31:18] Using detected namespace: c8yedge
-   [2025-06-10 05:31:18] Extracting MongoDB service info from PerconaServerMongoDB...
-   [2025-06-10 05:31:18] Mongo image: docker.io/percona/percona-server-mongodb:7.0.15-9
-   [2025-06-10 05:31:18] Mongo service: edge-db-rs0.c8yedge.svc.cluster.local
-   [2025-06-10 05:31:18] Secret name: internal-mongo-credentials-and-tls-70258d9060648fd89e6d08cdc9c5ae46949d3d02a235057fb02f65ed2d924f3e
-   [2025-06-10 05:31:18] Fetching credentials from secret...
-   [2025-06-10 05:31:19] Cleaning up existing pod if any...
-   pod "migration" deleted
-   [2025-06-10 05:31:49] Constructing Mongo shell command...
-   [2025-06-10 05:31:49] Launching pod for MongoDB backup/restore...
-   pod/migration created
-   [2025-06-10 05:31:49] Pod 'migration' created. Run 'kubectl logs -f pod/migration -n c8yedge' to watch output.
+   kubectl logs -f pod/$POD_NAME -n $NAMESPACE
    ```
 
 4. Run the command below to restart Edge:
@@ -238,7 +226,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    ```shell
    kubectl rollout restart deployment -n ${NAMESPACE} c8yedge-operator-controller-manager
    ```
-   Ensure you are able to access Edge before continuing with the subsequent steps.
+   Ensure you are able to [access Edge](/edge-kubernetes/installing-edge-on-k8/#accessing-edge) before continuing with the subsequent steps.
 
 
 ### 5. Configuring Edge 2025 post migration
