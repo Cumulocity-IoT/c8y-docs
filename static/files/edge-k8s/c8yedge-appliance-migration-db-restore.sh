@@ -94,7 +94,7 @@ mongoimport \
   --db edge --collection users \
   --file $MOUNT_PATH/edge-users-export.json && \
 
-echo ">> Edge DB restore finished." && tail -f /dev/null
+echo ">> Edge DB restore finished."
 EOF
 )
 

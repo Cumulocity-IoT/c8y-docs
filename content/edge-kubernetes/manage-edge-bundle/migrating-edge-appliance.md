@@ -24,11 +24,11 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
 
 1. Set `MANAGEMENT_ADMIN_USER` and `MANAGEMENT_ADMIN_PASSWORD` environment variables used in the subsequent commands:
    ```shell
-   export MANAGEMENT_ADMIN_USER="<MANAGEMENT-ADMIN-USER>"          # Replace with {{< management-tenant >}} admin user
-   export MANAGEMENT_ADMIN_PASSWORD="<MANAGEMENT-ADMIN-PASSWORD>"  # Replace with {{< management-tenant >}} admin user's password
+   MANAGEMENT_ADMIN_USER="<MANAGEMENT-ADMIN-USER>"          # Replace with {{< management-tenant >}} admin user
+   MANAGEMENT_ADMIN_PASSWORD="<MANAGEMENT-ADMIN-PASSWORD>"  # Replace with {{< management-tenant >}} admin user's password
 
-   export EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"                # Replace with Edge registry username 
-   export EDGE_REGISTRY_PASSWORD="<EDGE-REGISTRY-PASSWORD>"        # Replace with Edge registry password 
+   EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"                # Replace with Edge registry username 
+   EDGE_REGISTRY_PASSWORD="<EDGE-REGISTRY-PASSWORD>"        # Replace with Edge registry password 
    ```
 
    {{< c8y-admon-info >}}
@@ -112,6 +112,9 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
 
    The response returned should contain the migration status as `VERIFIED` against the Edge tenant.
 
+   {{< c8y-admon-info >}}
+   The time to complete time series conversion and reach `VERIFIED` status depends on your database size — larger databases require more time to process.
+   {{< /c8y-admon-info >}}
 
 8. Approve the migration to confirm the process by running the command below:
 
@@ -135,7 +138,7 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
       -u "management/${MANAGEMENT_ADMIN_USER}:${MANAGEMENT_ADMIN_PASSWORD}" \
       -H "Accept: application/json"
    ```
-   The response returned should contain the state as `APPROVED` against the Edge tenant.
+   The response returned should contain the migration status as `APPROVED` against the Edge tenant.
 
 
 10. Execute the command below to remove legacy collection:
@@ -145,7 +148,6 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
          edge \
          --eval 'db.pmdata.drop()'
       ```
-
 
 ### 2. Backing up data and configuration of Edge appliance
 
@@ -203,7 +205,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
 2. Untar the backup file using the following command:
 
    ```shell
-   tar -xf /opt/edge-1017-backup.tar -C /
+   tar -xf /opt/edge-appliance-backup.tar -C /
    ```
    
 3. Run the following command to restore the MongoDB data. This command deploys a pod named `edge-appliance-migration`:
@@ -214,16 +216,20 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
 
    Then, monitor the logs using the command below. Wait until the message `>> Edge DB restore finished.` appears before proceeding to the next step:
    ```shell
-   kubectl logs -f pod/$POD_NAME -n $NAMESPACE
+   kubectl logs -f pod/edge-appliance-migration -n c8yedge
    ```
 
 4. Run the command below to restart Edge:
 
    ```shell
-   kubectl rollout restart deployment -n ${NAMESPACE} c8yedge-operator-controller-manager
+   kubectl rollout restart deployment -n c8yedge c8yedge-operator-controller-manager
    ```
    Ensure you are able to [access Edge](/edge-kubernetes/installing-edge-on-k8/#accessing-edge) before continuing with the subsequent steps.
 
+5. Remove the */opt/edge-appliance-backup.tar* and */opt/appliance-edgedb-backup* folders. 
+   ```shell
+   rm -rf /opt/appliance-edgedb-backup /opt/edge-appliance-backup.tar
+   ```
 
 ### 5. Configuring Edge 2025 post migration
 After migrating data to Edge 2025, proceed to configure it to the same level as Edge Appliance VM.
