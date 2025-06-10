@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63149
 version: 1021.78.0
 ---
-Previously, data point graphs and the data explorer displayed all available decimal places for measurement values, which could lead to reduced readability. To address this, a new configuration option has been added that allows for limiting the number of decimal places displayed in data point graphs and the data explorer. Users can now set a maximum number of decimal places, making it easier to interpret measurement values at a glance.
+For the new data point graph and data explorer which can be enabled via the feature preview a new configuration option has been added that allows for limiting the number of decimal places. Users can now set a maximum number of decimal places, making it easier to interpret measurement values at a glance.
