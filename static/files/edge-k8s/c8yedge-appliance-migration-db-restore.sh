@@ -92,6 +92,7 @@ mongoimport \
   --password "$ADMIN_PASSWORD" \
   --ssl --tlsInsecure \
   --db edge --collection users \
+  --mode=upsert \
   --file $MOUNT_PATH/edge-users-export.json && \
 
 echo ">> Edge DB restore finished."

@@ -140,8 +140,13 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
    ```
    The response returned should contain the migration status as `APPROVED` against the Edge tenant.
 
+10. Stop the `timeseries-migration` microservice:
 
-10. Execute the command below to remove legacy collection:
+   ```shell
+   docker stop timeseries-migration
+   ```
+
+11. Execute the command below to remove legacy collection:
       ```shell
       mongo \
          --host localhost:27017 \
