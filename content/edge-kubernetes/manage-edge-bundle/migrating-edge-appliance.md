@@ -99,9 +99,7 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
       -d '{ "state": "SCHEDULED", "tenants": [ "edge" ] }'
    ```
 
-   After the data is processed, verified and migrated to the new collection the status of the migration changes to `VERIFIED`.
-
-7. Run the command below to check the migration status and wait until it reaches `VERIFIED` status:
+7. After the data is processed, verified and migrated to the new collection the status of the migration changes to `VERIFIED`. Use the command below to check status:
 
    ```shell
    curl -k -X GET \
