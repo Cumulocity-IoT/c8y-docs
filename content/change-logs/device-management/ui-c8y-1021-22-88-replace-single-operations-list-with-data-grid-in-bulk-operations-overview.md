@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improved operations list reload loop in bulk operations details
+title: Improved operations list reload functionality in bulk operations details
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
