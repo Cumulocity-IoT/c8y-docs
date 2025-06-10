@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-06-10
 title: Fixed display of multiple branding navigator items on non-enterprise tenants
 product_area: Application enablement & solutions
 change_type:
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63722
 version: 1021.22.83
 ---
-In the past, non-enterprise tenants could see multiple **Branding** navigator items in certain situations, which was confusing and not the intended behavior. With this change, non-enterprise tenants will now always only see a single **Branding** item as expected. 
+In the past, non-enterprise tenants could see multiple **Branding** navigator items in certain situations, which was confusing and not the intended behavior. With this change, non-enterprise tenants will now always only see a single **Branding** item as expected.

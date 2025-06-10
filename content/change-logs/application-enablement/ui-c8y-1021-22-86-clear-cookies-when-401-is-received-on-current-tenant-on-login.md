@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-06-10
 title: Fixed SSO login issues after upgrade
 product_area: Application enablement & solutions
 change_type:

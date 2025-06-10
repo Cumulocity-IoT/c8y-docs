@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-06-10
 title: Improved operations list reload functionality in bulk operations details
 product_area: Device management & connectivity
 change_type:
