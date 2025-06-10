@@ -1,6 +1,6 @@
 ---
 date: ''
-title: Added support for installing other official plugins within the DTM application
+title: Improved subassets handling with multiple tabs and updated the access path.
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
