@@ -210,13 +210,13 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    tar -xf /opt/edge-1017-backup.tar -C /
    ```
    
-3. Run the command below to restore the MongoDB data from the backup. Running this command deploys a pod named `edge-appliance-migration`.
+3. Run the following command to restore the MongoDB data. This command deploys a pod named `edge-appliance-migration`:
 
    ```shell
    curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-appliance-migration-db-restore.sh -O && bash ./c8yedge-appliance-migration-db-restore.sh
    ```
 
-   Execute the below command to monitor the logs and wait for the message `>> Edge DB restore finished.` to appear in the logs before proceeding with the subsequent steps.
+   Then, monitor the logs using the command below. Wait until the message `>> Edge DB restore finished.` appears before proceeding to the next step:
    ```shell
    kubectl logs -f pod/$POD_NAME -n $NAMESPACE
    ```
