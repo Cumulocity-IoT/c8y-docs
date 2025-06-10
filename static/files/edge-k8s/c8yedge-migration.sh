@@ -1,4 +1,27 @@
 #!/bin/bash
+#
+# Migrates MongoDB Data
+#
+# This script automates the process of:
+#   1. Exporting the `users` collection from the MongoDB `edge` database of k8s deployment.
+#   2. Restoring the entire `edge` database of appliance edge from a mounted backup directory.
+#   3. Re-importing the `users` collection to ensure SA.
+#   4. All operations are performed inside a Kubernetes pod with required TLS and credentials fetched from mongo secret.
+#
+# Prerequisites:
+#   - Backup files should be present on the host path: /opt/appliance_mongodb_backup
+#
+# Usage:
+#   ./c8yedge-migration.sh [KUBECONFIG_PATH]
+#
+# Example:
+#   ./c8yedge-migration.sh /etc/rancher/k3s/k3s.yaml
+#
+# Notes:
+#   - Namespace, MongoDB image, service, and secret are dynamically derived from the PSMDB CR.
+#   - CA certificate is mounted from the MongoDB secret and used for SSL verification.
+#
+
 set -euo pipefail
 
 log() {
