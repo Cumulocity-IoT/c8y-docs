@@ -239,7 +239,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
 After successfully migrating your data to Edge 2025, you'll need to configure it to match your previous Edge Appliance VM setup. Here's what you need to do:
 
 #### What's Already Available?
-The following components from your Edge tenant are automatically retained in Edge 2025:
+The following components from your **Edge tenant** are automatically retained in Edge 2025:
    * Web SDK-based applications and plugins
    * Dashboards and Widgets
    * Smart rules
@@ -247,9 +247,9 @@ The following components from your Edge tenant are automatically retained in Edg
    * Branding
 
 #### What Needs to be Re-uploaded?
-* From your Edge tenant
+* From your *Edge tenant**
    * Custom microservices
-* From your {{< management-tenant >}}
+* From your **{{< management-tenant >}}**
    * Custom microservices
    * Web SDK-based applications and plugins
    * Dashboards and Widgets
