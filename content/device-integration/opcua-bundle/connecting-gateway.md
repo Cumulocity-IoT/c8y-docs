@@ -14,7 +14,12 @@ Next, establish a connection between the gateway and the OPC UA server.
 5. Enter the **Status check interval** in seconds. The status check interval specifies how often the gateway actively checks if the server status has changed. These periodic checks are carried out by reading the *ServerStatus* variable on the OPC UA server.
 6. Select the **Security mode** and **Security policy** depending on the server configuration. For more info, see [Security modes](#security-modes).
 7. Select the desired authentication method. For more info, see [Authentication](/device-integration/opcua/#authentication).
-8. Click **Save**.
+8. You can configure the mode of the OPC UA server address scan under **Advanced settings**. If automatic address scanning is enabled the gateway immediately starts the scan after the new server connection is saved.
+   {{< c8y-admon-caution >}}
+   Be cautious with the address scan type. If it is set to "full", the gateway will scan the whole OPC UA server address space. Depending on the address space size and the speed of the OPC UA server this can take from minutes to days. We highly recommend you to set the address scan type to "partial" and configure only those node IDs you really want to scan.
+   You can add further node IDs later and do a rescan in the **Address space** tab of the server object afterwards.
+   {{< /c8y-admon-caution >}}
+9. Click **Save**.
 
 {{< c8y-admon-info >}}
 Once a connection is established, the servers will be located in the **Child devices** tab. In there, the servers will contain additional data such as access to the address space.
