@@ -242,4 +242,4 @@ After migrating data to Edge 2025, proceed to configure it to the same level as 
 
   * If there are any microservice subscriptions configured on the management tenant, these must be manually recreated on the newly deployed Edge instance post-migration. Since management tenants is not migrated.
 
-  * Any custom microservices must be manually uploaded by the user to the newly installed Edge instance under the edge tenant.
+  * Any custom microservices deployed on the appliance must be manually re-uploaded by the user to the newly installed Edge instance under the edge tenant.
