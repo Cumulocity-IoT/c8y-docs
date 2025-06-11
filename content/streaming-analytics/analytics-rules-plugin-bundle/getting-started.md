@@ -36,30 +36,30 @@ This section walks you through creating a simple temperature monitoring model. F
 
     **For Measurement Input block parameters:**
    - **Input Source**:
-     - Enter **Name** (for example, "Threshold alarm for Devices")
-   - Select **Type** as "Source or Destination" from the dropdown list
-   - Select **Restrict to** "Device"
-   - Set **Value Selection** to "From Context"
+      - Enter **Name** (for example, "Threshold alarm for Devices")
+      - Select **Type** as "Source or Destination" from the dropdown list
+      - Select **Restrict to** "Device"
+      - Set **Value Selection** to "From Context"
 ![Template parameter with From Context](/images/streaming-analytics/analytics-rules-plugin/template-parameter.png)
    - **Fragment and Series**:
-     - Enter **Name** (for example, "Input Fragment and Series")
-     - Select **Type** as "Fragment and Series" from the dropdown list
+      - Enter **Name** (for example, "Input Fragment and Series")
+      - Select **Type** as "Fragment and Series" from the dropdown list
 
    **For Threshold block parameters:**
    - **Threshold Value**:
-     - Enter **Name** (for example, "Threshold Value")
-     - Select **Type** as "float" from the dropdown list
+      - Enter **Name** (for example, "Threshold Value")
+      - Select **Type** as "float" from the dropdown list
 
    **For Alarm Output block parameters:**
    - **Alarm Type**:
-     - Enter **Name** (for example, "Alarm Type")
-     - Select **Type** as "string" from the dropdown list
+      - Enter **Name** (for example, "Alarm Type")
+      - Select **Type** as "string" from the dropdown list
    - **Message**:
-     - Enter **Name** (for example, "Alarm Text")
-     - Select **Type** as "string" from the dropdown list
+      - Enter **Name** (for example, "Alarm Text")
+      - Select **Type** as "string" from the dropdown list
    - **Severity**:
-     - Enter **Name** (for example, "Alarm Severity")
-     - Select **Type** as "Severity" from the dropdown list
+      - Enter **Name** (for example, "Alarm Severity")
+      - Select **Type** as "Severity" from the dropdown list
 
    Click **OK** after creating each template parameter.
 
