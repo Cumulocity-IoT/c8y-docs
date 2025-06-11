@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added truncated data alert when global time context is enabled (#9208) [GRAFT][release/y2024] (#9320)
+title: Truncated data alert is now correctly displayed for the data point graph
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63746
 version: 1018.503.165
 ---
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+In some cases, users may have data outside the selected time range that gets truncated. Previously, the truncated data alert was not shown for the data point graph when global time context was enabled. This has been improved, and the alert is now properly displayed.
