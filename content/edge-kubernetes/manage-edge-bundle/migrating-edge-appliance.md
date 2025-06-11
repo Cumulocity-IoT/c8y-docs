@@ -238,7 +238,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
 ### 5. Configuring Edge 2025 post migration
 After successfully migrating your data to Edge 2025, you'll need to configure it to match your previous Edge Appliance VM setup. Here's what you need to do:
 
-#### What's Already Available?
+#### What's already available?
 The following components from your **Edge tenant** are automatically retained in Edge 2025:
    * Web SDK-based applications and plugins
    * Dashboards and Widgets
@@ -246,7 +246,7 @@ The following components from your **Edge tenant** are automatically retained in
    * Analytics Builder models and Apama Event Processing Language (EPL) apps
    * Branding
 
-#### What Needs to be Re-uploaded?
+#### What needs to be re-uploaded?
 * From your *Edge tenant**
    * Custom microservices
 * From your **{{< management-tenant >}}**
@@ -259,4 +259,3 @@ The following components from your **Edge tenant** are automatically retained in
 
 #### Connecting Edge to the cloud
 If your previous Edge Appliance VM was connected to the cloud, you'll need to set up this connection again in Edge 2025. Follow the guide: [Connecting Edge to the cloud](/{{< c8y-edge-version-major >}}/edge-kubernetes/k8-edge-connecting-edge-to-cloud/)
-
