@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Getting started with Analytics rules Plugin
+title: Getting started with Analytics rules plugin
 layout: redirect
 ---
 
