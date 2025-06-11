@@ -247,7 +247,7 @@ The following components from your **Edge tenant** are automatically retained in
    * Branding
 
 #### What needs to be re-uploaded?
-* From your *Edge tenant**
+* From your **Edge tenant**
    * Custom microservices
 * From your **{{< management-tenant >}}**
    * Custom microservices
