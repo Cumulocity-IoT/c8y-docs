@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Getting started with Analytics Rules Plugin
+title: Getting started with Analytics rules Plugin
 layout: redirect
 ---
 
@@ -11,7 +11,7 @@ For more details about Analytics Builder, please refer to [Analytics Builder](/s
 
 ### Prerequisites
 
-Before using the Analytics Rules plugin, ensure that the following requirements are met:
+Before using the Analytics rules plugin, ensure that the following requirements are met:
 - Tenant has subscribed to Streaming Analytics application and has access to Analytics Builder application.
 - Analytics rules plugin is installed to the shell application and feature flag streaming-analytics.analytics-rules-plugin enabled.
 - User privileges to access Analytics Builder models and create new instances of Analytics builder templated models. Please refer to the [Permissions](/streaming-analytics/introduction-analytics/#permissions).
@@ -30,32 +30,38 @@ The model that you add will contain three blocks:
 This section walks you through creating a simple temperature monitoring model. For more detailed Analytics Builder information, refer to the [Understanding models](/streaming-analytics/analytics-builder/#understanding-models).
 
 1. Open Streaming Analytics application and navigate to **Analytics Builder** > **Models** page.
-2. On the toolbar, click **New Model**, enter a model name (e.g., "Create alarm on threshold breach") and click **OK**.
-3. From the palette on the left, expand **Input** and drag the **Measurement Input** block onto the canvas. In the block parameter editor, enter the Fragment and Series as **T=>C** (this refers to temperature measurements in Celsius from your device).
-4. Expand **Calculation** and drag the **Threshold** block onto the canvas. Enter a threshold value (e.g., 90) - this is the temperature limit that will trigger an alarm.
-5. Expand **Output** and drag the **Alarm Output** block onto the canvas. In the block parameter editor, specify the Alarm Type as **c8y_Temperature**. Select the **severity** block parameter as **Major** from the dropdown list.
-6. Connect the blocks by clicking and dragging between their ports (small circles on the sides of blocks):
-   - Connect **Value** output of **Measurement Input** to **Value** input of **Threshold**
-   - Connect **Breached** output of **Threshold** to **Create Alarm** input of **Alarm Output**
-7. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save the newly created model.
+2. On the toolbar, click **New Model**, enter a model name (for example, "Create alarm on threshold breach") and click **OK**.
+3. To create rules for a model using the Analytics rules plugin, the model has to be updated to use template parameters. In the toolbar of the model editor, click the icon <i class="c8y-icon c8y-icon-parameters-on c8y-icon-duocolor icon-20"></i> to open the template parameter dialog.
+4. Configure template parameters for the model blocks by clicking **New template parameter** and creating the following parameters:
 
-When completed, your model will look similar to this:
-
-![Create model for alarms](/images/streaming-analytics/analytics-rules-plugin/create-alarm-model.png)
-
-#### Step 2: Template parameter setup
-
-1. To create rules for a model using the Analytics Rules plugin, proper template parameter configuration of the model is essential. In the toolbar of the model editor, click the icon <i class="c8y-icon c8y-icon-parameters-on c8y-icon-duocolor icon-20"></i> to open the template parameter dialog.
-
-2. Click **New template parameter** to add a template parameter and fill in the details:
-   - Enter **Name** (e.g., "Device context").
-   - Select **Type** as "Source or Destination" from the dropdown list.
-   - Select **Restrict to** "Device".
-   - Set **Value Selection** to "From Context".
-
+    **For Measurement Input block parameters:**
+   - **Input Source**:
+     - Enter **Name** (for example, "Threshold alarm for Devices")
+   - Select **Type** as "Source or Destination" from the dropdown list
+   - Select **Restrict to** "Device"
+   - Set **Value Selection** to "From Context"
 ![Template parameter with From Context](/images/streaming-analytics/analytics-rules-plugin/template-parameter.png)
+   - **Fragment and Series**:
+     - Enter **Name** (for example, "Input Fragment and Series")
+     - Select **Type** as "Fragment and Series" from the dropdown list
 
-3. Click **OK** to save and close the template parameter changes.
+   **For Threshold block parameters:**
+   - **Threshold Value**:
+     - Enter **Name** (for example, "Threshold Value")
+     - Select **Type** as "float" from the dropdown list
+
+   **For Alarm Output block parameters:**
+   - **Alarm Type**:
+     - Enter **Name** (for example, "Alarm Type")
+     - Select **Type** as "string" from the dropdown list
+   - **Message**:
+     - Enter **Name** (for example, "Alarm Text")
+     - Select **Type** as "string" from the dropdown list
+   - **Severity**:
+     - Enter **Name** (for example, "Alarm Severity")
+     - Select **Type** as "Severity" from the dropdown list
+
+   Click **OK** after creating each template parameter.
 
 For a model to be available for rule creation in the plugin, it must have exactly one template parameter configured as follows:
 
@@ -65,7 +71,7 @@ For a model to be available for rule creation in the plugin, it must have exactl
 | Value Selection | From Context |
 
 - The template parameter **Type** must specifically be "Source or Destination".
-- When you select "Source or Destination" type, specify the context restrictions: Device, Groups, or both (multi-selectable). In our example, we selected only Device.
+- When you select "Source or Destination" as the type, specify the context restriction by selecting one or more supported values. In our example, we selected only Device.
 
 For detailed information about creating and managing template parameters in Analytics Builder, refer to the [Managing Template Parameters documentation](/streaming-analytics/analytics-builder/#managing-template-parameters).
 
@@ -73,26 +79,44 @@ For detailed information about creating and managing template parameters in Anal
 Only one template parameter per model can have "From Context" value selection.
 {{< /c8y-admon-info>}}
 
-#### Step 3: Update block parameters to use template parameter
+5. From the palette on the left, expand **Input** and drag the **Measurement Input** block onto the canvas.  
+   In the block parameter editor, set the following parameters to **Template parameter** <img src="/images/streaming-analytics/analytics-builder/option-template-parameter.png" alt="Option for selecting a template parameter" style="display:inline-block; margin:0">, then select the corresponding values from the dropdown:
 
-1. In the canvas, select the **Measurement Input** block and update the first block parameter **Input Source** from type **Value** to **Template parameter**
-   ![Select template parameter type](/images/streaming-analytics/analytics-rules-plugin/select-tp-type.png)
-   and then click on the input field to select **Device context** from the dropdown.
+   - **Input Source**: "Threshold alarm for Devices"  
+   - **Fragment and Series**: "Fragment and Series"
 
-2. Select the **Alarm Output** block and similarly update the first block parameter **Output Destination** from type **Value** to **Template parameter** and then click on the input field to select **Device context** from the dropdown.
+6. Expand **Calculation** and drag the **Threshold** block onto the canvas.  
+   - Set **Threshold Value** to **Template parameter**, then select "Threshold Value" from the dropdown.
 
-3. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save the model.
+7. Expand **Output** and drag the **Alarm Output** block onto the canvas.  
+   In the block parameter editor, set the following parameters to **Template parameter**, then select the corresponding values from the dropdown:
 
-#### Step 4: Create Analytics Rule from Device Management application
+   - **Output Destination**: "Threshold alarm for Devices"  
+   - **Alarm Type**: "Alarm Type"  
+   - **Message**: "Alarm Text"  
+   - **Severity**: "Alarm Severity"
+
+8. Connect the blocks by clicking and dragging between their ports (small circles on the sides of blocks):
+   - Connect **Value** output of **Measurement Input** to **Value** input of **Threshold**
+   - Connect **Breached** output of **Threshold** to **Create Alarm** input of **Alarm Output**
+
+9. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save the newly created model.
+
+When completed, your model will look similar to this:
+
+![Create model for alarms](/images/streaming-analytics/analytics-rules-plugin/create-alarm-model.png)
+
+#### Step 2: Create an instance of model using Analytics rules plugin
 
 1. Navigate to **Device Management** application.
 2. Go to **Devices** > **All devices** and select a device.
-3. Click the **Analytics rules** tab (embedded as one of the device details tabs). You will see the empty analytics rules page.
+3. Click the **Analytics rules** tab (embedded as one of the device details tabs).
+Please refer to the [Prerequisites](#prerequisites) section to ensure all requirements are met.
    ![Analytics rule tab](/images/streaming-analytics/analytics-rules-plugin/empty-analytics-rule.png)
-4. Click **Add rule** to open the Add analytics rule dialog box. Only models that have been configured with **From Context** template parameters restricted to **Device** will be listed. Select your configured model and click **OK**.
+4. Click **Add rule** to open the Add analytics rule dialog box. Since we are currently in the **Device** context, only models that have been configured with **From Context** template parameters restricted to **Device** will be visible here. Select your configured model and click **OK**.
    ![Add rule for the selected model](/images/streaming-analytics/analytics-rules-plugin/add-rule-for-selected-model.png)
 5. Configure the rule parameters:
-   - Update the rule name if needed.
+   - Update the name or add a note if desired.
    - Click **Save** to save the rule, or toggle to **Active** to save and deploy immediately.
 6. Your rule now appears in the Analytics rules list, showing its status (Active/Inactive).
    ![Analytics rules list](/images/streaming-analytics/analytics-rules-plugin/analytics-rules-list.png)
@@ -105,7 +129,7 @@ You can also create analytics rules using pre-built sample models from Analytics
 
 #### Step 1: Create model from sample
 1. Navigate to **Analytics Builder** > **Samples** page.
-2. Click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of your desired sample (e.g., "On alarm execute operation") and select **Create model from sample**.
+2. Click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of your desired sample (for example, "On alarm execute operation") and select **Create model from sample**.
    ![Create model from sample](/images/streaming-analytics/analytics-rules-plugin/create-model-from-sample.png)
 3. The model editor opens with the sample model ready for use.
 
@@ -114,8 +138,8 @@ You can also create analytics rules using pre-built sample models from Analytics
 2. Ensure one template parameter is configured with:
    - **Type**: Source or Destination
    - **Value Selection**: From Context
-   - **Restrict to**: Device, Groups, or both as needed
+   - **Restrict to**: Device, Groups as needed
 3. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save the model.
 
 #### Step 3: Create rule from Device Management application
-Follow the same steps as described in [Step 4: Create Analytics Rule from Device Management application](#step-4-create-analytics-rule-from-device-management-application) above.
+Follow the same steps as described in [Step 2: Create an instance of model using Analytics rules plugin](#step-4-create-analytics-rule-from-device-management-application) above.
