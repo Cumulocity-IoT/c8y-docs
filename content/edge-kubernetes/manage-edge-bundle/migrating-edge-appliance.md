@@ -238,4 +238,6 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
 ### 5. Configuring Edge 2025 post migration
 After migrating data to Edge 2025, proceed to configure it to the same level as Edge Appliance VM.
 
-  * If you have connected your Edge appliance VM to the cloud, follow the instructions [Connecting Edge to the cloud](/{{< c8y-edge-version-major >}}/edge-kubernetes/k8-edge-connecting-edge-to-cloud/) to do the same in Edge 2025. 
+  * If you have connected your Edge appliance VM to the cloud, follow the instructions [Connecting Edge to the cloud](/{{< c8y-edge-version-major >}}/edge-kubernetes/k8-edge-connecting-edge-to-cloud/) to do the same in Edge 2025.
+
+  * If there are any microservice subscriptions configured on the management tenant, these must be manually recreated on the newly deployed Edge instance post-migration. Since management tenants is not migrated.
