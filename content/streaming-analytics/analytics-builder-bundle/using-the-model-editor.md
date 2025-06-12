@@ -390,6 +390,10 @@ Models with no template parameters can be directly activated in the model manage
         -   **Required** (default). Instance deployment requires a value for this template parameter.
         -   **Optional**. The template parameter can remain blank or can be set later by the instance maintainer. When you select this option, it is not possible to specify a default value.
         -   **From Context**. Applicable only for **Source or Destination type**. The input will be automatically chosen based on the context where the instance is created. Example: Device context or Groups context.
+        ![Template parameter with From Context](/images/streaming-analytics/analytics-builder/template-parameter.png)
+{{< c8y-admon-info>}}
+Only one template parameter per model can have "From Context" value selection.
+{{< /c8y-admon-info>}}
     
     -   **Default Value**. You can only specify a default value when the **Value Selection** option is set to **Required**.
 
