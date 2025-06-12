@@ -12,8 +12,8 @@ For more details about Analytics Builder, please refer to [Analytics Builder](/s
 ### Prerequisites
 
 Before using the Analytics rules plugin, ensure that the following requirements are met:
-- Tenant has subscribed to Streaming Analytics application and has access to Analytics Builder application.
-- Analytics rules plugin is installed to the shell application and feature flag streaming-analytics.analytics-rules-plugin enabled.
+- Tenant is subscribed to Streaming Analytics microservice that supports Analytics Builder capability.
+- Analytics rules plugin is installed to the shell application and feature flag `streaming-analytics.analytics-rules-plugin` enabled.
 - User privileges to access Analytics Builder models and create new instances of Analytics builder templated models. Please refer to the [Permissions](/streaming-analytics/introduction-analytics/#permissions).
 
 ### Creating your first analytics rule
