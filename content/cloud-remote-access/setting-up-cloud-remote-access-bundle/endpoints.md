@@ -33,7 +33,7 @@ The following versions of the VNC protocol are currently supported:
 * RFB 003.008
 
 The functionality has been tested on the following VNC servers:
-Real VNC 5.3.2
+* Real VNC 5.3.2
 * Tiger VNC 1.6.0/1.7.0
 * TightVNC 1.3.9
 * EfonVNC 4.2

@@ -15,7 +15,7 @@ To use Cloud Remote Access, you need
 ### Set up your device
 
 
-To configure your device for compatibility with Cloud Remote Access functionality you need to install thin-edge.io. This solution is fully integrated with Cloud Remote Access and can be easily deployed on any Linux-based device, eliminating the need for any custom integration.
+To configure your device for compatibility with the Cloud Remote Access functionality, you must install thin-edge.io. Thin-edge.io is fully integrated with Cloud Remote Access and can be easily deployed on any Linux-based device, eliminating the need for any custom integration.
 
 Furthermore, devices can report their supported protocols using [SmartREST template 150](/smartrest/mqtt-static-templates/#150) which offers two significant advantages:
 
