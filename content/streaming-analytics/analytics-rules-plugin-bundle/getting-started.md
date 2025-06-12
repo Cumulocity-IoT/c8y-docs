@@ -8,7 +8,7 @@ outputs:
 helpcontent:
 - label: analytics-rules-plugin
   title: Analytics rules
-  content: "The Analytics Rules plugin extends the capabilities of Analytics Builder within Streaming Analytics. It allows users to create, deploy, and manage Analytics Builder models directly from device and group contexts in applications like Device Management and Cockpit."
+  content: "The Analytics rules plugin extends the capabilities of Analytics Builder within Streaming Analytics. It allows users to create, deploy, and manage Analytics Builder models directly from device and group contexts in applications like Device Management and Cockpit."
 ---
 
 ### What is Analytics Rules Plugin {#what-is-analytics-rules-plugin}
