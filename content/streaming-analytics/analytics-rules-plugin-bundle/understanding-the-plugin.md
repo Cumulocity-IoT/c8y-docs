@@ -20,7 +20,7 @@ This process requires switching between applications and can be time-consuming w
 For detailed information about the instance editor workflow, refer to the [Instance Editor documentation](/streaming-analytics/analytics-builder/#using-the-instance-editor).
 
 #### With Analytics rules plugin
-The Analytics rules plugin streamlines this process by enabling analytics builder model instance creation and deployment directly from device and group contexts within shell applications, eliminating the need for switching to different application.
+The Analytics rules plugin streamlines this process by enabling analytics builder model instance creation and deployment directly from device and group contexts, eliminating the need for switching to different application.
 
 ### Understanding the Analytics Rules Interface
 

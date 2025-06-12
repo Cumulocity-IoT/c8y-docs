@@ -20,12 +20,12 @@ For more details about Analytics Builder, please refer to [Analytics Builder](/s
 
 Before using the Analytics rules plugin, ensure that the following requirements are met:
 - Tenant is subscribed to Streaming Analytics microservice that supports Analytics Builder capability.
-- Analytics rules plugin is installed to the shell application and feature flag `streaming-analytics.analytics-rules-plugin` enabled.
+- Analytics rules plugin is installed to the desired application and feature flag `streaming-analytics.analytics-rules-plugin` enabled.
 - User privileges to access Analytics Builder models and create new instances of Analytics builder templated models. Please refer to the [Permissions](/streaming-analytics/introduction-analytics/#permissions).
 
 ### Creating your first analytics rule
 
-This topic provides the basic workflow for creating your first analytics rule using the plugin from shell applications like Device Management. You will create a simple analytics model that creates an alarm when temperature breaches a given threshold value. The steps below require that at least one device is already registered in {{< product-c8y-iot >}}. Preferably, this device is already sending measurement values to {{< product-c8y-iot >}}.
+This topic provides the basic workflow for creating your first analytics rule using the plugin from applications like Device Management. You will create a simple analytics model that creates an alarm when temperature breaches a given threshold value. The steps below require that at least one device is already registered in {{< product-c8y-iot >}}. Preferably, this device is already sending measurement values to {{< product-c8y-iot >}}.
 
 The model that you add will contain three blocks:
 - An input block which receives measurements from devices, groups, or assets.
