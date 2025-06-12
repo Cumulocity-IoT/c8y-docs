@@ -22,6 +22,6 @@ content/authentication @kowa-c8y @BeateRixen
 /content/edge/ @bbyreddy @rthrippleton @BeateRixen
 /content/edge-kubernetes/ @bbyreddy @rthrippleton @BeateRixen
 
-/content/streaming-analytics/ @BeateRixen @skom-c8y
+/content/streaming-analytics/ @BeateRixen @skom-c8y @ben-c8y
 # 'block-reference-bundle' is automatically and frequently committed to - don't bother _too many_ CODEOWNERS
-/content/streaming-analytics/block-reference-bundle/ @skom-c8y
+/content/streaming-analytics/block-reference-bundle/ @skom-c8y @ben-c8y

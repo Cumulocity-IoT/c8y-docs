@@ -57,6 +57,8 @@ The address space is automatically scanned when a connection between the gateway
 In case a node cannot be read, the scan process skips this node and continues.
 An error entry is written to the opcua-device-gateway log file to provide information (more information available in debug level).
 
+To manually scan the address space click **Rescan**. You can monitor the progress by checking the rescan operation in the **Control** tab.
+
 ![Gateway events tab](/images/device-protocols/opcua/opcua-address.png)
 
 ### Monitoring measurements {#monitoring-measurements}
