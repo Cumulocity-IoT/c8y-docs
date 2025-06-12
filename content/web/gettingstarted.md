@@ -140,9 +140,7 @@ release the application and deploy it.
 
 ### Deploying your application
 
-The CLI provides a command to deploy the application, you can simply run the command `c8ycli deploy`
-and the current application will be deployed. However, before deploying your application you need to
-build it, you can run `c8ycli build` to do so.
+The Angular CLI provides a custom `deploy` command to upload the application. You can run the command `ng deploy` and the current application will be deployed.
 
 For deployment you need an application role, username, password and a tenant. You can also run it by
 providing this information as parameters. Use the following code to build and deploy the application
