@@ -40,6 +40,8 @@ This section walks you through creating a simple temperature monitoring model. F
 2. On the toolbar, click **New Model**, enter a model name (for example, "Create alarm on threshold breach") and click **OK**.
 3. From the palette on the left, expand **Input** and drag the **Measurement Input** block onto the canvas. In the block parameter editor:
    - For **Input Source**, click the value dropdown, select **Template parameter** <img src="/images/streaming-analytics/analytics-builder/option-template-parameter.png" alt="Option for selecting a template parameter" style="display:inline-block; margin:0">, then enter "Threshold alarm for Devices".
+   ![Template parameter with From Context](/images/streaming-analytics/analytics-rules-plugin/select-tp-type.png)
+
    - For **Fragment and Series**, click the value dropdown, select **Template parameter**, then enter **Input Fragment and Series**.
 
 4. Expand **Calculation** and drag the **Threshold** block onto the canvas. In the block parameter editor:
