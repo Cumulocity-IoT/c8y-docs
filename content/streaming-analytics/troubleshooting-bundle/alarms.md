@@ -85,7 +85,7 @@ To diagnose the cause of an unexpected restart, you can try the following:
     As mentioned in the above point, re-activate the EPL apps and analytic models that were active before and then check the logs.
 
 - Check the audit logs. The audit logs are accessible via the Administration application and the audit API.
-See [Audit logs](/standard-tenant/audit-logs) and
+See [Audit logs](/standard-tenant/monitoring/#audit-logs) and
 [Audit API](https://{{< domain-c8y >}}/api/core/#tag/Audit-API) in the {{< openapi >}} for details of accessing the audit logs.
 
 In safe mode, all previously active analytic models and EPL apps are deactivated and must be manually re-activated.

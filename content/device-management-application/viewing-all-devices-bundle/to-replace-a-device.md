@@ -34,4 +34,4 @@ If the execution of a given step has failed, you can see the error details by ex
 
 The **Close** button brings you back the the updated device list. The replacement device will have been removed from {{< product-c8y-iot >}} while all data sent by the new physical device will be linked to the platform representation of the original device. This ensures that the physical replacement remains transparent to users.
 
-In order to keep track of the replacements done for a given device an [event](/device-management-application/viewing-device-details/#events) and an [audit log](/standard-tenant/audit-logs/) are created for every replacement.
+In order to keep track of the replacements done for a given device an [event](/device-management-application/viewing-device-details/#events) and an [audit log](/standard-tenant/monitoring/#audit-logs) are created for every replacement.
