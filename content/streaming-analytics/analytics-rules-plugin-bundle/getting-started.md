@@ -102,3 +102,30 @@ You can also create analytics rules using pre-built sample models from Analytics
 
 #### Step 3: Create rule from Device Management application
 Follow the same steps as described in [Step 2: Create an instance of model using Analytics rules plugin](#step-4-create-analytics-rule-from-device-management-application) above.
+
+### Troubleshooting
+
+1. No models available in Add Analytics rule dialog box.
+   -  Ensure Analytics Builder models have "From Context" template parameters configured.
+   -  Verify your current context matches model "Source or Destination" type template parameter restrictions.
+
+2. Previously created rules don't appear in the Analytics rules list.
+   - Verify rules are set to **Production mode** in Analytics Builder instance editor.
+   - Confirm you're viewing the correct device or group context.
+   - Check if rules were created for a different context.
+
+3. Error on Analytics rule deployment
+   - Click  the runtime error icon <img src="/images/streaming-analytics/analytics-builder/runtime_error.png" alt="Error icon" style="display:inline-block; margin:0"> to display information on what went wrong.
+
+### Troubleshooting
+
+1. **No models available in Add Analytics rule dialog**
+   - Ensure Analytics Builder models have template parameters configured with "From Context" value selection.
+   - Verify your current context matches the model's "Source or Destination" type restrictions.
+
+2. **Previously created rules don't appear in the Analytics rules list**
+   - Verify rules are set to **Production mode** in the Analytics Builder instance editor.
+   - Confirm you're viewing the correct device or group context.
+
+3. **Error in Analytics rule deployment**
+   - Click the runtime error icon <img src="/images/streaming-analytics/analytics-builder/runtime_error.png" alt="Error icon" style="display:inline-block; margin:0"> to view information about the error.
