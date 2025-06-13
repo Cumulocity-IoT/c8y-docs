@@ -15,11 +15,11 @@ The device list will reflect your changes and only show the selected columns.
 
 ### To add custom columns {#to-add-custom-columns}
 
-Device grid offers the option to add custom columns to display selected additional device properties. There are two alternatives for adding custom columns.
+The device grid offers the option to add custom columns to display selected additional device properties. There are two alternative ways for adding custom columns.
 
-#### With Digital Twin Manager
+#### With Digital Twin Manager {#with-digital-twin-manager}
 
-In case **Digital Twin Manager** application is available on your tenant you can use pre-configured asset properties to add as custom columns. Read how to create asset properties in the [Asset models > Asset properties](/dtm/asset-types/#asset-properties) section.
+If the **Digital Twin Manager** application is available on your tenant, you can use pre-configured asset properties to add them as custom columns. Read how to create asset properties in the [Asset models > Asset properties](/dtm/asset-types/#asset-properties) section.
 
 1. In the **Configure columns** dropdown, click **Add custom column**. An **Asset properties** modal will open that lets you browse through all declared asset properties.<br>
    ![Configure columns](/images/users-guide/DeviceManagement/devmgmt-grid-custom-columns.png)<br>
@@ -27,9 +27,9 @@ In case **Digital Twin Manager** application is available on your tenant you can
    in the first column indicates that the property is a complex property. Click on the arrow to expand the list of its nested properties.
 3. Check the radio button and the new column will be added and displayed in the device list.
 
-#### By defining a custom property path
+#### By defining a custom property path {#by-defining-a-custom-path-property}
 
-In case the **Digital Twin Manager** application is not available on your tenant, you can still create custom columns by manually providing the path to the property you want to display.
+If the **Digital Twin Manager** application is not available on your tenant, you can still create custom columns by manually providing the path to the property you want to display.
 
 1. In the **Configure columns** dropdown, click **Add custom column**.<br>
    ![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
