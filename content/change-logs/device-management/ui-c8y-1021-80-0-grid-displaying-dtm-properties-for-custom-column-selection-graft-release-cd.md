@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Grid displaying DTM properties for custom column selection. [GRAFT][release/cd] (#9353)
+title: Grid displaying device type mapping properties for custom column selection
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
