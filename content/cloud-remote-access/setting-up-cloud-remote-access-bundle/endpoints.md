@@ -26,6 +26,20 @@ To be able to configure an endpoint, you need ADMIN permission for "Remote acces
 
 Once the connection is established, a new browser tab will open displaying the front screen or operating panel of the remote device you are connected to. The top bar of the screen will show "starting VNC handshake" when the process is starting.
 
+{{< c8y-admon-info >}}
+The following versions of the VNC protocol are currently supported:
+* RFB 003.003
+* RFB 003.007
+* RFB 003.008
+
+The functionality has been tested on the following VNC servers:
+* Real VNC 5.3.2
+* Tiger VNC 1.6.0/1.7.0
+* TightVNC 1.3.9
+* EfonVNC 4.2
+* Vino
+{{< /c8y-admon-info >}}
+
 
 #### To add a remote access endpoint via SSH {#to-add-a-remote-access-endpoint-via-ssh}
 
@@ -63,6 +77,19 @@ The following algorithms are supported when adding new keys:
 - ECDSA
 - ED25519
 
+{{< c8y-admon-info >}}
+Limitations:
+* Character support:
+International characters are not supported.
+Only a limited set of control characters is functional.
+* Input restrictions:
+Mouse movements are not supported.
+* Protocol compatibility:
+SSH version 1 is not supported; only SSH version 2 is available.
+* Display behavior:
+Text reflow does not occur when the window width changes.
+{{< /c8y-admon-info >}}
+
 #### To add a remote access endpoint via Telnet {#to-add-a-remote-access-endpoint-via-telnet}
 
 1. Enter the host (IP address or hostname) and the port of the server.
@@ -72,6 +99,13 @@ The following algorithms are supported when adding new keys:
 {{< c8y-admon-important >}}
 Telnet is considered to be an insecure protocol lacking built-in security measures. For network communication in a production environment we highly recommend you to use the SSH protocol instead.
 {{< /c8y-admon-important >}}
+
+#### To add a remote access endpoint via Passthrough {#to-add-a-remote-access-endpoint-via-passthrough}
+1. Enter the host (IP address or hostname) and the port of the server.
+2. Click **Save** to add the endpoint.
+![Remote access Passthrough endpoint](/images/cra/cra-endpoint-passthrough.png)
+
+Visit the [Cumulocity CLI](https://goc8ycli.netlify.app/docs/examples/remoteaccess/) documentation to learn more about how to set up the passthrough connection from the device to your local machine using the local proxy that is embedded in the CLI.
 
 #### To edit an endpoint {#to-edit-an-endpoint}
 
@@ -88,7 +122,7 @@ An active connection will not be terminated automatically after the endpoint was
 #### To connect to an endpoint {#to-connect-to-an-endpoint}
 
 To connect to configured endpoints, select an endpoint in the **Remote access** tab and click **Connect**.
-The connection to the configured remote device is established and the VNC, SSH or Telnet screen is shared in the client area.
+The connection to the configured remote device is established and the screen is shared in the client area.
 
 ![Telnet connection](/images/cra/cra-connect-telnet.png)
 
