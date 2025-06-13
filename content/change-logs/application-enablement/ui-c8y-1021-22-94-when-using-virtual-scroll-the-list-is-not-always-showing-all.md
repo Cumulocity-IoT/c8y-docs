@@ -1,6 +1,6 @@
 ---
 date: ""
-title: When using virtual scroll the list is not always showing all items [GRAFT][release/y2025] (#9357)
+title: Virtual scroll now always shows all items in a list
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
