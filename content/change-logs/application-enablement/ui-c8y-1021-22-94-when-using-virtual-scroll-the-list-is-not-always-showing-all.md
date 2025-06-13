@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63835
 version: 1021.22.94
 ---
-Co-authored-by: Lukasz Janusz <lukasz.janusz@cumuloicty.com>
+In places where virtual scroll was implemented, such as the "Data points table" widget, it could happen on rare occasions that not the entire list was loaded. This issue has now been resolved. Virtual scroll now always shows all list items.
