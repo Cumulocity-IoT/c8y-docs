@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63835
 version: 1021.80.1
 ---
-Co-authored-by: Lukasz Janusz <lukasz.janusz@cumuloicty.com>
+In places where virtual scroll was implemented, such as `Data points table`, on rare occasions not the entire list would load. This issue has now been resolved.
