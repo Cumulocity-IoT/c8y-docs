@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Grid displaying device type mapping properties for custom column selection
+title: Asset-property picker for custom grid columns
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
