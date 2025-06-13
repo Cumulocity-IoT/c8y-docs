@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Asset-property picker for custom grid columns
+title: List of asset property definitions for data grid custom columns
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
