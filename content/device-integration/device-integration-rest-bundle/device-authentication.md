@@ -5,8 +5,8 @@ layout: redirect
 ---
 
 Devices can authenticate to the {{< product-c8y-iot >}} platform using:
-* Device User credentials i.e., Using Device username and password
-* Certificate Authentication i.e., Using X509 certificates over a defined REST endpoint protocol to procure the JWT session token on port 8443.
+* Device user credentials, that is, using the device username and password,
+* Certificate Authentication, that is, using X509 certificates over a defined REST endpoint protocol to procure the JWT session token on port 8443.
 
 Mutual TLS (mTLS) is a security protocol that uses X.509 certificates for both client and server authentication in a communication session.
 
