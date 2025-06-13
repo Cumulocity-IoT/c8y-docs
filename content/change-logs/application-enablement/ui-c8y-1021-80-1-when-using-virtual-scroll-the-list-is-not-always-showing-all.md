@@ -1,6 +1,6 @@
 ---
 date: ""
-title: When using virtual scroll the list is not always showing all items [GRAFT][release/cd] (#9356)
+title: Virtual scroll does not always show all items in a list
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
