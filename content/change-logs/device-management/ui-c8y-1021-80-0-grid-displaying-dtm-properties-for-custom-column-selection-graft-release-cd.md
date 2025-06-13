@@ -14,5 +14,5 @@ build_artifact:
 ticket: DM-4563
 version: 1021.80.0
 ---
-In the data grid views, where custom columns are used the “Add custom column” dialog shows a searchable list of asset-property definitions when the Digital Twin Manager (DTM) asset API is available. Choosing a property automatically sets the column’s header and path, eliminating manual typing.
+In data grid views, when adding a custom column, you can now search through a list of asset-property definitions when the Digital Twin Manager (DTM) asset API is available. The column header and path are filled in automatically. If the DTM service cannot be reached, the application falls back to the previous dialog, so existing workflows continue to work.
 If the DTM service cannot be reached, the application transparently falls back to the previous dialog, so existing workflows continue to work.
