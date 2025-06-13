@@ -20,7 +20,7 @@ For more details about Analytics Builder, please refer to [Analytics Builder](/s
 
 Before using the Analytics rules plugin, ensure that the following requirements are met:
 - Tenant is subscribed to Streaming Analytics microservice that supports Analytics Builder capability.
-- Analytics rules plugin is installed to the desired application and feature flag `streaming-analytics.analytics-rules-plugin` enabled.
+- Analytics rules plugin is installed to the desired application and feature flag `streaming-analytics.analytics-rules-plugin` is enabled.
 - User privileges to access Analytics Builder models and create new instances of Analytics builder templated models. Please refer to the [Permissions](/streaming-analytics/introduction-analytics/#permissions).
 
 ### Creating your first analytics rule
@@ -37,31 +37,28 @@ The model that you add will contain three blocks:
 This section walks you through creating a simple temperature monitoring model. For more detailed Analytics Builder information, refer to the [Understanding models](/streaming-analytics/analytics-builder/#understanding-models).
 
 1. Open Streaming Analytics application and navigate to **Analytics Builder** > **Models** page.
-2. On the toolbar, click **New Model**, enter a model name (for example, "Create alarm on threshold breach") and click **OK**.
+2. On the toolbar, click **New Model**, enter a model name (for example, "Create alarm on threshold") and click **OK**.
 3. From the palette on the left, expand **Input** and drag the **Measurement Input** block onto the canvas. In the block parameter editor:
-   - For **Input Source**, click the value dropdown, select **Template parameter** <img src="/images/streaming-analytics/analytics-builder/option-template-parameter.png" alt="Option for selecting a template parameter" style="display:inline-block; margin:0">, then enter "Threshold alarm for Devices".
+   - For **Input Source**, click the value dropdown, select **Template parameter** <img src="/images/streaming-analytics/analytics-builder/option-template-parameter.png" alt="Option for selecting a template parameter" style="display:inline-block; margin:0">, then give a name to the template parameter. Example "Measurement Source".
    ![Template parameter with From Context](/images/streaming-analytics/analytics-rules-plugin/select-tp-type.png)
 
-   - For **Fragment and Series**, click the value dropdown, select **Template parameter**, then enter **Input Fragment and Series**.
-
+   - For **Fragment and Series**, click the
+    value dropdown, select **Template parameter**, then provide a suitable name, example: **Input Fragment and Series**.
 4. Expand **Calculation** and drag the **Threshold** block onto the canvas. In the block parameter editor:
-   - For **Threshold Value**, click the value dropdown, select **Template parameter**, then enter "Threshold Value".
-
+   - For **Threshold Value**, click the value dropdown, select **Template parameter**, then provide a name, example: "Threshold Value".
 5. Expand **Output** and drag the **Alarm Output** block onto the canvas. In the block parameter editor:
-   - For **Output Destination**, click the value dropdown, select **Template parameter**, then select "Threshold alarm for Devices" from the dropdown.
-   - For **Alarm Type**, click the value dropdown, select **Template parameter**, then enter "Alarm Type".
-   - For **Message**, click the value dropdown, select **Template parameter**, then enter "Alarm Text".
-   - For **Severity**, click the value dropdown, select **Template parameter**, then enter "Alarm Severity".
+   - For **Output Destination**, click the value dropdown, select **Template parameter**, then use the same template parameter given for **Input Source** of the "Measurement Input" block, example: "Measurement Source".
+   - For **Alarm Type**, click the value dropdown, select **Template parameter**, then provide a name, example:  "Alarm Type".
+   - For **Message**, click the value dropdown, select **Template parameter**, then provide a name, example: "Alarm Text".
+   - For **Severity**, click the value dropdown, select **Template parameter**, then provide a name, example: "Alarm Severity".
 6. Connect the blocks by clicking and dragging between their ports (small circles on the sides of blocks):
    - Connect **Value** output of **Measurement Input** to **Value** input of **Threshold**
    - Connect **Breached** output of **Threshold** to **Create Alarm** input of **Alarm Output**
-
-7. In the toolbar of the model editor, click the template parameter icon <i class="c8y-icon c8y-icon-parameters-on c8y-icon-duocolor icon-20"></i> to open the template parameter dialog. Ensure the template parameter **"Threshold alarm for Devices"** is configured by updating the "Source or Destination" type restriction to select one or more values from the dropdown (for example, Device) and setting **Value Selection** to "From Context". Click **OK** to save the changes.
+7. In the toolbar of the model editor, click the template parameter icon <i class="c8y-icon c8y-icon-parameters-on c8y-icon-duocolor icon-20"></i> to open the template parameter dialog. Ensure the template parameter entry provided for **Input Source** of the **Measurement Input** block (example : "Measurement Source") has "Source or Destination" updated to include one or more values from the **Restrict to** dropdown (for example, Device) and set **Value Selection** to "From Context". Click **OK** to save the changes.
 
 ![Template parameter with From Context](/images/streaming-analytics/analytics-rules-plugin/template-parameter.png)
 
 For detailed information about creating and managing template parameters in Analytics Builder, refer to the [Managing Template Parameters documentation](/streaming-analytics/analytics-builder/#managing-template-parameters).
-
 
 8. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save the model.
 
@@ -99,22 +96,21 @@ You can also create analytics rules using pre-built sample models from Analytics
 
 #### Step 2: Configure template parameters
 1. Click the template parameter icon <i class="c8y-icon c8y-icon-parameters-on c8y-icon-duocolor icon-20"></i> in the toolbar.
-2. Ensure the template parameter **"Device or group of devices"** is configured by updating the "Source or Destination" type restriction to select one or more values from the dropdown (for example, Device, Groups) and setting **Value Selection** to "From Context".
+2. Ensure the template parameter entry provided for **Input Source** of the **Alarm Input** block (for example, "Device or group of devices") has "Source or Destination" updated to include one or more values from the **Restrict to** dropdown (for example, Device) and set **Value Selection** to "From Context". Click **OK** to save the changes.
 3. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save the model.
 
 #### Step 3: Create rule from Device Management application
-Follow the same steps as described in [Step 2: Create an instance of model using Analytics rules plugin](#step-4-create-analytics-rule-from-device-management-application) above.
+Follow the same steps as described in [Step 2: Create an instance of model using Analytics rules plugin](#step-2-create-an-instance-of-model-using-analytics-rules-plugin) above.
 
 
 ### Troubleshooting
 
-1. **No models available in Add Analytics rule dialog**
+1. **No models available in Add rule dialog**
    - Ensure Analytics Builder models have template parameters configured with "From Context" value selection.
    - Verify your current context matches the model's "Source or Destination" type restrictions.
-
 2. **Previously created rules don't appear in the Analytics rules list**
-   - Verify rules are set to **Production mode** in the Analytics Builder instance editor.
+   - Verify Analytics instances are set to **Production mode** in the Analytics Builder instance editor.
+   - Check if Analytics instance names are set in the Analytics Builder instance editor.
    - Confirm you're viewing the correct device or group context.
-
 3. **Error in Analytics rule deployment**
    - Click the runtime error icon <img src="/images/streaming-analytics/analytics-builder/runtime_error.png" alt="Error icon" style="display:inline-block; margin:0"> to view information about the error.
