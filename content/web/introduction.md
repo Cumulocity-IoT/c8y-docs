@@ -39,15 +39,15 @@ The Web SDK consists of the following packages deployed to npm in the scope `@c8
 
 These packages depend on each other from top to bottom. While the `@c8y/client` is a very low-level API interface with nearly no dependencies, the `@c8y/<<apps>>` (for example `@c8y/cockpit`) provide feature rich applications by including `@c8y/ngx-components` and `@c8y/client`.
 
-The goal of these splittings is to provide the right package for every use case, e.g. if you want to build a small application with React you could use the `@c8y/client` to do the API interaction. If you need a brandable feature rich application which is close to our Cockpit or Device Mangement application you could use `@c8y/ngx-components` together with `@c8y/stlyes`.
+The goal of these splittings is to provide the right package for every use case. For example, if you want to build a small application with React you could use the `@c8y/client` to do the API interaction. If you need a brandable feature rich application which is close to our Cockpit or Device Management application you could use `@c8y/ngx-components` together with `@c8y/stlyes`.
 
 Following is a list which explains the use cases of each package.
 
 * [@c8y/client](https://www.npmjs.com/package/@c8y/client): Use this client to access our API. The client is isomorphic, that means it could be used in node.js and in the browser.
 * [@c8y/ngx-components](https://www.npmjs.com/package/@c8y/ngx-components): A components collection and data access layer for Angular applications. This package can be used to build Angular applications.
 * [@c8y/style](https://www.npmjs.com/package/@c8y/style): The styles for the look and feel of an application. Extend this package to apply a custom branding to your application.
-* @c8y/&lt;&lt;apps&gt;&gt;: The different applications. E.g. `@c8y/cockpit`, `@c8y/devicemanagement` and `@c8y/administraiton`.
-* [@c8y/websdk](https://www.npmjs.com/package/@c8y/websdk): The scaffolding package that you can use to add the Cumulocity applicaiton to your Angular application.
+* @c8y/&lt;&lt;apps&gt;&gt;: The different applications. For example, `@c8y/cockpit`, `@c8y/devicemanagement` and `@c8y/administration`.
+* [@c8y/websdk](https://www.npmjs.com/package/@c8y/websdk): The scaffolding package that you can use to add the Cumulocity application to your Angular application.
 * [@c8y/devkit](https://www.npmjs.com/package/@c8y/devkit): The builders to build or run a dev server.
 
 #### @c8y/client: Accessing data
@@ -64,7 +64,7 @@ ngx-components is a components collection and data access layer for Angular appl
 
 #### @c8y/style: Branding and theming
 
-We recommend to use our build in branding editor to change the look and feel of all applications in one go. If you still want to change certain style options, the `@c8y/style` package contain all our .less based styling. You can extend this styling and build your own custom theme.
+We recommend you to use our build-in branding editor to change the look and feel of all applications in one go. If you still want to change certain style options, the `@c8y/style` package contain all our .less based styling. You can extend this styling and build your own custom theme.
 
 #### @c8y/&lt;&lt;apps&gt;&gt;: Extendable applications
 
@@ -87,9 +87,9 @@ Additional two build tools are added, which help scaffolding (`@c8y/websdk`) and
 
 ### Versioning: The WebSDK uses semantic version numbers
 Since version 1019.0.0 the versioning schema of the Web SDK isn't aligned anymore to the versioning schema of the {{< product-c8y-iot >}} platform. The versioning schema is now reflecting via semantic versioning the changes in the Web SDK:
- * Major version (e.g. **1019**.x.x): Can contain breaking changes. Updating to such versions needs proper testing and validation. Often those versions also contain an Angular upgrade.
- * Minor version (e.g. x.**3**.x): Contains features that should work without breaking anything. However it is recommended to properly verify the feature a minor version contains.
- * Fix version (e.g. x.x.**7**): Cotains only fixes that should not break anything.
+ * Major version (for example, **1019**.x.x): Can contain breaking changes. Updating to such versions needs proper testing and validation. Often those versions also contain an Angular upgrade.
+ * Minor version (for example, x.**3**.x): Contains features that should work without breaking anything. However it is recommended to properly verify the feature a minor version contains.
+ * Fix version (for example, x.x.**7**): Cotains only fixes that should not break anything.
 
 
 {{< c8y-admon-info >}}
