@@ -15,18 +15,15 @@ Edge has been tested and officially supported on Kubernetes version 1.32.x, the 
 {{< /c8y-admon-info >}}
 
 ### Installing the Edge operator {#installing-edge-operator}
-The Edge operator is available as a Helm chart in the Edge registry, and can be applied in the usual manner. First, log in to the registry
-```shell
-helm registry login registry.c8y.io
-```
-Next, install the chart. You will need your registry credentials, which can be acquired from [product support](/additional-resources/contacting-support/). Assuming you are installing version {{< c8y-edge-version >>}} of Edge, and that you wish all Edge workloads to be running in the namespace `c8yedge`
+The Edge operator is available as a Helm chart in the Edge registry, and can be installed like any other chart. You will need your registry credentials, which can be acquired from [product support](/additional-resources/contacting-support/). Assuming you are installing version {{< c8y-edge-version >>}} of Edge, and that you wish all Edge workloads to be running in the namespace `c8yedge`, run the following command:
 ```shell
 helm upgrade --install c8yedge-operator oci://registry.c8y.io/edge/helm-charts/cumulocity-iot-edge-operator \
+    --username="<Edge registry username>" --password="<Edge registry password>" \
     --version={{< c8y-edge-version >}}
     --namespace c8yedge \
     --create-namespace \
-    --set imageCredentials.username="<your registry username>" \
-    --set imageCredentials.password="<your registry password>" \
+    --set imageCredentials.username="<Edge registry username>" \
+    --set imageCredentials.password="<Edge registry password>" \
     --wait
 ```
 
@@ -34,6 +31,7 @@ helm upgrade --install c8yedge-operator oci://registry.c8y.io/edge/helm-charts/c
 If you are installing Edge from a [local/private registry](/edge-kubernetes/installing-edge-on-k8/#installing-edge-operator-offline), you will need to provide extra details to override the default registry `registry.c8y.io`.
 
 * Change `oci://registry.c8y.io/...` in the above command line to `oci://<registry-hostname>:<registry-port>/...`
+* Use whatever user name and password you have configured for the private registry, not the Edge registry credentials.
 * Provide an additional argument `--set imageCredentials.registry=<registry-hostname>:<registry-port>`
 * Provide an additional argument `--set image.repository=<registry-hostname>:<registry-port>/edge/helm-charts/cumulocity-iot-edge-operator`
 {{< /c8y-admon-info >}}
