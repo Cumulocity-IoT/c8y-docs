@@ -18,8 +18,8 @@ This feature is in **Public Preview** status, that is, it is not enabled by defa
 
 The feature can be enabled for your tenant using the **Manage preview features** option in the right drawer in the **Administration** application.
 
-The `messaging-management` microservice must be subscribed to your tenant. This should happen automatically, but if the feature is not accessible after enabling it in **Manage preview features**, please verify the microservice subscription.
-To do this, open the **Administration** application and navigate to **Ecosystem** > **Microservices**. If you do not see the `Messaging-management` microservice listed, contact [product support](/additional-resources/contacting-support/) to request the subscription for your tenant.
+The messaging-management microservice must be subscribed to your tenant. This should happen automatically, but if the feature is not accessible after enabling it in **Manage preview features**, verify the microservice subscription.
+To do this, open the Administration application and navigate to **Ecosystem** > **Microservices**. If you do not see the messaging-management microservice listed, contact [product support](/additional-resources/contacting-support/) to request the subscription for your tenant.
 {{< /c8y-admon-preview >}}
 
 {{< c8y-admon-req >}}
