@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2025-05-22'
 title: New toggle to exclude late-arriving measurements from latest values
 change_type:
   - value: change-2c7RdTdXo4
