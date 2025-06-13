@@ -14,4 +14,5 @@ build_artifact:
 ticket: DM-4563
 version: 1021.80.0
 ---
-In the device management application, users can now select device type mapping properties as custom columns in the grid displaying the devices. Previously, this was not possible and users could only select from a predefined set of properties. With this change, users have more flexibility to tailor the grid to their specific needs by selecting any property defined in the device type mapping. This impacts all users of the device management application who want to customize the grid columns to display device type mapping properties.
+In the data grid views, where custom columns are used the “Add custom column” dialog shows a searchable list of asset-property definitions when the Digital Twin Manager (DTM) asset API is available. Choosing a property automatically sets the column’s header and path, eliminating manual typing.
+If the DTM service cannot be reached, the application transparently falls back to the previous dialog, so existing workflows continue to work.
