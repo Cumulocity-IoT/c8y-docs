@@ -12,7 +12,7 @@ helpcontent:
 ---
 
 ### What is Analytics Rules Plugin {#what-is-analytics-rules-plugin}
-Analytics rules plugin extends Analytics Builder capabilities within Streaming Analytics by enabling users to create and manage analytics builder instances directly from device and group contexts within applications such as Device Management and Cockpit.
+Analytics rules plugin extends Analytics Builder capabilities within Streaming Analytics by enabling users to create and manage analytics builder model instances directly from device and group contexts within applications such as Device Management and Cockpit.
 
 For more details about Analytics Builder, please refer to [Analytics Builder](/streaming-analytics/analytics-builder/#getting-started).
 
@@ -77,7 +77,7 @@ Please refer to the [Prerequisites](#prerequisites) section to ensure all requir
    ![Add rule for the selected model](/images/streaming-analytics/analytics-rules-plugin/add-rule-for-selected-model.png)
 5. Configure the rule parameters:
    - Optionally update the name or add a note if desired.
-   - Populate the template parameter values.
+   - Populate the template parameter values. The value of the template parameter (for example, "Measurement Source") configured with **From Context** is derived automatically from the current device or group context.
    - Click **Save** to save the rule, or toggle to **Active** to save and deploy immediately.
 6. Your rule now appears in the Analytics rules list, showing its status (Active/Inactive).
    ![Analytics rules list](/images/streaming-analytics/analytics-rules-plugin/analytics-rules-list.png)
