@@ -9,6 +9,10 @@ The MQTT Service implementation supports clients connecting using MQTT versions 
 
 ### Connecting to the service {#connecting-via-mqtt}
 
+{{< c8y-admon-important >}}
+MQTT Service requires clients to connect with clean session flag enabled, set to "1" (true), otherwise the client connection is rejected by the server.
+{{< /c8y-admon-important >}}
+
 MQTT connections to the MQTT Service must use TCP.
 Use your tenant domain as the target host for the connection, for example `{my-tenant}.cumulocity.com`.
 
@@ -124,7 +128,7 @@ The [Java Client](/device-integration/mqtt-service#java-client) contains classes
 
 The MQTT Service does not impose any specific payload format. 
 All the incoming MQTT messages must meet the specification in terms of fixed and variable headers, but the payload for published messages is unrestricted.
-A custom microservice will receive the exact same set of bytes that was sent by an MQTT device, and is responsible for converting these to {{< product-c8y-iot >}} compatible format.
+A Streaming Analytics app or a custom microservice will receive the exact same set of bytes that was sent by an MQTT device, and is responsible for converting these to a {{< product-c8y-iot >}} compatible format.
 
 The size of the MQTT payload is limited to a maximum value that includes both the message header and body.
 The size of an MQTT packet header varies, but it will be at least 2 bytes.
@@ -166,7 +170,7 @@ For subscriptions, the MQTT Service will deliver messages in the QoS that the cl
 #### Clean session {#clean-session}
 
 The MQTT Service **requires** the clean session flag to be set to "1" (true).
-Disabling clean session has no effect, meaning that a reconnecting client will not see any messages that it missed since the last disconnection, regardless of how it sets this flag.
+Disabling clean session will result in client connections being rejected by the server.
 
 #### Retained flag {#retained-flag}
 

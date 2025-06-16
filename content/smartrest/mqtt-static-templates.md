@@ -106,6 +106,11 @@ If a parameter is in square brackets, it is optional.
 <li><a href="#530">530,serial,hostname,port,connectionKey</a></li>
 </ul>
 
+<strong><a href="#device-parameter-templates">Device parameter templates</strong>
+<ul>
+<li><a href="#600">600 (Retrieve the platform version, reply: "601, platformVersion")</a></li>
+</ul>
+
 The client can receive the following templates when subscribing to <kbd>s/ds</kbd>.
 
 <strong><a href="#subscribe-inventory">Inventory templates</a></strong>
@@ -136,6 +141,12 @@ The client can receive the following templates when subscribing to <kbd>s/ds</kb
 <li>[529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...](#529)</li>
 <li>[530,serial,hostname,port,connectionKey](#530)</li>
 </ul>
+
+<strong><a href="#subscribe-device-parameter">Device parameter templates</a></strong>
+<ul>
+<li>[601, platformVersion](#601)</li>
+</ul>
+
 
 ### Automatic device creation {#automatic-device-creation}
 
@@ -547,7 +558,7 @@ Sets the supported software types of the device. Ignores empty elements. An empt
 143,yum,docker
 ```
 
-##### Set supported software types (150) {#150}
+##### Set supported remote access protocols (150) {#150}
 
 Sets the list of Cloud Remote Access protocols supported by the device. Possible values are `SSH`,`TELNET`,`VNC` and `PASSTHROUGH`. Empty elements are ignored. An empty list removes the `c8y_RemoteAccessSupportedProtocols` fragment entirely.
 
@@ -946,6 +957,20 @@ If the fragment parameter is empty, all EXECUTING operations are set to FAILED.
 507,c8y_Restart,"Unexpected device restart"
 ```
 
+
+
+#### Platform capabilities templates (6xx) {#platform-capabilities-templates}
+
+##### Get platform version (600) {#600}
+
+Retrieve the platform version. Used to evaluate if the platform supports API interfaces or what kind of behaviour to expect from requests to them. 
+
+**Example**
+
+```text
+600
+```
+
 ### Subscribe templates {#subscribe-templates}
 
 #### Inventory templates (1xx) {#inventory-templates-1xx}
@@ -1290,6 +1315,25 @@ Establish tunneling by Remote Access device agent.
 
 ```text
 530,DeviceSerial,10.0.0.67,22,eb5e9d13-1caa-486b-bdda-130ca0d87df8
+```
+
+
+
+
+#### Platform capabilities templates (6xx) {#subscribe-platform-capabilities} 
+
+##### Return platform version (601) {#601}
+
+Returns the platform version after a request using 600.
+
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|version|String|
+
+**Example**
+
+```text
+601,2025.0.0
 ```
 
 ### Updating operations {#updating-operations}

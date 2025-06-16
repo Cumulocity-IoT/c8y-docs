@@ -391,7 +391,7 @@ Any extension deployed to the platform as a microservice is billed as "used" and
   * Not ready - the microservice container is not ready yet to handle incoming traffic but the application is already running.
   * Ready - the microservice container is ready to handle incoming traffic. "Ready" is resolved based on liveness and readiness probes defined in the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest). If probes are not defined then the microservice is immediately ready.
 
-A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](/standard-tenant/audit-logs/). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
+A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](/standard-tenant/monitoring/#audit-logs). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
 
 Tenants should also be able to see the full application lifecyle in the application details. In the **Status** tab, you can see an **Events** section that is showing very low level stages of the application startup. Some of the most important are:
 
