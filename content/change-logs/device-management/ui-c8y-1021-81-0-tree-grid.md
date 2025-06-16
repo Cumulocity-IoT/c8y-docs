@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data grid was extended to support display of hierarchical data (tree grid)
+title: Data grid component now supports display of hierarchical data
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
