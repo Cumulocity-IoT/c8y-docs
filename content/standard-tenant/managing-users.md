@@ -82,7 +82,7 @@ Initially, the **User** page only shows the top-level users. To see all users in
 
 1. Click **Add user** at the right of the top menu bar.  
   {{< c8y-admon-info >}}
-If single sign-on is enabled for your tenant, a message will show up which reminds you that you are about to create a local user which will not be able to login via single sign-on. Create new users in **My Cloud** instead, accessible through the application switcher in the upper right corner, to enable them using the single sign-on feature.
+If single sign-on is enabled for your tenant, a message will show up which reminds you that you are about to create a local user which will not be able to login via single sign-on.
   {{< /c8y-admon-info >}}
 
 2. At the left of the **New user** window, provide the following information to identify the user:

@@ -5,7 +5,7 @@ layout: redirect
 sector:
   - platform_administration
 ---
-{{< c8y-admon-preview >}}
+
 This section describes how to create a configuration for automated persistence of measurement values under the `c8y_LatestMeasurements` fragment.
 
 ### How to enable it
@@ -93,6 +93,33 @@ GET /inventory/managedObjects?withLatestValues=true&query=$filter=c8y_LatestMeas
   ]
 }
 ```
+
+In scenarios where measurements are delayed in arriving (due to network latency or other factors), the system may incorrectly display them as the latest measurement, even though they are technically out of order.  
+To address this, we've introduced a new toggle, `strongConsistency`. When this toggle is enabled (set to true), late-arriving measurements will not be shown as the latest data for the device, regardless of when they were actually received. Instead, only measurements that arrive in the correct order will be treated as the latest, ensuring that the most accurate, timely data is always presented.  
+
+The toggle can be enabled individually for each measurement fragment to allow fine-grained control over which measurement fragments are affected:
+```
+PUT /tenant/options/measurement.series.latestvalue
+{
+    "c8y_Humidity.H": "",
+    "c8y_Temperature.*": {
+        "strongConsistency": "true"
+    }
+}
+```
+or it can be enabled globally, which will apply the setting to all measurement fragments from the device:
+```
+PUT /tenant/options/measurement.series.latestvalue
+{
+    "c8y_Humidity.H": "",
+    "c8y_Temperature.*": "",
+    "*": {
+        "strongConsistency": "true"
+    }
+}
+```
+It’s important to note that enabling `strongConsistency` may slightly slow down the measurement injection process, as the system now needs to check the arrival time of each measurement to determine if it is delayed. This ensures that outdated or late data does not interfere with the integrity of the latest measurement display.
+
 ### Implications & precondition
 
 This feature introduces an additional operation upon measurement creation.
@@ -119,4 +146,3 @@ The value stored in the device managed object is the last value sent to the plat
 If the order of measurement delivery to the platform is different from the measurement creation time
 then the latest values will also be affected.
 
-{{< /c8y-admon-preview >}}
