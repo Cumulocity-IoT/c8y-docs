@@ -1,10 +1,10 @@
 ---
 date: '2025-05-29'
 title: >-
-  Reliable notifications and smart rule resiliency features now in public preview
+  Reliable notifications and smart rule resiliency features now available as Public Preview
 change_type:
-  - value: change-2c7RdTdXo4
-    label: Improvement
+  - value: change-pXAlHAWka
+    label: Preview
 product_area: Analytics
 component:
   - value: component-M5-cepIIS

@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Special characters are now correctly escaped in the device registration process via EST
+date: '2025-05-29'
+title: >-
+  Special characters are now correctly escaped in the device registration
+  process via EST
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
