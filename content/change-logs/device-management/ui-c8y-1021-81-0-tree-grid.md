@@ -22,4 +22,4 @@ Key features include:
 - Indented row rendering for visual hierarchy
 - Support for server-side and client-side data
 
-This update allows for clearer representation of parent-child relationships in datasets such as device hierarchies and asset hierarchies.
+This update enables clearer representation of parent-child relationships in datasets, such as device hierarchies and asset hierarchies.
