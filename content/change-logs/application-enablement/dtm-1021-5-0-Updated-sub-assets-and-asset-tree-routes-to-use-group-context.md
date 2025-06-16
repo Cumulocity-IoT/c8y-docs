@@ -1,6 +1,6 @@
 ---
 date: ''
-title: Updated subassets and asset tree routes to avoid context issues
+title: Updated subassets and asset tree routes to avoid context issues in DTM
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-1997
 version: 1021.4.0
 ---
-The path for accessing subassets and related tabs has been changed from `/asset/:id` to `/group/:id` to align with DTM’s registered context. The previous `asset/:id` context was not recognized globally, leading to issues such as action dispatch errors and broken tab switching - especially when external plugins were integrated. Switching to the `group/:id` context ensures reliable routing, consistent context handling, and seamless plugin compatibility across the platform.
+The subassets and asset tree contexts has been changed from `/asset/:id` to `/group/:id` to align with DTM’s registered context. The previous `asset/:id` context was not recognized globally, leading to issues such as action dispatch errors and broken tab switching - especially when external plugins were integrated. Switching to the `group/:id` context ensures reliable routing, consistent context handling, and seamless plugin compatibility across the platform.
