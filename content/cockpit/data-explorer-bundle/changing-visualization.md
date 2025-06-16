@@ -6,11 +6,9 @@ sector:
   - app_enablement
 ---
 
-### Changing data explorer visualization {#changing-data-explorer-visualization}
-
 To change the visualization in the data explorer, you can modify several properties.
 
-#### Time range {#time-range}
+### Time range {#time-range}
 
 You can change the time range being shown. By default, you see the values for the last hour.
 
@@ -25,7 +23,7 @@ To change the time range on the x-axis, use one of the following options:
 Real-time updates will be switched off if you set a time range in the past.
 {{< /c8y-admon-info >}}
 
-#### Aggregation {#aggregation}
+### Aggregation {#aggregation}
 
 You may aggregate the data being displayed to get an efficient overview over larger time periods.
 
@@ -38,23 +36,23 @@ When aggregation is activated, the timestamp which is displayed in data point gr
 - If hourly aggregation is selected, the minute and second indication will not be shown:<br> 27 Jan 2020 05:00-06:00
 - If daily aggregation is selected, only the day will be shown:<br> 27 Jan 2020-28 Jan 2020.
 
-#### Realtime updating {#realtime-updating}
+### Realtime updating {#realtime-updating}
 
 By default, realtime updating is enabled which means that the data being shown is updated as new data flows into the system from the connected devices.
 
 To turn realtime updating on or off, click **Realtime** in the top menu bar. A green light indicates, that realtime updating is enabled.
 
-#### Data point visibility {#data-point-visibility}
+### Data point visibility {#data-point-visibility}
 
 For each data point, its visibility can be switched on or off by using the toggle left from the data point name.
 
 {{< c8y-admon-preview-feature >}}
 
-#### Interactive legend (available only for the "Data point graph" widget)
+### Interactive legend (available only for the "Data point graph" widget)
 
 The legend, located above the chart, provides quick control over what's visible in your chart. You can toggle visibility of individual data points or alarms/events by clicking their name.
 
-#### Changing the chart options {#changing-the-chart-options}
+### Changing the chart options {#changing-the-chart-options}
 
 You can customize the chart options to control how your data is visualized, including settings like line type, aggregation, and display preferences. These options can be adjusted directly in the data explorer (below the chart) or in the configuration of the "Data point graph" widget.
 
@@ -68,7 +66,7 @@ You can customize the chart options to control how your data is visualized, incl
 | **Chart**           | Display labels and units on Y-axis          | Displays axis labels and measurement units for each data point on the Y-axis.                                    |
 |                     | Show slider                                 | Toggles the visibility of the data slider below the chart. See section below for more info.                      |
 
-#### Working with the data slider {#working-with-the-data-slider}
+### Working with the data slider {#working-with-the-data-slider}
 
 The data slider, located at the bottom of the chart, provides an overview of a longer time range than the currently selected one - offering a summarized view to help navigate large datasets. For example, if "Last hour" is selected, the slider might display data from the past 24 hours.
 You can zoom into any portion of the slider and pan across the range to adjust the visible data in the main chart, making it easier to explore and focus on specific periods of interest.

@@ -23,8 +23,6 @@ helpcontent:
 Toggle on the preview feature documentation to see upcoming changes to the existing functionality.
 {{< /c8y-admon-preview-toggle >}}
 
-In the data explorer, data points (measurements or sensor data) can be visualized.
-
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
@@ -60,7 +58,6 @@ The visualization is generated based on data point properties.
 The data points properties are pre-filled as follows:
 
 - If these properties have been customized previously, these values are used, see [To customize data point properties](#to-customize-data-point-properties).
-
 - If the data points have a matching definition in the data point library, the values from the data point library are used.
 
 There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system.
@@ -161,11 +158,8 @@ Workspaces in the data explorer let you create, save, and manage different confi
 You can switch between multiple workspaces using the configuration menu, located at the top left of the **Data explorer** page. This menu provides the following actions:
 
 - Create new configuration – Start from a blank workspace with no data points or settings applied.
-
 - Clone a configuration – Duplicate the current workspace to use it as a starting point for a new setup.
-
 - Delete all configurations (except the active one) – Clean up your saved configurations by removing all others, keeping only the currently active workspace.
-
 - Share workspace – Each workspace has a unique URL that can be shared with other users. To view the shared workspace, users must have access to the same devices and data points.
 
 ![Data explorer workspaces](/images/users-guide/cockpit/cockpit-dataexplorer-workspaces.png)

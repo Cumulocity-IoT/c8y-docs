@@ -115,6 +115,7 @@ main.init();
 
 // Builds the TOC by retrieving the H3 in the page
 function buildToc() {
+  const showBeta = localStorage.getItem("showBetaContent") === "true";
   let articlesList = document.querySelector(".article-list");
   let articles;
   let changeLog = false;
@@ -139,6 +140,9 @@ function buildToc() {
             tocLinks += `<h5 class="text-regular text-muted">${articleTitle.textContent}</h5>`;
           }
           h3s.forEach((h3) => {
+            if (!showBeta && h3.closest(".preview-content")) {
+              return;
+            }
             if (h3.id && h3.textContent.length) {
               tocLinks += `<div class="list-group-item"><a class="toc-link" href="#${h3.id}" title="${h3.textContent}">${h3.textContent}</a></div>`;
             }
@@ -321,6 +325,9 @@ function toggleBetaContent() {
     el.style.display = checked ? "none" : "block";
   });
   localStorage.setItem("showBetaContent", checked);
+  document.querySelectorAll(".toc-container").forEach((el) => el.remove());
+  // Rebuild TOC
+  buildToc();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
