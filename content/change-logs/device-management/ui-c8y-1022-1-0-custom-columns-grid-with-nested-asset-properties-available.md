@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Custom columns  grid with nested asset properties available.
+title: Custom columns grid with nested asset properties available
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
