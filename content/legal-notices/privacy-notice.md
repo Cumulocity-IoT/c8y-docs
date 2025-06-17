@@ -43,7 +43,7 @@ Below you find a list of the categories of personal data we are processing:
 * **Business data**: Company, job title, business address, billing-related data (for example,  remuneration);
 * **Metadata**: IP address, operating system, internet browser, URL of the website from which the Online Service was accessed, accessed pages of the Online Service, duration of use (including date and time);
 * **Login data**: User name, password;
-* **Marketing data**: Use of information and advertising material, data in the context of participation in events or webinars (e.g. registration, photos, videos), information about Online Services and products used (e.g. user behavior);
+* **Marketing data**: Use of information and advertising material, data in the context of participation in events or webinars (such as registration, photos, videos), information about Online Services and products used (for example, user behavior);
 * **Job application data**: Resumes, cover letters, passports or other identification documents, date of birth and other data processed in connection with a job application.
 
 Special categories of personal data, such as health data, trade union membership, religious affiliation, are only processed if required by law or if you have consented to this**.** We generally collect personal data directly from you, but may also obtain such data from your contacts, from your employer or from public sources.
