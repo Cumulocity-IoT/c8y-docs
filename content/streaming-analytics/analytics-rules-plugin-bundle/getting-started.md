@@ -55,6 +55,8 @@ This section walks you through creating a simple temperature monitoring model. F
    - Connect **Breached** output of **Threshold** to **Create Alarm** input of **Alarm Output**
 7. In the toolbar of the model editor, click the template parameter icon <i class="c8y-icon c8y-icon-parameters-on c8y-icon-duocolor icon-20"></i> to open the template parameter dialog. Ensure the template parameter entry provided for **Input Source** of the **Measurement Input** block (example : "Measurement Source") has "Source or Destination" updated to include one or more values from the **Restrict to** dropdown (for example, Device) and set **Value Selection** to "From Context". Click **OK** to save the changes.
 
+For more details about "From Context" and **Restrict to**, refer to [Define template parameters](/streaming-analytics/analytics-builder/#to-define-the-template-parameters-for-the-instances-of-the-current-model)
+
 ![Template parameter with From Context](/images/streaming-analytics/analytics-rules-plugin/template-parameter.png)
 
 For detailed information about creating and managing template parameters in Analytics Builder, refer to [Managing template parameters](/streaming-analytics/analytics-builder/#managing-template-parameters).
@@ -106,7 +108,7 @@ Follow the same steps as described in [Step 2: Create an instance of model using
 
 1. **No models available in Add rule dialog**
    - Ensure that the Analytics Builder models have template parameters configured with the "From Context" value.
-   - Verify your current context matches the model's "Source or Destination" type restrictions.
+   - Verify your current context matches the model's "Source or Destination" type restrictions. For example, when in a device context where the model's **Restrict to** dropdown is configured with "Groups" only, that model will not be available. To appear in device contexts, "Device" must be selected in the **Restrict to** dropdown.
 2. **Previously created rules don't appear in the Analytics rules list**
    - Verify that the Analytics instances are set to **Production mode** in the Analytics Builder instance editor.
    - Check if Analytics instance names are set in the Analytics Builder instance editor.
