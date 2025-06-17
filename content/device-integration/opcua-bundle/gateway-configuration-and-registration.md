@@ -56,6 +56,8 @@ gateway:
 
 With the configuration `gateway.thinEdge.enabled: true` you switch to the thinEdge mode. This means that the authentication and registration to the platform will be done via Thin Edge. The OPC UA gateway is automatically registered and created as a sub-device under the Thin Edge device. `gateway.thinEdge.mqttServerURL` and `gateway.thinEdge.deviceId` are the connection information for the MQTT client to connect to the local Thin Edge MQTT broker.
 
+### MQTT Forwarding Mode
+
 ### Configuration profile location on the filesystem {#configuration-profile-location-on-the-filesystem}
 
 The configuration profile can be stored either in the *same directory as the JAR file* or in a *default configuration directory*.
