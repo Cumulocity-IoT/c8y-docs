@@ -36,15 +36,6 @@ A rule has the following fields and properties:
 | **Template Parameters** | Template parameters configured as "From Context" are automatically populated based on your current device/group context.<br>Context-based parameters are read-only as they inherit values from the current context.<br>Non-context template parameters remain editable for user configuration. |
 | **Active/Inactive**  | Deploy the rule by toggling from inactive to active state.<br>Once the rule is deployed, all fields and properties become read-only unless the rule is undeployed.                                                        |
 
-
-- **Name**: Automatically populated with the model name but can be customized to provide more descriptive names. When creating multiple rules from the same model without changing the rule name, the plugin automatically appends #1, #2, #3, etc. to differentiate between instances.
-- **Note**: You can add a note for the rule.
-- **Created**: Shows the timestamp of when the rule was created.
-- **Last Updated**: Shows the timestamp of when the rule was last updated.
-- **Model Name**: Displays the name of the model associated with the rule. This field is read-only.
-- **Template Parameters**: Template parameters configured as "From Context" are automatically populated based on your current device/group context. Context-based parameters are read-only as they inherit values from the current context. Non-context template parameters remain editable for user configuration.
-- **Active/Inactive**: Deploy the rule by toggling from inactive to active state. Once the rule is deployed, all fields and properties become read-only unless the rule is undeployed.
-
 Rules are sorted by instance name.
 
 ### Integration with Analytics Builder instance editor {#integration-with-analytics-builder-instance-editor}
