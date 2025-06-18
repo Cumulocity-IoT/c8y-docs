@@ -54,7 +54,7 @@ ID;CREDENTIALS;TYPE;NAME;ICCID;IDTYPE;PATH;SHELL;AUTH_TYPE
 006064ce8077;OowoGKAbiNJs;c8y_Device;Sample_Device2;+491555555;c8y_Serial;bulk group/subgroup2;1;BASIC
 ```
 
-To connect the devices, they are pre-registered with the relevant information. More specific, each device will be configured as follows:
+To connect the devices, they must be pre-configured with the relevant information provided in the CSV file. More specific, each device will be configured as follows:
 
 * Username - the username for accessing {{< product-c8y-iot >}} must have the format &lt;tenant&gt;/device_&lt;id&gt;, where &lt;tenant&gt; refers to the tenant from which the CSV file is imported and &lt;id&gt; refers to the respective value in the CSV file.
 * Password - the unique password for each device to access {{< product-c8y-iot >}} equals the value "Credentials" in the CSV file.
