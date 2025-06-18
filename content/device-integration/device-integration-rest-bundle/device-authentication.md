@@ -21,7 +21,7 @@ The devices can authenticate using X.509 certificates against {{< product-c8y-io
 
 The device access token API can be called by executing the following curl statement:
 
-    curl -v -cert domain-cert.pem key domain-private-key.pem \
+    curl -v --cert domain-cert.pem --key domain-private-key.pem \
        -H 'Accept: application/json' \
        -H 'X-Ssl-Cert-Chain:<device certificate chain>' \
        -X POST \
@@ -29,7 +29,7 @@ The device access token API can be called by executing the following curl statem
 
 Replace `<device certificate chain>` with your valid certificate chain when registering with {{< product-c8y-iot >}}. The header `X-Ssl-Cert-Chain` is not mandatory if you have an immediate issuer of the device certificate in {{< product-c8y-iot >}}.
 
-    curl -v -cert domain-cert.pem key domain-private-key.pem \
+    curl -v --cert domain-cert.pem --key domain-private-key.pem \
        -H 'Accept: application/json' \
        -X POST \
        https://<{{< product-c8y-iot >}} tenant domain>:8443/devicecontrol/deviceAccessToken
