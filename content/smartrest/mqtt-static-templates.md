@@ -840,16 +840,17 @@ Remove one or more fragments from an event of a specific type.
 
 ##### Create device parameter update events (408) {#408}
 
-Create parameter update events for a device. If `change detect` is enabled, events will be created if the given state in the event was already known at the time or not. 
+Create parameter update events for a device. This event will always have the type 'c8y_ParameterUpdate' and contain the fragments an properties specified in the payload. If `change detect` is enabled, events will only be created if the given state in the event was not already known at the time. 
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|
-|1|text|NO|String|Parameter <first segment of path1> updated|
+|1|text|NO|String|Parameter 'c8y_RelayStatus' was updated|
 |2|time|NO|Date|Current server time|
 |3|change detect|NO|Boolean|false|
-|4|path|YES|String|&nbsp;|
-|5|type|YES|String|&nbsp;|
-|6|value|YES|String|&nbsp;|
+|4|List of 3 values per path-value|YES|(n/a)| &nbsp;|
+|4.1|path|YES|String|&nbsp;|
+|4.2|type|YES|String|&nbsp;|
+|4.3|value|NO|String|null|
 
 **Example**
 
