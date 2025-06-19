@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-1997
 version: 1021.4.0
 ---
-The subassets and asset tree contexts has been changed from `/asset/:id` to `/group/:id` to align with DTM’s registered context. The previous `asset/:id` context was not recognized globally, leading to issues such as action dispatch errors and broken tab switching - especially when external plugins were integrated. Switching to the `group/:id` context ensures reliable routing, consistent context handling, and seamless plugin compatibility across the platform.
+The subassets and asset tree contexts has been changed from `/asset/:id` to `/group/:id` to align with DTM’s registered context. The previous `asset/:id` context was not recognized globally, leading to issues such as broken tab switching - especially when external plugins were integrated. Switching to the `group/:id` context ensures reliable routing, consistent context handling, and seamless plugin compatibility across the platform.
