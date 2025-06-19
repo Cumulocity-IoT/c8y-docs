@@ -50,7 +50,7 @@ The following table lists all new methods:
 | `any.isEmpty()`, `optional.isEmpty()`, `listener.isEmpty()`, `Channel.isEmpty()`, `chunk.isEmpty()` | Aliases for the existing `empty()` methods on these types. It is recommended to use the new `isEmpty()` methods, but the use of `empty()` is not deprecated. |
 | `sequence.getOr()` | Gets the value at the specified index, or a specified fallback value if the index is not valid. |
 
-For more information, see the [API Reference for EPL (ApamaDoc)]({{<link-apama-webhelp>}}/related/ApamaDoc/index.html).
+For more information, see the [API Reference for EPL (ApamaDoc)]({{<link-apamadoc-api>}}).
 
 ##### Support for negative indexes for sequence[...] access
 

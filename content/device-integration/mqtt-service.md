@@ -15,8 +15,10 @@ That is, it is not yet generally available and may be subject to change in the f
 To work with the MQTT Service, the following requirements must be met:
 * The {{< product-c8y-iot >}} Messaging Service must be deployed in your {{< product-c8y-iot >}} environment.
 * The {{< product-c8y-iot >}} MQTT Service must be deployed in your {{< product-c8y-iot >}} environment.
-
-No additional steps are required to enable the MQTT Service for an individual tenant.
+* Your tenant must be subscribed to the mqtt-service microservice.
+  This may have been done automatically, depending on how your {{< product-c8y-iot >}} environment was configured.
+  To check the subscription, open the Administration application and navigate to **Ecosystem** > **Microservices**.
+  If you do not see the mqtt-service microservice listed, contact [product support](/additional-resources/contacting-support/) (for public environments) or your {{< product-c8y-iot >}} administrator (for dedicated environments) to request the subscription for your tenant.
 {{< /c8y-admon-req >}}
 
 The MQTT Service is a new MQTT endpoint implementation for {{< product-c8y-iot >}} that provides the following benefits:
