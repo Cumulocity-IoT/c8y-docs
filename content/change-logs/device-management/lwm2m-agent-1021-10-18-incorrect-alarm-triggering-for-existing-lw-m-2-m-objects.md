@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-06-19
 title: Incorrect Alarm Triggering for Existing LwM2M Objects
 product_area: Device management & connectivity
 change_type:
