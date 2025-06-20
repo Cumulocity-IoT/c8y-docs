@@ -27,11 +27,19 @@ A software package list entry must contain the following properties:
 |----|----|----|
 | name | Yes | The name of the software|
 | version | Yes | A version identifier of the software|
-| url | No | A URL pointing to the location where the software file was obtained from|
+| url | No | A URL pointing to the location where the software file was obtained from. If the value is $PROVIDED, the device must resolve the binary on its own|
 | softwareType | No | An arbitrary string for organizing software artifacts|
 
 The name and the version are used to identify the package. Already mentioned `c8y_SupportedSoftwareTypes` fragment
 restricts possible software types that can be installed on the device.
+
+If the `url` is set to `$PROVIDED`, no file is uploaded or linked from the platform. In this case, the device is fully responsible for resolving the correct binary. If the device cannot resolve the binary, the operation must be marked as **FAILED**.
+
+**SmartREST example**
+
+For example, to mark a software as provided:
+
+`528,DeviceSerial,example-software,1.0.0,$PROVIDED,install`
 
 #### Legacy Software Management {#legacy-software-management}
 

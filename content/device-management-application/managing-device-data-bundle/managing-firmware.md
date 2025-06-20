@@ -41,8 +41,11 @@ The list of versions and patches shows the version name and the name of the firm
 	* to add a new firmware, enter a name for the firmware (and confirm it by clicking **Create new** in the resulting window), add a description and its version (all required).
 	* to add a new version, select the firmware for which you want to add a new version from the dropdown list in the **Firmware** field and enter a version.
 3. Optionally, you can define the device type filter when adding a new firmware.
-3. Either upload a binary from the file system or specify a URL from where the firmware can be downloaded.
-4. Click **Save**.
+4. Choose one of the following options to define the patch binary:
+   - **Upload a binary** from your file system.
+   - **Provide a file path (URL)** to download the binary from.
+   - **Mark as Provided** – select this option if the device is expected to resolve the binary itself. No file or URL will be defined, and a `$PROVIDED` placeholder is stored.
+5. Click **Save**.
 
 ![Add firmware](/images/users-guide/DeviceManagement/devmgmt-firmware-add.png)
 
@@ -55,9 +58,12 @@ If you click **Add firmware** from within the details of a specific firmware, th
 1. In the **Firmware repository** page, click **Add firmware patch** at the right of the top menu bar.
 2. In the resulting dialog box, select the firmware, for which you want to add a patch, from the dropdown list in the **Firmware** field.
 3. in the **Version** field, select the version, for which you want to add a patch.  
-3. In the **Patch** field, enter a name for the patch.
-3. Either upload a binary from the file system or specify a URL from where the firmware can be downloaded.
-4. Click **Save**.
+4. In the **Patch** field, enter a name for the patch.
+5. Choose one of the following options to define the patch binary:
+   - **Upload a binary** from your file system.
+   - **Provide a file path (URL)** to download the binary from.
+   - **Mark as Provided** – select this option if the device is expected to resolve the binary itself. No file or URL will be defined, and a `$PROVIDED` placeholder is stored.
+6. Click **Save**.
 
 As with adding versions, if you click **Add firmware patch** from within the details of a specific firmware, the dialog box looks slightly different as the firmware is already selected.
 

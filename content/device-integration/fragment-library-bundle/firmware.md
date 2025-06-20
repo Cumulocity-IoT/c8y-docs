@@ -41,6 +41,18 @@ The 115 static template is available for devices to communicate their currently 
 
 `115,ubuntu core,20.04.3,http://test.com`
 
+### Using `$PROVIDED` firmware URLs {#provided-firmware}
+
+If the `url` is set to `$PROVIDED`, no firmware file is uploaded or linked from the platform. In this case, the device is fully responsible for resolving the correct binary. If the device cannot resolve the binary, the operation must be marked as **FAILED**.
+
+This option is useful when the device can retrieve the correct firmware file dynamically based on its environment, architecture, or internal logic.
+
+**SmartREST example**
+
+To mark a firmware as provided:
+
+`515,DeviceSerial,ubuntu core,20.04.3,$PROVIDED`
+
 ### Installing a firmware image {#installing-a-firmware-image}
 
 When a user selects a complete firmware image for installation, an operation with a similar ```c8y_Firmware``` fragment as found in the device managed object is created. This operation should be considered as the desired state that should be achieved by the device.
