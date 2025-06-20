@@ -50,8 +50,8 @@ In addition to these columns the file can also contain other columns like ICCID,
 
 ```
 ID;CREDENTIALS;TYPE;NAME;ICCID;IDTYPE;PATH;SHELL;AUTH_TYPE
-006064ce800a;LF2PWJoLG1Fz;c8y_Device;Sample_Device1;+491555555;c8y_Serial;bulk group/subgroup1;1;BASIC
-006064ce8077;OowoGKAbiNJs;c8y_Device;Sample_Device2;+491555555;c8y_Serial;bulk group/subgroup2;1;BASIC
+006064ce800a;5ecur3_p455w0rd;c8y_Device;Sample_Device1;+491555555;c8y_Serial;bulk group/subgroup1;1;BASIC
+006064ce8077;AbcD1234!1234AbcD;c8y_Device;Sample_Device2;+491555555;c8y_Serial;bulk group/subgroup2;1;BASIC
 ```
 
 To connect the devices, they are pre-registered with the relevant information. More specific, each device will be configured as follows:
