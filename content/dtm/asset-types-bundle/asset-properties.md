@@ -1,5 +1,5 @@
 ---
-weight: 20
+weight: 50
 layout: redirect
 title: Asset properties
 

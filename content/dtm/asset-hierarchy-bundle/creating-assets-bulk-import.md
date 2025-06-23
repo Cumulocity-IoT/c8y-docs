@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 50
 title: Creating assets via bulk import
 layout: redirect
 ---

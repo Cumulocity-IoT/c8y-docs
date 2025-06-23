@@ -1,5 +1,5 @@
 ---
-weight: 20
+weight: 40
 title: Creating assets via the UI
 layout: redirect
 ---
@@ -69,7 +69,7 @@ Fill out all required fields.
 You have the option to add more assets on this level.
 Click **Next** to continue until all assets are created.
 
-### To assign devices to an asset {#to-assign-devices-to-an-asset}
+### To assign devices to an asset
 
 When you create a new asset you have the option of assigning one or more devices to this asset.
 

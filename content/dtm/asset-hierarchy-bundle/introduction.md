@@ -20,6 +20,8 @@ In the DTM application assets are the digital representation of physical assets.
 An asset in the DTM application can contain subassets and devices.
 You also have the opportunity to define properties or parameters of an asset through [asset properties](/dtm/asset-types/#asset-properties).
 
+In addition to its hierarchical structure, an asset can have associated or linked [data points](/dtm/asset-hierarchy/#datapoints). This means that each asset not only represents a physical entity but also serves as a dynamic interface to its operational data. 
+
 To work with assets in the DTM application, navigate to the **Assets** page using the navigator menu on the left.
 When you first start using the DTM application, no assets are displayed in the **Assets** page by default.
 
