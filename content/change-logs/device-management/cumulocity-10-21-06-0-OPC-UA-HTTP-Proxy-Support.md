@@ -1,6 +1,6 @@
 ---
 date: 
-title: HTTP Proxy support for the OPC UA Gateway
+title: HTTP proxy support for the OPC UA gateway
 change_type:
   - value: change-QHu1GdukP
     label: Feature
