@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix cookie banner link color (#9421)
+title: Fixed cookie banner link color
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
