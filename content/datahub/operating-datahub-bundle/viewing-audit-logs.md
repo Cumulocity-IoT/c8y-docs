@@ -9,19 +9,13 @@ helpcontent:
 
 
     The query audit log provides controls to select the query type and to limit the corresponding log entries being shown."
-  - label: system-log
-    title: System log
-    content: "The system logs system-relevant events for the administrator, like updates on offloading pipelines, creation of additional Dremio users, or setup of the data lake.
-
-
-    The system audit log provides filter controls to limit the corresponding log entries being shown."
 ---
 
 Auditing shows in the query log the queries being executed and in the system log the operations that users have carried out.
 
 ### Query log {#query-log}
 
-In the navigator, select **Auditing** and then **Query log** to view the query log.
+In the navigator, select **Query log** to view the query log.
 
 {{< c8y-admon-req >}}
 The {{< product-c8y-iot >}} DataHub feature for storing query profiles must be enabled. The profiles are deleted after a retention period, so for older months profiles may no longer be available.
@@ -52,14 +46,13 @@ For each ad-hoc query, the following information is provided:
 
 ### System log {#system-log}
 
-In the navigator, select **Auditing** and then **System log** to view the system log.
-
-At the top of the page you can select log entries having status all/successful/errorneous/running, define a text filter on the log entries, and select a time period. Use the pagination buttons at the bottom of the page to navigate through the result list.
+In the Application switcher, select **Administration** and navigate to **Accounts > Audit logs** to view the system-related [audit log entries](/standard-tenant/monitoring/#audit-logs) for {{< product-c8y-iot >}} DataHub. The log entries comprise for example information on offloading configurations, Dremio users, and initial configuration. At the top of the page you can filter for those entries by selecting *DataHub* under **Type**.
 
 For each log entry, the following information is provided:
 
 | Column name | Description
 | ---         |  ---
+| Device time | The point in time the user has carried out the operation
 | User | The user that has carried out the operation
 | Event | The type of operation
-| Details | The details of the operation and, if available, further information in an expandable box
+| Description | The details of the operation
