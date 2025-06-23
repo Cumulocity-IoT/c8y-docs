@@ -57,14 +57,15 @@ In the **Platform info** section, you find information on the infrastructure of 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
-To see the **Preview features** menu section, you must have ADMIN permission for the "Tenant management" permission type or be the first admin user created in the tenant.
+To see the **Preview features** section, you must have ADMIN permission for the "Tenant management" permission type or be the first admin user created in the tenant.
 
 For easier user access management, the above permission(s) are/is included in the global role(s) created by default in every new tenant:
 - Tenant manager - manages tenant-wide configurations like applications, tenant options and retention rules.
 {{< /c8y-admon-req >}}
 
-When a new preview feature becomes available, the user settings icon in the top right corner of the interface will flash to draw your attention. Preview features can be easily enabled for your user through the Beta features modal in the user settings. 
-These previews allow early access to upcoming capabilities so you can explore and provide feedback before general release.
+The preview features functionality allows you to manage all features that are currently in Public Preview in one place. With a simple toggle interface, you can easily discover, enable, and experiment with upcoming functionality. 
+
+When a new preview feature becomes available, the user icon at the top right corner flashes to draw your attention. 
 
 #### Bookmarks {#bookmarks}
 
