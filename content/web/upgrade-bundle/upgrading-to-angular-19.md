@@ -18,7 +18,8 @@ This also applies to module federation plugins, including plugins that use earli
 - `Node.js`, `TypeScript`, `RxJS`: [Version compatibility](https://angular.dev/reference/versions#actively-supported-versions).
 - Follow the `Angular 19` upgrade guide: [Updating to version 19](https://angular.dev/update-guide?v=18.0-19.0&l=2).
 
-The Web SDK version 1022.0.0 introduces multiple breaking changes:
+### Breaking changes
+The Web SDK version 1022.0.0 introduces multiple breaking changes.
 
 #### Dashboard setting component as secondary router outlet
 
