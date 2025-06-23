@@ -110,6 +110,18 @@ C8Y:
   # reachable only with an IP address.
   forceInitialHost: true
 
+  # HTTP proxy host for platform communication
+  # proxyHost: your.proxy.host
+
+  # HTTP proxy port for platform communication
+  # proxyPort: 8080
+
+  # Username for HTTP proxy authentication
+  # proxyUser: yourProxyUser
+
+  # Password for HTTP proxy authentication
+  # proxyPassword: yourProxyPassword
+  
 #
 # Gateway-specific settings
 #
