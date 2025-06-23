@@ -17,7 +17,17 @@ helpcontent:
 This feature is in **Public Preview** status, that is, it is not enabled by default and may be subject to change in the future.
 
 The feature can be enabled for your tenant using the **Manage preview features** option in the right drawer in the **Administration** application.
+
+The messaging-management microservice must be subscribed to your tenant. This should happen automatically, but if the feature is not accessible after enabling it in **Manage preview features**, verify the microservice subscription.
+To do this, open the Administration application and navigate to **Ecosystem** > **Microservices**. If you do not see the messaging-management microservice listed, contact [product support](/additional-resources/contacting-support/) to request the subscription for your tenant.
 {{< /c8y-admon-preview >}}
+
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+- To view Messaging Service data: READ permission for permission type "Tenant statistics"
+- To perform any action on a topic or subscriber: ADMIN permission for permission type "Tenant management"
+{{< /c8y-admon-req >}}
 
 The **Messaging Service** is a [publish/subscribe messaging](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) and message streaming component embedded in the {{< product-c8y-iot >}} platform.
 It provides asynchronous communication between platform components and user-facing features for moving real-time data into and out of the platform.
