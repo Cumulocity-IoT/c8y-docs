@@ -20,7 +20,9 @@ This also applies to module federation plugins, including plugins that use earli
 
 The Web SDK version 1022.0.0 introduces multiple breaking changes:
 
-- The dashboard setting component has been refactored to use a secondary router outlet in order to make these type of views hookable. This requires adding `rootContext: ViewContext.Dashboard` to the context dashboard routes. 
+#### Dashboard setting component as secondary router outlet
+
+The dashboard setting component has been refactored to use a secondary router outlet in order to make these type of views hookable. This requires adding `rootContext: ViewContext.Dashboard` to the context dashboard routes. 
 
 The reason for this is that the new **Import/Export** tab has been added to the dashboard settings with the `hookTab` function. This generic solution allows adding tabs to named tab outlets. 
 This specific tab allows to export dashboards to JSON files, import dashboards from previously exported JSON files and edit the dashboard in an editor. It allows to copy dashboards across applications.
@@ -62,8 +64,9 @@ hookRoute({
 });
 ```
 
+#### Login as separate application
 
-- The login flow has been changed. The Web SDK no longer includes built-in login functionality in each application. Instead, a separate login application now manages all authentication flows.
+The login flow has been changed. The Web SDK no longer includes built-in login functionality in each application. Instead, a separate login application now manages all authentication flows.
 
 Web applications developed using Web SDK version 1022.0.0 or later will automatically redirect users to this standalone login application whenever authentication is needed.
 
@@ -73,6 +76,8 @@ The login page has also been redesigned as part of this update, improving its us
 Note: Customers who embed the UI within an iframe and require in-iframe login may need to modify their implementation to support this new login flow.
 
 
-- A set of previously deprecated angular modules of widgets have been removed.
+#### Deprecated Angular modules removed
+
+A set of previously deprecated angular modules of widgets have been removed.
 These modules have been migrated to standalone components, so their modules became obsolete.
 The affected modules are: `CockpitLegacyWelcomeWidgetModule`, `CockpitWelcomeWidgetModule`, `DeviceControlMessageWidgetModule`, `HelpAndServiceModule`, `ImageWidgetModule`, `InfoGaugeWidgetModule`, `KpiWidgetModule`, `LinearGaugeModule`, `MarkdownWidgetModule` and `ThreeDRotationWidgetModule`.
