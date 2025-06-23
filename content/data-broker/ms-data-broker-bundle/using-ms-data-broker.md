@@ -52,5 +52,11 @@ The microservice-based data broker stores messages persistently using the {{< pr
 To optimize resource usage, the Messaging Service imposes storage limits and a message time-to-live (TTL) on persistently stored messages.
 See [service quotas](/service-terms/quotas/#realtime-apis) for details of the default quotas used by the microservice-based data broker.
 
+When the storage limit has reached:
+*	Older undelivered messages may be discarded to make room for new ones.
+*	Consumers reconnecting after a disconnection may receive outdated or partial data.
+*	The system may apply back-pressure, throttle delivery, or even drop messages, depending on usage patterns and load.
+* Message ordering may be affected if backlog pruning occurs.
+
 These limits are configurable on a per-tenant basis.
 If your use case requires a different configuration, or if you have any concerns, please contact [product support](https://cumulocity.com/docs/additional-resources/contacting-support/).
