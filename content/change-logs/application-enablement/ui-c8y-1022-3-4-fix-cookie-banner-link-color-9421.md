@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63704
 version: 1022.3.4
 ---
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+The links in the cookie banner are now easier to spot for users so that they can access additional information about the cookie usage more conveniently.
