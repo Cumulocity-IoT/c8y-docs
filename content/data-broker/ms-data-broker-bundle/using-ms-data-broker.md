@@ -60,7 +60,7 @@ When the backing quota limit has reached:
 
 To avoid hitting the backlog limit and ensure reliable message consumption:
 *	Consume or acknowledge messages frequently to reduce backlog buildup.
-*	Monitor backlog size using available metrics and alerting.
+*	Monitor the level of free backlog space using the available metrics and alerting.
 *	Avoid extended consumer downtimes without reconnecting.
 *	If persistent disconnections are expected, consider implementing filtering or message expiry logic at the application level.
 
