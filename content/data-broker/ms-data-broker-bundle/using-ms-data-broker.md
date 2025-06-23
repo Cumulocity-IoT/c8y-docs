@@ -50,7 +50,7 @@ After enabling the microservice-based data broker, your existing data connectors
 
 The microservice-based data broker stores messages persistently using the {{< product-c8y-iot >}} Messaging Service until they are successfully delivered to the destination tenant.
 To optimize resource usage, the Messaging Service imposes storage limits and a message time-to-live (TTL) on persistently stored messages.
-See [service quotas](/service-terms/quotas/#realtime-apis) for details of the default quotas used by the microservice-based data broker.
+See [service quotas](/service-terms/quotas/#realtime-apis) for details of the default quotas and TTL used by the microservice-based data broker.
 
 When the backing quota limit has reached:
 *	Older undelivered messages may be discarded to make room for new ones.
