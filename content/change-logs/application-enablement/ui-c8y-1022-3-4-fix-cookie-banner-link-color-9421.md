@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improved cookie banner link color
+title: Improved contrast of link color in cookie banner
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
