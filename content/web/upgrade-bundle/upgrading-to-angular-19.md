@@ -22,7 +22,7 @@ The Web SDK version 1022.0.0 introduces multiple breaking changes:
 
 - The dashboard setting component has been refactored to use a secondary router outlet in order to make these type of views hookable. This requires adding `rootContext: ViewContext.Dashboard` to the context dashboard routes. 
 
-The reason for this is that the new **Import/Export** tab will be added to the dashboard settings with the `hookTab` function. This generic solution allows adding tabs to named tab outlets. 
+The reason for this is that the new **Import/Export** tab has been added to the dashboard settings with the `hookTab` function. This generic solution allows adding tabs to named tab outlets. 
 This specific tab allows to export dashboards to JSON files, import dashboards from previously exported JSON files and edit the dashboard in an editor. It allows to copy dashboards across applications.
 Example of how the tab and route for this tab can be added:
 ```ts
