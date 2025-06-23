@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63704
 version: 1021.22.96
 ---
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+The link color in the cookie banner has been adjusted to provide better contrast. The links are now easier to spot for users so that they can access additional information about cookie usage more conveniently.
