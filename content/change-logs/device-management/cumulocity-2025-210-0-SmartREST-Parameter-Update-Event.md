@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4717
 version: 2025.210.0
 ---
-A new SmartREST template has been added. Using the template ID 408, it is now possible to create device parameter update events. The events created will always have the type c8y_ParameterUpdateEvent. It has a change detect functionality, that allows events to be created only if the given state in the event was not already known at the time. 
+A new SmartREST template has been added. Using the template ID 408, it is now possible to create device parameter update events. The events created always have the type `c8y_ParameterUpdateEvent`. The template has a change detection functionality, so that events are only created if the given state in the event was not already known at the time. 
