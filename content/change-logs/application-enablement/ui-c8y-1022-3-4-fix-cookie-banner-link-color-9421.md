@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63704
 version: 1022.3.4
 ---
-The links in the cookie banner are now easier to spot for users so that they can access additional information about the cookie usage more conveniently.
+The link color in the cookie banner has been adjusted to provide better contrast. The links are now easier to spot for users so that they can access additional information about cookie usage more conveniently.
