@@ -9,8 +9,8 @@ component:
   - value: component-Tf05_KQ-B
     label: OPC UA
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+  - value: tc-MLn0oFRX-
+    label: opcua
 ticket: DM-4719
 version: 10.21.6.0
 ---
