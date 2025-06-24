@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Changing visualization
+title: Changing the visualization
 layout: bundle
 sector:
   - app_enablement
@@ -48,7 +48,7 @@ For each data point, its visibility can be switched on or off by using the toggl
 
 {{< c8y-admon-preview-feature >}}
 
-### Interactive legend (available only for the "Data point graph" widget)
+### Interactive legend (available only for the Data point graph widget)
 
 The legend, located above the chart, provides quick control over what's visible in your chart. You can toggle visibility of individual data points or alarms/events by clicking their name.
 

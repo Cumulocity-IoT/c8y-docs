@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Working with data explorer
+title: Working with the data explorer
 layout: bundle
 sector:
   - app_enablement
@@ -23,6 +23,10 @@ helpcontent:
 Toggle on the preview feature documentation to see upcoming changes to the existing functionality.
 {{< /c8y-admon-preview-toggle >}}
 
+### Overview
+
+In the data explorer, data points (measurements or sensor data) can be visualized.
+
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
@@ -32,8 +36,6 @@ ROLES & PERMISSIONS:
 
 Note that datapoints existing in the data point library are visible by anyone without the need of any permission.
 {{< /c8y-admon-req >}}
-
-In the data explorer, data points (that is measurements or sensor data) can be visualized.
 
 The data explorer is available for all assets at once or just for a particular asset. To access the data explorer:
 
