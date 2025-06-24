@@ -153,7 +153,7 @@ The following fields may be modified:
 
 {{< c8y-admon-preview-feature >}}
 
-### To add or clone a workspace {#to-add-or-clone-a-workspace}
+### To add or clone a configuration{#to-add-or-clone-a-configuration}
 
 Configurations in the data explorer let you create, save, and manage different configurations tailored to your specific needs - whether for individual devices, projects, or use cases. Each configuration stores your selected data points, chart layout, time range, and all visual customizations. Configurations are saved automatically in your browser's local storage, so any updates (like adding or removing data points or changing the visualization) are preserved instantly.
 
