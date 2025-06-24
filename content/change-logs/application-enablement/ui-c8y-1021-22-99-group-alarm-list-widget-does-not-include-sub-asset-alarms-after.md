@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Group alarm List widget does not include sub asset alarms after upgrade to new implementation (#9443) [GRAFT][release/y2025] (#9448)
+title: Alarm list widget does not include child devices alarms by default after upgrade to new implementation
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
