@@ -52,7 +52,7 @@ POST /measurement/measurements
   }
 }
 ```
-then,  considering the example configuration, only `c8y_Temperature.T` is stored as part of the device, while `c8y_Speed.S` is ignored.
+then, considering the example configuration, only `c8y_Temperature.T` is stored as part of the device, while `c8y_Speed.S` is ignored.
 This means, that the measurement is stored like before, only the state update is skipped.
 To read the latest values on device level you must use the Inventory API and explicitly specify the `withLatestValues` parameter. For more information refer to the [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/#operation/getManagedObjectResource).
 To get a single device:
@@ -95,7 +95,7 @@ GET /inventory/managedObjects?withLatestValues=true&query=$filter=c8y_LatestMeas
 ```
 
 In scenarios where measurements are delayed in arriving (due to network latency or other factors), the system may incorrectly display them as the latest measurement, even though they are technically out of order.  
-To address this, we've introduced a new toggle, `strongConsistency`. When this toggle is enabled (set to true), late-arriving measurements will not be shown as the latest data for the device, regardless of when they were actually received. Instead, only measurements that arrive in the correct order will be treated as the latest, ensuring that the most accurate, timely data is always presented.  
+To address this, the toggle `strongConsistency` is provided. When this toggle is enabled (set to true), the out-of-order measurements will not be shown as the latest data for the device, regardless of when they were actually received. Instead, only measurements that arrive in the correct order will be treated as the latest, ensuring that the most accurate, timely data is always presented.  
 
 The toggle can be enabled individually for each measurement fragment to allow fine-grained control over which measurement fragments are affected:
 ```
@@ -143,6 +143,6 @@ can be obtained using the [Measurements API](https://{{< domain-c8y >}}/api/core
 **Last value**
 
 The value stored in the device managed object is the last value sent to the platform.
-If the order of measurement delivery to the platform is different from the measurement creation time
-then the latest values will also be affected.
+If measurements are delivered to the platform in a different order than their creation time,
+then the latest values may be affected — unless the `strongConsistency` toggle is enabled.
 
