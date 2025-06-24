@@ -87,6 +87,7 @@ async function getDiscourseChangeLogs():Promise<any> {
     },
   });
   requestsSent++;
+  if(requestDelay > 0) await delay(requestDelay);
   if (!res.ok) {
     throw new Error(res.statusText);
   }
@@ -103,12 +104,14 @@ async function getDiscourseChangeLogs():Promise<any> {
       },
     });
     requestsSent++;
+    if(requestDelay > 0) await delay(requestDelay);
     if (!moreTopics.ok) {
       throw new Error(moreTopics.statusText);
     }
     response = await moreTopics.json();
     topics.push(response.topic_list.topics);
   }
+  
 
   return topics.flat();
 }
@@ -203,6 +206,7 @@ async function getMatterForFiles(files: string[]) : Promise<matter.GrayMatterFil
 }
 
 
+
 async function processFiles() {
   try {
   const files = await readdir(relativePathToChangeLogs, {
@@ -281,16 +285,32 @@ async function processFiles() {
 
     if (posts.length > 0) {
       if(maxRequests > 0 && requestsSent >= maxRequests) break;
-      const articleContent = posts[0].raw;
+      const articleContent:string = posts[0].raw;
       const postId = posts[0].id;
       const fileContent = await getRawAndTagsFromFile(matterResult);
+      let fileContentRaw = fileContent.raw;
       if(articleContent.trim() === fileContent.raw.trim()) {
         //No update needed- ignore
         console.log("No update needed for article with title "+title+" and id: "+id);
       } else {
+        if(articleContent.includes("upload://") && fileContent.raw.includes("![")) {
+          let uploadLines = findLinesInString("upload://", articleContent);
+          let imageLines = findLinesInString("![", fileContent.raw);
+          if(uploadLines.length === imageLines.length) {
+            for(let i = 0; i < uploadLines.length; i++) {
+             fileContentRaw = fileContent.raw.replace(imageLines[i], uploadLines[i]);
+            }
+          }
+
+          if(fileContentRaw.trim() === articleContent.trim()) {
+            //No update needed- ignore
+            console.log("No update needed for article with title "+title+" and id: "+id);
+            continue;
+          }
+        }
         //Update article
         console.log("Updating article with title "+title+" and id: "+id);
-        updateDiscourseChangeLog(postId, fileContent.raw);
+        updateDiscourseChangeLog(postId, fileContentRaw);
         if(requestDelay > 0) await delay(requestDelay);
         updateTags(id, title, fileContent.tags );
         if(requestDelay > 0) await delay(requestDelay);
@@ -387,7 +407,7 @@ async function getRawAndTagsFromFile(matterResult: matter.GrayMatterFile<string>
  
 
   let raw: string = `
-  ## Change Header
+  ## Context
   ---
   **Change Type:** ${changeType}
   **Product area:** ${productArea}
@@ -404,7 +424,7 @@ async function getRawAndTagsFromFile(matterResult: matter.GrayMatterFile<string>
     raw += `[/details]\n`;
   }
   raw += `
-  ## Change Description
+  ## Description
   ---
   ${formattedContent}
   `;
@@ -502,3 +522,16 @@ function toSemverFormat(version: string){
   console.debug("Non-Semantic version format:",version,"converted to semantic format",semanticVersion,"for processing")
   return semanticVersion
 }
+
+function findLinesInString(line: string, content: string):string[] {
+  let lines = content.split('\n');
+  let lineFound :string[]= [];
+  lines.forEach(l => {
+    if (l.includes(line)) {
+      lineFound.push(l);
+    }
+  });
+  return lineFound;
+}
+  
+
