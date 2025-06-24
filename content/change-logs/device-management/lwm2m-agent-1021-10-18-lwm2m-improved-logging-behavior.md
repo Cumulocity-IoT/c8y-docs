@@ -1,6 +1,6 @@
 ---
 date: 2025-06-19
-title: Removed Redundant "LWM2M Device Send" Event in VERBOSE Logging for Missing Resource DDFs
+title: Removed Redundant "LWM2M Device Send" event in VERBOSE logging
 product_area: Device management & connectivity
 change_type:
   - value: change-2c7RdTdXo4
