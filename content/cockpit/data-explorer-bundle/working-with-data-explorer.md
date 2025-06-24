@@ -162,7 +162,8 @@ You can switch between multiple workspaces using the configuration menu, located
 - Create new configuration – Start from a blank workspace with no data points or settings applied.
 - Clone a configuration – Duplicate the current workspace to use it as a starting point for a new setup.
 - Delete all configurations (except the active one) – Clean up your saved configurations by removing all others, keeping only the currently active workspace.
-- Share workspace – Each workspace has a unique URL that can be shared with other users. To view the shared workspace, users must have access to the same devices and data points.
+
+Each configuration has a unique URL that can be shared with other users. To use the shared configuration URL, those users must have access to the referenced devices and data points.
 
 ![Data explorer workspaces](/images/users-guide/cockpit/cockpit-dataexplorer-workspaces.png)
 
