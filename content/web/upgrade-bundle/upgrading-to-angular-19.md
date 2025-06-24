@@ -17,6 +17,7 @@ This also applies to module federation plugins, including plugins that use earli
 - Update `@angular/cdk` to version `19.x.x`.
 - `Node.js`, `TypeScript`, `RxJS`: [Version compatibility](https://angular.dev/reference/versions#actively-supported-versions).
 - Follow the `Angular 19` upgrade guide: [Updating to version 19](https://angular.dev/update-guide?v=18.0-19.0&l=2).
+- adjust the `main.ts` and `bootstrap.ts` files according to the git diffs mentioned [below](#track-changes-between-releases).
 
 ### Breaking changes
 The Web SDK version 1022.0.0 introduces multiple breaking changes.
@@ -82,3 +83,11 @@ Note: Customers who embed the UI within an iframe and require in-iframe login ma
 A set of previously deprecated angular modules of widgets have been removed.
 These modules have been migrated to standalone components, so their modules became obsolete.
 The affected modules are: `CockpitLegacyWelcomeWidgetModule`, `CockpitWelcomeWidgetModule`, `DeviceControlMessageWidgetModule`, `HelpAndServiceModule`, `ImageWidgetModule`, `InfoGaugeWidgetModule`, `KpiWidgetModule`, `LinearGaugeModule`, `MarkdownWidgetModule` and `ThreeDRotationWidgetModule`.
+
+### Track changes between releases
+
+Want to see exactly what changed within the code between versions? You can easily review the differences by examining the git diffs for each application:
+
+- Administration: [v1021.81.0…v1022.0.0](https://github.com/Cumulocity-IoT/administration/compare/v1021.81.0...v1022.0.0)
+- Cockpit: [v1021.81.0…v1022.0.0](https://github.com/Cumulocity-IoT/cockpit/compare/v1021.81.0...v1022.0.0)
+- Device Management: [v1021.81.0…v1022.0.0](https://github.com/Cumulocity-IoT/cockpit/compare/v1021.81.0...v1022.0.0)
