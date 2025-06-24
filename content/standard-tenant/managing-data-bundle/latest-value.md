@@ -120,13 +120,13 @@ PUT /tenant/options/measurement.series.latestvalue
 ```
 It’s important to note that enabling `strongConsistency` may slightly slow down the measurement injection process, as the system now needs to check the arrival time of each measurement to determine if it is delayed. This ensures that outdated or late data does not interfere with the integrity of the latest measurement display.
 
-### Previous measurements values
+### Previous measurements values {#previous-measurement-values}
 
-#### How to configure it
+#### How to configure it {#how-to-configure-previous-measurement-values}
 
 This functionality enables the storage and querying of measurement values that have the second most recent arrival time. Retrieving not only the most recent value but also the one before is often necessary — for example, to calculate trends or detect changes over time.
 By default, this feature is enabled globally, but it can be configured at the tenant level via an API request.  
-To manage automated persistence of previous measurement values on tenant level use the tenant options to create new category named `inventory.previous-measurements.enabled` with a PUT request to a [tenant options category](https://{{< domain-c8y >}}/api/core/#operation/putCategoryOptionResource).
+To manage automated persistence of previous measurement values on tenant level use the tenant options to create a new category named `inventory.previous-measurements.enabled` with a PUT request to a [tenant options category](https://{{< domain-c8y >}}/api/core/#operation/putCategoryOptionResource).
 Example:
 ```
 PUT /tenant/options/
@@ -139,10 +139,10 @@ PUT /tenant/options/
 
 ```
 
-#### How it works
+#### How it works {#how-previous-measurement-values-work}
 
-To retrieve previous values at the device level, you must use the Inventory API and explicitly include the withLatestValues parameter. For more information refer to the [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/#operation/getManagedObjectResource).
-The measurements returned will belong to a series that matches the configuration of the latest values, allowing you to access both the most recent and previous measurements within the same series:
+To retrieve previous values at the device level, you must use the Inventory API and explicitly include the `withLatestValues` parameter. For more information refer to the [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/#operation/getManagedObjectResource).
+The measurements returned belong to a series that matches the configuration of the latest values, allowing you to access both the most recent and previous measurements within the same series:
 
 ```
 GET /inventory/managedObjects/5413?withLatestValues=true
