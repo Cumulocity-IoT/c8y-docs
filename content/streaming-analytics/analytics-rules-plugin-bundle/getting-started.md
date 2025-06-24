@@ -34,7 +34,7 @@ The model that you add will contain three blocks:
 
 #### Step 1: Create an Analytics model {#create-an-analytics-model}
 
-This section walks you through creating a simple temperature monitoring model. For more detailed Analytics Builder information, refer to the [Understanding models](/streaming-analytics/analytics-builder/#understanding-models).
+This section walks you through creating a simple temperature monitoring model. For more detailed Analytics Builder information, refer to [Understanding models](/streaming-analytics/analytics-builder/#understanding-models).
 
 1. Open the Streaming Analytics application and navigate to **Analytics Builder** > **Models**.
 2. On the top bar, click **New Model**, enter a model name (for example, "Create alarm on threshold") and click **OK**.
