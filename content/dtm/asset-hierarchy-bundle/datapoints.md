@@ -17,7 +17,7 @@ To reference data points and measurement series in Cumulocity, the format `fragm
 **Example:**
 Within the `c8y_Temperature` fragment, `T` (for Temperature) could be a series. Each series provides a distinct stream of data for a particular metric. If a device has two temperature sensors, one for ambient temperature and one for internal temperature, both might fall under the `c8y_Temperature` fragment but would have distinct series names, such as for example `T_Ambient` and `T_Internal`. 
 
-### Type of Data points
+### Data point types
 
 In Cumulocity, data points are inherently associated with managed objects in the platform's inventory. As assets are a type of managed object, measurements can be associated with assets as any other managed object. However, there are two distinct ways in which data points can be associated with assets in the Digital Twin Manager:   
 

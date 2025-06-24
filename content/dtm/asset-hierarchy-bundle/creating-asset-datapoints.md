@@ -4,7 +4,7 @@ title: Create Linked Data Points
 layout: redirect
 ---
 
-All data points associated with an asset can viewed and created in the **Data points** section of the **Assets** page. 
+All data points associated with an asset can be viewed and created in the **Data points** section of the **Assets** page. 
 
 ### To create linked data points
 
