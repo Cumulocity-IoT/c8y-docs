@@ -30,3 +30,16 @@ In Cumulocity, data points are inherently associated with managed objects in the
  Data point linking enables the contextualization of raw, device-level measurements within the logical framework of an asset hierarchy. This linking allows for a unified view of an asset's performance and status by aggregating relevant data from multiple underlying devices into the asset, transforming disparate sensor readings into actionable information for the asset itself. By centralizing data at the asset level, it facilitates the calculation of asset-specific Key Performance Indicators (KPIs) and enables holistic visualization in dashboards, supporting more accurate decision-making for complex systems that comprise multiple devices. 
 
 {{< /c8y-admon-info>}}
+
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS
+
+Digital Twin Manager provides a comprehensive set of permissions to manage linked data points effectively and securely. These permissions are essential for ensuring that users can create, update, view, and delete linked data points as needed while maintaining the integrity and security of the asset data.
+
+These permissions are categorized under two main permissions: "Digital twin assets" and "Digital twin linking". The following permissions are required to view or manage linked data points:
+
+- To view linked data points: READ permission for permission type "Inventory"
+- To create linked data points: CREATE permission for permission type "Digital twin assets" or "Digital twin linking"
+- To update linked data points: UPDATE permission for permission type "Digital twin assets" or "Digital twin linking"
+- To create, update and delete linked data points: ADMIN permission for permission type "Digital twin assets" or "Digital twin linking"
+{{< /c8y-admon-req >}}
