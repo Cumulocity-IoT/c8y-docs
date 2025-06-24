@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data Point Table Widget Display Issue (Max/Min Values) (#9425) [GRAFT][release/cd] (#9432)
+title: Fixed data point table widget not displaying maximum and minimum values correctly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
