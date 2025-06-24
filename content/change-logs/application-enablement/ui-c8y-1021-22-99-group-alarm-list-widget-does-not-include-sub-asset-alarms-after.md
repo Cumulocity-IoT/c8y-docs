@@ -14,5 +14,5 @@ build_artifact:
 ticket: MTM-63974
 version: 1021.22.99
 ---
-In the migrated "Alarm list" widget, child device alarms were not being displayed even though they were shown by default in the legacy version. During migration, the toggle for showing child device alarms was incorrectly set to disabled. This issue has been fixed. The option now defaults to enabled, so migrated widgets will show child device alarms correctly without requiring configuration changes.
+In the migrated "Alarm list" widget, child device alarms were not displayed although they were shown by default in the legacy version. During migration, the toggle for showing child device alarms was incorrectly set to disabled. This issue has been fixed. The option now defaults to enabled, so migrated widgets will show child device alarms correctly without requiring configuration changes.
 Note: The migration applies until the widget configuration is saved, then this change must be done manually.
