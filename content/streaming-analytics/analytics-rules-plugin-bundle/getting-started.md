@@ -39,21 +39,21 @@ This section walks you through creating a simple temperature monitoring model. F
 1. Open the Streaming Analytics application and navigate to **Analytics Builder** > **Models**.
 2. On the top bar, click **New Model**, enter a model name (for example, "Create alarm on threshold") and click **OK**.
 3. From the palette on the left, expand **Input** and drag the **Measurement Input** block onto the canvas. In the block parameter editor:
-   - For **Input Source**, select "Template parameter" from the dropdown <img src="/images/streaming-analytics/analytics-builder/option-template-parameter.png" alt="Option for selecting a template parameter" style="display:inline-block; margin:0">, then give a name to the template parameter. Example "Measurement Source".
+   - For **Input Source**, select "Template parameter" from the dropdown <img src="/images/streaming-analytics/analytics-builder/option-template-parameter.png" alt="Option for selecting a template parameter" style="display:inline-block; margin:0">, then provide a name. For example, "Measurement Source".
    ![Template parameter with From Context](/images/streaming-analytics/analytics-rules-plugin/select-tp-type.png)
 
-   - For **Fragment and Series**, select "Template parameter" from the dropdown, then provide a suitable name, example: Input Fragment and Series.
+   - For **Fragment and Series**, select "Template parameter" from the dropdown, then provide a name. For example: "Input Fragment and Series".
 4. Expand **Calculation** and drag the **Threshold** block onto the canvas. In the block parameter editor:
-   - For **Threshold Value**, select "Template parameter" from the dropdown, then provide a name, example: "Threshold Value".
+   - For **Threshold Value**, select "Template parameter" from the dropdown, then provide a name. For example: "Threshold Value".
 5. Expand **Output** and drag the **Alarm Output** block onto the canvas. In the block parameter editor:
-   - For **Output Destination**, select "Template parameter" from the dropdown, then use the same template parameter given for **Input Source** of the "Measurement Input" block, example: "Measurement Source".
-   - For **Alarm Type**, select "Template parameter" from the dropdown, then provide a name, example:  "Alarm Type".
-   - For **Message**, select "Template parameter" from the dropdown, then provide a name. For example:  "Alarm Type".
+   - For **Output Destination**, select "Template parameter" from the dropdown, then use the same template parameter given for **Input Source** of the **Measurement Input** block. For example: "Measurement Source".
+   - For **Alarm Type**, select "Template parameter" from the dropdown, then provide a name. For example:  "Alarm Type".
+   - For **Message**, select "Template parameter" from the dropdown, then provide a name. For example:  "Alarm Text".
    - For **Severity**, select "Template parameter" from the dropdown, then provide a name. For example: "Alarm Severity".
 6. Connect the blocks by clicking and dragging between their ports (small circles on the sides of blocks):
-   - Connect **Value** output of **Measurement Input** to **Value** input of **Threshold**
-   - Connect **Breached** output of **Threshold** to **Create Alarm** input of **Alarm Output**
-7. In the toolbar of the model editor, click the template parameter icon <i class="c8y-icon c8y-icon-parameters-on c8y-icon-duocolor icon-20"></i> to open the template parameter dialog. Ensure the template parameter entry provided for **Input Source** of the **Measurement Input** block (example : "Measurement Source") has "Source or Destination" updated to include one or more values from the **Restrict to** dropdown (for example, Device) and set **Value Selection** to "From Context". Click **OK** to save the changes.
+   - Connect the **Value** output of the **Measurement Input** to the **Value** input of the **Threshold**.
+   - Connect the **Breached** output of the **Threshold** to the **Create Alarm** input of the **Alarm Output**.
+7. In the toolbar of the model editor, click the template parameter icon <i class="c8y-icon c8y-icon-parameters-on c8y-icon-duocolor icon-20"></i> to open the template parameter dialog. Ensure the template parameter entry provided for **Input Source** of the **Measurement Input** block (example : "Measurement Source") has "Source or Destination" updated to include one or more values from the **Restrict to** dropdown (for example, "Device") and set **Value Selection** to "From Context". Click **OK** to save the changes.
 
 For more details about "From Context" and **Restrict to**, refer to [Define template parameters](/streaming-analytics/analytics-builder/#to-define-the-template-parameters-for-the-instances-of-the-current-model)
 
@@ -97,7 +97,7 @@ You can also create analytics rules using pre-built sample models from Analytics
 
 #### Step 2: Configure template parameters {#configure-template-parameters}
 1. Click the template parameter icon <i class="c8y-icon c8y-icon-parameters-on c8y-icon-duocolor icon-20"></i> in the toolbar.
-2. Ensure the template parameter entry provided for **Input Source** of the **Alarm Input** block (for example, "Device or group of devices") has "Source or Destination" updated to include one or more values from the **Restrict to** dropdown (for example, Device) and set **Value Selection** to "From Context". Click **OK** to save the changes.
+2. Ensure the template parameter entry provided for **Input Source** of the **Alarm Input** block (for example, "Device or group of devices") has "Source or Destination" updated to include one or more values from the **Restrict to** dropdown (for example, "Device") and set **Value Selection** to "From Context". Click **OK** to save the changes.
 3. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save the model.
 
 #### Step 3: Create a rule from the Device Management application {#create-rule-from-device-management-application}
