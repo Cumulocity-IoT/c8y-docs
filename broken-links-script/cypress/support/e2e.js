@@ -60,6 +60,9 @@ Cypress.on('uncaught:exception', (err) => {
     if (err.message.includes("$(...).tooltip is not a function")) {
       return false;
     }
+        if (err.message.includes("No key found. SDK can not be initialized")) {
+      return false;
+    }
 
   });
   
