@@ -1,7 +1,7 @@
 ---
 title: Upgrading from Angular 17 to Angular 18  
 layout: redirect
-weight: 450
+weight: 440
 ---
 
 Angular 18 is supported from version `1021.0.0`. The following configuration changes are required before you can run the application:
