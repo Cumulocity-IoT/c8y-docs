@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-63958
 version: 1021.22.98
 ---
-Co-authored-by: Lukasz Janusz <114157358+luja-c8y@users.noreply.github.com>
-Co-authored-by: Lukasz Janusz <lukasz.janusz@cumuloicty.com>
+When displaying the minimum and maximum values for a data point at the same time was selected, the maximum values were showing the minimum values instead. This setting now shows the maximum value correctly.
