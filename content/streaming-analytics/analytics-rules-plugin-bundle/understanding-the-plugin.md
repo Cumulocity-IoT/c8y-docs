@@ -17,7 +17,7 @@ In the standard Analytics Builder workflow, to deploy analytics instances, users
 
 This process requires switching between applications and can be time-consuming when managing rules for multiple devices or groups.
 
-For detailed information about the instance editor workflow, refer to [Instance Editor](/streaming-analytics/analytics-builder/#using-the-instance-editor).
+For detailed information about the instance editor workflow, refer to [Instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor).
 
 #### With Analytics rules plugin {#with-analytics-rules-plugin}
 The Analytics rules plugin streamlines this process by enabling analytics builder model instance creation and deployment directly from device and group contexts, eliminating the need for switching to different application.
@@ -30,8 +30,8 @@ A rule has the following fields and properties:
 |----------------------| ----------------------|
 | **Name**             | Automatically populated with the model name but can be customized for more descriptive names.<br>When creating multiple rules from the same model without changing the rule name, the plugin automatically appends #1, #2, #3, etc. to differentiate instances. Rules are sorted by instance name. |
 | **Note**             | You can add a note for the rule.                                                                                                                                                                                                                                |
-| **Created**          | Shows the timestamp of when the rule was created.                                                                                                                                                                                                               |
-| **Last Updated**     | Shows the timestamp of when the rule was last updated.                                                                                                                                                                                                          |
+| **Created**          | Shows the timestamp when the rule was created.                                                                                                                                                                                                               |
+| **Last Updated**     | Shows the timestamp when the rule was last updated.                                                                                                                                                                                                          |
 | **Model Name**       | Displays the name of the model associated with the rule. This field is read-only.                                                                                                                                        |
 | **Template Parameters** | Template parameters configured as "From Context" are automatically populated based on your current device/group context.<br>Context-based parameters are read-only as they inherit values from the current context.<br>Non-context template parameters remain editable for user configuration. |
 | **Active/Inactive**  | Deploy the rule by toggling from inactive to active state.<br>Once the rule is deployed, all fields and properties become read-only unless the rule is undeployed.                                                        |
@@ -42,7 +42,7 @@ The Analytics rules plugin maintains seamless bidirectional integration with the
 
 Rules created in the Analytics Builder instance editor appear in the Analytics rules plugin only when the mode is set to **Production**. Non-production modes indicate the rule is under development or testing and not ready for deployment.
 
-Rules created through the Analytics Rules plugin automatically appear in the corresponding model's instance editor. These rules can be edited, modified, or deleted from the instance editor.
+Rules created through the Analytics rules plugin automatically appear in the corresponding model's instance editor. These rules can be edited, modified, or deleted from the instance editor.
 
 To prevent deployment of incomplete rules, the instance editor includes enhanced validation on the instance name. The instance name is required and must be unique within your tenant. The instance is available for deployment only after you provide a unique, non-empty instance name.
 

@@ -21,11 +21,11 @@ For more details about Analytics Builder, refer to [Analytics Builder](/streamin
 Before using the Analytics rules plugin, ensure that the following requirements are met:
 - The tenant is subscribed to the Streaming Analytics microservice that supports the Analytics Builder capability.
 - The Analytics rules plugin is installed in the desired application, and the feature flag `streaming-analytics.analytics-rules-plugin` is enabled.
-- The user has the required privileges to access Analytics Builder models and create new instances of Analytics builder templated models. Refer to the [Permissions](/streaming-analytics/introduction-analytics/#permissions).
+- The user has the required privileges to access Analytics Builder models and create new instances of Analytics builder templated models. Refer to [Permissions](/streaming-analytics/introduction-analytics/#permissions).
 
 ### Creating your first analytics rule {#creating-your-first-analytics-rule}
 
-This topic provides the basic workflow for creating your first analytics rule using the plugin from applications like Device Management. You will create a simple templated analytics model that creates an alarm when the temperature breaches a given threshold value. The steps below require that at least one device is already registered in {{< product-c8y-iot >}}. Preferably, this device is already sending measurement values to {{< product-c8y-iot >}}.
+This topic provides the basic workflow for creating your first analytics rule using the plugin from applications like Device Management. You will create a simple templated analytics model that creates an alarm when the temperature breaches a given threshold value. The steps below require that at least one device is already registered in {{< product-c8y-iot >}}. Preferably, this device already sends measurement values to {{< product-c8y-iot >}}.
 
 The model that you add will contain three blocks:
 - An input block which receives measurements from devices, groups, or assets.
@@ -48,8 +48,8 @@ This section walks you through creating a simple temperature monitoring model. F
 5. Expand **Output** and drag the **Alarm Output** block onto the canvas. In the block parameter editor:
    - For **Output Destination**, select "Template parameter" from the dropdown, then use the same template parameter given for **Input Source** of the "Measurement Input" block, example: "Measurement Source".
    - For **Alarm Type**, select "Template parameter" from the dropdown, then provide a name, example:  "Alarm Type".
-   - For **Message**, select "Template parameter" from the dropdown, then provide a name, example: "Alarm Text".
-   - For **Severity**, select "Template parameter" from the dropdown, then provide a name, example: "Alarm Severity".
+   - For **Message**, select "Template parameter" from the dropdown, then provide a name. For example:  "Alarm Type".
+   - For **Severity**, select "Template parameter" from the dropdown, then provide a name. For example: "Alarm Severity".
 6. Connect the blocks by clicking and dragging between their ports (small circles on the sides of blocks):
    - Connect **Value** output of **Measurement Input** to **Value** input of **Threshold**
    - Connect **Breached** output of **Threshold** to **Create Alarm** input of **Alarm Output**
@@ -67,9 +67,9 @@ When completed, your model will look similar to this:
 
 ![Create model for alarms](/images/streaming-analytics/analytics-rules-plugin/create-alarm-model.png)
 
-#### Step 2: Create an instance of model using Analytics rules plugin {#create-an-instance-of-model-using-analytics-rules-plugin}
+#### Step 2: Create model instance using Analytics rules plugin {#create-an-instance-of-model-using-analytics-rules-plugin}
 
-1. Navigate to Device Management application.
+1. Navigate to the Device Management application.
 2. Go to **Devices** > **All devices** and select a device.
 3. Click the **Analytics rules** tab (embedded as one of the device details tabs).
 Refer to the [Prerequisites](#prerequisites) section to ensure all requirements are met.
@@ -83,14 +83,14 @@ Refer to the [Prerequisites](#prerequisites) section to ensure all requirements 
 6. Your rule now appears in the Analytics rules list, showing its status (Active/Inactive).
    ![Analytics rules list](/images/streaming-analytics/analytics-rules-plugin/analytics-rules-list.png)
 
-**Congratulations!** You have successfully created and deployed your first analytics rule using the Analytics Rules plugin.
+**Congratulations!** You have successfully created and deployed your first analytics rule using the Analytics rules plugin.
 
-### Creating Analytics rule for existing samples {#create-analytics-rule-for-existing-samples}
+### Creating Analytics rules for existing samples {#create-analytics-rule-for-existing-samples}
 
 You can also create analytics rules using pre-built sample models from Analytics Builder. The process is similar to creating from scratch but faster since the model logic is already defined.
 
-#### Step 1: Create model from sample {#create-model-from-sample}
-1. Navigate to **Analytics Builder** > **Samples** page.
+#### Step 1: Create a model from a sample {#create-model-from-sample}
+1. Navigate to **Analytics Builder** > **Samples**.
 2. Click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of your desired sample (for example, "On alarm execute operation") and select **Create model from sample**.
    ![Create model from sample](/images/streaming-analytics/analytics-rules-plugin/create-model-from-sample.png)
 3. The model editor opens with the sample model ready for use.
@@ -100,8 +100,8 @@ You can also create analytics rules using pre-built sample models from Analytics
 2. Ensure the template parameter entry provided for **Input Source** of the **Alarm Input** block (for example, "Device or group of devices") has "Source or Destination" updated to include one or more values from the **Restrict to** dropdown (for example, Device) and set **Value Selection** to "From Context". Click **OK** to save the changes.
 3. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save the model.
 
-#### Step 3: Create rule from Device Management application {#create-rule-from-device-management-application}
-Follow the same steps as described in [Step 2: Create an instance of model using Analytics rules plugin](#step-2-create-an-instance-of-model-using-analytics-rules-plugin) above.
+#### Step 3: Create a rule from the Device Management application {#create-rule-from-device-management-application}
+Follow the same steps as described in [Step 2: Create model instance using the Analytics rules plugin](#step-2-create-an-instance-of-model-using-analytics-rules-plugin) above.
 
 
 ### Troubleshooting {#troubleshooting}
