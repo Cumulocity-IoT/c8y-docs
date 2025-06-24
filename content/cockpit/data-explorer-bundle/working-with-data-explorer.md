@@ -157,18 +157,18 @@ The following fields may be modified:
 
 Configurations in the data explorer let you create, save, and manage different configurations tailored to your specific needs - whether for individual devices, projects, or use cases. Each configuration stores your selected data points, chart layout, time range, and all visual customizations. Configurations are saved automatically in your browser's local storage, so any updates (like adding or removing data points or changing the visualization) are preserved instantly.
 
-You can switch between multiple workspaces using the configuration menu, located at the top left of the **Data explorer** page. This menu provides the following actions:
+You can switch between multiple configurations using the configuration menu, located at the top left of the **Data explorer** page. This menu provides the following actions:
 
-- Create new configuration – Start from a blank workspace with no data points or settings applied.
-- Clone a configuration – Duplicate the current workspace to use it as a starting point for a new setup.
-- Delete all configurations (except the active one) – Clean up your saved configurations by removing all others, keeping only the currently active workspace.
+- Create new configuration – Start from a blank configuration with no data points or settings applied.
+- Clone a configuration – Duplicate the current configurations to use it as a starting point for a new setup.
+- Delete all configurations (except the active one) – Clean up your saved configurations by removing all others, keeping only the currently active configuration.
 
 Each configuration has a unique URL that can be shared with other users. To use the shared configuration URL, those users must have access to the referenced devices and data points.
 
-![Data explorer workspaces](/images/users-guide/cockpit/cockpit-dataexplorer-workspaces.png)
+![Data explorer configurations](/images/users-guide/cockpit/cockpit-dataexplorer-workspaces.png)
 
 {{< c8y-admon-info >}}
-Since workspaces are stored locally, they are tied to your browser and device. Clearing browser data will remove them.
+Since configurations are stored locally, they are tied to your browser and device. Clearing browser data will remove them.
 {{< /c8y-admon-info >}}
 
 {{< /c8y-admon-preview-feature >}}
