@@ -17,7 +17,7 @@ This also applies to module federation plugins, including plugins that use earli
 - Update `@angular/cdk` to version `19.x.x`.
 - `Node.js`, `TypeScript`, `RxJS`: [Version compatibility](https://angular.dev/reference/versions#actively-supported-versions).
 - Follow the `Angular 19` upgrade guide: [Updating to version 19](https://angular.dev/update-guide?v=18.0-19.0&l=2).
-- adjust the `main.ts` and `bootstrap.ts` files according to the git diffs mentioned [below](#track-changes-between-releases).
+- Adjust the `main.ts` and `bootstrap.ts` files according to the git diffs [mentioned below](#track-changes-between-releases).
 
 ### Breaking changes
 The Web SDK version 1022.0.0 introduces multiple breaking changes.
