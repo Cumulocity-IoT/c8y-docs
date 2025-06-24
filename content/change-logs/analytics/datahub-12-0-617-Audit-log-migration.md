@@ -12,4 +12,4 @@ build_artifact:
     label: datahub
 version: 12.0.617
 ---
-The audit log of the {{< product-c8y-iot >}} DataHub web application has been moved to the audit log of the {{< product-c8y-iot >}} Administration web application, which provides central access to the tracking of all user operations.
+The audit log of the {{< product-c8y-iot >}} DataHub application has been moved to the audit log of the {{< product-c8y-iot >}} Administration application, which provides central access to the tracking of all user operations.
