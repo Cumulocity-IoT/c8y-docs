@@ -1,5 +1,5 @@
 ---
-weight: 40
+weight: 25
 title: Creating assets via the UI
 layout: redirect
 ---

@@ -5,10 +5,10 @@ layout: redirect
 ---
 
 
-To view the data points for a specific asset, navigate to the Assets page by selecting the desired asset from the asset hierarchy. In the asset details view, click on the **Data points tab**.
+To view the data points for a specific asset, navigate to the **Assets** page by selecting the desired asset from the asset hierarchy. In the asset details view, select the **Data points** section.
 
-Understanding the Columns in the Data Points Tab
-The "Data points" tab presents a table with several columns, each providing crucial information about the linked or associated measurements:
+### Understanding the Columns in the Data Points Tab
+The **Data points** section presents a table all relevant information about the data points associated with the selected asset. Each row in the table represents a unique data point with the following columns:
 
 | Column | Description
 | ---------- | -----------
