@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63958
 version: 1021.22.98
 ---
-In the "Data point" widget, when displaying both the minimum and maximum values for a data point was selected, the maximum values showed the minimum values instead. This issue has been fixed. When selecting this setting, the maximum values are now shown correctly.
+In the "Data point table" widget, when displaying both the minimum and maximum values for a data point was selected, the maximum values showed the minimum values instead. This issue has been fixed. When selecting this setting, the maximum values are now shown correctly.
