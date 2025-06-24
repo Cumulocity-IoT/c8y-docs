@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4752
 version: 1021.10.18
 ---
-The redundant "LWM2M Device Send" events was logged alongside the "Received Message" event, both containing identical information. This update removes the duplicate "LWM2M Device Send" event, only the "Received Message" event will now log the resource data received from the LWM2M Service in VERBOSE logging level.
+The "LWM2M Device Send" event was logged alongside the "Received Message" event, although both events contained identical information. This update removes the redundant "LWM2M Device Send" event. Only the "Received Message" event now logs the resource data received from the LWM2M service in the VERBOSE logging level.

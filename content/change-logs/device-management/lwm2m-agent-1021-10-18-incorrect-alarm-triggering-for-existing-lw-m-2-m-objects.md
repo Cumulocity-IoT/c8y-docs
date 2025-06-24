@@ -1,6 +1,6 @@
 ---
 date: 2025-06-19
-title: Incorrect Alarm Triggering for Existing LwM2M Objects
+title: Alarms no longer triggered for existing LWM2M objects
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4752
 version: 1021.10.18
 ---
-Resolved an issue where the LwM2M agent incorrectly triggered alarms when devices reported data for LwM2M objects that already had a DDF representation on the platform. Alarms are now only triggered when the reported objects are not present on the platform.
+The LWM2M agent incorrectly triggered alarms when devices reported data for LWM2M objects that already had a DDF representation on the platform. This issue has been fixed. Alarms are now only triggered when the reported objects are not present on the platform.
