@@ -155,7 +155,7 @@ The following fields may be modified:
 
 ### To add or clone a workspace {#to-add-or-clone-a-workspace}
 
-Workspaces in the data explorer let you create, save, and manage different configurations tailored to your specific needs - whether for individual devices, projects, or use cases. Each workspace stores your selected data points, chart layout, time range, and all visual customizations. Workspaces are saved automatically in your browser's local storage, so any updates (like adding or removing data points or changing the visualization) are preserved instantly.
+Configurations in the data explorer let you create, save, and manage different configurations tailored to your specific needs - whether for individual devices, projects, or use cases. Each configuration stores your selected data points, chart layout, time range, and all visual customizations. Configurations are saved automatically in your browser's local storage, so any updates (like adding or removing data points or changing the visualization) are preserved instantly.
 
 You can switch between multiple workspaces using the configuration menu, located at the top left of the **Data explorer** page. This menu provides the following actions:
 
