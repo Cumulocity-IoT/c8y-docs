@@ -101,7 +101,7 @@ You can also create analytics rules using pre-built sample models from Analytics
 3. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save the model.
 
 #### Step 3: Create a rule from the Device Management application {#create-rule-from-device-management-application}
-Follow the same steps as described in [Step 2: Create model instance using the Analytics rules plugin](#step-2-create-an-instance-of-model-using-analytics-rules-plugin) above.
+Follow the same steps as described in [Step 2: Create model instance using the Analytics rules plugin](#create-an-instance-of-model-using-analytics-rules-plugin) above.
 
 
 ### Troubleshooting {#troubleshooting}
