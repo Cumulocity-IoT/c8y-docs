@@ -18,12 +18,11 @@ const getMarkdownFiles = (dir) => {
 const BASE_URL = "https://cumulocity.com/docs/2025";
 
 const shortcodeMapping = {
-  "apama-plugin-for-eclipse": "Apama Plugin for Eclipse",
+  
   "c8y-current-version": "2025.0",
-  "c8y-edge-current-version-alt": "10.18",
   "c8y-edge-version-major": "2025",
   "c8y-edge-version-minor": "0",
-  "c8y-edge-version-patch": "1",
+  "c8y-edge-version-patch": "2",
   "c8y-resources-server-link": "https://download.cumulocity.com/",
   "c8y-resources-server": "Cumulocity Download Center",
   "c8y-support-link": "https://cumulocity.com/support",
@@ -37,8 +36,7 @@ const shortcodeMapping = {
   "enterprise-tenant": "Enterprise tenant",
   "learning-portal": "Cumulocity Learning Portal",
   "link-apama-webhelp": "https://cumulocity.com/apama/docs/10.15",
-  "link-apamadoc-api": "https://cumulocity.com/apama/docs/10.15/related/ApamaDoc/index.html",
-  "link-c8y-doc-baseurl": ".Page.Site.BaseURL",
+  "link-apamadoc-api": "https://cumulocity.com/apama/docs/10.15/related/ApamaDoc/",
   "link-c8y-github": "https://github.com/Cumulocity-IoT/",
   "link-c8y-training": "https://cumulocity.moodlecloud.com/",
   "link-device-portal": "https://ecosystem.cumulocity.com/devices/?filter_cumulocity_certified=yes",
