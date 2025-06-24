@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed data point table widget not displaying maximum and minimum values correctly
+title: Data point table widget now correctly displays maximum and minimum values
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63958
 version: 1021.22.98
 ---
-When displaying the minimum and maximum values for a data point at the same time was selected, the maximum values were showing the minimum values instead. This setting now shows the maximum value correctly.
+In the "Data point" widget, when displaying both the minimum and maximum values for a data point was selected, the maximum values showed the minimum values instead. This issue has been fixed. When selecting this setting, the maximum values are now shown correctly.
