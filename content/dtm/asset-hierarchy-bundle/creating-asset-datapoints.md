@@ -24,3 +24,11 @@ When choosing from available data points, you have two primary options:
 
 **Custom data points**: If the desired measurement has not yet been received by the platform from the source device, you can define it as a custom data point. To do this, you must manually provide the *fragment* (e.g., c8y_Temperature) and *series* (e.g., T) in the respective input fields. You might also need to provide a measurement type.
 
+{{< c8y-admon-info>}}
+
+When creating a new linked data point, the data point on the asset is created with the fragment and series of the selected data point in the *Data point selector*. Using *Change source* context menu option, it is possible to change the source device itself and / or the fragment and series on the source device for the linked data point. This means that you can adapt the linked data point to different source devices or measurement series as needed. 
+
+If fragment and series on the asset and the source device are different, the source will have the name of the source device and the fragment and series will be displayed as "DeviceName - c8y_Temperature → T". This helps to clearly identify the source of the linked data point.
+
+{{< /c8y-admon-info>}}
+
