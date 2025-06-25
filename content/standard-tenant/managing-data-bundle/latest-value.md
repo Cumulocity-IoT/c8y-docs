@@ -126,14 +126,14 @@ It’s important to note that enabling `strongConsistency` may slightly slow dow
 
 This functionality enables the storage and querying of measurement values that have the second most recent arrival time. Retrieving not only the most recent value but also the one before is often necessary — for example, to calculate trends or detect changes over time.
 By default, this feature is enabled globally, but it can be configured at the tenant level via an API request.  
-To manage automated persistence of previous measurement values on tenant level use the tenant options to create a new category named `inventory.previous-measurements.enabled` with a PUT request to a [tenant options category](https://{{< domain-c8y >}}/api/core/#operation/putCategoryOptionResource).
+To manage automated persistence of previous measurement values on tenant level use the tenant options to create a new category named `measurement.series.previousvalue.enabled` with a PUT request to a [tenant options category](https://{{< domain-c8y >}}/api/core/#operation/putCategoryOptionResource).
 Example:
 ```
 PUT /tenant/options/
 
  {
     "category": "configuration",
-    "key": "inventory.previous-measurements.enabled",
+    "key": "measurement.series.previousvalue.enabled",
     "value": "true" //or "false" if the functionality needs to be disabled for a specific tenant
 } 
 
