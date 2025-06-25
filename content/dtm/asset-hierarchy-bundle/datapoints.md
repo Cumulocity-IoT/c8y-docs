@@ -27,7 +27,7 @@ In Cumulocity, data points are inherently associated with managed objects in the
   
  {{< c8y-admon-info>}}
 
- Data point linking enables the contextualization of raw, device-level measurements within the logical framework of an asset hierarchy. This linking allows for a unified view of an asset's performance and status by aggregating relevant data from multiple underlying devices into the asset, transforming disparate sensor readings into actionable information for the asset itself. By centralizing data at the asset level, it facilitates the calculation of asset-specific Key Performance Indicators (KPIs) and enables holistic visualization in dashboards, supporting more accurate decision-making for complex systems that comprise multiple devices. 
+Data point linking enables the contextualization of raw, device-level measurements within the logical framework of an asset hierarchy. This linking allows for a unified view of an asset's performance and status by aggregating relevant data from multiple underlying devices into the asset, transforming disparate sensor readings into actionable information for the asset itself. By centralizing data at the asset level, it facilitates the calculation of asset-specific Key Performance Indicators (KPIs) and enables holistic visualization in dashboards, supporting more accurate decision-making for complex systems that comprise multiple devices. 
 
 {{< /c8y-admon-info>}}
 
