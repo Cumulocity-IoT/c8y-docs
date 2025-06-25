@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Location asset property shows key as title in Device Management application
+title: Asset location property shows proper name as title
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
