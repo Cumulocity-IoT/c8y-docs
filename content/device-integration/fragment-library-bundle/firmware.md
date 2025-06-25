@@ -41,7 +41,7 @@ The 115 static template is available for devices to communicate their currently 
 
 `115,ubuntu core,20.04.3,http://test.com`
 
-### Using `$PROVIDED` firmware URLs {#provided-firmware}
+### Using $PROVIDED firmware URLs {#provided-firmware}
 
 If the `url` is set to `$PROVIDED`, no firmware file is uploaded or linked from the platform. In this case, the device is fully responsible for resolving the correct binary. If the device cannot resolve the binary, the operation must be marked as **FAILED**.
 
