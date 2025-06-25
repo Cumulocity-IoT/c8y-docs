@@ -384,10 +384,17 @@ Models with no template parameters can be directly activated in the model manage
         An input block specifies a device or a range of devices, while an output block specifies a device, a trigger device or an asset. For template parameters, the same template parameter and thus value can be used for both input and output blocks. If a template parameter is set to refer to a range of devices, then using it in an output block will be treated as the trigger device. Typically, a single template parameter would be used for all input and output blocks, and may be a single device or a range of devices, in which case the block output goes to the device within the range that triggered a model evaluation \(so a model calculating an average of a measurement and outputting to a measurement would generate a new measurement for each device independently\). Even if a different template parameter whose value refers to a different range was used, the model output would only be sent to the device that triggered a model's evaluation.
 
     -   **Source or Destination Type**.
-        You can select one of the following source or destination types: **Device**, **Groups**, **Assets**, or **Other**. You can then specify a default value that is based on your selection.
-
-    -   **Optional**. An optional value can remain blank or can be set later by the instance maintainer. When you select this checkbox, it is not possible to specify a default value.
-    -   **Default Value**. You can only specify a default value when the **Optional** checkbox is not selected.
+        You can select one or more of the following "Source or Destination" types from the **Restrict to** dropdown: "Device", "Groups", "Assets", or "Other". This selection restricts the template parameter to the selected types. This restriction is mandatory when "From Context" is selected from the **Value Selection** dropdown.
+        ![Template parameter with From Context](/images/streaming-analytics/analytics-builder/from-context-restrict-to.png)
+    -   **Value Selection** - Select one of the following options from the dropdown:
+        -   Required - Default. Instance deployment requires a value for this template parameter.
+        -   Optional - The template parameter can remain blank or can be set later by the instance maintainer. When you select this option, it is not possible to specify a default value.
+        -   From Context - Applicable only for "Source or Destination" type. The input will be automatically selected based on the context where the instance is created. Example: Device context or group context.
+{{< c8y-admon-info>}}
+Only one template parameter per model can have a "From Context" value selection.
+{{< /c8y-admon-info>}}
+    
+    -   **Default Value**. You can only specify a default value when the **Value Selection** option is set to "Required".
 
         **Exception**: Boolean types always have a value and cannot be optional. They are “false” by default \(that is, the checkbox for the default value is not selected\).
 
