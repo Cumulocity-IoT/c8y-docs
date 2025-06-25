@@ -7,7 +7,7 @@ change_type:
     label: Fix
 component:
   - value: component-YdSEScrEC
-    label: Cockpit
+    label: Web SDK
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
