@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63833
 version: 1021.22.97
 ---
-Location asset property showing key (c8y_Position) as title in Device Management app (#9269) [GRAFT][release/y2025] (#9427)
+In the Device Management application, the Location asset property previously displayed the internal key "c8y_Position" instead of a user-friendly title. This change improves the usability by now showing a proper title for the Location property. The change is visible for all assets that have the c8y_Position property.
