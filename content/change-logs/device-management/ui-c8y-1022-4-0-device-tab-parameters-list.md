@@ -14,5 +14,4 @@ build_artifact:
 ticket: DM-4666
 version: 1022.4.0
 ---
-Co-authored-by: Dafina Karamanoleva <92030501+dafkk@users.noreply.github.com>
-Co-authored-by: Dominik Schmitz <dominik.schmitz@cumulocity.com>
+To provide a better overview of the device parameters, a new "Parameters" tab has been added to the Device Management application. This tab lists all the parameters reported by the device in a table format, including the parameter name, value, type, and timestamp of the last update. With this change, users can now easily view and monitor the parameters of a device without needing to navigate through the measurements or the complete device data. The parameters list is automatically updated whenever new parameters are reported by the device.
