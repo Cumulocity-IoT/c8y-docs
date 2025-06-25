@@ -61,7 +61,7 @@ When the backing quota limit has reached:
 To avoid hitting the backlog limit and ensure reliable message consumption:
 *	Consume or acknowledge messages frequently to reduce backlog buildup.
 *	Monitor the level of free backlog space using the available metrics and alerting.
-*	Avoid extended consumer downtimes without reconnecting.
+*	Avoid extended consumer downtimes without reconnecting to prevent the backlog building up.
 *	If persistent disconnections are expected, consider implementing filtering or message expiry logic at the application level.
 
 In addition to the backlog quota, all messages now have a time-to-live (TTL) expiry. Messages not consumed after this period will be discarded.
