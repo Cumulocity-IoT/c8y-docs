@@ -29,7 +29,7 @@ Linked data points, other than associated data points, can be edited or deleted 
 4. In the confirmation dialog, select **Unassign** to remove the link between the asset and the source device for that data point.
 
 {{< c8y-admon-info>}}
-Unlinking a data point does not delete the data point itself; it simply removes the association between the asset and the source device. The data point will still exist in the system but will no longer be linked to the asset. The state of the data point will change to *Incomplete* after unlinking, indicating that it is no longer associated with a source device.
+Unlinking a data point does not delete the data point itself; it simply removes the association between the asset and the source device. The data point will still exist as a measurement of the source device but will no longer be linked to the asset. The state of the data point will change to *Incomplete* after unlinking, indicating that it is no longer associated with a source device.
 
 {{< /c8y-admon-info>}}
 
