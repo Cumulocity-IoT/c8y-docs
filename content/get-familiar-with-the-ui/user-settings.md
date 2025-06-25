@@ -63,7 +63,7 @@ For easier user access management, the above permission(s) are/is included in th
 - Tenant manager - manages tenant-wide configurations like applications, tenant options and retention rules.
 {{< /c8y-admon-req >}}
 
-The preview features functionality allows you to manage all features that are currently in Public Preview in one place. With a simple toggle interface, you can easily discover, enable, and experiment with upcoming features.
+The Preview Features functionality allows you to manage all features currently in Public Preview for a specific application. With a simple toggle interface, you can easily discover, enable, and experiment with upcoming features.```
 
 When a new preview feature becomes available, the user icon at the top right corner flashes to draw your attention. 
 
