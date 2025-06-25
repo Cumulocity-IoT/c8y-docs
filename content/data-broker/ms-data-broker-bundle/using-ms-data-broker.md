@@ -62,7 +62,7 @@ To avoid hitting the backlog limit and ensure reliable message consumption:
 *	Consume or acknowledge messages frequently to reduce backlog buildup.
 *	Monitor the level of free backlog space using the available metrics and alerting.
 *	Avoid extended consumer downtimes without reconnecting to prevent the backlog building up.
-*	If persistent disconnections are expected, consider implementing filtering or message expiry logic at the application level.
+*	If persistent disconnections are expected, consider requesting a bigger backlog - higher message rates might require bigger backlog sizes to cope with reasonable levels of outage/downtime of the destination Cumulocity system
 
 In addition to the backlog quota, all messages now have a time-to-live (TTL) expiry. Messages not consumed after this period will be discarded.
 
