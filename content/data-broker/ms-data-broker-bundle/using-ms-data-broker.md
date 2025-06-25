@@ -52,7 +52,7 @@ The microservice-based data broker stores messages persistently using the {{< pr
 To optimize resource usage, the Messaging Service imposes storage limits and a message time-to-live (TTL) on persistently stored messages.
 See [service quotas](/service-terms/quotas/#realtime-apis) for details of the default quotas and TTL used by the microservice-based data broker.
 
-When the backing quota limit has reached:
+When the backlog quota limit have reached:
 *	Older undelivered messages may be discarded to make room for new ones.
 *	Consumers reconnecting after a disconnection may receive outdated or partial data.
 *	The system may apply back-pressure, throttle delivery, or even drop messages, depending on usage patterns and load.
