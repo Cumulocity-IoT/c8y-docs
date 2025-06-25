@@ -15,14 +15,14 @@ ticket: MTM-62622
 version: 2025.207.0
 ---
 
-To provide better user experience for searching inventory by particular property the {{< product-c8y-iot >}} platform changes
-the behavior of search by filter with wildcards. From now on queries using [query language](https://cumulocity.com/api/core/#tag/Query-language) with wildcards will behave case-insensitive. Previously such queries were processed with case-sensitive strategy. 
+To improve the user experience when searching the inventory by a particular property, the {{< product-c8y-iot >}} platform changes
+its behavior for searches by filter with wildcards. Queries using the [query language](https://cumulocity.com/api/core/#tag/Query-language) with wildcards now behave case-insensitive. Previously, such queries were processed with a case-sensitive strategy. 
 
 Example request: <br/>
 `GET /inventory/managedObjects?query=name+eq+'my-device*` <br/>
-can return now devices with name equal `'my-device01'` or `'My-Device02'`.
+can now return devices with names equal `'my-device01'` or `'My-Device02'`.
 
-Queries without wildcard character remain unchanged and use exact match for optimal performance. This means that example request: <br/>
+Queries without a wildcard character remain unchanged and use the exact match for optimal performance. This means that the example request: <br/>
 `GET /inventory/managedObjects?query=name+eq+'My-device01'` <br/>
-will not return device with name equal `'my-device01'`.
+will not return a device with a name equal `'my-device01'`.
 
