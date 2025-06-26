@@ -10,7 +10,7 @@ If you have installed Edge on your local machine, then you should be able to imm
 If you have performed a kubernetes-native install rather than installing with the `c8yedge` tool, it is sometimes the case that Edge is not accessible via either URL. This depends on the Kubernetes distribution you have used. See [Accessing Edge via an external IP](/edge-kubernetes/manage-edge/#external-ip)
 {{< /c8y-admon-info >}}
 
-When signing into Edge for the first time, you will be prompted for the Cumulocity tenant id you are signing into. Edge has two tenants, `management` and `edge`. Use the default credentials username “**admin**” and password “**admin-pass**”. If you have installed using the `c8yedge` tool, the email address will have been initially configured to `company@edgebootstrap.example` which you will also need when signing in for the first time. These credentials are set for both Cumulocity tenants, and should be changed on both even if you do not intend to use the `management` tenant.
+When signing into Edge this way, you will be prompted for the Cumulocity tenant id you are signing into. Edge has two tenants, `management` and `edge`. When signing in for the first time, use the default credentials username “**admin**” and password “**admin-pass**”. If you have installed using the `c8yedge` tool, the email address will have been initially configured to `company@edgebootstrap.example` which you will also need when signing in for the first time. These credentials are set for both Cumulocity tenants, and should be changed on both even if you do not intend to use the `management` tenant.
 
 For more sophisticated setups, especially those where you are using a domain name to access Edge, read on.
 
