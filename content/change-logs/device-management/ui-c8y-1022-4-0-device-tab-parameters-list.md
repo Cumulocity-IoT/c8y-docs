@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Device tab parameters list.
+title: New device tab listing all device parameters
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
