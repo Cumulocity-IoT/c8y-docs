@@ -37,7 +37,7 @@ If the `url` is set to `$PROVIDED`, no file is uploaded or linked from the platf
 
 **SmartREST example**
 
-For example, to mark a software as provided:
+To mark a software as provided:
 
 `528,DeviceSerial,example-software,1.0.0,$PROVIDED,install`
 
