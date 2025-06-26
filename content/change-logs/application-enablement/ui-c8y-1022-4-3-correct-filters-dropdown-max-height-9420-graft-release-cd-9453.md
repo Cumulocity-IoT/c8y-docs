@@ -1,6 +1,6 @@
 ---
 date: ""
-title: correct filters dropdown max-height (#9420) [GRAFT][release/cd] (#9453)
+title: Data grid filters dropdown max-height corrected
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
