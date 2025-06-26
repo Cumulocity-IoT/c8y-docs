@@ -15,6 +15,11 @@ When signing into Edge for the first time, you will be prompted for the Cumuloci
 For more sophisticated setups, especially those where you are using a domain name to access Edge, read on.
 
 ### Accessing Edge using the domain name {#accessing-cumulocity-iot-edge-using-the-domain-name}
+{{< c8y-admon-info >}}
+This is an optional part of setup. Although essential to have a specific domain name for both the license and the Edge configuration, having Edge accessible by domain name in your browser is not.
+
+It may be important for a better user experience, if Edge is to be regularly accessed without a need to remember IP addresses. It is essential if you wish to have secure SSL access to Edge.
+{{< /c8y-admon-info >}}
 
 Access Edge using the domain name configured as part of the installation. There are two ways of configuring the accessibility with the domain names:
 
