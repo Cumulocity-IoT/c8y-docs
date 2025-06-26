@@ -41,7 +41,7 @@ The list of versions and patches shows the version name and the name of the firm
 	* to add a new firmware, enter a name for the firmware (and confirm it by clicking **Create new** in the resulting window), add a description and its version (all required).
 	* to add a new version, select the firmware for which you want to add a new version from the dropdown list in the **Firmware** field and enter a version.
 3. Optionally, you can define the device type filter when adding a new firmware.
-4. Choose one of the following options to define the patch binary:
+4. Select one of the following options to define the patch binary:
    - **Upload a binary** from your file system.
    - **Provide a file path (URL)** to download the binary from.
    - **Mark as Provided** – Select this option if the device is expected to resolve the binary itself. No file or URL will be defined, and a `$PROVIDED` placeholder is stored.
