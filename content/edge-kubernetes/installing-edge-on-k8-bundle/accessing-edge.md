@@ -4,7 +4,7 @@ title: Accessing Edge
 layout: redirect
 ---
 
-If you have installed Edge on your local machine, then you should be able to immediately access Edge in your browser with the URL `http://localhost`. If it is on a remote machine with a simple network setup and no firewall in the way, you can use `http://<IP of remote machine>`.
+If you have installed Edge on your local machine, then you should be able to immediately access Edge in your browser with the URL `http://localhost`. If it is on a remote machine or a VM with a simple network setup and no firewall in the way, you can use `http://<IP of remote machine/VM>`.
 
 {{< c8y-admon-info >}}
 If you have performed a kubernetes-native install rather than installing with `c8yedge`, it is sometimes the case that Edge is not accessible via either URL. This depends on the Kubernetes distribution you have used. See [Accessing Edge via an external IP](/edge-kubernetes/manage-edge/#external-ip)
