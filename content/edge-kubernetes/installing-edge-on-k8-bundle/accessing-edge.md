@@ -32,7 +32,7 @@ On Linux machines, add the following entry to */etc/hosts*:
 <IP address> <domain_name>
 <IP address> management-<domain_name>
 ```
-Use the external IP address fetched by running the command `kubectl get service` in the previous section.
+If you do not know the external IP address of your host, see [Accessing Edge via an external IP](/edge-kubernetes/manage-edge/#external-ip).
 
 On Windows machines, add the same entry to *C:\Windows\System32\drivers\etc\hosts*.
 
