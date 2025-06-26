@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-06-10
 title: Improved plugin uninstall and upgrade reliability for revoked plugins
 product_area: Platform services
 change_type:
