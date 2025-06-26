@@ -12,8 +12,6 @@ If you have performed a kubernetes-native install rather than installing with th
 
 When signing into Edge this way, you will be prompted for the Cumulocity tenant id you are signing into. Edge has two tenants, `management` and `edge`. When signing in for the first time, use the default credentials username “**admin**” and password “**admin-pass**”. If you have installed using the `c8yedge` tool, the email address will have been initially configured to `company@edgebootstrap.example` which you will also need when signing in for the first time. These credentials are set for both Cumulocity tenants, and should be changed on both even if you do not intend to use the `management` tenant.
 
-For more sophisticated setups, especially those where you are using a domain name to access Edge, read on.
-
 ### Accessing Edge using the domain name {#accessing-cumulocity-iot-edge-using-the-domain-name}
 {{< c8y-admon-info >}}
 This is an optional part of setup. Although essential to have a specific domain name for both the license and the Edge configuration, having Edge accessible by domain name in your browser is not.
