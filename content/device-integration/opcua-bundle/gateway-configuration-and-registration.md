@@ -60,7 +60,7 @@ With the configuration `gateway.thinEdge.enabled: true` you switch to the thinEd
 
 The OPC-UA gateway supports an MQTT Forwarding mode that can be used together with the Thin-Edge mode. In addition to the OPC-UA gateway being registered as a child device of the Thin-Edge device and the OPC-UA gateway using credentials provided by Thin Edge, in MQTT Forwarding mode the OPC-UA gateway also uses thin-edge to send the data it receives from OPC-UA servers to Cumulocity. When using cyclic reads the data received in a single cyclic read that is mapped to measurements, events or custom actions can be batched into a single message.
 
-The MQTT Forwarding mode uses the existing `thinEdge` configuration and introduces a number of addtional configuration options to the YAML file:
+The MQTT Forwarding mode uses the existing `thinEdge` configuration and introduces a number of additional configuration options to the YAML file:
 
 ```yaml
 C8Y:
