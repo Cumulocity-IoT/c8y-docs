@@ -18,9 +18,16 @@ Key security features include:
 To leverage Cloud Remote Access, your device needs to be enabled by installing [thin-edge.io](https://thin-edge.github.io/thin-edge.io/). Thin-edge.io is designed to fully integrate with this feature and all other Device Management functionalities provided by {{< product-c8y-iot >}}. By combining 
 {{< product-c8y-iot >}}'s Cloud Remote Access with thin-edge.io, you can achieve a secure, efficient, and user-friendly remote device management solution that scales with your IoT deployment.
 
+### Browser-based support for VNC, SSH and Telnet
+
 ![Cloud Remote Access - VNC, SSH & Telnet](/images/cra/cra-intro-1.png)
 
-While it is suitable for many scenarios to access the server through a web terminal with connections terminating at the Cloud Remote Access microservice, it may not meet the requirements of more complex use cases. For these scenarios, {{< product-c8y-iot >}} offers a passthrough option that enables the use of native clients by forwarding packets to a proxy running locally on your machine. This allows you to natively connect to the SSH server from your local machine, access the local Web UI, or tunnel an HTTP server that is running on your device. Basically any TCP port can be bridged that way, not only SSH, VNC, or HTTP traffic.
+A common use case is the need of remotely accessing a device configuration interface using SSH, VNC or Telnet. For these protocols the CRA feature provides a convenient browser-based client that is integrated in the user interface of {{< product-c8y-iot >}}.
+
+### Passthrough: Support for native clients and proprietary protocols
+![Cloud Remote Access - Passthrough](/images/cra/cra-intro-2.png)
+
+While it is suitable for many scenarios to access the server through a web terminal with connections terminating at the Cloud Remote Access microservice, it may not meet the requirements of more complex use cases. For these scenarios, {{< product-c8y-iot >}} offers a passthrough option that enables the use of native clients by tunnelling packets to a proxy running locally on your machine. This allows you to natively connect to the SSH server from your local machine, access the local Web UI, or tunnel an HTTP server that is running on your device. Basically any TCP port can be bridged that way, not only SSH, VNC, or HTTP traffic.
 
 The easiest way to setup a local proxy is via the {{< product-c8y-iot >}} CLI, which includes a [built-in local proxy](https://goc8ycli.netlify.app/docs/cli/c8y/remoteaccess/connect/c8y_remoteaccess_connect_ssh/) supporting the following transport mediums:
 * Unix socket
@@ -28,6 +35,5 @@ The easiest way to setup a local proxy is via the {{< product-c8y-iot >}} CLI, w
 * Standard input/output (stdio)
 
 
-![Cloud Remote Access - Passthrough](/images/cra/cra-intro-2.png)
 
 
