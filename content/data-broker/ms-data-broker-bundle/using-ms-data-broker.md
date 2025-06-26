@@ -53,13 +53,15 @@ To optimize resource usage, the Messaging Service imposes storage limits and a m
 See [service quotas](/service-terms/quotas/#realtime-apis) for details of the default quotas and TTL used by the microservice-based data broker.
 
 When the backlog quota limit has been reached:
-*	Older undelivered messages may be discarded to make room for new ones.
-*	Consumers reconnecting after a disconnection may receive outdated or partial data.
-*	The system may apply back-pressure, throttle delivery, or even drop messages, depending on usage patterns and load.
+*	Older messages will be discarded once they reach their TTL to provide room in the backlog until the space is filled again. This bouncing between backlog full state and space available due old older message, TTL can continue on, causing variation in the occurrence of backlog quotas and the ability to publish new messages.
+* Consumers reconnecting after a disconnection may receive outdated messages that have been sitting on the queue waiting to be delivered.
+*	The system may apply back-pressure - the HTTP 500 response is the visible effect of this.
 * Message ordering may be affected if backlog pruning occurs.
+* No messages will be dropped unless TTL has reached.
+* Messages will always be delivered in the order they were sent by the client.
 
 To avoid hitting the backlog limit and ensure reliable message consumption:
-*	Consume or acknowledge messages frequently to reduce backlog buildup.
+* Ensure the destination tenant is working and receiving forwarded messages to reduce backlog build-up as the user has no control over the consumer connection or acknowledgement.
 *	Monitor the level of free backlog space using the available metrics and alerting.
 *	Avoid extended consumer downtimes without reconnecting to prevent the backlog building up.
 *	If persistent disconnections are expected, consider requesting a bigger backlog - higher message rates might require bigger backlog sizes to cope with reasonable levels of outage/downtime of the destination Cumulocity system
