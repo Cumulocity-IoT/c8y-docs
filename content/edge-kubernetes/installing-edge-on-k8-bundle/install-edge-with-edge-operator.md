@@ -15,7 +15,7 @@ Edge has been tested and officially supported on Kubernetes version 1.32.x, the 
 {{< /c8y-admon-info >}}
 
 ### Installing the Edge operator {#installing-edge-operator}
-The Edge operator is available as a Helm chart in the Edge registry, and can be installed like any other chart. You will need your registry credentials, which can be acquired from [product support](/additional-resources/contacting-support/). Assuming you are installing version {{< c8y-edge-version >>}} of Edge, and that you wish all Edge workloads to be running in the namespace `c8yedge`, run the following command:
+The Edge operator is available as a Helm chart in the Edge registry, and can be installed like any other chart. You will need your registry credentials, which can be acquired from [product support](/additional-resources/contacting-support/). Assuming you are installing version {{< c8y-edge-version >}} of Edge, and that you wish all Edge workloads to be running in the namespace `c8yedge`, run the following command:
 ```shell
 helm upgrade --install c8yedge-operator oci://registry.c8y.io/edge/helm-charts/cumulocity-iot-edge-operator \
     --username="<Edge registry username>" --password="<Edge registry password>" \
