@@ -16,6 +16,7 @@
 # Notes:
 #   - Namespace, MongoDB image, service, and secret are dynamically derived from the PSMDB CR.
 #
+#
 
 set -euo pipefail
 
