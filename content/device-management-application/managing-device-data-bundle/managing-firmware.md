@@ -59,7 +59,7 @@ If you click **Add firmware** from within the details of a specific firmware, th
 2. In the resulting dialog box, select the firmware, for which you want to add a patch, from the dropdown list in the **Firmware** field.
 3. in the **Version** field, select the version, for which you want to add a patch.  
 4. In the **Patch** field, enter a name for the patch.
-5. Choose one of the following options to define the patch binary:
+5. Select one of the following options to define the patch binary:
    - **Upload a binary** from your file system.
    - **Provide a file path (URL)** to download the binary from.
    - **Mark as Provided** – Select this option if the device is expected to resolve the binary itself. No file or URL will be defined, and a `$PROVIDED` placeholder is stored.
