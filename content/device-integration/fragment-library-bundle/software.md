@@ -27,7 +27,7 @@ A software package list entry must contain the following properties:
 |----|----|----|
 | name | Yes | The name of the software|
 | version | Yes | A version identifier of the software|
-| url | No | A URL pointing to the location where the software file was obtained from. If the value is $PROVIDED, the device must resolve the binary on its own|
+| url | No | A URL pointing to the location where the software file was obtained from. If the value is $PROVIDED, the device must resolve the binary itself|
 | softwareType | No | An arbitrary string for organizing software artifacts|
 
 The name and the version are used to identify the package. Already mentioned `c8y_SupportedSoftwareTypes` fragment
