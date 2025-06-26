@@ -56,7 +56,48 @@ gateway:
 
 With the configuration `gateway.thinEdge.enabled: true` you switch to the thinEdge mode. This means that the authentication and registration to the platform will be done via Thin Edge. The OPC UA gateway is automatically registered and created as a sub-device under the Thin Edge device. `gateway.thinEdge.mqttServerURL` and `gateway.thinEdge.deviceId` are the connection information for the MQTT client to connect to the local Thin Edge MQTT broker.
 
-### MQTT Forwarding Mode
+### MQTT Forwarding mode {#mqtt-forwarding-mode}
+
+The OPC-UA gateway supports an MQTT Forwarding mode that can be used together with the Thin-Edge mode. In addition to the OPC-UA gateway being registered as a child device of the Thin-Edge device and the OPC-UA gateway using credentials provided by Thin Edge, in MQTT Forwarding mode the OPC-UA gateway also uses thin-edge to send the data it receives from OPC-UA servers to Cumulocity. When using cyclic reads the data received in a single cyclic read that is mapped to measurements, events or custom actions can be batched into a single message.
+
+The MQTT Forwarding mode uses the existing `thinEdge` configuration and introduces a number of addtional configuration options to the YAML file:
+
+```yaml
+C8Y:
+    baseUrl: https://<<yourTenant>>.{{< domain-c8y >}}
+gateway:
+    bootstrap:
+        tenantId: <<yourTenantId>>
+    identifier: Gateway_Device
+    name: Gateway_Device
+    db:
+# The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
+        baseDir: C:/Users/<<userName>>/.opcua/data
+    mappings:
+      mergeCyclicRead: false
+      mergedEventType: OpcUaEvent
+      mergedMeasurementType: OpcUaMeasurement
+    thinEdge:
+        enabled: true
+        mqttServerURL: tcp://<<thinEdge MQTT broker>>
+        deviceId: Thin-Edge_Device
+        useForDataForwarding: true
+        mqttAutomaticReconnect: false
+        mqttCleanSession: true
+        mqttConnectionTimeout: 30
+        mqttKeepAliveInterval:  60
+        mqttMaxInFlight: 1000
+```
+
+The configuration `gateway.thinEdge.useForDataForwarding` controls if MQTT Forwarding mode is enabled. The following configurations are optional and control the behavior of the MQTT client:
+
+* `gateway.thinEdge.mqttAutomaticReconnect` (default:false) - controls if the MQTT client will reconnect in case it looses connection to the MQTT server.
+* `gateway.thinEdge.mqttCleanSession` (default:true) - controls if the MQTT client should remember state across sessions or start with a clean session.
+* `gateway.thinEdge.mqttConnectionTimeout` (default: 30) - connection timeout in secondgs.
+* `gateway.thinEdge.mqttKeepAliveInterval` (default: 60) - keep alive  interval in seconds.
+* `gateway.thinEdge.mqttMaxInFlight` (default: 1000) - maximum number of unacknowledged messages in the MQTT client. If this limit is reached, additional messages will fail.
+
+For cyclic reads the configuration `gateway.mappings.mergeCyclicRead` can be enabled. The default is false. If this configuration is enabled cyclic reads mapped to measurements, events or custom actions in a device protocol that use the same data reporting are merged into single messages. For measurements and events, the type can be controlled by the `gateway.mappings.mergedMeasurementType` and `gateway.mappings.mergedEventType` configuration. This is optional, and if not configured `OpcUaEvent` and `OpcUaMeasurement` respectively are used.
 
 ### Configuration profile location on the filesystem {#configuration-profile-location-on-the-filesystem}
 
