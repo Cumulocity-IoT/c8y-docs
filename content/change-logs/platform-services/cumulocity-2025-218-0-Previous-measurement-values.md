@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-version: 2025.215.0
+version: 2025.218.0
 ---
 We've introduced automated persistence for measurement values under the `c8y_PreviousMeasurements` fragment. This feature allows for storing and querying the second most recent measurement values based on arrival time.
 
