@@ -8,6 +8,8 @@ All data points associated with an asset can be viewed and created in the **Data
 
 ### To create linked data points
 
+![Create Asset Data points](/images/dtm/data-points/asset-data-points-create.png)
+
 1. Select an asset from the hierarchy on the **Assets** page.
 2. The **Data points** section contains a comprehensive list of all data points associated with the selected asset.
 3. Click the **Link data points** button at the top right corner of the **Data points** section. This opens the Data point selector dialog.
@@ -18,11 +20,15 @@ All data points associated with an asset can be viewed and created in the **Data
 
 For each selected data point, a new data point will be created for the asset, pointing to the source device and its specific measurement series.
 
+![Create Asset Data points](/images/dtm/data-points/asset-data-point-selector.png)
+
 When choosing from available data points, you have two primary options:
 
 **Associated data points**: Select from the list of measurement series already known or received by the platform from the currently selected source device in the **Data point selector**. These are measurements that the platform has already processed and recognized. You can click the plus button next to any of these listed data points to add them to your selection.
 
 **Custom data points**: If the desired measurement has not yet been received by the platform from the source device, you can define it as a custom data point. To do this, you must manually provide the *fragment* (e.g., c8y_Temperature) and *series* (e.g., T) in the respective input fields. You might also need to provide a measurement type.
+
+![Create custom Asset Data points](/images/dtm/data-points/asset-data-point-selector-custom.png)
 
 {{< c8y-admon-info>}}
 
