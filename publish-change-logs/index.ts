@@ -475,7 +475,7 @@ async function getDeploymentsForBuildArtifact(component: string, build_artifact:
       if(version) {
         if(gte(deploymentObj[artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com"].version, version))
           //Only retrieve updated date when version is equal
-          deploymentMap.set("eu-latest-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com"].updated_at);
+          deploymentMap.set("eu-latest-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com-eks"].updated_at);
         if(gte(deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com"].version, version))
           deploymentMap.set("apj-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com"].updated_at);
         if(gte(deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com"].version, version))
