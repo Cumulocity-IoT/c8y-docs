@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-06-26'
 title: Truncated data alert is now correctly displayed for the data point graph
 product_area: Application enablement & solutions
 change_type:

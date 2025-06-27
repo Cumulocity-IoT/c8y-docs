@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-06-26'
 title: Custom properties section hidden for users without custom properties
 product_area: Platform services
 change_type:

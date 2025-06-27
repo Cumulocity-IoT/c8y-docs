@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-06-26'
 title: Fixed display of multiple branding navigator items on non-enterprise tenants
 product_area: Application enablement & solutions
 change_type:
