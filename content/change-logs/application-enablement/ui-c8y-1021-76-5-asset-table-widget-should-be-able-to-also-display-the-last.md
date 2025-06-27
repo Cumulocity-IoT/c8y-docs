@@ -1,5 +1,5 @@
 ---
-date: '2025-06-26'
+date: '2025-06-19'
 title: Asset table widget can now display last measurements of assets
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: '2025-06-26'
+date: '2025-06-19'
 title: Fixed missing translations in right drawer
 product_area: Application enablement & solutions
 change_type:

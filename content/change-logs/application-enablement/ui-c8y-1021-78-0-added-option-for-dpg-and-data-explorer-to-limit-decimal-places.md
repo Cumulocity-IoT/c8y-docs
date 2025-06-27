@@ -1,5 +1,5 @@
 ---
-date: '2025-06-26'
+date: '2025-06-19'
 title: >-
   New option for limiting the number of decimal places in data point graph and
   data explorer
