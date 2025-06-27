@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-06-26'
 title: Data grid component now supports display of hierarchical data
 product_area: Device management & connectivity
 change_type:
