@@ -19,7 +19,7 @@ For details on how to enable the feature and how it works, refer to [Managing da
 
 **Breaking Change: Inventory API – `c8y_PreviousMeasurements` fragment was added to the restricted properties list**
 
-The `c8y_PreviousMeasurements` fragment is now reserved for internal system use only and can no longer be modified by external users.
+The `c8y_Previous Measurements` fragment is reserved for internal system use only and may not be used by external users.
 
 Any request containing restricted properties will have those properties ignored by the platform — they will not be applied or saved.
 
