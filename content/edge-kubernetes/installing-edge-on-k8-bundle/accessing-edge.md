@@ -4,46 +4,20 @@ title: Accessing Edge
 layout: redirect
 ---
 
-If you have installed Edge on your local machine, then you should be able to immediately access Edge in your browser with the URL `http://localhost`. If it is on a remote machine with a simple network setup and no firewall in the way, you can use `http://<IP of remote machine>`.
-
-To sign in to Edge for the first time, use the default credentials username “**admin**” and password “**admin-pass**”. If you have installed using the `c8yedge` tool, the email address will have been initially configured to `company@edgebootstrap.example` which you will also need when signing in for the first time. These credentials are set for both the `management` and `edge` Cumulocity tenants, and should be changed on both even if you do not intend to use the `management` tenant.
-
-For more sophisticated setups, especially those where you are using a domain name to access Edge, read on.
-
-### Accessing Edge via an external IP {#assigning-an-external-ip}
-
-To get the external IP to access Edge, run the command below:
-```shell
-kubectl get service cumulocity-ontoplb -n c8yedge
-```
-{{< c8y-admon-info >}}
-Substitute the namespace name *c8yedge* in the command above with the specific namespace name you have specified in your Edge CR.
-{{< /c8y-admon-info >}}
-
-Sample output of the `kubectl get service` command:
-
-```text
-NAME              	TYPE           CLUSTER-IP          EXTERNAL-IP         PORT(S)
-cumulocity-ontoplb  LoadBalancer   X.X.X.X **REDACTED  X.X.X.X **REDACTED  443:32443/TCP,8443:32442/TCP,1883:32083/TCP,8883:32084/TCP ...
-```
-Sometimes the external IP displays as `<pending>` or `<none>`. The IP assignment process is dependent on the Kubernetes hosting environment. An external load balancer in the hosting environment handles the IP allocation and any other configurations necessary to route the external traffic to the Kubernetes service. Most on-premise Kubernetes clusters do not have external load balancers that can dynamically allocate IPs. The most common solution is to manually assign an external IP to the service. This can be done in the service’s YAML configuration. You can use the following command to manually assign an external IP to the `cumulocity-ontoplb` service (replace `<EXTERNAL-IP>` in the command below with the IP address you want to assign).
-
-```shell
-kubectl patch service cumulocity-ontoplb -n c8yedge -p '{"spec":{"type": "LoadBalancer", "externalIPs":["<EXTERNAL-IP>"]}}'
-```
-{{< c8y-admon-info >}}
-Substitute the namespace name *c8yedge* in the command above with the specific namespace name you have specified in your Edge CR.
-{{< /c8y-admon-info >}}
+If you have installed Edge on your local machine, then you should be able to immediately access Edge in your browser with the URL `http://localhost`. If it is on a remote machine or a VM with a simple network setup and no firewall in the way, you can use `http://<IP of remote machine or VM>`.
 
 {{< c8y-admon-info >}}
-When manually assigning the external IP, see the following Kubernetes API documentation:
-
-"These IPs are not managed by Kubernetes. The user is responsible for ensuring that traffic arrives at a node with this IP."
+If you have performed a kubernetes-native install rather than installing with the `c8yedge` tool, it is sometimes the case that Edge is not accessible via either URL. This depends on the Kubernetes distribution you have used. See [Accessing Edge via an external IP](/edge-kubernetes/manage-edge/#external-ip)
 {{< /c8y-admon-info >}}
 
-You can access Edge using a domain name in a web browser.
+When signing into Edge this way, you will be prompted for the Cumulocity tenant id you are signing into. Edge has two tenants, `management` and `edge`. When signing in for the first time, use the default credentials username “**admin**” and password “**admin-pass**”. If you have installed using the `c8yedge` tool, the email address will have been initially configured to `company@edgebootstrap.example` which you will also need when signing in for the first time. These credentials are set for both Cumulocity tenants, and should be changed on both even if you do not intend to use the `management` tenant.
 
 ### Accessing Edge using the domain name {#accessing-cumulocity-iot-edge-using-the-domain-name}
+{{< c8y-admon-info >}}
+This is an optional part of setup. Although essential to have a specific domain name for both the license and the Edge configuration, having Edge accessible by domain name in your browser is not.
+
+It may be important for a better user experience, if Edge is to be regularly accessed without a need to remember IP addresses. It is essential if you wish to have secure SSL access to Edge.
+{{< /c8y-admon-info >}}
 
 Access Edge using the domain name configured as part of the installation. There are two ways of configuring the accessibility with the domain names:
 
@@ -61,7 +35,7 @@ On Linux machines, add the following entry to */etc/hosts*:
 <IP address> <domain_name>
 <IP address> management-<domain_name>
 ```
-Use the external IP address fetched by running the command `kubectl get service` in the previous section.
+If you do not know the external IP address of your host, see [Accessing Edge via an external IP](/edge-kubernetes/manage-edge/#external-ip).
 
 On Windows machines, add the same entry to *C:\Windows\System32\drivers\etc\hosts*.
 
