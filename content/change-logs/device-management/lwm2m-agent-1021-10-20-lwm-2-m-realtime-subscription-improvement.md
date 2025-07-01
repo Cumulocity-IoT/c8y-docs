@@ -1,0 +1,17 @@
+---
+date: ""
+title: LWM2M realtime subscription improvement
+product_area: Device management & connectivity
+change_type:
+  - value: change-VSkj2iV9m
+    label: Fix
+component:
+  - value: component-1KLUzmqfe
+    label: LWM2M
+build_artifact:
+  - value: tc-ggH2M4hf3
+    label: lwm2m-agent
+ticket: DM-4829
+version: 1021.10.20
+---
+Fixed a rare problem that could lead to incomplete realtime subscriptions and exceptions in the agent logs.
