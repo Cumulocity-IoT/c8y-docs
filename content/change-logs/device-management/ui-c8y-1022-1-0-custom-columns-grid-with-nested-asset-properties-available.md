@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-06-26'
 title: Custom columns grid with nested asset properties available
 product_area: Device management & connectivity
 change_type:
