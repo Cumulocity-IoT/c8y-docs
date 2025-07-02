@@ -22,7 +22,7 @@ To use the Bulk import feature, you must enable the **Digital Twin** permission 
 
 5. Enable access to the DTM application by selecting the following checkboxes:
 
-	* Under **Application access**, select "Dtm-ms".
+	* Under **Application access**, select "Dtm".
 
 	* Under **Custom applications**, select "Digital Twin Manager".
 
