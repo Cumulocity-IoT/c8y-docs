@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed support for `disabled` in `c8y-select` component (multi mode) and updated codex (#9178) [GRAFT][release/cd] (#9477)
+title: Fixed disabling c8y-select component in multi select mode
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63732
 version: 1022.4.8
 ---
-This fixes an issue with `c8y-select` component that `disabled` option had no effect in the multi select mode. Now it's possible to disable the component while it works in this mode by setting the `disabled` input to `true`.
+The c8y-select component had an issue where the disabled option did not work when using the multi select mode. This change fixes the problem so that setting the disabled input to true now properly disables the c8y-select component while in multi select mode. This impacts any applications or pages using the c8y-select component in multi select mode where the disabled option needs to function correctly.
