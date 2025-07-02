@@ -4,7 +4,7 @@ title: Creating assets via the UI
 layout: redirect
 ---
 
-You have two options for creating assets in the DTM application.
+There are two options for creating assets in the DTM application.
 The following section describes how to create an asset via the UI.
 Alternatively, see [Creating assets via bulk import](/dtm/asset-hierarchy/#creating-assets-bulk-import) on how to import assets in bulk into the DTM application.
 
@@ -48,9 +48,9 @@ For complex properties, the keys are ordered as specified in the property defini
 As you define each hierarchy level of your new asset, you see a green check mark on each asset hierarchy level in the section on the left.
 
 {{< c8y-admon-info>}}
-If there are validation errors on the page, they are indicated by red highlights.
+If there are validation errors on the page, they will be indicated by red highlights.
 Correct the required information to continue.
-If you are leaving the page abruptly, a confirmation dialogue box is shown.
+If you are leaving the page abruptly, a confirmation dialogue box will be shown.
 {{< /c8y-admon-info>}}
 
 ![Adding a new asset](/images/dtm/assets/dtm-assets-new-asset.png)
@@ -91,13 +91,13 @@ If a device belongs to a subasset, then select it when you create the subasset.
 
 You can view, search or filter devices easily with the following options:
 
-1. Columns in the grid specify the device details for each device. Click **Configure columns** at the top right to show or hide columns.
+1. Columns shown in the grid specify the device details for each device. Click **Configure columns** at the top right to show or hide columns.
 
 2. Click **Reload** to reload the page and display the latest list of devices present in the {{< product-c8y-iot >}} tenant.
 
 3. Click **Sort** on the applicable columns to view the device data in either ascending or descending order.
 
-4. To filter devices based on text, use the **Filter** option in the applicable columns. If you apply a filter, you see a notification at the top.
+4. To filter devices based on text, use the **Filter** option in the applicable columns. When a filter is applied, a notification will be shown at the top.
 
 5. To clear the filters, click **Clear all filters**. To see the sort icon <i class="dlt-c8y-icon-sort-arrow icon-20"></i> and the filter icon <i class="dlt-c8y-icon-filter icon-20"></i> hover over each column.
 
@@ -125,14 +125,14 @@ On successful asset hierarchy creation, you see a pop-up notification in the top
 You can view the newly created asset hierarchy in the **Assets** page.
 Also see [viewing assets](/dtm/asset-hierarchy/#viewing-assets).
 
-In case of a bulk operation failure, the entire operation is rolled back and the user will be navigated to main assets page to cleanup the entities created and to try the operation again.
+In case of a bulk operation failure, the entire operation is rolled back. The user will be navigated to the main assets page in order to cleanup the entities created and to try the operation again.
 
 ### To view asset details {#to-view-asset-details}
 
 Select an asset in the **Assets** page to view the asset details in **Subassets** tab.
 It shows all the subassets, child devices and asset properties.
 {{< c8y-admon-info>}}
-The key value pairs for complex properties in the **Subassets** page are displayed in the order which has been specified in the **Order** field of property definition in the **Asset properties** page.
+The key-value pairs for complex properties in the **Subassets** page will be displayed in the order specified in the **Order** field of the property definition in the **Asset properties** page.
 {{< /c8y-admon-info>}}
 
 
@@ -152,7 +152,7 @@ To add subassets to an asset open the **Subassets** or **Asset tree** tab.
 
 1. Click **Add asset** to load the **Asset hierarchy** for the selected asset.
 
-2. The root asset is displayed with the label "parent node". The asset hierarchy displayed below, is a subset of the root asset hierarchy.
+2. The root asset is displayed with the label "parent node". The asset hierarchy displayed below it is a subset of the root asset hierarchy.
 
     ![Subasset](/images/dtm/assets/dtm-assets-add-child-asset.png)
 
@@ -166,5 +166,5 @@ If you navigate to the existing "Rotor" asset and want to add a subasset, you ca
 For details on how to add assets in the asset hierarchy, see [To create an asset](#to-create-an-asset).
 
 {{< c8y-admon-info>}}
-If you are at the end of the hierarchy, you see no further option to create subassets.
+If you are at the end of the hierarchy, you will see no further option to create subassets.
 {{< /c8y-admon-info>}}

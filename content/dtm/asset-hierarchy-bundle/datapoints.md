@@ -4,11 +4,11 @@ title: Asset data points
 layout: redirect
 ---
 
-Data points represent the numerical measurements collected from connected devices and sensors. These are the fundamental real-time data streams that offer insights into the operational status, performance, and environmental conditions of your physical assets and are key to monitor asset health, identify trends, and make informed decisions over time. 
+Data points represent the numerical measurements collected from connected devices and sensors. These are the fundamental real-time data streams that offer insights into the operational status, performance, and environmental conditions of your physical assets. These data streams are key to monitoring asset health, identifying trends, and making informed decisions over time. 
 
 To effectively organize and interpret the vast amount of data collected from IoT devices, Cumulocity structures measurements using two key concepts: **fragments** and **series**. These concepts are crucial for understanding how measurement data is categorized and stored within the platform and how to use data points in the DTM application.
 
-A **fragment** serves as a logical container or category that groups related measurements or characteristics of an asset (or any managed object). It identifies a specific capability or a set of related data points. Within a fragment, a **series** represents a specific, individual measurement stream. It is the named property that holds the actual numerical value and its corresponding unit. A data point and with this the measurement series it represents, is uniquely identified by the combination of its fragment and series.
+A **fragment** serves as a logical container or category that groups related measurements or characteristics of an asset (or any managed object). It identifies a specific capability or a set of related data points. Within a fragment, a **series** represents a specific, individual measurement stream. It is the named property that holds the actual numerical value and its corresponding unit. A data point, and with this the measurement series it represents, is uniquely identified by the combination of its fragment and series.
 
 {{< c8y-admon-info>}}
 To reference data points and measurement series in Cumulocity, the format `fragment.series` is used, such as `c8y_Temperature.T_Ambient`.

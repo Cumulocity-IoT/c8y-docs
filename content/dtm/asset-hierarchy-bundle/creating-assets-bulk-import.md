@@ -111,12 +111,12 @@ Note that you can use a list of semi-colon separated Device IDs or External IDs 
 </tr>
 <tr>
 <td style="text-align:left"><b>Description</b></td>
-<td style="text-align:left">briefly describes the asset being created.</td>
+<td style="text-align:left">Briefly describes the asset being created.</td>
 <td style="text-align:left">Optional</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Asset properties for the asset model</b></td>
-<td style="text-align:left">6th column onwards (in the CSV template), all the asset properties for the root asset models and all its subsequent child asset models are listed.<br/><br/>
+<td style="text-align:left">From the 6th column onwards (in the CSV template), all the asset properties for the root asset models and all its subsequent child asset models are listed.<br/><br/>
 Note that the <a href="/dtm/asset-types/#asset-property-types" class="no-ajaxy">Asset property type</a> is also mentioned as a label, for better understanding.<br/>
 </td>
 <td style="text-align:left">Mandatory (If the property is set as required in the asset model. For details, see <a href="/dtm/asset-types/#to-add-an-asset-property-to-an-asset-model">To add an asset property to an asset model</a>).</td>

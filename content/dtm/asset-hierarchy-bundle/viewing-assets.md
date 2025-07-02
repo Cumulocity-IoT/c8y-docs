@@ -23,20 +23,20 @@ Once the [asset hierarchy](/dtm/asset-hierarchy/#asset-hierarchy) is created by 
 3. Optionally [add subassets](/dtm/asset-hierarchy/#to-add-subassets), or [assign devices](/dtm/asset-hierarchy/#to-assign-devices-to-an-asset) from the top bar.
 
 4. The asset name and description along with the icon are displayed at the top.
-All subassets and devices for this asset will get listed in the **Subassets** section.
+All subassets and devices for this asset will be listed in the **Subassets** section.
 
 5. All the asset properties for this asset will be displayed on the right.
 
-6. In the **Asset tree** tab you see the asset hierarchy.
+6. The asset hierarchy will be shown in the **Asset tree** tab.
 
 7. Optionally [add subassets](/dtm/asset-hierarchy/#to-add-subassets), or [import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import) using the options on the top right.
 
 If the asset has a location, you can see it on the map under the properties section below its values. Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen. To see the map, provide a value for latitude and longitude. You cannot modify the marker when viewing the asset. Edit the property in order to change the position of the marker.
 
 {{< c8y-admon-info>}}
-The buttons [Import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import), and [Add asset](/dtm/asset-hierarchy/#to-add-subassets) are not visible for the last hierarchical level.<br>
-You see a warning message if one or more properties associated with the asset are not present.
-For complex properties, the keys are ordered as specified in the property definition.
+The buttons [Import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import) and [Add asset](/dtm/asset-hierarchy/#to-add-subassets) are not visible for the last hierarchical level.<br>
+A warning message will be shown if one or more properties associated with the asset are not present.
+For complex properties, the keys will be ordered as specified in the property definition.
 {{< /c8y-admon-info>}}
 
 ### To modify an asset {#to-modify-an-asset}
@@ -53,7 +53,7 @@ To delete a subasset or device in the hierarchy:
 
     {{< c8y-admon-info>}}
 
-The delete icon appears on hover of each row under the subassets section.
+The delete icon only appears on hover of each row under the subassets section.
     {{< /c8y-admon-info>}}
 
 In the following dialog box, click **Confirm** to continue.
@@ -62,7 +62,7 @@ Optionally select the checkbox in the dialog box to delete all subassets and dev
 ### To search for an asset {#to-search-for-an-asset}
 
 You can search for assets through the **Search** button at the right of the top bar.
-Enter a search term into the textbox at the top of the **Search** window to see all assets matching the search criteria in the section **Search results**.
+Enter a search term into the textbox at the top of the **Search** window to see all assets matching the search criteria in the **Search results** section.
 
 To see more details click **Go to the asset data table** at the bottom. This will show the entire search results in a table format.
 
@@ -82,7 +82,7 @@ Use the assets move feature to relocate assets within hierarchies. To move one o
 
 1. Select one or more assets of same type in the **Assets** page to move.
 2. Click **Move selected** in the top banner.
-3. In the resulting dialog, you see a list of assets which allow selected assets as its children. Click the radio button to the left of each asset to select it.
+3. In the resulting dialog, a list of assets are shown which can allow the selected assets as its children. Click the radio button to the left of each asset to select it.
 4. Click **Move** to complete the relocation.
 
 {{< c8y-admon-info >}}
