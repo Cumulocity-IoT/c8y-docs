@@ -45,6 +45,7 @@ In the first step, the base scaffolding version must be selected. The interface 
   cockpit
   devicemanagement
   hybrid
+  login
   tutorial
   widget-plugin
   package-blueprint
@@ -60,8 +61,9 @@ For an alternative to the scaffolding, you can get application from list above d
 - [{{< product-c8y-iot >}} Cockpit](https://github.com/Cumulocity-IoT/cockpit)
 - [{{< product-c8y-iot >}} Device Management](https://github.com/Cumulocity-IoT/devicemanagement)
 - [{{< product-c8y-iot >}} Hybrid](https://github.com/Cumulocity-IoT/hybrid)
+- [{{< product-c8y-iot >}} Login](https://github.com/Cumulocity-IoT/login)
 - [{{< product-c8y-iot >}} Tutorial](https://github.com/Cumulocity-IoT/tutorial)
-- [{{< product-c8y-iot >}} Widget plugin](https://github.com/Cumulocity-IoT/widget-plugin)
+- [{{< product-c8y-iot >}} Sample plugin](https://github.com/Cumulocity-IoT/sample-plugin)
 - [{{< product-c8y-iot >}} Package blueprint](https://github.com/Cumulocity-IoT/package-blueprint)
 
 ### Step 3: Start the local development server
