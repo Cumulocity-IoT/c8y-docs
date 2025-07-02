@@ -114,6 +114,7 @@ import { Component } from "@angular/core";
 })
 export class HelloComponent {}
 ```
+Both standalone and module oriented components are supported. For latter ones `standalone: false` has to be added as since Angular 19 standalone property is `true` by default.
 
 To hook the new component into the application, you must declare the new component and add it to
 a route in the `app.module.ts`. In the following example we extended the `application` project,
