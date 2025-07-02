@@ -165,8 +165,28 @@ Perform the following steps as a root user on your Edge appliance.
    systemctl stop installation-service opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf
    ```
 
-2. If you have installed {{< product-c8y-iot >}} DataHub in the Edge appliance, run the following commands to stop the `cdh-console`, `cdh-master` and `cdh-executor` services:
+2. If you have installed {{< product-c8y-iot >}} DataHub in the Edge appliance, run the following commands to initate CDH backup:
 
+   As a pre requisite lets download sqltool, please execute.
+   {{< c8y-admon-important >}}
+   If your Edge appliance does not have internet access, please download the file externally and manually copy it to the following location on the Edge appliance: `/home/admin/sqltool-2.7.3.jar`
+   {{< /c8y-admon-important >}}
+
+   ```shell
+   docker exec -it cdh-admin /opt/dremio/bin/dremio-admin backup -a -d /datalake/edge/bkp -u admin -p <DREMIO_ADMIN-PASSWORD> -j -i
+   ```
+
+   ```shell
+   curl -L -o /home/admin/sqltool-2.7.3.jar https://repo1.maven.org/maven2/org/hsqldb/sqltool/2.7.3/sqltool-2.7.3.jar
+   ```
+
+   ```shell
+   curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8y-edge-cdh-db-dump.sh -O && bash ./c8y-edge-cdh-db-dump.sh
+   ```
+
+   Once the DB bump is done you will see the following line on the screen. `Export complete! All CSVs saved to: /tmp/hsqldb-csv-dump`
+
+   Stop CDH processes.
    ```shell
    service cdh-console stop && \
    service cdh-master stop && \
@@ -185,7 +205,7 @@ Perform the following steps as a root user on your Edge appliance.
 4. Tar the MongoDB data and data lake contents from DataHub if present using the following command to create the */opt/edge-appliance-backup.tar* file:
 
    ```shell
-   tar -zcf /opt/edge-appliance-backup.tar /opt/appliance-edgedb-backup /opt/softwareag
+   tar -zcf /opt/edge-appliance-backup.tar /opt/appliance-edgedb-backup /opt/softwareag /tmp/hsqldb-csv-dump /opt/mongodb/cdh-*
    ```
 
 5. After creating the */opt/edge-appliance-backup.tar* file, copy it to a network drive or storage location that is accessible from the machine on which you will install Edge 2025 in the next step. Once the backup file is safely stored, shut down the Edge appliance to prevent any further changes to the system during the migration process. This step is optional, and if not performed, you must copy the backup file into the target machine once it is created.
@@ -234,6 +254,41 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    ```shell
    rm -rf /opt/appliance-edgedb-backup /opt/edge-appliance-backup.tar
    ```
+
+### 5. Restoring CDH
+{{< c8y-admon-important >}}
+This step is applicable only for customers with CDH deployed.
+{{< /c8y-admon-important >}}
+
+1. Copy the Dathub DB dump to respective pod i.e., `datahub-mysql-0` under namespace `edge`. Since the backup taris already untarred earlier.
+   ```shell
+   kubectl cp /tmp/hsqldb-csv-dump c8yedge/datahub-mysql-0:/tmp/hsqldb-csv-dump
+   ```
+
+2. THIS NEEDS MORE SIMPLIFICATION. Under /tmp/hsqldb-csv-dump we will find multiple CSV files each related a specific table. Based on the file name, example 
+   `CDH_JOB_HISTORY.csv` execute the follwoing command to import these CSV into appropriate teables.
+   Note: Root password can be found in the env `MYSQL_ROOT_PASSWORD`
+   ```shell
+   kubectl exec -it  -n c8yedge       datahub-mysql-0 -- sh
+   mysql --local-infile=1 -u root -p"${MYSQL_ROOT_PASSWORD}"
+   USE CDH_edge;
+   LOAD DATA LOCAL INFILE '/tmp/hsqldb-csv-dump/CDH_AUDIT_LOG.csv'
+   INTO TABLE CDH_AUDIT_LOG
+   FIELDS TERMINATED BY ',' 
+   OPTIONALLY ENCLOSED BY '"' 
+   ESCAPED BY '\\'
+   LINES TERMINATED BY '\n'
+   IGNORE 1 LINES
+   (UUID, TIME, USERNAME, EVENT_TYPE, STATUS, DETAILS, OLD_DATA, NEW_DATA);
+   ```
+3. No Mysql pod restart needed since we just importing data into CDH which we have exported earlier from appliance.
+
+4. Now its time to migrate datahub. As part of previous backup we have taken a backup of the datalake contents stored under `/opt/mongodb` of appliance its time
+   for dremio migration.
+   
+
+
+
 
 ### 5. Configuring Edge 2025 post migration
 After successfully migrating your data to Edge 2025, you'll need to configure it to match your previous Edge Appliance VM setup. Here's what you need to do:
