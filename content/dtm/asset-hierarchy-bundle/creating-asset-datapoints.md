@@ -1,6 +1,6 @@
 ---
 weight: 35
-title: Create Linked Data Points
+title: Create linked data points
 layout: redirect
 ---
 

@@ -1,6 +1,6 @@
 ---
 weight: 36
-title: Manage Linked Data Points
+title: Manage linked data points
 layout: redirect
 ---
 

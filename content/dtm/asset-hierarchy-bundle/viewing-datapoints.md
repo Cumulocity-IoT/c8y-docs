@@ -1,6 +1,6 @@
 ---
 weight: 32
-title: Viewing Asset data points
+title: Viewing asset data points
 layout: redirect
 ---
 
