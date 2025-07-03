@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2025-07-03'
 title: Fixed multiple creation of bulk device operations
 change_type:
   - value: change-VSkj2iV9m

@@ -1,5 +1,5 @@
 ---
-date:
+date: '2025-07-03'
 title: Introducing Previous measurements values
 change_type:
   - value: change-inv-3bw8e
