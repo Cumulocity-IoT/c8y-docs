@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-07-03'
 title: Improved contrast of link color in cookie banner
 product_area: Application enablement & solutions
 change_type:
