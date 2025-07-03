@@ -46,7 +46,7 @@ For each ad-hoc query, the following information is provided:
 
 ### System log {#system-log}
 
-Switch to the Administration application and navigate to **Accounts > Audit logs** to view the system-related [audit log entries](/standard-tenant/monitoring/#audit-logs) for {{< product-c8y-iot >}} DataHub. The log entries comprise, for example, information on offloading configurations, Dremio users, and initial configuration. At the top of the page, you can filter for those entries by selecting "DataHub" under **Type**.
+Switch to the Administration application and navigate to **Accounts > Audit logs** to view the system-related [audit log entries](/standard-tenant/monitoring/#audit-logs) for {{< product-c8y-iot >}} DataHub. The log entries comprise, for example, information on offloading configurations, Dremio users, and initial configuration. At the top of the page, you can filter for those entries by selecting "DataHub" under **Type**. For each operation, two entries are provided in the audit log, indicating start and end of the operation.
 
 For each log entry, the following information is provided:
 
@@ -54,5 +54,5 @@ For each log entry, the following information is provided:
 | ---         |  ---
 | Device time | The point in time the user has carried out the operation
 | User | The user that has carried out the operation
-| Event | The type of operation
+| Event | The type of operation and whether it has started or completed
 | Description | The details of the operation

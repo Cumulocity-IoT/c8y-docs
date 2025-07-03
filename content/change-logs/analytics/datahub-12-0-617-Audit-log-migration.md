@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2025-07-03'
 title: Migration of audit log
 change_type:
   - value: change-QHu1GdukP
