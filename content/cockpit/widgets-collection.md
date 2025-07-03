@@ -369,11 +369,62 @@ You can add, edit, or remove links to customize the widget according to your nee
 
 ### Radial Gauge {#radial-gauge}
 
-The "Radial gauge" widget visualizes data points in form of a radial gauge.
+The "Radial gauge" widget visualizes data points in the form of a radial gauge, making it ideal for monitoring values like temperature, pressure, or performance metrics at a glance.
+
+#### Presets and customization
+
+You can choose from various preset styles such as "Default", "Pointer", "Progress bar", "Progress indicator", and "Grade rating". Each preset provides a distinct visual design.
 
 ![Radial gauge widget](/images/users-guide/cockpit/cockpit-widget-radial-gauge.png)
 
 You must enable at least one data point to create the "Radial gauge" widget.
+
+For full control, click **Show advanced options** to customize the gauge’s appearance and behavior.
+
+**Advanced options reference**
+
+| Category         | Property                                             | Description                                           |
+| ---------------- | ---------------------------------------------------- | ----------------------------------------------------- |
+| **General**      | `name`                                               | Name of the gauge preset                              |
+|                  | `radius`                                             | Radius of the gauge (for example, "90%")              |
+|                  | `center`                                             | Center position of the gauge (for example, `["50%", "50%"]`) |
+|                  | `startAngle`, `endAngle`                             | Start and end angles of the gauge arc                 |
+| **Split lines**  | `splitNumber`                                        | Number of segments in the gauge                       |
+|                  | `splitLineLength`, `splitLineLengthRatio`            | Length of split lines (absolute or ratio)             |
+|                  | `splitLineDistance`, `splitLineDistanceRatio`        | Distance of split lines from axis (absolute or ratio) |
+|                  | `splitLineColor`, `splitLineWidth`                   | Color and width of split lines                        |
+| **Ticks**        | `tickShow`                                           | Whether to show ticks                                 |
+|                  | `tickWidth`, `tickColor`                             | Width and color of ticks                              |
+|                  | `tickDistance`, `tickDistanceRatio`                  | Distance of ticks from center (absolute or ratio)     |
+|                  | `tickLength`, `tickLengthRatio`                      | Length of ticks (absolute or ratio)                   |
+| **Axis**         | `axisLabelDistance`, `axisLabelDistanceRatio`        | Distance of axis labels from center                   |
+|                  | `axisLabelColor`                                     | Color of axis labels                                  |
+|                  | `axisLabelFontSize`, `axisLabelFontSizeRatio`        | Font size of labels (absolute or ratio)               |
+|                  | `axisLabelFontSizeMin`, `axisLabelFontSizeMax`       | Minimum and maximum font size for labels              |
+|                  | `axisLineWidth`, `axisLineWidthRatio`                | Width of the axis line (absolute or ratio)            |
+| **Pointer**      | `showPointer`                                        | Whether to show the pointer                           |
+|                  | `pointerStyle`, `pointerColor`                       | Style and color of the pointer                        |
+|                  | `pointerWidth`, `pointerWidthRatio`                  | Width of pointer (absolute or ratio)                  |
+|                  | `pointerLength`, `pointerLenghtRatio`                | Length of pointer (absolute or ratio)                 |
+|                  | `pointerOffset`                                      | Offset of pointer from center                         |
+| **Progress bar** | `progressBar`                                        | Enable progress bar                                   |
+|                  | `progressBarWidth`                                   | Width of the progress bar                             |
+|                  | `progressBarRoundCap`                                | Rounded caps on progress bar ends                     |
+|                  | `progressBarColor`                                   | Color of the progress bar                             |
+|                  | `additionalGaugeColors`                              | Extra colors for segmented gauge bars                 |
+| **Typography**   | `measurementValueFontRatio`                          | Font size ratio of the measurement value              |
+|                  | `measurementValueFontMin`, `measurementValueFontMax` | Min and max font size for measurement value           |
+|                  | `measurementValueColor`                              | Color of the measurement value text                   |
+|                  | `unitFontSize`, `unitFontRatio`                      | Font size or ratio of the unit label                  |
+|                  | `unitFontMin`, `unitFontMax`                         | Min and max font size for the unit label              |
+|                  | `unitColor`                                          | Color of the unit label                               |
+|                  | `dateFontSize`, `dateFontRatio`                      | Font size or ratio of the timestamp                   |
+|                  | `dateFontMin`, `dateFontMax`                         | Min and max font size for the timestamp               |
+|                  | `dateColor`                                          | Color of the timestamp                                |
+| **Details**      | `showDetail`                                         | Show detailed information like value or markers       |
+|                  | `valueFontSize`                                      | Font size for the displayed value                     |
+|                  | `detailOffsetCenter`                                 | Offset of detail from center                          |
+|                  | `showMarkPoint`                                      | Show mark points on the gauge                         |
 
 ### Relay array control {#relay-array-control}
 
