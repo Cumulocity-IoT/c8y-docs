@@ -46,7 +46,7 @@ jobs:
           echo "[]" > output.json
            for artifact in $buildartifacts ;
            do
-               cat pipeline/clusters/helm_charts_data.json | jq --arg artifact "$artifact" '[to_entries[] | select(.value.component_name==$artifact)][0].value.zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com"]' > details.json
+               cat pipeline/clusters/helm_charts_data.json | jq --arg artifact "$artifact" '[to_entries[] | select(.value.component_name==$artifact)][0].value.zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com-eks"]' > details.json
                versionOfArtifact=$(cat details.json | jq '.version' | xargs)
                timestamp=$(cat details.json | jq '.updated_at' | xargs)
                rm details.json
