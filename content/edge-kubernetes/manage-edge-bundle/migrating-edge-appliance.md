@@ -281,11 +281,87 @@ This step is applicable only for customers with CDH deployed.
    IGNORE 1 LINES
    (UUID, TIME, USERNAME, EVENT_TYPE, STATUS, DETAILS, OLD_DATA, NEW_DATA);
    ```
-3. No Mysql pod restart needed since we just importing data into CDH which we have exported earlier from appliance.
 
-4. Now its time to migrate datahub. As part of previous backup we have taken a backup of the datalake contents stored under `/opt/mongodb` of appliance its time
-   for dremio migration.
+3. Now its time to migrate dremio. As part of previous backup we have taken a backup of the datalake contents stored under `/opt/mongodb/cdh-master/datalake/edge/` of appliance, lets restore them to `/datahub/datalake/edge/`
+
+   ```shell
+   cp -r /opt/mongodb/cdh-master/datalake/edge/ /datahub/datalake/edge/
+   ```
    
+   Since data lake contents are already in place now, lets transfr the dremio metadata i.e., RocksDB. This involves switching dremio deployment to maintainance mode -> importing metadata from appliance -> switching out of maintanace and initialising dremio.
+
+   ```shell
+   # Download dremio helmchart from registry.c8y.io, it is mandatory to move forward in this journey.
+   # Note: Need to steps on how to download (or) register the helm repo which ever we finalise post review..
+   # Ref: https://www.dremio.com/wp-content/uploads/2023/12/Migrate-a-Dremio-Standalone-Cluster-to-Kubernetes-1.pdf
+   helm get values dremio -n c8yedge --output yaml > dremio-values-backup-$(date +%Y%m%d-%H%M%S).yaml
+   ```
+   Previous step ensures that helm values for the given release is saved on local. Lets download `c8y-edge-dremio-admin-values.yaml` file to apply and switch the dremio to maintanance mode. 
+
+   ```shell
+   curl -sfL https://example.com/files/edge-k8s/c8y-edge-dremio-admin-values.yaml -o c8y-edge-dremio-admin-values.yaml && \
+   helm upgrade dremio ./dremio-11.0.602.tgz -n c8yedge -f ./c8y-edge-dremio-admin-values.yaml
+   ```
+
+   Now, dremio deployment will be switched to maintance mode. To confirm execute `kubectl get pods -n c8yedge | grep dremio`, this should return something like this.
+
+   ```shell
+   dremio-admin                                                  1/1     Running            0                 3d
+   ```
+
+   After this step is confirmed, lets copy the metadata from backup to dremio-admin pod.
+
+   ```shell
+   # 1. Find the latest backup directory
+   LATEST_BKP=$(ls -dt /opt/mongodb/cdh-master/datalake/edge/bkp/dremio_backup_* | head -n1)
+   BACKUP_BASENAME=$(basename "$LATEST_BKP")
+
+   # 2. Copy latest backup directory into the pod
+   kubectl cp "$LATEST_BKP" c8yedge/dremio-admin:/opt/dremio/data/
+
+   # 3. Cleanup old data inside the pod
+   kubectl exec -n c8yedge dremio-admin -- rm -rf /opt/dremio/data/db/*
+   kubectl exec -n c8yedge dremio-admin -- rm -rf /opt/dremio/data/db/.indexing
+   kubectl exec -n c8yedge dremio-admin -- rm -rf /opt/dremio/data/catalog/*
+   kubectl exec -n c8yedge dremio-admin -- rm -rf /opt/dremio/data/accelerator/*
+
+   # 4. Restore Dremio using the new backup
+   kubectl exec -n c8yedge dremio-admin -- /opt/dremio/bin/dremio-admin restore -d /opt/dremio/data/"$BACKUP_BASENAME"/
+   ```
+
+   Lets switchout from dremio maintanance mode. 
+
+   ```shell
+   helm upgrade dremio ./dremio-11.0.602.tgz -n c8yedge -f ./dremio-values-backup-<TIMESTAMP>.yaml
+   ```
+
+   After this, you will see the following pods up and running. Wait for them to completely initlaize without errors.
+
+   ```shell
+   dremio-executor-0                                                1/1     Running            0                 9s
+   dremio-master-0                                                  1/1     Running            0                 20s
+   ```
+
+   Q: What happens now?
+   >  Dremio deployment on k8s is fully initialized with applaince meta data. As well as datalake mounted.
+
+   Q: Whats next?
+   >  Since dremio is intialized with applaince meta data, some stale configs will carry as well. Now login to your dremio on k8s using applaince credentials and we localise it for our k8s deployment. Also we need to refresh the metadata for datalake as well.
+
+   - Navigate to Datahub and then access dremio from CDH, login to the dremio dashboard using dremio credentials from Appliance.
+   - First few steps to be done mandatorily to make this functional are as follows.
+      - Click on settings icon on the bottom left, and then navigate to users section on the setting view.
+      - Delete the follwoing users `edge/apiuser`, `edge/~c8y`. Now we can create api user from Dremio as per official document.
+      - Go to dremio lading page, under the datasets section > Databases > Right click on c8y_source > select Settings.
+      - Here we need to configure teh mongoDB source since we are on k8s. Cahnge Host field to `edge-db-rs0.c8yedge.svc.cluster.local` adn retain port as `27017`
+      - Tick the check box for `Encrypt connection`, Note: The TLS cert is already added to the trust store as part of initialization.
+      - Change Authentication config, Click on Radio button `Master Credentials`. Update credentials Username `databaseAdmin` Password `FROM MONGO SECRET/NEED TO ADD STEPS TO FETCH THE SECRET` and click on save. After this you sould see the c8y_souce as connected or in green colour.
+      - On side bar, There is a console/termial icon click it. It will display SQL pane.
+      - execute the following command `ALTER SOURCE edgeDataLake REFRESH METADATA;`, this will refresh metadata.
+   
+   - Now navigate to CDH page on {{< product-c8y-iot >}}.
+   - Complete the CDH configuration as per the official docs.
+
 
 
 

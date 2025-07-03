@@ -1,0 +1,17 @@
+# Enable the dremio-admin pod for offline operations
+DremioAdmin: true
+
+# Minimal required values for dremio-admin pod rendering
+image: "registry.c8y.io/cdh/dremio"        # e.g., registry.c8y.io/cdh/dremio
+imageTag: "11.0.180"
+
+# Reduce resource usage for test/maintenance cluster
+coordinator:
+  cpu: 1
+  memory: 1024    # MiB, will become "1024Mi" in the template
+
+# Unique environment name used to form PVC name if oldDremioMasterPvcNaming is true
+env: ""
+
+# Ensures PVC name is constructed as: dremio-master-volumetestenv-dremio-master-0
+oldDremioMasterPvcNaming: true
