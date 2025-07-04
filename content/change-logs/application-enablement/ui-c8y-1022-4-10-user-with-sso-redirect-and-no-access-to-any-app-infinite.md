@@ -1,6 +1,6 @@
 ---
 date: ""
-title: User with SSO redirect and no access to any app infinite loop fix. [GRAFT][release/cd] (#9494)
+title: User with SSO redirect and no access to any app infinite loop fix.
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
