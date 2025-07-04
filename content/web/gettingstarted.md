@@ -6,7 +6,7 @@ sector:
   - app_enablement
 ---
 
-This guide will setup your first application. The first step is to install the `@angular/cli` in the right version. Server Side Rendering (SSR) is not supported and therefore set to `false`:
+This guide will setup your first application. The first step is to install the `@angular/cli` in the right version. Server Side Rendering (SSR) and applications based on the standalone API are not supported and therefore set to `false`:
 
 ```bash
 npx @angular/cli@19 new --style=less --ssr=false --standalone=false
