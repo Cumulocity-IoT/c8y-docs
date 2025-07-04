@@ -55,7 +55,7 @@ In step two, the base project to scaffold from must be selected. You can select 
 Cumulocity applications to reuse the functions provided there. In alternative, you could start a
 blank application by selecting the "application" project.
 
-For an alternative to the scaffolding, you can get application from list above directly from their github repositories:
+As an alternative to scaffolding, you can get applications from the list above directly from their GitHub repositories:
 - [{{< product-c8y-iot >}} Administration](https://github.com/Cumulocity-IoT/administration)
 - [{{< product-c8y-iot >}} Application](https://github.com/Cumulocity-IoT/application)
 - [{{< product-c8y-iot >}} Cockpit](https://github.com/Cumulocity-IoT/cockpit)
