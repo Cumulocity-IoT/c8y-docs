@@ -47,7 +47,7 @@ In the first step, the base scaffolding version must be selected. The interface 
   hybrid
   login
   tutorial
-  widget-plugin
+  sample-plugin
   package-blueprint
 ```
 
