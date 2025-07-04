@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed displaying a link from a device Smart Rules tab in Cockpit to the corresponding device page in Device Management (#9441) [GRAFT][release/y2025] (#9500)
+title: Readded link from device Smart Rules tab in Cockpit to its corresponding device page in Device Management
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63963
 version: 1021.22.101
 ---
-This fix restores displaying a link from a device's "Smart Rules" tab in Cockpit to the corresponding device's page in Device Management.
+With this fix, it is again possible to navigate from a device's "Smart Rules" tab in Cockpit to its corresponding device page in Device Management by clicking on a link. This restores the expected navigation behavior and allows users to conveniently access device details from Cockpit.
