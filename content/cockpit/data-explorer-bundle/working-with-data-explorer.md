@@ -64,7 +64,7 @@ The data points properties are pre-filled as follows:
 
 There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system.
 
-For details on modifying the visualization in general, see [Changing data explorer visualization](#changing-data-explorer-visualization). For details on customizing the properties of a particular data point, see [To customize data point properties](#to-customize-data-point-properties).
+For details on modifying the visualization in general, see [Changing data explorer visualization](#changing-visualization). For details on customizing the properties of a particular data point, see [To customize data point properties](#to-customize-data-point-properties).
 
 **Example:**
 
