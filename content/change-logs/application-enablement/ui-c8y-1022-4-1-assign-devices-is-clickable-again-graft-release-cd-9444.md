@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-07-03'
 title: Assign devices view is now rendered correctly
 product_area: Application enablement & solutions
 change_type:
