@@ -1,5 +1,5 @@
 ---
-weight: 25
+weight: 90
 title: Edge Custom Resource
 layout: bundle
 sector:
