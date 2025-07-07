@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4789
 version: 1020.440.44
 ---
-Mapping LwM2M multi-instance resources to Cumulocity measurements now correctly creates a separate measurement series for each instance. Previously, only a single series was generated regardless of the number of values.
+Mapping LWM2M multi-instance resources to {{< product-c8y-iot >}} measurements now correctly creates a separate measurement series for each instance. Previously, only a single series was generated regardless of the number of values.
