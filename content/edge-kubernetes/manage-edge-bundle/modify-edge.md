@@ -6,7 +6,11 @@ layout: redirect
 
 You can configure and upgrade Edge by making changes to the Custom Resource (CR), an object in Kubernetes representing this Edge installation. Power users may wish to jump straight in, and refer to the [Edge Custom Resource](/edge-kubernetes/edge-custom-resource-definition/) for details of the CR structure and configuration options available.
 
-In these examples, we assume that the Edge object is called `c8yedge` and is in the namespace `c8yedge`. This is the case if you have installed Edge using the `c8yedge` tool, and can be taken verbatim. All commands should be executed in the shell of the environment you have installed Edge on. Immediately post-installation, you will probably want to configure an SSL certificate for your Edge, and give it a custom domain.
+In these examples, we assume that the Edge object is called `c8yedge` and is in the namespace `c8yedge`. This is the case if you have installed Edge using the `c8yedge` tool, and can be taken verbatim. All commands should be executed in the shell of the environment you have installed Edge on.
+
+### Basic post-installation configuration
+
+Immediately post-installation, you will probably want to configure an SSL certificate for your Edge, and give it a custom domain.
 
 First, ensure that your certificate and key are in separate files, in PEM format.
 ```bash
@@ -21,13 +25,21 @@ kubectl -n c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"domain":"myown.
 ```
 Note that the license key must always be valid for the domain name, so any change of domain name should be made simultaneously with a change of license key.
 
-The change may not apply immediately. You can wait for any change to complete, whether that's an Edge reconfiguration or even an upgrade
-```bash
-kubectl wait --timeout=300s -n c8yedge --for='jsonpath={.status.state}=Ready' edge/c8yedge
-```
-This command will exit when the change completes.
+The change may take some time to complete. See [Monitoring changes](/edge-kubernetes/manage-edge/#monitoring-changes).
 
-In the background, you can also monitor the progress of the changes
+### More general configuration changes
+
+All configuration options can be accessed simply by editing a YAML document that represents the Edge Custom Resource. First, retrieve the current state of the custom resource
 ```bash
-kubectl get events -n c8yedge --field-selector involvedObject.name=c8yedge
+kubectl get -n c8yedge edge/c8yedge -o yaml > edge.yaml
 ```
+Edit this file, referring to the [Edge Custom Resource](/edge-kubernetes/edge-custom-resource-definition/) for an exhaustive listing of what could be changed. For example, you might add `messagingService: true` indented under the custom resource's `spec`. Apply the changed custom resource with
+```bash
+kubectl apply -f edge.yaml
+```
+
+If you are comfortable using a text editor installed on the host system, then you can edit the custom resource in place.
+```bash
+kubectl edit -n c8yedge edge/sample
+```
+Any changes you make will be applied when you save and exit the editor.
