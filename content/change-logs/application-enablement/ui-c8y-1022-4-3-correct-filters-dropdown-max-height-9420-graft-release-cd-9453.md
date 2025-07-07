@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62301
 version: 1022.4.3
 ---
-In the Data grid component the filters dropdown had an issue with its max-height, causing it to be cut off in certain scenarios. This has now been corrected by setting an appropriate max-height.
+In the data grid component, the filter dropdown had an issue with its max-height, causing it to be cut off in certain scenarios. This issue has now been resolved by setting an appropriate max-height.
