@@ -1,6 +1,6 @@
 ---
 date: 
-title: Python plug-ins can be run without sub-interpreters, or with dedicated GILs
+title: Python plug-ins can be run without sub-interpreters or with dedicated GILs
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
