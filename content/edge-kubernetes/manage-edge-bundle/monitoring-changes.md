@@ -6,7 +6,7 @@ layout: redirect
 
 Any change that involves an update to the Custom Resource via `kubectl` will run and complete in the background. Whether it's a configuration change or an upgrade, you can use `kubectl` to wait for the Custom Resource to advertise itself as `Ready` after a change.
 ```bash
-kubectl wait --timeout=300s -n c8yedge --for='jsonpath={.status.state}=Ready' edge/c8yedge
+kubectl wait --timeout=1800s -n c8yedge --for='jsonpath={.status.state}=Ready' edge/c8yedge
 ```
 This command will exit when the change completes.
 
