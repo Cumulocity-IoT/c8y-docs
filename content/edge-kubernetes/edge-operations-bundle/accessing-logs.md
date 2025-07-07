@@ -1,5 +1,5 @@
 ---
-weight: 90
+weight: 10
 title: Accessing logs
 layout: redirect
 ---
