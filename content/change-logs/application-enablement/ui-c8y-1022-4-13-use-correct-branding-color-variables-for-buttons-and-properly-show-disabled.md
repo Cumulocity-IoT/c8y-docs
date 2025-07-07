@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-64046
 version: 1022.4.13
 ---
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
-Co-authored-by: Tristan Bastian <tristan.bastian@cumulocity.com>
+Buttons were not using the correct variables defined in the branding. Additionally, disabled action bar items were not properly indicated. The buttons now use the correct branding color variables based on the configured branding, and the disabled action bar items are now visually identifiable as disabled.
