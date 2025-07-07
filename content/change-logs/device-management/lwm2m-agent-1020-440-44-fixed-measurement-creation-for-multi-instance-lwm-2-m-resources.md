@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed measurement creation for multi-instance Lwm2m resources
+title: Fixed measurement creation for multi-instance LWM2M resources
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
