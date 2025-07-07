@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4829
 version: 1021.10.20
 ---
-Fixed a rare problem that could lead to incomplete realtime subscriptions and exceptions in the agent logs.
+Fixed an issue that could rarely lead to incomplete real-time subscriptions and exceptions in the LWM2M agent logs.
