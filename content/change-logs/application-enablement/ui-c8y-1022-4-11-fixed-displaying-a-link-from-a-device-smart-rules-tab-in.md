@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Readded link from device Smart Rules tab in Cockpit to its corresponding device page in Device Management
+title: Readded link from the Cockpit application to the corresponding device details in the Device Management application
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
