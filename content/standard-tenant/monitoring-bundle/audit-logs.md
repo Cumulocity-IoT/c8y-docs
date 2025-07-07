@@ -299,5 +299,5 @@ Note that entries of this type are not created when using Basic authentication.
 </table>
 
 {{< c8y-admon-info >}}
-See also [Audit logs for Streaming Analytics](/streaming-analytics/troubleshooting/#analytics-audit-logs).
+See also [Audit logs for Streaming Analytics](/streaming-analytics/troubleshooting/#analytics-audit-logs) and [Audit logs for {{< product-c8y-iot >}} DataHub](/datahub/operating-datahub/#system-log).
 {{< /c8y-admon-info >}}
