@@ -35,7 +35,7 @@ Upgrading Edge is very similar to configuration changes, where the version is si
 ```bash
 kubectl -n c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"version":"{{< c8y-edge-version >}}"}}'
 ```
-The operator itself will also self-upgrade as part of this process.
+The operator itself will also self-upgrade as part of this process. See [Monitoring changes](/edge-kubernetes/manage-edge/#monitoring-changes) to follow the progress of the upgrade.
 
 ### Upgrading Edge remotely {#upgrading-edge-remotely}
 
