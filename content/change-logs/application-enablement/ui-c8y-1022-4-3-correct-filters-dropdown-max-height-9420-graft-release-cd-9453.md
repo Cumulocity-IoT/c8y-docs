@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data grid filters dropdown max-height corrected
+title: Fixed filter dropdown max-height in data grid component
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
