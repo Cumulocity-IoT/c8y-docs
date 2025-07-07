@@ -1,6 +1,6 @@
 ---
 date: ""
-title: LWM2M realtime subscription improvement
+title: LWM2M real-time subscription improvement
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
