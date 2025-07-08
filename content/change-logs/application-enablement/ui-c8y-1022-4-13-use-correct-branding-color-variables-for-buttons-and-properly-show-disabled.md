@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix branding color variables for buttons and properly show disabled action bar items
+title: Fixed branding color variables for buttons and display of disabled action bar items
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
