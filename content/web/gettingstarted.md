@@ -6,10 +6,10 @@ sector:
   - app_enablement
 ---
 
-This guide will setup your first application. The first step is to install the `@angular/cli` in the right version. Server Side Rendering (SSR) is not supported and therefore set to `false`:
+This guide will setup your first application. The first step is to install the `@angular/cli` in the right version. Server Side Rendering (SSR) and applications based on the standalone API are not supported and therefore set to `false`:
 
 ```bash
-npx @angular/cli@18 new --style=less --ssr=false
+npx @angular/cli@19 new --style=less --ssr=false
 ```
 
 Second, navigate to the folder and add the `@c8y/websdk` package to your Angular application:
@@ -45,14 +45,26 @@ In the first step, the base scaffolding version must be selected. The interface 
   cockpit
   devicemanagement
   hybrid
+  login
   tutorial
-  widget-plugin
+  sample-plugin
   package-blueprint
 ```
 
 In step two, the base project to scaffold from must be selected. You can select any of the default
 Cumulocity applications to reuse the functions provided there. In alternative, you could start a
 blank application by selecting the "application" project.
+
+As an alternative to scaffolding, you can get applications from the list above directly from their GitHub repositories:
+- [{{< product-c8y-iot >}} Administration](https://github.com/Cumulocity-IoT/administration)
+- [{{< product-c8y-iot >}} Application](https://github.com/Cumulocity-IoT/application)
+- [{{< product-c8y-iot >}} Cockpit](https://github.com/Cumulocity-IoT/cockpit)
+- [{{< product-c8y-iot >}} Device Management](https://github.com/Cumulocity-IoT/devicemanagement)
+- [{{< product-c8y-iot >}} Hybrid](https://github.com/Cumulocity-IoT/hybrid)
+- [{{< product-c8y-iot >}} Login](https://github.com/Cumulocity-IoT/login)
+- [{{< product-c8y-iot >}} Tutorial](https://github.com/Cumulocity-IoT/tutorial)
+- [{{< product-c8y-iot >}} Sample plugin](https://github.com/Cumulocity-IoT/sample-plugin)
+- [{{< product-c8y-iot >}} Package blueprint](https://github.com/Cumulocity-IoT/package-blueprint)
 
 ### Step 3: Start the local development server
 
@@ -98,9 +110,11 @@ import { Component } from "@angular/core";
     <c8y-title>Hello World</c8y-title>
     <p>My first content.</p>
   `,
+  standalone: false
 })
 export class HelloComponent {}
 ```
+Both standalone and module oriented components are supported. For the latter ones `standalone: false` must be added because this property is `true` by default since Angular 19.
 
 To hook the new component into the application, you must declare the new component and add it to
 a route in the `app.module.ts`. In the following example we extended the `application` project,

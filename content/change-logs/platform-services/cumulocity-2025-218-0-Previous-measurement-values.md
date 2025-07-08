@@ -13,11 +13,11 @@ build_artifact:
     label: cumulocity
 version: 2025.218.0
 ---
-We've introduced automated persistence for measurement values under the `c8y_PreviousMeasurements` fragment. This feature allows for storing and querying the second most recent measurement values based on arrival time.
+Automated persistence for measurement values under the `c8y_PreviousMeasurements` fragment has been introduced. This allows for storing and querying the second most recent measurement values based on arrival time.
 
 For details on how to enable the feature and how it works, refer to [Managing data](/standard-tenant/managing-data/#latest-value).
 
-**Breaking Change: Inventory API – `c8y_PreviousMeasurements` fragment was added to the restricted properties list**
+**Breaking change: The Inventory API `c8y_PreviousMeasurements` fragment was added to the restricted properties list.**
 
 The `c8y_Previous Measurements` fragment is reserved for internal system use only and may not be used by external users.
 
@@ -42,4 +42,3 @@ If a user sends a request like the following::
 ```
 
 With this release, the `c8y_PreviousMeasurements` fragment in the request will be ignored and will not be saved.
-
