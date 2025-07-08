@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63963
 version: 1021.22.101
 ---
-It is now again possible to navigate via a link on the device's **Smart rules** tab in the Cockpit application to its corresponding device page in the Device Management application. This change restores the expected navigation behavior and allows users to conveniently access device details from the Cockpit application.
+It is now again possible to navigate via a link on the device's **Smart rules** tab in the Cockpit application to its corresponding device details in the Device Management application. This change restores the expected navigation behavior, allowing users to conveniently access device details from the Cockpit application.
