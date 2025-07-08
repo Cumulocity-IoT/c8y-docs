@@ -1,6 +1,6 @@
 ---
 date: ""
-title: User with SSO redirect and no access to any app infinite loop fix. [GRAFT][release/y2025]
+title: Users with SSO redirect and without application access no longer run into an infinite loop
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63961
 version: 1021.22.100
 ---
-If user had SSO and SSO redirect enabled but had no permission to access any app, after login try he was falling into redirecting loop. Right now it is fixed and if user has no app to access, he is redirected to login view and error is shown.
+Previously, if users had SSO and SSO redirect enabled but did not have permission to access any application, they ran into an infinite loop after trying to log in. This issue has been fixed. If users have no application access, they are now redirected to the login page, and an error is shown.
