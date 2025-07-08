@@ -1,5 +1,5 @@
 ---
-date:
+date: '2025-07-03'
 title: Inventory search with wildcards becomes case-insensitive
 change_type:
   - value: change-3BQrQ6adS

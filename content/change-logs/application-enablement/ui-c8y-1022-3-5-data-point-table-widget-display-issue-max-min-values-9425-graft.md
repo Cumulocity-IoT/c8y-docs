@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-07-03'
 title: Data point table widget now correctly displays maximum and minimum values
 product_area: Application enablement & solutions
 change_type:
