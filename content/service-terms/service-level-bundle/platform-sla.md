@@ -116,7 +116,7 @@ Planned and unplanned downtimes are communicated via the appropriate {{< product
 Service-impacting changes and planned downtimes are announced on the {{< product-c8y-iot >}} status page at least **14 days prior to the event**. Additional updates with more detailed information may be provided as the event approaches. 
 
 {{< c8y-admon-info >}}
-Emergency maintenance might be announced ad-hoc or with a shorter announcement period. 
+Emergency maintenance may be announced on short notice or without prior warning. 
 {{< /c8y-admon-info >}}  
 
 ### Service credit commitment
