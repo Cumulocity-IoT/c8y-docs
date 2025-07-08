@@ -110,7 +110,8 @@ For non-production instances, the following are also excluded from the availabil
 * [cumulocity-apj.statuspage.io](http://cumulocity-apj.statuspage.io) for APJ instances.
 * a dedicated location for {{< product-c8y-iot >}} Dedicated instances.
 
-Planned and unplanned downtimes for the services are communicated via the {{< product-c8y-iot >}} status page, which will also provide an expected time for the system’s return to availability. Please note that the availability of the status page itself is not included in the services availability calculations.
+Planned and unplanned downtimes are communicated via the appropriate {{< product-c8y-iot >}} status page. The communication will include the expected time of service restauration.
+> **Note:** The availability of the status page itself is not included in the calculation of service availability.
 
 Service-impacting changes and planned downtimes are announced via the {{< product-c8y-iot >}} status page at least 14 days prior to the event. Updates with additional details might be published closer to the time of the event. 
 
