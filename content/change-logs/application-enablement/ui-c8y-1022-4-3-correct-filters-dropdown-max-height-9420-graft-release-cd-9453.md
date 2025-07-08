@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-07-03'
 title: Fixed filter dropdown max-height in data grid component
 product_area: Application enablement & solutions
 change_type:
