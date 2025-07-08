@@ -104,7 +104,7 @@ For non-production instances, the following are also excluded from the availabil
 
 ### Service announcements
 
-{{< company-c8y >}} communicates service availability and events impacting the service via status pages. The status pages showing the service availability results are at
+{{< company-c8y >}} communicates service availability and events impacting the service through the following status pages:
 
 * [status.cumulocity.com](http://status.cumulocity.com) for US and EMEA instances.
 * [cumulocity-apj.statuspage.io](http://cumulocity-apj.statuspage.io) for APJ instances.
