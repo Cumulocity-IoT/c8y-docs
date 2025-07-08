@@ -1,6 +1,6 @@
 ---
-date:
-title: Introducing previous measurement values
+date: '2025-07-03'
+title: Introducing previous measurements values
 change_type:
   - value: change-inv-3bw8e
     label: Announcement
