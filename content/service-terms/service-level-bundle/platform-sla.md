@@ -113,7 +113,7 @@ For non-production instances, the following are also excluded from the availabil
 Planned and unplanned downtimes are communicated via the appropriate {{< product-c8y-iot >}} status page. The communication will include the expected time of service restauration.
 > **Note:** The availability of the status page itself is not included in the calculation of service availability.
 
-Service-impacting changes and planned downtimes are announced via the {{< product-c8y-iot >}} status page at least 14 days prior to the event. Updates with additional details might be published closer to the time of the event. 
+Service-impacting changes and planned downtimes are announced on the {{< product-c8y-iot >}} status page at least **14 days prior to the event**. Additional updates with more detailed information may be provided as the event approaches. 
 
 {{< c8y-admon-info >}}
 Emergency maintenance might be announced ad-hoc or with a shorter announcement period. 
