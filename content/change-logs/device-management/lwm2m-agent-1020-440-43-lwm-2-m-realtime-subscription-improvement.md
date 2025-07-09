@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4829
 version: 1020.440.43
 ---
-Fixed a rare problem that could lead to incomplete realtime subscriptions and exceptions in the agent logs.
+Fixed a rare problem that could lead to incomplete real-time subscriptions and exceptions in the agent logs.
