@@ -58,7 +58,7 @@ With the configuration `gateway.thinEdge.enabled: true` you switch to the thinEd
 
 ### MQTT Forwarding mode {#mqtt-forwarding-mode}
 
-The OPC-UA gateway supports an MQTT Forwarding mode that can be used together with the Thin-Edge mode. In addition to the OPC-UA gateway being registered as a child device of the Thin-Edge device and the OPC-UA gateway using credentials provided by Thin Edge, in MQTT Forwarding mode the OPC-UA gateway also uses thin-edge to send the data it receives from OPC-UA servers to Cumulocity. When using cyclic reads the data received in a single cyclic read that is mapped to measurements, events or custom actions can be batched into a single message.
+The OPC UA gateway supports an MQTT Forwarding mode that can be used together with the Thin Edge mode. In addition to the OPC UA gateway being registered as a child device of the Thin Edge device and the OPC UA gateway using credentials provided by Thin Edge, in MQTT Forwarding mode the OPC UA gateway also uses Thin Edge to send the data it receives from OPC UA servers to {{< product-c8y-iot >}}. When using cyclic reads, the data received in a single cyclic read that is mapped to measurements, events, or custom actions can be batched into a single message.
 
 The MQTT Forwarding mode uses the existing `thinEdge` configuration and introduces a number of additional configuration options to the YAML file:
 
@@ -97,7 +97,7 @@ The configuration `gateway.thinEdge.useForDataForwarding` controls if MQTT Forwa
 * `gateway.thinEdge.mqttKeepAliveInterval` (default: 60) - keep alive  interval in seconds.
 * `gateway.thinEdge.mqttMaxInFlight` (default: 1000) - maximum number of unacknowledged messages in the MQTT client. If this limit is reached, additional messages will fail.
 
-For cyclic reads the configuration `gateway.mappings.mergeCyclicRead` can be enabled. The default is false. If this configuration is enabled cyclic reads mapped to measurements, events or custom actions in a device protocol that use the same data reporting are merged into single messages. For measurements and events, the type can be controlled by the `gateway.mappings.mergedMeasurementType` and `gateway.mappings.mergedEventType` configuration. This is optional, and if not configured `OpcUaEvent` and `OpcUaMeasurement` respectively are used.
+For cyclic reads the configuration `gateway.mappings.mergeCyclicRead` can be enabled. The default is false. If this configuration is enabled cyclic reads mapped to measurements, events, or custom actions in a device protocol that use the same data reporting are merged into single messages. For measurements and events, the type can be controlled by the `gateway.mappings.mergedMeasurementType` and `gateway.mappings.mergedEventType` configuration. This is optional, and if not configured `OpcUaEvent` and `OpcUaMeasurement` respectively are used.
 
 ### Configuration profile location on the filesystem {#configuration-profile-location-on-the-filesystem}
 
