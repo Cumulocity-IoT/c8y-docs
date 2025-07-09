@@ -129,7 +129,7 @@ By default, this feature is enabled globally, but it can be configured at the te
 To manage automated persistence of previous measurement values on tenant level use the tenant options to create a new category named `measurement.series.previousvalue.enabled` with a PUT request to a [tenant options category](https://{{< domain-c8y >}}/api/core/#operation/putCategoryOptionResource).
 Example:
 ```
-PUT /tenant/options/
+POST /tenant/options/
 
  {
     "category": "configuration",

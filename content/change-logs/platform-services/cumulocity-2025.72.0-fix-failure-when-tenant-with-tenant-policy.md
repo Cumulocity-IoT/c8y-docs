@@ -17,4 +17,3 @@ ticket: MTM-62312
 version: 2025.72.0
 ---
 Previously, when an {{< enterprise-tenant >}} created a subtenant with a tenant policy that tried to override the default tenant option the tenant creation failed. This issue has been fixed an creating a subtenant with a tenant policy overriding the default tenant option now works properly.
-work as before. 

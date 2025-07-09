@@ -102,13 +102,25 @@ For non-production instances, the following are also excluded from the availabil
 
 (c) **Events of force majeure**.
 
-The status pages showing the service availability results are at
+### Service announcements
+
+{{< company-c8y >}} communicates service availability and events impacting the service through the following status pages:
 
 * [status.cumulocity.com](http://status.cumulocity.com) for US and EMEA instances.
 * [cumulocity-apj.statuspage.io](http://cumulocity-apj.statuspage.io) for APJ instances.
 * a dedicated location for {{< product-c8y-iot >}} Dedicated instances.
 
-Planned and unplanned downtimes for the services are communicated via the {{< product-c8y-iot >}} status page, which will also provide an expected time for the system’s return to availability. Please note that the availability of the status page itself is not included in the services availability calculations.
+Planned and unplanned downtimes are communicated via the appropriate {{< product-c8y-iot >}} status page. The communication includes the expected time of service restoration.
+
+{{< c8y-admon-info >}}
+The availability of the status page itself is not included in the calculation of service availability.
+{{< /c8y-admon-info >}}  
+
+Service-impacting changes and planned downtimes are announced on the {{< product-c8y-iot >}} status page at least **14 days prior to the event**. Additional updates with more detailed information may be provided as the event approaches. 
+
+{{< c8y-admon-info >}}
+Emergency maintenance may be announced on short notice or without prior warning. 
+{{< /c8y-admon-info >}}  
 
 ### Service credit commitment
 
