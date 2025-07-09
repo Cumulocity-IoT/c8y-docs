@@ -335,6 +335,9 @@ Example
 ##### Set supported operations (114) {#114}
 
 Set the supported operations of the device.
+{{< c8y-admon-info >}}
+For the list of supported operations and their correct parameter names, refer to the [114](/smartrest/mqtt-static-templates/#114).
+{{< /c8y-admon-info >}}
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
