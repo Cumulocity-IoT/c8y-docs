@@ -51,25 +51,29 @@ After enabling the microservice-based data broker, your existing data connectors
 The microservice-based data broker stores messages persistently using the {{< product-c8y-iot >}} Messaging Service until they are successfully delivered to the destination tenant.
 To optimize resource usage, the Messaging Service imposes storage limits and a message time-to-live (TTL) on persistently stored messages.
 
-The consumer under the microservice-based data broker is within the microservice and therefore have no control over the microservice connection. Messages are also handed off internally by microservice.
+Consumers using the microservice-based data broker will have no control over the microservice connection. Messages are handed off internally by the microservice.
 
-See [service quotas](/service-terms/quotas/#realtime-apis) for details of the default quotas and TTL used by the microservice-based data broker.
+Notifications 2.0 enforces a strict message backlog limit to prevent excessive resource usage and to ensure timely delivery of notifications.
+
+Any unacknowledged messages will be automatically deleted if they have been on the backlog for longer than the TTL (Time to Live) limit. This policy helps to limit overall resource usage and reduces the need to process outdated data after a prolonged disconnection of a consumer or destination tenant.
+
+The default backlog quota limit and Time to Live (TTL) is defined and found in the [service quotas](/service-terms/quotas/#realtime-apis) documentation for details of the default quotas and TTL used by the microservice-based data broker.
 
 **When the backlog quota limit has been reached:**
-*	Older messages will be discarded once they reach their TTL to provide room in the backlog until for new messages until the space is filled again.
+*	Older messages that's been unable to be delivered will continue consume space in the backlog causing eventual build up.
+* All messages in the backlog that's undelivered will be deleted once they reach their TTL to provide room new messages
 * Client is unable to publish new messages if the backlog quotas is full.
 * Consumers reconnecting after a disconnection may receive outdated messages that have been sitting on the queue waiting to be delivered.
-*	The system may apply back-pressure - the HTTP 500 response is the visible effect of this and will remain until the backlog pressure eases to accept new messages being published by the client.
-* Message ordering may be affected if backlog pruning occurs.
-* No messages will be dropped unless TTL has reached and will remain on the backlog queue.
-* Messages will always be delivered in the order they were sent by the client.
+*	The system may apply back-pressure - Requests in PERSISTENT mode will still update the database even if they cannot be published to the data broker and return a 500 response. The HTTP 500 response is the visible effect of this and will remain until the backlog pressure eases to accept new messages being published by the client.
+* No messages sitting in the backlog will be dropped unless their TTL has reached.
+* Messages will always be delivered in the order they were sent by the client unless it can't be delivered.
 
 **To avoid hitting the backlog limit and ensure reliable message consumption:**
 * Ensure the destination tenant is working and receiving forwarded messages to reduce backlog build-up as the user has no control over the consumer connection or acknowledgement.
 *	Monitor the level of free backlog space using the available metrics and alerting.
-*	Avoid extended consumer downtimes without reconnecting to prevent the backlog building up.
+*	Avoid extended consumer downtime without reconnecting to prevent the backlog building up. Destination tenant that's disconnected is what causes the backlog to fill up.
 *	If persistent disconnections are expected, consider requesting a bigger backlog - higher message rates might require bigger backlog sizes to cope with reasonable levels of outage/downtime of the destination Cumulocity system.
-* Consumers connecting infrequently, consider requesting for a longer TTL.
+* Consumers connecting infrequently, consider requesting for a longer TTL to keep undelivered messages in the backlog longer.
 * Slow down the publishing rate if the messages are not delivered fast enough to avoid filling up the backlog.
 
 In addition to the backlog quota, all messages now have a time-to-live (TTL) expiry. Messages not consumed after this period will be discarded.
