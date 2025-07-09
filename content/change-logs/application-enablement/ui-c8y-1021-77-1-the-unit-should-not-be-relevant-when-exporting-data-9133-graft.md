@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-06-19'
 title: Measurements are now exported correctly in data exports
 product_area: Application enablement & solutions
 change_type:
