@@ -1,5 +1,5 @@
 ---
-date:
+date: 09-07-2025
 title: New Analytics rules plugin is available as Public
   Preview
 change_type:
@@ -13,13 +13,13 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAB-4742
-version: 26.106.0
+version: 26.152.0
 ---
 
 {{< c8y-admon-preview >}}
 This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
 {{< /c8y-admon-preview >}}
 
-The Analytics rules plugin extends the Analytics Builder capabilities within Streaming Analytics by enabling users to create and manage Analytics Builder model instances directly from device and group contexts within applications such as Device Management and Cockpit. You can activate the feature using the **Manage preview features** option in the user menu.
+The Analytics rules plugin extends the Analytics Builder capabilities within Streaming Analytics by enabling users to create and manage the Analytics Builder model instances directly from device and group contexts within applications such as Device Management and Cockpit. You can activate the feature using the **Manage preview features** option in the user menu.
 
 For more details about the Analytics rules plugin, refer to [Analytics rules plugin](https://cumulocity.com/docs/streaming-analytics/analytics-rules-plugin#what-is-analytics-rules-plugin).
