@@ -1,5 +1,5 @@
 ---
-date:
+date: '2025-06-26'
 title: Fixed issue in bulk device operations delay
 change_type:
   - value: change-VSkj2iV9m
