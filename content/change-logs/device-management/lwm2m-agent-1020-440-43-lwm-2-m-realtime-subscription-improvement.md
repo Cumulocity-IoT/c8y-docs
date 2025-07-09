@@ -1,6 +1,6 @@
 ---
 date: ""
-title: LWM2M realtime subscription improvement
+title: LWM2M real-time subscription improvement
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4829
 version: 1020.440.43
 ---
-Fixed a rare issue that could lead to incomplete real-time subscriptions and exceptions in the agent logs.
+Fixed an issue that could rarely lead to incomplete real-time subscriptions and exceptions in the LWM2M agent logs.
