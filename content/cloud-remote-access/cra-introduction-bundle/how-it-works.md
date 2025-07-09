@@ -22,7 +22,7 @@ To leverage Cloud Remote Access, your device needs to be enabled by installing [
 
 ![Cloud Remote Access - VNC, SSH & Telnet](/images/cra/cra-intro-1.png)
 
-A common use case is the need of remotely accessing a device configuration interface using SSH, VNC or Telnet. For these protocols the CRA feature provides a convenient browser-based client that is integrated in the user interface of {{< product-c8y-iot >}}.
+A common use case is the need to remotely access a device configuration interface using SSH, VNC, or Telnet. For these protocols, the CRA feature provides a convenient browser-based client that is integrated in the user interface of {{< product-c8y-iot >}}.
 
 ### Passthrough: Support for native clients and proprietary protocols
 ![Cloud Remote Access - Passthrough](/images/cra/cra-intro-2.png)
