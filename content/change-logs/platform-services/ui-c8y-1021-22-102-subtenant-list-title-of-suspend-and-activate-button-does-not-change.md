@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Subtenant list: suspend and activate button title now updates correctly after toggling
+title: 'Subtenant list: suspend and activate button title now updates correctly after toggling'
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
