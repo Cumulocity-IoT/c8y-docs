@@ -93,7 +93,7 @@ The configuration `gateway.thinEdge.useForDataForwarding` controls if MQTT Forwa
 
 * `gateway.thinEdge.mqttAutomaticReconnect` (default:false) - controls if the MQTT client will reconnect in case it looses connection to the MQTT server.
 * `gateway.thinEdge.mqttCleanSession` (default:true) - controls if the MQTT client should remember state across sessions or start with a clean session.
-* `gateway.thinEdge.mqttConnectionTimeout` (default: 30) - connection timeout in secondgs.
+* `gateway.thinEdge.mqttConnectionTimeout` (default: 30) - connection timeout in seconds.
 * `gateway.thinEdge.mqttKeepAliveInterval` (default: 60) - keep alive  interval in seconds.
 * `gateway.thinEdge.mqttMaxInFlight` (default: 1000) - maximum number of unacknowledged messages in the MQTT client. If this limit is reached, additional messages will fail.
 
