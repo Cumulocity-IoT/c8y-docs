@@ -1,5 +1,5 @@
 ---
-date: 09-07-2025
+date:
 title: New Analytics rules plugin is available as Public
   Preview
 change_type:
