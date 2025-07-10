@@ -72,7 +72,7 @@ The default backlog quota limit and Time to Live (TTL) is defined and found in t
 * Ensure the destination tenant is working and receiving forwarded messages to reduce backlog build-up as the user has no control over the consumer connection or acknowledgement.
 *	Monitor the level of free backlog space using the available metrics and alerting.
 *	Avoid extended consumer downtime without reconnecting to prevent the backlog building up. Destination tenant that's disconnected is what causes the backlog to fill up.
-*	If persistent disconnections are expected, consider requesting a bigger backlog - higher message rates might require bigger backlog sizes to cope with reasonable levels of outage/downtime of the destination Cumulocity system.
+*	If persistent disconnections are expected, consider requesting a bigger backlog - higher message rates might require bigger backlog sizes to cope with reasonable levels of outage/downtime of the destination {{< product-c8y-iot >}} system.
 * Consumers connecting infrequently, consider requesting for a longer TTL to keep undelivered messages in the backlog longer.
 * Slow down the publishing rate if the messages are not delivered fast enough to avoid filling up the backlog.
 
