@@ -60,7 +60,7 @@ Any unacknowledged messages will be automatically deleted if they have been on t
 The default backlog quota limit and Time to Live (TTL) is defined and found in the [service quotas](/service-terms/quotas/#realtime-apis) documentation for details of the default quotas and TTL used by the microservice-based data broker.
 
 **When the backlog quota limit has been reached:**
-*	Older messages that's been unable to be delivered will continue consume space in the backlog causing eventual build up.
+* Older messages that have been unable to be delivered will continue to consume space in the backlog, causing eventual buildup.
 * All messages in the backlog that's undelivered will be deleted once they reach their TTL to provide room new messages
 * Client is unable to publish new messages if the backlog quotas is full.
 * Consumers reconnecting after a disconnection may receive outdated messages that have been sitting on the queue waiting to be delivered.
