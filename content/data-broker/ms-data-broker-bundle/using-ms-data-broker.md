@@ -61,7 +61,7 @@ The default backlog quota limit and Time to Live (TTL) is defined and found in t
 
 **When the backlog quota limit has been reached:**
 * Older messages that have been unable to be delivered will continue to consume space in the backlog, causing eventual buildup.
-* All messages in the backlog that's undelivered will be deleted once they reach their TTL to provide room new messages
+* All messages in the backlog that are undelivered will be deleted once they reach their TTL to provide room for new messages.
 * Client is unable to publish new messages if the backlog quotas is full.
 * Consumers reconnecting after a disconnection may receive outdated messages that have been sitting on the queue waiting to be delivered.
 *	The system may apply back-pressure - Requests in PERSISTENT mode will still update the database even if they cannot be published to the data broker and return a 500 response. The HTTP 500 response is the visible effect of this and will remain until the backlog pressure eases to accept new messages being published by the client.
