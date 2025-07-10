@@ -1,10 +1,10 @@
 ---
 weight: 30
-title: Asset models
+title: The Asset model
 layout: redirect
 helpcontent:
 - label: asset-types
-  title: Asset models
+  title: The asset model
   content: "An asset model is a blueprint or template to create one or multiple assets. It defines how an asset will look like after it is created. An asset model consists of one or more asset properties or child asset models.
 
 
