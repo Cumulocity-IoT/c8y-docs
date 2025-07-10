@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Users with SSO redirect and without application access no longer run into an infinite loop
+date: '2025-07-10'
+title: >-
+  Users with SSO redirect and without application access no longer run into an
+  infinite loop
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
