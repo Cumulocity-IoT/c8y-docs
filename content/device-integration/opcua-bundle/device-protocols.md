@@ -165,11 +165,11 @@ Measurements are sent to the MQTT topic `te/<identifier>/m/<measurement-type>` o
 
 Alarms are created by sending them to the `te/<identifier>/a/<alarm-type>` MQTT topic of Thin Edge. Alarms are cleared by sending an empty message to the same topic. The logic to clear and deduplicate alarms is unchanged.
 
-**Send Event (MQTT Forwarding mode)**
+**Send event (MQTT Forwarding mode)**
 
 Events are sent to the `te/<identifier>/e/<event-type>` MQTT topic of Thin Edge.
 
-**Custom Actions (MQTT Forwarding mode)**
+**Custom actions (MQTT Forwarding mode)**
 
 Custom actions in MQTT Forwarding mode use the same body template mechanism. The endpoint of the custom action should be a valid MQTT topic. Headers are ignored.
 
