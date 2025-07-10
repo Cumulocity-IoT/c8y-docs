@@ -66,7 +66,7 @@ The default backlog quota limit and Time to Live (TTL) is defined and found in t
 * Consumers reconnecting after a disconnection may receive outdated messages that have been sitting on the queue waiting to be delivered.
 *	The system may apply back-pressure - Requests in PERSISTENT mode will still update the database even if they cannot be published to the data broker and return a 500 response. The HTTP 500 response is the visible effect of this and will remain until the backlog pressure eases to accept new messages being published by the client.
 * No messages sitting in the backlog will be dropped unless their TTL has reached.
-* Messages will always be delivered in the order they were sent by the client unless it can't be delivered.
+* Messages are always delivered in the order the client sent them unless they can't be delivered.
 
 **To avoid hitting the backlog limit and ensure reliable message consumption:**
 * Ensure the destination tenant is working and receiving forwarded messages to reduce backlog build-up as the user has no control over the consumer connection or acknowledgement.
