@@ -1,6 +1,6 @@
 ---
 date: ""
-title: only show delete button in retention rules if user has the ADMIN permission (#9508)
+title: Show delete button in retention rules only for users with ADMIN permission
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64008
 version: 1022.4.15
 ---
-Co-authored-by: Tristan Bastian <tristan.bastian@cumulocity.com>
+In the Administration application, the delete button for retention rules was previously shown for all users regardless of their permissions. With this change, the delete button is now only displayed for users who have the ADMIN permission. This ensures that only authorized users can delete retention rules, providing better control and security over data retention management in Cumulocity IoT.
