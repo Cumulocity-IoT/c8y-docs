@@ -21,7 +21,7 @@ The following diagnostics endpoints are available for REST requests. These requi
     Obtains the *diagnostic-enhanced&lt;timestamp&gt;.zip* file as described above.
 - `/service/cep/diagnostics/request`  
     PUT only. JSON.  
-    Gives access to generic management requests against the correlator. For details, see [Shutting down and managing components]({{< link-apama-webhelp >}}/deploying-and-managing-apama-applications/overview-of-deploying-apama-applications/#shutting-down-and-managing-components) in the Apama documentation.
+    Gives access to generic management requests against the correlator. For details, see [Shutting down and managing components]({{< link-apama-webhelp >}}/command-line-tools/engine_management) in the Apama documentation.
 - `/service/cep/diagnostics/correlator/info`  
     GET only. JSON.  
     Obtains the `engine_inspect` information.
