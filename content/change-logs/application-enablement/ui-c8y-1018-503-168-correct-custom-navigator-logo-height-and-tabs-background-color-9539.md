@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63705
 version: 1018.503.168
 ---
-correct custom navigator logo height and  tabs background color (#9539)
+Previously, the custom navigator logo height and tabs background color were not displayed correctly which led to inconsistent branding and poor user experience. With this change, the logo height and background color of the tabs in the custom navigator now render as intended.
