@@ -8,7 +8,7 @@ You can configure and upgrade Edge by making changes to the Custom Resource (CR)
 
 In these examples, we assume that the Edge object is called `c8yedge` and is in the namespace `c8yedge`. This is the case if you have installed Edge using the `c8yedge` tool, and can be taken verbatim. All commands should be executed in the shell of the environment you have installed Edge on.
 
-### Basic post-installation configuration
+### Basic post-installation configuration {#basic-post-installation-configuration}
 
 Immediately post-installation, you will probably want to configure an SSL certificate for your Edge, and give it a custom domain.
 
