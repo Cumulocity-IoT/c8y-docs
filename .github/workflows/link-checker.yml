@@ -3,6 +3,7 @@ name: Link Checker
 on:
  schedule:
   - cron: '0 9 * * 5'
+ workflow_dispatch: 
   
 permissions:
     contents: read
