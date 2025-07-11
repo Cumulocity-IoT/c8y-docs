@@ -1,6 +1,6 @@
 ---
 date: ""
-title: correct custom navigator logo height and  tabs background color (#9539)
+title: Custom navigator logo height and tabs background color corrected
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
