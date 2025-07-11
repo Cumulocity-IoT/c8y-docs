@@ -10,7 +10,7 @@ kubectl wait --timeout=1800s -n c8yedge --for='jsonpath={.status.state}=Ready' e
 ```
 This command will exit when the change completes.
 
-Or you can monitor the progress of the changes in more detail
+Or you can monitor the progress of the changes in more detail:
 ```bash
 kubectl get events -n c8yedge --field-selector involvedObject.name=c8yedge
 ```
