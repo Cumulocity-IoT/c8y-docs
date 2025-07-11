@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-07-10'
 title: Fixed disabling c8y-select component in multi-select mode
 product_area: Application enablement & solutions
 change_type:
