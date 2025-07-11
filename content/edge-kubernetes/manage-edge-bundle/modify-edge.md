@@ -4,7 +4,7 @@ title: Modifying Edge
 layout: redirect
 ---
 
-You can configure and upgrade Edge by making changes to the Custom Resource (CR), an object in Kubernetes representing this Edge installation. Power users may wish to jump straight in, and refer to the [Edge Custom Resource](/edge-kubernetes/edge-custom-resource-definition/) for details of the CR structure and configuration options available.
+You can configure and upgrade Edge by making changes to the Custom Resource (CR), an object in Kubernetes representing this Edge installation. Power users may wish to jump straight in, and refer to [Edge Custom Resource](/edge-kubernetes/edge-custom-resource-definition/) for details of the CR structure and configuration options available.
 
 In these examples, we assume that the Edge object is called `c8yedge` and is in the namespace `c8yedge`. This is the case if you have installed Edge using the `c8yedge` tool, and can be taken verbatim. All commands should be executed in the shell of the environment you have installed Edge on.
 
