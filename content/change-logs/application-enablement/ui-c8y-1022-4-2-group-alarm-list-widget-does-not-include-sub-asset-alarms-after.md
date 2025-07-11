@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Alarm list widget does not include child devices alarms by default after upgrade to new implementation
+title: Alarm list widget now again shows child device alarms correctly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-63974
 version: 1022.4.2
 ---
-In the migrated "Alarm list" widget, child device alarms were not being displayed even though they were shown by default in the legacy version. During migration, the toggle for showing child device alarms was incorrectly set to disabled. This issue has been fixed. The option now defaults to enabled, so migrated widgets will show child device alarms correctly without requiring configuration changes.
-Note: The migration applies until the widget configuration is saved, then this change must be done manually.
+In a new design of the "Alarm list" widget, child device alarms were no longer displayed by default. This issue has been fixed. The new "Alarm list" widget now shows child device alarms correctly.
