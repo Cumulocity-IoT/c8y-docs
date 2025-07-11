@@ -27,7 +27,7 @@ Note that the license key must always be valid for the domain name, so any chang
 
 The change may take some time to complete. See [Monitoring changes](/edge-kubernetes/manage-edge/#monitoring-changes).
 
-### More general configuration changes
+### More general configuration changes {#more-general-configuration-changes}
 
 All configuration options can be accessed simply by editing a YAML document that represents the Edge Custom Resource. First, retrieve the current state of the custom resource
 ```bash
