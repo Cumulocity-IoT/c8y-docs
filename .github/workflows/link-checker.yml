@@ -3,6 +3,8 @@ name: Link Checker
 on:
  pull_request:
     types: [opened, synchronize, reopened]
+ schedule:
+  - cron: '0 9 * * 5'
   
 permissions:
     contents: read
