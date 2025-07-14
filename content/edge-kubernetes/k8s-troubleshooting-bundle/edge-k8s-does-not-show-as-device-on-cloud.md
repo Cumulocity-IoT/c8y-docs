@@ -35,5 +35,3 @@ For completing the registration process, sign into your cloud tenant and follow 
 For more information see [Connecting Edge to the cloud](/edge-kubernetes/k8-edge-connecting-edge-to-cloud/).
 
 * The specified cloud tenant domain is not reachable or incorrect.
-
-If you must contact [product support](/additional-resources/contacting-support/), include the output of the diagnostics dump. For more information about accessing diagnostic logs, see [Accessing logs](/edge-kubernetes/installing-edge-on-k8/#accessing-logs).

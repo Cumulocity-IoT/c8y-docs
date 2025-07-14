@@ -5,7 +5,7 @@ layout: redirect
 ---
 To get the external IP to access Edge, run the command below:
 ```shell
-kubectl get service cumulocity-ontoplb -n c8yedge
+kubectl get service cumulocity-ontoplb --namespace=c8yedge
 ```
 {{< c8y-admon-info >}}
 Substitute the namespace name *c8yedge* in the command above with the specific namespace name you have specified in your Edge CR.
@@ -20,7 +20,7 @@ cumulocity-ontoplb  LoadBalancer   X.X.X.X **REDACTED  X.X.X.X **REDACTED  443:3
 Sometimes the external IP displays as `<pending>` or `<none>`. The IP assignment process is dependent on the Kubernetes hosting environment. An external load balancer in the hosting environment handles the IP allocation and any other configurations necessary to route the external traffic to the Kubernetes service. Most on-premise Kubernetes clusters do not have external load balancers that can dynamically allocate IPs. The most common solution is to manually assign an external IP to the service. This can be done in the service’s YAML configuration. You can use the following command to manually assign an external IP to the `cumulocity-ontoplb` service (replace `<EXTERNAL-IP>` in the command below with the IP address you want to assign).
 
 ```shell
-kubectl patch service cumulocity-ontoplb -n c8yedge -p '{"spec":{"type": "LoadBalancer", "externalIPs":["<EXTERNAL-IP>"]}}'
+kubectl patch service cumulocity-ontoplb --namespace=c8yedge -p '{"spec":{"type": "LoadBalancer", "externalIPs":["<EXTERNAL-IP>"]}}'
 ```
 {{< c8y-admon-info >}}
 Substitute the namespace name *c8yedge* in the command above with the specific namespace name you have specified in your Edge CR.
