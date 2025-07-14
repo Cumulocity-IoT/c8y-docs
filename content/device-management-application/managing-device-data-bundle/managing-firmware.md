@@ -44,7 +44,7 @@ The list of versions and patches shows the version name and the name of the firm
 4. Select one of the following options to define the patch binary:
    - **Upload a binary** from your file system.
    - **Provide a file path (URL)** to download the binary from.
-   - **Mark as Provided** – Select this option if the device is expected to resolve the binary itself. No file or URL will be defined, and a `$PROVIDED` placeholder is stored.
+   - **Provided** – Select this option if the device is expected to resolve the binary itself. No file or URL will be defined, and a `$PROVIDED` placeholder is stored.
 5. Click **Save**.
 
 ![Add firmware](/images/users-guide/DeviceManagement/devmgmt-firmware-add.png)
