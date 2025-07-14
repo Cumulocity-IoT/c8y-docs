@@ -40,6 +40,6 @@ kubectl apply -f edge.yaml
 
 If you are comfortable using a text editor installed on the host system, then you can edit the custom resource in place.
 ```bash
-kubectl edit -n c8yedge edge/sample
+kubectl edit -n c8yedge edge/c8yedge
 ```
 Any changes you make will be applied when you save and exit the editor.
