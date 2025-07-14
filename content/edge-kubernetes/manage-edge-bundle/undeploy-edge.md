@@ -1,5 +1,5 @@
 ---
-weight: 25
+weight: 100
 title: Uninstalling Edge
 layout: redirect
 ---
