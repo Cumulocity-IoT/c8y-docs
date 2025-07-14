@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added a new 'provided' option in the file picker component.
+title: Software and firmware repository items can be added without mandatory url.
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
