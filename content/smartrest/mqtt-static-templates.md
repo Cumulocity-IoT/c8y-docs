@@ -1000,7 +1000,7 @@ Retrieve the platform version. Used to evaluate if the platform supports API int
 ```
 
 ##### List of valid SmartREST templates (602) {#602}
-Retrieve the list of valid SmartREST templates IDs associated with a tenant.
+Retrieve the list of valid SmartREST template IDs associated with a tenant.
 
 **Example**
 ```text
@@ -1373,7 +1373,7 @@ Returns the platform version after a request using 600.
 ```
 
 ##### Return list of valid SmartREST templates (603) {#603}
-Returns the list of all available SmartREST templates IDs and additional capabilities on a request using 602.
+Returns the list of all available SmartREST template IDs and additional capabilities on a request using 602.
 
 **Example**
 
