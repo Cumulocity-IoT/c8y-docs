@@ -14,14 +14,14 @@ Immediately post-installation, you will probably want to configure an SSL certif
 
 First, ensure that your certificate and key are in separate files, in PEM format.
 ```bash
-kubectl create secret tls edge-tls-secret -n c8yedge \
+kubectl create secret tls edge-tls-secret --namespace=c8yedge \
   --cert=./certs/tls.crt \
   --key=./certs/tls.key
 ```
 
 Then apply the configuration:
 ```bash
-kubectl -n c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"domain":"myown.iot.com", "licenseKey":"...", "tlsSecretName": "edge-tls-secret"}}'
+kubectl --namespace=c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"domain":"myown.iot.com", "licenseKey":"...", "tlsSecretName": "edge-tls-secret"}}'
 ```
 Note that the license key must always be valid for the domain name, so any change of domain name should be made simultaneously with a change of license key.
 
@@ -31,7 +31,7 @@ The change may take some time to complete. See [Monitoring changes](/edge-kubern
 
 All configuration options can be accessed simply by editing a YAML document that represents the Edge custom resource. First, retrieve the current state of the custom resource
 ```bash
-kubectl get -n c8yedge edge/c8yedge -o yaml > edge.yaml
+kubectl get --namespace=c8yedge edge/c8yedge -o yaml > edge.yaml
 ```
 Edit this file, referring to [Edge custom resource](/edge-kubernetes/edge-custom-resource-definition/) for an exhaustive listing of what could be changed. For example, you might add `messagingService: true` indented under the custom resource's `spec`. Apply the changed custom resource with
 ```bash
@@ -40,6 +40,6 @@ kubectl apply -f edge.yaml
 
 If you are comfortable using a text editor installed on the host system, then you can edit the custom resource in place.
 ```bash
-kubectl edit -n c8yedge edge/c8yedge
+kubectl edit --namespace=c8yedge edge/c8yedge
 ```
 Any changes you make will be applied when you save and exit the editor.
