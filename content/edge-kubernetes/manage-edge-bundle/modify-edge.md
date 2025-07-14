@@ -19,7 +19,7 @@ kubectl create secret tls edge-tls-secret -n c8yedge \
   --key=./certs/tls.key
 ```
 
-Then apply the configuration
+Then apply the configuration:
 ```bash
 kubectl -n c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"domain":"myown.iot.com", "licenseKey":"...", "tlsSecretName": "edge-tls-secret"}}'
 ```
