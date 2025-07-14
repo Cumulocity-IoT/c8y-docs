@@ -4,7 +4,7 @@ title: Modifying Edge
 layout: redirect
 ---
 
-You can configure and upgrade Edge by making changes to the Custom Resource (CR), an object in Kubernetes representing this Edge installation. Power users may wish to jump straight in, and refer to [Edge Custom Resource](/edge-kubernetes/edge-custom-resource-definition/) for details of the CR structure and configuration options available.
+You can configure and upgrade Edge by making changes to the custom sesource (CR), an object in Kubernetes representing this Edge installation. Power users may wish to jump straight in, and refer to [Edge custom resource](/edge-kubernetes/edge-custom-resource-definition/) for details of the CR structure and configuration options available.
 
 In these examples, we assume that the Edge object is called `c8yedge` and is in the namespace `c8yedge`. This is the case if you have installed Edge using the `c8yedge` tool, and can be taken verbatim. All commands should be executed in the shell of the environment you have installed Edge on.
 
@@ -29,11 +29,11 @@ The change may take some time to complete. See [Monitoring changes](/edge-kubern
 
 ### More general configuration changes {#more-general-configuration-changes}
 
-All configuration options can be accessed simply by editing a YAML document that represents the Edge Custom Resource. First, retrieve the current state of the custom resource
+All configuration options can be accessed simply by editing a YAML document that represents the Edge custom resource. First, retrieve the current state of the custom resource
 ```bash
 kubectl get -n c8yedge edge/c8yedge -o yaml > edge.yaml
 ```
-Edit this file, referring to [Edge Custom Resource](/edge-kubernetes/edge-custom-resource-definition/) for an exhaustive listing of what could be changed. For example, you might add `messagingService: true` indented under the custom resource's `spec`. Apply the changed custom resource with
+Edit this file, referring to [Edge custom resource](/edge-kubernetes/edge-custom-resource-definition/) for an exhaustive listing of what could be changed. For example, you might add `messagingService: true` indented under the custom resource's `spec`. Apply the changed custom resource with
 ```bash
 kubectl apply -f edge.yaml
 ```

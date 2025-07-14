@@ -29,7 +29,7 @@ Kubernetes offers an efficient platform for deploying, scaling, and managing con
 
 Edge captures all the highlighted advantages of a cloud-native deployment strategy by using a Kubernetes Operator, known as the Edge operator. This Edge operator serves as the central controller and facilitates the deployment and management of Edge on a Kubernetes cluster. This equips you with:
 
-- **Unified Management**: Manage Edge through an Edge Custom Resource (CR) in accordance with standard Kubernetes resources. This approach provides a unified and familiar interface for administrators and operators.
+- **Unified Management**: Manage Edge through an Edge custom resource (CR) in accordance with standard Kubernetes resources. This approach provides a unified and familiar interface for administrators and operators.
 - **Desired State Management**: Specify the desired state of Edge through Edge CR. The Edge operator then ensures that the actual state matches the desired state, simplifying operations and reducing the need for manual intervention.
 - **GitOps Friendly**: The declarative nature of CR aligns seamlessly with GitOps workflows. The entire Edge deployment state, including configurations, can be stored and versioned in Git, promoting transparency and traceability.
 - **Automation**: Edge CR empowers you to automate various operational aspects of Edge like scaling, upgrades, and configuration.

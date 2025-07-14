@@ -1,6 +1,6 @@
 ---
 weight: 90
-title: Edge Custom Resource
+title: Edge custom resource
 layout: bundle
 sector:
   - edge_server

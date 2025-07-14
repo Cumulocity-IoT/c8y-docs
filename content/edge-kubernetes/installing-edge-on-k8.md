@@ -24,7 +24,7 @@ Edge can be installed using one of two supported methods. The method you choose 
     In this case, you are expected to:
     - Set up and manage the Kubernetes cluster yourself (using K3s or any compatible Kubernetes distribution).
     - Deploy the Edge operator using Helm.
-    - Install Edge by creating and applying the Edge Custom Resource (CR)
+    - Install Edge by creating and applying the Edge custom resource (CR)
 
     <br/>
     Choose this method if you want more control over the environment or if your organization already has Kubernetes expertise and infrastructure in place.
