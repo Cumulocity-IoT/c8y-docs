@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-07-10'
 title: Alarm list widget now again shows child device alarms correctly
 product_area: Application enablement & solutions
 change_type:
