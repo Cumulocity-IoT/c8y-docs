@@ -33,14 +33,6 @@ A software package list entry must contain the following properties:
 The name and the version are used to identify the package. Already mentioned `c8y_SupportedSoftwareTypes` fragment
 restricts possible software types that can be installed on the device.
 
-If the `url` is set to `$PROVIDED`, no file is uploaded or linked from the platform. In this case, the device is fully responsible for resolving the correct binary. If the device cannot resolve the binary, the operation must be marked as **FAILED**.
-
-**SmartREST example**
-
-To mark a software as provided:
-
-`528,DeviceSerial,example-software,1.0.0,$PROVIDED,install`
-
 #### Legacy Software Management {#legacy-software-management}
 
 A device may update its software list by updating its managed object `c8y_SoftwareList` fragment.
@@ -198,6 +190,12 @@ The 528 static response template is available for dealing with software update o
    `116,software_a,3.0.0,http://example.com/software_a`
 5. Set operation status to SUCCESSFUL <br>
    `503,c8y_SoftwareUpdate`
+
+{{< c8y-admon-info >}}
+
+If the url field contains the value $PROVIDED, no file is uploaded or linked from the platform. In this case, the device is fully responsible for resolving the correct binary. Typically this process works through package managers that retrieve the correct binary from the name, version and other device specific details. If the device cannot resolve the binary, the operation must be marked as FAILED.
+
+{{< /c8y-admon-info >}}
 
 ### Advanced Software Management {#advanced-software-management}
 
