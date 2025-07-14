@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2228"
 version: "1021.7.0"
 ---
-Previously in the Asset properties widget, when the label of the selected property was updated in the configuration, the changes were not reflected in the widget's view. This issue has now been fixed, and label updates are properly displayed in the widget view after saving.
+Previously, in the Asset properties widget, when the label of the selected property was updated in the configuration, the changes were not reflected in the widget's view. This issue has now been fixed, and label updates are properly displayed in the widget view after saving.
