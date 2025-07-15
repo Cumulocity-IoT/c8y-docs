@@ -51,32 +51,36 @@ After enabling the microservice-based data broker, your existing data connectors
 The microservice-based data broker stores messages persistently using the {{< product-c8y-iot >}} Messaging Service until they are successfully delivered to the destination tenant.
 To optimize resource usage, the Messaging Service imposes storage limits and a message time-to-live (TTL) on persistently stored messages.
 
-Consumers using the microservice-based data broker will have no control over the microservice connection. Messages are handed off internally by the microservice.
-
-Notifications 2.0 enforces a strict message backlog limit to prevent excessive resource usage and to ensure timely delivery of notifications.
-
-Any unacknowledged messages will be automatically deleted if they have been on the backlog for longer than the TTL (Time to Live) limit. This policy helps to limit overall resource usage and reduces the need to process outdated data after a prolonged disconnection of a consumer or destination tenant.
-
-The default backlog quota limit and Time to Live (TTL) is defined and found in the [service quotas](/service-terms/quotas/#realtime-apis) documentation for details of the default quotas and TTL used by the microservice-based data broker.
-
-**When the backlog quota limit has been reached:**
-* Older messages that have been unable to be delivered will continue to consume space in the backlog, causing eventual buildup.
-* All messages in the backlog that are undelivered will be deleted once they reach their TTL to provide room for new messages.
-* The client is unable to publish new messages if the backlog quota is full.
-* Consumers reconnecting after a disconnection may receive outdated messages that have been sitting on the queue waiting to be delivered.
-*	The system may apply back-pressure - Requests in PERSISTENT mode will still update the database even if they cannot be published to the data broker and return a 500 response. The HTTP 500 response is the visible effect of this and will remain until the backlog pressure eases to accept new messages being published by the client.
-* No messages sitting in the backlog will be dropped unless their TTL has reached.
-* Messages are always delivered in the order the client sent them unless they can't be delivered.
-
-**To avoid hitting the backlog limit and ensure reliable message consumption:**
-* Ensure the destination tenant is working and receiving forwarded messages to reduce backlog buildup, as the user has no control over the consumer connection or acknowledgement.
-*	Monitor the level of free backlog space using the available metrics and alerting.
-*	Avoid extended consumer downtime without reconnecting to prevent the backlog building up. A disconnected destination tenant is what causes the backlog to fill up.
-*	If persistent disconnections are expected, consider requesting a bigger backlog - higher message rates might require bigger backlog sizes to cope with reasonable levels of outage/downtime of the destination {{< product-c8y-iot >}} system.
-* Consumers connecting infrequently, consider requesting for a longer TTL to keep undelivered messages in the backlog longer.
-* Slow down the publishing rate if the messages are not delivered fast enough to avoid filling up the backlog.
-
-In addition to the backlog quota, all messages now have a time-to-live (TTL) expiry. Messages not consumed after this period will be discarded.
-
+See the [service quotas](/service-terms/quotas/#realtime-apis) documentation for details of the default limits.
 These limits are configurable on a per-tenant basis.
-If your use case requires a different configuration, or if you have any concerns, please contact [product support](https://cumulocity.com/docs/additional-resources/contacting-support/).
+If your use case requires a different configuration, or if you have any questions or concerns, please contact [product support](https://cumulocity.com/docs/additional-resources/contacting-support/).
+
+#### Message backlog quota
+
+Persistent messages are stored in a “backlog” until they are delivered to the destination tenant.
+The maximum size of a backlog is determined by the “backlog quota” limit, which directly affects the number of messages that can be stored and therefore the resource consumption of the platform.
+If the quota limit is reached, no new messages can be added to the backlog until some older messages have been delivered, or deleted due to their TTL expiring.
+A separate backlog exists for each data broker connector.
+
+If the backlog for a data broker connector has reached its quota limit, any API request to the {{< product-c8y-iot >}} platform that would be forwarded by that connector will receive HTTP response code 500.
+For example, a POST request to the `/measurement/measurements` API endpoint will return the 500 response code if there is a data broker connector that should forward the new measurement, but that cannot do so because its backlog is full. Note that for requests using the PERSISTENT or QUIESCENT [processing modes](https://cumulocity.com/api/core/#section/REST-implementation/HTTP-usage), the {{< product-c8y-iot >}} operational store will still be updated. This can lead to duplicated entires in the operational store if applications blindly retry failed requests.
+
+#### Message time-to-live
+
+Any undelivered messages will be automatically deleted if they have been on the backlog for longer than the TTL limit. This policy helps to limit overall resource usage and reduces the need to process outdated data after a prolonged disconnection of a consumer or destination tenant.
+
+No message will ever be deleted from the backlog unless it reaches its TTL limit.
+Messages will always be delivered to the destination tenant in the order they were received by the source tenant.
+
+#### Best practices to ensure reliable data broker operation
+
+Applications using the microservice-based data broker do not have any direct control over the operation of the microservice.
+These best practices will help to ensure that the microservice can reliably deliver messages to the destination tenant, and avoid requests failing due to reaching the backlog quota limit:
+
+* A destination tenant that is unreachable, for example due to a network outage or changed credentials, is the most common reason for a data broker backlog to fill up.
+  Therefore, monitor the destination tenant to ensure that it is reachable and receiving forwarded messages.
+*	Also monitor the alarms and `databroker-agent-server` microservice logs on the source tenant.
+*	If persistent or frequent disconnections are expected, consider requesting a larger backlog quota or TTL.
+  Higher message rates might require a larger backlog to cope with reasonable levels of downtime of the destination tenant.
+  Longer disconnections might require a larger TTL to prevent messages from being deleted before they can be delivered.
+* Consider adjusting the filters on the data broker connector to send fewer messages to the destination tenant.
