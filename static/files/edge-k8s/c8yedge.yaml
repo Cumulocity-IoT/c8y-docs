@@ -191,7 +191,6 @@ metadata:
   namespace: c8yedge
 spec:
   ## Edge version you want to install.
-  ## For example, 2025.0.0 for 2025 and 2025.0.2 for a fix-2 of 2025.
   ## For example, "2025" to install the latest available version from the release, or use a fully qualified version 
   ## like "2025.0.1" to install a specific patch version.
   version: "2025"
