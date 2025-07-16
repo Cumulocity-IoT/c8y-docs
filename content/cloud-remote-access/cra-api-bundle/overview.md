@@ -22,7 +22,7 @@ sequenceDiagram
     DA ->> CRA: Connect WebSocket <br /> to connection key <br > of operation
     activate DA
     loop
-        DA <<-->> S: Forward Data Packets <br /> to websocket <br /> and vice versa   
+        DA <<-->> S: Forward data packets <br /> to WebSocket <br /> and vice versa   
     end
     DA ->> CORE: Mark operation as SUCCESSFUL
     deactivate CRA
