@@ -29,7 +29,7 @@ endpoints that can be accessed via this device.
 ```
 
 In the example above a local HTTP echo server is reachable from the device at `http://localhost:33123`. The configuration id is `1`. 
-To connect a client application the client needs to open a websocket to the following URL:
+To connect a client application, the client must open a WebSocket to the following URL:
 
 ```http
 wss://<tenant domain>/service/remoteaccess/client/<device id>/configurations/<configuration id>
