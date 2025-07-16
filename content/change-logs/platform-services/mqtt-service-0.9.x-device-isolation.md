@@ -15,7 +15,7 @@ issue: MTM-64100
 ---
 
 The Public Preview release of the {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) currently enforces *tenant-level* isolation.
-An MQTT client connected to the service can subscribe to any topic, and receive messages published by other clients connected to the same tenant.
+An MQTT client connected to the MQTT Service can subscribe to any topic, and receive messages published by other clients to that topic on the same tenant.
 That is, there is a tenant-wide topic space shared by all the MQTT clients using the the tenant.
 
 For the upcoming Generally Available (GA) release, the MQTT Service will enforce *device-level* isolation.
@@ -29,7 +29,7 @@ The change will affect any applications where MQTT clients communicate by publis
 In particular it will affect applications where a {{< product-c8y-iot >}} microservice connects to the MQTT Service using MQTT rather than the client SDK, to receive messages from or send messages to MQTT devices.
 
 Please note that breaking changes to the MQTT Service client SDK are also planned for the GA release.
-These changes will be announced soon, and will allow messages to be sent to other clients, under the control of the application microservice.
+Details of the required changes will be announced soon, and will allow messages to be sent to other clients, under the control of the application microservice.
 Applications that will be affected by device-level isolation, and that are **not** currently using the client SDK, should wait for these changes to be announced before starting their migration activity.
 Applications that are already using the client SDK may continue to do so until these changes are announced.
 
