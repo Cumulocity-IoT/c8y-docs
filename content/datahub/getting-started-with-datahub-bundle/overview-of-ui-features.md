@@ -14,8 +14,7 @@ helpcontent:
 | ---  | --- | --- | ---
 | Home | Get an introduction to {{< product-c8y-iot >}} DataHub, access quick links with related functionality, or investigate the current offloading status | DataHub Reader, DataHub Administrator, or DataHub Manager | -
 | Offloading | Configure and manage your offloading pipelines | DataHub Administrator or DataHub Manager | -
-| Auditing / Query log | View the query log | DataHub Reader, DataHub Administrator, or DataHub Manager | Tracking of usage statistics must be enabled
-| Auditing / System log | View the system log | DataHub Administrator | -
+| Query log | View the query log | DataHub Reader, DataHub Administrator, or DataHub Manager | Tracking of usage statistics must be enabled
 | Settings / Initial configuration | Set up {{< product-c8y-iot >}} DataHub | DataHub Administrator | -
 | Settings / Dremio users | Manage Dremio users | DataHub Administrator | -
 | Settings / Microsoft Power BI | Set up connection to Microsoft Power BI | DataHub Administrator | -
