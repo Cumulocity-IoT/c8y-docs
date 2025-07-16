@@ -63,7 +63,7 @@ If the quota limit is reached, no new messages can be added to the backlog until
 A separate backlog exists for each data broker connector.
 
 If the backlog for a data broker connector has reached its quota limit, any API request to the {{< product-c8y-iot >}} platform that would be forwarded by that connector will receive HTTP response code 500.
-For example, a POST request to the `/measurement/measurements` API endpoint will return the 500 response code if there is a data broker connector that should forward the new measurement, but that cannot do so because its backlog is full. Note that for requests using the PERSISTENT or QUIESCENT [processing modes](https://cumulocity.com/api/core/#section/REST-implementation/HTTP-usage), the {{< product-c8y-iot >}} operational store will still be updated. This can lead to duplicated entires in the operational store if applications blindly retry failed requests.
+For example, a POST request to the `/measurement/measurements` API endpoint will return the 500 response code if there is a data broker connector that should forward the new measurement, but that cannot do so because its backlog is full. Note that for requests using the PERSISTENT or QUIESCENT [processing modes](https://cumulocity.com/api/core/#section/REST-implementation/HTTP-usage), the {{< product-c8y-iot >}} operational store will still be updated. This can lead to duplicated entries in the operational store if applications blindly retry failed requests.
 
 #### Message time-to-live
 
