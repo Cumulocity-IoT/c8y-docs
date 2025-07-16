@@ -29,3 +29,4 @@ The following differences apply:
 |Microservice Hosting|Optional|Optional
 |Machine Learning|Optional|Optional
 |Data Hub|Optional|Optional
+|Messaging Service <br/> (for data broker and Notifications 2.0 capabilities)|Optional|Yes| 

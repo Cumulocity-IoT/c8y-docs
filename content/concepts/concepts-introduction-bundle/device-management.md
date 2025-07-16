@@ -11,5 +11,5 @@ Connecting equipment to the internet requires secure and robust device managemen
 - **Over-the-air (OTA) [firmware](/device-management-application/managing-device-data/#managing-firmware) and [software](/device-management-application/managing-device-data/#managing-software) updates**: Keep your devices secure and up to date by efficiently rolling out the latest available software or firmware version.
 - **[Configuration management](/device-management-application/managing-device-data/#managing-configurations)**: Easily change the settings of your devices by applying new configurations.
 - **[Connection](/device-management-application/monitoring-and-controlling-devices/#connection-monitoring) and [connectivity](/device-management-application/connectivity/) monitoring**: Quickly identify devices that stopped communicating and identify the underlying issue.
-- **[Remote troubleshooting](/cloud-remote-access/cra-general-aspects/)**: Use a set of tools to resolve identified issues and minimize downtimes.
+- **[Remote troubleshooting](/cloud-remote-access/cra-introduction/)**: Use a set of tools to resolve identified issues and minimize downtimes.
 - **[Device replacement](/device-management-application/viewing-all-devices/#to-replace-a-device)**: Replace your physical devices without loosing the data history.
