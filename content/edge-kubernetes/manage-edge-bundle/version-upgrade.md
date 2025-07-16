@@ -14,7 +14,7 @@ To upgrade your Kubernetes version, follow the official upgrade instructions for
 
 ### Upgrading from Edge version 10.18
 
-Before upgrading Edge to `{{< c8y-edge-version-major >}}`, run the following command to patch the [`c8yedge-operator-manager-role`]({{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-cluster-role-patch-1018.yaml) ClusterRole with the necessary permissions:
+Before upgrading Edge to `{{< c8y-edge-current-version >}}`, run the following command to patch the [`c8yedge-operator-manager-role`]({{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-cluster-role-patch-1018.yaml) ClusterRole with the necessary permissions:
 
 ```bash
 kubectl patch clusterrole c8yedge-operator-manager-role --type='json' --patch "$(curl -s {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-operator-cluster-role-patch-1018.yaml)"
@@ -23,7 +23,7 @@ This step is required to ensure the Edge operator can properly enforce validatio
 
 #### Why this change is needed?
 
-The Edge operator version `{{< c8y-edge-version-major >}}` leverages the **admission webhooks** feature of Kubernetes to enhance validation and enforce default configurations for the Edge CR.
+The Edge operator version `{{< c8y-edge-current-version >}}` leverages the **admission webhooks** feature of Kubernetes to enhance validation and enforce default configurations for the Edge CR.
 - The [validating admission webhook](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#validatingadmissionwebhook) ensures that any changes to the Edge CR comply with required constraints.
 - The [mutating admission webhook](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#mutatingadmissionwebhook) automatically applies custom default values where needed.
 
@@ -33,7 +33,7 @@ The Edge operator to leverage the **admission webhooks** requires additional per
 
 Upgrading Edge is very similar to configuration changes, where the version is simply treated as another configuration option.
 ```bash
-kubectl --namespace=c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"version":"{{< c8y-edge-version >}}"}}'
+kubectl --namespace=c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"version":"{{< c8y-edge-current-version >}}"}}'
 ```
 The operator itself will also self-upgrade as part of this process. See [Monitoring changes](/edge-kubernetes/manage-edge/#monitoring-changes) to follow the progress of the upgrade.
 
