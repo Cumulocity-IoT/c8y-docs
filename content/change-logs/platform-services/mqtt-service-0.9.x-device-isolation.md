@@ -1,6 +1,6 @@
 ---
 date: 2025-07-21
-title: MQTT Service will enforce device-level isolation
+title: MQTT Service will enforce client isolation
 change_type:
   - value: change-3BQrQ6adS
     label: API change
@@ -14,43 +14,62 @@ build_artifact:
 issue: MTM-64100
 ---
 
-The Public Preview release of the {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) currently enforces *tenant-level* isolation.
+#### Introduction
+
+The Public Preview release of the {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) currently enforces *tenant* isolation.
 An MQTT client connected to the MQTT Service can subscribe to any topic, and receive messages published by other clients to that topic on the same tenant.
 That is, there is a tenant-wide topic space shared by all the MQTT clients using the the tenant.
 
-For the upcoming Generally Available (GA) release, the MQTT Service will enforce *device-level* isolation.
-A client (device) will still be able to subscribe to any topic, but it will **not** receive messages published by any other client.
-In effect, each client will have its own private topic space that is not shared with other clients.
+For the upcoming Generally Available (GA) release, the MQTT Service will enforce *client* isolation.
+An MQTT client will still be able to subscribe to any topic, but it will not **automatically** receive messages published to that topic by any other MQTT client.
+However, microservices will be able to explicitly route messages between different clients.
+In effect, each MQTT client identifier will have its own private topic space that is not shared with other clients, but can be accessed by microservices.
 
-We are making this change to align the MQTT Service with the behavior of the existing [Core MQTT](/device-integration/mqtt/) capability, and to improve the out-of-the-box security for typical IoT applications where inter-device communication is not required.
+We are making this change to align the MQTT Service with the behavior of the existing [Core MQTT](/device-integration/mqtt/) capability, and to improve out-of-the-box security for typical IoT applications where direct inter-device communication is not required.
+
+#### Impact on MQTT clients and microservices connecting to the MQTT Service
 
 This is a **breaking change** and affected applications **must** be updated to continue working after the GA release of the MQTT Service.
-The change will affect any applications where MQTT clients communicate by publishing and subscribing to the same topics.
-In particular it will affect applications where a {{< product-c8y-iot >}} microservice connects to the MQTT Service using MQTT rather than the client SDK, to receive messages from or send messages to MQTT devices.
 
-Please note that breaking changes to the MQTT Service client SDK are also planned for the GA release.
-Details of the required changes will be announced soon, and will allow messages to be sent to other clients, under the control of the application microservice.
-Applications that will be affected by device-level isolation, and that are **not** currently using the client SDK, should wait for these changes to be announced before starting their migration activity.
-Applications that are already using the client SDK may continue to do so until these changes are announced.
+The change will affect any application where MQTT clients exchange messages by publishing and subscribing to the same topics.
+In particular it will affect applications where a {{< product-c8y-iot >}} microservice connects to the MQTT Service using the MQTT protocol rather than the {{< product-c8y-iot >}} client SDK, to exchange messages with connected MQTT clients.
 
-To allow applications to make a managed migration to the new behavior, it will be rolled out in several phases, as described below.
+Microservices that are affected by this change should **not** immediately migrate to the existing Java client SDK, as this will not be supported in the GA release.
+Instead, these microservices should wait for the new MQTT Service API to be released and migrate directly to this API.
+See the next section for more details of the new API.
+
+#### Impact on microservices using the MQTT Service client SDK
+
+The existing Java client SDK for the MQTT Service will not be supported in the GA release.
+It will be replaced by a new language-neutral API giving direct access to the {{< product-c8y-iot >}} Messaging Service topics used by the MQTT Service.
+Details of the new API and how to use it in microservices will be announced soon.
+
+Microservices that are affected by client isolation, and that are **not** currently using the client SDK, should wait for the new API to be available before starting their migration activity.
+
+Microservices that are already using the Java client SDK may continue to do so until the new API is available.
+
+#### Roll-out plan
+
+To allow customers to plan a managed migration to the new client isolation behavior, it will be rolled out in several phases, as described below.
+
 Dates refer to when the change will reach the `eu-latest` environment; other environments will be updated later following the usual CD deployment schedule.
 
-#### Phase 1: Introduction of device-level isolation
+##### Phase 1: Introduction of client isolation
 On or soon after August 4, 2025:
-* Tenants not currently using the MQTT Service will be switched to use device-level isolation.
-* Tenants currently using the MQTT Service will continue to use tenant-level isolation.
-* A public preview [feature toggle](https://cumulocity.com/api/core/#tag/Feature-toggles-API) will be introduced, allowing tenants to be switched between tenant- and device-level isolation under user control.
+* Tenants currently using the MQTT Service will continue to have tenant isolation by default.
+* Tenants **not** currently using the MQTT Service will have client isolation enabled if they later start to use the MQTT Service.
+* A public feature toggle will be introduced, allowing tenants to be switched between tenant- and client isolation under user control.
 
-#### Phase 2: Migration during Public Preview
-* Tenants starting to use the MQTT Service for the first time should develop their applications to work with device-level isolation.
-* Tenants already using the MQTT Service should update their applications to work with device-level isolation.
-The feature toggle will allow these tenants to switch between isolation modes while developing and testing changes to their applications.
+##### Phase 2: Migration during Public Preview
+* Tenants starting to use the MQTT Service for the first time should develop their applications to work with client isolation.
+* Tenants already using the MQTT Service should update their applications to work with client isolation.
+* The feature toggle will allow these tenants to switch between isolation modes while developing and testing changes to their applications.
 
-#### Phase 3: General Availability
+##### Phase 3: General Availability
 The GA date for the MQTT Service is not yet confirmed, but will be no earlier than December 1, 2025.
+
 When the MQTT Service becomes Generally Available:
-* All tenants will be switched to use device-level isolation.
-Existing applications that have not migrated by this time may not function correctly.
+* All tenants will be switched to use client isolation.
+* Existing applications that have not migrated by this time may not function correctly.
 
 Further announcements will be published before the start of phases 1 and 3.
