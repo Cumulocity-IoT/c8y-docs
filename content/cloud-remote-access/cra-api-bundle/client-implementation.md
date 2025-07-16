@@ -1,5 +1,5 @@
 ---
-title: Client Implementation
+title: Client implementation
 weight: 10
 layout: bundle
 ---
