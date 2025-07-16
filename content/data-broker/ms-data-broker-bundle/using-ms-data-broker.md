@@ -79,8 +79,8 @@ These best practices will help to ensure that the microservice can reliably deli
 
 * A destination tenant that is unreachable, for example due to a network outage or changed credentials, is the most common reason for a data broker backlog to fill up.
   Therefore, monitor the destination tenant to ensure that it is reachable and receiving forwarded messages.
-*	Also monitor the alarms and `databroker-agent-server` microservice logs on the source tenant.
-*	If persistent or frequent disconnections are expected, consider requesting a larger backlog quota or TTL.
+* Also monitor the alarms and `databroker-agent-server` microservice logs on the source tenant.
+* If persistent or frequent disconnections are expected, consider requesting a larger backlog quota or TTL.
   Higher message rates might require a larger backlog to cope with reasonable levels of downtime of the destination tenant.
   Longer disconnections might require a larger TTL to prevent messages from being deleted before they can be delivered.
 * Consider adjusting the filters on the data broker connector to send fewer messages to the destination tenant.
