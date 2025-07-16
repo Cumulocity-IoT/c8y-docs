@@ -14,7 +14,7 @@ sequenceDiagram
     participant S as External endpoint <br/>(SSH, Telnet, VNC...)
     
     U -->> CL: Start Client session <br />(Example: SSH)
-    CL ->> CRA: Connect Websocket <br /> to CRA configuration
+    CL ->> CRA: Connect WebSocket <br /> to CRA configuration
     activate CRA
     CRA ->> CORE: Create <br />c8y_RemoteAccessConnect<br/> operation
     CORE -->> DA: Push Operation
