@@ -45,7 +45,7 @@ Sec-WebSocket-Protocol: binary
 Authorization: <auth header>
 ```
 
-### Sending and receiving traffic
+### Sending and receiving traffic {sending-and-receiving-traffic}
 
 Once the WebSocket connection is established, traffic for the endpoint can simply be sent to the WebSocket. Data from the endpoint can be consumed by reading from the WebSocket.
 To implement a local forwarding proxy, data from a local server socket must be written to the WebSocket and vice versa.
