@@ -1,5 +1,5 @@
 ---
-title: Device Agent Implementation
+title: Device agent implementation
 weight: 20
 layout: bundle
 ---
@@ -53,7 +53,7 @@ For each `c8y_RemoteAccessConnect` operation the device agent receives, it opens
 hostname and port. Using the provided ConnectionKey the agent also securely connects to the WebSocket endpoint on server
 side. Similarly to the client implementation, both the `Authorization` and `Sec-WebSocket-Protocol` have to be passed.
 
-After establishing both the TCP socket and Websocket connections, the device agent marks the operation as SUCCESSFUL and
+After establishing both the TCP socket and WebSocket connections, the device agent marks the operation as SUCCESSFUL and
 starts forwarding binary packets between
 the TCP connection and the WebSocket in both directions.
 

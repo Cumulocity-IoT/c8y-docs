@@ -1,5 +1,5 @@
 ---
-title: Client Implementation
+title: Client implementation
 weight: 10
 layout: bundle
 ---
@@ -29,23 +29,23 @@ endpoints that can be accessed via this device.
 ```
 
 In the example above a local HTTP echo server is reachable from the device at `http://localhost:33123`. The configuration id is `1`. 
-To connect a client application the client needs to open a websocket to the following URL:
+To connect a client application, the client must open a WebSocket to the following URL:
 
 ```http
 wss://<tenant domain>/service/remoteaccess/client/<device id>/configurations/<configuration id>
 ```
 
-### Required HTTP Headers
+### Required HTTP headers {required-http-headers}
 
-The websocket client needs to set the Websocket subprotocol to `binary` using the `Sec-WebSocket-Protocol` header.
-In addition, a valid authorization header is required (see [OpenAPI:Authentication](https://cumulocity.com/api/core/#section/Authentication)).
+The WebSocket client must set the WebSocket subprotocol to `binary` using the `Sec-WebSocket-Protocol` header.
+In addition, a valid authorization header is required, see [Authentication](https://cumulocity.com/api/core/#section/Authentication) in the {{< openapi >}}.
 
 ```http
 Sec-WebSocket-Protocol: binary 
 Authorization: <auth header>
 ```
 
-### Sending and receiving traffic
+### Sending and receiving traffic {sending-and-receiving-traffic}
 
-Once the web socket connection is established, traffic for the endpoint can simply be sent to the websocket. Data from the endpoint can be consumed by reading from the websocket.
-To implement a local forwarding proxy, data from a local server socket needs to be simply written to the websocket and vice versa.
+Once the WebSocket connection is established, traffic for the endpoint can simply be sent to the WebSocket. Data from the endpoint can be consumed by reading from the WebSocket.
+To implement a local forwarding proxy, data from a local server socket must be written to the WebSocket and vice versa.
