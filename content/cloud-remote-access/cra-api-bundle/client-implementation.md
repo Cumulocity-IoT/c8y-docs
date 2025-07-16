@@ -38,7 +38,7 @@ wss://<tenant domain>/service/remoteaccess/client/<device id>/configurations/<co
 ### Required HTTP headers {required-http-headers}
 
 The WebSocket client must set the WebSocket subprotocol to `binary` using the `Sec-WebSocket-Protocol` header.
-In addition, a valid authorization header is required (see [OpenAPI:Authentication](https://cumulocity.com/api/core/#section/Authentication)).
+In addition, a valid authorization header is required, see [Authentication](https://cumulocity.com/api/core/#section/Authentication) in the {{< openapi >}}.
 
 ```http
 Sec-WebSocket-Protocol: binary 
