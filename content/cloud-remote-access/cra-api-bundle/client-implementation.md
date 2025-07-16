@@ -47,5 +47,5 @@ Authorization: <auth header>
 
 ### Sending and receiving traffic
 
-Once the web socket connection is established, traffic for the endpoint can simply be sent to the websocket. Data from the endpoint can be consumed by reading from the websocket.
+Once the WebSocket connection is established, traffic for the endpoint can simply be sent to the WebSocket. Data from the endpoint can be consumed by reading from the WebSocket.
 To implement a local forwarding proxy, data from a local server socket needs to be simply written to the websocket and vice versa.
