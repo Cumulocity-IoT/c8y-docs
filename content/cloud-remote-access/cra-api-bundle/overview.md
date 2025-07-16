@@ -11,7 +11,7 @@ sequenceDiagram
     participant CRA as CRA microservice
     participant CORE as {{< product-c8y-iot >}} Core
     participant DA as Device agent
-    participant S as External Endpoint <br/>(SSH, Telnet, VNC...)
+    participant S as External endpoint <br/>(SSH, Telnet, VNC...)
     
     U -->> CL: Start Client session <br />(Example: SSH)
     CL ->> CRA: Connect Websocket <br /> to CRA configuration
