@@ -14,7 +14,8 @@ To indicate that your device is capable of handling Cloud Remote Access, it shou
 supported operation in its managed object:
 
 ```json
-    "c8y_SupportedOperations": [
+
+"c8y_SupportedOperations" : [
 ...
 "c8y_RemoteAccessConnect",
 ...
