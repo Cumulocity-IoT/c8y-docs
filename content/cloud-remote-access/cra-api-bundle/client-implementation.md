@@ -35,7 +35,7 @@ To connect a client application, the client must open a WebSocket to the followi
 wss://<tenant domain>/service/remoteaccess/client/<device id>/configurations/<configuration id>
 ```
 
-### Required HTTP headers {required-http-headers}
+### Required HTTP headers {#required-http-headers}
 
 The WebSocket client must set the WebSocket subprotocol to `binary` using the `Sec-WebSocket-Protocol` header.
 In addition, a valid authorization header is required, see [Authentication](https://cumulocity.com/api/core/#section/Authentication) in the {{< openapi >}}.
@@ -45,7 +45,7 @@ Sec-WebSocket-Protocol: binary
 Authorization: <auth header>
 ```
 
-### Sending and receiving traffic {sending-and-receiving-traffic}
+### Sending and receiving traffic {#sending-and-receiving-traffic}
 
 Once the WebSocket connection is established, traffic for the endpoint can simply be sent to the WebSocket. Data from the endpoint can be consumed by reading from the WebSocket.
 To implement a local forwarding proxy, data from a local server socket must be written to the WebSocket and vice versa.
