@@ -10,7 +10,7 @@ sequenceDiagram
     participant CL as Client
     participant CRA as CRA microservice
     participant CORE as {{< product-c8y-iot >}} Core
-    participant DA as Device Agent
+    participant DA as Device agent
     participant S as External Endpoint <br/>(SSH, Telnet, VNC...)
     
     U -->> CL: Start Client session <br />(Example: SSH)
