@@ -31,11 +31,13 @@ The Edge operator to leverage the **admission webhooks** requires additional per
 
 ### Starting the upgrade {#starting-the-upgrade}
 
-Upgrading Edge is very similar to configuration changes, where the version is simply treated as another configuration option.
+Upgrading Edge works similarly to applying a configuration change, with the target version specified as a configuration value.
+To upgrade to the latest available version from the current release, set the version to `"{{< c8y-edge-current-version >}}"`. To upgrade to a specific patch version, use a fully qualified version string such as `"{{< c8y-edge-current-version >}}.0.1"`.
+
 ```bash
 kubectl --namespace=c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"version":"{{< c8y-edge-current-version >}}"}}'
 ```
-The operator itself will also self-upgrade as part of this process. See [Monitoring changes](/edge-kubernetes/manage-edge/#monitoring-changes) to follow the progress of the upgrade.
+The operator will also upgrade itself as part of this process. See [Monitoring changes](/edge-kubernetes/manage-edge/#monitoring-changes) to follow the progress of the upgrade.
 
 ### Upgrading Edge remotely {#upgrading-edge-remotely}
 
