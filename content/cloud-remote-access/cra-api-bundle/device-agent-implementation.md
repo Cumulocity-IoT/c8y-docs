@@ -1,5 +1,5 @@
 ---
-title: Device Agent Implementation
+title: Device agent implementation
 weight: 20
 layout: bundle
 ---
