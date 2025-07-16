@@ -5,7 +5,13 @@
 {{ if not (.Page.Store.Get "hasMermaid") }}
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true, theme: 'neutral',});
+  mermaid.initialize({
+        theme: 'base',
+        themeVariables: {
+          primaryColor: '#c1e6c1',
+          activationBkgColor: '#119d11',
+        }
+      });
 </script>
 {{ end }}
 
