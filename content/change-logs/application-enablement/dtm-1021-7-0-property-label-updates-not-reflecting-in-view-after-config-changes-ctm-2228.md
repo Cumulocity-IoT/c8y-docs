@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Property label updates not reflecting in view after config changes [CTM-2228]"
+title: "Property label updates now reflected in widget view"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
