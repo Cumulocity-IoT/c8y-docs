@@ -29,7 +29,7 @@ endpoints that can be accessed via this device.
 ```
 
 In the example above a local HTTP echo server is reachable from the device at `http://localhost:33123`. The configuration id is `1`. 
-To connect a client application, the client needs to open a websocket to the following URL:
+To connect a client application the client needs to open a websocket to the following URL:
 
 ```http
 wss://<tenant domain>/service/remoteaccess/client/<device id>/configurations/<configuration id>
@@ -37,7 +37,7 @@ wss://<tenant domain>/service/remoteaccess/client/<device id>/configurations/<co
 
 ### Required HTTP Headers
 
-The websocket client needs to set Websocket subprotocol to `binary` using the `Sec-WebSocket-Protocol` header.
+The websocket client needs to set the Websocket subprotocol to `binary` using the `Sec-WebSocket-Protocol` header.
 In addition, a valid authorization header is required (see [OpenAPI:Authentication](https://cumulocity.com/api/core/#section/Authentication)).
 
 ```http
@@ -47,5 +47,5 @@ Authorization: <auth header>
 
 ### Sending and receiving traffic
 
-Once the web socket connection is established, traffic for the endpoint can simply be sent to the websocket. Data from the endpoint can be consumed by reading from the endpoint.
+Once the web socket connection is established, traffic for the endpoint can simply be sent to the websocket. Data from the endpoint can be consumed by reading from the websocket.
 To implement a local forwarding proxy, data from a local server socket needs to be simply written to the websocket and vice versa.
