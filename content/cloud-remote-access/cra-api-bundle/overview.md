@@ -19,7 +19,7 @@ sequenceDiagram
     CRA ->> CORE: Create <br />c8y_RemoteAccessConnect<br/> operation
     CORE -->> DA: Push operation
     DA ->> CORE: Mark operation as EXECUTING
-    DA ->> CRA: Connect Websocket <br /> to connection key <br > of operation
+    DA ->> CRA: Connect WebSocket <br /> to connection key <br > of operation
     activate DA
     loop
         DA <<-->> S: Forward Data Packets <br /> to websocket <br /> and vice versa   
