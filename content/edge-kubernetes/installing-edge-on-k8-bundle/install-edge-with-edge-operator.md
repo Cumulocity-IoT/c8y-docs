@@ -19,7 +19,7 @@ The Edge operator is available as a Helm chart in the Edge registry, and can be 
 ```shell
 helm upgrade --install c8yedge-operator oci://registry.c8y.io/edge/helm-charts/cumulocity-iot-edge-operator \
     --username="<Edge registry username>" --password="<Edge registry password>" \
-    --version={{< c8y-edge-current-version >}}
+    --version={{< c8y-edge-current-version >}} \
     --namespace c8yedge \
     --create-namespace \
     --set imageCredentials.username="<Edge registry username>" \
