@@ -30,7 +30,7 @@ This section outlines how to create a Certificate Authority (CA) for a tenant wi
 
 ### Prerequisites {#prerequisites}
 
-To use the Certificate Authority API, the feature must be enabled at the tenant level, which you can verify using the following API:
+To use the Certificate Authority API, this feature must first be enabled at the tenant level. You can verify whether the feature is enable in your tenant using the following API:
 
     GET /features/certificate-authority
     Content-Type: application/json
@@ -47,26 +47,8 @@ If you get 200 with `active: false` then the feature is disabled for the tenant.
         "strategy":"TENANT",
         "key":"certificate-authority"
     }
-To enable the feature for the {{< management-tenant >}} you must have the role `ROLE_TENANT_MANAGEMENT_ADMIN` and call the following API:
 
-    PUT /features/certificate-authority/by-tenant/{{tenantId}}
-    Content-Type: application/json
-    Authorization: Basic <<Base64 encoded bootstrap credentials>>
-    ...
-    {
-       "active": true
-    }
-This call can be done by executing the following curl statement:
-
-    curl -v -u <username>:<password> \
-       -H 'Content-Type: application/json' \
-       -X PUT \
-       -d '{"active": true}' \
-       https://<{{< product-c8y-iot >}} tenant domain>/features/certificate-authority/by-tenant/{{tenantId}}
-
-Replace `<username>`, `<password>` with the appropriate credentials given to you when registering with {{< product-c8y-iot >}}.
-
-To enable the feature for a subtenant you must have the role `ROLE_TENANT_MANAGEMENT_ADMIN` and call the following API:
+There are two ways to enable the feature in your tenant. You can enable it yourself if you have a user with the `ROLE_TENANT_MANAGEMENT_ADMIN` role. In this case, use the following API:
 
     PUT /features/certificate-authority/by-tenant
     Content-Type: application/json
@@ -75,13 +57,16 @@ To enable the feature for a subtenant you must have the role `ROLE_TENANT_MANAGE
     {
        "active": true
     }
-This call can be done by executing the following curl statement:
 
-    curl -v -u <username>:<password> \
-       -H 'Content-Type: application/json' \
-       -X PUT \
-       -d '{"active": true}' \
-       https://<{{< product-c8y-iot >}} tenant domain>/features/certificate-authority/by-tenant
+Operation personnel, who have access to the {{< management-tenant >}} using a user with the role `ROLE_TENANT_MANAGEMENT_ADMIN` can enable the feature in any sub tenant using the following API:
+
+    PUT /features/certificate-authority/by-tenant/{{tenantId}}
+    Content-Type: application/json
+    Authorization: Basic <<Base64 encoded bootstrap credentials>>
+    ...
+    {
+       "active": true
+    }
 
 ### Creating a CA certificate via REST {#creating-a-ca-certificate-via-the-rest}
 
