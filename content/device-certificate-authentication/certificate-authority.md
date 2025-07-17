@@ -48,7 +48,9 @@ If you get 200 with `active: false` then the feature is disabled for the tenant.
         "key":"certificate-authority"
     }
 
-There are two ways to enable the feature in your tenant. You can enable it yourself if you have a user with the `ROLE_TENANT_MANAGEMENT_ADMIN` role. In this case, use the following API:
+There are two ways to enable the feature in your tenant. 
+
+Tenant Administrators who have the role `ROLE_TENANT_MANAGEMENT_ADMIN` can use the following API:
 
     PUT /features/certificate-authority/by-tenant
     Content-Type: application/json
@@ -58,7 +60,7 @@ There are two ways to enable the feature in your tenant. You can enable it yours
        "active": true
     }
 
-Operation personnel, who have access to the {{< management-tenant >}} using a user with the role `ROLE_TENANT_MANAGEMENT_ADMIN` can enable the feature in any sub tenant using the following API:
+Operations team personnel, who have access to the {{< management-tenant >}} using a user with the role `ROLE_TENANT_MANAGEMENT_ADMIN` can enable the feature in any sub tenant using the following API:
 
     PUT /features/certificate-authority/by-tenant/{{tenantId}}
     Content-Type: application/json
