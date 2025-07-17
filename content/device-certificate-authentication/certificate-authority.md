@@ -30,7 +30,7 @@ This section outlines how to create a Certificate Authority (CA) for a tenant wi
 
 ### Prerequisites {#prerequisites}
 
-To use the Certificate Authority API, this feature must first be enabled at the tenant level. You can verify whether the feature is enable in your tenant using the following API:
+To use the Certificate Authority API, this feature must first be enabled at the tenant level. You can verify whether the feature is enabled in your tenant using the following API:
 
     GET /features/certificate-authority
     Content-Type: application/json
