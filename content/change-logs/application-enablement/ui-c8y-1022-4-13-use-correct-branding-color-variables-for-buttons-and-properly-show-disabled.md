@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Fixed branding color variables for buttons and display of disabled action bar items
+date: '2025-07-10'
+title: >-
+  Fixed branding color variables for buttons and display of disabled action bar
+  items
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

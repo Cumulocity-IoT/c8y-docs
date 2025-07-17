@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-07-10'
 title: Delete button for retention rules only shown for users with ADMIN permission
 product_area: Platform services
 change_type:
