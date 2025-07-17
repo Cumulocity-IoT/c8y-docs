@@ -60,7 +60,7 @@ Tenant Administrators who have the role `ROLE_TENANT_MANAGEMENT_ADMIN` can use t
        "active": true
     }
 
-Operations team personnel, who have access to the {{< management-tenant >}} using a user with the role `ROLE_TENANT_MANAGEMENT_ADMIN` can enable the feature in any sub tenant using the following API:
+Operations team personnel, who have access to the {{< management-tenant >}} using a user with the role `ROLE_TENANT_MANAGEMENT_ADMIN`, can enable the feature in any subtenant using the following API:
 
     PUT /features/certificate-authority/by-tenant/{{tenantId}}
     Content-Type: application/json
