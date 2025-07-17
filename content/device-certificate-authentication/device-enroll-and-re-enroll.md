@@ -37,7 +37,7 @@ On creating a new device certificate the Device enroll API is called. This trigg
 * If the request does not contain a valid [CertificateSigningRequest](https://en.wikipedia.org/wiki/Certificate_signing_request) an error will be returned.
 
 {{< c8y-admon-info >}}
-As per [EST standards](https://datatracker.ietf.org/doc/html/rfc7030#autoid-58), the certificate in response will be in `PKCS7` format by default. Client can optionally request for a `PKCS10` format by sending `Accept: application/pkcs10` in the request header.
+As per [EST standards](https://datatracker.ietf.org/doc/html/rfc7030#autoid-58), the certificate in response is in `PKCS7` format by default. Clients can optionally request for a `PKCS10` format by sending `Accept: application/pkcs10` in the request header.
 {{< /c8y-admon-info >}}
 
 This is an example of a REST request without `Accept: application/pkcs10` (default):
@@ -80,7 +80,7 @@ The following response is returned:
         RWWgCmICIGPUvHHKzSc8GbgwuKddhe0Ef+HTamyEmqQBX3z/iE3GMQA=
     }
 
-and an example of a REST request with `Accept: application/pkcs10` (optional):    
+And an example of a REST request with `Accept: application/pkcs10` (optional):    
 
     POST /.well-known/est/simpleenroll
     Authorization: Basic <<Base64 encoded bootstrap credentials>>
