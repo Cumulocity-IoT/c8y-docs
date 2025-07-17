@@ -36,7 +36,11 @@ On creating a new device certificate the Device enroll API is called. This trigg
 * If tenant's keypair is not found then an error occurred with message `Failed to retrieve tenant keypair`.
 * If the request does not contain a valid [CertificateSigningRequest](https://en.wikipedia.org/wiki/Certificate_signing_request) an error will be returned.
 
-This is an example of a REST request:
+{{< c8y-admon-info >}}
+As per [EST standards](https://datatracker.ietf.org/doc/html/rfc7030#autoid-58), the certificate in response will be in `PKCS7` format by default. Client can optionally request for a `PKCS10` format by sending `Accept: application/pkcs10` in the request header.
+{{< /c8y-admon-info >}}
+
+This is an example of a REST request without `Accept: application/pkcs10` (default):
 
     POST /.well-known/est/simpleenroll
     Authorization: Basic <<Base64 encoded bootstrap credentials>>
@@ -65,31 +69,58 @@ The following response is returned:
     Content-Type: application/pkcs7-mime;smime-type=certs-only
     Content-Length: ...
     {
-        -----BEGIN CERTIFICATE-----
-        MIIEGjCCAwKgAwIBAgIEEgEgJDANBgkqhkiG9w0BAQsFADBSMQswCQYDVQQGEwJF
-        VTELMAkGA1UECAwCUEwxGzAZBgNVBAoMEklvdCBEZXZpY2UgRmFjdG9yeTEZMBcG
-        A1UEAwwQSW90RGV2RmFjdG9yeUludDAeFw0yNDA5MDIxMjA1MDlaFw0yNTA5MTIx
-        MjA1MDlaME8xCzAJBgNVBAYTAkVVMQswCQYDVQQIDAJQTDEbMBkGA1UECgwSSW90
-        IERldmljZSBGYWN0b3J5MRYwFAYDVQQDDA1Jb3REZXZpY2UyMDAwMIIBIjANBgkq
-        hkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAumzj99zMfC9wyTHun3dEIsL/wk3VyWTw
-        dtgdFx/lt5uPfvTAJ62GLWzYsCe2Q54G13IG/S1SJTfsNURlvUrPvXed97/yhe/o
-        g0IjLz5VGNfsNUw+51KI7Tcc1SunHvUKD7TtgZ4rVga5q1DFxmzZ/dFXJpG5VAgu
-        pwojACMv+T6qKGlUsF5F/1coOVrUo26aby4mg7C6ZsbwzXj2PbIvNXHCcrBrUU7S
-        L2EI89RTgFZCVnZtW1SozDBn8S+WafKFBSgD0GwNtAkkffNWji1fW645gDc80u7w
-        bQuA/xtPXK6+giGB8jN3daVjp6pzbzrYzDTYoC2vyL2A4F4zUedBhwIDAQABo4H6
-        MIH3MAkGA1UdEwQCMAAwEQYJYIZIAYb4QgEBBAQDAgWgMDMGCWCGSAGG+EIBDQQm
-        FiRPcGVuU1NMIEdlbmVyYXRlZCBDbGllbnQgQ2VydGlmaWNhdGUwHQYDVR0OBBYE
-        FONhE6IdItEwn95lmf7uKjVLYpJ1MB8GA1UdIwQYMBaAFFSopCQWaJLzT3DYQi8n
-        +nA1S86RMA4GA1UdDwEB/wQEAwIF4DAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYB
-        BQUHAwEwMwYDVR0fBCwwKjAooCagJIYiaHR0cDovL2xvY2FsaG9zdDoxNTAwMC9v
-        bmxpbmUtY3JsczANBgkqhkiG9w0BAQsFAAOCAQEAJmPPKVSR4nAf8TZG3dPeGRX4
-        V6a8mT52HKQYTilicq0cwec1zSyjayX6lsvqbENkA/L8fN64fpOSmb/+HUbSWP7Y
-        F3ZYKalZVS9XlDUz6TWSA1LiWiDx1E28W2ubCOzUBRg7ux+59hoSGldtGrpxZ1Ox
-        +H9kemart76xC+l85EYys7YARL5vk5Jwyr/f1/FpXasaGBFbC4aJ+2fNJkn1LJal
-        II8Fl3GElheLpYM20VNw2J0PoD8I17htLfT+j7IwPyJ+uZcNxl60GiqDoBafRWuq
-        oTL1SYqewv/dTU98aZUXG9yFLPgldQ2YfMli6vOC2gcjW2vun+IP7T/5ZU/xtA==
-        -----END CERTIFICATE-----
+        MIIBpQYJKoZIhvcNAQcCoIIBljCCAZICAQExADALBgkqhkiG9w0BBwGgggF6MIIB
+        djCCARygAwIBAgIDCnqWMAoGCCqGSM49BAMCMBcxFTATBgNVBAMTDGVzdEV4YW1w
+        bGVDQTAeFw0yNTA1MjIwNjUwMzJaFw0yNjA1MjIwNjUwMzJaMBQxEjAQBgNVBAMM
+        CWV4YW1wbGUwMTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABI882KOUAoc5DCKF
+        u0zansWbtL84zKJa7SnconIF3AYjvHl3zBUnkv+/7+tSA13mBbYdq4oGh6Yg83zj
+        zhEJ0eujWjBYMAkGA1UdEwQCMAAwCwYDVR0PBAQDAgeAMB0GA1UdDgQWBBTsMXNm
+        ZMWaR8B74Imk6XckmUvOXTAfBgNVHSMEGDAWgBQa3zmEwlbmbM8qtCal/QzSQ/U9
+        PjAKBggqhkjOPQQDAgNIADBFAiEAhrhYYDGcvsFkJpg9U4fr8d7LuqearEnMn+TF
+        RWWgCmICIGPUvHHKzSc8GbgwuKddhe0Ef+HTamyEmqQBX3z/iE3GMQA=
     }
+
+and an example of a REST request with `Accept: application/pkcs10` (optional):    
+
+    POST /.well-known/est/simpleenroll
+    Authorization: Basic <<Base64 encoded bootstrap credentials>>
+    Content-Type: application/pkcs10
+    Content-Transfer-Encoding: base64
+    Accept: application/pkcs10
+    ...
+    {
+        MIICVjCCAT4CAQAwETEPMA0GA1UEAwwGSWRfMTA0MIIBIjANBgkqhkiG9w0BAQEF
+        AAOCAQ8AMIIBCgKCAQEAtz41ucrtb28Hk4FDkGK19DRHD6Z3oyZ6CtS1xycWkf9h
+        za+6DI6ugBLRsxgRQi+VcBSQ8BRgPQTj3eEKi6s+7ySLpzuA4HlihPWo7dWhioXM
+        3lZ4jiyPlCAZALYHNWbgk6Pehk6eNKMz8998Kq2GnzUQ65grAjjr4Q+HQJGOUYx/
+        gsEQoCdhKRjG0xcI75OE+CW9Wg/VU4RMboMke5LUNHwnHIDy8Ie2C3VozVS6mRgE
+        1VIBXWDm9fjaGEzYf25yWk0fzo/d/osLxReJgBq3FOz1TM4m9c3CtJUiedVXmeuf
+        OPwNlTjGDOWgQfeMmXaPC0jHp0YNfV+txdWwEPev6QIDAQABoAAwDQYJKoZIhvcN
+        AQELBQADggEBAHIZu0WR6hfiIsPxhBrdo5w0bt/2X6gy+tHdTI017rf1FUww6OLs
+        wKtpPC0km4BS20hxbD9NLb3FNQEUCf80YQFSGbi0ziY0okVN7gaes6XiNofZbYx9
+        TQF0oo+QWTa+otjoXpw8lLY9Ak6T9MppYh2GlRIiio2VzFu4Vg+FEoyNw9jvQwLj
+        LP0eYTIQ/2SX1DnxMBzCm4MzieXJ7DJPHAdqADUfKbFNuaVjdxG9uRZdP3LRL90g
+        6YxfFb8c+RcOL/lAKdSP5/rIUI05z0agzGMajsEnqxRXSk+CwlZo2D02++STStY9
+        pELozQsItNjEVrfWta6353kOguYYqjB1rNY=
+    }
+
+ The following response is returned:
+
+    HTTP/1.1 201 OK
+    Content-Type: application/pkcs10
+    Content-Length: ...
+    {
+        -----BEGIN CERTIFICATE-----
+        MIIBdjCCARygAwIBAgIDCnqWMAoGCCqGSM49BAMCMBcxFTATBgNVBAMTDGVzdEV4
+        YW1wbGVDQTAeFw0yNTA1MjIwNjUwMzJaFw0yNjA1MjIwNjUwMzJaMBQxEjAQBgNV
+        BAMMCWV4YW1wbGUwMTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABI882KOUAoc5
+        DCKFu0zansWbtL84zKJa7SnconIF3AYjvHl3zBUnkv+/7+tSA13mBbYdq4oGh6Yg
+        83zjzhEJ0eujWjBYMAkGA1UdEwQCMAAwCwYDVR0PBAQDAgeAMB0GA1UdDgQWBBTs
+        MXNmZMWaR8B74Imk6XckmUvOXTAfBgNVHSMEGDAWgBQa3zmEwlbmbM8qtCal/QzS
+        Q/U9PjAKBggqhkjOPQQDAgNIADBFAiEAhrhYYDGcvsFkJpg9U4fr8d7LuqearEnM
+        n+TFRWWgCmICIGPUvHHKzSc8GbgwuKddhe0Ef+HTamyEmqQBX3z/iE3G
+        -----END CERTIFICATE-----
+    }   
 
 ### Re-enroll a device certificate {#re-issue-device-certificate}
 
