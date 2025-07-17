@@ -32,7 +32,7 @@ We are making this change to align the MQTT Service with the behavior of the exi
 This is a **breaking change** and affected applications **must** be updated to continue working after the GA version of the MQTT Service is deployed.
 
 This change affects any application where MQTT devices exchange messages by publishing and subscribing to the same topics.
-In particular it affects applications where a {{< product-c8y-iot >}} microservice connects to the MQTT Service using the MQTT protocol rather than the {{< product-c8y-iot >}} client SDK, to exchange messages with connected MQTT devices.
+In particular it affects applications where a {{< product-c8y-iot >}} microservice connects to the MQTT Service using the MQTT protocol to exchange messages with connected MQTT devices.
 
 Microservices that are affected by this change should **not** immediately migrate to the existing Java client SDK, as this will not be supported in the GA version.
 Instead, these microservices should wait for the new MQTT Service API to be released and migrate directly to this API.
@@ -63,7 +63,7 @@ On or soon after August 4, 2025:
 #### Phase 2: Migration during Public Preview
 * Tenants starting to use the MQTT Service for the first time should develop their applications to work with device isolation.
 * Tenants already using the MQTT Service should update their applications to work with device isolation.
-* The feature toggle will allow these tenants to switch between isolation modes while developing and testing changes to their applications.
+  The feature toggle will allow these tenants to switch between isolation modes while developing and testing changes to their applications.
 
 #### Phase 3: General Availability
 The General Availability date for the MQTT Service is not yet confirmed, but will be no earlier than December 1, 2025.
