@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-07-17
 title: External applications included in application access list
 product_area: Platform services
 change_type:

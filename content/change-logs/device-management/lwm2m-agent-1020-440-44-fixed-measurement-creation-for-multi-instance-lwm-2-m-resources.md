@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-07-17
 title: Fixed measurement creation for multi-instance LWM2M resources
 product_area: Device management & connectivity
 change_type:
