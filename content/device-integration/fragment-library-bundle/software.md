@@ -191,6 +191,12 @@ The 528 static response template is available for dealing with software update o
 5. Set operation status to SUCCESSFUL <br>
    `503,c8y_SoftwareUpdate`
 
+{{< c8y-admon-info >}}
+
+If the URL is set to `$PROVIDED`, no file is uploaded or linked from the platform. In this case, the device is fully responsible for resolving the correct binary. Typically, this process works through package managers that retrieve the correct binary from the name, version, and other device-specific details. If the device cannot resolve the binary, it  must mark the operation as FAILED.
+
+{{< /c8y-admon-info >}}
+
 ### Advanced Software Management {#advanced-software-management}
 
 Using the "advanced" approach, the `c8y_SoftwareList` fragment is no longer present in the device managed object. The data is separated from the device managed object which keeps the size of the device managed object low even for very large lists of installed software. All installed software for a device can be read and managed through the Advanced Software Management default microservice.
