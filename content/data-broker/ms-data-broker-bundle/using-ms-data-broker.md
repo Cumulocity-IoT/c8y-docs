@@ -55,7 +55,7 @@ See the [service quotas](/service-terms/quotas/#realtime-apis) documentation for
 These limits are configurable on a per-tenant basis.
 If your use case requires a different configuration, or if you have any questions or concerns, please contact [product support](https://cumulocity.com/docs/additional-resources/contacting-support/).
 
-#### Message backlog quota {#message-block-quota}
+#### Message backlog quota {#message-backlog-quota}
 
 Persistent messages are stored in a “backlog” until they are delivered to the destination tenant.
 The maximum size of a backlog is determined by the “backlog quota” limit, which directly affects the number of messages that can be stored and therefore the resource consumption of the platform.
