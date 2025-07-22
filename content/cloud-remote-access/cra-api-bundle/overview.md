@@ -10,19 +10,19 @@ sequenceDiagram
     participant CL as Client
     participant CRA as CRA microservice
     participant CORE as {{< product-c8y-iot >}} Core
-    participant DA as Device Agent
-    participant S as External Endpoint <br/>(SSH, Telnet, VNC...)
+    participant DA as Device agent
+    participant S as External endpoint <br/>(SSH, Telnet, VNC...)
     
     U -->> CL: Start Client session <br />(Example: SSH)
-    CL ->> CRA: Connect Websocket <br /> to CRA configuration
+    CL ->> CRA: Connect WebSocket <br /> to CRA configuration
     activate CRA
     CRA ->> CORE: Create <br />c8y_RemoteAccessConnect<br/> operation
-    CORE -->> DA: Push Operation
+    CORE -->> DA: Push operation
     DA ->> CORE: Mark operation as EXECUTING
-    DA ->> CRA: Connect Websocket <br /> to connection key <br > of operation
+    DA ->> CRA: Connect WebSocket <br /> to connection key <br > of operation
     activate DA
     loop
-        DA <<-->> S: Forward Data Packets <br /> to websocket <br /> and vice versa   
+        DA <<-->> S: Forward data packets <br /> to WebSocket <br /> and vice versa   
     end
     DA ->> CORE: Mark operation as SUCCESSFUL
     deactivate CRA
