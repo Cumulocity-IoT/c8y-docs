@@ -10,8 +10,9 @@ endpoint.
 
 ### Supported operation {#supported-operation}
 
-To indicate that your device is capable of handling Cloud Remote Access, it should report `c8y_RemoteAccessConnect` as
-supported operation in its managed object:
+A device agent that implements an integration with Cloud Remote Access must consume `c8y_RemoteAccessConnect` operations. They are used to inform the
+device about tunnel connections it should establish. In order to mark your device being capable of handling them, it needs to include `c8y_RemoteAccessConnect` as
+a supported operation in its managed object:
 
 ```json
 
@@ -25,19 +26,19 @@ supported operation in its managed object:
 ### Connect operation {#connect-operation}
 
 This operation is created when the application generates a connect request. The operation is then sent to the device
-agent to establish the connection between the WebSocket endpoint at the server and the local network endpoint.
+agent, which establishes a connection between the WebSocket endpoint at the server and the local network endpoint.
 
 Example of an `c8y_RemoteAccessConnect` operation:
 
 ```json
-    {
-  "deviceId": "10200",
+{
+  ...
   "c8y_RemoteAccessConnect": {
     "hostname": "10.0.0.67",
     "port": 5900,
     "connectionKey": "eb5e9d13-1caa-486b-bdda-130ca0d87df8"
-  },
-  "description": "Connect to remote access server"
+  }
+  ...
 }
 ```
 
@@ -51,19 +52,16 @@ Example of an `c8y_RemoteAccessConnect` operation:
 
 For each `c8y_RemoteAccessConnect` operation the device agent receives, it opens a TCP client socket to the provided
 hostname and port. Using the provided ConnectionKey the agent also securely connects to the WebSocket endpoint on server
-side. Similarly to the client implementation, both the `Authorization` and `Sec-WebSocket-Protocol` have to be passed.
+side.
 
-After establishing both the TCP socket and WebSocket connections, the device agent marks the operation as SUCCESSFUL and
-starts forwarding binary packets between
-the TCP connection and the WebSocket in both directions.
+The following steps need to be implemented by the device agent when it receives a `c8y_RemoteAccessConnect` operation.
 
-The following events are triggered when the device agent receives a `c8y_RemoteAccessConnect` operation.
-
-* The operation status is set to EXECUTING.
-* The connectionKey is used to connect to the {{< product-c8y-iot >}} Cloud Remote Access WebSocket. All data received
-  from the WebSocket should be forwarded to the TCP connection (if already established): `wss://<hostname>/service/remoteaccess/device/<connectionKey>`
-* The hostname and port is used to connect TCP in a local area network. Hostname and port are configured on server side
-  and are used to connect to the endpoint of the device. Depending on the protocol (VNC, Telnet, SSH) the device will
+* The device sets the operation status to EXECUTING.
+* The device establishes a connection to the {{< product-c8y-iot >}} Cloud Remote Access WebSocket at the following URL:All data received
+  ```http
+  wss://<hostname>/service/remoteaccess/device/<connectionKey>
+  ```
+* The device sets up a TCP connection to the given hostname and port. Depending on the protocol (VNC, Telnet, SSH) the device will
   initiate a protocol-specific handshake. All data should be forwarded directly to the WebSocket endpoint (if already
   established).
 * The operation status is set to SUCCESSFUL or FAILED based on the status of the previous steps.
