@@ -159,7 +159,8 @@ If [MQTT Forwarding mode](#mqtt-forwarding-mode) is enabled, the configured func
 
 **Send measurement (MQTT Forwarding mode)**
 
-Measurements are sent to the MQTT topic `te/<identifier>/m/<measurement-type>` of Thin Edge. Additional (static) fragments are not populated. 
+Measurements are sent to the MQTT topic `te/<identifier>/m/<measurement-type>` of Thin Edge. As Thin Edge only supports measurement values in measurements, the measurement units configured in the device protocol are ignored. Also, the standard fragments of the OPC-UA Gateway and additionally configured static fragments are not populated.
+
 
 **Create alarm (MQTT Forwarding mode)**
 
@@ -181,7 +182,7 @@ The measurement type of the measurement is `OpcUaMeasurement` unless `gateway.ma
 
 **Send event (MQTT Forwarding mode, merging enabled)**
 
-Merging events is only supported for cyclic reads but not for subscriptions. Variables coming in the same cyclic read (meaning they use the same data reporting in a device protocol) are sent as a single event with multiple fragments to the `te/<identifier>/e/<event-type>` of Thin Edge. The configured type for the variable is used as the fragment name.
+Merging events is only supported for cyclic reads but not for subscriptions. Variables coming in the same cyclic read (meaning they use the same data reporting in a device protocol) are sent as a single event with multiple fragments to the `te/<identifier>/e/<event-type>` of Thin Edge. The configured type for the variable is used as the fragment name. While it is allowed to use the same event type for multiple variables in a device protocol, here this will result in variables overwriting each other and hence generally discouraged.
 
 The event type of the event is `OpcUaEvent` unless `gateway.mappings.mergedEventType` in the configuration has been set to a different type.
 
