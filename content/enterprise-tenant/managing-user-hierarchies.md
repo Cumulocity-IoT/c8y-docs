@@ -34,7 +34,7 @@ On tenant creation, default roles are available which can be used as a sample co
 
 In the **Users** page, user hierarchies are indicated by an arrow left <i class="dlt-c8y-icon-expand-arrow text-primary icon-20"></i> from the user icon. Clicking on the arrow unfolds the user hierarchy. You can also fold and unfold the entire user hierarchy using the **Expand all** and **Collapse all** links at the right of the top menu bar.
 
-A small number next to the user name shows how many direct sub-users a user has. Sub-users are users that can be managed by their respective parent user and that have at most the permissions of that parent user. In the example below, the user "Demo user" has one direct sub-user.
+A small number next to the username shows how many direct sub-users a user has. Sub-users are users that can be managed by their respective parent user and that have at most the permissions of that parent user. In the example below, the user "Demo user" has one direct sub-user.
 
 ![User hierarchies](/images/users-guide/enterprise-tenant/et-user-hierarchy.png)
 
