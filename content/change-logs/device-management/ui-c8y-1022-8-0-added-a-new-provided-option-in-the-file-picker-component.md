@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Software and firmware repository items can be added without mandatory url.
+title: Software and firmware repository items can now be added without URL
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
