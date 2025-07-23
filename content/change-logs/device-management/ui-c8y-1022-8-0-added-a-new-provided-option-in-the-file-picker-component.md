@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4788
 version: 1022.8.0
 ---
-For devices it is not ideal that our software update process specifies a concrete url. We now allow configuring a software repository item as placeholder without a concrete URL.
+It is now possible to add software and firmware repository items without a URL. When uploading software and firmware versions, a new option for the binary is available called **Provided**. If this option is selected, the device is expected to resolve the binary itself.
