@@ -1,7 +1,6 @@
 ---
-date:
-title: New Analytics rules plugin is available as Public
-  Preview
+date: '2025-07-17'
+title: New Analytics rules plugin is available as Public Preview
 change_type:
   - value: change-pXAlHAWka
     label: Preview
