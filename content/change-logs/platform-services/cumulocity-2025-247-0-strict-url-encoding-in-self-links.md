@@ -1,6 +1,6 @@
 ---
 date: ''
-title: Strict URL encoding in self-links
+title: Improved URL encoding in self-links
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
