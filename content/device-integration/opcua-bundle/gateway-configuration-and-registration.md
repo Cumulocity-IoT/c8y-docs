@@ -77,8 +77,8 @@ gateway:
         baseDir: C:/Users/<<userName>>/.opcua/data
     mappings:
       mergeCyclicRead: false
-      mergedEventType: OpcUaEvent
-      mergedMeasurementType: OpcUaMeasurement
+      mergedEventType: c8y_OpcuaEvent
+      mergedMeasurementType: c8y_OpcuaMeasurement
     thinEdge:
         enabled: true
         mqttServerURL: tcp://<<thinEdge MQTT broker>>
