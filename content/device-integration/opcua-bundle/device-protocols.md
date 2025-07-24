@@ -179,13 +179,13 @@ Custom actions in MQTT Forwarding mode use the same body template mechanism. The
 
 Merging measurements is only supported for cyclic reads but not for subscriptions. Variables coming in the same cyclic read (meaning they use the same data reporting in a device protocol) are sent as a single, multi-value measurement to the `te/<identifier>/m/<measurement-type>` of Thin Edge. The configured type and series for the variable will be used as fragment and series in the measurement. If multiple variables are configured for the same type, they will be consolidated into a single fragment. 
 
-The measurement type of the measurement is `OpcUaMeasurement` unless `gateway.mappings.mergedMeasurementType` in the configuration has been set to a different type.
+The measurement type of the measurement is `c8y_OpcuaMeasurement` unless `gateway.mappings.mergedMeasurementType` in the configuration has been set to a different type.
 
 **Send event (MQTT Forwarding mode, merging enabled)**
 
 Merging events is only supported for cyclic reads but not for subscriptions. Variables coming in the same cyclic read (meaning they use the same data reporting in a device protocol) are sent as a single event with multiple fragments to the `te/<identifier>/e/<event-type>` of Thin Edge. The configured type for the variable is used as the fragment name. While it is allowed to use the same event type for multiple variables in a device protocol, here this will result in variables overwriting each other and hence generally discouraged.
 
-The event type of the event is `OpcUaEvent` unless `gateway.mappings.mergedEventType` in the configuration has been set to a different type.
+The event type of the event is `c8y_OpcuaEvent` unless `gateway.mappings.mergedEventType` in the configuration has been set to a different type.
 
 
 **Custom actions (MQTT Forwarding mode, merging enabled)**
