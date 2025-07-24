@@ -153,6 +153,7 @@ Below there is an example of a full device protocol that configures a custom act
 }
 ```
 
+{{< c8y-admon-preview-feature >}}
 ### Device protocol behavior in MQTT Forwarding mode {#device-protocol-behavior-in-mqtt-forwarding-mode}
 
 If [MQTT Forwarding mode](#mqtt-forwarding-mode) is enabled, the configured functionalities in device protocols behave differently:
@@ -192,6 +193,8 @@ The event type of the event is `OpcUaEvent` unless `gateway.mappings.mergedEvent
 Merging custom actions is only supported for cyclic reads but not for subscriptions. Variables coming in the same cyclic read (meaning they use the same data reporting in a device protocol) are sent as a single measurement. For each variable, the body template of the configured custom action is applied, and the results are sent as the string representation of a JSON array.
 
 The expectation is that all custom actions use the same endpoint which is used as the MQTT topic to send the message to. If this is not the case, the endpoint from the first configured variable of the device protocol is used.
+
+{{< /c8y-admon-preview-feature >}}
 
 ### Monitoring events for device protocol application {#monitoring-events-for-device-protocol-application}
 
