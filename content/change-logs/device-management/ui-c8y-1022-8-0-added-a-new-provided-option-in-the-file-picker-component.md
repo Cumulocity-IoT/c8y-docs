@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-07-17'
 title: Software and firmware repository items can now be added without URL
 product_area: Device management & connectivity
 change_type:
