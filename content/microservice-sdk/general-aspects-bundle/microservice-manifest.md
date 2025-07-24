@@ -154,7 +154,7 @@ See below for detailed information about available settings.
 <tr>
 <td style="text-align:left">settingsCategory</td>
 <td style="text-align:left">String</td>
-<td style="text-align:left">Allows to specify custom category for microservice settings. By default contextPath is used.</td>
+<td style="text-align:left">Allows to specify custom category for microservice settings. By default contextPath is used. Accepted letters are lowercase (a-z) and uppercase (A-Z) characters, digits, and dots (.)</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
