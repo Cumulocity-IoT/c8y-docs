@@ -4,6 +4,10 @@ title: Gateway configuration and registration
 layout: redirect
 ---
 
+{{< c8y-admon-preview-toggle >}}
+Toggle on the preview feature documentation to see upcoming changes to the existing functionality.
+{{< /c8y-admon-preview-toggle >}}
+
 YAML file and spring profiles are used for the configuration of the gateway. A default configuration file is embedded in the gateway JAR file, so you only must set the properties which are different from the default.
 
 {{< c8y-admon-important >}}
