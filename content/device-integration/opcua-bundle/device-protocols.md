@@ -4,10 +4,6 @@ title: Device protocols
 layout: redirect
 ---
 
-{{< c8y-admon-preview-toggle >}}
-Toggle on the preview feature documentation to see upcoming changes to the existing functionality.
-{{< /c8y-admon-preview-toggle >}}
-
 ### Adding a new device protocol {#adding-a-new-device-protocol}
 
 1. In the Device protocols page, click **New device protocol** in the top menu bar and select OPC UA as device protocol type.
