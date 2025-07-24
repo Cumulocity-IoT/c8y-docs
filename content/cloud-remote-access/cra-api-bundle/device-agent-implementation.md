@@ -44,9 +44,9 @@ Example of an `c8y_RemoteAccessConnect` operation:
 
 | Field         | Data type | Details                                                                |
 |:--------------|:----------|:-----------------------------------------------------------------------|
-| connectionKey | String    | Shared secret to authenticate the connection request from device side. |
-| hostname      | Number    | Endpoint on the local network to connect to.                           |
-| port          | String    | Port to be used on local network endpoint.                             |
+| connectionKey | String    | Shared secret to authenticate the connection request from device side  |
+| hostname      | Number    | Endpoint on the local network to connect to                            |
+| port          | String    | Port to be used on local network endpoint                              |
 
 ### Connecting to a new endpoint {#connecting-to-a-new-endpoint}
 

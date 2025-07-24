@@ -48,7 +48,7 @@ An entry in the `c8y_RemoteAccessList` fragment holds the following fragments:
     ]
 ```
 
-In the example above a local HTTP echo server is reachable from the device at `http://localhost:33123`. The configuration id is `1`.
+In the example above a local HTTP echo server is reachable from the device at *http://localhost:33123*. The configuration ID is `1`.
 To connect a client application, the client must open a WebSocket to the following URL.
 
 
@@ -56,9 +56,9 @@ To connect a client application, the client must open a WebSocket to the followi
 wss://<tenant domain>/service/remoteaccess/client/<device id>/configurations/<configuration id>
 ```
 
-### Websocket HTTP headers {#websocket-http-headers}
+### WebSocket HTTP headers {#websocket-http-headers}
 
-The Cloud Remote Access service uses the `binary` websocket sub-protocol, regardless of which protocol is requested by the client.  Hence we recommend to pin the WebSocket subprotocol to `binary` using the `Sec-WebSocket-Protocol` header.
+The Cloud Remote Access service uses the binary WebSocket subprotocol, regardless of which protocol is requested by the client.  Hence, we recommend pinning the WebSocket subprotocol to `binary` using the `Sec-WebSocket-Protocol` header.
 Additionally,  a valid authorization header is required, see [Authentication](https://cumulocity.com/api/core/#section/Authentication) in the {{< openapi >}}.
 
 ```http
