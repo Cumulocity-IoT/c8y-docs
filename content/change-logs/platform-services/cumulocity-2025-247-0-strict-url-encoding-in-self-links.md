@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-63992
 version: 2025.247.0
 ---
-Encoding of special characters in self-links has been improved to ensure that they are URL-encoded correctly.
-This change addresses an issue where self-links containing special characters were not properly encoded, leading to broken links.
+Self-links containing special characters were not properly encoded, leading to broken links. This issue has been fixed. The encoding of special characters in self-links has been improved to ensure that the self-links are URL-encoded correctly.
