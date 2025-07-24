@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-07-24
 title: Custom navigator logo height and tabs background color now displayed correctly
 product_area: Application enablement & solutions
 change_type:
