@@ -57,7 +57,7 @@ side.
 The following steps need to be implemented by the device agent when it receives a `c8y_RemoteAccessConnect` operation.
 
 * The device sets the operation status to EXECUTING.
-* The device establishes a connection to the {{< product-c8y-iot >}} Cloud Remote Access WebSocket at the following URL:All data received
+* The device establishes a connection to the {{< product-c8y-iot >}} Cloud Remote Access WebSocket at the following URL:
   ```http
   wss://<hostname>/service/remoteaccess/device/<connectionKey>
   ```
