@@ -97,7 +97,7 @@ The configuration `gateway.thinEdge.useForDataForwarding` controls if MQTT Forwa
 * `gateway.thinEdge.mqttKeepAliveInterval` (default: 60) - keep alive  interval in seconds.
 * `gateway.thinEdge.mqttMaxInFlight` (default: 1000) - maximum number of unacknowledged messages in the MQTT client. If this limit is reached, additional messages will fail.
 
-For cyclic reads the configuration `gateway.mappings.mergeCyclicRead` can be enabled. The default is false. If this configuration is enabled cyclic reads mapped to measurements, events, or custom actions in a device protocol that use the same data reporting are merged into single messages. For measurements and events, the type can be controlled by the `gateway.mappings.mergedMeasurementType` and `gateway.mappings.mergedEventType` configuration. This is optional, and if not configured `OpcUaEvent` and `OpcUaMeasurement` respectively are used.
+For cyclic reads the configuration `gateway.mappings.mergeCyclicRead` can be enabled. The default is false. If this configuration is enabled cyclic reads mapped to measurements, events, or custom actions in a device protocol that use the same data reporting are merged into single messages. For measurements and events, the type can be controlled by the `gateway.mappings.mergedMeasurementType` and `gateway.mappings.mergedEventType` configuration. This is optional, and if not configured `c8y_OpcuaEvent` and `c8y_OpcuaMeasurement` respectively are used.
 
 ### Configuration profile location on the filesystem {#configuration-profile-location-on-the-filesystem}
 
