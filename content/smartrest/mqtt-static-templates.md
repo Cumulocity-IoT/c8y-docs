@@ -108,9 +108,15 @@ If a parameter is in square brackets, it is optional.
 
 <strong><a href="#device-parameter-templates">Device parameter templates</strong>
 <ul>
-<li><a href="#408">408,[text],[time],[change detect],path1,type1,value1[,path2,type2,value2,]...
-<li><a href="#600">600 (Retrieve the platform version, reply: "601, platformVersion")</a></li>
+<li><a href="#408">408,[text],[time],[change detect],path1,type1,value1[,path2,type2,value2,]...</a></li>
 </ul>
+
+<strong><a href="#platform-capabilites-templates">Platform capabilities templates</strong>
+<ul> 
+<li><a href="#600">600 (Retrieve the platform version, reply: "601, platformVersion")</a></li>
+<li><a href="#602">602 (Retrieve a list of valid SmartREST template IDs, reply: "603,comma-separated-list-of-SmartREST-template-IDs")</a></li>
+</ul>
+
 
 The client can receive the following templates when subscribing to <kbd>s/ds</kbd>.
 
@@ -335,6 +341,9 @@ Example
 ##### Set supported operations (114) {#114}
 
 Set the supported operations of the device.
+{{< c8y-admon-info >}}
+For details on all options and parameters used to specify the support of particular functionalities, refer to the [Fragment library](/device-integration/fragment-library/).
+{{< /c8y-admon-info >}}
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
@@ -993,6 +1002,14 @@ Retrieve the platform version. Used to evaluate if the platform supports API int
 600
 ```
 
+##### List of valid SmartREST templates (602) {#602}
+Retrieve the list of valid SmartREST template IDs associated with a tenant.
+
+**Example**
+```text
+602
+```
+
 ### Subscribe templates {#subscribe-templates}
 
 #### Inventory templates (1xx) {#inventory-templates-1xx}
@@ -1356,6 +1373,15 @@ Returns the platform version after a request using 600.
 
 ```text
 601,2025.0.0
+```
+
+##### Return list of valid SmartREST templates (603) {#603}
+Returns the list of all available SmartREST template IDs and additional capabilities on a request using 602.
+
+**Example**
+
+```text
+603,100,101,102,...,603
 ```
 
 ### Updating operations {#updating-operations}
