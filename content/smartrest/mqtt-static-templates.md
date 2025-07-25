@@ -341,6 +341,9 @@ Example
 ##### Set supported operations (114) {#114}
 
 Set the supported operations of the device.
+{{< c8y-admon-info >}}
+For details on all options and parameters used to specify the support of particular functionalities, refer to the [Fragment library](/device-integration/fragment-library/).
+{{< /c8y-admon-info >}}
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|

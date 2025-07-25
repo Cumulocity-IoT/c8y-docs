@@ -126,7 +126,7 @@ The [Java Client](/device-integration/mqtt-service#java-client) contains classes
 
 #### Payload restrictions {#payload-restrictions}
 
-The MQTT Service does not impose any specific payload format. 
+The MQTT Service does not impose any specific payload format.
 All the incoming MQTT messages must meet the specification in terms of fixed and variable headers, but the payload for published messages is unrestricted.
 A Streaming Analytics app or a custom microservice will receive the exact same set of bytes that was sent by an MQTT device, and is responsible for converting these to a {{< product-c8y-iot >}} compatible format.
 
@@ -179,7 +179,7 @@ Publishing data with the retained flag on the topic is allowed but has no practi
 
 #### Last will {#last-will}
 
-In MQTT, the "last will" is a message that is specified at connection time and that is executed when the client loses the connection. 
+In MQTT, the "last will" is a message that is specified at connection time and that is executed when the client loses the connection.
 Last will is fully supported by the MQTT Service, and as with with any other publish messages you can use any unreserved topic and any payload.
 
 ### Return codes {#return-codes}
@@ -205,7 +205,7 @@ Moreover, {{< enterprise-tenant >}}s are not able to customize those certificate
 
 Using device certificates with the MQTT Service shares the same requirements as outlined in [Device certificates](/device-certificate-authentication/device-certificates#general-requirements-for-connecting-devices-with-certificates).
 Additionally, auto-registration must be enabled when uploading the CA certificate to the platform.
-When connecting devices to the MQTT Service using certificates, the tenant ID **must** be included in the MQTT CONNECT packet in the user name field.
+When connecting devices to the MQTT Service using certificates, the tenant ID **must** be included in the MQTT CONNECT packet in the username field.
 This is required to correctly identify the tenant.
 
 #### Adding and trusting CA certificate
