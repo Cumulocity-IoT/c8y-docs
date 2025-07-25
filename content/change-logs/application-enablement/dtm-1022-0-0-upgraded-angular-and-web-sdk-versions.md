@@ -3,8 +3,8 @@ date: ""
 title: "Upgraded Angular and Web SDK versions"
 product_area: "Application enablement & solutions"
 change_type:
-    - value: "change-inv-3bw8e"
-      label: "Announcement"
+    - value: "change-2c7RdTdXo4"
+      label: "Improvement"
 component:
     - value: "component-Tl88RYb4A"
       label: "Digital Twin Manager"
