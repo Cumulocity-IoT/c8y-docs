@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2215"
 version: "1022.0.0"
 ---
-Angular has been upgraded to version 19.2.14 and the Web SDK has been updated to 1022.4.17.
+Angular has been upgraded to version 19.2.14 and the Web SDK to 1022.4.17. This change may impact plugins that rely on older versions of Angular or the Web SDK.
