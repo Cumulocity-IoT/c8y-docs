@@ -3,8 +3,8 @@ date: ""
 title: OPC UA Device gateway with thin-edge Mqtt Forwarding
 product_area: Device management & connectivity
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+  - value: change-pXAlHAWka
+    label: Preview
 component:
   - value: component-Tf05_KQ-B
     label: OPC UA
