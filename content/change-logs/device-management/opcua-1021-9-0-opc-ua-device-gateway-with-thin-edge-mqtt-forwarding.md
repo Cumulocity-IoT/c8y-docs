@@ -1,6 +1,6 @@
 ---
 date: ""
-title: OPC UA Device gateway with thin-edge Mqtt Forwarding
+title: OPC UA device gateway with Thin Edge MQTT forwarding
 product_area: Device management & connectivity
 change_type:
   - value: change-pXAlHAWka
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4473
 version: 1021.9.0
 ---
-Starting from opcua-device-gateway version 1021.9.0, the device gateway has ability to forward data from OPC-UA servers to thin-edge MQTT topics instead of sending them directly to Cumulocity. Primary use case is to use thin-edge also for data forwarding when running in thin-edge mode. While doing this, opcua-device-gateway bundles multiple collected measurement/event series into a single measurement/event when its from the same device protocol and using cyclic reads.
+Starting from the opcua-device-gateway version 1021.9.0, the OPC UA device gateway can forward data from OPC UA servers to Thin Edge MQTT topics instead of sending it directly to {{< product-c8y-iot >}}. The primary use case is to utilize Thin Edge also for data forwarding when running in Thin Edge mode. While doing this, the OPC UA device gateway bundles multiple collected measurement/event series into a single measurement/event when they are from the same device protocol and use cyclic reads.
