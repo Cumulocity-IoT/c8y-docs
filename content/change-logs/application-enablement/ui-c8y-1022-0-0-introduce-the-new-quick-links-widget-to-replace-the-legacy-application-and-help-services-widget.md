@@ -1,5 +1,6 @@
 date: '2025-07-25'
-title: Quick Links widget replaces Applications and Help & Service widgets
+title: Quick links widget replaces Applications widget and Help & service widget
+```widget 
 product_area: Application enablement & solutions
 change_type:
   - value: change-inv-3bw8e
