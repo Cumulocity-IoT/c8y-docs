@@ -88,9 +88,11 @@ For details on the fields, see [To add a retention rule](#to-add-a-retention-rul
 
 Hover over the row with the rule you want to delete and click the remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i> that appears on the right.
 
+### Examples {#examples}
+
 All retention rules are executed sequentially and independent of each other. So if we have two retention rules, a more specific one with a greater maximum age that defines a subset of the documents that are defined by a more common rule with a lower maximum age, then effectively it will work as if we had a single, more common rule.
 
-For example given the two following rules:
+For example, given the two following rules:
 
 | **Data type** | **Fragment type** | **Type**        | **Source** | **Maximum age** |
 |---------------|-------------------|-----------------|------------|-----------------|
@@ -99,7 +101,7 @@ For example given the two following rules:
 
 All measurements with the type `c8y_Temperature` which are older than 30 days will be removed, including those where the source equals `12345`.
 
-On the other hand when we have the following retention rules defined:
+On the other hand, when we have the following retention rules defined:
 
 | **Data type** | **Fragment type** | **Type**        | **Source** | **Maximum age** |
 |---------------|-------------------|-----------------|------------|-----------------|
