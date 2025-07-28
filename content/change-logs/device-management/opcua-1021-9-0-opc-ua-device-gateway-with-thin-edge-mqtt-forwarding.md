@@ -1,6 +1,6 @@
 ---
 date: 2025-07-28
-title: OPC UA device gateway with Thin Edge MQTT forwarding
+title: OPC UA device gateway with Thin Edge MQTT Forwarding
 product_area: Device management & connectivity
 change_type:
   - value: change-pXAlHAWka
