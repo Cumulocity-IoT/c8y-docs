@@ -23,7 +23,7 @@ Microservices will be able to explicitly route messages between different device
 In effect, each MQTT client identifier will have its own private topic space that is not shared with other clients, but can be accessed by microservices.
 
 {{< c8y-admon-info >}}
-Device isolation is now enabled by default for any tenant using the MQTT Service for the first time.
+Device isolation is enabled by default for any tenant using the MQTT Service for the first time.
 {{< /c8y-admon-info >}}
 
 Tenants already using the MQTT Service can continue to use the deprecated tenant isolation approach, but should migrate their applications to work with device isolation as soon as possible.
@@ -33,7 +33,7 @@ We are making this change to align the MQTT Service with the behavior of the exi
 
 ### Device vs. Tenant isolation
 
-The difference between the two isolation models is best explained using a simple example.
+The difference between the two isolation models can be explained using a simple example.
 
 Assume that a tenant has two MQTT clients connected to the MQTT Service, with client identifiers `publish-client` and `subscribe-client`, and that `subscribe-client` has subscribed to topic `my-topic`.
 
@@ -56,3 +56,30 @@ Details of the new API and how to use it in microservices will be announced soon
 
 ### Switching between isolation models
 
+Tenants can switch between the device and tenant isolation models using the `mqtt-service.tenant.isolation` [feature toggle](https://cumulocity.com/api/core/#tag/Feature-toggles-API).
+
+The feature toggle is set to `true` by default for tenants that are already using the MQTT Service, to maintain the deprecated tenant isolation behavior.
+These tenants can use the feature toggle to switch between isolation modes while developing and testing their migration to device isolation.
+
+For all other tenants, the feature toggle is set to `false` and **should not be changed.**
+
+To set the feature toggle to `false`, the following HTTP PUT request should be sent to the tenant.
+This example uses the _curl_ command, but any equivalent tool that can send HTTP requests can be used:
+```shell
+curl --location --request PUT "https://<TENANT_DOMAIN>/features/mqtt-service.tenant.isolation/by-tenant" \
+--header "Authorization: Basic <AUTHORIZATION>" \
+--header "Accept: application/json" \
+--header "Content-Type: application/json" \
+--data-raw '{ "active":false }'
+```
+
+Where `<TENANT_DOMAIN>` is the domain name of the tenant, for example `my-tenant.cumulocity.com`, and `<AUTHORIZATION>` is a Base64-encoded HTTP Basic Authentication token for the tenant, constructed as described in the [API documentation](https://cumulocity.com/api/core/#section/Authentication/Basic).
+
+A similar request can be sent to set the feature toggle back to `true`:
+```shell
+curl --location --request PUT "https://<TENANT_DOMAIN>/features/mqtt-service.tenant.isolation/by-tenant" \
+--header "Authorization: Basic <AUTHORIZATION>" \
+--header "Accept: application/json" \
+--header "Content-Type: application/json" \
+--data-raw '{ "active":true }'
+```
