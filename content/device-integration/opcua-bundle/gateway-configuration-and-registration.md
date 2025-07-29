@@ -84,7 +84,7 @@ gateway:
         mqttServerURL: tcp://<<thinEdge MQTT broker>>
         deviceId: Thin-Edge_Device
         useForDataForwarding: true
-        mqttAutomaticReconnect: false
+        mqttAutomaticReconnect: true
         mqttCleanSession: true
         mqttConnectionTimeout: 30
         mqttKeepAliveInterval:  60
@@ -93,7 +93,7 @@ gateway:
 
 The configuration `gateway.thinEdge.useForDataForwarding` controls if MQTT Forwarding mode is enabled. The following configurations are optional and control the behavior of the MQTT client:
 
-* `gateway.thinEdge.mqttAutomaticReconnect` (default:false) - controls if the MQTT client will reconnect in case it looses connection to the MQTT server.
+* `gateway.thinEdge.mqttAutomaticReconnect` (default:true) - controls if the MQTT client will reconnect in case it looses connection to the MQTT server.
 * `gateway.thinEdge.mqttCleanSession` (default:true) - controls if the MQTT client should remember state across sessions or start with a clean session.
 * `gateway.thinEdge.mqttConnectionTimeout` (default: 30) - connection timeout in seconds.
 * `gateway.thinEdge.mqttKeepAliveInterval` (default: 60) - keep alive  interval in seconds.
