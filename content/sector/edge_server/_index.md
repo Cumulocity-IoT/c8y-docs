@@ -11,6 +11,8 @@ audience:
   - Developers
 sector:
   - edge_server
+aliases:
+  - /edge/edge-introduction/
 weight: 60
 ---
 
