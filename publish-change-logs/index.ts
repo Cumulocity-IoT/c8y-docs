@@ -473,17 +473,17 @@ async function getDeploymentsForBuildArtifact(component: string, build_artifact:
         version=toSemverFormat(version);
       }
       if(version) {
-        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com"].version, version))
+        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com-eks"].version, version))
           //Only retrieve updated date when version is equal
           deploymentMap.set("eu-latest-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com-eks"].updated_at);
-        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com"].version, version))
-          deploymentMap.set("apj-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com"].updated_at);
-        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com"].version, version))
-          deploymentMap.set("jp-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com"].updated_at);
-        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["c8y-cumulocity-com"].version, version))
-          deploymentMap.set("c8y-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["c8y-cumulocity-com"].updated_at);
-        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["us-cumulocity-com"].version, version))
-          deploymentMap.set("us-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["us-cumulocity-com"].updated_at);
+        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com-eks"].version, version))
+          deploymentMap.set("apj-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com-eks"].updated_at);
+        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com-eks"].version, version))
+          deploymentMap.set("jp-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com-eks"].updated_at);
+        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["c8y-cumulocity-com-eks"].version, version))
+          deploymentMap.set("c8y-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["c8y-cumulocity-com-eks"].updated_at);
+        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["us-cumulocity-com-eks"].version, version))
+          deploymentMap.set("us-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["us-cumulocity-com-eks"].updated_at);
         if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["emea-cumulocity-com"].version, version))
           deploymentMap.set("emea-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["emea-cumulocity-com"].updated_at);
         //Abort after first match
