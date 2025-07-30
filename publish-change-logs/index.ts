@@ -473,26 +473,24 @@ async function getDeploymentsForBuildArtifact(component: string, build_artifact:
         version=toSemverFormat(version);
       }
       if(version) {
-        const euLatestDetails = deploymentObj[artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com-eks"];
-        const apjDetails = deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com-eks"];
-        const jpDetails = deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com-eks"];
-        const c8yDetails = deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["c8y-cumulocity-com-eks"];
-        const usDetails = deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["us-cumulocity-com-eks"];
-        const emeaDetails = deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["emea-cumulocity-com"];
+        const environments = [
+          {zone: 'c8y-ops-zone-1', clusters: ['eu-latest-cumulocity-com']},
+          {zone: 'c8y-ops-zone-2', clusters: ['apj-cumulocity-com', 'jp-cumulocity-com']},
+          {zone: 'c8y-ops-zone-3', clusters: ['c8y-cumulocity-com', 'us-cumulocity-com', 'emea-cumulocity-com']}
+        ] as const;
 
-        if(euLatestDetails?.version && gte(euLatestDetails.version, version))
-          //Only retrieve updated date when version is equal
-          deploymentMap.set("eu-latest-cumulocity-com", euLatestDetails.updated_at);
-        if(apjDetails?.version && gte(apjDetails.version, version))
-          deploymentMap.set("apj-cumulocity-com", apjDetails.updated_at);
-        if(jpDetails?.version && gte(jpDetails.version, version))
-          deploymentMap.set("jp-cumulocity-com", jpDetails.updated_at);
-        if(c8yDetails?.version && gte(c8yDetails.version, version))
-          deploymentMap.set("c8y-cumulocity-com", c8yDetails.updated_at);
-        if(usDetails?.version && gte(usDetails.version, version))
-          deploymentMap.set("us-cumulocity-com", usDetails.updated_at);
-        if(emeaDetails?.version && gte(emeaDetails.version, version))
-          deploymentMap.set("emea-cumulocity-com", emeaDetails.updated_at);
+        for (const zoneDetails of environments) {
+          const zone = zoneDetails.zone;
+          const clusters = zoneDetails.clusters;
+          for (const cluster of clusters) {
+            const environmentDetails = getEnvironmentDetails(artifact, zone, cluster);
+            if (environmentDetails?.version && gte(environmentDetails.version, version)) {
+              // Only retrieve updated date when version is equal
+              deploymentMap.set(cluster, environmentDetails.updated_at);
+            }
+          }
+        }
+
         //Abort after first match
         break;
       }
@@ -528,6 +526,18 @@ function toSemverFormat(version: string){
   const semanticVersion = `${versionParts[0]}${versionParts[1]}.${versionParts[2]}.${versionParts[3]}`;
   console.debug("Non-Semantic version format:",version,"converted to semantic format",semanticVersion,"for processing")
   return semanticVersion
+}
+
+function getEnvironmentDetails(artifact: string, zone: string, cluster: string) {
+  const clusters = deploymentObj[artifact].zones[zone].clusters;
+  // support for already migrated eks clusters
+  const eksDetails = clusters[`${cluster}-eks`];
+
+  if (eksDetails) {
+    return eksDetails;
+  }
+
+  return clusters[cluster];
 }
 
 function findLinesInString(line: string, content: string):string[] {
