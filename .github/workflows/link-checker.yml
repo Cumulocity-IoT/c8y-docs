@@ -1,8 +1,9 @@
 name: Link Checker
 
 on:
- pull_request:
-    types: [opened, synchronize, reopened]
+ schedule:
+  - cron: '0 13 * * 4'
+ workflow_dispatch: 
   
 permissions:
     contents: read
