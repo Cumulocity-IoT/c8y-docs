@@ -142,7 +142,7 @@ Here is the list of predefined fields for particular types of documents:
 - Events: creationTime, id, lastUpdated, source, text, time, type
 - Measurements: id, source, time, type
 - Managed objects: additionParents, assetParents, childAdditions, childAssets, childDevices, creationTime, deviceParents,
-  id, latestMeasurements, lastUpdated, name, owner, previousMeasurements, supportedMeasurements, type
+  id, latestMeasurements, lastUpdated, name, owner, supportedMeasurements, type
 
 ### To schedule an export {#to-schedule-an-export}
 
