@@ -17,7 +17,7 @@ version: 0.9.x
 
 ### Introduction
 
-As [previously announced](/change-logs/#mqtt-service-0.9.x-device-isolation), when the {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) transitions from Public Preview to General Availability (GA), the MQTT Service will enforce *device* isolation.
+As [previously announced](/change-logs/#mqtt-service-0.9.x-device-isolation), when the {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) transitions from Public Preview to General Availability (GA), the MQTT Service will enforce **device** isolation.
 MQTT devices will be able to subscribe to any topic, but will not automatically receive messages published to that topic by other devices.
 Microservices will be able to explicitly route messages between different devices.
 In effect, each MQTT client identifier will have its own private topic space that is not shared with other clients, but can be accessed by microservices.
@@ -31,11 +31,11 @@ A feature toggle is available to allow these tenants to switch between isolation
 
 We are making this change to align the MQTT Service with the behavior of the existing [Core MQTT](/device-integration/mqtt/) capability, and to improve out-of-the-box security for typical IoT applications where direct inter-device communication is not required.
 
-### Device vs. Tenant isolation
+### Device versus tenant isolation
 
 The difference between the two isolation models can be explained using a simple example.
 
-Assume that a tenant has two MQTT clients connected to the MQTT Service, with client identifiers `publish-client` and `subscribe-client`, and that `subscribe-client` has subscribed to topic `my-topic`.
+Assume that a tenant has two MQTT clients connected to the MQTT Service, with client identifiers `publish-client` and `subscribe-client`, and that `subscribe-client` has subscribed to the topic `my-topic`.
 
 Then, `publish-client` publishes a message to `my-topic`:
 * If the tenant is using _device_ isolation, `subscribe-client` **will not** receive that message.
@@ -61,9 +61,9 @@ Tenants can switch between the device and tenant isolation models using the `mqt
 The feature toggle is set to `true` by default for tenants that are already using the MQTT Service, to maintain the deprecated tenant isolation behavior.
 These tenants can use the feature toggle to switch between isolation modes while developing and testing their migration to device isolation.
 
-For all other tenants, the feature toggle is set to `false` and **should not be changed.**
+For all other tenants, the feature toggle is set to `false` and **should not be changed**.
 
-To set the feature toggle to `false`, the following HTTP PUT request should be sent to the tenant.
+To set the feature toggle to `false`, the following HTTP PUT request must be sent to the tenant.
 This example uses the _curl_ command, but any equivalent tool that can send HTTP requests can be used:
 ```shell
 curl --location --request PUT "https://<TENANT_DOMAIN>/features/mqtt-service.tenant.isolation/by-tenant" \
