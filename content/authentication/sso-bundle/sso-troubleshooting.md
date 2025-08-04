@@ -23,7 +23,7 @@ The contexts of the token will be presented in JSON format.
 If a tenant is configured to use the `tenantId` in the `baseUrl` (instead of a tenant domain), users may experience
 unexpected redirect behavior after authenticating via SSO.
 
-If users opens an application by entering its URL directly and initiates login via SSO, they may not be returned to the
+If a user opens an application by entering its URL directly and initiates login via SSO, they may not be returned to the
 intended application after authentication. Instead, they may be redirected to the default application configured for the
 tenant.
 
