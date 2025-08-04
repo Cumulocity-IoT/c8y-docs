@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed response interval null value. [GRAFT][release/cd]
+title:  Response interval value when toggling maintenance mode is set correctly.
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
