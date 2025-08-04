@@ -36,9 +36,11 @@ The MQTT Service does not replace the existing [Core MQTT](/device-integration/m
 The new capability provided by the MQTT Service allows for easier integration of MQTT devices that cannot use the {{< product-c8y-iot >}} domain model.
 It also supports more flexible communication patterns between devices, applications, and the {{< product-c8y-iot >}} platform, controlled by user-provided microservices.
 
-Note that in the public preview, MQTT Service clients *within a tenant* are **not** isolated from one another.
-That is, an MQTT client can subscribe to topic(s) that another client is publishing on, and receive the messages sent by that client.
-Full device isolation will be available in the first General Availability release of the MQTT Service.
+Note that during the Public Preview, device isolation is enforced by default only for new tenants using the MQTT Service for the first time. Device isolation ensures that each MQTT client has its own private topic space and cannot directly receive messages published by other clients, enhancing security and isolation between devices.
+
+In contrast, tenant isolation allows all MQTT clients within the same tenant to subscribe to each other’s topics and receive messages, effectively sharing a common topic space.
+
+Existing tenants can continue using tenant-level isolation until the General Availability release, when device isolation will be enforced. These tenants can switch to device isolation earlier by adopting the new model and toggling the feature `mqtt-service.tenant.isolation` to false.
 
 This documentation does not describe the basics of MQTT communication.
 If you are unfamiliar with MQTT, we recommend you to consult one of the numerous introductions on the internet.
