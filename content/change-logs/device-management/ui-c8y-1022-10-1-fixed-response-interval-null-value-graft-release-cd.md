@@ -1,6 +1,6 @@
 ---
 date: ""
-title:  Response interval value when toggling maintenance mode is set correctly.
+title:  Response interval value set correctly when toggling maintenance mode
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4907
 version: 1022.10.1
 ---
-In certain scenarios, the response interval for devices could be incorrectly set when toggling maintenance mode, leading to unexpected behavior and potential issues. This change fixes the problem by ensuring that the response interval always has a valid value
+In certain scenarios, the response interval for devices could be incorrectly set when toggling maintenance mode, leading to unexpected behavior and potential issues. This change fixes the problem by ensuring that the response interval always has a valid value.
