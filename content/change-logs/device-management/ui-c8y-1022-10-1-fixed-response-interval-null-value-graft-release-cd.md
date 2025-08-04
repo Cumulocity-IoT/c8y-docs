@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4907
 version: 1022.10.1
 ---
-Co-authored-by: Dafina Karamanoleva <92030501+dafkk@users.noreply.github.com>
+In certain scenarios, the response interval for devices could be incorrectly set when toggling maintenance mode, leading to unexpected behavior and potential issues. This change fixes the problem by ensuring that the response interval always has a valid value
