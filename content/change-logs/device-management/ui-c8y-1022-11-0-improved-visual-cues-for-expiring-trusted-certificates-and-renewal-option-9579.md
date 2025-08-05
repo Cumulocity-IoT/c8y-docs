@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improved visual cues for expiring trusted certificates and renewal option (#9579) [GRAFT][release/cd] (#9700)
+title: Improved visual cues for expiring trusted certificates and renewal option
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
