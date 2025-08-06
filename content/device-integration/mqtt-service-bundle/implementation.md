@@ -143,7 +143,7 @@ The MQTT Service supports the following authentication methods:
 *   **Username and password**
     The MQTT username must include the tenant ID and username in the format `<tenantID>/<username>`.
 *   **Device certificates**
-    For secure communication, devices must contain the entire chain of certificates leading to the trusted root certificate, or if only the device certificate is provided, then the immediate issuer certificate must be uploaded to the platform’s truststore. You can do it via [the managing trusted certificates in the UI](/device-certificate-authentication/managing-trusted-certificates/) or via [REST](https://{{< domain-c8y >}}/api/core/#tag/Trusted-certificates). Also, the devices must contain the server certificate in their truststore. 
+    For secure communication, devices must contain the entire chain of certificates leading to the trusted root certificate, or if only the device certificate is provided, then the immediate issuer certificate must be uploaded to the platform’s truststore. You can do this via [the **Trusted certificates** page in the UI](/device-certificate-authentication/managing-trusted-certificates/) or via [REST](https://{{< domain-c8y >}}/api/core/#tag/Trusted-certificates). Moreover, the devices must contain the server certificate in their truststore. 
     <br/>
     Optionally, the device can also provide the tenant ID in the MQTT username.
     
