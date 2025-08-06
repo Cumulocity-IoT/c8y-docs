@@ -1,5 +1,5 @@
 ---
-date: 2025-08-04
+date: 2025-08-07
 title: MQTT Service device isolation is enabled by default
 change_type:
   - value: change-pXAlHAWka
@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-hc5Tfixeqqei
     label: mqtt-service
 issue: MTM-64099
-version: 0.9.x
+version: 0.9.6
 ---
 
 ### Introduction
