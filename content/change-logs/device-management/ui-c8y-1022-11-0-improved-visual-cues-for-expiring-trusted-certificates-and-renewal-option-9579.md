@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62992
 version: 1022.11.0
 ---
-To make it easier for users to identify expiring trusted certificates, visual cues have been improved to better highlight certificates that are close to expiration in the Device Management > Management > Trusted certificates view. Additionally, a new option has been introduced allowing users to directly renew a CA certificate from the UI if it is approaching its expiration date. These enhancements will help users to more effectively monitor and manage the lifecycle of their trusted certificates.
+In the **Trusted certificates** page in the Device Management application, visual cues have been improved to highlight expiring certificates. Additionally, a new option has been introduced that allows users to directly renew a CA certificate from the UI if it is approaching its expiration date. These enhancements help users to monitor and manage the lifecycle of their trusted certificates more effectively.
