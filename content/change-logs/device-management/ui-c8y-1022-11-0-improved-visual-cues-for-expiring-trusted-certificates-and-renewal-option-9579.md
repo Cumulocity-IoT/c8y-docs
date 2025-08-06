@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improved visual cues for expiring trusted certificates and renewal option
+title: Improved highlighting of expiring trusted certificates and added renewal option
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
