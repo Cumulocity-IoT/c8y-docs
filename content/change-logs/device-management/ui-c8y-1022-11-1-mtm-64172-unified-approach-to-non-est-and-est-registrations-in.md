@@ -1,6 +1,6 @@
 ---
 date: ""
-title: [MTM-64172] Unified approach to non-EST and EST registrations in general device registration which fixes issue with assigning devices to groups (#9574) [GRAFT][release/cd] (#9705)
+title: Unified approach to non-EST and EST device registrations fixes issue with assigning devices to groups
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
