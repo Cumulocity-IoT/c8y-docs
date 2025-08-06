@@ -138,11 +138,14 @@ See the [Service Quotas](/service-terms/quotas#mqtt-service) section for details
 
 #### Authentication and authorization {#authentication-and-authorization}
 
-The authentication types supported by the MQTT Service are:
+The MQTT Service supports the following authentication methods:
 
-*   Username and password: The MQTT username must include the tenant ID and username in the format `<tenantID>/<username>`.
-*   Device certificates: The MQTT username must include the tenant ID in the format `<tenantID>`.
-
+*   **Username and password**
+    The MQTT username must include the tenant ID and username in the format `<tenantID>/<username>`.
+*   **Device certificates**
+    For secure communication, devices must contain the entire chain of certificates leading to the trusted root certificate, or if only the device certificate is provided, then the immediate issuer certificate must be uploaded to the platform’s truststore. You can do it via [the managing trusted certificates in the UI](/device-certificate-authentication/managing-trusted-certificates/) or via [REST](https://{{< domain-c8y >}}/api/core/#tag/Trusted-certificates). Also, the devices must contain the server certificate in their truststore. 
+    Optionally, the device can also provide the tenant ID in the MQTT username in the format `<tenantID>`.
+    
 #### ClientId {#client-id}
 
 The MQTT **ClientID** field identifies the connected client.
@@ -204,16 +207,14 @@ Moreover, {{< enterprise-tenant >}}s are not able to customize those certificate
 #### Device (client) certificates {#device-certificates}
 
 Using device certificates with the MQTT Service shares the same requirements as outlined in [Device certificates](/device-certificate-authentication/device-certificates#general-requirements-for-connecting-devices-with-certificates).
-Additionally, auto-registration must be enabled when uploading the CA certificate to the platform.
-When connecting devices to the MQTT Service using certificates, the tenant ID **must** be included in the MQTT CONNECT packet in the username field.
-This is required to correctly identify the tenant.
+Additionally, auto-registration must be enabled when uploading the CA certificate to the platform. 
+When connecting devices to the MQTT Service using certificates, the tenant ID can optionally be included in the username field of the MQTT CONNECT packet. This helps the platform unambiguously identify the tenant associated with the device.
 
 #### Adding and trusting CA certificate
 
 TLS trust anchors in the {{< product-c8y-iot >}} platform are defined per tenant.
-To use device certificates for authentication, the CA or intermediate certificate that signs the device certificates must be uploaded to the platform and added to the tenant’s list of trusted certificates.
-Additionally, the **Auto registration** field must be enabled when adding certificates.
-For detailed instructions on adding and trusting a CA certificate, see [Managing trusted certificates](/device-certificate-authentication/managing-trusted-certificates).
+To use device certificates for authentication, the CA or intermediate certificate that signs the device certificates must be uploaded to the platform and added to the tenant’s list of trusted certificates. You can do it via [the managing trusted certificates in the UI](/device-certificate-authentication/managing-trusted-certificates/) or via [REST](https://{{< domain-c8y >}}/api/core/#tag/Trusted-certificates).
+Additionally, ensure that the **Auto registration** option is enabled when adding certificates. This allows any device presenting a valid certificate to be automatically registered on the platform when it first connects.
 
 #### Creating self-signed certificates
 
@@ -253,7 +254,7 @@ mosquitto_pub --cafile cumulocity.com.pem -d -q 1 \
 Explanation:
 - `--cafile cumulocity.com.pem`: This file contains the CA certificate of {{< product-c8y-iot >}}’s MQTT Service broker, used to validate the server's identity.
 - `--key client-key.pem` and `--cert client-chain.pem`: These are your client certificate and private key, signed by your trusted CA.
-- `-u t11101`: The username must be your tenant ID. In this example, `t11101` is the tenant ID.
+- `-u t11101`: (Optional) Specifies the MQTT username, which must be your tenant ID if provided. In this example, `t11101` is the tenant ID.
 
 Downloading the CA certificate (`cumulocity.com.pem`):
 
