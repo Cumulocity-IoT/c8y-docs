@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63966
 version: 1022.11.1
 ---
-This change fixes an issue with devices not being assigned to the group selected by user during device registration while using EST (Enrollment over Secure Transport) protocol (by unifying the way how device registrations with and without EST protocol are handled internally).
+Device registrations using the EST (Enrollment over Secure Transport) protocol were handled differently from non-EST registrations internally. This change unifies the way device registrations with and without the EST protocol are processed. It fixes an issue where devices were not assigned to the group selected by the user during registration when using the EST protocol.
