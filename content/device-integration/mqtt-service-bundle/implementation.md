@@ -144,7 +144,8 @@ The MQTT Service supports the following authentication methods:
     The MQTT username must include the tenant ID and username in the format `<tenantID>/<username>`.
 *   **Device certificates**
     For secure communication, devices must contain the entire chain of certificates leading to the trusted root certificate, or if only the device certificate is provided, then the immediate issuer certificate must be uploaded to the platform’s truststore. You can do it via [the managing trusted certificates in the UI](/device-certificate-authentication/managing-trusted-certificates/) or via [REST](https://{{< domain-c8y >}}/api/core/#tag/Trusted-certificates). Also, the devices must contain the server certificate in their truststore. 
-    Optionally, the device can also provide the tenant ID in the MQTT username in the format `<tenantID>`.
+    <br/>
+    Optionally, the device can also provide the tenant ID in the MQTT username.
     
 #### ClientId {#client-id}
 
@@ -207,13 +208,14 @@ Moreover, {{< enterprise-tenant >}}s are not able to customize those certificate
 #### Device (client) certificates {#device-certificates}
 
 Using device certificates with the MQTT Service shares the same requirements as outlined in [Device certificates](/device-certificate-authentication/device-certificates#general-requirements-for-connecting-devices-with-certificates).
-Additionally, auto-registration must be enabled when uploading the CA certificate to the platform. 
+<br/>
 When connecting devices to the MQTT Service using certificates, the tenant ID can optionally be included in the username field of the MQTT CONNECT packet. This helps the platform unambiguously identify the tenant associated with the device.
 
 #### Adding and trusting CA certificate
 
 TLS trust anchors in the {{< product-c8y-iot >}} platform are defined per tenant.
 To use device certificates for authentication, the CA or intermediate certificate that signs the device certificates must be uploaded to the platform and added to the tenant’s list of trusted certificates. You can do it via [the managing trusted certificates in the UI](/device-certificate-authentication/managing-trusted-certificates/) or via [REST](https://{{< domain-c8y >}}/api/core/#tag/Trusted-certificates).
+<br/>
 Additionally, ensure that the **Auto registration** option is enabled when adding certificates. This allows any device presenting a valid certificate to be automatically registered on the platform when it first connects.
 
 #### Creating self-signed certificates
