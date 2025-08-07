@@ -93,16 +93,16 @@ The following response is returned:
     Content-Length: ...
     {
         ......
-        "subject":"CN={tenantId}, O=Cumulocity, C=United States",
+        "subject":"CN={tenantId}, O=Cumulocity",
         "tenantCertificateAuthority":true,
-        "autoRegistrationEnabled":false,
+        "autoRegistrationEnabled":true,
         "status":"ENABLED"
         ....
     }
 This certificate is identified as a TENANT CA and it has the attribute `"tenantCertificateAuthority":true`.
 
 {{< c8y-admon-info >}}
-In order to call `/certificate-authority` one of the following roles is required: ROLE_TENANT_MANAGEMENT_ADMIN or ROLE_TENANT_MANAGEMENT_READ, otherwise an HTTP response 403 will be returned. The service user has automatic access to the endpoint.
+In order to call `/certificate-authority` one of the following roles is required: ROLE_TENANT_MANAGEMENT_ADMIN or ROLE_TENANT_ADMIN, otherwise an HTTP response 403 will be returned.
 {{< /c8y-admon-info >}}
 
 ### Creating a CA certificate via the UI {#creating-a-ca-certificate-via-the-ui}
@@ -126,6 +126,31 @@ The new CA certificate will be added to the trusted certificates list:
 ### Auto-renewal of CA certificates {#auto-renewal-of-ca-certificate}
 
 Tenant Certificate Authority (CA) is automatically renewed on 2 October at 02:00 AM every year. The renewal process ensures that existing device certificates remain valid until their expiration. This auto-renewal mechanism ensures uninterrupted certificate management while maintaining security and compliance.
+If automatic renewal fails, the renewal can also be performed via API, but only if the current Certificate Authority (CA) has less than 18 months remaining before expiration.
+
+This is an example of a REST request:
+
+    POST /certificate-authority/renew
+    Content-Type: application/json
+    Authorization: Basic <<Base64 encoded bootstrap credentials>>
+
+The following response is returned:
+
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+    Content-Length: ...
+    {
+        ......
+        "subject":"CN={tenantId}, O=Cumulocity",
+        "tenantCertificateAuthority":true,
+        "autoRegistrationEnabled":true,
+        "status":"ENABLED"
+        ....
+    }
+
+{{< c8y-admon-info >}}
+In order to call `/certificate-authority/renew` one of the following roles is required: ROLE_TENANT_MANAGEMENT_ADMIN or ROLE_TENANT_ADMIN. Otherwise, an HTTP response 403 is returned.
+{{< /c8y-admon-info >}}
 
 * Each CA certificate has a validity of 1095 days (3 years) and undergoes automatic renewal in the background.
 * All CA metadata, private keys, and public keys remain unchanged, ensuring a seamless renewal process. Only `NotAfter` and `NotBefore` wil be changed.
