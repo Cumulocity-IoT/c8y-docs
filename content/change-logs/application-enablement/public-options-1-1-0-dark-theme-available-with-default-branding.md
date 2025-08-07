@@ -15,7 +15,7 @@ ticket: ""
 version: ""
 ---
 A new version of the default branding will be rolled out to make the dark theme available for users.
-By default the light theme will still continue to be selected, but users receive the option to switch between themes via the right drawer.
+By default, the light theme remains selected, but users can switch between themes via the right drawer.
 
 Tenants having a customized branding will not be affected by this change.
 In case you would like to provide a dark theme as part of your custom branding, the [branding manager](/enterprise-tenant/customization/#branding) provides you the option to do so.
