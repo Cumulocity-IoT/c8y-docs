@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Refactor dashboard to be saved only on edit. [GRAFT][release/cd]
+title: Dashboard is now only saved when edited
 product_area: Device management & connectivity
 change_type:
   - value: change-2c7RdTdXo4
