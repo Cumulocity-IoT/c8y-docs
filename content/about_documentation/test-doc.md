@@ -1,66 +1,30 @@
----
-weight: 100
-title: Test
-layout: bundle
-sector:
-  - terms_conditions
----
+Let’s get started
+You first need to install Node.js to not only have a proper javascript runtime, but also the necessary package manager (npm) to install additional required tools and dependencies. The correct Node.js version depends on the Angular version, you want to develop your application with. In this tutorial, you will use the latest version of the @c8y/websdk, which depends on Angular 19.x.x. Based on this Angular version, you have to install at least Node.js ^18.19.1 (Version compatibility • Angular).
 
+Once you have finished the setup of Node.js you have to use @angular/cli to create a new project. Instead of installing the @angular/cli tools globally, I rather recommend to install these on demand using the npx command. npx is part of npm and allows you to run commands without having the package installed globally first. Furthermore, you can specify which version you want to have installed.
 
-### Turning off the device authentication via certificates {#turning-off-device-authentication-via-certificates}
+Let’s create an empty custom Cumulocity web application which is based on the latest version (1022.8.x at the time of writing). Use the @angular/cli and the npx command to create a new project:
 
-The two-way SSL support is enabled by default since version 10.7.0.
-To disable it, change the following rule in the Chef configuration file to:
+npx @angular/cli@v19-lts new --style=less
+@v19-lts makes sure to use version 19 long term support of Angular. You can choose any name for the application, e.g. my-c8y-application. Do not enable Server-Side Rendering (SSR).
 
-```
-"MQTTClientCert" => {
-    "enabled" => false,
-}
-```
+image
+image
+1197×667 21.8 KB
+Once the Angular project has been generated, you will use the @c8y/websdk to scaffold it to a Cumulocity IoT application. In the command prompt, change directory to the new project and add the @c8y/websdk to the project:
 
-*   `enabled` - enables two-way SSL on the port 8883 and lets devices authorize using a certificate with TCP (it is not available with WebSockets right now).
+cd my-c8y-application
+npx ng add @c8y/websdk
+A wizard will guide you through the process to scaffold a new Cumulocity IoT application. The wizards asks you from which version to scaffold the project from and which template should be used:
 
-### Returning accepted issuers by the platform {#returning-accepted-issuers-by-the-platform}
+image
+image
+822×354 11.8 KB
+Select version latest, in this case 1022.8.x. Use the template application from which the project should be scaffolded from. The different templates are described in later articles. More information on creating new applications can be found in the official documentation.
 
-The platform can return trusted issuers during the SSL handshake to let the device verify, if it contains a trusted certificate in its chain of certificates. More detailed information is available in the [RFC](https://tools.ietf.org/html/rfc5246#section-7.4.4), especially in the `certificate_authorities` paragraph.
-It can be set with the platform's property:
+Once the scaffolding has been finished, you can start the Cumulocity IoT web application:
 
-```
-auth.device-certificates.tls.return-accepted-issuers=true
-```
+npx ng serve -u <<C8Y-URL>>
+Make sure to replace <<C8Y-URL>> with the URL of your Cumulocity IoT instance. The ng serve command will spin up a local web server and deploy the Cumulocity IoT web application. The -u parameter specifies the Cumulocity IoT instance to which all API requests should be proxied to. This means data is actually pulled from the configured Cumulocity IoT instance. The same applies for the authentication. The application can be accessed in the browser via the URL: http://localhost:4200/apps/my-c8y-application/. In case you choose a different application name, you will see your application name instead of my-c8y-application in the URL.
 
-In such a situation the device may choose, based on its implementation, not to send the certificates if they are not signed by any of the trusted issuers.
-However, the platform can hide this information and not return any trusted issuers by setting this property to `false`.
-In this case the device will always try to authenticate itself by sending its chain of trust.
-
-{{< c8y-admon-info >}}
-To support the devices with invalid certificates, which are trying to authenticate themselves by sending a valid username and password, this setting must be set to true to prevent the device from sending an invalid certificate.
-{{< /c8y-admon-info >}}
-
-### Proof of Possession support override {#proof-of-posession-support-override}
-
-The Proof of Possession feature allows the tenant admin to prove ownership of his private key to the platform without having to upload it directly. If it is not possible for the admin to carry out this process himself for organizational reasons, the relevant certificate can still be confirmed by support.
-
-The manual confirmation by the support can be achieved as follows:
-
-```
-curl --location --request POST '{tenant-url}/tenant/tenants/{tenantId}/trusted-certificates-pop/{certificateFingerprint}/confirmed' --header 'Authorization: Basic {base64EncodedAuthString}' --header 'Content-Type: application/json' --header 'Accept: application/json' -i
-```
-
-### Allowing shared trusted certificates across tenants {#allow-shared-trusted-certificate-across-tenants}
-
-The feature flag is disabled by default, which means that each certificate must be unique across tenants. To allow the same trusted certificate to be used across multiple tenants set this property to `true` .
-```
-system.ssl.shared-truststore.enabled=false
-```
-
-Manual confirmation can be achieved as follows:
-
-```
-curl --location --request GET '{tenant-url}/tenant/system/options/ssl/shared-truststore.enable' --header 'Authorization: Basic {base64EncodedAuthString}' --header 'Content-Type: application/json' --header 'Accept: application/json' -i
-```
-{{< c8y-admon-info >}}
-The configuration value is NOT to be used in the {{< product-c8y-iot >}} SaaS environments.
-Trusted certificates are by default checked to ensure they are unique for each tenant as for MQTT and REST they are used to identify the tenant to which the device should connect. However, some customers who use LWM2M require to use the same trust anchor across multiple tenants. In this case we allow duplicate trust anchors across tenants.
-If in doubt, contact the customer Administrator to double-check they do not intend to use MQTT or REST on the instance, as these protocols are not supported for X.509 certificate authentication when this option for duplicate certificates is enabled.
-{{< /c8y-admon-info >}}
+You will be greeted by the login screen.
