@@ -57,11 +57,11 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 | Quota                                                                                                                                                                                   | Type |    Value |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | -------: |
-| [MQTT message size](/device-integration/mqtt/) (Core MQTT)                                                                                                                              | Hard |    16 KB |
-| [Notifications 2.0 message backlog](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker)              | Hard |   25 MiB |
-| [Notifications 2.0 time-to-live](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker)                 | Hard | 36 hours |
-| [Microservice-based data broker message backlog](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker) | Hard |   50 MiB |
-| [Microservice-based data broker time-to-live](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker)    | Hard | 36 hours |
+| [MQTT message size](/device-integration/mqtt/) (Core MQTT)                                                                        | Hard |    16 KB |
+| [Notifications 2.0 message backlog](/api/core/#tag/About-notifications-2.0)                                 | Hard |   25 MiB |
+| [Notifications 2.0 time-to-live](/api/core/#tag/About-notifications-2.0)                                    | Hard | 36 hours |
+| [Microservice-based data broker message backlog](/docs/data-broker/ms-data-broker/#microservice-based-data-broker-service-quotas) | Hard |   50 MiB |
+| [Microservice-based data broker time-to-live](/docs/data-broker/ms-data-broker/#microservice-based-data-broker-service-quotas)    | Hard | 36 hours |
 
 ### MQTT Service
 
