@@ -15,7 +15,7 @@ Once the Angular project has been generated, you will use the @c8y/websdk to sca
 
 cd my-c8y-application
 npx ng add @c8y/websdk
-A wizard will guide you through the process to scaffold a new Cumulocity IoT application. The wizards asks you from which version to scaffold the project from and which template should be used:
+A wizard will guide you through the process to scaffold a new Cumulocity IoT application. The wizard asks you from which version to scaffold the project from and which template should be used:
 
 image
 image
