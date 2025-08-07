@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4568
 version: 1022.11.1
 ---
-Previously, dashboards were saved every time they were loaded, even if no changes were made. To improve performance and reduce unnecessary API calls, dashboards are now only saved when they are actually edited by the user. This change should be transparent to users and not impact the functionality of dashboards.
+Dashboards now load in memory on the Info tab and are only persisted to the backend once the user makes changes. This reduces unnecessary API calls and improves performance. No action is required—existing dashboard integration will continue to work as before.
