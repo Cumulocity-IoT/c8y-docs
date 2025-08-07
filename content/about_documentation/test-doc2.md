@@ -25,7 +25,7 @@ After an automated refresh, you should see a new Monitoring Navigation point to 
 image
 image
 1901×839 74.8 KB
-2. Select the Right MQTT Device
+2. Select the right MQTT device
 Now we are ready to connect a device via MQTT. There are plenty of MQTT devices out there.
 
 Physical Device
