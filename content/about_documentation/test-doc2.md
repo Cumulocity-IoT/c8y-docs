@@ -25,7 +25,7 @@ After an automated refresh, you should see a new Monitoring Navigation point to 
 image
 image
 1901×839 74.8 KB
-2. Select the Right MQTT Device
+2. Select the right MQTT device
 Now we are ready to connect a device via MQTT. There are plenty of MQTT devices out there.
 
 Physical Device
@@ -289,7 +289,7 @@ You can import the full flow config by using this JSON:
 ]
 Make sure to change the broker configuration to your tenant.
 
-4. Confirm Device Is Connected Successfully
+4. Confirm the device is connected successfully
 Now that we have at least one device / simulator connected, we can confirm that the device is sending data by either just subscribing to the same topic or checking the management UI.
 
 image
