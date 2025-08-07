@@ -1,5 +1,5 @@
-Step-by-Step Guide
-1. Make Sure MQTT Service Is Available
+Step-by-step guide
+1. Make sure the MQTT Service is available
 First, we need to check that all prerequisites are fulfilled. The first step would be to check if MQTT Service is already available for your Cumulocity Tenant.
 
 For that, you can go to your tenant Administration → Ecosystem → Microservices
@@ -7,7 +7,7 @@ Filter or look for Mqtt-service and Messaging-management.
 
 Here we go, MQTT-Service & Messaging-management are installed.
 
-2. Install Management UI
+2. Install management UI
 Now we should make sure to install the new Management UI for MQTT Service and Notification 2.0.
 
 You can find it on the user menu when clicking on your user profile in the top right. Select Manage beta features in the section Beta features.
@@ -16,10 +16,10 @@ Toggle the Messaging service-monitoring & management
 
 After an automated refresh, you should see a new Monitoring Navigation point to enter the management UI.
 
-2. Select the Right MQTT Device
+3. Select the right MQTT device
 Now we are ready to connect a device via MQTT. There are plenty of MQTT devices out there.
 
-Physical Device
+Physical device
 Normally, you would select a physical device. The easiest ones already have an MQTT client embedded, and you just need to configure the broker.
 
 There are plenty of examples of devices like smart cameras, smart gateways, PLCs, and many more.
@@ -41,7 +41,7 @@ Another example could be a small Python script to generate data and publish it t
 Here is an example:
 https://github.com/DamascenoRafael/mqtt-simulator
 
-MQTT Client
+MQTT client
 Also, of course, you can just use any MQTT Client like MQTTx, connect manually to MQTT Service, and publish messages or subscribe on topics.
 
 In this guide, I will demonstrate connecting using an MQTT Client and a Device Simulator.
