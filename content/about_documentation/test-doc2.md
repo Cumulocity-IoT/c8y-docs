@@ -1,4 +1,4 @@
-Step-by-Step Guide
+Step-by-step guide
 1. Make Sure MQTT Service Is Available
 First, we need to check that all prerequisites are fulfilled. The first step would be to check if MQTT Service is already available for your Cumulocity Tenant.
 
