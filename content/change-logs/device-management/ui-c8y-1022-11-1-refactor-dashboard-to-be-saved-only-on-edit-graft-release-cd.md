@@ -14,6 +14,4 @@ build_artifact:
 ticket: DM-4568
 version: 1022.11.1
 ---
-Co-authored-by: Dafina Karamanoleva <92030501+dafkk@users.noreply.github.com>
-Co-authored-by: Bozhidar Dedov <95280800+bozhidardedov@users.noreply.github.com>
-Co-authored-by: Alekhya Kelallatur <alekhya.margam@cumulocity.com>
+Previously, dashboards were saved every time they were loaded, even if no changes were made. To improve performance and reduce unnecessary API calls, dashboards are now only saved when they are actually edited by the user. This change should be transparent to users and not impact the functionality of dashboards.
