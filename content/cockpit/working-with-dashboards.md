@@ -60,7 +60,7 @@ To create your individualized dashboard, execute the following steps:
 4. In the **Availability** section, specify which users have access to the dashboard based on global roles. By default, all available global roles are selected, which means that a user with at least one such role has access to the dashboard.
 
    {{< c8y-admon-info >}}
-- Dashboard are always visible to its owner and to users with ADMIN permission for the permission type "Inventory".
+- Dashboards are always visible to their owner and to users with ADMIN permission for the permission types "Inventory" or "Managed object".
 - This functionality is entirely based on client-side solutions. If users have an accurate link to the dashboard, they will still be able to access it.
     {{< /c8y-admon-info >}}
 
