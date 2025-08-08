@@ -15,6 +15,12 @@ issue: MTM-64099
 version: 0.9.6
 ---
 
+{{< c8y-admon-caution >}}
+This change only affects the new {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) capability.
+
+The existing {{< product-c8y-iot >}} [Core MQTT](/device-integration/mqtt/) capability is **not** affected.
+{{< /c8y-admon-caution >}}
+
 ### Introduction
 
 As [previously announced](/change-logs/#mqtt-service-0.9.x-device-isolation), when the {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) transitions from Public Preview to General Availability (GA), the MQTT Service will enforce **device** isolation.
