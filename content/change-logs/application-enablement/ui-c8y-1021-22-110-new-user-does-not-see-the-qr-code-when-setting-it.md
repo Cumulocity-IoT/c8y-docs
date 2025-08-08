@@ -1,6 +1,6 @@
 ---
 date: ""
-title: New user does not see the QR code when setting it up with TOTP 2FA [GRAFT][release/y2025] (#9717)
+title: TOTP QR code is properly displayed during setup
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
