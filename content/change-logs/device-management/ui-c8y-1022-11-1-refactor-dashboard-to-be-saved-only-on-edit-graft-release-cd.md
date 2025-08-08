@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Dashboard is now only saved when edited
+title: Dashboards are now only saved when edited
 product_area: Device management & connectivity
 change_type:
   - value: change-2c7RdTdXo4
