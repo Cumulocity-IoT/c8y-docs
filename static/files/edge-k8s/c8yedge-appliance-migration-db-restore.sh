@@ -75,6 +75,16 @@ mongoexport \
   --db edge --collection users \
   --out $MOUNT_PATH/edge-users-export.json && \
 
+echo ">> Exporting users collection from management DB." && 
+mongoexport \
+  --host $MONGO_SERVICE:27017 \
+  --authenticationDatabase admin \
+  --username "$ADMIN_USER" \
+  --password "$ADMIN_PASSWORD" \
+  --ssl --tlsInsecure \
+  --db management --collection users \
+  --out $MOUNT_PATH/management-users-export.json && \
+
 echo ">> Restoring edge DB from backup." && \
 mongorestore \
   --host $MONGO_SERVICE:27017 \
@@ -84,6 +94,16 @@ mongorestore \
   --ssl --tlsInsecure \
   --db edge --drop \
   $MOUNT_PATH/edge/ && \
+
+echo ">> Restoring management DB from backup." && \
+mongorestore \
+  --host $MONGO_SERVICE:27017 \
+  --authenticationDatabase admin \
+  --username "$ADMIN_USER" \
+  --password "$ADMIN_PASSWORD" \
+  --ssl --tlsInsecure \
+  --db management --drop \
+  $MOUNT_PATH/management/ && \
 
 echo ">> Re-importing users collection into edge DB." && \
 mongoimport \
@@ -96,7 +116,18 @@ mongoimport \
   --mode=upsert \
   --file $MOUNT_PATH/edge-users-export.json && \
 
-echo ">> Edge DB restore finished."
+echo ">> Re-importing users collection into management DB." && \
+mongoimport \
+  --host $MONGO_SERVICE:27017 \
+  --authenticationDatabase admin \
+  --username "$ADMIN_USER" \
+  --password "$ADMIN_PASSWORD" \
+  --ssl --tlsInsecure \
+  --db management --collection users \
+  --mode=upsert \
+  --file $MOUNT_PATH/management-users-export.json && \
+
+echo ">> Management DB restore finished."
 EOF
 )
 

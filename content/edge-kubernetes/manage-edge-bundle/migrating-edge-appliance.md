@@ -180,6 +180,11 @@ Perform the following steps as a root user on your Edge appliance.
       --host localhost:27017 \
       --db edge \
       --out=/opt/appliance-edgedb-backup
+   
+   mongodump \
+      --host localhost:27017 \
+      --db management \
+      --out=/opt/appliance-edgedb-backup
    ```
 
 4. Tar the MongoDB data and data lake contents from DataHub if present using the following command to create the */opt/edge-appliance-backup.tar* file:
