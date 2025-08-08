@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Unified approach to non-EST and EST device registrations fixes issue with assigning devices to groups
+title: Devices now properly assigned to groups on EST protocol registrations
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
