@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63297
 version: 1021.22.110
 ---
-Co-authored-by: Jakub Drewniak <103751383+jdre-c8y@users.noreply.github.com>
+New users (or users with the TOTP secret revoked in the user settings) were not able to set up TOTP because the QR code was missing. This issue has been fixed, and the QR code is again visible so that users can set up TOTP.
