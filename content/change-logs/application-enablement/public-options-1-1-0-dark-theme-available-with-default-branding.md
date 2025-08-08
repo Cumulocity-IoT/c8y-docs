@@ -20,4 +20,4 @@ By default, the light theme remains selected, but users can switch between theme
 Tenants having a customized branding will not be affected by this change.
 If you would like to provide a dark theme as part of your custom branding, you can do so via the [branding manager](/enterprise-tenant/customization/#branding).
 
-We highly recommend to upgrade any web apps based on the Web SDK to version 1022.8.0 or higher in order for the best compatibility and experience with the dark theme.
+We highly recommend upgrading any web apps based on the Web SDK to version 1022.8.0 or higher for best compatibility and experience with the dark theme.
