@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4568
 version: 1022.11.1
 ---
-Dashboards now load in memory on the Info tab and are only persisted to the backend once the user makes changes. This reduces unnecessary API calls and improves performance. No action is required—existing dashboard integration will continue to work as before.
+To improve performance and reduce unnecessary API calls, dashboards on the **Info** tab in the device details are now only saved when they are edited by the user. This change does not impact the dashboard functionality. 
