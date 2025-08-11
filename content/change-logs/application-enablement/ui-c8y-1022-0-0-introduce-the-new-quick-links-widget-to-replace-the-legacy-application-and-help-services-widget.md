@@ -4,7 +4,7 @@ title: Quick links widget replaces Applications widget and Help & service widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-inv-3bw8e
-    label: Announcement
+    label: Feature
 component:
   - value: component-YbYJ3gLU_
     label: Web SDK
