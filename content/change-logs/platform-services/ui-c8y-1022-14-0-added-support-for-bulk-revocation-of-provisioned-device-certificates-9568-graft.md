@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added support for bulk revocation of provisioned device certificates (#9568) [GRAFT][release/cd] (#9721)
+title: Bulk revocation of provisioned device certificates
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
