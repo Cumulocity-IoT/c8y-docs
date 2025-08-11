@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62990
 version: 1022.14.0
 ---
-This change makes it possible to revoke provisioned device certificates in bulk by selecting them in the data grid.
+Previously, provisioned device certificates could only be revoked individually. With this change, it is now possible to select multiple provisioned device certificates in the data grid and revoke them in bulk. This simplifies the process of revoking multiple certificates.
