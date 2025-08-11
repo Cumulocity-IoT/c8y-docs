@@ -20,5 +20,5 @@ To facilitate the data integration, {{< product-c8y-iot >}} comes with an [OPC U
 In addition to this, many {{< company-c8y >}} certified [partner devices](https://ecosystem.{{< domain-c8y >}}/device-ecosystem/) bring their own software stack with support for many other protocols.
 
 {{< c8y-admon-info >}}
-The basic life cycle for integrating devices into {{< product-c8y-iot >}} is described in [Interfacing devices](/device-integration/interfacing-devices/).
+The basic lifecycle for integrating devices into {{< product-c8y-iot >}} is described in [Interfacing devices](/device-integration/interfacing-devices/).
 {{< /c8y-admon-info >}}

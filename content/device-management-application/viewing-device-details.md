@@ -28,7 +28,7 @@ Several individual tabs, which you do not find listed here, may be described in 
 
 Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.
 
-Depending of the type and usage of a device, further actions are provided in an action menu when clicking **More...** at the right of the top menu bar.
+Depending of the type and usage of a device, further actions are provided in an context menu when clicking **More...** at the right of the top menu bar.
 
 ![More menu](/images/users-guide/DeviceManagement/devmgmt-devices-more.png)
 
