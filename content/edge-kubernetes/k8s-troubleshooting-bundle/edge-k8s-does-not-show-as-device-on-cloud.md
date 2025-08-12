@@ -23,10 +23,10 @@ Status:
 Events:
  Type      Reason                       Age    From               Message
  ----      ------                       ----   ----               -------
- Normal    Installing                   8m34s  cumulocityiotedge  installing {{< product-c8y-iot >}} Edge version tagged as {{< c8y-edge-version >}}
+ Normal    Installing                   8m34s  cumulocityiotedge  installing {{< product-c8y-iot >}} Edge version tagged as {{< c8y-edge-current-version >}}.0.0
 ……
 ……
- Normal    Ready                        1m00s  cumulocityiotedge  {{< product-c8y-iot >}} Edge installation is complete, and it's now running version {{< c8y-edge-version >}}
+ Normal    Ready                        1m00s  cumulocityiotedge  {{< product-c8y-iot >}} Edge installation is complete, and it's now running version {{< c8y-edge-current-version >}}.0.0
  Warning   FailedToRegisterCloudDevice  0m30s  cumulocityiotedge  Device failed to connect to <cloud tenant domain>, you might not have uploaded the device certificate to Cumulocity
 ```
 Possible reasons:
@@ -35,5 +35,3 @@ For completing the registration process, sign into your cloud tenant and follow 
 For more information see [Connecting Edge to the cloud](/edge-kubernetes/k8-edge-connecting-edge-to-cloud/).
 
 * The specified cloud tenant domain is not reachable or incorrect.
-
-If you must contact [product support](/additional-resources/contacting-support/), include the output of the diagnostics dump. For more information about accessing diagnostic logs, see [Accessing logs](/edge-kubernetes/installing-edge-on-k8/#accessing-logs).
