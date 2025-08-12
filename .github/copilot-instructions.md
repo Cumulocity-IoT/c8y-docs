@@ -362,7 +362,7 @@ The following terms, for example,  are replaced by variables throughout the docu
 | :---- | :---- |
 | **Cumulocity** (company name) | {{\< company-c8y \>}} |
 | **Cumulocity** (product name) | {{\< product-c8y-iot \>}} |
-| **Cumulocity IoT OpenAPI Specification** | {{\< openapi \>}} |
+| **Cumulocity OpenAPI Specification** | {{\< openapi \>}} |
 
 Follow the exact notation of the short code. The complete list of shortcodes can be found in the repository:
 

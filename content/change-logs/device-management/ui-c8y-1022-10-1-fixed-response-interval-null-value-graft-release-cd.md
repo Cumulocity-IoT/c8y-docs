@@ -1,6 +1,6 @@
 ---
-date: ""
-title:  Response interval value set correctly when toggling maintenance mode
+date: '2025-08-07'
+title: Response interval value set correctly when toggling maintenance mode
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
