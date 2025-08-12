@@ -4,7 +4,7 @@ title: Enabling the data point graph preview feature no longer breaks the visual
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
-    label: Feature
+    label: Fix
 component:
   - value: component-YbYJ3gLU_
     label: Web SDK
