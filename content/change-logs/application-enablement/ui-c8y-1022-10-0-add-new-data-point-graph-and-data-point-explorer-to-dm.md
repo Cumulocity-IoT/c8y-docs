@@ -3,7 +3,7 @@ date: ""
 title: Enabling the data point graph preview feature no longer breaks the visualization of data points in the Device Management application
 product_area: Application enablement & solutions
 change_type:
-  - value: change-QHu1GdukP
+  - value: change-VSkj2iV9m
     label: Feature
 component:
   - value: component-YbYJ3gLU_
