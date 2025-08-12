@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Migrate additional Angular components to standalone mode
+title: Migrated additional Angular components to standalone mode
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
