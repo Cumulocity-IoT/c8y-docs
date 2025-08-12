@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64173
 version: 1022.13.1
 ---
-In custom microservice "Status" tab, Smart rules section was always visible, even if Smartrules microserivce was unavailable, causing alerts to be thrown. After fix, Smartrules microservice availability is checked before displaying its section and if microservice is not subscribed, section is not displayed at all.
+In custom microservice details view ("Status" tab), Smart rules section was always visible, even if Smartrules microserivce was unavailable, causing alerts to be displayed. After fix, Smartrules microservice availability is checked before displaying its section and if microservice is not subscribed, section is not displayed at all.
