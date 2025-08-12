@@ -14,5 +14,5 @@ build_artifact:
 ticket: DM-4592
 version: 1.31.20
 ---
-Previously, the Actility agent failed to process device requests when the DevEUI was not included in the request payload.
+Previously, the Actility agent failed to process device requests when the DevEUI (end device identifier) was not included in the request payload.
 This issue has been resolved - the agent now correctly retrieves the DevEUI from the uplink request if it is not explicitly provided, ensuring proper request handling.
