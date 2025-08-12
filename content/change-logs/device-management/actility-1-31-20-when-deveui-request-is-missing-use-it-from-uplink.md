@@ -1,6 +1,6 @@
 ---
 date: 
-title: Use DevEUI from uplink request if not explicitly provided
+title: DevEUI retrieved from uplink request if not explicitly provided
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
