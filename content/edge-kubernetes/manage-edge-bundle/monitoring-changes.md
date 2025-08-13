@@ -12,5 +12,5 @@ This command will exit when the change completes.
 
 Or you can monitor the progress of the changes in more detail:
 ```bash
-kubectl get events --namespace=c8yedge --field-selector involvedObject.name=c8yedge --sort-by=.metadata.creationTimestamp
+kubectl get events --namespace=c8yedge --sort-by=.metadata.creationTimestamp --watch
 ```
