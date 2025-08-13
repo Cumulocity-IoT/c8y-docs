@@ -14,7 +14,7 @@ The mTLS protocol is commonly used to secure [connections](../../data-broker) in
 
 Retrieving device access tokens from the platform with certificates does not require the tenant ID, username and password. Authentication information will be obtained from the certificates.
 The device access token can be retrieved by sending only the device leaf certificate if an immediate issuer of the device certificate is uploaded to the trusted certificates list. If the uploaded trusted certificate is not an immediate issuer of the device certificate but belongs to the device's chain of trust, then the device must send the entire certificate chain in the `X-Ssl-Cert-Chain` to be authenticated successfully and retrieve the device access token.
-Trusted certificates (root/intermediate) can be uploaded to the {{< product-c8y-iot >}} via an endpoint. For details, see [Trusted certificates](/device-certificate-authentication/device-certificates).
+You can define which organization you trust by uploading the CA certificate (root/intermediate) to {{< product-c8y-iot >}}. For details, see [Trusted certificates](/device-certificate-authentication/device-certificates). Alternatively, you can use the Certificate Authority feature. In this case, the root CA certificate is created by {{< product-c8y-iot >}}, along with a device certificate that is signed by this CA. For details, see [Certificate authority](/device-certificate-authentication/certificate-authority).
 The Certificate Authority (root) certificate is created for each tenant. Moreover, a device certificate, which is signed by the CA, is created. For details, see [Certificate authority](/device-certificate-authentication/certificate-authority).
 
 
