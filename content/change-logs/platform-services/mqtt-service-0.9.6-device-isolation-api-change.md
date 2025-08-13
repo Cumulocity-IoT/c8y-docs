@@ -2,8 +2,8 @@
 date: 2025-08-07
 title: MQTT Service device isolation is enabled by default
 change_type:
-  - value: change-pXAlHAWka
-    label: Preview
+  - value: change-3BQrQ6adS
+    label: API change
 product_area: Platform services
 component:
   - value: component-LcWEQW5gs
@@ -23,7 +23,7 @@ The existing {{< product-c8y-iot >}} [Core MQTT](/device-integration/mqtt/) capa
 
 ### Introduction
 
-As [previously announced](/change-logs/#mqtt-service-0.9.x-device-isolation), when the {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) transitions from Public Preview to General Availability (GA), the MQTT Service will enforce **device** isolation.
+As [previously announced](/change-logs/#mqtt-service-0.9.x-device-isolation-announcement), when the {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) transitions from Public Preview to General Availability (GA), the MQTT Service will enforce **device** isolation.
 MQTT devices will be able to subscribe to any topic, but will not automatically receive messages published to that topic by other devices.
 Microservices will be able to explicitly route messages between different devices.
 In effect, each MQTT client identifier will have its own private topic space that is not shared with other clients, but can be accessed by microservices.
