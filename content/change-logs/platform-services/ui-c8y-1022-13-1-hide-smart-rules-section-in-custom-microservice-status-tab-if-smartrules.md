@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Hide Smart rules section in custom microservice Status tab if smartrules microservice is not available
+title: Smart rules section in the Status tab of custom microservices only displayed if Smartrules microservice is available
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
