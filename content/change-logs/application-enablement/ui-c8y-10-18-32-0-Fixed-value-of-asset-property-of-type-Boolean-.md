@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T11:31:24.698Z
-title: "Fixed value of asset property of type Boolean "
+title: "Fixed value of asset property of type boolean"
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-51513
 version: 10.18.32.0
 ---
-The asset property of type Boolean now shows "false" instead of "Undefined" when its value is "false".
+The asset property of type boolean now shows "false" instead of "Undefined" when its value is "false".
