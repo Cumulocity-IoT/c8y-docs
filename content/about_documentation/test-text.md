@@ -9,7 +9,7 @@ Filter or look for Mqtt-service and Messaging-management.
 Here we go, MQTT-Service & Messaging-management are installed.
 
 2. Install management UI
-Now we should make sure to install the new Management UI for MQTT Service and Notification 2.0.
+Next, install the new Management UI for MQTT Service and Notification 2.0.
 
 You can find it on the user menu when clicking on your user profile in the top right. Select Manage beta features in the section Beta features.
 
