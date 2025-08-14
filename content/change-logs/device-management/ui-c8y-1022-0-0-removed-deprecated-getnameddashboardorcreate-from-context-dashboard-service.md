@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4568
 version: 1022.0.0
 ---
-We’ve cleaned up the Dashboard API by removing the old, deprecated `getNamedDashboardOrCreate` method from the `context-dashboard` service. Going forward, use the newer `getDashboard()` call.
+The deprecated `getNamedDashboardOrCreate` method has been removed from the `context-dashboard` service in the Dashboard API. In the future, the `getDashboard()` call must be used instead.
