@@ -14,5 +14,5 @@ If you are making an update through automated scripting, you can also just wait 
 ```bash
 kubectl wait --timeout=1800s --namespace=c8yedge --for='jsonpath={.status.state}=Ready' edge/c8yedge
 ```
-This command will exit when the change completes successfully.
+This command will return with exit code 0 when the change completes successfully, or a non-zero exit code if it does not complete after the timeout.
 
