@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Handle permissions in Trusted certificates page (#9709) [GRAFT][release/cd] (#9744)
+title: Improve permission handling for Trusted certificates page
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
