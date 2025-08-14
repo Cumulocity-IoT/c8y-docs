@@ -15,7 +15,7 @@ You can find it on the user menu when clicking on your user profile in the top r
 
 Toggle the Messaging service-monitoring & management
 
-After an automated refresh, you should see a new Monitoring Navigation point to enter the management UI.
+After an automated refresh, you should see a new **Monitoring** menu entry to enter the management UI.
 
 3. Select the right MQTT device
 Now we are ready to connect a device via MQTT. There are plenty of MQTT devices out there.
