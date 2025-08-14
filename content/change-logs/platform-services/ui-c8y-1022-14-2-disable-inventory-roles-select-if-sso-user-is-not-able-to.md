@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Disabled inventory roles selection if the SSO user cannot change them
+title: Inventory roles selection disabled if roles cannot be changed by SSO user
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
