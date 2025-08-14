@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64247
 version: 1022.16.1
 ---
-This change enhances user experience of permission handling for Trusted certificates page: users with only read permission will see some user interface elements blocked, instead of having them active but not working, users with admin permission will still have full access, users with no permissions won't see the menu item at all.
+To enhance the user experience, the permission handling for the Trusted certificates page has been improved. Users with read-only permission will now see some user interface elements blocked instead of having them active but not working. Users with admin permission will continue to have full access to the page. Users without any permissions to the Trusted certificates page will no longer see the corresponding menu item in the user interface. This change provides a clearer and more consistent experience for users based on their assigned permissions.
