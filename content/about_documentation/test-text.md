@@ -1,4 +1,4 @@
-Step-by-step guide
+Step-by-step guide for MQTT Service device connection
 
 1. Make sure the MQTT Service is available
 First, we need to check that all prerequisites are fulfilled. The first step would be to check if MQTT Service is already available for your Cumulocity Tenant.
