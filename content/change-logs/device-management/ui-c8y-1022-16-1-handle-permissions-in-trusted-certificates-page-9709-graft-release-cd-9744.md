@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improve permission handling for Trusted certificates page
+title: Improved permission handling for Trusted certificates page
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
