@@ -35,7 +35,7 @@ Clean Session / Clean Start must be set to true - otherwise, the device is rejec
 Simulators
 If you don’t have a physical device at hand, you can also use simulators to publish data to MQTT Service.
 
-For example, you can use a nodeRED flow to generate data and publish it to MQTT Service, e.g., check out this simple flow
+For example, you can use a nodeRED flow to generate data and publish it to MQTT Service. Check out this simple flow
 
 Another example could be a small Python script to generate data and publish it to MQTT.
 
