@@ -18,7 +18,7 @@ Toggle the Messaging service-monitoring & management
 After an automated refresh, you should see a new **Monitoring** menu entry to enter the management UI.
 
 3. Select the right MQTT device
-Now we are ready to connect a device via MQTT. There are plenty of MQTT devices out there.
+You are now ready to connect a device via MQTT. There are many MQTT devices available.
 
 Physical device
 Normally, you would select a physical device. The easiest ones already have an MQTT client embedded, and you just need to configure the broker.
