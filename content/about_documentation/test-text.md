@@ -43,6 +43,6 @@ Here is an example:
 https://github.com/DamascenoRafael/mqtt-simulator
 
 MQTT client
-Also, of course, you can just use any MQTT Client like MQTTx, connect manually to MQTT Service, and publish messages or subscribe on topics.
+You can use any MQTT Client like MQTTx, connect manually to MQTT Service, and publish messages or subscribe on topics.
 
 This guide demonstrates connecting using an MQTT client and a device simulator.
