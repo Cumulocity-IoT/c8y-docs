@@ -26,6 +26,48 @@ Generate clear, comprehensive, and consistent software documentation for users a
 - **Avoid**: Modal verbs (can, may, might, should, could) - use direct statements
 - **Position modifiers clearly** to avoid ambiguity
 
+## Punctuation Rules
+
+### Sentence Structure
+- **Keep sentences short and simple** - avoid complex punctuation
+- **End all sentences with periods**, even two-word sentences
+- **Avoid semicolons** - rewrite as multiple sentences or lists instead
+- **Use exclamation points sparingly** - only when truly emphasizing
+- **Use question marks sparingly** - provide answers, don't ask questions
+
+### Serial (Oxford) Commas
+- **Always use** commas before final "and" or "or" in series of 3+ items
+- ✅ "maps, images, graphs, tables, and other representations"
+- ❌ "maps, images, graphs, tables and other representations"
+
+### End Punctuation - Skip When Appropriate
+**No periods on:**
+- Titles and headings
+- Subheadings  
+- UI titles
+- List items with 3 or fewer words
+- Button names
+- Field labels
+
+### List Punctuation
+**Bulleted Lists:**
+- **Colon** at end of introductory phrase
+- **No periods** if all items are short phrases (≤3 words)
+- **Periods after every item** if any item is a complete sentence
+- **Periods after every item** if items complete the introductory phrase
+
+Examples:
+
+Select one of the following options:
+• Default setting
+• Current application  
+• Current user
+
+The system performs the following actions:
+• It validates the input data.
+• It processes the request.
+• It returns the result.
+
 ## Terminology Standards
 
 ### Prohibited Terms
