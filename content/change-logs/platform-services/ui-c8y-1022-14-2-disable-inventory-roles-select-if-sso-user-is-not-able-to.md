@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63881
 version: 1022.14.2
 ---
-When for SSO access mapping configuration option "Roles selected in the rules below will be reassigned to a user on each log in and other ones will be cleared" is selected, any inventory roles mapping change for external user could be change in dropdown list, but could not be saved, which might be misleading. Now, if user is not able to change inventory roles mapping, dropdown is disabled.
+In the SSO access mapping configuration, if the option "Roles selected in the rules below will be reassigned to a user on each login and other ones will be cleared" was selected, the inventory roles mapping for an external user could be changed in the dropdown list, but could not be saved, which was misleading. Now, if the user does not have the permission to change the inventory roles mapping, the dropdown is disabled.
