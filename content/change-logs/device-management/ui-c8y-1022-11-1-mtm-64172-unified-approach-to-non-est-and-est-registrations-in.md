@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-08-14'
 title: Devices now properly assigned to groups on EST protocol registrations
 product_area: Device management & connectivity
 change_type:
