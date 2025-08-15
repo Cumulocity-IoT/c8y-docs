@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Hide Smart rules section in custom microservice Status tab if smartrules microservice is not available
+title: Smart rules section in the Status tab of custom microservices only displayed if Smartrules microservice is available
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64173
 version: 1021.22.112
 ---
-In custom microservice "Status" tab, Smart rules section was always visible, even if Smartrules microserivce was unavailable, causing alerts to be thrown. After fix, Smartrules microservice availability is checked before displaying its section and if microservice is not subscribed, section is not displayed at all.
+In the **Status** tab of custom microservices, the smart rules section was always visible, even if the Smartrules microservice was unavailable, causing alerts to be displayed. This issue has been resolved. The availability of the Smartrules microservice is now checked, and the smart rules section is only displayed if the Smartrules microservice is available. 
