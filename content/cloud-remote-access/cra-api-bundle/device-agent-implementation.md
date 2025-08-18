@@ -100,7 +100,7 @@ Valid protocol values are `SSH`, `TELNET`, `VNC`, and `PASSTHROUGH`.
 }
 ```
 
-#### Using SmartREST
+#### Using SmartREST {#using-smartrest}
 Alternatively, the set of supported CRA protocols can be configured using the SmartREST template 150. It sets the fragment using a message containing a list
 of supported protocol names. See [MQTT Static template 150](/docs/smartrest/mqtt-static-templates/#150) for more information.
 ##### Example
