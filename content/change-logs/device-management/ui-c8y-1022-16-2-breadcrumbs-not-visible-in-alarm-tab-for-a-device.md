@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Breadcrumbs not visible in alarm tab for a device
+title: Fixed missing breadcrumbs in device alarm tab
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,5 +14,4 @@ build_artifact:
 ticket: DM-4898
 version: 1022.16.2
 ---
-Co-authored-by: Bozhidar Dedov <95280800+bozhidardedov@users.noreply.github.com>
-Co-authored-by: Alekhya Kelallatur <alekhya.margam@cumulocity.com>
+In **Device management** , the breadcrumbs navigation was not shown when viewing the **Alarms** tab of a specific device. This issue has been resolved and the breadcrumbs are now correctly displayed in the **Alarms** tab.
