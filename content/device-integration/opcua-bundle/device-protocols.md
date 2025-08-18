@@ -63,7 +63,7 @@ Specify the following parameters (all mandatory):
 - Text
 
 {{< c8y-admon-info >}}
-If the value of the mapped resource is "true" (in case of Boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.
+If the value of the mapped resource is "true" (in case of boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.
 The alarm de-duplication prevents the creation of multiple alarms with same the source and type, thereby only incrementing the count of the existing alarm. The alarms will be CLEARED as soon as the value is changed to "false", or a number that is less than or equals to 0.
 {{< /c8y-admon-info >}}
 
@@ -177,7 +177,7 @@ Custom actions in MQTT Forwarding mode use the same body template mechanism. The
 
 **Send measurement (MQTT Forwarding mode, merging enabled)**
 
-Merging measurements is only supported for cyclic reads but not for subscriptions. Variables coming in the same cyclic read (meaning they use the same data reporting in a device protocol) are sent as a single, multi-value measurement to the `te/<identifier>/m/<measurement-type>` of Thin Edge. The configured type and series for the variable will be used as fragment and series in the measurement. If multiple variables are configured for the same type, they will be consolidated into a single fragment. 
+Merging measurements is only supported for cyclic reads but not for subscriptions. Variables coming in the same cyclic read (meaning they use the same data reporting in a device protocol) are sent as a single, multi-value measurement to the `te/<identifier>/m/<measurement-type>` of Thin Edge. The configured type and series for the variable will be used as fragment and series in the measurement. If multiple variables are configured for the same type, they will be consolidated into a single fragment.
 
 The measurement type of the measurement is `c8y_OpcuaMeasurement` unless `gateway.mappings.mergedMeasurementType` in the configuration has been set to a different type.
 
