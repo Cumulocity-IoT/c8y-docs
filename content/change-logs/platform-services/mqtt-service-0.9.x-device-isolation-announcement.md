@@ -2,8 +2,8 @@
 date: 2025-07-21
 title: MQTT Service will enforce device isolation
 change_type:
-  - value: change-3BQrQ6adS
-    label: API change
+  - value: change-inv-3bw8e
+    label: Announcement
 product_area: Platform services
 component:
   - value: component-LcWEQW5gs
