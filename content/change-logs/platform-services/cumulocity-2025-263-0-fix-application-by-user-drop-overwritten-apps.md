@@ -1,6 +1,6 @@
 ---
 date: 
-title: Fix application by user with dropOverwrittenApps
+title: Improved querying applications by user with dropOverwrittenApps
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
