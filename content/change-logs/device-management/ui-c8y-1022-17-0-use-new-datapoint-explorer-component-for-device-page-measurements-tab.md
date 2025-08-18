@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Use new DatapointExplorerComponent for device page Measurements tab
+title: Feature preview of the new Measurements tab based on the Data point explorer
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4839
 version: 1022.17.0
 ---
-Co-authored-by: Bozhidar Dedov <95280800+bozhidardedov@users.noreply.github.com>
+To provide a more powerful and flexible way to explore device measurements, the **Measurements** tab on the device page has been updated to use the new Data point explorer. This change allows users to interactively analyze device data in a more intuitive and efficient manner compared to the previous implementation. The new **Measurements** replaces the old one when the **Data point explorer** feature preview toggle is turned on.
