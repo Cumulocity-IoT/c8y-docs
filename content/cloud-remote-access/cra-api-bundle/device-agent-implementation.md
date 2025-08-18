@@ -81,7 +81,7 @@ and should also terminate both connections associated with the tunnel.
 It is highly recommended to implement a small buffer especially for bootstrapping when one connection is already
 functional while the other is not setup yet.
 
-### Declaring Supported Protocols
+### Declaring supported protocols {#declaring-supported-protocols}
 A device should declare which remote access protocols it supports. This allows the UI to show only compatible options
 when a user configures a remote endpoint. If a device doesn't declare its protocols, the platform will display all
 available types by default.
