@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2269"
 version: "1022.1.0"
 ---
-Previously, the 'Add Group' button appeared in the shell application(Cockpit, DM), on the Sub-assets page for assets that were created in the DTM application, allowing groups to be incorrectly added under them. This has been corrected. Now, the button is only shown for groups created within the Shell app and the special group asset created in the DTM.
+Previously, the "Add Group" button in the shell application (Cockpit, DM) appeared on the Sub-assets page for assets, allowing groups to be added under them incorrectly. It now appears only for groups.
