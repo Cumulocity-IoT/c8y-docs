@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Improved highlighting of expiring trusted certificates and added renewal option
+date: '2025-08-14'
+title: >-
+  Improved highlighting of expiring trusted certificates and added renewal
+  option
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP

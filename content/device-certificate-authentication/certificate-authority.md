@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Certificate authority
+title: Certificate Authority
 layout: bundle
 sector:
   - device_management
@@ -48,7 +48,7 @@ If you get 200 with `active: false` then the feature is disabled for the tenant.
         "key":"certificate-authority"
     }
 
-There are two ways to enable the feature in your tenant. 
+There are two ways to enable the feature in your tenant.
 
 Tenant Administrators who have the role `ROLE_TENANT_MANAGEMENT_ADMIN` can use the following API:
 

@@ -141,7 +141,7 @@ The binary ID in the API response must be provided as input for the asset proper
 During the bulk import, the file size validation is skipped as the file is already uploaded to the tenant.
 {{< /c8y-admon-info>}}
 
-If the type is "Boolean", the input field must be either "true" or "false".
+If the type is "boolean", the input field must be either "true" or "false".
 If the type is "enumeration", then the input field must be in the list of values specified during creation of the asset property.
 If the type is "text" or "number" and custom criteria were provided during asset property creation, then the input value in CSV template must fulfill all the asset property criteria.
 
