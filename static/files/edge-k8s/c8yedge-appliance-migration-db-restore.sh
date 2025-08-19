@@ -4,9 +4,9 @@
 # Imports MongoDB data into Edge 2025
 #
 # This script automates the process of:
-#   1. Exporting the `users` collection from the `edge` database of Edge 2025.
-#   2. Restoring the `edge` database of Edge 2025 from the backup file in the mounted directory.
-#   3. Re-importing the `users` collection into Edge 2025.
+#   1. Exporting the `users` collection from the `edge` and `management` databases of Edge 2025.
+#   2. Restoring the `edge` and `management` databases of Edge 2025 from the backup file in the mounted directory.
+#   3. Re-importing the `users` collection into the `edge` and `management` databases of Edge 2025.
 # 
 # This script uses the TLS certificate and credentials fetched from the mongo secret.
 #
