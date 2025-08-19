@@ -12,7 +12,7 @@ build_artifact:
   - value: tc--fVxjY7du
     label: actility-agent
 ticket: DM-4592
-version: 2.0.XX
+version: 2.0.45
 ---
 Previously, the Actility agent failed to process device requests when the DevEUI was not included in the request payload.
 This issue has been resolved - the agent now correctly retrieves the DevEUI from the uplink request if it is not explicitly provided, ensuring proper request handling.
