@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64423
 version: 1022.20.2
 ---
-The CA and non-CA certificates in the Trusted certificates page have different validity rules, therefore non-CA certificates will start being highlighted with a warning only < 90 days before their expiration.
+Previously, the Trusted certificates page applied the same expiration warning highlighting rules for both CA and non-CA certificates. However, CA and non-CA certificates have different validity periods. With this change, non-CA certificates will now start being highlighted with a warning only when they are less than 90 days away from expiration.
