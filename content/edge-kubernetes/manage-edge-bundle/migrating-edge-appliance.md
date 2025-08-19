@@ -62,7 +62,7 @@ Perform the following steps as a root user on your Edge appliance VM to accompli
    done    
    ```
 
-3. To allow MongoDB to accept both TLS and non-TLS connections, edit */etc/mongod.conf* file and change `requireTLS` to `preferTLS` in the `net.tls.mode` setting, then restart MongoDB with `systemctl restart mongod`.
+3. To allow MongoDB to accept both TLS and non-TLS connections, edit the */etc/mongod.conf* file and change `requireTLS` to `preferTLS` in the `net.tls.mode` setting, then restart MongoDB with `systemctl restart mongod`.
 
 4. Run the following commands to install and run the `timeseries-migration` microservice:
 
