@@ -20,7 +20,7 @@ Before proceeding, back up your Edge appliance VM and make sure there is enough 
 ### 1. Time series conversion of Edge appliance data
 The {{< product-c8y-iot >}} Operational Store provides an enhanced time series support (so-called time series collections) for measurements data. This configuration is enabled in the Edge 2025, hence you have to first migrate the non time series collections in the Edge appliance VM to time series collections. For more details on time series, refer to [enhanced time series support](/standard-tenant/enhanced-time-series-support/).
 
-Perform the following steps as a root user on your Edge appliance VM to accomplish the time series migration.
+Perform the following steps as a `root` user on your Edge appliance VM to accomplish the time series migration.
 
 1. Set `MANAGEMENT_ADMIN_USER` and `MANAGEMENT_ADMIN_PASSWORD` environment variables used in the subsequent commands:
    ```shell
@@ -64,7 +64,7 @@ Perform the following steps as a root user on your Edge appliance VM to accompli
 
 3. To allow MongoDB to accept both TLS and non-TLS connections, edit the */etc/mongod.conf* file and change `requireTLS` to `preferTLS` in the `net.tls.mode` setting, then restart MongoDB with `systemctl restart mongod`.
 
-4. Run the following commands to install and run the `timeseries-migration` microservice:
+4. Install and run the `timeseries-migration` microservice:
 
    ```shell
    docker login registry.c8y.io --username "${EDGE_REGISTRY_USER}" --password "${EDGE_REGISTRY_PASSWORD}"
@@ -89,7 +89,7 @@ Perform the following steps as a root user on your Edge appliance VM to accompli
    docker logs -f timeseries-migration
    ```
 
-6. Run the command below to trigger the time series migration:
+6. Trigger the time series migration:
 
    ```shell
    curl -k -X PUT \
@@ -100,7 +100,7 @@ Perform the following steps as a root user on your Edge appliance VM to accompli
       -d '{ "state": "SCHEDULED", "tenants": [ "edge" ] }'
    ```
 
-7. After the data is processed, verified, and migrated to the new collection, the status of the migration changes to `VERIFIED`. Use the command below to check the status:
+7. After the data is processed, verified, and migrated to the new collection, the status of the migration changes to `VERIFIED`:
 
    ```shell
    curl -k -X GET \
@@ -115,7 +115,7 @@ Perform the following steps as a root user on your Edge appliance VM to accompli
    The time to complete the time series conversion and reach `VERIFIED` status depends on your database size — larger databases require more time to process.
    {{< /c8y-admon-info >}}
 
-8. Approve the migration to confirm the process by running the command below:
+8. Approve the migration to confirm the process:
 
    ```shell
    curl -k -X PUT \
@@ -128,7 +128,7 @@ Perform the following steps as a root user on your Edge appliance VM to accompli
 
     This will change the status of the migration to `APPROVED`.
 
-9. Run the command below to check the migration status and wait until it has changed to `APPROVED`:
+9. Check the migration status and wait until it has changed to `APPROVED`:
 
    ```shell
    curl -k -X GET \
@@ -144,7 +144,7 @@ Perform the following steps as a root user on your Edge appliance VM to accompli
       docker stop timeseries-migration
       ```
 
-11. Execute the command below to remove legacy collection:
+11. Remove legacy collection:
       ```shell
       mongo \
          --host localhost:27017 \
@@ -158,14 +158,14 @@ In your Edge appliance VM, back up the MongoDB data, data lake contents from Dat
 
 Perform the following steps as a root user on your Edge appliance.
 
-1. Run the following commands to unmonitor and stop all services except the `mongod` service:
+1. Unmonitor and stop all services except the `mongod` service:
 
    ```shell
    monit unmonitor all && \
    systemctl stop installation-service opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf
    ```
 
-2. If you have installed {{< product-c8y-iot >}} DataHub in the Edge appliance, run the following commands to stop the `cdh-console`, `cdh-master` and `cdh-executor` services:
+2. If you have installed {{< product-c8y-iot >}} DataHub in the Edge appliance, stop the `cdh-console`, `cdh-master` and `cdh-executor` services:
 
    ```shell
    service cdh-console stop && \
@@ -173,7 +173,7 @@ Perform the following steps as a root user on your Edge appliance.
    service cdh-executor stop
    ```
 
-3. Run the below commands to export the MongoDB data using `mongodump` utility:
+3. Export the MongoDB data using `mongodump` utility:
 
    ```shell
    mongodump \
@@ -189,7 +189,7 @@ Perform the following steps as a root user on your Edge appliance.
       --out=/opt/appliance-edgedb-backup
    ```
 
-4. Tar the MongoDB data and data lake contents from DataHub if present using the following command to create the */opt/edge-appliance-backup.tar* file:
+4. Tar the MongoDB data and data lake contents from DataHub if present, into */opt/edge-appliance-backup.tar* :
 
    ```shell
    tar -zcf /opt/edge-appliance-backup.tar /opt/appliance-edgedb-backup /opt/softwareag
@@ -219,7 +219,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    tar -xf /opt/edge-appliance-backup.tar -C /
    ```
    
-3. Run the following command to restore the MongoDB data. This command deploys a pod named `edge-appliance-migration`:
+3. Restore the MongoDB data. This step deploys a pod named `edge-appliance-migration`:
 
    ```shell
    curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-appliance-migration-db-restore.sh -O && bash ./c8yedge-appliance-migration-db-restore.sh
