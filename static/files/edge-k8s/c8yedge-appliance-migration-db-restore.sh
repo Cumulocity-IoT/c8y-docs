@@ -4,9 +4,9 @@
 # Imports MongoDB data into Edge 2025
 #
 # This script automates the process of:
-#   1. Exporting the `users` collection from the `edge` and `management` databases of Edge 2025.
-#   2. Restoring the `edge` and `management` databases of Edge 2025 from the backup file in the mounted directory.
-#   3. Re-importing the `users` collection into the `edge` and `management` databases of Edge 2025.
+#   1. Exporting the `users` collection from the `management` and `edge` tenant databases of Edge 2025.
+#   2. Restoring the `management` and `edge` tenant databases of Edge 2025 from the backup file in the mounted directory.
+#   3. Re-importing the `users` collection into the `management` and `edge` tenant databases of Edge 2025.
 # 
 # This script uses the TLS certificate and credentials fetched from the mongo secret.
 #
@@ -65,7 +65,7 @@ log "Constructing Mongo shell command."
 MONGO_COMMAND=$(cat <<EOF
 set -eux; 
 echo ">> Cumulocity Edge MongoDB restoration started." &&
-echo ">> Exporting users collection from management DB." && 
+echo ">> Exporting users collection from management tenant DB." && 
 mongoexport \
   --host $MONGO_SERVICE:27017 \
   --authenticationDatabase admin \
@@ -75,7 +75,7 @@ mongoexport \
   --db management --collection users \
   --out $MOUNT_PATH/management-users-export.json && \
 
-echo ">> Exporting users collection from edge DB." && 
+echo ">> Exporting users collection from edge tenant DB." && 
 mongoexport \
   --host $MONGO_SERVICE:27017 \
   --authenticationDatabase admin \
@@ -85,7 +85,7 @@ mongoexport \
   --db edge --collection users \
   --out $MOUNT_PATH/edge-users-export.json && \
 
-echo ">> Restoring management DB from backup." && \
+echo ">> Restoring management tenant DB from backup." && \
 mongorestore \
   --host $MONGO_SERVICE:27017 \
   --authenticationDatabase admin \
@@ -95,17 +95,7 @@ mongorestore \
   --db management --drop \
   $MOUNT_PATH/management/ && \
 
-echo ">> Restoring edge DB from backup." && \
-mongorestore \
-  --host $MONGO_SERVICE:27017 \
-  --authenticationDatabase admin \
-  --username "$ADMIN_USER" \
-  --password "$ADMIN_PASSWORD" \
-  --ssl --tlsInsecure \
-  --db edge --drop \
-  $MOUNT_PATH/edge/ && \
-
-echo ">> Re-importing users collection into management DB." && \
+echo ">> Re-importing users collection into management tenant DB." && \
 mongoimport \
   --host $MONGO_SERVICE:27017 \
   --authenticationDatabase admin \
@@ -116,7 +106,17 @@ mongoimport \
   --mode=upsert \
   --file $MOUNT_PATH/management-users-export.json && \
 
-echo ">> Re-importing users collection into edge DB." && \
+echo ">> Restoring edge tenant DB from backup." && \
+mongorestore \
+  --host $MONGO_SERVICE:27017 \
+  --authenticationDatabase admin \
+  --username "$ADMIN_USER" \
+  --password "$ADMIN_PASSWORD" \
+  --ssl --tlsInsecure \
+  --db edge --drop \
+  $MOUNT_PATH/edge/ && \
+
+echo ">> Re-importing users collection into edge tenant DB." && \
 mongoimport \
   --host $MONGO_SERVICE:27017 \
   --authenticationDatabase admin \

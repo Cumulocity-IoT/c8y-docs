@@ -178,12 +178,14 @@ Perform the following steps as a root user on your Edge appliance.
    ```shell
    mongodump \
       --host localhost:27017 \
-      --db edge \
+      --db management \
       --out=/opt/appliance-edgedb-backup
-   
+   ```
+
+   ```shell
    mongodump \
       --host localhost:27017 \
-      --db management \
+      --db edge \
       --out=/opt/appliance-edgedb-backup
    ```
 
