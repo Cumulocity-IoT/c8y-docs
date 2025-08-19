@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Send reset password link from user details view
+title: Send reset password link from user details
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
