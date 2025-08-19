@@ -89,7 +89,7 @@ Perform the following steps as a root user on your Edge appliance VM to accompli
    docker logs -f timeseries-migration
    ```
 
-6. Run the below command to trigger the time series migration:
+6. Run the command below to trigger the time series migration:
 
    ```shell
    curl -k -X PUT \
@@ -100,7 +100,7 @@ Perform the following steps as a root user on your Edge appliance VM to accompli
       -d '{ "state": "SCHEDULED", "tenants": [ "edge" ] }'
    ```
 
-7. After the data is processed, verified and migrated to the new collection the status of the migration changes to `VERIFIED`. Use the command below to check status:
+7. After the data is processed, verified, and migrated to the new collection, the status of the migration changes to `VERIFIED`. Use the command below to check the status:
 
    ```shell
    curl -k -X GET \
@@ -112,7 +112,7 @@ Perform the following steps as a root user on your Edge appliance VM to accompli
    The response returned should contain the migration status as `VERIFIED` against the Edge tenant.
 
    {{< c8y-admon-info >}}
-   The time to complete time series conversion and reach `VERIFIED` status depends on your database size — larger databases require more time to process.
+   The time to complete the time series conversion and reach `VERIFIED` status depends on your database size — larger databases require more time to process.
    {{< /c8y-admon-info >}}
 
 8. Approve the migration to confirm the process by running the command below:
@@ -128,7 +128,7 @@ Perform the following steps as a root user on your Edge appliance VM to accompli
 
     This will change the status of the migration to `APPROVED`.
 
-9. Run the command below to check the migration status and wait until it is changed to `APPROVED`:
+9. Run the command below to check the migration status and wait until it has changed to `APPROVED`:
 
    ```shell
    curl -k -X GET \
@@ -213,7 +213,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
 
 1. Transfer the backup file */opt/edge-appliance-backup.tar* from the Edge Appliance VM to your Edge 2025.
 
-2. Untar the backup file using the following command:
+2. Untar the backup file:
 
    ```shell
    tar -xf /opt/edge-appliance-backup.tar -C /
@@ -230,14 +230,14 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    kubectl logs -f pod/edge-appliance-migration -n c8yedge
    ```
 
-4. Run the command below to restart Edge:
+4. Restart Edge:
 
    ```shell
    kubectl rollout restart deployment -n c8yedge c8yedge-operator-controller-manager
    ```
    Ensure you are able to [access Edge](/edge-kubernetes/installing-edge-on-k8/#accessing-edge) before continuing with the subsequent steps.
 
-5. Remove the */opt/edge-appliance-backup.tar* and */opt/appliance-edgedb-backup* folders. 
+5. Remove the */opt/edge-appliance-backup.tar* and */opt/appliance-edgedb-backup* folders: 
    ```shell
    rm -rf /opt/appliance-edgedb-backup /opt/edge-appliance-backup.tar
    ```
@@ -248,7 +248,7 @@ After successfully migrating your data to Edge 2025, you'll need to configure it
 #### What's already available?
 The following components from your **Edge tenant** are automatically retained in Edge 2025:
    * Web SDK-based applications and plugins
-   * Dashboards and Widgets
+   * Dashboards and widgets
    * Smart rules
    * Analytics Builder models and Apama Event Processing Language (EPL) apps
    * Branding
@@ -259,7 +259,7 @@ The following components from your **Edge tenant** are automatically retained in
 * From your **{{< management-tenant >}}**
    * Custom microservices
    * Web SDK-based applications and plugins
-   * Dashboards and Widgets
+   * Dashboards and widgets
    * Smart rules
    * Analytics Builder models and Apama Event Processing Language (EPL) apps
    * Branding
