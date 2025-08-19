@@ -2,7 +2,7 @@
 weight: 90
 title: Device profile
 layout: bundle
-sector: 
+sector:
   - device_management
 ---
 
@@ -184,7 +184,7 @@ PUT /inventory/managedObjects/<deviceId>
 |----|----|----|----|
 |profileName|string|Yes|Name of the device profile|
 |profileId|string|Yes|The ID reference of the device profile object|
-|profileExecuted|Boolean|Yes|Indicator showing if the profile has been applied fully. Must be false in this context|
+|profileExecuted|boolean|Yes|Indicator showing if the profile has been applied fully. Must be false in this context|
 
 After completing each of the three subsections the device must announce its current state in its own managed object the same way as described in the individual operations using the fragments ```c8y_Firmware```, ```c8y_SoftwareList```, and ```c8y_Configuration_<type>``` respectively. Then the device should update its installed profile state in its managed object by updating the *profileExecuted* property to true.
 
@@ -205,7 +205,7 @@ PUT /inventory/managedObjects/<deviceId>
 |----|----|----|----|
 |profileName|string|Yes|Name of the device profile|
 |profileId|string|Yes|The ID reference of the device profile object|
-|profileExecuted|Boolean|Yes|Indicator showing if the profile has been applied fully; must be true in this context|
+|profileExecuted|boolean|Yes|Indicator showing if the profile has been applied fully; must be true in this context|
 
 The device is expected to perform the following actions:
 
