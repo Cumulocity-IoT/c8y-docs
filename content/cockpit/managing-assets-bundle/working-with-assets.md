@@ -51,7 +51,7 @@ Note that global inventory permissions override inventory role permissions.
 Devices show the following tabs:
 
 - **Smart rules** - Shows smart rules specified for the device, see also [Smart rules](/cockpit/smart-rules/).
-- **Analytics rules** - Shows Analytics rules specified for the device, see also [Analytics rules plugin](/streaming-analytics/analytics-rules-plugin#what-is-analytics-rules-plugin).
+- **Analytics rules** - Shows analytics rules specified for the device, see also [Analytics rules plugin](/streaming-analytics/analytics-rules-plugin#what-is-analytics-rules-plugin).
 - **Alarms** - Displays alarms for the device, see also [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms).
 - **Data explorer** - Shows all data points of the children. For details refer to [Changing visualization](/cockpit/data-explorer/#changing-visualization).
 - **Location** - Shows the current location of a device (only available with `c8y_Position`).
