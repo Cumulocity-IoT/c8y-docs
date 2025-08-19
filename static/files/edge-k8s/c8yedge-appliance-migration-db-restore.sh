@@ -64,17 +64,7 @@ kubectl delete pod "$POD_NAME" -n "$NAMESPACE" --ignore-not-found
 log "Constructing Mongo shell command."
 MONGO_COMMAND=$(cat <<EOF
 set -eux; 
-echo ">> Edge DB restore started." &&
-echo ">> Exporting users collection from edge DB." && 
-mongoexport \
-  --host $MONGO_SERVICE:27017 \
-  --authenticationDatabase admin \
-  --username "$ADMIN_USER" \
-  --password "$ADMIN_PASSWORD" \
-  --ssl --tlsInsecure \
-  --db edge --collection users \
-  --out $MOUNT_PATH/edge-users-export.json && \
-
+echo ">> Cumulocity Edge MongoDB restoration started." &&
 echo ">> Exporting users collection from management DB." && 
 mongoexport \
   --host $MONGO_SERVICE:27017 \
@@ -85,15 +75,15 @@ mongoexport \
   --db management --collection users \
   --out $MOUNT_PATH/management-users-export.json && \
 
-echo ">> Restoring edge DB from backup." && \
-mongorestore \
+echo ">> Exporting users collection from edge DB." && 
+mongoexport \
   --host $MONGO_SERVICE:27017 \
   --authenticationDatabase admin \
   --username "$ADMIN_USER" \
   --password "$ADMIN_PASSWORD" \
   --ssl --tlsInsecure \
-  --db edge --drop \
-  $MOUNT_PATH/edge/ && \
+  --db edge --collection users \
+  --out $MOUNT_PATH/edge-users-export.json && \
 
 echo ">> Restoring management DB from backup." && \
 mongorestore \
@@ -105,16 +95,15 @@ mongorestore \
   --db management --drop \
   $MOUNT_PATH/management/ && \
 
-echo ">> Re-importing users collection into edge DB." && \
-mongoimport \
+echo ">> Restoring edge DB from backup." && \
+mongorestore \
   --host $MONGO_SERVICE:27017 \
   --authenticationDatabase admin \
   --username "$ADMIN_USER" \
   --password "$ADMIN_PASSWORD" \
   --ssl --tlsInsecure \
-  --db edge --collection users \
-  --mode=upsert \
-  --file $MOUNT_PATH/edge-users-export.json && \
+  --db edge --drop \
+  $MOUNT_PATH/edge/ && \
 
 echo ">> Re-importing users collection into management DB." && \
 mongoimport \
@@ -127,7 +116,18 @@ mongoimport \
   --mode=upsert \
   --file $MOUNT_PATH/management-users-export.json && \
 
-echo ">> Management DB restore finished."
+echo ">> Re-importing users collection into edge DB." && \
+mongoimport \
+  --host $MONGO_SERVICE:27017 \
+  --authenticationDatabase admin \
+  --username "$ADMIN_USER" \
+  --password "$ADMIN_PASSWORD" \
+  --ssl --tlsInsecure \
+  --db edge --collection users \
+  --mode=upsert \
+  --file $MOUNT_PATH/edge-users-export.json && \
+
+echo ">> Cumulocity Edge MongoDB restoration completed."
 EOF
 )
 
