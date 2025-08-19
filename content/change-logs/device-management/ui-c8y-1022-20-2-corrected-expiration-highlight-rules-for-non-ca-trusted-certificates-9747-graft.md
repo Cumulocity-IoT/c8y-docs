@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Corrected expiration highlight rules for non-CA trusted certificates (#9747) [GRAFT][release/cd] (#9788)
+title: Adjusted expiration highlight rules for non-CA trusted certificates
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
