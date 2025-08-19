@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63951
 version: 1022.19.0
 ---
-This new feature allows User Admin to sent reset password links from existing user details view.
+To simplify the user management process, it is now possible for the Admin user of a tenant to send a reset password link from the existing user details view.
