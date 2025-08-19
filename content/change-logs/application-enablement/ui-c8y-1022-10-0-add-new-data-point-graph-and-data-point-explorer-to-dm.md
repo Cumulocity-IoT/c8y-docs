@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Enabling the data point graph preview feature no longer breaks the visualization of data points
+date: '2025-08-14'
+title: >-
+  Enabling the data point graph preview feature no longer breaks the
+  visualization of data points
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
