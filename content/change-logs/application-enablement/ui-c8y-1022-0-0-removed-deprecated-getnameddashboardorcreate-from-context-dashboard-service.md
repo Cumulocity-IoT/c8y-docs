@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-08-14'
 title: Removed deprecated getNamedDashboardOrCreate from context-dashboard service
 product_area: Device management & connectivity
 change_type:
