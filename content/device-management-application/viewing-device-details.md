@@ -46,7 +46,7 @@ The **Analytics rules** tab allows to create and manage the Analytics Builder mo
 
 To create your first rule, refer to [Create your first rule](/streaming-analytics/analytics-rules-plugin/#creating-your-first-analytics-rule).
 
-For more details about the Analytics rules, refer to [Analytics rules plugin](/streaming-analytics/analytics-rules-plugin/#getting-started).
+For more details about analytics rules, refer to [Analytics rules plugin](/streaming-analytics/analytics-rules-plugin/#getting-started).
 
 {{< c8y-admon-preview >}}
 This feature is in Public Preview and may be subject to change in the future.

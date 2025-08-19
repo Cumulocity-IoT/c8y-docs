@@ -32,7 +32,7 @@ Groups show the following tabs:
 
 - **Subassets** - Shows group details and all subassets of a group, see also [Viewing all devices](/device-management-application/viewing-all-devices/).
 - **Smart rules** - Shows smart rules specified for the group, see also [Smart rules](/cockpit/smart-rules/).
-- **Analytics rules** - Shows Analytics rules specified for the group, see also [Analytics rules plugin](/streaming-analytics/analytics-rules-plugin#what-is-analytics-rules-plugin).
+- **Analytics rules** - Shows analytics rules specified for the group, see also [Analytics rules plugin](/streaming-analytics/analytics-rules-plugin#what-is-analytics-rules-plugin).
 - **Data explorer** - Shows all data points of the children. For details refer to [Changing visualization](/cockpit/data-explorer/#changing-visualization).
 
 {{< c8y-admon-req >}}
@@ -77,7 +77,7 @@ The **Analytics rules** tab allows to create and manage the Analytics Builder mo
 
 To create your first rule, refer to [Create your first rule](/streaming-analytics/analytics-rules-plugin/#creating-your-first-analytics-rule).
 
-For more details about the Analytics rules, refer to [Analytics rules plugin](/streaming-analytics/analytics-rules-plugin/#getting-started).
+For more details about analytics rules, refer to [Analytics rules plugin](/streaming-analytics/analytics-rules-plugin/#getting-started).
 
 {{< c8y-admon-preview >}}
 This feature is in Public Preview and may be subject to change in the future.
