@@ -20,7 +20,7 @@ Before proceeding, back up your Edge appliance VM and make sure there is enough 
 ### 1. Time series conversion of Edge appliance data
 The {{< product-c8y-iot >}} Operational Store provides an enhanced time series support (so-called time series collections) for measurements data. This configuration is enabled in the Edge 2025, hence you have to first migrate the non time series collections in the Edge appliance VM to time series collections. For more details on time series, refer to [enhanced time series support](/standard-tenant/enhanced-time-series-support/).
 
-Perform the following steps as a `root` user on your Edge appliance VM to accomplish the time series migration.
+Perform the following steps as a root user on your Edge appliance VM to accomplish the time series migration.
 
 1. Set `MANAGEMENT_ADMIN_USER` and `MANAGEMENT_ADMIN_PASSWORD` environment variables used in the subsequent commands:
    ```shell
