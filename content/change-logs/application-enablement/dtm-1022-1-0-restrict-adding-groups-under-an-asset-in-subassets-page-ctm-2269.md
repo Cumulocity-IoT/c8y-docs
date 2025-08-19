@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2269"
 version: "1022.1.0"
 ---
-On the **Subassets** page, the **Add Group** button also appeared for assets, allowing groups to be added incorrectly. This issue has been resolved. The **Add Group** button now appears only for groups.
+On the **Subassets** page in the Cockpit application, the **Add Group** button was visible in the details of an asset, allowing groups to be added under assets incorrectly. This issue has been resolved. Groups can no longer be added as a child of an asset.
