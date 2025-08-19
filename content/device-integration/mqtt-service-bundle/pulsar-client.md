@@ -16,7 +16,7 @@ The Messaging Service is a modified deployment of Apache Pulsar, and your applic
 
 * Connecting to Pulsar requires a URL and valid credentials
 * For microservices, use the URL given to the microservice in the `C8Y_PULSAR_URL` environment variable
-* For external applications, use `pulsar://<domain>:6651` (this endpoint uses TLS, client certificates not currently supported)
+* For external applications, use `pulsar+ssl://<domain>:6651` (this endpoint uses TLS, client certificates not currently supported)
 * To authenticate a connection to Pulsar, currently only basic authentication is supported
 * Microservices should use the credentials of the per-tenant service use (link to MS SDK docs)
 * External applications can use the credentials of any tenant user with the appropriate roles
