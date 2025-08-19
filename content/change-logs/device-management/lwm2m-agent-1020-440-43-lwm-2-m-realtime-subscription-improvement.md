@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-07-17
 title: LWM2M real-time subscription improvement
 product_area: Device management & connectivity
 change_type:

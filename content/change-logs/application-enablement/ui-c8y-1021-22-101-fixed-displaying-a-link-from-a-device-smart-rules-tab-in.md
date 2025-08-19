@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-07-17
 title: Readded link from the Cockpit application to the corresponding device details in the Device Management application
 product_area: Application enablement & solutions
 change_type:
