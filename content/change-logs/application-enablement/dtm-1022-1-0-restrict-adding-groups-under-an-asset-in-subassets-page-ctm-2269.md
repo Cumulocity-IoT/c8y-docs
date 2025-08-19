@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Restrict adding groups under an asset in Subassets page [CTM-2269]"
+title: "Groups can no longer be added under assets in the Subassets page"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
