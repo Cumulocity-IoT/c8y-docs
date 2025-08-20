@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Adjusted expiration highlight rules for non-CA trusted certificates
+title: Adjusted expiration warning highlighting for non-CA trusted certificates
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
