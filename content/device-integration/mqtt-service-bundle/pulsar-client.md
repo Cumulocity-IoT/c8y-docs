@@ -4,33 +4,125 @@ layout: redirect
 title: Connecting microservices and applications
 ---
 
-Microservices and external applications can connect to the {{< product-c8y-iot >}} Messaging Service to receive messages from devices connected to the MQTT Service, and send messages to those devices.
-The Messaging Service is a modified deployment of Apache Pulsar, and your applications will use the Pulsar client protocol directly to connect to it.
+{{< product-c8y-iot >}} microservices and external applications can consume messages published by devices connected to the MQTT Service, and publish messages back to those devices.
+To do this, your microservice or external application will connect to the {{< product-c8y-iot >}} Messaging Service, a modified deployment of [Apache Pulsar](https://pulsar.apache.org/), and use the Pulsar protocol to publish and consume MQTT messages.
+The diagram below shows the important interfaces and data flows used when interacting with the MQTT Service through Pulsar.
+
+**(DIAGRAM GOES HERE)**
+
+{{< c8y-admon-info >}}
+We define the term _MQTT Service messaging client_ as a software component that interacts with the MQTT Service through Pulsar.
+It can be deployed either as a microservice hosted by the {{< product-c8y-iot >}} platform, or as part of an external application hosted outside the platform.
+In this documentation, it will be referred to simply as a _client_.
+Where the implementation or behaviour of a client is different depending on where it is hosted, those differences will be clearly documented.
+{{< /c8y-admon-info>}}
 
 ### Connecting to the Messaging Service
 
-* You will use a Pulsar client to connect to the Messaging Service
-* Various client libraries are available for a wide range of programming languages
-* The example code in this document will use the Java client
-<p>
+To connect your client to the Messaging Service, you will need to use a [Pulsar client library](https://pulsar.apache.org/docs/4.0.x/client-libraries/).
+Open-source client libraries are available for a number of different languages and protcols.
+The example code in this documentation will use the [Java client library](https://pulsar.apache.org/docs/4.0.x/client-libraries-java/).
+Pulsar has strong cross-version compatibility, so in general we recommend using the latest version of your chosen client library, regardless of the server version used by the Messaging Service.
+Integration with the MQTT Service will not require using any advanced Pulsar features that may only be available in the latest version of the server.
 
-* Connecting to Pulsar requires a URL and valid credentials
-* For microservices, use the URL given to the microservice in the `C8Y_PULSAR_URL` environment variable
-* For external applications, use `pulsar+ssl://<domain>:6651` (this endpoint uses TLS, client certificates not currently supported)
-* To authenticate a connection to Pulsar, currently only basic authentication is supported
-* Microservices should use the credentials of the per-tenant service use (link to MS SDK docs)
-* External applications can use the credentials of any tenant user with the appropriate roles
-<p>
+{{< c8y-admon-caution >}}
+Please note that currently only "basic" (username/password) authentication is supported for clients connecting to the Messaging Service through Pulsar.
+Therefore, you must ensure that your chosen Pulsar client library supports this authentication scheme.
+{{< /c8y-admon-caution >}}
 
-* Connections will be authorized to access only the Pulsar topics used by the MQTT Service, further controlled by roles
-* To consume messages from MQTT devices, the authenticated user must have `READ` permission on the `MQTT_SERVICE_MESSAGING_TOPICS` role
-* To publish messages to MQTT devices, the authenticated user must have `UPDATE` permission on the `MQTT_SERVICE_MESSAGING_TOPICS` role
-* For microservices, these permissions should be configured in the microservice manifest, and they will be applied to the service user
-* For external applications, these permissions should be configured on the authenticated user through the Administration application
-<p>
+Connecting to Pulsar requires the URL of the Pulsar server, and valid authentication credentials.
 
-* Example microservice manifest
-* Code snippet showing how to connect
+#### Pulsar URL
+
+For a microservice client, the URL should be obtained from the `C8Y_BASEURL_PULSAR` [environment variable](/microservice-sdk/general-aspects/#environment-variables) that will be passed to the microservice when it starts running.
+For an external application client, the URL has the general form `pulsar+ssl://<tenant_domain>:6651/`, where `<tenant_domain>` is the domain of your {{< product-c8y-iot >}} tenant, for example `my-tenant.cumulocity.com`.
+As implied by the `pulsar+ssl` protocol name, all external application client connections will use SSL/TLS security.
+Currently, only one-way TLS is supported; that is, the server will provide a certificate that can be verified by the client, but client certificates cannot be used.
+Implementing an external application client so that it reads the Pulsar URL from the `C8Y_BASEURL_PULSAR` environment variable will make it easier to develop client that can be deployed as either a microservice or an external application.
+
+#### Pulsar authentication
+
+Authentication credentials identify both the {{< product-c8y-iot >}} tenant and the user within that tenant.
+Currently, only "basic" (username and password) authentication is supported for clients connecting to the Messaging Service through Pulsar.
+For a microservice client, you should use the credentials of the per-tenant [service user](/microservice-sdk/general-aspects/#users-and-roles) that will be passed to the microservice when the tenant is subscribed to it.
+For an external application user, you can use the credentials of any tenant user with the appropriate authorization roles assigned, as described below.
+The username must be in the form `<tenant>/<user>` where `<tenant>` is the tenant id, and `<user>` is a user within that tenant.
+
+#### Role-based access control
+
+Pulsar client connections will be granted access to Messaging Service resources based on the roles and permissions assingned to the authenticated user.
+The following roles and permissions should be used for MQTT Service messaging clients:
+
+| Role and permission                   | Access granted                                                   |
+|---------------------------------------|------------------------------------------------------------------|
+| Mqtt service messaging topics, Read   | Consume messages from MQTT devices connected to the MQTT Service |
+| Mqtt service messaging topics, Update | Publish messages to MQTT devices connected to the MQTT Service   |
+
+For microservice clients, the required permissions should be added to the `requiredRoles` section of the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest), which will grant the requested permissions to the per-tenant service user.
+For example:
+
+```json
+{
+    "apiVersion": "v2",
+    "name": "my-mqtt-service-client",
+    "version": "1.0.0",
+    ...
+    "requiredRoles": [
+        "ROLE_MQTT_SERVICE_MESSAGING_TOPICS_READ",
+        "ROLE_MQTT_SERVICE_MESSAGING_TOPICS_UPDATE"
+    ],
+    ...
+}
+```
+
+For external application clients, the required permissions should be configured for the authenticating user through the [Administration application](/standard-tenant/managing-permissions/).
+
+We recommend only assigning the minimum permissions needed for your client to operate.
+For example, if your microservice only needs to consume but not publish messages, you should not include the `ROLE_MQTT_SERVICE_MESSAGING_TOPICS_UPDATE` permission in the manifest.
+
+#### Example code
+
+The code snippet below shows how to use the Pulsar Java client library to connect to the Messaging Service with basic authentication.
+It assumes that the Pulsar URL is in the `C8Y_BASEURL_PULSAR` environment variable and that the tenant, username and password are provided on the command line.
+Note that the client library will not actually attempt to connect to the Pulsar server immediately when the `PulsarClient` object is created.
+In the interests of brevity and clarity, this example does no error handling.
+A realistic implementation would need to handle exceptions thrown by the Pulsar client library methods.
+
+```java
+package c8y.example.mqtt_service;
+
+import java.text.MessageFormat;
+
+import org.apache.pulsar.client.api.PulsarClient;
+import org.apache.pulsar.client.impl.auth.AuthenticationBasic;
+
+public class MQTTServicePulsarClient {
+    public static void main(String[] args) throws Exception {
+        // Check for the required number of command line arguments
+        if (args.length != 3) {
+            System.err.println("Usage: MQTTServicePulsarClient <tenantId> <username> <password>");
+            System.exit(-1);
+        }
+
+        // Collect all the configuration properties
+        final String pulsarUrl = System.getenv("C8Y_BASEURL_PULSAR");
+        final String tenantId = args[0];
+        final String username = args[1];
+        final String password = args[2];
+
+        // Create and configure the basic authentication credentials object.
+        final AuthenticationBasic basicAuth = new AuthenticationBasic();
+        basicAuth.configure(MessageFormat.format("'{'\"userId\":\"{0}/{1}\",\"password\":\"{2}\"'}'", tenantId, username, password));
+
+        // Create a Pulsar client using the basic authentication credentials.
+        // The client will not try to connect and authenticate immediately.
+        final PulsarClient client = PulsarClient.builder()
+            .serviceUrl(pulsarUrl)
+            .authentication(basicAuth)
+            .build();
+    }
+}
+```
 
 ### Message payloads and properties
 
