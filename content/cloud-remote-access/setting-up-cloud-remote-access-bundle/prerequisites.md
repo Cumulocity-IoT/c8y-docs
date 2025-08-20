@@ -5,7 +5,7 @@ layout: bundle
 ---
 
 {{< c8y-admon-req >}}
-To use Cloud Remote Access (CRA), you need
+To use Cloud Remote Access, you need
 
 * a Cloud Remote Access compatible gateway connected to your {{< product-c8y-iot >}} account.
 * "Remote access" permission granted to the tenant user.
