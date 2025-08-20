@@ -81,13 +81,13 @@ and should also terminate both connections associated with the tunnel.
 It is highly recommended to implement a small buffer especially for bootstrapping when one connection is already
 functional while the other is not setup yet.
 
-### Declaring Supported Protocols
+### Declaring supported protocols {#declaring-supported-protocols}
 A device should declare which remote access protocols it supports. This allows the UI to show only compatible options
 when a user configures a remote endpoint. If a device doesn't declare its protocols, the platform will display all
 available types by default.
 You can declare protocols using either the REST API or SmartREST.
 
-#### Using the REST API
+#### Using the REST API {#using the restapi}
 To declare protocols via REST, set the device's managed object with the `c8y_RemoteAccessSupportedProtocols` fragment.
 This fragment holds an array of strings listing the supported protocols.
 
@@ -100,7 +100,7 @@ Valid protocol values are `SSH`, `TELNET`, `VNC`, and `PASSTHROUGH`.
 }
 ```
 
-#### Using SmartREST
+#### Using SmartREST {#using-smartrest}
 Alternatively, the set of supported CRA protocols can be configured using the SmartREST template 150. It sets the fragment using a message containing a list
 of supported protocol names. See [MQTT Static template 150](/docs/smartrest/mqtt-static-templates/#150) for more information.
 ##### Example
