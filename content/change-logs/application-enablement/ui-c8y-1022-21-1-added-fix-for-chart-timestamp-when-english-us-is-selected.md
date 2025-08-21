@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added fix for chart timestamp when English US is selected.
+title: Fixed data point graph and data explorer chart timestamps when English US locale is selected
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-64163
 version: 1022.21.1
 ---
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
-Co-authored-by: Lukasz Janusz <114157358+luja-c8y@users.noreply.github.com>
+In some scenarios, when the English US language was selected in the application, the data point graph and data explorer chart timestamps were incorrectly displayed by showing 24 hour format instead of 12 hour format. This issue has been resolved and the chart timestamps are now correctly shown when using the English US locale. This change ensures a consistent user experience across different locales.
