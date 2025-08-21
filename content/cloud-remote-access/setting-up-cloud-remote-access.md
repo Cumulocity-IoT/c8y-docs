@@ -1,5 +1,5 @@
 ---
-title: Setting up Cloud Remote Access
+title: Setting up Cloud Remote Access (CRA)
 weight: 30
 layout: bundle
 sector:
