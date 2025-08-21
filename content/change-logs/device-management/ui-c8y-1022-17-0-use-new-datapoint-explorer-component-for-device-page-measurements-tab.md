@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4839
 version: 1022.17.0
 ---
-To provide a more powerful and flexible way to explore device measurements, the **Measurements** tab on the device page has been updated to use the new Data point explorer. This change allows users to interactively analyze device data in a more intuitive and efficient manner compared to the previous implementation. The new **Measurements** replaces the old one when the **Data point explorer** feature preview toggle is turned on.
+To provide a more powerful and flexible way to explore device measurements, the **Measurements** tab in the device details has been updated to use the new data explorer. This change allows users to interactively analyze device data more intuitively and efficiently. The new **Measurements** tab replaces the old one if the **Data explorer** feature preview toggle is enabled.
