@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-08-21'
 title: Fixed missing breadcrumbs in the Alarms tab
 product_area: Device management & connectivity
 change_type:
