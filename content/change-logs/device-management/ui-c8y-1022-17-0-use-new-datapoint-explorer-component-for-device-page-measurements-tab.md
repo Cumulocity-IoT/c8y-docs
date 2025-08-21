@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Feature preview of the new Measurements tab based on the Data point explorer
+title: Preview of the new Measurements tab based on the data explorer
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
