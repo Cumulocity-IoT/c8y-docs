@@ -29,3 +29,7 @@ version = "2025.5"
 [[versions]]
 date = "August 4, 2025"
 version = "2025.6"
+
+[[versions]]
+date = "August 21, 2025"
+version = "2025.7"
