@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Details pane added to the device parameters tab
+title: Details on device parameters available on the Parameters tab
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4667
 version: 1022.15.0
 ---
-In **Device management**, users can now view the details of a device parameter in the **Parameters** tab. Next to the parameter description and current value users can view the history of value change operations, as well as the history of value change events.
+In the **Parameters** tab in the device details, details on device parameters are now provided. Next to the parameter description and current value, users can view the history of value change operations, as well as the history of value change events.
