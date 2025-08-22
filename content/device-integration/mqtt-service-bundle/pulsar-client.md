@@ -133,9 +133,9 @@ It is the client's responsiblity to understand the format of the payloads produc
 
 Message properties are name-value pairs, where both the name and the value are text strings.
 The properties recognised by the MQTT Service are listed in the table below.
-Messages received from MQTT devices will _always_ include the properties marked as required, and may include any of the optional properties.
+Messages received from MQTT devices will **always** include the properties marked as required, and may include any of the optional properties.
 Received messages will not include any properties other than those listed here.
-Messages published to MQTT devices _must_ include all of the required properties, and may include any of the optional properties.
+Messages published to MQTT devices **must** include all of the required properties, and may include any of the optional properties.
 If a published message includes any properties other than those listed here, those properties will be ignored by the MQTT Service.
 
 | Property name                   | Required | Value type and encoding                                               | Purpose                                |
@@ -152,15 +152,71 @@ The following sections will demonstrate how to parse and construct messages.
 
 ### Consuming messages from MQTT devices
 
-* All messages from MQTT devices are delivered on a single Pulsar topic, `persistent://<tenant>/mqtt/from-device`
-* The id of the device that published the message, and the topic it was published to, can be obtained from the message properties
-* This means that you must consume every message published by every device, even those you are not interested in (these can be acknowledged without further processing)
-* To consume from the topic, create a Pulsar Consumer and subscribe it to the topic
-* The consumer should register a MessageListener that will be called when a new message arrives on the topic
-* After processing the message, it must be acknowledged (or acknowledge it immediately if no processing is required)
-<p>
+All messages published by devices connected to the MQTT Service for a given tenant will be published to a _single_ Pulsar topic, identified by the URL `persistent://<tenant>/mqtt/from-device`.
+The topic URL can be broken down into 4 components:
 
-* Code snippet showing how to consume
+| Component     | Description                                                                                                                                                                      |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `persistent`  | Indicates that this is a persistent topic that will be preserved by the Messaging Service across component failures and restarts, to provide "at least once" delivery guarantees |
+| `<tenant>`    | The Pulsar tenant id, which will match the {{< product-c8y-iot >}} tenant id                                                                                                     |
+| `mqtt`        | The Pulsar namespace within the tenant, which will always be `mqtt` for the MQTT Service                                                                                         |
+| `from-device` | The Pulsar topic within the namespace, which will always be `from-device` for message from devices connected to the MQTT Service                                                 | 
+
+Your client will only be able to consume from this topic if the authenticated user has the "read" permission on the "Mqtt service messaging topics" role.
+The client will not be able to consume from any other topic.
+
+The client identifier of the device that published the messages, and the MQTT topic it was published on, can be obtained from the message properties `client` and `channel` as described above.
+This means that your client **must** consume every message published by every device connected to the MQTT Service for the tenant, event those you are not interested in.
+Messages that are not of interest to the client can simply be acknowledged without further processing.
+
+To consume messages from the topic, your client should create a Pulsar `Consumer` and subscribe it to the topic.
+The consumer should register a `MessageListener` callback that will be called whenever a new message arrives on the topic.
+
+#### Durable subscriptions and acknowledgement
+
+Subscribing a consumer to a topic establishes a _durable subscription_ to the topic.
+This means that the Messaging Service will retain messages published to the topic until they have been delivered to, and acknowledged by, a client.
+The subscription will remain until it is explicitly deleted; most importantly, it will not be removed simply because the client is not currently running.
+Messages that are published while the client is disconnected will be available for it to consume when it reconnects.
+After consuming each message, the client **must** explicitly acknowledge it.
+Acknowledging a message tells the Messaging Service that the client has no further interest in it, allowing the message to be discarded.
+See the section on [best practices](#reliable-delivery-best-practices) below for more information on managing durable subscriptions correctly.
+
+#### Example code
+
+The code snippet below shows how to use the Pulsar Java client library to consume messages from the MQTT Service `from-device` topic.
+It extends the previous example that set up the connection to the Pulsar server.
+The `MessageListener` implementation shows how to access the payload and properties of the received messages.
+For simplicity and clarity, the example assumes that message payloads are simple text strings.
+
+```java
+        // Create a simple message listener that will log some details of
+        // each message received.
+        final MessageListener<String> listener = new MessageListener<String>() {
+            @Override
+            public void received(Consumer<String> consumer, Message<String> message) {
+                final String clientId = message.getProperty("client");
+                final String topic = message.getProperty("channel");
+                System.out.println(MessageFormat.format("Received message from MQTT device {0} on MQTT topic {1}", clientId, topic));
+                System.out.println(MessageFormat.format("Message payload: {0}", message.getValue()));
+                System.out.println(MessageFormat.format("Message properties: {0}", message.getProperties()));
+                try {
+                    // Acknowledge the message
+                    consumer.acknowledge(message);
+                } catch (PulsarClientException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        // Create a Pulsar consumer on the from-device topic for the tenant.
+        // This will use the listener defined above to process each message.
+        final Consumer<String> consumer = client.newConsumer(Schema.STRING)
+            .topic(MessageFormat.format("persistent://{0}/mqtt/from-device", tenantId))
+            .subscriptionName("demoSubscription")
+            .messageListener(listener)
+            .subscribe();
+```
 
 ### Publishing messages to MQTT devices
 
@@ -173,7 +229,7 @@ The following sections will demonstrate how to parse and construct messages.
 
 * Code snippet showing how to publish
 
-### Best practices to ensure reliable message delivery
+### Best practices to ensure reliable message delivery {#reliable-delivery-best-practices}
 
 * Topics have a "backlog quota" that affects the number of unacknowledged messages that can be outstanding
 * If the backlog quota is reached, it will not be possible to publish any more messages onto the topic, and the publisher will receive an error
