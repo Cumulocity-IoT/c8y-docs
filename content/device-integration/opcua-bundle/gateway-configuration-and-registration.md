@@ -35,7 +35,39 @@ Windows OS is used for the example.
 
 ### Thin Edge {#thin-edge}
 
-The OPC UA gateway can also be registered and operated via [thin-edge.io](https://thin-edge.io/). In contrast to the standalone mode, `thinEdge` configurations must be added to the YAML file:
+The OPC UA gateway can also be conveniently registered and operated via [thin-edge.io](https://thin-edge.io/).
+
+#### Recommended configuration {#thinedge-recommended-config}
+
+The recommended and default mode of integration uses
+the [thin-edge proxy](https://thin-edge.github.io/thin-edge.io/references/cumulocity-proxy/). The local
+proxy of thin-edge.io exposes the {{< product-c8y-iot >}} API. By default, the proxy is available at
+`http://localhost:8001`.
+
+##### Example configuration for thin-edge.io {#example-localproxy-thin-edge-config}
+
+```yaml
+C8Y:
+  baseUrl: http://localhost:8001/c8y/ #Points to the thin-edge.io proxy
+  forceInitialHost: false # Required setting
+gateway:
+  bootstrap:
+    tenantId: <<yourTenantId>>
+  identifier: Gateway_Device
+  name: Gateway_Device
+  db:
+    # The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
+    baseDir: C:/Users/<<userName>>/.opcua/data
+```
+
+For the thin-edge.io integration to work, `C8Y.forceInitialHost` must be set to `false`. 
+
+#### Legacy thin-edge configuration (Deprecated) {#deprecated-thin-edge-config}
+
+Our previous integration with thin-edge.io was based on dedicated `thinEdge`configuration settings, as shown in the sample below. 
+These configuration options are now deprecated and will be removed in future versions.
+
+##### Example legacy config {#example-legacy-config}
 
 ```yaml
 C8Y:
@@ -54,14 +86,11 @@ gateway:
         deviceId: Thin-Edge_Device
 ```
 
-With the configuration `gateway.thinEdge.enabled: true` you switch to the thinEdge mode. This means that the authentication and registration to the platform will be done via Thin Edge. The OPC UA gateway is automatically registered and created as a sub-device under the Thin Edge device. `gateway.thinEdge.mqttServerURL` and `gateway.thinEdge.deviceId` are the connection information for the MQTT client to connect to the local Thin Edge MQTT broker.
-
 {{< c8y-admon-preview-feature >}}
 
 ### MQTT Forwarding mode {#mqtt-forwarding-mode}
 
 The OPC UA gateway supports an MQTT Forwarding mode that can be used together with the Thin Edge mode. In addition to the OPC UA gateway being registered as a child device of the Thin Edge device and the OPC UA gateway using credentials provided by Thin Edge, in MQTT Forwarding mode the OPC UA gateway also uses Thin Edge to send the data it receives from OPC UA servers to {{< product-c8y-iot >}}. When using cyclic reads, the data received in a single cyclic read that is mapped to measurements, events, or custom actions can be batched into a single message.
-
 The MQTT Forwarding mode uses the existing `thinEdge` configuration and introduces a number of additional configuration options to the YAML file:
 
 ```yaml
