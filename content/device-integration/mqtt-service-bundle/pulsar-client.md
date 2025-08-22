@@ -126,11 +126,29 @@ public class MQTTServicePulsarClient {
 
 ### Message payloads and properties
 
-* Pulsar messages consist of a payload (body) and a set of properties (key-value pairs)
-* The message payload is exactly the same as the payload of the MQTT `PUBLISH` message, not modified in any way
-* The message properties may contain any of the following: (table of properties, indicating which are required vs. optional)
-* Messages received from MQTT devices will not contain any properties other than those listed
-* Only the properties listed will be recognised when publishing messages to MQTT devices, all other will be ignored
+Pulsar messages consist of a _payload_ and set of _properties_.
+
+The payload is a sequence of zero or more bytes, identical to the payload of the MQTT `PUBLISH` message that the Pulsar message corresponds to.
+It is the client's responsiblity to understand the format of the payloads produced and accepted by the MQTT devices it communicates with.
+
+Message properties are name-value pairs, where both the name and the value are text strings.
+The properties recognised by the MQTT Service are listed in the table below.
+Messages received from MQTT devices will _always_ include the properties marked as required, and may include any of the optional properties.
+Received messages will not include any properties other than those listed here.
+Messages published to MQTT devices _must_ include all of the required properties, and may include any of the optional properties.
+If a published message includes any properties other than those listed here, those properties will be ignored by the MQTT Service.
+
+| Property name                   | Required | Value type and encoding                                               | Purpose                                |
+|---------------------------------|----------|-----------------------------------------------------------------------|----------------------------------------|
+| `client`                        | YES      | String                                                                | MQTT client identifier                 |
+| `channel`                       | YES      | String                                                                | MQTT topic name                        |
+| `tx.payload-format-indicator`   | NO       | Single byte with two permitted values, encoded as strings "0" and "1" | MQTT v5 Payload Format Indicator       |
+| `tx.content-type`               | NO       | String                                                                | MQTT v5 Content Type                   |
+| `tx.response-topic`             | NO       | String                                                                | MQTT v5 Response Topic                 |
+| `tx.correlation-data`           | NO       | Sequence of bytes, encoded as a Base64 string                         | MQTT v5 Correlator Data                |
+| `tx.user-properties.<name>`     | NO       | String                                                                | MQTT v5 User Property with name `name` |
+
+The following sections will demonstrate how to parse and construct messages.
 
 ### Consuming messages from MQTT devices
 
