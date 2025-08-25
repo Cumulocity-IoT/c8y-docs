@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Edit button for Asset Properties widget not working when specific property is added in the configuration
+title: Fixed non-functional edit button in Asset Properties widget when displaying nested properties
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
