@@ -1,5 +1,5 @@
 ---
-date:
+date: '2025-08-21'
 title: Support for deleting time series measurements by ID
 change_type:
   - value: change-2c7RdTdXo4

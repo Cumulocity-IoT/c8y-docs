@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2025-08-21'
 title: Improved querying applications by user with dropOverwrittenApps
 product_area: Platform services
 change_type:
