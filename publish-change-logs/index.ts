@@ -289,7 +289,7 @@ async function processFiles() {
       const postId = posts[0].id;
       const fileContent = await getRawAndTagsFromFile(matterResult);
       let fileContentRaw = fileContent.raw;
-      if(articleContent.trim() === fileContent.raw.trim()) {
+      if(articleContent.trim().replace(/\s/g, "") === fileContent.raw.trim().replace(/\s/g, "")) {
         //No update needed- ignore
         console.log("No update needed for article with title "+title+" and id: "+id);
       } else {
@@ -302,7 +302,7 @@ async function processFiles() {
             }
           }
 
-          if(fileContentRaw.trim() === articleContent.trim()) {
+          if(fileContentRaw.trim().replace(/\s/g, "") === articleContent.trim().replace(/\s/g, "")) {
             //No update needed- ignore
             console.log("No update needed for article with title "+title+" and id: "+id);
             continue;
