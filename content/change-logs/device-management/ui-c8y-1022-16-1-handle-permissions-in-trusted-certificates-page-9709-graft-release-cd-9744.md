@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-08-21'
 title: Improved permission handling for Trusted certificates page
 product_area: Device management & connectivity
 change_type:
