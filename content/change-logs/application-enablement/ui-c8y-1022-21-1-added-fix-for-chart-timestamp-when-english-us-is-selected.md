@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed data point graph and data explorer chart timestamps when English US locale is selected
+title: Fixed data point graph and data explorer chart timestamps for English US locale
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
