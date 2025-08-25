@@ -49,7 +49,7 @@ proxy of thin-edge.io exposes the {{< product-c8y-iot >}} API. By default, the p
 ```yaml
 C8Y:
   baseUrl: http://localhost:8001/c8y/ #Points to the thin-edge.io proxy
-  forceInitialHost: false # Required setting
+  forceInitialHost: false # Required client specific setting
 gateway:
   bootstrap:
     tenantId: <<yourTenantId>>
@@ -60,8 +60,9 @@ gateway:
     baseDir: C:/Users/<<userName>>/.opcua/data
 ```
 
-For the thin-edge.io integration to work, `C8Y.forceInitialHost` must be set to `false`. 
+For the thin-edge.io integration to work, `C8Y.forceInitialHost` must be set to `false`. This is an internal setting provided by the {{< product-c8y-iot >}} Java SDK. It enables the SDK to make REST calls to host names not matching the base Url.
 
+Targeting the baseURL to the thin-edge local proxy requires the OPC UA Gateway to be [registered.](#registering-gateway-as-device)
 #### Legacy thin-edge configuration (Deprecated) {#deprecated-thin-edge-config}
 
 Our previous integration with thin-edge.io was based on dedicated `thinEdge`configuration settings, as shown in the sample below. 
