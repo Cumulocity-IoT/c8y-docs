@@ -64,7 +64,7 @@ For the thin-edge.io integration to work, `C8Y.forceInitialHost` must be set to 
 
 #### Legacy thin-edge configuration (Deprecated) {#deprecated-thin-edge-config}
 
-Our previous integration with thin-edge.io was based on dedicated `thinEdge`configuration settings, as shown in the sample below. 
+The previous integration with thin-edge.io was based on dedicated `thinEdge` configuration settings, as shown in the sample below. 
 These configuration options are now deprecated and will be removed in future versions.
 
 ##### Example legacy config {#example-legacy-config}
