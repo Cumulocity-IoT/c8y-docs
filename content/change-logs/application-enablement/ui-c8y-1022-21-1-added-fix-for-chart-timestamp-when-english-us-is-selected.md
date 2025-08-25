@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64163
 version: 1022.21.1
 ---
-In some scenarios, when the English US language was selected in the application, the data point graph and data explorer chart timestamps were incorrectly displayed by showing 24 hour format instead of 12 hour format. This issue has been resolved and the chart timestamps are now correctly shown when using the English US locale. This change ensures a consistent user experience across different locales.
+In some scenarios, when the English US language was selected in the platform, the data point graph and data explorer chart timestamps were incorrectly displayed, showing a 24-hour format instead of a 12-hour format. This issue has been resolved. The chart timestamps are now correctly shown when using the English US locale. This change ensures a consistent user experience across different locales.
