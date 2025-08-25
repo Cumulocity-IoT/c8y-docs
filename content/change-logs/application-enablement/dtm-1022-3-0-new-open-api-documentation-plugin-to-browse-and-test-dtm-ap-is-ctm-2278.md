@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "New OpenAPI documentation plugin to browse and test DTM APIs [CTM-2278]"
+title: "New OpenAPI documentation plugin to browse and test Digital Twin Manager APIs"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
