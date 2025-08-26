@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Extended "Provisioned certificates" data grid with new columns and aligned expiration highlight styles (#9745) [GRAFT][release/cd] (#9837)
+title: 'Provisioned certificates data grid extended with "Valid from" column'
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
