@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Long event tooltips no longer overflow.
+title: Long event or alarm texts no longer overflow in the data point graph tooltip.
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64040
 version: 1022.22.1
 ---
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+In the data point graph or data explorer, long event or alarm texts were overflowing from the tooltip and were not fully visible, making it difficult for users to read the complete event information. This issue has now been fixed. The tooltips for long event or alarm texts are properly displayed without any overflow, allowing users to easily view the entire information. This improvement enhances the usability and readability of alarm and event information in the chart view.
