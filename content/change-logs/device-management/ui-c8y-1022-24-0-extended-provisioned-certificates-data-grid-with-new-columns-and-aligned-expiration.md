@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64414
 version: 1022.24.0
 ---
-Extended "Provisioned certificates" data grid with new column: "Valid from" and aligned expiration highlight styles with the ones used in "Trusted certificates" view.
+To provide a better overview of provisioned certificates, the "Provisioned certificates" data grid has been extended. A new "Valid from" column has been added which shows the start date of the certificate's validity. Additionally, the expiration highlight styles in this data grid have been aligned with the ones already used in the "Trusted certificates" view for a more consistent user experience. These changes allow users to see the full validity period of certificates at a glance and quickly identify certificates that are about to expire.
