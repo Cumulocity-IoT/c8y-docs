@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64040
 version: 1022.22.1
 ---
-In the data point graph or data explorer, long event or alarm texts were overflowing from the tooltip and were not fully visible, making it difficult for users to read the complete event information. This issue has now been fixed. The tooltips for long event or alarm texts are properly displayed without any overflow, allowing users to easily view the entire information. This improvement enhances the usability and readability of alarm and event information in the chart view.
+In the data point graph or data explorer, long event or alarm texts were overflowing from the tooltip and were not fully visible, making it difficult for users to read the complete event information. This issue has now been fixed. The tooltips for long event or alarm texts are properly displayed without any overflow. This improvement enhances the usability and readability of alarm and event information in the chart view.
