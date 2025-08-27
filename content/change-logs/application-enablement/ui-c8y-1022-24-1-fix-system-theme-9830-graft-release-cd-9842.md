@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix system theme (#9830) [GRAFT][release/cd] (#9842)
+title: Fixed system theme not being applied correctly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
