@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61692
 version: 1022.21.6
 ---
-Edit button for Asset Properties widget was not working when nested property with dot in the middle meant to be displayed. It is fix now and nested property is displayed and edit button is functional.
+Previously, when adding a nested property containing a dot in its name to the "Asset properties" widget configuration, the edit button became non-functional, preventing users from modifying the asset properties. This issue has been resolved. The "Asset properties" widget correctly displays nested properties, and the edit button remains functional, enabling users to edit asset properties as expected.
