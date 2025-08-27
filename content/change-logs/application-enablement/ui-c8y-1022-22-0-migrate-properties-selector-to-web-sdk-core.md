@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Asset properties selector component for managing and displaying asset properties available in the Web SDK 
+title: Asset properties selector component available in the Web SDK 
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
