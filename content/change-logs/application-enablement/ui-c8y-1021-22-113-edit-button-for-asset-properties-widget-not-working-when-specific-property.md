@@ -1,0 +1,17 @@
+---
+date: ""
+title: Fixed broken edit button in Asset Properties widget when displaying nested properties
+product_area: Application enablement & solutions
+change_type:
+  - value: change-VSkj2iV9m
+    label: Fix
+component:
+  - value: component-YdSEScrEC
+    label: Cockpit
+build_artifact:
+  - value: tc-pjJiURv9Y
+    label: ui-c8y
+ticket: MTM-61692
+version: 1021.22.113
+---
+Previously, when adding a nested property containing a dot in its name to the "Asset properties" widget configuration, the edit button was broken, preventing users from modifying the asset properties. This issue has been resolved. The "Asset properties" widget correctly displays nested properties, and the edit button remains functional, enabling users to edit asset properties as expected.
