@@ -15,4 +15,4 @@ ticket: MTM-64519
 ---
 In future releases, the {{< product-c8y-iot >}} platform will strictly validate unit values in measurement fragments.
 If a measurement fragment contains a unit value that is null or an empty string, the platform will ignore such values and won't persist them.
-This change improves data quality and consistency. Review your integrations and make sure that all measurement fragments use valid, non-empty unit values or omit the unit field entirely.
+This change improves data quality and consistency. Review your integrations and make sure that all measurement fragments use valid, non-empty unit values.
