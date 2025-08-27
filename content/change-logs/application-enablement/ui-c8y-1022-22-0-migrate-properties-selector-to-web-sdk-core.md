@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Migrate properties selector to Web SDK core.
+title: Asset properties selector component available in Web SDK for managing and displaying asset properties
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
