@@ -13,7 +13,7 @@ helpcontent:
     content: "Cumulocity issued certificates can be viewed in device management page in a new tab as X509"
 ---
 
-{{< product-c8y-iot >}} Issued certificates can be viewed on the [device management page](/device-management-application/viewing-device-details/) in a new tab named **x509**.
+{{< product-c8y-iot >}}-issued certificates are visible on the **x509** tab in the [device details](/device-management-application/viewing-device-details/).
 
 {{< c8y-admon-info >}}
 This section describes how to view and revoke provisioned certificates.
