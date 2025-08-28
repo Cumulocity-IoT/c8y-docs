@@ -32,7 +32,7 @@ Open the **x509** tab in the details of a specific device to view currently issu
 Issued certificates have a validity of 1 year, which is currently not configurable.
 {{< /c8y-admon-info >}}
 
-Only certificates that are actually used during a successful handshake with the platform are recorded in the provisioned certificates list.
+Only certificates that are used during a successful handshake with the platform are recorded in the provisioned certificates list.
 
 Although only the last 5 entries are stored (based on the issue date), there is no restriction on the number of certificates that can be issued for a given device.
 
