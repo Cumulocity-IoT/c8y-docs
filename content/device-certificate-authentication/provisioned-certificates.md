@@ -16,7 +16,6 @@ helpcontent:
 {{< product-c8y-iot >}}-issued certificates are visible on the **x509** tab in the [device details](/device-management-application/viewing-device-details/).
 
 This section describes how to view and revoke provisioned certificates.
-{{< /c8y-admon-info >}}
 
 Click the **x509** tab in the left navigation menu to view currently issued certificates, as shown below:
 
