@@ -17,7 +17,7 @@ helpcontent:
 
 This section describes how to view and revoke provisioned certificates.
 
-Click the **x509** tab in the left navigation menu to view currently issued certificates, as shown below:
+Open the **x509** tab in the details of a specific device to view currently issued certificates.
 
 ![List of provisioned certificates](/images/certificate-authority/provisionedCertificates.png) 
 
