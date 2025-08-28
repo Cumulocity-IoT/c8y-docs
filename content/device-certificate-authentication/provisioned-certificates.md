@@ -29,7 +29,7 @@ Open the **x509** tab in the details of a specific device to view currently issu
 
 
 {{< c8y-admon-info >}}
-Issued certificates have a validity of **1 year**, which is currently **not** configurable.
+Issued certificates have a validity of 1 year, which is currently not configurable.
 {{< /c8y-admon-info >}}
 
 Only certificates that are actually used during a successful handshake with the platform are recorded in the provisioned certificates list.
