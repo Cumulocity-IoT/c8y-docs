@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Fixed data point graph and data explorer chart timestamps for English US locale
+date: '2025-08-28'
+title: >-
+  Fixed data point graph and data explorer chart timestamps for English US
+  locale
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
