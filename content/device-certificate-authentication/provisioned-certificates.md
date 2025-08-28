@@ -36,7 +36,6 @@ Only certificates that are actually used during a successful handshake with the 
 
 Although only the last **5** entries are stored (based on issue date), there is **no** restriction on the number of certificates that can be issued for a given device.
 
----
 
 ### To revoke a provisioned certificate {#to-revoke-a-provisioned-certificate}
 
