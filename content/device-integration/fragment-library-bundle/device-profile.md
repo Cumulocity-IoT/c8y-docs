@@ -221,9 +221,9 @@ The device is expected to perform the following actions:
 
 1. Set operation status to EXECUTING
 2. Set the `c8y_Profile` fragment in the device’s own managed object with profileExecuted = false
-3. Install firmware if included and complete installation by updating the `c8y_Firmware` fragment in its own managed object
-4. Install software if included and complete installation by updating the device installed software information, e.g. by [setting software list](/smartrest/mqtt-static-templates/#116) or by [setting advanced software list](/smartrest/mqtt-static-templates/#140)
-5. Install configuration if included and complete installation by updating the `c8y_Configuration_<type>` fragment for each configuration in its own managed object
+3. Install firmware if included and complete the installation by updating the `c8y_Firmware` fragment in its own managed object
+4. Install software if included and complete the installation by updating the device installed software information, for example, by [setting software list](/smartrest/mqtt-static-templates/#116) or by [setting advanced software list](/smartrest/mqtt-static-templates/#140)
+5. Install configuration if included and complete the installation by updating the `c8y_Configuration_<type>` fragment for each configuration in its own managed object
 6. Set the `c8y_Profile` fragment in the device's own managed object with profileExecuted = true
 7. Set the operation status to SUCCESSFUL
 
