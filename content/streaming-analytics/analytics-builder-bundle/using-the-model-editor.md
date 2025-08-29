@@ -60,7 +60,13 @@ You can also add or remove tags. Tags are helpful in the model manager, to show 
 1.  In the model editor, click **Model settings** which is shown at the left of the toolbar.
 2.  In the resulting **Edit model** dialog box, specify a new unique name for the model, change the description, and/or change the tags.
 
-    To add a tag, you simply type its name and press Enter or the Tab key. The tag is then shown in a colored rectangle. To remove a tag, click on the X that is shown in the rectangle. The dialog prevents you from entering duplicate tags for a model; if you enter such a tag name, the duplicate tag is not added and the original tag blinks one time.
+    To add a tag, you can either:
+     - Type its name and press Enter. The tag is then shown in a colored rectangle.
+     - Type its name and submit the dialog without pressing Enter. Any pending text in the **Tags** field will automatically be added as a tag before submission.
+
+    To remove a tag, click on the delete icon (X) that is shown in the rectangle.
+
+    The dialog prevents you from entering duplicate tags for a model. If you enter such a tag name, the duplicate tag is not added, and the original tag blinks once.
 
 3.  Click **OK**.
 
