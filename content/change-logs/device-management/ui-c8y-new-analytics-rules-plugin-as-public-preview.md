@@ -1,5 +1,5 @@
 ---
-date:
+date: '2025-08-28'
 title: Analytics rules plugin now available in Public Preview
 product_area: Device management & connectivity
 change_type:
