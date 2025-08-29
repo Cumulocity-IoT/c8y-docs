@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-08-21
 title: TOTP QR code is properly displayed during setup
 product_area: Application enablement & solutions
 change_type:
