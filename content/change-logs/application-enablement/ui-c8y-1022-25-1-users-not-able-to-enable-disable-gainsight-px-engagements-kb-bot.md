@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64484
 version: 1022.25.1
 ---
-Previously, changes to the "Enable in-product information and communication" setting were temporary and reset after reloading the platform. This issue has been resolved. The setting is now saved permanently and persists after a platform restart.
+Previously, changes to the "Enable in-product information and communication" setting were temporary and reset after reloading the application. This issue has been resolved. The setting is now saved permanently and persists after application restart.
