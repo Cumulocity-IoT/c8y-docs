@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-64484
 version: 1022.25.1
 ---
-Co-authored-by: Lukasz Janusz <114157358+luja-c8y@users.noreply.github.com>
-Co-authored-by: Lukasz Janusz <lukasz.janusz@cumuloicty.com>
+Previously, changes to the "Enable in-product information and communication" setting were temporary and would reset after reloading the application. This issue has been resolved - the setting now saves permanently and persists after application restart.
