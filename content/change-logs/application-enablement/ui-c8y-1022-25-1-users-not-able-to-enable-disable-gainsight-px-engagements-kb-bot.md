@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Users not able to enable/disable Gainsight PX engagements (KB bot) from user settings (#9831) [GRAFT][release/cd] (#9859)
+title: Fixed issue with saving "Enable in-product information and communication" setting
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
