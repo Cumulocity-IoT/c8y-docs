@@ -16,7 +16,7 @@ in the 2024 {{< product-c8y-iot >}} Edge documentation.
 
 Before proceeding, back up your Edge appliance VM and make sure there is enough disk space to store the MongoDB and DataHub (data lake) backups. For instructions on expanding disk size, refer to [Expanding the disk size](/2024/edge/operating-edge/#expanding-the-disk-size).
 
-**Note:** This document does not cover CDH migration. It only takes a backup of the DataHub (datalake) contents.
+**Note:** This document does not cover CDH migration.
 {{< /c8y-admon-important >}}
 
 ### Step 1 - Time series conversion of Edge appliance data
