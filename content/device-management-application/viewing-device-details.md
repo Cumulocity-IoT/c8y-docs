@@ -38,6 +38,20 @@ Details on these additional menu items are provided where required.
 
 The **Alarms** tab provides information on the alarms of a device. See [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for detailed information on alarms.
 
+### Analytics rules {#analytics-rules}
+
+The **Analytics rules** tab allows to create and manage the Analytics Builder model instances directly from the context of a device or group.
+
+![Analytics rules tab](/images/streaming-analytics/analytics-rules-plugin/analytics-rules-list.png)
+
+To create your first rule, refer to [Create your first rule](/streaming-analytics/analytics-rules-plugin/#creating-your-first-analytics-rule).
+
+For more details about analytics rules, refer to [Analytics rules plugin](/streaming-analytics/analytics-rules-plugin/#getting-started).
+
+{{< c8y-admon-preview >}}
+This feature is in Public Preview and may be subject to change in the future.
+{{< /c8y-admon-preview >}}
+
 ### Availability {#availability}
 
 The Availability tab offers availability monitoring for machines, see [Availability](/device-management-application/monitoring-and-controlling-devices/#availability) for more information.
