@@ -16,7 +16,7 @@ in the 2024 {{< product-c8y-iot >}} Edge documentation.
 
 Before proceeding, back up your Edge appliance VM and make sure there is enough disk space to store the MongoDB and DataHub (data lake) backups. For instructions on expanding disk size, refer to [Expanding the disk size](/2024/edge/operating-edge/#expanding-the-disk-size).
 
-**Note:** This document does not cover CDH migration.
+**Note:** This document does not cover {{< product-c8y-iot >}} DataHub migration.
 {{< /c8y-admon-important >}}
 
 ### Step 1 - Time series conversion of Edge appliance data
@@ -157,10 +157,10 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
 ### Step 2 - Backing up data and configuration of Edge appliance
 
 {{< c8y-admon-caution >}}
-This step only creates a backup of DataHub (datalake) contents. Migration of CDH is outside the scope of this document and must be handled separately (no scripts are currently provided).
+This step only creates a backup of {{< product-c8y-iot >}} DataHub (datalake) contents. Migration of {{< product-c8y-iot >}} DataHub is outside the scope of this document and must be handled separately (no scripts are currently provided).
 {{< /c8y-admon-caution >}}
 
-In your Edge appliance VM, back up the MongoDB data, data lake contents from DataHub if present.
+In your Edge appliance VM, back up the MongoDB data, data lake contents from {{< product-c8y-iot >}} DataHub if present.
 
 Perform the following steps as a root user on your Edge appliance.
 
@@ -195,7 +195,7 @@ Perform the following steps as a root user on your Edge appliance.
       --out=/opt/appliance-edgedb-backup
    ```
 
-4. Tar the MongoDB data and data lake contents from DataHub if present, into */opt/edge-appliance-backup.tar* :
+4. Tar the MongoDB data and data lake contents from {{< product-c8y-iot >}} DataHub if present, into */opt/edge-appliance-backup.tar* :
 
    ```shell
    tar -zcf /opt/edge-appliance-backup.tar /opt/appliance-edgedb-backup /opt/softwareag
