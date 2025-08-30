@@ -54,6 +54,9 @@ relativeURLs = true
   product_c8y_iot = "Cumulocity"
   company_sag = "Software AG"
   enterprise_tenant = "Enterprise tenant"
+  publisher_name = "Cumulocity GmbH"
+  author_name = "Cumulocity documentation"
+  default_schema_image = "images/cumulocity-docs-web.jpg"
 
   [[params.additionalResources]]
     name = "Tech Community"
