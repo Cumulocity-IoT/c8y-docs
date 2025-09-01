@@ -18,7 +18,7 @@
              {{else if .Page.Params.external}}{{.Page.Params.external}}
              {{else}}{{.Page.Permalink}}{{end}}' 
       class="product-card"
-      {{ with .Page.Params.external_target }} target="{{ . }}" rel="noopener noreferrer"{{ end }}>
+      {{ if .Page.Params.external }} target="_blank" rel="noopener noreferrer"{{ end }}>
       <div class="product-card__header">
         <i class="c8y-icon-duocolor {{.Page.Params.icon}}"></i>
         {{ if eq .Page.Title "Change logs"}}
