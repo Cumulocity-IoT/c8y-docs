@@ -52,16 +52,13 @@
     {{- end -}}
   {{- end -}}
 
-  {{- $processedTitle := partial "replace-placeholders.html" (dict "text" .Title "siteParams" .Site.Params) -}}
-
-  {{- /* Call the new partial for image extraction */ -}}
   {{- $pageImage := partial "get-page-image.html" (dict "page" . "defaultImage" .Site.Params.default_schema_image) -}}
 
   {{- $pageMap := (dict
       "@context" "https://schema.org"
       "@type" "CollectionPage"
-      "name" $processedTitle
-      "description" $extractedDescription
+      "name" .Title
+      "description" (truncate 320 $extractedDescription)
       "url" .Permalink
       "inLanguage" .Site.LanguageCode
       "author" (dict "@type" "Organization" "name" (.Site.Params.author_name | default .Site.Title))
@@ -87,8 +84,8 @@
 
   {{- if eq .Layout "bundle" -}}
     {{- if .File -}}  {{/* Check if .File exists before accessing it */}}
-      {{- $bundleName := printf "%s-%s" .File.BaseFileName "bundle" -}}
-      {{- $headless := .Site.GetPage $bundleName -}} {{/* Corrected variable name here */}}
+      {{- $bundleName := printf "%s-%s" .File.BaseFileName "bundle" -}} {{/* Corrected variable name here */}}
+      {{- $headless := .Site.GetPage $bundleName -}}
       {{- if $headless -}}
         {{- $reusablePages := sort ($headless.Resources.ByType "page") ".Params.weight" -}}
         {{- if gt (len $reusablePages) 0 -}}
@@ -133,7 +130,7 @@
     "@context" "https://schema.org"
     "@type" "TechArticle"
     "headline" .Title
-    "description" (.Description | default $extractedDescription)
+    "description" (truncate 320 (.Description | default $extractedDescription))
     "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
     "author" (dict "@type" "Organization" "name" (.Site.Params.author_name | default .Site.Title))
     "publisher" (dict "@type" "Organization" "name" (.Site.Params.publisher_name | default "Cumulocity GmbH") "logo" (dict "@type" "ImageObject" "url" (.Site.Params.logo | absURL)))
@@ -143,7 +140,7 @@
     {{- $pageMap = merge $pageMap (dict "datePublished" $datePublished) -}}
   {{- end -}}
   {{- if $dateModified -}}
-    {{- $pageMap = merge $pageMap (dict "dateModified" $dateModified) -}}
+    {{- $pageMap = merge $pageMap (dict "dateModified" $dateModified) -}}  {{/* This is the only change */}}
   {{- end -}}
 
   {{- if $pageImage -}}
