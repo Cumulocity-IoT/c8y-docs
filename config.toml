@@ -14,6 +14,8 @@ summaryLength = 30
 buildFuture = true
 relativeURLs = true
 
+enableGitInfo = true
+
 [taxonomies]
   sectors = "sector"
 
