@@ -3,9 +3,10 @@ weight: 50
 title: Improving the performance
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The {{< product-c8y-iot >}} platform provides optimized UI performance for users with inventory roles access. In particular, requests for tenants with large inventory hierarchies are faster.
 
 The performance of the following UI pages is improved:

@@ -2,8 +2,9 @@
 weight: 20
 title: Gateway configuration and registration
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 YAML file and spring profiles are used for the configuration of the gateway. A default configuration file is embedded in the gateway JAR file, so you only must set the properties which are different from the default.
 
 {{< c8y-admon-important >}}

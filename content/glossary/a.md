@@ -3,9 +3,10 @@ weight: 20
 title: A
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Administration application {#administration-application}
 
 The Administration application is one of the default applications of {{< product-c8y-iot >}}.

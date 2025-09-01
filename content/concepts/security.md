@@ -2,10 +2,11 @@
 title: Security aspects
 layout: bundle
 sector:
-  - getting_started
+- getting_started
 weight: 90
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 This section will show security concepts and aspects of {{< product-c8y-iot >}}, structured into physical security, network security, application security and access control. Finally, it shows how {{< product-c8y-iot >}} helps in managing the security of your IoT solution.
 
 This section is especially intended for IT security staff and management staff. IT security expertise is required when running {{< product-c8y-iot >}}.

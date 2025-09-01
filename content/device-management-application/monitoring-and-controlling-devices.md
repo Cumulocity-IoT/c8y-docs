@@ -3,12 +3,13 @@ weight: 40
 title: Monitoring and controlling devices
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< c8y-admon-related >}}
 * [Device management & connectivity > Device integration > Fragment library > Device availability](/device-integration/fragment-library/#device-availability) for details on the `c8y_RequiredAvailability`, `c8y_UnavailabilityAlarm`, `c8y_Availability` and `c8y_Connection` fragments used in managed objects.
 * The [alarms API](https://{{< domain-c8y >}}/api/core/#tag/Alarms) for REST API methods concerning alarms.

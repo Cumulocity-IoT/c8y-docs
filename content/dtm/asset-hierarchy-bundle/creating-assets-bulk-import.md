@@ -2,8 +2,9 @@
 weight: 30
 title: Creating assets via bulk import
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 To import the entire asset hierarchy with all assets at once, use the bulk import feature.
 For each [asset model](/dtm/asset-types/#asset-models), a CSV template is provided.
 Fill in the required details in this template and upload the file to create the assets in bulk for the selected asset model.

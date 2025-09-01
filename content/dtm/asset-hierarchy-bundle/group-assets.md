@@ -2,8 +2,9 @@
 weight: 50
 title: Asset model for groups
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The default group asset model allows any group to be treated as an asset, providing a unified, flexible, and consistent approach to managing assets.
 
 To create an asset from the default group asset model in the **New asset** page, select the **Group (Default)** option from the **Choose asset model** dropdown menu on the top left. For information on how to create an asset, refer to [To create an asset](/dtm/asset-hierarchy/#to-create-an-asset). 

@@ -2,8 +2,9 @@
 weight: 10
 title: Basic functionality
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Developing apps {#developing-apps}
 
 An EPL app is a {{< product-c8y-iot >}} application written in a single EPL (\*.mon) file. You can develop EPL apps in two different ways:

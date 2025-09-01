@@ -1,16 +1,17 @@
 ---
-date: 2024-02-13T14:53:24.832Z
+date: 2024-02-13T14:53:24.832000Z
 title: Switching to Linux cgroup v2
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 product_area: Application enablement & solutions
 component:
-  - value: component-7lcnqU5FL
-    label: Microservice SDK
+- value: component-7lcnqU5FL
+  label: Microservice SDK
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
+lastmod: '2025-09-01T10:40:42Z'
 ---
 As announced earlier, see [release 10.18](https://cumulocity.com/releasenotes/release-10-18-0/announcements-10-18-0), {{< product-c8y-iot >}} SaaS instances will gradually be switched to Linux cgroup v2 in the second half of the year 2024. Microservices must use a Linux cgroup v2 aware application runtime from then on. When executing microservices which are not compatible with cgroup v2 on {{< product-c8y-iot >}} in these versions it might happen that the information provided by the application runtime concerning available CPU and memory is not correct. This might lead to incorrect memory and thread allocation in the microservice container process.
 

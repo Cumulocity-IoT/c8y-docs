@@ -1,18 +1,19 @@
 ---
-date: 2023-12-06T10:33:39.707Z
+date: 2023-12-06T10:33:39.707000Z
 title: X.509 security mode support
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 product_area: Device management & connectivity
 component:
-  - value: component-1KLUzmqfe
-    label: LWM2M
+- value: component-1KLUzmqfe
+  label: LWM2M
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
 ticket: DM-554
 version: 10.18.288.0
+lastmod: '2025-09-01T10:40:41Z'
 ---
 LWM2M device connections with X.509 certificates are now supported.
 The X.509 security mode can be selected separately for the Bootstrap server and the LWM2M server either during device registration or, for existing devices, by using the new **LWM2M configuration** tab.

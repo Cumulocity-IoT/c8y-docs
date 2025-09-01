@@ -3,9 +3,10 @@ weight: 100
 title: Firmware
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The **Firmware** tab displays currently installed firmware of a device and allows users to install a different version. A device can have only one firmware installed at a time. It depends on the device, what a firmware can be in {{< product-c8y-iot >}}. Typical use cases are: operating system, microcontroller firmware or BIOS.
 
 Firmware can be installed with a full installation or with a patch. Which variant is sent to the device depends on how the firmware was created in the firmware repository.

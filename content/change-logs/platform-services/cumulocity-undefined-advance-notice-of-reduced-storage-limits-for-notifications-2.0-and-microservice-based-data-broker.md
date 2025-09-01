@@ -1,18 +1,19 @@
 ---
-date: 2024-03-27T09:47:57.877Z
-title: Advance notice of reduced storage limits for Notifications 2.0 and microservice-based data broker
+date: 2024-03-27T09:47:57.877000Z
+title: Advance notice of reduced storage limits for Notifications 2.0 and 
+  microservice-based data broker
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 product_area: Platform services
 component:
-  - value: component-2Yri1-l3n
-    label: Messaging Service
+- value: component-2Yri1-l3n
+  label: Messaging Service
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
+lastmod: '2025-09-01T10:40:42Z'
 ---
-
 Messages processed by Notifications 2.0 are stored persistently by the {{< product-c8y-iot >}} Messaging Service until they have been delivered to, and acknowledged by, all interested consumers. Likewise, messages processed by the microservice-based data broker are stored persistently until they have been delivered successfully to the destination tenant.
 
 The current persistent storage limits for these services are considered too large for typical use cases, which can lead to excessive resource consumption and consumers being forced to process outdated messages after a disconnection.

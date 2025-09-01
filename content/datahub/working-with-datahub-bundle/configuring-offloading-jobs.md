@@ -3,17 +3,29 @@ weight: 20
 title: Configuring offloading jobs
 layout: redirect
 helpcontent:
-  - label: configuring-offloading-jobs
-    title: Configuring offloading jobs
-    content: "Offloading refers to moving data from a **Cumulocity base collection** to a data lake. The document-based entities of the base collection are transformed into a relational format by flattening the entries and mapping them to relational rows. The mapping automatically extracts a standard set of attributes from each entity and transforms them into columns in the data lake table. Contents of measurement fragments and non-standard fields can be offloaded as well. As a result of these extraction and transformation steps, the flattened data is stored in Parquet files in the data lake.
-
-
-    For each **offloading pipeline**, a **target table** is created in Dremio that points to the corresponding data folders in the data lake. These target tables are used to run queries with Dremio against the offloaded data. Each active pipeline is executed in a periodic manner and offloads newly arrived data from the base collection to the data lake.
-
-
-    Click **Offload collection** to create a new offloading configuration. Click **Export** to export all configurations to a file and **Import** to import configurations from a file. The offloading list comprises all configured pipelines with options to activate/deactivate, edit, or delete a pipeline. If the pipeline has already been executed, details of the corresponding last run like status, runtime, and number of offloaded records are provided."
+- label: configuring-offloading-jobs
+  title: Configuring offloading jobs
+  content: "Offloading refers to moving data from a **Cumulocity base collection**
+    to a data lake. The document-based entities of the base collection are transformed
+    into a relational format by flattening the entries and mapping them to relational
+    rows. The mapping automatically extracts a standard set of attributes from each
+    entity and transforms them into columns in the data lake table. Contents of measurement
+    fragments and non-standard fields can be offloaded as well. As a result of these
+    extraction and transformation steps, the flattened data is stored in Parquet files
+    in the data lake.\n\nFor each **offloading pipeline**, a **target table** is created
+    in Dremio that points to the corresponding data folders in the data lake. These
+    target tables are used to run queries with Dremio against the offloaded data.
+    Each active pipeline is executed in a periodic manner and offloads newly arrived
+    data from the base collection to the data lake.\n\nClick **Offload collection**
+    to create a new offloading configuration. Click **Export** to export all configurations
+    to a file and **Import** to import configurations from a file. The offloading
+    list comprises all configured pipelines with options to activate/deactivate, edit,
+    or delete a pipeline. If the pipeline has already been executed, details of the
+    corresponding last run like status, runtime, and number of offloaded records are
+    provided."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The following steps describe how to set up an offloading pipeline.
 
 ### Defining an offloading configuration {#defining-an-offloading-configuration}

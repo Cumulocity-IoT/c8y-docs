@@ -2,8 +2,9 @@
 weight: 30
 title: Restructuring groups and devices
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 You can easily restructure groups, subgroups and devices by a drag & drop functionality.
 
 ### To move a group {#to-move-a-group}

@@ -1,17 +1,18 @@
 ---
-date: 2023-12-06T09:45:04.195Z
+date: 2023-12-06T09:45:04.195000Z
 title: Platform configuration form migrated to Angular
 change_type:
-  - value: change-2c7RdTdXo4
-    label: Improvement
+- value: change-2c7RdTdXo4
+  label: Improvement
 product_area: Platform services
 component:
-  - value: component-0UgqXH1Ys
-    label: Administration
+- value: component-0UgqXH1Ys
+  label: Administration
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-54308
 version: 10.18.488.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
 The platform configuration form has been migrated to Angular with Schema-form removed.

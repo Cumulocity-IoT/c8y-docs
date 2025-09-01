@@ -5,15 +5,16 @@ title: >-
   correctly
 product_area: Platform services
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+- value: change-VSkj2iV9m
+  label: Fix
 component:
-  - value: q3kclF6pO
-    label: Authentication
+- value: q3kclF6pO
+  label: Authentication
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-60355
 version: 1020.16.1
+lastmod: '2025-09-01T10:40:42Z'
 ---
 The QR code for the two-factor authentication provided during the TOTP setup was not displayed correctly. This issue has been fixed. The QR code is now properly visible and users can scan it with their authentication application.

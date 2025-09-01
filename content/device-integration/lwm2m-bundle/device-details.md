@@ -2,8 +2,9 @@
 weight: 50
 title: LWM2M device details
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 {{< c8y-admon-info >}}
 In the Device Management application, you can view all details of a device. The following details are specific to LWM2M devices. For information on general details refer to [Viewing device details](/device-management-application/viewing-device-details).
 {{< /c8y-admon-info >}}

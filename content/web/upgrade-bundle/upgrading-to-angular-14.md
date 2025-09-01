@@ -2,8 +2,9 @@
 title: Upgrading from Angular 12 to Angular 14
 layout: redirect
 weight: 480
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Angular 14 is supported from version `1015.132.0`. The following configuration changes are required before you can run the application:
 
 - Update all `@angular/*` dependencies to `14.0.6`.

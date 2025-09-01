@@ -3,15 +3,16 @@ date: '2025-06-26'
 title: Virtual scroll now always shows all items in a list
 product_area: Application enablement & solutions
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+- value: change-VSkj2iV9m
+  label: Fix
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+- value: component-YbYJ3gLU_
+  label: Web SDK
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-63835
 version: 1021.80.1
+lastmod: '2025-09-01T10:40:41Z'
 ---
 In places where virtual scroll was implemented, such as the "Data points table" widget, it could happen on rare occasions that not the entire list was loaded. This issue has now been resolved. Virtual scroll now always shows all list items.

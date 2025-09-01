@@ -2,11 +2,11 @@
 title: Home screen
 layout: bundle
 sector:
-  - platform_administration
+- platform_administration
 weight: 5
-
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 {{< c8y-admon-req >}}
 APPLICATION ACCESS:
 

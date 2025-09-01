@@ -3,19 +3,20 @@ weight: 70
 title: Dashboard manager
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 sector:
-  - app_enablement
+- app_enablement
 helpcontent:
-  - label: dashboard-manager
-    title: Dashboard manager
-    content: "This dashboard manager shows a list of device type dashboards by aggregating all dashboards that have a device type assigned. 
-
-
-Dashboards can be deleted via the list. Moreover, you can view all devices that have access to a particular dashboard. Dashboards can be edited by navigating to the device view."
+- label: dashboard-manager
+  title: Dashboard manager
+  content: "This dashboard manager shows a list of device type dashboards by aggregating
+    all dashboards that have a device type assigned.\n\nDashboards can be deleted
+    via the list. Moreover, you can view all devices that have access to a particular
+    dashboard. Dashboards can be edited by navigating to the device view."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The dashboard manager shows a list of device type dashboards by aggregating all dashboards that have a device type assigned.
 It also provides information about the number of devices that have access to a particular dashboard, date of creation and last modification date.
 

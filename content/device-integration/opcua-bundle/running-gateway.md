@@ -2,8 +2,9 @@
 weight: 30
 title: Running the Gateway
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The gateway can run with either default or custom settings. To run the gateway run one of the commands below:
 
 * Default settings and default logging configuration:

@@ -2,8 +2,9 @@
 weight: 130
 title: Troubleshooting
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 ### Permission denied error when running the gateway JAR file on a Linux OS {#permission-denied-error-when-running-the-gateway-jar-file-on-a-linux-os}
 
 ![Permission denied](/images/device-protocols/opcua/opcua-permission-denied-error.png)

@@ -2,10 +2,11 @@
 title: Release policy
 layout: bundle
 sector:
-  - terms_conditions
+- terms_conditions
 weight: 30
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 ### Introduction
 
 {{< product-c8y-iot >}} operates as a cloud service that is continuously maintained and upgraded in accordance with its service level agreements (SLAs). The maintenance process is designed to be seamless and generally unnoticed by customers, with the timing and content of upgrades managed by {{< company-c8y >}}. Once new features and improvements have successfully passed {{< company-c8y >}}'s quality assurance, they are gradually rolled out to customers within their tenants.

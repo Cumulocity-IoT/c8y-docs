@@ -3,19 +3,20 @@ weight: 10
 title: Managing users
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 sector:
-  - platform_administration
+- platform_administration
 helpcontent:
-  - label: managing-users
-    title: Managing users
-    content: "The Cumulocity user management allows you to manage the users within your tenant. You can create new users, assign usernames and passwords, store user details, or configure the login and security options.  
-
-
-    Moreover you can select the global roles for a user, see also *Managing permissions* in the user documentation."
+- label: managing-users
+  title: Managing users
+  content: "The Cumulocity user management allows you to manage the users within your
+    tenant. You can create new users, assign usernames and passwords, store user details,
+    or configure the login and security options.\n\nMoreover you can select the global
+    roles for a user, see also *Managing permissions* in the user documentation."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The **user management feature** allows you to manage the users within your tenant, that is create users, store user details, or configure login and security options.
 
 {{< c8y-admon-req >}}

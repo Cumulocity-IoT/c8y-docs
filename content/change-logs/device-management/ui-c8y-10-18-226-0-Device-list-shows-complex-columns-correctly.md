@@ -1,17 +1,18 @@
 ---
-date: 2023-12-06T10:36:47.675Z
+date: 2023-12-06T10:36:47.675000Z
 title: Device list shows complex columns correctly
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+- value: change-VSkj2iV9m
+  label: Fix
 product_area: Device Management
 component:
-  - value: component--KIsStyzM
-    label: Device Management app
+- value: component--KIsStyzM
+  label: Device Management app
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: DM-2410
 version: 10.18.226.0
+lastmod: '2025-09-01T10:40:40Z'
 ---
 The device list now shows complex columns like <code>c8y_SoftwareList</code> correctly after converting them to strings.

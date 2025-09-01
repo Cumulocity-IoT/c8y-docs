@@ -1,16 +1,17 @@
 ---
-date: 2023-12-06T14:53:24.832Z
+date: 2023-12-06T14:53:24.832000Z
 title: Deprecation of the Microservice SDK for C#
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 product_area: Application enablement & solutions
 component:
-  - value: component-7lcnqU5FL
-    label: Microservice SDK
+- value: component-7lcnqU5FL
+  label: Microservice SDK
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
+lastmod: '2025-09-01T10:40:41Z'
 ---
 With the introduction of auto-generated SDKs, we provide an always up-to-date developer library with the purpose to facilitate the development of {{< product-c8y-iot >}} microservices in different programming languages including C#.
 

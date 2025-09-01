@@ -1,20 +1,20 @@
 ---
-date:
+date: '2025-09-01T10:26:31Z'
 title: Analytics rules plugin now available in Public Preview
 product_area: Application enablement & solutions
 change_type:
-  - value: change-pXAlHAWka
-    label: Preview
+- value: change-pXAlHAWka
+  label: Preview
 component:
-  - value: component-YdSEScrEC
-    label: Cockpit
+- value: component-YdSEScrEC
+  label: Cockpit
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-64266
 version: 1022.18.0
+lastmod: '2025-09-01T10:40:41Z'
 ---
-
 {{< c8y-admon-preview >}}
 This feature is in Public Preview and may be subject to change in the future.
 {{< /c8y-admon-preview >}}

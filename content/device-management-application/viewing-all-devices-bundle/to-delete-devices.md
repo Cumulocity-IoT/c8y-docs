@@ -2,8 +2,9 @@
 weight: 30
 title: To delete a device from the list
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 1. Hover over the row of the device you want to delete.
 2. Click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> at the right of the row.
 3. Confirm the device removal. Optionally, select whether to delete child devices of the device or to delete the associated device owner. Note that it is not possible to select both options.

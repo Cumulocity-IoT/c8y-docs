@@ -2,26 +2,30 @@
 title: Working with dashboards
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 sector:
-  - app_enablement
+- app_enablement
 weight: 40
 helpcontent:
-  - label: working-with-dashboards
-    title: Working with Dashboards
-    content: "Dashboards let you visualize your data by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
-
-
-    Click the plus icon next to the dashboard tabs to add a dashboard. You may copy a dashboard from one device to another or you may share a dashboard with all devices of a specific device type.
-
-
-    The dashboard is locked until the edit mode is enabled. To do so click **Edit widgets** in the top menu bar. On a dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon. Click **Add widget** in the top menu bar to add a new widget to the dashboard or use the cogwheel icon to edit or remove widgets.
-
-
-    Cumulocity includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Widgets collection* in the user documentation for details on each widget type and its configuration."
+- label: working-with-dashboards
+  title: Working with Dashboards
+  content: "Dashboards let you visualize your data by using a set of widgets. Widgets
+    can display maps, images, graphs, tables, and other graphic representations of
+    data.\n\nClick the plus icon next to the dashboard tabs to add a dashboard. You
+    may copy a dashboard from one device to another or you may share a dashboard with
+    all devices of a specific device type.\n\nThe dashboard is locked until the edit
+    mode is enabled. To do so click **Edit widgets** in the top menu bar. On a dashboard,
+    you can rearrange widgets by drag & drop or resize them using the arrow icon.
+    Click **Add widget** in the top menu bar to add a new widget to the dashboard
+    or use the cogwheel icon to edit or remove widgets.\n\nCumulocity includes preset
+    widget types, for example alarm or data point lists, linear or radial gauges.
+    Since each widget type displays different data, different parameters are required
+    to configure it. See *Widgets collection* in the user documentation for details
+    on each widget type and its configuration."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< product-c8y-iot >}} allows you to create individualized dashboards for all your groups and devices.
 Dashboards provide you with a customized visualization of your data, for example, alarms and events, and allow you to trigger remote actions, by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
 

@@ -3,9 +3,10 @@ weight: 60
 title: Integration with Keycloak
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:31Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 ### Global logout feature (available for Keycloak in version 12.0.0 and higher) {#global-logout-feature-available-for-keycloak-in-version-1200-and-higher}
 
 Integration with Keycloak allows administrators to use a global logout feature based on OpenId Connect. An event from the Keycloak authorization server is sent to all applications (including the {{< product-c8y-iot >}} platform) with a logout token that is verified in the same way as the token used in the login process. This feature allows ending sessions on both sides, applications and Keycloak, for the particular user.

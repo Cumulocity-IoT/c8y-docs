@@ -2,12 +2,13 @@
 title: Introduction
 layout: bundle
 sector:
-  - data_analytics
+- data_analytics
 weight: 10
 aliases:
-  - /streaming-analytics/overview-analytics/
+- /streaming-analytics/overview-analytics/
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Using {{< product-c8y-iot >}} Streaming Analytics, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. This logic can, for example, alert applications of new incoming data, create new data based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 
 Typical real-time analytics use cases include:

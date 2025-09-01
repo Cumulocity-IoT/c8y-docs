@@ -2,8 +2,9 @@
 title: C8Y Command Line Tool (CLI)
 layout: redirect
 weight: 90
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< c8y-admon-important >}}
 The `c8ycli` tool was deprecated and should not be used anymore with the 1019.0.0 release of the WebSDK. Use the default Angular CLI instead and add our `@c8y/websdk` library to it as shown in the [Getting Started Guide](/web/gettingstarted/)
 {{< /c8y-admon-important >}}

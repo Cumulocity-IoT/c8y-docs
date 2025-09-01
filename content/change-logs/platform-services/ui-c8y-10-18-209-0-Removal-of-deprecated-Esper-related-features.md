@@ -1,18 +1,19 @@
 ---
-date: 2023-12-06T15:44:47.449Z
+date: 2023-12-06T15:44:47.449000Z
 title: Removal of deprecated Esper-related features
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 product_area: Platform services
 component:
-  - value: component-0UgqXH1Ys
-    label: Administration
+- value: component-0UgqXH1Ys
+  label: Administration
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-49963
 version: 10.18.209.0
+lastmod: '2025-09-01T10:40:43Z'
 ---
 Esper-CEP-related features have been removed from the UI such as:
 

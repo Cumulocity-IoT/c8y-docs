@@ -2,8 +2,9 @@
 weight: 20
 title: Log files of the Apama-ctrl microservice
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 There are two ways to get the logs of the Apama-ctrl microservice:
 
 - You can download diagnostics information from the Streaming Analytics application as described in [Downloading diagnostics and logs](#diagnostics-download).

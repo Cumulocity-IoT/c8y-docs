@@ -2,8 +2,9 @@
 weight: 20
 title: The protocol
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 SmartREST is built upon the well-established HTTP protocol making it work everywhere since most popular platforms provide an HTTP client through which SmartREST can be accessed. SmartREST communicates exclusively through the `/s` resource using the HTTP `POST` method for bidirectional communication. The payload data format in CSV (comma-separated values).
 
 The following example shows the communication between a client and the  SmartREST endpoint. Note the `Authorization` header and the custom `X-Id` header in the request which specifies the SmartREST template to use for this request.

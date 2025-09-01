@@ -2,8 +2,9 @@
 weight: 90
 title: Refining offloaded Cumulocity data
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 In addition to SQL querying using standard interfaces, you can utilize Dremio functionality to further refine and curate your offloaded data.
 
 For a detailed description of all functionalities Dremio provides you can consult the [Dremio documentation](https://docs.dremio.com/).

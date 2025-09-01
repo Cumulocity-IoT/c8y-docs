@@ -3,10 +3,10 @@ weight: 20
 title: More resources
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:31Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
-
 ### {{< product-c8y-iot >}} YouTube channel {#product-youtube-channel}
 
 Visit the [{{< product-c8y-iot >}} YouTube channel](https://www.youtube.com/@CumulocityIoT) for more content about the platform. Here you have access to:

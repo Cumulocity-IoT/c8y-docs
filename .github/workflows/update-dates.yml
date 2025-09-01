@@ -1,0 +1,45 @@
+name: Update Content Dates
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  update-dates:
+    runs-on: ubuntu-latest
+    # Grant permissions for the job to write to the repository.
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          # We need to fetch the history to get the correct committer info.
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install ruamel.yaml
+
+      - name: Update file dates
+        run: |
+          find content -name "*.md" -print0 | xargs -0 python scripts/update_dates.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          # Only commit and push if there are actual changes
+          if ! git diff --staged --quiet; then
+            git commit -m "docs: Automatically update lastmod dates"
+            git push
+          else
+            echo "No changes to commit."
+          fi

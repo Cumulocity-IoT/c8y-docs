@@ -3,12 +3,13 @@ weight: 60
 title: Managing device data
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< c8y-admon-related >}}
 * [Device management & connectivity > Device integration > Fragment library > Firmware](/device-integration/fragment-library/#firmware) for details on the `c8y_Firmware` fragment used in managed objects.
 * [Device management & connectivity > Device integration > Fragment library > Software](/device-integration/fragment-library/#software) for details on legacy software management via the `c8y_SoftwareList` fragment, software updates via the `c8y_SoftwareUpdate` fragment and advanced software management via the `c8y_SupportedOperations` and `c8y_SupportedSoftwareTypes` fragments used in managed objects.

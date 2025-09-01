@@ -2,8 +2,9 @@
 weight: 100
 title: Monitoring and configuration
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Monitoring {#monitoring}
 You can monitor the current status of each model in the model manager. The card for a model shows the current mode for this model \(such as production mode\) and whether it is active \(deployed\) or inactive.
 

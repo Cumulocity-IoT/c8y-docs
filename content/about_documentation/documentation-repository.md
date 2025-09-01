@@ -3,9 +3,10 @@ weight: 20
 title: Previous documentation versions
 layout: bundle
 sector:
-  - terms_conditions
+- terms_conditions
+date: '2025-09-01T10:26:31Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 This {{< product-c8y-iot >}} documentation website provides the documentation for the SaaS cloud offering and for the yearly releases under maintenance. Documentation for previous releases is accessible as described below.
 
 ### Product documentation for previous releases {#product-documentation-for-previous-releases}

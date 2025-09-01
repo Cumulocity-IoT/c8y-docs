@@ -2,8 +2,9 @@
 weight: 40
 title: Node.js microservice
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< product-c8y-iot >}} provides an SDK for developing microservices using Java. Nevertheless, you are free to choose the tech-stack of your preference to develop a microservice as long as it fulfills the [general requirements](/microservice-sdk/general-aspects/#requirements-interactions).
 
 In this example you will learn how to create and deploy a Node.js-based microservice. The application exposes endpoints to verify if the microservice is up and running and get some of the environment variables.

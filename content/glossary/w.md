@@ -3,9 +3,10 @@ weight: 170
 title: W
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Web applications {#web-applications}
 
 A {{< product-c8y-iot >}} web application can be:

@@ -3,9 +3,10 @@ weight: 80
 title: Controlling devices
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 The {{< sensor-app >}} can receive real-time control commands from {{< product-c8y-iot >}}.
 
 You can create a dashboard for your smartphone device as described in [Working with dashboards](/cockpit/working-with-dashboards/).

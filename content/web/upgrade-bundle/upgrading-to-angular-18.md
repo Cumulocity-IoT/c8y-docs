@@ -1,9 +1,10 @@
 ---
-title: Upgrading from Angular 17 to Angular 18  
+title: Upgrading from Angular 17 to Angular 18
 layout: redirect
 weight: 440
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Angular 18 is supported from version `1021.0.0`. The following configuration changes are required before you can run the application:
 
 - Update all `@c8y` dependencies to version `1021.x.x` in your *package.json*.

@@ -3,9 +3,10 @@ weight: 25
 title: Accessing and logging into the platform
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 You access the {{< product-c8y-iot >}} platform via a [URL](#url) in a web browser.
 
 ### Supported browsers {#supported-browsers}

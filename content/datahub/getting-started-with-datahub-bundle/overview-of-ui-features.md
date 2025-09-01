@@ -3,11 +3,21 @@ weight: 20
 title: Overview of UI features
 layout: redirect
 helpcontent:
-  - label: status-offloading-jobs
-    title: Getting an overview of offloading jobs
-    content: "Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. The overview allows you to quickly check for running, failed, and successful pipelines. These summaries consider for each configured pipeline the corresponding last or current execution. Running and failed pipelines are available in tables, with each entry being linked to the associated job history. Successful pipelines are depicted in a graph, based on their execution time and the number of offloaded records. More details of a successful execution are shown when hovering over an entry or clicking on it, which navigates you to the job history."
+- label: status-offloading-jobs
+  title: Getting an overview of offloading jobs
+  content: Once you have configured and started your offloading pipelines, they 
+    regularly offload data to the data lake. The overview allows you to quickly 
+    check for running, failed, and successful pipelines. These summaries 
+    consider for each configured pipeline the corresponding last or current 
+    execution. Running and failed pipelines are available in tables, with each 
+    entry being linked to the associated job history. Successful pipelines are 
+    depicted in a graph, based on their execution time and the number of 
+    offloaded records. More details of a successful execution are shown when 
+    hovering over an entry or clicking on it, which navigates you to the job 
+    history.
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< product-c8y-iot >}} DataHub provides the UI for managing and monitoring your offloading pipelines. The main navigation bar at the left provides links to the relevant pages. The access to these pages is restricted and depends on corresponding user roles/permissions as defined in [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions).
 
 | Page | Description | Required role | Prerequisites

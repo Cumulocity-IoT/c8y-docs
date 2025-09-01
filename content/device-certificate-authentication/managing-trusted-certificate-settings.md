@@ -3,16 +3,23 @@ weight: 30
 title: Managing trusted certificate CRL settings
 layout: bundle
 sector:
-  - device_management
+- device_management
 outputs:
-  - html
-  - json
+- html
+- json
 helpcontent:
-  - label: managing-trusted-certificate-settings
-    title: Trusted certificates settings
-    content: "Administrators can configure the Certificate Revocation List (CRL) settings (online or offline). If the revoked certificate information is maintained by the issuing Certificate Authority (CA), the online check option can be selected. If the CA does not maintain the CRL information, the offline setup can be selected. In offline setup, the revoked certificate serial number can either be added manually or can be uploaded in bulk using the file template attached."
+- label: managing-trusted-certificate-settings
+  title: Trusted certificates settings
+  content: Administrators can configure the Certificate Revocation List (CRL) 
+    settings (online or offline). If the revoked certificate information is 
+    maintained by the issuing Certificate Authority (CA), the online check 
+    option can be selected. If the CA does not maintain the CRL information, the
+    offline setup can be selected. In offline setup, the revoked certificate 
+    serial number can either be added manually or can be uploaded in bulk using 
+    the file template attached.
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 {{< product-c8y-iot >}} allows administrators to fine-tune various certificate configurations.
 Currently, Certificate Revocation List (CRL) is supported.
 

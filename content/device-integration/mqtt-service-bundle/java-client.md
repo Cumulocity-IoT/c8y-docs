@@ -2,8 +2,9 @@
 weight: 30
 layout: redirect
 title: Java Client
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The MQTT Service Java Client library provides the classes necessary to interact with the MQTT Service.
 The following operations are supported by the client:
 * Publishing messages to the MQTT Service via a WebSocket protocol.

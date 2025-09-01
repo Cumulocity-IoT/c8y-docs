@@ -2,8 +2,9 @@
 weight: 80
 title: Troubleshooting
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 ### Device registration {#device-registration}
 
 #### No LoRa device registered in {{< product-c8y-iot >}} after configuring the Loriot agent endpoint in the LORIOT Network Server account {#no-lora-device-registered-in-platform-after-configuring-the-loriot-agent-endpoint-in-the-loriot-network-server-account}

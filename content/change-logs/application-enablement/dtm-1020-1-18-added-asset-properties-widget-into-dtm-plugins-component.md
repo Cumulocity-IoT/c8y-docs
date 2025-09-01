@@ -3,16 +3,17 @@ date: '2024-11-21'
 title: Added Asset properties widget into DTM plugins component
 product_area: Application enablement & solutions
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 component:
-  - value: component-Tl88RYb4A
-    label: Digital Twin Manager
+- value: component-Tl88RYb4A
+  label: Digital Twin Manager
 build_artifact:
-  - value: tc-wYIY0MBDO
-    label: dtm
+- value: tc-wYIY0MBDO
+  label: dtm
 ticket: CTM-1625
 version: 1020.1.18
+lastmod: '2025-09-01T10:40:41Z'
 ---
 The DTM plugins component now includes a new asset properties widget module, which enhances the functionality of the existing "Asset properties" widget. This includes:
  - Simplified selection of the modelled properties for assets.

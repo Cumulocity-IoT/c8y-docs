@@ -3,9 +3,10 @@ weight: 10
 title: Introduction
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 {{< company-c8y >}} offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the {{< product-c8y-iot >}} platform.
 
 We recommend you to integrate devices via [thin-edge.io](https://thin-edge.io/). See the tutorial [Getting started with thin-edge.io](https://thin-edge.github.io/thin-edge.io/start/getting-started/) for an easy-to-follow and hands-on example.

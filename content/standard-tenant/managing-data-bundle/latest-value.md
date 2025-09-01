@@ -3,9 +3,10 @@ weight: 30
 title: Latest measurement values
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 This section describes how to create a configuration for automated persistence of measurement values under the `c8y_LatestMeasurements` fragment.
 
 ### How to enable it

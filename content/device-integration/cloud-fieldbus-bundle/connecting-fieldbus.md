@@ -2,9 +2,9 @@
 weight: 20
 title: Connecting fieldbus devices
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
-
 For the following instructions, it is assumed that you have a Cloud Fieldbus terminal available and it is registered as a device in your {{< product-c8y-iot >}} tenant. To register a terminal with {{< product-c8y-iot >}}, follow the instructions provided with the terminal.
 
 ### Connecting Modbus/RTU devices {#connecting-modbusrtu-devices}

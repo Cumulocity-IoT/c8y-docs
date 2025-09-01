@@ -1,10 +1,10 @@
-
 ---
 weight: 30
 title: Events
 layout: redirect
+date: '2024-12-05T18:43:20Z'
+lastmod: '2025-09-01T10:43:29Z'
 ---
-
 Events are used to pass real-time information through {{< product-c8y-iot >}}.
 
 Events come in three types:

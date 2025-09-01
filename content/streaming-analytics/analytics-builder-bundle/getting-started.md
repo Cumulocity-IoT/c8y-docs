@@ -2,8 +2,9 @@
 weight: 10
 title: Getting started with Analytics Builder
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### What is Analytics Builder {#what-is-analytics-builder}
 
 Analytics Builder allows you to build analytic models that transform or analyze streaming data in order to generate new data or output events. The models are capable of processing data in real time.

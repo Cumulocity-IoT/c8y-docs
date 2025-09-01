@@ -3,9 +3,10 @@ weight: 50
 title: Connectivity
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The **Connectivity** tab integrates with a 3rd party SIM management platform to provide SIM management functionality within the {{< product-c8y-iot >}} Device Management application. The tab appears for a device when all of the following criteria are met:
 
 1. Connectivity microservice is subscribed and configured

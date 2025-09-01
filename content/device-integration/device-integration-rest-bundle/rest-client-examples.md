@@ -2,8 +2,9 @@
 weight: 40
 title: REST client examples
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 ### Hello REST
 
 This section gives a very basic example how to create a device representation in {{< product-c8y-iot >}} and subsequently how to send related measurement data.

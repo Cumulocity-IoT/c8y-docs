@@ -3,9 +3,10 @@ weight: 30
 title: Branding
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 With the Branding feature, you can fully customize the look of your tenant to your own preferences.
 
 {{< c8y-admon-req >}}

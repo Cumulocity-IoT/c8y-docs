@@ -3,9 +3,10 @@ title: Hierarchy levels
 layout: bundle
 weight: 30
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The {{< product-c8y-iot >}} tenant concept builds a 3-level hierarchy, including the following levels from bottom to top:
 
 - [{{< standard-tenant >}}](#standard-tenant)

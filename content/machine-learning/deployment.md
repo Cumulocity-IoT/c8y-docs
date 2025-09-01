@@ -1,11 +1,13 @@
 ---
-title: Deploy and orchestrate your AI/ML models across devices (EdgeAI with MLOps)
+title: Deploy and orchestrate your AI/ML models across devices (EdgeAI with 
+  MLOps)
 layout: bundle
 sector:
-  - data_analytics
+- data_analytics
 weight: 50
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 With the increasing availability and affordability of compute for edge devices like controllers and gateways, executing workloads including AI/ML models on edge devices becomes increasingly attractive, especially as it boasts a wide range of benefits. This includes both operational aspects like reduced latency, costs and reliability as well as security aspects including for example local processing of sensitive data, the ability to meet data residency requirements and to run models in an air-gapped environment without internet connectivity.
 
 However, operating workloads decentrally on edge devices introduces unique challenges compared to a centralized cloud environment. At the edge, devices often operate in diverse and constrained environments with limited compute power, intermittent connectivity and varying hardware configurations. Managing and deploying Machine Learning models in such decentralized setups can be complex, requiring solutions that ensure consistency, scalability and debuggability despite these limitations. Moreover, monitoring model performance and maintaining security across multiple edge nodes adds layers of operational complexity.

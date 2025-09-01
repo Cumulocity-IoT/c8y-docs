@@ -3,7 +3,9 @@ weight: 51
 title: Export Control Compliance
 layout: bundle
 sector:
-  - terms_conditions
+- terms_conditions
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
 Disclaimer: This information is provided for guidance only. Cumulocity GmbH makes the information available for informational purposes only. It may not reflect the most current legal developments. The information is provided "AS IS," and Cumulocity GmbH does not represent, warrant or guarantee that the information is complete, accurate, or up-to-date. The information is not intended to constitute legal advice or to be used as a substitute for specific legal advice from a licensed attorney. You should not act (or refrain from acting) based on information provided without obtaining professional advice regarding your particular facts and circumstances. Any use of the information by you is without recourse to Cumulocity GmbH and is at your own risk.IN NO EVENT SHALL CUMULOCITY GMBH BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES INCURRED BY YOU OR ANY THIRD PARTY, WHETHER IN AN ACTION IN CONTRACT OR TORT, ARISING FROM YOUR USE OF THE INFORMATION.
 

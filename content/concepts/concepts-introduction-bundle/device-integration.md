@@ -1,8 +1,9 @@
 ---
 weight: 20
 title: Device integration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< product-c8y-iot >}} offers multiple methods for connecting devices:
 
 - **Pre-integrated IoT gateways**: Choose from [certified devices](https://ecosystem.{{< domain-c8y >}}/device-ecosystem/) offered by {{< company-c8y >}} certified partners for the easiest integration.

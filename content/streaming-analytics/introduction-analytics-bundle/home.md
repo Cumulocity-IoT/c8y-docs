@@ -2,8 +2,9 @@
 weight: 10
 title: Home screen
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 To access the home screen of the Streaming Analytics application, click the Streaming Analytics icon <i class="c8y-icon c8y-icon-streaming-analytics c8y-icon-duocolor icon-20"></i> in the  [application switcher](/get-familiar-with-the-ui/gui-features/#application-switcher).
 
 ![Streaming Analytics home screen](/images/streaming-analytics/introduction-analytics/streaming-analytics-home-screen.png)

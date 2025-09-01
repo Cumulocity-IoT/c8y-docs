@@ -3,12 +3,13 @@ weight: 30
 title: Grouping devices
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< c8y-admon-related >}}
 * [Application enablement & solutions > Cockpit > Managing assets > Assets hierarchy](/cockpit/managing-assets/#asset-hierarchy) for information on the asset hierarchy, assets and groups.
 * [Platform administration > {{< standard-tenant >}} administration > Managing permissions > Inventory roles](/standard-tenant/managing-permissions/#inventory-roles) on how to assign inventory roles to groups of devices.

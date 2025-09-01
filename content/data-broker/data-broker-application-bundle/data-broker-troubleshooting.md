@@ -3,9 +3,10 @@ weight: 40
 title: Troubleshooting
 layout: bundle
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 If the data broker is not able to connect to a destination tenant, a CRITICAL alarm is raised, showing the connector which is affected.
 
 #### Queue overflow {#queue-overflow}

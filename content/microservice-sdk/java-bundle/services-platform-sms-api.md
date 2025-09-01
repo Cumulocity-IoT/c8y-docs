@@ -2,8 +2,9 @@
 weight: 50
 layout: redirect
 title: Services platform and SMS API
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 This section describes the {{< product-c8y-iot >}} SMS API and shows how to access it using the {{< product-c8y-iot >}} Java Client. You will also learn how to send and receive SMS messages via the Java Client API.
 
 ### Using the services platform {#using-the-services-platform}

@@ -3,9 +3,10 @@ weight: 30
 title: Agent lifecycle
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 ### Starting the agent {#starting-the-agent}
 
 Server-side agents run continuously in the cloud, accepting connections from the device types that they support. Device-side agents run on the device and are started along with other device software when the device is powered on.

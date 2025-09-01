@@ -3,9 +3,10 @@ weight: 40
 title: Connectivity
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 In the **Connectivity** page, you can manage credentials for different providers. In order to add or replace credentials ADMIN permissions are required.
 
 {{< c8y-admon-req >}}

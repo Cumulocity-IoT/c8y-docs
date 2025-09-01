@@ -2,8 +2,9 @@
 weight: 30
 title: Microservice manifest
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The application manifest provides the required settings to manage microservice instances and the application deployment in the {{< product-c8y-iot >}} platform.
 The definition is provided within the _cumulocity.json_ file in the binary uploaded to the {{< product-c8y-iot >}} platform.
 

@@ -2,19 +2,19 @@
 date: 2025-08-07
 title: MQTT Service device isolation is enabled by default
 change_type:
-  - value: change-3BQrQ6adS
-    label: API change
+- value: change-3BQrQ6adS
+  label: API change
 product_area: Platform services
 component:
-  - value: component-LcWEQW5gs
-    label: MQTT
+- value: component-LcWEQW5gs
+  label: MQTT
 build_artifact:
-  - value: tc-hc5Tfixeqqei
-    label: mqtt-service
+- value: tc-hc5Tfixeqqei
+  label: mqtt-service
 issue: MTM-64099
 version: 0.9.6
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 {{< c8y-admon-caution >}}
 This change only affects the new {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) capability.
 

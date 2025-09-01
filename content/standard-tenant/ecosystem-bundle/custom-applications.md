@@ -3,9 +3,10 @@ weight: 30
 title: Custom applications
 layout: bundle
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 **Custom applications** may be:
 
 * Web-based UI applications, either deployed as standalone applications or as plugins deployed into a specific application (for example, a widget to the Cockpit dashboard).

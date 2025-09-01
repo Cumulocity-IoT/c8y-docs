@@ -2,8 +2,9 @@
 weight: 80
 title: Models and devices
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Model execution for different devices {#model-execution-for-different-devices}
 
 Models are executed independently of each other. That is, models for specific devices can execute in parallel, making use of hardware parallelism where possible, if models are processing data \(such as `Measurement`, `Event`, or `Operation` objects\) for a different set of devices. When defining a model, you can configure it to use data from a set of specific devices or from a range of devices, with each device being handled independently.

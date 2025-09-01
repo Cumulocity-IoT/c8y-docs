@@ -3,15 +3,20 @@ weight: 70
 title: Monitoring compaction jobs
 layout: redirect
 helpcontent:
-  - label: monitoring-compaction-jobs
-    title: Monitoring compaction jobs
-    content: "During offloading, data from a Cumulocity base collection is written into files in the data lake. In order to ensure a compact physical layout of those files, the system automatically runs periodic **compaction jobs** in the background for each offloading pipeline. The execution status of each compaction run is monitored and provides details on execution schedule, runtime and so on.
-
-    The **job history** list shows an overview of the last compaction runs for the selected offloading pipeline with options to filter the list by different criteria. To get more details for a specific run, click on the corresponding entry in the list.
-
-    For each offloading pipeline the system keeps a limited history of the last compaction executions."
+- label: monitoring-compaction-jobs
+  title: Monitoring compaction jobs
+  content: "During offloading, data from a Cumulocity base collection is written into
+    files in the data lake. In order to ensure a compact physical layout of those
+    files, the system automatically runs periodic **compaction jobs** in the background
+    for each offloading pipeline. The execution status of each compaction run is monitored
+    and provides details on execution schedule, runtime and so on.\nThe **job history**
+    list shows an overview of the last compaction runs for the selected offloading
+    pipeline with options to filter the list by different criteria. To get more details
+    for a specific run, click on the corresponding entry in the list.\nFor each offloading
+    pipeline the system keeps a limited history of the last compaction executions."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 During offloading, data from the Operational Store of {{< product-c8y-iot >}} is written into files in the data lake. In order to ensure a compact physical layout of those files, {{< product-c8y-iot >}} DataHub automatically runs periodic compaction jobs in the background. For each offloading pipeline, a corresponding compaction job is set up and scheduled. {{< product-c8y-iot >}} DataHub UI provides insights into the compaction status of the different pipelines so that you can investigate whether everything is running as expected. For the case of compaction failures, you can also configure the offloading pipeline to raise an alarm as described in [Raising alarms](#raising-alarms).
 
 {{< c8y-admon-req >}}

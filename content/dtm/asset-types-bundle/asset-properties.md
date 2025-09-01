@@ -6,15 +6,14 @@ title: Asset properties
 helpContent:
 - label: asset-properties
   title: Asset Properties
-  content: "Asset properties are the parameters that define an asset model. One or more asset properties are used to define an asset model.
-
-
-  Asset properties can be reused in multiple asset models. You can build your asset property library by adding asset properties which can be used to define any asset model.
-
-
-  To add a new asset property, click **Add asset property**."
+  content: "Asset properties are the parameters that define an asset model. One or
+    more asset properties are used to define an asset model.\n\nAsset properties can
+    be reused in multiple asset models. You can build your asset property library
+    by adding asset properties which can be used to define any asset model.\n\nTo
+    add a new asset property, click **Add asset property**."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Asset properties are the parameters that define an [asset model](#asset-models). One or more asset properties are used to define an asset model. Asset properties are created in the **Asset properties** page.
 
 When you open the DTM application, default properties are readily available for use. See [Default properties](#default-properties) to view the list of properties available.

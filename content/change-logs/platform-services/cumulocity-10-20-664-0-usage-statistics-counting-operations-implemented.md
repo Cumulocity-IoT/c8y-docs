@@ -3,16 +3,17 @@ date: '2025-01-30'
 title: Implemented operation creation and update counters for usage statistics
 product_area: Platform services
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 component:
-  - value: component-9vjGQz8Ag
-    label: Core platform
+- value: component-9vjGQz8Ag
+  label: Core platform
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
 ticket: MTM-60232
 version: 10.20.664.0
+lastmod: '2025-09-01T10:40:43Z'
 ---
 Two new request counters for usage statistics `operationsCreatedCount`, `operationsUpdateCount`, introduced for REST endpoints in an earlier version (10.20.611.0), are now fully implemented. These counters are incremented in the following way:
 * operationsCreated: When operations are created via REST by POST request on a single operations API (`/devicecontrol/operations`) or the bulk operations API (`/devicecontrol/bulkoperations`).

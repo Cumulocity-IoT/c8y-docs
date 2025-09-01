@@ -2,8 +2,9 @@
 weight: 40
 title: LWM2M device protocols
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 To process data from LWM2M devices, {{< product-c8y-iot >}} uses device protocols.
 Device protocols are accessible through the **Devices Types** menu in the Device Management application. For details on the general usage, see [Managing device types](/device-management-application/managing-device-types).
 

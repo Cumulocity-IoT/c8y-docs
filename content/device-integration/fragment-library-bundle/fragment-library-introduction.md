@@ -3,9 +3,10 @@ weight: 10
 title: Introduction
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The device integrator library defines the data structures that are used in {{< product-c8y-iot >}} for device management activities like, for example, software management and configuration management. The data structures are expressed as fragments that can be used inside managed objects, operations and other resources. More information on the fragment concept can be found in [{{< product-c8y-iot >}} domain model](/concepts/domain-model/).
 
 In the following section you will find descriptions of the most important functionalities of a device, its managed objects and all its corresponding fragments to them. We will explain the relationship between the {{< product-c8y-iot >}} UI, the device object managed in our databases and what is being communicated to and from the device itself.

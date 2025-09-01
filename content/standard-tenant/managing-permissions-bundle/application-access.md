@@ -3,9 +3,10 @@ weight: 30
 title: Granting application access
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The **Application Access** tab shows a list of all available applications in your tenant in alphabetical order.
 
 To assign applications to the user, simply select the respective applications and click **Save**.

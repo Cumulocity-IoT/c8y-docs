@@ -3,9 +3,10 @@ weight: 180
 title: Tracking
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The **Tracking** tab allows the device's path to be visualized. To achieve this the device must periodically send tracking events and update its position.
 
 ### Tracking position history {#tracking-position-history}

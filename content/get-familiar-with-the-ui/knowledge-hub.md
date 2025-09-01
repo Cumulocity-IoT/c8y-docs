@@ -2,10 +2,11 @@
 weight: 60
 title: Knowledge Hub
 layout: bundle
-sector: 
-  - getting_started
+sector:
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 The Knowledge Hub provides you access to short videos, tours, articles, help and shortcuts, and thus serves as an entrance point to your {{< product-c8y-iot >}} platform experience.
 
 

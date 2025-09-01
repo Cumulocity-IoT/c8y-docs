@@ -3,22 +3,27 @@ weight: 45
 title: Working with reports
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 sector:
-  - app_enablement
+- app_enablement
 helpcontent:
-  - label: working-with-reports
-    title: Working with reports
-    content: "Reports enable you to track applications, alarms, assets, and other data by using a set of widgets in a dashboard layout. Widgets can display maps, images, graphs, tables and other graphic representations of data. In contrast to dashboards, reports show global data, regardless of the asset hierarchy.
-
-
-    On a report dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon. Click **Add widget** in the top menu bar to add a new widget to the report or use the cogwheel icon to edit or remove widgets.
-
-
-    Cumulocity includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Widgets collection* in the user documentation for details on each widget type and its configuration."
+- label: working-with-reports
+  title: Working with reports
+  content: "Reports enable you to track applications, alarms, assets, and other data
+    by using a set of widgets in a dashboard layout. Widgets can display maps, images,
+    graphs, tables and other graphic representations of data. In contrast to dashboards,
+    reports show global data, regardless of the asset hierarchy.\n\nOn a report dashboard,
+    you can rearrange widgets by drag & drop or resize them using the arrow icon.
+    Click **Add widget** in the top menu bar to add a new widget to the report or
+    use the cogwheel icon to edit or remove widgets.\n\nCumulocity includes preset
+    widget types, for example alarm or data point lists, linear or radial gauges.
+    Since each widget type displays different data, different parameters are required
+    to configure it. See *Widgets collection* in the user documentation for details
+    on each widget type and its configuration."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Reports enable you to track applications, alarms, assets, and other data in a dashboard layout. Reports are global dashboard pages, regardless of the asset hierarchy.
 
 {{< c8y-admon-req >}}

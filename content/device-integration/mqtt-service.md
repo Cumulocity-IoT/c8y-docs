@@ -3,9 +3,10 @@ weight: 26
 title: MQTT Service
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 {{< c8y-admon-preview >}}
 This feature is in **Public Preview**.
 That is, it is not yet generally available and may be subject to change in the future.

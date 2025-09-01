@@ -2,8 +2,9 @@
 weight: 90
 title: Data reporting
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 There are three data reporting mechanisms which can be applied to read all mapped browse paths:
 
 - **None** - The gateway will not read values automatically. The mappings will be applied only when manual read operations are performed on mapped nodes.

@@ -3,9 +3,10 @@ title: Subscribed applications
 layout: bundle
 weight: 20
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 {{< product-c8y-iot >}} provides a variety of applications for different purposes. Depending on your installation and/or optional services your tenant will show a selection of the potentially available applications.
 
 {{< c8y-admon-info >}}

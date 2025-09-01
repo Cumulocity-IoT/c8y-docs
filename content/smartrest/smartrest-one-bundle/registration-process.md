@@ -2,8 +2,9 @@
 weight: 40
 title: Registration process
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 This reference guide solely focusses on the registration of SmartREST templates using the SmartREST `/s` endpoint. Alternatively, templates can also be registered using the platform inventory API.
 
 Before a SmartREST template can be registered, its existence must be checked. If the template already exists, a registration is not necessary and yields an error message.

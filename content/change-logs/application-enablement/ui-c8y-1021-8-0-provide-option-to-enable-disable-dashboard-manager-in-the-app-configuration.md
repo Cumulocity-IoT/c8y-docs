@@ -5,15 +5,16 @@ title: >-
   configuration
 product_area: Application enablement & solutions
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 component:
-  - value: component-YdSEScrEC
-    label: Cockpit
+- value: component-YdSEScrEC
+  label: Cockpit
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-61177
 version: 1021.8.0
+lastmod: '2025-09-01T10:40:41Z'
 ---
 In the Cockpit application, it is now possible to  disable or enable the dashboard manager in the **Application configuration** page. By default, the dashboard manager is enabled.

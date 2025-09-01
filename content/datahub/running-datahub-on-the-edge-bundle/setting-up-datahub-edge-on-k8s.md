@@ -2,8 +2,9 @@
 weight: 20
 title: Setting up Cumulocity DataHub Edge
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 In this setup, {{< product-c8y-iot >}} DataHub is deployed into a Kubernetes environment using the Edge operator. The  DataHub backend is run as a microservice within the {{< product-c8y-iot >}} platform. The Dremio master and executor are deployed as a set of Kubernetes pods.
 
 ### Prerequisites {#prerequisites}

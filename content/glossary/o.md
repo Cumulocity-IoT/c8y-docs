@@ -3,10 +3,10 @@ weight: 120
 title: O
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
-
 ### OPC UA {#opc-ua}
 
 OPC Unified Architecture (OPC UA) is a standard to enable the communication between industrial devices. OPC UA is designed to work across technology boundaries (cross-platform).

@@ -3,9 +3,10 @@ weight: 145
 title: Platform capabilities
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 Devices may require information about platform capabilities. To enable new device-side functionality, a new API or optional components may be required. For this purpose, {{< product-c8y-iot >}} provides dedicated interfaces.
 ### Platform version {#platform-version}
 

@@ -1,20 +1,20 @@
 ---
-date:
+date: '2025-09-01T10:26:32Z'
 title: Analytics rules plugin now available in Public Preview
 product_area: Device management & connectivity
 change_type:
-  - value: change-pXAlHAWka
-    label: Preview
+- value: change-pXAlHAWka
+  label: Preview
 component:
-  - value: component--KIsStyzM
-    label: Device Management app
+- value: component--KIsStyzM
+  label: Device Management app
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-64266
 version: 1022.18.0
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< c8y-admon-preview >}}
 This feature is in Public Preview and may be subject to change in the future.
 {{< /c8y-admon-preview >}}

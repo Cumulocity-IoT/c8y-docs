@@ -2,13 +2,14 @@
 date: 2025-01-28
 title: Removal of documentation for deprecated releases
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 product_area: Platform services
 component:
-  - value: component-docs-123
-    label: Documentation
+- value: component-docs-123
+  label: Documentation
 build_artifact:
+lastmod: '2025-09-01T10:40:42Z'
 ---
 **Product documentation for deprecated releases**
 

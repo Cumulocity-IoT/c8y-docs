@@ -2,9 +2,9 @@
 weight: 40
 title: Developing microservices
 layout: redirect
-
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The {{< product-c8y-iot >}} Microservice SDK is an open source toolkit for building microservices using the popular [Spring Boot](https://spring.io/projects/spring-boot) framework and the {{< product-c8y-iot >}} [platform APIs](https://{{< domain-c8y >}}/api/core). It accelerates development by offering preconfigured annotations, built-in services, and a Maven plugin for creating Docker containers and {{< product-c8y-iot >}} applications. The SDK source code is available on GitHub in the
 [cumulocity-clients-java](https://github.com/Cumulocity-IoT/cumulocity-clients-java) repository.
 

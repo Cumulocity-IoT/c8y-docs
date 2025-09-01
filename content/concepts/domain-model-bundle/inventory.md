@@ -2,8 +2,9 @@
 weight: 20
 title: Inventory
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Managed objects {#managed-objects}
 
 The inventory stores devices and other assets relevant to your IoT solution. We refer to them as *managed objects*.

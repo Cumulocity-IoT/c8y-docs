@@ -2,9 +2,9 @@
 weight: 60
 title: Sending operations
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
-
 If a Loriot device supports hexadecimal commands, you can send them using shell operations. Notice that these commands are not serial monitor commands.
 In order to send an operation, navigate to the device you want to send an operation to in the Device Management application under **All devices**. Switch to the **Shell** tab.
 

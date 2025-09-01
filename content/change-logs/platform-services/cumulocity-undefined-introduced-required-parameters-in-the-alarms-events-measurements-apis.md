@@ -1,16 +1,17 @@
 ---
-date: 2023-12-06T11:11:58.877Z
+date: 2023-12-06T11:11:58.877000Z
 title: Introduced required parameters in the Alarms, Events, Measurements APIs
 change_type:
-  - value: change-3BQrQ6adS
-    label: API change
+- value: change-3BQrQ6adS
+  label: API change
 product_area: Platform services
 component:
-  - value: component-JlFdtOPva
-    label: REST API
+- value: component-JlFdtOPva
+  label: REST API
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
+lastmod: '2025-09-01T10:40:43Z'
 ---
 As announced earlier, see also [release 10.17](https://cumulocity.com/releasenotes/release-10-17-0/announcements-10-17-0), at least one query parameter limiting the affected data will now be required to prevent accidental deletion of too many objects during a bulk delete operation.
 This change affects the following APIs:

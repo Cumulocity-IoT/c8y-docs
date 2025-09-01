@@ -1,17 +1,18 @@
 ---
-date: "2024-09-26"
-title: "Simplified New asset models page"
-product_area: "Application enablement & solutions"
+date: '2024-09-26'
+title: Simplified New asset models page
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-2c7RdTdXo4"
-      label: "Improvement"
+- value: change-2c7RdTdXo4
+  label: Improvement
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+- value: component-Tl88RYb4A
+  label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-1554"
-version: "1020.1.16"
+- value: tc-wYIY0MBDO
+  label: dtm
+ticket: CTM-1554
+version: 1020.1.16
+lastmod: '2025-09-01T10:40:42Z'
 ---
 In the **New asset model** page, the **Asset models** and **Asset model samples** tabs have been removed for a more focused user experience as they are not required for creating a new asset model.

@@ -2,10 +2,11 @@
 title: Introduction
 layout: bundle
 sector:
-  - app_enablement
+- app_enablement
 weight: 10
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Microservices are server-side applications which may be used to extend the {{< product-c8y-iot >}} platform with customer-specific functionality.
 
 If you want to jump right in, check out our Hello world tutorial for [Java](/microservice-sdk/java/).

@@ -3,9 +3,10 @@ weight: 31
 title: Viewing device details
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< c8y-admon-related >}}
 References to related content in the documentation are mentioned in the details descriptions below.
 {{< /c8y-admon-related >}}

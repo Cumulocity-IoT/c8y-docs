@@ -2,9 +2,9 @@
 weight: 40
 title: Measurements
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
-
 Measurements represent regularly acquired readings and statistics from sensors.
 
 Measurements consist of a time when the measurement was taken, the unique identifiers of the source of the measurement, and a list of fragments. Here is an example of a measurement:

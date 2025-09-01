@@ -2,19 +2,19 @@
 date: '2025-07-17'
 title: New Analytics rules plugin is available as Public Preview
 change_type:
-  - value: change-pXAlHAWka
-    label: Preview
+- value: change-pXAlHAWka
+  label: Preview
 product_area: Analytics
 component:
-  - value: component-M5-cepIIS
-    label: Streaming Analytics
+- value: component-M5-cepIIS
+  label: Streaming Analytics
 build_artifact:
-  - value: tc-KXXmo2SUR
-    label: apama-in-c8y
+- value: tc-KXXmo2SUR
+  label: apama-in-c8y
 ticket: PAB-4742
 version: 26.152.0
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 {{< c8y-admon-preview >}}
 This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
 {{< /c8y-admon-preview >}}

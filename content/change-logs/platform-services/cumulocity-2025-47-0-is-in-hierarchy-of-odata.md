@@ -3,16 +3,17 @@ date: '2025-03-20'
 title: Added new query language function
 product_area: Platform services
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 component:
-  - value: component-JlFdtOPva
-    label: REST API
+- value: component-JlFdtOPva
+  label: REST API
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
 ticket: MTM-61960
 version: 2025.47.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
 A new function `isinhierarchyof()` has been added to the [query language](https://cumulocity.com/api/core/#tag/Query-language). 
 

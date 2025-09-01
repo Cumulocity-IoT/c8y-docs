@@ -3,18 +3,18 @@ date: '2025-05-22'
 title: Notifications 2.0 SDK 'deleteByFilter' method is deprecated
 product_area: Application enablement & solutions
 change_type:
-  - value: change-3BQrQ6adS
-    label: API change
+- value: change-3BQrQ6adS
+  label: API change
 component:
-  - value: QWPx3rFfn
-    label: Java SDK
+- value: QWPx3rFfn
+  label: Java SDK
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
 ticket: MTM-63058
 version: 2025.45.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
-
 The Notifications 2.0 SDK `deleteByFilter()` method takes a `NotificationSubscriptionFilter` parameter that specifies which subscriptions should be deleted.
 Previously, it was possible to create a filter that would result in more subscriptions being deleted than was intended.
 

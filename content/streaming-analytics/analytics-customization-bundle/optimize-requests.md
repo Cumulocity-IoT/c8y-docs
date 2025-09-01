@@ -2,8 +2,9 @@
 weight: 10
 title: Optimizing requests with concurrent connections
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 In order to provide better performance for requests to the {{< product-c8y-iot >}} platform, Streaming Analytics uses multiple client connections to perform requests concurrently.
 This can provide improved performance, but may also change the ordering in which requests are executed and responses are returned.
 By default, the {{< product-c8y-iot >}} transport tries to use multiple connections and restricts ordering to avoid races that may affect your EPL application.

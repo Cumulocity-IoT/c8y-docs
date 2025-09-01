@@ -3,19 +3,24 @@ weight: 75
 title: Data point library
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 sector:
-  - app_enablement
+- app_enablement
 helpcontent:
-  - label: data-point-library
-    title: Data point library
-    content: "The data point library provides a collection of data points with default values for data point properties, which serve as templates that can be easily applied to your data points from different devices. To find default values for a data point like color or label, Cumulocity searches the data point library for a matching entry. If there is match, the corresponding data point properties are used for the default visualization.
-
-
-    Either select one of the existing data points from the list or click **Add data point** at the top right to add a new data point to the library which meets your individual needs."
+- label: data-point-library
+  title: Data point library
+  content: "The data point library provides a collection of data points with default
+    values for data point properties, which serve as templates that can be easily
+    applied to your data points from different devices. To find default values for
+    a data point like color or label, Cumulocity searches the data point library for
+    a matching entry. If there is match, the corresponding data point properties are
+    used for the default visualization.\n\nEither select one of the existing data
+    points from the list or click **Add data point** at the top right to add a new
+    data point to the library which meets your individual needs."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The data point library provides a collection of data points with default values for data point properties.
 
 {{< c8y-admon-req >}}

@@ -2,10 +2,11 @@
 title: MQTT quick reference
 layout: bundle
 sector:
-  - device_management
+- device_management
 weight: 70
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 #### Connection {#connection}
 
 * <kbd>CONNECT d:1234:myDevice_10 acme/device_1234</kbd> \

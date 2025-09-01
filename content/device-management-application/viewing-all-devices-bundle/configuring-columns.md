@@ -2,8 +2,9 @@
 weight: 20
 title: Configuring columns
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The columns shown in the device list may be configured to your needs.
 
 ### To show/hide standard columns {#to-showhide-standard-columns}

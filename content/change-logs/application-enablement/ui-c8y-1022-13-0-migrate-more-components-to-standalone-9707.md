@@ -3,16 +3,17 @@ date: '2025-08-14'
 title: Migrated additional Angular components to standalone mode
 product_area: Application enablement & solutions
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+- value: component-YbYJ3gLU_
+  label: Web SDK
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-64389
 version: 1022.13.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
 As part of our ongoing efforts to improve the modularity and maintainability of the Web SDK, we have migrated more components to operate in standalone mode. This change involves updating the architecture and dependencies of these components. Users should not experience any functional differences, as the migrated components will continue to operate as before. Developers using the Web SDK are now able to import more components directly without having to import the whole module.
 

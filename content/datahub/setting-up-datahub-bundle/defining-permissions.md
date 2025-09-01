@@ -2,8 +2,9 @@
 weight: 20
 title: Defining Cumulocity DataHub permissions and roles
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Dedicated permissions define what a user is allowed to do in {{< product-c8y-iot >}} DataHub. To ease assigning permissions to users, permissions are grouped in roles. During deployment of the {{< product-c8y-iot >}} DataHub applications the corresponding permissions as well as roles are created. If a role with the same name already exists, no new role will be created. The same holds for permissions.
 
 If you do not have corresponding {{< product-c8y-iot >}} DataHub permissions, you will get a warning after login.

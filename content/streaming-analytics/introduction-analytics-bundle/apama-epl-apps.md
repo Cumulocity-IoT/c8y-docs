@@ -2,8 +2,9 @@
 weight: 30
 title: EPL Apps
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The **EPL Apps** page of the Streaming Analytics application allows you to write business logic in Apama’s Event Processing Language \(Apama EPL\) which gives more power and flexibility in a text-based programming language. This is an alternative if more complex logic is required or the logic does not fit into the pattern of an analytic model.
 
 You can develop EPL apps (that is, single \*.mon files) directly within {{< product-c8y-iot >}}, written in Apama EPL. You can also import existing \*.mon files as EPL apps into {{< product-c8y-iot >}}. When you activate an EPL app from the Streaming Analytics application, you deploy it to {{< product-c8y-iot >}}. See [EPL Apps](/streaming-analytics/epl-apps/) for detailed information, including examples.

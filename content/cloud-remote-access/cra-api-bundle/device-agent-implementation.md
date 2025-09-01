@@ -2,8 +2,9 @@
 title: Device agent implementation
 weight: 20
 layout: bundle
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 This section describes how to implement a device agent deployed on a gateway. The device agent is responsible for
 creating the device part of the tunnel between a TCP/IP connection at private network and the secure device WebSocket
 endpoint.

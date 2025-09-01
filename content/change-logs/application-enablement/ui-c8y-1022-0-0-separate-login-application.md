@@ -3,16 +3,17 @@ date: 2025-05-12
 title: Separate login application now manages all authentication flows
 product_area: Application enablement & solutions
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+- value: component-YbYJ3gLU_
+  label: Web SDK
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-63361
 version: 1022.0.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
 Starting with version 1022.0.0, the Web SDK no longer includes built-in login functionality in each application. Instead, a separate login application now manages all authentication flows.
 Web applications developed using Web SDK version 1022.0.0 or later will automatically redirect users to this standalone login application whenever authentication is needed.

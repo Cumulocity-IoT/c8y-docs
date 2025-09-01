@@ -3,9 +3,10 @@ weight: 65
 title: Responsible Disclosure Policy
 layout: bundle
 sector:
-  - terms_conditions
+- terms_conditions
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### General statement
 
 At Cumulocity, the security and integrity of our systems and application platforms are our top priorities. We are dedicated to safeguarding data and appreciate the contributions of security researchers who help us maintain these high standards.

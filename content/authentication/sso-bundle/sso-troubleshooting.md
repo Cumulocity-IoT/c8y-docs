@@ -3,9 +3,10 @@ weight: 70
 title: Troubleshooting
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:31Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 ### Inspect token content {#inspect-token-content}
 
 It can be particularly helpful to inspect the content of the authorization token sent to the platform as some of its

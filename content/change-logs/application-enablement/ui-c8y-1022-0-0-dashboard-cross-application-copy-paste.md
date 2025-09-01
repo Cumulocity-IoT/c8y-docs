@@ -3,18 +3,18 @@ date: 2025-04-16
 title: Support for cross application dashboard import/export functionality
 product_area: Application enablement & solutions
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+- value: component-YbYJ3gLU_
+  label: Web SDK
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-62313, MTM-62316
 version: 1022.0.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
-
 In an upcoming version a new **Import/Export** tab will be added to the dashboard settings, which allows to export dashboards to JSON files, import dashboards from previously exported JSON files and edit the dashboard in an editor. This new functionality allows to copy dashboards across applications. It is provided as a "self-optional" plugin to the Cockpit application, thus it has to be installed explicitly.
 The dashboard setting component will be refactored to use a secondary router outlet in order to make these type of views hookable.
 This approach allows to hook a new tab to a particular outlet. For example:

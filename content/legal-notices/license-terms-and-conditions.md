@@ -3,9 +3,10 @@ weight: 50
 title: License Terms and Conditions
 layout: bundle
 sector:
-  - terms_conditions
+- terms_conditions
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Updated: 2024-10-18
 
 This notice is valid for all products, product lines and associated products of Cumulocity GmbH comprising software, documentation, user manuals and other related materials in tangible or electronic form (the "Product").

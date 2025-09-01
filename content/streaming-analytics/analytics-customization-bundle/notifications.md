@@ -2,6 +2,8 @@
 weight: 40
 title: Configuration requirements for Notifications 2.0
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
 Streaming Analytics can use the {{< product-c8y-iot >}} Notifications 2.0 reliable data forwarding capability to receive notifications for measurements, events, alarms, managed objects and operations that are processed by the {{< product-c8y-iot >}} platform. For more information, see [About Notifications 2.0](https://{{< domain-c8y >}}/api/core/#tag/About-notifications-2.0) in the {{< openapi >}}.
 

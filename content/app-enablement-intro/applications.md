@@ -3,9 +3,10 @@ title: Application enablement
 layout: bundle
 weight: 10
 sector:
-  - app_enablement
+- app_enablement
+date: '2025-09-01T10:26:31Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< product-c8y-iot >}} provides a comprehensive application enablement platform that combines no-code tools with advanced development capabilities, enabling users to build and deploy IoT solutions that are tailored to business requirements.
 
 The {{< product-c8y-iot >}} flexible architecture supports different levels of application enablement:

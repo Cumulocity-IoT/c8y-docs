@@ -2,6 +2,8 @@
 title: Client implementation
 weight: 10
 layout: bundle
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
 Each device supporting Cloud Remote Access uses a fragment called `c8y_RemoteAccessList` to hold a list with the configured
 endpoints that can be accessed via this device.

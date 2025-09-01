@@ -3,16 +3,17 @@ date: '2025-03-27'
 title: Enhanced data point explorer and data point graph widgets
 product_area: Application enablement & solutions
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+- value: component-YbYJ3gLU_
+  label: Web SDK
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-61539
 version: 1021.53.0
+lastmod: '2025-09-01T10:40:41Z'
 ---
 To enhance data analysis and visualization within the {{< product-c8y-iot >}} platform, the data point explorer and data point graph have been upgraded with new capabilities and a modernized architecture. Both features have been migrated from AngularJS to Angular, bringing improved performance, a refreshed interface, and expanded configuration options. Initially, these features will not be included by default and can only be installed as additional plugins. To install them, navigate to your custom application, click **Install plugins**, and search for "Data point explorer" and "Data point graph".
 

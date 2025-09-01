@@ -2,8 +2,9 @@
 weight: 60
 title: Connecting the gateway to the server
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 Next, establish a connection between the gateway and the OPC UA server.
 
 1. In the **OPC UA server** tab of the respective gateway, click **Add server**. <br>

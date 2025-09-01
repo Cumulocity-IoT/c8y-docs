@@ -2,8 +2,9 @@
 title: Managing endpoints
 weight: 30
 layout: bundle
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 The "endpoint" is the IP address and port of the VNC, SSH or Telnet server running on the remote device. The IP address and port must be reachable from the gateway. 	
 
 #### To configure a new remote device {#to-configure-a-new-remote-device}

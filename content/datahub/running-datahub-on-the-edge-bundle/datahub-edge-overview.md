@@ -2,8 +2,9 @@
 weight: 10
 title: Cumulocity DataHub Edge overview
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Documentation overview {#documentation-overview}
 
 The following sections will walk you through all the functionalities of {{< product-c8y-iot >}} DataHub Edge in detail.

@@ -2,10 +2,11 @@
 weight: 30
 title: Alarms
 layout: bundle
-sector: 
-  - device_management
+sector:
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The **Alarm** tab is always shown for all devices. Its content is filled by alarm statuses reported by the device and other sources like analytics or smart rules. Devices raise alarms in {{< product-c8y-iot >}} as they occur. Once the alarm status was resolved the device must also update the status of its created alarm to CLEARED.
 
 ### Raising alarms {#raising-alarms}

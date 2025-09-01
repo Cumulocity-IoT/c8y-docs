@@ -5,18 +5,18 @@ layout: redirect
 helpcontent:
 - label: working-with-alarms
   title: Alarms
-  content: "Devices can raise alarms to indicate that there is a problem. You can find an overview of the alarms across all devices here. To check the alarms of a particular device, switch to the **Alarm** tab in the details of the device.
-
-
-  By default, only unresolved alarms are shown. If you turn on **Show cleared alarms** at the top right, you will see the entire alarm history.
-
-
-  Alarms are classified according to their severity: CRITICAL, MAJOR, MINOR, WARNING.
-
-
-  By clicking one of the buttons at the top, the corresponding section will be hidden. Click it once more to make the section visible again. Within each section, the alarms are sorted by their occurrence, displaying the most recent alarm first."
+  content: "Devices can raise alarms to indicate that there is a problem. You can
+    find an overview of the alarms across all devices here. To check the alarms of
+    a particular device, switch to the **Alarm** tab in the details of the device.\n\
+    \nBy default, only unresolved alarms are shown. If you turn on **Show cleared
+    alarms** at the top right, you will see the entire alarm history.\n\nAlarms are
+    classified according to their severity: CRITICAL, MAJOR, MINOR, WARNING.\n\nBy
+    clicking one of the buttons at the top, the corresponding section will be hidden.
+    Click it once more to make the section visible again. Within each section, the
+    alarms are sorted by their occurrence, displaying the most recent alarm first."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Devices can raise alarms to indicate that there is a problem requiring an intervention.
 
 ### To view alarms {#to-view-alarms}

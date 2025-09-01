@@ -3,9 +3,10 @@ weight: 60
 title: Connecting new Bluetooth devices to the Sensor App
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 The {{< sensor-app >}} connects to a range of Bluetooth sensor devices.
 Additional devices will be added in the future.
 

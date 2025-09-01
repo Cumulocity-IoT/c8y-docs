@@ -2,10 +2,11 @@
 weight: 140
 title: Network
 layout: bundle
-sector: 
-  - device_management
+sector:
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The **Network** tab displays network information. It is shown if the ```c8y_Network``` fragment is present in the device managed object. There are three subsections: WAN, LAN and DHCP. Each of these can be activated by the nested fragments ```c8y_ WAN```, ```c8y_LAN```, and ```c8y_DHCP``` respectively.
 
 #### Network status {#network-status}

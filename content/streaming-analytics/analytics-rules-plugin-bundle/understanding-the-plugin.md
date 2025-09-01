@@ -2,8 +2,9 @@
 weight: 15
 title: Understanding the Analytics rules plugin
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Analytics Builder workflow versus Analytics rules plugin {#analytics-builder-workflow-versus-analytics-rules-plugin}
 
 #### Standard Analytics Builder workflow {#standard-analytics-builder-workflow}

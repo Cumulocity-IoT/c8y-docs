@@ -5,9 +5,12 @@ layout: redirect
 helpcontent:
 - label: managing-device-credentials
   title: Device credentials
-  content: "Manage the device credentials that have been generated for your connected devices. Edit, disable, or delete device credentials as required or modify its permissions in the **Global roles** field."
+  content: Manage the device credentials that have been generated for your 
+    connected devices. Edit, disable, or delete device credentials as required 
+    or modify its permissions in the **Global roles** field.
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The **Device credentials** page lists all credentials that have been generated for your connected devices. Each device that has been [registered](/device-management-application/registering-devices) shows up here with the naming convention "device_&lt;id&gt;".
 
 ![Device credentials](/images/users-guide/DeviceManagement/devmgmt-device-credentials.png)

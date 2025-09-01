@@ -2,8 +2,9 @@
 weight: 120
 title: OPC UA events
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 ### Model change events {#model-change-events}
 
 The model change events are created by the OPC UA server to notify about the changes in an address space node on runtime.

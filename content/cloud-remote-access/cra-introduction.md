@@ -3,9 +3,10 @@ title: Introduction
 weight: 10
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 The {{< product-c8y-iot >}} Cloud Remote Access feature offers a seamless and secure way to connect to your devices using either a browser-based remote desktop or an SSH connection. Devices can be directly accessed through the {{< product-c8y-iot >}} platform's web-based user interface without exposing any ports to a public network, thereby eliminating the need for additional software or complex VPN infrastructure. Alternatively, you can also establish a secure TCP tunnel directly to a local machine.
 
 Leveraging these remote access and management capabilities allows for effective configuration and troubleshooting of devices, such as industrial machines, IoT gateways, or network infrastructure. This includes, for example, the following scenarios:

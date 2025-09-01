@@ -2,8 +2,9 @@
 weight: 148
 title: Relay
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 ### Relays {#relays}
 
 A relay is a kind of binary state switch which can be in the states OPEN or CLOSED. Relays can be used for many purposes, for example to connect or disconnect the consumer power supply through a smart energy meter.

@@ -2,8 +2,9 @@
 weight: 20
 title: Python microservice
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 In this tutorial, you will learn how to create and run a microservice written in Python:
 
 1. Install the required prerequisites.

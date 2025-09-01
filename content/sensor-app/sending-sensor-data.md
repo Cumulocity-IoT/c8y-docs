@@ -3,10 +3,10 @@ weight: 40
 title: Sending sensor data to the platform
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
-
 Measurements from your smartphone, OBD devices and connected Bluetooth sensors are sent to {{< product-c8y-iot >}} automatically as soon as the device is connected or started and as long as the app is in foreground. All measurements of the smartphone sensors are displayed automatically in the device dashboard in {{< product-c8y-iot >}}.
 
 ![Device dashboard](/images/users-guide/csa/csa-device-dashboard.png)

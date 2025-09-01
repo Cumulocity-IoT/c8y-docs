@@ -3,9 +3,10 @@ weight: 10
 title: Configuration
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 On the **Configuration** tab, you can configure various properties for your tenant.
 
 {{< c8y-admon-req >}}

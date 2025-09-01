@@ -2,12 +2,13 @@
 title: Service quotas
 layout: bundle
 sector:
-  - terms_conditions
+- terms_conditions
 weight: 60
 aliases:
-  - /concepts/limits/
+- /concepts/limits/
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 Your {{< product-c8y-iot >}} service includes so-called **quotas**. These quotas ensure that the service operates within the guarantees of the {{< product-c8y-iot >}} service-level agreements.
 
 The following types of quotas are used:

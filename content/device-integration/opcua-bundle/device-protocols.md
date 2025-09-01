@@ -2,8 +2,9 @@
 weight: 80
 title: Device protocols
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 ### Adding a new device protocol {#adding-a-new-device-protocol}
 
 1. In the Device protocols page, click **New device protocol** in the top menu bar and select OPC UA as device protocol type.

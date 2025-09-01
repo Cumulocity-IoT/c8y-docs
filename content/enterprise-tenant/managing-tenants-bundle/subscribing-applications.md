@@ -2,9 +2,9 @@
 weight: 20
 title: Subscribing applications
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
-
 ### Overview
 
 {{< product-c8y-iot >}} features an application marketplace that allows tenants to access and manage various applications.

@@ -2,9 +2,9 @@
 weight: 30
 title: Managing fieldbus devices
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
-
 Once connected, you can now manage your device. Switch to the **Child devices** tab of a device to list the connected fieldbus devices and navigate to a fieldbus device.
 
 Depending on the capabilities of the device and its configuration in {{< product-c8y-iot >}}, you can:

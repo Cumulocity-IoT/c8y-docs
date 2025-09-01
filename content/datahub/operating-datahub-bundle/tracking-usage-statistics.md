@@ -3,15 +3,20 @@ weight: 20
 title: Tracking usage statistics
 layout: redirect
 helpcontent:
-  - label: tracking-usage-statistics
-    title: Tracking usage statistics
-    content: "If enabled, the system tracks **usage statistics** on the amount of data being processed. For offloading queries the amount of data being read from the base collection is tracked. For ad-hoc queries the amount of data being read from the data lake is tracked.
-
-    The top panels show overall **summary statistics** as well as statistics separated for offloading and ad-hoc queries. The table shows the details on a per-day basis for the selected month. The date of each entry links to the **Query log**, which lists all queries for the respective day.
-
-    The statistics are updated once per hour. They are deleted after a retention period, so months statistics may no longer be available for longer past."
+- label: tracking-usage-statistics
+  title: Tracking usage statistics
+  content: "If enabled, the system tracks **usage statistics** on the amount of data
+    being processed. For offloading queries the amount of data being read from the
+    base collection is tracked. For ad-hoc queries the amount of data being read from
+    the data lake is tracked.\nThe top panels show overall **summary statistics**
+    as well as statistics separated for offloading and ad-hoc queries. The table shows
+    the details on a per-day basis for the selected month. The date of each entry
+    links to the **Query log**, which lists all queries for the respective day.\n\
+    The statistics are updated once per hour. They are deleted after a retention period,
+    so months statistics may no longer be available for longer past."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 If enabled, {{< product-c8y-iot >}} DataHub tracks usage statistics on the amount of data being processed. These statistics are collected for offloading queries and track the amount of data these queries read from the Operational Store of {{< product-c8y-iot >}}. The statistics are also collected for ad-hoc queries and track the amount of data these queries read from the data lake. The usage statistics can be utilized for a volume-based charging. They can also be utilized to pinpoint resource-intensive queries in terms of network load.
 
 {{< c8y-admon-info >}}

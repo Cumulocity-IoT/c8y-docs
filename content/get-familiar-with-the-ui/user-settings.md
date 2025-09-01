@@ -3,9 +3,10 @@ weight: 50
 title: User options and settings
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 ### Right drawer
 
 Clicking the **User** button at the top right opens the right drawer which provides access to various actions and information.

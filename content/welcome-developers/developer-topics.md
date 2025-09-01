@@ -3,9 +3,10 @@ weight: 30
 title: Developer topics
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 <!-- content might be reworked -->
 
 For our developer community, we offer a variety of sources to quickly get started or to dig deeper into the matter. Learn how to develop and deploy applications on top of our IoT platform and integrate IoT data sources.

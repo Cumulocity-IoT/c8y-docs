@@ -3,10 +3,10 @@ weight: 140
 title: R
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
-
 ### Real-time processing {#real-time-processing}
 
 {{< product-c8y-iot >}} allows developers and power users to run real-time IoT business logic inside {{< product-c8y-iot >}} based on a high-level real-time processing language, that is, Apama’s Event Processing Language (EPL).

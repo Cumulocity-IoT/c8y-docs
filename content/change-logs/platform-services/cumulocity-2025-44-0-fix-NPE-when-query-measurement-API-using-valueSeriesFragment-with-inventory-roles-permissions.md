@@ -5,16 +5,17 @@ title: >-
   result in a NullPointerException
 product_area: Platform services
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+- value: change-VSkj2iV9m
+  label: Fix
 component:
-  - value: component-JlFdtOPva
-    label: Rest API
+- value: component-JlFdtOPva
+  label: Rest API
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
 ticket: MTM-62347
 version: 2025.44.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
 When users with inventory roles permission for the API `Measurement` and the fragment `*` were triggering a query to the Measurement API
 using the filter `valueSeriesFragment`, this resulted in a NullPointerException and error code 500.

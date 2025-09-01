@@ -2,8 +2,9 @@
 title: Upgrading from Angular 14 to Angular 15
 layout: redirect
 weight: 470
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Angular 15 is supported from version `1018.157.0`. The following configuration changes are required before you can run the application:
 
 - Update all `@angular/*` dependencies to `15.2.7`.

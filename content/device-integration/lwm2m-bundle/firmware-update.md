@@ -2,8 +2,9 @@
 weight: 90
 title: LWM2M device firmware update (FOTA)
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The {{< product-c8y-iot >}} LWM2M agent supports FOTA (Firmware update Over The Air) using a firmware binary that is uploaded to the {{< product-c8y-iot >}} platform or hosted externally.
 To upload a firmware or specify an external firmware location, go to **Device Management** &gt; **Management** &gt; **Firmware repository** &gt; **Add firmware**
 

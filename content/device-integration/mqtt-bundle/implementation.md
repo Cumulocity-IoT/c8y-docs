@@ -2,8 +2,9 @@
 weight: 70
 title: MQTT implementation
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 This section lists the implementation details for the MQTT protocol. The {{< product-c8y-iot >}} implementation supports MQTT Version 3.1.1.
 
 ### Connecting via MQTT {#connecting-via-mqtt}

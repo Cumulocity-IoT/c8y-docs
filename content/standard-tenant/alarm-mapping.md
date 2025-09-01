@@ -3,16 +3,21 @@ weight: 50
 title: Alarm mapping
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 sector:
-  - platform_administration
+- platform_administration
 helpcontent:
 - label: alarm-mapping
   title: Alarm mapping
-  content: "Alarm mapping enables you to change the severity and text of alarms to adapt them to your business priorities. For example, a loss of the connection to a device is by default a MAJOR alarm but may be critical to you. To change this, add an alarm mapping to change alarms related to connection losses to CRITICAL."
+  content: Alarm mapping enables you to change the severity and text of alarms 
+    to adapt them to your business priorities. For example, a loss of the 
+    connection to a device is by default a MAJOR alarm but may be critical to 
+    you. To change this, add an alarm mapping to change alarms related to 
+    connection losses to CRITICAL.
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 Alarm mapping enables you to change the severity and text of alarms to adapt them to your business priorities. For example, a loss of the connection to a device is by default a MAJOR alarm but may be critical to you. To change this, add an alarm mapping to change alarms related to connection losses to CRITICAL.
 
 {{< c8y-admon-req >}}

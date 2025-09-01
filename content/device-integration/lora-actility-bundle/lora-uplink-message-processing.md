@@ -2,8 +2,9 @@
 weight: 80
 title: Uplink message processing
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 On the receipt of an uplink message, the {{< product-c8y-iot >}} platform creates the following measurements and events, and updates the corresponding device managed object.
 
 - **Unprocessed data** - An event of type <code>c8y_ActilityUplinkRequest</code> (this type is based on the event.uplink.type set in the configuration file) is created with the unprocessed data.

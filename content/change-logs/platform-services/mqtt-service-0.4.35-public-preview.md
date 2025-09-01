@@ -2,17 +2,17 @@
 date: 2025-05-09
 title: MQTT Service Public Preview release
 change_type:
-  - value: change-pXAlHAWka
-    label: Preview
+- value: change-pXAlHAWka
+  label: Preview
 product_area: Platform services
 component:
-  - value: component-LcWEQW5gs
-    label: MQTT
+- value: component-LcWEQW5gs
+  label: MQTT
 build_artifact:
-  - value: tc-hc5Tfixeqqei
-    label: mqtt-service
+- value: tc-hc5Tfixeqqei
+  label: mqtt-service
+lastmod: '2025-09-01T10:40:42Z'
 ---
-
 {{< c8y-admon-preview >}}
 This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
 

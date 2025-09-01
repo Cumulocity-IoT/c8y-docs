@@ -3,22 +3,21 @@ weight: 10
 title: Working with the data explorer
 layout: bundle
 sector:
-  - app_enablement
+- app_enablement
 helpcontent:
-  - label: data-explorer
-    title: Data explorer
-    content: "In the data explorer, data points (measurements or sensor data) can be visualized. On the right, you see a list of available data points. On the left, you see its visualization.
-
-
-    Click **Add data point** to add more data points to the data explorer. In addition, you can also add alarms or events.
-
-
-    You can modify the visualization of the data explorer, for example change the time range being shown or aggregate the data being displayed to get an efficient overview over larger time periods.
-
-
-    The data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."
+- label: data-explorer
+  title: Data explorer
+  content: "In the data explorer, data points (measurements or sensor data) can be
+    visualized. On the right, you see a list of available data points. On the left,
+    you see its visualization.\n\nClick **Add data point** to add more data points
+    to the data explorer. In addition, you can also add alarms or events.\n\nYou can
+    modify the visualization of the data explorer, for example change the time range
+    being shown or aggregate the data being displayed to get an efficient overview
+    over larger time periods.\n\nThe data explorer can be sent as widget to a dashboard
+    or downloaded as CSV or Excel file."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< c8y-admon-preview-toggle >}}
 Toggle on the preview feature documentation to see upcoming changes to the existing functionality.
 {{< /c8y-admon-preview-toggle >}}

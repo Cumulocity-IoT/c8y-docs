@@ -3,14 +3,17 @@ weight: 10
 title: Retention rules
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
 helpcontent:
 - label: retention-rules
   title: Retention rules
-  content: "Retention rules gives you control on how long data is stored in your account. By default, all historical data is deleted after 60 days (configurable in the system settings). You can however store measurements for 90 days for example, but delete alarms already after 10 days."
+  content: Retention rules gives you control on how long data is stored in your 
+    account. By default, all historical data is deleted after 60 days 
+    (configurable in the system settings). You can however store measurements 
+    for 90 days for example, but delete alarms already after 10 days.
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
-
 **Retention rules** give you control on how long data is stored in your account. By default, all historical data is deleted after 60 days (configurable in the system settings by the platform administrator). You might however want to store measurements for 90 days for example, but delete alarms already after 10 days.
 
 {{< c8y-admon-req >}}

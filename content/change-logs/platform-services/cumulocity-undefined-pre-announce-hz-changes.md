@@ -2,16 +2,17 @@
 date: '2025-08-27'
 title: Public preview of internal implementation changes
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 product_area: Platform services
 component:
-  - value: component-OG_650_b2
-    label: Core platform
+- value: component-OG_650_b2
+  label: Core platform
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
 ticket: MTM-48688
+lastmod: '2025-09-01T10:40:42Z'
 ---
 As a part of continuous modernization of the {{< product-c8y-iot >}} platform we have introduced some internal implementation
 changes that enhance the reliability and scalability of {{< product-c8y-iot >}}. The new implementation is currently

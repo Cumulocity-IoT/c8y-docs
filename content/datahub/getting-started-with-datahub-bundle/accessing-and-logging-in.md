@@ -2,8 +2,9 @@
 weight: 10
 title: Accessing and logging into Cumulocity DataHub
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 You access {{< product-c8y-iot >}} DataHub via a web browser. It has been tested with the following web browsers:
 
 * Firefox (latest version)

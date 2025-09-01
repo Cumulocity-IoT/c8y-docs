@@ -1,14 +1,15 @@
 ---
 title: SmartREST
-icon: "c8y-icon c8y-icon-smart-rest"
+icon: c8y-icon c8y-icon-smart-rest
 type: root
 layout: redirect
 bundlefolder: smartrest
 sector:
-  - device_management
+- device_management
 audience:
-  - Developers
+- Developers
 weight: 80
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Learn about the SmartREST protocol and its data format, and find a huge number of static SmartREST templates supported by {{< product-c8y-iot >}}.

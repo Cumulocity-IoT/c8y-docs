@@ -3,10 +3,11 @@ title: Microservice hosting service-level agreement
 layout: bundle
 weight: 20
 aliases:
-  - /microservice-sdk/microservices-sla/
-  - /microservices-sla/
+- /microservice-sdk/microservices-sla/
+- /microservices-sla/
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who utilizes {{< product-c8y-iot >}} Microservices ("Service", “Container-as-a-Service") for deploying Customer Microservices ("Microservices") on {{< product-c8y-iot >}} cloud instances.
 
 ### Service description

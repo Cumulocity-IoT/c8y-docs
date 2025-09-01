@@ -2,8 +2,9 @@
 weight: 50
 title: Operations
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Devices can be remote-controlled and managed in {{< product-c8y-iot >}}.
 
 Examples:

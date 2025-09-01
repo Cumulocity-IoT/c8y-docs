@@ -3,9 +3,10 @@ weight: 20
 title: Core MQTT
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The Core MQTT implementation of {{< product-c8y-iot >}} provides the following benefits:
 
 * Multi-tenancy support: A single endpoint serves multiple tenants.

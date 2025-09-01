@@ -3,21 +3,25 @@ weight: 70
 title: Usage statistics and billing
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 sector:
-  - platform_administration
+- platform_administration
 helpcontent:
-  - label: usage-and-billing
-    title: Usage statistics
-    content: "The **Usage statistics** page provides statistical information on each subtenant such as the number of API requests, the number of devices connected to the subtenant, the amount of data stored in the account, or the number applications subscribed to the tenant. For details, see the user documentation.
-
-
-    You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. The **Usage statistics** page will show the numbers for all subtenants for this time period. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria."
-
+- label: usage-and-billing
+  title: Usage statistics
+  content: "The **Usage statistics** page provides statistical information on each
+    subtenant such as the number of API requests, the number of devices connected
+    to the subtenant, the amount of data stored in the account, or the number applications
+    subscribed to the tenant. For details, see the user documentation.\n\nYou can
+    filter the usage statistics list for a time period by adding the start and end
+    date in the top menu bar and click **Filter**. The **Usage statistics** page will
+    show the numbers for all subtenants for this time period. You can also filter
+    and sort the list on any column by clicking the filter icon next to the column
+    name and providing the filtering criteria."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
-
 ### To view usage statistics {#to-view-usage-statistics}
 
 {{< c8y-admon-req >}}

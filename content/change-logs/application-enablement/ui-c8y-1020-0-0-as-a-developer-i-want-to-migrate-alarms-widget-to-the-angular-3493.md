@@ -3,16 +3,17 @@ date: 2024-06-06
 title: Redesign of the alarms feature
 product_area: Application enablement & solutions
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+- value: component-YbYJ3gLU_
+  label: Web SDK
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-52646
 version: 1020.0.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
 As announced earlier, a redesign of the alarms feature has been introduced with both visual and functional enhancements.
 

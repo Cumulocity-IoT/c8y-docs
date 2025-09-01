@@ -2,8 +2,9 @@
 weight: 10
 title: Documentation overview
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The following sections will walk you through all the functionalities of {{< product-c8y-iot >}} DataHub in detail.
 
 For your convenience, here is an overview of the contents of this document:

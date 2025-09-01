@@ -3,10 +3,10 @@ weight: 40
 title: Certificate Authority
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
-
 {{< product-c8y-iot >}} includes a Certificate Authority (CA), providing the following capabilities:
 
 - Manage signing certificates

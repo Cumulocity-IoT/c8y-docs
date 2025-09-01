@@ -3,9 +3,10 @@ weight: 10
 title: Introduction
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:31Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 {{< product-c8y-iot >}} provides single sign-on (SSO) functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory (AAD). Currently authorization code grant is supported with access and ID tokens in form of JWT. SAML is not supported.
 On top of standard SSO, {{< product-c8y-iot >}} also allows you to access the platform resources using access tokens from your authorization server directly as a Bearer token. For details refer to [Using access tokens from the authorization server](#configuring-access-tokens).
 

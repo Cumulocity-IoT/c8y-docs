@@ -3,9 +3,10 @@ weight: 30
 title: Custom template configuration
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:31Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 On the **Single sign-on** tab in the **Authentication** page, select "custom" (the default) as template to configure a connection with any authorization server using OAuth2 authorization code grant.
 
 As the OAuth protocol is based on the execution of HTTP requests and redirects, a generic request configuration is provided.

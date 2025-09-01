@@ -2,9 +2,9 @@
 title: Languages customization
 layout: redirect
 weight: 30
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
-
 The platform UI strings used for internationalization are stored in [gettext](https://en.wikipedia.org/wiki/Gettext). If you want to add a new language to the platform you need a software to edit these files, for example, [Poedit](https://poedit.net/).
 
 Each translated catalog is loaded at runtime in a JSON format. To convert .po (gettext) files into .json files we rely on `@angular/cli` installed during the first step.

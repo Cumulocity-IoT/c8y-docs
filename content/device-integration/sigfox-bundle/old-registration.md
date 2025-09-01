@@ -2,8 +2,9 @@
 weight: 50
 title: Updating devices registered with the general device registration
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 If devices have previously been registered via the general device registration the following URLs must be manually changed in the Sigfox Cloud:
 
 - `https://sigfox-agent.{{< domain-c8y >}}/sigfoxDataCallback` to `https://<tenantId>.{{< domain-c8y >}}/service/sigfox-agent/sigfoxDataCallback`.

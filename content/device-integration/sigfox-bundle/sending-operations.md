@@ -2,9 +2,9 @@
 weight: 60
 title: Sending operations
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
-
 If the device supports sending hexadecimal commands, you can send commands from the Shell. In the Device Management application, navigate to the device you want to send an operation to in the **All devices** page. Switch to the **Shell** tab.
 
 {{< c8y-admon-info >}}

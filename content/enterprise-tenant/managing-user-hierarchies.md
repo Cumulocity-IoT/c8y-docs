@@ -3,9 +3,10 @@ weight: 20
 title: Managing user hierarchies
 layout: bundle
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 With user hierarchies you can model the structure of organizational entities in your company which share the same database in {{< product-c8y-iot >}} platform. These entities can have limited permissions to subsets of the shared data and can manage their own sub-users.
 
 {{< c8y-admon-req >}}

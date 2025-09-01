@@ -2,8 +2,9 @@
 weight: 100
 title: Cumulocity DataHub best practices
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Learn from well-established usage patterns in order to ensure a robust and scalable processing of your SQL queries.
 
 ### Naming policies {#naming-policies}

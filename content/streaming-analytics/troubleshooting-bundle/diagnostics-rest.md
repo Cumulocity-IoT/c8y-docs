@@ -2,8 +2,9 @@
 weight: 40
 title: Diagnostics REST endpoints
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< c8y-admon-info >}}
 These endpoints are not available for the Apama-ctrl-smartrules and Apama-ctrl-smartrulesmt microservices.
 {{< /c8y-admon-info >}}

@@ -3,9 +3,10 @@ weight: 77
 title: Simulating peaks and sending alarms and events
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 ![Sensor buttons](/images/users-guide/csa/csa-sensor-buttons.png)
 
 In order to simulate peak values, tap the 3rd button on the card for that sensor. The application will ask if you wish to start simulating peak values. Select **Simulate** to begin. If the phone is connected to {{< product-c8y-iot >}}, then it will send these values to the platform instead of the measurements coming from the selected sensor.

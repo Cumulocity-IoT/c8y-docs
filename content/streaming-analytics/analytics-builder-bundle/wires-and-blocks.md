@@ -2,8 +2,9 @@
 weight: 60
 title: Wires and blocks
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Values sent on a wire {#values-sent-on-a-wire}
 
 Blocks within a model are connected from block outputs to block inputs with wires.

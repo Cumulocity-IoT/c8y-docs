@@ -3,14 +3,18 @@ weight: 20
 title: Data connectors
 layout: bundle
 sector:
-  - platform_administration
+- platform_administration
 helpcontent:
-  - label: data-connectors
-    title: Data connector
-    content: "The **Data connectors** page shows a list of all currently defined data connectors with their status. A data connector describes the subset of the data that you would like to send to a destination tenant as well as the URL of that destination tenant. To add a data connector, click **Add data connector** at the top right."
+- label: data-connectors
+  title: Data connector
+  content: The **Data connectors** page shows a list of all currently defined 
+    data connectors with their status. A data connector describes the subset of 
+    the data that you would like to send to a destination tenant as well as the 
+    URL of that destination tenant. To add a data connector, click **Add data 
+    connector** at the top right.
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
-
 A data connector describes the subset of the data that you would like to send to a destination tenant as well as the URL of that destination tenant.
 
 

@@ -5,15 +5,16 @@ title: >-
   configuration forms no longer allowed
 product_area: Device management & connectivity
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+- value: change-VSkj2iV9m
+  label: Fix
 component:
-  - value: component--KIsStyzM
-    label: Device Management app
+- value: component--KIsStyzM
+  label: Device Management app
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: DM-4325
 version: 1021.36.1
+lastmod: '2025-09-01T10:40:40Z'
 ---
 In the Device management application, it previously was possible to enter values (for example, in the **Description**, **Version**, **URL** fields) consisting only of whitespaces for firmware, software and configuration items in the corresponding repositories. To prevent this, additional validation has been added to the respective forms which disallows submitting such names. This change improves data quality and consistency for newly created firmware, software and configuration items.

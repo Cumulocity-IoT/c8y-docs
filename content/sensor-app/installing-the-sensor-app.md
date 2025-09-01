@@ -3,9 +3,10 @@ weight: 20
 title: Installing the Sensor App
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 To get started with the {{< sensor-app >}}, download it from the Apple App Store, or Google Play Store as appropriate.
 
 The app is compatible with Android devices running Android 5.0 or higher, and iOS devices running iOS 13.0 or higher.

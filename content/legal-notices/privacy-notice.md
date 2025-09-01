@@ -3,9 +3,10 @@ weight: 30
 title: Privacy Notice
 layout: bundle
 sector:
-  - terms_conditions
+- terms_conditions
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 This Privacy Notice describes the processing of personal data by Cumulocity GmbH (‘we’, ‘us’ or ‘our’).
 
 Personal data is information that may identify you, such as your name or email address.

@@ -5,16 +5,17 @@ title: >-
   version of Angular
 product_area: Platform services
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 component:
-  - value: component-0UgqXH1Ys
-    label: Administration
+- value: component-0UgqXH1Ys
+  label: Administration
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-62997
 version: 1021.61.0
+lastmod: '2025-09-01T10:40:43Z'
 ---
 The **Properties**, **Custom properties**, and **Limits** tabs in the tenant details have completely been migrated to a newer version of Angular. They still work in the same way from the user perspective, with two exceptions:
 - The **External reference** field and the **Enable Gainsight product experience tracking** checkbox have been moved into the **Properties** tab.

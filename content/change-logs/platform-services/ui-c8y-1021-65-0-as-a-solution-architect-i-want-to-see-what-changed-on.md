@@ -3,16 +3,17 @@ date: '2025-05-08'
 title: Option added to view change logs of deployed packages
 product_area: Platform services
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 component:
-  - value: component-0UgqXH1Ys
-    label: Administration
+- value: component-0UgqXH1Ys
+  label: Administration
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-62165
 version: 1021.65.0
+lastmod: '2025-09-01T10:40:43Z'
 ---
 It is now possible to view change logs of deployed packages. These change logs can be viewed in:
 - A **Change log** tab in the package details 

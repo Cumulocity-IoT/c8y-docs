@@ -2,9 +2,9 @@
 weight: 70
 title: Adding validation rules to resources
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
-
 Validation rules are used to verify that the data a user enters in a resource meets the constraints you specify before the user can save the resource.
 
 Validation rules can only be added to resources which have "write" permissions. Resources which can have validation rules are marked by the following icon:

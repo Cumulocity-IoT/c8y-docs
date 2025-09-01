@@ -1,17 +1,18 @@
 ---
-date: 2024-07-11T14:53:24.832Z
+date: 2024-07-11T14:53:24.832000Z
 title: Microservice manifest advanced user input validation
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 product_area: Application enablement & solutions
 component:
-  - value: component-rlV-4nEfO
-    label: Microservice Hosting
+- value: component-rlV-4nEfO
+  label: Microservice Hosting
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
 ticket: MTM-59087
-version: 10.20.478.0    
+version: 10.20.478.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
 Making {{< product-c8y-iot >}} more secure we have added a check on upload to ensure microservice settings do not contain any line feed characters such as HttpGet, exec, and TCPSocket of type Probe, aligned with items in the Kubernetes PodSpec.

@@ -1,17 +1,19 @@
+---
 date: '2025-07-25'
 title: Quick links widget replaces Applications widget and Help & service widget
 product_area: Application enablement & solutions
 change_type:
-  - value: change-inv-3bw8e
-    label: Feature
+- value: change-inv-3bw8e
+  label: Feature
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+- value: component-YbYJ3gLU_
+  label: Web SDK
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-61738
 version: 1022.0.0
+lastmod: '2025-09-01T10:45:31Z'
 ---
 Starting with version 1022.0.0, the "Quick links" widget replaces the legacy "Applications" and "Help & service" widgets. The "Quick links" widget provides configurable navigation items that can be customized through the widget configuration interface.
 

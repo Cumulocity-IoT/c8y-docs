@@ -3,9 +3,10 @@ title: Cloud Remote Access API
 weight: 40
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 {{< product-c8y-iot >}} provides a public API for the Cloud Remote Access feature. This API is designed for two different integration scenarios:
 
 1. Development of **device-side components** which enable access to services like VNC, SSH, Telnet, or arbitrary TCP-based protocols (passthrough) using the device as a gateway.

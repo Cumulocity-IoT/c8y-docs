@@ -2,9 +2,9 @@
 weight: 20
 title: Hello world tutorial for Java
 layout: redirect
-
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Here you will learn how to create your first microservice that can be deployed on the [{{< product-c8y-iot >}} platform](https://{{< domain-c8y >}}) using the Microservice SDK for Java.
 
 Requests to a microservice can be authenticated using basic authentication or OAuth. Refer to [Authentication and authorization](/microservice-sdk/general-aspects/#authentication-and-authorization) for more details.

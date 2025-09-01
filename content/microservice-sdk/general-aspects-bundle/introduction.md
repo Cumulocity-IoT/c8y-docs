@@ -2,8 +2,9 @@
 weight: 10
 title: Introduction
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< product-c8y-iot >}} Microservices are server-side applications fully integrated into {{< product-c8y-iot >}}'s hosting, security and API management, optionally providing high availability, scalability and multi-tenancy. You can develop your own microservices to, for example, integrate IoT-related processes into your back office software, running batch analytics on IoT data with your custom analysis logic, writing message decoders for message from your devices and many other backend use cases.
 
 Microservices use standard REST APIs with full authentication and authorization to communicate with {{< product-c8y-iot >}}. They are, in most cases, multi-tenant, meaning they must be able to strictly separate tenants and connect to multiple tenants at the same time.

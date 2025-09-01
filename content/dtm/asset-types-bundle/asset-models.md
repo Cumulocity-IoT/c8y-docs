@@ -5,12 +5,14 @@ layout: redirect
 helpcontent:
 - label: asset-types
   title: Asset models
-  content: "An asset model is a blueprint or template to create one or multiple assets. It defines how an asset will look like after it is created. An asset model consists of one or more asset properties or child asset models.
-
-
-  Click **Add asset model** in the top menu bar to add a new asset model. To edit an existing asset model, click the edit icon on the right of the desired asset model."
+  content: "An asset model is a blueprint or template to create one or multiple assets.
+    It defines how an asset will look like after it is created. An asset model consists
+    of one or more asset properties or child asset models.\n\nClick **Add asset model**
+    in the top menu bar to add a new asset model. To edit an existing asset model,
+    click the edit icon on the right of the desired asset model."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The asset model is a blueprint or template to create one or multiple [assets](/dtm/asset-hierarchy/#assets). It defines how the asset will look like after it is created. An asset model consists of one or more [asset properties](/dtm/asset-types/#asset-properties) and/or child asset models.
 
 To get a quick start to use the DTM application, import pre-defined asset models from **Asset model samples** page. These asset models and associated properties are defined based on best practices. For details about how to import asset models from samples, see [To import asset model samples](#to-import-asset-model-samples).

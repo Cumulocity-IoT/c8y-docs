@@ -2,8 +2,9 @@
 weight: 60
 title: Security
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Microservices typically provide a REST API and {{< product-c8y-iot >}} provides a light API gateway (Proxy) for inbound REST requests. Inbound WebSocket requests are supported. The API gateway, located between the client and the microservice container, provides:
 
 * Authorization: All calls are authenticated using {{< product-c8y-iot >}} credentials with basic or OAuth authorization.

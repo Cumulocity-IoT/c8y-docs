@@ -3,9 +3,10 @@ weight: 10
 title: Home dashboard
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The Home screen of the Device Management application is a dashboard which shows data for the tenant.
 
 ![Home dashboard](/images/users-guide/DeviceManagement/device-management-home-screen.png)

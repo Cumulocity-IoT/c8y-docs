@@ -3,15 +3,21 @@ weight: 60
 title: Monitoring offloading jobs
 layout: redirect
 helpcontent:
-  - label: monitoring-offloading-jobs
-    title: Monitoring offloading jobs
-    content: "Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. The execution status of each pipeline run is monitored and provides details on execution schedule, number of offloaded records, runtime and so on. In case an offloading has failed, for example, due to data lake connectivity issues, failure details are provided as well. Also an alarm will be raised.
-
-    The **job history** list shows an overview of the last runs for the selected offloading pipeline with options to filter the list by different criteria. To get more details for a specific run like the generated files in the data lake, click on the corresponding entry in the list.
-
-    For each offloading pipeline the system keeps a limited history of the last executions."
+- label: monitoring-offloading-jobs
+  title: Monitoring offloading jobs
+  content: "Once you have configured and started your offloading pipelines, they regularly
+    offload data to the data lake. The execution status of each pipeline run is monitored
+    and provides details on execution schedule, number of offloaded records, runtime
+    and so on. In case an offloading has failed, for example, due to data lake connectivity
+    issues, failure details are provided as well. Also an alarm will be raised.\n\
+    The **job history** list shows an overview of the last runs for the selected offloading
+    pipeline with options to filter the list by different criteria. To get more details
+    for a specific run like the generated files in the data lake, click on the corresponding
+    entry in the list.\nFor each offloading pipeline the system keeps a limited history
+    of the last executions."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. The {{< product-c8y-iot >}} DataHub UI provides insights into the execution status of the different pipelines so that you can investigate whether everything is running as expected. For the case of offloading failures, you can also configure the offloading pipeline to raise an alarm as described in [Raising alarms](#raising-alarms).
 
 An overview of the offloading status is shown on the [Home screen](/datahub/getting-started-with-datahub/#home-screen), while the details are available in the job history.

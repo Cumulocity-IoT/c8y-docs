@@ -2,9 +2,9 @@
 weight: 70
 title: Microservice runtime
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
-
 Microservices deployed on the platform have a specific runtime environment and they must understand certain details about the specific {{< product-c8y-iot >}} cluster they run in. For example, a microservice needs to know the endpoint address of the {{< product-c8y-iot >}} REST APIs. This information is provided by environment variables and they are injected by {{< product-c8y-iot >}} when the container is started.
 
 ### Environment variables {#environment-variables}

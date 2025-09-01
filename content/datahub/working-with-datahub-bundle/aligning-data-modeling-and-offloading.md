@@ -2,8 +2,9 @@
 weight: 40
 title: Aligning data modeling and offloading
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Mapping document data to relational data {#mapping-document-data-to-relational-data}
 
 {{< product-c8y-iot >}} DataHub allows to offload data from the {{< product-c8y-iot >}} platform into a data lake and the subsequent analysis of the offloaded data using SQL. For that purpose, {{< product-c8y-iot >}} DataHub must transform the data from the document-based format into a relational format, which is then persisted as Parquet files in the data lake.

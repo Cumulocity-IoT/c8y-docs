@@ -2,8 +2,9 @@
 weight: 10
 title: Single device registration
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< product-c8y-iot >}} offers single device registration to connect devices manually one by one.
 
 ### To connect a device manually {#to-connect-a-device-manually}

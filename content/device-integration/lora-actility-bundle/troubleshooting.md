@@ -2,8 +2,9 @@
 weight: 90
 title: Troubleshooting
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 ### Device registration {#device-registration}
 
 #### Access to device denied {#access-to-device-denied}

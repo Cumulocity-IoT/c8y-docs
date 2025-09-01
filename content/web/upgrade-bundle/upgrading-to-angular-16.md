@@ -2,8 +2,9 @@
 title: Upgrading from Angular 15 to Angular 16 and NG CLI
 layout: redirect
 weight: 460
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Angular 16 is supported from version `1019.0.0`. With the latest release of version 1019.0.0, the Web SDK has transitioned to using ng-cli, marking
 the end of further development for `c8ycli`.
 

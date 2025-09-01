@@ -3,9 +3,10 @@ weight: 50
 title: Support user access
 layout: bundle
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< c8y-admon-req >}}
 To allow support users to log in as a user of your tenant, **support user access** must be enabled. This option is available at tenant level and applies to all users of the tenant.
 {{< /c8y-admon-req >}}

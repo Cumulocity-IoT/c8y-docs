@@ -3,16 +3,20 @@ weight: 20
 title: Messaging Service
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 sector:
-  - platform_administration
+- platform_administration
 helpcontent:
-  - label: messaging-service
-    title: Messaging Service
-    content: "Monitor the Messaging Service resources. Track resource usage like topics, subscribers, and backlogs for features such as Notifications 2.0 and the MQTT Service. Select features and topics to view detailed statistics, check limits, and identify potential bottlenecks or inactive consumers."
+- label: messaging-service
+  title: Messaging Service
+  content: Monitor the Messaging Service resources. Track resource usage like 
+    topics, subscribers, and backlogs for features such as Notifications 2.0 and
+    the MQTT Service. Select features and topics to view detailed statistics, 
+    check limits, and identify potential bottlenecks or inactive consumers.
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 {{< c8y-admon-preview >}}
 This feature is in **Public Preview** status, that is, it is not enabled by default and may be subject to change in the future.
 

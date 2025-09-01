@@ -3,10 +3,10 @@ weight: 50
 title: Viewing sensor data
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
-
 You can find an overview of all sensor data on the main page of the app.
 Your smartphone's internal sensors, such as its gyroscope, barometer, location and magnetic field, are shown in cards at the top of the page.
 Swipe left and right to inspect them.

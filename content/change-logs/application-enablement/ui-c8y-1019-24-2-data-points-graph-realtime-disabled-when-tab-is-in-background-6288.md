@@ -5,15 +5,16 @@ title: >-
   background
 product_area: Application enablement & solutions
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+- value: change-VSkj2iV9m
+  label: Fix
 component:
-  - value: component-YdSEScrEC
-    label: Cockpit
+- value: component-YdSEScrEC
+  label: Cockpit
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-58410
 version: 1019.24.2
+lastmod: '2025-09-01T10:40:41Z'
 ---
 The realtime functionality for the data points graph was automatically disabled when the browser tab was in the background. With this fix, realtime is kept enabled and can be disabled only by direct user interaction.

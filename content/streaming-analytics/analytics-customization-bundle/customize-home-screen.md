@@ -2,8 +2,9 @@
 weight: 30
 title: Customizing the home screen of the Streaming Analytics application
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The cards that are shown on the home screen of the Streaming Analytics application contain text and links
 which you can customize on a per-tenant and per-language basis. To do this, download the *documentation.json* file
 for the language you wish to customize from the URL */service/cep/apamacorrelator/EN/documentation.json*

@@ -3,12 +3,13 @@ weight: 20
 title: Exports integration with Data Points based features
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 sector:
-  - app_enablement
+- app_enablement
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 While the export functionality itself is a standalone feature, you can combine it with other features that allow you to select data points. To use the export functionality in this way, you must integrate it in the respective feature, for example, the [Data points table](/cockpit/widgets-collection/#data-point-table) widget.
 
 {{< c8y-admon-req >}}

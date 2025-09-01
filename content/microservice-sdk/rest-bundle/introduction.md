@@ -2,8 +2,9 @@
 weight: 10
 title: Introduction
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 This section describes specific aspects of developing microservices using the REST interface.
 
 {{< product-c8y-iot >}} employs REST for all external communication. Regardless whether the communication originates from IoT devices, from web applications or from back-office IT systems, the communication protocol is always REST.

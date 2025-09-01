@@ -2,8 +2,9 @@
 weight: 50
 title: Managing offloading jobs
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The following steps describe how to start and manage an offloading pipeline.
 
 ### Scheduling an offloading job {#scheduling-an-offloading-job}

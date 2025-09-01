@@ -1,18 +1,19 @@
 ---
 date: 2023-12-06
-title: Enhanced Cumulocity transport in Apama 10.15.4 to reflect changes in
-  REST API
+title: Enhanced Cumulocity transport in Apama 10.15.4 to reflect changes in REST
+  API
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 product_area: Analytics
 component:
-  - value: component-M5-cepIIS
-    label: Streaming Analytics
+- value: component-M5-cepIIS
+  label: Streaming Analytics
 build_artifact:
-  - value: tc-KXXmo2SUR
-    label: apama-in-c8y
+- value: tc-KXXmo2SUR
+  label: apama-in-c8y
 version: 24.18.0
+lastmod: '2025-09-01T10:40:43Z'
 ---
 Due to a change in {{< product-c8y-iot >}} announced with release 10.17, Apama 10.15.4 now explicitly sets `withTotalPages` to `true` for applicable requests.
 

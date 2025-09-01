@@ -3,9 +3,10 @@ weight: 90
 title: Device profile
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The **Device profile** tab shows the different parameters of the added device profiles. From a device agent perspective, device profiles are a combination of firmware update, software update, and typed file-based device configuration. Large parts of the agent code to support these capabilities can be reused.
 
 Device profile functionality is enabled when the device announces the ```c8y_DeviceProfile``` operation in its ```c8y_SupportedOperations```. The **Device profile** tab allows users to apply a profile to a device. This creates a ```c8y_DeviceProfile``` operation according to the configured profile. If present the firmware, software, and configuration should be handled exactly like their individual operations (```c8y_Firmware```, ```c8y_SoftwareUpdate```, and typed ```c8y_DownloadConfigFile```). We recommend you to execute a ```c8y_Profile``` operation by installing firmware first, software second and configuration third to minimize the potential of later actions overriding earlier ones.

@@ -2,8 +2,9 @@
 weight: 50
 title: Using SmartREST with multiple X-Ids
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 SmartREST supports sending of messages for different X-Ids within the same request. In this case the X-Id header mustn't be used but instead the body will contain additional information about which lines belong to which X-Id.
 
 ### Sending messages {#sending-messages}

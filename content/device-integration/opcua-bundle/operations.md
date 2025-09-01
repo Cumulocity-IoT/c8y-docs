@@ -2,9 +2,9 @@
 weight: 110
 title: Operations
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
-
 {{< product-c8y-iot >}} operations is the interface that is used to tell the gateway what to do and how to do it. This section describes all operations that are currently supported by the gateway.
 
 ### Scanning the address space {#scanning-the-address-space}

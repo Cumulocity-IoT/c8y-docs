@@ -3,10 +3,10 @@ weight: 30
 title: Registering the Sensor App in the platform
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
-
 There are two ways of connecting your smartphone to {{< product-c8y-iot >}}, depending on the platform's version.
 You can connect your smartphone via [QR code](#registration-using-qr-code). If that does not work, for example, because you are using an earlier {{< product-c8y-iot >}} version, follow the steps in [Manual registration](#manual-registration).
 

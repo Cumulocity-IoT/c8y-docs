@@ -2,8 +2,9 @@
 weight: 20
 title: Connection monitoring
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 In the Device Management application you can monitor the connections to your devices.
 
 This can be done at the level of individual devices (see below) or across multiple devices in a list.

@@ -2,9 +2,9 @@
 weight: 40
 title: Application security
 layout: bundle
-
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Application security addresses security at the software level.
 
 {{< product-c8y-iot >}} follows standard practices for application-level hardening as making sure that only properly upgraded operating systems and web servers are in use. A number of additional "best practices" are employed to make {{< product-c8y-iot >}} secure by design.

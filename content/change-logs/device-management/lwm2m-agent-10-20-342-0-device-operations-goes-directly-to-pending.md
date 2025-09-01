@@ -3,16 +3,17 @@ date: 2024-09-19
 title: LWM2M device operations directly go to Pending state
 product_area: Device management & connectivity
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+- value: change-VSkj2iV9m
+  label: Fix
 component:
-  - value: component-1KLUzmqfe
-    label: LWM2M
+- value: component-1KLUzmqfe
+  label: LWM2M
 build_artifact:
-  - value: tc-ggH2M4hf3
-    label: lwm2m-agent
+- value: tc-ggH2M4hf3
+  label: lwm2m-agent
 ticket: DM-3601
 version: 10.20.342.0
+lastmod: '2025-09-01T10:40:40Z'
 ---
 Previously,
 the execution of LWM2M device operations was limited to a specific timeframe following the device's registration with the platform.

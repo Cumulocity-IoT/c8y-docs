@@ -3,10 +3,10 @@ weight: 30
 title: Creating widgets
 layout: bundle
 sector:
-  - app_enablement
+- app_enablement
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
-
 If you want to keep your current configuration in the data explorer for later usage, save it as a widget.
 
 ### To send as widget to dashboard {#to-send-as-widget-to-dashboard}

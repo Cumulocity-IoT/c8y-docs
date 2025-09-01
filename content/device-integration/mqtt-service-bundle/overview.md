@@ -2,8 +2,9 @@
 weight: 10
 layout: redirect
 title: Overview
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 ### Architecture {#architecture}
 
 The MQTT Service works together with the Messaging Service to provide a framework for highly customizable and flexible MQTT message processing solutions.

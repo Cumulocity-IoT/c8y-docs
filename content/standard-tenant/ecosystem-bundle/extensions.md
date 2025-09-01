@@ -3,13 +3,18 @@ title: Extensions
 layout: bundle
 weight: 50
 sector:
-  - platform_administration
+- platform_administration
 helpcontent:
-  - label: extensions
-    title: Extensions
-    content: "On the **Extensions** page, you find a list of all extension packages available in your tenant. Extension packages are combinations of plugins and blueprints which can be packed together into a single file and deployed to the platform. To add a new extension package, click **Add extension package** at the top right."
+- label: extensions
+  title: Extensions
+  content: On the **Extensions** page, you find a list of all extension packages
+    available in your tenant. Extension packages are combinations of plugins and
+    blueprints which can be packed together into a single file and deployed to 
+    the platform. To add a new extension package, click **Add extension 
+    package** at the top right.
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 ### Extensions {#extensions}
 
 Extension packages are combinations of plugins and blueprints which can be packed together into a single file and then be deployed to the platform. Thus, they offer better shareability and reusability of UI features across different applications and allow to add UI features to applications without coding knowledge.

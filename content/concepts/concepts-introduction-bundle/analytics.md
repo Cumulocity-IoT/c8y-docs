@@ -1,8 +1,9 @@
 ---
 weight: 60
 title: Analytics
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< product-c8y-iot >}} offers powerful analytics capabilities that enable businesses to extract valuable insights from their data as well as to operationalize derived insights using real-time rules. 
 
 For this, {{< product-c8y-iot >}} comes with real-time data streaming and processing capabilities, allowing businesses to process the incoming data and turn it into insights or actions. The predefined [smart rules](/cockpit/smart-rules/) offer a wizard-driven approach to get started with data analytics, whereas the [Streaming Analytics application](/streaming-analytics/introduction-analytics/#home) offers flexibility to create even more rules, ranging from simple data transformations to more advanced business metric calculations like uptime or utilization rate, either for individual devices & assets or aggregated over a subset of the entire connected fleet. Real-time rules also allow for both triggering external workflows (such as the creation of a service ticket) as well as sending operations back to the equipment, for example, to optimize machine operations based on analytical insights.

@@ -3,12 +3,14 @@ weight: 30
 title: Setting limits
 layout: redirect
 helpcontent:
-  - label: setting-limits
-    title: Limits
-    content: "This tab allows you to view and edit resource limits for this tenant as well as to configure Gainsight tracking for your individual product experience."
+- label: setting-limits
+  title: Limits
+  content: This tab allows you to view and edit resource limits for this tenant 
+    as well as to configure Gainsight tracking for your individual product 
+    experience.
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
-
 The **Limits** tab allows you to view and edit resource limits for the tenant, as well as to assign an "External reference" and to enable/disable the Gainsight product experience tracking.
 
 ### To limit the subtenant request rate {#to-limit-the-subtenant-request-rate}

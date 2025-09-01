@@ -2,10 +2,11 @@
 title: TOTP
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
 weight: 30
+date: '2025-09-01T10:26:31Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 {{< c8y-admon-req >}}
 Users must install a TOTP application on their smartphone (Google Authenticator is recommended), freely available both on App Store and Play Store.
 {{< /c8y-admon-req >}}

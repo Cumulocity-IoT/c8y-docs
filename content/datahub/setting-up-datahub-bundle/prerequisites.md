@@ -2,8 +2,9 @@
 weight: 10
 title: Prerequisites
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Before setting up {{< product-c8y-iot >}} DataHub, the following prerequisites must be checked:
 
 The {{< product-c8y-iot >}} DataHub microservice and web application must be available as applications on your tenant. The web application provides the user interface to configure {{< product-c8y-iot >}} DataHub and to manage offloading pipelines, while the microservice provides the corresponding backend functionality. The web application is named **DataHub**, whereas the microservice is named **Datahub**. Both applications are deployed either as:

@@ -5,15 +5,16 @@ title: >-
   screens
 product_area: Application enablement & solutions
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+- value: change-VSkj2iV9m
+  label: Fix
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+- value: component-YbYJ3gLU_
+  label: Web SDK
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: DM-3316
 version: 1020.0.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
 The information that the data grid filter as well as other functionalities are not available in mobile screens has been added to the Codex documentation.

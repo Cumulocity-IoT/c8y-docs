@@ -3,17 +3,18 @@ weight: 10
 title: Checking system information
 layout: redirect
 helpcontent:
-  - label: checking-system-information
-    title: Checking system information
-    content: "Under **Microservice** you find the status of the microservice, indicating via green or red icon whether the web application can access the microservice.
-
-    Under **Web application** you find the version of the web application.
-
-    Under **Dremio** you find the status of Dremio, indicating via green or red whether the microservice can access Dremio.
-
-    Under **Management** you find the setup of the system. Click the arrow to the right to expand the box. Here all relevant system properties and their values are listed."
+- label: checking-system-information
+  title: Checking system information
+  content: "Under **Microservice** you find the status of the microservice, indicating
+    via green or red icon whether the web application can access the microservice.\n\
+    Under **Web application** you find the version of the web application.\nUnder
+    **Dremio** you find the status of Dremio, indicating via green or red whether
+    the microservice can access Dremio.\nUnder **Management** you find the setup of
+    the system. Click the arrow to the right to expand the box. Here all relevant
+    system properties and their values are listed."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< c8y-admon-req >}}
 You need administration permissions to access system information. See [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 {{< /c8y-admon-req >}}

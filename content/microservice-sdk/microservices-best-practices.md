@@ -2,10 +2,11 @@
 title: Best practices
 layout: bundle
 sector:
-  - app_enablement
+- app_enablement
 weight: 80
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The following list is a collection of best practices you should take into consideration before you start developing and deploying microservices on top of {{< product-c8y-iot >}}.
 
 

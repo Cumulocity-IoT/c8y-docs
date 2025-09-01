@@ -2,10 +2,11 @@
 title: Create and bring your own AI/ML model (BYOM)
 layout: bundle
 sector:
-  - data_analytics
+- data_analytics
 weight: 30
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 There is a wide variety of open-source libraries (such as, TensorFlow®, PyTorch, Keras, Scikit-learn) and commercial 3rd-party tooling (such as, Microsoft Azure Machine Learning Studio, Amazon SageMaker, IBM Watson, MATLAB, Google Cloud) available for developing AI/ML models. Therefore, {{< product-c8y-iot >}} offers you the flexibility to have your data science team remain working in their own optimized technology stack but still leverage their results in the field.
 
 Some examples of model creation in the mentioned tools that can inspire you:

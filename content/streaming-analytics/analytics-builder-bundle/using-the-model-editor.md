@@ -2,8 +2,9 @@
 weight: 40
 title: Using the model editor
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### The model editor user interface {#the-model-editor-user-interface}
 
 The model editor allows you to create analytic models graphically. It is invoked when you add or edit a model in the model manager. See also [Adding a new model](/streaming-analytics/analytics-builder/#adding-a-new-model) and [Editing an existing model](/streaming-analytics/analytics-builder/#editing-an-existing-model).

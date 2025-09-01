@@ -3,15 +3,16 @@ date: '2025-04-24'
 title: Assign child devices while creating a group
 product_area: Application enablement & solutions
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+- value: component-YbYJ3gLU_
+  label: Web SDK
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-39947
 version: 1021.59.0
+lastmod: '2025-09-01T10:40:41Z'
 ---
 To simplify the process of creating device groups, it is now possible to assign child devices directly when creating a new group. Previously, child devices had to be assigned separately after the group was created. This change streamlines the workflow and saves time for users who manage large numbers of devices. Existing device groups are not affected by this change.

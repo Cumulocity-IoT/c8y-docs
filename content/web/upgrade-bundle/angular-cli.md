@@ -2,9 +2,9 @@
 title: Angular CLI before 10.19.x.x
 layout: redirect
 weight: 20
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
-
 When developing a pure Angular you can create an Angular CLI (`ng`-cli) project and add {{< product-c8y-iot >}} CLI to it.
 This functionality is available for:
 - Angular 7: Supported from version 10.4.2.0

@@ -2,8 +2,9 @@
 weight: 10
 title: Introduction
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 {{< product-c8y-iot >}} can interface with Sigfox devices through the Sigfox Cloud. You can:
 
 - Provision Sigfox devices easily using {{< product-c8y-iot >}} Device Management application.

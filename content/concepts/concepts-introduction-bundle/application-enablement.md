@@ -1,8 +1,9 @@
 ---
 weight: 50
 title: Application enablement
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< product-c8y-iot >}} provides a comprehensive suite of tools and applications to make it easy to use the connected equipment to drive business outcomes.
 
 At the core of this offering is the [Cockpit application](/cockpit/cockpit-introduction/) which offers a range of features that allow users to visualize fleet and equipment Key Performance Indicators (KPIs) through flexible [dashboarding](/cockpit/working-with-dashboards/), [create and manage reports](/cockpit/working-with-reports/) for data analysis and business insights and efficiently [manage alarms](/cockpit/alarms/) to ensure prompt response to critical events.

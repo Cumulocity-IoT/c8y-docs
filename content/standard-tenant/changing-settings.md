@@ -3,13 +3,13 @@ weight: 70
 title: Changing settings
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
-
 From the **Settings** menu, administrators can manage various settings for the account:
 
 - Change the [application settings](#application).

@@ -3,9 +3,10 @@ weight: 20
 title: Getting started
 layout: bundle
 sector:
-  - app_enablement
+- app_enablement
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 This guide will setup your first application. The first step is to install the `@angular/cli` in the right version. Server Side Rendering (SSR) and applications based on the standalone API are not supported and therefore set to `false`:
 
 ```bash

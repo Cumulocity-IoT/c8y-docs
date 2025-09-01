@@ -3,9 +3,10 @@ title: RBAC versus multi-tenancy approach
 layout: bundle
 weight: 100
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Introduction {#introduction}
 
 When you think about offering your applications and services to your customers you must think at some point about how to structure your customers within the platform. {{< product-c8y-iot >}} can help you with that in two different ways.

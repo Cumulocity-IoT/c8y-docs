@@ -2,8 +2,9 @@
 weight: 60
 title: SmartREST Real-time Notifications
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 All available real-time notification endpoints and channels of the {{< product-c8y-iot >}} platform are also available in a SmartREST syntax.
 See the [Real-time notification API](https://{{< domain-c8y >}}/api/core/#tag/Real-time-notification-API) to understand the general functionality of the [Bayeux protocol](https://docs.cometd.org/current/reference/#_concepts_bayeux_protocol) and to get an overview of our available endpoints and channels for real-time notifications.
 

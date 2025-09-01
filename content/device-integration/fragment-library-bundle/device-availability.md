@@ -3,9 +3,10 @@ weight: 70
 title: Device availability
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The **Device availability** tab shows the device's availability and connection status. To achieve this the device must communicate its required interval using the ```c8y_RequiredAvailability``` fragment in the device's own managed object. This action activates availability and connection monitoring for the device.
 
 ```http

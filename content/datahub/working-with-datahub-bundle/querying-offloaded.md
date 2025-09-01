@@ -2,8 +2,9 @@
 weight: 80
 title: Querying offloaded Cumulocity data
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< product-c8y-iot >}} DataHub offers an SQL interface so that you can efficiently query offloaded device data and leverage the results in your own applications. A prerequisite for running SQL queries over device data is that you have configured and executed offloading pipelines that replicate and transform data from the Operational Store of {{< product-c8y-iot >}} to the data lake.
 
 ### Overview {#overview}

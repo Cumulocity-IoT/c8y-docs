@@ -3,30 +3,26 @@ title: Basic settings
 weight: 70
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 sector:
-  - platform_administration
+- platform_administration
 helpcontent:
 - label: basic-settings
   title: Authentication
-  content: "Under **Login settings** you can specify your preferred login mode:
-
-
-	**OAI-Secure** - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
-
-	**Basic Auth** - Should be selected only for specific compatibility reasons, since it only provides basic security.
-
-  **Single sign-on redirect** - Can only be selected if SSO is configured. If selected, will remove Basic Auth and OAI-Secure login options.
-
-
-	Under **TFA settings**, select the checkbox **Allow two-factor authentication** if you want to allow TFA in your tenant (only possible for administrators).
-
-
-	Switch to the **Single sign-on** tab to configure single sign-on. For details, see *Configuring single sign-on* in the user documentation."
+  content: "Under **Login settings** you can specify your preferred login mode:\n\n\
+    **OAI-Secure** - Recommended, since it provides high security, using authorization
+    tokens to prove your identity (to the server).\n**Basic Auth** - Should be selected
+    only for specific compatibility reasons, since it only provides basic security.\n\
+    **Single sign-on redirect** - Can only be selected if SSO is configured. If selected,
+    will remove Basic Auth and OAI-Secure login options.\n\nUnder **TFA settings**,
+    select the checkbox **Allow two-factor authentication** if you want to allow TFA
+    in your tenant (only possible for administrators).\n\nSwitch to the **Single sign-on**
+    tab to configure single sign-on. For details, see *Configuring single sign-on*
+    in the user documentation."
+date: '2025-09-01T10:26:31Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
-
 Click **Authentication** in the **Settings** menu if you want to view or change the basic authentication settings.
 
 ![Authentication settings](/images/users-guide/Administration/admin-settings-authentication.png)

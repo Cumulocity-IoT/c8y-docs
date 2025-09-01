@@ -3,9 +3,10 @@ weight: 10
 title: Introduction
 layout: bundle
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 An {{< enterprise-tenant >}} offers additional administrative functionality compared to a {{< standard-tenant >}}, the major difference being **multi-tenancy**.
 
 Using an {{< enterprise-tenant >}}, you can:

@@ -1,8 +1,9 @@
 ---
 weight: 70
 title: Platform management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< product-c8y-iot >}} provides a platform management solution that allows to efficiently control and secure IoT deployments, whether provided as Software-as-a-Service (SaaS) in the cloud or installed on-premises. Through a dedicated [Administration application](/standard-tenant/standard-tenant-introduction/), the platform allows administrators to manage key areas such as tenant and application management, user roles and permissions, and secure data sharing.
 
 #### Key Capabilities

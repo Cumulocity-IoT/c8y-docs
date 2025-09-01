@@ -5,15 +5,17 @@ layout: redirect
 helpcontent:
 - label: troubleshooting-devices
   title: Events
-  content: "Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events.
-
-
-   You can find an overview of the events across all devices here. To view the operations of a particular device, switch to the **Events** tab in the details of the device.
-
-
-  Since devices may send large amounts of event data, you can filter the data to be displayed by date or type, using the fields at the top left."
+  content: "Troubleshooting devices at a more detailed level can be done with the
+    help of events. Events are low-level messages sent by devices that are usually
+    used for application-specific processing. For example, a vending device sends
+    its real-time sales in the form of events.\n\nYou can find an overview of the
+    events across all devices here. To view the operations of a particular device,
+    switch to the **Events** tab in the details of the device.\n\nSince devices may
+    send large amounts of event data, you can filter the data to be displayed by date
+    or type, using the fields at the top left."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events.
 
 ### To view events {#to-view-events}

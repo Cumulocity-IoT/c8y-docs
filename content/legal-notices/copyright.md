@@ -3,9 +3,10 @@ weight: 10
 title: Copyright
 layout: bundle
 sector:
-  - terms_conditions
+- terms_conditions
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 This content applies to the {{< product-c8y-iot >}} SaaS cloud deployments.
 
 Specifications contained herein are subject to change and these changes will be reported in subsequent versions.

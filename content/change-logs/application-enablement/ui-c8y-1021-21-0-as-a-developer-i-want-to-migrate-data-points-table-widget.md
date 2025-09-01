@@ -3,16 +3,17 @@ date: '2024-12-19'
 title: Enhanced Data points table widget
 product_area: Application enablement & solutions
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 component:
-  - value: component-YdSEScrEC
-    label: Cockpit
+- value: component-YdSEScrEC
+  label: Cockpit
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-58987
 version: 1021.21.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
 As part of the ongoing modernization efforts to migrate the UI to Angular, the "Data points table" widget has now been migrated from AngularJS to Angular. This change improves the performance, maintainability and consistency of the widget with the rest of the application. The widget now offers enhanced features including:
 

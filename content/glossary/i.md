@@ -3,9 +3,10 @@ weight: 80
 title: I
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Inventory {#inventory}
 
 The inventory is a collection of all stored [managed objects](/glossary/m/#managed-objects) in a tenant.

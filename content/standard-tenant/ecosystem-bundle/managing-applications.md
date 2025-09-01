@@ -3,36 +3,31 @@ weight: 10
 title: Managing applications
 layout: bundle
 sector:
-  - platform_administration
+- platform_administration
 helpcontent:
-  - label: managing-applications
-    title: Applications
-    content: "In the **Applications** tab, you can see all applications available in your tenant. There are two kinds of applications:
-
-
-    **Subscribed applications** - Applications subscribed to the tenant, either provided by the platform or a service provider. Cumulocity provides a variety of applications for different purposes. Find a list of all applications in the user documentation.
-
-    **Custom applications** - Applications owned by the tenant. You can add custom applications in various ways as own applications.
-
-
-    Custom applications may be:
-
-
-    Web applications uploaded to the platform.
-
-    Links to external applications running elsewhere.
-
-    Packages deployed to the platform.
-
-    Duplicates of subscribed applications.
-
-
-    Click on an application to view the application details. To add an application, click **Add application** and follow the instructions in the wizard, see also the user documentation."
-  - label: features
-    title: Features
-    content: "On the **Features** tab, you will find a list of all features subscribed to your tenant. Features are applications which are built-in and not represented by an explicit artifact (like microservices or web applications)."
+- label: managing-applications
+  title: Applications
+  content: "In the **Applications** tab, you can see all applications available in
+    your tenant. There are two kinds of applications:\n\n**Subscribed applications**
+    - Applications subscribed to the tenant, either provided by the platform or a
+    service provider. Cumulocity provides a variety of applications for different
+    purposes. Find a list of all applications in the user documentation.\n**Custom
+    applications** - Applications owned by the tenant. You can add custom applications
+    in various ways as own applications.\n\nCustom applications may be:\n\nWeb applications
+    uploaded to the platform.\nLinks to external applications running elsewhere.\n\
+    Packages deployed to the platform.\nDuplicates of subscribed applications.\n\n\
+    Click on an application to view the application details. To add an application,
+    click **Add application** and follow the instructions in the wizard, see also
+    the user documentation."
+- label: features
+  title: Features
+  content: On the **Features** tab, you will find a list of all features 
+    subscribed to your tenant. Features are applications which are built-in and 
+    not represented by an explicit artifact (like microservices or web 
+    applications).
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 There are two types of availability for applications:
 
 - [Subscribed](#subscribed-applications) - applications subscribed to the tenant, either provided by the platform (as default applications) or by a service provider.

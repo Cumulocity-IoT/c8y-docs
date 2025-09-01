@@ -2,8 +2,9 @@
 weight: 20
 title: Understanding models
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Models {#models}
 
 A model is a container which can have a network of blocks connected to each other with wires.

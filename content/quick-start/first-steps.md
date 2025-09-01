@@ -3,9 +3,10 @@ weight: 30
 title: First steps with Cumulocity
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The following section highlights the basic steps to take if you are new to the {{< product-c8y-iot >}} platform.
 
 If you are technically interested in our IoT platform, you might want to learn about the architecture, technical concepts and domain models behind {{< product-c8y-iot >}} described in [Technical concepts](/concepts/concepts-introduction/).

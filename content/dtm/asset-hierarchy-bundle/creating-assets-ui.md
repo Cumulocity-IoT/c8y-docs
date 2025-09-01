@@ -2,8 +2,9 @@
 weight: 20
 title: Creating assets via the UI
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 You have two options for creating assets in the DTM application.
 The following section describes how to create an asset via the UI.
 Alternatively, see [Creating assets via bulk import](/dtm/asset-hierarchy/#creating-assets-bulk-import) on how to import assets in bulk into the DTM application.

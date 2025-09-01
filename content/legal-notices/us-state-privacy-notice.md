@@ -3,9 +3,10 @@ weight: 40
 title: US State Privacy Notice
 layout: bundle
 sector:
-  - terms_conditions
+- terms_conditions
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Effective Date: December 1, 2024
 
 Certain states, including California, Colorado, Connecticut, Texas, Utah, and Virginia require additional information regarding our privacy practices and your privacy rights. Depending on whether you are a resident of those states ("Consumer"), we provide you additional notices about our privacy practices and consumer rights relating to your personal information or personal data, as defined under those laws ("Personal Information").

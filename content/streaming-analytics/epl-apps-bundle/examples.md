@@ -2,8 +2,9 @@
 weight: 50
 title: Examples
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Calculating an hourly average of measurements {#calculating-an-hourly-average-of-measurements}
 
 We are assuming the input data looks like this:

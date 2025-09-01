@@ -2,9 +2,9 @@
 weight: 50
 title: Monitoring REST endpoints
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
-
 The following monitoring endpoints are available for REST requests. These require authentication as a valid user, but do not require any special roles.
 
 - `/service/cep/health`  

@@ -2,10 +2,11 @@
 weight: 130
 title: Manual status update
 layout: bundle
-sector: 
-  - device_management
+sector:
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 For cases where devices need a manual trigger for uploading a status update to the platform, the **Get measurements** button in the action bar of a device is available. It is shown when the device's `c8y_SupportedOperations` contains `c8y_MeasurementRequestOperation`.
 
 This action creates a `c8y_MeasurementRequestOperation` operation.

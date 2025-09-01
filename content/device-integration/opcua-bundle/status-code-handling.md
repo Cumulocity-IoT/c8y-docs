@@ -2,8 +2,9 @@
 weight: 95
 title: Bad StatusCode handling
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The gateway creates an alarm with status WARNING for the corresponding OPC UA server managed object when the received DataValue of a node has an abnormal status code (such as BAD or UNCERTAIN).
 The alarm text in the {{< product-c8y-iot >}} platform will provide the necessary information such as the node ID, and the StatusCode information (code, value, and description).
 

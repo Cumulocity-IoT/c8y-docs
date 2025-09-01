@@ -3,9 +3,10 @@ title: Multi-tenancy
 layout: bundle
 weight: 20
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 With the {{< enterprise-tenant >}} concept, {{< product-c8y-iot >}} supports full multi-tenancy. All data related to a tenant is stored in a dedicated data space. This includes user data, inventory, events, measurements, operations and alarms.
 
 The {{< enterprise-tenant >}} can create subtenants that will then again function like {{< standard-tenant >}}s in the platform and have their own tenant management.

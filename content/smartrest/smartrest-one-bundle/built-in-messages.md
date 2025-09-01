@@ -2,8 +2,9 @@
 weight: 70
 title: Built-in messages
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 SmartREST has a variety of built-in messages.
 
 ### Request messages {#request-messages}

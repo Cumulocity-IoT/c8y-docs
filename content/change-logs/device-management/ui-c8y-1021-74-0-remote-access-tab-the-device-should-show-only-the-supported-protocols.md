@@ -3,16 +3,17 @@ date: '2025-05-29'
 title: Remote access tab only shows supported protocols
 product_area: Device management & connectivity
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 component:
-  - value: component--KIsStyzM
-    label: Device Management app
+- value: component--KIsStyzM
+  label: Device Management app
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: DM-2114
 version: 1021.74.0
+lastmod: '2025-09-01T10:40:41Z'
 ---
 Previously, the **Remote access** tab in the device details showed all available protocols, even if the device did not support them. This could lead to confusion for users trying to remotely access devices.
 

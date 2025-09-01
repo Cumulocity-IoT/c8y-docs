@@ -3,9 +3,10 @@ weight: 180
 title: Services
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The {{< product-c8y-iot >}} UI allows you to monitor software services running on a device. The services are represented
 in {{< product-c8y-iot >}} domain model as the device managed object child additions with `c8y_Service` type.
 

@@ -1,16 +1,17 @@
 ---
 date: 2024-10-04
-title: Upcoming Spring Boot version update for Microservice SDK  
+title: Upcoming Spring Boot version update for Microservice SDK
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 product_area: Application enablement & solutions
 component:
-  - value: component-Sv2buFZ5l
-    label: Microservice SDK
+- value: component-Sv2buFZ5l
+  label: Microservice SDK
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
+lastmod: '2025-09-01T10:40:42Z'
 ---
 We are pleased to announce an upcoming update to the Spring Boot version used in the Microservice SDK. The new version will be Spring Boot 3.3.3, which will also bring updates to several third-party libraries and frameworks. These mandatory changes will include:
 

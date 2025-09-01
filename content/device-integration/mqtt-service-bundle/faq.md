@@ -2,6 +2,8 @@
 weight: 90
 layout: redirect
 title: Frequently Asked Questions
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
 Q: How can I obtain device credentials for my MQTT devices?<br/>
 A: The MQTT Service is not yet integrated with the {{< product-c8y-iot >}} device bootstrap process.

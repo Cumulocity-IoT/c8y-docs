@@ -2,14 +2,15 @@
 title: Managing the ecosystem
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 bundlefolder: ecosystem
 sector:
-  - platform_administration
+- platform_administration
 weight: 30
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The {{< product-c8y-iot >}} platform distinguishes between applications and microservices:
 
 * [Applications](#managing-applications) -  all web applications either subscribed to the tenant or owned by the tenant.

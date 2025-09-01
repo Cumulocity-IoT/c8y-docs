@@ -2,17 +2,18 @@
 title: Localization
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
 weight: 50
 helpcontent:
 - label: localization
   title: Localization
-  content: "
-  Use the **Localization** feature to add translations for the existing static text in the platform UI.
-
-   To add a new translation, click **Add translation** on the top menu bar. In the resulting dialog box, add the name of the key, followed by the translations in the respective fields."
+  content: " Use the **Localization** feature to add translations for the existing
+    static text in the platform UI.\nTo add a new translation, click **Add translation**
+    on the top menu bar. In the resulting dialog box, add the name of the key, followed
+    by the translations in the respective fields."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 Using the **Localization** functionality you can add custom translations for existing static text in the UI.
 
 {{< c8y-admon-req >}}

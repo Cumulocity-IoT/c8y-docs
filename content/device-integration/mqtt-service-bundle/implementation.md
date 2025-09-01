@@ -2,8 +2,9 @@
 weight: 20
 title: MQTT protocol implementation
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 This section covers some implementation details of the MQTT Service.
 The MQTT Service implementation supports clients connecting using MQTT versions 3.1, 3.1.1 and 5.0, although not all MQTT 5.0 protocol features are currently supported.
 

@@ -2,8 +2,9 @@
 weight: 20
 title: Integration lifecycle
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The basic lifecycle for integrating devices into {{< product-c8y-iot >}} is discussed in [Interfacing devices](/device-integration/interfacing-devices/).
 
 In this section, we will show how this lifecycle can be managed using the MQTT implementation.

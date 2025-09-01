@@ -2,8 +2,9 @@
 title: Using the Apama Event Processing Language (EPL)
 layout: bundle
 weight: 5
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The Apama Event Processing Language has a syntax similar to Java. In addition to simple flow control statements such as `if`, `while`, `for`, users can write listeners with the `on` keyword to react to events.
 
 Apama EPL is documented in the [Apama documentation]({{< link-apama-webhelp >}}).

@@ -2,8 +2,9 @@
 weight: 70
 title: Summary
 layout: bundle
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< product-c8y-iot >}} addresses security on various levels.
 
 All business partners and service providers have recognized security certificates. {{< product-c8y-iot >}} also deals with network security aspects by individual authentication and authorization methods.

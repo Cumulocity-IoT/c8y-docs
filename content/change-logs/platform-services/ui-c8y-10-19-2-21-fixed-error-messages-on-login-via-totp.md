@@ -3,15 +3,16 @@ date: 2024-03-14
 title: Fixed error messages on login via TOTP
 product_area: Platform services
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+- value: change-VSkj2iV9m
+  label: Fix
 component:
-  - value: q3kclF6pO
-    label: Authentication
+- value: q3kclF6pO
+  label: Authentication
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-53287
 version: 10.19.2.21
+lastmod: '2025-09-01T10:40:42Z'
 ---
 Correct error messages are now shown on login via TOTP when the support access has been deactivated.

@@ -3,9 +3,10 @@ weight: 20
 title: General concepts
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 ### Announcing capabilities {#announcing-capabilities}
 
 Devices may announce their supported capabilities using the ```c8y_SupportedOperations``` fragment in their own managed object. The fragment itself is an array of strings. It may contain built-in operations with their meaning or custom operations for specific use cases, which are described in the following sections.

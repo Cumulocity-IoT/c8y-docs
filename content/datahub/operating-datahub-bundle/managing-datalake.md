@@ -2,8 +2,9 @@
 weight: 50
 title: Managing the data lake
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< product-c8y-iot >}} DataHub uses a data lake to store data being offloaded from the {{< product-c8y-iot >}} operational database. The data is organized in hierarchical folders, following a temporal hierarchy. Within the folders the offloaded data is organized in Parquet files. During the offloading process {{< product-c8y-iot >}} DataHub creates temporary Parquet files, holding intermediate data, which are deleted afterwards. In order to prevent data being spread over multiple small files, a compaction process is executed regularly, producing fewer, larger files. 
 
 The contents and hierarchy of the data lake must not be modified. There is a high risk that data gets lost and subsequent querying of the data lake produces incomplete results.

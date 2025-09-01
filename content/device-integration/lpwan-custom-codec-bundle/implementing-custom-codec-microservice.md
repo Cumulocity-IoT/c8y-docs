@@ -2,8 +2,9 @@
 weight: 20
 title: Implementing a custom codec microservice
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 A custom codec microservice is a typical {{< product-c8y-iot >}} microservice, which can be implemented and enabled as follows.
 
 1. Create a microservice which exposes the <kbd>/encode</kbd> and <kbd>/decode</kbd> REST endpoints conforming to the [OpenAPI Specification](/files/rest/lpwan-custom-codec-openapi.yaml), implementing the encoding and decoding functionality.

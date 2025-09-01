@@ -2,8 +2,9 @@
 weight: 30
 title: Using the model manager
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### The model manager user interface {#the-model-manager-user-interface}
 
 The model manager contains two tabs: the **Models** tab which shows all currently defined models and the **Samples** tab which shows sample models that are intended to help you get started with creating your own models.

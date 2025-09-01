@@ -3,9 +3,10 @@ weight: 10
 title: Application
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 Click **Application** in the **Settings** menu to change applications settings.
 
 ![Application settings](/images/users-guide/Administration/admin-settings-application.png)

@@ -2,8 +2,9 @@
 title: Application options
 layout: redirect
 weight: 10
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The easiest option to customize your application are application options. They apply to any Web SDK application and
 use inheritance which allows you to apply the same configurations to all your applications. One example
 configuration is `hideNavigator`, which is a simple flag that configures if the navigator must be

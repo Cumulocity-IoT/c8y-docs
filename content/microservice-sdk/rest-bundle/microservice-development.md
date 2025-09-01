@@ -2,8 +2,9 @@
 weight: 20
 title: Microservice development
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 This section will introduce you to the basic REST endpoints required for developing microservices. You will also learn the basic use cases in which the {{< product-c8y-iot >}} REST APIs can be employed to develop microservice applications.
 
 

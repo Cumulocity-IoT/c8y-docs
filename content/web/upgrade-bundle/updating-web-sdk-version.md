@@ -2,8 +2,9 @@
 title: Updating the Web SDK version
 layout: redirect
 weight: 0
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 From version 1019.x.x onwards the Web SDK is following semantic versioning. Meaning that every major version bump (for example, from 1019 to 1020) may contain breaking changes, but every minor or fix bump should not break your application. So it is save to update to any minor or fix version, but if you update to any major version, you might need to migrate things.
  
 Easiest way for migration at the moment is still comparing the diff with git:

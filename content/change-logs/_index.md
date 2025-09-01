@@ -1,10 +1,11 @@
 ---
 title: Change logs
 outputs:
-  - html
-  - json
+- html
+- json
+date: '2025-09-01T10:26:31Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 These change logs document all relevant changes for the {{< product-c8y-iot >}} cloud deployments.
 
 The following types of change are included:

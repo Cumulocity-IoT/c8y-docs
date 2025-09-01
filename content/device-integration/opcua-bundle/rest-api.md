@@ -2,8 +2,9 @@
 weight: 100
 title: REST APIs
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 While the {{< product-c8y-iot >}} user interface for OPC UA provides an easy and visual way to configure and build your OPC UA solution, the OPC UA management microservice gives you the possibility to do it via RESTful web service.
 
 The full API definitions can be found at */service/opcua-mgmt-service/swagger-ui.html*.

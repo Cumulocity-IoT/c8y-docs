@@ -1,16 +1,17 @@
 ---
-date: 2023-12-06T15:55:52.890Z
+date: 2023-12-06T15:55:52.890000Z
 title: Planned change in full text search feature of Inventory API
 change_type:
-  - value: change-3BQrQ6adS
-    label: API change
+- value: change-3BQrQ6adS
+  label: API change
 product_area: Platform services
 component:
-  - value: component-JlFdtOPva
-    label: REST API
+- value: component-JlFdtOPva
+  label: REST API
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
+lastmod: '2025-09-01T10:40:42Z'
 ---
 As of a future version, the full text search functionality will only include the following properties:
 

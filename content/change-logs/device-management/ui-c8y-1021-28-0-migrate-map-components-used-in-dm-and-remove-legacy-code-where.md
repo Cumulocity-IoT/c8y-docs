@@ -1,18 +1,20 @@
 ---
 date: '2025-01-09'
-title: Migrated and improved the devices map in the Device Management application
+title: Migrated and improved the devices map in the Device Management 
+  application
 product_area: Device management & connectivity
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 component:
-  - value: component--KIsStyzM
-    label: Device Management app
+- value: component--KIsStyzM
+  label: Device Management app
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: DM-3089
 version: 1021.28.0
+lastmod: '2025-09-01T10:40:40Z'
 ---
 As part of ongoing improvements to the Device Management application, the device map component (Devices > Map) has been migrated to a new implementation. Besides improving the functionality, the goal of this migration is to keep the component up-to-date and maintainable. The following changes have been made:
 

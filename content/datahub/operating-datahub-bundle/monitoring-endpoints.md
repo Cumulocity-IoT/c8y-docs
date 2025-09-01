@@ -2,8 +2,9 @@
 weight: 40
 title: Endpoints for monitoring
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### ETL pipeline health {#etl-pipeline-health}
 
 The {{< product-c8y-iot >}} DataHub microservice exposes an endpoint to automatically monitor the health of active offloading jobs as well as compaction and data collection jobs. The health status can be monitored with the endpoint <kbd>GET /service/datahub/scheduler/health</kbd>. The endpoint accepts two optional parameters, **format** and **check**. 

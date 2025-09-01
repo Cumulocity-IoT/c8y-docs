@@ -3,15 +3,16 @@ date: '2024-12-12'
 title: Fixed layout issues with data grid group column dropdown
 product_area: Device management & connectivity
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+- value: change-VSkj2iV9m
+  label: Fix
 component:
-  - value: component--KIsStyzM
-    label: Device Management app
+- value: component--KIsStyzM
+  label: Device Management app
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: DM-4172
 version: 1021.9.0
+lastmod: '2025-09-01T10:40:40Z'
 ---
 The data grid component had layout issues with the group column dropdown. These have been resolved by adjusting the dropdown scroll height in relation to the bottom footer and adding a shadow to the dropdown for increased contrast between user interface elements.

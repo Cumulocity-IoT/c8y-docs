@@ -2,18 +2,18 @@
 date: 2025-07-21
 title: MQTT Service will enforce device isolation
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 product_area: Platform services
 component:
-  - value: component-LcWEQW5gs
-    label: MQTT
+- value: component-LcWEQW5gs
+  label: MQTT
 build_artifact:
-  - value: tc-hc5Tfixeqqei
-    label: mqtt-service
+- value: tc-hc5Tfixeqqei
+  label: mqtt-service
 issue: MTM-64099
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 ### Introduction
 
 The Public Preview release of the {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) currently enforces *tenant* isolation.

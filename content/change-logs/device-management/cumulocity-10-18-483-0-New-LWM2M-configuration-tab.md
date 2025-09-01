@@ -1,18 +1,19 @@
 ---
-date: 2023-12-06T12:55:41.157Z
+date: 2023-12-06T12:55:41.157000Z
 title: New LWM2M configuration tab
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 product_area: Device management & connectivity
 component:
-  - value: component-1KLUzmqfe
-    label: LWM2M
+- value: component-1KLUzmqfe
+  label: LWM2M
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
 ticket: DM-342
 version: 10.18.483.0
+lastmod: '2025-09-01T10:40:40Z'
 ---
 The details of a LWM2M device now show a <b>LWM2M configuration</b> tab which replaces the <b>LWM2M bootstrap parameters</b> tab. The new tab is better structured and allows detailed configuration. It contains all configuration options of the former <b>LWM2M bootstrap parameters</b> tab as well as additional setting options:
 

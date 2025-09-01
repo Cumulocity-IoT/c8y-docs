@@ -2,8 +2,9 @@
 weight: 80
 title: Troubleshooting
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 ### Sigfox callbacks in backend.sigfox.com are not created correctly {#sigfox-callbacks-in-backendsigfoxcom-are-not-created-correctly}
 
 ### Device registration {#device-registration}

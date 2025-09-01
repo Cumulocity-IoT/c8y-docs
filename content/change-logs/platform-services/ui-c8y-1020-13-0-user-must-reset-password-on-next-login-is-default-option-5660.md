@@ -5,15 +5,16 @@ title: >-
   as email is deselected
 product_area: Platform services
 change_type:
-  - value: change-2c7RdTdXo4
-    label: Improvement
+- value: change-2c7RdTdXo4
+  label: Improvement
 component:
-  - value: q3kclF6pO
-    label: Authentication
+- value: q3kclF6pO
+  label: Authentication
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-58077
 version: 1020.13.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
 Previously, a new user received an email with a link to set their password. Now when the checkbox **Send password reset link as email** is cleared, the **User must reset password on next login** option is selected by default. This means the new user must change their password during their first login.

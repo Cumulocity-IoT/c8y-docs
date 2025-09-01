@@ -1,18 +1,19 @@
 ---
-date: 2023-12-06T12:59:36.209Z
+date: 2023-12-06T12:59:36.209000Z
 title: New shell commands
 change_type:
-  - value: change-2c7RdTdXo4
-    label: Improvement
+- value: change-2c7RdTdXo4
+  label: Improvement
 product_area: Device management & connectivity
 component:
-  - value: component-1KLUzmqfe
-    label: LWM2M
+- value: component-1KLUzmqfe
+  label: LWM2M
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
 ticket: DM-2153
 version: 10.18.6.0
+lastmod: '2025-09-01T10:40:40Z'
 ---
 Two new LWM2M shell commands have been added.
 

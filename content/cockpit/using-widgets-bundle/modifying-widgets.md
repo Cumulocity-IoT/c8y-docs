@@ -3,9 +3,10 @@ weight: 20
 title: Modifying widgets
 layout: bundle
 sector:
-  - app_enablement
+- app_enablement
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### To modify a widget {#to-modify-a-widget}
 
 Widgets can only be modified if the dashboard/report is in edit mode. To enter the edit mode click either **Edit widgets** or **General settings** in the top menu bar.

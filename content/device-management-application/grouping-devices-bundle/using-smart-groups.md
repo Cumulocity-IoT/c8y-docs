@@ -3,16 +3,18 @@ weight: 40
 title: Using smart groups
 layout: redirect
 outputs:
-  - html
-  - json
+- html
+- json
 helpcontent:
-  - label: using-smart-groups
-    title: Using smart groups
-    content: "Smart groups are groups dynamically constructed based on filtering criteria. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version.
-
-    Smart groups can be created from the device list."
+- label: using-smart-groups
+  title: Using smart groups
+  content: "Smart groups are groups dynamically constructed based on filtering criteria.
+    This type of group can be used, for example, for bulk upgrades of devices of a
+    certain type to a new software or firmware version.\nSmart groups can be created
+    from the device list."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Smart groups are groups dynamically constructed based on filtering criteria. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version.
 
 {{< c8y-admon-info >}}

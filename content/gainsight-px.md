@@ -2,8 +2,9 @@
 title: Gainsight
 layout: bundle
 hideLeftMenu: true
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 ### Overview {#overview}
 
 Gainsight PX is integrated into the {{< product-c8y-iot >}} UI through a JavaScript tag activated after a user logs into the application. This tag initiates Gainsight PX's anonymized tracking. Additionally, the [Knowledge Hub](/get-familiar-with-the-ui/knowledge-hub/) and engagements, represented by the little round box at the bottom right corner, are loaded. These features are optional and can be managed from user settings and directly from Gainsight PX.

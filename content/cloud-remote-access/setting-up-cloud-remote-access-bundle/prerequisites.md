@@ -2,8 +2,9 @@
 title: Prerequisites
 weight: 10
 layout: bundle
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 {{< c8y-admon-req >}}
 To use Cloud Remote Access, you need
 

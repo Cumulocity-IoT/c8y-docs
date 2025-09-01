@@ -3,9 +3,10 @@ title: Support service-level agreement
 layout: bundle
 weight: 30
 aliases:
-  - /support-sla/
+- /support-sla/
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who wishes to use support services for {{< product-c8y-iot >}}.
 
 ### Service description

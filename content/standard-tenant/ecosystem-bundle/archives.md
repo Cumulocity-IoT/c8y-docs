@@ -3,9 +3,10 @@ title: Uploading archives
 layout: bundle
 weight: 60
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 For custom applications, multiple file versions can be stored in {{< product-c8y-iot >}} when they were created by uploading either a ZIP file or a MON file. Each version is called an archive. You can upload different versions at the same time and switch between these versions.
 
 ### To upload an archive {#to-upload-an-archive}

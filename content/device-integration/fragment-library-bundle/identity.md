@@ -2,10 +2,11 @@
 weight: 110
 title: Identity
 layout: bundle
-sector: 
-  - device_management
+sector:
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The **Identity** tab shows all identities associated with the device. If no identities are available the tab is not shown. Identities map from a unique device identifier (for example, IMEI or SN) to the device’s managed object in {{< product-c8y-iot >}}. This allows the device to find its managed object.
 
 #### REST {#rest}

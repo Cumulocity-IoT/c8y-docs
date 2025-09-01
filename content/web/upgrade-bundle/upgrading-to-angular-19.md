@@ -2,8 +2,9 @@
 title: Upgrading from Angular 18 to Angular 19
 layout: redirect
 weight: 430
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Starting with version 1022.0.0, the Web SDK supports Angular 19. The following configuration changes are required before you can run the application:
 
 - Run the command `ng update @angular/core@19 @angular/cli@19` to update Angular core and CLI to version 19.

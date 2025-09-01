@@ -1,8 +1,9 @@
 ---
 weight: 30
 title: Device management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Effectively managing devices is a critical yet often overlooked aspect of deploying IoT solutions. Without proper device management in place, it will become increasingly difficult to keep your devices healthy and up-to-date over time, leading to security risks, operational failures, and increased maintenance costs. This is especially true once you start scaling up your fleet of devices as well as adding new functionalities and thereby complexity to your deployment.
 
 Connecting equipment to the internet requires secure and robust device management practices. {{< product-c8y-iot >}} greatly reduces the complexity and time required to manage a heterogeneous fleet of connected devices across its lifecycle through its comprehensive device management features:

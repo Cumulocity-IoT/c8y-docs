@@ -3,16 +3,21 @@ weight: 20
 title: Managing trusted certificates
 layout: bundle
 sector:
-  - device_management
+- device_management
 outputs:
-  - html
-  - json
+- html
+- json
 helpcontent:
-  - label: managing-trusted-certificates
-    title: Trusted certificates
-    content: "Cumulocity allows devices to connect via MQTT and LWM2M protocol using a X.509 certificate for authentication. To do so, the public certificate (root or intermediate) of the certificate authority must be 'trusted' by Cumulocity. This public certificate should be added to the trusted certificates."
+- label: managing-trusted-certificates
+  title: Trusted certificates
+  content: Cumulocity allows devices to connect via MQTT and LWM2M protocol 
+    using a X.509 certificate for authentication. To do so, the public 
+    certificate (root or intermediate) of the certificate authority must be 
+    'trusted' by Cumulocity. This public certificate should be added to the 
+    trusted certificates.
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 {{< product-c8y-iot >}} allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be trusted by {{< product-c8y-iot >}}. A certificate is trusted when it is added to the trusted certificates and is in activated state.
 
 {{< c8y-admon-req >}}

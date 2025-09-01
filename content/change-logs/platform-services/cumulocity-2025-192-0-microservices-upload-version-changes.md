@@ -3,19 +3,18 @@ date: 2025-06-12
 title: Re-upload of previous microservice versions
 product_area: Platform services
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 component:
-  - value: component-OG_650_b2
-    label: Core platform
+- value: component-OG_650_b2
+  label: Core platform
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
 ticket: MTM-63368
 version: 2025.192.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
-
-
 Previously, uploading older microservice versions was restricted to development builds that contained the -SNAPSHOT suffix in the version.
 This constraint has now been removed.
 

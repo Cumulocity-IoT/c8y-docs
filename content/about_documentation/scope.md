@@ -3,9 +3,10 @@ weight: 10
 title: Scope
 layout: bundle
 sector:
-  - terms_conditions
+- terms_conditions
+date: '2025-09-01T10:26:31Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 This documentation reflects the latest state of the {{< product-c8y-iot >}} platform. It includes all latest features and functionalities (see the [Change logs](/change-logs/) for details) and is continuously updated to align with recent software updates.
 
 {{< c8y-admon-important >}}

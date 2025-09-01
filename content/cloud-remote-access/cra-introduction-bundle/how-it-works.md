@@ -2,8 +2,9 @@
 title: How Cloud Remote Access works
 weight: 20
 layout: bundle
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 This versatile feature offers two primary connection methods:
 1. **Direct device access:** Establish a seamless connection to devices directly linked to {{< product-c8y-iot >}}. 
 2. **Gateway-enabled remote access:** Leverage a connected device as a gateway to access any device that is reachable within its local area network, expanding your reach to manage multiple devices through a single entry point.

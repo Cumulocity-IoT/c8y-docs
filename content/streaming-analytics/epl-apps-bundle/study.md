@@ -2,8 +2,9 @@
 weight: 60
 title: Study - Circular geofence alarms
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Overview {#overview}
 
 This section gives an in-depth example how you can create more complex rules. It uses multiple of the features explained before in the other sections of this guide.

@@ -3,12 +3,13 @@ weight: 10
 title: Introduction
 layout: bundle
 sector:
-  - getting_started
+- getting_started
 aliases:
-  - /sensor-app/overview/
-  - /sensor-app/introduction/
+- /sensor-app/overview/
+- /sensor-app/introduction/
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones. It is the successor of the previous Cloud Sensor App.
 
 The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. It has a straightforward registration workflow to get you up and running quickly.

@@ -3,9 +3,10 @@ weight: 10
 title: Global roles
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 Click **Roles** in the **Accounts** menu to display a list of configured roles.
 
 <img src="/images/users-guide/Administration/admin-global-roles.png" alt="Context menu">

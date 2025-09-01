@@ -2,10 +2,11 @@
 title: SMS
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
 weight: 20
+date: '2025-09-01T10:26:31Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 {{< c8y-admon-req >}}
 When adding a user and TFA is enabled, a mobile phone number must be specified. Without a valid phone number a login is impossible.
 {{< /c8y-admon-req >}}

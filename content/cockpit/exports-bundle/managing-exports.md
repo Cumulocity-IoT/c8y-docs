@@ -3,20 +3,21 @@ weight: 10
 title: Managing exports
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 sector:
-  - app_enablement
+- app_enablement
 helpcontent:
-  - label: managing-exports
-    title: Managing exports
-    content: "The export functionality lets you export specific data to files. In each export, you can specify the output file type (Excel or CSV), schedule the export and specify the target email address(es), and optionally select filters for specific devices, time ranges or fields.
-
-
-    Click **Add export** at the top right to configure a new export, or use the menu icon to edit, duplicate or delete exports."
-
+- label: managing-exports
+  title: Managing exports
+  content: "The export functionality lets you export specific data to files. In each
+    export, you can specify the output file type (Excel or CSV), schedule the export
+    and specify the target email address(es), and optionally select filters for specific
+    devices, time ranges or fields.\n\nClick **Add export** at the top right to configure
+    a new export, or use the menu icon to edit, duplicate or delete exports."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The export functionality lets you export specific data to either CSV or Excel files.
 
 {{< c8y-admon-req >}}

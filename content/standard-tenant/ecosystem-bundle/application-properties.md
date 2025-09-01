@@ -3,9 +3,10 @@ title: Application properties
 layout: bundle
 weight: 40
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 To display further details on an application, click it to open its **Properties** tab.
 
 <img src="/images/users-guide/Administration/admin-application-properties.png" alt="Application properties" style="max-width: 100%">

@@ -2,8 +2,9 @@
 weight: 80
 title: MQTT JWT session token retrieval
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The code of the {{< product-c8y-iot >}} MQTT example client implemented in Java, which connects to the platform using x.509 certificates, is available here: {{< link-c8y-github >}}/cumulocity-examples/tree/develop/mqtt-client.
 This example client uses the implementation of Eclipse Paho, which is described in detail on their website: https://www.eclipse.org/paho/index.php?page=documentation.php.
 

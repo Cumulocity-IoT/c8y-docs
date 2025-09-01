@@ -2,8 +2,9 @@
 weight: 30
 title: Offloading Cumulocity base collections
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Offloading the base collections {#offloading-the-base-collections}
 
 The following tables summarize the resulting schemas for each of the {{< product-c8y-iot >}} base collections. These schemas additionally include the virtual columns `dir0`, ..., `dir3`, which are used for internal purposes. The columns are generated during the extraction process, but neither do they have corresponding data in the Operational Store of {{< product-c8y-iot >}}, nor are they persisted in the data lake. Do not use `dir0`, ..., `dir3` as additional columns or rename them accordingly in your offloading configuration.

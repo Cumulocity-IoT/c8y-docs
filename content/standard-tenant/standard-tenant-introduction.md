@@ -2,11 +2,11 @@
 title: Introduction
 layout: bundle
 sector:
-  - platform_administration
+- platform_administration
 weight: 1
-
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 In the administration application, account administrators can manage numerous functions and settings for their account.
 
 On {{< standard-tenant >}} level, administrators can manage [users](/standard-tenant/managing-users/), [permissions](/standard-tenant/managing-permissions/), [applications & microservices](/standard-tenant/ecosystem/), and more. Moreover they can configure various settings for their account.

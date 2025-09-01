@@ -3,16 +3,17 @@ date: '2024-09-12'
 title: Enhanced branding editor
 product_area: Application enablement & solutions
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+- value: component-YbYJ3gLU_
+  label: Web SDK
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-53766
 version: 1020.26.0
+lastmod: '2025-09-01T10:40:41Z'
 ---
 The branding editor allows users to create a unique and consistent branding across their applications, improving the overall user experience and making it easier to align the application's appearance with corporate design guidelines.
 

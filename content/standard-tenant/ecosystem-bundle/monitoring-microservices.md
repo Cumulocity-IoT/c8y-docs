@@ -3,9 +3,10 @@ weight: 80
 title: Monitoring microservices
 layout: bundle
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 You can monitor microservices hosted by {{< product-c8y-iot >}} in two ways.
 
 ### Status information {#status-information}

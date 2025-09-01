@@ -1,8 +1,9 @@
 ---
 weight: 40
 title: IoT data management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< product-c8y-iot >}} leverages a canonical yet extensible [data model](/concepts/domain-model/) to represent data from different device types and protocols consistently. This approach decouples device integration from IoT applications.
 
 To bring IoT sensor data into a meaningful context, {{< product-c8y-iot >}} offers the [Digital Twin Manager](/dtm/dtm-introduction/) (DTM). DTM enables users to model different [asset types](/dtm/asset-types/#asset-models) they are working with and their [properties](/dtm/asset-types/#asset-properties). These models can then be used to create virtual representations of physical assets and their [hierarchical relationships](/dtm/asset-hierarchy/). DTM then allows users to [link sensor data](/dtm/asset-hierarchy/#to-assign-devices-to-an-asset) directly to this asset hierarchy.

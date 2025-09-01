@@ -2,8 +2,9 @@
 weight: 40
 title: Isolation and scaling
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The following isolation levels are available for microservices:
 
 * Multi-tenant: Single microservice Docker container instantiated for all subscribed tenants, unless the microservice is scaled.

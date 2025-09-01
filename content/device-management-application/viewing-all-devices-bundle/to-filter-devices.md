@@ -2,8 +2,9 @@
 weight: 20
 title: To filter devices
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The device list offers a filtering functionality to filter devices in the list for specific criteria.
 
 Filtering is available on every column. Click the filter icon <i class="dlt-c8y-icon-filter icon-20"></i> next to the name of the column you want to set a filter for.

@@ -2,8 +2,9 @@
 weight: 20
 title: Device registration via uplink message
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 Before using LoRa devices with {{< product-c8y-iot >}}, you must configure the {{< product-c8y-iot >}} Loriot agent endpoint details in LORIOT Network Server.
 
 ### Configuring the Loriot endpoint using basic authentication {#configuring-the-loriot-endpoint-using-basic-authentication}

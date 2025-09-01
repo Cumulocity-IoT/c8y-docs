@@ -2,9 +2,9 @@
 weight: 60
 title: Handling LWM2M shell commands
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
-
 In the **Shell** tab of a device, LWM2M shell commands can be performed. Each command has a different functionality. Find all available placeholders (for example "objectID", "instanceID") and commands with their respective descriptions below:
 
 <table>

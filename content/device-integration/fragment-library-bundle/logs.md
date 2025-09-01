@@ -2,10 +2,11 @@
 weight: 120
 title: Logs
 layout: bundle
-sector: 
-  - device_management
+sector:
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The **Logs** tab is used to extract logs from the device. The **Logs** tab is available if the fragment ```c8y_LogfileRequest``` is present in the ```c8y_SupportedOperations``` of the device.
 The device should contain a fragment called ```c8y_SupportedLogs```, which holds an array of the types of logs that it supports. The types of logs will later be referenced when logs are requested.
 

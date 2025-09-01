@@ -2,8 +2,9 @@
 weight: 100
 title: MQTT examples
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 ### Hello MQTT
 
 In this tutorial, you will learn how to use MQTT with {{< product-c8y-iot >}} using pre-defined messages (called "static templates").

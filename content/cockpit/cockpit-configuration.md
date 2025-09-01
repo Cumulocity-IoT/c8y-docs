@@ -3,9 +3,10 @@ weight: 100
 title: Configuring Cockpit applications
 layout: bundle
 sector:
-  - app_enablement
+- app_enablement
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< product-c8y-iot >}} offers you to configure custom Cockpit applications according to your individual needs.
 
 {{< c8y-admon-req >}}

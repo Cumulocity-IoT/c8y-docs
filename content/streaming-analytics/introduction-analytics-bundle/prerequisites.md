@@ -2,8 +2,9 @@
 weight: 5
 title: Prerequisites
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Browsers {#browsers}
 
 The Streaming Analytics application supports the same browsers as {{< product-c8y-iot >}}, with the following exception: browsers on smartphones and tablets are not supported.

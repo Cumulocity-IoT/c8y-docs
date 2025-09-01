@@ -1,9 +1,10 @@
 ---
-title: Upgrading from Angular 16 to Angular 17  
+title: Upgrading from Angular 16 to Angular 17
 layout: redirect
 weight: 450
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Angular 17 is supported from version `1020.0.0`. The following configuration changes are required before you can run the application:
 
 - Update all `@c8y` dependencies to version `1020.x.x` in your *package.json*.

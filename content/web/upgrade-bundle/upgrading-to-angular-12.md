@@ -2,8 +2,9 @@
 title: Upgrading from Angular 11 to Angular 12
 layout: redirect
 weight: 490
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Angular 12 is supported from version `10.11.45.0`. The following configuration changes are required before you can run the application:
 
 - Update all `@angular/*` dependencies to `12.2.x`.

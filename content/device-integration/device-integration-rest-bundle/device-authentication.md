@@ -2,8 +2,9 @@
 weight: 30
 title: Device authentication
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 Devices can authenticate to the {{< product-c8y-iot >}} platform using:
 * Device user credentials, that is, using the device username and password,
 * Certificate Authentication, that is, using X509 certificates over a defined REST endpoint protocol to procure the JWT session token on port 8443.

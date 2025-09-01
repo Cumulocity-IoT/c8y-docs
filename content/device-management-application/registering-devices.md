@@ -3,41 +3,33 @@ weight: 10
 title: Registering devices
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 sector:
-  - device_management
+- device_management
 helpcontent:
-  - label: registering-devices
-    title: Connecting devices
-    content: "To connect devices to Cumulocity they must be registered. To register one or more devices, click **Register device** and follow the instructions in the wizard or in the user documentation.
-
-
-    All devices which are currently in the registration process are displayed with one of the following statuses:
-
-
-    **Waiting for connection** - The device has been registered but no device with the specified ID has tried to connect
-
-    **Pending acceptance** - There is communication from a device with the specified ID, but the user doing the registration must still explicitly accept it so that the credentials are sent to the device
-
-    **Accepted** - The user has allowed the credentials to be send to the device
-
-    **Blocked** - The device registration has been blocked due to the exceeded limit of failed attempts.
-
-
-    To register devices, you can select one of the following options:
-
-    Single device registration - To manually connect one or more devices.
-
-    Bulk device registration - To register larger amounts of devices in one step.
-
-
-    Depending on the microservices subscribed to your tenant, you might see other device registration options for specific protocol types.
-
-
-    To register a device, click **Register device** at the right of the top bar, select an option from the dropdown list and follow the instructions in the device registration wizard."
+- label: registering-devices
+  title: Connecting devices
+  content: "To connect devices to Cumulocity they must be registered. To register
+    one or more devices, click **Register device** and follow the instructions in
+    the wizard or in the user documentation.\n\nAll devices which are currently in
+    the registration process are displayed with one of the following statuses:\n\n\
+    **Waiting for connection** - The device has been registered but no device with
+    the specified ID has tried to connect\n**Pending acceptance** - There is communication
+    from a device with the specified ID, but the user doing the registration must
+    still explicitly accept it so that the credentials are sent to the device\n**Accepted**
+    - The user has allowed the credentials to be send to the device\n**Blocked** -
+    The device registration has been blocked due to the exceeded limit of failed attempts.\n\
+    \nTo register devices, you can select one of the following options:\nSingle device
+    registration - To manually connect one or more devices.\nBulk device registration
+    - To register larger amounts of devices in one step.\n\nDepending on the microservices
+    subscribed to your tenant, you might see other device registration options for
+    specific protocol types.\n\nTo register a device, click **Register device** at
+    the right of the top bar, select an option from the dropdown list and follow the
+    instructions in the device registration wizard."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Overview
 
 In the **Device registration** page all devices are displayed which are currently in the registration process.

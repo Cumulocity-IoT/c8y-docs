@@ -2,8 +2,9 @@
 weight: 70
 title: Authentication
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The authentication setting is used to authenticate and authorize the server user. It tells the gateway how to create a user identity and how to send it to the OPC UA server when establishing a connection.
 
 The following authentication methods can be selected:

@@ -2,8 +2,9 @@
 weight: 50
 title: Using the instance editor
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### The instance editor user interface {#the-instance-editor-user-interface}
 
 A prerequisite for invoking the instance editor is that one or more template parameters have been defined in the model editor \(see also [Managing template parameters](/streaming-analytics/analytics-builder/#managing-template-parameters)\).

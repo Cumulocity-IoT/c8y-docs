@@ -3,16 +3,17 @@ date: '2024-11-11'
 title: Enhanced select component with advanced features
 product_area: Application enablement & solutions
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+- value: component-YbYJ3gLU_
+  label: Web SDK
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-59799
 version: 1021.0.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
 To enhance the user experience and functionality a new select component has been introduced. This update includes significant changes that may require action from developers.
 

@@ -3,16 +3,17 @@ date: '2025-06-19'
 title: Map widget provides option to fit all assets on a map
 product_area: Application enablement & solutions
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 component:
-  - value: component-YdSEScrEC
-    label: Cockpit
+- value: component-YdSEScrEC
+  label: Cockpit
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-63148
 version: 1021.76.0
+lastmod: '2025-09-01T10:40:41Z'
 ---
 The "Map" widget has been enhanced with a new feature that allows to fit all assets on a map. This includes either all selected assets for the widget or all available assets if none are explicitly selected. This functionality is available in two places:
 

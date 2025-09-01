@@ -2,8 +2,9 @@
 weight: 70
 title: Connecting Apama to other microservices
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Overview {#overview}
 
 Streaming analytics applications using Apama can make use of applications running in other microservices. This section uses the `/health` endpoint of an Apama-ctrl microservice, but the steps apply to connecting to any other microservice running inside {{< product-c8y-iot >}}. This section is going to show you how to create a connection to the {{< product-c8y-iot >}} platform from within Apama EPL which can be used to invoke other microservices directly. It will then show you how to make a request and decode the result.

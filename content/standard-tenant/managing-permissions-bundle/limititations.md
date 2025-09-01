@@ -3,9 +3,10 @@ weight: 60
 title: Limitations of inventory roles based access
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The {{< product-c8y-iot >}} inventory roles based access has some limitations and may change the behavior of the REST API. 
 
 ### Optimized

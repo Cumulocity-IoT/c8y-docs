@@ -2,8 +2,9 @@
 weight: 50
 title: Exporting and importing device protocols
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 To manage device protocols more conveniently, you can export them to a file. The file can be re-imported to  set up other {{< product-c8y-iot >}} accounts easily or to restore the protocols from a backup. The import functionality also supports importing ready-made device protocols provided by device manufacturers.
 
 To export a device protocol, click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the respective row and click **Export**.

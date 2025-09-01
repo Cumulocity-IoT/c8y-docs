@@ -3,9 +3,10 @@ weight: 20
 title: Configuration settings
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:31Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 To enable the SSO feature, the administrator must configure a connection with the authorization server. This is done in the Administration application.
 
 ### Configuration access {#configuration-access}

@@ -1,12 +1,12 @@
 ---
-title: "Rest API"
-icon: "dlt-c8y-icon-rest-api"
+title: Rest API
+icon: dlt-c8y-icon-rest-api
 type: external
 external: https://cumulocity.com/api/
 weight: 45
-
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The {{< openapi >}} represents a language-agnostic interface to the {{< product-c8y-iot >}}
 RESTful API which allows – both humans and computers – to discover and understand the capabilities
 of the platform.

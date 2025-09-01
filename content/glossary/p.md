@@ -3,10 +3,10 @@ weight: 130
 title: P
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
-
 ### Permissions {#permissions}
 
 The ability to execute certain functionality in the {{< product-c8y-iot >}} platform is based on permissions. Permissions define explicitly what functionality can be executed by a user. {{< product-c8y-iot >}} distinguishes read permissions and administration permissions. Read permissions enable users to read data. Administration permissions enable users to create, update and delete data.

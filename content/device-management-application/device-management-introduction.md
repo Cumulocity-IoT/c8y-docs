@@ -3,9 +3,10 @@ weight: 5
 title: Introduction
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Device management is essential for building a robust and scalable foundation for any IoT solution, bridging the gap between your IoT devices and the (business) application layer.  
 
 In order to operate IoT systems efficiently, devices need to be monitored and managed across their entire lifecycle from installation and setting up their connection up until their decommissioning and replacement. This process inherits significant complexity due to, for example, geographical distribution, the heterogeneity and constraints of used devices as well as the sheer number of devices being part of the deployment.   

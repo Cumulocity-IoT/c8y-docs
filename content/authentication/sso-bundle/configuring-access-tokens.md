@@ -3,9 +3,10 @@ weight: 50
 title: Using access tokens from the authorization server
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:31Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 You can directly request {{< product-c8y-iot >}} to use OAuth2 access tokens from your authorization server.
 This way, your applications or users can access resources without logging in to the platform
 or using Basic authentication. This leverages your authorization server to get access tokens for your applications which you can send in subsequent request to

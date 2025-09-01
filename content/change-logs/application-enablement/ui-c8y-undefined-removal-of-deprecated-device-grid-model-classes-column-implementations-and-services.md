@@ -1,17 +1,18 @@
 ---
-date: 2023-12-06T13:47:00.530Z
-title: Removal of deprecated device-grid model classes, column implementations
+date: 2023-12-06T13:47:00.530000Z
+title: Removal of deprecated device-grid model classes, column implementations 
   and services
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 product_area: Application enablement & solutions
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+- value: component-YbYJ3gLU_
+  label: Web SDK
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
+lastmod: '2025-09-01T10:40:42Z'
 ---
 As announced earlier, see also [release 10.17](https://cumulocity.com/releasenotes/release-10-17-0/announcements-10-17-0), shared classes, components and services from the @c8y/ngx-components/device-grid are deprecated. Those deprecated items have now been removed.
 

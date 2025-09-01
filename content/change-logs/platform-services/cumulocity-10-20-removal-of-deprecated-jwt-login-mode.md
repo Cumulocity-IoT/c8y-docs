@@ -3,16 +3,17 @@ date: 2024-06-03
 title: Removal of deprecated JWT login mode
 product_area: Platform services
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 component:
-  - value: q3kclF6pO
-    label: Authentication
+- value: q3kclF6pO
+  label: Authentication
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
 ticket: MTM-53448
 version: 10.20.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
 JWT authentication with {{< product-c8y-iot >}} has been deprecated since release 10.6 and will be removed in Q3 2024 for the SaaS instances and in 2025 for the yearly releases.
 This authentication method is not to be confused with SSO (single sign-on) or OAI-Secure authentication, which are both recommended and still supported.

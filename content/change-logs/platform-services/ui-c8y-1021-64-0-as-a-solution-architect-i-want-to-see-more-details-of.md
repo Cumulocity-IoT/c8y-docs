@@ -3,16 +3,17 @@ date: '2025-05-08'
 title: Added option to provide a readme file for particular plugins in a package
 product_area: Platform services
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 component:
-  - value: component-0UgqXH1Ys
-    label: Administration
+- value: component-0UgqXH1Ys
+  label: Administration
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-62166
 version: 1021.64.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
 Previously, only one readme file could be added to a package - by storing the *README.md* file in the package root folder. With this update a readme file can be created for each plugin within a package, thus providing users with a better experience and placing the information closer to the plugin.
 

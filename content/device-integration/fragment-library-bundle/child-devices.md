@@ -2,10 +2,11 @@
 weight: 40
 title: Child devices
 layout: bundle
-sector: 
-  - device_management
+sector:
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The **Child Devices** tab shows a list of all child devices. It will be available only if the device has any child devices assigned to it.
 
 We recommend to include the `c8y_IsDevice` fragment in all child devices. Accordingly, all aspects of devices are also applicable to child devices, for example, querying and filtering of child devices. Moreover, child devices are also shown in the device lists (such as the **All devices** list, and in groups and during the creation of bulk operations). 

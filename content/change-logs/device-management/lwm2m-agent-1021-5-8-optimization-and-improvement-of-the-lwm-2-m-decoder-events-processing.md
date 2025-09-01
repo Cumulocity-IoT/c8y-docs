@@ -3,16 +3,17 @@ date: '2025-04-03'
 title: Improved the LWM2M decoder events processing engine
 product_area: Device management & connectivity
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+- value: change-VSkj2iV9m
+  label: Fix
 component:
-  - value: component-1KLUzmqfe
-    label: LWM2M
+- value: component-1KLUzmqfe
+  label: LWM2M
 build_artifact:
-  - value: tc-ggH2M4hf3
-    label: lwm2m-agent
+- value: tc-ggH2M4hf3
+  label: lwm2m-agent
 ticket: DM-4026
 version: 1021.5.8
+lastmod: '2025-09-01T10:40:40Z'
 ---
 The LWM2M decoder events processing engine has been optimized:
 

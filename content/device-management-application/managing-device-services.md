@@ -3,9 +3,10 @@ weight: 45
 title: Managing device services
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< c8y-admon-related >}}
 * The [alarms API](https://{{< domain-c8y >}}/api/core/#tag/Alarms) for REST API methods concerning alarms.
 * [Device management & connectivity > Device integration > Fragment library > Alarms](/device-integration/fragment-library/#alarms) for details on how to raise and clear alarms.

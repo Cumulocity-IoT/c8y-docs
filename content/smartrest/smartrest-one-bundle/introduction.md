@@ -2,8 +2,9 @@
 weight: 5
 title: Introduction
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 ### MQTT ClientId {#mqtt-clientid}
 
 Although you must send the IDs in the body of each message with SmartREST 1.0, it is still important to connect with the correct MQTT ClientId.

@@ -3,9 +3,10 @@ weight: 10
 title: Introduction
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 This section walks you through the SmartREST protocol, the data format used, as well as the anatomy and registration of SmartREST templates.
 Built-in messages as well as errors are also discussed.
 For a step-by-step description, see [Using the REST interface](/microservice-sdk/rest/).

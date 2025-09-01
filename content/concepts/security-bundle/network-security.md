@@ -2,9 +2,9 @@
 weight: 30
 title: Network security
 layout: bundle
-
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Network security prevents unauthorized access to data transmitted over the network and tampering with or unauthorized modification of data. It also ensures that network services are available.
 
 {{< product-c8y-iot >}} ensures that your data stays confidential and cannot be tampered with through an end-to-end implementation of [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure) from devices to applications. It uses up-to-date encryption technology that has been independently rated "A" by [SSLlabs](https://www.ssllabs.com/). Any communication with {{< product-c8y-iot >}} is subject to individual authentication and authorization.

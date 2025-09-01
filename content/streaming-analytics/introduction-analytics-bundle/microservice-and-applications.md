@@ -2,6 +2,8 @@
 weight: 50
 title: Microservice runtime and applications
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
 Analytic models, EPL apps and smart rules are executed in an Apama-ctrl microservice. All microservices come with pre-configured resource limits (for example, CPU and memory). The resource usage of analytic models, EPL apps and smart rules depends on various factors such as application complexity, number of devices, etc. It is recommended that customers profile their applications to avoid out-of-memory issues.
 

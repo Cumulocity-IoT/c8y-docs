@@ -2,8 +2,9 @@
 weight: 40
 title: Registering the gateway as a Cumulocity device
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 1. Click **Registration** in the **Devices** menu of the navigator.
 
 2. Click **Register device** at the right of the top bar and from the dropdown menu select **Single registration** > **General**.

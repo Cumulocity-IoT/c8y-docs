@@ -2,17 +2,18 @@
 date: 2024-12-02
 title: Microservice SDK updated to Spring Boot 3.3
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 product_area: Application enablement & solutions
 component:
-  - value: component-Sv2buFZ5l
-    label: Microservice SDK
+- value: component-Sv2buFZ5l
+  label: Microservice SDK
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
 version: 10.20.155.0
 ticket: MTM-61583
+lastmod: '2025-09-01T10:40:41Z'
 ---
 This is a follow-up on a recent [announcement](https://cumulocity.com/docs/change-logs/?change-type=.change-type-announcement%2C.change-type-api-change#cumulocity-undefined-microservices-sdk-spring-boot3-announcement) about migrating the Microservice SDK to Spring Boot 3.
 

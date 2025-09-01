@@ -2,17 +2,18 @@
 date: 2025-03-14
 title: Microservice SDK updated to Spring Boot 3.4
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 product_area: Application enablement & solutions
 component:
-  - value: component-Sv2buFZ5l
-    label: Microservice SDK
+- value: component-Sv2buFZ5l
+  label: Microservice SDK
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
 version: 2025.18.0
 ticket: MTM-62462
+lastmod: '2025-09-01T10:40:42Z'
 ---
 Starting from version **2025.18.0**, the Microservice SDK is now using Spring Boot 3.4.2. 
 Notice that along with Spring Boot, most other dependencies were also updated to be consistent to 

@@ -2,6 +2,8 @@
 weight: 10
 title: Concepts
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
 ### Digital Twin {#digital-twin}
 

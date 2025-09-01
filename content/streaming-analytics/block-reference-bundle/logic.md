@@ -2,8 +2,9 @@
 weight: 48
 title: Logic
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 This category contains the following blocks:
 
 <table>

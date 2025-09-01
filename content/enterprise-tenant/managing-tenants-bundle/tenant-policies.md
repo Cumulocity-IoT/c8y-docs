@@ -3,15 +3,17 @@ weight: 40
 title: Tenant policies
 layout: redirect
 helpcontent:
-  - label: tenant-policies
-    title: Tenant policies
-    content: "During tenant creation, tenant options and retention rules may be specified. This can easily be done by using a tenant policy, which defines a set of tenant options and retention rules. Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.
-
-
-    Click **Tenant policies** in the **Tenants** menu to view all available tenant policies. To create a tenant policy, click **Add policy** at the top right."
-
+- label: tenant-policies
+  title: Tenant policies
+  content: "During tenant creation, tenant options and retention rules may be specified.
+    This can easily be done by using a tenant policy, which defines a set of tenant
+    options and retention rules. Creating a tenant policy with a specific set of options
+    and rules saves time when creating multiple tenants with the same settings.\n\n\
+    Click **Tenant policies** in the **Tenants** menu to view all available tenant
+    policies. To create a tenant policy, click **Add policy** at the top right."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 A tenant policy is a set of tenant options and retention rules. Tenant options and retention rules may be specified during tenant creation.
 
 Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.

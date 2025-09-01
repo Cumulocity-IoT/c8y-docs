@@ -3,19 +3,19 @@ weight: 10
 title: Audit logs
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 sector:
-  - platform_administration
+- platform_administration
 helpcontent:
-  - label: audit-logs
-    title: Audit logs
-    content: "Audit logs show the operations that users have carried out.
-
-
-      In order to easily search through logs, specify filter criteria in the top bar for type, date range or user and apply them."
+- label: audit-logs
+  title: Audit logs
+  content: "Audit logs show the operations that users have carried out.\n\nIn order
+    to easily search through logs, specify filter criteria in the top bar for type,
+    date range or user and apply them."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 **Audit logs** show security-relevant operations a user has processed. For example, an audit log is generated when a user logs into a gateway.
 
 {{< c8y-admon-req >}}

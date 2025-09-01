@@ -3,14 +3,17 @@ weight: 20
 title: File repository
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
 helpcontent:
 - label: file-repository
   title: Files repository
-  content: "The file repository provides an overview of the files stored in your account. The files can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded from the **Own applications** page."
+  content: The file repository provides an overview of the files stored in your 
+    account. The files can come from various sources. They can be software 
+    images, configuration snapshots taken from devices, log files from devices 
+    or web applications uploaded from the **Own applications** page.
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
-
 The file repository provides an overview of the files stored in your account.
 
 {{< c8y-admon-req >}}

@@ -3,16 +3,17 @@ date: '2025-06-26'
 title: OPC UA server address space scan enhancements
 product_area: Device management & connectivity
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 component:
-  - value: component--KIsStyzM
-    label: Device Management app
+- value: component--KIsStyzM
+  label: Device Management app
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: DM-2039
 version: 1022.3.0
+lastmod: '2025-09-01T10:40:41Z'
 ---
 New advanced settings have been introduced in the OPC UA server configuration in the Device Management application, which provide the option to enable auto-scan with either full or partial address space scan capabilities.
 Refer to [Connecting the gateway to the server](/device-integration/opcua/#connecting-gateway) for more details.

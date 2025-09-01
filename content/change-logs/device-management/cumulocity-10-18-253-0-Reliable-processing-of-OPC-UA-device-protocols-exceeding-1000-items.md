@@ -1,17 +1,18 @@
 ---
-date: 2023-12-06T16:09:38.948Z
+date: 2023-12-06T16:09:38.948000Z
 title: Reliable processing of OPC UA device protocols exceeding 1000 items
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+- value: change-VSkj2iV9m
+  label: Fix
 product_area: Device Management
 component:
-  - value: component-Tf05_KQ-B
-    label: OPC UA
+- value: component-Tf05_KQ-B
+  label: OPC UA
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
 ticket: DM-2634
 version: 10.18.253.0
+lastmod: '2025-09-01T10:40:41Z'
 ---
 The application of OPC UA device protocols was unreliable when there were more than 1000 protocols. This is now fixed.

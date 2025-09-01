@@ -3,16 +3,17 @@ date: 2025-02-17
 title: Removed obsolete AngularJS implementation of Cloud Remote Access feature
 product_area: Device management & connectivity
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 component:
-  - value: component--KIsStyzM
-    label: Device Management app
+- value: component--KIsStyzM
+  label: Device Management app
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: DM-4367
 version: 1022.0.0
+lastmod: '2025-09-01T10:40:41Z'
 ---
 As part of our ongoing improvement efforts, in a previous version, we have migrated the Cloud Remote Access feature from the older AngularJS framework to the newer Angular framework.
 The new Angular-based implementation makes the old AngularJS-based implementation obsolete.

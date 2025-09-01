@@ -3,11 +3,12 @@ weight: 10
 title: Introduction to the Cumulocity platform
 layout: bundle
 aliases:
-  - /concepts/introduction/
+- /concepts/introduction/
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< product-c8y-iot >}} is a robust, secure and scalable Internet of Things (IoT) platform designed to empower businesses in the following aspects:
 
 - **[Device integration](/concepts/concepts-introduction/#device-integration)**: Connect any type of device, from simple sensors to complex machinery, ensuring reliable and secure data transmission.

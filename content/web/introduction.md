@@ -3,12 +3,12 @@ weight: 10
 title: Introduction
 layout: bundle
 sector:
-  - app_enablement
+- app_enablement
 aliases:
-  - /web/overview/
+- /web/overview/
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
-
 This guide provides information on the Web SDK which enables you to:
 
 * Develop web applications that can be deployed to the platform.

@@ -2,13 +2,14 @@
 title: Compatibility policy
 layout: bundle
 sector:
-  - terms_conditions
+- terms_conditions
 aliases:
-  - /concepts-introduction/
-  - /concepts/compatibility-policy/
+- /concepts-introduction/
+- /concepts/compatibility-policy/
 weight: 20
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 {{< product-c8y-iot >}} provides the highest possible level of compatibility to make sure that your investments into developing solutions with {{< product-c8y-iot >}} are maintained.
 
 {{< c8y-admon-info >}}

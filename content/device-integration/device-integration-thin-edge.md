@@ -3,9 +3,10 @@ weight: 15
 title: Thin-edge.io
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 thin-edge.io is an open-source project to provide a cloud-agnostic edge framework.
 It is much more generic than the device management agent, so it can connect to multiple IoT cloud platforms, and it allows flexible logic being executed on the device.
 It is optimized for a very small footprint and high performance.

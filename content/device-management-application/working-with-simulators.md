@@ -3,24 +3,25 @@ weight: 90
 title: Working with simulators
 layout: bundle
 outputs:
-  - html
-  - json
+- html
+- json
 sector:
-  - device_management
+- device_management
 helpcontent:
-  - label: working-with-simulators
-    title: Working with simulators
-    content: "With the simulator you can create devices that simulate the same level of functionality as connected hardware devices.
-
-
-  A simulator uses a playlist to simulate messages that the device sends to the Cumulocity platform. A playlist is a series of instructions that the simulator executes one after the other.
-
-  An instruction can either send a message (measurements, alarms, events, and inventory) or wait for a specified time (sleep). For each simulator, you can create instructions specifying what the simulator is supposed to do.
-
-
-  To create a new simulator, click **Add simulator** at the top right and follow the instructions in the user documentation."
+- label: working-with-simulators
+  title: Working with simulators
+  content: "With the simulator you can create devices that simulate the same level
+    of functionality as connected hardware devices.\n\nA simulator uses a playlist
+    to simulate messages that the device sends to the Cumulocity platform. A playlist
+    is a series of instructions that the simulator executes one after the other.\n\
+    An instruction can either send a message (measurements, alarms, events, and inventory)
+    or wait for a specified time (sleep). For each simulator, you can create instructions
+    specifying what the simulator is supposed to do.\n\nTo create a new simulator,
+    click **Add simulator** at the top right and follow the instructions in the user
+    documentation."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 With the {{< product-c8y-iot >}} simulator all aspects of IoT devices can be simulated, such as:
 
 * Setting up a simulated device or a network of simulated devices.

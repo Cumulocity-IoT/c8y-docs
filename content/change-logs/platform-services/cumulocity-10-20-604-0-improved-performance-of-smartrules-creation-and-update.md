@@ -3,16 +3,17 @@ date: '2024-12-19'
 title: Improved performance of local smart rules creation and update
 product_area: Platform services
 change_type:
-  - value: change-2c7RdTdXo4
-    label: Improvement
+- value: change-2c7RdTdXo4
+  label: Improvement
 component:
-  - value: component-YdSEScrEC
-    label: Cockpit
+- value: component-YdSEScrEC
+  label: Cockpit
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
 ticket: MTM-60574
 version: 10.20.604.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
 Previously, the request time for creating or updating a smart rule increased with the number of enabled or disabled sources. 
 Therefore it was recommended to not select the **Activate also for &lt;number&gt; child assets** checkbox when a local smart rule was created on a group containing many devices.

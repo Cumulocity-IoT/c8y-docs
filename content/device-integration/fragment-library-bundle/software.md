@@ -3,9 +3,10 @@ weight: 170
 title: Software
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The **Software** tab allows you to install and uninstall a set of software files for a device. The files can be located
 using an URL or they can be hosted in the {{< product-c8y-iot >}} Software Repository. Device agents are fully
 responsible for their local installation, management, and uninstall procedures and any kind of error handling during the

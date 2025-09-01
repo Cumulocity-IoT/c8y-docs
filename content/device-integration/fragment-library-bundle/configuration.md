@@ -3,9 +3,10 @@ weight: 50
 title: Configuration
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The **Configuration** tab allows three different formats for device configuration:
 
 * Text-based configuration

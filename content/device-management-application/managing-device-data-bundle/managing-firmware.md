@@ -5,12 +5,13 @@ layout: redirect
 helpcontent:
 - label: managing-firmware
   title: Firmware repository
-  content: "In the firmware repository, you can collect reference firmware for devices. At the top left, you can filter the firmware items by name, description, or device type.
-
-
-	See the user documentation for details on managing firmware, firmware versions and patches, and on how to install or update them on devices."
+  content: "In the firmware repository, you can collect reference firmware for devices.
+    At the top left, you can filter the firmware items by name, description, or device
+    type.\n\nSee the user documentation for details on managing firmware, firmware
+    versions and patches, and on how to install or update them on devices."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 In the firmware repository, {{< product-c8y-iot >}} offers to collect reference firmware for devices.
 
 Only one firmware package version can be applied per device.

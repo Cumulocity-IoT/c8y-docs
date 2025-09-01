@@ -2,8 +2,9 @@
 weight: 20
 title: Registering LWM2M devices
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The data provided during registration must enable LWM2M communication and holds information for factory bootstrap and client-initiated bootstrap.
 In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device.
 The client-initiated bootstrap mode requires a LWM2M bootstrap server account preloaded in the LWM2M client.

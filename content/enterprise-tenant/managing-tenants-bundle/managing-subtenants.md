@@ -3,14 +3,17 @@ weight: 10
 title: Managing subtenants
 layout: redirect
 helpcontent:
-  - label: managing-subtenants
-    title: Subtenants
-    content: "Click **Subtenants** in the **Tenants** menu to view all subtenants available in your account. The **Tenants** page provides information on each subtenant such as the name of the subtenant, its ID and domain, and the status of the tenant (either active, indicated by a green checkmark icon, or suspended, indicated by a red cross icon).
-
-
-    To create a subtenant click **Create tenant** at the top right."
+- label: managing-subtenants
+  title: Subtenants
+  content: "Click **Subtenants** in the **Tenants** menu to view all subtenants available
+    in your account. The **Tenants** page provides information on each subtenant such
+    as the name of the subtenant, its ID and domain, and the status of the tenant
+    (either active, indicated by a green checkmark icon, or suspended, indicated by
+    a red cross icon).\n\nTo create a subtenant click **Create tenant** at the top
+    right."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Using the {{< enterprise-tenant >}} of {{< product-c8y-iot >}}, you can make use of the tenants functionality which allows you to create and manage subtenants.
 
 {{< c8y-admon-req >}}

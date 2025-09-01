@@ -3,9 +3,10 @@ title: More documentation
 layout: bundle
 weight: 10
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:31Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### {{< openapi >}} {#openapi-specification}
 
 A complete OpenAPI Specification for the {{< product-c8y-iot >}} REST API is available at [https://{{< domain-c8y >}}/api/core/](https://{{< domain-c8y >}}/api/core). The {{< openapi >}} describes the {{< product-c8y-iot >}} REST API (that is, available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.

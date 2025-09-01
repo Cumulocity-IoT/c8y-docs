@@ -3,17 +3,18 @@ weight: 10
 title: Asset hierarchy
 layout: bundle
 sector:
-  - app_enablement
+- app_enablement
 helpcontent:
-  - label: managing-assets
-    title: Managing assets
-    content: "Under **Subassets** all assets assigned to a particular group are listed. Subassets can either be other groups or devices.
-
-
-    Click **Assign devices** at the top right to assign devices to the group. You can also easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator."
-
+- label: managing-assets
+  title: Managing assets
+  content: "Under **Subassets** all assets assigned to a particular group are listed.
+    Subassets can either be other groups or devices.\n\nClick **Assign devices** at
+    the top right to assign devices to the group. You can also easily restructure
+    groups or assign devices to groups by dragging and dropping groups or devices
+    in the navigator."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Assets represent business objects in general like buildings, machines, production units or cars.
 
 Assets are organized in hierarchies. For example, an energy monitoring application might have the following asset hierarchy:

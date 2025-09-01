@@ -3,13 +3,16 @@ weight: 10
 title: Using the data broker
 layout: bundle
 sector:
-  - platform_administration
+- platform_administration
 helpcontent:
-  - label: data-broker
-    title: Data broker
-    content: "The data broker lets you share data selectively with other tenants such as devices (and more generically, managed objects), events, alarms, measurements, or operations."
+- label: data-broker
+  title: Data broker
+  content: The data broker lets you share data selectively with other tenants 
+    such as devices (and more generically, managed objects), events, alarms, 
+    measurements, or operations.
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 The data broker lets you share data selectively with other tenants. You can share:
 
 - Devices (and more generically, managed objects)

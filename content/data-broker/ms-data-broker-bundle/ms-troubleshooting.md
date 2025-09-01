@@ -3,9 +3,10 @@ weight: 20
 title: Troubleshooting
 layout: bundle
 sector:
-  - platform_administration
+- platform_administration
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 ### Subscription alert {#subscription-alert}
 
 The {{< management-tenant >}} cannot be used as a data broker source tenant and this alarm is raised when trying to subscribe a {{< management-tenant >}} to the data broker agent.

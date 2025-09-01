@@ -2,12 +2,13 @@
 title: Interfacing devices
 layout: bundle
 sector:
-  - device_management
+- device_management
 weight: 12
 aliases:
-  - /concepts/interfacing-devices/
+- /concepts/interfacing-devices/
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 To interface IoT data sources such as devices and external IT systems, {{< product-c8y-iot >}} provides agents. Agents are software components that enable a centralized perspective on all aspects and central operation of the IoT network.
 
 This section explains concepts relevant for interfacing IoT devices and other IoT-related data sources with {{< product-c8y-iot >}}.

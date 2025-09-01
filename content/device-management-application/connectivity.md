@@ -3,9 +3,10 @@ weight: 100
 title: Connectivity
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 {{< c8y-admon-related >}}
 * [Device management & connectivity > Device integration > Fragment library > Connectivity](/device-integration/fragment-library/#connectivity) for details on the `c8y_Mobile` fragment used in managed objects.
 * [Platform administration > {{< standard-tenant >}} administration > Changing settings > Connectivity](/standard-tenant/changing-settings/#connectivity) for information on how to change the connectivity settings via the UI.

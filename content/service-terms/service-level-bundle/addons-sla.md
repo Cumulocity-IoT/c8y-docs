@@ -3,9 +3,10 @@ title: Additional IT services
 layout: bundle
 weight: 40
 aliases:
-  - /addons-sla/
+- /addons-sla/
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who utilizes one or more of the following additional IT services on Provider's cloud instances ("software-as-a-service", "SaaS").
 
 * VPN and Direct Line services.

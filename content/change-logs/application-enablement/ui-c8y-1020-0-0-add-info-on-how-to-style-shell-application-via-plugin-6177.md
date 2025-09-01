@@ -3,16 +3,17 @@ date: '2024-06-06'
 title: Documented shell application styling via plugins
 product_area: Application enablement & solutions
 change_type:
-  - value: change-2c7RdTdXo4
-    label: Improvement
+- value: change-2c7RdTdXo4
+  label: Improvement
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+- value: component-YbYJ3gLU_
+  label: Web SDK
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-58246
 version: 1020.0.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
 Documentation has been added on how to style the shell application via plugins. 
 For details, refer to the [{{< product-c8y-iot >}} Codex](https://styleguide.cumulocity.com/apps/codex/#/getting-started/guides/theming/overview#styling-the-shell-application-with-a-plugin).

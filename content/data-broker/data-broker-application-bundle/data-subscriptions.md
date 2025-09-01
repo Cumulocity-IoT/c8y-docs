@@ -3,13 +3,17 @@ weight: 30
 title: Data subscriptions
 layout: bundle
 sector:
-  - platform_administration
+- platform_administration
 helpcontent:
-  - label: data-subscriptions
-    title: Data subscriptions
-    content: "The **Data subscriptions** page shows a list of all currently defined data forwarded to your tenant. For each subscription, the name, target tenant and status (enabled or disabled) are provided on a card. Use the toggle to temporarily stop forwarding data to your tenant."
+- label: data-subscriptions
+  title: Data subscriptions
+  content: The **Data subscriptions** page shows a list of all currently defined
+    data forwarded to your tenant. For each subscription, the name, target 
+    tenant and status (enabled or disabled) are provided on a card. Use the 
+    toggle to temporarily stop forwarding data to your tenant.
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 In the **Data subscriptions** page, you can manage existing data subscriptions or create new ones.
 
 ### To view subscriptions {#to-view-subscriptions}

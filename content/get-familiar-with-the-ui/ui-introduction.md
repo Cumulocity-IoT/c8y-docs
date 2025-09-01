@@ -3,9 +3,10 @@ weight: 10
 title: Introduction
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 Welcome to the {{< product-c8y-iot >}} platform user interface!
 
 Learn how to access the platform, get introduced to the general functionalities applying to all {{< product-c8y-iot >}} applications, and customize your user settings according to your needs.

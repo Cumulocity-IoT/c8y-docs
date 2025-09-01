@@ -3,9 +3,10 @@ weight: 80
 title: Device information
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The **Device information** tab is a predefined dashboard with several widgets that combine default device information. The status widget, for example, will get its information from the ```c8y_Availability``` fragment, which holds information about the device's status and when it was last available. For details see [Availability](/device-management-application/monitoring-and-controlling-devices/#availability).
 
 ### Device marker {#device-marker}

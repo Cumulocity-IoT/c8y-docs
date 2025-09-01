@@ -2,8 +2,9 @@
 weight: 40
 title: Configuring fieldbus device protocols
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 New fieldbus device protocols can be created in the **Device protocols** page which is opened from the **Device types** menu in the navigator.
 
 1. Click **Add device protocol** in the top menu bar.

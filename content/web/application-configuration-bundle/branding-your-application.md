@@ -2,8 +2,9 @@
 title: Branding your application
 layout: redirect
 weight: 20
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 A branding must always be applied to all of your applications. Therefore, it is recommended to use
 dynamic public options for branding your application. You must set the right
 [design tokens](https://styleguide.cumulocity.com/apps/codex/#/ui-guidelines/foundations/design-tokens/overview) in the `brandingCssVars`

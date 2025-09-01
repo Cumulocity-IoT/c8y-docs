@@ -5,16 +5,17 @@ title: >-
   applyConstraints
 product_area: Device management & connectivity
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+- value: change-VSkj2iV9m
+  label: Fix
 component:
-  - value: component-Tf05_KQ-B
-    label: OPC UA
+- value: component-Tf05_KQ-B
+  label: OPC UA
 build_artifact:
-  - value: tc-MLn0oFRX-
-    label: opcua
+- value: tc-MLn0oFRX-
+  label: opcua
 ticket: DM-3216
 version: 10.20.97.0
+lastmod: '2025-09-01T10:40:41Z'
 ---
 Previously, the device type creation via the OPC UA management service API failed when `matchedNodeIds` list was not defined for `applyConstraints`. This issue 
 has now been resolved, and apply constraints can now be set without defining a 

@@ -3,9 +3,10 @@ title: Platform service-level agreement
 layout: bundle
 weight: 10
 aliases:
-  - /platform-sla/
+- /platform-sla/
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who utilizes {{< product-c8y-iot >}} Platform ("Service") for managing Internet of Things ("IoT") devices ("IoT devices", "devices") on Provider's cloud instances ("software-as-a-service", "SaaS").
 
 ### Service description

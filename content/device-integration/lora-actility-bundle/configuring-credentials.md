@@ -2,10 +2,9 @@
 weight: 20
 title: Configuring multiple ThingPark account connections
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
-
-
 Before using LoRa devices with {{< product-c8y-iot >}}, you need to configure your ThingPark account details in the Administration application. Click the **Connectivity** tab in the **Settings** menu to create, edit, delete or update multiple Actility connections.
 
 ### To add a new connection {#to-add-a-new-connection}

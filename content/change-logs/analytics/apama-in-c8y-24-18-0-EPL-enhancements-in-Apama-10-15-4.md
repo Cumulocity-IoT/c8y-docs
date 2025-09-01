@@ -2,16 +2,17 @@
 date: 2023-12-06
 title: EPL enhancements in Apama 10.15.4
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 product_area: Analytics
 component:
-  - value: component-M5-cepIIS
-    label: Streaming Analytics
+- value: component-M5-cepIIS
+  label: Streaming Analytics
 build_artifact:
-  - value: tc-KXXmo2SUR
-    label: apama-in-c8y
+- value: tc-KXXmo2SUR
+  label: apama-in-c8y
 version: 24.18.0
+lastmod: '2025-09-01T10:40:43Z'
 ---
 ##### String concatenation operator + supports non-string operands
 

@@ -3,9 +3,10 @@ weight: 10
 title: Home dashboard
 layout: bundle
 sector:
-  - app_enablement
+- app_enablement
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The Home screen of the Cockpit application is a dashboard which shows data for the general tenant.
 
 ![Home dashboard](/images/users-guide/cockpit/cockpit-home-screen.png)

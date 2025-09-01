@@ -3,9 +3,10 @@ weight: 150
 title: Remote access
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 The **Remote access** tab is used to configure and access devices for remote control through remote control protocols.
 
 The **Remote access** tab is available if the following criteria are met:

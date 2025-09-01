@@ -2,8 +2,9 @@
 weight: 90
 title: Model simulation
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### About simulation mode {#about-simulation-mode}
 
 You can deploy a model in simulation mode to run it against historical input data \(such as {{< product-c8y-iot >}} measurements\). This allows testing the behavior of a newly developed model against historical data or fine-tuning an existing model. Or it allows testing a model against a set of historical data with known properties.

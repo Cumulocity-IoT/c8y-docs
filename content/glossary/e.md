@@ -3,10 +3,10 @@ weight: 60
 title: E
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
-
 ### {{< enterprise-tenant >}} {#enterprise-tenant}
 
 A tenant type in the [{{< product-c8y-iot >}} tenant hierarchy](/glossary/t/#tenant-hierarchy).

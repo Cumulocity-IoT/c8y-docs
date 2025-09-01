@@ -3,9 +3,10 @@ title: Product support
 layout: bundle
 weight: 30
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:31Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Product support for {{< product-c8y-iot >}} is provided to licensed customers via the [{{< c8y-support-portal >}}]({{< c8y-support-link >}}). The services on this portal require that you have an account. If you do not yet have one, you can send a request by email to [{{< c8y-support-email >}}](mailto:{{< c8y-support-email >}}).
 
 Once you have an account, and depending on role-associated permissions, you have the following options:

@@ -3,16 +3,17 @@ weight: 10
 title: Managing groups
 layout: redirect
 helpcontent:
-  - label: grouping-devices
-    title: Grouping devices
-    content: "Devices can be grouped according to your requirements. A device can be located in multiple groups and groups themselves can again be part of multiple groups.
-
-
-    Select a group from the groups list or from the navigator to see its details. To add a group, click **Add group** at the top right.
-
-    You can easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator."
+- label: grouping-devices
+  title: Grouping devices
+  content: "Devices can be grouped according to your requirements. A device can be
+    located in multiple groups and groups themselves can again be part of multiple
+    groups.\n\nSelect a group from the groups list or from the navigator to see its
+    details. To add a group, click **Add group** at the top right.\nYou can easily
+    restructure groups or assign devices to groups by dragging and dropping groups
+    or devices in the navigator."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### To view groups {#to-view-groups}
 
 Click **Groups** in the navigator to see all groups in a list format.

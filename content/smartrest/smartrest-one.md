@@ -3,10 +3,10 @@ weight: 30
 title: SmartREST 1.0
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
-
 {{< c8y-admon-important >}}
 <b>SmartREST 1.0 has been superseded by SmartREST 2.0.</b>
 

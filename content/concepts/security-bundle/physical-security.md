@@ -2,9 +2,9 @@
 weight: 20
 title: Physical security
 layout: bundle
-
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Physical security of IT systems prevents unauthorized physical access to servers, storage, and network devices.
 
 {{< product-c8y-iot >}} {{< standard-tenant >}} accounts are hosted at Amazon Web Services (AWS). AWS has been certified according to [ISO 27001, DSS and other standards](http://aws.amazon.com/compliance/). It features extensive physical security measures and is independently audited. Not all details are published for actual security reasons. Audit reports can be obtained directly at [AWS Compliance](http://aws.amazon.com/compliance/contact/).

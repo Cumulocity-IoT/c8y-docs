@@ -3,14 +3,18 @@ weight: 30
 title: Viewing audit logs
 layout: redirect
 helpcontent:
-  - label: query-log
-    title: Query log
-    content: "Offloading pipelines moving data from a Cumulocity base collection to a data lake basically rely on queries executed by **Dremio**. Other than for these offloading queries Dremio can also be leveraged to run ad-hoc queries against the data lake. Both kinds of queries are monitored with respect to their runtime and the data scanned. The **query log** comprises those details for offloading and ad-hoc queries.
-
-
-    The query audit log provides controls to select the query type and to limit the corresponding log entries being shown."
+- label: query-log
+  title: Query log
+  content: "Offloading pipelines moving data from a Cumulocity base collection to
+    a data lake basically rely on queries executed by **Dremio**. Other than for these
+    offloading queries Dremio can also be leveraged to run ad-hoc queries against
+    the data lake. Both kinds of queries are monitored with respect to their runtime
+    and the data scanned. The **query log** comprises those details for offloading
+    and ad-hoc queries.\n\nThe query audit log provides controls to select the query
+    type and to limit the corresponding log entries being shown."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Auditing shows in the query log the queries being executed and in the system log the operations that users have carried out.
 
 ### Query log {#query-log}

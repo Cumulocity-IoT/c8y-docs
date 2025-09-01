@@ -1,14 +1,12 @@
 ---
-weight: 40
 title: UI functionalities and features
+weight: 40
 layout: bundle
 sector:
-  - getting_started
-sector:
-  - getting_started
-
+- getting_started
+date: '2025-09-01T09:54:07Z'
+lastmod: '2025-09-01T10:46:39Z'
 ---
-
 {{< c8y-admon-related >}}
 - [Cockpit](/cockpit/cockpit-introduction/) for more details on the {{< product-c8y-iot >}} UI.
 - [Managing applications](/standard-tenant/ecosystem/#managing-applications) for more information on managing applications in {{< product-c8y-iot >}}.

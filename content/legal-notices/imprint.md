@@ -3,9 +3,10 @@ weight: 70
 title: Imprint
 layout: bundle
 sector:
-  - terms_conditions
+- terms_conditions
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 We are committed to transparency and open communication both inside and outside the company. Important information on how to contact us can be found here.
 
 **Cumulocity GmbH** is a limited liability company under German law with statutory seat and headquarters in Düsseldorf, Germany.

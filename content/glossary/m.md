@@ -3,9 +3,10 @@ weight: 100
 title: M
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 ### Maintenance release {#maintenance-release}
 
 {{< company-c8y >}} provides Maintenance releases for supported {{< product-c8y-iot >}} [Yearly releases](/glossary/y/#yearly-release). A Maintenance release contains fixes for a Yearly release but no new features.

@@ -2,8 +2,9 @@
 weight: 50
 title: Modifying microservice permissions and resource usage
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The resource usage and permissions that the Apama-ctrl microservice operates with are defined in the manifest file of the Apama-ctrl microservice. See [Microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) for more information.
 
 If you have access to the microservice image (typically available only to operations), then you are able to extract the microservice image, modify the manifest, rebuild the microservice, and reupload the microservice to {{< product-c8y-iot >}} as an application in the Administration application.

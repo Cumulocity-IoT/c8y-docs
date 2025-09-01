@@ -2,13 +2,14 @@
 date: 2024-12-05
 title: Further improvements to Service Terms
 change_type:
-  - value: change-2c7RdTdXo4
-    label: Improvement
+- value: change-2c7RdTdXo4
+  label: Improvement
 product_area: Platform services
 component:
-  - value: component-docs-123
-    label: Documentation
+- value: component-docs-123
+  label: Documentation
 build_artifact:
+lastmod: '2025-09-01T10:40:42Z'
 ---
 The section on [Service terms](/service-terms/) has been further enhanced. It now also contains
 

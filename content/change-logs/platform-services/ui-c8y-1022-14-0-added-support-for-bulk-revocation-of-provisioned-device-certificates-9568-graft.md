@@ -3,15 +3,16 @@ date: '2025-08-21'
 title: Bulk revocation of provisioned device certificates
 product_area: Platform services
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+- value: change-QHu1GdukP
+  label: Feature
 component:
-  - value: component-0UgqXH1Ys
-    label: Administration
+- value: component-0UgqXH1Ys
+  label: Administration
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-62990
 version: 1022.14.0
+lastmod: '2025-09-01T10:40:42Z'
 ---
 Previously, provisioned device certificates could only be revoked individually. With this change, it is now possible to select multiple provisioned device certificates in the data grid and revoke them in bulk. This simplifies the process of revoking multiple certificates.

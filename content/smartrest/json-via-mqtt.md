@@ -3,9 +3,10 @@ weight: 50
 title: JSON via MQTT
 layout: bundle
 sector:
-  - device_management
+- device_management
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 {{< c8y-admon-info >}}
 JSON via MQTT is meant as an addition to a device that is connected via SmartREST. This is not a standalone interface.
 {{< /c8y-admon-info >}}

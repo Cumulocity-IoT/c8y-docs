@@ -2,8 +2,9 @@
 weight: 50
 title: Extensible device registration
 layout: bundle
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 To address the growing number of IoT protocols and certain restrictions in the general single or bulk device registration, {{< product-c8y-iot >}} provides an extensible device registration feature.
 
 The general concept is based on extending the device registration using a metadata-based approach. Microservices and agents that implement current device registrations can add custom forms to the device registration wizard by providing simple descriptions of the required registration attributes. The metadata is then used by the UI to render a corresponding device registration wizard.

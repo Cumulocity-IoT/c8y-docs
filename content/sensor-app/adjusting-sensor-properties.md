@@ -3,9 +3,10 @@ weight: 75
 title: Adjusting sensor properties
 layout: bundle
 sector:
-  - getting_started
+- getting_started
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 When editing sensor properties, it is possible to change the following settings:
 
 * The interval in seconds between measurements sent to {{< product-c8y-iot >}}.

@@ -2,10 +2,11 @@
 title: Operationalizing your AI/ML models in the cloud
 layout: bundle
 sector:
-  - data_analytics
+- data_analytics
 weight: 40
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
-
 The section [Create and bring your own AI/ML model (BYOM)](/machine-learning/model-creation/) explains how to access historical data for the purpose of training an AI/ML model. Now the next step is to operationalize your models and deploy them into data pipelines for real-time model inferencing.
 
 ### Deploy your AI/ML model {#deploy-your-ai-ml-model}

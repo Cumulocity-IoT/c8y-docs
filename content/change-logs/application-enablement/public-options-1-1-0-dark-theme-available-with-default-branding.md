@@ -3,16 +3,17 @@ date: 2025-08-06
 title: Dark theme available for tenants with default branding
 product_area: Application enablement & solutions
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+- value: component-YbYJ3gLU_
+  label: Web SDK
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
-ticket: ""
-version: ""
+- value: tc-pjJiURv9Y
+  label: ui-c8y
+ticket: ''
+version: ''
+lastmod: '2025-09-01T10:40:41Z'
 ---
 A new version of the default branding will be rolled out to make the dark theme available for users.
 By default, the light theme remains selected, but users can switch between themes via the right drawer.

@@ -2,8 +2,9 @@
 weight: 90
 title: Request routing
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The request is redirected to a microservice depending on the isolation level (auto-scaling is ignored at this moment for clarity), subscription and authorization. A typical request to the platform looks like
 
 ```http

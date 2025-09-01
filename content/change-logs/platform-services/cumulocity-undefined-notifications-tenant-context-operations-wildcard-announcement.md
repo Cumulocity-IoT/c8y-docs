@@ -1,18 +1,19 @@
 ---
 date: 2024-10-01
-title: Advanced notice of changes to Notifications 2.0 tenant context subscriptions with no API filter
+title: Advanced notice of changes to Notifications 2.0 tenant context 
+  subscriptions with no API filter
 change_type:
-  - value: change-3BQrQ6adS
-    label: API change
+- value: change-3BQrQ6adS
+  label: API change
 product_area: Platform services
 component:
-  - value: component-JlFdtOPva
-    label: REST API
+- value: component-JlFdtOPva
+  label: REST API
 build_artifact:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+- value: tc-QHwMfWtBk7
+  label: cumulocity
+lastmod: '2025-09-01T10:40:42Z'
 ---
-
 Notifications 2.0 subscriptions may specify the {{< product-c8y-iot >}}  APIs to subscribe to, for example `alarms` or `measurements`.
 Subscriptions may use a wildcard value (`*`) for the API selector, indicating that the subscription should include all available APIs.
 If the API selector is omitted from a subscription request, it is treated as equivalent to using the wildcard value.

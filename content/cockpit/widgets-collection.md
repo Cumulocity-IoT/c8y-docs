@@ -3,9 +3,10 @@ weight: 55
 title: Widgets collection
 layout: bundle
 sector:
-  - app_enablement
+- app_enablement
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 The Cockpit application includes pre-set widget types. Each widget type provides different parameters to configure and different data to be displayed.
 
 

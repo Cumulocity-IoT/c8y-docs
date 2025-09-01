@@ -2,8 +2,10 @@
 title: Introduction
 layout: redirect
 sector:
-  - platform_administration
+- platform_administration
 weight: 10
+date: '2025-09-01T10:26:31Z'
+lastmod: '2025-09-01T10:40:43Z'
 ---
 The two-factor authentication (TFA) is an extra layer of security that only completes authentication with a combination of two different factors: something the users know (username and password) and something they have (for example, smartphone) or something they are (for example, fingerprint).
 

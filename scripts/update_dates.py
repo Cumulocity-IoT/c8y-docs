@@ -16,7 +16,6 @@ def update_front_matter(filepath):
         with open(filepath, 'r', encoding='utf-8') as f:
             original_content = f.read()
 
-        # Regex to find front matter (handles optional spaces around '---' and optional newline at the end)
         front_matter_match = re.match(r'^---\s*\n(.*?)\n^---\s*(.*)', original_content, re.DOTALL | re.MULTILINE)
 
         if not front_matter_match:
@@ -41,21 +40,31 @@ def update_front_matter(filepath):
 
         modified_front_matter = False
 
-        current_utc_time = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds').replace('+00:00', 'Z')
+        # Get file system timestamps
+        stat_result = os.stat(filepath)
+        mod_time = datetime.datetime.fromtimestamp(stat_result.st_mtime, tz=datetime.timezone.utc)
+        
+        try:
+            # st_birthtime is the true creation time on some systems (like macOS)
+            creation_time = datetime.datetime.fromtimestamp(stat_result.st_birthtime, tz=datetime.timezone.utc)
+        except AttributeError:
+            # Fallback for systems without birthtime (uses last metadata change time)
+            creation_time = datetime.datetime.fromtimestamp(stat_result.st_ctime, tz=datetime.timezone.utc)
 
+        creation_time_str = creation_time.isoformat(timespec='seconds').replace('+00:00', 'Z')
+        mod_time_str = mod_time.isoformat(timespec='seconds').replace('+00:00', 'Z')
+
+        # 1. Update 'date' field (only if missing)
         if 'date' not in front_matter or front_matter['date'] is None:
-            front_matter['date'] = current_utc_time
+            front_matter['date'] = creation_time_str
             modified_front_matter = True
-            print(f"  SETTING 'date' for {filepath} to {front_matter['date']}")
+            print(f"  SETTING 'date' from file creation time to {creation_time_str}")
 
-        if 'lastmod' not in front_matter or front_matter['lastmod'] is None:
-            front_matter['lastmod'] = current_utc_time
+        # 2. Update 'lastmod' field (always, if different from file mod time)
+        if 'lastmod' not in front_matter or str(front_matter.get('lastmod')) != mod_time_str:
+            front_matter['lastmod'] = mod_time_str
             modified_front_matter = True
-            print(f"  SETTING 'lastmod' for {filepath} to {front_matter['lastmod']}")
-        elif str(front_matter.get('lastmod')) != current_utc_time:
-            front_matter['lastmod'] = current_utc_time
-            modified_front_matter = True
-            print(f"  UPDATING 'lastmod' for {filepath} to {front_matter['lastmod']}")
+            print(f"  UPDATING 'lastmod' from file modification time to {mod_time_str}")
 
         if not modified_front_matter:
             print(f"  No front matter fields needed update for {filepath}.")
@@ -66,8 +75,7 @@ def update_front_matter(filepath):
         yaml.dump(front_matter, string_stream)
         updated_front_matter_str = string_stream.getvalue()
 
-        # Construct the new total content of the file
-        new_content = f"---\n{updated_front_matter_str}---{body}"
+        new_content = f"---\n{updated_front_matter_str}---\n{body}"
 
         if new_content != original_content:
             with open(filepath, 'w', encoding='utf-8') as f:
@@ -81,12 +89,11 @@ def update_front_matter(filepath):
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
-        # Check for ruamel.yaml
         try:
             import ruamel.yaml
         except ImportError:
             print("Error: The 'ruamel.yaml' package is required. Please install it:", file=sys.stderr)
-            print("venv/bin/pip install ruamel.yaml", file=sys.stderr)
+            print("pip install ruamel.yaml", file=sys.stderr)
             sys.exit(1)
             
         for filepath_arg in sys.argv[1:]:
@@ -95,5 +102,5 @@ if __name__ == "__main__":
             else:
                 print(f"Skipping invalid or non-markdown path: {filepath_arg}", file=sys.stderr)
     else:
-        print("Usage: venv/bin/python update_dates.py <file1.md> [file2.md ...]", file=sys.stderr)
+        print("Usage: python update_dates.py <file1.md> [file2.md ...]", file=sys.stderr)
         sys.exit(1)

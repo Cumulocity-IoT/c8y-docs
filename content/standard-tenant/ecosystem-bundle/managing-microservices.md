@@ -3,19 +3,20 @@ weight: 70
 title: Managing microservices
 layout: bundle
 sector:
-  - platform_administration
+- platform_administration
 helpcontent:
-  - label: managing-microservices
-    title: Microservices
-    content: "A microservice is a specific type of application, that is a server-side application used to develop further functionality on top of Cumulocity.
-
-
-    As web applications, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom applications.
-
-
-    Click on a microservice to view the application properties. To add a microservice, click **Add microservice** and follow the instructions in the wizard or in the user documentation."
+- label: managing-microservices
+  title: Microservices
+  content: "A microservice is a specific type of application, that is a server-side
+    application used to develop further functionality on top of Cumulocity.\n\nAs
+    web applications, microservices can either be subscribed to your tenant by the
+    platform or by a service provider, or they can be owned by you as custom applications.\n\
+    \nClick on a microservice to view the application properties. To add a microservice,
+    click **Add microservice** and follow the instructions in the wizard or in the
+    user documentation."
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:39Z'
 ---
-
 Click **Microservices** in the **Ecosystem** menu in the navigator to display a list or grid of all  microservices subscribed to your account.
 
 <img src="/images/users-guide/Administration/admin-microservices.png" alt="Microservices list">

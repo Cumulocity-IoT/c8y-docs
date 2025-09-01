@@ -2,8 +2,9 @@
 weight: 40
 title: Operating Cumulocity DataHub Edge
 layout: redirect
+date: '2025-09-01T10:26:32Z'
+lastmod: '2025-09-01T10:40:40Z'
 ---
-
 Similar to the cloud variant, {{< product-c8y-iot >}} DataHub Edge UI allows you to check system information and view audit logs. See [Operating {{< product-c8y-iot >}} DataHub](/datahub/operating-datahub) for details.
 
 When managing {{< product-c8y-iot >}} DataHub Edge, the following standard tasks are additionally relevant.

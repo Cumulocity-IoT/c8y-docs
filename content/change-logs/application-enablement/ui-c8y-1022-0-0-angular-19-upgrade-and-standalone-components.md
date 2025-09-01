@@ -3,16 +3,17 @@ date: 2025-03-05
 title: Angular 19 upgrade and standalone components
 product_area: Application enablement & solutions
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+- value: change-inv-3bw8e
+  label: Announcement
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+- value: component-YbYJ3gLU_
+  label: Web SDK
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+- value: tc-pjJiURv9Y
+  label: ui-c8y
 ticket: MTM-62856
 version: 1022.0.0
+lastmod: '2025-09-01T10:40:41Z'
 ---
 In a future version of the Web SDK, we will update the Angular version used in the Web SDK to version 19. This update brings improvements and new features, but may also introduce breaking changes that could impact your existing implementations.
 
