@@ -150,7 +150,7 @@ If a published message includes any properties other than those listed here, tho
 
 The following sections will demonstrate how to parse and construct messages.
 
-### Consuming messages from MQTT devices
+### Consuming messages from MQTT devices {#consuming-messages-from-mqtt-devices}
 
 All messages published by devices connected to the MQTT Service for a given tenant will be published to a _single_ Pulsar topic, identified by the URL `persistent://<tenant>/mqtt/from-device`.
 The topic URL can be broken down into 4 components:
@@ -169,9 +169,6 @@ The client identifier of the device that published the messages, and the MQTT to
 This means that your client **must** consume every message published by every device connected to the MQTT Service for the tenant, event those you are not interested in.
 Messages that are not of interest to the client can simply be acknowledged without further processing.
 
-To consume messages from the topic, your client should create a Pulsar `Consumer` and subscribe it to the topic.
-The consumer should register a `MessageListener` callback that will be called whenever a new message arrives on the topic.
-
 #### Durable subscriptions and acknowledgement
 
 Subscribing a consumer to a topic establishes a _durable subscription_ to the topic.
@@ -186,6 +183,9 @@ See the section on [best practices](#reliable-delivery-best-practices) below for
 
 The code snippet below shows how to use the Pulsar Java client library to consume messages from the MQTT Service `from-device` topic.
 It extends the previous example that set up the connection to the Pulsar server.
+
+To consume messages from the topic, your client should create a Pulsar `Consumer` and subscribe it to the topic.
+The consumer should register a `MessageListener` callback that will be called whenever a new message arrives on the topic.
 The `MessageListener` implementation shows how to access the payload and properties of the received messages.
 For simplicity and clarity, the example assumes that message payloads are simple text strings.
 
@@ -220,14 +220,73 @@ For simplicity and clarity, the example assumes that message payloads are simple
 
 ### Publishing messages to MQTT devices
 
-* All messages to MQTT devices are published on a single Pulsar topic, `persistent://<tenant>/mqtt/to-device`
-* The topic to publish to must be set using the `topic` message property
-* Because MQTT Service devices are isolated from each other, it is also necessary to set the `clientid` property to the id of the target device
-* However, if you want to publish the message to all devices that are subscribed to the named topic, leave the `clientid` property empty (or missing?)
-* To publish to the topic, create a Pulsar Producer, and construct Pulsar Messages with the appropriate properties and payload
-<p>
+Any messages that your client wants to send to devices connected to the MQTT Service for a given tenant must be published to a _single_ Pulsar topic, identified by the URL `persistent://<tenant>/mqtt/to-device`.
+The components of the URL should be interpreted as described in [Consuming messages from MQTT devices](#consuming-messages-from-mqtt-devices) above.
 
-* Code snippet showing how to publish
+Your client will only be able to publish to this topic if the authenticated user has the "update" permission on the "Mqtt service messaging topics" role.
+The client will not be able to publish to any other topic.
+
+Messages published to the `to-device` topic are routed to connected MQTT devices using the two required message properties:
+
+| Property name | Purpose                                                              |
+|---------------|----------------------------------------------------------------------|
+| `client`      | Client identifier of the MQTT device that should receive the message |
+| `channel`     | Name of the MQTT topic that the message should be published to       |
+
+If the `channel` property is empty or missing, the message will not be pulished to any MQTT client.
+The message will only be published to a client with an active subscription to the named MQTT topic.
+The message will only be published to a client that is connected at the time the MQTT Service processes the published message.
+
+In order to enforce device-level isolation, the message will be published **only** to the specific MQTT client identified by the `client` message property, provided that client has an active subscription to the relevant MQTT topic.
+If the `client` property is empty or missing, the message will be sent to **all** connected MQTT clients with active subscriptions to the MQTT topic.
+Because this "broadcast" publishing is potentially expensive when there are many MQTT clients connected, it should be used sparingly and only when there is a genuine application requirement to publish the same message to every device subscribed to a given topic.
+
+#### Message  keys
+
+To facilitate efficient delivery and correct ordering of messages sent to MQTT devices, clients **must** also set the _key_ of a Pulsar message published to the `to-device` topic.
+The key should be set as follows:
+
+* When the `client` message property is set, the key should have the same value as this property.
+* When the `client` message property is **not** set, the key should have the same value as the `channel` message property.
+
+{{< c8y-admon-caution >}}
+Your client may appear to work correctly even if these rules are not followed and the message key is set incorrectly.
+However, this can lead to messages being delivered out of order and to degraded performance, particularly when many messages are published to the same client.
+{{< /c8y-admon-caution >}}
+
+#### Example code
+
+The code snippet below shows how to use the Pulsar Java client library to publish messages to the MQTT Service `to-device` topic.
+It extends the previous examples that set up the connection to the Pulsar server and created a message consumer.
+
+To publish messages to the topic, your client should first create a Pulsar `Producer` associated with the topic.
+Then, the `Producer` can be used to create new `Message` objects that will be published to the topic.
+The example code shows how to correctly set the message properties and message key for messages targeted at a single device, and for "broadcast" messages.
+The example continues to assume that message payloads are simple text strings, and omits most error-handling code for clarity.
+
+```java
+        // Create a Pulsar producer on the to-device topic for the tenant.
+        final Producer<String> producer = client.newProducer(Schema.STRING)
+            .topic(MessageFormat.format("persistent://{0}/mqtt/to-device", tenantId))
+            .create();
+        System.out.println("Created Pulsar producer");
+
+        // Publish a message to a single MQTT device
+        producer.newMessage()
+            .property("client", "demoClient")
+            .property("channel", "demoTopic")
+            .key("demoClient")
+            .send();
+        System.out.println("Sent message to single device");
+        
+        // Publish a message to all MQTT devices subscribed to a topic
+        producer.newMessage()
+            .property("client", "")
+            .property("channel", "demoTopic")
+            .key("demoTopic")
+            .send();
+        System.out.println("Sent message to all devices");
+```
 
 ### Best practices to ensure reliable message delivery {#reliable-delivery-best-practices}
 
