@@ -1,7 +1,7 @@
 ---
 title: thin-edge.io
 icon: "dlt-c8y-icon-thin-client"
-type: external
+type: root
 layout: redirect
 external: "https://thin-edge.github.io/thin-edge.io/"
 audience:
