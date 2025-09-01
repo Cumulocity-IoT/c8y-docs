@@ -50,7 +50,7 @@ The username must be in the form `<tenant>/<user>` where `<tenant>` is the tenan
 
 #### Role-based access control
 
-Pulsar client connections will be granted access to Messaging Service resources based on the roles and permissions assingned to the authenticated user.
+Pulsar client connections will be granted access to Messaging Service resources based on the roles and permissions assigned to the authenticated user.
 The following roles and permissions should be used for MQTT Service messaging clients:
 
 | Role and permission                   | Access granted                                                   |
