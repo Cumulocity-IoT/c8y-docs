@@ -8,7 +8,7 @@
   {{- $contentToScan := $page.Content -}}
 
   {{- /* Check for headless bundle and aggregate child content */ -}}
-  {{- if $page.File -}} <-- **ADD THIS CHECK**
+  {{- if $page.File -}} 
     {{- $bundle := printf "%s-%s" $page.File.BaseFileName "bundle" -}}
     {{- $headless := $page.Site.GetPage $bundle -}}
     {{- if $headless -}}
