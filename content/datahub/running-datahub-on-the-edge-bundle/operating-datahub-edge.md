@@ -15,7 +15,7 @@ If problems occur, you should follow these steps:
 - Perform a health check, see [Health check](#health-check)
 - Check the log files, see [Log files](#log-files)
 
-If you need to contact [product support](/additional-resources/contacting-support/), include the diagnostic log archive. See [Accessing logs](/{{< c8y-edge-version-major >}}/edge-kubernetes/installing-edge-on-k8/#accessing-logs).
+If you need to contact [product support](/additional-resources/contacting-support/), include the diagnostic log archive. See [Accessing logs](/edge-kubernetes/installing-edge-on-k8/#accessing-logs).
 
 #### Health check {#health-check}
 
