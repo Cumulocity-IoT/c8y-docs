@@ -1,5 +1,5 @@
 ---
-date: ''
+date: '2025-08-28'
 title: Send reset password link from user details
 product_area: Platform services
 change_type:

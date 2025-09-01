@@ -1,5 +1,5 @@
 ---
-date: ''
+date: '2025-08-28'
 title: Adjusted expiration warning highlighting for non-CA trusted certificates
 product_area: Device management & connectivity
 change_type:
