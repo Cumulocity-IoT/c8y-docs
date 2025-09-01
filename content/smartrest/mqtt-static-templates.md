@@ -104,6 +104,7 @@ If a parameter is in square brackets, it is optional.
 <li><a href="#528">528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...</a></li>
 <li><a href="#529">529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...</a></li>
 <li><a href="#530">530,serial,hostname,port,connectionKey</a></li>
+<li><a href="#531">531,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,type,url,action,configurationMarker,url,type</a></li>
 </ul>
 
 <strong><a href="#device-parameter-templates">Device parameter templates</strong>
@@ -1356,7 +1357,40 @@ Establish tunneling by Remote Access device agent.
 530,DeviceSerial,10.0.0.67,22,eb5e9d13-1caa-486b-bdda-130ca0d87df8
 ```
 
+##### Set device profiles with software type (531) {#531}
 
+Set the device profiles with software type
+
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|firmware marker|(n/a)|
+|1...| 5 values of firmware|(n/a)|
+|1.1|firmware name|String|
+|1.2|firmware version|String|
+|1.3|firmware URL|String|
+|1.4|firmware isPatch|String|
+|1.5|firmware dependency|String|
+|2|software marker|(n/a)|
+|2...|List of 5 values per software|(n/a)|
+|2.1|software name|String|
+|2.2|software version|String|
+|2.3|software type|String|
+|2.4|software URL|String|
+|2.5|software action|String|
+|3|configuration marker|(n/a)|
+|3...|List of 2 values per configuration|(n/a)|
+|3.1|configuration URL|String|
+|3.2|configuration type|String|
+
+**Example**
+
+```text
+531,DeviceSerial,$FW,firmwareName,1.0,http://www.my.url,true,dependency,$SW,softwareA,1.0,http://www.my.url1,type1,action1,softwareB,2.0,http://www.my.url2,type2,action2,$CONF,http://www.my.url1,type1,http://www.my.url2,type2
+```
+
+{{< c8y-admon-info >}}
+When the device profile operation received has a type in one of the softwares in the software list, this template is triggered. The triggering is independent of the existing 527 template. This means that in all cases where this 531 template is triggered, the 527 template will also be triggered. 
+{{< /c8y-admon-info >}}
 
 
 #### Platform capabilities templates (6xx) {#subscribe-platform-capabilities} 
