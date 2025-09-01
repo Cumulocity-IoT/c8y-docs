@@ -120,6 +120,7 @@ public class MQTTServicePulsarClient {
             .serviceUrl(pulsarUrl)
             .authentication(basicAuth)
             .build();
+        System.out.println("Created Pulsar client");
     }
 }
 ```
@@ -209,13 +210,15 @@ For simplicity and clarity, the example assumes that message payloads are simple
             }
         };
 
-        // Create a Pulsar consumer on the from-device topic for the tenant.
-        // This will use the listener defined above to process each message.
+        // Create a Pulsar consumer on the from-device topic for the tenant,
+        // using the listener defined above to process each message.
+        // This will trigger connection and authentication by the client.
         final Consumer<String> consumer = client.newConsumer(Schema.STRING)
             .topic(MessageFormat.format("persistent://{0}/mqtt/from-device", tenantId))
             .subscriptionName("demoSubscription")
             .messageListener(listener)
             .subscribe();
+        System.out.println("Created Pulsar consumer");
 ```
 
 ### Publishing messages to MQTT devices
