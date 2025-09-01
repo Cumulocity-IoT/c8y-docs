@@ -1,71 +1,142 @@
 import os
 import re
+from urllib.parse import urlparse
+from collections import defaultdict
 
-CONTENT_DIR = "../content"
-OUTPUT_DIR = "../static"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..")) 
+
+CONTENT_DIR = os.path.join(PROJECT_ROOT, "content")
+OUTPUT_DIR = os.path.join(PROJECT_ROOT, "static")
+SITEMAP_XML = os.path.join(PROJECT_ROOT, "public", "sitemap.xml")
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "llms.txt")
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-FM_BLOCK_RE = re.compile(r"^---\s*\n(.*?)\n---\s*", re.DOTALL | re.MULTILINE)
+FM_BLOCK_RE = re.compile(r"^---\s*\r?\n(.*?)\r?\n---\s*", re.DOTALL | re.MULTILINE)
 TITLE_LINE_RE = re.compile(r"^title:\s*(.+?)\s*$", re.MULTILINE)
 
-def extract_frontmatter_title(path):
+def read_front_matter_title(path):
     try:
         with open(path, "r", encoding="utf-8") as f:
             text = f.read(4000)
         m = FM_BLOCK_RE.match(text)
-        if m:
-            block = m.group(1)
-            t = TITLE_LINE_RE.search(block)
-            if t:
-                return t.group(1).strip().strip('"').strip("'")
+        if not m:
+            return None
+        block = m.group(1)
+        t = TITLE_LINE_RE.search(block)
+        if not t:
+            return None
+        return t.group(1).strip().strip('"').strip("'")
     except Exception:
-        pass
-    return None
+        return None
 
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-    f.write("# LLMs Documentation Index\n\n")
-    
-    for root, dirs, files in os.walk(CONTENT_DIR):
-        depth = root.replace(CONTENT_DIR, "").count(os.sep)
+def title_from_slug(slug: str) -> str:
+    return slug.replace("-", " ").replace("_", " ").title()
 
-        if depth == 0:
+LOC_RE = re.compile(r"<loc>\s*(.*?)\s*</loc>", re.IGNORECASE | re.DOTALL)
+
+def normalize_path(p: str) -> str:
+    if not p:
+        return ""
+    if p.endswith(".html"):
+        p = p[:-5]
+    if not p.startswith("/"):
+        p = "/" + p
+    if not p.endswith("/"):
+        p = p + "/"
+    return p
+
+def is_change_logs(path_lower: str) -> bool:
+    return "/change-logs/" in path_lower 
+
+def is_card_page(path: str) -> bool:
+    parts = [p for p in path.strip("/").split("/") if p]
+    return bool(parts) and parts[-1].endswith("-card")
+
+def load_urls_from_sitemap(sitemap_path):
+    try:
+        with open(sitemap_path, "r", encoding="utf-8") as f:
+            xml = f.read()
+    except FileNotFoundError:
+        return []
+
+    urls = []
+    for loc in LOC_RE.findall(xml):
+        loc = loc.strip()
+        path = normalize_path(urlparse(loc).path)
+        if not path.startswith("/docs/"):
             continue
-
-        folder_title = os.path.basename(root) or "Root"
-
-        if folder_title == "change-logs":
-            dirs[:] = []  
+        low = path.lower()
+        if is_change_logs(low):
             continue
+        if is_card_page(path):
+            continue
+        urls.append((path, loc))
+    return urls
 
-        indent = "  " * depth
+URLS = load_urls_from_sitemap(SITEMAP_XML)
 
-        section_title = folder_title.replace("-", " ").title()
-        for idx in ("_index.html"):
-            idx_path = os.path.join(root, idx)
-            if os.path.isfile(idx_path):
-                t = extract_frontmatter_title(idx_path)
-                if t:
-                    section_title = t
-                    break
+def guess_content_paths_for_url_path(path: str):
+    parts = [p for p in path.strip("/").split("/") if p]
+    if not parts or parts[0] != "docs":
+        return []
+    parts = parts[1:]
+    if not parts:
+        return []
+    p1 = os.path.join(CONTENT_DIR, *parts, "index.md")
+    p2 = os.path.join(CONTENT_DIR, *parts) + ".md"
+    return [p1, p2]
 
-        f.write(f"\n{indent}## {section_title}\n")
+def page_title_for_url_path(path: str):
+    for cand in guess_content_paths_for_url_path(path):
+        if os.path.isfile(cand):
+            t = read_front_matter_title(cand)
+            if t:
+                return t
+    slug = [p for p in path.strip("/").split("/") if p][-1]
+    return title_from_slug(slug)
 
-        for file in sorted(files):
-            if file.endswith(".md") and not file.startswith("_"):
-                md_path = os.path.join(root, file)
+def section_key_for_path(path: str):
+    parts = [p for p in path.strip("/").split("/") if p]
+    if len(parts) <= 1:
+        return ""  
+    return parts[1]
 
-                norm_path = md_path.replace("\\", "/")
-                if "/change-logs/" in norm_path:
-                    continue
+def section_title_for_key(key: str):
+    if not key:
+        return "Root"
+    for idx in ("_index.html", "_index.md"):
+        candidate = os.path.join(CONTENT_DIR, key, idx)
+        if os.path.isfile(candidate):
+            t = read_front_matter_title(candidate)
+            if t:
+                return t
+    return title_from_slug(key)
 
-                rel_path = "/" + os.path.relpath(md_path, start=CONTENT_DIR).replace("\\", "/")
+sections = defaultdict(list) 
 
-                title = extract_frontmatter_title(md_path)
-                if not title:
-                    title = os.path.splitext(file)[0].replace("-", " ").title()
+for path, full_url in URLS:
+    key = section_key_for_path(path)
+    title = page_title_for_url_path(path)
+    sections[key].append((title, full_url, path))
 
-                f.write(f"{indent}- [{title}]({rel_path})\n")
+for key in sections:
+    sections[key].sort(key=lambda x: (x[0].lower(), x[2]))
+
+ordered_keys = [""] + sorted(
+    [k for k in sections.keys() if k],
+    key=lambda k: section_title_for_key(k).lower()
+)
+
+with open(OUTPUT_FILE, "w", encoding="utf-8") as out:
+    out.write("# LLMs Documentation Index\n\n")
+    for key in ordered_keys:
+        if key not in sections:
+            continue
+        header = section_title_for_key(key)
+        out.write(f"\n## {header}\n")
+        for title, url, _ in sections[key]:
+            out.write(f"- [{title}]({url})\n")
 
 print(f"Index generated at {OUTPUT_FILE}")

@@ -1,734 +1,300 @@
 # LLMs Documentation Index
 
 
-  ## About_Documentation
-  - [Previous documentation versions](/about_documentation/documentation-repository.md)
-  - [Scope](/about_documentation/scope.md)
-
-  ## Additional Resources
-  - [Product support](/additional-resources/contacting-support.md)
-  - [More documentation](/additional-resources/more-documentation.md)
-  - [More resources](/additional-resources/more-resources.md)
-
-  ## App Enablement Intro
-  - [Application enablement](/app-enablement-intro/applications.md)
-
-  ## App Intro
-  - [Application enablement](/app-intro/applications.md)
-  - [System integration](/app-intro/system-integration.md)
-
-  ## Authentication
-  - [Basic settings](/authentication/basic-settings.md)
-  - [Single sign-on](/authentication/sso.md)
-  - [Two-factor authentication](/authentication/tfa.md)
-
-    ## Sso Bundle
-    - [Configuration settings](/authentication/sso-bundle/configuration.md)
-    - [Using access tokens from the authorization server](/authentication/sso-bundle/configuring-access-tokens.md)
-    - [Custom template configuration](/authentication/sso-bundle/custom-template.md)
-    - [Integration with Azure AD](/authentication/sso-bundle/integration-with-azure.md)
-    - [Integration with Keycloak](/authentication/sso-bundle/integration-with-keycloak.md)
-    - [Introduction](/authentication/sso-bundle/sso-introduction.md)
-    - [Troubleshooting](/authentication/sso-bundle/sso-troubleshooting.md)
-
-    ## Tfa Bundle
-    - [SMS](/authentication/tfa-bundle/sms.md)
-    - [Introduction](/authentication/tfa-bundle/tfa-introduction.md)
-    - [TOTP](/authentication/tfa-bundle/totp.md)
-
-  ## C8Y Styleguide
-
-  ## Certified Devices
-  - [Certified devices](/certified-devices/certified-devices.md)
-
-  ## Cloud Remote Access
-  - [Cloud Remote Access API](/cloud-remote-access/cra-api.md)
-  - [Introduction](/cloud-remote-access/cra-introduction.md)
-  - [Setting up Cloud Remote Access (CRA)](/cloud-remote-access/setting-up-cloud-remote-access.md)
-
-    ## Cra Api Bundle
-    - [Client implementation](/cloud-remote-access/cra-api-bundle/client-implementation.md)
-    - [Device agent implementation](/cloud-remote-access/cra-api-bundle/device-agent-implementation.md)
-    - [Overview](/cloud-remote-access/cra-api-bundle/overview.md)
-
-    ## Cra Introduction Bundle
-    - [How Cloud Remote Access works](/cloud-remote-access/cra-introduction-bundle/how-it-works.md)
-
-    ## Setting Up Cloud Remote Access Bundle
-    - [Accessing Cloud Remote Access](/cloud-remote-access/setting-up-cloud-remote-access-bundle/accessing-cra.md)
-    - [Audit logs](/cloud-remote-access/setting-up-cloud-remote-access-bundle/audit-logs.md)
-    - [Managing endpoints](/cloud-remote-access/setting-up-cloud-remote-access-bundle/endpoints.md)
-    - [Prerequisites](/cloud-remote-access/setting-up-cloud-remote-access-bundle/prerequisites.md)
-    - [Troubleshooting](/cloud-remote-access/setting-up-cloud-remote-access-bundle/troubleshooting-cra.md)
-
-  ## Cockpit
-  - [Alarms](/cockpit/alarms.md)
-  - [Configuring Cockpit applications](/cockpit/cockpit-configuration.md)
-  - [Introduction](/cockpit/cockpit-introduction.md)
-  - [Dashboard manager](/cockpit/dashboard-manager.md)
-  - [Data explorer](/cockpit/data-explorer.md)
-  - [Data point library](/cockpit/data-point-library.md)
-  - [Exports](/cockpit/exports.md)
-  - [Home dashboard](/cockpit/home-dashboard.md)
-  - [Managing assets](/cockpit/managing-assets.md)
-  - [Smart rules collection](/cockpit/smart-rules-collection.md)
-  - [Smart rules](/cockpit/smart-rules.md)
-  - [Using widgets in dashboards and reports](/cockpit/using-widgets.md)
-  - [Widgets collection](/cockpit/widgets-collection.md)
-  - [Working with dashboards](/cockpit/working-with-dashboards.md)
-  - [Working with reports](/cockpit/working-with-reports.md)
-
-    ## Data Explorer Bundle
-    - [Changing the visualization](/cockpit/data-explorer-bundle/changing-visualization.md)
-    - [Creating widgets](/cockpit/data-explorer-bundle/creating-widgets.md)
-    - [Working with the data explorer](/cockpit/data-explorer-bundle/working-with-data-explorer.md)
-
-    ## Exports Bundle
-    - [Managing exports](/cockpit/exports-bundle/managing-exports.md)
-    - [Exports integration with Data Points based features](/cockpit/exports-bundle/working-with-exports.md)
-
-    ## Managing Assets Bundle
-    - [Asset hierarchy](/cockpit/managing-assets-bundle/asset-hierarchy.md)
-    - [Working with assets](/cockpit/managing-assets-bundle/working-with-assets.md)
-
-    ## Using Widgets Bundle
-    - [Modifying widgets](/cockpit/using-widgets-bundle/modifying-widgets.md)
-    - [Selecting assets in widgets](/cockpit/using-widgets-bundle/selecting-assets-widgets.md)
-    - [Widgets in dashboards and reports](/cockpit/using-widgets-bundle/widgets-dashboards-reports.md)
-
-  ## Concepts
-  - [Introduction to the Cumulocity platform](/concepts/concepts-introduction.md)
-  - [Cumulocity's domain model](/concepts/domain-model.md)
-  - [Security aspects](/concepts/security.md)
-  - [Tenant hierarchy](/concepts/tenant-hierarchy.md)
-
-    ## Concepts Introduction Bundle
-    - [Analytics](/concepts/concepts-introduction-bundle/analytics.md)
-    - [Application enablement](/concepts/concepts-introduction-bundle/application-enablement.md)
-    - [Device integration](/concepts/concepts-introduction-bundle/device-integration.md)
-    - [Device management](/concepts/concepts-introduction-bundle/device-management.md)
-    - [IoT data management](/concepts/concepts-introduction-bundle/iot-data-management.md)
-    - [Platform management](/concepts/concepts-introduction-bundle/platform-management.md)
-
-    ## Domain Model Bundle
-    - [Summary](/concepts/domain-model-bundle/Summary.md)
-    - [Events](/concepts/domain-model-bundle/events.md)
-    - [Inventory](/concepts/domain-model-bundle/inventory.md)
-    - [Measurements](/concepts/domain-model-bundle/measurements.md)
-    - [Operations](/concepts/domain-model-bundle/operations.md)
-
-    ## Security Bundle
-    - [Access control](/concepts/security-bundle/access-control.md)
-    - [Application security](/concepts/security-bundle/application-security.md)
-    - [Management security](/concepts/security-bundle/management-security.md)
-    - [Network security](/concepts/security-bundle/network-security.md)
-    - [Physical security](/concepts/security-bundle/physical-security.md)
-    - [Summary](/concepts/security-bundle/summary.md)
-
-    ## Tenant Hierarchy Bundle
-    - [RBAC versus multi-tenancy approach](/concepts/tenant-hierarchy-bundle/comparison.md)
-    - [Multi-tenancy](/concepts/tenant-hierarchy-bundle/multi-tenancy.md)
-    - [Hierarchy levels](/concepts/tenant-hierarchy-bundle/tenant-levels.md)
-
-  ## Data Broker
-  - [Data broker application](/data-broker/data-broker-application.md)
-  - [Microservice-based data broker](/data-broker/ms-data-broker.md)
-
-    ## Data Broker Application Bundle
-    - [Troubleshooting](/data-broker/data-broker-application-bundle/data-broker-troubleshooting.md)
-    - [Data connectors](/data-broker/data-broker-application-bundle/data-connectors.md)
-    - [Data subscriptions](/data-broker/data-broker-application-bundle/data-subscriptions.md)
-    - [Using the data broker](/data-broker/data-broker-application-bundle/using-data-broker.md)
-
-    ## Ms Data Broker Bundle
-    - [Troubleshooting](/data-broker/ms-data-broker-bundle/ms-troubleshooting.md)
-    - [Using the microservice-based data broker](/data-broker/ms-data-broker-bundle/using-ms-data-broker.md)
-
-  ## Datahub
-  - [Cumulocity DataHub overview](/datahub/datahub-overview.md)
-  - [Getting started with Cumulocity DataHub](/datahub/getting-started-with-datahub.md)
-  - [Integrating Cumulocity DataHub with other products](/datahub/integrating-datahub-with-other-products.md)
-  - [Operating Cumulocity DataHub](/datahub/operating-datahub.md)
-  - [Running Cumulocity DataHub on Cumulocity Edge](/datahub/running-datahub-on-the-edge.md)
-  - [Setting up Cumulocity DataHub](/datahub/setting-up-datahub.md)
-  - [Working with Cumulocity DataHub](/datahub/working-with-datahub.md)
-
-    ## Datahub Overview Bundle
-    - [Cumulocity DataHub at a glance](/datahub/datahub-overview-bundle/datahub-at-a-glance.md)
-    - [Documentation overview](/datahub/datahub-overview-bundle/documentation-overview.md)
-
-    ## Getting Started With Datahub Bundle
-    - [Accessing and logging into Cumulocity DataHub](/datahub/getting-started-with-datahub-bundle/accessing-and-logging-in.md)
-    - [Overview of UI features](/datahub/getting-started-with-datahub-bundle/overview-of-ui-features.md)
-
-    ## Integrating Datahub With Other Products Bundle
-    - [Integrating Cumulocity DataHub with Microsoft Power BI](/datahub/integrating-datahub-with-other-products-bundle/integration-powerbi.md)
-
-    ## Operating Datahub Bundle
-    - [Checking system information](/datahub/operating-datahub-bundle/checking-system-information.md)
-    - [Managing the data lake](/datahub/operating-datahub-bundle/managing-datalake.md)
-    - [Endpoints for monitoring](/datahub/operating-datahub-bundle/monitoring-endpoints.md)
-    - [Tracking usage statistics](/datahub/operating-datahub-bundle/tracking-usage-statistics.md)
-    - [Viewing audit logs](/datahub/operating-datahub-bundle/viewing-audit-logs.md)
-
-    ## Running Datahub On The Edge Bundle
-    - [Cumulocity DataHub Edge overview](/datahub/running-datahub-on-the-edge-bundle/datahub-edge-overview.md)
-    - [Operating Cumulocity DataHub Edge](/datahub/running-datahub-on-the-edge-bundle/operating-datahub-edge.md)
-    - [Setting up Cumulocity DataHub Edge](/datahub/running-datahub-on-the-edge-bundle/setting-up-datahub-edge-on-k8s.md)
-    - [Working with Cumulocity DataHub Edge](/datahub/running-datahub-on-the-edge-bundle/working-with-datahub-edge.md)
-
-    ## Setting Up Datahub Bundle
-    - [Defining Cumulocity DataHub permissions and roles](/datahub/setting-up-datahub-bundle/defining-permissions.md)
-    - [Prerequisites](/datahub/setting-up-datahub-bundle/prerequisites.md)
-    - [Setting up Dremio users](/datahub/setting-up-datahub-bundle/setting-up-dremio-users.md)
-    - [Setting up the initial configuration](/datahub/setting-up-datahub-bundle/setting-up-initial-configuration.md)
-
-    ## Working With Datahub Bundle
-    - [Aligning data modeling and offloading](/datahub/working-with-datahub-bundle/aligning-data-modeling-and-offloading.md)
-    - [Configuring offloading jobs](/datahub/working-with-datahub-bundle/configuring-offloading-jobs.md)
-    - [Cumulocity DataHub best practices](/datahub/working-with-datahub-bundle/datahub-best-practices.md)
-    - [Managing offloading jobs](/datahub/working-with-datahub-bundle/managing-offloading-jobs.md)
-    - [Monitoring compaction jobs](/datahub/working-with-datahub-bundle/monitoring-compaction-jobs.md)
-    - [Monitoring offloading jobs](/datahub/working-with-datahub-bundle/monitoring-offloading-jobs.md)
-    - [Offloading Cumulocity base collections](/datahub/working-with-datahub-bundle/offloading-base-collections.md)
-    - [Overview](/datahub/working-with-datahub-bundle/overview-offloading.md)
-    - [Querying offloaded Cumulocity data](/datahub/working-with-datahub-bundle/querying-offloaded.md)
-    - [Refining offloaded Cumulocity data](/datahub/working-with-datahub-bundle/refining-offloaded.md)
-
-  ## Device Certificate Authentication
-  - [Certificate Authority](/device-certificate-authentication/certificate-authority.md)
-  - [Device certificates](/device-certificate-authentication/device-certificates.md)
-  - [Simple device enrollment](/device-certificate-authentication/device-enroll-and-re-enroll.md)
-  - [Managing trusted certificate CRL settings](/device-certificate-authentication/managing-trusted-certificate-settings.md)
-  - [Managing trusted certificates](/device-certificate-authentication/managing-trusted-certificates.md)
-
-  ## Device Integration
-  - [Cloud Fieldbus](/device-integration/cloud-fieldbus.md)
-  - [Introduction](/device-integration/device-integration-introduction.md)
-  - [REST](/device-integration/device-integration-rest.md)
-  - [Thin-edge.io](/device-integration/device-integration-thin-edge.md)
-  - [Fragment library](/device-integration/fragment-library.md)
-  - [Interfacing devices](/device-integration/interfacing-devices.md)
-  - [Actility LoRa](/device-integration/lora-actility.md)
-  - [Loriot LoRa](/device-integration/lora-loriot.md)
-  - [LPWAN Custom device protocols](/device-integration/lpwan-custom-codec.md)
-  - [LWM2M](/device-integration/lwm2m.md)
-  - [MQTT Service](/device-integration/mqtt-service.md)
-  - [Core MQTT](/device-integration/mqtt.md)
-  - [OPC UA](/device-integration/opcua.md)
-  - [Sigfox](/device-integration/sigfox.md)
-
-    ## Cloud Fieldbus Bundle
-    - [Configuring fieldbus device protocols](/device-integration/cloud-fieldbus-bundle/configuring-fieldbus.md)
-    - [Connecting fieldbus devices](/device-integration/cloud-fieldbus-bundle/connecting-fieldbus.md)
-    - [Exporting and importing device protocols](/device-integration/cloud-fieldbus-bundle/exporting-importing-protocols.md)
-    - [Introduction](/device-integration/cloud-fieldbus-bundle/introduction.md)
-    - [Managing fieldbus devices](/device-integration/cloud-fieldbus-bundle/managing-fieldbus.md)
-
-    ## Device Integration Rest Bundle
-    - [Device authentication](/device-integration/device-integration-rest-bundle/device-authentication.md)
-    - [Integration lifecycle](/device-integration/device-integration-rest-bundle/integration-life-cycle.md)
-    - [REST client examples](/device-integration/device-integration-rest-bundle/rest-client-examples.md)
-
-    ## Fragment Library Bundle
-    - [Alarms](/device-integration/fragment-library-bundle/alarms.md)
-    - [Child devices](/device-integration/fragment-library-bundle/child-devices.md)
-    - [Configuration](/device-integration/fragment-library-bundle/configuration.md)
-    - [Connectivity](/device-integration/fragment-library-bundle/connectivity.md)
-    - [Device availability](/device-integration/fragment-library-bundle/device-availability.md)
-    - [Device information](/device-integration/fragment-library-bundle/device-info.md)
-    - [Device profile](/device-integration/fragment-library-bundle/device-profile.md)
-    - [Firmware](/device-integration/fragment-library-bundle/firmware.md)
-    - [Introduction](/device-integration/fragment-library-bundle/fragment-library-introduction.md)
-    - [General concepts](/device-integration/fragment-library-bundle/general-concepts.md)
-    - [Identity](/device-integration/fragment-library-bundle/identity.md)
-    - [Logs](/device-integration/fragment-library-bundle/logs.md)
-    - [Manual status update](/device-integration/fragment-library-bundle/measurement-request.md)
-    - [Measurements](/device-integration/fragment-library-bundle/measurements.md)
-    - [Network](/device-integration/fragment-library-bundle/network.md)
-    - [Platform capabilities](/device-integration/fragment-library-bundle/platform-version.md)
-    - [Shell](/device-integration/fragment-library-bundle/reference.md)
-    - [Relay](/device-integration/fragment-library-bundle/relay.md)
-    - [Remote access](/device-integration/fragment-library-bundle/remote-access.md)
-    - [Services](/device-integration/fragment-library-bundle/services.md)
-    - [Software](/device-integration/fragment-library-bundle/software.md)
-    - [Tracking](/device-integration/fragment-library-bundle/tracking.md)
-
-    ## Interfacing Devices Bundle
-    - [Agent lifecycle](/device-integration/interfacing-devices-bundle/agent-life-cycle.md)
-    - [Integrating of other data sources](/device-integration/interfacing-devices-bundle/integration.md)
-    - [How does the platform support developing agents?](/device-integration/interfacing-devices-bundle/support-of-developing-agents.md)
-    - [What is an agent?](/device-integration/interfacing-devices-bundle/what-is-an-agent.md)
-
-    ## Lora Actility Bundle
-    - [Configuring multiple ThingPark account connections](/device-integration/lora-actility-bundle/configuring-credentials.md)
-    - [Deprovisioning LoRa devices](/device-integration/lora-actility-bundle/deprovisioning-lora-devices.md)
-    - [Introduction](/device-integration/lora-actility-bundle/introduction.md)
-    - [Creating device protocols](/device-integration/lora-actility-bundle/lora-creating-device-protocols.md)
-    - [Sending operations](/device-integration/lora-actility-bundle/lora-sending-operations.md)
-    - [Uplink message processing](/device-integration/lora-actility-bundle/lora-uplink-message-processing.md)
-    - [Registering LoRa devices](/device-integration/lora-actility-bundle/registering-lora-devices.md)
-    - [ThingPark API availability monitoring](/device-integration/lora-actility-bundle/thingpark-monitoring.md)
-    - [Troubleshooting](/device-integration/lora-actility-bundle/troubleshooting.md)
-
-    ## Lora Loriot Bundle
-    - [Assigning the Loriot admin role permission](/device-integration/lora-loriot-bundle/assigning-loriot-admin-role.md)
-    - [Assign the Loriot LoRa device protocol](/device-integration/lora-loriot-bundle/assigning-loriot-device-protocol.md)
-    - [Device registration via Cumulocity](/device-integration/lora-loriot-bundle/device-registration-via-platform.md)
-    - [Device registration via uplink message](/device-integration/lora-loriot-bundle/device-registration-via-uplink-message.md)
-    - [Creating device protocols](/device-integration/lora-loriot-bundle/loriot-creating-device-protocols.md)
-    - [Introduction](/device-integration/lora-loriot-bundle/loriot-introduction.md)
-    - [Sending operations](/device-integration/lora-loriot-bundle/loriot-sending-operations.md)
-    - [Troubleshooting](/device-integration/lora-loriot-bundle/loriot-troubleshooting.md)
-    - [Uplink message processing](/device-integration/lora-loriot-bundle/loriot-uplink-message-processing.md)
-
-    ## Lpwan Custom Codec Bundle
-    - [Deploying the sample codec microservice](/device-integration/lpwan-custom-codec-bundle/deploying-sample-codec-microservice.md)
-    - [Implementing a custom codec microservice](/device-integration/lpwan-custom-codec-bundle/implementing-custom-codec-microservice.md)
-    - [Introduction](/device-integration/lpwan-custom-codec-bundle/introduction.md)
-    - [Using the lpwan-custom-codec library](/device-integration/lpwan-custom-codec-bundle/using-the-lpwan-custom-codec-library.md)
-
-    ## Lwm2M Bundle
-    - [Adding validation rules to resources](/device-integration/lwm2m-bundle/adding-validation-rules.md)
-    - [LWM2M connector device](/device-integration/lwm2m-bundle/connector-device.md)
-    - [LWM2M device details](/device-integration/lwm2m-bundle/device-details.md)
-    - [LWM2M device protocols](/device-integration/lwm2m-bundle/device-protocols.md)
-    - [LWM2M device firmware update (FOTA)](/device-integration/lwm2m-bundle/firmware-update.md)
-    - [Handling LWM2M shell commands](/device-integration/lwm2m-bundle/handling-shell-commands.md)
-    - [Introduction](/device-integration/lwm2m-bundle/introduction.md)
-    - [Handling LWM2M post registration actions](/device-integration/lwm2m-bundle/post-registration-actions.md)
-    - [Registering LWM2M devices](/device-integration/lwm2m-bundle/registering-lwm2m-devices.md)
-
-    ## Mqtt Bundle
-    - [MQTT implementation](/device-integration/mqtt-bundle/implementation.md)
-    - [Integration lifecycle](/device-integration/mqtt-bundle/integration-life-cycle.md)
-    - [MQTT JWT session token retrieval](/device-integration/mqtt-bundle/mqtt-connection.md)
-    - [MQTT examples](/device-integration/mqtt-bundle/mqtt-examples.md)
-
-    ## Mqtt Service Bundle
-    - [Frequently Asked Questions](/device-integration/mqtt-service-bundle/faq.md)
-    - [MQTT protocol implementation](/device-integration/mqtt-service-bundle/implementation.md)
-    - [Java Client](/device-integration/mqtt-service-bundle/java-client.md)
-    - [Overview](/device-integration/mqtt-service-bundle/overview.md)
-
-    ## Opcua Bundle
-    - [Authentication](/device-integration/opcua-bundle/authentication.md)
-    - [Connecting the gateway to the server](/device-integration/opcua-bundle/connecting-gateway.md)
-    - [Data reporting](/device-integration/opcua-bundle/data-reporting.md)
-    - [Device protocols](/device-integration/opcua-bundle/device-protocols.md)
-    - [Gateway configuration and registration](/device-integration/opcua-bundle/gateway-configuration-and-registration.md)
-    - [Gateway device details](/device-integration/opcua-bundle/gateway-device-details.md)
-    - [Introduction](/device-integration/opcua-bundle/introduction.md)
-    - [Operations](/device-integration/opcua-bundle/operations.md)
-    - [Registering the gateway as a Cumulocity device](/device-integration/opcua-bundle/registering-gateway-as-device.md)
-    - [REST APIs](/device-integration/opcua-bundle/rest-api.md)
-    - [Running the Gateway](/device-integration/opcua-bundle/running-gateway.md)
-    - [Bad StatusCode handling](/device-integration/opcua-bundle/status-code-handling.md)
-    - [Troubleshooting](/device-integration/opcua-bundle/troubleshooting.md)
-    - [OPC UA events](/device-integration/opcua-bundle/ua-event.md)
-
-    ## Sigfox Bundle
-    - [Creating device protocols](/device-integration/sigfox-bundle/device-protocols.md)
-    - [Introduction](/device-integration/sigfox-bundle/introduction.md)
-    - [Managing the connectivity settings](/device-integration/sigfox-bundle/managing-connectivity-settings.md)
-    - [Updating devices registered with the general device registration](/device-integration/sigfox-bundle/old-registration.md)
-    - [Registering Sigfox devices](/device-integration/sigfox-bundle/registering-sigfox-devices.md)
-    - [Sending operations](/device-integration/sigfox-bundle/sending-operations.md)
-    - [Troubleshooting](/device-integration/sigfox-bundle/sigfox-troubleshooting.md)
-    - [Uplink message processing](/device-integration/sigfox-bundle/sigfox-uplink-message-processing.md)
-
-  ## Device Management Application
-  - [Connectivity](/device-management-application/connectivity.md)
-  - [Introduction](/device-management-application/device-management-introduction.md)
-  - [Grouping devices](/device-management-application/grouping-devices.md)
-  - [Home dashboard](/device-management-application/home-dashboard.md)
-  - [Managing device data](/device-management-application/managing-device-data.md)
-  - [Managing device services](/device-management-application/managing-device-services.md)
-  - [Managing device types](/device-management-application/managing-device-types.md)
-  - [Monitoring and controlling devices](/device-management-application/monitoring-and-controlling-devices.md)
-  - [Registering devices](/device-management-application/registering-devices.md)
-  - [SmartREST templates](/device-management-application/smartrest-templates.md)
-  - [Viewing all devices](/device-management-application/viewing-all-devices.md)
-  - [Viewing device details](/device-management-application/viewing-device-details.md)
-  - [Working with simulators](/device-management-application/working-with-simulators.md)
-
-    ## Grouping Devices Bundle
-    - [Managing devices in groups](/device-management-application/grouping-devices-bundle/managing-devices-in-groups.md)
-    - [Managing groups](/device-management-application/grouping-devices-bundle/managing-groups.md)
-    - [Restructuring groups and devices](/device-management-application/grouping-devices-bundle/restructuring-groups-and-devices.md)
-    - [Using smart groups](/device-management-application/grouping-devices-bundle/using-smart-groups.md)
-
-    ## Managing Device Data Bundle
-    - [Managing configurations](/device-management-application/managing-device-data-bundle/managing-configurations.md)
-    - [Managing device credentials](/device-management-application/managing-device-data-bundle/managing-device-credentials.md)
-    - [Managing device profiles](/device-management-application/managing-device-data-bundle/managing-device-profiles.md)
-    - [Managing firmware](/device-management-application/managing-device-data-bundle/managing-firmware.md)
-    - [Managing software](/device-management-application/managing-device-data-bundle/managing-software.md)
-
-    ## Monitoring And Controlling Devices Bundle
-    - [Availability](/device-management-application/monitoring-and-controlling-devices-bundle/availability.md)
-    - [Connection monitoring](/device-management-application/monitoring-and-controlling-devices-bundle/connection-monitoring.md)
-    - [Locating devices](/device-management-application/monitoring-and-controlling-devices-bundle/locating-devices.md)
-    - [Troubleshooting devices](/device-management-application/monitoring-and-controlling-devices-bundle/troubleshooting-devices.md)
-    - [Working with alarms](/device-management-application/monitoring-and-controlling-devices-bundle/working-with-alarms.md)
-    - [Working with operations](/device-management-application/monitoring-and-controlling-devices-bundle/working-with-operations.md)
-
-    ## Registering Devices Bundle
-    - [Bulk device registration](/device-management-application/registering-devices-bundle/bulk-device-registration.md)
-    - [Extensible device registration](/device-management-application/registering-devices-bundle/extensible-device-registration.md)
-    - [Single device registration](/device-management-application/registering-devices-bundle/single-device-registration.md)
-
-    ## Viewing All Devices Bundle
-    - [Configuring columns](/device-management-application/viewing-all-devices-bundle/configuring-columns.md)
-    - [Default columns](/device-management-application/viewing-all-devices-bundle/default-columns.md)
-    - [To delete a device from the list](/device-management-application/viewing-all-devices-bundle/to-delete-devices.md)
-    - [To filter devices](/device-management-application/viewing-all-devices-bundle/to-filter-devices.md)
-    - [To replace a device](/device-management-application/viewing-all-devices-bundle/to-replace-a-device.md)
-
-  ## Dtm
-  - [Asset hierarchy](/dtm/asset-hierarchy.md)
-  - [Asset models](/dtm/asset-types.md)
-  - [Introduction](/dtm/dtm-introduction.md)
-
-    ## Asset Hierarchy Bundle
-    - [Creating assets via bulk import](/dtm/asset-hierarchy-bundle/creating-assets-bulk-import.md)
-    - [Creating assets via the UI](/dtm/asset-hierarchy-bundle/creating-assets-ui.md)
-    - [Asset model for groups](/dtm/asset-hierarchy-bundle/group-assets.md)
-    - [Introduction](/dtm/asset-hierarchy-bundle/introduction.md)
-    - [Viewing assets](/dtm/asset-hierarchy-bundle/viewing-assets.md)
-
-    ## Asset Types Bundle
-    - [Asset models](/dtm/asset-types-bundle/asset-models.md)
-    - [Asset properties](/dtm/asset-types-bundle/asset-properties.md)
-
-    ## Dtm Introduction Bundle
-    - [Concepts](/dtm/dtm-introduction-bundle/concepts-guide.md)
-
-  ## Enterprise Tenant
-  - [Customizing your platform](/enterprise-tenant/customization.md)
-  - [Introduction](/enterprise-tenant/enterprise-tenant-introduction.md)
-  - [Managing tenants](/enterprise-tenant/managing-tenants.md)
-  - [Managing user hierarchies](/enterprise-tenant/managing-user-hierarchies.md)
-  - [Support user access](/enterprise-tenant/support-user-access.md)
-  - [Usage statistics and billing](/enterprise-tenant/usage-and-billing.md)
-
-    ## Customization Bundle
-    - [Branding](/enterprise-tenant/customization-bundle/branding.md)
-    - [Configuration](/enterprise-tenant/customization-bundle/configuration.md)
-    - [Domain name](/enterprise-tenant/customization-bundle/domain-name.md)
-
-    ## Managing Tenants Bundle
-    - [Custom properties](/enterprise-tenant/managing-tenants-bundle/custom-properties.md)
-    - [Default subscriptions](/enterprise-tenant/managing-tenants-bundle/default-subscriptions.md)
-    - [Managing subtenants](/enterprise-tenant/managing-tenants-bundle/managing-subtenants.md)
-    - [Setting limits](/enterprise-tenant/managing-tenants-bundle/setting-limits.md)
-    - [Subscribing applications](/enterprise-tenant/managing-tenants-bundle/subscribing-applications.md)
-    - [Tenant policies](/enterprise-tenant/managing-tenants-bundle/tenant-policies.md)
-
-  ## Get Familiar With The Ui
-  - [Available applications](/get-familiar-with-the-ui/available-applications.md)
-  - [UI functionalities and features](/get-familiar-with-the-ui/gui-features.md)
-  - [Knowledge Hub](/get-familiar-with-the-ui/knowledge-hub.md)
-  - [Accessing and logging into the platform](/get-familiar-with-the-ui/platform-access.md)
-  - [Introduction](/get-familiar-with-the-ui/ui-introduction.md)
-  - [User options and settings](/get-familiar-with-the-ui/user-settings.md)
-
-  ## Glossary
-  - [A](/glossary/a.md)
-  - [B](/glossary/b.md)
-  - [C](/glossary/c.md)
-  - [D](/glossary/d.md)
-  - [E](/glossary/e.md)
-  - [G](/glossary/g.md)
-  - [I](/glossary/i.md)
-  - [L](/glossary/l.md)
-  - [M](/glossary/m.md)
-  - [N](/glossary/n.md)
-  - [O](/glossary/o.md)
-  - [P](/glossary/p.md)
-  - [R](/glossary/r.md)
-  - [S](/glossary/s.md)
-  - [T](/glossary/t.md)
-  - [W](/glossary/w.md)
-  - [Y](/glossary/y.md)
-
-  ## Legal Notices
-  - [Cloud Trial Service Agreement](/legal-notices/Cloud-Trial-Service-Agreement.md)
-  - [Acceptable Use Policy](/legal-notices/acceptable-use-policy.md)
-  - [Copyright](/legal-notices/copyright.md)
-  - [Export Control Compliance](/legal-notices/export-control-compliance.md)
-  - [Imprint](/legal-notices/imprint.md)
-  - [License Terms and Conditions](/legal-notices/license-terms-and-conditions.md)
-  - [Limited Use License for Docker](/legal-notices/limited-use-license-for-docker.md)
-  - [Privacy Notice](/legal-notices/privacy-notice.md)
-  - [Responsible Disclosure Policy](/legal-notices/responsible-disclosure-policy.md)
-  - [Third Party Information](/legal-notices/third-party-information.md)
-  - [US State Privacy Notice](/legal-notices/us-state-privacy-notice.md)
-
-  ## Machine Learning
-  - [Introduction](/machine-learning/ML-introduction.md)
-  - [Prepare your device data (IoT DataOps)](/machine-learning/data-preparation.md)
-  - [Deploy and orchestrate your AI/ML models across devices (EdgeAI with MLOps)](/machine-learning/deployment.md)
-  - [Create and bring your own AI/ML model (BYOM)](/machine-learning/model-creation.md)
-  - [Operationalizing your AI/ML models in the cloud](/machine-learning/operationalization.md)
-
-  ## Microservice Sdk
-  - [General aspects](/microservice-sdk/general-aspects.md)
-  - [Examples](/microservice-sdk/http.md)
-  - [Microservice SDK for Java](/microservice-sdk/java.md)
-  - [Introduction](/microservice-sdk/microservice-sdk-introduction.md)
-  - [Best practices](/microservice-sdk/microservices-best-practices.md)
-  - [Using the REST interface](/microservice-sdk/rest.md)
-
-    ## General Aspects Bundle
-    - [Containerization and orchestration](/microservice-sdk/general-aspects-bundle/containerization-orchestration.md)
-    - [Troubleshooting](/microservice-sdk/general-aspects-bundle/ga-troubleshooting.md)
-    - [Introduction](/microservice-sdk/general-aspects-bundle/introduction.md)
-    - [Isolation and scaling](/microservice-sdk/general-aspects-bundle/isolation-scaling.md)
-    - [Microservice manifest](/microservice-sdk/general-aspects-bundle/microservice-manifest.md)
-    - [Microservice runtime](/microservice-sdk/general-aspects-bundle/microservice-runtime.md)
-    - [Microservice utility tool](/microservice-sdk/general-aspects-bundle/microservice-utility-tool.md)
-    - [Microservice migration to API Version 2](/microservice-sdk/general-aspects-bundle/migration.md)
-    - [Request routing](/microservice-sdk/general-aspects-bundle/request-routing.md)
-    - [Requirements and interactions](/microservice-sdk/general-aspects-bundle/requirements-interactions.md)
-    - [Security](/microservice-sdk/general-aspects-bundle/security.md)
-
-    ## Http Bundle
-    - [Node.js microservice](/microservice-sdk/http-bundle/node-js-microservice.md)
-    - [Python microservice](/microservice-sdk/http-bundle/python-microservice.md)
-
-    ## Java Bundle
-    - [Client library](/microservice-sdk/java-bundle/client-library.md)
-    - [Developing microservices](/microservice-sdk/java-bundle/developing-microservice.md)
-    - [Introduction](/microservice-sdk/java-bundle/introduction.md)
-    - [IP-tracker microservice](/microservice-sdk/java-bundle/ip-tracker-microservice.md)
-    - [Hello world tutorial for Java](/microservice-sdk/java-bundle/java-hello-world-tutorial.md)
-    - [Troubleshooting](/microservice-sdk/java-bundle/java-troubleshooting.md)
-    - [Services platform and SMS API](/microservice-sdk/java-bundle/services-platform-sms-api.md)
-
-    ## Rest Bundle
-    - [Introduction](/microservice-sdk/rest-bundle/introduction.md)
-    - [Microservice development](/microservice-sdk/rest-bundle/microservice-development.md)
-
-  ## Quick Start
-  - [First steps with Cumulocity](/quick-start/first-steps.md)
-
-  ## Rest_Api
-  - [Rest API](/rest_api/rest_api.md)
-
-  ## Sector
-
-    ## App_Enablement
-
-    ## Data_Analytics
-
-    ## Device_Management
-
-    ## Edge_Server
-
-    ## Getting_Started
-
-    ## Platform_Administration
-
-    ## Rest_Api
-
-    ## Terms_Conditions
-
-  ## Sensor App
-  - [Adjusting sensor properties](/sensor-app/adjusting-sensor-properties.md)
-  - [Configuring, disabling or removing devices](/sensor-app/configuration.md)
-  - [Connecting new Bluetooth devices to the Sensor App](/sensor-app/connecting-bluetooth-devices.md)
-  - [Connecting new OBD devices to the Sensor App](/sensor-app/connecting-obd-devices.md)
-  - [Controlling devices](/sensor-app/controlling-devices.md)
-  - [Installing the Sensor App](/sensor-app/installing-the-sensor-app.md)
-  - [Simulating peaks and sending alarms and events](/sensor-app/peaks-alarms-events.md)
-  - [Registering the Sensor App in the platform](/sensor-app/registering-the-sensor-app.md)
-  - [Sending sensor data to the platform](/sensor-app/sending-sensor-data.md)
-  - [Introduction](/sensor-app/sensorapp-introduction.md)
-  - [Viewing sensor data](/sensor-app/viewing-sensor-data.md)
-
-  ## Service Terms
-  - [Accessibility](/service-terms/accessibility.md)
-  - [Compatibility policy](/service-terms/compatibility-policy.md)
-  - [License metrics](/service-terms/license-metrics.md)
-  - [Previewing features](/service-terms/previews.md)
-  - [Service quotas](/service-terms/quotas.md)
-  - [Release policy](/service-terms/releases.md)
-  - [Service-level agreements](/service-terms/service-level.md)
-
-    ## License Metrics Bundle
-    - [Introduction](/service-terms/license-metrics-bundle/intro.md)
-    - [Version 1](/service-terms/license-metrics-bundle/v1.md)
-
-    ## Service Level Bundle
-    - [Additional IT services](/service-terms/service-level-bundle/addons-sla.md)
-    - [DataHub service-level agreement](/service-terms/service-level-bundle/datahub-sla.md)
-    - [Microservice hosting service-level agreement](/service-terms/service-level-bundle/microservices-sla.md)
-    - [Platform service-level agreement](/service-terms/service-level-bundle/platform-sla.md)
-    - [Support service-level agreement](/service-terms/service-level-bundle/support-sla.md)
-
-  ## Smartrest
-  - [Handling of IDs](/smartrest/handling-of-ids.md)
-  - [JSON via MQTT](/smartrest/json-via-mqtt.md)
-  - [MQTT Static templates](/smartrest/mqtt-static-templates.md)
-  - [MQTT quick reference](/smartrest/quick-reference.md)
-  - [Introduction](/smartrest/smartrest-introduction.md)
-  - [SmartREST 1.0](/smartrest/smartrest-one.md)
-  - [SmartREST 2.0](/smartrest/smartrest-two.md)
-
-    ## Smartrest One Bundle
-    - [Built-in messages](/smartrest/smartrest-one-bundle/built-in-messages.md)
-    - [Introduction](/smartrest/smartrest-one-bundle/introduction.md)
-    - [Registration process](/smartrest/smartrest-one-bundle/registration-process.md)
-    - [SmartREST Real-time Notifications](/smartrest/smartrest-one-bundle/smartrest-real-time-notifications.md)
-    - [Templates](/smartrest/smartrest-one-bundle/templates.md)
-    - [The protocol](/smartrest/smartrest-one-bundle/the-protocol.md)
-    - [Using SmartREST with multiple X-Ids](/smartrest/smartrest-one-bundle/using-smartrest-with-multiple-x-ids.md)
-
-  ## Standard Tenant
-  - [Alarm mapping](/standard-tenant/alarm-mapping.md)
-  - [Changing settings](/standard-tenant/changing-settings.md)
-  - [Managing the ecosystem](/standard-tenant/ecosystem.md)
-  - [Enhanced time series support](/standard-tenant/enhanced-time-series-support.md)
-  - [Home screen](/standard-tenant/home-screen.md)
-  - [Managing data](/standard-tenant/managing-data.md)
-  - [Managing permissions](/standard-tenant/managing-permissions.md)
-  - [Managing users](/standard-tenant/managing-users.md)
-  - [Monitoring](/standard-tenant/monitoring.md)
-  - [Introduction](/standard-tenant/standard-tenant-introduction.md)
-
-    ## Changing Settings Bundle
-    - [Application](/standard-tenant/changing-settings-bundle/application.md)
-    - [Connectivity](/standard-tenant/changing-settings-bundle/connectivity.md)
-    - [Localization](/standard-tenant/changing-settings-bundle/localization.md)
-    - [Properties library](/standard-tenant/changing-settings-bundle/properties-library.md)
-    - [SMS provider](/standard-tenant/changing-settings-bundle/sms-provider.md)
-
-    ## Ecosystem Bundle
-    - [Application properties](/standard-tenant/ecosystem-bundle/application-properties.md)
-    - [Uploading archives](/standard-tenant/ecosystem-bundle/archives.md)
-    - [Custom applications](/standard-tenant/ecosystem-bundle/custom-applications.md)
-    - [Extensions](/standard-tenant/ecosystem-bundle/extensions.md)
-    - [Managing applications](/standard-tenant/ecosystem-bundle/managing-applications.md)
-    - [Managing microservices](/standard-tenant/ecosystem-bundle/managing-microservices.md)
-    - [Monitoring microservices](/standard-tenant/ecosystem-bundle/monitoring-microservices.md)
-    - [Subscribed applications](/standard-tenant/ecosystem-bundle/subscribed-applications.md)
-
-    ## Enhanced Time Series Support Bundle
-    - [General configuration](/standard-tenant/enhanced-time-series-support-bundle/general-configuration.md)
-    - [Migration process description](/standard-tenant/enhanced-time-series-support-bundle/migration-process-description.md)
-
-    ## Managing Data Bundle
-    - [File repository](/standard-tenant/managing-data-bundle/file-repository.md)
-    - [Latest measurement values](/standard-tenant/managing-data-bundle/latest-value.md)
-    - [Retention rules](/standard-tenant/managing-data-bundle/retention-rules.md)
-
-    ## Managing Permissions Bundle
-    - [Granting application access](/standard-tenant/managing-permissions-bundle/application-access.md)
-    - [Global roles](/standard-tenant/managing-permissions-bundle/global-roles.md)
-    - [Improving the performance](/standard-tenant/managing-permissions-bundle/improving-performance.md)
-    - [Inventory roles](/standard-tenant/managing-permissions-bundle/inventory-roles.md)
-    - [Limitations of inventory roles based access](/standard-tenant/managing-permissions-bundle/limititations.md)
-    - [Troubleshooting permissions](/standard-tenant/managing-permissions-bundle/troubleshooting-permissions.md)
-
-    ## Monitoring Bundle
-    - [Audit logs](/standard-tenant/monitoring-bundle/audit-logs.md)
-    - [Messaging Service](/standard-tenant/monitoring-bundle/messaging-service.md)
-
-  ## Streaming Analytics
-  - [Analytics Builder](/streaming-analytics/analytics-builder.md)
-  - [Customization and permissions](/streaming-analytics/analytics-customization.md)
-  - [Analytics rules plugin](/streaming-analytics/analytics-rules-plugin.md)
-  - [Analytics Builder block reference](/streaming-analytics/block-reference.md)
-  - [EPL apps](/streaming-analytics/epl-apps.md)
-  - [Introduction](/streaming-analytics/introduction-analytics.md)
-  - [Troubleshooting and diagnostics](/streaming-analytics/troubleshooting.md)
-
-    ## Analytics Builder Bundle
-    - [Details of values and blocks](/streaming-analytics/analytics-builder-bundle/details-of-values-and-blocks.md)
-    - [Getting started with Analytics Builder](/streaming-analytics/analytics-builder-bundle/getting-started.md)
-    - [Model simulation](/streaming-analytics/analytics-builder-bundle/model-simulation.md)
-    - [Models and devices](/streaming-analytics/analytics-builder-bundle/models-and-devices.md)
-    - [Monitoring and configuration](/streaming-analytics/analytics-builder-bundle/monitoring-and-configuration.md)
-    - [Understanding models](/streaming-analytics/analytics-builder-bundle/understanding-models.md)
-    - [Using the instance editor](/streaming-analytics/analytics-builder-bundle/using-the-instance-editor.md)
-    - [Using the model editor](/streaming-analytics/analytics-builder-bundle/using-the-model-editor.md)
-    - [Using the model manager](/streaming-analytics/analytics-builder-bundle/using-the-model-manager.md)
-    - [Wires and blocks](/streaming-analytics/analytics-builder-bundle/wires-and-blocks.md)
-
-    ## Analytics Customization Bundle
-    - [Controlling access to the Streaming Analytics application](/streaming-analytics/analytics-customization-bundle/control-access.md)
-    - [Customizing the home screen of the Streaming Analytics application](/streaming-analytics/analytics-customization-bundle/customize-home-screen.md)
-    - [Modifying microservice permissions and resource usage](/streaming-analytics/analytics-customization-bundle/microservice-permissions.md)
-    - [Configuration requirements for Notifications 2.0](/streaming-analytics/analytics-customization-bundle/notifications.md)
-    - [Optimizing requests with concurrent connections](/streaming-analytics/analytics-customization-bundle/optimize-requests.md)
-
-    ## Analytics Rules Plugin Bundle
-    - [Getting started with the Analytics rules plugin](/streaming-analytics/analytics-rules-plugin-bundle/getting-started.md)
-    - [Understanding the Analytics rules plugin](/streaming-analytics/analytics-rules-plugin-bundle/understanding-the-plugin.md)
-
-    ## Block Reference Bundle
-    - [Aggregate](/streaming-analytics/block-reference-bundle/aggregate.md)
-    - [Calculation](/streaming-analytics/block-reference-bundle/calculation.md)
-    - [Flow Manipulation](/streaming-analytics/block-reference-bundle/flow-manipulation.md)
-    - [Input](/streaming-analytics/block-reference-bundle/input.md)
-    - [Logic](/streaming-analytics/block-reference-bundle/logic.md)
-    - [Output](/streaming-analytics/block-reference-bundle/output.md)
-    - [Overview of all blocks](/streaming-analytics/block-reference-bundle/overview-of-all-blocks.md)
-    - [Utility](/streaming-analytics/block-reference-bundle/utility.md)
-
-    ## Epl Apps Bundle
-    - [Advanced features](/streaming-analytics/epl-apps-bundle/advanced-features.md)
-    - [Basic functionality](/streaming-analytics/epl-apps-bundle/basic-functionality.md)
-    - [Best practices and guidelines](/streaming-analytics/epl-apps-bundle/best-practices.md)
-    - [Built-in actions](/streaming-analytics/epl-apps-bundle/builtin-actions.md)
-    - [Examples](/streaming-analytics/epl-apps-bundle/examples.md)
-    - [Connecting Apama to other microservices](/streaming-analytics/epl-apps-bundle/microservices.md)
-    - [Study - Circular geofence alarms](/streaming-analytics/epl-apps-bundle/study.md)
-    - [Using Cumulocity MQTT Service](/streaming-analytics/epl-apps-bundle/using-cumulocity-mqtt-service.md)
-    - [Using the Apama Event Processing Language (EPL)](/streaming-analytics/epl-apps-bundle/using-epl.md)
-
-    ## Introduction Analytics Bundle
-    - [Analytics Builder](/streaming-analytics/introduction-analytics-bundle/analytics-builder.md)
-    - [EPL Apps](/streaming-analytics/introduction-analytics-bundle/apama-epl-apps.md)
-    - [Home screen](/streaming-analytics/introduction-analytics-bundle/home.md)
-    - [Microservice runtime and applications](/streaming-analytics/introduction-analytics-bundle/microservice-and-applications.md)
-    - [Prerequisites](/streaming-analytics/introduction-analytics-bundle/prerequisites.md)
-
-    ## Troubleshooting Bundle
-    - [Alarms generated by the Apama-ctrl microservice](/streaming-analytics/troubleshooting-bundle/alarms.md)
-    - [Audit logs for Streaming Analytics](/streaming-analytics/troubleshooting-bundle/analytics-audit-logs.md)
-    - [Downloading diagnostics and logs](/streaming-analytics/troubleshooting-bundle/diagnostics-download.md)
-    - [Diagnostics REST endpoints](/streaming-analytics/troubleshooting-bundle/diagnostics-rest.md)
-    - [Log files of the Apama-ctrl microservice](/streaming-analytics/troubleshooting-bundle/logfiles.md)
-    - [Monitoring REST endpoints](/streaming-analytics/troubleshooting-bundle/monitoring-rest.md)
-
-  ## Thin Edge
-  - [Device integration using thin-edge.io](/thin-edge/device-integration-thin-edge.md)
-
-  ## Web
-  - [Application configuration](/web/application-configuration.md)
-  - [Getting started](/web/gettingstarted.md)
-  - [Introduction](/web/introduction.md)
-  - [Upgrade](/web/upgrade.md)
-
-    ## Application Configuration Bundle
-    - [Application options](/web/application-configuration-bundle/application-options.md)
-    - [Branding your application](/web/application-configuration-bundle/branding-your-application.md)
-    - [Languages customization](/web/application-configuration-bundle/languages-customization.md)
-
-    ## Upgrade Bundle
-    - [Angular CLI before 10.19.x.x](/web/upgrade-bundle/angular-cli.md)
-    - [C8Y Command Line Tool (CLI)](/web/upgrade-bundle/c8y-cli.md)
-    - [Updating the Web SDK version](/web/upgrade-bundle/updating-web-sdk-version.md)
-    - [Upgrading to Angular 11](/web/upgrade-bundle/upgrading-to-angular-11.md)
-    - [Upgrading from Angular 11 to Angular 12](/web/upgrade-bundle/upgrading-to-angular-12.md)
-    - [Upgrading from Angular 12 to Angular 14](/web/upgrade-bundle/upgrading-to-angular-14.md)
-    - [Upgrading from Angular 14 to Angular 15](/web/upgrade-bundle/upgrading-to-angular-15.md)
-    - [Upgrading from Angular 15 to Angular 16 and NG CLI](/web/upgrade-bundle/upgrading-to-angular-16.md)
-    - [Upgrading from Angular 16 to Angular 17](/web/upgrade-bundle/upgrading-to-angular-17.md)
-    - [Upgrading from Angular 17 to Angular 18](/web/upgrade-bundle/upgrading-to-angular-18.md)
-    - [Upgrading from Angular 18 to Angular 19](/web/upgrade-bundle/upgrading-to-angular-19.md)
-
-  ## Welcome Developers
-  - [Developer topics](/welcome-developers/developer-topics.md)
+## Root
+- [Docs](http://localhost:1313/docs/)
+
+## About this documentation
+- [About Documentation](http://localhost:1313/docs/about_documentation/)
+- [Previous documentation versions](http://localhost:1313/docs/about_documentation/documentation-repository/)
+- [Scope](http://localhost:1313/docs/about_documentation/scope/)
+
+## Additional resources
+- [Additional Resources](http://localhost:1313/docs/additional-resources/)
+- [More documentation](http://localhost:1313/docs/additional-resources/more-documentation/)
+- [More resources](http://localhost:1313/docs/additional-resources/more-resources/)
+- [Product support](http://localhost:1313/docs/additional-resources/contacting-support/)
+
+## App Enablement Intro
+- [App Enablement Intro](http://localhost:1313/docs/app-enablement-intro/)
+- [Application enablement](http://localhost:1313/docs/app-enablement-intro/applications/)
+
+## Authentication
+- [Authentication](http://localhost:1313/docs/authentication/)
+- [Basic settings](http://localhost:1313/docs/authentication/basic-settings/)
+- [Single sign-on](http://localhost:1313/docs/authentication/sso/)
+- [Two-factor authentication](http://localhost:1313/docs/authentication/tfa/)
+
+## C8Y Iot Styleguide
+- [Cumulocity Codex](http://localhost:1313/docs/c8y-iot-styleguide/)
+
+## Changelogs
+- [Change logs](http://localhost:1313/docs/changelogs/)
+
+## Cloud Remote Access
+- [Cloud Remote Access](http://localhost:1313/docs/cloud-remote-access/)
+- [Cloud Remote Access API](http://localhost:1313/docs/cloud-remote-access/cra-api/)
+- [Introduction](http://localhost:1313/docs/cloud-remote-access/cra-introduction/)
+- [Setting up Cloud Remote Access (CRA)](http://localhost:1313/docs/cloud-remote-access/setting-up-cloud-remote-access/)
+
+## Cockpit
+- [Alarms](http://localhost:1313/docs/cockpit/alarms/)
+- [Cockpit](http://localhost:1313/docs/cockpit/)
+- [Configuring Cockpit applications](http://localhost:1313/docs/cockpit/cockpit-configuration/)
+- [Dashboard manager](http://localhost:1313/docs/cockpit/dashboard-manager/)
+- [Data explorer](http://localhost:1313/docs/cockpit/data-explorer/)
+- [Data point library](http://localhost:1313/docs/cockpit/data-point-library/)
+- [Exports](http://localhost:1313/docs/cockpit/exports/)
+- [Home dashboard](http://localhost:1313/docs/cockpit/home-dashboard/)
+- [Introduction](http://localhost:1313/docs/cockpit/cockpit-introduction/)
+- [Managing assets](http://localhost:1313/docs/cockpit/managing-assets/)
+- [Smart rules](http://localhost:1313/docs/cockpit/smart-rules/)
+- [Smart rules collection](http://localhost:1313/docs/cockpit/smart-rules-collection/)
+- [Using widgets in dashboards and reports](http://localhost:1313/docs/cockpit/using-widgets/)
+- [Widgets collection](http://localhost:1313/docs/cockpit/widgets-collection/)
+- [Working with dashboards](http://localhost:1313/docs/cockpit/working-with-dashboards/)
+- [Working with reports](http://localhost:1313/docs/cockpit/working-with-reports/)
+
+## Cumulocity Codex
+- [C8Y Styleguide](http://localhost:1313/docs/c8y-styleguide/)
+
+## Cumulocity DataHub
+- [Cumulocity DataHub overview](http://localhost:1313/docs/datahub/datahub-overview/)
+- [Datahub](http://localhost:1313/docs/datahub/)
+- [Getting started with Cumulocity DataHub](http://localhost:1313/docs/datahub/getting-started-with-datahub/)
+- [Integrating Cumulocity DataHub with other products](http://localhost:1313/docs/datahub/integrating-datahub-with-other-products/)
+- [Operating Cumulocity DataHub](http://localhost:1313/docs/datahub/operating-datahub/)
+- [Running Cumulocity DataHub on Cumulocity Edge](http://localhost:1313/docs/datahub/running-datahub-on-the-edge/)
+- [Setting up Cumulocity DataHub](http://localhost:1313/docs/datahub/setting-up-datahub/)
+- [Working with Cumulocity DataHub](http://localhost:1313/docs/datahub/working-with-datahub/)
+
+## Data broker
+- [Data Broker](http://localhost:1313/docs/data-broker/)
+- [Data broker application](http://localhost:1313/docs/data-broker/data-broker-application/)
+- [Microservice-based data broker](http://localhost:1313/docs/data-broker/ms-data-broker/)
+
+## Device certificate authentication
+- [Certificate Authority](http://localhost:1313/docs/device-certificate-authentication/certificate-authority/)
+- [Device Certificate Authentication](http://localhost:1313/docs/device-certificate-authentication/)
+- [Device certificates](http://localhost:1313/docs/device-certificate-authentication/device-certificates/)
+- [Managing trusted certificate CRL settings](http://localhost:1313/docs/device-certificate-authentication/managing-trusted-certificate-settings/)
+- [Managing trusted certificates](http://localhost:1313/docs/device-certificate-authentication/managing-trusted-certificates/)
+- [Simple device enrollment](http://localhost:1313/docs/device-certificate-authentication/device-enroll-and-re-enroll/)
+
+## Device integration
+- [Actility LoRa](http://localhost:1313/docs/device-integration/lora-actility/)
+- [Cloud Fieldbus](http://localhost:1313/docs/device-integration/cloud-fieldbus/)
+- [Core MQTT](http://localhost:1313/docs/device-integration/mqtt/)
+- [Device Integration](http://localhost:1313/docs/device-integration/)
+- [Fragment library](http://localhost:1313/docs/device-integration/fragment-library/)
+- [Interfacing devices](http://localhost:1313/docs/device-integration/interfacing-devices/)
+- [Introduction](http://localhost:1313/docs/device-integration/device-integration-introduction/)
+- [Loriot LoRa](http://localhost:1313/docs/device-integration/lora-loriot/)
+- [LPWAN Custom device protocols](http://localhost:1313/docs/device-integration/lpwan-custom-codec/)
+- [LWM2M](http://localhost:1313/docs/device-integration/lwm2m/)
+- [MQTT Service](http://localhost:1313/docs/device-integration/mqtt-service/)
+- [OPC UA](http://localhost:1313/docs/device-integration/opcua/)
+- [REST](http://localhost:1313/docs/device-integration/device-integration-rest/)
+- [Sigfox](http://localhost:1313/docs/device-integration/sigfox/)
+- [Thin-edge.io](http://localhost:1313/docs/device-integration/device-integration-thin-edge/)
+
+## Device Management application
+- [Connectivity](http://localhost:1313/docs/device-management-application/connectivity/)
+- [Device Management Application](http://localhost:1313/docs/device-management-application/)
+- [Grouping devices](http://localhost:1313/docs/device-management-application/grouping-devices/)
+- [Home dashboard](http://localhost:1313/docs/device-management-application/home-dashboard/)
+- [Introduction](http://localhost:1313/docs/device-management-application/device-management-introduction/)
+- [Managing device data](http://localhost:1313/docs/device-management-application/managing-device-data/)
+- [Managing device services](http://localhost:1313/docs/device-management-application/managing-device-services/)
+- [Managing device types](http://localhost:1313/docs/device-management-application/managing-device-types/)
+- [Monitoring and controlling devices](http://localhost:1313/docs/device-management-application/monitoring-and-controlling-devices/)
+- [Registering devices](http://localhost:1313/docs/device-management-application/registering-devices/)
+- [SmartREST templates](http://localhost:1313/docs/device-management-application/smartrest-templates/)
+- [Viewing all devices](http://localhost:1313/docs/device-management-application/viewing-all-devices/)
+- [Viewing device details](http://localhost:1313/docs/device-management-application/viewing-device-details/)
+- [Working with simulators](http://localhost:1313/docs/device-management-application/working-with-simulators/)
+
+## Digital Twin Manager
+- [Asset hierarchy](http://localhost:1313/docs/dtm/asset-hierarchy/)
+- [Asset models](http://localhost:1313/docs/dtm/asset-types/)
+- [Dtm](http://localhost:1313/docs/dtm/)
+- [Introduction](http://localhost:1313/docs/dtm/dtm-introduction/)
+
+## Enterprise tenant
+- [Customizing your platform](http://localhost:1313/docs/enterprise-tenant/customization/)
+- [Enterprise Tenant](http://localhost:1313/docs/enterprise-tenant/)
+- [Introduction](http://localhost:1313/docs/enterprise-tenant/enterprise-tenant-introduction/)
+- [Managing tenants](http://localhost:1313/docs/enterprise-tenant/managing-tenants/)
+- [Managing user hierarchies](http://localhost:1313/docs/enterprise-tenant/managing-user-hierarchies/)
+- [Support user access](http://localhost:1313/docs/enterprise-tenant/support-user-access/)
+- [Usage statistics and billing](http://localhost:1313/docs/enterprise-tenant/usage-and-billing/)
+
+## Gainsight Px
+- [Gainsight](http://localhost:1313/docs/gainsight-px/)
+
+## Get familiar with the UI
+- [Accessing and logging into the platform](http://localhost:1313/docs/get-familiar-with-the-ui/platform-access/)
+- [Available applications](http://localhost:1313/docs/get-familiar-with-the-ui/available-applications/)
+- [Get Familiar With The Ui](http://localhost:1313/docs/get-familiar-with-the-ui/)
+- [Introduction](http://localhost:1313/docs/get-familiar-with-the-ui/ui-introduction/)
+- [Knowledge Hub](http://localhost:1313/docs/get-familiar-with-the-ui/knowledge-hub/)
+- [UI functionalities and features](http://localhost:1313/docs/get-familiar-with-the-ui/gui-features/)
+- [User options and settings](http://localhost:1313/docs/get-familiar-with-the-ui/user-settings/)
+
+## Glossary
+- [A](http://localhost:1313/docs/glossary/a/)
+- [B](http://localhost:1313/docs/glossary/b/)
+- [C](http://localhost:1313/docs/glossary/c/)
+- [D](http://localhost:1313/docs/glossary/d/)
+- [E](http://localhost:1313/docs/glossary/e/)
+- [G](http://localhost:1313/docs/glossary/g/)
+- [Glossary](http://localhost:1313/docs/glossary/)
+- [I](http://localhost:1313/docs/glossary/i/)
+- [L](http://localhost:1313/docs/glossary/l/)
+- [M](http://localhost:1313/docs/glossary/m/)
+- [N](http://localhost:1313/docs/glossary/n/)
+- [O](http://localhost:1313/docs/glossary/o/)
+- [P](http://localhost:1313/docs/glossary/p/)
+- [R](http://localhost:1313/docs/glossary/r/)
+- [S](http://localhost:1313/docs/glossary/s/)
+- [T](http://localhost:1313/docs/glossary/t/)
+- [W](http://localhost:1313/docs/glossary/w/)
+- [Y](http://localhost:1313/docs/glossary/y/)
+
+## Introduction
+- [App Intro](http://localhost:1313/docs/app-intro/)
+- [Application enablement](http://localhost:1313/docs/app-intro/applications/)
+- [System integration](http://localhost:1313/docs/app-intro/system-integration/)
+
+## Legal notices
+- [Acceptable Use Policy](http://localhost:1313/docs/legal-notices/acceptable-use-policy/)
+- [Cloud Trial Service Agreement](http://localhost:1313/docs/legal-notices/cloud-trial-service-agreement/)
+- [Copyright](http://localhost:1313/docs/legal-notices/copyright/)
+- [Export Control Compliance](http://localhost:1313/docs/legal-notices/export-control-compliance/)
+- [Imprint](http://localhost:1313/docs/legal-notices/imprint/)
+- [Legal Notices](http://localhost:1313/docs/legal-notices/)
+- [License Terms and Conditions](http://localhost:1313/docs/legal-notices/license-terms-and-conditions/)
+- [Limited Use License for Docker](http://localhost:1313/docs/legal-notices/limited-use-license-for-docker/)
+- [Privacy Notice](http://localhost:1313/docs/legal-notices/privacy-notice/)
+- [Responsible Disclosure Policy](http://localhost:1313/docs/legal-notices/responsible-disclosure-policy/)
+- [Third Party Information](http://localhost:1313/docs/legal-notices/third-party-information/)
+- [US State Privacy Notice](http://localhost:1313/docs/legal-notices/us-state-privacy-notice/)
+
+## Machine Learning
+- [Create and bring your own AI/ML model (BYOM)](http://localhost:1313/docs/machine-learning/model-creation/)
+- [Deploy and orchestrate your AI/ML models across devices (EdgeAI with MLOps)](http://localhost:1313/docs/machine-learning/deployment/)
+- [Introduction](http://localhost:1313/docs/machine-learning/ml-introduction/)
+- [Machine Learning](http://localhost:1313/docs/machine-learning/)
+- [Operationalizing your AI/ML models in the cloud](http://localhost:1313/docs/machine-learning/operationalization/)
+- [Prepare your device data (IoT DataOps)](http://localhost:1313/docs/machine-learning/data-preparation/)
+
+## Microservice SDK
+- [Best practices](http://localhost:1313/docs/microservice-sdk/microservices-best-practices/)
+- [Examples](http://localhost:1313/docs/microservice-sdk/http/)
+- [General aspects](http://localhost:1313/docs/microservice-sdk/general-aspects/)
+- [Introduction](http://localhost:1313/docs/microservice-sdk/microservice-sdk-introduction/)
+- [Microservice Sdk](http://localhost:1313/docs/microservice-sdk/)
+- [Microservice SDK for Java](http://localhost:1313/docs/microservice-sdk/java/)
+- [Using the REST interface](http://localhost:1313/docs/microservice-sdk/rest/)
+
+## Quick start tutorial
+- [First steps with Cumulocity](http://localhost:1313/docs/quick-start/first-steps/)
+- [Quick Start](http://localhost:1313/docs/quick-start/)
+
+## Rest Api
+- [Rest Api](http://localhost:1313/docs/rest_api/)
+- [Rest API](http://localhost:1313/docs/rest_api/rest_api/)
+
+## Sector
+- [App Enablement](http://localhost:1313/docs/sector/app_enablement/)
+- [Data Analytics](http://localhost:1313/docs/sector/data_analytics/)
+- [Device Management](http://localhost:1313/docs/sector/device_management/)
+- [Edge Server](http://localhost:1313/docs/sector/edge_server/)
+- [Getting Started](http://localhost:1313/docs/sector/getting_started/)
+- [Platform Administration](http://localhost:1313/docs/sector/platform_administration/)
+- [Rest Api](http://localhost:1313/docs/sector/rest_api/)
+- [Sector](http://localhost:1313/docs/sector/)
+- [Terms Conditions](http://localhost:1313/docs/sector/terms_conditions/)
+
+## Sensor App
+- [Adjusting sensor properties](http://localhost:1313/docs/sensor-app/adjusting-sensor-properties/)
+- [Configuring, disabling or removing devices](http://localhost:1313/docs/sensor-app/configuration/)
+- [Connecting new Bluetooth devices to the Sensor App](http://localhost:1313/docs/sensor-app/connecting-bluetooth-devices/)
+- [Connecting new OBD devices to the Sensor App](http://localhost:1313/docs/sensor-app/connecting-obd-devices/)
+- [Controlling devices](http://localhost:1313/docs/sensor-app/controlling-devices/)
+- [Installing the Sensor App](http://localhost:1313/docs/sensor-app/installing-the-sensor-app/)
+- [Introduction](http://localhost:1313/docs/sensor-app/sensorapp-introduction/)
+- [Registering the Sensor App in the platform](http://localhost:1313/docs/sensor-app/registering-the-sensor-app/)
+- [Sending sensor data to the platform](http://localhost:1313/docs/sensor-app/sending-sensor-data/)
+- [Sensor App](http://localhost:1313/docs/sensor-app/)
+- [Simulating peaks and sending alarms and events](http://localhost:1313/docs/sensor-app/peaks-alarms-events/)
+- [Viewing sensor data](http://localhost:1313/docs/sensor-app/viewing-sensor-data/)
+
+## SmartREST
+- [Handling of IDs](http://localhost:1313/docs/smartrest/handling-of-ids/)
+- [Introduction](http://localhost:1313/docs/smartrest/smartrest-introduction/)
+- [JSON via MQTT](http://localhost:1313/docs/smartrest/json-via-mqtt/)
+- [MQTT quick reference](http://localhost:1313/docs/smartrest/quick-reference/)
+- [MQTT Static templates](http://localhost:1313/docs/smartrest/mqtt-static-templates/)
+- [Smartrest](http://localhost:1313/docs/smartrest/)
+- [SmartREST 1.0](http://localhost:1313/docs/smartrest/smartrest-one/)
+- [SmartREST 2.0](http://localhost:1313/docs/smartrest/smartrest-two/)
+
+## Standard tenant administration
+- [Alarm mapping](http://localhost:1313/docs/standard-tenant/alarm-mapping/)
+- [Changing settings](http://localhost:1313/docs/standard-tenant/changing-settings/)
+- [Enhanced time series support](http://localhost:1313/docs/standard-tenant/enhanced-time-series-support/)
+- [Home screen](http://localhost:1313/docs/standard-tenant/home-screen/)
+- [Introduction](http://localhost:1313/docs/standard-tenant/standard-tenant-introduction/)
+- [Managing data](http://localhost:1313/docs/standard-tenant/managing-data/)
+- [Managing permissions](http://localhost:1313/docs/standard-tenant/managing-permissions/)
+- [Managing the ecosystem](http://localhost:1313/docs/standard-tenant/ecosystem/)
+- [Managing users](http://localhost:1313/docs/standard-tenant/managing-users/)
+- [Monitoring](http://localhost:1313/docs/standard-tenant/monitoring/)
+- [Standard Tenant](http://localhost:1313/docs/standard-tenant/)
+
+## Streaming Analytics
+- [Analytics Builder](http://localhost:1313/docs/streaming-analytics/analytics-builder/)
+- [Analytics Builder block reference](http://localhost:1313/docs/streaming-analytics/block-reference/)
+- [Analytics rules plugin](http://localhost:1313/docs/streaming-analytics/analytics-rules-plugin/)
+- [Customization and permissions](http://localhost:1313/docs/streaming-analytics/analytics-customization/)
+- [EPL apps](http://localhost:1313/docs/streaming-analytics/epl-apps/)
+- [Introduction](http://localhost:1313/docs/streaming-analytics/introduction-analytics/)
+- [Streaming Analytics](http://localhost:1313/docs/streaming-analytics/)
+- [Troubleshooting and diagnostics](http://localhost:1313/docs/streaming-analytics/troubleshooting/)
+
+## Supported devices
+- [Certified Devices](http://localhost:1313/docs/certified-devices/)
+- [Certified devices](http://localhost:1313/docs/certified-devices/certified-devices/)
+
+## Technical concepts
+- [Concepts](http://localhost:1313/docs/concepts/)
+- [Cumulocity's domain model](http://localhost:1313/docs/concepts/domain-model/)
+- [Introduction to the Cumulocity platform](http://localhost:1313/docs/concepts/concepts-introduction/)
+- [Security aspects](http://localhost:1313/docs/concepts/security/)
+- [Tenant hierarchy](http://localhost:1313/docs/concepts/tenant-hierarchy/)
+
+## Terms and Conditions
+- [Accessibility](http://localhost:1313/docs/service-terms/accessibility/)
+- [Compatibility policy](http://localhost:1313/docs/service-terms/compatibility-policy/)
+- [License metrics](http://localhost:1313/docs/service-terms/license-metrics/)
+- [Previewing features](http://localhost:1313/docs/service-terms/previews/)
+- [Release policy](http://localhost:1313/docs/service-terms/releases/)
+- [Service quotas](http://localhost:1313/docs/service-terms/quotas/)
+- [Service Terms](http://localhost:1313/docs/service-terms/)
+- [Service-level agreements](http://localhost:1313/docs/service-terms/service-level/)
+
+## thin-edge.io
+- [Thin Edge](http://localhost:1313/docs/thin-edge/)
+- [Thin Edge](http://localhost:1313/docs/thin-edge/thin-edge/)
+
+## Web SDK
+- [Application configuration](http://localhost:1313/docs/web/application-configuration/)
+- [Getting started](http://localhost:1313/docs/web/gettingstarted/)
+- [Introduction](http://localhost:1313/docs/web/introduction/)
+- [Upgrade](http://localhost:1313/docs/web/upgrade/)
+- [Web](http://localhost:1313/docs/web/)
+
+## Welcome developers
+- [Developer topics](http://localhost:1313/docs/welcome-developers/developer-topics/)
+- [Welcome Developers](http://localhost:1313/docs/welcome-developers/)
