@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Add confirmation message for group deletion in Cockpit [CTM-2311]"
+title: "Add confirmation message for group deletion in Cockpit"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
