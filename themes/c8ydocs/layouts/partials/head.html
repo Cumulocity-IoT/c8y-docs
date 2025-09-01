@@ -68,13 +68,5 @@
     -->
     <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=wmzmiqkyn8isokbvj4xd6g" async="true"></script>
 
-    <style type="text/css" id="debug">
-      body{background: red;}
-      :root{
-      --kind: {{ .Kind }};
-      }
-    </style>
-    <!-- DEBUG: In head.html, about to call partial -->
-
     {{ partial "json-ld.html" . }}
   </head>
