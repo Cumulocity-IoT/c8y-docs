@@ -3,6 +3,7 @@ title: Edge
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
 external: "https://cumulocity.com/docs/2025/edge-kubernetes/"
+external_target: "_blank"
 bundlefolder: edge-kubernetes
 audience:
   - Users
