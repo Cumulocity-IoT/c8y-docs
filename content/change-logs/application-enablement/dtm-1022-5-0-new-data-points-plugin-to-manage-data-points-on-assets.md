@@ -15,7 +15,3 @@ ticket: "CTM-2279"
 version: "1022.5.0"
 ---
 The Data Points plugin allows users to view, link and manage data points on assets.
-
-
-
-Co-authored-by: Lavanya Ramesh <lavanya.ramesh@cumulocity.com>
