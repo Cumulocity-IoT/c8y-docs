@@ -37,7 +37,8 @@ Edit this file, referring to [Edge custom resource](/edge-kubernetes/edge-custom
 ```
 messagingService:
   enabled: true
-``` indented under the custom resource's `spec`.
+```
+indented under the custom resource's `spec`.
 
 Apply the changed custom resource with
 ```bash
