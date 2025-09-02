@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64132
 version: 1022.26.0
 ---
-Enhanced single sign-on experience by adding support for automatic identity provider selection. The login page now accepts an identity provider hint parameter that can automatically redirect users to their designated authentication provider, reducing manual selection steps during login.
+To streamline the single sign-on experience, the OAuth2 login flow now supports an identity provider hint parameter. When users access the login page with this parameter, they are automatically redirected to their designated authentication provider based on the hint. This eliminates the need for manual identity provider selection during login, simplifying the authentication process for users. Existing user logins are unaffected, and the identity provider selection page remains available when no hint is provided.
