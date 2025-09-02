@@ -12,4 +12,4 @@ build_artifact:
     label: datahub
 version: 12.0.641
 ---
-{{< product-c8y-iot >}} DataHub now leverages version 25.2 of Dremio as its internal query engine. The new Dremio version features in particular an improved memory management with advanced spilling as well as performance gains. Various other enhancements relate to enriched SQL functionality, additional Iceberg support, and workflow improvements in the user interface.
+{{< product-c8y-iot >}} DataHub now leverages version 25.2 of Dremio as its internal query engine. The new Dremio version features in particular improvements to memory management with advanced spilling as well as performance gains. Various other enhancements relate to enriched SQL functionality, workflow improvements in the user interface, and security fixes. 
