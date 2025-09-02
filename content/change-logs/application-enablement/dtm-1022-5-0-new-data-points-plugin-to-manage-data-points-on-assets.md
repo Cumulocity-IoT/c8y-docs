@@ -14,4 +14,6 @@ build_artifact:
 ticket: "CTM-2279"
 version: "1022.5.0"
 ---
-The Data Points plugin allows users to view, link and manage data points on assets.
+A new plugin, Data Points is added to dtm-plugins extension. This allows users to view, link and manage data points on assets.
+
+Please note that the plugin uses DTM apis that are currently in private preview. To enable them, contact the Product team via [product support](https://cumulocity.com/docs/additional-resources/contacting-support/) to have the required feature flags activated.
