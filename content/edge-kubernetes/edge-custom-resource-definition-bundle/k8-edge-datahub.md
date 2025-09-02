@@ -4,7 +4,7 @@ title: DataHub
 layout: redirect
 ---
 
-Specifying this field installs and configures {{< product-c8y-iot >}} DataHub. Installing DataHub requires additional system resources, including at least 10 extra CPU cores and 10 GB of RAM on the Kubernetes node. Additionally, DataHub will make use of five Persistent Volumes (PVs) for the DataHub MySQL, Dremio master, executor, executor-cloud, and Zookeeper pods. See [Configuring storage](/edge-kubernetes/installing-edge-on-k8/#configuring-storage) for more details about Persistent Volumes.
+Specifying this field installs and configures {{< product-c8y-iot >}} DataHub. Installing DataHub requires additional system resources, including at least 10 extra CPU cores and 10 GB of RAM on the Kubernetes node. Additionally, DataHub will make use of five Persistent Volumes (PVs) for the DataHub MySQL, Dremio master, executor, executor-cloud, and Zookeeper pods.
 
 This field is optional, and if omitted, DataHub will not be installed.
 

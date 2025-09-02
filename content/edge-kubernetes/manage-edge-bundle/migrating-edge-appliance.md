@@ -203,7 +203,6 @@ Follow the steps documented at [Installing Edge](/../2025/edge-kubernetes/instal
 
 {{< c8y-admon-important >}}
 Ensure that there is sufficient disk space available on the machine in which you intend to install Edge 2025.
-For more details, see [Configuring storage](/../2025/edge-kubernetes/installing-edge-on-k8/#configuring-storage).
 {{< /c8y-admon-important >}}
 
 After installing Edge 2025, configure the Edge domain and license to match those of the Edge Appliance VM you are migrating. For details, refer to [Modifying Edge](/../2025/edge-kubernetes/manage-edge/#modify-edge)
