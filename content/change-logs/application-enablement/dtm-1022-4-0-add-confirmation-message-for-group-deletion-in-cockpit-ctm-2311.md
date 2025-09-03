@@ -3,8 +3,8 @@ date: ""
 title: "Add confirmation message for group deletion in Cockpit"
 product_area: "Application enablement & solutions"
 change_type:
-    - value: "change-2c7RdTdXo4"
-      label: "Improvement"
+    - value: "change-VSkj2iV9m"
+      label: "Fix"
 component:
     - value: "component-Tl88RYb4A"
       label: "Digital Twin Manager"
