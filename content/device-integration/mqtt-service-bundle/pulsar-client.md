@@ -291,24 +291,83 @@ The example continues to assume that message payloads are simple text strings, a
         System.out.println("Sent message to all devices");
 ```
 
+### Messaging Service quotas and limits {#messaging-service-quotas-limits}
+
+Messages published to a Pulsar topic are stored persistently by the Messaging Service until they have been delivered to, and acknowledged by, all interested consumers.
+For messages published to the `from-device` topic by the MQTT Service, the consumers are any clients that have created durable subscriptions on the topic.
+For messages published to the `to-device` topic by clients, the consumers are the instances of the MQTT Service that will deliver the messages to devices.
+
+To optimize resource usage, the Messaging Service imposes storage limits and a message time-to-live (TTL) on persistently stored messages.
+
+See the [service quotas](/service-terms/quotas/#mqtt-service) documentation for details on the default limits.
+These limits are configurable on a per-tenant basis.
+If your use case requires a different configuration, or if you have any questions or concerns, please contact [product support](https://cumulocity.com/docs/additional-resources/contacting-support/).
+
+#### Message backlog quota
+
+Persistent messages are stored in a _backlog_ until they are delivered to any interested consumers.
+The maximum size of the backlog is set by the _backlog quota limit_, which directly affects the number of messages that can be stored and therefore the resource consumption of the platform.
+
+A separate backlog exists for each Pulsar topic, so for the MQTT Service the `from-device` and `to-device` topics for a tenant will each have their own independent backlog.
+The backlog is shared by all subscriptions on a topic.
+If the backlog quota limit is reached, no new messages can be added to the backlog until some older messages have been delivered, or deleted due to their TTL expiring.
+
+If the backlog quota limit for the Pulsar `from-device` topic is reached, new MQTT `PUBLISH` packets from connected devices will be rejected.
+If the `PUBLISH` packet was sent with QoS level 0, the message will be lost.
+If the `PUBLISH` packet was sent with QoS level 1, the behaviour depends on the MQTT protocol version used by the device:
+* For devices using MQTT version 3, the device will be disconnected.
+* For devices using MQTT version 5, the device will receive a `PUBACK` packet with reason code `0x97`, _Quota exceeded_.
+
+If the backlog quota limit for the Pulsar `to-device` topic is reached, clients calling the `Producer.send()` method, or its equivalent in the Pulsar library used by the client, will receive an appropriate exception or error response from the client library.
+
+#### Message time-to-live
+
+Any undelivered messages will be automatically deleted if they have been on the backlog for longer than the _time to live (TTL) limit_.
+This policy helps to limit overall resource usage and reduces the need to process outdated data after a prolonged disconnection of a consumer.
+
+No message will ever be deleted from the backlog unless it reaches its TTL limit.
+Messages will always be delivered to the consumer in the order they were published to the topic.
+
 ### Best practices to ensure reliable message delivery {#reliable-delivery-best-practices}
 
-* Topics have a "backlog quota" that affects the number of unacknowledged messages that can be outstanding
-* If the backlog quota is reached, it will not be possible to publish any more messages onto the topic, and the publisher will receive an error
-* Therefore, to ensure timely and uninterrupted message delivery, it is important to process and acknowledge each messages as quickly as possible
-* On the other hand, don't acknowledge too soon as acknowledged messages will not be re-delivered even after a failure and restart of the client
-<p>
+If the backlog quota limit for a Pulsar topic is reached, it will not be possible to publish more messages onto the topic, and messages may be lost.
+Therefore, it is important that your client processes and acknowledges messages received from the `from-device` topic as quickly as possible.
+Every message **must** be explicitly acknowledged, even if the client is not "interested" in it.
+However, messages should not be acknowledged until the client has completed processing the messages, or stored it securely for later processing.
+Acknowledged messages will not be re-delivered after a failure or restart of the client, so messages that are acknowledged too soon may be lost.
 
-* Subscribing a consumer creates a persistent subscription on the topic
-* The subscription will retain messages even when the consumer is disconnected, so that messages will not be lost because of e.g. microservice restarts
-* This means you can reach the backlog quota on the topic even while your client is not running
-* If you want to stop retaining messages, the subscription must be explicitly deleted - and it may be necessary to do this manually
-* Use the same subscription name every time the microservice runs; do not use random names and create a new subscription every time
-* The M&M capability may be useful to see what subscriptions your tenant has on the MQTT Service topics, and to clear full backlogs if required
-<p>
+Subscribing a consumer to a Pulsar topic establishes a _durable subscription_ to the topic.
+The Messaging Service will retain messages published to the topic until they have been acknowledged by all interested consumers, in order to provide "at least once" delivery guarantees.
+The durable subscription will remain until it is explicitly deleted; that is, _it will not be removed simply because the client has disconnected from Pulsar._
+Messages that are published while the client is disconnected will be available for it to consume when it reconnects.
+This means that it is possible for a Pulsar topic to reach its backlog quota limit and stop accepting new messages even when no clients are running.
+Therefore, as well as explicitly acknowledging every message, clients must also manage the lifecycle of any subscriptions they create:
+1. Use the same subscription name every time the client connects a consumer.
+   A common _anti-pattern_ is to generate a random subscription name each time the client runs.
+   This will create a new subscription each time, but leave any previous subscriptions active with no consumers.
+   Eventually, the backlog quota limit for the topic will be reached, and no further messages will be deliver to the client.
+1. Explicitly delete subscriptions when they are no longer required.
+   Depending on your use case, this may require specific manual intervention.
+   For example, if a client is being taken out of service for an extended period you may need to manually delete its subscription.
+   Typically a subscription is deleted by calling the `unsubscribe()` method on the consumer, although the exact mechanism may vary for different Pulsar client libraries.
+   The Messaging Service [monitoring and management](/standard-tenant/monitoring/#messaging-service) user interface can also be used to delete a subscription.
 
-* Code snippet showing how to shut down cleanly
+#### Example code
 
-### Examples
+The code snippet below shows how to delete the subscriber and close the other Pulsar client objects created by the earlier code examples.
 
-* Bring all those code snippets together into a complete (but very simple) example that we can publish in `cumulocity-examples`?
+```java
+        // Delete the durable subscription.
+        // This is only necessary if messages should *not* be retained
+        // on the topic while the client is disconnected.
+        consumer.unsubscribe();
+
+        // Close all the Pulsar objects that we created.
+        consumer.close();
+        producer.close();
+        client.close();
+```
+
+### Sample clients
+
+* Bring all those code snippets together into a complete (but very simple) example that we can publish in `cumulocity-examples`
