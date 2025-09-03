@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4285
 version: 2025.295.0
 ---
-A new SmartREST template has been added. Using the template ID 531, it is now possible to set the device profile with software type. Whenever the operation has a device profile with type in one of the softwares, this template is triggered. 
+A new static SmartREST 2 response template for device profile operations with software type has been added. This template extends the existing functionality by including the software type as the third value in the software 5-set. The template triggers independently when at least one software element in the software list contains a type, regardless of ASM support or subscription. The existing 527 template will continue to trigger alongside the new template where applicable.
