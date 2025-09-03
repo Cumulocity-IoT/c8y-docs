@@ -139,17 +139,22 @@ Received messages will not include any properties other than those listed here.
 Messages published to MQTT devices **must** include all of the required properties, and may include any of the optional properties.
 If a published message includes any properties other than those listed here, those properties will be ignored by the MQTT Service.
 
-| Property name                   | Required | Value type and encoding                                               | Purpose                                |
-|---------------------------------|----------|-----------------------------------------------------------------------|----------------------------------------|
-| `client`                        | YES      | String                                                                | MQTT client identifier                 |
-| `channel`                       | YES      | String                                                                | MQTT topic name                        |
-| `tx.payload-format-indicator`   | NO       | Single byte with two permitted values, encoded as strings "0" and "1" | MQTT v5 Payload Format Indicator       |
-| `tx.content-type`               | NO       | String                                                                | MQTT v5 Content Type                   |
-| `tx.response-topic`             | NO       | String                                                                | MQTT v5 Response Topic                 |
-| `tx.correlation-data`           | NO       | Sequence of bytes, encoded as a Base64 string                         | MQTT v5 Correlator Data                |
-| `tx.user-properties.<name>`     | NO       | String                                                                | MQTT v5 User Property with name `name` |
+| Property name               | Required | Value type and encoding                                               | Purpose                                |
+|-----------------------------|----------|-----------------------------------------------------------------------|----------------------------------------|
+| `clientID`                  | YES      | String                                                                | MQTT client identifier                 |
+| `topic`                     | YES      | String                                                                | MQTT topic name                        |
+| `tx.payloadFormatIndicator` | NO       | Single byte with two permitted values, encoded as strings "0" and "1" | MQTT v5 Payload Format Indicator       |
+| `tx.contentType`            | NO       | String                                                                | MQTT v5 Content Type                   |
+| `tx.responseTopic`          | NO       | String                                                                | MQTT v5 Response Topic                 |
+| `tx.correlationData`        | NO       | Sequence of bytes, encoded as a Base64 string                         | MQTT v5 Correlator Data                |
+| `tx.userProperties.<name>`  | NO       | String                                                                | MQTT v5 User Property with name `name` |
 
-The following sections will demonstrate how to parse and construct messages.
+The `tx.` prefix indicates that a property is specific to a _transport_, in this case the MQTT Service.
+
+The MQTT version 5 specification allows a message to include more than one user property with the same name.
+This feature is **not** supported by the MQTT Service.
+If a device publishes a message containing multiple user properties with the same name, only one of these will be copied into the Pulsar message.
+It is undefined which property will be copied.
 
 ### Consuming messages from MQTT devices {#consuming-messages-from-mqtt-devices}
 
@@ -166,7 +171,7 @@ The topic URL can be broken down into 4 components:
 Your client will only be able to consume from this topic if the authenticated user has the "read" permission on the "Mqtt service messaging topics" role.
 The client will not be able to consume from any other topic.
 
-The client identifier of the device that published the messages, and the MQTT topic it was published on, can be obtained from the message properties `client` and `channel` as described above.
+The client identifier of the device that published the messages, and the MQTT topic it was published on, can be obtained from the message properties `clientID` and `topic` as described above.
 This means that your client **must** consume every message published by every device connected to the MQTT Service for the tenant, event those you are not interested in.
 Messages that are not of interest to the client can simply be acknowledged without further processing.
 
@@ -233,15 +238,15 @@ Messages published to the `to-device` topic are routed to connected MQTT devices
 
 | Property name | Purpose                                                              |
 |---------------|----------------------------------------------------------------------|
-| `client`      | Client identifier of the MQTT device that should receive the message |
-| `channel`     | Name of the MQTT topic that the message should be published to       |
+| `clientID`    | Client identifier of the MQTT device that should receive the message |
+| `topic`       | Name of the MQTT topic that the message should be published to       |
 
-If the `channel` property is empty or missing, the message will not be pulished to any MQTT client.
+If the `topic` property is empty or missing, the message will not be pulished to any MQTT client.
 The message will only be published to a client with an active subscription to the named MQTT topic.
 The message will only be published to a client that is connected at the time the MQTT Service processes the published message.
 
-In order to enforce device-level isolation, the message will be published **only** to the specific MQTT client identified by the `client` message property, provided that client has an active subscription to the relevant MQTT topic.
-If the `client` property is empty or missing, the message will be sent to **all** connected MQTT clients with active subscriptions to the MQTT topic.
+In order to enforce device-level isolation, the message will be published **only** to the specific MQTT client identified by the `clientID` message property, provided that client has an active subscription to the relevant MQTT topic.
+If the `clientID` property is empty or missing, the message will be sent to **all** connected MQTT clients with active subscriptions to the MQTT topic.
 Because this "broadcast" publishing is potentially expensive when there are many MQTT clients connected, it should be used sparingly and only when there is a genuine application requirement to publish the same message to every device subscribed to a given topic.
 
 #### Message  keys
@@ -249,8 +254,8 @@ Because this "broadcast" publishing is potentially expensive when there are many
 To facilitate efficient delivery and correct ordering of messages sent to MQTT devices, clients **must** also set the _key_ of a Pulsar message published to the `to-device` topic.
 The key should be set as follows:
 
-* When the `client` message property is set, the key should have the same value as this property.
-* When the `client` message property is **not** set, the key should have the same value as the `channel` message property.
+* When the `clientID` message property is set, the key should have the same value as this property.
+* When the `clientID` message property is **not** set, the key should have the same value as the `topic` message property.
 
 {{< c8y-admon-caution >}}
 Your client may appear to work correctly even if these rules are not followed and the message key is set incorrectly.
