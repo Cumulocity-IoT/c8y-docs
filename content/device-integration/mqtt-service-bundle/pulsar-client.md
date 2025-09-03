@@ -246,10 +246,10 @@ The message will only be published to a client with an active subscription to th
 The message will only be published to a client that is connected at the time the MQTT Service processes the published message.
 
 In order to enforce device-level isolation, the message will be published **only** to the specific MQTT client identified by the `clientID` message property, provided that client has an active subscription to the relevant MQTT topic.
-If the `clientID` property is empty or missing, the message will be sent to **all** connected MQTT clients with active subscriptions to the MQTT topic.
+If the `clientID` property is empty, the message will be sent to **all** connected MQTT clients with active subscriptions to the MQTT topic.
 Because this "broadcast" publishing is potentially expensive when there are many MQTT clients connected, it should be used sparingly and only when there is a genuine application requirement to publish the same message to every device subscribed to a given topic.
 
-#### Message  keys
+#### Message keys
 
 To facilitate efficient delivery and correct ordering of messages sent to MQTT devices, clients **must** also set the _key_ of a Pulsar message published to the `to-device` topic.
 The key should be set as follows:
