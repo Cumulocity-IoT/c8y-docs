@@ -55,9 +55,6 @@
 - [Working with dashboards](http://localhost:1313/docs/cockpit/working-with-dashboards/)
 - [Working with reports](http://localhost:1313/docs/cockpit/working-with-reports/)
 
-## Cumulocity Codex
-- [C8Y Styleguide](http://localhost:1313/docs/c8y-styleguide/)
-
 ## Cumulocity DataHub
 - [Cumulocity DataHub overview](http://localhost:1313/docs/datahub/datahub-overview/)
 - [Datahub](http://localhost:1313/docs/datahub/)
