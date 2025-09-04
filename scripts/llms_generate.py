@@ -54,6 +54,9 @@ def is_card_page(path: str) -> bool:
     parts = [p for p in path.strip("/").split("/") if p]
     return bool(parts) and parts[-1].endswith("-card")
 
+def is_glossary(path_lower: str) -> bool:
+    return "/glossary/" in path_lower or path_lower.endswith("/glossary/")
+
 def load_urls_from_sitemap(sitemap_path):
     try:
         with open(sitemap_path, "r", encoding="utf-8") as f:
@@ -69,6 +72,8 @@ def load_urls_from_sitemap(sitemap_path):
             continue
         low = path.lower()
         if is_change_logs(low):
+            continue
+        if is_glossary(low):              # 👈 NEW: drop glossary URLs
             continue
         if is_card_page(path):
             continue

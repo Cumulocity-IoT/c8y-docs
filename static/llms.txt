@@ -141,26 +141,6 @@
 - [UI functionalities and features](http://localhost:1313/docs/get-familiar-with-the-ui/gui-features/)
 - [User options and settings](http://localhost:1313/docs/get-familiar-with-the-ui/user-settings/)
 
-## Glossary
-- [A](http://localhost:1313/docs/glossary/a/)
-- [B](http://localhost:1313/docs/glossary/b/)
-- [C](http://localhost:1313/docs/glossary/c/)
-- [D](http://localhost:1313/docs/glossary/d/)
-- [E](http://localhost:1313/docs/glossary/e/)
-- [G](http://localhost:1313/docs/glossary/g/)
-- [Glossary](http://localhost:1313/docs/glossary/)
-- [I](http://localhost:1313/docs/glossary/i/)
-- [L](http://localhost:1313/docs/glossary/l/)
-- [M](http://localhost:1313/docs/glossary/m/)
-- [N](http://localhost:1313/docs/glossary/n/)
-- [O](http://localhost:1313/docs/glossary/o/)
-- [P](http://localhost:1313/docs/glossary/p/)
-- [R](http://localhost:1313/docs/glossary/r/)
-- [S](http://localhost:1313/docs/glossary/s/)
-- [T](http://localhost:1313/docs/glossary/t/)
-- [W](http://localhost:1313/docs/glossary/w/)
-- [Y](http://localhost:1313/docs/glossary/y/)
-
 ## Introduction
 - [App Intro](http://localhost:1313/docs/app-intro/)
 - [Application enablement](http://localhost:1313/docs/app-intro/applications/)
