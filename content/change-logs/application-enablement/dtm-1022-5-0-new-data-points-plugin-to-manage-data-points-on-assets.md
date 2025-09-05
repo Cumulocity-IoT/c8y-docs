@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "04-09-2025"
 title: "New Data points plugin to manage data points on assets"
 product_area: "Application enablement & solutions"
 change_type:
