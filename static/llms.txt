@@ -1,26 +1,32 @@
-# LLMs Documentation Index
+# Cumulocity Documentation Index
 
+> Cumulocity IoT’s documentation is a comprehensive resource for developers and users working with the platform.  
+> It is structured to provide information for various levels of expertise, from beginners to advanced users.
 
-## Root
-- [Docs](http://localhost:1313/docs/)
+Key features of the documentation include:
+
+- User Guides: Step-by-step instructions on how to use the core features of the Cumulocity IoT platform, such as device management, data visualization, and alarm handling.  
+- Developer’s Guides: Detailed information on APIs, SDKs, and supported programming languages for building applications and integrations.  
+- API Reference: In-depth details on all available REST APIs, including endpoints, parameters, and example requests and responses.  
+- Tutorials and Examples: Practical tutorials and code examples to help users get started quickly with tasks like connecting a device or creating a custom widget.  
+- Release Notes: Updates on new features, improvements, and bug fixes, released regularly with each new version of Cumulocity IoT.
+
+The below links provide direct access to the available documentation sections:
+
 
 ## About this documentation
-- [About Documentation](http://localhost:1313/docs/about_documentation/)
 - [Previous documentation versions](http://localhost:1313/docs/about_documentation/documentation-repository/)
 - [Scope](http://localhost:1313/docs/about_documentation/scope/)
 
 ## Additional resources
-- [Additional Resources](http://localhost:1313/docs/additional-resources/)
 - [More documentation](http://localhost:1313/docs/additional-resources/more-documentation/)
 - [More resources](http://localhost:1313/docs/additional-resources/more-resources/)
 - [Product support](http://localhost:1313/docs/additional-resources/contacting-support/)
 
 ## App Enablement Intro
-- [App Enablement Intro](http://localhost:1313/docs/app-enablement-intro/)
 - [Application enablement](http://localhost:1313/docs/app-enablement-intro/applications/)
 
 ## Authentication
-- [Authentication](http://localhost:1313/docs/authentication/)
 - [Basic settings](http://localhost:1313/docs/authentication/basic-settings/)
 - [Single sign-on](http://localhost:1313/docs/authentication/sso/)
 - [Two-factor authentication](http://localhost:1313/docs/authentication/tfa/)
@@ -32,14 +38,12 @@
 - [Change logs](http://localhost:1313/docs/changelogs/)
 
 ## Cloud Remote Access
-- [Cloud Remote Access](http://localhost:1313/docs/cloud-remote-access/)
 - [Cloud Remote Access API](http://localhost:1313/docs/cloud-remote-access/cra-api/)
 - [Introduction](http://localhost:1313/docs/cloud-remote-access/cra-introduction/)
 - [Setting up Cloud Remote Access (CRA)](http://localhost:1313/docs/cloud-remote-access/setting-up-cloud-remote-access/)
 
 ## Cockpit
 - [Alarms](http://localhost:1313/docs/cockpit/alarms/)
-- [Cockpit](http://localhost:1313/docs/cockpit/)
 - [Configuring Cockpit applications](http://localhost:1313/docs/cockpit/cockpit-configuration/)
 - [Dashboard manager](http://localhost:1313/docs/cockpit/dashboard-manager/)
 - [Data explorer](http://localhost:1313/docs/cockpit/data-explorer/)
@@ -57,7 +61,6 @@
 
 ## Cumulocity DataHub
 - [Cumulocity DataHub overview](http://localhost:1313/docs/datahub/datahub-overview/)
-- [Datahub](http://localhost:1313/docs/datahub/)
 - [Getting started with Cumulocity DataHub](http://localhost:1313/docs/datahub/getting-started-with-datahub/)
 - [Integrating Cumulocity DataHub with other products](http://localhost:1313/docs/datahub/integrating-datahub-with-other-products/)
 - [Operating Cumulocity DataHub](http://localhost:1313/docs/datahub/operating-datahub/)
@@ -66,13 +69,11 @@
 - [Working with Cumulocity DataHub](http://localhost:1313/docs/datahub/working-with-datahub/)
 
 ## Data broker
-- [Data Broker](http://localhost:1313/docs/data-broker/)
 - [Data broker application](http://localhost:1313/docs/data-broker/data-broker-application/)
 - [Microservice-based data broker](http://localhost:1313/docs/data-broker/ms-data-broker/)
 
 ## Device certificate authentication
 - [Certificate Authority](http://localhost:1313/docs/device-certificate-authentication/certificate-authority/)
-- [Device Certificate Authentication](http://localhost:1313/docs/device-certificate-authentication/)
 - [Device certificates](http://localhost:1313/docs/device-certificate-authentication/device-certificates/)
 - [Managing trusted certificate CRL settings](http://localhost:1313/docs/device-certificate-authentication/managing-trusted-certificate-settings/)
 - [Managing trusted certificates](http://localhost:1313/docs/device-certificate-authentication/managing-trusted-certificates/)
@@ -82,7 +83,6 @@
 - [Actility LoRa](http://localhost:1313/docs/device-integration/lora-actility/)
 - [Cloud Fieldbus](http://localhost:1313/docs/device-integration/cloud-fieldbus/)
 - [Core MQTT](http://localhost:1313/docs/device-integration/mqtt/)
-- [Device Integration](http://localhost:1313/docs/device-integration/)
 - [Fragment library](http://localhost:1313/docs/device-integration/fragment-library/)
 - [Interfacing devices](http://localhost:1313/docs/device-integration/interfacing-devices/)
 - [Introduction](http://localhost:1313/docs/device-integration/device-integration-introduction/)
@@ -97,7 +97,6 @@
 
 ## Device Management application
 - [Connectivity](http://localhost:1313/docs/device-management-application/connectivity/)
-- [Device Management Application](http://localhost:1313/docs/device-management-application/)
 - [Grouping devices](http://localhost:1313/docs/device-management-application/grouping-devices/)
 - [Home dashboard](http://localhost:1313/docs/device-management-application/home-dashboard/)
 - [Introduction](http://localhost:1313/docs/device-management-application/device-management-introduction/)
@@ -114,12 +113,10 @@
 ## Digital Twin Manager
 - [Asset hierarchy](http://localhost:1313/docs/dtm/asset-hierarchy/)
 - [Asset models](http://localhost:1313/docs/dtm/asset-types/)
-- [Dtm](http://localhost:1313/docs/dtm/)
 - [Introduction](http://localhost:1313/docs/dtm/dtm-introduction/)
 
 ## Enterprise tenant
 - [Customizing your platform](http://localhost:1313/docs/enterprise-tenant/customization/)
-- [Enterprise Tenant](http://localhost:1313/docs/enterprise-tenant/)
 - [Introduction](http://localhost:1313/docs/enterprise-tenant/enterprise-tenant-introduction/)
 - [Managing tenants](http://localhost:1313/docs/enterprise-tenant/managing-tenants/)
 - [Managing user hierarchies](http://localhost:1313/docs/enterprise-tenant/managing-user-hierarchies/)
@@ -132,14 +129,12 @@
 ## Get familiar with the UI
 - [Accessing and logging into the platform](http://localhost:1313/docs/get-familiar-with-the-ui/platform-access/)
 - [Available applications](http://localhost:1313/docs/get-familiar-with-the-ui/available-applications/)
-- [Get Familiar With The Ui](http://localhost:1313/docs/get-familiar-with-the-ui/)
 - [Introduction](http://localhost:1313/docs/get-familiar-with-the-ui/ui-introduction/)
 - [Knowledge Hub](http://localhost:1313/docs/get-familiar-with-the-ui/knowledge-hub/)
 - [UI functionalities and features](http://localhost:1313/docs/get-familiar-with-the-ui/gui-features/)
 - [User options and settings](http://localhost:1313/docs/get-familiar-with-the-ui/user-settings/)
 
 ## Introduction
-- [App Intro](http://localhost:1313/docs/app-intro/)
 - [Application enablement](http://localhost:1313/docs/app-intro/applications/)
 - [System integration](http://localhost:1313/docs/app-intro/system-integration/)
 
@@ -149,7 +144,6 @@
 - [Copyright](http://localhost:1313/docs/legal-notices/copyright/)
 - [Export Control Compliance](http://localhost:1313/docs/legal-notices/export-control-compliance/)
 - [Imprint](http://localhost:1313/docs/legal-notices/imprint/)
-- [Legal Notices](http://localhost:1313/docs/legal-notices/)
 - [License Terms and Conditions](http://localhost:1313/docs/legal-notices/license-terms-and-conditions/)
 - [Limited Use License for Docker](http://localhost:1313/docs/legal-notices/limited-use-license-for-docker/)
 - [Privacy Notice](http://localhost:1313/docs/legal-notices/privacy-notice/)
@@ -161,7 +155,6 @@
 - [Create and bring your own AI/ML model (BYOM)](http://localhost:1313/docs/machine-learning/model-creation/)
 - [Deploy and orchestrate your AI/ML models across devices (EdgeAI with MLOps)](http://localhost:1313/docs/machine-learning/deployment/)
 - [Introduction](http://localhost:1313/docs/machine-learning/ml-introduction/)
-- [Machine Learning](http://localhost:1313/docs/machine-learning/)
 - [Operationalizing your AI/ML models in the cloud](http://localhost:1313/docs/machine-learning/operationalization/)
 - [Prepare your device data (IoT DataOps)](http://localhost:1313/docs/machine-learning/data-preparation/)
 
@@ -170,28 +163,14 @@
 - [Examples](http://localhost:1313/docs/microservice-sdk/http/)
 - [General aspects](http://localhost:1313/docs/microservice-sdk/general-aspects/)
 - [Introduction](http://localhost:1313/docs/microservice-sdk/microservice-sdk-introduction/)
-- [Microservice Sdk](http://localhost:1313/docs/microservice-sdk/)
 - [Microservice SDK for Java](http://localhost:1313/docs/microservice-sdk/java/)
 - [Using the REST interface](http://localhost:1313/docs/microservice-sdk/rest/)
 
 ## Quick start tutorial
 - [First steps with Cumulocity](http://localhost:1313/docs/quick-start/first-steps/)
-- [Quick Start](http://localhost:1313/docs/quick-start/)
 
 ## Rest Api
-- [Rest Api](http://localhost:1313/docs/rest_api/)
 - [Rest API](http://localhost:1313/docs/rest_api/rest_api/)
-
-## Sector
-- [App Enablement](http://localhost:1313/docs/sector/app_enablement/)
-- [Data Analytics](http://localhost:1313/docs/sector/data_analytics/)
-- [Device Management](http://localhost:1313/docs/sector/device_management/)
-- [Edge Server](http://localhost:1313/docs/sector/edge_server/)
-- [Getting Started](http://localhost:1313/docs/sector/getting_started/)
-- [Platform Administration](http://localhost:1313/docs/sector/platform_administration/)
-- [Rest Api](http://localhost:1313/docs/sector/rest_api/)
-- [Sector](http://localhost:1313/docs/sector/)
-- [Terms Conditions](http://localhost:1313/docs/sector/terms_conditions/)
 
 ## Sensor App
 - [Adjusting sensor properties](http://localhost:1313/docs/sensor-app/adjusting-sensor-properties/)
@@ -203,7 +182,6 @@
 - [Introduction](http://localhost:1313/docs/sensor-app/sensorapp-introduction/)
 - [Registering the Sensor App in the platform](http://localhost:1313/docs/sensor-app/registering-the-sensor-app/)
 - [Sending sensor data to the platform](http://localhost:1313/docs/sensor-app/sending-sensor-data/)
-- [Sensor App](http://localhost:1313/docs/sensor-app/)
 - [Simulating peaks and sending alarms and events](http://localhost:1313/docs/sensor-app/peaks-alarms-events/)
 - [Viewing sensor data](http://localhost:1313/docs/sensor-app/viewing-sensor-data/)
 
@@ -213,7 +191,6 @@
 - [JSON via MQTT](http://localhost:1313/docs/smartrest/json-via-mqtt/)
 - [MQTT quick reference](http://localhost:1313/docs/smartrest/quick-reference/)
 - [MQTT Static templates](http://localhost:1313/docs/smartrest/mqtt-static-templates/)
-- [Smartrest](http://localhost:1313/docs/smartrest/)
 - [SmartREST 1.0](http://localhost:1313/docs/smartrest/smartrest-one/)
 - [SmartREST 2.0](http://localhost:1313/docs/smartrest/smartrest-two/)
 
@@ -228,7 +205,6 @@
 - [Managing the ecosystem](http://localhost:1313/docs/standard-tenant/ecosystem/)
 - [Managing users](http://localhost:1313/docs/standard-tenant/managing-users/)
 - [Monitoring](http://localhost:1313/docs/standard-tenant/monitoring/)
-- [Standard Tenant](http://localhost:1313/docs/standard-tenant/)
 
 ## Streaming Analytics
 - [Analytics Builder](http://localhost:1313/docs/streaming-analytics/analytics-builder/)
@@ -237,15 +213,12 @@
 - [Customization and permissions](http://localhost:1313/docs/streaming-analytics/analytics-customization/)
 - [EPL apps](http://localhost:1313/docs/streaming-analytics/epl-apps/)
 - [Introduction](http://localhost:1313/docs/streaming-analytics/introduction-analytics/)
-- [Streaming Analytics](http://localhost:1313/docs/streaming-analytics/)
 - [Troubleshooting and diagnostics](http://localhost:1313/docs/streaming-analytics/troubleshooting/)
 
 ## Supported devices
-- [Certified Devices](http://localhost:1313/docs/certified-devices/)
 - [Certified devices](http://localhost:1313/docs/certified-devices/certified-devices/)
 
 ## Technical concepts
-- [Concepts](http://localhost:1313/docs/concepts/)
 - [Cumulocity's domain model](http://localhost:1313/docs/concepts/domain-model/)
 - [Introduction to the Cumulocity platform](http://localhost:1313/docs/concepts/concepts-introduction/)
 - [Security aspects](http://localhost:1313/docs/concepts/security/)
@@ -258,20 +231,13 @@
 - [Previewing features](http://localhost:1313/docs/service-terms/previews/)
 - [Release policy](http://localhost:1313/docs/service-terms/releases/)
 - [Service quotas](http://localhost:1313/docs/service-terms/quotas/)
-- [Service Terms](http://localhost:1313/docs/service-terms/)
 - [Service-level agreements](http://localhost:1313/docs/service-terms/service-level/)
-
-## thin-edge.io
-- [Thin Edge](http://localhost:1313/docs/thin-edge/)
-- [Thin Edge](http://localhost:1313/docs/thin-edge/thin-edge/)
 
 ## Web SDK
 - [Application configuration](http://localhost:1313/docs/web/application-configuration/)
 - [Getting started](http://localhost:1313/docs/web/gettingstarted/)
 - [Introduction](http://localhost:1313/docs/web/introduction/)
 - [Upgrade](http://localhost:1313/docs/web/upgrade/)
-- [Web](http://localhost:1313/docs/web/)
 
 ## Welcome developers
 - [Developer topics](http://localhost:1313/docs/welcome-developers/developer-topics/)
-- [Welcome Developers](http://localhost:1313/docs/welcome-developers/)
