@@ -1389,7 +1389,7 @@ Set the device profiles with software type
 ```
 
 {{< c8y-admon-info >}}
-When the device profile operation received has a type in one of the softwares in the software list, this template is triggered. The triggering is independent of the existing 527 template. This means that in all cases where this 531 template is triggered, the 527 template will also be triggered. 
+When a device profile operation contains a type in one of the software entries in the list, template ID 531 is triggered. The triggering of template ID 531 is independent of template ID 527. This means that whenever template ID 531 is triggered, template ID 527 will also be triggered at the same time.
 {{< /c8y-admon-info >}}
 
 
