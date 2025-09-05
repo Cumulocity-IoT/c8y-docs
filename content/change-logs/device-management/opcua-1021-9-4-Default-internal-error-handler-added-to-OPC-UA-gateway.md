@@ -1,6 +1,6 @@
 ---
 date: ""
-title: OPC UA: Addition of default internal error handler
+title: Default internal error handler added to OPC UA gateway
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
