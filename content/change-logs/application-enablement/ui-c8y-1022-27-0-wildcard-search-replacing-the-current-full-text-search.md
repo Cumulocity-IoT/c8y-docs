@@ -1,6 +1,6 @@
 ---
 date: ""
-title: wildcard search replacing the current full-text search
+title: Replace full-text search with wildcard search for improved results
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,6 +14,4 @@ build_artifact:
 ticket: MTM-64410
 version: 1022.27.0
 ---
-With this change, we remove the possibility of doing a full-text search, as it was mostly not giving the right results. Instead, we are always searching if the name contains the search term.
-
-Note: This will discontinue the possibility of searching for external IDs, Description and Types. If you need this possibility, please contact support or toggle the 'ui.search.wildcard' feature flag off.
+The previous full-text search often provided inaccurate results. We have replaced the full-text search with a wildcard search that checks if the name contains the search term. Searching for external IDs, descriptions, and types is no longer possible. If you require this functionality, please contact support or disable the 'ui.search.wildcard' feature flag.
