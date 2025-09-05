@@ -373,6 +373,8 @@ The code snippet below shows how to delete the subscriber and close the other Pu
         client.close();
 ```
 
-### Sample clients
+### Example client
 
-* Bring all those code snippets together into a complete (but very simple) example that we can publish in `cumulocity-examples`
+A complete example client based on the code snippets above can be found in the [cumulocity-examples](https://github.com/Cumulocity-IoT/cumulocity-examples/mqtt-service/simple-pulsar-client) repository.
+This example also includes a simple Python script to simulate an MQTT device and generate messages for the client to receive.
+The `README.md` file provided with the example explains how to build and run it.
