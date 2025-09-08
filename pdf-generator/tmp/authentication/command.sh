@@ -9,11 +9,12 @@ wkhtmltopdf \
  --javascript-delay 2000 \
  --enable-local-file-access \
  --dpi 300 \
+ --load-error-handling ignore \
  cover cover.html \
  copyright.html \
  toc \
  --xsl-style-sheet ../../templates/cumulocity-toc-style.xsl \
-   http://localhost:1313/docs/authentication/basic-settings \
-  http://localhost:1313/docs/authentication/sso \
-  http://localhost:1313/docs/authentication/tfa \
-"Authentication-y.pdf"
+   http://localhost:1313/docs/authentication/basic-settings/ \
+  http://localhost:1313/docs/authentication/tfa/ \
+  http://localhost:1313/docs/authentication/sso/ \
+"Authentication-y2025.pdf"

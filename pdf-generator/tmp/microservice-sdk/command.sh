@@ -9,14 +9,15 @@ wkhtmltopdf \
  --javascript-delay 2000 \
  --enable-local-file-access \
  --dpi 300 \
+ --load-error-handling ignore \
  cover cover.html \
  copyright.html \
  toc \
  --xsl-style-sheet ../../templates/cumulocity-toc-style.xsl \
-   http://localhost:1313/docs/microservice-sdk/general-aspects \
-  http://localhost:1313/docs/microservice-sdk/http \
-  http://localhost:1313/docs/microservice-sdk/java \
-  http://localhost:1313/docs/microservice-sdk/microservice-sdk-introduction \
-  http://localhost:1313/docs/microservice-sdk/microservices-best-practices \
-  http://localhost:1313/docs/microservice-sdk/rest \
-"Microservice SDK-y.pdf"
+   http://localhost:1313/docs/microservice-sdk/microservice-sdk-introduction/ \
+  http://localhost:1313/docs/microservice-sdk/general-aspects/ \
+  http://localhost:1313/docs/microservice-sdk/java/ \
+  http://localhost:1313/docs/microservice-sdk/rest/ \
+  http://localhost:1313/docs/microservice-sdk/http/ \
+  http://localhost:1313/docs/microservice-sdk/microservices-best-practices/ \
+"Microservice SDK-y2025.pdf"

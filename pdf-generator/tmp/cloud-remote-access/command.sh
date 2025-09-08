@@ -9,12 +9,12 @@ wkhtmltopdf \
  --javascript-delay 2000 \
  --enable-local-file-access \
  --dpi 300 \
+ --load-error-handling ignore \
  cover cover.html \
  copyright.html \
  toc \
  --xsl-style-sheet ../../templates/cumulocity-toc-style.xsl \
-   http://localhost:1313/docs/cloud-remote-access/cra-api \
-  http://localhost:1313/docs/cloud-remote-access/cra-api/(https://goc8ycli.netlify.app/docs/examples/remoteaccess/) \
-  http://localhost:1313/docs/cloud-remote-access/cra-introduction \
-  http://localhost:1313/docs/cloud-remote-access/setting-up-cloud-remote-access \
-"Cloud Remote Access-y.pdf"
+   http://localhost:1313/docs/cloud-remote-access/cra-introduction/ \
+  http://localhost:1313/docs/cloud-remote-access/setting-up-cloud-remote-access/ \
+  http://localhost:1313/docs/cloud-remote-access/cra-api/ \
+"Cloud Remote Access-y2025.pdf"

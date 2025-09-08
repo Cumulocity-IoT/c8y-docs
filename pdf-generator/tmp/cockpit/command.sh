@@ -9,23 +9,24 @@ wkhtmltopdf \
  --javascript-delay 2000 \
  --enable-local-file-access \
  --dpi 300 \
+ --load-error-handling ignore \
  cover cover.html \
  copyright.html \
  toc \
  --xsl-style-sheet ../../templates/cumulocity-toc-style.xsl \
-   http://localhost:1313/docs/cockpit/alarms \
-  http://localhost:1313/docs/cockpit/cockpit-configuration \
-  http://localhost:1313/docs/cockpit/cockpit-introduction \
-  http://localhost:1313/docs/cockpit/dashboard-manager \
-  http://localhost:1313/docs/cockpit/data-explorer \
-  http://localhost:1313/docs/cockpit/data-point-library \
-  http://localhost:1313/docs/cockpit/exports \
-  http://localhost:1313/docs/cockpit/home-dashboard \
-  http://localhost:1313/docs/cockpit/managing-assets \
-  http://localhost:1313/docs/cockpit/smart-rules \
-  http://localhost:1313/docs/cockpit/smart-rules-collection \
-  http://localhost:1313/docs/cockpit/using-widgets \
-  http://localhost:1313/docs/cockpit/widgets-collection \
-  http://localhost:1313/docs/cockpit/working-with-dashboards \
-  http://localhost:1313/docs/cockpit/working-with-reports \
-"Cockpit-y.pdf"
+   http://localhost:1313/docs/cockpit/cockpit-introduction/ \
+  http://localhost:1313/docs/cockpit/home-dashboard/ \
+  http://localhost:1313/docs/cockpit/managing-assets/ \
+  http://localhost:1313/docs/cockpit/alarms/ \
+  http://localhost:1313/docs/cockpit/data-explorer/ \
+  http://localhost:1313/docs/cockpit/working-with-dashboards/ \
+  http://localhost:1313/docs/cockpit/working-with-reports/ \
+  http://localhost:1313/docs/cockpit/using-widgets/ \
+  http://localhost:1313/docs/cockpit/widgets-collection/ \
+  http://localhost:1313/docs/cockpit/exports/ \
+  http://localhost:1313/docs/cockpit/dashboard-manager/ \
+  http://localhost:1313/docs/cockpit/data-point-library/ \
+  http://localhost:1313/docs/cockpit/smart-rules/ \
+  http://localhost:1313/docs/cockpit/smart-rules-collection/ \
+  http://localhost:1313/docs/cockpit/cockpit-configuration/ \
+"Cockpit-y2025.pdf"

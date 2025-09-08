@@ -9,9 +9,10 @@ wkhtmltopdf \
  --javascript-delay 2000 \
  --enable-local-file-access \
  --dpi 300 \
+ --load-error-handling ignore \
  cover cover.html \
  copyright.html \
  toc \
  --xsl-style-sheet ../../templates/cumulocity-toc-style.xsl \
-   http://localhost:1313/docs/welcome-developers/developer-topics \
-"Welcome developers-y.pdf"
+   http://localhost:1313/docs/welcome-developers/developer-topics/ \
+"Welcome developers-y2025.pdf"

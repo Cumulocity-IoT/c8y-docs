@@ -9,15 +9,16 @@ wkhtmltopdf \
  --javascript-delay 2000 \
  --enable-local-file-access \
  --dpi 300 \
+ --load-error-handling ignore \
  cover cover.html \
  copyright.html \
  toc \
  --xsl-style-sheet ../../templates/cumulocity-toc-style.xsl \
-   http://localhost:1313/docs/smartrest/handling-of-ids \
-  http://localhost:1313/docs/smartrest/json-via-mqtt \
-  http://localhost:1313/docs/smartrest/mqtt-static-templates \
-  http://localhost:1313/docs/smartrest/quick-reference \
-  http://localhost:1313/docs/smartrest/smartrest-introduction \
-  http://localhost:1313/docs/smartrest/smartrest-one \
-  http://localhost:1313/docs/smartrest/smartrest-two \
-"SmartREST-y.pdf"
+   http://localhost:1313/docs/smartrest/smartrest-introduction/ \
+  http://localhost:1313/docs/smartrest/smartrest-two/ \
+  http://localhost:1313/docs/smartrest/smartrest-one/ \
+  http://localhost:1313/docs/smartrest/handling-of-ids/ \
+  http://localhost:1313/docs/smartrest/json-via-mqtt/ \
+  http://localhost:1313/docs/smartrest/mqtt-static-templates/ \
+  http://localhost:1313/docs/smartrest/quick-reference/ \
+"SmartREST-y2025.pdf"

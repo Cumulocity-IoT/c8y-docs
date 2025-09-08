@@ -9,10 +9,11 @@ wkhtmltopdf \
  --javascript-delay 2000 \
  --enable-local-file-access \
  --dpi 300 \
+ --load-error-handling ignore \
  cover cover.html \
  copyright.html \
  toc \
  --xsl-style-sheet ../../templates/cumulocity-toc-style.xsl \
-   http://localhost:1313/docs/data-broker/data-broker-application \
-  http://localhost:1313/docs/data-broker/ms-data-broker \
-"Data broker-y.pdf"
+   http://localhost:1313/docs/data-broker/data-broker-application/ \
+  http://localhost:1313/docs/data-broker/ms-data-broker/ \
+"Data broker-y2025.pdf"

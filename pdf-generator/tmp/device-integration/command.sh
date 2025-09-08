@@ -9,22 +9,23 @@ wkhtmltopdf \
  --javascript-delay 2000 \
  --enable-local-file-access \
  --dpi 300 \
+ --load-error-handling ignore \
  cover cover.html \
  copyright.html \
  toc \
  --xsl-style-sheet ../../templates/cumulocity-toc-style.xsl \
-   http://localhost:1313/docs/device-integration/cloud-fieldbus \
-  http://localhost:1313/docs/device-integration/device-integration-introduction \
-  http://localhost:1313/docs/device-integration/device-integration-rest \
-  http://localhost:1313/docs/device-integration/device-integration-thin-edge \
-  http://localhost:1313/docs/device-integration/fragment-library \
-  http://localhost:1313/docs/device-integration/interfacing-devices \
-  http://localhost:1313/docs/device-integration/lora-actility \
-  http://localhost:1313/docs/device-integration/lora-loriot \
-  http://localhost:1313/docs/device-integration/lpwan-custom-codec \
-  http://localhost:1313/docs/device-integration/lwm2m \
-  http://localhost:1313/docs/device-integration/mqtt \
-  http://localhost:1313/docs/device-integration/mqtt-service \
-  http://localhost:1313/docs/device-integration/opcua \
-  http://localhost:1313/docs/device-integration/sigfox \
-"Device integration-y.pdf"
+   http://localhost:1313/docs/device-integration/device-integration-introduction/ \
+  http://localhost:1313/docs/device-integration/interfacing-devices/ \
+  http://localhost:1313/docs/device-integration/device-integration-thin-edge/ \
+  http://localhost:1313/docs/device-integration/mqtt/ \
+  http://localhost:1313/docs/device-integration/mqtt-service/ \
+  http://localhost:1313/docs/device-integration/device-integration-rest/ \
+  http://localhost:1313/docs/device-integration/fragment-library/ \
+  http://localhost:1313/docs/device-integration/opcua/ \
+  http://localhost:1313/docs/device-integration/lwm2m/ \
+  http://localhost:1313/docs/device-integration/lora-loriot/ \
+  http://localhost:1313/docs/device-integration/lora-actility/ \
+  http://localhost:1313/docs/device-integration/sigfox/ \
+  http://localhost:1313/docs/device-integration/lpwan-custom-codec/ \
+  http://localhost:1313/docs/device-integration/cloud-fieldbus/ \
+"Device integration-y2025.pdf"

@@ -9,18 +9,19 @@ wkhtmltopdf \
  --javascript-delay 2000 \
  --enable-local-file-access \
  --dpi 300 \
+ --load-error-handling ignore \
  cover cover.html \
  copyright.html \
  toc \
  --xsl-style-sheet ../../templates/cumulocity-toc-style.xsl \
-   http://localhost:1313/docs/standard-tenant/alarm-mapping \
-  http://localhost:1313/docs/standard-tenant/changing-settings \
-  http://localhost:1313/docs/standard-tenant/ecosystem \
-  http://localhost:1313/docs/standard-tenant/enhanced-time-series-support \
-  http://localhost:1313/docs/standard-tenant/home-screen \
-  http://localhost:1313/docs/standard-tenant/managing-data \
-  http://localhost:1313/docs/standard-tenant/managing-permissions \
-  http://localhost:1313/docs/standard-tenant/managing-users \
-  http://localhost:1313/docs/standard-tenant/monitoring \
-  http://localhost:1313/docs/standard-tenant/standard-tenant-introduction \
-"Standard tenant administration-y.pdf"
+   http://localhost:1313/docs/standard-tenant/standard-tenant-introduction/ \
+  http://localhost:1313/docs/standard-tenant/home-screen/ \
+  http://localhost:1313/docs/standard-tenant/managing-users/ \
+  http://localhost:1313/docs/standard-tenant/managing-permissions/ \
+  http://localhost:1313/docs/standard-tenant/ecosystem/ \
+  http://localhost:1313/docs/standard-tenant/monitoring/ \
+  http://localhost:1313/docs/standard-tenant/alarm-mapping/ \
+  http://localhost:1313/docs/standard-tenant/managing-data/ \
+  http://localhost:1313/docs/standard-tenant/changing-settings/ \
+  http://localhost:1313/docs/standard-tenant/enhanced-time-series-support/ \
+"Standard tenant administration-y2025.pdf"

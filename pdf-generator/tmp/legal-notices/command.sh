@@ -9,19 +9,20 @@ wkhtmltopdf \
  --javascript-delay 2000 \
  --enable-local-file-access \
  --dpi 300 \
+ --load-error-handling ignore \
  cover cover.html \
  copyright.html \
  toc \
  --xsl-style-sheet ../../templates/cumulocity-toc-style.xsl \
-   http://localhost:1313/docs/legal-notices/acceptable-use-policy \
-  http://localhost:1313/docs/legal-notices/cloud-trial-service-agreement \
-  http://localhost:1313/docs/legal-notices/copyright \
-  http://localhost:1313/docs/legal-notices/export-control-compliance \
-  http://localhost:1313/docs/legal-notices/imprint \
-  http://localhost:1313/docs/legal-notices/license-terms-and-conditions \
-  http://localhost:1313/docs/legal-notices/limited-use-license-for-docker \
-  http://localhost:1313/docs/legal-notices/privacy-notice \
-  http://localhost:1313/docs/legal-notices/responsible-disclosure-policy \
-  http://localhost:1313/docs/legal-notices/third-party-information \
-  http://localhost:1313/docs/legal-notices/us-state-privacy-notice \
-"Legal notices-y.pdf"
+   http://localhost:1313/docs/legal-notices/copyright/ \
+  http://localhost:1313/docs/legal-notices/third-party-information/ \
+  http://localhost:1313/docs/legal-notices/privacy-notice/ \
+  http://localhost:1313/docs/legal-notices/us-state-privacy-notice/ \
+  http://localhost:1313/docs/legal-notices/license-terms-and-conditions/ \
+  http://localhost:1313/docs/legal-notices/export-control-compliance/ \
+  http://localhost:1313/docs/legal-notices/limited-use-license-for-docker/ \
+  http://localhost:1313/docs/legal-notices/acceptable-use-policy/ \
+  http://localhost:1313/docs/legal-notices/cloud-trial-service-agreement/ \
+  http://localhost:1313/docs/legal-notices/responsible-disclosure-policy/ \
+  http://localhost:1313/docs/legal-notices/imprint/ \
+"Legal notices-y2025.pdf"

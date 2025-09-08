@@ -9,21 +9,22 @@ wkhtmltopdf \
  --javascript-delay 2000 \
  --enable-local-file-access \
  --dpi 300 \
+ --load-error-handling ignore \
  cover cover.html \
  copyright.html \
  toc \
  --xsl-style-sheet ../../templates/cumulocity-toc-style.xsl \
-   http://localhost:1313/docs/device-management-application/connectivity \
-  http://localhost:1313/docs/device-management-application/device-management-introduction \
-  http://localhost:1313/docs/device-management-application/grouping-devices \
-  http://localhost:1313/docs/device-management-application/home-dashboard \
-  http://localhost:1313/docs/device-management-application/managing-device-data \
-  http://localhost:1313/docs/device-management-application/managing-device-services \
-  http://localhost:1313/docs/device-management-application/managing-device-types \
-  http://localhost:1313/docs/device-management-application/monitoring-and-controlling-devices \
-  http://localhost:1313/docs/device-management-application/registering-devices \
-  http://localhost:1313/docs/device-management-application/smartrest-templates \
-  http://localhost:1313/docs/device-management-application/viewing-all-devices \
-  http://localhost:1313/docs/device-management-application/viewing-device-details \
-  http://localhost:1313/docs/device-management-application/working-with-simulators \
-"Device Management application-y.pdf"
+   http://localhost:1313/docs/device-management-application/device-management-introduction/ \
+  http://localhost:1313/docs/device-management-application/home-dashboard/ \
+  http://localhost:1313/docs/device-management-application/registering-devices/ \
+  http://localhost:1313/docs/device-management-application/viewing-all-devices/ \
+  http://localhost:1313/docs/device-management-application/grouping-devices/ \
+  http://localhost:1313/docs/device-management-application/viewing-device-details/ \
+  http://localhost:1313/docs/device-management-application/monitoring-and-controlling-devices/ \
+  http://localhost:1313/docs/device-management-application/managing-device-services/ \
+  http://localhost:1313/docs/device-management-application/managing-device-types/ \
+  http://localhost:1313/docs/device-management-application/managing-device-data/ \
+  http://localhost:1313/docs/device-management-application/smartrest-templates/ \
+  http://localhost:1313/docs/device-management-application/working-with-simulators/ \
+  http://localhost:1313/docs/device-management-application/connectivity/ \
+"Device Management application-y2025.pdf"

@@ -9,11 +9,12 @@ wkhtmltopdf \
  --javascript-delay 2000 \
  --enable-local-file-access \
  --dpi 300 \
+ --load-error-handling ignore \
  cover cover.html \
  copyright.html \
  toc \
  --xsl-style-sheet ../../templates/cumulocity-toc-style.xsl \
-   http://localhost:1313/docs/dtm/asset-hierarchy \
-  http://localhost:1313/docs/dtm/asset-types \
-  http://localhost:1313/docs/dtm/dtm-introduction \
-"Digital Twin Manager-y.pdf"
+   http://localhost:1313/docs/dtm/dtm-introduction/ \
+  http://localhost:1313/docs/dtm/asset-types/ \
+  http://localhost:1313/docs/dtm/asset-hierarchy/ \
+"Digital Twin Manager-y2025.pdf"

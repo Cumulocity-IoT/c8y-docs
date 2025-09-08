@@ -9,10 +9,11 @@ wkhtmltopdf \
  --javascript-delay 2000 \
  --enable-local-file-access \
  --dpi 300 \
+ --load-error-handling ignore \
  cover cover.html \
  copyright.html \
  toc \
  --xsl-style-sheet ../../templates/cumulocity-toc-style.xsl \
-   http://localhost:1313/docs/app-intro/applications \
-  http://localhost:1313/docs/app-intro/system-integration \
-"Introduction-y.pdf"
+   http://localhost:1313/docs/app-intro/applications/ \
+  http://localhost:1313/docs/app-intro/system-integration/ \
+"Introduction-y2025.pdf"

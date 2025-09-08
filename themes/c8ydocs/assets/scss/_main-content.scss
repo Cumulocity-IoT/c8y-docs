@@ -2,7 +2,7 @@
   transition: transform .3s $ease;
   -webkit-transition: transform .3s $ease;
   // text-align: center;
-  @media (max-width: $grid-breakpoint - 1) {
+  @media screen and (max-width: $grid-breakpoint - 1) {
     .open & {
       backface-visibility: hidden;
       transform: translateY(0);
@@ -10,12 +10,10 @@
       -webkit-backface-visibility: hidden;
     }
   }
-  @media (min-width: $grid-breakpoint) {
+  @media screen and (min-width: $grid-breakpoint) {
     margin-left: 280px;
   }
-  @media print {
-    display: none !important;
-  }
+  
 }
 
 .main-content {
@@ -23,7 +21,7 @@
   z-index: 30;
   padding: 2rem 1rem 1rem;
   transition: transform .3s $ease;
-  @media (max-width: $grid-breakpoint - 1) {
+  @media screen and (max-width: $grid-breakpoint - 1) {
     .open & {
       backface-visibility: hidden;
       transform: translateY(0);
@@ -66,29 +64,29 @@
     border-radius: 0 !important;
     box-shadow: none !important;
     pre {
-      border: 5px solid #d9d9d9;
+      border: 1px solid lightgray!important;
       white-space: normal;
       word-break: break-word;
-      background-color: grey;
+      background-color: whitesmoke!important;
     }
     pre > code {
       padding: 0;
-      color: inherit;
+      color: black;
       white-space: pre;
       white-space: pre-wrap;
-      background-color: grey;
-      border: 5px;
+      background-color: whitesmoke;
+      border: 5px solid whitesmoke;
     }
   }
 }
 
-@media (min-width: $screen-sm-min) {
+@media screen and (min-width: $screen-sm-min) {
   .main-content {
     padding: 0 1rem 1rem;
   }
 }
 
-@media (min-width: $grid-breakpoint) {
+@media screen and (min-width: $grid-breakpoint) {
   .main-content {
     margin-left: 240px;
     padding: 0 3rem 2rem;

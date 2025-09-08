@@ -9,13 +9,13 @@ wkhtmltopdf \
  --javascript-delay 2000 \
  --enable-local-file-access \
  --dpi 300 \
+ --load-error-handling ignore \
  cover cover.html \
  copyright.html \
  toc \
  --xsl-style-sheet ../../templates/cumulocity-toc-style.xsl \
-   http://localhost:1313/docs/concepts/compatibility-policy \
-  http://localhost:1313/docs/concepts/concepts-introduction \
-  http://localhost:1313/docs/concepts/domain-model \
-  http://localhost:1313/docs/concepts/security \
-  http://localhost:1313/docs/concepts/tenant-hierarchy \
-"Technical concepts-y.pdf"
+   http://localhost:1313/docs/concepts/concepts-introduction/ \
+  http://localhost:1313/docs/concepts/domain-model/ \
+  http://localhost:1313/docs/concepts/tenant-hierarchy/ \
+  http://localhost:1313/docs/concepts/security/ \
+"Technical concepts-y2025.pdf"

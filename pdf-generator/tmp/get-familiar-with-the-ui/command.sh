@@ -9,14 +9,15 @@ wkhtmltopdf \
  --javascript-delay 2000 \
  --enable-local-file-access \
  --dpi 300 \
+ --load-error-handling ignore \
  cover cover.html \
  copyright.html \
  toc \
  --xsl-style-sheet ../../templates/cumulocity-toc-style.xsl \
-   http://localhost:1313/docs/get-familiar-with-the-ui/available-applications \
-  http://localhost:1313/docs/get-familiar-with-the-ui/gui-features \
-  http://localhost:1313/docs/get-familiar-with-the-ui/knowledge-hub \
-  http://localhost:1313/docs/get-familiar-with-the-ui/platform-access \
-  http://localhost:1313/docs/get-familiar-with-the-ui/ui-introduction \
-  http://localhost:1313/docs/get-familiar-with-the-ui/user-settings \
-"Get familiar with the UI-y.pdf"
+   http://localhost:1313/docs/get-familiar-with-the-ui/ui-introduction/ \
+  http://localhost:1313/docs/get-familiar-with-the-ui/platform-access/ \
+  http://localhost:1313/docs/get-familiar-with-the-ui/available-applications/ \
+  http://localhost:1313/docs/get-familiar-with-the-ui/gui-features/ \
+  http://localhost:1313/docs/get-familiar-with-the-ui/user-settings/ \
+  http://localhost:1313/docs/get-familiar-with-the-ui/knowledge-hub/ \
+"Get familiar with the UI-y2025.pdf"

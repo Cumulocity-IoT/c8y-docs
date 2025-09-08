@@ -9,13 +9,14 @@ wkhtmltopdf \
  --javascript-delay 2000 \
  --enable-local-file-access \
  --dpi 300 \
+ --load-error-handling ignore \
  cover cover.html \
  copyright.html \
  toc \
  --xsl-style-sheet ../../templates/cumulocity-toc-style.xsl \
-   http://localhost:1313/docs/device-certificate-authentication/certificate-authority \
-  http://localhost:1313/docs/device-certificate-authentication/device-certificates \
-  http://localhost:1313/docs/device-certificate-authentication/device-enroll-and-re-enroll \
-  http://localhost:1313/docs/device-certificate-authentication/managing-trusted-certificate-settings \
-  http://localhost:1313/docs/device-certificate-authentication/managing-trusted-certificates \
-"Device certificate authentication-y.pdf"
+   http://localhost:1313/docs/device-certificate-authentication/device-certificates/ \
+  http://localhost:1313/docs/device-certificate-authentication/managing-trusted-certificates/ \
+  http://localhost:1313/docs/device-certificate-authentication/managing-trusted-certificate-settings/ \
+  http://localhost:1313/docs/device-certificate-authentication/certificate-authority/ \
+  http://localhost:1313/docs/device-certificate-authentication/device-enroll-and-re-enroll/ \
+"Device certificate authentication-y2025.pdf"

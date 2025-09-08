@@ -9,19 +9,20 @@ wkhtmltopdf \
  --javascript-delay 2000 \
  --enable-local-file-access \
  --dpi 300 \
+ --load-error-handling ignore \
  cover cover.html \
  copyright.html \
  toc \
  --xsl-style-sheet ../../templates/cumulocity-toc-style.xsl \
-   http://localhost:1313/docs/sensor-app/adjusting-sensor-properties \
-  http://localhost:1313/docs/sensor-app/configuration \
-  http://localhost:1313/docs/sensor-app/connecting-bluetooth-devices \
-  http://localhost:1313/docs/sensor-app/connecting-obd-devices \
-  http://localhost:1313/docs/sensor-app/controlling-devices \
-  http://localhost:1313/docs/sensor-app/installing-the-sensor-app \
-  http://localhost:1313/docs/sensor-app/peaks-alarms-events \
-  http://localhost:1313/docs/sensor-app/registering-the-sensor-app \
-  http://localhost:1313/docs/sensor-app/sending-sensor-data \
-  http://localhost:1313/docs/sensor-app/sensorapp-introduction \
-  http://localhost:1313/docs/sensor-app/viewing-sensor-data \
-"Sensor App-y.pdf"
+   http://localhost:1313/docs/sensor-app/sensorapp-introduction/ \
+  http://localhost:1313/docs/sensor-app/installing-the-sensor-app/ \
+  http://localhost:1313/docs/sensor-app/registering-the-sensor-app/ \
+  http://localhost:1313/docs/sensor-app/sending-sensor-data/ \
+  http://localhost:1313/docs/sensor-app/viewing-sensor-data/ \
+  http://localhost:1313/docs/sensor-app/connecting-bluetooth-devices/ \
+  http://localhost:1313/docs/sensor-app/connecting-obd-devices/ \
+  http://localhost:1313/docs/sensor-app/configuration/ \
+  http://localhost:1313/docs/sensor-app/adjusting-sensor-properties/ \
+  http://localhost:1313/docs/sensor-app/peaks-alarms-events/ \
+  http://localhost:1313/docs/sensor-app/controlling-devices/ \
+"Sensor App-y2025.pdf"
