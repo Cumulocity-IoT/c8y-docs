@@ -73,7 +73,7 @@ def load_urls_from_sitemap(sitemap_path):
         low = path.lower()
         if is_change_logs(low):
             continue
-        if is_glossary(low):              # 👈 NEW: drop glossary URLs
+        if is_glossary(low):              
             continue
         if is_card_page(path):
             continue
