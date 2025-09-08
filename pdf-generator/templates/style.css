@@ -1,0 +1,89 @@
+
+tr {
+    page-break-inside: avoid;
+  }
+
+h2 {
+    white-space: pre-line;
+  }
+
+/* ChrisB 2020-02-27: 
+   The following instruction tries to avoid page breaks after section headers,
+   but it doesn't always produce the expected results. There are still cases where for example
+   an <h3> is followed by a page break in the generated PDF.
+*/  
+h1 {page-break-after: avoid;}
+h2 {page-break-after: avoid;}
+h3 {page-break-after: avoid;}
+h4 {page-break-after: avoid;}
+h5 {page-break-after: avoid;}
+
+/* ChrisB 2020-03-09:
+   Swapping the colors for h4 and h5. The standard c8y-docs stylesheet checks is the output
+   page width is less that 992px, in which case the h4 font size is set to the same as the
+   h5 font size. This makes it hard to distinguish between them in PDF output. 
+   So the following settings use a stronger color for h4. 
+*/
+h4 {color: #14629f!important}
+h5 {color: #677680!important}
+
+/* ChrisB 2020-02-27
+   "Info" and "Important" boxes are implemented in Hugo HTML as "blockquote" elements.
+    The background shading should be possible with "blockquote {background-color: #f2f8fd; }", 
+    but this doesn't seem to work. Also not by adding "!important".
+    So using border shading instead. Instead of surounding the whole text in a box frame,
+    I am just displaying a thick colored left border. 
+    The color #f2f8fd doesn't show up well in the generated PDFs, so using a color that is 
+    easier to see.
+ */
+blockquote {
+  border-left: 10px solid LightBlue; 
+}
+
+/* ChrisB 2020-02-27
+   The text size in "Info" and "Important" boxes was larger than the surrounding text in the PDFs.
+   This appears to be because the standard setting of "blockquote" elements is 16px, as defined
+   in c8y-docs\themes\c8ydocs\assets\scss\_typography.scss.
+   Therefore I have switched the text size explicitly to the smaller size of 14px.
+   I tried setting it on the blockquote element itself, but that didn't work, so I am using the 
+   CSS selector "blockquote>p" to select the "<p>" element inside the "<blockquote>".
+ */
+blockquote >p {
+  font-size: 14px ; 
+}
+
+/* ChrisB 2020-02-27:
+   To avoid "info" boxes being split over a page beak, use the following:
+*/
+blockquote {page-break-inside: avoid;}
+
+/* ChrisB 20200305:
+ Display inline code snippets in some color other than blue, since it looks like a link.
+ Currently trying #F4A460 (SandyBrown).
+ Code blocks look like <pre><code...>, whereas inline code has no preceding <pre>.
+*/
+
+:not(pre)>code {
+	font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+	padding:2px 4px;
+	background-color:#d8edf1!important;
+	color:#F4A460!important;
+}
+
+pre{
+   border: 5px solid #d9d9d9;
+   white-space: normal;
+   color: #000000;
+   word-break: break-word;
+   background-color: grey;
+}
+
+pre>code {
+   font-family:monospace;
+	 font-size:1em
+   padding: 0;
+   color: black;
+   white-space: pre-wrap;
+   background-color: grey;
+   border: 5px;
+ }
