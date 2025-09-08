@@ -43,7 +43,33 @@
             {{end}}
           </h2>
         </div>
-          {{.Content }}
+        {{.Content }}
+        {{- $pdf := "" -}}
+        {{- if .Params.pdf_url -}}
+          {{- $u := .Params.pdf_url -}}
+          {{- if hasPrefix $u "http" -}}
+            {{- $pdf = $u -}}
+          {{- else -}}
+            {{- $pdf = (strings.TrimPrefix "/" $u) | absURL -}}
+          {{- end -}}
+        {{- else -}}
+          {{- $title := strings.Trim .Title " \t\r\n" -}}
+          {{- $safe := $title | replaceRE `[^\w\s\.-]` "" | replaceRE `\s+` " " -}}
+          {{- $path := printf "pdfs/%s.pdf" $safe -}}
+          {{- $pdf = $path | absURL -}}
+        {{- end -}}
+
+
+        {{- if $pdf -}}
+        <form class="pdf-download-form" data-pdf="{{ $pdf }}">
+          <button type="submit" class="pdf-button" title="Download PDF">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M5 20h14v-2H5v2zm7-18v12l4-4h-3V4h-2v6H8l4 4z" />
+            </svg>
+            Download
+          </button>
+        </form>
+        {{- end -}}
           {{ if (isset .Params "audience")}}
             <div class="m-t-auto d-flex gap-8 a-i-center">
               {{ range $t := .Params.audience }}
@@ -78,6 +104,66 @@
       {{end}}
     </div>
   </main>
+  <style>
+  .pdf-download-form {
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .product-card:hover .pdf-download-form {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .pdf-button {
+    background: transparent;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #333;
+  }
+
+  .pdf-button svg {
+    width: 20px;
+    height: 20px;
+    fill: #333;
+    transition: fill 0.3s ease;
+  }
+
+  .pdf-button:hover {
+    background: #007acc1a;
+    color: #007acc;
+    border-color: #007acc;
+  }
+
+  .pdf-button:hover svg {
+    fill: #007acc;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.pdf-download-form').forEach(function (form) {
+      form.addEventListener('submit',
+        function (e) {
+          e.preventDefault(); const url = form.getAttribute('data-pdf'); if (url) {
+            window.open(url, '_blank');
+          }
+        });
+    });
+  }); </script>
   {{- partial "footer.html" . -}}
 {{ end }}
 {{ end }}
