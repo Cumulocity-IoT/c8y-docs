@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64410
 version: 1022.27.0
 ---
-The previous full-text search often provided inaccurate results. We have replaced the full-text search with a wildcard search that checks if the name contains the search term. Searching for external IDs, descriptions, and types is no longer possible. If you require this functionality, please contact support or disable the 'ui.search.wildcard' feature flag.
+To enhance the search experience for assets and devices, we have replaced the legacy full-text search with a more accurate wildcard-based search. This update provides more predictable and relevant results by matching names that contain your search term. As part of this change, searching by external IDs, descriptions, and types is no longer supported. If you require full-text search functionality, please contact support or disable the 'ui.search.wildcard' feature flag.
