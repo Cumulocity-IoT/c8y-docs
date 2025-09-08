@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Default internal error handler added to OPC UA gateway
+title:  Improved the reliability of the OPC UA gateway's scheduled tasks to ensure they recover from failures like network outages.
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,7 @@ build_artifact:
 ticket: DM-4897
 version: 1021.9.4
 ---
-This update introduces a default error handler to improve the reliability of scheduled tasks by preventing their termination.
+
+To improve the overall reliability of the OPC UA gateway, a problem with the internal schedulers has been fixed: In rare cases a problem
+like a network outage lead to periodic tasks being stopped. This affected for example the collection of data from the OPC UA server as well as the delivery of measurements, events and alarms
+to the platform. The issue has been addressed by introducing a revised error handler.
