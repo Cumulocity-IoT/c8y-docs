@@ -138,7 +138,7 @@ Pulsar messages consist of a _payload_ and set of _properties_.
 The payload is a sequence of zero or more bytes, identical to the payload of the MQTT `PUBLISH` message that the Pulsar message corresponds to.
 It is the client's responsiblity to understand the format of the payloads produced and accepted by the MQTT devices it communicates with.
 
-Message properties are name-value pairs, where both the name and the value are text strings.
+Pulsar message properties are name-value pairs, where both the name and the value are text strings.
 The properties recognised by the MQTT Service are listed in the table below.
 Messages received from MQTT devices will **always** include the properties marked as required, and may include any of the optional properties.
 Received messages will not include any properties other than those listed here.
@@ -178,7 +178,7 @@ Your client will only be able to consume from this topic if the authenticated us
 The client will not be able to consume from any other topic.
 
 The client identifier of the device that published the messages, and the MQTT topic it was published on, can be obtained from the message properties `clientID` and `topic` as described above.
-This means that your client **must** consume every message published by every device connected to the MQTT Service for the tenant, event those you are not interested in.
+This means that your client **must** consume every message published by every device connected to the MQTT Service for the tenant, even those you are not interested in.
 Messages that are not of interest to the client can simply be acknowledged without further processing.
 
 #### Durable subscriptions and acknowledgement
@@ -339,7 +339,7 @@ This policy helps to limit overall resource usage and reduces the need to proces
 No message will ever be deleted from the backlog unless it reaches its TTL limit.
 Messages will always be delivered to the consumer in the order they were published to the topic.
 
-### Best practices to ensure reliable message delivery {#reliable-delivery-best-practices}
+### Best practices to ensure reliable message delivery from devices {#reliable-delivery-best-practices}
 
 If the backlog quota limit for a Pulsar topic is reached, it will not be possible to publish more messages onto the topic, and messages may be lost.
 Therefore, it is important that your client processes and acknowledges messages received from the `from-device` topic as quickly as possible.
