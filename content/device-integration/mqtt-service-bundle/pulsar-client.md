@@ -8,7 +8,9 @@ title: Connecting microservices and applications
 To do this, your microservice or external application will connect to the {{< product-c8y-iot >}} Messaging Service, a modified deployment of [Apache Pulsar](https://pulsar.apache.org/), and use the Pulsar protocol to publish and consume MQTT messages.
 The diagram below shows the important interfaces and data flows used when interacting with the MQTT Service through Pulsar.
 
-**(DIAGRAM GOES HERE)**
+<p align="center" width="100%">
+    <img width="80%" src="/images/mqtt-service/mqtt-service-pulsar-connections.svg">
+</p>
 
 {{< c8y-admon-info >}}
 We define the term _MQTT Service messaging client_ as a software component that interacts with the MQTT Service through Pulsar.
