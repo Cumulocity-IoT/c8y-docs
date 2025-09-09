@@ -47,7 +47,7 @@ In an environment with internet access, execute the following command and follow
 ```
 c8yedge package
 ```
-This will create a package to upgrade to the latest release of Edge {{< c8y-edge-current-version >}}. If you need to upgrade to a very precise version, append `-v <version number>` to the command.
+This will create a package to upgrade to the latest release of Edge {{< c8y-edge-current-version >}}. If you need to upgrade to a very specific version, append `-v <version number>` to the command.
 
 By default, you will get a file out of this called `c8yedge.tar`. You need to transfer this file as well as the `c8yedge` tool into your airgapped environment.
 
