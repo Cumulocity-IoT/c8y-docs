@@ -18,7 +18,10 @@ Where the implementation or behaviour of a client is different depending on wher
 {{< /c8y-admon-info>}}
 
 The MQTT Service implements _device isolation_, meaning that MQTT devices connected to the MQTT Service **cannot** communicate directly with each other using the MQTT protocol.
-All inter-device communication will be managed by the client, as shown i the diagram.
+All inter-device communication will be managed by the client, as shown in the diagram.
+
+This documentation does not cover the publish-subscribe messaging concepts and architecture implemented by Pulsar, nor any features of the Pulsar client libraries beyond those needed to implement a simple MQTT Service client.
+To learn more about those subjects, please refer to the [Pulsar product documentation](https://pulsar.apache.org/docs/4.0.x/).
 
 ### Connecting to the Messaging Service
 
