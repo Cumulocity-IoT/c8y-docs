@@ -9,7 +9,7 @@ To do this, your microservice or external application will connect to the {{< pr
 The diagram below shows the important interfaces and data flows used when interacting with the MQTT Service through Pulsar.
 
 <p align="center" width="100%">
-    <img width="80%" src="/images/mqtt-service/mqtt-service-pulsar-connections.svg">
+    <img width="80%" src="/images/mqtt-service/mqtt-service-pulsar-connections.svg" alt="MQTT Service Pulsar connections">
 </p>
 
 {{< c8y-admon-info >}}
