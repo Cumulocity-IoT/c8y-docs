@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64464
 version: 1022.27.1
 ---
-In the past, loading the audit logs list in the Administration app was slow, especially for tenants with a large number of audit log entries. This change optimizes the query used to retrieve the audit logs from backend, resulting in a significant performance improvement. Users will now experience much faster loading times when viewing the audit log list, even for tenants with extensive audit history.
+In the past, loading the audit logs list in the Administration was slow, especially for tenants with a large number of audit log entries. This change optimizes the query used to retrieve the audit logs from backend, resulting in a significant performance improvement. Users will now experience much faster loading times when viewing the audit log list, even for tenants with extensive audit history.
