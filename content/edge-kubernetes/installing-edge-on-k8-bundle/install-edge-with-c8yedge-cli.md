@@ -59,8 +59,9 @@ c8yedge package
 ```
 By default, you will get a file out of this called `c8yedge.tar`. You need to transfer this file as well as the `c8yedge` tool into your airgapped environment.
 
+In some situations, the automatic installation of [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation) by `c8yedge` will have some additional prerequisites that are specific to runnin K3s in an airgapped environment. If your environment has no network interface with a default route, or SELinux is enabled, pay attention to the two relevant sections under [Prerequisites](https://docs.k3s.io/installation/airgap#prerequisites).
+
 Once in the airgapped environment:
 ```shell
 sudo c8yedge install -s c8yedge.tar
 ```
-
