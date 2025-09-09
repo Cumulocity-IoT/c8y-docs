@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Audit logs - improved query performance (#9880) [GRAFT][release/cd] (#9900)
+title: Improved query performance for audit logs
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
