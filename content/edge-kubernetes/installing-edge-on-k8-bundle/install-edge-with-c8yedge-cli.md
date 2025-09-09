@@ -49,4 +49,18 @@ sudo c8yedge install
 
 Upon successful installation, the tool will exit automatically.
 
+### Install Edge in an airgapped environment
+
+If you are installing Edge on an environment that has no or limited internet access, you will have to use `c8yedge` to create an offline package first. This has to be executed in an environment with internet access. Execute the following command and follow the interactive prompts:
+```shell
+c8yedge package
+```
+By default, you will get a file out of this called `c8yedge.tar`. You need to transfer this file as well as the `c8yedge` tool into your airgapped environment.
+
+Once in the airgapped environment:
+```shell
+c8yedge install -s c8yedge.tar
+```
+
+
 To sign in to Edge, refer to the instructions at the start of the [**Accessing Edge**](/edge-kubernetes/installing-edge-on-k8/#accessing-edge) section. You can later update the domain and license to match your environment by following the steps outlined in [**Modifying Edge**](/edge-kubernetes/manage-edge/#modify-edge).
