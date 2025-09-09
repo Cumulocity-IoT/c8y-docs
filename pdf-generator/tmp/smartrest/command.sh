@@ -6,10 +6,9 @@ wkhtmltopdf \
  --no-background \
  --print-media-type \
  --user-style-sheet ../../templates/style.css \
- --javascript-delay 2000 \
+ --javascript-delay 6000 \
  --enable-local-file-access \
  --dpi 300 \
- --disable-javascript \
  --load-error-handling ignore \
  cover cover.html \
  copyright.html \
