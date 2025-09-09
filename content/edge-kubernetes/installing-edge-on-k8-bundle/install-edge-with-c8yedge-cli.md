@@ -61,6 +61,6 @@ By default, you will get a file out of this called `c8yedge.tar`. You need to tr
 
 Once in the airgapped environment:
 ```shell
-c8yedge install -s c8yedge.tar
+sudo c8yedge install -s c8yedge.tar
 ```
 
