@@ -14,7 +14,7 @@ First, choose your environment. It can be a physical machine, or it can be a vir
 
 Whether a VM or physical machine, ensure that all hardware and storage requirements for Edge are met, based on [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
 
-Install the Linux distribution of your choice. Because the `c8yedge`-based install provisions Edge on [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation), you should consult the [operating system configurations required by K3s](https://docs.k3s.io/installation/requirements/#operating-systems) to help you choose and configure your operating system.
+Install the Linux distribution of your choice. Because the `c8yedge`-based install provisions Edge on [Lightweight Kubernetes (K3s)](https://docs.k3s.io/), you should consult the [operating system configurations required by K3s](https://docs.k3s.io/installation/requirements/#operating-systems) to help you choose and configure your operating system.
 
 {{< c8y-admon-info >}}
 Although the virtual or physical nature of the platform is unimportant to Edge, the advantage of most VM technologies is that a running image can be exported to be run in another environment without further configuration.
@@ -59,7 +59,7 @@ c8yedge package
 ```
 By default, you will get a file out of this called `c8yedge.tar`. You need to transfer this file as well as the `c8yedge` tool into your airgapped environment.
 
-In some situations, the automatic installation of [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation) by `c8yedge` will have some additional prerequisites that are specific to runnin K3s in an airgapped environment. If your environment has no network interface with a default route, or SELinux is enabled, pay attention to the two relevant sections under [Prerequisites](https://docs.k3s.io/installation/airgap#prerequisites).
+`c8yedge` installs [Lightweight Kubernetes (K3s)](https://docs.k3s.io/), which has prerequisites for running in an airgapped environment. If your environment has no network interface with a default route, or SELinux is enabled, pay attention to and follow the two relevant sections under [Prerequisites](https://docs.k3s.io/installation/airgap#prerequisites).
 
 Once in the airgapped environment:
 ```shell
