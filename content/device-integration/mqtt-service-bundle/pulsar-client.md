@@ -17,6 +17,9 @@ In this documentation, it will be referred to simply as a _client_.
 Where the implementation or behaviour of a client is different depending on where it is hosted, those differences will be clearly documented.
 {{< /c8y-admon-info>}}
 
+The MQTT Service implements _device isolation_, meaning that MQTT devices connected to the MQTT Service **cannot** communicate directly with each other using the MQTT protocol.
+All inter-device communication will be managed by the client, as shown i the diagram.
+
 ### Connecting to the Messaging Service
 
 To connect your client to the Messaging Service, you will need to use a [Pulsar client library](https://pulsar.apache.org/docs/4.0.x/client-libraries/).
