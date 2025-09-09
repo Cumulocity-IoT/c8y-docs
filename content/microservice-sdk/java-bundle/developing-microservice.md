@@ -796,7 +796,7 @@ To deploy the application on a local Docker container, one must inject the envir
 An example execution could be:
 
 ```shell
-$ docker run -e "C8Y_BASEURL=<C8Y_BASEURL>" -e "C8Y_BASEURL_MQTT=<C8Y_BASEURL_MQTT>" <IMAGE_NAME>
+$ docker run -e "C8Y_BASEURL=<C8Y_BASEURL>" -e "C8Y_BASEURL_MQTT=<C8Y_BASEURL_MQTT>" -e "C8Y_BASEURL_PULSAR=<C8Y_BASEURL_PULSAR>" <IMAGE_NAME>
 ```
 
 ### Monitoring {#monitoring}
