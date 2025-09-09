@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improved query performance for audit logs
+title: Improved audit logs list performance
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
