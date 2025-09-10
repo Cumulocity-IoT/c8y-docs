@@ -1,0 +1,17 @@
+---
+date: ""
+title: Limited number of events produced when receiving data from LWM2M device
+product_area: Device management & connectivity
+change_type:
+  - value: change-VSkj2iV9m
+    label: Fix
+component:
+  - value: component-1KLUzmqfe
+    label: LWM2M
+build_artifact:
+  - value: tc-ggH2M4hf3
+    label: lwm2m-agent
+ticket: DM-4797
+version: 1021.11.2
+---
+Description:  In the 2025 release, the LWM2M agent introduced configurable event log levels per device. As a result, data from multi-instance LWM2M resources was being logged as separate events for each instance. This fix simplifies the logs by combining all resource-instance values into a single event.
