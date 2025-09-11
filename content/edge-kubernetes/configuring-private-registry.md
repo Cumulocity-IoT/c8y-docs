@@ -1,7 +1,7 @@
 ---
 weight: 100
 title: Configuring Edge to use a private registry
-layout: redirect
+layout: bundle
 sector:
   - edge_server
 ---
