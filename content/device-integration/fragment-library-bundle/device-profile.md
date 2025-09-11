@@ -237,7 +237,7 @@ In addition to the static templates for firmware, software, and configuration pr
 527,DeviceSerial,$FW,device_fw,1.0.1,https://cumulocity.com/fw,false,,$SW,curl,2.3.4,http://my.url.com,install,cumulocity_agent,1.2.3,https://cumulocity.com/agent,install,$CONF,http://cumulocity.com/conf,ssh_conf,https://demos.cumulocity.com/inventory/binaries/156719,agent_conf
 ```
 
-Template `527` is triggered whenever a `c8y_DeviceProfile` operation is created and will not include the software items types.
+Template `527` is triggered whenever a `c8y_DeviceProfile` operation is created and does not include the software item types.
 In cases where there is at least one software element in the software list with a defined software type, template `531` will also be triggered alongside with template `527`. Template `531` carries the software type information.
 Both templates will be sent to devices simultaneously.
 
