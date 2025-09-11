@@ -41,7 +41,7 @@ The operator will also upgrade itself as part of this process. See [Monitoring c
 
 ### Upgrading Edge in an airgapped environment {#upgrade-edge-airgapped}
 
-If you have installed Edge using the `c8yedge` tool, and Edge is now running in an environment with no or limited internet access, you can upgrade by creating an offline package and transferring it to your airgapped environment. See [Install Edge in an airgapped environment](installing-edge-on-k8/#install-edge-airgapped).
+If you have installed Edge using the `c8yedge` tool, and Edge is now running in an environment with no or limited internet access, you can upgrade by creating an offline package and transferring it to your airgapped environment. See [Install Edge in an airgapped environment](/edge-kubernetes/installing-edge-on-k8/#install-edge-airgapped).
 
 Once in the airgapped environment:
 ```shell
