@@ -1,6 +1,8 @@
 ---
-date:
-title: Return all managed object ancestors when withParents=true, not just maximum of 3 levels
+date: '2025-09-11'
+title: >-
+  Return all managed object ancestors when withParents=true, not just maximum of
+  3 levels
 change_type:
   - value: change-3BQrQ6adS
     label: API change

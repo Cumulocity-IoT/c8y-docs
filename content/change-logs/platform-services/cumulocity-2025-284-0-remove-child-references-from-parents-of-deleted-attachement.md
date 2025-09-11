@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2025-09-11'
 title: Delete child references from parents of deleted attachment
 change_type:
   - value: change-2c7RdTdXo4
