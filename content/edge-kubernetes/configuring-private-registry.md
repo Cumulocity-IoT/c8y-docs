@@ -10,14 +10,14 @@ Frequently, portions of a data center might not have access to the Internet, eve
 
 To enable this, you need to have an OCI compliant registry available in the network which is accessible to the Kubernetes cluster in which you intend to install Edge. You would also need a workstation that has full internet access, to pull the required software from the [{{< company-c8y >}} registry](https://registry.c8y.io/) and push them into the private registry installed or available in the restricted network.
 
-## Installing a private registry
+### Installing a private registry
 Any OCI compliant registry can be used as a private registry, however, the Edge installation is tested with [Harbor](https://goharbor.io/) and [Nexus Repository OSS](https://www.sonatype.com/products/sonatype-nexus-oss).
 
 Refer to [Harbor Installation and Configuration](https://goharbor.io/docs/2.11.0/install-config/) for installing Harbor and [Nexus Installation and Upgrades](https://help.sonatype.com/en/install-nexus-repository.html) for installing Nexus.
 
 After installing and configuring a private registry, ensure that all the machines (the workstation and the Kubernetes cluster nodes) which need access to the private registry can resolve its domain or host and trust the private registry's certificate (if it is configured with a self-signed certificate).
 
-## Update /etc/hosts to resolve the domain
+### Update /etc/hosts to resolve the domain
 Run the below commands to update the `/etc/hosts` file on every machine (the workstation and the Kubernetes cluster nodes) which needs access to the private registry can resolve its domain or host:
 
 ```bash
@@ -28,7 +28,7 @@ PRIVATE_REGISTRY_IP_ADDRESS="<PRIVATE-REGISTRY-IP-ADDRESS>" # Change it with you
 echo "${PRIVATE_REGISTRY_IP_ADDRESS} ${PRIVATE_REGISTRY_HOSTNAME}" | sudo tee -a /etc/hosts
 ```
 
-## Update CoreDNS configuration
+### Update CoreDNS configuration
 Run the commands below to extend the CoreDNS configuration of the Kubernetes cluster to enable resolution of the private registry's domain or host:
 ```bash
 PRIVATE_REGISTRY_HOSTNAME="<PRIVATE-REGISTRY-HOSTNAME>"  	# Change it with your private registry's domain or hostname
@@ -68,7 +68,7 @@ kubectl rollout restart deployment coredns -n kube-system
 kubectl rollout status deployment coredns -n kube-system
 ```
 
-## Trust the private registry's certificate
+### Trust the private registry's certificate
 Run the below commands to trust the private regsitry's certificate (if it is configured with a self-signed certificate), on every machine (the workstation and the Kubernetes cluster nodes) which needs access to the private registry including the Kubernetes cluster nodes:
 
 ```bash
@@ -91,7 +91,7 @@ fi
 You should restart the container runtime and Kubernetes cluster after running the above commands for the changes to take effect. For example, you can restart k3s using `sudo systemctl restart k3s` or `sudo service k3s restart` commands and docker using `sudo systemctl restart docker` or `sudo service docker restart` commands.
 {{< /c8y-admon-important >}}
 
-## Download and publish required software to the private registry
+### Download and publish required software to the private registry
 This section outlines the steps to download the required software from the [{{< company-c8y >}} registry](https://registry.c8y.io/) and publish them to the private registry.
 
 For this you need a workstation with full internet access to download the required software from the remote registry and push them into the private registry. Make sure this workstation meets the following prerequisites.
@@ -104,14 +104,14 @@ For this you need a workstation with full internet access to download the requir
 |Helm version 3.x|Refer to [Installing Helm](https://helm.sh/docs/intro/install/) for the installation instructions.|
 |ORAS CLI version 1.0.0|OCI Registry As Storage (ORAS) CLI is used to publish non-container artifacts to the Harbor registry. Refer to [Installing ORAS CLI](https://oras.land/docs/installation) for installation instructions.|  
 
-### Install registry sync script
+#### Install registry sync script
 To install registry synchronization script, run the commands below:
 
 ```bash
 pip install --force-reinstall https://download.cumulocity.com/Cumulocity-Edge/Installer/{{< c8y-edge-current-version >}}/c8yedge_registry_sync-{{< c8y-edge-current-version >}}-py3-none-any.whl
 ```
 
-### Run registry sync script
+#### Run registry sync script
 To download the required software from the [{{< company-c8y >}} registry](https://registry.c8y.io/) and publish them to the private registry, run the command below:
 
 {{< c8y-admon-info >}}
@@ -135,7 +135,7 @@ c8yedge_registry_sync sync -v {{< c8y-edge-current-version >}} -sr registry.c8y.
 [Contact product support](/additional-resources/contacting-support/) to request the Edge registry credentials.
 {{< /c8y-admon-info >}}
 
-## Update custom-environment-variables ConfigMap
+### Update custom-environment-variables ConfigMap
 Run the below commands to create or update the custom-environment-variables ConfigMap with key "ca.crt" for the Edge operator to trust the private registry's certificate (if it is configured with a self-signed certificate):
 
 ```bash
@@ -152,7 +152,7 @@ kubectl create namespace "${EDGE_NAMESPACE}" --dry-run=client -o yaml | kubectl 
 kubectl create configmap custom-environment-variables -n "${EDGE_NAMESPACE}" --from-file=ca.crt="/tmp/private-registry-ca.crt" --dry-run=client -o yaml | kubectl apply -f -
 ```
 
-## Installing the Edge operator
+### Installing the Edge operator
 Continue with installing the Edge operator by following the instructions in [Installing the Edge operator](/edge-kubernetes/installing-edge-on-k8/#installing-edge-operator)  passing the private registry's host (`-r` option) as &lt;private-registry-hostname&gt;:&lt;private-registry-port&gt; and the respective registry credentials when prompted.
 
 
