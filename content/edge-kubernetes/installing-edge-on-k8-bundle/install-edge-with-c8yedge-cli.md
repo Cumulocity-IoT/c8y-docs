@@ -57,7 +57,7 @@ If you are installing Edge on an environment that has no or limited internet acc
 ```shell
 c8yedge package
 ```
-By default, you will get a file out of this called `c8yedge.tar` in your current directory, containing the latest release of Edge {{< c8y-edge-current-version >}}. You can discover more options with `c8yedge package --help`, such as the ability to upgrade to a very specific version.
+By default, you will get a file out of this called `c8yedge.tar` in your current directory, containing the latest release of Edge {{< c8y-edge-current-version >}}. You can discover more options with `c8yedge package --help`, such as the ability to package a very specific version.
 
 You need to transfer this file as well as the `c8yedge` tool into your airgapped environment.
 
