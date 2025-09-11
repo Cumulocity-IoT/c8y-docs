@@ -3,8 +3,8 @@ date: ""
 title: Limited number of events produced when receiving data from LWM2M device
 product_area: Device management & connectivity
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+  - value: change-2c7RdTdXo4
+    label: Improvement
 component:
   - value: component-1KLUzmqfe
     label: LWM2M
