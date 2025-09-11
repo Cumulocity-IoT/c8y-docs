@@ -55,6 +55,7 @@ Once in the airgapped environment:
 ```shell
 c8yedge upgrade -s c8yedge.tar
 ```
+Unlike the initial installation, no use of `sudo` is required.
 
 ### Upgrading Edge remotely {#upgrading-edge-remotely}
 
