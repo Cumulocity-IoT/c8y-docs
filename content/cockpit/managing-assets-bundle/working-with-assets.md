@@ -68,22 +68,6 @@ If dashboards have been created for a group or device, they will also be added a
 
 Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Refer to the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) for a tutorial on adding custom tabs.
 
-
-### Analytics rules {#analytics-rules}
-
-The **Analytics rules** tab allows to create and manage the Analytics Builder model instances directly from the context of a device or group.
-
-![Analytics rules tab](/images/streaming-analytics/analytics-rules-plugin/cockpit-group.png)
-
-To create your first rule, refer to [Create your first rule](/streaming-analytics/analytics-rules-plugin/#creating-your-first-analytics-rule).
-
-For more details about analytics rules, refer to [Analytics rules plugin](/streaming-analytics/analytics-rules-plugin/#getting-started).
-
-{{< c8y-admon-preview >}}
-This feature is in Public Preview and may be subject to change in the future.
-{{< /c8y-admon-preview >}}
-
-
 ### To add a group {#to-add-a-group}
 
 1. Click **Add group** at the right of the top menu bar.

@@ -38,15 +38,15 @@ Details on these additional menu items are provided where required.
 
 The **Alarms** tab provides information on the alarms of a device. See [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for detailed information on alarms.
 
-### Analytics rules {#analytics-rules}
+### Smart rules 2.0 {#smart-rules}
 
-The **Analytics rules** tab allows to create and manage the Analytics Builder model instances directly from the context of a device or group.
+The **Smart rules 2.0** tab allows to create and manage the Analytics Builder model instances directly from the context of a device or group.
 
-![Analytics rules tab](/images/streaming-analytics/analytics-rules-plugin/analytics-rules-list.png)
+![Smart rules 2.0 tab](/images/streaming-analytics/analytics-rules-plugin/analytics-rules-list.png)
 
-To create your first rule, refer to [Create your first rule](/streaming-analytics/analytics-rules-plugin/#creating-your-first-analytics-rule).
+To create your first rule, refer to [Create your first rule](/streaming-analytics/smart-rules-plugin/#creating-your-first-analytics-rule).
 
-For more details about analytics rules, refer to [Analytics rules plugin](/streaming-analytics/analytics-rules-plugin/#getting-started).
+For more details about smart rules 2.0, refer to [Smart rules 2.0 plugin](/streaming-analytics/smart-rules-plugin/#getting-started).
 
 {{< c8y-admon-preview >}}
 This feature is in Public Preview and may be subject to change in the future.
