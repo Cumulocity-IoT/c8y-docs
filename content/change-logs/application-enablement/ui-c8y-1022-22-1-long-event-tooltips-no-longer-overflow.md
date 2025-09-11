@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Long event or alarm texts no longer overflow in the data point graph or data explorer tooltips
+date: '2025-09-11'
+title: >-
+  Long event or alarm texts no longer overflow in the data point graph or data
+  explorer tooltips
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-09-11'
 title: Fixed issue with saving in-product information setting
 product_area: Application enablement & solutions
 change_type:

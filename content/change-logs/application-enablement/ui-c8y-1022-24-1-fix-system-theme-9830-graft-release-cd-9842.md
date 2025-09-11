@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-09-11'
 title: System theme applied correctly across the platform
 product_area: Application enablement & solutions
 change_type:

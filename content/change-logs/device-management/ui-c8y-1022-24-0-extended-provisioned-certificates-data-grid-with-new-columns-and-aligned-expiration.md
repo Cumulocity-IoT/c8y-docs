@@ -1,6 +1,6 @@
 ---
-date: ""
-title: Provisioned certificates data grid extended 
+date: '2025-09-11'
+title: Provisioned certificates data grid extended
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
