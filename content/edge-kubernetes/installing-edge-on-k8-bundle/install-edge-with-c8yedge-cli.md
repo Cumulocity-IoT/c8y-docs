@@ -59,7 +59,7 @@ c8yedge package
 ```
 By default, you will get a file out of this called `c8yedge.tar` in your current directory, containing the latest release of Edge {{< c8y-edge-current-version >}}. You can discover more options with `c8yedge package --help`, such as the ability to package a very specific version.
 
-You need to transfer this file as well as the `c8yedge` tool into your airgapped environment.
+The offline package can be used for either an initial installation, or an upgrade of an existing installation. You need to transfer this file as well as the `c8yedge` tool into your airgapped environment.
 
 `c8yedge` installs [Lightweight Kubernetes (K3s)](https://docs.k3s.io/), which has prerequisites for running in an airgapped environment. If your environment has no network interface with a default route, or SELinux is enabled, pay attention to and follow the two relevant sections under [Prerequisites](https://docs.k3s.io/installation/airgap#prerequisites).
 
