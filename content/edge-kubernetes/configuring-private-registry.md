@@ -10,7 +10,7 @@ Frequently, portions of a data center might not have access to the Internet, eve
 
 To enable this, you need to have an OCI compliant registry available in the network which is accessible to the Kubernetes cluster in which you intend to install Edge. You would also need a workstation that has full internet access, to pull the required software from the [{{< company-c8y >}} registry](https://registry.c8y.io/) and push them into the private registry installed or available in the restricted network.
 
-### Installing a private registry
+### Install a private registry
 Any OCI compliant registry can be used as a private registry, however, the Edge installation is tested with [Harbor](https://goharbor.io/) and [Nexus Repository OSS](https://www.sonatype.com/products/sonatype-nexus-oss).
 
 Refer to [Harbor Installation and Configuration](https://goharbor.io/docs/2.11.0/install-config/) for installing Harbor and [Nexus Installation and Upgrades](https://help.sonatype.com/en/install-nexus-repository.html) for installing Nexus.
