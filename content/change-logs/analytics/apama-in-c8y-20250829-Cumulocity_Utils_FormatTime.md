@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAM-35326
-version:
+version: 26.199.0
 ---
 
 `Util.formatTime` **behavior changed** in the Cumulocity Utilities bundle for EPL Apps. This utility now produces a date-time string in **ISO8601 format** (`yyyy-MM-dd'T'HH:mm:ss.SSS`). This is a **breaking change** for any code relying on the previous `yyyy/MM/dd HH:mm:ss` format. We recommend updating your code to handle the new standard format.
