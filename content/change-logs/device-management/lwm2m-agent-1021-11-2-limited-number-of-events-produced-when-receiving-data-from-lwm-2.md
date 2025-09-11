@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4797
 version: 1021.11.2
 ---
-Description:  In the 2025 release, the LWM2M agent introduced configurable event log levels per device. As a result, data from multi-instance LWM2M resources was being logged as separate events for each instance. This fix simplifies the logs by combining all resource-instance values into a single event.
+In several CD versions, the multi-instance LWM2M resources was being logged as separate events for each resource instance in the verbose logging level. This change simplifies the logs by combining all resource-instance values into a single event.
