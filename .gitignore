@@ -13,4 +13,3 @@ static/releases.json
 .hugo_build.lock
 pdf-generator/tmp/
 pdf-generator/node_modules/
-static/pdfs

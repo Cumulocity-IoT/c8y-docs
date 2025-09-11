@@ -6,7 +6,7 @@ import { parseStringPromise } from 'xml2js';
 
 const contentDir = path.resolve(__dirname, '../content');
 const tmpDir = path.resolve(__dirname, './tmp');
-const outputDir = path.resolve(__dirname, '../static/pdfs');
+const outputDir = path.resolve(__dirname, '../public/pdfs');
 const templatesDir = path.resolve(__dirname, './templates');
 const sitemapPath = path.resolve(__dirname, '../public/sitemap.xml');
 
