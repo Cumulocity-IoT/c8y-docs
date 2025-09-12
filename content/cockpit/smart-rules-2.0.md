@@ -1,6 +1,6 @@
 ---
-weight: 81
-title: Smart rules
+weight: 80
+title: Smart rules 2.0 plugin
 layout: bundle
 outputs:
   - html
