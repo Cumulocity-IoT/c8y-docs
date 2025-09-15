@@ -1,10 +1,10 @@
 ---
-date: 2025-10-09
+date: 2025-15-09
 title: Increase of max request header size
 product_area: Application enablement & solutions
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+  - value: change-2c7RdTdXo4
+    label: Improvement
 component:
   - value: component-Sv2buFZ5I
     label: Microservice SDK
