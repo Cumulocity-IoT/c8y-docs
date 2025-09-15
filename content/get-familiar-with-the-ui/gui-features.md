@@ -84,7 +84,7 @@ The application switcher shows all {{< product-c8y-iot >}} applications you curr
 
 {{< product-c8y-iot >}} provides a name search, available through the **Search** button <i class="dlt-c8y-icon-search icon-20"></i> at the right of the top bar in the UI.
 
-On entering a search term into the textbox at the top of the **Search** window, {{< product-c8y-iot >}} returns all assets (groups, devices, child devices) where the name containing the term.
+On entering a search term into the textbox at the top of the **Search** window, {{< product-c8y-iot >}} returns all assets (groups, devices, child devices) where the name containing the term. By selecting a different tabs, you can limit the search results to either devices or assets. If you are in the context of an asset, you can also limit the search to the current hierarchy.
 
 <img src="/images/users-guide/getting-started/getting-started-search-result.png" alt="Search result" style="max-width: 100%">
 
