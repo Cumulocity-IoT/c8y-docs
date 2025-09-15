@@ -14,15 +14,15 @@ helpcontent:
       The Branding feature lets you tailor your tenant’s appearance to match your preferences. 
 
 
-   In this page, you can manage multiple branding variants, with one always set as the global branding. This global branding is automatically applied to all apps within your tenant and any subtenants. 
+       In this page, you can manage multiple branding variants, with one always set as the global branding. This global branding is automatically applied to all apps within your tenant and any subtenants. 
 
 
-  Additionally, you can create branding variants for specific applications, enabling you to give each app its own distinct look.
+      Additionally, you can create branding variants for specific applications, enabling you to give each app its own distinct look.
 
   - label: generic-tab
     title: Generic
     content: |
-      In the Generic tab, you can edit the generic settings of your branding variant that will apply to all of your branding themes.
+      In the **Generic** tab, you can edit the generic settings of your branding variant that will apply to all your branding themes.
 
   - label: light-dark-theme-tab
     title: Light and dark theme
