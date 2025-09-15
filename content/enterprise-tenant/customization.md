@@ -11,13 +11,13 @@ helpcontent:
   - label: to-configure-branding-settings
     title: Branding
     content: |
-      With the Branding feature, you can fully customize the look of your tenant to your own preferences.
+      The Branding feature lets you tailor your tenant’s appearance to match your preferences. 
 
 
-      In the **Branding** page, you can maintain multiple branding variants. One of the branding variants is always configured as the global branding. The global branding will by default apply to all apps on your tenant and your subtenants.
+   In this page, you can manage multiple branding variants, with one always set as the global branding. This global branding is automatically applied to all apps within your tenant and any subtenants. 
 
 
-      In addition to the global branding, there can also be branding variants that apply only to specific applications. This allows to brand applications differently.
+  Additionally, you can create branding variants for specific applications, enabling you to give each app its own distinct look.
 
   - label: generic-tab
     title: Generic
