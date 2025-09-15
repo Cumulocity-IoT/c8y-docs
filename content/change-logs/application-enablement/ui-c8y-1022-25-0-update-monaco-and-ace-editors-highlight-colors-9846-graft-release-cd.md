@@ -1,6 +1,6 @@
 ---
 date: ""
-title: update Monaco and Ace editors highlight colors (#9846) [GRAFT][release/cd] (#9856)
+title: update Monaco and Ace editors highlight colors
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
