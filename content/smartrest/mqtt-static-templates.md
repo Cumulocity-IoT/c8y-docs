@@ -1378,7 +1378,7 @@ Set the device profiles with software type
 |2.4|software URL|String|
 |2.5|software action|String|
 |3|configuration marker|(n/a)|
-|3...|List of 2 values per configuration|(n/a)|
+|3...|list of 2 values per configuration|(n/a)|
 |3.1|configuration URL|String|
 |3.2|configuration type|String|
 
