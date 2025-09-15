@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Replace full-text search with wildcard search for improved results
+title: Improved search results by replacing full-text search with wildcard search
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
