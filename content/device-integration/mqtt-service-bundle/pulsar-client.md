@@ -249,13 +249,14 @@ Messages published to the `to-device` topic are routed to connected MQTT devices
 | `clientID`    | Client identifier of the MQTT device that should receive the message |
 | `topic`       | Name of the MQTT topic that the message should be published to       |
 
-If the `topic` property is empty or missing, the message will not be pulished to any MQTT client.
+If the `topic` property is empty or missing, the message will not be published to any MQTT client.
 The message will only be published to a client with an active subscription to the named MQTT topic.
 The message will only be published to a client that is connected at the time the MQTT Service processes the published message.
 
 In order to enforce device-level isolation, the message will be published **only** to the specific MQTT client identified by the `clientID` message property, provided that client has an active subscription to the relevant MQTT topic.
-If the `clientID` property is empty, the message will be sent to **all** connected MQTT clients with active subscriptions to the MQTT topic.
-Because this "broadcast" publishing is potentially expensive when there are many MQTT clients connected, it should be used sparingly and only when there is a genuine application requirement to publish the same message to every device subscribed to a given topic.
+If the `clientID` property is empty, refers to an MQTT client that does not exist, or refers to a client that does not have an active subscription to the MQTT topic, the message will be **silently discarded**.
+Finally, if the `clientID` property is missing, the message will be _broadcast_ to **all** connected MQTT clients with active subscriptions to the MQTT topic.
+Because this broadcast publishing is potentially expensive when there are many MQTT clients connected, it should be used sparingly and only when there is a genuine application requirement to publish the same message to every device subscribed to a given topic.
 
 #### Message keys
 
