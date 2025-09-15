@@ -1,6 +1,6 @@
 ---
 date: 
-title: LWM2M Service utilization of Notifications 2.0 tenant-level operation subscription
+title: LWM2M service utilization of Notifications 2.0 tenant-level operation subscription
 product_area: Device management & connectivity
 change_type:
   - value: change-inv-3bw8e
