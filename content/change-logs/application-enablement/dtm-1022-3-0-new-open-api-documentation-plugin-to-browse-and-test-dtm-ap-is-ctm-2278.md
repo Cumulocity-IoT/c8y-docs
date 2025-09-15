@@ -16,4 +16,4 @@ version: 1022.3.0
 ---
 A new plugin, OpenAPI documentation, has been added to the dtm-plugins extension. It provides interactive documentation for the Assets and Definitions APIs, including details on required permissions. The plugin allows users to browse, visualize, and test API resources directly from the product documentation without needing to implement any logic.
 
-Please note that these APIs are currently in private preview. To enable them, contact the Product team via [product support](https://cumulocity.com/docs/additional-resources/contacting-support/) to have the required feature flags activated.
+Note that these APIs are currently in Private Preview. To enable them, contact the Product team via [product support](https://cumulocity.com/docs/additional-resources/contacting-support/) to have the required feature flags activated.
