@@ -1,6 +1,6 @@
 ---
 date:
-title: EPL Apps 'Util.formatTime' will correctly produce date-time string in ISO8601 format
+title: EPL Apps utility Util.formatTime produces date-time string in ISO8601 format
 change_type:
   - value: change-3BQrQ6adS
     label: API change
