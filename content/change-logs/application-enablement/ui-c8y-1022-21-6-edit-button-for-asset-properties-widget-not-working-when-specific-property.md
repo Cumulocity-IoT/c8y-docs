@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Fixed broken edit button in Asset Properties widget when displaying nested properties
+date: '2025-09-04'
+title: >-
+  Fixed broken edit button in Asset Properties widget when displaying nested
+  properties
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
