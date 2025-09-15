@@ -80,69 +80,17 @@ The application switcher shows all {{< product-c8y-iot >}} applications you curr
 ### Search and filter functionality {#search-and-filter-functionality}
 
 
-#### Full text search {#full-text-search}
+#### Name search {#name-search}
 
-{{< product-c8y-iot >}} provides a full text search, available through the **Search** button <i class="dlt-c8y-icon-search icon-20"></i> at the right of the top bar in the UI.
+{{< product-c8y-iot >}} provides a name search, available through the **Search** button <i class="dlt-c8y-icon-search icon-20"></i> at the right of the top bar in the UI.
 
-On entering a search term into the textbox at the top of the **Search** window, {{< product-c8y-iot >}} returns all assets (groups, devices, child devices) matching the search criteria.
+On entering a search term into the textbox at the top of the **Search** window, {{< product-c8y-iot >}} returns all assets (groups, devices, child devices) where the name containing the term.
 
 <img src="/images/users-guide/getting-started/getting-started-search-result.png" alt="Search result" style="max-width: 100%">
 
-Under **Search results**, the assets matching the search criteria are shown. To see more details click **Go to the assets table** at the bottom right. This shows the entire search results in a table format.
+Under **Search results**, the assets matching the search criteria are shown. The search is by default using a so called wild-card-search, meaning it appending a wildcard to the start, end and each white-space of the search-term. To have more filter options, click **Go to the assets table** at the bottom right. This shows the all assets and allows to filter for other criteria.
 
-You can navigate through the search items with your keyboard by using the arrow keys. Selecting a particular item with the tab key will navigate you to the item selected. Hitting the "Enter" key will navigate you to the asset table with a predefined start-with filter based on what you selected with the arrow keys.
-
-The Search window only lists a limited number of matches. In case of more matches, to see the complete results you must switch to the asset table.
-
-{{< c8y-admon-important >}}
-The search results include all assets containing the search term in any property (name, model or any fragment), that means, the search results do not only include assets matching the search criteria with their names.
-{{< /c8y-admon-important >}}
-
-##### Exact match {#exact-match}
-
-By default, the search option **Exact match** is applied.
-
-The underlying search functionality is based on the MongoDB full text search. For details, see [https://docs.mongodb.com/manual/text-search/](https://docs.mongodb.com/manual/text-search/).
-
-Entering multiple words separated by a blank returns all objects that match any of the words. For example, entering
-
-```text
-My Demo Device
-```
-
-will return objects containing "My", "Demo" or "Device".
-
-If you want to search for objects matching an exact phrase enclose it in quotation marks:
-
-```text
-"My Demo Device"
-```
-
-You can also exclude words by putting a hyphen before the word to search the inventory for objects containing, for example, "My" or "Demo" but not "Device":
-
-```text
-My Demo -Device
-```
-
-Case is ignored. The following search texts return the same result:
-
-```text
-My Demo Device
-my demo device
-```
-
-##### Alternative search options {#alternative-search-options}
-
-Other than with filtering, using wildcards in a search is not supported.
-
-Instead, you can switch the search option by clicking one of the following buttons:
-
-* **Starts with**,
-* **Contains** or
-* **Ends with**.
-
-This will search for assets starting with, containing or ending with the search term, respectively.
-
+You can navigate through the search items with your keyboard by using the arrow keys. Selecting a particular item with the tab or enter key will navigate you to the item selected.
 
 #### Filtering {#filtering}
 
