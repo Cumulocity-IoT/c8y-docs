@@ -1371,7 +1371,7 @@ Set the device profiles with software type
 |1.4|firmware isPatch|String|
 |1.5|firmware dependency|String|
 |2|software marker|(n/a)|
-|2...|List of 5 values per software|(n/a)|
+|2...|list of 5 values per software|(n/a)|
 |2.1|software name|String|
 |2.2|software version|String|
 |2.3|software type|String|
