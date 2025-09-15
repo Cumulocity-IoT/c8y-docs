@@ -1,5 +1,5 @@
 ---
-date:
+date: '2025-09-04'
 title: Change of the default value of revert parameter for time series measurements
 change_type:
   - value: change-3BQrQ6adS
