@@ -20,4 +20,4 @@ Comprehensive upgrade documentation is available to help developers navigate the
 
 To ensure a day one compatibility of your plugins with applications based on the v1022 Web SDK, you should add the standalone flag to all components/pipes/directives of your plugins.
 You do not need to migrate your components/pipes/directives to `standalone: true`, you can also set it to `false`. You just need to ensure that you've set the standalone flag.
-Angular v19 will otherwise default to `standalone: true` instead of `standalone: false` if the `standalone` flag has not been defined, which can break your components/pipes/directives.
+If the standalone flag has not been defined, Angular v19 will default to `standalone: true` instead of `standalone: false`, which can break your components/pipes/directives.
