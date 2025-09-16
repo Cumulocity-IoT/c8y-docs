@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2025-09-04"
 title: "Added confirmation message for group deletion"
 product_area: "Application enablement & solutions"
 change_type:
