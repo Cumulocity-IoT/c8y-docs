@@ -1,0 +1,47 @@
+{{- $page := .page -}}
+{{- $defaultImage := .defaultImage -}}
+{{- $image := "" -}}
+
+{{- with $page.Params.image -}}
+  {{- $image = . -}}
+{{- else -}}
+  {{- $contentToScan := $page.Content -}}
+
+  {{- /* Check for headless bundle and aggregate child content */ -}}
+  {{- if $page.File -}} 
+    {{- $bundle := printf "%s-%s" $page.File.BaseFileName "bundle" -}}
+    {{- $headless := $page.Site.GetPage $bundle -}}
+    {{- if $headless -}}
+      {{- $reusablePages := sort ($headless.Resources.ByType "page") ".Params.weight" -}}
+      {{- range $reusablePages -}}
+        {{- $contentToScan = printf "%s\n%s" $contentToScan .Content -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $re_markdown_image := `!\[.*?\]\((.*?)\)` -}}
+  {{- $firstMarkdownImage := findRE $re_markdown_image $contentToScan 1 -}}
+  {{- if gt (len $firstMarkdownImage) 0 -}}
+    {{- $imagePath := replaceRE $re_markdown_image "$1" (index $firstMarkdownImage 0) -}}
+    {{- $image = $imagePath -}}
+  {{- else -}}
+    {{- $re_html_image := `<img[^>]*src=["']([^"']+)["'][^>]*>` -}}
+    {{- $firstHtmlImage := findRE $re_html_image $contentToScan 1 -}}
+    {{- if gt (len $firstHtmlImage) 0 -}}
+      {{- $imagePath := replaceRE $re_html_image "$1" (index $firstHtmlImage 0) -}}
+      {{- $image = $imagePath -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if not $image -}}
+  {{- if $defaultImage -}}
+    {{- $image = $defaultImage -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $image -}}
+  {{- return ($image | absURL) -}}
+{{- else -}}
+  {{- return -}}
+{{- end -}}
