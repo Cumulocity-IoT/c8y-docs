@@ -1,5 +1,5 @@
 ---
-date: 2025-08-07
+date: 2025-08-21
 title: Schema learning for columns using special characters or SQL keywords
 product_area: Analytics
 change_type:
