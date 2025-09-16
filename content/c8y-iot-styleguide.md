@@ -3,7 +3,7 @@ title: Cumulocity Codex
 icon: "dlt-c8y-icon-programming"
 type: root
 layout: redirect
-external: "https://cumulocity.com/codex/"
+external: "https://styleguide.cumulocity.com/apps/codex/#/"
 audience:
   - Developers
 sector:
