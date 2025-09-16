@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2311"
 version: "1022.4.0"
 ---
-Previously, while deleting a group, the radio buttons were displayed with an empty message. Now, it correctly displays the appropriate messages beside the radio buttons.
+Previously, while deleting a group, the radio buttons were displayed without a message. Now, the appropriate messages are correctly displayed beside the radio buttons.
