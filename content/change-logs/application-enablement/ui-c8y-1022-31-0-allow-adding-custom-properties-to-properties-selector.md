@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Allow adding custom properties to properties selector.
+title: Asset properties selector allows adding custom properties
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
