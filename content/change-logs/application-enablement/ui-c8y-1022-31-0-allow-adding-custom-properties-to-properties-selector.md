@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63489
 version: 1022.31.0
 ---
-Asset properties selector have new functionality that allow adding custom properties to asset properties selector list. Custom properties are added to the list as temporary items and can be removed, also they are not stored. Source of these custom properties are predefined properties combined with properties from Properties Library.
+The asset properties selector is used to select properties for assets. With this change, it is now possible to add custom properties to the list of available properties in the asset properties selector. These custom properties are a combination of predefined properties and properties from the Properties Library. The custom properties are added as temporary items to the list and can be removed again. However, they are not permanently stored. This change allows users to have more flexibility in selecting and combining relevant properties for their assets.
