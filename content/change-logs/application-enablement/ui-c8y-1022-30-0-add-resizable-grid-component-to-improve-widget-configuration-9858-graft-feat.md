@@ -1,6 +1,6 @@
 ---
 date: ""
-title: add resizable grid component to improve widget configuration (#9858) [GRAFT][feat/backport-resizable-grid-release-cd] (#9916)
+title: Resizable grid component for improved widget configuration
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64108
 version: 1022.30.0
 ---
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+To provide more flexibility when configuring dashboards, a new resizable grid component has been added. This component allows users to easily resize widgets on a dashboard by dragging the widget borders. Previously, widgets had a fixed size and position which limited the dashboard layout options. With this improvement, users have more control over the dashboard appearance and can create more customized views to better suit their needs.
