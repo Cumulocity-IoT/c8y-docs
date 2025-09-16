@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Use existing Assign devices component from Subassets in Add Asset"
+title: Aligned Add asset dialog with device assignment from Subassets view
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
