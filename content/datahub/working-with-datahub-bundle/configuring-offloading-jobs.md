@@ -44,7 +44,17 @@ You can define multiple offloading pipelines for each {{< product-c8y-iot >}} co
 
 In [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections) you will find a summary of the default attributes being offloaded per base collection.
 
-#### Configure measurements collection {#select-collection}
+#### Configure inventory collection {#configure-measurement-collection}
+
+The inventory collection stores data related to devices, managed objects, as well as internal data. In order to confine the offloading pipeline to the data you need, there are different views defined over the collection, with each one defining a subset of all inventory entries.
+
+* All devices:
+* All device groups:
+* 
+
+Select the view fitting best to your needs.
+
+#### Configure measurements collection {#configure-measurement-collection}
 
 Measurements in the **measurements** base collection may have different types. For example, the collection may contain temperature, humidity, and pressure measurements. As the resulting table in the data lake must only contain measurements of one specific type, you must additionally specify the **measurement type** to which the offloaded measurements are restricted. To identify existing measurement types, {{< product-c8y-iot >}} DataHub automatically inspects a subset of the data, including initial as well as latest data. In the measurement type dropdown box, these auto-detected types are listed. If a specific type you are looking for has not been detected, you can manually enter it in this box. Alternatively you can click **Refresh** next to the dropdown box to manually re-trigger the detection of measurement types. As this might be a performance-intensive process, you should trigger it only if you know that the expected measurement type is present in data recently inserted into the collection. You can trigger such a refresh only every five minutes for performance reasons.  
 
@@ -61,7 +71,7 @@ Once you have selected a collection for offloading, you must specify the target 
 
 Each pipeline must have its own target table in the data lake. Thus, you must select distinct target table names for each offloading configuration.
 
-For each base collection, a default set of data fields is derived. This set defines the default schema of the target table with the columns capturing the data fields. The set is fix for each collection and cannot be modified. Select **Show default schema** to show the columns of the default schema with their corresponding name and type.
+For each base collection, a default set of data fields is derived. This set defines the default schema of the target table with the columns capturing the data fields. The set is fix for each collection, including the views of the inventory collection, and cannot be modified. Select **Show default schema** to show the columns of the default schema with their corresponding name and type.
 
 Click **Next** to proceed with the next configuration step. Click **Finish** to jump directly to the final step. Both steps will fail if the associated base collection is empty, as it prevents necessary schema investigations. In such a case you must ensure that the base collection is not empty before you can proceed with the offloading configuration. Click **Previous** to go back one configuration step. Click **Cancel** to cancel the offloading configuration wizard.
 
@@ -71,7 +81,7 @@ If you have added additional top-level fields while feeding data into {{< produc
 
 **Auto-detected columns**
 
-To ease the configuration process, {{< product-c8y-iot >}} DataHub auto-detects additional result columns. Using a sample of the base collection, {{< product-c8y-iot >}} DataHub searches for additional top-level fields and provides them as additional result columns. You can either include such an auto-detected column in your offloading or not. As the auto-detection logic relies on a sample, not all additional top-level fields might be captured. You can manually add a column to include a field you miss.
+To ease the configuration process, {{< product-c8y-iot >}} DataHub auto-detects additional result columns. Using a sample of the base collection, {{< product-c8y-iot >}} DataHub searches for additional top-level fields and provides them as additional result columns. For the specific case of the inventory collection, the additional columns vary with the view being selected. You can either include such an auto-detected column in your offloading or not. As the auto-detection logic relies on a sample, not all additional top-level fields might be captured. You can manually add a column to include a field you miss.
 
 **Structure of additional result columns**
 
