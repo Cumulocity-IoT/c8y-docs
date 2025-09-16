@@ -44,15 +44,21 @@ You can define multiple offloading pipelines for each {{< product-c8y-iot >}} co
 
 In [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections) you will find a summary of the default attributes being offloaded per base collection.
 
-#### Configure inventory collection {#configure-measurement-collection}
+#### Configure inventory collection {#configure-inventory-collection}
 
-The inventory collection stores data related to devices, managed objects, as well as internal data. In order to confine the offloading pipeline to the data you need, there are different views defined over the collection, with each one defining a subset of all inventory entries.
+The inventory collection stores data related to devices and managed objects. In order to confine the offloading pipeline to the data you need, there are different views defined over the collection, with each one defining a subset of all inventory entries. Select the view fitting best to your needs.
 
-* All devices:
-* All device groups:
-* 
+* **All devices**: This view provides all documents with device-related data, indicated by having the **c8y_isDevice** fragment set.
+* **All device groups**: This view provides all documents with data related to device groups, indicated by having the **c8y_isDeviceGroup** fragment set.
+* **Inventory data tagged for DataHub**: This view provides non-device data which is specifically tagged for DataHub. Corresponding documents have the fragment **c8y_DataHubInclude** set, but not the fragments **c8y_isDevice**, **c8y_isDeviceGroup**, or **c8y_DataHubExclude**.
+* **All data**: This view provides all documents, except for those having the fragment **c8y_DataHubExclude** set. Using this view is not recommended as it includes the offloading of data typically not required in your application.
+* **All remaining inventory entries**: This view provides all documents, except for those having the fragments **c8y_isDevice**, **c8y_isDeviceGroup**, **c8y_DataHubInclude**, or **c8y_DataHubExclude** set. Using this view is not recommended as it includes the offloading of data typically not required in your application.
 
-Select the view fitting best to your needs.
+Older offloading configurations not yet based on a view are still supported. They will still be configured to directly read from the inventory collection, without an intermittent view. When editing such an offloading, the above list contains an additional option **Raw inventory collection**.
+
+{{< c8y-admon-info >}}
+In case the view is empty as no documents in the inventory collection qualify for the view definition, the offloading configuration cannot be completed.
+{{< /c8y-admon-info >}}
 
 #### Configure measurements collection {#configure-measurement-collection}
 
@@ -81,7 +87,9 @@ If you have added additional top-level fields while feeding data into {{< produc
 
 **Auto-detected columns**
 
-To ease the configuration process, {{< product-c8y-iot >}} DataHub auto-detects additional result columns. Using a sample of the base collection, {{< product-c8y-iot >}} DataHub searches for additional top-level fields and provides them as additional result columns. For the specific case of the inventory collection, the additional columns vary with the view being selected. You can either include such an auto-detected column in your offloading or not. As the auto-detection logic relies on a sample, not all additional top-level fields might be captured. You can manually add a column to include a field you miss.
+To ease the configuration process, {{< product-c8y-iot >}} DataHub auto-detects additional result columns. Using a sample of the base collection, {{< product-c8y-iot >}} DataHub searches for additional top-level fields and provides them as additional result columns. For the specific case of the inventory collection, a sample of the view is used to derive the additional columns. Therefore they can vary with the view being selected. 
+
+You can either include such an auto-detected column in your offloading or not. As the auto-detection logic relies on a sample, not all additional top-level fields might be captured. You can manually add a column to include a field you miss.
 
 **Structure of additional result columns**
 
