@@ -15,5 +15,5 @@ ticket: DM-4867
 version: 1021.10.30
 ---
 The LWM2M service is now utilizing {{< product-c8y-iot >}}'s Notifications 2.0 tenant-level operation subscriptions to retrieve device operations in real time. This enhances the service's overall performance.
-Please note that when this mode is active, device push connection will no longer appear as active in the Device info widget.
+Note that when this mode is active, device push connections will no longer appear as active in the **Info** tab of the device details.
 This is because they are now managed through tenant-level subscriptions rather than device-level subscriptions.
