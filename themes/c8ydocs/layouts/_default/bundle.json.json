@@ -4,8 +4,9 @@
   {{- $list:= newScratch -}}
   {{- $headless := .Site.GetPage $bundle -}}
   {{- if $headless -}}
-    {{- range $i, $help := .Params.helpcontent -}}
-      {{- $maxb := len $help -}}
+    {{- $cont := .Params.helpcontent -}}
+    {{- range $i, $help := $cont -}}
+      {{- $maxb := len $cont -}}
       {{- $anchor := printf "%s#%s" $url $help.label -}} 
       {{- $content := $help.content | markdownify -}}
       "{{- $help.label -}}": {{- dict "helpcontent" $content "url" $url "title" $help.title | jsonify -}}
