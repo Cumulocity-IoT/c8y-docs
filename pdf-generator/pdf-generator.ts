@@ -134,11 +134,11 @@ function generateTemplateFiles(tmpFolder: string, replacements: Record<string, s
 async function runPdfGenerationScript(tmpFolder: string, folderName: string, desiredFilename: string) {
   console.log(`Generating PDF for ${folderName}...`);
     try {
-      child_process.execSync(`bash command.sh`, {
-        cwd: tmpFolder,
-        stdio: 'inherit',
-      });
-
+        child_process.execSync(`bash command.sh 2> >(grep -v 'libpng warning')`, {
+          cwd: tmpFolder,
+          stdio: 'inherit',
+          shell: 'bash',
+        });
       const generatedPdfs = fs.readdirSync(tmpFolder).filter(f => f.endsWith('.pdf'));
 
       if (generatedPdfs.length === 0) {
@@ -172,7 +172,6 @@ async function processFolder(folderName: string) {
   const bundleFolder: string = matterResult.data.bundlefolder || folderName;
   const uniqueLinks = await buildFolderLinksFromSitemap(bundleFolder);
   if (uniqueLinks.length === 0) {
-    console.warn(`No usable links for ${folderName} (bundlefolder: ${bundleFolder}), skipping`);
     return;
   }
 
