@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Add confirmation message for group deletion"
+title: "Added confirmation message for group deletion"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
