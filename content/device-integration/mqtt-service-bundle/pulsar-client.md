@@ -185,6 +185,12 @@ The client identifier of the device that published the messages, and the MQTT to
 This means that your client **must** consume every message published by every device connected to the MQTT Service for the tenant, even those you are not interested in.
 Messages that are not of interest to the client can simply be acknowledged without further processing.
 
+{{< c8y-admon-caution >}}
+Your client **must** be trusted to safely handle every message published by every device connected to the MQTT Service in your tenant.
+If untrusted users have access to your tenant, these users should **not** be permitted to upload microservices, nor to connect external application clients to the MQTT Service.
+This recommendation also applies in the case of multiple customers, who do not mutually trust each other, sharing a single tenant.
+{{< /c8y-admon-caution >}}
+
 #### Durable subscriptions and acknowledgement
 
 Subscribing a consumer to a topic establishes a _durable subscription_ to the topic.
@@ -255,6 +261,11 @@ If the `topic` property is empty or missing, the message will not be published t
 The message will only be published to a client with an active subscription to the named MQTT topic.
 The message will only be published to a client that is connected at the time the MQTT Service processes the published message.
 
+Successfully publishing a message to the Messaging Service does **not** mean that the message has been successfully delivered to any MQTT device.
+Onward publishing to MQTT devices happens _asynchronously_ and without any feedback to the Pulsar client.
+Messages will be delivered to devices according to the MQTT protocol specification.
+However, because MQTT devices are required to use a _clean session_ when connecting to the MQTT Service, messages published to a device while it is disconnected will not be delivered.
+
 #### Broadcast messages {#broadcast-messages}
 
 In order to enforce device-level isolation, in general a message will be published **only** to the specific MQTT client identified by the `clientID` message property, provided that client has an active subscription to the relevant MQTT topic. However, if the `clientID` property is not present, the message will be _broadcast_ to **all** connected MQTT clients with active subscriptions to the MQTT topic.
@@ -285,9 +296,10 @@ In particular this applies to messages with the following invalid configuration:
 An alarm will be raised in the {{< product-c8y-iot >}} tenant when one of these invalid messages is detected and discarded.
 The rate of alarm sending is limited to avoid overloading the tenant with redundant alarms alerting about the same error on different messages.
 
-Note that a message with a non-empty `clientID` property referring to an MQTT device that is not currently connected is **not** considered to be invalid.
-However, this message will not be delivered to the device, even if it connects later, because of the requirement for devices to use a "clean session" when connecting.
-No alarm will be raised in this situation.
+A message with a non-empty `clientID` property referring to an MQTT device that is not currently connected is **not** considered to be invalid.
+However, this message will not be delivered to the device, even if it connects later, because of the requirement for devices to use a _clean session_ when connecting.
+Similarly, a message published to a connected MQTT device that is not currently subscribed to the MQTT topic specified in the `topic` property is not considered to be invalid.
+In these situations, the message will not be delivered but no alarms will be raised.
 {{< /c8y-admon-info >}}
 
 #### Example code
