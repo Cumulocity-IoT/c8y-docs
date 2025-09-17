@@ -40,7 +40,7 @@ In the context menu of each offloading pipeline, you will find actions for manag
 
 ##### Editing/showing an offloading pipeline {#editingshowing-an-offloading-pipeline}
 
-Click **Edit** to edit the current settings. Only inactive pipelines can be edited. Note that you cannot change the {{< product-c8y-iot >}} base collection selected for this pipeline. For the measurements collection, the target table layout cannot be changed as well. Additional filter predicates and additional result columns can be changed. Note that these changes are not applied to already exported data. A change to the offloading pipeline only affects data to be exported in upcoming offloading runs.
+Click **Edit** to edit the current settings. Only inactive pipelines can be edited. Note that you cannot change the {{< product-c8y-iot >}} base collection selected for this pipeline. In case of an inventory offloading, the view can be changed, which will also result in different additional result columns being auto-detected. Additional filter predicates and additional result columns can be changed. Note that these changes are not applied to already exported data. A change to the offloading pipeline only affects data to be exported in upcoming offloading runs.
 
 For active pipelines, click **Show** to browse through the configuration. You cannot edit the settings.
 
@@ -85,4 +85,4 @@ To import the selected configurations, click **Import**. Click **Cancel** to can
 
 As the export does not include whether a configuration was active, you must manually activate the configurations after an import.
 
-For the specific case of inventory offloadings, their definition may not yet be based on views as described in [Configure inventory collection](#configure-inventory-collection). When importing such an offloading, it will be configured so that it still directly reads from the inventory collection. It is advisable, however, to change the configuration to use a view instead.
+For the specific case of inventory offloadings, their definition may not yet be based on views as described in [Configure inventory collection](#configure-inventory-collection). When importing such an offloading, it will be configured so that it still reads directly from the inventory collection. It is advisable, however, to change the configuration and use a view instead in order to ensure that only relevant data is offloaded.

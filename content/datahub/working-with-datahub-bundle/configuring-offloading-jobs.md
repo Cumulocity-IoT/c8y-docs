@@ -50,14 +50,14 @@ The inventory collection stores data related to devices and managed objects. In 
 
 * **All devices**: This view provides all documents with device-related data, indicated by having the **c8y_isDevice** fragment set.
 * **All device groups**: This view provides all documents with data related to device groups, indicated by having the **c8y_isDeviceGroup** fragment set.
-* **Inventory data tagged for DataHub**: This view provides non-device data which is specifically tagged for DataHub. Corresponding documents have the fragment **c8y_DataHubInclude** set, but not the fragments **c8y_isDevice**, **c8y_isDeviceGroup**, or **c8y_DataHubExclude**.
-* **All data**: This view provides all documents, except for those having the fragment **c8y_DataHubExclude** set. Using this view is not recommended as it includes the offloading of data typically not required in your application.
-* **All remaining inventory entries**: This view provides all documents, except for those having the fragments **c8y_isDevice**, **c8y_isDeviceGroup**, **c8y_DataHubInclude**, or **c8y_DataHubExclude** set. Using this view is not recommended as it includes the offloading of data typically not required in your application.
+* **Inventory data tagged for DataHub**: This view provides all documents, which are specifically tagged for DataHub and not related to devices. Corresponding documents have the fragment **c8y_DataHubInclude** set, but not the fragments **c8y_isDevice**, **c8y_isDeviceGroup**, or **c8y_DataHubExclude**. You can utilize the fragment **c8y_DataHubInclude** in your data-generating application to configure a custom view which offloads only selected documents.
+* **All data**: This view provides all documents, except for those having the fragment **c8y_DataHubExclude** set. You can utilize the fragment **c8y_DataHubExclude** in your data-generating application to configure a custom view which excludes selected documents. Using this view is not recommended. First, it includes the offloading of data typically not required in your application and second, the schema detection may suffer from the heterogeneity of the data.
+* **All remaining inventory entries**: This view provides all documents, except for those having the fragments **c8y_isDevice**, **c8y_isDeviceGroup**, **c8y_DataHubInclude**, or **c8y_DataHubExclude** set. Using this view is not recommended. First, it includes the offloading of data typically not required in your application and second, the schema detection may suffer from the heterogeneity of the data.
 
-Older offloading configurations not yet based on a view are still supported. They will still be configured to directly read from the inventory collection, without an intermittent view. When editing such an offloading, the above list contains an additional option **Raw inventory collection**.
+Older offloading configurations not yet based on a view are still supported. They are configured to directly read from the inventory collection, without an intermittent view. When editing such an offloading, the above list contains an additional option **Raw inventory collection**, which is automatically selected. It is advisable to select one of the other views to ensure that only relevant data is offloaded.
 
 {{< c8y-admon-info >}}
-In case the view is empty as no documents in the inventory collection qualify for the view definition, the offloading configuration cannot be completed.
+The view may be empty as no documents in the inventory collection qualify for the view definition. Then the offloading configuration cannot be completed as no schema can be derived.
 {{< /c8y-admon-info >}}
 
 #### Configure measurements collection {#configure-measurement-collection}
@@ -87,7 +87,7 @@ If you have added additional top-level fields while feeding data into {{< produc
 
 **Auto-detected columns**
 
-To ease the configuration process, {{< product-c8y-iot >}} DataHub auto-detects additional result columns. Using a sample of the base collection, {{< product-c8y-iot >}} DataHub searches for additional top-level fields and provides them as additional result columns. For the specific case of the inventory collection, a sample of the view is used to derive the additional columns. Therefore they can vary with the view being selected. 
+To ease the configuration process, {{< product-c8y-iot >}} DataHub auto-detects additional result columns. Using a sample of the base collection, {{< product-c8y-iot >}} DataHub searches for additional top-level fields and provides them as additional result columns. For the specific case of the inventory collection, a sample of the selected view is used to derive the additional columns. Therefore they can vary with the view being selected. 
 
 You can either include such an auto-detected column in your offloading or not. As the auto-detection logic relies on a sample, not all additional top-level fields might be captured. You can manually add a column to include a field you miss.
 

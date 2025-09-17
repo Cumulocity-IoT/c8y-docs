@@ -109,7 +109,7 @@ The inventory collection keeps track of managed objects. During offloading, the 
 | c8y_IsDevice | BOOLEAN |
 | c8y_IsDeviceGroup | BOOLEAN |
 
-The inventory collection keeps track of managed objects. Note that {{< product-c8y-iot >}} DataHub automatically filters out internal objects of the {{< product-c8y-iot >}} platform. These internal objects are also not returned when using the {{< product-c8y-iot >}} REST API. As described in [Configure inventory collection](#configure-measurement-collection), pre-defined views over the inventory collection allow you to confine your offloading to the relevant data. Those views all share the above schema.
+The inventory collection keeps track of managed objects. Note that {{< product-c8y-iot >}} DataHub automatically filters out internal objects of the {{< product-c8y-iot >}} platform. These internal objects are also not returned when using the {{< product-c8y-iot >}} REST API. As described in [Configure inventory collection](#configure-inventory-collection), pre-defined views over the inventory collection allow you to confine your offloading to the relevant data. Those views all share the above schema.
 
 A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. Therefore an offloading pipeline for the inventory encompasses additional steps:
 
@@ -128,9 +128,7 @@ The fields **childDevices** and **childAssets** are not part of the default offl
 
 The measurements collection stores device measurements. The corresponding table contains all measurements for a pre-selected measurement type. In the main panel of the **Offloading** page you find in the details section of an offloading configuration a link which navigates you to the corresponding table in the Dremio UI.
 
-##### Offloading measurements with the default target table layout {#offloading-measurements-with-the-default-target-table-layout}
-
-When using the default layout, you must select a measurement type, so that all offloaded data is of the same type. During offloading, the data of the measurements collection is flattened, with the resulting schema being defined as follows:
+You must select a measurement type, so that all offloaded data is of the same type. During offloading, the data of the measurements collection is flattened, with the resulting schema being defined as follows:
 
 | Column name | Column type |
 | -----       | -----       |
