@@ -64,7 +64,7 @@ When completed, your model will look similar to this:
 
 1. Navigate to the Device Management application.
 2. Go to **Devices** > **All devices** and select a device.
-3. Click the **Smart rules NEW** tab (embedded as one of the device details tabs).
+3. Click the **Smart rules (NEW)** tab (embedded as one of the device details tabs).
 Refer to the [Prerequisites](#prerequisites) section to ensure all requirements are met.
    ![Smart rules tab](/images/streaming-analytics/analytics-rules-plugin/empty-analytics-rule.png)
 4. Click **Add rule** to open the **Add rule** dialog. Since we are currently in the **Device** context, only models that have been configured with **From Context** template parameters restricted to **Device** will be visible here. Select your configured model and click **OK**.
