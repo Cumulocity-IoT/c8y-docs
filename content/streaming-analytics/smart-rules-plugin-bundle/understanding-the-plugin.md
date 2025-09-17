@@ -1,10 +1,10 @@
 ---
 weight: 15
-title: Understanding the Smart rules 2.0 plugin
+title: Understanding the Smart rules (NEW) plugin
 layout: redirect
 ---
 
-### Analytics Builder workflow versus Smart rules 2.0 plugin {#analytics-builder-workflow-versus-smart-rules-plugin}
+### Analytics Builder workflow versus Smart rules plugin {#analytics-builder-workflow-versus-smart-rules-plugin}
 
 #### Standard Analytics Builder workflow {#standard-analytics-builder-workflow}
 In the standard Analytics Builder workflow, to deploy analytics instances, users must switch from their primary workflow to the Analytics Builder:
@@ -19,10 +19,10 @@ This process requires switching between applications and can be time-consuming w
 
 For detailed information about the instance editor workflow, refer to [Instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor).
 
-#### With Smart rules 2.0 plugin {#with-smart-rules-plugin}
-The Smart rules 2.0 plugin streamlines this process by enabling analytics builder model instance creation and deployment directly from device and group contexts, eliminating the need for switching to different application.
+#### With Smart rules plugin {#with-smart-rules-plugin}
+The Smart rules plugin streamlines this process by enabling analytics builder model instance creation and deployment directly from device and group contexts, eliminating the need for switching to different application.
 
-### Understanding the Smart rules 2.0 interface {#understanding-the-smart-rules-interface}
+### Understanding the Smart rules interface {#understanding-the-smart-rules-interface}
 
 A rule has the following fields and properties:
 
@@ -38,11 +38,11 @@ A rule has the following fields and properties:
 
 ### Integration with Analytics Builder instance editor {#integration-with-analytics-builder-instance-editor}
 
-The Smart rules 2.0 plugin maintains seamless bidirectional integration with the Analytics Builder instance editor.
+The Smart rules plugin maintains seamless bidirectional integration with the Analytics Builder instance editor.
 
-Rules created in the Analytics Builder instance editor appear in the Smart rules 2.0 plugin only when the mode is set to **Production**. Non-production modes indicate the rule is under development or testing and not ready for deployment.
+Rules created in the Analytics Builder instance editor appear in the Smart rules plugin only when the mode is set to **Production**. Non-production modes indicate the rule is under development or testing and not ready for deployment.
 
-Rules created through the Smart rules 2.0 plugin automatically appear in the corresponding model's instance editor. These rules can be edited, modified, or deleted from the instance editor.
+Rules created through the Smart rules plugin automatically appear in the corresponding model's instance editor. These rules can be edited, modified, or deleted from the instance editor.
 
 To prevent deployment of incomplete rules, the instance editor includes enhanced validation on the instance name. The instance name is required and must be unique within your tenant. The instance is available for deployment only after you provide a unique, non-empty instance name.
 

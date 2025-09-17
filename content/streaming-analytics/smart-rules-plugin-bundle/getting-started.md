@@ -1,24 +1,24 @@
 ---
 weight: 10
-title: Getting started with the Smart rules 2.0 plugin
+title: Getting started with the Smart rules (NEW) plugin
 layout: redirect
 ---
 
-### What is the Smart rules 2.0 plugin {#what-is-the-smart-rules-2.0-plugin}
-The Smart rules 2.0 plugin extends the Analytics Builder capabilities within Streaming Analytics by enabling users to create and manage Analytics Builder model instances directly from device and group contexts within applications such as Device Management and Cockpit.
+### What is the Smart rules plugin {#what-is-the-smart-rules-plugin}
+The Smart rules plugin extends the Analytics Builder capabilities within Streaming Analytics by enabling users to create and manage Analytics Builder model instances directly from device and group contexts within applications such as Device Management and Cockpit.
 
 For more details about Analytics Builder, refer to [Analytics Builder](/streaming-analytics/analytics-builder/#getting-started).
 
 ### Prerequisites {#prerequisites}
 
-Before using the Smart rules 2.0 plugin, ensure that the following requirements are met:
+Before using the Smart rules (NEW) plugin, ensure that the following requirements are met:
 - The tenant is subscribed to the Streaming Analytics microservice that supports the Analytics Builder capability.
-- The Smart rules 2.0 plugin is installed in the desired application, and the feature flag `streaming-analytics.smart-rules-2.0-plugin` is enabled.
+- The new Smart rules plugin is installed in the desired application, and the feature flag `streaming-analytics.smart-rules-plugin` is enabled.
 - The user has the required privileges to access Analytics Builder models and create new instances of Analytics builder templated models. Refer to [Permissions](/streaming-analytics/introduction-analytics/#permissions).
 
-### Creating your first smart rules 2.0 {#creating-your-first-smart-rules-2.0}
+### Creating your first smart rules {#creating-your-first-smart-rules}
 
-This topic provides the basic workflow for creating your first Smart rules 2.0 using the plugin from applications like Device Management. You will create a simple templated analytics model that creates an alarm when the temperature breaches a given threshold value. The steps below require that at least one device is already registered in {{< product-c8y-iot >}}. Preferably, this device already sends measurement values to {{< product-c8y-iot >}}.
+This topic provides the basic workflow for creating your first Smart rules using the plugin from applications like Device Management. You will create a simple templated analytics model that creates an alarm when the temperature breaches a given threshold value. The steps below require that at least one device is already registered in {{< product-c8y-iot >}}. Preferably, this device already sends measurement values to {{< product-c8y-iot >}}.
 
 The model that you add will contain three blocks:
 - An input block which receives measurements from devices, groups, or assets.
@@ -60,11 +60,11 @@ When completed, your model will look similar to this:
 
 ![Create model for alarms](/images/streaming-analytics/analytics-rules-plugin/create-alarm-model.png)
 
-#### Step 2: Create model instance using Smart rules 2.0 plugin {#create-an-instance-of-model-using-smart-rules-2.0}
+#### Step 2: Create model instance using Smart rules plugin {#create-an-instance-of-model-using-smart-rules}
 
 1. Navigate to the Device Management application.
 2. Go to **Devices** > **All devices** and select a device.
-3. Click the **Smart rules 2.0** tab (embedded as one of the device details tabs).
+3. Click the **Smart rules NEW** tab (embedded as one of the device details tabs).
 Refer to the [Prerequisites](#prerequisites) section to ensure all requirements are met.
    ![Smart rules tab](/images/streaming-analytics/analytics-rules-plugin/empty-analytics-rule.png)
 4. Click **Add rule** to open the **Add rule** dialog. Since we are currently in the **Device** context, only models that have been configured with **From Context** template parameters restricted to **Device** will be visible here. Select your configured model and click **OK**.
@@ -76,9 +76,9 @@ Refer to the [Prerequisites](#prerequisites) section to ensure all requirements 
 6. Your rule now appears in the Smart rules list, showing its status (Active/Inactive).
    ![Smart rules list](/images/streaming-analytics/analytics-rules-plugin/analytics-rules-list.png)
 
-**Congratulations!** You have successfully created and deployed your first smart rule using the Smart rules 2.0 plugin.
+**Congratulations!** You have successfully created and deployed your first smart rule using the Smart rules plugin.
 
-### Creating Smart rules 2.0 for existing samples {#create-smart-rule-for-existing-samples}
+### Creating Smart rules from existing Analytics Builder samples {#create-smart-rule-for-existing-samples}
 
 You can also create smart rules using pre-built sample models from Analytics Builder. The process is similar to creating from scratch but faster since the model logic is already defined.
 
