@@ -35,11 +35,11 @@ date = "August 21, 2025"
 version = "2025.7"
 
 [[versions]]
-date = "March 31, 2025"
+date = "April 11, 2025"
 version = "Edge-2025.0.0"
 
 [[versions]]
-date = "May 22, 2025"
+date = "April 23, 2025"
 version = "Edge-2025.0.1"
 
 [[versions]]
