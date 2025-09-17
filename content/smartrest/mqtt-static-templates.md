@@ -1361,7 +1361,7 @@ Establish tunneling by Remote Access device agent.
 
 ##### Parameter update operation (532) {#532}
 
-Notifies a device that a **c8y_ParameterUpdate** operation has been created. 
+Notifies the device that a **c8y_ParameterUpdate** operation has been created. 
 
 | Position | Parameter          | Type   | Description                                                         |
 |:---------|:-------------------|:-------|:--------------------------------------------------------------------|
