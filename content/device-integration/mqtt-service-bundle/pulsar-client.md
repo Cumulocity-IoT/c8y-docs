@@ -147,22 +147,24 @@ Received messages will not include any properties other than those listed here.
 Messages published to MQTT devices **must** include all of the required properties, and may include any of the optional properties.
 If a published message includes any properties other than those listed here, those properties will be ignored by the MQTT Service.
 
-| Property name               | Required | Value type and encoding                                               | Purpose                                |
-|-----------------------------|----------|-----------------------------------------------------------------------|----------------------------------------|
-| `clientID`                  | YES      | String                                                                | MQTT client identifier                 |
-| `topic`                     | YES      | String                                                                | MQTT topic name                        |
-| `tx.payloadFormatIndicator` | NO       | Single byte with two permitted values, encoded as strings "0" and "1" | MQTT v5 Payload Format Indicator       |
-| `tx.contentType`            | NO       | String                                                                | MQTT v5 Content Type                   |
-| `tx.responseTopic`          | NO       | String                                                                | MQTT v5 Response Topic                 |
-| `tx.correlationData`        | NO       | Sequence of bytes, encoded as a Base64 string                         | MQTT v5 Correlator Data                |
-| `tx.userProperties.<name>`  | NO       | String                                                                | MQTT v5 User Property with name `name` |
+| Property name                             | Required          | Value type and encoding                                               | Purpose                                              |
+|-------------------------------------------|-------------------|-----------------------------------------------------------------------|------------------------------------------------------|
+| `topic`                                   | YES               | String                                                                | MQTT topic name                                      |
+| `clientID`                                | YES<sup>(1)</sup> | String                                                                | MQTT client identifier                               |
+| `tx.payloadFormatIndicator`<sup>(2)</sup> | NO                | Single byte with two permitted values, encoded as strings "0" and "1" | MQTT v5 Payload Format Indicator                     |
+| `tx.contentType`                          | NO                | String                                                                | MQTT v5 Content Type                                 |
+| `tx.responseTopic`                        | NO                | String                                                                | MQTT v5 Response Topic                               |
+| `tx.correlationData`                      | NO                | Sequence of bytes, encoded as a Base64 string                         | MQTT v5 Correlator Data                              |
+| `tx.userProperties.<name>`                | NO                | String                                                                | MQTT v5 User Property with name `name`<sup>(3)</sup> |
 
-The `tx.` prefix indicates that a property is specific to a _transport_, in this case the MQTT Service.
-
-The MQTT version 5 specification allows a message to include more than one user property with the same name.
-This feature is **not** supported by the MQTT Service.
-If a device publishes a message containing multiple user properties with the same name, only one of these will be copied into the Pulsar message.
-It is undefined which property will be copied.
+Notes:
+1. The `clientID` property can be omitted from a published message only in special case of a _broadcast_ message, described below in [broadcast messages](#broadcast-messages)
+2. The `tx.` prefix indicates that a property is specific to a _transport_, in this case the MQTT Service.
+   Other transports will define their own transport-specific properties, but all transports will use `topic` and `clientID`.
+3. The MQTT version 5 specification allows a message to include more than one user property with the same name.
+   This feature is **not** supported by the MQTT Service.
+   If a device publishes a message containing multiple user properties with the same name, only one of these will be copied into the Pulsar message.
+   It is undefined which property will be copied.
 
 ### Consuming messages from MQTT devices {#consuming-messages-from-mqtt-devices}
 
@@ -253,12 +255,15 @@ If the `topic` property is empty or missing, the message will not be published t
 The message will only be published to a client with an active subscription to the named MQTT topic.
 The message will only be published to a client that is connected at the time the MQTT Service processes the published message.
 
-In order to enforce device-level isolation, the message will be published **only** to the specific MQTT client identified by the `clientID` message property, provided that client has an active subscription to the relevant MQTT topic.
-If the `clientID` property is empty, refers to an MQTT client that does not exist, or refers to a client that does not have an active subscription to the MQTT topic, the message will be **silently discarded**.
-Finally, if the `clientID` property is missing, the message will be _broadcast_ to **all** connected MQTT clients with active subscriptions to the MQTT topic.
-Because this broadcast publishing is potentially expensive when there are many MQTT clients connected, it should be used sparingly and only when there is a genuine application requirement to publish the same message to every device subscribed to a given topic.
+#### Broadcast messages {#broadcast-messages}
 
-#### Message keys
+In order to enforce device-level isolation, in general a message will be published **only** to the specific MQTT client identified by the `clientID` message property, provided that client has an active subscription to the relevant MQTT topic. However, if the `clientID` property is not present, the message will be _broadcast_ to **all** connected MQTT clients with active subscriptions to the MQTT topic.
+
+Broadcast publishing is potentially expensive when there are many MQTT clients connected.
+It may also lead to messages being received by unexpected devices.
+Therefore, it should be used sparingly and only when there is a genuine application requirement to publish the same message to every device subscribed to a given topic.
+
+#### Message keys {#message-keys}
 
 To facilitate efficient delivery and correct ordering of messages sent to MQTT devices, clients **must** also set the _key_ of a Pulsar message published to the `to-device` topic.
 The key should be set as follows:
@@ -266,10 +271,24 @@ The key should be set as follows:
 * When the `clientID` message property is set, the key should have the same value as this property.
 * When the `clientID` message property is **not** set, the key should have the same value as the `topic` message property.
 
-{{< c8y-admon-caution >}}
-Your client may appear to work correctly even if these rules are not followed and the message key is set incorrectly.
-However, this can lead to messages being delivered out of order and to degraded performance, particularly when many messages are published to the same client.
-{{< /c8y-admon-caution >}}
+{{< c8y-admon-info >}}
+#### Handling of invalid messages {#handling-of-invalid-messages}
+
+Published messages that do not follow the rules for message properties and keys documented above will **not** be delivered to any MQTT device.
+In particular this applies to messages with the following invalid configuration:
+
+* The message _key_ is not set.
+* The message _key_ is set but does not match the `clientID` or `topic` property as described in [message keys](#message-keys).
+* The `clientID` property is set but has an empty value.
+* The `topic` property is not set, or it is set but has an empty value.
+
+An alarm will be raised in the {{< product-c8y-iot >}} tenant when one of these invalid messages is detected and discarded.
+The rate of alarm sending is limited to avoid overloading the tenant with redundant alarms alerting about the same error on different messages.
+
+Note that a message with a non-empty `clientID` property referring to an MQTT device that is not currently connected is **not** considered to be invalid.
+However, this message will not be delivered to the device, even if it connects later, because of the requirement for devices to use a "clean session" when connecting.
+No alarm will be raised in this situation.
+{{< /c8y-admon-info >}}
 
 #### Example code
 
