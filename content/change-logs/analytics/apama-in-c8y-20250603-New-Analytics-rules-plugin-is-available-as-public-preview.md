@@ -16,7 +16,7 @@ version: 26.152.0
 ---
 
 {{< c8y-admon-preview >}}
-The "Smart rules (NEW)" feature was previously named “Analytics rules”. It is in Public Preview and may be subject to change in the future.
+This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
 {{< /c8y-admon-preview >}}
 
 The Analytics rules plugin extends the Analytics Builder capabilities within Streaming Analytics by enabling users to create and manage the Analytics Builder model instances directly from device and group contexts within applications such as Device Management and Cockpit. You can activate the feature using the **Manage preview features** option in the user menu.
