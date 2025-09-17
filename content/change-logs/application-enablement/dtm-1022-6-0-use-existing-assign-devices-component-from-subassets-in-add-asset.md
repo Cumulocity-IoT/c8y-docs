@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2330"
 version: "1022.6.0"
 ---
-Previously, when assigning devices in the Add asset dialog, child devices could be viewed by using a toggle button. Now, that toggle has been removed, and the button is directly displayed beside the parent device on the right side of the grid.
+Previously, when assigning devices in the Add asset dialog, child devices could be viewed by using a toggle button. Now, that toggle has been removed, and the button is directly displayed beside the parent device on the right side of the grid similar to the device assignment from Subassets view.
