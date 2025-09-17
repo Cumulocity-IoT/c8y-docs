@@ -61,7 +61,7 @@ relativeURLs = true
 
   [[params.additionalResources]]
     name = "Learning Portal"
-    link = "https://cumulocity.moodlecloud.com/"
+    link = "https://learning.cumulocity.com/"
 
   [[params.additionalResources]]
     name = "YouTube"
