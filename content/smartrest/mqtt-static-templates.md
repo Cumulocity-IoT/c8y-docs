@@ -1361,7 +1361,7 @@ Establish tunneling by Remote Access device agent.
 
 ##### Parameter update operation (532) {#532}
 
-Notifies device that **c8y_ParameterUpdate** operation has been created. 
+Notifies a device that a **c8y_ParameterUpdate** operation has been created. 
 
 | Position | Parameter          | Type   | Description                                                         |
 |:---------|:-------------------|:-------|:--------------------------------------------------------------------|
@@ -1389,12 +1389,12 @@ Operation with fragments:
 }
 ```
 
-Will result in message:
+Will result in the message:
 ```text
 532,someSerial,MyParameter,b,true,DeviceMaintainer.name,s,John Smithsky,DeviceMaintainer.contact,s,12312,Problems,,
 ```
 
-Maximum number of parameters is **100** - operations containing more parameters won't be sent to device.
+The maximum number of parameters is **100**. Operations containing more parameters won't be sent to the device.
 
 
 #### Platform capabilities templates (6xx) {#subscribe-platform-capabilities} 

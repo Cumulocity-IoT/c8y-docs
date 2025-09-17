@@ -57,7 +57,7 @@ If any error occurs during the processing of an operation the device must set th
 
 It is up to the device and its use case whether it should roll back any local state changes that happened before the error occurred. If any change of state remains after an operation failed the device must communicate this changed state with {{< product-c8y-iot >}}.
 
-#### Handling of unknown operations
+#### Handling of unknown operations {#handling-of-unknown-operations}
 
 Future versions of {{< product-c8y-iot >}} may include new operation types. To ensure compatibility, devices should safely ignore any operations they do not recognize.
 When a device receives an unknown operation code, it should not respond or take any action. The operation will remain in a pending state, which is normal and does not indicate a problem.   
