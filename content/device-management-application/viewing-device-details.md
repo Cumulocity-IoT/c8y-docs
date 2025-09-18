@@ -48,7 +48,7 @@ The **Smart rules (NEW)** tab allows to create and manage the Analytics Builder 
 
 ![Smart rules new tab](/images/streaming-analytics/analytics-rules-plugin/analytics-rules-list.png)
 
-To create your first rule, refer to [Create your first rule](/streaming-analytics/smart-rules-plugin/#creating-your-first-analytics-rule).
+To create your first rule, refer to [Create your first rule](/streaming-analytics/smart-rules-plugin/#creating-your-first-smart-rule).
 
 For more details about smart rules (NEW), refer to [Smart rules plugin](/streaming-analytics/smart-rules-plugin/#getting-started).
 
