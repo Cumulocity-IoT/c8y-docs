@@ -36,22 +36,22 @@ version = "2025.7"
 
 # Fake dates for the 'parallel' Edge timeline that should be sorted entirely outside of the timeline of the cloud releases
 [[versions]]
-date = "January 1, 1970"
+date = "January 1, 2100"
 version = "Edge-2025.0.0"
 
 [[versions]]
-date = "January 1, 1971"
+date = "January 1, 2101"
 version = "Edge-2025.0.1"
 
 [[versions]]
-date = "January 1, 1972"
+date = "January 1, 2102"
 version = "Edge-2025.0.2"
 
 [[versions]]
-date = "January 1, 1973"
+date = "January 1, 2103"
 version = "Edge-2025.0.3"
 
 [[versions]]
-date = "January 1, 1974"
+date = "January 1, 2104"
 date = "September 15, 2025"
 version = "Edge-2025.0.4"
