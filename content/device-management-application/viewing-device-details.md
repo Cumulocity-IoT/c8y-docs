@@ -46,7 +46,7 @@ This feature is in Public Preview and may be subject to change in the future.
 
 The **Smart rules (NEW)** tab allows to create and manage the Analytics Builder model instances directly from the context of a device or group.
 
-![Smart rules new tab](/images/streaming-analytics/analytics-rules-plugin/analytics-rules-list.png)
+![Smart rules new tab](/images/streaming-analytics/smart-rules-plugin/smart-rules-list.png)
 
 To create your first rule, refer to [Create your first rule](/streaming-analytics/smart-rules-plugin/#creating-your-first-smart-rule).
 

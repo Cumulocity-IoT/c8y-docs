@@ -17,7 +17,7 @@ Smart rules (NEW) is the advanced form of Smart rules, providing enhanced flexib
 
 The **Smart rules (NEW)** tab allows to create and manage the Analytics Builder model instances directly from the context of a device or group.
 
-![New Smart rules tab](/images/streaming-analytics/analytics-rules-plugin/analytics-rules-list.png)
+![New Smart rules tab](/images/streaming-analytics/smart-rules-plugin/smart-rules-list.png)
 
 To create your first rule, refer to [Create your first rule](/streaming-analytics/smart-rules-plugin/#creating-your-first-smart-rule).
 

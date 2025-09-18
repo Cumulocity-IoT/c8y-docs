@@ -209,7 +209,7 @@ The below links provide direct access to the available documentation sections:
 ## Streaming Analytics
 - [Analytics Builder](http://localhost:1313/docs/streaming-analytics/analytics-builder/)
 - [Analytics Builder block reference](http://localhost:1313/docs/streaming-analytics/block-reference/)
-- [Analytics rules plugin](http://localhost:1313/docs/streaming-analytics/analytics-rules-plugin/)
+- [Smart rules plugin](http://localhost:1313/docs/streaming-analytics/smart-rules-plugin/)
 - [Customization and permissions](http://localhost:1313/docs/streaming-analytics/analytics-customization/)
 - [EPL apps](http://localhost:1313/docs/streaming-analytics/epl-apps/)
 - [Introduction](http://localhost:1313/docs/streaming-analytics/introduction-analytics/)
