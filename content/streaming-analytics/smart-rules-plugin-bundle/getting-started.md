@@ -16,7 +16,7 @@ Before using the Smart rules (NEW) plugin, ensure that the following requirement
 - The new Smart rules plugin is installed in the desired application, and the **Smart rules (NEW) plugin** is enabled in **Preview feature**.
 - The user has the required privileges to access Analytics Builder models and create new instances of Analytics builder templated models. Refer to [Permissions](/streaming-analytics/introduction-analytics/#permissions).
 
-### Creating your first smart rules {#creating-your-first-smart-rules}
+### Creating your first smart rule {#creating-your-first-smart-rule}
 
 This topic provides the basic workflow for creating your first Smart rules using the plugin from applications like Device Management. You will create a simple templated analytics model that creates an alarm when the temperature breaches a given threshold value. The steps below require that at least one device is already registered in {{< product-c8y-iot >}}. Preferably, this device already sends measurement values to {{< product-c8y-iot >}}.
 
@@ -60,7 +60,7 @@ When completed, your model will look similar to this:
 
 ![Create model for alarms](/images/streaming-analytics/analytics-rules-plugin/create-alarm-model.png)
 
-#### Step 2: Create model instance using Smart rules plugin {#create-an-instance-of-model-using-smart-rules}
+#### Step 2: Create model instance using Smart rules plugin {#create-an-instance-of-model-using-smart-rules-plugin}
 
 1. Navigate to the Device Management application.
 2. Go to **Devices** > **All devices** and select a device.
@@ -94,7 +94,7 @@ You can also create smart rules using pre-built sample models from Analytics Bui
 3. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save the model.
 
 #### Step 3: Create a rule from the Device Management application {#create-rule-from-device-management-application}
-Follow the same steps as described in [Step 2: Create model instance using the Smart rules plugin](#create-an-instance-of-model-using-analytics-rules-plugin) above.
+Follow the same steps as described in [Step 2: Create model instance using the Smart rules plugin](#create-an-instance-of-model-using-smart-rules-plugin) above.
 
 
 ### Troubleshooting {#troubleshooting}
