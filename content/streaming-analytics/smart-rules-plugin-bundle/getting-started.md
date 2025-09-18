@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 ### What is the Smart rules plugin {#what-is-the-smart-rules-plugin}
-The Smart rules plugin extends the Analytics Builder capabilities within Streaming Analytics by enabling users to create and manage Analytics Builder model instances directly from device and group contexts within applications such as Device Management and Cockpit.
+The Smart rules plugin extends the Analytics Builder capabilities within Streaming Analytics by enabling users to create and manage Analytics Builder model instances directly from device and group contexts within applications such as Device Management, Cockpit and Digital Twin Manager.
 
 For more details about Analytics Builder, refer to [Analytics Builder](/streaming-analytics/analytics-builder/#getting-started).
 
@@ -13,7 +13,7 @@ For more details about Analytics Builder, refer to [Analytics Builder](/streamin
 
 Before using the Smart rules (NEW) plugin, ensure that the following requirements are met:
 - The tenant is subscribed to the Streaming Analytics microservice that supports the Analytics Builder capability.
-- The new Smart rules plugin is installed in the desired application, and the feature flag `streaming-analytics.smart-rules-plugin` is enabled.
+- The new Smart rules plugin is installed in the desired application, and the **Smart rules (NEW) plugin** is enabled in **Preview feature**.
 - The user has the required privileges to access Analytics Builder models and create new instances of Analytics builder templated models. Refer to [Permissions](/streaming-analytics/introduction-analytics/#permissions).
 
 ### Creating your first smart rules {#creating-your-first-smart-rules}
