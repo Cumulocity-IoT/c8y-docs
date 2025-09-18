@@ -33,7 +33,14 @@ All configuration options can be accessed simply by editing a YAML document that
 ```bash
 kubectl get --namespace=c8yedge edge/c8yedge -o yaml > edge.yaml
 ```
-Edit this file, referring to [Edge custom resource](/edge-kubernetes/edge-custom-resource-definition/) for an exhaustive listing of what could be changed. For example, you might add `messagingService: true` indented under the custom resource's `spec`. Apply the changed custom resource with
+Edit this file, referring to [Edge custom resource](/edge-kubernetes/edge-custom-resource-definition/) for an exhaustive listing of what could be changed. For example, you might add
+```
+messagingService:
+  enabled: true
+```
+indented under the custom resource's `spec`.
+
+Apply the changed custom resource with
 ```bash
 kubectl apply -f edge.yaml
 ```
