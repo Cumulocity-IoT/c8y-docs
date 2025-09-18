@@ -13,7 +13,7 @@ For more details about Analytics Builder, refer to [Analytics Builder](/streamin
 
 Before using the Smart rules (NEW) plugin, ensure that the following requirements are met:
 - The tenant is subscribed to the Streaming Analytics microservice that supports the Analytics Builder capability.
-- The new Smart rules plugin is installed in the desired application, and the **Smart rules (NEW) plugin** is enabled in **Preview feature**.
+- The Smart rules plugin is installed in the desired application, and the **Smart rules (NEW) plugin** is enabled in **Preview feature**.
 - The user has the required privileges to access Analytics Builder models and create new instances of Analytics builder templated models. Refer to [Permissions](/streaming-analytics/introduction-analytics/#permissions).
 
 ### Creating your first smart rule {#creating-your-first-smart-rule}
