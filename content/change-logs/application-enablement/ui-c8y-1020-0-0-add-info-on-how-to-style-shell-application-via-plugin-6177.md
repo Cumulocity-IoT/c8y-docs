@@ -15,4 +15,4 @@ ticket: MTM-58246
 version: 1020.0.0
 ---
 Documentation has been added on how to style the shell application via plugins. 
-For details, refer to the [{{< product-c8y-iot >}} Codex](https://styleguide.cumulocity.com/apps/codex/#/getting-started/guides/theming/overview#styling-the-shell-application-with-a-plugin).
+For details, refer to the [{{< product-c8y-iot >}} Codex](https://cumulocity.com/codex/getting-started/guides/application-styles/overview#styling-the-shell-application-with-a-plugin).
