@@ -1,5 +1,5 @@
 ---
-date:
+date: '2025-09-18'
 title: New parameter withSourceAdditions added to Alarms and Events APIs
 change_type:
   - value: change-QHu1GdukP
