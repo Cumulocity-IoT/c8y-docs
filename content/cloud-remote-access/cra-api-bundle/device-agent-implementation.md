@@ -87,7 +87,7 @@ when a user configures a remote endpoint. If a device doesn't declare its protoc
 available types by default.
 You can declare protocols using either the REST API or SmartREST.
 
-#### Using the REST API {#using the restapi}
+#### Using the REST API {#using-the-restapi}
 To declare protocols via REST, set the device's managed object with the `c8y_RemoteAccessSupportedProtocols` fragment.
 This fragment holds an array of strings listing the supported protocols.
 
@@ -102,7 +102,7 @@ Valid protocol values are `SSH`, `TELNET`, `VNC`, and `PASSTHROUGH`.
 
 #### Using SmartREST {#using-smartrest}
 Alternatively, the set of supported CRA protocols can be configured using the SmartREST template 150. It sets the fragment using a message containing a list
-of supported protocol names. See [MQTT Static template 150](/docs/smartrest/mqtt-static-templates/#150) for more information.
+of supported protocol names. See [MQTT Static template 150](/smartrest/mqtt-static-templates/#150) for more information.
 ##### Example
 ```text
 150,SSH,PASSTHROUGH
