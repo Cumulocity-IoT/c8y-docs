@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-09-18'
 title: Updated Monaco and Ace editor highlighting colors
 product_area: Application enablement & solutions
 change_type:
