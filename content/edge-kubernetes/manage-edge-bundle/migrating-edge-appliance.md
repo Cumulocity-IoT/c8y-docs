@@ -10,8 +10,8 @@ This section outlines the procedure for migrating from Edge appliance VM 10.17 o
 If you are using an Edge appliance VM version earlier than 10.17, you must first update to 10.17. If you are using a version prior to 10.13, you must first update to 10.13 before updating to 10.17.
 
 For information about upgrading from an earlier version to Edge 10.17, see:
-  * [Updating Edge using the GUI](/../2024/edge/edge-update/#updating-edge-gui)
-  * [Updating Edge using the REST APIs](/../2024/edge/edge-update/#updating-edge-rest)
+  * [Updating Edge using the GUI](/2024/edge/edge-update/#updating-edge-gui)
+  * [Updating Edge using the REST APIs](/2024/edge/edge-update/#updating-edge-rest)
 in the 2024 {{< product-c8y-iot >}} Edge documentation.
 
 Before proceeding, back up your Edge appliance VM and make sure there is enough disk space to store the MongoDB and DataHub (data lake) backups. For instructions on expanding disk size, refer to [Expanding the disk size](/2024/edge/operating-edge/#expanding-the-disk-size).
@@ -205,14 +205,14 @@ Perform the following steps as a root user on your Edge appliance.
 
 
 ### Step 3 - Install Edge 2025
-Follow the steps documented at [Installing Edge](/../2025/edge-kubernetes/installing-edge-on-k8/) to install and configure Edge 2025.
+Follow the steps documented at [Installing Edge](/2025/edge-kubernetes/installing-edge-on-k8/) to install and configure Edge 2025.
 
 {{< c8y-admon-important >}}
 Ensure that there is sufficient disk space available on the machine in which you intend to install Edge 2025.
-For more details, see [Configuring storage](/../2025/edge-kubernetes/installing-edge-on-k8/#configuring-storage).
+For more details, see [Configuring storage](/2025/edge-kubernetes/installing-edge-on-k8/#configuring-storage).
 {{< /c8y-admon-important >}}
 
-After installing Edge 2025, configure the Edge domain and license to match those of the Edge Appliance VM you are migrating. For details, refer to [Modifying Edge](/../2025/edge-kubernetes/manage-edge/#modify-edge)
+After installing Edge 2025, configure the Edge domain and license to match those of the Edge Appliance VM you are migrating. For details, refer to [Modifying Edge](/2025/edge-kubernetes/manage-edge/#modify-edge)
 
 ### Step 4 - Restore MongoDB data from the backup
 After installing and configuring Edge 2025, proceed to migrate the data backed up from the Edge Appliance VM.
@@ -241,7 +241,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    ```shell
    kubectl rollout restart deployment -n c8yedge c8yedge-operator-controller-manager
    ```
-   Ensure you are able to [access Edge](/../2025/edge-kubernetes/installing-edge-on-k8/#accessing-edge) before continuing with the subsequent steps.
+   Ensure you are able to [access Edge](/2025/edge-kubernetes/installing-edge-on-k8/#accessing-edge) before continuing with the subsequent steps.
 
 5. Remove the */opt/edge-appliance-backup.tar* and */opt/appliance-edgedb-backup* folders: 
    ```shell
@@ -271,4 +271,4 @@ The following components from your **Edge tenant** are automatically retained in
    * Branding
 
 #### Connecting Edge to the cloud
-If your previous Edge Appliance VM was connected to the cloud, you'll need to set up this connection again in Edge 2025. Follow the guide: [Connecting Edge to the cloud](/../2025/edge-kubernetes/k8-edge-connecting-edge-to-cloud/)
+If your previous Edge Appliance VM was connected to the cloud, you'll need to set up this connection again in Edge 2025. Follow the guide: [Connecting Edge to the cloud](/2025/edge-kubernetes/k8-edge-connecting-edge-to-cloud/)
