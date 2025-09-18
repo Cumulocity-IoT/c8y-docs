@@ -38,7 +38,7 @@ Details on these additional menu items are provided where required.
 
 The **Alarms** tab provides information on the alarms of a device. See [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for detailed information on alarms.
 
-### Smart rules (NEW) {#smart-rules-new}
+### Smart rules (NEW) {#smart-rules}
 
 {{< c8y-admon-preview >}}
 This feature is in Public Preview and may be subject to change in the future.
