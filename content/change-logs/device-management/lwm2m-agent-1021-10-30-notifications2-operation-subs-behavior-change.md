@@ -1,10 +1,10 @@
 ---
-date: 
+date: 2025-09-18
 title: LWM2M service utilization of Notifications 2.0 tenant-level operation subscription
 product_area: Device management & connectivity
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+  - value: change-QHu1GdukP
+    label: Feature
 component:
   - value: component-1KLUzmqfe
     label: LWM2M
