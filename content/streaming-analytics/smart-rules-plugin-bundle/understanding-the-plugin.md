@@ -53,6 +53,6 @@ This validation applies only to models configured with template parameters with 
 - When the instance name is empty, a message **Set distinct instance name to select production mode** is displayed below the mode field.
 - If you enter a duplicate instance name, an error message **Instance name already exists** appears below the instance name field and prevents you from proceeding.
 
-![Production mode validation](/images/streaming-analytics/analytics-rules-plugin/production-mode-validation.png)
+![Production mode validation](/images/streaming-analytics/smart-rules-plugin/production-mode-validation.png)
 
 This validation ensures that all production-ready rules have proper identification and prevents deployment conflicts.

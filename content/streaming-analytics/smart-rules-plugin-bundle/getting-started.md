@@ -33,7 +33,7 @@ This section walks you through creating a simple temperature monitoring model. F
 2. On the top bar, click **New Model**, enter a model name (for example, "Create alarm on threshold") and click **OK**.
 3. From the palette on the left, expand **Input** and drag the **Measurement Input** block onto the canvas. In the block parameter editor:
    - For **Input Source**, select "Template parameter" from the dropdown <img src="/images/streaming-analytics/analytics-builder/option-template-parameter.png" alt="Option for selecting a template parameter" style="display:inline-block; margin:0">, then provide a name. For example, "Measurement Source".
-   ![Template parameter with From Context](/images/streaming-analytics/analytics-rules-plugin/select-tp-type.png)
+   ![Template parameter with From Context](/images/streaming-analytics/smart-rules-plugin/select-tp-type.png)
 
    - For **Fragment and Series**, select "Template parameter" from the dropdown, then provide a name. For example: "Input Fragment and Series".
 4. Expand **Calculation** and drag the **Threshold** block onto the canvas. In the block parameter editor:
@@ -50,7 +50,7 @@ This section walks you through creating a simple temperature monitoring model. F
 
 For more details about "From Context" and **Restrict to**, refer to [Define template parameters](/streaming-analytics/analytics-builder/#to-define-the-template-parameters-for-the-instances-of-the-current-model)
 
-![Template parameter with From Context](/images/streaming-analytics/analytics-rules-plugin/template-parameter.png)
+![Template parameter with From Context](/images/streaming-analytics/smart-rules-plugin/template-parameter.png)
 
 For detailed information about creating and managing template parameters in Analytics Builder, refer to [Managing template parameters](/streaming-analytics/analytics-builder/#managing-template-parameters).
 
@@ -58,7 +58,7 @@ For detailed information about creating and managing template parameters in Anal
 
 When completed, your model will look similar to this:
 
-![Create model for alarms](/images/streaming-analytics/analytics-rules-plugin/create-alarm-model.png)
+![Create model for alarms](/images/streaming-analytics/smart-rules-plugin/create-alarm-model.png)
 
 #### Step 2: Create model instance using Smart rules plugin {#create-an-instance-of-model-using-smart-rules-plugin}
 
@@ -66,15 +66,15 @@ When completed, your model will look similar to this:
 2. Go to **Devices** > **All devices** and select a device.
 3. Click the **Smart rules (NEW)** tab (embedded as one of the device details tabs).
 Refer to the [Prerequisites](#prerequisites) section to ensure all requirements are met.
-   ![Smart rules tab](/images/streaming-analytics/analytics-rules-plugin/empty-analytics-rule.png)
+   ![Smart rules tab](/images/streaming-analytics/smart-rules-plugin/empty-smart-rule.png)
 4. Click **Add rule** to open the **Add rule** dialog. Since we are currently in the **Device** context, only models that have been configured with **From Context** template parameters restricted to **Device** will be visible here. Select your configured model and click **OK**.
-   ![Add rule for the selected model](/images/streaming-analytics/analytics-rules-plugin/add-rule-for-selected-model.png)
+   ![Add rule for the selected model](/images/streaming-analytics/smart-rules-plugin/add-rule-for-selected-model.png)
 5. Configure the rule parameters:
    - Optionally update the name or add a note if desired.
    - Populate the template parameter values. The value of the template parameter (for example, "Measurement Source") configured with **From Context** is derived automatically from the current device or group context.
    - Click **Save** to save the rule, or toggle to **Active** to save and deploy immediately.
 6. Your rule now appears in the Smart rules list, showing its status (Active/Inactive).
-   ![Smart rules list](/images/streaming-analytics/analytics-rules-plugin/analytics-rules-list.png)
+   ![Smart rules list](/images/streaming-analytics/smart-rules-plugin/smart-rules-list.png)
 
 **Congratulations!** You have successfully created and deployed your first smart rule using the Smart rules plugin.
 
@@ -85,7 +85,7 @@ You can also create smart rules using pre-built sample models from Analytics Bui
 #### Step 1: Create a model from a sample {#create-model-from-sample}
 1. Navigate to **Analytics Builder** > **Samples**.
 2. Click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of your desired sample (for example, "On alarm execute operation") and select **Create model from sample**.
-   ![Create model from sample](/images/streaming-analytics/analytics-rules-plugin/create-model-from-sample.png)
+   ![Create model from sample](/images/streaming-analytics/smart-rules-plugin/create-model-from-sample.png)
 3. The model editor opens with the sample model ready for use.
 
 #### Step 2: Configure template parameters {#configure-template-parameters}
