@@ -39,7 +39,7 @@ const shortcodeMapping = {
   "link-apama-webhelp": "https://cumulocity.com/apama/docs/latest",
   "link-apamadoc-api": "https://cumulocity.com/apama/docs/latest/related/ApamaDoc/",
   "link-c8y-github": "https://github.com/Cumulocity-IoT/",
-  "link-c8y-training": "https://cumulocity.moodlecloud.com/",
+  "link-c8y-training": "https://learning.cumulocity.com/",
   "link-device-portal": "https://ecosystem.cumulocity.com/devices/?filter_cumulocity_certified=yes",
   "management-tenant": "Management tenant",
   "openapi": "Cumulocity OpenAPI Specification",
