@@ -126,7 +126,7 @@ The new CA certificate will be added to the trusted certificates list:
 ### Auto-renewal of CA certificates {#auto-renewal-of-ca-certificate}
 
 Tenant Certificate Authority (CA) is automatically renewed on 2 October at 02:00 AM every year. The renewal process ensures that existing device certificates remain valid until their expiration. This auto-renewal mechanism ensures uninterrupted certificate management while maintaining security and compliance.
-If automatic renewal fails, the renewal can also be performed via API, but only if the current Certificate Authority (CA) has less than 18 months remaining before expiration.
+If automatic renewal fails, the renewal can also be performed via API, but only if the current Certificate Authority (CA) has less than 24 months remaining before expiration.
 
 This is an example of a REST request:
 
@@ -156,4 +156,3 @@ In order to call `/certificate-authority/renew` one of the following roles is re
 * All CA metadata, private keys, and public keys remain unchanged, ensuring a seamless renewal process. Only `NotAfter` and `NotBefore` wil be changed.
 * Device certificates issued by the CA continue to have 1 year validity from issuance date, and new device certificates can be issued without disruption.
 * If the auto-renewal process fails, and it has a near expiration date then an error banner will be displayed in the UI for those certificates.
-* Optionally, an email alert can be sent to the tenant administrator for immediate action.
