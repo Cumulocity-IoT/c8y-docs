@@ -7,7 +7,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..")) 
 
 CONTENT_DIR = os.path.join(PROJECT_ROOT, "content")
-OUTPUT_DIR = os.path.join(PROJECT_ROOT, "static")
+OUTPUT_DIR = os.path.join(PROJECT_ROOT, "public")
 SITEMAP_XML = os.path.join(PROJECT_ROOT, "public", "sitemap.xml")
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "llms.txt")
 
