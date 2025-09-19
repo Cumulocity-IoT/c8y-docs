@@ -79,6 +79,7 @@ jobs:
     - name: Generate llms.txt
       run: |
         python scripts/llms_generate.py 
+        cp static/llms.txt public/
 
     - name: Set known SSH hosts
       run: |
