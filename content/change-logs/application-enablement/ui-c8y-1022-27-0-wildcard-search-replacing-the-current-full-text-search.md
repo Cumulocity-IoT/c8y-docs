@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-09-18'
 title: Improved search results by replacing full-text search with wildcard search
 product_area: Application enablement & solutions
 change_type:
