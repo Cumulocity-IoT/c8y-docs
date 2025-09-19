@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2025-09-11"
 title: Aligned Add asset dialog with device assignment from Subassets view
 product_area: "Application enablement & solutions"
 change_type:
