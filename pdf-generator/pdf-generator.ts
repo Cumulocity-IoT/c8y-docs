@@ -134,11 +134,10 @@ function generateTemplateFiles(tmpFolder: string, replacements: Record<string, s
 async function runPdfGenerationScript(tmpFolder: string, folderName: string, desiredFilename: string) {
   console.log(`Generating PDF for ${folderName}...`);
     try {
-        child_process.execSync(`bash command.sh 2> >(grep -v 'libpng warning')`, {
-          cwd: tmpFolder,
-          stdio: 'inherit',
-          shell: 'bash',
-        });
+      child_process.execSync(`bash command.sh`, {
+        cwd: tmpFolder,
+        stdio: 'inherit',
+      });
       const generatedPdfs = fs.readdirSync(tmpFolder).filter(f => f.endsWith('.pdf'));
 
       if (generatedPdfs.length === 0) {
