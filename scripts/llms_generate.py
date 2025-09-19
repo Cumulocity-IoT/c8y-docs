@@ -144,11 +144,11 @@ ordered_keys = [""] + sorted(
 
 with open(OUTPUT_FILE, "w", encoding="utf-8") as out:
     out.write("# Cumulocity Documentation Index\n\n")
-    out.write("> Cumulocity IoT’s documentation is a comprehensive resource for developers and users working with the platform.  \n")
+    out.write("> Cumulocity IoT's documentation is a comprehensive resource for developers and users working with the platform.  \n")
     out.write("> It is structured to provide information for various levels of expertise, from beginners to advanced users.\n\n")
     out.write("Key features of the documentation include:\n\n")
     out.write("- User Guides: Step-by-step instructions on how to use the core features of the Cumulocity IoT platform, such as device management, data visualization, and alarm handling.  \n")
-    out.write("- Developer’s Guides: Detailed information on APIs, SDKs, and supported programming languages for building applications and integrations.  \n")
+    out.write("- Developer's Guides: Detailed information on APIs, SDKs, and supported programming languages for building applications and integrations.  \n")
     out.write("- API Reference: In-depth details on all available REST APIs, including endpoints, parameters, and example requests and responses.  \n")
     out.write("- Tutorials and Examples: Practical tutorials and code examples to help users get started quickly with tasks like connecting a device or creating a custom widget.  \n")
     out.write("- Release Notes: Updates on new features, improvements, and bug fixes, released regularly with each new version of Cumulocity IoT.\n\n")
