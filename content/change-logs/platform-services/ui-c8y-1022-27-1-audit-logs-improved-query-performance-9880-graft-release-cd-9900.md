@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-09-18'
 title: Improved audit logs list performance
 product_area: Platform services
 change_type:
