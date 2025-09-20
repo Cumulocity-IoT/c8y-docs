@@ -2,7 +2,7 @@ name: Link Checker
 
 on:
  schedule:
-  - cron: '0 14 * * 1'
+  - cron: '0 6 * * 1'
  workflow_dispatch: 
   
 permissions:
@@ -31,3 +31,18 @@ jobs:
         run: |
           cd broken-links-script
           npm test
+
+      - name: Create GitHub issue if tests fail
+        if: failure()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          today=$(date +'%Y-%m-%d')
+          issue_url=$(gh issue create \
+            --title "Weekly Link Check Failed" \
+            --body "Broken links detected in workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            --label "broken-link" \
+            --assignee "BeateRixen")
+
+          echo "Result: ${issue_url}"
+          echo "issue_created=${issue_url}" >> $GITHUB_OUTPUT
