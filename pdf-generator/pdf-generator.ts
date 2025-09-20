@@ -185,7 +185,8 @@ async function processFolder(folderName: string) {
     console.log(`Cleaned temp folder: ${tmpFolder}`);
   }
   fs.mkdirSync(tmpFolder, { recursive: true });
-  const replacements = { title, urls: linksBlock};
+  const current_Year = new Date().getFullYear().toString();
+  const replacements = { title, urls: linksBlock, current_year: current_Year};
   generateTemplateFiles(tmpFolder, replacements);
   runPdfGenerationScript(tmpFolder, folderName, pdfFilename);
   await sleep(5000);
