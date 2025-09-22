@@ -19,6 +19,16 @@ enableGitInfo = true
 [taxonomies]
   sectors = "sector"
 
+[outputs]
+  home = ["HTML", "llmstxt"]
+
+[outputFormats.llmstxt]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
+  suffixes = ["txt"]
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
