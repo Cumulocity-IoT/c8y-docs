@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Prefill custom data point form in Edit data point dialog"
+title: "Edit data point dialog now prefilled"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2362"
 version: "1022.7.0"
 ---
-The Edit Data Point screen has been enhanced to prefill the form with both standard and custom data points.
+The **Edit data point** dialog has been enhanced to be prefilled with both standard and custom data points.
