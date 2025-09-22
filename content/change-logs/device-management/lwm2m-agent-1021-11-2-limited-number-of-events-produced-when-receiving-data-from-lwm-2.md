@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4797
 version: 1021.11.2
 ---
-In several CD versions, the multi-instance LWM2M resources was being logged as separate events for each resource instance in the verbose logging level. This change simplifies the logs by combining all resource-instance values into a single event.
+Previously, each resource instance of multi-instance LWM2M resources was logged as a separate event in the verbose logging level. This change simplifies the logs by combining all resource-instance values into a single event.
