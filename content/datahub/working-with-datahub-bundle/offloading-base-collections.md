@@ -144,16 +144,18 @@ When using the default layout, you must select a measurement type, so that all o
 | timeWithOffset | TIMESTAMP |
 | source | VARCHAR |
 | type | VARCHAR |
-| fragment.attribute1.name.value | Depends on data type, often FLOAT |
-| fragment.attribute1.name.unit | String |
+| fragment_name.property_name1.value | Depends on data type, often FLOAT |
+| fragment_name.property_name1.unit | String |
 | ... |  |
-| fragment.attributeN.name.value | Depends on data type, often FLOAT |
-| fragment.attributeN.name.unit | String |
-| myCustomAttribute1 | Depends on data type |
+| fragment_name.property_nameN.value | Depends on data type, often FLOAT |
+| fragment_name.property_nameN.unit | String |
+| my_custom_property_name1 | Depends on data type |
 | ... |  |
-| myCustomAttributeN | Depends on data type |
+| my_custom_property_nameN | Depends on data type |
 
-The entries in the measurements collection can have a different structure, depending on the types of data the corresponding device emits. While one sensor might emit temperature and humidity values, another sensor might emit pressure values. The flattened structure of these attributes is defined as `fragment.` followed by attribute name and associated type being defined as in the measurements collection. The concrete number of attributes depends on the measurement type, illustrated in the above table with `fragment.attribute1.name.value` to `fragment.attributeN.name.value`.
+The entries in the measurements collection can have a different structure, depending on the types of data the corresponding device emits. While one sensor might emit temperature and humidity values, another sensor might emit pressure values. For details on measurement creation via API see the corresponding [{{< product-c8y-iot >}} REST API](https://cumulocity.com/api/core/#operation/postMeasurementCollectionResource) documentation.
+
+Each measurement document must have the id of the associated source, a measurement type, and the measurement time. Within the document the measurements are modelled as properties of a fragment, e.g. `c8y_Temperature`. Such a measurement property, e.g. `T`, must itself contain a mandatory property `value` and should contain an optional property `unit`. The measurement document is then flattened in the data lake into a column `fragment_name.property_name.value` and, if set, a column `fragment_name.property_name.unit`. The fragment may contain multiple measurements for a given measurement type, indicated in the above table with `fragment_name.property_name1.value` to `fragment_name.property_nameN.value`.
 
 **Example**
 
@@ -174,7 +176,7 @@ The following excerpt of a measurement document in the base collection is proces
 }
 ````
 
-The system uses the type attribute to determine `c8y_Temperature` as measurement type. Next it determines the measurement fragment `c8y_Temperature`, which comprises measurement type `T`, measurement value 2.079, and measurement unit `C` as properties. This fragment is flattened and represented in the target table in the data lake as
+The system uses the type property to determine `c8y_Temperature` as measurement type. Next it determines the measurement fragment `c8y_Temperature`, the measurement type `T`, the measurement value `2.079`, and the measurement unit `C`. This fragment is flattened and represented in the target table in the data lake as
 
 | ... | c8y_Temperature.T.unit | c8y_Temperature.T.value |... |
 | ---- | ---- | ---- | ---- |
