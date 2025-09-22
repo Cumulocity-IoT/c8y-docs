@@ -1,0 +1,165 @@
+{{ define "main" }}
+
+{{- partial "glossary-nav.html" . -}}
+
+<main class="main-content bundle-layout">
+  <div class="breadcrumbs-container">
+    {{- partial "breadcrumbs.html" . -}}
+  </div>
+  <div class="article-list">
+    <article id="{{substr .File.LogicalName 0 -3}}" class="page-section">
+      <div class="article-content">
+        <header class="section-header">
+          <h1 class="text-light">{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
+        </header>
+        <div class="lead">
+          {{ partial "headline-hash.html" .Content }}
+        </div>
+
+        <!-- Search functionality -->
+        <div class="glossary-search input-group input-group-search" style="margin: 2rem 0;">
+          <input type="text" id="glossary-search" placeholder="Search glossary terms..." class="form-control input-lg">
+          <div class="input-group-addon">
+            <button class="btn-clean" id="glossary-search-clear" style="display: none;">&times;</button>
+            <button class="btn-clean" id="glossary-search-button" style="display: block;"><i class="dlt-c8y-icon-search" style="font-size: 20px;"></i></button>
+          </div>
+        </div>
+      </div>
+    </article>
+      <!-- All glossary entries -->
+      {{ range .Pages.ByWeight }}
+        {{ $content := .Content }}
+        {{ $letterTitle := .Title }}
+        
+      <article id="letter-{{- $letterTitle | lower -}}" class="page-section">
+        <div class="article-content">
+          <h2 id="{{ $letterTitle | lower }}" class="letter-header" style="margin-top: 2rem; margin-bottom: 1rem; color: #333; border-bottom: 2px solid #eee; padding-bottom: 0.5rem;">
+              {{ $letterTitle }}
+            </h2>
+
+            <!-- Parse individual glossary terms from content -->
+            <div class="glossary-content">
+            {{ $content }}
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    <article class="page-section" id="emptystate" style="display: none;">
+      <div class="article-content">
+        <div class="d-flex a-i-center gap-16 text-muted">
+          <i class="dlt-c8y-icon-search" style="font-size: 4rem;"></i>
+          <div>
+            <p><strong>No glossary entries found matching your search.</strong><br>
+              <small>Refine or <a href="javascript: void(0)" id="clearEmptyState">clear</a> your input.</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- Search JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.getElementById('glossary-search');
+      const searchClearButton = document.getElementById('glossary-search-clear');
+      const searchButton = document.getElementById('glossary-search-button');
+      const emptystate = document.getElementById('emptystate');
+      const clearEmptyState = document.getElementById('clearEmptyState');
+
+      searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        if(searchTerm.length > 0){
+          searchClearButton.style = null;
+          searchButton.style.display = 'none';
+        } else {
+          searchClearButton.style.display = 'none';
+           searchButton.style = null;
+        }
+        // Get all letter articles (each letter section is now an article)
+        const letterArticles = document.querySelectorAll('article[id^="letter-"]');
+        let hasAnyResults = false;
+
+        letterArticles.forEach(function(article) {
+          const letterHeader = article.querySelector('.letter-header, h2');
+          const h3Elements = article.querySelectorAll('h3');
+          let sectionHasVisibleEntries = false;
+
+          if (searchTerm === '') {
+            // Show everything
+            article.style.display = null;
+            h3Elements.forEach(function(h3) {
+              h3.style.display = 'block';
+              let nextElement = h3.nextElementSibling;
+              while (nextElement && nextElement.tagName !== 'H3') {
+                nextElement.style.display = 'block';
+                nextElement = nextElement.nextElementSibling;
+              }
+            });
+            sectionHasVisibleEntries = true;
+          } else {
+            // Check each h3 entry
+            h3Elements.forEach(function(h3) {
+              const headingText = h3.textContent.toLowerCase();
+
+              if (headingText.includes(searchTerm)) {
+                // Show this entry
+                h3.style.display = 'block';
+                // Show the content that follows
+                let nextElement = h3.nextElementSibling;
+                while (nextElement && nextElement.tagName !== 'H3') {
+                  nextElement.style.display = 'block';
+                  nextElement = nextElement.nextElementSibling;
+                }
+                sectionHasVisibleEntries = true;
+              } else {
+                // Hide this entry
+                h3.style.display = 'none';
+                // Hide the content that follows
+                let nextElement = h3.nextElementSibling;
+                while (nextElement && nextElement.tagName !== 'H3') {
+                  nextElement.style.display = 'none';
+                  nextElement = nextElement.nextElementSibling;
+                }
+              }
+            });
+
+            // Show/hide the entire article based on whether it has matches
+            if (sectionHasVisibleEntries) {
+              article.style.display = 'grid';
+            } else {
+              article.style.display = 'none';
+            }
+          }
+
+          if (sectionHasVisibleEntries) {
+            hasAnyResults = true;
+          }
+        });
+
+        // Show "No results" message if no entries are visible
+        const noResults = document.getElementById('no-results');
+        if (!hasAnyResults && searchTerm !== '') {
+          emptystate.style.display = 'block';
+        } else{
+          emptystate.style.display = 'none';
+        }
+      });
+    
+      searchClearButton.addEventListener('click', function() {
+        searchInput.value = '';
+        searchInput.dispatchEvent(new Event('input'));
+        this.style.display = 'none';
+        searchInput.focus();
+      });
+      clearEmptyState.addEventListener('click', function() {
+        searchInput.value = '';
+        searchInput.dispatchEvent(new Event('input'));
+        searchInput.focus();
+      });
+    
+    });
+  </script>
+</main>
+  {{- partial "footer.html" . -}}
+{{ end }}
