@@ -33,7 +33,7 @@
         
       <article id="letter-{{- $letterTitle | lower -}}" class="page-section">
         <div class="article-content">
-          <h2 id="{{ $letterTitle | lower }}" class="letter-header" style="margin-top: 2rem; margin-bottom: 1rem; color: #333; border-bottom: 2px solid #eee; padding-bottom: 0.5rem;">
+          <h2 id="{{ $letterTitle | lower }}" class="letter-header" >
               {{ $letterTitle }}
             </h2>
 
@@ -44,8 +44,8 @@
         </div>
       </article>
       {{ end }}
-    <article class="page-section" id="emptystate" style="display: none;">
-      <div class="article-content">
+    <article class="page-section" >
+      <div class="article-content" id="emptystate" style="display: none;">
         <div class="d-flex a-i-center gap-16 text-muted">
           <i class="dlt-c8y-icon-search" style="font-size: 4rem;"></i>
           <div>
