@@ -144,18 +144,18 @@ When using the default layout, you must select a measurement type, so that all o
 | timeWithOffset | TIMESTAMP |
 | source | VARCHAR |
 | type | VARCHAR |
-| fragment_name.property_name1.value | Depends on data type, often FLOAT |
-| fragment_name.property_name1.unit | String |
+| fragment_name1.property_name1.value | Depends on data type, often FLOAT |
+| fragment_name1.property_name1.unit | String |
 | ... |  |
-| fragment_name.property_nameN.value | Depends on data type, often FLOAT |
-| fragment_name.property_nameN.unit | String |
+| fragment_nameM.property_nameN.value | Depends on data type, often FLOAT |
+| fragment_nameM.property_nameN.unit | String |
 | my_custom_property_name1 | Depends on data type |
 | ... |  |
 | my_custom_property_nameN | Depends on data type |
 
 The entries in the measurements collection can have a different structure, depending on the types of data the corresponding device emits. While one sensor might emit temperature and humidity values, another sensor might emit pressure values. For details on measurement creation via API see the corresponding [{{< product-c8y-iot >}} REST API](https://cumulocity.com/api/core/#operation/postMeasurementCollectionResource) documentation.
 
-Each measurement document must have the id of the associated source, a measurement type, and the measurement time. Within the document the measurements are modelled as properties of a fragment, e.g. `c8y_Temperature`. Such a measurement property, e.g. `T`, must itself contain a mandatory property `value` and should contain an optional property `unit`. The measurement document is then flattened in the data lake into a column `fragment_name.property_name.value` and, if set, a column `fragment_name.property_name.unit`. The fragment may contain multiple measurements for a given measurement type, indicated in the above table with `fragment_name.property_name1.value` to `fragment_name.property_nameN.value`.
+Each measurement document must have the id of the associated source, a measurement type, and the measurement time. Within the document there are one or more fragments. Each fragment comprises related measurements, with each measurement being modelled as a property. For example, the fragment `c8y_Steam` contains the properties `Temperature` and `Humidity`. Such a measurement property must itself contain a mandatory property `value` and should contain an optional property `unit`. A measurement document with one fragment having one measurement property is flattened in the data lake into a column `fragment_name.property_name.value` and, if set, a column `fragment_name.property_name.unit`. Documents with multiple fragments each containing multiple measurements are flattened in an analogous way, indicated in the above table with `fragment_name1.property_name1.value` to `fragment_nameM.property_nameN.value`.
 
 **Example**
 
@@ -166,21 +166,24 @@ The following excerpt of a measurement document in the base collection is proces
     "id": "4711",
     ...
     "time": "2020-03-19T00:00:00.000Z",
-    "type": "c8y_Temperature",
-    "c8y_Temperature": {
-        "T": {
+    "type": "temperatureMeasurement",
+    "c8y_Steam": {
+        "Temperature": {
             "unit": "C",
             "value": 2.079
+        },
+        "Humidity": {
+            "unit": "%RH", 
+            "value": 13.37
         }
     }
 }
 ````
+The fragment `c8y_Steam` is flattened into two measurements and represented in the target table in the data lake as
 
-The system uses the type property to determine `c8y_Temperature` as measurement type. Next it determines the measurement fragment `c8y_Temperature`, the measurement type `T`, the measurement value `2.079`, and the measurement unit `C`. This fragment is flattened and represented in the target table in the data lake as
-
-| ... | c8y_Temperature.T.unit | c8y_Temperature.T.value |... |
-| ---- | ---- | ---- | ---- |
-| ... | C | 2.0791169082 | ... |
+| ... | c8y_Steam.Temperature.unit | c8y_Steam.Temperature.value | c8y_Steam.Humidity.unit | c8y_Steam.Humidity.value | ... |
+| --- | ---- | ---- | ---- |
+| ... | C | 2.079 | %RH | 13.37 | ... |
 
 {{< c8y-admon-important >}}
 Try to ensure that the data you feed into the measurements base collection is consistent. If measurements of the same type vary in the fragment structures, the resulting target table might not have the expected schema. A common problem, for example, are varying data types of the values like one value being 2.079 and another one NaN.
