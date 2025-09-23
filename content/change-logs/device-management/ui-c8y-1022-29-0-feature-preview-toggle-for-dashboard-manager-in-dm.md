@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Feature preview toggle for Dashboard manager in DM
+title: Feature preview toggle for Dashboard manager in Device management
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4940
 version: 1022.29.0
 ---
-Co-authored-by: Bozhidar Dedov <95280800+bozhidardedov@users.noreply.github.com>
+To enable users to easily try out and provide feedback on upcoming features, a feature preview toggle has been added for **Dashboard manager** in **Device management**. This allows users to test new functionality before it is officially released and provide valuable feedback to shape the future development.
