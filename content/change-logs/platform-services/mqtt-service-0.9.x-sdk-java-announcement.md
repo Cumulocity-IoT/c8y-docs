@@ -25,4 +25,4 @@ Developers of microservices and external applications currently using the MQTT S
 
 **Backward compatibility**
 
-The MQTT Service Java client SDK is deprecated effective immediately but will continue to work and be supported until the MQTT Service reaches General Availability (GA). **Once the new method is available,** it can be used in parallel with direct connections to the {{< product-c8y-iot >}} Messaging Service during the transition period. The SDK will be completely removed and will no longer be supported once the MQTT Service reaches GA. We recommend migrating to the new approach as soon as **it becomes available**.
+The MQTT Service Java client SDK is deprecated effective immediately but will continue to work and be supported until the MQTT Service reaches General Availability (GA). **Once the new method is available,** it can be used in parallel with direct connections to the {{< product-c8y-iot >}} Messaging Service during the transition period. The SDK will be completely removed and will no longer be supported once the MQTT Service reaches GA. We recommend migrating to the new approach as soon as it becomes available.
