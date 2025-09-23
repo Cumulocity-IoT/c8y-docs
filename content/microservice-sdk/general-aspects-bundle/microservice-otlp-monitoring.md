@@ -30,12 +30,35 @@ For example, setting the endpoint where OTLP signals are exported to is done wit
 "value": "https://otlp-gateway.net/otlp"
 }
 ```
+
+The Opentelemetry parameter names in this document are according to the specification in [OTLP configuration documentation](https://opentelemetry.io/docs/languages/java/configuration/). 
+The parameters are stored as tenant options and injected into the microservice as environment variables.
+To convert a tenant option to an environment variable, these steps are applied as described [here](https://opentelemetry.io/docs/languages/java/configuration/#environment-variables-and-system-properties):
+- Convert the name to uppercase.
+- Replace all `.` and `-` characters with `_`.
+
+For example, the `otel.sdk.disabled` tenant option is equivalent to the `OTEL_SDK_DISABLED` environment variable.
+
+##### Encryption
+Tenant options containing values to be encrypted, like passwords or access tokens, must be preceded with a `credentials.` prefix, 
+as described in the [Encryption](./security.md#encryption) chapter.
+
+```json
+{
+"category": "<application-name>",
+"key": "credentials.otel.exporter.otlp.headers",
+"value": "Authorization=Basic MTAxNTI0OTpnbGNfZ..."
+}
+```
+
+##### OTEL parameter values
+
 As an example, the parameter values required to export OTLP signals to Grafana (without using an OTLP collector instance) could be set like this:
 
 ```properties
 otel.exporter.otlp.endpoint: https://otlp-gateway-prod.grafana.net/otlp
 otel.exporter.otlp.protocol: http/protobuf
-otel.exporter.otlp.headers: Authorization=Basic MTAxNTI0OTpnbGNfZ…
+credentials.otel.exporter.otlp.headers: <authentication data>
 ```
 
 The `otel.service.name` parameter value is automatically set with the microservice pod name at run time.
@@ -74,11 +97,10 @@ with the parameter `otel.javaagent.enabled`. Setting it to `true` enables the in
 }
 ```
 
-If enabled, the Java agent JAR file file will be downladed and injected into the microservice JVM at startup time.
+If enabled, the Java agent JAR file file will be downladed and attached to the microservice JVM at startup time.
 
-Configuring auto-instrumentation for only selected libraries or frameworks or allowing 
-for manual instrumentation only is described in the [Opentelemetry instrumention documentation](https://opentelemetry.io/docs/zero-code/java/agent/disable/).
-
+Configuring auto-instrumentation for selected libraries or frameworks, or opting for manual instrumentation only, is described 
+in the [Opentelemetry instrumention documentation](https://opentelemetry.io/docs/zero-code/java/agent/disable/).
 
 ### Manual instrumentation
 In parallel to the automatic instrumentation, manual instrumentation of the microservice application is possible as well.
