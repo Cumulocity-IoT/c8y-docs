@@ -28,7 +28,7 @@ const shortcodeMapping = {
   "c8y-resources-server": "Cumulocity Download Center",
   "c8y-support-link": "https://cumulocity.com/support",
   "c8y-support-portal": "Cumulocity Customer Service Desk",
-  "c8y-tech-community-link": "https://techcommunity.cumulocity.com/",
+  "c8y-tech-community-link": "https://community.cumulocity.com/",
   "c8y-tech-community": "Cumulocity Tech Community",
   "company-c8y": "Cumulocity",
   "device-portal": "Partner Devices Ecosystem",
