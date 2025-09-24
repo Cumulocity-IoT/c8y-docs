@@ -100,7 +100,7 @@ with the parameter `otel.javaagent.enabled`. Setting it to `true` enables the in
 If enabled, the Java agent JAR file is downloaded and attached to the microservice JVM at startup time.
 
 Configuring auto-instrumentation for selected libraries or frameworks, or opting for manual instrumentation only, is described 
-in the [Opentelemetry instrumention documentation](https://opentelemetry.io/docs/zero-code/java/agent/disable/).
+in the [OpenTelemetry instrumention documentation](https://opentelemetry.io/docs/zero-code/java/agent/disable/).
 
 ### Manual instrumentation
 In parallel to the automatic instrumentation, manual instrumentation of the microservice application is possible as well.
