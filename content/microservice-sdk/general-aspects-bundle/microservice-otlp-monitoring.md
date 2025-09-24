@@ -41,7 +41,7 @@ For example, the `otel.sdk.disabled` tenant option is equivalent to the `OTEL_SD
 
 ##### Encryption
 Tenant options containing values to be encrypted, like passwords or access tokens, must be preceded with a `credentials.` prefix, 
-as described in the [Encryption](/microservice-sdk/general-aspects/#encryption) chapter.
+as described in the [Encryption](/microservice-sdk/general-aspects/#encryption) section.
 
 ```json
 {
