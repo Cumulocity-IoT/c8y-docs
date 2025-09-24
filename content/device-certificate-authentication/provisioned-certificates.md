@@ -10,7 +10,7 @@ outputs:
 helpcontent:
   - label: provisioned-certificates
     title: Provisioned certificates
-    content: "Cumulocity issued certificates can be viewed in device management page in a new tab as X509"
+    content: "Cumulocity-issued certificates are displayed in the device details on the **X509** tab."
 ---
 
 {{< product-c8y-iot >}}-issued certificates are visible on the **x509** tab in the [device details](/device-management-application/viewing-device-details/).
