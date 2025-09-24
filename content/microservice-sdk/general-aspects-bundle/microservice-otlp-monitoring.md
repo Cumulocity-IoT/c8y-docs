@@ -7,7 +7,7 @@ layout: redirect
 {{< product-c8y-iot >}} supports the [OpenTelemetry framework](https://opentelemetry.io/) for exporting telemetry data (metrics, logs, and traces) from your microservice to help you analyze your application’s performance and behavior. 
 The Java Microservice SDK leverages the [OpenTelemetry Java agent](https://opentelemetry.io/docs/zero-code/java/agent/) which provides automatic instrumentation for many popular libraries and frameworks.
 
-### Configuration
+### Configuration {#configuration}
 Microservices can obtain the OTLP configuration from their individual tenant options. 
 The tenant option category containing the OTLP parameters is determined in the following order:
 
