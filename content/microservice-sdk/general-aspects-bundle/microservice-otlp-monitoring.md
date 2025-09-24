@@ -119,7 +119,7 @@ Meter meter = GlobalOpenTelemetry.getMeter("application");
 A basic example for this use case can be found in the [OpenTelemetry GitHub repository](https://github.com/open-telemetry/opentelemetry-java-examples/tree/main/javaagent/src/main/java/io/opentelemetry/example/javagent).
 
 If instrumentation with the Java agent is disabled, complete manual instrumentation without the Java agent can be applied as well.
-Detailed examples for various use cases can be found [here](https://github.com/open-telemetry/opentelemetry-java-examples/tree/main).
+Detailed examples for various use cases can be found in the [OpenTelemetry GitHub repository](https://github.com/open-telemetry/opentelemetry-java-examples/tree/main).
 
 #### Maven dependencies
 The Maven `pom.xml` file of the microservice application needs to be extended with the required OTLP library dependencies according to the manual instrumentation code.
