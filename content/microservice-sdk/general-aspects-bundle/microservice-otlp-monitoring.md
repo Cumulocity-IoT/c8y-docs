@@ -116,7 +116,7 @@ import io.opentelemetry.api.metrics.Meter;
 Meter meter = GlobalOpenTelemetry.getMeter("application");
 ```
 
-A basic example for this use case can be found [here](https://github.com/open-telemetry/opentelemetry-java-examples/tree/main/javaagent/src/main/java/io/opentelemetry/example/javagent).
+A basic example for this use case can be found in the [OpenTelemetry GitHub repository](https://github.com/open-telemetry/opentelemetry-java-examples/tree/main/javaagent/src/main/java/io/opentelemetry/example/javagent).
 
 If instrumentation with the Java agent is disabled, complete manual instrumentation without the Java agent can be applied as well.
 Detailed examples for various use cases can be found [here](https://github.com/open-telemetry/opentelemetry-java-examples/tree/main).
