@@ -21,7 +21,7 @@ A detailed list of configuration parameters can be found in the [OTLP configurat
 #### OTLP tenant options
 Tenant options with OTLP configuration parameters can be set via [REST commands](https://cumulocity.com/api/core/2025/#tag/Options) sent to 
 the tenant options endpoint of the tenant.
-For example, setting the endpoint where OTLP signals are exported to is done with this json document:
+For example, setting the endpoint to which OTLP signals are exported is done with this JSON document:
 
 ```json
 {
