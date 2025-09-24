@@ -41,4 +41,4 @@ These capabilities, combined with {{< product-c8y-iot >}}'s built-in **[multi-te
 
 - [Open APIs](https://cumulocity.com/api/) - Well-documented REST APIs that expose complete platform functionality
 - [Command Line Interface (CLI)](https://goc8ycli.netlify.app/docs/introduction/) - Tools for streamlined development workflows and automation
-- Active Developer Community - A collaborative platform for knowledge sharing and problem-solving through the [Tech Community](https://techcommunity.cumulocity.com/)
+- Active Developer Community - A collaborative platform for knowledge sharing and problem-solving through the [Tech Community](https://community.cumulocity.com/)
