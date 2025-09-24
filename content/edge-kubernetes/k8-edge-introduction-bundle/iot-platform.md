@@ -60,7 +60,6 @@ The following functionalities are available in Edge and described in detail in t
 
 |SECTION|CONTENT|
 |:---|:---|
-|[Configuring Edge](/edge-kubernetes/k8-edge-introduction/)|Providing information on Edge specific configuration options.
 |[Home screen](/standard-tenant/home-screen/)|Providing information on your capacity usage and subscribed applications.
 |[Managing users](/standard-tenant/managing-users/)|How to [add users](/standard-tenant/managing-users/#to-add-a-user), edit, disable or delete them.
 |[Managing permissions](/standard-tenant/managing-permissions/)|How to create and edit [global roles](/standard-tenant/managing-permissions/#global-roles) and [inventory roles](/standard-tenant/managing-permissions/#inventory-roles), how to assign them to users, and how to [grant application access](/standard-tenant/managing-permissions/#application-access).
