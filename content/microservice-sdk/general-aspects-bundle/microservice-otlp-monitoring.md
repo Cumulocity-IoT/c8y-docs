@@ -31,7 +31,7 @@ For example, setting the endpoint to which OTLP signals are exported is done wit
 }
 ```
 
-The Opentelemetry parameter names in this document are according to the specification in [OTLP configuration documentation](https://opentelemetry.io/docs/languages/java/configuration/). 
+The OpenTelemetry parameter names in this document follow the specification in the [OTLP configuration documentation](https://opentelemetry.io/docs/languages/java/configuration/). 
 The parameters are stored as tenant options and injected into the microservice as environment variables.
 To convert a tenant option to an environment variable, these steps are applied as described [here](https://opentelemetry.io/docs/languages/java/configuration/#environment-variables-and-system-properties):
 - Convert the name to uppercase.
