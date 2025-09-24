@@ -103,7 +103,7 @@ Configuring auto-instrumentation for selected libraries or frameworks, or opting
 in the [OpenTelemetry instrumention documentation](https://opentelemetry.io/docs/zero-code/java/agent/disable/).
 
 ### Manual instrumentation
-In parallel to the automatic instrumentation, manual instrumentation of the microservice application is possible as well.
+In parallel with the automatic instrumentation, manual instrumentation of the microservice application is also possible.
 
 The Java agent creates the GlobalOpenTelemetry object which can be used as a starting point to create 
 individual Tracer or Meter objects for [custom instrumentation](https://opentelemetry.io/docs/zero-code/java/agent/api/).
