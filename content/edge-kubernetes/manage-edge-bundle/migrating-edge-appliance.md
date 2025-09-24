@@ -271,4 +271,4 @@ The following components from your **Edge tenant** are automatically retained in
    * Branding
 
 #### Connecting Edge to the cloud
-If your previous Edge Appliance VM was connected to the cloud, you'll need to set up this connection again in Edge 2025. Follow the guide: [Connecting Edge to the cloud](/2025/edge-kubernetes/k8-edge-connecting-edge-to-cloud/)
+If your previous Edge Appliance VM was connected to the cloud, you'll need to set up this connection again in Edge 2025. Follow the instructions in [Connecting Edge to the cloud](/2025/edge-kubernetes/k8-edge-connecting-edge-to-cloud/)
