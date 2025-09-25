@@ -4,7 +4,7 @@ title: Getting started with the Smart rules (NEW) plugin
 layout: redirect
 ---
 
-### What is the Smart rules plugin {#what-is-the-smart-rules-plugin}
+### What is the Smart rules (NEW) plugin {#what-is-the-smart-rules-plugin}
 The Smart rules plugin extends the Analytics Builder capabilities within Streaming Analytics by enabling users to create and manage Analytics Builder model instances directly from device and group contexts within applications such as Device Management, Cockpit and Digital Twin Manager.
 
 For more details about Analytics Builder, refer to [Analytics Builder](/streaming-analytics/analytics-builder/#getting-started).
@@ -18,7 +18,7 @@ Before using the Smart rules (NEW) plugin, ensure that the following requirement
 
 ### Creating your first smart rule {#creating-your-first-smart-rule}
 
-This topic provides the basic workflow for creating your first Smart rules using the plugin from applications like Device Management. You will create a simple templated analytics model that creates an alarm when the temperature breaches a given threshold value. The steps below require that at least one device is already registered in {{< product-c8y-iot >}}. Preferably, this device already sends measurement values to {{< product-c8y-iot >}}.
+This topic provides the basic workflow for creating your first smart rules using the plugin from applications like Device Management. You will create a simple templated analytics model that creates an alarm when the temperature breaches a given threshold value. The steps below require that at least one device is already registered in {{< product-c8y-iot >}}. Preferably, this device already sends measurement values to {{< product-c8y-iot >}}.
 
 The model that you add will contain three blocks:
 - An input block which receives measurements from devices, groups, or assets.
@@ -73,12 +73,12 @@ Refer to the [Prerequisites](#prerequisites) section to ensure all requirements 
    - Optionally update the name or add a note if desired.
    - Populate the template parameter values. The value of the template parameter (for example, "Measurement Source") configured with **From Context** is derived automatically from the current device or group context.
    - Click **Save** to save the rule, or toggle to **Active** to save and deploy immediately.
-6. Your rule now appears in the Smart rules list, showing its status (Active/Inactive).
+6. Your rule now appears in the smart rules list, showing its status (Active/Inactive).
    ![Smart rules list](/images/streaming-analytics/smart-rules-plugin/smart-rules-list.png)
 
 **Congratulations!** You have successfully created and deployed your first smart rule using the Smart rules plugin.
 
-### Creating Smart rules from existing Analytics Builder samples {#create-smart-rule-for-existing-samples}
+### Creating smart rules from existing Analytics Builder samples {#create-smart-rule-for-existing-samples}
 
 You can also create smart rules using pre-built sample models from Analytics Builder. The process is similar to creating from scratch but faster since the model logic is already defined.
 
@@ -102,9 +102,9 @@ Follow the same steps as described in [Step 2: Create model instance using the S
 1. **No models available in Add rule dialog**
    - Ensure that the Analytics Builder models have template parameters configured with the "From Context" value.
    - Verify your current context matches the model's "Source or Destination" type restrictions. For example, when in a device context where the model's **Restrict to** dropdown is configured with "Groups" only, that model will not be available. To appear in device contexts, "Device" must be selected in the **Restrict to** dropdown.
-2. **Previously created rules don't appear in the Smart rules list**
+2. **Previously created rules don't appear in the smart rules list**
    - Verify that the Analytics instances are set to **Production mode** in the Analytics Builder instance editor.
    - Check if Analytics instance names are set in the Analytics Builder instance editor.
    - Confirm you're viewing the correct device or group context.
-3. **Error in Smart rule deployment**
+3. **Error in smart rule deployment**
    - Click the runtime error icon <img src="/images/streaming-analytics/analytics-builder/runtime_error.png" alt="Error icon" style="display:inline-block; margin:0"> to view information about the error.
