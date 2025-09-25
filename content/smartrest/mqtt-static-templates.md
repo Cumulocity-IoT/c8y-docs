@@ -107,12 +107,12 @@ If a parameter is in square brackets, it is optional.
 <li><a href="#531">531,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,type,url,action,configurationMarker,url,type</a></li>
 </ul>
 
-<strong><a href="#device-parameter-templates">Device parameter templates</strong>
+<strong><a href="#device-parameter-templates">Device parameter templates</a></strong>
 <ul>
 <li><a href="#408">408,[text],[time],[change detect],path1,type1,value1[,path2,type2,value2,]...</a></li>
 </ul>
 
-<strong><a href="#platform-capabilites-templates">Platform capabilities templates</strong>
+<strong><a href="#platform-capabilites-templates">Platform capabilities templates</a></strong>
 <ul> 
 <li><a href="#600">600 (Retrieve the platform version, reply: "601, platformVersion")</a></li>
 <li><a href="#602">602 (Retrieve a list of valid SmartREST template IDs, reply: "603,comma-separated-list-of-SmartREST-template-IDs")</a></li>
@@ -123,36 +123,35 @@ The client can receive the following templates when subscribing to <kbd>s/ds</kb
 
 <strong><a href="#subscribe-inventory">Inventory templates</a></strong>
 <ul>
-<li>[106,child1,child2,…](#106)</li>
-<li>[124,id](#124)</li>
+<li><a href="#106">106,child1,child2,…</a></li>
+<li><a href="#124">124,id</a></li>
 </ul>
 
 <strong><a href="#subscribe-operations">Operation templates</a></strong>
 <ul>
-<li>[510,serial (restart)](#510)</li>
-<li>[511,serial,commandToExecute](#511)</li>
-<li>[513,serial,configurationText](#513)</li>
-<li>[515,serial,firmwareToBeInstalled,version,url](#515)</li>
-<li>[516,serial,softwareToBeInstalled1,version1,url1,sw2,ver2,url2,...](#516)</li>
-<li>[517,serial,measurementToBeSent](#517)</li>
-<li>[518,serial,relayStatusToBeSet [OPEN/CLOSED]](#518)</li>
-<li>[519,serial,relay1Status,relay2Status,...](#519)</li>
-<li>[520,serial (upload your current configuration)](#520)</li>
-<li>[521,serial,url (download configuration)](#521)</li>
-<li>[522,serial,logFileToBeSend,start,stop,searchText,maxLines](#522)</li>
-<li>[523,serial,communicationMode (SMS/IP)](#523)</li>
-<li>[524,serial,url,configType](#524)</li>
-<li>[525,serial,currentFirmwareName,version,url,dependency](#525)</li>
-<li>[526,serial,configType](#526)</li>
-<li>[527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type](#527)</li>
-<li>[528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...](#528)</li>
-<li>[529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...](#529)</li>
-<li>[530,serial,hostname,port,connectionKey](#530)</li>
+<li><a href="#510">510,serial (restart)</a></li>
+<li><a href="#511">511,serial,commandToExecute</a></li>
+<li><a href="#513">513,serial,configurationText</a></li>
+<li><a href="#515">515,serial,firmwareToBeInstalled,version,url</a></li>
+<li><a href="#516">516,serial,softwareToBeInstalled1,version1,url1,sw2,ver2,url2,...</a></li>
+<li><a href="#517">517,serial,measurementToBeSent</a></li>
+<li><a href="#518">518,serial,relayStatusToBeSet [OPEN/CLOSED]</a></li>
+<li><a href="#519">519,serial,relay1Status,relay2Status,...</a></li>
+<li><a href="#520">520,serial (upload your current configuration)</a></li>
+<li><a href="#521">521,serial,url (download configuration)</a></li>
+<li><a href="#523">523,serial,communicationMode (SMS/IP)</a></li>
+<li><a href="#524">524,serial,url,configType</a></li>
+<li><a href="#525">525,serial,currentFirmwareName,version,url,dependency</a></li>
+<li><a href="#526">526,serial,configType</a></li>
+<li><a href="#527">527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type</a></li>
+<li><a href="#528">528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...</a></li>
+<li><a href="#529">529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...</a></li>
+<li><a href="#530">530,serial,hostname,port,connectionKey</a></li>
 </ul>
 
 <strong><a href="#subscribe-device-parameter">Device parameter templates</a></strong>
 <ul>
-<li>[601, platformVersion](#601)</li>
+<li><a href="#601">601, platformVersion</a></li>
 </ul>
 
 

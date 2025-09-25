@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-09-18'
 title: Maps now display devices across all nested group levels
 product_area: Application enablement & solutions
 change_type:
