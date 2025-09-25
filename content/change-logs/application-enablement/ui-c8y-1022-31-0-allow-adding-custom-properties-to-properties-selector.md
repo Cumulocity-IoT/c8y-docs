@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-09-25'
 title: Asset properties selector allows adding custom properties
 product_area: Application enablement & solutions
 change_type:
