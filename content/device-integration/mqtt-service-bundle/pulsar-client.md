@@ -212,7 +212,8 @@ It extends the previous example that set up the connection to the Pulsar server.
 To consume messages from the topic, your client should create a Pulsar `Consumer` and subscribe it to the topic.
 The consumer should register a `MessageListener` callback that will be called whenever a new message arrives on the topic.
 The `MessageListener` implementation shows how to access the payload and properties of the received messages.
-For simplicity and clarity, the example assumes that message payloads are simple text strings.
+For simplicity, the application messages in the example are simple text strings.
+However, the payload of the Pulsar message will always be an array of bytes, that must be converted to the format used by the application.
 
 ```java
         // Create a simple message listener that will log some details of
@@ -266,7 +267,7 @@ The message will only be published to a client that is connected at the time the
 
 Successfully publishing a message to the Messaging Service does **not** mean that the message has been successfully delivered to any MQTT device.
 Onward publishing to MQTT devices happens _asynchronously_ and without any feedback to the Pulsar client.
-Messages will be delivered to devices according to the MQTT protocol specification.
+Messages will be delivered to devices according to the MQTT protocol specification, using the QoS level of the MQTT subscription made by the device.
 However, because MQTT devices are required to use a _clean session_ when connecting to the MQTT Service, messages published to a device while it is disconnected will not be delivered.
 
 #### Broadcast messages {#broadcast-messages}
@@ -285,7 +286,6 @@ The key should be set as follows:
 * When the `clientID` message property is set, the key should have the same value as this property.
 * When the `clientID` message property is **not** set, the key should have the same value as the `topic` message property.
 
-{{< c8y-admon-info >}}
 #### Handling of invalid messages {#handling-of-invalid-messages}
 
 Published messages that do not follow the rules for message properties and keys documented above will **not** be delivered to any MQTT device.
@@ -303,7 +303,6 @@ A message with a non-empty `clientID` property referring to an MQTT device that 
 However, this message will not be delivered to the device, even if it connects later, because of the requirement for devices to use a _clean session_ when connecting.
 Similarly, a message published to a connected MQTT device that is not currently subscribed to the MQTT topic specified in the `topic` property is not considered to be invalid.
 In these situations, the message will not be delivered but no alarms will be raised.
-{{< /c8y-admon-info >}}
 
 #### Example code
 
@@ -313,7 +312,8 @@ It extends the previous examples that set up the connection to the Pulsar server
 To publish messages to the topic, your client should first create a Pulsar `Producer` associated with the topic.
 Then, the `Producer` can be used to create new `Message` objects that will be published to the topic.
 The example code shows how to correctly set the message properties and message key for messages targeted at a single device, and for "broadcast" messages.
-The example continues to assume that message payloads are simple text strings, and omits most error-handling code for clarity.
+Again, the example assumes that the application messages are simple text strings, that must be converted to the byte array expected by the MQTT Service.
+For clarity, most error-handling code is omitted from the example.
 
 ```java
         // Create a Pulsar producer on the to-device topic for the tenant.
@@ -373,7 +373,7 @@ If the backlog quota limit for the Pulsar `to-device` topic is reached, clients 
 Any undelivered messages will be automatically deleted if they have been on the backlog for longer than the _time to live (TTL) limit_.
 This policy helps to limit overall resource usage and reduces the need to process outdated data after a prolonged disconnection of a consumer.
 
-No message will ever be deleted from the backlog unless it reaches its TTL limit.
+No undelivered message will ever be deleted from the backlog unless it reaches its TTL limit.
 Messages will always be delivered to the consumer in the order they were published to the topic.
 
 ### Best practices to ensure reliable message delivery from devices {#reliable-delivery-best-practices}
