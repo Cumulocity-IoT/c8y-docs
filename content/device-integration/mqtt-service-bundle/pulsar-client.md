@@ -55,6 +55,9 @@ Currently, only "basic" (username and password) authentication is supported for 
 For a microservice client, you should use the credentials of the per-tenant [service user](/microservice-sdk/general-aspects/#users-and-roles) that will be passed to the microservice when the tenant is subscribed to it.
 For an external application user, you can use the credentials of any tenant user with the appropriate authorization roles assigned, as described below.
 The username must be in the form `<tenant>/<user>` where `<tenant>` is the tenant id, and `<user>` is a user within that tenant.
+If two-factor authentication (TFA) is enabled for your tenant, your user must have the `devices` role assigned to disable the TFA check for that user.
+See [TFA Settings](/authentication/basic-settings/#tfa-settings) for more information.
+Note that the `devices` role may be shown as "Device User" in the {{< product-c8y-iot >}} user interface.
 
 #### Role-based access control
 
