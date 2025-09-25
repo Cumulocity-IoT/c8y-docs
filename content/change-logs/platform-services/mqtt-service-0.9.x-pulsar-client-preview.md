@@ -29,7 +29,7 @@ Instead, microservices and external applications (_clients_) that need to exchan
 Direct Messaging Service connectivity for MQTT Service clients is now available as part of the MQTT Service Public Preview.
 
 All microservice and external application clients currently using the MQTT Service Java client SDK should migrate to the Pulsar client protocol as soon as possible.
-Detailed [documentation](/device-integration/mqtt-service/#pulsar-client) of the requirements, conventions and best practices for connecting Pulsar clients to the Messaging Service is available, along with [example code for an external client](https://github.com/Cumulocity-IoT/cumulocity-examples/tree/develop/mqtt-service/simple-pulsae-client).
+Detailed [documentation](/device-integration/mqtt-service/#pulsar-client) of the requirements, conventions and best practices for connecting Pulsar clients to the Messaging Service is available, along with [example code for an external client](https://github.com/Cumulocity-IoT/cumulocity-examples/tree/develop/mqtt-service/simple-pulsar-client).
 Further examples will be published before the MQTT Service GA date.
 
 #### Impact on clients using the MQTT Service Java client SDK

@@ -217,8 +217,8 @@ For simplicity and clarity, the example assumes that message payloads are simple
         final MessageListener<String> listener = new MessageListener<String>() {
             @Override
             public void received(Consumer<String> consumer, Message<String> message) {
-                final String clientId = message.getProperty("client");
-                final String topic = message.getProperty("channel");
+                final String clientId = message.getProperty("clientID");
+                final String topic = message.getProperty("topic");
                 System.out.println(MessageFormat.format("Received message from MQTT device {0} on MQTT topic {1}", clientId, topic));
                 System.out.println(MessageFormat.format("Message payload: {0}", message.getValue()));
                 System.out.println(MessageFormat.format("Message properties: {0}", message.getProperties()));
@@ -321,16 +321,16 @@ The example continues to assume that message payloads are simple text strings, a
 
         // Publish a message to a single MQTT device
         producer.newMessage()
-            .property("client", "demoClient")
-            .property("channel", "demoTopic")
+            .property("clientID", "demoClient")
+            .property("topic", "demoTopic")
             .key("demoClient")
             .send();
         System.out.println("Sent message to single device");
         
         // Publish a message to all MQTT devices subscribed to a topic
         producer.newMessage()
-            .property("client", "")
-            .property("channel", "demoTopic")
+            .property("clientID", "")
+            .property("topic", "demoTopic")
             .key("demoTopic")
             .send();
         System.out.println("Sent message to all devices");
