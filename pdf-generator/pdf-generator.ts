@@ -11,6 +11,7 @@ const templatesDir = path.resolve(__dirname, './templates');
 const sitemapPath = path.resolve(__dirname, '../public/sitemap.xml');
 
 (async () => {
+  // Clean and recreate tmp directory
   if (fs.existsSync(tmpDir)) {
     fs.rmSync(tmpDir, { recursive: true, force: true });
     console.log(`Cleaned entire tmp directory: ${tmpDir}`);
@@ -19,12 +20,14 @@ const sitemapPath = path.resolve(__dirname, '../public/sitemap.xml');
 
   deleteOldPdfs(outputDir);
 
+  // Search all folders and subfolders for *-card.md files
   const folders = findFoldersWithCards(contentDir);
   if (folders.length === 0) {
     console.warn('No *-card.md files found under content');
     return;
   }
 
+  // Process each folder to generate PDFs
   for (const folderName of folders) {
     try {
       await processFolder(folderName);
@@ -38,6 +41,7 @@ function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// Get folders that have *-card.md files 
 function findFoldersWithCards(root: string): string[] {
   const results: string[] = [];
 
@@ -60,6 +64,7 @@ function findFoldersWithCards(root: string): string[] {
   return results.sort();
 }
 
+// Delete old PDFs in the output directory
 function deleteOldPdfs(dir: string) {
   fs.mkdirSync(dir, { recursive: true });
   fs.readdirSync(dir)
@@ -71,6 +76,7 @@ function deleteOldPdfs(dir: string) {
     });
 }
 
+// Load and parse sitemap.xml, return all URLs
 async function loadUrlsFromSitemap(): Promise<string[]> {
   if (!fs.existsSync(sitemapPath)) {
     throw new Error(`sitemap.xml not found at ${sitemapPath}`);
@@ -90,6 +96,7 @@ async function loadUrlsFromSitemap(): Promise<string[]> {
   return urls;
 }
 
+// Get sitemap URLs that belong to a specific folder
 async function buildFolderLinksFromSitemap(folderName: string): Promise<string[]> {
   const allUrls = await loadUrlsFromSitemap();
   let urls = allUrls.filter(u => u.includes(`/${folderName}/`));
@@ -98,16 +105,19 @@ async function buildFolderLinksFromSitemap(folderName: string): Promise<string[]
   return urls;
 }
 
+// Convert a title into a valid PDF filename
 function titleToFilename(title: string) {
   return `${title.trim()}.pdf`
     .replace(/[^\w\s.-]/g, '') // allow letters, numbers, spaces, dots, hyphens
     .replace(/\s+/g, ' '); // normalize multiple spaces
 }
 
+// Replace placeholders in a template with actual values
 function applyTemplate(template: string, replacements: Record<string, string>) {
   return template.replace(/{{\s*(\w+)\s*}}/g, (_, key) => replacements[key] || '');
 }
 
+// Generate HTML and bash script files from templates directory
 function generateTemplateFiles(tmpFolder: string, replacements: Record<string, string>) {
   const templates = [
     { filename: 'pdf-copyright-page.html', outName: 'copyright.html' },
@@ -131,6 +141,7 @@ function generateTemplateFiles(tmpFolder: string, replacements: Record<string, s
   fs.chmodSync(scriptPath, 0o755);
 }
 
+// Run the shell script to generate the PDF, then copy it to output directory
 async function runPdfGenerationScript(tmpFolder: string, folderName: string, desiredFilename: string) {
   console.log(`Generating PDF for ${folderName}...`);
     try {
@@ -158,6 +169,7 @@ async function runPdfGenerationScript(tmpFolder: string, folderName: string, des
     }
   }
 
+// Main process for each folder: read metadata, build links, generate templates, run PDF script
 async function processFolder(folderName: string) {
   const cardFile = path.join(contentDir, `${folderName}-card.md`);
   if (!fs.existsSync(cardFile)) {
@@ -173,7 +185,6 @@ async function processFolder(folderName: string) {
   if (uniqueLinks.length === 0) {
     return;
   }
-
 
   const linksBlock = uniqueLinks
     .map((link, i, arr) => `  ${link}${i < arr.length - 1 ? ' \\' : ''}`)

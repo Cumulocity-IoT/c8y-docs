@@ -80,7 +80,7 @@ pre{
 
 pre>code {
    font-family:monospace;
-	 font-size:1em
+	 font-size:1em;
    padding: 0;
    color: black;
    white-space: pre-wrap;
