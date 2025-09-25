@@ -17,7 +17,7 @@ chmod +x c8yedge
 sudo mv c8yedge /usr/local/bin/
 ```
 
-Before proceeding, ensure that you have met the [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) and applied the necessary [operating system configurations required by K3s](https://docs.k3s.io/installation/requirements/#operating-systems).
+Before proceeding, ensure that you have met the [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) and applied the necessary [operating system configurations required by K3s](https://docs.k3s.io/installation/requirements#operating-systems).
 
 To install Edge, execute the following command and follow the interactive prompts:
 ```shell

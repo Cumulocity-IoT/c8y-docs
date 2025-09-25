@@ -5,7 +5,7 @@ title: Device integration
 
 {{< product-c8y-iot >}} offers multiple methods for connecting devices:
 
-- **Pre-integrated IoT gateways**: Choose from [certified devices](https://ecosystem.{{< domain-c8y >}}/device-ecosystem/) offered by {{< company-c8y >}} certified partners for the easiest integration.
+- **Pre-integrated IoT gateways**: Choose from [certified devices](https://ecosystem.{{< domain-c8y >}}/cumulocity-iot-ecosystem/devices/) offered by {{< company-c8y >}} certified partners for the easiest integration.
 
 - **thin-edge.io**: [thin-edge.io](https://thin-edge.io/) is recommended for custom device integration. Follow the [Getting started with thin-edge.io](/device-integration/device-integration-thin-edge/) tutorial for a hands-on example.
 
@@ -17,7 +17,7 @@ Once a device is connected to {{< product-c8y-iot >}}, it can start streaming eq
 
 To facilitate the data integration, {{< product-c8y-iot >}} comes with an [OPC UA](/device-integration/opcua/) integration and the [Cloud Fieldbus](/device-integration/cloud-fieldbus/) technology. These provide configuration-driven ways to easily integrate OPC UA-enabled equipment and prominent fieldbus protocols like CAN, Profibus or Modbus.
 
-In addition to this, many {{< company-c8y >}} certified [partner devices](https://ecosystem.{{< domain-c8y >}}/device-ecosystem/) bring their own software stack with support for many other protocols.
+In addition to this, many {{< company-c8y >}} certified [partner devices](https://ecosystem.{{< domain-c8y >}}/cumulocity-iot-ecosystem/devices/) bring their own software stack with support for many other protocols.
 
 {{< c8y-admon-info >}}
 The basic life cycle for integrating devices into {{< product-c8y-iot >}} is described in [Interfacing devices](/device-integration/interfacing-devices/).
