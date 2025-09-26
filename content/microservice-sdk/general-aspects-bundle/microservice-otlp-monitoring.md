@@ -86,7 +86,7 @@ To let parameter changes take effect, the microservice must be unsubscribed and 
 
 
 ### Enabling auto-instrumentation
-Whether the microservice application gets instrumented by the Java agent is controlled 
+Whether the microservice application gets instrumented by the OpenTelemetry Java agent is controlled 
 with the parameter `otel.javaagent.enabled`. Setting it to `true` enables the instrumentation:
 
 ```json
