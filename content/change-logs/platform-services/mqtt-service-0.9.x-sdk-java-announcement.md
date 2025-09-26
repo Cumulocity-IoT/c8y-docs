@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2025-09-26
 title: Deprecation of MQTT Service Java client SDK
 change_type:
   - value: change-inv-3bw8e
