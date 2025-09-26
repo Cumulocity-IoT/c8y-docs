@@ -27,18 +27,24 @@ To learn more about those subjects, please refer to the [Pulsar product document
 
 ### Connecting to the Messaging Service
 
-To connect your client to the Messaging Service, you will need to use a [Pulsar client library](https://pulsar.apache.org/docs/4.0.x/client-libraries/).
-Open-source client libraries are available for a number of different languages and protcols.
+To connect your client to the Messaging Service, you will need:
+1. A [Pulsar client library](https://pulsar.apache.org/docs/4.0.x/client-libraries/).
+2. The URL of the Messaging Service (Pulsar broker) in your {{< product-c8y-iot >}} environment.
+3. Credentials for a user in your tenant with permission to access MQTT Service data on the Messaging Service.
+
+Each of these pre-requisities is explained in detail below.
+
+#### Pulsar client library
+
+Open-source Pulsar client libraries are available for a number of different languages and protcols.
 The example code in this documentation will use the [Java client library](https://pulsar.apache.org/docs/4.0.x/client-libraries-java/).
 Pulsar has strong cross-version compatibility, so in general we recommend using the latest version of your chosen client library, regardless of the server version used by the Messaging Service.
 Integration with the MQTT Service will not require using any advanced Pulsar features that may only be available in the latest version of the server.
 
 {{< c8y-admon-caution >}}
-Please note that currently only "basic" (username/password) authentication is supported for clients connecting to the Messaging Service through Pulsar.
+Currently only "basic" (username/password) authentication is supported for clients connecting to the Messaging Service through Pulsar.
 Therefore, you must ensure that your chosen Pulsar client library supports this authentication scheme.
 {{< /c8y-admon-caution >}}
-
-Connecting to Pulsar requires the URL of the Pulsar server, and valid authentication credentials.
 
 #### Pulsar URL
 
