@@ -320,6 +320,7 @@ Then, the `Producer` can be used to create new `Message` objects that will be pu
 The example code shows how to correctly set the message properties and message key for messages targeted at a single device, and for "broadcast" messages.
 Again, the example assumes that the application messages are simple text strings, that must be converted to the byte array expected by the MQTT Service.
 For clarity, most error-handling code is omitted from the example.
+See [Handling Messaging Service errors](#handling-messaging-service-errors) for advice on dealing with errors in a production client.
 
 ```java
         // Create a Pulsar producer on the to-device topic for the tenant.
@@ -382,7 +383,7 @@ This policy helps to limit overall resource usage and reduces the need to proces
 No undelivered message will ever be deleted from the backlog unless it reaches its TTL limit.
 Messages will always be delivered to the consumer in the order they were published to the topic.
 
-### Best practices to ensure reliable message delivery from devices {#reliable-delivery-best-practices}
+### Best practices for reliable message delivery from devices {#reliable-delivery-best-practices}
 
 If the backlog quota limit for a Pulsar topic is reached, it will not be possible to publish more messages onto the topic, and messages may be lost.
 Therefore, it is important that your client processes and acknowledges messages received from the `from-device` topic as quickly as possible.
@@ -421,6 +422,41 @@ The code snippet below shows how to delete the subscriber and close the other Pu
         producer.close();
         client.close();
 ```
+
+### Handling Messaging Service errors {#handling-messaging-service-errors}
+
+The {{< product-c8y-iot >}} Messaging Service is a complex, distributed service running remotely from your client.
+In common with all distributed systems, perfect reliability cannot be guaranteed, and a client should be prepared to handle errors reported by the Pulsar client library.
+These errors can be split into two general categories:
+1. Configuration or logical errors in the client implementation.
+   Errors in this category are usually "fatal" and prevent the client from connecting to the Messaging Service, or publishing or consuming any messages.
+   Some typical examples of this type of error include:
+   * Attempting to connect with an incorrect Pulsar URL.
+   * Using invalid authentication credentials.
+   * Using the credentials of a user that is not authorized to access the Messaging Service.
+   * Attempting to consume from the `to-device` topic, or publish to the `from-device` topic.
+   * Attempting to publish to or consume from any other topic.
+   * Attempting to publish incorrectly constructed messages.
+     The most likely cause for this is attempting to publish a message with a payload that was not explicitly created as a byte array.
+2. Transient errors in the Messaging Service.
+   Errors in this category usually reflect a temporary issue with the Messaging Service server, that will be resolved either automatically or by administrator action.
+   Some transient errors that a client may experience include:
+   * Connections may be dropped when Messaging Service components are restarted during upgrades, or during unplanned outages of the Messaging Service.
+     This will cause publish or consume operations to fail, and it may be necessary to re-connect, or re-establish the producer or consumer, before retrying the operation.
+   * Published messages will be rejected when the backlog quota limit on the `to-device` topic has been reached.
+     See [reliable delivery best practices](#reliable-delivery-best-practices) for advice on avoiding this situation.
+   * Published messages may be rejected if other limits or quotas on the Messaging Service are reached.
+
+If your client is using the Java client library, almost all errors will be reported as a `PulsarClientException` thrown by a client library method.
+In some very rare cases a `SchemaSerializationException` runtime error might also be thrown, if the client has not used the `Schema.BYTES` schema and byte array payloads exclusively.
+The `PulsarClientException` class has many sub-classes that allow a client to determine the cause of the error more precisely.
+Other client libraries will have similar language-specific error reporting mechanisms.
+
+In general, it is not possible to recover from a fatal configuration or logic error in the client implementation.
+The client will need to be restarted after the error has been corrected.
+For transient errors, a strategy of retrying after a delay is usually appropriate.
+When an operation on a producer or a consumer has failed, we recommend deleting the failed producer or consumer object and creating a new one before retrying the operation.
+We also recommend an [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff) strategy to increase the delay between repeated retries, until the service has fully recovered.
 
 ### Example client
 
