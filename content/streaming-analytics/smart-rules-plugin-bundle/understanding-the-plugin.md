@@ -1,10 +1,10 @@
 ---
 weight: 15
-title: Understanding the Smart rules (NEW) plugin
+title: Understanding the smart rules (NEW) plugin
 layout: redirect
 ---
 
-### Analytics Builder workflow versus Smart rules plugin {#analytics-builder-workflow-versus-smart-rules-plugin}
+### Analytics Builder workflow versus smart rules plugin {#analytics-builder-workflow-versus-smart-rules-plugin}
 
 #### Standard Analytics Builder workflow {#standard-analytics-builder-workflow}
 In the standard Analytics Builder workflow, to deploy analytics instances, users must switch from their primary workflow to the Analytics Builder:
@@ -19,7 +19,7 @@ This process requires switching between applications and can be time-consuming w
 
 For detailed information about the instance editor workflow, refer to [Instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor).
 
-#### With Smart rules plugin {#with-smart-rules-plugin}
+#### With smart rules plugin {#with-smart-rules-plugin}
 The smart rules plugin streamlines this process by enabling Analytics Builder model instance creation and deployment directly from device and group contexts, eliminating the need for switching to a different application.
 
 ### Understanding the smart rules interface {#understanding-the-smart-rules-interface}
@@ -38,9 +38,9 @@ A rule has the following fields and properties:
 
 ### Integration with Analytics Builder instance editor {#integration-with-analytics-builder-instance-editor}
 
-The Smart rules plugin maintains seamless bidirectional integration with the Analytics Builder instance editor.
+The smart rules plugin maintains seamless bidirectional integration with the Analytics Builder instance editor.
 
-Rules created in the Analytics Builder instance editor appear in the Smart rules plugin only when the mode is set to **Production**. Non-production modes indicate the rule is under development or testing and not ready for deployment.
+Rules created in the Analytics Builder instance editor appear in the smart rules plugin only when the mode is set to **Production**. Non-production modes indicate the rule is under development or testing and not ready for deployment.
 
 Rules created through the smart rules plugin automatically appear in the corresponding model's instance editor. These rules can be edited, modified, or deleted from the instance editor.
 

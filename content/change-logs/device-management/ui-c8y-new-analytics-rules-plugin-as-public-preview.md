@@ -23,4 +23,4 @@ While traditional smart rules provide a fixed set of predefined templates for co
 The "Smart rules (NEW)" feature was previously named “Analytics rules”. It is in Public Preview and may be subject to change in the future.
 {{< /c8y-admon-preview >}}
 
-For more details about the Smart rules (NEW) plugin, refer to [Smart rules (NEW) plugin](/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin).
+For more details about the smart rules (NEW) plugin, refer to [Smart rules (NEW) plugin](/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin).
