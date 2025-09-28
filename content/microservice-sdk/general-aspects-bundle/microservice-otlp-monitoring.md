@@ -4,22 +4,49 @@ title: Microservice monitoring
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} supports the [OpenTelemetry framework](https://opentelemetry.io/) for exporting telemetry data (metrics, logs, and traces) from your microservice to help you analyze your application’s performance and behavior. 
+### Current situation and limitatations {#current-situation-and-limitatations}
+
+The ability to monitor microservice behavior at runtime is of crucial importance with respect to stability, relialibity, and performance of the microservice application.
+Monitoring of microservices on the {{< product-c8y-iot >}} platform is already possible to some extent, however with additional effort and some limitations:
+
+- Server runtime metrics like memory and CPU consumption are not directly logged (if not written to the log by the application).
+
+- All logging data is sent to the standard output and persisted temporarily by the infrastructure. 
+You can access logging data via the Rest interface but limited to the last 35 MB. Logs are lost in case of a restart. 
+
+- Although [log aggregation](https://community.cumulocity.com/t/log-aggregation-for-cumulocity-iot-microservices/7477) is possible already, 
+you have to program your microservices against a specific technology like Grafana. 
+
+The OpenTelemetry standard provides a holistic approach to collect and export application logs, metrics, and traces to monitoring systems of various vendors.
+The customer can freely define which data is to be collected and to which endpoint it is to be sent to.
+
+OpenTelemetry is an open standard with implementations supporting several [languages](https://opentelemetry.io/docs/languages/) like Java, Python, Go, Ruby, C++.
+{{< product-c8y-iot >}} provides the option of zero-code instrumentation for microservices developed with the Microservice SDK for Java. 
+The so-called OpenTelemetry Java-agent JAR file gets attached to the JVM, and the only configuration data needed is the access information of the monitoring system. 
+Detailed instructions can be found in the [Microservice SDK for Java](/microservice-sdk/general-aspects/#otlp.....) section.
+
+
+## Temporary note: The following chapters will be moved to [Microservice SDK for Java] with the next commit step
+
+
+### OTLP monitoring support for microservices {#otlp-support-for-microservices}
+{{< product-c8y-iot >}} supports the [OpenTelemetry (OTLP) framework](https://opentelemetry.io/) for exporting telemetry data (metrics, logs, and traces) from your microservice to help you analyze your application’s performance and behavior. 
 The Java Microservice SDK leverages the [OpenTelemetry Java agent](https://opentelemetry.io/docs/zero-code/java/agent/) which provides automatic instrumentation for many popular libraries and frameworks.
 
-### Configuration
-Microservices can obtain the OTLP configuration from their individual tenant options. 
-The tenant option category containing the OTLP parameters is determined in the following order:
-
+### OTLP Configuration {#otlp-configuration}
+Microservices can obtain the current OTLP configuration from their individual [tenant options](https://cumulocity.com/api/core/2025/#tag/Options). 
+The category names for tenant options assigned to a microservice can be defined by:
+ 
 - The settingsCategory defined in the microservice manifest
 - The microservice’s context path
 - The microservice name
 
-A detailed list of configuration parameters can be found in the [OTLP configuration documentation](https://opentelemetry.io/docs/languages/java/configuration/).
+The tenant option category containing the OTLP parameters is determined in the order of the list above. 
+All OTLP parameters must be defined in the same category. 
 
 
-#### OTLP tenant options
-Tenant options with OTLP configuration parameters can be set via [REST commands](https://cumulocity.com/api/core/2025/#tag/Options) sent to 
+#### OTLP tenant options {#otlp-tenant-options}
+Tenant options with OTLP configuration parameters can be set via [REST commands](https://cumulocity.com/api/core/2025/#operation/postOptionCollectionResource) sent to 
 the tenant options endpoint of the tenant.
 For example, setting the endpoint where OTLP signals are exported to is done with this json document:
 
@@ -31,15 +58,15 @@ For example, setting the endpoint where OTLP signals are exported to is done wit
 }
 ```
 
-The Opentelemetry parameter names in this document are according to the specification in [OTLP configuration documentation](https://opentelemetry.io/docs/languages/java/configuration/). 
+A detailed list of configuration parameters can be found in the [OTLP configuration documentation](https://opentelemetry.io/docs/languages/java/configuration/). 
 The parameters are stored as tenant options and injected into the microservice as environment variables.
-To convert a tenant option to an environment variable, these steps are applied as described [here](https://opentelemetry.io/docs/languages/java/configuration/#environment-variables-and-system-properties):
+To convert a tenant option to an environment variable, these steps are applied as described in [Environment variables and system properties](https://opentelemetry.io/docs/languages/java/configuration/#environment-variables-and-system-properties):
 - Convert the name to uppercase.
 - Replace all `.` and `-` characters with `_`.
 
 For example, the `otel.sdk.disabled` tenant option is equivalent to the `OTEL_SDK_DISABLED` environment variable.
 
-##### Encryption
+##### Encryption {#encryption}
 Tenant options containing values to be encrypted, like passwords or access tokens, must be preceded with a `credentials.` prefix, 
 as described in the [Encryption](/microservice-sdk/general-aspects/#encryption) chapter.
 
@@ -51,7 +78,7 @@ as described in the [Encryption](/microservice-sdk/general-aspects/#encryption) 
 }
 ```
 
-##### OTEL parameter values
+##### OTEL parameter values {#otel-parameter-values}
 
 As an example, the parameter values required to export OTLP signals to Grafana (without using an OTLP collector instance) could be set like this:
 
@@ -74,19 +101,15 @@ service.version: application version
 
 OTEL parameters are only set in the microservice deployment if either 
 `otel.sdk.disabled=false` or `otel.javaagent.enabled=true`.
-By default, OTLP parameters in the deployment are:
-```properties
-otel.sdk.disabled=true
-otel.javaagent.enabled=false
-```
+
 
 {{< c8y-admon-important >}}
 To let parameter changes take effect, the microservice must be unsubscribed and subscribed again.
 {{< /c8y-admon-important >}}
 
 
-### Enabling auto-instrumentation
-Whether the microservice application gets instrumented by the java-agent is controlled 
+### Enabling auto-instrumentation {#enabling-auto-instrumentation}
+Whether the microservice application gets instrumented by the Java-agent is controlled 
 with the parameter `otel.javaagent.enabled`. Setting it to `true` enables the instrumentation:
 
 ```json
@@ -102,7 +125,7 @@ If enabled, the Java agent JAR file file will be downladed and attached to the m
 Configuring auto-instrumentation for selected libraries or frameworks, or opting for manual instrumentation only, is described 
 in the [Opentelemetry instrumention documentation](https://opentelemetry.io/docs/zero-code/java/agent/disable/).
 
-### Manual instrumentation
+### Manual instrumentation {#manual-instrumentation}
 In parallel to the automatic instrumentation, manual instrumentation of the microservice application is possible as well.
 
 The Java agent creates the GlobalOpenTelemetry object which can be used as a starting point to create 
@@ -121,7 +144,7 @@ A basic example for this use case can be found [here](https://github.com/open-te
 If instrumentation with the Java agent is disabled, complete manual instrumentation without the Java agent can be applied as well.
 Detailed examples for various use cases can be found [here](https://github.com/open-telemetry/opentelemetry-java-examples/tree/main).
 
-#### Maven dependencies
+#### Maven dependencies {#maven-dependencies}
 The Maven `pom.xml` file of the microservice application needs to be extended with the required OTLP library dependencies according to the manual instrumentation code.
 
 
