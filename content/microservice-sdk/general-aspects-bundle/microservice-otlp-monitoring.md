@@ -22,7 +22,7 @@ The customer can freely define which data is to be collected and to which endpoi
 
 OpenTelemetry is an open standard with implementations supporting several [languages](https://opentelemetry.io/docs/languages/) like Java, Python, Go, Ruby, C++.
 {{< product-c8y-iot >}} provides the option of zero-code instrumentation for microservices developed with the Microservice SDK for Java. 
-The so-called OpenTelemetry Java-agent JAR file gets attached to the JVM, and the only configuration data needed is the access information of the monitoring system. 
+The so-called OpenTelemetry Java agent JAR file gets attached to the JVM, and the only configuration data needed is the access information of the monitoring system. 
 Detailed instructions can be found in the [Microservice SDK for Java](/microservice-sdk/general-aspects/#otlp.....) section.
 
 
@@ -108,7 +108,7 @@ To let parameter changes take effect, the microservice must be unsubscribed and 
 {{< /c8y-admon-important >}}
 
 
-### Enabling auto-instrumentation
+### Enabling auto-instrumentation {#enabling-auto-instrumentation}
 Whether the microservice application gets instrumented by the OpenTelemetry Java agent is controlled 
 with the parameter `otel.javaagent.enabled`. Setting it to `true` enables the instrumentation:
 
