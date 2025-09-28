@@ -48,7 +48,7 @@ All OTLP parameters must be defined in the same category.
 #### OTLP tenant options {#otlp-tenant-options}
 Tenant options with OTLP configuration parameters can be set via [REST commands](https://cumulocity.com/api/core/2025/#operation/postOptionCollectionResource) sent to 
 the tenant options endpoint of the tenant.
-For example, setting the endpoint where OTLP signals are exported to is done with this json document:
+For example, setting the endpoint to which OTLP signals are exported is done with this JSON document:
 
 ```json
 {
@@ -68,7 +68,7 @@ For example, the `otel.sdk.disabled` tenant option is equivalent to the `OTEL_SD
 
 ##### Encryption {#encryption}
 Tenant options containing values to be encrypted, like passwords or access tokens, must be preceded with a `credentials.` prefix, 
-as described in the [Encryption](/microservice-sdk/general-aspects/#encryption) chapter.
+as described in the [Encryption](/microservice-sdk/general-aspects/#encryption) section.
 
 ```json
 {
@@ -108,8 +108,8 @@ To let parameter changes take effect, the microservice must be unsubscribed and 
 {{< /c8y-admon-important >}}
 
 
-### Enabling auto-instrumentation {#enabling-auto-instrumentation}
-Whether the microservice application gets instrumented by the Java-agent is controlled 
+### Enabling auto-instrumentation
+Whether the microservice application gets instrumented by the OpenTelemetry Java agent is controlled 
 with the parameter `otel.javaagent.enabled`. Setting it to `true` enables the instrumentation:
 
 ```json
@@ -120,13 +120,13 @@ with the parameter `otel.javaagent.enabled`. Setting it to `true` enables the in
 }
 ```
 
-If enabled, the Java agent JAR file file will be downladed and attached to the microservice JVM at startup time.
+If enabled, the Java agent JAR file is downloaded and attached to the microservice JVM at startup time.
 
 Configuring auto-instrumentation for selected libraries or frameworks, or opting for manual instrumentation only, is described 
-in the [Opentelemetry instrumention documentation](https://opentelemetry.io/docs/zero-code/java/agent/disable/).
+in the [OpenTelemetry instrumention documentation](https://opentelemetry.io/docs/zero-code/java/agent/disable/).
 
 ### Manual instrumentation {#manual-instrumentation}
-In parallel to the automatic instrumentation, manual instrumentation of the microservice application is possible as well.
+In addition to automatic instrumentation, microservices can be manually instrumented.
 
 The Java agent creates the GlobalOpenTelemetry object which can be used as a starting point to create 
 individual Tracer or Meter objects for [custom instrumentation](https://opentelemetry.io/docs/zero-code/java/agent/api/).
@@ -139,10 +139,10 @@ import io.opentelemetry.api.metrics.Meter;
 Meter meter = GlobalOpenTelemetry.getMeter("application");
 ```
 
-A basic example for this use case can be found [here](https://github.com/open-telemetry/opentelemetry-java-examples/tree/main/javaagent/src/main/java/io/opentelemetry/example/javagent).
+A basic example for this use case can be found in the [OpenTelemetry GitHub repository](https://github.com/open-telemetry/opentelemetry-java-examples/tree/main/javaagent/src/main/java/io/opentelemetry/example/javagent).
 
 If instrumentation with the Java agent is disabled, complete manual instrumentation without the Java agent can be applied as well.
-Detailed examples for various use cases can be found [here](https://github.com/open-telemetry/opentelemetry-java-examples/tree/main).
+Detailed examples for various use cases can be found in the [OpenTelemetry GitHub repository](https://github.com/open-telemetry/opentelemetry-java-examples/tree/main).
 
 #### Maven dependencies {#maven-dependencies}
 The Maven `pom.xml` file of the microservice application needs to be extended with the required OTLP library dependencies according to the manual instrumentation code.
