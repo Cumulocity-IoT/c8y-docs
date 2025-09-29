@@ -6,7 +6,7 @@ layout: redirect
 
 ### Current situation and limitatations {#current-situation-and-limitatations}
 
-The ability to monitor microservice behavior at runtime is of crucial importance with respect to stability, relialibity, and performance of the microservice application.
+Monitoring microservice behavior at runtime is crucial for ensuring the stability, reliability, and performance of the application.
 Monitoring of microservices on the {{< product-c8y-iot >}} platform is already possible to some extent, however with additional effort and some limitations:
 
 - All logging data is sent to the standard output and persisted temporarily by the infrastructure. 
@@ -18,11 +18,10 @@ you have to program your microservices against a specific technology like Grafan
 - Server runtime metrics like memory and CPU consumption are not directly logged (if not written to the log by the application).
 
 The OpenTelemetry standard provides a holistic approach to collect and export application logs, metrics, and traces to monitoring systems of various vendors.
-The customer can freely define which data is to be collected and to which endpoint it is to be sent to.
+You can freely define which data is to be collected and to which endpoint it is to be sent to.
 
 OpenTelemetry is an open standard with implementations supporting several [languages](https://opentelemetry.io/docs/languages/) like Java, Python, Go, Ruby, C++.
 {{< product-c8y-iot >}} provides the option of zero-code instrumentation for microservices developed with the Microservice SDK for Java. 
-The so-called OpenTelemetry Java agent JAR file gets attached to the JVM, and the only configuration data needed is the access information of the monitoring system. 
-Detailed instructions can be found in the [Microservice SDK for Java](/microservice-sdk/java/#otlp-configuration) section.
+Refer to the [Microservice SDK for Java](/microservice-sdk/java/#otlp-configuration) section for details.
 
 
