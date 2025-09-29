@@ -48,7 +48,7 @@ In [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-d
 
 The inventory collection stores data related to devices and managed objects. In order to confine the offloading pipeline to the data you need, there are different views defined over the collection, with each one defining a subset of all inventory entries. Select the view fitting best to your needs.
 
-* **All devices**: This view provides all documents with device-related data, indicated by having the **c8y_isDevice** fragment set.
+* **All devices**: This view provides all documents with device-related data, indicated by having the `c8y_isDevice` fragment set.
 * **All device groups**: This view provides all documents with data related to device groups, indicated by having the `c8y_isDeviceGroup` fragment set.
 * **Inventory data tagged for DataHub**: This view provides all documents that are specifically tagged for DataHub and not related to devices. Corresponding documents have the fragment `c8y_DataHubInclude` set, but not the fragments `c8y_isDevice`, `c8y_isDeviceGroup`, or `c8y_DataHubExclude`. You can utilize the fragment `c8y_DataHubInclude` in your data-generating application to configure a custom view that offloads only selected documents.
 * **All data**: This view provides all documents, except for those having the fragment **c8y_DataHubExclude** set. You can utilize the fragment **c8y_DataHubExclude** in your data-generating application to configure a custom view which excludes selected documents. Using this view is not recommended. First, it includes the offloading of data typically not required in your application and second, the schema detection may suffer from the heterogeneity of the data.
