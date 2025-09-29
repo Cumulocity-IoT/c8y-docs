@@ -1394,7 +1394,7 @@ Will result in the message:
 532,someSerial,MyParameter,b,true,DeviceMaintainer.name,s,John Smithsky,DeviceMaintainer.contact,s,12312,Problems,,
 ```
 
-The maximum number of parameters is **100**. Operations containing more parameters won't be sent to the device.
+The maximum number of parameters is **100**. Operations containing more parameters cannot be pushed through this template.
 
 
 #### Platform capabilities templates (6xx) {#subscribe-platform-capabilities} 
