@@ -6,7 +6,7 @@ layout: redirect
 
 ### Current situation and limitatations {#current-situation-and-limitatations}
 
-The ability to monitor microservice behavior at runtime is of crucial importance with respect to stability, relialibity, and performance of the microservice application.
+Monitoring microservice behavior at runtime is crucial for ensuring the stability, reliability, and performance of the application.
 Monitoring of microservices on the {{< product-c8y-iot >}} platform is already possible to some extent, however with additional effort and some limitations:
 
 - Server runtime metrics like memory and CPU consumption are not directly logged (if not written to the log by the application).
