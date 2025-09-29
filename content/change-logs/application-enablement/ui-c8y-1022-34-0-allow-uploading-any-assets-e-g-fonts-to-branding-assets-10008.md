@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64758
 version: 1022.34.0
 ---
-Previously, only images could be uploaded to the branding section of the Administration application. With this change, it is now possible to upload any type of asset, such as fonts, to the branding section. This allows greater flexibility in customizing the look and feel of the {{< product-c8y-iot >}} platform to match your corporate branding.
+Previously, only images could be uploaded to the branding section of the Administration application. With this change, it is now possible to upload any type of resource, such as fonts, to the branding section. This allows greater flexibility in customizing the look and feel of the {{< product-c8y-iot >}} platform to match your corporate branding.
