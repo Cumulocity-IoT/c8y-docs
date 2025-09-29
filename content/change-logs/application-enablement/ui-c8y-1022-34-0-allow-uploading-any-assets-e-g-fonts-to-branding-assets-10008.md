@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Allow uploading any type of asset to branding
+title: Allowed uploading any type of resource (fonts, images) to branding
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
