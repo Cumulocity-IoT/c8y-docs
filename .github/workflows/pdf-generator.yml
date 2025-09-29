@@ -35,6 +35,22 @@ jobs:
           cd repo
           hugo --baseURL "http://localhost:1313/docs/"
 
+      - name: Start Hugo server
+        run: |
+          cd repo
+          nohup hugo server --baseURL "http://localhost:1313/docs/" --bind 0.0.0.0 -p 1313 > hugo.log 2>&1 &
+      
+      - name: Wait for Hugo server
+        run: |
+          for i in {1..60}; do
+            if curl -s http://localhost:1313/docs/ > /dev/null; then
+              echo "Hugo server is up!"
+              break
+            fi
+            echo "Waiting for Hugo server..."
+            sleep 5
+          done
+
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
