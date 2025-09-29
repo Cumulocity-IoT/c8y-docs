@@ -36,7 +36,7 @@ Each of these prerequisites is explained in detail below.
 
 #### Pulsar client library
 
-Open-source Pulsar client libraries are available for a number of different languages and protcols.
+Open-source Pulsar client libraries are available for a number of different languages and protocols.
 The example code in this documentation will use the [Java client library](https://pulsar.apache.org/docs/4.0.x/client-libraries-java/).
 Pulsar has strong cross-version compatibility, so in general we recommend using the latest version of your chosen client library, regardless of the server version used by the Messaging Service.
 Integration with the MQTT Service will not require using any advanced Pulsar features that may only be available in the latest version of the server.
@@ -52,7 +52,7 @@ For a microservice client, the URL should be obtained from the `C8Y_BASEURL_PULS
 For an external application client, the URL has the general form `pulsar+ssl://<tenant_domain>:6651/`, where `<tenant_domain>` is the domain of your {{< product-c8y-iot >}} tenant, for example `my-tenant.cumulocity.com`.
 As implied by the `pulsar+ssl` protocol name, all external application client connections will use SSL/TLS security.
 Currently, only one-way TLS is supported; that is, the server will provide a certificate that can be verified by the client, but client certificates cannot be used.
-Implementing an external application client so that it reads the Pulsar URL from the `C8Y_BASEURL_PULSAR` environment variable will make it easier to develop client that can be deployed as either a microservice or an external application.
+Implementing an external application client so that it reads the Pulsar URL from the `C8Y_BASEURL_PULSAR` environment variable will make it easier to develop a client that can be deployed as either a microservice or an external application.
 
 #### Pulsar authentication
 
@@ -100,9 +100,9 @@ For example, if your microservice only needs to consume but not publish messages
 #### Example code
 
 The code snippet below shows how to use the Pulsar Java client library to connect to the Messaging Service with basic authentication.
-It assumes that the Pulsar URL is in the `C8Y_BASEURL_PULSAR` environment variable and that the tenant, username and password are provided on the command line.
+It assumes that the Pulsar URL is in the `C8Y_BASEURL_PULSAR` environment variable and that the tenant identifier, username and password are provided on the command line.
 Note that the client library will not actually attempt to connect to the Pulsar server immediately when the `PulsarClient` object is created.
-In the interests of brevity and clarity, this example does no error handling.
+In the interest of brevity and clarity, this example does no error handling.
 A realistic implementation would need to handle exceptions thrown by the Pulsar client library methods.
 
 ```java
@@ -163,11 +163,11 @@ If a published message includes any properties other than those listed here, tho
 | `tx.payloadFormatIndicator`<sup>(2)</sup> | NO                | Single byte with two permitted values, encoded as strings "0" and "1" | MQTT v5 Payload Format Indicator                     |
 | `tx.contentType`                          | NO                | String                                                                | MQTT v5 Content Type                                 |
 | `tx.responseTopic`                        | NO                | String                                                                | MQTT v5 Response Topic                               |
-| `tx.correlationData`                      | NO                | Sequence of bytes, encoded as a Base64 string                         | MQTT v5 Correlator Data                              |
+| `tx.correlationData`                      | NO                | Sequence of bytes, encoded as a Base64 string                         | MQTT v5 Correlation Data                              |
 | `tx.userProperties.<name>`                | NO                | String                                                                | MQTT v5 User Property with name `name`<sup>(3)</sup> |
 
 Notes:
-1. The `clientID` property can be omitted from a published message only in special case of a _broadcast_ message, described below in [broadcast messages](#broadcast-messages)
+1. The `clientID` property can be omitted from a published message only in special case of a _broadcast_ message, described below in [broadcast messages](#broadcast-messages).
 2. The `tx.` prefix indicates that a property is specific to a _transport_, in this case the MQTT Service.
    Other transports will define their own transport-specific properties, but all transports will use `topic` and `clientID`.
 3. The MQTT version 5 specification allows a message to include more than one user property with the same name.
@@ -196,11 +196,11 @@ Messages that are not of interest to the client can simply be acknowledged witho
 
 {{< c8y-admon-caution >}}
 Your client **must** be trusted to safely handle every message published by every device connected to the MQTT Service in your tenant.
-If untrusted users have access to your tenant, these users should **not** be permitted to upload microservices, nor to connect external application clients to the MQTT Service.
+If untrusted users have access to your tenant, these users should **not** be permitted to upload microservices, nor to connect external application clients to the Messaging Service.
 This recommendation also applies in the case of multiple customers, who do not mutually trust each other, sharing a single tenant.
 {{< /c8y-admon-caution >}}
 
-#### Durable subscriptions and acknowledgement
+#### Durable subscriptions and message acknowledgement
 
 Subscribing a consumer to a topic establishes a _durable subscription_ to the topic.
 This means that the Messaging Service will retain messages published to the topic until they have been delivered to, and acknowledged by, a client.
@@ -213,7 +213,7 @@ See the section on [best practices](#reliable-delivery-best-practices) below for
 #### Example code
 
 The code snippet below shows how to use the Pulsar Java client library to consume messages from the MQTT Service `from-device` topic.
-It extends the previous example that set up the connection to the Pulsar server.
+It extends the previous example that showed how to connect to the Messaging Service.
 
 To consume messages from the topic, your client should create a Pulsar `Consumer` and subscribe it to the topic.
 The consumer should register a `MessageListener` callback that will be called whenever a new message arrives on the topic.
@@ -268,7 +268,7 @@ Messages published to the `to-device` topic are routed to connected MQTT devices
 | `topic`       | Name of the MQTT topic that the message should be published to       |
 
 If the `topic` property is empty or missing, the message will not be published to any MQTT client.
-The message will only be published to a client with an active subscription to the named MQTT topic.
+The message will only be published to a device with an active subscription to the named MQTT topic.
 The message will only be published to a client that is connected at the time the MQTT Service processes the published message.
 
 Successfully publishing a message to the Messaging Service does **not** mean that the message has been successfully delivered to any MQTT device.
@@ -377,7 +377,7 @@ If the backlog quota limit for the Pulsar `to-device` topic is reached, clients 
 
 #### Message time-to-live
 
-Any undelivered messages will be automatically deleted if they have been on the backlog for longer than the _time to live (TTL) limit_.
+Any undelivered messages will be automatically deleted if they have been on the backlog for longer than the _time-to-live (TTL) limit_.
 This policy helps to limit overall resource usage and reduces the need to process outdated data after a prolonged disconnection of a consumer.
 
 No undelivered message will ever be deleted from the backlog unless it reaches its TTL limit.
@@ -400,7 +400,7 @@ Therefore, as well as explicitly acknowledging every message, clients must also 
 1. Use the same subscription name every time the client connects a consumer.
    A common _anti-pattern_ is to generate a random subscription name each time the client runs.
    This will create a new subscription each time, but leave any previous subscriptions active with no consumers.
-   Eventually, the backlog quota limit for the topic will be reached, and no further messages will be deliver to the client.
+   Eventually, the backlog quota limit for the topic will be reached, and no further messages will be delivered to the client.
 1. Explicitly delete subscriptions when they are no longer required.
    Depending on your use case, this may require specific manual intervention.
    For example, if a client is being taken out of service for an extended period you may need to manually delete its subscription.
