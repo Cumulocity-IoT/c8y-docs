@@ -60,7 +60,7 @@ Authentication credentials identify both the {{< product-c8y-iot >}} tenant and 
 Currently, only "basic" (username and password) authentication is supported for clients connecting to the Messaging Service through Pulsar.
 For a microservice client, you should use the credentials of the per-tenant [service user](/microservice-sdk/general-aspects/#users-and-roles) that will be passed to the microservice when the tenant is subscribed to it.
 For an external application user, you can use the credentials of any tenant user with the appropriate authorization roles assigned, as described below.
-The username must be in the form `<tenant>/<user>` where `<tenant>` is the tenant id, and `<user>` is a user within that tenant.
+The username must be in the form `<tenantID>/<user>` where `<tenantID>` is the tenant ID (not the tenant name), and `<user>` is a user within that tenant.
 If two-factor authentication (TFA) is enabled for your tenant, your user must have the `devices` role assigned to disable the TFA check for that user.
 See [TFA Settings](/authentication/basic-settings/#tfa-settings) for more information.
 Note that the `devices` role may be shown as "Device User" in the {{< product-c8y-iot >}} user interface.
@@ -177,13 +177,13 @@ Notes:
 
 ### Consuming messages from MQTT devices {#consuming-messages-from-mqtt-devices}
 
-All messages published by devices connected to the MQTT Service for a given tenant will be published to a _single_ Pulsar topic, identified by the URL `persistent://<tenant>/mqtt/from-device`.
+All messages published by devices connected to the MQTT Service for a given tenant will be published to a _single_ Pulsar topic, identified by the URL `persistent://<tenantID>/mqtt/from-device`.
 The topic URL can be broken down into 4 components:
 
 | Component     | Description                                                                                                                                                                      |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `persistent`  | Indicates that this is a persistent topic that will be preserved by the Messaging Service across component failures and restarts, to provide "at least once" delivery guarantees |
-| `<tenant>`    | The Pulsar tenant id, which will match the {{< product-c8y-iot >}} tenant id                                                                                                     |
+| `<tenantID>`  | The Pulsar tenant ID, which will match the {{< product-c8y-iot >}} tenant ID                                                                                                     |
 | `mqtt`        | The Pulsar namespace within the tenant, which will always be `mqtt` for the MQTT Service                                                                                         |
 | `from-device` | The Pulsar topic within the namespace, which will always be `from-device` for message from devices connected to the MQTT Service                                                 | 
 
@@ -254,7 +254,7 @@ However, the payload of the Pulsar message will always be an array of bytes, tha
 
 ### Publishing messages to MQTT devices
 
-Any messages that your client wants to send to devices connected to the MQTT Service for a given tenant must be published to a _single_ Pulsar topic, identified by the URL `persistent://<tenant>/mqtt/to-device`.
+Any messages that your client wants to send to devices connected to the MQTT Service for a given tenant must be published to a _single_ Pulsar topic, identified by the URL `persistent://<tenantID>/mqtt/to-device`.
 The components of the URL should be interpreted as described in [Consuming messages from MQTT devices](#consuming-messages-from-mqtt-devices) above.
 
 Your client will only be able to publish to this topic if the authenticated user has the "update" permission on the "Mqtt service messaging topics" role.
