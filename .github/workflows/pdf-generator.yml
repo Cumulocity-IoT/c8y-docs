@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - script_for_generating_PDFs
-  workflow_dispatch:  
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -12,6 +12,8 @@ permissions:
 jobs:
   generate-pdfs:
     runs-on: ubuntu-latest
+    container:
+      image: michaelperrin/wkhtmltopdf:0.12.6
 
     steps:
       - name: Checkout repository
@@ -24,8 +26,8 @@ jobs:
       - name: Install Hugo CLI
         run: |
           HUGO_VERSION=0.132.2
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb
-          sudo dpkg -i ${{ runner.temp }}/hugo.deb
+          wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb
+          apt-get update && apt-get install -y ./tmp/hugo.deb
 
       - name: Build with Hugo
         env:
@@ -39,13 +41,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-
-      - name: Install wkhtmltopdf
-        run: |
-            sudo apt-get update
-            sudo apt-get install -y xfonts-base xfonts-75dpi
-            wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb
-            sudo apt-get install -y ./wkhtmltox_0.12.6-1.focal_amd64.deb
 
       - name: Install dependencies
         run: |
