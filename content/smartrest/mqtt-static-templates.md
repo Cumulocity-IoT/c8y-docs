@@ -148,7 +148,7 @@ The client can receive the following templates when subscribing to <kbd>s/ds</kb
 <li>[528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...](#528)</li>
 <li>[529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...](#529)</li>
 <li>[530,serial,hostname,port,connectionKey](#530)</li>
-<li>[532,serial,PARAM_DEF_0,PARAM_DEF_1,...,PARAM_DEF_N](#532)</li>
+<li>[532,serial,parameterKey1,type1,value1,...](#532)</li>
 </ul>
 
 <strong><a href="#subscribe-device-parameter">Device parameter templates</a></strong>
