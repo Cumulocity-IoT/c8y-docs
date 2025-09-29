@@ -95,7 +95,7 @@ While designing the data models, consider the following:
 
 Fragments use a naming convention to avoid conflicts between different parties supplying fragment information, similar to Java or other programming languages.
 
-In the example above, `c8y_Position` is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments, see also [Fragment library](/device-integration/fragment-library/).
+In the example above, `c8y_Position` is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". For more information about various Device Management functionalities and their associated fragments, see also [Fragment library](/device-integration/fragment-library/).
 
 {{< c8y-admon-important >}}
 Names used for fragments must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $ / '`.
