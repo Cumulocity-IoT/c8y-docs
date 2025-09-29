@@ -96,6 +96,10 @@ with the parameter `otel.javaagent.enabled`. Setting it to `true` enables the in
 
 If enabled, the Java agent JAR file is downloaded and attached to the microservice JVM at startup time.
 
+{{< c8y-admon-important >}}
+To enable or disable instrumentation, the microservice must be unsubscribed and subscribed again.
+{{< /c8y-admon-important >}}
+
 Configuring auto-instrumentation for selected libraries or frameworks, or opting for manual instrumentation only, is described
 in the [OpenTelemetry instrumention documentation](https://opentelemetry.io/docs/zero-code/java/agent/disable/).
 
