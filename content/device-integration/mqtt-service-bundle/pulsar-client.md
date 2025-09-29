@@ -97,7 +97,7 @@ For external application clients, the required permissions should be configured 
 We recommend only assigning the minimum permissions needed for your client to operate.
 For example, if your microservice only needs to consume but not publish messages, you should not include the `ROLE_MQTT_SERVICE_MESSAGING_TOPICS_UPDATE` permission in the manifest.
 
-#### Example code
+#### Example code -- connecting to the Messaging Service {#example-code-connecting-messaging-service}
 
 The code snippet below shows how to use the Pulsar Java client library to connect to the Messaging Service with basic authentication.
 It assumes that the Pulsar URL is in the `C8Y_BASEURL_PULSAR` environment variable and that the tenant identifier, username and password are provided on the command line.
@@ -210,10 +210,10 @@ After consuming each message, the client **must** explicitly acknowledge it.
 Acknowledging a message tells the Messaging Service that the client has no further interest in it, allowing the message to be discarded.
 See the section on [best practices](#reliable-delivery-best-practices) below for more information on managing durable subscriptions correctly.
 
-#### Example code
+#### Example code -- consuming messages {#example-code-consuming-messages}
 
 The code snippet below shows how to use the Pulsar Java client library to consume messages from the MQTT Service `from-device` topic.
-It extends the previous example that showed how to connect to the Messaging Service.
+It extends the previous example that showed how to [set up the connection to the Pulsar server](#example-code-connecting-messaging-service).
 
 To consume messages from the topic, your client should create a Pulsar `Consumer` and subscribe it to the topic.
 The consumer should register a `MessageListener` callback that will be called whenever a new message arrives on the topic.
@@ -310,10 +310,10 @@ However, this message will not be delivered to the device, even if it connects l
 Similarly, a message published to a connected MQTT device that is not currently subscribed to the MQTT topic specified in the `topic` property is not considered to be invalid.
 In these situations, the message will not be delivered but no alarms will be raised.
 
-#### Example code
+#### Example code -- publishing messages {#example-code-publishing-messages}
 
 The code snippet below shows how to use the Pulsar Java client library to publish messages to the MQTT Service `to-device` topic.
-It extends the previous examples that set up the connection to the Pulsar server and created a message consumer.
+It extends the previous examples that [set up the connection to the Pulsar server](#example-code-connecting-messaging-service) and [created a message consumer](#example-code-consuming-messages).
 
 To publish messages to the topic, your client should first create a Pulsar `Producer` associated with the topic.
 Then, the `Producer` can be used to create new `Message` objects that will be published to the topic.
@@ -407,9 +407,9 @@ Therefore, as well as explicitly acknowledging every message, clients must also 
    Typically a subscription is deleted by calling the `unsubscribe()` method on the consumer, although the exact mechanism may vary for different Pulsar client libraries.
    The Messaging Service [monitoring and management](/standard-tenant/monitoring/#messaging-service) user interface can also be used to delete a subscription.
 
-#### Example code
+#### Example code -- deleting the subscription {#example-code-deleting-subscription}
 
-The code snippet below shows how to delete the subscriber and close the other Pulsar client objects created by the earlier code examples.
+The code snippet below shows how to delete the subscription and close the other Pulsar client objects created by the earlier code examples.
 
 ```java
         // Delete the durable subscription.
