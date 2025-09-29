@@ -1368,6 +1368,9 @@ Notifies the device that a **c8y_ParameterUpdate** operation has been created.
 | 1..n     | list of parameters | n/a    |                                                                     |
 | 1.1      | parameter name     | string | i.e. MyParameter                                                    |
 | 1.2      | data type          | string | "s" - string, "n" - number, "b" - boolean, "" - (empty string) null |
+| 1...     | list of 3-sets per parameter | n/a    |                                                                     |
+| 1.1      | parameter name     | string | i.e. MyParameter                                                    |
+| 1.2      | data type          | string | "s" - string, "n" - number, "b" - boolean, "" - (empty string) null |
 | 1.3      | value              | string | value serialized to string or empty string for null values          |
 
 **Example**
