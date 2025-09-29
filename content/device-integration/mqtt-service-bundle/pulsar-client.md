@@ -455,7 +455,10 @@ Other client libraries will have similar language-specific error reporting mecha
 In general, it is not possible to recover from a fatal configuration or logic error in the client implementation.
 The client will need to be restarted after the error has been corrected.
 For transient errors, a strategy of retrying after a delay is usually appropriate.
-When an operation on a producer or a consumer has failed, we recommend deleting the failed producer or consumer object and creating a new one before retrying the operation.
+When an operation on a producer or a consumer has failed, it may be difficult to identify the exact root cause and the optimal response.
+As a simple approach that will cover most scenarios, we would suggest deleting the failed producer or consumer object and creating a new one before retrying the operation.
+This is somewhat inefficient but avoids potential issues where the producer or consumer is unable to re-connect after an error.
+A more sophisticated strategy would tailor the response based on the specific sub-class of `PulsarClientException` that was thrown.
 We also recommend an [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff) strategy to increase the delay between repeated retries, until the service has fully recovered.
 
 ### Example client
