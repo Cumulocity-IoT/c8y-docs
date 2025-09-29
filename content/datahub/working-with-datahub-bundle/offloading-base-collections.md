@@ -126,7 +126,7 @@ The fields **childDevices** and **childAssets** are not part of the default offl
 
 #### Offloading the measurements collection {#offloading-the-measurements-collection}
 
-The measurements collection stores device measurements. The corresponding table contains all measurements for a pre-selected measurement type. In the main panel of the **Offloading** page you find in the details section of an offloading configuration a link which navigates you to the corresponding table in the Dremio UI.
+The measurements collection stores device measurements. The corresponding table contains all measurements for a pre-selected measurement type. In the main panel of the **Offloading** page, you find a link in the details section of an offloading configuration that navigates you to the corresponding table in the Dremio UI.
 
 You must select a measurement type, so that all offloaded data is of the same type. During offloading, the data of the measurements collection is flattened, with the resulting schema being defined as follows:
 
