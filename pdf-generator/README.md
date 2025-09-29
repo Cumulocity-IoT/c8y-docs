@@ -8,7 +8,7 @@ The process is automated in **GitHub Actions**, so PDFs are generated and deploy
 
 ## Repository Layout
 
-
+```
 c8y-docs
 │──content # Markdown card files
 │──pdf-generator/
@@ -24,7 +24,7 @@ c8y-docs
 │── public/
      ├── pdfs/ # Final generated PDFs
      └── sitemap.xml # Sitemap with URLs
-
+```
 
 ---
 
@@ -87,7 +87,8 @@ c8y-docs
        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' \
          -avh ./public/pdfs/ \
          ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }}/pdfs \
-         --delete-after ```
+         --delete-after
+      ```
 
 ---
 
