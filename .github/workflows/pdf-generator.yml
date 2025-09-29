@@ -1,7 +1,10 @@
 name: PDF Generator
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - script_for_generating_PDFs
+  workflow_dispatch:  
 
 permissions:
   contents: read
