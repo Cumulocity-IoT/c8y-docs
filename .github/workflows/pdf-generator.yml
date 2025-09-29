@@ -40,12 +40,13 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Setup wkhtmltopdf via Docker
+      - name: Install wkhtmltopdf
         run: |
-          echo '#!/bin/bash' > /usr/local/bin/wkhtmltopdf
-          echo 'docker run --rm -v "$PWD":"$PWD" -w "$PWD" michaelperrin/wkhtmltopdf:0.12.6 wkhtmltopdf "$@"' >> /usr/local/bin/wkhtmltopdf
-          chmod +x /usr/local/bin/wkhtmltopdf
-          wkhtmltopdf --version
+            sudo apt-get update
+            sudo apt-get install -y xfonts-base xfonts-75dpi
+            wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+            sudo apt-get install -y ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+            wkhtmltopdf --version
 
       - name: Install dependencies
         run: |
