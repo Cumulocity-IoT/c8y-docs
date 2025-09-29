@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Allow uploading any assets to branding
+title: Allow uploading any type of asset to branding
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64758
 version: 1022.34.0
 ---
-Previously, only images could be uploaded to the branding section of the Administration application. With this change, it is now possible to upload any type of asset, such as fonts, to the branding section. This allows greater flexibility in customizing the look and feel of the Cumulocity IoT platform to match your corporate branding.
+Previously, only images could be uploaded to the branding section of the Administration application. With this change, it is now possible to upload any type of asset, such as fonts, to the branding section. This allows greater flexibility in customizing the look and feel of the {{< product-c8y-iot >}} platform to match your corporate branding.
