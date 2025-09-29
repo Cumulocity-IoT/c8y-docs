@@ -44,7 +44,7 @@ You can define multiple offloading pipelines for each {{< product-c8y-iot >}} co
 
 In [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections) you will find a summary of the default attributes being offloaded per base collection.
 
-#### Configure inventory collection {#configure-inventory-collection}
+#### Configuring inventory collection {#configuring-inventory-collection}
 
 The inventory collection stores data related to devices and managed objects. In order to confine the offloading pipeline to the data you need, there are different views defined over the collection, with each one defining a subset of all inventory entries. Select the view fitting best to your needs.
 
