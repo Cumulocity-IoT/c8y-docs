@@ -22,7 +22,6 @@ You can freely define which data is to be collected and to which endpoint it is 
 
 OpenTelemetry is an open standard with implementations supporting several [languages](https://opentelemetry.io/docs/languages/) like Java, Python, Go, Ruby, C++.
 {{< product-c8y-iot >}} provides the option of zero-code instrumentation for microservices developed with the Microservice SDK for Java. 
-The so-called OpenTelemetry Java agent JAR file gets attached to the JVM, and the only configuration data needed is the access information of the monitoring system. 
 Detailed instructions can be found in the [Microservice SDK for Java](/microservice-sdk/java/#otlp-configuration) section.
 
 
