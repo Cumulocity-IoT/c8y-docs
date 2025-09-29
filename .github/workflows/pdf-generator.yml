@@ -1,0 +1,42 @@
+name: PDF Generator
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  generate-pdfs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: 0
+          path: repo
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install wkhtmltopdf 0.12.6
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget
+          wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb
+          sudo apt install -y ./wkhtmltox_0.12.6-1.focal_amd64.deb
+          wkhtmltopdf --version
+
+      - name: Install dependencies
+        run: |
+          cd repo/pdf-generator
+          npm ci
+
+      - name: Generate PDFs
+        run: |
+          cd repo/pdf-generator
+          npm run generate
