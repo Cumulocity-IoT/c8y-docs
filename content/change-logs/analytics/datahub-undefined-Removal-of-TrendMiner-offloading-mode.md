@@ -12,4 +12,4 @@ build_artifact:
   - value: tc-H-tuq-8Es
     label: datahub
 ---
-The TrendMiner mode as configuration option in a measurements offloading is no more supported as the integration of {{< product-c8y-iot >}} DataHub with TrendMiner was discontinued.
+The TrendMiner mode as a configuration option in measurements offloading is no longer supported as the integration of {{< product-c8y-iot >}} DataHub with TrendMiner was discontinued.
