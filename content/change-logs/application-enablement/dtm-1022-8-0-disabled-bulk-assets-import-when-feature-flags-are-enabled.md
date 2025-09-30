@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2356"
 version: "1022.8.0"
 ---
-Previously, bulk import via CSV was accessible even when DTM feature flags were enabled, leading to unsupported behavior. This update disables the import button in such cases and adds a tooltip to explain the restriction, improving clarity for users.
+Previously, bulk import via a CSV file was accessible even when Digital Twin Manager feature flags were enabled, leading to unsupported behavior. This update disables the import button in such cases and adds a tooltip to explain the restriction, improving clarity for users.
