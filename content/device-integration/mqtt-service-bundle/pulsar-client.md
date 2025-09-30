@@ -362,7 +362,6 @@ See [Handling Messaging Service errors](#handling-messaging-service-errors) for 
                 .send();
             System.out.println("Sent message to all subscribed devices");
 
-
             // Close the producer.
             producer.close();
         }
