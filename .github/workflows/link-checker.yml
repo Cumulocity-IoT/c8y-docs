@@ -2,12 +2,13 @@ name: Link Checker
 
 on:
  schedule:
-  - cron: '0 14 * * 1'
+  - cron: '0 6 * * 1'
  workflow_dispatch: 
   
 permissions:
     contents: read
     pull-requests: write
+    issues: write
 
 jobs:
   link-check:
