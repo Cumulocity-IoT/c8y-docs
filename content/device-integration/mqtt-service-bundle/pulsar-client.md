@@ -174,7 +174,7 @@ If a published message includes any properties other than those listed here, tho
 | `tx.payloadFormatIndicator`<sup>(2)</sup> | NO                | Single byte with two permitted values, encoded as strings "0" and "1" | MQTT v5 Payload Format Indicator                     |
 | `tx.contentType`                          | NO                | String                                                                | MQTT v5 Content Type                                 |
 | `tx.responseTopic`                        | NO                | String                                                                | MQTT v5 Response Topic                               |
-| `tx.correlationData`                      | NO                | Sequence of bytes, encoded as a Base64 string                         | MQTT v5 Correlation Data                              |
+| `tx.correlationData`                      | NO                | Sequence of bytes, encoded as a Base64 string                         | MQTT v5 Correlation Data                             |
 | `tx.userProperties.<name>`                | NO                | String                                                                | MQTT v5 User Property with name `name`<sup>(3)</sup> |
 
 Notes:
