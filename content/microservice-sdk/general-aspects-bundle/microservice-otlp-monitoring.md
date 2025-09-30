@@ -4,8 +4,6 @@ title: Microservice monitoring
 layout: redirect
 ---
 
-### Current situation and limitatations {#current-situation-and-limitatations}
-
 Monitoring microservice behavior at runtime is crucial for ensuring the stability, reliability, and performance of the application.
 Monitoring of microservices on the {{< product-c8y-iot >}} platform is already possible to some extent, however with additional effort and some limitations:
 
