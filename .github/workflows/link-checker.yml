@@ -25,7 +25,7 @@ jobs:
       - name: Install Dependencies
         run: |
           cd broken-links-script
-          npm install
+          npm ci
 
       - name: Run Cypress tests
         run: |
