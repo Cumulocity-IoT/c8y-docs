@@ -12,6 +12,7 @@ build_artifact:
   - value: tc-hc5Tfixeqqei
     label: mqtt-service
 issue: MTM-64302
+version: 0.9.21
 ---
 
 {{< c8y-admon-caution >}}
@@ -34,7 +35,7 @@ Further examples will be published before the MQTT Service GA date.
 
 #### Impact on clients using the MQTT Service Java client SDK
 
-The MQTT Service Java client SDK is deprecated but will remain available and supported until the MQTT Service GA date.
+The MQTT Service Java client SDK is [deprecated](/change-logs/#mqtt-service-0.9.x-sdk-java-announcement) but will remain available and supported until the MQTT Service GA date.
 Clients can continue to use the Java client SDK in parallel with direct connections to the Messaging Service until then.
 MQTT messages published by connected devices will be delivered to both Java client SDK clients and directly connected clients.
 Messages published to an MQTT topic by either type of client will be delivered to connected devices that are subscribed to that topic, subject to device-level isolation constraints.
