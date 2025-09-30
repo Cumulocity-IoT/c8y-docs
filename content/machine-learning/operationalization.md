@@ -33,7 +33,7 @@ From an architectural perspective, scenario A looks like this:
 ![Scenario A architecture](/images/machine-learning-guide/scenario-a-architecture.png)
 
 {{< c8y-admon-info >}}
-The following article in the {{< c8y-tech-community >}} illustrates this scenario in more detail: [Leveraging Hyperscaler Clouds for Machine Learning Inferencing on Cumulocity Data](https://techcommunity.cumulocity.com//t/leveraging-hyperscaler-clouds-for-machine-learning-inferencing-on-cumulocity-iot-data/6312).
+The following article in the {{< c8y-tech-community >}} illustrates this scenario in more detail: [Leveraging Hyperscaler Clouds for Machine Learning Inferencing on Cumulocity Data](https://community.cumulocity.com//t/leveraging-hyperscaler-clouds-for-machine-learning-inferencing-on-cumulocity-iot-data/6312).
 {{< /c8y-admon-info >}}
 
 
@@ -50,7 +50,7 @@ From an architectural perspective, scenario B looks like this:
 ![Scenario B architecture](/images/machine-learning-guide/scenario-b-architecture.png)
 
 {{< c8y-admon-info >}}
-The following article in the {{< c8y-tech-community >}} illustrates this scenario in more detail: [Performing Machine Learning Inference on Cumulocity Data using Open-Source Frameworks](https://techcommunity.cumulocity.com//t/performing-machine-learning-inference-on-cumulocity-iot-data-using-open-source-frameworks/4924).
+The following article in the {{< c8y-tech-community >}} illustrates this scenario in more detail: [Performing Machine Learning Inference on Cumulocity Data using Open-Source Frameworks](https://community.cumulocity.com//t/performing-machine-learning-inference-on-cumulocity-iot-data-using-open-source-frameworks/4924).
 {{< /c8y-admon-info >}}
 
 ### Scenario C: Embedded hosting using a generic microservice {#scenario-c:-embedded-hosting-using-a-generic-microservice}
@@ -77,5 +77,5 @@ Once the AI/ML model is deployed, you need to set up a workflow to:
 To orchestrate the model execution, this workflow can be set up by leveraging the Streaming Analytics tooling, either Analytics Builder or EPL apps. More information on the specific tooling can be found in [Streaming Analytics](/streaming-analytics/introduction-analytics/).
 
 {{< c8y-admon-info >}}
-In the Cumulocity Tech Community article for scenario B, a detailed description on how to create this can be found: [How to create an ML Inference workflow using Streaming Analytics](https://techcommunity.cumulocity.com//t/performing-machine-learning-inference-on-cumulocity-iot-data-using-open-source-frameworks/4924).
+In the Cumulocity Tech Community article for scenario B, a detailed description on how to create this can be found: [How to create an ML Inference workflow using Streaming Analytics](https://community.cumulocity.com//t/performing-machine-learning-inference-on-cumulocity-iot-data-using-open-source-frameworks/4924).
 {{< /c8y-admon-info >}}

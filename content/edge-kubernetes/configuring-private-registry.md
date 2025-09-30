@@ -1,19 +1,21 @@
 ---
-weight: 50
-title: Installing the Edge operator (offline)
-layout: redirect
+weight: 100
+title: Configuring Edge to use a private registry
+layout: bundle
+sector:
+  - edge_server
 ---
 
 Frequently, portions of a data center might not have access to the Internet, even via proxy servers. You can still install Edge in such an environment, but you must make the required software, Helm Charts and Docker images, available to the disconnected environment through an [Open Container Initiative](https://opencontainers.org/) (OCI) compliant private registry.
 
 To enable this, you need to have an OCI compliant registry available in the network which is accessible to the Kubernetes cluster in which you intend to install Edge. You would also need a workstation that has full internet access, to pull the required software from the [{{< company-c8y >}} registry](https://registry.c8y.io/) and push them into the private registry installed or available in the restricted network.
 
-### Installing a private registry
+### Install a private registry
 Any OCI compliant registry can be used as a private registry, however, the Edge installation is tested with [Harbor](https://goharbor.io/) and [Nexus Repository OSS](https://www.sonatype.com/products/sonatype-nexus-oss).
 
 Refer to [Harbor Installation and Configuration](https://goharbor.io/docs/2.11.0/install-config/) for installing Harbor and [Nexus Installation and Upgrades](https://help.sonatype.com/en/install-nexus-repository.html) for installing Nexus.
 
-After installing and configuring a private registry, ensure that all the machines (the workstation and the Kubernetes cluster nodes) which need access to the private registry can resolve its domain or host and trust the private regsitry's certificate (if it is configured with a self-signed certificate).
+After installing and configuring a private registry, ensure that all the machines (the workstation and the Kubernetes cluster nodes) which need access to the private registry can resolve its domain or host and trust the private registry's certificate (if it is configured with a self-signed certificate).
 
 ### Update /etc/hosts to resolve the domain
 Run the below commands to update the `/etc/hosts` file on every machine (the workstation and the Kubernetes cluster nodes) which needs access to the private registry can resolve its domain or host:
@@ -22,7 +24,7 @@ Run the below commands to update the `/etc/hosts` file on every machine (the wor
 PRIVATE_REGISTRY_HOSTNAME="<PRIVATE-REGISTRY-HOSTNAME>"  	# Change it with your private registry's domain or hostname
 PRIVATE_REGISTRY_IP_ADDRESS="<PRIVATE-REGISTRY-IP-ADDRESS>" # Change it with your private registry's IP Address
 
-# Update /etc/hosts to resolve the Harbor domain
+## Update /etc/hosts to resolve the Harbor domain
 echo "${PRIVATE_REGISTRY_IP_ADDRESS} ${PRIVATE_REGISTRY_HOSTNAME}" | sudo tee -a /etc/hosts
 ```
 
@@ -106,7 +108,7 @@ For this you need a workstation with full internet access to download the requir
 To install registry synchronization script, run the commands below:
 
 ```bash
-pip install --force-reinstall https://download.cumulocity.com/Cumulocity-Edge/Installer/{{< c8y-edge-version-major >}}/c8yedge_registry_sync-{{< c8y-edge-version-major >}}-py3-none-any.whl
+pip install --force-reinstall https://download.cumulocity.com/Cumulocity-Edge/Installer/{{< c8y-edge-current-version >}}/c8yedge_registry_sync-{{< c8y-edge-current-version >}}-py3-none-any.whl
 ```
 
 #### Run registry sync script
@@ -119,18 +121,18 @@ If your private registry is a Harbor registry, you need to pass an extra option 
 {{< /c8y-admon-info >}}
 
 ```bash
-EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"     	# Edge registry credentials can be obtained from product support
-EDGE_REGISTRY_PASSWORD="<EDGE-REGISTRY-PASS>" 	# Edge registry credentials can be obtained from product support
+EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"     	# Edge registry credentials can be obtained from the {{< company-c8y >}} logistics team for your region
+EDGE_REGISTRY_PASSWORD="<EDGE-REGISTRY-PASS>" 	# Edge registry credentials can be obtained from the {{< company-c8y >}} logistics team for your region
 
 PRIVATE_REGISTRY_HOST="<PRIVATE-REGISTRY-HOSTNAME>:<PRIVATE-REGISTRY-PORT>"  # Change it with your private registry domain or hostname:port or ip-address:port
 PRIVATE_REGISTRY_USERNAME="<PRIVATE-REGISTRY-USER>"                          # Change it with the credentials to access your private registry
 PRIVATE_REGISTRY_PASSWORD="<PRIVATE-REGISTRY-PASSWORD>"                      # Change it with the credentials to access your private registry
 
-c8yedge_registry_sync sync -v {{< c8y-edge-version >}} -sr registry.c8y.io -sru "${EDGE_REGISTRY_USER}" -srp "${EDGE_REGISTRY_PASSWORD}" -tr "${PRIVATE_REGISTRY_HOST}" -tru "${PRIVATE_REGISTRY_USERNAME}" -trp "${PRIVATE_REGISTRY_PASSWORD}" --dryrun False
+c8yedge_registry_sync sync -v {{< c8y-edge-current-version >}} -sr registry.c8y.io -sru "${EDGE_REGISTRY_USER}" -srp "${EDGE_REGISTRY_PASSWORD}" -tr "${PRIVATE_REGISTRY_HOST}" -tru "${PRIVATE_REGISTRY_USERNAME}" -trp "${PRIVATE_REGISTRY_PASSWORD}" --dryrun False
 ```
 
 {{< c8y-admon-info >}}
-To request the Edge registry credentials, [contact product support](/additional-resources/contacting-support/).
+[Contact product support](/additional-resources/contacting-support/) to request the Edge registry credentials.
 {{< /c8y-admon-info >}}
 
 ### Update custom-environment-variables ConfigMap
@@ -151,4 +153,6 @@ kubectl create configmap custom-environment-variables -n "${EDGE_NAMESPACE}" --f
 ```
 
 ### Installing the Edge operator
-Continue with installing the Edge operator by following the instructions in [Installing the Edge operator](/edge-kubernetes/installing-edge-on-k8/#install-operator) passing the private registry's host (`-r` option) as &lt;private-registry-hostname&gt;:&lt;private-registry-port&gt; and the respective registry credentials when prompted.
+Continue with installing the Edge operator by following the instructions in [Installing the Edge operator](/edge-kubernetes/installing-edge-on-k8/#installing-edge-operator)  passing the private registry's host (`-r` option) as &lt;private-registry-hostname&gt;:&lt;private-registry-port&gt; and the respective registry credentials when prompted.
+
+

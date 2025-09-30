@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59428
 version: 1020.5.0
 ---
-To enable application developers to more easily select alarms and events in their custom applications, a new reusable alarm and event selector component has been introduced. For details refer to the [{{< product-c8y-iot >}} Codex](https://styleguide.cumulocity.com/apps/codex/#/).
+To enable application developers to more easily select alarms and events in their custom applications, a new reusable alarm and event selector component has been introduced. For details refer to the [{{< product-c8y-iot >}} Codex](https://cumulocity.com/codex/).
