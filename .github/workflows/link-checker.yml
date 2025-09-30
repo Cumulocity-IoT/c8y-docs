@@ -35,7 +35,7 @@ jobs:
       - name: Create GitHub issue if tests fail
         if: failure()
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           today=$(date +'%Y-%m-%d')
           issue_url=$(gh issue create \
