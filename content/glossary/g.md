@@ -8,17 +8,18 @@ sector:
 
 ### General Availability (GA) {#ga}
 
-In the Continuous deployment model, General Availability (GA) refers to the availability of a feature to all customers.
-
-See also [Private Preview](/glossary/p/#private-preview) and [Public Preview](/glossary/p/#public-preview).
-
-In the Yearly release model, General Availability (GA) refers to the general availability of a [Yearly release](/glossary/y/#yearly-release), typically on the 31st of March of each year.
+In the [Continuous Deployment](#continuous-deployment) model, General Availability (GA) refers to the availability of a feature to all customers (as compared to [Private Preview](#private-preview) and [Public Preview](#public-preview)). In the [Yearly release](#yearly-release) model, General Availability (GA) refers to the general availability of a Yearly release. This is the stage where a feature is fully released and supported.
 
 
-### Global roles {#global-roles}
+### Global role {#global-role}
 
-Role type in the permission concept of {{< product-c8y-iot >}}. Global roles contain permissions that apply to all data within a tenant.
+A type of [role](#role) in {{< product-c8y-iot >}}'s [permission](permission) model that contains permissions applying to all data within a [tenant](#tenant). Unlike [inventory roles](/inventory-role), which grant permissions to specific [assets](#asset) or [groups](#group), global roles apply tenant-wide.  
 
-See also [Inventory roles](/glossary/i/#inventory-roles) and [Permissions](/glossary/p/#permissions).
 
-For details see [Getting started > Technical concepts > Security aspects > Access control](/concepts/security/#access-control) and [Platform administration > {{< standard-tenant >}} administration > Managing permissions > Global roles](/standard-tenant/managing-permissions/#global-roles).
+### Group {#group}
+
+**Review in progress**    
+
+A group refers to a collection of managed objects used for logical organization or for assigning permissions. Groups are the primary building blocks for creating asset hierarchies in the inventory. A group can contain devices, assets, and other groups as its children. Group is  a special type of asset used to organize devices and other assets for organizational or permission-management purposes. They support flexible grouping, nesting without enforcing hierarchical relationships, and, when paired with Inventory Roles, can grant or restrict user access to the contained devices and assets.  
+*   
+* **Related terms:** Asset, Asset hierarchy, Device, Inventory, Inventory roles, Managed object  
