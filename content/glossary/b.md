@@ -19,6 +19,6 @@ Branding is a feature, typically available in [Enterprise tenants](#enterprise-t
 
 <!---
 ### Bulk device registration {#bulk-device-registration}
-
+**To review by PM**
 Bulk device registration is a method for registering larger quantities of [devices](#device) into the Cumulocity platform by uploading a CSV file containing device details, rather than registering each device individually.  
 --->

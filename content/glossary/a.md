@@ -10,25 +10,10 @@ sector:
 
 The Administration application is a default {{< product-c8y-iot >}} application that serves as the central management console for platform administrators. It is used to govern a [tenant](#tenant) by managing [users](#user), roles, and [permissions](#permissions), subscribing to and managing [application](#application) and [microservices](#microservice), and configuring tenant-level settings such as retention rules, custom properties, and [branding](#branding).   
 
-<small>
-
-**Related terms:**  
-[Cockpit application](#cockpit-application), [Device Management application](#device-management-application), [Enterprise tenant](#enterprise-tenant), [Roles](#roles), [Standard tenant](#standard-tenant), [Subtenant](#subtenant), [Subscription](#subscription), [User hierarchy](#user-hierarchy)  
-
-</small>
-
-
 
 ### Alarm {#alarm}
 
 An alarm is a specific type of [event](#event) that indicates a situation requiring user or system intervention. Unlike general events, alarms have a lifecycle status (ACTIVE, ACKNOWLEDGED, CLEARED) and a severity (CRITICAL, MAJOR, MINOR, WARNING), and are explicitly tracked within the platform until they are resolved.  
-
-<small>
-
-**Related terms:**   
-[Managed object](#managed-object), [Operation](#operation), [Smart rules](#smart-rules), [Measurement](#measurement)  
-
-</small>
 
 
 ### Analytics Builder {#analytics-builder}
@@ -42,78 +27,37 @@ For details, see the [Analytics Builder](/streaming-analytics/analytics-builder/
 
 Apama is the high-performance event processing engine that powers [{{< product-c8y-iot >}} Streaming Analytics](#cumulocity-streaming-analytics). It enables [real-time data processing](#real-time-processing) behind the scenes, forming the foundation for [smart rules](#smart-rules), [Analytics Builder´s](#analytics-builder) drag-and-drop models as well as custom [EPL apps](#epl-apps).
 
-<small>
-
-**Related terms:**   
-[Event Processing Language (EPL)](#event-processing-language-epl)
-
-</small>
-
 
 ### Application {#application}
 
 An application is a component integrated with the platform that delivers user interfaces (= [web application](#web-applications)), business logic (= [microservice](#microservice)), or both, to enable, extend, or customize IoT solutions. Applications bridge device data with user workflows and business processes, supporting use cases such as remote monitoring, predictive maintenance, asset tracking, and smart automation. {{< product-c8y-iot >}}'s application enablement tools empower both business users and developers to build and deploy custom applications.
 
-For details, see the [Application introduction](/app-intro/applications/) in the documentation.
+For details, see [Application enablement](/app-intro/applications/) in the documentation.
 
-<small>
-
-**Related terms:**   
-[Administration application](#administration-application), [Application switcher](#application-switcher), [Cockpit application](#cockpit-application), [Device Management application](#device-management-application), [ [Subscription](#subscription), [Tenant](#tenant), [User](#user)
-
-</small>
 
 ### Application switcher {#application-switcher}
 
 The application switcher is a UI component that shows all {{< product-c8y-iot >}} [applications](#application) the user has access to and allows switching between these applications.  
-
-<small>
-
-**Related terms:**   
-[Administration application](#administration-application), [Cockpit application](#cockpit-application), [Device Management application](#device-management-application), [User](#user)  
-
-</small>
 
 
 ### Asset {#asset}
 
 An asset is the digital representation of a business object within the {{< product-c8y-iot >}} [inventory](#inventory), such as a machine, building, or vehicle. Technically, an asset is a [managed object](#managed-object) that can be structured into a logical hierarchy (the [asset hierarchy](#asset-hierarchy)) using child asset relationships. Assets can take several forms: simple [groups](#group) used for organization, [devices](#device) that send telemetry data, or complex custom assets defined by an [asset model](#asset-model) in the [Digital Twin Manager (DTM)](#digital-twin-manager-dtm).  
 
-<small>
-
-**Related terms:**   
-[Asset properties](#asset-properties), [Digital twin](#digital-twin),  
-
-</small>
 
 ### Asset hierarchy {#asset-hierarchy}
 
 An asset hierarchy is a structure within the [inventory](#inventory) that organizes [assets](#asset) (based on [asset models](#asset-model)) and [devices](#device) to reflect their logical or business relationships, such as a factory containing production lines, which in turn contain individual machines. The asset hierarchy is built by nesting assets with one another to form parent-child relationships ([child assets](#child-assets)). It is fundamentally distinct from the [communication hierarchy](#communication-hierarchy), which models the physical network topology ([child devices](#child-devices)).  
-
-<small>
-
-**Related terms:**   
-[Digital Twin Manager (DTM)](#digital-twin-manager-dtm)
-
-</small>
 
 
 ### Asset model {#asset-model}
 
 An asset model is a reusable blueprint defined in the [Digital Twin Manager (DTM)](#digital-twin-manager-dtm) that specifies the structure, properties, and relationships of a particular type of [asset](#asset). It includes a unique key and label, [asset properties](#asset-properties), and optionally references to [child asset](#child-asset) models to support the composition of [asset hierarchies](#asset-hierarchy) (for example, a wind turbine model composed of rotor and tower sub-models). Once published, an asset model governs how assets of that type are created, validated, and visualized across {{< product-c8y-iot >}} [applications](#application).  
 
+
 ### Asset properties {#asset-properties}
 
-(to revisit once new library is final, as data types might change)
-
 Asset properties are configurable attributes within an [asset model](#asset-model) that define, describe, and enrich an [asset´s](#asset) characteristics (for example, *tower height* in a wind turbine model). They can be of various data types, such as text, number, date, file, boolean, complex object, or custom. Properties may be simple (single values), complex (nested structures), or custom (additional metadata), and they act as reusable building blocks to ensure consistent data structures, metadata enrichment, and governed information across assets.  
-
-<small>
-
-**Related terms:**   
-[Digital Twin Manager (DTM)](#digital-twin-manager-dtm)  
-
-</small>
 
 
 ### Audit log {#audit-log}
@@ -123,27 +67,15 @@ An audit log is a record of a security-relevant action performed on the platform
 
 ### Authentication {#authentication}
 
-Authentication is the process of verifying the identity of a [user](#user), [device](#device), or [application](#application) attempting to access the {{< product-c8y-iot >}} platform. {{< product-c8y-iot >}} supports multiple authentication methods, including basic authentication, OAI-Secure (an OAuth2-based implementation), and [Single Sign-On (SSO)](#sso) integration with external identity providers.  
-
-<small>
-
-**Related terms:**   
-[Authorization](#authorization), [Service user](#service-user)  
-
-</small>
+Authentication is the process of verifying the identity of a [user](#user), [device](#device), or [application](#application) attempting to access the {{< product-c8y-iot >}} platform. {{< product-c8y-iot >}} supports multiple authentication methods, including basic authentication, OAI-Secure (an OAuth2-based implementation), and [Single sign-on (SSO)](#sso) integration with external identity providers.  
 
 
 ### Authorization {#authorization}
 
 Authorization is the process of determining whether an [authenticated](#authentication) identity (user, device, or application) has the necessary [permissions](#permissions) to access a specific resource or perform a particular action. Authorization in {{< product-c8y-iot >}} is managed through a [Role-Based Access Control (RBAC)](#rbac) model, in which permissions are bundled into [global roles](#global-roles) and [inventory roles](#inventory-roles).  
 
+<!---
 ### Availability {#availability}
-
-A feature that monitors the connection status of a [device](#device) to indicate whether it is ONLINE, OFFLINE, or its status is UNKNOWN. This status is determined by device communication patterns, such as the periodic sending of data or the maintenance of a push connection, and can be configured with a required interval using the `c8y\_RequiredAvailability` fragment.  
-
-<small>
-
-**Related terms:**   
-[Connection monitoring](#connection-monitoring),   
-
-</small>
+**To review by PM**
+A feature that monitors the connection status of a [device](#device) to indicate whether it is ONLINE, OFFLINE, or its status is UNKNOWN. This status is determined by device communication patterns, such as the periodic sending of data or the maintenance of a push connection, and can be configured with a required interval using the `c8y\_RequiredAvailability` fragment.
+---> 
