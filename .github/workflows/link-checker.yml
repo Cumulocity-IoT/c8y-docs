@@ -40,7 +40,7 @@ jobs:
           today=$(date +'%Y-%m-%d')
           issue_url=$(gh issue create \
             --title "Weekly Link Check Failed" \
-            --body "Broken links detected in workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            --body "Broken links detected in workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
             --label "broken-link" \
             --assignee "BeateRixen")
 
