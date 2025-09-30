@@ -94,11 +94,13 @@ jobs:
       run: |
         rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh --exclude='pdfs' ./public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }} --delete-after
 
-    - name: Install wkthtmltopdf
+    - name: Install wkhtmltopdf
       run: |
+        sudo apt-get update
         sudo apt-get install -y xfonts-base xfonts-75dpi
-        wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb
-        sudo dpkg -i wkhtmltox_0.12.6-1.bionic_amd64.deb
+        wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+        sudo apt-get install -y ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+        wkhtmltopdf --version
 
     - name: Generate PDFs
       run: |
