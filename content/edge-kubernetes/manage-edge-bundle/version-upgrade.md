@@ -12,7 +12,33 @@ To upgrade your Kubernetes version, follow the official upgrade instructions for
 <br>See [Prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) for the supported Kubernetes versions and platforms.
 {{< /c8y-admon-info >}}
 
-### Starting the upgrade {#starting-the-upgrade}
+### Upgrading with the c8yedge tool {#upgrade-with-c8yedge}
+
+{{< c8y-admon-info >}}
+Upgrading with the `c8yedge` tool is only supported if the initial installation was created using the `c8yedge` tool.
+{{< /c8y-admon-info >}}
+
+You can upgrade to the latest fix of Edge in the current release train from the command line in your environment:
+```shell
+c8yedge upgrade
+```
+For example, this will perform an upgrade from `{{< c8y-edge-current-version >}}.0.4` to `{{< c8y-edge-current-version >}}.0.5`, but not `{{< c8y-edge-current-version >}}.0.4` to new release train after `{{< c8y-edge-current-version >}}`. To specify an explicit version to upgrade to:
+```shell
+c8yedge upgrade --version <version number>
+```
+Unlike the initial installation, no use of `sudo` is required for any kind of upgrade using `c8yedge`.
+
+#### Upgrading in an airgapped environment {#upgrade-edge-airgapped}
+
+If Edge is now running in an environment with no or limited internet access, you can upgrade by creating an offline package and transferring it to your airgapped environment. See [Install Edge in an airgapped environment](/edge-kubernetes/installing-edge-on-k8/#install-edge-airgapped). There is no difference between a package created for an initial installation, and a package created for an upgrade.
+
+Once in the airgapped environment:
+```shell
+c8yedge upgrade -s c8yedge.tar
+```
+
+
+### Upgrading with the Kubernetes-native approach {#upgrade-with-kubernetes-native}
 
 Upgrading Edge works similarly to applying a configuration change, with the target version specified as a configuration value.
 To upgrade to the latest available version from the current release, set the version to `"{{< c8y-edge-current-version >}}"`. To upgrade to a specific patch version, use a fully qualified version string such as `"{{< c8y-edge-current-version >}}.0.1"`.
@@ -21,16 +47,6 @@ To upgrade to the latest available version from the current release, set the ver
 kubectl --namespace=c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"version":"{{< c8y-edge-current-version >}}"}}'
 ```
 The operator will also upgrade itself as part of this process. See [Monitoring changes](/edge-kubernetes/manage-edge/#monitoring-changes) to follow the progress of the upgrade.
-
-### Upgrading Edge in an airgapped environment {#upgrade-edge-airgapped}
-
-If you have installed Edge using the `c8yedge` tool, and Edge is now running in an environment with no or limited internet access, you can upgrade by creating an offline package and transferring it to your airgapped environment. See [Install Edge in an airgapped environment](/edge-kubernetes/installing-edge-on-k8/#install-edge-airgapped).
-
-Once in the airgapped environment:
-```shell
-c8yedge upgrade -s c8yedge.tar
-```
-Unlike the initial installation, no use of `sudo` is required.
 
 ### Upgrading Edge remotely {#upgrading-edge-remotely}
 
