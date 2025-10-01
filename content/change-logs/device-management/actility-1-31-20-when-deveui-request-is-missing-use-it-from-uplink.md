@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2025-10-01
 title: DevEUI retrieved from uplink request if not explicitly provided
 product_area: Device management & connectivity
 change_type:
