@@ -103,3 +103,17 @@ To display further details about an alarm, click on the respective alarm in the 
 To change the status of an alarm, select the alarm and choose the desired status.
 ![Alarms status change button](/images/users-guide/DeviceManagement/devmgmt-alarms-status-change-btn.png)
 It is also possible to change the status of all alarms to "clear" at once. Click **Clear all** in the top menu bar, to clear all alarms of the selected severities.
+
+
+### Alarm Permissions and Inventory Roles
+
+When assigning permissions to inventory roles with a **non-asterisk** value, keep the following in mind:
+
+- These roles apply **only to custom fragments** of alarms (i.e. user-defined fields).
+- It is **not possible** to specify or control access to **standard alarm schema fields**, such as `status` or `severity`.
+
+Because of this limitation, users with such roles can update only the specified custom fragments. Any attempt to modify standard fields will result in a `security/Forbidden` error.
+
+#### Acknowledging Alarms
+
+Acknowledging or clearing an alarm updates the `status` field, which is part of the standard schema. Therefore, the only way to allow users to perform these actions is to assign an inventory role with an **asterisk (`*`) type**, which grants access to all fields, including those in the standard schema.
