@@ -94,7 +94,7 @@ with the parameter `otel.javaagent.enabled`. Setting it to `true` enables the in
 }
 ```
 
-If enabled, the Java agent JAR file is downloaded and attached to the microservice JVM at startup time.
+If enabled, the Java agent JAR file is attached to the microservice JVM at startup time.
 
 {{< c8y-admon-important >}}
 To enable or disable instrumentation, the microservice must be unsubscribed and subscribed again.
@@ -102,6 +102,41 @@ To enable or disable instrumentation, the microservice must be unsubscribed and 
 
 Configuring auto-instrumentation for selected libraries or frameworks, or opting for manual instrumentation only, is described
 in the [OpenTelemetry instrumention documentation](https://opentelemetry.io/docs/zero-code/java/agent/disable/).
+
+#### Maven configuration
+
+The Java agent JAR file is downloaded and copied to the microservice image by the `microservice-package-maven-plugin` by default. 
+However, it is possible to skip this step and to create the image without the Java agent. The `otelJavaAgentInclude` 
+configuration element must be set to `false` in the Maven `pom.xml` file in this case:
+
+```xml
+            <plugin>
+                <groupId>com.nsn.cumulocity.clients-java</groupId>
+                <artifactId>microservice-package-maven-plugin</artifactId>
+                <version>${c8y.version}</version>
+                <executions>
+                    <execution>
+                        <id>package</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>package</goal>
+                        </goals>
+                        <configuration>
+                            ...
+                            <otelJavaAgentInclude>false</otelJavaAgentInclude>
+                            ...
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+```
+
+
+{{< c8y-admon-important >}}
+If the Java agent JAR file is not contained in the microservice image 
+and `otel.javaagent.enabled` is set to `true`, then the microservice start will fail.
+{{< /c8y-admon-important >}}
+
 
 ### Manual instrumentation {#manual-instrumentation}
 In addition to automatic instrumentation, microservices can be manually instrumented.
