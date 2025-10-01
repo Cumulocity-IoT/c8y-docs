@@ -6,18 +6,16 @@ sector:
   - getting_started
 ---
 
+## Offloading pipeline {#offloading-pipeline}
 
-### OPC UA {#opc-ua}
-
-OPC Unified Architecture (OPC UA) is a standard to enable the communication between industrial devices. OPC UA is designed to work across technology boundaries (cross-platform).
-
-One component of the OPC UA integration in {{< product-c8y-iot >}} is the OPC UA device gateway. The OPC UA device gateway is a stand-alone Java program that communicates with OPC UA server(s) and the {{< product-c8y-iot >}} platform. It stores data into the {{< product-c8y-iot >}} database via REST. The gateway must be registered as {{< product-c8y-iot >}} device.
-
-For details see [Device management & connectivity > Device integration > OPC UA](/device-integration/opcua).
+An offloading pipeline is a configurable job within [{{< product-c8y-iot >}} DataHub](#datahub) that defines the process of extracting data from a specific collection in the [operational store](#operational-store), transforming it, and loading it into a target table within a [data lake](#data-lake).  
 
 
-### Operations {#operations}
+### Operation {#operation}
 
-Operations are cloud-to-device messages so that devices can be remotely controlled and managed by {{< product-c8y-iot >}}. Typical operations are installing a new software, switching a relay in a power meter or sending a credit to a vending machine.
+Operations are instructions sent to a [device](#device) or [asset](#asset) to perform a specific action, such as control, configuration, or maintenance. Operations are linked to a source [managed object](#managed-object), and are delivered asynchronously via {{< product-c8y-iot >}}’s reliable queuing mechanism. Devices execute operations and report results back, enabling consistent remote management and automation. Typical operations include installing a new [firmware](#firmware), switching a relay in a power meter or sending a credit to a vending machine.  
 
-For details see [Getting started > Technical concepts > {{< product-c8y-iot >}}'s domain model > Operations](/concepts/domain-model/#operations).
+
+### Owner {#owner}
+
+The [user](#user) who creates an [inventory](#inventory) object (such as a [device](#device) or a [group](#group)) automatically becomes its owner. Ownership grants users full [permission](#permission) (ADMIN, READ, CHANGE) for that specific object to ensure that they can fully manage the resources they create.  
