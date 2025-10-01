@@ -11,78 +11,33 @@ This file provides guidance for Large Language Models interacting with the Cumul
 **External Resources:** Additional resources include the Tech Community (https://community.cumulocity.com/), Learning Portal (https://learning.cumulocity.com/), REST API documentation (https://cumulocity.com/api/), Developers codex (https://cumulocity.com/codex),and CLI documentation (https://goc8ycli.netlify.app/docs/introduction/).
 
 **Exclusions:** Please do not crawl administrative paths or system directories.
+{{- $sectorPages := dict -}}
+{{- range $idx, $p := .Site.Pages -}}
+  {{- if not $p.Draft -}}
+    {{- if ne $p.Section "sector" -}}
+      {{- $isCard := false -}}
+      {{- with $p.File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end -}}
+      {{- if and $p.Title (gt (len $p.Title) 0) (not (eq $p.Params._build.render false)) (not $isCard) -}}
+        {{- range $p.Params.sector -}}
+          {{- $sectorName := . -}}
+          {{- $existing := index $sectorPages $sectorName -}}
+          {{- $newList := slice $p -}}
+          {{- if $existing -}}
+            {{- $newList = $existing | append $p -}}
+          {{- end -}}
+          {{- $sectorPages = merge $sectorPages (dict $sectorName $newList) -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end }}
 
-## Quick Start & Getting Started
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "quick-start" }}{{ $title := .Title }}{{ $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) (not $isCard) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
-- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
-
-## Platform Concepts
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "concepts" }}{{ $title := .Title }}{{ $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) (not $isCard) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
-- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
-
-## Device Integration
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "device-integration" }}{{ $title := .Title }}{{ $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) (not $isCard) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
-- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
-
-## Device Management Application
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "device-management-application" }}{{ $title := .Title }}{{ $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) (not $isCard) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
-- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
-
-## Cockpit Application
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "cockpit" }}{{ $title := .Title }}{{ $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) (not $isCard) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
-- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
-
-## Administration Applications
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if or (eq .Section "standard-tenant") (eq .Section "enterprise-tenant") }}{{ $title := .Title }}{{ $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) (not $isCard) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
-- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
-
-## Streaming Analytics
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "streaming-analytics" }}{{ $title := .Title }}{{ $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) (not $isCard) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
-- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
-
-## Web Development
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "web" }}{{ $title := .Title }}{{ $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) (not $isCard) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
-- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
-
-## Microservices Development
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "microservice-sdk" }}{{ $title := .Title }}{{ $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) (not $isCard) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
-- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
-
-## Data Hub & Analytics
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if or (eq .Section "datahub") (eq .Section "machine-learning") }}{{ $title := .Title }}{{ $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) (not $isCard) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
-- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
-
-## Digital Twin Manager
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "dtm" }}{{ $title := .Title }}{{ $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) (not $isCard) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
-- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
-
-## Data Broker & Cloud Remote Access
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if or (eq .Section "data-broker") (eq .Section "cloud-remote-access") }}{{ $title := .Title }}{{ $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) (not $isCard) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
-- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
-
-## Protocol Integration
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "smartrest" }}{{ $title := .Title }}{{ $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) (not $isCard) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
-- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
-
-## Authentication & Security
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if or (eq .Section "authentication") (eq .Section "device-certificate-authentication") }}{{ $title := .Title }}{{ $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) (not $isCard) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
-- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
-
-## Edge Computing
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "thin-edge" }}{{ $title := .Title }}{{ $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) (not $isCard) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
-- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
-
-## Change Logs & Release Notes
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "change-logs" }}{{ $title := .Title }}{{ $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) (not $isCard) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
-- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
-
-## Legal notices
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "legal-notices" }}{{ $title := .Title }}{{ $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) (not $isCard) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
-- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
-
-## Additional Documentation
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if and (ne .Section "quick-start") (ne .Section "legal-notices") (ne .Section "concepts") (ne .Section "device-integration") (ne .Section "device-management-application") (ne .Section "cockpit") (ne .Section "standard-tenant") (ne .Section "enterprise-tenant") (ne .Section "streaming-analytics") (ne .Section "web") (ne .Section "microservice-sdk") (ne .Section "datahub") (ne .Section "machine-learning") (ne .Section "dtm") (ne .Section "data-broker") (ne .Section "cloud-remote-access") (ne .Section "smartrest") (ne .Section "authentication") (ne .Section "device-certificate-authentication") (ne .Section "thin-edge") (ne .Section "change-logs") (ne .Section "sector") (ne .Section "") }}{{ $title := .Title }}{{ $path := .RelPermalink }}{{ $url := .Permalink }}{{ $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}{{ if and $title (gt (len $title) 0) (ne $path "/") (ne $url .Site.BaseURL) (not (eq .Params._build.render false)) (not $isCard) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
-- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
+{{- range $sectorName, $pages := $sectorPages }}
+## {{ $sectorName | humanize }}
+{{ range $pages }}{{ $desc := .Params.description | default .Summary }}{{ if and (not $desc) (eq .Params.layout "bundle") .File }}{{ $fileName := path.Base .File.Path | strings.TrimSuffix (path.Ext .File.Path) }}{{ $bundleDirPath := printf "content/%s/%s-bundle" .Section $fileName }}{{ $bundleFiles := readDir $bundleDirPath }}{{ $lowestWeight := 999999 }}{{ $lowestWeightFile := "" }}{{ range $bundleFiles }}{{ if not .IsDir }}{{ if strings.HasSuffix .Name ".md" }}{{ $filePath := printf "%s/%s" $bundleDirPath .Name }}{{ $fileContent := readFile $filePath }}{{ if $fileContent }}{{ $lines := split $fileContent "\n" }}{{ $weight := 999999 }}{{ $inFrontmatter := false }}{{ $fmCount := 0 }}{{ range $lines }}{{ if strings.HasPrefix . "---" }}{{ $fmCount = add $fmCount 1 }}{{ $inFrontmatter = eq $fmCount 1 }}{{ else if $inFrontmatter }}{{ if strings.HasPrefix . "weight:" }}{{ $weight = int (trim (substr . 7) " ") }}{{ end }}{{ end }}{{ end }}{{ if lt $weight $lowestWeight }}{{ $lowestWeight = $weight }}{{ $lowestWeightFile = $filePath }}{{ end }}{{ end }}{{ end }}{{ end }}{{ end }}{{ if $lowestWeightFile }}{{ $bundleContent := readFile $lowestWeightFile }}{{ if $bundleContent }}{{ $lines := split $bundleContent "\n" }}{{ $inFrontmatter := false }}{{ $frontmatterCount := 0 }}{{ range $lines }}{{ if strings.HasPrefix . "---" }}{{ $frontmatterCount = add $frontmatterCount 1 }}{{ $inFrontmatter = eq $frontmatterCount 1 }}{{ else if and (not $inFrontmatter) (gt $frontmatterCount 1) }}{{ if and (gt (len .) 0) (not (strings.HasPrefix . "#")) (not (strings.HasPrefix . "{{")) }}{{ $desc = . }}{{ break }}{{ end }}{{ end }}{{ end }}{{ end }}{{ end }}{{ end }}{{ if not $desc }}{{ $desc = .Plain | default .RawContent | default (.Content | plainify) }}{{ end }}{{ $desc = $desc | plainify | truncate 300 }}{{ $title := .Title }}{{ if and (eq (lower $title) "introduction") .Section }}{{ $title = printf "%s - %s" (.Section | humanize) $title }}{{ end }}
+- [{{ $title }}]({{ .Permalink }}): {{ $desc }}
+{{ end -}}
+{{ end -}}
 
 ## Last Updated
 {{ now.Format "2006-01-02T15:04:05Z07:00" }}
