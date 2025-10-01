@@ -77,7 +77,7 @@ The following table provides an overview on the current packages existing for ap
 
 
 #### Build tooling: @c8y/websdk and @c8y/devkit
-An additional two build tools are added, which help scaffolding (`@c8y/websdk`) and developing (`@c8y/devkit`) the application. The package `@c8y/websdk` is quite simple and only provides the promps for creating a new application. The overall havy lifting is done by the `@c8y/devkit`. It replaces the default dev-server and builder options in the `angular.json` and extends the webpack configuration with everything needed.
+Additionally, two build tools are added, which help with scaffolding (`@c8y/websdk`) and developing (`@c8y/devkit`) the application. The package `@c8y/websdk` is quite simple and only provides the prompts for creating a new application. The overall heavy lifting is done by the `@c8y/devkit`. It replaces the default dev-server and builder options in the `angular.json` and extends the webpack configuration with everything needed.
 
 ### Versioning: The WebSDK uses semantic version numbers
 Since version 1019.0.0 the versioning schema of the Web SDK isn't aligned anymore to the versioning schema of the {{< product-c8y-iot >}} platform. The versioning schema is now reflecting via semantic versioning the changes in the Web SDK:
