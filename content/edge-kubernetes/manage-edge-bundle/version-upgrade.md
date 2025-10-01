@@ -38,7 +38,7 @@ c8yedge upgrade -s c8yedge.tar
 ```
 
 
-### Upgrading with the Kubernetes-native approach {#upgrade-with-kubernetes-native}
+### Upgrading Edge in a self-managed Kubernetes cluster {#upgrade-with-kubernetes-native}
 
 Upgrading Edge works similarly to applying a configuration change, with the target version specified as a configuration value.
 To upgrade to the latest available version from the current release, set the version to `"{{< c8y-edge-current-version >}}"`. To upgrade to a specific patch version, use a fully qualified version string such as `"{{< c8y-edge-current-version >}}.0.1"`.
