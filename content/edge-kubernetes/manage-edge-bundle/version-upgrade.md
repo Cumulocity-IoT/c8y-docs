@@ -7,11 +7,6 @@ The Edge operator follows the recreate update strategy to upgrade the Edge deplo
 
 Recreating update strategy is an all-or-nothing process that updates all aspects of the system at once with a brief downtime period. The Edge operator selects all the outdated pods and deactivates them at once. Once all old pods are deactivated, the Edge operator creates updated pods for the entire system. Edge is not operational while the old pods are deactivating and until the final updated pod is created.
 
-{{< c8y-admon-info >}}
-To upgrade your Kubernetes version, follow the official upgrade instructions for your platform.
-<br>See [Prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) for the supported Kubernetes versions and platforms.
-{{< /c8y-admon-info >}}
-
 ### Upgrading with the c8yedge tool {#upgrade-with-c8yedge}
 
 {{< c8y-admon-info >}}
@@ -39,6 +34,11 @@ c8yedge upgrade -s c8yedge.tar
 
 
 ### Upgrading Edge in a self-managed Kubernetes cluster {#upgrade-with-kubernetes-native}
+
+{{< c8y-admon-info >}}
+Upgrading the version of your self-managed Kubernetes is outside the scope of the Edge product and documentation. Follow the official upgrade instructions for your platform.
+<br>See [Prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) for the supported Kubernetes versions and platforms.
+{{< /c8y-admon-info >}}
 
 Upgrading Edge works similarly to applying a configuration change, with the target version specified as a configuration value.
 To upgrade to the latest available version from the current release, set the version to `"{{< c8y-edge-current-version >}}"`. To upgrade to a specific patch version, use a fully qualified version string such as `"{{< c8y-edge-current-version >}}.0.1"`.
