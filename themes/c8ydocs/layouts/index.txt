@@ -8,76 +8,80 @@ This file provides guidance for Large Language Models interacting with the Cumul
 
 **Technical Information:** This documentation includes API references, developer guides, microservices, device integration, streaming analytics, and comprehensive platform documentation.
 
-**External Resources:** Additional resources include the Tech Community (https://techcommunity.cumulocity.com/), Learning Portal (https://learning.cumulocity.com/), REST API documentation (https://cumulocity.com/api/), and CLI documentation (https://goc8ycli.netlify.app/docs/introduction/).
+**External Resources:** Additional resources include the Tech Community (https://community.cumulocity.com/), Learning Portal (https://learning.cumulocity.com/), REST API documentation (https://cumulocity.com/api/), Developers codex (https://cumulocity.com/codex),and CLI documentation (https://goc8ycli.netlify.app/docs/introduction/).
 
 **Exclusions:** Please do not crawl administrative paths or system directories.
 
 ## Quick Start & Getting Started
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "quick-start" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 200 }}
+{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "quick-start" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
 - [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
 
 ## Platform Concepts
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "concepts" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 200 }}
+{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "concepts" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
 - [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
 
 ## Device Integration
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "device-integration" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 200 }}
+{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "device-integration" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
 - [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
 
 ## Device Management Application
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "device-management-application" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 200 }}
+{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "device-management-application" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
 - [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
 
 ## Cockpit Application
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "cockpit" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 200 }}
+{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "cockpit" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
 - [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
 
 ## Administration Applications
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if or (eq .Section "standard-tenant") (eq .Section "enterprise-tenant") }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 200 }}
+{{ range .Site.Pages }}{{ if not .Draft }}{{ if or (eq .Section "standard-tenant") (eq .Section "enterprise-tenant") }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
 - [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
 
 ## Streaming Analytics
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "streaming-analytics" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 200 }}
+{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "streaming-analytics" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
 - [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
 
 ## Web Development
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "web" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 200 }}
+{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "web" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
 - [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
 
 ## Microservices Development
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "microservice-sdk" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 200 }}
+{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "microservice-sdk" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
 - [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
 
 ## Data Hub & Analytics
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if or (eq .Section "datahub") (eq .Section "machine-learning") }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 200 }}
+{{ range .Site.Pages }}{{ if not .Draft }}{{ if or (eq .Section "datahub") (eq .Section "machine-learning") }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
 - [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
 
 ## Digital Twin Manager
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "dtm" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 200 }}
+{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "dtm" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
 - [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
 
 ## Data Broker & Cloud Remote Access
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if or (eq .Section "data-broker") (eq .Section "cloud-remote-access") }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 200 }}
+{{ range .Site.Pages }}{{ if not .Draft }}{{ if or (eq .Section "data-broker") (eq .Section "cloud-remote-access") }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
 - [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
 
 ## Protocol Integration
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "smartrest" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 200 }}
+{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "smartrest" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
 - [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
 
 ## Authentication & Security
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if or (eq .Section "authentication") (eq .Section "device-certificate-authentication") }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 200 }}
+{{ range .Site.Pages }}{{ if not .Draft }}{{ if or (eq .Section "authentication") (eq .Section "device-certificate-authentication") }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
 - [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
 
 ## Edge Computing
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "thin-edge" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 200 }}
+{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "thin-edge" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
 - [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
 
 ## Change Logs & Release Notes
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "change-logs" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 200 }}
+{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "change-logs" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
+- [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
+
+## Legal notices
+{{ range .Site.Pages }}{{ if not .Draft }}{{ if eq .Section "legal-notices" }}{{ $title := .Title }}{{ if and $title (gt (len $title) 0) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
 - [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
 
 ## Additional Documentation
-{{ range .Site.Pages }}{{ if not .Draft }}{{ if and (ne .Section "quick-start") (ne .Section "concepts") (ne .Section "device-integration") (ne .Section "device-management-application") (ne .Section "cockpit") (ne .Section "standard-tenant") (ne .Section "enterprise-tenant") (ne .Section "streaming-analytics") (ne .Section "web") (ne .Section "microservice-sdk") (ne .Section "datahub") (ne .Section "machine-learning") (ne .Section "dtm") (ne .Section "data-broker") (ne .Section "cloud-remote-access") (ne .Section "smartrest") (ne .Section "authentication") (ne .Section "device-certificate-authentication") (ne .Section "thin-edge") (ne .Section "change-logs") (ne .Section "") }}{{ $title := .Title }}{{ $path := .RelPermalink }}{{ $url := .Permalink }}{{ if and $title (gt (len $title) 0) (ne $path "/") (ne $url .Site.BaseURL) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 200 }}
+{{ range .Site.Pages }}{{ if not .Draft }}{{ if and (ne .Section "quick-start") (ne .Section "legal-notices") (ne .Section "concepts") (ne .Section "device-integration") (ne .Section "device-management-application") (ne .Section "cockpit") (ne .Section "standard-tenant") (ne .Section "enterprise-tenant") (ne .Section "streaming-analytics") (ne .Section "web") (ne .Section "microservice-sdk") (ne .Section "datahub") (ne .Section "machine-learning") (ne .Section "dtm") (ne .Section "data-broker") (ne .Section "cloud-remote-access") (ne .Section "smartrest") (ne .Section "authentication") (ne .Section "device-certificate-authentication") (ne .Section "thin-edge") (ne .Section "change-logs") (ne .Section "") }}{{ $title := .Title }}{{ $path := .RelPermalink }}{{ $url := .Permalink }}{{ if and $title (gt (len $title) 0) (ne $path "/") (ne $url .Site.BaseURL) (not (eq .Params._build.render false)) }}{{ $desc := .Params.description | default .Summary | plainify | truncate 300 }}
 - [{{ $title }}]({{ .Permalink }}): {{ $desc }}{{ end }}{{ end }}{{ end }}{{ end }}
 
 ## Last Updated
