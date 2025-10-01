@@ -5,7 +5,7 @@ title: Connecting microservices and applications
 ---
 
 {{< product-c8y-iot >}} microservices and external applications can consume messages published by devices connected to the MQTT Service, and publish messages back to those devices.
-To do this, your microservice or external application will connect to the {{< product-c8y-iot >}} Messaging Service, a deployment of [Apache Pulsar](https://pulsar.apache.org/), and use the Pulsar protocol to publish and consume MQTT messages.
+To do this, your microservice or external application connects to the {{< product-c8y-iot >}} Messaging Service, a deployment of [Apache Pulsar](https://pulsar.apache.org/), and uses the Pulsar protocol to publish and consume MQTT messages.
 The diagram below shows the important interfaces and data flows used when interacting with the MQTT Service through Pulsar.
 
 <p align="center" width="100%">
@@ -13,17 +13,17 @@ The diagram below shows the important interfaces and data flows used when intera
 </p>
 
 {{< c8y-admon-info >}}
-We define the term _MQTT Service messaging client_ as a software component that interacts with the MQTT Service through Pulsar.
-It can be deployed either as a microservice hosted by the {{< product-c8y-iot >}} platform, or as part of an external application hosted outside the platform.
-In this documentation, it will be referred to simply as a _client_.
-Where the implementation or behaviour of a client is different depending on where it is hosted, those differences will be clearly documented.
+An _MQTT Service messaging client_ is a software component that interacts with the MQTT Service through Pulsar.
+It can be deployed as a microservice hosted by the {{< product-c8y-iot >}} platform, or as part of an external application hosted outside the platform.
+This documentation refers to such a component simply as a _client_.
+If the implementation or behaviour differs depending on where the client is hosted, those differences are documented where relevant.
 {{< /c8y-admon-info>}}
 
 The MQTT Service implements _device isolation_, meaning that MQTT devices connected to the MQTT Service **cannot** communicate directly with each other using the MQTT protocol.
 All inter-device communication must be managed explicitly by the client, as shown in the diagram.
 
 This documentation does not cover the publish-subscribe messaging concepts and architecture implemented by Pulsar, nor any features of the Pulsar client libraries beyond those needed to implement a simple MQTT Service client.
-To learn more about those subjects, please refer to the [Pulsar product documentation](https://pulsar.apache.org/docs/4.0.x/).
+To learn more about those subjects, refer to the [Pulsar product documentation](https://pulsar.apache.org/docs/4.0.x/).
 
 ### Connecting to the Messaging Service
 
@@ -38,8 +38,9 @@ Each of these prerequisites is explained in detail below.
 
 Open-source Pulsar client libraries are available for a number of different languages and protocols.
 The example code in this documentation will use the [Java client library](https://pulsar.apache.org/docs/4.0.x/client-libraries-java/).
-Pulsar has strong cross-version compatibility, so in general we recommend using the latest version of your chosen client library, regardless of the server version used by the Messaging Service.
-Integration with the MQTT Service will not require using any advanced Pulsar features that may only be available in the latest version of the server.
+Pulsar has strong cross-version compatibility.
+Use the latest version of your chosen client library regardless of the server version used by the Messaging Service.
+Integration with the MQTT Service does not require advanced Pulsar features that may only be available in the latest server version.
 
 {{< c8y-admon-caution >}}
 Currently only "basic" (username/password) authentication is supported for clients connecting to the Messaging Service through Pulsar.
@@ -51,8 +52,8 @@ Therefore, you must ensure that your chosen Pulsar client library supports this 
 For a microservice client, the URL should be obtained from the `C8Y_BASEURL_PULSAR` [environment variable](/microservice-sdk/general-aspects/#environment-variables) that will be passed to the microservice when it starts running.
 For an external application client, the URL has the general form `pulsar+ssl://<tenant_domain>:6651/`, where `<tenant_domain>` is the domain of your {{< product-c8y-iot >}} tenant, for example `my-tenant.cumulocity.com`.
 As implied by the `pulsar+ssl` protocol name, all external application client connections will use SSL/TLS security.
-Currently, only one-way TLS is supported; that is, the server will provide a certificate that can be verified by the client, but client certificates cannot be used.
-Implementing an external application client so that it reads the Pulsar URL from the `C8Y_BASEURL_PULSAR` environment variable will make it easier to develop a client that can be deployed as either a microservice or an external application.
+Currently, only one-way TLS is supported. The server provides a certificate that the client can verify. Client certificates cannot be used.
+Implementing an external application client so that it reads the Pulsar URL from the `C8Y_BASEURL_PULSAR` environment variable makes it easier to develop a client that can be deployed as either a microservice or an external application.
 
 #### Pulsar authentication
 
@@ -94,8 +95,8 @@ For example:
 
 For external application clients, the required permissions should be configured for the authenticating user through the [Administration application](/standard-tenant/managing-permissions/).
 
-We recommend only assigning the minimum permissions needed for your client to operate.
-For example, if your microservice only needs to consume but not publish messages, you should not include the `ROLE_MQTT_SERVICE_MESSAGING_TOPICS_UPDATE` permission in the manifest.
+Assign only the minimum permissions needed for the client to operate.
+For example, if your microservice only consumes messages, do not include the `ROLE_MQTT_SERVICE_MESSAGING_TOPICS_UPDATE` permission in the manifest.
 
 #### Example code -- connecting to the Messaging Service {#example-code-connecting-messaging-service}
 
@@ -158,7 +159,7 @@ public class SimplePulsarClient {
 Pulsar messages consist of a _payload_ and set of _properties_.
 
 The payload is a sequence of zero or more bytes, identical to the payload of the MQTT `PUBLISH` message that the Pulsar message corresponds to.
-It is the client's responsiblity to understand the format of the payloads produced and accepted by the MQTT devices it communicates with.
+It is the client's responsibility to understand the format of the payloads produced and accepted by the MQTT devices it communicates with.
 
 Pulsar message properties are name-value pairs, where both the name and the value are text strings.
 The properties recognised by the MQTT Service are listed in the table below.
@@ -215,7 +216,8 @@ This recommendation also applies in the case of multiple customers, who do not m
 
 Subscribing a consumer to a topic establishes a _durable subscription_ to the topic.
 This means that the Messaging Service will retain messages published to the topic until they have been delivered to, and acknowledged by, a client.
-The subscription will remain until it is explicitly deleted; most importantly, it will not be removed simply because the client is not currently running.
+The subscription will remain until it is explicitly deleted.
+It will not be removed simply because the client is not currently running.
 Messages that are published while the client is disconnected will be available for it to consume when it reconnects.
 After consuming each message, the client **must** explicitly acknowledge it.
 Acknowledging a message tells the Messaging Service that the client has no further interest in it, allowing the message to be discarded.
@@ -289,11 +291,11 @@ However, because MQTT devices are required to use a _clean session_ when connect
 
 #### Broadcast messages {#broadcast-messages}
 
-In order to enforce device-level isolation, in general a message will be published **only** to the specific MQTT client identified by the `clientID` message property, provided that client has an active subscription to the relevant MQTT topic. However, if the `clientID` property is not present, the message will be _broadcast_ to **all** connected MQTT clients with active subscriptions to the MQTT topic.
+To enforce device-level isolation, messages are published **only** to the specific MQTT client identified by the `clientID` property, provided that client has an active subscription to the relevant MQTT topic.
+If the `clientID` property is not present, the message is broadcast to **all** connected MQTT clients with active subscriptions to that topic.
 
-Broadcast publishing is potentially expensive when there are many MQTT clients connected.
-It may also lead to messages being received by unexpected devices.
-Therefore, it should be used sparingly and only when there is a genuine application requirement to publish the same message to every device subscribed to a given topic.
+Broadcast publishing is potentially expensive when many clients are connected and may deliver messages to unexpected devices.
+Use broadcast only when the application must publish the same message to every device subscribed to a topic.
 
 #### Message keys {#message-keys}
 
@@ -377,7 +379,7 @@ To optimize resource usage, the Messaging Service imposes storage limits and a m
 
 See the [service quotas](/service-terms/quotas/#mqtt-service) documentation for details on the default limits.
 These limits are configurable on a per-tenant basis.
-If your use case requires a different configuration, or if you have any questions or concerns, please contact [product support](https://cumulocity.com/docs/additional-resources/contacting-support/).
+If your use case requires a different configuration, or if you have any questions or concerns, contact [product support](https://cumulocity.com/docs/additional-resources/contacting-support/).
 
 #### Message backlog quota
 
@@ -406,27 +408,17 @@ Messages will always be delivered to the consumer in the order they were publish
 
 ### Best practices for reliable message delivery from devices {#reliable-delivery-best-practices}
 
-If the backlog quota limit for a Pulsar topic is reached, it will not be possible to publish more messages onto the topic, and messages may be lost.
-Therefore, it is important that your client processes and acknowledges messages received from the `from-device` topic as quickly as possible.
-Every message **must** be explicitly acknowledged, even if the client is not "interested" in it.
-However, messages should not be acknowledged until the client has completed processing the messages, or stored it securely for later processing.
-Acknowledged messages will not be re-delivered after a failure or restart of the client, so messages that are acknowledged too soon may be lost.
+If a topic reaches its backlog quota limit, it stops accepting new messages and messages may be lost. To avoid this:
 
-Subscribing a consumer to a Pulsar topic establishes a _durable subscription_ to the topic.
-The Messaging Service will retain messages published to the topic until they have been acknowledged by all interested consumers, in order to provide "at least once" delivery guarantees.
-The durable subscription will remain until it is explicitly deleted; that is, _it will not be removed simply because the client has disconnected from Pulsar._
-Messages that are published while the client is disconnected will be available for it to consume when it reconnects.
-This means that it is possible for a Pulsar topic to reach its backlog quota limit and stop accepting new messages even when no clients are running.
-Therefore, as well as explicitly acknowledging every message, clients must also manage the lifecycle of any subscriptions they create:
-1. Use the same subscription name every time the client connects a consumer.
-   A common _anti-pattern_ is to generate a random subscription name each time the client runs.
-   This will create a new subscription each time, but leave any previous subscriptions active with no consumers.
-   Eventually, the backlog quota limit for the topic will be reached, and no further messages will be delivered to the client.
-1. Explicitly delete subscriptions when they are no longer required.
-   Depending on your use case, this may require specific manual intervention.
-   For example, if a client is being taken out of service for an extended period you may need to manually delete its subscription.
-   Typically a subscription is deleted by calling the `unsubscribe()` method on the consumer, although the exact mechanism may vary for different Pulsar client libraries.
-   The Messaging Service [monitoring and management](/standard-tenant/monitoring/#messaging-service) user interface can also be used to delete a subscription.
+* Process and acknowledge messages from the `from-device` topic as quickly as possible.
+  Every message **must** be explicitly acknowledged, even if the client is not interested in it.
+  Do not acknowledge a message until processing is complete or the message has been stored securely for later processing.
+  Acknowledged messages will not be re-delivered after a client failure or restart.
+* Manage subscription lifecycles. Subscribing a consumer creates a _durable subscription_ that remains until explicitly deleted.
+  Messages published while the client is disconnected will be retained for the subscription and delivered when the client reconnects.
+  Because subscriptions persist, a topic can reach its backlog quota even when no clients are running.
+  1. Use the same subscription name each time the client connects. Avoid creating random subscription names on each run. That leaves inactive subscriptions accumulating and may exhaust the backlog.
+  2. Explicitly delete subscriptions when they are no longer required. For example, when taking a client out of service for an extended period, call the consumer `unsubscribe()` method or use the Messaging Service [monitoring and management](/standard-tenant/monitoring/#messaging-service) interface to delete the subscription.
 
 #### Example code -- deleting the subscription {#example-code-deleting-subscription}
 
@@ -478,10 +470,10 @@ In general, it is not possible to recover from a fatal configuration or logic er
 The client will need to be restarted after the error has been corrected.
 For transient errors, a strategy of retrying after a delay is usually appropriate.
 When an operation on a producer or a consumer has failed, it may be difficult to identify the exact root cause and the optimal response.
-As a simple approach that will cover most scenarios, we would suggest deleting the failed producer or consumer object and creating a new one before retrying the operation.
-This is somewhat inefficient but avoids potential issues where the producer or consumer is unable to re-connect after an error.
-A more sophisticated strategy would tailor the response based on the specific sub-class of `PulsarClientException` that was thrown.
-We also recommend an [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff) strategy to increase the delay between repeated retries, until the service has fully recovered.
+A simple recovery approach that covers most scenarios is to delete the failed producer or consumer and create a new one before retrying the operation.
+This avoids cases where the producer or consumer cannot reconnect after an error.
+A more sophisticated strategy can tailor the response to the specific subclass of `PulsarClientException` thrown.
+Use an [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff) strategy to increase the delay between retries until the service recovers.
 
 ### Example client
 
@@ -490,4 +482,4 @@ The `README.md` file provided with the example explains how to build and run it.
 
 The examples repository also contains a simple [Python MQTT client](https://github.com/Cumulocity-IoT/cumulocity-examples/tree/develop/mqtt-service/python-simple-mqtt-client) that can be used to simulate an MQTT device and test the operation of the Java client.
 See the `README.md` file included with the example for more details.
-We would recommend starting the Python client first, to ensure that messages published towards the "device" will be received, then starting the Java client.
+Start the Python client first to ensure messages sent to a device are received, then start the Java client.
