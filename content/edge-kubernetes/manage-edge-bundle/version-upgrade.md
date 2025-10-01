@@ -22,7 +22,7 @@ You can upgrade to the latest fix of Edge in the current release train from the 
 ```shell
 c8yedge upgrade
 ```
-For example, this will perform an upgrade from `{{< c8y-edge-current-version >}}.0.4` to `{{< c8y-edge-current-version >}}.0.5`, but not `{{< c8y-edge-current-version >}}.0.4` to new release train after `{{< c8y-edge-current-version >}}`. To specify an explicit version to upgrade to:
+For example, this will perform an upgrade from `{{< c8y-edge-current-version >}}.0.4` to `{{< c8y-edge-current-version >}}.0.5`, but not `{{< c8y-edge-current-version >}}.0.4` to a new release train after `{{< c8y-edge-current-version >}}`. To specify an explicit version to upgrade to:
 ```shell
 c8yedge upgrade --version <version number>
 ```
