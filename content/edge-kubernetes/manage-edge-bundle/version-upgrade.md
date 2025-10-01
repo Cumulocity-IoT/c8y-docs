@@ -13,11 +13,11 @@ Recreating update strategy is an all-or-nothing process that updates all aspects
 Upgrading with the `c8yedge` tool is only supported if the initial installation was created using the `c8yedge` tool.
 {{< /c8y-admon-info >}}
 
-You can upgrade to the latest fix of Edge by running the following command:
+You can upgrade to the latest patch of Edge by running the following command:
 ```shell
 c8yedge upgrade
 ```
-This will only apply the latest fixes for the current release train. For example, this will perform an upgrade from `{{< c8y-edge-current-version >}}.0.3` to `{{< c8y-edge-current-version >}}.0.5`, but not `{{< c8y-edge-current-version >}}.0.3` to a new major version after `{{< c8y-edge-current-version >}}`. To specify an explicit version to upgrade to:
+This will only apply the latest patches for the current release train. For example, this command will perform an upgrade from `{{< c8y-edge-current-version >}}.0.3` to `{{< c8y-edge-current-version >}}.0.5`, but not `{{< c8y-edge-current-version >}}.0.3` to a new major version after `{{< c8y-edge-current-version >}}`. To specify an explicit version to upgrade to:
 ```shell
 c8yedge upgrade --version <version number>
 ```
