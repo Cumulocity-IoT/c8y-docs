@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-64123
 version: 2025.322.0
 ---
-Until now tenant options have been attached to each microservice request. Microservices proxy has added the tenant options to the request headers and forwarded the request to the respective microservice.
+Until now, tenant options were attached to each microservice request. The microservice proxy added the tenant options to the request headers and forwarded the request to the respective microservice.
 For example, when creating a tenant option in a category that matches to the application context path, the value has been passed to the microservice by the microservice proxy on the platform as a header (key => value). 
 
 This functionality is now deprecated. The tenant options will no longer be attached as headers to the requests to the microservices, and the removal is planned for Q1 2026 in CD versions and in the 2027 annual release.
