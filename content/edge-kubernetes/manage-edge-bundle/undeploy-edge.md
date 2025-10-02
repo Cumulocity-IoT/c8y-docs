@@ -4,7 +4,7 @@ title: Uninstalling Edge
 layout: redirect
 ---
 
-If you have installed Edge using the `c8yedge` tool, uninstallation is as simple as invoking:
+If you have installed Edge using the **c8yedge** tool, uninstallation is as simple as invoking:
 ```shell
 sudo c8yedge uninstall
 ```
