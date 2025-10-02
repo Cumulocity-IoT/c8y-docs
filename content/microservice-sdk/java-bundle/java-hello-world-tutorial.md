@@ -26,7 +26,8 @@ OS name: "mac os x", version: "10.14.6", arch: "x86_64", family: "mac"
 
 You will also need a Docker installation, and in case that you don't have it yet, go to the [Docker website](https://www.docker.com/get-started) to download and install it.
 
-{{< product-c8y-iot >}} microservices are Docker containers for the Linux/Amd64 platform. Other architectures are currently not supported. The Docker engine must provide the API version 1.38 or newer. This is the case for Docker versions 18.06 and later. Use the following command to verify your Docker installation:
+{{< product-c8y-iot >}} microservices are Docker containers for the Linux/Amd64 platform. Other architectures are currently not supported. The Docker engine must provide the API version 1.38 or newer. This is the case for Docker versions 18.06 and later. 
+However, the Docker version must not be newer than v27. Use the following command to verify your Docker installation:
 
 ```shell
 $ docker version

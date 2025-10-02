@@ -17,13 +17,18 @@ In this tutorial, you will learn how to create and run a microservice written in
 
 Create an account on [{{< domain-c8y >}}](https://{{< domain-c8y >}}), for example by using a free trial. At this step you will be provided with a dedicated URL that you can also use to test your microservice below.
 
-Make sure that you have a recent version of Docker installed. You can, for example, install [Docker Desktop](https://www.docker.com/products/docker-desktop/) for your operating system.
+Make sure that you have a Docker version not newer than v27 installed. You can, for example, install [Docker Desktop](https://www.docker.com/products/docker-desktop/) for your operating system.
 
 {{< product-c8y-iot >}} hosts linux/amd64 Docker containers. If you run, for example, a recent Mac with Apple silicon, you need to configure Docker to build linux/amd64 containers:
 
 ```shell
 $ export DOCKER_DEFAULT_PLATFORM=linux/amd64
 ```
+
+{{< c8y-admon-info >}}
+For building Docker images, the Docker engine version must not be newer than v27.
+{{< /c8y-admon-info >}}
+
 
 ### Create a sample Python web application {#create-a-python-web-application}
 

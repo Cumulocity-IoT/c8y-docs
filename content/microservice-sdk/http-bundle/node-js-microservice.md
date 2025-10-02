@@ -14,7 +14,7 @@ It uses the {{< product-c8y-iot >}} [@c8y/client JavaScript library](https://www
 
 - {{< product-c8y-iot >}} credentials (tenant, user and password).
 - Slack channel to post messages to, [Slack app and OAuth token](https://slack.dev/node-slack-sdk/getting-started).
-- Docker local installation.
+- Docker local installation in a version not newer than v27.
 - A *.env* file in the root directory with the following content:
 
 ```properties
@@ -22,6 +22,10 @@ PORT=80
 SLACK_OAUTH_TOKEN=<YOUR-TOKEN-GOES-HERE>
 SLACK_CHANNEL_ID=<YOUR-CHANNEL_ID-GOES-HERE>
 ```
+
+{{< c8y-admon-info >}}
+For building Docker images, the Docker engine version must not be newer than v27.
+{{< /c8y-admon-info >}}
 
 ### Developing the microservice {#developing-the-microservice}
 

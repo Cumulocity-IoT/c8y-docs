@@ -514,6 +514,10 @@ used for the microservice start without further verification. For example be sur
 condition: Xms < Xmx.
 {{< /c8y-admon-info >}}
 
+{{< c8y-admon-info >}}
+For building Docker images, the Docker engine version must not be newer than v27.
+{{< /c8y-admon-info >}}
+
 ##### Setting parameters on command line {#package-goal-command-line}
 
 For information about how and whether it is possible to set parameters on command line refer to column
