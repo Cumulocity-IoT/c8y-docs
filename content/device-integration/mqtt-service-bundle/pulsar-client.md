@@ -25,7 +25,7 @@ All inter-device communication must be managed explicitly by the client, as show
 This documentation does not cover the publish-subscribe messaging concepts and architecture implemented by Pulsar, nor any features of the Pulsar client libraries beyond those needed to implement a simple MQTT Service client.
 To learn more about those subjects, refer to the [Pulsar product documentation](https://pulsar.apache.org/docs/4.0.x/).
 
-### Connecting to the Messaging Service
+### Connecting to the Messaging Service {#connecting-messaging-service}
 
 To connect your client to the Messaging Service, you will need:
 1. A [Pulsar client library](https://pulsar.apache.org/docs/4.0.x/client-libraries/).
@@ -34,7 +34,7 @@ To connect your client to the Messaging Service, you will need:
 
 Each of these prerequisites is explained in detail below.
 
-#### Pulsar client library
+#### Pulsar client library {#pulsar-client-library}
 
 Open-source Pulsar client libraries are available for a number of different languages and protocols.
 The example code in this documentation will use the [Java client library](https://pulsar.apache.org/docs/4.0.x/client-libraries-java/).
@@ -47,7 +47,7 @@ Currently only "basic" (username/password) authentication is supported for clien
 Therefore, you must ensure that your chosen Pulsar client library supports this authentication scheme.
 {{< /c8y-admon-caution >}}
 
-#### Pulsar URL
+#### Pulsar URL {#pulsar-url}
 
 For a microservice client, the URL should be obtained from the `C8Y_BASEURL_PULSAR` [environment variable](/microservice-sdk/general-aspects/#environment-variables) that will be passed to the microservice when it starts running.
 For an external application client, the URL has the general form `pulsar+ssl://<tenant_domain>:6651/`, where `<tenant_domain>` is the domain of your {{< product-c8y-iot >}} tenant, for example `my-tenant.cumulocity.com`.
@@ -55,7 +55,7 @@ As implied by the `pulsar+ssl` protocol name, all external application client co
 Currently, only one-way TLS is supported. The server provides a certificate that the client can verify. Client certificates cannot be used.
 Implementing an external application client so that it reads the Pulsar URL from the `C8Y_BASEURL_PULSAR` environment variable makes it easier to develop a client that can be deployed as either a microservice or an external application.
 
-#### Pulsar authentication
+#### Pulsar authentication {#pulsar-authentication}
 
 Authentication credentials identify both the {{< product-c8y-iot >}} tenant and the user within that tenant.
 Currently, only "basic" (username and password) authentication is supported for clients connecting to the Messaging Service through Pulsar.
@@ -66,7 +66,7 @@ If two-factor authentication (TFA) is enabled for your tenant, your user must ha
 See [TFA Settings](/authentication/basic-settings/#tfa-settings) for more information.
 Note that the `devices` role may be shown as "Device User" in the {{< product-c8y-iot >}} user interface.
 
-#### Role-based access control
+#### Role-based access control {#role-based-access-control}
 
 Pulsar client connections will be granted access to Messaging Service resources based on the roles and permissions assigned to the authenticated user.
 The following roles and permissions should be used for MQTT Service messaging clients:
@@ -154,7 +154,7 @@ public class SimplePulsarClient {
 }
 ```
 
-### Message payloads and properties
+### Message payloads and properties {#message-payloads-properties}
 
 Pulsar messages consist of a _payload_ and set of _properties_.
 
@@ -212,7 +212,7 @@ If untrusted users have access to your tenant, these users should **not** be per
 This recommendation also applies in the case of multiple customers, who do not mutually trust each other, sharing a single tenant.
 {{< /c8y-admon-caution >}}
 
-#### Durable subscriptions and message acknowledgement
+#### Durable subscriptions and message acknowledgement {#durable-subscriptions-message-acknowledgement}
 
 Subscribing a consumer to a topic establishes a _durable subscription_ to the topic.
 This means that the Messaging Service will retain messages published to the topic until they have been delivered to, and acknowledged by, a client.
@@ -265,7 +265,7 @@ However, the payload of the Pulsar message will always be an array of bytes, tha
         System.out.println("Created Pulsar consumer");
 ```
 
-### Publishing messages to MQTT devices
+### Publishing messages to MQTT devices {#publishing-messages-to-mqtt-devices}
 
 Any messages that your client wants to send to devices connected to the MQTT Service for a given tenant must be published to a _single_ Pulsar topic, identified by the URL `persistent://<tenantID>/mqtt/to-device`.
 The components of the URL should be interpreted as described in [Consuming messages from MQTT devices](#consuming-messages-from-mqtt-devices) above.
@@ -381,7 +381,7 @@ See the [service quotas](/service-terms/quotas/#mqtt-service) documentation for 
 These limits are configurable on a per-tenant basis.
 If your use case requires a different configuration, or if you have any questions or concerns, contact [product support](https://cumulocity.com/docs/additional-resources/contacting-support/).
 
-#### Message backlog quota
+#### Message backlog quota {#message-backlog-quota}
 
 Persistent messages are stored in a _backlog_ until they are delivered to any interested consumers.
 The maximum size of the backlog is set by the _backlog quota limit_, which directly affects the number of messages that can be stored and therefore the resource consumption of the platform.
@@ -398,7 +398,7 @@ If the `PUBLISH` packet was sent with QoS level 1, the behaviour depends on the 
 
 If the backlog quota limit for the Pulsar `to-device` topic is reached, clients calling the `Producer.send()` method, or its equivalent in the Pulsar library used by the client, will receive an appropriate exception or error response from the client library.
 
-#### Message time-to-live
+#### Message time-to-live {#message-time-to-live}
 
 Any undelivered messages will be automatically deleted if they have been on the backlog for longer than the _time-to-live (TTL) limit_.
 This policy helps to limit overall resource usage and reduces the need to process outdated data after a prolonged disconnection of a consumer.
@@ -475,7 +475,7 @@ This avoids cases where the producer or consumer cannot reconnect after an error
 A more sophisticated strategy can tailor the response to the specific subclass of `PulsarClientException` thrown.
 Use an [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff) strategy to increase the delay between retries until the service recovers.
 
-### Example client
+### Example client {#example-client}
 
 A complete [example Java client](https://github.com/Cumulocity-IoT/cumulocity-examples/tree/develop/mqtt-service/java-simple-pulsar-client) based on the code snippets above can be found in the [cumulocity-examples](https://github.com/Cumulocity-IoT/cumulocity-examples/tree/develop/mqtt-service) repository.
 The *README.md* file provided with the example explains how to build and run it.
