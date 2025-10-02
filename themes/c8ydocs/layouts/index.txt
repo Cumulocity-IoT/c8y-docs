@@ -120,7 +120,7 @@ This file provides guidance for Large Language Models interacting with the Cumul
 
 - [{{ $title }}]({{ .Permalink }}): {{ $desc }}
 {{- end }}
-{{- end -}}
+{{- end }}
 
 ## Last Updated
 {{ now.Format "2006-01-02T15:04:05Z07:00" }}
