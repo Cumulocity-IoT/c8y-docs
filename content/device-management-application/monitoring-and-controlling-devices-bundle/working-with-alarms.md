@@ -112,8 +112,8 @@ When assigning permissions to inventory roles with a **non-asterisk** value, kee
 - These roles apply **only to custom fragments** of alarms (that is, user-defined fields).
 - It is **not possible** to specify or control access to **standard alarm schema fields**, such as `status` or `severity`.
 
-Because of this limitation, users with such roles can update only the specified custom fragments. Any attempt to modify standard fields will result in a `security/Forbidden` error.
+Because of this limitation, users with such roles can only update the specified custom fragments. Any attempt to modify standard fields will result in a "Security/Forbidden" error.
 
-#### Acknowledging Alarms
+#### Acknowledging alarms {#acknowledging-alarms}
 
-Acknowledging or clearing an alarm updates the `status` field, which is part of the standard schema. Therefore, the only way to allow users to perform these actions is to assign an inventory role with an **asterisk (`*`) type**, which grants access to all fields, including those in the standard schema.
+Acknowledging or clearing an alarm updates the `status` field, which is part of the standard schema. Therefore, the only way to allow users to perform these actions is to assign an inventory role with an asterisk (`*`) type, which grants access to all fields, including those in the standard schema.
