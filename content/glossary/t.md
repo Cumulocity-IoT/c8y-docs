@@ -16,7 +16,7 @@ The tenant domain refers to the domain name used to access a {{< product-c8y-iot
 
 ### Tenant hierarchy {#tenant-hierarchy}
 
-The tenant hierachy refers to the structure organizing [tenants](#tenant) in {{< product-c8y-iot >}}, typically involving a [{{< management-tenant >}}](#management-tenant) at the top, [{{< enterprise-tenant >}}s](/glossary/e/#enterprise-tenant) below it, and [{{< standard-tenant >}}s](/glossary/s/#standard-tenant) at the lowest level. 
+The tenant hierachy refers to the structure organizing [tenants](#tenant) in {{< product-c8y-iot >}}, typically involving a [{{< management-tenant >}}](#management-tenant) at the top, [{{< enterprise-tenant >}}s](/glossary/e/#enterprise-tenant) below it, and [{{< standard-tenant >}}s](/glossary/s/#standard-tenant) at the lowest level.
 
 ### Tenant ID {#tenant-id}
 
@@ -38,6 +38,6 @@ The official online forum and knowledge base for {{< product-c8y-iot >}} users a
 
 Thick Edge is an informal term for {{< product-c8y-iot >}} Edge, see [{{< product-c8y-iot >}} Edge](#edge).
 
-### Thin Edge {#thin-edge}
+### thin-edge.io {#thin-edge}
 
 [Thin-edge.io](https://thin-edge.io/) is an open-source software framework recommended by {{< product-c8y-iot >}} for custom device integration. It provides components and tools to connect [devices](#device) to the platform, particularly suitable for implementing device-side logic.

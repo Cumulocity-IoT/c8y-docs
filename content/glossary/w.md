@@ -21,7 +21,7 @@ The {{< product-c8y-iot >}} Web SDK is a development framework that enables user
 tbd
 
 
-### Wires (Analytics Builder){#wires}
+### Wires (Analytics Builder) {#wires}
 
 In [Analytics Builder](#analytics-builder), wires are used to connect two or more [blocks](#blocks) with each other for data transfer between the output port of one block and the input port of another block.
 
