@@ -62,7 +62,7 @@ otel.exporter.otlp.protocol: http/protobuf
 credentials.otel.exporter.otlp.headers: <authentication data>
 ```
 
-The `otel.service.name` parameter value is automatically set with the microservice pod name at run time.
+The `otel.service.name` parameter value is automatically set with the microservice pod name at runtime.
 
 The parameter `otel.resource.attributes` gets automatically assigned these properties:
 
