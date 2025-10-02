@@ -478,8 +478,8 @@ Use an [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff) 
 ### Example client
 
 A complete [example Java client](https://github.com/Cumulocity-IoT/cumulocity-examples/tree/develop/mqtt-service/java-simple-pulsar-client) based on the code snippets above can be found in the [cumulocity-examples](https://github.com/Cumulocity-IoT/cumulocity-examples/tree/develop/mqtt-service) repository.
-The `README.md` file provided with the example explains how to build and run it.
+The *README.md* file provided with the example explains how to build and run it.
 
 The examples repository also contains a simple [Python MQTT client](https://github.com/Cumulocity-IoT/cumulocity-examples/tree/develop/mqtt-service/python-simple-mqtt-client) that can be used to simulate an MQTT device and test the operation of the Java client.
-See the `README.md` file included with the example for more details.
+See the *README.md* file included with the example for more details.
 Start the Python client first to ensure messages sent to a device are received, then start the Java client.
