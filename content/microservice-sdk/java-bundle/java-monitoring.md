@@ -103,10 +103,10 @@ Configuring auto-instrumentation for selected libraries or frameworks, or opting
 in the [OpenTelemetry instrumention documentation](https://opentelemetry.io/docs/zero-code/java/agent/disable/).
 
 #### Maven configuration
-
-The Java agent JAR file is downloaded and copied to the microservice image by the `microservice-package-maven-plugin` by default. 
-However, it is possible to skip this step and to create the image without the Java agent. The `otelJavaAgentInclude` 
-configuration element must be set to `false` in the Maven `pom.xml` file in this case:
+Besides setting up the OTLP configuration in tenant options, the Java agent JAR file must be included in the microservice image at build time. 
+By default, this JAR file is not contained in the image. 
+To download and copy the Java agent JAR file to the microservice image, the `microservice-package-maven-plugin` must be 
+configured with the `otelJavaAgentInclude` element set to `true` in the Maven `pom.xml` file: 
 
 ```xml
             <plugin>
@@ -122,7 +122,7 @@ configuration element must be set to `false` in the Maven `pom.xml` file in this
                         </goals>
                         <configuration>
                             ...
-                            <otelJavaAgentInclude>false</otelJavaAgentInclude>
+                            <otelJavaAgentInclude>true</otelJavaAgentInclude>
                             ...
                         </configuration>
                     </execution>
