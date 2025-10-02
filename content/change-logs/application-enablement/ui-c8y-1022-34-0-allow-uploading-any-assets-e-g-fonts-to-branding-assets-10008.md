@@ -1,6 +1,6 @@
 ---
-date: ""
-title: Allowed uploading any type of resource (fonts, images) to branding
+date: '2025-10-02'
+title: 'Allowed uploading any type of resource (fonts, images) to branding'
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
