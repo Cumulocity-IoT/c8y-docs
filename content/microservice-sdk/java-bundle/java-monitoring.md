@@ -134,7 +134,7 @@ configuration element must be set to `false` in the Maven `pom.xml` file in this
 
 {{< c8y-admon-important >}}
 If the Java agent JAR file is not contained in the microservice image 
-and `otel.javaagent.enabled` is set to `true`, then the microservice start will fail.
+and `otel.javaagent.enabled` is set to `true`, then the microservice will fail to start.
 {{< /c8y-admon-important >}}
 
 
