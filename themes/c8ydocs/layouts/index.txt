@@ -33,6 +33,7 @@ This file provides guidance for Large Language Models interacting with the Cumul
 {{- end }}
 
 {{- range $sectorName, $pages := $sectorPages }}
+
 ## {{ $sectorName | humanize }}
 {{- range $pages }}
   {{- $desc := .Params.description | default .Summary }}
