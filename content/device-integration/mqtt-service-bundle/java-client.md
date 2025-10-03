@@ -1,8 +1,15 @@
 ---
-weight: 30
+weight: 31
 layout: redirect
 title: Java Client
 ---
+
+{{< c8y-admon-caution >}}
+The MQTT Service Java SDK is deprecated and should not be used for new development.
+It will be replaced by direct connections to the {{< product-c8y-iot >}} Messaging Service.
+
+See [Connecting microservices and applications](/device-integration/mqtt-service/#pulsar-client) for more information.
+{{< /c8y-admon-caution >}}
 
 The MQTT Service Java Client library provides the classes necessary to interact with the MQTT Service.
 The following operations are supported by the client:
