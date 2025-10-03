@@ -109,8 +109,8 @@ This file provides guidance for Large Language Models interacting with the Cumul
     {{- $desc = .Plain | default .RawContent | default (.Content | plainify) }}
   {{- end }}
 
-  {{- /* Clean up and truncate description */ -}}
-  {{- $desc = $desc | plainify | truncate 300 }}
+  {{- /* Render shortcodes, clean up and truncate description */ -}}
+  {{- $desc = .RenderString $desc | plainify | htmlUnescape | truncate 300 }}
 
   {{- /* Format title - prefix "Introduction" with section name */ -}}
   {{- $title := .Title }}
