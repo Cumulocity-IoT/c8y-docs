@@ -149,7 +149,7 @@ Inside some fields you can use placeholders that are resolved by {{< product-c8y
 | code         | Code returned by the authorization server in response to authorization request 
 | refreshToken | Refresh token returned by the authorization server after token request         
 | id_token     | A JWT token issued by the authorization server that contains claims about the authenticated user; can be used for logout from the authorization server
-| idp_hint     | Value of the **idp_hint** parameter passed by UI aplication, to choose which IdP should be preselected during the authentication flow.                    
+| idp_hint     | Value of the `idp_hint` parameter passed by the UI application, to select which IdP should be preselected during the authentication flow                   
 
 These placeholders can be used in authorization requests, token requests, refresh requests and logout request in the fields:
 
