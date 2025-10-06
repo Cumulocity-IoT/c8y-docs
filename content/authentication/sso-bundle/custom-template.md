@@ -180,7 +180,7 @@ It allows a client application (for example, a custom welcome page) to suggest w
 https://{{< domain-c8y >}}/apps/public/login/index.html?idp_hint=google
 ```
 
-2. The {{< product-c8y-iot >}} application extracts the value of `idp_hint` (e.g., `google`).
+2. The {{< product-c8y-iot >}} application extracts the value of `idp_hint` (for example, "google").
 3. During the OAuth2/OIDC authorization request, this value is mapped and passed to the underlying Auth Server.
 
 ##### Example with Keycloak
