@@ -181,7 +181,7 @@ https://{{< domain-c8y >}}/apps/public/login/index.html?idp_hint=google
 ```
 
 2. The {{< product-c8y-iot >}} application extracts the value of `idp_hint` (for example, "google").
-3. During the OAuth2/OIDC authorization request, this value is mapped and passed to the underlying Auth Server.
+3. During the OAuth2/OIDC authorization request, this value is mapped and passed to the underlying authentication server.
 
 ##### Example with Keycloak
 Keycloak supports [an identity provider hinting feature](https://www.keycloak.org/docs/latest/server_admin/index.html#_client_suggested_idp) using the `kc_idp_hint` parameter.  
