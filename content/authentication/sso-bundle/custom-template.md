@@ -168,7 +168,7 @@ Placeholders can also be used as a part of text:
 Placeholders are not validated for correctness. Any not recognized or misspelled placeholder will be left in text unprocessed.
 {{< /c8y-admon-info >}}
 
-### Client Suggested Identity Provider
+### Client suggested identity provider {#client-suggested-identity-provider}
 When the default login mode is **Single sign-on redirect**, and the Auth Server supports multiple identity providers, instead of displaying an intermediate "select identity provider" screen to the user, the `idp_hint` parameter can be collected by {{< product-c8y-iot >}} and forwarded to the Auth Server as part of the initial authorization request. This ensures that the user is redirected directly to the specified IdP.
 
 The `idp_hint` is a custom parameter supported by the application to improve the login experience in multi-Identity Provider (IdP) scenarios.
