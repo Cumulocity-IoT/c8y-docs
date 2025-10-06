@@ -169,7 +169,7 @@ Placeholders are not validated for correctness. Any not recognized or misspelled
 {{< /c8y-admon-info >}}
 
 ### Client suggested identity provider {#client-suggested-identity-provider}
-When the default login mode is **Single sign-on redirect**, and the Auth Server supports multiple identity providers, instead of displaying an intermediate "select identity provider" screen to the user, the `idp_hint` parameter can be collected by {{< product-c8y-iot >}} and forwarded to the Auth Server as part of the initial authorization request. This ensures that the user is redirected directly to the specified IdP.
+When the default login mode is **Single sign-on redirect**, and the authentication server supports multiple identity providers, instead of requesting the user to select an identity provider, the `idp_hint` parameter can be collected by {{< product-c8y-iot >}} and forwarded to the authentication server as part of the initial authorization request. This ensures that the user is redirected directly to the specified IdP.
 
 The `idp_hint` is a custom parameter supported by the application to improve the login experience in multi-Identity Provider (IdP) scenarios.
 It allows a client application (e.g., a custom welcome page) to suggest which IdP should be preselected during the authentication flow.
