@@ -413,3 +413,66 @@ The proof of possession is confirmed if the uploaded signed verification code ma
 {{< c8y-admon-info >}}
 If administrators cannot carry out this process on their own for organizational reasons, they can manually request the proof of possession for the corresponding certificate and the {{< company-c8y >}} Support team can complete the proof of possession through a back end API upon reasonable verification.
 {{< /c8y-admon-info >}}
+
+### Common Security Scenarios and Best Practices
+
+#### What to do when a device’s certificate is compromised?
+
+If you suspect or confirm that a device certificate has been compromised, follow the steps below:
+
+1. **Revoke the Compromised Certificate**
+    - Add the certificate to the Certificate Revocation List (CRL) maintained by Cumulocity Platform.
+    - The certificate itself will remain untouched until an investigation can be completed.
+2. **Prevent the compromised device from connecting to IoT services (MQTT broker, HTTPS**
+    - deviceAccessToken API.
+3. **Disable the device user**
+    - This will disconnect the device from the IoT platform but leave the certificate untouched until an investigation can be done.
+    - If not compromised:** Re-enable the device user. The device will reconnect using its existing certificate.
+    - If compromised:** Revoke the certificate to prevent any further use of it.
+4. **Provision a New Certificate**
+    - Generate a new certificate for the device.
+    - Using the existing CA certificate which is owned by Cumulocity Platform generate a new certificate for the device.
+    - Update the device to use the new certificate for authentication.
+
+#### What to do when the enrollment process has been compromised?
+
+Enrollment processes may be compromised when insecure practices are used, for example:
+- Using a device ID-derived one-time password (OTP)
+- Using the same OTP across all enrollment requests
+
+If such a situation occurs, proceed with the following steps:
+
+1. **Disable auto-registration on the tenant’s CA certificate**
+    - This stops any new enrollment requests immediately.
+    - Existing enrolled devices will remain connected and operational.
+2. **Communicate and remediate unsafe procedures**
+    - Inform all stakeholders about the issue.
+    - If necessary, disable users who were following unsafe enrollment practices.
+    - Provide guidance on secure manual procedures.
+3. **Re-enable auto-registration**
+    - Once safe practices have been confirmed and enforced, enable auto-registration again.
+    - This allows new enrollment requests to be processed securely.
+
+> **Note:** Consider rotating enrollment credentials periodically and monitoring logs for unusual enrollment activity.
+
+#### What to do when a CA certificate has been compromised?
+
+If you suspect or confirm that a CA (Certificate Authority) certificate has been compromised, follow the steps below:
+
+1. **Revoke the Compromised CA Certificate**
+    - Add the compromised CA certificate to the Certificate Revocation List (CRL) using the CRL API.
+    - Note: This action is effective only if the tenant has offline CRL check enabled in the Cumulocity Platform.
+    - The CA certificate itself remains in the system until the next step.
+2. **Delete the Compromised CA**
+    - Remove the compromised CA certificate from the tenant.
+    - This action also deletes the associated key pair, ensuring it cannot be reused.
+3. **Create a New CA**
+    - Generate a new CA certificate.
+    - A new key pair will be created automatically during this process.
+    - Use this new CA to issue device certificates going forward.
+4. **Reprovision Devices**
+    - All device certificates previously signed by the compromised CA will no longer be trusted by the Cumulocity Platform.
+    - Devices using these certificates will be unable to connect via any communication channel, such as MQTT or deviceAccessToken API.
+    - Re-enroll affected devices using certificates issued by the new CA.
+
+> **Note:** After replacing a compromised CA, review and update your certificate management and enrollment policies to ensure stronger security practices, including periodic CA rotation and continuous monitoring for unusual certificate activity.
