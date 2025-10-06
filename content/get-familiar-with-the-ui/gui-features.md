@@ -84,13 +84,15 @@ The application switcher shows all {{< product-c8y-iot >}} applications you curr
 
 {{< product-c8y-iot >}} provides a name search, available through the **Search** button <i class="dlt-c8y-icon-search icon-20"></i> at the right of the top bar in the UI.
 
-On entering a search term into the textbox at the top of the **Search** window, {{< product-c8y-iot >}} returns all assets (groups, devices, child devices) where the name containing the term. By selecting a different tabs, you can limit the search results to either devices or assets. If you are in the context of an asset, you can also limit the search to the current hierarchy.
+On entering a search term into the textbox at the top of the **Search** window, {{< product-c8y-iot >}} returns all assets (groups, devices, child devices) that have the term in their name. By selecting the respective tab, you can limit the search results to either devices or assets. If you are in the context of an asset, you can also limit the search to the current hierarchy.
 
 <img src="/images/users-guide/getting-started/getting-started-search-result.png" alt="Search result" style="max-width: 100%">
 
-Under **Search results**, the assets matching the search criteria are shown. The search is by default using a so called wild-card-search, meaning it appending a wildcard to the start, end and each white-space of the search-term. To have more filter options, click **Go to the assets table** at the bottom right. This shows the all assets and allows to filter for other criteria.
+Under **Search results**, all assets or devices matching the search criteria are listed. 
 
-You can navigate through the search items with your keyboard by using the arrow keys. Selecting a particular item with the tab or enter key will navigate you to the item selected.
+By default, the search uses a wildcard search, which means a wildcard is automatically added to the beginning, end, and each whitespace of the search term. To add more filter options, click **Go to the assets table** at the bottom right. This shows all assets and allows filtering for further criteria.
+
+You can navigate through the search items by using the arrow keys on your keyboard. Selecting a particular item with the Tab or the Enter key will navigate you to the selected item.
 
 #### Filtering {#filtering}
 
