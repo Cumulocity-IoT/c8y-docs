@@ -185,7 +185,7 @@ https://{{< domain-c8y >}}/apps/public/login/index.html?idp_hint=google
 
 #### Example with Keycloak {#example-with-keycloak}
 Keycloak supports [an identity provider hinting feature](https://www.keycloak.org/docs/latest/server_admin/index.html#_client_suggested_idp) using the `kc_idp_hint` parameter.  
-If the `idp_hint` value is `google`, and authorization request headers are configured with key: `kc_idp_hint`, value `${idp_hint}`, {{< product-c8y-iot >}} will translate it into a Keycloak compatible parameter and forward it:
+If the `idp_hint` value is "google", and the authorization request headers are configured with key `kc_idp_hint`, value `${idp_hint}`, {{< product-c8y-iot >}} will translate it into a Keycloak compatible parameter and forward it:
 
 ```
 https://keycloak.com/realms/myrealm/protocol/openid-connect/auth
