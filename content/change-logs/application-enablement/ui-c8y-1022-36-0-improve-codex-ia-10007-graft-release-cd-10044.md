@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improve codex IA (#10007) [GRAFT][release/cd] (#10044)
+title: Improve Codex Information Architecture
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
