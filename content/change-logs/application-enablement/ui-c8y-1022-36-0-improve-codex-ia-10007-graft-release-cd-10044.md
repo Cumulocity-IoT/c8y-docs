@@ -14,6 +14,10 @@ build_artifact:
 ticket: MTM-64747
 version: 1022.36.0
 ---
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
-Co-authored-by: janhommes <jan.hommes@cumulocity.com>
-Co-authored-by: Tristan Bastian <tristan.bastian@cumulocity.com>
+Flatten navigation to 2–3 levels with card-based UI, reorganize content into Components, Design System, and Advanced Development, fix cross-references, and enhance discoverability and learning flow:
+
+- Quick start → First steps
+- Core concepts → Understanding fundamentals
+- Common tasks → Hands-on learning
+- Components/Design System → Building UIs
+- Advanced development → Platform integration and complex scenarios
