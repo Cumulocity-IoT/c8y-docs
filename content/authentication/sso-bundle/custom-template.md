@@ -171,7 +171,7 @@ Placeholders are not validated for correctness. Any not recognized or misspelled
 ### Client suggested identity provider {#client-suggested-identity-provider}
 When the default login mode is **Single sign-on redirect**, and the authentication server supports multiple identity providers, instead of requesting the user to select an identity provider, the `idp_hint` parameter can be collected by {{< product-c8y-iot >}} and forwarded to the authentication server as part of the initial authorization request. This ensures that the user is redirected directly to the specified IdP.
 
-The `idp_hint` is a custom parameter supported by the application to improve the login experience in multi-Identity Provider (IdP) scenarios.
+The `idp_hint` is a custom parameter supported by the application to improve the login experience in multi-identity provider (IdP) scenarios.
 It allows a client application (e.g., a custom welcome page) to suggest which IdP should be preselected during the authentication flow.
 
 1. A client custom application appends the `idp_hint` parameter to the login URL:
