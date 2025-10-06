@@ -14,6 +14,8 @@ summaryLength = 30
 buildFuture = true
 relativeURLs = true
 
+enableGitInfo = true
+
 [taxonomies]
   sectors = "sector"
 
@@ -57,11 +59,11 @@ relativeURLs = true
 
   [[params.additionalResources]]
     name = "Tech Community"
-    link = "https://techcommunity.cumulocity.com/"
+    link = "https://community.cumulocity.com/"
 
   [[params.additionalResources]]
     name = "Learning Portal"
-    link = "https://cumulocity.moodlecloud.com/"
+    link = "https://learning.cumulocity.com/"
 
   [[params.additionalResources]]
     name = "YouTube"

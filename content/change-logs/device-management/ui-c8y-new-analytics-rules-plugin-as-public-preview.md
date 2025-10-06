@@ -21,4 +21,4 @@ This feature is in Public Preview and may be subject to change in the future.
 
 The Analytics rules plugin is now available in Public Preview. It extends the capabilities of the Analytics Builder in Streaming Analytics, allowing users to define analytics rules and create and manage rule instances directly from asset, group, and device contexts within applications such as Cockpit and Device Management.
 
-For more details about the Analytics rules plugin, refer to [Analytics rules plugin](/streaming-analytics/analytics-rules-plugin#what-is-analytics-rules-plugin).
+For more details about the Analytics rules plugin, refer to [Analytics rules plugin](/streaming-analytics/analytics-rules-plugin#what-is-the-analytics-rules-plugin).
