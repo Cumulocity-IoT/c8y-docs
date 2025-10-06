@@ -57,6 +57,11 @@ If any error occurs during the processing of an operation the device must set th
 
 It is up to the device and its use case whether it should roll back any local state changes that happened before the error occurred. If any change of state remains after an operation failed the device must communicate this changed state with {{< product-c8y-iot >}}.
 
+#### Handling of unknown operations {#handling-of-unknown-operations}
+
+Future versions of {{< product-c8y-iot >}} may include new operation types. To ensure compatibility, devices should safely ignore any operations they do not recognize.
+When a device receives an unknown operation code, it should not respond or take any action. The operation will remain in a pending state, which is normal and does not indicate a problem.   
+
 ### Recovering after agent crash {#recovering-after-agent-crash}
 
 After an unexpected restart a device must cleanly recover its status. This includes all status parameters communicated with the platform and all ongoing operations. Recovering the status can be done by updating all values in the cloud with the current values on the device. Recovering ongoing operations is more difficult. Devices are expected to keep track of all operations they moved to status EXECUTING. Typically devices keep information of longer-running operations in a persistent storage so that they can be resumed. In unexpected shutdown or crash scenarios this may not always be possible. In this case the device may cancel all ongoing operations to reset its own status.

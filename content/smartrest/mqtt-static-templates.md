@@ -105,6 +105,7 @@ If a parameter is in square brackets, it is optional.
 <li><a href="#529">529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...</a></li>
 <li><a href="#530">530,serial,hostname,port,connectionKey</a></li>
 <li><a href="#531">531,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,type,url,action,configurationMarker,url,type</a></li>
+<li><a href="#532">532,serial,PARAM_DEF_0,PARAM_DEF_1,...,PARAM_DEF_N</a></li>
 </ul>
 
 <strong><a href="#device-parameter-templates">Device parameter templates</a></strong>
@@ -147,6 +148,7 @@ The client can receive the following templates when subscribing to <kbd>s/ds</kb
 <li><a href="#528">528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...</a></li>
 <li><a href="#529">529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...</a></li>
 <li><a href="#530">530,serial,hostname,port,connectionKey</a></li>
+<li><a href="#532">532,serial,parameterKey1,type1,value1,...</a></li>
 </ul>
 
 <strong><a href="#subscribe-device-parameter">Device parameter templates</a></strong>
@@ -1390,6 +1392,46 @@ Set the device profiles with software type
 {{< c8y-admon-info >}}
 When a device profile operation contains a type in one of the software entries in the list, template ID 531 is triggered. The triggering of template ID 531 is independent of template ID 527. This means that whenever template ID 531 is triggered, template ID 527 will also be triggered at the same time.
 {{< /c8y-admon-info >}}
+
+##### Parameter update operation (532) {#532}
+
+Notifies the device that a **c8y_ParameterUpdate** operation has been created. 
+
+| Position | Parameter          | Type   | Description                                                         |
+|:---------|:-------------------|:-------|:--------------------------------------------------------------------|
+| 1..n     | list of parameters | n/a    |                                                                     |
+| 1.1      | parameter name     | string | i.e. MyParameter                                                    |
+| 1.2      | data type          | string | "s" - string, "n" - number, "b" - boolean, "" - (empty string) null |
+| 1...     | list of 3-sets per parameter | n/a    |                                                                     |
+| 1.1      | parameter name     | string | i.e. MyParameter                                                    |
+| 1.2      | data type          | string | "s" - string, "n" - number, "b" - boolean, "" - (empty string) null |
+| 1.3      | value              | string | value serialized to string or empty string for null values          |
+
+**Example**
+
+Operation with fragments:
+
+```json
+{
+  "c8y_ParameterUpdate": {},
+  "c8y_ParameterUpdate_MyParameter": {},
+  "c8y_ParameterUpdate_DeviceMaintainer": {},
+  "c8y_ParameterUpdate_Problems": {},
+  "MyParameter": true,
+  "DeviceMaintainer": {
+    "name": "John Smithsky",
+    "contact": "12312"
+  },
+  "Problems": null
+}
+```
+
+Will result in the message:
+```text
+532,someSerial,MyParameter,b,true,DeviceMaintainer.name,s,John Smithsky,DeviceMaintainer.contact,s,12312,Problems,,
+```
+
+The maximum number of parameters is **100**. Operations containing more parameters cannot be pushed through this template.
 
 
 #### Platform capabilities templates (6xx) {#subscribe-platform-capabilities} 
