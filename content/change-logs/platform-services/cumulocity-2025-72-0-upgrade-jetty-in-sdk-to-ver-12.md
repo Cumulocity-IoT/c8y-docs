@@ -1,7 +1,7 @@
 ---
 date:
 title: Upgraded Jetty in Java SDK to version 12
-product_area: Application enablement & solutions
+product_area: Application enablement & solutions 
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
