@@ -8,7 +8,7 @@ sector:
 
 ### Dashboard {#dashboard}
 
-Dashboards are customizable views within [applications](#application) like the [Cockpit application](#cockpit-appplication), composed of various [widgets](#widget), used to visualize data, monitor [assets](#asset), and potentially trigger actions.   
+Dashboards are customizable views within [applications](#application) like the [Cockpit application](#cockpit-application), composed of various [widgets](#widget), used to visualize data, monitor [assets](#asset), and potentially trigger actions.   
 
 
 ### Data broker {#data-broker}
@@ -43,7 +43,7 @@ A device is a special type of asset](#asset) that represents a physical piece of
 
 ### Device agent {#device-agent}
 
-Device agents are software components that translate a device-specific communication [protocol](#device-protocol) into the standard {{< product-c8y-iot >}} REST or MQTT-based protocol, enabling secure, bi-directional communication. Device agents can be deployed on the [device](#device) itself (for example, on a gateway) or run as server-side [microservices](#microservice) within the {{< product-c8y-iot >} platform.  
+Device agents are software components that translate a device-specific communication [protocol](#device-protocol) into the standard {{< product-c8y-iot >}} REST or MQTT-based protocol, enabling secure, bi-directional communication. Device agents can be deployed on the [device](#device) itself (for example, on a gateway) or run as server-side [microservices](#microservice) within the {{< product-c8y-iot >}} platform.  
 
 
 ### Device Management application {#device-management-application}
