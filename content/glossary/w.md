@@ -18,11 +18,9 @@ The {{< product-c8y-iot >}} Web SDK is a development framework that enables user
 
 ### Widgets {#widgets}
 
-tbd
+A widget is a configurable UI component that can be added to a {{< product-c8y-iot >}} [dashboard](#dashboard) to visualize IoT data. Widgets can display maps, images, graphs, tables, and other information such as [alarms](#alarm), [measurements](#measurement), and [events](#event).
 
 
 ### Wires (Analytics Builder) {#wires}
 
 In [Analytics Builder](#analytics-builder), wires are used to connect two or more [blocks](#blocks) with each other for data transfer between the output port of one block and the input port of another block.
-
-Wires are used to connect two or more [blocks](/glossary/b/#blocks) with each other. They are used for all data transfer between the output port of one block and the input port of another block.

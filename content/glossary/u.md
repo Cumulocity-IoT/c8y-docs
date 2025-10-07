@@ -14,4 +14,4 @@ An individual account within a {{< product-c8y-iot >}} [tenant](#tenant), identi
 
 ### User hierarchy {#user-hierarchy}
 
-An optional feature allowing the creation of hierarchical relationships between users. This enables parent users to manage their sub-users and delegate [permissions](#permission).  
+An optional feature allowing the creation of hierarchical relationships between [users](#user). This enables parent users to manage their sub-users and delegate [permissions](#permission).  

@@ -87,12 +87,6 @@ Software refers to software packages that can be remotely managed on a [device](
 * **API detailsTo review by R\&D:** Managed via Tenant API (POST /tenant/tenants/{tenantId}/applications) and Application API (POST /application/applications/{applicationId}/subscription). Microservices use GET /application/currentApplication/subscriptions to list subscribed tenants.  
 * **Sources:** [https://cumulocity.com/docs/enterprise-tenant/managing-tenants/\#subscribing-applications](https://cumulocity.com/docs/enterprise-tenant/managing-tenants/#subscribing-applications), [https://cumulocity.com/api/core/\#tag/Tenant-applications](https://cumulocity.com/api/core/#tag/Tenant-applications)
 --->
-<!---#### **Subtenant** {#subtenant}
+### **Subtenant** {#subtenant}
 
-* **Status:** New  
-* **Review status:**  **Review in progress**    
-* **Description:** A tenant created and managed under a parent tenant (either an Enterprise tenant or the Management tenant) within the Cumulocity tenant hierarchy. Also known as “Child Tenant.”   
-* **Related terms:** Tenant, Tenant hierarchy, Enterprise tenant, Management tenant  
-* **API detailsTo review by R\&D:** Subtenants are created and managed via the Tenant API (/tenant/tenants) by an administrator of a parent Enterprise or Management tenant.  
-* **Sources:** [https://cumulocity.com/docs/concepts/tenant-hierarchy/](https://cumulocity.com/docs/concepts/tenant-hierarchy/)
---->
+A subtenant is a [tenant](#tenant) created and managed under a parent tenant (either an [{{< enterprise-tenant >}}](#enterprise-tenant) or the [{{< management-tenant >}}](#management-tenant)) within the {{< product-c8y-iot >}} [tenant hierarchy](#tenant-hierarchy). 

@@ -15,27 +15,18 @@ Edge Server is an informal term for {{< product-c8y-iot >}} Edge. See [{{< produ
 
 An {#enterprise-tenant} is a [tenant](#tenant) type in the {{< product-c8y-iot >}} [tenant hierarchy](#tenant-hierachy) that provides advanced administrative capabilities, primarily focused on managing multiple [subtenants](#subtenants). An {{< enterprise-tenant >}} (sometimes also referred as “parent” tenant) can create, manage, and bill its own subtenants and enables features like custom [branding](#branding), custom domain names, and [user hierarchies](user-hierarchies).   
 
-<!---
-#### **Event**
 
-* **Status:** Existing  
-* **Review status:**  **To review by PM**    
-* **Description:** An event is a real-time, informational record from the IoT domain, representing an occurrence at a specific time. Alarms are a special type of event. Audit logs are security-relevant events. In Apama (Streaming Analytics), an "event" is the fundamental data structure for all interactions.  
-* **Related terms:** Alarm, Audit log, Cumulocity operational store, Device, Measurement, Real-time processing  
-* **API detailsTo review by R\&D:** Events are managed via the Event API (/event/events). Key properties include type, time, text, and source. When creating an event via REST, the X-Cumulocity-Processing-Mode header can be set to TRANSIENT to have the event processed by the real-time engine without being persisted.  
-* **Sources:** [https://cumulocity.com/docs/concepts/domain-model/\#events](https://cumulocity.com/docs/concepts/domain-model/#events), [https://cumulocity.com/api/core/\#tag/Events](https://cumulocity.com/api/core/#tag/Events)
+### Event {#event}
 
-## Event {#event}
+An event is a real-time, informational record from the [IoT domain](#domain-model), representing an occurrence at a specific time.
 
-In the context of {{< product-c8y-iot >}}:
+In [Apama](#apama) ([Streaming Analytics](#streaming-analytics)), an event is the fundamental data structure for all interactions.
 
-Events contain real-time information from the sensor network, such as the triggering of a door sensor. Events can also be [alarms](/glossary/a/#alarm). In addition, security-related events are shown as audit logs.
+{{< c8y-admon-info >}}
+- [Alarms](#alarm}) are a special type of event.
+- [Audit logs](#audit-log) are security-relevant events.
+{{< /c8y-admon-info >}}
 
-In the context of Apama:
-
-Conceptually, an event is an occurrence of a particular item of interest at a specific time.
-Apama events are used for all interactions with {{< product-c8y-iot >}}, such as listening for and creating device measurements, alarms and ({{< product-c8y-iot >}}) events.
---->
 
 ### EPL (Event Processing Language) {#epl}
 
