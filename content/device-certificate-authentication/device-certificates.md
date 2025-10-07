@@ -421,17 +421,17 @@ If administrators cannot carry out this process on their own for organizational 
 If you suspect or confirm that a device certificate has been compromised, follow the steps below:
 
 1. **Revoke the Compromised Certificate**
-    - Add the certificate to the Certificate Revocation List (CRL) maintained by Cumulocity Platform.
+    - Add the certificate to the [Certificate Revocation List](/device-certificate-authentication/managing-trusted-certificate-settings/#crl-settings) maintained by {{< product-c8y-iot >}}.
     - The certificate itself will remain untouched until an investigation can be completed.
 2. **Prevent the compromised device from connecting to IoT services (MQTT broker, HTTPS**
     - deviceAccessToken API.
 3. **Disable the device user**
-    - This will disconnect the device from the IoT platform but leave the certificate untouched until an investigation can be done.
+    - This will disconnect the device from the {{< product-c8y-iot >}} but leave the certificate untouched until an investigation can be done.
     - If not compromised:** Re-enable the device user. The device will reconnect using its existing certificate.
     - If compromised:** Revoke the certificate to prevent any further use of it.
 4. **Provision a New Certificate**
     - Generate a new certificate for the device.
-    - Using the existing CA certificate which is owned by Cumulocity Platform generate a new certificate for the device.
+    - Using the existing CA certificate which is owned by {{< product-c8y-iot >}} generate a new certificate for the device.
     - Update the device to use the new certificate for authentication.
 
 #### What to do when the enrollment process has been compromised?
@@ -460,8 +460,8 @@ If such a situation occurs, proceed with the following steps:
 If you suspect or confirm that a CA (Certificate Authority) certificate has been compromised, follow the steps below:
 
 1. **Revoke the Compromised CA Certificate**
-    - Add the compromised CA certificate to the Certificate Revocation List (CRL) using the CRL API.
-    - Note: This action is effective only if the tenant has offline CRL check enabled in the Cumulocity Platform.
+    - Add the compromised CA certificate to the [Certificate Revocation List](/device-certificate-authentication/managing-trusted-certificate-settings/#crl-settings) using the CRL API.
+    - Note: This action is effective only if the tenant has offline CRL check enabled in the {{< product-c8y-iot >}}.
     - The CA certificate itself remains in the system until the next step.
 2. **Delete the Compromised CA**
     - Remove the compromised CA certificate from the tenant.
@@ -471,7 +471,7 @@ If you suspect or confirm that a CA (Certificate Authority) certificate has been
     - A new key pair will be created automatically during this process.
     - Use this new CA to issue device certificates going forward.
 4. **Reprovision Devices**
-    - All device certificates previously signed by the compromised CA will no longer be trusted by the Cumulocity Platform.
+    - All device certificates previously signed by the compromised CA will no longer be trusted by the {{< product-c8y-iot >}}.
     - Devices using these certificates will be unable to connect via any communication channel, such as MQTT or deviceAccessToken API.
     - Re-enroll affected devices using certificates issued by the new CA.
 
