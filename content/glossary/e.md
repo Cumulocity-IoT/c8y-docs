@@ -18,14 +18,11 @@ An {#enterprise-tenant} is a [tenant](#tenant) type in the {{< product-c8y-iot >
 
 ### Event {#event}
 
-An event is a real-time, informational record from the [IoT domain](#domain-model), representing an occurrence at a specific time.
-
-In [Apama](#apama) ([Streaming Analytics](#streaming-analytics)), an event is the fundamental data structure for all interactions.
-
-{{< c8y-admon-info >}}
-- [Alarms](#alarm}) are a special type of event.
+A {{< product-c8y-iot >}} event is a time-stamped informational record that transmits real-time information on any state change of a [device](#device) or [asset](#asset).
+Next to {{< product-c8y-iot >}} events, the following types of events are used within the {{< product-c8y-iot >}} platform:
+- In [Apama](#apama) ([Streaming Analytics](#streaming-analytics)), an "event" is the fundamental data structure for all interactions.
+- [Alarms](#alarm) are a special type of event.
 - [Audit logs](#audit-log) are security-relevant events.
-{{< /c8y-admon-info >}}
 
 
 ### EPL (Event Processing Language) {#epl}
@@ -44,4 +41,4 @@ Export is a feature of the [Cockpit application](#cockpit-application) that allo
 
 ### Extensions {#extensions}
 
-Extensions are official or community-supported packages that add new functionalities to the platform. They can include plugins, which add features to existing [applications](#application) at runtime, or blueprints, which are combinations of preconfigured UI functionalities for creating new applications.   
+Extensions are official or community-supported packages that add new functionalities to the {{< product-c8y-iot >}} platform. They can include plugins, which add features to existing [applications](#application) at runtime, or blueprints, which are combinations of preconfigured UI functionalities for creating new applications. 

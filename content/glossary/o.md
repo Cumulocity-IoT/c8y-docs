@@ -13,7 +13,7 @@ An offloading pipeline is a configurable job within [{{< product-c8y-iot >}} Dat
 
 ### Operation {#operation}
 
-Operations are instructions sent to a [device](#device) or [asset](#asset) to perform a specific action, such as control, configuration, or maintenance. Operations are linked to a source [managed object](#managed-object), and are delivered asynchronously via {{< product-c8y-iot >}}’s reliable queuing mechanism. Devices execute operations and report results back, enabling consistent remote management and automation. Typical operations include installing a new [firmware](#firmware), switching a relay in a power meter or sending a credit to a vending machine.  
+Operations are instructions sent to a [device](#device) or [asset](#asset) to perform a specific action, such as control, configuration, or maintenance. Operations are linked to a source [managed object](#managed-object), and are delivered asynchronously via {{< product-c8y-iot >}}’s reliable queuing mechanism. Devices execute operations and report results back, enabling consistent remote management and automation. Typical operations include installing a new firmware, switching a relay in a power meter or sending a credit to a vending machine.  
 
 
 ### Owner {#owner}

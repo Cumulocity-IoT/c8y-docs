@@ -56,41 +56,29 @@ A measurement is a time-stamped reading or statistic collected from a sensor or 
 Microfrontend refers to an architectural style for [web applications](web-application) where the UI is decomposed into smaller, independently deployable [applications](#application) or plugins. {{< product-c8y-iot >}}'s web UI is built on this architecture with the [Web SDK](web-sdk), allowing a "shell" application (like [Cockpit](#cockpit-application)) to be extended by loading "remote" modules (plugins) from other web applications.  
 
 
-<!---
-#### **Microservice** {#microservice}
+### Microservice {#microservice}
 
-* **Status:** Existing  
-* **Review status:**  **Review in progress**    
-* **Description:** Microservices are server-side applications that extend Cumulocity’s functionality, typically by implementing backend business logic or enabling integration with external systems. They are fully integrated into Cumulocity’s hosting, security, and API management, and can be designed to be highly available, scalable, and multi-tenant. Microservices are server-side applications, packaged as Docker containers, that extend Cumulocity's functionality. A key architectural requirement for Cumulocity microservices is statelessness; all persistent data must be stored on the platform via APIs to ensure scalability and resilience.  
+Microservices are server-side [applications](#application) that extend {{< product-c8y-iot >}}’s functionality, typically by implementing backend business logic or enabling integration with external systems. They are fully integrated into {{< product-c8y-iot >}}’s hosting, security, and API management, and can be designed to be highly available, scalable, and [multi-tenant](#multi-tenancy).
 
 
-#### **Microservice manifest (cumulocity.json)** {#microservice-manifest-(cumulocity.json)}
+### Microservice manifest {#microservice-manifest}
 
-* **Status:** New  
-* **Review status:**  **To review by PM**    
-* **Description:** A required JSON file (cumulocity.json) included within a microservice package. It provides the necessary metadata for the platform to manage the microservice's deployment, lifecycle, and integration.   
-* **Related terms:** Microservice, Application, Isolation level, Liveness probe, Readiness probe  
+A microservice manifest is a required JSON file (*cumulocity.json*) included within a [microservice](#microservice) package. It provides the necessary metadata for the platform to manage the microservice's deployment, lifecycle, and integration.   
 
 
-#### **Microservice SDK** {#microservice-sdk}
+### Microservice SDK {#microservice-sdk}
 
-* **Status:** New  
-* **Review status:**  **To review by PM**    
-* **Description:** The Cumulocity Microservice SDK is a set of tools, libraries, and documentation that helps developers build custom microservices more efficiently. For Java, Cumulocity provides a dedicated SDK with Spring Boot integration. The SDK streamlines development by offering built-in authentication against the platform and robust context management, enabling secure, multi-tenant-aware applications. At the same time, microservices can be developed in any programming language, as long as they are packaged as Docker containers and comply with the platform’s requirements.A set of tools, libraries, and documentation provided by Cumulocity to aid developers in creating custom microservices. Cumulocity provides a dedicated Java SDK with Spring Boot integration, but microservices can be developed in any language as long as they are packaged as a Docker container and adhere to the platform's requirements.  
-* **Related terms:** Microservice  
+The {{< product-c8y-iot >}} Microservice SDK is a set of tools, libraries, and documentation that helps developers build custom [microservices](#microservice) efficiently. For Java, {{< product-c8y-iot >}} provides a dedicated SDK with Spring Boot integration. The SDK streamlines development by offering built-in authentication against the platform and robust context management, enabling secure, multi-tenant-aware [applications](#application). At the same time, microservices can be developed in any programming language, as long as they are packaged as Docker containers and comply with the platform’s requirements.
 
---->
 
 ### Model (Analytics Builder) {#model}
 
 In [Analytics Builder](#analytics-builder), a model is a visual representation of analytic logic created by connecting pre-built [blocks](block) via [wires](wires) in a drag-and-drop environment. Each block performs a specific function, and together they form a workflow that can transform, analyze, and act on incoming data. A model can be designed as a reusable template model, which uses placeholders instead of fixed values. When you provide specific values for these placeholders, you create a runnable model instance.  
 
 <!---
-#### **Multi-tenancy**
+### Multi-tenancy {#multi-tenancy}
 
-* **Status:** Existing  
-* **Review status:**  **To review by PM**    
-* **Description:** An architecture in which a single instance of a software application serves multiple customers (tenants). In Cumulocity, each tenant has a physically separated data space. Data sharing between tenants is disabled by default and must be explicitly configured (for example, using the data broker).  
-* **Related terms:** Tenant, Enterprise tenant  
+An architecture in which a single instance of a software application serves multiple customers (tenants). In Cumulocity, each tenant has a physically separated data space. Data sharing between tenants is disabled by default and must be explicitly configured (for example, using the data broker).  
+* **Related terms:** Tenant, Enterprise tenant
 
---->
+--->   

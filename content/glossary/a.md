@@ -74,8 +74,7 @@ Authentication is the process of verifying the identity of a [user](#user), [dev
 
 Authorization is the process of determining whether an [authenticated](#authentication) identity (user, device, or application) has the necessary [permissions](#permissions) to access a specific resource or perform a particular action. Authorization in {{< product-c8y-iot >}} is managed through a [Role-Based Access Control (RBAC)](#rbac) model, in which permissions are bundled into [global roles](#global-roles) and [inventory roles](#inventory-roles).  
 
-<!---
+
 ### Availability {#availability}
-**To review by PM**
-A feature that monitors the connection status of a [device](#device) to indicate whether it is ONLINE, OFFLINE, or its status is UNKNOWN. This status is determined by device communication patterns, such as the periodic sending of data or the maintenance of a push connection, and can be configured with a required interval using the `c8y\_RequiredAvailability` fragment.
----> 
+
+Availability refers to the monitoring of the connection status of a [device](#device) to indicate whether it is ONLINE, OFFLINE, or its status is UNKNOWN. This status is determined by device communication patterns, such as the periodic sending of data or the maintenance of a push connection, and can be configured with a required interval using the `c8y\_RequiredAvailability` fragment.
