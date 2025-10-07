@@ -12,7 +12,7 @@ CCU (Cumulocity Compute Unit) is a standardized measure for computational resour
 
 ### Change logs {#change-logs}
 
-Change logs are the official record of {{< product-c8y-iot >}} product changes and announcements, published for all cloud deployments, detailing updates such as new features, improvements, and API changes or deprecations. Corresponds to the [release notes](#release-notes) in the [Yearly releases](#yearly-release).
+Change logs are the official record of {{< product-c8y-iot >}} product changes and announcements, published for all cloud deployments ([Continous Deployment](#continuous-deployment)), detailing updates such as new features, improvements, and API changes or deprecations. Corresponds to the [release notes](#release-notes) in the [Yearly releases](#yearly-release).
 
 
 ### Child asset {#child-asset}
@@ -45,7 +45,7 @@ The configuration management feature allows administrators and [applications](#a
 
 The connection monitoring feature allows identifying [devices](#device) that have stopped communicating with the {{< product-c8y-iot >}} platform. The connection status (ONLINE/OFFLINE) is determined by monitoring device heartbeats or tracking the status of a persistent push connection.  
 
-### Continuous Deployment model {#continuous-deployment-model}
+### Continuous Deployment model {#continuous-deployment}
 
 In the {{< product-c8y-iot >}} Continuous Deployment (CD) model, the different components of the {{< product-c8y-iot >}} platform are updated on a continuous basis. This means a frequent deployment of small incremental improvements. The changes are communicated via the [change logs](#change-log).
 
@@ -61,12 +61,12 @@ See also [Private Preview](#private-preview), [Public Preview](#public-preview) 
 
 ### {{< product-c8y-iot >}} Core {#core}
 
-* **Description:** {{< product-c8y-iot >}} Core is the foundation of the {{< product-c8y-iot >}} platform. It comprises all major components such as the default [applications](#application) ([Administration](#adminstration-application), [Cockpit](#cockpit-application) and [Device Management](#device-management-application)), the [{{< product-c8y-iot >}} operational store](#operational-store), [microservices](#microservice), security, [REST API](#rest-api), MQTT API, and [smart rules](#smart-rules).  
+{{< product-c8y-iot >}} Core is the foundation of the {{< product-c8y-iot >}} platform. It comprises all major components such as the default [applications](#application) ([Administration](#administration-application), [Cockpit](#cockpit-application) and [Device Management](#device-management-application)), the [{{< product-c8y-iot >}} operational store](#operational-store), [microservices](#microservice), security, [REST API](#rest-api), MQTT API, and [smart rules](#smart-rules).  
 
 
 ### {{< product-c8y-iot >}} DataHub {#datahub}
 
-{{< product-c8y-iot >}} Datahub is a {{< product-c8y-iot >}} [application](#application) for offloading a large amount of data from the [{{< product-c8y-iot >}} operational store](#operational-store) to a [data lake](data-lake) and querying the data lake contents.
+{{< product-c8y-iot >}} Datahub is a {{< product-c8y-iot >}} [application](#application) for offloading a large amount of data from the [{{< product-c8y-iot >}} operational store](#operational-store) to a [data lake](#data-lake) and querying the data lake contents.
 
 For details, see [Analytics > DataHub](/datahub/datahub-overview/) in the documentation.
 
@@ -80,7 +80,7 @@ The {{< product-c8y-iot >}} Developer Codex is {{< product-c8y-iot >}}'s compreh
 
 {{< product-c8y-iot >}} Edge is the onsite solution of {{< product-c8y-iot >}} intended to run as a local software application on industrial PC’s or local servers.
 
-For details, see [Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/) in the documentation.
+For details, see [Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/k8-edge-introduction/) in the documentation.
 
 
 ### {{< openapi >}} {#openapi-specification}
@@ -102,6 +102,6 @@ For details, see [{{< sensor-app >}}](/sensor-app/sensorapp-introduction/) in th
 
 ### {{< product-c8y-iot >}} Streaming Analytics {#streaming-analytics}
 
-The {{< product-c8y-iot >}} Streaming Analytics [application](#application) allows users to add their own logic for the immediate, real-time processing of incoming data. Users can build [Analytics Builder](#analytics-builder) [models](#model) or write custom [EPL Apps](#epl-apps) to analyze data streams, generate new data, create [alarms](#alarm), or trigger [operations](#operation) on [devices](#device).  
+The {{< product-c8y-iot >}} Streaming Analytics application allows users to add their own logic for the immediate, real-time processing of incoming data. Users can build [Analytics Builder](#analytics-builder) [models](#model) or write custom [EPL Apps](#epl-apps) to analyze data streams, generate new data, create [alarms](#alarm), or trigger [operations](#operation) on [devices](#device).  
 
 For details, see [Analytics > Streaming Analytics](/streaming-analytics/introduction-analytics/) in the documentation.

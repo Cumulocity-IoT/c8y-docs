@@ -8,7 +8,7 @@ sector:
 
 ### Administration application {#administration-application}
 
-The Administration application is a default {{< product-c8y-iot >}} application that serves as the central management console for platform administrators. It is used to govern a [tenant](#tenant) by managing [users](#user), roles, and [permissions](#permissions), subscribing to and managing [application](#application) and [microservices](#microservice), and configuring tenant-level settings such as retention rules, custom properties, and [branding](#branding).   
+The Administration application is a default {{< product-c8y-iot >}} application that serves as the central management console for platform administrators. It is used to govern a [tenant](#tenant) by managing [users](#user), roles, and [permissions](#permission), subscribing to and managing [application](#application) and [microservices](#microservice), and configuring tenant-level settings such as retention rules, custom properties, and [branding](#branding).   
 
 
 ### Alarm {#alarm}
@@ -18,19 +18,19 @@ An alarm is a specific type of [event](#event) that indicates a situation requir
 
 ### Analytics Builder {#analytics-builder}
 
-The Analytics Builder is a tool in the [{{< product-c8y-iot >}} Streaming Analytics](#cumulocity-streaming-analytics) application for designing real-time analytics models in a graphical, drag-and-drop environment. By combining pre-built [blocks](#blocks), you can quickly build [models](#model-analytics-builder) to transform streaming IoT data, generate new data, create alerts, or trigger device operations.  
+The Analytics Builder is a tool in the [{{< product-c8y-iot >}} Streaming Analytics](#streaming-analytics) application for designing real-time analytics models in a graphical, drag-and-drop environment. By combining pre-built [blocks](#blocks), you can quickly build [model](#model) to transform streaming IoT data, generate new data, create alerts, or trigger device [operations](#operation).  
 
 For details, see the [Analytics Builder](/streaming-analytics/analytics-builder/) documentation.
 
 
 ### Apama {#apama}
 
-Apama is the high-performance event processing engine that powers [{{< product-c8y-iot >}} Streaming Analytics](#cumulocity-streaming-analytics). It enables [real-time data processing](#real-time-processing) behind the scenes, forming the foundation for [smart rules](#smart-rules), [Analytics Builder´s](#analytics-builder) drag-and-drop models as well as custom [EPL apps](#epl-apps).
+Apama is the high-performance event processing engine that powers [{{< product-c8y-iot >}} Streaming Analytics](#streaming-analytics). It enables real-time data processing behind the scenes, forming the foundation for [smart rules](#smart-rules), [Analytics Builder´s](#analytics-builder) drag-and-drop models as well as custom [EPL apps](#epl-apps).
 
 
 ### Application {#application}
 
-An application is a component integrated with the platform that delivers user interfaces (= [web application](#web-applications)), business logic (= [microservice](#microservice)), or both, to enable, extend, or customize IoT solutions. Applications bridge device data with user workflows and business processes, supporting use cases such as remote monitoring, predictive maintenance, asset tracking, and smart automation. {{< product-c8y-iot >}}'s application enablement tools empower both business users and developers to build and deploy custom applications.
+An application is a component integrated with the platform that delivers user interfaces (= [web application](#web-applications)), business logic (= [microservice](#microservice)), or both, to enable, extend, or customize IoT solutions. Applications bridge device data with user workflows and business processes, supporting use cases such as remote monitoring, predictive maintenance, [asset](#asset) tracking, and smart automation. {{< product-c8y-iot >}}'s application enablement tools empower both business users and developers to build and deploy custom applications.
 
 For details, see [Application enablement](/app-intro/applications/) in the documentation.
 
@@ -42,17 +42,17 @@ The application switcher is a UI component that shows all {{< product-c8y-iot >}
 
 ### Asset {#asset}
 
-An asset is the digital representation of a business object within the {{< product-c8y-iot >}} [inventory](#inventory), such as a machine, building, or vehicle. Technically, an asset is a [managed object](#managed-object) that can be structured into a logical hierarchy (the [asset hierarchy](#asset-hierarchy)) using child asset relationships. Assets can take several forms: simple [groups](#group) used for organization, [devices](#device) that send telemetry data, or complex custom assets defined by an [asset model](#asset-model) in the [Digital Twin Manager (DTM)](#digital-twin-manager-dtm).  
+An asset is the digital representation of a business object within the {{< product-c8y-iot >}} [inventory](#inventory), such as a machine, building, or vehicle. Technically, an asset is a [managed object](#managed-object) that can be structured into a logical hierarchy (the [asset hierarchy](#asset-hierarchy)) using child asset relationships. Assets can take several forms: simple [groups](#group) used for organization, [devices](#device) that send telemetry data, or complex custom assets defined by an [asset model](#asset-model) in the [Digital Twin Manager (DTM)](#dtm).  
 
 
 ### Asset hierarchy {#asset-hierarchy}
 
-An asset hierarchy is a structure within the [inventory](#inventory) that organizes [assets](#asset) (based on [asset models](#asset-model)) and [devices](#device) to reflect their logical or business relationships, such as a factory containing production lines, which in turn contain individual machines. The asset hierarchy is built by nesting assets with one another to form parent-child relationships ([child assets](#child-assets)). It is fundamentally distinct from the [communication hierarchy](#communication-hierarchy), which models the physical network topology ([child devices](#child-devices)).  
+An asset hierarchy is a structure within the [inventory](#inventory) that organizes [assets](#asset) (based on [asset models](#asset-model)) and [devices](#device) to reflect their logical or business relationships, such as a factory containing production lines, which in turn contain individual machines. The asset hierarchy is built by nesting assets with one another to form parent-child relationships ([child assets](#child-asset)). It is fundamentally distinct from the [communication hierarchy](#communication-hierarchy), which models the physical network topology ([child devices](#child-device)).  
 
 
 ### Asset model {#asset-model}
 
-An asset model is a reusable blueprint defined in the [Digital Twin Manager (DTM)](#digital-twin-manager-dtm) that specifies the structure, properties, and relationships of a particular type of [asset](#asset). It includes a unique key and label, [asset properties](#asset-properties), and optionally references to [child asset](#child-asset) models to support the composition of [asset hierarchies](#asset-hierarchy) (for example, a wind turbine model composed of rotor and tower sub-models). Once published, an asset model governs how assets of that type are created, validated, and visualized across {{< product-c8y-iot >}} [applications](#application).  
+An asset model is a reusable blueprint defined in the [Digital Twin Manager (DTM)](#dtm) that specifies the structure, properties, and relationships of a particular type of [asset](#asset). It includes a unique key and label, [asset properties](#asset-properties), and optionally references to [child asset](#child-asset) models to support the composition of [asset hierarchies](#asset-hierarchy) (for example, a wind turbine model composed of rotor and tower sub-models). Once published, an asset model governs how assets of that type are created, validated, and visualized across {{< product-c8y-iot >}} [applications](#application).  
 
 
 ### Asset properties {#asset-properties}
@@ -72,7 +72,7 @@ Authentication is the process of verifying the identity of a [user](#user), [dev
 
 ### Authorization {#authorization}
 
-Authorization is the process of determining whether an [authenticated](#authentication) identity (user, device, or application) has the necessary [permissions](#permissions) to access a specific resource or perform a particular action. Authorization in {{< product-c8y-iot >}} is managed through a [Role-Based Access Control (RBAC)](#rbac) model, in which permissions are bundled into [global roles](#global-roles) and [inventory roles](#inventory-roles).  
+Authorization is the process of determining whether an [authenticated](#authentication) identity ([user](#user), [device](#device), or [application](#application)) has the necessary [permissions](#permission) to access a specific resource or perform a particular action. Authorization in {{< product-c8y-iot >}} is managed through a [Role-Based Access Control (RBAC)](#rbac) model, in which permissions are bundled into [global roles](#global-role) and [inventory role](#inventory-roles).  
 
 
 ### Availability {#availability}

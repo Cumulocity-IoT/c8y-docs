@@ -18,7 +18,7 @@ The data broker functionality is an optional feature in {{< enterprise-tenant >}
 
 ### Data explorer {#data-explorer}
 
-The data explorer is a visualization tool for exploring, comparing, and analyzing IoT data — such as [measurements](#measurement), [alarms](#alarm), and [events](#event) — from specific [assets](#asset) or across all assets.  
+The data explorer is a visualization tool for exploring, comparing, and analyzing IoT data, such as [measurements](#measurement), [alarms](#alarm), and [events](#event), from specific [assets](#asset) or across all assets.  
 
 
 ### Data lake {#data-lake}
@@ -28,7 +28,7 @@ Data lakes are used in the context of [{{< product-c8y-iot >}} DataHub](#datahub
 
 ### Data point {#data-point}
 
-A data point is a configuration that defines how a specific [measurement](#measurement) time series is visualized in UI views like the [data explorer](#data explorer) and [dashboards](#dashboard). Data points define how a measurement stream is displayed, including its label, color, unit, and threshold ranges. These settings can be customized in the UI or templated in the [data point library](#data-point-library).  
+A data point is a configuration that defines how a specific [measurement](#measurement) time series is visualized in UI views like the [data explorer](#data-explorer) and [dashboards](#dashboard). Data points define how a measurement stream is displayed, including its label, color, unit, and threshold ranges. These settings can be customized in the UI or templated in the [data point library](#data-point-library).  
 
 
 ### Data point library {#data-point-library}
