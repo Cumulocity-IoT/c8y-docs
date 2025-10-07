@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data points are pre-filled in the new **Measurements** tab
+title: Data points are pre-filled in the Measurements tab
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
