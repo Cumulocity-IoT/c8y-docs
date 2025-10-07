@@ -1,5 +1,5 @@
 ---
-weight: 170
+weight: 180
 title: W
 layout: bundle
 sector:
@@ -8,37 +8,19 @@ sector:
 
 ### Web applications {#web-applications}
 
-A {{< product-c8y-iot >}} web application can be:
-
-* a user interface application built on any web framework of your choice or
-* a user interface application built using the {{< product-c8y-iot >}} user interface framework as a set of user interface plugins.
-
-All subscribed web applications are hosted by {{< product-c8y-iot >}} and the application will be made available through a URL like this: <tenant>.cumulocity.com/apps/<application>.
-
-See also [Platform administration > {{< standard-tenant >}} administration > Managing the ecosystem](/standard-tenant/ecosystem/).
+A {{< product-c8y-iot >}} web application is a browser-based [application](#application) hosted on the {{< product-c8y-iot >}} platform. This includes the official {{< product-c8y-iot >}} applications (such as [Cockpit](#cockpit), [Device Management](#device-management), [Administration](#administration), and [Streaming Analytics](#cumulocity-streaming-analytics)), as well as custom applications built by customers, optionally using the [{{< product-c8y-iot >}} Web SDK](#web-sdk).
 
 
 ### Web SDK {#web-sdk}
 
-The {{< product-c8y-iot >}} Web SDK enables you to develop web applications that can be:
-
-* deployed to the platform,
-* communicate authenticated with our API,
-* apply default or
-* branded UI components to your custom application.
-
-For details see the [Application enablement & solutions > Web SDK](/web/introduction/).
+The {{< product-c8y-iot >}} Web SDK is a development framework that enables users to build extensions or [web applications](#web-applications) for deployment on the {{< product-c8y-iot >}} platform. It provides secure API access, access to default UI components, and support for custom [branding](#branding), allowing developers to create tailored [applications](#application) that seamlessly integrate with the platform's ecosystem and maintain a consistent user experience.
 
 
 ### Widgets {#widgets}
 
-Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports. {{< product-c8y-iot >}} provides preset widget types for various purposes.
-
-For details see [Application enablement & solutions > Cockpit > Widgets collection](/cockpit/widgets-collection) and [Application enablement & solutions > Cockpit > Using widgets in dashboards and reports](/cockpit/using-widgets).
+A widget is a configurable UI component that can be added to a {{< product-c8y-iot >}} [dashboard](#dashboard) to visualize IoT data. Widgets can display maps, images, graphs, tables, and other information such as [alarms](#alarm), [measurements](#measurement), and [events](#event).
 
 
-### Wires {#wires}
+### Wires (Analytics Builder) {#wires}
 
-Used in the context of [Analytics Builder](/glossary/a/#analytics-builder).
-
-Wires are used to connect two or more [blocks](/glossary/b/#blocks) with each other. They are used for all data transfer between the output port of one block and the input port of another block.
+In [Analytics Builder](#analytics-builder), wires are used to connect two or more [blocks](#blocks) with each other for data transfer between the output port of one block and the input port of another block.
