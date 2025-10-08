@@ -1,6 +1,6 @@
 ---
 date: ""
-title: adjust asset selector miller header size (#10018) [GRAFT][release/cd] (#10045)
+title: Asset selector miller header size adjusted
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
