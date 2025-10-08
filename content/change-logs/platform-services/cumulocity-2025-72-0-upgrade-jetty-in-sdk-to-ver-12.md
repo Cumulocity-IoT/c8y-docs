@@ -16,7 +16,9 @@ version: 2025.72.0
 ---
 
 The Jetty library version in the Java SDK was upgraded from version 11.0.24 to the most recent version 12.0.25. 
-This version is compatible with the current Spring Boot version 3.5.5 in the Java SDK. Detailed upgrade notes can be found
-in the official [Jetty migration documentation](https://jetty.org/docs/jetty/12.1/programming-guide/migration/11-to-12.html).
+This version is compatible with the current Spring Boot version 3.5.5 in the Java SDK.
+No impact is expected on microservice code using standard Microservice SDK features.
+For microservices that use advanced customization of the Jetty server configuration we would advise referring to the official 
+ [migration guide from Jetty 11.0.x to Jetty 12.0.x ](https://jetty.org/docs/jetty/12.1/programming-guide/migration/11-to-12.html).
 
 
