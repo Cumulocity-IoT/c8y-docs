@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add support for new audit type `TenantCertificateAuthority` (#9914) [GRAFT][release/cd] (#10075)
+title: 'Add a new audit log type "Tenant certificate authority"'
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
