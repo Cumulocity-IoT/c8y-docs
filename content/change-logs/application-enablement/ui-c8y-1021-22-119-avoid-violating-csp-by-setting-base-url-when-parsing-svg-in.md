@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix content security policy issue in SCADA widget
+title: Fixed content security policy issue in SCADA widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
