@@ -13,13 +13,14 @@ A tenant represents a logically isolated data space within {{< product-c8y-iot >
 
 ### Tenant domain {#tenant-domain}
 
-The tenant domain refers to the domain name used to access a {{< product-c8y-iot >}} [tenant](#tenant), in the format `<tenant-name\>.\<instance-name\>`. It is used for login and API access and is distinct from the tenant’s unique identifier ([tenant ID](#tenant-id)). For example, a tenant named "acme" on the instance cumulocity.com would have the tenant domain "acme.cumulocity.com". [Enterprise tenants](#enterprise-tenant) and their [subtenants](#subtenants) can optionally configure custom domains for access using the platform’s custom domain feature.  
+The tenant domain refers to the domain name used to access a {{< product-c8y-iot >}} [tenant](#tenant), in the format `<tenant-name\>.\<instance-name\>`. It is used for login and API access and is distinct from the tenant’s unique identifier ([tenant ID](#tenant-id)). For example, a tenant named "acme" on the instance cumulocity.com would have the tenant domain "acme.cumulocity.com". [Enterprise tenants](#enterprise-tenant) and their [subtenants](#subtenant) can optionally configure custom domains for access using the platform’s custom domain feature.  
 
 
 ### Tenant hierarchy {#tenant-hierarchy}
 
-The tenant hierachy refers to the structure organizing [tenants](#tenant) in {{< product-c8y-iot >}}, typically involving a [{{< management-tenant >}}](#management-tenant) at the top, [{{< enterprise-tenant >}}s](/glossary/e/#enterprise-tenant) below it, and [{{< standard-tenant >}}s](/glossary/s/#standard-tenant) at the lowest level.
+The tenant hierachy refers to the structure organizing [tenants](#tenant) in {{< product-c8y-iot >}}, involving a [{{< management-tenant >}}](#management-tenant) at the top, [{{< enterprise-tenant >}}s](#enterprise-tenant) below it, and [{{< standard-tenant >}}s](#standard-tenant) at the lowest level.
 
+For details, see [Tenant hierarchy](/concepts/tenant-hierarchy/) in the documentation.
 
 ### Tenant ID {#tenant-id}
 
@@ -33,7 +34,7 @@ Tenant options are configurable key-value pairs associated with a [tenant](#tena
 
 ### Tenant policy {#tenant-policy}
 
-Predefined sets of [tenant options](#tenant-options) and retention rules that can be created in a [{{< management-tenant >}}] or [{{< enterprise-tenant >}}] and applied when creating new [subtenant](#subtenant) to ensure consistent initial configurations.   
+Predefined sets of [tenant options](#tenant-options) and retention rules that can be created in a [{{< management-tenant >}}](#management-tenant) or [{{< enterprise-tenant >}}](#enterprise-tenant) and applied when creating new [subtenants](#subtenant) to ensure consistent initial configurations.   
 
 
 ### Tech Community {#tech-community}

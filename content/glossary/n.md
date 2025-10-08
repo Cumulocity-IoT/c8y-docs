@@ -1,6 +1,6 @@
 ---
 weight: 110
-title: N
+title: "N"
 layout: bundle
 sector:
   - getting_started

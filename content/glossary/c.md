@@ -28,7 +28,7 @@ Child devices denote a relationship type within the {{< product-c8y-iot >}} [inv
 
 The Cockpit application is one of the default [applications](#application) of {{< product-c8y-iot >}}. It provides a self-service UI to manage and monitor IoT assets and data from a business perspective, like managing [assets](#asset), visualizing data, working with [dashboards](#dashboard) and managing [reports](#report).   
 
-For details, see [Application enablement & solutions > Cockpit](/cockpit/) in the documentation.
+For details, see [Cockpit](/cockpit/) in the documentation.
 
 
 ### Communication hierarchy {#communication-hierarchy}
@@ -51,13 +51,12 @@ In the {{< product-c8y-iot >}} Continuous Deployment (CD) model, the different c
 
 See also [Private Preview](#private-preview), [Public Preview](#public-preview) and [General Availability](#ga).
 
-<!---
-### Cumulocity CLI (Command Line Interface) {#cumulocity-cli}
 
- Review in progress    
-* **Description:** A software tool provided by Cumulocity that offers a command-line interface for interacting with the platform. It enables developers, administrators, and automation scripts to manage platform resources directly from a terminal.  
-* **Related terms:** REST API, Application, Device, User  
---->
+### {{< product-c8y-iot >}} CLI (Command Line Interface) {#cumulocity-cli}
+
+The {{< product-c8y-iot >}} CLI (Command Line Interface) is a software tool provided by {{< product-c8y-iot >}} that offers a command-line interface for interacting with the platform. It enables developers, administrators, and automation scripts to manage platform resources directly from a terminal. See also the [CLI documentation](https://goc8ycli.netlify.app/docs/introduction/).
+
+ 
 
 ### {{< product-c8y-iot >}} Core {#core}
 

@@ -13,7 +13,7 @@ Edge Server is an informal term for {{< product-c8y-iot >}} Edge. See [{{< produ
 
 ### {{< enterprise-tenant >}} {#enterprise-tenant}
 
-An {#enterprise-tenant} is a [tenant](#tenant) type in the {{< product-c8y-iot >}} [tenant hierarchy](#tenant-hierachy) that provides advanced administrative capabilities, primarily focused on managing multiple [subtenants](#subtenants). An {{< enterprise-tenant >}} (sometimes also referred as “parent” tenant) can create, manage, and bill its own subtenants and enables features like custom [branding](#branding), custom domain names, and [user hierarchies](user-hierarchies).   
+An {{< enterprise-tenant >}} is a [tenant](#tenant) type in the {{< product-c8y-iot >}} [tenant hierarchy](#tenant-hierarchy) that provides advanced administrative capabilities, primarily focused on managing multiple [subtenants](#subtenant). An {{< enterprise-tenant >}} (sometimes also referred as “parent” tenant) can create, manage, and bill its own subtenants and enables features like custom [branding](#branding), custom domain names, and [user hierarchies](#user-hierarchy).   
 
 
 ### Event {#event}
@@ -41,4 +41,4 @@ Export is a feature of the [Cockpit application](#cockpit-application) that allo
 
 ### Extensions {#extensions}
 
-Extensions are official or community-supported packages that add new functionalities to the {{< product-c8y-iot >}} platform. They can include plugins, which add features to existing [applications](#application) at runtime, or blueprints, which are combinations of preconfigured UI functionalities for creating new applications. 
+Extensions are official or community-supported packages that add new functionalities to the {{< product-c8y-iot >}} platform. They can include plugins, which add features to existing [applications](#application) at runtime, or blueprints, which are combinations of preconfigured UI functionalities for creating new applications.

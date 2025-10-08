@@ -38,7 +38,7 @@ The data point library provides a collection of templates used to standardize th
 
 ### Device {#device}
 
-A device is a special type of asset](#asset) that represents a physical piece of equipment connected to the {{< product-c8y-iot >}} platform. In the [inventory](#inventory), a device is represented as a [managed object](#managed-object) that is marked with the `c8y\_IsDevice` fragment, distinguishing it as an entity that can send data and receive [operations](#operation).  
+A device is a special type of [asset](#asset) that represents a physical piece of equipment connected to the {{< product-c8y-iot >}} platform. In the [inventory](#inventory), a device is represented as a [managed object](#managed-object) that is marked with the `c8y\_IsDevice` fragment, distinguishing it as an entity that can send data and receive [operations](#operation).  
 
 
 ### Device agent {#device-agent}

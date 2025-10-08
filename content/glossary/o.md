@@ -6,7 +6,7 @@ sector:
   - getting_started
 ---
 
-## Offloading pipeline {#offloading-pipeline}
+### Offloading pipeline {#offloading-pipeline}
 
 An offloading pipeline is a configurable job within [{{< product-c8y-iot >}} DataHub](#datahub) that defines the process of extracting data from a specific collection in the [operational store](#operational-store), transforming it, and loading it into a target table within a [data lake](#data-lake).  
 
