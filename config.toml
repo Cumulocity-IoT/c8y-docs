@@ -19,6 +19,16 @@ enableGitInfo = true
 [taxonomies]
   sectors = "sector"
 
+[outputs]
+  home = ["HTML", "llmstxt"]
+
+[outputFormats.llmstxt]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
+  suffixes = ["txt"]
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -59,11 +69,11 @@ enableGitInfo = true
 
   [[params.additionalResources]]
     name = "Tech Community"
-    link = "https://techcommunity.cumulocity.com/"
+    link = "https://community.cumulocity.com/"
 
   [[params.additionalResources]]
     name = "Learning Portal"
-    link = "https://cumulocity.moodlecloud.com/"
+    link = "https://learning.cumulocity.com/"
 
   [[params.additionalResources]]
     name = "YouTube"

@@ -76,6 +76,10 @@ jobs:
         hugo \
           --baseURL "${{ env.BASEURL }}/"
 
+    - name: Generate llms.txt
+      run: |
+        python scripts/llms_generate.py 
+
     - name: Set known SSH hosts
       run: |
         mkdir -p ~/.ssh/

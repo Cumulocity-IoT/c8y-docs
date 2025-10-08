@@ -33,7 +33,7 @@ The diagram above illustrates the end-to-end integration between a user's client
 In such a setup, we distinguish between the following participants and components:
 
 - A **{{< product-c8y-iot >}} user**, who wants to access an external service like a web server or SSH that is only reachable from a remote device.
-- The **client**. This often is a shell in the {{< product-c8y-iot >}} UI; alternatively it can be a forwarding proxy like [C8Y Cli]((https://goc8ycli.netlify.app/docs/examples/remoteaccess/)) or even a custom client application seeking access to the external service.
+- The **client**. This often is a shell in the {{< product-c8y-iot >}} UI; alternatively it can be a forwarding proxy like [C8Y Cli](https://goc8ycli.netlify.app/docs/examples/remoteaccess/) or even a custom client application seeking access to the external service.
 - The **Cloud Remote Access (CRA)** microservice at `/service/remoteaccess`.
 - The **{{< product-c8y-iot >}} Core platform** (see also the [{{< openapi >}} ](https://cumulocity.com/api/)).
 - The **device agent**. A common open-source agent is [thin-edge.io](https://thin-edge.io/).
