@@ -14,5 +14,5 @@ build_artifact:
 ticket: MTM-64077
 version: 2025.335.0
 ---
-Index utilization for time series measurements has been improved. The platform uses database indexes more efficiently when storing and
+The platform now uses database indexes more efficiently when storing and
 retrieving time series data. This reduces storage costs and increases performance.
