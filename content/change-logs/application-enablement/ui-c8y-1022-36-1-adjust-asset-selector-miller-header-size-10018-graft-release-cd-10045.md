@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64588
 version: 1022.36.1
 ---
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+The header size of the asset selector miller columns was not optimally aligned, leading to an inconsistent user experience. This change adjusts the header size of the asset selector miller columns to provide a cleaner and more consistent look and feel.
