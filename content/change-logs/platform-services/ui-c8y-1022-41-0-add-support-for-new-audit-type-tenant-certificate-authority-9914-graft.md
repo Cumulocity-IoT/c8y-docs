@@ -1,6 +1,6 @@
 ---
 date: ""
-title: 'Add a new audit log type "Tenant certificate authority"'
+title: Added a new audit log type "Tenant certificate authority"
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
