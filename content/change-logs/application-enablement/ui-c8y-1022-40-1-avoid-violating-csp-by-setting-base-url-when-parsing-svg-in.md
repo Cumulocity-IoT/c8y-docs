@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Avoid violating CSP by setting `base` URL when parsing SVG in legacy SCADA widget (#10025) [GRAFT][release/cd] (#10060)
+title: Fix content security policy issue in SCADA widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
