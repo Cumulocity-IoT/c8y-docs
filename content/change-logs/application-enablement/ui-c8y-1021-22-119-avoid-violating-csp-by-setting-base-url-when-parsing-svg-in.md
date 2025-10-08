@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64731
 version: 1021.22.119
 ---
-This change fixes an issue with SCADA widget that could have triggered browser's warning about suspicious behavior of the Cockpit (or other app where SCADA widget is displayed in a dashboard).
+The SCADA widget had an issue that could trigger a browser warning about suspicious behavior in applications like Cockpit where the widget is used in dashboards. With this fix, users should no longer see browser warnings related to content security policy violations caused by the SCADA widget.
