@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64626
 version: 1022.41.0
 ---
-In the context of enhancing the audit log capabilities, this change introduces a new audit log type called "Tenant certificate authority". With this addition, users can now view and filter audit logs related to tenant certificate authority events directly from the audit logs browser in the Administration application. This improvement provides better visibility and tracking of certificate authority related activities within a tenant, enabling administrators to monitor and analyze these specific events more effectively.
+In the context of enhancing the audit log capabilities, this change introduces a new audit log type called "Tenant certificate authority". With this addition, users can now view and filter audit logs related to tenant certificate authority events directly from the audit logs browser in the Administration application. This improvement provides better visibility and tracking of certificate authority-related activities within a tenant, enabling administrators to monitor and analyze these specific events more effectively.
