@@ -3,7 +3,7 @@ date: ""
 title: Data points are pre-filled in the Measurements tab
 product_area: Device management & connectivity
 change_type:
-  - value: change-QHu1GdukP
+  - value: change-pXAlHAWka
     label: Preview
 component:
   - value: component--KIsStyzM
