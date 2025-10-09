@@ -1,5 +1,5 @@
 ---
-date:
+date: '2025-10-09'
 title: Upgraded Jetty in Java SDK to version 12
 product_area: Application enablement & solutions
 change_type:

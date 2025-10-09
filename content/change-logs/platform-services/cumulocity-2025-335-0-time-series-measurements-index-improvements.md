@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2025-10-09'
 title: Improved index utilization for time series measurements
 change_type:
   - value: change-2c7RdTdXo4
