@@ -26,3 +26,5 @@ The Developer Codes now includes
   - **Platform integration** – Dive into advanced development and complex scenarios  
 - **Enhanced cross-references** – Stronger linking between related topics to support knowledge building and continuous learning  
 - **Optimized learning flow** – A progressive content structure that guides developers smoothly from beginner to expert level
+
+See [{{< product-c8y-iot >}} Developer Codex](https://cumulocity.com/codex/).
