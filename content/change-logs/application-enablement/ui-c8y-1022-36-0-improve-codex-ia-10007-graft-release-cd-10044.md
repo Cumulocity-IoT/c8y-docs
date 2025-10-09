@@ -14,7 +14,9 @@ build_artifact:
 ticket: MTM-64747
 version: 1022.36.0
 ---
-The Developer Codex has been redesigned with a clearer information architecture, offering step-by-step guides, core concepts, design best practices, and complete Web SDK documentation in a more discoverable and structured format. Whether you're new to {{< product-c8y-iot >}} or an experienced developer, you’ll find faster paths to building effective IoT solutions, understanding platform architecture, designing better UIs, and connecting with the developer community. It now includes
+The Developer Codex has been redesigned with a clearer information architecture, offering step-by-step guides, core concepts, design best practices, and complete Web SDK documentation in a more discoverable and structured format. Whether you're new to {{< product-c8y-iot >}} or an experienced developer, you’ll find faster paths to building effective IoT solutions, understanding platform architecture, designing better UIs, and connecting with the developer community. 
+
+The Developer Codes now includes
 - **Simplified navigation** – Reduced menu depth and introduced an intuitive 2–3 level, card-based structure for faster and easier content discovery.  
 - **Learning-oriented structure** – Content is now organized to support a natural learning journey from fundamentals to advanced implementation:
   - **First steps** (formerly *Quick start*) – Get up and running quickly  
