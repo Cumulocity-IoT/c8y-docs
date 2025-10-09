@@ -23,6 +23,9 @@ The user must have the following permissions for the permission type "Tenant man
 
 - To view migration status for all subtenants: READ permission.
 - To perform migration activity: ADMIN permission.
+- The tenant’s status must be **ACTIVE**. Tenants with status **SUSPENDED** cannot be scheduled for migration.  
+  If attempted via API, the request fails with **422 Unprocessable Entity** and the message:  
+  `Tenant <tenantId> is suspended. Migration actions are not permitted.`
   {{</c8y-admon-req>}}
 
 ### To trigger time series migration {#to-trigger-time-series-migration}
@@ -54,17 +57,17 @@ The migration of measurements can be cancelled when a tenant has the status **Qu
 
 ### Migration states {#migration-states}
 
-|Status|Manageable by user|Description|
-|:-----|:-----|:------|
-|Not migrated|yes|Indicates that the tenant has not been migrated yet. If the tenant uses legacy measurements, it will be scheduled for migration.|
-|Queued|yes|Indicates that the tenant is added to the migration queue. Tenants in this state can be picked up for migration. It is possible to **Cancel migration** from this state.|
-|In progress|no| Indicates that the migration of the measurements collection is currently in progress.|
-|Migrated|no| Indicates that the migration of the measurements collection is done.|
-|Verifying|no| Indicates that the verification of the migrated data is in progress.|
-|Verified|yes| Indicates that all migration processes are completed and user approval is required.|
-|Approved|no|Indicates that the migration is completed and the legacy collection will be removed in 7 days.|
-|Completed|no|Indicates that the migration is completed and the legacy collection is removed.|
-|Failed|no| Indicates that an error occurred during the migration process. The information provided in the error message should be forwarded together with the support ticket.|
+| Status       | Manageable by user | Description                                                                                                                                                                                    |
+|:-------------|:-------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Not migrated | yes                | Indicates that the tenant has not been migrated yet. If the tenant uses legacy measurements, it will be scheduled for migration. **Note:** Tenants with status **SUSPENDED** cannot be queued. |
+| Queued       | yes                | Indicates that the tenant is added to the migration queue. Tenants in this state can be picked up for migration. It is possible to **Cancel migration** from this state.                       |
+| In progress  | no                 | Indicates that the migration of the measurements collection is currently in progress.                                                                                                          |
+| Migrated     | no                 | Indicates that the migration of the measurements collection is done.                                                                                                                           |
+| Verifying    | no                 | Indicates that the verification of the migrated data is in progress.                                                                                                                           |
+| Verified     | yes                | Indicates that all migration processes are completed and user approval is required.                                                                                                            |
+| Approved     | no                 | Indicates that the migration is completed and the legacy collection will be removed in 7 days.                                                                                                 |
+| Completed    | no                 | Indicates that the migration is completed and the legacy collection is removed.                                                                                                                |
+| Failed       | no                 | Indicates that an error occurred during the migration process. The information provided in the error message should be forwarded together with the support ticket.                             |
 
 ### Description and progress monitoring {#description-and-progress-monitoring}
 
