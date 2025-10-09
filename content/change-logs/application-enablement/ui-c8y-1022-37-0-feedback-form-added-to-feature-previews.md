@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Feedback form added to feature previews
+title: Feedback form added to preview features
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
