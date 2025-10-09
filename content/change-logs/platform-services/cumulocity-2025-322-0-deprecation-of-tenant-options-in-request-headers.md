@@ -1,6 +1,8 @@
 ---
-date: 
-title: Deprecating the attachment of tenant options as headers to microservice requests
+date: '2025-10-02'
+title: >-
+  Deprecating the attachment of tenant options as headers to microservice
+  requests
 product_area: Platform services
 change_type:
   - value: change-inv-3bw8e
