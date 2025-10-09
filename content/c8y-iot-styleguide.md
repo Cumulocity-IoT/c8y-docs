@@ -1,5 +1,5 @@
 ---
-title: Cumulocity Codex
+title: Cumulocity Developer Codex
 icon: "dlt-c8y-icon-programming"
 type: root
 layout: redirect

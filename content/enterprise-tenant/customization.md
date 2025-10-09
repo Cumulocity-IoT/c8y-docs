@@ -11,10 +11,10 @@ helpcontent:
   - label: to-configure-branding-settings
     title: Branding
     content: |
-      The Branding feature lets you tailor your tenant’s appearance to match your preferences. 
+      The Branding feature lets you tailor your tenant’s appearance to match your preferences.
 
 
-       In this page, you can manage multiple branding variants, with one always set as the global branding. This global branding is automatically applied to all applications within your tenant and any subtenants. 
+       In this page, you can manage multiple branding variants, with one always set as the global branding. This global branding is automatically applied to all applications within your tenant and any subtenants.
 
 
       Additionally, you can create branding variants for specific applications, enabling you to give each application its own distinct look.
@@ -26,8 +26,8 @@ helpcontent:
 
   - label: light-dark-theme-tab
     title: Light and dark theme
-    content: | 
-      The same set of parameters is available for both the light and the dark theme and can be changed in the corresponding tabs. Further details regarding these parameters can be found in the Branding and Color palette sections of the Codex.
+    content: |
+      The same set of parameters is available for both the light and the dark theme and can be changed in the corresponding tabs. Further details regarding these parameters can be found in the Branding and Color palette sections of the Developer Codex.
 
       The theme switcher in the right drawer allows you to switch between the light and dark theme, once you enable the dark theme on your branding variant.
 ---
