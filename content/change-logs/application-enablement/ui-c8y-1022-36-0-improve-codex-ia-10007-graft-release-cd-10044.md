@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improve Codex Information Architecture
+title: Enhanced Codex information architecture and developer experience
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
