@@ -25,7 +25,7 @@ The existing {{< product-c8y-iot >}} [Core MQTT](/device-integration/mqtt/) capa
 This feature is in Public Preview and may be subject to change in the future.
 {{< /c8y-admon-preview >}}
 
-As [previously announced](/change-logs/#mqtt-service-0.9.6-device-isolation-api-change), when the {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) transitions from Public Preview to General Availability (GA), the MQTT Service [Java client SDK](/device-integration/mqtt-service/#java-client) will no longer be supported.
+As [previously announced](/change-logs/#mqtt-service-0.9.6-device-isolation-api-change), when the {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) transitions from Public Preview to General Availability (GA), the MQTT Service Java client SDK will no longer be supported.
 Instead, microservices and external applications (_clients_) that need to exchange messages with MQTT devices connected to the MQTT Service will connect directly to the {{< product-c8y-iot >}} Messaging Service using the [Apache Pulsar](https://pulsar.apache.org/) client protocol.
 Direct Messaging Service connectivity for MQTT Service clients is now available as part of the MQTT Service Public Preview.
 
