@@ -1,5 +1,5 @@
 ---
-weight: 60
+weight: 40
 title: Integration with Keycloak
 layout: redirect
 sector:
