@@ -1,6 +1,6 @@
 ---
 date: 
-title: Client-Suggested Identity Provider for SSO Login
+title: Client-suggested identity provider for SSO login
 change_type:
   - value: change-QHu1GdukP
     label: Feature
