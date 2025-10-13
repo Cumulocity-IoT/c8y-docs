@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix data point selector dropdown z-index (#10017) [GRAFT][release/cd] (#10023)
+title: Fixed data point selector dropdown not being displayed correctly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
