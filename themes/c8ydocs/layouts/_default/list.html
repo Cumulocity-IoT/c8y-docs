@@ -26,8 +26,14 @@
       {{ $subs := where .Site.Pages "Section" .Params.bundlefolder }}
       {{/* grab the link from the first child page  */}}
       {{ range $sub := first 1 $subs}}
-        {{ $scratch.Set "url" $sub.Permalink}}
+        {{ $scratch.Set "url" $sub.RelPermalink}}
       {{end}}
+      {{/* fallback to section index page if no child pages found */}}
+      {{ if not ($scratch.Get "url") }}
+        {{ with .Site.GetPage (printf "/%s" .Params.bundlefolder) }}
+          {{ $scratch.Set "url" .RelPermalink }}
+        {{ end }}
+      {{ end }}
     <a href='
         {{if (isset .Params "external") }}
           {{.Params.external}}
