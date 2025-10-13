@@ -9,7 +9,7 @@ Microservices typically provide a REST API and {{< product-c8y-iot >}} provides 
 * Authorization: All calls are authenticated using {{< product-c8y-iot >}} credentials with basic or OAuth authorization.
 * TLS Termination: TLS inbound calls are terminated and only HTTP is used inside the cluster.
 * Metering: The API calls are metered in the API calls tenant statistics.
-* Routing: The API gateway routes requests for <kbd>/service/&lt;name&gt;</kbd> to the microservice _&lt;name&gt;_. The request routed to the microservice container and tenant options are added to the request headers. Note that therefore a space (" ") is not allowed as a tenant option value.  If `contextPath` is defined in the application manifest, the API gateway routes requests for <kbd>/service/&lt;contextPath&gt;</kbd>.
+* Routing: The API gateway routes requests for <kbd>/service/&lt;name&gt;</kbd> to the microservice _&lt;name&gt;_. The request routed to the microservice includes the client’s request headers. If `contextPath` is defined in the application manifest, the API gateway routes requests for <kbd>/service/&lt;contextPath&gt;</kbd>.
 
 ### Authentication and authorization {#authentication-and-authorization}
 
@@ -203,9 +203,9 @@ Steps:
 
 ### Encryption {#encryption}
 
-There is a mechanism to encrypt the tenant options that afterwards are automatically decrypted when injecting them into microservices requests.
+There is a mechanism to encrypt the tenant options.
 
-If a tenant option is created with a key name that starts with "credentials.", it is automatically encrypted and can be fetched as unencrypted only by system users. For instance, when you create a tenant option in a category that matches to the application context path, the value is passed to the microservice by the microservice proxy on the platform as a header (key => value). All encrypted options are decrypted and passed. Note that therefore a space (" ") is not allowed as a tenant option value. 
+If a tenant option is created with a key name that starts with "credentials.", it is automatically encrypted and can be fetched as unencrypted only by system users. Note that a space (" ") is not allowed as a tenant option value. 
 
 The options can be fetched via REST using the options endpoint at microservice runtime. Encrypted options are decrypted only if the tenant option category matches the category defined by the microservice. This category is determined based on the first non-blank value from:
 
