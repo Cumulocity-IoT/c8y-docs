@@ -4,6 +4,8 @@ title: A
 layout: bundle
 sector:
   - getting_started
+_build:
+  render: false
 ---
 
 ### Administration application {#administration-application}

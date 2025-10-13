@@ -4,6 +4,9 @@ title: S
 layout: bundle
 sector:
   - getting_started
+_build:
+  render: false
+
 ---
 
 ### Service user {#service-user}

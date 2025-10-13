@@ -4,6 +4,9 @@ title: "N"
 layout: bundle
 sector:
   - getting_started
+_build:
+  render: false
+
 ---
 
 ### Navigator {#navigator}

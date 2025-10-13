@@ -4,6 +4,9 @@ title: T
 layout: bundle
 sector:
   - getting_started
+_build:
+  render: false
+
 ---
 
 ### Tenant {#tenant}

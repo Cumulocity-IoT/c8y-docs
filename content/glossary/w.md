@@ -4,6 +4,9 @@ title: W
 layout: bundle
 sector:
   - getting_started
+_build:
+  render: false
+
 ---
 
 ### Web applications {#web-application}

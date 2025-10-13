@@ -4,6 +4,9 @@ title: "Y"
 layout: bundle
 sector:
   - getting_started
+_build:
+  render: false
+
 ---
 
 ### Yearly release {#yearly-release}

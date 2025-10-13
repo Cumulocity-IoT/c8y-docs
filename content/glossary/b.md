@@ -4,6 +4,9 @@ title: B
 layout: bundle
 sector:
   - getting_started
+_build:
+  render: false
+
 ---
 
 ### Blocks (Analytics Builder) {#blocks}

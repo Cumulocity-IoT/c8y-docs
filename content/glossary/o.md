@@ -4,6 +4,9 @@ title: O
 layout: bundle
 sector:
   - getting_started
+_build:
+  render: false
+
 ---
 
 ### Offloading pipeline {#offloading-pipeline}

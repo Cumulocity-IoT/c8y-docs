@@ -4,6 +4,9 @@ title: C
 layout: bundle
 sector:
   - getting_started
+_build:
+  render: false
+
 ---
 
 ### CCU ({{< product-c8y-iot >}} Compute Unit) {#ccu}

@@ -4,6 +4,9 @@ title: I
 layout: bundle
 sector:
   - getting_started
+_build:
+  render: false
+
 ---
 
 ### Inventory {#inventory}
