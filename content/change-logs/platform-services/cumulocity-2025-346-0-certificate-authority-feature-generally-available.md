@@ -15,7 +15,7 @@ ticket: MTM-64106
 version: 2025.346.0
 ---
 The certificate authority feature previously released in [Public Preview](/change-logs/?component=.component-authentication%2C.component-web-sdk#cumulocity-undefined-certificate-authority-feature-preview) is now Generally Available (GA).
-It is enabled by default for all tenants, with no additional configuration or activation required.
+It is available in CD versions 2025.346.0 and higher, and in the 2026 annual release.
 
 The feature can be accessed in the Device Management application under Management → Trusted Certificates, where the “Add CA Certificate” option is now available by default.
 
