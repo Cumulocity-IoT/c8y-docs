@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63490
 version: 1022.43.0
 ---
-A new hookComputedProperty hook enables developers to define custom properties with dynamic, calculated values that are computed on-the-fly rather than stored directly on assets. Computed properties support context-aware applicability, optional configuration components, and can return values synchronously or asynchronously via Promises or Observables.
+To enable developers to define custom properties with dynamic values, a new hookComputedProperty hook has been introduced. This hook allows defining computed properties that calculate their values on-the-fly based on other properties or external data, rather than storing the values directly on assets. Computed properties support context-aware applicability, allowing them to be selectively available based on the current context. They can also include optional configuration components for easy customization. Computed property values can be returned synchronously or asynchronously using Promises or Observables, providing flexibility in how the values are calculated and returned.
