@@ -1,5 +1,5 @@
 ---
-date: 2025-10-01
+date:
 title: Enhanced security for encrypted tenant options
 product_area: Platform services
 change_type:
