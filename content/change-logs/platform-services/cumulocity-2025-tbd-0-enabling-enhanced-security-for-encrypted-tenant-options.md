@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-62399
-version: 2025.116.0
+version: 2025.tbd.0
 ---
 From version 2025.tbd.0 onwards, and in the 2026 annual release, the `secure-tenant-options` feature is enabled by default.
 
