@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Skip password expiry check for SSO users
+title: Skip password expiry check for users with Single Sign-On enabled
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
