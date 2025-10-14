@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Computed properties feature in new properties selector.
+title: Computed properties available in new properties selector
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
