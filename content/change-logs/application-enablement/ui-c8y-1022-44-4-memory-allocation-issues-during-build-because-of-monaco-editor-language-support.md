@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Memory allocation issues during build because of monaco-editor language support feature
+title: Fixed memory allocation issues during build due to large monaco-editor language support files
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
