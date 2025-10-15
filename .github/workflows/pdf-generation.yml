@@ -1,0 +1,16 @@
+name: PDF Generation
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pdf-scaffold:
+    name: PDF Generation Scaffold
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm workflow setup
+        run: |
+          echo "PDF generation workflow scaffold is working!"
