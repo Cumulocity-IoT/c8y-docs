@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-64566
 version: 1022.44.4
 ---
-Since monaco-editor workers for language support are quite big files (around 1-6MB), webpack had problems with memory allocation during the build.
-Now, monaco related service workers are build in separate step. Monaco workers are built first, before app, then they are copied to build folder.
+The monaco-editor language support feature includes large worker files (around 1-10MB) which caused memory allocation problems for webpack during the build process. To address this, the build process has been updated to first build the monaco-related service workers separately before the main application. The built monaco worker files are then copied to the final build folder. This change resolves the memory allocation issues and ensures a successful build process.
