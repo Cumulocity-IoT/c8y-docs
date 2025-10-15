@@ -60,9 +60,17 @@ Cypress.on('uncaught:exception', (err) => {
     if (err.message.includes("$(...).tooltip is not a function")) {
       return false;
     }
-        if (err.message.includes("No key found. SDK can not be initialized")) {
+    if (err.message.includes("No key found. SDK can not be initialized")) {
       return false;
     }
-
+    if (err.message.includes("Failed to execute 'getComputedStyle' on 'Window': parameter 1 is not of type 'Element'.")) {
+      return false;
+    }
+    if (err.message.includes("Identifier 'rocket_pairs' has already been declared")) {
+      return false;
+    }
+    if (err.message.includes("Unexpected token 'var'")) {
+      return false;
+    }
   });
   
