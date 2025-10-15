@@ -18,7 +18,6 @@ const getMarkdownFiles = (dir) => {
 const BASE_URL = "https://cumulocity.com/docs";
 
 const shortcodeMapping = {
- 
   "c8y-current-version": "",
   "c8y-edge-current-version-alt": "10.18",
   "c8y-edge-version-major": "2025",
@@ -50,6 +49,13 @@ const shortcodeMapping = {
   "email-c8y-info": "info@cumulocity.com",
 };
 
+const hasRenderFalse = (fileContent) => {
+  const fm = fileContent.match(/(^|\n)---\s*[\s\S]*?\n---/);
+  if (!fm) return false;
+  const block = fm[0];
+  return /_build:\s*[\r\n]+[\s\S]*?render:\s*false\b/i.test(block);
+};
+
 const resolveHugoShortcode = (link) => {
   return link.replace(/\{\{<\s*(.*?)\s*>\}\}/g, (match, shortcode) => {
     const resolvedValue = shortcodeMapping[shortcode];
@@ -63,34 +69,37 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
   }
 
   if (link.startsWith("#")) {
-    const fileDir = path.dirname(relativePath);
+    const fileDir = path.dirname(relativePath).replace(/\\/g, "/");
     const fileName = path.basename(relativePath, ".md");
-    let segments = fileDir.split(path.sep);
+    let segments = fileDir.split("/").filter(Boolean);
     let hasBundle = false;
 
     if (segments.length > 0) {
       const lastSegment = segments[segments.length - 1];
-      if (lastSegment.endsWith("-bundle")) {
+      if (/-bundle$/.test(lastSegment)) {
         segments[segments.length - 1] = lastSegment.replace(/-bundle$/, "");
         hasBundle = true;
       }
     }
 
+    // if this file is not rendered, publish from its directory (e.g., /glossary/)
+    const notRendered = hasRenderFalse(fileContent);
+
     let publishedBasePath = "";
-    if (hasBundle) {
+    if (notRendered) {
+      publishedBasePath = segments.join("/");
+    } else if (hasBundle) {
       publishedBasePath = segments.join("/");
     } else {
-      publishedBasePath = fileName === "index" ? fileDir : path.join(fileDir, fileName);
+      publishedBasePath = fileName === "index" ? fileDir : path.join(fileDir, fileName).replace(/\\/g, "/");
     }
-    publishedBasePath = publishedBasePath
-      .replace(/\\/g, "/")
-      .replace(/^\/+/, "")
-      .replace(/\/+$/, "");
-    return `${BASE_URL.replace(/\/$/, "")}/${publishedBasePath}/#${link.substring(1)}`;
+    publishedBasePath = publishedBasePath.replace(/^\/+|\/+$/g, "");
+    const base = `${BASE_URL.replace(/\/$/, "")}/${publishedBasePath ? publishedBasePath + "/" : ""}`;
+    return `${base}#${link.substring(1)}`;
   }
 
   const resolvedLink = resolveHugoShortcode(link);
-  if (resolvedLink.startsWith("http://") || resolvedLink.startsWith("https://")) {
+  if (/^https?:\/\//i.test(resolvedLink)) {
     return resolvedLink;
   }
   return `${BASE_URL.replace(/\/$/, "")}/${resolvedLink.replace(/^\//, "")}`;
@@ -99,8 +108,6 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
 (() => {
   const projectDir = "../content";
   const markdownFiles = getMarkdownFiles(projectDir);
-  
-  // Use an object to map each unique link to a Set of file paths where it's found.
   const linkMap = {};
 
   markdownFiles.forEach((mdFile) => {
@@ -121,7 +128,6 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
     });
   });
 
-  // Convert the map into an array of objects.
   const result = Object.keys(linkMap).map(link => ({
     link,
     files: Array.from(linkMap[link])
