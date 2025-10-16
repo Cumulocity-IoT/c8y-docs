@@ -17,7 +17,7 @@ version: 2025.348.0
 The certificate authority feature previously released in [Public Preview](/change-logs/?component=.component-authentication%2C.component-web-sdk#cumulocity-undefined-certificate-authority-feature-preview) is now Generally Available (GA).
 It is available in CD versions 2025.348.0 and higher, and in the 2026 annual release.
 
-The feature can be accessed in the Device Management application under Management → Trusted Certificates, where the “Add CA Certificate” option is now available by default.
+The feature can be accessed in the Device Management application under Management → Trusted certificates, where the **Add CA Certificate** option is now available by default.
 
 {{< product-c8y-iot >}} has been enhanced to function as a Certificate Authority (CA), providing the following capabilities:
 - Manage signing certificates
