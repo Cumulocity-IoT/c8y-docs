@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improved accessibility and focus management on bottom drawer (#10077) [GRAFT][release/cd] (#10124)
+title: Improved accessibility and focus management on bottom drawer
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
