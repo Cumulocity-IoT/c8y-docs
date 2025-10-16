@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64668
 version: 1022.41.1
 ---
-The data point selector dropdown was not being displayed in the foreground and was overlapped by other elements on the page. This issue has been resolved by adjusting the z-index of the dropdown. The data point selector dropdown will now always appear in the foreground when opened.
+The data point selector dropdown was not displayed in the foreground and was overlapped by other elements on the page. This issue has been resolved by adjusting the z-index of the dropdown. The data point selector dropdown will now always appear in the foreground when opened.
