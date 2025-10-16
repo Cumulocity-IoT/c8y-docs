@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-10-16'
 title: Skip password expiry check for users with SSO enabled
 product_area: Application enablement & solutions
 change_type:

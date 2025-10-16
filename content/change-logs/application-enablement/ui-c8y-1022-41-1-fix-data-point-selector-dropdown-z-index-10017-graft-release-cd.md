@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-10-16'
 title: Fixed data point selector dropdown not being displayed correctly
 product_area: Application enablement & solutions
 change_type:
