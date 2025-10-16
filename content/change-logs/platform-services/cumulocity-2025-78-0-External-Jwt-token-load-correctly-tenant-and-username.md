@@ -15,7 +15,7 @@ ticket: MTM-64869
 version: 2025.78.0
 ---
 
-Resolved an issue in the Java SDK where authentication using [external IAM JWT tokens](/authentication/sso/#configuring-access-tokens) failed to correctly identify the tenant and user when the token did not include a tenant ID or username in its claims.
+If using [external IAM JWT tokens](/authentication/sso/#configuring-access-tokens), the authentication failed to correctly identify the tenant and user when the token did not include a tenant ID or username in its claims. 
 With this fix, the SDK now properly retrieves the tenantId and username from the CumulocityCredentials context, ensuring correct identification and smoother integration with external identity providers.
 
 
