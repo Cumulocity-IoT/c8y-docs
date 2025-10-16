@@ -3,6 +3,7 @@ title: Glossary
 icon: "c8y-icon c8y-icon-book"
 type: root
 layout: redirect
+target: glossary
 bundlefolder: glossary
 sector:
   - getting_started

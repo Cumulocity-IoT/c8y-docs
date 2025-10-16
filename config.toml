@@ -19,6 +19,16 @@ enableGitInfo = true
 [taxonomies]
   sectors = "sector"
 
+[outputs]
+  home = ["HTML", "llmstxt"]
+
+[outputFormats.llmstxt]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
+  suffixes = ["txt"]
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -84,6 +94,10 @@ enableGitInfo = true
   [[params.additionalResources]]
     name = "Product Support"
     link = "https://cumulocity.atlassian.net/servicedesk/customer/portals"
+
+  [[params.additionalResources]]
+    name = "Glossary"
+    link = "/glossary/"
 
 
 # Customize
