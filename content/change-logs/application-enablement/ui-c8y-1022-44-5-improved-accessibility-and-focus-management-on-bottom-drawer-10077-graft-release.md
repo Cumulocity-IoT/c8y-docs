@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64646
 version: 1022.44.5
 ---
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+To enhance the user experience and comply with accessibility standards, the bottom drawer component has been updated. The focus management within the bottom drawer has been improved, ensuring that keyboard navigation works as expected. Users relying on assistive technologies can now properly interact with the bottom drawer and its contents. This change affects all applications using the bottom drawer component, providing a more inclusive and accessible user interface.
