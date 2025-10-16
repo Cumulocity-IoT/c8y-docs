@@ -4,8 +4,8 @@ title: OPC UA major version upgrade notes
 layout: redirect
 ---
 
-### Upgrading from 2021 to 2022 gateway version {#upgrade-2021-to-2022}
-Major version 2022 of the OPC UA gateway introduces significant changes, including a new internal database and updated Java version. 
+### Upgrading from 1021 to 1022 gateway version {#upgrade-1021-to-1022}
+Major version 1022 of the OPC UA gateway introduces significant changes, including a new internal database and updated Java version. 
 To ensure a smooth transition, please follow these steps:
 1. **Backup Existing Data**: Before proceeding with the upgrade, back up your existing gateway data folder to prevent any potential data loss.
 2. **Stop existing gateway**: Ensure that the current gateway instance is stopped before starting the upgrade process.
