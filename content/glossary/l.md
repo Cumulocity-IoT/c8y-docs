@@ -4,10 +4,11 @@ title: L
 layout: bundle
 sector:
   - getting_started
+_build:
+  render: false
+
 ---
 
-### LWM2M {#lwm2m}
+### Location {#location}
 
-Lightweight M2M (LWM2M) is a traffic and resource-optimized protocol to remotely manage IoT devices. {{< product-c8y-iot >}} provides support for easily connecting any LWM2M device to the platform.
-
-For details see [Device management & connectivity > Device integration > LWM2M](/device-integration/lwm2m).
+The location represents the geographical position of a [managed object](#managed-object). The location is represented by the standard `c8y\_Position` [fragment](#fragment), which contains altitude, longitude, and latitude coordinates. Managed objects with this fragment can be displayed on Map widgets.  

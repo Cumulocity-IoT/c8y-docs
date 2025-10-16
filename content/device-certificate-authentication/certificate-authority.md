@@ -155,4 +155,5 @@ In order to call `/certificate-authority/renew` one of the following roles is re
 * Each CA certificate has a validity of 1095 days (3 years) and undergoes automatic renewal in the background.
 * All CA metadata, private keys, and public keys remain unchanged, ensuring a seamless renewal process. Only `NotAfter` and `NotBefore` wil be changed.
 * Device certificates issued by the CA continue to have 1 year validity from issuance date, and new device certificates can be issued without disruption.
-* If the auto-renewal process fails, and it has a near expiration date then an error banner will be displayed in the UI for those certificates.
+* If a CA certificate has a near expiration date, then an error banner will be displayed in the UI for this certificate.
+* An audit log is generated both when the CA certificate is refreshed and when a refresh is determined to be not yet required.
