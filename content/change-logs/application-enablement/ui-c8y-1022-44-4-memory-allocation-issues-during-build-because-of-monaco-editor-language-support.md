@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed memory allocation issues during build due to large monaco-editor language support files
+title: Fixed memory allocation issues during build process
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
