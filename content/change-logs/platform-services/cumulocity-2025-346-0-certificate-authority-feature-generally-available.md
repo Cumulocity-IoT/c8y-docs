@@ -1,5 +1,5 @@
 ---
-date:
+date: '2025-10-16'
 title: Enhanced certificate management with ability to sign and issue certificates
 product_area: Platform services
 change_type:
