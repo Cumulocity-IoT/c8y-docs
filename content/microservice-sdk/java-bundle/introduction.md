@@ -12,9 +12,7 @@ You can develop microservices for {{< product-c8y-iot >}} with any IDE and build
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
-Updates to development tools used for building Docker images - such as Docker Desktop or Podman - may
-sometimes introduce format changes that cause compatibility issues when uploading {{< product-c8y-iot >}} microservices
-or starting pods. In such cases, it is recommended to avoid upgrading the affected tool.
+After updating your development tools for building microservice container images - such as Docker Desktop or Podman - you may experience compatibility issues when uploading microservices or when subscribing to microservices. If you encounter any issues, it is recommended to avoid upgrading the affected tool.
 {{< /c8y-admon-info >}}
 
 These are some useful references to get started with the basic technologies underlying the SDK:
