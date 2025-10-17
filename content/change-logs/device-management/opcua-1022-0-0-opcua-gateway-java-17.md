@@ -21,7 +21,6 @@ Ensure that your environment is compatible with Java 17 to take full advantage o
 {{< c8y-admon-important >}}
 Be aware that this update also replaces the internal gateway database and additional data migration 
 or re-registration of device gateway may be required.
-Refer to [Upgrading from 1021 to 1022 gateway version](/device-integration/opcua/#upgrade-1021-to-1022) in the documentation.
 {{< /c8y-admon-important >}}
 
 Refer to [Upgrading from 1021 to 1022 gateway version](/device-integration/opcua/#upgrade-1021-to-1022) in the documentation.
