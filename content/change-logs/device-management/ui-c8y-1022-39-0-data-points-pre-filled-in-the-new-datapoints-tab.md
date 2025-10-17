@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-10-16'
 title: Data points are pre-filled in the Measurements tab
 product_area: Device management & connectivity
 change_type:
