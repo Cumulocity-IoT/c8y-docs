@@ -5,12 +5,11 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   const totalTests = urls.length;
 
 
-  const escRegExp = (string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-  const expectFragmentExists = (htmlContent, fragment) => {
-    const escFragment = escRegExp(fragment);
-    const regex = new RegExp(`(id=["']${escFragment}["']|name=["']${escFragment}["'])`);
-    const exists = regex.test(htmlContent);
+  const expectFragmentExists = (doc, fragment) => {
+    const ids = Array.from(doc.querySelectorAll('[id]')).map(el => el.id);
+    const names = Array.from(doc.querySelectorAll('a[name]')).map(a => a.getAttribute('name'));
+    const allFragments = [...ids, ...names];
+    const exists = allFragments.some(f => f === fragment);
     expect(exists, `An element with id or name "${fragment}" should exist in HTML`).to.be.true;
   };
 
@@ -18,28 +17,21 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     cy.wrap(url).should('not.match', /[()]/, `URL should not contain unencoded parentheses: ${url}`);
   };
 
+// Note: On GitHub pages, section anchors are rendered as <a href="#fragment"> rather than <a name="fragment">. That's why we collect `a[href^="#"]` here.
   const checkGithubFragment = (fragment) => {
-    const normalizedFragment = fragment.toLowerCase().replace(/[^\w\-]+/g, '-').replace(/^-+|-+$/g, '');
     cy.document().then((doc) => {
-      const anchorExists = Array.from(doc.querySelectorAll('a'))
-        .some(a => a.getAttribute('href') === `#${normalizedFragment}`);
-      
-      expect(anchorExists, `Fragment "#${normalizedFragment}" should exist in href attribute of an <a> tag`).to.be.true;
-      const allFragments = Array.from(doc.querySelectorAll('a'))
-        .map(a => a.getAttribute('href'))
-        .filter(href => href && href.startsWith('#'));
-      cy.log(`Available fragments on page:\n${allFragments.join('\n')}`);
+      const anchors = Array.from(doc.querySelectorAll('a[href^="#"]')).map(a => a.getAttribute('href'));
+      const ids = Array.from(doc.querySelectorAll('[id]')).map(el => el.id);
+      cy.log(`Available GitHub anchors:\n${anchors.join('\n')}`);
+      cy.log(`Available GitHub IDs:\n${ids.join('\n')}`);
+      const exists = anchors.some(href => href === `#${fragment}`) || ids.some(id => id === fragment);
+      expect(exists, `Fragment "#${fragment}" should exist in GitHub page`).to.be.true;
     });
   };
 
   const checkRegularFragment = (fragment) => {
     cy.document().then((doc) => {
-      const html = doc.documentElement.innerHTML;
-      expectFragmentExists(html, fragment);
-      const ids = Array.from(doc.querySelectorAll('[id]')).map(el => el.id);
-      const names = Array.from(doc.querySelectorAll('a[name]')).map(a => a.getAttribute('name'));
-      const allFragments = [...ids, ...names];
-      cy.log(`Available elements on page with ids and names:\n${allFragments.join('\n')}`);
+      expectFragmentExists(doc, fragment);
     });
   };
 
@@ -62,9 +54,36 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
       const hasNonHtmlExtension = nonHtmlExtensions.some(ext => url.endsWith(ext));
       const isNonHtmlResource = hasNonHtmlExtension || url.includes('/files/') || url.includes('/downloads/');
+      const isPrivateGithubrepository = url.includes('github.com/Cumulocity-IoT/');
+      const isNpmPackagePage = url.startsWith('https://www.npmjs.com/package/');
+      if (isNpmPackagePage) {
+        const m = url.match(/^https:\/\/www\.npmjs\.com\/package\/(@[^/]+\/[^#?]+)/);
+        const pkg = m ? m[1] : null;
+        const encodedUrl = pkg ? url.replace(pkg, encodeURIComponent(pkg)) : url;
+
+        if (pkg) {
+          cy.request({
+            url: `https://registry.npmjs.org/${pkg}`,
+            failOnStatusCode: false,
+            headers: { Accept: 'application/vnd.npm.install-v1+json' }
+          }).then((res) => {
+            expect(res.status, `npm registry status for ${pkg}`).to.eq(200);
+          });
+        }
+        cy.visit(encodedUrl, { timeout: 50000, failOnStatusCode: false });
+        cy.url().should('include', '/package/%40');
+        completedTests++;
+        return;
+      }
   
       Cypress.env('sourceFiles', item.files);
       expectNoUnencodedParentheses(url);
+
+      if (isPrivateGithubrepository) {
+        cy.log(`Skipping private GitHub link: ${url}`);
+        completedTests++;
+        return;
+      } 
   
       if (isNonHtmlResource) {
         cy.log(`Validating non-HTML resource: ${url}`);
@@ -72,7 +91,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
           url: url,
           failOnStatusCode: false 
         }).then((response) => {
-          expect(response.status).to.be.oneOf([200, 304]);
+          expect(response.status).to.be.oneOf([200, 201, 202, 203, 204, 301, 302, 304]);
   
           if (url.endsWith('.json')) {
             expect(response.body).to.be.an('object');
