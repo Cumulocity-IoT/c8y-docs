@@ -86,9 +86,7 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
     const notRendered = hasRenderFalse(fileContent);
 
     let publishedBasePath = "";
-    if (notRendered) {
-      publishedBasePath = segments.join("/");
-    } else if (hasBundle) {
+    if (notRendered || hasBundle) {
       publishedBasePath = segments.join("/");
     } else {
       publishedBasePath = fileName === "index" ? fileDir : path.join(fileDir, fileName).replace(/\\/g, "/");
