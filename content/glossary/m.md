@@ -52,7 +52,7 @@ The {{< product-c8y-iot >}} Microservice SDK is a set of tools, libraries, and d
 
 ### Model (Analytics Builder) {#model}
 
-In [Analytics Builder](#analytics-builder), a model is a visual representation of analytic logic created by connecting pre-built [blocks](#blocks) via [wires](#wires) in a drag-and-drop environment. Each block performs a specific function, and together they form a workflow that can transform, analyze, and act on incoming data. A model can be designed as a reusable template model, which uses placeholders instead of fixed values. When you provide specific values for these placeholders, you create a runnable model instance.  
+In [Analytics Builder](#analytics-builder), a model is a visual representation of analytic logic created by connecting pre-built [blocks](#block) via [wires](#wire) in a drag-and-drop environment. Each block performs a specific function, and together they form a workflow that can transform, analyze, and act on incoming data. A model can be designed as a reusable template model, which uses placeholders instead of fixed values. When you provide specific values for these placeholders, you create a runnable model instance.  
 
 
 ### Multi-tenancy {#multi-tenancy}
