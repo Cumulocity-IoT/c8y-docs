@@ -20,6 +20,8 @@ This change enhances the performance and reliability of the gateway, ensuring co
 {{< c8y-admon-important >}}
 Note that this update may require additional data migration or re-registration of device gateways. 
 Refer to [Upgrading from 1021 to 1022 gateway version](/device-integration/opcua/#upgrade-1021-to-1022) in the documentation. 
+{{< /c8y-admon-important >}}
+
 It is recommended to back up your existing local gateway data before proceeding with the update.
 Some gateway properties related to the internal database have been removed and are no longer applicable:
 - gateway.mappingExecution.alarmStatusStore.maxEntries
