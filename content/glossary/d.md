@@ -68,7 +68,7 @@ The device replacement feature allows the replacement of physical devices withou
 
 ### Digital twin {#digital-twin}
 
-A digital twin is a virtual representation of a physical [asset](#asset) or system that is continuously updated with real-time IoT data from connected [devices](#device). This data-driven digital counterpart enables monitoring, analysis, and optimization of physical assets by combining sensor [measurements](#measurement) with business context.  
+A digital twin is a virtual representation of a physical asset or system that is continuously updated with real-time IoT data from connected [devices](#device). This data-driven digital counterpart enables monitoring, analysis, and optimization of physical assets by combining sensor [measurements](#measurement) with business context.  
 
 
 ### Digital Twin Manager (DTM) {#dtm}
