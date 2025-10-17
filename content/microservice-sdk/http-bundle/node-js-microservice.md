@@ -23,6 +23,12 @@ SLACK_OAUTH_TOKEN=<YOUR-TOKEN-GOES-HERE>
 SLACK_CHANNEL_ID=<YOUR-CHANNEL_ID-GOES-HERE>
 ```
 
+{{< c8y-admon-info >}}
+Updates to development tools used for building Docker images - such as Docker Desktop or Podman - may 
+sometimes introduce format changes that cause compatibility issues when uploading {{< product-c8y-iot >}} microservices 
+or starting pods. In such cases, it is recommended to avoid upgrading the affected tool.
+{{< /c8y-admon-info >}}
+
 ### Developing the microservice {#developing-the-microservice}
 
 #### Configure a Node.js application {#configure-a-nodejs-application}

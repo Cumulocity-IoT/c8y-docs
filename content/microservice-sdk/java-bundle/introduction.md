@@ -11,6 +11,12 @@ This section describes how to develop and deploy microservices on top of {{< pro
 You can develop microservices for {{< product-c8y-iot >}} with any IDE and build tool that you prefer, but this section focuses on Maven and some troubleshooting for Eclipse.
 {{< /c8y-admon-info >}}
 
+{{< c8y-admon-info >}}
+Updates to development tools used for building Docker images - such as Docker Desktop or Podman - may
+sometimes introduce format changes that cause compatibility issues when uploading {{< product-c8y-iot >}} microservices
+or starting pods. In such cases, it is recommended to avoid upgrading the affected tool.
+{{< /c8y-admon-info >}}
+
 These are some useful references to get started with the basic technologies underlying the SDK:
 
 - The client libraries use the {{< product-c8y-iot >}} REST interfaces as underlying communication protocol as described in the section [Using the REST interface](/microservice-sdk/rest).
