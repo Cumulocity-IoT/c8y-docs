@@ -14,7 +14,7 @@ _build:
 The inventory stores all master data for [devices](#device) and [assets](#asset), including their configurations and relationships, and serves as the [digital twin](#digital-twin) of physical or logical entities within {{< product-c8y-iot >}}.
 
 
-### Inventory roles {#inventory-role}
+### Inventory role {#inventory-role}
 
 Inventory [roles](#role) contain [permissions](#permission) that grant access to specific groups of [devices](#device) or [assets](#asset) in the [inventory](#inventory). They allow fine-grained [authorization](#authorization) to particular assets or device groups and their associated data.  
 

@@ -20,7 +20,7 @@ An alarm is a specific type of [event](#event) that indicates a situation requir
 
 ### Analytics Builder {#analytics-builder}
 
-The Analytics Builder is a tool in the [{{< product-c8y-iot >}} Streaming Analytics](#streaming-analytics) application for designing real-time analytics models in a graphical, drag-and-drop environment. By combining pre-built [blocks](#blocks), you can quickly build [model](#model) to transform streaming IoT data, generate new data, create alerts, or trigger device [operations](#operation).  
+The Analytics Builder is a tool in the [{{< product-c8y-iot >}} Streaming Analytics](#streaming-analytics) application for designing real-time analytics models in a graphical, drag-and-drop environment. By combining pre-built [blocks](#block), you can quickly build [model](#model) to transform streaming IoT data, generate new data, create alerts, or trigger device [operations](#operation).  
 
 For details, see the [Analytics Builder](/streaming-analytics/analytics-builder/) documentation.
 
@@ -54,10 +54,10 @@ An asset hierarchy is a structure within the [inventory](#inventory) that organi
 
 ### Asset model {#asset-model}
 
-An asset model is a reusable blueprint defined in the [Digital Twin Manager (DTM)](#dtm) that specifies the structure, properties, and relationships of a particular type of [asset](#asset). It includes a unique key and label, [asset properties](#asset-properties), and optionally references to [child asset](#child-asset) models to support the composition of [asset hierarchies](#asset-hierarchy) (for example, a wind turbine model composed of rotor and tower sub-models). Once published, an asset model governs how assets of that type are created, validated, and visualized across {{< product-c8y-iot >}} [applications](#application).  
+An asset model is a reusable blueprint defined in the [Digital Twin Manager (DTM)](#dtm) that specifies the structure, properties, and relationships of a particular type of [asset](#asset). It includes a unique key and label, [asset properties](#asset-property), and optionally references to [child asset](#child-asset) models to support the composition of [asset hierarchies](#asset-hierarchy) (for example, a wind turbine model composed of rotor and tower sub-models). Once published, an asset model governs how assets of that type are created, validated, and visualized across {{< product-c8y-iot >}} [applications](#application).  
 
 
-### Asset properties {#asset-properties}
+### Asset property {#asset-property}
 
 Asset properties are configurable attributes within an [asset model](#asset-model) that define, describe, and enrich an [asset´s](#asset) characteristics (for example, *tower height* in a wind turbine model). They can be of various data types, such as text, number, date, file, boolean, complex object, or custom. Properties may be simple (single values), complex (nested structures), or custom (additional metadata), and they act as reusable building blocks to ensure consistent data structures, metadata enrichment, and governed information across assets.  
 
