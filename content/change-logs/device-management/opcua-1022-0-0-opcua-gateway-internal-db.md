@@ -16,7 +16,9 @@ version: 1022.0.0
 ---
 Together with the update to Java 17, the internal database of the OPC UA gateway has been changed from MapDB and ChronicleMap to RocksDB. 
 This change enhances the performance and reliability of the gateway, ensuring compatibility with Java 17.
-**Caution:** Note that this update may require additional data migration or re-registration of device gateways. 
+
+{{< c8y-admon-req >}}
+Note that this update may require additional data migration or re-registration of device gateways. 
 Refer to [Upgrading from 1021 to 1022 gateway version](/device-integration/opcua/#upgrade-1021-to-1022) in the documentation. 
 It is recommended to back up your existing local gateway data before proceeding with the update.
 Some gateway properties related to the internal database have been removed and are no longer applicable:
