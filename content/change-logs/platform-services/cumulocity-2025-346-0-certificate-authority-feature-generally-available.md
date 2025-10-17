@@ -30,5 +30,5 @@ For more details about this feature refer to [Certificate Authority (CA)](/devic
 {{< c8y-admon-info >}}
 For environments that used this feature during Public Preview, note that the certificate model was updated in version 2025.279.0.
 Provisioned certificates obtained for devices prior to this version may not be compatible with the current release.
-It is recommended to remove such devices and provision new certificates to ensure compatibility and proper operation.
+It is required to remove such devices and provision new certificates to ensure compatibility and proper operation.
 {{< /c8y-admon-info >}}
