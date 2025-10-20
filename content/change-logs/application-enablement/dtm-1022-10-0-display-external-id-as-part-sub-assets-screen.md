@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Display External ID of an asset in SubAssets page"
+title: "External ID of an asset now displayed in the Subassets page"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
