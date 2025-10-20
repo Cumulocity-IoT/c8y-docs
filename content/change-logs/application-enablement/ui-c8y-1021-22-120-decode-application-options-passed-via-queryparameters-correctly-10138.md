@@ -1,6 +1,6 @@
 ---
 date: ""
-title: decode application options passed via queryparameters correctly (#10138)
+title: Application options passed via query parameters are now decoded correctly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,5 @@ build_artifact:
 ticket: MTM-64930
 version: 1021.22.120
 ---
-Co-authored-by: Tristan Bastian <tristan.bastian@cumulocity.com>
+Previously, application options which where provided via query parameters to web applications, were only URI decoded in case the parameter contained valid JSON.
+Now we decode these query parameters even when they are not containing valid JSON.
