@@ -14,5 +14,5 @@ build_artifact:
 ticket: MTM-64930
 version: 1022.44.7
 ---
-Previously, application options which where provided via query parameters to web applications, were only URI decoded in case the parameter contained valid JSON.
+Previously, application options that were provided via query parameters to web applications were only URI-decoded if the parameter contained valid JSON.
 Now we decode these query parameters even when they are not containing valid JSON.
