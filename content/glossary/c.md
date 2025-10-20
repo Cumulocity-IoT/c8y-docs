@@ -75,7 +75,7 @@ For details, see [Analytics > DataHub](/datahub/datahub-overview/) in the docume
 
 ### {{< product-c8y-iot >}} Developer Codex {#developer-codex}
 
-The {{< product-c8y-iot >}} Developer Codex is {{< product-c8y-iot >}}'s comprehensive design system aimed at developers building custom [web applications](#web-application). The {{< product-c8y-iot >}} Developer Codex provides a set of UI guidelines, a library of reusable Angular components ([Web SDK](#web-sdk)), and styling utilities to ensure that custom [applications](#application) maintain a consistent look and feel, and user experience with standard {{< product-c8y-iot >}} applications.  
+The [{{< product-c8y-iot >}} Developer Codex](https://cumulocity.com/codex/) is {{< product-c8y-iot >}}'s comprehensive design system aimed at developers building custom [web applications](#web-application). The {{< product-c8y-iot >}} Developer Codex provides a set of UI guidelines, a library of reusable Angular components ([Web SDK](#web-sdk)), and styling utilities to ensure that custom [applications](#application) maintain a consistent look and feel, and user experience with standard {{< product-c8y-iot >}} applications.  
 
 
 ### {{< product-c8y-iot >}} Edge {#edge}
