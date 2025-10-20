@@ -27,8 +27,8 @@ The feature can be accessed in the Device Management application under Managemen
 
 For more details about this feature refer to [Certificate Authority (CA)](/device-certificate-authentication/certificate-authority).
 
-{{< c8y-admon-info >}}
-If you used this feature during the Public Preview, note that the certificate model was updated in version 2025.279.0.
-Provisioned certificates obtained for devices prior to this version may not be compatible with the current release.
-It is required to remove such devices and provision new certificates to ensure compatibility and proper operation.
-{{< /c8y-admon-info >}}
+{{< c8y-admon-caution >}}
+Migration from Public Preview to General Availability - action required.
+
+As part of the move to General Availability you need to remove all the devices you have registered under the public preview and re-register them. All such devices will continue to be able to connect but none of the other capabilities of the certificate lifecycle management will be available until they are re-registered.
+{{< /c8y-admon-caution >}}
