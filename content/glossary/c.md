@@ -59,7 +59,7 @@ See also [Private Preview](#private-preview), [Public Preview](#public-preview) 
 
 The {{< product-c8y-iot >}} CLI (Command Line Interface) is a software tool provided by {{< product-c8y-iot >}} that offers a command-line interface for interacting with the platform. It enables developers, administrators, and automation scripts to manage platform resources directly from a terminal. See also the [CLI documentation](https://goc8ycli.netlify.app/docs/introduction/).
 
- 
+
 
 ### {{< product-c8y-iot >}} Core {#core}
 
@@ -87,7 +87,7 @@ For details, see [Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/k8-edge-
 
 ### {{< openapi >}} {#openapi-specification}
 
-A complete OpenAPI Specification (following the OpenAPI 3.0 standard) for the {{< product-c8y-iot >}} [REST API](#rest-api), available at [https://cumulocity.com/api/core/](https://cumulocity.com/api/core/). It describes the entire REST API, including available endpoints, operations on each endpoint, input and output for each operation, and authentication methods.  
+The {{< openapi >}} is a complete OpenAPI specification (following the OpenAPI 3.0 standard) for the {{< product-c8y-iot >}} [REST API](#rest-api), available at [https://cumulocity.com/api/](https://cumulocity.com/api/). It describes the entire REST API, including available endpoints, operations on each endpoint, input and output for each operation, and authentication methods.  
 
 
 ### {{< product-c8y-iot >}} operational store {#operational-store}
