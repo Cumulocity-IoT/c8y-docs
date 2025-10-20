@@ -30,5 +30,5 @@ For more details about this feature refer to [Certificate Authority (CA)](/devic
 {{< c8y-admon-caution >}}
 Migration from Public Preview to General Availability - action required.
 
-As part of the move to General Availability you need to remove all the devices you have registered under the public preview and re-register them. All such devices will continue to be able to connect but none of the other capabilities of the certificate lifecycle management will be available until they are re-registered.
+As part of the move to General Availability you need to remove all the devices you have registered under Public Preview and re-register them. All such devices will continue to be able to connect, but none of the other capabilities of the certificate lifecycle management will be available until they are re-registered.
 {{< /c8y-admon-caution >}}
