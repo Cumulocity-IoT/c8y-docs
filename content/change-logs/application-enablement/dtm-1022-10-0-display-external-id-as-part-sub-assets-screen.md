@@ -14,6 +14,6 @@ build_artifact:
 ticket: ""
 version: "1022.10.0"
 ---
-A new field has been introduced in the Subassets screen to display the
+A new field has been introduced in the Subassets page to display the
 External ID of an asset. When available, the External ID (from the
 c8y_ExternalId fragment) is shown below the Last Updated field.
