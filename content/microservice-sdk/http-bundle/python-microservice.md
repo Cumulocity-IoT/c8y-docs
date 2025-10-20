@@ -25,6 +25,10 @@ Make sure that you have a recent version of Docker installed. You can, for examp
 $ export DOCKER_DEFAULT_PLATFORM=linux/amd64
 ```
 
+{{< c8y-admon-info >}}
+After updating your development tools for building microservice container images - such as Docker Desktop or Podman - you may experience compatibility issues when uploading microservices or when subscribing to microservices. If you encounter any issues, it is recommended to avoid upgrading the affected tool.
+{{< /c8y-admon-info >}}
+
 ### Create a sample Python web application {#create-a-python-web-application}
 
 This example uses Python 3 with the [Flask](https://flask.palletsprojects.com/) web framework and the [Waitress](https://docs.pylonsproject.org/projects/waitress/en/latest/) HTTP server. Start by creating the _application.py_ script with the following content:
