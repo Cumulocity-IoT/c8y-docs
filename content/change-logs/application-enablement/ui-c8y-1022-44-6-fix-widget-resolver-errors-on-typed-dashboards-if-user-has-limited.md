@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix widget resolver errors on typed dashboards if user has limited permissions
+title: Fix widget resolver errors on typed dashboards for users with limited permissions
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
