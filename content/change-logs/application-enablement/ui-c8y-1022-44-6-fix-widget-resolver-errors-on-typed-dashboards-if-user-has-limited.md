@@ -14,4 +14,6 @@ build_artifact:
 ticket: MTM-64730
 version: 1022.44.6
 ---
-On typed dashboards like `c8y_Device`, widgets previously displayed resolver errors when accessed by users with limited permissions. The issue occurred because the resolver checked access to the originally configured device before the context device override took place. With this fix, widget configurations on typed dashboards are updated with the current context device, replacing both device and __target in datapoint objects, before resolvers are triggered. This prevents unnecessary permission checks against inaccessible devices, allowing the widgets to display correctly for users with limited permissions.
+Previously, widgets on typed dashboards such as `c8y_Device` could display resolver errors for users with limited permissions. This occurred because permission checks were executed on the originally configured device before the context override was applied.
+
+With this fix, widget configurations are now updated with the correct context device, replacing both device and __target fields in datapoint objects before resolvers are executed. This ensures that permission checks target the appropriate device and that widgets render correctly for all users.
