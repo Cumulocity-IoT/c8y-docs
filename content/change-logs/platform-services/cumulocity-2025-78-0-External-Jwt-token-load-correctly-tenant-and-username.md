@@ -1,6 +1,8 @@
 ---
-date:
-title: Improved Java SDK support for external IAM tokens without tenant or username claims
+date: '2025-10-16'
+title: >-
+  Improved Java SDK support for external IAM tokens without tenant or username
+  claims
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
