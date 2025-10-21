@@ -40,7 +40,7 @@ There are two methods which can be used to quickly find assets:
 
 On the **Configuration** tab of the widget editor you can use the search field under **Asset selection**.
 
-Through the search you can find assets anywhere within the hierarchy, but the asset’s name must contain the search term.
+With the search, you can find assets anywhere within the hierarchy if the asset’s name contains the search term.
 
 After selecting the asset, you see all children of this asset. To return to the level above, click the "X" in the search field.
 
