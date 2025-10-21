@@ -84,15 +84,15 @@ The application switcher shows all {{< product-c8y-iot >}} applications you curr
 
 {{< product-c8y-iot >}} provides a name search, available through the **Search** button <i class="dlt-c8y-icon-search icon-20"></i> at the right of the top bar in the UI.
 
-On entering a search term into the textbox at the top of the **Search** window, {{< product-c8y-iot >}} returns all assets (groups, devices, child devices) that have the term in their name. By selecting the respective tab, you can limit the search results to either devices or assets. If you are in the context of an asset, you can also limit the search to the current hierarchy.
+When you enter a search term in the textbox at the top of the **Search** window, {{< product-c8y-iot >}} displays all assets (including groups, devices, and child devices) whose names contain the term. You can filter the results by selecting the appropriate tab to show only devices or only assets. If you are in the context of a specific asset, you can further restrict the search to its descendants.
 
 <img src="/images/users-guide/getting-started/getting-started-search-result.png" alt="Search result" style="max-width: 100%">
 
-Under **Search results**, all assets or devices matching the search criteria are listed. 
+Under **Search results**, you’ll see a list of all assets or devices matching the search criteria.
 
-By default, the search uses a wildcard search, which means a wildcard is automatically added to the beginning, end, and each whitespace of the search term. To add more filter options, click **Go to the assets table** at the bottom right. This shows all assets and allows filtering for further criteria.
+By default, the search uses a wildcard approach, automatically adding wildcards to the beginning, end, and between each word in your search term. For additional filtering options, click **Go to the assets table** in the bottom right corner. This will display all assets and let you apply more specific filters.
 
-You can navigate through the search items by using the arrow keys on your keyboard. Selecting a particular item with the Tab or the Enter key will navigate you to the selected item.
+You can navigate through the search results using the arrow keys on your keyboard. Selecting an item with Tab and pressing Enter will navigate you to its details.
 
 #### Filtering {#filtering}
 

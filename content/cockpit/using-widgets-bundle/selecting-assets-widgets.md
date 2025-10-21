@@ -33,14 +33,14 @@ You cannot select the **Unassigned devices** folder itself. However, each device
 
 There are two methods which can be used to quickly find assets:
 
-1. Name search, and
+1. Name search
 2. filtering.
 
 #### Name search {#name-search}
 
 On the **Configuration** tab of the widget editor you can use the search field under **Asset selection**.
 
-Through the search you can find assets in the whole hierarchy, but it requires the name to include the search term.
+Through the search you can find assets anywhere within the hierarchy, but the asset’s name must contain the search term.
 
 After selecting the asset, you see all children of this asset. To return to the level above, click the "X" in the search field.
 
