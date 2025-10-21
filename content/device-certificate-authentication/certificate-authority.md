@@ -18,10 +18,6 @@ The {{< product-c8y-iot >}} CA service is based on the EST protocol due to its s
 * `/.well-known/est/simpleenroll` to be used by a device to get a fresh new certificate. The device has to authenticate itself using its tenant, identifier and security token as the BasicAuth realm, user and password. These tenant, identifier and security token must be shared with {{< product-c8y-iot >}}.
 * `/.well-known/est/simplereenroll` to be used by a device to renew its certificate or to substitute for a certificate. The device has to authenticate itself using its password or a JWT token (obtained using its certificate over MQTT).
 
-{{< c8y-admon-info >}}
-This feature is currently released as Public Preview and is disabled by default at both the instance and tenant levels.
-{{< /c8y-admon-info >}}
-
 The {{< product-c8y-iot >}} certificate management allows {{< product-c8y-iot >}} to sign and issue certificates.
 
 The {{< product-c8y-iot >}} signed certificates are shown in the list of certificate authority (CA) certificates for a tenant along with the trust anchor certificates. In this list, the {{< product-c8y-iot >}} signed certificates are identifiable by the words TENANT CA.
@@ -30,7 +26,7 @@ This section outlines how to create a Certificate Authority (CA) for a tenant wi
 
 ### Prerequisites {#prerequisites}
 
-To use the Certificate Authority API, this feature must first be enabled at the tenant level. You can verify whether the feature is enabled in your tenant using the following API:
+To use the Certificate Authority API, this feature must be enabled at the tenant level. By default, it is enabled starting from version 2025.348.0. You can verify whether the feature is enabled in your tenant using the following API:
 
     GET /features/certificate-authority
     Content-Type: application/json
