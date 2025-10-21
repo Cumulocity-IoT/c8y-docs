@@ -34,7 +34,7 @@ You cannot select the **Unassigned devices** folder itself. However, each device
 There are two methods which can be used to quickly find assets:
 
 1. Name search
-2. filtering.
+2. Filtering
 
 #### Name search {#name-search}
 
