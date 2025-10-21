@@ -30,14 +30,14 @@ For details, see [Tenant hierarchy](/concepts/tenant-hierarchy/) in the document
 A tenant ID is a unique identifier assigned to each [tenant](#tenant). The tenant ID is often used as a prefix in the username for authentication (for example, `\<tenantID\>/\<username\>`).
 
 
-### Tenant options {#tenant-options}
+### Tenant option {#tenant-option}
 
 Tenant options are configurable key-value pairs associated with a [tenant](#tenant), used to customize platform behavior, [application](#application) settings, or store tenant-specific configurations.  
 
 
 ### Tenant policy {#tenant-policy}
 
-Predefined sets of [tenant options](#tenant-options) and retention rules that can be created in a [{{< management-tenant >}}](#management-tenant) or [{{< enterprise-tenant >}}](#enterprise-tenant) and applied when creating new [subtenants](#subtenant) to ensure consistent initial configurations.   
+Tenant policies are predefined sets of [tenant options](#tenant-option) and retention rules that can be created in a [{{< management-tenant >}}](#management-tenant) or [{{< enterprise-tenant >}}](#enterprise-tenant) and applied when creating new [subtenants](#subtenant) to ensure consistent initial configurations.   
 
 
 ### Tech Community {#tech-community}

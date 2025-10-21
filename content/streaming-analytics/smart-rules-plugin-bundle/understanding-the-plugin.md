@@ -1,10 +1,10 @@
 ---
 weight: 15
-title: Understanding the Analytics rules plugin
+title: Understanding the smart rules (NEW) plugin
 layout: redirect
 ---
 
-### Analytics Builder workflow versus Analytics rules plugin {#analytics-builder-workflow-versus-analytics-rules-plugin}
+### Analytics Builder workflow versus smart rules plugin {#analytics-builder-workflow-versus-smart-rules-plugin}
 
 #### Standard Analytics Builder workflow {#standard-analytics-builder-workflow}
 In the standard Analytics Builder workflow, to deploy analytics instances, users must switch from their primary workflow to the Analytics Builder:
@@ -19,10 +19,10 @@ This process requires switching between applications and can be time-consuming w
 
 For detailed information about the instance editor workflow, refer to [Instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor).
 
-#### With Analytics rules plugin {#with-analytics-rules-plugin}
-The Analytics rules plugin streamlines this process by enabling analytics builder model instance creation and deployment directly from device and group contexts, eliminating the need for switching to different application.
+#### With smart rules plugin {#with-smart-rules-plugin}
+The smart rules plugin streamlines this process by enabling Analytics Builder model instance creation and deployment directly from device and group contexts, eliminating the need for switching to a different application.
 
-### Understanding the Analytics rules interface {#understanding-the-analytics-rules-interface}
+### Understanding the smart rules interface {#understanding-the-smart-rules-interface}
 
 A rule has the following fields and properties:
 
@@ -38,11 +38,11 @@ A rule has the following fields and properties:
 
 ### Integration with Analytics Builder instance editor {#integration-with-analytics-builder-instance-editor}
 
-The Analytics rules plugin maintains seamless bidirectional integration with the Analytics Builder instance editor.
+The smart rules plugin maintains seamless bidirectional integration with the Analytics Builder instance editor.
 
-Rules created in the Analytics Builder instance editor appear in the Analytics rules plugin only when the mode is set to **Production**. Non-production modes indicate the rule is under development or testing and not ready for deployment.
+Rules created in the Analytics Builder instance editor appear in the smart rules plugin only when the mode is set to **Production**. Non-production modes indicate the rule is under development or testing and not ready for deployment.
 
-Rules created through the Analytics rules plugin automatically appear in the corresponding model's instance editor. These rules can be edited, modified, or deleted from the instance editor.
+Rules created through the smart rules plugin automatically appear in the corresponding model's instance editor. These rules can be edited, modified, or deleted from the instance editor.
 
 To prevent deployment of incomplete rules, the instance editor includes enhanced validation on the instance name. The instance name is required and must be unique within your tenant. The instance is available for deployment only after you provide a unique, non-empty instance name.
 
@@ -53,6 +53,6 @@ This validation applies only to models configured with template parameters with 
 - When the instance name is empty, a message **Set distinct instance name to select production mode** is displayed below the mode field.
 - If you enter a duplicate instance name, an error message **Instance name already exists** appears below the instance name field and prevents you from proceeding.
 
-![Production mode validation](/images/streaming-analytics/analytics-rules-plugin/production-mode-validation.png)
+![Production mode validation](/images/streaming-analytics/smart-rules-plugin/production-mode-validation.png)
 
 This validation ensures that all production-ready rules have proper identification and prevents deployment conflicts.

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-10-16'
 title: Asset selector miller header size adjusted
 product_area: Application enablement & solutions
 change_type:

@@ -68,12 +68,12 @@ The device replacement feature allows the replacement of physical devices withou
 
 ### Digital twin {#digital-twin}
 
-A digital twin is a virtual representation of a physical [asset](#asset) or system that is continuously updated with real-time IoT data from connected [devices](#device). This data-driven digital counterpart enables monitoring, analysis, and optimization of physical assets by combining sensor [measurements](#measurement) with business context.  
+A digital twin is a virtual representation of a physical asset or system that is continuously updated with real-time IoT data from connected [devices](#device). This data-driven digital counterpart enables monitoring, analysis, and optimization of physical assets by combining sensor [measurements](#measurement) with business context.  
 
 
 ### Digital Twin Manager (DTM) {#dtm}
 
-The Digital Twin Manager (DTM) is a schema-based modeling [application](#application) in {{< product-c8y-iot >}} that enables users to create and manage data model schemas, which serve as blueprints for modeling [assets](#asset), [properties](#asset-properties), and other [managed objects](#managed-object), acting as reusable templates within the platform.  
+The Digital Twin Manager (DTM) is a schema-based modeling [application](#application) in {{< product-c8y-iot >}} that enables users to create and manage data model schemas, which serve as blueprints for modeling [assets](#asset), [properties](#asset-property), and other [managed objects](#managed-object), acting as reusable templates within the platform.  
 
 
 ### Document {#document}

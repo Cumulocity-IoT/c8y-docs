@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-10-16'
 title: Enhanced Codex information architecture and developer experience
 product_area: Application enablement & solutions
 change_type:
