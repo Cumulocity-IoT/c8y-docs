@@ -14,4 +14,4 @@ build_artifact:
 version: 
 ---
 
-The API to support MQTT Service in EPL Apps has been deprecated.
+Due to changes in the Cumulocity MQTT Service preview version, the current  EPL API for the MQTT Service (`com.apama.cumulocity.mqttservice`) is now deprecated. 
