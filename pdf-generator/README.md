@@ -66,7 +66,7 @@ c8y-docs
    - Cleans up temp files.  
 
 8. **Automated Workflow (CI/CD)**  
-   - The GitHub Actions workflow (`build-and-deploy.yml`) also runs the PDF generator.  
+   - The GitHub Actions workflow (`staging.yml`) also runs the PDF generator.  
    - After the documentation is built and deployed, the workflow:  
      - Moves into the `pdf-generator` folder  
      - Installs dependencies with `npm ci`  
