@@ -14,4 +14,4 @@ build_artifact:
 version: 
 ---
 
-The API to support MQTT Service in EPL Apps has been deprecated. A replacement API may be provided in future.
+The API to support MQTT Service in EPL Apps has been deprecated.
