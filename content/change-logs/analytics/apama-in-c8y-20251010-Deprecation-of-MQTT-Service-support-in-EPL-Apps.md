@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2025-10-22
 title: Deprecation of MQTT Service support in EPL Apps
 change_type:
   - value: change-inv-3bw8e
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
-version: 
+version: 26.23.0
 ---
 
 Due to changes in the Cumulocity MQTT Service preview version, the current  EPL API for the MQTT Service (`com.apama.cumulocity.mqttservice`) is now deprecated. 
