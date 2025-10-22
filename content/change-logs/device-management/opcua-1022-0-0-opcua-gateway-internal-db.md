@@ -3,8 +3,8 @@ date:
 title: OPC UA gateway now runs on Java 17
 product_area: Device management & connectivity
 change_type:
-  - value: change-3BQrQ6adS
-    label: API change
+  - value: change-inv-3bw8e
+    label: Announcement
 component:
   - value: component-Tf05_KQ-B
     label: OPC UA
