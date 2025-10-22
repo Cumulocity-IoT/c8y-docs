@@ -18,6 +18,12 @@ The {{< product-c8y-iot >}} CA service is based on the EST protocol due to its s
 * `/.well-known/est/simpleenroll` to be used by a device to get a fresh new certificate. The device has to authenticate itself using its tenant, identifier and security token as the BasicAuth realm, user and password. These tenant, identifier and security token must be shared with {{< product-c8y-iot >}}.
 * `/.well-known/est/simplereenroll` to be used by a device to renew its certificate or to substitute for a certificate. The device has to authenticate itself using its password or a JWT token (obtained using its certificate over MQTT).
 
+{{< c8y-admon-caution >}}
+Migration from Public Preview to General Availability - action required.
+
+As part of the move to General Availability you need to remove all the devices you have registered under Public Preview and re-register them. All such devices will continue to be able to connect, but none of the other capabilities of the certificate lifecycle management will be available until they are re-registered.
+{{< /c8y-admon-caution >}}
+
 The {{< product-c8y-iot >}} certificate management allows {{< product-c8y-iot >}} to sign and issue certificates.
 
 The {{< product-c8y-iot >}} signed certificates are shown in the list of certificate authority (CA) certificates for a tenant along with the trust anchor certificates. In this list, the {{< product-c8y-iot >}} signed certificates are identifiable by the words TENANT CA.
