@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
-version: 26.23.0
+version: 26.230.0
 ---
 
 Due to changes in the Cumulocity MQTT Service preview version, the current  EPL API for the MQTT Service (`com.apama.cumulocity.mqttservice`) is now deprecated. 
