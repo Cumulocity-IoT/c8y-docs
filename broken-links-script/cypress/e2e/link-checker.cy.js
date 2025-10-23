@@ -10,8 +10,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     const collectFragments = (root) => {
       const ids = Array.from(root.querySelectorAll('[id]')).map(el => el.id);
       const names = Array.from(root.querySelectorAll('a[name]')).map(a => a.getAttribute('name'));
-      const hrefs = Array.from(root.querySelectorAll('a[href^="#"]')).map(a => a.getAttribute('href').substring(1));
-      return [...ids, ...names, ...hrefs].filter(Boolean);
+      return [...ids, ...names].filter(Boolean);
     };
 
     let allFragments = collectFragments(doc);
@@ -26,17 +25,13 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       }
     }
 
-    allFragments = allFragments.map(f => decodeURIComponent(f).toLowerCase());
-    const normalize = (str) => str.replace(/[^a-z0-9]/gi, '');
-    const exists = allFragments.some(f =>
-      f === decodedFragment || normalize(f) === normalize(decodedFragment)
-    );
+    const exists = allFragments.some(f => f === decodedFragment);
 
     if (!exists) {
       cy.log(`Available fragments (including frames):\n${allFragments.join('\n')}`);
     }
 
-    expect(exists, `An element with id, name, or href="#${fragment}" should exist in HTML or frames`).to.be.true;
+    expect(exists, `An element with id or name = "#${fragment}" should exist in HTML or frames`).to.be.true;
   };
 
   const expectNoUnencodedParentheses = (url) => {
@@ -80,7 +75,6 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
       const hasNonHtmlExtension = nonHtmlExtensions.some(ext => url.endsWith(ext));
       const isNonHtmlResource = hasNonHtmlExtension || url.includes('/files/') || url.includes('/downloads/');
-      const isPrivateGithubrepository = url.includes('github.com/Cumulocity-IoT/');
       const isNpmPackagePage = url.startsWith('https://www.npmjs.com/package/');
       if (isNpmPackagePage) {
         const m = url.match(/^https:\/\/www\.npmjs\.com\/package\/(@[^/]+\/[^#?]+)/);
@@ -105,12 +99,6 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       Cypress.env('sourceFiles', item.files);
       expectNoUnencodedParentheses(url);
 
-      if (isPrivateGithubrepository) {
-        cy.log(`Skipping private GitHub link: ${url}`);
-        completedTests++;
-        return;
-      } 
-  
       if (isNonHtmlResource) {
         cy.log(`Validating non-HTML resource: ${url}`);
         cy.request({
