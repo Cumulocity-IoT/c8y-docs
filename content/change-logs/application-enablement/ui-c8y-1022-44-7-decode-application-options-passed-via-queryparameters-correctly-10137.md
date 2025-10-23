@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-10-23'
 title: Application options passed via query parameters are now decoded correctly
 product_area: Application enablement & solutions
 change_type:
