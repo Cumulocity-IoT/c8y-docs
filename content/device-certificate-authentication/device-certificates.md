@@ -422,14 +422,11 @@ If you suspect or confirm that a device certificate has been compromised, follow
 
 1. **Revoke the Compromised Certificate**
     - Add the certificate to the [Certificate Revocation List](/device-certificate-authentication/managing-trusted-certificate-settings/#crl-settings) maintained by {{< product-c8y-iot >}}.
-    - The certificate itself will remain untouched until an investigation can be completed.
-2. **Prevent the compromised device from connecting to IoT services (MQTT broker, HTTPS**
-    - deviceAccessToken API.
-3. **Disable the device user**
+2 **Disable the device user**
     - This will disconnect the device from the {{< product-c8y-iot >}} but leave the certificate untouched until an investigation can be done.
     - If not compromised:** Re-enable the device user. The device will reconnect using its existing certificate.
     - If compromised:** Revoke the certificate to prevent any further use of it.
-4. **Provision a New Certificate**
+3 **Provision a New Certificate**
     - Generate a new certificate for the device.
     - Using the existing CA certificate which is owned by {{< product-c8y-iot >}} generate a new certificate for the device.
     - Update the device to use the new certificate for authentication.
@@ -443,8 +440,8 @@ Enrollment processes may be compromised when insecure practices are used, for ex
 If such a situation occurs, proceed with the following steps:
 
 1. **Disable auto-registration on the tenant’s CA certificate**
-    - This stops any new enrollment requests immediately.
-    - Existing enrolled devices will remain connected and operational.
+    - This stops any new automatic registrations immediately.
+    - Notice that existing registered devices will remain connected and operational.
 2. **Communicate and remediate unsafe procedures**
     - Inform all stakeholders about the issue.
     - If necessary, disable users who were following unsafe enrollment practices.
