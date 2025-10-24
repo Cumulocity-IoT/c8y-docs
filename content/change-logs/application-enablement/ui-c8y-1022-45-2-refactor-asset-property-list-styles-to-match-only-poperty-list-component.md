@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64972
 version: 1022.45.2
 ---
-The asset property list component had a stylesheet that was unintentionally affecting the device protocol creation modal for OPC UA, causing it to be non-functional. The stylesheet has now been targeted more precisely to the asset property list component only. This change ensures that the device protocol creation modal is no longer impacted by the asset property list styles and will function as expected.
+The asset property list component had a stylesheet that unintentionally made the device protocol creation modal for OPC UA non-functional. The stylesheet has now been targeted more precisely to the asset property list component only. This change ensures that the device protocol creation modal is no longer impacted by the asset property list styles and will function as expected.
