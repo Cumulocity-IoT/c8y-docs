@@ -87,7 +87,7 @@ The second section shows the **List of tenants** with the following information 
 * **ID** – Tenant ID.
 * **Domain** – Tenant domain.
 * **Parent tenant ID** – Parent tenant ID.
-* **Requested by user** – Name of the user who requested the migration.
+* **Requested by user** – Name of the user that requested the migration.
 * **Approved by user** – Name of the user who approved the migration.
 * **Tenant status** – Current status of the tenant (for example, ACTIVE or SUSPENDED).
 * **Migration status** – Current migration state for the tenant (for example, Queued, In progress, Verified).
