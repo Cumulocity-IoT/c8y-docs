@@ -184,7 +184,7 @@ async function processFolder(folderName: string) {
   const raw = fs.readFileSync(cardFile, 'utf-8');
   const matterResult = matter(raw);
   if (matterResult.data.external) {
-  console.log(`Skipping external card: ${folderName} (${matterResult.data.external})`);
+    console.log(`Skipping external card: ${folderName} (${matterResult.data.external})`);
   return;
   } 
   const title: string = matterResult.data.title || folderName;
