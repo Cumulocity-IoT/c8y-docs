@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Refactor asset property list styles to match only PopertyListComponent
+title: Refactored asset property list styles to avoid affecting device protocol creation
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64972
 version: 1022.45.2
 ---
-Asset property list component target styles was previously affecting also Device protocol creation modal for OPC UA causing it non-functional. Now this stylesheet is targeted more precisely and Device protocol creation modal is not affected.
+The asset property list component had a stylesheet that was unintentionally affecting the device protocol creation modal for OPC UA, causing it to be non-functional. The stylesheet has now been targeted more precisely to the asset property list component only. This change ensures that the device protocol creation modal is no longer impacted by the asset property list styles and will function as expected.
