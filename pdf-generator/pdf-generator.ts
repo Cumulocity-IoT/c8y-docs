@@ -99,9 +99,13 @@ async function loadUrlsFromSitemap(): Promise<string[]> {
 // Get sitemap URLs that belong to a specific folder
 async function buildFolderLinksFromSitemap(folderName: string): Promise<string[]> {
   const allUrls = await loadUrlsFromSitemap();
+  const rootUrl = allUrls.find(u => u.match(new RegExp(`/docs/${folderName}/$`)));
   let urls = allUrls.filter(u => u.includes(`/${folderName}/`));
-  urls = urls.filter(u => !u.match(new RegExp(`/docs/${folderName}/$`)));
-
+  if (urls.length === 0 && rootUrl) {
+    urls.push(rootUrl);
+  } else if (rootUrl && !urls.includes(rootUrl)) {
+    urls.unshift(rootUrl);
+  }
   return urls;
 }
 
@@ -179,6 +183,10 @@ async function processFolder(folderName: string) {
 
   const raw = fs.readFileSync(cardFile, 'utf-8');
   const matterResult = matter(raw);
+  if (matterResult.data.external) {
+    console.log(`Skipping external card: ${folderName} (${matterResult.data.external})`);
+  return;
+  } 
   const title: string = matterResult.data.title || folderName;
   const bundleFolder: string = matterResult.data.bundlefolder || folderName;
   const uniqueLinks = await buildFolderLinksFromSitemap(bundleFolder);
