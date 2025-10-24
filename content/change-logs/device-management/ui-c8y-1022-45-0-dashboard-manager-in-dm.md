@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Dashboard manager available for preview in Device management
+title: Dashboard manager available for preview in the Device Management application
 product_area: Device management & connectivity
 change_type:
   - value: change-pXAlHAWka
