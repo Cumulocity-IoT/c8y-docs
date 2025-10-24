@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Login pages links aligned
+title: Login page links aligned properly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
