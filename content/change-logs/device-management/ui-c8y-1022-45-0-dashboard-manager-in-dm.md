@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4941
 version: 1022.45.0
 ---
-**Dashboard manager** as known from the **Cockpit** application is now available for preview in **Device management**. The **Dashboard manager** brings more flexibility, consistency, and control over device dashboards.
+The dashboard manager, which has already been available in the Cockpit application, is now also available for preview in the Device Management application. The dashboard manager brings more flexibility, consistency, and control over device dashboards.
