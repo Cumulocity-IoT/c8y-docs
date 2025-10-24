@@ -52,8 +52,8 @@ const shortcodeMapping = {
 const hasRenderFalse = (fileContent) => {
   const fm = fileContent.match(/(^|\n)---\s*[\s\S]*?\n---/);
   if (!fm) return false;
-  const block = fm[0];
-  return /_build:\s*[\r\n]+[\s\S]*?render:\s*false\b/i.test(block);
+  const frontMatter = fm[0];
+  return /_build:\s*[\r\n]+[\s\S]*?render:\s*false\b/i.test(frontMatter);
 };
 
 const resolveHugoShortcode = (link) => {
