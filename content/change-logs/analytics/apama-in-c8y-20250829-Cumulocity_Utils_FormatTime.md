@@ -1,5 +1,5 @@
 ---
-date:
+date: '2025-09-09'
 title: EPL Apps utility Util.formatTime produces date-time string in ISO8601 format
 change_type:
   - value: change-3BQrQ6adS

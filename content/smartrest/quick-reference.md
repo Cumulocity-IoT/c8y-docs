@@ -8,8 +8,8 @@ weight: 70
 
 #### Connection {#connection}
 
-* <kbd>CONNECT d:1234:myDevice_10 acme/device_1234</kbd> \
-  Connect the device with serial "1234" and default template myDevice_10 to tenant "acme" and user "device_1234".
+* <kbd>CONNECT d:1235:myDevice_10 acme/device_1235</kbd> \
+  Connect the device with serial "1235" and default template myDevice_10 to tenant "acme" and user "device_1235".
 
 #### Topics {#topics}
 

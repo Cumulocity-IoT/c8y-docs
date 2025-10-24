@@ -4,31 +4,26 @@ title: P
 layout: bundle
 sector:
   - getting_started
+_build:
+  render: false
+
 ---
 
+### Permission {#permission}
 
-### Permissions {#permissions}
+Permissions are the most granular level of access control in {{< product-c8y-iot >}}, defining the ability to perform a specific action (for example, READ, CREATE, ADMIN) on a particular type of data (for example, [alarms](#alarm), [inventory](#inventory)). Permissions are not assigned to [users](#user) directly. Instead, they are grouped into [roles](#role).  
 
-The ability to execute certain functionality in the {{< product-c8y-iot >}} platform is based on permissions. Permissions define explicitly what functionality can be executed by a user. {{< product-c8y-iot >}} distinguishes read permissions and administration permissions. Read permissions enable users to read data. Administration permissions enable users to create, update and delete data.
 
-To manage permissions more easily, they are grouped into roles. Every user can be associated with a number of roles, adding up permissions of the user.
+### Private Preview {#private-preview}
 
-See also [Global roles](/glossary/g/#global-roles) and [Inventory roles](/glossary/i/#inventory-roles).
+Private Preview denotes a feature release stage in the [Continuous Deployment model](#continuous-deployment) where a new feature is made available to a limited, invitation-only group of selected customers for feedback and testing. See also, [Public Preview](#public-preview) and [General Availability](#ga).
 
-### Private Preview mode {#private-preview}
 
-In the [Continuous Deployment](/glossary/c/#continuous-deployment-model) model, the Private Preview mode refers to a feature which is only made available to selected customers.
+### Processing mode {#processing-mode}
 
-See also [General Availability](/glossary/g/#ga) and [Public Preview](/glossary/p/#public-preview).
+The processing mode is a mechanism that allows clients to control how {{< product-c8y-iot >}} handles incoming data ([measurements](#measurement) and [events](#event)) with respect to data persistence and real-time processing. Modes include: PERSISTENT (default), TRANSIENT (process, don't store), QUIESCENT (store, suppress notifications), and CEP (process transiently, suppress notifications).  
 
-### Product area {#product-area}
 
-In the change logs (or release notes for yearly releases respectively) changes can be filtered for various parameters one of which is the product area. The product area is a high-level functional area, for example, "Device management & connectivity". 
+### Public Preview {#public-preview}
 
-See also [Components](/glossary/c/#component).
-
-### Public Preview mode {#public-preview}
-
-In the [Continuous Deployment](/glossary/c/#continuous-deployment-model) model, the Public Preview mode refers to a feature for which customers can opt-in to have the feature activated.
-
-See also [General Availability](/glossary/g/#ga) and [Private Preview](/glossary/p/#private-preview).
+Public Preview denotes a feature release stage in the [Continuous Deployment model](#continuous-deployment) where a new feature is made available to any customer who opts in to use it. Features in this stage are not yet considered generally available. See also, [Private Preview](#private-preview) and [General Availability](#ga).

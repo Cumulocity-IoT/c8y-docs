@@ -160,16 +160,16 @@ If [MQTT Forwarding mode](#mqtt-forwarding-mode) is enabled, the configured func
 
 **Send measurement (MQTT Forwarding mode)**
 
-Measurements are sent to the MQTT topic `te/<identifier>/m/<measurement-type>` of Thin Edge. As Thin Edge only supports measurement values in measurements, the measurement units configured in the device protocol are ignored. Also, the standard fragments of the OPC-UA Gateway and additionally configured static fragments are not populated.
+Measurements are sent to the MQTT topic `te/<identifier>/m/<measurement-type>` of thin-edge.io. As thin-edge.io only supports measurement values in measurements, the measurement units configured in the device protocol are ignored. Also, the standard fragments of the OPC-UA Gateway and additionally configured static fragments are not populated.
 
 
 **Create alarm (MQTT Forwarding mode)**
 
-Alarms are created by sending them to the `te/<identifier>/a/<alarm-type>` MQTT topic of Thin Edge. Alarms are cleared by sending an empty message to the same topic. The logic to clear and deduplicate alarms is unchanged.
+Alarms are created by sending them to the `te/<identifier>/a/<alarm-type>` MQTT topic of thin-edge.io. Alarms are cleared by sending an empty message to the same topic. The logic to clear and deduplicate alarms is unchanged.
 
 **Send event (MQTT Forwarding mode)**
 
-Events are sent to the `te/<identifier>/e/<event-type>` MQTT topic of Thin Edge.
+Events are sent to the `te/<identifier>/e/<event-type>` MQTT topic of thin-edge.io.
 
 **Custom actions (MQTT Forwarding mode)**
 
@@ -177,13 +177,13 @@ Custom actions in MQTT Forwarding mode use the same body template mechanism. The
 
 **Send measurement (MQTT Forwarding mode, merging enabled)**
 
-Merging measurements is only supported for cyclic reads but not for subscriptions. Variables coming in the same cyclic read (meaning they use the same data reporting in a device protocol) are sent as a single, multi-value measurement to the `te/<identifier>/m/<measurement-type>` of Thin Edge. The configured type and series for the variable will be used as fragment and series in the measurement. If multiple variables are configured for the same type, they will be consolidated into a single fragment.
+Merging measurements is only supported for cyclic reads but not for subscriptions. Variables coming in the same cyclic read (meaning they use the same data reporting in a device protocol) are sent as a single, multi-value measurement to the `te/<identifier>/m/<measurement-type>` of thin-edge.io. The configured type and series for the variable will be used as fragment and series in the measurement. If multiple variables are configured for the same type, they will be consolidated into a single fragment.
 
 The measurement type of the measurement is `c8y_OpcuaMeasurement` unless `gateway.mappings.mergedMeasurementType` in the configuration has been set to a different type.
 
 **Send event (MQTT Forwarding mode, merging enabled)**
 
-Merging events is only supported for cyclic reads but not for subscriptions. Variables coming in the same cyclic read (meaning they use the same data reporting in a device protocol) are sent as a single event with multiple fragments to the `te/<identifier>/e/<event-type>` of Thin Edge. The configured type for the variable is used as the fragment name. While it is allowed to use the same event type for multiple variables in a device protocol, here this will result in variables overwriting each other and hence generally discouraged.
+Merging events is only supported for cyclic reads but not for subscriptions. Variables coming in the same cyclic read (meaning they use the same data reporting in a device protocol) are sent as a single event with multiple fragments to the `te/<identifier>/e/<event-type>` of thin-edge.io. The configured type for the variable is used as the fragment name. While it is allowed to use the same event type for multiple variables in a device protocol, here this will result in variables overwriting each other and hence generally discouraged.
 
 The event type of the event is `c8y_OpcuaEvent` unless `gateway.mappings.mergedEventType` in the configuration has been set to a different type.
 

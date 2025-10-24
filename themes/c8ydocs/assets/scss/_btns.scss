@@ -1,4 +1,4 @@
-.btn-link {
+.btn-link, .btn-clean {
   padding: 0;
   margin: 0;
   background: transparent;
@@ -10,6 +10,16 @@
   &:focus {
     text-decoration: none;
     outline: none;
+  }
+}
+
+.btn-clean{
+  &:hover{
+    color: $gray-text
+  }
+    &:focus{
+    outline: 2px solid $brand-primary;
+    border-radius: 2px;
   }
 }
 
