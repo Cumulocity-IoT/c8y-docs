@@ -4,27 +4,63 @@ layout: redirect
 title: Overview
 ---
 
+The MQTT Service works together with the Messaging Service to quickly and securely integrate MQTT devices with the {{< product-c8y-iot >}} platform.
+Devices that already understand the {{< product-c8y-iot >}} domain model can use the [Core MQTT](/device-integration/mqtt/) protocols (SmartREST and JSON-over-MQTT) to communicate directly with {{< product-c8y-iot >}}.
+Alternatively, devices can send and receive messages with arbitrary payloads on arbitrary MQTT topics.
+For these so-called _generic_ devices, a _mapping_ must be provided by the tenant to convert between the device message format and the {{< product-c8y-iot >}} domain model.
+A mapping can be implemented by a microservice running inside the platform, or by an external client application.
+
+_IoT device integration_ is the main intended use case for the MQTT Service.
+The design of the service is optimised for this use case, which has some highly asymmetric properties:
+* A large number (up to tens of millions) of simultaneously connected devices publishing messages into the IoT platform
+* A large number (up to tens of millions) of unique MQTT topics
+* A high aggregate throughput (up to millions per second) of unique messages published into the IoT platform
+* A small number of high-throughput message consumers within the IoT platform
+* Individual devices have a smaller message throughput (up to hundreds per second)
+* Smaller aggregate message throughput from the IoT platform to devices (up to thousands per second)
+* No direct peer-to-peer device communication
+* Ensuring endpoint security for widely distributed devices can be challenging
+
+Other, more symmetric _server-to-server_ or _application integration_ use cases may exceed the [limits](/service-terms/quotas/#mqtt-service) enforced by the MQTT Service.
+For optimal performance, these use cases should be implemented using a more traditional publish/subscribe architecture with direct connections to the Messaging Service.
+
+### Key features {#key-features}
+
+#### Protocols and clients {#protocols-clients}
+
+* MQTT v3 and v5 support
+  * Durable sessions not currently supported (possible message loss)
+* Core MQTT protocol support is still in preview and should be considered experimental
+  * No automatic device registration for generic-only devices
+* Pulsar
+* Supported by Thin Edge
+
+#### Security and isolation {#security-isolation}
+
+* Multi-tenant
+* Device isolation on the device side
+* Direct Pulsar access on the platform side (tenant isolated!)
+* Bi-directional TLS including client certificates
+
+#### Performance and scaling {#performance-scaling}
+
+* Horizontal scaling independently of the core
+* Tested with 100M concurrent connections
+* Tested with 1M messages/second
+
+
 ### Architecture {#architecture}
 
-The MQTT Service works together with the Messaging Service to provide a framework for highly customizable and flexible MQTT message processing solutions.
-The diagram below illustrates how a message flows, starting from the device, through the Messaging Service, 
-then to a user-provided microservice where it is converted to the {{< product-c8y-iot >}} JSON format and
-delivered to {{< product-c8y-iot >}} using the standard REST API.
+The diagram below illustrates the MQTT Service data flows within a tenant.
 
-![MQTT Service send](/images/mqtt-service/mqtt-service-send.svg)
+All messages published by MQTT devices are forwarded to the Messaging Service, where they are persisted until they are consumed.
+{{< product-c8y-iot >}} domain model messages published to the MQTT topics used by the Core MQTT protocols are consumed directly by the {{< product-c8y-iot >}} core.
+Messages published to other MQTT topics are consumed by microservices and/or external clients that are responsible for mapping the messages to the {{< product-c8y-iot >}} domain model.
+Similarly, the {{< product-c8y-iot >}} core and clients can publish messages to the Messaging Service that will be consumed by the MQTT Service and forwarded to devices.
 
-All MQTT messages published to the MQTT Service are forwarded to the Messaging Service, where they are persisted, waiting to be consumed.
-A custom microservice or [Streaming Analytics app](/streaming-analytics/epl-apps/#using-cumulocity-mqtt-service) that understands the topic and payload structure can consume the MQTT messages, and then translate and push them into {{< product-c8y-iot >}}.
-
-Similarly, a custom microservice or Streaming Analytics app can send messages to devices, as shown in the diagram below.
-In this case, the user-provided microservice receives messages from {{< product-c8y-iot >}} through a Notifications 2.0 subscription.
-These messages are mapped to the payload structure used by the MQTT devices, then published to MQTT topics.
-
-![MQTT Service push](/images/mqtt-service/mqtt-service-push.svg)
-
-As with MQTT messages published by devices, messages published from a microservice will be forwarded to the Messaging Service, where they can be consumed by MQTT devices subscribed to the relevant topics.
-
-Custom microservices may use the [Java client](/device-integration/mqtt-service#java-client) to publish to or consume from MQTT topics. They can use the [Microservice SDK](/microservice-sdk/java) to push data into {{< product-c8y-iot >}}.
+<p align="center" width="100%">
+    <img width="80%" src="/images/mqtt-service/mqtt-service-pulsar-connections.svg" alt="MQTT Service data flows">
+</p>
 
 ### MQTT Service compared to Core MQTT {#mqtt-service-vs-cumulocity-iot-mqtt}
 
