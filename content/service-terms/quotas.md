@@ -40,10 +40,10 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 | Quota                                                                      | Type | Value |
 | -------------------------------------------------------------------------- | ---- | ----: |
-| [Document size](/concepts/domain-model/#document-limits)                   | Hard | 16 MB |
-| [Document size](/concepts/domain-model/#document-limits)                   | Soft |  1 MB |
-| [Array size within document](/concepts/domain-model/#document-limits)      | Soft |  1000 |
-| [Children of an inventory object](/concepts/domain-model/#document-limits) | Soft |  1000 |
+| [Document size](/concepts/domain-model/#fragments)                   | Hard | 16 MB |
+| [Document size](/concepts/domain-model/#fragments)                   | Soft |  1 MB |
+| [Array size within document](/concepts/domain-model/#fragments)      | Soft |  1000 |
+| [Children of an inventory object](/concepts/domain-model/#fragments) | Soft |  1000 |
 | Property size                                                              | Soft | 32 KB |
 
 
