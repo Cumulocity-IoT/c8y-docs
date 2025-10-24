@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Align extra links on login (#10162)
+title: Login pages links aligned
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
