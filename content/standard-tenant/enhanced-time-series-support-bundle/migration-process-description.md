@@ -92,7 +92,7 @@ The second section shows the **List of tenants** with the following information 
 * **Tenant status** – Current status of the tenant (for example, ACTIVE or SUSPENDED).
 * **Migration status** – Current migration state for the tenant (for example, Queued, In progress, Verified).
 
-On hovering over a tenant row, you see one of the following buttons according to the migration state. Actions are only available for tenants with status **ACTIVE**:
+On hovering over a tenant row, you see one of the following buttons according to the migration state. Actions are only available for tenants with status ACTIVE:
 
 * **Add to queue** – Assign the tenant to the migration queue when it is in **Not migrated** state.
 * **Cancel migration** – Remove the tenant from the migration queue when it is in **Queued** state. If progress has already started, it is not possible to resign from migration.
