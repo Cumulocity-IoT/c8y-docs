@@ -59,7 +59,7 @@ Messages published to other MQTT topics are consumed by microservices and/or ext
 Similarly, the {{< product-c8y-iot >}} core and clients can publish messages to the Messaging Service that will be consumed by the MQTT Service and forwarded to devices.
 
 <p align="center" width="100%">
-    <img width="80%" src="/images/mqtt-service/mqtt-service-pulsar-connections.svg" alt="MQTT Service data flows">
+    <img width="80%" src="/images/mqtt-service/mqtt-service-architecture.svg" alt="MQTT Service architecture">
 </p>
 
 ### MQTT Service compared to Core MQTT {#mqtt-service-vs-cumulocity-iot-mqtt}
