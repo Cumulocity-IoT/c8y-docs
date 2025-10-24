@@ -912,7 +912,7 @@ A Spring Boot library was upgraded to 2.5.8, hence upgrading Microservice SDK to
 
 A Spring Boot library was upgraded to 2.7.6, hence upgrading Microservice SDK to 10.17+ may require some additional development.
 
-There was a change ie the internal microservice security configuration following
+There was a change in the internal microservice security configuration following
 the deprecation of `WebSecurityConfigurerAdapter` by Spring Security. The Microservice SDK now uses a direct
 declaration of the `SecurityFilterChain` bean in its internal configuration instead. At the same time, Spring Security
 only allows one of these configuration approaches in a single application. This means that if the old,
