@@ -43,3 +43,7 @@ Our learning platform offers structured content across four major categories, ra
 ### Cloud environments status page {#cloud-environments-status-page}
 
 For {{< product-c8y-iot >}} cloud shared environments, information on known issues and the next upgrade can be found and subscribed to at: [http://status.{{< domain-c8y >}}/](http://status.{{< domain-c8y >}}/).
+
+### Cloud environments status {#cloud-environments}
+
+For {{< product-c8y-iot >}} cloud shared environments, information on known issues and the next upgrade can be found and subscribed to at: [http://status.{{< domain-c8y >}}/](http://status.{{< domain-c8y >}}/).
