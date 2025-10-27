@@ -61,6 +61,10 @@
       "option": "connectivity-agent"
     },
     {
+      "id": "tc-G8NchI7b1",
+      "option": "timeseries-migration"
+    },
+    {
       "id": "tc-nJH2U7g3u",
       "option": "edge"
     }
