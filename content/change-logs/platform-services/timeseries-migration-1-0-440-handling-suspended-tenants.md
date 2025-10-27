@@ -9,7 +9,7 @@ component:
   - value: component-0UgqXH1Ys
     label: Administration
 build_artifact:
-  - value: ?
+  - value: tc-G8NchI7b1
     label: timeseries-migration
 ticket: MTM-64650
 version: 1.0.440
