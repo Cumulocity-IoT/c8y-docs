@@ -15,5 +15,6 @@ build_artifact:
 ticket: APMF-2737
 version: 26.33.0
 ---
-A new field named **Source or Destination Type** is now available in the **Template Parameters** dialog box of the Analytics Builder model editor.
-You can use the new field to select one of the following source or destination types: **Device**, **Groups**, **Assets**, or **Other**. You can then specify a default value that is based on your selection. See also [Managing template parameters](/streaming-analytics/analytics-builder/#managing-template-parameters).
+Analytics Builder now allows selecting assets of a group as model input. When selected, the model runs for all assets of the group independently, maintaining state of each device separately. The model would receive events only from the assets belonging the group and would send the output to the corresponding assets. The devices of the assets would be ignored. 
+
+For more details refer to [Model execution for different devices](https://cumulocity.com/docs/streaming-analytics/analytics-builder/#models-and-devices).
