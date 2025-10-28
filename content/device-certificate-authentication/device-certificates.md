@@ -463,7 +463,7 @@ If you suspect or confirm that a CA (Certificate Authority) certificate has been
 2. **Delete the compromised CA certificate**
     - Remove the compromised CA certificate from the tenant.
     - This action also deletes the associated key pair, ensuring it cannot be reused.
-3. **Create a New CA**
+3. **Create a new CA certificate**
     - Generate a new CA certificate.
     - A new key pair will be created automatically during this process.
     - Use this new CA to issue device certificates going forward.
