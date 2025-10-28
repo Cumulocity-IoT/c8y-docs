@@ -472,4 +472,6 @@ If you suspect or confirm that a CA (Certificate Authority) certificate has been
     - Devices using these certificates will be unable to connect via any communication channel, such as MQTT or deviceAccessToken API.
     - Re-enroll affected devices using certificates issued by the new CA.
 
-> **Note:** After replacing a compromised CA, review and update your certificate management and enrollment policies to ensure stronger security practices, including periodic CA rotation and continuous monitoring for unusual certificate activity.
+{{< c8y-admon-info >}} 
+After replacing a compromised CA certificate, review and update your certificate management and enrollment policies to ensure stronger security practices, including periodic CA rotation and continuous monitoring for unusual certificate activity.
+{{< /c8y-admon-info >}} 
