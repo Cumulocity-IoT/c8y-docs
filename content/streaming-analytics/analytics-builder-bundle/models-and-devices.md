@@ -13,7 +13,16 @@ Each model must either:
 -   receive input from a set of specific devices and send output to a set of specific devices, or
 -   receive input from each device within a range of devices and send output to the trigger device or an asset. Note that asset output can only be used for sending cross-device aggregates.
 
-    A range of devices can include a {{< product-c8y-iot >}} device group, a smart group, an asset, or all input sources on the tenant. When a model uses a range of devices, the model acts on all devices referred to by the range, either directly or indirectly through members of the group that are themselves groups and have device members \(or even "grand-children" group members\). A device can be a member of zero, one or many groups. For more information, see [Grouping devices](/device-management-application/grouping-devices/) and [Managing assets](/cockpit/managing-assets/).
+    A range of devices can include a {{< product-c8y-iot >}} device group, an asset group, a smart group, an asset, or all input sources on the tenant. When a model uses a range of devices, the model acts on all devices referred to by the range, either directly or indirectly through members of the group that are themselves groups and have device members \(or even "grand-children" group members\). A device can be a member of zero, one or many groups. For more information, see [Grouping devices](/device-management-application/grouping-devices/) and [Managing assets](/cockpit/managing-assets/).
+    
+    When a model uses a group of assets as input, it acts on:
+    - All sub-assets of sub-groups within the group.
+    - But not on sub-assets of individual assets that are members of the group.
+
+    For example if an asset group contains a vehicle asset, and that vehicle asset contains a GPS asset as a sub-asset:
+        - The model acts on the vehicle asset.
+        - It does not act on the GPS asset, because GPS is a sub-asset of an individual asset (vehicle), not a sub-group.
+        This ensures that only top-level assets and sub-assets of sub-groups are processed, while nested sub-assets of individual assets are excluded.
 
     {{< c8y-admon-info>}}
 A model that acts on a range of devices only determines the group membership when the model is activated. If the membership of a group changes while a model is running, the model will not behave any differently for any new or removed members of the group. If a group membership is changed, then models that refer to that group should be de-activated and re-activated.
@@ -21,7 +30,7 @@ A model that acts on a range of devices only determines the group membership whe
 
 It is not possible to mix the two types of input blocks above \(but see [Broadcast devices](/streaming-analytics/analytics-builder/#broadcast-devices)\). However, data from a model processing specific devices can be sent to and received from other models, including models for ranges of devices, and vice versa \(see [Connections between models](/streaming-analytics/analytics-builder/#connections-between-models)\).
 
-When a model consumes data from a range, the model behaves as if multiple instances of the model are running, as illustrated below, each one processing data from each device independently. Each instance processes data for a different device, but all share the same blocks and block parameters. The values of the wires are independent for different instances. Any blocks that are stateful, such as the **Average \(Mean\)** block, operate independently of the data from other devices. As with models using specific devices, if any block causes a runtime error or exception, then the entire model goes into a failed state - it stops processing data for all devices.
+When a model consumes data from a range, the model behaves as if multiple instances of the model are running, as illustrated below, each one processing data from each device or asset independently. Each instance processes data for a different device or asset, but all share the same blocks and block parameters. The values of the wires are independent for different instances. Any blocks that are stateful, such as the **Average \(Mean\)** block, operate independently of the data from other devices. As with models using specific devices, if any block causes a runtime error or exception, then the entire model goes into a failed state - it stops processing data for all devices.
 
 ![Illustration of a model which behaves as if multiple instances of the model are running](/images/streaming-analytics/analytics-builder/model-execution-for-different-devices.png)
 
@@ -29,11 +38,11 @@ Typically, when using ranges of devices for inputs, all input blocks would use t
 
 When a model has inputs that are consuming data from specific devices, then the output blocks generating outputs can specify the same or different specific devices.
 
-When a model has inputs that are consuming data from a range of devices, all synchronous output blocks must specify the trigger device or asset. The trigger device generates data \(`Measurement`, `Event` or `Operation`\) for whichever device that instance applies to - or whichever device sent the data to trigger that instance. Asynchronous output blocks in such models can specify the trigger device, asset or any other specific device.
+When a model has inputs that are consuming data from a range of devices/assets, all synchronous output blocks must specify the trigger device or asset. The trigger device generates data \(`Measurement`, `Event` or `Operation`\) for whichever device that instance applies to - or whichever device sent the data to trigger that instance. Asynchronous output blocks in such models can specify the trigger device, asset or any other specific device.
 
 When a model has inputs that are consuming data from each device belonging to an asset, the output blocks can send the output to a specific asset or trigger device. Keep in mind that asset output can only be used for sending cross-device aggregates.
 
-When a template parameter is used for an output block, then if the parameter's value is a range of devices, then this is treated the same as if it were set to the trigger device. The output goes to whichever device triggered the model's evaluation, with each device within a range being treated independently. Typically, the same template parameter will be used for both input and output, so these will refer to the same range, and each device is processed independently.
+When a template parameter is used for an output block, then if the parameter's value is a range of devices, then this is treated the same as if it were set to the trigger device or asset. The output goes to whichever device or asset triggered the model's evaluation, with each device within a range being treated independently. Typically, the same template parameter will be used for both input and output, so these will refer to the same range, and each device is processed independently.
 
 You can use the model editor to change input and output blocks from one input source or output destination to another. When changing between a range of devices and a device or asset, output blocks will switch between the trigger device and the device or asset specified, so that the model is kept in a usable state. See also [Replacing sources or destinations](/streaming-analytics/analytics-builder/#replacing-sources-or-destinations).
 
