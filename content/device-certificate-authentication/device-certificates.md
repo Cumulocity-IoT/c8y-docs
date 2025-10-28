@@ -431,7 +431,7 @@ If you suspect or confirm that a device certificate has been compromised, follow
     - Using the existing CA certificate which is owned by {{< product-c8y-iot >}} generate a new certificate for the device.
     - Update the device to use the new certificate for authentication.
 
-#### What to do when the enrollment process has been compromised?
+#### What to do when the enrollment process has been compromised? {#what-to-do-when-the-enrollment-process-has-been-compromised}
 
 Enrollment processes may be compromised when insecure practices are used, for example:
 - Using a device ID-derived one-time password (OTP)
