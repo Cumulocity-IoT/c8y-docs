@@ -20,8 +20,8 @@ Before using the smart rules (NEW) plugin, ensure that the following requirement
 Following Roles are reqiured to access Smart rules (NEW)
 |ROLE|Create|Read |Update|Delete|
 |------|-----|----|------|-------|
-|**SMART_RULE_INSTANCES_ADMIN**|✅|✅|✅|✅|
-|**SMART_RULE_INSTANCES_READ**||✅|||
+|**SMART_RULE_INSTANCES_ADMIN**|&check;|&check;|&check;|&check;|
+|**SMART_RULE_INSTANCES_READ**||&check;|||
 
 
 ### Creating your first smart rule {#creating-your-first-smart-rule}
