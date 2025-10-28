@@ -16,6 +16,12 @@ Before using the smart rules (NEW) plugin, ensure that the following requirement
 - The smart rules plugin is installed in the desired application, and the **Smart rules (NEW) plugin** is enabled in **Preview feature**.
 - The user has the required privileges to access Analytics Builder models and create new instances of Analytics builder templated models. Refer to [Permissions](/streaming-analytics/introduction-analytics/#permissions).
 
+#### Role-based Access
+Two specific roles can also be assigned to users to manage privileges for Smart Rule templated instances
+   - **SMART_RULE_INSTANCES_ADMIN** – Create, update, and delete instances
+   - **SMART_RULE_INSTANCES_READ** – Read-only access to instances
+
+
 ### Creating your first smart rule {#creating-your-first-smart-rule}
 
 This topic provides the basic workflow for creating your first smart rules using the plugin from applications like Device Management. You will create a simple templated analytics model that creates an alarm when the temperature breaches a given threshold value. The steps below require that at least one device is already registered in {{< product-c8y-iot >}}. Preferably, this device already sends measurement values to {{< product-c8y-iot >}}.
