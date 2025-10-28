@@ -89,7 +89,7 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
     if (notRendered || hasBundle) {
       publishedBasePath = segments.join("/");
     } else {
-      publishedBasePath = fileName === "index" ? fileDir : path.join(fileDir, fileName).replace(/\\/g, "/");
+      publishedBasePath = fileName === "index" ? fileDir : `${fileDir}/${fileName}`;
     }
     publishedBasePath = publishedBasePath.replace(/^\/+|\/+$/g, "");
     const base = `${BASE_URL.replace(/\/$/, "")}/${publishedBasePath ? publishedBasePath + "/" : ""}`;
