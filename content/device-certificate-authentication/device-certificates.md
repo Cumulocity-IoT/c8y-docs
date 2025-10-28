@@ -425,7 +425,7 @@ If you suspect or confirm that a device certificate has been compromised, follow
 2. **Disable the device user**
     - This will disconnect the device from the {{< product-c8y-iot >}} but leave the certificate untouched until an investigation can be done.
     - If not compromised: Re-enable the device user. The device will reconnect using its existing certificate.
-    - If compromised:** Revoke the certificate to prevent any further use of it.
+    - If compromised: Revoke the certificate to prevent any further use of it.
 3 **Provision a New Certificate**
     - Generate a new certificate for the device.
     - Using the existing CA certificate which is owned by {{< product-c8y-iot >}} generate a new certificate for the device.
