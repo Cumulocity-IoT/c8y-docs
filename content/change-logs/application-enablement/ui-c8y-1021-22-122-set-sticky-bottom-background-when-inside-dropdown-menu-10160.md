@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Set sticky-bottom background when inside dropdown menu (#10160)
+title: Set background color for sticky bottom when inside dropdown menu
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
