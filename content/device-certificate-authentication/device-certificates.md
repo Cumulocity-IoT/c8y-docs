@@ -420,7 +420,7 @@ If administrators cannot carry out this process on their own for organizational 
 
 If you suspect or confirm that a device certificate has been compromised, follow the steps below:
 
-1. **Revoke the Compromised Certificate**
+1. **Revoke the compromised certificate**
     - Add the certificate to the [Certificate Revocation List](/device-certificate-authentication/managing-trusted-certificate-settings/#crl-settings) maintained by {{< product-c8y-iot >}}.
 2 **Disable the device user**
     - This will disconnect the device from the {{< product-c8y-iot >}} but leave the certificate untouched until an investigation can be done.
