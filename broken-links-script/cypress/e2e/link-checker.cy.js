@@ -6,7 +6,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
 
   const expectFragmentExists = (doc, fragment) => {
-    const decodedFragment = decodeURIComponent(fragment).toLowerCase();
+    const decodedFragment = decodeURIComponent(fragment);
     const collectFragments = (root) => {
       const ids = Array.from(root.querySelectorAll('[id]')).map(el => el.id);
       const names = Array.from(root.querySelectorAll('a[name]')).map(a => a.getAttribute('name'));
