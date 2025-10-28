@@ -3,7 +3,7 @@
 ########################################################################################################################
 ---
 ##
-## This secret is required to initialize the Cumulocity admin user password for both the management and the edge tenants.
+## This secret is required to initialize the Cumulocity admin user password for both the Management tenant and the Edge tenant.
 ## Name of this secret must be specified in 'spec.cumulocityPasswordSecretName' field of Edge CR.
 ##
 apiVersion: v1
@@ -15,7 +15,8 @@ metadata:
   namespace: c8yedge
 type: Opaque
 stringData:
-  # Password used to initialize the Cumulocity admin user for both the management and the edge tenants.
+  # Password used to initialize the Cumulocity admin user for both the Management tenant and the Edge tenant.
+  # The password must be at least 8 letters long.
   INITIAL_C8Y_ADMIN_PASSWORD: <C8Y-ADMIN-PASSWORD>
 
 ---
@@ -230,9 +231,9 @@ spec:
   ## Replace with a valid email, used for admin account.
   email: <ADMIN-EMAIL>
 
-  ## Name of the Kubernetes secret containing the Cumulocity admin user password for both the management and the edge tenants.
+  ## Name of the Kubernetes secret containing the Cumulocity admin user password for both the Management tenant and the Edge tenant.
   ## This secret must contain one key:
-  ##  - INITIAL_C8Y_ADMIN_PASSWORD: Password used to initialize the Cumulocity admin user for both the management and the edge tenants.
+  ##  - INITIAL_C8Y_ADMIN_PASSWORD: Password used to initialize the Cumulocity admin user for both the Management tenant and the Edge tenant.
   ## 
   cumulocityPasswordSecretName: c8y-admin-password
 
