@@ -458,7 +458,7 @@ Consider rotating enrollment credentials periodically and monitoring logs for un
 
 If you suspect or confirm that a CA (Certificate Authority) certificate has been compromised, follow the steps below:
 
-1. **Revoke the Compromised CA Certificate**
+1. **Revoke the compromised CA certificate**
     - Add the compromised CA certificate to the [Certificate Revocation List](/device-certificate-authentication/managing-trusted-certificate-settings/#crl-settings) using the CRL API.
     - Note: This action is effective only if the tenant has offline CRL check enabled in the {{< product-c8y-iot >}}.
     - The CA certificate itself remains in the system until the next step.
