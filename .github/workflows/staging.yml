@@ -76,6 +76,10 @@ jobs:
         hugo \
           --baseURL "${{ env.BASEURL }}/"
 
+    - name: Generate llms.txt
+      run: |
+        python scripts/llms_generate.py 
+
     - name: Set known SSH hosts
       run: |
         mkdir -p ~/.ssh/
@@ -86,6 +90,24 @@ jobs:
         ssh-agent -a $SSH_AUTH_SOCK > /dev/null
         ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
 
-    - name: Upload documentation
+    - name: Upload documentation (without PDFs)
       run: |
-        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }} --delete-after
+        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh --exclude='pdfs' ./public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }} --delete-after
+
+    - name: Install wkhtmltopdf
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xfonts-base xfonts-75dpi
+        wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+        sudo apt-get install -y ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+        wkhtmltopdf --version
+
+    - name: Generate PDFs
+      run: |
+        cd pdf-generator
+        npm ci
+        npm run generate
+
+    - name: Upload PDFs
+      run: |
+        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/pdfs/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }}/pdfs --delete-after

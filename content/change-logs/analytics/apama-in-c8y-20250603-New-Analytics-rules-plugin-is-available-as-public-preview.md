@@ -1,6 +1,6 @@
 ---
 date: '2025-07-17'
-title: New Analytics rules plugin is available as Public Preview
+title: Smart rules (NEW) plugin now available in Public Preview
 change_type:
   - value: change-pXAlHAWka
     label: Preview
@@ -16,9 +16,9 @@ version: 26.152.0
 ---
 
 {{< c8y-admon-preview >}}
-This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
+The "Smart rules (NEW)" feature was previously named “Analytics rules”. It is in Public Preview and may be subject to change in the future.
 {{< /c8y-admon-preview >}}
 
-The Analytics rules plugin extends the Analytics Builder capabilities within Streaming Analytics by enabling users to create and manage the Analytics Builder model instances directly from device and group contexts within applications such as Device Management and Cockpit. You can activate the feature using the **Manage preview features** option in the user menu.
+While traditional smart rules provide a fixed set of predefined templates for common scenarios, the new generation of smart rules removes these limitations by enabling you to create fully customized rules tailored to your specific requirements using the capabilities of Analytics Builder in Streaming Analytics. This allows you to create and manage rule instances directly from asset, group, and device contexts within applications such as Cockpit, Device Management, and Digital Twin Manager.
 
-For more details about the Analytics rules plugin, refer to [Analytics rules plugin](https://cumulocity.com/docs/streaming-analytics/analytics-rules-plugin#what-is-analytics-rules-plugin).
+For more details about the smart rules (NEW) plugin, refer to [Smart rules (NEW) plugin](https://cumulocity.com/docs/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin).

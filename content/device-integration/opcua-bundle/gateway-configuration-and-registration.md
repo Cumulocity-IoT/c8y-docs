@@ -33,7 +33,7 @@ gateway:
 Windows OS is used for the example.
 {{< /c8y-admon-info >}}
 
-### Thin Edge {#thin-edge}
+### thin-edge.io {#thin-edge}
 
 The OPC UA gateway can also be registered and operated via [thin-edge.io](https://thin-edge.io/). In contrast to the standalone mode, `thinEdge` configurations must be added to the YAML file:
 
@@ -54,13 +54,13 @@ gateway:
         deviceId: Thin-Edge_Device
 ```
 
-With the configuration `gateway.thinEdge.enabled: true` you switch to the thinEdge mode. This means that the authentication and registration to the platform will be done via Thin Edge. The OPC UA gateway is automatically registered and created as a sub-device under the Thin Edge device. `gateway.thinEdge.mqttServerURL` and `gateway.thinEdge.deviceId` are the connection information for the MQTT client to connect to the local Thin Edge MQTT broker.
+With the configuration `gateway.thinEdge.enabled: true` you switch to the thin-edge.io mode. This means that the authentication and registration to the platform will be done via thin-edge.io. The OPC UA gateway is automatically registered and created as a subdevice under the thin-edge.io device. `gateway.thinEdge.mqttServerURL` and `gateway.thinEdge.deviceId` are the connection information for the MQTT client to connect to the local thin-edge.io MQTT broker.
 
 {{< c8y-admon-preview-feature >}}
 
 ### MQTT Forwarding mode {#mqtt-forwarding-mode}
 
-The OPC UA gateway supports an MQTT Forwarding mode that can be used together with the Thin Edge mode. In addition to the OPC UA gateway being registered as a child device of the Thin Edge device and the OPC UA gateway using credentials provided by Thin Edge, in MQTT Forwarding mode the OPC UA gateway also uses Thin Edge to send the data it receives from OPC UA servers to {{< product-c8y-iot >}}. When using cyclic reads, the data received in a single cyclic read that is mapped to measurements, events, or custom actions can be batched into a single message.
+The OPC UA gateway supports an MQTT Forwarding mode that can be used together with the thin-edge.io mode. In addition to the OPC UA gateway being registered as a child device of the thin-edge.io device and the OPC UA gateway using credentials provided by thin-edge.io, in MQTT Forwarding mode the OPC UA gateway also uses thin-edge.io to send the data it receives from OPC UA servers to {{< product-c8y-iot >}}. When using cyclic reads, the data received in a single cyclic read that is mapped to measurements, events, or custom actions can be batched into a single message.
 
 The MQTT Forwarding mode uses the existing `thinEdge` configuration and introduces a number of additional configuration options to the YAML file:
 
@@ -168,7 +168,7 @@ C8Y:
 
   # Password for HTTP proxy authentication
   # proxyPassword: yourProxyPassword
-  
+
 #
 # Gateway-specific settings
 #
@@ -182,17 +182,17 @@ gateway:
   # where local data is stored.
   db:
     baseDir: ${user.home}/.opcua/data
-  # These settings configure and enable/disable Thin Edge mode (registration and operating OPC UA gateway via Thin Edge).
+  # These settings configure and enable/disable thin-edge.io mode (registration and operating OPC UA gateway via thin-edge.io).
   thinEdge:
-    # Enable Thin Edge if the OPC UA gateway is running next to Thin Edge and should use it to connect to {{< product-c8y-iot >}}.
-    # Set enabled to false if the OPC UA gateway is running without Thin Edge.
+    # Enable thin-edge.io if the OPC UA gateway is running next to thin-edge.io and should use it to connect to {{< product-c8y-iot >}}.
+    # Set enabled to false if the OPC UA gateway is running without thin-edge.io.
     enabled: false
-    # MQTT Server URL of Thin Edge (localhost).
+    # MQTT Server URL of thin-edge.io (localhost).
     mqttServerURL: tcp://127.0.0.1:1883
     # Enable this if the MQTT client uses a single steady connection. Note that MQTT is only used to retrieve the JWT, which is dependent on how long the JWT is valid. See https://{{< domain-c8y >}}/guides/device-integration/mqtt/#jwt-token-retrieval.
     # We recommend you to use a steady connection only if the JWT is valid for a short time. If the JWT is valid for a longer time, the standard is one hour. It is generally not recommended to have a steady MQTT connection.
     mqttSteadyConnection: false
-    # The Thin Edge deviceId must be changed, depending on the configured deviceId of the Thin Edge certificate.
+    # The thin-edge.io deviceId must be changed, depending on the configured deviceId of the thin-edge.io certificate.
     deviceId: my-thin-edge-device
   # These settings control the device bootstrap process of the gateway.
   # In general, the default settings are sufficient, and should not be changed.
