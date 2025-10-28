@@ -63,33 +63,34 @@
           {{- $pdf = $path | absURL -}}
         {{- end -}}
 
-          {{ if (isset .Params "audience")}}
-            <div class="m-t-auto d-flex gap-8 a-i-center">
-              {{ range $t := .Params.audience }}
-                <div class="label 
-                  {{if eq $t "Users"}}
-                    label-primary 
-                  {{ else if eq $t "Administrators"}}
-                  label-success
-                  {{ else if eq $t "Developers"}}
-                  label-info
-                  {{ else if eq $t "Business"}}
-                    label-warning
-                  {{end}}
-                    ">
-                  <i class='
-                  {{if eq $t "Users"}}
-                    dlt-c8y-icon-users
-                  {{ else if eq $t "Administrators"}}
-                    dlt-c8y-icon-male-user
-                  {{ else if eq $t "Developers"}}
-                    dlt-c8y-icon-programming
-                  {{ else if eq $t "Business"}}
-                    dlt-c8y-icon-permanent-job
-                  {{end}}
-                  '></i> 
-                  {{$t}}
-                </div>
+        <div class="m-t-auto d-flex gap-8 a-i-center">
+              {{ if (isset .Params "audience")}}
+                {{ range $t := .Params.audience }}
+                  <div class="label 
+                    {{if eq $t "Users"}}
+                      label-primary 
+                    {{ else if eq $t "Administrators"}}
+                    label-success
+                    {{ else if eq $t "Developers"}}
+                    label-info
+                    {{ else if eq $t "Business"}}
+                      label-warning
+                    {{end}}
+                      ">
+                    <i class='
+                    {{if eq $t "Users"}}
+                      dlt-c8y-icon-users
+                    {{ else if eq $t "Administrators"}}
+                      dlt-c8y-icon-male-user
+                    {{ else if eq $t "Developers"}}
+                      dlt-c8y-icon-programming
+                    {{ else if eq $t "Business"}}
+                      dlt-c8y-icon-permanent-job
+                    {{end}}
+                    '></i> 
+                    {{$t}}
+                  </div>
+                {{end}}
               {{end}}
               {{- if $pdf -}}
                 <form class="m-l-auto pdf-download-form" data-pdf="{{ $pdf }}">
@@ -99,7 +100,6 @@
                 </form>
               {{- end -}}
             </div>
-          {{end}}
       </a>
       {{end}}
     </div>
