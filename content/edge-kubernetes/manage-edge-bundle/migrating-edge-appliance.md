@@ -325,7 +325,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
 
 6. Start Edge operator:
    ```shell
-   kubectl scale deployment c8yedge-operator-controller-manager -n c8yedge --replicas=0
+   kubectl scale deployment c8yedge-operator-controller-manager -n c8yedge --replicas=1
    ```
 
 ### Step 6 - Configuring Edge 2025 post migration
