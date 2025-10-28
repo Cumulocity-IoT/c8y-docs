@@ -460,7 +460,7 @@ If you suspect or confirm that a CA (Certificate Authority) certificate has been
     - Add the compromised CA certificate to the [Certificate Revocation List](/device-certificate-authentication/managing-trusted-certificate-settings/#crl-settings) using the CRL API.
     - Note: This action is effective only if the tenant has offline CRL check enabled in the {{< product-c8y-iot >}}.
     - The CA certificate itself remains in the system until the next step.
-2. **Delete the Compromised CA**
+2. **Delete the compromised CA certificate**
     - Remove the compromised CA certificate from the tenant.
     - This action also deletes the associated key pair, ensuring it cannot be reused.
 3. **Create a New CA**
