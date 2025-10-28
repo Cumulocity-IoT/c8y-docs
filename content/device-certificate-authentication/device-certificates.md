@@ -450,7 +450,9 @@ If such a situation occurs, proceed with the following steps:
     - Once safe practices have been confirmed and enforced, enable auto-registration again.
     - This allows new enrollment requests to be processed securely.
 
-> **Note:** Consider rotating enrollment credentials periodically and monitoring logs for unusual enrollment activity.
+{{< c8y-admon-info >}} 
+Consider rotating enrollment credentials periodically and monitoring logs for unusual enrollment activity.
+{{< /c8y-admon-info >}}
 
 #### What to do when a CA certificate has been compromised?
 
