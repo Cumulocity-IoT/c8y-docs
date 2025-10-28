@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64953
 version: 1021.22.123
 ---
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+In certain scenarios, the buttons in the data grid header were overlapping, making them difficult to use. This issue has been resolved by adjusting the layout and spacing of the buttons. 
