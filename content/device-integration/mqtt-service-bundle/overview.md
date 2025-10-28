@@ -11,7 +11,7 @@ For these so-called _generic_ devices, a _mapping_ must be provided by the tenan
 A mapping can be implemented by a microservice running inside the platform, or by an external client application.
 
 _IoT device integration_ is the main intended use case for the MQTT Service.
-The design of the service is optimised for this use case, which has some highly asymmetric properties:
+The design of the service is optimized for this use case, which has some highly asymmetric properties:
 * A large number (up to tens of millions) of simultaneously connected devices publishing messages into the IoT platform
 * A large number (up to tens of millions) of unique MQTT topics
 * A high aggregate throughput (up to millions per second) of unique messages published into the IoT platform
