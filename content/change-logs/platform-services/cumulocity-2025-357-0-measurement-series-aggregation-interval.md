@@ -1,6 +1,6 @@
 ---
 date: ''
-title: Measurement series aggregation interval granularity enhanced
+title: Enhanced granularity of measurement series aggregation interval 
 change_type:
   - value: change-QHu1GdukP
     label: Feature
@@ -14,8 +14,10 @@ build_artifact:
 ticket: MTM-64802
 version: 2025.357.0
 ---
-The measurement series endpoint has been enhanced, please note there is no impact to the behaviour of applications
-currently using this endpoint. We have introduced a new query parameter `aggregationInterval` which allows users to specify
+The measurement series endpoint has been enhanced. Note that there is no impact on the behaviour of applications
+currently using this endpoint. 
+
+We have introduced a new query parameter `aggregationInterval` which allows users to specify
 the aggregation interval for the returned measurement series data in a more flexible manner compared with
 the existing `aggregationType` parameter. The new parameter allows the specification of custom time intervals
 like `300s`, `25m`, `12h`, `7d`, and so on. The format of the parameter is an integer followed by a time unit,
