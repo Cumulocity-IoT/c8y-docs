@@ -454,7 +454,7 @@ If such a situation occurs, proceed with the following steps:
 Consider rotating enrollment credentials periodically and monitoring logs for unusual enrollment activity.
 {{< /c8y-admon-info >}}
 
-#### What to do when a CA certificate has been compromised?
+#### What to do when a CA certificate has been compromised? {#what-to-do-when-a-ca-certificate-has-been-compromised}
 
 If you suspect or confirm that a CA (Certificate Authority) certificate has been compromised, follow the steps below:
 
