@@ -19,7 +19,7 @@ const BASE_URL = "https://cumulocity.com/docs/2025";
 
 const shortcodeMapping = {
   
-  "c8y-current-version": "2025.0",
+  "c8y-current-version": "2025",
   "c8y-edge-version-major": "2025",
   "c8y-edge-version-minor": "0",
   "c8y-edge-version-patch": "2",
