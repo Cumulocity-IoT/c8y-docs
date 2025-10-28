@@ -82,7 +82,7 @@ The {{< product-c8y-iot >}} Developer Codex is {{< product-c8y-iot >}}'s compreh
 
 {{< product-c8y-iot >}} Edge is the onsite solution of {{< product-c8y-iot >}} intended to run as a local software application on industrial PC’s or local servers.
 
-For details, see [Edge](/edge/edge-kubernetes/k8-edge-introduction/) in the documentation.
+For details, see [Edge](/edge-kubernetes/k8-edge-introduction/) in the documentation.
 
 
 ### {{< openapi >}} {#openapi-specification}
