@@ -56,7 +56,7 @@
           {{- else -}}
             {{- $pdf = (strings.TrimPrefix "/" $u) | absURL -}}
           {{- end -}}
-        {{- else -}}
+        {{- else if (not (isset .Params "external")) -}}
           {{- $title := strings.Trim .Title " \t\r\n" -}}
           {{- $safe := $title | replaceRE `[^\w\s\.-]` "" | replaceRE `\s+` " " -}}
           {{- $path := printf "pdfs/%s.pdf" $safe -}}
