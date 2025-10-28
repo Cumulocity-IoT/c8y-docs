@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2025-10-28
 title: Role based access to Smart rules Templated Instances.
 change_type:
   - value: change-pXAlHAWka
@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAB-4929
-version: 
+version: 26.230.0
 ---
 
 Two new roles are introduced to manage user access to Smart Rules templated instances.
