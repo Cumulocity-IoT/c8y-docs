@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64956
 version: 1021.22.122
 ---
-Set sticky-bottom background when inside dropdown menu (#10160)
+In certain scenarios, the sticky bottom element inside a dropdown menu had a transparent background color. This change sets the background color of the sticky bottom element to match the dropdown menu background color .
