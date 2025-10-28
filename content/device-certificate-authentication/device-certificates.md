@@ -467,7 +467,7 @@ If you suspect or confirm that a CA (Certificate Authority) certificate has been
     - Generate a new CA certificate.
     - A new key pair will be created automatically during this process.
     - Use this new CA to issue device certificates going forward.
-4. **Reprovision Devices**
+4. **Reprovision devices**
     - All device certificates previously signed by the compromised CA will no longer be trusted by the {{< product-c8y-iot >}}.
     - Devices using these certificates will be unable to connect via any communication channel, such as MQTT or deviceAccessToken API.
     - Re-enroll affected devices using certificates issued by the new CA.
