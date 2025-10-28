@@ -24,7 +24,6 @@ Refer to [Upgrading from 1021 to 1022 gateway version](/device-integration/opcua
 It is recommended to back up your existing local gateway data before proceeding with the update.
 {{< /c8y-admon-important >}}
 
-It is recommended to back up your existing local gateway data before proceeding with the update.
 Some gateway properties related to the internal database have been removed and are no longer applicable:
 - gateway.mappingExecution.alarmStatusStore.maxEntries
 - gateway.mappingExecution.deviceTypeMappingStore.maxServerMappingsEntries
