@@ -314,6 +314,13 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    kubectl cp /home/admin/database_export.sql -n c8yedge datahub-mysql-0:/tmp/database_export.sql && \
    kubectl exec -i -n c8yedge datahub-mysql-0 -- sh -c 'mysql -u root -p"$MYSQL_ROOT_PASSWORD" CDH_edge < /tmp/database_export.sql'
    ```
+5. Configure dremio:
+<!-- Should we automate this ? It is automatable -->
+   Post migration, dremio will have legacy configuration of c8y_source from appliance, this needs to be updated for dremio to communicate with mongo. Please find the following steps for the same:
+   1. Set support property “store.plugin.keep_metadata_on_replace“ = true in Dremio (goto Settings > Support)
+   2. Configure settings of “c8y-source” as required for edge on K8s:
+      a. Configure MongoDB host name and credentials 
+   3. Set support property “store.plugin.keep_metadata_on_replace“ = false in Dremio
 
 ### Step 6 - Configuring Edge 2025 post migration
 After successfully migrating your data to Edge 2025, you'll need to configure it to match your previous Edge Appliance VM setup. Here's what you need to do:
