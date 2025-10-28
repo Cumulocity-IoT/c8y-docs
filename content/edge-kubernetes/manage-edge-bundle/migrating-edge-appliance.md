@@ -197,6 +197,18 @@ Perform the following steps as a root user on your Edge appliance.
 
 4. Tar the MongoDB data and data lake contents from {{< product-c8y-iot >}} DataHub if present, into */opt/edge-appliance-backup.tar* :
 
+   1. Migrate HSQL db.
+
+      ```shell
+      To be discussed on the approach here
+      ```
+   2.
+      ```shell
+      tar -zcf /opt/edge-appliance-backup.tar /opt/appliance-edgedb-backup /opt/softwareag /opt/mongodb/cdh-dremio/distributed-storage /opt/mongodb/cdh-master/datalake /home/admin/database_export.sql
+      ```
+
+   If DataHub is not present:
+
    ```shell
    tar -zcf /opt/edge-appliance-backup.tar /opt/appliance-edgedb-backup /opt/softwareag
    ```
@@ -247,8 +259,63 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    ```shell
    rm -rf /opt/appliance-edgedb-backup /opt/edge-appliance-backup.tar
    ```
+### Step 5 - Restore DataHub
+1. Stop Edge operator:
+   ```shell
+   kubectl scale deployment c8yedge-operator-controller-manager -n c8yedge --replicas=0
+   ```
 
-### Step 5 - Configuring Edge 2025 post migration
+2. Set tenant option `CDH_PASSWORD_SECRET` on edge tenant:
+   1. Get the secret from backup:
+      ```shell
+      grep CDH_PASSWORD_SECRET /opt/softwareag/cdh-console/conf/cdh-console-env
+      ```
+   2. Set tenant option on edge:
+      ```shell
+      curl --location 'https://<EDGE_HOST_IP>/tenant/options/' \
+      -H 'Content-Type: application/vnd.com.nsn.cumulocity.option+json' \
+      -H 'Accept: application/vnd.com.nsn.cumulocity.option+json' \
+      -u "management/${MANAGEMENT_ADMIN_USER}:${MANAGEMENT_ADMIN_PASSWORD}" \
+      --data '{
+         "category": "datahub",
+         "key": "credentials.CDH_PASSWORD_SECRET",
+         "value": "<PASSWORD_SECRET_FROM_PREVIOUS_STEP>"
+      }'
+      ```
+
+3. Migrate dremio:
+   1. Redeploy dremio in maintanace mode for migration, fetch dremio helm chart from installartifacts:
+      ```shell
+       kubectl get pv -A -o yaml | grep -A1 installartifacts-backing | awk '/path:/ {print $2}'
+      ```
+   2. Backup values.yaml:
+      ```shell
+      helm get values dremio -n c8yedge --all -o yaml > dremio_values.yaml
+      ```
+   3. Set dremio to maintanance:
+      ```shell
+      helm upgrade dremio ./dremio-11.0.648.tgz   -n c8yedge   -f dremio_values.yaml   --set DremioAdmin=true   --wait
+      ```
+   4. Restore RocksDB from backup:
+      ```shell
+      kubectl exec -n c8yedge dremio-admin -- rm -rf /opt/dremio/data/db && kubectl cp /opt/mongodb/cdh-master/data/db dremio-admin:/opt/dremio/data/ -n c8yedge
+      ```
+   5. Restore datalake contents:
+      ```shell
+      rm -rf /datahub/distributedStorage/* /datahub/datalake/* && cp -a /opt/mongodb/cdh-dremio/distributed-storage/. /datahub/distributedStorage/ && cp -a /opt/mongodb/cdh-master/datalake/. /datahub/datalake/
+      ```
+   6. Exit from maintaince mode:
+      ```shell
+      helm upgrade dremio ./dremio-11.0.648.tgz   -n c8yedge   -f dremio_values.yaml   --set DremioAdmin=false   --wait
+      ```
+
+4. Restore DataHub:
+   ```shell
+   kubectl cp /home/admin/database_export.sql -n c8yedge datahub-mysql-0:/tmp/database_export.sql && \
+   kubectl exec -i -n c8yedge datahub-mysql-0 -- sh -c 'mysql -u root -p"$MYSQL_ROOT_PASSWORD" CDH_edge < /tmp/database_export.sql'
+   ```
+
+### Step 6 - Configuring Edge 2025 post migration
 After successfully migrating your data to Edge 2025, you'll need to configure it to match your previous Edge Appliance VM setup. Here's what you need to do:
 
 #### What's already available?
