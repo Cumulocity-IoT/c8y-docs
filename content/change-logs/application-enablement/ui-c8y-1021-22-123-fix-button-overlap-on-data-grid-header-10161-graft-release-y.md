@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix button overlap on data-grid header (#10161) [GRAFT][release/y2025] (#10181)
+title: Fixed overlapping buttons in data grid header
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
