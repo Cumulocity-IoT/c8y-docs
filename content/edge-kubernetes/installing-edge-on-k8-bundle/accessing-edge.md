@@ -10,9 +10,7 @@ If you have installed Edge on your local machine, then you should be able to imm
 If you have performed the install on a self-managed Kubernetes cluster rather than installing with the `c8yedge` tool, it is sometimes the case that Edge is not accessible via either URL. This depends on the Kubernetes distribution you have used. See [Accessing Edge via an external IP](/edge-kubernetes/manage-edge/#external-ip).
 {{< /c8y-admon-info >}}
 
-When signing into Edge this way, you will first be prompted for the {{< product-c8y-iot >}} tenant id. Edge has two tenants, `management` and `edge`. For both the {{< management-tenant >}} and the edge tenant, use the following credentials:
-* Username: `admin`
-* Password: Use the password you provided during the Edge installation. This password was set either via the `c8yedge` tool's `--cumulocity-password` option or through the Kubernetes Secret specified in the Edge CR field `spec.cumulocityPasswordSecretName`.
+When signing into Edge this way, you will first be prompted for the {{< product-c8y-iot >}} tenant id. Edge has two tenants, `management` and `edge`. For both the {{< management-tenant >}} and the edge tenant, use the credentials as detailed at [To access Edge](#to-access-cumulocity-iot-edge)
 
 ### Accessing Edge using the domain name {#accessing-cumulocity-iot-edge-using-the-domain-name}
 {{< c8y-admon-info >}}
@@ -57,8 +55,8 @@ To access Edge, enter one of the following URLs in the browser:
 - For the {{< management-tenant >}}, use the URL `https://management-<domain_name>`.
 
 This will bring up the below login screen. For both the {{< management-tenant >}} and the edge tenant, use the following credentials:
-* Username: `admin`
-* Password: Use the password you provided during the Edge installation. This password was set either via the `c8yedge` tool's `--cumulocity-password` option or through the Kubernetes Secret specified in the Edge CR field `spec.cumulocityPasswordSecretName`.
+* **Username:** `admin`
+* **Password:** Use the password you provided during the Edge installation. This password was set either via the `c8yedge` tool's `--cumulocity-password` option or through the Kubernetes Secret specified in the Edge CR field `spec.cumulocityPasswordSecretName`.
 
 ![Login prompt](/images/edge-k8s/edge-k8s-login-banner.png)
 
