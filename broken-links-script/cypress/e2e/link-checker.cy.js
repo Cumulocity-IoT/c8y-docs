@@ -38,14 +38,12 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     cy.wrap(url).should('not.match', /[()]/, `URL should not contain unencoded parentheses: ${url}`);
   };
 
-// Note: On GitHub pages, section anchors are rendered as <a href="#fragment"> rather than <a name="fragment">. That's why we collect `a[href^="#"]` here.
+// Note: On GitHub pages, heading IDs are prefixed with "user-content-".
   const checkGithubFragment = (fragment) => {
     cy.document().then((doc) => {
-      const anchors = Array.from(doc.querySelectorAll('a[href^="#"]')).map(a => a.getAttribute('href'));
-      const ids = Array.from(doc.querySelectorAll('[id]')).map(el => el.id);
-      cy.log(`Available GitHub anchors:\n${anchors.join('\n')}`);
+      const ids = Array.from(doc.querySelectorAll('[id]')).map(el => el.id.replace(/^user-content-/, ''));
       cy.log(`Available GitHub IDs:\n${ids.join('\n')}`);
-      const exists = anchors.some(href => href === `#${fragment}`) || ids.some(id => id === fragment);
+      const exists = ids.some(id => id === fragment);
       expect(exists, `Fragment "#${fragment}" should exist in GitHub page`).to.be.true;
     });
   };
