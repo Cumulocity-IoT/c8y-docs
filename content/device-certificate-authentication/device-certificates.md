@@ -416,7 +416,7 @@ If administrators cannot carry out this process on their own for organizational 
 
 ### Common security scenarios and best practices {#common-security-scenarios-and-best-practices}
 
-#### What to do when a device’s certificate is compromised?
+#### What to do when a device’s certificate is compromised? {#what-to-do-when-a-device-certificate-is-compromised}
 
 If you suspect or confirm that a device certificate has been compromised, follow the steps below:
 
