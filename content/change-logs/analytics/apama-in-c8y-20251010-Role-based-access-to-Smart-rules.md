@@ -1,6 +1,6 @@
 ---
 date: 2025-10-28
-title: Role based access to Smart rules Templated Instances.
+title: Smart rules (NEW) introduces support for fine grained RBAC
 change_type:
   - value: change-pXAlHAWka
     label: Preview
@@ -15,6 +15,6 @@ ticket: PAB-4929
 version: 26.230.0
 ---
 
-Two new roles are introduced to manage user access to Smart Rules templated instances.
+Smart rules (NEW) introduces support for fine grained RBAC.
 
-For more details about the new Roles refer to [Role-based Access ](/streaming-analytics/smart-rules-plugin/#role-based-access).
+For more details refer to [Role-based Access ](/streaming-analytics/smart-rules-plugin/#role-based-access).
