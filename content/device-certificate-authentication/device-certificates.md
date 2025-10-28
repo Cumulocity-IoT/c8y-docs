@@ -414,7 +414,7 @@ The proof of possession is confirmed if the uploaded signed verification code ma
 If administrators cannot carry out this process on their own for organizational reasons, they can manually request the proof of possession for the corresponding certificate and the {{< company-c8y >}} Support team can complete the proof of possession through a back end API upon reasonable verification.
 {{< /c8y-admon-info >}}
 
-### Common Security Scenarios and Best Practices
+### Common security scenarios and best practices {#common-security-scenarios-and-best-practices}
 
 #### What to do when a device’s certificate is compromised?
 
