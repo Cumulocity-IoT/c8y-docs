@@ -69,7 +69,7 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
   }
 
   if (link.startsWith("#")) {
-    const fileDir = path.dirname(relativePath).replace(/\\/g, "/");
+    const fileDir = path.dirname(relativePath).replaceAll(path.sep, '/');
     const fileName = path.basename(relativePath, ".md");
     let segments = fileDir.split("/").filter(Boolean);
     let hasBundle = false;
