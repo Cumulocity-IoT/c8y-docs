@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-10-30
 title: Login page links aligned properly
 product_area: Application enablement & solutions
 change_type:
