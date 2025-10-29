@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62614
 version: 2025.332.0
 ---
-From now on the Platform will raise a Messaging Service alarm when messages will fail to be processed (e.g. by Notification 2.0 feature) due to common issues. Those issues initially are about reaching backlog quota or topic limit, so issues where the customer should take the action to resolve it.
+With this change, the {{< product-c8y-iot >}} platform raises a Messaging Service alarm when messages fail to be processed (for example, by the Notification 2.0 feature) due to common issues. These issues initially are about reaching backlog quota or topic limit, so issues were the customer should take the action to resolve it.
