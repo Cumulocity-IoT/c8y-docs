@@ -10,7 +10,7 @@ If you have installed Edge on your local machine, then you should be able to imm
 If you have performed the install on a self-managed Kubernetes cluster rather than installing with the `c8yedge` tool, it is sometimes the case that Edge is not accessible via either URL. This depends on the Kubernetes distribution you have used. See [Accessing Edge via an external IP](/edge-kubernetes/manage-edge/#external-ip).
 {{< /c8y-admon-info >}}
 
-When signing into Edge this way, you will first be prompted for the {{< product-c8y-iot >}} tenant id. Edge has two tenants, `management` and `edge`. For both the {{< management-tenant >}} and the edge tenant, use the credentials as detailed at [To access Edge](#to-access-cumulocity-iot-edge)
+When signing into Edge this way, you will first be prompted for the {{< product-c8y-iot >}} tenant ID. Edge has two tenants, `management` and `edge`. For both the {{< management-tenant >}} and the Edge tenant, use the credentials as detailed at [To access Edge](#to-access-cumulocity-iot-edge).
 
 ### Accessing Edge using the domain name {#accessing-cumulocity-iot-edge-using-the-domain-name}
 {{< c8y-admon-info >}}
