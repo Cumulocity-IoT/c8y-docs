@@ -63,7 +63,7 @@ The {{< product-c8y-iot >}} CLI (Command Line Interface) is a software tool prov
 
 ### {{< product-c8y-iot >}} Core {#core}
 
-{{< product-c8y-iot >}} Core is the foundation of the {{< product-c8y-iot >}} platform. It comprises all major components such as the default [applications](#application) ([Administration](#administration-application), [Cockpit](#cockpit-application) and [Device Management](#device-management-application)), the [{{< product-c8y-iot >}} operational store](#operational-store), [microservices](#microservice), security, [REST API](#rest-api), MQTT API, and [smart rules](#smart-rules).  
+{{< product-c8y-iot >}} Core is the foundation of the {{< product-c8y-iot >}} platform. It comprises all major components such as the default [applications](#application) ([Administration](#administration-application), [Cockpit](#cockpit-application) and [Device Management](#device-management-application)), the [{{< product-c8y-iot >}} operational store](#operational-store), [microservices](#microservice), security, [REST API](#rest-api), MQTT API, and smart rules.  
 
 
 ### {{< product-c8y-iot >}} DataHub {#datahub}
