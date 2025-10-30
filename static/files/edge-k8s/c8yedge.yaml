@@ -218,7 +218,7 @@ spec:
   domain: <DOMAIN-NAME>
 
   ## Edge license key you received for the domain.
-  ## To request the license file for Edge, contact support - https://cumulocity.com/docs/additional-resources/contacting-support/
+  ## To request the license file for Edge, contact support - https://cumulocity.com/docs/additional-resources/contacting-support
   ##
   ## In the email, you must include
   ## - Your company name, under which the license has been bought
@@ -234,7 +234,9 @@ spec:
   ## Name of the Kubernetes secret containing the Cumulocity admin user password for both the Management tenant and the Edge tenant.
   ## This secret must contain one key:
   ##  - INITIAL_C8Y_ADMIN_PASSWORD: Password used to initialize the Cumulocity admin user for both the Management tenant and the Edge tenant.
-  ## 
+  ## This value is used only during the Edge installation and can’t be changed for existing installations.
+  ## All subsequent password changes are made via the user interface 
+  ## (https://cumulocity.com/docs/standard-tenant/managing-users) or the Cumulocity API. 
   cumulocityPasswordSecretName: c8y-admin-password
 
   ## Name of the Kubernetes secret containing the TLS/SSL private key and certificates for the domain name 
