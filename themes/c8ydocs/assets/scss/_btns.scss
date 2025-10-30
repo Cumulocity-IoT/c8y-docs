@@ -134,7 +134,7 @@ body:has(.home-top){
   }
 }
 
-.to-the-top {
+.to-the-top, .btn-default {
   position: fixed;
   right: 3rem;
   bottom: 4rem;
@@ -166,6 +166,10 @@ body:has(.home-top){
   @media print {
     display: none;
   }
+}
+
+.btn-default {
+  position: static;
 }
 
 // copy link
@@ -257,7 +261,7 @@ body:has(.home-top){
       border-radius: 3px;
       background: var(--c8y-brand-dark);
       color: white;
-      content: 'Ticket: ' attr(data-tooltip);
+      content: attr(data-tooltip);
       white-space: nowrap;
       font-size: 12px;
     }
