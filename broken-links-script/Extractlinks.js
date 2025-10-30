@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import matter from "gray-matter";
 
 const getMarkdownFiles = (dir) => {
   const files = fs.readdirSync(dir, { withFileTypes: true });
@@ -50,10 +51,12 @@ const shortcodeMapping = {
 };
 
 const hasRenderFalse = (fileContent) => {
-  const fm = fileContent.match(/(^|\n)---\s*[\s\S]*?\n---/);
-  if (!fm) return false;
-  const frontMatter = fm[0];
-  return /_build:\s*[\r\n]+[\s\S]*?render:\s*false\b/i.test(frontMatter);
+  try {
+    const { data } = matter(fileContent);
+    return data?._build?.render === false;
+  } catch {
+    return false;
+  }
 };
 
 const resolveHugoShortcode = (link) => {
