@@ -15,4 +15,4 @@ ticket: MTM-62614
 version: 2025.332.0
 ---
 With this change, the {{< product-c8y-iot >}} platform will raise an alarm when the Messaging Service fails to process a message.
-The issues reported in this way are those that need user action to resolve, for example when publishing to a Notifications 2.0 subscription fails because the underlying topic has reached its backlog quota limit.
+The issues reported in this way are those that need user action to resolve, for example, when publishing to a Notifications 2.0 subscription fails because the underlying topic has reached its backlog quota limit.
