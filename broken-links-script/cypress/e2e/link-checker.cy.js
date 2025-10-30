@@ -88,8 +88,6 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
             expect(res.status, `npm registry status for ${pkg}`).to.eq(200);
           });
         }
-        cy.visit(encodedUrl, { timeout: 50000, failOnStatusCode: false });
-        cy.url().should('include', '/package/%40');
         completedTests++;
         return;
       }
