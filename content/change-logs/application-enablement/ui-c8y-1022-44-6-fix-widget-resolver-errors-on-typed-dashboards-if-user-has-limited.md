@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Fixed widget resolver errors on typed dashboards for users with limited permissions
+date: '2025-10-23'
+title: >-
+  Fixed widget resolver errors on typed dashboards for users with limited
+  permissions
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
