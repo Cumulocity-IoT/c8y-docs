@@ -208,9 +208,15 @@ spec:
   licenseKey:  <LICENSE-KEY>
 
   ## Name of the “edge” tenant, for example, the company’s name.
+  ## This value is used only during the Edge installation and can’t be changed for existing installations.
+  ## All subsequent tenant changes are made via the user interface 
+  ## (https://cumulocity.com/docs/enterprise-tenant/managing-tenants/#to-view-or-edit-subtenant-properties) or the Cumulocity API.
   company: <COMPANY-NAME>
 
   ## Replace with a valid email, used for admin account.
+  ## This value is used only during the Edge installation and can’t be changed for existing installations.
+  ## All subsequent admin user changes are made via the user interface 
+  ## (https://cumulocity.com/docs/standard-tenant/managing-users/) or the Cumulocity API.
   email: <ADMIN-EMAIL>
 
   ## Name of the Kubernetes secret containing the TLS/SSL private key and certificates for the domain name 
