@@ -200,8 +200,10 @@ Perform the following steps as a root user on your Edge appliance.
    1. Migrate HSQL db.
 
       ```shell
-      To be discussed on the approach here
+      pip install https://download.cumulocity.com/Cumulocity-Edge/Installer/2025/cdh_migration-2025-py3-none-any.whl \
+      && cdh-migration
       ```
+      wait until you see an out put `INFO - Data export complete: database_export.sql`
    2.
       ```shell
       tar -zcf /opt/edge-appliance-backup.tar /opt/appliance-edgedb-backup /opt/softwareag /opt/mongodb/cdh-dremio/distributed-storage /opt/mongodb/cdh-master/datalake /home/admin/database_export.sql
@@ -316,12 +318,14 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    ```
 
 5. Configure dremio:
-<!-- Should we automate this ? It is automatable -->
-   Post migration, dremio will have legacy configuration of c8y_source from appliance, this needs to be updated for dremio to communicate with mongo. Please find the following steps for the same:
-   1. Set support property “store.plugin.keep_metadata_on_replace“ = true in Dremio (goto Settings > Support)
-   2. Configure settings of “c8y-source” as required for edge on K8s:
-      a. Configure MongoDB host name and credentials 
-   3. Set support property “store.plugin.keep_metadata_on_replace“ = false in Dremio
+   Post migration, dremio will have legacy configuration of c8y_source from appliance, this needs to be updated for dremio to communicate with mongo. In this step we will update the `c8y_source` configuration:
+      1. Set support property “store.plugin.keep_metadata_on_replace“ = true in Dremio (goto Settings > Support)
+      2. Configure settings of “c8y-source” as required for edge on K8s:
+         a. Configure MongoDB host name and credentials 
+      3. Set support property “store.plugin.keep_metadata_on_replace“ = false in Dremio
+   ```shell
+   curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/dremio_source_configuration.sh -O && bash ./dremio_source_configuration.sh
+   ```
 
 6. Start Edge operator:
    ```shell
