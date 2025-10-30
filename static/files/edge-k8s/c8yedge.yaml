@@ -236,7 +236,7 @@ spec:
   ##  - INITIAL_C8Y_ADMIN_PASSWORD: Password used to initialize the Cumulocity admin user for both the Management tenant and the Edge tenant.
   ## This value is used only during the Edge installation and can’t be changed for existing installations.
   ## All subsequent password changes are made via the user interface 
-  ## (https://cumulocity.com/docs/standard-tenant/managing-users) or the Cumulocity API. 
+  ## (https://cumulocity.com/docs/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API. 
   cumulocityPasswordSecretName: c8y-admin-password
 
   ## Name of the Kubernetes secret containing the TLS/SSL private key and certificates for the domain name 
