@@ -9,6 +9,9 @@ sector:
 {{< c8y-admon-preview >}}
 This feature is in **Public Preview**.
 That is, it is not yet generally available and may be subject to change in the future.
+
+The documentation describes the expected state of the MQTT Service when it becomes Generally Available.
+Some behaviour may not yet be exactly as described in the documentation.
 {{< /c8y-admon-preview >}}
 
 {{< c8y-admon-req >}}
