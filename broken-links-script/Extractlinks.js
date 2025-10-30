@@ -91,9 +91,10 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
     } else {
       publishedBasePath = fileName === "index" ? fileDir : `${fileDir}/${fileName}`;
     }
-    publishedBasePath = publishedBasePath.replace(/^\/+|\/+$/g, "");
-    const base = `${BASE_URL.replace(/\/$/, "")}/${publishedBasePath ? publishedBasePath + "/" : ""}`;
-    return `${base}#${link.substring(1)}`;
+    let url = `${BASE_URL}/${publishedBasePath ? publishedBasePath + "/" : ""}#${link.substring(1)}`;
+    url = url.replace(/([^:]\/)\/+/g, '$1');
+    url = url.replace(/\/#/g, '#');
+    return url;
   }
 
   const resolvedLink = resolveHugoShortcode(link);
