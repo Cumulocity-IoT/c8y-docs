@@ -160,6 +160,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
           if (!contentType.includes('text/html')) {
             cy.log(`Non-HTML content detected for ${url}, skipping cy.visit()`);
             expect(response.status).to.be.oneOf([200, 201, 202, 203, 204, 301, 302, 304]);
+            expect(response.body).not.to.be.empty;
           } else {
             cy.visit(url, { timeout: 20000 });
             cy.document().its('body').should('not.be.empty');
