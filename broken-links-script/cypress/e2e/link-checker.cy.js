@@ -31,7 +31,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       cy.log(`Available fragments (including frames):\n${allFragments.join('\n')}`);
     }
 
-    expect(exists, `An element with id or name = "#${fragment}" should exist in HTML or frames`).to.be.true;
+    expect(exists, `An element with id or name = "${fragment}" should exist in HTML or frames`).to.be.true;
   };
 
   const expectNoUnencodedParentheses = (url) => {
