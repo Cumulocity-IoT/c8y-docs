@@ -44,7 +44,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       const ids = Array.from(doc.querySelectorAll('[id]')).map(el => el.id.replace(/^user-content-/, ''));
       cy.log(`Available GitHub IDs:\n${ids.join('\n')}`);
       const exists = ids.some(id => id === fragment);
-      expect(exists, `Fragment "#${fragment}" should exist in GitHub page`).to.be.true;
+      expect(exists, `Element with id "user-content-${fragment}" should exist in GitHub page`).to.be.true;
     });
   };
 
