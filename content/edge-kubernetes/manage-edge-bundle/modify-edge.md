@@ -19,7 +19,7 @@ kubectl create secret tls edge-tls-secret --namespace=c8yedge \
   --key=./certs/tls.key
 ```
 
-Then apply the below configuration for configuring and SSL certificate and a custom domain:
+Then apply the below configuration for configuring an SSL certificate and a custom domain:
 ```bash
 kubectl --namespace=c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"domain":"<DOMAIN-NAME>", "licenseKey":"<LICENSE-KEY>", "tlsSecretName": "edge-tls-secret"}}'
 ```
