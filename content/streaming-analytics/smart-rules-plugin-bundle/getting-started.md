@@ -67,3 +67,54 @@ For detailed information about creating and managing template parameters in Anal
 8. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save the model.
 
 When completed, your model will look similar to this:
+
+![Create model for alarms](/images/streaming-analytics/smart-rules-plugin/create-alarm-model.png)
+
+#### Step 2: Create a model instance using the smart rules plugin {#create-an-instance-of-model-using-smart-rules-plugin}
+
+1. Navigate to the Device Management application.
+2. Go to **Devices** > **All devices** and select a device.
+3. Click the **Smart rules (NEW)** tab (embedded as one of the device details tabs).
+Refer to the [Prerequisites](#prerequisites) section to ensure all requirements are met.
+   ![Smart rules tab](/images/streaming-analytics/smart-rules-plugin/empty-smart-rule.png)
+4. Click **Add rule** to open the **Add rule** dialog. Since you are currently in the **Device** context, only models that have been configured with **From Context** template parameters restricted to **Device** will be visible here. Select your configured model and click **OK**.
+   ![Add rule for the selected model](/images/streaming-analytics/smart-rules-plugin/add-rule-for-selected-model.png)
+5. Configure the rule parameters:
+   - Optionally update the name or add a note if desired.
+   - Populate the template parameter values. The value of the template parameter (for example, "Measurement Source") configured with **From Context** is derived automatically from the current device or group context.
+   - Click **Save** to save the rule, or toggle to **Active** to save and deploy immediately.
+6. Your rule now appears in the smart rules list, showing its status (Active/Inactive).
+   ![Smart rules list](/images/streaming-analytics/smart-rules-plugin/smart-rules-list.png)
+
+**Congratulations!** You have successfully created and deployed your first smart rule using the smart rules plugin.
+
+### Creating smart rules from existing Analytics Builder samples {#create-smart-rule-for-existing-samples}
+
+You can also create smart rules using pre-built sample models from Analytics Builder. The process is similar to creating from scratch but faster since the model logic is already defined.
+
+#### Step 1: Create a model from a sample {#create-model-from-sample}
+1. Navigate to **Analytics Builder** > **Samples**.
+2. Click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of your desired sample (for example, "On alarm execute operation") and select **Create model from sample**.
+   ![Create model from sample](/images/streaming-analytics/smart-rules-plugin/create-model-from-sample.png)
+3. The model editor opens with the sample model ready for use.
+
+#### Step 2: Configure template parameters {#configure-template-parameters}
+1. Click the template parameter icon <i class="c8y-icon c8y-icon-parameters-on c8y-icon-duocolor icon-20"></i> in the toolbar.
+2. Ensure the template parameter entry provided for **Input Source** of the **Alarm Input** block (for example, "Device or group of devices") has "Source or Destination" updated to include one or more values from the **Restrict to** dropdown (for example, "Device") and set **Value Selection** to "From Context". Click **OK** to save the changes.
+3. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save the model.
+
+#### Step 3: Create a rule from the Device Management application {#create-rule-from-device-management-application}
+Follow the same steps as described in [Step 2: Create model instance using the smart rules plugin](#create-an-instance-of-model-using-smart-rules-plugin) above.
+
+
+### Troubleshooting {#troubleshooting}
+
+1. **No models available in Add rule dialog**
+   - Ensure that the Analytics Builder models have template parameters configured with the "From Context" value.
+   - Verify your current context matches the model's "Source or Destination" type restrictions. For example, when in a device context where the model's **Restrict to** dropdown is configured with "Groups" only, that model will not be available. To appear in device contexts, "Device" must be selected in the **Restrict to** dropdown.
+2. **Previously created rules don't appear in the smart rules list**
+   - Verify that the Analytics instances are set to **Production mode** in the Analytics Builder instance editor.
+   - Check if Analytics instance names are set in the Analytics Builder instance editor.
+   - Confirm you're viewing the correct device or group context.
+3. **Error in smart rule deployment**
+   - Click the runtime error icon <img src="/images/streaming-analytics/analytics-builder/runtime_error.png" alt="Error icon" style="display:inline-block; margin:0"> to view information about the error.
