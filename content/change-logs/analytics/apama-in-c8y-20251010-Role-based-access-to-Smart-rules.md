@@ -15,6 +15,6 @@ ticket: PAB-4929
 version: 26.230.0
 ---
 
-Smart rules (NEW) introduces support for fine grained RBAC.
+The smart rules (NEW) feature has introduced support for fine-grained RBAC.
 
 For more details refer to [Role-based Access ](/streaming-analytics/smart-rules-plugin/#role-based-access).
