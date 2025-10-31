@@ -16,7 +16,7 @@ Before using the smart rules (NEW) plugin, ensure that the following requirement
 - The smart rules plugin is installed in the desired application, and the **Smart rules (NEW) plugin** is enabled in **Preview feature**.
 - The user has the required privileges to access Analytics Builder models and create new instances of Analytics builder templated models. Refer to [Permissions](/streaming-analytics/introduction-analytics/#permissions).
 
-#### Role-based Access
+#### Role-based access {#role-based-access}
 The following permissions are required to access Smart rules (NEW):
 |ROLE|Create|Read |Update|Delete|
 |------|-----|----|------|-------|
