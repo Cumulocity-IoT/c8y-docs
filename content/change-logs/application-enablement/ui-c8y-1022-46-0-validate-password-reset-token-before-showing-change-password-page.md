@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63950
 version: 1022.46.0
 ---
-There is new backend feature that allows Login app to check if reset password link is valid. If it is, user is redirected to view where he's able to change password. If it is invalid (does not exist or expired), user is instructed to request reset password link again.
+Previously, if user used password reset link with invalid token, he was redirected to reset password view and got error message on submit. To enhance user experience, the Login app now validates password reset links before allowing users to change their passwords. When a user clicks on a password reset link, the app checks with the backend to ensure the link is valid and has not expired. If the link is valid, the user is redirected to a page where they can set a new password. However, if the link is invalid or has expired, the user is redirected to different view and instructed to request a new password reset link.
