@@ -11,7 +11,7 @@ _build:
 
 ### CCU ({{< product-c8y-iot >}} Compute Unit) {#ccu}
 
-CCU (Cumulocity Compute Unit) is a standardized measure for computational resources consumed by custom [microservices](#microservice) deployed by a customer. 1 CCU typically equates to 1 CPU core and 4 GiB of memory. CCUs are calculated based on daily average resource usage and used for billing purposes. The CCU calculation takes into account the resources denoted in the [microservice manifest](#micorservice-manifest) and the subscribed time for each microservice.   
+CCU (Cumulocity Compute Unit) is a standardized measure for computational resources consumed by custom [microservices](#microservice) deployed by a customer. 1 CCU typically equates to 1 CPU core and 4 GiB of memory. CCUs are calculated based on daily average resource usage and used for billing purposes. The CCU calculation takes into account the resources denoted in the [microservice manifest](#microservice-manifest) and the subscribed time for each microservice.   
 
 ### Change logs {#change-logs}
 
@@ -50,7 +50,7 @@ The connection monitoring feature allows identifying [devices](#device) that hav
 
 ### Continuous Deployment model {#continuous-deployment}
 
-In the {{< product-c8y-iot >}} Continuous Deployment (CD) model, the different components of the {{< product-c8y-iot >}} platform are updated on a continuous basis. This means a frequent deployment of small incremental improvements. The changes are communicated via the [change logs](#change-log).
+In the {{< product-c8y-iot >}} Continuous Deployment (CD) model, the different components of the {{< product-c8y-iot >}} platform are updated on a continuous basis. This means a frequent deployment of small incremental improvements. The changes are communicated via the [change logs](#change-logs).
 
 See also [Private Preview](#private-preview), [Public Preview](#public-preview) and [General Availability](#ga).
 
