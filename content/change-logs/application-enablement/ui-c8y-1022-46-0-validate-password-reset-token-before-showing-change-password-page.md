@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Validate password reset token before showing change password page
+title: Validate password reset token for more suitable redirection
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
