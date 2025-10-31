@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Validate password reset token for more suitable redirection
+title: Password reset links now validated for a more suitable redirection
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
