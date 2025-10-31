@@ -1,6 +1,7 @@
 ---
 title: "Getting started"
 icon: "c8y-icon c8y-icon-cumulocity-iot"
+type: external-new-tab
 weight: 10
 svg: '<svg width="1103" height="851" viewBox="0 0 1103 851" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="1103" height="851" fill="#F9FAFB"/>
