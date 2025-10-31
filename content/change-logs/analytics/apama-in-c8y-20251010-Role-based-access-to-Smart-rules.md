@@ -17,4 +17,4 @@ version: 26.230.0
 
 The smart rules (NEW) feature has introduced support for fine-grained RBAC.
 
-For more details refer to [Role-based Access ](/streaming-analytics/smart-rules-plugin/#role-based-access).
+For details, refer to [Role-based access](/streaming-analytics/smart-rules-plugin/#role-based-access).
