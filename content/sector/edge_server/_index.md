@@ -15,4 +15,4 @@ aliases:
 weight: 60
 ---
 
-{{< product-c8y-iot >}} Edge is the single-server variant of the {{< product-c8y-iot >}} platform, designed to run in factories on industrial PCs or local servers, that is, in the same site (“onsite”) in which the IoT assets are located.
+{{< product-c8y-iot >}} Edge is the onsite solution of {{< product-c8y-iot >}} intended to run as a local software application on industrial PCs or local servers.<p>Clicking here opens the documentation of the {{< c8y-edge-version-major >}} release.</p>
