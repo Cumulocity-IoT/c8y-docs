@@ -200,8 +200,9 @@ Perform the following steps as a root user on your Edge appliance.
    1. Migrate HSQL db.
 
       ```shell
-      pip install https://download.cumulocity.com/Cumulocity-Edge/Installer/2025/cdh_migration-2025-py3-none-any.whl \
-      && cdh-migration
+      docker cp cdh-console:/opt/softwareag/cdh-console/backend/lib/hsqldb-2.7.1.jar /tmp/. && \
+      pip install https://download.cumulocity.com/Cumulocity-Edge/Installer/2025/cdh_migration-2025-py3-none-any.whl && \
+      cdh-migration
       ```
       wait until you see an out put `INFO - Data export complete: database_export.sql`
    2.
@@ -288,7 +289,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
 3. Migrate dremio:
    1. Redeploy dremio in maintanace mode for migration, fetch dremio helm chart from installartifacts:
       ```shell
-       kubectl get pv -A -o yaml | grep -A1 installartifacts-backing | awk '/path:/ {print $2}'
+      cp "$(kubectl get pv -A -o yaml | grep -A1 installartifacts-backing | awk '/path:/ {print $2}')/helmchart/edge/dependencies/helm-charts/cdh/dremio-11.0.648.tgz" .
       ```
    2. Backup values.yaml:
       ```shell
