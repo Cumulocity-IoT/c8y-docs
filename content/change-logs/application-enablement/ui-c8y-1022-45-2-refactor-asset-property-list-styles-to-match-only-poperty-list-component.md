@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Refactored asset property list styles to avoid affecting device protocol creation
+date: '2025-10-30'
+title: >-
+  Refactored asset property list styles to avoid affecting device protocol
+  creation
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
