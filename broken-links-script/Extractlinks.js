@@ -94,9 +94,9 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
     } else {
       publishedBasePath = fileName === "index" ? fileDir : `${fileDir}/${fileName}`;
     }
-    let url = `${BASE_URL}/${publishedBasePath ? publishedBasePath + "/" : ""}#${link.substring(1)}`;
-    url = url.replace(/([^:]\/)\/+/g, '$1');
-    url = url.replace(/\/#/g, '#');
+    let url = `${BASE_URL}/${publishedBasePath}#${link.substring(1)}`;
+    url = url.replace(/([^:]\/)\/+/g, '$1'); // removes duplicate slashes
+    url = url.replace(/\/#/g, '#'); // removes slash before hash
     return url;
   }
 
