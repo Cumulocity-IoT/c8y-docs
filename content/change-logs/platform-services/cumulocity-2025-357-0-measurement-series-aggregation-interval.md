@@ -1,6 +1,6 @@
 ---
-date: ''
-title: Enhanced granularity of measurement series aggregation interval 
+date: '2025-10-30'
+title: Enhanced granularity of measurement series aggregation interval
 change_type:
   - value: change-QHu1GdukP
     label: Feature
