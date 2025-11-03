@@ -81,19 +81,19 @@ Here you can see the following information:
 - **Migration range** - Date range. Start date is the date of the oldest measurement to be migrated and end date is the date of the newest measurement. This is also the point in time when the migration has started.
   **Migration status** - This bar displayed at the right has various functions. Depending on the state it provides either visual information on the current state of the ongoing process or allows to control certain process states. For details of states, see [Migration states](#migration-states).
 
-The second section shows the **List of tenants** with the following infomation for each tenant:
- 
-* **Tenant** - Tenant name.
-* **ID** - Tenant ID. 
-* **Domain** - Tenant domain.
-* **Parent tenant ID** - Parent tenant ID. 
-* **Status** - Current migration state for the given tenant.
-* **Requested date** - Date when the tenant was added to the queue for migration.
-* **Requested by** - Tenant ID and name of the user who requested the migration.
-* **Approved date** - Date when the migration was approved by the administrator.
-* **Approved by** - Tenant ID and name of the user who approved the migration.
+The second section shows the **List of tenants** with the following information for each tenant:
 
-On hovering over a tenant row, you can see one of the following buttons according to the migration state:
-- **Add to queue** - To assign the tenant to the migration queue when it is in **Legacy measurements** state.
-- **Cancel migration** - To remove the tenant from the migration queue when it is in **Queued** state. Note that if the progress has already started, it is not possible to resign from migration.
-- **Approve and finish migration** - To approve the migration when it is in **Verified** state. Note that no other migration will start if there is a tenant pending acceptance.
+* **Tenant** – Tenant name.
+* **ID** – Tenant ID.
+* **Domain** – Tenant domain.
+* **Parent tenant ID** – Parent tenant ID.
+* **Requested by user** – Name of the user that requested the migration.
+* **Approved by user** – Name of the user that approved the migration.
+* **Tenant status** – Current status of the tenant (for example, ACTIVE or SUSPENDED).
+* **Migration status** – Current migration state for the tenant (for example, Queued, In progress, Verified).
+
+On hovering over a tenant row, you see one of the following buttons according to the migration state. Actions are only available for tenants with status ACTIVE:
+
+* **Add to queue** – Assign the tenant to the migration queue when it is in **Not migrated** state.
+* **Cancel migration** – Remove the tenant from the migration queue when it is in **Queued** state. If progress has already started, it is not possible to resign from migration.
+* **Approve and finish migration** – Approve the migration when it is in **Verified** state. No other migration starts if there is a tenant pending acceptance.

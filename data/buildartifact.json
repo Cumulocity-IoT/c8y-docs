@@ -59,6 +59,10 @@
     {
       "id": "tc-F7MbgH6a0",
       "option": "connectivity-agent"
+    },
+    {
+      "id": "tc-G8NchI7b1",
+      "option": "timeseries-migration"
     }
   ]
 }

@@ -917,5 +917,5 @@ the deprecation of `WebSecurityConfigurerAdapter` by Spring Security. The Micros
 declaration of the `SecurityFilterChain` bean in its internal configuration instead. At the same time, Spring Security
 only allows one of these configuration approaches in a single application. This means that if the old,
 adapter-based method has been used in your code before, you will have to migrate to the new, direct filters
-declaration for applications to start. Refer to the [Spring Security documentation](https://docs.spring.io/spring-security/reference/5.8/migration/servlet/config.html#_stop_using_websecurityconfigureradapter) for more details.
+declaration for applications to start. Refer to the [Spring Security release notes](https://github.com/spring-projects/spring-security/releases/tag/5.8.0) for more details.
 

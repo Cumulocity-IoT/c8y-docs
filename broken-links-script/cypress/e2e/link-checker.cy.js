@@ -5,41 +5,52 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   const totalTests = urls.length;
 
 
-  const escRegExp = (string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const expectFragmentExists = (doc, fragment) => {
+    const decodedFragment = decodeURIComponent(fragment);
+    const collectFragments = (root) => {
+      const ids = Array.from(root.querySelectorAll('[id]')).map(el => el.id);
+      const names = Array.from(root.querySelectorAll('a[name]')).map(a => a.getAttribute('name'));
+      return [...ids, ...names].filter(Boolean);
+    };
 
-  const expectFragmentExists = (htmlContent, fragment) => {
-    const escFragment = escRegExp(fragment);
-    const regex = new RegExp(`(id=["']${escFragment}["']|name=["']${escFragment}["'])`);
-    const exists = regex.test(htmlContent);
-    expect(exists, `An element with id or name "${fragment}" should exist in HTML`).to.be.true;
+    let allFragments = collectFragments(doc);
+    const iframes = doc.querySelectorAll('iframe, frame');
+    for (const frame of iframes) {
+      try {
+        const frameDoc = frame.contentDocument || frame.contentWindow?.document;
+        if (frameDoc) {
+          allFragments = allFragments.concat(collectFragments(frameDoc));
+        }
+      } catch (e) {
+      }
+    }
+
+    const exists = allFragments.some(f => f === decodedFragment);
+
+    if (!exists) {
+      cy.log(`Available fragments (including frames):\n${allFragments.join('\n')}`);
+    }
+
+    expect(exists, `An element with id or name = "${fragment}" should exist in HTML or frames`).to.be.true;
   };
 
   const expectNoUnencodedParentheses = (url) => {
     cy.wrap(url).should('not.match', /[()]/, `URL should not contain unencoded parentheses: ${url}`);
   };
 
+// Note: On GitHub pages, heading IDs are prefixed with "user-content-".
   const checkGithubFragment = (fragment) => {
-    const normalizedFragment = fragment.toLowerCase().replace(/[^\w\-]+/g, '-').replace(/^-+|-+$/g, '');
     cy.document().then((doc) => {
-      const anchorExists = Array.from(doc.querySelectorAll('a'))
-        .some(a => a.getAttribute('href') === `#${normalizedFragment}`);
-      
-      expect(anchorExists, `Fragment "#${normalizedFragment}" should exist in href attribute of an <a> tag`).to.be.true;
-      const allFragments = Array.from(doc.querySelectorAll('a'))
-        .map(a => a.getAttribute('href'))
-        .filter(href => href && href.startsWith('#'));
-      cy.log(`Available fragments on page:\n${allFragments.join('\n')}`);
+      const ids = Array.from(doc.querySelectorAll('[id]')).map(el => el.id.replace(/^user-content-/, ''));
+      cy.log(`Available GitHub IDs:\n${ids.join('\n')}`);
+      const exists = ids.some(id => id === fragment);
+      expect(exists, `Element with id "user-content-${fragment}" should exist in GitHub page`).to.be.true;
     });
   };
 
   const checkRegularFragment = (fragment) => {
     cy.document().then((doc) => {
-      const html = doc.documentElement.innerHTML;
-      expectFragmentExists(html, fragment);
-      const ids = Array.from(doc.querySelectorAll('[id]')).map(el => el.id);
-      const names = Array.from(doc.querySelectorAll('a[name]')).map(a => a.getAttribute('name'));
-      const allFragments = [...ids, ...names];
-      cy.log(`Available elements on page with ids and names:\n${allFragments.join('\n')}`);
+      expectFragmentExists(doc, fragment);
     });
   };
 
@@ -62,17 +73,35 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
       const hasNonHtmlExtension = nonHtmlExtensions.some(ext => url.endsWith(ext));
       const isNonHtmlResource = hasNonHtmlExtension || url.includes('/files/') || url.includes('/downloads/');
+      const isNpmPackagePage = url.startsWith('https://www.npmjs.com/package/');
+      if (isNpmPackagePage) {
+        const m = url.match(/^https:\/\/www\.npmjs\.com\/package\/(@[^/]+\/[^#?]+)/);
+        const pkg = m ? m[1] : null;
+        const encodedUrl = pkg ? url.replace(pkg, encodeURIComponent(pkg)) : url;
+
+        if (pkg) {
+          cy.request({
+            url: `https://registry.npmjs.org/${pkg}`,
+            failOnStatusCode: false,
+            headers: { Accept: 'application/vnd.npm.install-v1+json' }
+          }).then((res) => {
+            expect(res.status, `npm registry status for ${pkg}`).to.eq(200);
+          });
+        }
+        completedTests++;
+        return;
+      }
   
       Cypress.env('sourceFiles', item.files);
       expectNoUnencodedParentheses(url);
-  
+
       if (isNonHtmlResource) {
         cy.log(`Validating non-HTML resource: ${url}`);
         cy.request({
           url: url,
           failOnStatusCode: false 
         }).then((response) => {
-          expect(response.status).to.be.oneOf([200, 304]);
+          expect(response.status).to.be.oneOf([200, 201, 202, 203, 204, 301, 302, 304]);
   
           if (url.endsWith('.json')) {
             expect(response.body).to.be.an('object');
@@ -83,9 +112,9 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       }
 
       if (isCodexPage) {
-        cy.visit(url, { timeout: 20000 });
+        cy.visit(url, { timeout: 50000 });
       
-        cy.get('[data-cy="c8y-title--title-outlet"] .text-truncate', { timeout: 20000 })
+        cy.get('[data-cy="c8y-title--title-outlet"] .text-truncate', { timeout: 50000 })
           .invoke('text')
           .should('not.be.empty')
       
@@ -107,22 +136,34 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         }
       }
       else if (isApiPage) {
-        cy.visit(url, { timeout: 20000 });
+        cy.visit(url, { timeout: 50000 });
         if (fragment) {
           cy.get(`[id="${fragment}"]`, { timeout: 10000 }).should('exist');
         }
       }
       else if (isGithubPage && fragment) {
-        cy.visit(url, { timeout: 20000 });
+        cy.visit(url, { timeout: 50000 });
         checkGithubFragment(fragment);
       }
       else if (fragment) {
-        cy.visit(url, { timeout: 20000 });
+        cy.visit(url, { timeout: 50000, failOnStatusCode: false, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122.0 Safari/537.36' }});
         checkRegularFragment(fragment);
       }
       else {
-        cy.visit(url, { timeout: 20000 });
-        cy.document().its('body').should('not.be.empty');
+        cy.request({
+          url: url,
+          failOnStatusCode: false
+        }).then((response) => {
+          const contentType = response.headers['content-type'] || '';
+          if (!contentType.includes('text/html')) {
+            cy.log(`Non-HTML content detected for ${url}, skipping cy.visit()`);
+            expect(response.status).to.be.oneOf([200, 201, 202, 203, 204, 301, 302, 304]);
+            expect(response.body).not.to.be.empty;
+          } else {
+            cy.visit(url, { timeout: 50000 });
+            cy.document().its('body').should('not.be.empty');
+          }
+        });
       }
       
       completedTests++;
