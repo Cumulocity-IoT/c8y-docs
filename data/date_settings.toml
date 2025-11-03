@@ -40,7 +40,7 @@ version = "2025.8"
 
 [[versions]]
 date = "October 30, 2025"
-version = "2025.9"
+version = "2025.10"
 
 # Fake dates for the 'parallel' Edge timeline that should be sorted entirely outside of the timeline of the cloud releases
 [[versions]]
@@ -70,3 +70,7 @@ version = "Edge-2025.0.5"
 [[versions]]
 date = "January 7, 2024"
 version = "Edge-2025.0.6"
+
+[[versions]]
+date = "January 8, 2024"
+version = "Edge-2025.0.7"
