@@ -204,7 +204,7 @@ Perform the following steps as a root user on your Edge appliance.
       pip install https://download.cumulocity.com/Cumulocity-Edge/Installer/2025/cdh_migration-2025-py3-none-any.whl && \
       cdh-migration
       ```
-      wait until you see an out put `INFO - Data export complete: database_export.sql`
+      wait until you see an output `INFO - Data export complete: database_export.sql`
    2.
       ```shell
       tar -zcf /opt/edge-appliance-backup.tar /opt/appliance-edgedb-backup /opt/softwareag /opt/mongodb/cdh-dremio/distributed-storage /opt/mongodb/cdh-master/datalake /home/admin/database_export.sql
@@ -263,17 +263,17 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    rm -rf /opt/appliance-edgedb-backup /opt/edge-appliance-backup.tar
    ```
 ### Step 5 - Restore DataHub
-1. Stop Edge operator:
+1. Stop the Edge operator:
    ```shell
    kubectl scale deployment c8yedge-operator-controller-manager -n c8yedge --replicas=0
    ```
 
-2. Set tenant option `CDH_PASSWORD_SECRET` on edge tenant:
-   1. Get the secret from backup:
+2. Set the tenant option `CDH_PASSWORD_SECRET` on the Edge tenant:
+   1. Get the secret from the backup:
       ```shell
       grep CDH_PASSWORD_SECRET /opt/softwareag/cdh-console/conf/cdh-console-env
       ```
-   2. Set tenant option on edge:
+   2. Set the tenant option on Edge:
       ```shell
       curl --location 'https://<EDGE_HOST_IP>/tenant/options/' \
       -H 'Content-Type: application/vnd.com.nsn.cumulocity.option+json' \
@@ -286,24 +286,24 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
       }'
       ```
 
-3. Migrate dremio:
-   1. Redeploy dremio in maintanace mode for migration, fetch dremio helm chart from installartifacts:
+3. Migrate Dremio:
+   1. Redeploy Dremio in maintenance mode for migration and fetch the Dremio Helm chart from the installation artifacts:
       ```shell
       cp "$(kubectl get pv -A -o yaml | grep -A1 installartifacts-backing | awk '/path:/ {print $2}')/helmchart/edge/dependencies/helm-charts/cdh/dremio-11.0.648.tgz" .
       ```
-   2. Backup values.yaml:
+   2. Backup *values.yaml*:
       ```shell
       helm get values dremio -n c8yedge --all -o yaml > dremio_values.yaml
       ```
-   3. Set dremio to maintanance:
+   3. Set Dremio to maintenance mode:
       ```shell
       helm upgrade dremio ./dremio-11.0.648.tgz   -n c8yedge   -f dremio_values.yaml   --set DremioAdmin=true   --wait
       ```
-   4. Restore RocksDB from backup:
+   4. Restore RocksDB from the backup:
       ```shell
       kubectl exec -n c8yedge dremio-admin -- rm -rf /opt/dremio/data/db && kubectl cp /opt/mongodb/cdh-master/data/db dremio-admin:/opt/dremio/data/ -n c8yedge
       ```
-   5. Restore datalake contents:
+   5. Restore the datalake contents:
       ```shell
       rm -rf /datahub/distributedStorage/* /datahub/datalake/* && cp -a /opt/mongodb/cdh-dremio/distributed-storage/. /datahub/distributedStorage/ && cp -a /opt/mongodb/cdh-master/datalake/. /datahub/datalake/
       ```
@@ -318,17 +318,17 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    kubectl exec -i -n c8yedge datahub-mysql-0 -- sh -c 'mysql -u root -p"$MYSQL_ROOT_PASSWORD" CDH_edge < /tmp/database_export.sql'
    ```
 
-5. Configure dremio:
-   Post migration, dremio will have legacy configuration of c8y_source from appliance, this needs to be updated for dremio to communicate with mongo. In this step we will update the `c8y_source` configuration:
-      1. Set support property “store.plugin.keep_metadata_on_replace“ = true in Dremio (goto Settings > Support)
-      2. Configure settings of “c8y-source” as required for edge on K8s:
-         a. Configure MongoDB host name and credentials 
-      3. Set support property “store.plugin.keep_metadata_on_replace“ = false in Dremio
+5. Configure Dremio:
+   After the migration, Dremio will have a legacy configuration of `c8y_source` from the appliance. This needs to be updated for Dremio to communicate with Mongo. In this step, we will update the `c8y_source` configuration:
+      1. Set the support property `store.plugin.keep_metadata_on_replace` to `true` in Dremio (go to Settings > Support).
+      2. Configure the settings of `c8y-source` as required for Edge on Kubernetes:
+         - Configure the MongoDB host name and credentials.
+      3. Set the support property `store.plugin.keep_metadata_on_replace`to `false` in Dremio.
    ```shell
    curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/dremio_source_configuration.sh -O && bash ./dremio_source_configuration.sh
    ```
 
-6. Start Edge operator:
+6. Start the Edge operator:
    ```shell
    kubectl scale deployment c8yedge-operator-controller-manager -n c8yedge --replicas=1
    ```
