@@ -21,7 +21,7 @@ Before using the smart rules (NEW) plugin, ensure that the following requirement
 
 |privilege|Description|
 |---------|-----------|
-|**READ**|Grants view-only access to Smart rule instances. Users with this permission can view existing instances but cannot create, modify, or delete them.|
+|**READ**|Grants read-only access to Smart rule instances. Users with this permission can view existing instances but cannot create, modify, or delete them.|
 |**ADMIN**|Grants full control over Smart rule instances. Users with this permission can Create, Read, Update, and Delete (CRUD) Smart rule instances.|
 
 These permissions ensure fine-grained access control, allowing administrators to manage user privileges based on operational requirements.
