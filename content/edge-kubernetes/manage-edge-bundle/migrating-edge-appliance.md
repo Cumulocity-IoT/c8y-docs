@@ -156,10 +156,6 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
 
 ### Step 2 - Backing up data and configuration of Edge appliance
 
-{{< c8y-admon-caution >}}
-This step only creates a backup of {{< product-c8y-iot >}} DataHub (datalake) contents. Migration of {{< product-c8y-iot >}} DataHub is outside the scope of this document and must be handled separately (no scripts are currently provided).
-{{< /c8y-admon-caution >}}
-
 In your Edge appliance VM, back up the MongoDB data and data lake contents from {{< product-c8y-iot >}} DataHub if present.
 
 Perform the following steps as a root user on your Edge appliance.
