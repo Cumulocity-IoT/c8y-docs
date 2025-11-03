@@ -197,7 +197,7 @@ Perform the following steps as a root user on your Edge appliance.
 
 4. Tar the MongoDB data and data lake contents from {{< product-c8y-iot >}} DataHub if present, into */opt/edge-appliance-backup.tar* :
 
-   1. Migrate HSQL db.
+   1. Migrate the HSQL DB.
 
       ```shell
       docker cp cdh-console:/opt/softwareag/cdh-console/backend/lib/hsqldb-2.7.1.jar /tmp/. && \
