@@ -158,14 +158,19 @@ In your Edge appliance VM, back up the MongoDB data and data lake contents from 
 
 Perform the following steps as a root user on your Edge appliance.
 
-1. Unmonitor and stop all services except the `mongod` service:
+1. Copy the jar from cdh-console:
+   ```shell
+   docker cp cdh-console:/opt/softwareag/cdh-console/backend/lib/hsqldb-2.7.1.jar /tmp/.
+   ```
+
+2. Unmonitor and stop all services except the `mongod` service:
 
    ```shell
    monit unmonitor all && \
    systemctl stop installation-service opcua-mgmt-service opcua-device-gateway smartrule apama cumulocity-core-karaf
    ```
 
-2. If you have installed {{< product-c8y-iot >}} DataHub in the Edge appliance, stop the `cdh-console`, `cdh-master` and `cdh-executor` services:
+3. If you have installed {{< product-c8y-iot >}} DataHub in the Edge appliance, stop the `cdh-console`, `cdh-master` and `cdh-executor` services:
 
    ```shell
    service cdh-console stop && \
@@ -173,7 +178,7 @@ Perform the following steps as a root user on your Edge appliance.
    service cdh-executor stop
    ```
 
-3. Export the MongoDB data using `mongodump` utility:
+4. Export the MongoDB data using `mongodump` utility:
 
    ```shell
    mongodump \
@@ -189,23 +194,22 @@ Perform the following steps as a root user on your Edge appliance.
       --out=/opt/appliance-edgedb-backup
    ```
 
-4. Export the DataHub backend:
+5. Export the DataHub backend:
 
    ```shell
-   docker cp cdh-console:/opt/softwareag/cdh-console/backend/lib/hsqldb-2.7.1.jar /tmp/. && \
    pip install https://download.cumulocity.com/Cumulocity-Edge/Installer/2025/cdh_migration-2025-py3-none-any.whl && \
    cdh-migration
    ```
-   wait until you see an output `INFO - Data export complete: cdh_backend_db_export.sql`
+   Wait until you see an output `INFO - Data export complete: cdh_backend_db_export.sql`.
 
 
-5. Tar the MongoDB data and DataHub contents, into */opt/edge-appliance-backup.tar* :
+6. Tar the MongoDB data and DataHub contents, into */opt/edge-appliance-backup.tar* :
 
    ```shell
    tar -zcf /opt/edge-appliance-backup.tar /opt/appliance-edgedb-backup /opt/softwareag /opt/mongodb/cdh-dremio/distributed-storage /opt/mongodb/cdh-master/datalake /home/admin/cdh_backend_db_export.sql
    ```
 
-6. After creating the */opt/edge-appliance-backup.tar* file, copy it to a network drive or storage location that is accessible from the machine on which you will install Edge 2025 in the next step. Once the backup file is safely stored, shut down the Edge appliance to prevent any further changes to the system during the migration process. This step is optional, and if not performed, you must copy the backup file into the target machine once it is created.
+7. After creating the */opt/edge-appliance-backup.tar* file, copy it to a network drive or storage location that is accessible from the machine on which you will install Edge 2025 in the next step. Once the backup file is safely stored, shut down the Edge appliance to prevent any further changes to the system during the migration process. This step is optional, and if not performed, you must copy the backup file into the target machine once it is created.
 
 
 ### Step 3 - Install Edge 2025
