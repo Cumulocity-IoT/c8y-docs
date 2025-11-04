@@ -263,7 +263,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    Ensure you are able to [access Edge](/2025/edge-kubernetes/installing-edge-on-k8/#accessing-edge) before continuing with the subsequent steps.
 
 ### Step 6 - Restore DataHub
-1. Set environment variables to refer in subsequent steps.
+1. Set environment variables for use in subsequent steps:
    ```shell
    EDGE_ADMIN_USER="<EDGE-ADMIN-USER>"          # Replace with <edge-tenant > admin user
    EDGE_ADMIN_PASSWORD="<EDGE-ADMIN-PASSWORD>"  # Replace with < edge-tenant > admin user's password
@@ -293,20 +293,26 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
       ```
 
 4. Migrate Dremio:
+   {{< c8y-admon-important >}}
+   Ensure the KUBECONFIG environment variable is set. For example, for K3s, you can set it as `export KUBECONFIG=/etc/rancher/k3s/k3s.yaml`.
+   {{< /c8y-admon-important >}}
    1. Redeploy Dremio in maintenance mode for migration and fetch the Dremio Helm chart from the installation artifacts:
       ```shell
-      cp "$(kubectl get pv -A -o yaml | grep -A1 installartifacts-backing | awk '/path:/ {print $2}')/helmchart/edge/dependencies/helm-charts/cdh/dremio-11.0.648.tgz" .
+      helm repo add cdh https://registry.c8y.io/chartrepo/cdh --username "${EDGE_REGISTRY_USER}" --password "${EDGE_REGISTRY_PASSWORD}"
+      helm pull cdh/dremio --version $(helm list -n c8yedge --filter dremio -o json | jq -r '.[0].chart | split("-")[1]')
       ```
    2. Set Dremio to maintenance mode:
       ```shell
-      helm upgrade dremio ./dremio-11.0.648.tgz   -n c8yedge   --set DremioAdmin=true   --wait
+      helm upgrade dremio ./dremio-$(helm list -n c8yedge --filter dremio -o json | jq -r '.[0].chart | split("-")[-1]').tgz -n c8yedge \
+      --set DremioAdmin=true \
+      --wait
       ```
    3. Restore RocksDB from the backup:
-      a. Remove any stale data under`/opt/dremio/data/db`.
+      a. Remove any stale data under `/opt/dremio/data/db`.
          ```shell
          kubectl exec -n c8yedge dremio-admin -- rm -rf /opt/dremio/data/db
          ```
-      b. Copy backed-up data into RocksDB directory.
+      b. Copy the backed-up data into the RocksDB directory.
          ```shell
          kubectl cp -n c8yedge $EXTRACT_DIR/opt/mongodb/cdh-master/data/db dremio-admin:/opt/dremio/data/
          ```
@@ -321,13 +327,15 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
          && cp -a "$EXTRACT_DIR/opt/mongodb/cdh-master/datalake/." /datahub/datalake/
          ```
 
-   5. Exit from maintaince mode:
+   5. Exit from maintenance mode:
       ```shell
-      helm upgrade dremio ./dremio-11.0.648.tgz   -n c8yedge    --set DremioAdmin=false   --wait
+      helm upgrade dremio ./dremio-$(helm list -n c8yedge --filter dremio -o json | jq -r '.[0].chart | split("-")[-1]').tgz -n c8yedge \
+      --set DremioAdmin=false \
+      --wait
       ```
 
 5. Restore DataHub backend database:
-   a. Copy the backed-up sql script to `/tmp/` directory.
+   a. Copy the backed-up SQL script to the `/tmp/` directory.
       ```shell
       kubectl cp -n c8yedge $EXTRACT_DIR/home/admin/cdh_backend_db_export.sql datahub-mysql-0:/tmp/cdh_backend_db_export.sql
       ```
@@ -337,7 +345,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
       ```
 
 6. Configure Dremio:
-   After the migration, Dremio will have a legacy configuration of `c8y_source` from the appliance. This needs to be updated for Dremio to communicate with Mongo. In this step, we will update the `c8y_source` configuration:
+   After the migration, Dremio will have a legacy configuration of `c8y_source` from the appliance. This needs to be updated for Dremio to communicate with MongoDB. In this step, we will update the `c8y_source` configuration:
    ```shell
    curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/dremio_source_configuration.sh -O && bash ./dremio_source_configuration.sh
    ```
@@ -347,13 +355,13 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    kubectl scale deployment -n c8yedge c8yedge-operator-controller-manager --replicas=1
    ```
 
-### Step 6 - Cleanup:
-Cleanup the `EXTRACT_DIR`
+### Step 7 - Cleanup:
+Clean up the `EXTRACT_DIR`:
 ```shell
 rm -rf $EXTRACT_DIR  
 ```
 
-### Step 7 - Configuring Edge 2025 post migration
+### Step 8 - Configuring Edge 2025 post migration
 After successfully migrating your data to Edge 2025, you'll need to configure it to match your previous Edge Appliance VM setup. Here's what you need to do:
 
 #### What's already available?
