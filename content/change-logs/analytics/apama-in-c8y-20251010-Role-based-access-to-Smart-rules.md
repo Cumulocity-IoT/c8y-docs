@@ -17,4 +17,4 @@ version:
 
 The Smart rules (NEW) now supports fine-grained Role-Based Access Control (RBAC) to manage user permissions more precisely.
 
-For details, refer to [Role-based access](/streaming-analytics/smart-rules-plugin/#role-based-access).
+For details, refer to [Managing permissions to Smart rules (NEW) instances](/streaming-analytics/smart-rules-plugin/#managing-permissions-to-smart-rules-instances).
