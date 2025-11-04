@@ -3,6 +3,24 @@
 ########################################################################################################################
 ---
 ##
+## This secret is required to initialize the Cumulocity admin user password for both the Management tenant and the Edge tenant.
+## Name of this secret must be specified in 'spec.cumulocityPasswordSecretName' field of Edge CR.
+##
+apiVersion: v1
+kind: Secret
+metadata:
+  # Name of the secret. This name must match the value specified in 'spec.cumulocityPasswordSecretName' field of Edge CR.
+  name: c8y-admin-password
+  # Namespace name into which you installed the Edge operator.
+  namespace: c8yedge
+type: Opaque
+stringData:
+  # Password used to initialize the Cumulocity admin user for both the Management tenant and the Edge tenant.
+  # The password must be at least 8 letters long.
+  INITIAL_C8Y_ADMIN_PASSWORD: <C8Y-ADMIN-PASSWORD>
+
+---
+##
 ## Secret for supplying the TLS/SSL private key and certificates for the domain name specified in the spec.domain field.
 ## Name of this secret should be specified in 'spec.tlsSecretName' field of Edge CR.
 ##
@@ -200,7 +218,7 @@ spec:
   domain: <DOMAIN-NAME>
 
   ## Edge license key you received for the domain.
-  ## To request the license file for Edge, contact support - https://cumulocity.com/docs/additional-resources/contacting-support/
+  ## To request the license file for Edge, contact support - https://cumulocity.com/docs/additional-resources/contacting-support
   ##
   ## In the email, you must include
   ## - Your company name, under which the license has been bought
@@ -212,6 +230,14 @@ spec:
 
   ## Replace with a valid email, used for admin account.
   email: <ADMIN-EMAIL>
+
+  ## Name of the Kubernetes secret containing the Cumulocity admin user password for both the Management tenant and the Edge tenant.
+  ## This secret must contain one key:
+  ##  - INITIAL_C8Y_ADMIN_PASSWORD: Password used to initialize the Cumulocity admin user for both the Management tenant and the Edge tenant.
+  ## This value is used only during the Edge installation and can’t be changed for existing installations.
+  ## All subsequent password changes are made via the user interface 
+  ## (https://cumulocity.com/docs/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API. 
+  cumulocityPasswordSecretName: c8y-admin-password
 
   ## Name of the Kubernetes secret containing the TLS/SSL private key and certificates for the domain name 
   ## specified in the 'spec.domain' field.

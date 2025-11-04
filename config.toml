@@ -83,6 +83,10 @@ relativeURLs = true
     name = "Product Support"
     link = "https://cumulocity.atlassian.net/servicedesk/customer/portals"
 
+  [[params.additionalResources]]
+    name = "Glossary"
+    link = "/glossary/"
+
 
 # Customize
   [params.footer]

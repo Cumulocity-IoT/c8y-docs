@@ -1,0 +1,48 @@
+name: Link Checker
+
+on:
+ schedule:
+  - cron: '0 6 * * 1'
+ workflow_dispatch: 
+  
+permissions:
+    contents: read
+    pull-requests: write
+    issues: write
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'latest'
+
+      - name: Install Dependencies
+        run: |
+          cd broken-links-script
+          npm ci
+
+      - name: Run Cypress tests
+        run: |
+          cd broken-links-script
+          npm test
+
+      - name: Create GitHub issue if tests fail
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          issue_url=$(gh issue create \
+            --title "Weekly Link Check Failed" \
+            --body "Broken links detected in workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            --label "broken-link" \
+            --assignee "BeateRixen")
+
+          echo "Result: ${issue_url}"
+          echo "issue_created=${issue_url}" >> $GITHUB_OUTPUT

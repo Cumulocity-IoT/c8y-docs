@@ -7,10 +7,12 @@ layout: redirect
 If you have installed Edge on your local machine, then you should be able to immediately access Edge in your browser with the URL `http://localhost`. If it is on a remote machine or a VM with a simple network setup and no firewall in the way, you can use `http://<IP of remote machine or VM>`.
 
 {{< c8y-admon-info >}}
-If you have performed a kubernetes-native install rather than installing with the **c8yedge** tool, it is sometimes the case that Edge is not accessible via either URL. This depends on the Kubernetes distribution you have used. See [Accessing Edge via an external IP](/edge-kubernetes/manage-edge/#external-ip)
+If you have performed the install on a self-managed Kubernetes cluster rather than installing with the **c8yedge** tool, it is sometimes the case that Edge is not accessible via either URL. This depends on the Kubernetes distribution you have used. See [Accessing Edge via an external IP](/edge-kubernetes/manage-edge/#external-ip).
 {{< /c8y-admon-info >}}
 
-When signing into Edge this way, you will be prompted for the Cumulocity tenant id you are signing into. Edge has two tenants, `management` and `edge`. When signing in for the first time, use the default credentials username “**admin**” and password “**admin-pass**”. If you have installed using the **c8yedge** tool, the email address will have been initially configured to `company@edgebootstrap.example` which you will also need when signing in for the first time. These credentials are set for both Cumulocity tenants, and should be changed on both even if you do not intend to use the `management` tenant.
+When signing into Edge this way, you will first be prompted for the {{< product-c8y-iot >}} tenant ID. Edge has two tenants, `management` and `edge`. For both the {{< management-tenant >}} and the Edge tenant, use the following credentials:
+* **Username:** `admin`
+* **Password:** Use the password you provided during the Edge installation. This password was set either via the **c8yedge** tool's `--cumulocity-password` flag or through the Kubernetes Secret specified in the Edge CR field `spec.cumulocityPasswordSecretName`.
 
 ### Accessing Edge using the domain name {#accessing-cumulocity-iot-edge-using-the-domain-name}
 {{< c8y-admon-info >}}
@@ -54,23 +56,15 @@ To access Edge, enter one of the following URLs in the browser:
 - For the "edge" tenant, use the URL `https://<domain_name>`.
 - For the {{< management-tenant >}}, use the URL `https://management-<domain_name>`.
 
-This will bring up the below login screen. Enter the default credentials username "admin" and password "admin-pass" to log in in to both the "edge" tenant and the {{< management-tenant >}}.
-
-![Login prompt](/images/edge-k8s/edge-k8s-login-banner.png)
-
-On the first login, you see the dialog window below, forcing you to change the password. The email address to change the password is the one you specified in the {{< product-c8y-iot >}} Edge CR (or company@edgebootstrap.example if you followed the Quickstart installation steps). Alternatively, run the following command to retrieve the email address:
-
-`kubectl get edge c8yedge -n c8yedge -o jsonpath='{.spec.email}' && echo`
+This will bring up the below login screen. For both the {{< management-tenant >}} and the Edge tenant, use the following credentials:
+* **Username:** `admin`
+* **Password:** Use the password you provided during the Edge installation. This password was set either via the **c8yedge** tool's `--cumulocity-password` flag or through the Kubernetes Secret specified in the Edge CR field `spec.cumulocityPasswordSecretName`.
 
 {{< c8y-admon-info >}}
-Substitute the Edge name and namespace name, which is currently **c8yedge** in the command, with the specific Edge name and namespace name you have specified in your Edge CR.
+You can change the {{< management-tenant >}} and the Edge tenant admin password independently using the [user interface](/standard-tenant/managing-users/) or the {{< product-c8y-iot >}} API. 
 {{< /c8y-admon-info >}}
 
-![Reset password](/images/edge-k8s/edge-k8s-reset-password.png)
-
-{{< c8y-admon-important >}}
-After a successful deployment, it is crucial to access both the {{< management-tenant >}} and the "edge" tenant and change their respective admin credentials.
-{{< /c8y-admon-important >}}
+![Login prompt](/images/edge-k8s/edge-k8s-login-banner.png)
 
 If you are logging in for the first time, you will see a cookie banner at the bottom of the login screen:
 
@@ -105,7 +99,7 @@ The maximum number of failed logins (due to invalid credentials), after which a 
 
 ### How to reset or change your password {#how-to-reset-your-password}
 
-To reset your password, you must first configure the "reset password" template and email server settings in Edge. For information about configuring the email server, see [Configuring the email server](/edge-kubernetes/k8-edge-configuration/#configuring-email-server).  
+To reset your password, you must first configure the "reset password" template and email server settings in Edge. For information about configuring the email server, see [Configuring the email server](/edge-kubernetes/manage-edge/#email-server).  
 
 For information about changing the password, see [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password).
 
