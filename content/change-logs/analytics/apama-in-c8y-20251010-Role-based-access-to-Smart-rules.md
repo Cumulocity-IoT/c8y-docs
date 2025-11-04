@@ -15,6 +15,6 @@ ticket: PAB-4929
 version: 26.247.0
 ---
 
-The Smart rules (NEW) now supports fine-grained Role-Based Access Control (RBAC) to manage user permissions more precisely.
+The smart rules (NEW) feature now supports fine-grained Role-Based Access Control (RBAC) to manage user permissions more precisely.
 
 For details, refer to [Managing permissions to Smart rules (NEW) instances](/streaming-analytics/smart-rules-plugin/#managing-permissions-to-smart-rules-instances).
