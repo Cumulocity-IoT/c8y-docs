@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAB-4929
-version: 
+version: 26.247.0
 ---
 
 The Smart rules (NEW) now supports fine-grained Role-Based Access Control (RBAC) to manage user permissions more precisely.
