@@ -156,10 +156,6 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
 
 ### Step 2 - Backing up data and configuration of Edge appliance
 
-{{< c8y-admon-caution >}}
-This step only creates a backup of {{< product-c8y-iot >}} DataHub (datalake) contents. Migration of {{< product-c8y-iot >}} DataHub is outside the scope of this document and must be handled separately (no scripts are currently provided).
-{{< /c8y-admon-caution >}}
-
 In your Edge appliance VM, back up the MongoDB data and data lake contents from {{< product-c8y-iot >}} DataHub if present.
 
 Perform the following steps as a root user on your Edge appliance.
@@ -222,7 +218,7 @@ Ensure that there is sufficient disk space available on the machine in which you
 
 {{< /c8y-admon-important >}}
 
-After installing Edge 2025, configure the Edge domain and license to match those of the Edge Appliance VM you are migrating. For details, refer to [Modifying Edge](/2025/edge-kubernetes/manage-edge/#modify-edge)
+After installing Edge 2025, configure the Edge domain and license to match those of the Edge Appliance VM you are migrating. For details, refer to [Modifying Edge](https://cumulocity.com/docs/2025/edge-kubernetes/manage-edge/#modify-edge)
 
 ### Step 4 - Extracting data from the backup archive
 After installing and configuring Edge 2025, proceed to migrate the data backed up from the Edge Appliance VM.
@@ -257,8 +253,6 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    kubectl rollout restart deployment -n c8yedge c8yedge-operator-controller-manager
    ```
    Ensure you are able to [access Edge](/2025/edge-kubernetes/installing-edge-on-k8/#accessing-edge) before continuing with the subsequent steps.
-
-### Step 6 - Restore DataHub
 
 1. Set environment variables to refer in subsequent steps.
    ```shell
@@ -333,17 +327,17 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
       kubectl exec -i -n c8yedge datahub-mysql-0 -- sh -c 'mysql -u root -p"$MYSQL_ROOT_PASSWORD" CDH_edge < /tmp/cdh_backend_db_export.sql'
       ```
 
-5. Configure dremio:
-   Post migration, dremio will have legacy configuration of c8y_source from appliance, this needs to be updated for dremio to communicate with mongo. In this step we will update the `c8y_source` configuration:
-      1. Set support property “store.plugin.keep_metadata_on_replace“ = true in Dremio (goto Settings > Support)
-      2. Configure settings of “c8y-source” as required for edge on K8s:
-         a. Configure MongoDB host name and credentials 
-      3. Set support property “store.plugin.keep_metadata_on_replace“ = false in Dremio
+5. Configure Dremio:
+   After the migration, Dremio will have a legacy configuration of `c8y_source` from the appliance. This needs to be updated for Dremio to communicate with Mongo. In this step, we will update the `c8y_source` configuration:
+      1. Set the support property `store.plugin.keep_metadata_on_replace` to `true` in Dremio (go to Settings > Support).
+      2. Configure the settings of `c8y-source` as required for Edge on Kubernetes:
+         - Configure the MongoDB host name and credentials.
+      3. Set the support property `store.plugin.keep_metadata_on_replace`to `false` in Dremio.
    ```shell
    curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/dremio_source_configuration.sh -O && bash ./dremio_source_configuration.sh
    ```
 
-6. Start Edge operator:
+6. Start the Edge operator:
    ```shell
    kubectl scale deployment c8yedge-operator-controller-manager -n c8yedge --replicas=1
    ```
@@ -377,4 +371,4 @@ The following components from your **Edge tenant** are automatically retained in
    * Branding
 
 #### Connecting Edge to the cloud
-If your previous Edge Appliance VM was connected to the cloud, you'll need to set up this connection again in Edge 2025. Follow the instructions in [Connecting Edge to the cloud](/2025/edge-kubernetes/k8-edge-connecting-edge-to-cloud/)
+If your previous Edge Appliance VM was connected to the cloud, you'll need to set up this connection again in Edge 2025. Follow the instructions in [Connecting Edge to the cloud](https://cumulocity.com/docs/2025/edge-kubernetes/k8-edge-connecting-edge-to-cloud/)

@@ -27,12 +27,12 @@ For details, see the [Analytics Builder](/streaming-analytics/analytics-builder/
 
 ### Apama {#apama}
 
-Apama is the high-performance event processing engine that powers [{{< product-c8y-iot >}} Streaming Analytics](#streaming-analytics). It enables real-time data processing behind the scenes, forming the foundation for [smart rules](#smart-rules), [Analytics Builder´s](#analytics-builder) drag-and-drop models as well as custom [EPL apps](#epl-apps).
+Apama is the high-performance event processing engine that powers [{{< product-c8y-iot >}} Streaming Analytics](#streaming-analytics). It enables real-time data processing behind the scenes, forming the foundation for smart rules, [Analytics Builder´s](#analytics-builder) drag-and-drop models as well as custom [EPL apps](#epl-apps).
 
 
 ### Application {#application}
 
-An application is a component integrated with the platform that delivers user interfaces (= [web application](#web-applications)), business logic (= [microservice](#microservice)), or both, to enable, extend, or customize IoT solutions. Applications bridge device data with user workflows and business processes, supporting use cases such as remote monitoring, predictive maintenance, [asset](#asset) tracking, and smart automation. {{< product-c8y-iot >}}'s application enablement tools empower both business users and developers to build and deploy custom applications.
+An application is a component integrated with the platform that delivers user interfaces (= [web application](#web-application)), business logic (= [microservice](#microservice)), or both, to enable, extend, or customize IoT solutions. Applications bridge device data with user workflows and business processes, supporting use cases such as remote monitoring, predictive maintenance, [asset](#asset) tracking, and smart automation. {{< product-c8y-iot >}}'s application enablement tools empower both business users and developers to build and deploy custom applications.
 
 For details, see [Application enablement](/app-intro/applications/) in the documentation.
 
@@ -74,7 +74,7 @@ Authentication is the process of verifying the identity of a [user](#user), [dev
 
 ### Authorization {#authorization}
 
-Authorization is the process of determining whether an [authenticated](#authentication) identity ([user](#user), [device](#device), or [application](#application)) has the necessary [permissions](#permission) to access a specific resource or perform a particular action. Authorization in {{< product-c8y-iot >}} is managed through a [Role-Based Access Control (RBAC)](#rbac) model, in which permissions are bundled into [global roles](#global-role) and [inventory role](#inventory-roles).  
+Authorization is the process of determining whether an [authenticated](#authentication) identity ([user](#user), [device](#device), or [application](#application)) has the necessary [permissions](#permission) to access a specific resource or perform a particular action. Authorization in {{< product-c8y-iot >}} is managed through a [Role-Based Access Control (RBAC)](#rbac) model, in which permissions are bundled into [global roles](#global-role) and [inventory role](#inventory-role).  
 
 
 ### Availability {#availability}
