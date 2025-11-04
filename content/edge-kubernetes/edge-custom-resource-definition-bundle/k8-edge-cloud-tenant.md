@@ -1,5 +1,5 @@
 ---
-weight: 26
+weight: 27
 title: Cloud tenant
 layout: redirect
 ---
