@@ -36,7 +36,7 @@ log "Using Edge namespace: $NAMESPACE"
 
 POD_NAME="edge-appliance-migration"
 MOUNT_PATH="/edgedb-backup"
-HOST_PATH="/opt/appliance-edgedb-backup"
+HOST_PATH="$EXTRACT_DIR/opt/appliance-edgedb-backup"
 
 log "Extracting MongoDB info."
 PSMDB_JSON=$(kubectl get psmdb -n "$NAMESPACE" -o json)

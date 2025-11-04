@@ -195,32 +195,27 @@ Perform the following steps as a root user on your Edge appliance.
       --out=/opt/appliance-edgedb-backup
    ```
 
-4. Tar the MongoDB data and data lake contents from {{< product-c8y-iot >}} DataHub if present, into */opt/edge-appliance-backup.tar* :
-
-   1. Migrate HSQL db.
-
-      ```shell
-      docker cp cdh-console:/opt/softwareag/cdh-console/backend/lib/hsqldb-2.7.1.jar /tmp/. && \
-      pip install https://download.cumulocity.com/Cumulocity-Edge/Installer/2025/cdh_migration-2025-py3-none-any.whl && \
-      cdh-migration
-      ```
-      wait until you see an out put `INFO - Data export complete: database_export.sql`
-   2.
-      ```shell
-      tar -zcf /opt/edge-appliance-backup.tar /opt/appliance-edgedb-backup /opt/softwareag /opt/mongodb/cdh-dremio/distributed-storage /opt/mongodb/cdh-master/datalake /home/admin/database_export.sql
-      ```
-
-   If DataHub is not present:
+4. Export the DataHub backend:
 
    ```shell
-   tar -zcf /opt/edge-appliance-backup.tar /opt/appliance-edgedb-backup /opt/softwareag
+   docker cp cdh-console:/opt/softwareag/cdh-console/backend/lib/hsqldb-2.7.1.jar /tmp/. && \
+   pip install https://download.cumulocity.com/Cumulocity-Edge/Installer/2025/cdh_migration-2025-py3-none-any.whl && \
+   cdh-migration
+   ```
+   wait until you see an out put `INFO - Data export complete: cdh_backend_db_export.sql`
+
+
+5. Tar the MongoDB data and DataHub contents, into */opt/edge-appliance-backup.tar* :
+
+   ```shell
+   tar -zcf /opt/edge-appliance-backup.tar /opt/appliance-edgedb-backup /opt/softwareag /opt/mongodb/cdh-dremio/distributed-storage /opt/mongodb/cdh-master/datalake /home/admin/cdh_backend_db_export.sql
    ```
 
-5. After creating the */opt/edge-appliance-backup.tar* file, copy it to a network drive or storage location that is accessible from the machine on which you will install Edge 2025 in the next step. Once the backup file is safely stored, shut down the Edge appliance to prevent any further changes to the system during the migration process. This step is optional, and if not performed, you must copy the backup file into the target machine once it is created.
+6. After creating the */opt/edge-appliance-backup.tar* file, copy it to a network drive or storage location that is accessible from the machine on which you will install Edge 2025 in the next step. Once the backup file is safely stored, shut down the Edge appliance to prevent any further changes to the system during the migration process. This step is optional, and if not performed, you must copy the backup file into the target machine once it is created.
 
 
 ### Step 3 - Install Edge 2025
-Follow the steps documented at [Installing Edge](/2025/edge-kubernetes/installing-edge-on-k8/) to install and configure Edge 2025.
+Follow the steps documented at [Installing Edge](/2025/edge-kubernetes/installing-edge-on-k8/) to install and configure Edge 2025. If your appliance includes DataHub, then additionally follow the steps in [Working with DataHub](/2025/edge-kubernetes/k8-edge-working-with-datahub/)
 
 {{< c8y-admon-important >}}
 Ensure that there is sufficient disk space available on the machine in which you intend to install Edge 2025.
@@ -229,18 +224,23 @@ Ensure that there is sufficient disk space available on the machine in which you
 
 After installing Edge 2025, configure the Edge domain and license to match those of the Edge Appliance VM you are migrating. For details, refer to [Modifying Edge](/2025/edge-kubernetes/manage-edge/#modify-edge)
 
-### Step 4 - Restore MongoDB data from the backup
+### Step 4 - Extracting data from the backup archive
 After installing and configuring Edge 2025, proceed to migrate the data backed up from the Edge Appliance VM.
 
 1. Transfer the backup file */opt/edge-appliance-backup.tar* from the Edge Appliance VM to your Edge 2025.
 
 2. Untar the backup file:
-
+   {{< c8y-admon-important >}}
+   Ensure that the target EXTRACT_DIR has sufficient free disk space for the backup contents. If there is not enough space, specify an alternate path that has adequate capacity. To verify `df -h "$EXTRACT_DIR"`
+   {{< /c8y-admon-important >}}
    ```shell
-   tar -xf /opt/edge-appliance-backup.tar -C /
+   export EXTRACT_DIR="$HOME/edge-backup-extracted"
+   mkdir $EXTRACT_DIR
+   tar -xf /opt/edge-appliance-backup.tar -C $EXTRACT_DIR
    ```
-   
-3. Restore the MongoDB data. This step deploys a pod named `edge-appliance-migration`:
+
+### Step 5 - Restore MongoDB   
+1. Restore the MongoDB data. This step deploys a pod named `edge-appliance-migration`:
 
    ```shell
    curl -sfL {{< link-c8y-doc-baseurl >}}files/edge-k8s/c8yedge-appliance-migration-db-restore.sh -O && bash ./c8yedge-appliance-migration-db-restore.sh
@@ -251,72 +251,87 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    kubectl logs -f pod/edge-appliance-migration -n c8yedge
    ```
 
-4. Restart Edge:
+2. Restart Edge:
 
    ```shell
    kubectl rollout restart deployment -n c8yedge c8yedge-operator-controller-manager
    ```
    Ensure you are able to [access Edge](/2025/edge-kubernetes/installing-edge-on-k8/#accessing-edge) before continuing with the subsequent steps.
 
-5. Remove the */opt/edge-appliance-backup.tar* and */opt/appliance-edgedb-backup* folders: 
+### Step 6 - Restore DataHub
+
+1. Set environment variables to refer in subsequent steps.
    ```shell
-   rm -rf /opt/appliance-edgedb-backup /opt/edge-appliance-backup.tar
+   EDGE_ADMIN_USER="<EDGE-ADMIN-USER>"          # Replace with {{< edge-tenant >}} admin user
+   EDGE_ADMIN_PASSWORD="<EDGE-ADMIN-PASSWORD>"  # Replace with {{< edge-tenant >}} admin user's password
+
+   EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"                # Replace with Edge registry username 
+   EDGE_REGISTRY_PASSWORD="<EDGE-REGISTRY-PASSWORD>"        # Replace with Edge registry password
+
+   export CDH_PASSWORD_SECRET=$(grep CDH_PASSWORD_SECRET $EXTRACT_DIR/opt/softwareag/cdh-console/conf/cdh-console-env | cut -d'=' -f2)
    ```
-### Step 5 - Restore DataHub
-1. Stop Edge operator:
+
+2. Stop Edge operator:
    ```shell
    kubectl scale deployment c8yedge-operator-controller-manager -n c8yedge --replicas=0
    ```
 
-2. Set tenant option `CDH_PASSWORD_SECRET` on edge tenant:
-   1. Get the secret from backup:
-      ```shell
-      grep CDH_PASSWORD_SECRET /opt/softwareag/cdh-console/conf/cdh-console-env
-      ```
-   2. Set tenant option on edge:
+3. Set tenant option `CDH_PASSWORD_SECRET` on edge tenant:
       ```shell
       curl --location 'https://<EDGE_HOST_IP>/tenant/options/' \
       -H 'Content-Type: application/vnd.com.nsn.cumulocity.option+json' \
       -H 'Accept: application/vnd.com.nsn.cumulocity.option+json' \
-      -u "management/${MANAGEMENT_ADMIN_USER}:${MANAGEMENT_ADMIN_PASSWORD}" \
-      --data '{
-         "category": "datahub",
-         "key": "credentials.CDH_PASSWORD_SECRET",
-         "value": "<PASSWORD_SECRET_FROM_PREVIOUS_STEP>"
-      }'
+      -u "edge/${EDGE_ADMIN_USER}:${EDGE_ADMIN_PASSWORD}" \
+      --data "{
+         \"category\": \"datahub\",
+         \"key\": \"credentials.CDH_PASSWORD_SECRET\",
+         \"value\": \"${CDH_PASSWORD_SECRET}\"
+      }"
       ```
 
-3. Migrate dremio:
+4. Migrate dremio:
    1. Redeploy dremio in maintanace mode for migration, fetch dremio helm chart from installartifacts:
       ```shell
       cp "$(kubectl get pv -A -o yaml | grep -A1 installartifacts-backing | awk '/path:/ {print $2}')/helmchart/edge/dependencies/helm-charts/cdh/dremio-11.0.648.tgz" .
       ```
-   2. Backup values.yaml:
+   2. Set dremio to maintanance:
       ```shell
-      helm get values dremio -n c8yedge --all -o yaml > dremio_values.yaml
+      helm upgrade dremio ./dremio-11.0.648.tgz   -n c8yedge   --set DremioAdmin=true   --wait
       ```
-   3. Set dremio to maintanance:
+   3. Restore RocksDB from backup:
+      a. Remove any stale data under`/opt/dremio/data/db`.
+         ```shell
+         kubectl exec -n c8yedge dremio-admin -- rm -rf /opt/dremio/data/db
+         ```
+      b. Copy backed-up data into RocksDB directory.
+         ```shell
+         kubectl cp -n c8yedge $EXTRACT_DIR/opt/mongodb/cdh-master/data/db dremio-admin:/opt/dremio/data/
+         ```
+   4. Restore datalake contents:
+      a. Remove any stale data under `/datahub/distributedStorage/* /datahub/datalake/*`.
+         ```shell
+         rm -rf /datahub/distributedStorage/* /datahub/datalake/*
+         ```
+      b. Copy the backed-up data into the DataLake directories.
+         ```shell
+         cp -a "$EXTRACT_DIR/opt/mongodb/cdh-dremio/distributed-storage/." /datahub/distributedStorage/ \
+         && cp -a "$EXTRACT_DIR/opt/mongodb/cdh-master/datalake/." /datahub/datalake/
+         ```
+
+   5. Exit from maintaince mode:
       ```shell
-      helm upgrade dremio ./dremio-11.0.648.tgz   -n c8yedge   -f dremio_values.yaml   --set DremioAdmin=true   --wait
-      ```
-   4. Restore RocksDB from backup:
-      ```shell
-      kubectl exec -n c8yedge dremio-admin -- rm -rf /opt/dremio/data/db && kubectl cp /opt/mongodb/cdh-master/data/db dremio-admin:/opt/dremio/data/ -n c8yedge
-      ```
-   5. Restore datalake contents:
-      ```shell
-      rm -rf /datahub/distributedStorage/* /datahub/datalake/* && cp -a /opt/mongodb/cdh-dremio/distributed-storage/. /datahub/distributedStorage/ && cp -a /opt/mongodb/cdh-master/datalake/. /datahub/datalake/
-      ```
-   6. Exit from maintaince mode:
-      ```shell
-      helm upgrade dremio ./dremio-11.0.648.tgz   -n c8yedge   -f dremio_values.yaml   --set DremioAdmin=false   --wait
+      helm upgrade dremio ./dremio-11.0.648.tgz   -n c8yedge    --set DremioAdmin=false   --wait
       ```
 
-4. Restore DataHub:
-   ```shell
-   kubectl cp /home/admin/database_export.sql -n c8yedge datahub-mysql-0:/tmp/database_export.sql && \
-   kubectl exec -i -n c8yedge datahub-mysql-0 -- sh -c 'mysql -u root -p"$MYSQL_ROOT_PASSWORD" CDH_edge < /tmp/database_export.sql'
-   ```
+4. Restore DataHub backend database:
+   a. Copy the backed-up sql script to `/tmp/` directory.
+      ```shell
+      kubectl cp -n c8yedge $EXTRACT_DIR/home/admin/cdh_backend_db_export.sql datahub-mysql-0:/tmp/cdh_backend_db_export.sql
+      ```
+   b. Import the database dump into the DataHub MySQL instance.
+      ```shell
+      kubectl exec -i -n c8yedge datahub-mysql-0 -- sh -c 'mysql -u root -p"$MYSQL_ROOT_PASSWORD" CDH_edge < /tmp/cdh_backend_db_export.sql'
+      ```
 
 5. Configure dremio:
    Post migration, dremio will have legacy configuration of c8y_source from appliance, this needs to be updated for dremio to communicate with mongo. In this step we will update the `c8y_source` configuration:
@@ -333,7 +348,13 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    kubectl scale deployment c8yedge-operator-controller-manager -n c8yedge --replicas=1
    ```
 
-### Step 6 - Configuring Edge 2025 post migration
+### Step 6 - Cleanup:
+Cleanup the `EXTRACT_DIR`
+```shell
+rm -rf $EXTRACT_DIR  
+```
+
+### Step 7 - Configuring Edge 2025 post migration
 After successfully migrating your data to Edge 2025, you'll need to configure it to match your previous Edge Appliance VM setup. Here's what you need to do:
 
 #### What's already available?
