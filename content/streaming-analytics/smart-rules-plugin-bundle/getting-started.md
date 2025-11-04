@@ -20,7 +20,7 @@ Before using the smart rules (NEW) plugin, ensure that the following requirement
 
 **Smart rule instances** in [Global role](/standard-tenant/managing-permissions/#to-add-a-global-role) is provided to manage permissions required to access **Smart rules (NEW)** instances. 
 
-|privilege|Description|
+|Permission type|Description|
 |---------|-----------|
 |**READ**|Grants read-only access to Smart rule instances. Users with this permission can view existing instances but cannot create, modify, or delete them.|
 |**ADMIN**|Grants full control over Smart rule instances. Users with this permission can Create, Read, Update, and Delete (CRUD) Smart rule instances.|
