@@ -16,8 +16,9 @@ Before using the smart rules (NEW) plugin, ensure that the following requirement
 - The smart rules plugin is installed in the desired application, and the **Smart rules (NEW) plugin** is enabled in **Preview feature**.
 - The user has the required privileges to access Analytics Builder models and create new instances of Analytics builder templated models. Refer to [Permissions](/streaming-analytics/introduction-analytics/#permissions).
 
-#### Role-based access {#role-based-access}
-**Smart rule instances** in [Global role](/standard-tenant/managing-permissions/#to-add-a-global-role) is provided to manage permissions required to access **Smart rules (NEW)** instances.
+#### Managing permissions to Smart rules (NEW) instances {#managing-permissions-to-smart-rules-instances}
+
+**Smart rule instances** in [Global role](/standard-tenant/managing-permissions/#to-add-a-global-role) is provided to manage permissions required to access **Smart rules (NEW)** instances. 
 
 |privilege|Description|
 |---------|-----------|
@@ -25,6 +26,9 @@ Before using the smart rules (NEW) plugin, ensure that the following requirement
 |**ADMIN**|Grants full control over Smart rule instances. Users with this permission can Create, Read, Update, and Delete (CRUD) Smart rule instances.|
 
 These permissions ensure fine-grained access control, allowing administrators to manage user privileges based on operational requirements.
+
+With this permission, the user can only view the model associated with the instance. The user is restricted from creating, editing, or deleting the underlying model. 
+These higher privileges are managed through the Analytics Builder [permissions](/streaming-analytics/introduction-analytics/#permissions), which are configured by the tenant administrator.
 
 ### Creating your first smart rule {#creating-your-first-smart-rule}
 
