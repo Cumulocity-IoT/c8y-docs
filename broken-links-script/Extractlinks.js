@@ -21,14 +21,12 @@ const BASE_URL = "https://cumulocity.com/docs/2025";
 const shortcodeMapping = {
   
   "c8y-current-version": "2025",
-  "c8y-edge-version-major": "2025",
-  "c8y-edge-version-minor": "0",
-  "c8y-edge-version-patch": "2",
+  "c8y-edge-current-version": "2025",
   "c8y-resources-server-link": "https://download.cumulocity.com/",
   "c8y-resources-server": "Cumulocity Download Center",
   "c8y-support-link": "https://cumulocity.com/support",
   "c8y-support-portal": "Cumulocity Customer Service Desk",
-  "c8y-tech-community-link": "https://techcommunity.cumulocity.com/",
+  "c8y-tech-community-link": "https://community.cumulocity.com/",
   "c8y-tech-community": "Cumulocity Tech Community",
   "company-c8y": "Cumulocity",
   "device-portal": "Partner Devices Ecosystem",
@@ -94,9 +92,9 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
     } else {
       publishedBasePath = fileName === "index" ? fileDir : `${fileDir}/${fileName}`;
     }
-    let url = `${BASE_URL}/${publishedBasePath ? publishedBasePath + "/" : ""}#${link.substring(1)}`;
-    url = url.replace(/([^:]\/)\/+/g, '$1');
-    url = url.replace(/\/#/g, '#');
+    let url = `${BASE_URL}/${publishedBasePath}#${link.substring(1)}`;
+    url = url.replace(/([^:]\/)\/+/g, '$1'); // removes duplicate slashes
+    url = url.replace(/\/#/g, '#'); // removes slash before hash
     return url;
   }
 
