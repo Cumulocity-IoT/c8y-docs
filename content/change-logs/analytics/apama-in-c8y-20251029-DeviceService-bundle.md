@@ -1,6 +1,6 @@
 ---
 date: 2025-10-29
-title: The DeviceService connectivity plug-in
+title: The DeviceService Bundle
 change_type:
   - value: change-inv-3bw8e
     label: Announcement
