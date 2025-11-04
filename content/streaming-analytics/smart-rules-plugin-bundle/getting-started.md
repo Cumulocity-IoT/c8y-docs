@@ -27,8 +27,7 @@ Before using the smart rules (NEW) plugin, ensure that the following requirement
 
 These permissions ensure fine-grained access control, allowing administrators to manage user privileges based on operational requirements.
 
-With this permission, the user can only view the model associated with the instance. The user is restricted from creating, editing, or deleting the underlying model. 
-These higher privileges are managed through the Analytics Builder [permissions](/streaming-analytics/introduction-analytics/#permissions), which can be configured by the tenant administrator.
+The permissions described above grant read-only access to the underlying Analytics Builder model. Management actions on the Analytics Builder model (like create, edit, or delete) require the *CEP management* roles, see [permissions](/streaming-analytics/introduction-analytics/#permissions).
 
 ### Creating your first smart rule {#creating-your-first-smart-rule}
 
