@@ -216,6 +216,12 @@ Follow the steps documented at [Installing Edge](/2025/edge-kubernetes/installin
 {{< c8y-admon-important >}}
 Ensure that there is sufficient disk space available on the machine in which you intend to install Edge 2025.
 
+If you are installing Edge 2025 using the `c8yedge` installer, you need to download the Helm 3 client before proceeding with the installation. Download and install Helm 3 using the following command:
+
+```shell
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 && chmod 700 get_helm.sh && ./get_helm.sh
+```
+
 {{< /c8y-admon-important >}}
 
 After installing Edge 2025, configure the Edge domain and license to match those of the Edge Appliance VM you are migrating. For details, refer to [Modifying Edge](https://cumulocity.com/docs/2025/edge-kubernetes/manage-edge/#modify-edge)
@@ -244,7 +250,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
 
    Then, monitor the logs using the command below. Wait until the message `>> Edge DB restore finished.` appears before proceeding to the next step:
    ```shell
-   kubectl logs -f pod/edge-appliance-migration -n c8yedge
+   kubectl logs -n c8yedge -f pod/edge-appliance-migration
    ```
 
 2. Restart Edge:
@@ -267,7 +273,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
 
 2. Stop Edge operator:
    ```shell
-   kubectl scale deployment c8yedge-operator-controller-manager -n c8yedge --replicas=0
+   kubectl scale deployment -n c8yedge c8yedge-operator-controller-manager --replicas=0
    ```
 
 3. Set tenant option `CDH_PASSWORD_SECRET` on edge tenant:
@@ -339,7 +345,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
 
 6. Start the Edge operator:
    ```shell
-   kubectl scale deployment c8yedge-operator-controller-manager -n c8yedge --replicas=1
+   kubectl scale deployment -n c8yedge c8yedge-operator-controller-manager --replicas=1
    ```
 
 ### Step 6 - Cleanup:
