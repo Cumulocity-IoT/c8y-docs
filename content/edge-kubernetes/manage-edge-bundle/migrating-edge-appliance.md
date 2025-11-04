@@ -262,8 +262,8 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
 
 1. Set environment variables to refer in subsequent steps.
    ```shell
-   EDGE_ADMIN_USER="<EDGE-ADMIN-USER>"          # Replace with {{< edge-tenant >}} admin user
-   EDGE_ADMIN_PASSWORD="<EDGE-ADMIN-PASSWORD>"  # Replace with {{< edge-tenant >}} admin user's password
+   EDGE_ADMIN_USER="<EDGE-ADMIN-USER>"          # Replace with <edge-tenant > admin user
+   EDGE_ADMIN_PASSWORD="<EDGE-ADMIN-PASSWORD>"  # Replace with < edge-tenant > admin user's password
 
    EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"                # Replace with Edge registry username 
    EDGE_REGISTRY_PASSWORD="<EDGE-REGISTRY-PASSWORD>"        # Replace with Edge registry password
