@@ -34,4 +34,4 @@ When manually assigning the external IP, see the following Kubernetes API docume
 "These IPs are not managed by Kubernetes. The user is responsible for ensuring that traffic arrives at a node with this IP."
 {{< /c8y-admon-info >}}
 
-Even if a load balancer is available, it may be that some of the ports required are already being monopolised by a Kubernetes Ingress provider. For example, Traefik will normally take over ports 80 and 443, and will need to be disabled or reconfigured.
+Even if a load balancer is available, it may be that some of the ports required are already being monopolized by a Kubernetes Ingress provider. For example, Traefik will normally take over ports 80 and 443, and will need to be disabled or reconfigured.
