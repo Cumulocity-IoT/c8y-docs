@@ -1,5 +1,5 @@
 ---
-date: 2025-10-31
+date: 
 title: Smart rules (NEW) introduces support for fine-grained RBAC
 change_type:
   - value: change-pXAlHAWka
