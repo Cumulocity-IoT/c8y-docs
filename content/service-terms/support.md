@@ -2,264 +2,250 @@
 title: Product Support
 layout: bundle
 sector:
-  - support
+  - terms_conditions
 weight: 35
 ---
 
-# Support vs. Professional Services vs. TechCommunity: One-Pager for Sales & CS Teams
-
-## Opening Statement (Use This!)
-
-"**Support** keeps your platform running. **Professional Services** helps you get more from it. **TechCommunity** connects you with peers and experts."
-
----
-
-## The Quick Definition
-
-| | **TechCommunity** | **Support** | **Professional Services** |
-|---|---|---|---|
-| **What it is** | Peer knowledge & community Q&A | Troubleshooting & operational help | Strategic guidance & custom solutions |
-| **Who answers** | Community members, peers, Cumulocity experts | Cumulocity Support team | Cumulocity architects & senior engineers |
-| **When to use** | General questions, learning, peer advice | Something isn't working right | You want to implement, redesign, or expand |
-| **Best for** | Best practices, tips, shared experiences | Urgent issues, bugs, SLA-backed help | Projects, integrations, architecture |
-| **Response time** | Minutes to hours (community-driven) | Per SLA (hours to days) | Scheduled engagement |
-| **Cost** | Free | Included in subscription | Separate project pricing |
-
----
-
-## The Three Channels Explained
-
-### 🌐 **TechCommunity** — Learn & Connect
-**Use when:**
-- You have a general question about how to use a feature
-- You want to see how other customers solved a similar problem
-- You're looking for best practices or tips from the community
-- You want to share knowledge and help other users
-- You're researching implementation approaches or use cases
-
-**Examples:**
-- "What's the best way to structure tenants for a multi-region deployment?"
-- "Has anyone successfully integrated Cumulocity with [third-party tool]?"
-- "Tips for optimizing performance with large device fleets?"
-- "How do other customers handle user access controls?"
-
-**Key advantage:** You tap into the collective experience of thousands of Cumulocity users worldwide—often getting answers faster than you'd expect, plus learning from real-world implementations.
-
----
-
-### 🛠️ **Support** — Fix It Fast
-**Use when:**
-- Something isn't working as expected (error message, unexpected behavior)
-- A feature stopped working after an update
-- You need urgent help with connectivity, authentication, or configuration
-- You've found a potential bug or defect
-- You need help with account/user access issues
-- You're blocked and need SLA-backed response
-
-**Examples:**
-- "We're getting error code XYZ when trying to authenticate"
-- "Devices suddenly stopped sending data after the update"
-- "Dashboard is loading very slowly—what's happening?"
-- "How do we reset an admin password?"
-
-**Key advantage:** Professional troubleshooting with SLA guarantees, escalation paths, and accountability. Support logs your issue and tracks it to resolution.
-
----
-
-### 🚀 **Professional Services** — Build & Optimize
-**Use when:**
-- You're implementing the platform or migrating from another system
-- You need to build custom integrations or connectors
-- You want architectural guidance or system optimization
-- You're planning a major expansion or redesign
-- You need formal training for your team
-- You want expert advice on strategy and best practices
-
-**Examples:**
-- "We need help designing our implementation before go-live"
-- "Build a custom connector between Cumulocity and our ERP"
-- "How should we structure our tenants as we scale globally?"
-- "We need formal training for our ops team (50+ people)"
-- "Review our current setup and recommend optimizations"
-
-**Key advantage:** Expert architects and senior engineers who have bandwidth and expertise to design solutions tailored to your business needs.
-
----
+Cumulocity IoT provides comprehensive product support to help you maintain and troubleshoot your IoT platform. This document outlines our support processes, how to access support services, and what to expect when you need assistance.
 
-## Quick Decision Tree: Where to Start?
-
-```
-Customer has a question or issue...
-
-├─ "General question about how to use a feature?"
-│  └─→ START: TechCommunity
-│     (If not answered quickly → escalate to Support)
-│
-├─ "Has anyone done something like this?"
-│  └─→ START: TechCommunity
-│     (Great place for peer insights and best practices)
-│
-├─ "Something is broken / error / not working"
-│  └─→ START: Support
-│     (Urgent troubleshooting)
-│
-├─ "We're implementing / migrating / scaling"
-│  └─→ START: Professional Services
-│     (Project-based, strategic guidance)
-│
-├─ "We need custom development / integrations"
-│  └─→ START: Professional Services
-│     (Architects will design and build)
-│
-└─ "We need training / optimization / architecture review"
-   └─→ START: Professional Services
-      (Expert guidance for strategic decisions)
-```
-
----
+## Getting expert guidance: Support vs. Professional Services vs. TechCommunity
 
-## Real Conversation Starters
-
-### "We just signed up—what now?"
-> "Awesome! Start by exploring **TechCommunity**—you'll see how other customers have implemented similar solutions. Once you're ready to deploy, our **Professional Services team** can design your implementation. For day-to-day operational questions, **TechCommunity** and **Support** are always there."
+Cumulocity IoT offers three complementary channels to help you succeed with the platform. Understanding when to use each channel ensures you get the right type of assistance quickly.
 
-### "We're having an issue..."
-> "Let's help you. First, **TechCommunity** is a great place to search—you might find others have solved this already. If it's urgent or you can't find an answer, open a **Support** ticket and we'll troubleshoot it for you. If the issue points to a design problem, we can bring in **Professional Services** to help optimize your setup."
+| Channel | What it is | When to use | Response time | Cost |
+|---------|-----------|-------------|---------------|------|
+| **Product Support** | Troubleshooting & operational help | Something isn't working correctly; urgent issues, bugs, errors | Per SLA (30 min to 1 Business Day) | Included in subscription |
+| **Professional Services** | Strategic guidance & custom solutions | Implementation, architecture design, custom integrations, training | Scheduled engagement | Separate project pricing |
+| **TechCommunity** | Peer knowledge & community Q&A | General questions, best practices, learning from others' experiences | Minutes to hours (community-driven) | Free |
 
-### "Can you help us with integrations?"
-> "Depends. If you're using standard APIs and hit a snag, **Support** can troubleshoot. **TechCommunity** often has integration examples. If you need a custom connector built or an integration strategy designed, that's **Professional Services**—our architects will handle the design and development."
+### When to use Product Support
 
-### "How do other customers handle [use case]?"
-> "Perfect question for **TechCommunity**! You'll find discussions, case studies, and peer advice from thousands of users. If you want to dive deeper or need expert guidance tailored to your business, **Professional Services** can help too."
+Use Product Support for operational and technical troubleshooting:
+- A feature or service has stopped working
+- You're experiencing errors or unexpected behavior
+- You need urgent help with production issues
+- You've discovered a potential bug
 
-### "We want to get more value from the platform"
-> "**TechCommunity** has countless tips from users finding creative solutions. **Professional Services** can do a formal optimization review—they'll assess your setup and recommend high-impact improvements. Many customers combine both—learning from peers and getting expert strategy."
+**Example:** "Our device authentication is failing with error XYZ" or "Production data pipeline stopped processing after an update"
 
-### "We need training for our team"
-> "**TechCommunity** has learning resources and peer discussions that help teams self-educate. For formal, structured training tailored to your workflows, **Professional Services** offers comprehensive programs."
+### When to use Professional Services
 
----
+Use Professional Services for strategic, project-based work:
+- Implementing or migrating to Cumulocity IoT
+- Designing system architecture and integration strategies
+- Building custom connectors or applications
+- Formal training programs for your team
+- Platform optimization and performance reviews
 
-## When Each Channel Shines
+**Example:** "We need help designing our multi-tenant architecture" or "Build a custom connector to integrate with our ERP system"
 
-| Situation | TechCommunity | Support | Professional Services |
-|---|---|---|---|
-| General "how-to" question | ⭐⭐⭐ Best | ⭐ OK | — |
-| Troubleshooting a broken feature | ⭐ Sometimes | ⭐⭐⭐ Best | — |
-| Learning best practices | ⭐⭐⭐ Best | ⭐ | ⭐⭐ |
-| Urgent issue (blocking work) | — | ⭐⭐⭐ Best | — |
-| Planning implementation | ⭐⭐ | — | ⭐⭐⭐ Best |
-| Custom integration | ⭐⭐ (examples) | ⭐ (troubleshooting) | ⭐⭐⭐ Best |
-| Architectural guidance | ⭐⭐ | — | ⭐⭐⭐ Best |
-| Peer success stories | ⭐⭐⭐ Best | — | — |
-| Formal training | ⭐ (self-service) | — | ⭐⭐⭐ Best |
+### When to use TechCommunity
 
----
+Use TechCommunity for learning and peer insights:
+- General "how-to" questions
+- Learning best practices from other customers
+- Exploring different implementation approaches
+- Sharing your own solutions and experiences
 
-## Positioning TechCommunity to Customers
+**Example:** "What's the best way to structure tenants for a multi-region deployment?" or "Has anyone integrated Cumulocity with [third-party tool]?"
 
-**During Sales/Onboarding:**
-- "One of the biggest advantages of Cumulocity is our active community. Thousands of customers share solutions, tips, and best practices in TechCommunity. You're never alone—whatever challenge you face, someone's probably solved it."
+**Tip:** Many customers start with TechCommunity for general questions and escalate to Support if they encounter urgent technical issues. All three channels work together to provide comprehensive assistance.
 
-**During Implementation:**
-- "Before we jump to Support or escalate to Professional Services, check TechCommunity. Our experienced customers often post great workarounds and insights there."
+## Support overview
 
-**During Support Tickets:**
-- "I see someone in TechCommunity had a similar issue—here's that discussion. Also, I'm researching on our end and will update you within [SLA time]."
+Product Support is designed to help you troubleshoot operational issues, resolve technical problems, and maintain the health of your Cumulocity IoT platform. Our global support organization provides assistance based on your support level (Bronze, Silver, or Gold).
 
----
+For detailed information about support service levels, response times, and service-level agreements, refer to the [Support Service-Level Agreement](../service-level-bundle/support-sla/).
 
-## Key Talking Points
+### What support covers
 
-✓ **TechCommunity** = Peer learning & collective knowledge (free, fast, often very helpful)  
-✓ **Support** = Reactive troubleshooting with SLA guarantees (included, urgent, professional)  
-✓ **Professional Services** = Proactive strategy & custom solutions (separate cost, expertise, project-based)  
-✓ Many customers start with TechCommunity, escalate to Support if needed  
-✓ All three channels complement each other—use them together  
-✓ TechCommunity often surfaces issues that Support should know about  
+Use product support when:
 
----
+- A feature or service is not working as expected
+- You encounter error messages or unexpected behavior
+- You need help troubleshooting connectivity, authentication, or configuration issues
+- You have identified a potential bug or defect in the platform
+- You need assistance with account or user access management
+- Your operations are blocked and require urgent technical assistance
 
-## How the Three Work Together
+### Examples of support requests
 
-```
-Customer Journey Example:
+- "We're receiving error code XYZ when attempting to authenticate devices"
+- "Data transmission from devices stopped working after a platform update"
+- "Dashboard performance has degraded significantly—help diagnose the issue"
+- "How do we reset administrator credentials for a tenant?"
+- "API endpoints are returning unexpected results"
 
-1. New customer onboards
-   → Explores TechCommunity for best practices & learning
-   
-2. Ready to implement
-   → Engages Professional Services for architecture & setup
-   
-3. Goes live
-   → Support handles day-to-day issues
-   
-4. Questions come up
-   → TechCommunity for peer advice
-   → Support if urgent or technical troubleshooting
-   
-5. Six months later, wants to expand
-   → TechCommunity for similar use cases
-   → Professional Services for optimization & strategy
-```
+## How to access support
 
----
+### Support Portal
 
-## Quick Contact Info to Share
+All customers have 24/7 access to the Support Portal, which provides:
 
-**TechCommunity:**
-- URL: community.cumulocity.com
-- Free to join, open to all Cumulocity users
-- Search existing discussions or post new questions
+- Ability to submit and track support tickets
+- Access to knowledge base articles and documentation
+- View Error Corrections and service updates
+- Manage your Authorized Technical Contacts (ATCs)
 
-**Support:**
-- Email: support@cumulocity.com
-- Portal: Customer support portal (link to portal)
-- For urgent issues, reference your SLA tier
+To access the Support Portal, visit the customer support portal or contact your Customer Success Manager for access credentials.
 
-**Professional Services:**
-- Your Customer Success Manager (if existing customer)
-- Sales team: sales@cumulocity.com
-- Or: Mention during implementation discussions
+### Email support
 
----
+You can reach our support team via email at:
 
-## Pro Tips for Your Conversations
+**support@cumulocity.com**
 
-1. **Lead with TechCommunity first** — For general questions, it's fast, free, and often gives great peer perspective. "Have you checked TechCommunity? This is the kind of thing the community loves answering."
+When contacting support via email, include:
+- A clear description of the issue
+- Steps to reproduce the problem
+- Any relevant error messages or logs
+- The business impact of the issue
 
-2. **Use TechCommunity as a credibility builder** — "We have thousands of active users sharing solutions. That means you're learning from real-world implementations, not just theory."
+### Phone support
 
-3. **Know when to escalate** — If someone's been searching TechCommunity and not finding help, that signals Support or Professional Services might be the right fit.
+Phone support availability varies by support level:
 
-4. **Position all three as strengths** — Don't make it sound like TechCommunity is a "workaround" for Support. Frame it as: "You get peer wisdom, professional support, and expert consulting—all available to you."
+- **Bronze Support**: Phone support during Business Hours (9x5) for all incident types
+- **Silver Support**: 24/7 phone support for Crisis incidents; Business Hours (9x5) for Critical and Standard incidents
+- **Gold Support**: 24/7 phone support for all incident types
 
-5. **Normalize peer-to-peer learning** — "One of the best parts of being a Cumulocity customer is the community. You're connected to thousands of innovators solving IoT challenges daily."
+The support telephone number is available in the Support Portal. Telephone support is provided in English only.
 
-6. **Highlight expertise in the community** — "Our product experts and senior architects are active in TechCommunity too. Your questions get answered by people who really know the platform."
+## Understanding incident severity
 
----
+All support requests are classified by severity based on business impact. Understanding these severity levels helps ensure your issues receive appropriate priority.
 
-## Common Objections & Responses
+| Severity Level | Definition | Example |
+|---------------|------------|---------|
+| **Crisis (Severity 1)** | Customer's problem has a severe business impact, such as production down. Customer is unable to use the Cloud Services, resulting in a major impact on operations. Work cannot reasonably continue. | Production environment is completely unavailable; critical data pipeline has stopped processing |
+| **Critical (Severity 2)** | Customer's problem has a significant business impact; however, operations can continue in a restricted fashion. The Cloud Services are usable but severely limited. There is no acceptable workaround available. | Major feature is unavailable but system remains partially operational; significant performance degradation with no workaround |
+| **Standard (Severity 3)** | Customer's problem has some business impact. The Cloud Services are usable and cause only minor inconvenience. It may be a minor Error, documentation Error, or incorrect operation which does not significantly impede operations. | Minor bugs, documentation questions, feature requests, or issues with available workarounds |
 
-**"Will I get an answer in TechCommunity fast enough?"**
-> "Often, yes—the community is very active and responsive. But if you're blocked urgently, open a Support ticket instead. For planning questions and best practices, TechCommunity is usually faster than you'd expect."
+For complete definitions and response time commitments for each severity level, see the [Support Service-Level Agreement](../service-level-bundle/support-sla/#incident-classification).
 
-**"How do I know the TechCommunity answer is correct?"**
-> "Great question. Answers are typically from experienced users and our expert community members. If you're unsure, ask for clarification in the thread or verify with Support. Most answers are solid, but Support is your safety net for critical issues."
+## Support response times
 
-**"Can we get our issue resolved faster through Support?"**
-> "If it's an urgent, blocking issue, yes—Support provides SLA-backed response. For learning, optimization, and best practices, TechCommunity and Professional Services are faster and more cost-effective."
+Initial response times vary by support level and incident severity:
 
-**"Isn't Professional Services expensive?"**
-> "It's an investment in getting your implementation right and optimizing as you scale. Many customers find the cost worth it because they avoid costly mistakes and accelerate time-to-value. For general support, Support and TechCommunity are your cost-effective options."
+| Support Level | Crisis | Critical | Standard |
+|--------------|--------|----------|----------|
+| **Bronze** | 1 Business Day | 1 Business Day | 1 Business Day |
+| **Silver** | 1 hour | 4 Business Hours | 1 Business Day |
+| **Gold** | 30 minutes | 2 hours | 1 day |
 
----
+**Note:** Response time is defined as the initial acknowledgment and assignment of your issue to a support engineer. Support has no obligation to resolve the issue within the response time or any other specific time frame, but will work diligently toward resolution based on the severity and complexity of the issue.
 
-## Success Metric: Healthy Channel Usage
+For more details on support services by level, see the [Support Service-Level Agreement](../service-level-bundle/support-sla/#support-services).
 
-A mature customer typically:
-- ✓ Uses **TechCommunity** weekly for tips and peer advice
-- ✓ Uses **Support** for urgent issues (not every question)
-- ✓ Engages **Professional Services** during key milestones (implementation, expansion, optimization)
-- ✓ Contributes to **TechCommunity** by sharing their own solutions (high sign of health!)
+## Authorized Technical Contacts (ATCs)
+
+To ensure security and proper communication, support requests must come from designated Authorized Technical Contacts (ATCs).
+
+### What is an ATC?
+
+An Authorized Technical Contact is an individual who is:
+- Uniquely identified (no shared group accounts)
+- Authorized by your organization to access the Support Portal
+- Qualified to submit support requests and communicate technical details
+- Able to receive support-related communications
+
+### ATC limits by support level
+
+- **Bronze Support**: Up to 7 ATCs per customer
+- **Silver Support**: Up to 7 ATCs per customer
+- **Gold Support**: Unlimited ATCs
+
+Additional ATCs can be contracted for Bronze and Silver support levels.
+
+### Managing ATCs
+
+Customers are responsible for:
+- Assigning ATCs and ensuring they have appropriate technical qualifications
+- Communicating any changes to the ATC list to the Provider
+- Ensuring ATCs cooperate with support and provide necessary information for troubleshooting
+
+For more information, see [Customer responsibilities](../service-level-bundle/support-sla/#customer-responsibilities) in the SLA.
+
+## Support escalation process and priority handling
+
+We are committed to providing customers with responsive and effective support for technical challenges. This section outlines how to escalate a support ticket and what internal measures we take to manage high-priority issues.
+
+### How to escalate a support ticket
+
+Escalation is defined as the handling of customer complaints, requests for urgency, and the involvement of management roles in the resolution process.
+
+If additional attention is necessary for a ticket, request an escalation via:
+
+**Email:** Send an email to **support@cumulocity.com**. When sending an escalation request, please explain the business impact and expectations clearly.
+
+**Support Portal:** A dedicated "Ticket Escalation" link is shown on the Support portal within the Customer Service Desk website.
+
+### Understanding ticket severity levels
+
+All support tickets are assigned one of three severity levels based on the business impact. The formal definitions of the severity levels are documented in the [Support Service-Level Agreement](../service-level-bundle/support-sla/#incident-classification).
+
+| Severity Level | Definition |
+|---------------|------------|
+| **Crisis (Severity 1)** | The most urgent priority, where the customer's problem has a severe business impact, such as **production down**, or the customer is unable to use the software. |
+| **Critical (Severity 2)** | The problem has a significant business impact, but operations can continue in a restricted or limited fashion, and there is no acceptable workaround available. |
+| **Standard (Severity 3)** | Regular tickets, such as questions, minor defects, or issues that cause only minor inconvenience and have lower business impact or a functioning workaround. |
+
+For a **Crisis** issue, our top priority is to **restore the production throughput**. Crisis tickets already receive the highest priority and 24-hour support ("following the sun").
+
+### Marking a ticket as "Hot"
+
+The 'Hot Issue' flag is an **internal indicator** used by our Support team.
+
+We mark a ticket as "Hot Issue" if it is receiving **above-normal priority**, over and above the priority derived from the ticket's severity. This internal flagging helps ensure visibility for issues that stand out.
+
+A ticket might be marked as "Hot" due to reasons such as:
+
+- A formal complaint received from the customer.
+- Extra priority given due to involvement from Sales or Customer Success Management (CSM).
+- A severe issue requiring **extra collaboration** between internal teams (such as CloudOps and R&D).
+
+**Note:** Tickets that have the severity **Crisis** are not additionally marked as "Hot Issue," as this would be redundant—Crisis tickets inherently have top priority.
+
+### What to expect
+
+When an issue receives extra attention, whether through a formal escalation or by being internally flagged as "Hot," we handle all communication with appropriate priority as outlined below.
+
+For tickets receiving this extra attention, we adhere to the following communication guideline, though reporting frequency may be adjusted if explicitly agreed with the customer:
+
+| Time Since Escalation | Expected Update Frequency |
+|-----------------------|---------------------------|
+| **Week 1–2** | Daily updates |
+| **Week 3–4** | Every 2–3 days, or at least twice per week |
+| **Week 5 and onwards** | Once per week |
+
+Updates will include a clear statement about the status and the next steps planned. For escalated issues, updates may come from a management level, focusing on the status of the overall process rather than solely on technical details.
+
+## What support does not cover
+
+Product support focuses on operational troubleshooting and technical issue resolution. The following activities are outside the scope of product support:
+
+- **Implementation and architecture guidance**: Use Professional Services for designing implementations, custom integrations, and architectural reviews
+- **Custom development**: Building custom connectors, applications, or features requires Professional Services engagement
+- **Training and enablement**: Formal training programs are available through Professional Services
+- **Best practices and optimization**: Strategic guidance on platform optimization is available through Professional Services or the TechCommunity
+
+For general "how-to" questions and learning from peer experiences, we recommend starting with the [TechCommunity](https://community.cumulocity.com), where thousands of Cumulocity users share solutions, best practices, and insights.
+
+## Customer responsibilities
+
+When working with product support:
+
+- Ensure your ATCs are properly designated and have necessary technical qualifications
+- Provide clear, detailed information about issues including steps to reproduce, error messages, and business impact
+- Respond promptly to requests for additional information or access
+- Grant temporary access to your cloud environment when necessary for troubleshooting (access is authorized when you submit a ticket and lasts for the duration of the incident)
+- Keep your ATC list current and communicate any changes
+
+For complete customer responsibilities, see the [Support Service-Level Agreement](../service-level-bundle/support-sla/#customer-responsibilities).
+
+## Additional resources
+
+- **Support Service-Level Agreement**: [View detailed SLA terms](../service-level-bundle/support-sla/)
+- **TechCommunity**: [Connect with peers and experts](https://community.cumulocity.com)
+- **Documentation**: [Cumulocity IoT Documentation](https://cumulocity.com/docs/)
+- **Professional Services**: Contact your Customer Success Manager for strategic guidance, implementation support, and custom development
