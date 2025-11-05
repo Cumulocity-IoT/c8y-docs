@@ -19,7 +19,7 @@ Permissions define explicitly what functionality can be executed by a user.
 
 {{< product-c8y-iot >}} distinguishes read permissions and administration permissions. Read permissions enable users to read data. Administration permissions enable users to create, update and delete data. Read and administration permissions are separately available for the different types of data in {{< product-c8y-iot >}}. For example, there are read permissions for inventory data, measurements, operations and so forth.
 
-To manage permissions more easily, they are grouped into so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
+To manage permissions more easily, they are grouped into roles. Every user can be associated with a number of roles, adding up permissions of the user.
 
 The following types of roles can be associated with users:
 
@@ -51,9 +51,13 @@ This concept helps to assign minimal permissions to devices.
 
 Global roles and inventory roles are created and managed in the **Roles** page of the Administration application in the UI.
 
-A detailed description on available default roles and on creating and assigning global and inventory roles can be found in [Managing permissions](/standard-tenant/managing-permissions).
+A detailed description on available default roles and on creating and assigning global and inventory roles can be found in [Managing permissions and roles](/standard-tenant/managing-permissions).
 
 For details on permission management using the API refer to [the User API](https://{{< domain-c8y >}}/api/core/#tag/User-API) in the {{< openapi >}}.
+
+{{< c8y-admon-important >}}
+In the Cumulocity API, each granular permission is identifed by a unique “permission” string, which is prefixed with `ROLE_` (for example, `ROLE_ALARM_READ`, `ROLE_INVENTORY_ADMIN`). Therefore, permissions are frequently referred to as "roles" throughout the API as well as in the configuration files. For example, the microservice manifest includes a `requiredRoles` field which actually expects a permission string.   
+{{< /c8y-admon-important >}}
 
 ### Globally accessible objects {#globally-accessible-objects}
 

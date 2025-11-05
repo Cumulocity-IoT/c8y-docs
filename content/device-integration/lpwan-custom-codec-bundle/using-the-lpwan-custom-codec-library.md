@@ -75,7 +75,7 @@ To create a custom codec microservice using this library, do the following:
         }
         ```
 
-4. Add the following roles as `requiredRoles` in the microservice manifest file `cumulocity.json`:
+4. Add the following permissions as `requiredRoles` in the microservice manifest file `cumulocity.json`:
 
     ```json
     "requiredRoles": [

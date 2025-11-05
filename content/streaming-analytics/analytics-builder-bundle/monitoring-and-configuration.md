@@ -319,7 +319,7 @@ You can customize the settings of Analytics Builder, the so-called “tenant opt
 
 You can find some concrete examples in [Using curl commands for setting various tenant options](/streaming-analytics/analytics-builder/#using-curl-commands-for-setting-various-tenant-options). However, you can use any tool you like.
 
-To change the tenant options, you need ADMIN permission for "Option management". See [Managing permissions](/standard-tenant/managing-permissions/) for more information.
+To change the tenant options, you need ADMIN permission for "Option management". See [Managing permissions and roles](/standard-tenant/managing-permissions/) for more information.
 
 {{< c8y-admon-caution>}}
 After you have changed a tenant option using a REST request, the correlator will automatically restart. An alarm with a MAJOR severity will be created in this case; you can view it on the **Alarms** page of the Cockpit application \(see [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for more information\).

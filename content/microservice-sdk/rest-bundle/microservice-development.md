@@ -30,7 +30,7 @@ A success response consists of a 201 status and a location header similar to `<H
 
 The properties `key`, `name` and `type` from the above request body are self explanatory, and about the roles:
 
-* `requiredRoles` - A list of {{< product-c8y-iot >}} permissions the microservice user needs in order to get data from {{< product-c8y-iot >}}, for example, if the microservice creates a managed object, one of the required roles shall be `ROLE_INVENTORY_ADMIN`.
+* `requiredRoles` - A list of {{< product-c8y-iot >}} permissions the microservice user needs in order to get data from {{< product-c8y-iot >}}, for example, if the microservice creates a managed object, one of the required permissions shall be `ROLE_INVENTORY_ADMIN`.
 * `roles` - A list of microservice permissions. If the microservice exposes an own REST API, it can be secured with an own set of permissions, for example, a SMS microservice would require `SMS_ADMIN` permission to send SMS messages. These permissions become available in the tenant after microservice subscription. Afterwards, an admin user can grant such permission to  another user that wants to send SMS messages via the {{< product-c8y-iot >}} platform.
 
 The application ID for existing applications can be obtained employing a GET request with the name of the application:
@@ -91,7 +91,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.application+json
     "name": "<APPLICATION_NAME>",
     "type": "MICROSERVICE",
     "requiredRoles": [ "ROLE_INVENTORY_READ" ],
-    "roles": [ "ROLE_CUSTOM_MICSROSERVICE" ]
+    "roles": [ "ROLE_CUSTOM_MICROSERVICE" ]
 }
 ```
 
