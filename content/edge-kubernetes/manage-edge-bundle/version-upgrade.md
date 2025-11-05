@@ -10,7 +10,7 @@ Recreating update strategy is an all-or-nothing process that updates all aspects
 ### Upgrading with the c8yedge tool {#upgrade-with-c8yedge}
 
 {{< c8y-admon-info >}}
-Upgrading with the **c8yedge** tool is only supported if the initial installation was created using the **c8yedge** tool.
+Upgrading with the c8yedge tool is only supported if the initial installation was created using the c8yedge tool.
 {{< /c8y-admon-info >}}
 
 You can upgrade to the latest patch of Edge by running the following command:
@@ -21,7 +21,7 @@ This will only apply the latest patches for the current release train. For examp
 ```shell
 c8yedge upgrade --version <version number>
 ```
-Unlike the initial installation, no use of `sudo` is required for any kind of upgrade using **c8yedge**.
+Unlike the initial installation, no use of `sudo` is required for any kind of upgrade using c8yedge.
 
 #### Upgrading in an airgapped environment {#upgrade-edge-airgapped}
 
