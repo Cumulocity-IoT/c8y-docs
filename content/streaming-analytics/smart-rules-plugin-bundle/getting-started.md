@@ -18,7 +18,7 @@ Before using the smart rules (NEW) plugin, ensure that the following requirement
 
 #### Managing permissions to smart rules (NEW) instances {#managing-permissions-to-smart-rules-instances}
 
-**Smart rule instances** in [Global role](/standard-tenant/managing-permissions/#to-add-a-global-role) is provided to manage permissions required to access **Smart rules (NEW)** instances. 
+The **Smart rule instances** permission under [global roles](/standard-tenant/managing-permissions/#to-add-a-global-role) allows you to manage permissions required to access smart rules (NEW) instances. 
 
 |Permission type|Description|
 |---------|-----------|
