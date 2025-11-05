@@ -14,7 +14,8 @@ If there are differences related to the application protocol used by the device,
 The MQTT Service supports connections from clients using version 3.1, 3.1.1 or 5.0 of the MQTT protocol.
 Please refer to the [MQTT specifications](https://mqtt.org/mqtt-specification/) for details of the differences between these versions.
 
-MQTT version 3.1 is obsolete and using it is not recommended, although most of the details below for version 3.1.1 will still be valid for version 3.1.
+MQTT version 3.1 is obsolete and not recommended.
+Most of the details below for version 3.1.1 will be valid for version 3.1; however, the specific differences in protcol version 3.1 are not explicitly documented.
 
 ### Connecting to the MQTT Service {#connecting-via-mqtt}
 
@@ -22,60 +23,67 @@ MQTT devices can connect to the MQTT Service using direct TCP connections only.
 Authentication using "basic" (username/password) authentication and TLS client certificates is supported.
 For full details of the available ports and how to configure device authentication, see the [Connecting MQTT devices](/device-integration/mqtt-service/#connecting-devices) section.
 
-{{< c8y-admon-caution >}}
-The MQTT Service **requires** clients to connect with the _Clean Session_ flag in the MQTT `CONNECT` packet set to "1" (true).
+### MQTT version 3.1.1 features {#mqtt-311-features}
+
+These features are also applicable to devices connecting using [version 5.0](#mqtt-50-features) of the MQTT protocol.
+
+#### Client Identifier {#client-id}
+
+Every device connecting to the MQTT Service within a given tenant must use a unique _Client Identifier_ (client ID).
+If a device connects using a client ID that is already connected, the _existing_ connection will be terminated, in accordance with the MQTT specification.
+Devices in different tenants can be connected at the same time using the same client ID.
+Empty client IDs are not permitted.
+See the table of [limits and quotas](/service-terms/quotas/#mqtt-service) for details of the maximum allowed client ID length.
+
+#### Clean session {#clean-session}
+
+The MQTT Service **requires** devices to connect with the _Clean Session_ flag in the MQTT `CONNECT` packet set to "1" (true).
 This flag is called _Clean Start_ in MQTT version 5.0.
 If this flag is not set, the client connection will be rejected by the MQTT Service.
+
+{{< c8y-admon-caution >}}
 This means that messages sent _to_ a device while it is disconnected will **not** be automatically delivered to it when it reconnects.
 Your devices and clients should implement an application-level protocol to send missed messages if this is important for your use case.
 Note that pending {{< product-c8y-iot >}} device operations _will_ be sent to a Core MQTT device when it connects.
 {{< /c8y-admon-caution >}}
 
-### MQTT version 3.1.1 features {#mqtt-311-features}
+#### Quality of Service {#quality-of-service-qos}
 
-#### ClientId {#client-id}
+The MQTT Service supports two levels of MQTT _Quality of Service_ (QoS).
+The desired QoS level is specified in the MQTT `PUBLISH` packet when a device sends a message to the MQTT Service, and in the MQTT `SUBSCRIBE` packet when a device subscribes to a MQTT topic.
 
-The MQTT **ClientID** field identifies the connected client.
-**ClientID** may consist of up to 128 alphanumeric characters.
-Each client connecting to the MQTT Service must have a unique client identifier, connecting a second client with the same identifier will result in the previous client's disconnection.
+| Level                 | Supported | Description   |
+|-----------------------|-----------|---------------|
+| QoS 0 (at most once)  | Yes       | The service does not acknowledge messages sent by the device, and there is no guarantee that messages will be delivered.<br>For subscriptions, the service does not expect any acknowledgement from the device and will not send any message more than once. |
+| QoS 1 (at least once) | Yes       | The service will acknowledge messages sent by the device, and the device may re-send a message if no acknowledgement is received.<br>Acknowledged messages are guaranteed to be delivered at least once to Messaging Service clients.<br>For subscriptions, the device must acknowledge messages sent to it by the service, and the service may send the same message more than once.<sup>(1)</sup> |
+| QoS 2 (exactly once)  | No        | Not supported |
 
-#### Quality of Service (QoS) {#quality-of-service-qos}
+Notes:
+1. Because the MQTT Service requires devices to connect with a clean session, unacknowledged messages will not be re-sent by the MQTT Service after a device has disconnected and reconnected.
+<br><br>
 
-The MQTT Service implementation supports two levels of MQTT QoS:
+#### Retained messages {#retained-messages}
 
-* QoS 0: At most once:
-    - The client sends the message once (fire and forget).
-    - There is no response from the server.
-    - There is no guarantee that subscribers will receive the message.
-* QoS 1: At least once:
-    - The client awaits server acknowledgment for each published message.
-    - The client should re-send the message if there was no acknowledgement from the server.
-    - It is guaranteed that subscribers will receive a message that was acknowledged by the server.
-    - Subscribers may receive more than one copy of a message.
-* QoS 2: Exactly once:
-    - not supported
-
-For subscriptions, the MQTT Service will deliver messages in the QoS that the client defined when subscribing to the topic (QoS 0 or 1).
-
-#### Clean session {#clean-session}
-
-The MQTT Service **requires** the clean session flag to be set to "1" (true).
-Disabling clean session will result in client connections being rejected by the server.
-
-#### Retained flag {#retained-flag}
-
-The retained flag is currently ignored.
-Publishing data with the retained flag on the topic is allowed but has no practical difference to sending it without the flag.
+MQTT _retained messages_ are not supported by the MQTT Service.
+If the retain flag is set on a `PUBLISH` message from a device, the message will be accepted, but handled as through the flag was not set.
+Messages published by the MQTT Service to devices will never have the retain flag set.
 
 #### Last will {#last-will}
 
-In MQTT, the "last will" is a message that is specified at connection time and that is executed when the client loses the connection.
-Last will is fully supported by the MQTT Service, and as with with any other publish messages you can use any unreserved topic and any payload.
+The MQTT _last will_ feature allows a device to provide a message in the `CONNECT` packet that will be published on behalf of the device if it disconnects unexpectedly.
+Last will is supported by the MQTT Service with these restrictions:
+* Because of _device isolation_, the will message will not be delivered to any other connected MQTT device.
+  The will message will be published onto the Messaging Service where it can be consumed by a microservice or external application client.
+* The QoS level of the will message can be QoS 0 (at most once) or Qos 1 (at least once).
+  QoS level 2 (exactly once) is not supported.
+* Retained will messages are not supported.
+  If the retain flag is set on the will message, the message will be accepted, but handled as though the flag was not set.
 
 ### MQTT version 5.0 features {#mqtt-50-features}
 
-Clients can connect using version 5.0 of the MQTT protocol.
-Support for additional MQTT 5.0 features will be added in future releases.
+These features apply to devices connecting using version 5.0 of the MQTT protocol, in addition to the [MQTT version 3.1.1](#mqtt-311-features) features described above.
+
+TBD
 
 ### Topics {#mqtt-topics}
 
