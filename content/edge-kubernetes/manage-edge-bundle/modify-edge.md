@@ -10,7 +10,7 @@ In these examples, we assume that the Edge object is called `c8yedge` and is in 
 
 ### Basic post-installation configuration {#basic-post-installation-configuration}
 
-Immediately after installing Edge using the `c8yedge` tool, you will probably want to configure an SSL certificate for your Edge, and give it a custom domain. And also set the Edge tenant's name (Company name) and the admin user email.
+After installing Edge using the `c8yedge` tool, you might want to configure an SSL certificate for your Edge, give it a custom domain, and set the Edge tenant's name (company name) and the admin user email.
 
 First, ensure that your certificate and key are in separate files, in PEM format.
 ```bash
