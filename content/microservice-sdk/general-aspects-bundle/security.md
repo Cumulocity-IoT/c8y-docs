@@ -159,7 +159,7 @@ You can add them to the [application manifest](#microservice-manifest) in the `r
 The roles are set in the [Microservice manifest](#microservice-manifest). For more details about users and roles, refer to [Managing permissions and roles](/standard-tenant/managing-permissions) or to the [User API](https://{{< domain-c8y >}}/api/core/#tag/User-API) in the {{< openapi >}}.
 
 {{< c8y-admon-important >}}
-Be aware that the term "role" might be misleading here as the the `roles`field and `requiredRoles` field expect a "permission" string (for example, ROLE_INVENTORY_ADMIN). Also see the glossary for the usage of the terms "[permission](/glossary/#permission)" and "[role](/glossary/#role)" in the Cumulocity context.
+Be aware that the term "role" might be misleading here as the the `roles`field and `requiredRoles` field expect a "permission" string (for example, ROLE_INVENTORY_ADMIN). See also the glossary for the usage of the terms [permission](/glossary/#permission) and [role](/glossary/#role) in the Cumulocity context.
 {{< /c8y-admon-important >}}
 
 ### Microservice bootstrap {#microservice-bootstrap}

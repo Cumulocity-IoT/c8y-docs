@@ -46,5 +46,4 @@ The above permissions can be used to create roles for robust user management. Ev
 - [Platform administration > {{< enterprise-tenant >}} administration > Managing user hierarchies](/enterprise-tenant/managing-user-hierarchies) for more information on managing user hierarchies.
 - [Device management & connectivity > Device integration > Fragment library](/device-integration/fragment-library/) for further information on fragment types.
 - [Roles](https://{{< domain-c8y >}}/api/core/#tag/Roles) and [Inventory Roles](https://{{< domain-c8y >}}/api/core/#tag/Inventory-Roles) in the {{< openapi >}} for managing permissions via REST.
--
 {{< /c8y-admon-related >}}
