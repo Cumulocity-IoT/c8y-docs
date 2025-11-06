@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Maintenance mode not reflected correctly in left navigation bar
+title: Device status changes were not immediately reflected in Navigator
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4994
 version: 1022.46.4
 ---
-Co-authored-by: Bozhidar Dedov <95280800+bozhidardedov@users.noreply.github.com>
+When a device was put into maintenance mode (e.g. from the **Device status** widget), or vice versa, this status change was not immediately reflected in the left navigation bar. With this change, the left navigation bar now instantly displays the new device status. This change ensures that users have clear visibility into the current operational state of their devices.
