@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Device status changes were not immediately reflected in Navigator
+title: Device status changes now immediately reflected in the navigator
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
