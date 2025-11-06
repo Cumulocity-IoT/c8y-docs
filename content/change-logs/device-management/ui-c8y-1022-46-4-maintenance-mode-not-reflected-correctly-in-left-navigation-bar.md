@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4994
 version: 1022.46.4
 ---
-When a device was put into maintenance mode (e.g. from the **Device status** widget), or vice versa, this status change was not immediately reflected in the left navigation bar. With this change, the left navigation bar now instantly displays the new device status. This change ensures that users have clear visibility into the current operational state of their devices.
+When the status of a device was changed (for example, from the "Device status" widget), the status change was not immediately reflected in the navigator. With this change, the navigator now instantly displays the new device status. This change ensures that users have clear visibility into the current operational state of their devices.
