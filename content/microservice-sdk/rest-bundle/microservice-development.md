@@ -33,6 +33,10 @@ The properties `key`, `name` and `type` from the above request body are self exp
 * `requiredRoles` - A list of {{< product-c8y-iot >}} permissions the microservice user needs in order to get data from {{< product-c8y-iot >}}, for example, if the microservice creates a managed object, one of the required permissions shall be `ROLE_INVENTORY_ADMIN`.
 * `roles` - A list of microservice permissions. If the microservice exposes an own REST API, it can be secured with an own set of permissions, for example, a SMS microservice would require `SMS_ADMIN` permission to send SMS messages. These permissions become available in the tenant after microservice subscription. Afterwards, an admin user can grant such permission to  another user that wants to send SMS messages via the {{< product-c8y-iot >}} platform.
 
+{{< c8y-admon-important >}}
+Be aware that the term "role" might be misleading here as the `roles`field and the `requiredRoles` field expect a "permission" string (for example, ROLE_INVENTORY_ADMIN). Also see the glossary for the usage of the terms "[permission](/glossary/#permission)" and "[role](/glossary/#role)" in the Cumulocity context.
+{{< /c8y-admon-important >}}
+
 The application ID for existing applications can be obtained employing a GET request with the name of the application:
 
 ```http

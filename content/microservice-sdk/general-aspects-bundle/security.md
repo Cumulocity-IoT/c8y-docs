@@ -136,10 +136,10 @@ There are three types of users:
 The following role types are defined for users:
 
 * Required roles: The permissions that are predefined to allow access to {{< product-c8y-iot >}} REST APIs.
-For instance, if a microservice creates measurements using the service user, measurement admin permission must be added as a required role of the application.
+For instance, if a microservice creates measurements using the service user, measurement ADMIN permission must be added as a required role/permission of the application.
 Required roles are added to the service users.
 * Roles: The custom roles provided to tenant platform users by the microservice developer.
-These roles can be assigned or revoked to the tenant platform users or groups using the Administration application.
+These permissions can be assigned or revoked to the tenant platform users or groups using the Administration application.
 
 Custom roles/permissions must adhere to this name format in order to be shown in the UI:
 
@@ -159,7 +159,7 @@ You can add them to the [application manifest](#microservice-manifest) in the `r
 The roles are set in the [Microservice manifest](#microservice-manifest). For more details about users and roles, refer to [Managing permissions and roles](/standard-tenant/managing-permissions) or to the [User API](https://{{< domain-c8y >}}/api/core/#tag/User-API) in the {{< openapi >}}.
 
 {{< c8y-admon-important >}}
-Be aware that the term "role" might be misleading here as the `requiredRoles` field expects a "permission" string (for example, ROLE_INVENTORY_ADMIN) which actually refers to a permission from a UI perspective UI.
+Be aware that the term "role" might be misleading here as the the `roles`field and `requiredRoles` field expect a "permission" string (for example, ROLE_INVENTORY_ADMIN). Also see the glossary for the usage of the terms "[permission](/glossary/#permission)" and "[role](/glossary/#role)" in the Cumulocity context.
 {{< /c8y-admon-important >}}
 
 ### Microservice bootstrap {#microservice-bootstrap}
