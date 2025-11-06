@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Navigation links not updating page content in HTML widgets
+title: Fixed navigation links in HTML widgets not updating page content
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
