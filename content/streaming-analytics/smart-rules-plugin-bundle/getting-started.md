@@ -27,7 +27,7 @@ The **Smart rule instances** permission under [global roles](/standard-tenant/ma
 
 These permissions ensure fine-grained access control, allowing administrators to manage user privileges based on operational requirements.
 
-The permissions described above grant read-only access to the underlying Analytics Builder model. Management actions on the Analytics Builder model (like create, edit, or delete) require the *CEP management* roles, see [permissions](/streaming-analytics/introduction-analytics/#permissions).
+The permissions described above grant read-only access to the underlying Analytics Builder model. Management actions on the Analytics Builder model (like create, edit, or delete) require the *CEP management* permissions, see [permissions](/streaming-analytics/introduction-analytics/#permissions).
 
 ### Creating your first smart rule {#creating-your-first-smart-rule}
 
