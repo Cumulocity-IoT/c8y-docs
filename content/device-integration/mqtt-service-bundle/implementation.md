@@ -65,7 +65,9 @@ Notes:
 #### Retained messages {#retained-messages}
 
 MQTT _retained messages_ are not supported by the MQTT Service.
-If the retain flag is set on a `PUBLISH` message from a device, the message will be accepted, but handled as through the flag was not set.
+If the retain flag is set on a `PUBLISH` message from a device, the message will not be accepted and the connection will be closed.
+Devcies should not attempt to re-send an unacknowledged QoS 1 retained message after reconnecting, as this will simply cause the connection to be closed again.
+
 Messages published by the MQTT Service to devices will never have the retain flag set.
 
 #### Last will {#last-will}
@@ -77,7 +79,7 @@ Last will is supported by the MQTT Service with these restrictions:
 * The QoS level of the will message can be QoS 0 (at most once) or Qos 1 (at least once).
   QoS level 2 (exactly once) is not supported.
 * Retained will messages are not supported.
-  If the retain flag is set on the will message, the message will be accepted, but handled as though the flag was not set.
+  If the retain flag is set on the will message, the message will not be accepted.
 
 ### MQTT version 5.0 features {#mqtt-50-features}
 
