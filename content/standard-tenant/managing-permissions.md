@@ -24,7 +24,7 @@ Permissions define what a user is allowed to do in {{< product-c8y-iot >}} appli
 Permissions are not assigned to users directly. To manage permissions more easily, they are grouped into roles (global and inventory roles). Every user can be associated with a number of roles, adding up permissions of the user.
 
 {{< c8y-admon-important >}}
-In the Cumulocity API, each granular permission is identifed by a unique “permission” string, which is prefixed with `ROLE_` (for example, `ROLE_ALARM_READ`, `ROLE_INVENTORY_ADMIN`). Therefore, permissions are frequently referred to as "roles" throughout the API as well as in the configuration files. For example, the microservice manifest includes a `requiredRoles` field which actually expects a permission string.   
+In the Cumulocity API, each granular permission is identifed by a unique “permission” string, which is prefixed with `ROLE_` (for example, `ROLE_ALARM_READ`, `ROLE_INVENTORY_ADMIN`). Therefore, permissions are frequently referred to as "roles" throughout the API as well as in the configuration files. For example, the microservice manifest includes a `requiredRoles` field which actually expects a permission string. See also the glossary for the usage of the terms "[permission](/glossary/#permission)" and "[role](/glossary/#role)" in the Cumulocity context.  
 {{< /c8y-admon-important >}}
 
 {{< c8y-admon-req >}}
