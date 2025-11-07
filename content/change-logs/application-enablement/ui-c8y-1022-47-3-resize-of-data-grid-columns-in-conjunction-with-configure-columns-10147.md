@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improvements to DataGrid Column Handling
+title: Improvements to data grid column handling
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
