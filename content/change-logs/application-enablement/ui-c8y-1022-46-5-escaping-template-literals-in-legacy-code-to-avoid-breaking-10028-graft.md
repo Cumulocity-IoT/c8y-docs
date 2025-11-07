@@ -1,6 +1,6 @@
 ---
 date: ""
-title: escaping template literals in legacy code to avoid breaking (#10028) [GRAFT][release/cd] (#10127)
+title: Escape template literals in legacy HTML widget code to avoid breaking
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
