@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-64630
 version: 1022.46.5
 ---
-Co-authored-by: Jan Hommes <janhommes@users.noreply.github.com>
-Co-authored-by: Jakub Drewniak <103751383+jdre-c8y@users.noreply.github.com>
+In legacy HTML widget code, template literals were not properly escaped which could lead to broken functionality in certain scenarios. This change ensures that all template literals are now correctly escaped.
