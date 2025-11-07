@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Modbus protocol add holding register min and max values should allow floating point numbers (#10165) [GRAFT][release/cd] (#10250)
+title: Improved Value Normalisation for Modbus Registers
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5012
 version: 1022.47.2
 ---
-Co-authored-by: Dominik Schmitz <dominik.schmitz@cumulocity.com>
+In the Device Management app, it is now possible to enter decimal values as minimum and maximum for Modbus register value normalisation. Previously, the interface suggested that values like 655.1 were allowed, but only whole numbers could be saved, which prevented some device configurations. With this update, the app accepts floating point numbers in all relevant fields for Cloud fieldbus types, including Modbus. This ensures that register settings can match the capabilities of your devices and allows for more accurate value scaling.
