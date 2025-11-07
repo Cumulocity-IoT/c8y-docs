@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improved Value Normalisation for Modbus Registers
+title: Improved value normalization for Modbus registers
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
