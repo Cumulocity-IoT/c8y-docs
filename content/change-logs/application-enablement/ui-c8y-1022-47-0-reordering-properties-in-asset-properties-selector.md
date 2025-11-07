@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Asset property selector allows reordering properties using drag and drop
+title: Asset property selector allows reordering of properties
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
