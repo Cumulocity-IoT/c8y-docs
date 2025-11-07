@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64675
 version: 1022.47.0
 ---
-The asset property selector is used to select properties to be displayed in various places in the application. Previously, the order of the properties could not be changed. With this update, it is now possible to reorder the properties in the asset property selector using drag and drop. This allows users to customize the order in which properties are displayed to better suit their needs and preferences.
+The asset property selector is used to select properties to be displayed in various places in the platform. Previously, the order of the properties could not be changed. With this update, you can now reorder the properties in the asset property selector using drag and drop. This allows users to customize the order in which properties are displayed to better suit their needs and preferences.
