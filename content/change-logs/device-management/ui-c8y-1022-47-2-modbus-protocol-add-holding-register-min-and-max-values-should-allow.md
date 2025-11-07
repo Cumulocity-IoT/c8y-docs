@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5012
 version: 1022.47.2
 ---
-In the Device Management app, it is now possible to enter decimal values as minimum and maximum for Modbus register value normalisation. Previously, the interface suggested that values like 655.1 were allowed, but only whole numbers could be saved, which prevented some device configurations. With this update, the app accepts floating point numbers in all relevant fields for Cloud fieldbus types, including Modbus. This ensures that register settings can match the capabilities of your devices and allows for more accurate value scaling.
+In the Device Management application, it is now possible to enter decimal values as minimum and maximum values for Modbus register value normalization. Previously, values like 655.1 were allowed in the UI, but only whole numbers were saved, which prevented exact device configurations. With this change, the application accepts floating point numbers in all relevant fields for Cloud fieldbus types, including Modbus. This ensures that register settings can match the capabilities of your devices and allows for more accurate value scaling.
