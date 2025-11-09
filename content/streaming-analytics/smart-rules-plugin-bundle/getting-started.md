@@ -23,11 +23,11 @@ The **Smart rule instances** permission under [global roles](/standard-tenant/ma
 |Permission|Description|
 |---------|-----------|
 |**READ**|Grants read-only access to smart rule instances. Users with this permission can view existing instances but cannot create, update, or delete them.|
-|**ADMIN**|Grants full control over smart rule instances. Users with this permission can create, read, update, and delete (CRUD) smart rule instances.|
+|**ADMIN**|Grants permission to create, read, update, and delete (CRUD) smart rule instances.|
 
 These permissions ensure fine-grained access control, allowing administrators to manage user privileges based on operational requirements.
 
-The permissions described above grant read-only access to the underlying Analytics Builder model. Management actions on the Analytics Builder model (like create, edit, or delete) require the *CEP management* permissions, see [permissions](/streaming-analytics/introduction-analytics/#permissions).
+The permissions described above grant read-only access to the underlying Analytics Builder model. Adminstrator actions on the Analytics Builder models (like create, edit, or delete) require the *CEP management* permissions, see [permissions](/streaming-analytics/introduction-analytics/#permissions).
 
 ### Creating your first smart rule {#creating-your-first-smart-rule}
 
