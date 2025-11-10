@@ -210,7 +210,7 @@ Follow the steps documented at [Installing Edge](https://cumulocity.com/docs/202
 {{< c8y-admon-important >}}
 Ensure that there is sufficient disk space available on the machine in which you intend to install Edge 2025.
 
-After installing Edge 2025, configure the Edge **domain** and **license** to match those of the Edge Appliance VM you are migrating. For details, refer to [Modifying Edge](https://cumulocity.com/docs/2025/edge-kubernetes/manage-edge/#modify-edge)
+After installing Edge 2025, configure the Edge **domain** and **license** to match those of the Edge Appliance VM you are migrating. For details, refer to [Modifying Edge](https://cumulocity.com/docs/2025/edge-kubernetes/manage-edge/#modify-edge).
 {{< /c8y-admon-important >}}
 
 ### Step 4 - Restore MongoDB data from the backup
