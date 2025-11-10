@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Module federation plugin styling docs refactor and webpack styles from node_modules fix
+title: Module federation plugin documentation refactored and loading of webpack styles from node_modules fixed
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
