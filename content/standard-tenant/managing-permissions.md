@@ -35,7 +35,7 @@ ROLES & PERMISSIONS:
 * To assign owned roles to users ("feature-user-hierarchy" application subscription required): CREATE permission for the "User management" permission type.
 * To create new roles with available (owned) permissions: CREATE and ADMIN permission.
 
-The above permissions can be used to create roles for robust user management. Every new tenant has specified typical roles by default:
+The above permissions can be used to create roles for robust user management. Every new tenant has these roles by default:
 * Global User Manager - Can access and modify the full user hierarchy
 * Shared User Manager - Can create new own sub-users and manage them ("feature-user-hierarchy" application subscription required)
 {{< /c8y-admon-req >}}
