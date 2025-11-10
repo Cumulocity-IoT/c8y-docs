@@ -2,8 +2,8 @@
 date: 
 title: New DeviceService bundle
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+  - value: change-pXAlHAWka
+    label: Preview
 product_area: Analytics
 component:
   - value: component-M5-cepIIS
