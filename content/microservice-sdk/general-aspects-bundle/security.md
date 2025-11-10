@@ -141,7 +141,7 @@ Required roles are added to the service users.
 * Roles: The custom permissions provided to tenant platform users by the microservice developer.
 These permissions can be assigned or revoked to the tenant platform users or groups using the Administration application.
 
-Custom rpermissions must adhere to this name format to be shown in the UI:
+Custom permissions must adhere to this name format to be shown in the UI:
 
 ROLE_<NAME>_(READ|ADMIN|CREATE)
 
