@@ -1,6 +1,6 @@
 ---
 date: 
-title: The DeviceService Bundle
+title: New DeviceService bundle
 change_type:
   - value: change-inv-3bw8e
     label: Announcement
