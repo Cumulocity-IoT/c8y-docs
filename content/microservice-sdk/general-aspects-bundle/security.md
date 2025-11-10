@@ -138,10 +138,10 @@ The following role types are defined for users:
 * Required roles: The permissions that are predefined to allow access to {{< product-c8y-iot >}} REST APIs.
 For instance, if a microservice creates measurements using the service user, the measurement ADMIN permission must be added as a required role/permission of the application.
 Required roles are added to the service users.
-* Roles: The custom roles provided to tenant platform users by the microservice developer.
+* Roles: The custom permissions provided to tenant platform users by the microservice developer.
 These permissions can be assigned or revoked to the tenant platform users or groups using the Administration application.
 
-Custom roles/permissions must adhere to this name format in order to be shown in the UI:
+Custom rpermissions must adhere to this name format to be shown in the UI:
 
 ROLE_<NAME>_(READ|ADMIN|CREATE)
 
