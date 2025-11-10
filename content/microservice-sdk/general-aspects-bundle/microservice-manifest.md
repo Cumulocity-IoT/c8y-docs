@@ -160,7 +160,7 @@ See below for detailed information about available settings.
 <tr>
 <td style="text-align:left">requiredRoles</td>
 <td style="text-align:left">String[ ]</td>
-<td style="text-align:left">List of permissions required by a microservice to work. <b>Important:</b> Be aware that despite the term "role" in the field name, the field expects a "permission" string (for example, ROLE_INVENTORY_ADMIN). <br/>Default: [ ] (no permissions)</td>
+<td style="text-align:left">List of permissions required by a microservice to work. <b>Important:</b> Be aware that despite the use of term "role" in the field name, the field expects a "permission" string (for example, ROLE_INVENTORY_ADMIN). <br/>Default: [ ] (no permissions)</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
