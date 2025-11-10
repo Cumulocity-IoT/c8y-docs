@@ -13,6 +13,7 @@ Edge has been tested and officially supported on Kubernetes version 1.32.x, the 
 
 **Important:**
 * Edge requires that your Kubernetes cluster has support for **LoadBalancer services**.
+* Edge requires that your Kubernetes cluster does not have an **Ingress provider** (for example, Traefik) enabled on common ports that would block those used by Edge, such as ports 80 and 443.
 * Edge requires that your Kubernetes cluster has **dynamic volume provisioning** enabled with a default storage class.
 * Edge is tested and supported on **single-node Kubernetes clusters** only.
 {{< /c8y-admon-info >}}
