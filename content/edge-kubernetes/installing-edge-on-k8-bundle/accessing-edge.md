@@ -7,13 +7,12 @@ layout: redirect
 If you have installed Edge on your local machine, then you should be able to immediately access Edge in your browser with the URL `http://localhost`. If it is on a remote machine or a VM with a simple network setup and no firewall in the way, you can use `http://<IP of remote machine or VM>`.
 
 {{< c8y-admon-info >}}
-If you have performed the install on a self-managed Kubernetes cluster rather than installing with the `c8yedge` tool, it is sometimes the case that Edge is not accessible via either URL. This depends on the Kubernetes distribution you have used. See [Accessing Edge via an external IP](/edge-kubernetes/manage-edge/#external-ip).
+If you have performed the install on a self-managed Kubernetes cluster rather than installing with the **c8yedge** tool, it is sometimes the case that Edge is not accessible via either URL. This depends on the Kubernetes distribution you have used. See [Accessing Edge via an external IP](/edge-kubernetes/manage-edge/#external-ip).
 {{< /c8y-admon-info >}}
 
 When signing into Edge this way, you will first be prompted for the {{< product-c8y-iot >}} tenant ID. Edge has two tenants, `management` and `edge`. For both the {{< management-tenant >}} and the Edge tenant, use the following credentials:
 * **Username:** `admin`
-* **Password:** Use the password you provided during the Edge installation. This password was set either via the `c8yedge` tool's `--cumulocity-password` flag or through the Kubernetes Secret specified in the Edge CR field `spec.cumulocityPasswordSecretName`.
-
+* **Password:** Use the password you provided during the Edge installation. This password was set either via the c8yedge tool's `--cumulocity-password` flag or through the Kubernetes Secret specified in the Edge CR field `spec.cumulocityPasswordSecretName`.
 
 ### Accessing Edge using the domain name {#accessing-cumulocity-iot-edge-using-the-domain-name}
 {{< c8y-admon-info >}}
@@ -59,7 +58,7 @@ To access Edge, enter one of the following URLs in the browser:
 
 This will bring up the below login screen. For both the {{< management-tenant >}} and the Edge tenant, use the following credentials:
 * **Username:** `admin`
-* **Password:** Use the password you provided during the Edge installation. This password was set either via the `c8yedge` tool's `--cumulocity-password` flag or through the Kubernetes Secret specified in the Edge CR field `spec.cumulocityPasswordSecretName`.
+* **Password:** Use the password you provided during the Edge installation. This password was set either via the c8yedge tool's `--cumulocity-password` flag or through the Kubernetes Secret specified in the Edge CR field `spec.cumulocityPasswordSecretName`.
 
 {{< c8y-admon-info >}}
 You can change the {{< management-tenant >}} and the Edge tenant admin password independently using the [user interface](/standard-tenant/managing-users/) or the {{< product-c8y-iot >}} API. 
