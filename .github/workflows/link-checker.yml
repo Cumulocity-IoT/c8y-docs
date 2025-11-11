@@ -1,17 +1,52 @@
 name: Link Checker
 
 on:
- schedule:
-  - cron: '0 6 * * 1'
- workflow_dispatch: 
-  
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+    inputs:
+      dispatcher:
+        description: 'Dispatch link checker for monitored branches? (true/false)'
+        required: true
+        default: 'false'
+
 permissions:
-    contents: read
-    pull-requests: write
-    issues: write
+  contents: read
+  pull-requests: write
+  issues: write
+
+env:
+  MONITORED_BRANCHES: 'develop,release/y2025'
 
 jobs:
+  dispatch-for-selected-branches:
+    name: Run Link Checker for selected branches
+    if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' && inputs.dispatcher == 'true' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Generate token for GH CLI
+        uses: actions/create-github-app-token@v2
+        id: linkcheck-token
+        with:
+          app-id: ${{ vars.LINKCHECK_APP_ID }}
+          private-key: ${{ secrets.LINKCHECK_PRIVATE_KEY }}
+
+      - name: Dispatch link check for selected branches
+        env:
+          GH_TOKEN: ${{ steps.linkcheck-token.outputs.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          IFS=',' read -ra branches <<< "$MONITORED_BRANCHES"
+          for branch in "${branches[@]}"; do
+            echo "Triggering Link Checker workflow for branch: $branch"
+            gh workflow run link-checker.yml --ref "$branch" -f dispatcher "false"
+            sleep 30
+          done
+
   link-check:
+    name: Run Link Check
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.dispatcher == 'false' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -33,15 +68,29 @@ jobs:
           cd broken-links-script
           npm test
 
+      - name: Determine label based on branch
+        if: always()
+        id: label
+        run: |
+          LABEL_NAME="broken-link-${GITHUB_REF_NAME}"
+          if ! gh label list | grep -q "^${LABEL_NAME}\b"; then
+            gh label create "${LABEL_NAME}" --description "Indicates broken links in branch ${GITHUB_REF_NAME}"
+          fi
+          echo "label=$LABEL_NAME" >> $GITHUB_OUTPUT
+
       - name: Create GitHub issue if tests fail
         if: failure()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          branch_name="${GITHUB_REF_NAME}"
+          label="${{ steps.label.outputs.label }}"
+          echo "Creating issue for branch: ${branch_name} with label: ${label}"
+
           issue_url=$(gh issue create \
-            --title "Weekly Link Check Failed" \
+            --title "Weekly Link Check Failed for ${branch_name}" \
             --body "Broken links detected in workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
-            --label "broken-link" \
+            --label "${label}" \
             --assignee "BeateRixen")
 
           echo "Result: ${issue_url}"
