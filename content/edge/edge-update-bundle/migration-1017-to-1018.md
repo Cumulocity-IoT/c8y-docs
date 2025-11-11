@@ -59,7 +59,7 @@ If you have both the Edge 10.17 and Edge 10.18 appliances on the same host machi
 {{< /c8y-admon-important >}}
 
 {{< c8y-admon-info >}}
-Install the Edge 10.18 appliance with the domain and license to match those of the older Edge Appliance VM you are migrating. For detailed steps, refer to [Installing Edge](/edge/edge-installation).
+Install the Edge 10.18 appliance with the same domain and license as those of the older Edge Appliance VM you are migrating. For detailed steps, refer to [Installing Edge](/edge/edge-installation).
 {{< /c8y-admon-info >}}
 
 1. Refer to [Configuring the Edge infrastructure](/edge/edge-infrastructure/) for detailed instructions on importing the Edge 10.18 appliance.
