@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Updated the public-options URL to reference the new endpoint."
+title: "Saved custom translations are now listed in Localization page"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -14,5 +14,4 @@ build_artifact:
 ticket: "CTM-2541"
 version: "1020.2.3"
 ---
-Updated the public-options URL for the translation directory service to
-point to the new endpoint
+Previously, custom translations in the Localization page were not being listed, preventing users from modifying or deleting the saved custom translations. This is now resolved and the translations are listed.
