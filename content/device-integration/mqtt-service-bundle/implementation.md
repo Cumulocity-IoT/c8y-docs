@@ -154,59 +154,38 @@ These features relate to MQTT version 5.0 flags and properties that can be inclu
 
 ### Topics {#mqtt-topics}
 
-MQTT Service topics are mapped to the Messaging Service subscriptions with identical names, including additional URL encoding.
-The Messaging Service subscriptions reliably store the topic messages for asynchronous processing.
-The messages stored on these subscriptions can be consumed using a dedicated [Java Client](/device-integration/mqtt-service#java-client).
+In general, the MQTT Service does not impose any restrictions on topic structure, and devices may use any topic name allowed by the MQTT Specification.
+However, there are a small number of topic names that are reserved for historical compatibility or potential future use.
+These topic name cannot be used by devices:
 
-#### Topic restrictions {#topic-restrictions}
-
-The MQTT Service does not impose any topic structure.
-There are just a few topic names which are reserved for historic purposes and future use, namely:
-* All [SmartREST 2.0](/smartrest/smartrest-two) related topics
-* `error`
+* All _system topics_ (topic name beginning with `$`) unless specifically documented
 * `devicecontrol/notifications`
+* `error`
 
-{{< c8y-admon-info >}}
-Wildcard topics (`+`, `#`) and system topics starting with `$` are not currently supported.
-{{< /c8y-admon-info >}}
+There is a hard limit on the maximum length of a topic name.
+See the [Service Quotas](/service-terms/quotas#mqtt-service) section for details of the limit.
 
-Other than these restrictions you are free to use any topic name which is compatible with the <a href=http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718106 target=_blank>MQTT specification</a>.
+#### Core MQTT topics {#core-mqtt-topics}
+
+The {{< product-c8y-iot >}} [Core MQTT](/device-integration/mqtt) protocols use a specific set of topics defined in the [MQTT quick reference](/smartrest/quick-reference/#topic-format).
+All message publication and subscription on these topics is assumed to be for Core MQTT devices and will be routed to and from the {{< product-c8y-iot >}} core.
+All other topics are available for use by "generic" MQTT devices.
+Message traffic on generic topics will be routed to and from the {{< product-c8y-iot >}} Messaging Service where it can be accessed by microservice and external application clients.
+
+There is no overlap between the Core MQTT and generic device topic spaces.
+However, to avoid potentially hard to diagnose failures, generic devices should avoid using any topic name starting with the Core MQTT prefixes `s/`, `t/`, `q/` or `c/`, even though some topics under those prefixes are not used by Core MQTT.
 
 ### Payloads {#mqtt-payloads}
 
-MQTT protocol messages map bidirectionally to the internal MQTT Service message format which includes the original payload and additional metadata fields.
-Assuming Java types, the packed message structure looks as follows:
+The MQTT Service does not impose any specific message payload format.
+Message payloads are treated as opaque sequences of bytes that are delivered exactly as they were received.
+The content of a message payload will not have any effect on the behaviour of the MQTT Service.
 
-`MqttServiceMessage`
-| Field name | Type                | Description                    |
-|:-----------|:--------------------|:-------------------------------|
-| payload    | byte[]              | MQTT payload                   |
-| metadata   | MqttServiceMetadata | Metadata from the MQTT message |
-
-`MqttServiceMetadata`
-| Field name             | Type    | Description                                                             |
-|:-----------------------|:--------|:------------------------------------------------------------------------|
-| clientId               | String  | Unique MQTT client identifier, usually used as an external identifier   |
-| messageId              | int     | Unique MQTT message ID per client, available only with QoS 1 and 2      |
-| dupFlag                | boolean | Indicates this message is a resend by the MQTT client                   |
-| userProperties         | Map     | Reserved for future use of MQTT 5.0 features                            |
-| payloadFormatIndicator | enum    | Reserved for future use of MQTT 5.0 features                            |
-| contentType            | String  | Reserved for future use of MQTT 5.0 features                            |
-| correlationData        | byte[]  | Reserved for future use of MQTT 5.0 features                            |
-| responseTopic          | String  | Reserved for future use of MQTT 5.0 features                            |
-| topic                  | String  | The name of the MQTT topic that the message was published by the client |
-
-The [Java Client](/device-integration/mqtt-service#java-client) contains classes representing the above model.
-
-#### Payload restrictions {#payload-restrictions}
-
-The MQTT Service does not impose any specific payload format.
-All the incoming MQTT messages must meet the specification in terms of fixed and variable headers, but the payload for published messages is unrestricted.
-A Streaming Analytics app or a custom microservice will receive the exact same set of bytes that was sent by an MQTT device, and is responsible for converting these to a {{< product-c8y-iot >}} compatible format.
-
-The size of the MQTT payload is limited to a maximum value that includes both the message header and body.
-The size of an MQTT packet header varies, but it will be at least 2 bytes.
-See the [Service Quotas](/service-terms/quotas#mqtt-service) section for details of the current limit in force.
+There is a system-wide hard limit on the maximum size of an MQTT message, and a per-tenant soft quota that will be set lower than the hard limit by default.
+See the [Service Quotas](/service-terms/quotas#mqtt-service) section for details of these limits.
+The soft quota can be increased up to the hard limit on request, although this may incur additional costs for the tenant.
+The message size used by these limits includes the message header as well as the payload.
+Message header size can vary significantly, particularly for MQTT version 5.0 devices, but it will always be at least 2 bytes, and usually more.
 
 ### Error reporting {#mqtt-error-reporting}
 
