@@ -10,7 +10,7 @@ sector:
 helpcontent:
 - label: managing-permissions
   title: Managing permissions
-  content: "Permissions define what a user is allowed to do in Cumulocity applications. To manage permissions more easily, they are grouped into global and inventory roles. Every user can be associated with a number of roles, adding up permissions of the user.
+  content: "Permissions define what a user is allowed to do in Cumulocity applications. To manage permissions more easily, they are grouped into global and inventory roles. When you assign one or more roles to a user, they gain the combined permissions of all these roles.
 
 
   In the **Global roles** tab you can find the roles which grant permissions on a general level. There are several global roles pre-defined (which may serve as a template), but you can define your own according to your needs.
