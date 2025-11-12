@@ -110,10 +110,10 @@ Using features described as "not supported" may cause messages to be rejected, o
 | Last Will                    | Supported     | With the same restrictions on QoS level, retained messages and device isolation as for [version 3.1.1](#last-will).<br>These additional version 5.0 properties on the will message are supported:<br>_Delay Interval_, _Payload Format Indicator_, _Content Type_, _Response Topic_, _Correlation Data_ and _User Properties_.<br>The _Message Expiry Interval_ property on the will message is ignored. |
 | Receive Maximum              | Supported     | The MQTT Service will limit the number of unacknowledged QoS 1 messages for the device to the requested maximum. |
 | Maximum Packet Size          | Supported     | The MQTT Service will not send any message larger than the requested size to this device.<br>Note that messages larger than the reqeusted size will be **silently discarded**. |
+| Request Problem Information  | Supported     | A device should not assume that the MQTT Service will send a reason string, even when this has been requested.   |
 | Session Expiry Interval      | Ignored       | The requirement to set Clean Start on all connections means that session data is not retained.                   |
 | Topic Alias Maximum          | Ignored       | The MQTT Service will not use topic aliases on messages sent to devices.                                         |
 | Request Response Information | Ignored       | The MQTT Service will not send Request/Response hints in the `CONNACK` packet.                                   |
-| Request Problem Information  | ???           | TBD                                                                                                              |
 | User properties              | Ignored       | User properties on the `CONNECT` packet will be ignored by the MQTT Service.                                     |
 | Authentication Method        | Ignored       | Extended authentication methods are not supported.                                                               |
 | Authentication Data          | Ignored       | Extended authentication methods are not supported.                                                               |
