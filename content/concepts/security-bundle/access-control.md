@@ -19,7 +19,7 @@ Permissions define explicitly what functionality can be executed by a user.
 
 {{< product-c8y-iot >}} distinguishes read permissions and administration permissions. Read permissions enable users to read data. Administration permissions enable users to create, update and delete data. Read and administration permissions are separately available for the different types of data in {{< product-c8y-iot >}}. For example, there are read permissions for inventory data, measurements, operations and so forth.
 
-To manage permissions more easily, they are grouped into roles. Every user can be associated with a number of roles, adding up permissions of the user.
+To manage permissions more easily, they are grouped into roles. When you assign one or more roles to a user, they gain the combined permissions of all these roles.
 
 The following types of roles can be associated with users:
 
