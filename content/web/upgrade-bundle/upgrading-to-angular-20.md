@@ -15,7 +15,7 @@ Starting with version 1023.0.0, the Web SDK supports Angular 20. The following c
 - Follow the `Angular 20` upgrade guide: [Updating to version 20](https://angular.dev/update-guide?v=19.0-20.0&l=2).
 - Adjust the `main.ts` and `bootstrap.ts` files according to the git diffs [mentioned below](#track-changes-between-releases).
 
-### Breaking changes
+### Breaking changes {#breaking-changes}
 
 The Web SDK version 1023.0.0 introduces multiple breaking changes.
 
@@ -35,7 +35,7 @@ The `QueriesUtil` class now includes type definitions. Depending on your usage o
 
 The `BulkSingleOperationsListModule` has been removed. Use `SingleOperationsListComponent` as a standalone component instead.
 
-### Track changes between releases
+### Track changes between releases {#track-changes-between-releases}
 
 Want to see exactly what changed within the code between versions? You can easily review the differences by examining the git diffs for each application:
 
