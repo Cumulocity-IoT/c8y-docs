@@ -1,6 +1,6 @@
 ---
 date: 2025-11-12
-title: DeviceService bundel for MQTT Service support in EPL Apps
+title: DeviceService bundle for MQTT Service support in EPL Apps
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
