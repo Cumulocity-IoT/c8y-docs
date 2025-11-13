@@ -53,7 +53,7 @@ Under **Dynamic access mapping principle** you can select one of the following o
 
 * **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be cleared**: This is the default. Dynamic access mapping assigns user roles, based on the token, on every user login. It is not possible to change the user roles inside {{< product-c8y-iot >}} as they would be overwritten on the next user login. To change this behavior, select one of the remaining options.
 
-If you select either of the first two options mentioned above, this will also allow administrators to edit the roles of SSO users in the user management. For details, refer to [Managing permissions](/standard-tenant/managing-permissions/#to-assign-global-roles).
+If you select either of the first two options mentioned above, this will also allow administrators to edit the roles of SSO users in the user management. For details, refer to [Managing permissions and roles](/standard-tenant/managing-permissions/#to-assign-global-roles).
 
 The dynamic access mapping configuration allows you to define the rules for assigning roles to users based on JWT claims. The rule that matches the token's value is used to assign the appropriate set of roles to the user.
 
@@ -142,12 +142,14 @@ Each token is signed by a signing certificate. The following options are availab
 ### Placeholders {#placeholders}
 Inside some fields you can use placeholders that are resolved by {{< product-c8y-iot >}} at runtime. Available placeholders are:
 
-|Placeholder|Description|
-|:---|:---|
-|clientId|Value of the **Client ID** field
-|redirectUri| Value of the **Redirect URI** field
-|code|Code returned by the authorization server in response to authorization request
-|refreshToken| Refresh token returned by the authorization server after token request
+| Placeholder  | Description                                                                    |
+|:-------------|:-------------------------------------------------------------------------------|
+| clientId     | Value of the **Client ID** field                                               
+| redirectUri  | Value of the **Redirect URI** field                                            
+| code         | Code returned by the authorization server in response to authorization request
+| refreshToken | Refresh token returned by the authorization server after token request         
+| id_token     | A JWT token issued by the authorization server that contains claims about the authenticated user; can be used for logout from the authorization server
+| idp_hint     | Value of the `idp_hint` parameter passed by the UI application, to select which IdP should be preselected during the authentication flow                   
 
 These placeholders can be used in authorization requests, token requests, refresh requests and logout request in the fields:
 
@@ -165,3 +167,33 @@ Placeholders can also be used as a part of text:
 {{< c8y-admon-info >}}
 Placeholders are not validated for correctness. Any not recognized or misspelled placeholder will be left in text unprocessed.
 {{< /c8y-admon-info >}}
+
+### Client suggested identity provider {#client-suggested-identity-provider}
+When the default login mode is **Single sign-on redirect**, and the authentication server supports multiple identity providers, instead of requesting the user to select an identity provider, the `idp_hint` parameter can be collected by {{< product-c8y-iot >}} and forwarded to the authentication server as part of the initial authorization request. This ensures that the user is redirected directly to the specified IdP.
+
+The `idp_hint` is a custom parameter supported by the application to improve the login experience in multi-identity provider (IdP) scenarios.
+It allows a client application (for example, a custom welcome page) to suggest which IdP should be preselected during the authentication flow.
+
+1. A client custom application appends the `idp_hint` parameter to the login URL:
+
+```
+https://{{< domain-c8y >}}/apps/public/login/index.html?idp_hint=google
+```
+
+2. The {{< product-c8y-iot >}} application extracts the value of `idp_hint` (for example, "google").
+3. During the OAuth2/OIDC authorization request, this value is mapped and passed to the underlying authentication server.
+
+#### Example with Keycloak {#example-with-keycloak}
+Keycloak supports [an identity provider hinting feature](https://www.keycloak.org/docs/latest/server_admin/index.html#_client_suggested_idp) using the `kc_idp_hint` parameter.  
+If the `idp_hint` value is "google", and the authorization request headers are configured with key `kc_idp_hint`, value `${idp_hint}`, {{< product-c8y-iot >}} will translate it into a Keycloak compatible parameter and forward it:
+
+```
+https://keycloak.com/realms/myrealm/protocol/openid-connect/auth
+  ?kc_idp_hint=google
+  &...
+```
+
+In this example:
+- A custom "welcome page" provides `idp_hint=google`.
+- {{< product-c8y-iot >}} translates this hint into Keycloak’s `kc_idp_hint=google`.
+- The user is immediately redirected to the Google IdP without having to manually select it from the Keycloak login screen.

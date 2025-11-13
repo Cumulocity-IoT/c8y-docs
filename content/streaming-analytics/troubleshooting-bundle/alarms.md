@@ -152,7 +152,7 @@ To diagnose high-memory-consuming models and EPL apps, you can try the following
 
 If the memory continues to grow, then when it reaches the limit, the correlator will run out of memory and Apama-ctrl will shut down. To prevent the microservice from going down, you must fix this as a priority.
 
-See also [Diagnostic tools for Apama in {{< product-c8y-iot >}}](https://techcommunity.cumulocity.com/t/apama-in-cumulocity-iot/1077) in the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}).
+See also [Diagnostic tools for Apama in {{< product-c8y-iot >}}](https://community.cumulocity.com/t/apama-in-cumulocity-iot/1077) in the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}).
 
 
 #### Warning or higher level logging from an EPL file {#apama_ctrl_fatalcritwarn}
@@ -373,7 +373,7 @@ A problem is likely to trigger these alarms, followed by this alarm:
 This alarm is raised whenever the CEP queue for the respective tenant is full.
 It is coming from {{< product-c8y-iot >}} Core, but concerns Apama-ctrl.
 
-Karaf nodes that send events to the CEP engine maintain per-tenant queues for the incoming events. This data gets processed by the CEP engine for the hosted CEP rules. For various reasons, these queues can become full and cannot accommodate newly arriving data. In such cases, an alarm is sent to the platform so that the end users are notified about the situation.
+Core java application nodes that send events to the CEP engine maintain per-tenant queues for the incoming events. This data gets processed by the CEP engine for the hosted CEP rules. For various reasons, these queues can become full and cannot accommodate newly arriving data. In such cases, an alarm is sent to the platform so that the end users are notified about the situation.
 
 If the CEP queue is full, older events are removed to handle new incoming events. To avoid this, you must diagnose the cause of the queue being full and resolve it as soon as possible.
 

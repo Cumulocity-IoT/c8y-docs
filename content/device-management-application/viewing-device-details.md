@@ -28,7 +28,7 @@ Several individual tabs, which you do not find listed here, may be described in 
 
 Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.
 
-Depending of the type and usage of a device, further actions are provided in an action menu when clicking **More...** at the right of the top menu bar.
+Depending of the type and usage of a device, further actions are provided in an context menu when clicking **More...** at the right of the top menu bar.
 
 ![More menu](/images/users-guide/DeviceManagement/devmgmt-devices-more.png)
 
@@ -37,6 +37,21 @@ Details on these additional menu items are provided where required.
 ### Alarms {#alarms}
 
 The **Alarms** tab provides information on the alarms of a device. See [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for detailed information on alarms.
+
+### Smart rules (NEW) {#smart-rules}
+
+{{< c8y-admon-preview >}}
+This feature is in Public Preview and may be subject to change in the future.
+{{< /c8y-admon-preview >}}
+
+The **Smart rules (NEW)** tab allows to create and manage the Analytics Builder model instances directly from the context of a device or group.
+
+![Smart rules new tab](/images/streaming-analytics/smart-rules-plugin/smart-rules-list.png)
+
+To create your first rule, refer to [Create your first rule](/streaming-analytics/smart-rules-plugin/#creating-your-first-smart-rule).
+
+For more details about smart rules (NEW), refer to [Smart rules plugin](/streaming-analytics/smart-rules-plugin/#getting-started).
+
 
 ### Availability {#availability}
 

@@ -4,48 +4,45 @@ title: E
 layout: bundle
 sector:
   - getting_started
+_build:
+  render: false
+
 ---
+
+### Edge Server {#edge-server}
+
+Edge Server is an informal term for {{< product-c8y-iot >}} Edge. See [{{< product-c8y-iot >}} Edge](#edge).  
 
 
 ### {{< enterprise-tenant >}} {#enterprise-tenant}
 
-A tenant type in the [{{< product-c8y-iot >}} tenant hierarchy](/glossary/t/#tenant-hierarchy).
-
-{{< enterprise-tenant >}}s offer additional administrative functionality compared to a {{< standard-tenant >}}, the major difference being multi-tenancy. Using an {{< enterprise-tenant >}}, you can create and manage subtenants, manage the subscribed applications/features of the subtenants, and invoice subtenants based on usage statistics. Moreover, {{< enterprise-tenant >}}s offer individual customization features, such as Branding for the creation of an individual look & feel.
-
-See also [{{< standard-tenant >}}](/glossary/s/#standard-tenant) and [{{< management-tenant >}}](/glossary/m/#management-tenant).
+An {{< enterprise-tenant >}} is a [tenant](#tenant) type in the {{< product-c8y-iot >}} [tenant hierarchy](#tenant-hierarchy) that provides advanced administrative capabilities, primarily focused on managing multiple [subtenants](#subtenant). An {{< enterprise-tenant >}} (sometimes also referred as “parent” tenant) can create, manage, and bill its own subtenants and enables features like custom [branding](#branding), custom domain names, and [user hierarchies](#user-hierarchy).   
 
 
-### Edge Server {#edge-server}
-Edge Server is an informal term sometimes used to refer to {{< product-c8y-iot >}} Edge, a single-server variant of the {{< product-c8y-iot >}} platform, designed to run in factories on industrial PCs or local servers, that is, in the same site (“onsite”) in which the IoT assets are located. For details, see the [{{< product-c8y-iot >}} Edge documentation](/{{< c8y-edge-version-major >}}/sector/edge_server/).
+### EPL (Event Processing Language) {#epl}
 
-See also [Thick Edge](/glossary/t/#thick-edge)
-
-
-### Event Processing Language (EPL) {#epl}
-
-On top of {{< product-c8y-iot >}} you can use the Apama streaming analytics engine to define business operations for real-time processing. The operation logic is implemented in [Apama’s Event Processing Language (EPL)](/streaming-analytics/epl-apps/).
-EPL covers statements, which are organized into actions and monitors. EPL files can be edited directly from within {{< product-c8y-iot >}} using the [{{< product-c8y-iot >}} Streaming Analytics](/glossary/c/#streaming-analytics) application. Alternatively, you can develop them locally using the {{< apama-vscode >}}. You can deploy your EPL files as Apama applications to {{< product-c8y-iot >}}.
-
-For more details see the [Apama documentation]({{< link-apama-webhelp >}}).
+[Apama](#apama) EPL is a domain-specific, event-driven programming language with a syntax similar to Java, designed for writing programs that process [events](#event) in realtime. In {{< product-c8y-iot >}}, EPL logic is typically implemented as [EPL apps](#epl-apps) within the [Streaming Analytics](#streaming-analytics) application.  
 
 
 ### EPL Apps {#epl-apps}
 
-EPL Apps is part of the [{{< product-c8y-iot >}} Streaming Analytics](/glossary/c/#streaming-analytics) application. It allows you to develop EPL apps (that is, single \*.mon files) directly within {{< product-c8y-iot >}}, written in Apama EPL. You can also import existing \*.mon files as EPL apps into {{< product-c8y-iot >}}. When you activate an EPL app from the Streaming Analytics application, you deploy it to {{< product-c8y-iot >}}.
-
-See also [Event Processing Language (EPL)](/glossary/e/#epl) and [Analytics Builder](/glossary/a/#analytics-builder).
-
-For more details see [Analytics > Streaming Analytics > EPL Apps](/streaming-analytics/epl-apps).
+EPL Apps is part of the [{{< product-c8y-iot >}} Streaming Analytics](#streaming-analytics) application. It allows you to develop an EPL app directly within {{< product-c8y-iot >}} using [Apama](#apama) [EPL](#epl), giving you a pro-code environment to define your streaming analytics applications.   
 
 
 ### Event {#event}
 
-In the context of {{< product-c8y-iot >}}:
+A {{< product-c8y-iot >}} event is a time-stamped informational record that transmits real-time information on any state change of a [device](#device) or [asset](#asset).
+Next to {{< product-c8y-iot >}} events, the following types of events are used within the {{< product-c8y-iot >}} platform:
+- In [Apama](#apama) ([Streaming Analytics](#streaming-analytics)), an "event" is the fundamental data structure for all interactions.
+- [Alarms](#alarm) are a special type of event.
+- [Audit logs](#audit-log) are security-relevant events.
 
-Events contain real-time information from the sensor network, such as the triggering of a door sensor. Events can also be [alarms](/glossary/a/#alarm). In addition, security-related events are shown as audit logs.
 
-In the context of Apama:
+### Export {#export}
 
-Conceptually, an event is an occurrence of a particular item of interest at a specific time.
-Apama events are used for all interactions with {{< product-c8y-iot >}}, such as listening for and creating device measurements, alarms and ({{< product-c8y-iot >}}) events.
+Export is a feature of the [Cockpit application](#cockpit-application) that allows users to extract a limited amount of platform data, such as [measurements](#measurement), [alarms](#alarm), or [events](#event), into CSV or XLSX files. Exports can be configured with filters for specific [devices](#device), time ranges, and data fields. The scheduling of recurring exports is a key function, managed by the report-agent microservice and configured within the Cockpit application.   
+
+
+### Extensions {#extensions}
+
+Extensions are official or community-supported packages that add new functionalities to the {{< product-c8y-iot >}} platform. They can include plugins, which add features to existing [applications](#application) at runtime, or blueprints, which are combinations of preconfigured UI functionalities for creating new applications.

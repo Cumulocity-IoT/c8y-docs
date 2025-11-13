@@ -14,8 +14,20 @@ summaryLength = 30
 buildFuture = true
 relativeURLs = true
 
+enableGitInfo = true
+
 [taxonomies]
   sectors = "sector"
+
+[outputs]
+  home = ["HTML", "llmstxt"]
+
+[outputFormats.llmstxt]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
+  suffixes = ["txt"]
 
 [markup]
   [markup.goldmark]
@@ -57,11 +69,11 @@ relativeURLs = true
 
   [[params.additionalResources]]
     name = "Tech Community"
-    link = "https://techcommunity.cumulocity.com/"
+    link = "https://community.cumulocity.com/"
 
   [[params.additionalResources]]
     name = "Learning Portal"
-    link = "https://cumulocity.moodlecloud.com/"
+    link = "https://learning.cumulocity.com/"
 
   [[params.additionalResources]]
     name = "YouTube"
@@ -82,6 +94,10 @@ relativeURLs = true
   [[params.additionalResources]]
     name = "Product Support"
     link = "https://cumulocity.atlassian.net/servicedesk/customer/portals"
+
+  [[params.additionalResources]]
+    name = "Glossary"
+    link = "/glossary/"
 
 
 # Customize

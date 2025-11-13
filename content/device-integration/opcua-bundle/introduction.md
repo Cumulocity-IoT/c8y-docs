@@ -4,6 +4,11 @@ title: Introduction
 layout: redirect
 ---
 
+{{< c8y-admon-preview-toggle >}}
+Toggle on the preview feature documentation to see upcoming changes to the existing functionality.
+{{< /c8y-admon-preview-toggle >}}
+
+
 OPC Unified Architecture (OPC UA) is a standard pushed by the OPC Foundation for industry automation. The goal of OPC UA is to enable the communication between industrial devices. OPC UA is designed to work across technology boundaries (cross-platform). There are two components designed to accomplish this integration:
 
 - OPC UA device gateway
@@ -21,4 +26,4 @@ In order to use OPC UA, you must be subscribed to the "opcua-mgmt-service" micro
 
 To download the gateway navigate to [{{< product-c8y-iot >}} resources](http://resources.cumulocity.com/examples/opc-ua/).
 
-The gateway requires Java 11 in order to run.
+The gateway requires Java 17 in order to run.

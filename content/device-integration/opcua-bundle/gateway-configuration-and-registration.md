@@ -33,7 +33,7 @@ gateway:
 Windows OS is used for the example.
 {{< /c8y-admon-info >}}
 
-### Thin Edge {#thin-edge}
+### thin-edge.io {#thin-edge}
 
 The OPC UA gateway can also be registered and operated via [thin-edge.io](https://thin-edge.io/). In contrast to the standalone mode, `thinEdge` configurations must be added to the YAML file:
 
@@ -54,7 +54,54 @@ gateway:
         deviceId: Thin-Edge_Device
 ```
 
-With the configuration `gateway.thinEdge.enabled: true` you switch to the thinEdge mode. This means that the authentication and registration to the platform will be done via Thin Edge. The OPC UA gateway is automatically registered and created as a sub-device under the Thin Edge device. `gateway.thinEdge.mqttServerURL` and `gateway.thinEdge.deviceId` are the connection information for the MQTT client to connect to the local Thin Edge MQTT broker.
+With the configuration `gateway.thinEdge.enabled: true` you switch to the thin-edge.io mode. This means that the authentication and registration to the platform will be done via thin-edge.io. The OPC UA gateway is automatically registered and created as a subdevice under the thin-edge.io device. `gateway.thinEdge.mqttServerURL` and `gateway.thinEdge.deviceId` are the connection information for the MQTT client to connect to the local thin-edge.io MQTT broker.
+
+{{< c8y-admon-preview-feature >}}
+
+### MQTT Forwarding mode {#mqtt-forwarding-mode}
+
+The OPC UA gateway supports an MQTT Forwarding mode that can be used together with the thin-edge.io mode. In addition to the OPC UA gateway being registered as a child device of the thin-edge.io device and the OPC UA gateway using credentials provided by thin-edge.io, in MQTT Forwarding mode the OPC UA gateway also uses thin-edge.io to send the data it receives from OPC UA servers to {{< product-c8y-iot >}}. When using cyclic reads, the data received in a single cyclic read that is mapped to measurements, events, or custom actions can be batched into a single message.
+
+The MQTT Forwarding mode uses the existing `thinEdge` configuration and introduces a number of additional configuration options to the YAML file:
+
+```yaml
+C8Y:
+    baseUrl: https://<<yourTenant>>.{{< domain-c8y >}}
+gateway:
+    bootstrap:
+        tenantId: <<yourTenantId>>
+    identifier: Gateway_Device
+    name: Gateway_Device
+    db:
+# The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
+        baseDir: C:/Users/<<userName>>/.opcua/data
+    mappings:
+      mergeCyclicRead: false
+      mergedEventType: c8y_OpcuaEvent
+      mergedMeasurementType: c8y_OpcuaMeasurement
+    thinEdge:
+        enabled: true
+        mqttServerURL: tcp://<<thinEdge MQTT broker>>
+        deviceId: Thin-Edge_Device
+        useForDataForwarding: true
+        mqttAutomaticReconnect: true
+        mqttCleanSession: true
+        mqttConnectionTimeout: 30
+        mqttKeepAliveInterval:  60
+        mqttMaxInFlight: 1000
+```
+
+The configuration `gateway.thinEdge.useForDataForwarding` controls if MQTT Forwarding mode is enabled. The following configurations are optional and control the behavior of the MQTT client:
+
+* `gateway.thinEdge.mqttAutomaticReconnect` (default:true) - controls if the MQTT client will reconnect in case it looses connection to the MQTT server.
+* `gateway.thinEdge.mqttCleanSession` (default:true) - controls if the MQTT client should remember state across sessions or start with a clean session.
+* `gateway.thinEdge.mqttConnectionTimeout` (default: 30) - connection timeout in seconds.
+* `gateway.thinEdge.mqttKeepAliveInterval` (default: 60) - keep alive  interval in seconds.
+* `gateway.thinEdge.mqttMaxInFlight` (default: 1000) - maximum number of unacknowledged messages in the MQTT client. If this limit is reached, additional messages will fail.
+
+For cyclic reads the configuration `gateway.mappings.mergeCyclicRead` can be enabled. The default is false. If this configuration is enabled cyclic reads mapped to measurements, events, or custom actions in a device protocol that use the same data reporting are merged into single messages. For measurements and events, the type can be controlled by the `gateway.mappings.mergedMeasurementType` and `gateway.mappings.mergedEventType` configuration. This is optional, and if not configured `c8y_OpcuaEvent` and `c8y_OpcuaMeasurement` respectively are used.
+
+{{< /c8y-admon-preview-feature >}}
 
 ### Configuration profile location on the filesystem {#configuration-profile-location-on-the-filesystem}
 
@@ -121,7 +168,7 @@ C8Y:
 
   # Password for HTTP proxy authentication
   # proxyPassword: yourProxyPassword
-  
+
 #
 # Gateway-specific settings
 #
@@ -135,17 +182,17 @@ gateway:
   # where local data is stored.
   db:
     baseDir: ${user.home}/.opcua/data
-  # These settings configure and enable/disable Thin Edge mode (registration and operating OPC UA gateway via Thin Edge).
+  # These settings configure and enable/disable thin-edge.io mode (registration and operating OPC UA gateway via thin-edge.io).
   thinEdge:
-    # Enable Thin Edge if the OPC UA gateway is running next to Thin Edge and should use it to connect to {{< product-c8y-iot >}}.
-    # Set enabled to false if the OPC UA gateway is running without Thin Edge.
+    # Enable thin-edge.io if the OPC UA gateway is running next to thin-edge.io and should use it to connect to {{< product-c8y-iot >}}.
+    # Set enabled to false if the OPC UA gateway is running without thin-edge.io.
     enabled: false
-    # MQTT Server URL of Thin Edge (localhost).
+    # MQTT Server URL of thin-edge.io (localhost).
     mqttServerURL: tcp://127.0.0.1:1883
     # Enable this if the MQTT client uses a single steady connection. Note that MQTT is only used to retrieve the JWT, which is dependent on how long the JWT is valid. See https://{{< domain-c8y >}}/guides/device-integration/mqtt/#jwt-token-retrieval.
     # We recommend you to use a steady connection only if the JWT is valid for a short time. If the JWT is valid for a longer time, the standard is one hour. It is generally not recommended to have a steady MQTT connection.
     mqttSteadyConnection: false
-    # The Thin Edge deviceId must be changed, depending on the configured deviceId of the Thin Edge certificate.
+    # The thin-edge.io deviceId must be changed, depending on the configured deviceId of the thin-edge.io certificate.
     deviceId: my-thin-edge-device
   # These settings control the device bootstrap process of the gateway.
   # In general, the default settings are sufficient, and should not be changed.
@@ -218,15 +265,6 @@ gateway:
     # received from the OPC UA server.
     threadpool:
       size: 200
-
-    # To avoid many REST calls to the inventory an in-memory map with a crash backup functionality is included.
-    alarmStatusStore:
-      # Expected number of maximum alarms at the same time
-      maxEntries: 100000
-      # The average size of the keys on the map. Needed for calculation of the size of the database file.
-      averageKeySize: 30
-      # The number of maxEntries multiplied with this factor results in the real max size of the database file. Resize is done only if needed.
-      maxBloatFactor: 5.0
 
   # Mapping-specific settings
   mappings:

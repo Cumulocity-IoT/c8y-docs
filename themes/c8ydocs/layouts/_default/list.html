@@ -26,8 +26,14 @@
       {{ $subs := where .Site.Pages "Section" .Params.bundlefolder }}
       {{/* grab the link from the first child page  */}}
       {{ range $sub := first 1 $subs}}
-        {{ $scratch.Set "url" $sub.Permalink}}
+        {{ $scratch.Set "url" $sub.RelPermalink}}
       {{end}}
+      {{/* fallback to section index page if no child pages found */}}
+      {{ if not ($scratch.Get "url") }}
+        {{ with .Site.GetPage (printf "/%s" .Params.bundlefolder) }}
+          {{ $scratch.Set "url" .RelPermalink }}
+        {{ end }}
+      {{ end }}
     <a href='
         {{if (isset .Params "external") }}
           {{.Params.external}}
@@ -43,41 +49,74 @@
             {{end}}
           </h2>
         </div>
-          {{.Content }}
-          {{ if (isset .Params "audience")}}
-            <div class="m-t-auto d-flex gap-8 a-i-center">
-              {{ range $t := .Params.audience }}
-                <div class="label 
-                  {{if eq $t "Users"}}
-                    label-primary 
-                  {{ else if eq $t "Administrators"}}
-                  label-success
-                  {{ else if eq $t "Developers"}}
-                  label-info
-                  {{ else if eq $t "Business"}}
-                    label-warning
-                  {{end}}
-                    ">
-                  <i class='
-                  {{if eq $t "Users"}}
-                    dlt-c8y-icon-users
-                  {{ else if eq $t "Administrators"}}
-                    dlt-c8y-icon-male-user
-                  {{ else if eq $t "Developers"}}
-                    dlt-c8y-icon-programming
-                  {{ else if eq $t "Business"}}
-                    dlt-c8y-icon-permanent-job
-                  {{end}}
-                  '></i> 
-                  {{$t}}
-                </div>
+        {{.Content }}
+        {{- $pdf := "" -}}
+        {{- if .Params.pdf_url -}}
+          {{- $u := .Params.pdf_url -}}
+          {{- if hasPrefix $u "http" -}}
+            {{- $pdf = $u -}}
+          {{- else -}}
+            {{- $pdf = (strings.TrimPrefix "/" $u) | absURL -}}
+          {{- end -}}
+        {{- else if (not (isset .Params "external")) -}}
+          {{- $title := strings.Trim .Title " \t\r\n" -}}
+          {{- $safe := $title | replaceRE `[^\w\s\.-]` "" | replaceRE `\s+` " " -}}
+          {{- $path := printf "pdfs/%s.pdf" $safe -}}
+          {{- $pdf = $path | absURL -}}
+        {{- end -}}
+
+        <div class="m-t-auto d-flex gap-8 a-i-center">
+              {{ if (isset .Params "audience")}}
+                {{ range $t := .Params.audience }}
+                  <div class="label 
+                    {{if eq $t "Users"}}
+                      label-primary 
+                    {{ else if eq $t "Administrators"}}
+                    label-success
+                    {{ else if eq $t "Developers"}}
+                    label-info
+                    {{ else if eq $t "Business"}}
+                      label-warning
+                    {{end}}
+                      ">
+                    <i class='
+                    {{if eq $t "Users"}}
+                      dlt-c8y-icon-users
+                    {{ else if eq $t "Administrators"}}
+                      dlt-c8y-icon-male-user
+                    {{ else if eq $t "Developers"}}
+                      dlt-c8y-icon-programming
+                    {{ else if eq $t "Business"}}
+                      dlt-c8y-icon-permanent-job
+                    {{end}}
+                    '></i> 
+                    {{$t}}
+                  </div>
+                {{end}}
               {{end}}
+              {{- if $pdf -}}
+                <form class="m-l-auto pdf-download-form" data-pdf="{{ $pdf }}">
+                  <button type="submit" class="btn-tooltip bnt-dot" title="Download PDF" data-tooltip="Download PDF">
+                    <i class="dlt-c8y-icon-export-pdf" style="font-size: 20px;"></i>
+                  </button>
+                </form>
+              {{- end -}}
             </div>
-          {{end}}
       </a>
       {{end}}
     </div>
   </main>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.pdf-download-form').forEach(function (form) {
+      form.addEventListener('submit',
+        function (e) {
+          e.preventDefault(); const url = form.getAttribute('data-pdf'); if (url) {
+            window.open(url, '_blank');
+          }
+        });
+    });
+  }); </script>
   {{- partial "footer.html" . -}}
 {{ end }}
 {{ end }}

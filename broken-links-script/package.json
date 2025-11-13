@@ -1,0 +1,19 @@
+{
+  "name": "broken-links-script",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "node Extractlinks.js && npx cypress run --browser chrome --headless"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "node-fetch": "^3.3.2",
+    "p-limit": "^6.2.0"
+  },
+  "devDependencies": {
+    "cypress": "^14.1.0"
+  }
+}

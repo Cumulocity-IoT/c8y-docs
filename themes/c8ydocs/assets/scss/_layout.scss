@@ -19,11 +19,13 @@ body{
   @media print{
     background-color: white;
   }
+  @media screen {
   > main, .main-content {
     opacity: 0;
     transition: opacity .15s linear;
     min-height: calc(100vh - 90px);
   }
+}
   &.loaded{
    > main,  .main-content{
       opacity: 1;

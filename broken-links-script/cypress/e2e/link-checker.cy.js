@@ -1,0 +1,176 @@
+const urls = require('../../all_links.json');
+
+describe('Link and Routing Validation - Individual URL Checks', () => {
+  let completedTests = 0;
+  const totalTests = urls.length;
+
+
+  const expectFragmentExists = (doc, fragment) => {
+    const decodedFragment = decodeURIComponent(fragment);
+    const collectFragments = (root) => {
+      const ids = Array.from(root.querySelectorAll('[id]')).map(el => el.id);
+      const names = Array.from(root.querySelectorAll('a[name]')).map(a => a.getAttribute('name'));
+      return [...ids, ...names].filter(Boolean);
+    };
+
+    let allFragments = collectFragments(doc);
+    const iframes = doc.querySelectorAll('iframe, frame');
+    for (const frame of iframes) {
+      try {
+        const frameDoc = frame.contentDocument || frame.contentWindow?.document;
+        if (frameDoc) {
+          allFragments = allFragments.concat(collectFragments(frameDoc));
+        }
+      } catch (e) {
+      }
+    }
+
+    const exists = allFragments.some(f => f === decodedFragment);
+
+    if (!exists) {
+      cy.log(`Available fragments (including frames):\n${allFragments.join('\n')}`);
+    }
+
+    expect(exists, `An element with id or name = "${fragment}" should exist in HTML or frames`).to.be.true;
+  };
+
+  const expectNoUnencodedParentheses = (url) => {
+    cy.wrap(url).should('not.match', /[()]/, `URL should not contain unencoded parentheses: ${url}`);
+  };
+
+// Note: On GitHub pages, heading IDs are prefixed with "user-content-".
+  const checkGithubFragment = (fragment) => {
+    cy.document().then((doc) => {
+      const ids = Array.from(doc.querySelectorAll('[id]')).map(el => el.id.replace(/^user-content-/, ''));
+      cy.log(`Available GitHub IDs:\n${ids.join('\n')}`);
+      const exists = ids.some(id => id === fragment);
+      expect(exists, `Element with id "user-content-${fragment}" should exist in GitHub page`).to.be.true;
+    });
+  };
+
+  const checkRegularFragment = (fragment) => {
+    cy.document().then((doc) => {
+      expectFragmentExists(doc, fragment);
+    });
+  };
+
+  Cypress.on('fail', (error) => {
+    const sourceFiles = Cypress.env('sourceFiles');
+    if (sourceFiles) {
+      error.message += `\n\nThis URL was used in the following files:\n - ${sourceFiles.join('\n -')}`;
+    }
+    throw error;
+  });
+
+  urls.forEach((item) => {
+    it(`should validate URL: ${item.link}`, () => {
+      const url = item.link;
+      const fragment = url.includes('#') ? url.split('#').slice(-1)[0] : null;
+      const isCodexPage = url.includes('codex/#/');
+      const isApiPage = url.includes('/api/');
+      const isGithubPage = url.includes('github.com');
+      const nonHtmlExtensions = ['.txt','.json','.pdf','.zip','.csv','.xml','.not','.bin','.dat','.tar','.gz','.rar','.xsd','.yaml','.pot'];
+
+      const hasNonHtmlExtension = nonHtmlExtensions.some(ext => url.endsWith(ext));
+      const isNonHtmlResource = hasNonHtmlExtension || url.includes('/files/') || url.includes('/downloads/');
+      const isNpmPackagePage = url.startsWith('https://www.npmjs.com/package/');
+      if (isNpmPackagePage) {
+        const m = url.match(/^https:\/\/www\.npmjs\.com\/package\/(@[^/]+\/[^#?]+)/);
+        const pkg = m ? m[1] : null;
+        const encodedUrl = pkg ? url.replace(pkg, encodeURIComponent(pkg)) : url;
+
+        if (pkg) {
+          cy.request({
+            url: `https://registry.npmjs.org/${pkg}`,
+            failOnStatusCode: false,
+            headers: { Accept: 'application/vnd.npm.install-v1+json' }
+          }).then((res) => {
+            expect(res.status, `npm registry status for ${pkg}`).to.eq(200);
+          });
+        }
+        completedTests++;
+        return;
+      }
+  
+      Cypress.env('sourceFiles', item.files);
+      expectNoUnencodedParentheses(url);
+
+      if (isNonHtmlResource) {
+        cy.log(`Validating non-HTML resource: ${url}`);
+        cy.request({
+          url: url,
+          failOnStatusCode: false 
+        }).then((response) => {
+          expect(response.status).to.be.oneOf([200, 201, 202, 203, 204, 301, 302, 304]);
+  
+          if (url.endsWith('.json')) {
+            expect(response.body).to.be.an('object');
+          }
+        });
+        completedTests++;
+        return;
+      }
+
+      if (isCodexPage) {
+        cy.visit(url, { timeout: 50000 });
+      
+        cy.get('[data-cy="c8y-title--title-outlet"] .text-truncate', { timeout: 50000 })
+          .invoke('text')
+          .should('not.be.empty')
+      
+        cy.url().should('eq', url);
+      
+        if (fragment) {
+          if (fragment.startsWith('/')) {
+            cy.location('hash').should('eq', `#${fragment}`, `URL hash should match the fragment: #${fragment}`);
+          } else {
+            cy.get(`#${fragment}`, { timeout: 10000 })
+              .should('exist', `Fragment "${fragment}" does not exist on the page`)
+              .then(() => {
+                cy.document().then((doc) => {
+                  const ids = Array.from(doc.querySelectorAll('[id]')).map((el) => el.id);
+                  cy.log(`Available elements with IDs on the page:\n${ids.join('\n')}`);
+                });
+              });
+          }
+        }
+      }
+      else if (isApiPage) {
+        cy.visit(url, { timeout: 50000 });
+        if (fragment) {
+          cy.get(`[id="${fragment}"]`, { timeout: 10000 }).should('exist');
+        }
+      }
+      else if (isGithubPage && fragment) {
+        cy.visit(url, { timeout: 50000 });
+        checkGithubFragment(fragment);
+      }
+      else if (fragment) {
+        cy.visit(url, { timeout: 50000, failOnStatusCode: false, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122.0 Safari/537.36' }});
+        checkRegularFragment(fragment);
+      }
+      else {
+        cy.request({
+          url: url,
+          failOnStatusCode: false
+        }).then((response) => {
+          const contentType = response.headers['content-type'] || '';
+          if (!contentType.includes('text/html')) {
+            cy.log(`Non-HTML content detected for ${url}, skipping cy.visit()`);
+            expect(response.status).to.be.oneOf([200, 201, 202, 203, 204, 301, 302, 304]);
+            expect(response.body).not.to.be.empty;
+          } else {
+            cy.visit(url, { timeout: 50000 });
+            cy.document().its('body').should('not.be.empty');
+          }
+        });
+      }
+      
+      completedTests++;
+    });
+  });
+
+  afterEach(() => {
+    cy.log(`Progress: ${completedTests}/${totalTests}`);
+  });
+});

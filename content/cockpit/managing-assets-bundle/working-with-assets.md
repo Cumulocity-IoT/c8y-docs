@@ -32,6 +32,7 @@ Groups show the following tabs:
 
 - **Subassets** - Shows group details and all subassets of a group, see also [Viewing all devices](/device-management-application/viewing-all-devices/).
 - **Smart rules** - Shows smart rules specified for the group, see also [Smart rules](/cockpit/smart-rules/).
+- **Smart rules (NEW)** - Shows smart rules (NEW) specified for the group, see also [Smart rules plugin](/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin).
 - **Data explorer** - Shows all data points of the children. For details refer to [Changing visualization](/cockpit/data-explorer/#changing-visualization).
 
 {{< c8y-admon-req >}}
@@ -50,6 +51,7 @@ Note that global inventory permissions override inventory role permissions.
 Devices show the following tabs:
 
 - **Smart rules** - Shows smart rules specified for the device, see also [Smart rules](/cockpit/smart-rules/).
+- **Smart rules (NEW)** - Shows smart rules (NEW) specified for the device, see also [Smart rules (NEW) plugin](/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin).
 - **Alarms** - Displays alarms for the device, see also [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms).
 - **Data explorer** - Shows all data points of the children. For details refer to [Changing visualization](/cockpit/data-explorer/#changing-visualization).
 - **Location** - Shows the current location of a device (only available with `c8y_Position`).
@@ -65,8 +67,6 @@ ROLES & PERMISSIONS in devices context:
 If dashboards have been created for a group or device, they will also be added as a tab. See [Working with dashboards](/cockpit/working-with-dashboards/) for details.
 
 Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Refer to the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) for a tutorial on adding custom tabs.
-
-
 
 ### To add a group {#to-add-a-group}
 
