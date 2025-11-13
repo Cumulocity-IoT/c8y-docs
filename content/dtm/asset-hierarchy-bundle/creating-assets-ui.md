@@ -6,7 +6,7 @@ layout: redirect
 
 There are two options for creating assets in the DTM application.
 The following section describes how to create an asset via the UI.
-Alternatively, see [Creating assets via bulk import](/dtm/asset-hierarchy/#creating-assets-bulk-import) on how to import assets in bulk into the DTM application.
+Alternatively, see [DTM Asset and Definition API documentation](https://cumulocity.com/api/dtm/) for using the DTM REST API.
 
 ### To create an asset {#to-create-an-asset}
 
@@ -142,7 +142,7 @@ In the top right corner of the **Subassets** tab, you can [assign devices](#to-a
 
 You can view the hierarchy of the asset in the **Asset tree** tab. Initially the asset hierarchy is collapsed. Click the expand icon <i class="dlt-c8y-icon-forward text-primary icon-20"></i> to view the next level of subassets.
 
-Click **Add asset** to add more subassets or click **Import assets** to add [assets in bulk](/dtm/asset-hierarchy/#creating-assets-bulk-import).
+Click **Add asset** to add more subassets.
 
 ![Asset tree](/images/dtm/assets/dtm-assets-asset-tree-page.png)
 

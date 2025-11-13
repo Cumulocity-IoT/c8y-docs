@@ -29,12 +29,12 @@ All subassets and devices for this asset will be listed in the **Subassets** sec
 
 6. The asset hierarchy will be shown in the **Asset tree** tab.
 
-7. Optionally [add subassets](/dtm/asset-hierarchy/#to-add-subassets), or [import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import) using the options on the top right.
+7. Optionally [add subassets](/dtm/asset-hierarchy/#to-add-subassets) using the options on the top right.
 
 If the asset has a location, you can see it on the map under the properties section below its values. Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen. To see the map, provide a value for latitude and longitude. You cannot modify the marker when viewing the asset. Edit the property in order to change the position of the marker.
 
 {{< c8y-admon-info>}}
-The buttons [Import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import) and [Add asset](/dtm/asset-hierarchy/#to-add-subassets) are not visible for the last hierarchical level.<br>
+The [Add asset](/dtm/asset-hierarchy/#to-add-subassets) button is not visible for the last hierarchical level.<br>
 A warning message will be shown if one or more properties associated with the asset are not present.
 For complex properties, the keys will be ordered as specified in the property definition.
 {{< /c8y-admon-info>}}

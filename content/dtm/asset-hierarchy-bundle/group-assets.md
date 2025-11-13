@@ -16,7 +16,6 @@ Any asset added to a group asset can be moved out of it using the **Move to the 
 
 {{< c8y-admon-info>}}
 
--  Currently, the [bulk import](/dtm/asset-hierarchy/#creating-assets-bulk-import) feature does not support creating groups in bulk.
 - Groups created in the {{< product-c8y-iot >}} Cockpit application are not listed in the Digital Twin Manager application.
 
 {{< /c8y-admon-info>}}
