@@ -44,7 +44,8 @@ If this flag is not set, the client connection will be rejected by the MQTT Serv
 {{< c8y-admon-caution >}}
 This means that messages sent _to_ a device while it is disconnected will **not** be automatically delivered to it when it reconnects.
 Your devices and clients should implement an application-level protocol to send missed messages if this is important for your use case.
-Note that pending {{< product-c8y-iot >}} device operations _will_ be sent to a Core MQTT device when it connects.
+This limitation also applies to the experimental support for Core MQTT devices.
+Pending {{< product-c8y-iot >}} device operations will **not** be sent to a Core MQTT device when it connects.
 {{< /c8y-admon-caution >}}
 
 #### Quality of Service {#quality-of-service-qos}
