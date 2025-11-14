@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-11-13'
 title: Device status changes now immediately reflected in the navigator
 product_area: Device management & connectivity
 change_type:
