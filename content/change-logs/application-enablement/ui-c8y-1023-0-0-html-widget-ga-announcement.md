@@ -19,7 +19,7 @@ The HTML widget has been migrated from AngularJS to Angular and is now generally
 
 **Key improvements:**
 
-- **Advanced security:** The widget now includes strict HTML sanitization by default to protect against XSS.attacks
+- **Advanced security:** The widget now includes strict HTML sanitization by default to protect against XSS.attacks.
 - **Better JavaScript support:** An advanced mode enables you to write custom web components for more sophisticated use cases.
 - **Automatic migration:** Existing AngularJS widgets will be automatically migrated to the new Angular implementation.
 
