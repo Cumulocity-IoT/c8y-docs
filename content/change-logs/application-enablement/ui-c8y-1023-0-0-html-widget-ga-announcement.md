@@ -1,5 +1,5 @@
 ---
-date: 2025-10-17
+date: 2025-11-17
 title: HTML widget moved to General Availability
 product_area: Application enablement & solutions
 change_type:
