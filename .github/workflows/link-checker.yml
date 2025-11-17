@@ -27,7 +27,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        
+
       - name: Generate token for GH CLI
         uses: actions/create-github-app-token@v2
         id: linkcheck-token
@@ -43,7 +43,7 @@ jobs:
           IFS=',' read -ra branches <<< "$MONITORED_BRANCHES"
           for branch in "${branches[@]}"; do
             echo "Triggering Link Checker workflow for branch: $branch"
-            gh workflow run link-checker.yml --ref "$branch" -f dispatcher "false"
+            gh workflow run link-checker.yml --ref "$branch" -f dispatcher=false
             sleep 30
           done
 
