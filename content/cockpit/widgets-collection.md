@@ -205,7 +205,7 @@ The "HTML" widget displays user-defined content that can be formatted using HTML
 **Parameters to configure**
 
 * **Target assets or devices**: Select the objects for which optional HTML expressions are evaluated.
-* **Asset properties**: Based on the target asset, in the "Asset properties" tab you can copy properties which you can paste into the code shown under settings.
+* **Asset properties**: Based on the target asset, you can copy properties in the **Asset properties** tab, which you can paste into the code shown under settings.
 
 The widget offers two distinct modes:
 
