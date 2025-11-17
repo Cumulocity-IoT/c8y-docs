@@ -201,7 +201,7 @@ The below links provide direct access to the available documentation sections:
 - [Home screen](http://localhost:1313/docs/standard-tenant/home-screen/)
 - [Introduction](http://localhost:1313/docs/standard-tenant/standard-tenant-introduction/)
 - [Managing data](http://localhost:1313/docs/standard-tenant/managing-data/)
-- [Managing permissions](http://localhost:1313/docs/standard-tenant/managing-permissions/)
+- [Managing permissions and roles](http://localhost:1313/docs/standard-tenant/managing-permissions/)
 - [Managing the ecosystem](http://localhost:1313/docs/standard-tenant/ecosystem/)
 - [Managing users](http://localhost:1313/docs/standard-tenant/managing-users/)
 - [Monitoring](http://localhost:1313/docs/standard-tenant/monitoring/)
