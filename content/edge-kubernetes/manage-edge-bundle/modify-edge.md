@@ -10,7 +10,7 @@ In these examples, we assume that the Edge object is called `c8yedge` and is in 
 
 ### Basic post-installation configuration {#basic-post-installation-configuration}
 
-Immediately post-installation, you will probably want to configure an SSL certificate for your Edge, and give it a custom domain.
+After installing Edge using the c8yedge tool, you might want to configure an SSL certificate for your Edge, give it a custom domain, and set the Edge tenant's name (company name) and the admin user email.
 
 First, ensure that your certificate and key are in separate files, in PEM format.
 ```bash
@@ -19,13 +19,19 @@ kubectl create secret tls edge-tls-secret --namespace=c8yedge \
   --key=./certs/tls.key
 ```
 
-Then apply the configuration:
+Then apply the below configuration for configuring an SSL certificate and a custom domain:
 ```bash
-kubectl --namespace=c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"domain":"myown.iot.com", "licenseKey":"...", "tlsSecretName": "edge-tls-secret"}}'
+kubectl --namespace=c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"domain":"<DOMAIN-NAME>", "licenseKey":"<LICENSE-KEY>", "tlsSecretName": "edge-tls-secret"}}'
 ```
 Note that the license key must always be valid for the domain name, so any change of domain name should be made simultaneously with a change of license key.
 
-The change may take some time to complete. See [Monitoring changes](/edge-kubernetes/manage-edge/#monitoring-changes).
+Apply the below configuration for setting the Edge tenant's name and the admin user email:
+```bash
+kubectl --namespace=c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"company":"<COMPANY-NAME>", "email":"<ADMIN-EMAIL>"}}'
+```
+Note that the company name and the admin user email can also be changed later using the [user interface](/standard-tenant/managing-users/#to-edit-a-user) or {{< product-c8y-iot >}} API.
+
+These changes may take some time to complete. See [Monitoring changes](/edge-kubernetes/manage-edge/#monitoring-changes).
 
 ### More general configuration changes {#more-general-configuration-changes}
 
