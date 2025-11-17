@@ -29,8 +29,8 @@ jobs:
         uses: actions/create-github-app-token@v2
         id: linkcheck-token
         with:
-          app-id: ${{ vars.LINKCHECK_APP_ID }}
-          private-key: ${{ secrets.LINKCHECK_PRIVATE_KEY }}
+          app-id: ${{ vars.DOCS_LINK_CHECK_APP_ID }}
+          private-key: ${{ secrets.DOCS_LINK_CHECK_APP_KEY }}
 
       - name: Dispatch link check for selected branches
         env:
