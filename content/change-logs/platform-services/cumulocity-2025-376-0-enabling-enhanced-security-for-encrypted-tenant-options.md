@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-63640
 version: 2025.376.0
 ---
-From version 2025.376.0 onwards, and in the 2026 annual release, the `secure-tenant-options` feature is enabled by default.
+With this change, the `secure-tenant-options` feature is enabled by default.
 
 As previously [announced](/change-logs/?change-type=.change-type-api-change&component=.component-rest-api#cumulocity-2025-116-0-enhanced-security-for-encrypted-tenant-options), this security feature restricts the decryption of encrypted [tenant options](https://cumulocity.com/api/core/#tag/Options) with the `credentials.` prefix. These options can only be decrypted by system users (such as bootstrap or microservice users) **if they own the options**.
 
