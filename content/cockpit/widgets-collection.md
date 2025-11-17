@@ -235,7 +235,7 @@ A simple example looks like this:
 **Legacy widget compatibility**
 
 {{< c8y-admon-important >}}
-Existing widgets based on AngularJS will automatically fall back to legacy mode, which maintains backward compatibility and allows these widgets to continue functioning. This fallback displays JavaScript code that enables legacy widget execution. However, it is strongly recommended to migrate these widgets to the new Lit-based framework as soon as possible, since AngularJS support is deprecated and will be removed in future releases.
+Existing widgets based on AngularJS will automatically fall back to legacy mode, which maintains backward compatibility and allows these widgets to continue functioning. This fallback displays JavaScript code that enables legacy widget execution. However, it is strongly recommended to migrate these widgets to the new Lit-based framework as soon as possible, since AngularJS support is deprecated.
 {{< /c8y-admon-important >}}
 
 ### KPI {#kpi}
