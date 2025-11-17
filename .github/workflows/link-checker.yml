@@ -47,7 +47,7 @@ jobs:
             sleep 30
           done
 
-  link-check:
+  link-checker:
     name: Run Link Check
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.dispatcher == 'false' }}
     runs-on: ubuntu-latest
