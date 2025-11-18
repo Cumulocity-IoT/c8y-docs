@@ -190,49 +190,43 @@ Message header size can vary significantly, particularly for MQTT version 5.0 de
 
 ### Error reporting {#mqtt-error-reporting}
 
-The MQTT Service follows the MQTT specification for server responses.
-For example, if invalid credentials are sent in the `CONNECT` message, the server response `CONNACK` message contains the `0x05` return code.
-The return code can be treated similarly to REST API HTTP codes, such as 401.
+The MQTT Service follows the MQTT specification for responses from the server to devices.
 
-#### Error topic {#error-topic}
+According to the specification, if the server receives a malformed packet or a protocol error, it must disconnect the device.
+For MQTT version 3.1.1 devices, the device will simply be disconnected with no warning.
+For MQTT version 5.0 devices, the MQTT Service may send the device a packet containing a _reason code_, indicating the reason for the disconnection, before closing the connection.
+This will be a `CONNACK` packet in response to an error in a `CONNECT` packet, or a `DISCONNECT` packet in response to any other incorrect packet.
 
-The MQTT Service provides clients the ability to review errors through messages received by subscribing to the error topic, `$debug/$error`.
-When subscribing to the topic it will act as a per-client topic, meaning the client will only receive messages exclusively related to their client ID.
-For example, if a client was attempting to subscribe to a new topic, and the creation of the topic would exceed the topic limit, only that client would receive an error.
+Most other MQTT version 5.0 packet types, including `SUBACK` and `PUBACK`, can also include reason codes.
+These provide the device with more information about why a specific request was rejected.
 
-According to the MQTT 3.1.1 specification, if either the server or the client encounters a protocol violation, it must close the network connection on
-which it received the control packet which caused the violation.
+The available reason codes are listed in [section 2.4 of the MQTT version 5.0 specification](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901031).
 
-In such instances MQTT clients must reconnect to be able to receive error messages from the error topic via the subscription.
-Error messages received after this reconnection are from the previous session.
-This can lead to confusion when attempting corrective actions.
-Therefore, we highly recommend you to build a microservice which uses the MQTT Service SDK to consume error messages, or use MQTT 5 for clients and make use of the reason codes feature.
+#### Alarms {#mqtt-alarms}
+
+The MQTT Service will also raise {{< product-c8y-iot >}} alarms in response to some error conditions on device connections.
+This gives better visibility of problems to tenant users and applications, which is especially useful when obtaining good diagnostic data from a device is difficult.
+Alarms are _rate limited_, to avoid overloading the {{< product-c8y-iot >}} platform with too many alarms.
+This means that if, for example, many devices publish messages larger than the allowed maximum size in a short period of time, an alarm will not be raised for every instance of the problem.
+However, tenant users will still be aware that devices are publishing too-large messages, and can take steps to correct this.
+
+The table below describes the alrams that will be raised for problems related to device connections:
+
+<font color="red" size="24">**TBC -- need details of the alarms**</font>
 
 ### MQTT device quotas and limits
 
-#### Topic limits {#topic-limit}
+The MQTT Service enforces several different quotas and limits on MQTT devices.
+See the [Service Quotas](/service-terms/quotas#mqtt-service) section for details of the current values.
+As with other error conditions, a device exceeding a quota or limit will be handled according to the MQTT specification.
 
-The MQTT Service imposes several topic-related limits.
-See the [Service Quotas](/service-terms/quotas#mqtt-service) section for details of the current limits in force.
+For devices using MQTT version 3.1.1, the protocol provides no way to indicate that a limited has been reached, so the connection will simply be dropped.
+The only exception is the `SUBACK` packet, which can indicate that a subscription failed, although without giving any more detailed reason.
 
-There is a limit on the total number of topics that a single tenant can create.
-When the creation of a new topic, either by creating it via the client publishing a message or subscribing to a non-existent topic, would breach the topic limit the delivery of the packet is prevented.
+For devices using MQTT version 5.0, where the protocol allows a reason code to be sent, the code `0x97` (Quota exceeded) will be used.
+The connection may still be dropped after sending this reason code.
 
-The different MQTT protocol versions provide different feedback when this limit is exceeded.
+For all protocol versions, an alarm will also be raised, subject to the rate limiting described in [Alarms](#mqtt-alarms).
 
-MQTT 5 clients:
-
-* Have access to the reason code and reason string describing the failure when using QoS 1 with acknowledgements, where the reason code is `QUOTA_EXCEEDED: 0x97`.
-
-MQTT 3.1 and 3.1.1 clients:
-
-* Clients only have access to the reason code describing the failure when using QoS 1 with acknowledgements and only for SUBSCRIBE packets, where the reason code is `0x80`.
-* For PUBLISH packets, the client will be disconnected with no further information as per the MQTT specification.
-
-In addition to the topic count, the MQTT Service also limits the size of the message backlog on each topic.
-The message backlog contains all messages that have been published on the topic but not yet received and acknowledged by all subscribers to the topic.
-When the backlog limit is reached, further attempts to publish to the topic will fail until some messages have been consumed.
-
-Each message in a topic backlog also has a time-to-live (TTL) that starts at the moment the message is published.
-When the TTL of a message expires, that messages will be deleted from the backlog regardless of whether all subscribers have received it or not.
-MQTT clients do not receive any notification that messages have been discarded from a backlog due to TTL expiry.
+See also the discussion of [Messaging Service quotas and limits](#messaging-service-quotas-limits) imposed by the MQTT Service.
+These do not affect device connections directly, but "back pressure" from the Messaging Service can lead to device errors, for example if the Messaging Service is unable to accept more messages from a device.
