@@ -8,7 +8,7 @@ helpcontent:
   content: "In the software repository, you can collect reference software for devices. Multiple software packages can be installed on a device. At the top left, you can filter the repository entries by name, description, or device type.
 
 
-	See the user documentation for details on managing software and software versions and on how to install or update them on devices."
+  See the user documentation for details on managing software and software versions and on how to install or update them on devices."
 
 ---
 

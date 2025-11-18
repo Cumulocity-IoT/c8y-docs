@@ -39,4 +39,4 @@ The manifest also specifies the permissions with which the microservice runs. Th
 - ROLE_BULK_OPERATION_READ
 - ROLE_NOTIFICATION_2_ADMIN
 
-You can add other roles to this list (or remove them from it) to grant (or remove) permissions to EPL code.
+You can add other permissions to this list (or remove them from it) to grant (or remove) permissions to EPL code.

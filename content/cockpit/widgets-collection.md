@@ -198,6 +198,7 @@ You can select one data point for the gauge, and multiple data points shown with
 
 You must enable at least one data point in each section to create the "Info gauge" widget.
 
+
 ### HTML {#html}
 
 The "HTML" widget displays user-defined content that can be formatted using HTML and dynamically populated with data from the current device. Additionally, you can switch the widget into advanced mode, which allows you to build complex web components with JavaScript code.
