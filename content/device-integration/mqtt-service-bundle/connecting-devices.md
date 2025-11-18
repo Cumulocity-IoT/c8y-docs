@@ -4,6 +4,8 @@ layout: redirect
 title: Connecting MQTT devices
 ---
 
+<font color="red" size="24">**Placeholder -- ignore this section for now**</font>
+
 MQTT connections to the MQTT Service must use TCP.
 Use your tenant domain as the target host for the connection, for example `{my-tenant}.cumulocity.com`.
 
