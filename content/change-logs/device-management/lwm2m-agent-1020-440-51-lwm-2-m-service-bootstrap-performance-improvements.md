@@ -1,6 +1,6 @@
 ---
 date: ""
-title: LWM2M Service bootstrap performance improvements
+title: LWM2M Service bootstrap performance improvement
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5045
 version: 1020.440.51
 ---
-Increased the degree of parallelism for LwM2M bootstrap processes to eliminate "head-of-line blocking" bottlenecks. Timed-out requests from unresponsive devices no longer delay or block the provisioning of active devices, ensuring a significantly faster, more reliable, and high-throughput bootstrap process.
+The degree of parallelism for LWM2M bootstrap processes has been increased to eliminate "head-of-line blocking" bottlenecks. Timed-out requests from unresponsive devices no longer delay or block the provisioning of active devices, ensuring a significantly faster, more reliable, and high-throughput bootstrap process.
