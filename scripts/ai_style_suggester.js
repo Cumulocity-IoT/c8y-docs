@@ -36,7 +36,7 @@ ${diff}
 `;
 
       const completion = await anthropic.messages.create({
-        model: "claude-3-5-sonnet-latest",
+        model: "claude-3-5-sonnet-20240620",
         messages: [{ role: "user", content: prompt }],
         max_tokens: 4096,
       });
