@@ -1,6 +1,6 @@
 ---
 date: ""
-title: use password input for one-time password in device registration (#10339)
+title: Device registration form uses password input for one-time password
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-65224
 version: 1023.2.2
 ---
-Co-authored-by: Tristan Bastian <tristan.bastian@cumulocity.com>
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
+In the device registration form, the one-time password was previously shown in clear text which posed a security risk. The form has been updated to use a password input field instead, so that the one-time password is hidden while typing. This change improves the security of the device registration process for all users.
