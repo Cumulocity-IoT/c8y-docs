@@ -18,6 +18,8 @@ async function run() {
     const STYLE_GUIDE_TEXT = fs.readFileSync(styleGuidePath, "utf8");
 
     const { data: files } = await octokit.rest.pulls.listFiles({ owner, repo, pull_number});
+    const reviewComments = [];
+    const summary = [];
 
     for (const file of files) {
       if ( !file.filename.endsWith(".md") || !file.filename.startsWith("content/")) {continue};
@@ -26,14 +28,25 @@ async function run() {
       const diff = file.patch;
       if (!diff) continue;
 
-      const prompt = ` Review the following Markdown diff for spelling, grammar, and style issues. Apply the rules from the Cumulocity Documentation Style Guide provided below. Give concise, line-specific suggestions that improve clarity, consistency, and tone. Do not rewrite entire sections; focus on targeted improvements only.
+      const prompt = `
+      You are reviewing a Git diff of a Markdown file. Provide line-specific suggestions only in this JSON format:
 
-Style guide:
-${STYLE_GUIDE_TEXT}
+      [
+        {
+          "line": <line number relative to patch>,
+          "suggestion": "<short suggestion text>"
+        }
+      ]
 
-Markdown diff:
-${diff}
-`;
+      Do not rewrite full paragraphs. Be concise.
+      Apply the Cumulocity Documentation Style Guide:
+
+      ${STYLE_GUIDE_TEXT}
+
+      Here is the diff:
+
+      ${file.patch}
+      `;
 
       const completion = await anthropic.messages.create({
         max_tokens: 1024,
@@ -41,18 +54,57 @@ ${diff}
         model: 'claude-sonnet-4-5-20250929',
       });
 
-      const suggestions = completion.content?.[0]?.text?.trim();
-
-      if (suggestions) {
-        console.log(`Suggestions for ${file.filename}:\n${suggestions}\n`);
-        await octokit.rest.issues.createComment({
-          owner,
-          repo,
-          issue_number: pull_number,
-          body: `**AI Style Suggestions for \`${file.filename}\`:**\n\n${suggestions}`,
-        });
+      let raw = completion.content?.[0]?.text ?? "[]";
+      let suggestions = [];
+      try {
+        suggestions = JSON.parse(raw);
+      } catch (err) {
+        console.error("Failed to parse AI JSON, raw output:", raw);
+        continue;
       }
+
+      const diffLines = file.patch.split("\n");
+      let position = 0;
+
+
+      diffLines.forEach((line, index) => {
+        position += 1;
+
+        if (!line.startsWith('+') || line.startsWith('+++')) return;
+        const match = suggestions.find(s => s.line === index + 1);
+
+        if (!match) return;
+
+        reviewComments.push({
+          path: file.filename,
+          position,
+          body: `AI Style Suggestion:\n\n${match.suggestion}`
+        });
+
+        summary.push(`- ${file.filename}: line ${index + 1}`);
+      });
     }
+
+    if (reviewComments.length === 0) {
+      await octokit.rest.pulls.createReview({
+        owner,
+        repo,
+        pull_number,
+        event: "COMMENT",
+        body: "AI Style Suggester: No issues found."
+      });
+      return;
+    }
+
+    await octokit.rest.pulls.createReview({
+      owner,
+      repo,
+      pull_number,
+      event: "COMMENT",
+      body: `AI Style Suggestions:\n${summary.join("\n")}`,
+      comments: reviewComments,
+    });
+
   } catch (error) {
     console.error("Error running AI style suggester:", error);
     setFailed(error.message);
