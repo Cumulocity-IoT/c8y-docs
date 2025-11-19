@@ -7,19 +7,20 @@ title: Overview
 The MQTT Service works together with the Messaging Service to quickly and securely integrate MQTT devices with the {{< product-c8y-iot >}} platform.
 Devices that already understand the {{< product-c8y-iot >}} domain model can use the [Core MQTT](/device-integration/mqtt/) protocols (SmartREST and JSON-over-MQTT) to communicate directly with {{< product-c8y-iot >}}.
 Alternatively, devices can send and receive messages with arbitrary payloads on arbitrary MQTT topics.
-For these so-called _generic_ devices, a _mapping_ must be provided by the tenant to convert between the device message format and the {{< product-c8y-iot >}} domain model.
-A mapping can be implemented by a microservice running inside the platform, or by an external client application.
+For these _generic_ devices, the tenant is responsible for converting between the device's protocol and the {{< product-c8y-iot >}} domain model.
+This conversion can be implemented in a microservice running inside the platform, or in an external client application.
 
 _IoT device integration_ is the main intended use case for the MQTT Service.
 The design of the service is optimized for this use case, which has some highly asymmetric properties:
-* A large number (up to tens of millions) of simultaneously connected devices publishing messages into the IoT platform
+* A large number (up to tens of millions) of simultaneously connected devices publishing messages into the {{< product-c8y-iot >}} platform
 * A large number (up to tens of millions) of unique MQTT topics
-* A high aggregate throughput (up to millions per second) of unique messages published into the IoT platform
-* A small number of high-throughput message consumers within the IoT platform
+* A high aggregate throughput (up to millions per second) of unique messages published into the {{< product-c8y-iot >}} platform
+* A small number of high-throughput message consumers within the {{< product-c8y-iot >}} platform
 * Individual devices have a smaller message throughput (up to hundreds per second)
-* Smaller aggregate message throughput from the IoT platform to devices (up to thousands per second)
+* Smaller aggregate message throughput from the {{< product-c8y-iot >}} platform to devices (up to thousands per second)
 * No direct peer-to-peer device communication
-* Endpoint security for widely distributed devices can be challenging
+* Devices are geographically distributed, often with limited physical security
+* The {{< product-c8y-iot >}} platform is deployed on secure, managed, highly available infrastructure
 
 Other, more symmetric _server-to-server_ or _application integration_ use cases may exceed the [limits](/service-terms/quotas/#mqtt-service) enforced by the MQTT Service.
 For optimal performance, these use cases should be implemented using a more traditional publish/subscribe architecture with direct connections to the Messaging Service.
@@ -28,18 +29,17 @@ For optimal performance, these use cases should be implemented using a more trad
 
 #### Protocols and clients {#protocols-clients}
 
-|                                             |                                                                                                                      |
-|---------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| Connection protocols                        | TCP only.                                                                                                            |
-| MQTT protocol versions                      | 3.1, 3.11 and 5.0. See [MQTT protocol implementation](#implementation) for more details.                             |
-| Generic MQTT device protocols               | MQTT devices can publish and subscribe arbitrary payloads on arbitrary MQTT topics.                                  |
-| {{< product-c8y-iot >}} Core MQTT protocols | SmartREST 1.0, SmartREST 2.0, JSON-over-MQTT are supported.<sup>(1)</sup>                                            |
-| Apache Pulsar                               | Microservices and external clients [connect directly to the Messaging Service](#pulsar-client) to map between device protocols and the {{< product-c8y-iot >}} domain model.<sup>(2)</sup> |
-| Thin Edge                                   | Out of the box support in [Thin Edge](https://thin-edge.io/) for generic and Core MQTT protocols on the same device. |
+|                                             |                                                                                                                                 |
+|---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| Connection protocols                        | TCP only.                                                                                                                       |
+| MQTT protocol versions                      | 3.1, 3.11 and 5.0. See [MQTT protocol implementation](#implementation) for more details.                                        |
+| Generic MQTT device protocols               | MQTT devices can publish and subscribe arbitrary payloads on arbitrary MQTT topics.                                             |
+| {{< product-c8y-iot >}} Core MQTT protocols | **Preview** support for SmartREST 1.0, SmartREST 2.0 and JSON-over-MQTT protocols. See [TBD](#implementation) for more details. |
+| Apache Pulsar                               | Microservices and external clients [connect directly to the Messaging Service](#pulsar-client) to map between device protocols and the {{< product-c8y-iot >}} domain model.<sup>(1)</sup> |
+| Thin Edge                                   | Out of the box support in [Thin Edge](https://thin-edge.io/) for generic and Core MQTT protocols on the same device.            |
 
 Notes:
-1. Core MQTT protocol support is in preview and should be considered experimental.
-2. Client applications are also responsible for registering devices as {{< product-c8y-iot >}} Managed Objects if required.
+1. Client applications are also responsible for registering devices as {{< product-c8y-iot >}} Managed Objects if required.
 <br><br>
 
 #### Security and isolation {#security-isolation}
