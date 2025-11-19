@@ -37,7 +37,7 @@ ${diff}
 
       const completion = await anthropic.messages.create({
         max_tokens: 1024,
-        messages: [{ role: 'user', content: 'Hello, Claude' }],
+        messages: [{ role: 'user', content: prompt }],
         model: 'claude-sonnet-4-5-20250929',
       });
 
