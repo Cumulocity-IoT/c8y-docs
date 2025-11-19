@@ -36,9 +36,9 @@ ${diff}
 `;
 
       const completion = await anthropic.messages.create({
-        model: "claude-3-5-sonnet",
-        messages: [{ role: "user", content: prompt }],
-        max_tokens: 4096,
+        max_tokens: 1024,
+        messages: [{ role: 'user', content: 'Hello, Claude' }],
+        model: 'claude-sonnet-4-5-20250929',
       });
 
       const suggestions = completion.content?.[0]?.text?.trim();
