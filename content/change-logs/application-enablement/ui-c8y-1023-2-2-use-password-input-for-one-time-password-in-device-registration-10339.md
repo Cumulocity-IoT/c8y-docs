@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Device registration form uses password input for one-time password
+title: One-time password in device registration form now hidden
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
