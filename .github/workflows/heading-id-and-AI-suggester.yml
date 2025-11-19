@@ -25,13 +25,8 @@ jobs:
           npm init -y
           npm install @actions/core @actions/github openai
 
-      - name: Run Heading ID Suggester
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/heading_id_suggester.js
-
       - name: Run AI Style & Spell Check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node scripts/ai_style_suggester.js

@@ -2,10 +2,10 @@ import fs from "fs";
 import path from "path";
 import { getInput, setFailed } from "@actions/core";
 import { context, getOctokit } from "@actions/github";
-import OpenAI from "openai";
+import Anthropic from "@anthropic-ai/sdk";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+const anthropic = new Anthropic({
+  apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
 const token = process.env.GITHUB_TOKEN;
@@ -35,8 +35,8 @@ Markdown diff:
 ${diff}
 `;
 
-      const completion = await openai.chat.completions.create({
-        model: "gpt-4o-mini",
+      const completion = await await anthropic.messages.create({
+        model: "claude-3-5-sonnet-latest",
         messages: [{ role: "user", content: prompt }],
       });
 
