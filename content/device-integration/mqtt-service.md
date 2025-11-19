@@ -27,4 +27,4 @@ It is optimized for scenarios where there are a large number of connected device
 
 This documentation is aimed at developers who want to integrate MQTT devices with {{< product-c8y-iot >}}, or to build clients that communicate with their devices.
 It does not describe the basics of MQTT communication.
-If you are unfamiliar with MQTT, there are numerous introductions available, starting with the <a href="https://mqtt.org/mqtt-specification/" target="_blank">MQTT website</a>.
+If you are unfamiliar with MQTT, there are numerous introductions available, starting with the <a href="https://mqtt.org/mqtt-specification/" target="_blank" rel="noopener noreferrer">MQTT website</a>.

@@ -35,12 +35,8 @@ For optimal performance, these use cases should be implemented using a more trad
 | MQTT protocol versions                      | 3.11 and 5.0. See [MQTT protocol implementation](#implementation) for more details.                                             |
 | Generic MQTT device protocols               | MQTT devices can publish and subscribe arbitrary payloads on arbitrary MQTT topics.                                             |
 | {{< product-c8y-iot >}} Core MQTT protocols | **Preview** support for SmartREST 1.0, SmartREST 2.0 and JSON-over-MQTT protocols. See [TBD](#implementation) for more details. |
-| Apache Pulsar                               | Microservices and external clients [connect directly to the Messaging Service](#pulsar-client) to map between device protocols and the {{< product-c8y-iot >}} domain model.<sup>(1)</sup> |
-| Thin Edge                                   | Out of the box support in [Thin Edge](https://thin-edge.io/) for generic and Core MQTT protocols on the same device.            |
-
-Notes:
-1. Client applications are also responsible for registering devices as {{< product-c8y-iot >}} Managed Objects if required.
-<br><br>
+| Apache Pulsar                               | Microservices and external clients [connect directly to the Messaging Service](#pulsar-client) to convert between device protocols and the {{< product-c8y-iot >}} domain model.<br>Messaging Service clients are also responsible for registering devices as {{< product-c8y-iot >}} Managed Objects if required. |
+| Thin Edge                                   | Out of the box support in <a href="https://thin-edge.io/" target="_blank" rel="noopener noreferrer">Thin Edge</a> for generic and Core MQTT protocols on the same device. |
 
 #### Security and isolation {#security-isolation}
 
@@ -79,4 +75,4 @@ Because of the _device isolation_ feature, there is no interaction between topic
 Effectively, every device has its own private topic space that can only be accessed by that device.
 This can be seen in the diagram where _device 1_ and _device N_ are both publishing and subscribing on _topic A_.
 Because devices are isolated, _device 1_ cannot see any of the messages published by _device N_, and vice-versa.
-However, a microservice or external application client has full access to the topics used by all devices, and can forward messages between clients if required.
+However, a microservice or external application client [connecting directly to the Messaging Service](#pulsar-client) has full access to the topics used by all devices, and can forward messages between clients if required.
