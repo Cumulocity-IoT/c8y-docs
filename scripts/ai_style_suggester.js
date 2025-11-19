@@ -20,7 +20,7 @@ async function run() {
     const { data: files } = await octokit.rest.pulls.listFiles({ owner, repo, pull_number});
 
     for (const file of files) {
-      if (!file.filename.endsWith(".md")) continue;
+      if ( !file.filename.endsWith(".md") || !file.filename.startsWith("content/")) {continue};
 
       console.log(`Analyzing ${file.filename}...`);
       const diff = file.patch;
