@@ -38,6 +38,7 @@ ${diff}
       const completion = await anthropic.messages.create({
         model: "claude-3-5-sonnet-latest",
         messages: [{ role: "user", content: prompt }],
+        max_tokens: 4096,
       });
 
       const suggestions = completion.content?.[0]?.text?.trim();
