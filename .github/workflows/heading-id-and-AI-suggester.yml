@@ -23,10 +23,10 @@ jobs:
       - name: Install deps
         run: |
           npm init -y
-          npm install @actions/core @actions/github openai
+          npm install @actions/core @actions/github  @anthropic-ai/sdk
 
       - name: Run AI Style & Spell Check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OPENAI_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node scripts/ai_style_suggester.js

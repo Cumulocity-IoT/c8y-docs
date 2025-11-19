@@ -35,12 +35,12 @@ Markdown diff:
 ${diff}
 `;
 
-      const completion = await await anthropic.messages.create({
+      const completion = await anthropic.messages.create({
         model: "claude-3-5-sonnet-latest",
         messages: [{ role: "user", content: prompt }],
       });
 
-      const suggestions = completion.choices[0].message.content?.trim();
+      const suggestions = completion.content?.[0]?.text?.trim();
 
       if (suggestions) {
         console.log(`Suggestions for ${file.filename}:\n${suggestions}\n`);
