@@ -201,12 +201,12 @@ You must enable at least one data point in each section to create the "Info gaug
 
 ### HTML {#html}
 
-The "HTML" widget displays user-defined content that can be formatted using HTML and dynamically populated with data from the current device. Additionally, you can switch the widget into advanced mode, which allows you to build complex web components with JavaScript code.
+The "HTML" widget displays user-defined content that can be formatted using HTML and dynamically populated with data from the selected asset or device. Additionally, you can switch the widget into advanced mode, which allows you to build complex web components with JavaScript code.
 
 **Parameters to configure**
 
 * **Target assets or devices**: Select the objects for which optional HTML expressions are evaluated.
-* **Asset properties**: Based on the target asset, you can copy properties in the **Asset properties** tab, which you can paste into the code shown under settings.
+* **Asset properties**: In the **Asset properties** section, you can copy the properties of the selected asset and paste them into the code editor under the **Settings** section.
 
 The widget offers two distinct modes:
 
@@ -227,7 +227,7 @@ The widget offers two distinct modes:
 
 When using styles, global styles can be applied if encapsulation is not enabled. Styles should always use CSS variables and tokens to ensure compatibility with dark mode and custom brandings. 
 
-By default, the normal HTML widget is sanitized for security, while in advanced mode the developer is responsible for proper sanitization. You can modify these settings in the application configuration.
+By default, the normal HTML widget is sanitized for security, while in advanced mode the developer is responsible for proper sanitization. You can modify default sanitization behavior in the [Cockpit application configuration](/cockpit/cockpit-configuration/).
 
 A simple example looks like this:
 
