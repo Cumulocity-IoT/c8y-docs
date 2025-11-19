@@ -28,25 +28,45 @@ async function run() {
       const diff = file.patch;
       if (!diff) continue;
 
-      const prompt = `
-      You are reviewing a Git diff of a Markdown file. Provide line-specific suggestions only in this JSON format:
+    const prompt = `
+    You are reviewing a Git diff of a Markdown file.
 
-      [
-        {
-          "line": <line number relative to patch>,
-          "suggestion": "<short suggestion text>"
-        }
-      ]
+    Your job has the following responsibilities:
 
-      Do not rewrite full paragraphs. Be concise.
-      Apply the Cumulocity Documentation Style Guide:
+    ## 1. Heading ID Generation & Validation (IMPORTANT)
+    For any added heading line (e.g., "+ ### Something"):
+    - If the heading has NO ID:
+        → Generate the correct ID using the style guide rules.
+    - If the heading HAS an ID:
+        → Validate it. If incorrect, suggest the correct ID.
+    Rules for IDs:
+    - lowercase only
+    - hyphens between words
+    - remove punctuation/special characters
+    - must match normalized heading text
+    - format: {#text}
 
-      ${STYLE_GUIDE_TEXT}
+    You MUST evaluate heading IDs.
 
-      Here is the diff:
+    ## Output Format (REQUIRED)
+    Return ONLY JSON in this exact format:
 
-      ${file.patch}
-      `;
+    [
+      {
+        "line": <line number relative to patch>,
+        "suggestion": "<short suggestion text>"
+      }
+    ]
+
+    NO markdown, NO commentary, NO extra text.
+
+    ## Style Guide:
+    ${STYLE_GUIDE_TEXT}
+
+    ## Diff:
+    ${file.patch}
+    `;
+
 
       const completion = await anthropic.messages.create({
         max_tokens: 1024,
