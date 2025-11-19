@@ -11,6 +11,14 @@ const anthropic = new Anthropic({
 const token = process.env.GITHUB_TOKEN;
 const octokit = getOctokit(token);
 
+function cleanJSON(raw) {
+  return raw
+    .replace(/```json/gi, "")
+    .replace(/```/g, "")
+    .trim();
+}
+
+
 async function run() {
   try {
     const { owner, repo, number: pull_number } = context.issue;
@@ -75,6 +83,7 @@ async function run() {
       });
 
       let raw = completion.content?.[0]?.text ?? "[]";
+      raw = cleanJSON(raw);
       let suggestions = [];
       try {
         suggestions = JSON.parse(raw);
