@@ -19,7 +19,7 @@ Visit the [{{< product-c8y-iot >}} YouTube channel](https://www.youtube.com/@Cum
 To learn about [what's new in {{< product-c8y-iot >}}](https://www.youtube.com/@CumulocityIoT/playlists?view=50&sort=dd&shelf_id=6), our YouTube channel also offers content which covers the new and enhanced functionality available in a specific product release.
 
 
-### Tech Community {#techcommunity}
+### Tech Community {#tech-community}
 
 Collaborate with {{< product-c8y-iot >}} experts on our [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) website.
 
@@ -41,9 +41,5 @@ The {{< learning-portal >}} provides tailored learning experiences to suit your 
 Our learning platform offers structured content across four major categories, ranging from introductory overviews to expert-level learning and covering new product features.
 
 ### Cloud environments status page {#cloud-environments-status-page}
-
-For {{< product-c8y-iot >}} cloud shared environments, information on known issues and the next upgrade can be found and subscribed to at: [http://status.{{< domain-c8y >}}/](http://status.{{< domain-c8y >}}/).
-
-### Cloud environments status {#cloud-environments}
 
 For {{< product-c8y-iot >}} cloud shared environments, information on known issues and the next upgrade can be found and subscribed to at: [http://status.{{< domain-c8y >}}/](http://status.{{< domain-c8y >}}/).
