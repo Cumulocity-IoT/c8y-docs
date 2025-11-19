@@ -9,15 +9,14 @@
 - Maximum 5 levels (use bold for deeper levels)
 
 ### Heading IDs
-Do not change any existing heading IDs.  
-Add an ID only when a heading does not have one.  
-Create the ID with the following rules:
-
-- Use lowercase letters only
-- Use hyphens to separate words
-- Remove spaces, punctuation, and special characters
-- Match the heading text
-- Keep the ID stable to avoid broken links
+- If a heading has **no ID**, generate the correct ID.
+- If a heading **has an ID**, validate it and suggest a correction if it does not match the rules.
+- Create the ID using:
+  - Use lowercase letters only
+  - Use hyphens to separate words
+  - Remove spaces, punctuation, and special characters
+  - Match the heading text
+  - Keep the ID stable to avoid broken links
 
 Example:  
 `### Tech community {#tech-community}`
