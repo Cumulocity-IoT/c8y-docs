@@ -227,7 +227,7 @@ The widget offers two distinct modes:
 
 When using styles, global styles can be applied if encapsulation is not enabled. Styles should always use CSS variables and tokens to ensure compatibility with dark mode and custom brandings. 
 
-By default, the normal HTML widget is sanitized for security, while in advanced mode the developer is responsible for proper sanitization. You can modify default sanitization behavior in the [Cockpit application configuration](/cockpit/cockpit-configuration/).
+By default, the normal HTML widget is sanitized for security, while in advanced mode the developer is responsible for proper sanitization. You can modify the default sanitization behavior in the [Cockpit application configuration](/cockpit/cockpit-configuration/).
 
 A simple example looks like this:
 
