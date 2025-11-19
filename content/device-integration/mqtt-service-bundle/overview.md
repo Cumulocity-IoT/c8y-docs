@@ -10,8 +10,8 @@ Alternatively, devices can send and receive messages with arbitrary payloads on 
 For these _generic_ devices, the tenant is responsible for converting between the device's protocol and the {{< product-c8y-iot >}} domain model.
 This conversion can be implemented in a microservice running inside the platform, or in an external client application.
 
-_IoT device integration_ is the main intended use case for the MQTT Service.
-The design of the service is optimized for this use case, which has some highly asymmetric properties:
+The MQTT Service should be regarded as an MQTT _endpoint_ rather than a full MQTT _broker_.
+It is optimized for the _IoT device integration_ use case, which has some highly asymmetric properties:
 * A large number (up to tens of millions) of simultaneously connected devices publishing messages into the {{< product-c8y-iot >}} platform
 * A large number (up to tens of millions) of unique MQTT topics
 * A high aggregate throughput (up to millions per second) of unique messages published into the {{< product-c8y-iot >}} platform
@@ -32,7 +32,7 @@ For optimal performance, these use cases should be implemented using a more trad
 |                                             |                                                                                                                                 |
 |---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
 | Connection protocols                        | TCP only.                                                                                                                       |
-| MQTT protocol versions                      | 3.1, 3.11 and 5.0. See [MQTT protocol implementation](#implementation) for more details.                                        |
+| MQTT protocol versions                      | 3.11 and 5.0. See [MQTT protocol implementation](#implementation) for more details.                                             |
 | Generic MQTT device protocols               | MQTT devices can publish and subscribe arbitrary payloads on arbitrary MQTT topics.                                             |
 | {{< product-c8y-iot >}} Core MQTT protocols | **Preview** support for SmartREST 1.0, SmartREST 2.0 and JSON-over-MQTT protocols. See [TBD](#implementation) for more details. |
 | Apache Pulsar                               | Microservices and external clients [connect directly to the Messaging Service](#pulsar-client) to map between device protocols and the {{< product-c8y-iot >}} domain model.<sup>(1)</sup> |
@@ -64,16 +64,18 @@ Notes:
 
 The diagram below illustrates the MQTT Service data flows within a tenant.
 
-<p align="center" width="100%">
-    <img width="80%" src="/images/mqtt-service/mqtt-service-architecture.svg" alt="MQTT Service architecture">
-</p>
-
 All messages published by MQTT devices are forwarded to the Messaging Service, where they are persisted until they are consumed.
 {{< product-c8y-iot >}} domain model messages published to the MQTT topics used by the Core MQTT protocols are consumed directly by the {{< product-c8y-iot >}} core.
 Messages published to other MQTT topics are consumed by microservices and/or external clients that are responsible for mapping the messages to the {{< product-c8y-iot >}} domain model.
 Similarly, the {{< product-c8y-iot >}} core and clients can publish messages to the Messaging Service that will be consumed by the MQTT Service and forwarded to devices.
 
-_Device isolation_ means there is no interaction between topics with the same name used by different clients.
+<p align="center" width="100%">
+    <img width="80%" src="/images/mqtt-service/mqtt-service-architecture.svg" alt="MQTT Service architecture">
+</p>
+
+#### Device isolation {#device-isolation}
+
+Because of the _device isolation_ feature, there is no interaction between topics with the same name used by different clients.
 Effectively, every device has its own private topic space that can only be accessed by that device.
 This can be seen in the diagram where _device 1_ and _device N_ are both publishing and subscribing on _topic A_.
 Because devices are isolated, _device 1_ cannot see any of the messages published by _device N_, and vice-versa.
