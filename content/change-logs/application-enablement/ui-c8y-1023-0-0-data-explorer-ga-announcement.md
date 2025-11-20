@@ -1,6 +1,6 @@
 ---
 date: 2025-11-19
-title: New Data explorer moved to General Availability
+title: New data explorer moved to General Availability
 product_area: Application enablement & solutions
 change_type:
   - value: change-inv-3bw8e
