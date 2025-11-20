@@ -108,10 +108,10 @@ To override variables, `Custom CSS Properties`—also known as `CSS Variables`�
 
 3. If `styles.less` already exists, add the line `@import '~@c8y/style/extend.less';` at the **top** of the file. If it does not exist, create it and add the mentioned line:
 
-   ```less
-   // src/styles.less
-   @import '~@c8y/style/extend.less';
-   ```
+```less
+// src/styles.less
+@import '~@c8y/style/extend.less';
+```
 
 4. Include the `styles.less` file in the `styles` entry in `angular.json` under your project entry:
 
@@ -153,15 +153,15 @@ You can set CSS variables directly, which allows for runtime customization:
 - ✅ Works across all applications tenant-wide
 - ✅ Easier for non-developers
 
-```less
-// src/styles.less
-@import '~@c8y/style/extend.less';
+```css
+  /* src/styles.less */
+  @import '~@c8y/style/extend.less';
 
-:root {
-  --brand-primary: red;
-  --brand-logo-img: url('/apps/<applicationContextPath>/assets/logo.jpg');
-  --brand-logo-img-height: 48%;
-}
+  :root {
+    --brand-primary: red;
+    --brand-logo-img: url('/apps/<applicationContextPath>/assets/logo.jpg');
+    --brand-logo-img-height: 48%;
+  }
 ```
 
 The `applicationContextPath` can be any application that you uploaded to the platform and which contains the `logo.jpg` file.
@@ -180,23 +180,23 @@ For advanced build-time customization scenarios, override LESS variables **AFTER
 
 **Note:** This requires rebuilding and redeploying your application for changes to take effect.
 
-```less
-// src/styles.less
-// 1. Import Cumulocity styles FIRST
+```css
+/* src/styles.less */
+/* 1. Import Cumulocity styles FIRST */
 @import '~@c8y/style/extend.less';
 
-// 2. Override LESS variables AFTER with DIRECT VALUES
-@brand-primary: #e30613;  // Your custom brand color (must use direct hex value)
+/* 2. Override LESS variables AFTER with DIRECT VALUES */
+@brand-primary: #e30613;  /* Your custom brand color (must use direct hex value) */
 
-// 3. Logo configuration (paths relative to your styles.less file)
+/* 3. Logo configuration (paths relative to your styles.less file) */
 @brand-logo-img-fallback: '../assets/logo.jpg';
 @brand-logo-height-fallback: 48%;
 
-// 4. Navigator logo
+/* 4. Navigator logo */
 @navigator-platform-logo-fallback: '../assets/logo-white.png';
 @navigator-platform-logo-height-fallback: 28%;
 
-// Apply navigator logo (required for extend.less pattern)
+/* Apply navigator logo (required for extend.less pattern) */
 .navigator .tenant-brand {
   background-image: var(--c8y-navigator-platform-logo);
   padding-bottom: var(--c8y-navigator-platform-logo-height);
