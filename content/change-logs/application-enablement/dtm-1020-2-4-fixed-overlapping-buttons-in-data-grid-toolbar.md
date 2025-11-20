@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2509"
 version: "1020.2.4"
 ---
-Added CSS changes to resolve the overlapping toolbar buttons in the Digital Twin Manager data grid, an issue observed in one of the customer environments.
+CSS enhancements have been applied to prevent toolbar buttons from overlapping in the Digital Twin Manager data grid, resolving the issue seen in a customer environment.
