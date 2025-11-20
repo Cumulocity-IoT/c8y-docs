@@ -108,8 +108,8 @@ To override variables, `Custom CSS Properties`â€”also known as `CSS Variables`â€
 
 3. If `styles.less` already exists, add the line `@import '~@c8y/style/extend.less';` at the **top** of the file. If it does not exist, create it and add the mentioned line:
 
-```less
-// src/styles.less
+```css
+/* src/styles.less */
 @import '~@c8y/style/extend.less';
 ```
 
