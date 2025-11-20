@@ -15,8 +15,7 @@ ticket: MTM-61470
 version: 1023.0.0
 ---
 
-The Data point graph widget has been migrated from AngularJS to Angular and is now generally available (GA). The migration brings significantly enhanced visualization capabilities and extended customization options.
-These improvements offer better performance, deeper analytical flexibility, and seamless alignment with the global dashboard time context.
+The Data point graph widget, which offers extended customization options, enhanced visualization capabilities, and an improved user experience, is now generally available (GA). For more details on the enhancements, see the original [{{< product-c8y-iot >}} announcement](https://cumulocity.com/docs/change-logs/?productarea=.productarea-application-enablement-solutions&component=.component-web-sdk&change-type=.change-type-feature#ui-c8y-1021-53-0-new-data-point-explorer-and-data-points-graph)..
 
 **Key improvements:**
 
