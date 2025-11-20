@@ -17,8 +17,3 @@ version: 1023.0.0
 
 The new data explorer, which offers significantly improved performance, a modernized user experience, and expanded analysis capabilities, is now generally available (GA). For details on the enhancements, see the original [{{< product-c8y-iot >}} announcement](https://cumulocity.com/docs/change-logs/?productarea=.productarea-application-enablement-solutions&component=.component-web-sdk&change-type=.change-type-feature#ui-c8y-1021-53-0-new-data-point-explorer-and-data-points-graph).
 
-**Key improvements:**
-
-- **Configuration support:** Create, manage, and share persistent workspaces for organized, collaborative analysis.
-- **Advanced visualization:** Benefit from expanded chart customization, a new aggregated data slider.
-- **Configurable alarms & events:** Display critical alarms and events directly on the graph.

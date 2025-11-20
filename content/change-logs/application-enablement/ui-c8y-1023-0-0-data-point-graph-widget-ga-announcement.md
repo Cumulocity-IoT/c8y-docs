@@ -16,9 +16,3 @@ version: 1023.0.0
 ---
 
 The Data point graph widget, which offers extended customization options, enhanced visualization capabilities, and an improved user experience, is now generally available (GA). For more details on the enhancements, see the original [{{< product-c8y-iot >}} announcement](https://cumulocity.com/docs/change-logs/?productarea=.productarea-application-enablement-solutions&component=.component-web-sdk&change-type=.change-type-feature#ui-c8y-1021-53-0-new-data-point-explorer-and-data-points-graph)..
-
-**Key improvements:**
-
-- **Global time context integration:** The widget now supports two-way binding with the dashboard’s time range for consistent analysis across all widgets.
-- **Configurable alarms & events:** Display critical alarms and events directly on the graph.
-- **Customizable graph styles:** Tailor colors, line types, and markers to your analysis.
