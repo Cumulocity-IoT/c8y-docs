@@ -14,7 +14,7 @@ build_artifact:
 ticket: ""
 version: "1023.1.2"
 ---
-The Digital Twin Manager application has been upgraded to Cumulocity Web
+The Digital Twin Manager application has been upgraded to the Cumulocity Web
 SDK 1022.44.3. The custom applications that integrate dtm-plugins are
 advised to update their plugins to the newest versions to ensure
 compatibility with the updated SDK.
