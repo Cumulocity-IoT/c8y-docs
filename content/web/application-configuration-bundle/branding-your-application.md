@@ -79,7 +79,7 @@ Use **LESS variables** (Approach 2) only for advanced scenarios requiring build-
 
 To override variables, `Custom CSS Properties`—also known as `CSS Variables`—can be utilized, offering configurability at runtime or during the build process.
 
-### Setup steps
+### Setup steps {#setup-steps}
 
 1. Ensure that your project is based on the Angular CLI (whether upgraded or created from scratch).
 
@@ -164,13 +164,13 @@ You can set CSS variables directly, which allows for runtime customization:
   }
 ```
 
-The `applicationContextPath` can be any application that you uploaded to the platform and which contains the `logo.jpg` file.
+The `applicationContextPath` can be any application that you uploaded to the platform and which contains the *logo.jpg* file.
 
 User interface elements like buttons, active navigation nodes, and active tabs will use your custom brand color.
 
 ### Approach 2: Using LESS variables (Build-time) — Advanced
 
-For advanced build-time customization scenarios, override LESS variables **AFTER** importing `extend.less`:
+For advanced build-time customization scenarios, override LESS variables **after** importing `extend.less`:
 
 **When to use:**
 
@@ -185,7 +185,7 @@ For advanced build-time customization scenarios, override LESS variables **AFTER
 /* 1. Import Cumulocity styles FIRST */
 @import '~@c8y/style/extend.less';
 
-/* 2. Override LESS variables AFTER with DIRECT VALUES */
+/* 2. Override LESS variables AFTER with direct values */
 @brand-primary: #e30613;  /* Your custom brand color (must use direct hex value) */
 
 /* 3. Logo configuration (paths relative to your styles.less file) */
@@ -206,8 +206,8 @@ For advanced build-time customization scenarios, override LESS variables **AFTER
 {{< c8y-admon-important >}}
 **Important rules for LESS variables:**
 
-1. Always use **DIRECT COLOR VALUES** (e.g., `#e30613`, not `@my-color`)
-2. Import `extend.less` **BEFORE** overriding variables
-3. Logo paths are relative to your `styles.less` file location
-4. Add explicit CSS rule for navigator logo when using LESS variables
+1. Always use direct color values (for example, `#e30613`, not `@my-color`).
+2. Import `extend.less` **before** overriding variables.
+3. Logo paths are relative to your `styles.less` file location.
+4. Add explicit CSS rule for navigator logo when using LESS variables.
 {{</ c8y-admon-important >}}

@@ -15,7 +15,7 @@ Angular 18 is supported from version `1021.0.0`. The following configuration cha
 
   **Migration steps:**
 
-  1. Create a `styles.less` file in your `src/` directory with the following content:
+  1. Create a *styles.less* file in your *src/* directory with the following content:
 
      ```less
      // Import Cumulocity styles first
@@ -44,7 +44,7 @@ Angular 18 is supported from version `1021.0.0`. The following configuration cha
      }
      ```
 
-  3. Remove the `brandingEntry` from your `cumulocity.config.ts` file.
+  3. Remove the `brandingEntry` from your *cumulocity.config.ts* file.
 
   **Important:** Always import `@c8y/style/extend.less` first, then override variables after. See [Branding your application](/web/application-configuration/#branding-your-application) for details.
 - `Node.js`, `TypeScript`, `RxJS`: [Version compatibility](https://angular.dev/reference/versions#actively-supported-versions).
