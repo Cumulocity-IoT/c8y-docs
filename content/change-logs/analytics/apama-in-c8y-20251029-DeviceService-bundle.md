@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
-version: 
+version: 26.261.0
 ---
 
 A new **DeviceService** bundle is now available, providing capabilities for consuming and publishing device messages via the MQTT Service. This bundle serves as the replacement for the deprecated Cumulocity MQTT Service.
