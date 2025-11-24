@@ -1,6 +1,6 @@
 ---
 date: 2025-11-XX
-title: MQTT Service will enforce CN validation for certificate-authenticated clients
+title: MQTT Service will enforce Common Name validation for certificate-authenticated clients
 change_type:
   - value: change-inv-3bw8e
     label: Announcement
@@ -19,7 +19,8 @@ issue: MTM-65167
 To strengthen identity assurance for certificate-authenticated MQTT clients, the {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) will begin enforcing **Common Name (CN) validation** during client certificate authentication.
 
 Currently, the MQTT Service accepts certificates where the CN does not match the MQTT client ID.  
-This will change: the CN must correspond to the client ID used during connection, improving device-to-certificate integrity and reducing the risk of certificate misuse.
+After this change, the CN must match the client ID used during connection.
+This tight binding of certificates to devices will significantly reduce the risk of certificate misuse.
 
 ### What is changing?
 
@@ -44,4 +45,4 @@ For support, please contact product support.
 
 ### Roll-out plan
 
-To allow a smooth transition, CN validation will be introduced **four weeks after this announcement**.
+To allow a smooth transition, CN validation will be introduced no sooner than **four weeks after this announcement**.
