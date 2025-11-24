@@ -1,6 +1,6 @@
 ---
 date: ""
-title: improved global context styling
+title: Improved global context styling
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
