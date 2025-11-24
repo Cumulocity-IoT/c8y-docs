@@ -14,7 +14,7 @@ build_artifact:
 version: 26.261.0
 ---
 
-A new **DeviceService** bundle is now available, providing capabilities for consuming and publishing device messages via the MQTT Service. This bundle serves as the replacement for the deprecated Cumulocity MQTT Service.
+A new **DeviceService** bundle is now available, providing capabilities for consuming and publishing device messages via the MQTT Service. This bundle serves as the replacement for the deprecated Apama EPL API for the MQTT Service (com.apama.cumulocity.mqttservice).
 
 For detailed configuration options, API reference, and code examples, see [The DeviceService bundle]({{< link-apama-webhelp >}}/standard-connectivity-plugins/device-service/).
 
