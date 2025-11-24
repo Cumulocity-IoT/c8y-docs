@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64729
 version: 1023.3.0
 ---
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+The global context styling was inconsistent and did not provide a good user experience. With this change, the global context styling has been improved to provide a more consistent and visually appealing look and feel across the application. Users will notice a more polished and professional design that enhances the overall usability and aesthetics of the global context elements.
