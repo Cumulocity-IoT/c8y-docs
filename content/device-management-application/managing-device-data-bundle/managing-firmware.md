@@ -8,7 +8,7 @@ helpcontent:
   content: "In the firmware repository, you can collect reference firmware for devices. At the top left, you can filter the firmware items by name, description, or device type.
 
 
-	See the user documentation for details on managing firmware, firmware versions and patches, and on how to install or update them on devices."
+  See the user documentation for details on managing firmware, firmware versions and patches, and on how to install or update them on devices."
 ---
 
 In the firmware repository, {{< product-c8y-iot >}} offers to collect reference firmware for devices.

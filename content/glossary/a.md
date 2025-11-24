@@ -10,7 +10,7 @@ _build:
 
 ### Administration application {#administration-application}
 
-The Administration application is a default {{< product-c8y-iot >}} application that serves as the central management console for platform administrators. It is used to govern a [tenant](#tenant) by managing [users](#user), roles, and [permissions](#permission), subscribing to and managing [applications](#application) and [microservices](#microservice), and configuring tenant-level settings such as retention rules, custom properties, and [branding](#branding).   
+The Administration application is a default {{< product-c8y-iot >}} application and the central place for platform administrators to manage a tenant. It is used to govern a [tenant](#tenant) by managing [users](#user), [roles](#role), and [permissions](#permission), subscribing to and managing [applications](#application) and [microservices](#microservice), and configuring tenant-level settings such as retention rules, custom properties, and [branding](#branding).   
 
 
 ### Alarm {#alarm}

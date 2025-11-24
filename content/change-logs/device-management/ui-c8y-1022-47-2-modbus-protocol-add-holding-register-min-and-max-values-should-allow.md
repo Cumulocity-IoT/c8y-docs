@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-11-13'
 title: Improved value normalization for Modbus registers
 product_area: Device management & connectivity
 change_type:

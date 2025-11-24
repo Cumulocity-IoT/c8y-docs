@@ -19,8 +19,8 @@ the default on  https://eu-latest.cumulocity.com/ and available on all other ins
 The new implementation will go to GA and become the default on all SaaS systems by the end of September 2025.
 The purpose of this announcement is to invite customers who wish to take advantage of this update to participate in the public preview.
 
-Enabling the new implementation is on a per tenant basis and requires the `ROLE_TENANT_MANAGEMENT_ADMIN` role and use of
-the [Feature Toggles REST API](https://cumulocity.com/api/core/#operation/setCurrentTenantFeatureToggleValue), i.e.:
+Enabling the new implementation is on a per tenant basis and requires your role to include ADMIN permission for "Tenant management" (API string = `ROLE_TENANT_MANAGEMENT_ADMIN`) and use of
+the [Feature Toggles REST API](https://cumulocity.com/api/core/#operation/setCurrentTenantFeatureToggleValue):
 
 ```bash
 curl --location --request PUT "https://<TENANT_DOMAIN>/features/cluster-subscriptions.mongo-persistence/by-tenant" \
