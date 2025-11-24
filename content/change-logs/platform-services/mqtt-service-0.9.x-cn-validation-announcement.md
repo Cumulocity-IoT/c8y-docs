@@ -24,15 +24,15 @@ This tight binding of certificates to devices will significantly reduce the risk
 
 ### What is changing?
 
-When an MQTT client connects using certificate-based authentication:
+When an MQTT client connects using certificate-based authentication, **the Common Name (CN) in the certificate must match the MQTT client ID**.
 
-* The **CN in the certificate must match the MQTT client ID**.
-* SmartREST-style identifiers are supported, including:
-  * `CN == <clientId>`
-  * `CN == "d:<clientId>"`
+Only **two CN formats** will be accepted for any given client ID:
+1. `CN == <clientId>` - the standard and **required** format for all new devices.
+2. `CN == d:<clientId>` - supported **only for legacy SmartREST devices** migrating to the MQTT Service. This format must **not** be used for new devices.
 
-Only clients using certificate-based authentication are affected.  
-No changes apply to clients using other authentication mechanisms.
+If the CN does not match one of these two allowed forms for the client ID presented during connection, the client will fail authentication.
+
+Only certificate-authenticated clients are affected; all other authentication methods remain unchanged.
 
 ### Impact on existing MQTT clients
 
@@ -41,7 +41,7 @@ Devices using certificates whose CN does not align with the MQTT client ID will 
 
 Customers should verify and update their certificate issuance processes during the grace period.
 
-For support, please contact product support.
+Please contact [Cumulocity Support](/additional-resources/contacting-support/) if you have any questions or concerns about these changes.
 
 ### Roll-out plan
 
