@@ -26,7 +26,6 @@ In order to access Dremio, you must also make the domain `datahub-<domain_name>`
 | Vertical scalability | Yes | Yes |
 | Horizontal scalability | No | Yes |
 | Upgrades with no downtime | No | No |
-| Root access | No | Yes, if customer is hosting |
 | Installation | Offline & Online | Online |
 | Dremio cluster setup | 1 master, 1 executor | Minimum 1 master, 1 executor |
 | Dremio container management |  Kubernetes | Kubernetes |
