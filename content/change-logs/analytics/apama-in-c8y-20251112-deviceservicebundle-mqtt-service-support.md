@@ -15,7 +15,7 @@ ticket: PAB-4924
 version: 
 ---
 
-EPL Apps now has support for connecting to {{< product-c8y-iot >}} MQTT Service with new DeviceService API . This allows handling of device-native messages sent to the MQTT Service within {{< product-c8y-iot >}} EPL Apps. For more details see [Using {{< product-c8y-iot >}} MQTT Service](/streaming-analytics/epl-apps/#using-cumulocity-mqtt-service).
+EPL Apps now supports connecting to the {{< product-c8y-iot >}} MQTT Service with the new DeviceService API. This allows handling of device-native messages sent to the MQTT Service within {{< product-c8y-iot >}} EPL Apps. For more details, see [Using {{< product-c8y-iot >}} MQTT Service](/streaming-analytics/epl-apps/#using-cumulocity-mqtt-service).
 
 {{< c8y-admon-info >}}
 The {{< product-c8y-iot >}} MQTT Service feature is currently in Public Preview and may be subject to change in the future.
