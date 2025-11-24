@@ -1,6 +1,6 @@
 ---
 date: ""
-title: improve global context styling (#10281) [GRAFT][release/cd] (#10353)
+title: improved global context styling
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
