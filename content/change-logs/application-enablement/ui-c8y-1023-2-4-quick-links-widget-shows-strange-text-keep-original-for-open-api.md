@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64728
 version: 1023.2.4
 ---
-In the Cockpit and Device Management application, the "Quick links" widget, which provides easy access to useful links, did not display the link name for the OpenAPI specification properly. This issue has been resolved. The "Quick links" widget now displays the correct link name "OpenAPI specification".
+In the Cockpit and Device Management application, the "Quick links" widget, which provides easy access to useful links, did not display the link text for the OpenAPI specification properly. This issue has been resolved. The "Quick links" widget now displays the correct link text "OpenAPI specification".
