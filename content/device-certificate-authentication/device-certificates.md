@@ -454,15 +454,15 @@ If such a situation occurs, follow these steps to mitigate the risk:
       > *"No newDeviceRequest found for this ID. It may already be registered, check the audit logs for details."*
 
     - This indicates that the OTP may have already been used. To verify:
-        1. **Check the audit logs**  
+        - **Check the audit logs**  
            Look for an audit record with:
             - **Activity:** `Tenant certificate authority (CA) signed certificate for device`
             - **Type:** `TenantCertificateAuthority`
             - **Text:** containing *`Certificate serial number hex: '%s'`*
-        2. **Verify the signer**  
+        - **Verify the signer**  
            Confirm whether the certificate was signed by an authorized device.
             - If it **was not** signed by an authorized user, it may indicate fraudulent or unintended device registration.
-        3. **Revoke unauthorized certificates**  
+        - **Revoke unauthorized certificates**  
            Use the [certificate revocation list](/device-certificate-authentication/managing-trusted-certificate-settings/#crl-settings) to revoke any certificates that were not properly authorized. This prevents unauthorized devices from being accepted as trusted.
 
 4. **Re-enable auto-registration**
