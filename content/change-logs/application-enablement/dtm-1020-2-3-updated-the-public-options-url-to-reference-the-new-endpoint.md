@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2541"
 version: "1020.2.3"
 ---
-Previously, custom translations in the Localization page were not being listed, preventing users from modifying or deleting the saved custom translations. This is now resolved and the translations are listed.
+Previously, custom translations were not listed in the **Localization** page, so that users could not modify or delete them. This issue is now resolved, and the translations are properly shown.
