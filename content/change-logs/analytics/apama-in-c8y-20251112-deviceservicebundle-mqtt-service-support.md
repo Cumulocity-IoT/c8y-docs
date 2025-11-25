@@ -17,6 +17,8 @@ version:
 
 EPL Apps now supports connecting to the {{< product-c8y-iot >}} MQTT Service with the new DeviceService API. This allows handling of device-native messages sent to the MQTT Service within {{< product-c8y-iot >}} EPL Apps. For more details, see [Using {{< product-c8y-iot >}} MQTT Service](/streaming-analytics/epl-apps/#using-cumulocity-mqtt-service).
 
+For detailed configuration options and the API reference for the DeviceService bundle, see [The DeviceService bundle]({{< link-apama-webhelp >}}/standard-connectivity-plugins/device-service/).
+
 {{< c8y-admon-info >}}
-The {{< product-c8y-iot >}} MQTT Service feature is currently in Public Preview and may be subject to change in the future.
+The {{< product-c8y-iot >}} MQTT Service feature is currently in **public preview** and may be subject to change in the future.
 {{< /c8y-admon-info >}}
