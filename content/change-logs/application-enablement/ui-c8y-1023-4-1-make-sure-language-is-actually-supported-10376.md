@@ -1,6 +1,6 @@
 ---
 date: ""
-title: make sure language is actually supported (#10376)
+title: "Ensure user is not ending up on a blank screen in case it's preferred language was stored in an unexpected format"
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,6 @@ build_artifact:
 ticket: MTM-65299
 version: 1023.4.1
 ---
-Co-authored-by: Tristan Bastian <tristan.bastian@cumulocity.com>
+In some cases, the user preferred language was stored in an unexpected format on the user object (as an object instead of a string). The UI implementation expected a string and was not able to handle an object instead. For an object, it then failed to initialize the application and the user ended up on a blank screen.
+
+This behavior has been adjusted and the application will initialize in these cases as expected.
