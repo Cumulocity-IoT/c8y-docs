@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64728
 version: 1023.2.4
 ---
-In the Cockpit and Device Management applications, the Quick Links widget is used to provide easy access to useful links. However, the widget incorrectly displayed "Keep Original" instead of the proper OpenAPI link name. This issue has now been resolved. The Quick Links widget will display the correct link name for OpenAPI specifications.
+In the Cockpit and Device Management application, the "Quick links" widget, which provides easy access to useful links, did not display the link name for the OpenAPI specification properly. This issue has been resolved. The "Quick links" widget now displays the correct link name "OpenAPI specification".
