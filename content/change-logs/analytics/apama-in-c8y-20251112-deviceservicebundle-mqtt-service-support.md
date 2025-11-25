@@ -3,7 +3,7 @@ date: 2025-11-12
 title: DeviceService bundle for MQTT Service support in EPL Apps
 change_type:
   - value: change-2c7RdTdXo4
-    label: Improvement
+    label: Preview
 product_area: Analytics
 component:
   - value: component-M5-cepIIS
