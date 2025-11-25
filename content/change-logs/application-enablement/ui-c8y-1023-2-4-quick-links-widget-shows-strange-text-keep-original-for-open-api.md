@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Quick Links widget shows strange text Keep Original for OpenAPI (#10002) [GRAFT][release/cd] (#10336)
+title: Quick Links widget shows incorrect text for an OpenAPI link
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
