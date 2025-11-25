@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-11-25'
 title: Improved global context styling
 product_area: Application enablement & solutions
 change_type:
