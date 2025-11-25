@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Saved custom translations are now listed in Localization page"
+title: "Custom translations are now listed in the Localization page"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
