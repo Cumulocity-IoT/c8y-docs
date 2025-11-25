@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Quick Links widget shows incorrect text for an OpenAPI link
+title: Quick Links widget displays correct text for link to OpenAPI specification
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
