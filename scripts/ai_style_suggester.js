@@ -43,7 +43,13 @@ async function run() {
         repo,
         pull_number,
         event: "COMMENT",
-        body: `AI Style Suggester skipped: Pull request is too large to safely analyze.`
+        body: `AI Style Suggester skipped: Pull request is too large to safely analyze.
+
+    **Files changed:** ${files.length} (max allowed ${MAX_FILES})  
+    **Total diff size:** ${totalPatchSize} chars (max allowed ${MAX_TOTAL_PATCH_CHARS})  
+    **Added lines:** ${addedLines} (max allowed ${MAX_ADDED_LINES})  
+
+    Please split this PR into smaller parts for automated review.`
       });
 
       console.log("PR skipped due to size limits.");
