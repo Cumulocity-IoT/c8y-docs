@@ -54,7 +54,7 @@ jobs:
             gh label create "${LABEL_NAME}" \
               --description "Indicates broken links in branch ${{ matrix.branch }}"
           fi
-          echo "label=$LABEL_NAME" >> $GITHUB_OUTPU
+          echo "label=$LABEL_NAME" >> $GITHUB_OUTPUT
 
       - name: Create GitHub issue if tests fail
         if: failure()
