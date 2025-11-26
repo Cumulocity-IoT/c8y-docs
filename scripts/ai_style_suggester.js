@@ -107,7 +107,9 @@ async function run() {
         reviewComments.push({
           path: file.filename,
           position,
-          body: `AI Style Suggestion:\n\n${match.suggestion}`
+          body: `AI Style Suggestion:\n\n\`\`\`suggestion 
+          ${match.suggestion}
+          \`\`\``
         });
 
         summary.push(`- ${file.filename}: line ${index + 1}`);
