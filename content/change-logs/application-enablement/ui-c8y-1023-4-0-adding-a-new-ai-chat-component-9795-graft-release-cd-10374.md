@@ -14,7 +14,4 @@ build_artifact:
 ticket: MTM-64236
 version: 1023.4.0
 ---
-Co-authored-by: Jan Hommes <janhommes@users.noreply.github.com>
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
-Co-authored-by: igre-c8y <igor.reznichenko@cumulocity.com>
-Co-authored-by: Claude <noreply@anthropic.com>
+A new ai-chat component has been added to the Web SDK, which allows you to simply generate chat conversations with the Web SDK. Based on that we directly integrated a new AI Chat Assistant, that supports you with creating HTML based widgets. The assistant is only shown in the HTML widget config section, if the AI Agent Manger microservice is used and a provider API key is configured. 
