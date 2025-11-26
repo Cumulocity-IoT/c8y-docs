@@ -109,8 +109,7 @@ async function run() {
           path: file.filename,
           position,
           body: `\`\`\`suggestion
-          ${replacement}
-          \`\`\``
+          ${replacement} \`\`\``
         });
 
         summary.push(`- ${file.filename}: line ${index + 1}`);
