@@ -38,14 +38,13 @@ async function run() {
   const prompt = `
   You are reviewing a Git diff of a Markdown file.
 
-  Use ONLY the rules defined in the style guide below.  
-  Do not rely on any internal assumptions or default conventions—strictly follow the provided style guide.
+  Follow the style guide STRICTLY.  
+  Do NOT use any rules, assumptions, or conventions that are not in the style guide.  
+  The style guide is the ONLY source to follow and apply it exactly as written.
 
-  Your task:
-  - Detect added heading lines (lines starting with "+ #" or "+ ##" etc.).
-  - If missing an ID, generate a correct one according to the style guide.
-  - If an ID exists, validate and correct it.
-  - Apply all relevant rules from the style guide (capitalization, terminology, etc.).
+  Review ONLY the added lines in the diff (lines starting with '+').  
+  If an added line violates any style guide rule (headings, heading IDs, capitalization, terminology, etc.),  
+  produce a corrected version of that line.
 
   Output Format (very important):
   Return ONLY valid JSON in this exact structure:

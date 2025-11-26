@@ -13,3 +13,7 @@ Let’s explore a few prominent options:
 
 1. Microservices Approach: Developer-Friendly Integration
 For developers seeking a versatile and flexible integration solution, Cumulocity IoT’s microservices approach offers a developer-friendly solution. This method involves creating microservices that connect Cumulocity IoT to external systems, allowing for customized data exchange and automation. While requiring initial development effort, the microservices approach provides greater control and adaptability. the Option is utilized by many customers for Integrating with CRM, ERPs, FSM tools.
+
+### Creating the microservice image{#creating-the-microservice-image}
+We use the Cumulocity Microservice SDK for Java to create the image and the deployable
+zip file (Microservice SDK for Java - Cumulocity documentation ). To basically provision OTLP instrumentation of the microservice, the “opentelemetry-javaagent.jar” file must be included in the microservice image at build time.

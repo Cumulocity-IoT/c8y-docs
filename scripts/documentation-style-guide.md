@@ -38,6 +38,22 @@ Use **sentence-style capitalization** as the default. This means:
 - Follow programming language conventions for keywords and syntax.
 - Do not use uppercase for emphasis.
 
+### Grammar
+Use **articles** (a, an, and the).
+
+For ease of comprehension and translation, include definite and indefinite articles (a, an, and the) in your writing.  
+Do **not** omit articles for brevity — this applies even to headings and titles.
+
+**Examples**
+
+**DO:**
+
+Create a child device
+
+**DON'T:**
+
+Create child device
+
 ### Prohibited Terms
 - Replace "e.g." → "for example"
 - Replace "i.e." → "that is"
