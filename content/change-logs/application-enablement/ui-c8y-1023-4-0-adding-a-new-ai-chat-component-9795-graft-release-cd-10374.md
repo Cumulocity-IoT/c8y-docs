@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Adding a new ai-chat component (#9795) [GRAFT][release/cd] (#10374)
+title: New AI HTML Code assistant and ai-chat component added
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
