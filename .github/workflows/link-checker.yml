@@ -43,12 +43,18 @@ jobs:
       - name: Determine label based on branch
         if: always()
         id: label
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           LABEL_NAME="broken-link-${{ matrix.branch }}"
-          if ! gh label list | grep -q "^${LABEL_NAME}\b"; then
-            gh label create "${LABEL_NAME}" --description "Indicates broken links in branch ${{ matrix.branch }}"
+          if gh label list -L 1000 | grep -q "^${LABEL_NAME}\b"; then
+            echo "Label ${LABEL_NAME} already exists"
+          else
+            echo "Creating label ${LABEL_NAME}"
+            gh label create "${LABEL_NAME}" \
+              --description "Indicates broken links in branch ${{ matrix.branch }}"
           fi
-          echo "label=$LABEL_NAME" >> $GITHUB_OUTPUT
+          echo "label=$LABEL_NAME" >> $GITHUB_OUTPU
 
       - name: Create GitHub issue if tests fail
         if: failure()
