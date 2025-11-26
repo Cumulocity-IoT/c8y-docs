@@ -25,6 +25,31 @@ async function run() {
     const STYLE_GUIDE_TEXT = fs.readFileSync(styleGuidePath, "utf8");
 
     const { data: files } = await octokit.rest.pulls.listFiles({ owner, repo, pull_number});
+    const MAX_FILES = 30;
+    const MAX_TOTAL_PATCH_CHARS = 50000;  
+    const MAX_ADDED_LINES = 1000; 
+    let totalPatchSize = 0;
+    let addedLines = 0; 
+    for (const f of files) {
+      if (f.patch) {
+        totalPatchSize += f.patch.length;
+        addedLines += f.patch.split("\n").filter(l => l.startsWith("+") && !l.startsWith("+++")).length;
+      }
+    }
+
+    if (files.length > MAX_FILES || totalPatchSize > MAX_TOTAL_PATCH_CHARS || addedLines > MAX_ADDED_LINES) {
+      await octokit.rest.pulls.createReview({
+        owner,
+        repo,
+        pull_number,
+        event: "COMMENT",
+        body: `AI Style Suggester skipped: Pull request is too large to safely analyze.`
+      });
+
+      console.log("PR skipped due to size limits.");
+      return;
+    }
+    
     const reviewComments = [];
     const summary = [];
 
