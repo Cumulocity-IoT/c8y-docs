@@ -45,9 +45,10 @@ jobs:
         id: label
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
         run: |
           LABEL_NAME="broken-link-${{ matrix.branch }}"
-          if gh label list -L 1000 | grep -q "^${LABEL_NAME}\b"; then
+          if gh api "repos/$GH_REPO/labels/$LABEL_NAME" &>/dev/null; then
             echo "Label ${LABEL_NAME} already exists"
           else
             echo "Creating label ${LABEL_NAME}"
