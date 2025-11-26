@@ -23,6 +23,20 @@ Example:
 
 
 ## Terminology Standards
+### Capitalization
+When in doubt, don’t capitalize.
+
+Use **sentence-style capitalization** as the default. This means:
+- Capitalize only the **first word** of a sentence, heading, title, UI label (buttons, checkboxes), or standalone phrase.
+- Keep all other words **lowercase**, unless they are proper nouns.
+- In programming and code snippets, follow the capitalization norms of the language.
+- **Do not use ALL CAPS** for emphasis.
+
+**Capitalization checklist**
+- Lowercase everything except the first word in a sentence, UI label, phrase, heading, or title.
+- Capitalize proper nouns.
+- Follow programming language conventions for keywords and syntax.
+- Do not use uppercase for emphasis.
 
 ### Prohibited Terms
 - Replace "e.g." → "for example"

@@ -21,7 +21,7 @@ function cleanJSON(raw) {
 async function run() {
   try {
     const { owner, repo, number: pull_number } = context.issue;
-    const styleGuidePath = path.join(process.cwd(), "scripts", "copilot-instructions.md");
+    const styleGuidePath = path.join(process.cwd(), "scripts", "documentation-style-guide.md");
     const STYLE_GUIDE_TEXT = fs.readFileSync(styleGuidePath, "utf8");
 
     const { data: files } = await octokit.rest.pulls.listFiles({ owner, repo, pull_number});
@@ -35,37 +35,32 @@ async function run() {
       const diff = file.patch;
       if (!diff) continue;
 
-    const prompt = `
-    You are reviewing a Git diff of a Markdown file.
+  const prompt = `
+  You are reviewing a Git diff of a Markdown file.
 
-    Your job has the following responsibilities:
+  Use ONLY the rules defined in the style guide below.  
+  Do not rely on any internal assumptions or default conventions—strictly follow the provided style guide.
 
-    ## 1. Heading ID Generation & Validation (IMPORTANT)
-    For any added heading line (e.g., "+ ### Something"):
-    - If the heading has NO ID:
-        → Generate the correct ID using the style guide rules.
-    - If the heading HAS an ID:
-        → Validate it. If incorrect, suggest the correct ID.
-    Rules for IDs:
-    - lowercase only
-    - hyphens between words
-    - remove punctuation/special characters
-    - must match normalized heading text
-    - format: {#text}
+  Your task:
+  - Detect added heading lines (lines starting with "+ #" or "+ ##" etc.).
+  - If missing an ID, generate a correct one according to the style guide.
+  - If an ID exists, validate and correct it.
+  - Apply all relevant rules from the style guide (capitalization, terminology, etc.).
 
-    You MUST evaluate heading IDs.
+  Output Format (very important):
+  Return ONLY valid JSON in this exact structure:
 
-    ## Output Format (REQUIRED)
-    Return ONLY JSON in this exact format:
+  [
+    {
+      "line": <line number relative to patch>,
+      "suggestion": "<the full corrected Markdown line>"
+    }
+  ]
 
-    [
-      {
-        "line": <line number relative to patch>,
-        "suggestion": "<the full corrected Markdown line>"
-      }
-    ]
-
-    NO markdown, NO commentary, NO extra text.
+  No commentary.  
+  No markdown fences.  
+  No extra text.  
+  Do not include backticks in the JSON.
 
     ## Style Guide:
     ${STYLE_GUIDE_TEXT}

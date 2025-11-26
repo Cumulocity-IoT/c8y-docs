@@ -12,4 +12,4 @@ In this article, we would like to give an overview on one part of it i.e. System
 Let’s explore a few prominent options:
 
 1. Microservices Approach: Developer-Friendly Integration
-For developers seeking a versatile and flexible integration solution, Cumulocity IoT’s microservices approach offers a developer-friendly solution. This method involves creating microservices that connect Cumulocity IoT to external systems, allowing for customized data exchange and automation. While requiring initial development effort, the microservices approach provides greater control and adaptability. The option is utilized by many customers for Integrating with CRM, ERPs, FSM tools.
+For developers seeking a versatile and flexible integration solution, Cumulocity IoT’s microservices approach offers a developer-friendly solution. This method involves creating microservices that connect Cumulocity IoT to external systems, allowing for customized data exchange and automation. While requiring initial development effort, the microservices approach provides greater control and adaptability. the Option is utilized by many customers for Integrating with CRM, ERPs, FSM tools.
