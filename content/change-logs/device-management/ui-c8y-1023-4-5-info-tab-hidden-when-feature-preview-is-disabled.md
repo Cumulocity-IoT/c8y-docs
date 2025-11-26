@@ -1,6 +1,6 @@
 ---
 date: ""
-title: **Info** tab was hidden when **Dashboard manager** feature preview is disabled
+title: Info tab was hidden when Dashboard manager feature preview is disabled
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
