@@ -18,7 +18,6 @@ function cleanJSON(raw) {
     .trim();
 }
 
-
 async function run() {
   try {
     const { owner, repo, number: pull_number } = context.issue;
@@ -62,7 +61,7 @@ async function run() {
     [
       {
         "line": <line number relative to patch>,
-        "suggestion": "<short suggestion text>"
+        "suggestion": "<the full corrected Markdown line>"
       }
     ]
 
@@ -104,11 +103,13 @@ async function run() {
 
         if (!match) return;
 
+        const replacement = (match.suggestion || "").trim();
+
         reviewComments.push({
           path: file.filename,
           position,
-          body: `AI Style Suggestion:\n\n\`\`\`suggestion 
-          ${match.suggestion}
+          body: `\`\`\`suggestion
+          ${replacement}
           \`\`\``
         });
 
