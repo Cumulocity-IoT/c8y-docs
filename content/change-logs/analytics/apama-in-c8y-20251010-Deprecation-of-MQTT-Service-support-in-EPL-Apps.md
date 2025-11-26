@@ -1,5 +1,5 @@
 ---
-date: 2025-11-12
+date: 2025-10-22
 title: Deprecation of MQTT Service support in EPL Apps
 change_type:
   - value: change-inv-3bw8e
