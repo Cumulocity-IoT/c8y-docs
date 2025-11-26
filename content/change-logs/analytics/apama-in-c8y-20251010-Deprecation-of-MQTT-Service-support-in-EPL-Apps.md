@@ -15,4 +15,5 @@ version: 26.257.0
 ---
 
 Due to changes in the Cumulocity MQTT Service preview version, the current EPL API for the MQTT Service (`com.apama.cumulocity.mqttservice`) is now deprecated. 
-Use the DeviceService API from `com.apama.cumulocity.devices` instead, see [Using the DeviceService API]({{< link-apama-webhelp >}}/standard-connectivity-plugins/device-service/#using-the-deviceservice-api).
+
+Use the DeviceService API from (`com.apama.cumulocity.devices`) instead, see [The DeviceService bundle]({{< link-apama-webhelp >}}/standard-connectivity-plugins/device-service/).
