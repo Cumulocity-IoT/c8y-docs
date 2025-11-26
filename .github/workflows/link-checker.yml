@@ -10,9 +10,6 @@ permissions:
   pull-requests: write
   issues: write
 
-env:
-  MONITORED_BRANCHES: 'develop,release/y2025'
-
 jobs:
   link-check:
     name: Run Link Check
