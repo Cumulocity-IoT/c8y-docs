@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Asset data points
+title: Data points
 layout: redirect
 ---
 
@@ -17,7 +17,15 @@ To reference data points and measurement series in Cumulocity, the format `fragm
 **Example:**
 Within the `c8y_Temperature` fragment, `T` (for Temperature) could be a series. Each series provides a distinct stream of data for a particular metric. If a device has two temperature sensors, one for ambient temperature and one for internal temperature, both might fall under the `c8y_Temperature` fragment but would have distinct series names, such as for example `T_Ambient` and `T_Internal`. 
 
-### Data point types
+The Digital Twin Manager (DTM) application allows managing data points for assets. 
+
+{{< c8y-admon-info>}}
+
+The *Data Points* extension package must be installed for the Digital Twin Manager application to manage data points for assets. If the *Data Points* extension package is not installed, the **Data points** section is not visible in the asset details view. Install the *Data Points* extension package in *Administration &gt; Ecosystem &gt; Dtm-plugins &gt; Data points*.
+
+{{< /c8y-admon-info>}}
+
+### Types of Data points
 
 In Cumulocity, data points are inherently associated with managed objects in the platform's inventory. As assets are a type of managed object, measurements can be associated with assets as any other managed object. However, there are two distinct ways in which data points can be associated with assets in the Digital Twin Manager:   
 
@@ -43,3 +51,109 @@ These permissions are categorized under two main permissions: "Digital twin asse
 - To update linked data points: UPDATE permission for permission type "Digital twin assets" or "Digital twin linking"
 - To create, update and delete linked data points: ADMIN permission for permission type "Digital twin assets" or "Digital twin linking"
 {{< /c8y-admon-req >}}
+
+### To view data points {#view-datapoints}
+
+To view the data points for a specific asset, navigate to the **Assets** page by selecting the desired asset from the asset hierarchy. In the asset details view, select the **Data points** section.
+
+![Asset Data point list](/images/dtm/data-points/asset-data-points-list.png)
+
+#### Understanding the Columns in the Data Points list
+
+The **Data points** section presents a table all relevant information about the data points associated with the selected asset. Each row in the table represents a unique data point with the following columns:
+
+| Column | Description
+| ---------- | -----------
+| <span style="white-space: nowrap;">Measurement&nbsp;Series</span> | The fragment and series (e.g., c8y_Temperature → T), clearly identifying the specific type of measurement being tracked. The measurement series represents the unique identifier for the data point and its particular data stream.
+| <span style="white-space: nowrap;">Data&nbsp;Point&nbsp;Template</span> | Indicates if a predefined template from the Cumulocity Data Point Library is applied to this measurement. If a template matches the fragment and series, it provides default visualization settings (like color and label) and pre-configured threshold rules for alarms.   
+| Source | Identifies the unique ID, or if available the name, of the device that is generating this measurement. For linked data points, this shows source device the linked data point originates from.   
+| Status | The current state of the data point, possibly indicating whether it is actively receiving data, requires further configuration, or if its source is unavailable. This is crucial for troubleshooting and understanding data flow and is paericularly useful for linked data points.
+| <span style="white-space: nowrap;">Latest Value</span> | Displays the most recently reported numerical value for this data point including it's unit. If the data point is not yet configured or linked, it may show *Not Configured*.
+
+For linked data points, the **Source** column shows the name (or id) of the source device and the fragment and series on the source device. Fragment and series are only shown for the Source if they are different to fragment and series of the data point itself. With the Source context menu of linked data points, you  get access to context actions such as changing the source device or unlinking the data point.
+
+#### Understanding Statuses
+
+The **Status** column provides immediate feedback on the state of a data point. Understanding these statuses is key to ensuring assets are receiving the expected data. Statuses currently supported in the DTM application are:
+
+| Status | Description
+| ---------- | -----------
+| Linked | The data point is a linked data point and is successfully connected to its designated source (managed object/device). This indicates a fully operational link, however, it does not indicate if the link source is actively receiving measurements.
+| <span style="white-space: nowrap;">Source missing</span> | The managed object (device) configured as the source for this linked data point cannot be found in the Cumulocity inventory. This could be due to the device being deleted. The link itself is defined, but its source is not found.
+| Incomplete | The data point link has been initiated, but it requires further action to become fully operational. Typically, this means a specific source device needs to be selected and assigned to the data point for the link to become operational.
+
+![Asset Data point statuses](/images/dtm/data-points/asset-data-points-status.png)
+
+In case of an error or warning status for a data point the, **Source** shows the <i class="c8y-icon dlt-c8y-icon-warning icon-16" style="color: rgb(255, 136, 0);"></i>  or <i class="dlt-c8y-icon-error text-danger icon-16"></i> indicators and provides options to troubleshoot and resolve the issue via the context menu. For example, in the case of a *Missing source* status, you can select a new source device to link the data point to. 
+
+### To create linked data points {#create-linked-datapoints}
+
+All data points associated with an asset can be created in the **Data points** section of the **Assets** page. 
+
+![Create Asset Data points](/images/dtm/data-points/asset-data-points-create.png)
+
+1. Select an asset from the hierarchy on the **Assets** page.
+2. The **Data points** section contains a comprehensive list of all data points associated with the selected asset.
+3. Click the **Link data points** button at the top right corner of the **Data points** section. This opens the Data point selector dialog.
+4. Select the source device from which you want to link data points. This is done by navigating through the asset hierarchy in the left panel of the dialog.
+5. In the center panel, you can either select from existing data points associated with the source device or define custom data points by specifying the fragment and series.
+6. The right panel displays the data points you have selected for linking. Review your selections here.
+7. Once you have made your selections, click the **Add data points** button at the bottom of the dialog to finalize the linking process.
+
+For each selected data point, a new data point will be created for the asset, pointing to the source device and its specific measurement series.
+
+![Create Asset Data points](/images/dtm/data-points/asset-data-point-selector.png)
+
+When choosing from available data points, you have two primary options:
+
+**Associated data points**: Select from the list of measurement series already known or received by the platform from the currently selected source device in the **Data point selector**. These are measurements that the platform has already processed and recognized. You can click the plus button next to any of these listed data points to add them to your selection.
+
+**Custom data points**: If the desired measurement has not yet been received by the platform from the source device, you can define it as a custom data point. To do this, you must manually provide the *fragment* (e.g., c8y_Temperature) and *series* (e.g., T) in the respective input fields. You might also need to provide a measurement type.
+
+![Create custom Asset Data points](/images/dtm/data-points/asset-data-point-selector-custom.png)
+
+{{< c8y-admon-info>}}
+
+When creating a new linked data point, the data point on the asset is created with the fragment and series of the selected data point in the *Data point selector*. Using *Change source* context menu option, it is possible to change the source device itself and / or the fragment and series on the source device for the linked data point. This means that you can adapt the linked data point to different source devices or measurement series as needed. 
+
+If fragment and series on the asset and the source device are different, the source will have the name of the source device and the fragment and series will be displayed as "DeviceName - c8y_Temperature → T". This helps to clearly identify the source of the linked data point.
+
+{{< /c8y-admon-info>}}
+
+
+### To modify Linked Data Points
+
+1. Navigate to the **Assets** page and select the asset for which you want to manage linked data points.
+2. In the **Data points** section, find the linked data point you wish to update.
+3. Click the **Change source** option in the context menu of the linked data point.
+4. In the **Change source** dialog, you can select a new source device or modify the fragment and series of the linked data point.
+5. After making your changes, click **Save** to apply the changes.
+
+### To delete Linked Data Points
+
+1. Navigate to the **Assets** page and select the asset for which you want to delete linked data points.
+2. In the **Data points** section, find the linked data point you wish to delete
+3. Hover over the linked data point and click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-16"></i> that appears at the right.
+4. In the confirmation dialog, select **Delete** to delete the linked data point.
+
+### To unlink Linked Data Points
+
+1. Navigate to the **Assets** page and select the asset for which you want to unlink data points.
+2. In the **Data points** section, find the linked data point you wish to unlink.
+3. Click the **Unlink source** option in the context menu of the linked data point.
+4. In the confirmation dialog, select **Unassign** to remove the link between the asset and the source device for that data point.
+
+{{< c8y-admon-info>}}
+Unlinking a data point does not delete the data point itself; it simply removes the association between the asset and the source device. The data point will still exist as a measurement of the source device but will no longer be linked to the asset. The state of the data point will change to *Incomplete* after unlinking, indicating that it is no longer associated with a source device.
+{{< /c8y-admon-info>}}
+
+### Source warnings and errors
+
+Sources of linked data points can have warnings or errors that indicate issues with the data point. Warnings are highlighted using the <i class="c8y-icon dlt-c8y-icon-warning icon-16" style="color: rgb(255, 136, 0);"></i> indicator, while errors are highlighted using <i class="dlt-c8y-icon-error text-danger icon-16"></i>. 
+
+Possible issues include:
+- *Error*: the source device cannot be found
+- *Warning*: the measurement type is required but is not configured for the data point
+- *Warning*: the measurement type, if configured for the data point, is not matching the measurement type of the latest measurement received from the source device
+
+By hovering over the warning or error icon, you can see more details about the issue. This helps in troubleshooting and resolving any problems with the linked data points. To resolve the issues, use the conext menu actions available for the source.

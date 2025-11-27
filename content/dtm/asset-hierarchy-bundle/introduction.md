@@ -14,8 +14,6 @@ helpcontent:
   To get started, open the **Configuration** menu in the navigator and create the necessary asset models and asset properties in the **Asset models** and **Asset properties** pages respectively. Afterwards, navigate back to the **Assets** menu in the navigator and click **Add asset** on the top right corner to create the assets."
 ---
 
-### Assets {#assets}
-
 In the DTM application, assets are the digital representation of physical assets.
 An asset in the DTM application can contain subassets and devices.
 You also have the opportunity to define properties or parameters of an asset through [asset properties](/dtm/asset-types/#asset-properties).

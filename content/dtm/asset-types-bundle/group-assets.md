@@ -1,5 +1,5 @@
 ---
-weight: 50
+weight: 35
 title: Asset model for groups
 layout: redirect
 ---
