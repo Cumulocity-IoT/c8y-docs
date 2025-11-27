@@ -195,3 +195,13 @@ You can combine several values. For example, specify the following if you only w
 The default value of this tenant option is `not has(c8y_IsVirtualDevice)`. As long as you do not change this tenant option, virtual devices are not shown as they would not make sense in an analytic model. If you change the value for this tenant option, make sure to specify all managed objects that you want to see in the search result.
 
 See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
+
+### Device Hierarchy changes {#device-hierarchy-changes}
+
+Analytics Builder models now automatically track changes to device group membership and device metadata. A Device addition, deletion, update to metadata such as device type. The affected models immediately reflect these changes without requiring manual deactivation or reactivation.
+SmartRules2.0 (Analytics Rules), which are based in Analytics Builder models,  Will also be able to track changes to the hierarchy and process the data from these devices.
+
+Where it does not work
+- cascade deletion of a group is not supported (It  will need a cache update or a reload of the model)
+- deletion of a parent group is not supported (Model will deleted and an Error is logged.)
+- deletion of a parent assset is not supported (Model will deleted and an Error is logged.)
