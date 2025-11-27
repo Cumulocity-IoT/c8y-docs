@@ -15,7 +15,6 @@ ticket: APMF-94
 version: 26.257.0
 ---
 
-Analytics Builder models now automatically track changes to the device hierarchy, including Addition, Deletion and updates to devices, group and Assets membership and metadata.
-This removes the need to deactivate and reactivate models. 
+Analytics Builder models will now automatically track changes to devices, including additions, deletions, and updates to device, group, and asset membership as well as metadata modifications. This ensures that any structural or configuration changes are immediately reflected in model processing without user intervention. The earlier requirement to deactivate and reactivate models to pick up such updates is now removed.
 
-#to-do Date and version will be upated before merging.
+For details, refer to [Device Hierarchy changes ](/streaming-analytics/models-and-devices/#device-hierarchy-changes).

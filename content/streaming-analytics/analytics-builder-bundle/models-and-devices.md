@@ -198,11 +198,11 @@ See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 
 ### Device Hierarchy changes {#device-hierarchy-changes}
 
-Analytics Builder models now automatically track changes to device group membership and device metadata. A Device addition, deletion, update to metadata such as device type. The affected models immediately reflect these changes without requiring manual deactivation or reactivation.
-SmartRules2.0 (Analytics Rules), which are based in Analytics Builder models,  Will also be able to track changes to the hierarchy and process the data from these devices.
+Analytics Builder models will automatically track changes to device group membership and device metadata. A Device addition, deletion, update to metadata such as device type. The affected models immediately reflect these changes without requiring manual deactivation or reactivation.
+[Smart rules (NEW) plugin](https://cumulocity.com/docs/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin).
+, which are based in Analytics Builder models Will also behave in similary to the device changes hierarchy and process the data from these devices.
 
-Where it does not work
+This comes with few limitations listed below.
 
-- cascade deletion of a group is not supported (It  will need a cache update or a reload of the model)
-- deletion of a parent group is not supported (Model will deleted and an Error is logged.)
-- deletion of a parent assset is not supported (Model will deleted and an Error is logged.)
+- Cascade deletion of a Group is not supported (This Case needs a reload of the model to take effect.)
+- Deletion of a parent Group/Asset is not supported (Model will deleted and an Error is logged.)
