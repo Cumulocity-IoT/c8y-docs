@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Info tab should be editable when Dashboard manager feature preview is disabled
+title: Info tab was hidden when Dashboard manager feature preview is disabled
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5178
 version: 1023.4.6
 ---
-Co-authored-by: Bozhidar Dedov <95280800+bozhidardedov@users.noreply.github.com>
+With the rollout of the **Dashboard manager** feature preview the **Info** tab was hidden for some devices in **Device management** application. This issue is now fixed and **Info** tab will be visible again for all devices when feature preview is disabled. For devices for which the **Info** tab was still visible the **Edit widgets** and **Dashboard settings** options were disabled. This is now also fixed.
