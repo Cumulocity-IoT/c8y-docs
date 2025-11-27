@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64954
 version: 1023.4.1
 ---
-Co-authored-by: Jakub Drewniak <103751383+jdre-c8y@users.noreply.github.com>
+The Web SDK update guide has been enriched with new entry to cover the latest changes and improvements in version 1023 of the Web SDK. This guide now provides more detailed information on how to use the new features and APIs introduced in this version, such as global time context. With this update, developers can leverage the full potential of the Web SDK to build powerful and efficient web applications.
