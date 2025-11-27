@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2541"
 version: "1020.2.3"
 ---
-Previously, custom translations were not listed in the **Localization** page, so that users could not modify or delete them. This issue is now resolved, and the translations are properly shown.
+After the introduction of improved branding feature, custom translations in the **Localization** page of Digital Twin Manager application were not listed, and users could not modify or delete them. This issue is now resolved, and the translations are properly shown.
