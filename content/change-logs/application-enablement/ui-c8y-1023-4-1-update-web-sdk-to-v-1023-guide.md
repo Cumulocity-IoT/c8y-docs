@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Update Web SDK to v1023 guide
+title: Web SDK update to v1023 guide added
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
