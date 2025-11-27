@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Improved module federation plugin documentation and fixed loading of webpack styles from node_modules
+date: '2025-11-13'
+title: >-
+  Improved module federation plugin documentation and fixed loading of webpack
+  styles from node_modules
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

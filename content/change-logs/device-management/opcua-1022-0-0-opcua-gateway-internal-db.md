@@ -1,6 +1,6 @@
 ---
-date:
-title: OPC UA gateway local database upgrade 
+date: '2025-11-13'
+title: OPC UA gateway local database upgrade
 product_area: Device management & connectivity
 change_type:
   - value: change-inv-3bw8e
