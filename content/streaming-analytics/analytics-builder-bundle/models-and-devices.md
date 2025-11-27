@@ -202,6 +202,7 @@ Analytics Builder models now automatically track changes to device group members
 SmartRules2.0 (Analytics Rules), which are based in Analytics Builder models,  Will also be able to track changes to the hierarchy and process the data from these devices.
 
 Where it does not work
+
 - cascade deletion of a group is not supported (It  will need a cache update or a reload of the model)
 - deletion of a parent group is not supported (Model will deleted and an Error is logged.)
 - deletion of a parent assset is not supported (Model will deleted and an Error is logged.)
