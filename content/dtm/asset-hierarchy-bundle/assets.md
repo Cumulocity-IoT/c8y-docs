@@ -145,7 +145,7 @@ To delete an asset template, click the delete icon at the top right.
 
 Modify the assets by navigating to the asset pages using the **Previous** and **Next** buttons. You can track your progress via the green check marks in the asset hierarchy on the left.
 
-When all check marks are selected, a **Confirmation** page shows a preview of the asset hierarchy. Click **Create** to create the asset hierarchy.
+When all assets in the asset hierarchy show green check marks, a **Confirmation** page shows a preview of the asset hierarchy. Click **Create** to create the asset hierarchy.
 
 ![Confirmation page asset creation](/images/dtm/assets/dtm-assets-confirmation-page.png)
 
