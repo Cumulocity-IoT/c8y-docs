@@ -686,7 +686,7 @@ Running Maven CLI commands in debug mode (e.g., `mvn clean install --debug ...`)
 generate a very large volume of HTTP-related log output, such as logs from resource downloads. 
 Analyzing this data can quickly become tedious.
 
-If required, HTTP logging can be suppressed with these command line options:
+To reduce such logging information, HTTP logging can be suppressed with these command line options:
 ```
 -Dorg.slf4j.simpleLogger.log.org.apache.http=off
 -Dorg.slf4j.simpleLogger.log.org.apache.http.wire=off
@@ -697,8 +697,10 @@ Depending on the logging configuration, these parameter names may apply:
 -Dorg.slf4j.simpleLogger.log.org.apache.maven.wagon.providers.http.httpclient=off
 -Dorg.slf4j.simpleLogger.log.org.apache.maven.wagon.providers.http.httpclient.wire=off
 ```
+Besides `off`, `error` or `warn` might also be appropriate values.
 
-The parameters can also be added to the Maven configuration file `.../conf/logging/simplelogger.properties`
+The parameters can also be added to the Maven configuration file `${MAVEN_HOME}/conf/logging/simplelogger.properties` 
+or to the `MAVEN_OPTS` environment variable.
 
 Related documentation can be found in [Maven logging](https://maven.apache.org/maven-logging.html) and
 [Maven HttpClient debugging](https://issues.apache.org/jira/browse/MNG-6181)
