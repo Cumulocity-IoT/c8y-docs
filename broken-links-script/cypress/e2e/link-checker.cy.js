@@ -112,9 +112,9 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       }
 
       if (isCodexPage) {
-        cy.visit(url, { timeout: 50000 });
+        cy.visit(url, { timeout: 20000 });
       
-        cy.get('[data-cy="c8y-title--title-outlet"] .text-truncate', { timeout: 50000 })
+        cy.get('[data-cy="c8y-title--title-outlet"] .text-truncate', { timeout: 20000 })
           .invoke('text')
           .should('not.be.empty')
       
@@ -124,7 +124,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
           if (fragment.startsWith('/')) {
             cy.location('hash').should('eq', `#${fragment}`, `URL hash should match the fragment: #${fragment}`);
           } else {
-            cy.get(`#${fragment}`, { timeout: 10000 })
+            cy.get(`#${fragment}`, { timeout: 20000 })
               .should('exist', `Fragment "${fragment}" does not exist on the page`)
               .then(() => {
                 cy.document().then((doc) => {
@@ -136,17 +136,17 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         }
       }
       else if (isApiPage) {
-        cy.visit(url, { timeout: 50000 });
+        cy.visit(url, { timeout: 20000 });
         if (fragment) {
-          cy.get(`[id="${fragment}"]`, { timeout: 10000 }).should('exist');
+          cy.get(`[id="${fragment}"]`, { timeout: 20000 }).should('exist');
         }
       }
       else if (isGithubPage && fragment) {
-        cy.visit(url, { timeout: 50000 });
+        cy.visit(url, { timeout: 20000 });
         checkGithubFragment(fragment);
       }
       else if (fragment) {
-        cy.visit(url, { timeout: 50000, failOnStatusCode: false, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122.0 Safari/537.36' }});
+        cy.visit(url, { timeout: 20000, failOnStatusCode: false, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122.0 Safari/537.36' }});
         checkRegularFragment(fragment);
       }
       else {
@@ -160,7 +160,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
             expect(response.status).to.be.oneOf([200, 201, 202, 203, 204, 301, 302, 304]);
             expect(response.body).not.to.be.empty;
           } else {
-            cy.visit(url, { timeout: 50000 });
+            cy.visit(url, { timeout: 20000 });
             cy.document().its('body').should('not.be.empty');
           }
         });
