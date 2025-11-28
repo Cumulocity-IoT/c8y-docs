@@ -88,7 +88,7 @@ All data points associated with an asset can be created in the **Data points** t
 
 ![Create asset data points](/images/dtm/data-points/asset-data-points-create.png)
 
-1. Select an asset from the hierarchy on the **Assets** page and switch to the **Data points** tab.
+1. Select an asset from the hierarchy on the **Assets** page and switch to the **Data points** tab in the asset details.
 2. The **Data points** tab contains a comprehensive list of all data points associated with the selected asset.
 3. Click the **Link data points** button at the top right of the **Data points** tab. This opens the data point selector dialog.
 4. Select the source device from which you want to link data points. This is done by navigating through the asset hierarchy in the left panel of the dialog.
@@ -118,7 +118,7 @@ If fragment and series on the asset and the source device are different, the sou
 ### To modify linked data points {#to-modify-linked-datapoints}
 
 1. Navigate to the **Assets** page and select the asset for which you want to manage linked data points.
-2. In the **Data points** tab, find the linked data point you wish to update.
+2. In the **Data points** tab of the asset details, find the linked data point you wish to update.
 3. Click the **Change source** option in the context menu of the linked data point.
 4. In the **Change source** dialog, you can select a new source device or modify the fragment and series of the linked data point.
 5. After making your changes, click **Save** to apply the changes.
@@ -126,16 +126,16 @@ If fragment and series on the asset and the source device are different, the sou
 ### To delete linked data points {#to-delete-linked-datapoints}
 
 1. Navigate to the **Assets** page and select the asset for which you want to delete linked data points.
-2. In the **Data points** tab, find the linked data point you wish to delete.
+2. In the **Data points** tab of the asset details, find the linked data point you wish to delete.
 3. Hover over the linked data point and click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-16"></i> that appears at the right.
 4. In the confirmation dialog, select **Delete** to delete the linked data point.
 
 ### To unlink linked data points {#to-unlink-linked-datapoints}
 
 1. Navigate to the **Assets** page and select the asset for which you want to unlink data points.
-2. In the **Data points** tab, find the linked data point you wish to unlink.
+2. In the **Data points** tab of the asset details, find the linked data point you wish to unlink.
 3. Click the **Unlink source** option in the context menu of the linked data point.
-4. In the confirmation dialog, select **Unassign** to remove the link between the asset and the source device for that data point.
+4. In the confirmation dialog, select **Unlink** to remove the link between the asset and the source device for that data point.
 
 {{< c8y-admon-info>}}
 Unlinking a data point does not delete the data point itself; it simply removes the association between the asset and the source device. The data point will still exist as a measurement of the source device but will no longer be linked to the asset. The state of the data point will change to *Incomplete* after unlinking, indicating that it is no longer associated with a source device.

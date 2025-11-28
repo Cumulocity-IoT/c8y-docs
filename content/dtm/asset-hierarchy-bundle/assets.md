@@ -137,19 +137,19 @@ At each hierarchy level, you can create multiple assets from a single asset mode
 
 For a wind turbine rotor with three blades, for example, you first create the asset hierarchy level for "Rotor". Then use the asset model "Blade" to add the blades.
 
-1Click **Add** at the bottom to add more blade assets.
+Click **Add** at the bottom to add more blade assets.
 
-    ![Adding multiple assets](/images/dtm/assets/dtm-assets-add-multiple-instance.png)
+![Adding multiple assets](/images/dtm/assets/dtm-assets-add-multiple-instance.png)
 
 To delete an asset template, click the delete icon at the top right.
 
 Modify the assets by navigating to the asset pages using the **Previous** and **Next** buttons. You can track your progress via the green check marks in the asset hierarchy on the left.
 
-When done **Confirmation** page shows the asset hierarchy. Click **Create** to create the asset hierarchy.
+When all check marks are selected, a **Confirmation** page shows a preview of the asset hierarchy. Click **Create** to create the asset hierarchy.
 
 ![Confirmation page asset creation](/images/dtm/assets/dtm-assets-confirmation-page.png)
 
-If the asset hierarchy has been successfully created, you see a pop-up notification at the top right. The new asset hierarchy in diaplayed the **Assets** page.
+If the asset hierarchy has been successfully created, you see a pop-up notification at the top right. The new asset hierarchy in displayed the **Assets** page.
 Also see [viewing assets](/dtm/asset-hierarchy/#viewing-assets).
 
 {{< c8y-admon-info>}}
@@ -197,7 +197,8 @@ For an asset with a location, click or drag the marker to the preferred position
 
 To delete a subasset or device in the hierarchy, click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> next to it and confirm. The delete icon shows up when hovering over a row.
 
-Optionally, select the respective checkbox to delete all subassets and devices for the selected asset.
+In the confirmation dialog, you can select if you only want to delete the asset with all associated subassets or if you additionally want to delete all associated devices.
+
 
 ### To search for an asset {#to-search-for-an-asset}
 
@@ -211,8 +212,6 @@ The **Search** page only shows a limited number of matches. To see more details,
 {{< c8y-admon-important >}}
 The search results include all assets containing the search term in any property (name, model or any fragment), that is, the search results do not only include assets matching the search criteria with their names.
 {{< /c8y-admon-important >}}
-
-The DTM application extends the full text search capability of {{< product-c8y-iot >}} for searching assets. See [Search and filter functionality](/get-familiar-with-the-ui/gui-features/#search-and-filter-functionality) to know more about available search options.
 
 ### To move assets {#to-move-assets}
 
