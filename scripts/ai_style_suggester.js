@@ -79,6 +79,7 @@ async function run() {
   - Apply all relevant rules from the style guide (capitalization, terminology, etc.).
   - Check capitalization and correct any issues in the added lines.
   - Check grammar rules, including missing articles ("a", "an", "the") according to the following style guide rules.
+  - Always use standard American English spelling. Convert any British English spelling to American English.
 
   Output Format (very important):
   Return ONLY valid JSON in this exact structure:
@@ -132,6 +133,10 @@ async function run() {
         if (!match) return;
 
         const replacement = (match.suggestion || "").trim();
+
+        if (replacement.startsWith("+")) {
+          replacement = replacement.slice(1).trim();
+        }
 
         reviewComments.push({
           path: file.filename,
