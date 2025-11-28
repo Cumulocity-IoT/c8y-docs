@@ -8,32 +8,32 @@ Once the [asset hierarchy](/dtm/asset-hierarchy/#asset-hierarchy) is created by 
 
 ### To view an asset {#to-view-an-asset}
 
-Select an asset in the **Assets** page to view the asset details in **Subassets** tab.
-It shows all the subassets, child devices and asset properties.
+Select an asset in the **Assets** page to view the asset details in the *Subassets** tab.
+It shows all subassets, child devices, and asset properties.
 {{< c8y-admon-info>}}
-The key-value pairs for complex properties in the **Subassets** page will be displayed in the order specified in the **Order** field of the property definition in the **Asset properties** page.
+In the **Subassets** page, the key-value pairs for complex properties will be displayed in the order specified in the **Order** field of the property definition in the **Asset properties** page.
 {{< /c8y-admon-info>}}
 
 1. Select an asset from the hierarchy on the **Assets** page.
 
-2. The **Subassets** page contains the asset details, created and last updated time displayed at the top right.
+2. The **Subassets** page contains the asset details, such as the creation and last update time displayed at the top right.
 
-3. Optionally [add subassets](/dtm/asset-hierarchy/#to-add-subassets), or [assign devices](/dtm/asset-hierarchy/#to-assign-devices-to-an-asset) from the top bar.
+3. Optionally, [add subassets](/dtm/asset-hierarchy/#to-add-subassets) or [assign devices](/dtm/asset-hierarchy/#to-assign-devices-to-an-asset) from the top bar.
 
 4. The asset name and description along with the icon are displayed at the top.
-All subassets and devices for this asset will be listed in the **Subassets** section.
+All subassets and devices for this asset are listed in the **Subassets** section.
 
-5. All the asset properties for this asset will be displayed on the right.
+5. All asset properties for this asset are displayed on the right.
 
-6. The asset hierarchy will be shown in the **Asset tree** tab.
+6. The asset hierarchy is shown in the **Asset tree** tab.
 
 7. Optionally [add subassets](/dtm/asset-hierarchy/#to-add-subassets) using the options on the top right.
 
-If the asset has a location, you can see it on the map under the properties section below its values. Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen. To see the map, provide a value for latitude and longitude. You cannot modify the marker when viewing the asset. Edit the property in order to change the position of the marker.
+If a location is specified for the asset, it is shown in the map under the properties section below its values. To see the map, provide a value for latitude and longitude.  Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen. You cannot modify the marker when viewing the asset. Edit the property to change the position of the marker.
 
 {{< c8y-admon-info>}}
-The [Add asset](/dtm/asset-hierarchy/#to-add-subassets) button is not visible for the last hierarchical level.<br>
-A warning message will be shown if one or more properties associated with the asset are not present.
+- The [**Add asset**](/dtm/asset-hierarchy/#to-add-subassets) button is not visible for the last hierarchical level.<br>
+- A warning message will be shown if one or more properties associated with the asset are not present.
 For complex properties, the keys will be ordered as specified in the property definition.
 {{< /c8y-admon-info>}}
 
@@ -57,10 +57,10 @@ Click **Add asset** to add more subassets.
 
 ### To create an asset {#to-create-an-asset}
 
-There are two options for creating assets in the DTM application.
+There are two options for creating assets in the DTM application, that is, via the UI and via REST API.
 The following section describes how to create an asset via the UI.
 
-Alternatively, see [DTM Asset and Definition API documentation](https://cumulocity.com/api/dtm/) for using the DTM REST API.
+See the [DTM API documentation](https://cumulocity.com/api/dtm/) for using the DTM REST API.
 
 To add an asset via the UI:
 
@@ -100,9 +100,9 @@ For complex properties, the keys are ordered as specified in the property defini
 As you define each hierarchy level of your new asset, you see a green check mark on each asset hierarchy level in the section on the left.
 
 {{< c8y-admon-info>}}
-If there are validation errors on the page, they will be indicated by red highlights.
+If there are validation errors on the page, they are indicated by red highlights.
 Correct the required information to continue.
-If you are leaving the page abruptly, a confirmation dialogue box will be shown.
+If you leave the page abruptly, a confirmation dialog is shown.
 {{< /c8y-admon-info>}}
 
 ![Adding a new asset](/images/dtm/assets/dtm-assets-new-asset.png)
@@ -172,15 +172,14 @@ In case of a bulk operation failure, the entire operation is rolled back. The us
 
 ### To assign devices to an asset
 
-When you create a new asset you have the option of assigning one or more devices to this asset.
+When you create a new asset you can assign one or more devices to it.
 
 1. Click **Assign devices** in the **New asset** page.
 2. The resulting dialog window lists all devices registered for the tenant. Select one or multiple devices and click **Assign**.
-3. The dialog closes and you can continue creating the asset.
 
 ![Assigning devices to an asset](/images/dtm/assets/dtm-assets-assign-devices.png)
 
-To add a new device, add it through the Device Management application.
+New devices are added in the Device Management application.
 Refer to [Registering devices](/device-management-application/registering-devices/) for further information.
 
 {{< c8y-admon-info>}}
@@ -190,7 +189,7 @@ If a device belongs to a subasset, then select it when you create the subasset.
 
 #### To filter and select devices {#to-filter-and-select-devices}
 
-You can view, search or filter devices easily with the following options:
+You can view, search, or filter devices easily with the following options:
 
 1. Columns shown in the grid specify the device details for each device. Click **Configure columns** at the top right to show or hide columns.
 
@@ -205,22 +204,20 @@ You can view, search or filter devices easily with the following options:
 ### To modify an asset {#to-modify-an-asset}
 
 Fields are marked editable by an edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i>.
-To modify any of the asset details, click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i>, enter new details and save.<br>
+To modify any of the asset details, click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i>, enter the new information, and save it.<br>
 For an asset with a location, click or drag the marker to the preferred position to select the value for latitude and longitude on the map. Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to enter full screen mode. To see the map, provide a value for latitude and longitude.
 
 ### To delete an asset {#to-delete-an-asset}
 
-To delete a subasset or device in the hierarchy:
+To delete a subasset or device in the hierarchy, click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> next to it and confirm. The delete icon appears when hovering over a row.
 
-1. Click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> next to it.
 
     {{< c8y-admon-info>}}
 
 The delete icon only appears on hover of each row under the subassets section.
     {{< /c8y-admon-info>}}
 
-In the following dialog box, click **Confirm** to continue.
-Optionally select the checkbox in the dialog box to delete all subassets and devices for the selected asset.
+Optionally, select the respective checkbox to delete all subassets and devices for the selected asset.
 
 ### To search for an asset {#to-search-for-an-asset}
 
