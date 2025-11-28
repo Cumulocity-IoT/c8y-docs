@@ -20,7 +20,7 @@ Optionally, [add subassets](/dtm/asset-hierarchy/#to-add-subassets) or [assign d
 
 In the **Asset tree** tab, the assets hierarchy is shown.
 
-7. Optionally [add subassets](/dtm/asset-hierarchy/#to-add-subassets) using the options on the top right.
+Optionally, [add subassets](/dtm/asset-hierarchy/#to-add-subassets) using the options on the top right.
 
 If a location is specified for the asset, it is shown in the map under the properties section below its values. To see the map, provide a value for latitude and longitude.  Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen. You cannot modify the marker when viewing the asset. Edit the property to change the position of the marker.
 
