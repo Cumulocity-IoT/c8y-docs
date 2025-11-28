@@ -69,8 +69,8 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       const isCodexPage = url.includes('codex/#/');
       const isApiPage = url.includes('/api/');
       const isGithubPage = url.includes('github.com');
+      const isGithubBlobLine = url.includes('github.com') && /\/blob\/[^#]+#L\d+(-L\d+)?$/.test(url);
       const nonHtmlExtensions = ['.txt','.json','.pdf','.zip','.csv','.xml','.not','.bin','.dat','.tar','.gz','.rar','.xsd','.yaml','.pot'];
-
       const hasNonHtmlExtension = nonHtmlExtensions.some(ext => url.endsWith(ext));
       const isNonHtmlResource = hasNonHtmlExtension || url.includes('/files/') || url.includes('/downloads/');
       const isNpmPackagePage = url.startsWith('https://www.npmjs.com/package/');
@@ -139,6 +139,24 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         cy.visit(url, { timeout: 20000 });
         if (fragment) {
           cy.get(`[id="${fragment}"]`, { timeout: 20000 }).should('exist');
+        }
+      }
+      else if (isGithubBlobLine) {
+        const baseUrl = url.split('#')[0];
+        const match = url.match(/#L(\d+)/);
+        const lineNumber = match ? match[1] : null;
+        cy.request({ url: baseUrl, failOnStatusCode: false }).then((res) => {
+          expect(res.status, `GitHub blob file should exist: ${baseUrl}`)
+            .to.be.oneOf([200, 301, 302]);
+        });
+        if (lineNumber) {
+          cy.visit(baseUrl, { timeout: 30000 });
+          const selector = `#L${lineNumber}, #LC${lineNumber}`;
+          cy.get('body').then(($body) => {
+            if ($body.find(selector).length === 0) {
+              throw new Error(`Line ${lineNumber} does NOT exist in ${baseUrl}`);
+            }
+          });
         }
       }
       else if (isGithubPage && fragment) {
