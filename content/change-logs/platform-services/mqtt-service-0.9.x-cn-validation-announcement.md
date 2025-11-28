@@ -55,4 +55,8 @@ Please contact [Cumulocity Support](/additional-resources/contacting-support/) i
 
 ### Roll-out plan
 
+{{< c8y-admon-info >}}
+Because the {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) is currently in Public Preview, it is not subject to the standard 6-month compatibility notice period defined in the Cumulocity IoT [Compatibility policy](/service-terms/compatibility-policy/).
+{{< /c8y-admon-info >}}
+
 To allow a smooth transition, CN validation will be introduced no sooner than **four weeks after this announcement**.
