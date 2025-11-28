@@ -20,7 +20,7 @@ Within the `c8y_Temperature` fragment, `T` (for Temperature) could be a series. 
 The DTM application allows managing data points for assets.
 
 {{< c8y-admon-info>}}
-The **Data Points** extension package must be installed for the Digital Twin Manager application to manage data points for assets. If the Data Points extension package is not installed, the **Data points** section is not visible in the asset details view. Install the Data Points extension package in **Administration &gt; Ecosystem &gt; Dtm-plugins &gt; Data points**.
+The Data Points extension package must be installed for the Digital Twin Manager application to manage data points for assets. If the Data Points extension package is not installed, the **Data points** tab is not visible in the asset details view. Install the Data Points extension package in **Administration &gt; Ecosystem &gt; Dtm-plugins &gt; Data points**.
 {{< /c8y-admon-info>}}
 
 ### Types of data points {#types-of-data-points}
@@ -50,17 +50,17 @@ These permissions are categorized under two main permissions: "Digital twin asse
 
 ### To view data points {#view-datapoints}
 
-To view the data points for a specific asset, select an asset from the hierarchy on the **Assets** page. In the asset details view, select the **Data points** section.
+To view the data points for a specific asset, select an asset from the hierarchy on the **Assets** page. In the asset details view, select the **Data points** tab.
 
 ![Asset Data point list](/images/dtm/data-points/asset-data-points-list.png)
 
 #### Understanding the columns in the data points list {#understanding-the-columns-in-the-datapoints-list}
 
-The **Data points** section presents all relevant information about the data points associated with the selected asset in a table format. Each row in the table represents a unique data point with the following columns:
+The **Data points** tab presents all relevant information about the data points associated with the selected asset in a table format. Each row in the table represents a unique data point with the following columns:
 
 | Column | Description
 | ---------- | -----------
-| <span style="white-space: nowrap;">Measurement&nbsp;series</span> | The fragment and series (for example, `c8y_Temperature → Ts), clearly identifying the specific type of measurement being tracked. The measurement series represents the unique identifier for the data point and its particular data stream.
+| <span style="white-space: nowrap;">Measurement&nbsp;series</span> | The fragment and series (for example, `c8y_Temperature` → `Ts`), clearly identifying the specific type of measurement being tracked. The measurement series represents the unique identifier for the data point and its particular data stream.
 | <span style="white-space: nowrap;">Data&nbsp;point&nbsp;template</span> | Indicates if a predefined template from the {{< product-c8y-iot >}} data point library is applied to this measurement. If a template matches the fragment and series, it provides default visualization settings (like color and label) and pre-configured threshold rules for alarms.  
 | Source | Identifies the unique ID, or if available the name, of the device that is generating this measurement. For linked data points, this shows the source device the linked data point originates from.  
 | Status | The current state of the data point, possibly indicating whether it is actively receiving data, requires further configuration, or if its source is unavailable. This is crucial for troubleshooting and understanding the data flow and is particularly useful for linked data points.
@@ -84,13 +84,13 @@ In case of an error or warning status for a data point the, **Source** shows the
 
 ### To create linked data points {#to-create-linked-datapoints}
 
-All data points associated with an asset can be created in the **Data points** section of the **Assets** page.
+All data points associated with an asset can be created in the **Data points** tab of the **Assets** page.
 
 ![Create asset data points](/images/dtm/data-points/asset-data-points-create.png)
 
-1. Select an asset from the hierarchy on the **Assets** page.
-2. The **Data points** section contains a comprehensive list of all data points associated with the selected asset.
-3. Click the **Link data points** button at the top right of the **Data points** section. This opens the data point selector dialog.
+1. Select an asset from the hierarchy on the **Assets** page and switch to the **Data points** tab.
+2. The **Data points** tab contains a comprehensive list of all data points associated with the selected asset.
+3. Click the **Link data points** button at the top right of the **Data points** tab. This opens the data point selector dialog.
 4. Select the source device from which you want to link data points. This is done by navigating through the asset hierarchy in the left panel of the dialog.
 5. In the center panel, you can either select from existing data points associated with the source device or define custom data points by specifying the fragment and series.
 6. The right panel displays the data points you have selected for linking. Review your selections here.
@@ -118,22 +118,22 @@ If fragment and series on the asset and the source device are different, the sou
 ### To modify linked data points {#to-modify-linked-datapoints}
 
 1. Navigate to the **Assets** page and select the asset for which you want to manage linked data points.
-2. In the **Data points** section, find the linked data point you wish to update.
+2. In the **Data points** tab, find the linked data point you wish to update.
 3. Click the **Change source** option in the context menu of the linked data point.
 4. In the **Change source** dialog, you can select a new source device or modify the fragment and series of the linked data point.
 5. After making your changes, click **Save** to apply the changes.
 
-### To delete Linked Data Points
+### To delete linked data points {#to-delete-linked-datapoints}
 
 1. Navigate to the **Assets** page and select the asset for which you want to delete linked data points.
-2. In the **Data points** section, find the linked data point you wish to delete
+2. In the **Data points** tab, find the linked data point you wish to delete.
 3. Hover over the linked data point and click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-16"></i> that appears at the right.
 4. In the confirmation dialog, select **Delete** to delete the linked data point.
 
-### To unlink Linked Data Points
+### To unlink linked data points {#to-unlink-linked-datapoints}
 
 1. Navigate to the **Assets** page and select the asset for which you want to unlink data points.
-2. In the **Data points** section, find the linked data point you wish to unlink.
+2. In the **Data points** tab, find the linked data point you wish to unlink.
 3. Click the **Unlink source** option in the context menu of the linked data point.
 4. In the confirmation dialog, select **Unassign** to remove the link between the asset and the source device for that data point.
 
@@ -141,13 +141,13 @@ If fragment and series on the asset and the source device are different, the sou
 Unlinking a data point does not delete the data point itself; it simply removes the association between the asset and the source device. The data point will still exist as a measurement of the source device but will no longer be linked to the asset. The state of the data point will change to *Incomplete* after unlinking, indicating that it is no longer associated with a source device.
 {{< /c8y-admon-info>}}
 
-### Source warnings and errors
+### Source warnings and errors {#source-warnings-and-errors}
 
-Sources of linked data points can have warnings or errors that indicate issues with the data point. Warnings are highlighted using the <i class="c8y-icon dlt-c8y-icon-warning icon-16" style="color: rgb(255, 136, 0);"></i> indicator, while errors are highlighted using <i class="dlt-c8y-icon-error text-danger icon-16"></i>.
+Sources of linked data points can have warnings or errors that indicate issues with the data point. Warnings are highlighted using the warning icon<i class="c8y-icon dlt-c8y-icon-warning icon-16" style="color: rgb(255, 136, 0);"></i>, while errors are highlighted using the error icon <i class="dlt-c8y-icon-error text-danger icon-16"></i>.
 
 Possible issues include:
-- *Error*: the source device cannot be found
-- *Warning*: the measurement type is required but is not configured for the data point
-- *Warning*: the measurement type, if configured for the data point, is not matching the measurement type of the latest measurement received from the source device
+- **Error**: The source device cannot be found.
+- **Warning**: The measurement type is required but is not configured for the data point.
+- **Warning**: The measurement type, if configured for the data point, is not matching the measurement type of the latest measurement received from the source device.
 
-By hovering over the warning or error icon, you can see more details about the issue. This helps in troubleshooting and resolving any problems with the linked data points. To resolve the issues, use the conext menu actions available for the source.
+By hovering over the warning or error icon, you can see more details about the issue. This helps in troubleshooting and resolving any problems with the linked data points. To resolve the issues, use the context menu actions available for the source.
