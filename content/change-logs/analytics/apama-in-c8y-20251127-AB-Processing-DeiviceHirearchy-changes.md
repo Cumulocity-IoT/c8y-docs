@@ -17,4 +17,4 @@ version: 26.257.0
 
 Analytics Builder models will now automatically track changes to devices, including additions, deletions, and updates to device, group, and asset membership as well as metadata modifications. This ensures that any structural or configuration changes are immediately reflected in model processing without user intervention. The earlier requirement to deactivate and reactivate models to pick up such updates is now removed.
 
-For details, refer to [Device Hierarchy changes ](/streaming-analytics/models-and-devices/#device-hierarchy-changes).
+For details, refer to [Device Hierarchy changes ](/streaming-analytics/analytics-builder/#device-hierarchy-changes).
