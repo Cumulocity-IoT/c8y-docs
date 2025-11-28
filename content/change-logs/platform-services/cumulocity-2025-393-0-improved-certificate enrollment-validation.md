@@ -14,6 +14,6 @@ build_artifact:
 ticket: MTM-65209
 version: 2025.393.0
 ---
-Added a new validation step ensuring that the Common Name (CN) field in the Certificate Signing Request (CSR) Subject exactly matches the device ID provided during the device registration process.
-This enhancement strengthens consistency and prevents [enrollment of certificates](/device-certificate-authentication/device-enroll-and-re-enroll) with mismatched identifiers.
+Certificate validation is now improved to ensure that the Common Name (CN) field in the Certificate Signing Request (CSR) Subject exactly matches the device ID provided during the device registration process.
+This enhancement improves consistency and prevents [enrollment of certificates](/device-certificate-authentication/device-enroll-and-re-enroll) with mismatched identifiers.
 
