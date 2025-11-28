@@ -61,3 +61,27 @@ Create child device
 - Replace "blacklist" → "blocklist"
 - Replace "please" → remove (except for support contacts)
 ```
+
+### Spelling
+
+Use **standard American English spelling** throughout the documentation.
+
+- Use American spelling instead of British spelling.
+- Avoid mixing American and British variants within the same document.
+- Follow American conventions for technical terminology unless a product name or API uses a specific spelling.
+
+**Examples**
+
+**DO (American English):**
+- organize
+- customize
+- behavior
+- analyze
+- center
+
+**DON'T (British English):**
+- organise
+- customise
+- behaviour
+- analyse
+- centre
