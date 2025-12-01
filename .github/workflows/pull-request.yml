@@ -1,13 +1,15 @@
 name: CI
 on:
   workflow_dispatch:
-  pull_request_target:
+  pull_request:
     types:
       # defaults
       - opened
       - synchronize
       - reopened
       - closed
+      - labeled
+      - unlabeled
 
 permissions:
   contents: read
