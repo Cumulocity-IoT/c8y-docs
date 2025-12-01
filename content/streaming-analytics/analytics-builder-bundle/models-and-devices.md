@@ -198,11 +198,27 @@ See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 
 ### Device Hierarchy changes {#device-hierarchy-changes}
 
-Analytics Builder models will automatically track changes to device group membership and device metadata. A Device addition, deletion, update to metadata such as device type. The affected models immediately reflect these changes without requiring manual deactivation or reactivation.
-[Smart rules (NEW) plugin](https://cumulocity.com/docs/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin).
-, which are based in Analytics Builder models Will also behave in similary to the device changes hierarchy and process the data from these devices.
+Analytics Builder models, once deployed, automatically process data from all linked input devices. Any changes to device configuration—such as device addition, deletion, metadata updates (for example, device type changes), or updates to group/asset membership—are now detected automatically.
+The affected models immediately reflect these changes without requiring manual deactivation or reactivation.
 
-This comes with few limitations listed below.
+#### Behavior of Smart Rules (NEW) Plugin
+
+[The Smart Rules (NEW) plugin](https://cumulocity.com/docs/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin), which internally uses Analytics Builder models, behaves the same way. It dynamically responds to updates in the device hierarchy and continues processing data from the updated device set.
+
+#### Model Deletion Scenarios.
+Models are automatically deleted in the following cases:
+
+- When the input device or output device is removed.
+- When the parent group or asset configured in the model is deleted.
+
+In such cases, the model is removed and an error message is recorded in the correlator log.
+
+#### Handling Structural Changes
+Models also automatically adapt to structural changes within a device hierarchy. This includes:
+- Re-arrangement of devices inside groups or assets
+- Addition of new devices
+- Removal of existing devices
+
+#### Limitations to these changes.
 
 - Cascade deletion of a Group is not supported (This Case needs a reload of the model to take effect.)
-- Deletion of a parent Group/Asset is not supported (Model will deleted and an Error is logged.)
