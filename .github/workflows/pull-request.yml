@@ -91,3 +91,8 @@ jobs:
             repo: context.repo.repo,
             body: 'Preview available **[here](${{ env.BASEURL }})**'
           })
+
+    - name: Link check (experimental)
+      if: ${{ contains(github.event.pull_request.labels.*.name, 'link-check')
+      run: |
+        wget --no-directories --delete-after --no-verbose -e robots=off -r ${{ env.BASEURL }}
