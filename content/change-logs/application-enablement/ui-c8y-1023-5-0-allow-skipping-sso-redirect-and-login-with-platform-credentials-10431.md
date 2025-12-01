@@ -1,6 +1,6 @@
 ---
 date: ""
-title: allow skipping SSO redirect and login with platform credentials (#10431)
+title: Allow skipping SSO redirect and login with platform credentials
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,7 @@ build_artifact:
 ticket: MTM-65303
 version: 1023.5.0
 ---
-Co-authored-by: Tristan Bastian <tristan.bastian@cumulocity.com>
+In some scenarios, users may prefer to log in directly with their platform credentials instead of being redirected to Single Sign-On (SSO).
+To address this need, a new feature has been implemented that allows users to skip the automatic SSO redirect and log in using their platform credentials instead.
+
+A new `skipSSORedirect` query parameter has been introduced for this usecase.
