@@ -1,6 +1,6 @@
 ---
-date: ""
-title: "Prevent blank screen when preferred language is stored in an invalid format"
+date: '2025-11-28'
+title: Prevent blank screen when preferred language is stored in an invalid format
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
