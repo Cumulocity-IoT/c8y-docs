@@ -1,6 +1,6 @@
 ---
 date: 
-title: Improved Device Certificate Enrollment Validation
+title: Improved device certificate enrollment validation
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
@@ -14,6 +14,6 @@ build_artifact:
 ticket: MTM-65209
 version: 2025.393.0
 ---
-Certificate validation is now improved to ensure that the Common Name (CN) field in the Certificate Signing Request (CSR) Subject exactly matches the device ID provided during the device registration process.
-This enhancement improves consistency and prevents [enrollment of certificates](/device-certificate-authentication/device-enroll-and-re-enroll) with mismatched identifiers.
+The device certificate validation has been improved to ensure that the Common Name (CN) field in the Certificate Signing Request (CSR) subject exactly matches the device ID provided during the device registration process.
+This enhancement improves consistency and prevents [the enrollment of certificates](/device-certificate-authentication/device-enroll-and-re-enroll) with mismatched identifiers.
 
