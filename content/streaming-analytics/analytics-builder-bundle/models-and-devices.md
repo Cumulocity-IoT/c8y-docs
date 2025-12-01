@@ -218,6 +218,7 @@ Models also automatically adapt to structural changes within a device hierarchy.
 - Re-arrangement of devices inside groups or assets
 - Addition of new devices
 - Removal of existing devices
+- Assets or Groups without any devices is also possible.
 
 #### Limitations to these changes.
 
