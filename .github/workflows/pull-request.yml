@@ -95,6 +95,6 @@ jobs:
           })
 
     - name: Link check (experimental)
-      if: ${{ contains(github.event.pull_request.labels.*.name, 'link-check')
+      if: ${{ contains(github.event.pull_request.labels.*.name, 'link-check') }}
       run: |
         wget --no-directories --delete-after --no-verbose -e robots=off -r ${{ env.BASEURL }}
