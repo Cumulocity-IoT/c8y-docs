@@ -8,13 +8,7 @@ sector:
 
 {{< company-c8y >}} offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the {{< product-c8y-iot >}} platform.
 
-### Audience
-
-This guide is intended for **device integrators** who need to connect devices and data sources to {{< product-c8y-iot >}}. If you are an end-user looking to manage already integrated devices, refer to the [Device management](/device-management-application/) guide.
-
-### Core concepts
-
-Device integration establishes the connection between physical devices and {{< product-c8y-iot >}} to acquire data. The integration approach depends on the device capabilities and use case:
+The integration approach depends on the device capabilities and use case:
 
 #### Integration via thin-edge.io
 
