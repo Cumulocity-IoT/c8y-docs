@@ -198,55 +198,46 @@ You can select one data point for the gauge, and multiple data points shown with
 
 You must enable at least one data point in each section to create the "Info gauge" widget.
 
+
 ### HTML {#html}
 
-The "HTML" widget shows user-defined content. The content can be formatted using HTML.
+The "HTML" widget displays user-defined content that can be formatted using HTML and dynamically populated with data from the selected asset or device. Additionally, you can switch the widget into advanced mode, which allows you to build complex web components with JavaScript code.
 
 **Parameters to configure**
 
-* Target assets or devices: Select the objects for which optional HTML expressions are evaluated.
+* **Target assets or devices**: Select the objects for which optional HTML expressions are evaluated.
+* **Asset properties**: In the **Asset properties** section, you can copy the properties of the selected asset and paste them into the code editor under the **Settings** section.
 
-* HTML code
+The widget offers two distinct modes:
 
-	The following variables can be used inside the HTML content:
+1. **Normal mode**: You can apply HTML and CSS while adding properties as template literals. You can use simple expressions such as:
+   `${this.c8yContext ? this.c8yContext.name : 'No device selected'}`. The `${this.c8yContext}` variable always refers to the selected target asset.
 
-	* {{devicesCount}}: Total number of devices.
+2. **Advanced mode**: When enabled, you can build complex web components using the Lit framework. You can import supported ECMAScript modules. By default, leaflet, echarts, fetch, and lit are provided. Whatever is rendered in the web component will be displayed to the end user. Additional requests can be performed by importing the fetch library. The following shows the available imports:
 
-	* {{usersCount}}: Total number of users.
+   ```javascript
+   import { LitElement, html, css } from 'lit';
+   import { styleImports } from 'styles';
+   import { L } from 'leaflet';
+   import * as echarts from 'echarts';
+   import { fetch } from 'fetch'; // Use this instead of default fetch to avoid potential issues
+   ```
 
-	* {{deviceGroupsCount}}: Total number of groups.
+**Styling and security considerations**
 
-	* {{device.name}}: The name of the device.
+When using styles, global styles can be applied if encapsulation is not enabled. Styles should always use CSS variables and tokens to ensure compatibility with dark mode and custom brandings. 
 
-	* {{device.*property*}}: More general form of the above. You can address any property of the device.
+By default, the normal HTML widget is sanitized for security, while in advanced mode the developer is responsible for proper sanitization. You can modify the default sanitization behavior in the [Cockpit application configuration](/cockpit/cockpit-configuration/).
 
-	* {{device.c8y_Hardware.model}}: The model of the device.
-
-	* {{device.*fragment*.*property*}}: More general form of the above. You can address any property of any fragment of the device.
-
-	* {{devices[*deviceId*].name}}: The name of the device at the specified index.
-
-	* {{devices[*deviceId*].*property*}}: More general form of the above. You can address any property of the device at the specified index.
-
-"Device" refers to the target device, as selected in the widget configuration parameter.<br>
-"fragment.property" refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or "Asset table" widget and click **+Add property** in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column **Property**. Generated properties of these widgets are not available in the HTML widgets.
-
-The following code sanitization options can be selected:
- - strict - Does not allow any JS or angularjs directives.
- - lax (default) - Allows partly JS (events) and all angularjs directives.
- - none - Allows everything.
-
-{{< c8y-admon-info >}}
-The sanitization option "lax" includes a defined list of directives that are excluded from sanitization. For more examples on how to customize the sanitization options, see the help text toggle in the **HTML code** section.
-{{< /c8y-admon-info >}}
+A simple example looks like this:
 
 ![HTML widget](/images/users-guide/cockpit/cockpit-widget-html.png)
 
-If you want to use a link in the **HTML code** field, for example a link to a dashboard, you must use the following format:
+**Legacy widget compatibility**
 
-```html
-  <a style="cursor:pointer;" onclick="location.hash = '#/group/<<group-id>>/dashboard/<<dashboard-id>>'">link to another dashboard</a><br />
-```
+{{< c8y-admon-important >}}
+Existing widgets based on AngularJS will automatically fall back to legacy mode, which maintains backward compatibility and allows these widgets to continue functioning. This fallback displays JavaScript code that enables legacy widget execution. However, it is strongly recommended to migrate these widgets to the new Lit-based framework as soon as possible, since AngularJS support is deprecated.
+{{< /c8y-admon-important >}}
 
 ### KPI {#kpi}
 

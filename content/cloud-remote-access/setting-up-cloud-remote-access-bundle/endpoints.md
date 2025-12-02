@@ -13,7 +13,7 @@ The "endpoint" is the IP address and port of the VNC, SSH or Telnet server runni
 3. Follow the descriptions below for the protocol-specific settings.
 
 {{< c8y-admon-info >}}
-To be able to configure an endpoint, you need ADMIN permission for "Remote access" and "Device control". To read data, a READ permission is sufficient. For more information on permissions, refer to [Managing permissions](/standard-tenant/managing-permissions/).
+To be able to configure an endpoint, you must have a role that includes ADMIN permission for "Remote access" and "Device control". To read data, READ permission is sufficient. For more information on permissions, refer to [Managing permissions and roles](/standard-tenant/managing-permissions/).
 {{< /c8y-admon-info >}}
 
 #### To add a remote access endpoint via VNC {#to-add-a-remote-access-endpoint-via-vnc}

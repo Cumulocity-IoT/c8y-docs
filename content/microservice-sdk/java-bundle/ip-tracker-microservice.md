@@ -57,7 +57,7 @@ Finally, add the following dependency:
 
 In your _cumulocity.json_ file:
 
-1. Add the required roles to be able to create events and alarms.
+1. Add the required permissions (using the `requiredRoles` field) to be able to create events and alarms.
 2. Add the readiness and liveness probes.
 3. Add two keys for the microservice settings: `"ipstack.key"` and `"tracker.id"`.
 4. Set the isolation level to `"PER_TENANT"`. This means that there will be a separate instance for each tenant. For more details see the Settings section in [Microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest).
