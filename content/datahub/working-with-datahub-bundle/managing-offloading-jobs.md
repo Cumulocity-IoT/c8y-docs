@@ -89,4 +89,4 @@ To import the selected configurations, click **Import**. Click **Cancel** to can
 
 As the export does not include whether a configuration was active, you must manually activate the configurations after an import.
 
-For the specific case of inventory offloadings, their definition may not yet be based on views as described in [Configure inventory collection](#configure-inventory-collection). When importing such an offloading, it will be configured so that it still reads directly from the inventory collection. It is advisable, however, to change the configuration and use a view instead in order to ensure that only relevant data is offloaded.
+For the specific case of inventory offloadings, their definition may not yet be based on views as described in [Configure inventory collection](#configuring-inventory-collection). When importing such an offloading, it will be configured so that it still reads directly from the inventory collection. It is advisable, however, to change the configuration and use a view instead in order to ensure that only relevant data is offloaded.
