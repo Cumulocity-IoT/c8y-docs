@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Allow skipping SSO redirect and login with platform credentials
+title: New option for skipping SSO redirect and showing standard platform login
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
