@@ -47,14 +47,14 @@ Using device certificates with the MQTT Service shares the same requirements as 
 <br/>
 If the trust anchor (that is, the trusted root or intermediate certificate) used to validate the device certificate is trusted by multiple tenants, the device must also specify the tenant ID in the **MQTT username** field. This ensures that the platform can correctly identify which tenant the device is attempting to connect to. For more information, see [Authentication and authorization](#authentication-and-authorization).
 
-#### Adding and trusting CA certificate
+#### Adding and trusting  CA (Certificate Authority) certificates {#ca-certificates}
 
 TLS trust anchors in the {{< product-c8y-iot >}} platform are defined per tenant.
 To use device certificates for authentication, the CA or intermediate certificate that signs the device certificates must be uploaded to the platform and added to the tenant’s list of trusted certificates. You can do this via [the **Trusted certificates** page in the UI](/device-certificate-authentication/managing-trusted-certificates/) or via [REST](https://{{< domain-c8y >}}/api/core/#tag/Trusted-certificates).
 <br/>
 Additionally, ensure that the **Auto registration** option is enabled when adding certificates. This allows any device presenting a valid certificate to be automatically registered on the platform when it first connects.
 
-#### Creating self-signed certificates
+#### Creating self-signed certificates certificates {#creating-self-signed-certificates}
 
 In order to self-sign the device certificates, the root CA certificate needs to be created.
 Using the OpenSSL CLI tool, create a private key and then generate a self-signed root certificate from it.
@@ -73,7 +73,7 @@ cat client.crt ca.crt > client-chain.pem
 
 If you have more advanced requirements regarding certificate creation, see [Generating and signing certificates](/device-certificate-authentication/device-certificates#generating-and-signing-certificates).
 
-#### Using certificates
+#### Using certificates certificates {#using-certificates}
 
 Once the CA certificate has been uploaded and trusted in {{< product-c8y-iot >}}, devices can authenticate using client certificates signed by your trusted CA.
 To connect using any MQTT client, use the previously generated client certificate and key.
