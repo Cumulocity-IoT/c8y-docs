@@ -134,7 +134,7 @@ To override variables, `Custom CSS Properties`â€”also known as `CSS Variables`â€
    ```
 
 {{< c8y-admon-important >}}
-**Import order is critical:** Always import `@c8y/style/extend.less` **FIRST** at the top of your file, then override variables AFTER. This ensures the conditional guard system can detect your overrides correctly.
+**Import order is critical:** Always import `@c8y/style/extend.less` **first** at the top of your file, then override variables **after**. This ensures the conditional guard system can detect your overrides correctly.
 {{</ c8y-admon-important >}}
 
 ## Example customizations
