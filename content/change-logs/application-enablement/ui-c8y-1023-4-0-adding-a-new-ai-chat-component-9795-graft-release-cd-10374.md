@@ -14,4 +14,8 @@ build_artifact:
 ticket: MTM-64236
 version: 1023.4.0
 ---
-A new ai-chat component has been added to the Web SDK, which allows you to simply generate chat conversations with the Web SDK. Based on this, a new AI chat assistant has been integrated, which supports you with creating HTML-based widgets. The assistant is only shown in the HTML widget configuration section, if the AI Agent Manager microservice is used and a provider API key is configured. 
+The Web SDK now includes a new ai-chat component, providing a simple and consistent way to integrate chat-driven experiences into your application.
+
+Building on this component, we have added an AI chat assistant to the HTML widget configuration section, which supports users in generating and refining HTML-based widgets.
+
+Note that the assistant depends on the AI Agent Manager, which is currently in preview. It is available in the HTML widget only when the microservice is enabled, and a valid provider API key is configured. Users with the Tenant Manager role can enable the feature via the Manage preview features option in the Administration application and then add the required API key in the AI Agent Manager.
