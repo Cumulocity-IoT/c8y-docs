@@ -14,7 +14,4 @@ build_artifact:
 ticket: MTM-61176
 version: 1023.6.0
 ---
-Co-authored-by: Lukasz Janusz <114157358+luja-c8y@users.noreply.github.com>
-Co-authored-by: Lukasz Janusz <lukasz.janusz@cumuloicty.com>
-Co-authored-by: Tristan Bastian <tristan.bastian@cumulocity.com>
-Co-authored-by: Jakub Drewniak <103751383+jdre-c8y@users.noreply.github.com>
+Codex is now available as a blueprint application for management tenants, allowing deployment on subtenants.
