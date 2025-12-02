@@ -1,6 +1,6 @@
 ---
 date: ""
-title: New ai-chat component and AI chat assistant for HTML Widgets
+title: New ai-chat component and AI chat assistant for HTML widgets
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
