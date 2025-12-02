@@ -198,20 +198,20 @@ See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 
 ### Device Hierarchy changes {#device-hierarchy-changes}
 
-Analytics Builder models, once deployed, automatically process data from all linked input devices. Any changes to device configuration—such as device addition, deletion, metadata updates (for example, device type changes), or updates to group/asset membership—are now detected automatically.
+Analytics Builder models, once deployed, automatically process data from all linked devices. Any changes to device configuration—such as device addition, deletion, metadata updates (for example, device type changes), or updates to group/asset membership—are now detected automatically.
 The affected models immediately reflect these changes without requiring manual deactivation or reactivation.
 
-#### Behavior of Smart Rules (NEW) Plugin
-
+{{< c8y-admon-info >}}
 [The Smart Rules (NEW) plugin](https://cumulocity.com/docs/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin), which internally uses Analytics Builder models, behaves the same way. It dynamically responds to updates in the device hierarchy and continues processing data from the updated device set.
+{{</ c8y-admon-info >}}
 
 #### Model Deletion Scenarios.
-Models are automatically deleted in the following cases:
+Models are automatically deactivated in the following cases:
 
-- When the input device or output device is removed.
+- If the input device or output device of the modle is deleted.
 - When the parent group or asset configured in the model is deleted.
 
-In such cases, the model is removed and an error message is recorded in the correlator log.
+In such cases, the model is removed and an error message is recorded in the logs.
 
 #### Handling Structural Changes
 Models also automatically adapt to structural changes within a device hierarchy. This includes:
@@ -221,7 +221,6 @@ Models also automatically adapt to structural changes within a device hierarchy.
 {{< c8y-admon-info >}}
  When a model is deployed to process a Group, all devices can be removed from the Group, leaving it with zero devices. The model will not be deleted, and it will restart  processing again whenever a device is added back to the Group
 {{< /c8y-admon-info >}}
-- Assets or Groups without any devices is also possible.
 
 #### Limitations to these changes.
 
