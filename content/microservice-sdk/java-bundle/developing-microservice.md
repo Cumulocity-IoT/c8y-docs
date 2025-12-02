@@ -680,11 +680,11 @@ $ mvn microservice:upload -Dupload.application.name=helloworld -Dupload.url=http
 ```
 
 
-#### Using Maven in debug mode
+#### Using Maven in debug mode {#using-maven-in-debug-mode}
 
-Running Maven CLI commands in debug mode (e.g., `mvn clean install --debug ...`) can 
+Running Maven CLI commands in debug mode (for example, `mvn clean install --debug ...`) may
 generate a very large volume of HTTP-related log output, such as logs from resource downloads. 
-Analyzing this data can quickly become tedious.
+Analyzing this data might quickly become tedious.
 
 To reduce such logging information, HTTP logging can be suppressed with these command line options:
 ```
