@@ -679,6 +679,22 @@ To pass the configuration only to the particular build, execute the following co
 $ mvn microservice:upload -Dupload.application.name=helloworld -Dupload.url=https://demos.cumulocity.com -Dupload.username=demos/username -Dupload.password=****** -Dskip.microservice.upload=false
 ```
 
+
+#### Using Maven in debug mode {#using-maven-in-debug-mode}
+
+Running Maven CLI commands in debug mode (for example, `mvn clean install --debug ...`) may
+generate a very large volume of HTTP-related log output, such as logs from resource downloads. 
+Analyzing this data might quickly become tedious.
+
+To reduce such logging information, HTTP logging can be suppressed with these command line options:
+```
+-Dorg.slf4j.simpleLogger.log.org.apache.http=off
+-Dorg.slf4j.simpleLogger.log.org.apache.http.wire=off
+```
+Besides `off`, `error` or `warn` might also be appropriate values. The parameters can also be added to the Maven configuration file `${MAVEN_HOME}/conf/logging/simplelogger.properties` 
+or to the `MAVEN_OPTS` environment variable. Related documentation can be found in [Maven logging](https://maven.apache.org/maven-logging.html).
+
+
 ### Heap and perm/metadata {#heap-and-permmetadata}
 
 To calculate heap and perm/metadata, it takes the limit defined in the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) (`resources/memory`) and it is converted into Megabytes (MB). For Java applications developed using the Java Microservice SDK the minimal value is 178MB. <br>
