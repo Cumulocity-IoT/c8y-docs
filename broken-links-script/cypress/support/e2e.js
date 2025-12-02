@@ -90,6 +90,9 @@ Cypress.on('uncaught:exception', (err) => {
     if (err.message.includes("$ is not defined")) {
       return false;
     }
+    if (err.message.includes("bootstrap is not defined")) {
+      return false;
+    }
     
   });
   

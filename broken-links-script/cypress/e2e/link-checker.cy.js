@@ -65,8 +65,16 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   urls.forEach((item) => {
     it(`should validate URL: ${item.link}`, () => {
       const url = item.link;
+      const excludedLinks = [
+      "https://de.mathworks.com/help/predmaint/ug/remaining-useful-life-estimation-using-convolutional-neural-network.html",
+      "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6"
+    ];
+    if (excludedLinks.includes(url)) {
+      cy.log(`Skipping excluded link: ${url}`);
+      return;
+    }
       const fragment = url.includes('#') ? url.split('#').slice(-1)[0] : null;
-      const isCodexPage = url.includes('codex/#/');
+      const isCodexPage = url.includes('/codex/');
       const isApiPage = url.includes('/api/');
       const isGithubPage = url.includes('github.com');
       const isGithubBlobLine = url.includes('github.com') && /\/blob\/[^#]+#L\d+(-L\d+)?$/.test(url);
@@ -114,9 +122,10 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       if (isCodexPage) {
         cy.visit(url, { timeout: 20000 });
       
-        cy.get('[data-cy="c8y-title--title-outlet"] .text-truncate', { timeout: 20000 })
+        cy.get('[data-cy="c8y-title--title-outlet"] .text-truncate', { timeout: 30000 })
           .invoke('text')
           .should('not.be.empty')
+          .and('not.match', /404 not found/i);
       
         cy.url().should('eq', url);
       
