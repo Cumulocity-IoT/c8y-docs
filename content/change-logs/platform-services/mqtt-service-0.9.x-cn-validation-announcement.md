@@ -1,5 +1,5 @@
 ---
-date: 2025-11-XX
+date: 2025-12-02
 title: MQTT Service will enforce Common Name validation for certificate-authenticated clients
 change_type:
   - value: change-inv-3bw8e
