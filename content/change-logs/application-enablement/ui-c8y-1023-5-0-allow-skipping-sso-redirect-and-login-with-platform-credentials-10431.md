@@ -14,7 +14,4 @@ build_artifact:
 ticket: MTM-65303
 version: 1023.5.0
 ---
-In some scenarios, users may prefer to log in directly with their platform credentials instead of being redirected to Single Sign-On (SSO).
-To address this need, a new feature has been implemented that allows users to skip the automatic SSO redirect and log in using their platform credentials instead.
-
-A new `skipSSORedirect` query parameter has been introduced for this usecase.
+To support a broader range of authentication workflows, the Web SDK now introduces the `skipSSORedirect` query parameter. When enabled, this option skips the default single sign-on (SSO) redirect and displays the standard platform login interface instead. This enhancement provides greater control over authentication behavior, making it easier to support environments where direct platform login is preferred or where SSO is unnecessary.
