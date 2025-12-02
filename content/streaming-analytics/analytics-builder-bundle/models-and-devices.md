@@ -218,6 +218,9 @@ Models also automatically adapt to structural changes within a device hierarchy.
 - Re-arrangement of devices inside groups or assets
 - Addition of new devices
 - Removal of existing devices
+{{< c8y-admon-info >}}
+ When a model is deployed to process a Group, all devices can be removed from the Group, leaving it with zero devices. The model will not be deleted, and it will restart  processing again whenever a device is added back to the Group
+{{< /c8y-admon-info >}}
 - Assets or Groups without any devices is also possible.
 
 #### Limitations to these changes.
