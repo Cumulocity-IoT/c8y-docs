@@ -12,7 +12,7 @@ If there are differences related to the application protocol used by the device,
 ### MQTT protocol versions {#mqtt-protocol-versions}
 
 The MQTT Service supports connections from clients using version 3.1, 3.1.1 or 5.0 of the MQTT protocol.
-Please refer to the [MQTT specifications](https://mqtt.org/mqtt-specification/) for details of the differences between these versions.
+Refer to the [MQTT specifications](https://mqtt.org/mqtt-specification/) for details of the differences between these versions.
 
 MQTT version 3.1 is obsolete and not recommended.
 Most of the details below for version 3.1.1 will be valid for version 3.1; however, the specific differences in protcol version 3.1 are not explicitly documented.
@@ -20,8 +20,8 @@ Most of the details below for version 3.1.1 will be valid for version 3.1; howev
 ### Connecting to the MQTT Service {#connecting-via-mqtt}
 
 MQTT devices can connect to the MQTT Service using direct TCP connections only.
-Authentication using "basic" (username/password) authentication and TLS client certificates is supported.
-For full details of the available ports and how to configure device authentication, see the [Connecting MQTT devices](/device-integration/mqtt-service/#connecting-devices) section.
+The service supports "basic" (username/password) and TLS client certificate authentication.
+For full details of the available ports and how to configure device authentication, see [Connecting MQTT devices](/device-integration/mqtt-service/#connecting-devices).
 
 ### MQTT version 3.1.1 features {#mqtt-311-features}
 
@@ -50,7 +50,7 @@ Pending {{< product-c8y-iot >}} device operations will **not** be sent to a Core
 
 #### Quality of Service {#quality-of-service-qos}
 
-The MQTT Service supports two levels of MQTT _Quality of Service_ (QoS).
+The MQTT Service supports two levels of MQTT Quality of Service (QoS).
 The desired QoS level is specified in the MQTT `PUBLISH` packet when a device sends a message to the MQTT Service, and in the MQTT `SUBSCRIBE` packet when a device subscribes to a MQTT topic.
 
 | Level                 | Supported | Description   |
