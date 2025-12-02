@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Codex to be available by as blueprint on management tenants (#7811) [GRAFT][release/cd] (#10438)
+title: Codex is now available as a blueprint on management tenants
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
