@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Codex is now available as a blueprint on management tenants
+title: Cumulocity Developer Codex now available as a blueprint on Management tenants
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
