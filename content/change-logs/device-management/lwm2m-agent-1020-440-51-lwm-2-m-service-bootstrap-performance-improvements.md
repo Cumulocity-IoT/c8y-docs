@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-12-03
 title: LWM2M Service bootstrap performance improvement
 product_area: Device management & connectivity
 change_type:

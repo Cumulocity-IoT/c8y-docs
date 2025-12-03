@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-12-03
 title: Improved module federation plugin documentation and fixed loading of webpack styles from node_modules
 product_area: Application enablement & solutions
 change_type:

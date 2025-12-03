@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-12-03
 title: "Fixed overlapping buttons in data grid toolbar"
 product_area: "Application enablement & solutions"
 change_type:

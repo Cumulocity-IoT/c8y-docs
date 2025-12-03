@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-12-03
 title: "Custom translations are now listed in the Localization page"
 product_area: "Application enablement & solutions"
 change_type:

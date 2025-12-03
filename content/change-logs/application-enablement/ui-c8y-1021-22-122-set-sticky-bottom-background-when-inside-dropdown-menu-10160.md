@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-12-03
 title: Fixed background color for sticky bottom element inside a dropdown menu
 product_area: Application enablement & solutions
 change_type:
