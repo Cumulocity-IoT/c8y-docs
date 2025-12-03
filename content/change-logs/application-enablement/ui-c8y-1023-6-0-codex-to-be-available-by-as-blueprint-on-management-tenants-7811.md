@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61176
 version: 1023.6.0
 ---
-Codex is now available as a blueprint application for management tenants, allowing deployment on subtenants.
+[The Cumulocity Developer Codex](https://cumulocity.com/codex/) — a resource providing guidance and documentation for building custom frontend solutions with the Cumulocity Web SDK — is now available as a blueprint on Management tenants. Tenant administrators can deploy the Developer Codex as an application on subtenants along with utilizing branding and translations, and make it accessible via the app switcher.
