@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64849
 version: 1023.6.2
 ---
-Users clicking navigation links within HTML widgets will now see the page content update correctly in all scenarios. Previously, navigating between pages with the same entity type (e.g., from https://example.cumulocity.com/group/123/dashboard to https://example.cumulocity.com/group/123/subassets) would change the URL but leave the old content displayed, making the app appear frozen. This fix ensures all navigation links in HTML widgets work consistently by forcing proper route change detection in the AngularJS router, which then synchronizes with the Angular router in our hybrid application.
+In HTML widgets, navigation links to pages with the same entity type (for example, from one group page to another or from one group tab to the same group but another tab) changed the URL but did not update the displayed content, making the application appear frozen. This has been fixed to ensure that clicking navigation links within HTML widgets now always updates the page content correctly in all scenarios, providing a consistent user experience.
