@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-12-03'
 title: Cumulocity Developer Codex now available as a blueprint on Management tenants
 product_area: Application enablement & solutions
 change_type:
