@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Information on migrating to the Web SDK v1023 added to the Developer Codex
+title: Information on migrating to Web SDK v1023 added to the Developer Codex
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
