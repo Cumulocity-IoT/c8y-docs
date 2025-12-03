@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Web SDK update to v1023 guide added
+title: Information on migrating to the Web SDK v1023 added to the Developer Codex
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64954
 version: 1023.4.1
 ---
-The Web SDK update guide has been enriched with new entry to cover the latest changes and improvements in version 1023 of the Web SDK. This guide now provides more detailed information on how to use the new features and APIs introduced in this version, such as global time context. With this update, developers can leverage the full potential of the Web SDK to build powerful and efficient web applications. Check [the guide here](https://cumulocity.com/codex/migration-guides/updating-web-sdk-version/overview#version-specific-migration).
+The Web SDK update documentation has been enhanced with additional information to cover the latest changes and improvements in version 1023 of the Web SDK. The documentation now provides detailed information on how to use the new features and APIs introduced in this version, such as the global time context. See [Updating the Web SDK version](https://cumulocity.com/codex/migration-guides/updating-web-sdk-version/overview#version-specific-migration) in the Developer Codex.
