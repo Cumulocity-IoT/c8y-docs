@@ -23,7 +23,7 @@ Features of Edge include:
 * [OPC UA](/device-integration/opcua/) with web-based UI for efficient connection management and seamless integration of industrial automation systems.
 * Easy installation and upgrades.
 * Microservice hosting, which allows to run server-side applications which may be used to extend the {{< product-c8y-iot >}} platform with customer-specific functionality (optional component).
-* [DataHub](/edge-kubernetes/k8-edge-working-with-datahub/) for historical data storage and analytics (optional component).
+* [DataHub](/datahub/datahub-overview/) for historical data storage and analytics (optional component).
 
 Kubernetes offers an efficient platform for deploying, scaling, and managing containerized applications using a centralized control plane. Given this, containers orchestrated by Kubernetes have become standard in contemporary IT, fitting a broad spectrum of deployment contexts. Edge capitalizes on these orchestration and management benefits, streamlining the operations of the Edge servers with other containerized applications in your deployment landscape.
 
