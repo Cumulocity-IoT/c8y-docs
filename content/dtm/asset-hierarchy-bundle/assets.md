@@ -29,7 +29,8 @@ In the **Assets** page, select an asset to view its details, such as subassets, 
 
 The **Subassets** tab shows all asset details:
 
-- At the top, the asset name and description is provided, along with the **Created** and **Last updated** time.
+- At the top left of the asset header, the icon, the asset model as well as asset name and description are presented.
+- Next to it, the **Created** and **Last updated** time as well as, if configured, the **External ID** of the asset are shown.
 - In the **Subassets** section at the left, all subassets and devices are listed.
 - At the right, the asset properties are displayed.
 
@@ -37,12 +38,13 @@ Optionally, [add subassets](/dtm/asset-hierarchy/#to-add-subassets) or [assign d
 
 ![Subassets](/images/dtm/assets/dtm-assets-subassets-page.png)
 
-If a location is specified for the asset, it is shown in the map under the properties section. To see the map, a value for latitude and longitude must be provided. Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen. You cannot modify the marker when viewing the asset. Edit the property to change the position of the marker.
+If the asset has a **Location** property or the asset model of the asset specifies Location as an [Asset Property](/dtm/asset-types/#asset-properties), a map is shown at the bottom right corner of the page. In DTM, the Location [Asset Property](/dtm/asset-types/#asset-properties) represents the formal model of a `c8y_Position` fragment used in {{< product-c8y-iot >}} to [track the geographical location of assets and devices](https://cumulocity.com/docs/device-integration/fragment-library/#tracking). Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen. You cannot modify the marker when viewing the asset. Edit the property to change the position of the marker.
 
 {{< c8y-admon-info>}}
 - The **Add asset** button is not displayed for the last hierarchical level.
 - A warning message is shown if one or more properties associated with the asset are not available.
 - For complex properties, the keys will be ordered as specified in the property definition.
+- The external source label of the asset from `c8y_ExternalSource` is only shown for for read-only assets to indicate synchronization from an external system.
 {{< /c8y-admon-info>}}
 
 #### Asset tree {#asset-tree}
