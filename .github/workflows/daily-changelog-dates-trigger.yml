@@ -66,6 +66,8 @@ jobs:
     strategy:
       matrix:
         include: ${{ fromJson(needs.get-component-details.outputs.matrix) }}
+      max-parallel: 1
+      fail-fast: false
     with:
       version: ${{ matrix.component_version }}
       component: ${{ matrix.component_name }}
