@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Asset models
+title: Overview
 layout: redirect
 helpcontent:
 - label: asset-types
