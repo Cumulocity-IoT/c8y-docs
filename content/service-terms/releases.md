@@ -49,7 +49,7 @@ To help ensure that applications built on {{< product-c8y-iot >}}  continue to f
 For customers in particularly sensitive industries, {{< company-c8y >}} offers an annual deployment model, designed to provide a predictable, stable upgrade cycle. Each year, {{< company-c8y >}} designates one release as the annual release, which is deployed to customers following a carefully coordinated schedule, as outlined in the example below.
 
 In the annual deployment model:
-* A release candidate is made available on the last day of January for selected customers on non-production instances for a two-month period.
+* A release candidate is made available in the first half of February for selected customers on non-production instances for a two-month period.
 * The official release is published on the last day of March.
 * Maintenance for each annual release ends three months after the next annual release becomes generally available (End of Maintenance, or EOM).
 * After EOM, support will continue for up to three additional months (End of Sustained Support, or EOSS); however, no further fixes will be issued during this period. Customers are expected to complete upgrades within this timeframe and will receive dedicated support to facilitate this process.
