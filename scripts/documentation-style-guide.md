@@ -22,7 +22,7 @@ Example:
 `### Tech community {#tech-community}`
 
 
-## Terminology Standards
+## Terminology standards
 ### Capitalization
 When in doubt, don’t capitalize.
 
