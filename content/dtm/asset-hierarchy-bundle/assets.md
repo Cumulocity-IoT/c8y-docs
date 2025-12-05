@@ -73,6 +73,8 @@ The asset models provided here are root asset models. Root asset models are asse
 
 3. At the left, the asset hierarchy is shown. At the right, provide a name for the new asset and optionally add a description.
 
+    ![Adding a new asset](/images/dtm/assets/dtm-assets-new-asset.png)
+
 4. Optionally, [assign devices](#to-assign-devices-to-an-asset) to your root asset.
 
 5. To add more than one asset on this level, click **Add**.
@@ -91,13 +93,10 @@ The values of latitude and longitude are automatically updated whenever a new lo
 
 7. After defining a hierarchy level, you see a green check mark on the asset hierarchy at the left.
 
-    ![Adding a new asset](/images/dtm/assets/dtm-assets-new-asset.png)
-
 8. Click **Next** to navigate to the next hierarchy level in your **asset hierarchy** and fill in the required fields.
 
 9. Repeat this steps for all asset hierarchy levels. You can track your progress via the green check marks in the asset hierarchy on the left.
 
-    ![Track progress](/images/dtm/assets/dtm-assets-add-multiple-instance.png)
 
 Modify the assets by navigating to the respective asset pages using the **Previous** and **Next** buttons.
 
