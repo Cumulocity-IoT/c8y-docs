@@ -4,6 +4,14 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   let completedTests = 0;
   const totalTests = urls.length;
 
+  const excludedLinks = [
+  // MathWorks URL uses anti-bot protection, Cypress cannot reliably load it
+  "https://de.mathworks.com/help/predmaint/ug/remaining-useful-life-estimation-using-convolutional-neural-network.html",
+
+  // Medium blog uses anti-bot protection, Cypress cannot reliably load it
+  "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6"
+];
+
 
   const expectFragmentExists = (doc, fragment) => {
     const decodedFragment = decodeURIComponent(fragment);
@@ -63,16 +71,13 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   });
 
   urls.forEach((item) => {
-    it(`should validate URL: ${item.link}`, () => {
-      const url = item.link;
-      const excludedLinks = [
-      "https://de.mathworks.com/help/predmaint/ug/remaining-useful-life-estimation-using-convolutional-neural-network.html",
-      "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6"
-    ];
-    if (excludedLinks.includes(url)) {
-      cy.log(`Skipping excluded link: ${url}`);
+    if (excludedLinks.includes(item.link)) {
+      it.skip(`should validate URL (excluded): ${item.link}`, () => {});
       return;
     }
+    
+    it(`should validate URL: ${item.link}`, () => {
+      const url = item.link;
       const fragment = url.includes('#') ? url.split('#').slice(-1)[0] : null;
       const isCodexPage = url.includes('/codex/');
       const isApiPage = url.includes('/api/');
