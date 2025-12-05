@@ -5,12 +5,12 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   const totalTests = urls.length;
 
   const excludedLinks = [
-  // MathWorks URL uses anti-bot protection, Cypress cannot reliably load it
-  "https://de.mathworks.com/help/predmaint/ug/remaining-useful-life-estimation-using-convolutional-neural-network.html",
+    // MathWorks URL uses anti-bot protection, Cypress cannot reliably load it
+    "https://de.mathworks.com/help/predmaint/ug/remaining-useful-life-estimation-using-convolutional-neural-network.html",
 
-  // Medium blog uses anti-bot protection, Cypress cannot reliably load it
-  "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6"
-];
+    // Medium blog uses anti-bot protection, Cypress cannot reliably load it
+    "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6"
+  ];
 
 
   const expectFragmentExists = (doc, fragment) => {
