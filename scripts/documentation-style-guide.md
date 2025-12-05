@@ -33,7 +33,7 @@ Use **sentence-style capitalization** as the default. This means:
 - **Do not use ALL CAPS** for emphasis.
 
 **Capitalization checklist**
-- Lowercase everything except the first word in a sentence, UI label, phrase, heading, or title.
+- Lowercase everything except the first word in a UI label, phrase, heading, title, or sentence in a text.
 - Capitalize proper nouns.
 - Follow programming language conventions for keywords and syntax.
 - Do not use uppercase for emphasis.
