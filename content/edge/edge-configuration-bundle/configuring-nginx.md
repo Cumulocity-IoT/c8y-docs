@@ -6,13 +6,13 @@ sector:
   - edge_server
 ---
 
-### Blocking Sensitive Endpoints in NGINX
+### Blocking sensitive endpoints in NGINX
 
-To prevent access to the `/service/<service>/heapdump` endpoint, create an NGINX location rule that returns "403 Forbidden" for all heapdump requests.
+To block access to the `/service/<service>/heapdump` endpoint, create an NGINX location rule that returns "403 Forbidden" for all heapdump requests.
 
 {{< c8y-admon-important >}}
 
-Perform these operations as `root` user
+Perform these operations as `root` user.
 
 {{< /c8y-admon-important >}}
 
