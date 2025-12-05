@@ -1,7 +1,7 @@
 ```markdown
 # Cumulocity documentation guidelines
 
-## Structure & Organization
+## Structure & organization
 
 ### Headings
 - Use sentence capitalization
