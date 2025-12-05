@@ -120,9 +120,9 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       }
 
       if (isCodexPage) {
-        cy.visit(url, { timeout: 20000 });
+        cy.visit(url);
       
-        cy.get('[data-cy="c8y-title--title-outlet"] .text-truncate', { timeout: 30000 })
+        cy.get('[data-cy="c8y-title--title-outlet"] .text-truncate')
           .invoke('text')
           .should('not.be.empty')
           .and('not.match', /404 not found/i);
@@ -133,7 +133,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
           if (fragment.startsWith('/')) {
             cy.location('hash').should('eq', `#${fragment}`, `URL hash should match the fragment: #${fragment}`);
           } else {
-            cy.get(`#${fragment}`, { timeout: 20000 })
+            cy.get(`#${fragment}`)
               .should('exist', `Fragment "${fragment}" does not exist on the page`)
               .then(() => {
                 cy.document().then((doc) => {
@@ -145,9 +145,9 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         }
       }
       else if (isApiPage) {
-        cy.visit(url, { timeout: 20000 });
+        cy.visit(url);
         if (fragment) {
-          cy.get(`[id="${fragment}"]`, { timeout: 20000 }).should('exist');
+          cy.get(`[id="${fragment}"]`).should('exist');
         }
       }
       else if (isGithubBlobLine) {
@@ -159,7 +159,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
             .to.be.oneOf([200, 301, 302]);
         });
         if (lineNumber) {
-          cy.visit(baseUrl, { timeout: 30000 });
+          cy.visit(baseUrl);
           const selector = `#L${lineNumber}, #LC${lineNumber}`;
           cy.get('body').then(($body) => {
             if ($body.find(selector).length === 0) {
@@ -169,11 +169,11 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         }
       }
       else if (isGithubPage && fragment) {
-        cy.visit(url, { timeout: 20000 });
+        cy.visit(url);
         checkGithubFragment(fragment);
       }
       else if (fragment) {
-        cy.visit(url, { timeout: 20000, failOnStatusCode: false, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122.0 Safari/537.36' }});
+        cy.visit(url, {failOnStatusCode: false, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122.0 Safari/537.36' }});
         checkRegularFragment(fragment);
       }
       else {
@@ -187,7 +187,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
             expect(response.status).to.be.oneOf([200, 201, 202, 203, 204, 301, 302, 304]);
             expect(response.body).not.to.be.empty;
           } else {
-            cy.visit(url, { timeout: 20000 });
+            cy.visit(url);
             cy.document().its('body').should('not.be.empty');
           }
         });
