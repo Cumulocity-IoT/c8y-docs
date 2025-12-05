@@ -12,7 +12,7 @@ To prevent access to the /service/<service>/heapdump endpoint, create an NGINX l
 
 {{< c8y-admon-important >}}
 
-Perform these operations as root user
+Perform these operations as `root` user
 
 {{< /c8y-admon-important >}}
 
