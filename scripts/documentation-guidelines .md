@@ -51,12 +51,10 @@ Create a child device
 
 Create child device
 
-### Prohibited Terms
+### Abbreviations
 - Replace "e.g." → "for example"
 - Replace "i.e." → "that is"
 - Replace "etc." → "and so on" or be specific
-- Replace "blacklist" → "blocklist"
-- Replace "please" → remove (except for support contacts)
 ```
 
 ### Spelling
