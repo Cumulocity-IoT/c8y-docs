@@ -28,9 +28,6 @@ When in doubt, don’t capitalize.
 
 Use **sentence-style capitalization** as the default. This means:
 - Capitalize only the **first word** of a heading, title, UI label (buttons, checkboxes), or a sentence in a text.
-- Keep all other words **lowercase**, unless they are proper nouns.
-- In programming and code snippets, follow the capitalization norms of the language.
-- **Do not use ALL CAPS** for emphasis.
 
 **Capitalization checklist**
 - Lowercase everything except the first word in a UI label, phrase, heading, title, or sentence in a text.
