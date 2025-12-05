@@ -166,11 +166,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         if (lineNumber) {
           cy.visit(baseUrl);
           const selector = `#L${lineNumber}, #LC${lineNumber}`;
-          cy.get('body').then(($body) => {
-            if ($body.find(selector).length === 0) {
-              throw new Error(`Line ${lineNumber} does NOT exist in ${baseUrl}`);
-            }
-          });
+          cy.get(selector).should('exist');
         }
       }
       else if (isGithubPage && fragment) {
