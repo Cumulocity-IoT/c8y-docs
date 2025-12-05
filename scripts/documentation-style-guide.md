@@ -1,5 +1,5 @@
 ```markdown
-# Cumulocity Documentation Style Guide - Copilot Instructions
+# Cumulocity documentation guidelines
 
 ## Structure & Organization
 
