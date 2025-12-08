@@ -19,7 +19,7 @@ const getMarkdownFiles = (dir) => {
 const BASE_URL = "https://cumulocity.com/docs/2025";
 
 const shortcodeMapping = {
-  
+
   "c8y-current-version": "2025",
   "c8y-edge-current-version": "2025",
   "c8y-resources-server-link": "https://download.cumulocity.com/",
@@ -37,7 +37,7 @@ const shortcodeMapping = {
   "link-apama-webhelp": "https://cumulocity.com/apama/docs/10.15",
   "link-apamadoc-api": "https://cumulocity.com/apama/docs/10.15/related/ApamaDoc/",
   "link-c8y-github": "https://github.com/Cumulocity-IoT/",
-  "link-c8y-training": "https://cumulocity.moodlecloud.com/",
+  "link-c8y-training": "https://learning.cumulocity.com",
   "link-device-portal": "https://ecosystem.cumulocity.com/devices/?filter_cumulocity_certified=yes",
   "management-tenant": "Management tenant",
   "openapi": "Cumulocity OpenAPI Specification",
