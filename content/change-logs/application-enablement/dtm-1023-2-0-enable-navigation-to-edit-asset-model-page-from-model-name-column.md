@@ -14,6 +14,4 @@ build_artifact:
 ticket: "CTM-2296"
 version: "1023.2.0"
 ---
-The Model Name column in the Asset Models screen is now interactive,
-allowing users to click a model name to quickly navigate to the Edit
-Asset Model page.
+The Model Name column in the Asset Models screen is now interactive, allowing users to click a model name to view/edit asset model.
