@@ -207,8 +207,8 @@ Dynamic changes to Groups, Assets, and Devices processed by a deployed model are
 #### Model Deletion Scenarios.
 Models are automatically deactivated in the following cases:
 
-- If the input device or output device of the modle is deleted.
-- When the parent group or asset configured in the model is deleted.
+- If the input device or output device of the modle is de-activated.
+- When the parent group or asset configured in the model is de-activated.
 
 In such cases, the model is removed and an error message is recorded in the logs.
 
@@ -217,8 +217,9 @@ Models also automatically adapt to structural changes within a device hierarchy.
 - Re-arrangement of devices inside groups or assets
 - Addition of new devices
 - Removal of existing devices
+<br></br>
 {{< c8y-admon-info >}}
- When a model is deployed to process a Group, all devices may be removed from the Group, leaving it with zero devices. The model will not be deleted, and it will automatically resume processing whenever a device is added back to the Group.
+ When a model is deployed to process a Group, all devices may be removed from the Group, leaving it with zero devices. The model will not be de-activated, and it will automatically resume processing whenever a device is added back to the Group.
 {{< /c8y-admon-info >}}
 
 #### Limitations to these changes.
