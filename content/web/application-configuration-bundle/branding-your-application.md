@@ -113,7 +113,7 @@ To override variables, `Custom CSS Properties`â€”also known as `CSS Variables`â€
 @import '~@c8y/style/extend.less';
 ```
 
-4. Include the `styles.less` file in the `styles` entry in `angular.json` under your project entry:
+4. Include the `styles.less` file in the `styles` entry in *angular.json* under your project entry:
 
    ```json
    {

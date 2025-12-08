@@ -24,7 +24,7 @@ Angular 18 is supported from version `1021.0.0`. The following configuration cha
      // @brand-primary: #your-color;
      ```
 
-  2. Reference this file in the `styles` array of your `angular.json`:
+  2. Reference this file in the `styles` array of your *angular.json*:
 
      ```json
      {

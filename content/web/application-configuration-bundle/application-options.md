@@ -98,7 +98,7 @@ switch (flavor) {
 export default standardOptions;
 ```
 
-For flavor-specific branding, specify different branding files in your `angular.json`:
+For flavor-specific branding, specify different branding files in your *angular.json*:
 
 ```json
 {
