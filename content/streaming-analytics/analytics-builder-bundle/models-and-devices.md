@@ -198,7 +198,7 @@ See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 
 ### Device Hierarchy changes {#device-hierarchy-changes}
 
-Analytics Builder models will now detect changes to devices within device groups, asset groups, and assets. This includes new device or asset additions, deletions, and updates, as well as changes in the hierarchy of devices or sub-assets within a group or asset. The model then processes data based on the updated group or asset structure, providing a seamless user experience.
+Dynamic changes to Groups, Assets, and Devices processed by a deployed model are now detected. These include new device or asset additions, deletions, updates, and changes in the hierarchy of devices or sub-assets within a group or asset. With the latest update, the model now automatically processes data based on the updated group or asset structure.
 
 {{< c8y-admon-info >}}
 [The Smart Rules (NEW) plugin](https://cumulocity.com/docs/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin), which internally uses Analytics Builder models, behaves the same way.
@@ -218,7 +218,7 @@ Models also automatically adapt to structural changes within a device hierarchy.
 - Addition of new devices
 - Removal of existing devices
 {{< c8y-admon-info >}}
- When a model is deployed to process a Group, all devices can be removed from the Group, leaving it with zero devices. The model will not be deleted, and it will restart  processing again whenever a device is added back to the Group
+ When a model is deployed to process a Group, all devices may be removed from the Group, leaving it with zero devices. The model will not be deleted, and it will automatically resume processing whenever a device is added back to the Group.
 {{< /c8y-admon-info >}}
 
 #### Limitations to these changes.
