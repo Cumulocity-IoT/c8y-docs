@@ -196,32 +196,32 @@ The default value of this tenant option is `not has(c8y_IsVirtualDevice)`. As lo
 
 See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 
-### Device Hierarchy changes {#device-hierarchy-changes}
+### Group hierarchy changes {#group-hierarchy-changes}
 
-Dynamic changes to Groups, Assets, and Devices processed by a deployed model are now detected. These include new device or asset additions, deletions, updates, and changes in the hierarchy of devices or sub-assets within a group or asset. With the latest update, the model now automatically processes data based on the updated group or asset structure.
+Model consuming data from a group of devices or assets groups then any changes to the group hierarchy will now be detected automatically. These include new device or asset additions, deletions, updates, and changes in the hierarchy of devices or sub-assets within a group or asset. With the latest update, the model now automatically processes data based on the updated group or asset structure.
 
 {{< c8y-admon-info >}}
-[The Smart Rules (NEW) plugin](https://cumulocity.com/docs/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin), which internally uses Analytics Builder models, behaves the same way.
+[The Smart Rules (NEW) plugin](https://cumulocity.com/docs/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin), which internally uses Analytics Builder models, behaves in this same way.
 {{</ c8y-admon-info >}}
 
-#### Model Deletion Scenarios.
+#### Model de-activation Scenarios.
 Models are automatically deactivated in the following cases:
 
-- If the input device or output device of the modle is de-activated.
-- When the parent group or asset configured in the model is de-activated.
+- If the input device or output device of the model is deleted.
+- When the parent group or asset configured in the model is deleted.
 
-In such cases, the model is removed and an error message is recorded in the logs.
+In such cases, the model is de-activated and an error message is recorded in the logs.
 
 #### Handling Structural Changes
 Models also automatically adapt to structural changes within a device hierarchy. This includes:
-- Re-arrangement of devices inside groups or assets
+- Re-arrangement of devices within groups or assets
 - Addition of new devices
 - Removal of existing devices
 <br></br>
 {{< c8y-admon-info >}}
- When a model is deployed to process a Group, all devices may be removed from the Group, leaving it with zero devices. The model will not be de-activated, and it will automatically resume processing whenever a device is added back to the Group.
+When a model is deployed to process a group of devices, all devices may be removed from the group, leaving the group with zero devices. The model will not be deactivated, and it will automatically resume processing whenever a device is added back to the group.
 {{< /c8y-admon-info >}}
 
 #### Limitations to these changes.
 
-- Cascaded deletion of a Group is not supported (This Case needs a reload of the model to take effect.)
+- Cascaded deletion of a sub-group is not supported. The model must be undeployed and redeployed
