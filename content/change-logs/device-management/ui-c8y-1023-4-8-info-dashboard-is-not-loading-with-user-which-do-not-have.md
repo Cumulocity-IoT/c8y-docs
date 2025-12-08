@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-12-08'
 title: Info dashboard fails to load for users without global permissions
 product_area: Device management & connectivity
 change_type:
