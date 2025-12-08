@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Info dashboard is not loading with user which do not have global read permissions
+title: Info dashboard fails to load for users without global permissions
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5059
 version: 1023.4.8
 ---
-Co-authored-by: Bozhidar Dedov <95280800+bozhidardedov@users.noreply.github.com>
+In **Device management** some **Info** dashboards failed to load for users without global inventory access (i.e. inventory roles only). This issue is now fixed and device **Info** dashboard is available for all users with access to the device.
