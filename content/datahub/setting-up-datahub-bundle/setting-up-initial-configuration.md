@@ -98,11 +98,7 @@ Value: Your key name, for example, `arn:aws:kms:eu-west-2:123456789012:key/071a8
 **SSE-C**: The client specifies an base64-encoded AES-256 key to be used to encrypt and decrypt the data. **{{< product-c8y-iot >}} DataHub does not support this option.**
 
 ##### NAS {#nas}
-**NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for {{< product-c8y-iot >}} Edge installations. The following settings must be defined for this data lake:
-
-|Settings|Description|
-|:---|:---|
-|Mount path|The mount path refers to a path in the local Linux file system on both the coordinator and executor containers. By default, the file system of {{< product-c8y-iot >}} Edge is mounted into /datalake inside the containers. To use some other folder, you must map the folder into both containers, for example, to /datalake inside the containers.|
+**NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for {{< product-c8y-iot >}} Edge installations.
 
 #### Saving settings {#saving-settings}
 Once all settings are defined, click **Save** in the action bar to the right. During the save process, the following steps are automatically conducted:
