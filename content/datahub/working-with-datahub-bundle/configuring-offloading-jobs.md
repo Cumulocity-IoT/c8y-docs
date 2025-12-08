@@ -39,10 +39,30 @@ In the dropdown box select one of the {{< product-c8y-iot >}} base collections, 
 * measurements
 
 {{< c8y-admon-info >}}
-You can define multiple offloading pipelines for each {{< product-c8y-iot >}} collection, except for the case of a TrendMiner offloading configuration, which must be singleton. As an example for multiple pipelines, you can filter the alarms collection by different criteria with each one resulting in a separate pipeline.
+You can define multiple offloading pipelines for each {{< product-c8y-iot >}} collection. As an example for multiple pipelines, you can filter the alarms collection by different criteria with each one resulting in a separate pipeline.
 {{< /c8y-admon-info >}}
 
 In [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections) you will find a summary of the default attributes being offloaded per base collection.
+
+#### Configuring inventory collection {#configuring-inventory-collection}
+
+The inventory collection stores data related to devices and managed objects. In order to confine the offloading pipeline to the data you need, there are different views defined over the collection, with each one defining a subset of all inventory entries. Select the view fitting best to your needs.
+
+* **All devices**: This view provides all documents with device-related data, indicated by having the `c8y_isDevice` fragment set.
+* **All device groups**: This view provides all documents with data related to device groups, indicated by having the `c8y_isDeviceGroup` fragment set.
+* **Inventory data tagged for DataHub**: This view provides all documents that are specifically tagged for DataHub and not related to devices. Corresponding documents have the fragment `c8y_DataHubInclude` set, but not the fragments `c8y_isDevice`, `c8y_isDeviceGroup`, or `c8y_DataHubExclude`. You can utilize the fragment `c8y_DataHubInclude` in your data-generating application to configure a custom view that offloads only selected documents.
+* **All data**: This view provides all documents, except for those having the fragment `c8y_DataHubExclude` set. You can utilize the fragment `c8y_DataHubExclude` in your data-generating application to configure a custom view which excludes selected documents. Using this view is not recommended. First, it includes the offloading of data typically not required in your application, and second, the schema detection may suffer from the heterogeneity of the data.
+* **All remaining inventory entries**: This view provides all documents, except for those having the fragments `c8y_isDevice`, `c8y_isDeviceGroup`, `c8y_DataHubInclude`, or `c8y_DataHubExclude` set. Using this view is not recommended. First, it includes the offloading of data typically not required in your application, and second, the schema detection may suffer from the heterogeneity of the data.
+
+Older offloading configurations not yet based on a view are still supported. They are configured to directly read from the inventory collection, without an intermittent view. When editing such an offloading, the above list contains an additional option **Raw inventory collection**, which is automatically selected. It is advisable to select one of the other views to ensure that only relevant data is offloaded.
+
+{{< c8y-admon-info >}}
+The view may be empty as no documents in the inventory collection qualify for the view definition. Then the offloading configuration cannot be completed as no schema can be derived.
+{{< /c8y-admon-info >}}
+
+#### Configure measurements collection {#configure-measurement-collection}
+
+Measurements in the **measurements** base collection may have different types. For example, the collection may contain temperature, humidity, and pressure measurements. As the resulting table in the data lake must only contain measurements of one specific type, you must additionally specify the **measurement type** to which the offloaded measurements are restricted. To identify existing measurement types, {{< product-c8y-iot >}} DataHub automatically inspects a subset of the data, including initial as well as latest data. In the measurement type dropdown field, these auto-detected types are listed. If a specific type you are looking for has not been detected, you can manually enter it in this field. Alternatively, you can click **Refresh** next to the dropdown field to manually re-trigger the detection of measurement types. As this might be a performance-intensive process, you should trigger it only if you know that the expected measurement type is present in data recently inserted into the collection. You can trigger such a refresh only every five minutes for performance reasons.  
 
 Click **Next** to proceed with the next configuration step. Click **Cancel** to cancel the offloading configuration.
 
@@ -57,25 +77,19 @@ Once you have selected a collection for offloading, you must specify the target 
 
 Each pipeline must have its own target table in the data lake. Thus, you must select distinct target table names for each offloading configuration.
 
-For the **alarms**, **events**, and **inventory** collections, you must only specify the target table name in this step.
-
-For the **measurements** collection, additional settings are required. The **Target table layout** refers to the way the measurements are stored. Measurements in the base collection may have different types. For example, the collection may contain temperature, humidity, and pressure measurements. Depending on your layout choice, measurements are stored differently in the target table.
-
-The layout **One table for one measurement type (Default)** creates a table containing only measurements of one specific type; measurements of other types are not included. When selecting this layout, you must additionally specify the **measurement type** to which the offloaded measurements are restricted. To identify existing measurement types, {{< product-c8y-iot >}} DataHub automatically inspects a subset of the data, including initial as well as latest data. In the measurement type dropdown box, these auto-detected types are listed. If a specific type you are looking for has not been detected, you can manually enter it in this box. Alternatively you can click **Refresh** next to the dropdown box to manually re-trigger the detection of measurement types. As this might be a performance-intensive process, you should trigger it only if you know that the expected measurement type is present in data recently inserted into the collection. You can trigger such a refresh only every five minutes for performance reasons.  
-
-The layout **All measurement types in one table (TrendMiner)** creates a table containing measurements of all types. To distinguish the measurements, the table has a column which lists for each measurement its corresponding type. The specific table schema for this layout is listed in [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections). This layout is only for use cases where you want to offload the data into the data lake, so that TrendMiner can consume the data for its analytics. When this layout is selected, the target table name is set to a fixed, non-editable name, which TrendMiner expects for its data import. When the time series data model is used, the TrendMiner mode is not supported.
-
-For each base collection, a default set of data fields is derived. This set defines the default schema of the target table with the columns capturing the data fields. The set is fix for each collection and cannot be modified. Select **Show default schema** to show the columns of the default schema with their corresponding name and type.
+For each base collection, a default set of data fields is derived. This set defines the default schema of the target table with the columns capturing the data fields. The set is fix for each collection, including the views of the inventory collection, and cannot be modified. Select **Show default schema** to show the columns of the default schema with their corresponding name and type.
 
 Click **Next** to proceed with the next configuration step. Click **Finish** to jump directly to the final step. Both steps will fail if the associated base collection is empty, as it prevents necessary schema investigations. In such a case you must ensure that the base collection is not empty before you can proceed with the offloading configuration. Click **Previous** to go back one configuration step. Click **Cancel** to cancel the offloading configuration wizard.
 
 #### Set additional result columns {#set-additional-result-columns}
 
-If you have added additional top-level fields while feeding data into {{< product-c8y-iot >}} and you want to access them in your {{< product-c8y-iot >}} DataHub queries, then you can include them in the offloading process by setting them as additional result columns. You can also use additional result columns to offload data fields in the base collection which are not part of the default schema. Additional result columns can be configured optionally. The TrendMiner case does not support this option.
+If you have added additional top-level fields while feeding data into {{< product-c8y-iot >}} and you want to access them in your {{< product-c8y-iot >}} DataHub queries, then you can include them in the offloading process by setting them as additional result columns. You can also use additional result columns to offload data fields in the base collection which are not part of the default schema. Additional result columns can be configured optionally.
 
 **Auto-detected columns**
 
-To ease the configuration process, {{< product-c8y-iot >}} DataHub auto-detects additional result columns. Using a sample of the base collection, {{< product-c8y-iot >}} DataHub searches for additional top-level fields and provides them as additional result columns. You can either include such an auto-detected column in your offloading or not. As the auto-detection logic relies on a sample, not all additional top-level fields might be captured. You can manually add a column to include a field you miss.
+To ease the configuration process, {{< product-c8y-iot >}} DataHub auto-detects additional result columns. Using a sample of the base collection, {{< product-c8y-iot >}} DataHub searches for additional top-level fields and provides them as additional result columns. For the specific case of the inventory collection, a sample of the selected view is used to derive the additional columns. Therefore they can vary with the view being selected. 
+
+You can either include such an auto-detected column in your offloading or not. As the auto-detection logic relies on a sample, not all additional top-level fields might be captured. You can manually add a column to include a field you miss.
 
 **Structure of additional result columns**
 

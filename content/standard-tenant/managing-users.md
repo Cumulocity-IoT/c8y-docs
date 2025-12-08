@@ -162,7 +162,7 @@ If single sign-on is enabled for your tenant, a message will show up which remin
 While entering the password, the strength of the password is checked. See [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password) for further information on password reset and strength.
     {{< /c8y-admon-info >}}
 
-5. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing permissions](/standard-tenant/managing-permissions).
+5. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing permissions and roles](/standard-tenant/managing-permissions).
 6. Click **Save** to save your settings.
 
 The new user will be added to the user list.

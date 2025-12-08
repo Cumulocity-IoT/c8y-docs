@@ -9,9 +9,9 @@ The {{< product-c8y-iot >}} MQTT Service is an MQTT endpoint to {{< product-c8y-
 {{< c8y-admon-info >}}The {{< product-c8y-iot >}} MQTT Service feature is currently in Public Preview and may be subject to change in the future.
 {{< /c8y-admon-info >}}
 
-There are various MQTT Service samples provided to demonstrate usage, see [Create an EPL App](/streaming-analytics/epl-apps/#step-2---create-an-epl-app).
+MQTT Service samples are provided to demonstrate how to consume and publish device-specific messages using the DeviceService API. See [Create an EPL App](/streaming-analytics/epl-apps/#step-2---create-an-epl-app) for details.
 
-For further documentation on using the MQTT Service generally, see [MQTT Service](/device-integration/mqtt-service/), and for using it within EPL Apps, see [the Apama documentation]({{<link-apama-webhelp>}}/standard-connectivity-plugins/cumulocity-mqtt-service/).
+For further documentation on using the MQTT Service generally, see [MQTT Service](/device-integration/mqtt-service/), and for using it within EPL Apps, see [the Apama documentation]({{<link-apama-webhelp>}}/standard-connectivity-plugins/device-service/).
 
 Some specific EPL Apps notes:
 - You do not need to add any bundles.

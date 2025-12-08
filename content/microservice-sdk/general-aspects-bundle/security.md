@@ -135,13 +135,13 @@ There are three types of users:
 
 The following role types are defined for users:
 
-* Required roles: The roles that are predefined to allow access to {{< product-c8y-iot >}} REST APIs.
-For instance, if a microservice creates measurements using the service user, measurement admin role must be added as a required role of the application.
+* Required roles: The permissions that are predefined to allow access to {{< product-c8y-iot >}} REST APIs.
+For instance, if a microservice creates measurements using the service user, the measurement ADMIN permission must be added as a required role/permission of the application.
 Required roles are added to the service users.
-* Roles: The custom roles provided to tenant platform users by the microservice developer.
-These roles can be assigned or revoked to the tenant platform users or groups using the Administration application.
+* Roles: The custom permissions provided to tenant platform users by the microservice developer.
+These permissions can be assigned or revoked to the tenant platform users or groups using the Administration application.
 
-Custom roles must adhere to this name format in order to be shown in the UI:
+Custom permissions must adhere to this name format to be shown in the UI:
 
 ROLE_<NAME>_(READ|ADMIN|CREATE)
 
@@ -156,7 +156,11 @@ You can add them to the [application manifest](#microservice-manifest) in the `r
 
 <!-- TODO: add/describe a picture of "required roles" and "provided roles" showing a microservice as a block -->
 
-The roles are set in the [Microservice manifest](#microservice-manifest). For more details about users and roles, review the [User API](https://{{< domain-c8y >}}/api/core/#tag/User-API) in the {{< openapi >}}.
+The permissions are set in the [Microservice manifest](#microservice-manifest). For more details about users, permissions, and roles, refer to [Managing permissions and roles](/standard-tenant/managing-permissions) or to the [User API](https://{{< domain-c8y >}}/api/core/#tag/User-API) in the {{< openapi >}}.
+
+{{< c8y-admon-important >}}
+Be aware that the term "role" might be misleading here as the the `roles` field and `requiredRoles` field expect a "permission" string (for example, ROLE_INVENTORY_ADMIN). See also the glossary for the usage of the terms [permission](/glossary/#permission) and [role](/glossary/#role) in the Cumulocity context.
+{{< /c8y-admon-important >}}
 
 ### Microservice bootstrap {#microservice-bootstrap}
 
@@ -205,7 +209,7 @@ Steps:
 
 There is a mechanism to encrypt the tenant options.
 
-If a tenant option is created with a key name that starts with "credentials.", it is automatically encrypted and can be fetched as unencrypted only by system users. Note that a space (" ") is not allowed as a tenant option value. 
+If a tenant option is created with a key name that starts with "credentials.", it is automatically encrypted and can be fetched as unencrypted only by system users. Note that a space (" ") is not allowed as a tenant option value.
 
 The options can be fetched via REST using the options endpoint at microservice runtime. Encrypted options are decrypted only if the tenant option category matches the category defined by the microservice. This category is determined based on the first non-blank value from:
 

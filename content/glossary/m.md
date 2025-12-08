@@ -17,7 +17,7 @@ Maintenance releases are provided for supported [Yearly releases](#yearly-releas
 
 ### Managed object {#managed-object}
 
-Managed objects are the core building blocks of the {{< product-c8y-iot >}} [inventory](#inventory). A managed object is the primary digital record ([digital twin](#digital-twin)) used to represent entities such as [devices](#device), [assets](#asset), logical [groupings](#group), or [application](#application) components. Managed objects are used to model data sources (for example, an IoT sensor), and all related data, such as [events](#event), [alarms](#alarm), and [operations](#operation), is linked to the managed object. When referred to as a “source managed object”, it denotes the managed object representing the origin of that data.  
+Managed objects are the core building blocks of the {{< product-c8y-iot >}} [inventory](#inventory). A managed object is the primary digital record ([digital twin](#digital-twin)) used to represent entities such as [devices](#device), [assets](#asset), logical [groupings](#group), or [application](#application) components. Managed objects are used to model data sources (for example, an IoT sensor), and all related data, such as [events](#event), [alarms](#alarm), and [operations](#operation), linked to the managed object. When referred to as a “source managed object”, it denotes the managed object representing the origin of that data.  
 
 
 ### {{< management-tenant >}} {#management-tenant}
