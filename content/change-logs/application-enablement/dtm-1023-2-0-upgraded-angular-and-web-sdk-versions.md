@@ -11,7 +11,7 @@ component:
 build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
-ticket: ""
+ticket: "CTM-2583"
 version: "1023.2.0"
 ---
 The Digital Twin Manager application has been upgraded to Angular 20.3.3
