@@ -109,7 +109,9 @@ The inventory collection keeps track of managed objects. During offloading, the 
 | c8y_IsDevice | BOOLEAN |
 | c8y_IsDeviceGroup | BOOLEAN |
 
-The inventory collection keeps track of managed objects. Note that {{< product-c8y-iot >}} DataHub automatically filters out internal objects of the {{< product-c8y-iot >}} platform. These internal objects are also not returned when using the {{< product-c8y-iot >}} REST API. A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. Therefore an offloading pipeline for the inventory encompasses additional steps:
+The inventory collection keeps track of managed objects. Note that {{< product-c8y-iot >}} DataHub automatically filters out internal objects of the {{< product-c8y-iot >}} platform. These internal objects are also not returned when using the {{< product-c8y-iot >}} REST API. As described in [Configure inventory collection](#configuring-inventory-collection), pre-defined views over the inventory collection allow you to confine your offloading to the relevant data. Those views all share the above schema.
+
+A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. Therefore an offloading pipeline for the inventory encompasses additional steps:
 
 1. Offload those entries of the inventory collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake.
 2. Additional views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all* and *_latest* respectively. The following examples use *inventory* as target table name:
@@ -124,11 +126,9 @@ The fields **childDevices** and **childAssets** are not part of the default offl
 
 #### Offloading the measurements collection {#offloading-the-measurements-collection}
 
-The measurements collection stores device measurements. Offloading the measurements collection differs from the other collections as you must explicitly select a target table layout, which is either having one table for one type or, for the TrendMiner case, one table with measurements of all types. In the main panel of the **Offloading** page you find in the details section of an offloading configuration a link which navigates you to the corresponding table in the Dremio UI.
+The measurements collection stores device measurements. The corresponding table contains all measurements for a pre-selected measurement type. In the main panel of the **Offloading** page, you find a link in the details section of an offloading configuration that navigates you to the corresponding table in the Dremio UI.
 
-##### Offloading measurements with the default target table layout {#offloading-measurements-with-the-default-target-table-layout}
-
-When using the default layout, you must select a measurement type, so that all offloaded data is of the same type. During offloading, the data of the measurements collection is flattened, with the resulting schema being defined as follows:
+You must select a measurement type, so that all offloaded data is of the same type. During offloading, the data of the measurements collection is flattened, with the resulting schema being defined as follows:
 
 | Column name | Column type |
 | -----       | -----       |
@@ -188,80 +188,3 @@ The fragment `c8y_Steam` is flattened into two measurements and represented in t
 {{< c8y-admon-important >}}
 Try to ensure that the data you feed into the measurements base collection is consistent. If measurements of the same type vary in the fragment structures, the resulting target table might not have the expected schema. A common problem, for example, are varying data types of the values like one value being 2.079 and another one NaN.
 {{< /c8y-admon-important >}}
-
-##### Offloading measurements with the TrendMiner target table layout {#offloading-measurements-with-the-trendminer-target-table-layout}
-
-{{< c8y-admon-important >}}
-The integration with TrendMiner will be discontinued. The offloading mode specifically designed for the interaction with TrendMiner is deprecated and will be removed in a future release.
-{{< /c8y-admon-important >}}
-
-When using the TrendMiner layout, all measurements are offloaded into one table **c8y_cdh_tm_measurements**. Their corresponding type is stored in column **type**. The column **unit** defines the unit, while the column **value** defines the value of the measurement. The column **tagname** is used by TrendMiner to search for specific series. It is composed of the source, the fragment, and the series as stored in the measurements collection.
-
-The resulting schema is defined as follows:
-
-| Column name | Column type |
-| -----       | -----       |
-| id | VARCHAR |
-| creationTime | TIMESTAMP |
-| creationTimeOffset | INTEGER |
-| creationTimeWithOffset | TIMESTAMP |
-| time | TIMESTAMP |
-| timeOffset | INTEGER |
-| timeWithOffset | TIMESTAMP |
-| YEAR | VARCHAR |
-| MONTH | VARCHAR |
-| DAY | VARCHAR |
-| source | VARCHAR |
-| type | VARCHAR |
-| tagname | VARCHAR |
-| value | VARCHAR |
-| unit | VARCHAR |
-
-**Example mapping**
-
-The following excerpt of a measurement document in the base collection
-
-````json
-{
-    ...
-    "source": "857",
-    "type": "Temperature",
-    ...
-     "c8y_Temperature": {
-         "T": {
-             "unit": "C",
-             "value": 2.0791169082
-         }
-     }
-}
-...
-{
-    ...
-    "source": "311",
-    "type": "Pressure",
-    ...
-     "c8y_Pressure": {
-         "P": {
-             "unit": "kPa",
-             "value": 98.0665
-         }
-     }
-}
-````
-
-is represented in the target table in the data lake as
-
-| ... | type | tagname | unit | value | ... |
-| ---- | ---- | ----- | ----- | ----- | ----- |
-| ... | Temperature | 857.c8y_TemperatureMeasurement.T | C | 2.0791169082 |... |
-| ... | Pressure | 311.c8y_PressureMeasurement.P | kPa | 98.0665 |... |
-
-In addition to the table **c8y_cdh_tm_measurements**, the table **c8y_cdh_tm_tags** is created. This table stores the tag names and the source IDs, which connect the tagname used in TrendMiner with a device and its ID as managed in the {{< product-c8y-iot >}} platform. The schema of the **c8y_cdh_tm_tags** table is defined as:
-
-| Column name | Column type |
-| -----       | -----       |
-| source | VARCHAR |
-| tagname | VARCHAR |
-| unit | VARCHAR |
-| datatype | VARCHAR |
-| latestCreationTime | TIMESTAMP |

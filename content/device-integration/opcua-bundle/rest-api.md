@@ -263,22 +263,6 @@ To catch these events and convert them into internal alarms, a UA event mapping 
 
 For better performance an in-memory map is used to store the alarm type and the internal representation. These values are also stored on the filesystem and survive a possible crash or restart of the gateway. When the alarm is cleared then its entry is removed from the in-memory map.
 
-The size of the map can be adjusted by several parameters in the configuration file.
-With `maxEntries` you can specify the expected number of alarms at the same time, and it is hard-connected with the `maxBloatFactor`.
-This factor lets you define a possible maximum of `maxEntries` to be extended. For example, a default `maxEntries` value of "100000" and 'maxBloatFactor' set to "5.0" results in a maximum of 500000 entries.
-The `avarageKeySize` defines the used key size resulting from the length of the type and the external ID.
-It's used to calculate the local file size bound to the entry size.
-  ```yaml
-  # To avoid many REST calls to the inventory an in-memory map with a crash backup functionality is included.
-  alarmStatusStore:
-    # Expected number of maximum alarms at the same time
-    maxEntries: 100000
-    # The average size of the keys on the map. Needed for calculation of the size of the database file.
-    averageKeySize: 30
-    # The number of maxEntries multiplied with this factor results in the real max size of the database file. Resize is done only if needed.
-    maxBloatFactor: 5.0
-  ```
-
 #### Get all servers of a gateway device {#get-all-servers-of-a-gateway-device}
 
 **Method**

@@ -413,3 +413,86 @@ The proof of possession is confirmed if the uploaded signed verification code ma
 {{< c8y-admon-info >}}
 If administrators cannot carry out this process on their own for organizational reasons, they can manually request the proof of possession for the corresponding certificate and the {{< company-c8y >}} Support team can complete the proof of possession through a back end API upon reasonable verification.
 {{< /c8y-admon-info >}}
+
+### Common security scenarios and best practices {#common-security-scenarios-and-best-practices}
+
+#### What to do when a device’s certificate is compromised? {#what-to-do-when-a-device-certificate-is-compromised}
+
+If you suspect or confirm that a device certificate has been compromised, follow the steps below:
+
+1. **Revoke the compromised certificate**
+    - Add the certificate to the [certificate revocation list](/device-certificate-authentication/managing-trusted-certificate-settings/#crl-settings) maintained by {{< product-c8y-iot >}}.
+2. **Disable the device user**
+    - This will disconnect the device from the {{< product-c8y-iot >}} but leave the certificate untouched until an investigation can be done.
+    - If not compromised: Re-enable the device user. The device will reconnect using its existing certificate.
+    - If compromised: Revoke the certificate to prevent any further use of it.
+3. **Provision a new certificate**
+    - Generate a new certificate for the device.
+    - Using the existing CA certificate which is owned by {{< product-c8y-iot >}} generate a new certificate for the device.
+    - Update the device to use the new certificate for authentication.
+
+#### What to do when the enrollment process has been compromised? {#what-to-do-when-the-enrollment-process-has-been-compromised}
+
+Enrollment processes may be compromised when insecure practices are used, for example:
+- Using a device ID-derived one-time password (OTP)
+- Using the same OTP across multiple enrollment requests
+
+If such a situation occurs, follow these steps to mitigate the risk:
+
+1. **Disable auto-registration on the tenant’s CA certificate**
+    - This immediately stops any new automatic registrations.
+    - Existing registered devices will remain connected and operational.
+
+2. **Communicate and remediate unsafe procedures**
+    - Inform all stakeholders about the issue.
+    - If necessary, disable users who were following unsafe enrollment practices.
+    - Provide guidance on secure manual enrollment procedures.
+
+3. **Investigate potential misuse of OTPs**
+    - When attempting to enroll a new device, you may see the following message:
+
+      > *"No newDeviceRequest found for this ID. It may already be registered, check the audit logs for details."*
+
+    - This indicates that the OTP may have already been used. To verify:
+        - **Check the audit logs**  
+           Look for an audit record with:
+            - **Activity:** `Tenant certificate authority (CA) signed certificate for device`
+            - **Type:** `TenantCertificateAuthority`
+            - **Text:** containing *`Certificate serial number hex: '%s'`*
+        - **Verify the signer**  
+           Confirm whether the certificate was signed by an authorized device.
+            - If it **was not** signed by an authorized user, it may indicate fraudulent or unintended device registration.
+        - **Revoke unauthorized certificates**  
+           Use the [certificate revocation list](/device-certificate-authentication/managing-trusted-certificate-settings/#crl-settings) to revoke any certificates that were not properly authorized. This prevents unauthorized devices from being accepted as trusted.
+
+4. **Re-enable auto-registration**
+    - Once secure procedures have been confirmed and enforced, re-enable auto-registration.
+    - This ensures new enrollment requests are processed safely.
+
+{{< c8y-admon-info >}}
+Consider rotating enrollment credentials periodically and monitoring logs for unusual enrollment activity.
+{{< /c8y-admon-info >}}
+
+#### What to do when a CA certificate has been compromised? {#what-to-do-when-a-ca-certificate-has-been-compromised}
+
+If you suspect or confirm that a CA (Certificate Authority) certificate has been compromised, follow the steps below:
+
+1. **Revoke the compromised CA certificate**
+    - Add the compromised CA certificate to the [certificate revocation list](/device-certificate-authentication/managing-trusted-certificate-settings/#crl-settings) using the CRL API.
+    - Note: This action is effective only if the tenant has offline CRL check enabled in the {{< product-c8y-iot >}}. If offline CRL check is disabled, the recommended solution here is to use the disable CA certificate functionality.
+    - The CA certificate itself remains in the system until the next step.
+2. **Delete the compromised CA certificate**
+    - Remove the compromised CA certificate from the tenant.
+    - This action also deletes the associated key pair, ensuring it cannot be reused.
+3. **Create a new CA certificate**
+    - Generate a new CA certificate.
+    - A new key pair will be created automatically during this process.
+    - Use this new CA to issue device certificates going forward.
+4. **Reprovision devices**
+    - All device certificates previously signed by the compromised CA certificate will no longer be trusted by the {{< product-c8y-iot >}}.
+    - Devices using these certificates will be unable to connect via any communication channel, such as MQTT or deviceAccessToken API.
+    - Re-enroll affected devices using certificates issued by the new CA.
+
+{{< c8y-admon-info >}} 
+After replacing a compromised CA certificate, review and update your certificate management and enrollment policies to ensure stronger security practices, including periodic CA rotation and continuous monitoring for unusual certificate activity.
+{{< /c8y-admon-info >}} 
