@@ -11,7 +11,7 @@ component:
 build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
-ticket: ""
+ticket: "CTM-2296"
 version: "1023.2.0"
 ---
 The Model Name column in the Asset Models screen is now interactive,
