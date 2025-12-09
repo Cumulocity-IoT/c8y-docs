@@ -201,7 +201,7 @@ See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 By default, input blocks in Analytics Builder now support dynamic changes to the group hierarchy. This includes the addition, deletion, and update of devices or assets, as well as structural changes within groups. Analytics Builder models automatically adapt to these changes, processing data based on the most current group or asset hierarchy.
 
 {{< c8y-admon-info >}}
-This is also applicable to [Smart rules plugin](/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin)
+This is also applicable to the [Smart rules plugin](/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin).
 {{</ c8y-admon-info >}}
 
 **Key Behaviors and Limitations**
