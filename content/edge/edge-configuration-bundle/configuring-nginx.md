@@ -24,8 +24,12 @@ CONFIG_FILE="/etc/nginx/conf.d/blocked_endpoints.common.location.conf"
 cat >> "$CONFIG_FILE" <<'EOF'
 
 # Add your exact regex inside the location directive
-# Example: 
-# location ~* ^/service/[^/]+/<endpoint>$ {
+# Example1: Blocks health endpoint for all services
+# location ~* ^/service/[^/]+/health$ {
+#     return 403;
+# }
+# Example2: Blocks health endpoint only for cep service
+# location ~* ^/service/cep/health$ {
 #     return 403;
 # }
 
