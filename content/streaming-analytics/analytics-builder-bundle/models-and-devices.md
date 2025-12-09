@@ -204,7 +204,7 @@ By default, input blocks in Analytics Builder now support dynamic changes to the
 This is also applicable to the [Smart rules plugin](/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin).
 {{</ c8y-admon-info >}}
 
-**Key Behaviors and Limitations**
+**Key behavior and limitations**
 
 - *Deletion of source/target*: If a specific device, group, or asset configured as an input or output in the model is deleted, the deployed model will automatically transition to a FAILED state.
 - *Empty Groups*: If a monitored group becomes empty, the model remains in the Active state. It will resume processing data as soon as a new device, group, or asset is added to the group.
