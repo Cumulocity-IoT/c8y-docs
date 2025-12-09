@@ -4,6 +4,14 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   let completedTests = 0;
   const totalTests = urls.length;
 
+  const excludedLinks = [
+    // MathWorks URL uses anti-bot protection, Cypress cannot reliably load it
+    "https://de.mathworks.com/help/predmaint/ug/remaining-useful-life-estimation-using-convolutional-neural-network.html",
+
+    // Medium blog uses anti-bot protection, Cypress cannot reliably load it
+    "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6"
+  ];
+
 
   const expectFragmentExists = (doc, fragment) => {
     const decodedFragment = decodeURIComponent(fragment);
@@ -63,14 +71,19 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   });
 
   urls.forEach((item) => {
+    if (excludedLinks.includes(item.link)) {
+      it.skip(`should validate URL (excluded): ${item.link}`, () => {});
+      return;
+    }
+    
     it(`should validate URL: ${item.link}`, () => {
       const url = item.link;
       const fragment = url.includes('#') ? url.split('#').slice(-1)[0] : null;
-      const isCodexPage = url.includes('codex/#/');
+      const isCodexPage = url.includes('/codex/');
       const isApiPage = url.includes('/api/');
       const isGithubPage = url.includes('github.com');
+      const isGithubBlobLine = url.includes('github.com') && /\/blob\/[^#]+#L\d+(-L\d+)?$/.test(url);
       const nonHtmlExtensions = ['.txt','.json','.pdf','.zip','.csv','.xml','.not','.bin','.dat','.tar','.gz','.rar','.xsd','.yaml','.pot'];
-
       const hasNonHtmlExtension = nonHtmlExtensions.some(ext => url.endsWith(ext));
       const isNonHtmlResource = hasNonHtmlExtension || url.includes('/files/') || url.includes('/downloads/');
       const isNpmPackagePage = url.startsWith('https://www.npmjs.com/package/');
@@ -112,11 +125,12 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       }
 
       if (isCodexPage) {
-        cy.visit(url, { timeout: 50000 });
+        cy.visit(url);
       
-        cy.get('[data-cy="c8y-title--title-outlet"] .text-truncate', { timeout: 50000 })
+        cy.get('[data-cy="c8y-title--title-outlet"] .text-truncate')
           .invoke('text')
           .should('not.be.empty')
+          .and('not.match', /404 not found/i);
       
         cy.url().should('eq', url);
       
@@ -124,7 +138,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
           if (fragment.startsWith('/')) {
             cy.location('hash').should('eq', `#${fragment}`, `URL hash should match the fragment: #${fragment}`);
           } else {
-            cy.get(`#${fragment}`, { timeout: 10000 })
+            cy.get(`#${fragment}`)
               .should('exist', `Fragment "${fragment}" does not exist on the page`)
               .then(() => {
                 cy.document().then((doc) => {
@@ -136,17 +150,31 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         }
       }
       else if (isApiPage) {
-        cy.visit(url, { timeout: 50000 });
+        cy.visit(url);
         if (fragment) {
-          cy.get(`[id="${fragment}"]`, { timeout: 10000 }).should('exist');
+          cy.get(`[id="${fragment}"]`).should('exist');
+        }
+      }
+      else if (isGithubBlobLine) {
+        const baseUrl = url.split('#')[0];
+        const match = url.match(/#L(\d+)/);
+        const lineNumber = match ? match[1] : null;
+        cy.request({ url: baseUrl, failOnStatusCode: false }).then((res) => {
+          expect(res.status, `GitHub blob file should exist: ${baseUrl}`)
+            .to.be.oneOf([200, 301, 302]);
+        });
+        if (lineNumber) {
+          cy.visit(baseUrl);
+          const selector = `#L${lineNumber}, #LC${lineNumber}`;
+          cy.get(selector).should('exist');
         }
       }
       else if (isGithubPage && fragment) {
-        cy.visit(url, { timeout: 50000 });
+        cy.visit(url);
         checkGithubFragment(fragment);
       }
       else if (fragment) {
-        cy.visit(url, { timeout: 50000, failOnStatusCode: false, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122.0 Safari/537.36' }});
+        cy.visit(url, {failOnStatusCode: false, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122.0 Safari/537.36' }});
         checkRegularFragment(fragment);
       }
       else {
@@ -160,7 +188,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
             expect(response.status).to.be.oneOf([200, 201, 202, 203, 204, 301, 302, 304]);
             expect(response.body).not.to.be.empty;
           } else {
-            cy.visit(url, { timeout: 50000 });
+            cy.visit(url);
             cy.document().its('body').should('not.be.empty');
           }
         });
