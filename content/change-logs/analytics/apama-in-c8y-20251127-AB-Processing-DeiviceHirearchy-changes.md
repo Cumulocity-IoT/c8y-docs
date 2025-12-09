@@ -15,6 +15,6 @@ ticket: APMF-94
 version: 26.257.0
 ---
 
-Analytics Builder models that consumes data from group of devices or assets will detect hierarchy changes within device groups. This includes additions of new devices, sub-groups, or assets, as well as updates, deletions, and structural changes in groups or assets. The model then processes data based on the updated structure, providing a seamless user experience.
+Analytics Builder models that consumes data from group of devices or assets will detect hierarchy changes. This includes additions of new devices, sub-groups, or assets, as well as updates, deletions, and structural changes in groups or assets. The model then processes data based on the updated structure, providing a seamless user experience.
 
 For details, refer to [Group hierarchy changes ](/streaming-analytics/analytics-builder/#group-hierarchy-changes).
