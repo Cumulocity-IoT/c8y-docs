@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65229
 version: 1023.9.0
 ---
-Context: Previously, live mode allowed users to set different refresh intervals, which led to inconsistent behavior across dashboards. Change: Based on initial feedback, live mode now enforces a fixed refresh interval of 5 seconds or realtime updates, depending on the widget type. Impact: Dashboard refresh behavior is now consistent and predictable, with each widget refreshing at either 5 seconds or realtime based on its type.
+Previously, users could set different refresh intervals for dashboards. This led to inconsistent behavior across dashboards. To avoid this, the live mode now enforces a fixed refresh interval of 5 seconds or real-time updates, depending on the widget type. This improves the user experience as the dashboard refresh behavior is now consistent and predictable, with each widget refreshing either after 5 seconds or in real time based on its type.
