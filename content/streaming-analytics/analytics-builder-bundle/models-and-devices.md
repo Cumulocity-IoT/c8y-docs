@@ -201,7 +201,7 @@ See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 Input blocks in an Analytics Builder model receive data from a group of devices or assets. Any change to this group hierarchy is now detected automatically. This includes new device or asset, deletions, updates and changes in the hierarchy of devices or sub-assets within a group or asset. Model now processes data based on the updated group or asset structure.
 
 {{< c8y-admon-info >}}
-[The Smart Rules (NEW) plugin](https://cumulocity.com/docs/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin), which internally uses Analytics Builder models, behaves in this same way.
+This change is also applicable to [The Smart Rules (NEW) plugin](https://cumulocity.com/docs/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin)
 {{</ c8y-admon-info >}}
 
 #### Model de-activation Scenarios.
