@@ -1,6 +1,6 @@
 ---
-date: 2025-11-27
-title: Analytics Builder models detects hierarchy changes within group of devices and assets.
+date: 2025-11-26
+title: Analytics Builder models now detect hierarchy changes in groups and assets.
 change_type:
   - value: change-QHu1GdukP
     label: Feature
@@ -12,9 +12,9 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: APMF-94
-version: 26.257.0
+version: 26.260.0
 ---
 
-Analytics Builder models that consumes data from group of devices or assets will detect hierarchy changes. This includes additions of new devices, sub-groups, or assets, as well as updates, deletions, and structural changes in groups or assets. The model then processes data based on the updated structure, providing a seamless user experience.
+Analytics Builder models consuming data from device groups or assets now automatically detect hierarchy changes. This includes the addition, update, or deletion of devices, sub-groups, and assets. The model dynamically adapts to these structural changes, ensuring continuous and accurate data processing.
 
-For details, refer to [Group hierarchy changes ](/streaming-analytics/analytics-builder/#group-hierarchy-changes).
+For details, refer to [Support for dynamic changes to group and asset hierarchy](/streaming-analytics/analytics-builder/#dynamic-hierarchy-changes).

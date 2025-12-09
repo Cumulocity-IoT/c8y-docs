@@ -196,33 +196,18 @@ The default value of this tenant option is `not has(c8y_IsVirtualDevice)`. As lo
 
 See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 
-### Group hierarchy changes {#group-hierarchy-changes}
+### Support for dynamic changes to group and asset hierarchy {#dynamic-hierarchy-changes}
 
-Input blocks in an Analytics Builder model receive data from a group of devices or assets. Any change to this group hierarchy is now detected automatically. This includes new device or asset, deletions, updates and changes in the hierarchy of devices or sub-assets within a group or asset. Model now processes data based on the updated group or asset structure.
+By default, input blocks in Analytics Builder now support dynamic changes to the group hierarchy. This includes the addition, deletion, and update of devices or assets, as well as structural changes within groups. Analytics Builder models automatically adapt to these changes, processing data based on the most current group or asset hierarchy.
 
 {{< c8y-admon-info >}}
-This change is also applicable to [The Smart Rules (NEW) plugin](https://cumulocity.com/docs/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin)
+This is also applicable to [Smart rules plugin](/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin)
 {{</ c8y-admon-info >}}
 
-#### Model de-activation Scenarios.
-Models are automatically deactivated in the following cases:
+**Key Behaviors and Limitations**
 
-- If the input device or output device of the model is deleted.
-- When the parent group or asset configured in the model is deleted.
+- *Deletion of Source/Target*: If a specific device, group, or asset configured as an input or output in the model is deleted, the deployed model will automatically transition to a Failed state.
+- *Empty Groups*: If a monitored group becomes empty, the model remains in the Active state. It will resume processing data as soon as a new device, group, or asset is added to the group.
+- *Nested & Cascaded Deletions*: Dynamic detection does not support the deletion of nested groups or the cascaded deletion of devices. In these scenarios, the model must be undeployed and redeployed to recognize the updated hierarchy.
 
-In such cases, the runtime state is set to `FAILED` and logged in the audit log.
-
-#### Handling Structural Changes
-Models also automatically adapt to structural changes within a group hierarchy. This includes:
-- Addition of new devices, assets and sub-groups
-- Removal of existing devices or assets
-- Updating the internal device layout of groups or assets
-
-<br></br>
-{{< c8y-admon-info >}}
-When a model is deployed to process a group of devices, all devices may be removed from the group, leaving the group with zero devices. The model will not be deactivated, and it will automatically resume processing whenever a device is added back to the group.
-{{< /c8y-admon-info >}}
-
-#### Limitations to these changes.
-
-- Deletion of nested group and cascaded deletion of devices is not supported. The model must be un-deployed and redeployed to refer to the updated group hierarchy
+To enable this behavior for custom blocks, please refer to the [Analytics Builder Block SDK documentation](https://cumulocity-iot.github.io/apama-analytics-builder-block-sdk/).
