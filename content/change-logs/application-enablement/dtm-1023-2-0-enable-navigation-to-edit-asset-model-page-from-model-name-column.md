@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Enable Navigation to Edit Asset Model Page from Model Name Column"
+title: "Navigation from model name to asset model details"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2296"
 version: "1023.2.0"
 ---
-The Model Name column in the Asset Models screen is now interactive, allowing users to click a model name to view/edit asset model.
+The "Model name" column in the **Asset models** page is now interactive, allowing users to click a model name to view/edit the asset model details.

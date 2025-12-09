@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Restored missing favicon for Digital Twin Manager in Firefox [CTM-2551] (#2505)"
+title: "Restored missing favicon for Digital Twin Manager in Firefox"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -14,6 +14,6 @@ build_artifact:
 ticket: "CTM-2551"
 version: "1023.2.0"
 ---
-Previously, the Cumulocity favicon did not display on the browser tab
+Previously, the {{< product-c8y-iot >}} favicon was not displayed on the browser tab
 when the Digital Twin Manager application was accessed using Firefox.
-This has been fixed, and the favicon now appears.
+This issue has been fixed, and the favicon is now visible.
