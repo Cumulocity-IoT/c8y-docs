@@ -1,6 +1,6 @@
 ---
 date: ""
-title: implement unified control linking with pause/resume (#10322) [GRAFT][release/cd] (#10483)
+title: Simplified global context link/unlink behavior
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
