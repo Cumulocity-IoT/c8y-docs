@@ -213,10 +213,11 @@ Models are automatically deactivated in the following cases:
 In such cases, the runtime state is set to `FAILED` and logged in the audit log.
 
 #### Handling Structural Changes
-Models also automatically adapt to structural changes within a device hierarchy. This includes:
-- Re-arrangement of devices within groups or assets
-- Addition of new devices
-- Removal of existing devices
+Models also automatically adapt to structural changes within a group hierarchy. This includes:
+- Addition of new devices, assets and sub-groups
+- Removal of existing devices or assets
+- Updating the internal device layout of groups or assets
+
 <br></br>
 {{< c8y-admon-info >}}
 When a model is deployed to process a group of devices, all devices may be removed from the group, leaving the group with zero devices. The model will not be deactivated, and it will automatically resume processing whenever a device is added back to the group.
