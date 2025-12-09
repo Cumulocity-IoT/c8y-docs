@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Enabled permission based read only state in Properties Library Forms. [CTM-2441] (#2539)"
+title: "Users with read-only permissions can view the property details in Properties library plugin"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2441"
 version: "1023.2.0"
 ---
-Enabled permission based read only state in Properties Library Forms.
+Previously, users without the **Digital twin definitions** permission were limited to viewing only the list of properties in the Property Library plugin. With this enhancement, such users can now access property details in a read-only mode.
