@@ -19,7 +19,7 @@ Perform these operations as `root` user.
 The following example shows how to block a specific endpoint. You can modify the location pattern to match any endpoint you want to disable:
 
 ```shell
-CONFIG_FILE="/etc/nginx/conf.d/blocked_endpoints.common.location.conf"
+CONFIG_FILE="/etc/nginx/conf.d/blocked-endpoints.common.location.conf"
 
 cat >> "$CONFIG_FILE" <<'EOF'
 
