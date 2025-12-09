@@ -20,7 +20,7 @@ For highly constrained devices with micro-controllers that cannot run thin-edge.
 
 ### IoT gateways and data integration
 
-Not all devices can communicate directly with the internet. In such cases, IoT gateways act as intermediaries, collecting data from devices and forwarding it to {{< product-c8y-iot >}}. Several data integration options are available:
+Not all devices are directly connected to the internet. In such cases, IoT gateways act as intermediaries, collecting data from devices and forwarding it to {{< product-c8y-iot >}}. Several data integration options are available:
 
 * **OPC UA**: Industrial automation protocol for connecting PLCs and industrial equipment. See [OPC UA](/device-integration/opcua/).
 * **MQTT Service**: Flexible MQTT endpoint allowing user-provided microservices to map between custom device payloads and the {{< product-c8y-iot >}} data model. See [MQTT Service](/device-integration/mqtt-service/).
