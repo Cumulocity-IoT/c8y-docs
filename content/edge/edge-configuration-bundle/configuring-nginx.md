@@ -1,6 +1,6 @@
 ---
 weight: 50
-title: Configuring Nginx
+title: Configuring NGINX
 layout: bundle
 sector:
   - edge_server
