@@ -1,6 +1,6 @@
 ---
 date: ""
-title: avoid markdown pipe anchor tag parser gets … (#10421) [GRAFT][release/cd] (#10434)
+title: Securing markdown pipe anchor tag parser
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
