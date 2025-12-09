@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2293"
 version: "1023.2.0"
 ---
-The **Device to Asset** plugin enables users to convert existing devices into assets. Users can select multiple devices, optionally assign asset types and parent assets, and perform batch conversions through a two-step workflow.
+A new **Device to Asset** plugin has been introduced that enables users to convert existing devices into assets. Users can select multiple devices, optionally assign asset types and parent assets, and perform batch conversions through a two-step workflow.

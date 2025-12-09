@@ -14,5 +14,5 @@ build_artifact:
 ticket: "CTM-2398"
 version: "1023.2.0"
 ---
-Asset property widget 2.0 now lists both device and asset properties for
+The Asset properties 2.0 widget now lists both device and asset properties for
 devices that are assets.

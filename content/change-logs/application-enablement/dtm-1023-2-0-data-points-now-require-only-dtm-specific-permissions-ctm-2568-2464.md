@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Data Points now require only DTM specific permissions [CTM-2568] (#2464)"
+title: "Data points now only require DTM permissions"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -14,6 +14,6 @@ build_artifact:
 ticket: "CTM-2568"
 version: "1023.2.0"
 ---
-Previously, Data Points required both inventory and DTM permissions, but
-this update removes the inventory-related permissions. Now, Data Points
-now rely solely on the DTM permissions needed for its functionality.
+Previously, data points required both inventory and Digital Twin Manager (DTM) permissions. With this change, 
+the inventory-related permissions have been removed. Data points
+now only require the DTM permissions.
