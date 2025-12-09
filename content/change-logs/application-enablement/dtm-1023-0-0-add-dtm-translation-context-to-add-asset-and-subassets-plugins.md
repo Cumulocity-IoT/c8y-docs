@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Provide application specific translations for text in Add asset and Subassets plugins"
+title: "Application-specific string translations in Add asset and Subassets plugins"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
