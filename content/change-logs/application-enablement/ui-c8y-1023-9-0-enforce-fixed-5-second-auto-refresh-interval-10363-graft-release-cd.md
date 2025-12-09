@@ -1,6 +1,6 @@
 ---
 date: ""
-title: enforce fixed 5-second auto-refresh interval (#10363) [GRAFT][release/cd] (#10485)
+title: enforce fixed 5-second auto-refresh interval for dashboards
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
