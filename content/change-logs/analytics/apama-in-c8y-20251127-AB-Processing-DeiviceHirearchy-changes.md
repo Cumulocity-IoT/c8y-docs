@@ -20,5 +20,5 @@ Analytics Builder models consuming data from device groups or assets now automat
 For details, refer to [Support for dynamic changes to group and asset hierarchy](/streaming-analytics/analytics-builder/#dynamic-hierarchy-changes).
 
 {{< c8y-admon-info >}}
-This is also applicable to [Smart rules plugin](/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin)
+This is also applicable to the [Smart rules plugin](/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin).
 {{</ c8y-admon-info >}}
