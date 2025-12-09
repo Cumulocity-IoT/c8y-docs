@@ -15,6 +15,6 @@ ticket: "CTM-2515"
 version: "1023.0.0"
 ---
 In the **Add asset** view and the **Subassets** tab, user-defined translation strings added with the DTM translation context
-previously displayed the original strings in the **Add Asset** view and
+previously displayed the original strings.
 With this change, custom
 translations for these strings are now correctly applied.
