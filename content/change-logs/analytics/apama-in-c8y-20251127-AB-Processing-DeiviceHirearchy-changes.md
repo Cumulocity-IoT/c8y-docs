@@ -17,4 +17,8 @@ version: 26.260.0
 
 Analytics Builder models consuming data from device groups or assets now automatically detect hierarchy changes. This includes the addition, update, or deletion of devices, sub-groups, and assets. The model dynamically adapts to these structural changes, ensuring continuous and accurate data processing.
 
+{{< c8y-admon-info >}}
+This is also applicable to [Smart rules plugin](/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin)
+{{</ c8y-admon-info >}}
+
 For details, refer to [Support for dynamic changes to group and asset hierarchy](/streaming-analytics/analytics-builder/#dynamic-hierarchy-changes).
