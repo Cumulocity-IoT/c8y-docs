@@ -13,7 +13,7 @@ Each model must either:
 -   receive input from a set of specific devices and send output to a set of specific devices, or
 -   receive input from each device within a range of devices and send output to the trigger device or an asset. Note that asset output can only be used for sending cross-device aggregates.
 
-    A range of devices can include a {{< product-c8y-iot >}} device group, a smart group, an asset, or all input sources on the tenant. When a model uses a range of devices, the model acts on all devices referred to by the range, either directly or indirectly through members of the group that are themselves groups and have device members \(or even "grand-children" group members\). A device can be a member of zero, one or many groups. For more information, see [Grouping devices](/device-management-application/grouping-devices/) and [Managing assets](/cockpit/managing-assets/).
+    A range of devices can include a {{< product-c8y-iot >}} group, an asset, or all input sources on the tenant. When a model uses a range of devices, the model acts on all devices referred to by the range, either directly or indirectly through members of the group that are themselves groups and have device members \(or even "grand-children" group members\). A device can be a member of zero, one or many groups. For more information, see [Grouping devices](/device-management-application/grouping-devices/) and [Managing assets](/cockpit/managing-assets/).
 
     {{< c8y-admon-info>}}
 A model that acts on a range of devices only determines the group membership when the model is activated. If the membership of a group changes while a model is running, the model will not behave any differently for any new or removed members of the group. If a group membership is changed, then models that refer to that group should be de-activated and re-activated.
@@ -182,7 +182,7 @@ For example, specify the following if you only want to show devices:
 
 The `c8y_IsDevice` in the value is a so-called fragment. You can specify any fragment that is known to {{< product-c8y-iot >}}, including any fragments that you have created yourself.
 
-You can combine several values. For example, specify the following if you only want to show devices and device groups:
+You can combine several values. For example, specify the following if you only want to show devices and groups:
 
 ```
 {
