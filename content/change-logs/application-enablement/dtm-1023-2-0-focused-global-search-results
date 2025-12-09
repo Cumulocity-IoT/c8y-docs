@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2603"
 version: "1023.2.0"
 ---
-The global search in the Digital Twin Manager application now shows only assets, making results more relevant.
+The global search in the Digital Twin Manager application now shows only assets (and no longer groups created in the Cockpit application), making the results more relevant.
