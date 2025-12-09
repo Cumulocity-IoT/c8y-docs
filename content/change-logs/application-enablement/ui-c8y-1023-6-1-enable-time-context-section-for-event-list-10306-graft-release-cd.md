@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65196
 version: 1023.6.1
 ---
-The time context section has been added to the event list, which was previously missing.
+The Event List widget configuration was missing the global time context section, preventing users from configuring time range, auto-refresh, and other global context settings in the widget configuration panel. With this change, the time context section has been added to the Event List widget. Users can now access and configure all time context options directly within the widget configuration panel.
