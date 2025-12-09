@@ -208,6 +208,6 @@ This is also applicable to the [Smart rules plugin](/streaming-analytics/smart-r
 
 - *Deletion of source/target*: If a specific device, group, or asset configured as an input or output in the model is deleted, the deployed model will automatically transition to a FAILED state.
 - *Empty groups*: If a monitored group becomes empty, the model remains in the ACTIVE state. It will resume processing data as soon as a new device, group, or asset is added to the group.
-- *Nested & Cascaded Deletions*: Dynamic detection does not support the deletion of nested groups or the cascaded deletion of devices. In these scenarios, the model must be undeployed and redeployed to recognize the updated hierarchy.
+- *Nested & cascaded deletions*: Dynamic detection does not support the deletion of nested groups or the cascaded deletion of devices. In these scenarios, the model must be undeployed and redeployed to recognize the updated hierarchy.
 
 To enable this behavior for custom blocks, refer to the [Analytics Builder Block SDK documentation](https://cumulocity-iot.github.io/apama-analytics-builder-block-sdk/).
