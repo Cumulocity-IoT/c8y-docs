@@ -15,7 +15,7 @@ ticket: APMF-94
 version: 26.260.0
 ---
 
-Analytics Builder models consuming data from device groups or assets now automatically detect hierarchy changes. This includes the addition, update, or deletion of devices, sub-groups, and assets. The model dynamically adapts to these structural changes, ensuring continuous and accurate data processing.
+Analytics Builder models consuming data from device groups or assets now automatically detect hierarchy changes. This includes the addition, update, or deletion of devices, subgroups, and assets. The model dynamically adapts to these structural changes, ensuring continuous and accurate data processing.
 
 For details, refer to [Support for dynamic changes to group and asset hierarchy](/streaming-analytics/analytics-builder/#dynamic-hierarchy-changes).
 
