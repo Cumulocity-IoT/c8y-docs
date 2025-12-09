@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Add DTM translation context to Add asset and Subassets plugins"
+title: "Provide application specific translations for text in Add asset and Subassets plugins"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
@@ -14,7 +14,4 @@ build_artifact:
 ticket: "CTM-2515"
 version: "1023.0.0"
 ---
-In the **Add asset** view and the **Subassets** tab, user-defined translation strings added with the DTM translation context
-previously displayed the original strings.
-With this change, custom
-translations for these strings are now correctly applied.
+The text strings in the **Add asset** view and the **Subassets** tab are now scoped to the Digital twin manager application's translation context. This allows users to provide application specific translations without overriding the translations in other applications.
