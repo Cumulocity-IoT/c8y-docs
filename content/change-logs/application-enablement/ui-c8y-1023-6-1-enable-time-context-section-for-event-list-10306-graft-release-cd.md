@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Enable time context section for event list
+title: Enabled global time context section for Event list widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
