@@ -15,6 +15,6 @@ ticket: "CTM-2515"
 version: "1023.0.0"
 ---
 User-defined translation strings added with the DTM translation context
-were previously displaying the original strings on the **Add Asset** and
-**Subassets** pages. With this update, user can now apply custom
-translations for these strings
+previously displayed the original strings in the **Add Asset** view and
+in the **Subassets** tab. With this change, custom
+translations for these strings are now correctly applied.
