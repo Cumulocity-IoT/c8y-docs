@@ -1,6 +1,6 @@
 ---
 date: ""
-title: enforce fixed 5-second auto-refresh interval for dashboards
+title: Enforced fixed 5-second auto-refresh interval for dashboards
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
