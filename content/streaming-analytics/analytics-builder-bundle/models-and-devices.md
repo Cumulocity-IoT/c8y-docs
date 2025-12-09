@@ -224,4 +224,4 @@ When a model is deployed to process a group of devices, all devices may be remov
 
 #### Limitations to these changes.
 
-- Cascaded deletion of a sub-group is not supported. The model must be undeployed and redeployed
+- Deletion of nested group and cascaded deletion of devices is not supported. The model must be un-deployed and redeployed to refer to the updated group hierarchy
