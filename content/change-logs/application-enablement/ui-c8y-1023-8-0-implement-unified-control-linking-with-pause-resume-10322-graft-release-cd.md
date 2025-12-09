@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65223
 version: 1023.8.0
 ---
-Co-authored-by: Dawid Janusz <96060763+DawidSAG@users.noreply.github.com>
+The control linking functionality has been simplified to provide a more intuitive user experience. Previously, each control (time context, auto-refresh, aggregation) could be linked or unlinked from the global context individually. This granular approach introduced complexity and edge cases that could lead to unexpected behavior. With this change, all controls now link and unlink together as a single unified action. When a widget is linked to the global context, all its controls synchronize with the dashboard. When unlinked, the widget operates independently with its own local controls. This simplification reduces confusion and ensures consistent, predictable behavior across widgets.
