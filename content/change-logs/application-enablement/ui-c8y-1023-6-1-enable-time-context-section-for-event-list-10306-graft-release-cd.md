@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-12-09'
 title: Enabled global time context section for Event list widget
 product_area: Application enablement & solutions
 change_type:

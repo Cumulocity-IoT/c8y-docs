@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-12-09'
 title: Enforced fixed 5-second auto-refresh interval for dashboards
 product_area: Application enablement & solutions
 change_type:
