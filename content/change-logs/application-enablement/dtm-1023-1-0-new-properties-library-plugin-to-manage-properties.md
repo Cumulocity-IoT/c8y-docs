@@ -11,10 +11,10 @@ component:
 build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
-ticket: ""
+ticket: "CTM-2297"
 version: "1023.1.0"
 ---
-The Dtm-plugins extension introduces Properties library plugin to manage
+The Dtm-plugins extension introduces a Properties library plugin to manage
 asset properties.
 Note that the plugin uses DTM APIs that are currently in Private
 Preview. To enable them, contact the Product team via [product
