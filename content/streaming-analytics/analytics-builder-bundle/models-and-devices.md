@@ -210,7 +210,7 @@ Models are automatically deactivated in the following cases:
 - If the input device or output device of the model is deleted.
 - When the parent group or asset configured in the model is deleted.
 
-In such cases, the model is de-activated and an error message is recorded in the logs.
+In such cases, the runtime state is set to `FAILED` and logged in the audit log.
 
 #### Handling Structural Changes
 Models also automatically adapt to structural changes within a device hierarchy. This includes:

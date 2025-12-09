@@ -1,6 +1,6 @@
 ---
 date: 2025-11-27
-title: Analytics Builder models detects hierarchy changes within device groups.
+title: Analytics Builder models detects hierarchy changes within group of devices and assets.
 change_type:
   - value: change-QHu1GdukP
     label: Feature
