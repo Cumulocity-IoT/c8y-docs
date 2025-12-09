@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65196
 version: 1023.6.1
 ---
-Co-authored-by: Dawid Janusz <96060763+DawidSAG@users.noreply.github.com>
+The time context section has been added to the event list, which was previously missing.
