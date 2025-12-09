@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2515"
 version: "1023.0.0"
 ---
-The text strings in the **Add asset** view and the **Subassets** tab are now scoped to the Digital twin manager application's translation context. This allows users to provide application specific translations without overriding the translations in other applications.
+The text strings in the **Add asset** view and the **Subassets** tab are now scoped to the Digital Twin Manager application's translation context. This allows users to provide application-specific translations without overriding the translations in other applications.
