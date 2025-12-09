@@ -16,5 +16,5 @@ version: "1023.0.0"
 ---
 User-defined translation strings added with the DTM translation context
 previously displayed the original strings in the **Add Asset** view and
-in the **Subassets** tab. With this change, custom
+With this change, custom
 translations for these strings are now correctly applied.
