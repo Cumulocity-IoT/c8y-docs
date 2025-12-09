@@ -29,7 +29,7 @@ Not all devices can communicate directly with the internet. In such cases, IoT g
 
 ### LPWAN integration
 
-For Low Power Wide Area Network (LPWAN) devices using technologies like LoRa or Sigfox, {{< product-c8y-iot >}} provides dedicated integrations. Refer to [LoRa Actility](/device-integration/lora-actility/), [LoRa LORIOT.io](/device-integration/lora-loriot/) and [Sigfox](/device-integration/sigfox/) for details. For cellular devices, [LWM2M](/device-integration/lwm2m/) can be used.
+For Low-Power Wide-Area-Network (LPWAN) devices using technologies like LoRa or Sigfox, {{< product-c8y-iot >}} provides dedicated integrations. Refer to [LoRa Actility](/device-integration/lora-actility/), [LoRa LORIOT.io](/device-integration/lora-loriot/) and [Sigfox](/device-integration/sigfox/) for details. For cellular devices, [LWM2M](/device-integration/lwm2m/) can be used.
 
 ### Agent concepts
 
