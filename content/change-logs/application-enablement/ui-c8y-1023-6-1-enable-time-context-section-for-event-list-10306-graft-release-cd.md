@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Enable time context section for event list (#10306) [GRAFT][release/cd] (#10419)
+title: Enable time context section for event list
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
