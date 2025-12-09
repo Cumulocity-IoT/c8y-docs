@@ -16,6 +16,6 @@ version: "1023.0.0"
 ---
 The Digital Twin Manager now supports fine-grained permission control for managing assets by introducing a new tenant option `assets.permission.mode`.  
 This tenant option supports three modes:
-- external (Default): Digital twin assets permissions are only enforced for assets marked with the **c8y_ExternalAsset** key. Users require the Digital twin assets Update or Admin permission to modify or delete these assets.
-- all: Digital twin assets permissions are strictly required for all assets. Users must possess the Digital twin assets Create permission for creation, the Update permission for modification, and the Admin permission for full management (create, update, or delete) of any asset.
+- external (Default): Digital twin assets permissions are only enforced for assets marked with the **c8y_ExternalAsset** key. Users require the Digital twin assets UPDATE or ADMIN permission to modify or delete these assets.
+- all: Digital twin assets permissions are strictly required for all assets. Users must possess the Digital twin assets CREATE permission for creation, the UPDATE permission for modification, and the ADMIN permission for full management (create, update, or delete) of any asset.
 -none: Digital twin assets permissions are not applicable to any assets. Asset control defaults to standard Inventory permissions.
