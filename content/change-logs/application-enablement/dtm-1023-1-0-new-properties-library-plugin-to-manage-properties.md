@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "New Properties library plugin to manage properties"
+title: "New Properties library plugin to manage asset properties"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
