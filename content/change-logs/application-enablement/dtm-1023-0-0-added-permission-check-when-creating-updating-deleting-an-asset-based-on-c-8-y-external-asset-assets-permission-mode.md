@@ -11,7 +11,7 @@ component:
 build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
-ticket: ""
+ticket: "CTM-2525"
 version: "1023.0.0"
 ---
 The Digital Twin Manager now supports fine-grained permission control for managing assets by introducing a new tenant option `assets.permission.mode`.  
