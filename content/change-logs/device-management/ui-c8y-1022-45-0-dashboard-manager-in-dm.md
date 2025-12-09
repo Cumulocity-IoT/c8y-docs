@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-10-30'
 title: Dashboard manager available for preview in the Device Management application
 product_area: Device management & connectivity
 change_type:

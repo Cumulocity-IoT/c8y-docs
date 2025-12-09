@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-11-06'
 title: Fixed overlapping buttons in data grid header
 product_area: Application enablement & solutions
 change_type:
