@@ -14,7 +14,7 @@ The integration approach depends on the device capabilities and use case:
 
 We recommend integrating devices via [thin-edge.io](https://thin-edge.io/), an open-source, cloud-agnostic edge framework optimized for lightweight IoT devices. thin-edge.io can be slimmed down to run with less than 1 MB footprint, making it suitable even for constrained devices with a microprocessor. See the tutorial [Getting started with thin-edge.io](https://thin-edge.github.io/thin-edge.io/start/getting-started/) for an easy-to-follow and hands-on example.
 
-### Micro-controller devices
+### Micro-controller based devices
 
 For highly constrained devices with micro-controllers that cannot run thin-edge.io, you can integrate directly via the Core [MQTT](/device-integration/mqtt) and [REST](/device-integration/device-integration-rest/) APIs along with [SmartREST](/smartrest/smartrest-two/) for efficient communication. These can be implemented using available MQTT client libraries such as [Eclipse Paho](https://www.eclipse.org/paho/). For standard-compliant device management, the [LWM2M](/device-integration/lwm2m/) protocol is also supported.
 
