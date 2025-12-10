@@ -16,7 +16,11 @@ In the [Continuous Deployment model](#continuous-deployment), General Availabili
 
 ### Global role {#global-role}
 
-A type of [role](#role) in {{< product-c8y-iot >}}'s [permission](#permission) model that contains permissions applying to all data within a [tenant](#tenant). Unlike [inventory roles](#inventory-role), which grant permissions to specific [assets](#asset) or [groups](#group), global roles apply tenant-wide.  
+A type of [role](#role) in {{< product-c8y-iot >}}'s [permission](#permission) model that contains permissions applying to all data within a [tenant](#tenant). Unlike [inventory roles](#inventory-role), which grant permissions to specific [assets](#asset) or [groups](#group), global roles apply tenant-wide.
+
+{{< c8y-details title="API details" >}}
+Global roles are managed via the User API. They are defined under `/user/roles` and can be assigned to users via `POST /user/users/{username}/roles`.
+{{< /c8y-details >}} 
 
 
 ### Group {#group}

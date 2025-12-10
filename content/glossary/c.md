@@ -22,10 +22,18 @@ Change logs are the official record of {{< product-c8y-iot >}} product changes a
 
 Child assets denote a relationship type within the {{< product-c8y-iot >}} [inventory](#inventory)'s [domain model](#domain-model) used to establish parent-child links between [managed objects](#managed-object). This relationship forms the [asset hierarchy](#asset-hierarchy), connecting a parent asset or [group](#group) to its subordinate [assets](#asset) or [devices](#device) from a business or logical perspective.  
 
+{{< c8y-details title="API details" >}}
+The child assets relationship is managed via the Inventory API. Key endpoints include: `GET /inventory/managedObjects/{id}/childAssets`, `POST /inventory/managedObjects/{id}/childAssets`, and `DELETE /inventory/managedObjects/{id}/childAssets/{childId}`.
+{{< /c8y-details >}}  
+
 
 ### Child device {#child-device}
 
 Child devices denote a relationship type within the {{< product-c8y-iot >}} [inventory](#inventory)'s [domain model](#domain-model) used to establish parent-child links that reflect the [communication hierarchy](#communication-hierarchy), connecting a parent device (often an agent or a gateway) to the downstream [devices](#device) it manages.  
+
+{{< c8y-details title="API details" >}}
+The child devices relationship is managed via the Inventory API. Key endpoints include: `GET /inventory/managedObjects/{id}/childDevices`, `POST /inventory/managedObjects/{id}/childDevices`, and `DELETE /inventory/managedObjects/{id}/childDevices/{childId}`.
+{{< /c8y-details >}}
 
 ### Cockpit application {#cockpit-application}
 
@@ -33,6 +41,9 @@ The Cockpit application is one of the default [applications](#application) of {{
 
 For details, see [Cockpit](/cockpit/) in the documentation.
 
+{{< c8y-details title="API details" >}}
+The Cockpit UI uses core REST APIs: Inventory API (`/inventory/managedObjects`) for assets/groups, Measurement API (`/measurement/measurements`), Event API (`/event/events`), Alarm API (`/alarm/alarms`). Cockpit-specific configurations like dashboards are stored as managed objects.
+{{< /c8y-details >}}
 
 ### Communication hierarchy {#communication-hierarchy}
 
@@ -43,6 +54,9 @@ The communication hierarchy models how [devices](#device) are connected to the p
 
 The configuration management feature allows administrators and [applications](#application) to remotely manage the settings of a [device](#device). This is typically achieved by creating and applying a configuration operation, often containing the `c8y\_Configuration` [fragment](#fragment) with the desired configuration text or a reference to a configuration file stored as a binary.  
 
+{{< c8y-details title="API details" >}}
+Configuration management is primarily handled via the Device Control API. A configuration update is sent by creating an operation via `POST /devicecontrol/operations` containing a `c8y_Configuration` fragment. For larger files, the configuration can be uploaded via `POST /inventory/binaries` and referenced in the operation.
+{{< /c8y-details >}}
 
 ### Connection monitoring {#connection-monitoring}
 
@@ -72,6 +86,9 @@ The {{< product-c8y-iot >}} CLI (Command Line Interface) is a software tool prov
 
 For details, see [Analytics > DataHub](/datahub/datahub-overview/) in the documentation.
 
+{{< c8y-details title="API details" >}}
+DataHub provides a REST API (`/service/datahub/`) to proxy query-related requests to the Dremio engine.
+{{< /c8y-details >}}
 
 ### {{< product-c8y-iot >}} Developer Codex {#developer-codex}
 
@@ -84,6 +101,10 @@ The [{{< product-c8y-iot >}} Developer Codex](https://cumulocity.com/codex/) is 
 
 For details, see [Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/k8-edge-introduction/) in the documentation.
 
+{{< c8y-details title="API details" >}}
+Core platform APIs (Inventory, Measurement, and so on) are typically available locally on the Edge instance.
+{{< /c8y-details >}}
+
 
 ### {{< openapi >}} {#openapi-specification}
 
@@ -93,6 +114,10 @@ The {{< openapi >}} is a complete OpenAPI specification (following the OpenAPI 3
 ### {{< product-c8y-iot >}} operational store {#operational-store}
 
 The {{< product-c8y-iot >}} operational store is an internal datastore where all data (such as [alarms](#alarm), [events](#event), [inventory](#inventory), and [measurements](#measurement)) are stored in base collections.  
+
+{{< c8y-details title="API details" >}}
+The operational store is accessed indirectly via the standard REST APIs for respective data types: `/alarm/alarms`, `/event/events`, `/inventory/managedObjects`, `/measurement/measurements`. Direct API access to the store is not provided.
+{{< /c8y-details >}}
 
 
 ### {{< sensor-app >}} {#sensor-app}
@@ -107,3 +132,7 @@ For details, see [{{< sensor-app >}}](/sensor-app/sensorapp-introduction/) in th
 The {{< product-c8y-iot >}} Streaming Analytics application allows users to add their own logic for the immediate, real-time processing of incoming data. Users can build [Analytics Builder](#analytics-builder) [models](#model) or write custom [EPL Apps](#epl-apps) to analyze data streams, generate new data, create [alarms](#alarm), or trigger [operations](#operation) on [devices](#device).  
 
 For details, see [Analytics > Streaming Analytics](/streaming-analytics/introduction-analytics/) in the documentation.
+
+{{< c8y-details title="API details" >}}
+Streaming Analytics is powered by the Apama analytics engine. The configuration uses tenant options as described in [Monitoring and configuration](/streaming-analytics/analytics-builder/#monitoring-and-configuration).  Monitoring and diagnostics uses specific REST endpoints (`/service/cep/diagnostics`, `/service/cep/monitoring`) or Prometheus as described in [Troubleshooting and diagnostics](/streaming-analytics/troubleshooting/#monitoring-rest).
+{{< /c8y-details >}}

@@ -13,6 +13,9 @@ _build:
 
 Dashboards are customizable views within [applications](#application) like the [Cockpit application](#cockpit-application), composed of various [widgets](#widget), used to visualize data, monitor [assets](#asset), and potentially trigger actions.   
 
+{{< c8y-details title="API details" >}}
+Dashboards are stored as managed objects in the Inventory, with a `c8y_Dashboard` fragment. Their configuration, including layout and widget settings, is stored as a complex JSON object within this managed object. Dashboards are created and updated via the Inventory API (`POST /inventory/managedObjects` and `PUT /inventory/managedObjects/{id}`).
+{{< /c8y-details >}}
 
 ### Data broker {#data-broker}
 
@@ -23,21 +26,34 @@ The data broker functionality is an optional feature in {{< enterprise-tenant >}
 
 The data explorer is a visualization tool for exploring, comparing, and analyzing IoT data, such as [measurements](#measurement), [alarms](#alarm), and [events](#event), from specific [assets](#asset) or across all assets.  
 
+{{< c8y-details title="API details" >}}
+The data explorer UI component uses the Measurement API (`/measurement/measurements` and `/measurement/measurements/series`) to fetch and visualize data.
+{{< /c8y-details >}}
 
 ### Data lake {#data-lake}
 
 Data lakes are used in the context of [{{< product-c8y-iot >}} DataHub](#datahub). A data lake serves as a storage container for offloaded data, for example, ADLS Gen2/Azure Storage (Azure), S3 (Amazon), or a NAS.  
 
+{{< c8y-details title="API details" >}}
+The data lake is an external storage which can only be accessed through the DataHub application and Dremio, and not via API.
+{{< /c8y-details >}}
 
 ### Data point {#data-point}
 
 A data point is a configuration that defines how a specific [measurement](#measurement) time series is visualized in UI views like the [data explorer](#data-explorer) and [dashboards](#dashboard). Data points define how a measurement stream is displayed, including its label, color, unit, and threshold ranges. These settings can be customized in the UI or templated in the [data point library](#data-point-library).  
+
+{{< c8y-details title="API details" >}}
+A data point is a UI concept and has no direct API. The underlying data is retrieved via the Measurement API (`GET /measurement/measurements/series`). Visualization properties are stored within a dashboard's managed object configuration or in the data point library.
+{{< /c8y-details >}}
 
 
 ### Data point library {#data-point-library}
 
 The data point library provides a collection of templates used to standardize the visualization of measurement data across your account. Each template targets a specific [measurement](#measurement), identified by its [fragment](#fragment) and series, and defines its visual properties (such as label, color, unit, threshold ranges). This ensures that all matching time series from any [device](#device) are displayed consistently.   
 
+{{< c8y-details title="API details" >}}
+The data point library is managed via the Cockpit UI. The entries are stored in the Inventory API with a fragment called `c8y_Kpi`.
+{{< /c8y-details >}}
 
 ### Device {#device}
 
@@ -48,6 +64,9 @@ A device is a special type of [asset](#asset) that represents a physical piece o
 
 Device agents are software components that translate a device-specific communication [protocol](#device-protocol) into the standard {{< product-c8y-iot >}} REST or MQTT-based protocol, enabling secure, bi-directional communication. Device agents can be deployed on the [device](#device) itself (for example, on a gateway) or run as server-side [microservices](#microservice) within the {{< product-c8y-iot >}} platform.  
 
+{{< c8y-details title="API details" >}}
+In the inventory, agents are represented as managed object, marked with the `com_cumulocity_model_Agent` fragment (`/inventory/managedObjects`). They interact heavily with the Device Control API (`/devicecontrol/operations`) to receive and update operations for themselves and their child devices, often using real-time notifications (`/cep/realtime`).
+{{< /c8y-details >}}
 
 ### Device Management application {#device-management-application}
 
@@ -55,15 +74,27 @@ The Device Management application is one of the default [applications](#applicat
 
 For details see [Device Management application](/device-management-application/) in the documentation.
 
+{{< c8y-details title="API details" >}}
+The Device Management UI utilizes core REST APIs: Inventory (`/inventory/managedObjects`), Identity (`/identity/externalIds`), Device Control (`/devicecontrol/operations`), and data APIs (`Measurement/Event/Alarm`).
+{{< /c8y-details >}}
+
 
 ### Device protocol {#device-protocol}
 
 A device protocol defines how data from a specific device type is transferred into the {{< product-c8y-iot >}} platform and translated into the {{< product-c8y-iot >}} data model.  
 
+{{< c8y-details title="API details" >}}
+Standard protocols (REST, MQTT) follow documented patterns. Custom protocols may involve creating specific managed objects via the Inventory API or dedicated microservice APIs.
+{{< /c8y-details >}}
+
 
 ### Device replacement {#device-replacement}
 
 The device replacement feature allows the replacement of physical devices without losing the historical data associated with the original [device](#device).  
+
+{{< c8y-details title="API details" >}}
+The  device replacement process is centered around the Identity API (`/identity/externalIds`). It involves re-mapping the external identifiers from the old device to the new one while keeping the same managed object ID in the inventory.
+{{< /c8y-details >}}
 
 
 ### Digital twin {#digital-twin}
@@ -74,6 +105,10 @@ A digital twin is a virtual representation of a physical asset or system that is
 ### Digital Twin Manager (DTM) {#dtm}
 
 The Digital Twin Manager (DTM) is a schema-based modeling [application](#application) in {{< product-c8y-iot >}} that enables users to create and manage data model schemas, which serve as blueprints for modeling [assets](#asset), [properties](#asset-property), and other [managed objects](#managed-object), acting as reusable templates within the platform.  
+
+{{< c8y-details title="API details" >}}
+The DTM application is supported by a dedicated dtm microservice and a dedicated API (`/service/dtm/`) to manage the lifecycle of asset models, asset properties, and asset instances.
+{{< /c8y-details >}}
 
 
 ### Document {#document}
