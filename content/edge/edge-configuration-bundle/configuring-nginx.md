@@ -49,7 +49,7 @@ CONFIG_FILE="/etc/nginx/conf.d/blocked-endpoints.common.location.conf"
 cat >> "$CONFIG_FILE" <<'EOF'
 
 # Add your exact regex inside the location directive
-# Example2: Blocks health endpoint only for cep service
+# Example1: Blocks health endpoint only for cep service
 # if ($http_authorization = "Bearer abc123") {
 #     return 403;
 # }
