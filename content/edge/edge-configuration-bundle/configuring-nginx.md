@@ -42,3 +42,28 @@ chown nginx:nginx "$CONFIG_FILE"
 chmod 644 "$CONFIG_FILE"
 systemctl restart nginx
 ```
+
+```shell
+CONFIG_FILE="/etc/nginx/conf.d/blocked-endpoints.common.location.conf"
+
+cat >> "$CONFIG_FILE" <<'EOF'
+
+# Add your exact regex inside the location directive
+# Example2: Blocks health endpoint only for cep service
+# if ($http_authorization = "Bearer abc123") {
+#     return 403;
+# }
+# This blocks all the end points for given user
+
+# Block based on exact Authorization header value
+if ($http_authorization = "<your-token-here>") {
+    return 403;
+}
+EOF
+
+chown nginx:nginx "$CONFIG_FILE"
+chmod 644 "$CONFIG_FILE"
+systemctl restart nginx
+```
+
+
