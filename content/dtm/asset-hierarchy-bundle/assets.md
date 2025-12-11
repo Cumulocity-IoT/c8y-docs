@@ -97,7 +97,6 @@ The values of latitude and longitude are automatically updated whenever a new lo
 
 9. Repeat this steps for all asset hierarchy levels. You can track your progress via the green check marks in the asset hierarchy on the left.
 
-
 Modify the assets by navigating to the respective asset pages using the **Previous** and **Next** buttons.
 
 When all assets in the asset hierarchy show green check marks, the **Confirmation** step shows a preview of the asset hierarchy. Click **Create** to create the asset hierarchy.
@@ -111,6 +110,7 @@ The new asset hierarchy in displayed the **Assets** page.
 {{< c8y-admon-info>}}
 - In case of validation errors, they are indicated in red. Correct the required information to continue.
 - If you leave the page abruptly, a confirmation dialog is shown.
+- In case of a bulk operation failure, the entire operation is rolled back. The user is navigated to the main assets page in order to clean up the entities created and to repeat the operation.
 {{< /c8y-admon-info>}}
 
 #### Example
@@ -159,9 +159,6 @@ Click **Add** at the bottom to add more blade assets.
 
 ![Adding multiple assets](/images/dtm/assets/dtm-assets-add-multiple-instance.png)
 
-{{< c8y-admon-info>}}
-In case of a bulk operation failure, the entire operation is rolled back. The user is navigated to the main assets page in order to clean up the entities created and to repeat the operation.
-{{< /c8y-admon-info>}}
 
 ### To assign devices to an asset
 
