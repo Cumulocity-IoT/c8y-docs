@@ -21,7 +21,7 @@ function cleanJSON(raw) {
 async function run() {
   try {
     const { owner, repo, number: pull_number } = context.issue;
-    const styleGuidePath = path.join(process.cwd(), "scripts", "documentation-style-guide.md");
+    const styleGuidePath = path.join(process.cwd(), "scripts", "documentation-guidelines.md");
     const STYLE_GUIDE_TEXT = fs.readFileSync(styleGuidePath, "utf8");
 
     const { data: files } = await octokit.rest.pulls.listFiles({ owner, repo, pull_number});
