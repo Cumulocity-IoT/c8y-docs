@@ -50,7 +50,7 @@ cat >> "$CONFIG_FILE" <<'EOF'
 
 # Add your exact regex inside the location directive
 # Example1: Blocks health endpoint only for cep service
-# if ($http_authorization = "Bearer abc123") {
+# if ($http_authorization = "Basic abc123") {
 #     return 403;
 # }
 # This blocks all the end points for given user
