@@ -72,12 +72,14 @@ async function run() {
   Use ONLY the rules defined in the style guide below.  
   Do not rely on any internal assumptions or default conventions—strictly follow the provided style guide.
 
-  Your tasks:
-  - Analyze ONLY added lines (starting with "+").
-  - If an added heading is missing an ID, generate a correct one.
-  - If an added heading has an ID, validate it and correct it if needed.
-  - Apply ALL styling rules from the style guide (capitalization, grammar, terminology, spelling, variables, etc.).
-  - Return corrected versions of ONLY the added lines.
+  Your task:
+  - Detect added heading lines (lines starting with "+ #" or "+ ##" etc.).
+  - If missing an ID, generate a correct one according to the style guide.
+  - If an ID exists, validate and correct it.
+  - Apply all relevant rules from the style guide (capitalization, terminology, etc.).
+  - Check capitalization and correct any issues in the added lines.
+  - Check grammar rules, including missing articles ("a", "an", "the") according to the following style guide rules.
+  - Always use standard American English spelling. Convert any British English spelling to American English.
 
   Output Format (very important):
   Return ONLY valid JSON in this exact structure:
