@@ -66,6 +66,10 @@ Configuration management is primarily handled via the Device Control API. A conf
 
 The connection monitoring feature allows identifying [devices](#device) that have stopped communicating with the {{< product-c8y-iot >}} platform. The connection status (ONLINE/OFFLINE) is determined by monitoring device heartbeats or tracking the status of a persistent push connection.
 
+{{< c8y-details title="Developer details" >}}
+The connection status is exposed via the `c8y_Connection` fragment within a device's managed object. The monitoring behavior is configured via the `c8y_RequiredAvailability` fragment. If a device fails to communicate, the platform updates `c8y_Connection.status` to UNAVAILABLE.
+{{< /c8y-details >}}
+
 
 ### Continuous Deployment model {#continuous-deployment}
 
