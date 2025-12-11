@@ -84,7 +84,6 @@ Last will is supported by the MQTT Service with these restrictions:
 
 MQTT _retained messages_ are not supported by the MQTT Service.
 If the retain flag is set on a `PUBLISH` message from a device, the message will not be accepted and the connection will be closed.
-Devcies should not attempt to re-send an unacknowledged QoS 1 retained message after reconnecting, as this will simply cause the connection to be closed again.
 
 Messages published by the MQTT Service to devices will never have the retain flag set.
 
@@ -155,12 +154,11 @@ These features relate to MQTT version 5.0 flags and properties that can be inclu
 
 ### Topics {#mqtt-topics}
 
-In general, the MQTT Service does not impose any restrictions on topic structure, and devices may use any topic name allowed by the MQTT Specification.
+In general, the MQTT Service does not impose any restrictions on topic structure, and devices may use any topic name allowed by the MQTT specification.
 However, there are a small number of topic names that are reserved for historical compatibility or potential future use.
 These topic name cannot be used by devices:
 
 * All _system topics_ (topic name beginning with `$`) unless specifically documented
-* `devicecontrol/notifications`
 * `error`
 
 There is a hard limit on the maximum length of a topic name.
@@ -174,7 +172,18 @@ All other topics are available for use by "generic" MQTT devices.
 Message traffic on generic topics will be routed to and from the {{< product-c8y-iot >}} Messaging Service where it can be accessed by microservice and external application clients.
 
 There is no overlap between the Core MQTT and generic device topic spaces.
-However, to avoid potentially hard to diagnose failures, generic devices should avoid using any topic name starting with the Core MQTT prefixes `s/`, `t/`, `q/` or `c/`, even though some topics under those prefixes are not used by Core MQTT.
+Generic devices should avoid using any topic name starting with the Core MQTT prefixes listed below, even though some topics under those prefixes are not used by Core MQTT.
+This will help to avoid situations where it is not obvious how a given topic should be handled, which may be difficult to debug:
+
+* `s/`
+* `t/`
+* `q/`
+* `c/`
+* `alarm/alarms/`
+* `event/events/`
+* `measurement/measurements/`
+* `inventory/managedObjects/`
+* `devicecontrol/notifications`
 
 ### Payloads {#mqtt-payloads}
 
@@ -197,8 +206,12 @@ For MQTT version 3.1.1 devices, the device will simply be disconnected with no w
 For MQTT version 5.0 devices, the MQTT Service may send the device a packet containing a _reason code_, indicating the reason for the disconnection, before closing the connection.
 This will be a `CONNACK` packet in response to an error in a `CONNECT` packet, or a `DISCONNECT` packet in response to any other incorrect packet.
 
-Most other MQTT version 5.0 packet types, including `SUBACK` and `PUBACK`, can also include reason codes.
-These provide the device with more information about why a specific request was rejected.
+The server may receive a packet that is correct according to the protocol, but that it rejects for some other reason, such as a limit being exceeded.
+For devices using MQTT version 3.1.1, the protocol provides no way to indicate why a packet was rejected, so the connection will simply be dropped.
+The only exception is the `SUBACK` packet, which can indicate that a subscription failed, although without giving any more detailed reason.
+For devices using MQTT version 5.0, the protocol allows a reason code to be sent in response packets including `SUBACK` and `PUBACK`.
+The reason code provides the device with more information about why a specific request was rejected.
+The connection may still be dropped after sending the response packet.
 
 The available reason codes are listed in [section 2.4 of the MQTT version 5.0 specification](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901031).
 
@@ -210,9 +223,9 @@ Alarms are _rate limited_, to avoid overloading the {{< product-c8y-iot >}} plat
 This means that if, for example, many devices publish messages larger than the allowed maximum size in a short period of time, an alarm will not be raised for every instance of the problem.
 However, tenant users will still be aware that devices are publishing too-large messages, and can take steps to correct this.
 
-The table below describes the alrams that will be raised for problems related to device connections:
+The table below describes the alarms that will be raised for problems related to device connections:
 
-<font color="red" size="24">**TBC -- need details of the alarms**</font>
+<font color="red" size="24">**TBC: need details of the from-device alarms**</font>
 
 ### MQTT device quotas and limits
 
@@ -220,7 +233,7 @@ The MQTT Service enforces several different quotas and limits on MQTT devices.
 See the [Service Quotas](/service-terms/quotas#mqtt-service) section for details of the current values.
 As with other error conditions, a device exceeding a quota or limit will be handled according to the MQTT specification.
 
-For devices using MQTT version 3.1.1, the protocol provides no way to indicate that a limited has been reached, so the connection will simply be dropped.
+For devices using MQTT version 3.1.1, the protocol provides no way to indicate that a limit has been reached, so the connection will simply be dropped.
 The only exception is the `SUBACK` packet, which can indicate that a subscription failed, although without giving any more detailed reason.
 
 For devices using MQTT version 5.0, where the protocol allows a reason code to be sent, the code `0x97` (Quota exceeded) will be used.
