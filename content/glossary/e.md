@@ -28,7 +28,7 @@ An {{< enterprise-tenant >}} is a [tenant](#tenant) type in the {{< product-c8y-
 
 EPL Apps is part of the [{{< product-c8y-iot >}} Streaming Analytics](#streaming-analytics) application. It allows you to develop a single-file EPL application directly within {{< product-c8y-iot >}} using [Apama](#apama) [EPL](#epl), giving you a pro-code environment to define your streaming analytics applications.   
 
-{{< c8y-details title="API details" >}}
+{{< c8y-details title="Developer details" >}}
 EPL Apps are managed via the Streaming Analytics UI. The [Apama EPL Apps Tools GitHub repository](https://github.com/Cumulocity-IoT/apama-eplapps-tools) includes tools to help with testing and deploying EPL apps from the command line or a CI/CD environment.
 {{< /c8y-details >}}
 
@@ -41,7 +41,7 @@ Next to {{< product-c8y-iot >}} events, the following types of events are used w
 - [Alarms](#alarm) are a special type of event.
 - [Audit logs](#audit-log) are security-relevant events.
 
-{{< c8y-details title="API details" >}}
+{{< c8y-details title="Developer details" >}}
 Events are managed via the Event API (`/event/events`). Key properties include type, time, text, and source.
 {{< /c8y-details >}}
 
@@ -49,7 +49,7 @@ Events are managed via the Event API (`/event/events`). Key properties include t
 
 Export is a feature of the [Cockpit application](#cockpit-application) that allows users to extract a limited amount of platform data, such as [measurements](#measurement), [alarms](#alarm), or [events](#event), into CSV or XLSX files. Exports can be configured with filters for specific [devices](#device), time ranges, and data fields. The scheduling of recurring exports is a key function, managed by the report-agent microservice and configured within the Cockpit application.   
 
-{{< c8y-details title="API details" >}}
+{{< c8y-details title="Developer details" >}}
 Export configurations are managed as a special type of managed object via the Inventory API (`/inventory/managedObjects`). The object's JSON payload contains fragments defining the export parameters (filters, fields, file type) and schedule. The report-agent microservice reads these managed objects to execute scheduled exports. Manual exports triggered from the UI are also handled by this backend service, which sends the user an email with a download link.
 {{< /c8y-details >}}
 

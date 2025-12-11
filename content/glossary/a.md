@@ -12,7 +12,7 @@ _build:
 
 The Administration application is a default {{< product-c8y-iot >}} application and the central place for platform administrators to manage a tenant. It is used to govern a [tenant](#tenant) by managing [users](#user), [roles](#role), and [permissions](#permission), subscribing to and managing [applications](#application) and [microservices](#microservice), and configuring tenant-level settings such as retention rules, custom properties, and [branding](#branding).  
 
-{{< c8y-details title="API details" >}}
+{{< c8y-details title="Developer details" >}}
 The Administration application utilizes various REST APIs for its functionality, such as the User API (`/user/...`) for users/roles, Tenant API (`/tenant/...`) for tenant settings/options, and Application API (`/application/...`) for application/microservice management. Many settings configured in the UI, such as branding and feature toggles, are stored as key-value pairs and can be managed programmatically via the Tenant Options API (`/tenant/options`).
 {{< /c8y-details >}}
 
@@ -28,7 +28,7 @@ Analytics Builder is a tool in the [{{< product-c8y-iot >}} Streaming Analytics]
 
 For details, see the [Analytics Builder](/streaming-analytics/analytics-builder/) documentation.
 
-{{< c8y-details title="API details" >}}
+{{< c8y-details title="Developer details" >}}
 Analytics Builder models are created in the user interface, not by API. Tenant options affecting the behaviour of Analytics Builder are listed in the Analytics Builder [Configuration](/streaming-analytics/analytics-builder/#configuration) documentation. You can use the [Analytics Builder Block SDK](https://github.com/Cumulocity-IoT/apama-analytics-builder-block-sdk) to write, test, and package custom blocks and to upload these blocks into Analytics Builder.
 {{< /c8y-details >}}
 
@@ -36,7 +36,7 @@ Analytics Builder models are created in the user interface, not by API. Tenant o
 
 Apama is the high-performance event processing engine that powers [{{< product-c8y-iot >}} Streaming Analytics](#streaming-analytics). It enables real-time analytics, forming the foundation for smart rules, [Analytics Builder´s](#analytics-builder) drag-and-drop models as well as custom [EPL apps](#epl-apps).
 
-{{< c8y-details title="API details" >}}
+{{< c8y-details title="Developer details" >}}
 EPL code running in the Apama engine interacts with {{< product-c8y-iot >}} using EPL APIs (for example, the `com.apama.cumulocity` package) to send and receive platform data. The deployment of EPL files (.mon) is managed via the Streaming Analytics UI or the [EPL Apps Tools](https://github.com/Cumulocity-IoT/apama-eplapps-tools). Diagnostics and monitoring are available via dedicated endpoints like `/service/cep/diagnostics` or using Prometheus as described in [Troubleshooting and diagnostics](/streaming-analytics/troubleshooting/#monitoring-rest).
 {{< /c8y-details >}}
 
@@ -46,16 +46,21 @@ An application is a component integrated with the platform that delivers user in
 
 For details, see [Application enablement](/app-intro/applications/) in the documentation.
 
-{{< c8y-details title="API details" >}}
+{{< c8y-details title="Developer details" >}}
 Applications (web apps, microservices) are managed via the Application API (`/application/applications`). This includes creating (POST), retrieving (GET), updating (PUT), deleting (DELETE), and copying (POST /clone). Application versions (`/application/applications/{id}/versions`) and binaries (`/application/applications/{id}/binaries`) also have dedicated endpoints.
 {{< /c8y-details >}}
+
+### Application availability {#application-availability}
+
+Application availability defines how a custom application or [microservice](#microservice) can be shared and accessed. A superior tenant (that is, an [{{< enterprise-tenant >}}](#enterprise-tenant) or the [{{< management-tenant >}}](#management-tenant))) manages this availability to share applications with its [subtenants](#subtenant).
+
 
 
 ### Application switcher {#application-switcher}
 
 The application switcher is a UI component that shows all {{< product-c8y-iot >}} [applications](#application) the user has access to and allows switching between these applications.  
 
-{{< c8y-details title="API details" >}}
+{{< c8y-details title="Developer details" >}}
 The application switcher UI lists applications accessible to the user. This list is populated based on user permissions and tenant subscriptions, retrieved via `GET /application/applications?user={userId}`. The application manifest property `noAppSwitcher` (managed via the Application API) can be used to hide an application from the switcher.
 {{< /c8y-details >}}
 
@@ -68,7 +73,7 @@ An asset is the digital representation of a business object within the {{< produ
 
 An asset hierarchy is a structure within the [inventory](#inventory) that organizes [assets](#asset) (based on [asset models](#asset-model)) and [devices](#device) to reflect their logical or business relationships, such as a factory containing production lines, which in turn contain individual machines. The asset hierarchy is built by nesting assets with one another to form parent-child relationships ([child assets](#child-asset)). It is fundamentally distinct from the [communication hierarchy](#communication-hierarchy), which models the physical network topology ([child devices](#child-device)).
 
-{{< c8y-details title="API details" >}}
+{{< c8y-details title="Developer details" >}}
 The asset hierarchy is composed of managed objects linked via the Inventory API's child asset endpoints: `GET /inventory/managedObjects/{id}/childAssets`, `POST /inventory/managedObjects/{id}/childAssets`, and `DELETE /inventory/managedObjects/{id}/childAssets/{childId}`. The DTM application is supported by a dedicated dtm-ms microservice and API (for example, `/service/dtm-ms/...`) for managing the underlying asset models and properties.
 {{< /c8y-details >}}
 
@@ -87,7 +92,7 @@ Asset properties are configurable attributes within an [asset model](#asset-mode
 
 An audit log is a record of a security-relevant action performed on the platform. Audit logs are a special type of [event](#event) that includes details about the [user](#user) who performed the action, the [application](#application) they used, the activity itself, and the severity. They provide a chronological and immutable trail of [operations](#operation) for security analysis and compliance auditing.  
 
-{{< c8y-details title="API details" >}}
+{{< c8y-details title="Developer details" >}}
 Audit logs are managed via the Audit API. Records can be created via `POST /audit/auditRecords` and retrieved via `GET /audit/auditRecords`, with filtering by user, type, application, and date range. Creating an audit record requires ROLE_AUDIT_ADMIN or AUDIT_ADMIN permission.
 {{< /c8y-details >}}
 
@@ -95,7 +100,7 @@ Audit logs are managed via the Audit API. Records can be created via `POST /audi
 
 Authentication is the process of verifying the identity of a [user](#user), [device](#device), or [application](#application) attempting to access the {{< product-c8y-iot >}} platform. {{< product-c8y-iot >}} supports multiple authentication methods, including basic authentication, OAI-Secure (an OAuth2-based implementation), and [Single sign-on (SSO)](#sso) integration with external identity providers.  
 
-{{< c8y-details title="API details" >}}
+{{< c8y-details title="Developer details" >}}
 All available authentication methods are configured via the REST endpoints `PUT /tenant/loginOptions` (CREATE) and `POST /tenant/loginOptions/{typeOrId})` (UPDATE).
 {{< /c8y-details >}}
 
@@ -103,7 +108,7 @@ All available authentication methods are configured via the REST endpoints `PUT 
 
 Authorization is the process of determining whether an [authenticated](#authentication) identity ([user](#user), [device](#device), or [application](#application)) has the necessary [permissions](#permission) to access a specific resource or perform a particular action. Authorization in {{< product-c8y-iot >}} is managed through a [Role-Based Access Control (RBAC)](#rbac) model, in which permissions are bundled into [global roles](#global-role) and [inventory role](#inventory-role).  
 
-{{< c8y-details title="API details" >}}
+{{< c8y-details title="Developer details" >}}
 Authorization is enforced by the platform based on roles assigned to users. These roles and their associated permissions are defined and managed via the User API (`/user/roles`, `/user/inventoryroles`).
 {{< /c8y-details >}}
 
@@ -111,6 +116,6 @@ Authorization is enforced by the platform based on roles assigned to users. Thes
 
 Availability refers to the monitoring of the connection status of a [device](#device) to indicate whether it is ONLINE, OFFLINE, or its status is UNKNOWN. This status is determined by device communication patterns, such as the periodic sending of data or the maintenance of a push connection.
 
-{{< c8y-details title="API details" >}}
+{{< c8y-details title="Developer details" >}}
 The connection status is exposed via the `c8y_Connection` fragment within a device's managed object. The monitoring behavior is configured via the `c8y_RequiredAvailability` fragment, which specifies the required response interval in minutes.
 {{< /c8y-details >}}

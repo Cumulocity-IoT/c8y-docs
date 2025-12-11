@@ -13,6 +13,10 @@ _build:
 
 A tenant represents a logically isolated data space within {{< product-c8y-iot >}}, typically corresponding to a customer or organizational unit. It has its own [users](#user), [devices](#device), [applications](#application), and data.
 
+{{< c8y-details title="Developer details" >}}
+Tenants are managed via the Tenant API (`/tenant/tenants`). This includes creating subtenants (POST), retrieving details (GET), updating properties (PUT), and deleting (DELETE). Tenant-specific configurations are managed via the Tenant Options API (`/tenant/options`).
+{{< /c8y-details >}}
+
 
 ### Tenant domain {#tenant-domain}
 
@@ -24,6 +28,11 @@ The tenant domain refers to the domain name used to access a {{< product-c8y-iot
 The tenant hierachy refers to the structure organizing [tenants](#tenant) in {{< product-c8y-iot >}}, involving a [{{< management-tenant >}}](#management-tenant) at the top, [{{< enterprise-tenant >}}s](#enterprise-tenant) below it, and [{{< standard-tenant >}}s](#standard-tenant) at the lowest level.
 
 For details, see [Tenant hierarchy](/concepts/tenant-hierarchy/) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+Tenant hierarchies are managed through the Tenant API (`/tenant/tenants`). Creating a subtenant (POST `/tenant/tenants`) under a parent tenant establishes the hierarchical link.
+{{< /c8y-details >}}
+
 
 ### Tenant ID {#tenant-id}
 
@@ -52,4 +61,8 @@ Thick Edge is an informal term for {{< product-c8y-iot >}} Edge, see [{{< produc
 
 ### thin-edge.io {#thin-edge}
 
-[Thin-edge.io](https://thin-edge.io/) is an open-source software framework recommended by {{< product-c8y-iot >}} for custom device integration. It provides components and tools to connect [devices](#device) to the platform, particularly suitable for implementing device-side logic.
+[thin-edge.io](https://thin-edge.io/) is an open-source software framework recommended by {{< product-c8y-iot >}} for custom device integration. It provides components and tools to connect [devices](#device) to the platform, particularly suitable for implementing device-side logic.
+
+{{< c8y-details title="Developer details" >}}
+thin-edge.io exposes a local {{< product-c8y-iot >}} proxy endpoint to give device components access to the full {{< product-c8y-iot >}} REST API.
+{{< /c8y-details >}}

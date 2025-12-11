@@ -19,7 +19,7 @@ Maintenance releases are provided for supported [Yearly releases](#yearly-releas
 
 Managed objects are the core building blocks of the {{< product-c8y-iot >}} [inventory](#inventory). A managed object is the primary digital record ([digital twin](#digital-twin)) used to represent entities such as [devices](#device), [assets](#asset), logical [groupings](#group), or [application](#application) components. Managed objects are used to model data sources (for example, an IoT sensor), and all related data, such as [events](#event), [alarms](#alarm), and [operations](#operation), linked to the managed object. When referred to as a “source managed object”, it denotes the managed object representing the origin of that data.  
 
-{{< c8y-details title="API details" >}}
+{{< c8y-details title="Developer details" >}}
 Managed objects are the core resource of the Inventory API (`/inventory/managedObjects`). A minimal managed object requires a name and can include a type and other fragments, for example, `{"name": "MySensor", "type": "temp_sensor", "c8y_IsDevice": {}}`.
 {{< /c8y-details >}}  
 
@@ -28,7 +28,7 @@ Managed objects are the core resource of the Inventory API (`/inventory/managedO
 
 The {{< management-tenant >}} builds the highest level in the {{< product-c8y-iot >}} 3-level [tenant hierarchy](#tenant-hierarchy), typically only available to the Operations team managing the {{< product-c8y-iot >}} instance. The {{< management-tenant >}} administers the entire platform deployment, including all [{{< enterprise-tenant >}}s](#enterprise-tenant), and holds exclusive platform-level administrative capabilities.  
 
-{{< c8y-details title="API details" >}}
+{{< c8y-details title="Developer details" >}}
 Access to the {{< management-tenant >}}'s full administrative API is typically restricted. It uses the same core APIs as the {{< enterprise-tenant >}} (for example, `/tenant/tenants`) but with elevated, platform-wide permissions.
 {{< /c8y-details >}}  
 
@@ -42,7 +42,7 @@ A measurement is a time-stamped reading or statistic collected from a sensor or 
 
 Microfrontend refers to an architectural style for [web applications](#web-application) where the UI is decomposed into smaller, independently deployable [applications](#application) or plugins. {{< product-c8y-iot >}}'s web UI is built on this architecture with the [Web SDK](#web-sdk), allowing a "shell" application (like [Cockpit](#cockpit-application)) to be extended by loading "remote" modules (plugins) from other web applications.
 
-{{< c8y-details title="API details" >}}
+{{< c8y-details title="Developer details" >}}
 Microfrontends (plugins) are packaged as standard web applications and uploaded as ZIP archives via the Application API (`POST /application/applications/{id}/versions`). The *cumulocity.json* manifest must include `isPackage: true` and an exports section defining the available modules. Other applications can then import the microfrontend by referencing it in their application remotes section.
 {{< /c8y-details >}}   
 
@@ -66,7 +66,7 @@ The {{< product-c8y-iot >}} Microservice SDK is a set of tools, libraries, and d
 
 In [Analytics Builder](#analytics-builder), a model is a visual representation of analytic logic created by connecting pre-built [blocks](#block) via [wires](#wire) in a drag-and-drop environment. Each block performs a specific function, and together they form a workflow that can transform, analyze, and act on incoming data. A model can be designed as a reusable template model, which uses placeholders instead of fixed values. When you provide specific values for these placeholders, you create a runnable model instance.  
 
-{{< c8y-details title="API details" >}}
+{{< c8y-details title="Developer details" >}}
 See [Analytics Builder](#analytics-builder).
 {{< /c8y-details >}}  
 

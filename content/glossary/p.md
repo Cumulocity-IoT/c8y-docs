@@ -13,10 +13,12 @@ _build:
 
 Permissions are the most granular level of access control in {{< product-c8y-iot >}}, defining the access rights (for example, READ, CREATE, ADMIN) for a specific capability (for example, [alarms](#alarm), [inventory](#inventory)). Permissions are not assigned to [users](#user) directly. Instead, they are grouped into [roles](#role).  
 
-{{< c8y-details title="API details" >}}
+{{< c8y-details title="Developer details" >}}
 Permissions are granted via roles, which are managed through the User API (`/user/roles`, `/user/inventoryroles)`.
 The platform identifies each granular permission with a unique “permission” string, which is prefixed with ROLE_ (for example, ROLE_ALARM_READ).
+
 To grant a permission to a user, assign the required permission strings, such as ROLE_ALARM_READ, to a suitable global role or inventory role, then assign that role to the users who should have the respective permission.
+
 **Important**: The permission strings are frequently referred to as "roles" throughout the API and in the configuration files (for example, the microservice manifest includes a requiredRoles field) although they actually refer to a permission.
 {{< /c8y-details >}}  
 
