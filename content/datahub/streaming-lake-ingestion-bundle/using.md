@@ -44,7 +44,7 @@ Device- or customer-specific data in the form of "[fragments](/concepts/domain-m
 
 To simplify querying the current state of your assets, a consolidated representation of that state is available in "latest tables". The `inventory_latest` and `alarms_latest` tables show the most recent, up-to-date state of your inventory and alarms, respectively, without you needing to reconstruct it from the historical logs.
 
-![alt text](querying.png)
+![alt text](/images/datahub-guide/querying.png)
 
 To understand how the service transfers data to the data lake, the following sections discuss the general table structure for each {{< product-c8y-iot >}} domain model class.
 
