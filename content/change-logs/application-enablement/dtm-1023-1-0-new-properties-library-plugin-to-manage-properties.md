@@ -1,18 +1,18 @@
 ---
-date: ""
-title: "New Properties library plugin to manage asset properties"
-product_area: "Application enablement & solutions"
+date: '2025-12-11'
+title: New Properties library plugin to manage asset properties
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-QHu1GdukP"
-      label: "Feature"
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-2297"
-version: "1023.1.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-2297
+version: 1023.1.0
 ---
 The Dtm-plugins extension introduces a Properties library plugin to manage
 asset properties.

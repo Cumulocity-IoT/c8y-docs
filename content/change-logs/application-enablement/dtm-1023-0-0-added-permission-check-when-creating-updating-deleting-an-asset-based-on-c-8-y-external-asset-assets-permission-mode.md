@@ -1,18 +1,18 @@
 ---
-date: ""
-title: "Enabled fine-grained permissions for managing assets"
-product_area: "Application enablement & solutions"
+date: '2025-12-11'
+title: Enabled fine-grained permissions for managing assets
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-QHu1GdukP"
-      label: "Feature"
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-2525"
-version: "1023.0.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-2525
+version: 1023.0.0
 ---
 The Digital Twin Manager now supports fine-grained permission control for managing assets by introducing a new tenant option `assets.permission.mode`.  
 This tenant option supports three modes:
