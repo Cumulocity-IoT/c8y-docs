@@ -56,7 +56,7 @@ cat >> "$CONFIG_FILE" <<'EOF'
 # This blocks all the end points for given user
 
 # Block based on exact Authorization header value
-if ($http_authorization = "<your-token-here>") {
+if ($http_authorization = "<your-basic-auth-header>") {
     return 403;
 }
 EOF
