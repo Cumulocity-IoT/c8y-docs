@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-12-11'
 title: Simplified global context link/unlink behavior
 product_area: Application enablement & solutions
 change_type:
