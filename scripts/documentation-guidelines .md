@@ -80,3 +80,20 @@ Use **standard American English spelling** throughout the documentation.
 - behaviour
 - analyse
 - centre
+
+## Variables
+
+Use variables (HTML short codes) for certain recurring terms to ensure consistency across the documentation.
+
+The following terms must be replaced by their corresponding variables:
+
+| Term                               | Short code                |
+|-----------------------------------|----------------------------|
+| **Cumulocity** (company name)     | `{{< company-c8y >}}`      |
+| **Cumulocity** (product name)     | `{{< product-c8y-iot >}}`  |
+
+Do not replace any instances of **"cumulocity"** that appear in:
+- software file names (for example, `cumulocity.json`),
+- links to examples or resources in GitHub,
+- module names (for example, `com.apama.cumulocity.Measurement`),
+- or anywhere in code samples in general.
