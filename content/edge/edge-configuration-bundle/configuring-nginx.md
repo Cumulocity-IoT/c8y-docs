@@ -8,7 +8,7 @@ sector:
 
 ### Blocking sensitive endpoints in NGINX
 
-Configure an NGINX `location` block to return a `403 Forbidden` status code for all matching incoming requests. This method can be used to effectively disable access to an endpoint with a defined URL pattern or to blacklist specific users within that location block.
+To block access to specific endpoints, create an NGINX location rule that returns "403 Forbidden" for matching requests. You can use this approach to disable any endpoint by configuring the appropriate location pattern.
 
 {{< c8y-admon-important >}}
 
@@ -34,29 +34,6 @@ cat >> "$CONFIG_FILE" <<'EOF'
 # }
 
 location ~* <your-regex-here> {
-    return 403;
-}
-EOF
-
-chown nginx:nginx "$CONFIG_FILE"
-chmod 644 "$CONFIG_FILE"
-systemctl restart nginx
-```
-
-```shell
-CONFIG_FILE="/etc/nginx/conf.d/blocked-endpoints.common.location.conf"
-
-cat >> "$CONFIG_FILE" <<'EOF'
-
-# Block requests based on the HTTP Authorization header.
-# Example1:
-# if ($http_authorization = "Basic abc123") {
-#     return 403;
-# }
-# This blocks all the end points for given user
-
-# Block based on exact Authorization header value
-if ($http_authorization = "<your-basic-auth-header>") {
     return 403;
 }
 EOF
