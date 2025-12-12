@@ -12,7 +12,17 @@ The integration approach depends on the device capabilities and use case:
 
 ### Integration via thin-edge.io
 
-We recommend integrating devices via [thin-edge.io](https://thin-edge.io/), an open-source, cloud-agnostic edge framework optimized for lightweight IoT devices. thin-edge.io can be slimmed down to run with less than 1 MB footprint, making it suitable even for constrained devices with a microprocessor. See the tutorial [Getting started with thin-edge.io](https://thin-edge.github.io/thin-edge.io/start/getting-started/) for an easy-to-follow and hands-on example.
+We recommend integrating devices via [thin-edge.io](https://thin-edge.io/), an open-source, cloud-agnostic edge framework optimized for lightweight IoT devices. thin-edge.io can be slimmed down to run with less than 1 MB footprint, making it suitable even for constrained devices while supporting both x86_64 and ARM-based processor architectures.
+
+#### The advantages of using thin-edge.io:
+* **Native "SmartREST" Efficiency**: The agent automatically translates simple local JSON messages into Cumulocity's highly efficient SmartREST protocol, significantly reducing bandwidth.
+* **Zero-Code Device Management**: Get immediate access to all device management features - including software management, configuration updates, log retrieval, and remote access.
+* **Automatic Child Device Routing**: Acting as a gateway requires no extra logic; simply publishing data with a child ID causes thin-edge.io to automatically register the external devices (e.g. sensor) in Cumulocity's inventory and route the data to the correct representation of the child device in {{< product-c8y-iot >}}.
+* **Modular Extensibility **: The architecture is designed around plugins, allowing you to extend functionality without having to recompile the core agent.
+* **Language-Agnostic Decoupling**: Because thin-edge.io uses a local MQTT bus for communication, your application logic can be written in any language and remains completely isolated from the connectivity logic.
+* **Automated Certificate Lifecycle**: The built-in CLI tools handle the generation, signing, uploading, and rotation of X.509 security certificates.
+
+See the tutorial [Getting started with thin-edge.io](https://thin-edge.github.io/thin-edge.io/start/getting-started/) for an easy-to-follow and hands-on example.
 
 ### Micro-controller based devices
 
@@ -25,7 +35,7 @@ Not all devices are directly connected to the internet. In such cases, IoT gatew
 * **OPC UA**: Industrial automation protocol for connecting PLCs and industrial equipment. See [OPC UA](/device-integration/opcua/).
 * **MQTT Service**: Flexible MQTT endpoint allowing user-provided microservices to map between custom device payloads and the {{< product-c8y-iot >}} data model. See [MQTT Service](/device-integration/mqtt-service/).
 * **thin-edge.io protocol drivers**: Extend thin-edge.io with custom protocol support for proprietary or specialized device protocols.
-* **Partner gateways**: A common option is to use a pre-integrated partner gateways that brings support for the required protocol. Explore certified partner devices in the [Device Partner Portal](https://ecosystem.cumulocity.com/).
+* **Partner gateways**: Use pre-integrated partner gateways that brings support for the required protocol. Explore certified partner devices in the [Device Partner Portal](https://ecosystem.cumulocity.com/).
 
 ### LPWAN integration
 
