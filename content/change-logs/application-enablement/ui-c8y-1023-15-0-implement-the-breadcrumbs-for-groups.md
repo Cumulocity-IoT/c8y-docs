@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Implement the breadcrumbs for groups
+title: Breadcrumbs added for groups, devices and assets in Cockpit
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
