@@ -135,7 +135,7 @@ async function run() {
 
         if (!match) return;
 
-        const replacement = (match.suggestion || "").trim();
+        let replacement = (match.suggestion || "").trim();
 
         if (replacement.startsWith("+")) {
           replacement = replacement.slice(1).trim();
