@@ -265,14 +265,12 @@ This approach ensures that each release maintains version uniqueness, preventing
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|host | String | Host to verify | Yes
 |port | Number | Port to verify <br/>Default:80 | Yes
 
 #### HTTPGetAction {#httpgetaction}
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|host | String | Host name to connect to | Yes
 |path | String | Path to access on the HTTP server | Yes
 |port | Number | Port to verify <br/>Default: 80 | No
 |scheme | String | Scheme to use for connecting to the host (HTTP or HTTPS)<br/> Default: HTTP | No
