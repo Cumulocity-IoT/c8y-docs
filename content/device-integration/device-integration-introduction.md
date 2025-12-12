@@ -39,7 +39,12 @@ Not all devices are directly connected to the internet. In such cases, IoT gatew
 
 ### LPWAN integration
 
-For Low-Power Wide-Area-Network (LPWAN) devices using technologies like LwM2M or LoRa, {{< product-c8y-iot >}} provides dedicated integrations. Refer to [LoRa Actility](/device-integration/lora-actility/), [LoRa LORIOT](/device-integration/lora-loriot/) and [Sigfox](/device-integration/sigfox/) for details. For cellular devices, [LWM2M](/device-integration/lwm2m/) can be used.
+Low-Power Wide-Area-Network (LPWAN)  technologies are critical for use cases requiring devices to
+* Run on a single battery for years at a very low cost
+* Only transmit small amounts of data intermittently
+* Be positioned in distributed or hard-to-reach locations
+
+{{< product-c8y-iot >}} provides dedicated integrations for varios LPWAN technologies including LoRa, LwM2M and Sigfox. Refer to [LoRa Actility](/device-integration/lora-actility/), [LoRa LORIOT](/device-integration/lora-loriot/) and [Sigfox](/device-integration/sigfox/) for details. For cellular devices, [LWM2M](/device-integration/lwm2m/) can be used.
 
 ### Agent concepts
 
