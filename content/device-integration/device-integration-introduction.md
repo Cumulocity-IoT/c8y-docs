@@ -29,8 +29,8 @@ Not all devices are directly connected to the internet. In such cases, IoT gatew
 
 ### LPWAN integration
 
-For Low-Power Wide-Area-Network (LPWAN) devices using technologies like LoRa or Sigfox, {{< product-c8y-iot >}} provides dedicated integrations. Refer to [LoRa Actility](/device-integration/lora-actility/), [LoRa LORIOT.io](/device-integration/lora-loriot/) and [Sigfox](/device-integration/sigfox/) for details. For cellular devices, [LWM2M](/device-integration/lwm2m/) can be used.
+For Low-Power Wide-Area-Network (LPWAN) devices using technologies like LwM2M or LoRa, {{< product-c8y-iot >}} provides dedicated integrations. Refer to [LoRa Actility](/device-integration/lora-actility/), [LoRa LORIOT](/device-integration/lora-loriot/) and [Sigfox](/device-integration/sigfox/) for details. For cellular devices, [LWM2M](/device-integration/lwm2m/) can be used.
 
 ### Agent concepts
 
-For information on the general concept of agents being used for interfacing IoT data sources with {{< product-c8y-iot >}}, refer to [Interfacing devices](/device-integration/interfacing-devices/).
+A device agent is a piece of software that runs locally on a device or gateway. Its primary purpose is to act as the intermediary between the device’s physical hardware and the cloud platform. To learn more about the general concept of agents being used for interfacing IoT devices and data sources with {{< product-c8y-iot >}}, refer to [Interfacing devices](/device-integration/interfacing-devices/).
