@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-64935
 version: 1023.15.0
 ---
-New functionality brings breadcrumbs to groups, devices and assets views in Cockpit.
-For root level groups, whole path is always shown. For nested entities whole path is not displayed eagerly but there is an ellipsis button. When clicked, it shows all possible paths (hierarchies) that entity is present, as e.g. device can be a child of multiple groups. It needs extra API calls to find out what are possible paths, therefore explicit user action is needed.
+To improve navigation in Cockpit, breadcrumbs have been added to the groups, devices and assets views. For root level groups, the whole path is always shown. For nested entities, the whole path is not displayed eagerly but there is an ellipsis button that shows all possible paths (hierarchies) the entity is present in when clicked, as a device can be a child of multiple groups. Extra API calls are needed to find out the possible paths, therefore an explicit user action is required.
