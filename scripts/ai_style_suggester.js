@@ -3,6 +3,7 @@ import path from "path";
 import { getInput, setFailed } from "@actions/core";
 import { context, getOctokit } from "@actions/github";
 import Anthropic from "@anthropic-ai/sdk";
+import { fileURLToPath } from "url";
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
@@ -21,7 +22,9 @@ function cleanJSON(raw) {
 async function run() {
   try {
     const { owner, repo, number: pull_number } = context.issue;
-    const styleGuidePath = path.join(process.cwd(), "scripts", "documentation-guidelines.md");
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+    const styleGuidePath = path.join(__dirname, "documentation-guidelines.md");
     const STYLE_GUIDE_TEXT = fs.readFileSync(styleGuidePath, "utf8");
 
     const { data: files } = await octokit.rest.pulls.listFiles({ owner, repo, pull_number});
