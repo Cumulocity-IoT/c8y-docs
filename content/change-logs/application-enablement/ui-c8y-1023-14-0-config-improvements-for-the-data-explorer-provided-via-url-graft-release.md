@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Config improvements for the data explorer provided via url  [GRAFT][release/cd] (#10505)
+title: Data explorer configuration improvements
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-65200
 version: 1023.14.0
 ---
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
-Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+The workspace configuration used by the data explorer is now compressed, which significantly reduces the number of characters required in the URL. This makes shared links shorter, cleaner, and less likely to hit browser URL-length limits. In addition, two new helper functions have been introduced—one for generating a URL from a configuration and another for navigating directly to the data explorer with a provided configuration. Developers can find more details about these helpers in the c8y-codex dataexplorer service.
