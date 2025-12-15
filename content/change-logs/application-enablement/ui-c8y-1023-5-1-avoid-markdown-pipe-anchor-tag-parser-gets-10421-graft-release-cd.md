@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65215
 version: 1023.5.1
 ---
-The markdown pipe could be tricked into parsing a link as a platform link while it is in fact an external link. This could potentially be used to do trick the user to follow a link to a malicious website, which then could execute commands on the user behalf on the Cumulocity platform. While this exploit was very unlikely to happen, we further secured the markdown pipe by doing a correct host check to detect external links better and therefore closing the attack vector.
+In certain cases, the markdown pipe interpreted an external link as a platform link. This could potentially be exploited to direct users to a malicious website. Although this exploit was very unlikely to occur, the markdown pipe has been further secured by verifying the host to detect external links and prevent attacks.
