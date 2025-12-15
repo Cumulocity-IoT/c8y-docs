@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-65215
 version: 1021.22.134
 ---
-Co-authored-by: Jan Hommes <janhommes@users.noreply.github.com>
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
+In certain cases, the markdown pipe interpreted an external link as a platform link. This could potentially be exploited to direct users to a malicious website. Although this exploit was very unlikely to occur, the markdown pipe has been further secured by verifying the host to detect external links and prevent attacks.
