@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Securing markdown pipe anchor tag parser
+title: Securing markdown pipe link parser
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
