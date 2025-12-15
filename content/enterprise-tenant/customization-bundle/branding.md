@@ -95,7 +95,7 @@ The following parameters can be specified:
 #### Light & dark theme tab {#light-dark-theme-tab}
 
 The same set of parameters is available for both the light and the dark theme and can be changed in the corresponding tabs.
-Further details regarding these parameters can be found in the [**Branding**](https://cumulocity.com/codex/design-guidelines/design-tokens/branding-tokens/overview) and [**Color palette**](https://cumulocity.com/codex/design-guidelines/design-tokens/color-tokens/overview) sections of the Codex.
+Further details regarding these parameters can be found in the [**Branding**](https://cumulocity.com/codex/design-system/design-tokens/branding-tokens/overview) and [**Color palette**](https://cumulocity.com/codex/design-system/design-tokens/color-tokens/overview) sections of the Codex.
 
 The theme switcher in the right drawer allows you to switch between the light and dark theme, once you enable the dark theme on your branding variant.
 
