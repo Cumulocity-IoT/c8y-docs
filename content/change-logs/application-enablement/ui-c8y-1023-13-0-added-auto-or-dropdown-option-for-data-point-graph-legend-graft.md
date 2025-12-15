@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add auto or dropdown option for data point graph legend
+title: Added option to control the data point graph legend
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
