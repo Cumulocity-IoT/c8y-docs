@@ -95,7 +95,8 @@ jobs:
           })
 
     - name: Check for broken links
-      if: ${{ contains(github.event.pull_request.labels.*.name, 'link-check') }}
+      # On by default, but allow bypassing because this is (currently) a new part of the workflow that hasn't been battle-tested
+      if: ${{ !contains(github.event.pull_request.labels.*.name, 'bypass-link-check') }}
       run: |
         # Recursively download everything from the generated doc, broken links cause errors
         # Exclude
