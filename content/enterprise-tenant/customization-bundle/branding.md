@@ -203,6 +203,6 @@ You can utilize this to change colors for locations that have not been covered b
 
 #### Advanced branding {#advanced-branding-tab}
 
-The **Advanced branding** tab allows to make direct changes to the branding JSON object, which is usually filled by the other tabs behind the scenes, via a text editor. This can be useful to set some of the [ApplicationOptions the Web SDK provides](https://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html) which are not immediately supported by the forms the branding editor includes. More details regarding these options can also be found within [Codex](https://cumulocity.com/codex/development-guides/extending-the-platform/services/options-service/overview).
+The **Advanced branding** tab allows to make direct changes to the branding JSON object, which is usually filled by the other tabs behind the scenes, via a text editor. This can be useful to set some of the [ApplicationOptions the Web SDK provides](https://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html) which are not immediately supported by the forms the branding editor includes. More details regarding these options can also be found within [Codex](https://cumulocity.com/codex/advanced-development/services/options-service/overview).
 
 <img src="/images/users-guide/enterprise-tenant/et-branding-advanced-branding-tab.png" alt="Advanced branding tab">
