@@ -98,5 +98,7 @@ jobs:
       if: ${{ contains(github.event.pull_request.labels.*.name, 'link-check') }}
       run: |
         # Recursively download everything from the generated doc, broken links cause errors
-        # Exclude links to other releases because we do not build other releases in PRs
-        wget --no-directories --delete-after --no-verbose -e robots=off -r ${{ env.BASEURL }} 2>&1 | grep ERROR -B 1
+        # Exclude
+        # - Links to other releases because we do not build other releases in PRs
+        # - Links to PDFs, we don't upload those to the surge site so they will always be absent
+        wget --no-directories --delete-after --no-verbose -e robots=off -r ${{ env.BASEURL }} --reject-regex ".*\/202.\/.*" --reject-regex ".*\.pdf$" 2>&1 | grep ERROR -B 1
