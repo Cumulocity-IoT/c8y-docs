@@ -28,7 +28,7 @@ Other company and product names mentioned herein may be trademarks of their resp
 
 No right, title or interest in any trademark or trade names of Cumulocity GmbH or its subsidiaries or its licensors is granted hereunder.
 
-Copyright (c) 2025 Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors.
+Copyright (c) {{< c8y-current-version >}} Cumulocity GmbH, Düsseldorf, Germany and/or its affiliates and/or their licensors.
 
 ### Part B: Additional terms commercial license
 
