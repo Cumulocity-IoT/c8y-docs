@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Breadcrumbs added for groups, devices and assets in Cockpit
+title: Breadcrumbs added to group, device, and asset views in the Cockpit application
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
