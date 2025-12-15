@@ -1,6 +1,6 @@
 ---
 date: ""
-title: prefer local storage over inventory storage for user preferences and only use inventory storage as last fallback (#10488)
+title: User preferences now retrieved from local storage with inventory storage as fallback
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,5 @@ build_artifact:
 ticket: MTM-65477
 version: 1023.10.0
 ---
-Co-authored-by: Tristan Bastian <tristan.bastian@cumulocity.com>
+The retrieval logic of the user preferences contained an issue. For the affected user the user preferences were correctly stored in the local storage, but the retrieval logic was looking for the corresponding values only inside of the inventory.
+This caused the stored user preferences to not take any effect for certain users.
