@@ -52,7 +52,7 @@ The versions are ordered by their creation time (descending).
 5. Select one of the following options to define the binary:
    - **Upload a binary** from your file system.
    - **Provide a file path (URL)** to download the binary from.
-   - **Provided** – Select this option if the device is expected to resolve the binary itself. No file or URL will be defined, and a `$PROVIDED` placeholder is stored.
+   - **Provided** – Select this option if the device is expected to resolve the binary itself. No file or URL will be defined, and an empty string is stored as the value of the `url` attribute.
 6. Click **Add software**.
 
 ![Add software](/images/users-guide/DeviceManagement/devmgmt-software-add.png)

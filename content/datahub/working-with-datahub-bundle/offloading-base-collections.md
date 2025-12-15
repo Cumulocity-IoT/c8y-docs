@@ -109,7 +109,7 @@ The inventory collection keeps track of managed objects. During offloading, the 
 | c8y_IsDevice | BOOLEAN |
 | c8y_IsDeviceGroup | BOOLEAN |
 
-The inventory collection keeps track of managed objects. Note that {{< product-c8y-iot >}} DataHub automatically filters out internal objects of the {{< product-c8y-iot >}} platform. These internal objects are also not returned when using the {{< product-c8y-iot >}} REST API. As described in [Configure inventory collection](#configure-inventory-collection), pre-defined views over the inventory collection allow you to confine your offloading to the relevant data. Those views all share the above schema.
+The inventory collection keeps track of managed objects. Note that {{< product-c8y-iot >}} DataHub automatically filters out internal objects of the {{< product-c8y-iot >}} platform. These internal objects are also not returned when using the {{< product-c8y-iot >}} REST API. As described in [Configure inventory collection](#configuring-inventory-collection), pre-defined views over the inventory collection allow you to confine your offloading to the relevant data. Those views all share the above schema.
 
 A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. Therefore an offloading pipeline for the inventory encompasses additional steps:
 

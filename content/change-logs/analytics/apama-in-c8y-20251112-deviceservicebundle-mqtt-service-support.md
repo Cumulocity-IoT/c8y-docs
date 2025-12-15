@@ -22,5 +22,5 @@ For detailed configuration options and the API reference, see [The DeviceService
 This bundle replaces the deprecated Apama EPL API for the MQTT Service.
 
 {{< c8y-admon-info >}}
-The {{< product-c8y-iot >}} MQTT Service and The DeviceService features are currently in **public preview** and may be subject to change in the future.
+The {{< product-c8y-iot >}} MQTT Service and The DeviceService features are currently in **Public Preview** and may be subject to change in the future.
 {{< /c8y-admon-info >}}
