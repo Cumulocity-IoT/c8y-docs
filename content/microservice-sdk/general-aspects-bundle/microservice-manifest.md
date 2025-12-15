@@ -265,6 +265,7 @@ This approach ensures that each release maintains version uniqueness, preventing
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
+|host | String | Host to verify | Yes
 |port | Number | Port to verify <br/>Default:80 | Yes
 
 #### HTTPGetAction {#httpgetaction}
