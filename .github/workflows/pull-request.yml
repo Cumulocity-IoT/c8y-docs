@@ -94,7 +94,9 @@ jobs:
             body: 'Preview available **[here](${{ env.BASEURL }})**'
           })
 
-    - name: Link check (optional and experimental)
+    - name: Check for broken links
       if: ${{ contains(github.event.pull_request.labels.*.name, 'link-check') }}
       run: |
+        # Recursively download everything from the generated doc, broken links cause errors
+        # Exclude links to other releases because we do not build other releases in PRs
         wget --no-directories --delete-after --no-verbose -e robots=off -r ${{ env.BASEURL }} 2>&1 | grep ERROR -B 1
