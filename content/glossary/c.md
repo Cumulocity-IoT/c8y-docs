@@ -18,13 +18,15 @@ CCU (Cumulocity Compute Unit) is a standardized measure for computational resour
 
 Change logs are the official record of {{< product-c8y-iot >}} product changes and announcements, published for all cloud deployments ([Continous Deployment](#continuous-deployment)), detailing updates such as new features, improvements, and API changes or deprecations. Corresponds to the [release notes](#release-notes) in the [Yearly releases](#yearly-release).
 
+See [Change logs](/change-logs/).
+
 
 ### Child asset {#child-asset}
 
 Child assets denote a relationship type within the {{< product-c8y-iot >}} [inventory](#inventory)'s [domain model](#domain-model) used to establish parent-child links between [managed objects](#managed-object). This relationship forms the [asset hierarchy](#asset-hierarchy), connecting a parent asset or [group](#group) to its subordinate [assets](#asset) or [devices](#device) from a business or logical perspective.  
 
 {{< c8y-details title="Developer details" >}}
-The child assets relationship is managed via the Inventory API. Key endpoints include: `GET /inventory/managedObjects/{id}/childAssets`, `POST /inventory/managedObjects/{id}/childAssets`, and `DELETE /inventory/managedObjects/{id}/childAssets/{childId}`.
+The child assets relationship is managed via the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API). Key endpoints include: `GET /inventory/managedObjects/{id}/childAssets`, `POST /inventory/managedObjects/{id}/childAssets`, and `DELETE /inventory/managedObjects/{id}/childAssets/{childId}`.
 {{< /c8y-details >}}  
 
 
@@ -33,7 +35,7 @@ The child assets relationship is managed via the Inventory API. Key endpoints in
 Child devices denote a relationship type within the {{< product-c8y-iot >}} [inventory](#inventory)'s [domain model](#domain-model) used to establish parent-child links that reflect the [communication hierarchy](#communication-hierarchy), connecting a parent device (often an agent or a gateway) to the downstream [devices](#device) it manages.  
 
 {{< c8y-details title="Developer details" >}}
-The child devices relationship is managed via the Inventory API. Key endpoints include: `GET /inventory/managedObjects/{id}/childDevices`, `POST /inventory/managedObjects/{id}/childDevices`, and `DELETE /inventory/managedObjects/{id}/childDevices/{childId}`.
+The child devices relationship is managed via the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API). Key endpoints include: `GET /inventory/managedObjects/{id}/childDevices`, `POST /inventory/managedObjects/{id}/childDevices`, and `DELETE /inventory/managedObjects/{id}/childDevices/{childId}`.
 {{< /c8y-details >}}
 
 
@@ -44,7 +46,8 @@ The Cockpit application is one of the default [applications](#application) of {{
 For details, see [Cockpit](/cockpit/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
-The Cockpit UI uses core REST APIs: Inventory API (`/inventory/managedObjects`) for assets/groups, Measurement API (`/measurement/measurements`), Event API (`/event/events`), Alarm API (`/alarm/alarms`). Cockpit-specific configurations like dashboards are stored as managed objects.
+The Cockpit UI uses core REST APIs: [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) (`/inventory/managedObjects`) for assets/groups, [Measurement API](https://cumulocity.com/api/core/#tag/Measurements
+) (`/measurement/measurements`), [Event API](https://cumulocity.com/api/core/#tag/Events) (`/event/events`), [Alarm API](https://cumulocity.com/api/core/#tag/Alarms) (`/alarm/alarms`). Cockpit-specific configurations like dashboards are stored as managed objects.
 {{< /c8y-details >}}
 
 
@@ -52,13 +55,21 @@ The Cockpit UI uses core REST APIs: Inventory API (`/inventory/managedObjects`) 
 
 The communication hierarchy models how [devices](#device) are connected to the platform from a network communication perspective. It is built using the [child devices](#child-device) relationship, with agents or gateways typically forming the root of the hierarchy. This structure reflects the physical or network topology, as opposed to the logical business structure represented by the [asset hierarchy](#asset-hierarchy).  
 
+For details, see [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model/#object-hierarchies) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+The communication hierarchy is managed via the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) endpoints `GET /inventory/managedObjects/{id}/childDevices`, `POST /inventory/managedObjects/{id}/childDevices`, and `DELETE /inventory/managedObjects/{id}/childDevices/{childId}`.
+{{< /c8y-details >}}
+
 
 ### Configuration management {#configuration-management}
 
-The configuration management feature allows administrators and [applications](#application) to remotely manage the settings of a [device](#device). This is typically achieved by creating and applying a configuration operation, often containing the `c8y\_Configuration` [fragment](#fragment) with the desired configuration text or a reference to a configuration file stored as a binary.  
+The configuration management feature allows administrators and [applications](#application) to remotely manage the settings of a [device](#device). This is typically achieved by creating and applying a configuration operation.
+
+For details, see [Managing configurations](/device-management-application/managing-device-data/#managing-configurations) in the documentation. 
 
 {{< c8y-details title="Developer details" >}}
-Configuration management is primarily handled via the Device Control API. A configuration update is sent by creating an operation via `POST /devicecontrol/operations` containing a `c8y_Configuration` fragment. For larger files, the configuration can be uploaded via `POST /inventory/binaries` and referenced in the operation.
+Configuration management is primarily handled via the [Device Control API](https://cumulocity.com/api/core/#tag/Device-control-API). A configuration update is sent by creating an operation via `POST /devicecontrol/operations` containing a `c8y_Configuration` fragment. For larger files, the configuration can be uploaded via `POST /inventory/binaries` and referenced in the operation.
 {{< /c8y-details >}}
 
 
@@ -92,7 +103,7 @@ The {{< product-c8y-iot >}} CLI (Command Line Interface) is a software tool prov
 
 {{< product-c8y-iot >}} Datahub is a {{< product-c8y-iot >}} [application](#application) for periodically offloading data from the [{{< product-c8y-iot >}} operational store](#operational-store) to a [data lake](#data-lake) and querying the data lake contents.
 
-For details, see [Analytics > DataHub](/datahub/datahub-overview/) in the documentation.
+For details, see [DataHub](/datahub/datahub-overview/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 DataHub provides a REST API (`/service/datahub/`) to proxy query-related requests to the Dremio engine.

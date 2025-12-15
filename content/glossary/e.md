@@ -42,7 +42,7 @@ Next to {{< product-c8y-iot >}} events, the following types of events are used w
 - [Audit logs](#audit-log) are security-relevant events.
 
 {{< c8y-details title="Developer details" >}}
-Events are managed via the Event API (`/event/events`). Key properties include type, time, text, and source.
+Events are managed via the [Event API](https://cumulocity.com/api/core/#tag/Events) (`/event/events`). Key properties include type, time, text, and source.
 {{< /c8y-details >}}
 
 ### Export {#export}
@@ -50,9 +50,15 @@ Events are managed via the Event API (`/event/events`). Key properties include t
 Export is a feature of the [Cockpit application](#cockpit-application) that allows users to extract a limited amount of platform data, such as [measurements](#measurement), [alarms](#alarm), or [events](#event), into CSV or XLSX files. Exports can be configured with filters for specific [devices](#device), time ranges, and data fields. The scheduling of recurring exports is a key function, managed by the report-agent microservice and configured within the Cockpit application.   
 
 {{< c8y-details title="Developer details" >}}
-Export configurations are managed as a special type of managed object via the Inventory API (`/inventory/managedObjects`). The object's JSON payload contains fragments defining the export parameters (filters, fields, file type) and schedule. The report-agent microservice reads these managed objects to execute scheduled exports. Manual exports triggered from the UI are also handled by this backend service, which sends the user an email with a download link.
+Export configurations are managed as a special type of managed object via the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) (`/inventory/managedObjects`). The object's JSON payload contains fragments defining the export parameters (filters, fields, file type) and schedule. The report-agent microservice reads these managed objects to execute scheduled exports. Manual exports triggered from the UI are also handled by this backend service, which sends the user an email with a download link.
 {{< /c8y-details >}}
 
 ### Extensions {#extensions}
 
 Extensions are official or community-supported packages that add new functionalities to the {{< product-c8y-iot >}} platform. They can include plugins, which add features to existing [applications](#application) at runtime, or blueprints, which are combinations of preconfigured UI functionalities for creating new applications.
+
+For information about uploading extensions for Analytics Builder, see [Creating your own blocks](/streaming-analytics/analytics-builder/#creating-your-own-blocks).
+
+{{< c8y-details title="Developer details" >}}
+There is no central API for an "extensions library." Individual extensions are bundled into a package which is installed as an application via the [Application API](https://cumulocity.com/api/core/#tag/Application-API) (`/application/applications`) and contains an `isPackage` flag inside the manifest. Additionally, extensions use the Versioning API, to ensure compatibility when they are integrated into an application.
+{{< /c8y-details >}}

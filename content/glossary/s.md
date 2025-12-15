@@ -23,6 +23,9 @@ Smart groups are [groups](#group) whose membership is dynamically determined bas
 
 SmartREST is a lightweight, CSV-based [device protocol](#device-protocol) to exchange data between [devices](#device) and the platform. SmartREST uses standard MQTT. The protocol enables devices to send and receive structured messages using templates that map message fields to object properties, reducing the message size and simplifying the integration for resource-constrained IoT devices.
 
+{{< c8y-details title="Developer details" >}}
+Devices communicate dedicated MQTT topics with {{< product-c8y-iot >}}. Each row of CSV data begins with a message ID that corresponds to either a specific, pre-registered request template or an extensive suite of built-in templates.
+{{< /c8y-details >}}
 
 ### Smart rules {#smart-rules}
 
@@ -48,7 +51,7 @@ SSO (Single sign-on) is an [authentication](#authentication) method that allows 
 A standard tenant is a [tenant](#tenant) that does not have tenant management capabilities. Unlike an [{{< enterprise-tenant >}}](#enterprise-tenant) or [{{< management-tenant >}}](#management-tenant), a {{< standard-tenant >}} lacks [multi-tenancy](#multi-tenancy) features and cannot create [subtenants](#subtenant).
 
 {{< c8y-details title="Developer details" >}}
-The Standard tenant uses core REST APIs but lacks access to multi-tenant administrative APIs available to Enterprise/Management tenants.
+The Standard tenant uses core REST APIs but lacks access to multi-tenant administrative APIs available to {{< enterprise-tenant >}}s and {{< management-tenant >}}s.
 {{< /c8y-details >}}
 
 
@@ -62,7 +65,7 @@ In {{< product-c8y-iot >}}, a subscription denotes the process by which a [tenan
 See also [Subscribing applications](/enterprise-tenant/managing-tenants/#subscribing-applications) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
-
+Subscriptions are managed via the [Tenant API](https://cumulocity.com/api/core/#tag/Tenant-API) (`POST /tenant/tenants/{tenantId}/applications`) and the [Application API](https://cumulocity.com/api/core/#tag/Application-API) (`POST /application/applications/{applicationId}/subscription`). Microservices use `GET /application/currentApplication/subscriptions` to list subscribed tenants.
 {{< /c8y-details >}}
 
 
@@ -71,5 +74,5 @@ See also [Subscribing applications](/enterprise-tenant/managing-tenants/#subscri
 A subtenant is a [tenant](#tenant) created and managed under a parent tenant (either an [{{< enterprise-tenant >}}](#enterprise-tenant) or the [{{< management-tenant >}}](#management-tenant)) within the {{< product-c8y-iot >}} [tenant hierarchy](#tenant-hierarchy).
 
 {{< c8y-details title="Developer details" >}}
-Subtenants are created and managed via the Tenant API (`/tenant/tenants`) by an administrator of a parent {{< enterprise-tenant >}} or {{< management-tenant >}}.
+Subtenants are created and managed via the [Tenant API](https://cumulocity.com/api/core/#tag/Tenant-API) (`/tenant/tenants`) by an administrator of a parent {{< enterprise-tenant >}} or {{< management-tenant >}}.
 {{< /c8y-details >}}

@@ -20,7 +20,7 @@ Maintenance releases are provided for supported [Yearly releases](#yearly-releas
 Managed objects are the core building blocks of the {{< product-c8y-iot >}} [inventory](#inventory). A managed object is the primary digital record ([digital twin](#digital-twin)) used to represent entities such as [devices](#device), [assets](#asset), logical [groupings](#group), or [application](#application) components. Managed objects are used to model data sources (for example, an IoT sensor), and all related data, such as [events](#event), [alarms](#alarm), and [operations](#operation), linked to the managed object. When referred to as a “source managed object”, it denotes the managed object representing the origin of that data.  
 
 {{< c8y-details title="Developer details" >}}
-Managed objects are the core resource of the Inventory API (`/inventory/managedObjects`). A minimal managed object requires a name and can include a type and other fragments, for example, `{"name": "MySensor", "type": "temp_sensor", "c8y_IsDevice": {}}`.
+Managed objects are the core resource of the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) (`/inventory/managedObjects`). A minimal managed object requires a name and can include a type and other fragments, for example, `{"name": "MySensor", "type": "temp_sensor", "c8y_IsDevice": {}}`.
 {{< /c8y-details >}}  
 
 
@@ -37,13 +37,18 @@ Access to the {{< management-tenant >}}'s full administrative API is typically r
 
 A measurement is a time-stamped reading or statistic collected from a sensor or [device](#device) and linked to a source [managed object](#managed-object). Measurements are organized into one or more [fragments](#fragment) (for example, `c8y_TemperatureMeasurement`), each containing one or more series (for example, `T`) that hold a numeric value and a unit for specific observed properties.  
 
+{{< c8y-details title="Developer details" >}}
+Measurements are managed via the [Measurement API](https://cumulocity.com/api/core/#tag/Measurements
+) (`/measurement/measurements`). They are created using POST and linked to a source managed object. The `X-Cumulocity-Processing-Mode` header can be used to create transient measurements.
+{{< /c8y-details >}}
+
 
 ### Microfrontend {#microfrontend}
 
 Microfrontend refers to an architectural style for [web applications](#web-application) where the UI is decomposed into smaller, independently deployable [applications](#application) or plugins. {{< product-c8y-iot >}}'s web UI is built on this architecture with the [Web SDK](#web-sdk), allowing a "shell" application (like [Cockpit](#cockpit-application)) to be extended by loading "remote" modules (plugins) from other web applications.
 
 {{< c8y-details title="Developer details" >}}
-Microfrontends (plugins) are packaged as standard web applications and uploaded as ZIP archives via the Application API (`POST /application/applications/{id}/versions`). The *cumulocity.json* manifest must include `isPackage: true` and an exports section defining the available modules. Other applications can then import the microfrontend by referencing it in their application remotes section.
+Microfrontends (plugins) are packaged as standard web applications and uploaded as ZIP archives via the [Application API](https://cumulocity.com/api/core/#tag/Application-API) (`POST /application/applications/{id}/versions`). The *cumulocity.json* manifest must include `isPackage: true` and an exports section defining the available modules. Other applications can then import the microfrontend by referencing it in their application remotes section.
 {{< /c8y-details >}}   
 
 

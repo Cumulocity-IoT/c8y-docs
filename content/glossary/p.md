@@ -14,7 +14,7 @@ _build:
 Permissions are the most granular level of access control in {{< product-c8y-iot >}}, defining the access rights (for example, READ, CREATE, ADMIN) for a specific capability (for example, [alarms](#alarm), [inventory](#inventory)). Permissions are not assigned to [users](#user) directly. Instead, they are grouped into [roles](#role).  
 
 {{< c8y-details title="Developer details" >}}
-Permissions are granted via roles, which are managed through the User API (`/user/roles`, `/user/inventoryroles)`.
+Permissions are granted via roles, which are managed through the [User API](https://cumulocity.com/api/core/#tag/User-API) (`/user/roles`, `/user/inventoryroles)`.
 The platform identifies each granular permission with a unique “permission” string, which is prefixed with ROLE_ (for example, ROLE_ALARM_READ).
 
 To grant a permission to a user, assign the required permission strings, such as ROLE_ALARM_READ, to a suitable global role or inventory role, then assign that role to the users who should have the respective permission.
@@ -31,6 +31,10 @@ Private Preview denotes a feature release stage in the [Continuous Deployment mo
 ### Processing mode {#processing-mode}
 
 The processing mode is a mechanism that allows clients to control how {{< product-c8y-iot >}} handles incoming data ([measurements](#measurement) and [events](#event)) with respect to data persistence and real-time processing. Modes include: PERSISTENT (default), TRANSIENT (process, don't store), QUIESCENT (store, suppress notifications), and CEP (process transiently, suppress notifications).  
+
+{{< c8y-details title="Developer details" >}}
+For REST, the processing mode is specified using the `X-Cumulocity-Processing-Mode` HTTP header. For MQTT, specific topics are used (s/, t/, q/, c/) to specify the processing mode.
+{{< /c8y-details >}}  
 
 
 ### Public Preview {#public-preview}

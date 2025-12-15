@@ -14,7 +14,7 @@ _build:
 The inventory stores all master data for [devices](#device) and [assets](#asset), including their configurations and relationships, and serves as the [digital twin](#digital-twin) of physical or logical entities within {{< product-c8y-iot >}}.
 
 {{< c8y-details title="Developer details" >}}
-The inventory is managed via the Inventory API (`/inventory/managedObjects`). It allows creating (POST), retrieving (GET), updating (PUT), and deleting (DELETE) managed objects.
+The inventory is managed via the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) (`/inventory/managedObjects`). It allows creating (POST), retrieving (GET), updating (PUT), and deleting (DELETE) managed objects.
 {{< /c8y-details >}}
 
 
@@ -23,7 +23,7 @@ The inventory is managed via the Inventory API (`/inventory/managedObjects`). It
 Inventory [roles](#role) contain [permissions](#permission) that grant access to specific groups of [devices](#device) or [assets](#asset) in the [inventory](#inventory). They allow fine-grained [authorization](#authorization) to particular assets or device groups and their associated data.
 
 {{< c8y-details title="Developer details" >}}
-Inventory roles are managed via the User API (`/user/inventoryroles`). They are assigned to users for specific managed object groups via `/user/users/{username}/inventoryroles`, linking the user ID, group ID, and inventory role ID.
+Inventory roles are managed via the [User API](https://cumulocity.com/api/core/#tag/User-API) (`/user/inventoryroles`). They are assigned to users for specific managed object groups via `/user/users/{username}/inventoryroles`, linking the user ID, group ID, and inventory role ID.
 {{< /c8y-details >}}  
 
 

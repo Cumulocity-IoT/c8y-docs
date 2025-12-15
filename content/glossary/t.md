@@ -14,7 +14,7 @@ _build:
 A tenant represents a logically isolated data space within {{< product-c8y-iot >}}, typically corresponding to a customer or organizational unit. It has its own [users](#user), [devices](#device), [applications](#application), and data.
 
 {{< c8y-details title="Developer details" >}}
-Tenants are managed via the Tenant API (`/tenant/tenants`). This includes creating subtenants (POST), retrieving details (GET), updating properties (PUT), and deleting (DELETE). Tenant-specific configurations are managed via the Tenant Options API (`/tenant/options`).
+Tenants are managed via the [Tenant API](https://cumulocity.com/api/core/#tag/Tenant-API) (`/tenant/tenants`). This includes creating subtenants (POST), retrieving details (GET), updating properties (PUT), and deleting (DELETE). Tenant-specific configurations are managed via the Tenant Options API (`/tenant/options`).
 {{< /c8y-details >}}
 
 
@@ -30,7 +30,7 @@ The tenant hierachy refers to the structure organizing [tenants](#tenant) in {{<
 For details, see [Tenant hierarchy](/concepts/tenant-hierarchy/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
-Tenant hierarchies are managed through the Tenant API (`/tenant/tenants`). Creating a subtenant (POST `/tenant/tenants`) under a parent tenant establishes the hierarchical link.
+Tenant hierarchies are managed through the [Tenant API](https://cumulocity.com/api/core/#tag/Tenant-API) (`/tenant/tenants`). Creating a subtenant (POST `/tenant/tenants`) under a parent tenant establishes the hierarchical link.
 {{< /c8y-details >}}
 
 

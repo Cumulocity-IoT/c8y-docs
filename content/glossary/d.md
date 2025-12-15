@@ -14,7 +14,7 @@ _build:
 Dashboards are customizable views within [applications](#application) like the [Cockpit application](#cockpit-application), composed of various [widgets](#widget), used to visualize data, monitor [assets](#asset), and potentially trigger actions.   
 
 {{< c8y-details title="Developer details" >}}
-Dashboards are stored as managed objects in the Inventory, with a `c8y_Dashboard` fragment. Their configuration, including layout and widget settings, is stored as a complex JSON object within this managed object. Dashboards are created and updated via the Inventory API (`POST /inventory/managedObjects` and `PUT /inventory/managedObjects/{id}`).
+Dashboards are stored as managed objects in the Inventory, with a `c8y_Dashboard` fragment. Their configuration, including layout and widget settings, is stored as a complex JSON object within this managed object. Dashboards are created and updated via the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) (`POST /inventory/managedObjects` and `PUT /inventory/managedObjects/{id}`).
 {{< /c8y-details >}}
 
 ### Data broker {#data-broker}
@@ -27,7 +27,8 @@ The data broker functionality is an optional feature in {{< enterprise-tenant >}
 The data explorer is a visualization tool for exploring, comparing, and analyzing IoT data, such as [measurements](#measurement), [alarms](#alarm), and [events](#event), from specific [assets](#asset) or across all assets.  
 
 {{< c8y-details title="Developer details" >}}
-The data explorer UI component uses the Measurement API (`/measurement/measurements` and `/measurement/measurements/series`) to fetch and visualize data.
+The data explorer UI component uses the [Measurement API](https://cumulocity.com/api/core/#tag/Measurements
+) (`/measurement/measurements` and `/measurement/measurements/series`) to fetch and visualize data.
 {{< /c8y-details >}}
 
 ### Data lake {#data-lake}
@@ -43,7 +44,8 @@ The data lake is an external storage which can only be accessed through the Data
 A data point is a configuration that defines how a specific [measurement](#measurement) time series is visualized in UI views like the [data explorer](#data-explorer) and [dashboards](#dashboard). Data points define how a measurement stream is displayed, including its label, color, unit, and threshold ranges. These settings can be customized in the UI or templated in the [data point library](#data-point-library).  
 
 {{< c8y-details title="Developer details" >}}
-A data point is a UI concept and has no direct API. The underlying data is retrieved via the Measurement API (`GET /measurement/measurements/series`). Visualization properties are stored within a dashboard's managed object configuration or in the data point library.
+A data point is a UI concept and has no direct API. The underlying data is retrieved via the [Measurement API](https://cumulocity.com/api/core/#tag/Measurements
+) (`GET /measurement/measurements/series`). Visualization properties are stored within a dashboard's managed object configuration or in the data point library.
 {{< /c8y-details >}}
 
 
@@ -52,15 +54,15 @@ A data point is a UI concept and has no direct API. The underlying data is retri
 The data point library provides a collection of templates used to standardize the visualization of measurement data across your account. Each template targets a specific [measurement](#measurement), identified by its [fragment](#fragment) and series, and defines its visual properties (such as label, color, unit, threshold ranges). This ensures that all matching time series from any [device](#device) are displayed consistently.   
 
 {{< c8y-details title="Developer details" >}}
-The data point library is managed via the Cockpit UI. The entries are stored in the Inventory API with a fragment called `c8y_Kpi`.
+The data point library is managed via the Cockpit UI. The entries are stored in the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) with a fragment called `c8y_Kpi`.
 {{< /c8y-details >}}
 
 ### Device {#device}
 
-A device is a special type of [asset](#asset) that represents a physical piece of equipment connected to the {{< product-c8y-iot >}} platform. In the [inventory](#inventory), a device is represented as a [managed object](#managed-object) that is marked with the `c8y\_IsDevice` fragment, distinguishing it as an entity that can send data and receive [operations](#operation).  
+A device is a special type of [asset](#asset) that represents a physical piece of equipment connected to the {{< product-c8y-iot >}} platform. Devices are distinct from other assets because they can send data and can receive remote operations.
 
 {{< c8y-details title="Developer details" >}}
-Devices are represented as managed objects (/inventory/managedObjects), marked with the `c8y_IsDevice` fragment. The identity is managed via the Identity API (`/identity/externalIds`), operations via the Device Control API (`/devicecontrol/operations`), and data sent/received via the Measurement, Event, Alarm APIs.
+In the inventory, devices are represented as managed objects (/inventory/managedObjects), marked with the `c8y_IsDevice` fragment. The identity is managed via the Identity API (`/identity/externalIds`), operations via the Device Control API (`/devicecontrol/operations`), and data sent/received via the [Measurement API](https://cumulocity.com/api/core/#tag/Measurements) (`/measurement/measurements`), [Event API](https://cumulocity.com/api/core/#tag/Events), and [Alarm API](https://cumulocity.com/api/core/#tag/Alarms).
 {{< /c8y-details >}}
 
 
@@ -88,7 +90,7 @@ The Device Management UI utilizes core REST APIs: Inventory (`/inventory/managed
 A device protocol defines how data from a specific device type is transferred into the {{< product-c8y-iot >}} platform and translated into the {{< product-c8y-iot >}} data model.  
 
 {{< c8y-details title="Developer details" >}}
-Standard protocols (REST, MQTT) follow documented patterns. Custom protocols may involve creating specific managed objects via the Inventory API or dedicated microservice APIs.
+Standard protocols (REST, MQTT) follow documented patterns. Custom protocols may involve creating specific managed objects via the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) or dedicated microservice APIs.
 {{< /c8y-details >}}
 
 
@@ -117,7 +119,11 @@ The DTM application is supported by a dedicated dtm microservice and a dedicated
 
 ### Document {#document}
 
-{{< product-c8y-iot >}} stores all operational data, such as [managed objects](#managed-object), [alarms](#alarm), and [measurements](#measurement), as documents. A document is a versatile JSON structure with a unique identifier, allowing it to be referenced in URLs of [web applications](#web-application) or [REST APIs](#rest-api).  
+{{< product-c8y-iot >}} stores all operational data, such as [managed objects](#managed-object), [alarms](#alarm), and [measurements](#measurement), as documents. Documents are the fundamental JSON structures used in {{< product-c8y-iot >}} [REST APIs](#rest-api).
+
+{{< c8y-details title="Developer details" >}}
+A document is a versatile JSON structure with a unique identifier, allowing it to be referenced in URLs of web applications or REST APIs. All major platform entities are represented as JSON documents manipulated via specific API endpoints.
+{{< /c8y-details >}}
 
 
 ### Domain model {#domain-model}
