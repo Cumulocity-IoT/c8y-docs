@@ -42,10 +42,6 @@ Rules are configured by applications that have the smart rules (NEW) plugin inst
 {{< /c8y-details >}}
 
 
-### SSO (Single sign-on) {#sso}
-
-SSO (Single sign-on) is an [authentication](#authentication) method that allows [users](#user) to log into {{< product-c8y-iot >}} using credentials from an external, third-party identity provider (IdP) that supports the OAuth2 protocol, such as Azure AD.  
-
 
 ### {{< standard-tenant >}} {#standard-tenant}
 

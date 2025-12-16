@@ -11,7 +11,9 @@ _build:
 
 ### Dashboard {#dashboard}
 
-Dashboards are customizable views within [applications](#application) like the [Cockpit application](#cockpit-application), composed of various [widgets](#widget), used to visualize data, monitor [assets](#asset), and potentially trigger actions.   
+Dashboards are customizable views within [applications](#application) like the [Cockpit application](#cockpit-application), composed of various [widgets](#widget), used to visualize data, monitor [assets](#asset), and potentially trigger actions.
+
+See also [Working with dashboards](/cockpit/working-with-dashboards/) in the documentation.  
 
 {{< c8y-details title="Developer details" >}}
 Dashboards are stored as managed objects in the Inventory, with a `c8y_Dashboard` fragment. Their configuration, including layout and widget settings, is stored as a complex JSON object within this managed object. Dashboards are created and updated via the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) (`POST /inventory/managedObjects` and `PUT /inventory/managedObjects/{id}`).
@@ -19,12 +21,16 @@ Dashboards are stored as managed objects in the Inventory, with a `c8y_Dashboard
 
 ### Data broker {#data-broker}
 
-The data broker functionality is an optional feature in {{< enterprise-tenant >}}s which lets you share data selectively with other [tenants](#tenant).  
+The data broker functionality is an optional feature in {{< enterprise-tenant >}}s which lets you share data selectively with other [tenants](#tenant).
+
+ See also [Data broker](/data-broker/) in the documentation.
 
 
 ### Data explorer {#data-explorer}
 
 The data explorer is a visualization tool for exploring, comparing, and analyzing IoT data, such as [measurements](#measurement), [alarms](#alarm), and [events](#event), from specific [assets](#asset) or across all assets.  
+
+See also [Data explorer](/cockpit/data-explorer/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 The data explorer UI component uses the [Measurement API](https://cumulocity.com/api/core/#tag/Measurements
@@ -51,7 +57,9 @@ A data point is a UI concept and has no direct API. The underlying data is retri
 
 ### Data point library {#data-point-library}
 
-The data point library provides a collection of templates used to standardize the visualization of measurement data across your account. Each template targets a specific [measurement](#measurement), identified by its [fragment](#fragment) and series, and defines its visual properties (such as label, color, unit, threshold ranges). This ensures that all matching time series from any [device](#device) are displayed consistently.   
+The data point library provides a collection of templates used to standardize the visualization of measurement data across your account. Each template targets a specific [measurement](#measurement), identified by its [fragment](#fragment) and series, and defines its visual properties (such as label, color, unit, threshold ranges). This ensures that all matching time series from any [device](#device) are displayed consistently.
+
+See also [Data point library](/cockpit/data-point-library/) in the documentation.  
 
 {{< c8y-details title="Developer details" >}}
 The data point library is managed via the Cockpit UI. The entries are stored in the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) with a fragment called `c8y_Kpi`.
@@ -62,7 +70,7 @@ The data point library is managed via the Cockpit UI. The entries are stored in 
 A device is a special type of [asset](#asset) that represents a physical piece of equipment connected to the {{< product-c8y-iot >}} platform. Devices are distinct from other assets because they can send data and can receive remote operations.
 
 {{< c8y-details title="Developer details" >}}
-In the inventory, devices are represented as managed objects (/inventory/managedObjects), marked with the `c8y_IsDevice` fragment. The identity is managed via the Identity API (`/identity/externalIds`), operations via the Device Control API (`/devicecontrol/operations`), and data sent/received via the [Measurement API](https://cumulocity.com/api/core/#tag/Measurements) (`/measurement/measurements`), [Event API](https://cumulocity.com/api/core/#tag/Events), and [Alarm API](https://cumulocity.com/api/core/#tag/Alarms).
+In the inventory, devices are represented as managed objects (/inventory/managedObjects), marked with the `c8y_IsDevice` fragment. The identity is managed via the [Identity API](https://{{< domain-c8y >}}/api/core/#tag/Identity-API) (`/identity/externalIds`), operations via the [Device Control API](https://cumulocity.com/api/core/#tag/Device-control-API) (`/devicecontrol/operations`), and data sent/received via the [Measurement API](https://cumulocity.com/api/core/#tag/Measurements) (`/measurement/measurements`), [Event API](https://cumulocity.com/api/core/#tag/Events), and [Alarm API](https://cumulocity.com/api/core/#tag/Alarms).
 {{< /c8y-details >}}
 
 
@@ -78,10 +86,10 @@ In the inventory, agents are represented as managed object, marked with the `com
 
 The Device Management application is one of the default [applications](#application) of {{< product-c8y-iot >}}. It provides functionalities for connecting, managing and monitoring [devices](#device) and allows to control and troubleshoot devices remotely.
 
-For details see [Device Management application](/device-management-application/) in the documentation.
+See also [Device Management application](/device-management-application/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
-The Device Management UI utilizes core REST APIs: Inventory (`/inventory/managedObjects`), Identity (`/identity/externalIds`), Device Control (`/devicecontrol/operations`), and data APIs (`Measurement/Event/Alarm`).
+The Device Management UI utilizes core REST APIs: [Inventory](https://cumulocity.com/api/core/#tag/Inventory-API) (`/inventory/managedObjects`), [Identity](https://cumulocity.com/api/core/#tag/Identity-API) (`/identity/externalIds`), [Device Control](https://cumulocity.com/api/core/#tag/Device-control-API) (`/devicecontrol/operations`), and data APIs (`Measurement/Event/Alarm`).
 {{< /c8y-details >}}
 
 
@@ -99,7 +107,7 @@ Standard protocols (REST, MQTT) follow documented patterns. Custom protocols may
 The device replacement feature allows the replacement of physical devices without losing the historical data associated with the original [device](#device).  
 
 {{< c8y-details title="Developer details" >}}
-The  device replacement process is centered around the Identity API (`/identity/externalIds`). It involves re-mapping the external identifiers from the old device to the new one while keeping the same managed object ID in the inventory.
+The  device replacement process is centered around the [Identity API](https://{{< domain-c8y >}}/api/core/#tag/Identity-API) (`/identity/externalIds`). It involves re-mapping the external identifiers from the old device to the new one while keeping the same managed object ID in the inventory.
 {{< /c8y-details >}}
 
 
@@ -110,7 +118,9 @@ A digital twin is a virtual representation of a physical asset or system that is
 
 ### Digital Twin Manager (DTM) {#dtm}
 
-The Digital Twin Manager (DTM) is a schema-based modeling [application](#application) in {{< product-c8y-iot >}} that enables users to create and manage data model schemas, which serve as blueprints for modeling [assets](#asset), [properties](#asset-property), and other [managed objects](#managed-object), acting as reusable templates within the platform.  
+The Digital Twin Manager (DTM) is a schema-based modeling [application](#application) in {{< product-c8y-iot >}} that enables users to create and manage data model schemas, which serve as blueprints for modeling [assets](#asset), [properties](#asset-property), and other [managed objects](#managed-object), acting as reusable templates within the platform.
+
+See also [Digital Twin Manager](/dtm/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 The DTM application is supported by a dedicated dtm microservice and a dedicated API (`/service/dtm/`) to manage the lifecycle of asset models, asset properties, and asset instances.
@@ -129,3 +139,9 @@ A document is a versatile JSON structure with a unique identifier, allowing it t
 ### Domain model {#domain-model}
 
 The domain model is the conceptual framework that defines how {{< product-c8y-iot >}} structures, represents, and relates different types of information ([inventory](#inventory), [measurements](#measurement), [events](#event), [operations](#operation)). Data is organized as modular [fragments](#fragment) within JSON documents, allowing flexible extension and customization.  
+
+See also [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model/) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+The domain model is implemented and exposed through the core REST APIs ([Inventory](https://cumulocity.com/api/core/#tag/Inventory-API), [Measurement](https://cumulocity.com/api/core/#tag/Measurement-API), [Event](https://cumulocity.com/api/core/#tag/Event-API), [Alarm](https://cumulocity.com/api/core/#tag/Alarm-API)). Data is organized as modular fragments within JSON documents, allowing flexible extension and customization.
+{{< /c8y-details >}}

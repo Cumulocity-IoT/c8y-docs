@@ -84,4 +84,8 @@ See [Analytics Builder](#analytics-builder).
 
 Multi-tenancy is an architecture in which a single instance of a software application serves multiple customers ([tenants](#tenant)). In {{< product-c8y-iot >}}, each tenant has a physically separated data space. Data sharing between tenants is disabled by default and must be explicitly configured (for example, using the [data broker](#data-broker)).  
 
-See also [Multi-tenancy](/concepts/tenant-hierarchy/#multi-tenancy) in the documentation. 
+See also [Multi-tenancy](/concepts/tenant-hierarchy/#multi-tenancy) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+Multi-tenancy is an architectural feature, primarily managed by {{< enterprise-tenant >}}s via the [Tenant API](https://cumulocity.com/api/core/#tag/Tenant-API) (/tenant/tenants).
+{{< /c8y-details >}}

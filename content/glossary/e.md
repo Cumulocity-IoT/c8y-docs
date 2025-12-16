@@ -20,6 +20,10 @@ An {{< enterprise-tenant >}} is a [tenant](#tenant) type in the {{< product-c8y-
 
 See also [Enterprise tenant administration](/enterprise-tenant/enterprise-tenant-introduction/) in the documentation.
 
+{{< c8y-details title="Developer details" >}}
+Enterprise tenants use specific administrative endpoints for detailed configuration such as a tenant domain or an email template. Subtenant management is performed via the [Tenant API](https://cumulocity.com/api/core/#tag/Tenant-API) (POST /tenant/tenants). Application and branding subscriptions for subtenants are managed via POST /tenant/tenants/{tenantId}/applications. 
+{{< /c8y-details >}}
+
 
 ### EPL (Event Processing Language) {#epl}
 
@@ -51,7 +55,7 @@ Events are managed via the [Event API](https://cumulocity.com/api/core/#tag/Even
 
 Export is a feature of the [Cockpit application](#cockpit-application) that allows users to extract a limited amount of platform data, such as [measurements](#measurement), [alarms](#alarm), or [events](#event), into CSV or XLSX files. Exports can be configured with filters for specific [devices](#device), time ranges, and data fields. The scheduling of recurring exports is a key function, managed by the report-agent microservice and configured within the Cockpit application.
 
-See also [Exports](/cockpit/exports/) in the documentation. 
+See also [Exports](/cockpit/exports/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 Export configurations are managed as a special type of managed object via the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) (`/inventory/managedObjects`). The object's JSON payload contains fragments defining the export parameters (filters, fields, file type) and schedule. The report-agent microservice reads these managed objects to execute scheduled exports. Manual exports triggered from the UI are also handled by this backend service, which sends the user an email with a download link.

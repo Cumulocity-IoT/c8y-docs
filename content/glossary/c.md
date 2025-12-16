@@ -43,7 +43,7 @@ The child devices relationship is managed via the [Inventory API](https://cumulo
 
 The Cockpit application is one of the default [applications](#application) of {{< product-c8y-iot >}}. It provides a self-service UI to manage and monitor IoT assets and data from a business perspective, like managing [assets](#asset), visualizing data, working with [dashboards](#dashboard) and managing [reports](#report).   
 
-For details, see [Cockpit](/cockpit/) in the documentation.
+See also [Cockpit](/cockpit/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 The Cockpit UI uses core REST APIs: [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) (`/inventory/managedObjects`) for assets/groups, [Measurement API](https://cumulocity.com/api/core/#tag/Measurements
@@ -55,7 +55,7 @@ The Cockpit UI uses core REST APIs: [Inventory API](https://cumulocity.com/api/c
 
 The communication hierarchy models how [devices](#device) are connected to the platform from a network communication perspective. It is built using the [child devices](#child-device) relationship, with agents or gateways typically forming the root of the hierarchy. This structure reflects the physical or network topology, as opposed to the logical business structure represented by the [asset hierarchy](#asset-hierarchy).  
 
-For details, see [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model/#object-hierarchies) in the documentation.
+See also [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model/#object-hierarchies) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 The communication hierarchy is managed via the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) endpoints `GET /inventory/managedObjects/{id}/childDevices`, `POST /inventory/managedObjects/{id}/childDevices`, and `DELETE /inventory/managedObjects/{id}/childDevices/{childId}`.
@@ -66,7 +66,7 @@ The communication hierarchy is managed via the [Inventory API](https://cumulocit
 
 The configuration management feature allows administrators and [applications](#application) to remotely manage the settings of a [device](#device). This is typically achieved by creating and applying a configuration operation.
 
-For details, see [Managing configurations](/device-management-application/managing-device-data/#managing-configurations) in the documentation. 
+See also [Managing configurations](/device-management-application/managing-device-data/#managing-configurations) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 Configuration management is primarily handled via the [Device Control API](https://cumulocity.com/api/core/#tag/Device-control-API). A configuration update is sent by creating an operation via `POST /devicecontrol/operations` containing a `c8y_Configuration` fragment. For larger files, the configuration can be uploaded via `POST /inventory/binaries` and referenced in the operation.
@@ -103,7 +103,7 @@ The {{< product-c8y-iot >}} CLI (Command Line Interface) is a software tool prov
 
 {{< product-c8y-iot >}} Datahub is a {{< product-c8y-iot >}} [application](#application) for periodically offloading data from the [{{< product-c8y-iot >}} operational store](#operational-store) to a [data lake](#data-lake) and querying the data lake contents.
 
-For details, see [DataHub](/datahub/datahub-overview/) in the documentation.
+See also [DataHub](/datahub/datahub-overview/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 DataHub provides a REST API (`/service/datahub/`) to proxy query-related requests to the Dremio engine.
@@ -119,7 +119,7 @@ The [{{< product-c8y-iot >}} Developer Codex](https://cumulocity.com/codex/) is 
 
 {{< product-c8y-iot >}} Edge is the onsite solution of {{< product-c8y-iot >}} intended to run as a local software application on industrial PC’s or local servers.
 
-For details, see [Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/k8-edge-introduction/) in the documentation.
+See also [Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/k8-edge-introduction/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 Core platform APIs (Inventory, Measurement, and so on) are typically available locally on the Edge instance.
@@ -144,14 +144,14 @@ The operational store is accessed indirectly via the standard REST APIs for resp
 
 The {{< sensor-app >}} is a free smartphone [application](#application) for iOS and Android that turns a smartphone into a managed IoT [device](#device), enabling the real-time collection of sensor data from the phone, connected Bluetooth devices, and supported OBD sensors. It securely transmits this data to the {{< product-c8y-iot >}} platform and supports device registration, live data visualization, [event](#event) and [alarm](#alarm) triggering, and remote device operations, providing an easy entry point for exploring {{< product-c8y-iot >}}’s IoT capabilities.  
 
-For details, see [{{< sensor-app >}}](/sensor-app/sensorapp-introduction/) in the documentation.
+See also [{{< sensor-app >}}](/sensor-app/sensorapp-introduction/) in the documentation.
 
 
 ### {{< product-c8y-iot >}} Streaming Analytics {#streaming-analytics}
 
 The {{< product-c8y-iot >}} Streaming Analytics application allows users to add their own logic for the immediate, real-time processing of incoming data. Users can build [Analytics Builder](#analytics-builder) [models](#model) or write custom [EPL Apps](#epl-apps) to analyze data streams, generate new data, create [alarms](#alarm), or trigger [operations](#operation) on [devices](#device).  
 
-For details, see [Analytics > Streaming Analytics](/streaming-analytics/introduction-analytics/) in the documentation.
+See also [Analytics > Streaming Analytics](/streaming-analytics/introduction-analytics/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 Streaming Analytics is powered by the Apama analytics engine. The configuration uses tenant options as described in [Monitoring and configuration](/streaming-analytics/analytics-builder/#monitoring-and-configuration).  Monitoring and diagnostics uses specific REST endpoints (`/service/cep/diagnostics`, `/service/cep/monitoring`) or Prometheus as described in [Troubleshooting and diagnostics](/streaming-analytics/troubleshooting/#monitoring-rest).
