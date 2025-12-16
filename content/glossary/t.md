@@ -27,7 +27,7 @@ The tenant domain refers to the domain name used to access a {{< product-c8y-iot
 
 The tenant hierachy refers to the structure organizing [tenants](#tenant) in {{< product-c8y-iot >}}, involving a [{{< management-tenant >}}](#management-tenant) at the top, [{{< enterprise-tenant >}}s](#enterprise-tenant) below it, and [{{< standard-tenant >}}s](#standard-tenant) at the lowest level.
 
-For details, see [Tenant hierarchy](/concepts/tenant-hierarchy/) in the documentation.
+See also [Tenant hierarchy](/concepts/tenant-hierarchy/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 Tenant hierarchies are managed through the [Tenant API](https://cumulocity.com/api/core/#tag/Tenant-API) (`/tenant/tenants`). Creating a subtenant (POST `/tenant/tenants`) under a parent tenant establishes the hierarchical link.

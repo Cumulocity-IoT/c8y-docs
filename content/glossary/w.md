@@ -19,7 +19,9 @@ Web applications are managed via the [Application API](https://cumulocity.com/ap
 
 ### Web SDK {#web-sdk}
 
-The {{< product-c8y-iot >}} Web SDK is a development framework that enables users to build extensions or [web applications](#web-application) for deployment on the {{< product-c8y-iot >}} platform. It provides secure API access, access to default UI components, and support for custom [branding](#branding), allowing developers to create tailored [applications](#application) that seamlessly integrate with the platform's ecosystem and maintain a consistent user experience. See also the [Cumulocity Developer Codex](#developer-codex).
+The {{< product-c8y-iot >}} Web SDK is a development framework that enables users to build extensions or [web applications](#web-application) for deployment on the {{< product-c8y-iot >}} platform. It provides secure API access, access to default UI components, and support for custom [branding](#branding), allowing developers to create tailored [applications](#application) that seamlessly integrate with the platform's ecosystem and maintain a consistent user experience.
+
+See also [Web SDK](/web/introduction/) in the documentation and the [Cumulocity Developer Codex](#developer-codex).
 
 {{< c8y-details title="Developer details" >}}
 The Web SDK is a development toolkit (primarily Angular-based, `@c8y/ngx-components`, `@c8y/client`) for building web applications. It is not an API itself but enables API usage from frontend applications. All packages can be found on npm in the @c8y scope.

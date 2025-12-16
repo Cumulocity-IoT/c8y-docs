@@ -56,10 +56,14 @@ Microfrontends (plugins) are packaged as standard web applications and uploaded 
 
 Microservices are server-side [applications](#application) that extend {{< product-c8y-iot >}}’s functionality, typically by implementing backend business logic or enabling integration with external systems. They are fully integrated into {{< product-c8y-iot >}}’s hosting, security, and API management, and can be designed to be highly available, scalable, and [multi-tenant](#multi-tenancy).
 
+See also [Microservices](/microservice-sdk/) in the documentation.
+
 
 ### Microservice manifest {#microservice-manifest}
 
-A microservice manifest is a required JSON file (*cumulocity.json*) included within a [microservice](#microservice) package. It provides the necessary metadata for the platform to manage the microservice's deployment, lifecycle, and integration.   
+A microservice manifest is a required JSON file (*cumulocity.json*) included within a [microservice](#microservice) package. It provides the necessary metadata for the platform to manage the microservice's deployment, lifecycle, and integration.
+
+See also [Microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) in the documentation.  
 
 
 ### Microservice SDK {#microservice-sdk}
@@ -79,3 +83,5 @@ See [Analytics Builder](#analytics-builder).
 ### Multi-tenancy {#multi-tenancy}
 
 Multi-tenancy is an architecture in which a single instance of a software application serves multiple customers ([tenants](#tenant)). In {{< product-c8y-iot >}}, each tenant has a physically separated data space. Data sharing between tenants is disabled by default and must be explicitly configured (for example, using the [data broker](#data-broker)).  
+
+See also [Multi-tenancy](/concepts/tenant-hierarchy/#multi-tenancy) in the documentation. 

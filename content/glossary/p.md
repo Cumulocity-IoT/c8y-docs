@@ -11,7 +11,9 @@ _build:
 
 ### Permission {#permission}
 
-Permissions are the most granular level of access control in {{< product-c8y-iot >}}, defining the access rights (for example, READ, CREATE, ADMIN) for a specific capability (for example, [alarms](#alarm), [inventory](#inventory)). Permissions are not assigned to [users](#user) directly. Instead, they are grouped into [roles](#role).  
+Permissions are the most granular level of access control in {{< product-c8y-iot >}}, defining the access rights (for example, READ, CREATE, ADMIN) for a specific capability (for example, [alarms](#alarm), [inventory](#inventory)). Permissions are not assigned to [users](#user) directly. Instead, they are grouped into [roles](#role).
+
+See also [Managing permissions and roles](/standard-tenant/managing-permissions/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 Permissions are granted via roles, which are managed through the [User API](https://cumulocity.com/api/core/#tag/User-API) (`/user/roles`, `/user/inventoryroles)`.

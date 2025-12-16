@@ -35,11 +35,12 @@ The platform provides two versions of this feature:
 - Smart rules collection: Provides a fixed set of rule templates, configured using a simple wizard in the [Cockpit application](#cockpit-application).
 - Smart rules (NEW) plugin: Provides extendable and fully customizable rule templates. These are built using [Analytics Builder](#analytics-builder) and then made available as simple forms in any application (such as [Cockpit](#cockpit-application) and [Device Management](#device-management-application)).
 
-For details, see [smart rules (collection)](/cockpit/smart-rules-collection/) or [smart rules (NEW) plugin](/cockpit/cockpit-smart-rules-plugin/) in the documentation.
+See also [Smart rules collection](/cockpit/smart-rules-collection/) or [Smart rules (NEW) plugin](/cockpit/cockpit-smart-rules-plugin/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 Rules are configured by applications that have the smart rules (NEW) plugin installed such as Cockpit or Device Management. There is no public API for creating the rules. Smart rules are powered by the Apama engine for Smart rules (NEW) and the “smartrule” microservice for the previous generation of smart rules.
 {{< /c8y-details >}}
+
 
 ### SSO (Single sign-on) {#sso}
 
@@ -49,6 +50,8 @@ SSO (Single sign-on) is an [authentication](#authentication) method that allows 
 ### {{< standard-tenant >}} {#standard-tenant}
 
 A standard tenant is a [tenant](#tenant) that does not have tenant management capabilities. Unlike an [{{< enterprise-tenant >}}](#enterprise-tenant) or [{{< management-tenant >}}](#management-tenant), a {{< standard-tenant >}} lacks [multi-tenancy](#multi-tenancy) features and cannot create [subtenants](#subtenant).
+
+See also [Standard tenant administration](/standard-tenant/standard-tenant-introduction/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 The Standard tenant uses core REST APIs but lacks access to multi-tenant administrative APIs available to {{< enterprise-tenant >}}s and {{< management-tenant >}}s.
@@ -60,7 +63,7 @@ The Standard tenant uses core REST APIs but lacks access to multi-tenant adminis
 In {{< product-c8y-iot >}}, a subscription denotes the process by which a [tenant](#tenant) is granted access to an [web application](#web-application) from the [Administration application](#administration-application). A superior tenant (like an [{{< enterprise-tenant >}}](#enterprise-tenant) or the [{{< management-tenant >}}](#management-tenant))) subscribes [applications](#application) and [microservices](microservices) to its subtenants.
 
 - For microservices: Subscription is a mandatory step. A microservice must be subscribed to a tenant to become available.
-- For web ppplications: Subscription makes a shared or marketplace application (like the [Cockpit application](#cockpit-application)) available to a specific tenant.
+- For web applications: Subscription makes a shared or marketplace application (like the [Cockpit application](#cockpit-application)) available to a specific tenant.
 
 See also [Subscribing applications](/enterprise-tenant/managing-tenants/#subscribing-applications) in the documentation.
 

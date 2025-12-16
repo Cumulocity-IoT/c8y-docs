@@ -21,6 +21,8 @@ Fragments are not managed by a dedicated API. They are embedded within other res
 
 The fragment library defines the data structures that are used in {{< product-c8y-iot >}} for device management activities like, for example, [configuration management](#configuration-management). The data structures are expressed as [fragments](#fragment) that can be used inside [managed objects](#managed-object), [operations](#operation) and other resources.  
 
+See also [Fragment library](/device-integration/fragment-library/) in the documentation.
+
 {{< c8y-details title="Developer details" >}}
 The fragment library is a conceptual, documented library of standard JSON structures (fragments) that define the platform's data model for common device capabilities. It serves as a developer reference for building integrations using REST and SmartREST APIs.
 {{< /c8y-details >}}

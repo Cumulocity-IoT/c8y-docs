@@ -16,7 +16,9 @@ Edge Server is an informal term for {{< product-c8y-iot >}} Edge. See [{{< produ
 
 ### {{< enterprise-tenant >}} {#enterprise-tenant}
 
-An {{< enterprise-tenant >}} is a [tenant](#tenant) type in the {{< product-c8y-iot >}} [tenant hierarchy](#tenant-hierarchy) that provides advanced administrative capabilities, primarily focused on managing multiple [subtenants](#subtenant). An {{< enterprise-tenant >}} (sometimes also referred as “parent” tenant) can create, manage, and bill its own subtenants and enables features like custom [branding](#branding), custom domain names, and [user hierarchies](#user-hierarchy).   
+An {{< enterprise-tenant >}} is a [tenant](#tenant) type in the {{< product-c8y-iot >}} [tenant hierarchy](#tenant-hierarchy) that provides advanced administrative capabilities, primarily focused on managing multiple [subtenants](#subtenant). An {{< enterprise-tenant >}} (sometimes also referred as “parent” tenant) can create, manage, and bill its own subtenants and enables features like custom [branding](#branding), custom domain names, and [user hierarchies](#user-hierarchy).
+
+See also [Enterprise tenant administration](/enterprise-tenant/enterprise-tenant-introduction/) in the documentation.
 
 
 ### EPL (Event Processing Language) {#epl}
@@ -47,7 +49,9 @@ Events are managed via the [Event API](https://cumulocity.com/api/core/#tag/Even
 
 ### Export {#export}
 
-Export is a feature of the [Cockpit application](#cockpit-application) that allows users to extract a limited amount of platform data, such as [measurements](#measurement), [alarms](#alarm), or [events](#event), into CSV or XLSX files. Exports can be configured with filters for specific [devices](#device), time ranges, and data fields. The scheduling of recurring exports is a key function, managed by the report-agent microservice and configured within the Cockpit application.   
+Export is a feature of the [Cockpit application](#cockpit-application) that allows users to extract a limited amount of platform data, such as [measurements](#measurement), [alarms](#alarm), or [events](#event), into CSV or XLSX files. Exports can be configured with filters for specific [devices](#device), time ranges, and data fields. The scheduling of recurring exports is a key function, managed by the report-agent microservice and configured within the Cockpit application.
+
+See also [Exports](/cockpit/exports/) in the documentation. 
 
 {{< c8y-details title="Developer details" >}}
 Export configurations are managed as a special type of managed object via the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) (`/inventory/managedObjects`). The object's JSON payload contains fragments defining the export parameters (filters, fields, file type) and schedule. The report-agent microservice reads these managed objects to execute scheduled exports. Manual exports triggered from the UI are also handled by this backend service, which sends the user an email with a download link.

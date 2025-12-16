@@ -22,6 +22,8 @@ The inventory is managed via the [Inventory API](https://cumulocity.com/api/core
 
 Inventory [roles](#role) contain [permissions](#permission) that grant access to specific groups of [devices](#device) or [assets](#asset) in the [inventory](#inventory). They allow fine-grained [authorization](#authorization) to particular assets or device groups and their associated data.
 
+For details, see [Inventory roles](/standard-tenant/managing-permissions/#inventory-roles) in the documentation.
+
 {{< c8y-details title="Developer details" >}}
 Inventory roles are managed via the [User API](https://cumulocity.com/api/core/#tag/User-API) (`/user/inventoryroles`). They are assigned to users for specific managed object groups via `/user/users/{username}/inventoryroles`, linking the user ID, group ID, and inventory role ID.
 {{< /c8y-details >}}  
