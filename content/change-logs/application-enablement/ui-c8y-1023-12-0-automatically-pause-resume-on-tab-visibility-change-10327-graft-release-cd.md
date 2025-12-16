@@ -1,6 +1,6 @@
 ---
 date: ""
-title: automatically pause/resume on tab visibility change (#10327) [GRAFT][release/cd] (#10495)
+title: Automatically pause and resume global context auto-refresh on tab visibility change
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
