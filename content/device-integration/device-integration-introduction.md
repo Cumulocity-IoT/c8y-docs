@@ -18,7 +18,7 @@ We recommend integrating devices via [thin-edge.io](https://thin-edge.io/), an o
 * **Native "SmartREST" Efficiency**: The agent automatically translates simple local JSON messages into Cumulocity's highly efficient SmartREST protocol, significantly reducing bandwidth.
 * **Zero-Code Device Management**: Get immediate access to all device management features - including software management, configuration updates, log retrieval, and remote access.
 * **Automatic Child Device Routing**: Acting as a gateway requires no extra logic; simply publishing data with a child ID causes thin-edge.io to automatically register the external devices (e.g. sensor) in Cumulocity's inventory and route the data to the correct representation of the child device in {{< product-c8y-iot >}}.
-* **Modular Extensibility **: The architecture is designed around plugins, allowing you to extend functionality without having to recompile the core agent.
+* **Modular Extensibility**: The architecture is designed around plugins, allowing you to extend functionality without having to recompile the core agent.
 * **Language-Agnostic Decoupling**: Because thin-edge.io uses a local MQTT bus for communication, your application logic can be written in any language and remains completely isolated from the connectivity logic.
 * **Automated Certificate Lifecycle**: The built-in CLI tools handle the generation, signing, uploading, and rotation of X.509 security certificates.
 
@@ -35,16 +35,16 @@ Not all devices are directly connected to the internet. In such cases, IoT gatew
 * **OPC UA**: Industrial automation protocol for connecting PLCs and industrial equipment. See [OPC UA](/device-integration/opcua/).
 * **MQTT Service**: Flexible MQTT endpoint allowing user-provided microservices to map between custom device payloads and the {{< product-c8y-iot >}} data model. See [MQTT Service](/device-integration/mqtt-service/).
 * **thin-edge.io protocol drivers**: Extend thin-edge.io with custom protocol support for proprietary or specialized device protocols.
-* **Partner gateways**: Use pre-integrated partner gateways that brings support for the required protocol. Explore certified partner devices in the [Device Partner Portal](https://ecosystem.cumulocity.com/).
+* **Partner gateways**: Use pre-integrated partner gateways that bring support for the required protocol. Explore certified partner devices in the [Device Partner Portal](https://ecosystem.cumulocity.com/).
 
 ### LPWAN integration
 
-Low-Power Wide-Area-Network (LPWAN)  technologies are critical for use cases requiring devices to
+Low-Power Wide-Area-Network (LPWAN) technologies are critical for use cases requiring devices to
 * Run on a single battery for years at a very low cost
 * Only transmit small amounts of data intermittently
 * Be positioned in distributed or hard-to-reach locations
 
-{{< product-c8y-iot >}} provides dedicated integrations for varios LPWAN technologies including LoRa, LwM2M and Sigfox. Refer to [LoRa Actility](/device-integration/lora-actility/), [LoRa LORIOT](/device-integration/lora-loriot/) and [Sigfox](/device-integration/sigfox/) for details. For cellular devices, [LWM2M](/device-integration/lwm2m/) can be used.
+{{< product-c8y-iot >}} provides dedicated integrations for various LPWAN technologies including LoRa, LwM2M, and Sigfox. Refer to [LoRa Actility](/device-integration/lora-actility/), [LoRa LORIOT](/device-integration/lora-loriot/), and [Sigfox](/device-integration/sigfox/) for details. For cellular devices, [LWM2M](/device-integration/lwm2m/) can be used.
 
 ### Agent concepts
 
