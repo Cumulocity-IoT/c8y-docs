@@ -1,6 +1,6 @@
 ---
 date: ""
-title: User preferences now retrieved from local storage with inventory storage as fallback
+title: User preferences now retrieved from local storage
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,5 +14,5 @@ build_artifact:
 ticket: MTM-65477
 version: 1023.10.0
 ---
-The retrieval logic of the user preferences contained an issue. For the affected user the user preferences were correctly stored in the local storage, but the retrieval logic was looking for the corresponding values only inside of the inventory.
+Previously, there was an issue in the retrieval logic of the user preferences. For affected users, the user preferences were correctly stored in the local storage, but the retrieval logic only looked for corresponding values in the inventory. This issue has been fixed, and user preferences are now retrieved from the local storage with the inventory storage as fallback.
 This caused the stored user preferences to not take any effect for certain users.
