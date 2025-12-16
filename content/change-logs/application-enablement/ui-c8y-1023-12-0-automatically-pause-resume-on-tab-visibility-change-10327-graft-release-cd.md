@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65227
 version: 1023.12.0
 ---
-Co-authored-by: Dawid Janusz <96060763+DawidSAG@users.noreply.github.com>
+Global context now pauses auto-refresh updates when the browser tab is hidden and resumes when visible. This optimizes resource usage while ensuring the data is refreshed upon return.
