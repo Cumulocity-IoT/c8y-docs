@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-12-12'
 title: User preferences now retrieved from local storage
 product_area: Application enablement & solutions
 change_type:
