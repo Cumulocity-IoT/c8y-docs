@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Enable data point merging on the same axis for the new data point graph and data explorer by default
+title: New data point graph and data explorer by default merge data points on the same axis
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
