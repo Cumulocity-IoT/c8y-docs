@@ -18,7 +18,7 @@ To use Analytics Builder, you must at least have the following permissions:
 |Option management|READ|
 |Inventory|READ|
 
-This is typically achieved by using a global role which has those permissions, and where the role has access to the Analytics Builder application. See [Managing permissions](/standard-tenant/managing-permissions/) for details.
+This is typically achieved by using a global role which has those permissions, and where the role has access to the Analytics Builder application. See [Managing permissions and roles](/standard-tenant/managing-permissions/) for details.
 
 To use EPL Apps, you only need the following permission:
 

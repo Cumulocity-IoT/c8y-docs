@@ -13,17 +13,17 @@ helpcontent:
   content: "Under **Login settings** you can specify your preferred login mode:
 
 
-	**OAI-Secure** - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
+**OAI-Secure** - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
 
-	**Basic Auth** - Should be selected only for specific compatibility reasons, since it only provides basic security.
+**Basic Auth** - Should be selected only for specific compatibility reasons, since it only provides basic security.
 
-  **Single sign-on redirect** - Can only be selected if SSO is configured. If selected, will remove Basic Auth and OAI-Secure login options.
-
-
-	Under **TFA settings**, select the checkbox **Allow two-factor authentication** if you want to allow TFA in your tenant (only possible for administrators).
+**Single sign-on redirect** - Can only be selected if SSO is configured. If selected, will remove Basic Auth and OAI-Secure login options.
 
 
-	Switch to the **Single sign-on** tab to configure single sign-on. For details, see *Configuring single sign-on* in the user documentation."
+Under **TFA settings**, select the checkbox **Allow two-factor authentication** if you want to allow TFA in your tenant (only possible for administrators).
+
+
+Switch to the **Single sign-on** tab to configure single sign-on. For details, see *Configuring single sign-on* in the user documentation."
 ---
 
 

@@ -79,7 +79,7 @@ Note that the account type must be **StorageV2**, and the **Hierarchical namespa
 While the other settings are fixed once the initial configuration was saved, the **AWS access key** and the **Access secret** can be changed afterwards. Click **Edit**, set new values, and either click **Save credentials** to save the update or **Cancel** to keep the old values.
 
 {{< c8y-admon-req >}}
-An S3 bucket with default settings works. If specific security policies are applied, make sure that the minimum policy requirements listed in [https://docs.dremio.com/current/sonar/data-sources/object/s3](https://docs.dremio.com/current/sonar/data-sources/object/s3) are satisfied.
+An S3 bucket with default settings works. If specific security policies are applied, make sure that the minimum policy requirements listed in [https://docs.dremio.com/current/data-sources/object/s3/](https://docs.dremio.com/current/data-sources/object/s3/) are satisfied.
 {{< /c8y-admon-req >}}
 
 **Server-side encryption** is supported while client-side encryption is not. S3 offers three key management mechanisms:
@@ -98,11 +98,7 @@ Value: Your key name, for example, `arn:aws:kms:eu-west-2:123456789012:key/071a8
 **SSE-C**: The client specifies an base64-encoded AES-256 key to be used to encrypt and decrypt the data. **{{< product-c8y-iot >}} DataHub does not support this option.**
 
 ##### NAS {#nas}
-**NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for {{< product-c8y-iot >}} Edge installations. The following settings must be defined for this data lake:
-
-|Settings|Description|
-|:---|:---|
-|Mount path|The mount path refers to a path in the local Linux file system on both the coordinator and executor containers. By default, the file system of {{< product-c8y-iot >}} Edge is mounted into /datalake inside the containers. To use some other folder, you must map the folder into both containers, for example, to /datalake inside the containers.|
+**NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for {{< product-c8y-iot >}} Edge installations.
 
 #### Saving settings {#saving-settings}
 Once all settings are defined, click **Save** in the action bar to the right. During the save process, the following steps are automatically conducted:

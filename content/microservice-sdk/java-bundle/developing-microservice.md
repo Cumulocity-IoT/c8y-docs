@@ -679,6 +679,22 @@ To pass the configuration only to the particular build, execute the following co
 $ mvn microservice:upload -Dupload.application.name=helloworld -Dupload.url=https://demos.cumulocity.com -Dupload.username=demos/username -Dupload.password=****** -Dskip.microservice.upload=false
 ```
 
+
+#### Using Maven in debug mode {#using-maven-in-debug-mode}
+
+Running Maven CLI commands in debug mode (for example, `mvn clean install --debug ...`) may
+generate a very large volume of HTTP-related log output, such as logs from resource downloads. 
+Analyzing this data might quickly become tedious.
+
+To reduce such logging information, HTTP logging can be suppressed with these command line options:
+```
+-Dorg.slf4j.simpleLogger.log.org.apache.http=off
+-Dorg.slf4j.simpleLogger.log.org.apache.http.wire=off
+```
+Besides `off`, `error` or `warn` might also be appropriate values. The parameters can also be added to the Maven configuration file `${MAVEN_HOME}/conf/logging/simplelogger.properties` 
+or to the `MAVEN_OPTS` environment variable. Related documentation can be found in [Maven logging](https://maven.apache.org/maven-logging.html).
+
+
 ### Heap and perm/metadata {#heap-and-permmetadata}
 
 To calculate heap and perm/metadata, it takes the limit defined in the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) (`resources/memory`) and it is converted into Megabytes (MB). For Java applications developed using the Java Microservice SDK the minimal value is 178MB. <br>
@@ -917,5 +933,5 @@ the deprecation of `WebSecurityConfigurerAdapter` by Spring Security. The Micros
 declaration of the `SecurityFilterChain` bean in its internal configuration instead. At the same time, Spring Security
 only allows one of these configuration approaches in a single application. This means that if the old,
 adapter-based method has been used in your code before, you will have to migrate to the new, direct filters
-declaration for applications to start. Refer to the [Spring Security documentation](https://docs.spring.io/spring-security/reference/5.8/migration/servlet/config.html#_stop_using_websecurityconfigureradapter) for more details.
+declaration for applications to start. Refer to the [Spring Security release notes](https://github.com/spring-projects/spring-security/releases/tag/5.8.0) for more details.
 

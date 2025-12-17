@@ -26,7 +26,7 @@ An {{< enterprise-tenant >}} is a [tenant](#tenant) type in the {{< product-c8y-
 
 ### EPL Apps {#epl-apps}
 
-EPL Apps is part of the [{{< product-c8y-iot >}} Streaming Analytics](#streaming-analytics) application. It allows you to develop an EPL app directly within {{< product-c8y-iot >}} using [Apama](#apama) [EPL](#epl), giving you a pro-code environment to define your streaming analytics applications.   
+EPL Apps is part of the [{{< product-c8y-iot >}} Streaming Analytics](#streaming-analytics) application. It allows you to develop a single-file EPL application directly within {{< product-c8y-iot >}} using [Apama](#apama) [EPL](#epl), giving you a pro-code environment to define your streaming analytics applications.   
 
 
 ### Event {#event}

@@ -10,7 +10,7 @@ If you cannot set up new endpoints, check if you have sufficient permissions.
 
 To set up new endpoints, you need ADMIN permission for "Device control" to be able to register a device and ADMIN permission for "Remote access" to be able to add an endpoint.
 
-For more information on permissions, refer to [Managing permissions](/standard-tenant/managing-permissions/).
+For more information on permissions, refer to [Managing permissions and roles](/standard-tenant/managing-permissions/).
 
 **Connection fails**
 

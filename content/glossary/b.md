@@ -11,7 +11,7 @@ _build:
 
 ### Block (Analytics Builder) {#block}
 
-Blocks are the basic processing units of a [model](#model). Each block implements some predefined functionality, such as receiving data from a sensor, performing a calculation, detecting a condition, or generating an output signal, and processes data accordingly. Each block has a number of inputs, outputs and configurable parameters. [Analytics Builder](#analytics-builder) comes with a set of prebuilt blocks, but can also be extended with custom blocks.
+Blocks are the basic processing units of an Analytics Builder [model](#model). Each block implements some predefined functionality, such as receiving data from a sensor, performing a calculation, detecting a condition, or generating an output signal, and processes data accordingly. Each block has a number of inputs, outputs and configurable parameters. [Analytics Builder](#analytics-builder) comes with a set of prebuilt blocks. You can also use the [Analytics Builder Block SDK](https://github.com/Cumulocity-IoT/apama-analytics-builder-block-sdk) to write, test, and package custom blocks and to upload these blocks into Analytics Builder.
 
 
 ### Branding {#branding}

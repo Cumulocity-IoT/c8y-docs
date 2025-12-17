@@ -59,7 +59,7 @@ To add a new group as a child of an existing group, navigate to its **Subassets*
 1. In the navigator, click a group to open it.
 2. In the **Subassets** page, you can edit the name and description of the group.
 
-For further information on permissions, see [Managing permissions](/standard-tenant/managing-permissions/).
+For further information on permissions, see [Managing permissions and roles](/standard-tenant/managing-permissions/).
 
 ### To delete a group {#to-delete-a-group}
 

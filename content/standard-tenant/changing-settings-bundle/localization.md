@@ -21,7 +21,7 @@ Using the **Localization** functionality you can add custom translations for exi
 
 - To add/update/delete localization identifiers: ADMIN permission for permission type "Application management"
 
-- Your user must have a role with READ permission for the permission type "Application management". See [Managing permissions](/standard-tenant/managing-permissions/) for more information.
+- Your user must have a role with READ permission for "Application management". See [Managing permissions and roles](/standard-tenant/managing-permissions/) for more information.
 
 {{< /c8y-admon-req >}}
 

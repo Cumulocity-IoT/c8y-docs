@@ -40,15 +40,17 @@ In the context menu of each offloading pipeline, you will find actions for manag
 
 ##### Editing/showing an offloading pipeline {#editingshowing-an-offloading-pipeline}
 
-Click **Edit** to edit the current settings. Only inactive pipelines can be edited. Note that you cannot change the {{< product-c8y-iot >}} base collection selected for this pipeline. For the measurements collection, the target table layout cannot be changed as well. Additional filter predicates and additional result columns can be changed. Note that these changes are not applied to already exported data. A change to the offloading pipeline only affects data to be exported in upcoming offloading runs.
+Click **Edit** to edit the current settings. Only inactive pipelines can be edited. Note that you cannot change the {{< product-c8y-iot >}} base collection selected for this pipeline. Additional filter predicates and additional result columns can be changed. 
+
+In case of an inventory offloading, the view can be changed as well, which will also result in different additional result columns being auto-detected. If you change a view and you have selected additional columns beforehand, you can either keep those selected columns or discard them. In case you keep a selected column and it is not among the auto-detected columns of the new view, the offloading configuration cannot be completed as that column is unknown for this view.
+
+Note that these changes are not applied to already exported data. A change to the offloading pipeline only affects data to be exported in upcoming offloading runs.
 
 For active pipelines, click **Show** to browse through the configuration. You cannot edit the settings.
 
 ##### Copying an offloading pipeline {#copying-an-offloading-pipeline}
 
 Click **Copy** to copy the current configuration. The new configuration is an identical copy of the selected configuration except for the task name and the target table, both of which will have a unique suffix appended. You can change the settings according to your needs.
-
-A TrendMiner offloading configuration cannot be copied, as only one TrendMiner configuration is allowed.
 
 ##### Deleting an offloading pipeline {#deleting-an-offloading-pipeline}
 
@@ -86,3 +88,5 @@ Click **Import** to open the import dialog. Either drop the file in the import c
 To import the selected configurations, click **Import**. Click **Cancel** to cancel the import process.
 
 As the export does not include whether a configuration was active, you must manually activate the configurations after an import.
+
+For the specific case of inventory offloadings, their definition may not yet be based on views as described in [Configure inventory collection](#configuring-inventory-collection). When importing such an offloading, it will be configured so that it still reads directly from the inventory collection. It is advisable, however, to change the configuration and use a view instead in order to ensure that only relevant data is offloaded.
