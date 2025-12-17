@@ -49,7 +49,7 @@ The platform provides two versions of this feature:
 See also [Smart rules collection](/cockpit/smart-rules-collection/) or [Smart rules (NEW) plugin](/cockpit/cockpit-smart-rules-plugin/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
-Rules are configured by applications that have the smart rules (NEW) plugin installed such as Cockpit or Device Management. There is no public API for creating the rules. Smart rules are powered by the Apama engine for Smart rules (NEW) and the “smartrule” microservice for the previous generation of smart rules.
+Rules are configured by applications that have the smart rules (NEW) plugin installed such as Cockpit or Device Management. Smart rules are powered by the Apama engine for Smart rules (NEW) and the “smartrule” microservice for the previous generation of smart rules.
 {{< /c8y-details >}}
 
 

@@ -23,7 +23,11 @@ Dashboards are stored as managed objects in the Inventory, with a `c8y_Dashboard
 
 The data broker functionality is an optional feature in {{< enterprise-tenant >}}s which lets you share data selectively with other [tenants](#tenant).
 
- See also [Data broker](/data-broker/) in the documentation.
+See also [Data broker](/data-broker/) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+Configuration of broker connections is done using the Administration application. The underlying REST APIs are internal to the feature-broker application and are not part of the public API set. The new, reliable, messaging-based broker is used if the databroker-agent-server microservice is subscribed to the tenant. Otherwise, the legacy in-memory implementation is used.
+{{< /c8y-details >}}
 
 
 ### Data explorer {#data-explorer}

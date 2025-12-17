@@ -14,7 +14,7 @@ _build:
 A tenant represents a logically isolated data space within {{< product-c8y-iot >}}, typically corresponding to a customer or organizational unit. It has its own [users](#user), [devices](#device), [applications](#application), and data (see [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model/)).
 
 {{< c8y-details title="Developer details" >}}
-Tenants are managed via the [Tenant API](https://cumulocity.com/api/core/#tag/Tenant-API) (`/tenant/tenants`). This includes creating subtenants (POST), retrieving details (GET), updating properties (PUT), and deleting (DELETE). Tenant-specific configurations are managed via the Tenant Options API (`/tenant/options`).
+Tenants are managed via the [Tenant API](https://cumulocity.com/api/core/#tag/Tenant-API) (`/tenant/tenants`). This includes creating subtenants (POST), retrieving details (GET), updating properties (PUT), and deleting (DELETE). Tenant-specific configurations are managed via the [Tenant Options API](https://cumulocity.com/api/core/#tag/Options) (`/tenant/options`).
 {{< /c8y-details >}}
 
 
@@ -45,12 +45,23 @@ A tenant ID is a unique identifier assigned to each [tenant](#tenant). The tenan
 
 ### Tenant option {#tenant-option}
 
-Tenant options are configurable key-value pairs associated with a [tenant](#tenant), used to customize platform behavior, [application](#application) settings, or store tenant-specific configurations.  
+Tenant options are configurable key-value pairs associated with a [tenant](#tenant), used to customize platform behavior, [application](#application) settings, or store tenant-specific configurations.
+
+{{< c8y-details title="Developer details" >}}
+Tenant options are managed via the [Tenant Options API](https://cumulocity.com/api/core/#tag/Options) (`/tenant/options`). Options can be created (POST), retrieved (GET), updated (PUT), and deleted (DELETE).
+There is a mechanism to [encrypt](/microservice-sdk/general-aspects/#encryption) tenant options. If a tenant option is created with a key name that starts with `credentials.`, it is automatically encrypted. When the option is retrieved from a microservice, the `credentials.` prefix is removed, and the value is decrypted only if the microservice is the owner of the option.
+{{< /c8y-details >}}  
 
 
 ### Tenant policy {#tenant-policy}
 
-Tenant policies are predefined sets of [tenant options](#tenant-option) and retention rules that can be created in a [{{< management-tenant >}}](#management-tenant) or [{{< enterprise-tenant >}}](#enterprise-tenant) and applied when creating new [subtenants](#subtenant) to ensure consistent initial configurations.   
+Tenant policies are predefined sets of [tenant options](#tenant-option) and retention rules that can be created in a [{{< management-tenant >}}](#management-tenant) or [{{< enterprise-tenant >}}](#enterprise-tenant) and applied when creating new [subtenants](#subtenant) to ensure consistent initial configurations. Tenant policies are created and managed in the [Administration application](#administration-application).
+
+See also [Tenant policies](/enterprise-tenant/managing-tenants/#tenant-policies) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+Tenant policies are stored in the inventory and managed through the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) endpoints (`/inventory/managedObjects`). When creating or updating a policy the request body must follow a specific format, for example, must contain the `c8y_TenantPolicy` fragment.
+{{< /c8y-details >}}    
 
 
 ### Tech Community {#tech-community}
