@@ -323,8 +323,9 @@ The following alarms are raised for invalid messages on the Pulsar `to-device` t
 |------------------------------------------|-------------------------------------------------------------------|
 | `c8y_MqttService_ToDevice_NoKey`         | The message key is not set.                                       |
 | `c8y_MqttService_ToDevice_InvalidKey`    | The message key is set but does not match the client id or topic. |
-| `c8y_MqttService_ToDevice_EmptyClientId` | The client id is set but has an empty value.                      |
-| `c8y_MqttService_ToDevice_EmptyTopic`    | The topic is set but has an empty value.                          |
+| `c8y_MqttService_ToDevice_EmptyClientId` | The `clientID` property is set but has an empty value.            |
+| `c8y_MqttService_ToDevice_MissingTopic`  | The `topic` property is not set.                                  |
+| `c8y_MqttService_ToDevice_EmptyTopic`    | The `topic` property is set but has an empty value.               |
 
 A message with a non-empty `clientID` property referring to an MQTT device that is not currently connected is **not** considered to be invalid.
 However, this message will not be delivered to the device, even if it connects later, because of the requirement for devices to use a _clean session_ when connecting.
