@@ -11,7 +11,11 @@ _build:
 
 ### CCU ({{< product-c8y-iot >}} Compute Unit) {#ccu}
 
-CCU (Cumulocity Compute Unit) is a standardized measure for computational resources consumed by custom [microservices](#microservice) deployed by a customer. 1 CCU typically equates to 1 CPU core and 4 GiB of memory. CCUs are calculated based on daily average resource usage and used for billing purposes. The CCU calculation takes into account the resources denoted in the [microservice manifest](#microservice-manifest) and the subscribed time for each microservice.  
+CCU (Cumulocity Compute Unit) is a standardized measure for computational resources consumed by custom [microservices](#microservice) deployed by a customer. 1 CCU typically equates to 1 CPU core and 4 GiB of memory. CCUs are calculated based on daily average resource usage and used for billing purposes. The CCU calculation takes into account the resources denoted in the [microservice manifest](#microservice-manifest) and the subscribed time for each microservice.
+
+{{< c8y-details title="Developer details" >}}
+The calculation is performed offline for billing based on resource requests in the *cumulocity.json* manifest. Aggregated data can be viewed in usage statistics reports accessible via the Tenant Statistics API.
+{{< /c8y-details >}}   
 
 
 ### Change logs {#change-logs}

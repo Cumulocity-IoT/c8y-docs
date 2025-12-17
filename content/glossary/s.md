@@ -13,10 +13,20 @@ _build:
 
 A service user is a non-human user account that is created automatically when a [tenant](#tenant) subscribes to a [microservice](#microservice). It allows the microservice to interact with the tenant's data via the [REST API](#rest-api) for background tasks, independent of any end-user's session.  
 
+{{< c8y-details title="Developer details" >}}
+A microservice retrieves the credentials for its service user by making an authenticated GET request to `/application/currentApplication/subscriptions` using its bootstrap credentials. To obtain the service user, a service bootstrap user must be used. The service bootstrap user is provisioned to the microservice in its [microservice runtime](/microservice-sdk/general-aspects/#microservice-runtime) environment variables.
+{{< /c8y-details >}}
+
 
 ### Smart group {#smart-group}
 
-Smart groups are [groups](#group) whose membership is dynamically determined based on [device](#device) properties matching defined criteria, rather than static assignment. This is a feature of the [Device Management application](#device-management-application).  
+Smart groups are [groups](#group) whose membership is dynamically determined based on [device](#device) properties matching defined criteria, rather than static assignment. This is a feature of the [Device Management application](#device-management-application).
+
+See also [Using smart groups](/device-management-application/grouping-devices/#using-smart-groups) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+A smart group is a standard managed object of type `c8y_DeviceGroup` containing a `c8y_DynamicGroup` fragment that stores a filter query. To get the set of devices contained in this smart group at any given time, the filter query must be executed on the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API).
+{{< /c8y-details >}}  
 
 
 ### SmartREST {#smartrest}
@@ -26,6 +36,7 @@ SmartREST is a lightweight, CSV-based [device protocol](#device-protocol) to exc
 {{< c8y-details title="Developer details" >}}
 Devices communicate dedicated MQTT topics with {{< product-c8y-iot >}}. Each row of CSV data begins with a message ID that corresponds to either a specific, pre-registered request template or an extensive suite of built-in templates.
 {{< /c8y-details >}}
+
 
 ### Smart rules {#smart-rules}
 
@@ -40,7 +51,6 @@ See also [Smart rules collection](/cockpit/smart-rules-collection/) or [Smart ru
 {{< c8y-details title="Developer details" >}}
 Rules are configured by applications that have the smart rules (NEW) plugin installed such as Cockpit or Device Management. There is no public API for creating the rules. Smart rules are powered by the Apama engine for Smart rules (NEW) and the “smartrule” microservice for the previous generation of smart rules.
 {{< /c8y-details >}}
-
 
 
 ### {{< standard-tenant >}} {#standard-tenant}
