@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65314
 version: 1023.16.3
 ---
-Previously, data points were not merged on the same axis by default for the new data point graph and data explorer, which made it difficult to compare data. With this change, data points are now merged on the same axis by default. This improves the usability and allows users to easily compare and analyze data on the same chart without additional configuration.
+Previously, data points were not merged on the same axis by default in the new data point graph and data explorer, which made it difficult to compare data. With this change, data points are now merged on the same axis by default. This improves the usability and allows users to easily compare and analyze data on the same chart without additional configuration.
