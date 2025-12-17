@@ -21,7 +21,7 @@ An {{< enterprise-tenant >}} is a [tenant](#tenant) type in the {{< product-c8y-
 See also [Enterprise tenant administration](/enterprise-tenant/enterprise-tenant-introduction/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
-Enterprise tenants use specific administrative endpoints for detailed configuration such as a tenant domain or an email template. Subtenant management is performed via the [Tenant API](https://cumulocity.com/api/core/#tag/Tenant-API) (POST /tenant/tenants). Application and branding subscriptions for subtenants are managed via POST /tenant/tenants/{tenantId}/applications. 
+Enterprise tenants use specific administrative endpoints for detailed configuration such as a tenant domain or an email template. Subtenant management is performed via the [Tenant API](https://cumulocity.com/api/core/#tag/Tenant-API) (`POST /tenant/tenants`). Application and branding subscriptions for subtenants are managed via `POST /tenant/tenants/{tenantId}/applications`.
 {{< /c8y-details >}}
 
 
@@ -68,5 +68,5 @@ Extensions are official or community-supported packages that add new functionali
 For information about uploading extensions for Analytics Builder, see [Creating your own blocks](/streaming-analytics/analytics-builder/#creating-your-own-blocks).
 
 {{< c8y-details title="Developer details" >}}
-There is no central API for an "extensions library." Individual extensions are bundled into a package which is installed as an application via the [Application API](https://cumulocity.com/api/core/#tag/Application-API) (`/application/applications`) and contains an `isPackage` flag inside the manifest. Additionally, extensions use the Versioning API, to ensure compatibility when they are integrated into an application.
+Individual extensions are bundled into a package which is installed as an application via the [Application API](https://cumulocity.com/api/core/#tag/Application-API) (`/application/applications`) and contains an `isPackage` flag inside the manifest. Additionally, extensions use the Versioning API, to ensure compatibility when they are integrated into an application.
 {{< /c8y-details >}}

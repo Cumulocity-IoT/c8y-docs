@@ -11,7 +11,7 @@ _build:
 
 ### Tenant {#tenant}
 
-A tenant represents a logically isolated data space within {{< product-c8y-iot >}}, typically corresponding to a customer or organizational unit. It has its own [users](#user), [devices](#device), [applications](#application), and data.
+A tenant represents a logically isolated data space within {{< product-c8y-iot >}}, typically corresponding to a customer or organizational unit. It has its own [users](#user), [devices](#device), [applications](#application), and data (see [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model/)).
 
 {{< c8y-details title="Developer details" >}}
 Tenants are managed via the [Tenant API](https://cumulocity.com/api/core/#tag/Tenant-API) (`/tenant/tenants`). This includes creating subtenants (POST), retrieving details (GET), updating properties (PUT), and deleting (DELETE). Tenant-specific configurations are managed via the Tenant Options API (`/tenant/options`).
@@ -20,7 +20,11 @@ Tenants are managed via the [Tenant API](https://cumulocity.com/api/core/#tag/Te
 
 ### Tenant domain {#tenant-domain}
 
-The tenant domain refers to the domain name used to access a {{< product-c8y-iot >}} [tenant](#tenant), in the format `<tenant-name\>.\<instance-name\>`. It is used for login and API access and is distinct from the tenant’s unique identifier ([tenant ID](#tenant-id)). For example, a tenant named "acme" on the instance cumulocity.com would have the tenant domain "acme.cumulocity.com". [Enterprise tenants](#enterprise-tenant) and their [subtenants](#subtenant) can optionally configure custom domains for access using the platform’s custom domain feature.  
+The tenant domain refers to the domain name used to access a {{< product-c8y-iot >}} [tenant](#tenant), in the format `<tenant-name\>.\<instance-name\>`. It is used for login and API access and is distinct from the tenant’s unique identifier ([tenant ID](#tenant-id)). For example, a tenant named "acme" on the instance cumulocity.com would have the tenant domain "acme.cumulocity.com". [Enterprise tenants](#enterprise-tenant) and their [subtenants](#subtenant) can optionally configure custom domains for access using the platform’s custom domain feature.
+
+{{< c8y-details title="Developer details" >}}
+The tenant domain is configured via the Administration application and requires subscribing to the sslmanagement microservice.
+{{< /c8y-details >}}  
 
 
 ### Tenant hierarchy {#tenant-hierarchy}

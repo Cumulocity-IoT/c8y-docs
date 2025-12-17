@@ -89,7 +89,7 @@ The Device Management application is one of the default [applications](#applicat
 See also [Device Management application](/device-management-application/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
-The Device Management UI utilizes core REST APIs: [Inventory](https://cumulocity.com/api/core/#tag/Inventory-API) (`/inventory/managedObjects`), [Identity](https://cumulocity.com/api/core/#tag/Identity-API) (`/identity/externalIds`), [Device Control](https://cumulocity.com/api/core/#tag/Device-control-API) (`/devicecontrol/operations`), and data APIs (`Measurement/Event/Alarm`).
+The Device Management UI utilizes core REST APIs: [Inventory](https://cumulocity.com/api/core/#tag/Inventory-API) (`/inventory/managedObjects`), [Identity](https://cumulocity.com/api/core/#tag/Identity-API) (`/identity/externalIds`), [Device Control](https://cumulocity.com/api/core/#tag/Device-control-API) (`/devicecontrol/operations`), and data APIs (Measurement/Event/Alarm).
 {{< /c8y-details >}}
 
 

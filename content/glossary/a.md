@@ -12,16 +12,18 @@ _build:
 
 The Administration application is a default {{< product-c8y-iot >}} application and the central place for platform administrators to manage a tenant. It is used to govern a [tenant](#tenant) by managing [users](#user), [roles](#role), and [permissions](#permission), subscribing to and managing [applications](#application) and [microservices](#microservice), and configuring tenant-level settings such as retention rules, custom properties, and [branding](#branding).
 
-See also [Platform management](/sector/platform_administration/) in the documentation.
+See also [Platform administration](/sector/platform_administration/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
-The Administration application utilizes various REST APIs for its functionality, such as the [User API](https://cumulocity.com/api/core/#tag/User-API) (`/user/...`) for users/roles, [Tenant API](https://cumulocity.com/api/core/#tag/Tenant-API) (`/tenant/...`) for tenant settings/options, and [Application API](https://cumulocity.com/api/core/#tag/Application-API) (`/application/...`) for application/microservice management. Many settings configured in the UI, such as branding and feature toggles, are stored as key-value pairs and can be managed programmatically via the Tenant Options API (`/tenant/options`).
+The Administration application utilizes various REST APIs for its functionality, such as the [User API](https://cumulocity.com/api/core/#tag/User-API) (`/user/...`) for users/roles, [Tenant API](https://cumulocity.com/api/core/#tag/Tenant-API) (`/tenant/...`) for tenant settings/options, and [Application API](https://cumulocity.com/api/core/#tag/Application-API) (`/application/...`) for application/microservice management. Many settings configured in the UI, such as branding and feature toggles, are stored as key-value pairs and can be managed via the [Tenant Options API](https://cumulocity.com/api/core/#tag/Options) (`/tenant/options`).
 {{< /c8y-details >}}
 
 
 ### Alarm {#alarm}
 
 An alarm indicates a condition that requires action from a user or system. Alarms have a lifecycle status (ACTIVE, ACKNOWLEDGED, CLEARED) and a severity (CRITICAL, MAJOR, MINOR, WARNING), and are explicitly tracked within the platform until they are resolved.
+
+See also [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 Alarms are technically a specialized type of event, managed via the [Alarm API](https://cumulocity.com/api/core/#tag/Alarms) (/alarm/alarms). Key properties include type, text, time, status (ACTIVE, ACKNOWLEDGED, CLEARED), and severity (CRITICAL, MAJOR, MINOR, WARNING). Creating an alarm uses POST, and updating status uses PUT on `/alarm/alarms/{alarmId}`. SmartREST templates (for example, 301-304) simplify creation over MQTT/HTTP.
@@ -90,7 +92,7 @@ Assets are represented as managed objects in the [Inventory API](https://cumuloc
 
 An asset hierarchy is a structure within the [inventory](#inventory) that organizes [assets](#asset) (based on [asset models](#asset-model)) and [devices](#device) to reflect their logical or business relationships, such as a factory containing production lines, which in turn contain individual machines. The asset hierarchy is built by nesting assets with one another to form parent-child relationships ([child assets](#child-asset)). It is fundamentally distinct from the [communication hierarchy](#communication-hierarchy), which models the physical network topology ([child devices](#child-device)).
 
-See also [Digital Twin Manager > Asset hierarchy](/dtm/dtm-introduction/asset-hierarchy/) in the documentation.
+See also [Asset hierarchy](/dtm/asset-hierarchy/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 The asset hierarchy is composed of managed objects linked via the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API)'s child asset endpoints: `GET /inventory/managedObjects/{id}/childAssets`, `POST /inventory/managedObjects/{id}/childAssets`, and `DELETE /inventory/managedObjects/{id}/childAssets/{childId}`. The DTM application is supported by a dedicated dtm-ms microservice and API (for example, `/service/dtm-ms/...`) for managing the underlying asset models and properties.
@@ -101,7 +103,7 @@ The asset hierarchy is composed of managed objects linked via the [Inventory API
 
 An asset model is a reusable blueprint defined in the [Digital Twin Manager (DTM)](#dtm) that specifies the structure, properties, and relationships of a particular type of [asset](#asset). It includes a unique key and label, [asset properties](#asset-property), and optionally references to [child asset](#child-asset) models to support the composition of [asset hierarchies](#asset-hierarchy) (for example, a wind turbine model composed of rotor and tower sub-models). Once published, an asset model governs how assets of that type are created, validated, and visualized across {{< product-c8y-iot >}} [applications](#application).  
 
-See also [Asset models](/dtm/dtm-introduction/asset-types/) in the documentation.
+See also [Asset models](/dtm/asset-types/) in the documentation.
 
 
 ### Asset property {#asset-property}

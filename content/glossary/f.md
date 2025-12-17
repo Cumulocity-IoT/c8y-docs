@@ -14,7 +14,7 @@ _build:
 Fragments are JSON objects used to extend {{< product-c8y-iot >}}'s core data types, such as [managed objects](#managed-object), [events](#event), and [operations](#operation). They are the primary mechanism for creating a flexible and extensible [domain model](#domain-model), allowing the representation of any [asset](#asset) or [device](#device) without a rigid, predefined database schema.
 
 {{< c8y-details title="Developer details" >}}
-Fragments are not managed by a dedicated API. They are embedded within other resources and are managed as part of their parent resource via the respective APIs (for example, updating a `c8y_Position` fragment via `PUT /inventory/managedObjects/{id}`).
+Fragments are embedded within other resources and are managed as part of their parent resource via the respective APIs (for example, updating a `c8y_Position` fragment via `PUT /inventory/managedObjects/{id}`).
 {{< /c8y-details >}}
 
 ### Fragment library {#fragment-library}

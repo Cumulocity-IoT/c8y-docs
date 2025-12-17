@@ -130,7 +130,7 @@ The [{{< product-c8y-iot >}} Developer Codex](https://cumulocity.com/codex/) is 
 See also [Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/k8-edge-introduction/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
-Core platform APIs (Inventory, Measurement, and so on) are typically available locally on the Edge instance.
+Core REST APIs (such as [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API), [Event API](https://cumulocity.com/api/core/#tag/Event-API), [Alarm API](https://cumulocity.com/api/core/#tag/Alarm-API), [Measurement API](https://cumulocity.com/api/core/#tag/Measurement-API)) are typically available locally on the Edge instance.
 {{< /c8y-details >}}
 
 
