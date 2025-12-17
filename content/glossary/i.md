@@ -32,3 +32,7 @@ Inventory roles are managed via the [User API](https://cumulocity.com/api/core/#
 ### Isolation level {#isolation-level}
 
 The isolation level defines how [microservice](#microservice) instances are shared among [tenants](#tenant). Options are either "multi-tenant" (MULTI\_TENANT in the manifest), where a single instance serves multiple subscribed tenants, or "per-tenant" (PER\_TENANT in the manifest), where a dedicated instance is created for each subscribing tenant.  
+
+{{< c8y-details title="Developer details" >}}
+The isolation level is a declarative setting configured in the *cumulocity.json* manifest file within the microservice package.
+{{< /c8y-details >}}

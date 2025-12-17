@@ -65,10 +65,18 @@ A microservice manifest is a required JSON file (*cumulocity.json*) included wit
 
 See also [Microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) in the documentation.  
 
+{{< c8y-details title="Developer details" >}}
+The *cumulocity.json* manifest file is a static configuration file that is packaged within the microservice's ZIP archive and uploaded via `POST /application/applications/{id}/binaries`.
+{{< /c8y-details >}}
+
 
 ### Microservice SDK {#microservice-sdk}
 
 The {{< product-c8y-iot >}} Microservice SDK is a set of tools, libraries, and documentation that helps developers build custom [microservices](#microservice) efficiently. For Java, {{< product-c8y-iot >}} provides a dedicated SDK with Spring Boot integration. The SDK streamlines development by offering built-in authentication against the platform and robust context management, enabling secure, [multi-tenant](#multi-tenancy)-aware [applications](#application). At the same time, microservices can be developed in any programming language, as long as they are packaged as Docker containers and comply with the platform’s requirements.
+
+{{< c8y-details title="Developer details" >}}
+The Microservice SDK is a collection of development tools. It provides client libraries that simplify interaction with the core Cumulocity REST APIs from within a microservice.
+{{< /c8y-details >}}
 
 
 ### Model (Analytics Builder) {#model}
