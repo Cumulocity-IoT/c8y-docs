@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Auto-refresh automatically paused and resumed on tab visibility change
+title: Auto-refresh is automatically paused and resumed on tab visibility change
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
