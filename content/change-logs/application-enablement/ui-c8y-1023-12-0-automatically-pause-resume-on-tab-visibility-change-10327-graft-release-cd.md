@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65227
 version: 1023.12.0
 ---
-Global context now pauses auto-refresh updates when the browser tab is hidden and resumes when visible. This optimizes resource usage while ensuring the data is refreshed upon return.
+The global context now pauses auto-refresh updates when the browser tab is hidden, and resumes updates when the browser tab is visible. This optimizes resource usage while ensuring the data is refreshed upon return.
