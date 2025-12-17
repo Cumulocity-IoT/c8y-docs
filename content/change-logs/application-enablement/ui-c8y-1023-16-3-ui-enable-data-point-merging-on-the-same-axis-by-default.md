@@ -1,6 +1,6 @@
 ---
 date: ""
-title: UI enable data point merging on the same axis by default.
+title: Enable data point merging on the same axis for the new data point graph and data explorer by default
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,6 +14,4 @@ build_artifact:
 ticket: MTM-65314
 version: 1023.16.3
 ---
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
-Co-authored-by: Adrian Mioduszewski <amio@softwareag.com>
+Previously, data points were not merged on the same axis for the new data point graph and data explorer by default which made it difficult to compare data. With this change, data points are now merged on the same axis by default. This improves the usability and allows users to easily compare and analyze data on the same chart without additional configuration.
