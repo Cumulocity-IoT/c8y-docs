@@ -89,7 +89,7 @@ async function run() {
 
   [
     {
-      "line": <line number relative to patch>,
+      "position": <1-based line number in the diff patch>,
       "suggestion": "<the full corrected Markdown line>"
     }
   ]
@@ -97,6 +97,7 @@ async function run() {
   No commentary.  
   No markdown fences.  
   No extra text.  
+  Use the diff provided below as the source of line numbering.
   Do not include backticks in the JSON.
 
     ## Style Guide:
@@ -133,7 +134,7 @@ async function run() {
         if (!line.startsWith('+') || line.startsWith('+++')) return;
         addedLineNumber += 1;
 
-        const match = suggestions.find(s => s.line === index + 1) || suggestions.find(s => s.line === addedLineNumber);
+        const match = suggestions.find(s => s.position === index + 1);
         if (!match) return;
         const position = index + 1; 
         if (!match) {
