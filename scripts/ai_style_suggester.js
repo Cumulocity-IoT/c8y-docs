@@ -124,22 +124,33 @@ async function run() {
         continue;
       }
 
+      console.log("Parsed AI suggestions:", JSON.stringify(suggestions, null, 2));
+
       const diffLines = file.patch.split("\n");
       let addedLineNumber = 0;
       diffLines.forEach((line, index) => {
+          console.log("DIFF LINE", { indexPlusOne: index + 1, addedLineNumber, content: line });
         if (!line.startsWith('+') || line.startsWith('+++')) return;
         addedLineNumber += 1;
 
         const match = suggestions.find(s => s.line === index + 1) || suggestions.find(s => s.line === addedLineNumber);
         if (!match) return;
         const position = index + 1; 
-        if (!match) return;
+        if (!match) {
+          console.log("NO MATCH for diff line", {
+          indexPlusOne: index + 1,
+          addedLineNumber,
+          suggestions
+        });
+        return;
+      }
 
         let replacement = (match.suggestion || "").trim();
 
         if (replacement.startsWith("+")) {
           replacement = replacement.slice(1).trim();
         }
+        console.log("CREATING REVIEW COMMENT", { file: file.filename, position, replacement });
 
         reviewComments.push({
           path: file.filename,
@@ -152,7 +163,7 @@ ${replacement}
         summary.push(`- ${file.filename}: diff line ${index + 1} (added line ${addedLineNumber})`);
       });
     }
-
+    console.log("FINAL reviewComments count:", reviewComments.length);
     if (reviewComments.length === 0) {
       await octokit.rest.pulls.createReview({
         owner,
