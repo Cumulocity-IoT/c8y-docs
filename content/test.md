@@ -18,5 +18,5 @@ For developers seeking a versatile and flexible integration solution, Cumulocity
 We use the Cumulocity Microservice SDK for Java to create the image and the deployable
 zip file (Microservice SDK for Java - Cumulocity documentation ). To basically provision OTLP instrumentation of the microservice, the “opentelemetry-javaagent.jar” file must be included in the microservice image at build time.
 
-Why mc8yp?
+### Why mc8yp?
 While working with Cumulocity IoT, I wanted a more flexible way to interact with my tenant data through AI agents. This led to building mc8yp with two distinct modes:
