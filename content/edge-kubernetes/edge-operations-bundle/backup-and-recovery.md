@@ -4,7 +4,7 @@ title: Backup and Recovery
 layout: redirect
 ---
 
-# Cumulocity Edge on K3s — Backup and Restore Guide
+# Backup and Restore Guide for c8yedge Installations
 
 This runbook describes how to capture and restore a **{{< product-c8y-iot >}} Edge** deployment running on **K3s** installed via the `c8yedge` tool. Follow the numbered steps to create a consistent backup, reinstall the same Edge version, and validate the restored environment.
 
