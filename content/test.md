@@ -8,7 +8,7 @@ There is already a very detailed article around the data integration options whi
 Introduction The core of Cumulocity IoT is device integration but with pure device data only a few use cases can be implemented such as Device Management or Condition Monitoring. The more comprehensive use cases rely on additional data which resides in other databases, systems or services. Only when combining device data with other data like master data or production data the real value of IoT can be unleashed! In this article I will give you an overview about the options you have to…
 In this article, we would like to give an overview on one part of it i.e. System Integration and explore a few of the available system integration options and as well as link them to dedicated articles to offer in-depth guidance on each system integration option.
 
-## System Integration Options
+## System Integration Options {sys}
 Let’s explore a few prominent options:
 
 1. Microservices Approach: Developer-Friendly Integration
