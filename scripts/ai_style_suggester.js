@@ -125,8 +125,10 @@ async function run() {
       }
 
       const diffLines = file.patch.split("\n");
+      let addedLineNumber = 0;
       diffLines.forEach((line, index) => {
         if (!line.startsWith('+') || line.startsWith('+++')) return;
+        addedLineNumber += 1;
 
         const match = suggestions.find(s => s.line === index + 1);
         if (!match) return;
