@@ -14,7 +14,7 @@ This runbook describes how to capture and restore a **{{< product-c8y-iot >}} Ed
 Back up the required directories using your preferred backup strategy.
 
 * `/var/lib/rancher/k3s` - always required
-* `/datahub` - only if Cumulocity DataHub is deployed (contains DataHub datalake content)
+* `/datahub` - only if {{< product-c8y-iot >}} DataHub is deployed (contains DataHub datalake content)
 
 Ensure the backup is stored securely. Where applicable, retain checksum or integrity metadata to allow validation prior to recovery.
 
