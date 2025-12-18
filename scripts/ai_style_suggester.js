@@ -69,6 +69,12 @@ async function run() {
       const diff = file.patch;
       if (!diff) continue;
 
+  const numberedDiff = file.patch
+  .split("\n")
+  .map((l, i) => `${String(i + 1).padStart(4, "0")}: ${l}`)
+  .join("\n");
+
+
   const prompt = `
   You are reviewing a Git diff of a Markdown file.
 
@@ -89,7 +95,7 @@ async function run() {
 
   [
     {
-      "line": <line number relative to patch>,
+      "position": <the diff line number shown before the colon (NNNN)>
       "suggestion": "<the full corrected Markdown line>"
     }
   ]
@@ -102,9 +108,8 @@ async function run() {
     ## Style Guide:
     ${STYLE_GUIDE_TEXT}
 
-    ## Diff:
-    ${file.patch}
-    `;
+    ## Diff (each line is prefixed with its 1-based diff position NNNN:):
+    ${numberedDiff}
 
 
       const completion = await anthropic.messages.create({
@@ -131,7 +136,7 @@ async function run() {
         position += 1;
 
         if (!line.startsWith('+') || line.startsWith('+++')) return;
-        const match = suggestions.find(s => s.line === index + 1);
+        const match = suggestions.find(s => Number(s.position) === index + 1);
 
         if (!match) return;
 
