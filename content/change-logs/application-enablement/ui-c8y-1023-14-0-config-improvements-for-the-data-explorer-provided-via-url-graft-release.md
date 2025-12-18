@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-12-12'
 title: Data explorer configuration improvements
 product_area: Application enablement & solutions
 change_type:

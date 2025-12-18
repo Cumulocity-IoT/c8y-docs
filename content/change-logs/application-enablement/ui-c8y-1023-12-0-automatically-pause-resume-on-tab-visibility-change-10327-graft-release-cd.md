@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-12-12'
 title: Auto-refresh is automatically paused and resumed on tab visibility change
 product_area: Application enablement & solutions
 change_type:
