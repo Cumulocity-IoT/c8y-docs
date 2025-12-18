@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Backup and Recovery
+title: Backup and recovery
 layout: redirect
 ---
 
