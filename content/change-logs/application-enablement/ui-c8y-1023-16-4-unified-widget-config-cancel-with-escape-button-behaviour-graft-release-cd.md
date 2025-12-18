@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Unified widget config cancel behavior with escape button
+title: Unified widget configuration cancel behavior with escape button
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
