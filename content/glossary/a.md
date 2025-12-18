@@ -105,6 +105,10 @@ An asset model is a reusable blueprint defined in the [Digital Twin Manager (DTM
 
 See also [Asset models](/dtm/asset-types/) in the documentation.
 
+{{< c8y-details title="Developer details" >}}
+Assets are represented as managed objects in the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) (`/inventory/managedObjects`). They use the child assets property and associated endpoints (`/inventory/managedObjects/{id}/childAssets`) for hierarchy management. Specific asset characteristics are defined using custom JSON fragments. See also [Asset definitions](https://cumulocity.com/api/dtm/#tag/Asset-Definitions).
+{{< /c8y-details >}}
+
 
 ### Asset property {#asset-property}
 
