@@ -67,7 +67,7 @@ Watch for the following success messages:
 
 ```shell
 ...
-2025-12-17T11:59:47Z	Cumulocity Edge update is complete in 3m14s (running version 2025.0.X)
+2025-12-17T11:59:47Z	{{< product-c8y-iot >}} Edge update is complete in 3m14s (running version 2025.0.X)
 2025-12-17T11:59:47Z	Edge recovered successfully.
 ```
 
