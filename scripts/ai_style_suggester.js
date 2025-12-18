@@ -130,7 +130,7 @@ async function run() {
         if (!line.startsWith('+') || line.startsWith('+++')) return;
         addedLineNumber += 1;
 
-        const match = suggestions.find(s => s.line === index + 1);
+        const match = suggestions.find(s => s.line === index + 1) || suggestions.find(s => s.line === addedLineNumber);
         if (!match) return;
         const position = index + 1; 
         if (!match) return;
@@ -149,7 +149,7 @@ ${replacement}
 \`\`\``
         });
 
-        summary.push(`- ${file.filename}: line ${index + 1}`);
+        summary.push(`- ${file.filename}: diff line ${index + 1} (added line ${addedLineNumber})`);
       });
     }
 
