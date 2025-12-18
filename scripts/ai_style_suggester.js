@@ -115,6 +115,7 @@ async function run() {
 
       let raw = completion.content?.[0]?.text ?? "[]";
       raw = cleanJSON(raw);
+      console.log("Raw AI output:", raw);
       let suggestions = [];
       try {
         suggestions = JSON.parse(raw);
