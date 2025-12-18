@@ -1,6 +1,6 @@
 ---
 date: ""
-title: New data point graph and data explorer by default merge data points on the same axis
+title: New data point graph and data explorer by default merge data points with the same minimum and maximum values
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
