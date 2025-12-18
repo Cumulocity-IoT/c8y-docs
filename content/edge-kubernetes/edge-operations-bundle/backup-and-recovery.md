@@ -6,26 +6,22 @@ layout: redirect
 
 # Cumulocity Edge on K3s — Backup and Restore Guide
 
-This runbook describes how to capture and restore a **{{< product-c8y-iot >}} Edge** deployment running on **K3s** (installed via the `c8yedge` tool). Follow the numbered steps to create a consistent backup, reinstall the same Edge version, and validate the restored environment.
-
-{{< c8y-admon-important >}}
-Always back up `/var/lib/rancher/k3s` (and `/datahub` if Cumulocity DataHub is deployed) together and restore them to their original paths, ownership, and permissions. Mixing versions or omitting directories can corrupt the cluster.
-{{< /c8y-admon-important >}}
+This runbook describes how to capture and restore a **{{< product-c8y-iot >}} Edge** deployment running on **K3s** installed via the `c8yedge` tool. Follow the numbered steps to create a consistent backup, reinstall the same Edge version, and validate the restored environment.
 
 ---
 
 ### Step 1 - Create a backup 
-Back up the required directories using your preferred backup strategy. Ensure you capture:
+Back up the required directories using your preferred backup strategy.
 
 * `/var/lib/rancher/k3s` - always required
 * `/datahub` - only if Cumulocity DataHub is deployed (contains DataHub datalake content)
 
-Preserve the original paths, ownership, and permissions during the backup process. Ensure the backup is stored securely. Where applicable, retain checksum or integrity metadata to allow validation prior to recovery.
+Ensure the backup is stored securely. Where applicable, retain checksum or integrity metadata to allow validation prior to recovery.
 
 ---
 
 ### Step 2 - Prepare the restore target
-1. Install the same operating system (or compatible base image) that originally hosted Edge.
+1. Install the same operating system (or a compatible one) that originally hosted Edge.
 2. Make sure no prior K3s installation or Edge data exists on the target disk.
 3. Make the backup available to the target system:
     a. For file-based backups, transfer the backup artifacts to the node.
@@ -38,7 +34,7 @@ Installing a different Edge version on top of a restored data set is unsupported
 ---
 
 ### Step 3 - Restore the data directories
-Restore the backup so that the directories land in their original locations, preserving paths, ownership, and permissions.
+Restore the backup so that the directories land in their original locations, preserving paths, ownership, and permissions. Omitting directories or restoring to incorrect locations can corrupt the cluster.
 
 Confirm the directories exist and contain the expected ownership:
 
