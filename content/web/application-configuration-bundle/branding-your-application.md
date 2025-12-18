@@ -6,7 +6,7 @@ weight: 20
 
 A branding must always be applied to all of your applications. Therefore, it is recommended to use
 dynamic public options for branding your application. You must set the right
-[design tokens](https://cumulocity.com/codex/design-guidelines/design-tokens/overview) in the `brandingCssVars`
+[design tokens](https://cumulocity.com/codex/design-system/design-tokens/overview) in the `brandingCssVars`
 application option. Those are CSS variables that get applied to all default style sheets of
 {{< product-c8y-iot >}} and will show your custom branding for any Web SDK application. Your `options.json` then
 look like this:

@@ -75,9 +75,9 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 | Quota                                                                                          | Type | Value |
 | ---------------------------------------------------------------------------------------------- | ---- | ----: |
 | [File size for LWM2M bulk registration](/device-integration/lwm2m/#bulk-device-registration) | Hard | 10 MB |
-| [Concurrent pending LWM2M operations](/device-integration/lwm2m/#device-operations-handling) | Hard |    10 |
-| Maximum number of Loriot devices that can be registered per deployment                         | Soft | 40000 |
-| Maximum number of Loriot devices that can be registered per tenant                             | Soft | 20000 |
+| [Concurrent pending LWM2M operations per device](/device-integration/lwm2m/#device-operations-handling) | Hard |    10 |
+| Maximum number of Loriot devices that can be registered per deployment                       | Soft | 40000 |
+| Maximum number of Loriot devices that can be registered per tenant                           | Soft | 20000 |
 
 ### DataHub
 

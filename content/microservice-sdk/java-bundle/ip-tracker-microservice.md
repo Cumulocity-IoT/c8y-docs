@@ -146,7 +146,7 @@ On the {{< product-c8y-iot >}} platform, navigate to **Devices** > **All devices
 ### Getting the client's location {#getting-the-clients-location}
 
 The microservice will get the approximate location based on the client's IP.
-To achieve this, it uses the free service [ipstack](https://ipstack.com) and you must [get a free API key](https://ipstack.com/product).
+To achieve this, it uses the free service [ipstack](https://ipstack.com) and you must get a free API key.
 Once you have it, assign it to the `"ipstack.key"` key in your _cumulocity.json_ file.
 
 A GET request to the ipstack API using your key will return a location object. Therefore, you must create a new file named _Location.java_ in the same directory of your _App.java_ with the following content:

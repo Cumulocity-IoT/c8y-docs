@@ -20,14 +20,14 @@ An alarm is a specific type of [event](#event) that indicates a situation requir
 
 ### Analytics Builder {#analytics-builder}
 
-The Analytics Builder is a tool in the [{{< product-c8y-iot >}} Streaming Analytics](#streaming-analytics) application for designing real-time analytics models in a graphical, drag-and-drop environment. By combining pre-built [blocks](#block), you can quickly build [model](#model) to transform streaming IoT data, generate new data, create alerts, or trigger device [operations](#operation).  
+Analytics Builder is a tool in the [{{< product-c8y-iot >}} Streaming Analytics](#streaming-analytics) application for designing real-time analytics models in a graphical, drag-and-drop environment. By combining pre-built [blocks](#block), you can quickly build [models](#model) to transform streaming IoT data, generate new data, create alerts, or trigger device [operations](#operation).  
 
 For details, see the [Analytics Builder](/streaming-analytics/analytics-builder/) documentation.
 
 
 ### Apama {#apama}
 
-Apama is the high-performance event processing engine that powers [{{< product-c8y-iot >}} Streaming Analytics](#streaming-analytics). It enables real-time data processing behind the scenes, forming the foundation for smart rules, [Analytics Builder´s](#analytics-builder) drag-and-drop models as well as custom [EPL apps](#epl-apps).
+Apama is the high-performance event processing engine that powers [{{< product-c8y-iot >}} Streaming Analytics](#streaming-analytics). It enables real-time analytics, forming the foundation for smart rules, [Analytics Builder´s](#analytics-builder) drag-and-drop models as well as custom [EPL apps](#epl-apps).
 
 
 ### Application {#application}

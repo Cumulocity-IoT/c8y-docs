@@ -9,4 +9,4 @@ The {{< product-c8y-iot >}} Messaging Service is an optional component of the {{
 
 To enable the Messaging Service in Edge, update the `spec.messagingService` field in the Edge custom resource (CR). After making the changes, apply the updated CR. For more details on the `spec.messagingService` field, refer to [Edge custom resource - Messaging Service](/edge-kubernetes/edge-custom-resource-definition/#messagingService).
 
-For additional guidance, see the [Install Edge](/edge-kubernetes/installing-edge-on-k8/) and [Modify Edge](/edge-kubernetes/manage-edge/#modify-edge) sections in the Edge documentation.
+For additional guidance, see the [Install Edge](/edge-kubernetes/installing-edge-on-k8/) and [Modify Edge](/edge-kubernetes/manage-edge/#modify-edge) sections.
