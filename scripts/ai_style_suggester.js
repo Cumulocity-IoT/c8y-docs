@@ -109,7 +109,7 @@ async function run() {
     ${STYLE_GUIDE_TEXT}
 
     ## Diff (each line is prefixed with its 1-based diff position NNNN:):
-    ${numberedDiff}
+    ${numberedDiff} `;
 
 
       const completion = await anthropic.messages.create({
@@ -149,9 +149,7 @@ async function run() {
         reviewComments.push({
           path: file.filename,
           position,
-body: `\`\`\`suggestion
-${replacement}
-\`\`\``
+          body: "```suggestion\n" + replacement + "\n```"
         });
 
         summary.push(`- ${file.filename}: line ${index + 1}`);
