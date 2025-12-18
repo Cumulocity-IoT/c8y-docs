@@ -75,7 +75,7 @@ Cypress.on('uncaught:exception', (err) => {
     if (err.message.includes("Script error for 'hubspot'")) {
       return false;
     }
-    if (err.message.includes("Stop the wrapper script on User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36")) {
+    if (err.message.includes("Stop the wrapper script on User-Agent")) {
       return false;
     }
     if (err.message.includes("Failed to construct 'Response': Response with null body status cannot have body")) {
@@ -90,6 +90,8 @@ Cypress.on('uncaught:exception', (err) => {
     if (err.message.includes("$ is not defined")) {
       return false;
     }
+    if (err.message.includes("bootstrap is not defined")) {
+      return false;
+    }
     
   });
-  

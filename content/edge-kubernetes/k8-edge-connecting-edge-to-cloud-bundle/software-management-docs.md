@@ -12,7 +12,7 @@ To use the {{< product-c8y-iot >}} [advanced software management](/device-integr
 
 - Applications - You need a {{< product-c8y-iot >}} application, see [Web SDK](/web/introduction/) for details. Upload the application zip to the software repository with the software type _c8yedge_application_
 - Microservices - You need a microservice, see [Microservice SDK](/microservice-sdk/microservice-sdk-introduction/) for details. Upload the microservice zip to the software repository with the software type _c8yedge_microservice_
-- Extensions - You need either a widget or plugin, see [Micro frontends](https://cumulocity.com/codex/getting-started/guides/microfrontends/overview) in the {{< product-c8y-iot >}} Codex for details. Upload the extension zip to the software repository with the software type _c8yedge_extension_
+- Extensions - You need either a widget or plugin, see [Micro frontends](https://cumulocity.com/codex/advanced-development/microfrontends/overview) in the {{< product-c8y-iot >}} Codex for details. Upload the extension zip to the software repository with the software type _c8yedge_extension_
 
 {{< c8y-admon-info >}}
 When using the remote software management feature, the manifest for applications, microservices and extensions must contain a _name_, _key_, _version_ and _contextPath_. These values are used when installing the software rather than using the name and version from the software repository. The name and version from the manifest are also listed on the devices **Software** tab when installed.

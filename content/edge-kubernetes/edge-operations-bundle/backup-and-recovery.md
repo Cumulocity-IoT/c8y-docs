@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Backup and Recovery
+title: Backup and recovery
 layout: redirect
 ---
 
@@ -14,7 +14,7 @@ This runbook describes how to capture and restore a **{{< product-c8y-iot >}} Ed
 Back up the required directories using your preferred backup strategy.
 
 * `/var/lib/rancher/k3s` - always required
-* `/datahub` - only if Cumulocity DataHub is deployed (contains DataHub datalake content)
+* `/datahub` - only if {{< product-c8y-iot >}} DataHub is deployed (contains DataHub datalake content)
 
 Ensure the backup is stored securely. Where applicable, retain checksum or integrity metadata to allow validation prior to recovery.
 
@@ -61,13 +61,13 @@ sudo c8yedge install -s c8yedge.tar
 
 For more details on installation options, see [Installing with the c8yedge tool](/edge-kubernetes/installing-edge-on-k8/#install-edge-with-c8yedge-cli) and [Install Edge in an airgapped environment](/edge-kubernetes/installing-edge-on-k8/#install-edge-airgapped).
 
-The installer identifies the Cumulocity Edge CR if it is being restored and waits for the operator to reconcile successfully before exiting.
+The installer identifies the {{< product-c8y-iot >}} Edge CR if it is being restored and waits for the operator to reconcile successfully before exiting.
 
 Watch for the following success messages:
 
 ```shell
 ...
-2025-12-17T11:59:47Z	Cumulocity Edge update is complete in 3m14s (running version 2025.0.X)
+2025-12-17T11:59:47Z	{{< product-c8y-iot >}} Edge update is complete in 3m14s (running version 2025.0.X)
 2025-12-17T11:59:47Z	Edge recovered successfully.
 ```
 

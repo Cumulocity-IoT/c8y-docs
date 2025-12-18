@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-12-03
 title: Fixed overlapping buttons in data grid header
 product_area: Application enablement & solutions
 change_type:
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64953
 version: 1021.22.123
 ---
-In certain scenarios, the buttons in the data grid header were overlapping, making them difficult to use. This issue has been resolved by adjusting the layout and spacing of the buttons. 
+In certain scenarios, the buttons in the data grid header were overlapping, making them difficult to use. This issue has been resolved by adjusting the layout and spacing of the buttons.

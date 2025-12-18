@@ -22,7 +22,6 @@ content/authentication @kowa-c8y @BeateRixen
 # Edge
 /content/edge* @bbyreddy @rthrippleton @BeateRixen
 /static/files/edge* @bbyreddy @rthrippleton @BeateRixen
-/content/datahub/running-datahub-on-the-edge* @bbyreddy @rthrippleton @BeateRixen
 
 /content/streaming-analytics/ @BeateRixen @skom-c8y
 # 'block-reference-bundle' is automatically and frequently committed to - don't bother _too many_ CODEOWNERS
