@@ -89,7 +89,7 @@ async function run() {
 
   [
     {
-      "position": <1-based line number in the diff patch>,
+      "line": <line number relative to patch>,
       "suggestion": "<the full corrected Markdown line>"
     }
   ]
@@ -97,7 +97,6 @@ async function run() {
   No commentary.  
   No markdown fences.  
   No extra text.  
-  Use the diff provided below as the source of line numbering.
   Do not include backticks in the JSON.
 
     ## Style Guide:
@@ -116,7 +115,6 @@ async function run() {
 
       let raw = completion.content?.[0]?.text ?? "[]";
       raw = cleanJSON(raw);
-      console.log("Raw AI output:", raw);
       let suggestions = [];
       try {
         suggestions = JSON.parse(raw);
@@ -125,33 +123,23 @@ async function run() {
         continue;
       }
 
-      console.log("Parsed AI suggestions:", JSON.stringify(suggestions, null, 2));
-
       const diffLines = file.patch.split("\n");
-      let addedLineNumber = 0;
-      diffLines.forEach((line, index) => {
-          console.log("DIFF LINE", { indexPlusOne: index + 1, addedLineNumber, content: line });
-        if (!line.startsWith('+') || line.startsWith('+++')) return;
-        addedLineNumber += 1;
+      let position = 0;
 
-        const match = suggestions.find(s => s.position === index + 1);
+
+      diffLines.forEach((line, index) => {
+        position += 1;
+
+        if (!line.startsWith('+') || line.startsWith('+++')) return;
+        const match = suggestions.find(s => s.line === index + 1);
+
         if (!match) return;
-        const position = index + 1; 
-        if (!match) {
-          console.log("NO MATCH for diff line", {
-          indexPlusOne: index + 1,
-          addedLineNumber,
-          suggestions
-        });
-        return;
-      }
 
         let replacement = (match.suggestion || "").trim();
 
         if (replacement.startsWith("+")) {
           replacement = replacement.slice(1).trim();
         }
-        console.log("CREATING REVIEW COMMENT", { file: file.filename, position, replacement });
 
         reviewComments.push({
           path: file.filename,
@@ -161,10 +149,10 @@ ${replacement}
 \`\`\``
         });
 
-        summary.push(`- ${file.filename}: diff line ${index + 1} (added line ${addedLineNumber})`);
+        summary.push(`- ${file.filename}: line ${index + 1}`);
       });
     }
-    console.log("FINAL reviewComments count:", reviewComments.length);
+
     if (reviewComments.length === 0) {
       await octokit.rest.pulls.createReview({
         owner,
