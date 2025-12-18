@@ -61,7 +61,7 @@ sudo c8yedge install -s c8yedge.tar
 
 For more details on installation options, see [Installing with the c8yedge tool](/edge-kubernetes/installing-edge-on-k8/#install-edge-with-c8yedge-cli) and [Install Edge in an airgapped environment](/edge-kubernetes/installing-edge-on-k8/#install-edge-airgapped).
 
-The installer identifies the Cumulocity Edge CR if it is being restored and waits for the operator to reconcile successfully before exiting.
+The installer identifies the {{< product-c8y-iot >}} Edge CR if it is being restored and waits for the operator to reconcile successfully before exiting.
 
 Watch for the following success messages:
 
