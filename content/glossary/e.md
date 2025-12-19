@@ -53,7 +53,7 @@ Events are managed via the [Event API](https://cumulocity.com/api/core/#tag/Even
 
 ### Export {#export}
 
-Export is a feature of the [Cockpit application](#cockpit-application) that allows users to extract a limited amount of platform data, such as [measurements](#measurement), [alarms](#alarm), or [events](#event), into CSV or XLSX files. Exports can be configured with filters for specific [devices](#device), time ranges, and data fields. The scheduling of recurring exports is a key function, managed by the report-agent microservice and configured within the Cockpit application.
+Export is a feature of the [Cockpit application](#cockpit-application) that allows users to extract a limited amount of platform data, such as [measurements](#measurement), [alarms](#alarm), or [events](#event), into CSV or XLSX files. Exports can be configured with filters for specific [devices](#device), time ranges, and data fields. Recurring exports can be scheduled in the Cockpit application.
 
 See also [Exports](/cockpit/exports/) in the documentation.
 
