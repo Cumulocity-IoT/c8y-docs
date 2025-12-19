@@ -1,6 +1,6 @@
 ---
 date: 2025-12-18
-title: Global Time Context - Shared time context for dashboard widgets
+title: Shared time context for dashboard widgets
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
