@@ -23,7 +23,7 @@ Tenants are managed via the [Tenant API](https://cumulocity.com/api/core/#tag/Te
 The tenant domain refers to the domain name used to access a {{< product-c8y-iot >}} [tenant](#tenant), in the format `<tenant-name\>.\<instance-name\>`. It is used for login and API access and is distinct from the tenant’s unique identifier ([tenant ID](#tenant-id)). For example, a tenant named "acme" on the instance cumulocity.com would have the tenant domain "acme.cumulocity.com". [Enterprise tenants](#enterprise-tenant) and their [subtenants](#subtenant) can optionally configure custom domains for access using the platform’s custom domain feature.
 
 {{< c8y-details title="Developer details" >}}
-The tenant domain is configured via the Administration application and requires subscribing to the sslmanagement microservice.
+The tenant domain is configured via the Administration application and requires subscribing to the Sslmanagement microservice.
 {{< /c8y-details >}}  
 
 
