@@ -37,7 +37,7 @@ Analytics Builder is a tool in the [{{< product-c8y-iot >}} Streaming Analytics]
 See also [Analytics Builder](/streaming-analytics/analytics-builder/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
-Analytics Builder models are created in the user interface, not by API. Tenant options affecting the behaviour of Analytics Builder are listed in the Analytics Builder [Configuration](/streaming-analytics/analytics-builder/#configuration) documentation. You can use the [Analytics Builder Block SDK](https://github.com/Cumulocity-IoT/apama-analytics-builder-block-sdk) to write, test, and package custom blocks and to upload these blocks into Analytics Builder.
+Analytics Builder models are created in the user interface, not via the API. Tenant options affecting the behaviour of Analytics Builder are listed in the Analytics Builder [Configuration](/streaming-analytics/analytics-builder/#configuration) documentation. You can use the [Analytics Builder Block SDK](https://github.com/Cumulocity-IoT/apama-analytics-builder-block-sdk) to write, test, and package custom blocks and to upload these blocks into Analytics Builder.
 {{< /c8y-details >}}
 
 ### Apama {#apama}
