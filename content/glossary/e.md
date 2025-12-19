@@ -68,5 +68,5 @@ Extensions are official or community-supported packages that add new functionali
 For information about uploading extensions for Analytics Builder, see [Creating your own blocks](/streaming-analytics/analytics-builder/#creating-your-own-blocks).
 
 {{< c8y-details title="Developer details" >}}
-Individual extensions are bundled into a package which is installed as an application via the [Application API](https://cumulocity.com/api/core/#tag/Application-API) (`/application/applications`) and contains an `isPackage` flag inside the manifest. Additionally, extensions use the Versioning API, to ensure compatibility when they are integrated into an application.
+Individual extensions are bundled into a package which is installed as an application via the [Application API](https://cumulocity.com/api/core/#tag/Application-API) (`/application/applications`) and contains an `isPackage` flag inside the manifest. Additionally, extensions use the [Versioning API](https://cumulocity.com/api/core/#tag/Application-versions), to ensure compatibility when they are integrated into an application.
 {{< /c8y-details >}}
