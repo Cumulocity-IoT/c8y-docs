@@ -118,7 +118,7 @@ Asset properties are configurable attributes within an [asset model](#asset-mode
 
 ### Audit log {#audit-log}
 
-An audit log is a record of a security-relevant action performed on the platform. Audit logs are a special type of [event](#event) that includes details about the [user](#user) who performed the action, the [application](#application) they used, the activity itself, and the severity. They provide a chronological and immutable trail of [operations](#operation) for security analysis and compliance auditing.  
+An audit log is a record of a security-relevant action performed on the platform. Audit logs are a special type of [event](#event) that includes details about who performed an action (can be a human [user](#user), a [device](#device), a [microservice](#microservice) or the platform itself), the [application](#application) used, the activity itself, and the severity. They provide a chronological and immutable trail of [operations](#operation) for security analysis and compliance auditing.  
 
 See also [Audit logs](/standard-tenant/monitoring/#audit-logs) in the documentation.
 
