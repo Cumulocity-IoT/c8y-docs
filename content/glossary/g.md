@@ -30,5 +30,5 @@ Global roles are managed via the [User API](https://cumulocity.com/api/core/#tag
 A group is  a special type of [asset](#asset) used to organize [devices](#device) and other assets for structural and [permission](#permission)-management purposes. Groups support flexible organization and, when paired with [inventory roles](#inventory-role), can grant or restrict [user](#user) access to the contained devices and assets.
 
 {{< c8y-details title="Developer details" >}}
-In the [inventory](https://cumulocity.com/api/core/#tag/Inventory-API), groups are represented as managed objects (`/inventory/managedObjects`), using a `c8y_IsDeviceGroup` fragment and often with type `c8y_DeviceGroup`. Assets, devices or subgroups are assigned via child asset references (`POST /inventory/managedObjects/{groupId}/childAssets`).
+In the inventory ([Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API)), groups are represented as managed objects (`/inventory/managedObjects`), using a `c8y_IsDeviceGroup` fragment and often with type `c8y_DeviceGroup`. Assets, devices or subgroups are assigned via child asset references (`POST /inventory/managedObjects/{groupId}/childAssets`).
 {{< /c8y-details >}}
