@@ -4,9 +4,13 @@ title: Working with assets
 layout: redirect
 ---
 
-To work with assets in the DTM application, navigate to the **Assets** page using the navigator. By default, the **Assets** page is empty.  
+To work with assets in the DTM application, navigate to the **Assets** page using the navigator.   
 
-Once an [asset hierarchy](/dtm/asset-hierarchy/#asset-hierarchy) has been created by adding assets, the assets can be viewed in the **Assets** page.
+By default, the **Assets** page is empty. Once an [asset hierarchy](/dtm/asset-hierarchy/#asset-hierarchy) has been created by adding assets, the assets are shown in the **Assets** page.
+
+{{< c8y-admon-info >}}
+The count of assets shown at the bottom of the **Assets** page represents the number of root assets in the assets hierarchy, not the total number of assets.
+{{< /c8y-admon-info >}}
 
 ![assets-view](/images/dtm/assets/dtm-assets-view-assets.png)
 
