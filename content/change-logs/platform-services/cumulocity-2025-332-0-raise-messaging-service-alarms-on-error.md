@@ -1,6 +1,6 @@
 ---
-date: 
-title: "Alarms raised for common Messaging Service errors"
+date: '2025-12-11'
+title: Alarms raised for common Messaging Service errors
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
