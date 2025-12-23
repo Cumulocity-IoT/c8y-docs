@@ -28,6 +28,9 @@ async function run() {
     const STYLE_GUIDE_TEXT = fs.readFileSync(styleGuidePath, "utf8");
 
     const { data: files } = await octokit.rest.pulls.listFiles({ owner, repo, pull_number});
+    console.log("PR context:", { owner, repo, pull_number });
+    console.log("Total files in PR:", files.length);
+
     const MAX_FILES = 30;
     const MAX_TOTAL_PATCH_CHARS = 50000;  
     const MAX_ADDED_LINES = 1000; 
@@ -63,17 +66,14 @@ async function run() {
     const summary = [];
 
     for (const file of files) {
+      console.log(`Analyzing ${file.filename}...`);
       if ( !file.filename.endsWith(".md") || !file.filename.startsWith("content/")) {continue};
 
       console.log(`Analyzing ${file.filename}...`);
       const diff = file.patch;
+      console.log("Patch exists:", Boolean(file.patch));
+      console.log("Patch length:", file.patch?.length ?? 0);
       if (!diff) continue;
-
-  const numberedDiff = file.patch
-  .split("\n")
-  .map((l, i) => `${String(i + 1).padStart(4, "0")}: ${l}`)
-  .join("\n");
-
 
   const prompt = `
   You are reviewing a Git diff of a Markdown file.
@@ -95,7 +95,7 @@ async function run() {
 
   [
     {
-      "position": <the diff line number shown before the colon (NNNN)>
+      "line": <line number relative to patch>,
       "suggestion": "<the full corrected Markdown line>"
     }
   ]
@@ -108,8 +108,9 @@ async function run() {
     ## Style Guide:
     ${STYLE_GUIDE_TEXT}
 
-    ## Diff (each line is prefixed with its 1-based diff position NNNN:):
-    ${numberedDiff} `;
+    ## Diff:
+    ${file.patch}
+    `;
 
 
       const completion = await anthropic.messages.create({
@@ -123,33 +124,72 @@ async function run() {
       let suggestions = [];
       try {
         suggestions = JSON.parse(raw);
+        console.log("AI suggestions parsed:", suggestions);
+
+        suggestions.forEach(s => {
+          console.log(
+            "AI -> patch line:",
+            s.line,
+            "suggestion:",
+            JSON.stringify(s.suggestion)
+          );
+        });
       } catch (err) {
         console.error("Failed to parse AI JSON, raw output:", raw);
         continue;
       }
 
       const diffLines = file.patch.split("\n");
+      console.log("Patch with indexes:");
+      diffLines.forEach((l, i) => {
+        console.log(
+          String(i + 1).padStart(4, "0"),
+          l.startsWith("@@") ? "[HUNK]" : "     ",
+          JSON.stringify(l)
+        );
+      });
       let position = 0;
 
 
       diffLines.forEach((line, index) => {
         position += 1;
+        console.log(
+          "Processing patch line",
+          index + 1,
+          "GitHub position",
+          position,
+          "content:",
+          JSON.stringify(line)
+        );
+        if (!line.startsWith('+') || line.startsWith('+++')) {
+          console.log("Skipping non-added line at", index + 1);
+          return;
+        }
+        const match = suggestions.find(s => s.line === index + 1);
 
-        if (!line.startsWith('+') || line.startsWith('+++')) return;
-        const match = suggestions.find(s => Number(s.position) === index + 1);
-
-        if (!match) return;
+        if (!match) {
+          console.log("No AI suggestion for patch line", index + 1);
+          return;
+        }
 
         let replacement = (match.suggestion || "").trim();
 
         if (replacement.startsWith("+")) {
           replacement = replacement.slice(1).trim();
         }
+        console.log("Creating review comment:");
+        console.log("  File:", file.filename);
+        console.log("  Patch line:", index + 1);
+        console.log("  GitHub position:", position);
+        console.log("  Replacement:", JSON.stringify(replacement));
+
 
         reviewComments.push({
           path: file.filename,
           position,
-          body: "```suggestion\n" + replacement + "\n```"
+body: `\`\`\`suggestion
+${replacement}
+\`\`\``
         });
 
         summary.push(`- ${file.filename}: line ${index + 1}`);
@@ -166,6 +206,17 @@ async function run() {
       });
       return;
     }
+    console.log("======================================");
+    console.log("Final review comments to send:");
+    reviewComments.forEach((c, i) => {
+      console.log(
+        `#${i + 1}`,
+        "file:", c.path,
+        "position:", c.position,
+        "body:", c.body.replace(/\n/g, "\\n")
+      );
+    });
+    console.log("======================================");
 
     await octokit.rest.pulls.createReview({
       owner,
