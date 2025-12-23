@@ -74,43 +74,49 @@ async function run() {
       console.log("Patch exists:", Boolean(file.patch));
       console.log("Patch length:", file.patch?.length ?? 0);
       if (!diff) continue;
+  
+      const diffLines = diff.split("\n");
+      const numberedDiff = diffLines
+        .map((l, i) => `${String(i + 1).padStart(4, "0")}: ${l}`)
+        .join("\n");
 
-  const prompt = `
-  You are reviewing a Git diff of a Markdown file.
+      const prompt = `
+    You are reviewing a Git diff of a Markdown file.
 
-  Use ONLY the rules defined in the style guide below.  
-  Do not rely on any internal assumptions or default conventions—strictly follow the provided style guide.
+    Use ONLY the rules defined in the style guide below.  
+    Do not rely on any internal assumptions or default conventions—strictly follow the provided style guide.
 
-  Your task:
-  - Detect added heading lines (lines starting with "+ #" or "+ ##" etc.).
-  - If missing an ID, generate a correct one according to the style guide.
-  - If an ID exists, validate and correct it.
-  - Apply all relevant rules from the style guide (capitalization, terminology, etc.).
-  - Check capitalization and correct any issues in the added lines.
-  - Check grammar rules, including missing articles ("a", "an", "the") according to the following style guide rules.
-  - Always use standard American English spelling. Convert any British English spelling to American English.
+    Your task:
+    - Detect added heading lines (lines starting with "+ #" or "+ ##" etc.).
+    - If missing an ID, generate a correct one according to the style guide.
+    - If an ID exists, validate and correct it.
+    - Apply all relevant rules from the style guide (capitalization, terminology, etc.).
+    - Check capitalization and correct any issues in the added lines.
+    - Check grammar rules, including missing articles ("a", "an", "the") according to the following style guide rules.
+    - Always use standard American English spelling. Convert any British English spelling to American English.
 
-  Output Format (very important):
-  Return ONLY valid JSON in this exact structure:
+    Output Format (very important):
+    Return ONLY valid JSON:
 
-  [
-    {
-      "line": <line number relative to patch>,
-      "suggestion": "<the full corrected Markdown line>"
-    }
-  ]
+    [
+      { "line": <NUMBERED diff line>, "suggestion": "<corrected line WITHOUT leading +>" }
+    ]
 
-  No commentary.  
-  No markdown fences.  
-  No extra text.  
-  Do not include backticks in the JSON.
+    Rules for "line":
+    - "line" MUST be the NUMBER from the diff below (4 digits before the colon).
+    - Only suggest for lines that start with "+" (but not "+++").
 
-    ## Style Guide:
-    ${STYLE_GUIDE_TEXT}
+    No commentary.  
+    No markdown fences.  
+    No extra text.  
+    Do not include backticks in the JSON.
 
-    ## Diff:
-    ${file.patch}
-    `;
+      ## Style Guide:
+      ${STYLE_GUIDE_TEXT}
+
+      ## Diff (NUMBERED — use these line numbers exactly):
+      ${numberedDiff}
+      `;
 
 
       const completion = await anthropic.messages.create({
@@ -138,8 +144,7 @@ async function run() {
         console.error("Failed to parse AI JSON, raw output:", raw);
         continue;
       }
-
-      const diffLines = file.patch.split("\n");
+      
       console.log("Patch with indexes:");
       diffLines.forEach((l, i) => {
         console.log(
