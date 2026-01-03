@@ -233,7 +233,8 @@ async function run() {
           replacement = replacement.slice(1).trim();
         }
 
-                const newFileLine = patchIndexToNewLine.get(patchLineNumber);
+        const patchLineNumber = index + 1;    
+        const newFileLine = patchIndexToNewLine.get(patchLineNumber);
         if (!newFileLine) {
           console.log(
             "Skipping comment: could not map patch line to new-file line",
@@ -281,10 +282,8 @@ ${replacement}
         `#${i + 1}`,
         "file:",
         c.path,
-        "line:",
-        c.line,
-        "side:",
-        c.side,
+        "position:",
+        c.position,
         "body:",
         c.body.replace(/\n/g, "\\n")
       );
