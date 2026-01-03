@@ -283,8 +283,10 @@ ${replacement}
         `#${i + 1}`,
         "file:",
         c.path,
-        "position:",
-        c.position,
+        "line:",
+        c.line,
+        "side:",
+        c.side,
         "body:",
         c.body.replace(/\n/g, "\\n")
       );
