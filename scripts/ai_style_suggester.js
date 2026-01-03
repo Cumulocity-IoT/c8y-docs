@@ -254,8 +254,9 @@ async function run() {
 
         reviewComments.push({
           path: file.filename,
-          position,
-body: `\`\`\`suggestion
+          line: newFileLine,
+          side: "RIGHT",
+          body: `\`\`\`suggestion
 ${replacement}
 \`\`\``
         });
