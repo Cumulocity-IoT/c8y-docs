@@ -10,6 +10,9 @@ const anthropic = new Anthropic({
 });
 
 const token = process.env.GITHUB_TOKEN;
+if (!token) {
+  throw new Error("Missing GITHUB_TOKEN");
+}
 const octokit = getOctokit(token);
 
 function cleanJSON(raw) {
@@ -19,9 +22,55 @@ function cleanJSON(raw) {
     .trim();
 }
 
+function buildPatchIndexToNewLineMap(patch) {
+  const lines = patch.split("\n");
+  const map = new Map();
+
+  let newLine = null;
+
+  for (let i = 0; i < lines.length; i++) {
+    const patchIndex = i + 1;
+    const line = lines[i];
+
+    const m = line.match(/^@@\s-\d+(?:,\d+)?\s\+(\d+)(?:,\d+)?\s@@/);
+    if (m) {
+      newLine = Number(m[1]);
+      continue;
+    }
+
+    if (newLine == null) continue;
+
+    if (line.startsWith(" ")) {
+      newLine += 1;
+      continue;
+    }
+
+    if (line.startsWith("+") && !line.startsWith("+++")) {
+      map.set(patchIndex, newLine);
+      newLine += 1;
+      continue;
+    }
+
+    if (line.startsWith("-") && !line.startsWith("---")) {
+      continue;
+    }
+  }
+
+  return map;
+}
+
 async function run() {
   try {
     const { owner, repo, number: pull_number } = context.issue;
+    const prFromPayload = context.payload.pull_request;
+    let commit_id = prFromPayload?.head?.sha;
+    if (!commit_id) {
+      const { data: pr } = await octokit.rest.pulls.get({ owner, repo, pull_number });
+      commit_id = pr?.head?.sha;
+    }
+    if (!commit_id) {
+      throw new Error("Unable to determine PR head SHA (commit_id).");
+    }
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
     const styleGuidePath = path.join(__dirname, "documentation-guidelines.md");
@@ -79,6 +128,7 @@ async function run() {
       const numberedDiff = diffLines
         .map((l, i) => `${String(i + 1).padStart(4, "0")}: ${l}`)
         .join("\n");
+      const patchIndexToNewLine = buildPatchIndexToNewLineMap(diff);
 
       const prompt = `
     You are reviewing a Git diff of a Markdown file.
@@ -144,7 +194,7 @@ async function run() {
         console.error("Failed to parse AI JSON, raw output:", raw);
         continue;
       }
-      
+
       console.log("Patch with indexes:");
       diffLines.forEach((l, i) => {
         console.log(
@@ -182,6 +232,18 @@ async function run() {
         if (replacement.startsWith("+")) {
           replacement = replacement.slice(1).trim();
         }
+
+                const newFileLine = patchIndexToNewLine.get(patchLineNumber);
+        if (!newFileLine) {
+          console.log(
+            "Skipping comment: could not map patch line to new-file line",
+            patchLineNumber,
+            "file:",
+            file.filename
+          );
+          return;
+        }
+
         console.log("Creating review comment:");
         console.log("  File:", file.filename);
         console.log("  Patch line:", index + 1);
@@ -197,7 +259,7 @@ ${replacement}
 \`\`\``
         });
 
-        summary.push(`- ${file.filename}: line ${index + 1}`);
+        summary.push(`- ${file.filename}: patch line ${patchLineNumber} → file line ${newFileLine}`);
       });
     }
 
@@ -206,6 +268,7 @@ ${replacement}
         owner,
         repo,
         pull_number,
+        commit_id,
         event: "COMMENT",
         body: "AI Style Suggester: No issues found."
       });
@@ -216,9 +279,14 @@ ${replacement}
     reviewComments.forEach((c, i) => {
       console.log(
         `#${i + 1}`,
-        "file:", c.path,
-        "position:", c.position,
-        "body:", c.body.replace(/\n/g, "\\n")
+        "file:",
+        c.path,
+        "line:",
+        c.line,
+        "side:",
+        c.side,
+        "body:",
+        c.body.replace(/\n/g, "\\n")
       );
     });
     console.log("======================================");
@@ -227,14 +295,21 @@ ${replacement}
       owner,
       repo,
       pull_number,
+      commit_id,
       event: "COMMENT",
-      body: `AI Style Suggestions:\n${summary.join("\n")}`,
+      body: `### AI Documentation Style Review
+
+Inline suggestions are based on the repository style guide.
+
+Affected locations:
+${summary.join("\n")}
+`,
       comments: reviewComments,
     });
 
   } catch (error) {
     console.error("Error running AI style suggester:", error);
-    setFailed(error.message);
+    setFailed(error?.message ?? String(error));
   }
 }
 
