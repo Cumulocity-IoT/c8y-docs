@@ -15,7 +15,7 @@ The integration approach depends on the device capabilities and use case:
 We recommend integrating devices via [thin-edge.io](https://thin-edge.io/), an open-source, cloud-agnostic edge framework optimized for lightweight IoT devices. thin-edge.io can be slimmed down to run with less than 1 MB footprint, making it suitable even for constrained devices while supporting both x86_64 and ARM-based processor architectures.
 
 #### The advantages of using thin-edge.io:
-* **Native "SmartREST" Efficiency**: The agent automatically translates simple local JSON messages into Cumulocity's highly efficient SmartREST protocol, significantly reducing bandwidth.
+* **Native SmartREST Efficiency**: The agent automatically translates simple local JSON messages into Cumulocity's highly efficient SmartREST protocol, significantly reducing bandwidth.
 * **Zero-Code Device Management**: Get immediate access to all device management features - including software management, configuration updates, log retrieval, and remote access.
 * **Automatic Child Device Routing**: Acting as a gateway requires no extra logic; simply publishing data with a child ID causes thin-edge.io to automatically register the external devices (e.g. sensor) in Cumulocity's inventory and route the data to the correct representation of the child device in {{< product-c8y-iot >}}.
 * **Modular Extensibility**: The architecture is designed around plugins, allowing you to extend functionality without having to recompile the core agent.
