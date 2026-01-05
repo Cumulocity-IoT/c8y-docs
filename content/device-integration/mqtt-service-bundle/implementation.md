@@ -159,7 +159,6 @@ However, there are a small number of topic names that are reserved for historica
 These topic name cannot be used by devices:
 
 * All _system topics_ (topic name beginning with `$`) unless specifically documented
-* `error`
 
 There is a hard limit on the maximum length of a topic name.
 See the [Service Quotas](/service-terms/quotas#mqtt-service) section for details of the limit.
