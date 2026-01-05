@@ -39,7 +39,7 @@ Not all devices are directly connected to the internet. In such cases, IoT gatew
 
 ### LPWAN integration
 
-Low-Power Wide-Area-Network (LPWAN) technologies are critical for use cases requiring devices to
+Low-Power Wide-Area-Network (LPWAN) technologies are critical for use cases requiring devices to:
 * Run on a single battery for years at a very low cost
 * Only transmit small amounts of data intermittently
 * Be positioned in distributed or hard-to-reach locations
