@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Map in tracking tab not being displayed in mobile browser
+title: Map on Tracking tab was not displayed in mobile browser
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5167
 version: 1023.14.17
 ---
-Co-authored-by: Bozhidar Dedov <95280800+bozhidardedov@users.noreply.github.com>
+The map on the **Tracking** tab was not being displayed when accessing the application through a mobile browser, impacting the user experience for mobile users. With this change, the map is now correctly rendered also on mobile devices.
