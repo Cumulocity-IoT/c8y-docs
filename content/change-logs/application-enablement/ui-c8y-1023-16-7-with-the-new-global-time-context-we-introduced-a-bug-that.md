@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Event list widget filter for types not applied
+title: Filtering for types works correctly in the Event list widget 
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
