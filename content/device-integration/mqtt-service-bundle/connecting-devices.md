@@ -54,7 +54,7 @@ To use device certificates for authentication, the CA or intermediate certificat
 <br/>
 Additionally, ensure that the **Auto registration** option is enabled when adding certificates. This allows any device presenting a valid certificate to be automatically registered on the platform when it first connects.
 
-#### Creating self-signed certificates certificates {#creating-self-signed-certificates}
+#### Creating self-signed certificates {#creating-self-signed-certificates}
 
 In order to self-sign the device certificates, the root CA certificate needs to be created.
 Using the OpenSSL CLI tool, create a private key and then generate a self-signed root certificate from it.
@@ -73,7 +73,7 @@ cat client.crt ca.crt > client-chain.pem
 
 If you have more advanced requirements regarding certificate creation, see [Generating and signing certificates](/device-certificate-authentication/device-certificates#generating-and-signing-certificates).
 
-#### Using certificates certificates {#using-certificates}
+#### Using certificates {#using-certificates}
 
 Once the CA certificate has been uploaded and trusted in {{< product-c8y-iot >}}, devices can authenticate using client certificates signed by your trusted CA.
 To connect using any MQTT client, use the previously generated client certificate and key.
