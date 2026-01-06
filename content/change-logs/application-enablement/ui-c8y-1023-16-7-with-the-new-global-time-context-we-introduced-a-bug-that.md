@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65606
 version: 1023.16.7
 ---
-Co-authored-by: Jan Hommes <janhommes@users.noreply.github.com>
+With the introduction of the new global time context, a bug was introduced that caused the filtering for types to not be applied to the event list widget. This resulted in the event list widget displaying all event types, regardless of the filter settings. The fix ensures that the type filter is now correctly applied again, so that only the selected event types are shown in the event list widget when a filter is active.
