@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Map on Tracking tab was not displayed in mobile browser
+title: Map on Tracking tab correctly displayed on mobile devices
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
