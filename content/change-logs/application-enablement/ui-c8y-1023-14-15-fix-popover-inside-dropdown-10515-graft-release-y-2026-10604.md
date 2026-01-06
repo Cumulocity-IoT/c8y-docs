@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix popover inside dropdown (#10515) [GRAFT][release/y2026] (#10604)
+title: Fixed popover not working correctly inside dropdown menus
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
