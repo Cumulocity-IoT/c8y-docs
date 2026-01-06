@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data point graph slider using wrong data source has been fixed.
+title: Data point graph slider correctly retrieves device data
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
