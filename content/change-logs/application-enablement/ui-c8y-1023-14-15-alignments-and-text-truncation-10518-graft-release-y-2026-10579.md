@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65428
 version: 1023.14.15
 ---
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+In the device management application, some UI elements were not properly aligned and text was truncated in certain views. This change fixes the alignments and text truncation issues in the affected views.
