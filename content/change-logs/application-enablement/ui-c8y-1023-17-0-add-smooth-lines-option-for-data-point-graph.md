@@ -1,6 +1,6 @@
 ---
 date: ""
-title: New option to display smooth lines in data point graphs has been added.
+title: New option to display smooth lines in data point graphs
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
