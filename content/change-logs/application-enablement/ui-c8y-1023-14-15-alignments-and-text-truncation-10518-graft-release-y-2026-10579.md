@@ -1,6 +1,6 @@
 ---
 date: ""
-title: alignments and text truncation (#10518) [GRAFT][release/y2026] (#10579)
+title: Fixed alignments and text truncation issues in device management
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
