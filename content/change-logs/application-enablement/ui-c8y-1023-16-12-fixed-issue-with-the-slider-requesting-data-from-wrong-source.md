@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issue with the slider requesting data from wrong source.
+title: Data point graph slider using wrong data source has been fixed.
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65603
 version: 1023.16.12
 ---
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+The slider widget was in some rare cases incorrectly requesting data from the wrong device target, leading to no data being displayed. This issue has been resolved and the slider now correctly retrieves the data.
