@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65077
 version: 1023.14.15
 ---
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+In certain scenarios, popovers inside dropdown menus did not behave as expected and were not displayed correctly. This issue has been resolved.
