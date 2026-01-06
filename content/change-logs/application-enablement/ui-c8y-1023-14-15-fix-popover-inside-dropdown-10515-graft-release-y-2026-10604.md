@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed popover not working correctly inside dropdown menus
+title: Fixed popovers not working correctly inside dropdown menus
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
