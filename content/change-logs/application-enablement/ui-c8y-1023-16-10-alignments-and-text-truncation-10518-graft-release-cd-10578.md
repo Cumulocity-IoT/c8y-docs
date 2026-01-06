@@ -1,6 +1,6 @@
 ---
 date: ""
-title: alignments and text truncation (#10518) [GRAFT][release/cd] (#10578)
+title: Fixed alignments and text truncation in Administration application
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
