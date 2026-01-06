@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64918
 version: 1023.17.0
 ---
-A new option has been added to the Data Point Graph widget that allows displayed lines to be rendered as smooth curves. This improves visual clarity and makes trends and patterns easier to identify.
+A new option has been added to the "Data point graph" widget that allows lines to be rendered as smooth curves. This improves visual clarity and makes trends and patterns easier to identify.
