@@ -1,6 +1,6 @@
 ---
 date: ""
-title: with the new global time context we introduced a bug, that the filtering for types was not applied to the event list widget (#10603) [GRAFT][release/cd] (#10612)
+title: Event list widget filter for types not applied
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
