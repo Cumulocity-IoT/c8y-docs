@@ -1,13 +1,13 @@
 ---
 date: ""
 title: Fixed alignments and text truncation issues in device management
-product_area: Application enablement & solutions
+product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+  - value: component--KIsStyzM
+    label: Device Management app
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
