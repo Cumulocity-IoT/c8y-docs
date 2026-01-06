@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5167
 version: 1023.16.13
 ---
-The map on the **Tracking** tab was not being displayed when accessing the application through a mobile browser, impacting the user experience for mobile users. With this change, the map is now correctly rendered also on mobile devices.
+Previously, the map on the **Tracking** tab was not displayed when accessing the Device Management application through a mobile browser, impacting the user experience for mobile users. With this change, the map is now also correctly rendered on mobile devices.
