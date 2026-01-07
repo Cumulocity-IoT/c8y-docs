@@ -63,9 +63,9 @@ Notes:
 1. Because the MQTT Service requires devices to connect with a clean session, unacknowledged messages will not be re-sent by the MQTT Service after a device has disconnected and reconnected.
 <br><br>
 
-#### Duplicate message indicator {#duplicate-messages}
+#### Duplicate Message Indicator {#duplicate-messages}
 
-The _duplicate message indicator_ (DUP flag) in an MQTT `PUBLISH` packet indicates that this _may_ be an attempted re-delivery of an earlier attempt to send the same packet.
+The _Duplicate Message Indicator_ (DUP flag) in an MQTT `PUBLISH` packet indicates that this _may_ be an attempted re-delivery of an earlier attempt to send the same packet.
 It will only ever be set on messages sent using QoS level 1.
 The DUP flag is supported by the MQTT Service in accordance with the MQTT specification.
 
@@ -127,7 +127,7 @@ It is the responsibilty of the device or client receiving the message to handle 
 | Feature                      | Support level | Notes                                                                                       |
 |------------------------------|---------------|---------------------------------------------------------------------------------------------|
 | Quality of Service level     | QoS 0 and 1   | As for [version 3.1.1](#quality-of-service-qos). QoS level 2 is not supported.              |
-| Duplicate message indicator  | Supported     | As for [version 3.1.1](#duplicate-messages). Supported according to the MQTT specification. |
+| Duplicate Message Indicator  | Supported     | As for [version 3.1.1](#duplicate-messages). Supported according to the MQTT specification. |
 | Payload Format Indicator     | Supported     | Passed through between MQTT devices and Messaging Service clients.                          |
 | Response Topic               | Supported     | Passed through between MQTT devices and Messaging Service clients.<br>Clients are responsible for sending a response message on the specified topic. |
 | Correlation Data             | Supported     | Passed through between MQTT devices and Messaging Service clients.<br>Clients are responsible for including the correlation data on any response message(s). |
