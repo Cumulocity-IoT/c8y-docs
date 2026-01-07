@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5040
 version: 2025.6.0
 ---
-Resolved an issue where performing a bulk operation could unexpectedly create more operations than intended, due to a race condition.The fix ensures that only the correct number of operations are generated for each bulk request by addressing the underlying concurrency issue.
+Performing a bulk operation could unexpectedly create more operations than intended, due to a race condition. This issue has been resolved. The fix ensures that only the correct number of operations is generated for each bulk request by addressing the underlying concurrency issue.
