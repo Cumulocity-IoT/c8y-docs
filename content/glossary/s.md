@@ -66,7 +66,7 @@ The Standard tenant uses core REST APIs but lacks access to multi-tenant adminis
 
 ### Subscription
 
-In {{< product-c8y-iot >}}, a subscription denotes the process by which a [tenant](#tenant) is granted access to an [web application](#web-application) from the [Administration application](#administration-application). A superior tenant (like an [{{< enterprise-tenant >}}](#enterprise-tenant) or the [{{< management-tenant >}}](#management-tenant))) subscribes [applications](#application) and [microservices](microservices) to its subtenants.
+In {{< product-c8y-iot >}}, a subscription denotes the process by which a [tenant](#tenant) is granted access to an [web application](#web-application) from the [Administration application](#administration-application). A superior tenant (like an [{{< enterprise-tenant >}}](#enterprise-tenant) or the [{{< management-tenant >}}](#management-tenant))) subscribes [applications](#application) and [microservices](#microservice) to its subtenants.
 
 - For microservices: Subscription is a mandatory step. A microservice must be subscribed to a tenant to become available.
 - For web applications: Subscription makes a shared or marketplace application (like the [Cockpit application](#cockpit-application)) available to a specific tenant.
