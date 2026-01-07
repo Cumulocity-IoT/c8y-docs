@@ -12,7 +12,7 @@ To learn more about DataHub in general, see [DataHub overview](/datahub/datahub-
 
 ### Installing and using DataHub {#installing-and-using-datahub}
 
-DataHub is an optional component of Edge, and can be enabled by updating the `spec.dataHub` field in the Edge custom resource (CR). For more details on the `spec.messagingService` field, refer to [Edge custom resource - DataHub](/edge-kubernetes/edge-custom-resource-definition/#k8-edge-datahub). For general guidance on configuring Edge, see the [Install Edge](/edge-kubernetes/installing-edge-on-k8/) and [Modify Edge](/edge-kubernetes/manage-edge/#modify-edge) sections.
+DataHub is an optional component of Edge, and can be enabled by updating the `spec.dataHub` field in the Edge custom resource (CR). For more details on the `spec.dataHub` field, refer to [Edge custom resource - DataHub](/edge-kubernetes/edge-custom-resource-definition/#k8-edge-datahub). For general guidance on configuring Edge, see the [Install Edge](/edge-kubernetes/installing-edge-on-k8/) and [Modify Edge](/edge-kubernetes/manage-edge/#modify-edge) sections.
 
 The data lake and related storage will always be written to the host file system under the path `/datahub`, whatever is mounted there. You are expected to have a single shared NAS file system, such as NFS mounted at that path _on all nodes of the Kubernetes cluster that Edge is running on_. This is to ensure the resilience of your data lake contents.
 
