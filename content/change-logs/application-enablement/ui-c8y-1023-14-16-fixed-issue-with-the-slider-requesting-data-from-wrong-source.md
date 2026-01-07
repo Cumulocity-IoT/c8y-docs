@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65603
 version: 1023.14.16
 ---
-The slider widget was in some rare cases incorrectly requesting data from the wrong device target, leading to no data being displayed. This issue has been resolved and the slider now correctly retrieves the data.
+In some rare cases, the slider in the "Data point graph" widget incorrectly requested data from the wrong device target, leading to no data being displayed. This issue has been resolved, and the slider now correctly retrieves the data.
