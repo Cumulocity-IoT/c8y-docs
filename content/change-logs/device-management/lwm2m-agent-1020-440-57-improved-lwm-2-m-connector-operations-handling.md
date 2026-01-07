@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5103
 version: 1020.440.57
 ---
-For the LWM2M connector device, if an operation created does not contain a command then it will be set to failed directly.
+For the LWM2M connector device, any operation created without a command is immediately marked as failed.
