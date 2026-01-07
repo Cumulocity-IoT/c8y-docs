@@ -27,9 +27,9 @@ For full details of the available ports and how to configure device authenticati
 
 These features are also applicable to devices connecting using [version 5.0](#mqtt-50-features) of the MQTT protocol.
 
-#### Client Identifier {#client-id}
+#### Client identifier {#client-id}
 
-Every device connecting to the MQTT Service within a given tenant must use a unique _Client Identifier_ (client ID).
+Every device connecting to the MQTT Service within a given tenant must use a unique _client identifier_ (client ID).
 If a device connects using a client ID that is already connected, the _existing_ connection will be terminated, in accordance with the MQTT specification.
 Devices in different tenants can be connected at the same time using the same client ID.
 Empty client IDs are not permitted.
@@ -37,8 +37,8 @@ See the table of [limits and quotas](/service-terms/quotas/#mqtt-service) for de
 
 #### Clean session {#clean-session}
 
-The MQTT Service **requires** devices to connect with the _Clean Session_ flag in the MQTT `CONNECT` packet set to "1" (true).
-This flag is called _Clean Start_ in MQTT version 5.0.
+The MQTT Service **requires** devices to connect with the _clean session_ flag in the MQTT `CONNECT` packet set to "1" (true).
+This flag is called _clean start_ in MQTT version 5.0.
 If this flag is not set, the client connection will be rejected by the MQTT Service.
 
 {{< c8y-admon-caution >}}
@@ -48,9 +48,9 @@ This limitation also applies to the experimental support for Core MQTT devices.
 Pending {{< product-c8y-iot >}} device operations will **not** be sent to a Core MQTT device when it connects.
 {{< /c8y-admon-caution >}}
 
-#### Quality of Service {#quality-of-service-qos}
+#### Quality of service {#quality-of-service-qos}
 
-The MQTT Service supports two levels of MQTT Quality of Service (QoS).
+The MQTT Service supports two levels of MQTT quality of service (QoS).
 The desired QoS level is specified in the MQTT `PUBLISH` packet when a device sends a message to the MQTT Service, and in the MQTT `SUBSCRIBE` packet when a device subscribes to a MQTT topic.
 
 | Level                 | Supported | Description   |
@@ -89,7 +89,7 @@ Messages published by the MQTT Service to devices will never have the retain fla
 
 #### Wildcard subscriptions {#wildcard-subscriptions}
 
-A wildcard subscription allows a device to subscribe to MQTT topics using a _pattern_ instead of a fixed topic name.
+A _wildcard subscription_ allows a device to subscribe to MQTT topics using a pattern instead of a fixed topic name.
 The MQTT Service supports wildcard subscriptions using both the single-level (`+`) and multi-level (`#`) wildcard indicators.
 
 ### MQTT version 5.0 features {#mqtt-50-features}
@@ -105,18 +105,18 @@ Using features described as "not supported" may cause messages to be rejected, o
 
 | Feature                      | Support level | Notes                                                                                                            |
 |------------------------------|---------------|------------------------------------------------------------------------------------------------------------------|
-| Client Identifier            | Mandatory     | As for [version 3.1.1](#client-id).                                                                              |
-| Clean Start                  | Mandatory     | As for [version 3.1.1](#clean-session). _Clean Start_ is **required** on all device connections.                 |
-| Last Will                    | Supported     | With the same restrictions on QoS level, retained messages and device isolation as for [version 3.1.1](#last-will).<br>These additional version 5.0 properties on the will message are supported:<br>_Delay Interval_, _Payload Format Indicator_, _Content Type_, _Response Topic_, _Correlation Data_ and _User Properties_.<br>The _Message Expiry Interval_ property on the will message is ignored. |
-| Receive Maximum              | Supported     | The MQTT Service will limit the number of unacknowledged QoS 1 messages for the device to the requested maximum. |
-| Maximum Packet Size          | Supported     | The MQTT Service will not send any message larger than the requested size to this device.<br>Note that messages larger than the reqeusted size will be **silently discarded**. |
-| Request Problem Information  | Supported     | A device should not assume that the MQTT Service will send a reason string, even when this has been requested.   |
-| Session Expiry Interval      | Ignored       | The requirement to set Clean Start on all connections means that session data is not retained.                   |
-| Topic Alias Maximum          | Ignored       | The MQTT Service will not use topic aliases on messages sent to devices.                                         |
-| Request Response Information | Ignored       | The MQTT Service will not send Request/Response hints in the `CONNACK` packet.                                   |
+| Client identifier            | Mandatory     | As for [version 3.1.1](#client-id).                                                                              |
+| Clean start                  | Mandatory     | As for [version 3.1.1](#clean-session). _Clean start_ is **required** on all device connections.                 |
+| Last will                    | Supported     | With the same restrictions on QoS level, retained messages and device isolation as for [version 3.1.1](#last-will).<br>These additional version 5.0 properties on the will message are supported:<br>_delay interval_, _payload format indicator_, _content type_, _response topic_, _correlation data_ and _user properties_.<br>The _message expiry interval_ property on the will message is ignored. |
+| Receive maximum              | Supported     | The MQTT Service will limit the number of unacknowledged QoS 1 messages for the device to the requested maximum. |
+| Maximum packet size          | Supported     | The MQTT Service will not send any message larger than the requested size to this device.<br>Note that messages larger than the requested size will be **silently discarded**. |
+| Request problem information  | Supported     | A device should not assume that the MQTT Service will send a reason string, even when this has been requested.   |
+| Session expiry interval      | Ignored       | The requirement to set _clean start_ on all connections means that session data is not retained.                 |
+| Topic alias maximum          | Ignored       | The MQTT Service will not use topic aliases on messages sent to devices.                                         |
+| Request response information | Ignored       | The MQTT Service will not send request/response hints in the `CONNACK` packet.                                   |
 | User properties              | Ignored       | User properties on the `CONNECT` packet will be ignored by the MQTT Service.                                     |
-| Authentication Method        | Ignored       | Extended authentication methods are not supported.                                                               |
-| Authentication Data          | Ignored       | Extended authentication methods are not supported.                                                               |
+| Authentication method        | Ignored       | Extended authentication methods are not supported.                                                               |
+| Authentication data          | Ignored       | Extended authentication methods are not supported.                                                               |
 
 #### Message publishing features {#mqtt-50-publish-features}
 
@@ -126,17 +126,17 @@ It is the responsibilty of the device or client receiving the message to handle 
 
 | Feature                      | Support level | Notes                                                                                       |
 |------------------------------|---------------|---------------------------------------------------------------------------------------------|
-| Quality of Service level     | QoS 0 and 1   | As for [version 3.1.1](#quality-of-service-qos). QoS level 2 is not supported.              |
+| Quality of service level     | QoS 0 and 1   | As for [version 3.1.1](#quality-of-service-qos). QoS level 2 is not supported.              |
 | Duplicate message indicator  | Supported     | As for [version 3.1.1](#duplicate-messages). Supported according to the MQTT specification. |
-| Payload Format Indicator     | Supported     | Passed through between MQTT devices and Messaging Service clients.                          |
-| Response Topic               | Supported     | Passed through between MQTT devices and Messaging Service clients.<br>Clients are responsible for sending a response message on the specified topic. |
-| Correlation Data             | Supported     | Passed through between MQTT devices and Messaging Service clients.<br>Clients are responsible for including the correlation data on any response message(s). |
+| Payload format indicator     | Supported     | Passed through between MQTT devices and Messaging Service clients.                          |
+| Response topic               | Supported     | Passed through between MQTT devices and Messaging Service clients.<br>Clients are responsible for sending a response message on the specified topic. |
+| Correlation data             | Supported     | Passed through between MQTT devices and Messaging Service clients.<br>Clients are responsible for including the correlation data on any response message(s). |
 | User properties              | Supported     | Passed through between MQTT devices and Messaging Service clients.                          |
-| Content Type                 | Supported     | Passed through between MQTT devices and Messaging Service clients.                          |
-| Message Expiry Interval      | Ignored       | The message expiry interval on messages published from devices will have no effect.<br>All messages published to devices will use the same message expiry interval. |
+| Content type                 | Supported     | Passed through between MQTT devices and Messaging Service clients.                          |
+| Message expiry interval      | Ignored       | The message expiry interval on messages published from devices will have no effect.<br>All messages published to devices will use the same message expiry interval. |
 | Retained messages            | Not supported | As for [version 3.1.1](#retained-messages). Retained messages are not supported.            |
-| Topic Alias                  | Not supported | Messages published using a topic alias will be rejected by the MQTT Service.                |
-| Subscription Identifier      | Not supported | The subscription identifier will not be set on messages published by the MQTT Service.      |
+| Topic alias                  | Not supported | Messages published using a topic alias will be rejected by the MQTT Service.                |
+| Subscription identifier      | Not supported | The subscription identifier will not be set on messages published by the MQTT Service.      |
 
 #### Topic subscription features {#mqtt-50-subscribe-features}
 
@@ -147,9 +147,9 @@ These features relate to MQTT version 5.0 flags and properties that can be inclu
 | Maximum QoS level            | QoS 0 and 1   | As for [version 3.1.1](#quality-of-service-qos). QoS level 2 is not supported.      |
 | User properties              | Ignored       | User properties on the `SUBSCRIBE` packet will be ignored by the MQTT Service.      |
 | No local forwarding          | Ignored       | Local forwarding is not supported regardless of the setting of this option.         |
-| Retained as Published        | Ignored       | Retained messages are not supported, so this option has no effect.                  |
+| Retained as published        | Ignored       | Retained messages are not supported, so this option has no effect.                  |
 | Retained message handling    | Ignored       | Retained messages are not supported, so this option has no effect.                  |
-| Subscription Identifier      | Not supported | Subscriptions using a subscription identifier will be rejected by the MQTT Service. |
+| Subscription identifier      | Not supported | Subscriptions using a subscription identifier will be rejected by the MQTT Service. |
 | Shared subscriptions         | Not supported | Subscriptions to topic names beginning with `$share` are not supported.             |
 
 ### Topics {#mqtt-topics}
