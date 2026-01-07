@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-01-07'
 title: Fixed popovers not working correctly inside dropdown menus
 product_area: Application enablement & solutions
 change_type:

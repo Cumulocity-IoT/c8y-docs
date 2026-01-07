@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-01-07'
 title: New option to display smooth lines in data point graphs
 product_area: Application enablement & solutions
 change_type:

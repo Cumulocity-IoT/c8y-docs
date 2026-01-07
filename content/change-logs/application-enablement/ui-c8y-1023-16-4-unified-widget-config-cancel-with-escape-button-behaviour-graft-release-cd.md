@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-01-07'
 title: Unified widget configuration cancel behavior with escape button
 product_area: Application enablement & solutions
 change_type:

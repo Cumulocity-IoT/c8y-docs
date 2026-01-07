@@ -1,6 +1,6 @@
 ---
-date: ""
-title: Filtering for types works correctly in the Event list widget 
+date: '2026-01-07'
+title: Filtering for types works correctly in the Event list widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
