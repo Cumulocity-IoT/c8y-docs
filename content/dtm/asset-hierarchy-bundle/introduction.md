@@ -18,6 +18,6 @@ An asset hierarchy is a structure that organizes multiple assets and devices int
 
 An asset hierarchy consists of a root asset and all its subsequent subassets.
 
-For details, on viewing, creating and modifying assets in an assets hierarchy, see [Working with assets](/dtm/asset-hierarchy/assets).
+For details, on viewing, creating and modifying assets in an assets hierarchy, see [Working with assets](/dtm/asset-hierarchy/#assets).
 
 In addition to its hierarchical structure, an asset can have associated or linked [data points](/dtm/asset-hierarchy/#datapoints). This means that each asset not only represents a physical entity but also serves as a dynamic interface to its operational data.
