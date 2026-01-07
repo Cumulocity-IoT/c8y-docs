@@ -120,7 +120,7 @@ Asset properties are configurable attributes within an [asset model](#asset-mode
 
 An audit log is a record of a security-relevant action performed on the platform. Audit logs are a special type of [event](#event) that includes details about the [user](#user) who performed the action, the [application](#application) they used, the activity itself, and the severity. They provide a chronological and immutable trail of [operations](#operation) for security analysis and compliance auditing.  
 
-See also [Audit logs](/standard-tenant/monitoring/#audit-logs) in the documentation.
+See also [Audit logs](/standard-tenant/audit-logs/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 Audit logs are managed via the [Audit API](https://cumulocity.com/api/core/#tag/Audits
@@ -130,7 +130,7 @@ Audit logs are managed via the [Audit API](https://cumulocity.com/api/core/#tag/
 
 ### Authentication {#authentication}
 
-Authentication is the process of verifying the identity of a [user](#user), [device](#device), or [application](#application) attempting to access the {{< product-c8y-iot >}} platform. {{< product-c8y-iot >}} supports multiple authentication methods, including basic authentication, OAI-Secure (an OAuth2-based implementation), and [Single sign-on (SSO)](#sso) integration with external identity providers.  
+Authentication is the process of verifying the identity of a [user](#user), [device](#device), or [application](#application) attempting to access the {{< product-c8y-iot >}} platform. {{< product-c8y-iot >}} supports multiple authentication methods, including basic authentication, OAI-Secure (an OAuth2-based implementation), and Single sign-on (SSO) integration with external identity providers.  
 
 See also [Authentication](/authentication/basic-settings/) in the documentation.
 
