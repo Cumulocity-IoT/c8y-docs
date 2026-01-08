@@ -1,5 +1,5 @@
 ---
-date: 2026-01-09
+date: 2026-01-08
 title: Improved LWM2M connector operations handling
 product_area: Device management & connectivity
 change_type:

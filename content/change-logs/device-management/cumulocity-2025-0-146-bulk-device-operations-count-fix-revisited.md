@@ -1,5 +1,5 @@
 ---
-date: 2026-01-09
+date: 2026-01-08
 title: Fixed duplicate operation creation during bulk operation execution
 change_type:
   - value: change-VSkj2iV9m
