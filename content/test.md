@@ -22,7 +22,11 @@ zip file (Microservice SDK for Java - Cumulocity documentation ). To basically p
 While working with Cumulocity  IoT, I wanted a more flexible way to interact with my tenant data through AI agents. This led to building mc8yp with two distinct modes:
 
 ## Why This Course Matters
-As edge computing transforms industries, the ability to deploy AI-powered vision solutions directly on devices has become critical for real-time decision making, reduced latency, and enhanced privacy in applications ranging from manufacturing quality control to smart city monitoring. This course equips you with the practical skills to bridge the gap between AI model development and edge deployment, enabling you to build complete vision AI solutions that process data locally while leveraging Cumulocity’s powerful IoT management capabilities..
+As edge computing transforms industries, the ability to analyse AI-powered vision solutions directly on devices has become critical for real-time decision making, reduced latency, and enhanced privacy in applications ranging from manufacturing quality control to smart city monitoring. This course equips you with the practical skills to bridge the gap between AI model development and edge deployment, enabling you to build complete vision AI solutions that process data locally while leveraging Cumulocity’s powerful IoT management capabilities..
 
 ## Course Overview
 This focused 60-minutes course teaches you how to harness the power of Vision AI using Cumulocity IoT platform and the IMX500 camera model, covering everything from computer vision model training to seamless edge deployment. You’ll master the complete MLOps lifecycle, learning to onboard cameras, train and convert models, and deploy AI solutions directly to edge devices for real-time inferencing in practical applications.
+
+e.g. Camera Onboarding
+Learn how to connect and manage your cameras in Cumulocity.
+
