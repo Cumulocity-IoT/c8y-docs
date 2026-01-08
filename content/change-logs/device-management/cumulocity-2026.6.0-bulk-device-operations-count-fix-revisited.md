@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: DM-5040
-version: 2025.6.0
+version: 2025.0.146
 ---
 Performing a bulk operation could unexpectedly create more operations than intended, due to a race condition. This issue has been resolved. The fix ensures that only the correct number of operations is generated for each bulk request by addressing the underlying concurrency issue.
