@@ -48,7 +48,7 @@ The following features will not be available after the GA date:
    Devices must connect to these environments using TLS on TCP port 9883.
    Both one-way (server certificates only) and two-way (client and server certificates) TLS are supported.
    The unencrypted port may be enabled on dedicated environments if required by legacy devices that do not support TLS.
-   This restriction is [documented](/device-integration/mqtt-service/#connecting-via-mqtt), although some public environments do currently have the non-TLS port enabled to ease device onboarding during the Private Preview.
+   This restriction is [documented](/device-integration/mqtt-service/#connecting-devices), although some public environments do currently have the non-TLS port enabled to ease device onboarding during the Private Preview.
 
 In addition, as previously announced, the MQTT Service is already enforcing [Common Name validation](/change-logs/#mqtt-service-0.9.x-cn-validation-announcement) on device certificates.
 Devices connecting using an X.509 client certificate where the Common Name does not match the MQTT client identifier will be rejected.
