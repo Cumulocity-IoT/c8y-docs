@@ -60,7 +60,7 @@ Developers and integrators of MQTT devices, microservices and external applicati
 * Replace all uses of the Java Client SDK with the Pulsar client protocol.
 * Replace all uses of the MQTT protcol in microservices or external application clients with the Pulsar client protocol.
   The MQTT protocol should only be used by devices.
-* Migrate all MQTT device connection to use the secure TLS endpoint on TCP port 9883.
+* Migrate all MQTT device connections to use the secure TLS endpoint on TCP port 9883.
 * Ensure that the MQTT client identifier matches the certificate Common Name for any devices authenticating using X.509 client certificates.
 
 If you have any questions or concerns, please [contact Cumulocity Support](/additional-resources/contacting-support) as soon as possible.
