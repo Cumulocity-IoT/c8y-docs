@@ -4,13 +4,13 @@ title: Backup and recovery
 layout: redirect
 ---
 
-# Backup and Restore Guide for c8yedge Installations
+### Backup and Restore Guide for c8yedge Installations
 
 This runbook describes how to capture and restore a **{{< product-c8y-iot >}} Edge** deployment running on **K3s** installed via the `c8yedge` tool. Follow the numbered steps to create a consistent backup, reinstall the same Edge version, and validate the restored environment.
 
 ---
 
-### Step 1 - Create a backup 
+#### Step 1 - Create a backup {#step-1---create-a-backup}
 Back up the required directories using your preferred backup strategy.
 
 * `/var/lib/rancher/k3s` - always required
@@ -20,7 +20,7 @@ Ensure the backup is stored securely. Where applicable, retain checksum or integ
 
 ---
 
-### Step 2 - Prepare the restore target
+#### Step 2 - Prepare the restore target {#step-2---prepare-the-restore-target}
 1. Install the same operating system (or a compatible one) that originally hosted Edge.
 2. Make sure no prior K3s installation or Edge data exists on the target disk.
 3. Make the backup available to the target system:
@@ -33,7 +33,7 @@ Installing a different Edge version on top of a restored data set is unsupported
 
 ---
 
-### Step 3 - Restore the data directories
+#### Step 3 - Restore the data directories {#step-3---restore-the-data-directories}
 Restore the backup so that the directories land in their original locations, preserving paths, ownership, and permissions. Omitting directories or restoring to incorrect locations can corrupt the cluster.
 
 Confirm the directories exist and contain the expected ownership:
@@ -46,7 +46,7 @@ ls -ld /var/lib/rancher/k3s
 
 ---
 
-### Step 4 - Reinstall the matching Edge release
+#### Step 4 - Reinstall the matching Edge release {#step-4---reinstall-the-edge-release}
 Re-run the installer with the **exact version** captured in the backup:
 
 ```shell
