@@ -8,13 +8,19 @@ sector:
 
 {{< company-c8y >}} offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the {{< product-c8y-iot >}} platform.
 
-We recommend you to integrate devices via [thin-edge.io](https://thin-edge.io/). See the tutorial [Getting started with thin-edge.io](https://thin-edge.github.io/thin-edge.io/start/getting-started/) for an easy-to-follow and hands-on example.
+The integration approach depends on the device capabilities and use cases.
 
-You can also use [MQTT](/device-integration/mqtt) and [SmartREST](/smartrest/smartrest-two/) to integrate devices, which can be very efficiently implemented using available MQTT client libraries such as [Eclipse Paho](https://www.eclipse.org/paho/).
+### Integration via thin-edge.io {#integration-via-thin-edge-io}
 
-Refer to [REST](/device-integration/device-integration-rest/) for detailed information on integrating devices via REST.
+We recommend integrating devices via [thin-edge.io](https://thin-edge.io/), an open-source, cloud-agnostic edge framework optimized for lightweight IoT devices. thin-edge.io can be slimmed down to run with less than 1 MB footprint, making it suitable even for constrained devices while supporting both x86_64 and ARM-based processor architectures.
 
-An up-to-date open source reference implementation of a {{< product-c8y-iot >}} agent for embedded Linux systems with many device management features can be found at [{{< link-c8y-github >}}/cumulocity-agents-linux]({{< link-c8y-github >}}/cumulocity-agents-linux). Note that the reference implementation currently uses SmartREST 1 with the choice to switch between HTTP and MQTT as transport protocol.
+**Advantages of using thin-edge.io:**
+* **Native SmartREST efficiency**: The agent automatically translates simple local JSON messages into {{< product-c8y-iot >}}'s highly efficient SmartREST protocol, significantly reducing bandwidth.
+* **Zero-code device management**: Get immediate access to all device management features - including software management, configuration updates, log retrieval, and remote access.
+* **Automatic child device routing**: Acting as a gateway requires no extra logic; simply publishing data with a child ID causes thin-edge.io to automatically register the external devices (such as a sensor) in {{< product-c8y-iot >}}'s inventory, and route the data to the correct representation of the child device in {{< product-c8y-iot >}}.
+* **Modular extensibility**: The architecture is designed around plugins, allowing you to extend functionality without having to recompile the core agent.
+* **Language-agnostic decoupling**: Because thin-edge.io uses a local MQTT bus for communication, your application logic can be written in any language and remains completely isolated from the connectivity logic.
+* **Automated certificate lifecycle**: The built-in CLI tools handle the generation, signing, uploading, and rotation of X.509 security certificates.
 
 See the tutorial [Getting started with thin-edge.io](https://thin-edge.github.io/thin-edge.io/start/getting-started/) for an easy-to-follow and hands-on example.
 
