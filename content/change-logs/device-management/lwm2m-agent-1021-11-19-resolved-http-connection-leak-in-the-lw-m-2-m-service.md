@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Resolved HTTP connection leak in the LwM2M service
+title: Resolved HTTP connection leak in the LWM2M service
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
