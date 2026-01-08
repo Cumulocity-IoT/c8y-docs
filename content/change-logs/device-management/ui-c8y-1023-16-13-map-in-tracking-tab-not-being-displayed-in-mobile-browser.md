@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-01-08'
 title: Map on Tracking tab correctly displayed on mobile devices
 product_area: Device management & connectivity
 change_type:
