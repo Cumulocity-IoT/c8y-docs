@@ -321,7 +321,7 @@ To provision the device again, the device must be deleted and re-registered usin
 
 If a LoRa device supports receiving hexadecimal commands, you can send them using shell operations. Note that these commands are not serial monitor commands.
 
-In order to send an operation, navigate to the device you want to send an operation to in the Device Management application under **All devices**. Switch to the **Shell** tab.
+In order to send an operation, navigate to the device you want to send an operation to in the Device Management application under **All devices** and switch to the **Shell** tab.
 
 In the following screenshot you can find some examples of a device protocol's predefined commands and their format.
 

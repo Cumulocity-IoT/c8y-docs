@@ -336,9 +336,9 @@ Select the respective protocol from the dropdown list and click **Apply**. If su
 
 ### Sending operations {#loriot-sending-operations}
 
-If a Loriot device supports hexadecimal commands, you can send them using shell operations. Note that these commands are not serial monitor commands.
+If the device supports sending hexadecimal commands, you can send them using shell operations. Note that these commands are not serial monitor commands.
 
-In order to send an operation, navigate to the device you want to send an operation to in the Device Management application under **All devices**. Switch to the **Shell** tab.
+In order to send an operation, navigate to the device you want to send an operation to in the Device Management application under **All devices** and switch to the **Shell** tab.
 
 In the following screenshot you can find some examples of a device protocol's predefined commands and their format:
 

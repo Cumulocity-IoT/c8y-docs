@@ -250,10 +250,7 @@ To register a Sigfox device in {{< product-c8y-iot >}} navigate to **Devices** >
 ![Register devices](/images/device-protocols/sigfox/sigfox-registration.png)
 
 {{< c8y-admon-info >}}
-If Sigfox is not one of the available options, your tenant is not subscribed to the relevant applications, see information at the top.
-{{< /c8y-admon-info >}}
-
-{{< c8y-admon-info >}}
+- If Sigfox is not one of the available options, your tenant is not subscribed to the relevant application, see the requirements in the [introduction](#sigfox-introduction).
 - The device type created in the Sigfox Cloud platform has the following naming convention<br> `c8y_{tenantId}_{device-protocol-name}_{contractId}`, for example: `c8y_myTenant_mySigfoxDeviceProtocol_aabbcc5b78c901d64eecf4faaa`
 - If the constructed name exceeds 100 characters it will be truncated until it is less than 100 characters.
 {{< /c8y-admon-info >}}
@@ -305,7 +302,9 @@ General device registration for Sigfox devices is no longer supported.
 
 ### Sending operations {#sigfox-sending-operations}
 
-If the device supports sending hexadecimal commands, you can send commands from the Shell. In the Device Management application, navigate to the device you want to send an operation to in the **All devices** page. Switch to the **Shell** tab.
+If the device supports sending hexadecimal commands, you can send them using shell operations.
+
+In order to send an operation, navigate to the device you want to send an operation to in the Device Management application under **All devices** and switch to the **Shell** tab.
 
 {{< c8y-admon-info >}}
 Operations do not go to a status of EXECUTING immediately. They go to EXECUTING when the device is expecting the downlink message. Afterwards, the pending operation which is created first goes to a status of EXECUTING.
@@ -313,7 +312,7 @@ Operations do not go to a status of EXECUTING immediately. They go to EXECUTING 
 
 ### Uplink message processing {#sigfox-uplink-message-processing}
 
-On the receipt of an uplink message, the {{< product-c8y-iot >}} platform creates the following measurements and events, and updates the corresponding device managed object.
+On receiving an uplink message, the {{< product-c8y-iot >}} platform creates the following measurements and events, and updates the corresponding device managed object.
 
 - **Unprocessed data** - An event of type <code>com_sigfox_UnprocessedDataEvent</code> is created with the unprocessed data.
 - **Position** - The <code>c8y_Position</code> fragment of the device managed object is updated to capture the latitude, longitude, altitude and accuracy information of the device.
