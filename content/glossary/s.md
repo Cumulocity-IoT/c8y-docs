@@ -42,14 +42,12 @@ Devices communicate dedicated MQTT topics with {{< product-c8y-iot >}}. Each row
 
 With smart rules, you can analyze real-time data and perform actions based on predefined conditions without writing any code. For example, you can create a rule to send an email or generate an [alarm](#alarm) when a [measurement](#measurement) exceeds a specific threshold.
 
-The platform provides two versions of this feature:
-- Smart rules collection: Provides a fixed set of rule templates, configured using a simple wizard in the [Cockpit application](#cockpit-application).
-- Smart rules (NEW) plugin: Provides extendable and fully customizable rule templates. These are built using [Analytics Builder](#analytics-builder) and then made available as simple forms in any application (such as [Cockpit](#cockpit-application) and [Device Management](#device-management-application)).
+The platform includes a smart rules collection which provides a fixed set of rule templates, configured using a simple wizard in the [Cockpit application](#cockpit-application).
 
-See also [Smart rules collection](/cockpit/smart-rules-collection/) or [Smart rules (NEW) plugin](/cockpit/cockpit-smart-rules-plugin/) in the documentation.
+See also [Smart rules collection](/cockpit/smart-rules-collection/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
-Rules are configured by applications that have the smart rules (NEW) plugin installed such as Cockpit or Device Management. Smart rules are powered by the Apama engine for Smart rules (NEW) and the “smartrule” microservice for the previous generation of smart rules.
+Smart rules are powered by the “smartrule” microservice.
 {{< /c8y-details >}}
 
 
@@ -66,7 +64,7 @@ The Standard tenant uses core REST APIs but lacks access to multi-tenant adminis
 
 ### Subscription
 
-In {{< product-c8y-iot >}}, a subscription denotes the process by which a [tenant](#tenant) is granted access to an [web application](#web-application) from the [Administration application](#administration-application). A superior tenant (like an [{{< enterprise-tenant >}}](#enterprise-tenant) or the [{{< management-tenant >}}](#management-tenant))) subscribes [applications](#application) and [microservices](microservices) to its subtenants.
+In {{< product-c8y-iot >}}, a subscription denotes the process by which a [tenant](#tenant) is granted access to an [web application](#web-application) from the [Administration application](#administration-application). A superior tenant (like an [{{< enterprise-tenant >}}](#enterprise-tenant) or the [{{< management-tenant >}}](#management-tenant))) subscribes [applications](#application) and [microservices](#microservice) to its subtenants.
 
 - For microservices: Subscription is a mandatory step. A microservice must be subscribed to a tenant to become available.
 - For web applications: Subscription makes a shared or marketplace application (like the [Cockpit application](#cockpit-application)) available to a specific tenant.

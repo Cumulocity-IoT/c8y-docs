@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-01-08
 title: Improved audit log list performance
 product_area: Platform services
 change_type:
