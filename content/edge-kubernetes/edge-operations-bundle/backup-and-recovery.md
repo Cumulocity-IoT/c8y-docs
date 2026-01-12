@@ -4,19 +4,17 @@ title: Backup and recovery
 layout: redirect
 ---
 
-### Backup and Restore Guide for c8yedge Installations
+### For c8yedge installations {#for-c8yedge-installations}
 
 This runbook describes how to capture and restore a **{{< product-c8y-iot >}} Edge** deployment running on **K3s** installed via the `c8yedge` tool. Follow the numbered steps to create a consistent backup, reinstall the same Edge version, and validate the restored environment.
 
 ---
 
-#### Step 1 - Create a backup {#step-1---create-a-backup}
-Back up the required directories using your preferred backup strategy.
+#### Step 1 - Data to preserve {#step-1---data-to-preserve}
+The following directories must be preserved for disaster recovery. Implement appropriate data protection measures (for example, backups or redundant storage) to safeguard these directories:
 
 * `/var/lib/rancher/k3s` - always required
 * `/datahub` - only if {{< product-c8y-iot >}} DataHub is deployed (contains DataHub datalake content)
-
-Ensure the backup is stored securely. Where applicable, retain checksum or integrity metadata to allow validation prior to recovery.
 
 ---
 
@@ -58,10 +56,7 @@ Or use the offline alternative if you are in an airgapped environment:
 ```shell
 sudo c8yedge install -s c8yedge.tar
 ```
-
-For more details on installation options, see [Installing with the c8yedge tool](/edge-kubernetes/installing-edge-on-k8/#install-edge-with-c8yedge-cli) and [Install Edge in an airgapped environment](/edge-kubernetes/installing-edge-on-k8/#install-edge-airgapped).
-
-The installer identifies the {{< product-c8y-iot >}} Edge CR if it is being restored and waits for the operator to reconcile successfully before exiting.
+The installer detects that {{< product-c8y-iot >}} Edge is already installed and waits for the recovery to complete before exiting.
 
 Watch for the following success messages:
 
