@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data point graph now renders properly when no data exists.
+title: Data point graph now renders properly when no data exists
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
