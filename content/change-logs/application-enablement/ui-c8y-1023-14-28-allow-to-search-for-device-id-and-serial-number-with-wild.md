@@ -14,21 +14,4 @@ build_artifact:
 ticket: MTM-65678
 version: 1023.14.28
 ---
-# Backport
-
-This will backport the following commits from `develop` to
-`release/y2026`:
-- [fix(web sdk): [MTM-65678] allow to search for device id and
-serialNumber with wild card search
-(#10591)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10591)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65678]:
-https://cumulocity.atlassian.net/browse/MTM-65678?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Jan Hommes <janhommes@users.noreply.github.com>
+The new wildcard search was not supporting to search for IDs like the internal inventory id or the external `c8y_Hardware.serialNumber`. With this change, we introduced also support to search for those IDs. The internal id using an exact match, while the serialNumber also supports a partly includes matching. This will help, to find the right device faster also by only knowing the external id. Note that the IDs are not shown in the returned results.
