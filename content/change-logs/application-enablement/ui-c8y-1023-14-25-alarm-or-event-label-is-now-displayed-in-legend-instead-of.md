@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Alarm or event label is now displayed in legend instead of type.
+title: Data point graph legend now displays alarm/event labels instead of the type
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
