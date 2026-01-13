@@ -59,6 +59,116 @@ Registers and coils that can be changed are represented by active widgets. If yo
 
 ### Monitoring the device status using the SCADA widget {#monitoring-the-device-status-using-the-scada-widget}
 
+{{< c8y-admon-preview-toggle >}}
+Toggle on the preview feature documentation to see upcoming changes to the existing functionality.
+{{< /c8y-admon-preview-toggle >}}
+
+{{< c8y-admon-preview-feature >}}
+The "SCADA" widget displays a dynamic SVG image representing an asset or device status.
+
+To configure the "SCADA" widget, follow these steps:
+
+1. Go to a dashboard, switch to edit mode, and click **Add widget** in the top menu.
+2. Pick the **SCADA** widget and set its title.
+3. Choose the asset or device in the **Asset selection** section.
+4. **Import SVG code**: Upload an SVG file or paste your SVG code (this code can be enhanced with Lit syntax, see the [Preparing SVG files for the SCADA widget](#preparing-svg-files-for-the-scada-widget) section for details).
+5. **Add placeholders**: If the imported SVG file does not have the desired placeholders yet, in the preview area, click `text` or `tspan` elements to convert them into dynamic placeholders.
+6. For each placeholder, assign an asset/device property in **Placeholder mappings** — these properties (like id, name, status, temperature, and so on) will be displayed dynamically in the SVG.
+7. Optionally, use the **Advanced editor** for complex visualizations using Lit syntax and direct web component editing.
+8. After confirming all settings, preview the widget and click **Save** to add it to your dashboard.
+
+### Preparing SVG files for the SCADA widget {#preparing-svg-files-for-the-scada-widget}
+
+The new "SCADA" widget supports SVG files with **Lit syntax** (`${...}`), giving you flexibility for dynamic content, conditions, and interactivity.
+
+**How it works:**
+
+* The values of the mapped asset or device properties are accessible in the SVG via `${this.c8yScadaValues?.placeholderName || '-'}`:
+  * use `?` because the values object may be undefined when the widget is loading,
+  * use `|| '-'` to provide a default value if the placeholder is not assigned or no value is available.
+* Additional utility functions are available via `${this.c8yScadaFunctions?.functionName(...)}`:
+  * `goToDeviceDetails(deviceId)` – navigates to the device details view,
+  * `goToGroupDetails(groupId)` – navigates to the group details view,
+  * `getActiveAlarmsStatusClass(alarmsStatus)` – takes the alarm status object and returns a CSS class that can be used for styling: `none`, `warning`, `minor`, `major`, `critical`.
+* JavaScript expressions and template literals within SVG attributes and content are supported.
+
+**Example SVG template with Lit syntax:**
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="600px" height="300px" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .critical { fill: red; }
+    .ok { fill: green; }
+  </style>
+  
+  <text x="50" y="50" font-size="24" font-weight="bold">
+    Device: ${this.c8yScadaValues?.deviceName || '-'}
+  </text>
+  
+  <text x="50" y="100" font-size="20">
+    Battery: ${this.c8yScadaValues?.batteryValue || 0} %
+  </text>
+  
+  <circle cx="320" cy="95" r="15"
+    class="${(this.c8yScadaValues?.batteryValue < 20) ? 'critical' : 'ok'}" />
+  
+  <text x="50" y="150" font-size="20">
+    Status: ${this.c8yScadaValues?.status || 'Unknown'}
+  </text>
+  
+  <g class="button" @click=${() => this.c8yScadaFunctions?.goToDeviceDetails(this.c8yScadaValues?.deviceId)}>
+    <rect x="50" y="200" width="150" height="35" fill="blue" />
+    <text x="125" y="225" font-size="16" fill="#FFF" text-anchor="middle">Go to device details</text>
+  </g>
+</svg>
+```
+
+**Key points:**
+
+* Use `${this.c8yScadaValues?.property}` for asset data (e.g., device name, battery, status).
+* Use utility functions like `${this.c8yScadaFunctions?.goToDeviceDetails(...)}` for interactivity.
+* You can apply conditional classes, calculations, and custom JavaScript inside `${...}`.
+
+For more advanced customization, open the **Advanced editor** in the widget configuration to edit the Lit-based web component directly.
+
+For creating SVG files, it is recommended to use [https://boxy-svg.com/](https://boxy-svg.com/). It is an easy to use, quality Chrome extension.
+
+---
+
+#### Migration guide: SVG with AngularJS → SVG with Lit syntax
+
+By default, old "SCADA" widgets relying on AngularJS syntax will continue to work as before. However, if you want to take advantage of the new features of the "SCADA" widget, you'll need to upload the migrated SVG file with Lit syntax. The migration involves converting AngularJS directives and expressions to Lit syntax, for example:
+
+| AngularJS syntax                                | Lit syntax                        |
+|-------------------------------------------------|----------------------------------------------|
+| `{{propertyName}}`                              | `${this.c8yScadaValues?.propertyName \|\| '-'}`       |
+| `ng-class="expression"`                         | `class="${expression}"` |
+| `ng-if="propertyName > 0"`                      | `${propertyName > 0 ? ... : ...}` |
+| `ng-click="goToDeviceDetails(deviceId)"`        | `@click=${() => this.c8yScadaFunctions?.goToDeviceDetails(deviceId)}` |
+
+**Example migration:**
+
+AngularJS:
+
+```html
+<tspan ng-class="getActiveAlarmsStatusClass(alarmsStatus)">
+  {{batteryValue}}
+</tspan>
+<rect ng-click="goToDeviceDetails(deviceId)"/>
+```
+
+Lit:
+
+```html
+<tspan class="${this.c8yScadaFunctions?.getActiveAlarmsStatusClass(this.c8yScadaValues?.alarmsStatus)}">
+  ${this.c8yScadaValues?.batteryValue || '-'}
+</tspan>
+<rect @click=${() => this.c8yScadaFunctions?.goToDeviceDetails(this.c8yScadaValues?.deviceId)} />
+```
+
+{{< /c8y-admon-preview-feature >}}
+
 The "SCADA" widget provides you with a graphic representation of the status of a device.
 
 To use the "SCADA" widget, follow these steps:

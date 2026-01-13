@@ -664,6 +664,25 @@ In the "Rotation" widget you can rotate the object by dragging and moving it aro
 
 ### SCADA {#scada}
 
+{{< c8y-admon-preview-toggle >}}
+Toggle on the preview feature documentation to see upcoming changes to the existing functionality.
+{{< /c8y-admon-preview-toggle >}}
+
+{{< c8y-admon-preview-feature >}}
+The "SCADA" widget enables monitoring of devices or assets using a dynamically updated SVG visualization. It is ideal for building custom dashboards simulating SCADA panels, showing live states, measurement values, and alarms.
+
+**Configuration sections:**
+
+- **Asset selection:** Choose the main asset or group whose data will be visualized and mapped to dynamic SVG placeholders (its child assets or devices can be selected in the mappings, too).
+- **Import SVG code:** Upload an SVG file or paste SVG code to provide the graphical layout for the widget. If the imported SVG does not have the desired placeholders yet, you can convert existing `text` or `tspan` elements to placeholders by clicking on them in the preview area, providing a name and confirming the addition.
+- **Placeholder mappings:** For each defined placeholder, assign an asset property whose value will be shown at runtime. You can select any regular or computed property. Placeholder assignments are displayed in a table for review, modification, or clearing.
+- **Advanced editor:** This section enables advanced users to directly edit the widget’s underlying web component. It unlocks complex customizations and dynamic behaviors beyond SVG with simple placeholders.
+
+For more details on creating SVGs with placeholders, as well as the migration guide from the old "SCADA" widget, refer to the [Monitoring the device status using the SCADA widget](/device-integration/cloud-fieldbus/#monitoring-the-device-status-using-the-scada-widget) section.
+
+![SCADA widget](/images/users-guide/cockpit/cockpit-widget-scada.png)
+{{< /c8y-admon-preview-feature >}}
+
 The "SCADA" widget provides a graphic representation of the status of a device.
 
 For details on the "SCADA" widget, refer to [Monitoring the device status using the SCADA widget](/device-integration/cloud-fieldbus/#monitoring-the-device-status-using-the-scada-widget).
