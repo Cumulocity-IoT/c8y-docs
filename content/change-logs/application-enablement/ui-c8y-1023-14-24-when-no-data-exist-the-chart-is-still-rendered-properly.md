@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65429
 version: 1023.14.24
 ---
-Previously, selecting a time range with no measurement data caused the graph widget to render a completely empty area, without any message or placeholder indicating the absence of data. This has been fixed, and the graph now renders properly, providing a consistent display even when no data is available.
+Previously, when selecting a time range in the data point graph with no measurement data, the "Data point graph" widget rendered an empty area, without any indication that no data is available. This behavior has been changed. The "Data point graph" widget now provides a consistent display, showing the x-axis and y-axis even when no data is available.
