@@ -16,4 +16,4 @@ version: 1023.14.21
 ---
 In order to simplify the user experience changes have been made to the tabs available to users in the Administration → Settings → Authentication page. If the tenant does not have permission to manage Basic or OAI-Secure login options, the corresponding tab will not be shown. This removes any confusion on what authentication methods are configurable for the tenant.
 
-Further information on how authentication methods are configured can be found in the [user documentation](https://cumulocity.com/docs/authentication/basic-settings).
+Further information on how to configure access settings for login options can be found in the [OpenAPI specification](https://cumulocity.com/api/core/#operation/putAccessLoginOptionResource).
