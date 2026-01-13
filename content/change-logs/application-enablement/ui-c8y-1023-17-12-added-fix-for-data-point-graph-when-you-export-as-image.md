@@ -14,20 +14,5 @@ build_artifact:
 ticket: MTM-65379
 version: 1023.17.12
 ---
-# Backport
 
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-65379] Added fix for data point graph when you
-export as image.
-(#10597)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10597)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65379]:
-https://cumulocity.atlassian.net/browse/MTM-65379?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+Previously, when exporting the "Data point graph" widget as an image, the legend could overlap or be displayed incorrectly, making the image hard to read. This issue has been fixed, and exported images now display the data point graph correctly.
