@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Alarm or event label is now displayed in legend instead of type.
+title: Data point graph legend now displays Alarm/Event label instead of type
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-65446
 version: 1023.17.10
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-65446] Alarm or event label is now displayed in
-legend instead of
-type.](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10682)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65446]:
-https://cumulocity.atlassian.net/browse/MTM-65446?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+Previously, the legend displayed the event type for each entry. It now displays the alarm or event label instead.
