@@ -33,20 +33,20 @@ When an MQTT client connects using certificate-based authentication, the platfor
 
 To ensure backward compatibility and support for legacy migration patterns, the validation logic supports the following matching rules:
 
-| MQTT Client ID Format | Valid Certificate CN | Description |
+| MQTT client ID format | Valid certificate CN | Description |
 | --- | --- | --- |
 | `<deviceId>` | `CN = <deviceId>` | Standard format for new devices. |
 | `d:<deviceId>` | `CN = <deviceId>` OR `CN = d:<deviceId>` | Supported for legacy SmartREST devices migrating to MQTT Service. |
 
 Any connection attempt where the certificate CN does not align with these rules will now be rejected with an authentication failure.
 
-### Impact and Required Actions
+### Impact and required actions
 
 This is a **breaking change** for any environment where devices were previously using "generic" certificates or certificates where the CN did not strictly match the device identifier.
 
-* **Existing Devices:** If your devices use certificates with mismatched CNs, they will no longer be able to connect. You must rotate these certificates to align with the device's MQTT Client ID.
-* **Certificate Issuance:** Update your provisioning workflows to ensure the `Common Name` field is automatically populated with the unique device identifier.
-* **Authentication Methods:** This change specifically targets certificate-based authentication. Clients using username/password are unaffected.
+* **Existing devices:** If your devices use certificates with mismatched CNs, they will no longer be able to connect. You must rotate these certificates to align with the device's MQTT Client ID.
+* **Certificate issuance:** Update your provisioning workflows to ensure the `Common Name` field is automatically populated with the unique device identifier.
+* **Authentication methods:** This change specifically targets certificate-based authentication. Clients using username/password are unaffected.
 
 ### Why we are making this change
 
