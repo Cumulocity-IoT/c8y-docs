@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2632"
 version: "1023.3.2"
 ---
-Co-authored-by: Michael Voigt <91879843+mvoigt-sag@users.noreply.github.com>
+Previously, some control characters or unencoded special characters in the JSON body of a request caused failures in the Asset API. This had been fixed and such characters are now stripped from the body.
