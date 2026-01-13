@@ -1,6 +1,6 @@
 ---
 date: ""
-title: allow to search for device id and serialNumber with wild card search (#10591) [GRAFT][release/y2026] (#10724)
+title: wildcard search support for device ID and c8y_Hardware.serialNumber
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
