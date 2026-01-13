@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65379
 version: 1023.14.27
 ---
-Previously, exporting the data point graph widget as an image could result in the legend overlapping or being displayed incorrectly, making the image hard to read. This has been fixed, and exported images now display the graph correctly without the legend.
+Previously, when exporting the "Data point graph" widget as an image, the legend could overlap or be displayed incorrectly, making the image hard to read. This issue has been fixed, and exported images now display the data point graph correctly.
