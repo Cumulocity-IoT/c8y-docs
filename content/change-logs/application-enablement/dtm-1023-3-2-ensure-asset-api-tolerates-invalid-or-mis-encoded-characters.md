@@ -11,7 +11,7 @@ component:
 build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
-ticket: ""
+ticket: "CTM-2632"
 version: "1023.3.2"
 ---
 Co-authored-by: Michael Voigt <91879843+mvoigt-sag@users.noreply.github.com>
