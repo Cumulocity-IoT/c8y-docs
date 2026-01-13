@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data point graph legend now displays Alarm/Event label instead of type
+title: Data point graph legend now displays alarm/event labels instead of the type
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65446
 version: 1023.17.10
 ---
-Previously, the legend displayed the event type for each entry. It now displays the alarm or event label instead.
+Previously, the legend for alarms and events in the "Data point graph" widget displayed the type of the entries. This issue has been resolved. The legend now correctly displays the configured alarm or event label instead.
