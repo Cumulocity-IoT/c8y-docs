@@ -11,9 +11,9 @@ component:
 build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
-ticket: ""
+ticket: "CTM-2589"
 version: "1023.3.2"
 ---
-Improved validation feedback for Complex Properties — fields with errors
+Improved validation feedback for Complex Properties during creation and update — fields with errors
 are now clearly highlighted, making it easier to identify and correct
 issues.
