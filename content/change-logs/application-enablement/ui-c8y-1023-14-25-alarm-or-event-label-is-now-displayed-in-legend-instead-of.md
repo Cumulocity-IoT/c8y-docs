@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-65446
 version: 1023.14.25
 ---
-# Backport
+Previously, the legend for alarms and events in the "Data point graph" widget displayed the type of the entries. This issue has been resolved. The legend now correctly displays the configured alarm or event label instead.
 
 This will backport the following commits from `develop` to
 `release/y2026`:
