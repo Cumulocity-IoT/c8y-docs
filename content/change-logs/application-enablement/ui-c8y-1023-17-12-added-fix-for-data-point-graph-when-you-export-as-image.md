@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added fix for data point graph when you export as image.
+title: Data point graph correctly displayed when exported as an image
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
