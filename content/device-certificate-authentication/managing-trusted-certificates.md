@@ -78,6 +78,24 @@ In the detail view of a certificate you may change the parameters on the left, t
 
 For details on the fields, see the description on adding certificates above.
 
+### To renew a trusted certificate {#to-renew-a-trusted-certificate}
+
+Certificate renewal enables you to generate a new certificate authority (CA) certificate before the existing one expires. This maintains uninterrupted device connectivity and prevents authentication failures when the current CA certificate reaches the end of its validity period.
+
+A **Renew certificate** button appears for a certificate in the certificate list view when the following conditions are met:
+
+* The certificate is a CA certificate.
+* The certificate expires within 1.5 years from the current date.
+
+To renew a CA certificate perform these steps:
+
+1. In the **Trusted certificates** list, find the certificate you want to renew.
+2. Click the <i class="dlt-c8y-icon-refresh text-primary icon-20"></i> **Renew certificate** icon next to its current expiration date.
+
+{{< c8y-admon-info >}}
+When you renew a certificate, a new certificate with updated expiration dates is generated and it becomes active immediately, and can be used for device authentication.
+{{< /c8y-admon-info >}}
+
 ### To delete a trusted certificate {#to-delete-a-trusted-certificate}
 
 To permanently delete a certificate from the trusted certificates list, click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> at the right of the respective entry and in the context menu click **Delete**.
