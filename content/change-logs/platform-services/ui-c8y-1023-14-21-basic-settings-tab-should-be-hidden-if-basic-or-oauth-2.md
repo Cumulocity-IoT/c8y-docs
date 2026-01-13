@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Hide authentication's \"Basic settings\" tab if Basic or OAI-Secure login options are not available due to onlyManagementTenantAccess option"
+title: "Hide authentication's \"Basic settings\" tab if Basic or OAI-Secure login option is not configurable for the tenant"
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,6 +14,6 @@ build_artifact:
 ticket: MTM-64347
 version: 1023.14.21
 ---
-Since onlyManagementTenantAccess flag can be set for the Basic and OAI-Secure authentication methods, the Administration → Settings → Authentication → Basic settings tab will be shown or hidden depending on this flag:
-- if onlyManagementTenantAccess is set to true for an authentication method (Basic or OAI-Secure), the Basic settings tab will be hidden for tenants other than the management tenant
-- if onlyManagementTenantAccess is set to false for both (Basic or OAI-Secure) methods, the Basic settings tab will be visible to all relevant tenants.
+In order to simplify the user experience changes have been made to the tabs available to users in the Administration → Settings → Authentication page. If the tenant does not have permission to manage Basic or OAI-Secure login options, the corresponding tab will not be shown. This removes any confusion on what authentication methods are configurable for the tenant.
+
+Further information on how authentication methods are configured can be found in the [user documentation](https://cumulocity.com/docs/authentication/basic-settings).
