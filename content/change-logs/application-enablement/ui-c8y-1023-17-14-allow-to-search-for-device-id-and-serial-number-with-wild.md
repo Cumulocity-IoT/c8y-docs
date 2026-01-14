@@ -1,6 +1,6 @@
 ---
 date: ""
-title: allow to search for device id and serialNumber with wild card search (#10591) [GRAFT][release/cd] (#10723)
+title: Wildcard search support for device IDs
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
