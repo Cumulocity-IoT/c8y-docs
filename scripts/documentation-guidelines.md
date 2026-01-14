@@ -68,7 +68,6 @@ Instead of **i.e.**
 
 use
 
-
 **that is**
 
 This phrase is always followed by a comma.
