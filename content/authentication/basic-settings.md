@@ -38,6 +38,8 @@ To see the **Authentication** menu item, you must have ADMIN permission for the 
 
 For easier user access management, the above permission(s) are/is included in the global role(s) created by default in every new tenant:
 - Tenant manager - manages tenant-wide configurations like applications, tenant options and retention rules.
+
+Additionally, access to **Basic settings** tab may be restricted by the platform administrator via setting the `onlyManagementTenantAccess` option to `true` for Basic Auth or OAI-Secure login options (see [{{< openapi >}}](https://cumulocity.com/api/core/#operation/putAccessLoginOptionResource)).
 {{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}
