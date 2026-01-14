@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Basic settings" tab should be hidden if `BASIC` or `OAUTH2_INTERNAL` login options throw 403 error (#10454) [GRAFT][release/cd] (#10672)
+title: "Authentication tab hidden if corresponding login option is not configurable for the tenant"
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,11 +14,6 @@ build_artifact:
 ticket: MTM-64347
 version: 1023.17.13
 ---
-More context info:
-Depending on the value of the onlyManagementTenantAccess flag for the BASIC and OAI-Secure authentication methods, the Administration → Settings → Authentication → Basic settings tab should be dynamically shown or hidden, following the same behavior as already implemented for the Sign-on tab.
+To simplify the user experience, changes have been made to the tabs available to users in the Administration → Settings → Authentication page. If the tenant does not have permission to manage Basic or OAI-Secure login options, the corresponding tab will not be shown. This avoids confusion about what authentication methods are configurable for the tenant.
 
-Criteria:
-If onlyManagementTenantAccess is set to true for a given authentication method (BASIC or OAI-Secure), the Basic settings tab should be hidden for tenants other than the management tenant.
-If onlyManagementTenantAccess is set to false for both (BASIC or OAI-Secure) methods, the Basic settings tab should be visible to all relevant tenants.
-
-onlyManagementTenantAccess directly affects if login option throws 403 error, therefore we check for this error when deciding whether to show the tab or not.
+Further information on how to configure access settings for login options can be found in the [{{< openapi >}}](https://cumulocity.com/api/core/#operation/putAccessLoginOptionResource).
