@@ -1,12 +1,13 @@
 ---
-weight: 25
+weight: 20
 layout: redirect
 title: Connecting MQTT devices
 ---
 
 This section covers the details of connecting and authenticating an MQTT device to the MQTT Service.
-As with the [MQTT protocol implementation](#implementation) it will be of interest to anyone integrating MQTT devices with {{< product-c8y-iot >}}.
-See the [Connecting Core MQTT devices](#connecting-core-mqtt-devices) section for specific information about using {{< product-c8y-iot >}} MQTT protocols (SmartREST and JSON-over-MQTT) with the MQTT Service.
+It will be of interest to anyone integrating MQTT devices with {{< product-c8y-iot >}}.
+In general, the MQTT Service behaves the same way for all devices, whether they use the {{< product-c8y-iot >}} [Core MQTT](/device-integration/mqtt) protocols or a non-{{< product-c8y-iot >}} protocol.
+If there are differences related to the application protocol used by the device, these will be documented where relevant.
 
 ### Ports
 
@@ -23,6 +24,19 @@ Because the MQTT Service operates alongside the pre-existing Core MQTT Service, 
 * Port 2883 (non-TLS) is **not enabled in {{< product-c8y-iot >}} shared public environments** due to the security risks of allowing unencrypted traffic.
   To enable port 2883 in a dedicated environment, please contact [Product support](/additional-resources/contacting-support/).
 
+### Client Identifiers {#client-id}
+
+Every device connecting to the MQTT Service within a given tenant must use a unique _Client Identifier_ (client ID).
+If a device connects using a client ID that is already connected, the _existing_ connection will be terminated, in accordance with the MQTT specification.
+Devices in different tenants can be connected at the same time using the same client ID.
+Empty client IDs are not permitted.
+
+Note that in general, the client ID will be treated as an unstructured identifier that is not interpreted by the MQTT Service in any way.
+However, some special handling is done for **previously registered** Core MQTT devices connecting to the MQTT Service.
+See the [Core MQTT device support](#core-mqtt-support) section for more details.
+
+See the table of [limits and quotas](/service-terms/quotas/#mqtt-service) for details of the maximum allowed client ID length.
+
 ### Authentication {#authentication}
 
 The MQTT Service supports the following authentication methods.
@@ -36,6 +50,7 @@ In all cases it is important to ensure that the MQTT username is set correctly s
 
 *   **X.509 device certificates (certificate authentication)**<br>
     To authenticate using a certificate, a device must provide a _certificate chain_ that is trusted by a _trust anchor_ configured for the {{< product-c8y-iot >}} tenant.
+    The Common Name (CN) field of the certificate **must** match the client ID field in the MQTT `CONNECT` packet.
     The device **should** specify the tenant ID in the username field of the MQTT `CONNECT` packet.
     See the [Using TLS certificates](#using-tls-certificates) section below for more details on creating and managing trust anchors and device certificates.
 
@@ -130,12 +145,3 @@ Alternatively, you can use `openssl` to retrieve and extract the certificate:
 echo | openssl s_client -connect cumulocity.com:9883 -showcerts 2>/dev/null | \
     sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > cumulocity.com.pem
 ```
-
-### Connecting Core MQTT devices {#connecting-core-mqtt-devices}
-
-{{< c8y-admon-preview >}}
-This feature is in **Public Preview**.
-That is, it is not yet generally available and may be subject to change in the future.
-{{< /c8y-admon-preview >}}
-
-TBC
