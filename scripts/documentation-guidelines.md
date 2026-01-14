@@ -54,17 +54,32 @@ Create child device
 ### Abbreviations
 Avoid unfamiliar abbreviations
 
-Do not use the abbreviations  e.g. and  i.e., which might not be familiar to non-native speakers and are often mixed up.
+Do not use the abbreviations  **e.g.** and  **i.e.**, which might not be familiar to non-native speakers and are often mixed up.
 
-Instead of e.g., use for example - This phrase is always followed by a comma. If the phrase is not at the beginning of a sentence or preceded by a bracket or a hyphen, it is also preceded by a comma.
+Instead of **e.g.**
 
-Instead of i.e., use
+use 
 
-that is, that means - This phrase is always followed by a comma
+**for example** 
 
-- Replace "e.g." → "for example,"
-- Replace "i.e." → "that is,"
-- Replace "etc." → "and so on." or be specific
+This phrase is always followed by a comma.
+
+Instead of **i.e.** 
+
+use
+
+
+**that is**
+
+This phrase is always followed by a comma.
+
+Instead of **etc.** 
+
+use
+
+***an so on
+
+
 ```
 
 ### Spelling
