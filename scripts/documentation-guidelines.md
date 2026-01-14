@@ -54,7 +54,7 @@ Create child device
 ### Abbreviations
 Avoid unfamiliar abbreviations
 
-Do not use the abbreviations  **e.g.** and  **i.e.**, which might not be familiar to non-native speakers and are often mixed up.
+Do not use abbreviations that might not be familiar to non-native speakers and are often mixed up.
 
 Instead of **e.g.**
 
