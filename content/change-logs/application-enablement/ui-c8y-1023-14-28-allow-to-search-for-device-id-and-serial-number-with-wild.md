@@ -1,6 +1,6 @@
 ---
 date: ""
-title: wildcard search support for device ID and c8y_Hardware.serialNumber
+title: Wildcard search support for device IDs
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
