@@ -1,6 +1,6 @@
 ---
-date: ""
-title: When no data exist, the chart is still rendered properly
+date: '2026-01-14'
+title: 'When no data exist, the chart is still rendered properly'
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
