@@ -1,6 +1,8 @@
 ---
-date: ""
-title: "Authentication tab hidden if corresponding login option is not configurable for the tenant"
+date: '2026-01-15'
+title: >-
+  Authentication tab hidden if corresponding login option is not configurable
+  for the tenant
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
