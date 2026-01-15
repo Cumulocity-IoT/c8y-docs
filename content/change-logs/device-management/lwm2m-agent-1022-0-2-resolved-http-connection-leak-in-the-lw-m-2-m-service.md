@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-01-15'
 title: Resolved HTTP connection leak in the LWM2M service
 product_area: Device management & connectivity
 change_type:
