@@ -78,9 +78,9 @@ In the detail view of a certificate you may change the parameters on the left, t
 
 For details on the fields, see the description on adding certificates above.
 
-### To renew a CA certificate {#to-renew-a-ca-certificate}
+### To renew a CA certificate provided by {{< company-c8y >}} {#to-renew-a-ca-certificate}
 
-Certificate renewal enables you to generate a new Certificate Authority (CA) certificate before the existing one expires. This maintains uninterrupted device connectivity and prevents authentication failures when the current CA certificate reaches the end of its validity period.
+Certificate renewal enables you to generate a new Certificate Authority (CA) certificate provided by {{< company-c8y >}} before the existing one expires. The connected devices may need a moment to reconnect after the renewal, but it prevents sudden authentication failures in case the current certificate reaches the end of its validity period.
 
 A **Renew certificate** button appears for a certificate in the certificate list when the following conditions are met:
 
