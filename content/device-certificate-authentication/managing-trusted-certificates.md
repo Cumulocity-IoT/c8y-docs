@@ -90,7 +90,7 @@ A **Renew certificate** button appears for a certificate in the certificate list
 To renew a CA certificate perform these steps:
 
 1. In the **Trusted certificates** list, find the certificate you want to renew.
-2. Click the <i class="dlt-c8y-icon-refresh text-primary icon-20"></i> **Renew certificate** icon next to its current expiration date.
+2. Click the refresh icon <i class="dlt-c8y-icon-refresh text-primary icon-20"></i> next to its current expiration date.
 
 {{< c8y-admon-info >}}
 When you renew a certificate, a new certificate with updated expiration dates is generated and it becomes active immediately, and can be used for device authentication.
