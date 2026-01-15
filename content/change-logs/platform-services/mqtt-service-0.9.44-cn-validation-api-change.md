@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-hc5Tfixeqqei
     label: mqtt-service
 issue: MTM-65164
-version: 0.9.x
+version: 0.9.44
 ---
 
 {{< c8y-admon-caution >}}
