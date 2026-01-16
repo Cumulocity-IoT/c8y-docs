@@ -3,6 +3,15 @@ weight: 10
 title: Backup and recovery
 layout: redirect
 ---
+### For self managed c8yedge installations {#for-self-managed-c8yedge-installations}
+
+For self-managed {{< product-c8y-iot >}} Edge deployments, implement backup and recovery procedures according to your organization's data protection policies and Kubernetes cluster management practices. Ensure that Persistent Volume Claims (PVCs), the Edge custom resource configuration, and any DataHub data lake content are included in your backup strategy.
+
+{{< c8y-admon-caution >}}
+Once a storage class is configured in the Edge custom resource (CR), it cannot be changed. Ensure you select the appropriate storage class during initial installation, as this setting is immutable after Edge is deployed.
+{{< /c8y-admon-caution >}}
+
+---
 
 ### For c8yedge installations {#for-c8yedge-installations}
 
