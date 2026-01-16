@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix truncation on global context controls (#10654) [GRAFT][release/cd] (#10721)
+title: Fix truncation on global time context controls
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
