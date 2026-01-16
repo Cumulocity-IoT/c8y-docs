@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Removed length limits for fragment, series, and label fields in a data point forms
+date: '2026-01-16'
+title: >-
+  Removed length limits for fragment, series, and label fields in a data point
+  forms
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
