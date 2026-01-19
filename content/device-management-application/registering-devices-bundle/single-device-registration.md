@@ -41,6 +41,14 @@ Click **Accept** to confirm the connection. The status of the device will change
 In case of any issues, consult the documentation applicable for your device type in the [{{< product-c8y-iot >}} {{< device-portal >}}]({{< link-device-portal >}}) or look up the manual of your device.
 {{< /c8y-admon-info >}}
 
+This dialog can also be prefilled via query parameters.
+The field for the **Device ID** can be prefilled using the `externalId` query parameter, while the optional field **One-time password** can be prefilled via the `one-time-password` query parameter.
+
+A sample path could look like this:
+`/apps/devicemanagement/index.html#/deviceregistration?externalId=tedge-12345678&one-time-password=myRandomOTP`
+
+Any special characters might need to be URL encoded.
+
 ### Security token policy {#security-token-policy}
 
 Configure the security token policy to reduce the risk of devices which are not yet registered being taken over by threat actors, for example, by guessing their serial numbers.
