@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5037
 version: 1023.19.0
 ---
-In **Software repository** users can define that a device is responsible for providing the software artifacts itself instead of the user uploading a binary or pointing to it via URL. In this case the created software object in inventory had `$PROVIDED` as a placeholder value for the software `url` property. From now on instead of this placeholder and empty string value will be used. Existing software items in inventory remain unchanged.
+When creating a software item, users can define a device as responsible for providing the software artifacts, rather than uploading a binary or pointing to it via a URL. In this case, the created software object used to have `$PROVIDED` as a placeholder value for the software `url` property in the inventory. With this change, an empty string value will be stored instead. Existing software items in the inventory remain unchanged.
