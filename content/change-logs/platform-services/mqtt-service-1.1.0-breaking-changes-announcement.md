@@ -1,5 +1,5 @@
 ---
-date: 2026-01-16
+date: 2026-01-23
 title: Removal of deprecated features from the MQTT Service
 change_type:
   - value: change-inv-3bw8e
