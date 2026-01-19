@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix truncation on global time context controls
+title: Fixed truncation on global time context controls
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
