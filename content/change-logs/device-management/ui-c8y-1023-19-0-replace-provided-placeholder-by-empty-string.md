@@ -1,6 +1,6 @@
 ---
 date: ""
-title: In Software repository $PROVIDED placeholder has been replaced by an empty string value
+title: $PROVIDED placeholder has been replaced by an empty string value in the software repository
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
