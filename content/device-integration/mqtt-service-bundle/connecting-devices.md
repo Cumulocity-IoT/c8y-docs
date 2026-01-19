@@ -9,7 +9,7 @@ It will be of interest to anyone integrating MQTT devices with {{< product-c8y-i
 In general, the MQTT Service behaves the same way for all devices, whether they use the {{< product-c8y-iot >}} [Core MQTT](/device-integration/mqtt) protocols or a non-{{< product-c8y-iot >}} protocol.
 If there are differences related to the application protocol used by the device, these will be documented where relevant.
 
-### Ports
+### Ports {#ports}
 
 MQTT connections to the MQTT Service must use TCP.
 WebSocket connections are not supported.
@@ -57,7 +57,7 @@ In all cases it is important to ensure that the MQTT username is set correctly s
 ### Using TLS certificates {#using-tls-certificates}
 
 This section contains a simplified overview of the TLS certificate support in the MQTT Service.
-For more details, see the general [Device certificates](/device-certificate-authentication/device-certificates/) documentation for {{< product-c8y-iot >}}.
+For more details, see the general [device certificates](/device-certificate-authentication/device-certificates/) documentation for {{< product-c8y-iot >}}.
 
 #### Server certificates {#server-certificates}
 
@@ -84,19 +84,19 @@ To use device certificates for authentication, the root or intermediate certific
 For example, if only a root certificate has been configured as a trust anchor, the device should send a certificate chain containing (at least) the unique certificate for the the device, and an intermediate certificate trusted by the root.
 Conversely, if the intermediate certificate has been configured as a trust anchor, the device can send only the unique per-device certificate that is trusted by the intermediate certificate.
 
-Trust anchors can be configured through the [Trusted certificates](/device-certificate-authentication/managing-trusted-certificates/) page in the UI, or through the [REST](https://{{< domain-c8y >}}/api/core/#tag/Trusted-certificates) API.
+Trust anchors can be configured through the [**Trusted certificates**](/device-certificate-authentication/managing-trusted-certificates/) page in the UI, or through the [REST](https://{{< domain-c8y >}}/api/core/#tag/Trusted-certificates) API.
 
 Additionally, ensure that the _Auto registration_ option is enabled when adding certificates. This allows any device presenting a valid certificate to be automatically registered on the platform when it first connects.
 
 #### Creating self-signed certificates {#creating-self-signed-certificates}
 
-In order to self-sign the device certificates, the root _Certificate Authority_ (CA) certificate needs to be created.
+In order to self-sign the device certificates, the root Certificate Authority (CA) certificate must be created.
 Using the OpenSSL CLI tool, create a private key and then generate a self-signed root certificate from it.
 ```console
 openssl genpkey -algorithm RSA -out ca.key
 openssl req -x509 -new -nodes -key ca.key -sha256 -days 3650 -out ca.crt -subj "/C=UK/O=YourCompany/OU=YourOrg/CN=MQTTServiceCA"
 ```
-Then create a private key for the device, generate the _Certificate Signing Request_ (CSR) from this private key, and then sign the CSR.
+Then create a private key for the device, generate the Certificate Signing Request (CSR) from this private key, and then sign the CSR.
 ```console
 openssl genpkey -algorithm RSA -out client.key
 openssl rsa -in client.key -out client-key.pem -outform PEM
@@ -107,7 +107,7 @@ cat client.crt ca.crt > client-chain.pem
 
 If you have more advanced requirements regarding certificate creation, see [Generating and signing certificates](/device-certificate-authentication/device-certificates#generating-and-signing-certificates).
 
-You may also be able to use {{< product-c8y-iot >}}'s built-in [Certificate Authority](/device-certificate-authentication/certificate-authority/), if your devices can support the <a href="https://en.wikipedia.org/wiki/Enrollment_over_Secure_Transport" target="_blank">Enrolment over Secure Transport</a> (EST) protocol.
+You may also be able to use {{< product-c8y-iot >}}'s built-in [Certificate Authority](/device-certificate-authentication/certificate-authority/), if your devices can support the <a href="https://en.wikipedia.org/wiki/Enrollment_over_Secure_Transport" target="_blank">Enrollment over Secure Transport</a> (EST) protocol.
 
 #### Using certificates {#using-certificates}
 

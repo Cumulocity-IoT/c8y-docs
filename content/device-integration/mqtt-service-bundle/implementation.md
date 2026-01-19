@@ -247,7 +247,7 @@ All message publication and subscription on these topics is assumed to be for Co
 
 The structured MQTT [client identifiers](/device-integration/mqtt/#mqtt-clientid) allowed by Core MQTT are not supported by the MQTT Service.
 * If the client ID includes a `:defaultTemplateIdentifier` suffix, this will be treated simply as part of the client ID, with no special handling.
-* If the client ID includes a `d:` (connection type) prefix, this will be recognised to allow **previously registered** Core MQTT devices to connect to the MQTT Service and be handled as the same device by Core MQTT.
+* If the client ID includes a `d:` (connection type) prefix, this will be recognized to allow **previously registered** Core MQTT devices to connect to the MQTT Service and be handled as the same device by Core MQTT.
   However, the `d:` prefix will **not** be handled specially for new devices connecting to the {{< product-c8y-iot >}} platform for the first time.
   When a new device connects for the first time, any `d:` prefix will be treated as simply part of the client ID, with no special handling.
 
@@ -264,9 +264,9 @@ This automatic behaviour cannot be disabled.
 #### Device error handling {#core-mqtt-error-handling}
 
 As mentioned above, the decoupled, asynchronous architecture of the MQTT Service means that the {{< product-c8y-iot >}} core has less visiblity of connected MQTT devices.
-This means that a device with **not** be automatically disconnected even if it:
-1. Subscribes to an invalid or unavailable Core MQTT Topic
-2. Sends an invalid Core MQTT message
+This means that a device will not be automatically disconnected even if it:
+1. Subscribes to an invalid or unavailable Core MQTT Topic.
+2. Sends an invalid Core MQTT message.
 
 In these cases, the device will remain connected, but invalid messages will not be processed and no messages will be received from invalid topics.
 A device can subscribe to the `s/e` topic to monitor any error messages sent by the Core MQTT implementation in these cases.
