@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-01-19'
 title: Fixed truncation of global time context controls
 product_area: Application enablement & solutions
 change_type:
