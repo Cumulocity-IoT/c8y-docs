@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Prevent plugin translations from overriding app translations (#10745) [GRAFT][release/cd] (#10767)
+title: Prevent plugin translations from overriding app translations
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,11 +14,5 @@ build_artifact:
 ticket: MTM-65724
 version: 1023.17.19
 ---
-If language files from application and plugin contain the same key, the
-translation from plugin overrides the translation from app, which is not
-desired because the translation in the app is usually newer, more
-relevant and up-to-date than a translation from plugin.
-
-This task is to change the order of loading translations, so that
-translations from app have higher priority than translations from
-plugins.
+This fix prevents plugins from overriding the translations in the shell application. Still, within a plugin, the translations provided by this plugin take precedence over the shell application's ones.
+If you need to override a shell application translation, you may use [application options](https://cumulocity.com/docs/web/application-configuration/#languages-customization) or [localization feature](https://cumulocity.com/docs/standard-tenant/changing-settings/#localization).
