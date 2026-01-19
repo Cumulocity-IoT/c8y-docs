@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Prevent plugin translations from overriding app translations
+title: Prevented plugin translations from overriding application translations
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
