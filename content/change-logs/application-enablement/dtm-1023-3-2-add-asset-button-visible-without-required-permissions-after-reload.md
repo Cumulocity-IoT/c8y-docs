@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2026-01-13"
 title: "Add Asset button only visible with required permissions after reload"
 product_area: "Application enablement & solutions"
 change_type:
@@ -14,4 +14,4 @@ build_artifact:
 ticket: ""
 version: "1023.3.2"
 ---
-Previously, the **Add asset** button was also displayed after a page reload if the user lacked the required permissions. This issue has been resolved. The **Add asset** button is now only shown if the user has the appropriate permissions, both on initial load and after reload.
+Previously, the **Add asset** button was also displayed after  reloading Home page if the user lacked the required permissions. This issue has been resolved. The **Add asset** button is now only shown if the user has the appropriate permissions, both on initial load and after reload.
