@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAM-35340
-version: 27.20.0
+version: 27.23.0
 ---
 
 The {{< product-c8y-iot >}} MQTT Service EPL API (`com.apama.cumulocity.mqttservice`) is now removed. Use the DeviceService API from (`com.apama.cumulocity.devices`) instead, see [Using {{< product-c8y-iot >}} MQTT Service](/streaming-analytics/epl-apps/#using-cumulocity-mqtt-service).
