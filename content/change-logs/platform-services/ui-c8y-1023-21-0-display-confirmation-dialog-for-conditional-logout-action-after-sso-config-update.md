@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Display confirmation dialog for optional session termination when updating SSO configuration
+title: New confirmation dialog for optional session termination when updating SSO configuration
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
