@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Filtering for types works correctly in the Event list widget
 product_area: Application enablement & solutions
 change_type:
