@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Asset API tolerates invalid or mis-encoded characters
+title: "Asset API tolerates invalid or mis-encoded characters"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
