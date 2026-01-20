@@ -47,7 +47,7 @@ The field for the **Device ID** can be prefilled using the `externalId` query pa
 A sample path could look like this:
 `/apps/devicemanagement/index.html#/deviceregistration?externalId=tedge-12345678&one-time-password=myRandomOTP`
 
-Any special characters might need to be URL encoded.
+Any special characters may need to be URL-encoded.
 
 ### Security token policy {#security-token-policy}
 
