@@ -1,6 +1,6 @@
 ---
 date: ""
-title: with the new global time context we introduced a bug, that the filtering for types was not applied to the event list widget (#10603) [GRAFT][release/y2026] (#10613)
+title: Filtering for types works correctly in the Event list widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,22 +14,4 @@ build_artifact:
 ticket: MTM-65606
 version: 1023.14.34
 ---
-# Backport
-
-This will backport the following commits from `develop` to
-`release/y2026`:
-- [fix(web sdk): [MTM-65606] with the new global time context we
-introduced a bug, that the filtering for types was not applied to the
-event list widget
-(#10603)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10603)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65606]:
-https://cumulocity.atlassian.net/browse/MTM-65606?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Jan Hommes <janhommes@users.noreply.github.com>
+With the introduction of the new global time context, the filtering for types was not correctly applied to the "Event list" widget. This resulted in the "Event list" widget displaying all event types, regardless of the filter settings. The fix ensures that the type filter is now correctly applied again, so that only the selected event types are shown in the event list widget when a filter is active.
