@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65337
 version: 1023.22.0
 ---
-With this change, user is able to provide 'scope' parameter to Azure AD configuration.
+Context: Azure AD integrations may require proper scope configuration to define the permissions and access levels for authentication and authorization. Previously, the Azure AD template did not expose the scope parameter, limiting configuration flexibility. Change: The Azure AD template now includes a scope property that allows you to explicitly configure the scope parameter when setting up your Azure AD integration. This gives you full control over the permissions requested during the authentication process. Impact: When configuring Azure AD authentication, you can now specify the exact scope requirements for your integration, ensuring that only the necessary permissions are requested and granted. This applies to all new Azure AD configurations created after this update. Existing Azure AD configurations will continue to work as before, but you can update them to include scope configuration if needed. Scope parameter is optional one.
