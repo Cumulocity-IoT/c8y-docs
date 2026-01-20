@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2026-01-13"
 title: "Improved validation feedback on creating and updating complex properties"
 product_area: "Application enablement & solutions"
 change_type:
