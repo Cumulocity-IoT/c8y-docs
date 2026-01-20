@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-01-15'
 title: Data point graph correctly displayed when exported as an image
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-01-14'
 title: Data point graph legend now displays alarm/event labels instead of the type
 product_area: Application enablement & solutions
 change_type:
