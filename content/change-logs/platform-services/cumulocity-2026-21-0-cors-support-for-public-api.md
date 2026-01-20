@@ -1,6 +1,6 @@
 ---
 date: ''
-title: CORS Support Added for Public API Endpoints
+title: CORS support added for public API endpoints
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
