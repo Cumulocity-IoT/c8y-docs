@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Improved validation feedback for Complex Properties by clearly highlighting fields that contain errors."
+title: "Improved validation feedback on creating and updating complex properties"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -14,6 +14,6 @@ build_artifact:
 ticket: "CTM-2589"
 version: "1023.3.2"
 ---
-Improved validation feedback for Complex Properties during creation and update — fields with errors
+The validation feedback during the creation and update of complex properties has been improved. Fields with errors
 are now clearly highlighted, making it easier to identify and correct
 issues.
