@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Display confirmation dialog for conditional logout action after SSO config update [GRAFT][release/cd] (#10788)
+title: Display confirmation dialog for optional session termination when updating SSO configuration
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
