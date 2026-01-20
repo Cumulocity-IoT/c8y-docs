@@ -14,4 +14,4 @@ build_artifact:
 ticket: ""
 version: "1023.3.2"
 ---
-Previously, the **Add asset** button was also displayed after  reloading Home page if the user lacked the required permissions. This issue has been resolved. The **Add asset** button is now only shown if the user has the appropriate permissions, both on initial load and after reload.
+Previously, after reloading the Home page, the **Add asset** button was also displayed if the user lacked the required permissions. This issue has been resolved. The **Add asset** button is now only shown if the user has the appropriate permissions, both on initial load and after reload.
