@@ -1,6 +1,6 @@
 ---
 date: ""
-title: UI data point graph does not merge y axis units correctly.
+title: UI data point graph now correctly merges y-axis units
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,21 +14,4 @@ build_artifact:
 ticket: MTM-65593
 version: 1023.19.3
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-65593] UI data point graph does not merge y axis
-units
-correctly](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10608)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65593]:
-https://cumulocity.atlassian.net/browse/MTM-65593?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
-Co-authored-by: janhommes <jan.hommes@cumulocity.com>
+Data graphs in the Data Explorer previously defaulted the y-axis to always include 0, which could make visualizations less readable when the data range did not span zero. This behavior was different from the old widget and sometimes required manual adjustments to get a meaningful view. The default y-axis behavior has now been changed so it no longer automatically starts at 0, aligning it with the legacy widget. Users can still choose to force the y-axis to start at 0 using the available option. As a result, charts and graphs now scale more appropriately by default while retaining the flexibility to include 0 when needed. This improves readability for most datasets without requiring manual configuration.
