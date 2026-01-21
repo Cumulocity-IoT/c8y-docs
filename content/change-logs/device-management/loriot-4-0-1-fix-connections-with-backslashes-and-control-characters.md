@@ -1,5 +1,5 @@
 ---
-date:
+date: 
 title: Handle passwords with special characters in JSON configuration
 change_type:
   - value: change-VSkj2iV9m
@@ -13,4 +13,4 @@ build_artifact:
 ticket: DM-5142
 version: 4.0.1
 ---
-Resolved an issue that caused errors when passwords contained backslashes or control characters. Passwords with special characters no longer break authentication or configuration.
+Resolved an issue that caused errors when [Loriot connection passwords](/device-integration/lora-loriot/#creation-of-loriot-lns-connection-in-platform) contained backslashes or control characters. Passwords with special characters no longer break authentication or configuration.
