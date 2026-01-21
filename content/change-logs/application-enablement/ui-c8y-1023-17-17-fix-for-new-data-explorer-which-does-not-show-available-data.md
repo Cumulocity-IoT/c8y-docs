@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix for new data explorer which does not show available data.
+title: Data Explorer does not display data when time range starts exactly at a minute boundary
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-65093
 version: 1023.17.17
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-65093] Fix for new data explorer which does not
-show available data.
-(#10350)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10350)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65093]:
-https://cumulocity.atlassian.net/browse/MTM-65093?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+When a datapoint contains values at second-level granularity, selecting a custom time range could result in no data being shown on the chart even though data exists within the selected interval. This happened because the underlying request used an offset start time, and the Data Explorer then filtered the results using second-level boundaries that did not fully overlap with the actual datapoint timestamps. As a result, valid data near the beginning of the selected range could be excluded from the visible window. The issue was fixed by adding second-level selection support for custom time ranges, ensuring the query and filtering logic align correctly with second-based data.
