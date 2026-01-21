@@ -1,5 +1,5 @@
 ---
-date: 2025-12-31
+date: 2026-03-31
 title: Removed length limits for fragment, series, and label fields in data point forms
 product_area: Application enablement & solutions
 change_type:

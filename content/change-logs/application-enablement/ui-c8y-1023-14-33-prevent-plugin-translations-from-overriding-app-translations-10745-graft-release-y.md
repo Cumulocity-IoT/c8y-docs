@@ -1,5 +1,5 @@
 ---
-date: 2025-12-31
+date: 2026-03-31
 title: Prevented plugin translations from overriding application translations
 product_area: Application enablement & solutions
 change_type:

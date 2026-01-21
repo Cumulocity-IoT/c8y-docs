@@ -1,5 +1,5 @@
 ---
-date: 2025-12-31
+date: 2026-03-31
 title: Fixed truncation on global time context controls
 product_area: Application enablement & solutions
 change_type:
