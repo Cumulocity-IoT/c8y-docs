@@ -19,4 +19,4 @@ version: 2025.400.0
 Previously, the host of a liveness or readiness probe of a microservice could be set in the microservice manifest. 
 To avoid possible security implications, we have disabled this possibility. 
 
-This improvement does not affect setting the path in the liveness and readiness probe of the microservice which is typically used.
+This change does not affect setting the path in the liveness and readiness probe of the microservice that is typically used.
