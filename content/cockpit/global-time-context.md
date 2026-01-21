@@ -16,7 +16,7 @@ helpcontent:
     The toolbar provides centralized time control, auto-refresh capabilities, and data aggregation options. Your settings are saved in the URL for bookmarking and sharing."
 ---
 
-The global time context is the toolbar at the top of dashboards that lets you control the time range, auto-refresh, and data aggregation for all widgets at once. Instead of setting these options in each widget individually, you configure them once and all compatible widgets update together.
+The global time context is the toolbar at the top of dashboards that lets you control the time range, auto-refresh, and data aggregation for all widgets at once. Instead of setting these options in each widget individually, you configure them once, and all compatible widgets update together.
 
 ![Global time context toolbar](/images/users-guide/cockpit/cockpit-global-time-context-toolbar.png)
 
@@ -32,7 +32,7 @@ The toolbar contains the following controls:
 
 | Control      | Description                          |
 | :----------- | :----------------------------------- |
-| Mode toggle  | Switch between Live and History mode |
+| Mode toggle  | Switch between live and history mode |
 | Time range   | Select the time period to display    |
 | Auto-refresh | Toggle automatic data refresh        |
 | Aggregation  | Choose how data points are grouped   |
@@ -50,7 +50,7 @@ Not all widgets currently support the global time context. Support is being prog
 - **Aggregation** - The widget groups data according to the selected aggregation level
 
 
-### Live mode and History mode {#live-and-history-mode}
+### Live mode and history mode {#live-and-history-mode}
 
 The global time context operates in two modes:
 
@@ -79,7 +79,7 @@ Available preset options:
 | Last month  | Approximately 30 days ago to now |
 | Custom      | Selected start date to now       |
 
-In History mode, you can also select a custom time range where you can specify exact start and end dates.
+In history mode, you can also select a custom time range where you can specify exact start and end dates.
 
 ![Time range history mode](/images/users-guide/cockpit/cockpit-global-time-context-time-range-options-history.png)
 
@@ -111,14 +111,14 @@ In the **Aggregation** section of the toolbar, select one of the available optio
 | Daily    | Groups data into 1-day intervals    |
 
 {{< c8y-admon-info >}}
-Some aggregation options may be disabled if they don't make sense for your selected time range. For example, **Daily** aggregation is disabled for ranges less than 1 day.
+Some aggregation options may be disabled if they don't apply to your selected time range. For example, **Daily** aggregation is disabled for ranges less than 1 day.
 {{< /c8y-admon-info >}}
 
 ### To link or unlink a widget {#to-link-unlink-widget}
 
 Widgets can be linked or unlinked from the global time context. When linked, a widget is synchronized and updates automatically when you change the time range, aggregation, or refresh settings. Unlinked widgets operate independently with their own time controls.
 
-#### Using the link icon
+#### Using the link icon {#using-the-link-icon}
 
 Look for the link icon in the widget header. Click the icon to toggle between states.
 
@@ -132,7 +132,7 @@ Look for the link icon in the widget header. Click the icon to toggle between st
 
 Unlinking widgets is useful for comparing different time periods side-by-side.
 
-#### Using widget configuration
+#### Using the widget configuration {#using-the-widget-configuration}
 
 You can also configure the time context in the widget settings. By default, new widgets are connected to the global time context.
 
