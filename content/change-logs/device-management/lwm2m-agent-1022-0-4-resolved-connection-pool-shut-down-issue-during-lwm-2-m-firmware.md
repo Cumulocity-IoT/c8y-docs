@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5580
 version: 1022.0.4
 ---
-Addressed a rare scenario in the LWM2M firmware update process that could trigger an infinite call loop, resulting in the shutdown of the connection pool. This issue caused the LWM2M agent to lose connectivity with the core system. The underlying problem has been identified and resolved, ensuring stable firmware updates and reliable agent connectivity.
+A rare scenario in the LWM2M firmware update process has been addressed that could trigger an infinite call loop, resulting in the shutdown of the connection pool. This issue caused the LWM2M agent to lose connectivity with the core system. The underlying problem has been identified and resolved, ensuring stable firmware updates and reliable agent connectivity.
