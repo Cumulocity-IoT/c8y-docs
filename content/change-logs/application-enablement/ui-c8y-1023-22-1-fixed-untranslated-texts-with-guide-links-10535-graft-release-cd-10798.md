@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65540
 version: 1023.22.1
 ---
-This change fixes a localization issue that occurred when empty state messages included documentation links. These messages were not displayed properly in multiple places throughout Administration and Cockpit.
+This change fixes a localization issue that occurred when empty state messages included documentation links. These messages were not displayed properly in multiple places throughout the Administration and Cockpit applications.
