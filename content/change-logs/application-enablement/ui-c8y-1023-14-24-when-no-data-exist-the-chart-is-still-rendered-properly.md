@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-12-31
 title: Data point graph now renders properly when no data exists
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date:
+date: 2025-12-31
 title: Fixed duplicate operation creation during bulk operation execution
 change_type:
   - value: change-VSkj2iV9m

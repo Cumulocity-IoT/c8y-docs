@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-12-31
 title: Data point graph slider correctly retrieves device data
 product_area: Application enablement & solutions
 change_type:

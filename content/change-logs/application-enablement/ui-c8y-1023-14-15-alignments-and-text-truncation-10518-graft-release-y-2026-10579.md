@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2025-12-31
 title: Fixed alignment and text truncation issues
 product_area: Application enablement & solutions
 change_type:
