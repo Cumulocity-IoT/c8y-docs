@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-01-20'
 title: Prevented plugin translations from overriding application translations
 product_area: Application enablement & solutions
 change_type:
