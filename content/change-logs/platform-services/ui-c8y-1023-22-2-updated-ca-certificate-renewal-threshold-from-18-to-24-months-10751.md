@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Updated CA certificate renewal threshold from 18 to 24 months (#10751) [GRAFT][release/cd] (#10809)
+title: CA certificate renewal threshold updated to 24 months
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65709
 version: 1023.22.2
 ---
-As found out during the review of Cumulocity-IoT/c8y-docs#4076, backend changed the mentioned threshold to 24 months, so UI needs to align + linting fixes.
+The renewal option of CA certificates provided by {{< company-c8y >}} is now available up to 2 years before the expiration date. See more details in the [documentation](/docs/device-certificate-authentication/managing-trusted-certificates/#to-renew-a-ca-certificate).
