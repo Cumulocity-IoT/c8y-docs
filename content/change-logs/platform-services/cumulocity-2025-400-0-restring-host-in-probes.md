@@ -15,7 +15,7 @@ ticket: MTM-65302
 version: 2026.23.0
 ---
 
-Previously, the host of a liveness or readiness probe of a microservice could be set in the microservice manifest. 
+Until now, the host of a liveness or readiness probe of a microservice could be set in the microservice manifest. 
 To avoid possible security implications, setting the host in the manifest probes will be disabled in the future.
 
 The removal is planned for Q2 2026 in CD versions and in the 2027 annual release.
