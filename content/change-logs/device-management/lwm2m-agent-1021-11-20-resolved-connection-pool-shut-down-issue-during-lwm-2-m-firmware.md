@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Resolved "Connection pool shut down" issue during LWM2M firmware update
+title: Resolved connection pool shutdown issue during LWM2M firmware update
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
