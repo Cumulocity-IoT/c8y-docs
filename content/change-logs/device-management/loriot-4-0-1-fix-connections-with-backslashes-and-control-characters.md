@@ -1,6 +1,6 @@
 ---
 date: 
-title: Handle passwords with special characters in JSON configuration
+title: Accept Loriot platform connectivity credentials with special characters
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
