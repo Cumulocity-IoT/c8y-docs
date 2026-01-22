@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data Explorer does not display data when time range starts exactly at a minute boundary
+title: Data explorer now also displays data near the beginning of a selected time range
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
