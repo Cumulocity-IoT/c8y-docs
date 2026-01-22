@@ -1,6 +1,6 @@
 ---
 date: ""
-title: UI data point graph now correctly merges y-axis units
+title: Data point graph and data explorer now correctly merge y-axis units
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
