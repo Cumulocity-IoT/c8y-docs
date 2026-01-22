@@ -18,7 +18,6 @@ version: 2026.23.0
 Until now, the host of a liveness or readiness probe of a microservice could be set in the microservice manifest. 
 To avoid potential security implications, setting the host in manifest probes will be disabled in Q3 2026 for CD versions and in the 2027 annual release. Uploading a microservice that uses the 'host' parameter within the readiness or liveness probe will be rejected.
 
-The removal is planned for Q2 2026 in CD versions and in the 2027 annual release.
 
 The introduced change is currently disabled by default and can be enabled via a feature toggle `core.ms-hosting.no-host-in-probes-in-manifest`.
 
