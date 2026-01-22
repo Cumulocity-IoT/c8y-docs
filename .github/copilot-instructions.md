@@ -131,6 +131,20 @@ Do not use the following abbreviations, which might not be familiar to non-nativ
 - "delete" for permanent removal, "remove" for list removal
 - "create" (not generate) for new objects
 
+### Spelling of proper names
+
+Always spell these proper names like this:
+
+- Actility LoRa
+- LoRa
+- LWM2M
+- MQTT
+- OPC UA
+- SCADA
+- SmartREST
+- WebSocket
+
+
 ## Formatting standards
 
 ### Bold formatting
