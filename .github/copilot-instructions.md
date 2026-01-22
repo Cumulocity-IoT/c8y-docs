@@ -22,7 +22,7 @@ Generate clear, comprehensive, and consistent software documentation for users a
 
 ### Articles & modifiers
 - **Always include**: Articles (a, an, the) - don't skip for brevity
-- **Avoid**: Modal verbs (can, may, might, should, could) - use direct statements
+- **Avoid**: Modal verbs (may, might, should, could) - use direct statements
 - **Position modifiers clearly** to avoid ambiguity
 
 ## Structure & organization
@@ -121,7 +121,7 @@ Do not use the following abbreviations, which might not be familiar to non-nativ
 ### Prohibited terms
 
 - Replace "blacklist" → "blocklist"
-- Replace "clone
+- Replace "clone" → "duplicate"
 - Replace "please" → remove (except for support contacts)
 
 ### Specific word choices
@@ -134,18 +134,18 @@ Do not use the following abbreviations, which might not be familiar to non-nativ
 ## Formatting standards
 
 ### Bold formatting
-Use bold formatting for 
+Use bold formatting for: 
 - UI elements: Buttons, field names, menu items, tabs ("Click **Delete**")
 - Important terms on first use
 
 ### Italics formatting
 Use italics for: 
-File names, URLs, folder names (*database.txt*)
+- File names, URLs, folder names (*database.txt*)
 
 ### Quotes
 Use double quotes for: 
-User input, messages, notifications, dialog text ("Operation completed successfully")
-Values in fields
+- User input, messages, notifications, dialog text ("Operation completed successfully")
+- Values in fields
 
 ### Code formatting
 - Specify language for syntax highlighting (```java, ```json, etc.)
