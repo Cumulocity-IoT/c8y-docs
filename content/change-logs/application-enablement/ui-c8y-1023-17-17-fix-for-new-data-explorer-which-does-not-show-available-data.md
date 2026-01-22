@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Data explorer now also displays data near the beginning of a selected time range
+date: '2026-01-20'
+title: >-
+  Data explorer now also displays data near the beginning of a selected time
+  range
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
