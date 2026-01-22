@@ -22,6 +22,6 @@ To avoid potential security implications, setting the host in manifest probes wi
 For testing purposes, the new behavior can already be enabled via a feature toggle 'core.ms-hosting.no-host-in-probes-in-manifest'.
 
 {{< c8y-admon-important >}}
-In Q2 2026 for the CD versions and in 2027 for the yearly releases, this change will become **mandatory**.
+In Q3 2026 for the CD versions and in 2027 for the yearly releases, the new behavior will become **mandatory**.
 {{< /c8y-admon-important >}}
 ~                                              
