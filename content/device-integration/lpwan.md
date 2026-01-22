@@ -1,6 +1,6 @@
 ---
-weight: 14
-title: Fragment library
+weight: 150
+title: LPWAN
 layout: bundle
 sector:
   - device_management
