@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65709
 version: 1023.22.2
 ---
-The renewal option of CA certificates provided by {{< company-c8y >}} is now available up to 2 years before the expiration date. See more details in the [documentation](/docs/device-certificate-authentication/managing-trusted-certificates/#to-renew-a-ca-certificate).
+The renewal option for CA certificates provided by {{< product-c8y-iot >}} has been extended, allowing renewals up to 2 years before the expiration date, giving you more flexibility in certificate management. For more details, see the [documentation](/docs/device-certificate-authentication/managing-trusted-certificates/#to-renew-a-ca-certificate).
