@@ -1,6 +1,6 @@
 ---
 date: ""
-title: automatic y-axis scaling for charts
+title: Default y-axis no longer automatically includes 0
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
