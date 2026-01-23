@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-01-23'
 title: CA certificate renewal threshold updated to 24 months
 product_area: Platform services
 change_type:

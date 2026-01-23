@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-01-23'
 title: Fixed localization issues with texts containing links to the documentation
 product_area: Application enablement & solutions
 change_type:

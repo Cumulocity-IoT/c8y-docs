@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-01-23'
 title: Azure AD template now supports scope configuration
 product_area: Platform services
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-01-23'
 title: Data point graph and data explorer now correctly merge y-axis units
 product_area: Application enablement & solutions
 change_type:
