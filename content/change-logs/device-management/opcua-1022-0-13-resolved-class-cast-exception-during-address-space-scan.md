@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Resolved ClassCastException during address space scan
+title: Resolved ClassCastException during OPC UA device gateway address space scan
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
