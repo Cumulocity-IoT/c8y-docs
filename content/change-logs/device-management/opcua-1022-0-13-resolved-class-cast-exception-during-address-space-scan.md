@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5160
 version: 1022.0.13
 ---
-Addressed an issue where scanning the address space on certain OPC-UA servers caused a ClassCastException when reading the root node data. Upgraded the core OPC-UA library to a version that resolves this problem.
+Previously, scanning the device gateway address space on certain OPC UA servers caused a ClassCastException when reading the root node data. The issue has been resolved by upgrading the core OPC UA library to a higher version.
