@@ -14,7 +14,7 @@ The Model Context Protocol (MCP) is a standard for connecting AI agents to exter
 - Defines tool schemas that describe parameters and functionality.
 - Executes tool logic and returns results to the agent.
 
-They are therefore perfect fits to extend the capabilities of Cumulocity agents, either by connecting an existing MCP server or by building your own.
+They are therefore perfect fits to extend the capabilities of {{< product-c8y-iot >}} agents, either by connecting an existing MCP server or by building your own.
 
 ### Configuring MCP servers {#configuring-mcp-servers}
 
@@ -25,7 +25,7 @@ To add an MCP server to the AI Agent Manager:
 3. Click **Configure MCP Server**.
 4. Enter the URL for your MCP server in the **Add a new MCP server** text box.
 5. Click **Test connection**.
-6. If the connection is successful, you see a list of tools the server exposes. Give the server a name and configure authentication or additional headers.
+6. If the connection is successful, you see a list of tools the server exposes. Scroll to the bottom of that list, to give the server a name and configure authentication or additional headers.
 7. Click **Save** to persist the configuration and start using it in agents.
 
 The system connects to the MCP server and discovers available tools.
