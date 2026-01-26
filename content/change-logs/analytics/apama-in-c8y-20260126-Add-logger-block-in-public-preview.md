@@ -15,4 +15,17 @@ ticket: PAB-5072
 version: 27.25.0
 ---
 
-A new `Logger` block has been added in Public Preview. This block enables writing a configurable message to the log file for each input.
+A new `Logger` block has been added to Analytics Builder in Public Preview. This block enables writing a message to the log file for each input, with the following parameters:
+ - `loggerTag`:
+Used to identify log messages from this block. If not specified, defaults to "logger".
+
+- `logLevel`:
+The log level to use when writing messages to the log file. Available options:
+
+  - `INFO`  (Default)
+  - `DEBUG` (Will not appear in the log by default)
+  - `WARN`
+  - `ERROR` (Will cause an alarm to be raised)
+
+- `disableOutput`:
+Whether to disable logging from this block. This can be templated using model parameters to disable logging at runtime. Defaults to `false`.
