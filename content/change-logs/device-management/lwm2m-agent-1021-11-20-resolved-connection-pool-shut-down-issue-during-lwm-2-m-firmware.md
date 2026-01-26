@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Resolved connection pool shutdown issue during LWM2M firmware update
 product_area: Device management & connectivity
 change_type:

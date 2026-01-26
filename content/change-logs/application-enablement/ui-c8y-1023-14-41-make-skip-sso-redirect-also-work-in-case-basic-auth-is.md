@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: skipSSORedirect now works when basic authentication is forbidden
 product_area: Application enablement & solutions
 change_type:

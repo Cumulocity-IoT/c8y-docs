@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Resolved ClassCastException during OPC UA device gateway address space scan
 product_area: Device management & connectivity
 change_type:
