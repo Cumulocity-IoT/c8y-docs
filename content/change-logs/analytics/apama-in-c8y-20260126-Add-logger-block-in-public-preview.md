@@ -2,8 +2,8 @@
 date: 2026-01-26
 title: Add logger block in public preview
 change_type:
-  - value: 
-    label: Feature
+  - value: change-2c7RdTdXo4
+    label: Preview
 product_area: Analytics
 component:
   - value: component-M5-cepIIS
