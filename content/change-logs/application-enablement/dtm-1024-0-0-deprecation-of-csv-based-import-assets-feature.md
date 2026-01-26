@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2025-12-06
 title: Deprecation of CSV-based import assets feature in Digital Twin Manager
 product_area: Application enablement & solutions
 change_type:
