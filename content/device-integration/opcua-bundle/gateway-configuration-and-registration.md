@@ -54,7 +54,7 @@ proxy of thin-edge.io exposes the {{< product-c8y-iot >}} API. By default, the p
 
 ```yaml
 C8Y:
-    baseUrl: http://localhost:8001/c8y/ # Points to the thin-edge.io proxy
+    baseUrl: http://localhost:8001/c8y # Points to the thin-edge.io proxy
 gateway:
     bootstrap:
         tenantId: <<yourTenantId>>
@@ -112,7 +112,7 @@ The MQTT Forwarding mode uses the existing `thinEdge` configuration and introduc
 
 ```yaml
 C8Y:
-    baseUrl: http://localhost:8001/c8y/
+    baseUrl: http://localhost:8001/c8y
 gateway:
     bootstrap:
         tenantId: <<yourTenantId>>
