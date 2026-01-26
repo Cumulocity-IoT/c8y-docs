@@ -1,8 +1,8 @@
 ---
 date: 2026-01-26
-title: Add logger block in public preview
+title: Add Logger block in Public Preview
 change_type:
-  - value: change-2c7RdTdXo4
+  - value: change-pXAlHAWka
     label: Preview
 product_area: Analytics
 component:
@@ -15,4 +15,4 @@ ticket: PAB-5072
 version: 27.25.0
 ---
 
-A new `Logger` block has been added in public preview. This block enables writing a configurable message to the log file for each input.
+A new `Logger` block has been added in Public Preview. This block enables writing a configurable message to the log file for each input.
