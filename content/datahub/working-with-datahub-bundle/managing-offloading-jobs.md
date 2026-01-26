@@ -40,11 +40,11 @@ In the context menu of each offloading pipeline, you will find actions for manag
 
 ##### Editing/showing an offloading pipeline {#editingshowing-an-offloading-pipeline}
 
-Click **Edit** to edit the current settings. Only inactive pipelines can be edited. Note that you cannot change the {{< product-c8y-iot >}} base collection selected for this pipeline. Additional filter predicates and additional result columns can be changed. 
-
-In case of an inventory offloading, the view can be changed as well, which will also result in different additional result columns being auto-detected. If you change a view and you have selected additional columns beforehand, you can either keep those selected columns or discard them. In case you keep a selected column and it is not among the auto-detected columns of the new view, the offloading configuration cannot be completed as that column is unknown for this view.
+Click **Edit** to edit the current settings. Only inactive pipelines can be edited. Note that you cannot change the {{< product-c8y-iot >}} base collection selected for this pipeline. Additional filter predicates and additional result columns can be changed.
 
 Note that these changes are not applied to already exported data. A change to the offloading pipeline only affects data to be exported in upcoming offloading runs.
+
+In case of an inventory offloading, the view can be changed as well, which also affects the additional result column settings. If you change a view and you have selected additional columns in the current view, the system checks whether the target view contains these columns. If not, a dialog opens where you can either select or deselect each column missing in the target view. If selected, the system automatically creates the missing column in the target view. If deselected, the column will be removed from the list of selected additional columns. A special case is if the selected column exists in both views, but with different types. When selecting the column, the type of the current view will be used to update the columnn type of the target view.
 
 For active pipelines, click **Show** to browse through the configuration. You cannot edit the settings.
 
@@ -69,11 +69,11 @@ Click **Show offloading history** to examine the execution history of a pipeline
 
 ### Importing/exporting offloading configurations {#importingexporting-offloading-configurations}
 
-The import/export functionality allows you to backup your offloading configurations to a file. You can use the backup when editing the data lake settings or to copy offloading configurations from one {{< product-c8y-iot >}} DataHub instance to another. Import/export solely includes the configuration of a pipeline; it includes neither the runtime status of a pipeline nor already exported data.
+The import/export functionality allows you to backup your offloading configurations to a file. You can use the backup when editing the data lake settings or to copy offloading configurations from one {{< product-c8y-iot >}} DataHub instance to another. Import/export includes the configuration settings; it includes neither the runtime status of an offloading pipeline nor already exported data.
 
 ##### Export of offloading configurations {#export-of-offloading-configurations}
 
-The action bar provides an **Export** button, which exports all offloading configurations. The button is disabled if no offloading configurations are defined. If you click **Export**, all offloading configurations are exported into a file. The file is located in the local download folder used by your browser.
+The action bar provides an **Export** button, which exports all offloading configurations and manually added collection columns. The button is disabled if no offloading configurations are defined. If you click **Export**, all offloading settings are exported into a file. The file is located in the local download folder used by your browser.
 
 {{< c8y-admon-caution >}}
 You must not modify the contents of the export file as this might corrupt the import step.
@@ -83,7 +83,17 @@ You must not modify the contents of the export file as this might corrupt the im
 
 The action bar provides an **Import** button, which imports offloading configurations from a file with previously exported configurations.
 
-Click **Import** to open the import dialog. Either drop the file in the import canvas or click into the canvas to browse your file system to select the import file. Once the file is selected, a table with all configurations in the file is shown. For each entry, the table lists the task name, the internal ID of the original configuration, the target table name, and the description. The **Status** column indicates whether an offloading configuration can be imported. If it is green, the configuration is valid and can be imported. If it is yellow, the configuration can be imported, but some of its settings are ignored as they are not supported by the tenant. If it is red, the configuration duplicates an existing configuration and therefore cannot be imported. It is a duplicate if an existing configuration has the same target table name or the same internal ID. The **Import** column provides checkboxes to select the configurations which are to be imported.
+Click **Import** to open the import dialog. Either drop the file in the import canvas or click into the canvas to browse your file system to select the import file. Once the file is selected, a table with all configurations in the file is shown. 
+
+For each offloading configuration, the table lists the task name, the internal ID of the original configuration, the target table name, and the description. The **Status** column indicates whether an offloading configuration can be imported. If it is green, the configuration is valid and can be imported. If it is yellow, the configuration can be imported, but some of its settings are ignored as they are not supported by the tenant. If it is red, the configuration duplicates an existing configuration and therefore cannot be imported. It is a duplicate if an existing configuration has the same target table name or the same internal ID. The **Import** column provides checkboxes to select the configurations which are to be imported.
+
+A global checkbox can be used to activate or deactivate all imported configurations after the import process has completed.
+
+In addition to the offloading configurations, also the manually added collection columns referred by the offloadings are considered. For each of those collection columns, one of the following cases can occur:
+
+* The collection column defined in the export file already exists with the same type in the collection in the target environment.
+* The collection column defined in the export file does not exist in the collection in the target environment. In this case the column will be automatically created during the import process.
+* The collection column defined in the export file already exists with a different type in the collection in the target environment. In this case the column in the target environment will be updated with the type from the export file during the import process.
 
 To import the selected configurations, click **Import**. Click **Cancel** to cancel the import process.
 

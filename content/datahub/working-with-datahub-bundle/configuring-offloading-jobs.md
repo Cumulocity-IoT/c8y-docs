@@ -1,5 +1,5 @@
 ---
-weight: 20
+weight: 30
 title: Configuring offloading jobs
 layout: redirect
 helpcontent:
@@ -83,45 +83,47 @@ Click **Next** to proceed with the next configuration step. Click **Finish** to 
 
 #### Set additional result columns {#set-additional-result-columns}
 
-If you have added additional top-level fields while feeding data into {{< product-c8y-iot >}} and you want to access them in your {{< product-c8y-iot >}} DataHub queries, then you can include them in the offloading process by setting them as additional result columns. You can also use additional result columns to offload data fields in the base collection which are not part of the default schema. Additional result columns can be configured optionally.
+Each base collection has a set of default columns, which are always offloaded. If you have fed data into {{< product-c8y-iot >}} with additional top-level fields, you can include them as well in the offloading process by setting them as additional result columns. You can also use additional result columns to offload data fields in the base collection which are not part of the default schema. Additionally, if columns are not yet present in the data or have not been auto-detected, you can add them to the collection schema used by Dremio. See also [Mapping document data to relational data](#mapping-document-data-to-relational-data) for the relationship between data in the operational store and columns in a data lake table.
+
+While default columns are per default selected for the offloading process, the selection of additional result columns is optional. If selected, the corresponding values in the documents of the operational store are offloaded into the associated column in the data lake.
 
 **Auto-detected columns**
 
-To ease the configuration process, {{< product-c8y-iot >}} DataHub auto-detects additional result columns. Using a sample of the base collection, {{< product-c8y-iot >}} DataHub searches for additional top-level fields and provides them as additional result columns. For the specific case of the inventory collection, a sample of the selected view is used to derive the additional columns. Therefore they can vary with the view being selected. 
+To ease the configuration process, {{< product-c8y-iot >}} DataHub auto-detects additional result columns. Using a sample of the base collection, {{< product-c8y-iot >}} DataHub searches for additional top-level fields and provides them as additional result columns. For the specific case of the inventory collection, a sample of the selected view is used to derive the additional columns. Therefore they can vary with the view being selected. As the auto-detection logic relies on a sample, not all additional top-level fields present in the data might be captured.
 
-You can either include such an auto-detected column in your offloading or not. As the auto-detection logic relies on a sample, not all additional top-level fields might be captured. You can manually add a column to include a field you miss.
+**Overview of additional result columns**
 
-**Structure of additional result columns**
+When entering the configuration step for additional result columns, all columns and their properties are shown in a table. You can use the filter controls to filter for columns by name or column type. Click the expand icon <i class="dlt-c8y-icon-expand-arrow text-muted icon-20"></i> to get further details for a column. In the context menu of a column you find actions for editing, duplicating, or deleting the column. The column name can also be edited inline by clicking into the name field, adapting the name, and clicking once outside the field. If you enter the additional result columns step for an active offloading pipeline, you cannot modify the columns.
 
-Each additional result column, whether it is manually configured or auto-detected, has the following properties:
+Each additional result column has the following properties:
 
-- **Selected**: With this checkbox, you define if the column is included in the offloading pipeline or not.
+- **Selected**: With this checkbox, you define whether the column is included in the offloading pipeline or not.
 - **Column name**: The column name is the name the column will have in the target table. The column name must be unique, non-empty, and contain at least one non-whitespace character.
-- **Auto-detected**: This property denotes whether the column has been auto-detected or manually added by the user.
+- **Column type**: The column type denotes whether the column is missing, has been auto-detected, manually added by the user, or derived from another column.
 - **Source definition**: The source definition is the actual SQL expression, which defines what the data in this column looks like.
-- **Column type**: The column type defines which kind of data the column contains, for example, DOUBLE for double values or VARCHAR for strings.
+- **Data type**: The data type defines which kind of data the column contains, for example, DOUBLE for double values or VARCHAR for strings. When expanding an additional column by clicking the expand icon <i class="dlt-c8y-icon-expand-arrow text-muted icon-20"></i>, sample data of the column is shown. Additionally, the complete data type definition for complex types like LIST or STRUCT is shown.
 
-When entering the configuration step for additional result columns, all columns and their properties are shown in a table, with one additional result column per row. At the top right the **Hide auto-detected columns** checkbox allows you to either show the auto-detected columns or not. On the right side of each additional result column, an expand icon <i class="dlt-c8y-icon-expand-arrow text-muted icon-20"></i> and a context menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> is available. With the expand icon <i class="dlt-c8y-icon-expand-arrow text-muted icon-20"></i> you can expand/collapse more details of the column. In the details section you can explore the source definition as well as sample data of the column. In the context menu of an additional result column you find actions for editing, duplicating, or deleting the column. The column name can also be edited inline by clicking into the name field, adapting the name, and clicking once outside the field.
+**Add a missing column**
 
-At the top right of the table you find a button for manually adding an additional result column.
+Click **Collection column** to add a column not yet present in the schema Dremio associates with the collection. In the upcoming dialog you need to specify the name of the columnn as well as its type. The name must be unique. When the name shall contain special characters like spaces or quotes, you need to escape it with double quotes, for example "Column with spaces". Select a type from the type dropdown. For the complex types LIST and STRUCT, you need to specify the structure, for example STRUCT(NestedColumn1 VARCHAR, NestedColumn2 BOOLEAN). Click **Confirm** to add the column to the schema or **Cancel**. If the offloading pipeline is executed, the column in the data lake table will be NULL until the data in the operational store contains the corresponding values.
 
-If you enter the additional result columns step for an active offloading pipeline, that is, the pipeline is scheduled, you cannot modify the columns.
+{{< c8y-admon-info >}}
+When you manually add a column to the schema, it will not be considered by the schema learning periodically executed by Dremio. Thus, if the type evolves, these changes will not be captured. For example, the column is defined as STRUCT(NestedColumn1 VARCHAR, NestedColumn2 BOOLEAN). Over time, the data contains a new substructure NestedColumn3 of type INTEGER. Then the column will still be defined as STRUCT(NestedColumn1 VARCHAR, NestedColumn2 BOOLEAN). To capture this change, you need to manually adapt the type definition.
+{{< /c8y-admon-info >}}
 
-<img src="/images/datahub-guide/datahub-configure-addtl-cols.png" alt="Overview of additional result columns" style="max-width: 100%">
+**Add a derived column**
 
-**Add an additional result column**
+Click **Derived Column** to add a derived column, which opens a dialog box for defining the column. You must define a unique column name as well as a source definition. Regarding the source definition, the first step is to specify a field from the base collection in the source definition editor. Then you can optionally apply SQL functions to adapt the data of this field to your needs, for example, by trimming whitespace or rounding decimal values. The source definition editor supports you in this process with content completion and syntax highlighting. The **Change data type** controls helps you to define a function which changes the data type of the source definition. For example, the source definition is of type VARCHAR and corresponding values are always either true or false. Then you can select BOOLEAN in the **Change data type** dropdown box to define a function which casts the VARCHAR values to BOOLEAN. Different target data types are available in the control, with some of them having options for dealing with non-matching values. For example, if you want to cast all values to type INTEGER and the non-matching literal N/A is processed, you can configure the casting function to use value 0 instead. If you have selected a target data type, click **Apply** to apply or **Cancel** to revert that type change. Note that functions you can apply to the source definition are not limited to the data type change functions provided under **Change data type**. In the source definition editor you can apply all SQL functions supported by Dremio, as listed under [SQL Function Categories](https://docs.dremio.com/current/reference/sql/sql-functions/).
 
-When adding an additional result column, a dialog box for defining the column opens. You must define a unique column name as well as a source definition. Regarding the source definition, the first step is to specify a field from the base collection in the source definition editor. Then you can optionally apply SQL functions to adapt the data of this field to your needs, for example, by trimming whitespace or rounding decimal values. The source definition editor supports you in this process with content completion and syntax highlighting. The **Change data type** controls helps you to define a function which changes the data type of the source definition. For example, the source definition is of type VARCHAR and corresponding values are always either true or false. Then you can select boolean in the **Change data type** dropdown box to define a function which casts the VARCHAR values to BOOLEAN. Different target data types are available in the control, with some of them having options for dealing with non-matching values. For example, if you want to cast all values to type INTEGER and the non-matching literal N/A is processed, you can configure the casting function to use value 0 instead. If you have selected a data type you want to change to, click **Apply** to apply or **Cancel** to revert that type change. Note that functions you can apply to the source definition are not limited to the data type change functions provided under **Change data type**. In the source definition editor you can apply all SQL functions supported by Dremio, as listed under [SQL Function Categories](https://docs.dremio.com/current/reference/sql/sql-functions/).
-
-If you want to derive additional result columns from nested content, you can specify the nested fields using the prefix "src." and the path to the nested field. For example, if you have a top-level field "someField" with a nested field "someSubField", add "src.someField.someSubField" as additional result column. In the same way you can access nested arrays. If you have a top-level field "someField" with a nested array field "someArraySubField", add "src.someField.someArraySubField[0]" as additional result column to access the first array entry.
+If you want to derive columns from nested content, you can specify the nested fields using the prefix "src." and the path to the nested field. For example, if you have a top-level field "someField" with a nested field "someSubField", add "src.someField.someSubField" as additional result column. In the same way you can access nested arrays. If you have a top-level field "someField" with a nested array field "someArraySubField", add "src.someField.someArraySubField[0]" as additional result column to access the first array entry.
 
 To validate the source definition and preview its results click **Load samples**. The system retrieves data of the associated collection, per default from the last 24 hours, and evaluates the source definition against that data. Results being **NULL** are filtered out. The maximum number of results is limited to 100. You can adjust the timeframe from which data is sampled using the time controls at the right top. The timeframe covers at maximum the last seven days. To search for specific sample values, filter the current list of sample results with the filter controls at the top. The type of the sample results depends on the source data and the source definition. For complex types like **STRUCT** browse through the nested content of a sample entry by clicking at the nodes within the entry. If you want to set the source definition to a specific path of an entry, navigate to that path and click the hand icon right next to the path. You can also copy the path using the copy icon next to the path. Once you modify the source definition, the current sample results typically do not match anymore. Click **Reload** to retrieve a list of sample results with respect to the new source definition.
 
-Click **Save** to add the column, which will be selected for offloading by default. If the source definition is invalid, for example when accessing an unknown column, you get an error message like *Column "UnknownColumn" not found in any table*. You must fix the source definition before you can proceed. Click **Cancel** to cancel the configuration of the additional result column.
+Click **Save** to add the column, which will be selected for offloading by default. If the source definition is invalid, for example when accessing an unknown column, you get an error message like *Column "UnknownColumn" not found in any table*. You must fix the source definition before you can proceed. Click **Cancel** to cancel the configuration.
 
 **Edit an additional result column**
 
-In the context menu of an additional result column, select **Edit** to open the dialog for editing the column name and the source definition. Click **Save** to update the column with the new settings. The column name must be unique and the source definition must be valid in order to proceed. Click **Cancel** to quit editing the column.
+In the context menu of an additional result column, select **Edit** to open the dialog for editing the column. Adapt the settings according to your needs. Click **Save** to update the column with the new settings or **Cancel**.
 
 For auto-detected columns the source definition cannot be modified. If you want to modify the source definition, you must duplicate the auto-detected column and modify the source definition as required.
 
@@ -129,7 +131,7 @@ For auto-detected columns the source definition cannot be modified. If you want 
 
 In the context menu of an additional result column, select **Duplicate** to open the dialog for duplicating the column. The source definition of the duplicate column is the same as of the original column and can be adapted to your needs. The new column name initially uses the original column name plus a counter suffix to make the name unique. You can change the name as required. You can also rename the original column. New as well as original column name must be unique.
 
-Click **Save** to complete and **Cancel** to quit duplicating the column.
+Click **Save** to complete or **Cancel**.
 
 A common use-case for duplication is to change the data type of an auto-detected column. For example, duplicate the column "statusOrdinal" and apply the corresponding casting function in the source definition editor. Use as new column name "statusOrdinal" and rename the original column to "statusOrdinal_Old". In the additional columns list select "statusOrdinal" and deselect "statusOrdinal_Old".
 
@@ -140,7 +142,6 @@ In the context menu of an additional result column, select **Delete** to open th
 When deleting an additional result column, the data will no longer be included in the next offloading run. Data which has already been offloaded to the data lake is not affected by the deletion of the column. Thus, the column itself will still be present in the data lake, but will have value NULL once the additional result column has been deleted.
 
 Click **Next** to proceed with the next configuration step. Click **Previous** to go back one configuration step. Click **Cancel** to cancel the offloading configuration.
-
 
 #### Set filter predicate {#set-filter-predicate}
 

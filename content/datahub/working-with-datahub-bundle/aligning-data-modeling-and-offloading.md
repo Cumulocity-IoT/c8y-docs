@@ -1,19 +1,22 @@
 ---
-weight: 40
+weight: 20
 title: Aligning data modeling and offloading
 layout: redirect
 ---
 
 ### Mapping document data to relational data {#mapping-document-data-to-relational-data}
 
-{{< product-c8y-iot >}} DataHub allows to offload data from the {{< product-c8y-iot >}} platform into a data lake and the subsequent analysis of the offloaded data using SQL. For that purpose, {{< product-c8y-iot >}} DataHub must transform the data from the document-based format into a relational format, which is then persisted as Parquet files in the data lake.
+{{< product-c8y-iot >}} DataHub allows to offload data from the {{< product-c8y-iot >}} platform into a data lake and the subsequent analysis of the offloaded data using SQL. The data within the {{< product-c8y-iot >}} platform is stored in a document-based format in an operational database. For the offloading, {{< product-c8y-iot >}} DataHub must transform the data from the document-based format into a relational, columnar-based format. Using that relational format, the data is persisted as Parquet files in the data lake and can be queried like a relational table. Following the [domain model of {{< product-c8y-iot >}}](/concepts/domain-model), a document comprises attributes and fragments. These document structures are flattened and mapped to columns of a relational table.
 
-When the offloading is configured, data from the documents in the operational database of the {{< product-c8y-iot >}} platform is transformed and stored in columns of the target table in the data lake. The system either automatically generates those transformations or proposes them to the user with the option to modify them. The user can also configure additional transformations. A configuration defining how a data field is transformed into a column comprises:
-- The expression how to retrieve the data from the source document.
-- The name of the target column.
-- The type of the target column.
+For that mapping from a document structure to columns of a relational table schema, the following cases apply:
+* **Default columns:** For each collection in the operational database, a set of default columns, like `id` or `creationTime`, is defined, with the according attributes/fragments existing in each document. The relational schema always contains these default columns, all having a fixed type. Thus, each offloading for a collection has this set of default columns defined in its target table in the data lake.
+* **Additional columns:** The documents may contain additional top-level attributes/fragments being either based on the {{< product-c8y-iot >}} domain model, like `c8y_Position`, or being custom, like `myCustomFragment`. They are also mapped to relational columns. The offloading of these columns is optional. You can select/deselect them during the offloading configuration process.
+* **Missing columns:** During design time of an offloading, the data in the associated collection may not yet contain all columns you want to use in the offloading configuration. In such a case you can adapt the schema by adding a column with a corresponding type. When you have added such a collection column to the schema, you can select it in your offloading configuration.
+* **Derived columns:** Given one of the above columns, you can derive a new column using the value of the original column and modifying it. For example, given a column with temperature values, you can define a new column by appending 'Celcius' to each value.
 
-For built-in data attributes specified by the platform, the type is fixed and known to {{< product-c8y-iot >}} DataHub. For other attributes {{< product-c8y-iot >}} DataHub determines the type by evaluating the aforementioned expression on the data stored in the operational database. Dremio either does this based on the database state at configuration time or on metadata captured earlier. For performance reasons, the evaluation is based on a subset of data, namely the first 4095 documents of the collection. When evaluating the expression and all instances of the attributes have the same type, this type defines the column type.
+See [Set additional result columns](/datahub/working-with-datahub/##set-additional-result-columns) for details on how to work with additional, missing, and derived columns.
+
+The data in the operational store is document-based and organized within collections like alarms or measurements. The operational store does not impose a schema for a collection. However, Dremio as internal query engine of {{< product-c8y-iot >}} DataHub reads data from the collections and derives a relational schema based on the data. With new data entering the platform, the schema of the collections may also evolve. For example, a new firmware of a device introduces new data fragments in the documents. To keep track with potential schema evolutions, the system periodically inspects a sample of the documents in the operational store for new schema information. This process also includes deriving the type of the columns from the sample data.
 
 ### Managing mixed types {#managing-mixed-types}
 
