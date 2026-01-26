@@ -109,7 +109,7 @@
         {{end}}
       {{end}}
 
-      {{ if not site.Data.date_settings.yearly_release}}
+      {{ if or (not site.Data.date_settings.yearly_release) site.Data.date_settings.yearly_release_preview }}
         <div
           id="cl-{{$listDate | urlize }}"
           class="page-section change-log__date {{range $classes}}{{.}} {{end}}"
@@ -195,7 +195,11 @@
               {{end}}
           </div>
            -->
-          {{.Content }}
+            {{- .Content
+             | replaceRE `<script[\s\S]*?</script>` ""
+             | replaceRE `\s+on\w+\s*=\s*"[^"]*"` ""
+             | replaceRE `\s+on\w+\s*=\s*'[^']*'` ""
+             | safeHTML -}}
         </div>
       </section>
       {{ end }}
