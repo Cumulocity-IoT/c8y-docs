@@ -25,7 +25,8 @@ gateway:
     identifier: Gateway_Device
     name: Gateway_Device
     db:
-# The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
+        # The gateway uses the local database to store platform credentials and local cache.
+        # This parameter shows the location in which the local data should be stored.
         baseDir: C:/Users/<<userName>>/.opcua/data
 ```
 
@@ -37,6 +38,47 @@ Windows OS is used for the example.
 
 The OPC UA gateway can also be registered and operated via [thin-edge.io](https://thin-edge.io/). In contrast to the standalone mode, `thinEdge` configurations must be added to the YAML file:
 
+
+#### Recommended configuration using the thin-edge.io {{< product-c8y-iot >}} proxy {#thinedge-recommended-config}
+
+{{< c8y-admon-info >}}
+This requires to be run with the thin-edge.io version 1.7.1 or higher.
+{{< /c8y-admon-info >}}
+
+The recommended mode of integration uses
+the [thin-edge.io proxy](https://thin-edge.github.io/thin-edge.io/references/cumulocity-proxy/). The local
+proxy of thin-edge.io exposes the {{< product-c8y-iot >}} API. By default, the proxy is available at
+`http://localhost:8001/c8y`.
+
+##### Example configuration for the thin-edge.io proxy {#example-localproxy-thin-edge-config}
+
+```yaml
+C8Y:
+    baseUrl: http://localhost:8001/c8y/ # Points to the thin-edge.io proxy
+gateway:
+    bootstrap:
+        tenantId: <<yourTenantId>>
+    identifier: Gateway_Device
+    name: Gateway_Device
+    db:
+        # The gateway uses the local database to store platform credentials and local cache.
+        # This parameter shows the location in which the local data should be stored.
+        baseDir: C:/Users/<<userName>>/.opcua/data
+    thinEdge:
+        enabled: true
+        useHttpProxy: true
+        deviceId: Thin-Edge_Device
+```
+
+With the configuration `gateway.thinEdge.enabled: true` you switch to the thin-edge.io mode. This means that the authentication and registration to the platform will be done via thin-edge.io. The OPC UA gateway is automatically registered and created as a subdevice under the thin-edge.io device defined with `gateway.thinEdge.deviceId`.
+
+`gateway.thinEdge.useHttpProxy` is switch to make opcua-device-gateway to fully use thin-edge.io proxy also for the authentication to the platform. It requires `C8Y.baseUrl` to be set to the thin-edge.io proxy URL.
+
+
+##### Example legacy thin-edge.io configuration (deprecated) {#example-legacy-config}
+
+The legacy thin-edge.io mode recreates the authentication credentials for the thin-edge.io connection. This mode is now deprecated and will be removed in the future.
+
 ```yaml
 C8Y:
     baseUrl: https://<<yourTenant>>.{{< domain-c8y >}}
@@ -46,15 +88,19 @@ gateway:
     identifier: Gateway_Device
     name: Gateway_Device
     db:
-# The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
+        # The gateway uses the local database to store platform credentials and local cache.
+        # This parameter shows the location in which the local data should be stored.
         baseDir: C:/Users/<<userName>>/.opcua/data
     thinEdge:
         enabled: true
+        # URL for the MQTT client to connect to the local thin-edge.io MQTT broker.
         mqttServerURL: tcp://<<thinEdge MQTT broker>>
         deviceId: Thin-Edge_Device
 ```
 
-With the configuration `gateway.thinEdge.enabled: true` you switch to the thin-edge.io mode. This means that the authentication and registration to the platform will be done via thin-edge.io. The OPC UA gateway is automatically registered and created as a subdevice under the thin-edge.io device. `gateway.thinEdge.mqttServerURL` and `gateway.thinEdge.deviceId` are the connection information for the MQTT client to connect to the local thin-edge.io MQTT broker.
+
+
+
 
 {{< c8y-admon-preview-feature >}}
 
@@ -66,21 +112,23 @@ The MQTT Forwarding mode uses the existing `thinEdge` configuration and introduc
 
 ```yaml
 C8Y:
-    baseUrl: https://<<yourTenant>>.{{< domain-c8y >}}
+    baseUrl: http://localhost:8001/c8y/
 gateway:
     bootstrap:
         tenantId: <<yourTenantId>>
     identifier: Gateway_Device
     name: Gateway_Device
     db:
-# The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
+        # The gateway uses the local database to store platform credentials and local cache.
+        # This parameter shows the location in which the local data should be stored.
         baseDir: C:/Users/<<userName>>/.opcua/data
     mappings:
-      mergeCyclicRead: false
-      mergedEventType: c8y_OpcuaEvent
-      mergedMeasurementType: c8y_OpcuaMeasurement
+        mergeCyclicRead: false
+        mergedEventType: c8y_OpcuaEvent
+        mergedMeasurementType: c8y_OpcuaMeasurement
     thinEdge:
         enabled: true
+        useHttpProxy: true
         mqttServerURL: tcp://<<thinEdge MQTT broker>>
         deviceId: Thin-Edge_Device
         useForDataForwarding: true
@@ -93,6 +141,7 @@ gateway:
 
 The configuration `gateway.thinEdge.useForDataForwarding` controls if MQTT Forwarding mode is enabled. The following configurations are optional and control the behavior of the MQTT client:
 
+* `gateway.thinEdge.mqttServerURL` (default: tcp://127.0.0.1:1883) - URL for the MQTT client to connect to the local thin-edge.io MQTT broker.
 * `gateway.thinEdge.mqttAutomaticReconnect` (default:true) - controls if the MQTT client will reconnect in case it looses connection to the MQTT server.
 * `gateway.thinEdge.mqttCleanSession` (default:true) - controls if the MQTT client should remember state across sessions or start with a clean session.
 * `gateway.thinEdge.mqttConnectionTimeout` (default: 30) - connection timeout in seconds.
