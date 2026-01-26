@@ -15,5 +15,5 @@ ticket: DM-4971
 version: 1023.1.0
 ---
 The OPC UA gateway now connects to {{< product-c8y-iot >}} through the local [{{< product-c8y-iot >}} thin-edge.io proxy](https://thin-edge.github.io/thin-edge.io/references/cumulocity-proxy/).
-Consequently, OPC UA gateway thin-edge.io usage without the {{< product-c8y-iot >}} proxy is now deprecated.
+Consequently, OPC UA gateway thin-edge.io usage without the {{< product-c8y-iot >}} proxy is now deprecated and will be removed in a future version.
 Please update your gateway configuration to use this local proxy model corresponding to our [revised documentation](/device-integration/opcua/#thinedge-recommended-config).
