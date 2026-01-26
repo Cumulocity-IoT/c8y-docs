@@ -8,7 +8,12 @@
     <base href="" />
     <meta name="generator" content="Hugo {{ hugo.Version }} with theme C8yDocs">
     {{ $version := .Site.Data.date_settings.version }}
-    {{ $siteTitle := printf "Cumulocity %s documentation" $version }}
+    {{ $siteTitle := "" }}
+    {{ if eq $version "Latest" }}
+      {{ $siteTitle = "Cumulocity documentation" }}
+    {{ else }}
+      {{ $siteTitle = printf "Cumulocity Release %s documentation" $version }}
+    {{ end }}
     {{if eq .Title $.Site.Title }}
       <title>{{ $siteTitle }}</title>
     {{else}}
