@@ -4,7 +4,8 @@
   <div class="home-top">
     <section class="home-top__content">
         <h1 class="m-b-8">{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
-        <div class="label label-info">{{ .Site.Data.date_settings.version }} version</div>
+        {{ $version := .Site.Data.date_settings.version }}
+        <div class="label label-info">{{ if eq $version "Latest" }}Latest release{{ else }}Release {{ $version }}{{ end }}</div>
         <p class="m-t-8">{{replace (replace (replace .Site.Params.description "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</p>
     </section>
     {{- partial "home-illustration.html" . -}}

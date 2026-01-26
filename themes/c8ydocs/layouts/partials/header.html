@@ -63,7 +63,7 @@
         data-toggle="dropdown"
       >
 
-        <i class="c8y-icon c8y-icon-cumulocity-iot"></i> <span>{{ if eq .Site.Data.date_settings.version "Latest" }}Latest version{{ else }}Release {{ .Site.Data.date_settings.version }}{{ end }}</span>
+        <i class="c8y-icon c8y-icon-cumulocity-iot"></i> <span>{{ if eq .Site.Data.date_settings.version "Latest" }}Latest release{{ else }}Release {{ .Site.Data.date_settings.version }}{{ end }}</span>
         <div class="caret"></div>
       </button>
       <ul
@@ -74,8 +74,8 @@
         {{ $currentVersion := .Site.Data.date_settings.version }}
         <li class="text-normal">
           <a class='icon-flex {{ if eq $currentVersion "Latest" }}p-l-4 {{else}} p-l-24 {{end}}' href="//cumulocity.com/docs">
-            {{ if eq $currentVersion "Latest" }}<i class="dlt-c8y-icon-check text-success"></i>{{ end }} 
-            <span>Latest version</span>
+            {{ if eq $currentVersion "Latest" }}<i class="dlt-c8y-icon-check text-success"></i>{{ end }}
+            <span>Latest release</span>
           </a>
         </li>
         <li class="text-normal">
@@ -181,7 +181,7 @@
         {{ $currentVersion := .Site.Data.date_settings.version }}
         <li class="text-normal">
           <a class="dd-link" href="//cumulocity.com/docs">
-            <i class="c8y-icon c8y-icon-cumulocity-iot"></i> Latest version {{ if eq $currentVersion "Latest" }}<i class="dlt-c8y-icon-check text-success"></i>{{ end }}
+            <i class="c8y-icon c8y-icon-cumulocity-iot"></i> Latest release {{ if eq $currentVersion "Latest" }}<i class="dlt-c8y-icon-check text-success"></i>{{ end }}
           </a>
         </li>
         <li class="text-normal">
