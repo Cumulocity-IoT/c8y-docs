@@ -72,12 +72,12 @@ gateway:
 
 With the configuration `gateway.thinEdge.enabled: true` you switch to the thin-edge.io mode. This means that the authentication and registration to the platform will be done via thin-edge.io. The OPC UA gateway is automatically registered and created as a subdevice under the thin-edge.io device defined with `gateway.thinEdge.deviceId`.
 
-`gateway.thinEdge.useHttpProxy` is switch to make opcua-device-gateway to fully use thin-edge.io proxy also for the authentication to the platform. It requires `C8Y.baseUrl` to be set to the thin-edge.io proxy URL.
+`gateway.thinEdge.useHttpProxy` is a switch that makes the opcua-device-gateway fully use the thin-edge.io proxy, including authentication to the platform. It requires `C8Y.baseUrl` to be set to the thin-edge.io proxy URL.
 
 
 ##### Example legacy thin-edge.io configuration (deprecated) {#example-legacy-config}
 
-The legacy thin-edge.io mode recreates the authentication credentials for the thin-edge.io connection. This mode is now deprecated and will be removed in the future.
+The legacy thin-edge.io mode recreates the authentication credentials for the thin-edge.io connection. This mode is now deprecated.
 
 ```yaml
 C8Y:
