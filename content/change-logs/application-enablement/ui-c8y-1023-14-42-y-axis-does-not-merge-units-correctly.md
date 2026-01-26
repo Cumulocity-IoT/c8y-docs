@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Y-axis does not merge units correctly.
+title: Data point graph and data explorer now correctly merge y-axis units
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
