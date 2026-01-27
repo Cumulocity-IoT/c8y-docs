@@ -11,7 +11,7 @@ title: Device integration
 
 - **Direct integration**: Connect devices via [HTTP REST](/device-integration/device-integration-rest/) or [MQTT](/device-integration/mqtt) interfaces. MQTT interfaces are designed for minimal device-side logic, suitable for microcontroller-based devices.
 
-- **LPWAN support**: Native [LWM2M support](/device-integration/lwm2m/) and [LoRa Network Server integration](/device-integration/lora-loriot/) for Low-Power-Wide-Area-Network devices.
+- **LPWAN support**: Native [LWM2M support](/device-integration/lwm2m/) and [LoRa Network Server integration](/device-integration/lpwan/loriot-lora/) for Low-Power-Wide-Area-Network devices.
 
 Once a device is connected to {{< product-c8y-iot >}}, it can start streaming equipment data into the platform. A common practice is to use a gateway device for data acquisition. These gateways are often connected to the different sensors and fieldbus devices of the equipment and responsible for collecting and forwarding relevant data to the IoT platform.
 

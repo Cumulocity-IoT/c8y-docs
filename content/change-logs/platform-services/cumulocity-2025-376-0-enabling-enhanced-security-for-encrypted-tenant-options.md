@@ -1,5 +1,5 @@
 ---
-date:
+date: '2025-11-20'
 title: Enhanced security for encrypted tenant options
 product_area: Platform services
 change_type:

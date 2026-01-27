@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-11-28'
 title: Device dashboards now available in the Device Management application
 product_area: Device management & connectivity
 change_type:

@@ -16,8 +16,9 @@ To change the time range on the x-axis, use one of the following options:
 
 - Select a different time range from the dropdown list in the top menu bar.
 - Enter a custom time range into the **From** and **To** fields in the data explorer.
-- Drag the x-axis and move left or right to move the time period.
-- Double-click into the data explorer to zoom out.
+- Drag the chart and move left or right to move the time period.
+- Use the mouse wheel to zoom in or out.
+- Align the zoom slider beneath the graph to select a different time range. You can drag the edges to zoom in or out or drag the whole slider to move the x-axis.
 
 {{< c8y-admon-info >}}
 Real-time updates will be switched off if you set a time range in the past.

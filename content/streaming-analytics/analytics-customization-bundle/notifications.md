@@ -8,7 +8,7 @@ Streaming Analytics can use the {{< product-c8y-iot >}} Notifications 2.0 reliab
 The availability of this feature is governed by two feature flags:
 
 - `notification2.streaming-analytics` <br>
-    The {{< product-c8y-iot >}} Notifications 2.0 feature is currently in private preview. If you want to have it enabled for your tenant, you must contact [product support](/additional-resources/contacting-support/) to set this feature flag.
+    The {{< product-c8y-iot >}} Notifications 2.0 feature is currently in Private Preview. If you want to have it enabled for your tenant, you must contact [product support](/additional-resources/contacting-support/) to set this feature flag.
 
 - `streaming-analytics.messaging` <br>
     In addition to this, if you are using one of the variants of the Apama-ctrl microservice, you must also set this feature flag. You then need to resubscribe the Apama-ctrl microservice to pick up changes to the feature flag.

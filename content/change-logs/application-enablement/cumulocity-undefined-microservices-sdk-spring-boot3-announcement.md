@@ -36,4 +36,4 @@ We are pleased to announce an upcoming update to the Spring Boot version used in
 
 * [Spring Framework 6.x What's New](https://github.com/spring-projects/spring-framework/wiki/What%27s-New-in-Spring-Framework-6.x)
 
-* [HTTP Client Migration Guide](https://hc.apache.org/httpcomponents-client-5.3.x/migration-guide/index.html)
+* [HTTP Client Migration Guide](https://hc.apache.org/)

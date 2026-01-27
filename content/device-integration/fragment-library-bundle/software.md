@@ -193,7 +193,7 @@ The 528 static response template is available for dealing with software update o
 
 {{< c8y-admon-info >}}
 
-If the URL is set to `$PROVIDED`, no file is uploaded or linked from the platform. In this case, the device is fully responsible for resolving the correct binary. Typically, this process works through package managers that retrieve the correct binary from the name, version, and other device-specific details. If the device cannot resolve the binary, it  must mark the operation as FAILED.
+If the URL is set to an empty string, no file is uploaded or linked from the platform. In this case, the device is fully responsible for resolving the correct binary. Typically, this process works through package managers that retrieve the correct binary from the name, version, and other device-specific details. If the device cannot resolve the binary, it must mark the operation as FAILED.
 
 {{< /c8y-admon-info >}}
 

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-11-28'
 title: One-time password in device registration form now hidden
 product_area: Application enablement & solutions
 change_type:

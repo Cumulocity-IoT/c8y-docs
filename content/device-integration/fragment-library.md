@@ -1,5 +1,5 @@
 ---
-weight: 50
+weight: 14
 title: Fragment library
 layout: bundle
 sector:

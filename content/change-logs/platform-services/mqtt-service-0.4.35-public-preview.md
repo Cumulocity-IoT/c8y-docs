@@ -34,7 +34,7 @@ The MQTT Service does not replace the existing [Core MQTT](/device-integration/m
 The new capability provided by the MQTT Service allows for easier integration of MQTT devices that cannot use the {{< product-c8y-iot >}} domain model.
 It also supports more flexible communication patterns between devices, applications, and the {{< product-c8y-iot >}} platform, controlled by user-provided microservices.
 
-Note that in the public preview, MQTT Service clients *within a tenant* are **not** isolated from one another.
+Note that in Public Preview, MQTT Service clients *within a tenant* are **not** isolated from one another.
 That is, an MQTT client can subscribe to topic(s) that another client is publishing on, and receive the messages sent by that client.
 Full device isolation will be available in the first General Availability release of the MQTT Service.
 
