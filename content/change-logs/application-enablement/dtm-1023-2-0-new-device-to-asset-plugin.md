@@ -14,4 +14,6 @@ build_artifact:
 ticket: CTM-2293
 version: 1023.2.0
 ---
-A new **Device to Asset** plugin has been introduced that enables users to convert existing devices into assets. Users can select multiple devices, optionally assign asset types and parent assets, and perform batch conversions through a two-step workflow.
+A new **Device-to-Asset** plugin is now available in dtm-plugins, providing an easy way to add the c8y_IsAsset fragment to existing devices and explore asset modeling capabilities. Using a guided two-step workflow, users can keep the c8y_IsDevice fragment intact, add the required c8y_IsAsset fragment, optionally assign asset types and parent assets, and immediately integrate devices into the asset hierarchy and modeling already supported for assets created via Digital Twin Manager.
+
+While devices can also be migrated to assets via APIs, this plugin offers a simple UI dialog to create an asset from a device, automatically adding the required information to the device managed object.
