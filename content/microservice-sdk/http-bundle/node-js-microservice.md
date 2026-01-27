@@ -18,7 +18,6 @@ It uses the {{< product-c8y-iot >}} [@c8y/client JavaScript library](https://www
 - A *.env* file in the root directory with the following content:
 
 ```properties
-PORT=80
 SLACK_OAUTH_TOKEN=<YOUR-TOKEN-GOES-HERE>
 SLACK_CHANNEL_ID=<YOUR-CHANNEL_ID-GOES-HERE>
 ```
@@ -45,26 +44,49 @@ Eventually, your *package.json* file should look similar to:
 {
   "name": "node-microservice",
   "version": "1.0.0",
-  "description": "{{< product-c8y-iot >}} microservice application",
-  "main": "app.js",
-  "dependencies": {
-    "@c8y/client": "^1004.0.7",
-    "@slack/web-api": "^5.0.1",
-    "dotenv": "^8.0.0",
-    "express": "4.17.0"
-  },
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "<your-name>",
-  "license": "MIT"
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@c8y/client": "^1023.22.5",
+    "@slack/web-api": "^7.13.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  }
+}
+```
+
+You need to adjust the `scripts` object in the `package.json` file manually in order to include a start and build script:
+
+```json
+{
+  "name": "node-microservice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "docker build -t node-microservice . && docker save node-microservice > image.tar && zip node-microservice cumulocity.json image.tar",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@c8y/client": "^1023.22.5",
+    "@slack/web-api": "^7.13.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  }
 }
 ```
 
 #### Add the source code {#add-the-source-code}
 
-Now create a file *app.js* which is the main entry point of your application. It uses the Express framework to start a server listening on port 80, defines its endpoints and requires controllers to use the {{< product-c8y-iot >}} and Slack APIs.
+Now create a file *index.js* which is the main entry point of your application. It uses the Express framework to start a server listening on port 80, defines its endpoints and requires controllers to use the {{< product-c8y-iot >}} and Slack APIs.
 
 ```javascript
 "use strict";
@@ -77,10 +99,11 @@ const app = express();
 const routes = require("./routes");
 routes(app);
 
-// Server listening on port 80
+// Server listening on port from environment variables
+const port = process.env.SERVER_PORT || 8080;
 app.use(express.json());
-app.listen(process.env.PORT);
-console.log(`${process.env.APPLICATION_NAME} started on port ${process.env.PORT}`);
+app.listen(port);
+console.log(`${process.env.APPLICATION_NAME} started on port ${port}`);
 
 // {{< product-c8y-iot >}} and Slack controllers
 require("./controllers");
@@ -102,7 +125,7 @@ module.exports = function(app) {
         res.json({ "status" : "UP" });
     });
 
-    // Environment variables
+    // Environment variables (not meant for production use)
     app.route("/environment").get(function(req, res) {
         res.json({
             "appName" : process.env.APPLICATION_NAME,
@@ -118,7 +141,7 @@ module.exports = function(app) {
 
 At this point, your microservice would be accessible via web on its endpoints to return a "Hello world" message, verify that the microservice is up and running and get some environment variables.
 
-In order to implement the controllers, you must first create a Slack app and get a token to use the Web API. Go to [Slack API: Applications](https://api.slack.com/apps?new_app=1) to create a new app. Select your workspace and give your app a name, for example, C8Y Slack bot. Then [get an OAuth access token](https://slack.dev/node-slack-sdk/getting-started#get-a-token-to-use-the-web-api).
+In order to implement the controllers, you must first create a Slack app and get a token to use the Web API. Go to [Slack API: Applications](https://api.slack.com/apps?new_app=1) to create a new app. Select your workspace and give your app a name, for example, C8Y Slack bot. Then [get an OAuth access token](https://docs.slack.dev/tools/node-slack-sdk/getting-started/#get-a-token-to-use-the-web-api).
 
 Once you have your Slack app and token ready, create the *controllers.js* file with the following content:
 
@@ -135,12 +158,12 @@ const web = new WebClient(process.env.SLACK_OAUTH_TOKEN);
 const channelId = process.env.SLACK_CHANNEL_ID;
 
 // Format a message and post it to the channel
-async function postSlackMessage (adata) {
+async function postSlackMessage(adata) {
     // Alarm severity
     let color = {
-        "WARNING" : "#1c8ce3",
-        "MINOR"   : "#ff801f",
-        "MAJOR"   : "#e66400",
+        "WARNING": "#1c8ce3",
+        "MINOR": "#ff801f",
+        "MAJOR": "#e66400",
         "CRITICAL": "#e0000e"
     };
 
@@ -148,7 +171,7 @@ async function postSlackMessage (adata) {
     let src = adata.source;
     await web.chat.postMessage({
         channel: channelId,
-        attachments : [{
+        attachments: [{
             "text": adata.text,
             "fields": [
                 {
@@ -170,32 +193,30 @@ async function postSlackMessage (adata) {
 
 /********************* {{< product-c8y-iot >}} *********************/
 
-const { Client, FetchClient, BasicAuth } = require("@c8y/client");
+const { Client, BasicAuth } = require("@c8y/client");
 
 const baseUrl = process.env.C8Y_BASEURL;
-let cachedUsers = [];
+let cachedSubscriptions = [];
 
-// Get the subscribed users
-async function getUsers () {
+// Get the microservice subscriptions
+async function getSubscriptions() {
     const {
         C8Y_BOOTSTRAP_TENANT: tenant,
         C8Y_BOOTSTRAP_USER: user,
         C8Y_BOOTSTRAP_PASSWORD: password
     } = process.env;
 
-    const client = new FetchClient(new BasicAuth({ tenant, user, password }), baseUrl);
-    const res = await client.fetch("/application/currentApplication/subscriptions");
-
-    return res.json();
- }
+    const subscriptions = await Client.getMicroserviceSubscriptions({ tenant, user, password }, baseUrl);
+    return subscriptions;
+}
 
 
 // where the magic happens...
 (async () => {
 
-    cachedUsers = (await getUsers()).users;
+    cachedSubscriptions = (await getSubscriptions());
 
-    if (Array.isArray(cachedUsers) && cachedUsers.length) {
+    if (Array.isArray(cachedSubscriptions) && cachedSubscriptions.length) {
         // List filter for unresolved alarms only
         const filter = {
             pageSize: 100,
@@ -204,12 +225,12 @@ async function getUsers () {
         };
 
         try {
-            cachedUsers.forEach(async (user) => {
+            for (const subscription of cachedSubscriptions) {
                 // Service user credentials
                 let auth = new BasicAuth({
-                    user:     user.name,
-                    password: user.password,
-                    tenant:   user.tenant
+                    user: subscription.user,
+                    password: subscription.password,
+                    tenant: subscription.tenant
                 });
 
                 // Platform authentication
@@ -217,28 +238,38 @@ async function getUsers () {
 
                 // Get filtered alarms and post a message to Slack
                 let { data } = await client.alarm.list(filter);
-                data.forEach((alarm) => {
-                    postSlackMessage(alarm);
-                });
+
+                const postAlarmOnSlack = async (alarm) => {
+                    try {
+                        console.log(`Posting alarm ${alarm.id} to Slack...`);
+                        await postSlackMessage(alarm);
+                    } catch (err) {
+                        console.error(`Failed to post alarm ${alarm.id} to Slack`, err);
+                    }
+                };
+                for (const alarm of data) {
+                    await postAlarmOnSlack(alarm);
+                }
 
                 // Real time subscription for active alarms
-                client.realtime.subscribe("/alarms/*", (alarm) => {
-                    if (alarm.data.data.status === "ACTIVE") {
-                        postSlackMessage(alarm.data.data);
+                client.realtime.subscribe("/alarms/*", async (alarm) => {
+                    if (alarm.data.data.status !== "ACTIVE") {
+                        return;
                     }
+                    await postAlarmOnSlack(alarm.data.data);
                 });
-            });
+            }
             console.log("listening to alarms...");
         }
         catch (err) {
             console.error(err);
         }
-    }
-    else {
+    } else {
         console.log("[ERROR]: Not subscribed/authorized users found.");
     }
 
 })();
+
 ```
 
 The code has two parts. The first one needs your Slack OAuth token and channel ID (chat group where the messages will be posted).
@@ -258,7 +289,6 @@ Create a microservice manifest *cumulocity.json* with the following content:
         "name": "{{< company-c8y >}}"
     },
     "isolation": "MULTI_TENANT",
-    "replicas": 2,
     "requiredRoles": [
         "ROLE_ALARM_READ",
         "ROLE_ALARM_ADMIN"
@@ -275,8 +305,10 @@ FROM node:alpine
 WORKDIR /usr/app
 
 COPY ./package.json ./
-RUN npm install
-COPY ./ ./
+COPY ./package-lock.json ./
+RUN npm ci
+COPY ./*.js ./
+COPY ./.env ./
 
 CMD ["npm", "start"]
 ```
@@ -295,6 +327,11 @@ Then pack _image.tar_ together with the manifest _cumulocity.json_ into a ZIP fi
 
 ```shell
 $ zip node-microservice cumulocity.json image.tar
+```
+
+These steps can also be executed via the `build` script. To run it, just execute:
+```shell
+npm run build
 ```
 
 The resulting _node-microservice.zip_ file contains your microservice and it is ready to be uploaded to the {{< product-c8y-iot >}} platform.
