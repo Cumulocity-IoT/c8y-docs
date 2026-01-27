@@ -22,7 +22,7 @@ c8yedge config \
 ```
 Note that the license key must always be valid for the domain name, so any change of domain name should be made simultaneously with a change of license key.
 
-To set the Edge tenant's name and the administrator's email address, execute:
+Use the following command to modify the Edge tenant's name and the administrator's email address.
 ```bash
 c8yedge config \
   --set company=<COMPANY-NAME> \
