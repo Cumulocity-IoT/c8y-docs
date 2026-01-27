@@ -18,4 +18,4 @@ The DTM plugin now includes a Unified Property Library plugin that enables centr
 Built on the Digital Twin Definitions API, the Property Library provides enhanced extensibility, improved reliability, and a modern foundation for future enhancements.
 It allows you to manage all property definitions from a single, central location across your {{< product-c8y-iot >}} deployment. You can define properties applicable to devices, alarms, events, and assets, as well as configure regex-based validation rules to ensure data integrity. This enables centralized governance and scalability across digital twin implementations.
 The Property Library plugin utilizes Digital Twin Manager APIs which are currently in Public Preview. To enable access, contact [product
-support](https://cumulocity.com/docs/additional-resources/contacting-support/) via the Cumulocity Support Portal and request activation of the required feature flags for your deployment. 
+support](https://cumulocity.com/docs/additional-resources/contacting-support/) via the {{< product-c8y-iot >}} Support Portal and request activation of the required feature flags for your deployment. 
