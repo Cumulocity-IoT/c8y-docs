@@ -41,7 +41,7 @@ Power users can modify the Edge configuration by directly editing a YAML documen
 kubectl get --namespace=c8yedge edge/c8yedge -o yaml > edge.yaml
 ```
 Edit this file, referring to [Edge custom resource](/edge-kubernetes/edge-custom-resource-definition/) for an exhaustive listing of what could be changed. For example, you might add
-```
+```bash
 cloudTenant:
   domain: <CLOUD-TENANT-DOMAIN>
 ```
