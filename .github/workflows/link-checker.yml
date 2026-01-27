@@ -29,11 +29,30 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 'latest'
+        
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.128.0' 
+          extended: true
+
+      - name: Install wait-on globally
+        run: npm install -g wait-on
 
       - name: Install Dependencies
+        working-directory: broken-links-script
         run: |
-          cd broken-links-script
-          npm install
+          npm ci
+          npm install -g cypress
+
+      - name: verify cypress installation
+        run: npx cypress --version
+
+      - name: Start Hugo Server
+        run: hugo server --baseURL=http://localhost:1313/docs/ --bind=0.0.0.0 --disableFastRender &
+
+      - name: Wait for Hugo Server to be Ready
+        run: npx wait-on http://localhost:1313/docs/
 
       - name: Run Cypress tests
         run: |
