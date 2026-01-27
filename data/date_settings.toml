@@ -1,6 +1,7 @@
 yearly_release = true
 yearly_release_name = "2025"
 date = 2023-12-07T10:32:39.947Z
+version = "2025"
 
 [[versions]]
 date = "March 31, 2025"
