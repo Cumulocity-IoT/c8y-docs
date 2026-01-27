@@ -20,6 +20,15 @@
       </section>
       {{.Params.svg | safeHTML}}
     </div>
+    {{- if .Data.Term -}}
+      {{- $zip := (printf "zips/%s.zip" .Data.Term) | absURL -}}
+      <div class="m-b-16">
+        <a class="btn-tooltip" href="{{ $zip }}" title="Download all PDFs in this section">
+          <i class="dlt-c8y-icon-export-pdf" style="font-size: 20px;"></i>
+          Download PDFs (ZIP)
+        </a>
+      </div>
+    {{- end -}}
   <div class="home-grid">
     {{$scratch := newScratch}}
     {{ range where .Pages "Type" "root" }}
