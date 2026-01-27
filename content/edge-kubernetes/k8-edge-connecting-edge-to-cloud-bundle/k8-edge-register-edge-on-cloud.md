@@ -4,9 +4,9 @@ title: Registering Edge in the cloud tenant
 layout: redirect
 ---
 
-To remotely manage, configure, and monitor Edge through a {{< product-c8y-iot >}} cloud tenant, you must first register it as a device within the cloud tenant. This registration process requires providing the {{< product-c8y-iot >}} cloud tenant URI, along with an optional TLS/SSL key and certificate chain. These credentials authenticate Edge when connecting to the cloud via the MQTT protocol using X.509 certificate-based authentication. You can configure the cloud tenant URI, TLS/SSL key, and certificate chain using the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource - Cloud Tenant](/edge-kubernetes/edge-custom-resource-definition/#cloudTenant). You can also achieve this using `c8yedge config --set cloudTenant.domain=<CLOUD-TENANT-URI> --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>` command.
+To remotely manage, configure, and monitor Edge through a {{< product-c8y-iot >}} cloud tenant, you must first register it as a device within the cloud tenant. This registration process requires providing the {{< product-c8y-iot >}} cloud tenant URI, along with an optional TLS/SSL key and certificate chain. These credentials authenticate Edge when connecting to the cloud via the MQTT protocol using X.509 certificate-based authentication. You can configure the cloud tenant URI, TLS/SSL key, and certificate chain using the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge-kubernetes/edge-custom-resource-definition/#cloudTenant). You can also achieve this using the `c8yedge config --set cloudTenant.domain=<CLOUD-TENANT-URI> --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>` command.
 
-For general guidance on configuring Edge, see the [Modify Edge](/edge-kubernetes/manage-edge/#modify-edge) section.
+For general guidance on configuring Edge, see [Modifying Edge](/edge-kubernetes/manage-edge/#modify-edge.
 
 If you do not provide a TLS/SSL key and certificate chain, the Edge operator automatically generates an internal TLS/SSL key and certificate for authentication. In this case, Edge will identify itself using the domain name of the instance.
 
