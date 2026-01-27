@@ -154,6 +154,11 @@ The following table gives a brief description of all blocks that can be selected
 </td>
 </tr>
 <tr>
+<td><a href="#logger-public-preview">Logger (Public Preview)</a></td>
+<td><span>Writes a message to the log file for each input.</span>
+</td>
+</tr>
+<tr>
 <td><a href="#managed-object-input">Managed Object Input</a></td>
 <td><span>Receives <tt>ManagedObject</tt> objects from a device, asset, devices in a group, or all input sources.</span>
 </td>
