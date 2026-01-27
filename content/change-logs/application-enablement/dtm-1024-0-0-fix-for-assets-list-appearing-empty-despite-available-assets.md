@@ -11,7 +11,7 @@ component:
 build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
-ticket: ""
+ticket: "CTM-2627"
 version: "1024.0.0"
 ---
 In the Assets page, resolved an issue that occasionally caused the
