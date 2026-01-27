@@ -60,7 +60,7 @@ Eventually, your *package.json* file should look similar to:
 }
 ```
 
-You need to adjust the `scripts` object in the `package.json` file manually in order to include a start and build script:
+You must adjust the `scripts` object in the *package.json* file manually to include a start and build script:
 
 ```json
 {
