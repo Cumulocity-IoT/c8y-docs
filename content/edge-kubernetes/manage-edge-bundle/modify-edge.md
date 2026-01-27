@@ -10,39 +10,40 @@ In these examples, we assume that the Edge object is called `c8yedge` and is in 
 
 ### Basic post-installation configuration {#basic-post-installation-configuration}
 
-After installing Edge using the c8yedge tool, you might want to configure an SSL certificate for your Edge, give it a custom domain, and set the Edge tenant's name (company name) and the admin user email.
+After installing Edge using the c8yedge tool, you might want to configure an SSL certificate for your Edge, give it a custom domain, and set the Edge tenant's name (company name) and the admin user email. This can be achieved using `config` command of the c8yedge tool.
 
-First, ensure that your certificate and key are in separate files, in PEM format.
+First, ensure that your certificate and private key are in separate files, in PEM format. Then use the following command to configure your domain, license key, and SSL certificate.
 ```bash
-kubectl create secret tls edge-tls-secret --namespace=c8yedge \
-  --cert=./certs/tls.crt \
-  --key=./certs/tls.key
-```
-
-Then apply the below configuration for configuring an SSL certificate and a custom domain:
-```bash
-kubectl --namespace=c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"domain":"<DOMAIN-NAME>", "licenseKey":"<LICENSE-KEY>", "tlsSecretName": "edge-tls-secret"}}'
+c8yedge config \
+  --set domain=<DOMAIN-NAME> \
+  --set-file licenseKey=<path/to/license.txt> \
+  --set-file tlsSecret.tls.key=<path/to/tls.key> \
+  --set-file tlsSecret.tls.crt=<path/to/tls.crt>
 ```
 Note that the license key must always be valid for the domain name, so any change of domain name should be made simultaneously with a change of license key.
 
-Apply the below configuration for setting the Edge tenant's name and the admin user email:
+To set the Edge tenant's name and the administrator's email address, execute:
 ```bash
-kubectl --namespace=c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"company":"<COMPANY-NAME>", "email":"<ADMIN-EMAIL>"}}'
+c8yedge config \
+  --set company=<COMPANY-NAME> \
+  --set email=<ADMIN-EMAIL>
 ```
 Note that the company name and the admin user email can also be changed later using the [user interface](/standard-tenant/managing-users/#to-edit-a-user) or {{< product-c8y-iot >}} API.
 
-These changes may take some time to complete. See [Monitoring changes](/edge-kubernetes/manage-edge/#monitoring-changes).
+Upon successful configuration, the tool will exit automatically.
+
+To view all available configuration options, use `c8yedge config --help`.
 
 ### More general configuration changes {#more-general-configuration-changes}
 
-All configuration options can be accessed simply by editing a YAML document that represents the Edge custom resource. First, retrieve the current state of the custom resource
+Power users can modify the Edge configuration by directly editing a YAML document that represents the Edge custom resource. First, retrieve the current state of the custom resource
 ```bash
 kubectl get --namespace=c8yedge edge/c8yedge -o yaml > edge.yaml
 ```
 Edit this file, referring to [Edge custom resource](/edge-kubernetes/edge-custom-resource-definition/) for an exhaustive listing of what could be changed. For example, you might add
 ```
-messagingService:
-  enabled: true
+cloudTenant:
+  domain: <CLOUD-TENANT-DOMAIN>
 ```
 indented under the custom resource's `spec`.
 
@@ -56,3 +57,5 @@ If you are comfortable using a text editor installed on the host system, then yo
 kubectl edit --namespace=c8yedge edge/c8yedge
 ```
 Any changes you make will be applied when you save and exit the editor.
+
+These changes may take some time to complete. See [Monitoring changes](/edge-kubernetes/manage-edge/#monitoring-changes).
