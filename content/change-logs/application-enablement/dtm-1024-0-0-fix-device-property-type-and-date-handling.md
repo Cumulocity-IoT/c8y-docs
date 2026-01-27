@@ -11,7 +11,7 @@ component:
 build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
-ticket: ""
+ticket: "CTM-2671"
 version: "1024.0.0"
 ---
 Previously, device properties in the Asset Properties widget were stored
