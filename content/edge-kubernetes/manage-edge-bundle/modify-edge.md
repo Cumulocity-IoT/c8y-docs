@@ -49,7 +49,7 @@ Edit this file, referring to [Edge custom resource](/edge-kubernetes/edge-custom
   licenseKey: <CONTENTS-OF-THE-LICENSE-FILE>
   tlsSecretName: edge-tls-secret
 ```
-indented under the custom resource's `spec` for configuring an SSL certificate for your Edge, give it a custom domain. Note that the license key must always be valid for the domain name, so any change of domain name should be made simultaneously with a change of license key. 
+indented under the custom resource's `spec` for configuring an SSL certificate for your Edge and give it a custom domain. Note that the license key must always be valid for the domain name, so any change of domain name should be made simultaneously with a change of license key. 
 
 Create a secret `edge-tls-secret` in the `c8yedge` namespace with your certificate and private key before applying the changed custom resource.
 ```bash
