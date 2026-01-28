@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fixed device property data types and date parsing in Asset Properties widget"
+title: "Fixed device property data type and date parsing in Asset properties widget"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
