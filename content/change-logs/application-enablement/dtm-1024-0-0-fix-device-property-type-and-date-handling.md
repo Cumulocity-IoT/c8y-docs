@@ -14,8 +14,8 @@ build_artifact:
 ticket: "CTM-2671"
 version: "1024.0.0"
 ---
-Previously, device properties in the Asset Properties widget were stored
+Previously, device properties in the "Asset properties" widget were stored
 with an incorrect type, and date fields in complex properties displayed
-an Invalid Date value during editing; now, property data is stored using
+an invalid date value during editing. Now, property data is stored using
 the correct data type, and date fields are correctly parsed and
 displayed during editing.
