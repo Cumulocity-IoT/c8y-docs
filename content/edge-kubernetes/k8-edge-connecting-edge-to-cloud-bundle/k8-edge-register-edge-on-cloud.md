@@ -6,7 +6,7 @@ layout: redirect
 
 To remotely manage, configure, and monitor Edge through a {{< product-c8y-iot >}} cloud tenant, you must first register it as a device within the cloud tenant. This registration process requires providing the {{< product-c8y-iot >}} cloud tenant URI, along with an optional TLS/SSL key and certificate chain. These credentials authenticate Edge when connecting to the cloud via the MQTT protocol using X.509 certificate-based authentication. 
 
-If you installed Edge using the c8yedge tool, you can configure the cloud tenant URI, TLS/SSL key, and certificate chain using the command below.
+If you installed Edge using the **c8yedge** tool, you can configure the cloud tenant URI, TLS/SSL key, and certificate chain using the command below.
 ```shell
 c8yedge config \
     --set cloudTenant.domain=<CLOUD-TENANT-URI> \
