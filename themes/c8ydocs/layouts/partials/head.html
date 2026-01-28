@@ -7,16 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <base href="" />
     <meta name="generator" content="Hugo {{ hugo.Version }} with theme C8yDocs">
+    {{ $version := .Site.Data.date_settings.version }}
+    {{ $siteTitle := "" }}
+    {{ if eq $version "Latest" }}
+      {{ $siteTitle = "Cumulocity documentation" }}
+    {{ else }}
+      {{ $siteTitle = printf "Cumulocity Release %s documentation" $version }}
+    {{ end }}
     {{if eq .Title $.Site.Title }}
-      <title>{{ .Title }}</title>
+      <title>{{ $siteTitle }}</title>
     {{else}}
-      <title>{{ with .Title }}{{ . }} - {{$.Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}</title>
+      <title>{{ with .Title }}{{ . }} - {{ $siteTitle }}{{ else }}{{ $siteTitle }}{{ end }}</title>
     {{end}}
     <meta name="author" content="{{ .Site.Author.name }}">
     <meta name="keywords" content="{{ with .Keywords }}{{ delimit . ", " }}{{ end }}{{ if .Site.Params.keywords }}, {{ delimit .Site.Params.keywords ", " }}{{ end }}">
 
-    <meta property="og:title" content="{{if eq .Title $.Site.Title }}{{ .Title }}{{else}}{{ with .Title }}{{ . }} - {{$.Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}{{end}}">
-    <meta property="og:description" content="This documentation offers comprehensive information on the Cumulocity platform both from a user and from a developer perspective.">
+    <meta property="og:title" content="{{if eq .Title $.Site.Title }}{{ $siteTitle }}{{else}}{{ with .Title }}{{ . }} - {{ $siteTitle }}{{ else }}{{ $siteTitle }}{{ end }}{{end}}">
+    <meta property="og:description" content="This documentation offers comprehensive information on the Cumulocity platform both from a user and from a developer perspective. The content relates to the Cumulocity release 2025">
     <meta property="og:image" content="{{ "images/cumulocity-docs-web.jpg" | absURL}}">
     <meta property="og:url" content="https://cumulocity.com/docs/">
 
