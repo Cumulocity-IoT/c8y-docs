@@ -47,7 +47,7 @@ While you cannot change the core configuration of subscribed agents, you align t
 
 ### Subscribed agent versioning {#versioning-agents}
 
-While agents in general are not versioned, subscribed agents are versioned. They are provided by a custom or subscribed plugin that gets versioned, so the agents also exist in different versions. The AI Agent Manager shows the "latest" version of the plugin-agent. However, a custom application might use a different version of an agent. If the agent is overruled, always the custom user-defined agent is used. 
+While agents in general are not versioned, subscribed agents are versioned. They are provided by a custom or subscribed plugin that gets versioned, so the agents also exist in different versions. The AI Agent Manager shows the "latest" version of the plugin-agent. However, a custom application might use a different version. If the agent is overruled, always the custom user-defined agent is used. 
 
 ### Removing subscribed agents {#removing-subscribed-agents}
 

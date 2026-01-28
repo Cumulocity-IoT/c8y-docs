@@ -80,7 +80,7 @@ The agent uses the conversation history to provide contextual responses.
 
 **Full response format:**
 
-Add `?fullResponse=true` to receive detailed JSON response:
+Add `?fullResponse=true` to receive a detailed JSON response:
 
 ```
 POST /service/ai/agent/text/{agent-name}?fullResponse=true
@@ -97,12 +97,12 @@ The full response includes:
 - Provider metadata
 
 {{< c8y-admon-info >}}
-The same APIs exist for an object agent. Only replace `text` with `object` in the url.
+The same APIs exist for an object agent. Only replace `text` with `object` in the URL.
 {{< /c8y-admon-info >}}
 
-### Streaming
+### Streaming {#streaming}
 
-By switching the content-type to a streaming type, you get a streaming response from the API. Two modes are currently supported:
+By switching the content type to a streaming type, you get a streaming response from the API. Two modes are currently supported:
 
 - Text only is returned if no query parameter is attached.
 - A data SSE stream that also includes tool calls and status information is returned if the `?fullResponse=true` parameter is set.

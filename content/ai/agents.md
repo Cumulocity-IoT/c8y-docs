@@ -9,7 +9,7 @@ sector:
 weight: 20
 ---
 
-Agents are the basic building block of any agentic workflow. The AI Agent Manager simplifies the creation of agents by providing a UI that lets you quickly define an agent with a system prompt that then on its own calls tools. This quick starts agentic workflows in a couple of minutes, not hours. 
+Agents are the basic building block of any agentic workflow. The AI Agent Manager simplifies the creation of agents by providing a UI that lets you quickly define an agent with a system prompt that then, on its own, calls tools. This quick starts agentic workflows in a couple of minutes, not hours. 
 
 ## Custom agents
 To create a custom agent, navigate to **Administration** > **AI Agent Manager** and click **Add agent**. Select an agent name and the type of agent. This introduction only describes text agents. For details about object agents, refer to [Text and object agents](/ai/agents/#text-and-object-agents). When selecting a name, remember that naming conflicts occur with subscribed agents provided from applications or plugins. It is good practice to use a prefix other than `c8y-`, as this is the default prefix used by the platform.
@@ -56,7 +56,7 @@ Specify output format preferences. Indicate whether responses are concise bullet
 - Do not use ambiguous language that has multiple interpretations.
 
 
-### Variables
+### Variables (#ai-agent-variables)
 
 Variables allow you to inject dynamic data into your system prompt or user prompts at runtime. Instead of hardcoding specific values, you define placeholders that get replaced with actual values when the agent is called.
 
@@ -94,7 +94,7 @@ When calling the agent via REST API, provide variables in the request body:
 
 Variables make agents flexible and reusable without requiring multiple agent configurations for similar use cases.
 
-### Advanced settings
+### Advanced settings (#ai-agent-advanced-settings)
 
 The advanced settings allow you to fine-tune the agent's behavior using parameters from the Vercel AI SDK. These settings control aspects like response randomness, length limits, and provider-specific features.
 
@@ -136,7 +136,7 @@ For a complete list of available parameters and provider-specific options, refer
 
 Test different settings to find the optimal configuration for your use case.
 
-### Tools
+### Tools (#ai-agent-tools)
 
 Tools extend your agent's capabilities by allowing it to access data and perform actions beyond generating text. In the **Tools** tab, you assign tools from configured MCP servers to your agent.
 
@@ -155,7 +155,7 @@ For detailed information about tools, configuring MCP servers, and how agents us
 Object agents cannot use custom tools. They use tools internally to structure responses according to their defined schema.
 {{< /c8y-admon-info >}}
 
-### Test
+### Test (#ai-agent-test)
 
 The **Test** tab provides an interactive interface to test your agent directly in the AI Agent Manager. This allows you to validate the agent's behavior, system prompt, and tool usage before deploying it in production.
 

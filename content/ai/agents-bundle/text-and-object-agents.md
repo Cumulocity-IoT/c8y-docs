@@ -56,7 +56,7 @@ Object agents always return JSON that matches the defined schema:
 
 **Schema definition:**
 
-When creating an object agent, define the expected response structure using JSON Schema:
+When creating an object agent, define the expected response structure using JSON schema:
 
 ```json
 {
@@ -92,7 +92,7 @@ POST /service/ai/agent/object/{agent-name}
 | Aspect | Text agents | Object agents |
 |--------|-------------|---------------|
 | Response format | Plain text (or JSON with `?fullResponse=true`) | Always JSON |
-| Schema | Not required | Required JSON Schema |
+| Schema | Not required | Requires JSON schema |
 | Tools | Supports custom tools | Cannot use additional tools (uses tools internally for structuring) |
 | Use case | Conversational AI | Programmatic integration |
 | Flexibility | High - can adapt response format | Low - follows strict schema |
@@ -118,7 +118,7 @@ You test both agent types in the AI Agent Manager:
 1. Navigate to **Administration** > **AI Agent Manager**.
 2. Create or open an agent.
 3. The agent type is selected during creation and cannot be changed later.
-4. For object agents, define the JSON Schema in the configuration.
+4. For object agents, define the JSON schema in the configuration.
 5. Use the **Test** tab to verify responses match your expectations.
 
 ### Converting between types {#converting-between-types}

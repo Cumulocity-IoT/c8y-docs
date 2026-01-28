@@ -29,7 +29,7 @@ The feature is currently in public preview and might change or is not feature co
 
 Welcome to the {{< product-c8y-iot >}} AI Agent Manager (AIM) documentation.
 
-The AI Agent Manager enables you to create and manage AI agents—intelligent assistants that help users interact with your IoT data and systems through natural language conversations. Instead of building custom AI integrations from scratch, you configure pre-built agents that understand your specific use cases and have access to the tools they need to be helpful.
+The AI Agent Manager enables you to create and manage AI agents—intelligent assistants that help users interact with your IoT data and systems through natural language conversations. Instead of building custom AI integrations from scratch, you configure pre-built agents that understand your specific use cases and have access to the tools required to be helpful.
 
 ### What is an AI agent?
 
@@ -56,7 +56,7 @@ Once configured, users interact with agents through natural language without nee
 ### Getting started by configuring a global provider
 
 {{< c8y-admon-info >}}
-Without a global LLM provider configured the {{< product-c8y-iot >}}-platform is never connected to any external Large Language Model provider, even if the list already shows subscribed agents!
+Without a global LLM provider configured, the {{< product-c8y-iot >}} platform is never connected to any external Large Language Model provider, even if the list already shows subscribed agents!
 {{< /c8y-admon-info >}}
 
 Start by configuring a global provider and model. A global provider is the LLM provider and model that is used by default on each agent interaction as long as the agent does not define another provider or model in its local provider configuration. Use the AI Agent Manager UI in the **Administration** application:
@@ -71,7 +71,7 @@ Start by configuring a global provider and model. A global provider is the LLM p
    Additional providers are supported but not tested by the {{< product-c8y-iot >}} team. They work without guarantee. The same applies to open source models based on the OpenAI API, which are supported by using the OpenAI provider and changing the baseURL and the strict mode in the advanced settings.
 4. Define the model to use.
 5. Add an API key provided by your provider. This is securely stored inside the platform and cannot be read afterwards.
-6. Add advanced provider-specific settings if necessary. The advanced settings editor accepts JSON and validates via a JSON Schema.
+6. Add advanced provider-specific settings if necessary. The advanced settings editor accepts JSON and validates via a JSON schema.
 7. Save the provider.
 
 The next step is to validate your provider. The easiest way is to create a new agent:
@@ -80,9 +80,9 @@ The next step is to validate your provider. The easiest way is to create a new a
 2. Select **Test** and write "Hello world".
 3. The agent responds with a hello message.
 
-If successful, your provider is correctly configured and you can start to use and test AI Agents. Next you should learn more about subscribed agents, object agents, local providers and MCP tools:
+If successful, your provider is correctly configured, and you can start to use and test AI agents. Next, learn more about subscribed agents, object agents, local providers, and MCP tools:
  - Learn what [subscribed agents](/ai/agents/#what-are-subscribed-agents) are and how you can align them.
  - Understand the difference between an [object and a text agent](/ai/agents/#text-and-object-agents).
  - See how you can leverage [local providers](/ai/agents/#local-providers) to overwrite the provider or model of a global provider.
- - Understand the available [Tools and how you can extend them with MCP](/ai/tools-mcp/).
+ - Understand the available [tools and how you can extend them with MCP](/ai/tools-mcp/).
  - You can also manage agents programmatically [via the REST API](/ai/rest-api/) for integration into your own applications and workflows. 

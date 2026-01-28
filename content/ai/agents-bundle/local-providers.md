@@ -27,7 +27,7 @@ When an agent has a local provider configured, it uses those settings instead of
 
 **Separate billing**: Use different API keys for different agents to track usage or allocate costs to different departments.
 
-### Global provider vs local provider {#global-vs-local}
+### Global provider versus local provider {#global-vs-local}
 
 | Aspect | Global provider | Local provider |
 |--------|-----------------|----------------|
