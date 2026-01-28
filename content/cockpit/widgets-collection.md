@@ -254,7 +254,7 @@ Check your current widget code. If it contains specific JavaScript logic in a `<
 
 **Step 2: Migrate placeholders in simple mode**
 
-For example, the following legacy widget code:
+The following example shows legacy widget code:
 ```html
 <p ng-if="device.name === 'Alpine Hiker #1'">
   Hello {{device.name}}.
