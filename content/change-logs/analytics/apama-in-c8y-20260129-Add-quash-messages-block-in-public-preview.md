@@ -22,10 +22,10 @@ This feature is in Public Preview, that is, it is not enabled by default and may
 {{< /c8y-admon-preview >}}
 
 The Quash Messages block has the following outputs:
-- `Rate-quashed output`:
+- Rate-quashed output:
 The first input activation in the specified time period is sent to this output.
 When the time period has elapsed, the next input activation starts a new period and is again sent to this output.
-- `Quashed message output`:
+- Quashed message output:
 Input activations received after the first activation within the same time period are sent to this output.
-- `Number of quashed messages`:
+- Number of quashed messages:
 Number of quashed messages within the current period. Resets to zero when a message is not quashed.
