@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-01-29'
 title: OPC UA gateway with the thin-edge.io proxy support
 product_area: Device management & connectivity
 change_type:
