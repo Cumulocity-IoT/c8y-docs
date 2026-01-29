@@ -15,7 +15,7 @@ ticket: PAB-5076
 version:
 ---
 
-A new Smart Function block has been added to Analytics Builder. This block executes a JavaScript Smart Function on the inputs and produces an output.
+A new Smart Function block has been added to Analytics Builder. This block executes a JS Smart Function on the inputs and produces an output.
 
 {{< c8y-admon-preview >}}
 This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
