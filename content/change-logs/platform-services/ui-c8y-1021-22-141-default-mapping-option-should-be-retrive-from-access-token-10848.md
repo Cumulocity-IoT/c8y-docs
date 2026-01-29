@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Default mapping option should be Retrive from access token (#10848)
+title: Default access mapping retrieves user information from access token
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
