@@ -1,0 +1,25 @@
+---
+date: 2026-01-29
+title: Add Quash Messages block in Public Preview
+change_type:
+  - value: change-pXAlHAWka
+    label: Preview
+product_area: Analytics
+component:
+  - value: component-M5-cepIIS
+    label: Streaming Analytics
+build_artifact:
+  - value: tc-KXXmo2SUR
+    label: apama-in-c8y
+ticket: PAB-5073
+version:
+---
+
+A new `Quash Messages` block has been added to Analytics Builder in Public Preview. This block suppresses all but the first message received per specified time period, with the following outputs:
+- `Rate-quashed output`:
+The first input activation in the specified time period is sent to this output.
+When the time period has elapsed, the next input activation starts a new period and is again sent to this output.
+- `Quashed message output`:
+Input activations received after the first activation within the same time period are sent to this output.
+- `Number of quashed messages`:
+Number of quashed messages within the current period. Resets to zero when a message is not quashed.
