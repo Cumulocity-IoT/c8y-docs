@@ -1,6 +1,6 @@
 ---
 date: 2026-01-29
-title: Add Quash Messages block in Public Preview
+title: Added Quash Messages block in Public Preview
 change_type:
   - value: change-pXAlHAWka
     label: Preview
@@ -15,7 +15,13 @@ ticket: PAB-5073
 version:
 ---
 
-A new `Quash Messages` block has been added to Analytics Builder in Public Preview. This block suppresses all but the first message received per specified time period, with the following outputs:
+A new Quash Messages block has been added to Analytics Builder. This block suppresses all but the first message received per specified time period.
+
+{{< c8y-admon-preview >}}
+This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
+{{< /c8y-admon-preview >}}
+
+The Quash Messages block has the following outputs:
 - `Rate-quashed output`:
 The first input activation in the specified time period is sent to this output.
 When the time period has elapsed, the next input activation starts a new period and is again sent to this output.
