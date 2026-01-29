@@ -1,6 +1,6 @@
 ---
 date: 2026-01-29
-title: Add Smart Function block in Public Preview
+title: Added Smart Function block in Public Preview
 change_type:
   - value: change-pXAlHAWka
     label: Preview
@@ -15,7 +15,11 @@ ticket: PAB-5076
 version:
 ---
 
-A new `Smart Function` block has been added to Analytics Builder in Public Preview. This block executes a JavaScript Smart Function on the inputs and produces an output.
+A new Smart Function block has been added to Analytics Builder. This block executes a JavaScript Smart Function on the inputs and produces an output.
+
+{{< c8y-admon-preview >}}
+This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
+{{< /c8y-admon-preview >}}
 
 The Smart Function must export a function `onInput(inputs, context)` that returns a list of outputs.
 
