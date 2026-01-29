@@ -1,6 +1,6 @@
 ---
 date: ""
-title: prevent additional requests when the data points graph is in real time mode
+title: Prevented additional requests of the Data point graph widget in real-time mode
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65548
 version: 1023.14.43
 ---
-When the data points graph widget operates in real time mode, it was making unnecessary additional requests to fetch data, which could impact performance and increase server load.
+When the "Data point graph" widget operated in real-time mode, it made unnecessary requests to fetch data, which could impact performance and increase server load. This issue has been fixed.
