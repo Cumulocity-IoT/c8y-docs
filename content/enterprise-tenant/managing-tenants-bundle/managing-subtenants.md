@@ -165,6 +165,10 @@ The following information is displayed here:
 </tbody>
 </table>
 
+{{<c8y-admon-info>}}
+The **Support user access** Log in button is available only when support user access is enabled and the user has the required permissions in the management tenant. For more details, refer to [Support user access](/enterprise-tenant/support-user-access)
+{{</c8y-admon-info>}}
+
 ### To suspend a subtenant {#to-suspend-a-subtenant}
 
 Suspending a tenant blocks any access to this tenant, regardless whether the access is from devices, users or other applications. In addition, all its microservices are undeployed, and if the tenant is reactivated all its microservices are re-deployed.
