@@ -13,4 +13,4 @@ build_artifact:
 ticket: DM-5142
 version: 4.0.1
 ---
-An issue has been resolved that caused errors when [Loriot connection passwords](/device-integration/lora-loriot/#creation-of-loriot-lns-connection-in-platform) contained backslashes or control characters. Passwords with special characters no longer break the authentication or the configuration.
+An issue has been resolved that caused errors when [Loriot connection passwords](/device-integration/lpwan/#creating-a-loriot-lns-connection-in-cumulocity) contained backslashes or control characters. Passwords with special characters no longer break the authentication or the configuration.
