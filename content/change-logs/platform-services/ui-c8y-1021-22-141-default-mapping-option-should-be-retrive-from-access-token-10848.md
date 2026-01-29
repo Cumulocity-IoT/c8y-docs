@@ -14,8 +14,4 @@ build_artifact:
 ticket: MTM-62110
 version: 1021.22.141
 ---
-backport of https://github.com/Cumulocity-IoT/cumulocity-ui/pull/8019
-
-Co-authored-by: Marcin Medoń <92982311+mmed-c8y@users.noreply.github.com>
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-sag@users.noreply.github.com>
-Co-authored-by: Paweł Rynarzewski <pawel.rynarzewski@cumulocity.com>
+The single sign-on (SSO) configuration has been updated with the default access mapping set to retrieve user information from the access token. This update is required as {{< product-c8y-iot >}} recently enabled user information to be taken from either the access token or the identity token. This change improves backward compatibility.
