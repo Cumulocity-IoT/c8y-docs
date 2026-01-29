@@ -16,4 +16,30 @@ Refer to [REST](/device-integration/device-integration-rest/) for detailed infor
 
 An up-to-date open source reference implementation of a {{< product-c8y-iot >}} agent for embedded Linux systems with many device management features can be found at [{{< link-c8y-github >}}/cumulocity-agents-linux]({{< link-c8y-github >}}/cumulocity-agents-linux). Note that the reference implementation currently uses SmartREST 1 with the choice to switch between HTTP and MQTT as transport protocol.
 
-For information on the general concept of agents being used for interfacing IoT data sources with {{< product-c8y-iot >}}, refer to [Interfacing devices](/device-integration/interfacing-devices/).
+See the tutorial [Getting started with thin-edge.io](https://thin-edge.github.io/thin-edge.io/start/getting-started/) for an easy-to-follow and hands-on example.
+
+### Microcontroller-based devices {#microcontroller-based-devices}
+
+For highly constrained devices with microcontrollers that cannot run thin-edge.io, you can integrate directly via the Core [MQTT](/device-integration/mqtt) and [REST](/device-integration/device-integration-rest/) APIs along with [SmartREST](/smartrest/smartrest-two/) for efficient communication. These can be implemented using available MQTT client libraries such as [Eclipse Paho](https://www.eclipse.org/paho/). For standard-compliant device management, the [LWM2M](/device-integration/lwm2m/) protocol is also supported.
+
+### IoT gateways and data integration {#iot-gateways-and-data-integration}
+
+Not all devices are directly connected to the internet. In such cases, IoT gateways act as intermediaries, collecting data from devices and forwarding it to {{< product-c8y-iot >}}. Several data integration options are available:
+
+* **[OPC UA](/device-integration/opcua/)**: Industrial automation protocol for connecting PLCs and industrial equipment.
+* **[MQTT Service](/device-integration/mqtt-service/)**: Flexible MQTT endpoint allowing user-provided microservices to map between custom device payloads and the {{< product-c8y-iot >}} data model.
+* **thin-edge.io protocol drivers**: Extend thin-edge.io with custom protocol support for proprietary or specialized device protocols.
+* **Partner gateways**: Use pre-integrated partner gateways that bring support for the required protocol. Explore certified partner devices in the [Device Partner Portal](https://ecosystem.cumulocity.com/).
+
+### LPWAN integration {#lpwan-integration}
+
+Low-Power Wide-Area-Network (LPWAN) technologies are critical for use cases requiring devices to:
+* Run on a single battery for years at a very low cost.
+* Only transmit small amounts of data intermittently.
+* Be positioned in distributed or hard-to-reach locations.
+
+{{< product-c8y-iot >}} provides dedicated integrations for various LPWAN technologies including LoRa and Sigfox. Refer to [LoRa Actility](/device-integration/lpwan/#actility-lora), [LoRa LORIOT](/device-integration/lpwan/#loriot-lora), and [Sigfox](/device-integration/lpwan/#sigfox) for details. For cellular devices, [LWM2M](/device-integration/lwm2m/) can be used.
+
+### Agent concepts {#agent-concepts}
+
+A device agent is a piece of software that runs locally on a device or gateway. Its primary purpose is to act as the intermediary between the device’s physical hardware and the cloud platform. To learn more about the general concept of agents being used for interfacing IoT devices and data sources with {{< product-c8y-iot >}}, refer to [Interfacing devices](/device-integration/interfacing-devices/).

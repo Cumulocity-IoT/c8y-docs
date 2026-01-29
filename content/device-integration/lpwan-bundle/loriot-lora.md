@@ -59,7 +59,7 @@ The Loriot Network Server forwards two types of messages to the Loriot agent: "r
 The Loriot LoRa agent only processes "gw" messages to avoid duplicate measurements or events in {{< product-c8y-iot >}}, because most of the information matches with "gw" message whereas "gw" message also carries all gateway information.
 
 {{< c8y-admon-info >}}
-You must enable the "gw" message option on LLoriot Network Server while connecting to the Loriot LoRa agent, see [Device registration via {{< product-c8y-iot >}}](#device-registration-via-platform).
+You must enable the "gw" message option on LLoriot Network Server while connecting to the Loriot LoRa agent, see [Device registration via {{< product-c8y-iot >}}](#device-registration-via-the-platform).
 {{< /c8y-admon-info >}}
 
 In the Loriot LoRa device message below, `gws` represents a list of gateways involved in the network:
@@ -92,7 +92,7 @@ In the Loriot LoRa device message below, `gws` represents a list of gateways inv
 The Loriot LoRa agent picks `gw` with the oldest timestamp for processing.
 The Loriot LoRa agent maps the `rssi` value to the standard {{< product-c8y-iot >}} `SignalStrength` object and updates the device managed object with the `lat` and `lon` values.
 
-In order to be able to send downlink operations, the devices registered via uplink message must be re-registered using {{< product-c8y-iot >}} (see [Device registration via {{< product-c8y-iot >}}](#device-registration-via-platform)), to be associated with a connection and a device type.
+In order to be able to send downlink operations, the devices registered via uplink message must be re-registered using {{< product-c8y-iot >}} (see [Device registration via {{< product-c8y-iot >}}](#device-registration-via-the-platform)), to be associated with a connection and a device type.
 
 ### Device registration via the {{< product-c8y-iot >}} platform {#device-registration-via-the-platform}
 
@@ -285,7 +285,7 @@ Under **Functionalities**, specify how this device protocol should behave:
 - **Send event** - creates an event with the decoded value.
 - **Update managed object** - updates a fragment in a managed object with the decoded value.
 
-You can also have a nested structure with several values within a measurement, event or managed object fragment. In case of a measurement all the properties of the same type will be merged to create a nested structure. In case of an event or a managed object all the properties with the same fragment are merged to create a nested structure. Also refer to the [example](#example-with-nested-structure) of a nested structure for a "Position" device protocol below.
+You can also have a nested structure with several values within a measurement, event or managed object fragment. In case of a measurement all the properties of the same type will be merged to create a nested structure. In case of an event or a managed object all the properties with the same fragment are merged to create a nested structure. Also refer to the [example](#loriot-example-with-nested-structure) of a nested structure for a "Position" device protocol below.
 
 Click **OK** to add the values to your device protocol.
 
@@ -324,7 +324,7 @@ This will be the result:
 
 #### Using custom decoding {#loriot-using-custom-decoding}
 
-The Loriot agent also supports the decoding functionality by plugging in the custom microservice. Refer to [LPWAN custom protocols](/lpwan-custom-protocols) for further details.
+The Loriot agent also supports the decoding functionality by plugging in the custom microservice. Refer to [LPWAN custom protocols](#lpwan-custom-protocols) for further details.
 
 ### Assigning the Loriot LoRa device protocol {#assigning-the-loriot-lora-device-protocol}
 
@@ -376,4 +376,4 @@ Make sure that the **Gateway Information** is enabled in the Loriot Network Serv
 **Device type error warning**
 
 The warning message "Device type error" shows up in the log if no device protocol has been assigned to the device.
-To assign a device protocol refer to the section [Assign the Loriot LoRa device protocol](#assigning-loriot-device-protocol).
+To assign a device protocol refer to the section [Assign the Loriot LoRa device protocol](#assigning-the-loriot-lora-device-protocol).
