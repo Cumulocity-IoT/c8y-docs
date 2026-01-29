@@ -92,6 +92,8 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 | Quota                                                                                            | Type |   Value |
 | ------------------------------------------------------------------------------------------------ | ---- | ------: |
+| Number of tenants                                                                                | Soft |     250 |
+| Number of Dremio users per tenant                                                                | Soft |      40 |
 | Number of active offloaders per tenant                                                           | Soft |     100 |
 | Number of offloadings per tenant per hour                                                        | Soft |      20 |
 | [Offloading frequency](/datahub/working-with-datahub/#configure-additional-settings)             | Hard |  hourly |

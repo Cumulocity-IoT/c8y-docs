@@ -60,6 +60,16 @@
       border-radius: 2px;
       outline-offset: -1px;
     }
+    &.btn-free-trial{
+      background-color: var(--c8y-palette-yellow-60);
+      color: var(--c8y-text-color);
+      font-weight: bold;
+      &:hover{
+        background-color: var(--c8y-palette-yellow-30);
+        color: var(--c8y-palette-high);
+        outline: 1px solid var(--c8y-text-color);
+      }
+    }
   }
   .dropdown-menu {
     // padding-top: 34px;

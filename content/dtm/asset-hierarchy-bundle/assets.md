@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Assets
+title: Working with assets
 layout: redirect
 helpContent:
   - label: viewing-assets
@@ -11,43 +11,54 @@ helpContent:
     Click **Assign devices** at the top right to assign devices to the asset."
 ---
 
-Once the [asset hierarchy](/dtm/asset-hierarchy/#asset-hierarchy) has been created by adding assets, they can be viewed in the **Assets** page.
+To work with assets in the DTM application, navigate to the **Assets** page using the navigator.   
+
+By default, the **Assets** page is empty. Once an [asset hierarchy](/dtm/asset-hierarchy/#asset-hierarchy) has been created by adding assets, the assets are shown in the **Assets** page.
+
+{{< c8y-admon-info >}}
+The count of assets shown at the bottom of the **Assets** page represents the number of root assets in the assets hierarchy, not the total number of assets.
+{{< /c8y-admon-info >}}
+
+![assets-view](/images/dtm/assets/dtm-assets-view-assets.png)
+
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS
+
+- To view all assets: READ permission for permission type "Inventory"
+- To add/update/delete assets: CREATE/ADMIN permission for permission type "Inventory"
+- To view specific assets: READ permissions for "Inventory" in the inventory roles
+- To manage or delete specific assets: READ and CHANGE permissions for "Inventory" in the inventory roles
+
+Note that global inventory permissions override inventory role permissions. By default, the user has full access to assets created by them regardless of permissions granted to them. See [Managing permissions and roles](/standard-tenant/managing-permissions/) for further information.
+{{< /c8y-admon-req >}}
 
 ### To view an asset {#to-view-an-asset}
 
 In the **Assets** page, select an asset to view its details, such as subassets, child devices, and asset properties.
 
-The **Subassets** page shows all asset details:
+#### Subassets {#subassets}
 
-- At the top, the asset name and description is provided, along with the **Created** and **Last updated** time.
-- In the **Subassets** section, all subassets and devices are listed.
-- All asset properties are displayed on the right.
+The **Subassets** tab shows all asset details:
+
+- At the top left of the asset header, the icon, the asset model as well as asset name and description are presented.
+- Next to it, the **Created** and **Last updated** time as well as, if configured, the **External ID** of the asset are shown.
+- In the **Subassets** section at the left, all subassets and devices are listed.
+- At the right, the asset properties are displayed.
 
 Optionally, [add subassets](/dtm/asset-hierarchy/#to-add-subassets) or [assign devices](/dtm/asset-hierarchy/#to-assign-devices-to-an-asset) from the top bar.
 
-In the **Asset tree** tab, the assets hierarchy is shown.
+![Subassets](/images/dtm/assets/dtm-assets-subassets-page.png)
 
-Optionally, [add subassets](/dtm/asset-hierarchy/#to-add-subassets) using the options on the top right.
-
-If a location is specified for the asset, it is shown in the map under the properties section below its values. To see the map, provide a value for latitude and longitude.  Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen. You cannot modify the marker when viewing the asset. Edit the property to change the position of the marker.
+If the asset has a **Location** property or the asset model of the asset specifies Location as an [Asset Property](/dtm/asset-types/#asset-properties), a map is shown at the bottom right corner of the page. In DTM, the Location [Asset Property](/dtm/asset-types/#asset-properties) represents the formal model of a `c8y_Position` fragment used in {{< product-c8y-iot >}} to [track the geographical location of assets and devices](https://cumulocity.com/docs/device-integration/fragment-library/#tracking). Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen. You cannot modify the marker when viewing the asset. Edit the property to change the position of the marker.
 
 {{< c8y-admon-info>}}
 - The **Add asset** button is not displayed for the last hierarchical level.
 - A warning message is shown if one or more properties associated with the asset are not available.
 - For complex properties, the keys will be ordered as specified in the property definition.
+- The external source label of the asset from `c8y_ExternalSource` is only shown for for read-only assets to indicate synchronization from an external system.
 {{< /c8y-admon-info>}}
 
-### To view the asset hierarchy {#to-view-the-asset-hierarchy}
-
-Select an asset in the **Assets** page to view the asset details in **Subassets** tab.
-It shows all the subassets, child devices and asset properties.
-{{< c8y-admon-info>}}
-The key-value pairs for complex properties in the **Subassets** page will be displayed in the order specified in the **Order** field of the property definition in the **Asset properties** page.
-{{< /c8y-admon-info>}}
-
-In the top right corner of the **Subassets** tab, you can [assign devices](#to-assign-devices-to-an-asset).
-
-![Subassets](/images/dtm/assets/dtm-assets-subassets-page.png)
+#### Asset tree {#asset-tree}
 
 You can view the hierarchy of the asset in the **Asset tree** tab. Initially the asset hierarchy is collapsed. Click the expand icon <i class="dlt-c8y-icon-forward text-primary icon-20"></i> to view the next level of subassets.
 
@@ -73,41 +84,51 @@ The asset models provided here are root asset models. Root asset models are asse
 
 3. At the left, the asset hierarchy is shown. At the right, provide a name for the new asset and optionally add a description.
 
+    ![Adding a new asset](/images/dtm/assets/dtm-assets-new-asset.png)
+
 4. Optionally, [assign devices](#to-assign-devices-to-an-asset) to your root asset.
 
-5. To add more than one root asset, click **Add**.
+5. To add more than one asset on this level, click **Add**.
 
-6. Under **Asset properties**, fill in the required information. Here you find all [asset properties](/dtm/asset-types/#asset-properties) assigned to the asset model that you create.
+6. Under **Custom properties**, provide the values for all [asset properties](/dtm/asset-types/#asset-properties). The asset properties are defined when [creating the asset model](/dtm/asset-types/#to-create-an-asset-model).
 
-For an asset with a **Location** property, click **Choose on Map** to set the values for latitude and longitude. Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen.
-
-The marker is positioned at the default value set in the **Location** property. Click or drag the marker to the preferred position to set the value for both latitude and longitude. If you do not enter a latitude or longitude value, you will not see a marker on the map.
-
-{{< c8y-admon-info>}}
-- The values of latitude and longitude are automatically updated whenever a new location is selected on the map and vice-versa. The altitude value is not represented on the map.<br>
-- The asset properties are defined when [creating the asset model](/dtm/asset-types/#to-create-an-asset-model).
-When creating an asset you must provide the values for all asset properties.<br>
+    {{< c8y-admon-info>}}
 For complex properties, the keys are ordered as specified in the property definition.
-{{< /c8y-admon-info>}}
+    {{< /c8y-admon-info>}}
 
-7. Click **Next** to reach the next hierarchy level of your **asset hierarchy** and fill in the required fields. Repeat this step for all asset hierarchy levels.
+    For an asset with a **Location** property, click **Choose on map** to set the values for latitude and longitude. Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen. The marker is positioned at the default value set in the **Location** property. Click or drag the marker to the preferred position to set the value for both latitude and longitude. If you do not enter a latitude or longitude value, you will not see a marker on the map.
 
-8. The **Confirmation** step displays an overview of your asset and asset hierarchy levels. Click **Create** to create your asset.
+    {{< c8y-admon-info>}}
+The values of latitude and longitude are automatically updated whenever a new location is selected on the map and vice-versa. The altitude value is not represented on the map.
+    {{< /c8y-admon-info>}}
 
-The asset will be listed in the **Assets** page.
+7. After defining a hierarchy level, you see a green check mark on the asset hierarchy at the left.
 
-As you define each hierarchy level of your new asset, you see a green check mark on each asset hierarchy level in the section on the left.
+8. Click **Next** to navigate to the next hierarchy level in your **asset hierarchy** and fill in the required fields.
+
+9. Repeat this steps for all asset hierarchy levels. You can track your progress via the green check marks in the asset hierarchy on the left.
+
+Modify the assets by navigating to the respective asset pages using the **Previous** and **Next** buttons.
+
+When all assets in the asset hierarchy show green check marks, the **Confirmation** step shows a preview of the asset hierarchy. Click **Create** to create the asset hierarchy.
+
+![Confirmation page asset creation](/images/dtm/assets/dtm-assets-confirmation-page.png)
+
+If the asset hierarchy has been successfully created, you see a popup notification at the top right.
+
+The new asset hierarchy in displayed the **Assets** page.
 
 {{< c8y-admon-info>}}
-In case of validation errors on the page, they are indicated in red. Correct the required information to continue.
-If you leave the page abruptly, a confirmation dialog is shown.
+- In case of validation errors, they are indicated in red. Correct the required information to continue.
+- If you leave the page abruptly, a confirmation dialog is shown.
+- In case of a bulk operation failure, the entire operation is rolled back. The user is navigated to the main assets page in order to clean up the entities created and to repeat the operation.
 {{< /c8y-admon-info>}}
 
-![Adding a new asset](/images/dtm/assets/dtm-assets-new-asset.png)
+#### Example
 
-**Example:**
+If you want to create an asset hierarchy for the asset model "Wind turbine AZ-43Y":
 
-1. If you want to create an asset hierarchy for the asset model "Wind turbine AZ-43Y", select "Wind turbine AZ-43Y" from the **Choose asset model** dropdown. Starting with the root asset level, you see the dialog window "Wind turbine AZ-43Y" on the right.
+1. Select "Wind turbine AZ-43Y" from the **Choose asset model** dropdown. Starting with the root asset level, you see the dialog window "Wind turbine AZ-43Y" on the right.
 2. Enter the **Name** of the wind turbine, for example, "SE-TURBINE-101".
 Optionally, enter a brief description, for example, "Wind turbine with rated power of 3.6MW".
 3. To add more assets to this hierarchy level, click **Add** at the bottom.
@@ -121,13 +142,14 @@ You can add subassets to an asset from the **Subassets** or **Asset tree** tab.
 
 1. Click **Add asset** to load the **Asset hierarchy** for the selected asset.
 
-2. The root asset is displayed with the label "parent node". The asset hierarchy displayed below it is a subset of the root asset hierarchy.
+2. The root asset is displayed with the label "START NODE". The asset hierarchy displayed below it is a subset of the root asset hierarchy.
 
     ![Subasset](/images/dtm/assets/dtm-assets-add-child-asset.png)
 
-**Example:**
+#### Example
 
 If "Wind turbine" is a root level asset, then "Rotor" is a subasset of "Wind turbine" and "Blade" is a subasset of "Rotor".
+
 If you navigate to the **Subassets** or **Asset tree** page of "Wind turbine" and click **Add asset**, the asset hierarchy loads for "Rotor" and "Blade".
 
 If you navigate to the "Rotor" asset and and click **Add asset**, you can only add subassets for "Blade".
@@ -148,20 +170,6 @@ Click **Add** at the bottom to add more blade assets.
 
 ![Adding multiple assets](/images/dtm/assets/dtm-assets-add-multiple-instance.png)
 
-To delete an asset template, click the delete icon at the top right.
-
-Modify the assets by navigating to the asset pages using the **Previous** and **Next** buttons. You can track your progress via the green check marks in the asset hierarchy on the left.
-
-When all assets in the asset hierarchy show green check marks, a **Confirmation** page shows a preview of the asset hierarchy. Click **Create** to create the asset hierarchy.
-
-![Confirmation page asset creation](/images/dtm/assets/dtm-assets-confirmation-page.png)
-
-If the asset hierarchy has been successfully created, you see a pop-up notification at the top right. The new asset hierarchy in displayed the **Assets** page.
-Also see [viewing assets](/dtm/asset-hierarchy/#viewing-assets).
-
-{{< c8y-admon-info>}}
-In case of a bulk operation failure, the entire operation is rolled back. The user is navigated to the main assets page in order to clean up the entities created and to repeat the operation.
-{{< /c8y-admon-info>}}
 
 ### To assign devices to an asset
 
@@ -198,7 +206,8 @@ You can view, search, or filter devices easily with the following options.
 
 To modify any of the asset details, click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> next to it, enter the new information, and save it.
 
-For an asset with a location, click or drag the marker to the preferred position to select the value for latitude and longitude on the map. Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to enter full screen mode. To see the map, provide a value for latitude and longitude.
+For details on the fields, see [To create an asset](#to-create-an-asset).
+
 
 ### To delete an asset {#to-delete-an-asset}
 

@@ -1,5 +1,5 @@
 ---
-weight: 60
+weight: 80
 title: OPC UA
 layout: bundle
 sector:
