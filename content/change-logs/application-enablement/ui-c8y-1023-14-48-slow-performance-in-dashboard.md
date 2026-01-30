@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5463
 version: 1023.14.48
 ---
-Due to some recent changes related to rolling out Dashboard manager in Device management some users reported longer loading times for dashboard views. This issue has been address and dashboard loading times have returned to normal.
+Due to some recent changes related to rolling out the dashboard manager in the Device Management application, the loading time for dashboard views increased. This issue has been addressed, and dashboard loading times have returned to normal.
