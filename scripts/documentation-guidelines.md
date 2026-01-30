@@ -52,9 +52,33 @@ Create a child device
 Create child device
 
 ### Abbreviations
-- Replace "e.g." → "for example"
-- Replace "i.e." → "that is"
-- Replace "etc." → "and so on" or be specific
+Avoid unfamiliar abbreviations
+
+Do not use abbreviations that might not be familiar to non-native speakers.
+
+Instead of **e.g.**
+
+use 
+
+**for example** 
+
+This phrase is always followed by a comma.
+
+Instead of **i.e.** 
+
+use
+
+**that is**
+
+This phrase is always followed by a comma.
+
+Instead of **etc.** 
+
+use
+
+***an so on
+
+
 ```
 
 ### Spelling

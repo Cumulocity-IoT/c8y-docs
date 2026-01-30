@@ -6,7 +6,7 @@ layout: redirect
 
 ### Introduction {#lpwan-custom-protocols-introduction}
 
-{{< product-c8y-iot >}} can interface with LPWAN devices through LPWAN network providers via {{< product-c8y-iot >}} LPWAN agents, such as [Actility LoRa](/device-integration/lpwan/#lora-actility/).
+{{< product-c8y-iot >}} can interface with LPWAN devices through LPWAN network providers via {{< product-c8y-iot >}} LPWAN agents, such as [Actility LoRa](/device-integration/lpwan/#actility-lora).
 
 Our LoRa integration allows you to define device protocols in a self-service manner to create a binary mapping of the LoRa sensor data to the {{< product-c8y-iot >}} data model.
 However, this approach does not work for LoRa devices sending dynamic payloads.
@@ -105,7 +105,7 @@ Otherwise, you must use the Inventory API to create a new managed object describ
 ### Using the LPWAN custom codec library {#using-the-custom-codec-library}
 
 For convenience, {{< product-c8y-iot >}} provides the Java library `com.nsn.cumulocity.clients-java:lpwan-custom-codec` to develop the custom codec microservice in Java as a SpringBoot application.
-When subscribed, such a custom codec microservice automatically creates the required device protocols and predefined command templates as described in [Implementing a custom codec microservice](#implementing-custom-codec-microservice).
+When subscribed, such a custom codec microservice automatically creates the required device protocols and predefined command templates as described in [Implementing a custom codec microservice](#implementing-a-custom-codec-microservice).
 
 To create a custom codec microservice using this library, do the following:
 
