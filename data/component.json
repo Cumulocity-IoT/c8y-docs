@@ -101,6 +101,16 @@
       ]
     },
     {
+      "id": "component--LJtTuzaN",
+      "option": "Device Parameter",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
+    },
+    {
       "id": "component-gH76BBkY0",
       "option": "Device simulator",
       "product_area": [

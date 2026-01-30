@@ -33,6 +33,10 @@
       "option": "device-simulator"
     },
     {
+      "id": "tc-wfTX6sxsr",
+      "option": "device-parameter"
+    },
+    {
       "id": "tc-wYIY0MBDO",
       "option": "dtm"
     },
