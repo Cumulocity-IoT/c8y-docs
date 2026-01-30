@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Wrong module declaration in sample-plugin for JPEG images. [GRAFT][release/cd] (#10969)
+title: Fixed incorrect module declaration in sample plugin for JPEG image handling
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
