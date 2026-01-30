@@ -241,7 +241,7 @@ This will be the result:
 
 #### Using custom decoding/encoding {#sigfox-using-custom-decodingencoding}
 
-The Sigfox agent also supports the decoding/encoding functionality by plugging in the custom microservice. Refer to [LPWAN custom protocols](/lpwan-custom-protocols) for further details.
+The Sigfox agent also supports the decoding/encoding functionality by plugging in the custom microservice. Refer to [LPWAN custom protocols](#lpwan-custom-protocols) for further details.
 
 ### Registering Sigfox devices {#registering-sigfox-devices}
 
@@ -332,7 +332,7 @@ In order to resolve this error, please contact support.sigfox.com to create a co
 
 This warning message shows up  when there are no connections set up for the sigfox connectivity.
 
-To resolve this, refer to [Configure Sigfox credentials](#managing-connectivity-settings).
+To resolve this, refer to [Configure Sigfox credentials](#managing-the-connectivity-settings).
 
 **No Sigfox device type configured**
 
