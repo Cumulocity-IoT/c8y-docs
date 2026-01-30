@@ -1,5 +1,5 @@
 ---
-date: ''
+date: '2026-01-29'
 title: CORS support added for public API endpoints
 change_type:
   - value: change-VSkj2iV9m

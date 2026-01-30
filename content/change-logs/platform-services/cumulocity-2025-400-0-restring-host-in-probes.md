@@ -1,6 +1,6 @@
 ---
-date: 
-title: Changing probes setting in microservice manifests 
+date: '2026-01-29'
+title: Changing probes setting in microservice manifests
 product_area: Platform services
 change_type:
   - value: change-inv-3bw8e
