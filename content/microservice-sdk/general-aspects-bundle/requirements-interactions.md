@@ -13,7 +13,7 @@ The following requirements towards {{< product-c8y-iot >}} microservices must be
 * A microservice cannot access the database directly and must use the {{< product-c8y-iot >}} API.
 * A microservice must provide one inbound REST API. Additional inbound ports are not supported.
 * A microservice can use multiple outbound ports.
-* The request lifetime must have the maximum. The infrastructure might terminate too long running requests.
+* The request lifetime must have the maximum. The infrastructure might terminate requests running to long.
 * All log information must be sent to the standard output in order to be captured and persisted by the infrastructure.
 
 Microservices interact with {{< product-c8y-iot >}} and the outside world as shown in the following diagram:
