@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix preselection of nested properties in asset property selector [GRAFT][release/cd] (#10967)
+title: Fix pre-selection of nested properties in asset property selector
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
