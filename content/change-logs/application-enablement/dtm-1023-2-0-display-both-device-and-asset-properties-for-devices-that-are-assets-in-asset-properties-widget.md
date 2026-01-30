@@ -15,4 +15,4 @@ build_artifact:
 ticket: CTM-2398
 version: 1023.2.0
 ---
-The Asset Properties widget, part of the dtm-plugins, has been enhanced to better support devices modeled as assets. In addition to the previously hardcoded device properties, the widget now dynamically lists all properties modeled for devices modeled as assets. This enhancement ensures consistent visibility of modeled properties across both devices and assets, providing a unified and more complete view in the Asset Properties widget.
+The "Asset properties" widget, which is part of the dtm-plugins, has been enhanced to better support devices modeled as assets. In addition to the previously hardcoded device properties, the widget now dynamically lists all modeled properties for devices modeled as assets. This enhancement ensures consistent visibility of modeled properties across both devices and assets, providing a unified and more complete view in the Asset Properties widget.
