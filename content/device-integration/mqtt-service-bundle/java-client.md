@@ -1,78 +1,14 @@
 ---
-weight: 30
+weight: 31
 layout: redirect
 title: Java Client
 ---
 
-The MQTT Service Java Client library provides the classes necessary to interact with the MQTT Service.
-The following operations are supported by the client:
-* Publishing messages to the MQTT Service via a WebSocket protocol.
-* Subscribing to messages from the MQTT Service via a WebSocket protocol
+{{< c8y-admon-caution >}}
+The MQTT Service Java SDK is deprecated and should not be used for new development.
+It has been replaced by direct connections to the {{< product-c8y-iot >}} Messaging Service.
 
-### Repositories and dependencies {#repositories-and-dependencies}
+Any clients using the Java SDK **must** be updated before the MQTT Service becomes Generally Available.
 
-Follow the [Microservice SDK](/microservice-sdk/java/#add-repositories-and-dependencies) documentation for guidance on how to configure Maven repositories.
-To include the MQTT Service Java Client into your project, add the following dependency inside the `<dependencies>` node:
-```xml
-<dependency>
-    <groupId>com.cumulocity.sdk.mqtt</groupId>
-    <artifactId>mqtt-service-ws</artifactId>
-    <version>${c8y.version}</version>
-</dependency>
-```
-
-### Examples {#example}
-
-Example of publishing messages to the MQTT Service via WebSocket:
-```java
-// Message to be sent
-final String payload = "Hello World";
-
-// Construct a new MqttServiceMessage and set the payload
-final MqttServiceMessage message = new MqttServiceMessage();
-message.setPayload(payload.getBytes());
-
-// Create an instance of MqttServiceApi by specifying the server URI to connect to along with TokenApi
-final MqttServiceApi mqttServiceApi = MqttServiceApi.webSocket()
-        .url(webSocketBaseUrl)
-        .tokenApi(tokenApi)
-        .build();
-
-// Build PublisherConfig with topic to which the message is to be sent
-final PublisherConfig config = PublisherConfig.publisherConfig().topic(topic).build();
-
-// Build Publisher and publish MqttServiceMessage. Close the resource either by using a [try-with-resources block](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html) as below or by calling publisher.close() explicitly
-try (final Publisher publisher = mqttServiceApi.buildPublisher(config)) {
-    publisher.publish(message);
-} catch (Exception e) {
-    log.error("Could not sent message to {}", topic, e);
-}
-mqttServiceApi.close();
-```
-
-Example of subscribing to messages from the MQTT Service via WebSocket:
-```java
-// Create an instance of MqttServiceApi by specifying the server URI to connect to along with TokenApi
-final MqttServiceApi mqttServiceApi = MqttServiceApi.webSocket()
-        .url(webSocketBaseUrl)
-        .tokenApi(tokenApi)
-        .build();
-
-// Build SubscriberConfig with topic and subscriber name
-final SubscriberConfig config = SubscriberConfig.subscriberConfig().topic(topic).subscriber(subscriberName).build();
-
-// Build Subscriber
-final Subscriber subscriber = mqttServiceApi.buildSubscriber(config);
-
-// Subscribe by passing implementation of MessageListener to handle messages from the MQTT Service.
-subscriber.subscribe(new MessageListener() {
-    @Override
-    public void onMessage(MqttServiceMessage message) {
-        log.info("Message Received: {}", new String(message.getPayload()));
-    }
-});
-
-// Close the resources after usage
-subscriber.close();
-mqttServiceApi.close();
-```
+See [Connecting microservices and applications](/device-integration/mqtt-service/#pulsar-client) for more information.
+{{< /c8y-admon-caution >}}

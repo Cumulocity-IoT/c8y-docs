@@ -483,7 +483,7 @@ The expression language is much like EPL (see <a target="_blank" rel="external n
 <p></p>
 Note: All numeric literals are treated as <tt>float</tt> type values, even if they have no fractional part. Integer values can only be obtained as the result of functions such as <tt>floor()</tt>. Similar to EPL, <tt>integer</tt> and <tt>float</tt> are not implicitly convertible within an expression. If the result of an expression is an <tt>integer</tt> value, it is converted to a <tt>float</tt> automatically (there might be a loss of precision).
 <p></p>
-Boolean values can be specified using the Boolean literals <tt>true</tt> and <tt>false</tt>. Boolean literals are case insensitive, so for example, <tt>TRUE</tt> and <tt>True</tt> are allowed. String values can be specified by enclosing string literals in double quotes, for example "my value". Special characters are encoded with a backslash (<tt>\</tt>). The following special characters (along which their encoding) are supported in string literals: <ul> <li>Double quotes - <tt>\"</tt></li> <li>Backslash - <tt>\\</tt></li> <li>Newline - <tt>\</tt><tt>n</tt></li> <li>Tab - <tt>\</tt><tt>t</tt></li> </ul>
+Boolean values can be specified using the boolean literals <tt>true</tt> and <tt>false</tt>. Boolean literals are case insensitive, so for example, <tt>TRUE</tt> and <tt>True</tt> are allowed. String values can be specified by enclosing string literals in double quotes, for example "my value". Special characters are encoded with a backslash (<tt>\</tt>). The following special characters (along which their encoding) are supported in string literals: <ul> <li>Double quotes - <tt>\"</tt></li> <li>Backslash - <tt>\\</tt></li> <li>Newline - <tt>\</tt><tt>n</tt></li> <li>Tab - <tt>\</tt><tt>t</tt></li> </ul>
 <p></p>
 Similar to EPL, each value type can be concatenated with a <tt>string</tt> type. The non-string value is first converted to a <tt>string</tt> and then appended to the <tt>string</tt> value.
 <p></p>
@@ -1563,4 +1563,3 @@ Conversion between two arbitrary bases can be achieved by chaining this block wi
 </tr>
 </tbody>
 </table>
-

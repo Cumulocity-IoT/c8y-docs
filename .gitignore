@@ -11,3 +11,5 @@ npm-debug.log
 .hugo_build.lock
 static/releases.json
 .hugo_build.lock
+pdf-generator/tmp/
+pdf-generator/node_modules/

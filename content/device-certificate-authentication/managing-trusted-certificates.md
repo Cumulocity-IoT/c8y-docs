@@ -15,6 +15,18 @@ helpcontent:
 
 {{< product-c8y-iot >}} allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be trusted by {{< product-c8y-iot >}}. A certificate is trusted when it is added to the trusted certificates and is in activated state.
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+To view trusted certificates, you must be the initial admin user (first created user) of the tenant or have one of the following permissions:
+
+* READ permission for the "Tenant management" permission type.
+
+To manage trusted certificates, you must be the initial admin user (first created user) of the tenant or have one of the following permissions:
+
+* ADMIN permission for the "Tenant management" permission type.
+{{< /c8y-admon-req >}}
+
 {{< c8y-admon-info >}}
 This section describes how to manage trusted certificates. For information on connecting devices using certificates refer to [Device certificates](/device-certificate-authentication/device-certificates/).
 {{< /c8y-admon-info >}}
@@ -65,6 +77,24 @@ For performance reasons, you shouldn't add the certificates of each device you w
 In the detail view of a certificate you may change the parameters on the left, that is, the certificate name, and the settings for the auto registration and enabled/disabled option.
 
 For details on the fields, see the description on adding certificates above.
+
+### To renew a CA certificate provided by {{< company-c8y >}} {#to-renew-a-ca-certificate}
+
+Certificate renewal enables you to generate a new Certificate Authority (CA) certificate provided by {{< company-c8y >}} before the existing one expires. The connected devices may need a moment to reconnect after the renewal, but it prevents sudden authentication failures in case the current certificate reaches the end of its validity period.
+
+A **Renew certificate** button appears for a certificate in the certificate list when the following conditions are met:
+
+* The certificate is a CA certificate.
+* The certificate expires within 2 years from the current date.
+
+To renew a CA certificate perform these steps:
+
+1. In the **Trusted certificates** list, find the certificate you want to renew.
+2. Click the refresh icon <i class="dlt-c8y-icon-refresh text-primary icon-20"></i> next to its current expiration date.
+
+{{< c8y-admon-info >}}
+When you renew a certificate, a new certificate with updated expiration dates is generated and it becomes active immediately, and can be used for device authentication.
+{{< /c8y-admon-info >}}
 
 ### To delete a trusted certificate {#to-delete-a-trusted-certificate}
 

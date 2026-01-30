@@ -189,4 +189,4 @@ There are two types of alarms raised related to device protocol mapping failures
 - Alarm for no mapping known: This alarm is raised when value is read or observed but no mapping for this resource is found.
 This can be resolved by importing device protocol for this resource.
 
-- Alarm due to non-numeric/non-Boolean value received for measurement mapping: This alarm is raised when the resource has a measurement mapping set up but measurement cannot be created because received value is a non-numeric/non-Boolean value.
+- Alarm due to non-numeric/non-boolean value received for measurement mapping: This alarm is raised when the resource has a measurement mapping set up but measurement cannot be created because received value is a non-numeric/non-Boolean value.

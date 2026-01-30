@@ -40,10 +40,10 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 | Quota                                                                      | Type | Value |
 | -------------------------------------------------------------------------- | ---- | ----: |
-| [Document size](/concepts/domain-model/#document-limits)                   | Hard | 16 MB |
-| [Document size](/concepts/domain-model/#document-limits)                   | Soft |  1 MB |
-| [Array size within document](/concepts/domain-model/#document-limits)      | Soft |  1000 |
-| [Children of an inventory object](/concepts/domain-model/#document-limits) | Soft |  1000 |
+| [Document size](/concepts/domain-model/#fragments)                   | Hard | 16 MB |
+| [Document size](/concepts/domain-model/#fragments)                   | Soft |  1 MB |
+| [Array size within document](/concepts/domain-model/#fragments)      | Soft |  1000 |
+| [Children of an inventory object](/concepts/domain-model/#fragments) | Soft |  1000 |
 | Property size                                                              | Soft | 32 KB |
 
 
@@ -57,11 +57,11 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 | Quota                                                                                                                                                                                   | Type |    Value |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | -------: |
-| [MQTT message size](/device-integration/mqtt/) (Core MQTT)                                                                                                                              | Hard |    16 KB |
-| [Notifications 2.0 message backlog](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker)              | Hard |   25 MiB |
-| [Notifications 2.0 time-to-live](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker)                 | Hard | 36 hours |
-| [Microservice-based data broker message backlog](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker) | Hard |   50 MiB |
-| [Microservice-based data broker time-to-live](/change-logs/?#cumulocity-undefined-advance-notice-of-reduced-storage-limits-for-notifications-2.0-and-microservice-based-data-broker)    | Hard | 36 hours |
+| [MQTT message size](/device-integration/mqtt/) (Core MQTT)                                                                        | Hard |    16 KB |
+| [Notifications 2.0 message backlog](https://{{< domain-c8y >}}/api/core/#tag/About-notifications-2.0)                                 | Hard |   25 MiB |
+| [Notifications 2.0 time-to-live](https://{{< domain-c8y >}}/api/core/#tag/About-notifications-2.0)                                    | Hard | 36 hours |
+| [Microservice-based data broker message backlog](/data-broker/ms-data-broker/#microservice-based-data-broker-service-quotas) | Hard |   50 MiB |
+| [Microservice-based data broker time-to-live](/data-broker/ms-data-broker/#microservice-based-data-broker-service-quotas)    | Hard | 36 hours |
 
 ### MQTT Service
 
@@ -84,7 +84,7 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 | Quota                                                                                        | Type | Value |
 | -------------------------------------------------------------------------------------------- | ---- | ----: |
 | [File size for LWM2M bulk registration](/device-integration/lwm2m/#bulk-device-registration) | Hard | 10 MB |
-| [Concurrent pending LWM2M operations](/device-integration/lwm2m/#device-operations-handling) | Hard |    10 |
+| [Concurrent pending LWM2M operations per device](/device-integration/lwm2m/#device-operations-handling) | Hard |    10 |
 | Maximum number of Loriot devices that can be registered per deployment                       | Soft | 40000 |
 | Maximum number of Loriot devices that can be registered per tenant                           | Soft | 20000 |
 
@@ -92,6 +92,8 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 | Quota                                                                                            | Type |   Value |
 | ------------------------------------------------------------------------------------------------ | ---- | ------: |
+| Number of tenants                                                                                | Soft |     250 |
+| Number of Dremio users per tenant                                                                | Soft |      40 |
 | Number of active offloaders per tenant                                                           | Soft |     100 |
 | Number of offloadings per tenant per hour                                                        | Soft |      20 |
 | [Offloading frequency](/datahub/working-with-datahub/#configure-additional-settings)             | Hard |  hourly |

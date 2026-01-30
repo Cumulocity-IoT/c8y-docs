@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2746
 version: 10.18.487.0
 ---
-Fixed an issue in the data grid and device grid components where specific string, Boolean, and numeric cell values were wrongly formatted as dates.
+Fixed an issue in the data grid and device grid components where specific string, boolean, and numeric cell values were wrongly formatted as dates.

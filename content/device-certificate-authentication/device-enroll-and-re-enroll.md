@@ -34,7 +34,7 @@ On creating a new device certificate the Device enroll API is called. This trigg
 * The Device enroll API is used by a device to get a fresh new certificate.
 * If no CA is available an error occurred with message `Tenant CA certificate is either missing, expired, or has a validity of less than one year`.
 * If tenant's keypair is not found then an error occurred with message `Failed to retrieve tenant keypair`.
-* If the request does not contain a valid [CertificateSigningRequest](https://en.wikipedia.org/wiki/Certificate_signing_request) an error will be returned.
+* The Common Name (CN) field in the Certificate Signing Request (CSR) subject must exactly match the device ID supplied during the device registration process. If the request does not contain a valid [Certificate Signing Request](https://en.wikipedia.org/wiki/Certificate_signing_request) an error will be returned. 
 
 {{< c8y-admon-info >}}
 As per [EST standards](https://datatracker.ietf.org/doc/html/rfc7030#autoid-58), the certificate in response is in `PKCS7` format by default. Clients can optionally request for a `PKCS10` format by sending `Accept: application/pkcs10` in the request header.

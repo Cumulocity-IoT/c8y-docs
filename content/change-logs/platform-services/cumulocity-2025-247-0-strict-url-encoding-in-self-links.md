@@ -1,5 +1,5 @@
 ---
-date: ''
+date: '2025-07-31'
 title: Improved URL encoding in self-links
 product_area: Platform services
 change_type:

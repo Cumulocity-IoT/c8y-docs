@@ -109,7 +109,9 @@ The inventory collection keeps track of managed objects. During offloading, the 
 | c8y_IsDevice | BOOLEAN |
 | c8y_IsDeviceGroup | BOOLEAN |
 
-The inventory collection keeps track of managed objects. Note that {{< product-c8y-iot >}} DataHub automatically filters out internal objects of the {{< product-c8y-iot >}} platform. These internal objects are also not returned when using the {{< product-c8y-iot >}} REST API. A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. Therefore an offloading pipeline for the inventory encompasses additional steps:
+The inventory collection keeps track of managed objects. Note that {{< product-c8y-iot >}} DataHub automatically filters out internal objects of the {{< product-c8y-iot >}} platform. These internal objects are also not returned when using the {{< product-c8y-iot >}} REST API. As described in [Configure inventory collection](#configuring-inventory-collection), pre-defined views over the inventory collection allow you to confine your offloading to the relevant data. Those views all share the above schema.
+
+A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. Therefore an offloading pipeline for the inventory encompasses additional steps:
 
 1. Offload those entries of the inventory collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake.
 2. Additional views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all* and *_latest* respectively. The following examples use *inventory* as target table name:
@@ -124,11 +126,9 @@ The fields **childDevices** and **childAssets** are not part of the default offl
 
 #### Offloading the measurements collection {#offloading-the-measurements-collection}
 
-The measurements collection stores device measurements. Offloading the measurements collection differs from the other collections as you must explicitly select a target table layout, which is either having one table for one type or, for the TrendMiner case, one table with measurements of all types. In the main panel of the **Offloading** page you find in the details section of an offloading configuration a link which navigates you to the corresponding table in the Dremio UI.
+The measurements collection stores device measurements. The corresponding table contains all measurements for a pre-selected measurement type. In the main panel of the **Offloading** page, you find a link in the details section of an offloading configuration that navigates you to the corresponding table in the Dremio UI.
 
-##### Offloading measurements with the default target table layout {#offloading-measurements-with-the-default-target-table-layout}
-
-When using the default layout, you must select a measurement type, so that all offloaded data is of the same type. During offloading, the data of the measurements collection is flattened, with the resulting schema being defined as follows:
+You must select a measurement type, so that all offloaded data is of the same type. During offloading, the data of the measurements collection is flattened, with the resulting schema being defined as follows:
 
 | Column name | Column type |
 | -----       | -----       |
@@ -144,16 +144,18 @@ When using the default layout, you must select a measurement type, so that all o
 | timeWithOffset | TIMESTAMP |
 | source | VARCHAR |
 | type | VARCHAR |
-| fragment.attribute1.name.value | Depends on data type, often FLOAT |
-| fragment.attribute1.name.unit | String |
+| fragment_name1.property_name1.value | Depends on data type, often FLOAT |
+| fragment_name1.property_name1.unit | String |
 | ... |  |
-| fragment.attributeN.name.value | Depends on data type, often FLOAT |
-| fragment.attributeN.name.unit | String |
-| myCustomAttribute1 | Depends on data type |
+| fragment_nameM.property_nameN.value | Depends on data type, often FLOAT |
+| fragment_nameM.property_nameN.unit | String |
+| my_custom_property_name1 | Depends on data type |
 | ... |  |
-| myCustomAttributeN | Depends on data type |
+| my_custom_property_nameN | Depends on data type |
 
-The entries in the measurements collection can have a different structure, depending on the types of data the corresponding device emits. While one sensor might emit temperature and humidity values, another sensor might emit pressure values. The flattened structure of these attributes is defined as `fragment.` followed by attribute name and associated type being defined as in the measurements collection. The concrete number of attributes depends on the measurement type, illustrated in the above table with `fragment.attribute1.name.value` to `fragment.attributeN.name.value`.
+The entries in the measurements collection can have a different structure, depending on the types of data the corresponding device emits. While one sensor might emit temperature and humidity values, another sensor might emit pressure values. For details on measurement creation via API see the corresponding [{{< product-c8y-iot >}} REST API](https://cumulocity.com/api/core/#operation/postMeasurementCollectionResource) documentation. See also [Mapping measurement fragments to relational data](/datahub/working-with-datahub#mapping-measurement-fragments-to-relational-data) for details on how a measurement fragment is mapped into a relational structure.
+
+Each measurement document must have the ID of the associated source, a measurement type, and the measurement time. Within the document, there are one or more fragments. Each fragment comprises related measurements, with each measurement being modelled as a property. For example, the fragment `c8y_Steam` contains the properties `Temperature` and `Humidity`. Such a measurement property must itself contain a mandatory property `value` and should contain an optional property `unit`. A measurement document with one fragment having one measurement property is flattened in the data lake into a column `fragment_name.property_name.value` and, if set, a column `fragment_name.property_name.unit`. Documents with multiple fragments, each containing multiple measurements, are flattened in an analogous way, indicated in the above table with `fragment_name1.property_name1.value` to `fragment_nameM.property_nameN.value`.
 
 **Example**
 
@@ -164,99 +166,25 @@ The following excerpt of a measurement document in the base collection is proces
     "id": "4711",
     ...
     "time": "2020-03-19T00:00:00.000Z",
-    "type": "c8y_Temperature",
-    "c8y_Temperature": {
-        "T": {
+    "type": "temperatureMeasurement",
+    "c8y_Steam": {
+        "Temperature": {
             "unit": "C",
             "value": 2.079
+        },
+        "Humidity": {
+            "unit": "%RH", 
+            "value": 13.37
         }
     }
 }
 ````
+The fragment `c8y_Steam` is flattened into two measurements and represented in the target table in the data lake as
 
-The system uses the type attribute to determine `c8y_Temperature` as measurement type. Next it determines the measurement fragment `c8y_Temperature`, which comprises measurement type `T`, measurement value 2.079, and measurement unit `C` as properties. This fragment is flattened and represented in the target table in the data lake as
-
-| ... | c8y_Temperature.T.unit | c8y_Temperature.T.value |... |
-| ---- | ---- | ---- | ---- |
-| ... | C | 2.0791169082 | ... |
+| ... | c8y_Steam.Temperature.unit | c8y_Steam.Temperature.value | c8y_Steam.Humidity.unit | c8y_Steam.Humidity.value | ... |
+| --- | ---- | ---- | ---- |
+| ... | C | 2.079 | %RH | 13.37 | ... |
 
 {{< c8y-admon-important >}}
 Try to ensure that the data you feed into the measurements base collection is consistent. If measurements of the same type vary in the fragment structures, the resulting target table might not have the expected schema. A common problem, for example, are varying data types of the values like one value being 2.079 and another one NaN.
 {{< /c8y-admon-important >}}
-
-##### Offloading measurements with the TrendMiner target table layout {#offloading-measurements-with-the-trendminer-target-table-layout}
-
-{{< c8y-admon-important >}}
-The integration with TrendMiner will be discontinued. The offloading mode specifically designed for the interaction with TrendMiner is deprecated and will be removed in a future release.
-{{< /c8y-admon-important >}}
-
-When using the TrendMiner layout, all measurements are offloaded into one table **c8y_cdh_tm_measurements**. Their corresponding type is stored in column **type**. The column **unit** defines the unit, while the column **value** defines the value of the measurement. The column **tagname** is used by TrendMiner to search for specific series. It is composed of the source, the fragment, and the series as stored in the measurements collection.
-
-The resulting schema is defined as follows:
-
-| Column name | Column type |
-| -----       | -----       |
-| id | VARCHAR |
-| creationTime | TIMESTAMP |
-| creationTimeOffset | INTEGER |
-| creationTimeWithOffset | TIMESTAMP |
-| time | TIMESTAMP |
-| timeOffset | INTEGER |
-| timeWithOffset | TIMESTAMP |
-| YEAR | VARCHAR |
-| MONTH | VARCHAR |
-| DAY | VARCHAR |
-| source | VARCHAR |
-| type | VARCHAR |
-| tagname | VARCHAR |
-| value | VARCHAR |
-| unit | VARCHAR |
-
-**Example mapping**
-
-The following excerpt of a measurement document in the base collection
-
-````json
-{
-    ...
-    "source": "857",
-    "type": "Temperature",
-    ...
-     "c8y_Temperature": {
-         "T": {
-             "unit": "C",
-             "value": 2.0791169082
-         }
-     }
-}
-...
-{
-    ...
-    "source": "311",
-    "type": "Pressure",
-    ...
-     "c8y_Pressure": {
-         "P": {
-             "unit": "kPa",
-             "value": 98.0665
-         }
-     }
-}
-````
-
-is represented in the target table in the data lake as
-
-| ... | type | tagname | unit | value | ... |
-| ---- | ---- | ----- | ----- | ----- | ----- |
-| ... | Temperature | 857.c8y_TemperatureMeasurement.T | C | 2.0791169082 |... |
-| ... | Pressure | 311.c8y_PressureMeasurement.P | kPa | 98.0665 |... |
-
-In addition to the table **c8y_cdh_tm_measurements**, the table **c8y_cdh_tm_tags** is created. This table stores the tag names and the source IDs, which connect the tagname used in TrendMiner with a device and its ID as managed in the {{< product-c8y-iot >}} platform. The schema of the **c8y_cdh_tm_tags** table is defined as:
-
-| Column name | Column type |
-| -----       | -----       |
-| source | VARCHAR |
-| tagname | VARCHAR |
-| unit | VARCHAR |
-| datatype | VARCHAR |
-| latestCreationTime | TIMESTAMP |

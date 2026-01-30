@@ -26,4 +26,4 @@ In order to use OPC UA, you must be subscribed to the "opcua-mgmt-service" micro
 
 To download the gateway navigate to [{{< product-c8y-iot >}} resources](http://resources.cumulocity.com/examples/opc-ua/).
 
-The gateway requires Java 11 in order to run.
+The gateway requires Java 17 in order to run.

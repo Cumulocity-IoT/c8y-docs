@@ -289,7 +289,7 @@ async function processFiles() {
       const postId = posts[0].id;
       const fileContent = await getRawAndTagsFromFile(matterResult);
       let fileContentRaw = fileContent.raw;
-      if(articleContent.trim() === fileContent.raw.trim()) {
+      if(articleContent.trim().replace(/\s/g, "") === fileContent.raw.trim().replace(/\s/g, "")) {
         //No update needed- ignore
         console.log("No update needed for article with title "+title+" and id: "+id);
       } else {
@@ -302,7 +302,7 @@ async function processFiles() {
             }
           }
 
-          if(fileContentRaw.trim() === articleContent.trim()) {
+          if(fileContentRaw.trim().replace(/\s/g, "") === articleContent.trim().replace(/\s/g, "")) {
             //No update needed- ignore
             console.log("No update needed for article with title "+title+" and id: "+id);
             continue;
@@ -473,19 +473,24 @@ async function getDeploymentsForBuildArtifact(component: string, build_artifact:
         version=toSemverFormat(version);
       }
       if(version) {
-        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com"].version, version))
-          //Only retrieve updated date when version is equal
-          deploymentMap.set("eu-latest-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com-eks"].updated_at);
-        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com"].version, version))
-          deploymentMap.set("apj-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com"].updated_at);
-        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com"].version, version))
-          deploymentMap.set("jp-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com"].updated_at);
-        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["c8y-cumulocity-com"].version, version))
-          deploymentMap.set("c8y-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["c8y-cumulocity-com"].updated_at);
-        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["us-cumulocity-com"].version, version))
-          deploymentMap.set("us-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["us-cumulocity-com"].updated_at);
-        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["emea-cumulocity-com"].version, version))
-          deploymentMap.set("emea-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["emea-cumulocity-com"].updated_at);
+        const environments = [
+          {zone: 'c8y-ops-zone-1', clusters: ['eu-latest-cumulocity-com']},
+          {zone: 'c8y-ops-zone-2', clusters: ['apj-cumulocity-com', 'jp-cumulocity-com']},
+          {zone: 'c8y-ops-zone-3', clusters: ['c8y-cumulocity-com', 'us-cumulocity-com', 'emea-cumulocity-com']}
+        ] as const;
+
+        for (const zoneDetails of environments) {
+          const zone = zoneDetails.zone;
+          const clusters = zoneDetails.clusters;
+          for (const cluster of clusters) {
+            const environmentDetails = getEnvironmentDetails(artifact, zone, cluster);
+            if (environmentDetails?.version && gte(environmentDetails.version, version)) {
+              // Only retrieve updated date when version is equal
+              deploymentMap.set(cluster, environmentDetails.updated_at);
+            }
+          }
+        }
+
         //Abort after first match
         break;
       }
@@ -521,6 +526,18 @@ function toSemverFormat(version: string){
   const semanticVersion = `${versionParts[0]}${versionParts[1]}.${versionParts[2]}.${versionParts[3]}`;
   console.debug("Non-Semantic version format:",version,"converted to semantic format",semanticVersion,"for processing")
   return semanticVersion
+}
+
+function getEnvironmentDetails(artifact: string, zone: string, cluster: string) {
+  const clusters = deploymentObj[artifact].zones[zone].clusters;
+  // support for already migrated eks clusters
+  const eksDetails = clusters[`${cluster}-eks`];
+
+  if (eksDetails) {
+    return eksDetails;
+  }
+
+  return clusters[cluster];
 }
 
 function findLinesInString(line: string, content: string):string[] {

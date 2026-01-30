@@ -19,6 +19,7 @@ SERVER_PORT       |  Default open port (80)
 MICROSERVICE_SUBSCRIPTION_ENABLED  |  Default value: true
 C8Y_BASEURL  |  Platform address (contains port number)
 C8Y_BASEURL_MQTT  |  Platform address of the MQTT server (contains port number)
+C8Y_BASEURL_PULSAR  |  Platform address of the Pulsar broker (doesn't contain port number, defaults to `6650`) used to access Messaging Service topics via native Pulsar client libraries
 C8Y_MICROSERVICE_ISOLATION  |  Isolation level (MULTI_TENANT or PER_TENANT)
 C8Y_BOOTSTRAP_REGISTER  |  Indicator whether the microservice should perform self registration or not. <br>Default value: false
 C8Y_BOOTSTRAP_TENANT  |  Bootstrap user tenant, for MULTI_TENANT - microservice owner

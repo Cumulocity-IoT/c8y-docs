@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-552
 version: 1019.0.0
 ---
-On the **Subassets** page, the value of a Boolean property is now accurately shown as "false" instead of "undefined" . Additionally, if no data is provided, the date and number properties display an undefined value.
+On the **Subassets** page, the value of a boolean property is now accurately shown as "false" instead of "undefined" . Additionally, if no data is provided, the date and number properties display an undefined value.

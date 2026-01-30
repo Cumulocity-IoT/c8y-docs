@@ -63,14 +63,7 @@ jobs:
       with:
         fetch-depth: 0
         token: ${{ steps.token.outputs.token }}
-
-    - name: Generate branch name
-      id: branch-name
-      run: echo "branch-name=update-changelog-dates/${{ inputs.component }}_${{ inputs.version }}_${{ inputs.date }}" | sed  's/\s/_/g' | sed  's/:/_/g' >> $GITHUB_OUTPUT
-
-    - name: Checkout branch
-      run: |
-        git checkout -b "${{ steps.branch-name.outputs.branch-name }}"
+        ref: 'develop'
 
     - name: Use Node.js
       uses: actions/setup-node@v4
@@ -102,25 +95,10 @@ jobs:
     - name: Git commit
       if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
       run: |
-        git commit -m "Update ${{ inputs.component }} changelog dates to ${{ inputs.date }} as version ${{ inputs.version }} was released"
+        git commit -m "chore: Update ${{ inputs.component }} changelog dates to ${{ inputs.date }} as version ${{ inputs.version }} was released"
 
     - name: Git push
       if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
       id: git-push
       run: |
-        if  [[ -z $(git ls-remote --heads origin "${{ steps.branch-name.outputs.branch-name }}") ]];
-        then
-        git push -u origin "${{ steps.branch-name.outputs.branch-name }}"
-        echo "uniqueBranchFlag=true" >> $GITHUB_OUTPUT
-        else
-        echo "::warning :: ${{ steps.branch-name.outputs.branch-name }} branch already exists, no new branch created for this change"
-        echo "uniqueBranchFlag=false" >> $GITHUB_OUTPUT
-        fi
-        
-
-    - name: Create pull request
-      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 && steps.git-push.outputs.uniqueBranchFlag == 'true' }}
-      env: 
-        GITHUB_TOKEN: ${{ steps.token.outputs.token }}
-      run: |
-        gh pr create -B ${{ github.ref }} -H "${{ steps.branch-name.outputs.branch-name }}" --title 'Update ${{ inputs.component }} changelog dates to ${{ inputs.date }} as version ${{ inputs.version }} was released' --body 'Created by [Github action](${{ github.server_url }}/${{ github.repository_owner }}/${{ github.event.repository.name }}/actions/workflows/update-changelog-dates.yml)' --assignee BeateRixen
+        git push

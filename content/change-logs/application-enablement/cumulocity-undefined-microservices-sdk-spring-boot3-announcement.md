@@ -32,8 +32,8 @@ We are pleased to announce an upcoming update to the Spring Boot version used in
 
 * [Spring Boot 3.0 Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide)
 
-* [Spring Security 6.0 Migration Guide](https://docs.spring.io/spring-security/reference/6.0/migration/index.html)
+* [Spring Security 6.0 Migration Guide](https://docs.spring.io/spring-security/reference/migration/index.html)
 
 * [Spring Framework 6.x What's New](https://github.com/spring-projects/spring-framework/wiki/What%27s-New-in-Spring-Framework-6.x)
 
-* [HTTP Client Migration Guide](https://hc.apache.org/httpcomponents-client-5.3.x/migration-guide/index.html)
+* [HTTP Client Migration Guide](https://hc.apache.org/)

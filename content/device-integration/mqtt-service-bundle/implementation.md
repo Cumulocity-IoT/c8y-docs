@@ -7,7 +7,7 @@ layout: redirect
 This section covers some implementation details of the MQTT Service.
 The MQTT Service implementation supports clients connecting using MQTT versions 3.1, 3.1.1 and 5.0, although not all MQTT 5.0 protocol features are currently supported.
 
-### Connecting to the service {#connecting-via-mqtt}
+### Connecting to the service {#connecting-devices}
 
 {{< c8y-admon-important >}}
 MQTT Service requires clients to connect with clean session flag enabled, set to "1" (true), otherwise the client connection is rejected by the server.
@@ -138,10 +138,14 @@ See the [Service Quotas](/service-terms/quotas#mqtt-service) section for details
 
 #### Authentication and authorization {#authentication-and-authorization}
 
-The authentication types supported by the MQTT Service are:
+The MQTT Service supports the following authentication methods:
 
-*   Username and password: The MQTT username must include the tenant ID and username in the format `<tenantID>/<username>`.
-*   Device certificates: The MQTT username must include the tenant ID in the format `<tenantID>`.
+*   **Username and password**
+    The MQTT username must include the tenant ID and username in the format `<tenantID>/<username>`.
+*   **Device certificates**
+    For secure communication, devices must contain the entire chain of certificates leading to the trusted root certificate, or if only the device certificate is provided, then the immediate issuer certificate must be uploaded to the platform’s truststore. You can do this via [the **Trusted certificates** page in the UI](/device-certificate-authentication/managing-trusted-certificates/) or via [REST](https://{{< domain-c8y >}}/api/core/#tag/Trusted-certificates). Moreover, the devices must contain the server certificate in their truststore. 
+    <br/>
+    If the trust anchor (that is, the trusted root or intermediate certificate) used to validate the device certificate is trusted by multiple tenants, the device must also specify the tenant ID in the **MQTT username** field. This ensures that the platform can correctly identify which tenant the device is attempting to connect to. While multi-tenant trust anchors are not currently supported in {{< product-c8y-iot >}}, this feature may be introduced in the future. If the tenant ID is provided, it must correspond to a tenant that trusts the given certificate; otherwise, the connection will be rejected.
 
 #### ClientId {#client-id}
 
@@ -204,16 +208,15 @@ Moreover, {{< enterprise-tenant >}}s are not able to customize those certificate
 #### Device (client) certificates {#device-certificates}
 
 Using device certificates with the MQTT Service shares the same requirements as outlined in [Device certificates](/device-certificate-authentication/device-certificates#general-requirements-for-connecting-devices-with-certificates).
-Additionally, auto-registration must be enabled when uploading the CA certificate to the platform.
-When connecting devices to the MQTT Service using certificates, the tenant ID **must** be included in the MQTT CONNECT packet in the username field.
-This is required to correctly identify the tenant.
+<br/>
+If the trust anchor (that is, the trusted root or intermediate certificate) used to validate the device certificate is trusted by multiple tenants, the device must also specify the tenant ID in the **MQTT username** field. This ensures that the platform can correctly identify which tenant the device is attempting to connect to. For more information, see [Authentication and authorization](#authentication-and-authorization).
 
 #### Adding and trusting CA certificate
 
 TLS trust anchors in the {{< product-c8y-iot >}} platform are defined per tenant.
-To use device certificates for authentication, the CA or intermediate certificate that signs the device certificates must be uploaded to the platform and added to the tenant’s list of trusted certificates.
-Additionally, the **Auto registration** field must be enabled when adding certificates.
-For detailed instructions on adding and trusting a CA certificate, see [Managing trusted certificates](/device-certificate-authentication/managing-trusted-certificates).
+To use device certificates for authentication, the CA or intermediate certificate that signs the device certificates must be uploaded to the platform and added to the tenant’s list of trusted certificates. You can do this via [the **Trusted certificates** page in the UI](/device-certificate-authentication/managing-trusted-certificates/) or via [REST](https://{{< domain-c8y >}}/api/core/#tag/Trusted-certificates).
+<br/>
+Additionally, ensure that the **Auto registration** option is enabled when adding certificates. This allows any device presenting a valid certificate to be automatically registered on the platform when it first connects.
 
 #### Creating self-signed certificates
 
@@ -253,7 +256,7 @@ mosquitto_pub --cafile cumulocity.com.pem -d -q 1 \
 Explanation:
 - `--cafile cumulocity.com.pem`: This file contains the CA certificate of {{< product-c8y-iot >}}’s MQTT Service broker, used to validate the server's identity.
 - `--key client-key.pem` and `--cert client-chain.pem`: These are your client certificate and private key, signed by your trusted CA.
-- `-u t11101`: The username must be your tenant ID. In this example, `t11101` is the tenant ID.
+- `-u t11101`: (Optional) Specifies the MQTT username, which must be your tenant ID as described in [Authentication and authorization](#authentication-and-authorization). In this example, `t11101` is the tenant ID.
 
 Downloading the CA certificate (`cumulocity.com.pem`):
 

@@ -133,6 +133,17 @@ JsonPath expressions added from data points will be stored in bracket notation i
 
 ![Measurement added from data point](/images/users-guide/cockpit/cockpit-export-adddatapoint-measurement.png)
 
+##### Predefined fields {#predefined-fields}
+
+**Predefined fields** are standard properties that always exist in a given type of document. The list of properties that you can select for export in the UI is wider and contains a lot of frequently used fragments with business meaning, but these fragments are treated as **custom properties** by the export engine logic.
+Here is the list of predefined fields for particular types of documents:
+
+- Alarms: count, creationTime, firstOccurrenceTime, id, lastUpdated, severity, source, status, text, time, type
+- Events: creationTime, id, lastUpdated, source, text, time, type
+- Measurements: id, source, time, type
+- Managed objects: additionParents, assetParents, childAdditions, childAssets, childDevices, creationTime, deviceParents,
+  id, latestMeasurements, lastUpdated, name, owner, previousMeasurements, supportedMeasurements, type
+
 ### To schedule an export {#to-schedule-an-export}
 
 To schedule an export to a CSV or XLSX file to any point in time, open the respective export and click **Add schedule** at the bottom.

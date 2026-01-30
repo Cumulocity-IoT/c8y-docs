@@ -46,7 +46,7 @@ jobs:
           echo "[]" > output.json
            for artifact in $buildartifacts ;
            do
-               cat pipeline/clusters/helm_charts_data.json | jq --arg artifact "$artifact" '[to_entries[] | select(.value.component_name==$artifact)][0].value.zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com-eks"]' > details.json
+               cat pipeline/clusters/helm_charts_data.json | jq --arg artifact "$artifact" --arg zone "c8y-ops-zone-1" --arg cluster "eu-latest-cumulocity-com-eks" '([to_entries[] | select(.value.component_name==$artifact and .value.status=="ACTIVE" and .value.zones[$zone].clusters[$cluster].version != null and .value.zones[$zone].clusters[$cluster].version != "")] | sort_by(.value.zones[$zone].clusters[$cluster].version | split(".") | map(tonumber)) | reverse)[0].value.zones[$zone].clusters[$cluster]' > details.json
                versionOfArtifact=$(cat details.json | jq '.version' | xargs)
                timestamp=$(cat details.json | jq '.updated_at' | xargs)
                rm details.json
@@ -66,6 +66,8 @@ jobs:
     strategy:
       matrix:
         include: ${{ fromJson(needs.get-component-details.outputs.matrix) }}
+      max-parallel: 1
+      fail-fast: false
     with:
       version: ${{ matrix.component_version }}
       component: ${{ matrix.component_name }}

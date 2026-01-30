@@ -69,6 +69,10 @@
       "option": "sms-gateway"
     },
     {
+      "id": "tc-G8NchI7b1",
+      "option": "timeseries-migration"
+    },
+    {
       "id": "tc-pjJiURv9Y",
       "option": "ui-c8y"
     }

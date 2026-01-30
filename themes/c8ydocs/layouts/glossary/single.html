@@ -1,0 +1,12 @@
+{{ define "main" }}
+<script>
+  // Redirect to the glossary list page with the appropriate anchor
+  window.location.replace('{{ .Parent.Permalink }}#{{ .Title | lower }}');
+</script>
+
+<noscript>
+  <meta http-equiv="refresh" content="0; url={{ .Parent.Permalink }}#{{ .Title | lower }}">
+</noscript>
+
+<p>Redirecting to <a href="{{ .Parent.Permalink }}#{{ .Title | lower }}">{{ .Parent.Title }}</a>...</p>
+{{ end }}

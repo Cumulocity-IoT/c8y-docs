@@ -13,7 +13,7 @@ Each model must either:
 -   receive input from a set of specific devices and send output to a set of specific devices, or
 -   receive input from each device within a range of devices and send output to the trigger device or an asset. Note that asset output can only be used for sending cross-device aggregates.
 
-    A range of devices can include a {{< product-c8y-iot >}} device group, a smart group, an asset, or all input sources on the tenant. When a model uses a range of devices, the model acts on all devices referred to by the range, either directly or indirectly through members of the group that are themselves groups and have device members \(or even "grand-children" group members\). A device can be a member of zero, one or many groups. For more information, see [Grouping devices](/device-management-application/grouping-devices/) and [Managing assets](/cockpit/managing-assets/).
+    A range of devices can include a {{< product-c8y-iot >}} group, an asset, or all input sources on the tenant. When a model uses a range of devices, the model acts on all devices referred to by the range, either directly or indirectly through members of the group that are themselves groups and have device members \(or even "grand-children" group members\). A device can be a member of zero, one or many groups. For more information, see [Grouping devices](/device-management-application/grouping-devices/) and [Managing assets](/cockpit/managing-assets/).
 
     {{< c8y-admon-info>}}
 A model that acts on a range of devices only determines the group membership when the model is activated. If the membership of a group changes while a model is running, the model will not behave any differently for any new or removed members of the group. If a group membership is changed, then models that refer to that group should be de-activated and re-activated.
@@ -182,7 +182,7 @@ For example, specify the following if you only want to show devices:
 
 The `c8y_IsDevice` in the value is a so-called fragment. You can specify any fragment that is known to {{< product-c8y-iot >}}, including any fragments that you have created yourself.
 
-You can combine several values. For example, specify the following if you only want to show devices and device groups:
+You can combine several values. For example, specify the following if you only want to show devices and groups:
 
 ```
 {
@@ -195,3 +195,19 @@ You can combine several values. For example, specify the following if you only w
 The default value of this tenant option is `not has(c8y_IsVirtualDevice)`. As long as you do not change this tenant option, virtual devices are not shown as they would not make sense in an analytic model. If you change the value for this tenant option, make sure to specify all managed objects that you want to see in the search result.
 
 See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
+
+### Support for dynamic changes to group and asset hierarchy {#dynamic-hierarchy-changes}
+
+By default, input blocks in Analytics Builder now support dynamic changes to the group hierarchy. This includes the addition, deletion, and update of devices or assets, as well as structural changes within groups. Analytics Builder models automatically adapt to these changes, processing data based on the most current group or asset hierarchy.
+
+{{< c8y-admon-info >}}
+This is also applicable to the [Smart rules plugin](/streaming-analytics/smart-rules-plugin#what-is-the-smart-rules-plugin).
+{{</ c8y-admon-info >}}
+
+**Key behavior and limitations**
+
+- *Deletion of source/target*: If a specific device, group, or asset configured as an input or output in the model is deleted, the deployed model will automatically transition to a FAILED state.
+- *Empty groups*: If a monitored group becomes empty, the model remains in the ACTIVE state. It will resume processing data as soon as a new device, group, or asset is added to the group.
+- *Nested & cascaded deletions*: Dynamic detection does not support the deletion of nested groups or the cascaded deletion of devices. In these scenarios, the model must be undeployed and redeployed to recognize the updated hierarchy.
+
+To enable this behavior for custom blocks, refer to the [Analytics Builder Block SDK documentation](https://cumulocity-iot.github.io/apama-analytics-builder-block-sdk/).

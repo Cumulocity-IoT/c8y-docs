@@ -1,5 +1,5 @@
 ---
-title: Upgrading from Angular 12 to Angular 14
+title: Upgrading to Angular 14
 layout: redirect
 weight: 480
 ---

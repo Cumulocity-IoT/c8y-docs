@@ -2,7 +2,7 @@
 weight: 100
 title: Firmware
 layout: bundle
-sector: 
+sector:
   - device_management
 ---
 
@@ -106,7 +106,7 @@ In case a user selects a firmware patch to be installed on a device, a ```c8y_Fi
 |version|string|Yes|A version identifier of the firmware|
 |url|string|Yes|A URL pointing to the location of the firmware file|
 |dependency|string|Yes|Version of the firmware the patch depends on|
-|isPatch|Boolean|Yes|Indicator showing that this firmware package is a patch|
+|isPatch|boolean|Yes|Indicator showing that this firmware package is a patch|
 
 
 The device is expected to perform the following actions:
@@ -133,7 +133,7 @@ The device is expected to perform the following actions:
   `503,c8y_Firmware`
 
 {{< c8y-admon-info >}}
-If the URL is set to `$PROVIDED`, no firmware file is uploaded or linked from the platform. In this case, the device is fully responsible for resolving the correct binary. If the device cannot resolve the binary, it must mark the operation as **FAILED**.
+If the URL is set to an empty string, no firmware file is uploaded or linked from the platform. In this case, the device is fully responsible for resolving the correct binary. If the device cannot resolve the binary, it must mark the operation as **FAILED**.
 
 This option is useful if the device can retrieve the correct firmware file dynamically based on its environment, architecture, or internal logic.
 {{< /c8y-admon-info >}}

@@ -147,10 +147,9 @@ screenshot.
 
 ![An Angular based application](/images/web-sdk/hello-world-example.png)
 
-The application is using a customized router from the Web SDK and the `CoreModule`. The `CoreModule`
+The application uses a customized router from the Web SDK and the `CoreModule`. The `CoreModule`
 contains all the necessary components, directives, pipes and services that allow you to
-[extend](https://styleguide.cumulocity.com/apps/codex/#/getting-started/guides/extension-points/overview) the application even further. But first we will
-release the application and deploy it.
+[extend](https://cumulocity.com/codex/advanced-development/hooks/overview) the application even further. But first we will release the application and deploy it.
 
 ### Deploying your application
 
@@ -171,4 +170,4 @@ example `C8Y_USER` for the `-U` flag.
 
 ### Next steps
 
-- Refer to the [{{< product-c8y-iot >}} Codex](https://styleguide.cumulocity.com/apps/codex/#/) for more information on developing applications in the {{< product-c8y-iot >}} environment. Moreover find various related tutorials in the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}).
+- Refer to the [{{< product-c8y-iot >}} Developer Codex](https://cumulocity.com/codex/) for more information on developing applications in the {{< product-c8y-iot >}} environment. Moreover find various related tutorials in the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}).

@@ -83,7 +83,7 @@ You can access fragments via the `params` dictionary of most events. The `AnyExt
 
 * action getString(string path) returns string
 
-* action getBoolean(string path) returns Boolean
+* action getBoolean(string path) returns boolean
 
 * action getSequence(string path) returns sequence&lt;any&gt;
 
@@ -129,7 +129,7 @@ For more information on `TimeFormat` and its functions, see [Using the TimeForma
 
 #### inMaintenanceMode {#inmaintenancemode}
 
-The `Util.inMaintenanceMode()` function is a fast way to check if the device is currently in maintenance mode. It takes a managed object as a parameter and returns a Boolean which is true if the device is in maintenance mode.
+The `Util.inMaintenanceMode()` function is a fast way to check if the device is currently in maintenance mode. It takes a managed object as a parameter and returns a boolean which is true if the device is in maintenance mode.
 
 Example:
 

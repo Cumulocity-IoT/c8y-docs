@@ -13,17 +13,17 @@ helpcontent:
   content: "Under **Login settings** you can specify your preferred login mode:
 
 
-	**OAI-Secure** - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
+**OAI-Secure** - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
 
-	**Basic Auth** - Should be selected only for specific compatibility reasons, since it only provides basic security.
+**Basic Auth** - Should be selected only for specific compatibility reasons, since it only provides basic security.
 
-  **Single sign-on redirect** - Can only be selected if SSO is configured. If selected, will remove Basic Auth and OAI-Secure login options.
-
-
-	Under **TFA settings**, select the checkbox **Allow two-factor authentication** if you want to allow TFA in your tenant (only possible for administrators).
+**Single sign-on redirect** - Can only be selected if SSO is configured. If selected, will remove Basic Auth and OAI-Secure login options.
 
 
-	Switch to the **Single sign-on** tab to configure single sign-on. For details, see *Configuring single sign-on* in the user documentation."
+Under **TFA settings**, select the checkbox **Allow two-factor authentication** if you want to allow TFA in your tenant (only possible for administrators).
+
+
+Switch to the **Single sign-on** tab to configure single sign-on. For details, see *Configuring single sign-on* in the user documentation."
 ---
 
 
@@ -38,6 +38,8 @@ To see the **Authentication** menu item, you must have ADMIN permission for the 
 
 For easier user access management, the above permission(s) are/is included in the global role(s) created by default in every new tenant:
 - Tenant manager - manages tenant-wide configurations like applications, tenant options and retention rules.
+
+Additionally, access to the **Basic settings** tab may be restricted by the platform administrator via setting the `onlyManagementTenantAccess` option to `true` for Basic Auth or OAI-Secure login options (see [{{< openapi >}}](https://cumulocity.com/api/core/#operation/putAccessLoginOptionResource)).
 {{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}

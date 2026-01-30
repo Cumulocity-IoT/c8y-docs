@@ -28,7 +28,7 @@ Wires allow blocks to pass signals and values between blocks. The value sent on 
 <tbody>
   <tr>
     <td><code>boolean</code></td>
-    <td>A true or false value. A Boolean value stays true or false until changed.</td>
+    <td>A true or false value. A boolean value stays true or false until changed.</td>
   </tr>
   <tr>
     <td><code>float</code></td>
@@ -357,7 +357,7 @@ In contrast to value types, the `pulse` type represents a single point in time. 
 
 Typically, blocks act upon every pulse sent to one of their inputs. Pulses are commonly used to trigger an output from a model using an output block, or used to reset the state of blocks within a model.
 
-Pulses are active momentarily. In some regards, they are similar to a Boolean value which is automatically reset to `false` after a model has processed a value.
+Pulses are active momentarily. In some regards, they are similar to a boolean value which is automatically reset to `false` after a model has processed a value.
 
 Repeated pulses are typically significant, though they may not necessarily result in any change, depending on how they are being used. For example, repeatedly resetting an **Average \(Mean\)** block while its input value is unchanged will result in the output value remaining the same.
 
@@ -434,9 +434,9 @@ Only conversions that will always succeed are allowed. String values are not con
 
 In many cases, you need not worry about type conversions and where a wire makes sense. Any type conversion that is needed happens automatically.
 
-Some blocks accept different types of inputs, and may change their output type or behavior depending on the input types. For example, the logical **OR** block can operate on either Boolean or pulse inputs, and its output is the same as its input types.
+Some blocks accept different types of inputs, and may change their output type or behavior depending on the input types. For example, the logical **OR** block can operate on either boolean or pulse inputs, and its output is the same as its input types.
 
-In some cases, it is desirable to force a value to be interpreted as a specific type, in which case a converter block can be used to force a conversion to a specific type. For example, the **Pulse** block can convert Boolean or float values to pulses, according to the conversions above. This means: for Boolean, generate a pulse when the Boolean value changes to true; for float, generate a pulse when the value changes. Thus, connecting two float outputs to an **OR** block directly will generate a Boolean output which is true when either of the float outputs is non-zero. Alternatively, connecting two float outputs each to a **Pulse** block and from them to the inputs of an **OR** block, will send a pulse whenever either float output changes value. This is the default behavior of the **Pulse** block.
+In some cases, it is desirable to force a value to be interpreted as a specific type, in which case a converter block can be used to force a conversion to a specific type. For example, the **Pulse** block can convert boolean or float values to pulses, according to the conversions above. This means: for boolean, generate a pulse when the boolean value changes to true; for float, generate a pulse when the value changes. Thus, connecting two float outputs to an **OR** block directly will generate a boolean output which is true when either of the float outputs is non-zero. Alternatively, connecting two float outputs each to a **Pulse** block and from them to the inputs of an **OR** block, will send a pulse whenever either float output changes value. This is the default behavior of the **Pulse** block.
 
 Different types of pulse conversions are possible with the **Pulse** block, depending on the setting of its **Mode** parameter. The conversions in the different modes are described in the table below:
 

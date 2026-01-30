@@ -51,4 +51,4 @@ Python will soon be upgraded from 3.9 to a newer version (likely 3.13). We advis
 
 ### References & feedback
 
-For more information on these and other changes, review the [Apama Change Logs](https://cumulocity.com/apama/docs/latest/change-logs/). If you have any questions, feel free to post to the [streaming-analytics-apama](https://techcommunity.cumulocity.com/tag/streaming-analytics-apama) tag on the {{< product-c8y-iot >}} Tech Community.
+For more information on these and other changes, review the [Apama Change Logs](https://cumulocity.com/apama/docs/latest/change-logs/). If you have any questions, feel free to post to the [streaming-analytics-apama](https://community.cumulocity.com/tag/streaming-analytics-apama) tag on the {{< product-c8y-iot >}} Tech Community.

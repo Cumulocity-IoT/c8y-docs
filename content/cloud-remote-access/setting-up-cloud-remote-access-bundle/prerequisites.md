@@ -13,10 +13,7 @@ To use Cloud Remote Access, you need
 {{< /c8y-admon-req >}}
 
 ### Set up your device
-
-
-To configure your device for compatibility with the Cloud Remote Access functionality, you must install thin-edge.io. Thin-edge.io is fully integrated with Cloud Remote Access and can be easily deployed on any Linux-based device, eliminating the need for any custom integration.
-
+To configure your device for compatibility with the Cloud Remote Access functionality, your device must be running a local device gateway that connects to the corresponding CRA backend services of {{< product-c8y-iot >}}. We strongly recommend to use [thin-edge.io](https://thin-edge.io). It is fully integrated with Cloud Remote Access and can be easily deployed on any Linux-based device, eliminating the need for any custom integration.
 Furthermore, devices can report their supported protocols using [SmartREST template 150](/smartrest/mqtt-static-templates/#150) which offers two significant advantages:
 
 1. It prevents the display of unsupported protocols in the selection modal, streamlining the user experience and reducing potential confusion.

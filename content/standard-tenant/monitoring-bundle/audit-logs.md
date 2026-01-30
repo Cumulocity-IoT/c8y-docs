@@ -269,6 +269,16 @@ This type of audit logs may be created for both hosted applications and microser
 </tr>
 
 <tr>
+<td align="left">Tenant Certificate Authority</td>
+<td align="left"><ul>
+<li>Tenant certificate authority(CA) created</li>
+<li>Tenant certificate authority(CA) renewed</li>
+<li>Tenant certificate authority(CA) renewal failed</li>
+<li>Tenant certificate authority(CA) signed certificate</li>
+</ul></td>
+</tr>
+
+<tr>
 <td align="left">User</td>
 <td align="left"><ul>
 <li>User created</li>
@@ -282,6 +292,8 @@ This type of audit logs may be created for both hosted applications and microser
 <li>User inventory assignment updated</li>
 <li>User device permissions updated</li>
 <li>User deleted</li>
+<li>User device provisioned certificate created</li>
+<li>User device provisioned certificate deleted</li>
 </ul></td>
 </tr>
 

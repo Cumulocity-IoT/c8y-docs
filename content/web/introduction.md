@@ -33,7 +33,7 @@ The Web SDK consists of the following packages deployed to npm in the scope `@c8
 
 These packages depend on each other from top to bottom. While the `@c8y/client` is a very low-level API interface with nearly no dependencies, the `@c8y/<<apps>>` (for example `@c8y/cockpit`) provide feature rich applications by including `@c8y/ngx-components` and `@c8y/client`.
 
-The goal of these splittings is to provide the right package for every use case. For example, if you want to build a small application with React you could use the `@c8y/client` to do the API interaction. If you need a brandable feature rich application which is close to our Cockpit or Device Management application you could use `@c8y/ngx-components` together with `@c8y/stlyes`.
+The goal of these splittings is to provide the right package for every use case. For example, if you want to build a small application with React you could use the `@c8y/client` to do the API interaction. If you need a brandable feature rich application which is close to our Cockpit or Device Management application you could use `@c8y/ngx-components` together with `@c8y/style`.
 
 Following is a list which explains the use cases of each package.
 
@@ -77,7 +77,7 @@ The following table provides an overview on the current packages existing for ap
 
 
 #### Build tooling: @c8y/websdk and @c8y/devkit
-Additional two build tools are added, which help scaffolding (`@c8y/websdk`) and developing (`@c8y/devkit`) the application. The package `@c8y/websdk` is quite simple and only provides the promps for creating a new applicaiton. The overall havy lifting is done by the `@c8y/devkit`. It replaces the default dev-server and builder options in the `angular.json` and extends the webpack configuration with everything needed.
+Additionally, two build tools are added, which help with scaffolding (`@c8y/websdk`) and developing (`@c8y/devkit`) the application. The package `@c8y/websdk` is quite simple and only provides the prompts for creating a new application. The overall heavy lifting is done by the `@c8y/devkit`. It replaces the default dev-server and builder options in the `angular.json` and extends the webpack configuration with everything needed.
 
 ### Versioning: The WebSDK uses semantic version numbers
 Since version 1019.0.0 the versioning schema of the Web SDK isn't aligned anymore to the versioning schema of the {{< product-c8y-iot >}} platform. The versioning schema is now reflecting via semantic versioning the changes in the Web SDK:
@@ -108,4 +108,4 @@ If you want to use an older version then `1019.x.x` you must to use our old tool
 
 
 ### Next steps
-If you just want to get started, we recommend to read the [next chapter](/web/gettingstarted/) which explains how you can setup your first Web SDK based Angular application. If you already have setup an application and want to understand more details of the concept, we recommend to jump to our [Codex developer](https://styleguide.cumulocity.com/apps/codex/#/) documentation which explains the concepts, list all the components and defines guidlines for the styling.
+If you just want to get started, we recommend to read the [next chapter](/web/gettingstarted/) which explains how you can setup your first Web SDK based Angular application. If you already have setup an application and want to understand more details of the concept, we recommend to jump to our [Developer Codex](https://cumulocity.com/codex/) documentation which explains the concepts, list all the components and defines guidlines for the styling.

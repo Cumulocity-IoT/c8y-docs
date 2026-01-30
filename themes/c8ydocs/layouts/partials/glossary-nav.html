@@ -1,0 +1,86 @@
+{{$current := . }}
+
+{{$currentSection := ""}}
+{{ with .Params.sector}}
+  {{$currentSection =  index . 0}}
+{{end}}
+{{ if not .Params.hideLeftMenu }}
+  <nav class="main-nav navbar">
+    <header class="nav-header">
+      {{ $term := .Site.Taxonomies.sector.Get $currentSection }}
+      {{ with $term }}
+        <a href="{{.Page.Permalink}}" class="text-center d-block p-t-8 p-b-8" >
+          <i style="font-size:46px;" class="c8y-icon-duocolor {{ .Page.Params.icon }}"></i>
+          <strong class="text-truncate text-muted" title="{{.Page.Title}}">{{ .Page.Title }}</strong>
+        </a>
+      {{ end }}
+      <div class="dropdown">
+        <button class="dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+        </button>
+        <div class="dropdown-menu"
+          aria-labelledby="dropdownMenuButton">
+          <div class="navsections-dropdown-menu">
+            {{ $currentBundle := newScratch}}
+            {{$scratch := newScratch}}
+            {{ $pages := where (index .Site.Taxonomies.sector $currentSection) ".Params.type" "root" }}
+            {{ $pages := sort $pages ".Params.weight" }}
+              {{ range $pages }}
+
+                {{ $subs := where .Site.Pages "Section" .Params.bundlefolder }}
+
+                {{$rootclass := newScratch}}
+                {{/* grab the link from the first child page  */}}
+                {{ range $sub := first 1 $subs}}
+                  {{ $scratch.Set "url" $sub.Permalink}}
+                {{end}}
+
+                {{/* Check the current page to highlight the right root section  */}}
+                {{$rootclass.Set "active" "" }}
+                {{ if eq .Params.bundlefolder $current.Section }}
+                  {{$rootclass.Set "active" "active" }}
+                  <span class="current-app"><i class="{{.Params.icon}}"></i> {{.Title}}</span>
+                  {{ $currentBundle.Set "bundle" (printf "/%s-%s" .Params.bundlefolder "bundle") }}
+                {{ else}}
+                  {{ if and (eq .Params.layout "single") (eq .Title $current.Title) }}
+                    {{$rootclass.Set "active" "active" }}
+                    <span class="current-app">
+                      <i class="{{.Params.icon}}"></i> {{$current.Title}}
+                    </span>
+                  {{ end }}
+                {{ end }}
+
+                {{ $url := $scratch.Get "url" }}
+                <a class='dropdown-menu-item text-truncate {{ $rootclass.Get "active"}}'
+                  href='
+                    {{if (isset .Params "external") }}
+                      {{.Params.external}}
+                    {{else}}
+                      {{$url}}
+                    {{end}}'
+                  title="{{.Title}}"><i class="{{.Params.icon}}"></i>{{.Title}}</a>
+              {{ end }}
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Custom glossary navigation with letter sections -->
+    <nav id="main-nav" class="nav-sections">
+      <!-- Letter navigation -->
+      <nav class="list-group nav">
+        {{ range .Pages.ByWeight }}
+          {{ if and (.File) (ne .File.LogicalName "_index.html") }}
+            <a class="list-group-item" href="#{{ .Title | lower }}">{{ .Title }}</a>
+          {{ end }}
+        {{ end }}
+      </nav>
+    </nav>
+  </nav>
+{{end}}
+<div class="cover"></div>

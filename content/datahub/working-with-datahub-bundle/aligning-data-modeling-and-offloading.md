@@ -30,8 +30,35 @@ The offloading configuration mechanisms differ when dealing with series-value fr
 Each series must have a mandatory value of type NUMBER and an optional unit of type STRING. If the value is not of type NUMBER, {{< product-c8y-iot >}} DataHub determines a type for each series at offloading runtime. It evaluates the runtime type of each value and derives the column type for the corresponding offloading run. If all values for a series can be cast to BOOLEAN, FLOAT, STRUCT or LIST consistently, this will be the type of the resulting column. Otherwise, DataHub will use VARCHAR. If the use case mixes types for the same series, the aforementioned mixed type handling applies.
 
 {{< c8y-admon-info >}}
-The {{< product-c8y-iot >}} platform supports the time series model, which is an internal data model for the measurements collection. For details on how to activate that model see [Enhanced time series support](/standard-tenant/enhanced-time-series-support/). {{< product-c8y-iot >}} DataHub supports that data model when offloading the measurements collection. However, the specific case of measurements offloading in the TrendMiner mode is not supported when the time series model is used. When you switch from the default data model to the time series model, measurements offloadings still work, except for offloadings using the TrendMiner mode. The switch back from the time series model to the default model is not supported. In that case the offloading cannot guarantee that all data is offloaded into the target table. To ensure completeness, re-configure the offloading to use a different target table when switching to the default data model.
+The {{< product-c8y-iot >}} platform supports the time series model, which is an internal data model for the measurements collection. For details on how to activate that model see [Enhanced time series support](/standard-tenant/enhanced-time-series-support/). {{< product-c8y-iot >}} DataHub supports that data model when offloading the measurements collection. When you switch from the default data model to the time series model, measurements offloadings still work. The switch back from the time series model to the default model is not supported. In that case the offloading cannot guarantee that all data is offloaded into the target table. To ensure completeness, re-configure the offloading to use a different target table when switching to the default data model.
 {{< /c8y-admon-info >}}
+
+### Dealing with case-sensitivity {#dealing-with-case-sensitivity}
+
+Case-sensitivity issues arise when attributes have the same name, except for their case. For example, a device measurement has an attribute named **c8y_pressure**, while a subsequent measurement has an attribute named **C8Y_Pressure**. When offloading such data with mixed cases, the resulting table schema as well as the table contents in the data lake may not meet your expectations. 
+
+Along the offloading workflow, different components are involved with a different handling of case-sensitivity. The operational store is configured to read the data case-sensitively, which then also applies to querying via the {{< product-c8y-iot >}} REST API. Thus, given two measurements each with an attribute named **c8y_pressure** and **C8Y_Pressure** respectively, only the document with **c8y_pressure** is returned when querying for **c8y_pressure**. Dremio and its SQL interface in turn are case-insensitive. In the offloading process, Dremio queries the operational store and derives a schema for the table in the data lake. This schema consists of default columns, additional result columns, and, for the measurements collection, columns derived from series values fragments.
+
+#### Case-sensitivity and default column names {#case-sensitivity-and-default-column-names}
+For each base collection [default columns](#offloading-the-base-collections) are defined, based on attributes in the operational store. When feeding data into the platform, the correct case for the associated attribute must be used. For example, an alarm has the attribute **status**; the corresponding value is then stored in the **status** default columm in the data lake table. When using **Status** as attribute name, not the data in the document will be offloaded, but a default value, in this case ACTIVE, will be set in the data lake.
+
+#### Case-sensitivity and additional result column names {#case-sensitivity-and-additional-result-column-names}
+In addition to the default columns, the data in the operational store may have additional top-level attributes, which can be used as additional result columns in the offloading process. If the same top-level attribute is defined with different cases in the documents, not all associated attribute values will be offloaded into the corresponding column. Dremio maintains one column in its collection metadata. For all documents whose attribute name exactly equals that column name the corresponding value will be offloaded. For documents with a different attribute name case, the value in the data lake will be set to NULL. Thus, using different cases in attribute names will cause data loss. For example, a top-level attribute in an alarm is named **owner**; Dremio uses this name in its metadata on the alarms collection. The **owner** value of all alarms is then offloaded into the **owner** column in the data lake. If an alarm has an attribute **Owner**, not the associated value will be stored in the **owner** column in the data lake, but NULL instead.
+
+#### Case-sensitivity and measurement column names {#case-sensitivity-and-measurements-column-names}
+For the measurements collection operating in the non-time-series mode, duplicate column names can occur. Section [Configure additional settings and complete configuration](#configure-additional-settings) describes the background and how to enable a name sanitization mechanism, which generates new columns in case of duplicate names. This configuration option is only available in the legacy non-time-series mode.
+
+#### Duplicate names in one document {#duplicate-names-in-one-document}
+If two attribute names in a document only differ by case, only one of the values will be used for the offloading. For example, an alarm has an attribute **owner** as well as an attribute **Owner**. Then only one attribute value will be offloaded and the other one will be ignored.
+
+{{< c8y-admon-important >}}
+It is strongly advised to avoid feeding data into the platform which is ambiguous with respect to case-sensitivity. This problem mainly refers to the naming of attributes in documents sent to the platform. Such data might cause unexpected results in the data lake, including data loss.
+{{< /c8y-admon-important >}}
+
+#### Dealing with case-sensitivity issues {#dealing-with-case-sensitivity-issues}
+The system does not raise a warning when case-sensitivity issues occur, but processes the data as described above. If your application may be prone to generating data causing case-sensitivity issues, you should regularly check your data lake contents for unexpected entries. For example, you can run a SQL query to check for unexpected NULL values in the data lake.
+
+When a case-sensitivity issue has occurred, several steps have to be conducted. If possible, the document in the operational store having introduced the issue needs to be adapted so that the expected case is used for the attribute name. The collection schema in Dremio might need to be adapted. Also the data lake might need a cleanup, including a rerun of the offloading process for that data. Also the component generating the data should be adapted so that case-sensitivity issues do not occur anymore. Adapting the schema in Dremio and cleaning up the data lake typically require additional support.
 
 ### Guidelines {#guidelines}
 
@@ -53,6 +80,5 @@ When modeling your data, you must be aware of the following limitations:
 
 |<div style="width:250px">Description</div>
 |:---
-|If two attribute names in a document only differ by case, only one of the values will be used.|
 |If the collection to be offloaded has JSON attributes consisting of more than 32,000 characters, its data cannot be offloaded. One specific case where this limitation applies is the {{< product-c8y-iot >}} application builder, which stores its assets in the inventory collection when being used.|
 |If the collection to be offloaded has more than 800 JSON attributes, its data cannot be offloaded. This limitation also includes nested JSON content, which will be expanded into columns during offloading. Therefore, measurements documents with more than 800 series/series value fragments are not supported.|

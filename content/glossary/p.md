@@ -4,31 +4,41 @@ title: P
 layout: bundle
 sector:
   - getting_started
+_build:
+  render: false
+
 ---
 
+### Permission {#permission}
 
-### Permissions {#permissions}
+Permissions are the most granular level of access control in {{< product-c8y-iot >}}, defining the access rights (for example, READ, CREATE, ADMIN) for a specific capability (for example, [alarms](#alarm), [inventory](#inventory)). Permissions are not assigned to [users](#user) directly. Instead, they are grouped into [roles](#role).
 
-The ability to execute certain functionality in the {{< product-c8y-iot >}} platform is based on permissions. Permissions define explicitly what functionality can be executed by a user. {{< product-c8y-iot >}} distinguishes read permissions and administration permissions. Read permissions enable users to read data. Administration permissions enable users to create, update and delete data.
+See also [Managing permissions and roles](/standard-tenant/managing-permissions/) in the documentation.
 
-To manage permissions more easily, they are grouped into roles. Every user can be associated with a number of roles, adding up permissions of the user.
+{{< c8y-details title="Developer details" >}}
+Permissions are granted via roles, which are managed through the [User API](https://cumulocity.com/api/core/#tag/User-API) (`/user/roles`, `/user/inventoryroles)`.
+The platform identifies each granular permission with a unique “permission” string, which is prefixed with ROLE_ (for example, ROLE_ALARM_READ).
 
-See also [Global roles](/glossary/g/#global-roles) and [Inventory roles](/glossary/i/#inventory-roles).
+To grant a permission to a user, assign the required permission strings, such as ROLE_ALARM_READ, to a suitable global role or inventory role, then assign that role to the users who should have the respective permission.
 
-### Private Preview mode {#private-preview}
+**Important**: The permission strings are frequently referred to as "roles" throughout the API and in the configuration files (for example, the microservice manifest includes a requiredRoles field) although they actually refer to a permission.
+{{< /c8y-details >}}  
 
-In the [Continuous Deployment](/glossary/c/#continuous-deployment-model) model, the Private Preview mode refers to a feature which is only made available to selected customers.
 
-See also [General Availability](/glossary/g/#ga) and [Public Preview](/glossary/p/#public-preview).
+### Private Preview {#private-preview}
 
-### Product area {#product-area}
+Private Preview denotes a feature release stage in the [Continuous Deployment model](#continuous-deployment) where a new feature is made available to a limited, invitation-only group of selected customers for feedback and testing. See also, [Public Preview](#public-preview) and [General Availability](#ga).
 
-In the change logs (or release notes for yearly releases respectively) changes can be filtered for various parameters one of which is the product area. The product area is a high-level functional area, for example, "Device management & connectivity". 
 
-See also [Components](/glossary/c/#component).
+### Processing mode {#processing-mode}
 
-### Public Preview mode {#public-preview}
+The processing mode is a mechanism that allows clients to control how {{< product-c8y-iot >}} handles incoming data ([measurements](#measurement) and [events](#event)) with respect to data persistence and real-time processing. Modes include: PERSISTENT (default), TRANSIENT (process, don't store), QUIESCENT (store, suppress notifications), and CEP (process transiently, suppress notifications).  
 
-In the [Continuous Deployment](/glossary/c/#continuous-deployment-model) model, the Public Preview mode refers to a feature for which customers can opt-in to have the feature activated.
+{{< c8y-details title="Developer details" >}}
+For REST, the processing mode is specified using the `X-Cumulocity-Processing-Mode` HTTP header. For MQTT, specific topics are used (s/, t/, q/, c/) to specify the processing mode.
+{{< /c8y-details >}}  
 
-See also [General Availability](/glossary/g/#ga) and [Private Preview](/glossary/p/#private-preview).
+
+### Public Preview {#public-preview}
+
+Public Preview denotes a feature release stage in the [Continuous Deployment model](#continuous-deployment) where a new feature is made available to any customer who opts in to use it. Features in this stage are not yet considered generally available. See also, [Private Preview](#private-preview) and [General Availability](#ga).

@@ -38,6 +38,21 @@ Details on these additional menu items are provided where required.
 
 The **Alarms** tab provides information on the alarms of a device. See [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for detailed information on alarms.
 
+### Smart rules (NEW) {#smart-rules}
+
+{{< c8y-admon-preview >}}
+This feature is in Public Preview and may be subject to change in the future.
+{{< /c8y-admon-preview >}}
+
+The **Smart rules (NEW)** tab allows to create and manage the Analytics Builder model instances directly from the context of a device or group.
+
+![Smart rules new tab](/images/streaming-analytics/smart-rules-plugin/smart-rules-list.png)
+
+To create your first rule, refer to [Create your first rule](/streaming-analytics/smart-rules-plugin/#creating-your-first-smart-rule).
+
+For more details about smart rules (NEW), refer to [Smart rules plugin](/streaming-analytics/smart-rules-plugin/#getting-started).
+
+
 ### Availability {#availability}
 
 The Availability tab offers availability monitoring for machines, see [Availability](/device-management-application/monitoring-and-controlling-devices/#availability) for more information.

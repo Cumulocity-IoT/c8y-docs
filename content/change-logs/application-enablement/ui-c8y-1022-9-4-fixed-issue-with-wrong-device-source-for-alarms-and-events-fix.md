@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-08-07'
 title: Alarms and events now linked to the correct device source
 product_area: Application enablement & solutions
 change_type:

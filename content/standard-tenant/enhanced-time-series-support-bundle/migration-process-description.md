@@ -23,6 +23,9 @@ The user must have the following permissions for the permission type "Tenant man
 
 - To view migration status for all subtenants: READ permission.
 - To perform migration activity: ADMIN permission.
+- The tenant’s status must be **ACTIVE**. Tenants with status **SUSPENDED** cannot be scheduled for migration.  
+  If attempted via API, the request fails with **422 Unprocessable Entity** and the message:  
+  `Tenant <tenantId> is suspended. Migration actions are not permitted.`
   {{</c8y-admon-req>}}
 
 ### To trigger time series migration {#to-trigger-time-series-migration}
@@ -54,17 +57,17 @@ The migration of measurements can be cancelled when a tenant has the status **Qu
 
 ### Migration states {#migration-states}
 
-|Status|Manageable by user|Description|
-|:-----|:-----|:------|
-|Not migrated|yes|Indicates that the tenant has not been migrated yet. If the tenant uses legacy measurements, it will be scheduled for migration.|
-|Queued|yes|Indicates that the tenant is added to the migration queue. Tenants in this state can be picked up for migration. It is possible to **Cancel migration** from this state.|
-|In progress|no| Indicates that the migration of the measurements collection is currently in progress.|
-|Migrated|no| Indicates that the migration of the measurements collection is done.|
-|Verifying|no| Indicates that the verification of the migrated data is in progress.|
-|Verified|yes| Indicates that all migration processes are completed and user approval is required.|
-|Approved|no|Indicates that the migration is completed and the legacy collection will be removed in 7 days.|
-|Completed|no|Indicates that the migration is completed and the legacy collection is removed.|
-|Failed|no| Indicates that an error occurred during the migration process. The information provided in the error message should be forwarded together with the support ticket.|
+| Status       | Manageable by user | Description                                                                                                                                                                                    |
+|:-------------|:-------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Not migrated | yes                | Indicates that the tenant has not been migrated yet. If the tenant uses legacy measurements, it will be scheduled for migration. **Note:** Tenants with status **SUSPENDED** cannot be queued. |
+| Queued       | yes                | Indicates that the tenant is added to the migration queue. Tenants in this state can be picked up for migration. It is possible to **Cancel migration** from this state.                       |
+| In progress  | no                 | Indicates that the migration of the measurements collection is currently in progress.                                                                                                          |
+| Migrated     | no                 | Indicates that the migration of the measurements collection is done.                                                                                                                           |
+| Verifying    | no                 | Indicates that the verification of the migrated data is in progress.                                                                                                                           |
+| Verified     | yes                | Indicates that all migration processes are completed and user approval is required.                                                                                                            |
+| Approved     | no                 | Indicates that the migration is completed and the legacy collection will be removed in 7 days.                                                                                                 |
+| Completed    | no                 | Indicates that the migration is completed and the legacy collection is removed.                                                                                                                |
+| Failed       | no                 | Indicates that an error occurred during the migration process. The information provided in the error message should be forwarded together with the support ticket.                             |
 
 ### Description and progress monitoring {#description-and-progress-monitoring}
 
@@ -78,19 +81,19 @@ Here you can see the following information:
 - **Migration range** - Date range. Start date is the date of the oldest measurement to be migrated and end date is the date of the newest measurement. This is also the point in time when the migration has started.
   **Migration status** - This bar displayed at the right has various functions. Depending on the state it provides either visual information on the current state of the ongoing process or allows to control certain process states. For details of states, see [Migration states](#migration-states).
 
-The second section shows the **List of tenants** with the following infomation for each tenant:
- 
-* **Tenant** - Tenant name.
-* **ID** - Tenant ID. 
-* **Domain** - Tenant domain.
-* **Parent tenant ID** - Parent tenant ID. 
-* **Status** - Current migration state for the given tenant.
-* **Requested date** - Date when the tenant was added to the queue for migration.
-* **Requested by** - Tenant ID and name of the user who requested the migration.
-* **Approved date** - Date when the migration was approved by the administrator.
-* **Approved by** - Tenant ID and name of the user who approved the migration.
+The second section shows the **List of tenants** with the following information for each tenant:
 
-On hovering over a tenant row, you can see one of the following buttons according to the migration state:
-- **Add to queue** - To assign the tenant to the migration queue when it is in **Legacy measurements** state.
-- **Cancel migration** - To remove the tenant from the migration queue when it is in **Queued** state. Note that if the progress has already started, it is not possible to resign from migration.
-- **Approve and finish migration** - To approve the migration when it is in **Verified** state. Note that no other migration will start if there is a tenant pending acceptance.
+* **Tenant** – Tenant name.
+* **ID** – Tenant ID.
+* **Domain** – Tenant domain.
+* **Parent tenant ID** – Parent tenant ID.
+* **Requested by user** – Name of the user that requested the migration.
+* **Approved by user** – Name of the user that approved the migration.
+* **Tenant status** – Current status of the tenant (for example, ACTIVE or SUSPENDED).
+* **Migration status** – Current migration state for the tenant (for example, Queued, In progress, Verified).
+
+On hovering over a tenant row, you see one of the following buttons according to the migration state. Actions are only available for tenants with status ACTIVE:
+
+* **Add to queue** – Assign the tenant to the migration queue when it is in **Not migrated** state.
+* **Cancel migration** – Remove the tenant from the migration queue when it is in **Queued** state. If progress has already started, it is not possible to resign from migration.
+* **Approve and finish migration** – Approve the migration when it is in **Verified** state. No other migration starts if there is a tenant pending acceptance.

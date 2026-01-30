@@ -1,5 +1,5 @@
 ---
-title: Microservice SDK
+title: Microservices
 bundlefolder: microservice-sdk
 icon: "c8y-icon c8y-icon-tools"
 type: root
@@ -11,4 +11,4 @@ audience:
 weight: 40
 ---
 
-Learn how to extend your platform with customer-specific functionality by developing and deploying microservices using the Microservice SDK.
+Learn how to extend the {{< product-c8y-iot >}} platform with customer-specific functionality by developing and deploying microservices.

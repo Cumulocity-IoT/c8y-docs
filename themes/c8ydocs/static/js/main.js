@@ -229,9 +229,16 @@ function buildToc() {
 
       window.addEventListener("scroll", () => {
         if (window.getComputedStyle(link).display !== "none") {
-          const srcEl = document.getElementById(
-            findVisibleElement(targetElement.id)
-          );
+          const visibleElementId = findVisibleElement(targetElement.id);
+          if (!visibleElementId) {
+            return; // Exit early if no visible element found
+          }
+
+          const srcEl = document.getElementById(visibleElementId);
+          if (!srcEl) {
+            return; // Exit early if element doesn't exist
+          }
+
           const rect = srcEl.getBoundingClientRect();
           const windowHeight = window.innerHeight;
 

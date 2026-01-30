@@ -1,14 +1,14 @@
 ---
 weight: 20
-title: Integration life cycle
+title: Integration lifecycle
 layout: redirect
 ---
 
-The basic life cycle for integrating devices into {{< product-c8y-iot >}} is discussed in [Interfacing devices](/device-integration/interfacing-devices/).
+The basic lifecycle for integrating devices into {{< product-c8y-iot >}} is discussed in [Interfacing devices](/device-integration/interfacing-devices/).
 
-In this section, we will show how this life cycle can be managed using the MQTT implementation.
+In this section, we will show how this lifecycle can be managed using the MQTT implementation.
 
-The life cycle consists of two phases, a startup phase and a cycle phase.
+The lifecycle consists of two phases, a startup phase and a cycle phase.
 
 The [startup phase](#startup-phase) can be as short as just checking the credentials:
 

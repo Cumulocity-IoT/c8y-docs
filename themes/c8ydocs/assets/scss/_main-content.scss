@@ -233,3 +233,39 @@ table:not(.gsc-search-box):not(.gstl_50) {
   tab-size:4;
   overflow: visible!important;
 }
+
+// GLOSSARY styles
+
+.glossary-list{
+  h3{
+    text-transform: none;
+  }
+}
+
+.search-bar{
+  grid-template-columns: minmax(320px, 9fr) minmax(0, 3fr);
+  gap: 2rem;
+  display: grid;
+  position: sticky;
+  top: 106px;
+  margin: 2rem 0;
+  z-index: 2;
+  > div{
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(2px);
+    padding: .5rem 0;
+    .input-group {
+      margin: 0;
+    }
+  }
+}
+
+
+.highlight-match {
+  background-color: var(--c8y-palette-status-warning-light);
+  padding: 2px 0;
+  font-weight: 600;
+}
+.glossary-hidden {
+  display: none !important;
+}

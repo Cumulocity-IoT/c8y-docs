@@ -4,47 +4,80 @@ title: T
 layout: bundle
 sector:
   - getting_started
----
+_build:
+  render: false
 
+---
 
 ### Tenant {#tenant}
 
-Tenants are physically separated data spaces with a separate URL, which has a specific set of users, a separate application management and no data sharing by default. Users in a single tenant share the same URL and the same data space.
+A tenant represents a logically isolated data space within {{< product-c8y-iot >}}, typically corresponding to a customer or organizational unit. It has its own [users](#user), [devices](#device), [applications](#application), and data (see [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model/)).
 
-See also [Tenant hierarchy](#tenant-hierarchy).
+{{< c8y-details title="Developer details" >}}
+Tenants are managed via the [Tenant API](https://cumulocity.com/api/core/#tag/Tenant-API) (`/tenant/tenants`). This includes creating subtenants (POST), retrieving details (GET), updating properties (PUT), and deleting (DELETE). Tenant-specific configurations are managed via the [Tenant Options API](https://cumulocity.com/api/core/#tag/Options) (`/tenant/options`).
+{{< /c8y-details >}}
 
 
 ### Tenant domain {#tenant-domain}
 
-A key feature of the {{< enterprise-tenant >}} is the ability to operate the {{< product-c8y-iot >}} platform using a custom domain name. This means that you can configure the platform to serve you and your customers using a host name of choice.
+The tenant domain refers to the domain name used to access a {{< product-c8y-iot >}} [tenant](#tenant), in the format `<tenant-name\>.\<instance-name\>`. It is used for login and API access and is distinct from the tenant’s unique identifier ([tenant ID](#tenant-id)). For example, a tenant named "acme" on the instance cumulocity.com would have the tenant domain "acme.cumulocity.com". [Enterprise tenants](#enterprise-tenant) and their [subtenants](#subtenant) can optionally configure custom domains for access using the platform’s custom domain feature.
 
-For details see [Platform administration > {{< enterprise-tenant >}} administration > Customizing your platform](/enterprise-tenant/customization).
+{{< c8y-details title="Developer details" >}}
+The tenant domain is configured via the Administration application and requires subscribing to the Sslmanagement microservice.
+{{< /c8y-details >}}  
 
 
 ### Tenant hierarchy {#tenant-hierarchy}
 
-The {{< product-c8y-iot >}} tenant concept builds a 3-level hierarchy, including the following levels from bottom to top:
+The tenant hierachy refers to the structure organizing [tenants](#tenant) in {{< product-c8y-iot >}}, involving a [{{< management-tenant >}}](#management-tenant) at the top, [{{< enterprise-tenant >}}s](#enterprise-tenant) below it, and [{{< standard-tenant >}}s](#standard-tenant) at the lowest level.
 
-* [{{< standard-tenant >}}](/glossary/s/#standard-tenant)
-* [{{< enterprise-tenant >}}](/glossary/e/#enterprise-tenant)
-* [{{< management-tenant >}}](/glossary/m/#management-tenant)
+See also [Tenant hierarchy](/concepts/tenant-hierarchy/) in the documentation.
 
-These three levels differ in their scope, particularly with regards to administration.
-
-See also [Tenant hierarchy](/concepts/tenant-hierarchy).
+{{< c8y-details title="Developer details" >}}
+Tenant hierarchies are managed through the [Tenant API](https://cumulocity.com/api/core/#tag/Tenant-API) (`/tenant/tenants`). Creating a subtenant (POST `/tenant/tenants`) under a parent tenant establishes the hierarchical link.
+{{< /c8y-details >}}
 
 
 ### Tenant ID {#tenant-id}
 
-The unique ID of a tenant or subtenant. When a tenant is created, it gets an auto-generated ID, which cannot be changed. The tenant ID is shown in the user dropdown menu in the UI.
+A tenant ID is a unique identifier assigned to each [tenant](#tenant). The tenant ID is often used as a prefix in the username for authentication (for example, `\<tenantID\>/\<username\>`).
+
+
+### Tenant option {#tenant-option}
+
+Tenant options are configurable key-value pairs associated with a [tenant](#tenant), used to customize platform behavior, [application](#application) settings, or store tenant-specific configurations.
+
+{{< c8y-details title="Developer details" >}}
+Tenant options are managed via the [Tenant Options API](https://cumulocity.com/api/core/#tag/Options) (`/tenant/options`). Options can be created (POST), retrieved (GET), updated (PUT), and deleted (DELETE).
+There is a mechanism to [encrypt](/microservice-sdk/general-aspects/#encryption) tenant options. If a tenant option is created with a key name that starts with `credentials.`, it is automatically encrypted. When the option is retrieved from a microservice, the `credentials.` prefix is removed, and the value is decrypted only if the microservice is the owner of the option.
+{{< /c8y-details >}}  
+
+
+### Tenant policy {#tenant-policy}
+
+Tenant policies are predefined sets of [tenant options](#tenant-option) and retention rules that can be created in a [{{< management-tenant >}}](#management-tenant) or [{{< enterprise-tenant >}}](#enterprise-tenant) and applied when creating new [subtenants](#subtenant) to ensure consistent initial configurations. Tenant policies are created and managed in the [Administration application](#administration-application).
+
+See also [Tenant policies](/enterprise-tenant/managing-tenants/#tenant-policies) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+Tenant policies are stored in the inventory and managed through the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) endpoints (`/inventory/managedObjects`). When creating or updating a policy the request body must follow a specific format, for example, must contain the `c8y_TenantPolicy` fragment.
+{{< /c8y-details >}}    
+
+
+### Tech Community {#tech-community}
+
+The official online forum and knowledge base for {{< product-c8y-iot >}} users and developers to ask questions, share solutions, find tutorials, and stay updated on platform news and events. See [https://community.cumulocity.com/](https://community.cumulocity.com/).
 
 
 ### Thick Edge {#thick-edge}
-Thick Edge is an informal term sometimes used to refer to {{< product-c8y-iot >}} Edge, a single-server variant of the {{< product-c8y-iot >}} platform, designed to run in factories on industrial PCs or local servers, that is, in the same site (“onsite”) in which the IoT assets are located. For details, see the [{{< product-c8y-iot >}} Edge documentation](/{{< c8y-edge-version-major >}}/sector/edge_server/).
 
-See also [Edge Server](/glossary/e/#edge-server)
+Thick Edge is an informal term for {{< product-c8y-iot >}} Edge, see [{{< product-c8y-iot >}} Edge](#edge).
 
 
-### Thin Edge {#thin-edge}
+### thin-edge.io {#thin-edge}
 
-[Thin-edge.io](https://thin-edge.io/) is an open-source and cloud-agnostic IoT framework designed for lightweight IoT devices. It offers simple and secure device connectivity, freedom of the cloud platform, for example {{< product-c8y-iot >}}, and freedom of the programming language.
+[thin-edge.io](https://thin-edge.io/) is an open-source software framework recommended by {{< product-c8y-iot >}} for custom device integration. It provides components and tools to connect [devices](#device) to the platform, particularly suitable for implementing device-side logic.
+
+{{< c8y-details title="Developer details" >}}
+thin-edge.io exposes a local {{< product-c8y-iot >}} proxy endpoint to give device components access to the full {{< product-c8y-iot >}} REST API.
+{{< /c8y-details >}}

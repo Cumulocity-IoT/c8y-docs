@@ -16,8 +16,9 @@ To change the time range on the x-axis, use one of the following options:
 
 - Select a different time range from the dropdown list in the top menu bar.
 - Enter a custom time range into the **From** and **To** fields in the data explorer.
-- Drag the x-axis and move left or right to move the time period.
-- Double-click into the data explorer to zoom out.
+- Drag the chart and move left or right to move the time period.
+- Use the mouse wheel to zoom in or out.
+- Align the zoom slider beneath the graph to select a different time range. You can drag the edges to zoom in or out or drag the whole slider to move the x-axis.
 
 {{< c8y-admon-info >}}
 Real-time updates will be switched off if you set a time range in the past.
@@ -46,8 +47,6 @@ To turn realtime updating on or off, click **Realtime** in the top menu bar. A g
 
 For each data point, its visibility can be switched on or off by using the toggle left from the data point name.
 
-{{< c8y-admon-preview-feature >}}
-
 ### Interactive legend (available only for the Data point graph widget)
 
 The legend, located above the chart, provides quick control over what's visible in your chart. You can toggle visibility of individual data points or alarms/events by clicking their name.
@@ -70,5 +69,3 @@ You can customize the chart options to control how your data is visualized, incl
 
 The data slider, located at the bottom of the chart, provides an overview of a longer time range than the currently selected one - offering a summarized view to help navigate large datasets. For example, if "Last hour" is selected, the slider might display data from the past 24 hours.
 You can zoom into any portion of the slider and pan across the range to adjust the visible data in the main chart, making it easier to explore and focus on specific periods of interest.
-
-{{< /c8y-admon-preview-feature >}}

@@ -71,7 +71,7 @@ Available arguments for `c8y_ua_command_ScanAddressSpace`:
 </tr>
 <tr>
 <td>skipSync</td>
-<td>Boolean</td>
+<td>boolean</td>
 <td>no</td>
 <td>If set to true, the address space nodes will not be synchronized to {{< product-c8y-iot >}} Inventory API. Default is false.</td>
 </tr>
@@ -525,7 +525,7 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 </tr>
 <tr>
 <td>processMappings</td>
-<td>Boolean</td>
+<td>boolean</td>
 <td>no</td>
 <td>If set to false then the read values will not be processed based on the device protocol mapping. Default is true. Note that any data created from historic data using a device protocol will carry the same processing mode as specified in the mapping.</td>
 </tr>
@@ -623,7 +623,7 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 </tr>
 <tr>
 <td>compress</td>
-<td>Boolean</td>
+<td>boolean</td>
 <td>no</td>
 <td>If set the false the output chunks are compressed. Default is false.</td>
 </tr>
@@ -682,7 +682,7 @@ Available arguments for `c8y_ua_command_ReadFileOperation`:
 </tr>
 <tr>
 <td>skipResetPosition</td>
-<td>Boolean</td>
+<td>boolean</td>
 <td>no</td>
 <td>If set to true then the position to read the file is reset before reading the file. Default is false.</td>
 </tr>
@@ -1105,7 +1105,7 @@ Available arguments for type methodRequest (used in `c8y_ua_command_CallMethodOp
 </tr>
 <tr>
 <td>parseResponse</td>
-<td>Boolean</td>
+<td>boolean</td>
 <td>no</td>
 <td>If set to true, the value is converted to JSON and the actual value is stored in the rawValue fragment in response. Default is true</td>
 </tr>

@@ -14,7 +14,7 @@ The status of the microservice can be checked in the **Status** tab of the respe
 
 <img src="/images/users-guide/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
 
-To view the status you need the following permissions: role Application management READ and role Inventory READ.
+To view the status you need the following permissions: READ permission for "Application management" and "Inventory".
 
 The following information is provided on the **Status** tab:
 

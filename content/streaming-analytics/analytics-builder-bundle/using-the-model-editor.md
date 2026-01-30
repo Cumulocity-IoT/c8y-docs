@@ -60,7 +60,13 @@ You can also add or remove tags. Tags are helpful in the model manager, to show 
 1.  In the model editor, click **Model settings** which is shown at the left of the toolbar.
 2.  In the resulting **Edit model** dialog box, specify a new unique name for the model, change the description, and/or change the tags.
 
-    To add a tag, you simply type its name and press Enter or the Tab key. The tag is then shown in a colored rectangle. To remove a tag, click on the X that is shown in the rectangle. The dialog prevents you from entering duplicate tags for a model; if you enter such a tag name, the duplicate tag is not added and the original tag blinks one time.
+    To add a tag, you can either:
+     - Type its name and press Enter. The tag is then shown in a colored rectangle.
+     - Type its name and submit the dialog without pressing Enter. Any pending text in the **Tags** field will automatically be added as a tag before submission.
+
+    To remove a tag, click on the delete icon (X) that is shown in the rectangle.
+
+    The dialog prevents you from entering duplicate tags for a model. If you enter such a tag name, the duplicate tag is not added, and the original tag blinks once.
 
 3.  Click **OK**.
 
@@ -132,10 +138,10 @@ For the input and output blocks, you can globally replace the input sources and 
     The block parameter editor appears, providing input fields for all parameters that can be specified for that block.
 2.  For the input and output blocks, you can select a different input source or output destination from a dialog box.
 
-    The tree in the dialog box reflects the parent/child hierarchy in the {{< product-c8y-iot >}} inventory. For example, the list of devices includes any defined child devices, and the list of device groups includes any defined sub-groups. These are available from expandable/collapsible nodes.
+    The tree in the dialog box reflects the parent/child hierarchy in the {{< product-c8y-iot >}} inventory. For example, the list of devices includes any defined child devices, and the list of groups includes any defined sub-groups. These are available from expandable/collapsible nodes.
     By default, 10 items are shown within each node, sorted alphabetically. With a large inventory, you will have to click **Load more** to display any items that are not shown initially.
 
-    Using the checkboxes at the top of the dialog, you can filter the entries that are to be shown. By default, all defined devices, device groups, smart groups and assets are displayed in the dialog. If you also want to display any other managed objects in the dialog, select the "Other" checkbox.
+    Using the checkboxes at the top of the dialog, you can filter the entries that are to be shown. By default, all defined devices, groups and assets are displayed in the dialog. If you also want to display any other managed objects in the dialog, select the "Other" checkbox.
 
     The search box can be used to show any managed objects in the {{< product-c8y-iot >}} inventory which match your search and filter criteria. The search is case-sensitive. The characters that you type in may be contained at any position within the name. The tree is updated with each character that you type. With a large search result, you will have to click **Load more** to display any managed objects that are initially not shown.
 

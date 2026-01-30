@@ -16,6 +16,18 @@ helpcontent:
 {{< product-c8y-iot >}} allows administrators to fine-tune various certificate configurations.
 Currently, Certificate Revocation List (CRL) is supported.
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+To view trusted certificates, you must be the initial admin user (first created user) of the tenant or have one of the following permissions:
+
+* READ permission for the "Tenant management" permission type.
+
+To manage trusted certificates, you must be the initial admin user (first created user) of the tenant or have one of the following permissions:
+
+* ADMIN permission for the "Tenant management" permission type.
+{{< /c8y-admon-req >}}
+
 {{< c8y-admon-info >}}
 This section targets at advanced users for granular control over certificate attributes like CRL, OCSP, Certificate
 Policy and PKI.

@@ -8,7 +8,7 @@ helpcontent:
   content: "In the firmware repository, you can collect reference firmware for devices. At the top left, you can filter the firmware items by name, description, or device type.
 
 
-	See the user documentation for details on managing firmware, firmware versions and patches, and on how to install or update them on devices."
+  See the user documentation for details on managing firmware, firmware versions and patches, and on how to install or update them on devices."
 ---
 
 In the firmware repository, {{< product-c8y-iot >}} offers to collect reference firmware for devices.
@@ -44,7 +44,7 @@ The list of versions and patches shows the version name and the name of the firm
 4. Select one of the following options to define the patch binary:
    - **Upload a binary** from your file system.
    - **Provide a file path (URL)** to download the binary from.
-   - **Provided** – Select this option if the device is expected to resolve the binary itself. No file or URL will be defined, and a `$PROVIDED` placeholder is stored.
+   - **Provided** – Select this option if the device is expected to resolve the binary itself. No file or URL will be defined, and an empty string is stored as the value of the `url` attribute.
 5. Click **Save**.
 
 ![Add firmware](/images/users-guide/DeviceManagement/devmgmt-firmware-add.png)
@@ -62,7 +62,7 @@ If you click **Add firmware** from within the details of a specific firmware, th
 5. Select one of the following options to define the patch binary:
    - **Upload a binary** from your file system.
    - **Provide a file path (URL)** to download the binary from.
-   - **Provided** – Select this option if the device is expected to resolve the binary itself. No file or URL will be defined, and a `$PROVIDED` placeholder is stored.
+   - **Provided** – Select this option if the device is expected to resolve the binary itself. No file or URL will be defined, and an empty string is stored as the value of the `url` attribute.
 6. Click **Save**.
 
 As with adding versions, if you click **Add firmware patch** from within the details of a specific firmware, the dialog box looks slightly different as the firmware is already selected.

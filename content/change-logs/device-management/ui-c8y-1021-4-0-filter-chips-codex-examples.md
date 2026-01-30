@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-4045
 version: 1021.4.0
 ---
-To provide developers with more guidance on how to use filter chips in their applications, codex examples for filter chips have been added. The examples demonstrate how to implement filter chips in various scenarios and highlight best practices. With these new codex examples, developers can more easily understand and leverage filter chips in their own applications, enabling them to create more intuitive and user-friendly filtering experiences.
+To provide developers with more guidance on how to use filter chips in their applications, Codex examples for filter chips have been added. The examples demonstrate how to implement filter chips in various scenarios and highlight best practices. With these new Codex examples, developers can more easily understand and leverage filter chips in their own applications, enabling them to create more intuitive and user-friendly filtering experiences.

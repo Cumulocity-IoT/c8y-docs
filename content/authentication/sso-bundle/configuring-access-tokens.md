@@ -1,5 +1,5 @@
 ---
-weight: 50
+weight: 60
 title: Using access tokens from the authorization server
 layout: redirect
 sector:
