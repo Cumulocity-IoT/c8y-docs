@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Make the message banner form branding dissmissable. [GRAFT][release/cd] (#10997)
+title: Make the message banner form branding dismissable
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
