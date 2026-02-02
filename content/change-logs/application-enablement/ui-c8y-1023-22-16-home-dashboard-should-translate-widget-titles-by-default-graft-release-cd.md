@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Home dashboard should translate widget titles by default. [GRAFT][release/cd] (#10984)
+title: Home dashboard widget titles are now translated by default
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
