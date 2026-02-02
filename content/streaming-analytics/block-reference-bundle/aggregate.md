@@ -54,6 +54,11 @@ This category contains the following blocks:
 </td>
 </tr>
 <tr>
+<td><a href="#quash-frequent-preview">Quash Frequent (Preview)</a></td>
+<td><span>Suppresses all but the first message received per specified time period.</span>
+</td>
+</tr>
+<tr>
 <td><a href="#standard-deviation">Standard Deviation</a></td>
 <td><span>Calculates the standard deviation and variance of the values over time.</span>
 </td>
@@ -910,6 +915,110 @@ Note: The Minimum/Maximum block generates the minimum and maximum for an individ
 <tr>
 <th scope="row">Maximum</th>
 <td><span>The largest value in the window (closest to positive infinity).</span>
+</td>
+<td><span>float</span>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+### Quash Frequent (Preview)
+
+`apama.analyticsbuilder.blocks.QuashMessages`
+
+<p>Suppresses all but the first message received per specified time period.</p>
+<p><b>This block is currently in public preview and may be subject to change.</b></p>
+
+
+#### Parameters {#quash-frequent-preview-parameters}
+
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 50%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+<col style="width: 10%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+<th scope="col">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Period</th>
+<td><span>Time period in seconds.</span>
+</td>
+<td><span>float</span>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+#### Input Port Details {#quash-frequent-preview-inputs}
+
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 60%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Input</th>
+<td><span>The input to be quashed</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Output Port Details {#quash-frequent-preview-outputs}
+
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 60%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Rate-quashed output</th>
+<td><span>The first input activation in the specified time period is sent to this output; subsequent activations within that period are sent to the quashed output. When the time period has elapsed, the next input activation starts a new period and is again sent to this output.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">Quashed message output</th>
+<td><span>Input activations that occur more than once within the specified time period are sent to this output.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">Number of quashed messages within the current period</th>
+<td><span>Incremented every time a message is quashed. Resets to zero when a message is not quashed.</span>
 </td>
 <td><span>float</span>
 </td>

@@ -154,6 +154,11 @@ The following table gives a brief description of all blocks that can be selected
 </td>
 </tr>
 <tr>
+<td><a href="#logger-preview">Logger (Preview)</a></td>
+<td><span>Writes a message to the log file for each input.</span>
+</td>
+</tr>
+<tr>
 <td><a href="#managed-object-input">Managed Object Input</a></td>
 <td><span>Receives <tt>ManagedObject</tt> objects from a device, asset, devices in a group, or all input sources.</span>
 </td>
@@ -214,6 +219,11 @@ The following table gives a brief description of all blocks that can be selected
 </td>
 </tr>
 <tr>
+<td><a href="#quash-frequent-preview">Quash Frequent (Preview)</a></td>
+<td><span>Suppresses all but the first message received per specified time period.</span>
+</td>
+</tr>
+<tr>
 <td><a href="#range">Range</a></td>
 <td><span>Compares the input value against the defined lower and upper range values to detect whether the input is within or out of the range, or whether it crosses the range.</span>
 </td>
@@ -246,6 +256,11 @@ The following table gives a brief description of all blocks that can be selected
 <tr>
 <td><a href="#set-properties">Set Properties</a></td>
 <td><span>Outputs a pulse with properties set from values on the input ports.</span>
+</td>
+</tr>
+<tr>
+<td><a href="#smart-function-preview">Smart Function (Preview)</a></td>
+<td><span>Executes a JS Smart Function on the inputs and produces an output.</span>
 </td>
 </tr>
 <tr>
