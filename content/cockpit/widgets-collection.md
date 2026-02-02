@@ -239,7 +239,7 @@ A simple example looks like this:
 Existing widgets based on AngularJS will automatically fall back to legacy mode, which maintains backward compatibility and allows these widgets to continue functioning. This fallback displays JavaScript code that enables legacy widget execution. However, it is strongly recommended to migrate these widgets to the new Lit-based framework as soon as possible, since AngularJS support is deprecated.
 {{< /c8y-admon-important >}}
 
-#### To migrate a legacy widget {#to-migrate-a-legacy-widget}
+#### To migrate a legacy widget {#html-to-migrate-a-legacy-widget}
 
 Migrating a legacy widget to the new format requires familiarity with JavaScript and HTML. The migration process involves replacing all AngularJS-specific code.
 
@@ -263,7 +263,7 @@ The following example shows legacy widget code:
 
 Migrated to the template syntax, this is:
 ```js
-${ this.c8yContext.name === 'Alpine Hiker #1' ? html`<p>Hello ${this.c8yContext.device}</p>` : '' }
+${ this.c8yContext.name === 'Alpine Hiker #1' ? html`<p>Hello ${this.c8yContext.name}</p>` : '' }
 ```
 
 **Step 3: View the generated code**
