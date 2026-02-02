@@ -11,8 +11,8 @@ weight: 20
 
 Agents are the basic building block of any agentic workflow. The AI Agent Manager simplifies the creation of agents by providing a UI that lets you quickly define an agent with a system prompt that then, on its own, calls tools. This quick starts agentic workflows in a couple of minutes, not hours. 
 
-## Custom agents
-To create a custom agent, navigate to **Administration** > **AI Agent Manager** and click **Add agent**. Select an agent name and the type of agent. This introduction only describes text agents. For details about object agents, refer to [Text and object agents](/ai/agents/#text-and-object-agents). When selecting a name, remember that naming conflicts occur with subscribed agents provided from applications or plugins. It is good practice to use a prefix other than `c8y-`, as this is the default prefix used by the platform.
+### Custom agents
+To create a custom agent, navigate to **Administration** > **AI Agent Manager** and click **Add agent**. Select an agent name and the type of agent. This introduction only describes text agents. For details about object agents, refer to [Text and object agents](/ai/agents/#text-and-object-agents). When selecting a name, remember that naming conflicts can occur with subscribed agents provided from applications or plugins. It is good practice to use a prefix other than `c8y-`, as this is the default prefix used by the platform.
 
 Once the custom agent is created, you align it to your needs using the following tabs:
 
@@ -60,7 +60,7 @@ Specify output format preferences. Indicate whether responses are concise bullet
 
 Variables allow you to inject dynamic data into your system prompt or user prompts at runtime. Instead of hardcoding specific values, you define placeholders that get replaced with actual values when the agent is called.
 
-**Defining variables in prompts:**
+#### Defining variables in prompts
 
 Use double curly brackets to define variables: `{{variableName}}`. You place variables anywhere in the system prompt or in API calls.
 
@@ -69,7 +69,7 @@ Example system prompt with variables:
 You are a monitoring assistant for factory {{factoryId}}. When users ask about equipment, focus on devices in the {{location}} area. Current shift manager is {{shiftManager}}.
 ```
 
-**Providing variable values:**
+#### Providing variable values
 
 When testing in the AI Agent Manager, use the **Test variables** tab to set values for your variables before testing the agent.
 
@@ -85,7 +85,7 @@ When calling the agent via REST API, provide variables in the request body:
 }
 ```
 
-**Use cases for variables:**
+#### Use cases for variables
 
 - Personalizing responses with user-specific information (names, roles, preferences).
 - Contextualizing agents for different locations, facilities, or departments.
@@ -98,19 +98,17 @@ Variables make agents flexible and reusable without requiring multiple agent con
 
 The advanced settings allow you to fine-tune the agent's behavior using parameters from the Vercel AI SDK. These settings control aspects like response randomness, length limits, and provider-specific features.
 
-**Common settings:**
+#### Common settings
 
-**temperature** (0.0 to 1.0): Controls response randomness. Lower values (0.1-0.3) produce more focused and deterministic responses. Higher values (0.7-1.0) increase creativity and variation. Default is typically 0.7.
+| Parameter | Range | Description |
+|-----------|-------|-------------|
+| temperature | 0.0 to 1.0 | Controls response randomness. Lower values (0.1-0.3) produce more focused and deterministic responses. Higher values (0.7-1.0) increase creativity and variation. Default is typically 0.7. |
+| maxTokens | Number | Sets the maximum length of the response in tokens. Use this to enforce concise responses or prevent excessively long outputs. |
+| topP | 0.0 to 1.0 | Nucleus sampling parameter. Controls diversity by limiting token selection to a cumulative probability. Lower values make responses more focused. |
+| frequencyPenalty | -2.0 to 2.0 | Reduces repetition of tokens based on their frequency in the response. Positive values discourage repetition. |
+| presencePenalty | -2.0 to 2.0 | Encourages the model to introduce new topics. Positive values make the agent less likely to repeat topics already mentioned. |
 
-**maxTokens**: Sets the maximum length of the response in tokens. Use this to enforce concise responses or prevent excessively long outputs.
-
-**topP** (0.0 to 1.0): Nucleus sampling parameter. Controls diversity by limiting token selection to a cumulative probability. Lower values make responses more focused.
-
-**frequencyPenalty** (-2.0 to 2.0): Reduces repetition of tokens based on their frequency in the response. Positive values discourage repetition.
-
-**presencePenalty** (-2.0 to 2.0): Encourages the model to introduce new topics. Positive values make the agent less likely to repeat topics already mentioned.
-
-**Provider-specific options:**
+#### Provider-specific options
 
 Some AI providers support additional features configured through the `providerOptions` field. For example, Anthropic's extended thinking mode:
 
@@ -127,7 +125,7 @@ Some AI providers support additional features configured through the `providerOp
 
 For a complete list of available parameters and provider-specific options, refer to the [Vercel AI SDK documentation](https://sdk.vercel.ai/docs/ai-sdk-core/generating-text).
 
-**When to use advanced settings:**
+#### When to use advanced settings
 
 - Adjust temperature when responses are too random or too rigid.
 - Set maxTokens to control costs or enforce response brevity.

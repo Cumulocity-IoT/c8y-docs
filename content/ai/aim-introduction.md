@@ -27,7 +27,7 @@ helpcontent:
 The feature is currently in public preview and might change or is not feature complete. While we try to keep changes as low as possible, breaking changes and feature removals happen. To enable the feature, open the right drawer (by clicking on your username initials) in the **Administration** application and select **Manage preview features**. Then activate the toggle next to **AI Agent Manager**.
 {{< /c8y-admon-preview >}}
 
-Welcome to the {{< product-c8y-iot >}} AI Agent Manager (AIM) documentation.
+Welcome to the {{< product-c8y-iot >}} AI Agent Manager documentation.
 
 The AI Agent Manager enables you to create and manage AI agents—intelligent assistants that help users interact with your IoT data and systems through natural language conversations. Instead of building custom AI integrations from scratch, you configure pre-built agents that understand your specific use cases and have access to the tools required to be helpful.
 
@@ -55,9 +55,9 @@ Once configured, users interact with agents through natural language without nee
 
 ### Getting started by configuring a global provider
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-important >}}
 Without a global LLM provider configured, the {{< product-c8y-iot >}} platform is never connected to any external Large Language Model provider, even if the list already shows subscribed agents!
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-important >}}
 
 Start by configuring a global provider and model. A global provider is the LLM provider and model that is used by default on each agent interaction as long as the agent does not define another provider or model in its local provider configuration. Use the AI Agent Manager UI in the **Administration** application:
 

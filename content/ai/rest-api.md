@@ -11,9 +11,6 @@ weight: 60
 
 The AI Agent Manager provides a REST API for programmatic management of agents, providers, and conversations. This allows you to integrate AI agents into your own applications and workflows.
 
-
-The AI Agent Manager REST API allows you to programmatically manage agents, configure providers, and interact with agents from your own applications, plugins, or microservices.
-
 ### API overview {#api-overview}
 
 The API is exposed by the AI Agent Manager microservice at:
@@ -22,16 +19,16 @@ The API is exposed by the AI Agent Manager microservice at:
 /service/ai/
 ```
 
-All API endpoints require authentication with valid {{< product-c8y-iot >}} credentials. The API supports standard CRUD operations for agents, tools, and providers that mostly require the `ROLE_AI_AGENT_ADMIN` role. You best explore the full CRUD API via the OpenAPI documentation. You access this documentation in multiple ways:
+All API endpoints require authentication with valid {{< product-c8y-iot >}} credentials. The API supports standard CRUD operations for agents, tools, and providers that mostly require the `ROLE_AI_AGENT_ADMIN` permission. You best explore the full CRUD API via the OpenAPI documentation. You access this documentation in multiple ways:
 
 - Download the OpenAPI JSON by accessing /service/ai/api-json. This file then loads into a tool like Postman or similar.
 - Install the **AI Agent Manager OpenAPI** plugin from AI-Plugins in your **Administration** > **Ecosystem** > **Extensions** view into a cloned application. This lists all endpoints.
 
-The following documentation only shows how you integrate already created agents into any UI or a third-party server. All endpoints are in the OpenAPI documentation.
+The following documentation only covers how to integrate agents that are already created into any UI or third-party server. All endpoints are explained in the OpenAPI documentation.
 
 ### Interacting with agents {#interacting-with-agents}
 
-To talk to an agent you require only the `ROLE_AI_AGENT_READ` role. The idea is, that any end-user can talk to an agent, but not all users can create, update or delete such agents. The following examples show how to use the API to talk to a already defined agent:
+To talk to an agent, you only require the `ROLE_AI_AGENT_READ` permission. The idea is that any end-user can talk to an agent, but not all users can create, update, or delete such agents. The following examples show how to use the API to talk to an already defined agent:
 
 
 **Simple prompt:**
@@ -108,4 +105,3 @@ By switching the content type to a streaming type, you get a streaming response 
 - A data SSE stream that also includes tool calls and status information is returned if the `?fullResponse=true` parameter is set.
 
 Add the `text/event-stream` or `application/x-ndjson` accept header to force streaming. A `fullResponse` return is determined by two line breaks and the keyword `data:`.
- ```

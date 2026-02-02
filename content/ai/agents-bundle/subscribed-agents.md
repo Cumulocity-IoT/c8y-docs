@@ -39,7 +39,6 @@ You test subscribed agents the same way as custom agents:
 1. Open the subscribed agent in the AI Agent Manager.
 2. Navigate to the **Test** tab.
 3. Enter a prompt and observe the agent's response.
-4. Enable debug mode (via the three dots menu) to see tool calls and reasoning.
 
 ### Overruling subscribed agents {#aligning-subscribed-agents}
 

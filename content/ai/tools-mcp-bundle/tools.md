@@ -46,11 +46,11 @@ These tools are available automatically and require no additional configuration.
 
 ### Assigning tools to agents {#assigning-tools}
 
-To enable an agent to use MCP tools:
+To enable an agent to use tools:
 
 1. Open the agent configuration.
 2. Navigate to the **Tools** tab.
-3. Browse available tools from configured MCP servers.
+3. Browse available tools.
 4. Select the tools the agent needs.
 5. Click **Save**.
 
@@ -64,9 +64,5 @@ Object agents cannot use custom tools. They use tools internally to structure th
 ### Best practices {#best-practices}
 
 **Tool selection**: Assign only the tools an agent actually needs. Too many tools confuse the agent and increase processing time.
-
-**Tool naming**: Use clear, descriptive names for custom MCP tools. The agent uses tool names and descriptions to decide when to call them.
-
-**Parameter validation**: Ensure MCP tools validate parameters and handle errors gracefully. Return clear error messages that help the agent understand what went wrong.
 
 **Performance**: Tools that take a long time to execute slow down agent responses. Optimize tool performance or use caching where appropriate.
