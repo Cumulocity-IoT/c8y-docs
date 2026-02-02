@@ -49,7 +49,6 @@ Not all widgets currently support the global time context. Support is being prog
 - **Auto-refresh** - The widget refreshes when auto-refresh is enabled
 - **Aggregation** - The widget groups data according to the selected aggregation level
 
-
 ### Live mode and history mode {#live-and-history-mode}
 
 The global time context operates in two modes:
@@ -66,8 +65,6 @@ The global time context operates in two modes:
 
 The time range determines which data is displayed in the widgets.
 
-![Time range presets](/images/users-guide/cockpit/cockpit-global-time-context-time-range-options.png)
-
 Available preset options:
 
 | Option      | Description                      |
@@ -81,15 +78,11 @@ Available preset options:
 
 In history mode, you can also select a custom time range where you can specify exact start and end dates.
 
-![Time range history mode](/images/users-guide/cockpit/cockpit-global-time-context-time-range-options-history.png)
-
 ### To enable or disable auto-refresh {#to-enable-disable-auto-refresh}
 
 Auto-refresh periodically reloads data in all widgets. When enabled, most widgets refresh every 5 seconds, while some (such as the "Data point graph" widget) update via realtime connections.
 
 Click the **Auto-refresh** toggle in the toolbar to enable or disable automatic data refresh.
-
-![Auto-refresh toggle](/images/users-guide/cockpit/cockpit-global-time-context-auto-refresh.png)
 
 {{< c8y-admon-info >}}
 In some widgets (such as the "Alarm list" widget), scrolling down unlinks the widget from the global time context. To relink it, scroll back up or click the link button in the widget header.
@@ -98,8 +91,6 @@ In some widgets (such as the "Alarm list" widget), scrolling down unlinks the wi
 ### To change data aggregation {#to-change-data-aggregation}
 
 Aggregation groups multiple data points into summarized values. This improves performance and readability for large time ranges.
-
-![Aggregation options](/images/users-guide/cockpit/cockpit-global-time-context-aggregation.png)
 
 In the **Aggregation** section of the toolbar, select one of the available options:
 
@@ -122,15 +113,14 @@ Widgets can be linked or unlinked from the global time context. When linked, a w
 
 Look for the link icon in the widget header. Click the icon to toggle between states.
 
-**Linked** - The widget is synchronized with the global time context.
-
 ![Linked widget](/images/users-guide/cockpit/cockpit-global-time-context-widget-linked.png)
+**Linked** - The widget is synchronized with the global time context.
 
 **Unlinked** - The widget has independent time controls.
 
-![Unlinked widget](/images/users-guide/cockpit/cockpit-global-time-context-widget-unlinked.png)
-
+{{< c8y-admon-info >}}
 Unlinking widgets is useful for comparing different time periods side-by-side.
+{{< /c8y-admon-info >}}
 
 #### Using the widget configuration {#using-the-widget-configuration}
 
@@ -139,8 +129,6 @@ You can also configure the time context in the widget settings. By default, new 
 In the widget configuration, expand the **Time context** section. Select one of the following options:
 
 **Dashboard** - The widget uses the global time context.
-
-![Time context configuration - Dashboard](/images/users-guide/cockpit/cockpit-global-time-context-widget-config-dashboard.png)
 
 **Widget** - The widget uses its own time settings.
 When **Widget** is selected, additional options appear allowing you to configure the widget's own time range, mode, and auto-refresh settings.
