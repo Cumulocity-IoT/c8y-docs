@@ -4,12 +4,11 @@ layout: bundle
 sector:
   - platform_administration
 weight: 10
-
 ---
 
-In early 2025, {{< product-c8y-iot >}} embarked on a massive transformation, with the company transitioning away from Software AG into its own standalone entity. As part of this transformation, we re-evaluated the way we do business. Contract templates, terms and conditions, and pricing models were all adjusted to better fit the requirements of our customer base. 
+In early 2025, {{< company-c8y >}} embarked on a massive transformation, with the company transitioning away from Software AG into its own standalone entity. As part of this transformation, we re-evaluated the way we do business. Contract templates, terms and conditions, and pricing models were all adjusted to better fit the requirements of our customer base. 
 
-The new contracting and pricing model is referred to as **Commit-to-Consume** (CTC). In the CTC model, customers do not have an explicit bill of materials for all their purchased {{< product-c8y-iot >}} components. Instead, customers commit to a certain spend amount, and their actual consumption of {{< product-c8y-iot >}} components draws down this commitment over the duration of the contract. The CTC model gives customers more flexibility and less rigidity with {{< product-c8y-iot >}}'s offerings, allowing them to optimize consumption, try new features, and understand usage much better than before. The CTC style of contracting has been popularized by AWS and Azure, so many of {{< product-c8y-iot >}}’s customers are already familiar with the concept. 
+The new contracting and pricing model is referred to as **Commit-to-Consume** (CTC). In the CTC model, customers do not have an explicit bill of materials for all their purchased {{< company-c8y >}} components. Instead, customers commit to a certain spend amount, and their actual consumption of {{< company-c8y >}} components draws down this commitment over the duration of the contract. The CTC model gives customers more flexibility and less rigidity with {{< company-c8y >}}'s offerings, allowing them to optimize consumption, try new features, and understand usage much better than before. The CTC style of contracting has been popularized by AWS and Azure, so many of {{< company-c8y >}}’s customers are already familiar with the concept. 
 
 Given that the spend amount is drawn-down by usage each month, it is important for customers to have transparency with their usage and consumption details. The Console application is a new application within {{< product-c8y-iot >}} where customers on the CTC model can view their usage and consumption. 
 
@@ -29,10 +28,10 @@ This glossary provides definitions for key terms and concepts used throughout th
 A part of the new pricing model comprising any additional features, functionality, or components used within {{< product-c8y-iot >}}. Includes components such as {{< product-c8y-iot >}} DataHub, additional tenants, custom domains, and more. A complete list of Add-Ons is found in the Product Catalog addendum of the contract.
 
 #### Commit-to-Consume (CTC)
-The new contract type enacted by {{< product-c8y-iot >}} in 2025 where customers commit to a spend amount (Commitment) and monthly usage draws down against this spend amount. If the spend amount runs out before the contract expiry date, the customer enters overage scenarios.
+The new contract type enacted by {{< company-c8y >}} in 2025 where customers commit to a spend amount (Commitment) and monthly usage draws down against this spend amount. If the spend amount runs out before the contract expiry date, the customer enters overage scenarios.
 
 #### Commitment
-The total pre-tax spend credit for {{< product-c8y-iot >}} products and services that the customer has contractually agreed to pay. This balance is drawn down each month based on the customer's consumption.
+The total pre-tax spend credit for {{< company-c8y >}} products and services that the customer has contractually agreed to pay. This balance is drawn down each month based on the customer's consumption.
 
 #### Console application
 A {{< product-c8y-iot >}}-built solution that sits within the product and acts as a **one stop shop** solution for customers interacting with their subscription and usage data. The Console application provides transparency with usage and billing to customers on a CTC contract.
@@ -50,10 +49,10 @@ An individual instance of {{< product-c8y-iot >}}. Customers can have multiple e
 The status a customer enters when their commitment has been fully depleted before their contract term has ended. The exact specifics of the Overage scenario is determined by the clauses listed in the respective contracts, and is different from customer to customer. 
 
 #### Product catalog
-The customer-specific price list appended to a CTC contract that defines the pre-tax rates for all available {{< product-c8y-iot >}} products and services.
+The customer-specific price list appended to a CTC contract that defines the pre-tax rates for all available {{< company-c8y >}} products and services.
 
 #### Stratos
-The {{< product-c8y-iot >}} internal project name for the Console application and any associated backend services.
+The {{< company-c8y >}} internal project name for the Console application and any associated backend services.
 
 #### Usage
 Statistics and other data points on the usage of {{< product-c8y-iot >}}. Usage is collected per-tenant on a monthly basis, and is available within the Console application for analysis. Usage data is also available via the Usage Statistics APIs. 

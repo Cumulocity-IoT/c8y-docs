@@ -5,3 +5,49 @@ layout: redirect
 sector:
   - platform_administration
 ---
+
+The **Consumption** page is where you go to understand the monthly drawdowns and commitment remaining. The Summary tab gives you an overview based on your contract.
+
+<img src="/images/console-app/account/consumption/summary.png" alt="Consumption Summary">
+
+After each month is completed, the usage will be rated and processed in accordance with your contract.
+
+The widget at the top of the page contains the following information.
+* **Account Name**
+* **Start/End Dates**
+* **Total Commitment** - the total spend amount as agreed in the CTC contract
+* **Remaining Commitment** - the total usage charges subtracted from the total spend amount - what’s left of the commitment for the duration of the contract
+* **Cumulative Spend** - the total usage charges across the active months of the contract
+* **Percentage Consumed** - the cumulative spend as a percentage of the total commitment
+* **Total Overage** - depending on the contract, if there is any overage charges, they would be indicated here
+
+The **Monthly Spend Analysis** widget showcases a month-over-month comparison of the total usage charges for each active month of the contract. This enables you to quickly compare and see which months were more or less expensive.
+
+Further down on the page, the **Product Usage Analysis** allows you to dive into each pricing component to understand how its usage impacts the drawdown.
+
+<img src="/images/console-app/account/consumption/usage-analysis-messages.png" alt="Usage Analysis - Messages">
+
+To quickly assess the cost of each pricing component, you can use the dropdown menu in the top right to easily swap between pricing metrics.
+
+The **Details & History** tab gives you a breakdown of the monthly consumption for each billable product.
+
+<img src="/images/console-app/account/consumption/details-and-history.png" alt="Details & Histroy">
+
+The **Consumption Details** table contains a row for each billable month for the duration of the contract. You can expand and collapse each row using the carrot icon to the left of the bill date. 
+Note that the *Bill Date* corresponds to the date which the drawdown occurs. The *Usage Month* is the month in which the usage occurred. For example, the *Usage Month* of January 1, 2025 through January 31, 2025, would have a corresponding *Bill Date* of February 1, 2025. For billing purposes, UTC time is used.
+
+Each bill contains the following information.
+
+* **Base Product** - can be opened to view line item details. Includes the standard set of {{< company-c8y >}} pricing metrics: Deployments, Messages, and Operational Data Store. Usage is calculated into billable units, which are written in the [{{< company-c8y >}} License Metrics](/service-terms/license-metrics/). Unit prices are taken from the Product Catalog of the CTC contract.
+* **Add-Ons** - can be opened to view line item details. Includes any and all Add-Ons that were activated and had usage during the usage month. Usage is calculated into billable units, which are written in the [{{< company-c8y >}} License Metrics](/service-terms/license-metrics/). Unit prices are taken from the Product Catalog of the CTC contract.
+* **Total Usage Charges** - the sum of all usage charges (Base Product plus Add-Ons).
+* **Drawdown (Balance Consumed)** - how much the Commitment was drawn based on the usage charges. Will usually equal the Total Usage Charges unless there is an overage scenario, in which case the values will be different *(the remaining Commitment is less than the Total Usage Charges for that month)*. 
+* **Overage** - if an overage scenario happens, this will show the outstanding balance that needs to be paid. 
+* **Total Bill Amount** - the total additional bill amount. Should only be greater than zero when the Commitment balance runs out *(an overage scenario)*.
+
+Each bill can be one of the following states.
+* **NEW** - usage month has passed and an empty consumption bill has been created, but not yet filled in with usage details.
+* **PENDING** - usage details and consumption drawdown have been added to the bill. Bills in this status can still be modified if needed. 
+* **APPROVED** - the finalized bill has been created and no longer can be modified or deleted, as it has been passed to the {{< company-c8y >}} finance department for reconciliation. 
+
+
