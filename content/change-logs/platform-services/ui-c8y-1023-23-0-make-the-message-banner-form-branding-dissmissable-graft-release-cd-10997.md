@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Make the message banner form branding dismissable
+title: Message banner can now be dismissed temporarily or permanently
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
