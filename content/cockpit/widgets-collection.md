@@ -400,7 +400,7 @@ In advanced mode, you add elements like event handlers. This allows you to migra
 //[…]
 ```
 
-This example shows how to handle click events and update component state.
+This example shows how to handle click events and update the component state.
 
 **Step 6: Verify the migration**
 
