@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix pre-selection of nested properties in asset property selector
+title: Nested properties displayed as pre-selected in the asset property selector
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
