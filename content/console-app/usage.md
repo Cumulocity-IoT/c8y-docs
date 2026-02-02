@@ -7,4 +7,4 @@ weight: 50
 
 ---
 
-The Usage section of the Console Application contains detailed usage statistics information for each of the tenants associated with your Account. Data is available on a monthly basis, only for the months that have been completed.
+The **Usage** section of the Console application contains detailed usage statistics information for each of the tenants associated with your Account. Data is available on a monthly basis, only for the months that have been completed.
