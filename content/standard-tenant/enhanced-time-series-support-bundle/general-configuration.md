@@ -44,7 +44,7 @@ Tenant options are not inheritable from the parent tenant, that is, enabling the
 
 The configuration affects the collection that stores measurement data.
 By enabling or disabling the property, the system switches collections in the background.
-This might lead to a situation where data resides in multiple collections.  
+This can lead to a situation where data resides in multiple collections.  
 The Time series migration microservice ensures data consistency and prevents scenarios where data is distributed across multiple collections.
 As a best practice, the property should be configured only at the beginning of a tenant setup, ideally when no measurement data is stored yet.
 
