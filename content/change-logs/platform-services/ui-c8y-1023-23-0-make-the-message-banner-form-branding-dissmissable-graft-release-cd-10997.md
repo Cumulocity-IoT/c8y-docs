@@ -14,4 +14,10 @@ build_artifact:
 ticket: MTM-65885
 version: 1023.23.0
 ---
-The message banner displayed in the application can now be dismissed by users in two different ways. Previously, the message banner reappeared after every application refresh, which could be disruptive to the user experience. Now you can dismiss it temporarily using the **Close** button, which will hide the banner until the next refresh. To permanently dismiss the banner, click **Acknowledge and close**. This stores the dismissal in the browser's local storage, so the banner does not reappear unless the browser cache is cleared, the user switches to a different browser, or a new message banner is configured in your branding settings. This change gives users more control over their experience while allowing administrators to ensure important messages are still communicated effectively through the branding configuration.
+Users can now permanently dismiss custom messages configured under Branding > Message Banner. Previously, these messages would reappear every time the page was refreshed, which could disrupt the user experience.
+
+We have introduced two ways for users to clear these messages from the top of their screen:
+- Close: Temporarily hides the message. It will reappear the next time the page is refreshed.
+- Acknowledge and close: Confirms the user has read the message. The application will remember this preference for the specific browser being used and will not show the message again.
+
+Note: The message will reappear if the administrator updates the banner configuration with a new text or if the user clears their browser cache.
