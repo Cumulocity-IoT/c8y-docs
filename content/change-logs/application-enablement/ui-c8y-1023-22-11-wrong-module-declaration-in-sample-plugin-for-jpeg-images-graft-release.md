@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed incorrect module declaration in sample plugin for JPEG image handling
+title: Fixed incorrect module declaration for JPEG image handling in sample plugin 
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
