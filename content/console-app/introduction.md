@@ -21,5 +21,36 @@ The Console application is in Private Preview, that is, it is not enabled by def
 ### Glossary
 This glossary provides definitions for key terms and concepts used throughout this documentation.
 
+#### Add-Ons
+A part of the new pricing model comprising any additional features, functionality, or components used within {{< product-c8y-iot >}}. Includes components such as {{< product-c8y-iot >}} DataHub, additional tenants, custom domains, and more. A complete list of Add-Ons is found in the Product Catalog addendum of the contract.
 
+#### Commit-to-Consume (CTC)
+The new contract type enacted by {{< product-c8y-iot >}} in 2025 where customers commit to a spend amount (Commitment) and monthly usage draws down against this spend amount. If the spend amount runs out before the contract expiry date, the customer enters overage scenarios.
+
+#### Commitment
+The total pre-tax spend credit for {{< product-c8y-iot >}} products and services that the customer has contractually agreed to pay. This balance is drawn down each month based on the customer's consumption.
+
+#### Console application
+A {{< product-c8y-iot >}}-built solution that sits within the product and acts as a **one stop shop** solution for customers interacting with their subscription and usage data. The Console application provides transparency with usage and billing to customers on a CTC contract.
+
+#### Consumption
+The details relating to the Drawdown amounts and how much of the Commitment remains after each month. The monthly Consumption report available in the Console application gives a breakdown of all components used, their associated prices and quantities, and statistics on the remaining balance. 
+
+#### Drawdown
+The process of calculating a customer’s monthly consumption of services (at pre-tax rates) and deducting that from their remaining Commitment balance. 
+
+#### Environment
+An individual instance of {{< product-c8y-iot >}}. Customers can have multiple environments for their account, including both Dedicated (Private) SaaS environments and Public SaaS environments. For drawdown purposes, usage is aggregated across all environments.
+
+#### Overage
+The status a customer enters when their commitment has been fully depleted before their contract term has ended. The exact specifics of the Overage scenario is determined by the clauses listed in the respective contracts, and is different from customer to customer. 
+
+#### Product catalog
+The customer-specific price list appended to a CTC contract that defines the pre-tax rates for all available {{< product-c8y-iot >}} products and services.
+
+#### Stratos
+The {{< product-c8y-iot >}} internal project name for the Console application and any associated backend services.
+
+#### Usage
+Statistics and other data points on the usage of {{< product-c8y-iot >}}. Usage is collected per-tenant on a monthly basis, and is available within the Console application for analysis. Usage data is also available via the Usage Statistics APIs. 
 
