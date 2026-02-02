@@ -8,7 +8,7 @@ sector:
 
 The **Consumption** page is where you go to understand the monthly drawdowns and commitment remaining. The Summary tab gives you an overview based on your contract.
 
-<img src="/images/console-app/account/consumption/summary.png" alt="Consumption Summary">
+<img src="/images/console/account/consumption/summary.png" alt="Consumption Summary">
 
 After each month is completed, the usage will be rated and processed in accordance with your contract.
 
@@ -25,13 +25,13 @@ The **Monthly Spend Analysis** widget showcases a month-over-month comparison of
 
 Further down on the page, the **Product Usage Analysis** allows you to dive into each pricing component to understand how its usage impacts the drawdown.
 
-<img src="/images/console-app/account/consumption/usage-analysis-messages.png" alt="Usage Analysis - Messages">
+<img src="/images/console/account/consumption/usage-analysis-messages.png" alt="Usage Analysis - Messages">
 
 To quickly assess the cost of each pricing component, you can use the dropdown menu in the top right to easily swap between pricing metrics.
 
 The **Details & History** tab gives you a breakdown of the monthly consumption for each billable product.
 
-<img src="/images/console-app/account/consumption/details-and-history.png" alt="Details & Histroy">
+<img src="/images/console/account/consumption/details-and-history.png" alt="Details & Histroy">
 
 The **Consumption Details** table contains a row for each billable month for the duration of the contract. You can expand and collapse each row using the carrot icon to the left of the bill date. 
 Note that the *Bill Date* corresponds to the date which the drawdown occurs. The *Usage Month* is the month in which the usage occurred. For example, the *Usage Month* of January 1, 2025 through January 31, 2025, would have a corresponding *Bill Date* of February 1, 2025. For billing purposes, UTC time is used.

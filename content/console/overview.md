@@ -8,7 +8,7 @@ weight: 20
 
 The Overview page of the Console application serves as the homepage, and contains a variety of information.
 
-<img src="/images/console-app/overview.png" alt="Overview">
+<img src="/images/console/overview.png" alt="Overview">
 
 The Overview page currently contains the following widgets:
 

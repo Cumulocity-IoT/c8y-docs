@@ -8,7 +8,7 @@ weight: 30
 
 The Environments page gives you a high-level summary of each of the environments associated with your account.
 
-<img src="/images/console-app/environments.png" alt="Environments">
+<img src="/images/console/environments.png" alt="Environments">
 
 In the above example, the customer has four environments under their account. Each environment can be viewed by clicking the respective tab at the top of the page, where a variety of details are shown, including the domain, tenant ID, and provisioning date. 
 
