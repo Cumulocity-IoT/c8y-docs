@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Message banner can now be dismissed temporarily or permanently
+title: Custom message banners in Branding can now be acknowledged and dismissed
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
