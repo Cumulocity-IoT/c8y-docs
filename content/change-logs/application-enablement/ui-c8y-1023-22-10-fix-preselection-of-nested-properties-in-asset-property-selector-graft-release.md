@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65890
 version: 1023.22.10
 ---
-The asset property selector allows you to pre-select properties that should be highlighted when the selector opens. Previously, nested properties (properties that are children of complex properties) were not being pre-selected correctly, even when they were included in the pre-selection list. This has been fixed, and nested properties now display as pre-selected in the asset property selector, making it easier to work with hierarchical property structures.
+The asset property selector allows you to pre-select properties that will be highlighted when the selector opens. Previously, nested properties (properties that are children of complex properties) were not pre-selected correctly, even when they were included in the pre-selection list. This issue has been fixed, and nested properties now display as pre-selected in the asset property selector, making it easier to work with hierarchical property structures.
