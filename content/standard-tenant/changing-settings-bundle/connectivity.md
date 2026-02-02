@@ -20,7 +20,7 @@ To set or remove connectivity provider configurations: ADMIN permission for the 
 
 The following provider settings may currently be specified:
 
-- [Actility LoRa](/device-integration/lpwan/#lora-actility)
+- [Actility LoRa](/device-integration/lpwan/#actility-lora)
 - [Sigfox](/device-integration/lpwan/#sigfox)
 - [SIM](/device-management-application/connectivity)
 
