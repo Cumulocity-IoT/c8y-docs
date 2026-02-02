@@ -14,5 +14,4 @@ build_artifact:
 ticket: "CTM-2627"
 version: "1024.0.0"
 ---
-In the Assets page, resolved an issue that occasionally caused the
-assets table to appear empty, despite assets being present.
+Previously, the assets grid in Assets page would occasionally appear empty even when assets were available; this is now resolved
