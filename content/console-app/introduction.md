@@ -18,7 +18,7 @@ The Console application is in Private Preview, that is, it is not enabled by def
 {{< /c8y-admon-preview >}}
 
 
-### Glossary {#console-app-glossary}
+### Glossary
 This glossary provides definitions for key terms and concepts used throughout this documentation.
 
 #### Add-Ons
