@@ -21,7 +21,7 @@ The existing {{< product-c8y-iot >}} [Core MQTT](/device-integration/mqtt/) capa
 {{< /c8y-admon-caution >}}
 
 The {{< product-c8y-iot >}} MQTT Service is expected to transition to Generally Available (GA) status by the end of March 2026.
-When the service reaches GA status, features that have been deprecated during the Private Preview period will be removed.
+When the service reaches GA status, features that have been deprecated during the Public Preview period will be removed.
 These changes were all previously announced; this notice is a reminder to help ensure that devices and applications are ready for the transition to GA status.
 
 {{< c8y-admon-important >}}
@@ -48,7 +48,7 @@ The following features will not be available after the GA date:
    Devices must connect to these environments using TLS on TCP port 9883.
    Both one-way (server certificates only) and two-way (client and server certificates) TLS are supported.
    The unencrypted port may be enabled on dedicated environments if required by legacy devices that do not support TLS.
-   This restriction is [documented](/device-integration/mqtt-service/#connecting-devices), although some public environments do currently have the non-TLS port enabled to ease device onboarding during the Private Preview.
+   This restriction is [documented](/device-integration/mqtt-service/#connecting-devices), although some public environments do currently have the non-TLS port enabled to ease device onboarding during the Public Preview.
 
 In addition, as previously announced, the MQTT Service is already enforcing [Common Name validation](/change-logs/#mqtt-service-0.9.x-cn-validation-announcement) on device certificates.
 Devices connecting using an X.509 client certificate where the Common Name does not match the MQTT client identifier will be rejected.
