@@ -408,7 +408,7 @@ After migration, test the widget to ensure:
 
 * All data displays correctly.
 * Interactive elements work as expected.
-* The widget responds to device or asset selection.
+* The widget responds to the device or asset selection.
 
 By leveraging the [Lit web components](https://lit.dev/docs/v3/) framework, you migrate nearly every custom AngularJS or JavaScript implementation in a legacy widget. To request additional data, import the `fetch` library to directly request data from the platform.
 
