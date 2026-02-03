@@ -79,7 +79,7 @@ async function processFile(
       continue;
     }
 
-    if (lt(version, envDetail.component_version)) {
+    if (lt(envDetail.component_version, data.version)) {
       console.debug(`Component "${component}" version "${version}" not yet available in environment "${envDetail.environmentLabel}" (requires "${envDetail.component_version}"). Not adding to "environment_availability"..`);
       continue;
     }
@@ -87,7 +87,7 @@ async function processFile(
     unchangedEnvironments = false;
     environmentAvailability.push({
       label: envDetail.environmentLabel,
-      date: envDetail.component_update_date,
+      // date: envDetail.component_update_date,
     });
   }
 
