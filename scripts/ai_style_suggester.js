@@ -74,7 +74,7 @@ async function run() {
     }
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
-    const styleGuidePath = path.join(__dirname, "documentation-guidelines.md");
+    const styleGuidePath = path.join(__dirname, "..", ".github", "copilot-instructions.md");
     const STYLE_GUIDE_TEXT = fs.readFileSync(styleGuidePath, "utf8");
 
     const { data: files } = await octokit.rest.pulls.listFiles({ owner, repo, pull_number});
