@@ -85,7 +85,6 @@ let standardOptions: ConfigurationOptions = {
   }
 };
 
-standardOptions.buildTime.brandingEntry = `./branding/branding-${flavor}.less`;
 switch (flavor) {
   case 'customerA':
     standardOptions.runTime.hideNavigator = true;
@@ -99,9 +98,37 @@ switch (flavor) {
 export default standardOptions;
 ```
 
+For flavor-specific branding, specify different branding files in your *angular.json*:
+
+```json
+{
+  "projects": {
+    "your-app": {
+      "architect": {
+        "build": {
+          "configurations": {
+            "customerA": {
+              "styles": [
+                "src/branding/branding-customerA.less"
+              ]
+            },
+            "customerB": {
+              "styles": [
+                "src/branding/branding-customerB.less"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
 You can then build the different flavors using:
+
 ```sh
-C8Y_APP_FLAVOR=customerA ng build
+ng build --configuration=customerA
 ```
 
 It is good practice to use the URL option in order to verify an option behavior, or to use the dynamic option

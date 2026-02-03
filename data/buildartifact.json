@@ -1,56 +1,16 @@
 {
   "options": [
     {
-      "id": "tc-pjJiURv9Y",
-      "option": "ui-c8y"
-    },
-    {
-      "id": "tc-QHwMfWtBk7",
-      "option": "cumulocity"
-    },
-    {
-      "id": "tc-2QVkzf0Er",
-      "option": "pulsar"
-    },
-    {
-      "id": "tc-KXXmo2SUR",
-      "option": "apama-in-c8y"
-    },
-    {
-      "id": "tc-wYIY0MBDO",
-      "option": "dtm"
-    },
-    {
-      "id": "tc-0q3fjCuS6",
-      "option": "ontoplb"
-    },
-    {
-      "id": "tc-H-tuq-8Es",
-      "option": "datahub"
-    },
-    {
-      "id": "tc-MLn0oFRX-",
-      "option": "opcua"
-    },
-    {
-      "id": "tc-ggH2M4hf3",
-      "option": "lwm2m-agent"
-    },
-    {
-      "id": "tc-veSW5rwrq",
-      "option": "device-simulator"
-    },
-    {
-      "id": "tc-ycWx1InI9",
-      "option": "loriot-agent"
+      "id": "tc--fVxjY7du",
+      "option": "actility-agent"
     },
     {
       "id": "tc-TlhlHnKTa",
       "option": "advanced-software-mgmt"
     },
     {
-      "id": "tc--fVxjY7du",
-      "option": "actility-agent"
+      "id": "tc-KXXmo2SUR",
+      "option": "apama-in-c8y"
     },
     {
       "id": "tc-aHRoC2cxY",
@@ -61,12 +21,68 @@
       "option": "connectivity-agent"
     },
     {
+      "id": "tc-QHwMfWtBk7",
+      "option": "cumulocity"
+    },
+    {
+      "id": "tc-H-tuq-8Es",
+      "option": "datahub"
+    },
+    {
+      "id": "tc-veSW5rwrq",
+      "option": "device-simulator"
+    },
+    {
+      "id": "tc-wfTX6sxsr",
+      "option": "device-parameter"
+    },
+    {
+      "id": "tc-wYIY0MBDO",
+      "option": "dtm"
+    },
+    {
+      "id": "tc-BA34cdwxY",
+      "option": "grid-migration"
+    },
+    {
+      "id": "tc-ggH2M4hf3",
+      "option": "lwm2m-agent"
+    },
+    {
+      "id": "tc-ycWx1InI9",
+      "option": "loriot-agent"
+    },
+    {
+      "id": "tc-0q3fjCuS6",
+      "option": "ontoplb"
+    },
+    {
+      "id": "tc-MLn0oFRX-",
+      "option": "opcua"
+    },
+    {
+      "id": "tc-2QVkzf0Er",
+      "option": "pulsar"
+    },
+    {
+      "id": "tc-CB45dexyZ",
+      "option": "sigfox-agent"
+    },
+    {
+      "id": "tc-DC56efyzA",
+      "option": "sms-gateway"
+    },
+    {
       "id": "tc-G8NchI7b1",
       "option": "timeseries-migration"
     },
     {
+      "id": "tc-pjJiURv9Y",
+      "option": "ui-c8y"
+    },
+    {
       "id": "tc-b8TjK2mPz",
-      "option": "console"
+      "option": "console"      
     }
   ]
 }
