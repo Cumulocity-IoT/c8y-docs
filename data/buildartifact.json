@@ -63,6 +63,10 @@
     {
       "id": "tc-G8NchI7b1",
       "option": "timeseries-migration"
+    },
+    {
+      "id": "tc-b8TjK2mPz",
+      "option": "console"
     }
   ]
 }
