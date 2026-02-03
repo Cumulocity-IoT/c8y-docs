@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06
 title: Consistent behaviour of Enter key
 product_area: Device management & connectivity
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-2622
 version: 10.18.484.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In the Device management application, pressing the "Enter" key now consistently submits forms in dialogs and windows. Prior to this change users had to click the **Submit** button.

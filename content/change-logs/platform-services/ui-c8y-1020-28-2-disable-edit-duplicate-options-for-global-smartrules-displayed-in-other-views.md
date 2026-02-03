@@ -15,12 +15,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-55915
 version: 1020.28.2
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, it was possible to edit global smart rules from any context (device, group or application). With this change editing or duplicating global smart rules is only possible from the **Global smart rule** page.

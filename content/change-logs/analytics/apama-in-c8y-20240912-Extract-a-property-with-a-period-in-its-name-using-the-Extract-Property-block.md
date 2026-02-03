@@ -1,5 +1,5 @@
 ---
-date: '2024-10-17'
+date: 2024-10-17
 title: Extract a property with a period in its name using the Extract Property block
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,13 +13,6 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-4604
 version: 25.262.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The [Extract Property](https://cumulocity.com/docs/streaming-analytics/block-reference/#extract-property) block in Analytics Builder now includes a new optional checkbox called **Ignore Separators In Property Path**. This allows you to extract a property that has a separator such as a period (.) in the property name.
 For example, if the **Ignore Separators In Property Path** checkbox is selected and the **Property Path** parameter is specified as `location.city`, then the property name `location.city` is extracted from the input value.

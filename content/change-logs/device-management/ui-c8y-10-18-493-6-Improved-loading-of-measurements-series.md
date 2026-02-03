@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T10:21:54.182Z
 title: Improved loading of measurements series
 change_type:
   - value: change-VSkj2iV9m
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-2785
 version: 10.18.493.6
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, when loading measurement charts data, there was a performance issue if the measurement series had no units defined, depending on the total number of measurement records. This issue has been addressed and measurements series now load efficiently regardless of units being defined or not.

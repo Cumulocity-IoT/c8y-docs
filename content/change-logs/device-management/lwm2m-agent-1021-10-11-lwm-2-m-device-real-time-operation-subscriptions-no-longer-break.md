@@ -15,13 +15,6 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-4774
 version: 1021.10.11
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 When the core platform was upgraded/restarted, this caused the LWM2M service no longer having an active real-time subscription for operations. It required a LWM2M new registration or the expiration of an operation subscription time-to-live duration to recover from this state. This issue has been resolved. 
 Now, in such cases, the real-time session will be properly resubscribed on the new core node, ensuring continued data flow and improved reliability.

@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T16:03:34.877Z
 title: Improved performance of the Inventory API
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-51973
 version: 10.18.12.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The performance of the Inventory API GET <code>/managedObjects</code> has been improved.

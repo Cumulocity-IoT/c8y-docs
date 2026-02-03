@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62788
 version: 1021.60.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In the alarm details view, the **Last updated** field, which usually shows the time of the last alarm occurrence, was empty. This issue has been fixed. Moreover, the field has been renamed to **Last occurrence**. 

@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-64344
 version: 2025.284.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 When an attachment is deleted, the references to this attachment are now also removed from the parent managed objects. This ensures that no leftover references are pointing to non-existent managed objects.

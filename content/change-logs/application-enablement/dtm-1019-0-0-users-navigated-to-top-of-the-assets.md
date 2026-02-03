@@ -1,5 +1,5 @@
 ---
-date: '2023-12-14'
+date: 2023-12-14
 title: Users navigated to the top of the assets list
 product_area: Application enablement & solutions
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: dtm
 ticket: CTM-937
 version: 1019.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Users are now always taken to the first page of the asset list when navigated to the **Assets** page.

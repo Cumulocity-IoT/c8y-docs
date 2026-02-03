@@ -1,5 +1,5 @@
 ---
-date: '2024-03-14'
+date: 2024-03-14
 title: Fixed error messages on login via TOTP
 product_area: Platform services
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-53287
 version: 10.19.2.21
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Correct error messages are now shown on login via TOTP when the support access has been deactivated.

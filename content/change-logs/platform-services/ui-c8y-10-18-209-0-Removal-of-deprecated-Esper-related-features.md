@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T15:44:47.449Z
 title: Removal of deprecated Esper-related features
 change_type:
   - value: change-inv-3bw8e
@@ -13,13 +13,6 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-49963
 version: 10.18.209.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Esper-CEP-related features have been removed from the UI such as:
 

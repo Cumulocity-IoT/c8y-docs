@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63073
 version: 1021.56.7
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In the **Add Microservice** dialog in the Administration application, the link to the Microservice SLA documentation was incorrect. This issue has been fixed and the link now points to the correct URL.

@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06
 title: Missing sender name and address issue fixed
 product_area: Platform services
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-56027
 version: 10.18.479.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The sender name and address were missing when sending a request to the SMS gateway with the TFA code. This issue has been resolved. The sender name and address are now retrieved from the tenant option configuration.

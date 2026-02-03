@@ -13,12 +13,5 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-4691
 version: 26.27.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The **On geofence create alarm** smart rule was periodically creating duplicate alarms when the geofence configuration was triggered. This issue has now been resolved.

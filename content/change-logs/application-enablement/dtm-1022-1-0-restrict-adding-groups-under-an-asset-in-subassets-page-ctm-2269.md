@@ -13,12 +13,5 @@ build_artifact:
     label: dtm
 ticket: CTM-2269
 version: 1022.1.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 On the **Subassets** page in the Cockpit application, the **Add Group** button was visible in the details of an asset, allowing groups to be added under assets incorrectly. This issue has been resolved. Groups can no longer be added as a child of an asset.

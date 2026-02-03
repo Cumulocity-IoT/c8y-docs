@@ -1,5 +1,5 @@
 ---
-date: '2024-05-16'
+date: 2024-05-16
 title: New EPL actions for creating and parsing the c8y_Position fragment
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,13 +13,6 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAM-34615
 version: 25.129.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The `ManagedObject` event has a unique way of handling `c8y_Position` fragments that have the parseable `float` values added to their `position` property, and all other values added to their `params` property. All other events of the {{< product-c8y-iot >}} transport API simply add the fragment as a whole to their `params` property. This has made it cumbersome to robustly copy `c8y_Position` to a `ManagedObject` from another event and vice versa. To make this easier, two new helper actions have been added to the `ManagedObject` event to populate `ManagedObject` from a `c8y_Position` object, and conversely create the object from the `ManagedObject` event.
 

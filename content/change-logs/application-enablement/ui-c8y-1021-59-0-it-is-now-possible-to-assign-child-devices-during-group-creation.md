@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-39947
 version: 1021.59.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 To simplify the process of creating device groups, it is now possible to assign child devices directly when creating a new group. Previously, child devices had to be assigned separately after the group was created. This change streamlines the workflow and saves time for users who manage large numbers of devices. Existing device groups are not affected by this change.

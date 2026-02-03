@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-57157
 version: 1020.0.9
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The success message displayed after uploading devices in bulk was not properly translated to German. This issue has been resolved and the success message now correctly appears in German for users with that language selected. 

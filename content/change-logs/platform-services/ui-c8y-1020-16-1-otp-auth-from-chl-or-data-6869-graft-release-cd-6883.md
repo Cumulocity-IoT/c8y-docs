@@ -15,12 +15,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60355
 version: 1020.16.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The QR code for the two-factor authentication provided during the TOTP setup was not displayed correctly. This issue has been fixed. The QR code is now properly visible and users can scan it with their authentication application.

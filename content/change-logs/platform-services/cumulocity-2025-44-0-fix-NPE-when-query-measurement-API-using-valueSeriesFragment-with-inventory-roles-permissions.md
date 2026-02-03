@@ -15,13 +15,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-62347
 version: 2025.44.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 When users with inventory roles permission for the API `Measurement` and the fragment `*` were triggering a query to the Measurement API
 using the filter `valueSeriesFragment`, this resulted in a NullPointerException and error code 500.

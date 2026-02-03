@@ -1,5 +1,5 @@
 ---
-date: '2024-03-27'
+date: 2024-03-27
 title: Asset selector search results now consistent with normal search
 product_area: Application enablement & solutions
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-56674
 version: 1019.13.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, the asset selector search returned different results than the normal search, which could lead to confusion and inconsistency when selecting assets. With this change, the asset selector search now returns the same results as the normal search. This improvement ensures a consistent search experience across the application, making it easier for users to find and select the desired assets.

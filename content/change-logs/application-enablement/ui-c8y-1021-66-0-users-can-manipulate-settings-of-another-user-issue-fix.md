@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-55712
 version: 1021.66.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, users could access or change another user's settings. This issue has been fixed. Now only the user that is currently logged in can read/write its user preferences.

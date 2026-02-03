@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06
 title: Improved SSO configuration readability
 product_area: Platform services
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-53918
 version: 10.18.221.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The default value of the <code>response_type</code> request parameter for the authorization request in the single sign-on configuration has been set to <code>code</code>.

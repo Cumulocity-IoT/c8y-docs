@@ -1,5 +1,5 @@
 ---
-date: '2024-09-19'
+date: 2024-09-19
 title: LWM2M device operations directly go to Pending state
 product_area: Device management & connectivity
 change_type:
@@ -13,13 +13,6 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-3601
 version: 10.20.342.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously,
 the execution of LWM2M device operations was limited to a specific timeframe following the device's registration with the platform.

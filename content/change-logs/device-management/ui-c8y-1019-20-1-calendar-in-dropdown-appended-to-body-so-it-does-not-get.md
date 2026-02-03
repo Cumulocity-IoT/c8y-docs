@@ -1,5 +1,5 @@
 ---
-date: '2024-04-25'
+date: 2024-04-25
 title: Calendar dropdown is no longer being cut off
 product_area: Device management & connectivity
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3504
 version: 1019.20.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, the calendar dropdown in forms could sometimes be partially hidden or cut off, making it difficult for users to select dates. This issue has been resolved by appending the calendar dropdown to the document body instead of the form. Users will now see the full calendar dropdown when selecting dates in forms, allowing them to easily choose the desired date without any visual obstructions.

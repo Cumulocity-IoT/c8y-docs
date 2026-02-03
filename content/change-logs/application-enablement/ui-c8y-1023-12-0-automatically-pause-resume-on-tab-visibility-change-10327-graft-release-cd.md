@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65227
 version: 1023.12.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The global context now pauses auto-refresh updates when the browser tab is hidden, and resumes updates when the browser tab is visible. This optimizes resource usage while ensuring the data is refreshed upon return.

@@ -1,8 +1,6 @@
 ---
-date: '2024-06-11'
-title: >-
-  Model editor in Streaming Analytics application displays only valid toolbar
-  icons in read-only mode
+date: 2024-06-11
+title: Model editor in Streaming Analytics application displays only valid toolbar icons in read-only mode
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
@@ -15,12 +13,5 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-2240
 version: 25.167.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, icons that could not be used when a model was active (that is, in read-only mode) were shown as disabled in the model editor's toolbar. To improve usability when in read-only mode, icons that cannot be used (such as the save icon) are no longer displayed in the toolbar.

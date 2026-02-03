@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06
 title: HTTP error issue fixed
 product_area: Platform services
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-51095
 version: 10.18.1.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 When the DELETE <code>/inventory/managedObject/{id}</code> endpoint did not finish immediately but continued in the background, the platform returned a 202 HTTP code instead of 204. This has been fixed.

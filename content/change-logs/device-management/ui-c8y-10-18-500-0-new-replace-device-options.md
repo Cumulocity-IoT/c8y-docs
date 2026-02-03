@@ -1,5 +1,5 @@
 ---
-date: '2023-12-20'
+date: 2023-12-20
 title: New "Replace device" options
 product_area: Device management & connectivity
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-2673
 version: 10.18.500.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In the **Subassets** view, a "Replace device" option is now available in the context menu of  every supported device. Previously, the "Replace device" option was only available in the **All devices** page. Moreover, a **Replace device** button has been added to the "Device status" widget on the **Info** tab in the device details. This functionality does not support LWM2M devices.

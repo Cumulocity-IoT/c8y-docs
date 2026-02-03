@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-4840
 version: 1022.39.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 With this change, the data explorer in the **Measurements** tab gets pre-filled with all available data points of the displayed device. The first one is active by default, all others are inactive. The **Measurements** tab in the device details uses the new data explorer if the **Data explorer** feature preview toggle is enabled.

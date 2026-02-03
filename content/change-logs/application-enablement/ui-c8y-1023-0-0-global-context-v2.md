@@ -13,13 +13,6 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62269
 version: 1023.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 Widgets on a dashboard can now share time context. A global panel controls time range, auto-refresh, and aggregation for linked widgets. Each widget applies the settings it supports. Individual widgets can be unlinked for independent control.

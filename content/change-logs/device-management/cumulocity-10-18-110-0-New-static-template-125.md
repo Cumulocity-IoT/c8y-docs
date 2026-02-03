@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T13:05:56.760Z
 title: New static template 125
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: DM-2346
 version: 10.18.110.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Added the SmartREST static template 125 for sending heartbeat from a device.

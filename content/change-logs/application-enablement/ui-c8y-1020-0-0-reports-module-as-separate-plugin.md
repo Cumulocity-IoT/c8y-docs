@@ -1,5 +1,5 @@
 ---
-date: '2024-04-26'
+date: 2024-04-26
 title: Reports page extracted into a separate plugin
 product_area: Application enablement & solutions
 change_type:
@@ -13,13 +13,6 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-58448
 version: 1020.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In the upcoming version the report module is extracted from the Cockpit application and added as a separate plugin.
 This is a first step towards removing the reports module entirely and replacing it with the dashboard manager.

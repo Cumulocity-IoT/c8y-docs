@@ -1,5 +1,5 @@
 ---
-date: '2024-12-10'
+date: 2024-12-10
 title: Dashboard manager extracted into a separate plugin
 product_area: Application enablement & solutions
 change_type:
@@ -13,13 +13,6 @@ build_artifact:
     label: ui-c8y
 ticket: no-issue
 version: 1021.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In an upcoming version the dashboard manager module will be extracted from the Cockpit application and added as a separate plugin.
 This change might be a breaking change as the dashboard manager module will no longer be part of `@c8y/ngx-components/context-dashboard`, but will be part of `@c8y/ngx-components/dasboard-manager`.

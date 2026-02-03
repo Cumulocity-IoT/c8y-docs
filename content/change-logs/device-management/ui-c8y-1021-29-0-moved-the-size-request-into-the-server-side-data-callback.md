@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-4147
 version: 1021.29.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 When the device list is updated (for example, in case of creating or deleting a device), the data grid size is now adjusted automatically. This ensures accurate pagination and reduces unnecessary network requests. Users do not need to take any extra steps.

@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-61863
 version: 1021.24.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, device type dashboards did not work properly for devices that contained a dot (".") in their type. This has now been fixed.

@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3791
 version: 1020.14.5
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In the configuration repository, the configuration type was not saved correctly when adding a new configuration snapshot, leading to unexpected behavior. With this change, the configuration type is now properly persisted when saving the configuration snapshot. 

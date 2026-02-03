@@ -13,12 +13,5 @@ build_artifact:
     label: dtm
 ticket: CTM-2296
 version: 1023.2.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The "Model name" column in the **Asset models** page is now interactive, allowing users to click a model name to view/edit the asset model details.

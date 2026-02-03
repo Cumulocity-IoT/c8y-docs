@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65603
 version: 1023.16.12
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In some rare cases, the slider in the "Data point graph" widget incorrectly requested data from the wrong device target, leading to no data being displayed. This issue has been resolved, and the slider now correctly retrieves the data.

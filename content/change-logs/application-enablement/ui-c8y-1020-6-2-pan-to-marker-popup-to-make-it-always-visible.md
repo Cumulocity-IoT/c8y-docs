@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-58511
 version: 1020.6.2
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In the Map component, when a marker popup was opened, it could sometimes be positioned outside the visible area of the map, making it difficult for users to view the popup content. With this change, the map now automatically pans to the position of the opened marker popup, ensuring that it is always fully visible within the map viewport. This improves the user experience when interacting with marker popups, as the relevant information is now consistently accessible and readable.

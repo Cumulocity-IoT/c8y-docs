@@ -1,5 +1,5 @@
 ---
-date: '2024-02-29'
+date: 2024-02-29
 title: Streaming Analytics microservices upgraded to use Red Hat UBI 9
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,12 +13,5 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-4336
 version: 25.54.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The Apama-ctrl microservices now have Red Hat UBI 9 as their base operating system. Previously, this was Red Hat UBI 8. With version 9, security has been improved.

@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60927
 version: 1021.6.2
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, when specifying an invalid branding variant name via the UI or API, the resulting validation error was not clear and made it difficult to identify the issue. With this change, the platform now provides a more meaningful and specific validation error message when an invalid branding variant name is entered. This improvement helps users quickly identify and correct any issues with the specified branding variant name, saving time and effort in the configuration process.

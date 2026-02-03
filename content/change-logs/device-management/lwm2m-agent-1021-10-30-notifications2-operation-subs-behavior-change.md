@@ -1,8 +1,6 @@
 ---
-date: '2025-09-18'
-title: >-
-  LWM2M service utilization of Notifications 2.0 tenant-level operation
-  subscription
+date: 2025-09-18
+title: LWM2M service utilization of Notifications 2.0 tenant-level operation subscription
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
@@ -15,13 +13,6 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-4867
 version: 1021.10.30
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The LWM2M service is now utilizing {{< product-c8y-iot >}}'s Notifications 2.0 tenant-level operation subscriptions to retrieve device operations in real time. This enhances the service's overall performance.
 Note that when this mode is active, device push connections will no longer appear as active in the **Info** tab of the device details.

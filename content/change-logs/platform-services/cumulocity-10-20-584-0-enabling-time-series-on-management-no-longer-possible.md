@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-61027
 version: 10.20.584.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 Enabling [time series support](https://cumulocity.com/docs/standard-tenant/enhanced-time-series-support/) on the {{< management-tenant >}} is no longer possible to prevent time series from being enabled on subtenants by tenant option inheritance.

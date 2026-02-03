@@ -1,5 +1,5 @@
 ---
-date: '2024-12-14'
+date: 2024-12-14
 title: Prevention of HTML injection attacks through SmartREST template names
 product_area: Device management & connectivity
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-2984
 version: 10.18.505.5
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 A security vulnerability in the simulator has been patched to prevent HTML injection attacks through SmartREST template names. Previously, the template name entered in simulator instructions was rendered as raw HTML, enabling scripts to be injected. The issue is now mitigated by displaying the template name as plain text rather than functional HTML.

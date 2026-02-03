@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63706
 version: 1021.77.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, when exporting data, measurements without units contained only headers while omitting the actual measurement values. This issue has been fixed, ensuring complete data export including both headers and values.

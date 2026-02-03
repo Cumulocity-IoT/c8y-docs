@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T12:57:38.253Z
 title: Improved performance of migration operation
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: DM-1866
 version: 10.18.10.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 The performance of the <code>migrateLwm2mDevices</code> operation has been improved. New command line arguments have been introduced with the operation. A list of legacy LWM2M devices can be specified directly from the shell command. Moreover, the migration of the LWM2M client registration objects can be skipped by using an argument.

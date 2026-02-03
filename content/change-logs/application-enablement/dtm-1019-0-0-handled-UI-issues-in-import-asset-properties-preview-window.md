@@ -1,5 +1,5 @@
 ---
-date: '2023-12-14'
+date: 2023-12-14
 title: Handled UI issues in import asset properties preview
 product_area: Application enablement & solutions
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: dtm
 ticket: CTM-635
 version: 1019.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The **Import asset properties** preview window now displays a message when no record exists.

@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60605
 version: 1020.24.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 To simplify plugin development and deployment, support for module-less plugins has been added. With this change, plugins no longer require a module to function, allowing to implement and deploy plugins more easily. This impacts plugin developers who can now create plugins without the overhead of a module and users who can benefit from a wider variety of available plugins that are simpler to install and use.

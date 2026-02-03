@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-64077
 version: 2025.283.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The default value of the `revert` parameter for time series measurements has been changed to `true`. 
 As a result, time series measurements are sorted from newest to oldest by default.

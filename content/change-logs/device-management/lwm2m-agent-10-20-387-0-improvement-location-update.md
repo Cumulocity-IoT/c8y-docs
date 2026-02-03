@@ -13,13 +13,6 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-3915
 version: 10.20.386.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 In earlier LWM2M agent versions, device location updates occurred only when the device provided complete location object data. 

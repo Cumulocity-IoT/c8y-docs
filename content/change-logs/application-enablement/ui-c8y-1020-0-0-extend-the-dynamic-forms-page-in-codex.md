@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3282
 version: 1020.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The Codex documentation provides information about developing applications with the {{< product-c8y-iot >}} platform. To make it easier for users to understand and use dynamic forms in their applications, the **Dynamic forms** page in the Codex documentation has been extended. For details, refer to the [{{< product-c8y-iot >}} Codex](https://cumulocity.com/codex/components/forms/dynamic-forms/overview).

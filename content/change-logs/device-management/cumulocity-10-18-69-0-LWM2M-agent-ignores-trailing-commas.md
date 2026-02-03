@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T16:03:22.720Z
 title: LWM2M agent ignores trailing commas
 change_type:
   - value: change-VSkj2iV9m
@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: DM-2342
 version: 10.18.69.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The LWM2M agent now ignores trailing commas at the end of object links in the registration request of a LWM2M client.

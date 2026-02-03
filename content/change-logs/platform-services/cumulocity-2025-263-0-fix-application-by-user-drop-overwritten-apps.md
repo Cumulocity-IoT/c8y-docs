@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-63541
 version: 2025.263.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 When querying applications by user with `dropOverwrittenApps` set to `true`, all applications that are overwritten by the tenant will now be filtered out from the result.
 The filtering includes applications to which the user is not subscribed.

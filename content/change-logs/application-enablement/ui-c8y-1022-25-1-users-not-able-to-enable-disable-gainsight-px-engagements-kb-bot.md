@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-64484
 version: 1022.25.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, changes to the "Enable in-product information and communication" setting were temporary and reset after reloading the application. This issue has been resolved. The setting is now saved permanently and persists after application restart.

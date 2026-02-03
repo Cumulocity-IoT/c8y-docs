@@ -1,5 +1,5 @@
 ---
-date: '2023-12-20'
+date: 2023-12-20
 title: Added information on restrictions to auto-registration of LWM2M devices
 product_area: Device management & connectivity
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-56462
 version: 10.18.500.14
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The auto-registration option in trusted certification does not support devices communicating via the LWM2M protocol. This information has been included in the tooltip on the **Trusted certificates** page and in the user documentation.

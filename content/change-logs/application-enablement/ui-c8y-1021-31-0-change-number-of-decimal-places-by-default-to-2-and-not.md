@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-61670
 version: 1021.31.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The default number of decimal places in widgets has been increased from 1 to 2, providing more precise data visualization out of the box. Users can now configure decimal places up to a maximum of 10, ensuring consistent and accurate data representation across all widgets. This standardization improves data readability and helps prevent potential misinterpretation of numerical values in dashboards.

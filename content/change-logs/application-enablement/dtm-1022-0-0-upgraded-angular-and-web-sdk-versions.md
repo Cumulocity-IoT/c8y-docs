@@ -13,13 +13,6 @@ build_artifact:
     label: dtm
 ticket: CTM-2215
 version: 1022.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The Digital Twin Manager application has been upgraded to Angular 19.2.14 and Cumulocity Web SDK 1022.4.17, bringing improvements in performance, security, and platform compatibility. This upgrade is largely seamless with no UI changes; however, custom applications using dtm-plugins will need to update to the latest plugin versions when migrating to the latest Web SDK to ensure compatibility.
 

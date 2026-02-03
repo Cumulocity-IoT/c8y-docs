@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-57749
 version: 1020.4.2
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 As part of ongoing maintenance to keep the application up-to-date and secure, the AngularJS and angular-schema-form dependencies have been updated to their latest compatible versions. This change ensures the application remains on supported dependency versions and benefits from any bug fixes or improvements in these releases. The update is not expected to introduce any user-facing changes or compatibility issues with existing functionality.

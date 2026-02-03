@@ -13,12 +13,5 @@ build_artifact:
     label: dtm
 ticket: CTM-2515
 version: 1023.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The text strings in the **Add asset** view and the **Subassets** tab are now scoped to the Digital Twin Manager application's translation context. This allows users to provide application-specific translations without overriding the translations in other applications.

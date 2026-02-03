@@ -13,13 +13,6 @@ build_artifact:
     label: dtm
 ticket: CTM-2278
 version: 1022.3.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 A new plugin, OpenAPI documentation, has been added to the dtm-plugins extension. It provides interactive documentation for the Assets and Definitions APIs, including details on required permissions. The plugin allows users to browse, visualize, and test API resources directly from the product documentation without needing to implement any logic.
 

@@ -15,12 +15,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62992
 version: 1022.11.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In the **Trusted certificates** page in the Device Management application, visual cues have been improved to highlight expiring certificates. Additionally, a new option has been introduced that allows users to directly renew a CA certificate from the UI if it is approaching its expiration date. These enhancements help users to monitor and manage the lifecycle of their trusted certificates more effectively.

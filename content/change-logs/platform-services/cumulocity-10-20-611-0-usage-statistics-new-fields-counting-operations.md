@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-61325
 version: 10.20.611.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Two new properties, `operationsCreatedCount` and `operationsUpdateCount`, have been added to all REST endpoints which will return detailed request counters for usage statistics. 
 In a first implementation step, the {{< product-c8y-iot >}} platform returns these properties with `0` values. 

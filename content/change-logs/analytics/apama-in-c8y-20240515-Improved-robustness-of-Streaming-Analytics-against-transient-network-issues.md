@@ -1,5 +1,5 @@
 ---
-date: '2024-05-16'
+date: 2024-05-16
 title: Improved robustness of Streaming Analytics against transient network issues
 change_type:
   - value: change-VSkj2iV9m
@@ -13,13 +13,6 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-4447
 version: 25.133.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The robustness of EPL apps and Analytics Builder models against transient network issues has been improved.
 Specifically, if a temporary network issue causes a problem while saving EPL apps or Analytics Builder models to the inventory, then the EPL app or the Analytics Builder model is still displayed with the correct state in the UI, instead of being displayed with an incorrect state or not displayed at all.

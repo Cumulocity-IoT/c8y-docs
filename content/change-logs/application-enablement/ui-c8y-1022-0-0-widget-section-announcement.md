@@ -1,5 +1,5 @@
 ---
-date: '2025-04-16'
+date: 2025-04-16
 title: Deprecation of loadConfigComponent in favor of new multi-section configuration
 product_area: Application enablement & solutions
 change_type:
@@ -13,13 +13,6 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63358
 version: 1022.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 **What changes?**
 

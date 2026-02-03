@@ -15,12 +15,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-57760
 version: 1020.589.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Support for ID tokens provided by external IAM servers has been added and can now be used in the authentication process via single sign-on (SSO). Previously, only access tokens were supported by the {{< product-c8y-iot >}} platform. Now, the administrator can decide through the configuration whether user data retrieved from the external server, such as first name, last name, phone number, email, and roles, should be loaded from the access token or the ID token.

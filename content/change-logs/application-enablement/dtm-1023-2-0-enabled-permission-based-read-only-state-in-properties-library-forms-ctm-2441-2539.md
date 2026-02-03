@@ -15,12 +15,5 @@ build_artifact:
     label: dtm
 ticket: CTM-2441
 version: 1023.2.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, users without the **Digital twin definitions** permission were limited to viewing only the list of properties in the Property Library plugin. With this enhancement, such users can now access property details in a read-only mode.

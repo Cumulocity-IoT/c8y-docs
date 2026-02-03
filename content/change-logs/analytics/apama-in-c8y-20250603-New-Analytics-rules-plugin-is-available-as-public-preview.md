@@ -13,13 +13,6 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-4742
 version: 26.152.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 {{< c8y-admon-preview >}}

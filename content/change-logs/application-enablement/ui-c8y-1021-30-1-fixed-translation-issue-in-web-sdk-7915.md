@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62124
 version: 1021.30.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Applications using custom ngx translations were not properly translated. This issue has been resolved. With this fix, applications built using the Web SDK and using custom ngx translations will now properly display the appropriate translated text for the selected language.

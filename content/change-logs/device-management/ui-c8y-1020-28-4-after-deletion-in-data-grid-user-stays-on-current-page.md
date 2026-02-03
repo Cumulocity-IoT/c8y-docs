@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3901
 version: 1020.28.4
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, when deleting an entry in a data grid that was not on the first page, users were unexpectedly redirected back to the first page of the grid. This behavior has now been changed. After deleting an entry, users will remain on the same page they were on before the deletion. This change affects all data grids throughout the application where deletion is possible.

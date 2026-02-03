@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: DM-5040
 version: 2025.6.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Performing a bulk operation could unexpectedly create more operations than intended, due to a race condition. This issue has been resolved. The fix ensures that only the correct number of operations is generated for each bulk request by addressing the underlying concurrency issue.

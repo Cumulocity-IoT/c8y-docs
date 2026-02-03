@@ -13,12 +13,5 @@ build_artifact:
     label: dtm
 ticket: CTM-1666
 version: 1020.1.20
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, configured asset properties were not visible when editing the "Asset properties" widget, requiring users to re-add them. Now, users see existing configured properties on editing and can add new properties as needed.

@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T12:59:36.209Z
 title: New shell commands
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: DM-2153
 version: 10.18.6.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Two new LWM2M shell commands have been added.
 

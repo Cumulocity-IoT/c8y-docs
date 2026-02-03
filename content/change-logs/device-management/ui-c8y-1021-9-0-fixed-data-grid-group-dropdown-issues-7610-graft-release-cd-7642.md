@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-4172
 version: 1021.9.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The data grid component had layout issues with the group column dropdown. These have been resolved by adjusting the dropdown scroll height in relation to the bottom footer and adding a shadow to the dropdown for increased contrast between user interface elements.

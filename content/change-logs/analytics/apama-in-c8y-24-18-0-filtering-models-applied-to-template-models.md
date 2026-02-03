@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06
 title: Filtering models applied to template models
 product_area: Analytics
 change_type:
@@ -13,13 +13,6 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-4127
 version: 24.18.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In Analytics Builder, when filtering the models in the model manager by <b>Mode</b> and <b>Status</b>, the filter is now also applied to template models.
 Prior to this fix, the filter was only applied to models without template parameters.

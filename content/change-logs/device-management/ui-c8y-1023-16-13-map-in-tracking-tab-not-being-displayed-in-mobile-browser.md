@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-5167
 version: 1023.16.13
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, the map on the **Tracking** tab was not displayed when accessing the Device Management application through a mobile browser, impacting the user experience for mobile users. With this change, the map is now also correctly rendered on mobile devices.

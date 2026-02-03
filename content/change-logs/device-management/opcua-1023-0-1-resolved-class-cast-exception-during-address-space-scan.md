@@ -13,12 +13,5 @@ build_artifact:
     label: opcua
 ticket: DM-5160
 version: 1023.0.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, scanning the device gateway address space on certain OPC UA servers caused a ClassCastException when reading the root node data. The issue has been resolved by upgrading the core OPC UA library to a higher version.

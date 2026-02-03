@@ -1,5 +1,5 @@
 ---
-date: '2025-02-17'
+date: 2025-02-17
 title: Removed obsolete AngularJS implementation of Cloud Remote Access feature
 product_area: Device management & connectivity
 change_type:
@@ -13,13 +13,6 @@ build_artifact:
     label: ui-c8y
 ticket: DM-4367
 version: 1022.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 As part of our ongoing improvement efforts, in a previous version, we have migrated the Cloud Remote Access feature from the older AngularJS framework to the newer Angular framework.
 The new Angular-based implementation makes the old AngularJS-based implementation obsolete.

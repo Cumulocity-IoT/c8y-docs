@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-4788
 version: 1022.8.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 It is now possible to add software and firmware repository items without a URL. When uploading software and firmware versions, a new option for the binary is available called **Provided**. If this option is selected, the device is expected to resolve the binary itself.

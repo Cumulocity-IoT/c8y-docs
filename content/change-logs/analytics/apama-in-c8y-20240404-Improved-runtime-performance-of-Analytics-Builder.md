@@ -1,5 +1,5 @@
 ---
-date: '2024-04-04'
+date: 2024-04-04
 title: Improved runtime performance of Analytics Builder
 change_type:
   - value: change-VSkj2iV9m
@@ -13,12 +13,5 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-4429
 version: 25.87.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The runtime performance of Analytics Builder has been improved when large objects are ingested.

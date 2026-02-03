@@ -1,5 +1,5 @@
 ---
-date: '2023-12-14'
+date: 2023-12-14
 title: Handled access denied error on updating file property type
 product_area: Application enablement & solutions
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: dtm
 ticket: CTM-724
 version: 1019.1.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The "Access denied" error message is no longer displayed on attempting to update the file property type in the **Subassets** page.

@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63704
 version: 1022.3.4
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The link color in the cookie banner has been adjusted to provide better contrast. The links are now easier to spot for users so that they can access additional information about cookie usage more conveniently.

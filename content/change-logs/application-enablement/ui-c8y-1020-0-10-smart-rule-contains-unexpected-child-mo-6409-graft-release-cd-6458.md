@@ -15,12 +15,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-57897
 version: 1020.0.10
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In the smart rules list of a group or a device, the children column, which shows for which child assets the smart rule is active, did not always show up properly. This issue has been fixed and the children column is now always displayed if the smart rule is activated for a child asset.

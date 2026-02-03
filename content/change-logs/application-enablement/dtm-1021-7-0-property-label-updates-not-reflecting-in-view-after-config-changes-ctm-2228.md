@@ -13,12 +13,5 @@ build_artifact:
     label: dtm
 ticket: CTM-2228
 version: 1021.7.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, in the Asset properties widget, when the label of the selected property was updated in the configuration, the changes were not reflected in the widget's view. This issue has now been fixed, and label updates are properly displayed in the widget view after saving.

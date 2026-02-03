@@ -13,13 +13,6 @@ build_artifact:
     label: dtm
 ticket: CTM-1625
 version: 1020.1.18
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The DTM plugins component now includes a new asset properties widget module, which enhances the functionality of the existing "Asset properties" widget. This includes:
  - Simplified selection of the modelled properties for assets.

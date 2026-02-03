@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T13:21:59.263Z
 title: Improved behavior on plugin installation
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-51757
 version: 10.18.457.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 When installing a plugin and the tenant has no custom applications, it is now possible to duplicate any existing application.

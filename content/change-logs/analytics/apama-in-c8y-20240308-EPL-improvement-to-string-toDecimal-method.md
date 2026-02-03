@@ -1,5 +1,5 @@
 ---
-date: '2024-03-21'
+date: 2024-03-21
 title: EPL improvement to string.toDecimal() method
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,12 +13,5 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAM-34661
 version: 25.76.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, performing `string.toDecimal()` for a string with an invalid conversion resulted in a `ParseException` error. This now returns "0.0". This was done to make the experience of using `toDecimal()` similar to using `toFloat()`. If you want the previous strict behavior, use `decimal.parse()` instead.

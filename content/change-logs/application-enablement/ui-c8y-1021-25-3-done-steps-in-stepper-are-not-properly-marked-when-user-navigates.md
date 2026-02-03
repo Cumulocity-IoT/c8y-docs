@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60759
 version: 1021.25.3
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In some scenarios, users may navigate back and forth between steps in a stepper component. Previously, when navigating this way, the stepper incorrectly marked and displayed completed steps as incomplete. This has now been fixed so that the stepper component correctly reflects the completed steps when the user navigates backwards and forwards through the steps.

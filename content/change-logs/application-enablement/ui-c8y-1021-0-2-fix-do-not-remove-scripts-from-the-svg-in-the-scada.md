@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-61415
 version: 1021.0.2
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The SCADA widget now preserves script tags if the code sanitization option is set to "none".

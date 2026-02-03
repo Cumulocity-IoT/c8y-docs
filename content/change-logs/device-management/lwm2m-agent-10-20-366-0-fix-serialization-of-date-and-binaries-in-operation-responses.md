@@ -1,5 +1,5 @@
 ---
-date: '2024-09-19'
+date: 2024-09-19
 title: Enhanced serialization formats for LWM2M operation responses
 product_area: Device management & connectivity
 change_type:
@@ -13,13 +13,6 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-2769
 version: 10.20.366.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In previous versions, the LWM2M agent did not utilize appropriate formats to serialize link arrays, opaque data, and date formats in operation responses. With this update, the LWM2M agent now provides adequate and consistent representations for these data types in both operation responses and the **LWM2M objects** tab. Key changes include:
 

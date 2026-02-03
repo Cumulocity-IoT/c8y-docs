@@ -15,13 +15,6 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-4225
 version: 1021.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 The LWM2M resource instance level operations have been introduced in LWM2M 1.1 but are not supported by LWM2M 1.0 devices.

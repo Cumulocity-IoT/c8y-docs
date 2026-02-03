@@ -1,5 +1,5 @@
 ---
-date: '2024-09-19'
+date: 2024-09-19
 title: LWM2M write operation using "Partial Update" mode is now fully supported
 product_area: Device management & connectivity
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-2948
 version: 10.20.350.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, the LWM2M agent supported write operations in "Replace" mode only. With this change, write operations can now also be sent in the "Partial Update" mode using the "writep" command.

@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-61069
 version: 1020.29.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, the "Info gauge" widget did not support device type dashboards, limiting its usability for users who rely on these dashboards. With this change, the "Info gauge" widget has been updated to fully support device type dashboards. This enhancement allows users to effectively utilize the "Info gauge" widget within their device type dashboard setups, providing them with a more comprehensive and flexible monitoring experience.

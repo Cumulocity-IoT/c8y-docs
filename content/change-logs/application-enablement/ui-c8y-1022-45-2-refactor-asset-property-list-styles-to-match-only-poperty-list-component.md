@@ -15,12 +15,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-64972
 version: 1022.45.2
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The asset property list component had a stylesheet that unintentionally made the device protocol creation modal for OPC UA non-functional. The stylesheet has now been targeted more precisely to the asset property list component only. This change ensures that the device protocol creation modal is no longer impacted by the asset property list styles and will function as expected.

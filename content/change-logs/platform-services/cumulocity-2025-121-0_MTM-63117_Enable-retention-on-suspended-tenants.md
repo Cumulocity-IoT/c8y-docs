@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-63117
 version: 20.25.121.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The retention scheduler has been updated to execute retention rules for tenants with the status SUSPENDED in addition to active tenants. This makes sure that data cleanup and storage rules still apply, even if a tenant is not currently active.

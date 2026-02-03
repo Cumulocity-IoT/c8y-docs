@@ -1,5 +1,5 @@
 ---
-date: '2024-05-16'
+date: 2024-05-16
 title: Bookmarks available from User menu in Streaming Analytics application
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,12 +13,5 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-4472
 version: 25.134.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The right drawer of the Streaming Analytics application, which is displayed when you click the **User** button, now includes a **Bookmarks** section. This means that the bookmarks you have added in other {{< product-c8y-iot >}} applications are now also available in the Streaming Analytics application, and you can now also add bookmarks for the pages in the Streaming Analytics application.

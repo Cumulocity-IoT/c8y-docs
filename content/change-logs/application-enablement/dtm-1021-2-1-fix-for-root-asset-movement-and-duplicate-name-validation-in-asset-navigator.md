@@ -15,12 +15,5 @@ build_artifact:
     label: dtm
 ticket: CTM-1938
 version: 1021.2.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In the asset navigator, root-level assets can now be moved under groups created in the Cockpit application. Additionally, validation has been added to prevent moving assets or groups to locations where assets or groups with identical names already exist, ensuring consistency and avoiding naming conflicts.

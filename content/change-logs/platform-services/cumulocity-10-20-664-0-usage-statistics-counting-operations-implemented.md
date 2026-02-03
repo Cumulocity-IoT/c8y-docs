@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-60232
 version: 10.20.664.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Two new request counters for usage statistics `operationsCreatedCount`, `operationsUpdateCount`, introduced for REST endpoints in an earlier version (10.20.611.0), are now fully implemented. These counters are incremented in the following way:
 * operationsCreated: When operations are created via REST by POST request on a single operations API (`/devicecontrol/operations`) or the bulk operations API (`/devicecontrol/bulkoperations`).

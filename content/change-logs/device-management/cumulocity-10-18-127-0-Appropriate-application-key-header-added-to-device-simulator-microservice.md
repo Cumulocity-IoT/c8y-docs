@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T10:38:35.673Z
 title: Appropriate application key header added to device simulator microservice
 change_type:
   - value: change-VSkj2iV9m
@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: DM-2306
 version: 10.18.127.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The Device simulator microservice sent some internal requests without application key header which resulted in these requests being counted as device requests. The appropriate application key header has been added so that all requests are now counted correctly.

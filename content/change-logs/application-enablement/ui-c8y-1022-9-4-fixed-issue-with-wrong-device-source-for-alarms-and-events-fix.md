@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63946
 version: 1022.9.4
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In some cases, alarms and events were incorrectly associated with the wrong device when using device type dashboards. This issue has been resolved. Alarms and events are now correctly linked to the originating device, ensuring accurate tracking and analysis. 

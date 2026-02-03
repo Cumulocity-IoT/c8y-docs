@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-61506
 version: 20.25.76.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, when turning on or off the maintenance mode in the device status, **Last Communication** could show a wrong date. To fix this issue, the device availability monitoring has been enhanced by adding a safeguard when transitioning into or out of the maintenance mode. This prevents stale ´lastMessage´ entries and ensures accurate status tracking and improved data integrity.

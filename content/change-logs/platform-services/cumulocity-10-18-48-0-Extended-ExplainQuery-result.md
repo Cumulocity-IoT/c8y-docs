@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T16:00:52.999Z
 title: Extended ExplainQuery result
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-52350
 version: 10.18.48.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The ExplainQuery result info has been extended by the algorithm used when performing queries for a user with inventory roles:
 

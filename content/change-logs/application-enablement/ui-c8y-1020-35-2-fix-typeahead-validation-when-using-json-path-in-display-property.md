@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3955
 version: 1020.35.2
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, when using a JSON path in the `displayProperty` of a typeahead control, the validation not allowing free entries (allowFreeEntries = false) was not working correctly and could lead to unexpected behavior, such as creating orphan entries when an item needs to be assigned to a parent entity. This issue has now been fixed. This change improves the reliability and usability of typeahead controls in forms.

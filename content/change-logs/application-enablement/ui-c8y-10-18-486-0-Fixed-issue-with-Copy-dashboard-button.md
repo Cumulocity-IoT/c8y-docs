@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T09:22:23.699Z
 title: Fixed issue with Copy dashboard button
 change_type:
   - value: change-VSkj2iV9m
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-55195
 version: 10.18.486.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The <b>Copy dashboard</b> button is now disabled when the user does not have the respective permissions.

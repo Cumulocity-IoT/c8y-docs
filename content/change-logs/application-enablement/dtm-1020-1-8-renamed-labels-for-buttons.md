@@ -1,5 +1,5 @@
 ---
-date: '2024-05-30'
+date: 2024-05-30
 title: Updated labels for buttons
 product_area: Application enablement & solutions
 change_type:
@@ -13,13 +13,6 @@ build_artifact:
     label: dtm
 ticket: CTM-1308
 version: 1020.1.8
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 The following action button labels have been changed: 

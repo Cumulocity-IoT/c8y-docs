@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-57209
 version: 2025.380.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The deprecated `history` field has been removed from the Alarm API. Previously, this field always returned 
 an empty list. The field is no longer returned by the API, allowing it to be used as a custom fragment.

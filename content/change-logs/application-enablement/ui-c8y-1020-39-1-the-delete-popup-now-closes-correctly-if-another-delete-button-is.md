@@ -15,12 +15,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60830
 version: 1020.39.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In the bookmark edit view, clicking on a delete button while the delete confirmation popup was already open would lead to unexpected behavior and the popup not closing properly. This issue has now been resolved. The delete confirmation popup will now always close correctly when clicking on another delete button, allowing users to smoothly continue their workflow without any interruptions. This change improves the overall user experience and consistency when working with delete confirmations.

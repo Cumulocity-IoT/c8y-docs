@@ -13,13 +13,6 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-58987
 version: 1021.21.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 As part of the ongoing modernization efforts to migrate the UI to Angular, the "Data points table" widget has now been migrated from AngularJS to Angular. This change improves the performance, maintainability and consistency of the widget with the rest of the application. The widget now offers enhanced features including:
 

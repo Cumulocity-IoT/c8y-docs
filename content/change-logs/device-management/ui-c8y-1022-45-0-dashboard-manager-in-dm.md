@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-4941
 version: 1022.45.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The dashboard manager, which has already been available in the Cockpit application, is now also available for preview in the Device Management application. The dashboard manager brings more flexibility, consistency, and control over device dashboards.

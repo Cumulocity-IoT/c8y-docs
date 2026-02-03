@@ -1,6 +1,6 @@
 ---
-date: '2024-09-11'
-title: Data broker operations delivery improvements
+date: 2024-09-11
+title: "Data broker operations delivery improvements"
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-60479
 version: 10.20.552.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Data broker operations created on the destination tenant were not reliably forwarded to the source tenant during network interruptions. With this change, a robust retry mechanism has been introduced that ensures operations are delivered reliably, regardless of network stability. Users can now expect consistent data synchronization and improved reliability in data broker operations.

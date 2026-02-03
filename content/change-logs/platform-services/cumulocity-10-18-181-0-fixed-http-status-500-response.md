@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06
 title: Fixed HTTP status 500 response
 product_area: Platform services
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-53273
 version: 10.18.181.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Fixed the rare occurrence of an HTTP status 500 response from <code>/tenant/statistics/allTenantsSummary</code>, if one of the tenants was deleted during the request.

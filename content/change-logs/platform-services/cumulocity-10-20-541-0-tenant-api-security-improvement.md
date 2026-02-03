@@ -1,5 +1,5 @@
 ---
-date: '2024-09-11'
+date: 2024-09-11
 title: Tenant API security improvement
 product_area: Platform services
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-49016
 version: 10.20.541.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The security for the credential options in the Tenant API has been improved.

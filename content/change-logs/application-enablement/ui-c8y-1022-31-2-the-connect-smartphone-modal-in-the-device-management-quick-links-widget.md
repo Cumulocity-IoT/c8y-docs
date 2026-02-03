@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-64411
 version: 1022.31.2
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The Connect smartphone modal, which allows users to quickly connect their smartphones to {{< product-c8y-iot >}}, did not open when accessing it from the "Quick links" widget in the Device Management application. This issue has been resolved, and users can now successfully open the Connect smartphone modal by clicking on the corresponding link in the "Quick links" widget.

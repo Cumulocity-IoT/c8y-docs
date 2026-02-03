@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T13:12:05.334Z
 title: Support of HTML in input fields
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-2606
 version: 10.18.495.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 To be able to provide more information in input fields on the expected input, dynamic form fields now support HTML markup in their description.

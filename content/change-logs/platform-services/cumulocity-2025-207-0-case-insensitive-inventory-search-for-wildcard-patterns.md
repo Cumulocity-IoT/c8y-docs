@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-62622
 version: 2025.207.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 To improve the user experience when searching the inventory by a particular property, the {{< product-c8y-iot >}} platform changes

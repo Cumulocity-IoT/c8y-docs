@@ -13,13 +13,6 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63148
 version: 1021.76.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The "Map" widget has been enhanced with a new feature that allows to fit all assets on a map. This includes either all selected assets for the widget or all available assets if none are explicitly selected. This functionality is available in two places:
 

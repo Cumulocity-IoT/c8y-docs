@@ -1,8 +1,6 @@
 ---
-date: '2024-09-19'
-title: >-
-  LWM2M agent bulk registration no longer fails when using an Excel-generated
-  CSV file
+date: 2024-09-19
+title: LWM2M agent bulk registration no longer fails when using an Excel-generated CSV file
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
@@ -15,13 +13,6 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-2452
 version: 10.20.348.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 When an Excel-generated CSV file was submitted to the LWM2M bulk device registration, the process failed due to the inability to parse the UTF-8 with a BOM marker present at the beginning of the file. This issue has been addressed, and the LWM2M bulk device registration system now successfully accepts CSV files encoded in UTF-8 with BOM format.

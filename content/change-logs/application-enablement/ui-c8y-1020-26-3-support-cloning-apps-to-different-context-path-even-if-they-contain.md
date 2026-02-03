@@ -15,12 +15,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60850
 version: 1020.26.3
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, when cloning an application to a different context path, the self-scoped plugins within that application would not load. With this change, the self-scoped plugins are now loading as expected.

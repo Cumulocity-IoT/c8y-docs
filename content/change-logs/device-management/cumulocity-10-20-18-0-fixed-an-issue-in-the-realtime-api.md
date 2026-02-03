@@ -1,6 +1,6 @@
 ---
-date: '2024-02-06'
-title: 'Fixed an issue in the realtime API '
+date: "2024-02-06"
+title: "Fixed an issue in the realtime API "
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-56910
 version: 10.20.18.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Fixed an issue in the realtime API where a subscription marked as "non-retriable" could still be re-subscribed after re-establishing the underlying connection to the server, for example, after a Cumulocity core restart or network outage.

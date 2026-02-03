@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T14:50:56.185Z
 title: Tooltip change in the Usage statistics page
 change_type:
   - value: change-VSkj2iV9m
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-53818
 version: 10.18.475.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In the <b>Usage statistics</b> page, in the tooltip for the CPU column "milliseconds" has been changed to "millicores".

@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-50975
 version: 10.20.499.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, when an error occurred on logging in via SSO, the plain HTML error text was displayed in the browser.
 With this change, optional `Redirect to the user interface application` configuration has been added which allows displaying the error text as a standard UI error message.

@@ -13,13 +13,6 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-64747
 version: 1022.36.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The Developer Codex has been redesigned with a clearer information architecture, offering step-by-step guides, core concepts, design best practices, and complete Web SDK documentation in a more discoverable and structured format. Whether you're new to {{< product-c8y-iot >}} or an experienced developer, you’ll find faster paths to building effective IoT solutions, understanding platform architecture, designing better UIs, and connecting with the developer community. 
 

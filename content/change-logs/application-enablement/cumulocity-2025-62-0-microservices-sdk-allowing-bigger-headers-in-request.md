@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-64421
 version: 2025.62.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 To allow the usage of larger headers in requests, the property `server.max-http-request-header-size` has been increased to 24KB in the Microservice SDK. Previously, the value was 8KB.

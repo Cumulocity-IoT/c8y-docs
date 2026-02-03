@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-59255
 version: 1020.1.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The dashboard manager shows dashboards for both devices and groups/assets type dashboards. Groups/assets type dashboards could be created with the application option `hideTypeDashboardForAssets` set to false, but on clicking **Edit**, the new modal showed target assets only for device dashboards, while the groups/assets list was empty. Now, when you click **Edit**, the list is always populated with devices and groups/assets.

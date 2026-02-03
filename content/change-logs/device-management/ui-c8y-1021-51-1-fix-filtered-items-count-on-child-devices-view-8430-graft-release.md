@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62872
 version: 1021.51.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, the number of filtered items in the child devices view was displayed as text instead of being replaced with the actual value. This issue has been fixed and the actual value is displayed now properly. 

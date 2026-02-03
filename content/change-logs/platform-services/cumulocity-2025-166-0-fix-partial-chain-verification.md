@@ -15,12 +15,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-63426
 version: 2025.166.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, when a device used a certificate to authenticate with the platform, authentication failed if the device did not provide the full certificate chain up to the root certificate. This issue has now been resolved, allowing devices to authenticate using a partial chain which does not include the root certificate. Authentication happens with only the leaf certificate if the immediate issuer is present in the platform.

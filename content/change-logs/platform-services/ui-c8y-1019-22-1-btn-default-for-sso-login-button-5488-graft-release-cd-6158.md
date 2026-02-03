@@ -1,5 +1,5 @@
 ---
-date: '2024-05-13'
+date: 2024-05-13
 title: Improved layout of single sign-on login button
 product_area: Platform services
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-57675
 version: 1019.22.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The layout of the single sign-on (SSO) login button has been updated. Previously, the SSO login button used a custom style which did not match the overall look and feel of the application. With this change, the SSO login button now uses the default layout.

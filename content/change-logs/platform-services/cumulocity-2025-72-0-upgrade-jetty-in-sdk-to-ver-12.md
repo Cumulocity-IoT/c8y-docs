@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-62874
 version: 2025.72.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 The Jetty library version in the Java SDK was upgraded from version 11.0.24 to the most recent version 12.0.25. 

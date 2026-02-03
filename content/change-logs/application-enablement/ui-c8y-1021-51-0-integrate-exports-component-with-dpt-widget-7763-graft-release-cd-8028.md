@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-59872
 version: 1021.51.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The export component has been integrated into the "Data point table" widget. This integration allows users to efficiently generate exports based on the data displayed in the "Data point table" widget.

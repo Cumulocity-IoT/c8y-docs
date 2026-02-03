@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-58380
 version: 1020.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The styling of the branded dashboard was adjusted to improve readability and accessibility.

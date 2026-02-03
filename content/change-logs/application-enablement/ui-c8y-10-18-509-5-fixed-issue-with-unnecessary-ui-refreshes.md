@@ -1,5 +1,5 @@
 ---
-date: '2024-03-14'
+date: 2024-03-14T14:35:11.175Z
 title: Fixed issue with unnecessary refreshes of English texts
 product_area: Application enablement & solutions
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-43382
 version: 10.18.509.5
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 An issue has been fixed related to unnecessary refreshes of English texts on each Angular digest cycle.

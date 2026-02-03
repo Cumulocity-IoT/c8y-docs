@@ -1,5 +1,5 @@
 ---
-date: '2024-08-01'
+date: 2024-08-01
 title: Specify maximum values for the Counter block in Analytics Builder
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,13 +13,6 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-4093
 version: 25.192.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The **Counter** block in Analytics Builder has been updated to allow you to set a maximum value for each counter independently. This change was made because it was difficult and cumbersome to create periodic behavior in Analytics Builder, and it gives more control over counting in general.
 The following new parameters are available for this purpose:

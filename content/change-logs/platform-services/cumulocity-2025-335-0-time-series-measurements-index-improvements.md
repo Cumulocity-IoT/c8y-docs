@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-64077
 version: 2025.335.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The platform now uses database indexes more efficiently when storing and
 retrieving time series data. This reduces storage costs and increases performance.

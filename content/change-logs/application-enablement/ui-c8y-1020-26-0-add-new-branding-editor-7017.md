@@ -13,13 +13,6 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-53766
 version: 1020.26.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The branding editor allows users to create a unique and consistent branding across their applications, improving the overall user experience and making it easier to align the application's appearance with corporate design guidelines.
 

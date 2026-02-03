@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T14:21:40.392Z
 title: New wizard for device replacement
 change_type:
   - value: change-QHu1GdukP
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-2168
 version: 10.18.242.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In the Device management application, a wizard has been implemented which guides users through replacing a physical device with another one. The replacing device must be registered in the platform in advance and is removed after the replacement procedure has been completed.

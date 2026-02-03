@@ -13,13 +13,6 @@ build_artifact:
     label: dtm
 ticket: ''
 version: 1022.9.2
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, when creating an asset property, the auto-generated key converted
 all letters in the label in the **Asset properties** page to lowercase and replaced special characters

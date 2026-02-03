@@ -13,12 +13,5 @@ build_artifact:
     label: dtm
 ticket: CTM-1592
 version: 1021.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, the link in the contextual help on the **Subassets** page pointed to the Cockpit documentation. This URL has been changed to point to the Digital Twin Manager application where subassets are described as part of the dtm-plugin.

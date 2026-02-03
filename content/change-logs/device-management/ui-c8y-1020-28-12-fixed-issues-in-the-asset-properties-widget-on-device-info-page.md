@@ -15,12 +15,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3868
 version: 1020.28.12
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The "Asset properties" widget on the **Info** tab in the device details was not working as expected and showed incorrect or missing information in some cases. This issue has been resolved and the "Asset properties" widget now correctly displays all relevant properties for a device asset. It contains 5 default properties - ID, name, type, last updated and creation time.

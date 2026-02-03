@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T16:03:07.301Z
 title: Improved performance of GET requests on /user/users
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-52566
 version: 10.18.16.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The performance of GET requests on the <code>/user/users</code> endpoint has been improved.

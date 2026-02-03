@@ -1,5 +1,5 @@
 ---
-date: '2025-01-07'
+date: 2025-01-07
 title: Streaming Analytics and Notifications 2.0
 change_type:
   - value: change-QHu1GdukP
@@ -13,13 +13,6 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-4250
 version: 25.339.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Streaming Analytics can now use the {{< product-c8y-iot >}} Notifications 2.0 reliable data forwarding capability to receive notifications for measurements, events, alarms, managed objects and operations that are processed by the {{< product-c8y-iot >}} platform. The benefits of using Notifications 2.0 are improved performance and reliability for messaging with Streaming Analytics applications such as smart rules, Analytics Builder and EPL apps.
 

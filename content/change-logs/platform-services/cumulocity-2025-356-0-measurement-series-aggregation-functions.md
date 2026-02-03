@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-64669
 version: 2025.356.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 A new query parameter `aggregationFunction` has been added to the measurement series endpoint. This parameter allows to specify
 aggregation functions to be calculated on the measurement series data per specified aggregation interval.

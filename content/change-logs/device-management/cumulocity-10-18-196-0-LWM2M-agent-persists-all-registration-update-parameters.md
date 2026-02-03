@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T15:54:36.563Z
 title: LWM2M agent persists all registration update parameters
 change_type:
   - value: change-VSkj2iV9m
@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: DM-2503
 version: 10.18.196.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The LWM2M agent now correctly persists all registration update parameters. Previously, the LWM2M agent did not store changes of registration parameters, for example, updated registration lifetimes. This is now fixed.

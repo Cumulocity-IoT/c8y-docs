@@ -15,12 +15,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-61026
 version: 1021.4.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Fixed an issue where editing top level nodes in the **Application configuration** page in the Cockpit application created duplicate entries of assets in the navigator. Now the navigator updates properly without creating redundant menu items.

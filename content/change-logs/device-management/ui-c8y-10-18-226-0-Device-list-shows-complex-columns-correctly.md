@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T10:36:47.675Z
 title: Device list shows complex columns correctly
 change_type:
   - value: change-VSkj2iV9m
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-2410
 version: 10.18.226.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The device list now shows complex columns like <code>c8y_SoftwareList</code> correctly after converting them to strings.

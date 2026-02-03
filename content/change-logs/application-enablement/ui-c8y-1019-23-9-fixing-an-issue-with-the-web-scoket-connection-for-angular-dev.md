@@ -1,5 +1,5 @@
 ---
-date: '2024-05-13'
+date: 2024-05-13
 title: Fix websocket connection issue for Angular development server
 product_area: Application enablement & solutions
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-57372
 version: 1019.23.9
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The Angular development server relies on a websocket connection to enable live reloading of the application during development. Previously, the websocket connection was unstable and would frequently disconnect, causing the live reloading feature to stop working. This change fixes the underlying issue with the websocket connection, making it more stable and reliable.

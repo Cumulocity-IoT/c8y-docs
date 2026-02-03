@@ -1,5 +1,5 @@
 ---
-date: '2024-03-21'
+date: 2024-03-21
 title: Improved measurement display in Linear Gauge and Silo widgets
 product_area: Application enablement & solutions
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-52889
 version: 1019.11.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The measurement display line size has been increased in both the "Linear Gauge" and the "Silo" widget. This enhancement improves readability, making it easier for users to interpret measurements at a glance.

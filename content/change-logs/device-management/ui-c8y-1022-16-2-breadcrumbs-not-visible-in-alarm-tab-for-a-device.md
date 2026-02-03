@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-4898
 version: 1022.16.2
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In the device details, the breadcrumbs navigation was not shown when viewing the **Alarms** tab of a specific device. This issue has been resolved. The breadcrumbs are now correctly displayed in the **Alarms** tab.

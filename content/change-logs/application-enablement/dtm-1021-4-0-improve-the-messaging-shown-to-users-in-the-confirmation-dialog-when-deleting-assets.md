@@ -13,12 +13,5 @@ build_artifact:
     label: dtm
 ticket: CTM-1997
 version: 1021.4.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, the confirmation dialog for deleting assets lacked clarity, which could lead to accidental deletions. This has now been improved to ensure better user understanding.

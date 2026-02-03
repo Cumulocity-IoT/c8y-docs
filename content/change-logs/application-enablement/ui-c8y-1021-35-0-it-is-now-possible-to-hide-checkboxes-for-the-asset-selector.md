@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60988
 version: 1021.35.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The asset selector is a commonly used component that allows users to select one or more assets from a list. Previously, checkboxes were always displayed next to each asset in the list. With this change, developers can now hide these checkboxes if desired. This provides more flexibility in the UI design and can lead to a cleaner look in situations where the checkboxes are not needed.

@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T10:58:39.333Z
 title: Action buttons on mobile screens
 change_type:
   - value: change-VSkj2iV9m
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-2274
 version: 10.18.72.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The action buttons in the windows **Add bulk operation** and **Add device protocol** are now properly aligned when using mobile screens.

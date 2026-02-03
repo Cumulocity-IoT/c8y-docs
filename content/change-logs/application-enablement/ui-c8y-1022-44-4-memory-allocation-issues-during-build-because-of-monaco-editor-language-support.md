@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-64566
 version: 1022.44.4
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The monaco-editor language support feature includes large worker files (around 1-10MB) which caused memory allocation problems for webpack during the build process. To address this, the build process has been updated to first build the monaco-related service workers separately before the main application. The built monaco worker files are then copied to the final build folder. This change resolves the memory allocation issues and ensures a successful build process.

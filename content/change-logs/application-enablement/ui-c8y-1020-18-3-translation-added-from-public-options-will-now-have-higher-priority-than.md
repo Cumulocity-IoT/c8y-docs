@@ -15,12 +15,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60268
 version: 1020.18.3
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, translations from plugin PO files (file format used for UI translations) took precedence over translations added via public options, which could lead to inconsistencies. With this change, translations added via public options will now have a higher priority than translations from plugin PO files. Existing translations in plugin PO files that conflict with public option translations will be overridden. This ensures a consistent and predictable translation behavior. 

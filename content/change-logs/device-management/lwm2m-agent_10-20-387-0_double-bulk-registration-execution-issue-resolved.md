@@ -13,12 +13,5 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-3994
 version: 10.20.386.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 When uploading the LWM2M bulk registration file, there was a potential issue where the registration could be processed twice, causing the second attempt to fail and revert to PENDING, leading to repeated retries. This issue has now been resolved, ensuring that each operation is executed only once. In the event of a failure, the operation will no longer be retried.

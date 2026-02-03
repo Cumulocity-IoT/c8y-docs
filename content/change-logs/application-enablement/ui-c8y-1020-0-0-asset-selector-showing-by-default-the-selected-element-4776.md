@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-55762
 version: 1020.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, the asset selector did not show the currently selected element by default, requiring users to always manually search for and select the desired asset. With this change, the asset selector now automatically displays the selected element when opened. This improvement streamlines the user workflow by eliminating the need to repeatedly locate and select the same asset, saving time and effort.

@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T09:58:31.066Z
 title: Fields added to inventory POST/PUT templates for simulators
 change_type:
   - value: change-VSkj2iV9m
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-2853
 version: 10.18.497.5
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Simulators did not use inventory POST/PUT templates properly as they did not specify any ID fields for the object they created/updated. This has now been resolved by adding the corresponding fields ID, External ID and External ID type depending on the SmartREST template used as instruction.

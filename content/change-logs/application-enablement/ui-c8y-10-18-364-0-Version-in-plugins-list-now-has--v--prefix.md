@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T14:19:57.191Z
 title: Version in plugins list now has "v" prefix
 change_type:
   - value: change-VSkj2iV9m
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-54210
 version: 10.18.364.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The version in the plugins list is now displayed with a "v" prefix.

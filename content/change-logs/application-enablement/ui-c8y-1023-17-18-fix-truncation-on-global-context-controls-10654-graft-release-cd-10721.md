@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65643
 version: 1023.17.18
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Global time context controls were overlapping in smaller viewports. This fix improves the usability of global context controls, ensuring that control labels, values, and other content are fully accessible.

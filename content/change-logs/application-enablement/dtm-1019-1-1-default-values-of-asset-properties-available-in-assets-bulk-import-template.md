@@ -1,5 +1,5 @@
 ---
-date: '2023-12-14'
+date: 2023-12-14
 title: Default values of asset properties available in assets bulk import template
 product_area: Application enablement & solutions
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: dtm
 ticket: CTM-702
 version: 1019.1.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The bulk import template now shows any default values that are set for asset properties.

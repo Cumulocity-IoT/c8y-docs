@@ -1,5 +1,5 @@
 ---
-date: '2025-06-12'
+date: 2025-06-12
 title: Re-upload of previous microservice versions
 product_area: Platform services
 change_type:
@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-63368
 version: 2025.192.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 

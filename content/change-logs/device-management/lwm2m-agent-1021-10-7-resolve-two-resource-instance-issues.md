@@ -13,12 +13,5 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-4560
 version: 1021.10.7
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The LWM2M composite write operation successfully updated multiple resources on the device, but incorrectly displayed the values as a single consolidated resource object. This issue has been fixed. Additionally, an issue with the incorrect representation of binary data and core link data on logging event texts, shown when logging verbosity is increased for the device, has been fixed.

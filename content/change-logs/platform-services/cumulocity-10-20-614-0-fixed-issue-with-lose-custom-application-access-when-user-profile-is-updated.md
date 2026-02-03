@@ -15,12 +15,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-61368
 version: 10.20.614.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Fixed an issue where the custom applications in a user profile were cleared when other fields in the user profile were updated. 

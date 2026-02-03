@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-57710
 version: 1020.16.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, the **Application access** list of a global role showed both applications and microservices. This has been changed to only show applications in the *Application access** list.

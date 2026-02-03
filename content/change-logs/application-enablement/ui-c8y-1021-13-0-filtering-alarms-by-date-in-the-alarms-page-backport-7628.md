@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60796
 version: 1021.13.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 To improve the usability of the **Alarms** page, alarm filtering by a date range has been implemented. Users can now filter alarms by specifying a start and end date, allowing to narrow down the displayed alarms to a specific time period. This change enhances the alarm management experience by providing more granular control over the alarms being viewed, making it easier for users to focus on relevant alarms within a desired timeframe.

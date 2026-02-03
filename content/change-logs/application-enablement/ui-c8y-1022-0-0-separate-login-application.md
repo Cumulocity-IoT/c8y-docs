@@ -1,5 +1,5 @@
 ---
-date: '2025-05-12'
+date: 2025-05-12
 title: Separate login application now manages all authentication flows
 product_area: Application enablement & solutions
 change_type:
@@ -13,13 +13,6 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63361
 version: 1022.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Starting with version 1022.0.0, the Web SDK no longer includes built-in login functionality in each application. Instead, a separate login application now manages all authentication flows.
 Web applications developed using Web SDK version 1022.0.0 or later will automatically redirect users to this standalone login application whenever authentication is needed.

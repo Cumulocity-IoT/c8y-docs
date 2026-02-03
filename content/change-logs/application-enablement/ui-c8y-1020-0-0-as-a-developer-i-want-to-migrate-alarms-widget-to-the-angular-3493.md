@@ -1,5 +1,5 @@
 ---
-date: '2024-06-06'
+date: 2024-06-06
 title: Redesign of the alarms feature
 product_area: Application enablement & solutions
 change_type:
@@ -13,13 +13,6 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-52646
 version: 1020.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 As announced earlier, a redesign of the alarms feature has been introduced with both visual and functional enhancements.
 

@@ -1,5 +1,5 @@
 ---
-date: '2025-11-13'
+date: 2025-11-13
 title: Smart rules (NEW) introduces support for fine-grained RBAC
 change_type:
   - value: change-pXAlHAWka
@@ -13,13 +13,6 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-4929
 version: 26.247.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 The smart rules (NEW) feature now supports fine-grained Role-Based Access Control (RBAC) to manage user permissions more precisely.

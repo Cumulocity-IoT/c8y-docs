@@ -13,13 +13,6 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-2812
 version: 10.20.394.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 The wizard for bulk registering LWM2M devices to {{< product-c8y-iot >}} provides default bulk registration templates.

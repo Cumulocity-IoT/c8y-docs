@@ -1,5 +1,5 @@
 ---
-date: '2024-03-14'
+date: 2024-03-14T14:35:11.175Z
 title: Improved JSDoc annotations
 product_area: Application enablement & solutions
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-57884
 version: 1019.7.6
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The JSDoc annotations have been improved. Changes include fixing broken links, updating outdated information, adding missing code snippets, and improving overall clarity. These improvements aim at providing developers with better references and guides when working with the Web SDK.

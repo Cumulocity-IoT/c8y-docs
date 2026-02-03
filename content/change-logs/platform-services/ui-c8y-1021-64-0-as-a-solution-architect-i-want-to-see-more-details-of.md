@@ -13,13 +13,6 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62166
 version: 1021.64.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, only one readme file could be added to a package - by storing the *README.md* file in the package root folder. With this update a readme file can be created for each plugin within a package, thus providing users with a better experience and placing the information closer to the plugin.
 

@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-5178
 version: 1023.4.6
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 With the rollout of the **Dashboard manager** feature preview in the Device Management application, the **Info** tab was hidden for some devices when the feature preview was disabled. This issue is now fixed, and the **Info** tab is visible again for all devices when the feature preview is disabled. Moreover, issues with the **Edit widgets** and **Dashboard settings** options in the same context have been fixed. 

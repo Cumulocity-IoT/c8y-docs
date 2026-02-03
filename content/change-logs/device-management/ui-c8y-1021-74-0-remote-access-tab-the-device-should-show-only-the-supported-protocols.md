@@ -13,13 +13,6 @@ build_artifact:
     label: ui-c8y
 ticket: DM-2114
 version: 1021.74.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, the **Remote access** tab in the device details showed all available protocols, even if the device did not support them. This could lead to confusion for users trying to remotely access devices.
 

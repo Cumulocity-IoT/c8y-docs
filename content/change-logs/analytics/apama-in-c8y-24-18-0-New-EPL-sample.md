@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06
 title: New EPL sample
 change_type:
   - value: change-QHu1GdukP
@@ -12,13 +12,6 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 version: 24.18.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 A new EPL sample named "Receive update notifications"
 can now be accessed from the EPL editor of the Streaming Analytics application.

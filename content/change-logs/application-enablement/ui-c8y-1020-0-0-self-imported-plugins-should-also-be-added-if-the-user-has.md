@@ -13,13 +13,6 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-59272
 version: 1020.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 If a user upgraded one of the default web applications (for example, Cockpit) after it had been cloned, it would only include the plugins that the application had offered during the initial clone/installation of the application.
 If additional self-imported plugins were introduced in the upgraded version, these would not have been present when using the application.

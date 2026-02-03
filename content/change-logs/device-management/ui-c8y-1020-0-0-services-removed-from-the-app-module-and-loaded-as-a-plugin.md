@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-2973
 version: 1020.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The services component was previously an integral part of the default Device Management application. With this change, the functionality for services has been modularized into a plugin. By default, users will still have access to services within the Device Management application. However, if not needed, the functionality can be removed by deactivating the plugin. This approach offers flexibility for users who may or may not require certain functionalities within the application.

@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06
 title: Missing subassets in a device group or asset hierarchy
 change_type:
   - value: change-2c7RdTdXo4
@@ -12,13 +12,6 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 version: 24.18.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, when reactivating an Analytics Builder model, an error was thrown if a subasset of a device group or asset hierarchy from which the model receives events no longer existed in the inventory, for example, because a device was deleted.
 As of this version, missing subassets in a device group or asset hierarchy are ignored and an error is no longer thrown.

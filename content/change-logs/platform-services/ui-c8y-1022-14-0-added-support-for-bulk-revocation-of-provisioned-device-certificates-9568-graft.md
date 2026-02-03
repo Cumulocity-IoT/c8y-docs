@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62990
 version: 1022.14.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, provisioned device certificates could only be revoked individually. With this change, it is now possible to select multiple provisioned device certificates in the data grid and revoke them in bulk. This simplifies the process of revoking multiple certificates.

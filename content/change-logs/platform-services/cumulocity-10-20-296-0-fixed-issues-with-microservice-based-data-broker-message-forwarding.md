@@ -1,8 +1,6 @@
 ---
-date: '2024-04-04'
-title: >-
-  Data broker microservice resumes message forwarding after re-connecting to the
-  Messaging Service
+date: 2024-04-04
+title: "Data broker microservice resumes message forwarding after re-connecting to the Messaging Service"
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -15,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-57995
 version: 1020.296.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 An issue has been resolved where the microservice-based data broker might fail to forward messages to the destination tenant after recovering from a temporary loss of connection to the Messaging Service. This connection loss could be caused by, for example, a transient network interruption or by maintenance on the Messaging Service.

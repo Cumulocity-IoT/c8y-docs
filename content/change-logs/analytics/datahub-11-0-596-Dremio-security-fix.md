@@ -1,5 +1,5 @@
 ---
-date: '2025-04-22'
+date: 2025-04-22
 title: Dremio upgrade with security fix
 product_area: Analytics
 change_type:
@@ -13,13 +13,6 @@ build_artifact:
     label: datahub
 ticket: CDH-5350
 version: 12.0.594
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Dremio has been upgraded to address recent security vulnerabilities in the Dremio software used as part of Cumulocity DataHub:
 

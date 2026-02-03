@@ -1,5 +1,5 @@
 ---
-date: '2024-03-14'
+date: 2024-03-14
 title: Adjust device "Info" dashboard default settings to fit new grid
 product_area: Device management & connectivity
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3200
 version: 1019.7.7
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Resetting the "Info" dashboard in the device details resulted in widgets taking only half of the available dashboard space. Default dashboard settings have now been adjusted to fit the new dashboard grid and resetting the dashboard works properly again.

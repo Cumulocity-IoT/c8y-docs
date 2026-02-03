@@ -15,12 +15,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60547
 version: 1021.4.3
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, errors from external authentication servers were not always displayed to the user, causing confusion when authentication failed without any visible indication. With this update, all errors originating from external authentication servers are now consistently shown in a dedicated error dialog. Additionally, errors resulting from insufficient permissions within the platform are now presented clearly and in a user-friendly manner on the login page.

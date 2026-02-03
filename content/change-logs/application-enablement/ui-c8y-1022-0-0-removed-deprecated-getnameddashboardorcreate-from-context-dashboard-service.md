@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-4568
 version: 1022.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The deprecated `getNamedDashboardOrCreate` method has been removed from the `context-dashboard` service in the Dashboard API. In the future, the `getDashboard()` call must be used instead.

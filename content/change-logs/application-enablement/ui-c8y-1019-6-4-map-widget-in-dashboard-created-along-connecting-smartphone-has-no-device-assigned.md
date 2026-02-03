@@ -1,5 +1,5 @@
 ---
-date: '2024-03-14'
+date: 2024-03-14T14:35:11.175Z
 title: Map widget correctly assigns smartphone as device
 product_area: Application enablement \u0026 solutions
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-57689
 version: 1019.6.4
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The "Map" widget displayed in the dashboard did not have a device assigned to it when connecting a smartphone. This issue has been fixed so that the "Map" widget correctly assigns the connected smartphone as the device to display location data from.

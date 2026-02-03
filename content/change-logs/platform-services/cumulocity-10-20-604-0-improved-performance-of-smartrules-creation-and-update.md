@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-60574
 version: 10.20.604.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, the request time for creating or updating a smart rule increased with the number of enabled or disabled sources. 
 Therefore it was recommended to not select the **Activate also for &lt;number&gt; child assets** checkbox when a local smart rule was created on a group containing many devices.

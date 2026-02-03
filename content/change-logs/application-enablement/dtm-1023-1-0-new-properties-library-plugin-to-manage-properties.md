@@ -13,13 +13,6 @@ build_artifact:
     label: dtm
 ticket: CTM-2297
 version: 1023.1.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The DTM plugin now includes a unified Property Library plugin that enables centralized management of all properties, delivering a streamlined, powerful, and future-proof modeling environment.
 Built on the Digital Twin Definitions API, the Property Library provides enhanced extensibility, improved reliability, and a modern foundation for future enhancements.

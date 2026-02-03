@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60595
 version: 1020.28.9
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In the **Audit logs** page, time information is provided in the "Times" column on the left (server time) and inside the audit log card (device time). The information popup has been improved, to make users aware that audit logs cards are filtered by device time which can be different from the server time. 

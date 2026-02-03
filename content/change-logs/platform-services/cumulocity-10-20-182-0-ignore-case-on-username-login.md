@@ -1,5 +1,5 @@
 ---
-date: '2024-04-04'
+date: 2024-04-04
 title: Option to ignore case of username or alias on login
 product_area: Platform services
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-55565
 version: 10.20.182.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 To simplify the login process, tenant administrators can now activate an option which allows users to log in with case-insensitive usernames or aliases.

@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62321
 version: 1021.34.3
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Due to an issue, the device info dashboards known from the Device Management application were also showing up in the Cockpit application. This has been adressed now.

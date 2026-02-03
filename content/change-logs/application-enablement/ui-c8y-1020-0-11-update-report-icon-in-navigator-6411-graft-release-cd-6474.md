@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-59044
 version: 1020.0.11
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, when a report with the **Show in navigator** option enabled had its icon changed, the icon was not updated in the navigator. With this fix, the icon is updated in the navigator as soon as changes are saved.

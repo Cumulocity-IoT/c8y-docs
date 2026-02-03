@@ -12,13 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 version: 2025.122.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 A new toggle, `strongConsistency`, has been introduced. When set to true, it prevents late-arriving measurements from being shown as the most recent data for a device, regardless of their actual arrival time.

@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-53701
 version: 1020.26.5
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In the event of an error while deleting an inventory role or a global role, the message always stated that the role couldn't be deleted because it was assigned to a user. This fix ensures that the error message will now reflect the actual cause of the problem.

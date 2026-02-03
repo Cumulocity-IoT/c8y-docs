@@ -1,5 +1,5 @@
 ---
-date: '2024-02-06'
+date: "2024-02-06"
 title: Fixed notifications issue for microservice subscriptions
 product_area: Platform services
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: pulsar
 ticket: MTM-56947
 version: 10.20.41.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Notifications are now sent correctly for subscriptions to managed objects that represent microservices. Previously, notification subscriptions to these managed objects could cause microservice subscription and un-subscription to fail.

@@ -1,6 +1,6 @@
 ---
-date: '2023-12-06'
-title: 'Updated org.eclipse.jetty:jetty dependencies'
+date: 2023-12-06T11:38:26.638Z
+title: Updated org.eclipse.jetty:jetty dependencies
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-53359
 version: 10.18.79.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Dependencies on <code>org.eclipse.jetty:jetty-*</code> were updated to version 9.4.51.v20230217.

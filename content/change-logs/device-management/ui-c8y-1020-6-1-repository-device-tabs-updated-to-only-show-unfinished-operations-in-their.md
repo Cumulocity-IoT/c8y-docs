@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3758
 version: 1020.6.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, the repository device tabs in the device details showed already completed operations which could differ from the currently installed items. With this change, the repository device tabs have been updated to only display active operations in their views.

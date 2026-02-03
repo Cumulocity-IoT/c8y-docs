@@ -13,13 +13,6 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60006
 version: 1020.7.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The Cockpit application has been split into further plugins. This allows admins to tailor the Cockpit application to their needs without any coding effort. They can now easily remove certain plugins and thus certain features which they do not want to include in their Cockpit application. The following plugins are now available:
 

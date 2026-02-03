@@ -15,12 +15,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63961
 version: 1022.4.10
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, if users had SSO and SSO redirect enabled but did not have permission to access any application, they ran into an infinite loop after trying to log in. This issue has been fixed. If users have no application access, they are now redirected to the login page, and an error is shown.

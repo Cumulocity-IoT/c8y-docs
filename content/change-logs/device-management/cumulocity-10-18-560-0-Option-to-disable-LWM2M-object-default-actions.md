@@ -1,5 +1,5 @@
 ---
-date: '2024-02-06'
+date: "2024-02-06"
 title: Option to disable LWM2M object default actions
 product_area: Device management & connectivity
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: DM-1849
 version: 10.18.560.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The default handling of object instance actions for LWM2M objects 3, 4 and 6 can now be turned off. In addition, the default server-side firmware update state machine for object 5 can be disabled. These settings can be enabled/disabled in the device´s LWM2M  configuration in the UI.

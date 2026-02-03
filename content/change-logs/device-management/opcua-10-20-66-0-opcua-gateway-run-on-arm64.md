@@ -1,5 +1,5 @@
 ---
-date: '2024-06-12'
+date: 2024-06-12
 title: OPC UA gateway no longer fails to start on ARM64 Docker images
 product_area: Device management & connectivity
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: opcua
 ticket: DM-3346
 version: 10.20.66.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The OPC UA gateway incorporated certain dependency libraries that encountered linkage issues with the native operating system libraries within ARM64 Docker images. Consequently, executing the OPC UA gateway in ARM64-based Docker containers was problematic. This issue has been successfully resolved, facilitating the smooth build and execution of the OPC UA gateway on ARM64 Docker images.

@@ -1,5 +1,5 @@
 ---
-date: '2023-12-14'
+date: 2023-12-14
 title: Immediate feedback from validation of Key field
 product_area: Application enablement & solutions
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: dtm
 ticket: CTM-651
 version: 1019.1.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 During the creation of asset models, asset properties and assets, upon entering input in the **Key** field, if the value entered is invalid then an error message will be shown, and if the value is valid and all required fields in the form are filled, the **Save** button will be enabled - no need to click outside the field. With de-bouncing implementation, the API requests are triggered after a short delay following the last key entry, significantly reducing the frequency of calls and enhancing the responsiveness of the application.

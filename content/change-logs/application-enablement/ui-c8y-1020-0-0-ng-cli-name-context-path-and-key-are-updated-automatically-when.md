@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-57348
 version: 1020.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 If values for `ng-cli name`, `context-path` and `key` are missing in the *cumulocity.config.ts* file they are automatically derived from the `name` property in the *package.json* file.

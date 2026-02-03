@@ -1,8 +1,6 @@
 ---
-date: '2024-04-26'
-title: >-
-  Permissions for SSO users no longer lost when upgrading the platform from
-  version 10.17
+date: 2024-04-26
+title: Permissions for SSO users no longer lost when upgrading the platform from version 10.17
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -15,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-58907
 version: 10.20.341.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 After a platform upgrade from version 10.17 to a later version an issue occurred that the permissions for some SSO users got lost. This issue has been fixed and updating the platform version does no longer affect user permissions.

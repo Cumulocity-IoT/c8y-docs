@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: DM-4706
 version: 2025.166.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 A new SmartREST template has been added. Using the template ID 600, it is now possible to read the platform version with SmartREST, in order to evaluate API interface compatibility and expected request behaviour.

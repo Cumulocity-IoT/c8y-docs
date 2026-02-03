@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3090
 version: 1021.32.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 As part of ongoing improvements to the Device Management application, the "Asset notes" widget has been migrated to from AngularJS to Angular.

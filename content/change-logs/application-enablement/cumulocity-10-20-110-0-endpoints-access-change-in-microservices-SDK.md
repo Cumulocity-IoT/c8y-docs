@@ -1,5 +1,5 @@
 ---
-date: '2024-06-27'
+date: 2024-06-27
 title: Restricting access to Spring Boot actuator endpoints
 product_area: Application enablement & solutions
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-58316
 version: 1020.111.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Improving the security for the Microservice SDK we have decided to restrict the initial configuration of the Spring Boot actuator endpoints (POST access to the `/loggers` endpoint) to the administrator roles only.

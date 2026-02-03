@@ -15,13 +15,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-59299
 version: 10.20.568.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The domain of a tenant, created under either the {{< management-tenant >}} or {{< enterprise-tenant >}}, is now required to be a subdomain of the parent tenant.
 Previously, the domain of a tenant created under the {{< management-tenant >}} could have a custom domain not related to the parent tenant.

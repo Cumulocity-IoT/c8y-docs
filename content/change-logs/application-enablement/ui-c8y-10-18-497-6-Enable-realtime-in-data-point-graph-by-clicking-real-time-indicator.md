@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T15:31:59.374Z
 title: Enable realtime in data point graph by clicking real-time indicator
 change_type:
   - value: change-VSkj2iV9m
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-56149
 version: 10.18.497.6
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 If a user drags the X-axis in a "Data point graph" widget with realtime enabled, realtime is turned off. It can be enabled again by clicking the real-time indicator.

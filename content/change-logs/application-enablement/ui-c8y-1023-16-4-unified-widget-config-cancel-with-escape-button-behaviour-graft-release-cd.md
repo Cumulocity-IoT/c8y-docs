@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65084
 version: 1023.16.4
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Previously, the behavior of canceling the widget configuration using the escape button was inconsistent across different widgets. To provide a more unified and intuitive user experience, the widget configuration cancel behavior has been standardized. Now, when a user presses the escape button while configuring a widget, the configuration will be canceled consistently across all widgets.

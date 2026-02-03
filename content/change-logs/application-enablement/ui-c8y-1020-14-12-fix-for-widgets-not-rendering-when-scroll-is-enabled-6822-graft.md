@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60003
 version: 1020.14.12
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In some cases, new widgets were not properly rendering when scrolling was enabled on a page. This issue has been resolved and widgets will now consistently render as expected when scroll is turned on.

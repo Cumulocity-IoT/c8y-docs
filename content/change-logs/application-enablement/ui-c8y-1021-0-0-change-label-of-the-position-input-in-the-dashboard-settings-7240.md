@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60191
 version: 1021.0.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 For better clarity, the **Position in navigator** field in the dashboard settings has been renamed to **Position in tabs**.

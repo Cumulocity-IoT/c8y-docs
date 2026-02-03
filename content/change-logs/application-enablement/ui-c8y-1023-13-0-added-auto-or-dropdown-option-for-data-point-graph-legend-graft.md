@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65466
 version: 1023.13.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 To improve the usability of data point graphs, a new option has been added that allows users to control the display of the graph legend. They can now select between an automatic mode, which shows the legend if there is sufficient space, or explicitly control the legend visibility through a dropdown menu. This change enhances the flexibility of the graph configuration and allows users to optimize the visual representation based on their specific requirements and available screen space.

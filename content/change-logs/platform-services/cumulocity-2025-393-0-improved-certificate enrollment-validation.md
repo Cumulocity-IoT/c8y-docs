@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-65209
 version: 2025.393.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The device certificate validation has been improved to ensure that the Common Name (CN) field in the Certificate Signing Request (CSR) subject exactly matches the device ID provided during the device registration process.
 This enhancement improves consistency and prevents [the enrollment of certificates](/device-certificate-authentication/device-enroll-and-re-enroll) with mismatched identifiers.

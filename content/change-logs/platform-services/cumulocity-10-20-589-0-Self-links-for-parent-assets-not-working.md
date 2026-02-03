@@ -13,12 +13,5 @@ build_artifact:
     label: cumulocity
 ticket: MTM-60938
 version: 10.20.589.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In order to simplify the Inventory API the redundant `self` field has been removed from `deviceParents`, `assetParents` and `additionParents` response fragments. It was not required and always had a generated link to a non-existent endpoint.

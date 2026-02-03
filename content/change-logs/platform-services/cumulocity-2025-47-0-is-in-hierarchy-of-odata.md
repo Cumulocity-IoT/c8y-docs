@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-61960
 version: 2025.47.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 A new function `isinhierarchyof()` has been added to the [query language](https://cumulocity.com/api/core/#tag/Query-language). 
 

@@ -13,12 +13,5 @@ build_artifact:
     label: dtm
 ticket: CTM-1971
 version: 1021.2.2
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In the Digital Twin Manager, the **Groups** navigation item in the asset navigator was unresponsive. This issue has been fixed. The navigation item now works properly.

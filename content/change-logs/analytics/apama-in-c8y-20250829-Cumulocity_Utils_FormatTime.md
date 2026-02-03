@@ -13,13 +13,6 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAM-35326
 version: 26.199.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 The behavior of the `Util.formatTime` has changed in the {{< product-c8y-iot >}} utilities bundle for EPL Apps. This utility now produces a date-time string in **ISO8601 format** (`yyyy-MM-dd'T'HH:mm:ss.SSS`). This is a **breaking change** for any code relying on the previous `yyyy/MM/dd HH:mm:ss` format. We recommend updating your code to handle the new standard format.

@@ -1,5 +1,5 @@
 ---
-date: '2023-12-06'
+date: 2023-12-06T15:46:14.954Z
 title: Version matrix for packages
 change_type:
   - value: change-QHu1GdukP
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-52341
 version: 10.18.143.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The repository-connect microservice now offers to sync packages that include a versioning matrix which allows to filter exactly the versions to be synced. Versions which are not included in the matrix but uploaded to the platform will be removed by the microservice. 

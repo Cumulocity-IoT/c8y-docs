@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3766
 version: 1021.3.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The device profiles view has been migrated to a data grid. The data grid provides a more modern and user-friendly way to view and manage device profile items compared to the previous list view. The data grid offers enhanced features such as sorting, filtering, and pagination, making it easier to find and work with specific items.

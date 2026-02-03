@@ -1,5 +1,5 @@
 ---
-date: '2024-04-16'
+date: 2024-04-16
 title: Asset names in the "Data point list" widget now redirect to the correct URL
 product_area: Application enablement & solutions
 change_type:
@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-57677
 version: 1019.18.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 In the past, when clicking on an asset name in the "Data point list" widget, users were sometimes redirected to the wrong URL. This issue has now been resolved. Clicking on an asset name in the "Data point list" widget will now redirect the user to the correct asset page.

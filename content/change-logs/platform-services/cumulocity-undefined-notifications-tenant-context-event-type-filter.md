@@ -15,13 +15,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-60734
 version: 2025.30.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 Notifications 2.0 subscriptions may specify the {{< product-c8y-iot >}} APIs to subscribe to, for example `events` or `measurements`.

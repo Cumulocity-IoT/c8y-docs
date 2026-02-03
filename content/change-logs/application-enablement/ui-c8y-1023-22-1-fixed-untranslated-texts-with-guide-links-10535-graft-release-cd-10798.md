@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65540
 version: 1023.22.1
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 This change fixes a localization issue that occurred when empty state messages included documentation links. These messages were not displayed properly in multiple places throughout the Administration and Cockpit applications.

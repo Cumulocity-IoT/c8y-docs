@@ -13,13 +13,6 @@ build_artifact:
     label: opcua
 ticket: DM-4971
 version: 1023.1.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 The OPC UA gateway now connects to {{< product-c8y-iot >}} through the local [{{< product-c8y-iot >}} thin-edge.io proxy](https://thin-edge.github.io/thin-edge.io/references/cumulocity-proxy/).
 Consequently, OPC UA gateway thin-edge.io usage without the {{< product-c8y-iot >}} proxy is now deprecated and will be removed in a future version.
