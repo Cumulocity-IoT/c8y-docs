@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2627"
 version: "1024.0.0"
 ---
-Previously, the assets grid in Assets page would occasionally appear empty even when assets were available; this is now resolved
+Previously, the asset list in the **Assets** page occasionally appeared empty even when assets were available. This issue has been fixed, and available assets are now properly displayed.
