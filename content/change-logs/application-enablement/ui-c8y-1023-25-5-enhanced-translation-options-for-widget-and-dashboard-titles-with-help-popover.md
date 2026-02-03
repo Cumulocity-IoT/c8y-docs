@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64618
 version: 1023.25.5
 ---
-When configuring dashboards and widgets, you can choose to translate their titles if possible. Previously, these options were not explained enough. Now, they have been placed under common label and a help popover has been added that provides additional info and guidance on how to use this translation feature.
+When configuring dashboards and widgets, you can choose to translate their titles if possible. Previously, the translation options were not explained clearly enough. Now, they have been placed under a common label, and a help popover has been added that provides additional information and guidance on how to use these translation options.
