@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62747
 version: 1021.71.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The preview features functionality allows you to manage all features that are currently in Public Preview in one place. With a simple toggle interface you can easily discover, enable, and experiment with upcoming functionality. This helps you stay ahead of new developments while providing our team with valuable insights to improve the final product through your early feedback.
 

@@ -1,5 +1,5 @@
 ---
-date: 2024-04-25
+date: '2024-04-25'
 title: Searching for devices blocked when creating or editing a private smart rule
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-55913
 version: 1019.22.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the past, it was possible to search for devices when creating or editing a private smart rule, which could potentially leak information about devices the user should not have access to. To address this security concern, searching for devices is now blocked when creating or editing a private smart rule. This change ensures that users can only select devices they are authorized to access, preventing any potential data leaks. The impact of this change is limited to the creation and editing of private smart rules, and users can still search for devices when creating or editing non-private smart rules as before.

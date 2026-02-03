@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T14:49:03.473Z
+date: '2023-12-06'
 title: Improved microservice subscriptions
 change_type:
   - value: change-VSkj2iV9m
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-56037
 version: 10.18.491.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Microservices which have been created via API without providing a binary for it can again be subscribed without getting an error message.

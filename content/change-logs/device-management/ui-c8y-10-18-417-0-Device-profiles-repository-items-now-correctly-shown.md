@@ -1,6 +1,6 @@
 ---
-date: 2023-12-06T10:31:17.177Z
-title: "Device profiles repository items now correctly shown"
+date: '2023-12-06'
+title: Device profiles repository items now correctly shown
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: DM-2547
 version: 10.18.417.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the <b>Device profiles</b> page, when adding a repository item (software, firmware, configuration) if the device profile has a device type defined, the items shown either correspond to this device type or they don't have a device type specified. In some cases, repository items without a filter were not visualized in the window for adding an item. These items are now correctly shown.

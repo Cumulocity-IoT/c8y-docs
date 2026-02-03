@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62110
 version: 1021.45.3
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The single sign-on (SSO) configuration has been updated with the default access mapping set to retrieve user information from the access token. This update is required as {{< product-c8y-iot >}} recently enabled user information to be taken from either the access token or the identity token. This change improves backward compatibility.

@@ -1,6 +1,8 @@
 ---
-date: 2024-11-21
-title: Setting a negative value for the `client.numClients` tenant option now results in the default value of 1 being used
+date: '2024-11-21'
+title: >-
+  Setting a negative value for the `client.numClients` tenant option now results
+  in the default value of 1 being used
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
@@ -13,5 +15,12 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAM-35027
 version: 25.311.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 If the `client.numClients` tenant option was set to a value less than zero, the Apama-ctrl microservice was unable to communicate with the Cumulocity IoT platform. Now, a warning is logged and a default value of 1 is set to ensure the microservice can communicate.

@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63333
 version: 1021.62.10
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The maximum width for dropdown menus has been adjusted to accommodate the date picker.

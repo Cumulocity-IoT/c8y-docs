@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-58509
 version: 1020.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 A dashboard manager view has been added to streamline the management of device type dashboards. This view aggregates and displays a list of all dashboards assigned to specific device types. From this list, dashboard templates linked to device types can be viewed, edited by navigating to a particular instance and templates can also be deleted if needed.

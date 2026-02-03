@@ -1,5 +1,5 @@
 ---
-date: 2025-04-03
+date: '2025-04-03'
 title: New receivedTimestampInMs placeholder for OPC UA custom action requests
 product_area: Device management & connectivity
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: opcua
 ticket: DM-4213
 version: 1021.5.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 For OPC UA custom action requests, you can now include the timestamp of when the node value is received by the OPC UA device gateway. Simply add the `${receivedTimestampInMs}` placeholder to the custom action body template in the OPC UA device protocol. This enables users to track when a node value is processed within the gateway.
