@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed styling of confirmation modal options (#10866) [GRAFT][release/cd] (#11047)
+title: Fixed styling of checkbox options in the confirmation dialog
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
