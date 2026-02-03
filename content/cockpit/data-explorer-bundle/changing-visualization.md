@@ -8,7 +8,7 @@ sector:
 
 To change the visualization in the data explorer, you can modify several properties.
 
-### Time range {#time-range}
+### Time range {#time-ranges}
 
 You can change the time range being shown. By default, you see the values for the last hour.
 
