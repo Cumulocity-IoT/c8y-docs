@@ -87,7 +87,7 @@ async function processFile(
     unchangedEnvironments = false;
     environmentAvailability.push({
       label: envDetail.environmentLabel,
-      // date: envDetail.component_update_date,
+      date: envDetail.component_update_date,
     });
   }
 
