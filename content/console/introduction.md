@@ -14,11 +14,15 @@ Given that the spend amount is drawn-down by usage each month, it is important f
 
 {{< c8y-admon-preview >}}
 The Console application is in Private Preview, that is, it is not enabled by default and may be subject to change in the future. This application is subscribed to your tenant if you are on the new CTC model. If you are unable to access this application, please contact [product support](/additional-resources/contacting-support/) to request the application subscription for your tenant.
+
+At this time, the Console application is not supported on Dedicated environments. This will be enabled soon. 
 {{< /c8y-admon-preview >}}
 
-{{< c8y-admon-info >}}
-At this time, the Console application is not supported on Dedicated environments. This will be enabled soon. 
-{{< /c8y-admon-info >}}
+{{< c8y-admon-req >}}
+To use Console application, you need
+* Console application and stratos-client microservice subscribed to your tenant
+* READ permission for permission type "Console"
+{{< /c8y-admon-req >}}
 
 
 ### Glossary
