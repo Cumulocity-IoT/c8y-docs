@@ -15,4 +15,4 @@ ticket: MTM-65991
 version: 1023.23.4
 ---
 For testing purposes, application options can be provided via query parameters to Web SDK-based UI applications.
-We've now excluded some these applicaion options to be providable via query parameters.
+Some of these application options have now been excluded from being provided via query parameters.
