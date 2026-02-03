@@ -4,6 +4,7 @@ import { getInput, setFailed } from "@actions/core";
 import { context, getOctokit } from "@actions/github";
 import Anthropic from "@anthropic-ai/sdk";
 import { fileURLToPath } from "url";
+import JSON5 from "json5";
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
@@ -179,7 +180,7 @@ async function run() {
       raw = cleanJSON(raw);
       let suggestions = [];
       try {
-        suggestions = JSON.parse(raw);
+        suggestions = JSON5.parse(raw);
         console.log("AI suggestions parsed:", suggestions);
 
         suggestions.forEach(s => {
