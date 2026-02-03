@@ -17,3 +17,5 @@ For developers seeking a versatile and flexible integration solution, Cumulocity
 ### Creating the microservice image{#creating-the-microservice-image}
 We use the Cumulocity Microservice SDK for Java to create the image and the deployable
 zip file (Microservice SDK for Java - Cumulocity documentation ). To basically provision OTLP instrumentation of the microservice, the “opentelemetry-javaagent.jar” file must be included in the microservice image at build time.
+
+Among the leading IoT platforms, Cumulocity IoT stands out for its seamless device management, data aggregation, and advanced analytics capabilities. However, to fully realize the potential of Cumulocity IoT, seamless integration with existing enterprise systems is crucial.
