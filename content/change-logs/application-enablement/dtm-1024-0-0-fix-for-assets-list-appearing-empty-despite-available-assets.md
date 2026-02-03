@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fix for Assets list appearing empty despite available assets."
+title: "Asset list no longer empty despite available assets
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
