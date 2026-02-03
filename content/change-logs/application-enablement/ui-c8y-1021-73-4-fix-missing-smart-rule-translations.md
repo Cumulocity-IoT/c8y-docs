@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63542
 version: 1021.73.4
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 
 Missing translations in smart rules related views in Web SDK based applications have been fixed.

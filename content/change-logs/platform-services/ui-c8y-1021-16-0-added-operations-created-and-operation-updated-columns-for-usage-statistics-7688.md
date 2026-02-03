@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-61355
 version: 1021.16.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 To provide more detailed insights into platform usage, the **Usage statistics** page for {{< enterprise-tenant >}}s has been extended with two new columns: "Operations Created" and "Operations Updated". These columns present the number of operations that have been created and updated, respectively.
 

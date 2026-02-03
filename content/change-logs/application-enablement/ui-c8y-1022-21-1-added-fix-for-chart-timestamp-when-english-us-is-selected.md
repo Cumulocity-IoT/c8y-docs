@@ -15,5 +15,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-64163
 version: 1022.21.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In some scenarios, when the English US language was selected in the platform, the data point graph and data explorer chart timestamps were incorrectly displayed, showing a 24-hour format instead of a 12-hour format. This issue has been resolved. The chart timestamps are now correctly shown when using the English US locale. This change ensures a consistent user experience across different locales.

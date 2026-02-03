@@ -1,6 +1,6 @@
 ---
-date: 2024-10-15
-title: Microservice SDK updating to Java 17  
+date: '2024-10-15'
+title: Microservice SDK updating to Java 17
 change_type:
   - value: change-inv-3bw8e
     label: Announcement
@@ -13,6 +13,13 @@ build_artifact:
     label: cumulocity
 version: 10.20.134.0
 ticket: MTM-59860
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 This is a follow-up on a recent [announcement](https://cumulocity.com/docs/change-logs/?change-type=.change-type-announcement%2C.change-type-api-change#cumulocity-undefined-microservices-sdk-spring-boot3-announcement) about migrating Microservice SDK to Spring Boot 3.
 As a first step of this process, starting from version **10.20.134.0**, the Java SDK

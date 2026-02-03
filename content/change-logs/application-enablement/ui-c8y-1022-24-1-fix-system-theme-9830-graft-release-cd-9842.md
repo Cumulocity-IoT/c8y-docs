@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-64453
 version: 1022.24.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In some cases, the system theme was not being applied correctly across all areas of the platform. This issue has been resolved. Users will no longer experience inconsistencies in the platform's appearance and can expect a cohesive look and feel based on their selected system theme.

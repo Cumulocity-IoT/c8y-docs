@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-59259
 version: 1020.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 An Angular CDK library update caused the dashboard widget drag functionality to stop working. This issue has been fixed by aligning to the new version and dragging widgets is possible again.

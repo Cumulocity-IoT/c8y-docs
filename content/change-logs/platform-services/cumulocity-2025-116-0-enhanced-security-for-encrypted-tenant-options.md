@@ -1,5 +1,5 @@
 ---
-date: 2025-04-28
+date: '2025-04-28'
 title: Enhanced security for encrypted tenant options
 product_area: Platform services
 change_type:
@@ -13,6 +13,13 @@ build_artifact:
     label: cumulocity
 ticket: MTM-62399
 version: 2025.116.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 A new security feature has been introduced to restrict the decryption of encrypted [tenant options](https://cumulocity.com/api/core/#tag/Options) with the `credentials.` prefix. These options can now only be decrypted by system users (such as bootstrap or microservice users) if they own the options.
 

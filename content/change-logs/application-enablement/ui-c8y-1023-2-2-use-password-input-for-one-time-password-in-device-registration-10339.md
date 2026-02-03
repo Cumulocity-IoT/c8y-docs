@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65224
 version: 1023.2.2
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the device registration form, the one-time password was previously shown in clear text which posed a security risk. The form has been updated to use a password input field instead, so that the one-time password is hidden while typing. This change improves the security of the device registration process for all users.

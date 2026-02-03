@@ -15,5 +15,12 @@ build_artifact:
     label: ui-c8y
 ticket: DM-4325
 version: 1021.36.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the Device management application, it previously was possible to enter values (for example, in the **Description**, **Version**, **URL** fields) consisting only of whitespaces for firmware, software and configuration items in the corresponding repositories. To prevent this, additional validation has been added to the respective forms which disallows submitting such names. This change improves data quality and consistency for newly created firmware, software and configuration items.

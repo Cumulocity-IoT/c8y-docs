@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60439
 version: 1021.49.11
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 A recent CSS change inadvertently prevented Leaflet plugins from including their own images. This has been reverted to restore the previous behavior. Leaflet plugins can now properly display their custom images again. Installations using Leaflet plugins that include custom images will no longer encounter missing images.

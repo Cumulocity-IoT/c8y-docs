@@ -1,5 +1,5 @@
 ---
-date: 2025-02-07
+date: '2025-02-07'
 title: Removed obsolete AngularJS components
 product_area: Device management & connectivity
 change_type:
@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3707
 version: 1021.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 As part of our ongoing improvement efforts, in a previous version, we have removed several legacy components related to configuration management, device list handling, and column configuration. These changes impact outdated services, directives, and templates that have either been migrated to Angular or deprecated due to lack of usage.
 
