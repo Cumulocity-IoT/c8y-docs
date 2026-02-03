@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed styling of confirmation modal options (#10866) [GRAFT][release/y2026] (#11048)
+title: Fixed styling of checkbox options in the confirmation dialog
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62311
 version: 1023.14.58
 ---
-Improved styling of checkbox option's labels in confirmation dialog so that the are clearly visible and align with the rest of the dialog content.
+The [confirmation modal](https://cumulocity.com/codex/components/status-feedback-and-notifications/modal/overview#confirmation-modal) supports custom checkbox options that can be presented to the user. Previously, the styling of these options was inconsistent with the text displayed in the dialog. Now, the styling has been aligned.
