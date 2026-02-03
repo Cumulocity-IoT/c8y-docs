@@ -85,9 +85,10 @@ async function processFile(
     }
 
     unchangedEnvironments = false;
+    const deploymentDate = new Date(envDetail.component_update_date);
     environmentAvailability.push({
       label: envDetail.environmentLabel,
-      date: envDetail.component_update_date,
+      date: deploymentDate.toISOString().substring(0, 10),
     });
   }
 
