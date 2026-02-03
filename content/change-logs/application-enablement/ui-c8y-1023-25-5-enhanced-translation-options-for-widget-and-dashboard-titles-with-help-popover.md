@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Enhanced translation options for widget and dashboard titles with help popover (#10872) [GRAFT][release/cd] (#11051)
+title: Clearer translation options for dashboard and widget titles
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64618
 version: 1023.25.5
 ---
-Improved clarity of translation options for dashboard and widget titles, added popover with additional info.
+When configuring dashboards and widgets, you can choose to translate their titles if possible. Previously, these options were not explained enough. Now, they have been placed under common label and a help popover has been added that provides additional info and guidance on how to use this translation feature.
