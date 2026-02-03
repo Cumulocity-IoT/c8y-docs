@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Disallow certain application options to be provided via query params
+title: Disallowed certain application options to be provided via query parameters
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
