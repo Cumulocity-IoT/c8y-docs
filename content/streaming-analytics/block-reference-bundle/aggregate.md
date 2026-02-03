@@ -1003,7 +1003,7 @@ Note: The Minimum/Maximum block generates the minimum and maximum for an individ
 </thead>
 <tbody>
 <tr>
-<th scope="row">Rate-quashed output</th>
+<th scope="row">Rate limited output</th>
 <td><span>The first input activation in the specified time period is sent to this output; subsequent activations within that period are sent to the quashed output. When the time period has elapsed, the next input activation starts a new period and is again sent to this output.</span>
 </td>
 <td><span>any</span>
