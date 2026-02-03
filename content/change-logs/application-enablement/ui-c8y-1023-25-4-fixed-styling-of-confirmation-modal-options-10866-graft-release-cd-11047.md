@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62311
 version: 1023.25.4
 ---
-[Confirmation modal](https://cumulocity.com/codex/components/status-feedback-and-notifications/modal/overview#confirmation-modal) supports additional checkbox options that can be presented to the user. Previously, the styling of these options was inconsistent with the text displayed in the dialog. Now, the styling has been aligned.
+The [Confirmation modal](https://cumulocity.com/codex/components/status-feedback-and-notifications/modal/overview#confirmation-modal) supports various checkbox options that can be presented to the user. Previously, the styling of these options was inconsistent with the text displayed in the dialog. Now, the styling has been aligned.
