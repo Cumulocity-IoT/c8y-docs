@@ -141,7 +141,7 @@ An alternative way to copy a dashboard is to use the
 ### To export a dashboard to a JSON file and import it {#to-export-a-dashboard-to-json-file-and-import-it}
 
 For more advanced users there is a feature that allows more complex operations on dashboards.
-To access it navigate to the dashboard settings and open the **Import/export** tab.
+To access it, navigate to the dashboard settings and open the **Import/export** tab.
 
 The advanced feature allows to edit dashboards as JSON with the incorporated code editor. Be aware that this requires knowledge of `ContextDashboard` and widgets configuration interfaces. It also allows to export a dashboard to a JSON file (with some additional data that supports particular widgets in the importing process, for example, that helps to suggest a suitable widget device or takes care of images uploaded for the widget) and then to import the dashboard from the JSON file. This is a much more flexible approach than the one described in [To copy a dashboard from one object to another](#to-copy-a-dashboard-from-one-object-to-another) as it allows to share dashboards not only between the same type of assets in scope of the same tenant, but also to share dashboards between different asset types and different tenants. However, if you share dashboards between different types like groups and devices, for example, a review might be required after the import.
 
