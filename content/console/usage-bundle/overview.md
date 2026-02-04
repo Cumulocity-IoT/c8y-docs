@@ -21,12 +21,12 @@ The first usage widget is the **Last Month Statistics**, and only ever shows the
 <img src="/images/console/usage/overview/last-month-statistics.png" alt="Last Month Statistics">
 
 The following tiles are included:
-* **Environments and Tenants** - displays the number of environments and total tenants, including the type of environment *(public cloud versus dedicated cloud)* and if they are active or not. 
-* **Storage** - displays the latest total Operational Data Store metric from last month. All tenants across all environments are aggregated in this metric.
-* **Messages** - displays the latest total Messages metric from last month. All tenants across all environments are aggregated in this metric. The full calculation of Messages can be found in the {{< company-c8y >}} License Metrics documentation. 
-* **Devices** - displays the latest total number of devices from last month. All tenants across all environments are aggregated in this metric. 
-* **CPU(S)** - displays the latest total amount of CPU power used for microservices in the last month. All tenants across all environments are aggregated in this metric.
-* **Memory** - displays the latest total amount of Memory used for microservices in the last month. All tenants across all environments are aggregated in this metric. 
+* **Environments and Tenants** - Displays the number of environments and total tenants, including the type of environment *(public cloud versus dedicated cloud)* and if they are active or not. 
+* **Storage** - Displays the latest total Operational Data Store metric from last month. All tenants across all environments are aggregated in this metric.
+* **Messages** - Displays the latest total Messages metric from last month. All tenants across all environments are aggregated in this metric. The full calculation of Messages can be found in the {{< company-c8y >}} License Metrics documentation. 
+* **Devices** - Displays the latest total number of devices from last month. All tenants across all environments are aggregated in this metric. 
+* **CPU(S)** - Displays the latest total amount of CPU power used for microservices in the last month. All tenants across all environments are aggregated in this metric.
+* **Memory** - Displays the latest total amount of Memory used for microservices in the last month. All tenants across all environments are aggregated in this metric. 
 
 Note that each tile includes a percent changed indicator. This takes the first month of the selected time range and calculates the percentage difference between that and the last month, which the tiles display the data from.
 

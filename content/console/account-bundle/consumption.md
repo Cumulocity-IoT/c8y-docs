@@ -15,11 +15,11 @@ After each month completes, the system rates and processes the usage in accordan
 The widget at the top of the page contains the following information:
 * **Account Name**
 * **Start/End Dates**
-* **Total Commitment** - the total spend amount as agreed in the CTC contract
-* **Remaining Commitment** - the total usage charges subtracted from the total spend amount - what’s left of the commitment for the duration of the contract
-* **Cumulative Spend** - the total usage charges across the active months of the contract
-* **Percentage Consumed** - the cumulative spend as a percentage of the total commitment
-* **Total Overage** - depending on the contract, if there is any overage charges, they would be indicated here
+* **Total Commitment** - The total spend amount as agreed in the CTC contract.
+* **Remaining Commitment** - The total usage charges subtracted from the total spend amount. What’s left of the commitment for the duration of the contract.
+* **Cumulative Spend** - The total usage charges across the active months of the contract.
+* **Percentage Consumed** - The cumulative spend as a percentage of the total commitment.
+* **Total Overage** - Depending on the contract, any overage charges applicable would be indicated here.
 
 The **Monthly Spend Analysis** showcases a month-over-month comparison of the total usage charges for each active month of the contract. This enables you to quickly compare and see which months were more or less expensive.
 
@@ -39,15 +39,15 @@ Note that the *Bill Date* corresponds to the date which the drawdown occurs. The
 Each bill contains the following information.
 
 * **Base Product** - Shows line item details. Includes the standard set of {{< company-c8y >}} pricing metrics: Deployments, Messages, and Operational Data Store. Usage is calculated into billable units, which are written in the [{{< company-c8y >}} License metrics](/service-terms/license-metrics/). Unit prices are taken from the Product Catalog of the CTC contract.
-* **Add-Ons** - can be opened to view line item details. Includes any and all Add-Ons that were activated and had usage during the usage month. Usage is calculated into billable units, which are written in the [{{< company-c8y >}} License Metrics](/service-terms/license-metrics/). Unit prices are taken from the Product Catalog of the CTC contract.
-* **Total Usage Charges** - the sum of all usage charges (Base Product plus Add-Ons).
-* **Drawdown (Balance Consumed)** - how much the Commitment was drawn based on the usage charges. Will usually equal the Total Usage Charges unless there is an overage scenario, in which case the values will be different *(the remaining Commitment is less than the Total Usage Charges for that month)*. 
-* **Overage** - if an overage scenario happens, this will show the outstanding balance that needs to be paid. 
-* **Total Bill Amount** - the total additional bill amount. Should only be greater than zero when the Commitment balance runs out *(an overage scenario)*.
+* **Add-Ons** - Can be opened to view line item details. Includes any and all Add-Ons that were activated and had usage during the usage month. Usage is calculated into billable units, which are written in the [{{< company-c8y >}} License Metrics](/service-terms/license-metrics/). Unit prices are taken from the Product Catalog of the CTC contract.
+* **Total Usage Charges** - The sum of all usage charges (Base Product plus Add-Ons).
+* **Drawdown (Balance Consumed)** - How much the Commitment was drawn based on the usage charges. Will usually equal the Total Usage Charges unless there is an overage scenario, in which case the values will be different *(the remaining Commitment is less than the Total Usage Charges for that month)*. 
+* **Overage** - If an overage scenario happens, this will show the outstanding balance that needs to be paid. 
+* **Total Bill Amount** - The total additional bill amount. Should only be greater than zero when the Commitment balance runs out *(an overage scenario)*.
 
 Each bill can be one of the following states:
-* **NEW** - usage month has passed and an empty consumption bill has been created, but not yet filled in with usage details.
-* **PENDING** - usage details and consumption drawdown have been added to the bill. Bills in this status can still be modified if needed. 
-* **APPROVED** - the finalized bill has been created and no longer can be modified or deleted, as it has been passed to the {{< company-c8y >}} finance department for reconciliation. 
+* **NEW** - The usage month has passed and an empty consumption bill has been created, but not yet filled in with usage details.
+* **PENDING** - The usage details and consumption drawdown have been added to the bill. Bills in this status can still be modified if needed. 
+* **APPROVED** - The finalized bill has been created and no longer can be modified or deleted, as it has been passed to the {{< company-c8y >}} finance department for reconciliation. 
 
 
