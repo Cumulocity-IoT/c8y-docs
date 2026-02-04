@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65937
 version: 1023.28.2
 ---
-Codex deployed to https://cumulocity.com/codex had no examples of computed properties. Examples have been added.
+The asset properties selector in Codex previously did not include any examples for computed properties, making it difficult for users to understand how to use this feature. Examples have now been added to the computed properties tab in the asset properties selector, providing clear guidance on how to work with computed properties. This improvement helps users better understand and utilize computed properties when configuring assets in Codex.
