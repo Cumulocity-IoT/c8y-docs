@@ -1,12 +1,12 @@
 ---
 weight: 10
-title: Overview
+title: Usage overview
 layout: redirect
 sector:
   - platform_administration
 ---
 
-The **Overview** page provides a dashboard with all usage statistics relating to your environments and tenants.
+The **Usage Overview** page provides a dashboard with all usage statistics relating to your environments and tenants.
 
 <img src="/images/console/usage/overview/overview.png" alt="Usage Overview">
 

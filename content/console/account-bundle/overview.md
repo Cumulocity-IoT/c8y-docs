@@ -1,12 +1,12 @@
 ---
 weight: 10
-title: Overview
+title: Account overview
 layout: redirect
 sector:
   - platform_administration
 ---
 
-The **Overview** page provides a high-level summary of the consumption for each environment. 
+The **Account Overview** page provides a high-level summary of the consumption for each environment. 
 
 <img src="/images/console/account/overview/overview.png" alt="Account Overview">
 
