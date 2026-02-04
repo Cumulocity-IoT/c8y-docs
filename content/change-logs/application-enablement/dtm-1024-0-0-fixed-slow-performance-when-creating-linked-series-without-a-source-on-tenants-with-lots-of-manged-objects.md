@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fixed slow performance when creating linked series without a source on tenants with lots of MangedObjects."
+title: "Fixed slow performance when creating a linked series without a source on tenants with lots of MangedObjects."
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2678"
 version: "1024.0.0"
 ---
-Fixed slow performance when creating linked series without a source on tenants with lots of MangedObjects.
+Previously on tenants with a high number of MangedObjects, creating a linked series without a source caused a slow performance due to the unnecessary loading of inventory objects. This is fixed now.
