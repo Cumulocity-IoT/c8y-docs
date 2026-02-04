@@ -1,6 +1,6 @@
 ---
 date: ""
-title: User list- filter and order global roles by translated role name. [GRAFT][release/cd] (#11003)
+title: User list now filters and sorts global roles by translated name
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
