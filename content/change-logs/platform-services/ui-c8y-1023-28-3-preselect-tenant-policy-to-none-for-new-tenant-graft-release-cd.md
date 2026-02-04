@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Tenant policy is now preselected to "None" when creating a new tenant
+title: Tenant policy is now preselected with "None" when creating a new tenant
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
