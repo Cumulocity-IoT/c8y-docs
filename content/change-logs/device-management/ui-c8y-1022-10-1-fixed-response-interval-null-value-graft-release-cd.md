@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: DM-4907
 version: 1022.10.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In certain scenarios, the response interval for devices could be incorrectly set when toggling maintenance mode, leading to unexpected behavior and potential issues. This change fixes the problem by ensuring that the response interval always has a valid value.

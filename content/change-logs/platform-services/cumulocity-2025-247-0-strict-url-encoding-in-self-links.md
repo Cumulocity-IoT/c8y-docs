@@ -13,5 +13,12 @@ build_artifact:
     label: cumulocity
 ticket: MTM-63992
 version: 2025.247.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Self-links containing special characters were not properly encoded, leading to broken links. This issue has been fixed. The encoding of special characters in self-links has been improved to ensure that the self-links are URL-encoded correctly.

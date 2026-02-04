@@ -1,6 +1,8 @@
 ---
-date: 2024-04-04
-title: Added support for retrieving JWT session token with X.509 certificates for devices
+date: '2024-04-04'
+title: >-
+  Added support for retrieving JWT session token with X.509 certificates for
+  devices
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
@@ -13,5 +15,12 @@ build_artifact:
     label: cumulocity
 ticket: MTM-54838
 version: 10.20.237.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Support has been added for retrieving JWT session tokens with X.509 certificates via REST API for devices. For details, refer to the [Device authentication](/device-integration/device-integration-rest/#device-authentication) user documentation.

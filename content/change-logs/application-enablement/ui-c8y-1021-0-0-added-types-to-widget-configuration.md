@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-38876
 version: 1021.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 To provide more clarity and improve validation when configuring widgets, type information has been added to the widget configuration. Previously, the widget configuration did not include any type information, which could lead to confusion and misconfiguration. With this change, each configuration property now specifies its expected type, such as string, number, or boolean. 

@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63533
 version: 1021.70.2
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Due to an issue, it was previously not possible to import a branding for a tenant if no branding was configured for that tenant yet. This change now allows importing branding packages via the Administration application even if the tenant does not have any branding configured. This makes it easier for users to set up branding for new tenants by directly importing an existing branding package without the need to manually create a branding configuration first.

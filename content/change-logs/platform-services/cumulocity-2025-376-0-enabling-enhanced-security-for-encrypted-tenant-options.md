@@ -13,6 +13,13 @@ build_artifact:
     label: cumulocity
 ticket: MTM-63640
 version: 2025.376.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 With this change, the `secure-tenant-options` feature is enabled by default.
 

@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63974
 version: 1022.4.2
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In a new design of the "Alarm list" widget, child device alarms were no longer displayed by default. This issue has been fixed. The new "Alarm list" widget now shows child device alarms correctly.

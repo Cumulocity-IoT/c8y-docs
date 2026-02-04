@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3669
 version: 1020.0.17
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the "Device data" widget, the software list was not displayed correctly if it contained a large number of entries. This issue has now been resolved by paginating the software list, that is, limiting the initial list to 10 items and an option to load more if needed.

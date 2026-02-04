@@ -1,5 +1,5 @@
 ---
-date: 2024-09-11
+date: '2024-09-11'
 title: Fix performance regression for count queries and inventory roles
 product_area: Platform services
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: cumulocity
 ticket: MTM-60283
 version: 10.20.520.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The {{< product-c8y-iot >}} platform faced performance regression which could only be observed on a higher number of concurrent requests using inventory role-based access control or on performing counts via query parameters like `withTotalPages` or `withTotalElements`. This issue has been fixed and the performance has returned to normal.

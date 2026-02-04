@@ -13,6 +13,13 @@ build_artifact:
     label: cumulocity
 ticket: MTM-45783
 version: 2025.108.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 As published earlier in the [change logs](/change-logs/#cumulocity-10-20-423-0-create-alarms-for-microservices-using-apiv1), the removal of the Microservice API version 1 has now been implemented.
 If not done yet migrate your microservices to API version 2 as soon as possible.

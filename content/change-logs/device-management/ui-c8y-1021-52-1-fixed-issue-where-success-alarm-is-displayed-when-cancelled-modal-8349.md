@@ -15,5 +15,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-6235
 version: 1021.52.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 When a user opened a create smart group dialog and then canceled it, a success message was incorrectly displayed even though no action was actually completed successfully. This has now been fixed. The success alarm will now only be shown when an action is completed as expected.

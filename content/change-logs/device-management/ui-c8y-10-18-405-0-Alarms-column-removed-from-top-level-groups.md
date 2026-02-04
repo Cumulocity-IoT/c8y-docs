@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T10:34:40.968Z
+date: '2023-12-06'
 title: Alarms column removed from top-level groups
 change_type:
   - value: change-VSkj2iV9m
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: DM-2106
 version: 10.18.405.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The alarms column has been removed from top-level groups because groups do not contain alarms themselves and the column only shows direct alarms.
