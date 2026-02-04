@@ -17,7 +17,7 @@ At the top of the page, you find two filters:
 * **Date filter** - Allows you to select the time range you want to view in the graphs below. The default range is "Last 1 Year", but can be adjusted to whatever months are desired. As a reminder, only the completed month's data is available in the Console application.
 <img src="/images/console/usage/overview/date-filter.png" alt="Date Filter">
 
-The first usage widget is the **Last Month Statistics**, and only ever shows the data for the last available month in the selected time range. The time range can be viewed in the top right corner of each tile.
+The first usage widget shows the data for the last available month in the selected time range. The month can be viewed in the top right corner of each tile.
 <img src="/images/console/usage/overview/last-month-statistics.png" alt="Last Month Statistics">
 
 The following tiles are included:
@@ -28,18 +28,18 @@ The following tiles are included:
 * **CPU(S)** - Displays the latest total amount of CPU power used for microservices in the last month. All tenants across all environments are aggregated in this metric.
 * **Memory** - Displays the latest total amount of Memory used for microservices in the last month. All tenants across all environments are aggregated in this metric. 
 
-Note that each tile include a percentage change indicator. This represents the percentage difference between the first month of your selected time range and the final month displayed on the tile.
+Note that each tile include a percentage change indicator. This represents the percentage difference between the first month of your selected time range and the last month displayed on the tile.
 
-The next widget is the **Messages graph**, which displays the total number of Messages across the selected time range.
+The next widget is the **Messages** graph, which displays the total number of Messages across the selected time range.
 <img src="/images/console/usage/overview/messages.png" alt="Messages">
 
-You can toggle the **Show Breakdown** to show all components of the Messages metric.
+You can toggle the **Show breakdown** to show all components of the Messages metric.
 <img src="/images/console/usage/overview/messages-breakdown.png" alt="Messages Breakdown">
 
-The next widget is the **Operational Data Store (ODS) graph**, which displays the total aggregated storage use across all selected environments and tenants.
+The next widget is the **Operational Data Store (ODS)** graph, which displays the total aggregated storage use across all selected environments and tenants.
 <img src="/images/console/usage/overview/operational-data-store.png" alt="Operational Data Store">
 
-The last widget on the page is the **Add-Ons graph**, which allows you to select one of the Add-Ons and view usage data from it.
+The last widget on the page is the **Add-ons** graph, which allows you to select one of the Add-Ons and view usage data from it.
 <img src="/images/console/usage/overview/addons.png" alt="Add-Ons">
 
 You can use the selector in the top right to select one of the Add-Ons that are deployed on your environments. Each Add-On has its own usage metrics that are then displayed in the graph.
