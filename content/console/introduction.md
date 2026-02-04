@@ -6,8 +6,6 @@ sector:
 weight: 10
 ---
 
-In early 2025, {{< company-c8y >}} embarked on a massive transformation, with the company transitioning away from Software AG into its own standalone entity. As part of this transformation, we re-evaluated the way we do business. Contract templates, terms and conditions, and pricing models were all adjusted to better fit the requirements of our customer base. 
-
 The contracting and pricing model of {{< company-c8y >}} is referred to as **Commit-to-Consume** (CTC). In the CTC model, customers do not have an explicit bill of materials for all their purchased {{< product-c8y-iot >}} components. Instead, customers commit to a certain spend amount, and their actual consumption of {{< product-c8y-iot >}} components draws down this commitment over the duration of the contract. The CTC model gives customers flexibility with {{< company-c8y >}}'s offerings, allowing them to optimize consumption, try new features, and understand usage.
 
 Given that the spend amount is drawn-down by usage each month, it is important for customers to have transparency with their usage and consumption details. The Console application is a new application within {{< product-c8y-iot >}} where customers on the CTC model can view their usage and consumption. 
