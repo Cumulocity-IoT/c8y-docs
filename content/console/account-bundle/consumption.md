@@ -40,8 +40,8 @@ Note that the **Bill date** corresponds to the date which the drawdown occurs. T
 Each bill contains the following information.
 
 * **Base product** - Shows line item details. Includes the standard set of {{< company-c8y >}} pricing metrics: Deployments, Messages, and Operational Data Store. Usage is calculated into billable units, which are written in the [{{< company-c8y >}} License metrics](/service-terms/license-metrics/). Unit prices are taken from the Product Catalog of the CTC contract.
-* **Add-ons** - Can be opened to view line item details. Includes any and all Add-Ons that were activated and had usage during the usage month. Usage is calculated into billable units, which are written in the [{{< company-c8y >}} License Metrics](/service-terms/license-metrics/). Unit prices are taken from the Product Catalog of the CTC contract.
-* **Total usage charges** - The sum of all usage charges (Base Product plus Add-Ons).
+* **Add-ons** - Can be opened to view line item details. Includes any and all Add-ons that were activated and had usage during the usage month. Usage is calculated into billable units, which are written in the [{{< company-c8y >}} License Metrics](/service-terms/license-metrics/). Unit prices are taken from the Product Catalog of the CTC contract.
+* **Total usage charges** - The sum of all usage charges (Base Product plus Add-ons).
 * **Drawdown (Balance Consumed)** - How much the Commitment was drawn based on the usage charges. Will usually equal the Total Usage Charges unless there is an overage scenario, in which case the values will be different *(the remaining Commitment is less than the Total Usage Charges for that month)*. 
 * **Overage** - If an overage scenario happens, this will show the outstanding balance that needs to be paid. 
 * **Total bill amount** - The total additional bill amount. Should only be greater than zero when the Commitment balance runs out *(an overage scenario)*.

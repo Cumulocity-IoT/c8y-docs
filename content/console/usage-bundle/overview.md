@@ -39,11 +39,11 @@ You can toggle the **Show breakdown** to show all components of the Messages met
 The next widget is the **Operational Data Store (ODS)** graph, which displays the total aggregated storage use across all selected environments and tenants.
 <img src="/images/console/usage/overview/operational-data-store.png" alt="Operational Data Store">
 
-The last widget on the page is the **Add-ons** graph, which allows you to select one of the Add-Ons and view usage data from it.
-<img src="/images/console/usage/overview/addons.png" alt="Add-Ons">
+The last widget on the page is the **Add-ons** graph, which allows you to select one of the Add-ons and view usage data from it.
+<img src="/images/console/usage/overview/addons.png" alt="Add-ons">
 
-You can use the selector in the top right to select one of the Add-Ons that are deployed on your environments. Each Add-On has its own usage metrics that are then displayed in the graph.
-<img src="/images/console/usage/overview/addons-selector.png" alt="Add-Ons Selector">
+You can use the selector in the top right to select one of the Add-ons that are deployed on your environments. Each Add-On has its own usage metrics that are then displayed in the graph.
+<img src="/images/console/usage/overview/addons-selector.png" alt="Add-ons Selector">
 
 
 
