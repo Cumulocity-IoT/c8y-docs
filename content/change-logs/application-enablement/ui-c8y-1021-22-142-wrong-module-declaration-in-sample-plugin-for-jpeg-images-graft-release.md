@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-02-04
 title: Fixed incorrect module declaration for JPEG image handling in sample plugin
 product_area: Application enablement & solutions
 change_type:
