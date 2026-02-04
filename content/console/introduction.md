@@ -23,39 +23,38 @@ To use the Console application, you need:
 {{< /c8y-admon-req >}}
 
 
-### Glossary
+### Glossary {#glossary}
 This glossary provides definitions for key terms and concepts used throughout this documentation.
 
-#### Add-Ons
-A part of the new pricing model comprising any additional features, functionality, or components used within {{< product-c8y-iot >}}. Includes components such as {{< product-c8y-iot >}} DataHub, additional tenants, custom domains, and more. A complete list of Add-Ons is found in the Product Catalog addendum of the contract.
+#### Add-ons {#add-ons}
+A part of the new pricing model comprising any additional features, functionality, or components used within {{< product-c8y-iot >}}. Includes components such as {{< product-c8y-iot >}} DataHub, additional tenants, custom domains, and more. A complete list of Add-ons is found in the Product Catalog addendum of the contract.
 
-#### Commit-to-Consume (CTC)
+#### Commit-to-Consume (CTC) {#commit-to-consume-ctc}
 The new contract type enacted by {{< company-c8y >}} in 2025 where customers commit to a spend amount (Commitment) and monthly usage draws down against this spend amount. If the spend amount runs out before the contract expiry date, the customer enters overage scenarios.
 
-#### Commitment
+#### Commitment {#commitment}
 The total pre-tax spend credit for {{< company-c8y >}} products and services that the customer has contractually agreed to pay. This balance is drawn down each month based on the customer's consumption.
 
-#### Console application
+#### Console application {#console-application}
 A {{< product-c8y-iot >}}-built solution that sits within the product and acts as a **one stop shop** solution for customers interacting with their subscription and usage data. The Console application provides transparency with usage and billing to customers on a CTC contract.
 
-#### Consumption
+#### Consumption {#consumption}
 The details relating to the Drawdown amounts and how much of the Commitment remains after each month. The monthly Consumption report available in the Console application gives a breakdown of all components used, their associated prices and quantities, and statistics on the remaining balance. 
 
-#### Drawdown
+#### Drawdown {#drawdown}
 The process of calculating a customer’s monthly consumption of services (at pre-tax rates) and deducting that from their remaining Commitment balance. 
 
-#### Environment
+#### Environment {#environment}
 An individual instance of {{< product-c8y-iot >}}. Customers can have multiple environments for their account, including both Dedicated (Private) SaaS environments and Public SaaS environments. For drawdown purposes, usage is aggregated across all environments.
 
-#### Overage
+#### Overage {#overage}
 The status a customer enters when their commitment has been fully depleted before their contract term has ended. The exact specifics of the Overage scenario is determined by the clauses listed in the respective contracts, and is different from customer to customer. 
 
-#### Product catalog
+#### Product catalog {#product-catalog}
 The customer-specific price list appended to a CTC contract that defines the pre-tax rates for all available {{< company-c8y >}} products and services.
 
-#### Stratos
+#### Stratos {#stratos}
 The {{< company-c8y >}} internal project name for the Console application and any associated backend services.
 
-#### Usage
+#### Usage {#usage}
 Statistics and other data points on the usage of {{< product-c8y-iot >}}. Usage is collected per-tenant on a monthly basis, and is available within the Console application for analysis. Usage data is also available via the Usage Statistics APIs. 
-
