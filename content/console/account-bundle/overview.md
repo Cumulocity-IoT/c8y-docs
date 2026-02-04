@@ -6,7 +6,7 @@ sector:
   - platform_administration
 ---
 
-The Overview page gives a high level summary of the consumption for each environment. 
+The **Overview** page provides a high-level summary of the consumption for each environment. 
 
 <img src="/images/console/account/overview/overview.png" alt="Account Overview">
 
