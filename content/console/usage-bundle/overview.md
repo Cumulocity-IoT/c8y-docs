@@ -28,7 +28,7 @@ The following tiles are included:
 * **CPU(S)** - Displays the latest total amount of CPU power used for microservices in the last month. All tenants across all environments are aggregated in this metric.
 * **Memory** - Displays the latest total amount of Memory used for microservices in the last month. All tenants across all environments are aggregated in this metric. 
 
-Note that each tile includes a percent changed indicator. This takes the first month of the selected time range and calculates the percentage difference between that and the last month, which the tiles display the data from.
+Note that each tile include a percentage change indicator. This represents the percentage difference between the first month of your selected time range and the final month displayed on the tile.
 
 The next widget is the **Messages graph**, which displays the total number of Messages across the selected time range.
 <img src="/images/console/usage/overview/messages.png" alt="Messages">
