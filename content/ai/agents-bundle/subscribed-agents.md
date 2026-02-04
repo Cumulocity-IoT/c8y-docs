@@ -14,15 +14,17 @@ Subscribed agents come with predefined:
 - System prompts that define their behavior and expertise.
 - Tool configurations that allow them to interact with specific {{< product-c8y-iot >}} data or services.
 
-**Pre-configured**: Subscribed agents are fully configured by the application provider. You do not need to define system prompts or tools.
+Subscribed agents properties:
 
-**Application-specific**: Each subscribed agent is designed for a specific use case within an application (for example, a device troubleshooting agent for a specific device management app).
+- **Pre-configured**: Subscribed agents are fully configured by the application provider. You do not need to define system prompts or tools.
 
-**Require global provider**: Subscribed agents use your configured global provider unless they specify a local provider. Without a global provider configured, subscribed agents remain inactive.
+- **Application-specific**: Each subscribed agent is designed for a specific use case within an application (for example, a device troubleshooting agent for a specific device management app).
 
-**Read-only configuration**: You cannot modify the system prompt or tools of subscribed agents. However, you view their configuration to understand their capabilities. You also overwrite the subscribed agent with a custom agent. Custom agents with the same name as the subscribed one are preferred.
+- **Require global provider**: Subscribed agents use your configured global provider unless they specify a local provider. Without a global provider configured, subscribed agents remain inactive.
 
-**Automatic updates**: When the providing application updates the agent definition, changes appear automatically in your AI Agent Manager as long as you haven't overwritten it.
+- **Read-only configuration**: You cannot modify the system prompt or tools of subscribed agents. However, you view their configuration to understand their capabilities. You also overwrite the subscribed agent with a custom agent. Custom agents with the same name as the subscribed one are preferred.
+
+- **Automatic updates**: When the providing application updates the agent definition, changes appear automatically in your AI Agent Manager as long as you haven't overwritten it.
 
 ### Viewing subscribed agents {#viewing-subscribed-agents}
 

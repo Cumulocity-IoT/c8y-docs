@@ -51,6 +51,6 @@ For MCP server implementation details, refer to the Model Context Protocol speci
 
 ### Best practices {#best-practices}
 
-**Tool naming**: Use clear, descriptive names for custom MCP tools. The agent uses tool names and descriptions to decide when to call them.
+- **Tool naming**: Use clear, descriptive names for custom MCP tools. The agent uses tool names and descriptions to decide when to call them.
 
-**Parameter validation**: Ensure MCP tools validate parameters and handle errors gracefully. Return clear error messages that help the agent understand what went wrong.
+- **Parameter validation**: Ensure MCP tools validate parameters and handle errors gracefully. Return clear error messages that help the agent understand what went wrong.

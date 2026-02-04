@@ -11,7 +11,8 @@ weight: 20
 
 Agents are the basic building block of any agentic workflow. The AI Agent Manager simplifies the creation of agents by providing a UI that lets you quickly define an agent with a system prompt that then, on its own, calls tools. This quick starts agentic workflows in a couple of minutes, not hours. 
 
-### Custom agents
+### Custom agents {#ai-agent-custom-agents}
+
 To create a custom agent, navigate to **Administration** > **AI Agent Manager** and click **Add agent**. Select an agent name and the type of agent. This introduction only describes text agents. For details about object agents, refer to [Text and object agents](/ai/agents/#text-and-object-agents). When selecting a name, remember that naming conflicts can occur with subscribed agents provided from applications or plugins. It is good practice to use a prefix other than `c8y-`, as this is the default prefix used by the platform.
 
 Once the custom agent is created, you align it to your needs using the following tabs:
@@ -21,21 +22,21 @@ Once the custom agent is created, you align it to your needs using the following
 - **System prompt**: The system prompt of the agent. You align it and then test the changes. The system prompt persists only when you save it.
 - **Tools**: Assign tools to your agent. 
 
-### System prompts (#ai-agent-system-prompt)
+### System prompts {#ai-agent-system-prompt}
 
 The system prompt defines your agent's behavior, expertise, and personality. It is the foundational instruction that shapes how the agent interprets user questions and formulates responses. Unlike user messages that change with each conversation, the system prompt remains constant and guides the agent throughout all interactions.
 
 **What to include in a system prompt:**
 
-Write clear and specific instructions about the agent's role and purpose. For example, "You are a device troubleshooting assistant for industrial IoT equipment" is more effective than "You are helpful."
+- Write clear and specific instructions about the agent's role and purpose. For example, "You are a device troubleshooting assistant for industrial IoT equipment" is more effective than "You are helpful."
 
-Define the agent's tone and communication style. Specify whether responses are formal, conversational, technical, or simplified for non-technical users.
+- Define the agent's tone and communication style. Specify whether responses are formal, conversational, technical, or simplified for non-technical users.
 
-Set boundaries and limitations. Explicitly state what the agent does not do or what topics it avoids. For example, "You do not provide financial advice or make purchasing decisions."
+- Set boundaries and limitations. Explicitly state what the agent does not do or what topics it avoids. For example, "You do not provide financial advice or make purchasing decisions."
 
-Include domain knowledge and context. Add relevant background information about your IoT environment, device types, or specific terminology the agent needs to understand.
+- Include domain knowledge and context. Add relevant background information about your IoT environment, device types, or specific terminology the agent needs to understand.
 
-Specify output format preferences. Indicate whether responses are concise bullet points, detailed explanations, or follow a specific structure.
+- Specify output format preferences. Indicate whether responses are concise bullet points, detailed explanations, or follow a specific structure.
 
 **Do's:**
 
@@ -56,11 +57,11 @@ Specify output format preferences. Indicate whether responses are concise bullet
 - Do not use ambiguous language that has multiple interpretations.
 
 
-### Variables (#ai-agent-variables)
+### Variables {#ai-agent-variables}
 
 Variables allow you to inject dynamic data into your system prompt or user prompts at runtime. Instead of hardcoding specific values, you define placeholders that get replaced with actual values when the agent is called.
 
-#### Defining variables in prompts
+#### Defining variables in prompts {#defining-variables-in-prompts}
 
 Use double curly brackets to define variables: `{{variableName}}`. You place variables anywhere in the system prompt or in API calls.
 
@@ -69,7 +70,7 @@ Example system prompt with variables:
 You are a monitoring assistant for factory {{factoryId}}. When users ask about equipment, focus on devices in the {{location}} area. Current shift manager is {{shiftManager}}.
 ```
 
-#### Providing variable values
+#### Providing variable values {#providing-variable-values}
 
 When testing in the AI Agent Manager, use the **Test variables** tab to set values for your variables before testing the agent.
 
@@ -85,7 +86,7 @@ When calling the agent via REST API, provide variables in the request body:
 }
 ```
 
-#### Use cases for variables
+#### Use cases for variables {#use-cases-for-variables}
 
 - Personalizing responses with user-specific information (names, roles, preferences).
 - Contextualizing agents for different locations, facilities, or departments.
@@ -94,21 +95,21 @@ When calling the agent via REST API, provide variables in the request body:
 
 Variables make agents flexible and reusable without requiring multiple agent configurations for similar use cases.
 
-### Advanced settings (#ai-agent-advanced-settings)
+### Advanced settings {#ai-agent-advanced-settings}
 
 The advanced settings allow you to fine-tune the agent's behavior using parameters from the Vercel AI SDK. These settings control aspects like response randomness, length limits, and provider-specific features.
 
-#### Common settings
+#### Common settings {#ai-agent-common-settings}
 
-| Parameter | Range | Description |
-|-----------|-------|-------------|
+| Parameter           | Range      | Description          |
+|---------------------|------------|----------------------|
 | temperature | 0.0 to 1.0 | Controls response randomness. Lower values (0.1-0.3) produce more focused and deterministic responses. Higher values (0.7-1.0) increase creativity and variation. Default is typically 0.7. |
 | maxTokens | Number | Sets the maximum length of the response in tokens. Use this to enforce concise responses or prevent excessively long outputs. |
 | topP | 0.0 to 1.0 | Nucleus sampling parameter. Controls diversity by limiting token selection to a cumulative probability. Lower values make responses more focused. |
 | frequencyPenalty | -2.0 to 2.0 | Reduces repetition of tokens based on their frequency in the response. Positive values discourage repetition. |
 | presencePenalty | -2.0 to 2.0 | Encourages the model to introduce new topics. Positive values make the agent less likely to repeat topics already mentioned. |
 
-#### Provider-specific options
+#### Provider-specific options {#provider-specific-options}
 
 Some AI providers support additional features configured through the `providerOptions` field. For example, Anthropic's extended thinking mode:
 
@@ -125,7 +126,7 @@ Some AI providers support additional features configured through the `providerOp
 
 For a complete list of available parameters and provider-specific options, refer to the [Vercel AI SDK documentation](https://sdk.vercel.ai/docs/ai-sdk-core/generating-text).
 
-#### When to use advanced settings
+#### When to use advanced settings {#when-to-use-advanced-settings}
 
 - Adjust temperature when responses are too random or too rigid.
 - Set maxTokens to control costs or enforce response brevity.
@@ -134,7 +135,7 @@ For a complete list of available parameters and provider-specific options, refer
 
 Test different settings to find the optimal configuration for your use case.
 
-### Tools (#ai-agent-tools)
+### Tools {#ai-agent-tools}
 
 Tools extend your agent's capabilities by allowing it to access data and perform actions beyond generating text. In the **Tools** tab, you assign tools from configured MCP servers to your agent.
 
@@ -153,7 +154,7 @@ For detailed information about tools, configuring MCP servers, and how agents us
 Object agents cannot use custom tools. They use tools internally to structure responses according to their defined schema.
 {{< /c8y-admon-info >}}
 
-### Test (#ai-agent-test)
+### Test {#ai-agent-test}
 
 The **Test** tab provides an interactive interface to test your agent directly in the AI Agent Manager. This allows you to validate the agent's behavior, system prompt, and tool usage before deploying it in production.
 

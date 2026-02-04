@@ -63,6 +63,6 @@ Object agents cannot use custom tools. They use tools internally to structure th
 
 ### Best practices {#best-practices}
 
-**Tool selection**: Assign only the tools an agent actually needs. Too many tools confuse the agent and increase processing time.
+- **Tool selection**: Assign only the tools an agent actually needs. Too many tools confuse the agent and increase processing time.
 
-**Performance**: Tools that take a long time to execute slow down agent responses. Optimize tool performance or use caching where appropriate.
+- **Performance**: Tools that take a long time to execute slow down agent responses. Optimize tool performance or use caching where appropriate.

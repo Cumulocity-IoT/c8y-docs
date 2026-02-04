@@ -17,15 +17,17 @@ When an agent has a local provider configured, it uses those settings instead of
 
 ### When to use local providers {#when-to-use-local-providers}
 
-**Different model requirements**: Some use cases benefit from specific models. For example, use a faster, cheaper model for simple queries and a more powerful model for complex reasoning tasks.
+Consider the following:
 
-**Cost optimization**: Route less critical agents to more cost-effective models while keeping important agents on premium models.
+- **Different model requirements**: Some use cases benefit from specific models. For example, use a faster, cheaper model for simple queries and a more powerful model for complex reasoning tasks.
 
-**Provider-specific features**: Access features only available from certain providers, such as extended thinking modes or specialized capabilities.
+- **Cost optimization**: Route less critical agents to more cost-effective models while keeping important agents on premium models.
 
-**Testing and comparison**: Test different models side-by-side by creating multiple agents with different local providers.
+- **Provider-specific features**: Access features only available from certain providers, such as extended thinking modes or specialized capabilities.
 
-**Separate billing**: Use different API keys for different agents to track usage or allocate costs to different departments.
+- **Testing and comparison**: Test different models side-by-side by creating multiple agents with different local providers.
+
+- **Separate billing**: Use different API keys for different agents to track usage or allocate costs to different departments.
 
 ### Global provider versus local provider {#global-vs-local}
 
@@ -101,9 +103,9 @@ You configure local providers independently for each agent. This allows you to:
 
 ### Security considerations {#security-considerations}
 
-**API keys**: Local provider API keys are stored securely in {{< product-c8y-iot >}} and cannot be read after configuration. Only users with appropriate permissions access local provider settings.
+- **API keys**: Local provider API keys are stored securely in {{< product-c8y-iot >}} and cannot be read after configuration. Only users with appropriate permissions access local provider settings.
 
-**Access control**: Ensure only authorized users have permission to configure agents and local providers, as this grants access to external AI services.
+- **Access control**: Ensure only authorized users have permission to configure agents and local providers, as this grants access to external AI services.
 
 ### Removing a local provider {#removing-local-provider}
 
@@ -117,8 +119,8 @@ The agent now uses the global provider configuration.
 
 ### Troubleshooting local providers {#troubleshooting}
 
-**Agent not responding**: Verify the API key is valid and the provider account has sufficient credits.
+- **Agent not responding**: Verify the API key is valid and the provider account has sufficient credits.
 
-**Different results than expected**: Check the model selection and advanced settings in the local provider configuration.
+- **Different results than expected**: Check the model selection and advanced settings in the local provider configuration.
 
-**Provider not available**: Ensure the provider is supported by the AI Agent Manager. For the current list of supported providers, refer to the Vercel AI SDK documentation.
+- **Provider not available**: Ensure the provider is supported by the AI Agent Manager. For the current list of supported providers, refer to the Vercel AI SDK documentation.

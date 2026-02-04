@@ -27,11 +27,9 @@ helpcontent:
 The feature is currently in public preview and might change or is not feature complete. While we try to keep changes as low as possible, breaking changes and feature removals happen. To enable the feature, open the right drawer (by clicking on your username initials) in the **Administration** application and select **Manage preview features**. Then activate the toggle next to **AI Agent Manager**.
 {{< /c8y-admon-preview >}}
 
-Welcome to the {{< product-c8y-iot >}} AI Agent Manager documentation.
-
 The AI Agent Manager enables you to create and manage AI agents—intelligent assistants that help users interact with your IoT data and systems through natural language conversations. Instead of building custom AI integrations from scratch, you configure pre-built agents that understand your specific use cases and have access to the tools required to be helpful.
 
-### What is an AI agent?
+### What is an AI agent? {#what-is-an-ai-agent}
 
 An AI agent is a configured AI assistant with a specific purpose and behavior. Each agent consists of:
 
@@ -41,19 +39,19 @@ An AI agent is a configured AI assistant with a specific purpose and behavior. E
 
 Once configured, users interact with agents through natural language without needing to know technical details about APIs or system prompts.
 
-### What you do with AI agents
+### What you do with AI agents {#what-you-do-with-ai-agents}
 
-**Create specialized assistants**: Configure agents for specific use cases like equipment monitoring, predictive maintenance analysis, or device troubleshooting. Each agent has its own expertise and access to relevant data.
+- **Create specialized assistants**: Configure agents for specific use cases like equipment monitoring, predictive maintenance analysis, or device troubleshooting. Each agent has its own expertise and access to relevant data.
 
-**Add tools and capabilities**: Connect agents to {{< product-c8y-iot >}} data through built-in tools or extend them with custom tools via MCP (Model Context Protocol) servers. This allows agents to query device data, retrieve measurements, or trigger actions.
+- **Add tools and capabilities**: Connect agents to {{< product-c8y-iot >}} data through built-in tools or extend them with custom tools via MCP (Model Context Protocol) servers. This allows agents to query device data, retrieve measurements, or trigger actions.
 
-**Test and refine**: Use the built-in test interface to interact with your agents and see how they respond. The test interface shows you exactly what tools the agent is calling and how it reasons about your questions.
+- **Test and refine**: Use the built-in test interface to interact with your agents and see how they respond. The test interface shows you exactly what tools the agent is calling and how it reasons about your questions.
 
-**Provide conversational interfaces**: Once configured, agents maintain conversations with context, using variables to personalize responses and access to tools to fetch real-time data.
+- **Provide conversational interfaces**: Once configured, agents maintain conversations with context, using variables to personalize responses and access to tools to fetch real-time data.
 
-**Manage AI providers**: Configure which AI provider and model to use globally or for specific agents. The system supports multiple providers including OpenAI, Anthropic, Google, and others, abstracting away the complexity of working with different APIs.
+- **Manage AI providers**: Configure which AI provider and model to use globally or for specific agents. The system supports multiple providers including OpenAI, Anthropic, Google, and others, abstracting away the complexity of working with different APIs.
 
-### Getting started by configuring a global provider
+### Getting started by configuring a global provider {#getting-started-by-configuring-a-global-provider}
 
 {{< c8y-admon-important >}}
 Without a global LLM provider configured, the {{< product-c8y-iot >}} platform is never connected to any external Large Language Model provider, even if the list already shows subscribed agents!
