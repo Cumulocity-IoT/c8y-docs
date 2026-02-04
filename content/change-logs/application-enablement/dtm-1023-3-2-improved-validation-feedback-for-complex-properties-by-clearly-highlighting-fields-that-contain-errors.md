@@ -15,6 +15,10 @@ ticket: CTM-2589
 version: 1023.3.2
 environment_availability:
   - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+    date: '2026-02-04'
+  - label: jp.cumulocity.com
+    date: '2026-02-04'
 ---
 The validation feedback during the creation and update of complex properties has been improved. Fields with errors
 are now clearly highlighted, making it easier to identify and correct
