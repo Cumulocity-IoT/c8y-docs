@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65914
 version: 1023.28.3
 ---
-There was an issue that once Cockpit home dashboard was removed and user entered home page, it was not possible to close dashboard settings, both with save and cancel.
+When the Cockpit home dashboard was removed and a user navigated to the home page, the default dashboard settings dialog could not be closed using either the save or cancel button, leaving users unable to proceed. This issue has been resolved, and users can now successfully save or cancel dashboard settings regardless of the dashboard's state. The dashboard settings dialog will now respond correctly to user interactions and allow proper navigation away from the settings view.
