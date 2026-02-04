@@ -44,45 +44,20 @@ To configure a local provider for an agent:
 
 1. Navigate to **Administration** > **AI Agent Manager**.
 2. Open the agent you want to configure or create a new agent.
-3. In the agent configuration, expand the **Provider** section.
-4. Select **Use local provider** instead of global provider.
-5. Choose the provider (for example, Anthropic, OpenAI).
-6. Select the model to use.
-7. Enter the API key for this provider (stored securely in the platform).
-8. Add any advanced provider-specific settings in the **Advanced** tab.
-9. Click **Save**.
+3. In the agent configuration, expand the **Local provider** tab.
 
-The agent now uses its local provider configuration instead of the global provider.
+In this view you can configure your local provider (only with JSON). Therefore (depending on the provider to use) 
+you can define a new `provider`, `model` or `apiKey`. This settings are always merged with the "global provider" and therefore allow to e.g. only overwrite the model to be used.
 
-### Advanced provider options {#advanced-options}
-
-Local providers support advanced configuration through provider-specific options. These options vary by provider and allow you to customize behavior.
-
-**Example: Enable thinking mode for Anthropic:**
-
+For example to use an Open AI API like LLM hosted for example on an own infrastructure, the following configuration could be used:
 ```json
 {
-  "anthropic": {
-    "thinking": {
-      "type": "enabled",
-      "budgetTokens": 12000
-    }
-  }
+  "provider": "openai",
+  "model": "my-custom-gpt",
+  "baseURL": "https://your-custom-endpoint.com/v1",
+  "strictMode": false
 }
 ```
-
-**Example: Custom base URL for OpenAI-compatible APIs:**
-
-```json
-{
-  "openai": {
-    "baseURL": "https://your-custom-endpoint.com/v1",
-    "strictMode": false
-  }
-}
-```
-
-For available options, refer to the Vercel AI SDK documentation for your specific provider.
 
 ### Testing local providers {#testing-local-providers}
 
@@ -91,7 +66,6 @@ After configuring a local provider:
 1. Navigate to the **Test** tab of the agent.
 2. Enter a test prompt.
 3. Verify the response uses the local provider.
-4. Enable debug mode to see provider information in the response metadata.
 
 ### Managing multiple local providers {#managing-multiple-providers}
 
@@ -109,13 +83,7 @@ You configure local providers independently for each agent. This allows you to:
 
 ### Removing a local provider {#removing-local-provider}
 
-To remove a local provider and revert to the global provider:
-
-1. Open the agent configuration.
-2. In the **Provider** section, select **Use global provider**.
-3. Click **Save**.
-
-The agent now uses the global provider configuration.
+To remove a local provider and revert to the global provider simply empty the JSON object.
 
 ### Troubleshooting local providers {#troubleshooting}
 

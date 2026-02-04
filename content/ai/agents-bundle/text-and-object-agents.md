@@ -87,6 +87,10 @@ The agent uses this schema to structure its response, ensuring consistent output
 POST /service/ai/agent/object/{agent-name}
 ```
 
+**UI support:**
+
+When creating an object agent a new **Schema** tab is shown. In this view you can define the correct schema and a validation will check, if you are following the right JSON Schema standard.
+
 ### Key differences {#key-differences}
 
 | Aspect | Text agents | Object agents |

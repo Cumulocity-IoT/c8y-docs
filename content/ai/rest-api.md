@@ -104,4 +104,44 @@ By switching the content type to a streaming type, you get a streaming response 
 - Text only is returned if no query parameter is attached.
 - A data SSE stream that also includes tool calls and status information is returned if the `?fullResponse=true` parameter is set.
 
-Add the `text/event-stream` or `application/x-ndjson` accept header to force streaming. A `fullResponse` return is determined by two line breaks and the keyword `data:`.
+Add the `text/event-stream` or `application/x-ndjson` accept header to force streaming. A `fullResponse` return is determined by two line breaks and the keyword `data:`. 
+
+As an example a call for `hello world` with `?fullResponse=true` returns:
+
+```
+data: {"type":"start"}
+
+data: {"type":"start-step","request":{"body":{"model":"claude-sonnet-4-5","max_tokens":64000,"system":[{"type":"text","text":"A test"}],"messages":[{"role":"user","content":[{"type":"text","text":"hello world"}]}],"stream":true}},"warnings":[]}
+
+data: {"type":"text-start","id":"0"}
+
+data: {"type":"text-delta","text":"Hello! ","id":"0"}
+
+data: {"type":"text-delta","text":"👋 ","id":"0"}
+
+data: {"type":"text-delta","text":"How ","id":"0"}
+
+data: {"type":"text-delta","text":"can ","id":"0"}
+
+data: {"type":"text-delta","text":"I ","id":"0"}
+
+data: {"type":"text-delta","text":"help ","id":"0"}
+
+data: {"type":"text-delta","text":"you ","id":"0"}
+
+data: {"type":"text-delta","text":"today?","id":"0"}
+
+data: {"type":"text-end","id":"0"}
+
+data: {"type":"finish-step","finishReason":"stop","usage":{"inputTokens":11,"outputTokens":16,"totalTokens":27,"cachedInputTokens":0},"providerMetadata":{"anthropic":{"usage":{"input_tokens":11,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"output_tokens":16,"service_tier":"standard"},"cacheCreationInputTokens":0,"stopSequence":null,"container":null}},"response":{"id":"msg_017QQpgqQMUeUbCs7MastWLp","timestamp":"2026-02-04T16:44:09.231Z","modelId":"claude-sonnet-4-5-20250929","headers":{"anthropic-organization-id":"3f82821e-6dbf-463c-934f-a2f81b555764","anthropic-ratelimit-input-tokens-limit":"2000000","anthropic-ratelimit-input-tokens-remaining":"2000000","anthropic-ratelimit-input-tokens-reset":"2026-02-04T16:44:08Z","anthropic-ratelimit-output-tokens-limit":"400000","anthropic-ratelimit-output-tokens-remaining":"400000","anthropic-ratelimit-output-tokens-reset":"2026-02-04T16:44:08Z","anthropic-ratelimit-tokens-limit":"2400000","anthropic-ratelimit-tokens-remaining":"2400000","anthropic-ratelimit-tokens-reset":"2026-02-04T16:44:08Z","cache-control":"no-cache","cf-cache-status":"DYNAMIC","cf-ray":"9c8ba186efd17fa0-FRA","connection":"keep-alive","content-security-policy":"default-src 'none'; frame-ancestors 'none'","content-type":"text/event-stream; charset=utf-8","date":"Wed, 04 Feb 2026 16:44:09 GMT","request-id":"req_011CXoN8S7HVR6WWGFy7r32J","server":"cloudflare","strict-transport-security":"max-age=31536000; includeSubDomains; preload","transfer-encoding":"chunked","x-envoy-upstream-service-time":"973","x-robots-tag":"none"}}}
+
+data: {"type":"finish","finishReason":"stop","totalUsage":{"inputTokens":11,"outputTokens":16,"totalTokens":27,"cachedInputTokens":0}}
+
+``` 
+
+
+While a call without `?fullResponse=true` simply returns: 
+
+```
+Hello! 👋 How can I help you today?
+```

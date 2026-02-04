@@ -54,7 +54,7 @@ Once configured, users interact with agents through natural language without nee
 ### Getting started by configuring a global provider {#getting-started-by-configuring-a-global-provider}
 
 {{< c8y-admon-important >}}
-Without a global LLM provider configured, the {{< product-c8y-iot >}} platform is never connected to any external Large Language Model provider, even if the list already shows subscribed agents!
+Without a global LLM provider configured, the {{< product-c8y-iot >}} platform is never connected to any external Large Language Model provider, even if the list already shows subscribed agents.
 {{< /c8y-admon-important >}}
 
 Start by configuring a global provider and model. A global provider is the LLM provider and model that is used by default on each agent interaction as long as the agent does not define another provider or model in its local provider configuration. Use the AI Agent Manager UI in the **Administration** application:

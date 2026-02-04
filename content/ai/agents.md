@@ -18,9 +18,12 @@ To create a custom agent, navigate to **Administration** > **AI Agent Manager** 
 Once the custom agent is created, you align it to your needs using the following tabs:
 
 - **Test**: Test your agent directly in the AI Agent Manager.
+- **Settings**: Allows to set settings like the maximum output tokens or temperature.
 - **Test variables**: Set variable values for your test.
 - **System prompt**: The system prompt of the agent. You align it and then test the changes. The system prompt persists only when you save it.
 - **Tools**: Assign tools to your agent. 
+- **Local provider**: Allows to set different LLM provider or models for one agent ((read more)[(/ai/agents/#local-providers)]).
+ - **Advanced**: Enables advanced settings in JSON format.
 
 ### System prompts {#ai-agent-system-prompt}
 
@@ -72,7 +75,15 @@ You are a monitoring assistant for factory {{factoryId}}. When users ask about e
 
 #### Providing variable values {#providing-variable-values}
 
-When testing in the AI Agent Manager, use the **Test variables** tab to set values for your variables before testing the agent.
+When testing in the AI Agent Manager, use the **Test variables** tab to set values for your variables before testing the agent. You simply provide the variable as JSON where the key is the variable name and the value is the value you want the variable to be. For the above example you would need to add to the **Test variables** tab the following JSON:
+
+```JSON
+{
+  "factoryId": "FAC-001",
+  "location": "Building A",
+  "shiftManager": "John Smith"
+}
+```
 
 When calling the agent via REST API, provide variables in the request body:
 ```json
@@ -95,19 +106,28 @@ When calling the agent via REST API, provide variables in the request body:
 
 Variables make agents flexible and reusable without requiring multiple agent configurations for similar use cases.
 
-### Advanced settings {#ai-agent-advanced-settings}
+### Settings and advanced settings {#ai-agent-settings}
 
-The advanced settings allow you to fine-tune the agent's behavior using parameters from the Vercel AI SDK. These settings control aspects like response randomness, length limits, and provider-specific features.
+The settings allow you to fine-tune the agent's behavior using parameters from the Vercel AI SDK. These settings control aspects like response randomness, length limits, and provider-specific features.
 
 #### Common settings {#ai-agent-common-settings}
 
+There are common settings that you can set in the **Setting** tab:
+
 | Parameter           | Range      | Description          |
 |---------------------|------------|----------------------|
-| temperature | 0.0 to 1.0 | Controls response randomness. Lower values (0.1-0.3) produce more focused and deterministic responses. Higher values (0.7-1.0) increase creativity and variation. Default is typically 0.7. |
-| maxTokens | Number | Sets the maximum length of the response in tokens. Use this to enforce concise responses or prevent excessively long outputs. |
-| topP | 0.0 to 1.0 | Nucleus sampling parameter. Controls diversity by limiting token selection to a cumulative probability. Lower values make responses more focused. |
-| frequencyPenalty | -2.0 to 2.0 | Reduces repetition of tokens based on their frequency in the response. Positive values discourage repetition. |
-| presencePenalty | -2.0 to 2.0 | Encourages the model to introduce new topics. Positive values make the agent less likely to repeat topics already mentioned. |
+| maxOutputTokens | Number (min: 1) | Sets the maximum length of the response in tokens. Use this to enforce concise responses or prevent excessively long outputs. |
+| temperature | 0.0 to 1.0 | Controls response randomness. Higher values make output more random, lower values more deterministic. Note: Cannot be used simultaneously with topP. |
+| topP | 0.0 to 1.0 | Nucleus sampling parameter. Only tokens with top probability mass are considered (e.g., 0.1 = top 10%). Note: Cannot be used simultaneously with temperature. |
+| topK | Number (min: 1) | Limits sampling to the top K options. For example, 40 means only the top 40 token options are considered. |
+| presencePenalty | -1.0 to 1.0 | Encourages the model to introduce new topics. Positive values make the agent less likely to repeat topics already mentioned. |
+| frequencyPenalty | -1.0 to 1.0 | Reduces repetition of tokens based on their frequency in the response. Positive values discourage repeated words. |
+| seed | Number (min: 0) | Sets a seed for reproducible results. Using the same seed with the same inputs produces consistent outputs. |
+| maxRetries | Number (min: 0) | Number of times to retry the request on failure. For example, 2 means the system will retry up to 2 times. |
+| stopSequences | Array of strings | Sequences that, when generated, will stop the response. For example, "END" or "\n\n". Only available for text agents. |
+
+#### Advanced settings {#advanced-settings}
+In the **Advanced settings** tab a user can specify more options, which don't have yet an UI form. The options are based on the used Vercel AI SDK. For a complete list of available parameters and provider-specific options, refer to the [Vercel AI SDK documentation](https://sdk.vercel.ai/docs/ai-sdk-core/generating-text).
 
 #### Provider-specific options {#provider-specific-options}
 
@@ -124,9 +144,7 @@ Some AI providers support additional features configured through the `providerOp
 }
 ```
 
-For a complete list of available parameters and provider-specific options, refer to the [Vercel AI SDK documentation](https://sdk.vercel.ai/docs/ai-sdk-core/generating-text).
-
-#### When to use advanced settings {#when-to-use-advanced-settings}
+#### When to use settings {#when-to-use-settings}
 
 - Adjust temperature when responses are too random or too rigid.
 - Set maxTokens to control costs or enforce response brevity.
