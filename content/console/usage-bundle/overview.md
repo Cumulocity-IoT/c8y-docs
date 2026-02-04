@@ -14,7 +14,7 @@ At the top of the page, you find two filters:
 * **Environment filter** - Allows you to select from which environment you want to view data. You do not need to be in the environment to view data from it. For example, if you have a production environment and a development environment, you can view the data from the development environment even if you are logged in and viewing the Console application from the production environment. You can also dive into the individual tenant data, in case you want to identify high-usage tenants. In the following screenshot, you can see the filter showing three environments, with a tenant called "subtenant-prod" being selected from the production environment. As a reminder, you can name each environment in the **Environments** page of the Console application.
 <img src="/images/console/usage/overview/environments-filter.png" alt="Environments Filter">
 
-* **Date filter** - Allows you to select the time range you want to view in the graphs below. The default range is "Last 1 Year", but can be adjusted to whatever months are desired. As a reminder, only the previous month's data is available in the Console application.
+* **Date filter** - Allows you to select the time range you want to view in the graphs below. The default range is "Last 1 Year", but can be adjusted to whatever months are desired. As a reminder, only the completed month's data is available in the Console application.
 <img src="/images/console/usage/overview/date-filter.png" alt="Date Filter">
 
 The first usage widget is the **Last Month Statistics**, and only ever shows the data for the last available month in the selected time range. The time range can be viewed in the top right corner of each tile.
