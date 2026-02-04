@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Computed properties examples added to asset properties selector in Codex
+title: Computed properties examples added to asset properties selector in the Codex
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
