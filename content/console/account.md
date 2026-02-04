@@ -6,4 +6,4 @@ sector:
 weight: 40
 ---
 
-The Account section of the Console application contains consumption information relating to the CTC contract and drawdown.
+The **Account** section of the Console application contains consumption information relating to the CTC contract and drawdown.
