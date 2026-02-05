@@ -1,6 +1,6 @@
 ---
 date: ""
-title: redirect Data model tile to external documentation (#10903) [GRAFT][release/cd] (#11117)
+title: data model tile now redirects to external documentation
 product_area: Platform services
 change_type:
   - value: change-2c7RdTdXo4
