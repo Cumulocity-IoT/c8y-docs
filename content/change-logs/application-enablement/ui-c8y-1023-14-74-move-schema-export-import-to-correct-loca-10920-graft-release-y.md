@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix HTML widget export, import, and schema definition
+title: Fixed HTML widget export, import, and schema definition
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
