@@ -14,19 +14,4 @@ build_artifact:
 ticket: MTM-62875
 version: 1023.22.15
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-62875] adjust data-grid columns dropdown
-(#10874)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10874)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-62875]:
-https://cumulocity.atlassian.net/browse/MTM-62875?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+The data-grid columns dropdown menu was not displaying correctly in certain scenarios, making it difficult for users to manage which columns are visible in their data grids. The dropdown positioning and behavior have been improved to ensure it displays properly and remains accessible when users interact with the column selection controls.
