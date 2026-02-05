@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2678"
 version: "1024.0.0"
 ---
-Previously on tenants with a high number of MangedObjects, creating a linked series without a source caused a slow performance due to the unnecessary loading of inventory objects. This is fixed now.
+On tenants with a high number of managed objects, creating a linked series without a source caused a slow performance due to the unnecessary loading of inventory objects. This issue has been fixed.
