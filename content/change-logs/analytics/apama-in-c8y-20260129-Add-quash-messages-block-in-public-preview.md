@@ -1,6 +1,6 @@
 ---
-date: 2026-01-29
-title: Added Quash Messages block in Public Preview
+date:
+title: Added Rate Limiter block in Public Preview
 change_type:
   - value: change-pXAlHAWka
     label: Preview
@@ -15,17 +15,17 @@ ticket: PAB-5073
 version:
 ---
 
-A new Quash Messages block has been added to Analytics Builder. This block suppresses all but the first message received per specified time period.
+A new Rate Limiter block has been added to Analytics Builder. This block suppresses all but the first message received per specified time period.
 
 {{< c8y-admon-preview >}}
 This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
 {{< /c8y-admon-preview >}}
 
-The Quash Messages block has the following outputs:
-- Rate-quashed output:
-The first input activation in the specified time period is sent to this output.
+The Rate Limiter block has the following outputs:
+- Rate limited output:
+The first input activation in the specified time period is sent to this output; subsequent activations within that period are sent to the suppressed output.
 When the time period has elapsed, the next input activation starts a new period and is again sent to this output.
-- Quashed message output:
-Input activations received after the first activation within the same time period are sent to this output.
-- Number of quashed messages:
-Number of quashed messages within the current period. Resets to zero when a message is not quashed.
+- Suppressed message output:
+Input activations that occur more than once within the specified time period are sent to this output.
+- Number of suppressed messages within the current period:
+Incremented every time a message is suppressed. Resets to zero when a message is not suppressed.
