@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Adjust data-grid columns dropdown
+title: Adjusted data-grid columns dropdown to improve visibility
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
