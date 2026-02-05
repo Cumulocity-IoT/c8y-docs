@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-65938
 version: 1023.33.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [docs(Documentation): [MTM-65938] redirect Data model tile to external
-documentation
-(#10903)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10903)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65938]:
-https://cumulocity.atlassian.net/browse/MTM-65938?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dawid Janusz <96060763+DawidSAG@users.noreply.github.com>
+The data model tile in the documentation section previously linked to internal documentation that may have been incomplete or outdated. The tile now redirects users to the comprehensive external documentation for data models.
