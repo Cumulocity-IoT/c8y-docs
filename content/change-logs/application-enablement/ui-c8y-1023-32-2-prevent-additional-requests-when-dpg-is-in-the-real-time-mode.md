@@ -1,6 +1,6 @@
 ---
 date: ""
-title: prevent additional requests when DPG is in real time mode
+title: Prevented additional requests of the Data point graph widget in real-time mode
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
