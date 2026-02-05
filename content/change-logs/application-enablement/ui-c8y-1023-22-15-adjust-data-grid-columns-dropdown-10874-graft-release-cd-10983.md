@@ -1,6 +1,6 @@
 ---
 date: ""
-title: adjust data-grid columns dropdown (#10874) [GRAFT][release/cd] (#10983)
+title: Adjust data-grid columns dropdown
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
