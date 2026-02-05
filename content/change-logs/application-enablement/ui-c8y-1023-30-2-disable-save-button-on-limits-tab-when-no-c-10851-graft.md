@@ -1,6 +1,6 @@
 ---
 date: ""
-title: disable save button on Limits tab when no c… (#10851) [GRAFT][release/cd] (#11033)
+title: disable save button on tenant Limits tab when no changes are made
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
