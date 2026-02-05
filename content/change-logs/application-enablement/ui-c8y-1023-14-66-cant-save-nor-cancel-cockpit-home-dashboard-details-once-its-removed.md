@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed inability to save or cancel new Cockpit home dashboard settings after removal```
+title: Fixed inability to save or cancel new Cockpit home dashboard settings after removal
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
