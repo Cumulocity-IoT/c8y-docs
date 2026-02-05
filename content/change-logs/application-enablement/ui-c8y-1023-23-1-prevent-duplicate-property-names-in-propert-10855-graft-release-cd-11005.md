@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-65556
 version: 1023.23.1
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-65556] prevent duplicate property names in
-Propert…
-(#10855)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10855)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65556]:
-https://cumulocity.atlassian.net/browse/MTM-65556?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dawid Janusz <96060763+DawidSAG@users.noreply.github.com>
+Users could save multiple properties with the same name in the Properties Library (tenant custom properties). Only one would display in the tenant custom properties tab. Duplicate name validation has been added to the name field, showing an error when a property with the same name already exists and disabling the save button until a unique name is provided.
