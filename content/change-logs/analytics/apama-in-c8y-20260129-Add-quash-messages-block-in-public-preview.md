@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAB-5073
-version:
+version: 27.39.0
 ---
 
 A new Rate Limiter block has been added to Analytics Builder. This block suppresses all but the first message received per specified time period.
