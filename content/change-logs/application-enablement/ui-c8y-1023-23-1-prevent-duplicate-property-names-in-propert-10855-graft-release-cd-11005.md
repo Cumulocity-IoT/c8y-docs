@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65556
 version: 1023.23.1
 ---
-Users could save multiple properties with the same name in the Properties Library (tenant custom properties). Only one would display in the tenant custom properties tab. Duplicate name validation has been added to the name field, showing an error when a property with the same name already exists and disabling the save button until a unique name is provided.
+Previously, users could save multiple properties with the same name in the tenant's custom properties, with the result that only one property with that name was displayed on the tenant's **Custom properties** tab. Duplicate name validation has been added to the name field, showing an error when a property with the same name already exists and disabling the save button until a unique name is provided.
