@@ -1,6 +1,6 @@
 ---
 date: ""
-title: ui remove server error occurred alert message when user has limited access to alarms (#10861) [GRAFT][release/cd] (#11034)
+title: remove server error alert and hide alarms view when user has limited access to alarms
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
