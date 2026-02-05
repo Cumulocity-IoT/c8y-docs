@@ -72,12 +72,10 @@ stringData:
 
 ---
 ##
-## Secret for supplying the database admin credentials with which the Edge operator managed MongoDB must be configured 
-## or the database admin credentials of the externally hosted MongoDB server.
+## Secret for supplying the database admin credentials with which the MongoDB server must be configured.
 ## Name of this secret should be specified in 'spec.mongodb.credentialsSecretName' field of Edge CR.
 ##
-## Defaults to 'databaseAdmin' and a generated password as the database admin user and password for the Edge operator managed MongoDB
-## or fails with validation error for the externally hosted MongoDB server.
+## Defaults to `databaseAdmin` and a generated password as the database admin user and password.
 ##
 
 # apiVersion: v1
@@ -89,51 +87,9 @@ stringData:
   # namespace: c8yedge
 # type: Opaque
 # stringData:
-  ## Database admin username and password with which the MongoDB managed by the Edge operator 
-  ## or the username of the externally hosted MongoDB server is configured.
+  ## Database admin username and password with which the MongoDB server must be configured.
   # MONGODB_DATABASE_ADMIN_USER: databaseAdmin
   # MONGODB_DATABASE_ADMIN_PASSWORD: <DB-ADMIN-PASSWORD>
-
-  ## Only used when MongoDB is deployed and managed by the Edge operator.
-  ## Username defaults to 'userAdmin' and password defaults to the value in MONGODB_DATABASE_ADMIN_PASSWORD
-  # MONGODB_USER_ADMIN_USER: userAdmin
-  # MONGODB_USER_ADMIN_PASSWORD: <USER-ADMIN-PASSWORD>
-
-  ## Only used when MongoDB is deployed and managed by the Edge operator.
-  ## Username defaults to 'clusterAdmin' and password defaults to the value in MONGODB_DATABASE_ADMIN_PASSWORD
-  # MONGODB_CLUSTER_ADMIN_USER: clusterAdmin
-  # MONGODB_CLUSTER_ADMIN_PASSWORD: <CLUSTER-ADMIN-PASSWORD>
-
-  ## Only used when MongoDB is deployed and managed by the Edge operator.
-  ## Username defaults to 'clusterMonitor' and password defaults to the value in MONGODB_DATABASE_ADMIN_PASSWORD
-  # MONGODB_CLUSTER_MONITOR_USER: clusterMonitor
-  # MONGODB_CLUSTER_MONITOR_PASSWORD: <CLUSTER-MONITOR-PASSWORD>
-
-  ## Only used when MongoDB is deployed and managed by the Edge operator.
-  ## Username defaults to 'backup' and password defaults to the value in MONGODB_DATABASE_ADMIN_PASSWORD
-  # MONGODB_BACKUP_USER: backup
-  # MONGODB_BACKUP_PASSWORD: <BACKUP-USER-PASSWORD>
-
----
-##
-## Secret for supplying the Certificate Authority (CA) certificate that issued the TLS/SSL key and certificates used to 
-## configure the TLS for the externally hosted MongoDB server. This allows the Edge operator to establish trust with the server.
-## Name of this secret should be specified in 'spec.mongodb.tlsSecretName' field of Edge CR.
-##
-## Not required if the TLS/SSL key and certificates are issued by a trusted public CA.
-##
-
-# apiVersion: v1
-# kind: Secret
-# metadata:
-  ## Name of the secret. Same value should be specified in 'spec.mongodb.tlsSecretName' field of Edge CR.
-  # name: mongodb-tls
-  ## Namespace name into which you installed the Edge operator.
-  # namespace: c8yedge
-# type: Opaque
-# stringData:
-  ## Certificate Authority (CA) certificate in PEM format.
-  # ca.crt: <CA-CERTIFICATE>
 
 ---
 ##
@@ -329,23 +285,10 @@ spec:
   ## This field is necessary for one or more of the following reasons:
   ##    - To specify the MongoDB admin credentials.
   ##    - To specify resource limits for the MongoDB server containers deployed by the Edge operator.
-  ##    - To configure Edge with an externally hosted MongoDB server.
   # mongodb:
-    ## Name of the Kubernetes Secret containing the database admin credentials with which the Edge operator 
-    ## managed MongoDB must be configured or the database admin credentials of the externally hosted MongoDB server.
-    ## Defaults to 'databaseAdmin' and a generated password as the database admin user and password for the Edge operator 
-    ## managed MongoDB or fails with validation error for the externally hosted MongoDB server.
+    ## Name of the Kubernetes Secret containing the database admin credentials with which the MongoDB server must be configured.
+    ## Defaults to `databaseAdmin` and a generated password as the database admin user.
     # credentialsSecretName: mongodb-credentials
-
-    ## Connection string of the externally hosted MongoDB server. URI format: mongodb://host1[:port1][,...hostN[:portN]]
-    ## If not provided, the Edge operator installs a single node MongoDB server and configures it with the 
-    ## admin credentials provided in 'spec.mongodb.credentialsSecretName'.
-    ## Once Edge is installed and configured to use the MongoDB managed by the Edge operator, 
-    ## you cannot provide the connectionString to use an externally hosted MongoDB.
-    # connectionString: <CONNECTION-STRING-URI>
-
-    ## Secret for supplying the Certificate Authority (CA) certificate to trust.
-    # tlsSecretName: mongodb-tls
 
     ## Resource limits for the MongoDB server pod.
     # resources:
