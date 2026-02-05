@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65612
 version: 1023.14.74
 ---
-The export, import, and schema properties for the HTML widget were defined in the wrong location, causing validation errors in the Import/Export tab of Dashboard settings. These properties have been moved to the correct location under the data key, consistent with other widgets. The HtmlWidgetConfig interface was also updated to make device and settings optional, as HTML widgets can be created without a device.
+The export, import, and schema properties for the HTML widget were defined in the wrong location, causing validation errors in the **Import/Export** tab of the dashboard settings. These properties have been moved to the correct location under the data key, consistent with other widgets. Moreover, the `HtmlWidgetConfig` interface was updated to make device and settings optional, as HTML widgets can be created without a device.
