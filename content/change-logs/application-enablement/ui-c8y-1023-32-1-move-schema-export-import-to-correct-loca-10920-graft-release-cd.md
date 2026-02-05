@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-65612
 version: 1023.32.1
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-65612] move schema, export, import to correct
-loca…
-(#10920)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10920)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65612]:
-https://cumulocity.atlassian.net/browse/MTM-65612?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dawid Janusz <96060763+DawidSAG@users.noreply.github.com>
+The export, import, and schema properties for the HTML widget were defined in the wrong location, causing validation errors in the Import/Export tab of Dashboard settings. These properties have been moved to the correct location under the data key, consistent with other widgets. The HtmlWidgetConfig interface was also updated to make device and settings optional, as HTML widgets can be created without a device.
