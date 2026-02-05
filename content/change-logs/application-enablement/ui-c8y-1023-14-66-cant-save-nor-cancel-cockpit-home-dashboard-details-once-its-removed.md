@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Cant save nor cancel Cockpit home dashboard details once its removed [GRAFT][release/y2026] (#11096)
+title: Fixed inability to save or cancel new Cockpit home dashboard settings after removal```
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
