@@ -15,7 +15,7 @@ ticket: PAB-5072
 version: 27.25.0
 ---
 
-A new `Logger` block has been added to Analytics Builder in Public Preview. This block enables writing a message to the log file for each input, with the following parameters:
+A new `Logger` block has been added to Analytics Builder in Public Preview. This block enables writing a message to the microservice log file for each input, with the following parameters:
  - `loggerTag`:
 Used to identify log messages from this block. If not specified, defaults to "logger".
 
