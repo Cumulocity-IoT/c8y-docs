@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix dropdown z-index when attached to the body (#10856) [GRAFT][release/cd] (#10982)
+title: Fix dropdown z-index when attached to the body
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
