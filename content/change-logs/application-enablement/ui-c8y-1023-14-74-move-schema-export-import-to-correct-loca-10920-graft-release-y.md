@@ -1,6 +1,6 @@
 ---
 date: ""
-title: move schema, export, import to correct loca… (#10920) [GRAFT][release/y2026] (#11116)
+title: fix HTML widget export, import, and schema definition
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
