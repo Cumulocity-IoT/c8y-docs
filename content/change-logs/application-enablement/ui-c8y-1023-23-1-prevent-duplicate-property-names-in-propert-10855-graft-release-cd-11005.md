@@ -1,6 +1,6 @@
 ---
 date: ""
-title: prevent duplicate property names in Propert… (#10855) [GRAFT][release/cd] (#11005)
+title: prevent duplicate tenant custom property names in Properties Library
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
