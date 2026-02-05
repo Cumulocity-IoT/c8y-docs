@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Adjust feature preview highlight dot on mobile (#10854) [GRAFT][release/cd] (#10980)
+title: Feature preview highlight dot positioning improved on mobile devices
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
