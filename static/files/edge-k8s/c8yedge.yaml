@@ -75,7 +75,7 @@ stringData:
 ## Secret for supplying the database admin credentials with which the MongoDB server must be configured.
 ## Name of this secret should be specified in 'spec.mongodb.credentialsSecretName' field of Edge CR.
 ##
-## Defaults to 'databaseAdmin' and a generated password as the database admin user and password.
+## Defaults to `databaseAdmin` and a generated password as the database admin user and password.
 ##
 
 # apiVersion: v1
@@ -287,7 +287,7 @@ spec:
   ##    - To specify resource limits for the MongoDB server containers deployed by the Edge operator.
   # mongodb:
     ## Name of the Kubernetes Secret containing the database admin credentials with which the MongoDB server must be configured.
-    ## Defaults to 'databaseAdmin' and a generated password as the database admin user.
+    ## Defaults to `databaseAdmin` and a generated password as the database admin user.
     # credentialsSecretName: mongodb-credentials
 
     ## Resource limits for the MongoDB server pod.
