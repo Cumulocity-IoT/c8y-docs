@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix displaying truncated data alert in Data points explorer [GRAFT][release/y2026] (#11077)
+title: Data explorer now displays alert when data is truncated
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
