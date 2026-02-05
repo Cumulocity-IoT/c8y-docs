@@ -1,6 +1,6 @@
 ---
 date: ""
-title: prevent duplicate tenant custom property names in Properties Library
+title: Duplicate name validation added to prevent duplicate tenant custom property names
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
