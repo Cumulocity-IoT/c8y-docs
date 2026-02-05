@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fixed slow performance when creating a linked series without a source on tenants with lots of MangedObjects."
+title: "Fixed slow performance when creating a linked series without a source on tenants with lots of managed objects"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
