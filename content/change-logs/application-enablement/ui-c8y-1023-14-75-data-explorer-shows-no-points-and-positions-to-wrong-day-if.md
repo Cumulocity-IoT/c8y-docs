@@ -1,6 +1,6 @@
 ---
 date: ""
-title: data explorer shows no points and positions to wrong day if custom time series chosen (#10952) [GRAFT][release/y2026] (#11114)
+title: data explorer shows no points and positions to wrong day if custom time series chosen
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
