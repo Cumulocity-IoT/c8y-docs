@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-59205
 version: 1021.22.146
 ---
-Previously, on users list, global roles were filtered and sorted by label (not visible for user). Currently, they are filtered and sorted by translated name- the one that is visible on the list.
+In the user management, global roles were previously filtered and sorted by their internal label rather than their displayed name, which made it difficult to find and organize roles in the UI. Now, global roles in the user list are filtered and sorted by their translated name, that is, by the name that is visible to you in the UI. This change makes it more intuitive to search for and organize users by their assigned global roles, as the sorting and filtering behavior now matches what you see on the screen.
