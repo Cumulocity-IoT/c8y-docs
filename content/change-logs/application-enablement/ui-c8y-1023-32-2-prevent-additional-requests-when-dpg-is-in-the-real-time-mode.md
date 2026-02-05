@@ -1,6 +1,6 @@
 ---
 date: ""
-title: prevent additional requests when DPG is in the real time mode (#10568) [GRAFT][release/cd] (#11119)
+title: prevent additional requests when DPG is in real time mode
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
