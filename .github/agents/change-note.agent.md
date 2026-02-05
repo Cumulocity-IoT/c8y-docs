@@ -36,8 +36,8 @@ Do not:
 
 Steps:
 1. Read the content of the file located at `./content/change-logs/template.md`. This is a template for a change note.
-2. The user needs to provide you: A brief description of the change, the type of change (e.g., bug fix, new feature, improvement), the vesion number this fix was applied, any relevant context or impact information and a ticket number (mostly MTM-).
-3. Create a new file at `./content/change-logs/<<product-area>>/cumulocity-<<fix-version>>-<<short-description>>.md` and write the generated change note into this file. Make sure to replace spaces in the short description with hyphens and convert it to lowercase. 
+2. The user needs to provide you: A brief description of the change, the type of change (e.g., bug fix, new feature, improvement), the version number this fix was applied, any relevant context or impact information and a ticket number (mostly MTM-).
+3. Create a new file at `./content/change-logs/<<product-area>>/cumulocity-<<fix-version>>-<<short-description>>.md` and write the generated change note into this file. Make sure to replace spaces in the short description with hyphens and convert it to lowercase. For the `product-area`, use the appropriate folder based on the component affected by the change but never create a new folder. The folder might be only named similar.
 4. Align the front-matter: Leave date empty, as it will be added later. Add the rest of the data based on the user-data. Use the following mapping table to get the right ids and matching product areas:
 {
   "changetype": [{"id":"change-QHu1GdukP","option":"Feature"},{"id":"change-pXAlHAWka","option":"Preview"},{"id":"change-2c7RdTdXo4","option":"Improvement"},{"id":"change-VSkj2iV9m","option":"Fix"},{"id":"change-inv-3bw8e","option":"Announcement"},{"id":"change-3BQrQ6adS","option":"API change"}],
