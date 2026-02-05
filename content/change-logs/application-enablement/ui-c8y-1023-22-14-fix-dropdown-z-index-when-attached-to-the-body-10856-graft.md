@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix dropdown z-index when attached to the body
+title: Dropdowns now appear on top of other content as expected
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
