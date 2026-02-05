@@ -32,6 +32,6 @@ The Smart Function must export a function `onInput(inputs, context)` that return
 	* `getState(key, def = null)` - Method that retrieves a value previously stored in the context under the given key. If no value is found, returns `def`.
 	* `setState(key, value)` - Method that stores the given value in the context under the given key.
 
-In addition, the `console` object has `log`, `warn`, `error`, and `debug` members that can be used to log messages to the Analytics Builder log.
+In addition, the `console` object has `log`, `warn`, `error`, and `debug` members that can be used to log messages to the microservice log.
 
 The return value of the function is a list of up to ten values corresponding to the block outputs. These can either be bare values, or `Value` objects, with members `value`, `properties`, and `timestamp`. If the function does not generate a value, return `null` instead.
