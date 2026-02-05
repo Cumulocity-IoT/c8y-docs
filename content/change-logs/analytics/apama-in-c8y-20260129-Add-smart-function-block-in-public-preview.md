@@ -1,5 +1,5 @@
 ---
-date:
+date: '2026-02-05'
 title: Added Smart Function block in Public Preview
 change_type:
   - value: change-pXAlHAWka
@@ -13,6 +13,9 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-5076
 version: 27.33.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-02-05'
 ---
 
 A new Smart Function block has been added to Analytics Builder. This block executes a JS Smart Function on the inputs and produces an output.

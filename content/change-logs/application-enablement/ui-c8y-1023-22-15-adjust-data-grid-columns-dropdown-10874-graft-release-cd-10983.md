@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-02-05'
 title: Adjusted data-grid columns dropdown to improve visibility
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62875
 version: 1023.22.15
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-02-05'
+  - label: apj.cumulocity.com
+    date: '2026-02-05'
+  - label: jp.cumulocity.com
+    date: '2026-02-05'
 ---
 The data-grid columns dropdown menu was not displaying correctly in certain scenarios, making it difficult for users to manage which columns are visible in their data grids. The dropdown positioning and behavior have been improved to ensure it displays properly and remains accessible when users interact with the column selection controls.

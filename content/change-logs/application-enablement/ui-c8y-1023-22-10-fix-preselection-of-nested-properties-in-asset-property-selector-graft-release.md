@@ -19,5 +19,11 @@ environment_availability:
     date: '2026-02-04'
   - label: jp.cumulocity.com
     date: '2026-02-04'
+  - label: emea.cumulocity.com
+    date: '2026-02-05'
+  - label: us.cumulocity.com
+    date: '2026-02-05'
+  - label: cumulocity.com
+    date: '2026-02-05'
 ---
 The asset property selector allows you to pre-select properties that will be highlighted when the selector opens. Previously, nested properties (properties that are children of complex properties) were not pre-selected correctly, even when they were included in the pre-selection list. This issue has been fixed, and nested properties now display as pre-selected in the asset property selector, making it easier to work with hierarchical property structures.
