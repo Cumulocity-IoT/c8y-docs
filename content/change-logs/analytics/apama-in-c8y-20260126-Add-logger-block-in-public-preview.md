@@ -1,5 +1,5 @@
 ---
-date: 2026-01-26
+date:
 title: Add Logger block in Public Preview
 change_type:
   - value: change-pXAlHAWka
