@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-65613
 version: 1023.22.14
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-65613] fix dropdown z-index when attached to the
-body
-(#10856)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10856)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65613]:
-https://cumulocity.atlassian.net/browse/MTM-65613?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+Dropdowns that were configured to be attached to the body element were appearing behind other page elements due to incorrect z-index layering. This has been fixed so that dropdowns now display with the correct stacking order and appear on top of other content as expected, ensuring they are always visible and interactive when opened.
