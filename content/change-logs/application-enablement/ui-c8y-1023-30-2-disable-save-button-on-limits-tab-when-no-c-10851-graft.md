@@ -1,6 +1,6 @@
 ---
 date: ""
-title: disable save button on tenant Limits tab when no changes are made
+title: Disabled Save button on the Limits tab when nothing has been changed
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
