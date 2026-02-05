@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-62148
 version: 1023.14.73
 ---
-The save button on the tenant Limits tab was enabled even when no changes were made. It is now disabled until the user modifies a value, preventing accidental saves of unchanged data.
+The **Save** button on the **Limits** tab in the tenant details was enabled even when no changes were made. It is now disabled until the user modifies a value, preventing accidental saving of unchanged data.
