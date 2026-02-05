@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Disabled Save button on the Limits tab when nothing has been changed
+title: Save button on the Limits tab is only enabled when changes have been made
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
