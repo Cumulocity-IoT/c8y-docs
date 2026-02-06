@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5533
 version: 1023.37.0
 ---
-The Device type column is now part of the default device grid configuration in the Devices list of the Device Management application. It is available in the column selector and can be enabled as needed.
+The "Device type" column is now part of the default device grid configuration in the devices list of the Device Management application. It is available in the column selector and can be enabled as needed.
