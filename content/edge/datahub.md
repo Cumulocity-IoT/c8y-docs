@@ -12,7 +12,7 @@ To learn more about DataHub in general, see [DataHub overview](/datahub/datahub-
 
 ### Installing and using DataHub {#installing-and-using-datahub}
 
-DataHub is an optional component of Edge. If you installed Edge using the c8yedge tool, you can enable it using the `c8yedge config --set dataHub.enabled=true` command. Alternatively, you can enable DataHub by updating the `spec.dataHub` field in the Edge custom resource (CR). For more details on the `spec.dataHub` field, refer to [Edge custom resource - DataHub](/edge/edge-custom-resource-definition/#k8-edge-datahub).
+DataHub is an optional component of Edge. If you installed Edge using the c8yedge tool, you can enable it using the `c8yedge config --set dataHub.enabled=true` command. Alternatively, you can enable DataHub by updating the `spec.dataHub` field in the Edge custom resource (CR). For more details on the `spec.dataHub` field, refer to [Edge custom resource - DataHub](/edge/custom-resource-definition/#k8-edge-datahub).
 
 For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
 

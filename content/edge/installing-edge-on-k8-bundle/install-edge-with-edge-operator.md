@@ -56,7 +56,7 @@ kubectl apply -f c8yedge.yaml
 ```
 This command will complete immediately, and the installation will proceed in the background. See [Monitoring changes](/edge/manage-edge/#monitoring-changes) to track the progress of the installation.
 
-For more information about the structure and configuration options available in the Edge CR, see [Edge custom resource](/edge/edge-custom-resource-definition/).
+For more information about the structure and configuration options available in the Edge CR, see [Edge custom resource](/edge/custom-resource-definition/).
 
 ### Configuring proxy
 

@@ -51,7 +51,7 @@ The operator will also upgrade itself as part of this process. See [Monitoring c
 
 ### Upgrading Edge remotely {#upgrading-edge-remotely}
 
-For information about upgrading Edge remotely, see [Upgrading Edge remotely](/edge/k8-edge-connecting-edge-to-cloud/#k8-edge-upgrading-edge-remotely).
+For information about upgrading Edge remotely, see [Upgrading Edge remotely](/edge/connecting-edge-to-cloud/#k8-edge-upgrading-edge-remotely).
 
 ### Upgrading from Edge version 10.18
 

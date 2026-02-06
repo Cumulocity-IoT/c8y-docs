@@ -13,7 +13,7 @@ c8yedge config \
     --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> \
     --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>
 ```
-Alternatively, you can configure the same by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudTenant).
+Alternatively, you can configure the same by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/custom-resource-definition/#cloudTenant).
 
 For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
 

@@ -4,7 +4,7 @@ title: Monitoring the Edge metrics from your cloud tenant
 layout: redirect
 ---
 
-In your {{< product-c8y-iot >}} cloud tenant, you can monitor the measurements of the Edge listed in the table below. To monitor the measurements from your cloud tenant, ensure that you have registered your Edge with the {{< product-c8y-iot >}} cloud tenant. See [Registering Edge in the cloud tenant](/edge/k8-edge-connecting-edge-to-cloud/#k8-edge-register-edge-on-cloud) for more information.
+In your {{< product-c8y-iot >}} cloud tenant, you can monitor the measurements of the Edge listed in the table below. To monitor the measurements from your cloud tenant, ensure that you have registered your Edge with the {{< product-c8y-iot >}} cloud tenant. See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#k8-edge-register-edge-on-cloud) for more information.
 
 |<div style="width:150px">Measurement</div>|<div style="width:250px">Metrics</div>|Description
 |:---|:---|:---

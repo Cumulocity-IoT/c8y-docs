@@ -32,6 +32,6 @@ Events:
 Possible reasons:
 * You didn’t add the Certificate Authority (CA) certificate to the trusted certificate list of your tenant.
 For completing the registration process, sign into your cloud tenant and follow the steps described in [Managing trusted certificates](/device-certificate-authentication/managing-trusted-certificates/) to add the Certificate Authority (CA) certificate to the trusted certificate list of your tenant. For more details, see [Device certificates](/device-certificate-authentication/device-certificates/).
-For more information see [Connecting Edge to the cloud](/edge/k8-edge-connecting-edge-to-cloud/).
+For more information see [Connecting Edge to the cloud](/edge/connecting-edge-to-cloud/).
 
 * The specified cloud tenant domain is not reachable or incorrect.

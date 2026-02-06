@@ -16,4 +16,4 @@ kubectl get edge c8yedge -n c8yedge --output jsonpath='{.status.helpCommands.dow
 Substitute the Edge name and namespace name *c8yedge* in the command above with the specific Edge name and namespace name you have specified in your Edge CR.
 {{< /c8y-admon-info >}}
 
-Download the log archives remotely from your cloud tenant. For more information, see [Downloading diagnostics remotely](/edge/k8-edge-connecting-edge-to-cloud/#downloading-diagnostics-remotely).
+Download the log archives remotely from your cloud tenant. For more information, see [Downloading diagnostics remotely](/edge/connecting-edge-to-cloud/#downloading-diagnostics-remotely).

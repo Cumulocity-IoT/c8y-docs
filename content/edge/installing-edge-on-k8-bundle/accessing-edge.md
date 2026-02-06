@@ -71,7 +71,7 @@ If you are logging in for the first time, you will see a cookie banner at the bo
 ![Cookie Banner](/images/edge/cookie-banner.png)
 
 {{< c8y-admon-info >}}
-The cookie banner is turned on by default. This feature can be configured. For more information, see [Branding](/edge/k8-using-edge/#branding).
+The cookie banner is turned on by default. This feature can be configured. For more information, see [Branding](/edge/using-edge/#branding).
 {{< /c8y-admon-info >}}
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
