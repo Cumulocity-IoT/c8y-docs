@@ -1,6 +1,6 @@
 ---
 date: ""
-title: improve add custom-column bottom drawer layout (#10887) [GRAFT][release/cd] (#10986)
+title: Improve add custom-column bottom drawer layout
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
