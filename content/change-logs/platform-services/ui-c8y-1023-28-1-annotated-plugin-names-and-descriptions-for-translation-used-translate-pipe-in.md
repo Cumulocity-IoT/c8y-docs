@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65874
 version: 1023.28.1
 ---
-Plugin names and descriptions are now translated in the installed plugins list in Administration.
+Plugin names and descriptions are now translated in the installed plugins list in the Administration application.
