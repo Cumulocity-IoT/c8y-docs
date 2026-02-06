@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-65920
 version: 1023.32.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Web SDK): [MTM-65920] improve add custom-column bottom drawer
-layout
-(#10887)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10887)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65920]:
-https://cumulocity.atlassian.net/browse/MTM-65920?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+The drawer layout has been improved to provide better spacing, alignment, and overall usability when adding custom columns.
