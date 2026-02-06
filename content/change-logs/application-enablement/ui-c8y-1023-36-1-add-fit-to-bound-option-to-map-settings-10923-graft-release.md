@@ -1,6 +1,6 @@
 ---
 date: ""
-title: add fit to bound option to map settings (#10923) [GRAFT][release/cd] (#11142)
+title: Add fit to bounds option to map settings
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
