@@ -1,6 +1,6 @@
 ---
 date: ""
-title: add a fall back route for the upgrade module (#10891) [GRAFT][release/cd] (#11143)
+title: Add a fallback route for not found routes
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
