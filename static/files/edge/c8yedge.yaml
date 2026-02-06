@@ -153,7 +153,7 @@ stringData:
 ## You can edit this file and apply it to your Kubernetes cluster to deploy or update your Edge.
 ##
 ## For more information about the CR specification, 
-## see https://cumulocity.com/docs/edge/custom-resource-definition
+## see https://cumulocity.com/docs/edge/edge-custom-resource-definition
 ##
 
 apiVersion: edge.cumulocity.com/v1

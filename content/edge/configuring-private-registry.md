@@ -153,6 +153,6 @@ kubectl create configmap custom-environment-variables -n "${EDGE_NAMESPACE}" --f
 ```
 
 ### Installing the Edge operator
-Continue with installing the Edge operator by following the instructions in [Installing the Edge operator](/edge/installing/#installing-edge-operator)  passing the private registry's host (`-r` option) as &lt;private-registry-hostname&gt;:&lt;private-registry-port&gt; and the respective registry credentials when prompted.
+Continue with installing the Edge operator by following the instructions in [Installing the Edge operator](/edge/installing-edge/#installing-edge-operator)  passing the private registry's host (`-r` option) as &lt;private-registry-hostname&gt;:&lt;private-registry-port&gt; and the respective registry credentials when prompted.
 
 

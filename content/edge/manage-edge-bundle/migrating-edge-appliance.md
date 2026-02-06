@@ -205,7 +205,7 @@ Perform the following steps as a root user on your Edge appliance.
 
 
 ### Step 3 - Install Edge 2025
-Follow the steps documented at [Installing Edge](https://cumulocity.com/docs/2025/edge/installing/) to install and configure Edge 2025.
+Follow the steps documented at [Installing Edge](https://cumulocity.com/docs/2025/edge/installing-edge/) to install and configure Edge 2025.
 
 {{< c8y-admon-important >}}
 Ensure that there is sufficient disk space available on the machine in which you intend to install Edge 2025.
@@ -240,7 +240,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    ```shell
    kubectl rollout restart deployment -n c8yedge c8yedge-operator-controller-manager
    ```
-   Ensure you are able to [access Edge](https://cumulocity.com/docs/2025/edge/installing/#accessing-edge) before continuing with the subsequent steps.
+   Ensure you are able to [access Edge](https://cumulocity.com/docs/2025/edge/installing-edge/#accessing-edge) before continuing with the subsequent steps.
 
 5. Remove the */opt/edge-appliance-backup.tar* and */opt/appliance-edgedb-backup* folders: 
    ```shell

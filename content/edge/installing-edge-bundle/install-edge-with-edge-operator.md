@@ -4,7 +4,7 @@ title: Installing on a self-managed Kubernetes cluster
 layout: redirect
 ---
 
-This method is suitable for users who already have a Kubernetes cluster and want to install Edge using existing Kubernetes tools. Before you start the installation, ensure that you have met the [prerequisites](/edge/installing/#prerequisites).
+This method is suitable for users who already have a Kubernetes cluster and want to install Edge using existing Kubernetes tools. Before you start the installation, ensure that you have met the [prerequisites](/edge/installing-edge/#prerequisites).
 
 You will need Helm version 3.x available on your system. Refer to [Installing Helm](https://helm.sh/docs/intro/install/) for the installation instructions.
 
@@ -56,7 +56,7 @@ kubectl apply -f c8yedge.yaml
 ```
 This command will complete immediately, and the installation will proceed in the background. See [Monitoring changes](/edge/manage-edge/#monitoring-changes) to track the progress of the installation.
 
-For more information about the structure and configuration options available in the Edge CR, see [Edge custom resource](/edge/custom-resource-definition/).
+For more information about the structure and configuration options available in the Edge CR, see [Edge custom resource](/edge/edge-custom-resource-definition/).
 
 ### Configuring proxy
 

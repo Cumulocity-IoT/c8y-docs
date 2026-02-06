@@ -12,13 +12,13 @@ To learn more about DataHub in general, see [DataHub overview](/datahub/datahub-
 
 ### Installing and using DataHub {#installing-and-using-datahub}
 
-DataHub is an optional component of Edge. If you installed Edge using the c8yedge tool, you can enable it using the `c8yedge config --set dataHub.enabled=true` command. Alternatively, you can enable DataHub by updating the `spec.dataHub` field in the Edge custom resource (CR). For more details on the `spec.dataHub` field, refer to [Edge custom resource - DataHub](/edge/custom-resource-definition/#datahub).
+DataHub is an optional component of Edge. If you installed Edge using the c8yedge tool, you can enable it using the `c8yedge config --set dataHub.enabled=true` command. Alternatively, you can enable DataHub by updating the `spec.dataHub` field in the Edge custom resource (CR). For more details on the `spec.dataHub` field, refer to [Edge custom resource - DataHub](/edge/edge-custom-resource-definition/#datahub).
 
 For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
 
 The data lake and related storage will always be written to the host file system under the path `/datahub`, whatever is mounted there. You are expected to have a single shared NAS file system, such as NFS mounted at that path _on all nodes of the Kubernetes cluster that Edge is running on_. This is to ensure the resilience of your data lake contents.
 
-In order to access Dremio, you must also make the domain `datahub-<domain_name>` resolvable, just as the configured domain name and `management-<domain_name>` were made resolvable in [Accessing Edge](/edge/installing/#accessing-edge).
+In order to access Dremio, you must also make the domain `datahub-<domain_name>` resolvable, just as the configured domain name and `management-<domain_name>` were made resolvable in [Accessing Edge](/edge/installing-edge/#accessing-edge).
 
 ### Comparison between DataHub Edge and DataHub Cloud {#comparison-between-datahub-edge-and-datahub-cloud}
 

@@ -34,7 +34,7 @@ For a complete list of all supported configurations beyond those described in th
 
 ### Configuring Edge in a self-managed Kubernetes cluster {#configuring-with-kubernetes-native}
 
-You can modify the Edge configuration by directly editing a YAML document that represents the Edge custom resource. Refer to [Edge custom resource](/edge/custom-resource-definition/) for details of the CR structure and configuration options available.
+You can modify the Edge configuration by directly editing a YAML document that represents the Edge custom resource. Refer to [Edge custom resource](/edge/edge-custom-resource-definition/) for details of the CR structure and configuration options available.
 
 In the below examples, we assume that the Edge object is called `c8yedge` and is in the namespace `c8yedge`. All commands should be executed in the shell of the environment you have installed Edge on.
 
@@ -43,7 +43,7 @@ First, retrieve the current state of the custom resource
 kubectl get --namespace=c8yedge edge/c8yedge -o yaml > edge.yaml
 ```
 
-Edit this file, referring to [Edge custom resource](/edge/custom-resource-definition/) for an exhaustive listing of what could be changed. For example, you might add
+Edit this file, referring to [Edge custom resource](/edge/edge-custom-resource-definition/) for an exhaustive listing of what could be changed. For example, you might add
 ```bash
   domain: <DOMAIN-NAME>
   licenseKey: <CONTENTS-OF-THE-LICENSE-FILE>

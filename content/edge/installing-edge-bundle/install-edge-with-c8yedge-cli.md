@@ -12,7 +12,7 @@ Edge can be installed on any modern x86-64 Linux environment, virtualised or oth
 
 First, choose your environment. It can be a physical machine, or it can be a virtual machine (VM), using the technology of your choice. For example, VMWare Workstation Player, VMWare ESXi or HyperV. Create a VM, referring to the documentation from your VM technology vendor as necessary.
 
-Whether a VM or physical machine, ensure that all hardware and storage requirements for Edge are met, based on [prerequisites](/edge/installing/#prerequisites).
+Whether a VM or physical machine, ensure that all hardware and storage requirements for Edge are met, based on [prerequisites](/edge/installing-edge/#prerequisites).
 
 Install the Linux distribution of your choice. Because the c8yedge-based install provisions Edge on [Lightweight Kubernetes (K3s)](https://docs.k3s.io/), you should consult the [operating system configurations required by K3s](https://docs.k3s.io/installation/requirements#operating-systems) to help you choose and configure your operating system.
 
@@ -49,7 +49,7 @@ sudo c8yedge install
 
 Upon successful installation, the tool will exit automatically.
 
-To sign in to Edge, refer to the instructions at the start of the [**Accessing Edge**](/edge/installing/#accessing-edge) section. You can later update the domain and license to match your environment by following the steps outlined in [**Modifying Edge**](/edge/manage-edge/#modify-edge).
+To sign in to Edge, refer to the instructions at the start of the [**Accessing Edge**](/edge/installing-edge/#accessing-edge) section. You can later update the domain and license to match your environment by following the steps outlined in [**Modifying Edge**](/edge/manage-edge/#modify-edge).
 
 ### Install Edge in an airgapped environment {#install-edge-airgapped}
 
