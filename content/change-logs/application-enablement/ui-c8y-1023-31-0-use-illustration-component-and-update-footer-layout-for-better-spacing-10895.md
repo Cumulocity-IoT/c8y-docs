@@ -1,6 +1,6 @@
 ---
 date: ""
-title: use illustration component and update footer layout for better spacing (#10895) [GRAFT][release/cd] (#10999)
+title: Improve forceSetup layout and update illustration
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
