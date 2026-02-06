@@ -14,19 +14,4 @@ build_artifact:
 ticket: MTM-65814
 version: 1023.36.1
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(web sdk): [MTM-65814] add fit to bound option to map settings
-(#10923)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10923)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65814]:
-https://cumulocity.atlassian.net/browse/MTM-65814?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Jan Hommes <janhommes@users.noreply.github.com>
+The map widget in the Cumulocity IoT web application now includes a "fit to bounds" option in its settings. Previously, users had limited control over how the map viewport was adjusted when displaying multiple locations or markers. With this improvement, you can now configure the map to automatically adjust its zoom level and center position to fit all markers and features within the visible bounds of the map. This provides better control over the initial map view and improves the user experience when working with location-based data, allowing you to ensure all relevant map content is visible without manual zoom adjustments.
