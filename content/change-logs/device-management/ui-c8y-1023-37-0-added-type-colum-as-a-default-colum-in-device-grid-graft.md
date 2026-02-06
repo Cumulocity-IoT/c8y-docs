@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added type colum as a default colum in device grid. [GRAFT][release/cd] (#11129)
+title: device type column now displayed by default in device grid
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
