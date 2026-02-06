@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64415
 version: 1023.36.1
 ---
-The routing in the hybrid applications (applications that share angularjs and Angular code) could become inaccessible if certain routes where not found, potentially leaving users unable to access functionality. A fallback route has been added to the applications to ensure that users can always access this feature, even if the primary routing path is unavailable. This prevents users from encountering broken navigation paths when attempting to access features.
+Routing in hybrid applications (applications that share AngularJS and Angular code) could become inaccessible if certain routes are not found, potentially leaving users unable to access functionality. A fallback route has been added to the applications to ensure that users can always access this feature, even if the primary routing path is unavailable. This prevents users from encountering broken navigation paths when accessing features.
