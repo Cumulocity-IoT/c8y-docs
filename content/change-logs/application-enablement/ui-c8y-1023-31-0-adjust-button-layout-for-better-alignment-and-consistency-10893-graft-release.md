@@ -1,6 +1,6 @@
 ---
 date: ""
-title: adjust button layout for better alignment and consistency. (#10893) [GRAFT][release/cd] (#11000)
+title: Adjust button layout in confirmation modal
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
