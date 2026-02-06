@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add a fallback route for not found routes
+title: Added fallback route for routing in hybrid applications
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
