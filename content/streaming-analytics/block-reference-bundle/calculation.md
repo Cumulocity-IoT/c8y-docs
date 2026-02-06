@@ -19,6 +19,11 @@ This category contains the following blocks:
 </thead>
 <tbody>
 <tr>
+<td><a href="#ai-agent-prompt-preview">AI Agent Prompt (Preview)</a></td>
+<td><span>This block queries an AI Agent manager agent using its inputs and produces the agent's text response as output.</span>
+</td>
+</tr>
+<tr>
 <td><a href="#crossing-counter">Crossing Counter</a></td>
 <td><span>Detects and counts the number of threshold crossings in the specified direction.</span>
 </td>
@@ -74,6 +79,11 @@ This category contains the following blocks:
 </td>
 </tr>
 <tr>
+<td><a href="#smart-function-preview">Smart Function (Preview)</a></td>
+<td><span>The Smart Function block allows you to write a custom JS/ECMAScript function to process up to ten inputs and produce up to ten outputs.</span>
+</td>
+</tr>
+<tr>
 <td><a href="#threshold">Threshold</a></td>
 <td><span>Compares the input value against the defined threshold value to detect whether the input breaches the threshold or whether it crosses the threshold.</span>
 </td>
@@ -85,6 +95,134 @@ This category contains the following blocks:
 </tr>
 </tbody>
 </table>
+
+### AI Agent Prompt (Preview)
+
+`apama.analyticsbuilder.blocks.AIAgent`
+
+<p>This block queries an AI Agent manager agent using its inputs and produces the agent's text response as output.</p>
+<p><b>Note:</b> This block produces its output asynchronously after the input activation completes. If you wire this output alongside outputs from other blocks into the same downstream block, they will trigger that block in separate activations rather than being processed together.
+<p></p>
+<b>This block is currently in public preview and may be subject to change.</b></p>
+
+
+#### Parameters {#ai-agent-prompt-preview-parameters}
+
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 50%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+<col style="width: 10%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+<th scope="col">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Agent name</th>
+<td><span>The agent to use in the AI Agent manager.</span>
+</td>
+<td><span>string</span>
+</td>
+<td></td>
+</tr>
+<tr>
+<th scope="row">Prompt template</th>
+<td><span>The prompt template to use when querying the agent. The block inputs will be mapped into this template using variables like {{inputs[0]}}, {{inputs[1]}}, etc.</span>
+</td>
+<td><span>string</span>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+#### Input Port Details {#ai-agent-prompt-preview-inputs}
+
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 60%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">inputs[0]</th>
+<td><span>The first input value. Accessed in the prompt template as {{inputs[0]}}.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">inputs[1]</th>
+<td><span>The second input value. Accessed in the prompt template as {{inputs[1]}}.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">inputs[2]</th>
+<td><span>The third input value. Accessed in the prompt template as {{inputs[2]}}.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">inputs[3]</th>
+<td><span>The fourth input value. Accessed in the prompt template as {{inputs[3]}}.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">inputs[4]</th>
+<td><span>The fifth input value. Accessed in the prompt template as {{inputs[4]}}.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Output Port Details {#ai-agent-prompt-preview-outputs}
+
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 60%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Result</th>
+<td><span>The output value containing the AI agent's response.</span>
+</td>
+<td><span>string</span>
+</td>
+</tr>
+</tbody>
+</table>
+
 
 ### Crossing Counter
 
@@ -483,7 +621,7 @@ The expression language is much like EPL (see <a target="_blank" rel="external n
 <p></p>
 Note: All numeric literals are treated as <tt>float</tt> type values, even if they have no fractional part. Integer values can only be obtained as the result of functions such as <tt>floor()</tt>. Similar to EPL, <tt>integer</tt> and <tt>float</tt> are not implicitly convertible within an expression. If the result of an expression is an <tt>integer</tt> value, it is converted to a <tt>float</tt> automatically (there might be a loss of precision).
 <p></p>
-Boolean values can be specified using the boolean literals <tt>true</tt> and <tt>false</tt>. Boolean literals are case insensitive, so for example, <tt>TRUE</tt> and <tt>True</tt> are allowed. String values can be specified by enclosing string literals in double quotes, for example "my value". Special characters are encoded with a backslash (<tt>\</tt>). The following special characters (along which their encoding) are supported in string literals: <ul> <li>Double quotes - <tt>\"</tt></li> <li>Backslash - <tt>\\</tt></li> <li>Newline - <tt>\</tt><tt>n</tt></li> <li>Tab - <tt>\</tt><tt>t</tt></li> </ul>
+Boolean values can be specified using the Boolean literals <tt>true</tt> and <tt>false</tt>. Boolean literals are case insensitive, so for example, <tt>TRUE</tt> and <tt>True</tt> are allowed. String values can be specified by enclosing string literals in double quotes, for example "my value". Special characters are encoded with a backslash (<tt>\</tt>). The following special characters (along which their encoding) are supported in string literals: <ul> <li>Double quotes - <tt>\"</tt></li> <li>Backslash - <tt>\\</tt></li> <li>Newline - <tt>\</tt><tt>n</tt></li> <li>Tab - <tt>\</tt><tt>t</tt></li> </ul>
 <p></p>
 Similar to EPL, each value type can be concatenated with a <tt>string</tt> type. The non-string value is first converted to a <tt>string</tt> and then appended to the <tt>string</tt> value.
 <p></p>
@@ -1333,6 +1471,291 @@ The value is rounded to the nearest 'target number' - this is a whole number (if
 </table>
 
 
+### Smart Function (Preview)
+
+`apama.analyticsbuilder.blocks.SmartFunction`
+
+<p>The Smart Function block allows you to write a custom JS/ECMAScript function to process up to ten inputs and produce up to ten outputs.</p>
+<p><b>This block is currently in public preview and may be subject to change.</b>
+<p></p>
+The Smart Function must export a function <tt>onInput(inputs, context)</tt> that returns a list of outputs.
+<p></p>
+Argument details: <ul> <li><tt>inputs</tt> is a list of ten <tt>Value</tt> objects, with members <tt>value</tt>, <tt>properties</tt> and <tt>timestamp</tt> corresponding to the block inputs.</li>
+<p></p>
+<li><tt>context</tt> is an object with the following members: <ul> <li><tt>params</tt> - List that contains the block parameters as specified in the block configuration.</li> <li><tt>getState(key, def = null)</tt> - Method that retrieves a value previously stored in the context under the given key. If no value is found, returns <tt>def</tt>.</li> <li><tt>setState(key, value)</tt> - Method that stores the given value in the context under the given key.</li> </ul> </li> </ul>
+<p></p>
+In addition, the <tt>console</tt> object has <tt>log</tt>, <tt>warn</tt>, <tt>error</tt> and <tt>debug</tt> members that can be used to log messages to the microservice log.
+<p></p>
+The return value of the function is a list of up to ten values corresponding to the block outputs. These can either be bare values, or <tt>Value</tt> objects, with members <tt>value</tt>, <tt>properties</tt> and <tt>timestamp</tt>. If the function does not generate a value, return <tt>null</tt> instead.
+<p></p>
+For example: <pre> export function onInput(inputs, context) {<br/> &nbsp;&nbsp;console.log("Processing inputs");<br/> &nbsp;&nbsp;context.setState("count", context.getState("count", 0) + 1);<br/> &nbsp;&nbsp;if (inputs[0].value !== null && inputs[1].value !== context.params[0]) {<br/> &nbsp;&nbsp;&nbsp;&nbsp;return [<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inputs[0].value - inputs[1].value,<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{value: inputs[0].value - inputs[1].value,  // outputs[0]<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; properties: { ...inputs[0].properties, ...inputs[1].properties }}  // outputs[1]<br/> &nbsp;&nbsp;&nbsp;&nbsp;];<br/> &nbsp;&nbsp;}<br/> &nbsp;&nbsp;return null;<br/> }<br/> </pre></p>
+
+
+#### Parameters {#smart-function-preview-parameters}
+
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 50%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+<col style="width: 10%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+<th scope="col">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Label</th>
+<td><span>An arbitrary label for the block instance.</span>
+</td>
+<td><span>string</span>
+</td>
+<td><span>Optional</span>
+</td>
+</tr>
+<tr>
+<th scope="row">params[0]</th>
+<td><span>An arbitrary parameter that can be templated into the Smart Function code. Can be accessed using <tt>context.params[0]</tt>.</span>
+</td>
+<td><span>string</span>
+</td>
+<td><span>Optional</span>
+</td>
+</tr>
+<tr>
+<th scope="row">params[1]</th>
+<td><span>An arbitrary parameter that can be templated into the Smart Function code. Can be accessed using <tt>context.params[1]</tt>.</span>
+</td>
+<td><span>string</span>
+</td>
+<td><span>Optional</span>
+</td>
+</tr>
+<tr>
+<th scope="row">params[2]</th>
+<td><span>An arbitrary parameter that can be templated into the Smart Function code. Can be accessed using <tt>context.params[2]</tt>.</span>
+</td>
+<td><span>string</span>
+</td>
+<td><span>Optional</span>
+</td>
+</tr>
+<tr>
+<th scope="row">params[3]</th>
+<td><span>An arbitrary parameter that can be templated into the Smart Function code. Can be accessed using <tt>context.params[3]</tt>.</span>
+</td>
+<td><span>string</span>
+</td>
+<td><span>Optional</span>
+</td>
+</tr>
+<tr>
+<th scope="row">params[4]</th>
+<td><span>An arbitrary parameter that can be templated into the Smart Function code. Can be accessed using <tt>context.params[4]</tt>.</span>
+</td>
+<td><span>string</span>
+</td>
+<td><span>Optional</span>
+</td>
+</tr>
+<tr>
+<th scope="row">Smart Function</th>
+<td><span>The JS code must define a function onInput that takes inputs and context as arguments and returns a list of outputs.</span>
+</td>
+<td><span>string</span>
+</td>
+<td><span>Default: export function onInput(inputs, context) {
+  return null;
+}
+</span></td>
+</tr>
+</tbody>
+</table>
+
+#### Input Port Details {#smart-function-preview-inputs}
+
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 60%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">inputs[0]</th>
+<td><span>First input to the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">inputs[1]</th>
+<td><span>Second input to the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">inputs[2]</th>
+<td><span>Third input to the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">inputs[3]</th>
+<td><span>Fourth input to the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">inputs[4]</th>
+<td><span>Fifth input to the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">inputs[5]</th>
+<td><span>Sixth input to the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">inputs[6]</th>
+<td><span>Seventh input to the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">inputs[7]</th>
+<td><span>Eighth input to the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">inputs[8]</th>
+<td><span>Ninth input to the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">inputs[9]</th>
+<td><span>Tenth input to the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Output Port Details {#smart-function-preview-outputs}
+
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 60%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">outputs[0]</th>
+<td><span>First output of the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">outputs[1]</th>
+<td><span>Second output of the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">outputs[2]</th>
+<td><span>Third output of the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">outputs[3]</th>
+<td><span>Fourth output of the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">outputs[4]</th>
+<td><span>Fifth output of the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">outputs[5]</th>
+<td><span>Sixth output of the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">outputs[6]</th>
+<td><span>Seventh output of the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">outputs[7]</th>
+<td><span>Eighth output of the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">outputs[8]</th>
+<td><span>Ninth output of the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+<tr>
+<th scope="row">outputs[9]</th>
+<td><span>Tenth output of the block.</span>
+</td>
+<td><span>any</span>
+</td>
+</tr>
+</tbody>
+</table>
+
+
 ### Threshold
 
 `apama.analyticskit.blocks.core.Threshold`
@@ -1563,3 +1986,4 @@ Conversion between two arbitrary bases can be achieved by chaining this block wi
 </tr>
 </tbody>
 </table>
+

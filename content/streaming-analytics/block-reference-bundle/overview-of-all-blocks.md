@@ -19,6 +19,11 @@ The following table gives a brief description of all blocks that can be selected
 </thead>
 <tbody>
 <tr>
+<td><a href="#ai-agent-prompt-preview">AI Agent Prompt (Preview)</a></td>
+<td><span>This block queries an AI Agent manager agent using its inputs and produces the agent's text response as output.</span>
+</td>
+</tr>
+<tr>
 <td><a href="#alarm-input">Alarm Input</a></td>
 <td><span>Receives <tt>Alarm</tt> objects from a device, asset, devices in a group, or all input sources and reorders them based on the timestamp.</span>
 </td>
@@ -154,6 +159,11 @@ The following table gives a brief description of all blocks that can be selected
 </td>
 </tr>
 <tr>
+<td><a href="#logger-preview">Logger (Preview)</a></td>
+<td><span>Writes a message to the microservice log file for each input.</span>
+</td>
+</tr>
+<tr>
 <td><a href="#managed-object-input">Managed Object Input</a></td>
 <td><span>Receives <tt>ManagedObject</tt> objects from a device, asset, devices in a group, or all input sources.</span>
 </td>
@@ -224,6 +234,11 @@ The following table gives a brief description of all blocks that can be selected
 </td>
 </tr>
 <tr>
+<td><a href="#rate-limiter-preview">Rate Limiter (Preview)</a></td>
+<td><span>Suppresses all but the first message received per specified time period.</span>
+</td>
+</tr>
+<tr>
 <td><a href="#rounding">Rounding</a></td>
 <td><span>Rounds the input to a specified number of decimal points or to an integer, using a selectable rule.</span>
 </td>
@@ -246,6 +261,11 @@ The following table gives a brief description of all blocks that can be selected
 <tr>
 <td><a href="#set-properties">Set Properties</a></td>
 <td><span>Outputs a pulse with properties set from values on the input ports.</span>
+</td>
+</tr>
+<tr>
+<td><a href="#smart-function-preview">Smart Function (Preview)</a></td>
+<td><span>The Smart Function block allows you to write a custom JS/ECMAScript function to process up to ten inputs and produce up to ten outputs.</span>
 </td>
 </tr>
 <tr>
