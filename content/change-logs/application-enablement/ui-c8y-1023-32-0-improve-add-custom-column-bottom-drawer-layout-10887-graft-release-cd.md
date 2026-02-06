@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improve add custom-column bottom drawer layout
+title: Improved drawer layout when adding custom columns
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
