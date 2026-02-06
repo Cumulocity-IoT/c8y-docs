@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Adjust button layout in confirmation modal
+title: Adjusted button layout in confirmation modal
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
