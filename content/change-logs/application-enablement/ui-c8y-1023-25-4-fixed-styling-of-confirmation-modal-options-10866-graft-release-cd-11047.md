@@ -16,5 +16,9 @@ version: 1023.25.4
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-05'
+  - label: apj.cumulocity.com
+    date: '2026-02-06'
+  - label: jp.cumulocity.com
+    date: '2026-02-06'
 ---
 The [confirmation modal](https://cumulocity.com/codex/components/status-feedback-and-notifications/modal/overview#confirmation-modal) supports custom checkbox options that can be presented to the user. Previously, the styling of these options was inconsistent with the text displayed in the dialog. Now, the styling has been aligned.
