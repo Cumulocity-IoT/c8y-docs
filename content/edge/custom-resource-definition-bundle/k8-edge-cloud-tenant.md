@@ -8,7 +8,7 @@ Edge can be managed, configured, and monitored remotely through a {{< product-c8
 
 To enable this, you must first register Edge as a device within the cloud tenant. This registration process requires providing the {{< product-c8y-iot >}} cloud tenant URI, along with an optional TLS/SSL key and certificate chain. These credentials authenticate Edge when connecting to the cloud via the MQTT protocol using X.509 certificate-based authentication.
 
-See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#k8-edge-register-edge-on-cloud) for more details.
+See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#register-edge-on-cloud) for more details.
 
 |<div style="width:150px">Field</div>|Required|<div style="width:115px">Type</div>|Default|Description|
 |:---|:---|:---|:---|:---|

@@ -18,7 +18,7 @@ For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge
 
 The data lake and related storage will always be written to the host file system under the path `/datahub`, whatever is mounted there. You are expected to have a single shared NAS file system, such as NFS mounted at that path _on all nodes of the Kubernetes cluster that Edge is running on_. This is to ensure the resilience of your data lake contents.
 
-In order to access Dremio, you must also make the domain `datahub-<domain_name>` resolvable, just as the configured domain name and `management-<domain_name>` were made resolvable in [Accessing Edge](/edge/installing-edge-on-k8/#accessing-edge).
+In order to access Dremio, you must also make the domain `datahub-<domain_name>` resolvable, just as the configured domain name and `management-<domain_name>` were made resolvable in [Accessing Edge](/edge/installing/#accessing-edge).
 
 ### Comparison between DataHub Edge and DataHub Cloud {#comparison-between-datahub-edge-and-datahub-cloud}
 

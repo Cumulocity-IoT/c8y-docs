@@ -25,7 +25,7 @@ Unlike the initial installation, no use of `sudo` is required for any kind of up
 
 #### Upgrading in an airgapped environment {#upgrade-edge-airgapped}
 
-If Edge is now running in an environment with no or limited internet access, you can upgrade by creating an offline package and transferring it to your airgapped environment. See [Install Edge in an airgapped environment](/edge/installing-edge-on-k8/#install-edge-airgapped). There is no difference between a package created for an initial installation, and a package created for an upgrade.
+If Edge is now running in an environment with no or limited internet access, you can upgrade by creating an offline package and transferring it to your airgapped environment. See [Install Edge in an airgapped environment](/edge/installing/#install-edge-airgapped). There is no difference between a package created for an initial installation, and a package created for an upgrade.
 
 Once in the airgapped environment:
 ```shell
@@ -37,7 +37,7 @@ c8yedge upgrade -s c8yedge.tar
 
 {{< c8y-admon-info >}}
 Upgrading the version of your self-managed Kubernetes is outside the scope of the Edge product and documentation. Follow the official upgrade instructions for your platform.
-<br>See [Prerequisites](/edge/installing-edge-on-k8/#prerequisites) for the supported Kubernetes versions and platforms.
+<br>See [Prerequisites](/edge/installing/#prerequisites) for the supported Kubernetes versions and platforms.
 {{< /c8y-admon-info >}}
 
 Upgrading Edge works similarly to applying a configuration change, with the target version specified as a configuration value.
@@ -51,7 +51,7 @@ The operator will also upgrade itself as part of this process. See [Monitoring c
 
 ### Upgrading Edge remotely {#upgrading-edge-remotely}
 
-For information about upgrading Edge remotely, see [Upgrading Edge remotely](/edge/connecting-edge-to-cloud/#k8-edge-upgrading-edge-remotely).
+For information about upgrading Edge remotely, see [Upgrading Edge remotely](/edge/connecting-edge-to-cloud/#upgrading-edge-remotely).
 
 ### Upgrading from Edge version 10.18
 

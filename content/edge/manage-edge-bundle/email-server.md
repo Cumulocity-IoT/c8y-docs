@@ -10,6 +10,6 @@ Configuring an email server enables you to receive email notifications about eve
 
 To configure the "reset password" template and email server settings, perform the following steps:
 
-1. Log into the {{< management-tenant >}} using the management domain and administrator credentials created during the installation. For more information on logging in to the {{< management-tenant >}}, see [To access Edge](/edge/installing-edge-on-k8/#to-access-cumulocity-iot-edge)
+1. Log into the {{< management-tenant >}} using the management domain and administrator credentials created during the installation. For more information on logging in to the {{< management-tenant >}}, see [To access Edge](/edge/installing/#to-access-cumulocity-iot-edge)
 
 2. Update the email server details and templates as mentioned in [Password reset](/enterprise-tenant/customization/#password-reset) and [Email server](/enterprise-tenant/customization/#email-server).
