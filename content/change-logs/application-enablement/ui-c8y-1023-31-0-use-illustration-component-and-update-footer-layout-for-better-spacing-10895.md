@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improve forceSetup layout and update illustration
+title: Improved forceSetup layout and updated illustration
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
