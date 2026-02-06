@@ -24,7 +24,7 @@ jobs:
       - name: Install deps
         run: |
           npm init -y
-          npm install @actions/core @actions/github  @anthropic-ai/sdk
+          npm install @actions/core @actions/github  @anthropic-ai/sdk json5
 
       - name: Run AI Style & Spell Check
         env:
