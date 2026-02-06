@@ -14,20 +14,4 @@ build_artifact:
 ticket: DM-5533
 version: 1023.37.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Device management app): [DM-5533] Added type colum as a default
-colum in device
-grid.](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10794)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[DM-5533]:
-https://cumulocity.atlassian.net/browse/DM-5533?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dafina Karamanoleva <92030501+dafkk@users.noreply.github.com>
+The device grid in the Device Management app previously did not display the device type column by default, requiring users to manually add it to their view. The device type column is now included as a default column in the device grid, making device type information immediately visible without additional configuration. This change improves the user experience by providing essential device information at a glance, allowing users to quickly identify device types when managing their device inventory.
