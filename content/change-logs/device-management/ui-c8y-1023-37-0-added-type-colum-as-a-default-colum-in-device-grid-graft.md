@@ -1,6 +1,6 @@
 ---
 date: ""
-title: device type column now displayed by default in device grid
+title: Device type column now displayed by default in device grid
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
