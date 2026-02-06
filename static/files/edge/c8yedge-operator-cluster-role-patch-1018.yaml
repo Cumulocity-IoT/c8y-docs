@@ -1,0 +1,35 @@
+- op: add
+  path: "/rules/-"
+  value:
+    apiGroups: ["admissionregistration.k8s.io"]
+    resources:
+      - mutatingwebhookconfigurations
+      - validatingwebhookconfigurations
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+- op: add
+  path: "/rules/-"
+  value:
+    apiGroups: [""]
+    resources:
+      - jobs
+    verbs:
+      - watch
+- op: add
+  path: "/rules/-"
+  value:
+    apiGroups: ["policy"]
+    resources:
+      - poddisruptionbudgets
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
