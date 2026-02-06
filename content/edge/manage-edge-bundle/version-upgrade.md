@@ -53,19 +53,3 @@ The operator will also upgrade itself as part of this process. See [Monitoring c
 
 For information about upgrading Edge remotely, see [Upgrading Edge remotely](/edge/connecting-edge-to-cloud/#upgrading-edge-remotely).
 
-### Upgrading from Edge version 10.18
-
-Before upgrading Edge to `{{< c8y-edge-current-version >}}`, run the following command to patch the [`c8yedge-operator-manager-role`]({{< link-c8y-doc-baseurl >}}files/edge/c8yedge-operator-cluster-role-patch-1018.yaml) ClusterRole with the necessary permissions:
-
-```bash
-kubectl patch clusterrole c8yedge-operator-manager-role --type='json' --patch "$(curl -s {{< link-c8y-doc-baseurl >}}files/edge/c8yedge-operator-cluster-role-patch-1018.yaml)"
-```
-This step is required to ensure the Edge operator can properly enforce validation and mutation rules when updating the Edge CR.
-
-#### Why this change is needed?
-
-The Edge operator version `{{< c8y-edge-current-version >}}` leverages the **admission webhooks** feature of Kubernetes to enhance validation and enforce default configurations for the Edge CR.
-- The [validating admission webhook](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#validatingadmissionwebhook) ensures that any changes to the Edge CR comply with required constraints.
-- The [mutating admission webhook](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#mutatingadmissionwebhook) automatically applies custom default values where needed.
-
-The Edge operator to leverage the **admission webhooks** requires additional permissions, which the above command applies.
