@@ -25,7 +25,7 @@ The log level to use when writing messages to the log file. Available options:
   - `INFO`  (Default)
   - `DEBUG` (Will not appear in the log by default)
   - `WARN`
-  - `ERROR` (Will cause an alarm to be raised)
+  - `ERROR`
 
 - `disableOutput`:
 Whether to disable logging from this block. This can be templated using model parameters to disable logging at runtime. Defaults to `false`.
