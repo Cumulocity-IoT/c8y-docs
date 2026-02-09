@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Added validation to prevent generic Asset Definitions to become non-generic [CTM-2672] (#2664)"
+title: "Added validation to prevent generic Asset Definitions to become non-generic"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
