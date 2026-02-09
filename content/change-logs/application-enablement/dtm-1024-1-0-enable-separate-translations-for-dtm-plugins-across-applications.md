@@ -11,7 +11,7 @@ component:
 build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
-ticket: ""
+ticket: "CTM-2697"
 version: "1024.1.0"
 ---
 Previously, when DTM plugins were integrated with other applications,
