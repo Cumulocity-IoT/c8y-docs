@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65429
 version: 1023.17.9
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 
 Previously, when selecting a time range in the data point graph with no measurement data, the "Data point graph" widget rendered an empty area, without any indication that no data is available. This behavior has been changed. The "Data point graph" widget now provides a consistent display, showing the x-axis and y-axis even when no data is available.

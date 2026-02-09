@@ -15,5 +15,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-64046
 version: 1022.4.13
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Buttons were not using the correct variables defined in the branding. Additionally, disabled action bar items were not properly indicated. The buttons now use the correct branding color variables based on the configured branding, and the disabled action bar items are now visually identifiable as disabled.

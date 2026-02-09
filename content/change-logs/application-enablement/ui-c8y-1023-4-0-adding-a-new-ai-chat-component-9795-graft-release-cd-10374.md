@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-64236
 version: 1023.4.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The Web SDK now includes a new ai-chat component, providing a simple and consistent way to integrate chat-driven experiences into your application.
 

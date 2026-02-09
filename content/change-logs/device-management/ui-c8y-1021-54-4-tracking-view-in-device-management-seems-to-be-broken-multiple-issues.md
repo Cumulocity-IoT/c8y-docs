@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: DM-4358
 version: 1021.54.4
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the **Tracking** tab in the device details the device position was not updated in realtime even though the **Realtime** button was activated. This has been fixed and now the device position and the tracking path are both updated in realtime. Moreover, changing the time range and refreshing the list had no effect. This has been fixed and users can again filter events by different time ranges.

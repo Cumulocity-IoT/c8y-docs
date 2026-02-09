@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: DM-4050
 version: 1021.4.2
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, if a device reported an unexpected status or result during a firmware update,
 the process simply waited for a valid state. Now, you can configure LWM2M devices to fail the firmware update

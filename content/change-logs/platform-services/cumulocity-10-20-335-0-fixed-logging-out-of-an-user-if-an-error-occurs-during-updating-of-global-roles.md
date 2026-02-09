@@ -1,6 +1,8 @@
 ---
-date: 2024-04-26
-title: OAI-Secure users are no longer logged out during unsuccessful global roles updates
+date: '2024-04-26'
+title: >-
+  OAI-Secure users are no longer logged out during unsuccessful global roles
+  updates
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -13,5 +15,12 @@ build_artifact:
     label: cumulocity
 ticket: MTM-57974
 version: 10.20.335.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 An issue has been fixed with logging out users using OAI-Secure during user global roles updates. Now users are no longer logged out if an error occurs while assigning or unassigning global roles.

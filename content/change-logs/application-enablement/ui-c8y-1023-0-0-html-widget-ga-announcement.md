@@ -1,5 +1,5 @@
 ---
-date: 2025-11-17
+date: '2025-11-17'
 title: HTML widget moved to General Availability
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63358
 version: 1023.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 
 The HTML widget has been migrated from AngularJS to Angular and is now generally available (GA). This migration brings enhanced security features and improved JavaScript support.

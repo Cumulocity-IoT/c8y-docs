@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65215
 version: 1023.5.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In certain cases, the markdown pipe interpreted an external link as a platform link. This could potentially be exploited to direct users to a malicious website. Although this exploit was very unlikely to occur, the markdown pipe has been further secured by verifying the host to detect external links and prevent attacks.

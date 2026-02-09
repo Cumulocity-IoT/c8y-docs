@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-59716
 version: 1020.3.2
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In some situations the application titles in the UI were not correctly displayed. This issue has now been resolved and users now always see the correct application title.
