@@ -1,5 +1,5 @@
 ---
-date:
+date: '2026-02-05'
 title: Add Logger block in Public Preview
 change_type:
   - value: change-pXAlHAWka
@@ -13,6 +13,9 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-5072
 version: 27.25.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-02-05'
 ---
 
 A new Logger block has been added to Analytics Builder in Public Preview. This block enables writing a message to the microservice log file for each input, with the following parameters:

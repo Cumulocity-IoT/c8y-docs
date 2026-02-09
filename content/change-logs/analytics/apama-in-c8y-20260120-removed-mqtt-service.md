@@ -1,5 +1,5 @@
 ---
-date: 2026-02-05
+date: '2026-02-05'
 title: MQTT Service tenant isolation EPL API removed from Streaming Analytics
 change_type:
   - value: change-inv-3bw8e
@@ -13,6 +13,9 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAM-35340
 version: 27.23.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-02-05'
 ---
 
 The deprecated EPL API (`com.apama.cumulocity.mqttservice`) is removed from Streaming Analytics. This API was provided for the MQTT Service tenant isolation feature preview.
