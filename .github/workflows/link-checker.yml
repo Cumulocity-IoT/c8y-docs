@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        branch: [develop, release/y2025]
+        branch: [develop, release/y2025, release/y2026]
 
     steps:
       - name: Checkout repository

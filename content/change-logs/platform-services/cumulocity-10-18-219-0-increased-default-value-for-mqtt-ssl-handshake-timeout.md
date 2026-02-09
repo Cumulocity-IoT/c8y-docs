@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06
+date: '2023-12-06'
 title: Increased default value for MQTT SSL handshake timeout
 product_area: Platform services
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: cumulocity
 ticket: MTM-54184
 version: 10.18.219.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The default value for the MQTT SSL handshake timeout has been increased from 10 seconds to 50 seconds to increase the time for the handshake to be successful. The value of this property can be configured by a platform administrator.

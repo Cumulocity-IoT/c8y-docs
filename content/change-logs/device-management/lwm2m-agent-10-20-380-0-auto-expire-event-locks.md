@@ -1,5 +1,5 @@
 ---
-date: 2024-09-19
+date: '2024-09-19'
 title: Improved LWM2M decoder event execution
 product_area: Device management & connectivity
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-3891
 version: 10.20.380.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The synchronization mechanism has been improved to prevent the LWM2M agent from processing duplicate external decoder events.

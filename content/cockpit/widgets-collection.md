@@ -291,7 +291,7 @@ Click a device icon, to open a popup with the following information:
 
 **Parameters to configure**
 
-* Target assets or devices: Select which devices are shown on the map. If a group is selected, all devices in that group (but not in any subgroups) are visible.
+* Target assets or devices: Select which devices are shown on the map. If a group is selected, all devices in that group, including those in subgroups, are visible.
 * Marker icon: Icon of the marker on the map.
 * Zoom level: Default zoom level of the map.
 * Center bound: The default map coordinates.

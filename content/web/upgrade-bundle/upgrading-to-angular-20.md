@@ -21,7 +21,10 @@ The Web SDK version 1023.0.0 introduces multiple breaking changes.
 
 #### Global time context API changes
 
-The API for global time context has been redesigned. Widget configurations now use `widgetInstanceGlobalTimeContext`, `widgetInstanceGlobalAutoRefreshContext`, and related properties instead of previous implementations. Review your widget implementations that interact with global time context and update them accordingly.
+The API for global time context has been completely redesigned. Custom widgets using the old Global Context API will no longer have access to global time context. To add global context support to a custom widget, you must integrate the new components:
+
+- `GlobalContextConnectorComponent` - links your widget to the dashboard time context
+- `LocalControlsComponent` - provides standalone time controls for your widget
 
 #### ngx-translate upgrade
 

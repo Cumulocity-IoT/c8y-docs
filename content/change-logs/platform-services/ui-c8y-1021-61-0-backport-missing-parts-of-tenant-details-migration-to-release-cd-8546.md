@@ -15,6 +15,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62997
 version: 1021.61.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The **Properties**, **Custom properties**, and **Limits** tabs in the tenant details have completely been migrated to a newer version of Angular. They still work in the same way from the user perspective, with two exceptions:
 - The **External reference** field and the **Enable Gainsight product experience tracking** checkbox have been moved into the **Properties** tab.

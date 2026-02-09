@@ -15,5 +15,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63149
 version: 1021.78.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 For the new data point graph and data explorer, which can be enabled via the preview feature toggle, a new configuration option has been added that allows for limiting the number of decimal places. Users can now set a maximum number of decimal places, making it easier to interpret measurement values at a glance.

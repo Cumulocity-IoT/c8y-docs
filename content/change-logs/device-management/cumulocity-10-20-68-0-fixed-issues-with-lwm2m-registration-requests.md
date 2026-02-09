@@ -1,5 +1,5 @@
 ---
-date: "2024-02-06"
+date: '2024-02-06'
 title: Fixed issues with LWM2M registration requests
 product_area: Platform services
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: cumulocity
 ticket: DM-3124
 version: 10.20.68.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 A race condition encountered during simultaneous LWM2M client de-registration and new registration requests has been resolved, improving overall robustness in the registration process.

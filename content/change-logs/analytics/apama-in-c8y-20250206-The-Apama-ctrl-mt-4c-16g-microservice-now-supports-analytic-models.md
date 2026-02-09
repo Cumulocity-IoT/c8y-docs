@@ -15,5 +15,12 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-4623
 version: 25.331.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The multi-tenant **Apama-ctrl-mt-4c-16g** microservice now supports Analytic models. The **Analytics Builder** page is shown for tenants subscribed to the microservice, allowing users to create, deploy and manage analytic models.

@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63057
 version: 1021.59.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In certain situations, the reload icon in the **x509** tab in the device details spinned indefinitely, indicating that a reload operation was still in progress even though it had already completed. This issue has now been resolved. The reload icon stops spinning as soon as the reload is finished, providing clear feedback to the user.

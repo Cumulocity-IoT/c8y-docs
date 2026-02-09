@@ -15,6 +15,13 @@ build_artifact:
     label: cumulocity
 ticket: MTM-64123
 version: 2025.341.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Until now, tenant options were attached to each microservice request. The microservice proxy added the tenant options to the request headers and forwarded the request to the respective microservice.
 For example, when creating a tenant option in a category that matches the application context path, the value has been passed to the microservice by the microservice proxy on the platform as a header (key => value). 

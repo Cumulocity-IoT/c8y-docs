@@ -12,6 +12,13 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 version: 26.148.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 
 EPL plug-ins written in Python now have configurable isolation modes. This allows a plug-in to be loaded to use the main interpreter rather than a sub-interpreter, which is required for certain common third-party libraries that don't support sub-interpreters, such as numpy. You can also run plug-ins with even more isolation, and use a separate Global Interpreter Lock (GIL) to the parent interpreter. This means that two different plug-ins can be executed in parallel. 

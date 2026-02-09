@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T10:39:59.721Z
+date: '2023-12-06'
 title: Improved query behavior
 change_type:
   - value: change-VSkj2iV9m
@@ -13,5 +13,12 @@ build_artifact:
     label: cumulocity
 ticket: MTM-52969
 version: 10.18.54.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 REST APIs no longer return the <code>totalPages</code> value if no query criteria are provided.
