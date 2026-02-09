@@ -1,6 +1,6 @@
 ---
 date: ""
-title: data explorer shows no points and positions to wrong day if custom time series chosen
+title: Data Explorer correctly displays data point for custom time range
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
