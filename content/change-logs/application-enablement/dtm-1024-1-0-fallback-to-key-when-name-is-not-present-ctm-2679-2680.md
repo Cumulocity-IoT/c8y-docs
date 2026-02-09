@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fallback to key when Name is not present [CTM-2679] (#2680)"
+title: "Fallback to key when Name is not present"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
