@@ -14,4 +14,7 @@ build_artifact:
 ticket: MTM-62307
 version: 1.0.482
 ---
-The time series migration UI has been improved with the following enhancements: a duplicate "Reload" button has been removed to avoid confusion, leaving only one "Reload" button at the top of the page that reloads both the "Ongoing migration" and "Tenants" sections. The reload action no longer clears filters applied in the "Tenants" data grid. Additionally, loading is now indicated by the top loader bar and the area being loaded becomes slightly transparent.
+The time series migration UI has been improved with the following enhancements:
+
+- A duplicate **Reload** button has been removed to avoid confusion, leaving only one **Reload** button at the top of the page that reloads both the **Ongoing migration** and **Tenants** sections. The loading state is now indicated by the top loader bar, and the area being loaded becomes slightly transparent.
+- The reload action no longer clears filters applied in the **Tenants** data grid.
