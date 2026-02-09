@@ -1,6 +1,6 @@
 ---
-date: 
-title: Removal of MQTT Service support in EPL Apps
+date: 2026-02-05
+title: MQTT Service tenant isolation EPL API removed from Streaming Analytics
 change_type:
   - value: change-inv-3bw8e
     label: Announcement
@@ -15,4 +15,12 @@ ticket: PAM-35340
 version: 27.23.0
 ---
 
-The {{< product-c8y-iot >}} MQTT Service EPL API (`com.apama.cumulocity.mqttservice`) is now removed. Use the DeviceService API from (`com.apama.cumulocity.devices`) instead, see [Using {{< product-c8y-iot >}} MQTT Service](/streaming-analytics/epl-apps/#using-cumulocity-mqtt-service).
+The deprecated EPL API (`com.apama.cumulocity.mqttservice`) is removed from Streaming Analytics. This API was provided for the MQTT Service tenant isolation feature preview.
+
+For deprecation details, refer to [Deprecation of MQTT Service support in EPL apps](https://cumulocity.com/docs/change-logs/?component=.component-streaming-analytics#apama-in-c8y-20251010-deprecation-of-mqtt-service-support-in-epl-apps).
+
+**Migrate your applications**
+
+Replace the deprecated API with the new DeviceService API (`com.apama.cumulocity.devices`). This API uses the [MQTT Service device isolation capability](https://cumulocity.com/docs/change-logs/?#mqtt-service-0.9.6-device-isolation-api-change).
+
+See [Using {{< product-c8y-iot >}} MQTT Service](/streaming-analytics/epl-apps/#using-cumulocity-mqtt-service) for migration instructions and usage examples.
