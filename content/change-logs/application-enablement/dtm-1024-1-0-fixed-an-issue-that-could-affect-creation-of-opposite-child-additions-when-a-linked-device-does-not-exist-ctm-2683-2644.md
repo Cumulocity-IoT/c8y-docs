@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fixed an issue that could affect creation of opposite ChildAdditions when a linked device does not exist. [CTM-2683] (#2644)"
+title: "Fixed an issue that could affect creation of opposite ChildAdditions when a linked device does not exist."
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
