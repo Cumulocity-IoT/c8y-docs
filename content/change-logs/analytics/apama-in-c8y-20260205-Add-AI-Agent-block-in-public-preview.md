@@ -15,7 +15,7 @@ ticket: PAB-5074
 version:
 ---
 
-A new AI Agent block has been added to Analytics Builder. This block queries an AI Agent manager agent using its inputs and produces the agent's text response as output.
+A new AI Agent block has been added to Analytics Builder. This block queries an AI Agent Manager agent using its inputs and produces the agent's text response as output.
 
 {{< c8y-admon-preview >}}
 This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
@@ -25,5 +25,5 @@ This feature is in Public Preview, that is, it is not enabled by default and may
 
 This block has the following parameters:
 
-* **Agent name**: The agent to use in the AI Agent manager
-* **Prompt template**: The prompt template to use when querying the agent. The block inputs will be mapped into this template using variables like {{inputs[0]}}, {{inputs[1]}}, etc.
+* **Agent name**: The agent to use in the AI Agent Manager.
+* **Prompt template**: The prompt template to use when querying the agent. The block inputs will be mapped into this template using variables like {{inputs[0]}}, {{inputs[1]}}.
