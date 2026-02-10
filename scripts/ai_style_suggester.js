@@ -167,16 +167,26 @@ async function run() {
 
     Use variables (HTML short codes) for certain recurring terms to ensure consistency across the documentation.
 
-    The following terms MUST be replaced by their corresponding variables:
+    The following terms MUST be replaced by their corresponding variables, based on context.
 
-    | Term | Short code |
-    |------|------------|
-    | Cumulocity (company name) | {{< company-c8y >}} |
-    | Cumulocity Iot (product name) | {{< product-c8y-iot >}} |
+    ### Variable mapping
+    
+    | Usage context | Replace with |
+    |--------------|--------------|
+    | Cumulocity used as a company name | {{< company-c8y >}} |
+    | Cumulocity IoT (explicit product name) | {{< product-c8y-iot >}} |
 
-    Replacement rules:
+    ### Disambiguation rules (mandatory)
+
+    - Replace **"Cumulocity IoT"** with {{< product-c8y-iot >}} in all valid Markdown text.
+    - Replace **"Cumulocity"** with {{< company-c8y >}} **ONLY** when it refers to the company.
+    - Do NOT replace "Cumulocity" with the product variable unless "IoT" is explicitly present.
+    - Do NOT infer product usage when only "Cumulocity" is written.
+
+    ### Replacement rules
+
     - Apply replacements ONLY in added Markdown content.
-    - Do NOT replace any instances of "cumulocity" (lowercase).
+    - Do NOT replace lowercase "cumulocity".
     - Do NOT replace text in:
       - software file names (for example, cumulocity.json),
       - links to GitHub examples or resources,
