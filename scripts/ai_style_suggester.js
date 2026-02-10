@@ -145,6 +145,7 @@ async function run() {
     - Check capitalization and correct any issues in the added lines.
     - Check grammar rules, including missing articles ("a", "an", "the") according to the following style guide rules.
     - Always use standard American English spelling. Convert any British English spelling to American English.
+    - Enforce the Variables rules defined below.
 
     Output Format (very important):
     Return ONLY valid JSON:
@@ -161,6 +162,26 @@ async function run() {
     No markdown fences.  
     No extra text.  
     Do not include backticks in the JSON.
+
+    ## Variables
+
+    Use variables (HTML short codes) for certain recurring terms to ensure consistency across the documentation.
+
+    The following terms MUST be replaced by their corresponding variables:
+
+    | Term | Short code |
+    |------|------------|
+    | Cumulocity (company name) | {{< company-c8y >}} |
+    | Cumulocity (product name) | {{< product-c8y-iot >}} |
+
+    Replacement rules:
+    - Apply replacements ONLY in added Markdown content.
+    - Do NOT replace any instances of "cumulocity" (lowercase).
+    - Do NOT replace text in:
+      - software file names (for example, cumulocity.json),
+      - links to GitHub examples or resources,
+      - module or package names (for example, com.apama.cumulocity.Measurement),
+      - fenced code blocks, inline code, or any code samples.
 
       ## Style Guide:
       ${STYLE_GUIDE_TEXT}
