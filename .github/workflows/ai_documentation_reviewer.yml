@@ -3,7 +3,7 @@ name: AI Documentation Reviewer
 on:
   workflow_dispatch:
   pull_request:
-    types: [labeled]
+    types: [labeled, synchronize]
 
 permissions:
   contents: read
