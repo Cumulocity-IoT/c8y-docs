@@ -172,7 +172,7 @@ async function run() {
     | Term | Short code |
     |------|------------|
     | Cumulocity (company name) | {{< company-c8y >}} |
-    | Cumulocity (product name) | {{< product-c8y-iot >}} |
+    | Cumulocity Iot (product name) | {{< product-c8y-iot >}} |
 
     Replacement rules:
     - Apply replacements ONLY in added Markdown content.
