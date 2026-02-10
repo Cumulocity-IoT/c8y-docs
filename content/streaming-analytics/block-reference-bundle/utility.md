@@ -714,7 +714,7 @@ Example log message with logger tag "demoLog" at log level "ERROR":
 </tr>
 <tr>
 <th scope="row">Disable output</th>
-<td><span>Enable this parameter to disable all output from this block. This can be templated using model parameters to disable logging. at runtime.</span>
+<td><span>Enable this parameter to disable all output from this block. This can be templated using model parameters to disable logging at runtime.</span>
 </td>
 <td><span>boolean</span>
 </td>
