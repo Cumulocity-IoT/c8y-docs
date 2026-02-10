@@ -55,8 +55,6 @@ Example:
 - End with result description (not as list item)
 - Break procedures over 7 steps into sections
 
-## Punctuation rules
-
 ### Sentence structure
 - **Keep sentences short and simple** - avoid complex punctuation
 - **End all sentences with periods**, even two-word sentences
@@ -64,10 +62,14 @@ Example:
 - **Use exclamation points sparingly** - only when truly emphasizing
 - **Use question marks sparingly** - provide answers, don't ask questions
 
+
+## Punctuation rules
+
 ### Serial (Oxford) commas
 - **Always use** commas before final "and" or "or" in series of 3+ items
 - ✅ "maps, images, graphs, tables, and other representations"
 - ❌ "maps, images, graphs, tables and other representations"
+
 
 ### End punctuation - Skip when appropriate
 **No periods on:**
@@ -107,8 +109,8 @@ Use American English (as opposed to British English). Use the standard spelling 
 
 Do not use the following abbreviations, which might not be familiar to non-native speakers and are often mixed up.
 
-- Instead of **e.g.**, use 
-**for example** - This phrase is always followed by a comma. 
+- Instead of **e.g.**, use
+**for example** - This phrase is always followed by a comma.
 **such as** - This phrase is an alternative to "for example". There is no comma after this phrase.
 
 - Instead of **i.e.**, use
@@ -140,24 +142,41 @@ Always spell these proper names like this:
 - LWM2M
 - MQTT
 - OPC UA
+- REST API
 - SCADA
 - SmartREST
+- thin-edge.io
 - WebSocket
+
+Always spell these Cumulocity-specific proper names like this:
+
+- Analytics Builder
+- DataHub
+- data broker
+- data point
+- data point library
+- Digital Twin Manager
+- managed object
+- Private Preview
+- Public Preview
+- SmartREST
+- smart rules
+- Streaming Analytics
 
 
 ## Formatting standards
 
 ### Bold formatting
-Use bold formatting for: 
+Use bold formatting for:
 - UI elements: Buttons, field names, menu items, tabs ("Click **Delete**")
 - Important terms on first use
 
 ### Italics formatting
-Use italics for: 
+Use italics for:
 - File names, URLs, folder names (*database.txt*)
 
 ### Quotes
-Use double quotes for: 
+Use double quotes for:
 - User input, messages, notifications, dialog text ("Operation completed successfully")
 - Values in fields
 
@@ -187,7 +206,10 @@ Use admonitions for:
 - **States/Permissions**: ALL CAPS (CRITICAL, READ, CREATE)
 
 ### Variables
-- Use shortcodes for Cumulocity terms: {{< company-c8y >}}, {{< product-c8y-iot >}}, {{< openapi >}}
+- Use shortcodes for Cumulocity terms:
+- Cumulocity (used as company name): {{< company-c8y >}}
+- Cumulocity (used as product name): {{< product-c8y-iot >}}
+- Cumulocity OpenAPI Specification: {{< openapi >}}
 - Don't use shortcodes for Cumulocity in code examples unless sample names
 
 ## Content Organization Checklist
