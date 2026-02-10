@@ -16,4 +16,4 @@ version: 1023.34.0
 ---
 The pie chart component in the Web SDK has been migrated to Angular and now uses ECharts as its underlying charting library. Applications and dashboards that display pie charts will benefit from improved rendering performance and a more consistent experience alongside other Angular-based components in the platform.
 
-In addition, users can now toggle individual data points directly from the legend.```
+In addition, users can now toggle individual data points directly from the legend.
