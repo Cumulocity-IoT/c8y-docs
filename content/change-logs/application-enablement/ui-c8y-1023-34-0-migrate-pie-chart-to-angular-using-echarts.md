@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Migrate pie chart to angular using echarts.
+title: Pie chart has been migrated to angular
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
