@@ -101,7 +101,7 @@ In the widget configuration, you can specify a dashboard time range for your das
 The dashboard time range can be set to any time span, depending on the monitoring needs, by using a custom date picker. The time range is displayed at the top of the dashboard, so you can immediately see the context for which the data is presented. Additionally, you can share dashboards with a specific time context by including the time context parameters in a URL. URL parameters will be set automatically when users set the dashboard time context with the picker.
 
 {{< c8y-admon-info >}}
-This feature is currently available for the following widgets: Event list, Data points graph, and Map.
+This feature is currently available for the following widgets: Event list, Data graph, and Map.
 {{< /c8y-admon-info >}}
 
 <img src="/images/users-guide/cockpit/cockpit-dashboard-global-time.png" name="Global time context"/>

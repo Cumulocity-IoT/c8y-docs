@@ -111,13 +111,13 @@ You can rearrange the columns by clicking the icon <i class="dlt-c8y-icon-menu t
 
 To remove a property or an action, hover over the respective row and click **Delete** at the right.
 
-### Data point graph {#data-point-graph}
+### Data graph {#data-point-graph}
 
-The "Data point graph" widget shows a data point (measurement) in a graph. The visualization is the same as in the [data explorer](/cockpit/data-explorer/).
+The "Data graph" widget shows a data point (measurement) in a graph. The visualization is the same as in the [data explorer](/cockpit/data-explorer/).
 
-![Data Point Graph widget](/images/users-guide/cockpit/cockpit-datapointsgraph-widget.png)
+![Data Graph widget](/images/users-guide/cockpit/cockpit-datapointsgraph-widget.png)
 
-The easiest way to create a "Data point graph" widget is to navigate to the data explorer, click the <b>More...</b> button in the top menu bar and select <b>Send as widget to dashboard</b>.
+The easiest way to create a "Data graph" widget is to navigate to the data explorer, click the <b>More...</b> button in the top menu bar and select <b>Send as widget to dashboard</b>.
 
 Refer to [Changing visualization](/cockpit/data-explorer/#changing-visualization) for further details on the parameters to be configured.
 
@@ -156,7 +156,7 @@ The "Data point list" widget shows data points (measurements), one in each row, 
 
 ### Data point table {#data-point-table}
 
-The "Data point table" widget configuration is similar to the "Data point graph" widget, but instead of visualizing the data as a line-chart, data is visualized as a table.
+The "Data point table" widget configuration is similar to the "Data graph" widget, but instead of visualizing the data as a line-chart, data is visualized as a table.
 
 The "Data point table" widget displays data based on selected data points, time interval and aggregation.
 
