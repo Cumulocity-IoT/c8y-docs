@@ -46,7 +46,7 @@ enableGitInfo = true
   # Global keywords configuration. Following keywords will be add to every pages
   keywords = ["Cumulocity", "Internet of things", "analytics", "devices", "connect"]
 
-  description = "This documentation offers comprehensive information on the var-product-c8y-iot platform both from a user and from a developer perspective. It reflects the latest state of the var-product-c8y-iot platform and is continuously updated to align with recent software updates."
+  description = "This documentation offers comprehensive information on the var-product-c8y-iot platform both from a user and from a developer perspective. The content relates to the Cumulocity release 2026."
 
   oldguides = "//cumulocity.com/guides/welcome/intro-documentation/"
 

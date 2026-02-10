@@ -255,13 +255,18 @@ collections:
           - name: yearly_release
             label: Yearly release
             widget: boolean
-            default: false
+            default: true
             hint: If it is a yearly release, switch on
           - name: yearly_release_name
             label: Yearly release name
             widget: string
             required: false
             hint: If it is a yearly release, add the name of the release
+          - name: yearly_release_preview
+            label: Yearly release preview
+            widget: boolean
+            default: true
+            hint: If it is a yearly release preview, switch on to display dates intead of versions
           - name: date
             label: Starting from
             widget: datetime

@@ -8,7 +8,7 @@ title: Monitoring support for microservices
 The Java Microservice SDK leverages the [OpenTelemetry Java agent](https://opentelemetry.io/docs/zero-code/java/agent/) which provides automatic instrumentation for many popular libraries and frameworks.
 
 ### OTLP Configuration {#otlp-configuration}
-Microservices can obtain the current OTLP configuration from their individual [tenant options](https://cumulocity.com/api/core/2025/#tag/Options).
+Microservices can obtain the current OTLP configuration from their individual [tenant options](https://cumulocity.com/api/core/#tag/Options).
 The category names for tenant options assigned to a microservice can be defined by:
 
 - The settingsCategory defined in the microservice manifest
@@ -20,7 +20,7 @@ All OTLP parameters must be defined in the same category.
 
 
 #### OTLP tenant options {#otlp-tenant-options}
-Tenant options with OTLP configuration parameters can be set via [REST commands](https://cumulocity.com/api/core/2025/#operation/postOptionCollectionResource) sent to
+Tenant options with OTLP configuration parameters can be set via [REST commands](https://cumulocity.com/api/core/#operation/postOptionCollectionResource) sent to
 the tenant options endpoint of the tenant.
 For example, setting the endpoint to which OTLP signals are exported is done with this JSON document:
 
@@ -103,10 +103,10 @@ Configuring auto-instrumentation for selected libraries or frameworks, or opting
 in the [OpenTelemetry instrumention documentation](https://opentelemetry.io/docs/zero-code/java/agent/disable/).
 
 #### Maven configuration
-Besides setting up the OTLP configuration in tenant options, the Java agent JAR file must be included in the microservice image at build time. 
-By default, this JAR file is not contained in the image. 
-To download and copy the Java agent JAR file to the microservice image, the `microservice-package-maven-plugin` must be 
-configured with the `otelJavaAgentInclude` element set to `true` in the Maven `pom.xml` file: 
+Besides setting up the OTLP configuration in tenant options, the Java agent JAR file must be included in the microservice image at build time.
+By default, this JAR file is not contained in the image.
+To download and copy the Java agent JAR file to the microservice image, the `microservice-package-maven-plugin` must be
+configured with the `otelJavaAgentInclude` element set to `true` in the Maven `pom.xml` file:
 
 ```xml
             <plugin>
@@ -132,8 +132,8 @@ configured with the `otelJavaAgentInclude` element set to `true` in the Maven `p
 
 
 {{< c8y-admon-important >}}
-If the Java agent JAR file is not contained in the microservice image 
-and `otel.javaagent.enabled` is set to `true`, then the microservice will fail to start. 
+If the Java agent JAR file is not contained in the microservice image
+and `otel.javaagent.enabled` is set to `true`, then the microservice will fail to start.
 The error message will be like "Error opening ... opentelemetry-javaagent.jar".
 {{< /c8y-admon-important >}}
 
@@ -159,4 +159,3 @@ Detailed examples for various use cases can be found in the [OpenTelemetry GitHu
 
 #### Maven dependencies {#maven-dependencies}
 The Maven `pom.xml` file of the microservice application needs to be extended with the required OTLP library dependencies according to the manual instrumentation code.
-

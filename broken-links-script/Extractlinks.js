@@ -16,7 +16,7 @@ const getMarkdownFiles = (dir) => {
   return markdownFiles;
 };
 
-const BASE_URL = "https://cumulocity.com/docs";
+const BASE_URL = "https://cumulocity.com/docs/2026";
 
 const shortcodeMapping = {
   "c8y-current-version": "",

@@ -142,8 +142,11 @@ The application options can be defined with `--app.<option>=<value>`. These will
     --app.name="My Application"
     --app.key=myapp-key
     --app.contextPath=myapplication
-    --app.brandingEntry="./branding/mybranding.less"
 ```
+
+{{< c8y-admon-info >}}
+The `--app.brandingEntry` option was deprecated in version 1021.0.0 (Angular 18). Use the Angular CLI `styles` configuration in *angular.json* instead. See [Branding your application](/web/application-configuration/#branding-your-application) for the current approach.
+{{< /c8y-admon-info >}}
 
 ### Webpack options {#webpack-options}
 
