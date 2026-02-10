@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issue with data point template linking
+title: Fixed issue with data point template
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
