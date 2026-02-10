@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data point table template link fix. (#10884) [GRAFT][release/cd] (#11100)
+title: data point table template linking fix
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
