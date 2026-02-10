@@ -23,6 +23,8 @@ environment_availability:
     date: '2026-02-09'
   - label: us.cumulocity.com
     date: '2026-02-09'
+  - label: cumulocity.com
+    date: '2026-02-10'
 ---
 The validation feedback during the creation and update of complex properties has been improved. Fields with errors
 are now clearly highlighted, making it easier to identify and correct

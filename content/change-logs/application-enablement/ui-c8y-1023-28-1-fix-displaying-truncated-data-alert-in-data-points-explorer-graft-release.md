@@ -20,5 +20,11 @@ environment_availability:
     date: '2026-02-09'
   - label: jp.cumulocity.com
     date: '2026-02-09'
+  - label: emea.cumulocity.com
+    date: '2026-02-10'
+  - label: us.cumulocity.com
+    date: '2026-02-10'
+  - label: cumulocity.com
+    date: '2026-02-10'
 ---
 The data explorer previously did not inform users when the displayed dataset was truncated due to size limitations, which could lead to incomplete analysis or misinterpretation of results. Now, when data exceeds the display threshold and is truncated, the data explorer displays a clear alert. This ensures you are always aware when you are viewing a subset of the available data rather than the complete dataset, allowing you to take appropriate action, such as applying filters or adjusting your query parameters to work with a more manageable dataset.

@@ -20,5 +20,11 @@ environment_availability:
     date: '2026-02-09'
   - label: jp.cumulocity.com
     date: '2026-02-09'
+  - label: emea.cumulocity.com
+    date: '2026-02-10'
+  - label: us.cumulocity.com
+    date: '2026-02-10'
+  - label: cumulocity.com
+    date: '2026-02-10'
 ---
 Plugin names and descriptions are now translated in the installed plugins list in the Administration application.

@@ -20,5 +20,11 @@ environment_availability:
     date: '2026-02-09'
   - label: jp.cumulocity.com
     date: '2026-02-09'
+  - label: emea.cumulocity.com
+    date: '2026-02-10'
+  - label: us.cumulocity.com
+    date: '2026-02-10'
+  - label: cumulocity.com
+    date: '2026-02-10'
 ---
 The asset properties selector in the [Computed property hook section](https://cumulocity.com/codex/advanced-development/hooks/computed-property-hook/overview#example) in the Codex previously did not include any examples for computed properties, making it difficult for users to understand how to use this feature. Examples have now been added to the **Computed properties** tab in the asset properties selector, providing clear guidance on how to work with computed properties. This improvement helps users better understand and utilize computed properties when configuring assets in the Codex.

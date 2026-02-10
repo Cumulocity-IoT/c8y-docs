@@ -20,5 +20,11 @@ environment_availability:
     date: '2026-02-09'
   - label: jp.cumulocity.com
     date: '2026-02-09'
+  - label: emea.cumulocity.com
+    date: '2026-02-10'
+  - label: us.cumulocity.com
+    date: '2026-02-10'
+  - label: cumulocity.com
+    date: '2026-02-10'
 ---
 In the user management, global roles were previously filtered and sorted by their internal label rather than their displayed name, which made it difficult to find and organize roles in the UI. Now, global roles in the user list are filtered and sorted by their translated name, that is, by the name that is visible to you in the UI. This change makes it more intuitive to search for and organize users by their assigned global roles, as the sorting and filtering behavior now matches what you see on the screen.

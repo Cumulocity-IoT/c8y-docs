@@ -22,5 +22,11 @@ environment_availability:
     date: '2026-02-09'
   - label: jp.cumulocity.com
     date: '2026-02-09'
+  - label: emea.cumulocity.com
+    date: '2026-02-10'
+  - label: us.cumulocity.com
+    date: '2026-02-10'
+  - label: cumulocity.com
+    date: '2026-02-10'
 ---
 When the Cockpit home dashboard was removed and a user navigated to the home page, the default dashboard settings dialog could not be closed using either the save or cancel button, leaving users unable to proceed. This issue has been resolved, and users can now successfully save or cancel dashboard settings regardless of the dashboard's state. The dashboard settings dialog will now respond correctly to user interactions and allow proper navigation away from the settings view.
