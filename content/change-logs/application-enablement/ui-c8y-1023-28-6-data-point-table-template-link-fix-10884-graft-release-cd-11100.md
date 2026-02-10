@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65426
 version: 1023.28.6
 ---
-An issue was identified where data point templates could overwrite the device ID, leading to unexpected behavior in some widgets. The linkage between templates and data points has been improved, resolving these issues and ensuring more reliable widget behavior.
+An issue was identified where data point templates could overwrite the device ID, leading to unexpected behavior in some widgets. The linkage between templates and data points has been improved, resolving this issue and ensuring a more reliable widget behavior.
