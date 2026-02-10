@@ -8,6 +8,8 @@ on:
       - synchronize
       - reopened
       - closed
+      - labeled
+      - unlabeled
 
 permissions:
   contents: read
@@ -91,3 +93,13 @@ jobs:
             repo: context.repo.repo,
             body: 'Preview available **[here](${{ env.BASEURL }})**'
           })
+
+    - name: Check for broken links
+      # On by default, but allow bypassing because this is (currently) a new part of the workflow that hasn't been battle-tested
+      if: ${{ !contains(github.event.pull_request.labels.*.name, 'bypass-link-check') }}
+      run: |
+        # Recursively download everything from the generated doc, broken links cause errors
+        # Exclude
+        # - Links to other releases because we do not build other releases in PRs
+        # - Links to PDFs, we don't upload those to the surge site so they will always be absent
+        wget --no-directories --delete-after --no-verbose -e robots=off -r ${{ env.BASEURL }} --reject-regex ".*\/202.\/.*" -R "*.pdf"
