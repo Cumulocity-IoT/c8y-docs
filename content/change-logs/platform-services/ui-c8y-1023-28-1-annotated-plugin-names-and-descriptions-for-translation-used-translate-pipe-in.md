@@ -16,5 +16,9 @@ version: 1023.28.1
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-06'
+  - label: apj.cumulocity.com
+    date: '2026-02-09'
+  - label: jp.cumulocity.com
+    date: '2026-02-09'
 ---
 Plugin names and descriptions are now translated in the installed plugins list in the Administration application.
