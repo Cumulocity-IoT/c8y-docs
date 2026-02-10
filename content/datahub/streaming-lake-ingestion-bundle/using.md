@@ -548,7 +548,7 @@ Sample `trash` table records:
 | 47640  | EVENT_CREATE          | EVENT     | 2025-07-29T15:15:43Z | /event_fragment_2/nestedObject/invalidFieldName###ASD!ASD!@ | event_fragment_2     | ILLEGAL_FIELD_NAME | Illegal field name                        | InRlc3Qi                           |
 
 
-#### Customer-Visible Operational Communication
+#### Customer-visible operational communication (#customer-visible-operational-communication)
 
 During offloading process, various operational events may occur that are relevant for customers to be aware of. These include:
 - **Service Functionality Information**: These are events that affect the pipeline’s behavior but do not require customer action. For example, schema evolution (new tables/coulumns detected, fragment changes). They are relevant for transparency, debugging, and auditability.
@@ -572,7 +572,7 @@ During offloading process, various operational events may occur that are relevan
         {
           "schemaPath": "value__d",
           "valuePath": "c8y_Temperature.value",
-          "type": "decimal"
+          "type": "int"
         }
         // ...
       ]
@@ -581,7 +581,7 @@ During offloading process, various operational events may occur that are relevan
     ```
 
 - **Actionable Events**: These are events that indicate a situation that may require customer attention or action. For example, non-compliant message payloads violating schema limits (binned data).
-  Such occurrences are surfaced using Cumulocity `alarms`. For the retrieval of detailed binned records, user can refer to `trash` table by `type` as mentioned in the alarm `text` property.
+  Such occurrences are surfaced using Cumulocity `alarms`. For the retrieval of detailed binned records, query `trash` table by `type` as mentioned in the alarm `text` property.
 
   Sample alarm payload for reporting schema violation (data size exceeded):
     ```json
