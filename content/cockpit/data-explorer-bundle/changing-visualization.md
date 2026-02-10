@@ -29,7 +29,7 @@ You may aggregate the data being displayed to get an efficient overview over lar
 
 By default, aggregation is set to "None". This value may be changed in the **Aggregation** field in the top menu bar. Available values are "Minutely", "Hourly" or "Daily", depending on the selected time range.
 
-When aggregation is activated, the timestamp which is displayed in data point graphs or data point tables changes slightly as follows to improve transparency:
+When aggregation is activated, the timestamp which is displayed in data graphs or data point tables changes slightly as follows to improve transparency:
 
 - If no aggregation is selected the date, hour, minute and second are shown:<br> 27 Jan 2020 17:26:55
 - If minutely aggregation is selected, the second indication will not be shown:<br> 27 Jan 2020 17:27-17:28
@@ -46,13 +46,13 @@ To turn realtime updating on or off, click **Realtime** in the top menu bar. A g
 
 For each data point, its visibility can be switched on or off by using the toggle left from the data point name.
 
-### Interactive legend (available only for the Data point graph widget)
+### Interactive legend (available only for the Data graph widget)
 
 The legend, located above the chart, provides quick control over what's visible in your chart. You can toggle visibility of individual data points or alarms/events by clicking their name.
 
 ### Changing the chart options {#changing-the-chart-options}
 
-You can customize the chart options to control how your data is visualized, including settings like line type, aggregation, and display preferences. These options can be adjusted directly in the data explorer (below the chart) or in the configuration of the "Data point graph" widget.
+You can customize the chart options to control how your data is visualized, including settings like line type, aggregation, and display preferences. These options can be adjusted directly in the data explorer (below the chart) or in the configuration of the "Data graph" widget.
 
 | **Category**        | **Option**                                  | **Description**                                                                                                  |
 | ------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
