@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Pie chart has been migrated to angular
+title: Migrated pie chart component to Angular
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
