@@ -14,20 +14,6 @@ build_artifact:
 ticket: MTM-64311
 version: 1023.34.0
 ---
-# Backport
+The pie chart component in the Web SDK has been migrated to Angular and now uses ECharts as its underlying charting library. Applications and dashboards that display pie charts will benefit from improved rendering performance and a more consistent experience alongside other Angular-based components in the platform.
 
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Web SDK): [MTM-64311] Migrate pie chart to angular using
-echarts.](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10879)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-64311]:
-https://cumulocity.atlassian.net/browse/MTM-64311?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+In addition, users can now toggle individual data points directly from the legend.```
