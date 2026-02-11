@@ -11,7 +11,7 @@ On subscription, master data is synchronized with the operational store. This sy
 
 The service stores only new data incoming after subscription. It does not automatically move data stored in the {{< product-c8y-iot >}} operational store before subscription. For more information, see [Migrating to data lake storage](#migrating-to-data-lake-storage).
 
-*This feature is not part of the current private preview release.*
+*This feature is not part of the current Private Preview release.*
 {{< /c8y-admon-info >}}
 
 
