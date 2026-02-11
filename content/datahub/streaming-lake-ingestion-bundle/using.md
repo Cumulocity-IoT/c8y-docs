@@ -9,7 +9,7 @@ Streaming Lake Ingestion is an optional service in {{< product-c8y-iot >}}. To u
 {{< c8y-admon-info >}}
 On subscription, master data is synchronized with the operational store. This synchronization may take a while to complete. For more information, see [Monitoring the data lake storage](#monitoring-the-data-lake-storage).
 
-The service stores only new data incoming after subscription. It does not automatically move data stored in the {{< product-c8y-iot >}} operational store before subscription. For more information, see "[Migrating to data lake storage](#migrating-to-data-lake-storage)".
+The service stores only new data incoming after subscription. It does not automatically move data stored in the {{< product-c8y-iot >}} operational store before subscription. For more information, see [Migrating to data lake storage](#migrating-to-data-lake-storage).
 
 *This feature is not part of the current private preview release.*
 {{< /c8y-admon-info >}}
