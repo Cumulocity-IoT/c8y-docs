@@ -221,7 +221,7 @@ For alarms, there is also a representation of the latest state.
 | 47635  | 2025-08-19T12:03:27.845Z | c8y_BatteryAlarm | 1     | MAJOR    | ACTIVE | Battery level below 5 percent. |
 
 
-#### Events
+#### Events (#events)
 
 Now assume that the tracker moves and sends a location update event.
 
