@@ -149,7 +149,7 @@ This update appears in the `inventory` and `c8y_position` tables as follows:
 | MANAGED_OBJECT_UPDATE | 47635 | 2025-08-20T13:45:20.002Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
 
 **Table: inventory.c8y_position**
-| eventType             | id    | time                     | type    | alt | lng     | lat       |
+| eventType             | source    | time                     | type    | alt | lng     | lat       |
 | --------------------- | ----- | ------------------------ | ------- | --- | ------- | --------- |
 | MANAGED_OBJECT_CREATE | 47635 | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
 | MANAGED_OBJECT_UPDATE | 47635 | 2025-08-20T13:45:20.002Z | sb_nano | 69  | 6.3213  | 50.425    |
