@@ -15,7 +15,7 @@ The service stores only new data incoming after subscription. It does not automa
 {{< /c8y-admon-info >}}
 
 
-### Analyzing lake data from Cockpit
+### Analyzing lake data from Cockpit (#analyzing-lake-data-from-cockpit)
 
 Use {{< product-c8y-iot >}} Cockpit to access data stored in the {{< product-c8y-iot >}} data lake. Log in to the application, then navigate to the data explorer and select *data lake*. When you enable data lake, the application sources data from the data lake instead of the operational store. You can visualize data over longer time ranges than with the operational store.
 
