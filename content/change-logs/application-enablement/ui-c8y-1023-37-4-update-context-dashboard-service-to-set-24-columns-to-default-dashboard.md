@@ -1,6 +1,6 @@
 ---
 date: ""
-title: - update ContextDashboardService to set 24 columns to default dashboard configuration (#10896) [GRAFT][release/cd] (#10998)
+title: Default dashboard reset now displays with 24 columns
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
