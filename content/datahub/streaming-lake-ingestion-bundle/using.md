@@ -22,7 +22,7 @@ Use the {{< product-c8y-iot >}} Cockpit application to access data stored in the
 {{< c8y-admon-info >}}
 Data arrives in the lake with a small delay. If you need to see the latest data, switch to the operational store.
 
-*This feature is not part of the current private preview release.*
+*This feature is not part of the current Private Preview release.*
 {{< /c8y-admon-info >}}
 
 
