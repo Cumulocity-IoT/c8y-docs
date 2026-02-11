@@ -6,5 +6,5 @@ Review the given text against the guidelines provided in the custom-instructions
 
 Do not change the meaning of the text, only suggest improvements for clarity, grammar, style, and adherence to guidelines.
 
-Provide feedback on any areas that may need improvement or clarification.
+Provide feedback on any areas that may need improvement or clarification. Additionally, add suggestions directly to the text for anything that should be changed to meet the standards.
 
