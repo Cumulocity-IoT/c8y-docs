@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Number and integer custom property field is not cleared when value is removed fix.
+title: Number and integer custom property fields are now properly cleared when values are removed
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
