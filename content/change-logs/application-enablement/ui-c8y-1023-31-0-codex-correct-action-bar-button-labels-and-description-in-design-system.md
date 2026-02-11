@@ -1,6 +1,6 @@
 ---
 date: ""
-title: codex correct action bar button labels and description in design system > writing (#10890) [GRAFT][release/cd] (#10985)
+title: Correct action bar button labels and descriptions in design system writing
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
