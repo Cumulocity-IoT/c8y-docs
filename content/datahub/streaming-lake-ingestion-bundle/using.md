@@ -187,7 +187,7 @@ Delete events are not recorded as part of the preview release.
 {{< /c8y-admon-info >}}
 
 
-#### Alarms
+#### Alarms (#alarms)
 
 Assume that our sample tracking device has low battery and sends an alarm:
 
