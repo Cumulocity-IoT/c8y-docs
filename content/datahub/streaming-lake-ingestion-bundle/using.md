@@ -109,7 +109,7 @@ We advice you to prefer fragments for custom data when modeling your device data
 | --------------------- | ----- | ------------------------ | ------- | --- | ------- | --------- |
 | MANAGED_OBJECT_CREATE | 47635 | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
 
-The columns of the `c8y_position` table reflect the "c8y_Position" fragment and are set as follows:
+The columns of the `c8y_position` table reflect the "`c8y_Position` fragment and are set as follows:
 * Key columns are set as previously described.
 * Properties are stored in the columns of the table.
 
