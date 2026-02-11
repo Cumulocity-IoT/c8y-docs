@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Info gauge now displays dates in consistent format with other dashboard elements
+title: Info gauge widget now displays dates in consistent format with other dashboard elements
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
