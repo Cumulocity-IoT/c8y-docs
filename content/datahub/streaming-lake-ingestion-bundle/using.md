@@ -105,7 +105,7 @@ We advice you to prefer fragments for custom data when modeling your device data
 
 
 **Table: inventory.c8y_position**
-| eventType             | id    | time                     | type    | alt | lng     | lat       |
+| eventType             | source    | time                     | type    | alt | lng     | lat       |
 | --------------------- | ----- | ------------------------ | ------- | --- | ------- | --------- |
 | MANAGED_OBJECT_CREATE | 47635 | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
 
