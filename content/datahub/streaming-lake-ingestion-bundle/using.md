@@ -419,7 +419,7 @@ The suffix is generated based on the original name as a binary code where upperc
 This is a reliability measure. The Iceberg specification considers tables and column names as case sensitive. However, upstream query engines do not generally support case sensitivity and may not be able to query such tables.
 {{< /c8y-admon-info >}}
 
-#### Flat views
+#### Flat views (#flat-views)
 
 {{< c8y-admon-info >}}
 For legacy analytics tools, {{< company-c8y >}} plans to offer Iceberg views with a flat representation of the Iceberg tables. This is currently under implementation.
