@@ -3,3 +3,8 @@ yearly_release_preview = true
 date = 2023-12-06T10:32:39.947Z
 version = "2026"
 
+
+# Fake dates for the 'parallel' Edge timeline that should be sorted entirely outside of the timeline of the cloud releases
+[[versions]]
+date = "January 1, 2026"
+version = "Edge-2026.0.0"
