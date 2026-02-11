@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix aborting message generating.
+title: Fix aborting message generation in HTML widget AI code assistant
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
