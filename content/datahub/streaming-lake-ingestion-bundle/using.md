@@ -388,7 +388,7 @@ The service currently does not support certain combinations of type conflicts wi
 {{< /c8y-admon-caution >}}
 
 
-#### Naming
+#### Naming (#naming)
 
 The Iceberg data lake supports only names consisting of characters, numbers (if not the first character), and underscores. Other characters are represented by the character string "\_x" followed by the hexadecimal Unicode value of the character. This applies to table and property names.
 
