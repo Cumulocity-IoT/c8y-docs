@@ -322,7 +322,7 @@ The data lake storage service automatically discovers the structure of the incom
 * When the service discovers a new property, it creates a column to store the data in the associated table.
 
 {{< c8y-admon-info >}}
-Currently, the service does not delete tables and columns when they are not in use anymore. For more information, see Section "[Managing schema evolution](#managing-schema-evolution)".
+Currently, the service does not delete tables and columns when they are not in use anymore. For more information, see [Managing schema evolution](#managing-schema-evolution).
 {{< /c8y-admon-info >}}
 
 #### Handling of schema conflicts (#handling-of-schema-conflicts)
