@@ -1,6 +1,7 @@
 ---
-date: '2025-11-13'
+date: 2025-11-13
 title: Tailored offloading of inventory collection
+product_area: Analytics
 change_type:
   - value: change-QHu1GdukP
     label: Feature
