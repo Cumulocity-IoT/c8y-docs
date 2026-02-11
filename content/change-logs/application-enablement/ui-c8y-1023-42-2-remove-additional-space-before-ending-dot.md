@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65698
 version: 1023.42.2
 ---
-There was an extra empty space between link and ending dot- for example in Linear gauge widget config view preview (empty state). It was caused by invalid formatting of html templates. It is fixed for this and similiar cases. It also fixes future formatting.
+When viewing empty state components, e.g. widget configuration previews, such as the Linear gauge widget's empty state, an extra space was appearing between text and the ending punctuation mark (for example, "text ."). This was caused by improper formatting in the HTML templates used to render these previews. The underlying template formatting has been corrected to eliminate these extra spaces, which also prevents similar spacing issues from occurring in future widget previews and other UI elements that use the same templates.
