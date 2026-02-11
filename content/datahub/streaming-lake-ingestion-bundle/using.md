@@ -40,7 +40,7 @@ The structure of the data lake provided by Streaming Lake Ingestion mirrors the 
 
 Within these folders, tables store the incoming IoT data. For example, the `alarm` table contains a complete, historical log of all alarm changes, while the `inventory` table captures all modifications made to your device master data over time.
 
-Device- or customer-specific data in the form of "[fragments](/concepts/domain-model/#fragments)" resides in separate, dedicated tables within the corresponding folders. For instance, if you send a measurement of type `c8y_EngineMetric`, it will be stored in a table named `c8y_EngineMetric` inside the measurements folder.
+Device- or customer-specific data in the form of [fragments](/concepts/domain-model/#fragments) resides in separate, dedicated tables within the corresponding folders. For instance, if you send a measurement of type `c8y_EngineMetric`, it will be stored in a table named `c8y_EngineMetric` inside the measurements folder.
 
 To simplify querying the current state of your assets, a consolidated representation of that state is available in "latest tables". The `inventory_latest` and `alarms_latest` tables show the most recent, up-to-date state of your inventory and alarms, respectively, without you needing to reconstruct it from the historical logs.
 
