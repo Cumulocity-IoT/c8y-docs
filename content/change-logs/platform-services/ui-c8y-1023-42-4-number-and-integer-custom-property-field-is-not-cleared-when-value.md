@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-61883
 version: 1023.42.4
 ---
-Issue was occurring on Custom properties form in Subtenant details view. If user was trying to set exsiting number value of one of the properties to empty one, this value was not persisted. Issue is fixed now and all the values can be set to empty.
+Custom property fields of type number and integer in the Subtenant details view were not being cleared when users attempted to remove their values. Previously, when a user tried to set an existing number or integer value to empty, the original value would persist and not be saved as empty. This has been fixed, and users can now successfully clear number and integer custom property fields by removing their values. This ensures that custom property data accurately reflects the current state of your subtenant configuration.
