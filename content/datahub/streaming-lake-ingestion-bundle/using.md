@@ -162,7 +162,7 @@ The "latest" versions of the tables reflect this update:
 | 47635 | 2025-08-20T13:45:20.002Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
 
 **Table: inventory_latest.c8y_position**
-| id    | time                     | type    | alt | lng    | lat    |
+| source    | time                     | type    | alt | lng    | lat    |
 | ----- | ------------------------ | ------- | --- | ------ | ------ |
 | 47635 | 2025-08-20T13:45:20.002Z | sb_nano | 69  | 6.3213 | 50.425 |
 
