@@ -1,6 +1,7 @@
 ---
-date: '2025-07-03'
+date: 2025-07-03
 title: Migration of audit log
+product_area: Analytics
 change_type:
   - value: change-QHu1GdukP
     label: Feature
