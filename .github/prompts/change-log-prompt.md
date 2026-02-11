@@ -2,16 +2,34 @@
 agent: agent
 ---
 
-Write a change log entry from the provided input with the following content:
+Write a change log entry from the provided input following the Cumulocity documentation style guide in .github/copilot-instructions.md.
 
-- Context: Briefly provide some context/background for the change which describes the purpose/motivation for the change.
-- Change: Describe the actual change from a user perspective rather than the technical implementation. Ideally, describe the behavior prior to the change and the behavior now.
-- Impact: Describe how the change impacts users and their installations. Explicitly consider existing assets such as tenants, users, applications, devices.
+Structure the entry with these three components in one flowing text:
 
-Only provide context, change and impact in the release note body in one or (if necessary) multiple paragraphs. Do not add unnecessary line breaks (only add a line break to separate multiple paragraphs) or have the terms context, change or impact as headings in the body.
+1. **Context**: Provide background explaining why this change was made (1-2 sentences)
+2. **Change**: Describe what changed from a user perspective, comparing the old behavior to the new behavior (2-3 sentences)
+3. **Impact**: Explain how this affects users and their existing installations, considering tenants, users, applications, and devices (1-2 sentences)
 
-- Describe the change from a user perspective. Only describe the technical fix if it is relevant for the user.
-- The text should be written in a positive mode, focusing on what works well now while also mentioning what was previously broken (at least in case of a fix).
-- Be as accurate as possible. It is better to provide more than less information. 
+## Formatting requirements
 
-Add a link to the documentation, if appropriate.
+- Write as flowing paragraphs, not separate sections with headings
+- Use only one line break to separate paragraphs (maximum 2-3 paragraphs total)
+- Do not use "Context:", "Change:", or "Impact:" as headings or labels
+- Follow style guide rules: bold for UI elements, present tense, active voice, proper terminology
+- Focus on user benefits while acknowledging what was previously broken (for fixes)
+- Write in a positive, solution-focused tone
+
+## Documentation links
+
+Add a relevant documentation link at the end using this format:
+`For details, see [page title](relative/path/to/page.md).`
+
+Include a link when the change relates to documented features or requires user action.
+
+## Examples of when to include multiple paragraphs
+
+- Breaking changes requiring migration steps
+- Complex features affecting multiple user workflows
+- Changes with significant installation or upgrade impacts
+
+Keep the entry concise but complete. Prioritize accuracy and user-relevant details over brevity.
