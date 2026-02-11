@@ -61,7 +61,7 @@ All tables contain the following key columns:
 * `type`: The type property of the device, measurement and so on.
 
 
-#### Inventory
+#### Inventory (#inventory)
 
 To understand how the service captures inventory data in the data lake, assume that you create a new tracking device "Tracking #1" with the following data:
 
