@@ -13,5 +13,12 @@ build_artifact:
     label: dtm
 ticket: CTM-2012
 version: 1021.3.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, when the asset navigator was installed in the Digital Twin Manager, the **Add asset** button was unresponsive and the **Import asset** button was missing. These issues have now been resolved and both buttons work properly.

@@ -13,5 +13,12 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-4007
 version: 10.20.400.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In certain cases, real-time connections for the operation notifications could be disrupted due to error-handling issues within the LWM2M service. This issue has now been resolved.

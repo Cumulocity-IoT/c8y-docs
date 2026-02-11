@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T10:33:39.707Z
+date: '2023-12-06'
 title: X.509 security mode support
 change_type:
   - value: change-QHu1GdukP
@@ -13,6 +13,13 @@ build_artifact:
     label: cumulocity
 ticket: DM-554
 version: 10.18.288.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 LWM2M device connections with X.509 certificates are now supported.
 The X.509 security mode can be selected separately for the Bootstrap server and the LWM2M server either during device registration or, for existing devices, by using the new **LWM2M configuration** tab.

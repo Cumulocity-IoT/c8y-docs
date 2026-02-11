@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-58925
 version: 1020.31.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the past, bookmarks did not consider the globalTitle property when generating the title for a bookmark. With this change, if a globalTitle is specified, it will be used as the bookmark title instead of the default behavior. This improves the user experience by allowing more control over how bookmarks are named, ensuring bookmark titles can be set according to specific needs.

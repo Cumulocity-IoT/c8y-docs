@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65379
 version: 1023.17.12
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 
 Previously, when exporting the "Data point graph" widget as an image, the legend could overlap or be displayed incorrectly, making the image hard to read. This issue has been fixed, and exported images now display the data point graph correctly.

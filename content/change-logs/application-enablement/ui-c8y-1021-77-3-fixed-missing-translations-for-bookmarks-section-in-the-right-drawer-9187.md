@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63741
 version: 1021.77.3
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The bookmarks section in the right drawer was previously not correctly translated, showing the default English text instead of the localized language. This issue has been resolved. The bookmarks section will now display the correct translations based on the user's selected language. 

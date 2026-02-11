@@ -1,5 +1,5 @@
 ---
-date: 2024-03-21
+date: '2024-03-21'
 title: Improved button text in Cockpit setup wizard
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-56476
 version: 1019.9.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The text on the button in the Cockpit setup wizard has been updated. This change improves the clarity and consistency of the text for users going through the setup flow.

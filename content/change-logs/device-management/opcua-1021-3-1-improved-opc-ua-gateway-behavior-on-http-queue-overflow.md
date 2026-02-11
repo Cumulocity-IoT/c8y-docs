@@ -13,5 +13,12 @@ build_artifact:
     label: opcua
 ticket: DM-4224
 version: 1021.3.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 When the HTTP queue is overflowed, the OPC UA gateway now temporarily disables the server communication until the queue is recovered. This improvement helps prevent potential system overloads and ensures more stable performance during high traffic conditions. Before disabling the OPC UA communication, an alarm is triggered to notify that the gateway is disabling communication. Once the queue and communication are restored, the previously triggered alarm is cleared.

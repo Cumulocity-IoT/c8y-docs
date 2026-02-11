@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-61426
 version: 1021.33.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The password setup process for new users was unclear. It has been updated and replaced with three distinct options, from which the administrator can select one. The available options are:
 - Send password reset link as email

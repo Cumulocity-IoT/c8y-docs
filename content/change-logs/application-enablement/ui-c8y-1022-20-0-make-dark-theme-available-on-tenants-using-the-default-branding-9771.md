@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-64153
 version: 1022.20.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 As previously [announced](/change-logs/#public-options-1-1-0-dark-theme-available-with-default-branding), a new version of the default branding will be rolled out to make the dark theme available for users.
 By default, the light theme remains selected, but users can switch between themes via the right drawer.

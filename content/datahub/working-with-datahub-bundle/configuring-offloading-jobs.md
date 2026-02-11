@@ -54,6 +54,10 @@ The inventory collection stores data related to devices and managed objects. In 
 * **All data**: This view provides all documents, except for those having the fragment `c8y_DataHubExclude` set. You can utilize the fragment `c8y_DataHubExclude` in your data-generating application to configure a custom view which excludes selected documents. Using this view is not recommended. First, it includes the offloading of data typically not required in your application, and second, the schema detection may suffer from the heterogeneity of the data.
 * **All remaining inventory entries**: This view provides all documents, except for those having the fragments `c8y_isDevice`, `c8y_isDeviceGroup`, `c8y_DataHubInclude`, or `c8y_DataHubExclude` set. Using this view is not recommended. First, it includes the offloading of data typically not required in your application, and second, the schema detection may suffer from the heterogeneity of the data.
 
+{{< c8y-admon-info >}}
+The {{< product-c8y-iot >}} DataHub Edge version currently does not support inventory views.
+{{< /c8y-admon-info >}}
+
 Older offloading configurations not yet based on a view are still supported. They are configured to directly read from the inventory collection, without an intermittent view. When editing such an offloading, the above list contains an additional option **Raw inventory collection**, which is automatically selected. It is advisable to select one of the other views to ensure that only relevant data is offloaded.
 
 {{< c8y-admon-info >}}

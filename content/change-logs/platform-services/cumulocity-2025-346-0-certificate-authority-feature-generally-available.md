@@ -13,6 +13,13 @@ build_artifact:
     label: cumulocity
 ticket: MTM-64106
 version: 2025.348.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The certificate authority feature previously released in [Public Preview](/change-logs/?component=.component-authentication%2C.component-web-sdk#cumulocity-undefined-certificate-authority-feature-preview) is now Generally Available (GA).
 It is available in CD versions 2025.348.0 and higher, and in the 2026 annual release.

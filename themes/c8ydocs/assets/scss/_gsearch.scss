@@ -2,7 +2,7 @@ body {
   .gsc-search-box.gsc-search-box-tools {
     // max-width: 300px;
     .gsst_a{
-      display: none;
+      // display: none;
     }
   }
   .gsc-search-box-tools .gsc-search-box .gsc-input {
@@ -70,9 +70,11 @@ body {
   table.gsc-search-box .gsst_b {
     position: absolute;
     top: 0;
-    right: 40px;
+    right: 8px;
     .gsst_a .gscb_a {
-      color: var(--c8y-palette-gray-90);
+      color: var(--c8y-palette-gray-40);
+      width: 10px;
+      height: 32px;
     }
   }
 }
@@ -88,7 +90,16 @@ body {
 }
 
 body form.gsc-search-box {
-  margin-bottom: 0;
+  margin: 0;
+}
+
+body .gsib_b{
+  width: auto;
+  height: auto;
+  position: relative;
+}
+body .gsc-control-cse{
+  background-color: transparent;
 }
 
 .gsc-selected-option-container {

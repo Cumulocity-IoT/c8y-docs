@@ -44,7 +44,7 @@ Low-Power Wide-Area-Network (LPWAN) technologies are critical for use cases requ
 * Only transmit small amounts of data intermittently.
 * Be positioned in distributed or hard-to-reach locations.
 
-{{< product-c8y-iot >}} provides dedicated integrations for various LPWAN technologies including LoRa and Sigfox. Refer to [LoRa Actility](/device-integration/lora-actility/), [LoRa LORIOT](/device-integration/lora-loriot/), and [Sigfox](/device-integration/sigfox/) for details. For cellular devices, [LWM2M](/device-integration/lwm2m/) can be used.
+{{< product-c8y-iot >}} provides dedicated integrations for various LPWAN technologies including LoRa and Sigfox. Refer to [LoRa Actility](/device-integration/lpwan/#actility-lora), [LoRa LORIOT](/device-integration/lpwan/#loriot-lora), and [Sigfox](/device-integration/lpwan/#sigfox) for details. For cellular devices, [LWM2M](/device-integration/lwm2m/) can be used.
 
 ### Agent concepts {#agent-concepts}
 

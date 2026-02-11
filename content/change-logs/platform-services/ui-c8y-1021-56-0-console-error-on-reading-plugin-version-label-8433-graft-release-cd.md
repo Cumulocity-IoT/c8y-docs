@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62700
 version: 1021.56.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the **Versions** tab of an extension, the **Package contents** section of a selected plugin version now shows a label for each plugin version listed indicating its type. Previously, no label was shown and a console log error was thrown.
