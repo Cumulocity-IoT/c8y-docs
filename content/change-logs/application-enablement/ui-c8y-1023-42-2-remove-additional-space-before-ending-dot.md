@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65698
 version: 1023.42.2
 ---
-When viewing empty state components, such as widget configuration previews, for example, the "Linear gauge" widget's empty state, an extra space appeared between the text and the end punctuation mark (for example, "text ."). This was caused by improper formatting in the HTML templates used to render these previews. The underlying template formatting has been corrected to eliminate these extra spaces, which also prevents similar spacing issues from occurring in future widget previews and other UI elements that use the same templates.
+When viewing empty state components, such as widget configuration previews (for example, the "Linear gauge" widget's empty state) an extra space appeared between the text and the end punctuation mark (for example, "text ."). This was caused by improper formatting in the HTML templates used to render these previews. The underlying template formatting has been corrected to eliminate these extra spaces, which also prevents similar spacing issues from occurring in future widget previews and other UI elements that use the same templates.
