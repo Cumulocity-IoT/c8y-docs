@@ -175,6 +175,7 @@ async function run() {
     |--------------|--------------|
     | Cumulocity used as a company name | {{< company-c8y >}} |
     | Cumulocity IoT (explicit product name) | {{< product-c8y-iot >}} |
+    | Cumulocity OpenAPI Specification | {{< openapi >}} |
 
     ### Disambiguation rules (mandatory)
 
