@@ -123,26 +123,6 @@ stringData:
   ## You can provide multiple TLS/SSL certificates for trust by combining them into a single string.
   # ca.crt: <CA-CERTIFICATES TO TRUST>
 
----
-##
-## Secret for supplying the credentials for admin access to Dremio.
-## Name of this secret should be specified in 'spec.dataHub.dremioAdminCredentialsSecretName' field of Edge CR.
-##
-
-# apiVersion: v1
-# kind: Secret
-# metadata:
-  ## Name of the secret. Same value should be specified in 'spec.dataHub.dremioAdminCredentialsSecretName' field of Edge CR.
-  # name: dremio-admin-credentials
-  ## Namespace name into which you installed the Edge operator.
-  # namespace: c8yedge
-# type: Opaque
-# stringData:
-  ## Dremio admin username and password.
-  # DREMIO_ADMIN_USER: <DREMIO-ADMIN-USER>
-  ## The password must be at least 8 letters long, must contain at least one number and one letter.
-  # DREMIO_ADMIN_PASSWORD: <DREMIO-ADMIN-PASSWORD>
-
 
 ########################################################################################################################
 ##                                        Defines Edge Custom Resource                                                ##
@@ -207,9 +187,8 @@ spec:
   ##  - tls.key: TLS/SSL private key in the PEM format.
   ##             Generate a TLS/SSL key pair and a Certificate Signing Request (CSR) following your organization's policies, 
   ##             specifying either a wildcard domain in the Common Name (CN) (for example, *.iot.com) or listing required 
-  ##             domains in the Subject Alternative Name (SAN) field, including the Edge tenant, {{< management-tenant >}}, 
-  ##             and, if applicable, Cumulocity DataHub domains (for example, myown.iot.com, management-myown.iot.com, 
-  ##             datahub-myown.iot.com).
+  ##             domains in the Subject Alternative Name (SAN) field, including the Edge tenant and {{< management-tenant >}} 
+  ##             domains (for example, myown.iot.com, management-myown.iot.com).
   ##
   ##  - tls.crt: The TLS/SSL certificate chain associated with the private key in PEM format.
   ##             It’s essential to ensure the certificates are arranged in the correct sequence for TLS/SSL validation to succeed.
@@ -303,8 +282,8 @@ spec:
         ## Defaults to 75 GB.
         # storage: 75G
 
-  ## Resources to allocate to each of the default Cumulocity microservices (apama-ctrl, smartrule, 
-  ## opcua-mgmt-service, databroker-agent-server and datahub microservices) deployed.
+  ## Resources to allocate to each of the default Cumulocity microservices 
+  ## (apama-ctrl, smartrule, opcua-mgmt-service and databroker-agent-server) deployed.
   ## Default CPU limit is 1000m and memory limit is 1024M.
   # microservices:
     # - name: apama-ctrl
@@ -327,25 +306,3 @@ spec:
         # limits:
           # cpu: 1000m
           # memory: 1024M
-    # - name: datahub
-      # resources:
-        # limits:
-          # cpu: 1000m
-          # memory: 1024M
-
-  ## This field enables installation and configuration of the Cumulocity DataHub.
-  ## This field is optional, and the Messaging Service is not installed if omitted.  
-  # dataHub:
-    # enabled: true
-    ## Name of the Kubernetes Secret containing the credentials for admin access to Dremio.
-    # dremioAdminCredentialsSecretName: dremio-admin-credentials
-    # resources:
-      # limits:
-        ## CPU limit must be specified as an integer (number of CPUs) without the units, 
-        ## for example, 2 for 2 CPUs instead of 2000m or 2M.
-        ## Defaults to 2
-        # cpu: 2
-        ## Memory limit and must be specified in Mi without the units, 
-        ## for example 4096 instead of 4096Mi or 4Gi.
-        ## Default 4096
-        # memory: 6144M          

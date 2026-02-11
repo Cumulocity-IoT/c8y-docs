@@ -5,7 +5,7 @@ layout: redirect
 ---
 ### For installations on self-managed Kubernetes clusters {#for-self-managed-c8yedge-installations}
 
-For self-managed {{< product-c8y-iot >}} Edge deployments, implement backup and recovery procedures according to your organization's data protection policies and Kubernetes cluster management practices. Ensure that Persistent Volume Claims (PVCs), the Edge custom resource configuration, and any DataHub data lake content are included in your backup strategy.
+For self-managed {{< product-c8y-iot >}} Edge deployments, implement backup and recovery procedures according to your organization's data protection policies and Kubernetes cluster management practices. Ensure that Persistent Volume Claims (PVCs) and the Edge custom resource configuration are included in your backup strategy.
 
 {{< c8y-admon-caution >}}
 Once the `storageClassName` field is configured in the Edge custom resource (CR), it cannot be changed. Ensure you select the appropriate storage class during initial installation, as this setting is immutable after Edge is deployed.
@@ -22,8 +22,7 @@ This runbook describes how to capture and restore a **{{< product-c8y-iot >}} Ed
 #### Step 1 - Data to preserve {#step-1---data-to-preserve}
 The following directories must be preserved for disaster recovery. Implement appropriate data protection measures (for example, backups or redundant storage) to safeguard these directories:
 
-* `/var/lib/rancher/k3s` - always required
-* `/datahub` - only if {{< product-c8y-iot >}} DataHub is deployed (contains DataHub datalake content)
+* `/var/lib/rancher/k3s`
 
 ---
 
@@ -47,8 +46,6 @@ Confirm the directories exist and contain the expected ownership:
 
 ```shell
 ls -ld /var/lib/rancher/k3s
-# If Cumulocity DataHub was deployed, also verify:
-[ -d /datahub ] && ls -ld /datahub
 ```
 
 ---
