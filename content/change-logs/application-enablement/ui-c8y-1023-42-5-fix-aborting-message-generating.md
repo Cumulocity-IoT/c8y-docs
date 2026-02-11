@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65298
 version: 1023.42.5
 ---
-The HTML widget AI code assistant previously had issues when users attempted to abort message generation. In some cases, the loading state of assistant messages could become stuck in an endless loop, preventing users from canceling the operation or interacting with the assistant further. This has been fixed, and users can now successfully abort message generation when needed, allowing them to stop the assistant and regain control of the interface without being stuck in a loading state.
+The HTML widget AI code assistant previously had issues when users attempted to terminate message generation. In some cases, the loading state of assistant messages could become stuck in an endless loop, preventing users from canceling the operation or further interacting with the assistant. This has been fixed, and users can now successfully terminate message generation when needed, allowing them to stop the assistant and regain control of the interface without being stuck in a loading state.
