@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Remove additional space before ending dot.
+title: Remove extra space before ending punctuation in empty state components
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
