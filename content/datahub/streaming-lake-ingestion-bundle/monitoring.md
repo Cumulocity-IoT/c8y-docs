@@ -9,7 +9,7 @@ The service provides diagnostic tools to monitor the data offloading process. Us
 In addition to diagnostic tools, {{< company-c8y >}} provides a [service definition](service-definition.md) that outlines key quality objectives.
 
 {{< c8y-admon-preview >}}
-*This feature is not part of the current private preview release.*
+*This feature is not part of the current Private Preview release.*
 {{< /c8y-admon-preview >}}
 
 <!--
