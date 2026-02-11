@@ -325,7 +325,7 @@ The data lake storage service automatically discovers the structure of the incom
 Currently, the service does not delete tables and columns when they are not in use anymore. For more information, see Section "[Managing schema evolution](#managing-schema-evolution)".
 {{< /c8y-admon-info >}}
 
-#### Handling of schema conflicts
+#### Handling of schema conflicts (#handling-of-schema-conflicts)
 
 Contrary to Apache Iceberg and SQL, {{< product-c8y-iot >}} does not mandate a consistent schema across all incoming data. The data lake storage service automatically resolves consistency issues. Revisiting our previous example, assume that "Tracker #1" sends data as follows:
 
