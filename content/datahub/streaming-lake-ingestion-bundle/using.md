@@ -26,7 +26,7 @@ Data arrives in the lake with a small delay. If you need to see the latest data,
 {{< /c8y-admon-info >}}
 
 
-### Analyzing lake data using SQL
+### Analyzing lake data using SQL (#analyzing-lake-data-using-sql)
 
 For more general analytics, use SQL queries. Run queries from several interfaces:
 
