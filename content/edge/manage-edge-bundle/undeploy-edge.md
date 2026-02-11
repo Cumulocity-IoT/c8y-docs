@@ -7,7 +7,7 @@ layout: redirect
 {{< c8y-admon-caution >}}
 Uninstallation will remove all data managed by this instance of {{< product-c8y-iot >}} Edge, not just the running software.
 
-This includes but is not limited to all tenant data, and everything stored by DataHub and Dremio.
+This includes but is not limited to all tenant data.
 {{< /c8y-admon-caution >}}
 
 
