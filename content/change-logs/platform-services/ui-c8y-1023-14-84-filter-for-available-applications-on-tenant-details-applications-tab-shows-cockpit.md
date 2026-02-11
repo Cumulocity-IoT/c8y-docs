@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Filter for available applications on tenant details Applications tab shows Cockpit app
+title: Applications filter on tenant details now works with translated application names
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
