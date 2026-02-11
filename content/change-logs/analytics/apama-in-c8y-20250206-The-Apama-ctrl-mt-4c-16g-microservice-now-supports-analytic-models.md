@@ -1,7 +1,7 @@
 ---
 date: '2025-02-13'
 title: >-
-  The multi-tenant apama-ctrl-mt microservice now supports analytic
+  The multi-tenant apama-ctrl-mt-4c-16g microservice now supports analytic
   models
 change_type:
   - value: change-2c7RdTdXo4
@@ -23,4 +23,4 @@ environment_availability:
   - label: us.cumulocity.com
   - label: cumulocity.com
 ---
-The multi-tenant **Apama-ctrl-mt** microservice now supports Analytic models. The **Analytics Builder** page is shown for tenants subscribed to the microservice, allowing users to create, deploy and manage analytic models.
+The multi-tenant **Apama-ctrl-mt-4c-16g** microservice now supports Analytic models. The **Analytics Builder** page is shown for tenants subscribed to the microservice, allowing users to create, deploy and manage analytic models.
