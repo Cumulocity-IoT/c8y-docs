@@ -4,7 +4,7 @@ title: Microservices
 layout: redirect
 ---
 
-The microservice specification allows specifying resources to allocate to default microservices, including the Apama, Smart Rules, OPCUA Management Service, and DataBroker Agent Server microservices.
+The microservice specification allows specifying resources to allocate to default microservices, including the Apama, Smart Rules, OPCUA Management Service, and microservice-based data broker microservices.
 
 |<div style="width:150px">Field</div>|Required|<div style="width:115px">Type</div>|Default|Description|
 |:---|:---|:---|:---|:---|
