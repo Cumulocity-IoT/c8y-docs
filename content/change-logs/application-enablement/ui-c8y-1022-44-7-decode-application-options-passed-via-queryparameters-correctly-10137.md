@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-64930
 version: 1022.44.7
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, application options that were provided via query parameters to web applications were only URI-decoded if the parameter contained valid JSON.
 With this change, these query parameters are also decoded if they do not contain valid JSON.

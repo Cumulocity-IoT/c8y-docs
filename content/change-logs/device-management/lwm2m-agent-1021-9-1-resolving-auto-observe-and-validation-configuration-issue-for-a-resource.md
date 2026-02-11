@@ -13,5 +13,12 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-4586
 version: 1021.9.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Resources that were supposed to have auto-observe in the LWM2M device protocol configuration activated could not be properly set up. The auto-observe fragment was either always set to false or completely missing from the object. As a result, automatic observation was not executed. The auto-observe fragment is now correctly set in the object, resolving the issue and ensuring that automatic observation works as expected. In addition, we addressed an issue where the empty validation rules configuration is saved for the resource. This caused issues for validations of write operation values before sending it to a LWM2M device. This issue has been resolved to ensure proper validation behavior.

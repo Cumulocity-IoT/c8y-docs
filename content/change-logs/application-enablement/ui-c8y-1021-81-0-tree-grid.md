@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: DM-4593
 version: 1021.81.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The Data grid component has been updated to support hierarchical data structures. This enables a tree grid view where rows can be expanded to reveal nested child rows.
 

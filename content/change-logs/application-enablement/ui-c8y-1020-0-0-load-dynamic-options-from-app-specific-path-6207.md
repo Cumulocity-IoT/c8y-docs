@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-59023
 version: 1020.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 To provide more flexibility for configuring applications, {{< product-c8y-iot >}} now supports loading dynamic options from application-specific paths. With this change, each hosted application will load its dynamic options from a path that includes the application context path. This allows application-specific configurations to be loaded dynamically.
 The Cockpit application would now load it's dynamic options from: `/apps/public/public-options@app-cockpit/options.json` while it previously did so from: `/apps/public/public-options/options.json`.

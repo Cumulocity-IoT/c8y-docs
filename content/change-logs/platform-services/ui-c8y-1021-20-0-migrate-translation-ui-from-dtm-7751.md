@@ -15,5 +15,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-61483
 version: 1021.20.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 As part of the ongoing migration efforts, the user interface for managing translations has been migrated from the legacy Digital Twin Manager framework to a new modern framework. The functionality remains the same, allowing users to view, edit and manage translations as before. However, the underlying technology has been updated, providing better performance, stability and maintainability of the translations user interface going forward.

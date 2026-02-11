@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60789
 version: 1021.11.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The **Custom properties** tab in the tenant details has been improved by moving extraneous information to a new **Limits** tab providing a cleaner and more consistent interface.

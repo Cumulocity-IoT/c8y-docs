@@ -1,5 +1,5 @@
 ---
-date: 2023-12-14
+date: '2023-12-14'
 title: Displaying null for empty number values in Asset property page
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: dtm
 ticket: CTM-981
 version: 1019.1.2
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The preview of the data model in the complex property now displays a null value if an empty value is given for the Number type property.

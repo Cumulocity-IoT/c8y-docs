@@ -1,5 +1,5 @@
 ---
-date: 2025-06-16
+date: '2025-06-16'
 title: Angular 19 upgrade and standalone components
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62856
 version: 1022.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Starting with version 1022.0.0, the Web SDK has been upgraded to Angular 19. This update brings performance improvements and new features, but may also introduce breaking changes that could impact your existing implementations.
 

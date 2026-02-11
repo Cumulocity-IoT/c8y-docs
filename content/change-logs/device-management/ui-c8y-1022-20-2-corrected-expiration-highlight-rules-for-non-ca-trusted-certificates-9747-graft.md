@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-64423
 version: 1022.20.2
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, the **Trusted certificates** page applied the same expiration warning rules for both CA (Certificate Authority) and non-CA certificates. However, CA and non-CA certificates have different validity periods. With this change, non-CA certificates will now start being highlighted with a warning only when they are less than 90 days away from expiration.

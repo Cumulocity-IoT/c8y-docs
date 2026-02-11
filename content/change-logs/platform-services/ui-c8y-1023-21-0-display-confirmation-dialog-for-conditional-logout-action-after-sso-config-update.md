@@ -1,6 +1,8 @@
 ---
-date: ""
-title: New confirmation dialog for optional session termination when updating SSO configuration
+date: '2026-02-03'
+title: >-
+  New confirmation dialog for optional session termination when updating SSO
+  configuration
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
@@ -13,5 +15,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65364
 version: 1023.21.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 When updating the SSO configuration, all active user sessions that depend on this configuration must be re-authenticated to ensure security and consistency with the new settings. Previously, this required manually terminating all affected sessions before saving the configuration changes. With this change, a confirmation dialog appears when you update the SSO configuration page, giving you the option to either terminate all active sessions associated with that configuration or proceed with the update while keeping sessions active. This provides flexibility in managing the update process based on your operational needs. If you choose to terminate sessions, users will be logged out and required to re-authenticate with the new SSO settings on their next login. If you choose not to terminate sessions, existing sessions will continue until they naturally expire, though they may experience authentication issues if the new configuration is incompatible with their current session state. This change applies to all tenants and users relying on SSO authentication.

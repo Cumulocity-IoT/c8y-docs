@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-57551
 version: 1020.0.22
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, it was not possible to load locales for languages other than the default language configured in the system. This change enables the loading of locales for non-default languages. With this enhancement, users can now utilize locales for their preferred languages, even if they differ from the system's default language setting. This improves the user experience by allowing for language-specific formatting and translations across the application.

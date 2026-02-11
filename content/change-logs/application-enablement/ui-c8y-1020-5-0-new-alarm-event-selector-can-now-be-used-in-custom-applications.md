@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-59428
 version: 1020.5.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 To enable application developers to more easily select alarms and events in their custom applications, a new reusable alarm and event selector component has been introduced. For details refer to the [{{< product-c8y-iot >}} Codex](https://cumulocity.com/codex/).

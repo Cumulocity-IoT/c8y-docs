@@ -15,5 +15,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-61177
 version: 1021.8.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the Cockpit application, it is now possible to  disable or enable the dashboard manager in the **Application configuration** page. By default, the dashboard manager is enabled.
