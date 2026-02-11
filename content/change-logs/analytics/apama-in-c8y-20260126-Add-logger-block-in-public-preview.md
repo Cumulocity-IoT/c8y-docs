@@ -16,6 +16,10 @@ version: 27.25.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-05'
+  - label: apj.cumulocity.com
+    date: '2026-02-11'
+  - label: jp.cumulocity.com
+    date: '2026-02-11'
 ---
 
 A new Logger block has been added to Analytics Builder in Public Preview. This block enables writing a message to the microservice log file for each input, with the following parameters:
