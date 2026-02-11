@@ -279,7 +279,7 @@ There is one important difference for measurements compared to other data types:
 
 This example demonstrates how the service handles nested properties: Like the {{< product-c8y-iot >}} APIs and its operational store, Apache Iceberg supports nested data. Just like with the above JSON example, the property `voltage` is a nested structure containing two properties `value` and `unit`. You can query the contained properties from SQL using path expressions such as `"voltage"."value"`. For more information on querying the data from SQL, see [Example queries](#example-queries).
 
-#### Operations
+#### Operations (#operations)
 
 Finally, we would like to restart the tracker with a reset operation:
 
