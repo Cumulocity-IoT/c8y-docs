@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63722
 version: 1021.76.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the past, non-enterprise tenants could see multiple **Branding** navigator items in certain situations, which was confusing and not the intended behavior. With this change, non-enterprise tenants will now always only see a single **Branding** item as expected. 

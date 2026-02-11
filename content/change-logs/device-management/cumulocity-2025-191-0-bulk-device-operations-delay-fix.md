@@ -13,5 +13,12 @@ build_artifact:
     label: cumulocity
 ticket: DM-4670
 version: 2025.191.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, when a bulk device operation was resumed after a failure scenario, the mechanism scheduled the remaining operations from the original scheduling date. This meant that any configured delay was not respected but the operations were created as quickly as possible. This has been corrected by scheduling the remaining operations with the configured delay from the time the operation is resumed.

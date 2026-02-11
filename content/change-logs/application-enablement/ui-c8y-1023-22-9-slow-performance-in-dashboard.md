@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-02-03'
 title: Fixed issue with longer dashboard loading time
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,15 @@ build_artifact:
     label: ui-c8y
 ticket: DM-5463
 version: 1023.22.9
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+    date: '2026-02-05'
+  - label: us.cumulocity.com
+    date: '2026-02-05'
+  - label: cumulocity.com
+    date: '2026-02-05'
 ---
 Due to some recent changes related to rolling out the dashboard manager in the Device Management application, the loading time for dashboard views increased. This issue has been addressed, and dashboard loading times have returned to normal.

@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60085
 version: 1020.13.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 During the loading of the page with application access settings for the user, an error occurred. The error has been resolved.

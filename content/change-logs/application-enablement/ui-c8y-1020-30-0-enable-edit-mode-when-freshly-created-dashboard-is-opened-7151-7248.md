@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-61183
 version: 1020.30.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, when creating a new dashboard, it would open in view mode which required an extra click on the **Edit** button to start editing the dashboard. With this change, newly created dashboards now directly open in edit mode. This allows users to immediately start editing and configuring the new dashboard, saving them a click and making the user experience more intuitive.

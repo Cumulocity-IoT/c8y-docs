@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62818
 version: 1021.54.11
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The datapoint selection functionality in the smart rules "On measurement threshold create alarm" and "On measurement explicit threshold create alarm" has been improved.
 Both smart rules now use a more intuitive datapoint selector and the informational text in both rule modals has been modified to better explain the behavior and implications of each selection type.

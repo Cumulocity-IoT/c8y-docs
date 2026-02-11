@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62617
 version: 1021.62.11
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 This change adjusts the styling of the date range picker in the UI to improve the alignment and spacing of the elements.

@@ -13,6 +13,13 @@ build_artifact:
     label: dtm
 ticket: CTM-2525
 version: 1023.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The Digital Twin Manager now supports fine-grained permission control for managing assets by introducing a new tenant option `assets.permission.mode`.  
 This tenant option supports three modes:

@@ -13,6 +13,13 @@ build_artifact:
     label: cumulocity
 ticket: MTM-63823
 version: 2025.307.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The Alarms and Events APIs have been improved with an additional parameter `withSourceChildren`. When set to `true` alarms and events
 for related source assets, devices and additions will also be included in the response. When this parameter is provided a `source` must be specified.

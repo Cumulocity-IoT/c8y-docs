@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65229
 version: 1023.9.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, users could set different refresh intervals for dashboards. This led to inconsistent behavior across dashboards. To avoid this, the live mode now enforces a fixed refresh interval of 5 seconds or real-time updates, depending on the widget type. This improves the user experience as the dashboard refresh behavior is now consistent and predictable, with each widget refreshing either after 5 seconds or in real time based on its type.

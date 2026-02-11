@@ -13,6 +13,13 @@ build_artifact:
     label: cumulocity
 ticket: MTM-60761
 version: 10.20.585.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 
 Previously, the tenant option which is used to enable [latest measurement values](https://cumulocity.com/docs/standard-tenant/managing-data/#latest-value) was not not working with the wildcard (`*`) character. With this change, the wildcard character can be used to enable latest measurements for all series:
