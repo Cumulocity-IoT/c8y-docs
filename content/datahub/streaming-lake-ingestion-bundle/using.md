@@ -425,7 +425,7 @@ This is a reliability measure. The Iceberg specification considers tables and co
 For legacy analytics tools, {{< company-c8y >}} plans to offer Iceberg views with a flat representation of the Iceberg tables. This is currently under implementation.
 {{< /c8y-admon-info >}}
 
-#### Binning
+#### Binning (#binning)
 
 Apache Iceberg tables adhere to a strict schema contract that governs structure, depth, field naming, and overall payload limits. Currently, incoming notifications may violate this schema contract. Such notifications cannot be stored in the Iceberg tables. To preserve as much data as possible, protect the data pipeline from failure, and give stakeholders visibility into problematic situations, a "binning" mechanism persists most of this data.
 
