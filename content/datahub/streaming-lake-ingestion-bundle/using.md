@@ -52,7 +52,7 @@ To simplify querying the current state of your assets, a consolidated representa
 
 To understand how the service transfers data to the data lake, the following sections discuss the general table structure for each {{< product-c8y-iot >}} domain model class.
 
-#### General table structure
+#### General table structure (#general-table-structure)
 
 All tables contain the following key columns:
 * `eventType`: The {{< product-c8y-iot >}} real-time data feed records changes to IoT data, so whether new data is created, existing data is updated or data is deleted. This field captures the type of the recorded change, for example, `MANAGED_OBJECT_UPDATE`.
