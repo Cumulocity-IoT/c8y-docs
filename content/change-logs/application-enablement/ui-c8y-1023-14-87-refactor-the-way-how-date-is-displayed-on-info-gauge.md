@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65447
 version: 1023.14.87
 ---
-Previously, the info gauge widget displayed dates in a different format compared to other dashboard elements, creating inconsistency in how temporal information was presented across your dashboards. The date formatting has been standardized so that the info gauge now uses the same date format as all other dashboard components. This ensures a uniform and predictable experience when viewing date information throughout your dashboards, making it easier to read and interpret temporal data consistently regardless of which widget you are using.
+Previously, the "Info gauge" widget displayed dates in a different format than other dashboard elements, creating inconsistency in how temporal information was presented across your dashboards. The date formatting has been standardized so that the "Info gauge" widget now uses the same date format as other dashboard components. This ensures a uniform and predictable experience and makes it easier to read and interpret temporal data consistently.
