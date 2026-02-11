@@ -121,7 +121,7 @@ In addition, the service stores the data in the `inventory_latest` folder:
 | 47635 | 2025-08-20T13:41:39.678Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
 
 **Table: inventory_latest.c8y_position**
-| id    | time                     | type    | alt | lng     | lat       |
+| source    | time                     | type    | alt | lng     | lat       |
 | ----- | ------------------------ | ------- | --- | ------- | --------- |
 | 47635 | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
 
