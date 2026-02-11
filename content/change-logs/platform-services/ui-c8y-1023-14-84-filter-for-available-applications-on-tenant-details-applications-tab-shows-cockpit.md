@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Applications filter on tenant details now works with translated application names
+title: Application filter in tenant details now works with translated application names
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
