@@ -14,8 +14,7 @@ build_artifact:
 ticket: MTM-64106
 version: 2025.348.0
 ---
-The certificate authority feature previously released in [Public Preview](/change-logs/?component=.component-authentication%2C.component-web-sdk#cumulocity-undefined-certificate-authority-feature-preview) is now Generally Available (GA).
-It is available in CD versions 2025.348.0 and higher, and in the 2026 annual release.
+The certificate authority feature is now Generally Available (GA).
 
 The feature can be accessed in the Device Management application under Management → Trusted certificates, where the **Add CA Certificate** option is now available by default.
 
@@ -26,9 +25,3 @@ The feature can be accessed in the Device Management application under Managemen
 - Issue signed X.509 certificates trusted by the device tenant
 
 For more details about this feature refer to [Certificate Authority (CA)](/device-certificate-authentication/certificate-authority).
-
-{{< c8y-admon-caution >}}
-Migration from Public Preview to General Availability - action required.
-
-As part of the move to General Availability you need to remove all the devices you have registered under Public Preview and re-register them. All such devices will continue to be able to connect, but none of the other capabilities of the certificate lifecycle management will be available until they are re-registered.
-{{< /c8y-admon-caution >}}
