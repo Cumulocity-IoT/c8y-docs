@@ -24,9 +24,9 @@ The following differences apply:
 |Installation|Online and Offline|Online
 |Messaging Service|Included|Included
 |MQTT Service|Included|Included
-|Streaming Analytics|Included|Optional
 |Microservice-based data broker|Included|Optional
 |Microservice Hosting|Included|Optional
+|Streaming Analytics|Included|Optional
 |OPC UA|Included|Optional
 |Cloud Field Bus|Included|Optional
 |Data Hub|No|Optional
