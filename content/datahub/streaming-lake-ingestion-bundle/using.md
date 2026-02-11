@@ -315,7 +315,7 @@ The columns represent the [properties of a {{< product-c8y-iot >}} operation](ht
 For more information related to Iceberg data types, please refer to the [Iceberg specification](https://iceberg.apache.org/spec/#semi-structured-types). Note that there are various [structural limits in Iceberg](/service-terms/quotas/).
 {{< /c8y-admon-info >}}
 
-#### Schema evolution
+#### Schema evolution (#schema-evolution)
 
 The data lake storage service automatically discovers the structure of the incoming data and applies it to the data lake.
 * When the service discovers a new fragment, it creates a table to store the data in the fragment.
