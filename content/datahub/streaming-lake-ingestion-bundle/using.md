@@ -46,6 +46,10 @@ To simplify querying the current state of your assets, a consolidated representa
 
 ![alt text](/images/datahub-guide/querying.png)
 
+{{< c8y-admon-info >}}
+"Latest tables" are not part of the current private preview release.*
+{{< /c8y-admon-info >}}
+
 To understand how the service transfers data to the data lake, the following sections discuss the general table structure for each {{< product-c8y-iot >}} domain model class.
 
 #### General table structure
@@ -177,6 +181,11 @@ Finally, assume that you delete the device. This results in a record with `event
 | MANAGED_OBJECT_CREATE | 47635 | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
 | MANAGED_OBJECT_UPDATE | 47635 | 2025-08-20T13:45:20.002Z | sb_nano | 69  | 6.3213  | 50.425    |
 | MANAGED_OBJECT_DELETE | 47635 | 2025-08-20T13:50:20.002Z | sb_nano | 69  | 6.3213  | 50.425    |
+
+{{< c8y-admon-info >}}
+Delete events are not recorded as part of the preview release.
+{{< /c8y-admon-info >}}
+
 
 #### Alarms
 
@@ -375,7 +384,7 @@ If there is a conflict between a top-level property with a fragment of the same 
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-caution >}}
-The service currently does not support certain combinations of type conflicts with lists. It moves conflicting lists to the trash table.
+The service currently does not support certain combinations of type conflicts with lists. It moves conflicting lists to the `trash` table, see [Binning](#binning).
 {{< /c8y-admon-caution >}}
 
 
@@ -557,9 +566,9 @@ During offloading process, various operational events may occur that are relevan
   Sample event payload for reporting schema evolution (new columns per table detected):
     ```json
     {
-      "source": { 
+      "source": {
         "id": "251982"
-      }, 
+      },
       "time": "2025-07-29T13:15:43Z",
       "text": "New columns detected in the table: TableId[category=change_data_capture, type=MEASUREMENT, name=c8y_Temperature]",
       "type": "schema_evolution_new_columns",
@@ -576,7 +585,7 @@ During offloading process, various operational events may occur that are relevan
         }
         // ...
       ]
-      
+
     }
     ```
 
@@ -586,7 +595,7 @@ During offloading process, various operational events may occur that are relevan
   Sample alarm payload for reporting schema violation (data size exceeded):
     ```json
     {
-      "source": { 
+      "source": {
         "id": "251982"
       },
       "time": "2025-07-29T13:15:43Z",
