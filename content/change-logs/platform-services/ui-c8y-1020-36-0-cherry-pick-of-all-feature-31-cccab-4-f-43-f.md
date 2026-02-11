@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-56510
 version: 1020.36.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 When deleting or modifying a global role, an administrator can now ensure that changes take immediate effect by using a new option to log out all users assigned to that role.

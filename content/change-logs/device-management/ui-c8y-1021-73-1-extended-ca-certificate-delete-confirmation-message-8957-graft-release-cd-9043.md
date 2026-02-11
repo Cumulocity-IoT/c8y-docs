@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63400
 version: 1021.73.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 To prevent accidental deletion of CA certificates, the delete confirmation message has been improved. Previously, the confirmation message was not clear enough about the consequences of deleting a CA certificate. Now, the message explicitly states that devices enrolled with this certificate will no longer be able to connect the platform.

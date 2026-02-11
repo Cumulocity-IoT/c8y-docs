@@ -1,6 +1,8 @@
 ---
-date: 2024-04-04
-title: Root level managed object is now reliably found when querying with the onlyRoots flag
+date: '2024-04-04'
+title: >-
+  Root level managed object is now reliably found when querying with the
+  onlyRoots flag
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -13,5 +15,12 @@ build_artifact:
     label: cumulocity
 ticket: MTM-56734
 version: 10.20.266.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the inventory, when querying with the `onlyRoots` flag, assets could not be found if the object was removed from the asset hierarchy and became the root object again. This issue has now been fixed and root level managed objects are found when querying with the `onlyRoots` flag.

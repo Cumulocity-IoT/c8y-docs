@@ -1,5 +1,5 @@
 ---
-date: 2025-03-14
+date: '2025-03-14'
 title: Microservice SDK updated to Spring Boot 3.4
 change_type:
   - value: change-inv-3bw8e
@@ -13,6 +13,13 @@ build_artifact:
     label: cumulocity
 version: 2025.18.0
 ticket: MTM-62462
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Starting from version **2025.18.0**, the Microservice SDK is now using Spring Boot 3.4.2. 
 Notice that along with Spring Boot, most other dependencies were also updated to be consistent to 

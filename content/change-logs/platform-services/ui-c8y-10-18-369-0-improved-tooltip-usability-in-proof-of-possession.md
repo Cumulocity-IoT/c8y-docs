@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06
+date: '2023-12-06'
 title: Improved tooltip usability in Proof of possession
 product_area: Platform services
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-53811
 version: 10.18.369.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Clicking on the popup for the signed verification code no longer closes the tooltip, so that users can now copy the SSL command. The tooltip can be closed by clicking outside of it.

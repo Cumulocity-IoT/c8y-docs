@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63960
 version: 1022.4.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The bottom drawer of the **Assign devices** view was opened twice, which led to a misalignment of the component and made it unusable. With this fix, the drawer only opens once, and the selection elements are correctly usable. 

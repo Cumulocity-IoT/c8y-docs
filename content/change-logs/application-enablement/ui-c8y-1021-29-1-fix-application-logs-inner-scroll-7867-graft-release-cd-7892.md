@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60913
 version: 1021.29.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 On the **Properties** tab of an application, users were unable to scroll through the activities log content when it exceeded the visible area. This issue has been resolved and users can now properly scroll through the full log content, even if it extends beyond the initial visible section.

@@ -13,6 +13,13 @@ build_artifact:
     label: cumulocity
 ticket: MTM-64802
 version: 2025.357.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The measurement series endpoint has been enhanced. Note that there is no impact on the behaviour of applications
 currently using this endpoint. 

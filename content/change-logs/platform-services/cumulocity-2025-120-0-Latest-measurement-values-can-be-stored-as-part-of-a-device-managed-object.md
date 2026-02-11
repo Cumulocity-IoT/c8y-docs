@@ -12,6 +12,13 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 version: 2025.198.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Support of automated persistence of measurement values under the `c8y_LatestMeasurements` fragment, which has previously been introduced as a preview feature, is now generally available. If a measurement is created with a series that matches the configuration the device managed object is updated with the last series sent to the platform.
 

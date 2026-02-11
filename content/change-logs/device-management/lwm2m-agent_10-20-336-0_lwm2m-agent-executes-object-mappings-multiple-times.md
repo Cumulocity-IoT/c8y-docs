@@ -1,6 +1,8 @@
 ---
-date: 2024-09-19
-title: Object mapping actions no longer executed multiple times on LWM2M 1.1 send request
+date: '2024-09-19'
+title: >-
+  Object mapping actions no longer executed multiple times on LWM2M 1.1 send
+  request
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -13,5 +15,12 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-3620
 version: 10.20.336.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 When a LWM2M 1.1 send request that includes multiple timestamps has been received, the object resource mapping actions have in some cases been processed multiple times by the LWM2M agent. This issue has been resolved to ensure that mapping actions get only triggered once.

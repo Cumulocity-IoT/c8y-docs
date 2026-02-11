@@ -13,5 +13,12 @@ build_artifact:
     label: dtm
 ticket: CTM-1661
 version: 1020.1.21
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, the names of all modules within the dtm-plugins included the word "Module". This suffix has now been removed.

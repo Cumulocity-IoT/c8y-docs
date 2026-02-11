@@ -1,5 +1,5 @@
 ---
-date: 2024-09-11
+date: '2024-09-11'
 title: Alarms counts in managed objects in sync with alarm counts in the database
 product_area: Platform services
 change_type:
@@ -13,6 +13,13 @@ build_artifact:
     label: cumulocity
 ticket: MTM-54655
 version: 10.20.536.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 
 The alarm count in managed objects could get out of sync with the actual count of alarms in the database. This issue has been fixed and alarms counts in managed objects are now in sync with alarm counts in the database.

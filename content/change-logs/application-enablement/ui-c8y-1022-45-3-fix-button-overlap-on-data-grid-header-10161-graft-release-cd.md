@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-64953
 version: 1022.45.3
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In certain scenarios, the buttons in the data grid header were overlapping, making them difficult to use. This issue has been resolved by adjusting the layout and spacing of the buttons.

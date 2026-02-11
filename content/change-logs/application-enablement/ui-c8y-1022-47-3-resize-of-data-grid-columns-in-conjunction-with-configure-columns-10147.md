@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: DM-4989
 version: 1022.47.3
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, columns that had been hidden and were enabled again sometimes did not appear in the grid.  This issue has now been fixed so that columns always reappear as expected when enabled. 
 Additionally, when resizing a column and releasing the mouse button outside the grid, the grid was still in resize mode, causing further unintended resizing. This behavior has been corrected so that resizing ends properly when the mouse button is released, even outside the grid area. 

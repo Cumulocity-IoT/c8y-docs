@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-59694
 version: 1020.8.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 To ensure users agree to the service terms for microservice deployment when uploading a microservice, a new text acknowledgment has been added to the microservice upload dialog. 
