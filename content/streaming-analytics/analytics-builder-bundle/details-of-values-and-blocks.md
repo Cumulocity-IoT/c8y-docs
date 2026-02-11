@@ -47,7 +47,7 @@ It is also possible to combine the regular sampling and on-change forms together
 
 As an example, consider a raw value that changes over time as so:
 
-![Graph of raw value](/images/streaming-analytics/analytics-builder/NOT-raw-value.png)
+![Graph of raw value](/images/streaming-analytics/analytics-builder/raw-value.png)
 
 But suppose the sensor can only measure to the nearest whole number, and only once a second. The value thus has some error, shown by the red error bars:
 
