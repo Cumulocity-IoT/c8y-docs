@@ -126,7 +126,7 @@ In addition, the service stores the data in the `inventory_latest` folder:
 | 47635 | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
 
 {{< c8y-admon-info >}}
-"Fragments" such as "c8y\_IsDevice" are only represented in the "fragments" property of the `inventory` tables.
+Fragments such as `c8y\_IsDevice` are only represented in the "fragments" property of the `inventory` tables.
 {{< /c8y-admon-info >}}
 
 Assume that the tracking device updates its location:
