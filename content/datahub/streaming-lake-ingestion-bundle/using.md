@@ -250,7 +250,7 @@ This results in the following data in the data lake, consistent with the method 
 As events usually record specific occurrences or state changes for a device at a single point in time and are distinct, the service does not create a "latest" version.
 
 
-#### Measurements
+#### Measurements (#measurements)
 
 To illustrate the storage of measurements, assume that the tracking device sends a battery measurement in the following form:
 
