@@ -8,7 +8,7 @@ While the {{< product-c8y-iot >}} user interface for OPC UA provides an easy and
 
 The full API definitions can be found at */service/opcua-mgmt-service/swagger-ui.html*.
 
-### OPC UA server resources {#opc-ua-server-resources}
+### OPC UA server resources {#opc-ua-server-resources}AAA
 
 #### Connect a new OPC UA server to the gateway {#connect-a-new-opc-ua-server-to-the-gateway}
 
