@@ -1,6 +1,6 @@
 ---
 date: ""
-title: allow dismissing alert when device is remov… (#10864) [GRAFT][release/y2026] (#11137)
+title: Fixed dismissing error alerts when a referenced device no longer exists
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,21 +14,4 @@ build_artifact:
 ticket: MTM-65519
 version: 1023.14.79
 ---
-# Backport
-
-This will backport the following commits from `develop` to
-`release/y2026`:
-- [fix(Web SDK): [MTM-65519] allow dismissing alert when device is
-remov…
-(#10864)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10864)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65519]:
-https://cumulocity.atlassian.net/browse/MTM-65519?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dawid Janusz <96060763+DawidSAG@users.noreply.github.com>
+Previously, when a device referenced by a widget's data point configuration was deleted, an error alert was displayed that could not be dismissed by the user. With this change, the error alert can now be dismissed as expected.
