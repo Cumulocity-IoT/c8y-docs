@@ -98,8 +98,14 @@ jobs:
       # On by default, but allow bypassing because this is (currently) a new part of the workflow that hasn't been battle-tested
       if: ${{ !contains(github.event.pull_request.labels.*.name, 'bypass-link-check') && github.event.pull_request.state != 'closed' }}
       run: |
+        # Do a full build and serve _locally_ because it's faster to spider than the Surge site
+        BASEURL=http://127.0.0.1:8000
+        hugo --baseURL $BASEURL
+        cd public
+        python3 -m http.server 2>/dev/null &
         # Recursively download everything from the generated doc, broken links cause errors
         # Exclude
         # - Links to other releases because we do not build other releases in PRs
         # - Links to PDFs, we don't upload those to the surge site so they will always be absent
-        wget --no-directories --delete-after --no-verbose -e robots=off -r ${{ env.BASEURL }} --reject-regex ".*\/202.\/.*" -R "*.pdf"
+        set -o pipefail
+        wget --retry-connrefused --no-directories --delete-after --no-verbose -e robots=off -r $BASEURL --reject-regex ".*\/202.\/.*" -R "*.pdf" 2>&1 | (grep -B 1 ERROR || true)
