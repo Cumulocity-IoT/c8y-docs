@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65715
 version: 1023.42.1
 ---
-Previously, the legacy Data Point Explorer widget did not correctly respond to global context changes when live mode was enabled, causing the time range to not update properly. With this change, the widget now correctly reflects time range and mode changes from the global context.
+Previously, the legacy "Data point" widget did not correctly respond to global context changes when live mode was enabled, causing the time range not to update properly. With this change, the widget now correctly reflects time range and mode changes from the global context.
