@@ -1,6 +1,6 @@
 ---
 date: ""
-title: remove server error alert and hide alarms view when user has limited access to alarms
+title: Removed misleading error alerts and made the alarms view unavailable for users without permission
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
