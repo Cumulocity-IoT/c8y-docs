@@ -18,5 +18,9 @@ version: 1024.0.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-05'
+  - label: apj.cumulocity.com
+    date: '2026-02-11'
+  - label: jp.cumulocity.com
+    date: '2026-02-11'
 ---
 On tenants with a high number of managed objects, creating a linked series without a source caused a slow performance due to the unnecessary loading of inventory objects. This issue has been fixed.

@@ -26,7 +26,7 @@ If your tenant is subscribed to the Apama-ctrl-250mc-1g microservice (or one of 
 - Analytic models, EPL apps and smart rules are supported.
 - Custom blocks written with the Analytics Builder Block SDK can be used.
 
-If your tenant is subscribed to the Apama-ctrl-mt-4c-16g microservice, then the following applies:
+If your tenant is subscribed to the Apama-ctrl-mt microservice, then the following applies:
 - Multi-tenant support.
 - EPL apps are only enabled on the tenant that owns the microservice, but disabled on the subtenants.
 - Analytic models and smart rules are supported.
