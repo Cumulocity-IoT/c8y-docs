@@ -1,6 +1,6 @@
 ---
 date: 
-title: Add ONNX block in Public Preview
+title: Add Analytics Builder ONNX block in Public Preview
 change_type:
   - value: change-pXAlHAWka
     label: Preview
