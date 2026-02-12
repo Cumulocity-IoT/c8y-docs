@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 40
 title: Offloading Cumulocity base collections
 layout: redirect
 ---

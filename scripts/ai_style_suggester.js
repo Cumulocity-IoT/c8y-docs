@@ -4,6 +4,7 @@ import { getInput, setFailed } from "@actions/core";
 import { context, getOctokit } from "@actions/github";
 import Anthropic from "@anthropic-ai/sdk";
 import { fileURLToPath } from "url";
+import JSON5 from "json5";
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
@@ -73,7 +74,7 @@ async function run() {
     }
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
-    const styleGuidePath = path.join(__dirname, "documentation-guidelines.md");
+    const styleGuidePath = path.join(__dirname, "..", ".github", "copilot-instructions.md");
     const STYLE_GUIDE_TEXT = fs.readFileSync(styleGuidePath, "utf8");
 
     const { data: files } = await octokit.rest.pulls.listFiles({ owner, repo, pull_number});
@@ -144,6 +145,7 @@ async function run() {
     - Check capitalization and correct any issues in the added lines.
     - Check grammar rules, including missing articles ("a", "an", "the") according to the following style guide rules.
     - Always use standard American English spelling. Convert any British English spelling to American English.
+    - Enforce the Variables rules defined below.
 
     Output Format (very important):
     Return ONLY valid JSON:
@@ -160,6 +162,36 @@ async function run() {
     No markdown fences.  
     No extra text.  
     Do not include backticks in the JSON.
+
+    ## Variables
+
+    Use variables (HTML short codes) for certain recurring terms to ensure consistency across the documentation.
+
+    The following terms MUST be replaced by their corresponding variables, based on context.
+
+    ### Variable mapping
+    
+    | Usage context | Replace with |
+    |--------------|--------------|
+    | Cumulocity used as a company name | {{< company-c8y >}} |
+    | Cumulocity IoT (explicit product name) | {{< product-c8y-iot >}} |
+
+    ### Disambiguation rules (mandatory)
+
+    - Replace **"Cumulocity IoT"** with {{< product-c8y-iot >}} in all valid Markdown text.
+    - Replace **"Cumulocity"** with {{< company-c8y >}} **ONLY** when it refers to the company.
+    - Do NOT replace "Cumulocity" with the product variable unless "IoT" is explicitly present.
+    - Do NOT infer product usage when only "Cumulocity" is written.
+
+    ### Replacement rules
+
+    - Apply replacements ONLY in added Markdown content.
+    - Do NOT replace lowercase "cumulocity".
+    - Do NOT replace text in:
+      - software file names (for example, cumulocity.json),
+      - links to GitHub examples or resources,
+      - module or package names (for example, com.apama.cumulocity.Measurement),
+      - fenced code blocks, inline code, or any code samples.
 
       ## Style Guide:
       ${STYLE_GUIDE_TEXT}
@@ -179,7 +211,7 @@ async function run() {
       raw = cleanJSON(raw);
       let suggestions = [];
       try {
-        suggestions = JSON.parse(raw);
+        suggestions = JSON5.parse(raw);
         console.log("AI suggestions parsed:", suggestions);
 
         suggestions.forEach(s => {

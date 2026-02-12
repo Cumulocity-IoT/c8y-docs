@@ -21,6 +21,6 @@ environment_availability:
   - label: cumulocity.com
 ---
 
-Due to changes in the Cumulocity MQTT Service preview version, the current EPL API for the MQTT Service (`com.apama.cumulocity.mqttservice`) is now deprecated. 
+Due to changes in the {{< product-c8y-iot >}} MQTT Service preview version, the current EPL API for the MQTT Service (`com.apama.cumulocity.mqttservice`) is now deprecated.
 
 Use the DeviceService API from (`com.apama.cumulocity.devices`) instead, see [The DeviceService bundle]({{< link-apama-webhelp >}}/standard-connectivity-plugins/device-service/).
