@@ -22,5 +22,11 @@ environment_availability:
     date: '2026-02-05'
   - label: jp.cumulocity.com
     date: '2026-02-05'
+  - label: emea.cumulocity.com
+    date: '2026-02-06'
+  - label: us.cumulocity.com
+    date: '2026-02-06'
+  - label: cumulocity.com
+    date: '2026-02-06'
 ---
 Previously, users could save multiple properties with the same name in the property library (tenant custom properties), resulting in only one property with that name being displayed on the tenant's **Custom properties** tab. Duplicate name validation has been added to the name field, showing an error when a property with the same name already exists and disabling the save button until a unique name is provided.

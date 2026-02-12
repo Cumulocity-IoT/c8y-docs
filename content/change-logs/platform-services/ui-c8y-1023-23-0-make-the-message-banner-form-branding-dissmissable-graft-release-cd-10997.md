@@ -20,6 +20,12 @@ environment_availability:
     date: '2026-02-05'
   - label: jp.cumulocity.com
     date: '2026-02-05'
+  - label: emea.cumulocity.com
+    date: '2026-02-06'
+  - label: us.cumulocity.com
+    date: '2026-02-06'
+  - label: cumulocity.com
+    date: '2026-02-06'
 ---
 Users can now permanently dismiss custom messages configured under **Branding** > **Message Banner**. Previously, these messages reappeared every time the page was refreshed, which could disrupt the user experience.
 

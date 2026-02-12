@@ -16,6 +16,10 @@ version: 27.33.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-05'
+  - label: apj.cumulocity.com
+    date: '2026-02-11'
+  - label: jp.cumulocity.com
+    date: '2026-02-11'
 ---
 
 A new Smart Function block has been added to Analytics Builder. This block executes a JS Smart Function on the inputs and produces an output.

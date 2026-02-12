@@ -20,5 +20,11 @@ environment_availability:
     date: '2026-02-05'
   - label: jp.cumulocity.com
     date: '2026-02-05'
+  - label: emea.cumulocity.com
+    date: '2026-02-06'
+  - label: us.cumulocity.com
+    date: '2026-02-06'
+  - label: cumulocity.com
+    date: '2026-02-06'
 ---
 Home dashboards in applications like Cockpit and Device Management previously required manual configuration to display widget titles in the user´s language. Now, the `Translate widget titles` setting is enabled by default for all newly created home dashboards, ensuring that widget titles automatically appear in the appropriate language based on the user´s locale. This change applies only to new dashboards and does not affect existing dashboards or other dashboard types such as Cockpit asset dashboards, so your current configurations remain unchanged.
