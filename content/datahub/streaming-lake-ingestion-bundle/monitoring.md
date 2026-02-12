@@ -4,6 +4,9 @@ title: Monitoring the data flow
 layout: redirect
 ---
 
+
+<!--
+
 The service provides diagnostic tools to monitor the data offloading process. Use these tools to verify data flow, understand schema evolution, and troubleshoot data quality issues.
 
 In addition to diagnostic tools, {{< company-c8y >}} provides a [service definition](service-definition.md) that outlines key quality objectives.
@@ -11,8 +14,6 @@ In addition to diagnostic tools, {{< company-c8y >}} provides a [service definit
 {{< c8y-admon-preview >}}
 *This feature is not part of the current Private Preview release.*
 {{< /c8y-admon-preview >}}
-
-<!--
 
 ### Monitoring the data flow
 
