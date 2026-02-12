@@ -15,7 +15,7 @@ The service stores only new data incoming after subscription. It does not automa
 {{< /c8y-admon-info >}}
 
 
-### Analyzing lake data from Cockpit (#analyzing-lake-data-from-cockpit)
+### Analyzing lake data from Cockpit {#analyzing-lake-data-from-cockpit}
 
 Use the {{< product-c8y-iot >}} Cockpit application to access data stored in the {{< product-c8y-iot >}} data lake. Log in to the application, then navigate to the data explorer and select **Data lake**. When you enable data lake, the application sources data from the data lake instead of the operational store. You can visualize data over longer time ranges than with the operational store.
 
@@ -26,7 +26,7 @@ Data arrives in the lake with a small delay. If you need to see the latest data,
 {{< /c8y-admon-info >}}
 
 
-### Analyzing lake data using SQL (#analyzing-lake-data-using-sql)
+### Analyzing lake data using SQL {#analyzing-lake-data-using-sql}
 
 For more general analytics, use SQL queries. Run queries from several interfaces:
 
@@ -52,7 +52,7 @@ To simplify querying the current state of your assets, a consolidated representa
 
 To understand how the service transfers data to the data lake, the following sections discuss the general table structure for each {{< product-c8y-iot >}} domain model class.
 
-#### General table structure (#general-table-structure)
+#### General table structure {#general-table-structure}
 
 All tables contain the following key columns:
 * `eventType`: The {{< product-c8y-iot >}} real-time data feed records changes to IoT data, so whether new data is created, existing data is updated or data is deleted. This field captures the type of the recorded change, for example, `MANAGED_OBJECT_UPDATE`.
@@ -61,7 +61,7 @@ All tables contain the following key columns:
 * `type`: The type property of the device, measurement and so on.
 
 
-#### Inventory (#inventory)
+#### Inventory {#inventory}
 
 To understand how the service captures inventory data in the data lake, assume that you create a new tracking device "Tracking #1" with the following data:
 
@@ -105,9 +105,9 @@ We advice you to prefer fragments for custom data when modeling your device data
 
 
 **Table: inventory.c8y_position**
-| eventType             | source    | time                     | type    | alt | lng     | lat       |
-| --------------------- | ----- | ------------------------ | ------- | --- | ------- | --------- |
-| MANAGED_OBJECT_CREATE | 47635 | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
+| eventType             | source | time                     | type    | alt | lng     | lat       |
+| --------------------- | ------ | ------------------------ | ------- | --- | ------- | --------- |
+| MANAGED_OBJECT_CREATE | 47635  | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
 
 The columns of the `c8y_position` table reflect the "`c8y_Position` fragment and are set as follows:
 * Key columns are set as previously described.
@@ -121,9 +121,9 @@ In addition, the service stores the data in the `inventory_latest` folder:
 | 47635 | 2025-08-20T13:41:39.678Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
 
 **Table: inventory_latest.c8y_position**
-| source    | time                     | type    | alt | lng     | lat       |
-| ----- | ------------------------ | ------- | --- | ------- | --------- |
-| 47635 | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
+| source | time                     | type    | alt | lng     | lat       |
+| ------ | ------------------------ | ------- | --- | ------- | --------- |
+| 47635  | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
 
 {{< c8y-admon-info >}}
 Fragments such as `c8y\_IsDevice` are only represented in the "fragments" property of the `inventory` tables.
@@ -149,10 +149,10 @@ This update appears in the `inventory` and `c8y_position` tables as follows:
 | MANAGED_OBJECT_UPDATE | 47635 | 2025-08-20T13:45:20.002Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
 
 **Table: inventory.c8y_position**
-| eventType             | source    | time                     | type    | alt | lng     | lat       |
-| --------------------- | ----- | ------------------------ | ------- | --- | ------- | --------- |
-| MANAGED_OBJECT_CREATE | 47635 | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
-| MANAGED_OBJECT_UPDATE | 47635 | 2025-08-20T13:45:20.002Z | sb_nano | 69  | 6.3213  | 50.425    |
+| eventType             | source | time                     | type    | alt | lng     | lat       |
+| --------------------- | ------ | ------------------------ | ------- | --- | ------- | --------- |
+| MANAGED_OBJECT_CREATE | 47635  | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
+| MANAGED_OBJECT_UPDATE | 47635  | 2025-08-20T13:45:20.002Z | sb_nano | 69  | 6.3213  | 50.425    |
 
 The "latest" versions of the tables reflect this update:
 
@@ -162,9 +162,9 @@ The "latest" versions of the tables reflect this update:
 | 47635 | 2025-08-20T13:45:20.002Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
 
 **Table: inventory_latest.c8y_position**
-| source    | time                     | type    | alt | lng    | lat    |
-| ----- | ------------------------ | ------- | --- | ------ | ------ |
-| 47635 | 2025-08-20T13:45:20.002Z | sb_nano | 69  | 6.3213 | 50.425 |
+| source | time                     | type    | alt | lng    | lat    |
+| ------ | ------------------------ | ------- | --- | ------ | ------ |
+| 47635  | 2025-08-20T13:45:20.002Z | sb_nano | 69  | 6.3213 | 50.425 |
 
 Finally, assume that you delete the device. This results in a record with `eventType` "MANAGED_OBJECT_DELETE" and the last properties stored on the device. Deleting the device removes it from the "latest" versions of the tables.
 
@@ -176,18 +176,18 @@ Finally, assume that you delete the device. This results in a record with `event
 | MANAGED_OBJECT_DELETE | 47635 | 2025-08-20T13:50:20.002Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
 
 **Table: inventory.c8y_position**
-| eventType             | source    | time                     | type    | alt | lng     | lat       |
-| --------------------- | ----- | ------------------------ | ------- | --- | ------- | --------- |
-| MANAGED_OBJECT_CREATE | 47635 | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
-| MANAGED_OBJECT_UPDATE | 47635 | 2025-08-20T13:45:20.002Z | sb_nano | 69  | 6.3213  | 50.425    |
-| MANAGED_OBJECT_DELETE | 47635 | 2025-08-20T13:50:20.002Z | sb_nano | 69  | 6.3213  | 50.425    |
+| eventType             | source | time                     | type    | alt | lng     | lat       |
+| --------------------- | ------ | ------------------------ | ------- | --- | ------- | --------- |
+| MANAGED_OBJECT_CREATE | 47635  | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
+| MANAGED_OBJECT_UPDATE | 47635  | 2025-08-20T13:45:20.002Z | sb_nano | 69  | 6.3213  | 50.425    |
+| MANAGED_OBJECT_DELETE | 47635  | 2025-08-20T13:50:20.002Z | sb_nano | 69  | 6.3213  | 50.425    |
 
 {{< c8y-admon-info >}}
 Delete events are not recorded as part of the preview release.
 {{< /c8y-admon-info >}}
 
 
-#### Alarms (#alarms)
+#### Alarms {#alarms}
 
 Assume that our sample tracking device has low battery and sends an alarm:
 
@@ -221,7 +221,7 @@ For alarms, there is also a representation of the latest state.
 | 47635  | 2025-08-19T12:03:27.845Z | c8y_BatteryAlarm | 1     | MAJOR    | ACTIVE | Battery level below 5 percent. |
 
 
-#### Events (#events)
+#### Events {#events}
 
 Now assume that the tracker moves and sends a location update event.
 
@@ -250,7 +250,7 @@ This results in the following data in the data lake, consistent with the method 
 As events usually record specific occurrences or state changes for a device at a single point in time and are distinct, the service does not create a "latest" version.
 
 
-#### Measurements (#measurements)
+#### Measurements {#measurements}
 
 To illustrate the storage of measurements, assume that the tracking device sends a battery measurement in the following form:
 
@@ -279,7 +279,7 @@ There is one important difference for measurements compared to other data types:
 
 This example demonstrates how the service handles nested properties: Like the {{< product-c8y-iot >}} APIs and its operational store, Apache Iceberg supports nested data. Just like with the above JSON example, the property `voltage` is a nested structure containing two properties `value` and `unit`. You can query the contained properties from SQL using path expressions such as `"voltage"."value"`. For more information on querying the data from SQL, see [Example queries](#example-queries).
 
-#### Operations (#operations)
+#### Operations {#operations}
 
 Finally, we would like to restart the tracker with a reset operation:
 
@@ -315,7 +315,7 @@ The columns represent the [properties of a {{< product-c8y-iot >}} operation](ht
 For more information related to Iceberg data types, please refer to the [Iceberg specification](https://iceberg.apache.org/spec/#semi-structured-types). Note that there are various [structural limits in Iceberg](/service-terms/quotas/).
 {{< /c8y-admon-info >}}
 
-#### Schema evolution (#schema-evolution)
+#### Schema evolution {#schema-evolution}
 
 The data lake storage service automatically discovers the structure of the incoming data and applies it to the data lake.
 * When the service discovers a new fragment, it creates a table to store the data in the fragment.
@@ -325,7 +325,7 @@ The data lake storage service automatically discovers the structure of the incom
 Currently, the service does not delete tables and columns when they are not in use anymore. For more information, see [Managing schema evolution](#managing-schema-evolution).
 {{< /c8y-admon-info >}}
 
-#### Handling of schema conflicts (#handling-of-schema-conflicts)
+#### Handling of schema conflicts {#handling-of-schema-conflicts}
 
 Contrary to Apache Iceberg and SQL, {{< product-c8y-iot >}} does not mandate a consistent schema across all incoming data. The data lake storage service automatically resolves consistency issues. Revisiting our previous example, assume that "Tracker #1" sends data as follows:
 
@@ -388,7 +388,7 @@ The service currently does not support certain combinations of type conflicts wi
 {{< /c8y-admon-caution >}}
 
 
-#### Naming (#naming)
+#### Naming {#naming}
 
 The Iceberg data lake supports only names consisting of characters, numbers (if not the first character), and underscores. Other characters are represented by the character string "\_x" followed by the hexadecimal Unicode value of the character. This applies to table and property names.
 
@@ -419,13 +419,13 @@ The suffix is generated based on the original name as a binary code where upperc
 This is a reliability measure. The Iceberg specification considers tables and column names as case sensitive. However, upstream query engines do not generally support case sensitivity and may not be able to query such tables.
 {{< /c8y-admon-info >}}
 
-#### Flat views (#flat-views)
+#### Flat views {#flat-views}
 
 {{< c8y-admon-info >}}
 For legacy analytics tools, {{< company-c8y >}} plans to offer Iceberg views with a flat representation of the Iceberg tables. This is currently under implementation.
 {{< /c8y-admon-info >}}
 
-#### Binning (#binning)
+#### Binning {#binning}
 
 Apache Iceberg tables adhere to a strict schema contract that governs structure, depth, field naming, and overall payload limits. Currently, incoming notifications may violate this schema contract. Such notifications cannot be stored in the Iceberg tables. To preserve as much data as possible, protect the data pipeline from failure, and give stakeholders visibility into problematic situations, a "binning" mechanism persists most of this data.
 
@@ -557,7 +557,7 @@ Sample `trash` table records:
 | 47640  | EVENT_CREATE          | EVENT     | 2025-07-29T15:15:43Z | /event_fragment_2/nestedObject/invalidFieldName###ASD!ASD!@ | event_fragment_2     | ILLEGAL_FIELD_NAME | Illegal field name                        | InRlc3Qi                           |
 
 
-#### Customer-visible operational communication (#customer-visible-operational-communication)
+#### Customer-visible operational communication {#customer-visible-operational-communication}
 
 During offloading process, various operational events may occur that are relevant for customers to be aware of. These include:
 - **Service Functionality Information**: These are events that affect the pipeline’s behavior but do not require customer action. For example, schema evolution (new tables/coulumns detected, fragment changes). They are relevant for transparency, debugging, and auditability.
