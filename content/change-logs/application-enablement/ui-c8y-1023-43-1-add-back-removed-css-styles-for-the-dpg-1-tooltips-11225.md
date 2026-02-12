@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Tooltips in legacy Data Point Graph now displayed correctly
+title: Tooltips in legacy data point graph now displayed correctly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
