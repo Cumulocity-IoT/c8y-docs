@@ -21,7 +21,7 @@ The following differences apply:
 |Horizontal scalability|No|Yes, nearly unlimited scalability
 |Upgrades with no downtime|No|Yes
 |Root access|Yes|Yes, if customer is hosting
-|Installation|Online and Offline|Online
+|Installation|Online and offline|Online
 |Messaging Service|Included|Included
 |MQTT Service|Included|Included
 |Microservice-based data broker|Included|Optional
