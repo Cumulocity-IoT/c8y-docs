@@ -14,5 +14,5 @@ build_artifact:
 ticket: APMF-2596
 version: 26.258.0
 ---
-Smart Rules resilience is now Generally Available, ensuring that smart rules do not lose state or messages during planned shutdowns.
+Smart rules resilience is now Generally Available, ensuring that smart rules do not lose state or messages during planned shutdowns.
 
