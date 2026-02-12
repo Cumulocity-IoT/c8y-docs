@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 40
 title: Offloading Cumulocity base collections
 layout: redirect
 ---
@@ -153,7 +153,7 @@ You must select a measurement type, so that all offloaded data is of the same ty
 | ... |  |
 | my_custom_property_nameN | Depends on data type |
 
-The entries in the measurements collection can have a different structure, depending on the types of data the corresponding device emits. While one sensor might emit temperature and humidity values, another sensor might emit pressure values. For details on measurement creation via API see the corresponding [{{< product-c8y-iot >}} REST API](https://cumulocity.com/api/core/#operation/postMeasurementCollectionResource) documentation.
+The entries in the measurements collection can have a different structure, depending on the types of data the corresponding device emits. While one sensor might emit temperature and humidity values, another sensor might emit pressure values. For details on measurement creation via API see the corresponding [{{< product-c8y-iot >}} REST API](https://cumulocity.com/api/core/#operation/postMeasurementCollectionResource) documentation. See also [Mapping measurement fragments to relational data](/datahub/working-with-datahub#mapping-measurement-fragments-to-relational-data) for details on how a measurement fragment is mapped into a relational structure.
 
 Each measurement document must have the ID of the associated source, a measurement type, and the measurement time. Within the document, there are one or more fragments. Each fragment comprises related measurements, with each measurement being modelled as a property. For example, the fragment `c8y_Steam` contains the properties `Temperature` and `Humidity`. Such a measurement property must itself contain a mandatory property `value` and should contain an optional property `unit`. A measurement document with one fragment having one measurement property is flattened in the data lake into a column `fragment_name.property_name.value` and, if set, a column `fragment_name.property_name.unit`. Documents with multiple fragments, each containing multiple measurements, are flattened in an analogous way, indicated in the above table with `fragment_name1.property_name1.value` to `fragment_nameM.property_nameN.value`.
 

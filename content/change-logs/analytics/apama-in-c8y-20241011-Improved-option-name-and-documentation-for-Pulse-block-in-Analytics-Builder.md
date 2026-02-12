@@ -1,5 +1,5 @@
 ---
-date: 2024-10-31
+date: '2024-10-31'
 title: Improved option name and documentation for Pulse block in Analytics Builder
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,5 +13,12 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-3201
 version: 25.291.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 To improve the user experience in Analytics Builder, the **On value change** option of the **Mode** parameter in the [Pulse](https://cumulocity.com/docs/streaming-analytics/block-reference/#pulse) block has been renamed to **On value change (excluding to false)**. In addition, the block reference has been updated to clarify that for a boolean input, a pulse is only sent when the input changes to `true` (not `false`).

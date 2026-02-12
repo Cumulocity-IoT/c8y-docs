@@ -1,5 +1,5 @@
 ---
-date: 2024-05-09
+date: '2024-05-09'
 title: Improved configuration for OPC UA device gateway node scan retries
 product_area: Device management & connectivity
 change_type:
@@ -13,6 +13,13 @@ build_artifact:
     label: opcua
 ticket: DM-2992
 version: 10.20.42.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The issue that the count of retries for the node scan (`gateway.scanAddressSpace.retries`) stored in the OPC UA device gateway property is being ignored has been resolved.
 A new OPC UA device gateway property has been added that allows to configure the pause time between retries (`gateway.scanAddressSpace.pauseMillisForRetry`) during the address space scan.

@@ -13,5 +13,12 @@ build_artifact:
     label: dtm
 ticket: CTM-1597
 version: 1020.1.18
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The `AddAssetModule` automatically imported the `SubassetsModule`, creating an unwanted dependency. This caused the `SubassetsModule` to remain active even after its plugin was uninstalled from DTM. With this change the automatic import of the `SubassetsModule`has been removed from the `AddAssetModule`.

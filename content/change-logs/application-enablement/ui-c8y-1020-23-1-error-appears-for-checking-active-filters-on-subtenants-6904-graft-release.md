@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-59337
 version: 1020.23.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In some situations an error occurred when checking active filters in the **Subtenants** page, preventing users from properly viewing and managing the filters. This issue has been resolved. Users can now reliably check active filters for subtenants without encountering an error. 

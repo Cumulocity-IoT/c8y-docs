@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-64464
 version: 1022.27.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the past, loading the audit logs list in the Administration application was slow, especially for tenants with a large number of audit log entries. This change results in a significant performance improvement. Users will now experience much faster loading times when viewing the audit log list, even for tenants with an extensive audit history.

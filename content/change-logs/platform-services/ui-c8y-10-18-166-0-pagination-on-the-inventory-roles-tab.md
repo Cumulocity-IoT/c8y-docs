@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T16:16:11.447Z
+date: '2023-12-06'
 title: Pagination on the Inventory roles tab
 change_type:
   - value: change-VSkj2iV9m
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-47720
 version: 10.18.166.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Implemented pagination on the <b>Inventory roles</b> tab in the user details to fix an issue with larger numbers of groups and subgroups.

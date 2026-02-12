@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65446
 version: 1023.17.10
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, the legend for alarms and events in the "Data point graph" widget displayed the type of the entries. This issue has been resolved. The legend now correctly displays the configured alarm or event label instead.

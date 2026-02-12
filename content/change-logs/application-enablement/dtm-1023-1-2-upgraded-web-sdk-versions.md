@@ -13,6 +13,13 @@ build_artifact:
     label: dtm
 ticket: ''
 version: 1023.1.2
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The Digital Twin Manager application has been upgraded to the Cumulocity Web
 SDK 1022.44.3. The custom applications that integrate dtm-plugins are

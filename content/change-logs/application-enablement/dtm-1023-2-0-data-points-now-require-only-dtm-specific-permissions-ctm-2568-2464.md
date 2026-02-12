@@ -13,6 +13,13 @@ build_artifact:
     label: dtm
 ticket: CTM-2568
 version: 1023.2.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, data points required both inventory and Digital Twin Manager (DTM) permissions. With this change, 
 the inventory-related permissions have been removed. Data points

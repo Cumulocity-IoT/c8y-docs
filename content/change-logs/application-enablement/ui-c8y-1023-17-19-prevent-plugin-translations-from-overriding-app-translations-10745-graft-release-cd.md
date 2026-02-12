@@ -1,0 +1,25 @@
+---
+date: '2026-01-20'
+title: Prevented plugin translations from overriding application translations
+product_area: Application enablement & solutions
+change_type:
+  - value: change-VSkj2iV9m
+    label: Fix
+component:
+  - value: component-YbYJ3gLU_
+    label: Web SDK
+build_artifact:
+  - value: tc-pjJiURv9Y
+    label: ui-c8y
+ticket: MTM-65724
+version: 1023.17.19
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
+---
+This fix prevents plugins from overriding the translations in the shell application. Still, within a plugin, the translations provided by this plugin take precedence over the shell application's ones.
+If you want to override a shell application translation, you may use [application options](/web/application-configuration/#languages-customization) or [the localization feature](/standard-tenant/changing-settings/#localization).

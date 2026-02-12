@@ -1,6 +1,6 @@
 ---
-date: 2023-12-14
-title:  Improved map display and interaction for Location property in subassets
+date: '2023-12-14'
+title: Improved map display and interaction for Location property in subassets
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,5 +13,12 @@ build_artifact:
     label: dtm
 ticket: CTM-898
 version: 1019.1.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Users can now view the map on the **Subassets** page only when both values (latitude/longitude) of the Location property are available; if any or both of the values are missing, the map remains hidden. Additionally, the marker is not shown on the map if any one of the values is missing. Clicking anywhere on the map in edit mode will update the corresponding fields automatically.

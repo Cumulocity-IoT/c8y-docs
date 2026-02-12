@@ -144,7 +144,7 @@ To upload an extension, the user specified in the `--username` argument must hav
 The Apama-ctrl microservice is restarted after running the above command. The user must have the ADMIN permission for "CEP management" to request a restart.
 
 {{< c8y-admon-info>}}
-When using the multi-tenant Apama-ctrl-mt-4c-16g microservice, only extensions uploaded to the tenant that owns the microservice will be used.
+When using the multi-tenant Apama-ctrl-mt microservice, only extensions uploaded to the tenant that owns the microservice will be used.
 {{< /c8y-admon-info>}}
 
 ### Wires {#wires}
