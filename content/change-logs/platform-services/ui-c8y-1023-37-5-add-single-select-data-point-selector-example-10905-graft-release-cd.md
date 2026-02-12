@@ -1,6 +1,6 @@
 ---
 date: ""
-title: add single select data point selector example (#10905) [GRAFT][release/cd] (#11118)
+title: Added single select example for data point selector documentation
 product_area: Platform services
 change_type:
   - value: change-2c7RdTdXo4
@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-65940
 version: 1023.37.5
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [docs(Documentation): [MTM-65940] add single select data point
-selector example
-(#10905)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10905)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65940]:
-https://cumulocity.atlassian.net/browse/MTM-65940?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dawid Janusz <96060763+DawidSAG@users.noreply.github.com>
+Previously, the data point selector documentation only included examples for multi-select usage. With this change, a new example has been added demonstrating the single select mode, where the modal closes immediately after selecting a data point.
