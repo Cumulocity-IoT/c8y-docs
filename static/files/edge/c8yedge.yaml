@@ -255,12 +255,6 @@ spec:
         ## Memory limit in memory units. For example, 1000M or 1G. Defaults to 6144M
         # memory: 6144M
 
-  ## This field enables installation of the Cumulocity Messaging Service, which is required for 
-  ## using the microservice-based data broker and Notifications 2.0.
-  ## This field is optional, and the Messaging Service is not installed if omitted.
-  # messagingService:
-    # enabled: true
-
   ## This field is necessary for one or more of the following reasons:
   ##    - To specify the MongoDB admin credentials.
   ##    - To specify resource limits for the MongoDB server containers deployed by the Edge operator.
