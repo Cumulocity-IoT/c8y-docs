@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed legacy Data Point Explorer integration with global context
+title: Fixed legacy Data point widget integration with global context
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
