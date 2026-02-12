@@ -16,5 +16,9 @@ version: 1023.31.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-11'
+  - label: apj.cumulocity.com
+    date: '2026-02-12'
+  - label: jp.cumulocity.com
+    date: '2026-02-12'
 ---
 The button layout in the confirmation modal has been improved to ensure better visual alignment and consistency in multiple languages.

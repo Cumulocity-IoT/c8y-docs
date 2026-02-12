@@ -16,5 +16,9 @@ version: 1023.32.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-11'
+  - label: apj.cumulocity.com
+    date: '2026-02-12'
+  - label: jp.cumulocity.com
+    date: '2026-02-12'
 ---
 The drawer layout has been improved to provide better spacing, alignment, and overall usability when adding custom columns.

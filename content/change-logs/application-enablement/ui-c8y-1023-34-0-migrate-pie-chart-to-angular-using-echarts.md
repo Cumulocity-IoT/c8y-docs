@@ -16,6 +16,10 @@ version: 1023.34.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-11'
+  - label: apj.cumulocity.com
+    date: '2026-02-12'
+  - label: jp.cumulocity.com
+    date: '2026-02-12'
 ---
 The pie chart component in the Web SDK has been migrated to Angular and now uses ECharts as its underlying charting library. Applications and dashboards that display pie charts will benefit from improved rendering performance and a more consistent experience alongside other Angular-based components in the platform.
 
