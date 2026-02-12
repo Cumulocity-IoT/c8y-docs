@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66075
 version: 1023.43.1
 ---
-Previously, tooltips were not displayed when hovering over data points in the legacy Data Point Graph chart. With this change, the tooltips are now visible again and display the data point information as expected.
+Previously, tooltips were not displayed when hovering over data points in the legacy data point graph chart. With this change, the tooltips are now visible again and display the data point information as expected.
