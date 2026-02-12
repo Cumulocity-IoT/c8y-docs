@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed dismissing error alerts when a referenced device no longer exists
+title: Error alerts can be dismissed when a referenced device no longer exists
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
