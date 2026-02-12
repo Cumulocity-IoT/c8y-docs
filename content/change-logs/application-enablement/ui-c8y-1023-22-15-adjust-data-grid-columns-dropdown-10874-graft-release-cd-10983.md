@@ -20,5 +20,11 @@ environment_availability:
     date: '2026-02-05'
   - label: jp.cumulocity.com
     date: '2026-02-05'
+  - label: emea.cumulocity.com
+    date: '2026-02-06'
+  - label: us.cumulocity.com
+    date: '2026-02-06'
+  - label: cumulocity.com
+    date: '2026-02-06'
 ---
 The data-grid columns dropdown menu was not displaying correctly in certain scenarios, making it difficult for users to manage which columns are visible in their data grids. The dropdown positioning and behavior have been improved to ensure it displays properly and remains accessible when users interact with the column selection controls.

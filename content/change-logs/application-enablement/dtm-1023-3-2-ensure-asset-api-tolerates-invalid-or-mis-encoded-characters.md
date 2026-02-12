@@ -19,5 +19,11 @@ environment_availability:
     date: '2026-02-04'
   - label: jp.cumulocity.com
     date: '2026-02-04'
+  - label: emea.cumulocity.com
+    date: '2026-02-09'
+  - label: us.cumulocity.com
+    date: '2026-02-09'
+  - label: cumulocity.com
+    date: '2026-02-10'
 ---
 Previously, some requests to the Asset API failed due to mis-encoded characters in the JSON request body. This issue has been fixed and such characters are now stripped from the body.

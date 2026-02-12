@@ -16,5 +16,9 @@ version: 1024.0.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-05'
+  - label: apj.cumulocity.com
+    date: '2026-02-11'
+  - label: jp.cumulocity.com
+    date: '2026-02-11'
 ---
 Previously, the asset list in the **Assets** page occasionally appeared empty even when assets were available. This issue has been fixed, and available assets are now properly displayed.

@@ -19,5 +19,11 @@ environment_availability:
     date: '2026-02-04'
   - label: jp.cumulocity.com
     date: '2026-02-04'
+  - label: emea.cumulocity.com
+    date: '2026-02-09'
+  - label: us.cumulocity.com
+    date: '2026-02-09'
+  - label: cumulocity.com
+    date: '2026-02-10'
 ---
 Previously, after reloading the Home page, the **Add asset** button was also displayed if the user lacked the required permissions. This issue has been resolved. The **Add asset** button is now only shown if the user has the appropriate permissions, both on initial load and after reload.

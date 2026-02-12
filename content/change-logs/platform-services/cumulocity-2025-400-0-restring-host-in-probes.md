@@ -19,6 +19,12 @@ environment_availability:
     date: '2026-02-04'
   - label: jp.cumulocity.com
     date: '2026-02-04'
+  - label: emea.cumulocity.com
+    date: '2026-02-09'
+  - label: us.cumulocity.com
+    date: '2026-02-09'
+  - label: cumulocity.com
+    date: '2026-02-10'
 ---
 Until now, the host of a liveness or readiness probe of a microservice could be set in the microservice manifest. 
 To avoid potential security implications, setting the host in manifest probes will be disabled in Q3 2026 for CD versions and in the 2027 annual release. Uploading a microservice that uses the `host` parameter within the readiness or liveness probe will be rejected.

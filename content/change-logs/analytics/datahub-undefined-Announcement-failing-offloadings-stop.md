@@ -1,5 +1,5 @@
 ---
-date: 2024-07-31T00:00:00.000Z
+date: 2024-07-31
 title: Automatic stop of permanently failing offloadings
 product_area: Analytics
 change_type:

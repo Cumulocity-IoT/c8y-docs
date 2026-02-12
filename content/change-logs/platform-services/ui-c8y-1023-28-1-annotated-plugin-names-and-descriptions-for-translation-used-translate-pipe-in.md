@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-02-06'
 title: Translated plugin names and descriptions in the installed plugins list
 product_area: Platform services
 change_type:
@@ -13,5 +13,18 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65874
 version: 1023.28.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-02-06'
+  - label: apj.cumulocity.com
+    date: '2026-02-09'
+  - label: jp.cumulocity.com
+    date: '2026-02-09'
+  - label: emea.cumulocity.com
+    date: '2026-02-10'
+  - label: us.cumulocity.com
+    date: '2026-02-10'
+  - label: cumulocity.com
+    date: '2026-02-10'
 ---
 Plugin names and descriptions are now translated in the installed plugins list in the Administration application.
