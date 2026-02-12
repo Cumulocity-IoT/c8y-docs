@@ -18,7 +18,7 @@ helpcontent:
 
 The global time context is the toolbar at the top of dashboards that lets you control the time range, auto-refresh, and data aggregation for all widgets at once. Instead of setting these options in each widget individually, you configure them once, and all compatible widgets update together.
 
-![Global time context toolbar](/images/users-guide/cockpit/cockpit-global-time-context-toolbar.png)
+![Global time context toolbar](/images/users-guide/cockpit/cockpit-global-time-context-live-mode.png)
 
 <!--PLACEHOLDER: Screenshot showing the full toolbar with all controls visible: Mode toggle, Time Range dropdown, Auto-refresh toggle, Aggregation options-->
 
