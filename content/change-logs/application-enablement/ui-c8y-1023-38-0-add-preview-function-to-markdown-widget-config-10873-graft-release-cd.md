@@ -1,6 +1,6 @@
 ---
 date: ""
-title: add preview function to markdown widget config (#10873) [GRAFT][release/cd] (#11168)
+title: Added live preview to markdown widget configuration
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-65892
 version: 1023.38.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Web SDK): [MTM-65892] add preview function to markdown widget
-config
-(#10873)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10873)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65892]:
-https://cumulocity.atlassian.net/browse/MTM-65892?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dawid Janusz <96060763+DawidSAG@users.noreply.github.com>
+Previously, when configuring the markdown widget, there was no way to see how the content would look without saving and closing the configuration. With this change, a live preview panel is now displayed alongside the configuration, showing the rendered markdown content in real time as users upload a file or provide a URL.
