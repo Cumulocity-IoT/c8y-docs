@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66063
 version: 1023.43.3
 ---
-Previously, the alarm list widget configuration displayed an aggregation picker in the History tab that had no effect, since aggregation is not applicable to alarm data. This option has been removed.
+Previously, the "Alarm list" widget configuration displayed an aggregation picker in the History tab that had no effect, since aggregation is not applicable to alarm data. This option has been removed.
