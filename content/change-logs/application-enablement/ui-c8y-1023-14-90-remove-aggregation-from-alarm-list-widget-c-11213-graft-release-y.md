@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Removed non-functional aggregation option from alarm list widget configuration
+title: Removed non-functional aggregation option from Alarm list widget configuration
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
