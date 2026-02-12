@@ -1,6 +1,6 @@
 ---
 date: 2025-11-20
-title: Resilience support for Smart Rules is now Generally Available
+title: Resilience support for smart rules is now Generally Available
 change_type:
   - value: change-QHu1GdukP
     label: Feature
