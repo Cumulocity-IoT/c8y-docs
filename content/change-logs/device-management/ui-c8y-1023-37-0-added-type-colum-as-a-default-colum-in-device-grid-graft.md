@@ -16,5 +16,9 @@ version: 1023.37.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-11'
+  - label: apj.cumulocity.com
+    date: '2026-02-12'
+  - label: jp.cumulocity.com
+    date: '2026-02-12'
 ---
 The "Device type" column is now part of the default device grid configuration in the devices list of the Device Management application. It is available in the column selector and can be enabled as needed.

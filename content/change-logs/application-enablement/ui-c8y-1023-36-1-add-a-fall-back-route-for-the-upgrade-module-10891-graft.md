@@ -16,5 +16,9 @@ version: 1023.36.1
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-11'
+  - label: apj.cumulocity.com
+    date: '2026-02-12'
+  - label: jp.cumulocity.com
+    date: '2026-02-12'
 ---
 Routing in hybrid applications (applications that share AngularJS and Angular code) could become inaccessible if certain routes are not found, potentially leaving users unable to access functionality. A fallback route has been added to the applications to ensure that users can always access this feature, even if the primary routing path is unavailable. This prevents users from encountering broken navigation paths when accessing features.

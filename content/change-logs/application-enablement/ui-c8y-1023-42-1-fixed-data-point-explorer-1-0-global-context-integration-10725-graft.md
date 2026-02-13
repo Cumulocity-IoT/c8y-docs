@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-02-12'
 title: Fixed legacy Data point widget integration with global context
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,8 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65715
 version: 1023.42.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-02-12'
 ---
 Previously, the legacy "Data point" widget did not correctly respond to global context changes when live mode was enabled, causing the time range not to update properly. With this change, the widget now correctly reflects time range and mode changes from the global context.
