@@ -80,7 +80,7 @@ The services are defined as follows:
 * **Follow-the-sun:** For Gold customers, Provider actively hands over Crisis tickets between global regions (EMEA, APJ, AME) to ensure 24/7 progress.
 * **Number of ATCs**: Restrictions to the number of ATCs apply per Customer, not per contract. Customer may contract for additional ATCs.
 * **Prioritized queuing**: Support tickets are prioritized ahead of other support incidents of the same severity level but lower support level.
-* **Ticket escalation:** If a support ticket requires extra attention due to a serious change in business impact (e.g., an approaching deadline or increased severity), Customer can raise an escalation request via the Support Portal or email. Provider will review the new context and will ensure high visibility on its internal dashboards.
+* **Ticket escalation:** If a support ticket requires extra attention due to a serious change in business impact (for example, an approaching deadline or increased severity), Customer can raise an escalation request via the Support Portal or email. Provider will review the new context and will ensure high visibility on its internal dashboards.
 * **Onboarding:** Provider welcomes new ATCs and provides information about the Support Portal access, support ticket handling process and Support team.
 
 ### Processing customer requests
