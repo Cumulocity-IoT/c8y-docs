@@ -98,7 +98,7 @@ The following conditions apply to all support levels:
 * Customer assigns Authorized Technical Contacts (ATCs) and communicates any changes to the list of ATCs to Provider.
 * Customer's ATC is responsible for cooperating with Provider's Support and providing necessary information to reproduce, troubleshoot and resolve the experienced issue.
 * When a support ticket is submitted by an ATC to Provider's Support Portal, Customer authorizes Provider, for the purposes of troubleshooting and resolving such issue, to access Customer’s cloud environment for the duration of the submitted support ticket.
-* Customer must explain the business impact in the Support ticket. Explaining why an issue is severe (e.g., "Production line stopped", "Upcoming go-live at risk", "Data loss imminent") allows Provider to validate the priority and allocate the right resources immediately.
+* Customer must explain the business impact in the Support ticket. Explaining why an issue is severe (for example, "Production line stopped", "Upcoming go-live at risk", "Data loss imminent") allows Provider to validate the priority and allocate the right resources immediately.
 * Customer ensures availability of ATCs to answer support tickets. While Provider waiting for a response, Response Time counting is paused.
 
 
