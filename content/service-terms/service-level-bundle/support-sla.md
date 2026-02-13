@@ -50,7 +50,7 @@ The services provided vary by support level as highlighted in the following tabl
 | **Service**                          | **Bronze**      | **Silver**                 | **Gold**                 |
 | ------------------------------------ | --------------- | -------------------------- | ------------------------ |
 | **Support Portal access for ATCs**   | 24/7            | 24/7                       | 24/7                     |
-| **Crisis Phone**                     | 9x5*            | 24/7                       | 24/7                     |
+| **Crisis phone**                     | 9x5*            | 24/7                       | 24/7                     |
 | **Number of ATCs**                   | 3               | 7                          | Unlimited                |
 | **Prioritized queuing**              | No              | No                         | Yes                      |
 | **Ticket escalation**                | No              | Yes                        | Yes                      |
