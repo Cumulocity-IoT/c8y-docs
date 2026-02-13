@@ -74,7 +74,7 @@ The services provided vary by support level as highlighted in the following tabl
 
 The services are defined as follows:
 
-* **Crisis Phone**: The support telephone number is available in the Support Portal. Telephone support is provided in English only.
+* **Crisis phone**: The support telephone number is available in the Support Portal. Telephone support is provided in English only.
 * **Response times**: Customer will receive an initial human response to a new support ticket within the defined initial response times. Follow-up communication times of updates to existing support tickets are targeted but not guaranteed.
 * **Resolution plan for Crisis:** Within the first 4 hours, Provider aims to provide a concrete resolution plan, detailing the intended solution, a workaround, or a documented action plan with timelines.
 * **Follow-the-sun:** For Gold customers, Provider actively hands over Crisis tickets between global regions (EMEA, APJ, AME) to ensure 24/7 progress.
