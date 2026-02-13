@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add fit to bounds option to map settings
+title: Added option to automatically adjust to bounds in the Map widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
