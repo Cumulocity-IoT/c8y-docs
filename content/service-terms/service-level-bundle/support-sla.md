@@ -53,7 +53,7 @@ The services provided vary by support level as highlighted in the following tabl
 | **Crisis Phone**                     | 9x5*            | 24/7                       | 24/7                     |
 | **Number of ATCs**                   | 3               | 7                          | Unlimited                |
 | **Prioritized queuing**              | No              | No                         | Yes                      |
-| **Ticket Escalation**                | No              | Yes                        | Yes                      |
+| **Ticket escalation**                | No              | Yes                        | Yes                      |
 | **Onboarding**                       | Email           | Email                      | Email and/or web meeting |
 
 *\* During Business Hours.*
