@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-64153
 version: 1022.20.0
 ---
-As previously [announced](/change-logs/#public-options-1-1-0-dark-theme-available-with-default-branding), a new version of the default branding will be rolled out to make the dark theme available for users.
+As previously [announced](https://comulocity.com/change-logs/#public-options-1-1-0-dark-theme-available-with-default-branding), a new version of the default branding will be rolled out to make the dark theme available for users.
 By default, the light theme remains selected, but users can switch between themes via the right drawer.
 
 Tenants having a customized branding will not be affected by this change.
