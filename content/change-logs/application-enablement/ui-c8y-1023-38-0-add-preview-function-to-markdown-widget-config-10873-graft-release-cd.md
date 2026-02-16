@@ -20,5 +20,11 @@ environment_availability:
     date: '2026-02-13'
   - label: jp.cumulocity.com
     date: '2026-02-13'
+  - label: emea.cumulocity.com
+    date: '2026-02-16'
+  - label: us.cumulocity.com
+    date: '2026-02-16'
+  - label: cumulocity.com
+    date: '2026-02-16'
 ---
 Previously, when configuring the "Markdown" widget, there was no way to see how the content would look without saving and closing the configuration. With this change, a live preview panel is now displayed alongside the configuration, showing the rendered markdown content in real time as users upload a file or provide a URL.

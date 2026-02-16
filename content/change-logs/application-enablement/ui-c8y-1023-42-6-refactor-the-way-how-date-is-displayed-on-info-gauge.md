@@ -18,5 +18,9 @@ version: 1023.42.6
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-13'
+  - label: apj.cumulocity.com
+    date: '2026-02-16'
+  - label: jp.cumulocity.com
+    date: '2026-02-16'
 ---
 Previously, the "Info gauge" widget displayed dates in a different format than other dashboard elements, creating inconsistency in how temporal information was presented across your dashboards. The date formatting has been standardized so that the "Info gauge" widget now uses the same date format as other dashboard components. This ensures a uniform and predictable experience and makes it easier to read and interpret temporal data consistently.
