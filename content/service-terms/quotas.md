@@ -55,14 +55,14 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 ### Realtime APIs
 
-| Quota                                                                                                                       | Type |    Value |
-|-----------------------------------------------------------------------------------------------------------------------------|------|---------:|
-| [MQTT message size](/device-integration/mqtt/) (Core MQTT)                                                                  | Hard |    16 KB |
-| [Notifications 2.0 message backlog](https://{{< domain-c8y >}}/api/core/#tag/About-notifications-2.0)                       | Hard |   25 MiB |
-| [Notifications 2.0 time-to-live](https://{{< domain-c8y >}}/api/core/#tag/About-notifications-2.0)                          | Hard | 36 hours |
+| Quota                                                                                                                        | Type |    Value |
+|------------------------------------------------------------------------------------------------------------------------------|------|---------:|
+| [MQTT message size](/device-integration/mqtt/) (Core MQTT)                                                                   | Hard |    16 KB |
+| [Notifications 2.0 message backlog](https://{{< domain-c8y >}}/api/core/#tag/About-notifications-2.0)                        | Hard |   25 MiB |
+| [Notifications 2.0 time-to-live](https://{{< domain-c8y >}}/api/core/#tag/About-notifications-2.0)                           | Hard | 36 hours |
 | [Microservice-based data broker message backlog](/data-broker/ms-data-broker/#microservice-based-data-broker-service-quotas) | Hard |   50 MiB |
-| [Microservice-based data broker time-to-live](/data-broker/ms-data-broker/#microservice-based-data-broker-service-quotas)   | Hard | 36 hours |
-| Streaming-Ananlytics message backlog  | Hard |      1Gi |
+| [Microservice-based data broker time-to-live](/data-broker/ms-data-broker/#microservice-based-data-broker-service-quotas)    | Hard | 36 hours |
+| Streaming Analytics message backlog                                                                                          | Hard |     1 Gi |
 
 ### MQTT Service
 
