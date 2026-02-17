@@ -17,5 +17,3 @@ version: "1023.3.3"
 Improved validation feedback for Complex Properties — fields with errors
 are now clearly highlighted, making it easier to identify and correct
 issues.
-
-Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
