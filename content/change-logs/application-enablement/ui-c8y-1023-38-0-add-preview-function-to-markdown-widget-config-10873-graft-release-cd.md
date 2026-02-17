@@ -1,18 +1,18 @@
 ---
 date: '2026-02-12'
-title: Default dashboard reset now displays with 24 columns
+title: Added live preview to Markdown widget configuration
 product_area: Application enablement & solutions
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+  - value: change-QHu1GdukP
+    label: Feature
 component:
   - value: component-YbYJ3gLU_
     label: Web SDK
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-ticket: MTM-65903
-version: 1023.37.4
+ticket: MTM-65892
+version: 1023.38.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-12'
@@ -27,4 +27,4 @@ environment_availability:
   - label: cumulocity.com
     date: '2026-02-16'
 ---
-The default dashboard configuration reset previously used a 12-column layout. It's now updated to use a 24-column grid layout, matching the existing dashboards.
+Previously, when configuring the "Markdown" widget, there was no way to see how the content would look without saving and closing the configuration. With this change, a live preview panel is now displayed alongside the configuration, showing the rendered markdown content in real time as users upload a file or provide a URL.

@@ -1,6 +1,6 @@
 ---
 date: '2026-02-12'
-title: Default dashboard reset now displays with 24 columns
+title: Error alerts can be dismissed when a referenced device no longer exists
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -11,8 +11,8 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-ticket: MTM-65903
-version: 1023.37.4
+ticket: MTM-65519
+version: 1023.37.5
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-12'
@@ -27,4 +27,4 @@ environment_availability:
   - label: cumulocity.com
     date: '2026-02-16'
 ---
-The default dashboard configuration reset previously used a 12-column layout. It's now updated to use a 24-column grid layout, matching the existing dashboards.
+Previously, when a device referenced by a widget's data point configuration was deleted, an error alert was displayed that could not be dismissed by the user. With this change, the error alert can now be dismissed as expected.

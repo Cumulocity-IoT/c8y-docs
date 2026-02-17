@@ -94,19 +94,11 @@ This means that changes made to this dashboard are automatically applied to all 
 You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from child devices because the structure of these devices might be different from device to device.
 {{< /c8y-admon-info >}}
 
-### Dashboard time range {#global-time-context}
+### Global time context {#global-time-context}
 
-In the widget configuration, you can specify a dashboard time range for your dashboards. When using a dashboard time range, all data in a dashboard will be aligned to this range. After setting the dashboard time range in a first widget, this shared context can then be used by other widgets that are configured to use the dashboard date context.
+Dashboards support a global time context that allows you to control the time range, auto-refresh, and data aggregation for all connected widgets at once. Instead of configuring each widget individually, you can set these options in a central toolbar and all compatible widgets update together.
 
-The dashboard time range can be set to any time span, depending on the monitoring needs, by using a custom date picker. The time range is displayed at the top of the dashboard, so you can immediately see the context for which the data is presented. Additionally, you can share dashboards with a specific time context by including the time context parameters in a URL. URL parameters will be set automatically when users set the dashboard time context with the picker.
-
-{{< c8y-admon-info >}}
-This feature is currently available for the following widgets: Event list, Data graph, and Map.
-{{< /c8y-admon-info >}}
-
-<img src="/images/users-guide/cockpit/cockpit-dashboard-global-time.png" name="Global time context"/>
-
-Widgets synchronized with the dashboard time range are indicated by a respective icon at the top right of the widget.
+For details, see [Global time context](/cockpit/global-time-context/).
 
 ### To edit a dashboard {#to-edit-a-dashboard}
 
