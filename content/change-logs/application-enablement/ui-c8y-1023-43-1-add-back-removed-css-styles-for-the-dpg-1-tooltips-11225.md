@@ -16,5 +16,9 @@ version: 1023.43.1
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-13'
+  - label: apj.cumulocity.com
+    date: '2026-02-16'
+  - label: jp.cumulocity.com
+    date: '2026-02-16'
 ---
 Previously, tooltips were not displayed when hovering over data points in the legacy data point graph chart. With this change, the tooltips are now visible again and display the data point information as expected.

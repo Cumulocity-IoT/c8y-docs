@@ -20,5 +20,11 @@ environment_availability:
     date: '2026-02-13'
   - label: jp.cumulocity.com
     date: '2026-02-13'
+  - label: emea.cumulocity.com
+    date: '2026-02-16'
+  - label: us.cumulocity.com
+    date: '2026-02-16'
+  - label: cumulocity.com
+    date: '2026-02-16'
 ---
 The default dashboard configuration reset previously used a 12-column layout. It's now updated to use a 24-column grid layout, matching the existing dashboards.
