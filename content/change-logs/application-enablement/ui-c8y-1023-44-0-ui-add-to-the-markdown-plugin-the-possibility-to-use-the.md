@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65893
 version: 1023.44.0
 ---
-Previously, the markdown widget only supported content from an uploaded file or a URL. With this change, a new "Write Markdown" option has been added, allowing users to write and edit markdown content directly in the widget configuration using a built-in editor.
+Previously, the "Markdown" widget only supported content from an uploaded file or a URL. With this change, a new "Write Markdown" option has been added, allowing users to write and edit markdown content directly in the widget configuration using a built-in editor.
