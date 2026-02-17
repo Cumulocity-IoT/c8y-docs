@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Generate agents as a JSON file in the application (#10446) [GRAFT][release/cd] (#11274)
+title: Generate and deploy agents within your application
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
