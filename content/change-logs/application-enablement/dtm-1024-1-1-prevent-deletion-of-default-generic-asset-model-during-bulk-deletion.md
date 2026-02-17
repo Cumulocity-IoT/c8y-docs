@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Prevent deletion of Default Generic Asset model during bulk deletion"
+title: "Prevent deletion of default generic asset model during bulk deletion"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
