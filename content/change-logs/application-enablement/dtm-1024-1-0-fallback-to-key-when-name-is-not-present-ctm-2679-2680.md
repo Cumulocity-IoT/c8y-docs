@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fallback to key when Name is not present"
+title: "Added fallback to key for asset models and properties without name"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -17,5 +17,5 @@ version: "1024.1.0"
 Previously, if an asset model or property was created without a name,
 blank values were displayed wherever the model or property name was
 referenced. This has now been improved so that when a name is not
-available, it will automatically falls back to using the corresponding
+available, it will automatically fall back to using the corresponding
 key for both asset models and properties across all references.
