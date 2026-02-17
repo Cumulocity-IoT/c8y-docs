@@ -72,7 +72,7 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 | [MQTT message size](/device-integration/mqtt-service/#payload-restrictions) system-wide limit   | Hard |   128 KiB |
 | [MQTT message size](/device-integration/mqtt-service/#payload-restrictions) per-tenant quota    | Soft |   ??? KiB |
 | [Topics per tenant](/device-integration/mqtt-service/#topic-limit)                              |      | Unlimited |
-| [Per-topic message backlog](/device-integration/mqtt-service/#topic-limit)                      | Hard |    25 MiB |
+| [Per-topic message backlog](/device-integration/mqtt-service/#message-backlog-quota)            | Hard |     1 GiB |
 | [Per-topic time-to-live](/device-integration/mqtt-service/#topic-limit)                         | Hard |  36 hours |
 
 ### Applications and services
