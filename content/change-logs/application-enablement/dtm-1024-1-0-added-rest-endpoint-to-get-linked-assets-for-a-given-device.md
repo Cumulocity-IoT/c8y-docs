@@ -14,7 +14,7 @@ build_artifact:
 ticket: "CTM-2670"
 version: "1024.1.0"
 ---
-A new variant of the REST endpoint /service/dtm/assets/linkedSeries/opposites/{deviceId} that returns a LinkedAsset collection was added. To use it, the 'Accept' header 'application/vnd.com.nsn.cumulocity.linkedassetscollection+json' must be used.
+A new variant of the REST endpoint `/service/dtm/assets/linkedSeries/opposites/{deviceId}` that returns a LinkedAsset collection was added. To use it, the 'Accept' header `application/vnd.com.nsn.cumulocity.linkedassetscollection+json` must be used.
 
 Co-authored-by: namnhatpham-sag-bot <namnhatpham-sag-bot@users.noreply.github.com>
 Co-authored-by: Michael Voigt <91879843+mvoigt-sag@users.noreply.github.com>
