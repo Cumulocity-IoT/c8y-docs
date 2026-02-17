@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fixed an issue causing slow performance when querying an Asset and its children. [CTM-2706] (#2702)"
+title: "Fixed an issue causing slow performance when querying an Asset and its children."
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -11,7 +11,7 @@ component:
 build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
-ticket: ""
+ticket: "CTM-2706"
 version: "1024.1.1"
 ---
 Optimized the query logic for retrieving an Asset and its children,
