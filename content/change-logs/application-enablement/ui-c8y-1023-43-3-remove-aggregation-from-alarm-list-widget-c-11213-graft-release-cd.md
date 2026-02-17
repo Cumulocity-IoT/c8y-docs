@@ -16,5 +16,9 @@ version: 1023.43.3
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-16'
+  - label: apj.cumulocity.com
+    date: '2026-02-17'
+  - label: jp.cumulocity.com
+    date: '2026-02-17'
 ---
 Previously, the "Alarm list" widget configuration displayed an aggregation picker in the History tab that had no effect, since aggregation is not applicable to alarm data. This option has been removed.

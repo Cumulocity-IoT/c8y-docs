@@ -22,5 +22,11 @@ environment_availability:
     date: '2026-02-16'
   - label: jp.cumulocity.com
     date: '2026-02-16'
+  - label: emea.cumulocity.com
+    date: '2026-02-17'
+  - label: us.cumulocity.com
+    date: '2026-02-17'
+  - label: cumulocity.com
+    date: '2026-02-17'
 ---
 The application filter on the **Applications** tab in the tenant details previously matched against non-translated application names in the background, which meant that filtering by an application name in your currently selected language would not return any results. This issue has been fixed, and the filter now correctly matches against the translated application names, allowing you to search for and find applications by their names as they appear in your selected language. This ensures a more intuitive filtering experience when managing applications for your tenants, as you can now reliably search using the application names visible in your user interface.
