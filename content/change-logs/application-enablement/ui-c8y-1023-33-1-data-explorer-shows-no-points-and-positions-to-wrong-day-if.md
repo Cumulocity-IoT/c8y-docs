@@ -16,5 +16,15 @@ version: 1023.33.1
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-11'
+  - label: apj.cumulocity.com
+    date: '2026-02-12'
+  - label: jp.cumulocity.com
+    date: '2026-02-12'
+  - label: emea.cumulocity.com
+    date: '2026-02-13'
+  - label: us.cumulocity.com
+    date: '2026-02-13'
+  - label: cumulocity.com
+    date: '2026-02-13'
 ---
 When selecting a custom time range in the data explorer, chart lines were not rendered and data points were assigned to incorrect days. Data points are now displayed correctly on their actual dates and times when using custom time ranges.
