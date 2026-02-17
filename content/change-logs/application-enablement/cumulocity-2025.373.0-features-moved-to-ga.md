@@ -9,8 +9,8 @@ component:
   - value: component-YdSEScrEC
     label: Cockpit
 build_artifact:
-  - value: tc-pjJiURv9Y
-    label: ui-c8y
+  - value: tc-QHwMfWtBk7
+    label: cumulocity
 ticket: MTM-65134
 version: 2025.373.0
 ---
