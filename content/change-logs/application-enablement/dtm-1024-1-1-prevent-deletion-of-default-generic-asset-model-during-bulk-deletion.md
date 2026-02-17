@@ -15,6 +15,6 @@ ticket: ""
 version: "1024.1.1"
 ---
 Previously, users could delete the default generic asset model when
-using bulk delete. Since this model is required as the default, it
+using bulk deletion. Since this model is required as the default, it
 shouldn't be deletable. This update ensures that the default generic asset
 model cannot be deleted during bulk deletion.
