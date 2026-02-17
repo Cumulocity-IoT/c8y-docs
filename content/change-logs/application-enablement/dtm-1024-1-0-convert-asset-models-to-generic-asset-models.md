@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Convert asset models to generic asset models"
+title: "Asset models can now be converted into generic asset models"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
@@ -14,6 +14,6 @@ build_artifact:
 ticket: "CTM-2449"
 version: "1024.1.0"
 ---
-DTM now supports converting asset models into generic asset models. This
+The Digital Twin Manager now supports converting asset models into generic asset models. This
 conversion is one-way: once an asset model is converted, it becomes a
 generic asset model and cannot be reverted back.
