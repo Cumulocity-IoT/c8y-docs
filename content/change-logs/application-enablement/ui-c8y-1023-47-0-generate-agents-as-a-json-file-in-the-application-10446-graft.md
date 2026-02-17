@@ -14,22 +14,4 @@ build_artifact:
 ticket: MTM-65443
 version: 1023.47.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(web sdk): [MTM-65443] Generate agents as a JSON file in the
-application
-(#10446)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10446)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65443]:
-https://cumulocity.atlassian.net/browse/MTM-65443?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Jan Hommes <janhommes@users.noreply.github.com>
-Co-authored-by: Tristan Bastian <tristan.bastian@cumulocity.com>
-Co-authored-by: Jakub Drewniak <103751383+jdre-c8y@users.noreply.github.com>
+The Web SDK now supports exporting agent configurations as a JSON file directly from the application. Previously, agent configurations could only be managed through the UI without an easy way to export them for backup, sharing, or version control purposes. With this enhancement, you can now generate an agent configuration within your application development, making it easier to manage, document, and transfer agent setups across different environments or instances. This is particularly useful for users who need to maintain consistent agent configurations across multiple deployments or who want to keep a version-controlled record of their agent settings.
