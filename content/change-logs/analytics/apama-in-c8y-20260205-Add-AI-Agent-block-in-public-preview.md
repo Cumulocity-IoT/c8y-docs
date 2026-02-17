@@ -1,5 +1,5 @@
 ---
-date:
+date: '2026-02-12'
 title: Added AI Agent block in Public Preview
 change_type:
   - value: change-pXAlHAWka
@@ -13,6 +13,9 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-5074
 version: 27.40.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-02-12'
 ---
 
 A new AI Agent block has been added to Analytics Builder. This block queries an AI Agent Manager agent using its inputs and produces the agent's text response as output.
