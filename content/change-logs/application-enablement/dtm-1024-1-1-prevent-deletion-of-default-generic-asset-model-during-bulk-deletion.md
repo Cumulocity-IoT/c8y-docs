@@ -11,7 +11,7 @@ component:
 build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
-ticket: ""
+ticket: "CTM-2726"
 version: "1024.1.1"
 ---
 Previously, users could delete the default generic asset model when
