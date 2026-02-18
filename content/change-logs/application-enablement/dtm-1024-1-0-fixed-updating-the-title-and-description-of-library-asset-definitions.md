@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fixed updating the title and description of library Asset Definitions"
+title: "Fixed updating the title and description of library asset definitions"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
