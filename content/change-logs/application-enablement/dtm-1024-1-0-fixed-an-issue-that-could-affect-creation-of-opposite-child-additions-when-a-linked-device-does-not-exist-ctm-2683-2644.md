@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fixed an issue that could affect creation of opposite ChildAdditions when a linked device does not exist."
+title: "Fixed an issue with the creation of child additions"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
