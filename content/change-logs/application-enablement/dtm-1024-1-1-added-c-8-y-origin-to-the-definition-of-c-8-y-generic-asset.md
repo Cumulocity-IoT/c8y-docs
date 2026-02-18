@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Added c8y_Origin to the definition of c8y_GenericAsset."
+title: "Added c8y_Origin to the definition of c8y_GenericAsset"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
@@ -14,5 +14,5 @@ build_artifact:
 ticket: "CTM-2728"
 version: "1024.1.1"
 ---
-Added the `c8y_Origin` fragment to the `c8y_GenericAsset` Asset
-Definition to indicate that it is part of the library provided by DTM.
+The`c8y_Origin` fragment has been added to the `c8y_GenericAsset` asset
+definition to indicate that it is part of the library provided by Digital Twin Manager.

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fixed an issue where the title and description of provided Asset Definitions were being reset after microservice restart"
+title: "Title and description of asset definitions no longer reset after microservice restart"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -14,7 +14,7 @@ build_artifact:
 ticket: "CTM-2673"
 version: "1024.1.1"
 ---
-Fixed an issue where title and description of provided Asset Definitions
-were incorrectly overwritten instead of being preserved from the
-tenant’s existing Asset Definition, while schema and other metadata are
-updated from the library.
+Previously, the title and description of provided asset definitions
+were incorrectly reset after a microservice restart instead of being preserved from the
+tenant’s existing asset definition, while schema and other metadata were
+updated from the library. This issue has been fixed. The title and description of asset definitions are no longer overwritten after a microservice restart.

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fixed an issue causing slow performance when querying an Asset and its children."
+title: "Improved performance when querying an asset and its children"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -14,5 +14,5 @@ build_artifact:
 ticket: "CTM-2706"
 version: "1024.1.1"
 ---
-Optimized the query logic for retrieving an Asset and its children,
+The query logic for retrieving an asset and its children has been optimized,
 significantly improving performance in hierarchical asset lookups.
