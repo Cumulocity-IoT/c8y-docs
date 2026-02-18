@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issue with the wrong event/alarm being displayed. (#10907) [GRAFT][release/y2026] (#11141)
+title: fixed issue with wrong event or alarm text being displayed in data graph or data explorer chart.
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
