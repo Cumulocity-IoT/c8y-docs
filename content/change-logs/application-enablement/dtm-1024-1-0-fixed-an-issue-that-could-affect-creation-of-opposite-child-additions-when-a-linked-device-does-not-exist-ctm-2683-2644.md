@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2683"
 version: "1024.1.0"
 ---
-Previously, there was an issue in the implementation of the creation of the ChildAdditions for a device when a linked device did not exist. This is fixed now.
+Previously, there was an issue with the creation of child additions for a device when a linked device did not exist. This issue has been fixed now.

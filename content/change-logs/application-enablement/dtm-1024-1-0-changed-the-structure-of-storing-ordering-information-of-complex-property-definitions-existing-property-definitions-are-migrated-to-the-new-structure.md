@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Changed the structure of storing ordering information of complex Property Definitions; existing Property Definitions are migrated to the new structure"
+title: "Changed the storage of ordering information of complex property definitions
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
@@ -14,8 +14,8 @@ build_artifact:
 ticket: "CTM-1918"
 version: "1024.1.0"
 ---
-Previously the field ordering information of complex Property Definition
-was stored in the `c8y_Order` array. This changed now and the order is
+Previously, the field ordering information of complex property definitions
+was stored in the `c8y_Order` array. With this change, the order is
 stored in the `order` property within each field of the JSON schema.
-Existing Property Definitions are migrated to the new structure when the
+Existing property definitions are migrated to the new structure when the
 microservice is subscribed.
