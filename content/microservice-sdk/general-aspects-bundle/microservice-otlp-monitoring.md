@@ -14,11 +14,11 @@ OpenTelemetry is an open standard with implementations supporting several [langu
 {{< product-c8y-iot >}} provides the option of zero-code instrumentation for microservices developed with the Microservice SDK for Java. 
 Refer to the [Microservice SDK for Java](/microservice-sdk/java/#otlp-configuration) section for details.
 
-### OTLP Configuration {#otlp-configuration}
+### OTLP configuration {#otlp-configuration}
 Microservices can obtain the current OTLP configuration from their individual [tenant options](https://cumulocity.com/api/core/2025/#tag/Options).
 The category names for tenant options assigned to a microservice can be defined by:
 
-- The settingsCategory defined in the microservice manifest
+- The `settingsCategory` defined in the microservice manifest
 - The microservice’s context path
 - The microservice name
 
