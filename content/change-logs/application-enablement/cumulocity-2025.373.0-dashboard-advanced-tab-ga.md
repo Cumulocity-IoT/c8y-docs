@@ -1,6 +1,6 @@
 ---
 date:
-title: Advanced dashboard moved to General Availability
+title: Advanced dashboard feature moved to General Availability
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
