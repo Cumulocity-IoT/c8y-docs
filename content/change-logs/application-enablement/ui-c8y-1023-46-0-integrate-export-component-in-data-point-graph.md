@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Integrate export component in data point graph.
+title: export functionality now available in data point graphs
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
