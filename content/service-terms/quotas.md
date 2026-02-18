@@ -65,15 +65,15 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 ### MQTT Service {#mqtt-service}
 
-| Quota                                                                                           | Type |     Value |
-| ----------------------------------------------------------------------------------------------- | ---- | --------: |
-| [MQTT client identifier length](/device-integration/mqtt-service/#client-id)                    | Hard | 128 bytes |
-| [MQTT topic name length](/device-integration/mqtt-service/#mqtt-topics)                         | Hard | 256 bytes |
-| [MQTT message size](/device-integration/mqtt-service/#payload-restrictions) system-wide limit   | Hard |   128 KiB |
-| [MQTT message size](/device-integration/mqtt-service/#payload-restrictions) per-tenant quota    | Soft |   ??? KiB |
-| [Topics per tenant](/device-integration/mqtt-service/#topic-limit)                              |      | Unlimited |
-| [Per-topic message backlog](/device-integration/mqtt-service/#topic-limit)                      | Hard |    25 MiB |
-| [Per-topic time-to-live](/device-integration/mqtt-service/#topic-limit)                         | Hard |  36 hours |
+| Quota                                                                                                    | Type |     Value |
+| -------------------------------------------------------------------------------------------------------- | ---- | --------: |
+| [MQTT client identifier length](/device-integration/mqtt-service/#client-id)                             | Hard | 128 bytes |
+| [MQTT topic name length](/device-integration/mqtt-service/#mqtt-topics)                                  | Hard | 256 bytes |
+| [MQTT message size](/device-integration/mqtt-service/#payload-restrictions) system-wide limit            | Hard |   128 KiB |
+| [MQTT message size](/device-integration/mqtt-service/#payload-restrictions) per-tenant quota             | Soft |   ??? KiB |
+| [MQTT topics per tenant](/device-integration/mqtt-service/#topic-limit)                                  |      | Unlimited |
+| [Message backlog](/device-integration/mqtt-service/#message-backlog-quota) total for **all** MQTT topics | Hard |     1 GiB |
+| [Message time-to-live](/device-integration/mqtt-service/#topic-limit)                                    | Hard |  36 hours |
 
 ### Applications and services
 
