@@ -20,5 +20,11 @@ environment_availability:
     date: '2026-02-16'
   - label: jp.cumulocity.com
     date: '2026-02-16'
+  - label: emea.cumulocity.com
+    date: '2026-02-17'
+  - label: us.cumulocity.com
+    date: '2026-02-17'
+  - label: cumulocity.com
+    date: '2026-02-17'
 ---
 When viewing empty state components, such as widget configuration previews (for example, the "Linear gauge" widget's empty state) an extra space appeared between the text and the end punctuation mark (for example, "text ."). This was caused by improper formatting in the HTML templates used to render these previews. The underlying template formatting has been corrected to eliminate these extra spaces, which also prevents similar spacing issues from occurring in future widget previews and other UI elements that use the same templates.
