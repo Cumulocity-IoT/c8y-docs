@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65902
 version: 1023.45.0
 ---
-Previously, when viewing events or alarms in the data explorer or data point graph, incorrect events or alarms text could be displayed to users, potentially confusing when monitoring device data or troubleshooting issues. This issue has been fixed, and the chart now properly displays the correct event or alarm text corresponding to the selected item.
+Previously, when viewing events or alarms in the data explorer or data point graph, incorrect events or alarms text could be displayed to users, potentially causing confusion when monitoring device data or troubleshooting issues. This issue has been fixed, and the chart now properly displays the correct event or alarm text corresponding to the selected item.
