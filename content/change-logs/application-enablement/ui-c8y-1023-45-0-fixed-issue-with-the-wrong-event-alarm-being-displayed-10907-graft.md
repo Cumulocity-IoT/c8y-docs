@@ -3,8 +3,8 @@ date: ""
 title: Data explorer and data point graph display correct event and alarm texts 
 product_area: Application enablement & solutions
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+  - value: change-VSkj2iV9m
+    label: Fix
 component:
   - value: component-YbYJ3gLU_
     label: Web SDK
