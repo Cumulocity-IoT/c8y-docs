@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Changed the storage of ordering information of complex property definitions
+title: "Changed the storage of ordering information of complex property definitions"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
