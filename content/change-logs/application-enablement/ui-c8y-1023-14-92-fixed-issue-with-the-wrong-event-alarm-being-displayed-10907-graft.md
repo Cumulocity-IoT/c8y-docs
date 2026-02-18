@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fixed issue with wrong event or alarm text being displayed in data graph or data explorer chart.
+title: Data explorer and data point graph display correct event and alarm texts 
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
