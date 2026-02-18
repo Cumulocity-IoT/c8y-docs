@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2642"
 version: "1024.1.0"
 ---
-Previously, there was an issue with the update of the library Asset Definitions which replaced a custom title and description of such a Definition with the default values after the microservice was resubscribed. This is fixed now.
+Previously, custom titles and descriptions of library asset definitions were replaced with the default values after the microservice was resubscribed. This issue has been fixed.
