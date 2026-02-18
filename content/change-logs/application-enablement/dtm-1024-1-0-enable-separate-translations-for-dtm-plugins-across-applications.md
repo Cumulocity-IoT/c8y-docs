@@ -14,7 +14,7 @@ build_artifact:
 ticket: "CTM-2697"
 version: "1024.1.0"
 ---
-Previously, when DTM (Digital Twin Manager) plugins were integrated with other applications,
+Previously, when Digital Twin Manager (DTM) plugins were integrated with other applications,
 the same translations were shared, with no way to differentiate between
 DTM specific-text and other application text. Now, users can define and
 use separate translations for DTM plugins, allowing DTM and other
