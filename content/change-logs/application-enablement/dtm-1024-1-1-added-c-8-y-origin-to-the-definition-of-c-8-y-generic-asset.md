@@ -15,4 +15,4 @@ ticket: "CTM-2728"
 version: "1024.1.1"
 ---
 The`c8y_Origin` fragment has been added to the `c8y_GenericAsset` asset
-definition to indicate that it is part of the library provided by Digital Twin Manager.
+definition to indicate that it is part of the library provided by the Digital Twin Manager.
