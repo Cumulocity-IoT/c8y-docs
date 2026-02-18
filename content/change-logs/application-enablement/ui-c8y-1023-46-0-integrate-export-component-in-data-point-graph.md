@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-64997
 version: 1023.46.0
 ---
-The data point graph widget previously did not include export capabilities, limiting users' ability to extract and share graph data. The export component has now been integrated into the data point graph, allowing users to export graph data directly from the widget interface. This enhancement enables better data analysis workflows.
+The "Data point graph" widget previously did not include export capabilities, limiting the user's ability to extract and share graph data. The export component has now been integrated into the data point graph, allowing users to export graph data directly from the widget interface. This enhancement enables better data analysis workflows.
