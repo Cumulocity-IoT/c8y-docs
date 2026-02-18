@@ -1,6 +1,6 @@
 ---
-date: ""
-title: Data explorer and data point graph display correct event and alarm texts 
+date: '2026-02-18'
+title: Data explorer and data point graph display correct event and alarm texts
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -13,5 +13,18 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65902
 version: 1023.45.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-02-18'
+  - label: apj.cumulocity.com
+    date: '2026-02-18'
+  - label: jp.cumulocity.com
+    date: '2026-02-18'
+  - label: emea.cumulocity.com
+    date: '2026-02-18'
+  - label: us.cumulocity.com
+    date: '2026-02-18'
+  - label: cumulocity.com
+    date: '2026-02-18'
 ---
 Previously, when viewing events or alarms in the data explorer or data point graph, incorrect events or alarms text could be displayed to users, potentially causing confusion when monitoring device data or troubleshooting issues. This issue has been fixed, and the chart now properly displays the correct event or alarm text corresponding to the selected item.

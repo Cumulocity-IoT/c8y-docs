@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-02-18'
 title: Support to generate and deploy agents within your application
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,18 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65443
 version: 1023.47.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-02-18'
+  - label: apj.cumulocity.com
+    date: '2026-02-18'
+  - label: jp.cumulocity.com
+    date: '2026-02-18'
+  - label: emea.cumulocity.com
+    date: '2026-02-18'
+  - label: us.cumulocity.com
+    date: '2026-02-18'
+  - label: cumulocity.com
+    date: '2026-02-18'
 ---
 The Web SDK now supports exporting agent configurations as a JSON file directly from the application. Previously, agent configurations could only be managed through the UI without an easy way to export them for backup, sharing, or version control purposes. With this enhancement, you can now generate an agent configuration within your application development, making it easier to manage, document, and transfer agent setups across different environments or instances. This is particularly useful for users who need to maintain consistent agent configurations across multiple deployments or who want to keep a version-controlled record of their agent settings.
