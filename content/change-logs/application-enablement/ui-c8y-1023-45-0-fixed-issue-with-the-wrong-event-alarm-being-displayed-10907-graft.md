@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-65902
 version: 1023.45.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Web SDK): [MTM-65902] Fixed issue with the wrong event/alarm
-being displayed.
-(#10907)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10907)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65902]:
-https://cumulocity.atlassian.net/browse/MTM-65902?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+When viewing events or alarms in the data explorer or data graph chart, there was an issue where incorrect events or alarms text could be displayed to users, potentially causing confusion when monitoring device data or troubleshooting issues. This has been corrected, and the chart now properly displays the correct event or alarm text corresponding to the selected item.
