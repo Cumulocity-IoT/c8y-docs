@@ -20,6 +20,12 @@ environment_availability:
     date: '2026-02-11'
   - label: jp.cumulocity.com
     date: '2026-02-11'
+  - label: emea.cumulocity.com
+    date: '2026-02-16'
+  - label: us.cumulocity.com
+    date: '2026-02-16'
+  - label: cumulocity.com
+    date: '2026-02-17'
 ---
 
 The deprecated EPL API (`com.apama.cumulocity.mqttservice`) is removed from Streaming Analytics. This API was provided for the MQTT Service tenant isolation feature preview.

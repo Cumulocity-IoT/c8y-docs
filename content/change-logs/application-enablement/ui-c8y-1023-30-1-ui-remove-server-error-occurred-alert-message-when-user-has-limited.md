@@ -22,5 +22,11 @@ environment_availability:
     date: '2026-02-12'
   - label: jp.cumulocity.com
     date: '2026-02-12'
+  - label: emea.cumulocity.com
+    date: '2026-02-13'
+  - label: us.cumulocity.com
+    date: '2026-02-13'
+  - label: cumulocity.com
+    date: '2026-02-13'
 ---
 Previously, when users without alarm permissions viewed the alarms page, repeated "server error occurred" alerts appeared, hiding the actual permission message. With this change, the misleading error alerts have been removed. The alarms view and its navigator entry are now hidden for users without alarm permissions, showing a clear "You don't have permission to view alarms" message instead.

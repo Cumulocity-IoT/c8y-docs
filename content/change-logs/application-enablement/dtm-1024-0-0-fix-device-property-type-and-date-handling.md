@@ -20,6 +20,12 @@ environment_availability:
     date: '2026-02-11'
   - label: jp.cumulocity.com
     date: '2026-02-11'
+  - label: emea.cumulocity.com
+    date: '2026-02-16'
+  - label: us.cumulocity.com
+    date: '2026-02-16'
+  - label: cumulocity.com
+    date: '2026-02-17'
 ---
 Previously, device properties in the "Asset properties" widget were stored
 with an incorrect type, and date fields in complex properties displayed
