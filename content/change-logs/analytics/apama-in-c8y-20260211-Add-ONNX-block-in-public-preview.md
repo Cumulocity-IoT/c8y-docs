@@ -15,7 +15,7 @@ ticket: PAB-5075
 version:
 ---
 
-A new ONNX block has been added to Analytics Builder in Public Preview. This block executes an ONNX model that has been deployed to the Files repository.
+A new ONNX block has been added to Analytics Builder in Public Preview. This block executes an ONNX model that has been deployed to the files repository.
 
 **Input:** A pulse containing a properties dictionary where keys are the ONNX input names and values are scalars (float, integer, boolean, string) or tensors (nested sequences of those types).
 
