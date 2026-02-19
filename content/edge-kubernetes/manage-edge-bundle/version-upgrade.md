@@ -29,8 +29,8 @@ If Edge is now running in an environment with no or limited internet access, you
 
 Once in the airgapped environment, run the upgrade command referencing the offline package file the tool generated:
 ```shell
-# Replace <OFFLINE-PACKAGE-FILENAME> with the offline package file the tool generated
-c8yedge upgrade -s <OFFLINE-PACKAGE-FILENAME>
+# Replace <OFFLINE-PACKAGE-FILENAME> with the path to the generated offline package file
+c8yedge upgrade -s "<OFFLINE-PACKAGE-FILENAME>"
 ```
 
 ### Upgrading Edge in a self-managed Kubernetes cluster {#upgrade-with-kubernetes-native}

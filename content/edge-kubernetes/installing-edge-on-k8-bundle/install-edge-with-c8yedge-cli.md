@@ -57,7 +57,7 @@ If you are installing Edge on an environment that has no or limited internet acc
 ```shell
 c8yedge package
 ```
-The tool generates a tarball suffixed with the specific version of Edge downloaded (for example, `c8yedge-{{< c8y-edge-current-version >}}_0_0.tar`). By default, this file is created in your current directory and contains the latest release of Edge {{< c8y-edge-current-version >}}.You can discover more options with `c8yedge package --help`, such as the ability to package a very specific version.
+The tool generates a tarball suffixed with the specific version of Edge downloaded (for example, `c8yedge-{{< c8y-edge-current-version >}}_0_0.tar`). By default, this file is created in your current directory and contains the latest release of Edge {{< c8y-edge-current-version >}}. You can discover more options with `c8yedge package --help`, such as the ability to package a very specific version.
 
 The offline package can be used for either an initial installation, or an upgrade of an existing installation. You need to transfer this file, as well as the c8yedge tool, into your airgapped environment.
 
@@ -65,6 +65,6 @@ The c8yedge tool installs [Lightweight Kubernetes (K3s)](https://docs.k3s.io/), 
 
 Once in the airgapped environment, run the installation command referencing the offline package file the tool generated earlier:
 ```shell
-# Replace <OFFLINE-PACKAGE-FILENAME> with the offline package file the tool generated
-sudo c8yedge install -s <OFFLINE-PACKAGE-FILENAME>
+# Replace <OFFLINE-PACKAGE-FILENAME> with the path to the generated offline package file
+sudo c8yedge install -s "<OFFLINE-PACKAGE-FILENAME>"
 ```
