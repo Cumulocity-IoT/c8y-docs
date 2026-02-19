@@ -6,6 +6,8 @@ layout: redirect
 
 Tools are actions that AI agents perform to access data or execute operations. They enable agents to interact with {{< product-c8y-iot >}} and external systems beyond just generating text responses.
 
+![Default tools can be tested in the detail view](/images/agents/mcp_tool_details.png)
+
 ### What are tools? {#what-are-tools}
 
 A tool is a function that an agent calls during a conversation to:

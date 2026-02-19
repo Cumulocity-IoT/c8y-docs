@@ -29,6 +29,8 @@ Once the custom agent is created, you align it to your needs using the following
 
 The system prompt defines your agent's behavior, expertise, and personality. It is the foundational instruction that shapes how the agent interprets user questions and formulates responses. Unlike user messages that change with each conversation, the system prompt remains constant and guides the agent throughout all interactions.
 
+![The system prompt defines the custom behavior of the agent](/images/agents/viewing_a_systemprompt.png)
+
 **What to include in a system prompt:**
 
 - Write clear and specific instructions about the agent's role and purpose. For example, "You are a device troubleshooting assistant for industrial IoT equipment" is more effective than "You are helpful."
@@ -105,6 +107,10 @@ When calling the agent via REST API, provide variables in the request body:
 - Reusing the same agent configuration across multiple contexts.
 
 Variables make agents flexible and reusable without requiring multiple agent configurations for similar use cases.
+
+{{< c8y-admon-important >}}
+System prompts and variables are vulnerable to prompt injection attacks. Always sanitize and validate any input used in prompts or variables, as the AI Agent Manager does not provide automatic protection. Learn more about prompt injection risks and mitigation strategies on the [OWASP website](https://genai.owasp.org/llmrisk/llm01-prompt-injection/).
+{{< /c8y-admon-important >}}
 
 ### Settings and advanced settings {#ai-agent-settings}
 

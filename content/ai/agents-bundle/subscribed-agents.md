@@ -34,6 +34,8 @@ To view subscribed agents:
 2. In the agents list, subscribed agents display with a badge indicating their source application.
 3. Click on a subscribed agent to view its details, including the system prompt and available tools.
 
+![You can investigate the system prompt of a subscribed agent](/images/agents/viewing_a_subscribed_agent.png)
+
 ### Testing subscribed agents {#testing-subscribed-agents}
 
 You test subscribed agents the same way as custom agents:

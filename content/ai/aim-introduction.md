@@ -29,6 +29,8 @@ The feature is currently in public preview and might change or is not feature co
 
 The AI Agent Manager enables you to create and manage AI agents—intelligent assistants that help users interact with your IoT data and systems through natural language conversations. Instead of building custom AI integrations from scratch, you configure pre-built agents that understand your specific use cases and have access to the tools required to be helpful.
 
+![The AI Manager default view and a test prompt](/images/agents/testing_an_agent.png)
+
 ### What is an AI agent? {#what-is-an-ai-agent}
 
 An AI agent is a configured AI assistant with a specific purpose and behavior. Each agent consists of:
@@ -67,6 +69,7 @@ Start by configuring a global provider and model. A global provider is the LLM p
    - Google Gemini
    
    Additional providers are supported but not tested by the {{< product-c8y-iot >}} team. They work without guarantee. The same applies to open source models based on the OpenAI API, which are supported by using the OpenAI provider and changing the baseURL and the strict mode in the advanced settings.
+   ![The modal helps to configure your global provider](/images/agents/configuring_a_provider.png)
 4. Define the model to use.
 5. Add an API key provided by your provider. This is securely stored inside the platform and cannot be read afterwards.
 6. Add advanced provider-specific settings if necessary. The advanced settings editor accepts JSON and validates via a JSON schema.

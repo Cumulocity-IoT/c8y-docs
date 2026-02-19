@@ -23,6 +23,7 @@ To add an MCP server to the AI Agent Manager:
 1. Navigate to **Administration** > **AI Agent Manager**.
 2. Click **Tools** in the top menu.
 3. Click **Configure MCP Server**.
+   ![The MCP Server configuration view list all configured servers](/images/agents/mcp_server_list.png)
 4. Enter the URL for your MCP server in the **Add a new MCP server** field.
 5. Click **Test connection**.
 6. If the connection is successful, you see a list of tools the server exposes. Scroll to the bottom of that list, to give the server a name and configure authentication or additional headers.
