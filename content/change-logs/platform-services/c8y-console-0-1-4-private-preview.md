@@ -17,7 +17,7 @@ version: 0.1.4
 
 The Console application enables customers on the Commit-to-Consume (CTC) contract model to view their actual usage and consumption of the {{< product-c8y-iot >}} components.
 
-For details, refer to [Console user guide](/console/introduction).
+For details, see [Console user guide](/console/introduction).
 
 {{< c8y-admon-preview >}}
 The Console application is in Private Preview, that is, it is not enabled by default and may be subject to change in the future. This application is subscribed to your tenant if you are on the new CTC model. If you are unable to access this application, contact [product support](/additional-resources/contacting-support/) to request the application subscription for your tenant.
