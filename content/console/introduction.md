@@ -36,7 +36,7 @@ The new contract type enacted by {{< company-c8y >}} in 2025 where customers com
 The total pre-tax spend credit for {{< company-c8y >}} products and services that the customer has contractually agreed to pay. This balance is drawn down each month based on the customer's consumption.
 
 #### Console application {#console-application}
-A {{< product-c8y-iot >}}-built solution that sits within the product and acts as a **one-stop shop** solution for customers interacting with their subscription and usage data. The Console application provides transparency with usage and billing to customers on a CTC contract.
+A {{< product-c8y-iot >}}-built solution that sits within the product and acts as a one-stop shop solution for customers interacting with their subscription and usage data. The Console application provides transparency with usage and billing to customers on a CTC contract.
 
 #### Consumption {#consumption}
 The details relating to the Drawdown amounts and how much of the Commitment remains after each month. The monthly Consumption report available in the Console application gives a breakdown of all components used, their associated prices and quantities, and statistics on the remaining balance.
