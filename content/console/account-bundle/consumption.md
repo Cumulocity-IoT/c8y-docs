@@ -6,7 +6,7 @@ sector:
   - platform_administration
 ---
 
-The **Consumption Overview** page shows the monthly drawdowns and remaining commitment. The **Summary** tab provides an overview based on your contract.
+The **Consumption Overview** page shows the monthly drawdowns and the remaining commitment. The **Summary** tab provides an overview based on your contract.
 
 <img src="/images/console/account/consumption/summary.png" alt="Consumption Summary">
 
