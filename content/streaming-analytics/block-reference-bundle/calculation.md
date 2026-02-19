@@ -101,7 +101,9 @@ This category contains the following blocks:
 `apama.analyticsbuilder.blocks.AIAgent`
 
 <p>This block queries an AI Agent manager agent using its inputs and produces the agent's text response as output.</p>
-<p><b>Note:</b> This block produces its output asynchronously after the input activation completes. If you wire this output alongside outputs from other blocks into the same downstream block, they will trigger that block in separate activations rather than being processed together.
+<p><b>Warning:</b> Be careful when using block inputs, as there is a risk of prompt injection attacks. Always validate and sanitize user-provided data before passing it to AI models.
+<p></p>
+<b>Note:</b> This block produces its output asynchronously after the input activation completes. If you wire this output alongside outputs from other blocks into the same downstream block, they will trigger that block in separate activations rather than being processed together.
 <p></p>
 <b>This block is currently in public preview and may be subject to change.</b></p>
 
