@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Using views in BI applications
+title: Using views for BI tools
 layout: redirect
 ---
 
