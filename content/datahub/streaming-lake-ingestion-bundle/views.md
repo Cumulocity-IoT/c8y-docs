@@ -39,7 +39,7 @@ An according view looks like following:
 | ------------------ | ------ | ------------------------ | ---------------------- | --------------- | ------------- | -------------------- | ------------------- | ------------------ | ----------------- |
 | MEASUREMENT_CREATE | 47635  | 2026-02-19T13:09:39.678Z | c8y_BatteryMeasurement | 12.8            | V             | 85.5                 | %                   | 22.5               | C                 |
 
-This makes it possible to operate directly on nested fields and e.g. do an analytics for measurement values in BI tools.
+This makes it possible to operate directly on nested fields and e.g. do analytics for measurement values in BI tools.
 
 ### View representations
 In Apache Iceberg, views can have multiple representations, meaning you need to check if Streaming Lake Ingestion offers a SQL dialect that can be read by your query engine. Currently, the following two SQL dialects are supported:
