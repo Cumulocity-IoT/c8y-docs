@@ -982,7 +982,7 @@ Python can be downloaded from [www.python.org](https://www.python.org/).
 $ pip install paho-mqtt
 ```
 {{< c8y-admon-info >}}
-The above command installs Paho on your system. You may want to use [virtualenv](https://virtualenv.pypa.io/en/latest/user_guide.html) to install it only for this example.
+The above command installs Paho on your system. You may want to use [virtualenv](https://virtualenv.pypa.io/en/latest/how-to/install.html) to install it only for this example.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
