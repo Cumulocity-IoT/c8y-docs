@@ -11,4 +11,4 @@ audience:
 weight: 50
 ---
 
-The Console application enables customers on Commit-to-Consume (CTC) style of contract to view their actual usage and consumption of the {{< product-c8y-iot >}} components. 
+The Console application enables customers on Commit-to-Consume (CTC) style of contract to view their actual usage and consumption of the {{< product-c8y-iot >}} components.

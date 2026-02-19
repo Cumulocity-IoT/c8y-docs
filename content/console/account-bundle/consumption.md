@@ -16,8 +16,8 @@ The widget at the top of the page contains the following information:
 * **Account name** - The name of the account.
 * **Contract start date** - The contract start date.
 * **Contract end date** - The contract end date.
-* **Total commitment** - The total spend amount as agreed in the CTC contract.
-* **Remaining commitment** - The total usage charges subtracted from the total spend amount. What’s left of the commitment for the duration of the contract.
+* **Total commitment** - The total spend amount as agreed in the contract.
+* **Remaining commitment** - The total usage charges subtracted from the total spend amount. What is left of the commitment for the duration of the contract.
 * **Cumulative spend** - The total usage charges across the active months of the contract.
 * **Percentage consumed** - The cumulative spend as a percentage of the total commitment.
 * **Total overage** - Depending on the contract, any overage charges applicable would be indicated here.
@@ -32,15 +32,15 @@ To quickly assess the cost of each pricing component, you can use the dropdown m
 
 The **Details & History** tab provides a breakdown of the monthly consumption for each billable product.
 
-<img src="/images/console/account/consumption/details-and-history.png" alt="Details & Histroy">
+<img src="/images/console/account/consumption/details-and-history.png" alt="Details & History">
 
-The **Consumption details** table contains a row for each billable month for the duration of the contract. You can expand and collapse each row using the caret icon <i class="dlt-c8y-icon-chevron-right"></i> to the left of the bill date. 
-Note that the **Bill date** corresponds to the date which the drawdown occurs. The *Usage Month* is the month in which the usage occurred. For example, the *Usage Month* of January 1, 2025 through January 31, 2025, would have a corresponding *Bill Date* of February 1, 2025. For billing purposes, UTC time is used.
+The **Consumption details** table contains a row for each billable month for the duration of the contract. You can expand and collapse each row using the caret icon <i class="dlt-c8y-icon-chevron-right"></i> to the left of the bill date.
+Note that the **Bill date** corresponds to the date on which the drawdown occurs. The *Usage Month* is the month in which the usage occurred. For example, the *Usage Month* of January 1, 2025 through January 31, 2025, would have a corresponding *Bill Date* of February 1, 2025. For billing purposes, UTC time is used.
 
 Each bill contains the following information.
 
-* **Base product** - Shows line item details. Includes the standard set of {{< company-c8y >}} pricing metrics: Deployments, Messages, and Operational Data Store. Usage is calculated into billable units, which are written in the [{{< company-c8y >}} License metrics](/service-terms/license-metrics/). Unit prices are taken from the Product Catalog of the CTC contract.
-* **Add-ons** - Can be opened to view line item details. Includes any and all Add-ons that were activated and had usage during the usage month. Usage is calculated into billable units, which are written in the [{{< company-c8y >}} License Metrics](/service-terms/license-metrics/). Unit prices are taken from the Product Catalog of the CTC contract.
+* **Base product** - Shows line item details. Includes the standard set of {{< company-c8y >}} pricing metrics: Deployments, Messages, and Operational Data Store. Usage is calculated into billable units, which are written in the [{{< company-c8y >}} license metrics](/service-terms/license-metrics/). Unit prices are taken from the Product Catalog of the contract.
+* **Add-ons** - Can be opened to view line item details. Includes any and all add-ons that were activated and had usage during the usage month. Usage is calculated into billable units, which are written in the [{{< company-c8y >}} license metrics](/service-terms/license-metrics/). Unit prices are taken from the Product Catalog of the contract.
 * **Total usage charges** - The sum of all usage charges (Base Product plus Add-ons).
 * **Drawdown (Balance Consumed)** - How much the Commitment was drawn based on the usage charges. Will usually equal the Total Usage Charges unless there is an overage scenario, in which case the values will be different *(the remaining Commitment is less than the Total Usage Charges for that month)*. 
 * **Overage** - If an overage scenario happens, this will show the outstanding balance that needs to be paid. 

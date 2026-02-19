@@ -36,10 +36,10 @@ The new contract type enacted by {{< company-c8y >}} in 2025 where customers com
 The total pre-tax spend credit for {{< company-c8y >}} products and services that the customer has contractually agreed to pay. This balance is drawn down each month based on the customer's consumption.
 
 #### Console application {#console-application}
-A {{< product-c8y-iot >}}-built solution that sits within the product and acts as a **one stop shop** solution for customers interacting with their subscription and usage data. The Console application provides transparency with usage and billing to customers on a CTC contract.
+A {{< product-c8y-iot >}}-built solution that sits within the product and acts as a **one-stop shop** solution for customers interacting with their subscription and usage data. The Console application provides transparency with usage and billing to customers on a CTC contract.
 
 #### Consumption {#consumption}
-The details relating to the Drawdown amounts and how much of the Commitment remains after each month. The monthly Consumption report available in the Console application gives a breakdown of all components used, their associated prices and quantities, and statistics on the remaining balance. 
+The details relating to the Drawdown amounts and how much of the Commitment remains after each month. The monthly Consumption report available in the Console application gives a breakdown of all components used, their associated prices and quantities, and statistics on the remaining balance.
 
 #### Drawdown {#drawdown}
 The process of calculating a customer’s monthly consumption of services (at pre-tax rates) and deducting that from their remaining Commitment balance. 
@@ -48,7 +48,7 @@ The process of calculating a customer’s monthly consumption of services (at pr
 An individual instance of {{< product-c8y-iot >}}. Customers can have multiple environments for their account, including both Dedicated (Private) SaaS environments and Public SaaS environments. For drawdown purposes, usage is aggregated across all environments.
 
 #### Overage {#overage}
-The status a customer enters when their commitment has been fully depleted before their contract term has ended. The exact specifics of the Overage scenario is determined by the clauses listed in the respective contracts, and is different from customer to customer. 
+The status a customer enters when their commitment has been fully depleted before their contract term has ended. The exact specifics of the Overage scenario are determined by the clauses listed in the respective contracts, and are different from customer to customer.
 
 #### Product catalog {#product-catalog}
 The customer-specific price list appended to a CTC contract that defines the pre-tax rates for all available {{< company-c8y >}} products and services.

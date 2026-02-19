@@ -23,12 +23,12 @@ The first usage widget shows the data for the last available month in the select
 The following tiles are included:
 * **Environments and Tenants** - Displays the number of environments and total tenants, including the type of environment *(public cloud versus dedicated cloud)* and if they are active or not. 
 * **Storage** - Displays the latest total Operational Data Store metric from last month. All tenants across all environments are aggregated in this metric.
-* **Messages** - Displays the latest total Messages metric from last month. All tenants across all environments are aggregated in this metric. The full calculation of Messages can be found in the {{< company-c8y >}} License Metrics documentation. 
+* **Messages** - Displays the latest total Messages metric from the last month. All tenants across all environments are aggregated in this metric. The full calculation of Messages can be found in the {{< company-c8y >}} License Metrics documentation.
 * **Devices** - Displays the latest total number of devices from last month. All tenants across all environments are aggregated in this metric. 
 * **CPU(S)** - Displays the latest total amount of CPU power used for microservices in the last month. All tenants across all environments are aggregated in this metric.
 * **Memory** - Displays the latest total amount of Memory used for microservices in the last month. All tenants across all environments are aggregated in this metric. 
 
-Note that each tile include a percentage change indicator. This represents the percentage difference between the first month of your selected time range and the last month displayed on the tile.
+Note that each tile includes a percentage change indicator. This represents the percentage difference between the first month of your selected time range and the last month displayed on the tile.
 
 The next widget is the **Messages** graph, which displays the total number of Messages across the selected time range.
 <img src="/images/console/usage/overview/messages.png" alt="Messages">
@@ -42,7 +42,7 @@ The next widget is the **Operational Data Store (ODS)** graph, which displays th
 The last widget on the page is the **Add-ons** graph, which allows you to select one of the Add-ons and view usage data from it.
 <img src="/images/console/usage/overview/addons.png" alt="Add-ons">
 
-You can use the selector in the top right to select one of the Add-ons that are deployed on your environments. Each Add-On has its own usage metrics that are then displayed in the graph.
+You can use the selector in the top right to select one of the add-ons that are deployed on your environments. Each add-on has its own usage metrics that are then displayed in the graph.
 <img src="/images/console/usage/overview/addons-selector.png" alt="Add-ons Selector">
 
 
