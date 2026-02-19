@@ -27,11 +27,11 @@ Unlike the initial installation, no use of `sudo` is required for any kind of up
 
 If Edge is now running in an environment with no or limited internet access, you can upgrade by creating an offline package and transferring it to your airgapped environment. See [Install Edge in an airgapped environment](/edge-kubernetes/installing-edge-on-k8/#install-edge-airgapped). There is no difference between a package created for an initial installation, and a package created for an upgrade.
 
-Once in the airgapped environment:
+Once in the airgapped environment, run the upgrade command referencing the offline package file the tool generated:
 ```shell
-c8yedge upgrade -s c8yedge.tar
+# Replace <OFFLINE-PACKAGE-FILENAME> with the offline package file the tool generated
+c8yedge upgrade -s <OFFLINE-PACKAGE-FILENAME>
 ```
-
 
 ### Upgrading Edge in a self-managed Kubernetes cluster {#upgrade-with-kubernetes-native}
 
