@@ -37,7 +37,7 @@ The **Details & History** tab provides a breakdown of the monthly consumption fo
 The **Consumption details** table contains a row for each billable month for the duration of the contract. You can expand and collapse each row using the caret icon <i class="dlt-c8y-icon-chevron-right"></i> to the left of the bill date.
 Note that the **Bill date** corresponds to the date on which the drawdown occurs. The *Usage Month* is the month in which the usage occurred. For example, the *Usage Month* of January 1, 2025 through January 31, 2025, would have a corresponding *Bill Date* of February 1, 2025. For billing purposes, UTC time is used.
 
-Each bill contains the following information.
+Each bill contains the following information:
 
 * **Base product** - Shows line item details. Includes the standard set of {{< company-c8y >}} pricing metrics: Deployments, Messages, and Operational Data Store. Usage is calculated into billable units, which are written in the [{{< company-c8y >}} license metrics](/service-terms/license-metrics/). Unit prices are taken from the Product Catalog of the contract.
 * **Add-ons** - Can be opened to view line item details. Includes any and all add-ons that were activated and had usage during the usage month. Usage is calculated into billable units, which are written in the [{{< company-c8y >}} license metrics](/service-terms/license-metrics/). Unit prices are taken from the Product Catalog of the contract.
