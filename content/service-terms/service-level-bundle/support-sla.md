@@ -76,7 +76,7 @@ The services are defined as follows:
 
 * **Crisis phone**: The support telephone number is available in the Support Portal. Telephone support is provided in English only.
 * **Response times**: Customer will receive an initial human response to a new support ticket within the defined initial response times. Follow-up communication times of updates to existing support tickets are targeted but not guaranteed.
-* **Resolution plan for Crisis:** Within the first 4 hours, Provider aims to provide a concrete resolution plan, detailing the intended solution, a workaround, or a documented action plan with timelines.
+* **Resolution plan for Crisis:** For Silver and Gold customers, Provider aims to provide a concrete resolution plan within the first 4 hours, detailing the intended solution, a workaround, or a documented action plan with timelines.
 * **Follow-the-sun:** For Gold customers, Provider actively hands over Crisis tickets between global regions (EMEA, APJ, AME) to ensure 24/7 progress.
 * **Number of ATCs**: Restrictions to the number of ATCs apply per Customer, not per contract. Customer may contract for additional ATCs.
 * **Prioritized queuing**: Support tickets are prioritized ahead of other support incidents of the same severity level but lower support level.
