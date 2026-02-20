@@ -161,6 +161,8 @@ Pulsar messages consist of a _payload_ and set of _properties_.
 The payload is a sequence of zero or more bytes, identical to the payload of the MQTT `PUBLISH` message that the Pulsar message corresponds to.
 It is the client's responsibility to understand the format of the payloads produced and accepted by the MQTT devices it communicates with.
 
+For messages received from devices, the Pulsar `eventTime` metadata field is populated with the Unix timestamp (in milliseconds) of when the MQTT `PUBLISH` message arrived at the MQTT Service. This ensures downstream consumers have a consistent time source for processing.
+
 Pulsar message properties are name-value pairs, where both the name and the value are text strings.
 The properties recognised by the MQTT Service are listed in the table below.
 Messages received from MQTT devices will **always** include the properties marked as required, and may include any of the optional properties.
@@ -202,7 +204,7 @@ The topic URL can be broken down into 4 components:
 Your client will only be able to consume from this topic if the authenticated user has the "read" permission on the "Mqtt service messaging topics" role.
 The client will not be able to consume from any other topic.
 
-The client identifier of the device that published the messages, and the MQTT topic it was published on, can be obtained from the message properties `clientID` and `topic` as described above.
+The client identifier of the device that published the messages, and the MQTT topic it was published on, can be obtained from the message properties `clientID` and `topic` as described above. Furthermore, the Pulsar `eventTime` field provides the exact timestamp when the message was received by the MQTT Service.
 This means that your client **must** consume every message published by every device connected to the MQTT Service for the tenant, even those you are not interested in.
 Messages that are not of interest to the client can simply be acknowledged without further processing.
 
@@ -230,7 +232,7 @@ It extends the previous example that showed how to [set up the connection to the
 
 To consume messages from the topic, your client should create a Pulsar `Consumer` and subscribe it to the topic.
 The consumer should register a `MessageListener` callback that will be called whenever a new message arrives on the topic.
-The `MessageListener` implementation shows how to access the payload and properties of the received messages.
+The `MessageListener` implementation shows how to access the payload, properties, and the MQTT `PUBLISH` message arrival timestamp of the received messages.
 For simplicity, the application messages in the example are simple text strings.
 However, the payload of the Pulsar message will always be an array of bytes, that must be converted to the format used by the application.
 
@@ -242,7 +244,9 @@ However, the payload of the Pulsar message will always be an array of bytes, tha
             public void received(Consumer<byte[]> consumer, Message<byte[]> message) {
                 final String clientId = message.getProperty("clientID");
                 final String topic = message.getProperty("topic");
+                final long eventTime = message.getEventTime();
                 System.out.println(MessageFormat.format("Received message from MQTT device {0} on MQTT topic {1}", clientId, topic));
+                System.out.println(MessageFormat.format("Get the MQTT PUBLISH arrival timestamp: {0}", eventTime));
                 System.out.println(MessageFormat.format("Message payload: {0}", new String(message.getValue(), StandardCharsets.UTF_8)));
                 System.out.println(MessageFormat.format("Message properties: {0}", message.getProperties()));
                 try {
