@@ -25,6 +25,7 @@ You ingest the following measurement into {{< product-c8y-iot >}}.
 ```
 
 This will result in a table like following:
+
 **Table: measurement.c8y_Battery**
 | eventType          | source | time                     | type                   | voltage       | stateOfCharge | temperature   |
 | ------------------ | ------ | ------------------------ | ---------------------- | ------------- | ------------- | ------------- |
@@ -43,6 +44,6 @@ This makes it possible to operate directly on nested fields and e.g. do analytic
 
 ### View representations
 In Apache Iceberg, views can have multiple representations, meaning you need to check if Streaming Lake Ingestion offers a SQL dialect that can be read by your query engine. Currently, the following two SQL dialects are supported:
-* DremioSQL
-* spark (**experimental**)
+* **DremioSQL**
+* **spark** (experimental)
 
