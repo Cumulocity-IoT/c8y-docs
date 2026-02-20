@@ -24,20 +24,24 @@ The {{< product-c8y-iot >}} Operational Store provides an enhanced time series s
 
 Perform the following steps as a `root` user on your Edge appliance VM to accomplish the time series migration.
 
-1. Set `MANAGEMENT_ADMIN_USER` and `MANAGEMENT_ADMIN_PASSWORD` environment variables used in the subsequent commands:
+1. Download the time-series migration microservice:
+   ```shell
+   curl -sfL https://download.cumulocity.com/Cumulocity-Edge/Utils/timeseries-migration-server.tar -o timeseries-migration-server.tar
+   ```
+   If you downloaded the file on a different machine, transfer `timeseries-migration-server.tar` to the Edge appliance VM and place it at `/tmp/timeseries-migration-server.tar`.
+
+2. Set `MANAGEMENT_ADMIN_USER` and `MANAGEMENT_ADMIN_PASSWORD` environment variables used in the subsequent commands:
    ```shell
    MANAGEMENT_ADMIN_USER="<MANAGEMENT-ADMIN-USER>"          # Replace with {{< management-tenant >}} admin user
    MANAGEMENT_ADMIN_PASSWORD="<MANAGEMENT-ADMIN-PASSWORD>"  # Replace with {{< management-tenant >}} admin user's password
-
-   EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"                # Replace with Edge registry username 
-   EDGE_REGISTRY_PASSWORD="<EDGE-REGISTRY-PASSWORD>"        # Replace with Edge registry password 
+   docker load -i /tmp/timeseries-migration-server.tar
    ```
 
    {{< c8y-admon-info >}}
    To request the Edge registry credentials, [contact product support](/additional-resources/contacting-support/).
    {{< /c8y-admon-info >}}   
 
-2. Ensure that the {{< management-tenant >}} admin user you use in this process has the following roles assigned:
+3. Ensure that the {{< management-tenant >}} admin user you use in this process has the following roles assigned:
    * ROLE_INVENTORY_READ
    * ROLE_OPTION_MANAGEMENT_READ
    * ROLE_OPTION_MANAGEMENT_ADMIN
@@ -64,12 +68,11 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
    done    
    ```
 
-3. To allow MongoDB to accept both TLS and non-TLS connections, edit the */etc/mongod.conf* file and change `requireTLS` to `preferTLS` in the `net.tls.mode` setting, then restart MongoDB with `systemctl restart mongod`.
+4. To allow MongoDB to accept both TLS and non-TLS connections, edit the */etc/mongod.conf* file and change `requireTLS` to `preferTLS` in the `net.tls.mode` setting, then restart MongoDB with `systemctl restart mongod`.
 
-4. Install and run the `timeseries-migration` microservice:
+5. Install and run the `timeseries-migration` microservice:
 
    ```shell
-   docker login registry.c8y.io --username "${EDGE_REGISTRY_USER}" --password "${EDGE_REGISTRY_PASSWORD}"
    DOCKER_GATEWAY_IP=$(docker network inspect bridge --format='{{(index .IPAM.Config 0).Gateway}}')
    docker run -d \
       --name timeseries-migration \
@@ -85,13 +88,13 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
       registry.c8y.io/platform/timeseries-migration-server:1.0.326
    ```
 
-5. Follow the container logs using the following command and wait until the message `c.s.m.t.TimeseriesMigrationApplicationKt : Started TimeseriesMigrationApplicationKt ...` appears.
+6. Follow the container logs using the following command and wait until the message `c.s.m.t.TimeseriesMigrationApplicationKt : Started TimeseriesMigrationApplicationKt ...` appears.
 
    ```shell
    docker logs -f timeseries-migration
    ```
 
-6. Trigger the time series migration:
+7. Trigger the time series migration:
 
    ```shell
    curl -k -X PUT \
@@ -102,7 +105,7 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
       -d '{ "state": "SCHEDULED", "tenants": [ "edge" ] }'
    ```
 
-7. After the data is processed, verified, and migrated to the new collection, the status of the migration changes to `VERIFIED`:
+8. After the data is processed, verified, and migrated to the new collection, the status of the migration changes to `VERIFIED`:
 
    ```shell
    curl -k -X GET \
@@ -117,7 +120,7 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
    The time to complete the time series conversion and reach `VERIFIED` status depends on your database size — larger databases require more time to process.
    {{< /c8y-admon-info >}}
 
-8. Approve the migration to confirm the process:
+9. Approve the migration to confirm the process:
 
    ```shell
    curl -k -X PUT \
@@ -130,7 +133,7 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
 
     This will change the status of the migration to `APPROVED`.
 
-9. Check the migration status and wait until it has changed to `APPROVED`:
+10. Check the migration status and wait until it has changed to `APPROVED`:
 
    ```shell
    curl -k -X GET \
@@ -140,13 +143,13 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
    ```
    The response returned should contain the migration status as `APPROVED` against the Edge tenant.
 
-10. Stop the `timeseries-migration` microservice:
+11. Stop the `timeseries-migration` microservice:
 
       ```shell
       docker stop timeseries-migration
       ```
 
-11. Remove legacy collection:
+12. Remove legacy collection:
       ```shell
       mongo \
          --host localhost:27017 \
