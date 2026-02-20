@@ -206,7 +206,8 @@ The topic URL can be broken down into 4 components:
 Your client will only be able to consume from this topic if the authenticated user has the "read" permission on the "Mqtt service messaging topics" role.
 The client will not be able to consume from any other topic.
 
-The client identifier of the device that published the messages, and the MQTT topic it was published on, can be obtained from the message properties `clientID` and `topic` as described above. Furthermore, the Pulsar `eventTime` field provides the exact timestamp when the message was received by the MQTT Service.
+The client identifier of the device that published the messages, and the MQTT topic it was published on, can be obtained from the message properties `clientID` and `topic` as described above.
+The Pulsar `eventTime` field provides the exact time when the message was received by the MQTT Service.
 This means that your client **must** consume every message published by every device connected to the MQTT Service for the tenant, even those you are not interested in.
 Messages that are not of interest to the client can simply be acknowledged without further processing.
 
