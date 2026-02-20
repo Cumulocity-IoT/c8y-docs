@@ -37,6 +37,7 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
       ```
 
    * **Transfer via tarball (Air-gapped):** Use this method if the Edge appliance VM **cannot access the registry**.
+      
       On a system with internet access:
       ```shell
       # 1. Log in to the registry
@@ -55,7 +56,6 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
       1. Copy the `timeseries-migration-server.tar` file to the `/tmp` folder of the Edge appliance VM.
       1. Load the image from the tarball:
          ```shell
-         # 4. Load the image from the tarball
          docker load -i /tmp/timeseries-migration-server.tar
          ```
 
