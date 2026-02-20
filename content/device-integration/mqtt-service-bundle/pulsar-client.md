@@ -162,7 +162,7 @@ The payload is a sequence of zero or more bytes, identical to the payload of the
 It is the client's responsibility to understand the format of the payloads produced and accepted by the MQTT devices it communicates with.
 
 For messages received from devices, the Pulsar `eventTime` field holds the time that the MQTT `PUBLISH` message arrived at the MQTT Service.
-The time is represented as the number of milliseconds since midnight, 1 January 1970, in the UTC timezone.
+The time is represented as a Unix timestamp (the number of milliseconds since 1 January 1970 00:00:00 UTC).
 This ensures downstream consumers have a consistent time source for processing.
 
 Pulsar message properties are name-value pairs, where both the name and the value are text strings.
