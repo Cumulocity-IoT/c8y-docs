@@ -25,9 +25,7 @@ The {{< product-c8y-iot >}} Operational Store provides an enhanced time series s
 Perform the following steps as a `root` user on your Edge appliance VM to accomplish the time series migration.
 
 1. Download the time-series migration microservice image onto the Edge appliance VM using one of the following methods:
-   * **Direct pull (Standard)**
-      
-      Use this method if the Edge appliance VM **has direct internet access to the registry**.
+   * **Direct pull (Standard):** Use this method if the Edge appliance VM **can access the registry**.
       ```shell
       # 1. Log in to the registry
       EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"                # Replace with your Edge registry username
@@ -38,11 +36,8 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
       docker pull registry.c8y.io/platform/timeseries-migration-server:1.0.326
       ```
 
-   * **Transfer via tarball (Air-gapped)**
-      
-      Use this method if the VM **cannot access the registry**.
-
-      **On a system with internet access:**
+   * **Transfer via tarball (Air-gapped):** Use this method if the Edge appliance VM **cannot access the registry**.
+      On a system with internet access:
       ```shell
       # 1. Log in to the registry
       EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"                # Replace with your Edge registry username
@@ -56,7 +51,7 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
       docker save -o ./timeseries-migration-server.tar registry.c8y.io/platform/timeseries-migration-server:1.0.326
       ```
 
-      **On the Edge appliance VM:**
+      On the Edge appliance VM:
       1. Copy the `timeseries-migration-server.tar` file to the `/tmp` folder of the Edge appliance VM.
       1. Load the image from the tarball:
          ```shell
