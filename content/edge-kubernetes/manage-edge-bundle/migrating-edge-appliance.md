@@ -24,32 +24,43 @@ The {{< product-c8y-iot >}} Operational Store provides an enhanced time series s
 
 Perform the following steps as a `root` user on your Edge appliance VM to accomplish the time series migration.
 
-1. Download the time-series migration microservice image into the Edge appliance VM using one of the following methods:
-
-   * **Direct pull on the Edge appliance VM** (when the VM has access to the registry):
+1. Download the time-series migration microservice image onto the Edge appliance VM using one of the following methods:
+   * **Direct pull (Standard)**
+      Use this method if the Edge appliance VM **has direct internet access to the registry**.
       ```shell
+      # 1. Log in to the registry
       EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"                # Replace with your Edge registry username
       EDGE_REGISTRY_PASSWORD="<EDGE-REGISTRY-PASSWORD>"        # Replace with your Edge registry password
       docker login registry.c8y.io --username "${EDGE_REGISTRY_USER}" --password "${EDGE_REGISTRY_PASSWORD}"
+
+      # 2. Pull the image
       docker pull registry.c8y.io/platform/timeseries-migration-server:1.0.326
       ```
 
-   * **Transfer from another system** (when the Edge appliance VM cannot reach the registry):  
-      On a machine that has registry access, export the image to a tarball using the below commands:
+   * **Transfer via tarball (Air-gapped)**
+      Use this method if the VM **cannot access the registry**.
+
+      **On a system with internet access:**
       ```shell
+      # 1. Log in to the registry
       EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"                # Replace with your Edge registry username
       EDGE_REGISTRY_PASSWORD="<EDGE-REGISTRY-PASSWORD>"        # Replace with your Edge registry password
       docker login registry.c8y.io --username "${EDGE_REGISTRY_USER}" --password "${EDGE_REGISTRY_PASSWORD}"
+
+      # 2. Pull the image
       docker pull registry.c8y.io/platform/timeseries-migration-server:1.0.326
 
+      # 3. Export the image to a tarball
       docker save -o ./timeseries-migration-server.tar registry.c8y.io/platform/timeseries-migration-server:1.0.326
       ```
-      Then, copy the `timeseries-migration-server.tar` file into the Edge appliance VM into `/tmp` folder.
-      On the Edge appliance VM, load the image using the below commands:
-      ```shell
-      docker load -i /tmp/timeseries-migration-server.tar
-      ```
 
+      **On the Edge appliance VM:**
+         1. Copy the `timeseries-migration-server.tar` file to the `/tmp` folder of the Edge appliance VM.
+         1. Load the image from the tarball:
+            ```shell
+            docker load -i /tmp/timeseries-migration-server.tar
+            ```
+            
 1. Set the following environment variables for use in subsequent commands. Replace the placeholders with the {{< management-tenant >}} admin credentials:
    ```shell
    MANAGEMENT_ADMIN_USER="<MANAGEMENT-ADMIN-USER>"          # {{< management-tenant >}} admin username
