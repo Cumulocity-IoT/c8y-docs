@@ -35,9 +35,9 @@ Note that there are three columns which are of structured type: `voltage`, `stag
 An according view looks like following:
 
 **View: measurement.c8y_Battery**
-| eventType          | source | time                     | type                   | voltage\\value  | voltage\\unit | stateOfCharge\\value | stateOfCharge\\unit | temperature\\value | temperature\\unit |
-| ------------------ | ------ | ------------------------ | ---------------------- | --------------- | ------------- | -------------------- | ------------------- | ------------------ | ----------------- |
-| MEASUREMENT_CREATE | 47635  | 2026-02-19T13:09:39.678Z | c8y_BatteryMeasurement | 12.8            | V             | 85.5                 | %                   | 22.5               | C                 |
+| eventType          | source | time                     | type                   | voltage\\value  | voltage\\unit | ... | temperature\\value | temperature\\unit |
+| ------------------ | ------ | ------------------------ | ---------------------- | --------------- | ------------- | --- | ------------------ | ----------------- |
+| MEASUREMENT_CREATE | 47635  | 2026-02-19T13:09:39.678Z | c8y_BatteryMeasurement | 12.8            | V             | ... | 22.5               | C                 |
 
 This makes it possible to operate directly on nested fields and e.g. do analytics for measurement values in BI tools.
 
