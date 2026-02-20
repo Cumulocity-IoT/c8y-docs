@@ -235,7 +235,7 @@ It extends the previous example that showed how to [set up the connection to the
 
 To consume messages from the topic, your client should create a Pulsar `Consumer` and subscribe it to the topic.
 The consumer should register a `MessageListener` callback that will be called whenever a new message arrives on the topic.
-The `MessageListener` implementation shows how to access the payload, properties, and the MQTT `PUBLISH` message arrival timestamp of the received messages.
+The `MessageListener` implementation shows how to access the payload, properties, and arrival time of the received messages.
 For simplicity, the application messages in the example are simple text strings.
 However, the payload of the Pulsar message will always be an array of bytes, that must be converted to the format used by the application.
 
