@@ -146,6 +146,7 @@ async function run() {
     - Check grammar rules, including missing articles ("a", "an", "the") according to the following style guide rules.
     - Always use standard American English spelling. Convert any British English spelling to American English.
     - Enforce the Variables rules defined below.
+    - Only return entries where the corrected line is different from the original added line.
 
     Output Format (very important):
     Return ONLY valid JSON:
