@@ -147,6 +147,7 @@ async function run() {
     - Always use standard American English spelling. Convert any British English spelling to American English.
     - Enforce the Variables rules defined below.
     - Only return entries where the corrected line is different from the original added line.
+    - Only return entries when a real style violation exists. Do not rewrite text unless strictly required by the style guide.
 
     Output Format (very important):
     Return ONLY valid JSON:
@@ -204,6 +205,7 @@ async function run() {
 
       const completion = await anthropic.messages.create({
         max_tokens: 1024,
+        temperature: 0,
         messages: [{ role: 'user', content: prompt }],
         model: 'claude-sonnet-4-5-20250929',
       });
