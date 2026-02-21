@@ -266,6 +266,19 @@ async function run() {
           replacement = replacement.slice(1).trim();
         }
 
+        const original = line.slice(1);
+
+        const normalize = (s) => s
+            .replace(/\u00A0/g, " ")
+            .replace(/\s+/g, " ")
+            .replace(/\s-\s/g, " - ")
+            .trim();
+
+        if (normalize(original) === normalize(replacement)) {
+          console.log("Skipping whitespace-only suggestion at patch line", index + 1);
+          return;
+        }
+
         const patchLineNumber = index + 1;    
         const newFileLine = patchIndexToNewLine.get(patchLineNumber);
         if (!newFileLine) {
