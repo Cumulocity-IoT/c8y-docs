@@ -190,7 +190,7 @@
           {{- .Content | replaceRE `<script[\s\S]*?</script>` "" | replaceRE `\s+on\w+\s*=\s*"[^"]*"` "" | replaceRE `\s+on\w+\s*=\s*'[^']*'` "" | safeHTML -}}
           <div class="change-log__details">
             <button class="collapse-btn btn-clean collapsed d-flex a-i-center" data-toggle="collapse" data-target="#collapse-{{(replace .Title "var-product-c8y-iot" .Site.Params.product_c8y_iot) | urlize }}">
-              Show details
+              Technical details
               <i class="dlt-c8y-icon-chevron-down "></i>
             </button>
             <div id="collapse-{{(replace .Title "var-product-c8y-iot" .Site.Params.product_c8y_iot) | urlize }}" class="collapse">
