@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "ChildAdditions for opposites can be created and assigned in the same API call. [CTM-2732] (#2711)"
+title: "ChildAdditions for opposites can be created and assigned in the same API call"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
