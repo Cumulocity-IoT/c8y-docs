@@ -12,10 +12,10 @@ You can freely define which data is collected and to which endpoint it is sent.
 
 OpenTelemetry is an open standard with implementations supporting several [languages](https://opentelemetry.io/docs/languages/) like Java, Python, Go, Ruby, C++.
 {{< product-c8y-iot >}} provides the option of zero-code instrumentation for microservices developed with the Microservice SDK for Java. 
-Refer to the [Microservice SDK for Java](/microservice-sdk/java/#otlp-configuration) section for details.
+Refer to the [Microservice SDK for Java](/microservice-sdk/java/) section for details.
 
 ### OTLP configuration {#otlp-configuration}
-Microservices can obtain the current OTLP configuration from their individual [tenant options](https://cumulocity.com/api/core/2025/#tag/Options).
+Microservices can obtain the current OTLP configuration from their individual [tenant options](https://cumulocity.com/api/core/#tag/Options).
 The category names for tenant options assigned to a microservice can be defined by:
 
 - The `settingsCategory` defined in the microservice manifest
@@ -27,7 +27,7 @@ All OTLP parameters must be defined in the same category.
 
 
 #### OTLP tenant options {#otlp-tenant-options}
-Tenant options with OTLP configuration parameters can be set via [REST commands](https://cumulocity.com/api/core/2025/#operation/postOptionCollectionResource) sent to
+Tenant options with OTLP configuration parameters can be set via [REST commands](https://cumulocity.com/api/core/#operation/postOptionCollectionResource) sent to
 the tenant options endpoint of the tenant.
 For example, setting the endpoint to which OTLP signals are exported is done with this JSON document:
 
