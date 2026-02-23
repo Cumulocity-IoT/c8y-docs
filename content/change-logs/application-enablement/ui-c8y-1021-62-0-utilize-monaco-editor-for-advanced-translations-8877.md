@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62135
 version: 1021.62.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The {{< product-c8y-iot >}} platform provides capabilities to manage translations for the UI in various languages. Previously, the translation editor had limited capabilities for editing multiple translations at once. With this change, the Monaco editor can now be used when editing translations in the Administration application, allowing to bulk edit or import translations easily.

@@ -1,5 +1,5 @@
 ---
-weight: 120
+weight: 90
 title: Cloud Fieldbus
 layout: bundle
 sector:

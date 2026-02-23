@@ -1,18 +1,26 @@
 ---
-date: ""
-title: "Display both device and asset properties for devices that are assets in Asset properties widget"
-product_area: "Application enablement & solutions"
+date: '2025-12-11'
+title: >-
+  Asset properties widget enhanced to display modeled properties for devices
+  modeled as assets
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-2c7RdTdXo4"
-      label: "Improvement"
+  - value: change-2c7RdTdXo4
+    label: Improvement
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-2398"
-version: "1023.2.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-2398
+version: 1023.2.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
-The "Asset properties 2.0" widget now lists both device and asset properties for
-devices that are assets.
+The "Asset properties" widget, which is part of the dtm-plugins, has been enhanced to better support devices modeled as assets. In addition to the previously hardcoded device properties, the widget now dynamically lists all modeled properties for devices modeled as assets. This enhancement ensures consistent visibility of modeled properties across both devices and assets, providing a unified and more complete view in the Asset Properties widget.

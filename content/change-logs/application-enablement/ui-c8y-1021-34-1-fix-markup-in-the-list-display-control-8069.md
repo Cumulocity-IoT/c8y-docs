@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62131
 version: 1021.34.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The list display control, which is used to display lists of items in various parts of the application, contained incorrect markup that could lead to display issues. This has now been fixed by correcting the markup in the control. 

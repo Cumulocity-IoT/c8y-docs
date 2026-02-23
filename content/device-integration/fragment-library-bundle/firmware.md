@@ -133,7 +133,7 @@ The device is expected to perform the following actions:
   `503,c8y_Firmware`
 
 {{< c8y-admon-info >}}
-If the URL is set to `$PROVIDED`, no firmware file is uploaded or linked from the platform. In this case, the device is fully responsible for resolving the correct binary. If the device cannot resolve the binary, it must mark the operation as **FAILED**.
+If the URL is set to an empty string, no firmware file is uploaded or linked from the platform. In this case, the device is fully responsible for resolving the correct binary. If the device cannot resolve the binary, it must mark the operation as **FAILED**.
 
 This option is useful if the device can retrieve the correct firmware file dynamically based on its environment, architecture, or internal logic.
 {{< /c8y-admon-info >}}

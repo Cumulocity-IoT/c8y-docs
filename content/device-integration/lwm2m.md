@@ -1,5 +1,5 @@
 ---
-weight: 70
+weight: 100
 title: LWM2M
 layout: bundle
 sector:

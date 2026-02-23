@@ -15,6 +15,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-64730
 version: 1022.44.6
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, widgets on typed dashboards such as `c8y_Device` could display resolver errors for users with limited permissions. This occurred because permission checks were executed on the originally configured device before the context override was applied.
 

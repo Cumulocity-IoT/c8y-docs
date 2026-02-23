@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:32:50.845Z
+date: '2023-12-06'
 title: Fixed issue with LWM2M bulk device registration on Firefox
 change_type:
   - value: change-VSkj2iV9m
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: DM-2623
 version: 10.18.483.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Fixed an issue with the LWM2M bulk device registration not accepting CSV-typed files when using the Firefox browser on Windows environments.

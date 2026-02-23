@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62449
 version: 1021.45.2
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the translation editor on the **Localization** page, users were previously unable to remove all translations for a specific key. This issue has now been resolved. With this fix, users can successfully remove all translations associated with a key in the translation editor.

@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T16:11:18.279Z
+date: '2023-12-06'
 title: Fixed issue in address space scan operation
 change_type:
   - value: change-VSkj2iV9m
@@ -13,6 +13,13 @@ build_artifact:
     label: cumulocity
 ticket: DM-2365
 version: 10.18.198.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In OPC UA device gateway nodes, expected but missing information prevented the completion of the address space scan operation. This is now fixed by skipping these nodes and adding an error message in the opcua-device-gateway log files.
 Additionally, the overall scanning speed has been improved for the full and partial address space scan operations.

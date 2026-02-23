@@ -13,5 +13,12 @@ build_artifact:
     label: dtm
 ticket: CTM-1014
 version: 1020.2.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, the select property dialog in the "Asset properties" widget only displayed the default and computed properties of a device. With this change, all custom fragments added to the device are also displayed.

@@ -24,7 +24,7 @@ To ensure the successful operation of the Service, you must fulfill the followin
 
 ### Schema limit configuration
 
-{{< product-c8y-iot >}} provides a feature flag to disable hard schema limits. If you disable these limits, data sent to the tenant is:
+{{< product-c8y-iot >}} provides a feature flag to disable hard schema limits. If you disable these limits, data violating the limits is:
 
 * **Binned**: Stored in a secondary location that is not optimized for high-performance queries.
 * **Rejected**: Not stored if it violates system-wide schema constraints.
@@ -60,11 +60,11 @@ The following limitations and constraints apply to the Service:
 
 The quality of the Service is measured by the following objectives:
 
-| Service level indicator | Monthly target |
-| ----------------------- | -------------- |
-| Catalog availability    | ≥ 99.9%        |
-| Data durability         | ≥ 99.99%       |
-| Data freshness          | ≤ 10 minutes   |
+| Service level indicator | Monthly target                   |
+| ----------------------- | -------------------------------- |
+| Catalog availability    | ≥ 99.9%                          |
+| Data durability         | ≥ 99.99%                         |
+| Data freshness          | ≤ 10 minutes in 95% of the cases |
 
 
 ### Service-level indicator definitions
@@ -74,29 +74,3 @@ The service quality indicators are defined as follows:
 * **Catalog Availability**: The uptime of the Iceberg catalog service, as defined by the [{{< company-c8y >}} service availability terms](/service-terms/service-level/#service-availability).
 * **Data Durability**: The percentage of compliant inbound data records that are successfully and permanently stored in the data lake within a calendar month. A data record is considered compliant if it adheres to the [{{< product-c8y-iot >}} quotas and limits](/service-terms/quotas/).
 * **Data Freshness**: The average time between a data record's arrival in the {{< product-c8y-iot >}} platform (post-preparation) and its availability for query in the data lake, measured over a calendar month.
-
-### Data freshness SLA definition
-
-Data published to {{< product-c8y-iot >}} is queryable in the data lake within at most 10 minutes in 95% of cases.
-
-Data Freshness (Δt) = Timestamp when data is queryable in the data lake - Timestamp when data arrives at {{< product-c8y-iot >}}
-
-Latency between data arriving at the MQTT endpoint and being output by Pulsar to Iceflow is assumed negligible (<1 second).
-Temporary issues or outages are accounted for in the 95% reliability target of data freshness.
-
-### Data freshness calculation
-
-The data ingestion process consists of multiple components, each contributing to the overall data freshness.
-The main components are:
-* **Writer**: Writes the parquet files from Pulsar to the data lake.
-* **Appender**: Commits the data files to the Iceberg tables.
-
-The total data freshness (Δt_total) is calculated as the sum of the individual component latencies:
-
-Δt_total = Δt_writer + Δt_appender
-
-Where:
-* Δt_writer = Timestamp when the batch is written to the data lake − Publish time of the data at the Pulsar CDC topic
-* Δt_appender = Timestamp when the batch is committed to the Iceberg table − Publish time of the commit data at the pending commits topic
-
-Both components are processed in batches, so the batching/buffering delays are considered in the calculation of data freshness.

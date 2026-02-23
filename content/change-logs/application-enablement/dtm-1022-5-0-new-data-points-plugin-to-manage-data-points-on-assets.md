@@ -1,18 +1,25 @@
 ---
-date: "2025-09-04"
-title: "New data points plugin to manage data points on assets"
-product_area: "Application enablement & solutions"
+date: '2025-09-04'
+title: New data points plugin to manage data points on assets
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-QHu1GdukP"
-      label: "Feature"
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-2279"
-version: "1022.5.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-2279
+version: 1022.5.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The dtm-plugin extension introduces a data points plugin that enables linking and management of device data points on asset instances. It provides a visual interface for linking device measurements to asset contexts, supports data point templates, and allows adding custom data points to link expected data points before the data arrives, enriching asset metadata through structured associations.
 

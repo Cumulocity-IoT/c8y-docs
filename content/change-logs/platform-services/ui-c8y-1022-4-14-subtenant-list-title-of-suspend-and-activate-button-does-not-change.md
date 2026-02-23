@@ -15,5 +15,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63842
 version: 1022.4.14
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the subtenant list, the title of the suspend and activate button did not change after toggling the button, which could lead to confusion about the current state. This issue has been fixed. The button title now correctly updates to reflect the action that will be performed when clicking the button, that is, it shows **Activate** when the subtenant is currently suspended, and vice versa. 

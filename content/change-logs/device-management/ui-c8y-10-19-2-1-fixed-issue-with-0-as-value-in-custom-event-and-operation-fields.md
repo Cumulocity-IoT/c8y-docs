@@ -1,5 +1,5 @@
 ---
-date: 2024-03-14
+date: '2024-03-14'
 title: Fixed issue with 0 as value in custom event and operation fields
 product_area: Device management & connectivity
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3098
 version: 10.19.2.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In Chrome, custom event and operation fields having 0 or '0' as a value were incorrectly parsed and displayed as date. This is now fixed.

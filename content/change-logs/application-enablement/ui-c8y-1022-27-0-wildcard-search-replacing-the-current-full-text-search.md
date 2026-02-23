@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-64410
 version: 1022.27.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 To enhance the search experience for assets and devices, the legacy full-text search has been replaced with a more accurate wildcard-based search. This update provides more predictable and relevant results by matching names that contain your search term. As part of this change, searching by external IDs, descriptions, and types is no longer supported. If you require full-text search functionality, please contact support or disable the 'ui.search.wildcard' feature flag.
