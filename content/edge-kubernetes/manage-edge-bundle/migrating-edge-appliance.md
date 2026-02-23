@@ -36,7 +36,7 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
       docker pull registry.c8y.io/platform/timeseries-migration-server:1.0.326
       ```
 
-   * **Transfer via tarball (Air-gapped):** Use this method if the Edge appliance VM **cannot access the registry**.
+   * **Transfer via tarball (air-gapped):** Use this method if the Edge appliance VM **cannot access the registry**.
       
       On a system with internet access:
       ```shell
