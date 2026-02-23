@@ -14,6 +14,4 @@ build_artifact:
 ticket: "CTM-2737"
 version: "1024.2.0"
 ---
-Previously, there was an issue with the update and creation of library
-Asset Definitions at startup of the microservice. This issue has been
-fixed.
+Previously, library definitions were not created and updated correctly on microservice startup. This issue is now fixed.

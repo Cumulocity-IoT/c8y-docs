@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Added more details to error message when trying to create an Asset Definition on a subtenant of an enterprise tenant"
+title: "Improved error feedback when trying to create an Asset Definition on a subtenant of an enterprise tenant using the Assets REST API"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
