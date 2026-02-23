@@ -64,6 +64,7 @@
       background-color: var(--c8y-palette-yellow-60);
       color: var(--c8y-text-color);
       font-weight: bold;
+      white-space: nowrap;
       &:hover{
         background-color: var(--c8y-palette-yellow-30);
         color: var(--c8y-palette-high);
