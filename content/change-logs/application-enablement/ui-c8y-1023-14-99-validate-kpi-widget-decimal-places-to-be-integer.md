@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Validate KPI widget decimal places to be integer
+title: KPI widget decimal places now validated as integer
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
