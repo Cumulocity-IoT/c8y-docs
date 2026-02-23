@@ -50,6 +50,10 @@ To simplify querying the current state of your assets, a consolidated representa
 "Latest tables" are not part of the current private preview release.*
 {{< /c8y-admon-info >}}
 
+{{< c8y-admon-info >}}
+Streaming Lake Ingestion also manages an `internal` folder containing tables used for internal service operations. These tables should not be modified, as doing so may compromise the service's reliability and correct functioning.
+{{< /c8y-admon-info >}}
+
 To understand how the service transfers data to the data lake, the following sections discuss the general table structure for each {{< product-c8y-iot >}} domain model class.
 
 #### General table structure {#general-table-structure}
