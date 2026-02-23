@@ -14,9 +14,9 @@ build_artifact:
 ticket: MTM-62754
 version: 2026.51.0
 ---
-This change introduces new REST APIs to create, read, update, and delete global and inventory roles access mapping entities associated with tenant login options:
+This change introduces new REST endpoints to manage global and inventory access mappings for tenant login options:
 
 * POST/GET/PUT/DELETE /tenant/loginOptions/{configIdOrType}/accessMappings
 * POST/GET/PUT/DELETE /tenant/loginOptions/{configIdOrType}/inventoryAccessMappings
 
-These endpoints allow managing access rules independently of updating the entire login options configuration, enabling targeted edits of individual mappings (including optional session termination via terminateUserSessions).
+The endpoints enable CRUD operations on individual mappings without updating the entire login options configuration, with optional session termination via terminateUserSessions.
