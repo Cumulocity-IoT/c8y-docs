@@ -15,5 +15,5 @@ ticket: "CTM-2739"
 version: "1024.2.0"
 ---
 Previously, there was an inconsistency in the error message of the REST
-API when trying to assign or unassign a non-device to/from an Asset.
+API when trying to assign or unassign a non-device to/from an asset.
 This has been fixed now.
