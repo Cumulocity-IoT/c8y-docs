@@ -54,39 +54,40 @@ Groups are used in {{< product-c8y-iot >}} to organize devices or other groups. 
 - The model can be easily identified by the "(Default)" suffix throughout the Digital Twin Manager application.
 
 #### Generic asset model
-Generic asset models are a flexible alternative to traditional asset models allowing to create assets without enforcing a predefined hierarchy. Traditionally, DTM requires a strict, sequential process where models, data schemas, and hierarchical relationships must be fully defined before any asset instances can be created.
+Generic asset models are a flexible alternative to traditional asset models that allow you to create assets without enforcing a predefined hierarchy. Traditionally, DTM requires a strict, sequential process where models, data schemas, and hierarchical relationships must be fully defined before any asset instances can be created.
 
 Generic asset models remove these rigid barriers, allowing for:
 
-- **Rapid Prototyping**: Create asset representations quickly without pre-defining formal structures.
-- **System Integration**: Integrate data from external systems (like MES or ERP) where the full schema may not yet be known.
+- **Rapid Prototyping**: Create asset representations quickly without predefining formal structures.
+- **System Integration**: Integrate data from external systems (such as MES or ERP) where the full schema may not yet be known.
 - **Evolving Requirements**: Start with a flexible "container" and add structure as the project matures.
 
 ##### Characteristics of a generic asset model
 - Allows predefining specific child asset models and properties while still allowing other asset models to be nested under the asset.
 - An existing regular asset model can be converted to a generic asset model by selecting the **Allow any child asset models** option.
-- Generic asset models can be nested under any Group; however, Groups cannot be added as child assets under a generic asset model
+- Generic asset models can be nested under any group. However, groups cannot be added as child assets under a generic asset model.
 
-{{< c8y-admon-info>}}
-IMPORTANT: The conversion from a regular asset model to a generic asset model is not bidirectional. Once an asset model has been made generic, it cannot be reverted back to a regular, strictly-typed asset model. Ensure to evaluate the modeling requirements before applying this change.
+{{< c8y-admon-important >}}
+The conversion from a regular asset model to a generic asset model is not bidirectional. Once an asset model has been made generic, it cannot be reverted back to a regular, strictly-typed asset model. Evaluate the modeling requirements before applying this change.
+{{< /c8y-admon-important >}}
 
-
-NOTE:The Digital Twin Manager interface does not currently support the dynamic addition of child assets when creating an asset from a generic model. To dynamically add child assets to a generic asset without predefining them in the model hierarchy, you must use the [Assets API](TODO: Add a link to the Assets API documentation here)
-{{</c8y-admon-info>}}
+{{< c8y-admon-info >}}
+The Digital Twin Manager interface does not currently support the dynamic addition of child assets when creating an asset from a generic model. To dynamically add child assets to a generic asset without predefining them in the model hierarchy, you must use the [Assets API](TODO: Add a link to the Assets API documentation here).
+{{< /c8y-admon-info >}}
 
 
 ##### Default generic asset model
 
 - The **Generic Asset** asset model is identified with the key *c8y_GenericAsset*.
-- Available by default, it cannot be deleted
-- Allows modifying Label, Description and Icon
-- Allows defining child asset models and asset properties
+- Available by default, it cannot be deleted.
+- Allows modifying the label, description, and icon.
+- Allows defining child asset models and asset properties.
 
 ##### To create a generic asset model
 
-1. On the **Asset models** page and click **Add asset model**
-2. Provide a Label, Description and Icon
-3. To make the asset model generic, select **Allow any child asset models**
+1. On the **Asset models** page, click **Add asset model**.
+2. Provide a label, description, and icon.
+3. To make the asset model generic, select **Allow any child asset models**.
 4. Optionally, add specific child asset models or asset properties to define the hierarchy.
 5. Optionally, select **Allow all properties** to allow any asset property to be added to the asset.
 
