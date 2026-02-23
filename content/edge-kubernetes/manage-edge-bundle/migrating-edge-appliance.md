@@ -53,7 +53,7 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
       ```
 
       On the Edge appliance VM:
-      1. Copy the `timeseries-migration-server.tar` file created in the previous step into the `/tmp` folder of the Edge appliance VM.
+      1. Copy the *timeseries-migration-server.tar* file created in the previous step into the */tmp* folder of the Edge appliance VM.
       1. Load the image from the tarball:
          ```shell
          docker load -i /tmp/timeseries-migration-server.tar
