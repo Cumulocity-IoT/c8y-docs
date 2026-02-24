@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-65437
 version: 1023.48.1
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(web sdk): [MTM-65437] Adding markdown formating to alarm details
-view
-(#10780)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10780)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65437]:
-https://cumulocity.atlassian.net/browse/MTM-65437?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Jan Hommes <janhommes@users.noreply.github.com>
+Alarm details in the Cumulocity IoT web application now support markdown formatting, allowing you to use markdown syntax (such as bold, italic, links, and lists) in the alarm descriptions shown in the details view. Previously, alarm text was displayed as plain text without any formatting options. With this improvement, you can now create more readable and structured alarm information that better communicates important details to your users. This enhancement applies to all existing and new alarms in your Cumulocity IoT tenant, making alarm information more visually organized and easier to understand at a glance.
