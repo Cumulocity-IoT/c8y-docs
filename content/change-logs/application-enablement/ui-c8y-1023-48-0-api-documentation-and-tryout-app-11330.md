@@ -1,6 +1,6 @@
 ---
 date: ""
-title: API Documentation and tryout app (#11330)
+title: API documentation and interactive tryout app
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
