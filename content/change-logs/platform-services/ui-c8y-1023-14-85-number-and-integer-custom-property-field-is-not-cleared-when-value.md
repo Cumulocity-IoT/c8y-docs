@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Number and integer custom property fields are now properly cleared when values are removed
 product_area: Platform services
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Data Explorer correctly displays data point for custom time range
 product_area: Application enablement & solutions
 change_type:

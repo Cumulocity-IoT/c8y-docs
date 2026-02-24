@@ -1,5 +1,5 @@
 ---
-date: '2024-12-12'
+date: '2026-03-31'
 title: >-
   lastUpdated fragment of a group is updated correctly when a device is added
   upon registration

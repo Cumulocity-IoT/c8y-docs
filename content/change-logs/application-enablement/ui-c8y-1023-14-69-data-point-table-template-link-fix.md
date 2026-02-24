@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Fixed issue with data point template
 product_area: Application enablement & solutions
 change_type:

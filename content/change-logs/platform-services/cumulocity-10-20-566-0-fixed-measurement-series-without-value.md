@@ -1,5 +1,5 @@
 ---
-date: '2024-12-12'
+date: '2026-03-31'
 title: Measurement series can no longer be created without value
 product_area: Platform services
 change_type:

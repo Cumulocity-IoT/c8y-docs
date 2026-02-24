@@ -1,5 +1,5 @@
 ---
-date: '2025-12-03'
+date: '2026-03-31'
 title: Information on migrating to Web SDK v1023 added to the Developer Codex
 product_area: Application enablement & solutions
 change_type:

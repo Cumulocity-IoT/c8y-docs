@@ -1,5 +1,5 @@
 ---
-date: '2025-12-02'
+date: '2026-03-31'
 title: New option for skipping SSO redirect and showing standard platform login
 product_area: Application enablement & solutions
 change_type:

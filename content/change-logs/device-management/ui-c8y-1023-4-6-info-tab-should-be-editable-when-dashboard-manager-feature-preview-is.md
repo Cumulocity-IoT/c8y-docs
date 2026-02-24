@@ -1,5 +1,5 @@
 ---
-date: '2025-12-12'
+date: '2026-03-31'
 title: Info tab no longer hidden when dashboard manager feature preview is disabled
 product_area: Device management & connectivity
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Computed properties examples added to asset properties selector in the Codex
 product_area: Application enablement & solutions
 change_type:

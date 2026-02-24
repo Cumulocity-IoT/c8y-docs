@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Tooltips in legacy data point graph now displayed correctly
 product_area: Application enablement & solutions
 change_type:

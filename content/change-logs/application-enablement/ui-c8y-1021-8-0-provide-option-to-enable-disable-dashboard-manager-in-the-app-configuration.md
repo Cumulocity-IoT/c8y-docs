@@ -1,5 +1,5 @@
 ---
-date: '2024-12-12'
+date: '2026-03-31'
 title: >-
   Option added to enable or disable the dashboard manager in the application
   configuration

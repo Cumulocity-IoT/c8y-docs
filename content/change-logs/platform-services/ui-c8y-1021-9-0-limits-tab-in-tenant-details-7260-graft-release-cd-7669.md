@@ -1,5 +1,5 @@
 ---
-date: '2024-12-12'
+date: '2026-03-31'
 title: New "Limits" tab in tenant details
 product_area: Platform services
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Message generation can now properly be terminated in HTML widget AI code assistant
 product_area: Application enablement & solutions
 change_type:

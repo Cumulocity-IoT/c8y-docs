@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Info gauge widget now displays dates in consistent format with other dashboard elements
 product_area: Application enablement & solutions
 change_type:

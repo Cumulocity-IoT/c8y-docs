@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Disallowed certain application options to be provided via query parameters
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title:  Error alerts can be dismissed when a referenced device no longer exists
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Prevented additional requests of the Data point graph widget in real-time mode
 product_area: Application enablement & solutions
 change_type:

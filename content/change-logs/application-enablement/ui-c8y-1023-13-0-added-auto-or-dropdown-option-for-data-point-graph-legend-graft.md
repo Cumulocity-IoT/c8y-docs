@@ -1,5 +1,5 @@
 ---
-date: 2025-12-31
+date: 2026-03-31
 title: Added option to control the data point graph legend
 product_area: Application enablement & solutions
 change_type:

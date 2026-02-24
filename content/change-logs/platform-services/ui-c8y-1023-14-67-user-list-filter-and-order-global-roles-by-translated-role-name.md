@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: User list now filters and sorts global roles by translated name
 product_area: Platform services
 change_type:

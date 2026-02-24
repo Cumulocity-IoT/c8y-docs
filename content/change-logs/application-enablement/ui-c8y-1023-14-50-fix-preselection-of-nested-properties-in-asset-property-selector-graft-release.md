@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Nested properties displayed as pre-selected in the asset property selector
 product_area: Application enablement & solutions
 change_type:

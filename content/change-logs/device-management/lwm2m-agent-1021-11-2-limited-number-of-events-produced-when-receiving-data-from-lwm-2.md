@@ -1,5 +1,5 @@
 ---
-date: '2025-12-04'
+date: '2026-03-31'
 title: Limited number of events produced when receiving data from LWM2M device
 product_area: Device management & connectivity
 change_type:

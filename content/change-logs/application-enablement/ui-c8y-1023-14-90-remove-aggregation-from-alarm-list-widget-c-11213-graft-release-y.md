@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Removed non-functional aggregation option from Alarm list widget configuration
 product_area: Application enablement & solutions
 change_type:

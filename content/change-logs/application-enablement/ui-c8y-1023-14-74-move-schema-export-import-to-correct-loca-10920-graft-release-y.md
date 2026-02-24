@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Fixed HTML widget export, import, and schema definition
 product_area: Application enablement & solutions
 change_type:

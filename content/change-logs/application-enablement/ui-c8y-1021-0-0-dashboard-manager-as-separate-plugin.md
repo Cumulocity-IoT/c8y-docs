@@ -1,5 +1,5 @@
 ---
-date: 2024-12-10
+date: 2026-03-31
 title: Dashboard manager extracted into a separate plugin
 product_area: Application enablement & solutions
 change_type:

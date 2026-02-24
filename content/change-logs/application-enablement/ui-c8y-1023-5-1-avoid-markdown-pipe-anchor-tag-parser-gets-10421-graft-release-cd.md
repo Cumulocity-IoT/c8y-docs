@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Securing markdown pipe link parser
 product_area: Application enablement & solutions
 change_type:

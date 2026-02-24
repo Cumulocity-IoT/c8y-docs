@@ -1,5 +1,5 @@
 ---
-date: '2025-12-11'
+date: '2026-03-31'
 title: Improved device certificate enrollment validation
 change_type:
   - value: change-2c7RdTdXo4

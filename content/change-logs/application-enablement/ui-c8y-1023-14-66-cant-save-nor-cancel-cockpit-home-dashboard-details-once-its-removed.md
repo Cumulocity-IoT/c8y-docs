@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Fixed inability to save or cancel new Cockpit home dashboard settings after removal
 product_area: Application enablement & solutions
 change_type:

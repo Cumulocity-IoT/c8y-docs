@@ -1,5 +1,5 @@
 ---
-date: '2024-12-12'
+date: '2026-03-31'
 title: Improved validation error for invalid branding variant names
 product_area: Application enablement & solutions
 change_type:

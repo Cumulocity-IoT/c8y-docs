@@ -1,5 +1,5 @@
 ---
-date: '2024-12-12'
+date: '2026-03-31'
 title: >-
   Label for the "Display as" function no longer overlaps with other elements in
   the header

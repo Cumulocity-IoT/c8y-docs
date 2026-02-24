@@ -1,5 +1,5 @@
 ---
-date: '2024-12-12'
+date: '2026-03-31'
 title: >-
   Measurement series endpoint returns an error if the series contains more than
   one dot

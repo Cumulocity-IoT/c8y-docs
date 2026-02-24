@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Data explorer now also displays data near the beginning of a selected time range
 product_area: Application enablement & solutions
 change_type:

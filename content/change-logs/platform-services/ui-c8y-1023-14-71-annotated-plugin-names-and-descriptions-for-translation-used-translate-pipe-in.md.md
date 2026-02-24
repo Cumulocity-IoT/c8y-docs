@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Translated plugin names and descriptions in the installed plugins list
 product_area: Platform services
 change_type:

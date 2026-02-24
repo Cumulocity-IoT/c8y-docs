@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Fixed styling of checkbox options in the confirmation dialog
 product_area: Application enablement & solutions
 change_type:

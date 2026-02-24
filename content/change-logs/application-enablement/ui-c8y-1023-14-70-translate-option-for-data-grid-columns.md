@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Simplified translation of data grid column values via translate option
 product_area: Application enablement & solutions
 change_type:

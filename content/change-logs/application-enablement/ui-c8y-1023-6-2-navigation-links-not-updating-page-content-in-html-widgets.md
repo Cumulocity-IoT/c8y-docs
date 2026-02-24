@@ -1,5 +1,5 @@
 ---
-date: '2025-12-03'
+date: '2026-03-31'
 title: Navigation links in HTML widgets now correctly update the page content
 product_area: Application enablement & solutions
 change_type:

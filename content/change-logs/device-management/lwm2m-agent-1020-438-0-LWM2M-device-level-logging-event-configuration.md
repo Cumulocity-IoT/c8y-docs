@@ -1,5 +1,5 @@
 ---
-date: 2024-12-19
+date: 2026-03-31
 title: LWM2M device logging level configuration
 product_area: Device management & connectivity
 change_type:

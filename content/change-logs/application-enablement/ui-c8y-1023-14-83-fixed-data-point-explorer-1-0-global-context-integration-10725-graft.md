@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Fixed legacy Data point widget integration with global context
 product_area: Application enablement & solutions
 change_type:

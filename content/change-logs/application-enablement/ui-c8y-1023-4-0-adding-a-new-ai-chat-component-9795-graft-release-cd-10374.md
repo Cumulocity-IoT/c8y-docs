@@ -1,5 +1,5 @@
 ---
-date: '2025-12-03'
+date: '2026-03-31'
 title: New ai-chat component and AI chat assistant for HTML widgets
 product_area: Application enablement & solutions
 change_type:

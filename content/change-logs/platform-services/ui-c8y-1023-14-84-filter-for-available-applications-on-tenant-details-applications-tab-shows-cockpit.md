@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Application filter in tenant details now works with translated application names
 product_area: Platform services
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: '2024-12-12'
+date: '2026-03-31'
 title: Scheduling bulk operations with a precise delay now works properly
 product_area: Device management & connectivity
 change_type:

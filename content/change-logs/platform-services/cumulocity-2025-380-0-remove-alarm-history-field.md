@@ -1,5 +1,5 @@
 ---
-date: '2025-12-04'
+date: '2026-03-31'
 title: History field removed from the Alarm API
 change_type:
   - value: change-3BQrQ6adS

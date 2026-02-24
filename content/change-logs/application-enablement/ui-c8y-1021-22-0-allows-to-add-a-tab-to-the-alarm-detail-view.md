@@ -1,5 +1,5 @@
 ---
-date: '2024-12-19'
+date: '2026-03-31'
 title: Enhanced alarm details view with the option to add custom tabs
 product_area: Application enablement & solutions
 change_type:
