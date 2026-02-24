@@ -44,7 +44,7 @@ This category contains the following blocks:
 </td>
 </tr>
 <tr>
-<td><a href="#logger-preview">Logger (Preview)</a></td>
+<td><a href="#logger">Logger</a></td>
 <td><span>Writes a message to the microservice log file for each input.</span>
 </td>
 </tr>
@@ -659,7 +659,7 @@ Note: To extract a custom property from the Measurement Input block, you must ad
 </table>
 
 
-### Logger (Preview)
+### Logger
 
 `apama.analyticsbuilder.blocks.Logger`
 
@@ -671,7 +671,7 @@ Example log message with logger tag "demoLog" at log level "ERROR":
 <tt>ERROR ... &lt;demoLog&gt; value=any(float,5.09) properties={"ignore":any(string,"false")}</tt></p>
 
 
-#### Parameters {#logger-preview-parameters}
+#### Parameters {#logger-parameters}
 
 <table>
 <colgroup>
@@ -724,7 +724,7 @@ Example log message with logger tag "demoLog" at log level "ERROR":
 </tbody>
 </table>
 
-#### Input Port Details {#logger-preview-inputs}
+#### Input Port Details {#logger-inputs}
 
 <table>
 <colgroup>

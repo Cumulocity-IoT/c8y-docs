@@ -54,7 +54,7 @@ This category contains the following blocks:
 </td>
 </tr>
 <tr>
-<td><a href="#rate-limiter-preview">Rate Limiter (Preview)</a></td>
+<td><a href="#rate-limiter">Rate Limiter</a></td>
 <td><span>Suppresses all but the first message received per specified time period.</span>
 </td>
 </tr>
@@ -923,7 +923,7 @@ Note: The Minimum/Maximum block generates the minimum and maximum for an individ
 </table>
 
 
-### Rate Limiter (Preview)
+### Rate Limiter
 
 `apama.analyticsbuilder.blocks.RateLimiter`
 
@@ -931,7 +931,7 @@ Note: The Minimum/Maximum block generates the minimum and maximum for an individ
 <p><b>This block is currently in public preview and may be subject to change.</b></p>
 
 
-#### Parameters {#rate-limiter-preview-parameters}
+#### Parameters {#rate-limiter-parameters}
 
 <table>
 <colgroup>
@@ -960,7 +960,7 @@ Note: The Minimum/Maximum block generates the minimum and maximum for an individ
 </tbody>
 </table>
 
-#### Input Port Details {#rate-limiter-preview-inputs}
+#### Input Port Details {#rate-limiter-inputs}
 
 <table>
 <colgroup>
@@ -986,7 +986,7 @@ Note: The Minimum/Maximum block generates the minimum and maximum for an individ
 </tbody>
 </table>
 
-#### Output Port Details {#rate-limiter-preview-outputs}
+#### Output Port Details {#rate-limiter-outputs}
 
 <table>
 <colgroup>

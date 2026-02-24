@@ -19,7 +19,7 @@ This category contains the following blocks:
 </thead>
 <tbody>
 <tr>
-<td><a href="#ai-agent-prompt-preview">AI Agent Prompt (Preview)</a></td>
+<td><a href="#ai-agent-prompt">AI Agent Prompt</a></td>
 <td><span>This block queries an AI Agent manager agent using its inputs and produces the agent's text response as output.</span>
 </td>
 </tr>
@@ -64,6 +64,11 @@ This category contains the following blocks:
 </td>
 </tr>
 <tr>
+<td><a href="#onnx-preview">ONNX (Preview)</a></td>
+<td><span>Executes an ONNX model with named inputs and outputs.</span>
+</td>
+</tr>
+<tr>
 <td><a href="#range">Range</a></td>
 <td><span>Compares the input value against the defined lower and upper range values to detect whether the input is within or out of the range, or whether it crosses the range.</span>
 </td>
@@ -79,7 +84,7 @@ This category contains the following blocks:
 </td>
 </tr>
 <tr>
-<td><a href="#smart-function-preview">Smart Function (Preview)</a></td>
+<td><a href="#smart-function">Smart Function</a></td>
 <td><span>The Smart Function block allows you to write a custom JS/ECMAScript function to process up to ten inputs and produce up to ten outputs.</span>
 </td>
 </tr>
@@ -96,7 +101,7 @@ This category contains the following blocks:
 </tbody>
 </table>
 
-### AI Agent Prompt (Preview)
+### AI Agent Prompt
 
 `apama.analyticsbuilder.blocks.AIAgent`
 
@@ -108,7 +113,7 @@ This category contains the following blocks:
 <b>This block is currently in public preview and may be subject to change.</b></p>
 
 
-#### Parameters {#ai-agent-prompt-preview-parameters}
+#### Parameters {#ai-agent-prompt-parameters}
 
 <table>
 <colgroup>
@@ -145,7 +150,7 @@ This category contains the following blocks:
 </tbody>
 </table>
 
-#### Input Port Details {#ai-agent-prompt-preview-inputs}
+#### Input Port Details {#ai-agent-prompt-inputs}
 
 <table>
 <colgroup>
@@ -199,7 +204,7 @@ This category contains the following blocks:
 </tbody>
 </table>
 
-#### Output Port Details {#ai-agent-prompt-preview-outputs}
+#### Output Port Details {#ai-agent-prompt-outputs}
 
 <table>
 <colgroup>
@@ -1097,6 +1102,102 @@ It is only mandatory to provide one of the limits. If this is the case, then the
 </table>
 
 
+### ONNX (Preview)
+
+`apama.analyticsbuilder.blocks.ONNX`
+
+<p>Executes an ONNX model with named inputs and outputs.</p>
+<p><b>This block is currently in public preview and may be subject to change.</b>
+<p></p>
+The input pulse must contain a properties dictionary where keys are the ONNX input names and values are scalars (float, integer, boolean, string) or tensors (nested sequences of those types).
+<p></p>
+The output pulse contains a properties dictionary where keys are the ONNX output names and values are scalars or tensors matching the model's output schema.
+<p></p>
+If the model execution fails, the output properties will contain a single "error" property with the error message.</p>
+
+
+#### Parameters {#onnx-preview-parameters}
+
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 50%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+<col style="width: 10%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+<th scope="col">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">ONNX model name</th>
+<td><span>The ONNX model name. The model must be deployed to the Files repository as ModelName.zip, containing ModelName.onnx.</span>
+</td>
+<td><span>string</span>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+#### Input Port Details {#onnx-preview-inputs}
+
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 60%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Model Inputs</th>
+<td><span>Input pulse containing properties dictionary with named ONNX inputs.</span>
+</td>
+<td><span>pulse</span>
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Output Port Details {#onnx-preview-outputs}
+
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 60%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Model Outputs</th>
+<td><span>Output pulse containing properties dictionary with named ONNX outputs. Each output property value is either a scalar (float, integer, boolean, string) or a tensor (nested sequences of those types). If the model execution fails, the output properties will contain a single "error" property with the error message.</span>
+</td>
+<td><span>pulse</span>
+</td>
+</tr>
+</tbody>
+</table>
+
+
 ### Range
 
 `apama.analyticsbuilder.blocks.Range`
@@ -1473,7 +1574,7 @@ The value is rounded to the nearest 'target number' - this is a whole number (if
 </table>
 
 
-### Smart Function (Preview)
+### Smart Function
 
 `apama.analyticsbuilder.blocks.SmartFunction`
 
@@ -1493,7 +1594,7 @@ The return value of the function is a list of up to ten values corresponding to 
 For example: <pre> export function onInput(inputs, context) {<br/> &nbsp;&nbsp;console.log("Processing inputs");<br/> &nbsp;&nbsp;context.setState("count", context.getState("count", 0) + 1);<br/> &nbsp;&nbsp;if (inputs[0].value !== null && inputs[1].value !== context.params[0]) {<br/> &nbsp;&nbsp;&nbsp;&nbsp;return [<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inputs[0].value - inputs[1].value, // outputs[0]<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: inputs[0].value - inputs[1].value,<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties: { ...inputs[0].properties, ...inputs[1].properties }<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} // outputs[1]<br/> &nbsp;&nbsp;&nbsp;&nbsp;];<br/> &nbsp;&nbsp;}<br/> &nbsp;&nbsp;return null;<br/> }<br/> </pre></p>
 
 
-#### Parameters {#smart-function-preview-parameters}
+#### Parameters {#smart-function-parameters}
 
 <table>
 <colgroup>
@@ -1579,7 +1680,7 @@ For example: <pre> export function onInput(inputs, context) {<br/> &nbsp;&nbsp;c
 </tbody>
 </table>
 
-#### Input Port Details {#smart-function-preview-inputs}
+#### Input Port Details {#smart-function-inputs}
 
 <table>
 <colgroup>
@@ -1668,7 +1769,7 @@ For example: <pre> export function onInput(inputs, context) {<br/> &nbsp;&nbsp;c
 </tbody>
 </table>
 
-#### Output Port Details {#smart-function-preview-outputs}
+#### Output Port Details {#smart-function-outputs}
 
 <table>
 <colgroup>

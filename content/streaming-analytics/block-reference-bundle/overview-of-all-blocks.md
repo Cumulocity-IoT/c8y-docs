@@ -19,7 +19,7 @@ The following table gives a brief description of all blocks that can be selected
 </thead>
 <tbody>
 <tr>
-<td><a href="#ai-agent-prompt-preview">AI Agent Prompt (Preview)</a></td>
+<td><a href="#ai-agent-prompt">AI Agent Prompt</a></td>
 <td><span>This block queries an AI Agent manager agent using its inputs and produces the agent's text response as output.</span>
 </td>
 </tr>
@@ -159,7 +159,7 @@ The following table gives a brief description of all blocks that can be selected
 </td>
 </tr>
 <tr>
-<td><a href="#logger-preview">Logger (Preview)</a></td>
+<td><a href="#logger">Logger</a></td>
 <td><span>Writes a message to the microservice log file for each input.</span>
 </td>
 </tr>
@@ -199,6 +199,11 @@ The following table gives a brief description of all blocks that can be selected
 </td>
 </tr>
 <tr>
+<td><a href="#onnx-preview">ONNX (Preview)</a></td>
+<td><span>Executes an ONNX model with named inputs and outputs.</span>
+</td>
+</tr>
+<tr>
 <td><a href="#operation-input">Operation Input</a></td>
 <td><span>Receives <tt>Operation</tt> objects from a device, asset, devices in a group, or all input sources.</span>
 </td>
@@ -234,7 +239,7 @@ The following table gives a brief description of all blocks that can be selected
 </td>
 </tr>
 <tr>
-<td><a href="#rate-limiter-preview">Rate Limiter (Preview)</a></td>
+<td><a href="#rate-limiter">Rate Limiter</a></td>
 <td><span>Suppresses all but the first message received per specified time period.</span>
 </td>
 </tr>
@@ -264,7 +269,7 @@ The following table gives a brief description of all blocks that can be selected
 </td>
 </tr>
 <tr>
-<td><a href="#smart-function-preview">Smart Function (Preview)</a></td>
+<td><a href="#smart-function">Smart Function</a></td>
 <td><span>The Smart Function block allows you to write a custom JS/ECMAScript function to process up to ten inputs and produce up to ten outputs.</span>
 </td>
 </tr>
