@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAB-5075
-version: 27.50.0
+version: 27.53.0
 ---
 
 A new ONNX block has been added to Analytics Builder in Public Preview. This block executes an ONNX model that has been deployed to the files repository.
