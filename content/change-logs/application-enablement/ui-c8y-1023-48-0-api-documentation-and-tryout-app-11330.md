@@ -1,6 +1,6 @@
 ---
 date: ""
-title: API documentation and interactive tryout app
+title: New application added to read OpenAPI REST specification
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
