@@ -67,23 +67,16 @@
       {{ $dateLimit := site.Data.date_settings.date }}
 
       {{ range where $reusablePages "Date" "ge" $dateLimit}}
-
-      {{/*  ====================  */}}
-      {{/*  DEPRECATED 
-       * now displaying all change types is handled by  the yearly release 
-       and / or by the "internal=true" url parameter
-      */}}
-        
       {{/*  Based on the yearly release boolean, retrives 
           * yearly_release: true -  show all entries
           * yearly_release: false - don't show "Fix" entries
          */}}
       {{$classes := slice}}
+      {{ if site.Data.date_settings.yearly_release}}
       {{ $currentDate.Set "out" ""}}
-      {{/*  {{ if site.Data.date_settings.yearly_release}}
       {{else}}
       {{ $currentDate.Set "out" "Fix"}}
-      {{end}}  */}}
+      {{end}}
 
       {{ if ne (index .Params.change_type 0).label ($currentDate.Get "out")}}
 
@@ -118,15 +111,8 @@
 
       {{ if not site.Data.date_settings.yearly_release}}
         <div
-          id="cl-{{ $listDate | urlize }}"
-          class='page-section change-log__date 
-          {{ range $classes }}
-            {{- if and (eq . "change-type-fix") (not $hasOtherChangeType) -}}
-              change-type-fix hidden {{ else }} {{ . }} {{ end }}
-          {{- end -}}'
-          {{- if and (in $classes "change-type-fix") (not $hasOtherChangeType) -}}
-            data-internal
-          {{- end -}}
+          id="cl-{{$listDate | urlize }}"
+          class="page-section change-log__date {{range $classes}}{{.}} {{end}}"
         >
           <h5>{{$listDate}}</h5>
         </div>
@@ -148,9 +134,8 @@
 
       <section
         id='{{(replace .Name ".md" "") | urlize }}'
-        class="page-section change-type-{{(index .Params.change_type 0).label | urlize}} component-{{ (index .Params.component 0).label | urlize }}  productarea-{{.Params.product_area | urlize}} technicalcomponent-{{(index .Params.build_artifact 0).label | urlize}} {{if and (not site.Data.date_settings.yearly_release) (eq ((index .Params.change_type 0).label | urlize) "fix") }} hidden {{end}}"
+        class="page-section change-type-{{(index .Params.change_type 0).label | urlize}} component-{{ (index .Params.component 0).label | urlize }}  productarea-{{.Params.product_area | urlize}} technicalcomponent-{{(index .Params.build_artifact 0).label | urlize}}"
         data-date="{{.Date}}"
-        {{if and (not site.Data.date_settings.yearly_release) (eq ((index .Params.change_type 0).label | urlize) "fix") }} data-internal {{end}}
       >
         <div class="article-content change-log">
           <div class="change-log__header">
@@ -211,8 +196,6 @@
               {{end}}
             </div>
           </div>
-           -->
-          {{.Content }}
         </div>
       </section>
       {{ end }}
