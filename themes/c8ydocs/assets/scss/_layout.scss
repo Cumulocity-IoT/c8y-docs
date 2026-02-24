@@ -211,6 +211,7 @@ body:has(>main > .home-top){
   text-decoration: none;
   display: flex;
   flex-direction: column;
+  border-radius: .25rem;
   &__header{
     display: flex;
     gap: 1rem;

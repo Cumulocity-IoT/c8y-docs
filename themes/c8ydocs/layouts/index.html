@@ -42,7 +42,7 @@
       </a>
       {{- if .Page.Params.pdf -}}
       {{- $zip := (printf "zips/%s.zip" .Page.Data.Term) | absURL -}}
-      <div class="m-l-32 m-b-32 p-relative">
+      <div class="m-l-32 m-b-24 p-relative">
         <a class="btn-metadata btn-tooltip" href="{{ $zip }}" aria-label="A ZIP file containing all the PDFs in this section"
           data-tooltip="A ZIP file containing all 
 the PDFs in this section" 
