@@ -27,8 +27,9 @@ To grant a permission to a user, assign the required permission strings, such as
 
 ### Private Preview {#private-preview}
 
-Private Preview denotes a feature release stage in the [Continuous Deployment model](#continuous-deployment) where a new feature is made available to a limited, invitation-only group of selected customers for feedback and testing. See also, [Public Preview](#public-preview) and [General Availability](#ga).
+Private Preview denotes a feature release stage in the [Continuous Deployment model](#continuous-deployment) where a new feature is made available to a limited, invitation-only group of selected customers for feedback and testing, as opposed to [Public Preview](#public-preview) and [General Availability](#ga).
 
+See also [Preview features](/service-terms/previews/) in the documentation.
 
 ### Processing mode {#processing-mode}
 
@@ -41,4 +42,6 @@ For REST, the processing mode is specified using the `X-Cumulocity-Processing-Mo
 
 ### Public Preview {#public-preview}
 
-Public Preview denotes a feature release stage in the [Continuous Deployment model](#continuous-deployment) where a new feature is made available to any customer who opts in to use it. Features in this stage are not yet considered generally available. See also, [Private Preview](#private-preview) and [General Availability](#ga).
+Public Preview denotes a feature release stage in the [Continuous Deployment model](#continuous-deployment) where a new feature is made available to any customer who opts in to use it. Features in this stage are not yet considered generally available as opposed to [Private Preview](#private-preview) and [General Availability](#ga).
+
+See also [Preview features](/service-terms/previews/) in the documentation.

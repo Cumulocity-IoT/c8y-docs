@@ -15,6 +15,13 @@ build_artifact:
     label: cumulocity
 ticket: MTM-64869
 version: 2025.78.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 
 When using [external IAM JWT tokens](/authentication/sso/#configuring-access-tokens), the authentication failed to correctly identify the tenant and user when the token did not include a tenant ID or username in its claims. 

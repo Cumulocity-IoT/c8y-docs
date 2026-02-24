@@ -1,5 +1,5 @@
 ---
-date: 2024-03-27
+date: '2024-03-27'
 title: Markers correctly displayed in the Map widget
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: dtm
 ticket: IOT-19589
 version: 1019.1.8
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 When assets with location were imported in bulk, markers in the "Map" widget were not shown due to an incompatible data type of latitude and longitude values. Aligning the data type to number now correctly displays the markers on the map.

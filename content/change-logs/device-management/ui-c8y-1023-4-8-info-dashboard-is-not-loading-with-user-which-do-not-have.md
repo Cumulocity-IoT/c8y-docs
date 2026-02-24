@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: DM-5059
 version: 1023.4.8
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the Device Management application, in certain cases dashboards on the **Info** tab failed to load for users without global inventory access (that is, with inventory roles only). This issue is now fixed,  and device dashboards are available for all users with access to the device.

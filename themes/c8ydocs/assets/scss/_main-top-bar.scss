@@ -99,7 +99,10 @@
   top: 0;
   display: flex;
   background-color: var(--c8y-palette-high);
-  padding: 8px 24px;
+  padding: 8px 16px;
+  @media (min-width: $screen-sm-min){
+    padding: 8px 24px;
+  }
   align-items: center;
   box-shadow: var(--c8y-elevation-md-bottom);
   min-height: 56px;
@@ -116,14 +119,14 @@
   }
   > .d-flex {
     align-items: center;
-    gap: 16px;
+    gap: 4px;
+    @media (min-width: $screen-sm-min){
+      gap: 16px;
+    }
     flex-wrap: nowrap;
   }
   .search-container{
-    display: none;
-    @media (min-width: $screen-sm-min){
-      display: block;
-    }
+   display: block;
   }
   .nav {
     padding: 0;

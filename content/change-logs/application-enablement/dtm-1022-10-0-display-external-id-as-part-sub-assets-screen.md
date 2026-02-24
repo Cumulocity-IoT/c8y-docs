@@ -13,6 +13,13 @@ build_artifact:
     label: dtm
 ticket: ''
 version: 1022.10.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 A new field has been introduced in the **Subassets** page to display the
 External ID of an asset. If available, the External ID (from the

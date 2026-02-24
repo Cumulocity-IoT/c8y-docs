@@ -95,7 +95,7 @@ If there are devices associated with the connection, an error message will appea
 
 To process data from LoRa devices, {{< product-c8y-iot >}} needs to understand the payload format of the devices. Mapping a payload data to {{< product-c8y-iot >}} data can be done by creating a LoRa device protocol.
 
-During the [device registration](#registering-lora-devices), you can associate this device protocol. The received uplink callbacks for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
+During the [device registration](#registering-actility-lora-devices), you can associate this device protocol. The received uplink callbacks for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
 
 The device protocol assigned during device registration can be changed from the **LPWAN** tab in the device details page.
 
@@ -199,7 +199,7 @@ Under **Functionalities**, specify how this device protocol should behave:
 - **Send event**: Creates an event with the decoded value.
 - **Update managed object**: Updates a fragment in a managed object with the decoded value.
 
-You can also have a nested structure with several values within a measurement, event or managed object fragment. In case of a measurement all the properties of the same type will be merged to create a nested structure. In case of an event or a managed object all the properties with the same fragment are merged to create a nested structure. Also refer to the [example](#example-with-nested-structure) of a nested structure for a "Position" device protocol below.
+You can also have a nested structure with several values within a measurement, event or managed object fragment. In case of a measurement all the properties of the same type will be merged to create a nested structure. In case of an event or a managed object all the properties with the same fragment are merged to create a nested structure. Also refer to the [example](#loriot-example-with-nested-structure) of a nested structure for a "Position" device protocol below.
 
 Click **OK** to add the values to your device protocol.
 
@@ -238,7 +238,7 @@ This will be the result:
 
 #### Using custom decoding/encoding {#actility-using-custom-decodingencoding}
 
-The Actility agent also supports the decoding/encoding functionality by plugging in the custom microservice. Refer to [LPWAN custom protocols](/lpwan-custom-protocols/) for further details.
+The Actility agent also supports the decoding/encoding functionality by plugging in the custom microservice. Refer to [LPWAN custom protocols](#lpwan-custom-protocols) for further details.
 
 ### Registering Actility LoRa devices {#registering-actility-lora-devices}
 
@@ -254,7 +254,7 @@ In the next window fill in the required information:
 - **Device profile**: Select the Actility Thingpark device profile from the dropdown list that matches the device that you are registering.
 
     The Actility ThingPark device profile allows to manage multi-RF profiles, ensures different LoRaWAN class compatibility (A, B or C) and allows application payload decoding for easy third-party application integration.
-- **Device protocol**: Select the appropriate device protocol from the dropdown list. For more information on how to create a device protocol refer to [Creating device protocols](#lora-creating-device-protocols).
+- **Device protocol**: Select the appropriate device protocol from the dropdown list. For more information on how to create a device protocol refer to [Creating device protocols](#loriot-creating-device-protocols).
 - **Device EUI**: This is the unique identifier for the device. It is a 16 character (8 byte) long hexadecimal number. You can find it on the device itself.
 - **Application EUI**: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. It is a 16 character (8 byte) long hexadecimal number. There can be only one application EUI for a tenant but multiple tenants can have the same application EUI.
 - **Application key**: This is an AES-128 application key specific for the device that is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number.
@@ -360,7 +360,7 @@ On receiving an uplink message, the {{< product-c8y-iot >}} platform creates the
 
 This warning message shows up when there already exists a provisioned device in ThingPark with the same device EUI used for device registration and the validation comparing those devices based on application EUI (for OTAA activation) and device profile has failed.
 
-To resolve this, provide the correct application EUI from the [Connectivity](#configuring-credentials) application and device profile and try again.
+To resolve this, provide the correct application EUI from the [Connectivity](#configuring-multiple-thingpark-account-connections) application and device profile and try again.
 
 **No LoRa provider settings found**
 
@@ -369,13 +369,13 @@ This warning message shows up when there are no credentials set up for the Thing
 <img src="/images/device-protocols/lora-actility/lora-registration-no-credentials.png" alt="Device registration failure without credentials" style="max-width: 100%">
 <br>
 
-To resolve this, refer to [Configuring multiple ThingPark account connections](#configuring-credentials).
+To resolve this, refer to [Configuring multiple ThingPark account connections](#configuring-multiple-thingpark-account-connections).
 
 **Getting device profiles from provider failed**
 
 This warning message shows up when the tenant's access token to Thingpark becomes invalid. Invalidation of the token might happen when the same ThingPark credentials are used for another tenant.
 
-This issue can be solved by reconfiguring the Actility ThingPark credentials to renew the access token. Refer to [Configuring multiple ThingPark account connections](#configuring-credentials) for reconfiguration of the credentials.
+This issue can be solved by reconfiguring the Actility ThingPark credentials to renew the access token. Refer to [Configuring multiple ThingPark account connections](#configuring-multiple-thingpark-account-connections) for reconfiguration of the credentials.
 
 **No device protocols configured**
 

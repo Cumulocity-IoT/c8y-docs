@@ -1,5 +1,5 @@
 ---
-date: 2024-05-30
+date: '2024-05-30'
 title: Additional columns in preview step of Import asset models
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: dtm
 ticket: CTM-1307
 version: 1020.1.8
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the **Import** dialog for asset models, users can now see **Child asset models** and **Asset properties** columns in the preview step.

@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63399
 version: 1021.73.2
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, the confirmation message displayed after the device registration via EST (Enrollment over Secure Transport protocol) was the same as in case of the regular device registration, which was confusing. With this change, the displayed message is specific for devices registered via EST, that is, they can directly request the signed certificates and use them to authenticate to the platform without any further manual acceptance process.

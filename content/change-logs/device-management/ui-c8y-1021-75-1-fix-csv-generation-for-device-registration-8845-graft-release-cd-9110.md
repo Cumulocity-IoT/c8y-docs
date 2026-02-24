@@ -15,6 +15,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63252
 version: 1021.75.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, during device registration via the EST (Enrollment over Secure Transport) protocol, special characters like `;` or `"` contained in the one-time password were not correctly escaped when sent to the server.
 This issue has been fixed. Now special characters are properly escaped and the correct value is received by the server and used in the further registration process.

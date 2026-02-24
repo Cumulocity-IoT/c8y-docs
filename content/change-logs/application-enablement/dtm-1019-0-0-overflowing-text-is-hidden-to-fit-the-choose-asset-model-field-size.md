@@ -1,5 +1,5 @@
 ---
-date: 2023-12-14
+date: '2023-12-14'
 title: Overflowing text is hidden to fit the Choose Asset model field size
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: dtm
 ticket: CTM-745
 version: 1019.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Lengthier asset model names in  **Choose Asset model** dropdown field are now truncated to fit to the field size. Hovering over the respective option shows the complete text.

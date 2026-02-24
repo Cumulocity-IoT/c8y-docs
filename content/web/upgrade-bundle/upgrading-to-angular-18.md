@@ -12,9 +12,41 @@ Angular 18 is supported from version `1021.0.0`. The following configuration cha
 - Update `@angular/cdk` to version `18.x.x`.
 - The `brandingEntry` application option can no longer be used to customize the global style of your application.
   Instead, global styles should now be specified via [the mechanism Angular provides](https://angular.dev/reference/configs/workspace-config#styles-and-scripts-configuration).
-  If you previously did not use the `brandingEntry` in your `cumulocity.config.ts` file, you would now need to reference the `@c8y/style/main.less` file in the `styles` arrays of your `angular.json` file.
-  In case you've previously used the `brandingEntry` in your `cumulocity.config.ts` you would now need to reference the same file in the `styles` arrays of your `angular.json` file.
-  The `brandingEntry` should be removed from the `cumulocity.config.ts` file.
+
+  **Migration steps:**
+
+  1. Create a *styles.less* file in your *src/* directory with the following content:
+
+     ```less
+     // Import Cumulocity styles first
+     @import '~@c8y/style/extend.less';
+     // Add your variable overrides here (optional)
+     // @brand-primary: #your-color;
+     ```
+
+  2. Reference this file in the `styles` array of your *angular.json*:
+
+     ```json
+     {
+       "projects": {
+         "your-app": {
+           "architect": {
+             "build": {
+               "options": {
+                 "styles": [
+                   "src/styles.less"
+                 ]
+               }
+             }
+           }
+         }
+       }
+     }
+     ```
+
+  3. Remove the `brandingEntry` from your *cumulocity.config.ts* file.
+
+  **Important:** Always import `@c8y/style/extend.less` first, then override variables after. See [Branding your application](/web/application-configuration/#branding-your-application) for details.
 - `Node.js`, `TypeScript`, `RxJS`: [Version compatibility](https://angular.dev/reference/versions#actively-supported-versions).
 - Follow the `Angular 18` upgrade guide: [Updating to version 18](https://angular.dev/update-guide?v=17.0-18.0&l=2).
 
