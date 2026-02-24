@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Adding markdown formating to alarm details view (#10780) [GRAFT][release/cd] (#11315)
+title: Markdown formatting support in alarm details view
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
