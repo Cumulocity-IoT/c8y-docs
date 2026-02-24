@@ -14,6 +14,4 @@ build_artifact:
 ticket: MTM-65515
 version: 1023.48.0
 ---
-Co-authored-by: Jan Hommes <janhommes@users.noreply.github.com>
-Co-authored-by: Jakub Drewniak <103751383+jdre-c8y@users.noreply.github.com>
-Co-authored-by: Tristan Bastian <tristan.bastian@cumulocity.com>
+A new application allows you to read the Open API REST specification on your instance. Previously, understanding how API endpoints work required external tools or manual testing against your own environment. Now you can experiment with API calls in real-time within the documentation interface, making it easier to learn the API capabilities and validate your integration approaches before implementing them in your applications. This improvement reduces the learning curve for developers working with the Cumulocity IoT platform and helps you quickly understand the expected request and response formats for various API operations.
