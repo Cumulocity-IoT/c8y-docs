@@ -230,9 +230,21 @@ body:has(.home-top){
   background: var(--c8y-root-component-background-default);
   text-align: left;
   transition: all .25s ease;
+
+  font-size: $font-size-sm;
+  border: 1px solid var(--c8y-root-component-separator-color);
+  padding: .5rem;
+  border-radius: .25rem;
+  p, &{
+    font-weight: bold;
+    line-height: 1;
+    font-size: 85%;
+    color: var(--c8y-palette-gray-30);
+  }
+
   &:hover{
     border-color: var(--c8y-brand-primary)!important;
-    p{
+    p, &{
       color: var(--c8y-brand-primary)!important;
     }
   }
@@ -243,40 +255,56 @@ body:has(.home-top){
 }
 
 .btn-tooltip{
+  &:not(.btn-metadata){
+    opacity: 1 !important;
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
+    border: 0;
+  }
   position: relative;
-  opacity: 1 !important;
-  background-image: none;
-  background-color: transparent;
-  box-shadow: none;
-  border: 0;
   overflow: visible;
+  &::before, &::after{
+    transition: opacity .15s ease .5s;
+    opacity: 0;
+    content: "";
+  }
   &:hover{
     &:before {
       position: absolute;
       bottom: 100%;
       left: 50%;
-      transform: translate(-50%, 0);
+      transform: translate(-50%, -8px);
       margin-left: 0;
       padding: 5px 6px 3px;
       border-radius: 3px;
-      background: var(--c8y-brand-dark);
+      background: var(--c8y-palette-gray-30);
       color: white;
       content: attr(data-tooltip);
       white-space: nowrap;
       font-size: 12px;
+      opacity: 1;
     }
     &:after {
       position: absolute;
       top: 0;
       left: 50%;
-      transform: translate(-50%, 0);
+      transform: translate(-50%, -8px);
       margin-left: 0;
       width: 0;
       height: 0;
       border-width: 5px 5px 5px 5px;
       border-style: solid;
-      border-color: var(--c8y-brand-dark) transparent transparent;
+      border-color: var(--c8y-palette-gray-30) transparent transparent;
       content: "";
+      opacity: 1;
+    }
+    &.btn-metadata{
+      &:before {
+        white-space: pre;
+        text-align: center;
+        line-height: 1.2;
+      }
     }
   }
 }

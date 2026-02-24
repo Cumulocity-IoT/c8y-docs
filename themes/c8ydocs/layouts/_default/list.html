@@ -17,18 +17,22 @@
           <h1>{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
 
           {{.Content}}
-      </section>
-      {{.Params.svg | safeHTML}}
-    </div>
-    {{- if .Data.Term -}}
+
+      {{- if .Params.pdf -}}
       {{- $zip := (printf "zips/%s.zip" .Data.Term) | absURL -}}
-      <div class="m-b-16">
-        <a class="btn-tooltip" href="{{ $zip }}" title="Download all PDFs in this section">
-          <i class="dlt-c8y-icon-export-pdf" style="font-size: 20px;"></i>
-          Download PDFs (ZIP)
+      <div class="m-b-16 p-relative">
+        <a class="btn-metadata btn-tooltip" href="{{ $zip }}" aria-label="A ZIP file containing all the PDFs in this section"
+          data-tooltip="A ZIP file containing all 
+the PDFs in this section" 
+        >
+          <i class="dlt-c8y-icon-export-pdf"></i>
+          Download PDFs
         </a>
       </div>
     {{- end -}}
+      </section>
+      {{.Params.svg | safeHTML}}
+    </div>
   <div class="home-grid">
     {{$scratch := newScratch}}
     {{ range where .Pages "Type" "root" }}
@@ -105,7 +109,7 @@
               {{end}}
               {{- if $pdf -}}
                 <form class="m-l-auto pdf-download-form" data-pdf="{{ $pdf }}">
-                  <button type="submit" class="btn-tooltip bnt-dot" title="Download PDF" data-tooltip="Download PDF">
+                  <button type="submit" class="btn-tooltip bnt-dot" aria-label="Download PDF" data-tooltip="Download PDF">
                     <i class="dlt-c8y-icon-export-pdf" style="font-size: 20px;"></i>
                   </button>
                 </form>
