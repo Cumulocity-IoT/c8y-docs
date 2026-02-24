@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65365
 version: 1023.48.3
 ---
-When multiple drawers were displayed in a stacked manner, pressing the escape key would close all open drawers at once, which could be disruptive to the user workflow. Now, pressing escape will close only the topmost drawer, allowing users to navigate back through multiple drawer levels one at a time. Additionally, you can now configure individual drawers to prevent them from closing when the escape key is pressed, giving you more control over the user experience in your applications.
+When multiple drawers were displayed in a stacked manner, pressing the escape key closed all open drawers at once, which could disrupt the user's workflow. Now, pressing escape will close only the topmost drawer, allowing users to navigate back through multiple drawer levels one at a time. Additionally, you can now configure individual drawers to prevent them from closing when the escape key is pressed, giving you more control over the user experience in your applications.
