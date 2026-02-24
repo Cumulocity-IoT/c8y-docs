@@ -1,5 +1,5 @@
 ---
-date: '2025-03-20'
+date: '2026-03-31'
 title: >-
   Queries to the Measurement API with the filter valueSeriesFragment no longer
   result in a NullPointerException

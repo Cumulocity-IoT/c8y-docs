@@ -1,5 +1,5 @@
 ---
-date: 2025-01-08
+date: 2026-03-31
 title: New links in resources dropdown
 change_type:
   - value: change-2c7RdTdXo4

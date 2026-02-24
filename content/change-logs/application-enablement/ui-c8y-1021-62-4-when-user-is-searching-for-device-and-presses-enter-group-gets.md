@@ -1,5 +1,5 @@
 ---
-date: '2025-04-24'
+date: '2026-03-31'
 title: Prevented unintended device group creation while searching for devices
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: '2025-05-22'
+date: '2026-03-31'
 title: Improved CA certificate delete confirmation message
 product_area: Device management & connectivity
 change_type:

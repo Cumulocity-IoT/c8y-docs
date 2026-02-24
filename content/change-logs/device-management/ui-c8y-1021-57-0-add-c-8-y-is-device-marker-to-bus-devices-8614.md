@@ -1,5 +1,5 @@
 ---
-date: '2025-04-24'
+date: '2026-03-31'
 title: >-
   c8y_IsDevice fragment now added to Modbus, Profibus, CANBus, and CANopen
   devices

@@ -1,5 +1,5 @@
 ---
-date: '2025-03-20'
+date: '2026-03-31'
 title: Fixed incorrect filtered items count on child devices view
 product_area: Device management & connectivity
 change_type:

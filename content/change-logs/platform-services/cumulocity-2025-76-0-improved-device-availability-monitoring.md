@@ -1,5 +1,5 @@
 ---
-date: '2025-03-20'
+date: '2026-03-31'
 title: Improved device availability monitoring
 product_area: Platform services
 change_type:

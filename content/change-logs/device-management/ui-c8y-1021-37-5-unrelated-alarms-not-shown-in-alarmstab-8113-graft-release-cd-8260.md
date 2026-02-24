@@ -1,5 +1,5 @@
 ---
-date: '2025-02-27'
+date: '2026-03-31'
 title: >-
   Alarms tab in the Simulator page only shows alarms related to the selected
   asset

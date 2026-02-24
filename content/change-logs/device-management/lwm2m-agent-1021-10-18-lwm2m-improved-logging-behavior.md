@@ -1,5 +1,5 @@
 ---
-date: 2025-06-19
+date: 2026-03-31
 title: Removed Redundant "LWM2M Device Send" event in VERBOSE logging
 product_area: Device management & connectivity
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: 2025-03-19
+date: 2026-03-31
 title: OperationsListModule has been removed in favor of standalone components
   and environment providers
 product_area: Application enablement & solutions

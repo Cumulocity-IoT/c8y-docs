@@ -1,5 +1,5 @@
 ---
-date: '2025-02-06'
+date: '2026-03-31'
 title: Service management actions added to the services list in the device details
 product_area: Device management & connectivity
 change_type:

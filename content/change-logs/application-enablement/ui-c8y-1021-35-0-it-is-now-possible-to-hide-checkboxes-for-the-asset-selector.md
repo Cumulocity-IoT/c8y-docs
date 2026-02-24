@@ -1,5 +1,5 @@
 ---
-date: '2025-02-13'
+date: '2026-03-31'
 title: Asset selector checkboxes can now be hidden
 product_area: Application enablement & solutions
 change_type:

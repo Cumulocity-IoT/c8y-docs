@@ -1,5 +1,5 @@
 ---
-date: '2025-01-30'
+date: '2026-03-31'
 title: >-
   Changes to Notifications 2.0 tenant context subscriptions with event API
   filter

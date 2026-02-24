@@ -1,5 +1,5 @@
 ---
-date: 2025-06-19
+date: 2026-03-31
 title: Alarms no longer triggered for existing LWM2M objects
 product_area: Device management & connectivity
 change_type:

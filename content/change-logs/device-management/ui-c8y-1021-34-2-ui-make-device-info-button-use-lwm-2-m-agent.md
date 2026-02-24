@@ -1,5 +1,5 @@
 ---
-date: '2025-02-06'
+date: '2026-03-31'
 title: Integration of delete button in Info tab for LWM2M devices
 product_area: Device management & connectivity
 change_type:

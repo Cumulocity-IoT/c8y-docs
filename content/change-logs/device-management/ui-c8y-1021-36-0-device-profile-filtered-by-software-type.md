@@ -1,5 +1,5 @@
 ---
-date: '2025-02-13'
+date: '2026-03-31'
 title: Device profiles are now filtered by software type
 product_area: Device management & connectivity
 change_type:

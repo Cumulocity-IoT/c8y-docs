@@ -1,5 +1,5 @@
 ---
-date: '2025-02-27'
+date: '2026-03-31'
 title: >-
   Clicking on alarms in the Simulator page no longer redirects to the Alarms
   page

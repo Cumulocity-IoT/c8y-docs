@@ -1,5 +1,5 @@
 ---
-date: '2025-02-27'
+date: '2026-03-31'
 title: >-
   Custom properties tab in tenant details only shows tenant-relevant custom
   properties

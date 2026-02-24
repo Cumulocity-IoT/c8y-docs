@@ -1,5 +1,5 @@
 ---
-date: '2025-04-10'
+date: '2026-03-31'
 title: Role description no longer displayed as trusted HTML to improve security
 product_area: Platform services
 change_type:

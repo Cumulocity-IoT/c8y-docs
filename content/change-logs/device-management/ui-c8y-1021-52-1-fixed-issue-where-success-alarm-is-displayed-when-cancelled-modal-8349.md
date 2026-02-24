@@ -1,5 +1,5 @@
 ---
-date: '2025-03-27'
+date: '2026-03-31'
 title: >-
   Success message no longer displayed when canceling the creation of a smart
   group

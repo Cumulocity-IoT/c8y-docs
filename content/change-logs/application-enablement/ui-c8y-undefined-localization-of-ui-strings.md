@@ -1,5 +1,5 @@
 ---
-date: 2025-03-05
+date: 2026-03-31
 title: AI-powered platform UI translations
 change_type:
   - value: change-inv-3bw8e

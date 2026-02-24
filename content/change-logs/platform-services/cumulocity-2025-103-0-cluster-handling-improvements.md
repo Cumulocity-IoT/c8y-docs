@@ -1,5 +1,5 @@
 ---
-date: '2025-04-03'
+date: '2026-03-31'
 title: Cluster membership and node discovery improvements
 product_area: Platform services
 change_type:

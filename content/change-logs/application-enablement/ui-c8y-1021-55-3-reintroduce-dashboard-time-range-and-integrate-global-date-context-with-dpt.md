@@ -1,5 +1,5 @@
 ---
-date: '2025-04-10'
+date: '2026-03-31'
 title: Restored dashboard time range selection option for "Data points table" widget
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: 2025-03-14
+date: 2026-03-31
 title: LWM2M module removal from @c8y/ngx-components library
 product_area: Application enablement & solutions
 change_type:

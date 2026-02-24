@@ -1,5 +1,5 @@
 ---
-date: '2025-04-03'
+date: '2026-03-31'
 title: Correct data returned when retrieving stored file metadata by ID
 product_area: Platform services
 change_type:

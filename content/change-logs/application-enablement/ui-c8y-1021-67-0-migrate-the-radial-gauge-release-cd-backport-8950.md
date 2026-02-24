@@ -1,5 +1,5 @@
 ---
-date: '2025-05-08'
+date: '2026-03-31'
 title: >-
   Radial gauge has been improved with better visualisation and more
   customizations

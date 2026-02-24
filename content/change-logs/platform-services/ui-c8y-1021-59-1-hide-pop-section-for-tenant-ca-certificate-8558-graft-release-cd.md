@@ -1,5 +1,5 @@
 ---
-date: '2025-04-24'
+date: '2026-03-31'
 title: Proof of possession section for tenant CA certificates now hidden
 product_area: Platform services
 change_type:

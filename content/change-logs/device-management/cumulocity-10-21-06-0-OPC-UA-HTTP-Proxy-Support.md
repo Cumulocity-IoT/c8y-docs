@@ -1,5 +1,5 @@
 ---
-date: '2025-05-22'
+date: '2026-03-31'
 title: HTTP proxy support for the OPC UA gateway
 change_type:
   - value: change-QHu1GdukP

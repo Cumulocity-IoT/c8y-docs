@@ -1,5 +1,5 @@
 ---
-date: '2025-03-20'
+date: '2026-03-31'
 title: >-
   Tenant creation with tenant policy overriding the default tenant option works
   properly

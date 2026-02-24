@@ -1,5 +1,5 @@
 ---
-date: '2025-04-03'
+date: '2026-03-31'
 title: Improved the LWM2M decoder events processing engine
 product_area: Device management & connectivity
 change_type:

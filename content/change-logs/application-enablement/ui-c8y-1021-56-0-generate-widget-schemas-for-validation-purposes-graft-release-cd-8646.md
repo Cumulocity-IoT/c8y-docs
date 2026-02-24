@@ -1,5 +1,5 @@
 ---
-date: '2025-04-10'
+date: '2026-03-31'
 title: >-
   Generating schemas from TypeScript types and interfaces in application build
   process

@@ -1,5 +1,5 @@
 ---
-date: '2025-01-09'
+date: '2026-03-31'
 title: Data grid size automatically adjusts when device list is modified
 product_area: Device management & connectivity
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: '2025-02-06'
+date: '2026-03-31'
 title: Reset to default functionality for application plugins works properly
 product_area: Application enablement & solutions
 change_type:

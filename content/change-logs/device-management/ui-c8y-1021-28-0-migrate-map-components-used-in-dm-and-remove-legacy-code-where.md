@@ -1,5 +1,5 @@
 ---
-date: '2025-01-09'
+date: '2026-03-31'
 title: Migrated and improved the devices map in the Device Management application
 product_area: Device management & connectivity
 change_type:

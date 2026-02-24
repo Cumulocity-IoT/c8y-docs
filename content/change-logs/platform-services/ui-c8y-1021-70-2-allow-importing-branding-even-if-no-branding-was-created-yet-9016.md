@@ -1,5 +1,5 @@
 ---
-date: '2025-05-15'
+date: '2026-03-31'
 title: Branding can now be imported for tenants without existing branding
 product_area: Platform services
 change_type:

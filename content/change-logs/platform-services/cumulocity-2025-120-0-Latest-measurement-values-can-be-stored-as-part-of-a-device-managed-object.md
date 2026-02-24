@@ -1,5 +1,5 @@
 ---
-date: '2025-06-26'
+date: '2026-03-31'
 title: Latest measurement values can be stored as part of a device managed object
 change_type:
   - value: change-QHu1GdukP

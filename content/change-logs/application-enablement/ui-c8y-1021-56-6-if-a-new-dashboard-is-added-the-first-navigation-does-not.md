@@ -1,5 +1,5 @@
 ---
-date: '2025-04-24'
+date: '2026-03-31'
 title: Fixed an issue with the navigation after adding a new dashboard
 product_area: Application enablement & solutions
 change_type:

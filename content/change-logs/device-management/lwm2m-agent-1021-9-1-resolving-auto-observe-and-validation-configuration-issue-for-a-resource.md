@@ -1,5 +1,5 @@
 ---
-date: '2025-04-24'
+date: '2026-03-31'
 title: Resolved auto-observe and validation configuration issue for certain resources
 product_area: Device management & connectivity
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: '2025-06-26'
+date: '2026-03-31'
 title: Virtual scroll now always shows all items in a list
 product_area: Application enablement & solutions
 change_type:

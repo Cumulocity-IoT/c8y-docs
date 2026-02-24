@@ -1,5 +1,5 @@
 ---
-date: '2025-06-05'
+date: '2026-03-31'
 title: Response interval value deleted when clearing the required interval input
 product_area: Device management & connectivity
 change_type:

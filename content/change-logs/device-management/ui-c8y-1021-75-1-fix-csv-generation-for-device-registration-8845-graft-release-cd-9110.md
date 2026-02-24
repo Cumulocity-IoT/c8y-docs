@@ -1,5 +1,5 @@
 ---
-date: '2025-05-29'
+date: '2026-03-31'
 title: >-
   Special characters are now correctly escaped in the device registration
   process via EST

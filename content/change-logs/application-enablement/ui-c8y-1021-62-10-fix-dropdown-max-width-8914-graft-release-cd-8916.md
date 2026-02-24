@@ -1,5 +1,5 @@
 ---
-date: '2025-05-08'
+date: '2026-03-31'
 title: Dropdown menu maximum width adjusted
 product_area: Application enablement & solutions
 change_type:

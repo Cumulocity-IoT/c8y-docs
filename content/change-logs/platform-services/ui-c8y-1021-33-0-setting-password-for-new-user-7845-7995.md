@@ -1,5 +1,5 @@
 ---
-date: '2025-02-06'
+date: '2026-03-31'
 title: Improved password setup process for new users
 product_area: Platform services
 change_type:

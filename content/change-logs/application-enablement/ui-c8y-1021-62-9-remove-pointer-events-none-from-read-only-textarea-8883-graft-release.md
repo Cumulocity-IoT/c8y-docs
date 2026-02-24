@@ -1,5 +1,5 @@
 ---
-date: '2025-05-08'
+date: '2026-03-31'
 title: Allow pointer events on read-only text areas
 product_area: Application enablement & solutions
 change_type:

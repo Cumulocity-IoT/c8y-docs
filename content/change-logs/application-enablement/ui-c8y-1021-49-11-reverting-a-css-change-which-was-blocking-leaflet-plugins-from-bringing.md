@@ -1,5 +1,5 @@
 ---
-date: '2025-03-20'
+date: '2026-03-31'
 title: Leaflet plugins can again display their custom images
 product_area: Application enablement & solutions
 change_type:

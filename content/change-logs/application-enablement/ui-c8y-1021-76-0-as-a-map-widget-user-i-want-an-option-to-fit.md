@@ -1,5 +1,5 @@
 ---
-date: '2025-06-19'
+date: '2026-03-31'
 title: Map widget provides option to fit all assets on a map
 product_area: Application enablement & solutions
 change_type:

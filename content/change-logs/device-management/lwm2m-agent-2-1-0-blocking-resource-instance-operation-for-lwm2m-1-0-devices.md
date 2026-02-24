@@ -1,5 +1,5 @@
 ---
-date: '2025-01-16'
+date: '2026-03-31'
 title: >-
   Preventing execution of operations on resource instance level for LWM2M 1.0
   devices

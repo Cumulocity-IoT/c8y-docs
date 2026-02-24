@@ -1,5 +1,5 @@
 ---
-date: '2025-05-29'
+date: '2026-03-31'
 title: Remote access tab only shows supported protocols
 product_area: Device management & connectivity
 change_type:

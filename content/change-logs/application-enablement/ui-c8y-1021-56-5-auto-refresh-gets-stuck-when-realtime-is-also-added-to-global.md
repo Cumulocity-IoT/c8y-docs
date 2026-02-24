@@ -1,5 +1,5 @@
 ---
-date: '2025-04-10'
+date: '2026-03-31'
 title: Dashboard auto-refresh counter no longer freezes in certain scenarios
 product_area: Application enablement & solutions
 change_type:

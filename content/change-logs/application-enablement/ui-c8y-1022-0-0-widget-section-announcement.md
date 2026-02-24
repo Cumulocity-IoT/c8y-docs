@@ -1,5 +1,5 @@
 ---
-date: 2025-04-16
+date: 2026-03-31
 title: Deprecation of loadConfigComponent in favor of new multi-section configuration
 product_area: Application enablement & solutions
 change_type:

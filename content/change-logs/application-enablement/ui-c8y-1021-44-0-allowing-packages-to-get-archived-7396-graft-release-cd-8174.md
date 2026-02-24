@@ -1,5 +1,5 @@
 ---
-date: '2025-03-20'
+date: '2026-03-31'
 title: Extension packages can now be archived
 product_area: Application enablement & solutions
 change_type:

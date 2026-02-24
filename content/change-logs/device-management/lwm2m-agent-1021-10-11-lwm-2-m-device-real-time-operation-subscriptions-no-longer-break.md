@@ -1,5 +1,5 @@
 ---
-date: '2025-06-05'
+date: '2026-03-31'
 title: >-
   LWM2M device real-time operation subscriptions no longer break during core
   upgrades

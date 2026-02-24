@@ -1,5 +1,5 @@
 ---
-date: '2025-04-03'
+date: '2026-03-31'
 title: >-
   Fixed issue with LWM2M external decoders not updating device data fragments
   properly

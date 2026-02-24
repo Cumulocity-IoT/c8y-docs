@@ -1,5 +1,5 @@
 ---
-date: '2025-06-26'
+date: '2026-03-31'
 title: OPC UA server address space scan enhancements
 product_area: Device management & connectivity
 change_type:

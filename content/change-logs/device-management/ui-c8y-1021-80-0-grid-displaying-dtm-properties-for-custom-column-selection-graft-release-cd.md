@@ -1,5 +1,5 @@
 ---
-date: '2025-06-26'
+date: '2026-03-31'
 title: List of asset properties available when creating custom columns
 product_area: Device management & connectivity
 change_type:

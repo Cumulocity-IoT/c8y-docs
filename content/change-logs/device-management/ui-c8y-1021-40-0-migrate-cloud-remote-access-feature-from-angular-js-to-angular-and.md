@@ -1,5 +1,5 @@
 ---
-date: '2025-03-20'
+date: '2026-03-31'
 title: >-
   Cloud remote access feature migrated to Angular and made extendable via
   hookService

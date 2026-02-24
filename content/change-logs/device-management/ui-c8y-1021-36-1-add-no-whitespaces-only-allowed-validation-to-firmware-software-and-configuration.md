@@ -1,5 +1,5 @@
 ---
-date: '2025-02-27'
+date: '2026-03-31'
 title: >-
   Submitting values with only whitespaces in firmware, software and
   configuration forms no longer allowed

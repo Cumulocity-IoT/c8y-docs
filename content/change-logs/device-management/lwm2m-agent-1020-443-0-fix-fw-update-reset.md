@@ -1,5 +1,5 @@
 ---
-date: '2025-01-16'
+date: '2026-03-31'
 title: Fixed default LWM2M firmware update reset mechanism
 product_area: Device management & connectivity
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: '2025-01-09'
+date: '2026-03-31'
 title: Scrolling works properly for application activity logs
 product_area: Platform services
 change_type:

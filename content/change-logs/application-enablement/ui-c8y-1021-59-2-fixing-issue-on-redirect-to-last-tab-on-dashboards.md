@@ -1,5 +1,5 @@
 ---
-date: '2025-04-24'
+date: '2026-03-31'
 title: Redirecting to the last viewed tab on a dashboard now works properly
 product_area: Application enablement & solutions
 change_type:

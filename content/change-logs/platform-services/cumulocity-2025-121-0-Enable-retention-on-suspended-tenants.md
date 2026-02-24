@@ -1,5 +1,5 @@
 ---
-date: '2025-04-24'
+date: '2026-03-31'
 title: Retention rules now also run for suspended tenants
 product_area: Platform services
 change_type:

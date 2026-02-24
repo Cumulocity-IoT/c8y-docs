@@ -1,5 +1,5 @@
 ---
-date: '2025-05-15'
+date: '2026-03-31'
 title: Resolved issues in LWM2M composite write and binary data read operations
 product_area: Device management & connectivity
 change_type:
