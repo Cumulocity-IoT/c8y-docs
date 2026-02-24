@@ -20,6 +20,8 @@ environment_availability:
     date: '2026-02-23'
   - label: us.cumulocity.com
     date: '2026-02-23'
+  - label: cumulocity.com
+    date: '2026-02-24'
 ---
 The time series migration UI has been improved with the following enhancements:
 
