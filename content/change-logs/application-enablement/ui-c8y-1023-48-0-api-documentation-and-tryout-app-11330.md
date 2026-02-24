@@ -1,6 +1,6 @@
 ---
 date: ""
-title: New application added to read OpenAPI REST specification
+title: New application added to read RestAPI documentation
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
