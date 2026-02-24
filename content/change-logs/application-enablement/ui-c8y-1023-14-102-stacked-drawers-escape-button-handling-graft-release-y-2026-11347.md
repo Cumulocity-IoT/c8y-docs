@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Stacked drawers escape button handling [GRAFT][release/y2026] (#11347)
+title: Stacked drawers now close only the top drawer when pressing escape
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
