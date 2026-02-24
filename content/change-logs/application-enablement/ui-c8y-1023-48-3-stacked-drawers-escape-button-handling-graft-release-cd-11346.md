@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65365
 version: 1023.48.3
 ---
-Previously, when two or more drawers were shown stacked, pressing escape button was closing all of them. There is a mechanism now implemented that closes only top drawer. Also there is a possibility to disable closing drawer on escape by drawer configuration.
+When multiple drawers were displayed in a stacked manner, pressing the escape key would close all open drawers at once, which could be disruptive to the user workflow. Now, pressing escape will close only the topmost drawer, allowing users to navigate back through multiple drawer levels one at a time. Additionally, you can now configure individual drawers to prevent them from closing when the escape key is pressed, giving you more control over the user experience in your applications.
