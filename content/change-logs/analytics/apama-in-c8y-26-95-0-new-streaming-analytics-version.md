@@ -1,5 +1,5 @@
 ---
-date: 2025-04-29
+date: 2026-03-31
 title: Cumulocity Streaming Analytics will switch to a new “26.x” version of Apama engine
 change_type:
   - value: change-2c7RdTdXo4

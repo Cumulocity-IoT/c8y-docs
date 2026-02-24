@@ -1,5 +1,5 @@
 ---
-date: 2025-04-22
+date: 2026-03-31
 title: Dremio upgrade with security fix
 product_area: Analytics
 change_type:

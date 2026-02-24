@@ -1,5 +1,5 @@
 ---
-date: '2025-04-03'
+date: 2026-03-31
 title: Added an alert when required plugins are not installed
 product_area: Application enablement & solutions
 change_type:

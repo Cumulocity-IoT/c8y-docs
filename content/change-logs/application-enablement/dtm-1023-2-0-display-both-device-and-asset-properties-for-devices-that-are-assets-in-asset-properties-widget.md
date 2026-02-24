@@ -1,5 +1,5 @@
 ---
-date: '2025-12-11'
+date: 2026-03-31
 title: >-
   Display both device and asset properties for devices that are assets in Asset
   properties widget

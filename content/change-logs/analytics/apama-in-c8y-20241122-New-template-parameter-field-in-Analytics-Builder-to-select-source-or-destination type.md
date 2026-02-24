@@ -1,5 +1,5 @@
 ---
-date: '2025-02-13'
+date: 2026-03-31
 title: >-
   New template parameter field in Analytics Builder to select source or
   destination type

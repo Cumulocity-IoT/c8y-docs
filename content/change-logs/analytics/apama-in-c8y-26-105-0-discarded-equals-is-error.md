@@ -7,7 +7,7 @@ component:
   - value: component-M5-cepIIS
     label: Streaming Analytics
 version: 26.105.0
-date: '2025-05-22'
+date: 2026-03-31
 product_area: Analytics
 build_artifact:
   - value: tc-KXXmo2SUR

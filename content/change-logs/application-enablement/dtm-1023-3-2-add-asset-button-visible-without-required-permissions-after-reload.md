@@ -1,5 +1,5 @@
 ---
-date: '2026-01-13'
+date: 2026-03-31
 title: Add Asset button only visible with required permissions after reload
 product_area: Application enablement & solutions
 change_type:

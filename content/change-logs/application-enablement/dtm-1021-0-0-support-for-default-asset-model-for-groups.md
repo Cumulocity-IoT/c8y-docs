@@ -1,5 +1,5 @@
 ---
-date: '2025-02-06'
+date: 2026-03-31
 title: Added support in DTM plugins for default asset model for groups
 product_area: Application enablement & solutions
 change_type:

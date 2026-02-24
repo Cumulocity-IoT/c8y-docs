@@ -1,5 +1,5 @@
 ---
-date: '2025-06-26'
+date: 2026-03-31
 title: Python used by Streaming Analytics upgraded to version 3.13
 change_type:
   - value: change-2c7RdTdXo4

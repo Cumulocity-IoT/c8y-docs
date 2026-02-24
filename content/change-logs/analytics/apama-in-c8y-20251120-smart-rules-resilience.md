@@ -1,5 +1,5 @@
 ---
-date: 2025-11-20
+date: 2026-03-31
 title: Resilience support for smart rules is now Generally Available
 change_type:
   - value: change-QHu1GdukP

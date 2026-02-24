@@ -1,5 +1,5 @@
 ---
-date: '2025-07-17'
+date: 2026-03-31
 title: Python plug-ins can be run without sub-interpreters or with dedicated GILs
 change_type:
   - value: change-2c7RdTdXo4

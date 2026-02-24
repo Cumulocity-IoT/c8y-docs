@@ -1,5 +1,5 @@
 ---
-date: 2025-11-26
+date: 2026-03-31
 title: Analytics Builder models now detect hierarchy changes in groups and assets
 change_type:
   - value: change-QHu1GdukP

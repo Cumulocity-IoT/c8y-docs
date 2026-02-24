@@ -1,5 +1,5 @@
 ---
-date: 2025-11-12
+date: 2026-03-31
 title: DeviceService bundle for MQTT Service support in EPL Apps
 change_type:
   - value: change-2c7RdTdXo4

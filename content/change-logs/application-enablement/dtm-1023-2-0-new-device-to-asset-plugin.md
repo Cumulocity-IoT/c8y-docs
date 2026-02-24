@@ -1,5 +1,5 @@
 ---
-date: '2025-12-11'
+date: 2026-03-31
 title: New Device to Asset plugin to create assets from devices
 product_area: Application enablement & solutions
 change_type:

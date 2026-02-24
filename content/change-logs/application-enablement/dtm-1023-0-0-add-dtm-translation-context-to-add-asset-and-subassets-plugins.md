@@ -1,5 +1,5 @@
 ---
-date: '2025-12-11'
+date: 2026-03-31
 title: Application-specific string translations in Add asset and Subassets plugins
 product_area: Application enablement & solutions
 change_type:

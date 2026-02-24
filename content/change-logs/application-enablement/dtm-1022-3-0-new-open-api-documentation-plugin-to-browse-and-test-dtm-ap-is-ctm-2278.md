@@ -1,5 +1,5 @@
 ---
-date: '2025-08-28'
+date: 2026-03-31
 title: New OpenAPI documentation plugin to browse and test Digital Twin Manager APIs
 product_area: Application enablement & solutions
 change_type:

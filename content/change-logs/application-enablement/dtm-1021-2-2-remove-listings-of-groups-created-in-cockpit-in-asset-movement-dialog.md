@@ -1,5 +1,5 @@
 ---
-date: '2025-04-10'
+date: 2026-03-31
 title: >-
   Removed groups created in the Cockpit application from asset movement dialog
   in the Digital Twin Manager

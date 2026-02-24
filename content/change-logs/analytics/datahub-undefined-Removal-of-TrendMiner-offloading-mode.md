@@ -1,5 +1,5 @@
 ---
-date: 2025-09-16T00:00:00.000Z
+date: 2026-03-31
 title: Removal of TrendMiner offloading mode
 product_area: Analytics
 change_type:

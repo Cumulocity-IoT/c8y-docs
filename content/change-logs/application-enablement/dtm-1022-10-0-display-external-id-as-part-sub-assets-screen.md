@@ -1,5 +1,5 @@
 ---
-date: '2025-10-30'
+date: 2026-03-31
 title: External ID of an asset now displayed in the Subassets page
 product_area: Application enablement & solutions
 change_type:

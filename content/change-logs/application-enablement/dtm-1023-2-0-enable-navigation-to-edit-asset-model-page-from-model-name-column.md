@@ -1,5 +1,5 @@
 ---
-date: '2025-12-11'
+date: 2026-03-31
 title: Navigation from model name to asset model details
 product_area: Application enablement & solutions
 change_type:

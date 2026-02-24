@@ -1,5 +1,5 @@
 ---
-date: '2025-12-11'
+date: 2026-03-31
 title: >-
   Users with read-only permissions can view the property details in Properties
   library plugin

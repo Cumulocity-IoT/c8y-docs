@@ -1,5 +1,5 @@
 ---
-date: '2025-04-03'
+date: 2026-03-31
 title: >-
   Resolved issue with complex property updates causing duplicate labels and
   empty values

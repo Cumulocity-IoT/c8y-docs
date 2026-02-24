@@ -1,5 +1,5 @@
 ---
-date: '2025-10-16'
+date: 2026-03-31
 title: Auto-generated property keys now retain the original casing
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: '2025-07-17'
+date: 2026-03-31
 title: Property label updates now reflected in widget view
 product_area: Application enablement & solutions
 change_type:

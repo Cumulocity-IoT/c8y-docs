@@ -1,5 +1,5 @@
 ---
-date: '2025-11-13'
+date: 2026-03-31
 title: Tailored offloading of inventory collection
 change_type:
   - value: change-QHu1GdukP

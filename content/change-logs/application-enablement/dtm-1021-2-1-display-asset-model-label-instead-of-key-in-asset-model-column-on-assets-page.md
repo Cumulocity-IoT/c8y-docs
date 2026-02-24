@@ -1,5 +1,5 @@
 ---
-date: '2025-04-03'
+date: 2026-03-31
 title: Asset model column displays label instead of key after page refresh
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: '2026-01-13'
+date: 2026-03-31
 title: Asset API tolerates invalid or mis-encoded characters
 product_area: Application enablement & solutions
 change_type:

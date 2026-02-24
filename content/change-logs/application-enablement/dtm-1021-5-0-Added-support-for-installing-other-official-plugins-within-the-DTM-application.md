@@ -1,5 +1,5 @@
 ---
-date: '2025-05-15'
+date: 2026-03-31
 title: Improved subassets handling with multiple tabs in DTM plugins
 product_area: Application enablement & solutions
 change_type:

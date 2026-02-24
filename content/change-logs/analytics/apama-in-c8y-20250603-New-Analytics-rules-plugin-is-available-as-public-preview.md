@@ -1,5 +1,5 @@
 ---
-date: '2025-07-17'
+date: 2026-03-31
 title: Smart rules (NEW) plugin now available in Public Preview
 change_type:
   - value: change-pXAlHAWka

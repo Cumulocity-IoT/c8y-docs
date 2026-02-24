@@ -1,5 +1,5 @@
 ---
-date: '2025-05-15'
+date: 2026-03-31
 title: Improved the message in the confirmation dialog when deleting assets
 product_area: Application enablement & solutions
 change_type:

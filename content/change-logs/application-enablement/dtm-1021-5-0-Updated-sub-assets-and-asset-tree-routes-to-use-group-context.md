@@ -1,5 +1,5 @@
 ---
-date: '2025-05-15'
+date: 2026-03-31
 title: Updated subassets and asset tree routes to avoid context issues in DTM
 product_area: Application enablement & solutions
 change_type:
