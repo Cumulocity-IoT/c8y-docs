@@ -1,6 +1,6 @@
 ---
 date: '2026-03-31'
-title: New **Commands** tab in the service details of device services
+title: New Commands tab in the service details of device services
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP

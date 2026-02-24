@@ -16,11 +16,11 @@ version: 1021.53.0
 ---
 To enhance data analysis and visualization within the {{< product-c8y-iot >}} platform, the data point explorer and data point graph have been upgraded with new capabilities and a modernized architecture. Both features have been migrated from AngularJS to Angular, bringing improved performance, a refreshed interface, and expanded configuration options. Initially, these features will not be included by default and can only be installed as additional plugins. To install them, navigate to your custom application, click **Install plugins**, and search for "Data point explorer" and "Data point graph".
 
-### Data point explorer
+**Data point explorer**
 
 The data point explorer now includes a workspace implementation, allowing users to create and manage multiple workspaces for organizing their data analysis. These workspaces are stored locally and can also be shared, enabling seamless collaboration across teams. Additionally, an improved browsing and search experience makes it easier to locate specific data points across connected devices.
 
-### Data point graph
+**Data point graph**
 
 The data point graph now provides a more interactive and dynamic visualization of data points over time, helping users identify trends, patterns, and anomalies with greater ease. Key improvements include:
 
