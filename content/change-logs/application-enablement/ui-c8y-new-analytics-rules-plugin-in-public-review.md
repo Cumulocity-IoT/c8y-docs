@@ -1,5 +1,5 @@
 ---
-date: '2025-08-28'
+date: '2026-03-31'
 title: Smart rules (NEW) plugin now available in Public Preview
 product_area: Application enablement & solutions
 change_type:

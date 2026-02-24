@@ -1,5 +1,5 @@
 ---
-date: '2025-07-03'
+date: '2026-03-31'
 title: New SmartREST template for creating parameter update events
 change_type:
   - value: change-2c7RdTdXo4

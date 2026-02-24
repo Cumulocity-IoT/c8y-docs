@@ -1,5 +1,5 @@
 ---
-date: '2025-10-30'
+date: '2026-03-31'
 title: Measurement series aggregation improvements
 change_type:
   - value: change-QHu1GdukP

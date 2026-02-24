@@ -1,5 +1,5 @@
 ---
-date: '2025-08-14'
+date: '2026-03-31'
 title: Migrated additional Angular components to standalone mode
 product_area: Application enablement & solutions
 change_type:

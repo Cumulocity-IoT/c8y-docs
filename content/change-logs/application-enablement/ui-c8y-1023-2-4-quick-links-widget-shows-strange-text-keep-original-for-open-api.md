@@ -1,5 +1,5 @@
 ---
-date: '2025-11-28'
+date: '2026-03-31'
 title: Quick Links widget displays correct text for link to OpenAPI specification
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: '2025-07-17'
+date: '2026-03-31'
 title: >-
   Linear gauge widget now handles datapoint template min & max values stored as
   strings

@@ -1,5 +1,5 @@
 ---
-date: '2025-11-13'
+date: '2026-03-31'
 title: OPC UA gateway now runs on Java 17
 product_area: Device management & connectivity
 change_type:

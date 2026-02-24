@@ -1,5 +1,5 @@
 ---
-date: '2025-08-14'
+date: '2026-03-31'
 title: Dashboards are now only saved when edited
 product_area: Device management & connectivity
 change_type:

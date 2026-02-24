@@ -1,5 +1,5 @@
 ---
-date: 2025-10-24
+date: 2026-03-31
 title: Improved handling of suspended tenants in time series migration UI
 product_area: Platform services
 change_type:

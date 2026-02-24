@@ -1,5 +1,5 @@
 ---
-date: 2025-11-10
+date: 2026-03-31
 title: Angular 20 upgrade
 product_area: Application enablement & solutions
 change_type:

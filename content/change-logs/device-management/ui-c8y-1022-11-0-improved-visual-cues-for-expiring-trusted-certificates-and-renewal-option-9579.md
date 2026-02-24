@@ -1,5 +1,5 @@
 ---
-date: '2025-08-14'
+date: '2026-03-31'
 title: >-
   Improved highlighting of expiring trusted certificates and added renewal
   option

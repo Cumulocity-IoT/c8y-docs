@@ -1,5 +1,5 @@
 ---
-date: '2025-10-30'
+date: '2026-03-31'
 title: >-
   Refactored asset property list styles to avoid affecting device protocol
   creation

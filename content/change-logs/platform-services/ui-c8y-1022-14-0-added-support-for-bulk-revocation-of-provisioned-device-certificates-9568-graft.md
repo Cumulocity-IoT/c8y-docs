@@ -1,5 +1,5 @@
 ---
-date: '2025-08-21'
+date: '2026-03-31'
 title: Bulk revocation of provisioned device certificates
 product_area: Platform services
 change_type:

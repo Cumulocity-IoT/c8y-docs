@@ -1,5 +1,5 @@
 ---
-date: 2025-09-11
+date: 2026-03-31
 title:  Improved the reliability of the OPC UA gateway's scheduled tasks
 product_area: Device management & connectivity
 change_type:

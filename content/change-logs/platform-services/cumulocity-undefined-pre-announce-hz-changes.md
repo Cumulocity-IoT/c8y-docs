@@ -1,5 +1,5 @@
 ---
-date: '2025-08-27'
+date: '2026-03-31'
 title: Public Preview of internal implementation changes
 change_type:
   - value: change-inv-3bw8e

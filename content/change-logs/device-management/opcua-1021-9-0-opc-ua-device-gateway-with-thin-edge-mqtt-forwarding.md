@@ -1,5 +1,5 @@
 ---
-date: 2025-07-28
+date: 2026-03-31
 title: OPC UA device gateway with thin-edge.io MQTT Forwarding
 product_area: Device management & connectivity
 change_type:

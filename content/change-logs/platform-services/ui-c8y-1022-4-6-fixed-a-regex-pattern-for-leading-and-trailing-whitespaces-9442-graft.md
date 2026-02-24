@@ -1,5 +1,5 @@
 ---
-date: '2025-07-10'
+date: '2026-03-31'
 title: Fixed company name validation on tenant creation
 product_area: Platform services
 change_type:

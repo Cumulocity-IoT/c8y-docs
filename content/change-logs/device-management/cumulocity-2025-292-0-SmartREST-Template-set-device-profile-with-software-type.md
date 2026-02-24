@@ -1,5 +1,5 @@
 ---
-date: '2025-09-18'
+date: '2026-03-31'
 title: New SmartREST template for setting device profiles with software type
 change_type:
   - value: change-2c7RdTdXo4

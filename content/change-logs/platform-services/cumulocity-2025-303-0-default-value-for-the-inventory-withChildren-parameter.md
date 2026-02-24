@@ -1,5 +1,5 @@
 ---
-date: '2025-09-18'
+date: '2026-03-31'
 title: Inventory API – change of the default value for the withChildren parameter
 product_area: Platform services
 change_type:

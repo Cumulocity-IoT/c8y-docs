@@ -1,5 +1,5 @@
 ---
-date: '2025-10-16'
+date: '2026-03-31'
 title: Added a new audit log type "Tenant certificate authority"
 product_area: Platform services
 change_type:

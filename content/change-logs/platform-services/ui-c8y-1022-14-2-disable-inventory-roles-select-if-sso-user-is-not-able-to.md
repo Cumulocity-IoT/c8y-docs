@@ -1,5 +1,5 @@
 ---
-date: '2025-08-21'
+date: '2026-03-31'
 title: Inventory roles selection disabled if roles cannot be changed by SSO user
 product_area: Platform services
 change_type:

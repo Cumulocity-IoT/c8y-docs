@@ -1,5 +1,5 @@
 ---
-date: 2025-11-19
+date: 2026-03-31
 title: New data explorer moved to General Availability
 product_area: Application enablement & solutions
 change_type:

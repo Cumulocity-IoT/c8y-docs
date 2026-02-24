@@ -1,5 +1,5 @@
 ---
-date: 2025-09-11
+date: 2026-03-31
 title: Returning information on all managed object ancestors when withParents=true
 change_type:
   - value: change-3BQrQ6adS

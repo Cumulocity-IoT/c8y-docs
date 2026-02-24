@@ -1,5 +1,5 @@
 ---
-date: '2025-09-25'
+date: '2026-03-31'
 title: Resizable grid component for improved widget configuration
 product_area: Application enablement & solutions
 change_type:

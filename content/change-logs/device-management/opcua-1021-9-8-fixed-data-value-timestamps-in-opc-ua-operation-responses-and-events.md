@@ -1,5 +1,5 @@
 ---
-date: '2025-10-30'
+date: '2026-03-31'
 title: Fixed data value timestamps in OPC UA operation responses and events
 product_area: Device management & connectivity
 change_type:

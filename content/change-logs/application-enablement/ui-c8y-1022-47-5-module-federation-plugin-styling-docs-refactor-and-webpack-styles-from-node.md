@@ -1,5 +1,5 @@
 ---
-date: '2025-11-13'
+date: '2026-03-31'
 title: >-
   Improved module federation plugin documentation and fixed loading of webpack
   styles from node_modules

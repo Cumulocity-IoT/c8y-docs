@@ -1,5 +1,5 @@
 ---
-date: '2025-07-03'
+date: '2026-03-31'
 title: New device tab listing all device parameters
 product_area: Device management & connectivity
 change_type:

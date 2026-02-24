@@ -1,5 +1,5 @@
 ---
-date: '2025-08-14'
+date: '2026-03-31'
 title: >-
   Enabling the data point graph preview feature no longer breaks the
   visualization of data points

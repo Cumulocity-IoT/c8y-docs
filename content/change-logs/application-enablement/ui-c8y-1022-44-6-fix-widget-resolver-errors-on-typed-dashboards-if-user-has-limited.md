@@ -1,5 +1,5 @@
 ---
-date: '2025-10-23'
+date: '2026-03-31'
 title: >-
   Fixed widget resolver errors on typed dashboards for users with limited
   permissions

@@ -1,5 +1,5 @@
 ---
-date: '2025-09-25'
+date: '2026-03-31'
 title: Connect smartphone modal can again be accessed from the Quick links widget
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: '2025-10-30'
+date: '2026-03-31'
 title: Dashboard manager available for preview in the Device Management application
 product_area: Device management & connectivity
 change_type:

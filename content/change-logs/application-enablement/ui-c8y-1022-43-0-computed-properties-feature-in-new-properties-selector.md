@@ -1,5 +1,5 @@
 ---
-date: '2025-10-16'
+date: '2026-03-31'
 title: Computed properties available in new properties selector
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: '2025-10-30'
+date: '2026-03-31'
 title: Enhanced granularity of measurement series aggregation interval
 change_type:
   - value: change-QHu1GdukP

@@ -1,4 +1,4 @@
-date: '2025-07-25'
+date: '2026-03-31'
 title: Quick links widget replaces Applications widget and Help & service widget
 product_area: Application enablement & solutions
 change_type:

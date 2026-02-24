@@ -1,5 +1,5 @@
 ---
-date: '2025-10-09'
+date: '2026-03-31'
 title: Client-suggested identity provider for SSO login
 change_type:
   - value: change-QHu1GdukP

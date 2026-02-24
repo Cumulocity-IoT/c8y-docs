@@ -19,5 +19,5 @@ The behavior of the `Util.formatTime` has changed in the {{< product-c8y-iot >}}
 
 Example:
  - Previous: `2025/09/01 12:38:30Z`
- - Current : `2025-09-01T12:38:30.123Z`
+ - Current : `2026-03-31T12:38:30.123Z`
 

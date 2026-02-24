@@ -1,5 +1,5 @@
 ---
-date: '2025-07-10'
+date: '2026-03-31'
 title: >-
   Readded link from the Cockpit application to the corresponding device details
   in the Device Management application

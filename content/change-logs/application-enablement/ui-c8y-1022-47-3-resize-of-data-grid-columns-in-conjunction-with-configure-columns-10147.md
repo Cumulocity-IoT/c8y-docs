@@ -1,5 +1,5 @@
 ---
-date: '2025-11-13'
+date: '2026-03-31'
 title: Improvements to data grid column handling
 product_area: Application enablement & solutions
 change_type:

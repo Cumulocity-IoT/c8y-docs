@@ -1,5 +1,5 @@
 ---
-date: '2025-07-10'
+date: '2026-03-31'
 title: >-
   Users with SSO redirect and without application access no longer run into an
   infinite loop

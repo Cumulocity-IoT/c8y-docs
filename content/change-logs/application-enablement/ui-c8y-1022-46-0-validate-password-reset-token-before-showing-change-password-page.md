@@ -1,5 +1,5 @@
 ---
-date: '2025-11-06'
+date: '2026-03-31'
 title: Password reset links now validated for a more suitable redirection
 product_area: Application enablement & solutions
 change_type:

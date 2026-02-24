@@ -1,5 +1,5 @@
 ---
-date: '2025-10-23'
+date: '2026-03-31'
 title: Improved accessibility and focus management on bottom drawer
 product_area: Application enablement & solutions
 change_type:

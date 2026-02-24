@@ -1,5 +1,5 @@
 ---
-date: '2025-08-28'
+date: '2026-03-31'
 title: Preview of the new Measurements tab based on the data explorer
 product_area: Device management & connectivity
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: '2025-10-16'
+date: '2026-03-31'
 title: Fixed content security policy issue in SCADA widget
 product_area: Application enablement & solutions
 change_type:

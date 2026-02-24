@@ -1,5 +1,5 @@
 ---
-date: '2025-10-02'
+date: '2026-03-31'
 title: >-
   Deprecating the attachment of tenant options as headers to microservice
   requests

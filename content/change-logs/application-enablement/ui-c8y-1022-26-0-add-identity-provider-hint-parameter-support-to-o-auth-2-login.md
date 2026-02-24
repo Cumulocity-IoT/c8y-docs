@@ -1,5 +1,5 @@
 ---
-date: '2025-09-18'
+date: '2026-03-31'
 title: Added identity provider hint parameter support to OAuth2 login flow
 product_area: Application enablement & solutions
 change_type:

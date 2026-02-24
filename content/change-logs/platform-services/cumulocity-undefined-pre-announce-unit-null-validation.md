@@ -1,5 +1,5 @@
 ---
-date: '2025-08-27'
+date: '2026-03-31'
 title: Strict validation of unit values in the measurement fragments 
 change_type:
   - value: change-inv-3bw8e

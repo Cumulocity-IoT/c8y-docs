@@ -1,5 +1,5 @@
 ---
-date: '2025-11-28'
+date: '2026-03-31'
 title: Improved global context styling
 product_area: Application enablement & solutions
 change_type:

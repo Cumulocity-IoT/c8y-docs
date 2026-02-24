@@ -1,5 +1,5 @@
 ---
-date: '2025-08-21'
+date: '2026-03-31'
 title: >-
   Smart rules section in the Status tab of custom microservices only displayed
   if Smartrules microservice is available

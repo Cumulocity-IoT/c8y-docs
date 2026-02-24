@@ -1,5 +1,5 @@
 ---
-date: '2025-09-04'
+date: '2026-03-31'
 title: >-
   Long event or alarm texts no longer overflow in the data point graph or data
   explorer tooltips

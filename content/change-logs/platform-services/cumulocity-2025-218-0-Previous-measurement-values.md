@@ -1,5 +1,5 @@
 ---
-date: '2025-07-03'
+date: '2026-03-31'
 title: Introducing previous measurements values
 change_type:
   - value: change-inv-3bw8e

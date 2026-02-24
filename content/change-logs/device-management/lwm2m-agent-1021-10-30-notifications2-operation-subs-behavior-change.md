@@ -1,5 +1,5 @@
 ---
-date: 2025-09-18
+date: 2026-03-31
 title: LWM2M service utilization of Notifications 2.0 tenant-level operation subscription
 product_area: Device management & connectivity
 change_type:

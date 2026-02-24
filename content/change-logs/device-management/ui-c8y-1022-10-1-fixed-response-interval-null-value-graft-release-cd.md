@@ -1,5 +1,5 @@
 ---
-date: '2025-08-07'
+date: '2026-03-31'
 title: Response interval value set correctly when toggling maintenance mode
 product_area: Device management & connectivity
 change_type:
