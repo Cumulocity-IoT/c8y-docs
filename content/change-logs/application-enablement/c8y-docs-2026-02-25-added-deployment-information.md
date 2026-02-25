@@ -11,6 +11,7 @@ component:
 build_artifact:
   - value: 
     label: n/a
+ticket: MTM-66020
 ---
 
 Change logs previously only indicated deployment availability for Zone 1 (eu-latest.cumulocity.com), limiting the usefulness of the information for users on other zones.
