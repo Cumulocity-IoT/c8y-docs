@@ -329,15 +329,15 @@ The data lake storage service automatically discovers the structure of the incom
 Currently, the service does not delete tables and columns when they are not in use anymore. For more information, see [Managing schema evolution](#managing-schema-evolution).
 {{< /c8y-admon-info >}}
 
-{{ < c8y-admin-info>}}
+{{ < c8y-admon-info >}}
 The schema evolution guarantees automated conflict resolution of columns types and names.
-The base schema is defined by the first **processed** message; The following messages, if contain conflicting types or names
+The base schema is defined by the first **processed** message. The following messages, if they contain conflicting types or names,
 will follow conflict resolution rules and be stored in overflow columns.
-However, there is no guarantee if messages are processed
-exactly in order of arrival, we guarantee the order of processing for the same device.
+However, there is no guarantee that messages are processed
+exactly in the order of arrival. We guarantee the order of processing for the same device.
 In other words, if schema conflicts are introduced by messages from different devices, any device will  
 define the resulting base schema.
-{{</ c8y-admin-info>}}
+{{</ c8y-admon-info >}}
 
 #### Handling of schema conflicts {#handling-of-schema-conflicts}
 
