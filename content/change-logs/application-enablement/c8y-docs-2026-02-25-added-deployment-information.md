@@ -1,6 +1,6 @@
 ---
 date: 2026-02-25
-title: Added deployment information to change logs
+title: Added deployment information to change logs in the documentation
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
