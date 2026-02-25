@@ -14,7 +14,9 @@ build_artifact:
 ticket: MTM-62754
 version: 2026.51.0
 ---
-The single sign-on APIs have been enhanced to allow the configuration and administration of thousands of users. Using the user interface in such instances was not scalable and required intense effort to administer such large numbers of users properly. These new REST endpoints allow users to manage global and inventory access mappings for tenant login options:
+The single sign-on APIs have been enhanced to allow the configuration and administration of thousands of users. Using the user interface in such instances was not scalable and required intense effort to administer such large numbers of users properly. 
+
+These new REST endpoints allow users to manage global and inventory access mappings for tenant login options:
 * POST/GET/PUT/DELETE /tenant/loginOptions/{configIdOrType}/accessMappings
 * POST/GET/PUT/DELETE /tenant/loginOptions/{configIdOrType}/inventoryAccessMappings
 
