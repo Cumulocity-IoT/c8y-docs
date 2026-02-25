@@ -16,6 +16,6 @@ ticket: MTM-66020
 
 Change logs previously only indicated deployment availability for Zone 1 (eu-latest.cumulocity.com), limiting the usefulness of the information for users on other zones.
 
-Each change log entry which contains information on a build artifact and version now includes an expandable **Technical details** section that displays deployment availability information for all environments: eu-latest.cumulocity.com, apj.cumulocity.com, jp.cumulocity.com, emea.cumulocity.com, us.cumulocity.com, and cumulocity.com. This section also displays technical details such as build artifact, version, and internal ticket number that were previously hidden.
+Each change log entry now includes an expandable **Technical details** section that displays deployment availability information for all environments: eu-latest.cumulocity.com, apj.cumulocity.com, jp.cumulocity.com, emea.cumulocity.com, us.cumulocity.com, and cumulocity.com. This section also displays technical details such as build artifact, version, and internal ticket number that were previously hidden.
 
 Users can now quickly verify whether a change is available in their specific environment without contacting support or searching multiple sources. This improvement helps users make informed decisions about feature adoption and troubleshooting across all zones.
