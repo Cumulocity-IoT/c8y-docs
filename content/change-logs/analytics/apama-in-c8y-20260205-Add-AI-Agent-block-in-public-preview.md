@@ -24,6 +24,8 @@ environment_availability:
     date: '2026-02-23'
   - label: us.cumulocity.com
     date: '2026-02-23'
+  - label: cumulocity.com
+    date: '2026-02-24'
 ---
 
 A new AI Agent block has been added to Analytics Builder. This block queries an AI Agent Manager agent using its inputs and produces the agent's text response as output.
