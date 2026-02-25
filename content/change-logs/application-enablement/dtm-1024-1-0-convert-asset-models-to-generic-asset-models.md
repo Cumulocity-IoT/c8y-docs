@@ -19,10 +19,12 @@ environment_availability:
 ---
 The **Digital Twin Manager (DTM)** application now offers more flexible asset modeling, reducing dependence on rigid schemas and enabling you to represent physical assets with fewer upfront constraints. This change supports a more agile approach to defining and evolving your digital representations of physical assets.
 
-- **Allow any subasset models**: A new option on asset models that removes strict restrictions on subasset types. When enabled, any asset model can be nested under the parent model, giving you greater flexibility in defining *asset hierarchies* as your environment evolves
+To support this flexibility, two new configuration options are now available in asset model definitions:
 
-- **Allow all properties** : Assets created from models with this option enabled can hold any *asset properties* even if they were not defined in the original asset model. This lets you enrich assets with new data over time without needing to update the schema first.
+- **Allow any subasset models**: This option removes strict restrictions on subasset types. When enabled, any asset model can be nested under the parent model, giving you greater flexibility in defining *asset hierarchies* as your environment evolves.
 
-By opting into these flexible model settings, you can begin building out your digital twin structures earlier and refine the details later—supporting iterative modeling and real-world variability.
+- **Allow all properties**: Assets created from models with this option enabled can include properties that were not defined in the original asset model. This allows you to enrich assets with new data over time without needing to update the schema first.
 
-Along with this change we have introduced a new default asset model, “Generic Asset” (key: 'c8y_GenericDefinition'), which allows all subasset models and properties. It is protected and cannot be deleted, ensuring system consistency and preventing accidental removal of this required base model
+By enabling these flexible model settings, you can build your digital twin structures earlier and refine them incrementally — supporting iterative modeling and real-world variability.
+
+In addition, we have introduced a new default asset model, **“Generic Asset”** (key: `c8y_GenericDefinition`). It allows all subasset models and properties by default. The model is protected and **cannot be deleted**, ensuring system consistency and preventing accidental removal of this required base definition.
