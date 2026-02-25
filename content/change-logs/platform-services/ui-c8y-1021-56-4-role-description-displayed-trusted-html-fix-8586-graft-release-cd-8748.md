@@ -21,5 +21,5 @@ environment_availability:
   - label: us.cumulocity.com
   - label: cumulocity.com
 ---
-Previously, it was possible to put malicious code into the description of inventory roles and when it was displayed, that code was treated as trusted HTML. For example, if a description was "<img src="x" onerror="alert(123)" />", the browser alert method was called when displayed.
+Previously, it was possible to put malicious code into the description of inventory roles and when it was displayed, that code was treated as trusted HTML. For example, if a description was "&lt;img src="x" onerror="alert(123)" /&gt;", the browser alert method was called when displayed.
 The description is treated as potentially dangerous now (as most user-provided properties) and XSS attacks as described above are no longer possible. There is no visual change for customers, non-harmful markdown is still interpreted (tags, classes are not stripped away).
