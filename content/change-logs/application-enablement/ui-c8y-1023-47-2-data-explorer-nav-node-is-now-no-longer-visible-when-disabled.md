@@ -1,6 +1,6 @@
 ---
 date: ""
-title: data explorer nav node is no longer visible when disabled
+title: Data explorer navigation item is no longer visible when disabled
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
