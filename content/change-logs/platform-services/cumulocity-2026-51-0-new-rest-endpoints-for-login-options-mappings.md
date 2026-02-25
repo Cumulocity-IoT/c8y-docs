@@ -18,4 +18,4 @@ Cumulocity are proud to announce enhanced Single Sign-On APIs that allow the con
 * POST/GET/PUT/DELETE /tenant/loginOptions/{configIdOrType}/accessMappings
 * POST/GET/PUT/DELETE /tenant/loginOptions/{configIdOrType}/inventoryAccessMappings
 
-The endpoints enable CRUD operations on individual mappings without updating the entire login options configuration, with optional session termination via terminateUserSessions.
+The endpoints enable CRUD operations on individual mappings without updating the entire login options configuration, with optional session termination via `terminateUserSessions`.
