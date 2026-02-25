@@ -18,5 +18,9 @@ version: 1024.1.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-19'
+  - label: apj.cumulocity.com
+    date: '2026-02-25'
+  - label: jp.cumulocity.com
+    date: '2026-02-25'
 ---
 Previously, custom titles and descriptions of library asset definitions were replaced with the default values after the microservice was resubscribed. This issue has been fixed.
