@@ -19,9 +19,9 @@ environment_availability:
 ---
 The Digital Twin Manager (DTM) application now offers more flexible asset modeling, reducing dependence on rigid schemas and enabling you to represent physical assets with fewer upfront constraints. This change supports a more agile approach to defining and evolving your digital representations of physical assets.
 
-To support this flexibility, two new configuration options are now available in asset model definitions:
+To support this flexibility, two new configuration options are now available when defining your asset models:
 
-- **Allow any subasset models**: Nest any asset under a parent without strict type restrictions.
+- **Allow any subasset models**: Nest any asset under a parent without strict type restrictions, giving you greater flexibility in defining asset hierarchies as your environment evolves.
 
 - **Allow all properties**: Add data to assets even if the properties weren't defined in the original model. This allows you to enrich assets with new data over time without updating the asset model first.
 
