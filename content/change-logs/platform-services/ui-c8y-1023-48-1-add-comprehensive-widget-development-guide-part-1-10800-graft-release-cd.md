@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-64376
 version: 1023.48.1
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Documentation): [MTM-64376] add comprehensive Widget Development
-Guide (Part 1)
-(#10800)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10800)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-64376]:
-https://cumulocity.atlassian.net/browse/MTM-64376?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dawid Janusz <96060763+DawidSAG@users.noreply.github.com>
+The widget {{< product-c8y-iot >}} Codex has been expanded to include comprehensive information, best practices, and step-by-step instructions necessary for building widgets for the {{< product-c8y-iot >}} platform. With this addition, developers now have better access to structured documentation that helps them understand the widget development process, reducing the learning curve and enabling faster development of custom solutions. 
