@@ -27,4 +27,4 @@ To support this flexibility, two new configuration options are now available in 
 
 By enabling these flexible model settings, you can build your digital twin structures earlier and refine them incrementally — supporting iterative modeling and real-world variability.
 
-In addition, we have introduced a new default asset model, **“Generic Asset”** (key: `c8y_GenericDefinition`). It allows all subasset models and properties by default. The model is protected and **cannot be deleted**, ensuring system consistency and preventing accidental removal of this required base definition.
+In addition, we have introduced a new default asset model, “Generic Asset” (key: `c8y_GenericDefinition`). It allows all subasset models and properties by default. The model is protected and **cannot be deleted**, ensuring system consistency and preventing accidental removal of this required base definition.
