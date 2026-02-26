@@ -17,7 +17,7 @@ environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-19'
 ---
-The **Digital Twin Manager (DTM)** application now offers more flexible asset modeling, reducing dependence on rigid schemas and enabling you to represent physical assets with fewer upfront constraints. This change supports a more agile approach to defining and evolving your digital representations of physical assets.
+The Digital Twin Manager (DTM) application now offers more flexible asset modeling, reducing dependence on rigid schemas and enabling you to represent physical assets with fewer upfront constraints. This change supports a more agile approach to defining and evolving your digital representations of physical assets.
 
 To support this flexibility, two new configuration options are now available in asset model definitions:
 
