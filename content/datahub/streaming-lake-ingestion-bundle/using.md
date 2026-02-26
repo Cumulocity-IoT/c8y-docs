@@ -329,16 +329,6 @@ The data lake storage service automatically discovers the structure of the incom
 Currently, the service does not delete tables and columns when they are not in use anymore. For more information, see [Managing schema evolution](#managing-schema-evolution).
 {{< /c8y-admon-info >}}
 
-{{< c8y-admon-info >}}
-The schema evolution guarantees automated conflict resolution of columns types and names.
-The base schema is defined by the first **processed** message. The following messages, if they contain conflicting types or names,
-will follow conflict resolution rules and be stored in overflow columns.
-However, there is no guarantee that messages are processed
-exactly in the order of arrival. We guarantee the order of processing for the same device.
-In other words, if schema conflicts are introduced by messages from different devices, any device will  
-define the resulting base schema.
-{{< /c8y-admon-info >}}
-
 #### Handling of schema conflicts {#handling-of-schema-conflicts}
 
 Contrary to Apache Iceberg and SQL, {{< product-c8y-iot >}} does not mandate a consistent schema across all incoming data. The data lake storage service automatically resolves consistency issues. Revisiting our previous example, assume that "Tracker #1" sends data as follows:
@@ -401,6 +391,11 @@ If there is a conflict between a top-level property with a fragment of the same 
 The service currently does not support certain combinations of type conflicts with lists. It moves conflicting lists to the `trash` table, see [Binning](#binning).
 {{< /c8y-admon-caution >}}
 
+{{< c8y-admon-info >}}
+The result of schema conflict resolution depends on the order in which messages are processed. If you first send a message with a numeric version property and then a message with a string version property, the result are two properties `version` (decimal) and `version__s`. If you reserve the order of the messages, the results are two properties `version` (string) and `version__d`. 
+
+Please note that the order of sending messages to Cumulocity and the order of processing messages does not necessarily correspond. For more details on ordering guarantees, please visit the Messaging Service documentation.
+{{< /c8y-admon-info >}}
 
 #### Naming {#naming}
 
