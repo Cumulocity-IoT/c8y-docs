@@ -391,6 +391,11 @@ If there is a conflict between a top-level property with a fragment of the same 
 The service currently does not support certain combinations of type conflicts with lists. It moves conflicting lists to the `trash` table, see [Binning](#binning).
 {{< /c8y-admon-caution >}}
 
+{{< c8y-admon-info >}}
+The result of schema conflict resolution depends on the order in which messages are processed. If you first send a message with a numeric `version` property and then a message with a string `version` property, the result is two properties `version` (decimal) and `version__s`. If you reverse the order of the messages, the result is two properties `version` (string) and `version__d`. 
+
+Note that the order in which messages are sent to {{< product-c8y-iot >}} and the order in which they are processed do not necessarily coincide. For more details on ordering guarantees, visit the [Messaging Service documentation](/api/core/#tag/About-notifications-2.0).
+{{< /c8y-admon-info >}}
 
 #### Naming {#naming}
 
