@@ -1,6 +1,6 @@
 ---
 date: '2026-02-19'
-title:  New Flexible Asset Modeling Capabilities
+title:  New flexible asset modeling capabilities
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
