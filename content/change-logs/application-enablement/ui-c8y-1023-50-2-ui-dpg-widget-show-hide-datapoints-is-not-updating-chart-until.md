@@ -1,6 +1,6 @@
 ---
 date: ""
-title: ui dpg widget show hide datapoints is not updating chart until gc emits (10583) (#11271)
+title: Data point graph now updates immediately when toggling data point or alarm/event visibility
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65557
 version: 1023.50.2
 ---
-ui dpg widget show hide datapoints is not updating chart until gc emits (10583) (#11271)
+Fixed data point graph widget not updating chart visibility when toggling data points or alarms/events until a global context change was triggered.
