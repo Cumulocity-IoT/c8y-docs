@@ -1,6 +1,6 @@
 ---
 date: ""
-title: add comprehensive Widget Development Guide (Part 1) (#10800) [GRAFT][release/cd] (#11325)
+title: Added comprehensive widget development documentation
 product_area: Platform services
 change_type:
   - value: change-2c7RdTdXo4
