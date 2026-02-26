@@ -21,7 +21,7 @@ The Digital Twin Manager (DTM) application now offers more flexible asset modeli
 
 To support this flexibility, two new configuration options are now available in asset model definitions:
 
-- **Allow any subasset models**: This option removes strict restrictions on subasset types. When enabled, any asset model can be nested under the parent model, giving you greater flexibility in defining *asset hierarchies* as your environment evolves.
+- **Allow any subasset models**: Nest any asset under a parent without strict type restrictions.
 
 - **Allow all properties**: Add data to assets even if the properties weren't defined in the original model. This allows you to enrich assets with new data over time without updating the asset model first.
 
