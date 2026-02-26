@@ -394,7 +394,7 @@ The service currently does not support certain combinations of type conflicts wi
 {{< c8y-admon-info >}}
 The result of schema conflict resolution depends on the order in which messages are processed. If you first send a message with a numeric version property and then a message with a string version property, the result are two properties `version` (decimal) and `version__s`. If you reserve the order of the messages, the results are two properties `version` (string) and `version__d`. 
 
-Please note that the order of sending messages to Cumulocity and the order of processing messages does not necessarily correspond. For more details on ordering guarantees, please visit the [Messaging Service documentation](/api/core/#tag/About-notifications-2.0).
+Note that the order of sending messages to {{< product-c8y-iot >}} and the order of processing messages does not necessarily correspond. For more details on ordering guarantees, visit the [Messaging Service documentation](/api/core/#tag/About-notifications-2.0).
 {{< /c8y-admon-info >}}
 
 #### Naming {#naming}
