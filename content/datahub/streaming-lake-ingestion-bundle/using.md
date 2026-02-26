@@ -425,9 +425,52 @@ This is a reliability measure. The Iceberg specification considers tables and co
 
 #### Flat views {#flat-views}
 
-{{< c8y-admon-info >}}
-For legacy analytics tools, {{< company-c8y >}} plans to offer Iceberg views with a flat representation of the Iceberg tables. This is currently under implementation.
-{{< /c8y-admon-info >}}
+Streaming Lake Ingestion offers [Apache Iceberg views](https://iceberg.apache.org/view-spec/) on top of the data ingested into the data lake tables, especially for better integration with BI tools.
+
+##### Integration with BI tools  {#integration-with-bi-tools}
+As BI tools tend to work unwell with structured columns, the views offered by Streaming Lake Ingestion solve this problem by flattening structured fields into "flat" columns. This makes it possible to read nested columns (for example, `value` and `unit` of a measurement series) as top-level primitive fields.
+Take the following example:
+You ingest the following measurement into {{< product-c8y-iot >}}.
+
+```json
+{
+  "time": "2026-02-19T13:09:39.678Z",
+  "source": { "id": "47635" },
+  "type": "c8y_BatteryMeasurement",
+  "c8y_Battery": {
+    "voltage": { "value": 12.8, "unit": "V" },
+    "stateOfCharge": { "value": 85.5, "unit": "%" },
+    "temperature": { "value": 22.5, "unit": "C" }
+  }
+}
+```
+
+This results in a table like the following:
+
+**Table: measurement.c8y_Battery**
+| eventType          | source | time                     | type                   | voltage       | stateOfCharge | temperature   |
+| ------------------ | ------ | ------------------------ | ---------------------- | ------------- | ------------- | ------------- |
+|                    |        |                          |                        | value \| unit | value \| unit | value \| unit |
+| MEASUREMENT_CREATE | 47635  | 2026-02-19T13:09:39.678Z | c8y_BatteryMeasurement | 12.8 \| V     | 85.5 \| %     | 22.5 \| C     |
+
+Note that there are three columns which are of structured type: `voltage`, `stageOfCharge` and `temperature`. As many BI tools can't handle structured types, Streaming Lake Ingestion offers views for tables to "unnest" these structured fields.
+An according view looks like the following:
+
+**View: measurement.c8y_Battery**
+| eventType          | source | time                     | type                   | voltage\\value  | voltage\\unit | ... | temperature\\value | temperature\\unit |
+| ------------------ | ------ | ------------------------ | ---------------------- | --------------- | ------------- | --- | ------------------ | ----------------- |
+| MEASUREMENT_CREATE | 47635  | 2026-02-19T13:09:39.678Z | c8y_BatteryMeasurement | 12.8            | V             | ... | 22.5               | C                 |
+
+This makes it possible to operate directly on nested fields and, for example, do analytics for measurement values in BI tools.
+
+##### View representations {#view-representations}
+In Apache Iceberg, views can have multiple representations, meaning you need to check if Streaming Lake Ingestion offers a SQL dialect that can be read by your query engine. Currently, the following two SQL dialects are supported:
+* **DremioSQL**
+* **spark** (experimental)
+
+##### Limitations of views {#view-limitations}
+* The Iceberg views are currently offered only on top of change data capture tables.
+* Arrays are currently kept as is and not flattened.
 
 #### Binning {#binning}
 
