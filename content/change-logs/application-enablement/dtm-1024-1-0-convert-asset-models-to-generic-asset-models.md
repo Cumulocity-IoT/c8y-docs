@@ -23,7 +23,7 @@ To support this flexibility, two new configuration options are now available in 
 
 - **Allow any subasset models**: This option removes strict restrictions on subasset types. When enabled, any asset model can be nested under the parent model, giving you greater flexibility in defining *asset hierarchies* as your environment evolves.
 
-- **Allow all properties**: Assets created from models with this option enabled can include properties that were not defined in the original asset model. This allows you to enrich assets with new data over time without needing to update the schema first.
+- **Allow all properties**: Add data to assets even if the properties weren't defined in the original model. This allows you to enrich assets with new data over time without updating the asset model first.
 
 By enabling these flexible model settings, you can build your digital twin structures earlier and refine them incrementally — supporting iterative modeling and real-world variability.
 
