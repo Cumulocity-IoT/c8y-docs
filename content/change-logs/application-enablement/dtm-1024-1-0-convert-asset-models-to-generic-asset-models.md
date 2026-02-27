@@ -16,6 +16,10 @@ version: 1024.1.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-19'
+  - label: apj.cumulocity.com
+    date: '2026-02-25'
+  - label: jp.cumulocity.com
+    date: '2026-02-25'
 ---
 The Digital Twin Manager now supports converting asset models into generic asset models. This
 conversion is one-way: once an asset model is converted, it becomes a

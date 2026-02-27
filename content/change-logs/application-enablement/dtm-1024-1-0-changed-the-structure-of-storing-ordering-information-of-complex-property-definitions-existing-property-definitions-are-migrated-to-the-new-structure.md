@@ -16,6 +16,10 @@ version: 1024.1.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-19'
+  - label: apj.cumulocity.com
+    date: '2026-02-25'
+  - label: jp.cumulocity.com
+    date: '2026-02-25'
 ---
 Previously, the field ordering information of complex property definitions
 was stored in the `c8y_Order` array. With this change, the order is
