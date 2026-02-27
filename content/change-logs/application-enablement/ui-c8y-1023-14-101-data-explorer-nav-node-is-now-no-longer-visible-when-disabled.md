@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66097
 version: 1023.14.101
 ---
-The data explorer navigation node in the Web SDK was previously visible in the navigation menu even when it was disabled, which could confuse users who expected disabled features to be hidden from the interface. The navigation node is now properly hidden from view when its disabled state is set, ensuring that only enabled navigation options are displayed to users. This change improves the clarity of the user interface by removing visual clutter and making it immediately clear which features are available for use.
+The data explorer navigation item was previously visible in the navigator even when it was disabled via the Cockpit configuration, which could confuse users who expected disabled items to be hidden. The data explorer navigation item is now properly hidden from the navigator when it is disabled, ensuring that only enabled navigation items are displayed to users.
