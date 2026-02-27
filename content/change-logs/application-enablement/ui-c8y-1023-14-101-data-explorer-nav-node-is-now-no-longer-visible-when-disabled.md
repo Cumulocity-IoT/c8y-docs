@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data explorer nav node is now no longer visible when disabled. (#11261) [GRAFT][release/y2026] (#11309)
+title: data explorer navigation node is no longer visible when disabled
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
