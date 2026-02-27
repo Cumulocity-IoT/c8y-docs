@@ -14,20 +14,6 @@ build_artifact:
 ticket: MTM-63909
 version: 1023.50.0
 ---
-# Backport
+The Data Point Graph widget has been renamed to Data Graph to provide clearer and more intuitive terminology across the platform. This change simplifies the naming and better reflects the widget’s purpose of visualizing and analyzing data over time.
 
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Web SDK): [MTM-63909] Aligned data point graph terminology.
-(#11206)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11206)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-63909]:
-https://cumulocity.atlassian.net/browse/MTM-63909?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
-Co-authored-by: amio <amio@softwareag.com>
+The functionality and configuration of the widget remain unchanged. No action is required on your part, and your existing setups will continue to work as expected. This update ensures a more consistent and user-friendly experience when working with data visualization features across the platform.
