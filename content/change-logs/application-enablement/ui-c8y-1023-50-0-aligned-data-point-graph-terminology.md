@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-02-27'
 title: Data point graph has been renamed to data graph.
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-63909
 version: 1023.50.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-02-27'
 ---
 The "Data point graph" widget has been renamed to "Data graph" to provide clearer and more intuitive terminology across the platform. This change simplifies the naming and better reflects the widget’s purpose of visualizing and analyzing data over time.
 
