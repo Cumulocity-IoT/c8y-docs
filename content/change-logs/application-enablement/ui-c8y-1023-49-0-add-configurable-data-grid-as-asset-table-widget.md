@@ -14,6 +14,6 @@ build_artifact:
 ticket: MTM-64468
 version: 1023.49.0
 ---
-The Asset Table widget in the Web SDK has been enhanced to use the Data Grid, extending its functionality and providing a more powerful and flexible way to view and manage asset data. Previously, the widget offered more limited options for filtering and customization. With this improvement, you can now take advantage of the Data Grid’s extended capabilities, including additional filtering options and enhanced customization to better organize and interact with your asset information.
+The "Asset table" widget in the Web SDK has been enhanced to use the data grid, extending its functionality and providing a more powerful and flexible way to view and manage asset data. Previously, the widget offered limited options for filtering and customization. With this improvement, you can now take advantage of the data grid’s extended capabilities, including additional filtering options and enhanced customization to better organize and interact with your asset information.
 
-This enhancement is available as a preview feature. To enable it, open the Manage Preview Features drawer and turn on the corresponding option. Once enabled, you can start using the improved Asset Table widget with its expanded filtering and customization capabilities, allowing you to tailor the experience to your specific needs.
+This enhancement is available as a preview feature. To enable it, open the **Preview features** page from the right drawer and turn on the corresponding option. Once enabled, you can start using the improved "Asset table" widget with its expanded filtering and customization capabilities, allowing you to tailor the experience to your specific needs.
