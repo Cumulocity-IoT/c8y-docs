@@ -1,6 +1,6 @@
 ---
 date: ""
-title: new aggregation options added to the data graph and data explorer.
+title: New aggregation options added to the data graph and data explorer.
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
