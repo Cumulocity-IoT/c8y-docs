@@ -190,11 +190,22 @@ async function processFolder(folderName: string) {
   const title: string = matterResult.data.title || folderName;
   const bundleFolder: string = matterResult.data.bundlefolder || folderName;
   const uniqueLinks = await buildFolderLinksFromSitemap(bundleFolder);
-  if (uniqueLinks.length === 0) {
+  const filteredLinks = uniqueLinks.filter(u => !u.endsWith(`/${bundleFolder}`) && !u.endsWith(`/${bundleFolder}/`));
+  const normalizedLinks = filteredLinks.map(u =>
+  u.split('#')[0].split('?')[0].replace(/\/$/, '')
+);
+  const seen = new Set<string>();
+  const dedupedLinks = normalizedLinks.filter(u => {
+  if (seen.has(u)) return false;
+  seen.add(u);
+  return true;
+});
+  if (dedupedLinks.length === 0) {
+    console.warn(`No usable links for ${folderName} (bundlefolder: ${bundleFolder}), skipping`);
     return;
   }
 
-  const linksBlock = uniqueLinks
+  const linksBlock = dedupedLinks
     .map((link, i, arr) => `  ${link}${i < arr.length - 1 ? ' \\' : ''}`)
     .join('\n');
   const pdfFilename = titleToFilename(title);
