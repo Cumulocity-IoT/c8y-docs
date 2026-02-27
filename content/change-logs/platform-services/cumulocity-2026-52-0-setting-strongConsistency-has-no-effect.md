@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-66108
 version: 2026.52.0
 ---
-Latest measurement configuration has been simplified by storing the `strongConsistency` option as a string value instead of a JSON-formatted value.
+The latest measurement configuration has been simplified by storing the `strongConsistency` option as a string value instead of a JSON-formatted value.
 
 Before: `"c8y_Temperature.*": {"strongConsistency": "true"}`  
 After: `"c8y_Temperature.*": "strongConsistency"`
