@@ -14,19 +14,6 @@ build_artifact:
 ticket: MTM-65847
 version: 1023.51.0
 ---
-# Backport
+The chart options in the Web SDK now include additional aggregation methods, giving you greater flexibility when configuring data visualization. Previously, aggregation was limited to minimum and maximum values, which could restrict how effectively you could summarize and analyze time-series data. With this update, you can now use average, sum, and count alongside the existing minimum and maximum options. These additional aggregation functions allow you to better represent trends, totals, and overall activity, making it easier to analyze and interpret your data.
 
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Web SDK): [MTM-65847] Add new aggr. options to the chart
-options. ](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11194)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65847]:
-https://cumulocity.atlassian.net/browse/MTM-65847?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+This enhancement is available in the Data Graph and Data Explorer.
