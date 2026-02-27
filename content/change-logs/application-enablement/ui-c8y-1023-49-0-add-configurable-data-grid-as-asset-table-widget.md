@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add configurable data grid as asset table widget
+title: The asset table widget has been improved and now uses the data grid.
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
