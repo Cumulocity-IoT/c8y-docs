@@ -14,21 +14,4 @@ build_artifact:
 ticket: MTM-66097
 version: 1023.14.101
 ---
-# Backport
-
-This will backport the following commits from `develop` to
-`release/y2026`:
-- [fix(Web SDK): [MTM-66097] Data explorer nav node is now no longer
-visible when disabled.
-(#11261)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11261)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66097]:
-https://cumulocity.atlassian.net/browse/MTM-66097?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+The data explorer navigation node in the Web SDK was previously visible in the navigation menu even when it was disabled, which could confuse users who expected disabled features to be hidden from the interface. The navigation node is now properly hidden from view when its disabled state is set, ensuring that only enabled navigation options are displayed to users. This change improves the clarity of the user interface by removing visual clutter and making it immediately clear which features are available for use.
