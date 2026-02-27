@@ -19,4 +19,4 @@ The latest measurement configuration has been simplified by storing the `strongC
 Before: `"c8y_Temperature.*": {"strongConsistency": "true"}`  
 After: `"c8y_Temperature.*": "strongConsistency"`
 
-This change ensures strongConsistency is correctly applied to the latest measurement feature.
+This change ensures `strongConsistency` is correctly applied to the latest measurement feature.
