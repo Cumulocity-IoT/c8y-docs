@@ -16,6 +16,10 @@ version: 1024.1.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-19'
+  - label: apj.cumulocity.com
+    date: '2026-02-25'
+  - label: jp.cumulocity.com
+    date: '2026-02-25'
 ---
 Previously, if an asset model or property was created without a name,
 blank values were displayed wherever the model or property name was
