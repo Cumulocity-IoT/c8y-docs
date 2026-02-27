@@ -199,7 +199,7 @@ The following table gives a brief description of all blocks that can be selected
 </td>
 </tr>
 <tr>
-<td><a href="#onnx-preview">ONNX (Preview)</a></td>
+<td><a href="#onnx">ONNX</a></td>
 <td><span>Executes an ONNX model with named inputs and outputs.</span>
 </td>
 </tr>

@@ -64,7 +64,7 @@ This category contains the following blocks:
 </td>
 </tr>
 <tr>
-<td><a href="#onnx-preview">ONNX (Preview)</a></td>
+<td><a href="#onnx">ONNX</a></td>
 <td><span>Executes an ONNX model with named inputs and outputs.</span>
 </td>
 </tr>
@@ -1102,7 +1102,7 @@ It is only mandatory to provide one of the limits. If this is the case, then the
 </table>
 
 
-### ONNX (Preview)
+### ONNX
 
 `apama.analyticsbuilder.blocks.ONNX`
 
@@ -1116,7 +1116,7 @@ The output pulse contains a properties dictionary where keys are the ONNX output
 If the model execution fails, the output properties will contain a single "error" property with the error message.</p>
 
 
-#### Parameters {#onnx-preview-parameters}
+#### Parameters {#onnx-parameters}
 
 <table>
 <colgroup>
@@ -1145,7 +1145,7 @@ If the model execution fails, the output properties will contain a single "error
 </tbody>
 </table>
 
-#### Input Port Details {#onnx-preview-inputs}
+#### Input Port Details {#onnx-inputs}
 
 <table>
 <colgroup>
@@ -1171,7 +1171,7 @@ If the model execution fails, the output properties will contain a single "error
 </tbody>
 </table>
 
-#### Output Port Details {#onnx-preview-outputs}
+#### Output Port Details {#onnx-outputs}
 
 <table>
 <colgroup>
