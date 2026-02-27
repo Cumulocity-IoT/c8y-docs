@@ -1,6 +1,6 @@
 ---
 date: ""
-title: The asset table widget has been improved and now uses the data grid.
+title: Asset table widget improved by using the data grid
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
