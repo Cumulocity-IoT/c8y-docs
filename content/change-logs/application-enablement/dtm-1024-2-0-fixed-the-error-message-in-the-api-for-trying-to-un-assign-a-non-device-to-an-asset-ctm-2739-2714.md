@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fixed the error message in the API for trying to (un)assign a non-device to an Asset"
+title: "Improved the error message from the API when trying to (un)assign a non-device to an asset"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -14,6 +14,4 @@ build_artifact:
 ticket: "CTM-2739"
 version: "1024.2.0"
 ---
-Previously, there was an inconsistency in the error message of the REST
-API when trying to assign or unassign a non-device to/from an asset.
-This has been fixed now.
+Previously, the error message returned from the RestAPI when attempting to assign or unassign a non-device to an asset was inconsistent. The error message format has been standardized. This fix improves error handling consistency.
