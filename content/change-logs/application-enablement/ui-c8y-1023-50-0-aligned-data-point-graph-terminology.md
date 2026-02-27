@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Aligned data point graph terminology.
+title: Data point graph has been renamed to data graph.
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
