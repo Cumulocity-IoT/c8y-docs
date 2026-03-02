@@ -20,6 +20,12 @@ environment_availability:
     date: '2026-02-18'
   - label: jp.cumulocity.com
     date: '2026-02-18'
+  - label: emea.cumulocity.com
+    date: '2026-02-23'
+  - label: us.cumulocity.com
+    date: '2026-02-23'
+  - label: cumulocity.com
+    date: '2026-02-24'
 ---
 
 A new Rate Limiter block has been added to Analytics Builder. This block suppresses all but the first message received per specified time period.
