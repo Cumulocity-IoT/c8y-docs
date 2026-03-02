@@ -14,6 +14,4 @@ build_artifact:
 ticket: "CTM-2740"
 version: "1024.2.0"
 ---
-More details had been added to the error message of the REST API
-responses when trying to create or update Asset Definitions on a
-subtenant of an enterprise tenant.
+Previously, the error message returned from the RestAPI when creating or updating asset definitions on a subtenant of an enterprise tenant was generic and did not include tenant IDs. The error message now includes the relevant tenant IDs.
