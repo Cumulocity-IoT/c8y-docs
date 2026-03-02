@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66119
 version: 1021.22.152
 ---
-In a tenant that has SSO logon, if they try to suspend or delete a tenant, they are prompted for a password. SSO users authenticate withe external service so they are not able to provide Cumulocity account password. Now, instead of password, SSO users have to type randomly generated code to confirm suspend/delete action.
+When suspending or deleting a tenant in an SSO-enabled environment, the behavior has been changed from requiring a password to providing a randomly generated code that is entered in order to complete the confirmation step. This change ensures that SSO users can perform these critical tenant management operations without friction, while maintaining the same level of security through code-based confirmation as password-based confirmation provides for non-SSO users.
