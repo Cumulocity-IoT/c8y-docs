@@ -1,6 +1,6 @@
 ---
 date: ""
-title: SSO users confirm with code when suspend or delete tenant
+title: SSO tenant management improved when suspending or deleting a tenant
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
