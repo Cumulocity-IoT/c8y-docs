@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fixed typeahead for software type selection when filtering by type
+title: Fix software type filter losing selection in typeahead
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
