@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fixed handling of library Asset Definitions at microservice startup"
+title: "Fixed handling of library asset definitions at microservice startup"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
