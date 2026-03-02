@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5654
 version: 1023.53.2
 ---
-When filtering software by type, the typeahead feature in the software type selection field was not functioning correctly, making it difficult to quickly find and select the desired software type. The typeahead functionality has now been fixed and will properly display matching software types as you type, allowing you to efficiently filter and select software types without having to manually scroll through the entire list. This improvement streamlines the software filtering workflow and reduces the time needed to locate specific software types in your installations.
+When filtering software by type, the typeahead field did not consistently preserve or display the selected software type. In some cases, the selection state became inconsistent, making filtering behavior confusing. This issue has been resolved - the software type typeahead now correctly maintains the selected value and reliably filters results based on the chosen software type.
