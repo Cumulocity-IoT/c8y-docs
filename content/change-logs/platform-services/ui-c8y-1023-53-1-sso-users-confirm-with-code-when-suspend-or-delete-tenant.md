@@ -1,6 +1,6 @@
 ---
 date: ""
-title: SSO users can now confirm tenant suspension or deletion with a code instead of a password
+title: SSO tenant management improved when deleting or suspending a tenant
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
