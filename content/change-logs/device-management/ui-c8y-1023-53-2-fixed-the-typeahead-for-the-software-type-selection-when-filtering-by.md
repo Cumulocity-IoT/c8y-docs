@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5654
 version: 1023.53.2
 ---
-When filtering software by type, the typeahead field did not consistently preserve or display the selected software type. In some cases, the selection state became inconsistent, making filtering behavior confusing. This issue has been resolved - the software type typeahead now correctly maintains the selected value and reliably filters results based on the chosen software type.
+When filtering software by type, the typeahead field did not consistently preserve or display the selected software type. In some cases, the selection state became inconsistent, making filtering behavior confusing. This issue has been resolved. The typeahead field now correctly maintains the selected value and reliably filters results based on the chosen software type.
