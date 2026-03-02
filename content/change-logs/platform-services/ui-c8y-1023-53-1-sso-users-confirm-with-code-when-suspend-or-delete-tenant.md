@@ -1,6 +1,6 @@
 ---
 date: ""
-title: SSO tenant management improved when deleting or suspending a tenant
+title: SSO tenant management improved when suspending or deleting a tenant
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
