@@ -399,7 +399,7 @@ Note that the order in which messages are sent to {{< product-c8y-iot >}} and th
 
 #### Naming {#naming}
 
-The Iceberg data lake supports only names consisting of characters, numbers (if not the first character), and underscores. Other characters are represented by the character string "\_x" followed by the hexadecimal Unicode value of the character. This applies to table and property names.
+The Iceberg data lake supports only names consisting of characters, numbers (if not the first character), underscores, and dashes. Other characters are represented by the character string "\_x" followed by the hexadecimal Unicode value of the character. This applies to table and property names.
 
 For example, if you use the property name "switch-status" in the data sent to {{< product-c8y-iot >}}, the corresponding Iceberg column name is "switch_x002Dstatus".
 
@@ -489,7 +489,23 @@ There are two categories of invalid data:
 {{< company-c8y >}} plans to implement system-wide limits to reduce the need for binning in the future.
 {{< /c8y-admon-info >}}
 
-Common violation types handled by the `trash` table include:
+##### Limits of Streaming Lake Ingestion {#limits-of-streaming-lake-ingestion}
+To ingest data into the data lake, the data must adhere to the following limits:
+
+**Character set limits**
+- For table and column names, Streaming Lake Ingestions only puts out alphanumeric characters, underscores and dashes. Other characters are encoded as described in the [Naming](#naming) section.
+- In the input, there cannot be two objects with the same name only differing in case. If there are such objects, the service appends a unique suffix to the name as described in the [Naming](#naming) section.
+
+**Type limits**
+* Only dimensional arrays (also with for example nested types) are allowed. Multidimensional arrays will be rejected and moved to the `trash` table.
+* Arrays need to have a consistent type across all elements. If there are type inconsistencies, Streaming Lake Ingestion moves the array to the `trash` table.
+* Numbers are stored as Iceberg `decimal` with a maximum precision of 38 and scale of 9.
+
+**Structure limits**
+* The maximum size of a character string is 32,768 characters. Longer strings are moved to the `trash` table.
+
+Common other violations handled by the `trash` table include:
+
 - **Illegal field name** – field names that do not adhere to naming limitations.
 
     Sample payload:
@@ -502,7 +518,8 @@ Common violation types handled by the `trash` table include:
         }
     }
     ```
-- **Maximum depth exceeded** – deeply nested structures exceeding the allowed depth
+
+- **Maximum depth exceeded** – deeply nested structures exceeding the allowed depth of 16 levels.
 
     Sample payload:
     ```json
@@ -524,39 +541,40 @@ Common violation types handled by the `trash` table include:
     }
     ```
 
-- **Maximum number of columns exceeded** – records containing more fields than permitted
+- **Maximum number of columns exceeded** – records containing more 1000 fields will be moved to the `trash` table
 
     Sample payload:
     ```json
     {
         "fragment": {
-            "property_001": "value_001",
-            "property_001": "value_002",
+            "property_0001": "value_0001",
+            "property_0002": "value_0002",
             // ...
-            "property_800": "value_800",
+            "property_1000": "value_1000",
             // ...
         }
     }
     ```
-- **Maximum number of fragments exceeded** – too many logical fragments or components
+- **Maximum number of fragments exceeded** – more than 1000 logical fragments or components
 
     Sample payload:
     ```json
     {
-        "table_fragment_001": {
+        "table_fragment_0001": {
             "test": "test"
         },
-        "table_fragment_002": {
+        "table_fragment_0002": {
             "test": "test"
         },
         // ...
-        "table_fragment_N": {
+        "table_fragment_1000": {
             "test": "test"
-        }
+        },
+        // ...
     }
     ```
 
-- **Size exceeded** – data exceeding the maximum permissible size
+- **Size exceeded** – data exceeding the maximum permissible size of 32,768 characters for a string field or the maximum size of a list field (128 elements)
 
     Sample payload:
     ```json
