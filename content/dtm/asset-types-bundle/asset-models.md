@@ -58,7 +58,7 @@ Generic asset models are a flexible alternative to traditional asset models that
 
 Generic asset models remove these rigid barriers, allowing for:
 
-- **Rapid Prototyping**: Create asset representations quickly without predefining formal structures.
+- **Rapid prototyping**: Create asset representations quickly without predefining formal structures.
 - **System Integration**: Integrate data from external systems (such as MES or ERP) where the full schema may not yet be known.
 - **Evolving Requirements**: Start with a flexible "container" and add structure as the project matures.
 
