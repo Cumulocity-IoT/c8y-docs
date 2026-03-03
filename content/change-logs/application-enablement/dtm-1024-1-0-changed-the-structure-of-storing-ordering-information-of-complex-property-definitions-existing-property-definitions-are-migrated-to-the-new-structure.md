@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-02-25'
   - label: jp.cumulocity.com
     date: '2026-02-25'
+  - label: emea.cumulocity.com
+    date: '2026-03-02'
+  - label: us.cumulocity.com
+    date: '2026-03-02'
 ---
 Previously, the field ordering information for complex property definitions was stored in the `c8y_Order` array. With this update, the ordering is defined directly within each field using the `order` property in the JSON schema. Existing property definitions are automatically migrated to the new structure when the subscribed microservice is updated.
