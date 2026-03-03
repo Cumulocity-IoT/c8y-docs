@@ -16,6 +16,14 @@ version: 1024.1.1
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-19'
+  - label: apj.cumulocity.com
+    date: '2026-02-25'
+  - label: jp.cumulocity.com
+    date: '2026-02-25'
+  - label: emea.cumulocity.com
+    date: '2026-03-02'
+  - label: us.cumulocity.com
+    date: '2026-03-02'
 ---
 The query logic for retrieving an asset and its children has been optimized,
 significantly improving performance in hierarchical asset lookups.

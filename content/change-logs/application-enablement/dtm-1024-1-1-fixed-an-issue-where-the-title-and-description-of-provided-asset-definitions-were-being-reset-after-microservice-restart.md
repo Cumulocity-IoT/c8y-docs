@@ -18,6 +18,14 @@ version: 1024.1.1
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-19'
+  - label: apj.cumulocity.com
+    date: '2026-02-25'
+  - label: jp.cumulocity.com
+    date: '2026-02-25'
+  - label: emea.cumulocity.com
+    date: '2026-03-02'
+  - label: us.cumulocity.com
+    date: '2026-03-02'
 ---
 Previously, the title and description of provided asset definitions
 were incorrectly reset after a microservice restart instead of being preserved from the

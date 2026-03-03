@@ -103,14 +103,16 @@ async function loadUrlsFromSitemap(): Promise<string[]> {
 // Get sitemap URLs that belong to a specific folder
 async function buildFolderLinksFromSitemap(folderName: string): Promise<string[]> {
   const allUrls = await loadUrlsFromSitemap();
-  const rootUrl = allUrls.find(u => u.match(new RegExp(`/docs/${folderName}/$`)));
   let urls = allUrls.filter(u => u.includes(`/${folderName}/`));
-  if (urls.length === 0 && rootUrl) {
-    urls.push(rootUrl);
-  } else if (rootUrl && !urls.includes(rootUrl)) {
-    urls.unshift(rootUrl);
-  }
-  return urls;
+  urls = urls.filter(u => !u.match(new RegExp(`/docs/${folderName}/$`)));
+  urls = urls.filter(u => !u.endsWith(`/${folderName}`) && !u.endsWith(`/${folderName}/`));
+  const normalized = urls.map(u => u.split('#')[0].split('?')[0].replace(/\/$/, ''));
+  const seen = new Set<string>();
+  return normalized.filter(u => {
+    if (seen.has(u)) return false;
+    seen.add(u);
+    return true;
+  });
 }
 
 // Convert a title into a valid PDF filename
@@ -195,12 +197,13 @@ async function processFolder(folderName: string) {
   } 
   const title: string = matterResult.data.title || folderName;
   const bundleFolder: string = matterResult.data.bundlefolder || folderName;
-  const uniqueLinks = await buildFolderLinksFromSitemap(bundleFolder);
-  if (uniqueLinks.length === 0) {
+  const links = await buildFolderLinksFromSitemap(bundleFolder);
+  if (links.length === 0) {
+    console.warn(`No usable links for ${folderName} (bundlefolder: ${bundleFolder}), skipping`);
     return;
   }
 
-  const linksBlock = uniqueLinks
+  const linksBlock = links
     .map((link, i, arr) => `  ${link}${i < arr.length - 1 ? ' \\' : ''}`)
     .join('\n');
   const pdfFilename = titleToFilename(title);
