@@ -1,11 +1,4 @@
 {{ define "main" }}
-<style>
-  .btn-metadata.is-disabled {
-    pointer-events: none;
-    opacity: 0;
-    cursor: not-allowed;
-  }
-</style>
 <main>
   <div class="breadcrumbs-container p-t-16"></div>
   <div class="home-top">
@@ -47,21 +40,18 @@
       </div>
         {{.Page.Content}}
       </a>
-{{- if .Page.Params.pdf -}}
-  {{- $zip := (printf "zips/%s.zip" .Page.Data.Term) | absURL -}}
-  {{- $enabled := site.Params.pdfDownloadsEnabled | default false -}}
-
-  <div class="m-l-32 m-b-24 p-relative">
-    <a class="btn-metadata btn-tooltip{{ if not $enabled }} is-disabled{{ end }}"
-       href="{{ $zip }}"
-       {{ if not $enabled }}aria-disabled="true" onclick="event.preventDefault(); return false;"{{ end }}
-       aria-label="A ZIP file containing all the PDFs in this section"
-       data-tooltip="{{ if $enabled }}A ZIP file containing all the PDFs in this section{{ else }}Downloads are currently disabled{{ end }}">
-      <i class="dlt-c8y-icon-export-pdf"></i>
-      Download PDFs
-    </a>
-  </div>
-{{- end -}}
+      {{- if .Page.Params.pdf -}}
+      {{- $zip := (printf "zips/%s.zip" .Page.Data.Term) | absURL -}}
+      <div class="m-l-32 m-b-24 p-relative">
+        <a class="btn-metadata btn-tooltip" href="{{ $zip }}" aria-label="A ZIP file containing all the PDFs in this section"
+          data-tooltip="A ZIP file containing all 
+the PDFs in this section" 
+        >
+          <i class="dlt-c8y-icon-export-pdf"></i>
+          Download PDFs
+        </a>
+      </div>
+    {{- end -}}
   </div>
   {{ end }}
 </div>
