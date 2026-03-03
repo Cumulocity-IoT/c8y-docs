@@ -438,7 +438,7 @@ After you have changed a tenant option using a REST request, the correlator will
 <tbody>
   <tr>
     <td><code>numWorkerThreads</code></td>
-    <td>The number of worker threads. The per-tenant microservices will now default to 1 AB worker per core. i.e apama-ctrl-2c-4g varient will have 2 worker threads. The Multitenant microservice defaults to 1 worker thread regardless of the number of cores.
+    <td>The number of worker threads. The per-tenant microservice defaults to 1 AB worker per core. For example, the apama-ctrl-2c-4g variant will have 2 worker threads. The Multitenant microservice defaults to 1 worker thread per tenant.
     . See also <a href="/streaming-analytics/analytics-builder/#configuring-the-concurrency-level">Configuring the concurrency level</a>. Note that the number of worker threads cannot be changed for the microservice with multi-tenant support.</td>
   </tr>
   <tr>
