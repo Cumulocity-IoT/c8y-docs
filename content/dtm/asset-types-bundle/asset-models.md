@@ -73,7 +73,7 @@ The conversion from a regular asset model to a generic asset model is not bidire
 {{< /c8y-admon-important >}}
 
 {{< c8y-admon-info >}}
-The Digital Twin Manager interface does not currently support the dynamic addition of child assets when creating an asset from a generic model. To dynamically add child assets to a generic asset without predefining them in the model hierarchy, you must use the [Assets API](TODO: Add a link to the Assets API documentation here).
+The Digital Twin Manager interface does not currently support the dynamic addition of child assets when creating an asset from a generic model. To dynamically add child assets to a generic asset without predefining them in the model hierarchy, you must use the [Assets API](https://cumulocity.com/api/dtm).
 {{< /c8y-admon-info >}}
 
 
