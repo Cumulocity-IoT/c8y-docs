@@ -79,7 +79,7 @@ The Digital Twin Manager interface does not currently support the dynamic additi
 
 ##### Default generic asset model {#default-generic-asset-model}
 
-- The **Generic Asset** asset model is identified with the key *c8y_GenericAsset*.
+- The **Generic Asset** asset model is identified with the key `c8y_GenericAsset`.
 - Available by default, it cannot be deleted.
 - Allows modifying the label, description, and icon.
 - Allows defining child asset models and asset properties.
