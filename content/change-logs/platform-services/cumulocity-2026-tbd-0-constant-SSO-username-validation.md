@@ -23,7 +23,7 @@ When a constant username is configured for SSO users (optional setting), it now 
 - **String length:** 1–1000 characters
 - **Must not contain:**
     - Whitespace
-    - Forward slashes (`/`)
+    - Slashes
     - Any of the following characters: `+`, `$`, `:`
 
 This change ensures consistency in username validation and prevents invalid values from being configured for shared SSO accounts.
