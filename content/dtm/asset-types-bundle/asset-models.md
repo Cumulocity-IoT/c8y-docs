@@ -59,8 +59,8 @@ Generic asset models are a flexible alternative to traditional asset models that
 Generic asset models remove these rigid barriers, allowing for:
 
 - **Rapid prototyping**: Create asset representations quickly without predefining formal structures.
-- **System Integration**: Integrate data from external systems (such as MES or ERP) where the full schema may not yet be known.
-- **Evolving Requirements**: Start with a flexible "container" and add structure as the project matures.
+- **System integration**: Integrate data from external systems (such as MES or ERP) where the full schema may not yet be known.
+- **Evolving requirements**: Start with a flexible "container" and add structure as the project matures.
 
 ##### Characteristics of a generic asset model
 - Allows predefining specific child asset models and properties while still allowing other asset models to be nested under the asset.
@@ -78,7 +78,7 @@ The Digital Twin Manager interface does not currently support the dynamic additi
 
 ##### Default generic asset model
 
-- The **Generic Asset** asset model is identified with the key *c8y_GenericAsset*.
+- The **Generic Asset** asset model is identified with the key `c8y_GenericAsset`.
 - Available by default, it cannot be deleted.
 - Allows modifying the label, description, and icon.
 - Allows defining child asset models and asset properties.
