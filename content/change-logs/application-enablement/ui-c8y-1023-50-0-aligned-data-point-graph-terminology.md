@@ -16,6 +16,10 @@ version: 1023.50.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-27'
+  - label: apj.cumulocity.com
+    date: '2026-03-02'
+  - label: jp.cumulocity.com
+    date: '2026-03-02'
 ---
 The "Data point graph" widget has been renamed to "Data graph" to provide clearer and more intuitive terminology across the platform. This change simplifies the naming and better reflects the widget’s purpose of visualizing and analyzing data over time.
 

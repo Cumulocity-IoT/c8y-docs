@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-03-02'
 title: New aggregation options added to the data graph and data explorer
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65847
 version: 1023.51.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-03-02'
 ---
 The chart options in the Web SDK now include additional aggregation methods, giving you greater flexibility when configuring data visualization. Previously, aggregation was limited to minimum and maximum values, which could restrict how effectively you could summarize and analyze time-series data. With this update, you can now use average, sum, and count alongside the existing minimum and maximum options. These additional aggregation functions allow you to better represent trends, totals, and overall activity, making it easier to analyze and interpret your data.
 
