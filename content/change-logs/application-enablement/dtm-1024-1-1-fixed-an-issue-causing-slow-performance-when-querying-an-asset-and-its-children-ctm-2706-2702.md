@@ -24,6 +24,8 @@ environment_availability:
     date: '2026-03-02'
   - label: us.cumulocity.com
     date: '2026-03-02'
+  - label: cumulocity.com
+    date: '2026-03-03'
 ---
 The query logic for retrieving an asset and its children has been optimized,
 significantly improving performance in hierarchical asset lookups.
