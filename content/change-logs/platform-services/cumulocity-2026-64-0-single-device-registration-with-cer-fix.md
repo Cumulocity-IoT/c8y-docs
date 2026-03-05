@@ -1,6 +1,6 @@
 ---
 date: ''
-title: Fix for Single Device Registration Process Using C8y CA Certificates
+title: Fix for Single Device Registration Process Using Platform CA Certificates
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
