@@ -24,6 +24,8 @@ environment_availability:
     date: '2026-03-02'
   - label: us.cumulocity.com
     date: '2026-03-02'
+  - label: cumulocity.com
+    date: '2026-03-03'
 ---
 Previously, users could delete the default generic asset model when
 using bulk deletion. Since this model is required as the default, it
