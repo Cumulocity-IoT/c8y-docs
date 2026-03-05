@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Marked the REST API endpoint to get opposite assets as deprecated"
+title: "Marked the REST API endpoint for getting opposite assets as deprecated"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
