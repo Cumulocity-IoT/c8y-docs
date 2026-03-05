@@ -24,6 +24,8 @@ environment_availability:
     date: '2026-03-02'
   - label: us.cumulocity.com
     date: '2026-03-02'
+  - label: cumulocity.com
+    date: '2026-03-03'
 ---
 The`c8y_Origin` fragment has been added to the `c8y_GenericAsset` asset
 definition to indicate that it is part of the library provided by the Digital Twin Manager.
