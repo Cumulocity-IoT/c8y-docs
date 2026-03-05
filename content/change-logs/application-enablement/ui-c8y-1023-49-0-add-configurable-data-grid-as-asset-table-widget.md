@@ -20,6 +20,12 @@ environment_availability:
     date: '2026-03-02'
   - label: jp.cumulocity.com
     date: '2026-03-02'
+  - label: emea.cumulocity.com
+    date: '2026-03-04'
+  - label: us.cumulocity.com
+    date: '2026-03-04'
+  - label: cumulocity.com
+    date: '2026-03-04'
 ---
 The "Asset table" widget in the Web SDK has been enhanced to use the data grid, extending its functionality and providing a more powerful and flexible way to view and manage asset data. Previously, the widget offered limited options for filtering and customization. With this improvement, you can now take advantage of the data grid’s extended capabilities, including additional filtering options and enhanced customization to better organize and interact with your asset information.
 
