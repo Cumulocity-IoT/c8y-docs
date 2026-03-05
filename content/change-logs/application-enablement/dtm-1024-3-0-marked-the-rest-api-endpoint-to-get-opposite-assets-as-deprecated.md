@@ -14,7 +14,7 @@ build_artifact:
 ticket: "CTM-2681"
 version: "1024.3.0"
 ---
-A newer, higher-performance variant of the endpoint to query opposite assets was introduced in version 1024.1.0. To align with this improvement and maintain a consistent API, the original endpoint variant is now deprecated.
+A newer, high-performance variant of the endpoint for querying opposite assets was introduced in DTM version 1024.1.0. To align with this improvement and maintain a consistent API, the original endpoint variant is now deprecated.
 
 The REST API endpoint `/service/dtm/assets/linkedSeries/opposites/{deviceId}` used with the default `Accept` header `application/json` is deprecated and will be removed in a future version. Use the `Accept` header `application/vnd.com.nsn.cumulocity.linkedassetscollection+json` instead, which provides better performance and additional filter parameters.
 
