@@ -20,5 +20,11 @@ environment_availability:
     date: '2026-02-10'
   - label: jp.cumulocity.com
     date: '2026-02-10'
+  - label: emea.cumulocity.com
+    date: '2026-02-11'
+  - label: us.cumulocity.com
+    date: '2026-02-11'
+  - label: cumulocity.com
+    date: '2026-02-11'
 ---
 An issue was identified where data point templates could overwrite the device ID, leading to unexpected behavior in some widgets. The linkage between templates and data points has been improved, resolving this issue and ensuring a more reliable widget behavior.

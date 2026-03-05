@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-02-11'
 title: Improved drawer layout when adding custom columns
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,18 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65920
 version: 1023.32.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-02-11'
+  - label: apj.cumulocity.com
+    date: '2026-02-12'
+  - label: jp.cumulocity.com
+    date: '2026-02-12'
+  - label: emea.cumulocity.com
+    date: '2026-02-13'
+  - label: us.cumulocity.com
+    date: '2026-02-13'
+  - label: cumulocity.com
+    date: '2026-02-13'
 ---
 The drawer layout has been improved to provide better spacing, alignment, and overall usability when adding custom columns.

@@ -14,7 +14,7 @@ The following requirements towards {{< product-c8y-iot >}} microservices must be
 * A microservice must provide one inbound REST API. Additional inbound ports are not supported.
 * A microservice can use multiple outbound ports.
 * Requests to microservices can include HTTP headers of up to 24 KB in size. Requests that exceed this limit may be rejected by the infrastructure. 
-* The request lifetime must have the maximum. The infrastructure might terminate requests running to long.
+* By default, the request lifetime is limited to 15 minutes. The infrastructure may terminate requests that run too long.
 * All log information must be sent to the standard output in order to be captured and persisted by the infrastructure.
 
 Microservices interact with {{< product-c8y-iot >}} and the outside world as shown in the following diagram:
