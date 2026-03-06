@@ -1,6 +1,6 @@
 ---
 date: ''
-title: SSO Constant Username Validation Enhancement
+title: SSO constant username validation enhancement
 change_type:
   - value: change-3BQrQ6adS
     label: API change
