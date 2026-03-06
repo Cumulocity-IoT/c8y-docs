@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed NullPointerException in composite read device operation
+title: Fixed NullPointerException in composite read device operations
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
