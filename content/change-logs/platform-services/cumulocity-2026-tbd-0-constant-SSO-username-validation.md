@@ -18,7 +18,6 @@ Validation has been added for the **User/App ID – Constant value** field used 
 
 When a constant username is configured for SSO users (optional setting), it now follows the same validation rules as a standard username:
 
-## Validation Rules
 
 - **String length:** 1–1000 characters
 - **Must not contain:**
