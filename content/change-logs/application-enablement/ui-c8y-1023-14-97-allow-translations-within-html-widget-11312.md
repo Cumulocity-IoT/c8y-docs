@@ -16,4 +16,4 @@ version: 1023.14.97
 ---
 The new implementation of the HTML widget missed functionality to translate strings.
 This meant that any text content displayed in custom HTML widgets would always appear in a single language regardless of the user's language settings. 
-Now the HTML widget supports translations, allowing you to use translation keys within your HTML content that will automatically be replaced with the appropriate translated text based on the user's selected language. The translation keys need to be either included in the default translations or added via the localization settings in the Administration app.
+Now the HTML widget supports translations, allowing you to use translation keys in your HTML content that are automatically replaced with the appropriate translated text based on the user's selected language. The translation keys must be either included in the default translations or added via the localization settings in the Administration application.
