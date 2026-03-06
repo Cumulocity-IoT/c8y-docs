@@ -1,6 +1,6 @@
 ---
 date: ""
-title: User application access view migrated to angular
+title: User application access feature migrated to Angular
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
