@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5791
 version: 1020.440.63
 ---
-A NullPointerException occurred when performing composite read operations on LWM2M resources or objects that did not exist on the device. This issue has been resolved.
+Previously, a NullPointerException occurred when performing composite read operations on LWM2M resources or objects that did not exist on the device. This issue has been resolved.
