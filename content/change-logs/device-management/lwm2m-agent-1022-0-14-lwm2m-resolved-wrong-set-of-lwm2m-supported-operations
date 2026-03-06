@@ -16,4 +16,4 @@ version: 1022.0.14
 environment_availability:
 
 ---
-Firmware updates are now included as supported operations only for LWM2M devices that indicate support for Object 5 ("Firmware Update"). This only affects new devices. The set of supported operations for new existing devices remains unchanged.
+Firmware updates are now included as supported operations only for LWM2M devices that indicate support for Object 5 ("Firmware Update"). This only affects new devices. The set of supported operations for existing devices remains unchanged.
