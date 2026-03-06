@@ -24,5 +24,7 @@ environment_availability:
     date: '2026-03-02'
   - label: us.cumulocity.com
     date: '2026-03-02'
+  - label: cumulocity.com
+    date: '2026-03-03'
 ---
 A new variant of the REST endpoint `/service/dtm/assets/linkedSeries/opposites/{deviceId}` that returns a linked asset collection for a given device has been added. To use it, the `Accept` header `application/vnd.com.nsn.cumulocity.linkedassetscollection+json` must be used.

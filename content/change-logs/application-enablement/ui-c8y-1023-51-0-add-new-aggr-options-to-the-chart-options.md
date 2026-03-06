@@ -16,6 +16,16 @@ version: 1023.51.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-03-02'
+  - label: apj.cumulocity.com
+    date: '2026-03-04'
+  - label: jp.cumulocity.com
+    date: '2026-03-04'
+  - label: emea.cumulocity.com
+    date: '2026-03-04'
+  - label: us.cumulocity.com
+    date: '2026-03-04'
+  - label: cumulocity.com
+    date: '2026-03-04'
 ---
 The chart options in the Web SDK now include additional aggregation methods, giving you greater flexibility when configuring data visualization. Previously, aggregation was limited to minimum and maximum values, which could restrict how effectively you could summarize and analyze time-series data. With this update, you can now use average, sum, and count alongside the existing minimum and maximum options. These additional aggregation functions allow you to better represent trends, totals, and overall activity, making it easier to analyze and interpret your data.
 
