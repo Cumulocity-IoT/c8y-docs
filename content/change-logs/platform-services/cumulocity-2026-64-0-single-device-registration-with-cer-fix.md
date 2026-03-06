@@ -15,7 +15,7 @@ ticket: MTM-65958
 version: 2026.64.0
 
 ---
-Resolved an issue affecting the initial group assignment during [single device registration](https://cumulocity.com/docs/device-management-application/registering-devices/#single-device-registration) when using the “create device certificates during device registration” option with {{< product-c8y-iot >}} CA certificates.
+An issue has been resolved affecting the initial group assignment during [single device registration](/device-management-application/registering-devices/#single-device-registration) when using the “create device certificates during device registration” option with {{< product-c8y-iot >}} CA certificates.
 
 Previously, devices registered individually were not correctly added to their designated initial device group upon first connection.
 
