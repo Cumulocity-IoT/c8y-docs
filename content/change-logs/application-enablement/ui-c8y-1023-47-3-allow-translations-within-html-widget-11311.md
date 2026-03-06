@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-03-06'
 title: HTML widget now supports translations
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,19 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-66132
 version: 1023.47.3
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-03-06'
+  - label: apj.cumulocity.com
+    date: '2026-03-04'
+  - label: jp.cumulocity.com
+    date: '2026-03-04'
+  - label: emea.cumulocity.com
+    date: '2026-03-04'
+  - label: us.cumulocity.com
+    date: '2026-03-06'
+  - label: cumulocity.com
+    date: '2026-03-06'
 ---
 The new implementation of the HTML widget missed functionality to translate strings.
 This meant that any text content displayed in custom HTML widgets always appeared in a single language regardless of the user's language settings. 
