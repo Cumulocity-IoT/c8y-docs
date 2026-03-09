@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Asset properties and icons for assets created from Digital Twin Manager application now display correctly in Cockpit and Device Management
+title: Asset properties and icons for assets created from Digital Twin Manager now display correctly in Cockpit and Device Management
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
