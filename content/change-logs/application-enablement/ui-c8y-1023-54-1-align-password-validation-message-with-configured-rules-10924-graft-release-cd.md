@@ -1,6 +1,6 @@
 ---
 date: ""
-title: align password validation message with configured rules (#10924) [GRAFT][release/cd] (#11394)
+title: password validation aligned with configured rules
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
