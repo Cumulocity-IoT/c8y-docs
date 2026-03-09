@@ -14,6 +14,6 @@ build_artifact:
 ticket: "CTM-2732"
 version: "1024.2.0"
 ---
-Improved the performance when creating new opposite links. The managed
-object acting as the opposite can be created and assigned using one
+The performance when creating new opposite links has been improved. The managed
+object acting as the opposite can be both created and assigned using one
 request to the child operations API.
