@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed NullPointerException in composite read device operation
+title: Fixed NullPointerException in composite read device operations
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5791
 version: 1022.0.15
 ---
-Description: Fixed a NullPointerException that occurred when performing composite read operations on LWM2M resources or objects that do not exist on the device.
+Description: Previously, a NullPointerException occurred when performing composite read operations on LWM2M resources or objects that did not exist on the device. This issue has been resolved.
