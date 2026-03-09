@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add set to current time button to history (#11214) [GRAFT][release/cd] (#11371)
+title: "Now" button in history mode
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
