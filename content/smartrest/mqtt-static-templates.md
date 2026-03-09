@@ -73,6 +73,7 @@ If a parameter is in square brackets, it is optional.
 <li><a href="#401">401,latitude,longitude,altitude,accuracy[,time]</a></li>
 <li><a href="#402">402,latitude,longitude,altitude,accuracy[,time] (incl. inv. update)</a></li>
 <li><a href="#407">407,eventType,fragmentToBeRemoved1,fragment2,...</a></li>
+<li><a href="#408">408,[text],[time],[change detect],parameterPath1,parameterType1,parameterValue1[,path2,type2,value2,]...</a></li>
 </ul>
 
 <strong><a href="#operation-templates">Operation templates</a></strong>
@@ -105,12 +106,7 @@ If a parameter is in square brackets, it is optional.
 <li><a href="#529">529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...</a></li>
 <li><a href="#530">530,serial,hostname,port,connectionKey</a></li>
 <li><a href="#531">531,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,type,url,action,configurationMarker,url,type</a></li>
-<li><a href="#532">532,serial,PARAM_DEF_0,PARAM_DEF_1,...,PARAM_DEF_N</a></li>
-</ul>
-
-<strong><a href="#device-parameter-templates">Device parameter templates</a></strong>
-<ul>
-<li><a href="#408">408,[text],[time],[change detect],path1,type1,value1[,path2,type2,value2,]...</a></li>
+<li><a href="#532">532,serial,parameterPath1,parameterType1,parameterValue1[,path2,type2,value2,]...</a></li>
 </ul>
 
 <strong><a href="#platform-capabilites-templates">Platform capabilities templates</a></strong>
