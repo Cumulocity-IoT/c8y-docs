@@ -1,6 +1,6 @@
 ---
 date: ''
-title: Fix for Single Device Registration Process Using Platform CA Certificates
+title: Devices are now correctly added to initial device group
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
