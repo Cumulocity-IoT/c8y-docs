@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-65170
 version: 1023.55.5
 ---
-
 When assets were created using Digital Twin Manager, their properties and icons did not display correctly in the **Cockpit** and **Device Management** applications. This caused issues that made it difficult to manage these assets. This fix ensures that asset properties and icons for assets created from Digital Twin Manager now display as expected in both applications, providing a consistent and accurate view of your assets.
