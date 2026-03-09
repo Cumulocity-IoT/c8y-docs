@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Improved error message returned from the REST API on creating or updating asset definitions from a subtenant
+title: "Improved error message returned from the REST API on creating or updating asset definitions from a subtenant"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
