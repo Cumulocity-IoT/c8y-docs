@@ -12,8 +12,10 @@
     "gray-matter": "^4.0.3"
   },
   "devDependencies": {
+    "@types/archiver": "^7.0.0",
     "@types/node": "^24.0.14",
     "@types/xml2js": "^0.4.14",
+    "archiver": "^7.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
     "xml2js": "^0.6.2"

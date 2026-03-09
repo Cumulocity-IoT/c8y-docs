@@ -26,6 +26,8 @@ environment_availability:
     date: '2026-03-02'
   - label: us.cumulocity.com
     date: '2026-03-02'
+  - label: cumulocity.com
+    date: '2026-03-03'
 ---
 Previously, the title and description of provided asset definitions
 were incorrectly reset after a microservice restart instead of being preserved from the

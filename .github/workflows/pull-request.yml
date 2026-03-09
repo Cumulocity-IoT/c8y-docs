@@ -109,4 +109,4 @@ jobs:
         # - Links to other releases because we do not build other releases in PRs
         # - Links to PDFs, we don't upload those to the surge site so they will always be absent
         set -o pipefail
-        wget --retry-connrefused --no-directories --delete-after --no-verbose -e robots=off -r $BASEURL --reject-regex ".*\/202.\/.*" -R "*.pdf" 2>&1 | (grep -B 1 ERROR || true)
+        wget --retry-connrefused --no-directories --delete-after --no-verbose -e robots=off -r $BASEURL --reject-regex ".*\/202.\/.*" -R "*.pdf,*.zip" 2>&1 | (grep -B 1 ERROR || true)
