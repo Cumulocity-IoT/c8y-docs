@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65557
 version: 1023.50.2
 ---
-Fixed data point graph widget not updating chart visibility when toggling data points or alarms/events until a global context change was triggered.
+Previously, the "Data point graph" widget did not update the chart when toggling data points or alarms/events visibility until a global context change was triggered. This issue has been fixed now, and data points or alarms/events are immediately visible in the chart when toggled.
