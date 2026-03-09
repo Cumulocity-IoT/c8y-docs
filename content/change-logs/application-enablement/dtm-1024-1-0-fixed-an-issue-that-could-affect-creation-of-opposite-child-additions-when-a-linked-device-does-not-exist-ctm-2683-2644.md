@@ -24,5 +24,7 @@ environment_availability:
     date: '2026-03-02'
   - label: us.cumulocity.com
     date: '2026-03-02'
+  - label: cumulocity.com
+    date: '2026-03-03'
 ---
 Previously, there was an issue with the creation of child additions for a device when a linked device did not exist. This issue has been fixed.
