@@ -589,6 +589,14 @@ Note: To extract a custom property from the Measurement Input block, you must ad
 </td>
 <td></td>
 </tr>
+<tr>
+<th scope="row">InitialLocationOutside</th>
+<td><span>A boolean flag indicating whether the initial location should be considered outside the geofence. When set to true, the block assumes the device was outside all geofences before the first event. If the first location is inside a geofence, any enter rules will trigger immediately. When set to false (default), the block assumes the previous location is unknown, so no enter/exit alarms are generated on the very first event, even if the location is already inside a geofence.</span>
+</td>
+<td><span>boolean</span>
+</td>
+<td><span>Default: False</span></td>
+</tr>
 </tbody>
 </table>
 
