@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix asset properties and icons display issues in Cockpit and Device Management for DTM created assets. [GRAFT][release/cd] (#11428)
+title: Fixed asset properties and icons display issues in Cockpit and Device Management for DTM created assets
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-65170
 version: 1023.55.5
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Cockpit): [MTM-65170] Fix asset properties and icons display
-issues in Cockpit and Device Management for DTM created
-assets.](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10766)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65170]:
-https://cumulocity.atlassian.net/browse/MTM-65170?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Sunitha Das <109800638+spau6@users.noreply.github.com>
+When assets were created using Digital Twin Manager, their properties and icons did not display correctly in the **Cockpit** and **Device Management** applications. This caused inconsistencies that made it difficult to identify and manage these assets. This fix ensures that asset properties and icons for DTM-created assets now display as expected in both applications, providing a consistent and accurate view of your assets. No action is required after the update.
