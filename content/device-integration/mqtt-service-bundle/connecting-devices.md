@@ -46,6 +46,7 @@ In all cases it is important to ensure that the MQTT username is set correctly s
     The credentials of any user on the tenant can be used to authenticate a device to the MQTT Service.
     The username in the MQTT `CONNECT` packet **must** include the tenant ID and username in the format `<tenantID>/<username>`.
     The password in the `CONNECT` packet **must** be the unencrypted password of the user.
+    The user associated with this authentication method must be assigned to the **ADMIN** permission for the **Mqtt service** permission type.
     <br><br>
 
 *   **X.509 device certificates (certificate authentication)**<br>
