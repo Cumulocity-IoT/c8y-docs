@@ -16,5 +16,9 @@ version: 1023.55.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-03-06'
+  - label: apj.cumulocity.com
+    date: '2026-03-09'
+  - label: jp.cumulocity.com
+    date: '2026-03-09'
 ---
 The user application access feature has been migrated from the legacy AngularJS framework to the modern Angular framework. Previously, the user application access management interface was built with AngularJS, which limited performance and maintainability. The interface now runs on Angular, providing improved performance, better responsiveness, and access to modern web technologies. This migration ensures that the user application access feature remains compatible with current and future versions of the platform, while maintaining all existing functionality and user workflows without requiring any changes to how you manage application access for your users.
