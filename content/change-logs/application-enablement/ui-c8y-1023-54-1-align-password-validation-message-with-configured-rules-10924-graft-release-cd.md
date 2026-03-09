@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-43387
 version: 1023.54.1
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-43387] align password validation message with
-configured rules
-(#10924)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10924)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-43387]:
-https://cumulocity.atlassian.net/browse/MTM-43387?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dawid Janusz <96060763+DawidSAG@users.noreply.github.com>
+Password validation rules and error messages are now consistent across all password entry locations (Administration user management, Cockpit user settings, and Login password change) and correctly reflect the tenant's configured minimum length and strength enforcement settings. Previously, the displayed validation requirements could differ from the actual configured rules.
