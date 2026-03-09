@@ -14,19 +14,4 @@ build_artifact:
 ticket: MTM-66067
 version: 1023.52.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Web SDK): [MTM-66067] Add set to current time button to history
-(#11214)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11214)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66067]:
-https://cumulocity.atlassian.net/browse/MTM-66067?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dawid Janusz <96060763+DawidSAG@users.noreply.github.com>
+In the global context history mode configuration, you can now click the "Now" button next to the "To" date field to instantly set the end date to the current time. This provides a convenient shortcut to view the most recent data without manually adjusting the date picker.
