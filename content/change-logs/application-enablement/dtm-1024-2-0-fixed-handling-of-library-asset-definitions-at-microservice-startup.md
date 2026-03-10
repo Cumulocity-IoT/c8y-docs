@@ -1,6 +1,6 @@
 ---
-date: '2026-02-19'
-title: Fixed an issue with the creation of child additions
+date: '2026-02-26'
+title: Fixed handling of library asset definitions at microservice startup
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -11,20 +11,18 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-2683
-version: 1024.1.0
+ticket: CTM-2737
+version: 1024.2.0
 environment_availability:
   - label: eu-latest.cumulocity.com
-    date: '2026-02-19'
+    date: '2026-02-26'
   - label: apj.cumulocity.com
-    date: '2026-02-25'
+    date: '2026-03-04'
   - label: jp.cumulocity.com
-    date: '2026-02-25'
+    date: '2026-03-04'
   - label: emea.cumulocity.com
-    date: '2026-03-02'
+    date: '2026-03-09'
   - label: us.cumulocity.com
-    date: '2026-03-02'
-  - label: cumulocity.com
-    date: '2026-03-03'
+    date: '2026-03-09'
 ---
-Previously, there was an issue with the creation of child additions for a device when a linked device did not exist. This issue has been fixed.
+Previously, library definitions were not created and updated correctly on microservice startup. This issue is now fixed.

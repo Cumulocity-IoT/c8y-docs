@@ -24,6 +24,8 @@ environment_availability:
     date: '2026-03-02'
   - label: us.cumulocity.com
     date: '2026-03-02'
+  - label: cumulocity.com
+    date: '2026-03-03'
 ---
 Previously, if an asset model or property was created without a name,
 blank values were displayed wherever the model or property name was
