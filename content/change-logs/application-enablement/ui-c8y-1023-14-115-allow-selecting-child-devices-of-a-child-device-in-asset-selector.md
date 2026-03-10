@@ -1,0 +1,17 @@
+---
+date: ""
+title: Select child devices at any level in the device hierarchy in the asset selector
+product_area: Application enablement & solutions
+change_type:
+  - value: change-VSkj2iV9m
+    label: Fix
+component:
+  - value: component-YbYJ3gLU_
+    label: Web SDK
+build_artifact:
+  - value: tc-pjJiURv9Y
+    label: ui-c8y
+ticket: MTM-66155
+version: 1023.14.115
+---
+The asset selector previously only allowed you to select direct child devices of a parent device, which limited your ability to work with hierarchical device structures. Now you can select child devices at any level in the device hierarchy, including grandchild devices and deeper nested levels. This change applies to all asset selector components throughout the application, so you can now build more complex device relationships and access devices at any depth in your device tree.
