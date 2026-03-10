@@ -24,5 +24,7 @@ environment_availability:
     date: '2026-03-09'
   - label: us.cumulocity.com
     date: '2026-03-09'
+  - label: cumulocity.com
+    date: '2026-03-10'
 ---
 Previously, library definitions were not created and updated correctly on microservice startup. This issue is now fixed.

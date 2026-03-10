@@ -26,5 +26,7 @@ environment_availability:
     date: '2026-03-09'
   - label: us.cumulocity.com
     date: '2026-03-09'
+  - label: cumulocity.com
+    date: '2026-03-10'
 ---
 Previously, the error message returned from the REST API when trying to create or update asset definitions on a subtenant of an {{< enterprise-tenant >}} was generic and did not include tenant IDs. The error message now includes the relevant tenant IDs.
