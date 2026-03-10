@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add nearby clustering to cluster map (#10961) [GRAFT][release/cd] (#11476)
+title: Add nearby clustering to cluster map
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
