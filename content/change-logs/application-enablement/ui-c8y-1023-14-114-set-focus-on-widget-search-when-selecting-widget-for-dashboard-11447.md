@@ -14,21 +14,4 @@ build_artifact:
 ticket: MTM-66273
 version: 1023.14.114
 ---
-# Backport
-
-This will backport the following commits from `develop` to
-`release/y2026`:
-- [fix(Cockpit): [MTM-66273] Set focus on widget search when selecting
-widget for dashboard
-(#11447)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11447)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66273]:
-https://cumulocity.atlassian.net/browse/MTM-66273?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
+When adding a widget to a dashboard, the search field in the widget selection dialog now automatically receives focus, allowing you to immediately start typing to search for widgets without manually clicking the search input field first. This improves the user experience by reducing the number of interactions required to find and add widgets to your dashboard, making the widget selection process more intuitive and efficient.
