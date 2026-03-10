@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Set focus on widget search when selecting widget for dashboard (#11447) [GRAFT][release/y2026] (#11486)
+title: Set focus on widget search input when selecting a widget for the dashboard
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
