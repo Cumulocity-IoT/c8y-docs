@@ -44,6 +44,11 @@ This category contains the following blocks:
 </td>
 </tr>
 <tr>
+<td><a href="#logger">Logger</a></td>
+<td><span>Writes a message to the microservice log file for each input.</span>
+</td>
+</tr>
+<tr>
 <td><a href="#missing-data">Missing Data</a></td>
 <td><span>Generates an output if the input has not occurred for a set amount of time.</span>
 </td>
@@ -584,6 +589,14 @@ Note: To extract a custom property from the Measurement Input block, you must ad
 </td>
 <td></td>
 </tr>
+<tr>
+<th scope="row">InitialLocationOutside</th>
+<td><span>A boolean flag indicating whether the initial location should be considered outside the geofence. When set to true, the block assumes the device was outside all geofences before the first event. If the first location is inside a geofence, any enter rules will trigger immediately. When set to false (default), the block assumes the previous location is unknown, so no enter/exit alarms are generated on the very first event, even if the location is already inside a geofence.</span>
+</td>
+<td><span>boolean</span>
+</td>
+<td><span>Default: False</span></td>
+</tr>
 </tbody>
 </table>
 
@@ -648,6 +661,98 @@ Note: To extract a custom property from the Measurement Input block, you must ad
 <td><span>Sends a signal when the device leaves the defined geofence.</span>
 </td>
 <td><span>pulse</span>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+### Logger
+
+`apama.analyticsbuilder.blocks.Logger`
+
+<p>Writes a message to the microservice log file for each input.</p>
+<p><b>This block is currently in public preview and may be subject to change.</b>
+<p></p>
+Example log message with logger tag "demoLog" at log level "ERROR":
+<p></p>
+<tt>ERROR ... &lt;demoLog&gt; value=any(float,5.09) properties={"ignore":any(string,"false")}</tt></p>
+
+
+#### Parameters {#logger-parameters}
+
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 50%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+<col style="width: 10%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+<th scope="col">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Logger tag</th>
+<td><span>For identifying messages from this block. Defaults to 'logger' if not specified.</span>
+</td>
+<td><span>string</span>
+</td>
+<td><span>Optional</span>
+</td>
+</tr>
+<tr>
+<th scope="row">Log level</th>
+<td><span>The log level to use when writing messages to the log file.</span>
+</td>
+<td><span><p>Option - one of:</p>
+<ul>
+<li>INFO</li>
+<li>DEBUG</li>
+<li>WARN</li>
+<li>ERROR</li></ul>
+</span>
+</td>
+<td><span>Default: INFO</span></td>
+</tr>
+<tr>
+<th scope="row">Disable output</th>
+<td><span>Enable this parameter to disable all output from this block. This can be templated using model parameters to disable logging at runtime.</span>
+</td>
+<td><span>boolean</span>
+</td>
+<td><span>Optional</span>
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Input Port Details {#logger-inputs}
+
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 60%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Object</th>
+<td><span>The value and properties to be logged.</span>
+</td>
+<td><span>any</span>
 </td>
 </tr>
 </tbody>

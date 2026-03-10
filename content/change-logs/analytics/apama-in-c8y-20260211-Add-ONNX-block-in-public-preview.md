@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2026-03-05'
 title: Add Analytics Builder ONNX block in Public Preview
 change_type:
   - value: change-pXAlHAWka
@@ -13,6 +13,9 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-5075
 version: 27.53.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-03-05'
 ---
 
 A new ONNX block has been added to Analytics Builder in Public Preview. This block executes an ONNX model that has been deployed to the files repository.
