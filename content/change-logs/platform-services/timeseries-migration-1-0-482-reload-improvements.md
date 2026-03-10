@@ -16,6 +16,16 @@ version: 1.0.482
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-12'
+  - label: emea.cumulocity.com
+    date: '2026-02-23'
+  - label: us.cumulocity.com
+    date: '2026-02-23'
+  - label: cumulocity.com
+    date: '2026-02-24'
+  - label: apj.cumulocity.com
+    date: '2026-02-25'
+  - label: jp.cumulocity.com
+    date: '2026-02-25'
 ---
 The time series migration UI has been improved with the following enhancements:
 
