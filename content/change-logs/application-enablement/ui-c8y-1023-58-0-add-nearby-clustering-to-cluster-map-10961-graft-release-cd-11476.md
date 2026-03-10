@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add nearby clustering to cluster map
+title: Added nearby clustering to cluster map
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
