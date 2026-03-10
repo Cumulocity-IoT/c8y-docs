@@ -1,6 +1,6 @@
 ---
 date: ""
-title: migrate external device enrolment plugin to a self-scoped plugin (#10716) [GRAFT][release/cd] (#11385)
+title: Device Enrolment Plugin and thin-edge.io quick link
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
@@ -14,20 +14,6 @@ build_artifact:
 ticket: DM-5259
 version: 1023.54.0
 ---
-# Backport
+The Device enrolment plugin is now a standard Device Management plugin included by default. It provides the Try thin-edge.io quick link and its associated setup wizard, available in both the new Welcome Widget and the quick-links widget.
 
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Device management app): [DM-5272] migrate external device
-enrolment plugin to a self-scoped plugin
-(#10716)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10716)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[DM-5272]:
-https://cumulocity.atlassian.net/browse/DM-5272?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dominik Schmitz <dominik.schmitz@cumulocity.com>
+The four-step wizard simplifies the connection of physical Linux devices or Docker containers by providing a generated curl command that automates installation and cloud configuration. This process streamlines registration through guided device naming and automated certificate handling, concluding with instant verification of connectivity and data transmission to the platform.
