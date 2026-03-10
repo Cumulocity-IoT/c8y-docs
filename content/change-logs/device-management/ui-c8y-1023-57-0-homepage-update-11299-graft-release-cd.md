@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5259
 version: 1023.57.0
 ---
-homepage update (#11299) [GRAFT][release/cd]
+The Device Management homepage has been refreshed by removing the standard alarm and quick-link widgets to make room for a new Welcome Widget. This update provides a more intuitive entry point for users and includes a direct trigger for the thin-edge.io wizard.
