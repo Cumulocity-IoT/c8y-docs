@@ -218,6 +218,10 @@ These do not affect device connections directly, but "back pressure" from the Me
 {{< c8y-admon-preview >}}
 This feature is in **Public Preview**.
 That is, it is not yet generally available and may be subject to change in the future.
+
+Core MQTT support is disabled by default and must be explicitly enabled for your tenant.
+To enable Core MQTT support, navigate to **Settings > Feature toggles** in the Administration application and set the `mqtt-service.smartrest` toggle key status to Enabled.
+While Core MQTT support is disabled, any messages published to [Core MQTT topics](#core-mqtt-topics) will be treated as invalid and may cause the MQTT client to be disconnected.
 {{< /c8y-admon-preview >}}
 
 The preview [Core MQTT](/device-integration/mqtt) support in the MQTT Service has some differences in behaviour, compared to connecting devices directly to the {{< product-c8y-iot >}} core.
