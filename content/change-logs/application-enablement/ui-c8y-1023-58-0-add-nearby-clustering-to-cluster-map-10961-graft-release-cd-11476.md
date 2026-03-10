@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-65967
 version: 1023.58.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(web sdk): [MTM-65967] Add nearby clustering to cluster map
-(#10961)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10961)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65967]:
-https://cumulocity.atlassian.net/browse/MTM-65967?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Jan Hommes <janhommes@users.noreply.github.com>
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+When viewing cluster maps with many nearby data points, the map can become cluttered and difficult to read. The Cockpit now automatically groups nearby clusters together, allowing you to see the overall distribution of your devices and assets more clearly. As you zoom in on the map, the nearby clusters will automatically expand to show individual data points, providing a better user experience when working with dense datasets on cluster maps. If a device or asset is placed on the same position, the user is able to click on the marker to see more clearly which markers are placed. Warning colors for alarms are merged and the most critical is shown. This improvement applies to all existing map widgets and to customized Web SDK based cluster map implementations in your applications without requiring any configuration changes.
