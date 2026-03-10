@@ -15,7 +15,7 @@ ticket: MTM-62393
 version: 0.1.4
 ---
 
-The Console application enables customers on the Commit-to-Consume (CTC) contract model to view their actual usage and consumption of {{< product-c8y-iot >}} components.
+The Console application enables customers on the Commit-to-Consume (CTC) contract model to view their actual usage and consumption of the {{< product-c8y-iot >}} components.
 
 For details, see [Console user guide](/console/introduction).
 
