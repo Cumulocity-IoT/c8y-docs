@@ -30,3 +30,5 @@ environment_availability:
 The chart options in the Web SDK now include additional aggregation methods, giving you greater flexibility when configuring data visualization. Previously, aggregation was limited to minimum and maximum values, which could restrict how effectively you could summarize and analyze time-series data. With this update, you can now use average, sum, and count alongside the existing minimum and maximum options. These additional aggregation functions allow you to better represent trends, totals, and overall activity, making it easier to analyze and interpret your data.
 
 This enhancement is available in the data graph and the data explorer.
+
+To use these new aggregation options, the time series migration must have been performed on the tenant.
