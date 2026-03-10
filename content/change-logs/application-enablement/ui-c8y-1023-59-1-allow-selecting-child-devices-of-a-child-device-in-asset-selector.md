@@ -1,6 +1,6 @@
 ---
 date: ""
-title: allow selecting child devices of a child device in asset selector (#11491)
+title: Select child devices of child devices in asset selector
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66155
 version: 1023.59.1
 ---
-Co-authored-by: Tristan Bastian <tristan.bastian@cumulocity.com>
+The asset selector previously only allowed you to select direct child devices of a parent device, which limited your ability to work with hierarchical device structures. Now you can select child devices at any level in the device hierarchy, including grandchild devices and deeper nested levels. This change applies to all asset selector components throughout the application, so you can now build more complex device relationships and access devices at any depth in your device tree.
