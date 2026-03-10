@@ -152,7 +152,7 @@ Certain topics are reserved for devices using the Core MQTT protcols.
 See [Core MQTT topics](#core-mqtt-topics) for the complete list.
 There is no overlap between the Core MQTT and generic device topic spaces, and all other topics are available for use by "generic" MQTT devices.
 Generic devices should avoid using any topic name starting with the Core MQTT prefixes listed below, even though some topics under those prefixes are not used by Core MQTT.
-This will help to avoid situations where it is not obvious how a given topic should be handled, which may be difficult to debug:
+This will help to avoid situations where it is not obvious how a given topic should be handled, which may be difficult to debug.
 
 ### Payloads {#mqtt-payloads}
 

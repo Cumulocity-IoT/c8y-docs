@@ -15,7 +15,7 @@ MQTT connections to the MQTT Service must use TCP.
 WebSocket connections are not supported.
 Use your tenant domain as the target host for the connection, for example `<MY-TENANT>.cumulocity.com`.
 
-Because the MQTT Service operates alongside the pre-existing Core MQTT Service, devices using the MQTT Service must connect to different ports:
+Because the MQTT Service operates alongside the pre-existing Core MQTT, devices using the MQTT Service must connect to different ports:
 
 * Port 9883 (TLS) is the default port for secure, encrypted communication with the MQTT Service.
   Both one-way (server certificate only) and two-way (both client and server certificates) TLS are supported.
