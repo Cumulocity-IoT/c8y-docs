@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Select child devices of child devices in asset selector
+title: Select child devices at any level in the device hierarchy in the asset selector
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
