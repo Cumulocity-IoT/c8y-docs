@@ -34,13 +34,6 @@ helm upgrade --install c8yedge-operator oci://registry.c8y.io/edge/helm-charts/c
 
 {{< c8y-admon-info >}}
 If you are installing Edge on an environment that has no or limited internet access, we strongly recommend using the **c8yedge** tool for installing and upgrading Edge.
-
-If you have to use existing Kubernetes infrastructure, then using the c8yedge tool will not be possible and you will have to provide a private registry and configure Edge to use it. See [Configuring Edge to use a private registry](/edge/configuring-private-registry/). After following those steps, you will need to modify the above command to use this new private registry.
-
-* Change `oci://registry.c8y.io/...` in the above command line to `oci://<registry-hostname>:<registry-port>/...`
-* Use whatever user name and password you have configured for the private registry, not the Edge registry credentials.
-* Provide an additional argument `--set imageCredentials.registry=<registry-hostname>:<registry-port>`
-* Provide an additional argument `--set image.repository=<registry-hostname>:<registry-port>/edge/helm-charts/cumulocity-iot-edge-operator`
 {{< /c8y-admon-info >}}
 
 Run the following command to follow the logs for the Edge operator pod:
