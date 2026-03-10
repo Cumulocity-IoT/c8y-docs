@@ -392,9 +392,9 @@ The service currently does not support certain combinations of type conflicts wi
 {{< /c8y-admon-caution >}}
 
 {{< c8y-admon-info >}}
-The result of schema conflict resolution depends on the order in which messages are processed. If you first send a message with a numeric `version` property and then a message with a string `version` property, the result is two properties `version` (decimal) and `version__s`. If you reverse the order of the messages, the result is two properties `version` (string) and `version__d`. 
+The result of schema conflict resolution depends on the order in which messages are processed. If you first send a message with a numeric `version` property and then a message with a string `version` property, the result is two properties `version` (decimal) and `version__s`. If you reverse the order of the messages, the result is two properties `version` (string) and `version__d`.
 
-Note that the order in which messages are sent to {{< product-c8y-iot >}} and the order in which they are processed do not necessarily coincide. For more details on ordering guarantees, visit the [Messaging Service documentation](/api/core/#tag/About-notifications-2.0).
+Note that the order in which messages are sent to {{< product-c8y-iot >}} and the order in which they are processed do not necessarily coincide. For more details on ordering guarantees, visit the [Messaging Service documentation](https://{{< domain-c8y >}}/api/core/#tag/About-notifications-2.0).
 {{< /c8y-admon-info >}}
 
 #### Naming {#naming}
@@ -462,9 +462,9 @@ Note that there are three columns which are of structured type: `voltage`, `stag
 An according view looks like the following:
 
 **View: measurement.c8y_Battery**
-| eventType          | source | time                     | type                   | voltage\\value  | voltage\\unit | ... | temperature\\value | temperature\\unit |
-| ------------------ | ------ | ------------------------ | ---------------------- | --------------- | ------------- | --- | ------------------ | ----------------- |
-| MEASUREMENT_CREATE | 47635  | 2026-02-19T13:09:39.678Z | c8y_BatteryMeasurement | 12.8            | V             | ... | 22.5               | C                 |
+| eventType          | source | time                     | type                   | voltage\\value | voltage\\unit | ... | temperature\\value | temperature\\unit |
+| ------------------ | ------ | ------------------------ | ---------------------- | -------------- | ------------- | --- | ------------------ | ----------------- |
+| MEASUREMENT_CREATE | 47635  | 2026-02-19T13:09:39.678Z | c8y_BatteryMeasurement | 12.8           | V             | ... | 22.5               | C                 |
 
 This makes it possible to operate directly on nested fields and, for example, do analytics for measurement values in BI tools.
 
