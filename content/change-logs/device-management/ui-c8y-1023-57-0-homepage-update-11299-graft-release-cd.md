@@ -1,6 +1,6 @@
 ---
 date: ""
-title: homepage update (#11299) [GRAFT][release/cd]
+title: Device Management Homepage Refresh
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
