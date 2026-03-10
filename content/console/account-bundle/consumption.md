@@ -42,7 +42,7 @@ Each bill contains the following information:
 * **Base product** - Shows line item details. Includes the standard set of {{< company-c8y >}} pricing metrics: Deployments, Messages, and Operational Data Store. Usage is calculated into billable units, which are written in the [{{< company-c8y >}} license metrics](/service-terms/license-metrics/). Unit prices are taken from the Product Catalog of the contract.
 * **Add-ons** - Can be opened to view line item details. Includes any and all add-ons that were activated and had usage during the usage month. Usage is calculated into billable units, which are written in the [{{< company-c8y >}} license metrics](/service-terms/license-metrics/). Unit prices are taken from the Product Catalog of the contract.
 * **Total usage charges** - The sum of all usage charges (Base Product plus Add-ons).
-* **Drawdown (Balance Consumed)** - How much the Commitment was drawn based on the usage charges. This will usually equal the Total Usage Charges unless there is an overage scenario, in which case the values will be different (the remaining Commitment is less than the Total Usage Charges for that month).
+* **Drawdown (Balance consumed)** - How much the commitment was drawn based on the usage charges. This will usually equal the total usage charges unless there is an overage scenario, in which case the values will be different (the remaining commitment is less than the total usage charges for that month).
 * **Overage** - If an overage scenario happens, this will show the outstanding balance that needs to be paid. 
 * **Total bill amount** - The total additional bill amount. This should only be greater than zero when the Commitment balance runs out (an overage scenario).
 
