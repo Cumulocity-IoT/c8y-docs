@@ -21,7 +21,7 @@ The first usage widget shows the data for the last available month in the select
 <img src="/images/console/usage/overview/last-month-statistics.png" alt="Last Month Statistics">
 
 The following tiles are included:
-* **Environments and Tenants** - Displays the number of environments and total tenants, including the type of environment *(public cloud versus dedicated cloud)* and if they are active or not.
+* **Environments and Tenants** - Displays the number of environments and total tenants, including the type of environment (public cloud versus dedicated cloud) and if they are active or not.
 * **Storage** - Displays the latest total Operational Data Store metric from the last month. All tenants across all environments are aggregated in this metric.
 * **Messages** - Displays the latest total Messages metric from the last month. All tenants across all environments are aggregated in this metric. The full calculation of Messages can be found in the {{< product-c8y-iot >}} License Metrics documentation.
 * **Devices** - Displays the latest total number of devices from the last month. All tenants across all environments are aggregated in this metric.
