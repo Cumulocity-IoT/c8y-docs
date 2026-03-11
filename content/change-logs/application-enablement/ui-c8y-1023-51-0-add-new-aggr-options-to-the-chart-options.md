@@ -31,4 +31,4 @@ The chart options in the Web SDK now include additional aggregation methods, giv
 
 This enhancement is available in the data graph and the data explorer.
 
-To use these new aggregation options, the time series migration must have been performed on the tenant.
+To use these new aggregation options, the time series migration must have been performed on the tenant. Newly created tenants already use the new time series by default and therefore do not require to be migrated.
