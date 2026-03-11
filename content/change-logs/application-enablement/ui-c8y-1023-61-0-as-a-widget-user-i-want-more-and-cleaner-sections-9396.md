@@ -1,6 +1,6 @@
 ---
 date: ""
-title: As a widget user I want more and cleaner sections (#9396) [GRAFT][release/cd] (#11445)
+title: Widget sections are now more organized and easier to use
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
