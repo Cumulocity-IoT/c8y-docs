@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-66171
 version: 1023.59.0
 ---
-This change introduces a new "Fieldbus item status" computed property that enables the following capabilities:
+This change introduces a new "Fieldbus item status" computed property with the following configuration options:
 
 - **Fieldbus item**: Select a coil or register from the device protocol associated with a device.
 - **Result type**: Select whether to display the raw value or a transformed value using enum values defined in the item's settings.
