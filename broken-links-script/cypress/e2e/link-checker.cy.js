@@ -64,10 +64,17 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
   Cypress.on('fail', (error) => {
     const sourceFiles = Cypress.env('sourceFiles');
-    if (sourceFiles) {
-      error.message += `\n\nThis URL was used in the following files:\n - ${sourceFiles.join('\n -')}`;
-    }
-    throw error;
+    const currentUrl = Cypress.env('currentUrl');
+
+    let shortMessage = error.message.split('\n')[0];
+
+    const cleanedError = [
+      `URL: ${currentUrl}`,
+      `Error: ${shortMessage}`,
+      sourceFiles ? `Source files:\n - ${sourceFiles.join('\n - ')}` : ''
+    ].join('\n');
+
+    throw new Error(cleanedError);
   });
 
   urls.forEach((item) => {
