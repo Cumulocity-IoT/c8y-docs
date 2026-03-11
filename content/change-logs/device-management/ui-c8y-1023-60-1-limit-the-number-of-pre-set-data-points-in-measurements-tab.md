@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Limit the number of pre-set data points in Measurements tab
+title: Limit the number of pre-set data points in the Measurements tab
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
