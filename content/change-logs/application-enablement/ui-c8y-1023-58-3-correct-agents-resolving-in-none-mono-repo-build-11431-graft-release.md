@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Correct AI agents resolving
+title: AI agents are now properly resolved
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66253
 version: 1023.58.3
 ---
-If the AI Agent Manager was configured and an provider API key was set, the agents still were not resolved correctly, which could cause runtime issues when using the AI Code assistant. This has been fixed so that agents are now properly resolved.
+Previously, when the AI Agent Manager was configured and a provider API key was set, the agents were still not resolved correctly, which could cause runtime issues when using the AI Code assistant. This has been fixed so that agents are now properly resolved.
