@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-66253
 version: 1023.58.3
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(web sdk): [MTM-66253] correct agents resolving in none-mono-repo
-build
-(#11431)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11431)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66253]:
-https://cumulocity.atlassian.net/browse/MTM-66253?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Jan Hommes <janhommes@users.noreply.github.com>
+If the AI Agent Manager was configured and an provider API key was set, the agents still were not resolved correctly, which could cause runtime issues when using the AI Code assistant. This has been fixed so that agents are now properly resolved.
