@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-63893
 version: 1023.61.0
 ---
-Widgets in the Web SDK previously displayed all sections in a single, crowded view, making it difficult to find and manage specific content. Sections are now organized more cleanly with improved visual separation and structure, allowing you to navigate widget content more easily and efficiently. This enhancement improves the overall user experience when working with widgets by providing a clearer, more intuitive layout that reduces cognitive load and makes information easier to locate.
+Widgets previously displayed all settings under a single "Settings" section, making it difficult to find and manage specific widget configurations. Sections are now organized more cleanly with improved visual separation and structure, allowing you to configure widget settings more easily and efficiently. This enhancement improves the overall user experience when working with widgets by providing a clearer, more intuitive layout that reduces cognitive load and makes information easier to locate.
