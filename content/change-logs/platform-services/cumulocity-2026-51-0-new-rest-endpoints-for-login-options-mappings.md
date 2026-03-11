@@ -16,6 +16,10 @@ version: 2026.51.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-03-05'
+  - label: apj.cumulocity.com
+    date: '2026-03-11'
+  - label: jp.cumulocity.com
+    date: '2026-03-11'
 ---
 The single sign-on APIs have been enhanced to allow the configuration and administration of thousands of users. Using the user interface in such instances was not scalable and required intense effort to administer such large numbers of users properly. 
 
