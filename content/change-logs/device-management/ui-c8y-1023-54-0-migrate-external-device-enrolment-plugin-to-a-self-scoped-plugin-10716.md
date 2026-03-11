@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Device Enrolment Plugin and thin-edge.io quick link
+title: Device enrolment plugin now provided by default
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
@@ -14,6 +14,6 @@ build_artifact:
 ticket: DM-5259
 version: 1023.54.0
 ---
-The Device enrolment plugin is now a standard Device Management plugin included by default. It provides the Try thin-edge.io quick link and its associated setup wizard, available in both the new Welcome Widget and the quick-links widget.
+The Device enrolment plugin is now a standard Device Management plugin included by default. It provides a quick link to the thin-edge.io setup wizard, available in both the new welcome widget and the "Quick-links" widget.
 
 The four-step wizard simplifies the connection of physical Linux devices or Docker containers by providing a generated curl command that automates installation and cloud configuration. This process streamlines registration through guided device naming and automated certificate handling, concluding with instant verification of connectivity and data transmission to the platform.
