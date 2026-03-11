@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Device Management Homepage Refresh
+title: Device Management application homepage refresh
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5259
 version: 1023.57.0
 ---
-The Device Management homepage has been refreshed by removing the standard alarm and quick-link widgets to make room for a new Welcome Widget. This update provides a more intuitive entry point for users and includes a direct trigger for the thin-edge.io wizard.
+The Device Management application homepage has been refreshed by removing the standard "Alarm" and "Quick links" widgets to make room for a new welcome widget. This update provides a more intuitive entry point for users and includes a direct link to the thin-edge.io setup wizard.
