@@ -17,6 +17,7 @@ version: 1023.59.0
 This change introduces a new "Fieldbus item status" computed property that enables the following capabilities:
 
 - **Select a coil or register**: Choose from the device protocol associated with a device.
-- **Choose value display format**: Decide whether to display the raw value or a transformed value using enum values defined in the coil or register's settings.
+- **Fieldbus item**: Select a coil or register from the device protocol associated with a device.
+- **Result type**: Select whether to display the raw value or a transformed value using enum values defined in the item's settings.
 
 The new computed property makes it possible to display the status of Fieldbus items (including their enum values) in widgets such as the "Asset table". This functionality will be progressively made available in other widgets, too.
