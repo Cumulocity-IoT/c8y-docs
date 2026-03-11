@@ -1,6 +1,6 @@
 ---
 date: 
-title: Resolved false positive firmware alarms 
+title: Resolved incorrect firmware alarms
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -16,4 +16,4 @@ version: 1022.0.14
 environment_availability:
 
 ---
-Fixed an issue where the LWM2M firmware update process triggered false-positive alarms for missing update operations. 
+Fixed an issue where the LWM2M firmware update process wrongly triggered alarms for missing update operations. 
