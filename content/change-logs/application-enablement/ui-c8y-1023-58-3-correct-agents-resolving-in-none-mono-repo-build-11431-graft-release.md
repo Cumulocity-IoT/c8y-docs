@@ -1,6 +1,6 @@
 ---
 date: ""
-title: correct agents resolving in none-mono-repo build (#11431) [GRAFT][release/cd] (#11489)
+title: Correct AI agents resolving
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
