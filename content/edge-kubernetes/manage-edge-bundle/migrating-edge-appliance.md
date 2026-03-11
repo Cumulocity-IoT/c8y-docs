@@ -22,20 +22,52 @@ The {{< product-c8y-iot >}} Operational Store provides an enhanced time series s
 
 Perform the following steps as a `root` user on your Edge appliance VM to accomplish the time series migration.
 
-1. Set `MANAGEMENT_ADMIN_USER` and `MANAGEMENT_ADMIN_PASSWORD` environment variables used in the subsequent commands:
-   ```shell
-   MANAGEMENT_ADMIN_USER="<MANAGEMENT-ADMIN-USER>"          # Replace with {{< management-tenant >}} admin user
-   MANAGEMENT_ADMIN_PASSWORD="<MANAGEMENT-ADMIN-PASSWORD>"  # Replace with {{< management-tenant >}} admin user's password
+1. Download the time-series migration microservice image onto the Edge appliance VM using one of the following methods:
+   * **Direct pull (Standard):** Use this method if the Edge appliance VM **can access the registry**.
+      ```shell
+      # 1. Log in to the registry
+      EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"                # Replace with your Edge registry username
+      EDGE_REGISTRY_PASSWORD="<EDGE-REGISTRY-PASSWORD>"        # Replace with your Edge registry password
+      docker login registry.c8y.io --username "${EDGE_REGISTRY_USER}" --password "${EDGE_REGISTRY_PASSWORD}"
 
-   EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"                # Replace with Edge registry username 
-   EDGE_REGISTRY_PASSWORD="<EDGE-REGISTRY-PASSWORD>"        # Replace with Edge registry password 
+      # 2. Pull the image
+      docker pull registry.c8y.io/platform/timeseries-migration-server:1.0.326
+      ```
+
+   * **Transfer via tarball (air-gapped):** Use this method if the Edge appliance VM **cannot access the registry**.
+      
+      On a system with internet access:
+      ```shell
+      # 1. Log in to the registry
+      EDGE_REGISTRY_USER="<EDGE-REGISTRY-USER>"                # Replace with your Edge registry username
+      EDGE_REGISTRY_PASSWORD="<EDGE-REGISTRY-PASSWORD>"        # Replace with your Edge registry password
+      docker login registry.c8y.io --username "${EDGE_REGISTRY_USER}" --password "${EDGE_REGISTRY_PASSWORD}"
+
+      # 2. Pull the image
+      docker pull registry.c8y.io/platform/timeseries-migration-server:1.0.326
+
+      # 3. Export the image to a tarball
+      docker save -o ./timeseries-migration-server.tar registry.c8y.io/platform/timeseries-migration-server:1.0.326
+      ```
+
+      On the Edge appliance VM:
+      1. Copy the *timeseries-migration-server.tar* file created in the previous step into the */tmp* folder of the Edge appliance VM.
+      1. Load the image from the tarball:
+         ```shell
+         docker load -i /tmp/timeseries-migration-server.tar
+         ```
+
+1. Set the following environment variables for use in subsequent commands. Replace the placeholders with the {{< management-tenant >}} admin credentials:
+   ```shell
+   MANAGEMENT_ADMIN_USER="<MANAGEMENT-ADMIN-USER>"          # {{< management-tenant >}} admin username
+   MANAGEMENT_ADMIN_PASSWORD="<MANAGEMENT-ADMIN-PASSWORD>"  # {{< management-tenant >}} admin password
    ```
 
    {{< c8y-admon-info >}}
    To request the Edge registry credentials, [contact product support](/additional-resources/contacting-support/).
    {{< /c8y-admon-info >}}   
 
-2. Ensure that the {{< management-tenant >}} admin user you use in this process has the following roles assigned:
+1. Ensure that the {{< management-tenant >}} admin user you use in this process has the following roles assigned:
    * ROLE_INVENTORY_READ
    * ROLE_OPTION_MANAGEMENT_READ
    * ROLE_OPTION_MANAGEMENT_ADMIN
@@ -62,12 +94,11 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
    done    
    ```
 
-3. To allow MongoDB to accept both TLS and non-TLS connections, edit the */etc/mongod.conf* file and change `requireTLS` to `preferTLS` in the `net.tls.mode` setting, then restart MongoDB with `systemctl restart mongod`.
+1. To allow MongoDB to accept both TLS and non-TLS connections, edit the */etc/mongod.conf* file and change `requireTLS` to `preferTLS` in the `net.tls.mode` setting, then restart MongoDB with `systemctl restart mongod`.
 
-4. Install and run the `timeseries-migration` microservice:
+1. Install and run the `timeseries-migration` microservice:
 
    ```shell
-   docker login registry.c8y.io --username "${EDGE_REGISTRY_USER}" --password "${EDGE_REGISTRY_PASSWORD}"
    DOCKER_GATEWAY_IP=$(docker network inspect bridge --format='{{(index .IPAM.Config 0).Gateway}}')
    docker run -d \
       --name timeseries-migration \
@@ -83,13 +114,13 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
       registry.c8y.io/platform/timeseries-migration-server:1.0.326
    ```
 
-5. Follow the container logs using the following command and wait until the message `c.s.m.t.TimeseriesMigrationApplicationKt : Started TimeseriesMigrationApplicationKt ...` appears.
+1. Follow the container logs using the following command and wait until the message `c.s.m.t.TimeseriesMigrationApplicationKt : Started TimeseriesMigrationApplicationKt ...` appears.
 
    ```shell
    docker logs -f timeseries-migration
    ```
 
-6. Trigger the time series migration:
+1. Trigger the time series migration:
 
    ```shell
    curl -k -X PUT \
@@ -100,7 +131,7 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
       -d '{ "state": "SCHEDULED", "tenants": [ "edge" ] }'
    ```
 
-7. After the data is processed, verified, and migrated to the new collection, the status of the migration changes to `VERIFIED`:
+1. After the data is processed, verified, and migrated to the new collection, the status of the migration changes to `VERIFIED`:
 
    ```shell
    curl -k -X GET \
@@ -115,7 +146,7 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
    The time to complete the time series conversion and reach `VERIFIED` status depends on your database size — larger databases require more time to process.
    {{< /c8y-admon-info >}}
 
-8. Approve the migration to confirm the process:
+1. Approve the migration to confirm the process:
 
    ```shell
    curl -k -X PUT \
@@ -128,7 +159,7 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
 
     This will change the status of the migration to `APPROVED`.
 
-9. Check the migration status and wait until it has changed to `APPROVED`:
+1. Check the migration status and wait until it has changed to `APPROVED`:
 
    ```shell
    curl -k -X GET \
@@ -138,19 +169,20 @@ Perform the following steps as a `root` user on your Edge appliance VM to accomp
    ```
    The response returned should contain the migration status as `APPROVED` against the Edge tenant.
 
-10. Stop the `timeseries-migration` microservice:
+1. Stop the `timeseries-migration` microservice:
 
-      ```shell
-      docker stop timeseries-migration
-      ```
+   ```shell
+   docker stop timeseries-migration
+   ```
 
-11. Remove legacy collection:
-      ```shell
-      mongo \
-         --host localhost:27017 \
-         edge \
-         --eval 'db.pmdata.drop()'
-      ```
+1. Remove legacy collection:
+
+   ```shell
+   mongo \
+      --host localhost:27017 \
+      edge \
+      --eval 'db.pmdata.drop()'
+   ```
 
 ### Step 2 - Backing up data and configuration of Edge appliance
 
@@ -218,17 +250,10 @@ Follow the steps documented at [Installing Edge](/2025/edge-kubernetes/installin
 {{< c8y-admon-important >}}
 Ensure that there is sufficient disk space available on the machine in which you intend to install Edge 2025.
 
-If you are installing Edge 2025 using the `c8yedge` installer, you need to download the Helm 3 client before proceeding with the installation. Download and install Helm 3 using the following command:
-
-```shell
-curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 && chmod 700 get_helm.sh && ./get_helm.sh
-```
-
+After installing Edge 2025, configure the Edge **domain** and **license** to match those of the Edge Appliance VM you are migrating. For details, refer to [Modifying Edge](https://cumulocity.com/docs/2025/edge-kubernetes/manage-edge/#modify-edge).
 {{< /c8y-admon-important >}}
 
-After installing Edge 2025, configure the Edge domain and license to match those of the Edge Appliance VM you are migrating. For details, refer to [Modifying Edge](https://cumulocity.com/docs/2025/edge-kubernetes/manage-edge/#modify-edge)
-
-### Step 4 - Extracting data from the backup archive
+### Step 4 - Restore MongoDB data from the backup
 After installing and configuring Edge 2025, proceed to migrate the data backed up from the Edge Appliance VM.
 
 1. Transfer the backup file */opt/edge-appliance-backup.tar* from the Edge Appliance VM to your Edge 2025.

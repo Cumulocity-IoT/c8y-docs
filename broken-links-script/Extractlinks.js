@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import matter from "gray-matter";
 
 const getMarkdownFiles = (dir) => {
   const files = fs.readdirSync(dir, { withFileTypes: true });
@@ -18,16 +19,14 @@ const getMarkdownFiles = (dir) => {
 const BASE_URL = "https://cumulocity.com/docs/2025";
 
 const shortcodeMapping = {
-  
+
   "c8y-current-version": "2025",
-  "c8y-edge-version-major": "2025",
-  "c8y-edge-version-minor": "0",
-  "c8y-edge-version-patch": "2",
+  "c8y-edge-current-version": "2025",
   "c8y-resources-server-link": "https://download.cumulocity.com/",
   "c8y-resources-server": "Cumulocity Download Center",
   "c8y-support-link": "https://cumulocity.com/support",
   "c8y-support-portal": "Cumulocity Customer Service Desk",
-  "c8y-tech-community-link": "https://techcommunity.cumulocity.com/",
+  "c8y-tech-community-link": "https://community.cumulocity.com/",
   "c8y-tech-community": "Cumulocity Tech Community",
   "company-c8y": "Cumulocity",
   "device-portal": "Partner Devices Ecosystem",
@@ -38,7 +37,7 @@ const shortcodeMapping = {
   "link-apama-webhelp": "https://cumulocity.com/apama/docs/10.15",
   "link-apamadoc-api": "https://cumulocity.com/apama/docs/10.15/related/ApamaDoc/",
   "link-c8y-github": "https://github.com/Cumulocity-IoT/",
-  "link-c8y-training": "https://cumulocity.moodlecloud.com/",
+  "link-c8y-training": "https://learning.cumulocity.com",
   "link-device-portal": "https://ecosystem.cumulocity.com/devices/?filter_cumulocity_certified=yes",
   "management-tenant": "Management tenant",
   "openapi": "Cumulocity OpenAPI Specification",
@@ -47,6 +46,15 @@ const shortcodeMapping = {
   "standard-tenant": "Standard tenant",
   "c8y-support-email": "support@cumulocity.com",
   "email-c8y-info": "info@cumulocity.com",
+};
+
+const hasRenderFalse = (fileContent) => {
+  try {
+    const { data } = matter(fileContent);
+    return data?._build?.render === false;
+  } catch {
+    return false;
+  }
 };
 
 const resolveHugoShortcode = (link) => {
@@ -62,34 +70,36 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
   }
 
   if (link.startsWith("#")) {
-    const fileDir = path.dirname(relativePath);
+    const fileDir = path.dirname(relativePath).replaceAll(path.sep, '/');
     const fileName = path.basename(relativePath, ".md");
-    let segments = fileDir.split(path.sep);
+    let segments = fileDir.split("/").filter(Boolean);
     let hasBundle = false;
 
     if (segments.length > 0) {
       const lastSegment = segments[segments.length - 1];
-      if (lastSegment.endsWith("-bundle")) {
+      if (/-bundle$/.test(lastSegment)) {
         segments[segments.length - 1] = lastSegment.replace(/-bundle$/, "");
         hasBundle = true;
       }
     }
 
+    // if this file is not rendered, publish from its directory (e.g., /glossary/)
+    const notRendered = hasRenderFalse(fileContent);
+
     let publishedBasePath = "";
-    if (hasBundle) {
+    if (notRendered || hasBundle) {
       publishedBasePath = segments.join("/");
     } else {
-      publishedBasePath = fileName === "index" ? fileDir : path.join(fileDir, fileName);
+      publishedBasePath = fileName === "index" ? fileDir : `${fileDir}/${fileName}`;
     }
-    publishedBasePath = publishedBasePath
-      .replace(/\\/g, "/")
-      .replace(/^\/+/, "")
-      .replace(/\/+$/, "");
-    return `${BASE_URL.replace(/\/$/, "")}/${publishedBasePath}/#${link.substring(1)}`;
+    let url = `${BASE_URL}/${publishedBasePath}#${link.substring(1)}`;
+    url = url.replace(/([^:]\/)\/+/g, '$1'); // removes duplicate slashes
+    url = url.replace(/\/#/g, '#'); // removes slash before hash
+    return url;
   }
 
   const resolvedLink = resolveHugoShortcode(link);
-  if (resolvedLink.startsWith("http://") || resolvedLink.startsWith("https://")) {
+  if (/^https?:\/\//i.test(resolvedLink)) {
     return resolvedLink;
   }
   return `${BASE_URL.replace(/\/$/, "")}/${resolvedLink.replace(/^\//, "")}`;
@@ -98,8 +108,6 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
 (() => {
   const projectDir = "../content";
   const markdownFiles = getMarkdownFiles(projectDir);
-  
-  // Use an object to map each unique link to a Set of file paths where it's found.
   const linkMap = {};
 
   markdownFiles.forEach((mdFile) => {
@@ -120,7 +128,6 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
     });
   });
 
-  // Convert the map into an array of objects.
   const result = Object.keys(linkMap).map(link => ({
     link,
     files: Array.from(linkMap[link])

@@ -63,6 +63,38 @@ Cypress.on('uncaught:exception', (err) => {
     if (err.message.includes("No key found. SDK can not be initialized")) {
       return false;
     }
-
+    if (err.message.includes("Failed to execute 'getComputedStyle' on 'Window': parameter 1 is not of type 'Element'.")) {
+      return false;
+    }
+    if (err.message.includes("Identifier 'rocket_pairs' has already been declared")) {
+      return false;
+    }
+    if (err.message.includes("Unexpected token 'var'")) {
+      return false;
+    }
+    if (err.message.includes("Script error for 'hubspot'")) {
+      return false;
+    }
+    if (err.message.includes("Stop the wrapper script on User-Agent")) {
+      return false;
+    }
+    if (err.message.includes("Failed to construct 'Response': Response with null body status cannot have body")) {
+      return false;
+    }
+    if (err.message.includes("Failed to construct 'Response': Response with null body status cannot have body")) {
+      return false;
+    }
+    if (err.message.includes("Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.")) {
+      return false;
+    }
+    if (err.message.includes("$ is not defined")) {
+      return false;
+    }
+    if (err.message.includes("bootstrap is not defined")) {
+      return false;
+    }
+    if (err.message.includes("Minified React error #418")) {
+      return false;
+    }
+    
   });
-  

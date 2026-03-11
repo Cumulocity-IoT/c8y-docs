@@ -4,7 +4,7 @@ title: Installing with the c8yedge tool
 layout: redirect
 ---
 
-This method is ideal if you do not already have a Kubernetes cluster and want a simplified, self-contained setup. The `c8yedge` command-line tool automates the entire process of preparing the environment and installing Edge on a Linux environment.
+This method is ideal if you do not already have a Kubernetes cluster and want a simplified, self-contained setup. The **c8yedge** command-line tool automates the entire process of preparing the environment and installing Edge on a Linux environment.
 
 ### Configuring the environment
 
@@ -14,7 +14,7 @@ First, choose your environment. It can be a physical machine, or it can be a vir
 
 Whether a VM or physical machine, ensure that all hardware and storage requirements for Edge are met, based on [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites).
 
-Install the Linux distribution of your choice. Because the `c8yedge`-based install provisions Edge on [Lightweight Kubernetes (K3s)](https://docs.k3s.io/), you should consult the [operating system configurations required by K3s](https://docs.k3s.io/installation/requirements#operating-systems) to help you choose and configure your operating system.
+Install the Linux distribution of your choice. Because the c8yedge-based install provisions Edge on [Lightweight Kubernetes (K3s)](https://docs.k3s.io/), you should consult the [operating system configurations required by K3s](https://docs.k3s.io/installation/requirements#operating-systems) to help you choose and configure your operating system.
 
 {{< c8y-admon-info >}}
 Although the virtual or physical nature of the platform is unimportant to Edge, the advantage of most VM technologies is that a running image can be exported to be run in another environment without further configuration.
@@ -53,17 +53,18 @@ To sign in to Edge, refer to the instructions at the start of the [**Accessing E
 
 ### Install Edge in an airgapped environment {#install-edge-airgapped}
 
-If you are installing Edge on an environment that has no or limited internet access, you will have to use `c8yedge` to create an offline package first. This has to be executed in an environment with internet access. Execute the following command and follow the interactive prompts:
+If you are installing Edge on an environment that has no or limited internet access, you will have to use the c8yedge tool to create an offline package first. This has to be executed in an environment with internet access. Execute the following command and follow the interactive prompts:
 ```shell
 c8yedge package
 ```
-By default, you will get a file out of this called `c8yedge.tar` in your current directory, containing the latest release of Edge {{< c8y-edge-current-version >}}. You can discover more options with `c8yedge package --help`, such as the ability to package a very specific version.
+The tool generates a tarball suffixed with the specific version of Edge downloaded (for example, `c8yedge-{{< c8y-edge-current-version >}}_0_0.tar`). By default, this file is created in your current directory and contains the latest release of Edge {{< c8y-edge-current-version >}}. You can discover more options with `c8yedge package --help`, such as the ability to package a very specific version.
 
-The offline package can be used for either an initial installation, or an upgrade of an existing installation. You need to transfer this file as well as the `c8yedge` tool into your airgapped environment.
+The offline package can be used for either an initial installation, or an upgrade of an existing installation. You need to transfer this file, as well as the c8yedge tool, into your airgapped environment.
 
-`c8yedge` installs [Lightweight Kubernetes (K3s)](https://docs.k3s.io/), which has prerequisites for running in an airgapped environment. If your environment has no network interface with a default route, or SELinux is enabled, pay attention to and follow the two relevant sections under [Prerequisites](https://docs.k3s.io/installation/airgap#prerequisites).
+The c8yedge tool installs [Lightweight Kubernetes (K3s)](https://docs.k3s.io/), which has prerequisites for running in an airgapped environment. If your environment has no network interface with a default route, or SELinux is enabled, pay attention to and follow the two relevant sections under [Prerequisites](https://docs.k3s.io/installation/airgap#prerequisites).
 
-Once in the airgapped environment:
+Once in the airgapped environment, run the installation command referencing the offline package file the tool generated earlier:
 ```shell
-sudo c8yedge install -s c8yedge.tar
+# Replace <OFFLINE-PACKAGE-FILENAME> with the path to the generated offline package file
+sudo c8yedge install -s "<OFFLINE-PACKAGE-FILENAME>"
 ```

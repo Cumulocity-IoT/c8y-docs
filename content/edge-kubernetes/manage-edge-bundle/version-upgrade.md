@@ -10,7 +10,7 @@ Recreating update strategy is an all-or-nothing process that updates all aspects
 ### Upgrading with the c8yedge tool {#upgrade-with-c8yedge}
 
 {{< c8y-admon-info >}}
-Upgrading with the `c8yedge` tool is only supported if the initial installation was created using the `c8yedge` tool.
+Upgrading with the c8yedge tool is only supported if the initial installation was created using the c8yedge tool.
 {{< /c8y-admon-info >}}
 
 You can upgrade to the latest patch of Edge by running the following command:
@@ -21,17 +21,17 @@ This will only apply the latest patches for the current release train. For examp
 ```shell
 c8yedge upgrade --version <version number>
 ```
-Unlike the initial installation, no use of `sudo` is required for any kind of upgrade using `c8yedge`.
+Unlike the initial installation, no use of `sudo` is required for any kind of upgrade using c8yedge.
 
 #### Upgrading in an airgapped environment {#upgrade-edge-airgapped}
 
 If Edge is now running in an environment with no or limited internet access, you can upgrade by creating an offline package and transferring it to your airgapped environment. See [Install Edge in an airgapped environment](/edge-kubernetes/installing-edge-on-k8/#install-edge-airgapped). There is no difference between a package created for an initial installation, and a package created for an upgrade.
 
-Once in the airgapped environment:
+Once in the airgapped environment, run the upgrade command referencing the offline package file the tool generated:
 ```shell
-c8yedge upgrade -s c8yedge.tar
+# Replace <OFFLINE-PACKAGE-FILENAME> with the path to the generated offline package file
+c8yedge upgrade -s "<OFFLINE-PACKAGE-FILENAME>"
 ```
-
 
 ### Upgrading Edge in a self-managed Kubernetes cluster {#upgrade-with-kubernetes-native}
 
@@ -47,6 +47,7 @@ To upgrade to the latest available version from the current release, set the ver
 kubectl --namespace=c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"version":"{{< c8y-edge-current-version >}}"}}'
 ```
 The operator will also upgrade itself as part of this process. See [Monitoring changes](/edge-kubernetes/manage-edge/#monitoring-changes) to follow the progress of the upgrade.
+
 
 ### Upgrading Edge remotely {#upgrading-edge-remotely}
 

@@ -11,7 +11,7 @@ Edge can be installed using one of two supported methods. The method you choose 
     <br/>
     This method is ideal if you **do not already have a Kubernetes cluster** and want a simplified, self-contained setup.
     <br/>
-    The `c8yedge` command-line tool automates the entire process of preparing the environment and installing Edge.
+    The **c8yedge** command-line tool automates the entire process of preparing the environment and installing Edge.
     <br/>
     This is the recommended method for users who want a quick, consistent setup experience with minimal Kubernetes knowledge.
     <br/>

@@ -1,5 +1,5 @@
 ---
-date: '2025-08-21'
+date: 2025-08-21
 title: New version of internal query engine
 change_type:
   - value: change-QHu1GdukP

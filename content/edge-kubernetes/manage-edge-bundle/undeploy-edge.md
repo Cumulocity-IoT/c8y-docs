@@ -11,7 +11,7 @@ This includes but is not limited to all tenant data, and everything stored by Da
 {{< /c8y-admon-caution >}}
 
 
-If you have installed Edge using the `c8yedge` tool, uninstallation is as simple as invoking:
+If you have installed Edge using the **c8yedge** tool, uninstallation is as simple as invoking:
 ```shell
 sudo c8yedge uninstall
 ```

@@ -1,6 +1,7 @@
 yearly_release = true
 yearly_release_name = "2025"
 date = 2023-12-07T10:32:39.947Z
+version = "2025"
 
 [[versions]]
 date = "March 31, 2025"
@@ -42,6 +43,34 @@ version = "2025.8"
 date = "October 30, 2025"
 version = "2025.10"
 
+[[versions]]
+date = "December 3, 2025"
+version = "2025.13"
+
+[[versions]]
+date = "December 12, 2025"
+version = "2025.14"
+
+[[versions]]
+date = "January 8, 2026"
+version = "2025.16"
+
+[[versions]]
+date = "January 14, 2026"
+version = "2025.17"
+
+[[versions]]
+date = "February 4, 2026"
+version = "2025.19"
+
+[[versions]]
+date = "February 19, 2026"
+version = "2025.20"
+
+[[versions]]
+date = "March 6, 2026"
+version = "2025.21"
+
 # Fake dates for the 'parallel' Edge timeline that should be sorted entirely outside of the timeline of the cloud releases
 [[versions]]
 date = "January 1, 2024"
@@ -74,3 +103,27 @@ version = "Edge-2025.0.6"
 [[versions]]
 date = "January 8, 2024"
 version = "Edge-2025.0.7"
+
+[[versions]]
+date = "January 9, 2024"
+version = "Edge-2025.0.8"
+
+[[versions]]
+date = "January 10, 2024"
+version = "Edge-2025.0.9"
+
+[[versions]]
+date = "January 11, 2024"
+version = "Edge-2025.0.10"
+
+[[versions]]
+date = "January 12, 2024"
+version = "Edge-2025.0.11"
+
+[[versions]]
+date = "January 13, 2024"
+version = "Edge-2025.0.12"
+
+[[versions]]
+date = "January 14, 2024"
+version = "Edge-2025.0.13"
