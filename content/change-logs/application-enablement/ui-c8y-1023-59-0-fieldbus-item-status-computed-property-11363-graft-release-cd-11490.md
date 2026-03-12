@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-03-12'
 title: Added new computed property - Fieldbus item status
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-66171
 version: 1023.59.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-03-12'
 ---
 This change introduces a new "Fieldbus item status" computed property with the following configuration options:
 
