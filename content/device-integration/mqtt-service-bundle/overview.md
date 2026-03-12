@@ -52,7 +52,7 @@ For optimal performance, these use cases should be implemented using a more trad
 |                    |                                                                                                                                                     |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | Horizontal scaling | The MQTT Service can be scaled independently from the {{< product-c8y-iot >}} core.                                                                 |
-| Benchmark results  | TBC                                                                                                                                                 |
+| Benchmark results  | Validated to scale up to 100 million concurrent device connections, with throughput of 1 million unique messages per second.                        |
 | Limits and quotas  | Per-tenant and per-client [limits and quotas](/service-terms/quotas/#mqtt-service) ensure service stability and prevent "noisy neighbour" problems. |
 
 
