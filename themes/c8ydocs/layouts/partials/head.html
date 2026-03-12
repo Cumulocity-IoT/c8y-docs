@@ -19,7 +19,7 @@
     {{else}}
       <title>{{ with .Title }}{{ . }} - {{ $siteTitle }}{{ else }}{{ $siteTitle }}{{ end }}</title>
     {{end}}
-    <meta name="author" content="{{ .Site.Author.name }}">
+    <meta name="author" content="{{ (index .Site.Params.author 0).name }}">
     <meta name="keywords" content="{{ with .Keywords }}{{ delimit . ", " }}{{ end }}{{ if .Site.Params.keywords }}, {{ delimit .Site.Params.keywords ", " }}{{ end }}">
 
     <meta property="og:title" content="{{if eq .Title $.Site.Title }}{{ $siteTitle }}{{else}}{{ with .Title }}{{ . }} - {{ $siteTitle }}{{ else }}{{ $siteTitle }}{{ end }}{{end}}">
@@ -33,10 +33,10 @@
     <link rel="shortcut icon" href="{{"images/favicon/favicon.ico" | absURL}}">
     <link rel="mask-icon" href="{{"images/favicon/safari-pinned-tab.svg" | absURL}}" color="#212121">
     <link rel="manifest" href="{{"images/favicon/site.webmanifest" | absURL}}">
-    
+
 
     <link rel="canonical" href="{{ .Permalink }}">
-    
+
     <meta name="msapplication-TileColor" content="#212121">
     <meta name="theme-color" content="#ffbe00">
     <meta name="msapplication-TileColor" content="#212121">
@@ -59,14 +59,14 @@
     {{ $style := resources.Get "scss/main.scss" | css.Sass $options  }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <!--STYLES END-->
-    
+
     <script src="{{ "js/vendor/highlight.min.js" | absURL }}"></script>
 
     <!--  Cookie Bot -->
     <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="0dcae975-5d79-4c0e-9017-bc4bbe117a7d" data-blockingmode="auto" type="text/javascript"></script>
-    
+
     <!--  /Cookie Bot -->
-    
+
     <!--  Google Tag Manager -->
     <script type="text/plain" data-cookieconsent="statistics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TM3L5WBK');</script>
     <!--  /Google Tag Manager -->
