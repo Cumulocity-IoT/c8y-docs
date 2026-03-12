@@ -34,7 +34,7 @@ For optimal performance, these use cases should be implemented using a more trad
 | Connection protocols                        | TCP only.                                                                                                                       |
 | MQTT protocol versions                      | 3.1.1 and 5.0. See [MQTT protocol implementation](#implementation) for more details.                                            |
 | Generic MQTT device protocols               | MQTT devices can publish and subscribe arbitrary payloads on arbitrary MQTT topics.                                             |
-| {{< product-c8y-iot >}} Core MQTT protocols | **Preview** support for SmartREST 1.0, SmartREST 2.0 and JSON-over-MQTT protocols. See [TBD](#implementation) for more details. |
+| {{< product-c8y-iot >}} Core MQTT protocols | **Preview** support for the SmartREST 1.0, SmartREST 2.0 and JSON-over-MQTT protocols. See [Core MQTT device support](#core-mqtt-support) for more details. |
 | Apache Pulsar                               | Microservices and external clients [connect directly to the Messaging Service](#pulsar-client) to convert between device protocols and the {{< product-c8y-iot >}} domain model.<br>Messaging Service clients are also responsible for registering devices as {{< product-c8y-iot >}} Managed Objects if required. |
 | Thin Edge                                   | Out of the box support in <a href="https://thin-edge.io/" target="_blank" rel="noopener noreferrer">Thin Edge</a> for generic and Core MQTT protocols on the same device. |
 
