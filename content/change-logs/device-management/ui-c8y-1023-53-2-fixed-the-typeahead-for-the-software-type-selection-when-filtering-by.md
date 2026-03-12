@@ -20,5 +20,11 @@ environment_availability:
     date: '2026-03-09'
   - label: jp.cumulocity.com
     date: '2026-03-09'
+  - label: emea.cumulocity.com
+    date: '2026-03-10'
+  - label: us.cumulocity.com
+    date: '2026-03-10'
+  - label: cumulocity.com
+    date: '2026-03-10'
 ---
 When filtering software by type, the typeahead field did not consistently preserve or display the selected software type. In some cases, the selection state became inconsistent, making filtering behavior confusing. This issue has been resolved. The typeahead field now correctly maintains the selected value and reliably filters results based on the chosen software type.

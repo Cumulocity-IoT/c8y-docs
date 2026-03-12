@@ -26,5 +26,7 @@ environment_availability:
     date: '2026-03-09'
   - label: us.cumulocity.com
     date: '2026-03-09'
+  - label: cumulocity.com
+    date: '2026-03-10'
 ---
 Previously, the error message returned from the RestAPI when attempting to assign or unassign a non-device to an asset was inconsistent. The error message format has been standardized. This fix improves error handling consistency.

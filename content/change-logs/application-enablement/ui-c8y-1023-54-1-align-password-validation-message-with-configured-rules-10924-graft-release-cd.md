@@ -20,5 +20,11 @@ environment_availability:
     date: '2026-03-09'
   - label: jp.cumulocity.com
     date: '2026-03-09'
+  - label: emea.cumulocity.com
+    date: '2026-03-10'
+  - label: us.cumulocity.com
+    date: '2026-03-10'
+  - label: cumulocity.com
+    date: '2026-03-10'
 ---
 Password validation rules and error messages are now consistent across all password entry locations (user management in the Administration application, user settings, and login password change) and correctly reflect the tenant's configured minimum length and strength enforcement settings. Previously, the displayed validation requirements could differ from the actual configured rules.

@@ -24,6 +24,8 @@ environment_availability:
     date: '2026-03-09'
   - label: us.cumulocity.com
     date: '2026-03-09'
+  - label: cumulocity.com
+    date: '2026-03-10'
 ---
 The performance when creating new opposite links has been improved. The managed
 object acting as the opposite can be both created and assigned using one
