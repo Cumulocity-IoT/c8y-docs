@@ -64,17 +64,17 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
   Cypress.on('fail', (error) => {
     const sourceFiles = Cypress.env('sourceFiles');
-    const currentUrl = Cypress.env('currentUrl');
 
-    let shortMessage = error.message.split('\n')[0];
+    const shortMessage = error.message.split('\n')[0];
 
-    const cleanedError = [
-      `URL: ${currentUrl}`,
-      `Error: ${shortMessage}`,
+    const message = [
+      `${shortMessage}`,
       sourceFiles ? `Source files:\n - ${sourceFiles.join('\n - ')}` : ''
     ].join('\n');
 
-    throw new Error(cleanedError);
+    const cleanError = new Error(message);
+    cleanError.stack = null;
+    throw cleanError;
   });
 
   urls.forEach((item) => {
@@ -85,6 +85,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     
     it(`should validate URL: ${item.link}`, () => {
       const url = item.link;
+      Cypress.env('currentUrl', url);
       const fragment = url.includes('#') ? url.split('#').slice(-1)[0] : null;
       const isCodexPage = url.includes('/codex/');
       const isApiPage = url.includes('/api/');
