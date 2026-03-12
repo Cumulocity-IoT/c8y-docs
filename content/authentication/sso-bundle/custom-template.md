@@ -53,7 +53,7 @@ Under **Dynamic access mapping principle** you can select one of the following o
 
 * **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be cleared**: This is the default. Dynamic access mapping assigns user roles, based on the token, on every user login. It is not possible to change the user roles inside {{< product-c8y-iot >}} as they would be overwritten on the next user login. To change this behavior, select one of the remaining options.
 
-If you select either of the first two options mentioned above, this will also allow administrators to edit the roles of SSO users in the user management. For details, refer to [Managing permissions](/standard-tenant/managing-permissions/#to-assign-global-roles).
+If you select either of the first two options mentioned above, this will also allow administrators to edit the roles of SSO users in the user management. For details, refer to [Managing permissions and roles](/standard-tenant/managing-permissions/#to-assign-global-roles).
 
 The dynamic access mapping configuration allows you to define the rules for assigning roles to users based on JWT claims. The rule that matches the token's value is used to assign the appropriate set of roles to the user.
 
@@ -146,7 +146,7 @@ Inside some fields you can use placeholders that are resolved by {{< product-c8y
 |:-------------|:-------------------------------------------------------------------------------|
 | clientId     | Value of the **Client ID** field                                               
 | redirectUri  | Value of the **Redirect URI** field                                            
-| code         | Code returned by the authorization server in response to authorization request 
+| code         | Code returned by the authorization server in response to authorization request
 | refreshToken | Refresh token returned by the authorization server after token request         
 | id_token     | A JWT token issued by the authorization server that contains claims about the authenticated user; can be used for logout from the authorization server
 | idp_hint     | Value of the `idp_hint` parameter passed by the UI application, to select which IdP should be preselected during the authentication flow                   

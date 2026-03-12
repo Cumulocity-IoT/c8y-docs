@@ -435,22 +435,41 @@ If you suspect or confirm that a device certificate has been compromised, follow
 
 Enrollment processes may be compromised when insecure practices are used, for example:
 - Using a device ID-derived one-time password (OTP)
-- Using the same OTP across all enrollment requests
+- Using the same OTP across multiple enrollment requests
 
-If such a situation occurs, proceed with the following steps:
+If such a situation occurs, follow these steps to mitigate the risk:
 
 1. **Disable auto-registration on the tenant’s CA certificate**
-    - This stops any new automatic registrations immediately.
-    - Notice that existing registered devices will remain connected and operational.
+    - This immediately stops any new automatic registrations.
+    - Existing registered devices will remain connected and operational.
+
 2. **Communicate and remediate unsafe procedures**
     - Inform all stakeholders about the issue.
     - If necessary, disable users who were following unsafe enrollment practices.
-    - Provide guidance on secure manual procedures.
-3. **Re-enable auto-registration**
-    - Once safe practices have been confirmed and enforced, enable auto-registration again.
-    - This allows new enrollment requests to be processed securely.
+    - Provide guidance on secure manual enrollment procedures.
 
-{{< c8y-admon-info >}} 
+3. **Investigate potential misuse of OTPs**
+    - When attempting to enroll a new device, you may see the following message:
+
+      > *"No newDeviceRequest found for this ID. It may already be registered, check the audit logs for details."*
+
+    - This indicates that the OTP may have already been used. To verify:
+        - **Check the audit logs**  
+           Look for an audit record with:
+            - **Activity:** `Tenant certificate authority (CA) signed certificate for device`
+            - **Type:** `TenantCertificateAuthority`
+            - **Text:** containing *`Certificate serial number hex: '%s'`*
+        - **Verify the signer**  
+           Confirm whether the certificate was signed by an authorized device.
+            - If it **was not** signed by an authorized user, it may indicate fraudulent or unintended device registration.
+        - **Revoke unauthorized certificates**  
+           Use the [certificate revocation list](/device-certificate-authentication/managing-trusted-certificate-settings/#crl-settings) to revoke any certificates that were not properly authorized. This prevents unauthorized devices from being accepted as trusted.
+
+4. **Re-enable auto-registration**
+    - Once secure procedures have been confirmed and enforced, re-enable auto-registration.
+    - This ensures new enrollment requests are processed safely.
+
+{{< c8y-admon-info >}}
 Consider rotating enrollment credentials periodically and monitoring logs for unusual enrollment activity.
 {{< /c8y-admon-info >}}
 

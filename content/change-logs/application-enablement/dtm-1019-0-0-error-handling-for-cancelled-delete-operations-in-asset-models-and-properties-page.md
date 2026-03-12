@@ -1,6 +1,8 @@
 ---
-date: 2023-12-14
-title: Error handling for cancelled delete operations in Asset models and Asset properties page
+date: '2023-12-14'
+title: >-
+  Error handling for cancelled delete operations in Asset models and Asset
+  properties page
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,5 +15,12 @@ build_artifact:
     label: dtm
 ticket: CTM-694
 version: 1019.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
  Users can now cancel the delete operation on the **Asset models** and **Asset properties** page without encountering any error message.

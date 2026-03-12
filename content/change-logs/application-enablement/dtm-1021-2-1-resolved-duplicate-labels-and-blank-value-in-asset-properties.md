@@ -15,6 +15,13 @@ build_artifact:
     label: dtm
 ticket: CTM-1899
 version: 1021.2.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Two issues related to complex properties have been fixed:
 - Complex properties containing file-type fields now retain their values during updates instead of being cleared.

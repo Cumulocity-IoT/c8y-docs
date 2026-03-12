@@ -1,5 +1,5 @@
 ---
-date: 2023-12-14
+date: '2023-12-14'
 title: Saved filters for columns on Localization page
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: dtm
 ticket: CTM-936
 version: 1019.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Filters that apply for columns in the **Localization** page are now saved automatically.

@@ -76,10 +76,6 @@ jobs:
         hugo \
           --baseURL "${{ env.BASEURL }}/"
 
-    - name: Generate llms.txt
-      run: |
-        python scripts/llms_generate.py 
-
     - name: Set known SSH hosts
       run: |
         mkdir -p ~/.ssh/
@@ -111,3 +107,8 @@ jobs:
     - name: Upload PDFs
       run: |
         rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/pdfs/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }}/pdfs --delete-after
+
+    - name: Upload ZIPs
+      run: |
+        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/zips/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }}/zips --delete-after
+        

@@ -25,7 +25,7 @@ An EPL app has the ability to make nearly arbitrary changes to the objects in a 
 
 The **EPL Apps** page of the Streaming Analytics application provides an interface for interactively editing new or existing EPL apps (\*.mon files) as well as importing and activating (deploying) EPL apps.
 
-Any user on the tenant wishing to use the **EPL Apps** page must be a **CEP Manager**. See [Managing permissions](/standard-tenant/managing-permissions/).
+Any user on the tenant wishing to use the **EPL Apps** page must be a **CEP Manager**. See [Managing permissions and roles](/standard-tenant/managing-permissions/).
 
 ##### Step 1 - Invoke the Streaming Analytics application {#step-1---invoke-the-streaming-analytics-application}
 
@@ -263,7 +263,7 @@ The **Cumulocity Notifications 2.0** connectivity bundle has been added for rece
 
 EPL apps are designed to listen for REST (Representational State Transfer) services and supports all GET, POST, PUT and DELETE operations. Example requests for the different operations are listed below.
 
-To perform these operations, you must have READ and ADMIN permissions for "CEP management" (see also [Managing permissions](/standard-tenant/managing-permissions/)).
+To perform these operations, you must have READ and ADMIN permissions for "CEP management" (see also [Managing permissions and roles](/standard-tenant/managing-permissions/)).
 
 #### Request headers for all operations {#request-headers-for-all-operations}
 

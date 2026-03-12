@@ -3,8 +3,10 @@
   <div class="breadcrumbs-container p-t-16"></div>
   <div class="home-top">
     <section class="home-top__content">
-        <h1>{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
-        <p>{{replace (replace (replace .Site.Params.description "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</p>
+        <h1 class="m-b-8">{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
+        {{ $version := .Site.Data.date_settings.version }}
+        <div class="label label-info">{{ if eq $version "Latest" }}Latest version{{ else }}Release {{ $version }}{{ end }}</div>
+        <p class="m-t-8">{{replace (replace (replace .Site.Params.description "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</p>
     </section>
     {{- partial "home-illustration.html" . -}}
   </div>
@@ -14,10 +16,10 @@
   {{ range $sortedsections }}
   {{ $pages := where .Pages "Type" "!=" "page" }}
   {{ $page := index $pages 0 }}
+  <div class="product-card">
     <a href='{{ if eq .Page.Params.type "change-log"}}/change-logs
              {{else if .Page.Params.external}}{{.Page.Params.external}}
              {{else}}{{.Page.Permalink}}{{end}}' 
-      class="product-card"
       {{ if eq .Page.Params.type "new-tab" }} target="_blank" rel="noopener noreferrer"{{ end }}>
       <div class="product-card__header">
         <i class="c8y-icon-duocolor {{.Page.Params.icon}}"></i>
@@ -37,7 +39,20 @@
         {{end}}
       </div>
         {{.Page.Content}}
-    </a>
+      </a>
+      {{- if .Page.Params.pdf -}}
+      {{- $zip := (printf "zips/%s.zip" .Page.Data.Term) | absURL -}}
+      <div class="m-l-32 m-b-24 p-relative">
+        <a class="btn-metadata btn-tooltip" href="{{ $zip }}" aria-label="A ZIP file containing all the PDFs in this section"
+          data-tooltip="A ZIP file containing all 
+the PDFs in this section" 
+        >
+          <i class="dlt-c8y-icon-export-pdf"></i>
+          Download PDFs
+        </a>
+      </div>
+    {{- end -}}
+  </div>
   {{ end }}
 </div>
 </main>

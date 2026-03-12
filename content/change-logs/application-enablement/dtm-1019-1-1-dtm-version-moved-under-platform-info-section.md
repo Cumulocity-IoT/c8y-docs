@@ -1,5 +1,5 @@
 ---
-date: 2023-12-14
+date: '2023-12-14'
 title: DTM version moved under Platform info section
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: dtm
 ticket: CTM-677
 version: 1019.1.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The DTM version is now displayed in the right drawer under the Platform info section.

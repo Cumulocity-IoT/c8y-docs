@@ -67,11 +67,9 @@ To create your individualized dashboard, execute the following steps:
 5. Enable the option **Dashboard template** to share the dashboard with all devices of this type. This option is only available for devices dashboards. See [To share a dashboard](#dashboard-template)
 
 6. In the **Appearance** tab you can select a theme for the dashboard (one of "Match UI", "Light", "Dark" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 12 px).
-7. Enable the option **Translate widget titles if possible**, to have the widget title translated every time the language is changed.
 
-    {{< c8y-admon-info >}}
-The widget titles will be translated only if a valid translation is available.
-    {{< /c8y-admon-info >}}
+7. Under the **Translate if possible** option, you can select to have the dashboard and/or widget titles translated. For this option to work, the titles must be written in English and the corresponding translations must be available in the loaded translation resources, for example in the standard application translations, or in the custom ones provided via the [localization feature](/standard-tenant/changing-settings/#localization) or in the [application options](/web/application-configuration/#languages-customization).
+
 8. All changes are immediately displayed to visualize your selections in the dashboard below the dashboard settings.
 
 9. Click **Save** to create and open the dashboard.
@@ -96,19 +94,11 @@ This means that changes made to this dashboard are automatically applied to all 
 You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from child devices because the structure of these devices might be different from device to device.
 {{< /c8y-admon-info >}}
 
-### Dashboard time range {#global-time-context}
+### Global time context {#global-time-context}
 
-In the widget configuration, you can specify a dashboard time range for your dashboards. When using a dashboard time range, all data in a dashboard will be aligned to this range. After setting the dashboard time range in a first widget, this shared context can then be used by other widgets that are configured to use the dashboard date context.
+Dashboards support a global time context that allows you to control the time range, auto-refresh, and data aggregation for all connected widgets at once. Instead of configuring each widget individually, you can set these options in a central toolbar and all compatible widgets update together.
 
-The dashboard time range can be set to any time span, depending on the monitoring needs, by using a custom date picker. The time range is displayed at the top of the dashboard, so you can immediately see the context for which the data is presented. Additionally, you can share dashboards with a specific time context by including the time context parameters in a URL. URL parameters will be set automatically when users set the dashboard time context with the picker.
-
-{{< c8y-admon-info >}}
-This feature is currently available for the following widgets: Event list, Data points graph, and Map.
-{{< /c8y-admon-info >}}
-
-<img src="/images/users-guide/cockpit/cockpit-dashboard-global-time.png" name="Global time context"/>
-
-Widgets synchronized with the dashboard time range are indicated by a respective icon at the top right of the widget.
+For details, see [Global time context](/cockpit/global-time-context/).
 
 ### To edit a dashboard {#to-edit-a-dashboard}
 
@@ -143,7 +133,7 @@ An alternative way to copy a dashboard is to use the
 ### To export a dashboard to a JSON file and import it {#to-export-a-dashboard-to-json-file-and-import-it}
 
 For more advanced users there is a feature that allows more complex operations on dashboards.
-To access it, click **Manage preview features** in the right drawer and toggle the feature on. Then navigate to the dashboard settings and open the **Import/export** tab.
+To access it, navigate to the dashboard settings and open the **Import/export** tab.
 
 The advanced feature allows to edit dashboards as JSON with the incorporated code editor. Be aware that this requires knowledge of `ContextDashboard` and widgets configuration interfaces. It also allows to export a dashboard to a JSON file (with some additional data that supports particular widgets in the importing process, for example, that helps to suggest a suitable widget device or takes care of images uploaded for the widget) and then to import the dashboard from the JSON file. This is a much more flexible approach than the one described in [To copy a dashboard from one object to another](#to-copy-a-dashboard-from-one-object-to-another) as it allows to share dashboards not only between the same type of assets in scope of the same tenant, but also to share dashboards between different asset types and different tenants. However, if you share dashboards between different types like groups and devices, for example, a review might be required after the import.
 

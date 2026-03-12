@@ -1,22 +1,29 @@
 name: Link Checker
 
 on:
- schedule:
-  - cron: '0 6 * * 1'
- workflow_dispatch: 
-  
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
 permissions:
-    contents: read
-    pull-requests: write
-    issues: write
+  contents: read
+  pull-requests: write
+  issues: write
 
 jobs:
   link-check:
+    name: Run Link Check
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        branch: [develop, release/y2025, release/y2026]
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          ref: ${{ matrix.branch }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -33,16 +40,36 @@ jobs:
           cd broken-links-script
           npm test
 
+      - name: Determine label based on branch
+        if: always()
+        id: label
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          LABEL_NAME="broken-link-${{ matrix.branch }}"
+          if gh api "repos/$GH_REPO/labels/$LABEL_NAME" &>/dev/null; then
+            echo "Label ${LABEL_NAME} already exists"
+          else
+            echo "Creating label ${LABEL_NAME}"
+            gh label create "${LABEL_NAME}" \
+              --description "Indicates broken links in branch ${{ matrix.branch }}"
+          fi
+          echo "label=$LABEL_NAME" >> $GITHUB_OUTPUT
+
       - name: Create GitHub issue if tests fail
         if: failure()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          label="${{ steps.label.outputs.label }}"
+          branch_name="${{ matrix.branch }}"
+          echo "Creating issue for branch: ${branch_name} with label: ${label}"
+
           issue_url=$(gh issue create \
-            --title "Weekly Link Check Failed" \
+            --title "Weekly Link Check Failed for ${branch_name}" \
             --body "Broken links detected in workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
-            --label "broken-link" \
+            --label "${label}" \
             --assignee "BeateRixen")
 
           echo "Result: ${issue_url}"
-          echo "issue_created=${issue_url}" >> $GITHUB_OUTPUT

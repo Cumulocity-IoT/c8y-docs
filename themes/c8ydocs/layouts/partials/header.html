@@ -41,7 +41,15 @@
         title="Cumulocity website"
         href="https://www.cumulocity.com/"
       >
-        <i class="dlt-c8y-icon-communication-internet"></i> <span>Company website</span></a>
+        <i class="dlt-c8y-icon-communication-internet"></i> <span>Cumulocity website</span></a>
+    </div>
+        <div class="dropdown version">
+      <a
+        class="dropdown-toggle version btn-free-trial"
+        title="Try for free"
+        href="https://www.cumulocity.com/start-your-journey/free-trial/"
+      >
+        Try Cumulocity free</a>
     </div>
     <div class="dropdown version">
       <button
@@ -55,28 +63,44 @@
         data-toggle="dropdown"
       >
 
-        <i class="c8y-icon c8y-icon-cumulocity-iot"></i> <span>Releases</span>
+        <i class="c8y-icon c8y-icon-cumulocity-iot"></i> <span>{{ if eq .Site.Data.date_settings.version "Latest" }}Latest version{{ else }}Release {{ .Site.Data.date_settings.version }}{{ end }}</span>
+        <div class="caret"></div>
       </button>
       <ul
         class="dropdown-menu"
         aria-labelledby="releasesLinks"
         role="listbox"
       >
-        {{ if site.Data.date_settings.yearly_release}}
-          <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs">Latest version</a></li>
-          <li>
-            {{ $siteDate := site.Data.date_settings.yearly_release_name }}
-            {{ if eq $siteDate "2025"}}
-            <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs/2024">Release 2024</a></li>
-            {{ else }}
-            <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs/2025">Release 2025</a></li>
-            {{ end }}
-          </li>
-        {{else}}
-          <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs/2025">Release 2025</a></li>
-          <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs/2024">Release 2024</a></li>
-        {{end}}
-        <li class="text-normal"><a class="dd-link" href="//cumulocity.com/docs/about_documentation/documentation-repository/">Previous versions</a></li>
+        {{ $currentVersion := .Site.Data.date_settings.version }}
+        <li class="text-normal">
+          <a class='icon-flex {{ if eq $currentVersion "Latest" }}p-l-4 {{else}} p-l-24 {{end}}' href="//cumulocity.com/docs">
+            {{ if eq $currentVersion "Latest" }}<i class="dlt-c8y-icon-check text-success"></i>{{ end }}
+            <span>Latest version</span>
+          </a>
+        </li>
+        <!--
+        <li class="text-normal">
+          <a class='icon-flex {{ if eq $currentVersion "2026" }}p-l-4 {{else}} p-l-24 {{end}}' href="//cumulocity.com/docs/2026">
+            {{ if eq $currentVersion "2026" }}<i class="dlt-c8y-icon-check text-success"></i>{{ end }} 
+            <span>Release 2026</span> 
+          </a>
+        </li>
+      -->
+        <li class="text-normal">
+          <a class='icon-flex {{ if eq $currentVersion "2025" }}p-l-4 {{else}} p-l-24 {{end}}' href="//cumulocity.com/docs/2025">
+            {{ if eq $currentVersion "2025" }}<i class="dlt-c8y-icon-check text-success"></i>{{ end }} 
+            <span>Release 2025</span> 
+          </a>
+        </li>
+        <li class="text-normal">
+          <a class='icon-flex {{ if eq $currentVersion "2024" }}p-l-4 {{else}} p-l-24 {{end}}' href="//cumulocity.com/docs/2024">
+            {{ if eq $currentVersion "2024" }}<i class="dlt-c8y-icon-check text-success"></i>{{ end }} 
+            <span>Release 2024</span> 
+          </a>
+        </li>
+        <li class="text-normal"><a class="icon-flex p-l-24" href="//cumulocity.com/docs/about_documentation/documentation-repository/">
+          <span>Previous versions</span>
+        </a></li>
       </ul>
     </div>
     <div class="dropdown version">
@@ -91,6 +115,7 @@
         data-toggle="dropdown"
       >
         <i class="dlt-c8y-icon-box-settings icon-20"></i> <span>Additional resources</span>
+        <div class="caret"></div>
       </button>
       <ul
         class="dropdown-menu dropdown-menu-right"
@@ -155,14 +180,29 @@
           </a>
         </li>
         <li class="dropdown-header separator-bottom p-t-8 p-b-8"><b>Releases</b></li>
+        {{ $currentVersion := .Site.Data.date_settings.version }}
         <li class="text-normal">
-          <a class="dd-link" href="//cumulocity.com/docs/2024"><i class="c8y-icon c8y-icon-cumulocity-iot"></i> Release 2024</a>
+          <a class="dd-link" href="//cumulocity.com/docs">
+            <i class="c8y-icon c8y-icon-cumulocity-iot"></i> Latest version {{ if eq $currentVersion "Latest" }}<i class="dlt-c8y-icon-check text-success"></i>{{ end }}
+          </a>
         </li>
         <li class="text-normal">
-          <a class="dd-link" href="//cumulocity.com/guides/welcome/intro-documentation/"><i class="c8y-icon c8y-icon-cumulocity-iot"></i> Release 10.18.0</a>
+          <a class="dd-link" href="//cumulocity.com/docs/2026">
+            <i class="c8y-icon c8y-icon-cumulocity-iot"></i> Release 2026 {{ if eq $currentVersion "2026" }}<i class="dlt-c8y-icon-check text-success"></i>{{ end }}
+          </a>
         </li>
         <li class="text-normal">
-          <a class="dd-link" href="//cumulocity.com/guides/10.17.0/welcome/intro-documentation/"> <i class="c8y-icon c8y-icon-cumulocity-iot"></i> Release 10.17.0</a>
+          <a class="dd-link" href="//cumulocity.com/docs/2025">
+            <i class="c8y-icon c8y-icon-cumulocity-iot"></i> Release 2025 {{ if eq $currentVersion "2025" }}<i class="dlt-c8y-icon-check text-success"></i>{{ end }}
+          </a>
+        </li>
+        <li class="text-normal">
+          <a class="dd-link" href="//cumulocity.com/docs/2024">
+            <i class="c8y-icon c8y-icon-cumulocity-iot"></i> Release 2024 {{ if eq $currentVersion "2024" }}<i class="dlt-c8y-icon-check text-success"></i>{{ end }}
+          </a>
+        </li>
+        <li class="text-normal">
+          <a class="dd-link" href="//cumulocity.com/docs/about_documentation/documentation-repository/"><i class="c8y-icon c8y-icon-cumulocity-iot"></i> Previous versions</a>
         </li>
         <li class="dropdown-header separator-bottom p-t-8 p-b-8"><b>Additional resources</b></li>
         {{ range $index, $resource := .Site.Params.additionalResources }}

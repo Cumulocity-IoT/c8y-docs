@@ -319,7 +319,7 @@ You can customize the settings of Analytics Builder, the so-called “tenant opt
 
 You can find some concrete examples in [Using curl commands for setting various tenant options](/streaming-analytics/analytics-builder/#using-curl-commands-for-setting-various-tenant-options). However, you can use any tool you like.
 
-To change the tenant options, you need ADMIN permission for "Option management". See [Managing permissions](/standard-tenant/managing-permissions/) for more information.
+To change the tenant options, you need ADMIN permission for "Option management". See [Managing permissions and roles](/standard-tenant/managing-permissions/) for more information.
 
 {{< c8y-admon-caution>}}
 After you have changed a tenant option using a REST request, the correlator will automatically restart. An alarm with a MAJOR severity will be created in this case; you can view it on the **Alarms** page of the Cockpit application \(see [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for more information\).
@@ -438,7 +438,7 @@ After you have changed a tenant option using a REST request, the correlator will
 <tbody>
   <tr>
     <td><code>numWorkerThreads</code></td>
-    <td>The number of worker threads. The default value is 1. See also <a href="/streaming-analytics/analytics-builder/#configuring-the-concurrency-level">Configuring the concurrency level</a>. Note that the number of worker threads cannot be changed for the microservice with multi-tenant support.</td>
+    <td>The number of worker threads. The per-tenant microservice defaults to 1 AB worker per core. For example, the apama-ctrl-2c-8g variant will have 2 worker threads. The multi-tenant microservice defaults to 1 worker thread per tenant.See also <a href="/streaming-analytics/analytics-builder/#configuring-the-concurrency-level">Configuring the concurrency level</a>. Note that the number of worker threads cannot be changed for the microservice with multi-tenant support.</td>
   </tr>
   <tr>
     <td><code>retention.virtualDevicesMaxDays</code></td>

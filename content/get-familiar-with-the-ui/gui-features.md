@@ -4,8 +4,6 @@ title: UI functionalities and features
 layout: bundle
 sector:
   - getting_started
-sector:
-  - getting_started
 
 ---
 

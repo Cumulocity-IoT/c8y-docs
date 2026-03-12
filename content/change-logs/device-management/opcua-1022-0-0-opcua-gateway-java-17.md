@@ -1,5 +1,5 @@
 ---
-date:
+date: '2025-11-13'
 title: OPC UA gateway now runs on Java 17
 product_area: Device management & connectivity
 change_type:
@@ -13,6 +13,13 @@ build_artifact:
     label: opcua
 ticket: DM-4962
 version: 1022.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Because Java 11 is outdated and no longer supported, the OPC UA gateway has been modernized and now runs on Java 17. 
 This update enhances security and performance, ensuring the gateway remains reliable and efficient.

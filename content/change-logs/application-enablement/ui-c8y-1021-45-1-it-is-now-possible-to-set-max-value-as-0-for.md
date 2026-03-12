@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62706
 version: 1021.45.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, the "Radial gauge" widget did not allow setting the maximum value to 0, limiting its flexibility in certain scenarios. With this change, users can now set the max value of the radial gauge to 0 if needed. This enhancement expands the range of values the radial gauge can display, enabling users to represent a wider variety of data points and create visualizations where a maximum value of 0 is required.

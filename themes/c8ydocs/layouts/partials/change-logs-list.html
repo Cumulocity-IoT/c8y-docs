@@ -67,16 +67,23 @@
       {{ $dateLimit := site.Data.date_settings.date }}
 
       {{ range where $reusablePages "Date" "ge" $dateLimit}}
+
+      {{/*  ====================  */}}
+      {{/*  DEPRECATED 
+       * now displaying all change types is handled by  the yearly release 
+       and / or by the "internal=true" url parameter
+      */}}
+        
       {{/*  Based on the yearly release boolean, retrives 
           * yearly_release: true -  show all entries
           * yearly_release: false - don't show "Fix" entries
          */}}
       {{$classes := slice}}
-      {{ if site.Data.date_settings.yearly_release}}
       {{ $currentDate.Set "out" ""}}
+      {{/*  {{ if site.Data.date_settings.yearly_release}}
       {{else}}
       {{ $currentDate.Set "out" "Fix"}}
-      {{end}}
+      {{end}}  */}}
 
       {{ if ne (index .Params.change_type 0).label ($currentDate.Get "out")}}
 
@@ -109,10 +116,25 @@
         {{end}}
       {{end}}
 
-      {{ if not site.Data.date_settings.yearly_release}}
+      {{ if or (not site.Data.date_settings.yearly_release) site.Data.date_settings.yearly_release_preview }}
+        {{- /* 1) Detect if there is any OTHER change-type-* class */ -}}
+        {{- $hasOtherChangeType := false -}}
+        {{- range $classes }}
+          {{- if and (hasPrefix . "change-type-") (ne . "change-type-fix") -}}
+            {{- $hasOtherChangeType = true -}}
+          {{- end -}}
+        {{- end -}}
+
         <div
-          id="cl-{{$listDate | urlize }}"
-          class="page-section change-log__date {{range $classes}}{{.}} {{end}}"
+          id="cl-{{ $listDate | urlize }}"
+          class='page-section change-log__date 
+          {{ range $classes }}
+            {{- if and (eq . "change-type-fix") (not $hasOtherChangeType) -}}
+              change-type-fix hidden {{ else }} {{ . }} {{ end }}
+          {{- end -}}'
+          {{- if and (in $classes "change-type-fix") (not $hasOtherChangeType) -}}
+            data-internal
+          {{- end -}}
         >
           <h5>{{$listDate}}</h5>
         </div>
@@ -134,8 +156,9 @@
 
       <section
         id='{{(replace .Name ".md" "") | urlize }}'
-        class="page-section change-type-{{(index .Params.change_type 0).label | urlize}} component-{{ (index .Params.component 0).label | urlize }}  productarea-{{.Params.product_area | urlize}} technicalcomponent-{{(index .Params.build_artifact 0).label | urlize}}"
+        class="page-section change-type-{{(index .Params.change_type 0).label | urlize}} component-{{ (index .Params.component 0).label | urlize }}  productarea-{{.Params.product_area | urlize}} technicalcomponent-{{(index .Params.build_artifact 0).label | urlize}} {{if and (not site.Data.date_settings.yearly_release) (eq ((index .Params.change_type 0).label | urlize) "fix") }} hidden {{end}}"
         data-date="{{.Date}}"
+        {{if and (not site.Data.date_settings.yearly_release) (eq ((index .Params.change_type 0).label | urlize) "fix") }} data-internal {{end}}
       >
         <div class="article-content change-log">
           <div class="change-log__header">
@@ -162,40 +185,40 @@
                 <small class="text-muted">Component</small>
                 <p>{{(index .Params.component 0).label}}</p>
               </button>
-              {{/*  Display the build artifact and version only in yearly releases  or setting the `internal` url parameter to `true` */}}
-                <button class="btn-metadata {{ if not site.Data.date_settings.yearly_release}} hidden {{end}}" data-internal data-tag="technicalcomponent-{{(index .Params.build_artifact 0).label | urlize}}">
+            </div>
+          </div>
+          {{- .Content | replaceRE `<script[\s\S]*?</script>` "" | replaceRE `\s+on\w+\s*=\s*"[^"]*"` "" | replaceRE `\s+on\w+\s*=\s*'[^']*'` "" | safeHTML -}}
+          <div class="change-log__details">
+            <button class="collapse-btn btn-clean collapsed d-flex a-i-center" data-toggle="collapse" data-target="#collapse-{{(replace .Title "var-product-c8y-iot" .Site.Params.product_c8y_iot) | urlize }}">
+              Technical details
+              <i class="dlt-c8y-icon-chevron-down "></i>
+            </button>
+            <div id="collapse-{{(replace .Title "var-product-c8y-iot" .Site.Params.product_c8y_iot) | urlize }}" class="collapse">
+              <div class="metadata p-16">
+                <button class="btn-metadata " data-tag="technicalcomponent-{{(index .Params.build_artifact 0).label | urlize}}">
                   <small class="text-muted">Build artifact {{ if .Params.version}}/ version{{end}}</small>
                   <p>{{(index .Params.build_artifact 0).label}}
                   {{ if .Params.version}} - {{ .Params.version}}{{end}}
                   </p>
                 </button>
-              {{ if .Params.ticket }}
-                <div class="p-t-4 {{ if not site.Data.date_settings.yearly_release}} hidden {{end}}" data-internal>
-                  <small class="text-muted">Ticket</small>
-                  <p><strong>{{.Params.ticket}}</strong></p>
+                {{ if .Params.ticket }}
+                <!-- {{ if not site.Data.date_settings.yearly_release}} hidden {{end}} -->
+                  <div class="p-t-4 ">
+                    <small class="text-muted">Ticket</small>
+                    <p><strong>{{.Params.ticket}}</strong></p>
+                  </div>
+                {{end}}
+              </div>
+              {{ if .Params.environment_availability}}
+                <div class="metadata p-l-16 p-r-16 p-b-16">
+                  <div class="p-t-4" style="flex-basis:auto;">
+                    <small class="text-muted">Environment availability</small>
+                    <p>{{ range $i, $env:= .Params.environment_availability }}{{ if $i }}, {{end}}{{- $env.label -}}{{end}}</p>
+                  </div>
                 </div>
               {{end}}
             </div>
           </div>
-          <!-- 
-          <div class="change-log__version">
-            {{ if site.Data.date_settings.yearly_release}}
-                {{ if .Params.version}}
-                  <div class="d-flex gap-4">
-                    <small class="text-muted">Version</small>
-                    <strong class="small">{{.Params.version}}</strong>
-                  </div>
-                {{end}}
-              {{end}}
-              {{ if .Params.ticket }}
-                <div class="d-flex gap-4">
-                  <small class="text-muted">Ticket</small>
-                  <strong class="small">{{.Params.ticket}}</strong>
-                </div>
-              {{end}}
-          </div>
-           -->
-          {{.Content }}
         </div>
       </section>
       {{ end }}

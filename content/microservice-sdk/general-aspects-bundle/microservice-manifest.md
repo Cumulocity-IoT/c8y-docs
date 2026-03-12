@@ -160,13 +160,13 @@ See below for detailed information about available settings.
 <tr>
 <td style="text-align:left">requiredRoles</td>
 <td style="text-align:left">String[ ]</td>
-<td style="text-align:left">List of permissions required by a microservice to work.<br/>Default: [ ] (no permissions)</td>
+<td style="text-align:left">List of permissions required by a microservice to work. <b>Important:</b> Be aware that despite the use of term "role" in the field name, the field expects a "permission" string (for example, ROLE_INVENTORY_ADMIN). <br/>Default: [ ] (no permissions)</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">roles</td>
 <td style="text-align:left">String[ ]</td>
-<td style="text-align:left">Roles provided by the microservice. <br>Default: [ ] (empty list)</td>
+<td style="text-align:left">Roles provided by the microservice. <b>Important:</b> Be aware that despite the use of the term "role" in the field name, the field expects a "permission" string (for example, ROLE_INVENTORY_ADMIN). <br>Default: [ ] (empty list)</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
@@ -198,13 +198,13 @@ Some manifest settings are used exclusively by internal components, and are not 
 
 The version has an impact on the microservice upload behavior:
 
-* If the version specified in the manifest is a snapshot version, for example, "1.1.0-SNAPSHOT", the microservices image will be pushed to the registry on each upload. 
+* If the version specified in the manifest is a snapshot version, for example, "1.1.0-SNAPSHOT", the microservices image will be pushed to the registry on each upload.
 
 * If the version specified in the manifest is NOT a snapshot version, for example, "2.0.0", and no microservice image with this version exists in the registry, the upload will be successful.
 
-* If the version specified in the manifest is NOT a snapshot version, for example, "2.0.0", and a microservice image with this version exists in the registry, additional validation is performed. The upload will be rejected if the provided image differs from the one currently in the registry. You cannot upload a different image using an existing version. 
+* If the version specified in the manifest is NOT a snapshot version, for example, "2.0.0", and a microservice image with this version exists in the registry, additional validation is performed. The upload will be rejected if the provided image differs from the one currently in the registry. You cannot upload a different image using an existing version.
 
-* If the version specified in the manifest is NOT a snapshot version, for example, "2.0.0", and a microservice image with this version exists in the registry, the upload will succeed if and only if the provided microservice image is the same as the one currently in the registry. 
+* If the version specified in the manifest is NOT a snapshot version, for example, "2.0.0", and a microservice image with this version exists in the registry, the upload will succeed if and only if the provided microservice image is the same as the one currently in the registry.
 
 The "-SNAPSHOT" postfix means that the image build is a snapshot of your application at a given time and it is still under development.
 When the microservice is ready for a production release, the "-SNAPSHOT" postfix must be removed, and the microservice must be uploaded with a unique (higher) version number (for example, "2.1.0").
@@ -272,7 +272,6 @@ This approach ensures that each release maintains version uniqueness, preventing
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|host | String | Host name to connect to | Yes
 |path | String | Path to access on the HTTP server | Yes
 |port | Number | Port to verify <br/>Default: 80 | No
 |scheme | String | Scheme to use for connecting to the host (HTTP or HTTPS)<br/> Default: HTTP | No

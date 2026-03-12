@@ -138,10 +138,10 @@ For the input and output blocks, you can globally replace the input sources and 
     The block parameter editor appears, providing input fields for all parameters that can be specified for that block.
 2.  For the input and output blocks, you can select a different input source or output destination from a dialog box.
 
-    The tree in the dialog box reflects the parent/child hierarchy in the {{< product-c8y-iot >}} inventory. For example, the list of devices includes any defined child devices, and the list of device groups includes any defined sub-groups. These are available from expandable/collapsible nodes.
+    The tree in the dialog box reflects the parent/child hierarchy in the {{< product-c8y-iot >}} inventory. For example, the list of devices includes any defined child devices, and the list of groups includes any defined sub-groups. These are available from expandable/collapsible nodes.
     By default, 10 items are shown within each node, sorted alphabetically. With a large inventory, you will have to click **Load more** to display any items that are not shown initially.
 
-    Using the checkboxes at the top of the dialog, you can filter the entries that are to be shown. By default, all defined devices, device groups, smart groups and assets are displayed in the dialog. If you also want to display any other managed objects in the dialog, select the "Other" checkbox.
+    Using the checkboxes at the top of the dialog, you can filter the entries that are to be shown. By default, all defined devices, groups and assets are displayed in the dialog. If you also want to display any other managed objects in the dialog, select the "Other" checkbox.
 
     The search box can be used to show any managed objects in the {{< product-c8y-iot >}} inventory which match your search and filter criteria. The search is case-sensitive. The characters that you type in may be contained at any position within the name. The tree is updated with each character that you type. With a large search result, you will have to click **Load more** to display any managed objects that are initially not shown.
 

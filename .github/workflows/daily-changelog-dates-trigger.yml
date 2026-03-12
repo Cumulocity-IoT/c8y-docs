@@ -13,8 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     environment: build-pipeline
-    outputs:
-      matrix: ${{ steps.component-details.outputs.matrix }}
     steps:
       - name: checkout docs repository
         uses: actions/checkout@v4
@@ -40,36 +38,115 @@ jobs:
           path: pipeline
 
       - name: Get component details from helm charts
-        id: component-details
         run: |
+          environments=$(cat docs/data/environments.json)
+          helm_charts_data=$(cat pipeline/clusters/helm_charts_data.json)
           buildartifacts=$(cat docs/data/buildartifact.json | jq '.options[].option' | xargs)
-          echo "[]" > output.json
-           for artifact in $buildartifacts ;
-           do
-               cat pipeline/clusters/helm_charts_data.json | jq --arg artifact "$artifact" '[to_entries[] | select(.value.component_name==$artifact)][0].value.zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com-eks"]' > details.json
-               versionOfArtifact=$(cat details.json | jq '.version' | xargs)
-               timestamp=$(cat details.json | jq '.updated_at' | xargs)
-               rm details.json
-               if [[ $versionOfArtifact == 'null' ]]; then
-                   echo "$artifact is currently not deployed"
-               else
-                   echo "$artifact is currently deployed in version: $versionOfArtifact and was deployed at $timestamp"
-                   cat output.json | jq --arg artifact "$artifact" --arg version "$versionOfArtifact" --arg timestamp "$timestamp" '. += [{"component_name": $artifact, "component_version": $version, "component_update_date": $timestamp}]' > output.tmp
-                   mv output.tmp output.json
-               fi
-          done
-          echo "matrix=$(cat output.json | jq -c .)" >> $GITHUB_OUTPUT
+          environmentLabels=$(echo "$environments" | jq '.[] | .label' | xargs)
+          overallOutput=$(echo "[]")
+          for artifact in $buildartifacts ;
+          do
+              artifactOutput=$(echo "{\"environmentDetails\":[]}" | jq --arg artifact "$artifact" '.component_name=$artifact')
 
-  trigger-update-changelog:
-    uses: ./.github/workflows/update-changelog-dates.yml
-    needs: [ get-component-details ]
-    strategy:
-      matrix:
-        include: ${{ fromJson(needs.get-component-details.outputs.matrix) }}
-    with:
-      version: ${{ matrix.component_version }}
-      component: ${{ matrix.component_name }}
-      date: ${{ matrix.component_update_date }}
-    secrets: inherit
+              for environmentLabel in $environmentLabels ;
+              do
+                  environment=$(echo "$environments" | jq --arg label "$environmentLabel" '.[] | select(.label==$label)')
+                  zone=$(echo "$environment" | jq '.zone' | xargs)
+                  cluster=$(echo "$environment" | jq '.cluster' | xargs)
+                  details=$(echo "$helm_charts_data" | jq --arg artifact "$artifact" --arg zone "$zone" --arg cluster "$cluster" '([to_entries[] | select(.value.component_name==$artifact and .value.status=="ACTIVE" and .value.zones[$zone].clusters[$cluster].version != null and .value.zones[$zone].clusters[$cluster].version != "")] | sort_by(.value.zones[$zone].clusters[$cluster].version | split(".") | map(tonumber)) | reverse)[0].value.zones[$zone].clusters[$cluster]')
+                  versionOfArtifact=$(echo "$details" | jq '.version' | xargs)
+                  timestamp=$(echo "$details" | jq '.updated_at' | xargs)
+                  if [[ $versionOfArtifact == 'null' ]]; then
+                      echo "$artifact is currently not deployed on environment: $environmentLabel"
+                  else
+                      echo "$artifact is currently deployed in version: $versionOfArtifact and was deployed at $timestamp to environment: $environmentLabel"
+                      artifactOutput=$(echo "$artifactOutput" | jq --arg artifact "$artifact" --arg version "$versionOfArtifact" --arg timestamp "$timestamp" --arg environmentLabel "$environmentLabel" '.environmentDetails += [{"component_name": $artifact, "component_version": $version, "component_update_date": $timestamp, "environmentLabel": $environmentLabel}]')
+                  fi
+
+                  if [[ $environmentLabel == "eu-latest.cumulocity.com" ]]; then
+                      artifactOutput=$(echo "$artifactOutput" | jq --arg version "$versionOfArtifact" --arg timestamp "$timestamp" '.component_version=$version | .component_update_date=$timestamp')
+                  fi
+              done
+
+              overallOutput=$(echo "$overallOutput" | jq --argjson artifactOutput "$artifactOutput" '. += [$artifactOutput]')
+              
+          done
+
+          echo "$overallOutput" > output.json
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: component-details
+          path: output.json
+
+  updateDates:
+    name: Update changelog dates
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: get-component-details
+    steps:
+    - name: Set git user
+      run: |
+        git config --global user.name "c8y-docs-automations[bot]"
+        git config --global user.email "c8y-docs-automations[bot]@users.noreply.github.com"
+
+    - name: Creating github access token
+      id: token
+      uses: actions/create-github-app-token@v1
+      with:
+        app-id: ${{ vars.C8Y_DOCS_AUTOMATIONS_APP_ID }}
+        private-key: ${{ secrets.C8Y_DOCS_AUTOMATIONS_APP_PRIVATE_KEY }}
+        owner: ${{ github.repository_owner }}
+
+    - name: Checking out
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ steps.token.outputs.token }}
+        ref: 'develop'
+
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: Download artifact
+      uses: actions/download-artifact@v7
+      with:
+        name: component-details
+
+    - name: Update changelog files
+      run: |
+        cd add-release-dates
+        npm ci
+        npm start "../output.json"
+
+    - name: Git add
+      id: git-add
+      run: |
+        git add content/change-logs
+        echo "stagedFiles=$(git diff --cached --numstat | wc -l)" >> $GITHUB_OUTPUT
+
+    - name:
+      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
+      run: |
+        echo "::notice :: Updated ${{ steps.git-add.outputs.stagedFiles }} changelog entries."
+
+    - name:
+      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) == 0 }}
+      run: |
+        echo "::warning :: No new changelog entries or deployments found. Nothing to commit."
+
+    - name: Git commit
+      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
+      run: |
+        git commit -m "chore: Update changelog entries with latest deployment dates"
+
+    - name: Git push
+      if: ${{ fromJSON(steps.git-add.outputs.stagedFiles) > 0 }}
+      id: git-push
+      run: |
+        git push
 
 

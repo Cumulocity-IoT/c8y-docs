@@ -1,6 +1,6 @@
 ---
-date:
-title: OPC UA gateway local database upgrade 
+date: '2025-11-13'
+title: OPC UA gateway local database upgrade
 product_area: Device management & connectivity
 change_type:
   - value: change-inv-3bw8e
@@ -13,6 +13,13 @@ build_artifact:
     label: opcua
 ticket: DM-4961
 version: 1022.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Together with the update to Java 17, the internal database of the OPC UA gateway has been changed from MapDB and ChronicleMap to RocksDB. 
 This change enhances the performance and reliability of the gateway, ensuring compatibility with Java 17.

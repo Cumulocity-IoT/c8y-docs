@@ -87,7 +87,7 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 | Quota                                                                                        | Type | Value |
 | -------------------------------------------------------------------------------------------- | ---- | ----: |
 | [File size for LWM2M bulk registration](/device-integration/lwm2m/#bulk-device-registration) | Hard | 10 MB |
-| [Concurrent pending LWM2M operations](/device-integration/lwm2m/#device-operations-handling) | Hard |    10 |
+| [Concurrent pending LWM2M operations per device](/device-integration/lwm2m/#device-operations-handling) | Hard |    10 |
 | Maximum number of Loriot devices that can be registered per deployment                       | Soft | 40000 |
 | Maximum number of Loriot devices that can be registered per tenant                           | Soft | 20000 |
 
@@ -95,6 +95,8 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 | Quota                                                                                            | Type |   Value |
 | ------------------------------------------------------------------------------------------------ | ---- | ------: |
+| Number of tenants                                                                                | Soft |     250 |
+| Number of Dremio users per tenant                                                                | Soft |      40 |
 | Number of active offloaders per tenant                                                           | Soft |     100 |
 | Number of offloadings per tenant per hour                                                        | Soft |      20 |
 | [Offloading frequency](/datahub/working-with-datahub/#configure-additional-settings)             | Hard |  hourly |

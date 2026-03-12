@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-64140
 version: 1022.8.3
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the data point graph, the y-axis labels could overlap with the axis lines in some cases, making them difficult to read. Additionally, when the **Force merge all datapoints to a single axis** option was enabled, the unit was not displayed. This change fixes both issues. Y-axis labels no longer overlap with the axis lines, and the unit is now displayed properly when all data points are merged to a single axis, improving the readability and clarity of the data point graph.

@@ -16,6 +16,19 @@ Before using the smart rules (NEW) plugin, ensure that the following requirement
 - The smart rules plugin is installed in the desired application, and the **Smart rules (NEW) plugin** is enabled in **Preview feature**.
 - The user has the required privileges to access Analytics Builder models and create new instances of Analytics builder templated models. Refer to [Permissions](/streaming-analytics/introduction-analytics/#permissions).
 
+#### Managing permissions to smart rules (NEW) instances {#managing-permissions-to-smart-rules-instances}
+
+The **Smart rule instances** permission under [global roles](/standard-tenant/managing-permissions/#to-add-a-global-role) allows you to manage permissions required to access smart rules (NEW) instances. 
+
+|Permission|Description|
+|---------|-----------|
+|**READ**|Grants read-only access to smart rule instances. Users with this permission can view existing instances but cannot create, update, or delete them.|
+|**ADMIN**|Grants permission to create, read, update, and delete (CRUD) smart rule instances.|
+
+These permissions ensure fine-grained access control, allowing administrators to manage user privileges based on operational requirements.
+
+The permissions described above grant read-only access to the underlying Analytics Builder model. Administrative actions on the Analytics Builder models (like create, edit, or delete) require the *CEP management* permissions, see [permissions](/streaming-analytics/introduction-analytics/#permissions).
+
 ### Creating your first smart rule {#creating-your-first-smart-rule}
 
 This topic provides the basic workflow for creating your first smart rules using the plugin from applications like Device Management. You will create a simple templated analytics model that creates an alarm when the temperature breaches a given threshold value. The steps below require that at least one device is already registered in {{< product-c8y-iot >}}. Preferably, this device already sends measurement values to {{< product-c8y-iot >}}.

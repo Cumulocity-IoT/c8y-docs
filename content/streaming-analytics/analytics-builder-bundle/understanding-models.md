@@ -51,7 +51,7 @@ Blocks are the basic processing units of the model. Each block has some predefin
 
 The palette of the model editor offers for selection the following types of blocks:
 
--   **Input blocks**, which receive data from external sources. An input block normally represents a device that has been registered in the {{< product-c8y-iot >}} inventory, a device group, a smart group, an asset, or all input sources. See also [Input blocks](/streaming-analytics/analytics-builder/#input-blocks).
+-   **Input blocks**, which receive data from external sources. An input block normally represents a device that has been registered in the {{< product-c8y-iot >}} inventory, a group, an asset, or all input sources. See also [Input blocks](/streaming-analytics/analytics-builder/#input-blocks).
 -   **Output blocks**, which send data to external sources. An output block normally represents a device that has been registered in the {{< product-c8y-iot >}} inventory. But there are also blocks for sending an email or SMS to specified receivers. See also [Output blocks](/streaming-analytics/analytics-builder/#output-blocks).
 -   **Processing blocks**, which receive data from the input blocks and send the resulting data to the output blocks. See also [Processing blocks](/streaming-analytics/analytics-builder/#processing-blocks).
 
@@ -144,7 +144,7 @@ To upload an extension, the user specified in the `--username` argument must hav
 The Apama-ctrl microservice is restarted after running the above command. The user must have the ADMIN permission for "CEP management" to request a restart.
 
 {{< c8y-admon-info>}}
-When using the multi-tenant Apama-ctrl-mt-4c-16g microservice, only extensions uploaded to the tenant that owns the microservice will be used.
+When using the multi-tenant Apama-ctrl-mt microservice, only extensions uploaded to the tenant that owns the microservice will be used.
 {{< /c8y-admon-info>}}
 
 ### Wires {#wires}

@@ -13,6 +13,13 @@ build_artifact:
     label: cumulocity
 ticket: MTM-60734
 version: 2025.30.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 
 As previously [announced](https://cumulocity.com/docs/change-logs/?change-type=.change-type-api-change#cumulocity-undefined-notifications-tenant-context-operations-wildcard-announcement), applications utilizing the wildcard API selector in Notifications 2.0 tenant context subscriptions will now start receiving operations updates in addition to the updates they were already receiving. This change applies to both existing and new tenant context subscriptions.
