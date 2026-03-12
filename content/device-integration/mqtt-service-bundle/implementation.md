@@ -1,5 +1,5 @@
 ---
-weight: 25
+weight: 30
 title: MQTT protocol features
 layout: redirect
 ---
