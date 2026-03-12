@@ -2,6 +2,7 @@
 title: Welcome developers
 icon: "dlt-c8y-icon-programming"
 type: root
+external: "https://ecosystem.cumulocity.com/developer-portal/"
 layout: redirect
 bundlefolder: welcome-developers
 sector:
