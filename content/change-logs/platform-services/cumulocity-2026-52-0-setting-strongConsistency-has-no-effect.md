@@ -16,6 +16,10 @@ version: 2026.52.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-03-05'
+  - label: apj.cumulocity.com
+    date: '2026-03-11'
+  - label: jp.cumulocity.com
+    date: '2026-03-11'
 ---
 The latest measurement configuration has been simplified by storing the `strongConsistency` option as a string value instead of a JSON-formatted value.
 
