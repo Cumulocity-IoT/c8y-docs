@@ -1,7 +1,7 @@
 ---
 weight: 10
 layout: redirect
-title: Overview
+title: Overview and architecture
 ---
 
 The MQTT Service works together with the Messaging Service to quickly and securely integrate MQTT devices with the {{< product-c8y-iot >}} platform.

@@ -1,7 +1,7 @@
 ---
 weight: 30
 layout: redirect
-title: Connecting microservices and applications
+title: Integrating with microservices and external applications
 ---
 
 {{< product-c8y-iot >}} microservices and external applications can consume messages published by devices connected to the MQTT Service, and publish messages back to those devices.

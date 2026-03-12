@@ -1,6 +1,6 @@
 ---
 weight: 25
-title: MQTT protocol implementation
+title: MQTT protocol features
 layout: redirect
 ---
 
