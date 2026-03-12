@@ -1,6 +1,6 @@
 ---
 date: ""
-Device Management application homepage refresh
+title: Device Management application homepage refresh
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
