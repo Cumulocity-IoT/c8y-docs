@@ -14,5 +14,4 @@ build_artifact:
 ticket: DM-5340
 version: 5.0.0
 ---
-- Disabled unused and potentially dangerous Spring Boot Actuator endpoints e.g. `/heapdump`.
-- `/lns-connection/**` endpoints require LoRa service-specific permissions i.e. ROLE_LORIOT_READ, ROLE_LORIOT_ADMIN.
+- `/lns-connection/**` endpoints require LoRa service-specific permissions i.e. ROLE_LORIOT_READ, ROLE_LORIOT_ADMIN. These endpoints are used when Loriot connections are configured and managed.
