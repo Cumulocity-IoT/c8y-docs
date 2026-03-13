@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Updated SDK to 2026.14.0 to fix authentication error when using external OAuth tokens [CTM-2773] (#2763)"
+title: "Updated SDK to 2026.14.0 to fix authentication error when using external OAuth tokens"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -14,5 +14,6 @@ build_artifact:
 ticket: "CTM-2773"
 version: "1024.3.1"
 ---
-Previously, the REST API returned the error `Invalid Credentials!` when
-accessed with an external OAuth token. This has been fixed now.
+When using external OAuth tokens for authentication, the Digital Twin Manager REST API incorrectly rejected valid credentials and returned an "Invalid Credentials!" error. This prevented users from accessing the API when authenticating through external OAuth providers, disrupting integrations and automated workflows that rely on external authentication mechanisms.
+
+The SDK has been updated to version 2026.14.0, which correctly validates external OAuth tokens. The REST API now properly authenticates requests using external OAuth tokens and grants access as expected. Users can seamlessly integrate Digital Twin Manager with external authentication providers without encountering false credential validation errors.
