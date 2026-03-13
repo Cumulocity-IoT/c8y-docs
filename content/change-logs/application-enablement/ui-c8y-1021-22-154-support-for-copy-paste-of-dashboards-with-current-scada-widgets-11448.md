@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Support for copy/paste of dashboards with current SCADA widgets (#11448) [GRAFT][release/y2025] (#11528)
+title: Support copy and paste of dashboards with SCADA widgets
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,21 +14,4 @@ build_artifact:
 ticket: MTM-65804
 version: 1021.22.154
 ---
-# Backport
-
-This will backport the following commits from `develop` to
-`release/y2025`:
-- [fix(Cockpit): [MTM-65804] Support for copy/paste of dashboards with
-current SCADA widgets
-(#11448)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11448)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65804]:
-https://cumulocity.atlassian.net/browse/MTM-65804?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
+Previously, when you copied and pasted a dashboard that contained SCADA widgets, these widgets kept displaying data from the original device. Now, you can copy and paste dashboards that include SCADA widgets, and the widgets will display data from the new context device. This improvement allows you to more easily duplicate complex dashboards with SCADA widgets without having to manually reconfigure them.
