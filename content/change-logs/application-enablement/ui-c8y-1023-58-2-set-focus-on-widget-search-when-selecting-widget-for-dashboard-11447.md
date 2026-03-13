@@ -20,5 +20,11 @@ environment_availability:
     date: '2026-03-12'
   - label: jp.cumulocity.com
     date: '2026-03-12'
+  - label: emea.cumulocity.com
+    date: '2026-03-13'
+  - label: us.cumulocity.com
+    date: '2026-03-13'
+  - label: cumulocity.com
+    date: '2026-03-13'
 ---
 When adding a widget to a dashboard, the search field in the widget selection dialog now automatically receives focus, allowing you to immediately start typing to search for widgets without manually clicking the search input field first. This improves the user experience by reducing the number of interactions required to find and add widgets to your dashboard, making the widget selection process more intuitive and efficient.

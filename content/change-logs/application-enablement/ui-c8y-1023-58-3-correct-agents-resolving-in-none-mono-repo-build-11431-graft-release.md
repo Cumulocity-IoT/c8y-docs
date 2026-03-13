@@ -20,5 +20,11 @@ environment_availability:
     date: '2026-03-12'
   - label: jp.cumulocity.com
     date: '2026-03-12'
+  - label: emea.cumulocity.com
+    date: '2026-03-13'
+  - label: us.cumulocity.com
+    date: '2026-03-13'
+  - label: cumulocity.com
+    date: '2026-03-13'
 ---
 Previously, when the AI Agent Manager was configured and a provider API key was set, the agents were still not resolved correctly, which could cause runtime issues when using the AI Code assistant. This has been fixed so that agents are now properly resolved.
