@@ -80,8 +80,10 @@ In the interest of transparency and to ensure a mutual understanding of the serv
 
 {{< company-c8y >}} is committed to providing reliable service. The specific service availability targets are as follows:
 
-* **Production environments:** 99.90% availability
-* **Non-production environments:** 95.00% availability
+| Deployment type | Production environments | Non-production environments |
+| --------------- | ----------------------- | --------------------------- |
+| Shared cloud    | 99.00%                  | 95.00%                      |
+| Dedicated cloud | 99.90%                  | 95.00%                      |
 
 Service availability for {{< product-c8y-iot >}} is calculated as follows:
 
@@ -128,17 +130,24 @@ Emergency maintenance may be announced on short notice or without prior warning.
 
 If the service is available for less than the availability outlined above during any full calendar month during the cloud services term, Customer will be eligible for a service credit for the particular service in accordance with the formula below (a “Service Credit”).
 
-For services with 99.90% availability target:
+For services with 99.90% availability target (dedicated cloud):
 
-| Monthly availability | Percentage of the pro-rata monthly service fee for the covered service |
+| Monthly availability | Credit (% of monthly fee) |
 | -------------------- | ---------------------------------------------------------------------- |
 | 99.50% to < 99.90%   | 10%                                                                    |
-| 99.50% to < 99.00%   | 15%                                                                    |
+| 99.00% to < 99.50%   | 15%                                                                    |
 | < 99.00%             | 25%                                                                    |
 
-For services with 95.00% availability target:
+For services with 99.00% availability target (shared cloud):
 
-| Monthly availability | Percentage of the pro-rata monthly service Fee for the covered service |
+| Monthly availability | Credit (% of monthly fee) |
+| -------------------- | ---------------------------------------------------------------------- |
+| 98.00% to < 99.00%   | 10%                                                                    |
+| < 98.00%             | 25%                                                                    |
+
+For services with 95.00% availability target (non-production):
+
+| Monthly availability | Credit (% of monthly fee) |
 | -------------------- | ---------------------------------------------------------------------- |
 | < 95.00%             | 10%                                                                    |
 
@@ -179,7 +188,7 @@ service availability requirements are set forth in this service credit commitmen
 #### **Support**
 
 * **Customer support:** Support is provided in accordance with Customer’s selected support plan, as detailed in the [support agreement](/service-terms/service-level/#support-sla).
-* **Non-production environments:** For non-production environments, Starter-level support is generally provided, with support tickets handled at standard priority.
+* **Non-production environments:** For non-production environments, Bronze support is generally provided, with support tickets handled at standard priority.
 
 #### **Maintenance**
 
