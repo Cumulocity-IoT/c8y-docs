@@ -96,7 +96,7 @@ In order to be able to send downlink operations, the devices registered via upli
 
 {{< c8y-admon-info >}}
 In order to send an uplink request, the user configured in the Loriot Network Server must have ADMIN permission for the "Loriot" permission type in {{< product-c8y-iot >}}.
-For details, see [Assigning the Loriot admin role permission](#assigning-the-loriot-admin-role-permission).
+For details, see [Assigning ADMIN permission for the Loriot](#assigning-the-loriot-admin-role-permission).
 {{< /c8y-admon-info >}}
 
 
@@ -186,7 +186,7 @@ In order to migrate the device from one LNS connection to another, the device mu
 3. A prompt will appear stating that in order to migrate the device from one LNS connection to another, you must re-register the device. Click the **Re-Register** button.
 4. You are directed to the device registration page where you can perform the re-registration following the steps above and selecting the desired LNS connection.
 
-### Assigning the Loriot admin role permission {#assigning-the-loriot-admin-role-permission}
+### Assigning ADMIN permission for the Loriot {#assigning-the-loriot-admin-role-permission}
 
 In the {{< product-c8y-iot >}} platform, assign the Loriot admin role permission to the user configured in the Loriot Network Server.
 
