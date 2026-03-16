@@ -76,8 +76,8 @@ Messages published by the MQTT Service to devices will never have the retain fla
 
 A _wildcard subscription_ allows a device to subscribe to multiple MQTT topics using a _pattern_ instead of a fixed topic name. The MQTT Service supports wildcard subscriptions in compliance with MQTT version 3.1.1 and 5.0 standards.
 
-* **Single-level (+):** Matches exactly one topic level. For example, `sensors/+/temperature` matches `sensors/room1/temperature` but not `sensors/room1/basement/temperature`.
-* **Multi-level (#):** Matches any number of nested levels. It must be the last character in the topic string. For example, `sensors/#` matches `sensors/room1/temperature` and `sensors/room2/basement/humidity`.
+* **Single-level (+)**: Matches exactly one topic level. For example, `sensors/+/temperature` matches `sensors/room1/temperature` but not `sensors/room1/basement/temperature`.
+* **Multi-level (#)**: Matches any number of nested levels. It must be the last character in the topic string. For example, `sensors/#` matches `sensors/room1/temperature` and `sensors/room2/basement/humidity`.
 
 **Device isolation**
 Device isolation remains active when using wildcards. A wildcard subscription does not grant access to topics that the client is not already authorized to see.
