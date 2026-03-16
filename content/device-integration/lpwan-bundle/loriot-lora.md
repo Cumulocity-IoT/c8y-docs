@@ -59,7 +59,7 @@ The Loriot Network Server forwards two types of messages to the Loriot agent: "r
 The Loriot LoRa agent only processes "gw" messages to avoid duplicate measurements or events in {{< product-c8y-iot >}}, because most of the information matches with "gw" message whereas "gw" message also carries all gateway information.
 
 {{< c8y-admon-info >}}
-You must enable the "gw" message option on Loriot Network Server while connecting to the Loriot LoRa agent, see [Device registration via {{< product-c8y-iot >}}](#device-registration-via-the-platform).
+You must enable the "gw" message option on the Loriot Network Server while connecting to the Loriot LoRa agent, see [Device registration via {{< product-c8y-iot >}}](#device-registration-via-the-platform).
 {{< /c8y-admon-info >}}
 
 In the Loriot LoRa device message below, `gws` represents a list of gateways involved in the network:
@@ -95,7 +95,7 @@ The Loriot LoRa agent maps the `rssi` value to the standard {{< product-c8y-iot 
 In order to be able to send downlink operations, the devices registered via uplink message must be re-registered using {{< product-c8y-iot >}} (see [Device registration via {{< product-c8y-iot >}}](#device-registration-via-the-platform)), to be associated with a connection and a device type.
 
 {{< c8y-admon-info >}}
-In order to send an uplink request, the user configured in the Loriot Network Server must have the Loriot admin role permission in {{< product-c8y-iot >}}.
+In order to send an uplink request, the user configured in the Loriot Network Server must have ADMIN permission for the "Loriot" permission type in {{< product-c8y-iot >}}.
 For details, see [Assigning the Loriot admin role permission](#assigning-the-loriot-admin-role-permission).
 {{< /c8y-admon-info >}}
 
@@ -152,7 +152,7 @@ To create, update, or delete LNS connections, you must have the Loriot admin per
 To register a Loriot device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Single device registration** > **Loriot LoRa** from the dropdown.
 
 {{< c8y-admon-req >}}
-To register a device, you need the write or admin permission for "Inventory", or the admin permission for "Loriot".
+To register a device, you need WRITE or ADMIN permission for the "Inventory" permission type, or ADMIN permission for the "Loriot" permission type.
 {{< /c8y-admon-req >}}
 
 ![Register devices](/images/device-protocols/lora-loriot/loriot-selection.png)
