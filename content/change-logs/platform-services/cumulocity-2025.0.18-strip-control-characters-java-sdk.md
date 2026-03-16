@@ -1,6 +1,6 @@
 ---
 date: ''
-title: Add configuration option to strip control characters during JSON deserialization in Java SDK
+title: Added configuration option to strip control characters during JSON deserialization in Java SDK
 product_area: Platform services
 change_type:
   - value: change-2c7RdTdXo4
