@@ -8,7 +8,7 @@ sector:
 
 The **Device parameter** tab allows users to modify granular, atomic state variables on a connected device without transmitting an entire monolithic configuration file. The data structures are expressed as fragments that manage discrete parameters, such as Modbus register numbers, filtering times, or polling intervals.
 
-This functionality is automatically enabled for all devices where their communicated parameters match asset property definitions configured in the Digital Twin Manager application.
+This functionality is automatically enabled for all devices whose communicated parameters match asset property definitions configured in the Digital Twin Manager application.
 
 ### Parameter status {#parameter-status}
 
