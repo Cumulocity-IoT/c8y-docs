@@ -16,5 +16,5 @@ The following types of change are included:
 - **API change** - Breaking changes in the APIs.
 
 {{< c8y-admon-info >}}
-Subscribing to change log information is possible in the corresponding change log representation in the [{{< product-c8y-iot >}} Tech Community](https://community.cumulocity.com/t/about-the-cumulocity-change-log-category/).
+Subscribing to change log information is possible in the corresponding change log representation in the [{{< product-c8y-iot >}} Tech Community](https://community.cumulocity.com/c/cumulocity-change-log/).
 {{< /c8y-admon-info >}}
