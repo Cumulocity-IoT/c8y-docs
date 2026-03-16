@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5340
 version: 5.0.0
 ---
-- `/lns-connection/**` endpoints require LoRa service-specific permissions i.e. ROLE_LORIOT_READ, ROLE_LORIOT_ADMIN. These endpoints are used when Loriot connections are configured and managed.
+The required user permissions to read, create, or update "Loriot Connections" under Administration > Connectivity have been updated. In order to read Loriot connections, users must have at least the Loriot 'READ' permission, and to create/update/delete connections, users require the 'ADMIN' permission. In the Device Management application, this affects the LPWAN configuration tab in the Loriot device details, as the 'Current connection' field requires the 'READ' permission. You can assign the necessary permissions to users in Administration > Accounts > Users/Roles.
