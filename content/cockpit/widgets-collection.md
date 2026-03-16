@@ -448,6 +448,10 @@ The "Map" widget shows the location of a device or all devices of a group.
 
 ![Map widget](/images/users-guide/cockpit/cockpit-widget-map.png)
 
+{{< c8y-admon-important >}}
+Map tiles are loaded from community driven tile servers which is bound to their [policies](https://operations.osmfoundation.org/policies/tiles/). If a wider map usage is assumed, a custom tile-layer [needs to be configured](https://cumulocity.com/codex/components/data-display-and-visualization/map/overview#changing-the-map-configuration-different-layers-or-map-centers).
+{{< /c8y-admon-important >}}
+
 You can drag the map and move its content, and you can zoom in and out by using the **Plus** and **Minus** buttons.
 
 The icons representing the devices are color-coded. The color used follows these rules:
