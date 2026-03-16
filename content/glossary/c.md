@@ -146,7 +146,7 @@ Amongst other things, it is used by the [data broker](#data-broker), [Notificati
 ### {{< product-c8y-iot >}} MQTT Service {#mqtt-service}
 
 The {{< product-c8y-iot >}} MQTT Service is a unified endpoint for all MQTT protocol traffic flowing in and out of the {{< product-c8y-iot >}} platform.
-It supports MQTT devices that implement the {{< product-c8y-iot >}} "core MQTT" protcols ([SmartREST](#smartrest) and JSON-over-MQTT), and "generic" devices that implement non-{{< product-c8y-iot >}} protocols.
+It supports MQTT devices that implement the {{< product-c8y-iot >}} "core MQTT" protocols ([SmartREST](#smartrest) and JSON-over-MQTT), and "generic" devices that implement non-{{< product-c8y-iot >}} protocols.
 
 See also [MQTT Service](/device-integration/mqtt-service/) in the documentation.
 

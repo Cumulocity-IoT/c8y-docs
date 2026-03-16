@@ -206,7 +206,7 @@ These do not affect device connections directly, but "back pressure" from the Me
 
 #### Alarms {#mqtt-alarms}
 
-The MQTT Service will raise {{< product-c8y-iot >}} alarms in response to some error conditions on device connections.
+The MQTT Service raises {{< product-c8y-iot >}} alarms in response to some error conditions on device connections.
 This gives better visibility of problems to tenant users and applications, which is especially useful when obtaining good diagnostic data from a device is difficult.
 Alarms are _rate limited_, to avoid overloading the {{< product-c8y-iot >}} platform with too many alarms.
 This means that if, for example, many devices publish messages larger than the allowed maximum size in a short period of time, an alarm will not be raised for every instance of the problem.
