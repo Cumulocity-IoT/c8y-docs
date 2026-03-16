@@ -63,7 +63,6 @@ In the view mode, this widget only displays the properties which are not empty.
 
 ### Asset table {#asset-table}
 
-
 The "Asset table" widget shows details of a selected asset and all its child devices in a table. This is a very powerful widget, allowing you to arrange selected properties of objects in a table.
 
 {{< c8y-admon-preview >}}
