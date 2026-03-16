@@ -77,14 +77,14 @@ When the device receives the ```c8y_ParameterUpdate``` operation, it is expected
 
 {{< product-c8y-iot >}} provides the 532 static response template to receive parameter update operations. This template is designed to accommodate a variable number of parameters using a repeating 3-set sequence of name (representing the fragment path), type, and value:
 
-1. Receive the ```c8y_ParameterUpdate``` operation via the 532 static response template <br>
+1. Receive the 
    `532,DeviceSerial,c8y_RelayStatus.left,b,false,c8y_RelayStatus.right,b,true`
-2. Set the operation status to EXECUTING <br>
+2. Set the operation status to EXECUTING. <br>
    `501,c8y_ParameterUpdate`
 3. Apply the specific parameter configurations to the physical hardware or internal software layer.
 4. Report the new status. Use the 408 template to report the new status to the cloud. <br>
    `408,,,true,c8y_RelayStatus.left,BOOLEAN,false,c8y_RelayStatus.right,BOOLEAN,true`
-5. Set the operation status to SUCCESSFUL <br>
+5. Set the operation status to SUCCESSFUL. <br>
    `503,c8y_ParameterUpdate`
 
 
