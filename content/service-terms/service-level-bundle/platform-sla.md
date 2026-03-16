@@ -82,8 +82,8 @@ In the interest of transparency and to ensure a mutual understanding of the serv
 
 | Deployment type | Production environments | Non-production environments |
 | --------------- | ----------------------- | --------------------------- |
-| Shared cloud    | 99.00%                  | 95.00%                      |
-| Dedicated cloud | 99.90%                  | 95.00%                      |
+| Shared Cloud    | 99.00%                  | 95.00%                      |
+| Dedicated Cloud | 99.90%                  | 95.00%                      |
 
 Service availability for {{< product-c8y-iot >}} is calculated as follows:
 
@@ -130,7 +130,7 @@ Emergency maintenance may be announced on short notice or without prior warning.
 
 If the service is available for less than the availability outlined above during any full calendar month during the cloud services term, Customer will be eligible for a service credit for the particular service in accordance with the formula below (a “Service Credit”).
 
-For services with 99.90% availability target (dedicated cloud):
+For services with 99.90% availability target (Dedicated Cloud):
 
 | Monthly availability | Credit (% of monthly fee) |
 | -------------------- | ---------------------------------------------------------------------- |
@@ -138,7 +138,7 @@ For services with 99.90% availability target (dedicated cloud):
 | 99.00% to < 99.50%   | 15%                                                                    |
 | < 99.00%             | 25%                                                                    |
 
-For services with 99.00% availability target (shared cloud):
+For services with 99.00% availability target (Shared Cloud):
 
 | Monthly availability | Credit (% of monthly fee) |
 | -------------------- | ---------------------------------------------------------------------- |
