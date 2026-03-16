@@ -20,11 +20,11 @@ Basically every IoT device carries some kind of dynamic state. Typical examples 
 
 In addition, most IoT devices are equipped with some sort of configuration options that control the behavior of the device. Examples here include the control of reporting intervals or domain-specific technical configuration options like Modbus registers.
 
-The **device parameters** feature of {{< product-c8y-iot >}} allow one to conveniently monitor, to inspect and to modify such settings, independent of a particular device implementation.
+The **Device Parameters** feature of {{< product-c8y-iot >}} allow one to conveniently monitor, to inspect and to modify such settings, independent of a particular device implementation.
 
-### Viewing and modififying device parameters
+### Viewing and modififying Device Parameters
 
-The **Parameters** tab in the device details shows the list of device parameters for a given device. 
+The **Parameters** tab in the device details shows the list of Device Parameters for a given device. 
 
 ![Parameter Tab - List of parameters](/images/users-guide/DeviceManagement/devmgmt-parameters-list.png)
 
@@ -34,7 +34,7 @@ Each entry in this view can be expanded into a detailed view. In this screen, yo
 
 If a parameter can be changed from the {{< product-c8y-iot >}} UI, the correspondig *Edit* button allows the user to set a new parameter value. This will result in a corresponding operation towards the device.
 
-## Modeling device parameters
+## Modeling Device Parameters
 
 In order to manipulate a device state via the Parameters tab the parameter needs to be modeled first as an asset propert in the [Digital Twin Manager (DTM)](/dtm/) application. This happens in the **Property Libary** of DTM.
 
