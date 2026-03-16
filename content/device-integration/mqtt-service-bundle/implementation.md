@@ -79,12 +79,11 @@ A _wildcard subscription_ allows a device to subscribe to multiple MQTT topics u
 * **Single-level (+)**: Matches exactly one topic level. For example, `sensors/+/temperature` matches `sensors/room1/temperature` but not `sensors/room1/basement/temperature`.
 * **Multi-level (#)**: Matches any number of nested levels. It must be the last character in the topic string. For example, `sensors/#` matches `sensors/room1/temperature` and `sensors/room2/basement/humidity`.
 
-**Device isolation**
+##### Device isolation
 Device isolation remains active when using wildcards. A wildcard subscription does not grant access to topics that the client is not already authorized to see.
 
-**Overlapping subscriptions**
-If a client has multiple overlapping subscriptions that match the same topic (for example, a subscription to `sensors/+/status` and another to `sensors/thermostat/status`), the MQTT Service delivers the message *only once*.  
-In cases where the overlapping subscriptions have different Quality of Service settings, the service delivers the message using the highest QoS level defined among the matching subscriptions.
+##### Overlapping subscriptions
+If a client has multiple overlapping subscriptions that match the same topic (for example, a subscription to `sensors/+/status` and another to `sensors/thermostat/status`), the MQTT Service delivers the message *only once*. In cases where the overlapping subscriptions have different QoS settings, the service delivers the message using the highest QoS level defined among the matching subscriptions.
 
 {{< c8y-admon-caution >}}
 **Core MQTT topics and wildcards**
