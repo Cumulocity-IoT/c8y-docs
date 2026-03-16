@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Select child devices at any level in the device hierarchy in the asset selector
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Improved dashboard JSON import suggestions handling
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Data explorer navigation item is no longer visible when disabled
 product_area: Application enablement & solutions
 change_type:

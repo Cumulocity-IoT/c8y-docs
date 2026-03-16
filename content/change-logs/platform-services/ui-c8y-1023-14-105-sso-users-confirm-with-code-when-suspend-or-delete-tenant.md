@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: SSO tenant management improved when suspending or deleting a tenant
 product_area: Platform services
 change_type:

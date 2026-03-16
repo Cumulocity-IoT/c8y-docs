@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Support for copying and pasting dashboards with SCADA widgets
 product_area: Application enablement & solutions
 change_type:

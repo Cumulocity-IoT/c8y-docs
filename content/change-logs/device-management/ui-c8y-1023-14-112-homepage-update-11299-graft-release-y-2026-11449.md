@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Device Management application homepage refresh
 product_area: Device management & connectivity
 change_type:

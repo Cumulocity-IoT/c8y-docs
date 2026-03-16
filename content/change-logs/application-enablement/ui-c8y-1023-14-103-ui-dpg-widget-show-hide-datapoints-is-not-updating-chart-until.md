@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Data graph now updates immediately when toggling data point or alarm/event visibility
 product_area: Application enablement & solutions
 change_type:

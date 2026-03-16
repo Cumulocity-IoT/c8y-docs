@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Limited the number of pre-set data points in the Measurements tab
 product_area: Device management & connectivity
 change_type:

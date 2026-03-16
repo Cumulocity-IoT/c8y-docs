@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Stacked drawers now close only the top drawer when pressing escape
 product_area: Application enablement & solutions
 change_type:

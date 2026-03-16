@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Set focus on widget search input when selecting a widget for the dashboard
 product_area: Application enablement & solutions
 change_type:
