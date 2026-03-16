@@ -185,34 +185,18 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         cy.visit(url, {failOnStatusCode: false, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122.0 Safari/537.36' }});
         checkRegularFragment(fragment);
       }
- else {
-
-  cy.log(`Validating HTML page with curl: ${url}`);
-
-  cy.task('curlRequest', url).then(({ status, content }) => {
-
-    expect(status)
-      .to.be.oneOf([200,301,302,429]);
-
-    const parser = new DOMParser();
-
-    const doc = parser.parseFromString(
-      content,
-      'text/html'
-    );
-
-    const body = doc && doc.body
-      ? doc.body.textContent.trim()
-      : '';
-
-    expect(
-      body,
-      `<body> content for ${url} should not be empty`
-    ).to.not.be.empty;
-
-  });
-
-}
+      else {
+        cy.log(`Validating HTML page with curl: ${url}`);
+        cy.task('curlRequest', url).then(({ status, content }) => { expect(status) .to.be.oneOf([200,301,302,429]);
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(
+            content,
+            'text/html'
+          );
+          const body = doc && doc.body ? doc.body.textContent.trim() : '';
+          expect( body, `<body> content for ${url} should not be empty`).to.not.be.empty;
+        });
+      }
       
       completedTests++;
     });
