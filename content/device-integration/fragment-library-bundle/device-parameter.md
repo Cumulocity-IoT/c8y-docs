@@ -48,7 +48,7 @@ POST /event/events
 
 When a user or microservice initiates a remote parameter modification, the platform creates an operation containing the ```c8y_ParameterUpdate``` fragment marker. This operation directs the device agent to apply specific key-value modifications to its local memory.
 
-To enable this functionality, devices must include the 
+To enable updating parameters remotely, devices must include the ```c8y_ParameterUpdate``` in their ```c8y_SupportedOperations```. Additionally each respective parameter must be modeled as asset property definitions in the Digital Twin Manager application with the context "Operation".
 ```json
 {
    "deviceId": "12345",
@@ -77,7 +77,7 @@ When the device receives the ```c8y_ParameterUpdate``` operation, it is expected
 
 {{< product-c8y-iot >}} provides the 532 static response template to receive parameter update operations. This template is designed to accommodate a variable number of parameters using a repeating 3-set sequence of name (representing the fragment path), type, and value:
 
-1. Receive the 
+1. Receive the ```c8y_ParameterUpdate``` operation via the 532 static response template <br>
    `532,DeviceSerial,c8y_RelayStatus.left,b,false,c8y_RelayStatus.right,b,true`
 2. Set the operation status to EXECUTING <br>
    `501,c8y_ParameterUpdate`
@@ -87,6 +87,5 @@ When the device receives the ```c8y_ParameterUpdate``` operation, it is expected
 5. Set the operation status to SUCCESSFUL <br>
    `503,c8y_ParameterUpdate`
 
-The following example shows a payload received by the device:
 
 
