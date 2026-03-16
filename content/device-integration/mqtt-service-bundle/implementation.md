@@ -1,12 +1,12 @@
 ---
-weight: 25
-title: MQTT protocol implementation
+weight: 30
+title: MQTT protocol features
 layout: redirect
 ---
 
 This section presents details of the MQTT protocol versions and features supported by the MQTT Service.
 As with [Connecting MQTT devices](#connecting-devices) it will be of interest to anyone integrating MQTT devices with {{< product-c8y-iot >}}.
-See the [Core MQTT device support](#core-mqtt-support) section for specific information about using {{< product-c8y-iot >}} MQTT protocols (SmartREST and JSON-over-MQTT) with the MQTT Service.
+See the [Core MQTT device support](#core-mqtt-support) section for specific information about using {{< product-c8y-iot >}} MQTT protocols (SmartREST and JSON-over-MQTT) with the MQTT Service, but note that Core MQTT support shares the same general features and restrictions documented in this section.
 
 ### MQTT protocol versions {#mqtt-protocol-versions}
 
@@ -184,23 +184,14 @@ The connection may still be dropped after sending the response packet.
 
 The available reason codes are listed in [section 2.4 of the MQTT version 5.0 specification](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901031).
 
-#### Alarms {#mqtt-alarms}
-
-The MQTT Service will also raise {{< product-c8y-iot >}} alarms in response to some error conditions on device connections.
-This gives better visibility of problems to tenant users and applications, which is especially useful when obtaining good diagnostic data from a device is difficult.
-Alarms are _rate limited_, to avoid overloading the {{< product-c8y-iot >}} platform with too many alarms.
-This means that if, for example, many devices publish messages larger than the allowed maximum size in a short period of time, an alarm will not be raised for every instance of the problem.
-However, tenant users will still be aware that devices are publishing too-large messages, and can take steps to correct this.
-
-The table below describes the alarms that will be raised for problems related to device connections:
-
-<font color="red" size="24">**TBC: need details of the from-device alarms**</font>
-
-### MQTT device quotas and limits
+### MQTT device quotas and limits {#mqtt-device-quotas-limits}
 
 The MQTT Service enforces several different quotas and limits on MQTT devices.
 See the [Service Quotas](/service-terms/quotas#mqtt-service) section for details of the current values.
 As with other error conditions, a device exceeding a quota or limit will be handled according to the MQTT specification.
+
+Unless specified otherwise, limits are enforced at the tenant level.
+For example, this means that the incoming message rate limit applies to the total rate across all devices connected for a tenant.
 
 For devices using MQTT version 3.1.1, the protocol provides no way to indicate that a limit has been reached, so the connection will simply be dropped.
 The only exception is the `SUBACK` packet, which can indicate that a subscription failed, although without giving any more detailed reason.
@@ -212,6 +203,27 @@ For all protocol versions, an alarm will also be raised, subject to the rate lim
 
 See also the discussion of [Messaging Service quotas and limits](#messaging-service-quotas-limits) imposed by the MQTT Service.
 These do not affect device connections directly, but "back pressure" from the Messaging Service can lead to device errors, for example if the Messaging Service is unable to accept more messages from a device.
+
+#### Alarms {#mqtt-alarms}
+
+The MQTT Service raises {{< product-c8y-iot >}} alarms in response to some error conditions on device connections.
+This gives better visibility of problems to tenant users and applications, which is especially useful when obtaining good diagnostic data from a device is difficult.
+Alarms are _rate limited_, to avoid overloading the {{< product-c8y-iot >}} platform with too many alarms.
+This means that if, for example, many devices publish messages larger than the allowed maximum size in a short period of time, an alarm will not be raised for every instance of the problem.
+However, tenant users will still be aware that devices are publishing too-large messages, and can take steps to correct this.
+
+The table below describes the alarms that will be raised for problems related to device connections:
+
+| Alarm type                                          | Description                                                                                |
+|-----------------------------------------------------|--------------------------------------------------------------------------------------------|
+| `c8y_MqttService_MaximumPacketSize_Connect`         | A device sent a `CONNECT` packet larger than the allowed maximum size.                     |
+| `c8y_MqttService_MaximumPacketSize_Publish`         | A device sent a `PUBLISH` packet larger than the allowed maximum size.                     |
+| `c8y_MqttService_MaximumPacketSize_Subscribe`       | A device sent a `SUBSCRIBE` packet larger than the allowed maximum size.                   |
+| `c8y_MqttService_MaximumPacketSize_Unsubscribe`     | A device sent an `UNSUBSCRIBE` packet larger than the allowed maximum size.                |
+| `c8y_MqttService_TenantConnectionsLimitExceeded`    | The number of connected devices has exceeded the allowed maximum.                          |
+| `c8y_MqttService_TenantConnectionRateLimitExceeded` | The number of device connection attempts per second has exceeded the allowed maximum.      |
+| `c8y_MqttService_IncomingPublishRateLimitExceeded`  | The number of incoming (from device) messages per second has exceeded the allowed maximum. |
+| `c8y_MqttService_OutgoingPublishRateLimitExceeded`  | The number of outgoing (to device) messages per second has exceeded the allowed maximum.   |
 
 ### Core MQTT device support {#core-mqtt-support}
 
@@ -229,6 +241,13 @@ Some of these differences happen because the MQTT Service is _decoupled_ from th
 This means firstly that messages received, and potentially acknowledged, by the MQTT Service have not necessarily been processed by the Core MQTT implementation yet.
 Secondly, the Core MQTT implementation does not have full visiblity of the connection lifecycle and topic subscriptions made by devices connected to the MQTT Service.
 We expect to resolve many of these differences before the Core MQTT support in the MQTT Service reaches Generally Available status.
+
+Using Core MQTT protocols through the MQTT Service shares the same features and restrictions documented elsewhere in this section, which may differ from accessing Core MQTT directly through the {{< product-c8y-iot >}} core.
+In particular:
+* WebSocket connections are not supported
+* QoS level 2 is not supported
+* MQTT version 5.0 clients are supported
+* Messages with the RETAIN flag set will be rejected, rather than the flag being ignored
 
 #### Core MQTT topics {#core-mqtt-topics}
 
