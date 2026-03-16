@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-03-11'
   - label: jp.cumulocity.com
     date: '2026-03-11'
+  - label: emea.cumulocity.com
+    date: '2026-03-16'
+  - label: us.cumulocity.com
+    date: '2026-03-16'
 ---
 
 A new ONNX block has been added to Analytics Builder in Public Preview. This block executes an ONNX model that has been deployed to the files repository.

@@ -22,5 +22,11 @@ environment_availability:
     date: '2026-03-13'
   - label: jp.cumulocity.com
     date: '2026-03-13'
+  - label: emea.cumulocity.com
+    date: '2026-03-16'
+  - label: us.cumulocity.com
+    date: '2026-03-16'
+  - label: cumulocity.com
+    date: '2026-03-16'
 ---
 The asset selector previously only allowed you to select direct child devices of a parent device, which limited your ability to work with hierarchical device structures. Now you can select child devices at any level in the device hierarchy, including grandchild devices and deeper nested levels. This change applies to all asset selector components throughout the application, so you can now build more complex device relationships and access devices at any depth in your device tree.
