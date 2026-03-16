@@ -6,7 +6,7 @@ layout: redirect
 
 This section presents details of the MQTT protocol versions and features supported by the MQTT Service.
 As with [Connecting MQTT devices](#connecting-devices) it will be of interest to anyone integrating MQTT devices with {{< product-c8y-iot >}}.
-See the [Core MQTT device support](#core-mqtt-support) section for specific information about using {{< product-c8y-iot >}} MQTT protocols (SmartREST and JSON-over-MQTT) with the MQTT Service.
+See the [Core MQTT device support](#core-mqtt-support) section for specific information about using {{< product-c8y-iot >}} MQTT protocols (SmartREST and JSON-over-MQTT) with the MQTT Service, but note that Core MQTT support shares the same general features and restrictions documented in this section.
 
 ### MQTT protocol versions {#mqtt-protocol-versions}
 
@@ -241,6 +241,13 @@ Some of these differences happen because the MQTT Service is _decoupled_ from th
 This means firstly that messages received, and potentially acknowledged, by the MQTT Service have not necessarily been processed by the Core MQTT implementation yet.
 Secondly, the Core MQTT implementation does not have full visiblity of the connection lifecycle and topic subscriptions made by devices connected to the MQTT Service.
 We expect to resolve many of these differences before the Core MQTT support in the MQTT Service reaches Generally Available status.
+
+Using Core MQTT protocols through the MQTT Service shares the same features and restrictions documented elsewhere in this section, which may differ from accessing Core MQTT directly through the {{< product-c8y-iot >}} core.
+In particular:
+* WebSocket connections are not supported
+* QoS level 2 is not supported
+* MQTT version 5.0 clients are supported
+* Messages with the RETAIN flag set will be rejected, rather than the flag being ignored
 
 #### Core MQTT topics {#core-mqtt-topics}
 
