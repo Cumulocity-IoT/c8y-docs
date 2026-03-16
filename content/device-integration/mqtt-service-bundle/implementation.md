@@ -87,7 +87,9 @@ If a client has multiple overlapping subscriptions that match the same topic (fo
 
 {{< c8y-admon-caution >}}
 **Core MQTT topics and wildcards**
-While the MQTT Service may technically accept wildcard subscriptions to [Core MQTT topics](#core-mqtt-topics), this is **officially unsupported**. Using wildcards with Core MQTT topics (such as SmartREST or JSON-over-MQTT) can lead to unpredictable behavior. We strongly recommend using fixed topic strings for all implementations requiring [Core MQTT device support](#core-mqtt-support).
+While the MQTT Service will accept wildcard subscriptions to [Core MQTT topics](#core-mqtt-topics), this is **not supported**.
+Using wildcards with Core MQTT topics can lead to unpredictable behavior.
+We strongly recommend using fixed topic strings for all subscriptions to Core MQTT topics.
 {{< /c8y-admon-caution >}}
 
 ### MQTT version 5.0 features {#mqtt-50-features}
