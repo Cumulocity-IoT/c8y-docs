@@ -18,5 +18,7 @@ version: 2025.0.18
 A new configuration option has been introduced in the Java SDK that allows stripping control characters from JSON strings when deserializing responses from the API.
 This option can be enabled by adding the property `c8y.svenson.stripControlCharacters=true` to the configuration file.
 The default value is false to maintain backward compatibility.
+Enabling this option can help in situations where API responses contain unexpected control characters that cause the internal Svenson JSON library to throw an exception during JSON deserialization.
+This internal exception results in an empty API response being returned.
 
 
