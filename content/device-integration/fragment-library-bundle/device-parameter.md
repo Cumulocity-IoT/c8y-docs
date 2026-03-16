@@ -8,7 +8,7 @@ sector:
 
 The **Device parameter** tab allows users to modify granular, atomic state variables on a connected device without transmitting an entire monolithic configuration file. The data structures are expressed as fragments that manage discrete parameters, such as Modbus register numbers, filtering times, or polling intervals.
 
-This functionality is automatically enabled for all devices where their communicated parameters match asset property definitions configured in Digital Twin Manager.
+This functionality is automatically enabled for all devices where their communicated parameters match asset property definitions configured in the Digital Twin Manager application.
 
 ### Parameter status {#parameter-status}
 
@@ -48,7 +48,7 @@ POST /event/events
 
 When a user or microservice initiates a remote parameter modification, the platform creates an operation containing the ```c8y_ParameterUpdate``` fragment marker. This operation directs the device agent to apply specific key-value modifications to its local memory.
 
-To enable this functionality, devices must include the ```c8y_ParameterUpdate``` fragment in their supported operations, and the respective parameter must be modeled as asset property definitions in Digital Twin Manager with the context "Operation".
+To enable this functionality, devices must include the 
 ```json
 {
    "deviceId": "12345",
@@ -77,14 +77,14 @@ When the device receives the ```c8y_ParameterUpdate``` operation, it is expected
 
 {{< product-c8y-iot >}} provides the 532 static response template to receive parameter update operations. This template is designed to accommodate a variable number of parameters using a repeating 3-set sequence of name (representing the fragment path), type, and value:
 
-1. Receive ```c8y_ParameterUpdate``` (image) operation <br>
+1. Receive the 
    `532,DeviceSerial,c8y_RelayStatus.left,b,false,c8y_RelayStatus.right,b,true`
-2. Set operation status to EXECUTING <br>
+2. Set the operation status to EXECUTING <br>
    `501,c8y_ParameterUpdate`
 3. Apply the specific parameter configurations to the physical hardware or internal software layer.
-4. Report the new status - Use the 408 template to report the new status to the cloud. <br>
+4. Report the new status. Use the 408 template to report the new status to the cloud. <br>
    `408,,,true,c8y_RelayStatus.left,BOOLEAN,false,c8y_RelayStatus.right,BOOLEAN,true`
-5. Set operation status to SUCCESSFUL <br>
+5. Set the operation status to SUCCESSFUL <br>
    `503,c8y_ParameterUpdate`
 
 The following example shows a payload received by the device:
