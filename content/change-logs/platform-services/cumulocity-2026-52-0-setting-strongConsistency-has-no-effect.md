@@ -24,6 +24,8 @@ environment_availability:
     date: '2026-03-16'
   - label: us.cumulocity.com
     date: '2026-03-16'
+  - label: cumulocity.com
+    date: '2026-03-17'
 ---
 The latest measurement configuration has been simplified by storing the `strongConsistency` option as a string value instead of a JSON-formatted value.
 
