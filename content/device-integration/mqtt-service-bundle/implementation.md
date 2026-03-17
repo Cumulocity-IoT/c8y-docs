@@ -180,11 +180,10 @@ The MQTT Service does not impose any specific message payload format.
 Message payloads are treated as opaque sequences of bytes that are delivered exactly as they were received.
 The content of a message payload will not have any effect on the behaviour of the MQTT Service.
 
-There is a system-wide hard limit on the maximum size of an MQTT message, and a per-tenant soft quota that will be set lower than the hard limit by default.
-See the [Service Quotas](/service-terms/quotas#mqtt-service) section for details of these limits.
-The soft quota can be increased up to the hard limit on request, although this may incur additional costs for the tenant.
-The message size used by these limits includes the message header as well as the payload.
+There is a per-tenant hard quota on the maximum size of an MQTT message.
+The message size calculation includes the message header as well as the payload.
 Message header size can vary significantly, particularly for MQTT version 5.0 devices, but it will always be at least 2 bytes, and usually more.
+See the [Service Quotas](/service-terms/quotas#mqtt-service) section for details of the current quota values.
 
 ### Error reporting {#mqtt-error-reporting}
 
