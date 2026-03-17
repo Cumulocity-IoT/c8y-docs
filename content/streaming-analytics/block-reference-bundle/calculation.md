@@ -1579,8 +1579,11 @@ The value is rounded to the nearest 'target number' - this is a whole number (if
 `apama.analyticsbuilder.blocks.SmartFunction`
 
 <p>The Smart Function block allows you to write a custom JS/ECMAScript function to process up to ten inputs and produce up to ten outputs.</p>
-<p><b>This block is currently in public preview and may be subject to change.</b>
-<p></p>
+
+{{< c8y-admon-preview >}}
+This block is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
+{{< /c8y-admon-preview >}}
+
 The Smart Function must export a function <tt>onInput(inputs, context)</tt> that returns a list of outputs.
 <p></p>
 Argument details: <ul> <li><tt>inputs</tt> is a list of ten <tt>Value</tt> objects, with members <tt>value</tt>, <tt>properties</tt> and <tt>timestamp</tt> corresponding to the block inputs.</li>
