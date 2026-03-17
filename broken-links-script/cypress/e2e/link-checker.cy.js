@@ -68,7 +68,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     const shortMessage = error.message.split('\n')[0];
 
     const message = [
-      `${shortMessage}`,
+      shortMessage,
       sourceFiles ? `Source files:\n - ${sourceFiles.join('\n - ')}` : ''
     ].join('\n');
 
