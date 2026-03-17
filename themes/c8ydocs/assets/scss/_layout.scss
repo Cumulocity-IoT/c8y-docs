@@ -200,9 +200,6 @@ body:has(>main > .home-top){
   }
 }
 
-.product-card a {
-  text-decoration: none !important;
-}
 .product-card{
   background-color: var(--c8y-palette-high);
   background-color: rgba(255,255,255,.75);
@@ -229,12 +226,26 @@ body:has(>main > .home-top){
   p{
     font-size: 14px;
   }
-   &:hover, &:focus{
+  a:not([class]){
+    all: unset!important;
+    flex-grow: 1!important;
+    display: block!important;
+    padding: 1.5rem 2rem 0 2rem!important;
+    &::after{
+      display: none!important;
+    }
+    &:hover{
+      cursor: pointer!important;
+   
+    }
+  }
+   &:hover, &:focus-within{
     background-color: var(--c8y-palette-high);
     backdrop-filter: none;
     box-shadow: var(--c8y-elevation-hover);
     text-decoration: none;
     color: currentColor;
+  
     h2{
       color: var(--c8y-brand-primary);
     }
@@ -245,12 +256,7 @@ body:has(>main > .home-top){
   }
 }
 
-.product-card > a {
-  display: block;
-  padding: 1.5rem 2rem 0 2rem;
-  text-decoration: none;
-  color: inherit;
-}
+
 @media (max-width: $screen-xs-max) {
   .hidden-xs {
       display:none !important
