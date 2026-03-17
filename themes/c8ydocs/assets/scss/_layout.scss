@@ -205,13 +205,12 @@ body:has(>main > .home-top){
   background-color: rgba(255,255,255,.75);
   backdrop-filter: blur(4px);
   box-shadow: var(--c8y-elevation-sm);
-  padding: 0;
+  padding: 1rem;
   transition: all .25s ease;
   color: var(--c8y-text-color);
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  border-radius: .25rem;
   &__header{
     display: flex;
     gap: 1rem;
@@ -226,26 +225,12 @@ body:has(>main > .home-top){
   p{
     font-size: 14px;
   }
-  a:not([class]){
-    all: unset!important;
-    flex-grow: 1!important;
-    display: block!important;
-    padding: 1.5rem 2rem 0 2rem!important;
-    &::after{
-      display: none!important;
-    }
-    &:hover{
-      cursor: pointer!important;
-   
-    }
-  }
-   &:hover, &:focus-within{
+   &:hover, &:focus{
     background-color: var(--c8y-palette-high);
     backdrop-filter: none;
     box-shadow: var(--c8y-elevation-hover);
     text-decoration: none;
     color: currentColor;
-  
     h2{
       color: var(--c8y-brand-primary);
     }
