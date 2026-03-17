@@ -186,7 +186,7 @@ In order to migrate the device from one LNS connection to another, the device mu
 3. A prompt will appear stating that in order to migrate the device from one LNS connection to another, you must re-register the device. Click the **Re-Register** button.
 4. You are directed to the device registration page where you can perform the re-registration following the steps above and selecting the desired LNS connection.
 
-### Assigning ADMIN permission for the Loriot {#assigning-the-loriot-admin-role-permission}
+### Assigning ADMIN permission for Loriot {#assigning-the-loriot-admin-role-permission}
 
 In the {{< product-c8y-iot >}} platform, assign the Loriot admin role permission to the user configured in the Loriot Network Server.
 
