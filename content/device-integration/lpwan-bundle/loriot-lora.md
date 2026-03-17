@@ -146,7 +146,7 @@ If there are devices associated with the connection, an error message appears, s
 ![Delete connection](/images/device-protocols/lora-loriot/loriot-admin-settings-delete.png)
 
 {{< c8y-admon-info >}}
-To create, update, or delete LNS connections, you must have the Loriot admin permission assigned to your user. In order to view the lns connections, the loriot read permission is sufficient.
+To create, update, or delete LNS connections, you must have the Loriot ADMIN permission assigned to your user. To view the LNS connections, the Loriot READ permission is sufficient.
 {{< /c8y-admon-info >}}
 
 #### Loriot device registration {#loriot-device-registration}
