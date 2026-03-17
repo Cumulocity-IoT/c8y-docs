@@ -7,13 +7,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "archiver": "^7.0.1",
     "axios": "^1.10.0",
     "cheerio": "^1.1.0",
     "gray-matter": "^4.0.3"
   },
   "devDependencies": {
-    "@types/archiver": "^7.0.0",
     "@types/node": "^24.0.14",
     "@types/xml2js": "^0.4.14",
     "ts-node": "^10.9.2",

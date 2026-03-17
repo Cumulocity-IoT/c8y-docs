@@ -11,7 +11,6 @@ audience:
 sector:
   - edge_server
 weight: 60
-pdf: true
 ---
 
 {{< product-c8y-iot >}} Edge is the onsite solution of {{< product-c8y-iot >}} intended to run as a local software application on industrial PCs or local servers.
