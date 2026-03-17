@@ -85,7 +85,6 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     
     it(`should validate URL: ${item.link}`, () => {
       const url = item.link;
-      Cypress.env('currentUrl', url);
       const fragment = url.includes('#') ? url.split('#').slice(-1)[0] : null;
       const isCodexPage = url.includes('/codex/');
       const isApiPage = url.includes('/api/');
