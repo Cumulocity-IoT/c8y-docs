@@ -41,6 +41,11 @@ Loriot Network Server forwards the LoRa device messages to the external applicat
 
 Use {{< product-c8y-iot >}} data forwarder for configuring the Loriot endpoint using basic authentication.
 
+{{< c8y-admon-info >}}
+In order to send an uplink request, the user configured in the Loriot Network Server must have ADMIN permission for the "Loriot" permission type in {{< product-c8y-iot >}}.
+For details, see [Assigning ADMIN permission for the Loriot](#assigning-the-loriot-admin-role-permission).
+{{< /c8y-admon-info >}}
+
 ![Setting endpoint credentials](/images/device-protocols/lora-loriot/loriot-endpoint-assignment.png)
 
 Always keep the **Gateway Information** option enabled because the Loriot agent only processes "gw" (gateway information) messages.
@@ -94,10 +99,7 @@ The Loriot LoRa agent maps the `rssi` value to the standard {{< product-c8y-iot 
 
 In order to be able to send downlink operations, the devices registered via uplink message must be re-registered using {{< product-c8y-iot >}} (see [Device registration via {{< product-c8y-iot >}}](#device-registration-via-the-platform)), to be associated with a connection and a device type.
 
-{{< c8y-admon-info >}}
-In order to send an uplink request, the user configured in the Loriot Network Server must have ADMIN permission for the "Loriot" permission type in {{< product-c8y-iot >}}.
-For details, see [Assigning ADMIN permission for the Loriot](#assigning-the-loriot-admin-role-permission).
-{{< /c8y-admon-info >}}
+
 
 
 ### Device registration via the {{< product-c8y-iot >}} platform {#device-registration-via-the-platform}
