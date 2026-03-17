@@ -46,6 +46,19 @@
             </span>
           </div>
         {{ end }}
+        {{ if and (ne .Page.Title "Edge") (.Page.Params.pdf) }}
+          {{ $zip := (printf "zips/%s.zip" .Page.Data.Term) | absURL }}
+          <div class="m-l-32 m-b-24 p-relative">
+            <span class="btn-metadata btn-tooltip"
+                  onclick="event.stopPropagation();event.preventDefault();window.open('{{ $zip }}','_blank')"
+                  style="cursor:pointer;"
+                  aria-label="A ZIP file containing all the PDFs in this section"
+                  data-tooltip="A ZIP file containing all PDFs in this section">
+              <i class="dlt-c8y-icon-export-pdf"></i>
+              Download PDFs
+            </span>
+          </div>
+        {{ end }}
     </a>
   {{ end }}
 </div>
