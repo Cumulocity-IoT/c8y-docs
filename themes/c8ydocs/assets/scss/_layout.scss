@@ -200,17 +200,21 @@ body:has(>main > .home-top){
   }
 }
 
+.product-card a {
+  text-decoration: none !important;
+}
 .product-card{
   background-color: var(--c8y-palette-high);
   background-color: rgba(255,255,255,.75);
   backdrop-filter: blur(4px);
   box-shadow: var(--c8y-elevation-sm);
-  padding: 1rem;
+  padding: 0;
   transition: all .25s ease;
   color: var(--c8y-text-color);
   text-decoration: none;
   display: flex;
   flex-direction: column;
+  border-radius: .25rem;
   &__header{
     display: flex;
     gap: 1rem;
@@ -241,7 +245,12 @@ body:has(>main > .home-top){
   }
 }
 
-
+.product-card > a {
+  display: block;
+  padding: 1.5rem 2rem 0 2rem;
+  text-decoration: none;
+  color: inherit;
+}
 @media (max-width: $screen-xs-max) {
   .hidden-xs {
       display:none !important

@@ -35,6 +35,17 @@
         {{end}}
       </div>
         {{.Page.Content}}
+        {{ if and (eq .Page.Title "Edge") (.Page.Params.pdf) }}
+          {{ $pdf := (printf "pdfs/%s.pdf" .Page.Title) | absURL }}
+          <div class="m-l-32 m-b-24 p-relative">
+            <span class="btn-metadata btn-tooltip"
+                  onclick="window.open('{{ $pdf }}','_blank')"
+                  style="cursor:pointer;">
+              <i class="dlt-c8y-icon-export-pdf"></i>
+              Download PDF
+            </span>
+          </div>
+        {{ end }}
     </a>
   {{ end }}
 </div>
