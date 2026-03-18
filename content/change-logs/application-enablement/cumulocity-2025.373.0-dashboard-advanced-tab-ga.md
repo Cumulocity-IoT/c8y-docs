@@ -1,6 +1,6 @@
 ---
 date: '2026-02-19'
-title: Advanced dashboard feature moved to General Availability
+title: Dashboard import/export feature moved to General Availability
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -27,4 +27,9 @@ environment_availability:
   - label: cumulocity.com
     date: '2026-02-17'
 ---
-The advanced dashboard feature, which was previously available as Public Preview (see [announcement](/change-logs/#ui-c8y-1022-0-0-dashboard-cross-application-copy-paste), has now been promoted to General Availability (GA). This feature enables users to easily import and export dashboards, facilitating dashboard sharing and backup across different tenants and environments. With GA status, this functionality is now fully production-ready and supported, allowing users to confidently leverage dashboard import and export capabilities in production environments with full stability guarantees.
+
+The dashboard import/export feature, previously available as Public Preview (see [announcement](/change-logs/#ui-c8y-1022-0-0-dashboard-cross-application-copy-paste)), is now promoted to General Availability (GA).
+
+Dashboards can be exported as JSON files including all metadata such as widget configurations and settings, and imported across tenants and environments.
+
+When importing dashboards between different contexts (for example, devices to assets or across tenants), a configuration review is prompted to adjust settings and ensure compatibility.

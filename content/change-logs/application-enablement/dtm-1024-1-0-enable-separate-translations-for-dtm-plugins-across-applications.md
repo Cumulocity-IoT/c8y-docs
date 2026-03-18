@@ -20,6 +20,12 @@ environment_availability:
     date: '2026-02-25'
   - label: jp.cumulocity.com
     date: '2026-02-25'
+  - label: emea.cumulocity.com
+    date: '2026-03-02'
+  - label: us.cumulocity.com
+    date: '2026-03-02'
+  - label: cumulocity.com
+    date: '2026-03-03'
 ---
 Previously, when Digital Twin Manager (DTM) plugins were integrated with other applications,
 the same translations were shared, with no way to differentiate between

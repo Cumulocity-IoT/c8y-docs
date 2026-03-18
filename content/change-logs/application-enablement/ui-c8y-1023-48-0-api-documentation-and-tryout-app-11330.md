@@ -16,5 +16,15 @@ version: 1023.48.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-25'
+  - label: apj.cumulocity.com
+    date: '2026-02-26'
+  - label: jp.cumulocity.com
+    date: '2026-02-26'
+  - label: emea.cumulocity.com
+    date: '2026-02-27'
+  - label: us.cumulocity.com
+    date: '2026-02-27'
+  - label: cumulocity.com
+    date: '2026-02-27'
 ---
 A new application lets you read the OpenAPI REST specification on your instance. Previously, understanding how API endpoints work required external tools or manual testing against your own environment. Now you can experiment with API calls in real time within the documentation interface, making it easier to learn the API capabilities and validate your integration approaches before implementing them in your applications. This improvement reduces the learning curve for developers working with the {{< product-c8y-iot >}} platform and helps you quickly understand the expected request and response formats for various API operations.

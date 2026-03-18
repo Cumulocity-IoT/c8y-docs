@@ -22,5 +22,9 @@ environment_availability:
     date: '2026-02-23'
   - label: cumulocity.com
     date: '2026-02-24'
+  - label: apj.cumulocity.com
+    date: '2026-03-11'
+  - label: jp.cumulocity.com
+    date: '2026-03-11'
 ---
 A rare scenario in the LWM2M firmware update process has been addressed that could trigger an infinite call loop, resulting in the shutdown of the connection pool. This issue caused the LWM2M agent to lose connectivity with the core system. The underlying problem has been identified and resolved, ensuring stable firmware updates and reliable agent connectivity.
