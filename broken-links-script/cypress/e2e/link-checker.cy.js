@@ -186,7 +186,8 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       }
       else {
         cy.log(`Validating HTML page with curl: ${url}`);
-        cy.task('curlRequest', url).then(({ status, content }) => { expect(status) .to.be.oneOf([200,301,302,429]);
+        cy.task('curlRequest', url).then(({ status, content }) => {
+          expect(status).to.be.oneOf([200,301,302,429]);
           const parser = new DOMParser();
           const doc = parser.parseFromString(
             content,
