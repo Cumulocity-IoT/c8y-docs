@@ -34,8 +34,8 @@ To return to the default behavior, click the reset button in the customized row.
 
 ### To toggle a feature {#to-toggle-a-feature}
 
-1. Identify the row of the feature toggle you would like to change within the list
-2. By clicking the toggle switch in the **Status** column you can change the state of the column
+1. Identify the row of the feature toggle that you want to change in the list.
+2. Click the toggle switch in the **Status** column to change the state of the feature toggle.
 
 ### To manage features of subtenants {#to-manage-features-of-subtenants}
 
