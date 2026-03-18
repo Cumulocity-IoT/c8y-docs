@@ -1,4 +1,5 @@
-.btn-link, .btn-clean {
+.btn-link,
+.btn-clean {
   padding: 0;
   margin: 0;
   background: transparent;
@@ -6,6 +7,7 @@
   box-shadow: none;
   border: 0;
   color: $brand-primary;
+
   &:hover,
   &:focus {
     text-decoration: none;
@@ -13,17 +15,18 @@
   }
 }
 
-.btn-clean{
-  &:hover{
+.btn-clean {
+  &:hover {
     color: $gray-text
   }
-    &:focus{
+
+  &:focus {
     outline: 2px solid $brand-primary;
     border-radius: 2px;
   }
 }
 
-.btn-dot{
+.btn-dot {
   padding: 0;
   margin: 0;
   background: transparent;
@@ -36,16 +39,18 @@
   justify-content: center;
   height: 32px;
   width: 32px;
-  &:hover{
+
+  &:hover {
     outline: 1px solid $brand-primary;
   }
-  &:focus{
+
+  &:focus {
     outline: 2px solid $brand-primary;
     border-radius: 2px;
   }
 }
 
-.btn-copy-code{
+.btn-copy-code {
   background-image: none;
   background-color: transparent;
   box-shadow: none;
@@ -56,19 +61,24 @@
   font-size: 12px;
   padding: .25rem .5rem;
   opacity: .75;
-  i{
+
+  i {
     margin-right: .25rem;
   }
-  &:hover{
+
+  &:hover {
     opacity: 1;
   }
-  &:focus{
+
+  &:focus {
     outline: 2px solid $brand-primary;
     outline-offset: -2px;
   }
+
   &.copied {
     position: relative;
     opacity: 1 !important;
+
     &:before {
       position: absolute;
       bottom: 100%;
@@ -82,6 +92,7 @@
       content: "Copied!";
       font-size: 12px;
     }
+
     &:after {
       position: absolute;
       top: 0;
@@ -110,6 +121,7 @@
   font-size: 10px;
   transition: left 0.3s $ease;
   flex-shrink: 0;
+
   .icon-bar {
     display: block;
     margin: 4px auto;
@@ -121,20 +133,22 @@
   @media (min-width: $grid-breakpoint) {
     display: none;
   }
+
   @media print {
     display: none;
   }
 
-  
+
 }
 
-body:has(.home-top){
-  .to-the-top{
+body:has(.home-top) {
+  .to-the-top {
     display: none;
   }
 }
 
-.to-the-top, .btn-default {
+.to-the-top,
+.btn-default {
   position: fixed;
   right: 3rem;
   bottom: 4rem;
@@ -153,16 +167,19 @@ body:has(.home-top){
   text-align: center;
   transition: all 0.4s ease;
   cursor: pointer;
-  &:hover{
+
+  &:hover {
     border-color: transparent;
     background-color: $brand-primary;
     color: white;
     outline: none;
   }
-  &:focus{
+
+  &:focus {
     outline: 2px solid $brand-primary;
     outline-offset: -2px;
   }
+
   @media print {
     display: none;
   }
@@ -177,6 +194,7 @@ body:has(.home-top){
   &:focus {
     outline: none;
   }
+
   h2 &,
   h3 &,
   h4 &,
@@ -188,6 +206,7 @@ body:has(.home-top){
     font-size: 14px;
     opacity: 0;
   }
+
   h2:hover &,
   h3:hover &,
   h4:hover &,
@@ -195,9 +214,11 @@ body:has(.home-top){
   h1:hover & {
     opacity: 1;
   }
+
   &.copied {
     position: relative;
     opacity: 1 !important;
+
     &:before {
       position: absolute;
       bottom: 100%;
@@ -210,6 +231,7 @@ body:has(.home-top){
       content: "Copied!";
       font-size: 12px;
     }
+
     &:after {
       position: absolute;
       top: 0;
@@ -226,7 +248,7 @@ body:has(.home-top){
 }
 
 
-.btn-metadata{
+.btn-metadata {
   background: var(--c8y-root-component-background-default);
   text-align: left;
   transition: all .25s ease;
@@ -234,43 +256,53 @@ body:has(.home-top){
   border: 1px solid var(--c8y-root-component-separator-color);
   padding: .5rem;
   border-radius: .25rem;
-  p, &{
+
+  p,
+  & {
     font-size: 85%;
     color: var(--c8y-palette-gray-30);
   }
 
-  &:hover{
-    border-color: var(--c8y-brand-primary)!important;
-    p, &{
-      color: var(--c8y-brand-primary)!important;
+  &:hover {
+    border-color: var(--c8y-brand-primary) !important;
+
+    p,
+    & {
+      color: var(--c8y-brand-primary) !important;
     }
   }
-  &:focus{
+
+  &:focus {
     outline: 2px solid $brand-primary;
     outline-offset: -2px;
   }
 }
 
-.btn-tooltip{
-  &:not(.btn-metadata){
+.btn-tooltip {
+  &:not(.btn-metadata) {
     opacity: 1 !important;
     background-image: none;
     background-color: transparent;
     box-shadow: none;
     border: 0;
   }
+
   position: relative;
   overflow: visible;
-  &:focus{
+
+  &:focus {
     outline-color: var(--c8y-brand-primary);
   }
-  &::before, &::after{
+
+  &::before,
+  &::after {
     transition: opacity .15s ease .5s;
     opacity: 0;
     position: absolute;
     content: "";
   }
-  &:hover{
+
+  &:hover {
     &:before {
       bottom: 100%;
       left: 50%;
@@ -287,6 +319,7 @@ body:has(.home-top){
       font-weight: normal;
       opacity: 1;
     }
+
     &:after {
       position: absolute;
       top: 0;
@@ -302,7 +335,8 @@ body:has(.home-top){
       opacity: 1;
     }
   }
-  &.btn-metadata{
+
+  &.btn-metadata {
     font-size: 11px;
     text-transform: uppercase;
     font-weight: 600;
@@ -311,6 +345,7 @@ body:has(.home-top){
     align-items: center;
     line-height: 1;
     gap: 4px;
+
     &:before {
       white-space: pre;
       text-align: center;
@@ -319,9 +354,10 @@ body:has(.home-top){
   }
 }
 
-.btn-group{
+.btn-group {
   display: flex;
-  .btn{
+
+  .btn {
     background-image: none;
     background-color: var(--c8y-root-component-background-default);
     border: 1px solid var(--c8y-root-component-border-color);
@@ -337,26 +373,32 @@ body:has(.home-top){
     height: 32px;
     white-space: nowrap;
     transition: all .15s ease;
-    > i{
+
+    >i {
       font-size: 16px;
     }
-    &:hover{
+
+    &:hover {
       color: $brand-primary;
       box-shadow: inset 0 0 0 1px $brand-primary;
     }
-    &.active{
+
+    &.active {
       pointer-events: none;
       background-color: var(--c8y-palette-gray-70);
       color: var(--c8y-palette-gray-40);
     }
-    + .btn{
+
+    +.btn {
       margin-left: -1px;
     }
-    &:first-child{
+
+    &:first-child {
       border-top-left-radius: 1rem;
       border-bottom-left-radius: 1rem;
     }
-    &:last-child{
+
+    &:last-child {
       border-top-right-radius: 1rem;
       border-bottom-right-radius: 1rem;
     }
