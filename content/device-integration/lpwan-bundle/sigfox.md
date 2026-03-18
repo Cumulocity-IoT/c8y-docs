@@ -97,6 +97,10 @@ If there are devices associated with the connection, an error message will appea
 
 ![Delete connection information](/images/device-protocols/sigfox/sigfox-admin-settings-delete.png)
 
+{{< c8y-admon-info >}}
+To create, update, or delete LNS connections, you must have the Sigfox ADMIN permission assigned to your user. To view the LNS connections, the Sigfox READ permission is sufficient.
+{{< /c8y-admon-info >}}
+
 #### Authentication to the Sigfox platform failed {#authentication-to-the-sigfox-platform-failed}
 
 Authentication to the Sigfox platform failed. Check if the Parent group ID and/or the credentials are correct.
@@ -112,6 +116,10 @@ During the [device registration](#registering-sigfox-devices), you can associate
 The device protocol assigned during Sigfox device registration can be changed from the **LPWAN** tab in the device details page.
 
 ![Sigfox LPWAN Tab](/images/device-protocols/sigfox/sigfox-lpwan-tab.png)
+
+{{< c8y-admon-info >}}
+In order to view the relevant LNS connection in the 'Current connection', the user must have at least Sigfox READ permission.
+{{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
 Device protocol mapping only supports decoding for fixed byte positions based on the message type.
@@ -285,6 +293,9 @@ Click on the **Re-Register** button.
 
 The user is directed to the device registration page where he can perform the re-registration following the steps above and selecting the desired LNS connection.
 
+{{< c8y-admon-info >}}
+For Sigfox device registration, the user must have the Inventory CREATE or ADMIN permission.
+{{< /c8y-admon-info >}}
 
 ##### Updating devices registered with the general device registration {#updating-sigfox-devices}
 
