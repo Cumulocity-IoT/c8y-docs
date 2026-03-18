@@ -36,3 +36,9 @@ In case you want to revert back to the default behavior where the **Status** dep
 
 1. Identify the row of the feature toggle you would like to change within the list
 2. By clicking the toggle switch in the **Status** column you can change the state of the column
+
+### Managing features of subtenants
+
+Users on the `management` tenant can also manage the feature toggles of subtenants on the environment.
+For these users there is an additional **Feature toggles** tab in the detail view of a subtenant.
+This functionality is not available on enterprise tenants.
