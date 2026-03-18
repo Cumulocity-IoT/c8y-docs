@@ -28,4 +28,4 @@ environment_availability:
     date: '2026-02-13'
 ---
 A new view was added to the Administration application listing the state of the currently available feature toggles within the tenant.
-It allows to change the state of a feature toggle and reset them to their default state.
+It allows you to change the state of feature toggles and reset them to their default state.
