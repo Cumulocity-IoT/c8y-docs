@@ -1,6 +1,7 @@
 ---
 title: "Application enablement & solutions"
 icon: "c8y-icon c8y-icon-tools"
+pdf: true
 weight: 40
 svg: '<svg width="1103" height="851" viewBox="0 0 1103 851" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_925_40628)">
