@@ -1,5 +1,5 @@
 ---
-date: ''
+date: '2026-03-12'
 title: Devices are now correctly added to initial device group
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,7 +13,13 @@ build_artifact:
     label: cumulocity
 ticket: MTM-65958
 version: 2026.64.0
-
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-03-12'
+  - label: apj.cumulocity.com
+    date: '2026-03-18'
+  - label: jp.cumulocity.com
+    date: '2026-03-18'
 ---
 An issue has been resolved affecting the initial group assignment during [single device registration](/device-management-application/registering-devices/#single-device-registration) when using the “create device certificates during device registration” option with {{< product-c8y-iot >}} CA certificates.
 

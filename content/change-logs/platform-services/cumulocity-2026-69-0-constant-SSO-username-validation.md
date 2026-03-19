@@ -1,5 +1,5 @@
 ---
-date: ''
+date: '2026-03-12'
 title: Enhanced SSO user name validation
 change_type:
   - value: change-3BQrQ6adS
@@ -13,6 +13,13 @@ build_artifact:
     label: cumulocity
 ticket: MTM-66224
 version: 2026.69.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-03-12'
+  - label: apj.cumulocity.com
+    date: '2026-03-18'
+  - label: jp.cumulocity.com
+    date: '2026-03-18'
 ---
 Validation has been added for the **"User/App ID – Constant value"** field used during SSO authentication when the **"Use constant value"** option is enabled.
 

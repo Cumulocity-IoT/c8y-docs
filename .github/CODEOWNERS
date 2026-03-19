@@ -7,21 +7,41 @@
 * @BeateRixen
 
 /content/change-logs/application-enablement/ @rahulc8y @janhommes @BeateRixen
-/content/change-logs/device-management/ @Oezge-Akin @aaronraab @l2p- @BeateRixen
-/content/change-logs/platform-services/ @martin-c8y @mgrumann @kowa-c8y @scmi-c8y @JanePorter @BeateRixen
 /content/change-logs/application-enablement/dtm* @rahulc8y @lara-c8y @BeateRixen
-/content/change-logs/analytics/apama-in-c8y* @BeateRixen @skom-c8y
+/content/change-logs/device-management/ @Oezge-Akin @aaronraab @l2p- @eliasweingaertner @BeateRixen
+/content/change-logs/platform-services/ @maga1961 @mgrumann @scmi-c8y @JanePorter @BeateRixen
+/content/change-logs/platform-services/ui-c8y* @rahulc8y @janhommes @BeateRixen
+/content/change-logs/analytics/apama-in-c8y* @skom-c8y @ben-c8y @BeateRixen
 /content/change-logs/analytics/datahub* @cheinz-sag @ChrisFurlong @BeateRixen
 /content/change-logs/edge/ @bbyreddy @rthrippleton @BeateRixen
 /content/change-logs/edge-kubernetes/ @bbyreddy @rthrippleton @BeateRixen
+/content/change-logs/console/ @bbyreddy @tydunne @BeateRixen
 
+/content/ai/ @janhommes @BeateRixen
+/content/app-intro/ @janhommes @rahulc8y @BeateRixen
+/content/authentication/ @mgrumann @BeateRixen
+/content/cloud-remote-access/ @aaronraab @l2p- @BeateRixen
+/content/cockpit/ @janhommes @BeateRixen
+/content/data-broker/ @scmi-c8y @BeateRixen
 /content/datahub/ @cheinz-sag @BeateRixen
-/content/device-management-application/ @Oezge-Akin @l2p- @BeateRixen
+/content/device-certificate-authentication/ @mgrumann @BeateRixen
+/content/device-integration/ @Oezge-Akin @l2p- @eliasweingaertner @scmi-c8y
+/content/device-management-application/ @Oezge-Akin @l2p- @eliasweingaertner @BeateRixen
 /content/dtm/ @lara-c8y @BeateRixen
-content/authentication @kowa-c8y @BeateRixen
 /content/edge/ @bbyreddy @rthrippleton @BeateRixen
 /content/edge-kubernetes/ @bbyreddy @rthrippleton @BeateRixen
+<<<<<<< Update-codeowners
+/content/enterprise-tenant/ @jend-c8y @mgrumann @maga1961 @bbyreddy @BeateRixen
+/content/get-familiar-with-the-ui/ @janhommes @BeateRixen
+/content/microservice-sdk/ @jend-c8y @mgrumann @BeateRixen
+/content/service-terms/ @eickler @BeateRixen
+/content/smartrest/ @l2p- @BeateRixen
+/content/standard-tenant/ @mgrumann @BeateRixen
+/content/web/ @janhommes @BeateRixen
+=======
+/content/console/ @bbyreddy @tydunne @BeateRixen
+>>>>>>> develop
 
-/content/streaming-analytics/ @BeateRixen @skom-c8y @ben-c8y
+/content/streaming-analytics/ @skom-c8y @ben-c8y @BeateRixen
 # 'block-reference-bundle' is automatically and frequently committed to - don't bother _too many_ CODEOWNERS
 /content/streaming-analytics/block-reference-bundle/ @skom-c8y @ben-c8y
