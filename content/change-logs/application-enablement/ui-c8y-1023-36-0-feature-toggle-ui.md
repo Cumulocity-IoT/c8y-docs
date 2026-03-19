@@ -1,6 +1,6 @@
 ---
 date: '2026-02-11'
-title: Add feature toggle view to Administration app
+title: Added feature toggle view to the Administration application
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
