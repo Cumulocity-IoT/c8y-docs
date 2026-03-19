@@ -6,30 +6,32 @@ sector:
 weight: 60
 ---
 
-Using the **Feature toggles** functionality, you enable or disable specific preview features in the UI.
-You get early access to new features before they are generally available.
+The **Feature toggles** functionality enables or disables specific preview features in the UI.
+This provides early access to new features before they are generally available.
 
-You can also temporarily disable a feature that is generally available when you experience an issue with it.
+Moreover, you can temporarily disable a feature that is generally available when you experience an issue with it.
 
-Any feedback about these features is important. Provide it through your support channel.
+Your feedback on these features is very valuable to us. Please submit your thoughts via the support portal.
 
 {{< c8y-admon-req >}}
 
 - To view the **Feature toggles** page: No specific permissions.
 
-- To update the state of a feature toggle: ADMIN permission for the permission type "Tenant management"
+- To update the state of a feature toggle: ADMIN permission for the permission type "Tenant management".
 
 {{< /c8y-admon-req >}}
 
-Click **Feature toggles** in the **Settings** menu in the navigator to open the feature toggle view.
+Click **Feature toggles** in the **Settings** menu in the navigator to open the **Feature toggles** page.
 
-The state of a feature toggle depends on the **Phase** of the feature.
-Before a feature is generally available, it is disabled by default. You must opt in to enable it.
-When a feature is generally available, it is enabled by default. You must opt out to disable it.
+The **Feature toggles** page displays the following columns:
 
-The **Strategy** column indicates if the state of a feature toggle has been customized.
-Once you customize a feature toggle, it no longer changes its state according to the **Phase**.
-To return to the default behavior, click the reset button in the customized row. This resets the feature toggle so that the **Status** again depends on the feature **Phase**.
+- **Name**: The display name of the feature. Optional.
+- **Description**: A brief explanation of what the feature does. Optional.
+- **Key**: The unique identifier for the feature toggle.
+- **Phase**: The current phase of the feature, either "Generally available" or "Public Preview".
+- **Status**: The current state of the feature toggle, either "Enabled" or "Disabled". The state of a feature toggle depends on the phase of the feature. Before a feature is generally available, it is disabled by default. You must opt in to enable it. When a feature is generally available, it is enabled by default. You must opt out to disable it.
+- **Strategy**: Indicates if the state of a feature toggle has been customized. Once you customize a feature toggle, it no longer changes its state according to the phase. To return to the default behavior, click the reset button in the customized row. 
+
 
 
 ### To toggle a feature {#to-toggle-a-feature}
@@ -39,6 +41,6 @@ To return to the default behavior, click the reset button in the customized row.
 
 ### To manage features of subtenants {#to-manage-features-of-subtenants}
 
-Users on the `management` tenant can also manage the feature toggles of subtenants on the environment.
-For these users there is an additional **Feature toggles** tab in the detail view of a subtenant.
-This functionality is not available on enterprise tenants.
+Users on the {{< management-tenant >}} can also manage the feature toggles of subtenants on the environment.
+{{< management-tenant >}} see an additional **Feature toggles** tab in the detail view of a subtenant.
+This functionality is not available on {{< enterprise-tenant >}}s.

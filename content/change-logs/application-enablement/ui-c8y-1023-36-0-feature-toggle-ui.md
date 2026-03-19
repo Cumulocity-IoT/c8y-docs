@@ -27,5 +27,7 @@ environment_availability:
   - label: cumulocity.com
     date: '2026-02-13'
 ---
-A new view was added to the Administration application listing the state of the currently available feature toggles within the tenant.
-It allows you to change the state of feature toggles and reset them to their default state.
+A new view has been added to the Administration application that lists all currently available feature toggles within the tenant and shows their state (enabled/disabled).
+Moreover, you can change the state of feature toggles from here and reset them to their default state.
+
+For details, see [Feature toggles](/standard-tenant/changing-settings/#feature-toggles).
