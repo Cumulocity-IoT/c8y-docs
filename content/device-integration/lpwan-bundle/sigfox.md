@@ -294,7 +294,7 @@ Click on the **Re-Register** button.
 The user is directed to the device registration page where he can perform the re-registration following the steps above and selecting the desired LNS connection.
 
 {{< c8y-admon-info >}}
-For Sigfox device registration, the user must have the Inventory CREATE or ADMIN permission.
+For Sigfox device registration, you must have CREATE or ADMIN permission for the "Inventory" permission type.
 {{< /c8y-admon-info >}}
 
 ##### Updating devices registered with the general device registration {#updating-sigfox-devices}
