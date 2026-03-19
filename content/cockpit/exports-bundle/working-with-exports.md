@@ -18,8 +18,8 @@ ROLES & PERMISSIONS:
 
 To generate exports in a widget, you must meet at least one of these criteria:
 
-- Have READ permission for "Measurements" permission type (either as a global role or for the specific source)
-- Be the owner of the source you want to export data from
+- Have READ permission for the "Measurements" permission type (either as a global role or for the specific source).
+- Be the owner of the source you want to export data from.
   {{< /c8y-admon-req >}}
 
 ### To create an export in a widget {#to-create-an-export-in-a-widget}
