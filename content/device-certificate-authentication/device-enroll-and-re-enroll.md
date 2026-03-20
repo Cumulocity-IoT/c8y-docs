@@ -42,7 +42,7 @@ As per [EST standards](https://datatracker.ietf.org/doc/html/rfc7030#autoid-58),
 
 This is an example of a REST request without `Accept: application/pkcs10` (default):
 
-Authenticate the device using HTTP Basic auth with the device serial as the username and the enrollment OTP as the password. Base64-encode `device-serial:enrollment_otp` and include it in the `Authorization` header as `Basic <base64>`.
+Authenticate the device using HTTP BasicAuth with the device serial as the username and the enrollment OTP as the password. Base64-encode `device-serial:enrollment_otp` and include it in the `Authorization` header as `Basic <base64>`.
 
     POST /.well-known/est/simpleenroll
     Authorization: Basic <<Base64 encoded device-serial:enrollment_otp>>
