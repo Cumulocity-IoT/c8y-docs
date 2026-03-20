@@ -25,7 +25,7 @@ environment_availability:
 
 {{< company-c8y >}} is pleased to announce that the {{< product-c8y-iot >}} MQTT Service is now generally available.
 
-The MQTT Service provides a single, unified endpoint for integrating MQTT devices with the {{< product-c8y-iot >}} platform that is _simple, secure and scalable._
+The MQTT Service provides a single, unified endpoint for integrating MQTT devices with the {{< product-c8y-iot >}} platform that is _simple, secure, and scalable._
 
 ##### Simple {#simple}
 
