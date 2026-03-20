@@ -15,8 +15,8 @@ sector:
 - Issue signed X.509 certificates trusted by the device tenant
 
 The {{< product-c8y-iot >}} CA service is based on the EST protocol due to its simple interactions between devices and the CA service. The following REST API endpoints support the provisioning and renewal of device certificates.
-* `/.well-known/est/simpleenroll` to be used by a device to get a fresh new certificate. The device has to authenticate itself using its tenant, identifier and security token as the BasicAuth realm, user and password. These tenant, identifier and security token must be shared with {{< product-c8y-iot >}}.
-* `/.well-known/est/simplereenroll` to be used by a device to renew its certificate or to substitute for a certificate. The device has to authenticate itself using its password or a JWT token (obtained using its certificate over MQTT).
+* `/.well-known/est/simpleenroll` to be used by a device to get a fresh new certificate. The device has to authenticate itself using its tenant, device-serial and one-time-password as the BasicAuth. These credentials must be shared with {{< product-c8y-iot >}}.
+* `/.well-known/est/simplereenroll` to be used by a device to renew its certificate or to substitute for a certificate. The device has to authenticate itself using its device-serial and password or a JWT token (obtained using its certificate over MQTT).
 
 {{< c8y-admon-caution >}}
 Migration from Public Preview to General Availability - action required.
