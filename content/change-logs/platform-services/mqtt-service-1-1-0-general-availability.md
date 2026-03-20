@@ -27,24 +27,24 @@ environment_availability:
 
 The MQTT Service provides a single, unified endpoint for integrating MQTT devices with the {{< product-c8y-iot >}} platform that is _simple, secure and scalable._
 
-##### Simple
+##### Simple {#simple}
 
 * Connect any MQTT device with any payload and topic structure, using the MQTT v3.1.1 or v5.0 protocols.
 * Devices using the {{< product-c8y-iot >}} core MQTT protocols, SmartREST and JSON-over-MQTT, are supported alongside generic devices with their own application-layer protocols.
 
-##### Secure
+##### Secure {#secure}
 
 * Full device isolation and bi-directional TLS support by default.
 * Works with the {{< product-c8y-iot >}} Certificate Authority, or with your existing external CA.
 
-##### Scalable
+##### Scalable {#scalable}
 
 * Optimised for high message throughput with large numbers of connected devices.
 * Validated with 100 million connected devices publishing 1 million unique messages per second.
 
 See the [user documentation](/device-integration/mqtt-service) for more details of the MQTT Service architecture and how to integrate your devices and applications with it.
 
-##### Availability
+##### Availability {#availability}
 
 The MQTT Service is available to all tenants in {{< product-c8y-iot >}} environments following the Continuous Delivery (CD) release line, and in the 2026 annual release.
 
@@ -54,14 +54,14 @@ Per-tenant usage quotas are enforced to ensure reliable operation of {{< product
 These quotas can be adjusted to support larger use cases in shared and dedicated environments.
 See [service quotas](/service-terms/quotas/#mqtt-service) for details of the applicable quotas.
 
-##### Migrating from the public preview
+##### Migrating from the public preview {#migrating-from-the-public-preview}
 
 Some features were deprecated and replaced during the public preview of the MQTT Service.
 These features are no longer available after the transition to general availability.
 Users migrating from the public preview must ensure that all their applications and devices have been updated to use only generally available features.
 For details, see the previous [announcement](/change-logs/#mqtt-service-1.1.0-breaking-changes-announcement) that lists the features to be removed.
 
-##### Limitations
+##### Limitations {#limitations}
 
 The first generally available release of the MQTT Service has some limitations that will be addressed in future updates.
 * Support for Core MQTT devices using SmartREST or JSON-over-MQTT is still in **public preview** status and subject to breaking changes before it becomes generally available.
