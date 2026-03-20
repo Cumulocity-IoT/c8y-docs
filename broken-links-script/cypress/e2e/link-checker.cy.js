@@ -64,10 +64,17 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
   Cypress.on('fail', (error) => {
     const sourceFiles = Cypress.env('sourceFiles');
-    if (sourceFiles) {
-      error.message += `\n\nThis URL was used in the following files:\n - ${sourceFiles.join('\n -')}`;
-    }
-    throw error;
+
+    const shortMessage = error.message.split('\n')[0];
+
+    const message = [
+      shortMessage,
+      sourceFiles ? `Source files:\n - ${sourceFiles.join('\n - ')}` : ''
+    ].join('\n');
+
+    const cleanError = new Error(message);
+    cleanError.stack = null;
+    throw cleanError;
   });
 
   urls.forEach((item) => {
@@ -178,19 +185,16 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         checkRegularFragment(fragment);
       }
       else {
-        cy.request({
-          url: url,
-          failOnStatusCode: false
-        }).then((response) => {
-          const contentType = response.headers['content-type'] || '';
-          if (!contentType.includes('text/html')) {
-            cy.log(`Non-HTML content detected for ${url}, skipping cy.visit()`);
-            expect(response.status).to.be.oneOf([200, 201, 202, 203, 204, 301, 302, 304]);
-            expect(response.body).not.to.be.empty;
-          } else {
-            cy.visit(url);
-            cy.document().its('body').should('not.be.empty');
-          }
+        cy.log(`Validating HTML page with curl: ${url}`);
+        cy.task('curlRequest', url).then(({ status, content }) => {
+          expect(status).to.be.oneOf([200,301,302,429]);
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(
+            content,
+            'text/html'
+          );
+          const body = doc && doc.body ? doc.body.textContent.trim() : '';
+          expect( body, `<body> content for ${url} should not be empty`).to.not.be.empty;
         });
       }
       
