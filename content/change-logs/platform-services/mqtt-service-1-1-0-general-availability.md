@@ -29,7 +29,7 @@ The MQTT Service provides a single, unified endpoint for integrating MQTT device
 
 **Simple**
 
-* Connect any MQTT device with any payload and topic structure, using the MQTT v3.1.1 or v5.0 protocols.
+* Connect any MQTT device with any payload and topic structure, using MQTT version 3.1.1 or 5.0.
 * Devices using the {{< product-c8y-iot >}} core MQTT protocols, SmartREST and JSON-over-MQTT, are supported alongside generic devices with their own application-layer protocols.
 
 **Secure**
@@ -39,7 +39,7 @@ The MQTT Service provides a single, unified endpoint for integrating MQTT device
 
 **Scalable**
 
-* Optimised for high message throughput with large numbers of connected devices.
+* Optimized for high message throughput with large numbers of connected devices.
 * Validated with 100 million connected devices publishing 1 million unique messages per second.
 
 See the [user documentation](/device-integration/mqtt-service) for more details of the MQTT Service architecture and how to integrate your devices and applications with it.
