@@ -40,7 +40,7 @@ The structure of the data lake provided by Streaming Lake Ingestion mirrors the 
 At the top level, the service creates two category folders, `cdc` and `latest_data`.  
 As shown in the screenshot below, the next level consists of folders representing the {{< product-c8y-iot >}} domain model classes: `inventory`, `alarm`, `event`, `measurement` and `operation`.
 
-Within the `cdc` folders, tables store the incoming IoT data. For example, the `alarm` table contains a complete, historical log of all alarm changes, while the `inventory` table captures all modifications made to your device master data over time.
+Within the `cdc` folder, tables store the incoming IoT data. For example, the `alarm` table contains a complete, historical log of all alarm changes, while the `inventory` table captures all modifications made to your device master data over time.
 
 Device- or customer-specific data in the form of [fragments](/concepts/domain-model/#fragments) resides in separate, dedicated tables within the corresponding folders. For instance, if you send a measurement of type `c8y_EngineMetric`, it will be stored in a table named `c8y_EngineMetric` inside the measurements folder.
 
@@ -49,11 +49,8 @@ The `latest_data/inventory` tables show the most recent, up-to-date state of you
 Note that in the current version of the service, MANAGED_OBJECT_DELETE events are not yet reflected in the "latest data tables",
 so deleted devices will still be present in the `latest_data/inventory` tables. This will be changed in a future release.
 
+<!-- TODO: Screenshot needs to be replaced to reflect flat namespaces. -->
 ![alt text](/images/datahub-guide/querying.png)
-
-{{< c8y-admon-info >}}
-"Latest tables" are not part of the current private preview release.*
-{{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
 Streaming Lake Ingestion also manages an `internal` folder containing tables used for internal service operations. These tables should not be modified, as doing so may compromise the service's reliability and correct functioning.
@@ -479,7 +476,7 @@ You ingest the following measurement into {{< product-c8y-iot >}}.
 
 This results in a table like the following:
 
-**Table: measurement.c8y_Battery**
+**Table: cdc.measurement.c8y_Battery**
 
 | eventType          | id    | source | time                     | type                   | voltage       | stateOfCharge | temperature   |
 |--------------------|-------|--------|--------------------------|------------------------|---------------|---------------|---------------|
@@ -489,7 +486,7 @@ This results in a table like the following:
 Note that there are three columns which are of structured type: `voltage`, `stageOfCharge` and `temperature`. As many BI tools can't handle structured types, Streaming Lake Ingestion offers views for tables to "unnest" these structured fields.
 An according view looks like the following:
 
-**View: measurement.c8y_Battery**
+**View: view.measurement.c8y_Battery**
 
 | eventType          | id    | source | time                     | type                   | voltage\\value | voltage\\unit | ... | temperature\\value | temperature\\unit |
 |--------------------|-------|--------|--------------------------|------------------------|----------------|---------------|-----|--------------------|-------------------|
