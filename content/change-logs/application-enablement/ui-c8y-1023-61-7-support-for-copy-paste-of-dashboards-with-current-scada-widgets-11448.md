@@ -20,5 +20,11 @@ environment_availability:
     date: '2026-03-20'
   - label: jp.cumulocity.com
     date: '2026-03-20'
+  - label: emea.cumulocity.com
+    date: '2026-03-23'
+  - label: us.cumulocity.com
+    date: '2026-03-23'
+  - label: cumulocity.com
+    date: '2026-03-23'
 ---
 Previously, when you copied and pasted a dashboard containing SCADA widgets, those widgets continued to display data from the original device. Now, when you copy and paste dashboards that include SCADA widgets, the widgets will display data from the new context device. This improvement allows you to more easily duplicate complex dashboards with SCADA widgets without having to manually reconfigure them.

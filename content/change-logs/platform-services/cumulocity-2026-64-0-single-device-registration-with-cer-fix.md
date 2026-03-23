@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-03-18'
   - label: jp.cumulocity.com
     date: '2026-03-18'
+  - label: emea.cumulocity.com
+    date: '2026-03-23'
+  - label: us.cumulocity.com
+    date: '2026-03-23'
 ---
 An issue has been resolved affecting the initial group assignment during [single device registration](/device-management-application/registering-devices/#single-device-registration) when using the “create device certificates during device registration” option with {{< product-c8y-iot >}} CA certificates.
 

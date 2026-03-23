@@ -22,5 +22,9 @@ environment_availability:
     date: '2026-03-18'
   - label: jp.cumulocity.com
     date: '2026-03-18'
+  - label: emea.cumulocity.com
+    date: '2026-03-23'
+  - label: us.cumulocity.com
+    date: '2026-03-23'
 ---
 Previously, an error occurred when performing composite read operations on LWM2M resources or objects that did not exist on the device. This issue has been resolved.
