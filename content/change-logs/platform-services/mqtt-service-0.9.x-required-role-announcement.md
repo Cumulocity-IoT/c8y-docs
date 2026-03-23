@@ -1,5 +1,5 @@
 ---
-date:
+date: 2026-03-11
 title: MQTT Service will require an explicit role for basic authentication
 change_type:
   - value: change-inv-3bw8e
