@@ -36,13 +36,18 @@ For more general analytics, use SQL queries. Run queries from several interfaces
 
 ### Understanding the data lake structure
 
-The structure of the data lake provided by Streaming Lake Ingestion mirrors the familiar [{{< product-c8y-iot >}} domain model](/concepts/domain-model/) to be intuitive for users. As shown in the screenshot below, the top level consists of folders representing the {{< product-c8y-iot >}} domain model classes: `inventory`, `alarm`, `event`, `measurement` and `operation`.
+The structure of the data lake provided by Streaming Lake Ingestion mirrors the familiar [{{< product-c8y-iot >}} domain model](/concepts/domain-model/) to be intuitive for users.  
+At the top level, the service creates two category folders, `cdc` and `latest_data`.  
+As shown in the screenshot below, the next level consists of folders representing the {{< product-c8y-iot >}} domain model classes: `inventory`, `alarm`, `event`, `measurement` and `operation`.
 
-Within these folders, tables store the incoming IoT data. For example, the `alarm` table contains a complete, historical log of all alarm changes, while the `inventory` table captures all modifications made to your device master data over time.
+Within the `cdc` folders, tables store the incoming IoT data. For example, the `alarm` table contains a complete, historical log of all alarm changes, while the `inventory` table captures all modifications made to your device master data over time.
 
 Device- or customer-specific data in the form of [fragments](/concepts/domain-model/#fragments) resides in separate, dedicated tables within the corresponding folders. For instance, if you send a measurement of type `c8y_EngineMetric`, it will be stored in a table named `c8y_EngineMetric` inside the measurements folder.
 
-To simplify querying the current state of your assets, a consolidated representation of that state is available in "latest tables". The `inventory_latest` and `alarms_latest` tables show the most recent, up-to-date state of your inventory and alarms, respectively, without you needing to reconstruct it from the historical logs.
+To simplify querying the current state of your assets, for inventory a consolidated representation of that state is available in `latest_data` tables.
+The `latest_data/inventory` tables show the most recent, up-to-date state of your inventory, without you needing to reconstruct it from the historical logs.  
+Note that in the current version of the service, MANAGED_OBJECT_DELETE events are not yet reflected in the "latest data tables",
+so deleted devices will still be present in the `latest_data/inventory` tables. This will be changed in a future release.
 
 ![alt text](/images/datahub-guide/querying.png)
 
@@ -59,10 +64,19 @@ To understand how the service transfers data to the data lake, the following sec
 #### General table structure {#general-table-structure}
 
 All tables contain the following key columns:
-* `eventType`: The {{< product-c8y-iot >}} real-time data feed records changes to IoT data, so whether new data is created, existing data is updated or data is deleted. This field captures the type of the recorded change, for example, `MANAGED_OBJECT_UPDATE`.
-* `id` resp. `source`: The [managed object ID](/concepts/domain-model/#object-identification), so the {{< product-c8y-iot >}} ID of the device or asset associated with the change.
-* `time`: The timestamp of the change as sent by the device, if present, otherwise the [time when the change reaches {{< product-c8y-iot >}}](/device-management-application/monitoring-and-controlling-devices/#to-monitor-the-connection-of-a-particular-device).
+* `eventType`: The {{< product-c8y-iot >}} real-time data feed records changes to IoT data, so whether new data is created, existing data is updated or data is deleted. This field captures the type of the recorded change, for example, `MANAGED_OBJECT_UPDATE`.  
+  Note that this column is not present for the `latest_data/inventory` tables, as it only contains the latest state of the inventory and not the historical log of changes.
+* `id`: The record ID of the device, asset, alarm, event, measurement or operation associated with the change.
+  In the inventory tables, this is the [managed object ID](https://cumulocity.com/docs/concepts/domain-model/#object-identification).
 * `type`: The type property of the device, measurement and so on.
+
+The following columns are present in some tables, depending on the type of data:
+* `source`: The [managed object ID](https://cumulocity.com/docs/concepts/domain-model/#object-identification), so the Cumulocity ID of the device or asset associated with the change.  
+  This column is present for alarms, events and measurements, as these are associated with a source device or asset.
+* `deviceId`: The [managed object ID](https://cumulocity.com/docs/concepts/domain-model/#object-identification), so the Cumulocity ID of the device or asset associated with the change.  
+  This column is present for operations, as these are associated with a device or asset. It is named `deviceId` instead of `source`
+  because operations are targeted to a device or asset, while alarms, events and measurements are created by a source device or asset.
+* `time`: The timestamp of the change as sent by the device. This column is present for alarms, events and measurements.
 
 
 #### Inventory {#inventory}
@@ -85,15 +99,17 @@ To understand how the service captures inventory data in the data lake, assume t
 
 This results in the following data in the data lake:
 
-**Table: inventory.inventory**
-| eventType             | id    | time                     | type    | name       | fragments                      | someproperty |
-| --------------------- | ----- | ------------------------ | ------- | ---------- | ------------------------------ | ------------ |
-| MANAGED_OBJECT_CREATE | 47635 | 2025-08-20T13:41:39.678Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
+**Table: cdc.inventory.inventory**
+
+| eventType             | id    | creationTime             | lastUpdated              | type    | name       | fragments                      | someproperty |
+|-----------------------|-------|--------------------------|--------------------------|---------|------------|--------------------------------|--------------|
+| MANAGED_OBJECT_CREATE | 47635 | 2025-08-20T13:41:39.678Z | 2025-08-20T13:41:39.678Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
 
 The columns of the `inventory` table are:
 * `eventType` contains "MANAGED_OBJECT_CREATE", the event type for creating a new managed object.
 * `id` contains "47635", the managed object ID assigned to the new device by {{< product-c8y-iot >}}.
-* `time` contains "2025-08-20T13:41:39.678Z", the timestamp when the device was created in {{< product-c8y-iot >}}.
+* `creationTime` contains "2025-08-20T13:41:39.678Z", the timestamp when the device was created in {{< product-c8y-iot >}}.
+* `lastUpdated` contains "2025-08-20T13:41:39.678Z", the timestamp of the most recent update to the device in {{< product-c8y-iot >}}.
 * `type` contains "sb_nano", the type of the device as used in the request to create the device.
 * `name` contains "Tracker #1", the name of the device as used in the request.
 * `fragments` contains a list of all fragments used in the managed object.
@@ -104,29 +120,32 @@ Use top-level properties with care. For example, if you have custom properties t
 However, the total number of top-level properties is limited through the [table width limit of Iceberg](https://cumulocity.com/docs/service-terms/quotas/). If you exceed the table width limit,
 additional properties will not be written to the inventory table but "binned" (see below).
 Note also that very wide tables with many properties will lead to more inefficient storage and querying.
-We advice you to prefer fragments for custom data when modeling your device data model.
+We advise you to prefer fragments for custom data when modeling your device data model.
 {{< /c8y-admon-info >}}
 
 
-**Table: inventory.c8y_position**
-| eventType             | source | time                     | type    | alt | lng     | lat       |
-| --------------------- | ------ | ------------------------ | ------- | --- | ------- | --------- |
+**Table: cdc.inventory.c8y_position**
+
+| eventType             | id    | lastUpdated              | type    | alt | lng     | lat       |
+|-----------------------|-------|--------------------------|---------|-----|---------|-----------|
 | MANAGED_OBJECT_CREATE | 47635  | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
 
 The columns of the `c8y_position` table reflect the "`c8y_Position` fragment and are set as follows:
 * Key columns are set as previously described.
 * Properties are stored in the columns of the table.
 
-In addition, the service stores the data in the `inventory_latest` folder:
+In addition, the service stores the data in the `latest_data/inventory` folder:
 
-**Table: inventory_latest.inventory**
-| id    | time                     | type    | name       | fragments                      | someproperty |
-| ----- | ------------------------ | ------- | ---------- | ------------------------------ | ------------ |
-| 47635 | 2025-08-20T13:41:39.678Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
+**Table: latest_data.inventory.inventory**
 
-**Table: inventory_latest.c8y_position**
-| source | time                     | type    | alt | lng     | lat       |
-| ------ | ------------------------ | ------- | --- | ------- | --------- |
+| id    | creationTime             | lastUpdated              | type    | name       | fragments                      | someproperty |
+|-------|--------------------------|--------------------------|---------|------------|--------------------------------|--------------|
+| 47635 | 2025-08-20T13:41:39.678Z | 2025-08-20T13:41:39.678Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
+
+**Table: latest_data.inventory.c8y_position**
+
+| id    | lastUpdated              | type    | alt | lng     | lat       |
+|-------|--------------------------|---------|-----|---------|-----------|
 | 47635  | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
 
 {{< c8y-admon-info >}}
@@ -146,42 +165,49 @@ Assume that the tracking device updates its location:
 
 This update appears in the `inventory` and `c8y_position` tables as follows:
 
-**Table: inventory.inventory**
-| eventType             | id    | time                     | type    | name       | fragments                      | someproperty |
-| --------------------- | ----- | ------------------------ | ------- | ---------- | ------------------------------ | ------------ |
-| MANAGED_OBJECT_CREATE | 47635 | 2025-08-20T13:41:39.678Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
-| MANAGED_OBJECT_UPDATE | 47635 | 2025-08-20T13:45:20.002Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
+**Table: cdc.inventory.inventory**
 
-**Table: inventory.c8y_position**
-| eventType             | source | time                     | type    | alt | lng     | lat       |
-| --------------------- | ------ | ------------------------ | ------- | --- | ------- | --------- |
-| MANAGED_OBJECT_CREATE | 47635  | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
-| MANAGED_OBJECT_UPDATE | 47635  | 2025-08-20T13:45:20.002Z | sb_nano | 69  | 6.3213  | 50.425    |
+| eventType             | id    | creationTime             | lastUpdated              | type    | name       | fragments                      | someproperty |
+|-----------------------|-------|--------------------------|--------------------------|---------|------------|--------------------------------|--------------|
+| MANAGED_OBJECT_CREATE | 47635 | 2025-08-20T13:41:39.678Z | 2025-08-20T13:41:39.678Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
+| MANAGED_OBJECT_UPDATE | 47635 | 2025-08-20T13:41:39.678Z | 2025-08-20T13:45:20.002Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
 
-The "latest" versions of the tables reflect this update:
+**Table: cdc.inventory.c8y_position**
 
-**Table: inventory_latest.inventory**
-| id    | time                     | type    | name       | fragments                      | someproperty |
-| ----- | ------------------------ | ------- | ---------- | ------------------------------ | ------------ |
-| 47635 | 2025-08-20T13:45:20.002Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
+| eventType             | id    | lastUpdated              | type    | alt | lng     | lat       |
+|-----------------------|-------|--------------------------|---------|-----|---------|-----------|
+| MANAGED_OBJECT_CREATE | 47635 | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
+| MANAGED_OBJECT_UPDATE | 47635 | 2025-08-20T13:45:20.002Z | sb_nano | 69  | 6.3213  | 50.425    |
 
-**Table: inventory_latest.c8y_position**
-| source | time                     | type    | alt | lng    | lat    |
-| ------ | ------------------------ | ------- | --- | ------ | ------ |
-| 47635  | 2025-08-20T13:45:20.002Z | sb_nano | 69  | 6.3213 | 50.425 |
+The "latest data" versions of the tables reflect this update:
 
-Finally, assume that you delete the device. This results in a record with `eventType` "MANAGED_OBJECT_DELETE" and the last properties stored on the device. Deleting the device removes it from the "latest" versions of the tables.
+**Table: latest_data.inventory.inventory**
 
-**Table: inventory.inventory**
-| eventType             | id    | time                     | type    | name       | fragments                      | someproperty |
-| --------------------- | ----- | ------------------------ | ------- | ---------- | ------------------------------ | ------------ |
-| MANAGED_OBJECT_CREATE | 47635 | 2025-08-20T13:41:39.678Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
-| MANAGED_OBJECT_UPDATE | 47635 | 2025-08-20T13:45:20.002Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
-| MANAGED_OBJECT_DELETE | 47635 | 2025-08-20T13:50:20.002Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
+| id    | creationTime             | lastUpdated              | type    | name       | fragments                      | someproperty |
+|-------|--------------------------|--------------------------|---------|------------|--------------------------------|--------------|
+| 47635 | 2025-08-20T13:41:39.678Z | 2025-08-20T13:45:20.002Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
 
-**Table: inventory.c8y_position**
-| eventType             | source | time                     | type    | alt | lng     | lat       |
-| --------------------- | ------ | ------------------------ | ------- | --- | ------- | --------- |
+**Table: latest_data.inventory.c8y_position**
+
+| id    | lastUpdated              | type    | alt | lng    | lat    |
+|-------|--------------------------|---------|-----|--------|--------|
+| 47635 | 2025-08-20T13:45:20.002Z | sb_nano | 69  | 6.3213 | 50.425 |
+
+Finally, assume that you delete the device. This results in a record with `eventType` "MANAGED_OBJECT_DELETE" and the last properties stored on the device.  
+In a later version of the service, deleting the device will remove it from the "latest data" versions of the tables. This feature is not yet available in the current version of the service.
+
+**Table: cdc.inventory.inventory**
+
+| eventType             | id    | creationTime             | lastUpdated              | type    | name       | fragments                      | someproperty |
+|-----------------------|-------|--------------------------|--------------------------|---------|------------|--------------------------------|--------------|
+| MANAGED_OBJECT_CREATE | 47635 | 2025-08-20T13:41:39.678Z | 2025-08-20T13:41:39.678Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
+| MANAGED_OBJECT_UPDATE | 47635 | 2025-08-20T13:41:39.678Z | 2025-08-20T13:45:20.002Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
+| MANAGED_OBJECT_DELETE | 47635 | 2025-08-20T13:41:39.678Z | 2025-08-20T13:50:20.002Z | sb_nano | Tracker #1 | \[c8y_IsDevice, c8y_Position\] | 10           |
+
+**Table: cdc.inventory.c8y_position**
+
+| eventType             | id    | lastUpdated              | type    | alt | lng     | lat       |
+|-----------------------|-------|--------------------------|---------|-----|---------|-----------|
 | MANAGED_OBJECT_CREATE | 47635  | 2025-08-20T13:41:39.678Z | sb_nano | 67  | 6.15173 | 51.211977 |
 | MANAGED_OBJECT_UPDATE | 47635  | 2025-08-20T13:45:20.002Z | sb_nano | 69  | 6.3213  | 50.425    |
 | MANAGED_OBJECT_DELETE | 47635  | 2025-08-20T13:50:20.002Z | sb_nano | 69  | 6.3213  | 50.425    |
@@ -208,21 +234,16 @@ Assume that our sample tracking device has low battery and sends an alarm:
 
 This results in the following data in the data lake:
 
-**Table: alarm.alarm**
-| eventType    | source | time                     | type             | count | severity | status | text                           |
-| ------------ | ------ | ------------------------ | ---------------- | ----- | -------- | ------ | ------------------------------ |
-| ALARM_CREATE | 47635  | 2025-08-19T12:03:27.845Z | c8y_BatteryAlarm | 1     | MAJOR    | ACTIVE | Battery level below 5 percent. |
+**Table: cdc.alarm.alarm**
 
-Again, the columns of the table represent the [properties of a {{< product-c8y-iot >}} alarm](https://cumulocity.com/api/core/#tag/Alarms). The `eventType` property reflects the recorded change (in this case, a created alarm), and the `count` property is added by {{< product-c8y-iot >}}'s [alarm de-duplication](https://cumulocity.com/api/core/#alarm-de-duplication).
+| eventType    | id    | source | time                     | firstOccurrenceTime      | type             | count | severity | status | text                           |
+|--------------|-------|--------|--------------------------|--------------------------|------------------|-------|----------|--------|--------------------------------|
+| ALARM_CREATE | 12345 | 47635  | 2025-08-19T12:03:27.845Z | 2025-08-19T12:03:27.845Z | c8y_BatteryAlarm | 1     | MAJOR    | ACTIVE | Battery level below 5 percent. |
+
+Again, the columns of the table represent the [properties of a {{< product-c8y-iot >}} alarm](https://cumulocity.com/api/core/#tag/Alarms). The `eventType` property reflects the recorded change (in this case, a created alarm), and the `count` property is added by {{< product-c8y-iot >}}'s [alarm de-duplication](https://cumulocity.com/api/core/#alarm-de-duplication).  
+The firstOccurrenceTime column is added to reflect the time of the first occurrence of the alarm which will stay the same for de-duplicated alarms.
 
 In the example, there are no custom properties or fragments in the alarm data. The service treats such properties or fragments in the same way as described for the inventory.
-
-For alarms, there is also a representation of the latest state.
-
-**Table: alarm_latest.alarm**
-| source | time                     | type             | count | severity | status | text                           |
-| ------ | ------------------------ | ---------------- | ----- | -------- | ------ | ------------------------------ |
-| 47635  | 2025-08-19T12:03:27.845Z | c8y_BatteryAlarm | 1     | MAJOR    | ACTIVE | Battery level below 5 percent. |
 
 
 #### Events {#events}
@@ -241,15 +262,17 @@ Now assume that the tracker moves and sends a location update event.
 
 This results in the following data in the data lake, consistent with the method described previously.
 
-**Table: event.event**
-| eventType    | source | time                     | type               | text                    |
-| ------------ | ------ | ------------------------ | ------------------ | ----------------------- |
-| EVENT_CREATE | 47635  | 2025-08-20T13:41:39.678Z | c8y_LocationUpdate | Tracker location update |
+**Table: cdc.event.event**
 
-**Table: event.c8y_position**
-| eventType    | id    | time                     | type               | alt | lng     | lat       |
-| ------------ | ----- | ------------------------ | ------------------ | --- | ------- | --------- |
-| EVENT_CREATE | 47635 | 2025-08-20T13:41:39.678Z | c8y_LocationUpdate | 67  | 6.15173 | 51.211977 |
+| eventType    | id    | source | time                     | type               | text                    |
+|--------------|-------|--------|--------------------------|--------------------|-------------------------|
+| EVENT_CREATE | 12345 | 47635  | 2025-08-20T13:41:39.678Z | c8y_LocationUpdate | Tracker location update |
+
+**Table: cdc.event.c8y_position**
+
+| eventType    | id    | source | time                     | type               | alt | lng     | lat       |
+|--------------|-------|--------|--------------------------|--------------------|-----|---------|-----------|
+| EVENT_CREATE | 12345 | 47635  | 2025-08-20T13:41:39.678Z | c8y_LocationUpdate | 67  | 6.15173 | 51.211977 |
 
 As events usually record specific occurrences or state changes for a device at a single point in time and are distinct, the service does not create a "latest" version.
 
@@ -273,11 +296,12 @@ To illustrate the storage of measurements, assume that the tracking device sends
 
 This results in the following data in the data lake:
 
-**Table: measurement.c8y_Battery**
-| eventType          | source | time                     | type                   | voltage       | stateOfCharge | temperature   |
-| ------------------ | ------ | ------------------------ | ---------------------- | ------------- | ------------- | ------------- |
-|                    |        |                          |                        | value \| unit | value \| unit | value \| unit |
-| MEASUREMENT_CREATE | 47635  | 2025-08-20T13:42:39.678Z | c8y_BatteryMeasurement | 12.8 \| V     | 85.5 \| %     | 22.5 \| C     |
+**Table: cdc.measurement.c8y_Battery**
+
+| eventType          | id    | source | time                     | type                   | voltage       | stateOfCharge | temperature   |
+|--------------------|-------|--------|--------------------------|------------------------|---------------|---------------|---------------|
+|                    |       |        |                          |                        | value \| unit | value \| unit | value \| unit |
+| MEASUREMENT_CREATE | 12345 | 47635  | 2025-08-20T13:42:39.678Z | c8y_BatteryMeasurement | 12.8 \| V     | 85.5 \| %     | 22.5 \| C     |
 
 There is one important difference for measurements compared to other data types: There is no `measurement.measurement` table. All relevant data is present in the fragment tables.
 
@@ -296,10 +320,11 @@ Finally, we would like to restart the tracker with a reset operation:
 
 This results in the following data in the data lake:
 
-**Table: operation.operation**
-| eventType        | deviceId | agentId | time                     | status  | description | fragments        |
-| ---------------- | -------- | ------- | ------------------------ | ------- | ----------- | ---------------- |
-| OPERATION_CREATE | 47635    | 47635   | 2025-08-21T13:42:39.678Z | PENDING | null        | \[c8y_Restart \] |
+**Table: cdc.operation.operation**
+
+| eventType        | id    | deviceId | agentId | creationTime             | lastUpdated              | status  | description | fragments        |
+|------------------|-------|----------|---------|--------------------------|--------------------------|---------|-------------|------------------|
+| OPERATION_CREATE | 12345 | 47635    | 47635   | 2025-08-21T13:42:39.678Z | 2025-08-21T13:42:39.678Z | PENDING | null        | \[c8y_Restart \] |
 
 The columns represent the [properties of a {{< product-c8y-iot >}} operation](https://cumulocity.com/api/core/#operation/getOperationCollectionResource). If you do not provide an operational property, the service stores it as a SQL "null" value.
 
@@ -342,9 +367,10 @@ Contrary to Apache Iceberg and SQL, {{< product-c8y-iot >}} does not mandate a c
 ```
 
 **Table: inventory**
-| eventType              | id    | time                     | name       | …   | someproperty |
-| ---------------------- | ----- | ------------------------ | ---------- | --- | ------------ |
-| MANAGED_OBJECT_UPDATED | 47635 | 2025-08-20T13:45:20.002Z | Tracker #1 | …   | 10           |
+
+| eventType              | id    | creationTime             | lastUpdated              | name       | … | someproperty |
+|------------------------|-------|--------------------------|--------------------------|------------|---|--------------|
+| MANAGED_OBJECT_UPDATED | 47635 | 2025-08-20T13:41:39.678Z | 2025-08-20T13:45:20.002Z | Tracker #1 | … | 10           |
 
 Now "Tracker #2" sends data with a slightly different structure:
 
@@ -359,15 +385,16 @@ Now "Tracker #2" sends data with a slightly different structure:
 Storing the string value "Some Value" of "someProperty" in the numeric column with the corresponding name is not possible. When such a mismatch in type occurs, a new overflow column is created. The new column uses the same name as the property, but appends a double underscore followed by a short type suffix:
 
 **Table: inventory**
-| eventType              | id    | time                     | name       | …   | someproperty | someproperty__s |
-| ---------------------- | ----- | ------------------------ | ---------- | --- | ------------ | --------------- |
-| MANAGED_OBJECT_UPDATED | 47635 | 2025-08-20T13:45:20.002Z | Tracker #1 | …   | 10           | null            |
-| MANAGED_OBJECT_UPDATED | 47636 | 2025-08-20T13:55:20.002Z | Tracker #2 | …   | null         | Some Value      |
+
+| eventType              | id    | creationTime             | lastUpdated              | name       | … | someproperty | someproperty__s |
+|------------------------|-------|--------------------------|--------------------------|------------|---|--------------|-----------------|
+| MANAGED_OBJECT_UPDATED | 47635 | 2025-08-20T13:41:39.678Z | 2025-08-20T13:45:20.002Z | Tracker #1 | … | 10           | null            |
+| MANAGED_OBJECT_UPDATED | 47636 | 2025-08-20T13:55:20.002Z | 2025-08-20T13:55:20.002Z | Tracker #2 | … | null         | Some Value      |
 
 Overflow columns use the following type suffixes:
 
 | Data Type             | Suffix |
-| --------------------- | ------ |
+|-----------------------|--------|
 | string                | __s    |
 | decimal               | __d    |
 | timestamp             | __t    |
@@ -417,7 +444,7 @@ When the column or table name is not unique, a unique suffix is automatically ap
 The suffix is generated based on the original name as a binary code where uppercase letters are represented as 1 and lowercase letters as 0. This binary code is then converted to a hexadecimal number and appended to the name in the format `{name}__{suffix}`. For example:
 
 | Input  | Binary | Hex | Output     |
-| ------ | ------ | --- | ---------- |
+|--------|--------|-----|------------|
 | userId | 000010 | 2   | userId__2  |
 | UserId | 100010 | 22  | UserId__22 |
 | USERID | 111111 | 3F  | UserId__3F |
@@ -453,18 +480,20 @@ You ingest the following measurement into {{< product-c8y-iot >}}.
 This results in a table like the following:
 
 **Table: measurement.c8y_Battery**
-| eventType          | source | time                     | type                   | voltage       | stateOfCharge | temperature   |
-| ------------------ | ------ | ------------------------ | ---------------------- | ------------- | ------------- | ------------- |
-|                    |        |                          |                        | value \| unit | value \| unit | value \| unit |
-| MEASUREMENT_CREATE | 47635  | 2026-02-19T13:09:39.678Z | c8y_BatteryMeasurement | 12.8 \| V     | 85.5 \| %     | 22.5 \| C     |
+
+| eventType          | id    | source | time                     | type                   | voltage       | stateOfCharge | temperature   |
+|--------------------|-------|--------|--------------------------|------------------------|---------------|---------------|---------------|
+|                    |       |        |                          |                        | value \| unit | value \| unit | value \| unit |
+| MEASUREMENT_CREATE | 12345 | 47635  | 2026-02-19T13:09:39.678Z | c8y_BatteryMeasurement | 12.8 \| V     | 85.5 \| %     | 22.5 \| C     |
 
 Note that there are three columns which are of structured type: `voltage`, `stageOfCharge` and `temperature`. As many BI tools can't handle structured types, Streaming Lake Ingestion offers views for tables to "unnest" these structured fields.
 An according view looks like the following:
 
 **View: measurement.c8y_Battery**
-| eventType          | source | time                     | type                   | voltage\\value | voltage\\unit | ... | temperature\\value | temperature\\unit |
-| ------------------ | ------ | ------------------------ | ---------------------- | -------------- | ------------- | --- | ------------------ | ----------------- |
-| MEASUREMENT_CREATE | 47635  | 2026-02-19T13:09:39.678Z | c8y_BatteryMeasurement | 12.8           | V             | ... | 22.5               | C                 |
+
+| eventType          | id    | source | time                     | type                   | voltage\\value | voltage\\unit | ... | temperature\\value | temperature\\unit |
+|--------------------|-------|--------|--------------------------|------------------------|----------------|---------------|-----|--------------------|-------------------|
+| MEASUREMENT_CREATE | 12345 | 47635  | 2026-02-19T13:09:39.678Z | c8y_BatteryMeasurement | 12.8           | V             | ... | 22.5               | C                 |
 
 This makes it possible to operate directly on nested fields and, for example, do analytics for measurement values in BI tools.
 
@@ -608,6 +637,7 @@ As mentioned, the system ensures that neither schema-violating nor rejected reco
 Instead, it retains them in a **structured**, **queryable format**, allowing future inspection, auditing, and even potential replay.
 
 Each retained record follows a fixed schema with the following fields:
+- `id` (STRING) - unique identifier for the record
 - `source` (STRING) - source/managed object ID of the device or asset
 - `eventType` (STRING) - type of the originating payload
 - `dataType` (STRING) - platform-supported data type
@@ -620,11 +650,11 @@ Each retained record follows a fixed schema with the following fields:
 
 Sample `trash` table records:
 
-| source | eventType             | dataType  | time                 | path                                                        | tableName            | cause              | reason                                    | data                               |
-| ------ | --------------------- | --------- | -------------------- | ----------------------------------------------------------- | -------------------- | ------------------ | ----------------------------------------- | ---------------------------------- |
-| 47635  | EVENT_CREATE          | EVENT     | 2025-07-29T13:15:43Z | /event_fragment_1/c8y_TooLargeProperty                      | event_fragment_1     | SIZE_EXCEEDED      | Property size exceeded the limit of 32768 | IuS4gOefs+S6jOmzpeS4gOefs+S....... |
-| 47638  | MANAGED_OBJECT_CREATE | INVENTORY | 2025-07-29T14:15:43Z | /inventory_fragment_2/level_1/level_2....level_17/name      | inventory_fragment_2 | MAX_DEPTH_EXCEEDED | Property depth exceeded the limit of 16   | IlRoZSBhYnlzcyI=                   |
-| 47640  | EVENT_CREATE          | EVENT     | 2025-07-29T15:15:43Z | /event_fragment_2/nestedObject/invalidFieldName###ASD!ASD!@ | event_fragment_2     | ILLEGAL_FIELD_NAME | Illegal field name                        | InRlc3Qi                           |
+| id    | source | eventType             | dataType  | time                 | path                                                        | tableName            | cause              | reason                                    | data                               |
+|-------|--------|-----------------------|-----------|----------------------|-------------------------------------------------------------|----------------------|--------------------|-------------------------------------------|------------------------------------|
+| 12345 | 47635  | EVENT_CREATE          | EVENT     | 2025-07-29T13:15:43Z | /event_fragment_1/c8y_TooLargeProperty                      | event_fragment_1     | SIZE_EXCEEDED      | Property size exceeded the limit of 32768 | IuS4gOefs+S6jOmzpeS4gOefs+S....... |
+| 12346 | 47638  | MANAGED_OBJECT_CREATE | INVENTORY | 2025-07-29T14:15:43Z | /inventory_fragment_2/level_1/level_2....level_17/name      | inventory_fragment_2 | MAX_DEPTH_EXCEEDED | Property depth exceeded the limit of 16   | IlRoZSBhYnlzcyI=                   |
+| 12347 | 47640  | EVENT_CREATE          | EVENT     | 2025-07-29T15:15:43Z | /event_fragment_2/nestedObject/invalidFieldName###ASD!ASD!@ | event_fragment_2     | ILLEGAL_FIELD_NAME | Illegal field name                        | InRlc3Qi                           |
 
 <!-- ### Example queries
 
