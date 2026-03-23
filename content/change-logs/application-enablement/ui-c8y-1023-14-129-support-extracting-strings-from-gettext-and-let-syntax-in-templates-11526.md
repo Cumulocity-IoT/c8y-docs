@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Support extracting strings from gettext and @let syntax in templates (#11526) [GRAFT][release/y2026] (#11596)
+title: Support extracting strings from gettext and @let syntax in templates
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,22 +14,4 @@ build_artifact:
 ticket: MTM-66340
 version: 1023.14.129
 ---
-# Backport
-
-This will backport the following commits from `develop` to
-`release/y2026`:
-- [feat(Web SDK): [MTM-66340] Support extracting strings from gettext
-and @let syntax in templates
-(#11526)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11526)
-
-This pull request adds support for more ways of annotating texts for
-translation in Angular templates:
-
-- `@let label = 'My text' | translate;`
-- `{{ condition ? gettext('When true') : gettext('When false') }}`
-(note: `gettext` must be exposed via component's class and the exposed
-field must also be named `gettext`)
-
-It preprocesses HTML and TS files with regex to find the above patterns
-and transform them into syntax that can be handled via angular gettext
-extractor.
+The translation extraction tool previously could not identify text strings marked for translation using the `@let` syntax or the `gettext()` function within Angular templates. This meant that developers using these modern Angular patterns had to use alternative syntax to ensure their text strings were properly extracted for translation. Now the translation extraction tool recognizes both `@let label = 'My text' | translate;` and `{{ condition ? gettext('When true') : gettext('When false') }}` patterns (where `gettext` is exposed as a field in the component class). This allows you to use these more flexible and readable syntax options when annotating text for translation in your Angular templates. For details, refer to the [{{< product-c8y-iot >}} Codex](https://cumulocity.com/codex/components/application-and-system/internationalization/overview#marking-texts-to-be-translated-and-pushing-them-through-the-translation-within-the-source-code).
