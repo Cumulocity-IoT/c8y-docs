@@ -36,6 +36,7 @@ For more general analytics, use SQL queries. Run queries from several interfaces
 
 ### Understanding the data lake structure
 
+<!-- TODO Text needs to be adapted once we switch to flat namesapces. -->
 The structure of the data lake provided by Streaming Lake Ingestion mirrors the familiar [{{< product-c8y-iot >}} domain model](/concepts/domain-model/) to be intuitive for users.  
 At the top level, the service creates two category folders, `cdc` and `latest_data`.  
 As shown in the screenshot below, the next level consists of folders representing the {{< product-c8y-iot >}} domain model classes: `inventory`, `alarm`, `event`, `measurement` and `operation`.
@@ -49,7 +50,7 @@ The `latest_data/inventory` tables show the most recent, up-to-date state of you
 Note that in the current version of the service, MANAGED_OBJECT_DELETE events are not yet reflected in the "latest data tables",
 so deleted devices will still be present in the `latest_data/inventory` tables. This will be changed in a future release.
 
-<!-- TODO: Screenshot needs to be replaced to reflect flat namespaces. -->
+<!-- TODO: Screenshot needs to be replaced once we switch to flat namespaces. -->
 ![alt text](/images/datahub-guide/querying.png)
 
 {{< c8y-admon-info >}}
