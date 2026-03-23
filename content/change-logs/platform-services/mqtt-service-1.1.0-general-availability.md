@@ -1,5 +1,5 @@
 ---
-date: 2026-04-07
+date: 2026-04-09
 title: >-
   MQTT Service is now generally available
 change_type:
@@ -16,11 +16,7 @@ ticket: MTM-64362
 version: 1.1.0
 environment_availability:
   - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
+    date: 2026-04-09
 ---
 
 {{< company-c8y >}} is pleased to announce that the {{< product-c8y-iot >}} MQTT Service is now generally available.
@@ -57,20 +53,25 @@ See [service quotas](/service-terms/quotas/#mqtt-service) for details of the app
 **Migrating from the Public Preview**
 
 Some features were deprecated and replaced during the Public Preview of the MQTT Service.
-These features are no longer available after the transition to General Availability.
-Users migrating from the Public Preview must ensure that all their applications and devices have been updated to use only Generally Available features.
-For details, see the previous [announcement](/change-logs/#mqtt-service-1.1.0-breaking-changes-announcement) that lists the features to be removed.
+These features are **not supported** after the transition to General Availability.
+Users migrating from the Public Preview **must** ensure that all their applications and devices have been updated to use only Generally Available features.
+
+See the previous [announcement](/change-logs/#mqtt-service-1.1.0-breaking-changes-announcement) for details of these features that have been _removed_:
+* Tenant-level isolation
+* MQTT Service Java client SDK
+* Non-TLS endpoint on shared environments
+* Basic authentication for users _without_ the [**Mqtt-service ADMIN** permission](/change-logs/#mqtt-service-0.9.x-required-role-announcement)
 
 **Limitations**
 
-The first generally available release of the MQTT Service has some limitations that will be addressed in future updates.
+The first generally available release of the MQTT Service has some limitations that will be addressed in future updates:
 * Support for Core MQTT devices using SmartREST or JSON-over-MQTT is still in **Public Preview** status and subject to breaking changes before it becomes Generally Available.
-  <br>See [Core MQTT device support](/device-integration/mqtt-service/#core-mqtt-support) for details of these limitations:
+  See [Core MQTT device support](/device-integration/mqtt-service/#core-mqtt-support) for details of these specific limitations:
   * Structured [client identifiers](/device-integration/mqtt/#mqtt-client-id) allowed by the {{< product-c8y-iot >}} core MQTT endpoint are not supported.
   * Pending operations must be explicitly requested by a device when it connects.
   * Messages may be acknowledged by the MQTT Service before they have been processed by the {{< product-c8y-iot >}} core.
   * Devices are not automatically disconnected after sending invalid Core MQTT messages.
   * Availability monitoring is not supported for "push connection" traffic to devices.
   * The "delivery" fragment on an operation is not updated after the operation is delivered to the device.
-* Last Will messages are not sent when devices disconnect.
+* Last Will messages are not sent when devices disconnect from the MQTT Service.
 * Messages using the Correlation Data field are not forwarded to the Messaging Service.
