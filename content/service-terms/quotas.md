@@ -77,7 +77,7 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 | Quota                                                                                         | Type | Value |
 | --------------------------------------------------------------------------------------------- | ---- | ----: |
-| [Devices shown on the Cockpit home page map](/cockpit/home-dashboard/)                        | Hard |   100 |
+| [Map tiles](/cockpit/widgets-collection/#map)                        | Soft |   [Policy](https://operations.osmfoundation.org/policies/tiles/) |
 | [Data points in a graph](/device-management-application/viewing-device-details/#measurements) | Hard |  5000 |
 
 ### Protocols

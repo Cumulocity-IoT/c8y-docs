@@ -791,6 +791,7 @@ svg: '<svg width="1103" height="851" viewBox="0 0 1103 851" fill="none" xmlns="h
 </defs>
 </svg>
 '
+pdf: true
 ---
 
 Find out about developing your own web applications or microservices, and explore customizable solutions like the Cockpit and the Digital Twin Manager.

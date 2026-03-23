@@ -14,3 +14,7 @@ The following types of change are included:
 - **Improvement** - Small improvements.
 - **Announcement** - Deprecations, removals or important UI changes.
 - **API change** - Breaking changes in the APIs.
+
+{{< c8y-admon-info >}}
+Subscribing to change log information is possible in the corresponding change log representation in the [{{< product-c8y-iot >}} Tech Community](https://community.cumulocity.com/c/cumulocity-change-log/).
+{{< /c8y-admon-info >}}

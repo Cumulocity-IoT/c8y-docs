@@ -22,5 +22,11 @@ environment_availability:
     date: '2026-02-16'
   - label: jp.cumulocity.com
     date: '2026-02-16'
+  - label: emea.cumulocity.com
+    date: '2026-02-17'
+  - label: us.cumulocity.com
+    date: '2026-02-17'
+  - label: cumulocity.com
+    date: '2026-02-17'
 ---
 The HTML widget AI code assistant previously had issues when users attempted to terminate message generation. In some cases, the loading state of assistant messages could become stuck in an endless loop, preventing users from canceling the operation or further interacting with the assistant. This issue has been fixed, and users can now successfully terminate message generation when needed, allowing them to stop the assistant and regain control of the interface without being stuck in a loading state.

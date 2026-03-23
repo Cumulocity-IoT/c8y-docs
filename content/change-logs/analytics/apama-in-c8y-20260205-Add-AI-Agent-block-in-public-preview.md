@@ -16,6 +16,16 @@ version: 27.40.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-02-12'
+  - label: apj.cumulocity.com
+    date: '2026-02-18'
+  - label: jp.cumulocity.com
+    date: '2026-02-18'
+  - label: emea.cumulocity.com
+    date: '2026-02-23'
+  - label: us.cumulocity.com
+    date: '2026-02-23'
+  - label: cumulocity.com
+    date: '2026-02-24'
 ---
 
 A new AI Agent block has been added to Analytics Builder. This block queries an AI Agent Manager agent using its inputs and produces the agent's text response as output.
