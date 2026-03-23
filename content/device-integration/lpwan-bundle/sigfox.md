@@ -118,7 +118,7 @@ The device protocol assigned during Sigfox device registration can be changed fr
 ![Sigfox LPWAN Tab](/images/device-protocols/sigfox/sigfox-lpwan-tab.png)
 
 {{< c8y-admon-info >}}
-In order to view the relevant LNS connection in the "Current connection" field, the user must have at least Sigfox READ permission.
+In order to view the relevant LNS connection in the **Current connection** field, the user must have at least Sigfox READ permission.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
