@@ -21,4 +21,4 @@ The unnecessary `$schema` elements have been removed from all properties in the 
 
 Existing asset models and type definitions work correctly without any action required. The fix improves the structural integrity of your definitions and ensures compliance with JSON schema specifications.
 
-For details, see [Asset models](/dtm/asset-types.md).
+For details, see [Asset models](/dtm/asset-types/).
