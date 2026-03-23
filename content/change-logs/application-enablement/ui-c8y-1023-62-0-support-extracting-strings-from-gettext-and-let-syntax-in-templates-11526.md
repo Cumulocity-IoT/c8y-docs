@@ -3,8 +3,8 @@ date: ""
 title: Support extracting strings from gettext and @let syntax in templates
 product_area: Application enablement & solutions
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+  - value: change-VSkj2iV9m
+    label: Fix
 component:
   - value: component-YbYJ3gLU_
     label: Web SDK
