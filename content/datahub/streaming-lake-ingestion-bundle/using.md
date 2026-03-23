@@ -47,8 +47,8 @@ Device- or customer-specific data in the form of [fragments](/concepts/domain-mo
 
 To simplify querying the current state of your assets, for inventory a consolidated representation of that state is available in `latest_data` tables.
 The `latest_data/inventory` tables show the most recent, up-to-date state of your inventory, without you needing to reconstruct it from the historical logs.  
-Note that in the current version of the service, MANAGED_OBJECT_DELETE events are not yet reflected in the "latest data tables",
-so deleted devices will still be present in the `latest_data/inventory` tables. This will be changed in a future release.
+Note that in the current version of the service, MANAGED_OBJECT_DELETE events are not yet reflected in the `latest_data` tables,
+so deleted devices will still be present. This will be changed in a future release.
 
 <!-- TODO: Screenshot needs to be replaced once we switch to flat namespaces. -->
 ![alt text](/images/datahub-guide/querying.png)
@@ -239,7 +239,7 @@ This results in the following data in the data lake:
 | ALARM_CREATE | 12345 | 47635  | 2025-08-19T12:03:27.845Z | 2025-08-19T12:03:27.845Z | c8y_BatteryAlarm | 1     | MAJOR    | ACTIVE | Battery level below 5 percent. |
 
 Again, the columns of the table represent the [properties of a {{< product-c8y-iot >}} alarm](https://cumulocity.com/api/core/#tag/Alarms). The `eventType` property reflects the recorded change (in this case, a created alarm), and the `count` property is added by {{< product-c8y-iot >}}'s [alarm de-duplication](https://cumulocity.com/api/core/#alarm-de-duplication).  
-The firstOccurrenceTime column is added to reflect the time of the first occurrence of the alarm which will stay the same for de-duplicated alarms.
+The `firstOccurrenceTime` column is added to reflect the time of the first occurrence of the alarm, which stays the same for de-duplicated alarms.
 
 In the example, there are no custom properties or fragments in the alarm data. The service treats such properties or fragments in the same way as described for the inventory.
 
@@ -320,9 +320,9 @@ This results in the following data in the data lake:
 
 **Table: cdc.operation.operation**
 
-| eventType        | id    | deviceId | agentId | creationTime             | lastUpdated              | status  | description | fragments        |
-|------------------|-------|----------|---------|--------------------------|--------------------------|---------|-------------|------------------|
-| OPERATION_CREATE | 12345 | 47635    | 47635   | 2025-08-21T13:42:39.678Z | 2025-08-21T13:42:39.678Z | PENDING | null        | \[c8y_Restart \] |
+| eventType        | id    | deviceId | agentId | creationTime             | lastUpdated              | status  | description | fragments       |
+|------------------|-------|----------|---------|--------------------------|--------------------------|---------|-------------|-----------------|
+| OPERATION_CREATE | 12345 | 47635    | 47635   | 2025-08-21T13:42:39.678Z | 2025-08-21T13:42:39.678Z | PENDING | null        | \[c8y_Restart\] |
 
 The columns represent the [properties of a {{< product-c8y-iot >}} operation](https://cumulocity.com/api/core/#operation/getOperationCollectionResource). If you do not provide an operational property, the service stores it as a SQL "null" value.
 
