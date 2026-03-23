@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Performance improvements for SCADA widget
+title: Improved performance of SCADA widgets in dashboard templates
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
