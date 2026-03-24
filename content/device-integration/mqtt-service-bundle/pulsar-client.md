@@ -172,21 +172,27 @@ Received messages will not include any properties other than those listed here.
 Messages published to MQTT devices **must** include all of the required properties, and may include any of the optional properties.
 If a published message includes any properties other than those listed here, those properties will be ignored by the MQTT Service.
 
-| Property name                             | Required          | Value type and encoding                                               | Purpose                                              |
-|-------------------------------------------|-------------------|-----------------------------------------------------------------------|------------------------------------------------------|
-| `topic`                                   | YES               | String                                                                | MQTT topic name                                      |
-| `clientID`                                | YES<sup>(1)</sup> | String                                                                | MQTT client identifier                               |
-| `tx.payloadFormatIndicator`<sup>(2)</sup> | NO                | Single byte with two permitted values, encoded as strings "0" and "1" | MQTT v5 Payload Format Indicator                     |
-| `tx.contentType`                          | NO                | String                                                                | MQTT v5 Content Type                                 |
-| `tx.responseTopic`                        | NO                | String                                                                | MQTT v5 Response Topic                               |
-| `tx.correlationData`                      | NO                | Sequence of bytes, encoded as a Base64 string                         | MQTT v5 Correlation Data                             |
-| `tx.userProperties.<name>`                | NO                | String                                                                | MQTT v5 User Property with name `name`<sup>(3)</sup> |
+| Property name                     | Required          | Value type and encoding                                               | Purpose                                                                    |
+|-----------------------------------|-------------------|-----------------------------------------------------------------------|----------------------------------------------------------------------------|
+| `topic`                           | YES               | String                                                                | MQTT topic name                                                            |
+| `clientID`                        | YES<sup>(1)</sup> | String                                                                | MQTT client identifier                                                     |
+| `tx.clientUsername`<sup>(2)</sup> | NO<sup>(3)</sup>  | String                                                                | MQTT client username, or common name in case of certificate authentication |
+| `tx.clientAuthType`               | NO<sup>(3)</sup>  | String                                                                | MQTT client authentication method (BASIC or X509)                          |
+| `tx.payloadFormatIndicator`       | NO                | Single byte with two permitted values, encoded as strings "0" and "1" | MQTT v5 Payload Format Indicator                                           |
+| `tx.contentType`                  | NO                | String                                                                | MQTT v5 Content Type                                                       |
+| `tx.responseTopic`                | NO                | String                                                                | MQTT v5 Response Topic                                                     |
+| `tx.correlationData`              | NO                | Sequence of bytes, encoded as a Base64 string                         | MQTT v5 Correlation Data                                                   |
+| `tx.userProperties.<name>`        | NO                | String                                                                | MQTT v5 User Property with name `name`<sup>(4)</sup>                       |
 
 Notes:
 1. The `clientID` property can be omitted from a published message only in special case of a _broadcast_ message, described below in [broadcast messages](#broadcast-messages).
 2. The `tx.` prefix indicates that a property is specific to a _transport_, in this case the MQTT Service.
    Other transports will define their own transport-specific properties, but all transports will use `topic` and `clientID`.
-3. The MQTT version 5 specification allows a message to include more than one user property with the same name.
+3. When a device connects to the MQTT Service using certificate authentication, the service enforces a strict binding,
+   ensuring that the certificate's Common Name matches the `clientID`.
+   However, when a device connects using basic authentication, there is no automatic binding between the authenticated user and the `clientID`.
+   To prevent client spoofing, it is the responsibility of the consumer to implement authorization validation. By checking the `tx.clientAuthType` and `tx.clientUsername` properties, downstream consumers (like your microservice) can verify whether the authenticated user is actually authorized to publish messages on behalf of the asserted `clientID`.
+4. The MQTT version 5 specification allows a message to include more than one user property with the same name.
    This feature is **not** supported by the MQTT Service.
    If a device publishes a message containing multiple user properties with the same name, only one of these will be copied into the Pulsar message.
    It is undefined which property will be copied.
