@@ -74,8 +74,28 @@ Messages published by the MQTT Service to devices will never have the retain fla
 
 #### Wildcard subscriptions {#wildcard-subscriptions}
 
-A _wildcard subscription_ allows a device to subscribe to MQTT topics using a _pattern_ instead of a fixed topic name.
-The MQTT Service supports wildcard subscriptions using both the single-level (`+`) and multi-level (`#`) wildcard indicators.
+A _wildcard subscription_ allows a device to subscribe to multiple MQTT topics using a _pattern_ instead of a fixed topic name.
+The MQTT Service supports wildcard subscriptions in compliance with MQTT version 3.1.1 and 5.0 standards.
+
+* **Single-level (+)**: Matches exactly one topic level. 
+  For example, `sensors/+/temperature` matches `sensors/room1/temperature` but not `sensors/room1/basement/temperature`.
+* **Multi-level (#)**: Matches any number of nested levels. 
+  It must be the last character in the topic string. 
+  For example, `sensors/#` matches `sensors/room1/temperature` and `sensors/room2/basement/humidity`.
+
+##### Device isolation {#device-isolation}
+Device isolation remains active when using wildcards. 
+A wildcard subscription does not grant access to topics that the client is not already authorized to see.
+
+##### Overlapping subscriptions {#overlapping-subscriptions}
+If a client has multiple overlapping subscriptions that match the same topic (for example, a subscription to `sensors/+/status` and another to `sensors/thermostat/status`), the MQTT Service delivers the message *only once*. 
+In cases where the overlapping subscriptions have different QoS settings, the service delivers the message using the highest QoS level defined among the matching subscriptions.
+
+{{< c8y-admon-caution >}}
+While the MQTT Service will accept wildcard subscriptions to [Core MQTT topics](#core-mqtt-topics), this is **not supported**.
+Using wildcards with Core MQTT topics can lead to unpredictable behavior.
+We strongly recommend using fixed topic strings for all subscriptions to Core MQTT topics.
+{{< /c8y-admon-caution >}}
 
 ### MQTT version 5.0 features {#mqtt-50-features}
 
