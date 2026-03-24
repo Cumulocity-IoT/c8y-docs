@@ -1,7 +1,7 @@
 ---
-weight: 30
+weight: 40
 layout: redirect
-title: Connecting microservices and applications
+title: Integrating with microservices and external applications
 ---
 
 {{< product-c8y-iot >}} microservices and external applications can consume messages published by devices connected to the MQTT Service, and publish messages back to those devices.
@@ -496,12 +496,3 @@ A simple recovery approach that covers most scenarios is to delete the failed pr
 This avoids cases where the producer or consumer cannot reconnect after an error.
 A more sophisticated strategy can tailor the response to the specific subclass of `PulsarClientException` thrown.
 Use an [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff) strategy to increase the delay between retries until the service recovers.
-
-### Example client {#example-client}
-
-A complete [example Java client](https://github.com/Cumulocity-IoT/cumulocity-examples/tree/develop/mqtt-service/java-simple-pulsar-client) based on the code snippets above can be found in the [cumulocity-examples](https://github.com/Cumulocity-IoT/cumulocity-examples/tree/develop/mqtt-service) repository.
-The *README.md* file provided with the example explains how to build and run it.
-
-The examples repository also contains a simple [Python MQTT client](https://github.com/Cumulocity-IoT/cumulocity-examples/tree/develop/mqtt-service/python-simple-mqtt-client) that can be used to simulate an MQTT device and test the operation of the Java client.
-See the *README.md* file included with the example for more details.
-Start the Python client first to ensure messages sent to a device are received, then start the Java client.
