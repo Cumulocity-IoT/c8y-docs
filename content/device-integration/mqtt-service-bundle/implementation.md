@@ -8,7 +8,7 @@ This section presents details of the MQTT protocol versions and features support
 As with [Connecting MQTT devices](#connecting-devices) it will be of interest to anyone integrating MQTT devices with {{< product-c8y-iot >}}.
 See the [Core MQTT device support](#core-mqtt-support) section for specific information about using {{< product-c8y-iot >}} MQTT protocols (SmartREST and JSON-over-MQTT) with the MQTT Service, but note that Core MQTT support shares the same general features and restrictions documented in this section.
 
-### MQTT protocol versions {#mqtt-protocol-versions}
+### Connecting to the service {#connecting-devices}
 
 The MQTT Service supports connections from clients using version 3.1, 3.1.1 or 5.0 of the MQTT protocol.
 Refer to the [MQTT specifications](https://mqtt.org/mqtt-specification/) for details of the differences between these versions.
