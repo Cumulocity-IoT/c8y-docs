@@ -24,6 +24,8 @@ environment_availability:
     date: '2026-03-23'
   - label: us.cumulocity.com
     date: '2026-03-23'
+  - label: cumulocity.com
+    date: '2026-03-24'
 ---
 Validation has been added for the **"User/App ID – Constant value"** field used during SSO authentication when the **"Use constant value"** option is enabled.
 
