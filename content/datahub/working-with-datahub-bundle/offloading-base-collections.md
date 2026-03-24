@@ -181,9 +181,28 @@ The following excerpt of a measurement document in the base collection is proces
 ````
 The fragment `c8y_Steam` is flattened into two measurements and represented in the target table in the data lake as
 
-| ... | c8y_Steam.Temperature.unit | c8y_Steam.Temperature.value | c8y_Steam.Humidity.unit | c8y_Steam.Humidity.value | ... |
-| --- | ---- | ---- | ---- |
-| ... | C | 2.079 | %RH | 13.37 | ... |
+<table>
+  <thead>
+    <tr>
+      <th>...</th>
+      <th>c8y_Steam.Temperature.unit</th>
+      <th>c8y_Steam.Temperature.value</th>
+      <th>c8y_Steam.Humidity.unit</th>
+      <th>c8y_Steam.Humidity.value</th>
+      <th>...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>...</td>
+      <td>C</td>
+      <td>2.079</td>
+      <td>%RH</td>
+      <td>13.37</td>
+      <td>...</td>
+    </tr>
+  </tbody>
+</table>
 
 {{< c8y-admon-important >}}
 Try to ensure that the data you feed into the measurements base collection is consistent. If measurements of the same type vary in the fragment structures, the resulting target table might not have the expected schema. A common problem, for example, are varying data types of the values like one value being 2.079 and another one NaN.
