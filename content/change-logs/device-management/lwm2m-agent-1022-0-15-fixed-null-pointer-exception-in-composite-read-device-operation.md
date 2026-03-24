@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Fixed LWM2M composite read and observe operation failure when it contains a non existing object/resource
+date: '2026-03-12'
+title: >-
+  Fixed LWM2M composite read and observe operation failure when it contains a
+  non existing object/resource
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -13,5 +15,16 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-5791
 version: 1022.0.15
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-03-12'
+  - label: apj.cumulocity.com
+    date: '2026-03-18'
+  - label: jp.cumulocity.com
+    date: '2026-03-18'
+  - label: emea.cumulocity.com
+    date: '2026-03-23'
+  - label: us.cumulocity.com
+    date: '2026-03-23'
 ---
 Previously, an error occurred when performing composite read operations on LWM2M resources or objects that did not exist on the device. This issue has been resolved.

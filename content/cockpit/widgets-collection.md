@@ -63,7 +63,30 @@ In the view mode, this widget only displays the properties which are not empty.
 
 ### Asset table {#asset-table}
 
-The "Asset table" widget shows details of a selected asset and all its child devices in a table. This is a very powerful widget, allowing to arrange selected properties of objects in a table.
+The "Asset table" widget shows details of a selected asset and all its child devices in a table. This is a very powerful widget, allowing you to arrange selected properties of objects in a table.
+
+{{< c8y-admon-preview >}}
+This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
+
+The new asset table widget provides enhanced customization and flexibility. You can configure columns, filter data, and view all descendants of the selected asset. The following settings are available:
+
+**Settings options**
+
+| Setting | Description |
+|:---|:---|
+| **Include descendants** | Show all descendant assets of the currently selected asset. (As a reference, the old widget was only displaying direct children of the selected asset.) |
+| **Show status icon column** | Display a status icon column which matches the type of the asset. |
+| **Table header** | Display the data grid header. |
+| **Active filters** | Show applied filters in the header. |
+| **Configure columns** | Enable column customization and show configuration button. |
+| **Striped rows** | Alternate row background for readability. |
+| **Hover highlight** | Change row background color on hover. |
+| **Loading indicator** | Show a spinner while data loads. |
+| **Cell borders** | Draw borders around table cells. |
+| **Icon with value** | When cell rendering is set to icon, show both icon and value. |
+| **First column link** | Render the first column (excluding computed and alarm types) as a link to asset details. |
+
+{{< /c8y-admon-preview >}}
 
 **Parameters to configure**
 
@@ -447,6 +470,10 @@ You must enable at least one data point to create the "Linear gauge" widget.
 The "Map" widget shows the location of a device or all devices of a group.
 
 ![Map widget](/images/users-guide/cockpit/cockpit-widget-map.png)
+
+{{< c8y-admon-important >}}
+Map tiles are loaded from community-driven tile servers, which are bound to their [policies](https://operations.osmfoundation.org/policies/tiles/). If a wider map usage is assumed, a custom tile layer [must be configured](https://cumulocity.com/codex/components/data-display-and-visualization/map/overview#changing-the-map-configuration-different-layers-or-map-centers).
+{{< /c8y-admon-important >}}
 
 You can drag the map and move its content, and you can zoom in and out by using the **Plus** and **Minus** buttons.
 

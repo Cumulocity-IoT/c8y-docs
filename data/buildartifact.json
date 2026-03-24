@@ -79,6 +79,10 @@
     {
       "id": "tc-pjJiURv9Y",
       "option": "ui-c8y"
+    },
+    {
+      "id": "tc-b8TjK2mPz",
+      "option": "console"      
     }
   ]
 }

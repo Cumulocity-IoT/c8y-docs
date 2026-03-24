@@ -1,18 +1,21 @@
 ---
-date: ""
-title: "Marked the REST API endpoint for getting opposite assets as deprecated"
-product_area: "Application enablement & solutions"
+date: '2026-03-19'
+title: Marked the REST API endpoint for getting opposite assets as deprecated
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-2c7RdTdXo4"
-      label: "Improvement"
+  - value: change-2c7RdTdXo4
+    label: Improvement
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-2681"
-version: "1024.3.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-2681
+version: 1024.3.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-03-19'
 ---
 A newer, high-performance variant of the endpoint for querying opposite assets was introduced in DTM version 1024.1.0. To align with this improvement and maintain a consistent API, the original endpoint variant is now deprecated.
 
