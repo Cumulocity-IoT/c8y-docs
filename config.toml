@@ -1,20 +1,17 @@
-
-
 # Production
-baseURL = "https://cumulocity.com/docs"
-
-languageCode = "en-us"
+baseURL                = "https://cumulocity.com/docs"
+languageCode           = "en-us"
 defaultContentLanguage = "en-us"
-title = "Cumulocity documentation"
-theme = "c8ydocs"
-# canonifyurls = false
-publishDir = "public"
-# googleAnalytics = "UA-xxxxxxxx-x"
-summaryLength = 30
-buildFuture = true
-relativeURLs = true
+title                  = "Cumulocity documentation"
+theme                  = "c8ydocs"
+publishDir             = "public"
+summaryLength          = 30
+buildFuture            = true
+relativeURLs           = true
+enableGitInfo          = true
 
-enableGitInfo = true
+# canonifyurls = false
+# googleAnalytics = "UA-xxxxxxxx-x"
 
 [taxonomies]
   sectors = "sector"
@@ -23,49 +20,42 @@ enableGitInfo = true
   home = ["HTML", "llmstxt"]
 
 [outputFormats.llmstxt]
-  mediaType = "text/plain"
-  baseName = "llms"
-  isPlainText = true
+  mediaType    = "text/plain"
+  baseName     = "llms"
+  isPlainText  = true
   notAlternative = true
-  suffixes = ["txt"]
+  suffixes     = ["txt"]
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-    [markup.highlight]
-      style = "solarized-dark256"
-
-[[params.author]]
-  name = "Carlos Ceia @ Cumulocity"
-
-
+  [markup.highlight]
+    style = "solarized-dark256"
 
 [params]
-
-  # Global keywords configuration. Following keywords will be add to every pages
+  # Global keywords added to every page
   keywords = ["Cumulocity", "Internet of things", "analytics", "devices", "connect"]
 
   description = "This documentation offers comprehensive information on the var-product-c8y-iot platform both from a user and from a developer perspective. The content relates to the Cumulocity release 2026."
+  oldguides    = "//cumulocity.com/guides/welcome/intro-documentation/"
+  logo         = "images/logo-platform.svg"
+  favicon      = "//cumulocity.com/favicon.ico"
 
-  oldguides = "//cumulocity.com/guides/welcome/intro-documentation/"
-
-  # Can be a boolean 'false' or a string (example: 'CD' or a release version like '2024'). This flag displays the admonition stating it is a preview version
+  # Can be a boolean 'false' or a string (example: 'CD' or a release version like '2024').
+  # This flag displays the admonition stating it is a preview version.
   docsPreview = false
 
   # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
   thumbnailImage = true
 
-  logo = "images/logo-platform.svg"
-
-
-  # Your favicon path, default is "/favicon.png"
-  favicon = "//cumulocity.com/favicon.ico"
-
-  # Content variables for Frontmatter titles
-  product_c8y_iot = "Cumulocity"
-  company_sag = "Software AG"
+  # Content variables for front matter titles
+  product_c8y_iot  = "Cumulocity"
+  company_sag      = "Software AG"
   enterprise_tenant = "Enterprise tenant"
+
+  [[params.author]]
+    name = "Carlos Ceia @ Cumulocity"
 
   [[params.additionalResources]]
     name = "Tech Community"
@@ -99,8 +89,6 @@ enableGitInfo = true
     name = "Glossary"
     link = "/glossary/"
 
-
-# Customize
   [params.footer]
     copyright = "Cumulocity GmbH | <a href='/legal-notices/imprint/'> Imprint</a> | <a href='/legal-notices/privacy-notice/'>Privacy notice</a>"
-    c8ylink = "https://cumulocity.com"
+    c8ylink   = "https://cumulocity.com"

@@ -19,7 +19,7 @@
     {{else}}
       <title>{{ with .Title }}{{ . }} - {{ $siteTitle }}{{ else }}{{ $siteTitle }}{{ end }}</title>
     {{end}}
-    <meta name="author" content="{{ .Site.Author.name }}">
+    <meta name="author" content="{{ with index .Site.Params.author 0 }}{{ .name }}{{ end }}">
     <meta name="keywords" content="{{ with .Keywords }}{{ delimit . ", " }}{{ end }}{{ if .Site.Params.keywords }}, {{ delimit .Site.Params.keywords ", " }}{{ end }}">
 
     <meta property="og:title" content="{{if eq .Title $.Site.Title }}{{ $siteTitle }}{{else}}{{ with .Title }}{{ . }} - {{ $siteTitle }}{{ else }}{{ $siteTitle }}{{ end }}{{end}}">
