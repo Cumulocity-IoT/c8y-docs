@@ -52,7 +52,7 @@ See [service quotas](/service-terms/quotas/#mqtt-service) for details of the app
 The first generally available release of the MQTT Service has some limitations that will be addressed in future updates:
 * Support for Core MQTT devices using SmartREST or JSON-over-MQTT is still in **Public Preview** status and subject to breaking changes before it becomes Generally Available.
   See [Core MQTT device support](/device-integration/mqtt-service/#core-mqtt-support) for details of these specific limitations:
-  * Structured [client identifiers](/device-integration/mqtt/#mqtt-client-id) allowed by the {{< product-c8y-iot >}} core MQTT endpoint are not supported.
+  * Structured [client identifiers](/device-integration/mqtt/#mqtt-clientid) allowed by the {{< product-c8y-iot >}} core MQTT endpoint are not supported.
   * Pending operations must be explicitly requested by a device when it connects.
   * Messages may be acknowledged by the MQTT Service before they have been processed by the {{< product-c8y-iot >}} core.
   * Devices are not automatically disconnected after sending invalid Core MQTT messages.
