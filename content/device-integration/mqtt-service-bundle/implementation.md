@@ -1,13 +1,12 @@
 ---
-weight: 20
+weight: 25
 title: MQTT protocol implementation
 layout: redirect
 ---
 
 This section presents details of the MQTT protocol versions and features supported by the MQTT Service.
-It will be of interest to anyone integrating MQTT devices with {{< product-c8y-iot >}}.
-In general, the MQTT Service behaves the same way for all devices, whether they use the {{< product-c8y-iot >}} [Core MQTT](/device-integration/mqtt) prototocols or a non-{{< product-c8y-iot >}} protocol.
-If there are differences related to the application protocol used by the device, these will be documented where relevant.
+As with [Connecting MQTT devices](#connecting-devices) it will be of interest to anyone integrating MQTT devices with {{< product-c8y-iot >}}.
+See the [Core MQTT device support](#core-mqtt-support) section for specific information about using {{< product-c8y-iot >}} MQTT protocols (SmartREST and JSON-over-MQTT) with the MQTT Service.
 
 ### MQTT protocol versions {#mqtt-protocol-versions}
 
@@ -17,23 +16,9 @@ Refer to the [MQTT specifications](https://mqtt.org/mqtt-specification/) for det
 MQTT version 3.1 is obsolete and not recommended.
 Most of the details below for version 3.1.1 will be valid for version 3.1; however, the specific differences in protcol version 3.1 are not explicitly documented.
 
-### Connecting to the MQTT Service {#connecting-via-mqtt}
-
-MQTT devices can connect to the MQTT Service using direct TCP connections only.
-The service supports "basic" (username/password) and TLS client certificate authentication.
-For full details of the available ports and how to configure device authentication, see [Connecting MQTT devices](/device-integration/mqtt-service/#connecting-devices).
-
 ### MQTT version 3.1.1 features {#mqtt-311-features}
 
 These features are also applicable to devices connecting using [version 5.0](#mqtt-50-features) of the MQTT protocol.
-
-#### Client Identifier {#client-id}
-
-Every device connecting to the MQTT Service within a given tenant must use a unique _Client Identifier_ (client ID).
-If a device connects using a client ID that is already connected, the _existing_ connection will be terminated, in accordance with the MQTT specification.
-Devices in different tenants can be connected at the same time using the same client ID.
-Empty client IDs are not permitted.
-See the table of [limits and quotas](/service-terms/quotas/#mqtt-service) for details of the maximum allowed client ID length.
 
 #### Clean Session {#clean-session}
 
@@ -163,26 +148,11 @@ These topic name cannot be used by devices:
 There is a hard limit on the maximum length of a topic name.
 See the [Service Quotas](/service-terms/quotas#mqtt-service) section for details of the limit.
 
-#### Core MQTT topics {#core-mqtt-topics}
-
-The {{< product-c8y-iot >}} [Core MQTT](/device-integration/mqtt) protocols use a specific set of topics defined in the [MQTT quick reference](/smartrest/quick-reference/#topic-format).
-All message publication and subscription on these topics is assumed to be for Core MQTT devices and will be routed to and from the {{< product-c8y-iot >}} core.
-All other topics are available for use by "generic" MQTT devices.
-Message traffic on generic topics will be routed to and from the {{< product-c8y-iot >}} Messaging Service where it can be accessed by microservice and external application clients.
-
-There is no overlap between the Core MQTT and generic device topic spaces.
+Certain topics are reserved for devices using the Core MQTT protcols.
+See [Core MQTT topics](#core-mqtt-topics) for the complete list.
+There is no overlap between the Core MQTT and generic device topic spaces, and all other topics are available for use by "generic" MQTT devices.
 Generic devices should avoid using any topic name starting with the Core MQTT prefixes listed below, even though some topics under those prefixes are not used by Core MQTT.
-This will help to avoid situations where it is not obvious how a given topic should be handled, which may be difficult to debug:
-
-* `s/`
-* `t/`
-* `q/`
-* `c/`
-* `alarm/alarms/`
-* `event/events/`
-* `measurement/measurements/`
-* `inventory/managedObjects/`
-* `devicecontrol/notifications`
+This will help to avoid situations where it is not obvious how a given topic should be handled, which may be difficult to debug.
 
 ### Payloads {#mqtt-payloads}
 
@@ -242,3 +212,76 @@ For all protocol versions, an alarm will also be raised, subject to the rate lim
 
 See also the discussion of [Messaging Service quotas and limits](#messaging-service-quotas-limits) imposed by the MQTT Service.
 These do not affect device connections directly, but "back pressure" from the Messaging Service can lead to device errors, for example if the Messaging Service is unable to accept more messages from a device.
+
+### Core MQTT device support {#core-mqtt-support}
+
+{{< c8y-admon-preview >}}
+This feature is in **Public Preview**.
+That is, it is not yet generally available and may be subject to change in the future.
+
+Core MQTT support is disabled by default and must be explicitly enabled for your tenant.
+To enable Core MQTT support, navigate to **Settings > Feature toggles** in the Administration application and set the `mqtt-service.smartrest` toggle key status to Enabled.
+While Core MQTT support is disabled, any messages published to [Core MQTT topics](#core-mqtt-topics) will be treated as invalid and may cause the MQTT client to be disconnected.
+{{< /c8y-admon-preview >}}
+
+The preview [Core MQTT](/device-integration/mqtt) support in the MQTT Service has some differences in behaviour, compared to connecting devices directly to the {{< product-c8y-iot >}} core.
+Some of these differences happen because the MQTT Service is _decoupled_ from the {{< product-c8y-iot >}} core, with messages transferred _asynchronously_ between them, as shown in the [architecture diagram](#architecture).
+This means firstly that messages received, and potentially acknowledged, by the MQTT Service have not necessarily been processed by the Core MQTT implementation yet.
+Secondly, the Core MQTT implementation does not have full visiblity of the connection lifecycle and topic subscriptions made by devices connected to the MQTT Service.
+We expect to resolve many of these differences before the Core MQTT support in the MQTT Service reaches Generally Available status.
+
+#### Core MQTT topics {#core-mqtt-topics}
+
+The Core MQTT protocols use a specific set of topics defined in the [MQTT quick reference](/smartrest/quick-reference/#topic-format).
+All message publication and subscription on these topics is assumed to be for Core MQTT devices and will be routed to and from the {{< product-c8y-iot >}} core.
+
+* `s/`
+* `t/`
+* `q/`
+* `c/`
+* `alarm/alarms/`
+* `event/events/`
+* `measurement/measurements/`
+* `inventory/managedObjects/`
+* `devicecontrol/notifications`
+
+#### Connect-time behaviour {#core-mqtt-connections}
+
+##### Client identifiers {#core-mqtt-client-ids}
+
+The structured MQTT [client identifiers](/device-integration/mqtt/#mqtt-clientid) allowed by Core MQTT are not supported by the MQTT Service.
+* If the client ID includes a `:defaultTemplateIdentifier` suffix, this will be treated simply as part of the client ID, with no special handling.
+* If the client ID includes a `d:` (connection type) prefix, this will be recognized to allow **previously registered** Core MQTT devices to connect to the MQTT Service and be handled as the same device by Core MQTT.
+  However, the `d:` prefix will **not** be handled specially for new devices connecting to the {{< product-c8y-iot >}} platform for the first time.
+  When a new device connects for the first time, any `d:` prefix will be treated as simply part of the client ID, with no special handling.
+
+##### Pending operations {#core-mqtt-pending-operations}
+
+Pending operations will not be automatically sent to a device when it connects to the MQTT Service.
+Devices should send a [Get PENDING operations](/smartrest/mqtt-static-templates/#500) SmartREST message (template `500`) to request an update on any pending operations to be sent.
+
+##### Device registration {#core-mqtt-device-registration}
+
+When a device authenticates to the MQTT Service using a certificate, it will be automatically registered as a new device by the {{< product-c8y-iot >}} core the first time it interacts with a Core MQTT topic.
+This automatic behaviour cannot be disabled.
+
+#### Device error handling {#core-mqtt-error-handling}
+
+As mentioned above, the decoupled, asynchronous architecture of the MQTT Service means that the {{< product-c8y-iot >}} core has less visiblity of connected MQTT devices.
+This means that a device will not be automatically disconnected even if it:
+1. Subscribes to an invalid or unavailable Core MQTT Topic.
+2. Sends an invalid Core MQTT message.
+
+In these cases, the device will remain connected, but invalid messages will not be processed and no messages will be received from invalid topics.
+A device can subscribe to the `s/e` topic to monitor any error messages sent by the Core MQTT implementation in these cases.
+
+#### Connection monitoring {#core-mqtt-connection-monitoring}
+
+[Connection monitoring](/device-management-application/monitoring-and-controlling-devices/#connection-monitoring) for "send connection" traffic _from_ the device will work as expected.
+
+However, monitoring of "push connection" traffic _to_ the device is not supported by the MQTT Service.
+
+#### Rate limiting {#core-mqtt-rate-limiting}
+
+The {{< product-c8y-iot >}} [rate limiting](/enterprise-tenant/managing-tenants/#to-limit-the-subtenant-request-rate) mechanism will not be used for MQTT devices connected through the MQTT Service.
+See the table of [limits and quotas](/service-terms/quotas/#mqtt-service) for details of the rate and other limits applied to the MQTT Service.
