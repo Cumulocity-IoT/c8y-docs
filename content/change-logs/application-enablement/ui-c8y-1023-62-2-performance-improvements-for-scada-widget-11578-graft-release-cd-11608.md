@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66383
 version: 1023.62.2
 ---
-Fixed performance issues with SCADA widgets in dashboards with enabled template mode, particularly when widgets contained many placeholders or assigned devices had large managed objects. Dashboard templates with SCADA widgets now load faster and respond more smoothly.
+This change fixes performance issues with SCADA widgets in dashboards with template mode enabled, particularly when widgets contain many placeholders or assigned devices have large managed objects. Dashboard templates with SCADA widgets now load faster and respond more smoothly.
