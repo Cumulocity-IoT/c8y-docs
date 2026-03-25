@@ -1,7 +1,7 @@
 ---
-weight: 30
+weight: 40
 layout: redirect
-title: Connecting microservices and applications
+title: Integrating with microservices and external applications
 ---
 
 {{< product-c8y-iot >}} microservices and external applications can consume messages published by devices connected to the MQTT Service, and publish messages back to those devices.
@@ -161,6 +161,10 @@ Pulsar messages consist of a _payload_ and set of _properties_.
 The payload is a sequence of zero or more bytes, identical to the payload of the MQTT `PUBLISH` message that the Pulsar message corresponds to.
 It is the client's responsibility to understand the format of the payloads produced and accepted by the MQTT devices it communicates with.
 
+For messages received from devices, the Pulsar `eventTime` field holds the time that the MQTT `PUBLISH` message arrived at the MQTT Service.
+The time is represented as a Unix timestamp (the number of milliseconds since 1 January 1970 00:00:00 UTC).
+This ensures downstream consumers have a consistent time source for processing.
+
 Pulsar message properties are name-value pairs, where both the name and the value are text strings.
 The properties recognised by the MQTT Service are listed in the table below.
 Messages received from MQTT devices will **always** include the properties marked as required, and may include any of the optional properties.
@@ -168,21 +172,27 @@ Received messages will not include any properties other than those listed here.
 Messages published to MQTT devices **must** include all of the required properties, and may include any of the optional properties.
 If a published message includes any properties other than those listed here, those properties will be ignored by the MQTT Service.
 
-| Property name                             | Required          | Value type and encoding                                               | Purpose                                              |
-|-------------------------------------------|-------------------|-----------------------------------------------------------------------|------------------------------------------------------|
-| `topic`                                   | YES               | String                                                                | MQTT topic name                                      |
-| `clientID`                                | YES<sup>(1)</sup> | String                                                                | MQTT client identifier                               |
-| `tx.payloadFormatIndicator`<sup>(2)</sup> | NO                | Single byte with two permitted values, encoded as strings "0" and "1" | MQTT v5 Payload Format Indicator                     |
-| `tx.contentType`                          | NO                | String                                                                | MQTT v5 Content Type                                 |
-| `tx.responseTopic`                        | NO                | String                                                                | MQTT v5 Response Topic                               |
-| `tx.correlationData`                      | NO                | Sequence of bytes, encoded as a Base64 string                         | MQTT v5 Correlation Data                             |
-| `tx.userProperties.<name>`                | NO                | String                                                                | MQTT v5 User Property with name `name`<sup>(3)</sup> |
+| Property name                     | Required          | Value type and encoding                                               | Purpose                                                                    |
+|-----------------------------------|-------------------|-----------------------------------------------------------------------|----------------------------------------------------------------------------|
+| `topic`                           | YES               | String                                                                | MQTT topic name                                                            |
+| `clientID`                        | YES<sup>(1)</sup> | String                                                                | MQTT client identifier                                                     |
+| `tx.clientUsername`<sup>(2)</sup> | NO<sup>(3)</sup>  | String                                                                | MQTT client username, or common name in case of certificate authentication |
+| `tx.clientAuthType`               | NO<sup>(3)</sup>  | String                                                                | MQTT client authentication method (BASIC or X509)                          |
+| `tx.payloadFormatIndicator`       | NO                | Single byte with two permitted values, encoded as strings "0" and "1" | MQTT v5 Payload Format Indicator                                           |
+| `tx.contentType`                  | NO                | String                                                                | MQTT v5 Content Type                                                       |
+| `tx.responseTopic`                | NO                | String                                                                | MQTT v5 Response Topic                                                     |
+| `tx.correlationData`              | NO                | Sequence of bytes, encoded as a Base64 string                         | MQTT v5 Correlation Data                                                   |
+| `tx.userProperties.<name>`        | NO                | String                                                                | MQTT v5 User Property with name `name`<sup>(4)</sup>                       |
 
 Notes:
 1. The `clientID` property can be omitted from a published message only in special case of a _broadcast_ message, described below in [broadcast messages](#broadcast-messages).
 2. The `tx.` prefix indicates that a property is specific to a _transport_, in this case the MQTT Service.
    Other transports will define their own transport-specific properties, but all transports will use `topic` and `clientID`.
-3. The MQTT version 5 specification allows a message to include more than one user property with the same name.
+3. When a device connects to the MQTT Service using certificate authentication, the service enforces a strict binding,
+   ensuring that the certificate's Common Name matches the `clientID`.
+   However, when a device connects using basic authentication, there is no automatic binding between the authenticated user and the `clientID`.
+   To prevent client spoofing, it is the responsibility of the consumer to implement authorization validation. By checking the `tx.clientAuthType` and `tx.clientUsername` properties, downstream consumers (like your microservice) can verify whether the authenticated user is actually authorized to publish messages on behalf of the asserted `clientID`.
+4. The MQTT version 5 specification allows a message to include more than one user property with the same name.
    This feature is **not** supported by the MQTT Service.
    If a device publishes a message containing multiple user properties with the same name, only one of these will be copied into the Pulsar message.
    It is undefined which property will be copied.
@@ -203,6 +213,7 @@ Your client will only be able to consume from this topic if the authenticated us
 The client will not be able to consume from any other topic.
 
 The client identifier of the device that published the messages, and the MQTT topic it was published on, can be obtained from the message properties `clientID` and `topic` as described above.
+The Pulsar `eventTime` field provides the exact time when the message was received by the MQTT Service.
 This means that your client **must** consume every message published by every device connected to the MQTT Service for the tenant, even those you are not interested in.
 Messages that are not of interest to the client can simply be acknowledged without further processing.
 
@@ -230,7 +241,7 @@ It extends the previous example that showed how to [set up the connection to the
 
 To consume messages from the topic, your client should create a Pulsar `Consumer` and subscribe it to the topic.
 The consumer should register a `MessageListener` callback that will be called whenever a new message arrives on the topic.
-The `MessageListener` implementation shows how to access the payload and properties of the received messages.
+The `MessageListener` implementation shows how to access the payload, properties, and arrival time of the received messages.
 For simplicity, the application messages in the example are simple text strings.
 However, the payload of the Pulsar message will always be an array of bytes, that must be converted to the format used by the application.
 
@@ -242,7 +253,9 @@ However, the payload of the Pulsar message will always be an array of bytes, tha
             public void received(Consumer<byte[]> consumer, Message<byte[]> message) {
                 final String clientId = message.getProperty("clientID");
                 final String topic = message.getProperty("topic");
+                final long eventTime = message.getEventTime();
                 System.out.println(MessageFormat.format("Received message from MQTT device {0} on MQTT topic {1}", clientId, topic));
+                System.out.println(MessageFormat.format("MQTT PUBLISH arrival timestamp: {0}", eventTime));
                 System.out.println(MessageFormat.format("Message payload: {0}", new String(message.getValue(), StandardCharsets.UTF_8)));
                 System.out.println(MessageFormat.format("Message properties: {0}", message.getProperties()));
                 try {
@@ -317,6 +330,15 @@ In particular this applies to messages with the following invalid configuration:
 
 An alarm will be raised in the {{< product-c8y-iot >}} tenant when one of these invalid messages is detected and discarded.
 The rate of alarm sending is limited to avoid overloading the tenant with redundant alarms alerting about the same error on different messages.
+The following alarms are raised for invalid messages on the Pulsar `to-device` topic:
+
+| Alarm type                               | Description                                                       |
+|------------------------------------------|-------------------------------------------------------------------|
+| `c8y_MqttService_ToDevice_NoKey`         | The message key is not set.                                       |
+| `c8y_MqttService_ToDevice_InvalidKey`    | The message key is set but does not match the client id or topic. |
+| `c8y_MqttService_ToDevice_EmptyClientId` | The `clientID` property is set but has an empty value.            |
+| `c8y_MqttService_ToDevice_MissingTopic`  | The `topic` property is not set.                                  |
+| `c8y_MqttService_ToDevice_EmptyTopic`    | The `topic` property is set but has an empty value.               |
 
 A message with a non-empty `clientID` property referring to an MQTT device that is not currently connected is **not** considered to be invalid.
 However, this message will not be delivered to the device, even if it connects later, because of the requirement for devices to use a _clean session_ when connecting.
@@ -474,12 +496,3 @@ A simple recovery approach that covers most scenarios is to delete the failed pr
 This avoids cases where the producer or consumer cannot reconnect after an error.
 A more sophisticated strategy can tailor the response to the specific subclass of `PulsarClientException` thrown.
 Use an [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff) strategy to increase the delay between retries until the service recovers.
-
-### Example client {#example-client}
-
-A complete [example Java client](https://github.com/Cumulocity-IoT/cumulocity-examples/tree/develop/mqtt-service/java-simple-pulsar-client) based on the code snippets above can be found in the [cumulocity-examples](https://github.com/Cumulocity-IoT/cumulocity-examples/tree/develop/mqtt-service) repository.
-The *README.md* file provided with the example explains how to build and run it.
-
-The examples repository also contains a simple [Python MQTT client](https://github.com/Cumulocity-IoT/cumulocity-examples/tree/develop/mqtt-service/python-simple-mqtt-client) that can be used to simulate an MQTT device and test the operation of the Java client.
-See the *README.md* file included with the example for more details.
-Start the Python client first to ensure messages sent to a device are received, then start the Java client.

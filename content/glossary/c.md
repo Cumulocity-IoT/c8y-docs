@@ -137,6 +137,25 @@ Core REST APIs (such as [Inventory API](https://cumulocity.com/api/core/#tag/Inv
 {{< /c8y-details >}}
 
 
+### {{< product-c8y-iot >}} Messaging Service {#messaging-service}
+
+The {{< product-c8y-iot >}} Messaging Service is a publish/subscribe messaging bus that provides decoupled, asynchronous data transfer between {{< product-c8y-iot >}} components, as well as to and from hosted microservices and external client applications.
+Amongst other things, it is used by the [data broker](#data-broker), [Notifications 2.0](https://cumulocity.com/api/core/#tag/About-notifications-2.0), [Streaming Analytics](#streaming-analytics) and the [MQTT Service](#mqtt-service).
+
+
+### {{< product-c8y-iot >}} MQTT Service {#mqtt-service}
+
+The {{< product-c8y-iot >}} MQTT Service is a unified endpoint for all MQTT protocol traffic flowing in and out of the {{< product-c8y-iot >}} platform.
+It supports MQTT devices that implement the {{< product-c8y-iot >}} "core MQTT" protocols ([SmartREST](#smartrest) and JSON-over-MQTT), and "generic" devices that implement non-{{< product-c8y-iot >}} protocols.
+
+See also [MQTT Service](/device-integration/mqtt-service/) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+Generic devices are integrated using a custom [microservice](#microservice) or external client that implements a mapping between the device protocol and the {{< product-c8y-iot >}} [domain model](#domain-model).
+Microservices and external clients interact with the MQTT Service through the [Messaging Service](#messaging-service), using the Apache Pulsar publish/subscribe API.
+{{< /c8y-details >}}
+
+
 ### {{< openapi >}} {#openapi-specification}
 
 The {{< openapi >}} is a complete OpenAPI specification (following the OpenAPI 3.0 standard) for the {{< product-c8y-iot >}} [REST API](#rest-api), available at [https://cumulocity.com/api/](https://cumulocity.com/api/). It describes the entire REST API, including available endpoints, operations on each endpoint, input and output for each operation, and authentication methods.  
