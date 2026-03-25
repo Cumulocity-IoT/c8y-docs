@@ -107,12 +107,7 @@ async function buildFolderLinksFromSitemap(folderName: string): Promise<string[]
   urls = urls.filter(u => !u.match(new RegExp(`/docs/${folderName}/$`)));
   urls = urls.filter(u => !u.endsWith(`/${folderName}`) && !u.endsWith(`/${folderName}/`));
   const normalized = urls.map(u => u.split('#')[0].split('?')[0].replace(/\/$/, ''));
-  const seen = new Set<string>();
-  return normalized.filter(u => {
-    if (seen.has(u)) return false;
-    seen.add(u);
-    return true;
-  });
+  return [...new Set(normalized)];
 }
 
 // Convert a title into a valid PDF filename
