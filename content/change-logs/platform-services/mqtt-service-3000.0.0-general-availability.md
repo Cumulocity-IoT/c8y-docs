@@ -73,5 +73,7 @@ The first generally available release of the MQTT Service has some limitations t
   * Devices are not automatically disconnected after sending invalid Core MQTT messages.
   * Availability monitoring is not supported for "push connection" traffic to devices.
   * The "delivery" fragment on an operation is not updated after the operation is delivered to the device.
+* WebSocket connections to the MQTT Service are not supported.
+* Retained messages are not supported.
 * Last Will messages are not sent when devices disconnect from the MQTT Service.
 * Messages using the Correlation Data field are not forwarded to the Messaging Service.
