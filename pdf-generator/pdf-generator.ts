@@ -218,7 +218,7 @@ async function processFolder(folderName: string) {
     fs.rmSync(tmpFolder, { recursive: true, force: true });
     console.log(`Cleaned temp folder: ${tmpFolder}`);
   }
-   fs.mkdirSync(tmpFolder, { recursive: true });
+  fs.mkdirSync(tmpFolder, { recursive: true });
 
   const current_Year = new Date().getFullYear().toString();
   const replacements = { title, urls: linksBlock, current_year: current_Year};
