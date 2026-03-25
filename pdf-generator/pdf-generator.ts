@@ -202,9 +202,8 @@ async function processFolder(folderName: string) {
     .map((link, i, arr) => `  ${link}${i < arr.length - 1 ? ' \\' : ''}`)
     .join('\n');
   const pdfFilename = titleToFilename(title);
-  const sectors: string[] = Array.isArray(matterResult.data.sector)
-  ? matterResult.data.sector
-  : (matterResult.data.sector ? [matterResult.data.sector] : []);
+  const isNotEmpty = s => String(s).trim().length > 0;
+  const sectors: string[] = [matterResult.data.sector].flat().filter(isNotEmpty);
 
   for (const s of sectors) {
     const key = String(s).trim();
