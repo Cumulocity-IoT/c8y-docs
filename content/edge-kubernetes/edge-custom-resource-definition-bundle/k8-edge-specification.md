@@ -10,7 +10,6 @@ Package v1 contains API Schema definitions for the edge v1 API group
 
 ### Resource Types
 - [CumulocityIoTEdge](#cumulocityiotedge)
-- [CumulocityIoTEdgeList](#cumulocityiotedgelist)
 
 
 
@@ -25,10 +24,10 @@ Package v1 contains API Schema definitions for the edge v1 API group
 _Appears in:_
 - [CumulocityIoTEdgeSpec](#cumulocityiotedgespec)
 
-| Field | Description | Default | Validation |
-| --- | --- | --- | --- |
-| `domain` _string_ | Edge can be managed, configured, and monitored remotely via a Cumulocity cloud tenant. This requires registering Edge as a device within that tenant.<br />The domain of your tenant. For example, 'acme.cumulocity.com' on cumulocity.com, where 'acme' is the subdomain of your tenant. |  |  |
-| `tlsSecretName` _string_ | Edge uses X.509 certificates to authenticate its connection to the cloud via MQTT. By default, Edge generates and assigns its own self-signed certificates.<br />To provide your own trusted certificates, you must set both of the following keys:<br />  - tls.key: TLS/SSL private key in PEM format.<br />  - tls.crt: TLS/SSL certificate chain associated with the private key in PEM format.<br />    For TLS validation to succeed, the certificates must be concatenated in the following order:<br />      - End-entity (Leaf) Certificate: The certificate issued to your specific Edge server.<br />      - Intermediate Certificate(s): The link(s) between your leaf and the root CA. If multiple intermediates exist, they must be ordered correctly.<br />      - Root CA Certificate: The final authority in the chain (generally included last).<br />Usage:<br />  "--set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>" |  |  |
+| Field | Description | CLI | Default | Validation |
+| --- | --- | --- | --- | --- |
+| `domain` _string_ | Edge can be managed, configured, and monitored remotely via a Cumulocity cloud tenant. This requires registering Edge as a device within that tenant.<br />The domain of your tenant. For example, 'acme.cumulocity.com' on cumulocity.com, where 'acme' is the subdomain of your tenant.<br /> | c8yedge config --set domain=value |  |  |
+| `tlsSecretName` _string_ | Edge uses X.509 certificates to authenticate its connection to the cloud via MQTT. By default, Edge generates and assigns its own self-signed certificates.<br />To provide your own trusted certificates, you must set both of the following keys:<br />  - tls.key: TLS/SSL private key in PEM format.<br />  - tls.crt: TLS/SSL certificate chain associated with the private key in PEM format.<br />    For TLS validation to succeed, the certificates must be concatenated in the following order:<br />      - End-entity (Leaf) Certificate: The certificate issued to your specific Edge server.<br />      - Intermediate Certificate(s): The link(s) between your leaf and the root CA. If multiple intermediates exist, they must be ordered correctly.<br />      - Root CA Certificate: The final authority in the chain (generally included last).<br /> | c8yedge config --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt> |  |  |
 
 
 #### CoreSpec
@@ -42,12 +41,9 @@ _Appears in:_
 _Appears in:_
 - [CumulocityIoTEdgeSpec](#cumulocityiotedgespec)
 
-| Field | Description | Default | Validation |
-| --- | --- | --- | --- |
-| `resources` _[PodResourcesWithLimits](#podresourceswithlimits)_ |  |  |  |
-| `config` _[RawExtension](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#rawextension-runtime-pkg)_ |  |  |  |
-| `nginxConfig` _[RawExtension](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#rawextension-runtime-pkg)_ |  |  |  |
-| `loggingConfig` _[RawExtension](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#rawextension-runtime-pkg)_ |  |  |  |
+| Field | Description | CLI | Default | Validation |
+| --- | --- | --- | --- | --- |
+| `resources` _[PodResourcesWithLimits](#podresourceswithlimits)_ | Specify resource limits for the Cumulocity Core container. For more information, see Resource limits specification.<br /> | c8yedge config --set core.resources.limits.cpu=value --set core.resources.limits.memory=value | \{ limits:map[cpu:3000m memory:6GB] \} |  |
 
 
 
@@ -60,33 +56,14 @@ CumulocityIoTEdge is the Schema for the CumulocityIoTEdges API
 
 
 
-_Appears in:_
-- [CumulocityIoTEdgeList](#cumulocityiotedgelist)
-
-| Field | Description | Default | Validation |
-| --- | --- | --- | --- |
-| `apiVersion` _string_ | `edge.cumulocity.com/v1` | | |
-| `kind` _string_ | `CumulocityIoTEdge` | | |
-| `metadata` _[ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
-| `spec` _[CumulocityIoTEdgeSpec](#cumulocityiotedgespec)_ |  |  |  |
 
 
-#### CumulocityIoTEdgeList
-
-
-
-CumulocityIoTEdgeList contains a list of CumulocityIoTEdge
-
-
-
-
-
-| Field | Description | Default | Validation |
-| --- | --- | --- | --- |
-| `apiVersion` _string_ | `edge.cumulocity.com/v1` | | |
-| `kind` _string_ | `CumulocityIoTEdgeList` | | |
-| `metadata` _[ListMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#listmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
-| `items` _[CumulocityIoTEdge](#cumulocityiotedge) array_ |  |  |  |
+| Field | Description | CLI | Default | Validation |
+| --- | --- | --- | --- | --- |
+| `apiVersion` _string_ | `edge.cumulocity.com/v1` |  | | |
+| `kind` _string_ | `CumulocityIoTEdge` |  | | |
+| `metadata` _[ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |  |
+| `spec` _[CumulocityIoTEdgeSpec](#cumulocityiotedgespec)_ |  |  |  |  |
 
 
 #### CumulocityIoTEdgeSpec
@@ -100,20 +77,20 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 _Appears in:_
 - [CumulocityIoTEdge](#cumulocityiotedge)
 
-| Field | Description | Default | Validation |
-| --- | --- | --- | --- |
-| `version` _[IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util)_ |  |  |  |
-| `licenseKey` _string_ | Edge license file you received for the domain.<br />If you do not have a license, you must request one from product support at https://cumulocity.com/docs/additional-resources/contacting-support/<br />When requesting license, you must provide the following details:<br />  - Domain Name: The domain name assigned to your Edge installation (for example, 'edge.mycompany.com').<br />  - Company Name: The name under which the license was purchased.<br />Usage:<br />  "--set-file licenseKey=<path/to/license.txt>" |  |  |
-| `company` _string_ | The name of your local Edge tenant (for example, your company’s name).<br />This value is used only during the initial Edge installation and cannot be changed for existing installations.<br />Once Edge is installed, company name must be changed via the user interface or the API. |  |  |
-| `domain` _string_ | The Fully Qualified Domain Name (FQDN) where Edge will be hosted (for example, 'edge.mycompany.com').<br />The domain name provided here must match the scope of your Edge license, either the exact subdomain domain, or the parent domain. |  |  |
-| `cumulocityPasswordSecretName` _string_ |  |  |  |
-| `email` _string_ | The email address associated with the administrator account.<br />This value is used only during the initial Edge installation to bootstrap the admin account and cannot be changed for existing installations.<br />Once Edge is installed, the admin account must be changed via the user interface or the API. |  |  |
-| `tlsSecretName` _string_ | This defines the identity of your Edge domain. If provided, Edge automatically generates and assigns self-signed certificates.<br />To use your own certificates, you must set both of the following keys:<br />  - tls.key: TLS/SSL private key in PEM format.<br />  - tls.crt: TLS/SSL certificate chain associated with the private key in PEM format.<br />    For TLS validation to succeed, the certificates must be concatenated in the following order:<br />      - End-entity (Leaf) Certificate: The certificate issued to your specific Edge server.<br />      - Intermediate Certificate(s): The link(s) between your leaf and the root CA. If multiple intermediates exist, they must be ordered correctly.<br />      - Root CA Certificate: The final authority in the chain (generally included last).<br />Usage:<br />  "--set-file tlsSecret.tls.key=<path/to/tls.key> --set-file tlsSecret.tls.crt=<path/to/tls.crt>" |  |  |
-| `cloudTenant` _[CloudTenantSpec](#cloudtenantspec)_ | Cumulocity cloud tenant details to configure and manage Edge remotely. |  |  |
-| `storageClassName` _string_ |  |  |  |
-| `core` _[CoreSpec](#corespec)_ |  |  |  |
-| `mongodb` _[MongodbSpec](#mongodbspec)_ |  |  |  |
-| `microservices` _[MicroserviceSpec](#microservicespec) array_ |  |  |  |
+| Field | Description | CLI | Default | Validation |
+| --- | --- | --- | --- | --- |
+| `version` _[IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util)_ | Edge version to install.<br />Specify "2025" to install the latest available version from the release, or use a fully qualified version like "2025.0.1" to install a specific patch version.<br /> | placeholder text for install description.<br />```c8yedge install --version=value  --registry-host=<registry-host> --username=<username> --password=<password> --source=<source> --confirm-system-requirements=<confirm-system-requirements> --cumulocity-password=<cumulocity-password>```<br />place holder text for upgrade description.<br />```c8yedge upgrade --version=value```<br />placeholder text for package creation description.<br />```c8yedge package --version=value  --registry-host=<registry-host> --username=<username> --password=<password> --out=<path/to/package.tar.gz>``` |  |  |
+| `licenseKey` _string_ | Edge license file you received for the domain.<br />If you do not have a license, you must request one from product support at https://cumulocity.com/docs/additional-resources/contacting-support/<br />When requesting license, you must provide the following details:<br />  - Domain Name: The domain name assigned to your Edge installation (for example, 'edge.mycompany.com').<br />  - Company Name: The name under which the license was purchased.<br />Usage:<br />  "--set-file licenseKey=<path/to/license.txt>" |  |  |  |
+| `company` _string_ | The name of your local Edge tenant (for example, your company’s name).<br />This value is used only during the initial Edge installation and cannot be changed for existing installations.<br />Once Edge is installed, company name must be changed via the user interface or the API. |  |  |  |
+| `domain` _string_ | The Fully Qualified Domain Name (FQDN) where Edge will be hosted (for example, 'edge.mycompany.com').<br />The domain name provided here must match the scope of your Edge license, either the exact subdomain domain, or the parent domain. |  |  |  |
+| `cumulocityPasswordSecretName` _string_ |  |  |  |  |
+| `email` _string_ | The email address associated with the administrator account.<br />This value is used only during the initial Edge installation to bootstrap the admin account and cannot be changed for existing installations.<br />Once Edge is installed, the admin account must be changed via the user interface or the API. |  |  |  |
+| `tlsSecretName` _string_ | This defines the identity of your Edge domain. If provided, Edge automatically generates and assigns self-signed certificates.<br />To use your own certificates, you must set both of the following keys:<br />  - tls.key: TLS/SSL private key in PEM format.<br />  - tls.crt: TLS/SSL certificate chain associated with the private key in PEM format.<br />    For TLS validation to succeed, the certificates must be concatenated in the following order:<br />      - End-entity (Leaf) Certificate: The certificate issued to your specific Edge server.<br />      - Intermediate Certificate(s): The link(s) between your leaf and the root CA. If multiple intermediates exist, they must be ordered correctly.<br />      - Root CA Certificate: The final authority in the chain (generally included last).<br />Usage:<br />  "--set-file tlsSecret.tls.key=<path/to/tls.key> --set-file tlsSecret.tls.crt=<path/to/tls.crt>" |  |  |  |
+| `cloudTenant` _[CloudTenantSpec](#cloudtenantspec)_ | Cumulocity cloud tenant details to configure and manage Edge remotely. |  |  |  |
+| `storageClassName` _string_ |  |  |  |  |
+| `core` _[CoreSpec](#corespec)_ |  |  |  |  |
+| `mongodb` _[MongodbSpec](#mongodbspec)_ |  |  |  |  |
+| `microservices` _[MicroserviceSpec](#microservicespec) array_ |  |  |  |  |
 
 
 
@@ -168,10 +145,10 @@ _Appears in:_
 - [PodResources](#podresources)
 - [PodResourcesWithLimits](#podresourceswithlimits)
 
-| Field | Description | Default | Validation |
-| --- | --- | --- | --- |
-| `cpu` _[Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api)_ | Maximum compute resources allocated to this component. Values are specified in CPU units: for example, 1000m (1000 millicores) or 1 (1 full core). |  |  |
-| `memory` _[Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api)_ | Maximum RAM allocated to this component. Values are specified in bytes or with suffixes: for example, 512Mi (Mebibytes) or 2Gi (Gibibytes). |  |  |
+| Field | Description | CLI | Default | Validation |
+| --- | --- | --- | --- | --- |
+| `cpu` _[Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api)_ | Maximum compute resources allocated to this component. Values are specified in CPU units: for example, 1000m (1000 millicores) or 1 (1 full core). |  |  |  |
+| `memory` _[Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api)_ | Maximum RAM allocated to this component. Values are specified in bytes or with suffixes: for example, 512Mi (Mebibytes) or 2Gi (Gibibytes). |  |  |  |
 
 
 #### MicroserviceSpec
@@ -185,10 +162,10 @@ _Appears in:_
 _Appears in:_
 - [CumulocityIoTEdgeSpec](#cumulocityiotedgespec)
 
-| Field | Description | Default | Validation |
-| --- | --- | --- | --- |
-| `name` _string_ |  |  |  |
-| `resources` _[PodResourcesWithLimits](#podresourceswithlimits)_ |  |  |  |
+| Field | Description | CLI | Default | Validation |
+| --- | --- | --- | --- | --- |
+| `name` _string_ |  |  |  |  |
+| `resources` _[PodResourcesWithLimits](#podresourceswithlimits)_ |  |  |  |  |
 
 
 #### MongodbSpec
@@ -202,10 +179,10 @@ _Appears in:_
 _Appears in:_
 - [CumulocityIoTEdgeSpec](#cumulocityiotedgespec)
 
-| Field | Description | Default | Validation |
-| --- | --- | --- | --- |
-| `credentialsSecretName` _string_ | By default, MongoDB is configured with the username 'databaseAdmin' and a randomly generated password.<br />To provide your own credentials, you must set both of the following keys:<br />  - MONGODB_DATABASE_ADMIN_USER: Database admin username.<br />  - MONGODB_DATABASE_ADMIN_PASSWORD: Database admin password.<br />Usage:<br />  "--set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_USER=<username> --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_PASSWORD=<password>" |  |  |
-| `resources` _[PodResources](#podresources)_ |  |  |  |
+| Field | Description | CLI | Default | Validation |
+| --- | --- | --- | --- | --- |
+| `credentialsSecretName` _string_ | By default, MongoDB is configured with the username 'databaseAdmin' and a randomly generated password.<br />To provide your own credentials, you must set both of the following keys:<br />  - MONGODB_DATABASE_ADMIN_USER: Database admin username.<br />  - MONGODB_DATABASE_ADMIN_PASSWORD: Database admin password.<br />Usage:<br />  "--set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_USER=<username> --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_PASSWORD=<password>" |  |  |  |
+| `resources` _[PodResources](#podresources)_ |  |  |  |  |
 
 
 #### PodResources
@@ -219,10 +196,10 @@ _Appears in:_
 _Appears in:_
 - [MongodbSpec](#mongodbspec)
 
-| Field | Description | Default | Validation |
-| --- | --- | --- | --- |
-| `limits` _[LimitValues](#limitvalues)_ |  |  |  |
-| `requests` _[RequestValues](#requestvalues)_ |  |  |  |
+| Field | Description | CLI | Default | Validation |
+| --- | --- | --- | --- | --- |
+| `limits` _[LimitValues](#limitvalues)_ |  |  |  |  |
+| `requests` _[RequestValues](#requestvalues)_ |  |  |  |  |
 
 
 #### PodResourcesWithLimits
@@ -237,9 +214,9 @@ _Appears in:_
 - [CoreSpec](#corespec)
 - [MicroserviceSpec](#microservicespec)
 
-| Field | Description | Default | Validation |
-| --- | --- | --- | --- |
-| `limits` _[LimitValues](#limitvalues)_ |  |  |  |
+| Field | Description | CLI | Default | Validation |
+| --- | --- | --- | --- | --- |
+| `limits` _[LimitValues](#limitvalues)_ |  |  |  |  |
 
 
 #### RequestValues
@@ -253,8 +230,8 @@ _Appears in:_
 _Appears in:_
 - [PodResources](#podresources)
 
-| Field | Description | Default | Validation |
-| --- | --- | --- | --- |
-| `storage` _[Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api)_ | The amount of persistent storage allocated to this component. Values are specified with suffixes: for example, 10Gi (10 Gibibytes) or 100Gi.<br />Note: Storage can only be increased, decreasing is not supported. |  |  |
+| Field | Description | CLI | Default | Validation |
+| --- | --- | --- | --- | --- |
+| `storage` _[Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api)_ | The amount of persistent storage allocated to this component. Values are specified with suffixes: for example, 10Gi (10 Gibibytes) or 100Gi.<br />Note: Storage can only be increased, decreasing is not supported. |  |  |  |
 
 
