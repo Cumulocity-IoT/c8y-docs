@@ -16,5 +16,9 @@ version: 5.0.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-03-19'
+  - label: apj.cumulocity.com
+    date: '2026-03-25'
+  - label: jp.cumulocity.com
+    date: '2026-03-25'
 ---
 The required user permissions to read, create, or update Loriot connections under Administration > Connectivity have been updated. To read Loriot connections, users must have at least the Loriot READ permission, and to create/update/delete connections, users require the Loriot ADMIN permission. In the Device Management application, this affects the **LPWAN configuration** tab in the Loriot device details, as the **Current connection** field requires READ permission. You can assign the necessary permissions to users in Administration > Accounts > Users/Roles.
