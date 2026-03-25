@@ -20,6 +20,12 @@ environment_availability:
     date: '2026-03-13'
   - label: jp.cumulocity.com
     date: '2026-03-13'
+  - label: emea.cumulocity.com
+    date: '2026-03-16'
+  - label: us.cumulocity.com
+    date: '2026-03-16'
+  - label: cumulocity.com
+    date: '2026-03-16'
 ---
 This change introduces a new "Fieldbus item status" computed property with the following configuration options:
 

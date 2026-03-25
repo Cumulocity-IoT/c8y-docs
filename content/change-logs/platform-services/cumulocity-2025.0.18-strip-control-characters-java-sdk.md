@@ -1,6 +1,8 @@
 ---
-date: ''
-title: Added configuration option to strip control characters during JSON deserialization in Java SDK
+date: '2026-03-12'
+title: >-
+  Added configuration option to strip control characters during JSON
+  deserialization in Java SDK
 product_area: Platform services
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,6 +15,19 @@ build_artifact:
     label: cumulocity
 ticket: DM-4974
 version: 2025.0.18
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-03-12'
+  - label: apj.cumulocity.com
+    date: '2026-03-11'
+  - label: jp.cumulocity.com
+    date: '2026-03-11'
+  - label: emea.cumulocity.com
+    date: '2026-03-16'
+  - label: us.cumulocity.com
+    date: '2026-03-16'
+  - label: cumulocity.com
+    date: '2026-03-10'
 ---
 
 A new configuration option has been introduced in the Java SDK that allows stripping control characters from JSON strings when deserializing responses from the API.
