@@ -221,7 +221,7 @@ async function processFolder(folderName: string) {
   fs.mkdirSync(tmpFolder, { recursive: true });
 
   const current_Year = new Date().getFullYear().toString();
-  const replacements = { title, urls: linksBlock, current_year: current_Year};
+  const replacements = { title, urls: linksBlock, current_year: current_Year };
   generateTemplateFiles(tmpFolder, replacements);
   await runPdfGenerationScript(tmpFolder, folderName, pdfFilename);
   await sleep(5000);
