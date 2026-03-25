@@ -205,9 +205,7 @@ async function processFolder(folderName: string) {
   const isNotEmpty = s => String(s).trim().length > 0;
   const sectors: string[] = [matterResult.data.sector].flat().filter(isNotEmpty);
 
-  for (const s of sectors) {
-    const key = String(s).trim();
-    if (!key) continue;
+  for (const key of sectors) {
     if (!sectorToPdfs.has(key)) sectorToPdfs.set(key, new Set());
     sectorToPdfs.get(key)!.add(pdfFilename);
   }
