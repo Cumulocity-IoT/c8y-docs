@@ -13,3 +13,4 @@ static/releases.json
 .hugo_build.lock
 pdf-generator/tmp/
 pdf-generator/node_modules/
+CLAUDE.md

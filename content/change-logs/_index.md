@@ -1,7 +1,9 @@
 ---
 title: Change logs
+layout: change-logs
 outputs:
   - html
+  - json
 ---
 
 These change logs document all relevant changes for the {{< product-c8y-iot >}} cloud deployments.
