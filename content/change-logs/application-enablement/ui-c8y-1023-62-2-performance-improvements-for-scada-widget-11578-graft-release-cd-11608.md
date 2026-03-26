@@ -16,5 +16,9 @@ version: 1023.62.2
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-03-25'
+  - label: apj.cumulocity.com
+    date: '2026-03-26'
+  - label: jp.cumulocity.com
+    date: '2026-03-26'
 ---
 This change fixes performance issues with SCADA widgets in dashboards with template mode enabled, particularly when widgets contain many placeholders or assigned devices have large managed objects. Dashboard templates with SCADA widgets now load faster and respond more smoothly.
