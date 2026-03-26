@@ -14,23 +14,11 @@ build_artifact:
 ticket: MTM-65026
 version: 1023.64.0
 ---
-# Backport
+The Data Point List widget has been enhanced with the following improvements:
 
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(cockpit): [MTM-65026] As a user, I want the Data Point List
-widget to be enhanced so I can view more comprehensive and reliable data
-(#10193)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10193)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65026]:
-https://cumulocity.atlassian.net/browse/MTM-65026?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Lukasz Janusz <114157358+luja-c8y@users.noreply.github.com>
-Co-authored-by: Lukasz Janusz <lukasz.janusz@cumuloicty.com>
-Co-authored-by: Dawid Janusz <dawid.janusz@cumulocity.com>
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+- Decimal place configuration: Specify decimal places for numerical values, with a default of 2 to align with other Cumulocity IoT widgets.
+- Global time context integration: The widget now responds to dashboard time context changes, automatically updating to show the last measurement value for the selected time range.
+- Asset icon display: Asset icons are now shown alongside asset names for easier visual identification.
+- Export capabilities: Export displayed data in CSV and XLSX formats for external use.
+- Field arrangement: Customize the display order of fields within the widget.
+- Performance optimization: Improved rendering performance through virtual scrolling — only visible rows are rendered, ensuring smooth operation even with large datasets.
