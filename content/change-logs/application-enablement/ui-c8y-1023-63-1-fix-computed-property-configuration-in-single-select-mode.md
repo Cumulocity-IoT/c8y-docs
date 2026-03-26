@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix computed property configuration in single select mode.
+title: Fix computed property configuration opening twice in single select mode
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
