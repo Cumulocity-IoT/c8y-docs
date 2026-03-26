@@ -10,7 +10,7 @@ sector:
 ---
 {{< c8y-admon-preview-feature >}}
 {{< c8y-admon-related >}}
-* [Device management & connectivity > Device integration > Fragment library > Device parameters](/device-integration/fragment-library-bundle/device-parameter) explains how to integrate devices with this capability.
+* [Device management & connectivity > Device integration > Fragment library > Device parameters](/device-integration/fragment-library/#device-parameter) explains how to integrate devices with this capability.
 {{< /c8y-admon-related >}} 
 
 ### Introduction to device parameters {#introduction-to-device-parameters}
