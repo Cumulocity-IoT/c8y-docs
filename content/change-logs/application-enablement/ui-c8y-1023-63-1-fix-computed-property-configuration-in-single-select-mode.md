@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix computed property configuration opening twice in single select mode
+title: Configuring computed properties in single-select mode no longer opens duplicate modal windows
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
