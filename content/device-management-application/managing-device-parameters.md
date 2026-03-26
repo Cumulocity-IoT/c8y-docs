@@ -8,11 +8,12 @@ outputs:
 sector:
   - device_management
 ---
+{{< c8y-admon-preview-feature >}}
+
 
 {{< c8y-admon-related >}}
 * [Device management & connectivity > Device integration > Fragment library > Device parameters](/device-integration/fragment-library-bundle/device-parameter) explains how to integrate devices with this capability.
 {{< /c8y-admon-related >}} 
-
 
 ## Introduction to device parameters
 
@@ -47,3 +48,4 @@ To model a device parameter, open the **Property Library** of *DTM* and create a
 - To create a device parameter that can only be inspected from the UI, set "Applicable To" (Context) to "asset" and "event".
 - To create device parameter that can be changed using operations, set "Applicable To" (Context) to "asset"," "event" and "operation".
 
+{{< /c8y-admon-preview-feature >}}
