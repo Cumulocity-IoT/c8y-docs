@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66278
 version: 1023.63.1
 ---
-When using the asset property selector in single select mode, selecting a computed property with configuration would open the configuration modal twice instead of once, creating a confusing user experience. The configuration modal now opens only once as expected. This fix ensures that configuring computed properties in single select mode works smoothly without duplicate modal windows.
+When using the asset property selector in single-select mode, selecting a computed property with configuration opened the configuration modal twice instead of once, creating a confusing user experience. The configuration modal now opens only once, as expected. This fix ensures that configuring computed properties in single-select mode works smoothly without duplicate modal windows.
