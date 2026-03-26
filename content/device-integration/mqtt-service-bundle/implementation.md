@@ -281,6 +281,7 @@ All message publication and subscription on these topics is assumed to be for Co
 * `event/events/`
 * `measurement/measurements/`
 * `inventory/managedObjects/`
+* `error`
 * `devicecontrol/notifications`
 
 #### Connect-time behaviour {#core-mqtt-connections}
