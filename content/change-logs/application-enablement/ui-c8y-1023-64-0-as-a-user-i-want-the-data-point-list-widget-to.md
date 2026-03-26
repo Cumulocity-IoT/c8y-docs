@@ -1,6 +1,6 @@
 ---
 date: ""
-title: As a user, I want the Data Point List widget to be enhanced so I can view more comprehensive and reliable data (#10193) [GRAFT][release/cd] (#11624)
+title: Data Point List widget improvements
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
