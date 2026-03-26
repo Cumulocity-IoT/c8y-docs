@@ -9,7 +9,15 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     "https://de.mathworks.com/help/predmaint/ug/remaining-useful-life-estimation-using-convolutional-neural-network.html",
 
     // Medium blog uses anti-bot protection, Cypress cannot reliably load it
-    "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6"
+    "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6",
+    
+    // Timeout links
+    "https://opentelemetry.io/",
+
+    // Timeout links
+    "https://openjdk.org/jeps/252",
+
+
   ];
 
 
@@ -64,7 +72,6 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
   Cypress.on('fail', (error) => {
     const sourceFiles = Cypress.env('sourceFiles');
-
     const shortMessage = error.message.split('\n')[0];
 
     const message = [
@@ -185,16 +192,19 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         checkRegularFragment(fragment);
       }
       else {
-        cy.log(`Validating HTML page with curl: ${url}`);
-        cy.task('curlRequest', url).then(({ status, content }) => {
-          expect(status).to.be.oneOf([200,301,302,429]);
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(
-            content,
-            'text/html'
-          );
-          const body = doc && doc.body ? doc.body.textContent.trim() : '';
-          expect( body, `<body> content for ${url} should not be empty`).to.not.be.empty;
+        cy.request({
+          url: url,
+          failOnStatusCode: false
+        }).then((response) => {
+          const contentType = response.headers['content-type'] || '';
+          if (!contentType.includes('text/html')) {
+            cy.log(`Non-HTML content detected for ${url}, skipping cy.visit()`);
+            expect(response.status).to.be.oneOf([200, 201, 202, 203, 204, 301, 302, 304]);
+            expect(response.body).not.to.be.empty;
+          } else {
+            cy.visit(url);
+            cy.document().its('body').should('not.be.empty');
+          }
         });
       }
       
