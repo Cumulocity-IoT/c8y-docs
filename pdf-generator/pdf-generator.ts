@@ -104,7 +104,6 @@ async function loadUrlsFromSitemap(): Promise<string[]> {
 async function buildFolderLinksFromSitemap(folderName: string): Promise<string[]> {
   const allUrls = await loadUrlsFromSitemap();
   let urls = allUrls.filter(u => u.includes(`/${folderName}/`));
-  urls = urls.filter(u => !u.match(new RegExp(`/docs/${folderName}/$`)));
   urls = urls.filter(u => !u.endsWith(`/${folderName}`) && !u.endsWith(`/${folderName}/`));
   const normalized = urls.map(u => u.split('#')[0].split('?')[0].replace(/\/$/, ''));
   return [...new Set(normalized)];
