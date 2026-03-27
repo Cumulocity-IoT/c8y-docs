@@ -1,5 +1,5 @@
 ---
-date: 2026-04-09
+date: 2026-04-07
 title: >-
   MQTT Service is now generally available
 change_type:
@@ -16,7 +16,7 @@ ticket: MTM-64362
 version: 3000.0.0
 environment_availability:
   - label: eu-latest.cumulocity.com
-    date: 2026-04-09
+    date: 2026-04-02
 ---
 
 {{< company-c8y >}} is pleased to announce that the {{< product-c8y-iot >}} MQTT Service is now generally available.
