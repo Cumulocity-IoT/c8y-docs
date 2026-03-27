@@ -1,5 +1,6 @@
 ---
-title: Change logs
+title: Release notes
+layout: change-logs
 outputs:
   - html
   - json
