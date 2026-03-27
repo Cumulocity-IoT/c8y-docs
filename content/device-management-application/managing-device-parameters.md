@@ -31,7 +31,7 @@ Each entry in this view can be expanded into a detailed view. This view shows th
 
 ![Parameter Tab - List of parameters](/images/users-guide/DeviceManagement/devmgmt-parameters-detail.png)
 
-If the {{< product-c8y-iot >}} UI supports changing a parameter, the corresponding **Edit** button sets a new parameter value. This results in a corresponding operation towards the device.
+If the parameter itself is defined as editable and the device supports updating its parameters, the corresponding **Edit** button sets a new parameter value. This results in a corresponding operation towards the device.
 
 #### Modeling device parameters {#modeling-device-parameters}
 
