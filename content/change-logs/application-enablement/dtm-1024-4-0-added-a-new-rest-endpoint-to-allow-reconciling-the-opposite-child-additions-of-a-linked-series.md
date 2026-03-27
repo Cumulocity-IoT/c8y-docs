@@ -1,18 +1,23 @@
 ---
-date: ""
-title: "New REST endpoint for reconciling the opposite child additions of a linked series"
-product_area: "Application enablement & solutions"
+date: '2026-03-26'
+title: >-
+  New REST endpoint for reconciling the opposite child additions of a linked
+  series
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-QHu1GdukP"
-      label: "Feature"
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: ""
-version: "1024.4.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: ''
+version: 1024.4.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-03-26'
 ---
 When an asset links to a measurement source on a device, the platform maintains a reverse index (`c8y_LinkedSeriesReverseIndex`) on the device that tracks which assets reference it. Previously, if this index became out of sync with the asset-side configuration, there was no dedicated API endpoint to correct it.
 
