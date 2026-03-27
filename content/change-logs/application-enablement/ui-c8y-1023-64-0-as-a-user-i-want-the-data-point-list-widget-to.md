@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-65026
 version: 1023.64.0
 ---
-The Data Point List widget has been enhanced with the following improvements:
+The "Data point list" widget has been enhanced with the following improvements:
 
 - Decimal place configuration: Specify decimal places for numerical values, with a default of 2 to align with other Cumulocity IoT widgets.
 - Global time context integration: The widget now responds to dashboard time context changes, automatically updating to show the last measurement value for the selected time range.
