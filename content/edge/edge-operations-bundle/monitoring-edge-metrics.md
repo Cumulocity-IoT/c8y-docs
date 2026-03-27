@@ -6,11 +6,11 @@ layout: redirect
 Edge supports monitoring the Edge deployment with Prometheus, an open-source project used to monitor application state. See https://prometheus.io/ for detailed information on Prometheus and how to use it.
 
 The Edge operator exposes a Prometheus-compatible metrics endpoint, `https://\<domain>:3443/metrics`, where the domain is the one you configured in the Edge CR.
-You can monitor the recommended list of metrics below, with more available at the above endpoint.
+
 
 ### Monitoring the Edge metrics from your cloud tenant {#monitoring-the-edge-metrics-from-your-cloud-tenant}
 
-In your {{< product-c8y-iot >}} cloud tenant, you can monitor the measurements of the Edge listed in the table below. To monitor the measurements from your cloud tenant, ensure that you have registered your Edge with the {{< product-c8y-iot >}} cloud tenant. See [Registering Edge in the cloud tenant](/edge-kubernetes/k8-edge-connecting-edge-to-cloud/#k8-edge-register-edge-on-cloud) for more information.
+In your {{< product-c8y-iot >}} cloud tenant, you can monitor the measurements of the Edge listed in the table below. To monitor the measurements from your cloud tenant, ensure that you have registered your Edge with the {{< product-c8y-iot >}} cloud tenant. See [Registering Edge in the cloud tenant](/edge/k8-edge-connecting-edge-to-cloud/#k8-edge-register-edge-on-cloud) for more information.
 
 |<div style="width:150px">Measurement</div>|<div style="width:250px">Metrics</div>|Description
 |:---|:---|:---
