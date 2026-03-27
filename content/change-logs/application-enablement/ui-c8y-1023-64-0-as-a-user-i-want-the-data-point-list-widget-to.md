@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data Point List widget improvements
+title: Data point list widget improvements
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
