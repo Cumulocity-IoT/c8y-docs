@@ -3,12 +3,15 @@ import * as path from 'path';
 import matter from 'gray-matter';
 import * as child_process from 'child_process';
 import { parseStringPromise } from 'xml2js';
+import archiver from 'archiver';
 
 const contentDir = path.resolve(__dirname, '../content');
 const tmpDir = path.resolve(__dirname, './tmp');
 const outputDir = path.resolve(__dirname, '../public/pdfs');
 const templatesDir = path.resolve(__dirname, './templates');
 const sitemapPath = path.resolve(__dirname, '../public/sitemap.xml');
+const sectorToPdfs = new Map<string, Set<string>>();
+const zipOutputDir = path.resolve(__dirname, '../public/zips');
 
 (async () => {
   // Clean and recreate tmp directory
@@ -35,6 +38,7 @@ const sitemapPath = path.resolve(__dirname, '../public/sitemap.xml');
       console.error(`Failed to process folder "${folderName}":`, err);
     }
   }
+  await buildSectorZips();
 })();
 
 function sleep(ms: number) {
@@ -99,14 +103,10 @@ async function loadUrlsFromSitemap(): Promise<string[]> {
 // Get sitemap URLs that belong to a specific folder
 async function buildFolderLinksFromSitemap(folderName: string): Promise<string[]> {
   const allUrls = await loadUrlsFromSitemap();
-  const rootUrl = allUrls.find(u => u.match(new RegExp(`/docs/${folderName}/$`)));
   let urls = allUrls.filter(u => u.includes(`/${folderName}/`));
-  if (urls.length === 0 && rootUrl) {
-    urls.push(rootUrl);
-  } else if (rootUrl && !urls.includes(rootUrl)) {
-    urls.unshift(rootUrl);
-  }
-  return urls;
+  urls = urls.filter(u => !u.endsWith(`/${folderName}`) && !u.endsWith(`/${folderName}/`));
+  const normalized = urls.map(u => u.split('#')[0].split('?')[0].replace(/\/$/, ''));
+  return [...new Set(normalized)];
 }
 
 // Convert a title into a valid PDF filename
@@ -123,6 +123,7 @@ function applyTemplate(template: string, replacements: Record<string, string>) {
 
 // Generate HTML and bash script files from templates directory
 function generateTemplateFiles(tmpFolder: string, replacements: Record<string, string>) {
+  fs.mkdirSync(tmpFolder, { recursive: true });
   const templates = [
     { filename: 'pdf-copyright-page.html', outName: 'copyright.html' },
     { filename: 'cover.template.html', outName: 'cover.html' },
@@ -167,9 +168,10 @@ async function runPdfGenerationScript(tmpFolder: string, folderName: string, des
       console.log(`Copied PDF to: ${outputPdfPath}`);
 
       fs.unlinkSync(tmpPdfPath);
-      return;
+      return fs.existsSync(outputPdfPath);
     } catch (err) {
       console.error(`Failed to generate PDF for ${folderName}:`, err);
+      return false;
     }
   }
 
@@ -184,29 +186,82 @@ async function processFolder(folderName: string) {
   const raw = fs.readFileSync(cardFile, 'utf-8');
   const matterResult = matter(raw);
   if (matterResult.data.external) {
-  console.log(`Skipping external card: ${folderName} (${matterResult.data.external})`);
+    console.log(`Skipping external card: ${folderName} (${matterResult.data.external})`);
   return;
-  }
+  } 
   const title: string = matterResult.data.title || folderName;
   const bundleFolder: string = matterResult.data.bundlefolder || folderName;
-  const uniqueLinks = await buildFolderLinksFromSitemap(bundleFolder);
-  if (uniqueLinks.length === 0) {
+  const links = await buildFolderLinksFromSitemap(bundleFolder);
+  if (links.length === 0) {
+    console.warn(`No usable links for ${folderName} (bundlefolder: ${bundleFolder}), skipping`);
     return;
   }
 
-  const linksBlock = uniqueLinks
+  const linksBlock = links
     .map((link, i, arr) => `  ${link}${i < arr.length - 1 ? ' \\' : ''}`)
     .join('\n');
   const pdfFilename = titleToFilename(title);
+  const isNotEmpty = (s: unknown): boolean => String(s).trim().length > 0;
+  const sectors: string[] = [matterResult.data.sector].flat().filter(isNotEmpty);
+
+  for (const key of sectors) {
+    if (!sectorToPdfs.has(key)) sectorToPdfs.set(key, new Set());
+    sectorToPdfs.get(key)!.add(pdfFilename);
+  }
+
   const tmpFolder = path.join(tmpDir, folderName);
   if (fs.existsSync(tmpFolder)) {
     fs.rmSync(tmpFolder, { recursive: true, force: true });
     console.log(`Cleaned temp folder: ${tmpFolder}`);
   }
   fs.mkdirSync(tmpFolder, { recursive: true });
+
   const current_Year = new Date().getFullYear().toString();
   const replacements = { title, urls: linksBlock, current_year: current_Year };
   generateTemplateFiles(tmpFolder, replacements);
-  runPdfGenerationScript(tmpFolder, folderName, pdfFilename);
+  await runPdfGenerationScript(tmpFolder, folderName, pdfFilename);
   await sleep(5000);
 }
+
+function sanitizeZipName(name: string) {
+  return name
+    .trim()
+    .toLowerCase()
+    .replace(/[^\w-]+/g, '-')   
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+function createZip(zipPath: string, files: string[]) {
+  return new Promise<void>((resolve, reject) => {
+    const output = fs.createWriteStream(zipPath);
+    const archive = archiver('zip', { zlib: { level: 9 } });
+    output.on('close', () => resolve());
+    output.on('error', reject);
+    archive.on('error', reject);
+    archive.pipe(output);
+
+    for (const filePath of files) {
+      if (fs.existsSync(filePath)) {
+        archive.file(filePath, { name: path.basename(filePath) });
+      } else {
+        console.warn(`Skipping missing PDF: ${filePath}`);
+      }
+    }
+    archive.finalize();
+  });
+}
+
+  async function buildSectorZips() {
+    fs.mkdirSync(zipOutputDir, { recursive: true });
+    for (const [sector, pdfSet] of sectorToPdfs.entries()) {
+      const pdfs = Array.from(pdfSet);
+      if (pdfs.length === 0) continue;
+
+      const zipName = `${sanitizeZipName(sector)}.zip`;
+      const zipPath = path.join(zipOutputDir, zipName);
+
+      await createZip(zipPath, pdfs.map(f => path.join(outputDir, f)));
+      console.log(`Created ZIP for sector "${sector}": ${zipPath}`);
+    }
+  }
