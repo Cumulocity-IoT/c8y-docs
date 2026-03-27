@@ -3,7 +3,7 @@ weight: 15
 title: Monitoring
 layout: redirect
 ---
-Edge allows for monitoring of the Edge deployment using Prometheus, an open-source project that is used for monitoring application state. See https://prometheus.io/ for detailed information on Prometheus and how to use it.
+Edge supports monitoring the Edge deployment with Prometheus, an open-source project used to monitor application state. See https://prometheus.io/ for detailed information on Prometheus and how to use it.
 
 The Edge operator exposes a Prometheus-compatible metrics endpoint, `https://\<domain>:3443/metrics`, where the domain is the one you configured in the Edge CR.
 You can monitor the recommended list of metrics below, with more available at the above endpoint.
