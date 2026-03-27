@@ -65,7 +65,7 @@ This file provides guidance for Large Language Models interacting with the Cumul
                 {{- $inFrontmatter = eq $fmCount 1 }}
               {{- else if $inFrontmatter }}
                 {{- if strings.HasPrefix . "weight:" }}
-                  {{- $weight = int (trim (substr . 7) " ") }}
+                  {{- $weight = int (replaceRE "[\r\n]" "" (trim (substr . 7) " ")) }}
                 {{- end }}
               {{- end }}
             {{- end }}
