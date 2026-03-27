@@ -16,9 +16,9 @@ version: 1023.64.0
 ---
 The "Data point list" widget has been enhanced with the following improvements:
 
-- Decimal place configuration: Specify decimal places for numerical values, with a default of 2 to align with other Cumulocity IoT widgets.
-- Global time context integration: The widget now responds to dashboard time context changes, automatically updating to show the last measurement value for the selected time range.
-- Asset icon display: Asset icons are now shown alongside asset names for easier visual identification.
+- **Decimal place configuration**: Specify decimal places for numerical values, with a default of 2 to align with other {{< product-c8y-iot >}} IoT widgets.
+- **Global time context integration**: The widget now responds to dashboard time context changes, automatically updating to show the last measurement value for the selected time range.
+- **Asset icon display**: Asset icons are now shown alongside asset names for easier visual identification.
 - Export capabilities: Export displayed data in CSV and XLSX formats for external use.
-- Field arrangement: Customize the display order of fields within the widget.
-- Performance optimization: Improved rendering performance through virtual scrolling — only visible rows are rendered, ensuring smooth operation even with large datasets.
+- **Field arrangement**: Customize the display order of fields within the widget.
+- **Performance optimization**: Improved rendering performance through virtual scrolling — only visible rows are rendered, ensuring smooth operation even with large datasets.
