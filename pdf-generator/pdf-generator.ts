@@ -104,15 +104,9 @@ async function loadUrlsFromSitemap(): Promise<string[]> {
 async function buildFolderLinksFromSitemap(folderName: string): Promise<string[]> {
   const allUrls = await loadUrlsFromSitemap();
   let urls = allUrls.filter(u => u.includes(`/${folderName}/`));
-  urls = urls.filter(u => !u.match(new RegExp(`/docs/${folderName}/$`)));
   urls = urls.filter(u => !u.endsWith(`/${folderName}`) && !u.endsWith(`/${folderName}/`));
   const normalized = urls.map(u => u.split('#')[0].split('?')[0].replace(/\/$/, ''));
-  const seen = new Set<string>();
-  return normalized.filter(u => {
-    if (seen.has(u)) return false;
-    seen.add(u);
-    return true;
-  });
+  return [...new Set(normalized)];
 }
 
 // Convert a title into a valid PDF filename
@@ -207,13 +201,10 @@ async function processFolder(folderName: string) {
     .map((link, i, arr) => `  ${link}${i < arr.length - 1 ? ' \\' : ''}`)
     .join('\n');
   const pdfFilename = titleToFilename(title);
-  const sectors: string[] = Array.isArray(matterResult.data.sector)
-  ? matterResult.data.sector
-  : (matterResult.data.sector ? [matterResult.data.sector] : []);
+  const isNotEmpty = (s: unknown): boolean => String(s).trim().length > 0;
+  const sectors: string[] = [matterResult.data.sector].flat().filter(isNotEmpty);
 
-  for (const s of sectors) {
-    const key = String(s).trim();
-    if (!key) continue;
+  for (const key of sectors) {
     if (!sectorToPdfs.has(key)) sectorToPdfs.set(key, new Set());
     sectorToPdfs.get(key)!.add(pdfFilename);
   }
@@ -223,10 +214,10 @@ async function processFolder(folderName: string) {
     fs.rmSync(tmpFolder, { recursive: true, force: true });
     console.log(`Cleaned temp folder: ${tmpFolder}`);
   }
-   fs.mkdirSync(tmpFolder, { recursive: true });
+  fs.mkdirSync(tmpFolder, { recursive: true });
 
   const current_Year = new Date().getFullYear().toString();
-  const replacements = { title, urls: linksBlock, current_year: current_Year};
+  const replacements = { title, urls: linksBlock, current_year: current_Year };
   generateTemplateFiles(tmpFolder, replacements);
   await runPdfGenerationScript(tmpFolder, folderName, pdfFilename);
   await sleep(5000);
