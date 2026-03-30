@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added a fix for preview not working when removing and re-adding datapoints.  [GRAFT][release/cd] (#11638)
+title: Fixed preview not working when removing and re-adding data points
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-65370
 version: 1023.64.1
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-65370] Added a fix for preview not working when
-removing and re-adding datapoints.
-](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11620)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65370]:
-https://cumulocity.atlassian.net/browse/MTM-65370?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+When you removed a data point from the data graph widget configuration and re-added it, the preview would not work as expected. This issue has been fixed so that the preview now properly shows data points after they are removed and re-added, allowing you to work with your data point configurations without encountering display issues.
