@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65370
 version: 1023.64.1
 ---
-When you removed a data point from the data graph widget configuration and re-added it, the preview would not work as expected. This issue has been fixed so that the preview now properly shows data points after they are removed and re-added, allowing you to work with your data point configurations without encountering display issues.
+When removing a data point from the "Data graph" widget configuration and re-adding it, the preview did not work as expected. This issue has been fixed so that the preview now properly shows data points that have been removed and re-added, allowing you to work with your data point configurations without encountering display issues.
