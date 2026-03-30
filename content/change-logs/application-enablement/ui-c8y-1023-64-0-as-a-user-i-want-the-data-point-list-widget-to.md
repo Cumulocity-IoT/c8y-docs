@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-65026
 version: 1023.64.0
 ---
-The "Data point list" widget has been enhanced with the following improvements:
+The "Data point list" widget has been migrated to Angular and enhanced to improve usability and performance, providing a modern, consistent foundation with the current UI framework. Updates include:
 
 - **Decimal place configuration**: Specify decimal places for numerical values, with a default of 2 to align with other {{< product-c8y-iot >}} IoT widgets.
 - **Global time context integration**: The widget now responds to dashboard time context changes, automatically updating to show the last measurement value for the selected time range.
