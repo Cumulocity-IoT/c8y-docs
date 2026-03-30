@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Support extracting strings from gettext and @let syntax in templates
 product_area: Application enablement & solutions
 change_type:

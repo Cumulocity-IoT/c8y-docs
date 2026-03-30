@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Widget configuration preview now properly shows data points that have been removed and re-added
 product_area: Application enablement & solutions
 change_type:

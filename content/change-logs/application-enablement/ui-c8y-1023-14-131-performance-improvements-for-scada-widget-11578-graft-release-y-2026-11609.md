@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-03-31
 title: Improved performance of SCADA widgets in dashboard templates
 product_area: Application enablement & solutions
 change_type:
