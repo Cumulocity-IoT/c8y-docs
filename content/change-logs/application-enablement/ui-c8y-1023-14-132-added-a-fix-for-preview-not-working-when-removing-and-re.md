@@ -14,21 +14,4 @@ build_artifact:
 ticket: MTM-65370
 version: 1023.14.132
 ---
-# Backport
-
-This will backport the following commits from `develop` to
-`release/y2026`:
-- [fix(Web SDK): [MTM-65370] Added a fix for preview not working when
-removing and re-adding datapoints.
-](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11620)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65370]:
-https://cumulocity.atlassian.net/browse/MTM-65370?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+When removing a data point from the "Data graph" widget configuration and re-adding it, the preview did not work as expected. This issue has been fixed so that the preview now properly shows data points that have been removed and re-added, allowing you to work with your data point configurations without encountering display issues.
