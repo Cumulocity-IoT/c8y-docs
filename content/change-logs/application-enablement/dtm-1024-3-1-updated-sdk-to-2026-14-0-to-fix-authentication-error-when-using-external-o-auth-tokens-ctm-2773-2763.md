@@ -22,6 +22,10 @@ environment_availability:
     date: '2026-03-25'
   - label: jp.cumulocity.com
     date: '2026-03-25'
+  - label: emea.cumulocity.com
+    date: '2026-03-30'
+  - label: us.cumulocity.com
+    date: '2026-03-30'
 ---
 When using external OAuth tokens for authentication, the Digital Twin Manager REST API incorrectly rejected valid credentials and returned an "Invalid Credentials!" error. This prevented users from accessing the API when authenticating through external OAuth providers, disrupting integrations and automated workflows that rely on external authentication mechanisms.
 
