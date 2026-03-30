@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added a fix for preview not working when removing and re-adding datapoints.  [GRAFT][release/y2026] (#11639)
+title: Widget configuration preview now properly shows data points that have been removed and re-added
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
