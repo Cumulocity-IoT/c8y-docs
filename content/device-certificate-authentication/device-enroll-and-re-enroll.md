@@ -126,7 +126,7 @@ And an example of a REST request with `Accept: application/pkcs10` (optional):
 
 ### Re-enroll a device certificate {#re-issue-device-certificate}
 
-The Device re-enroll API is used by a device to renew its certificate or to replace its certificate by authenticating with its current credentials. The current credentials can be a device-serial and password or a JWT token.
+The Device re-enroll API is used by a device to renew its certificate or to replace its certificate by authenticating with its current credentials. The current credentials can be a device serial and password or a JWT token.
 
     POST /.well-known/est/simplereenroll
     Authorization: Basic <<Base64 encoded device-serial:password>>
