@@ -69,8 +69,9 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
   }
 
   if (link.startsWith("#")) {
-    const fileDir = path.dirname(relativePath).replaceAll(path.sep, '/');
+    const fileDir = path.dirname(relativePath).replaceAll(path.sep, "/");
     const fileName = path.basename(relativePath, ".md");
+
     let segments = fileDir.split("/").filter(Boolean);
     let hasBundle = false;
 
@@ -82,18 +83,21 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
       }
     }
 
-    // if this file is not rendered, publish from its directory (e.g., /glossary/)
-    const notRendered = hasRenderFalse(fileContent);
+    const notRendered =
+      hasRenderFalse(fileContent) || fileDir === "glossary";
 
     let publishedBasePath = "";
-    if (notRendered || hasBundle) {
+
+    if (hasBundle) {
       publishedBasePath = segments.join("/");
+    } else if (notRendered) {
+      publishedBasePath = fileDir;
     } else {
       publishedBasePath = fileName === "index" ? fileDir : `${fileDir}/${fileName}`;
     }
-    let url = `${BASE_URL}/${publishedBasePath}#${link.substring(1)}`;
-    url = url.replace(/([^:]\/)\/+/g, '$1'); // removes duplicate slashes
-    url = url.replace(/\/#/g, '#'); // removes slash before hash
+
+    let url = `${BASE_URL}/${publishedBasePath}/#${link.substring(1)}`;
+    url = url.replace(/([^:]\/)\/+/g, "$1");
     return url;
   }
 
