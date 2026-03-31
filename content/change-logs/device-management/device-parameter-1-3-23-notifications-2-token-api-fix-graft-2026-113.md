@@ -1,6 +1,6 @@
 ---
 date: ""
-title: notifications2 tokenAPI fix (graft 2026) (#113)
+title: Fixed an issue with notifications token refresh in device-parameter microservice
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5704
 version: 1.3.23
 ---
---- Change Logs Title: Fixed an issue with notifications token refresh in device-parameter microservice Description: Fixed an issue where the microservice would fail to refresh JWT tokens following periods of inactivity, preventing automatic recovery and requiring a manual service restart.
+Fixed an issue where the microservice would fail to refresh JWT tokens following periods of inactivity, preventing automatic recovery and requiring a manual service restart.
