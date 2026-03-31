@@ -847,6 +847,8 @@ Remove one or more fragments from an event of a specific type.
 
 ##### Create device parameter update events (408) {#408}
 
+{{< c8y-admon-preview-feature >}}
+
 Create parameter update events for a device. This event always has the type `c8y_ParameterUpdate` and contains the fragments and properties specified in the payload. If `change detect` is enabled, events are only created if the given state in the event was not already known at the time. 
 
 |Position|Parameter|Mandatory|Type|Default value|
@@ -864,6 +866,8 @@ Create parameter update events for a device. This event always has the type `c8y
 ```text
 408,,,,c8y_RelayStatus.left,BOOLEAN,true,c8y_RelayStatus.right,BOOLEAN,false
 ```
+
+{{< /c8y-admon-preview-feature >}}
 
 
 #### Operation templates (5xx) {#operation-templates}
@@ -1391,6 +1395,8 @@ When a device profile operation contains a type in one of the software entries i
 
 ##### Parameter update operation (532) {#532}
 
+{{< c8y-admon-preview-feature >}}
+
 Notifies the device that a **c8y_ParameterUpdate** operation has been created. 
 
 | Position | Parameter          | Type   | Description                                                         |
@@ -1428,6 +1434,8 @@ Will result in the message:
 ```
 
 The maximum number of parameters is **100**. Operations containing more parameters cannot be pushed through this template.
+
+{{< /c8y-admon-preview-feature >}}
 
 
 #### Platform capabilities templates (6xx) {#subscribe-platform-capabilities} 

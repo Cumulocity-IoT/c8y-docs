@@ -6,6 +6,8 @@ sector:
   - device_management
 ---
 
+{{< c8y-admon-preview-feature >}}
+
 The **Device parameter** tab allows users to modify granular, atomic state variables on a connected device without transmitting an entire monolithic configuration file. The data structures are expressed as fragments that manage discrete parameters, such as Modbus register numbers, filtering times, or polling intervals.
 
 This functionality is automatically enabled for all devices whose communicated parameters match asset property definitions configured in the Digital Twin Manager application.
@@ -87,5 +89,5 @@ When the device receives the ```c8y_ParameterUpdate``` operation, it is expected
 5. Set the operation status to SUCCESSFUL. <br>
    `503,c8y_ParameterUpdate`
 
-
+{{< /c8y-admon-preview-feature >}}
 

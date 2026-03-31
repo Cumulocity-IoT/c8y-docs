@@ -1,5 +1,6 @@
 ---
 title: Change logs
+layout: change-logs
 outputs:
   - html
   - json
