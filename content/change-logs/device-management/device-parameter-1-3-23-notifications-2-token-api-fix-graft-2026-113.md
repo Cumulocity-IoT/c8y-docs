@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed an issue with notifications token refresh in device-parameter microservice
+title: Fixed failing JWT token refresh in Device Parameter microservice
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5704
 version: 1.3.23
 ---
-Fixed an issue where the microservice would fail to refresh JWT tokens following periods of inactivity, preventing automatic recovery and requiring a manual service restart.
+The Device Parameter microservice failed to refresh JWT tokens following periods of inactivity, preventing automatic recovery and requiring a manual service restart. This issue has been fixed.
