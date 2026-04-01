@@ -6,7 +6,7 @@ change_type:
     - value: "change-type-preview"
        label: "Preview"
 component:
-    - value: "component-ai-agent-manager2
+    - value: "component-ai-agent-manager"
       label: "Web SDK"
 build_artifact:
     - value: "ai-agents"
