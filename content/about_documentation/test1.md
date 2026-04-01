@@ -9,8 +9,8 @@ sector:
 
 ### Prerequisites {#prerequisites}
 
-- AI Agent Manager is configured and working
-- Microservice hosting is enabled in your {{< product-c8y-iot >}} tenant
+- AI Agent Manager is configured and working.
+- Microservice hosting is enabled in your {{< product-c8y-iot >}} tenant.
 
 ### To deploy the microservice {#to-deploy-the-microservice}
 
