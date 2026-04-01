@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5704
 version: 2.0.20
 ---
-Fixed an issue where the microservice would fail to refresh JWT tokens following periods of inactivity, preventing automatic recovery and requiring a manual service restart.
+The device-parameter microservice failed to refresh JWT tokens following periods of inactivity, preventing automatic recovery and requiring a manual service restart. This issue has been fixed.
