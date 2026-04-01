@@ -96,6 +96,14 @@ Cypress.on('uncaught:exception', (err) => {
     if (err.message.includes("Minified React error #418")) {
       return false;
     }
+    if (err.message.includes('CookieYes')) {
+       return false;
+    }
+    if (err.message.includes("window.clarity is not a function")) {
+      return false;
+    }
+
+    
     
   });
   

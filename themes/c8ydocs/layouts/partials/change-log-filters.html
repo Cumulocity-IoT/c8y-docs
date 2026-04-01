@@ -43,15 +43,13 @@
         {{ end }}
       {{else}}
         {{ range sort site.Data.changetype.options "option" "asc" }}
-          {{ if ne .option "Fix"}}
-            <label class="c8y-checkbox m-b-4">
-              <input type="checkbox" class="filter-btn" name="change-type-{{.option | urlize}}">
-              <span></span>
-              <span>
-                {{.option}}
-              </span>
-            </label>
-          {{ end }}
+          <label class='c8y-checkbox m-b-4 {{ if eq .option "Fix"}} hidden {{end}}' {{ if eq .option "Fix"}} data-internal {{end}}>
+            <input type="checkbox" class="filter-btn" name="change-type-{{.option | urlize}}">
+            <span></span>
+            <span>
+              {{.option}}
+            </span>
+          </label>
         {{ end }}
       {{ end }}
     </fieldset>
@@ -98,7 +96,7 @@
       </label>
       {{ end }}
     </fieldset>
-    <fieldset class="filter-fieldset c8y-fieldset {{ if not site.Data.date_settings.yearly_release}} hidden {{end}}" data-internal data-filter-group="technicalcomponent">
+    <fieldset class="filter-fieldset c8y-fieldset" data-filter-group="technicalcomponent">
       <legend>Build artifact</legend>
       {{ range sort site.Data.buildartifact.options "option" "asc"}}
       <label class="c8y-checkbox m-b-4">

@@ -4,7 +4,7 @@ title: R
 layout: bundle
 sector:
   - getting_started
-_build:
+build:
   render: false
 
 ---

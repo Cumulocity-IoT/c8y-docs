@@ -9,7 +9,15 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     "https://de.mathworks.com/help/predmaint/ug/remaining-useful-life-estimation-using-convolutional-neural-network.html",
 
     // Medium blog uses anti-bot protection, Cypress cannot reliably load it
-    "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6"
+    "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6",
+    
+    // Timeout links
+    "https://opentelemetry.io/",
+
+    // Timeout links
+    "https://openjdk.org/jeps/252",
+
+
   ];
 
 
@@ -64,10 +72,16 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
   Cypress.on('fail', (error) => {
     const sourceFiles = Cypress.env('sourceFiles');
-    if (sourceFiles) {
-      error.message += `\n\nThis URL was used in the following files:\n - ${sourceFiles.join('\n -')}`;
-    }
-    throw error;
+    const shortMessage = error.message.split('\n')[0];
+
+    const message = [
+      shortMessage,
+      sourceFiles ? `Source files:\n - ${sourceFiles.join('\n - ')}` : ''
+    ].join('\n');
+
+    const cleanError = new Error(message);
+    cleanError.stack = null;
+    throw cleanError;
   });
 
   urls.forEach((item) => {

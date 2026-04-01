@@ -182,7 +182,7 @@ function buildToc() {
               month = curMonth;
             }
           }
-          tocLinks += `<div class="list-group-item"><a class="toc-link" href="#${target.id}" data-refid="${h2.parentNode.id}" title="${h2.textContent}">${h2.textContent}</a></div>`;
+          tocLinks += `<div class="list-group-item"><a class="toc-link ${h2.parentNode.hasAttribute('data-internal') ? 'hidden' : ''}" ${h2.parentNode.hasAttribute('data-internal') ? 'data-internal' : ''} href="#${target.id}" data-refid="${h2.parentNode.id}" title="${h2.textContent}">${h2.textContent}</a></div>`;
         }
       });
 
