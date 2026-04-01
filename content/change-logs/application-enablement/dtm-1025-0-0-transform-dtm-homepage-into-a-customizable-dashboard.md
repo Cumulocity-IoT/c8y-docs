@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Transform DTM Homepage into a Customizable Dashboard."
+title: "Transformed DTM homepage into a customizable dashboard"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
@@ -14,10 +14,11 @@ build_artifact:
 ticket: "CTM-2684"
 version: "1025.0.0"
 ---
-The current DTM homepage is a static page that displays introductory
-information along with counts of assets, asset properties, and models.
-This change transforms the homepage into a fully customizable dashboard
-aligned with the Cockpit and Device Management dashboards. Customers can
-now configure information widgets, apply their preferred terminology,
-and select widgets based on their operational needs and organizational
-preferences.
+The Digital Twin Manager homepage has been enhanced from a static
+overview page to a fully customizable dashboard, consistent with the
+dashboards available in Cockpit and Device Management.
+
+Users can now add and configure widgets to display relevant information,
+tailor terminology to match their domain, and design the homepage based
+on their operational requirements. This provides greater flexibility and
+enables teams to focus on the data that matters most to them.
