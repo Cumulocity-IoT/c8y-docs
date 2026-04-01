@@ -18,5 +18,9 @@ version: 1023.64.1
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-03-30'
+  - label: apj.cumulocity.com
+    date: '2026-04-01'
+  - label: jp.cumulocity.com
+    date: '2026-04-01'
 ---
 When removing a data point from the "Data graph" widget configuration and re-adding it, the preview did not work as expected. This issue has been fixed so that the preview now properly shows data points that have been removed and re-added, allowing you to work with your data point configurations without encountering display issues.
