@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed an issue with notifications token refresh in device-parameter microservice
+title: Fixed failing JWT token refresh in Device Parameter microservice
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
