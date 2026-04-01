@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Asset instance and definitions APIs are now generally available"
+title: "Asset Instance API and Definition API are now generally available"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
