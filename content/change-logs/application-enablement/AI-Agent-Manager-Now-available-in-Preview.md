@@ -1,19 +1,20 @@
 ---
-date: 2026-03-31
-title: AI Agent Manager: Now Available in Preview
-product_area: Application enablement & solutions
+date: "2026-03-31"
+title: "AI Agent Manager: Now Available in Preview"
+product_area: "Application enablement & solutions"
 change_type:
-    - value: change-type-preview
-       label: Preview
+    - value: "change-type-preview
+       label: "Preview"
 component:
-    - value: component-ai-agent-manager
-      label: Web SDK
+    - value: "component-ai-agent-manager2
+      label: "Web SDK"
 build_artifact:
-    - value: ai-agents
-      label: ai-agents
+    - value: "ai-agents"
+      label: "ai-agents"
 ticket: ""
 version: "0.0.9"
 ---
+
 {{< c8y-admon-preview >}}
 This feature is available in Preview. It is intended for evaluation and testing purposes and may be subject to changes.
 {{< /c8y-admon-preview >}}
