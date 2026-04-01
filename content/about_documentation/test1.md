@@ -7,12 +7,12 @@ sector:
 ---
 
 
-## Prerequisites {#prerequisites}
+### Prerequisites {#prerequisites}
 
 - A configured and working AI Agent Manager
 - Cumulocity microservice hosting enabled
 
-## To deploy the microservice {#to-deploy-the-microservice}
+### To deploy the microservice {#to-deploy-the-microservice}
 
 1. Log in to your Cumulocity administration application.
 2. Navigate to **Ecosystem** → **Microservices**.
@@ -21,7 +21,7 @@ sector:
 
 The microservice is deployed and available in the **Microservices** list.
 
-## To configure the MCP server {#to-configure-the-mcp-server}
+### To configure the MCP server {#to-configure-the-mcp-server}
 
 1. Navigate to the AI Agent Manager in the administration application.
 2. Open the **Tools** section.
