@@ -51,7 +51,7 @@ const shortcodeMapping = {
 const hasRenderFalse = (fileContent) => {
   try {
     const { data } = matter(fileContent);
-    return data?._build?.render === false;
+    return data?.build?.render === false || data?._build?.render === false;
   } catch {
     return false;
   }
@@ -84,21 +84,18 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
       }
     }
 
-    const notRendered =
-      hasRenderFalse(fileContent) || fileDir === "glossary";
+    // if this file is not rendered, publish from its directory (e.g., /glossary/)
+    const notRendered = hasRenderFalse(fileContent);
 
     let publishedBasePath = "";
-
-    if (hasBundle) {
+    if (notRendered || hasBundle) {
       publishedBasePath = segments.join("/");
-    } else if (notRendered) {
-      publishedBasePath = fileDir;
     } else {
       publishedBasePath = fileName === "index" ? fileDir : `${fileDir}/${fileName}`;
     }
-
-    let url = `${BASE_URL}/${publishedBasePath}/#${link.substring(1)}`;
-    url = url.replace(/([^:]\/)\/+/g, "$1");
+    let url = `${BASE_URL}/${publishedBasePath}#${link.substring(1)}`;
+    url = url.replace(/([^:]\/)\/+/g, '$1'); // removes duplicate slashes
+    url = url.replace(/\/#/g, '#'); // removes slash before hash
     return url;
   }
 
