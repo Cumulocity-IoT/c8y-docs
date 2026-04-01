@@ -14,7 +14,7 @@ sector:
 
 ### To deploy the microservice {#to-deploy-the-microservice}
 
-1. Log in to your {{< product-c8y-iot >}} administration application.
+1. Log in to your {{< product-c8y-iot >}} Administration application.
 2. Navigate to **Ecosystem** → **Microservices**.
 3. Click **Add microservice** in the toolbar.
 4. Select the created ZIP file and wait for the upload to complete.
