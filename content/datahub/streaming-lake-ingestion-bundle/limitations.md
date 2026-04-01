@@ -4,7 +4,7 @@ title: Current preview limitations
 layout: redirect
 ---
 
-The current preview version includes a number of functional limitation as outlined in this section.
+The current preview version includes a number of functional limitations as outlined in this section.
 
 * Inventory synchronization is not yet automatically executed on subscription.
 * `latest` data is only recorded for the inventory.

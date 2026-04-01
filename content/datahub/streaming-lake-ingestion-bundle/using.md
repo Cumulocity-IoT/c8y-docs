@@ -4,7 +4,7 @@ title: Using Streaming Lake Ingestion
 layout: redirect
 ---
 
-Streaming Lake Ingestion is an optional service in {{< product-c8y-iot >}}. To subscribce to the service, please contact the [{{< company-c8y >}} support](/additional-resources/contacting-support/). After subscription,
+Streaming Lake Ingestion is an optional service in {{< product-c8y-iot >}}. To subscribe to the service, contact the [{{< company-c8y >}} support](/additional-resources/contacting-support/). After subscription,
 
 * Your current device and asset inventory is downloaded from the operational store into the lake.
 * All new incoming data is stored in the lake.
@@ -17,7 +17,7 @@ The service stores only new data incoming after subscription. It does not automa
 
 ### Analyzing lake data {#analyzing-lake-data-using-sql}
 
-You can now analyse your data from any Apache Iceberg compliant tool. For example:
+You can now analyze your data from any Apache Iceberg compliant tool. For example:
 
 * Through the user interface of the [embedded query engine](/datahub/setting-up-datahub/#dremio-api-user).
 * By connecting query engines, BI tools and database browsers through [JDBC or ODBC](/datahub/setting-up-datahub/#dremio-api-user).
@@ -33,7 +33,7 @@ Streaming Lake Ingestion provides three types of data:
 
 * Change data capture (`cdc`): Includes the complete history of incoming IoT data. For example, the `cdc_alarm.alarm` table contains a complete, historical log of all alarm changes, while the `cdc_inventory.inventory` table captures all modifications made to your device master data over time.
 * Latest data (`latest`): Provides the current representation of incoming inventory data. For example, the `latest_inventory.inventory` table contains a consolidated view on the latest state of your inventory without you needing to reconstruct the state from the historical logs.
-* Views (`view`): Provides views for the change data capture tables. For example, the `view_alarm.alarm` view shows the same content as `cdc_alarm.alarm` with nested properties converted top-level columns. This makes the data more easily browsable in tools like PowerBI.
+* Views (`view`): Provides views for the change data capture tables. For example, the `view_alarm.alarm` view shows the same content as `cdc_alarm.alarm` with nested properties converted to top-level columns. This makes the data more easily browsable in tools like PowerBI.
 
 For each type of data, folders ("namespaces") are created to mirror the familiar [{{< product-c8y-iot >}} domain model](/concepts/domain-model/) of Cumulocity as shown in the screenshot. You will find folders with names ending in `inventory`, `alarm`, `event`, `measurement` and `operation`. Inside the folders, tables for standard data, device-specific data and customer-specific data are created. Device- or customer-specific data in the form of [fragments](/concepts/domain-model/#fragments) resides in separate, dedicated tables within the corresponding folders. For instance, if you send a measurement with a fragment type `c8y_EngineMetric`, it will be stored in a table named `cdc_measurement.c8y_EngineMetric`.
 
@@ -467,9 +467,9 @@ This results in a table like the following:
 | 12345                                                       | 47635                                                           | MEASUREMENT_CREATE                                                  | 2026-02-19T13:09:39.678Z                                       | c8y_BatteryMeasurement                                         | 12.8 \| V                                                        | 85.5 \| %                                                               | 22.5 \| C                                                             |
 
 
-Note that there are three columns which are of structured type: `voltage`, `stageOfCharge` and `temperature`.
+Note that there are three columns which are of structured type: `voltage`, `stateOfCharge` and `temperature`.
 
-Corresponding to the table, a view is created automatically as shown below. Note that the `value` property of `voltage` was converted to `voltage\value`, that is, all property names on the path up to the bottom-most property are concated with backslash as separator character.
+Corresponding to the table, a view is created automatically as shown below. Note that the `value` property of `voltage` was converted to `voltage\value`, that is, all property names on the path up to the bottom-most property are concatenated with backslash as separator character.
 
 **View: view_measurement.c8y_Battery**
 
@@ -488,7 +488,7 @@ In Apache Iceberg, views can have multiple representations for different SQL dia
 
 #### Binning {#binning}
 
-To ensure robustness data storage and queryability of the data, the service enforces a number of limits beyond Cumulicity's platform-wide limits. Data that exceeding these more specific limits is "binned", i.e., stored into a separate Iceberg table in a different schema for inspecting problematic cases and potentially reprocessing data. An example of "binned" data is shown below:
+To ensure robustness data storage and queryability of the data, the service enforces a number of limits beyond {{< product-c8y-iot >}}'s platform-wide limits. Data that exceeding these more specific limits is "binned", that is, stored into a separate Iceberg table in a different schema for inspecting problematic cases and potentially reprocessing data. An example of "binned" data is shown below:
 
 **Table: cdc_rejected.trash**
 
