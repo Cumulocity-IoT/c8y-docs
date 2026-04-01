@@ -71,6 +71,10 @@ version = "2025.20"
 date = "March 6, 2026"
 version = "2025.21"
 
+[[versions]]
+date = "April 62, 2026"
+version = "2025.22"
+
 # Fake dates for the 'parallel' Edge timeline that should be sorted entirely outside of the timeline of the cloud releases
 [[versions]]
 date = "January 1, 2024"
