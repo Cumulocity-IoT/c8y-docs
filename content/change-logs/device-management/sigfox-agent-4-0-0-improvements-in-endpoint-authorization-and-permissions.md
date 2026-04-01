@@ -14,4 +14,7 @@ build_artifact:
 ticket: DM-5344
 version: 4.0.0
 ---
-The required user permissions to read, create, or update Sigfox connections under Administration > Connectivity have been updated. To read the Sigfox connections, users must have at least the Sigfox READ permission, and to create/update/delete connections, users require the Sigfox ADMIN permission. In the Device Management application, this affects the LPWAN configuration tab in the device details, as the Current connection field requires READ permission. You can assign the necessary permissions to users in Administration > Accounts > User/Roles.  Moreover, the sigfox 'callback' endpoints such as 'sigfoxDataCallback', 'sigfoxErrorCallback' etc. require the Sigfox ADMIN permission or at least the Inventory READ permission.
+To improve security and access control for Sigfox device connectivity, the permission requirements for managing Sigfox connections have been clarified and enforced.
+Users now need specific Sigfox permissions to work with connections under **Administration > Connectivity**. To view Sigfox connections, users require the Sigfox READ permission, while creating, updating, or deleting connections requires the Sigfox ADMIN permission. Additionally, Sigfox callback endpoints such as `sigfoxDataCallback` and `sigfoxErrorCallback` now require either the Sigfox ADMIN permission or the Inventory READ permission.
+This change affects users accessing the **LPWAN configuration** tab in device details within the Device Management application, as viewing the **Current connection** field now requires READ permission. Administrators can assign the necessary permissions to users in **Administration > Accounts > User, Roles**.
+For details, see [Sigfox](/device-integration/lpwan/#sigfox).
