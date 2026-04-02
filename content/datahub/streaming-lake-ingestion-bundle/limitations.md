@@ -9,6 +9,7 @@ The current preview version includes a number of functional limitations as outli
 * Inventory synchronization is not yet automatically executed on subscription.
 * `latest` data is only recorded for the inventory.
 * Delete events are not processed.
+* Custom top-level properties in measurements are ignored.
 * There is no automated cleanup of tables and columns that are not in use anymore.
 * The automated views only expose change data capture tables.
 * Arrays appear as-is in the views.
