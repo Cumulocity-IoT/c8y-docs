@@ -20,6 +20,6 @@ This feature is in Public Preview, that is, it is not enabled by default and may
 
 The AI Agent Manager introduces a new capability to create, configure, and run AI-powered agents directly within a tenant through an intuitive user interface.
 
-Agents can analyze device data and execute actions based on configurable logic. They can be granted access to {{< product-c8y-iot >}} data such as inventory, events, alarms, and measurements, enabling seamless integration with existing IoT applications without additional setup. Agents can be extended with custom tools or MCP servers, and their behavior can be validated in a sandbox environment before being enabled for real-time automation and complex operational workflows.
+Agents can analyze device data and execute actions based on configurable logic. They can be granted access to {{< product-c8y-iot >}} data such as inventory, events, alarms, and measurements, enabling seamless integration with existing IoT applications without additional setup. Agents can be extended with custom tools or MCP servers, and their behavior can be validated before being enabled for real-time automation and complex operational workflows.
 
 Important: Administrators must enable the AI Agents permission in the user’s global role and configure LLM providers using their own API keys to use this application.
