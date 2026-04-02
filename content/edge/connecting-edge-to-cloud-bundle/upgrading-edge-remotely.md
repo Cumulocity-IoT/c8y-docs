@@ -14,7 +14,7 @@ Update the [sample version file](/files/edge/c8y-edge-version.yaml) to specify t
 
    ![Firmware list](/images/edge/firmware-repository.png)
 
-   Optionally, you can define the device type filter when adding a new firmware. For example, *c8y_EdgeAgent*.
+   Optionally, you can set the device type filter to `c8y_EdgeAgent` when adding a new firmware.
 
 3. Select the **Provide a file path** option to specify an HTTPS URL of a server from where the version file can be downloaded.
 
