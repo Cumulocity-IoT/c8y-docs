@@ -15,7 +15,7 @@ ticket: ""
 version: "0.0.9"
 ---
 {{< c8y-admon-preview >}}
-This feature is available in Preview. It is intended for evaluation and testing purposes and may be subject to change.
+This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
 {{< /c8y-admon-preview >}}
 
 The AI Agent Manager introduces a new capability to create, configure, and run AI-powered agents directly within a tenant through an intuitive user interface.
