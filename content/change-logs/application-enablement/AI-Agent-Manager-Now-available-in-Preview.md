@@ -1,12 +1,12 @@
 ---
 date: "2026-03-31"
-title: "AI Agent Manager: Now Available in Preview"
+title: "AI Agent Manager now available in Public Preview"
 product_area: "Application enablement & solutions"
 change_type:
-  - value: "change-type-preview"
+  - value: "change-2c7RdTdXo4"
     label: "Preview"
 component:
-  - value: "component-ai-agent-manager"
+  - value: "component-YbYJ3gLU_"
     label: "Web SDK"
 build_artifact:
   - value: "ai-agents"
