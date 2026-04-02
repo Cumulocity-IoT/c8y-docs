@@ -45,29 +45,32 @@ Support will classify support tickets into three levels of severity according to
 
 ### Support services
 
-The services provided vary by support level as highlighted in the following table:
+The services are provided as follows for the different pricing packs, as detailed on Provider's pricing page: https://www.cumulocity.com/pricing/.
 
-| **Service**                          | **Bronze**      | **Silver**                 | **Gold**                 |
-| ------------------------------------ | --------------- | -------------------------- | ------------------------ |
-| **Support Portal access for ATCs**   | 24/7            | 24/7                       | 24/7                     |
-| **Crisis phone**                     | 9x5*            | 24/7                       | 24/7                     |
-| **Number of ATCs**                   | 3               | 7                          | Unlimited                |
-| **Prioritized queuing**              | No              | No                         | Yes                      |
-| **Ticket escalation**                | No              | Yes                        | Yes                      |
-| **Onboarding**                       | Email           | Email                      | Email and/or web meeting |
+* **Starter** and **free trial** include community-based support via Provider's Tech Community, https://community.cumulocity.com/, where the team responds on a best-effort basis.
+* **Business** includes **Standard** support by default. Upgrading to **Premium** is possible for a fee.
+* **Enterprise** includes **Premium** support by default.
 
-*\* During Business Hours.*
+| **Service**                          | **Standard**               | **Premium**              |
+| ------------------------------------ | -------------------------- | ------------------------ |
+| **Support Portal access for ATCs**   | 24/7                       | 24/7                     |
+| **Crisis phone**                     | 24/7                       | 24/7                     |
+| **Number of ATCs**                   | 7                          | Unlimited                |
+| **Prioritized queuing**              | No                         | Yes                      |
+| **Ticket escalation**                | Yes                        | Yes                      |
+| **Onboarding**                       | Email                      | Email and/or web meeting |
 
 
-| **Response Times**\*     | **Bronze**     | **Silver**             |  **Gold**             |
-| ------------------------ | -------------- | ---------------------- | --------------------- |
-| **Crisis - initially**   | 1 Business Day | 1 hour                 | 30 minutes            |
-|        **- updates**     |                | Once per Business Hour | Once per hour         |
-| **Critical - initially** | 1 Business Day | 4 Business Hours       | 2 hours               |
-|        **- updates**     |                | Once per Business Day  | Once per Business Day |
-| **Standard - initially** | 1 Business Day | 1 Business Day         | 1 day                 |
-|        **- updates**     |                | Twice per week         | Twice per week        |
-| **Escalated Tickets**    | Not available  | Once per Business Day  | Once per Business day |
+
+| **Response Times**\*     | **Standard**           |  **Premium**          |
+| ------------------------ | ---------------------- | --------------------- |
+| **Crisis - initially**   | 1 hour                 | 30 minutes            |
+|        **- updates**     | Once per Business Hour | Once per hour         |
+| **Critical - initially** | 4 Business Hours       | 2 hours               |
+|        **- updates**     | Once per Business Day  | Once per Business Day |
+| **Standard - initially** | 1 Business Day         | 1 day                 |
+|        **- updates**     | Once per week          | Twice per week        |
+| **Escalated Tickets**    | Twice per week         | Once per Business day |
 
 *\* Provider and Customer can mutually agree on a different schedule on a per-ticket basis. This will generally happen after the initial investigations have been performed and a resolution is being implemented.*
 
@@ -76,7 +79,7 @@ The services are defined as follows:
 
 * **Crisis phone**: The support telephone number is available in the Support Portal. Telephone support is provided in English only.
 * **Response times**: Customer will receive an initial human response to a new support ticket within the defined initial response times. Follow-up communication times of updates to existing support tickets are targeted but not guaranteed.
-* **Resolution plan for Crisis:** For Silver and Gold customers, Provider aims to provide a concrete resolution plan within the first 4 hours, detailing the intended solution, a workaround, or a documented action plan with timelines.
+* **Resolution plan for Crisis:** Provider aims to provide a concrete resolution plan within the first 4 hours, detailing the intended solution, a workaround, or a documented action plan with timelines.
 * **Follow-the-sun:** For Gold customers, Provider actively hands over Crisis tickets between global regions (EMEA, APJ, AME) to ensure 24/7 progress.
 * **Number of ATCs**: Restrictions to the number of ATCs apply per Customer, not per contract. Customer may contract for additional ATCs.
 * **Prioritized queuing**: Support tickets are prioritized ahead of other support incidents of the same severity level but lower support level.
