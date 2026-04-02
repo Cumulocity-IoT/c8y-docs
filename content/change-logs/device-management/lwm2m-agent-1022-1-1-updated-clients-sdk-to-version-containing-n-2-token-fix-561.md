@@ -1,6 +1,6 @@
 ---
 date: ""
-title: - updated clients sdk to version containing N2 token fix (#561)
+title: Fixed an issue with notifications token refresh in LWM2M agent
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5841
 version: 1022.1.1
 ---
---- Change Logs Title: Fixed an issue with notifications token refresh in LWM2M agent Description: Fixed an issue where the agent would fail to refresh JWT tokens following periods of inactivity, preventing automatic recovery and requiring a manual service restart.
+Fixed an issue where the agent would fail to refresh JWT tokens following periods of inactivity, preventing automatic recovery and requiring a manual service restart.
