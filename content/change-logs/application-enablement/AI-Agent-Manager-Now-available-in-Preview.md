@@ -9,7 +9,7 @@ component:
   - value: "component-YbYJ3gLU_"
     label: "Web SDK"
 build_artifact:
-  - value: "ai-agents"
+  - value: "tc--gWykZ78v"
     label: "ai-agents"
 ticket: ""
 version: "0.0.9"
