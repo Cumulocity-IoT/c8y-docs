@@ -10,9 +10,12 @@ This agreement is made between {{< company-c8y >}} ("Provider") and the Customer
 
 ### Service description
 
-This document outlines the maintenance and support services provided for different levels of support: **Gold**, **Silver**, and **Bronze**.
+This document outlines the maintenance and support services provided for different levels of support.
+The services are provided as follows for the different pricing packs, as detailed on Provider's pricing page: https://www.cumulocity.com/pricing/.
 
-*These levels were previously known as Enterprise Active, Standard and Starter respectively.*
+* **Starter** and **free trial** include community-based support via Provider's Tech Community, https://community.cumulocity.com/, where the team responds on a best-effort basis.
+* **Business** includes **Standard** support by default. Upgrading to **Premium** is possible for a fee.
+* **Enterprise** includes **Premium** support by default.
 
 ### Definitions
 
@@ -43,13 +46,9 @@ Support will classify support tickets into three levels of severity according to
 * **Critical Incidents**: Customer’s problem has a significant business impact; however, operations can continue in a restricted fashion. The Product is usable but severely limited. There is no acceptable workaround available. Customer is experiencing a significant loss of service.
 * **Standard Incidents**: Customer’s problem has some business impact. The Product is usable and causes only minor inconvenience. It may be a minor Error, documentation Error, or incorrect operation of the Product, which does not significantly impede the operation of the Product.
 
-### Support services
+### Support services and response times
 
-The services are provided as follows for the different pricing packs, as detailed on Provider's pricing page: https://www.cumulocity.com/pricing/.
 
-* **Starter** and **free trial** include community-based support via Provider's Tech Community, https://community.cumulocity.com/, where the team responds on a best-effort basis.
-* **Business** includes **Standard** support by default. Upgrading to **Premium** is possible for a fee.
-* **Enterprise** includes **Premium** support by default.
 
 | **Service**                          | **Standard**               | **Premium**              |
 | ------------------------------------ | -------------------------- | ------------------------ |
@@ -92,8 +91,8 @@ The services are defined as follows:
 
 The following conditions apply to all support levels:
 
-* Customer requests will be received by Support and will be documented in Support Portal for further processing. The Customer will be given a reference processing number for future reference.
-* When reaching Support by telephone, Customer is to provide the incident/ticket number so that work on the incident can commence.
+* Customer requests will be received by Support and will be documented in Support Portal for further processing. Customer will be given a support ticket number for future reference.
+* When reaching Support by telephone, Customer is to provide the support ticket number so that work on the issue can commence.
 * Support has no obligation to solve the Customer’s issue within the response or any other time frame.
 
 ### Customer responsibilities
