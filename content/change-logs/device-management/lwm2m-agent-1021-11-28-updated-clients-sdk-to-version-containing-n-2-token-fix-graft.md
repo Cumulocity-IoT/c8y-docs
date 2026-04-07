@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed an issue with notifications token refresh in LWM2M agent
+title: Fixed Lwm2m operation execution delay
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5841
 version: 1021.11.28
 ---
-Fixed an issue where the agent would fail to refresh JWT tokens following periods of inactivity, preventing automatic recovery and requiring a manual service restart.
+Fixed an issue where Lwm2m agent failed to execute operations immediately after their creation.
