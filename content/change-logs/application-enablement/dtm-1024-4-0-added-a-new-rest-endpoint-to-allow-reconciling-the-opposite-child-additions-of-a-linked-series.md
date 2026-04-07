@@ -22,6 +22,10 @@ environment_availability:
     date: '2026-04-01'
   - label: jp.cumulocity.com
     date: '2026-04-01'
+  - label: emea.cumulocity.com
+    date: '2026-04-06'
+  - label: us.cumulocity.com
+    date: '2026-04-06'
 ---
 When an asset links to a measurement source on a device, the platform maintains a reverse index (`c8y_LinkedSeriesReverseIndex`) on the device that tracks which assets reference it. Previously, if this index became out of sync with the asset-side configuration, there was no dedicated API endpoint to correct it.
 
