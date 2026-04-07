@@ -69,7 +69,7 @@ Support will classify support tickets into three levels of severity according to
 |        **- updates**     | Once per Business Day  | Once per Business Day |
 | **Standard - initially** | 1 Business Day         | 1 day                 |
 |        **- updates**     | Once per week          | Twice per week        |
-| **Escalated Tickets**    | Twice per week         | Once per Business day |
+| **Escalated Tickets**    | Twice per week         | Once per Business Day |
 
 *\* Provider and Customer can mutually agree on a different schedule on a per-ticket basis. This will generally happen after the initial investigations have been performed and a resolution is being implemented.*
 
