@@ -20,6 +20,12 @@ environment_availability:
     date: '2026-04-01'
   - label: jp.cumulocity.com
     date: '2026-04-01'
+  - label: emea.cumulocity.com
+    date: '2026-04-02'
+  - label: us.cumulocity.com
+    date: '2026-04-02'
+  - label: cumulocity.com
+    date: '2026-04-02'
 ---
 The "Data point list" widget has been migrated to Angular and enhanced to improve usability and performance, providing a modern, consistent foundation with the current UI framework. Updates include:
 
