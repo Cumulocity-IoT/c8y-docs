@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5841
 version: 1022.1.1
 ---
-Fixed an issue where the agent would fail to refresh JWT tokens following periods of inactivity, preventing automatic recovery and requiring a manual service restart.
+The LWM2M agent previously failed to refresh JWT tokens following periods of inactivity, preventing automatic recovery and requiring a manual service restart. This issue has been fixed.
