@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Application Not Accessible and Pods in Pending State: Troubleshooting Node Disk Pressure in {{< product-c8y-iot >}} Edge Deployments (c8yedge Tool)
+title: Edge not accessible and pods in pending state
 layout: redirect
 ---
 If you installed Edge by using the `c8yedge` tool, the instance is not reachable, and `kubectl get pods -A` shows output similar to the following, the node might be under disk pressure.
