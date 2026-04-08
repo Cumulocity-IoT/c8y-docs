@@ -148,7 +148,7 @@ All information about this being a permanent action and clearing the backlog is 
 
 The topic name is mapped 1:1 to the topic name used by the MQTT Service client.
 
-When working with the [MQTT Service SDK]({{< link-c8y-github >}}/cumulocity-clients-java/tree/develop/mqtt-service), the subscriber name is the same as the name defined in the [subscriber configuration]({{< link-c8y-github >}}/cumulocity-clients-java/tree/develop/mqtt-service/websocket/src/main/java/com/cumulocity/mqtt/service/sdk/subscriber/SubscriberConfig.java#L56).
+When working with the [MQTT Service SDK]({{< link-c8y-github >}}/cumulocity-clients-java/tree/develop/mqtt-service), the subscriber name is the same as the name defined in the [subscriber configuration]({{< link-c8y-github >}}/cumulocity-clients-java/blob/develop/mqtt-service/websocket/src/main/java/com/cumulocity/mqtt/service/sdk/subscriber/SubscriberConfig.java#L56).
 
 Subscribers created by MQTT clients are deleted automatically once the client disconnects, so it is unlikely that they will persist for a long time and require manual cleanup.
 
@@ -172,7 +172,7 @@ After consuming all the messages, the backlog is cleared, and the topic is ready
 ##### Unsubscribe the subscriber using the MQTT Service SDK {#unsubscribe-the-subscriber-using-mqtt-service-sdk}
 
 If the subscriber is no longer needed and there are no valuable messages that should be consumed, the subscriber can be unsubscribed.
-Use the [unsubscribe action]({{< link-c8y-github >}}/cumulocity-clients-java/tree/develop/mqtt-service/websocket/src/main/java/com/cumulocity/mqtt/service/sdk/websocket/WebSocketSubscriber.java#L60) from the MQTT Service SDK.
+Use the [unsubscribe action]({{< link-c8y-github >}}/cumulocity-clients-java/blob/develop/mqtt-service/websocket/src/main/java/com/cumulocity/mqtt/service/sdk/websocket/WebSocketSubscriber.java#L60) from the MQTT Service SDK.
 This will remove the subscriber from the Messaging Service and clear the backlog for the given subscriber, and potentially the whole topic if there are no more subscribers with unconsumed messages.
 
 ##### Unsubscribe the subscriber via the UI {#mqtt-service-unsubscribe-the-subscriber-via-the-ui}

@@ -9,7 +9,10 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     "https://de.mathworks.com/help/predmaint/ug/remaining-useful-life-estimation-using-convolutional-neural-network.html",
 
     // Medium blog uses anti-bot protection, Cypress cannot reliably load it
-    "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6"
+    "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6",
+
+    // Always times out in the automated tests but loads fine in the browser
+    "https://openjdk.org/jeps/252",
   ];
 
 
