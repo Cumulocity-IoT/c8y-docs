@@ -1,6 +1,6 @@
 ---
 date: ""
-title: UI ux kpi widget migrate kpi widget to the global context and introduce history mode (#11541) [GRAFT][release/cd] (#11651)
+title: KPI widget now supports global context and history mode
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
