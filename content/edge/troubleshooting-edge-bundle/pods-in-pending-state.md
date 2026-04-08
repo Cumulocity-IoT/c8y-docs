@@ -20,7 +20,7 @@ kubectl describe pod <pod-name> -n <namespace>
 Warning  FailedScheduling  12m (x832 over 2d21h)  default-scheduler  0/1 nodes are available: 1 node(s) had untolerated taint {node.kubernetes.io/disk-pressure: }. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.
 ```
 
-In {{< product-c8y-iot >}} Edge, the runtime uses **K3s** with an embedded kubelet. The kubelet maintains disk availability through Kubernetes **Node-pressure eviction**, using `/var/lib/rancher` as the primary node filesystem path. When free disk space drops below the configured eviction thresholds, the node reports **DiskPressure**.
+When installed with the c8yedge tool, the {{< product-c8y-iot >}} Edge runtime uses **K3s** with an embedded kubelet. The kubelet maintains disk availability through Kubernetes **Node-pressure eviction**, using `/var/lib/rancher` as the primary node filesystem path. When free disk space drops below the configured eviction thresholds, the node reports **DiskPressure**.
 
 In this state, the kubelet proactively evicts running pods and blocks scheduling of new pods to preserve node stability. As a result, workloads can appear in `Pending`, `Evicted`, or `ContainerStatusUnknown` states.
 
