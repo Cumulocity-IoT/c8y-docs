@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed Lwm2m operation execution delay
+title: Fixed LWM2M operation execution delay
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
