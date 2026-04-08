@@ -1,16 +1,32 @@
 ---
 weight: 20
-title: Node Disk Pressure and Pod Evictions in K3s
+title: Node disk pressure and pod evictions in K3s
 layout: redirect
 ---
+If your Edge instance is not reachable and `kubectl get pods -A` shows output similar to the following, the node is under disk pressure.
 
-In K3s, the embedded kubelet enforces disk availability by using Kubernetes **Node-pressure eviction** mechanisms, with `/var/lib/rancher` serving as the primary node filesystem. When available disk space falls below the configured eviction thresholds, the node enters a **DiskPressure** state.
+```shell
+NAME                                                              READY   STATUS                   RESTARTS       AGE     IP           NODE      NOMINATED NODE   READINESS GATES
+apama-ctrl-scope-edge-deployment-7f4796c6c5-shnrr                 0/1     Pending                  0              2d21h   <none>       <none>    <none>           <none>
+c8ycore-sts-0                                                     0/2     Pending                  0              2d21h   <none>       <none>    <none>           <none>
+```
 
-In this state, the kubelet proactively evicts running pods and blocks scheduling of new pods to preserve node stability. As a result, workloads might appear in `Pending`, `Evicted`, or `ContainerStatusUnknown` states.
+When you describe a pending pod, you see a scheduling error similar to the following:
 
-To resolve this issue, reclaim sufficient disk space on the affected node. After disk pressure is alleviated, normal scheduling behavior resumes and workloads recover automatically.
+```shell
+kubectl describe pod <pod-name> -n <namespace>
 
-To check the node status, run the following command:
+# ...
+Warning  FailedScheduling  12m (x832 over 2d21h)  default-scheduler  0/1 nodes are available: 1 node(s) had untolerated taint {node.kubernetes.io/disk-pressure: }. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.
+```
+
+In {{< product-c8y-iot >}} Edge, the runtime uses **K3s** with an embedded kubelet. The kubelet maintains disk availability through Kubernetes **Node-pressure eviction**, using `/var/lib/rancher` as the primary node filesystem path. When free disk space drops below the configured eviction thresholds, the node reports **DiskPressure**.
+
+In this state, the kubelet proactively evicts running pods and blocks scheduling of new pods to preserve node stability. As a result, workloads can appear in `Pending`, `Evicted`, or `ContainerStatusUnknown` states.
+
+To resolve this issue, reclaim sufficient disk space on the affected node. After **DiskPressure** clears, normal scheduling resumes and workloads recover automatically.
+
+To inspect node conditions and capacity, run the following command:
 
 ```shell
 kubectl describe node <node-name>
