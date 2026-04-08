@@ -9,4 +9,4 @@ version = "2026.0"
 # Fake dates for the 'parallel' Edge timeline that should be sorted entirely outside of the timeline of the cloud releases
 [[versions]]
 date = "January 1, 2026"
-version = "Edge-2026.0.0-pre-release"
+version = "Edge-2026.0.0"
