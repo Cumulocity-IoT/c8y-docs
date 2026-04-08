@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5841
 version: 1022.1.1
 ---
-Fixed an issue where Lwm2m agent failed to execute operations immediately after their creation.
+The LWM2M agent failed to execute operations immediately after their creation. This issue has been fixed.
