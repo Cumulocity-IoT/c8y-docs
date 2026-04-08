@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66258
 version: 1023.66.0
 ---
-UI ux kpi widget migrate kpi widget to the global context and introduce history mode (#11541) [GRAFT][release/cd] (#11651)
+The KPI widget previously operated only within individual application contexts, which limited its ability to display key performance indicators across your entire system. The KPI widget now uses a global context, allowing you to view KPIs from any application or tenant-wide perspective. Additionally, the widget now includes a history mode that lets you track KPI changes over time, giving you better visibility into performance trends and historical data. This enhancement applies to all existing KPI widgets in your dashboards, and you can immediately start using the history mode feature to analyze KPI performance across different time periods without any additional configuration.
