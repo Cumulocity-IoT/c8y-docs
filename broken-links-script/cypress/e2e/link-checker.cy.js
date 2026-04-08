@@ -4,6 +4,14 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   let completedTests = 0;
   const totalTests = urls.length;
 
+  /**
+   * Links to skip during validation.
+   * Each entry is either an exact URL string or a RegExp that is tested against the link.
+   * Add entries here for links that are known to fail due to anti-bot protection, timeouts,
+   * or other external factors unrelated to broken links in the documentation.
+   *
+   * @type {Array<string|RegExp>}
+   */
   const excludedLinks = [
     // MathWorks URL uses anti-bot protection, Cypress cannot reliably load it
     "https://de.mathworks.com/help/predmaint/ug/remaining-useful-life-estimation-using-convolutional-neural-network.html",
@@ -11,8 +19,8 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     // Medium blog uses anti-bot protection, Cypress cannot reliably load it
     "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6",
     
-    // Timeout links
-    "https://opentelemetry.io/",
+    // Links from opentelemetry.io always time out although they load fine in a browser
+    /https:\/\/opentelemetry.io\//,
 
     // Timeout links
     "https://openjdk.org/jeps/252",
@@ -84,8 +92,13 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     throw cleanError;
   });
 
+  const isExcluded = link =>
+    excludedLinks.some(entry =>
+      entry instanceof RegExp ? entry.test(link) : entry === link
+    );
+
   urls.forEach((item) => {
-    if (excludedLinks.includes(item.link)) {
+    if (isExcluded(item.link)) {
       it.skip(`should validate URL (excluded): ${item.link}`, () => {});
       return;
     }
