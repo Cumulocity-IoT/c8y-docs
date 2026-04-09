@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-64674
 version: 1023.68.0
 ---
-The Digital Twin Manager (DTM) enables schema-based modeling in Cumulocity. The Asset API allows managing asset instances based on predefined Asset Definitions (also known as Asset Models). Asset instances created from an Asset Model inherit the structure and constraints defined in the model. In case of Asset properties selector, it support this API and if user wants to display properties of Asset created with DTM Definition, relevant Definition for selected DTM based Asset is requested and properties from Definition displayed. 
-More about DTM API: https://cumulocity.com/api/dtm/
+Digital Twin Manager enables schema-based modeling in Cumulocity by allowing you to create asset definitions that define the structure and constraints for asset instances. The Asset API lets you manage asset instances based on these predefined asset definitions. When you use the asset properties selector, the system now requests the relevant definition for any asset created with Digital Twin Manager and displays the properties from that definition. This ensures that asset instances created from an asset model inherit and display the correct structure and constraints defined in the model. For more information about the Digital Twin Manager API, refer to the Cumulocity API documentation.
