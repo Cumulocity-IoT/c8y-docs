@@ -55,7 +55,6 @@ If the asset has a **Location** property or the asset definition of the asset sp
 
 {{< c8y-admon-info>}}
 - The **Add asset** button is not displayed for the last hierarchical level, except for generic assets with the **Allow any asset** option enabled in their asset definition.
-- A warning message is shown if one or more properties associated with the asset are not available.
 - For complex properties, the keys will be ordered as specified in the property definition.
 - The external source label of the asset from `c8y_ExternalSource` is only shown for for read-only assets to indicate synchronization from an external system.
 {{< /c8y-admon-info>}}
@@ -78,21 +77,22 @@ To add an asset via the UI:
 
 1. Click **Add asset** in the top bar of the **Assets** page.
 
-2. In the **New asset** page, select the desired asset model from the **Choose asset model** dropdown menu.
+2. In the **New asset** page, select the desired asset definition from the **Choose asset definition** dropdown menu.
 
     {{< c8y-admon-info>}}
-The asset models provided here are root asset models. Root asset models are asset models which are at the top of a hierarchy and don't have any parent asset model. They are labeled "START NODE" in the hierarchy.
+The asset definitions provided here are root asset definitions. Root asset definitions are asset definitions which are at the top of a hierarchy and don't have any parent. They are labeled "START NODE" in the hierarchy.
     {{< /c8y-admon-info>}}
 
 3. At the left, the asset hierarchy is shown. At the right, provide a name for the new asset and optionally add a description.
 
     ![Adding a new asset](/images/dtm/assets/dtm-assets-new-asset.png)
 
-4. Optionally, [assign devices](#to-assign-devices-to-an-asset) to your root asset.
+4. If the selected asset definition has **Allow any asset** enabled, a **Subassets** section is displayed. Click **Add/Create asset** to add a row and select an asset definition to add as a subasset. Click the remove icon next to a row to remove it.
 
-5. To add more than one asset on this level, click **Add**.
+5. Under the **Property definitions**,  provide the values for all asset properties. The corresponding property definitions are defined when [creating the asset definition](/dtm/asset-types/#to-create-an-asset-definition).
 
-6. Under **Custom properties**, provide the values for all [asset properties](/dtm/asset-types/#asset-properties). The asset properties are defined when [creating the asset model](/dtm/asset-types/#to-create-an-asset-model).
+If the selected asset definition has **Allow any property** enabled, **Add property** button is displayed in the **Property definitions** section. Click **Add property**, select the desired properties in the resulting dialog, and click **Select**. The selected properties appear in the **Property definitions** section. Click the remove icon next to a property to remove it.
+
 
     {{< c8y-admon-info>}}
 For complex properties, the keys are ordered as specified in the property definition.
@@ -104,9 +104,14 @@ For complex properties, the keys are ordered as specified in the property defini
 The values of latitude and longitude are automatically updated whenever a new location is selected on the map and vice-versa. The altitude value is not represented on the map.
     {{< /c8y-admon-info>}}
 
+
+6. Optionally, [assign devices](#to-assign-devices-to-an-asset) to your root asset.
+
+5. To add more than one asset on this level, click **Add**.
+
 7. After defining a hierarchy level, you see a green check mark on the asset hierarchy at the left.
 
-8. Click **Next** to navigate to the next hierarchy level in your **asset hierarchy** and fill in the required fields.
+8. Click **Next** to navigate to the next hierarchy level and fill in the required fields. For generic assets, the asset hierarchy on the left updates automatically as you add subassets.
 
 9. Repeat this steps for all asset hierarchy levels. You can track your progress via the green check marks in the asset hierarchy on the left.
 
@@ -128,9 +133,9 @@ The new asset hierarchy in displayed the **Assets** page.
 
 #### Example
 
-If you want to create an asset hierarchy for the asset model "Wind turbine AZ-43Y":
+If you want to create an asset hierarchy for the asset definition "Wind turbine AZ-43Y":
 
-1. Select "Wind turbine AZ-43Y" from the **Choose asset model** dropdown. Starting with the root asset level, you see the dialog window "Wind turbine AZ-43Y" on the right.
+1. Select "Wind turbine AZ-43Y" from the **Choose asset definition** dropdown. Starting with the root asset level, you see the dialog window "Wind turbine AZ-43Y" on the right.
 2. Enter the **Name** of the wind turbine, for example, "SE-TURBINE-101".
 Optionally, enter a brief description, for example, "Wind turbine with rated power of 3.6MW".
 3. To add more assets to this hierarchy level, click **Add** at the bottom.
@@ -144,7 +149,7 @@ You can add subassets to an asset from the **Subassets** or **Asset tree** tab.
 
 1. Click **Add asset** to load the **Asset hierarchy** for the selected asset.
 
-2. The root asset is displayed with the label "START NODE". The asset hierarchy displayed below it is a subset of the root asset hierarchy.
+2. The current root asset definition is displayed with the label "START NODE". The asset hierarchy displayed below it is a subset of the root asset hierarchy.
 
     ![Subasset](/images/dtm/assets/dtm-assets-add-child-asset.png)
 
@@ -164,9 +169,9 @@ If you are at the end of the hierarchy, there is no option available to create s
 
 ### To create multiple instances of an asset {#to-create-multiple-instances-of-an-asset}
 
-At each hierarchy level, you can create multiple assets from a single asset model.
+At each hierarchy level, you can create multiple assets from a single asset definition.
 
-For a wind turbine rotor with three blades, for example, you first create the asset hierarchy level for "Rotor". Then use the asset model "Blade" to add the blades.
+For a wind turbine rotor with three blades, for example, you first create the asset hierarchy level for "Rotor". Then use the asset definition "Blade" to add the blades.
 
 Click **Add** at the bottom to add more blade assets.
 
@@ -246,8 +251,8 @@ Only a maximum of 10 assets can be moved at a time.
 The **Move selected** option is disabled in the following scenarios:
 
 * One or more root assets are selected.
-* Assets of different asset models are selected. Only assets of the same asset model can be moved.
-* The selected asset's asset model is no longer a child of its parent asset model.
+* Assets of different asset definitions are selected. Only assets of the same asset definition can be moved.
+* The selected asset's asset definition is no longer a child of its parent asset definition.
 * One or more assets with the same name are selected.
 
 {{< /c8y-admon-info >}}
