@@ -51,7 +51,7 @@ For assets with the **Allow any property** option enabled, you can add additiona
 
 ![Subassets](/images/dtm/assets/dtm-assets-subassets-page.png)
 
-If the asset has a **Location** property or the asset definition of the asset specifies Location as a selected [Property definition](/dtm/asset-types/#property-definitions), a map is shown at the bottom right corner of the page. In DTM, the Location property definition represents the formal model of a `c8y_Position` fragment used in {{< product-c8y-iot >}} to [track the geographical location of assets and devices](https://cumulocity.com/docs/device-integration/fragment-library/#tracking). Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen. You cannot modify the marker when viewing the asset. Edit the property to change the position of the marker.
+If the asset has a **Location** property or the asset definition of the asset specifies Location as a selected [property definition](/dtm/asset-types/#asset-properties), a map is shown at the bottom right corner of the page. In DTM, the Location property definition represents the formal model of a `c8y_Position` fragment used in {{< product-c8y-iot >}} to [track the geographical location of assets and devices](https://cumulocity.com/docs/device-integration/fragment-library/#tracking). Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen. You cannot modify the marker when viewing the asset. Edit the property to change the position of the marker.
 
 {{< c8y-admon-info>}}
 - The **Add asset** button is not displayed for the last hierarchical level, except for generic assets with the **Allow any asset** option enabled in their asset definition.
@@ -80,7 +80,7 @@ To add an asset via the UI:
 2. In the **New asset** page, select the desired asset definition from the **Choose asset definition** dropdown menu.
 
     {{< c8y-admon-info>}}
-The asset definitions provided here are root asset definitions. Root asset definitions are asset definitions which are at the top of a hierarchy and don't have any parent. They are labeled "START NODE" in the hierarchy.
+The asset definitions provided here are root asset definitions. Root asset definitions are asset definitions which are at the top of a hierarchy and don't have any parent. They are labeled "PARENT NODE" in the hierarchy.
     {{< /c8y-admon-info>}}
 
 3. At the left, the asset hierarchy is shown. At the right, provide a name for the new asset and optionally add a description.

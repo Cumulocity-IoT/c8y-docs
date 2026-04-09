@@ -40,7 +40,7 @@ Click **Configure columns** to configure the displayed columns.
 Click **Reload** to reload the page.
 The total number of property definitions is displayed on the bottom left of the page.
 
-Use the **Export** and **Import** feature to transfer property definitions between tenants. This is useful for replicating property definitions in multiple tenants. By exporting and importing property definitions, you can ensure consistency and reduce the time and effort required for manual configuration. See [To export property definitions](#to-export-asset-properties) and [To import property definitions](#to-import-asset-properties) for details.
+Use the **Export** and **Import** feature to transfer property definitions between tenants. This is useful for replicating property definitions in multiple tenants. By exporting and importing property definitions, you can ensure consistency and reduce the time and effort required for manual configuration. See [To export property definitions](#to-export-property-definitions) and [To import property definitions](#to-import-property-definitions) for details.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS

@@ -38,7 +38,7 @@ To create an asset hierarchy, execute the following steps. The example is based 
 
 3. Determine the level of detail needed for each system, process, and component in the hierarchy. This helps to determine the level of accuracy and complexity required for each asset definition. For a wind turbine this includes, for example, the tower's height, the length of the blade and so on.
 
-4. To portray the correct structure, first create a property definition for each component in the **Property definitions**, see [To create a property definition](/dtm/asset-types/#to-create-an-asset-property) for details. The property definitions are later used in creating the individual asset definitions.
+4. To portray the correct structure, first create a property definition for each component in the **Property definitions**, see [To create a property definition](/dtm/asset-types/#to-create-a-property-definition) for details. The property definitions are later used in creating the individual asset definitions.
 
 5. To create an asset definition work from the smallest component to the largest. For a wind turbine that means to start with the asset definition "blade", followed by "rotor", "tower", and "nacelle" and finally "wind turbine". Assign the required property definition to each asset definition as well as the allowed child asset definitions (for example, a wind turbine requires a rotor, which in turn requires rotor blades). See [To create an asset definition](/dtm/asset-types/#to-create-an-asset-definition) for details.
 

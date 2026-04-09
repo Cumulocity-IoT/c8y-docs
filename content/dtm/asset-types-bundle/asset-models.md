@@ -155,11 +155,11 @@ If the asset definition is "Rotor" and you select "Blade" as an allowed subasset
 7. Click **Save** to save your settings.
 
 {{< c8y-admon-info>}}
-To assign a location to an asset, add the default property definition Location to the asset definition. For more info on default property definitions, see [Default property definitions](#default-properties).<br>
+To assign a location to an asset, add the default property definition Location to the asset definition. For more info on default property definitions, see [Default property definitions](#default-property-definitions).<br>
 If there are any validation errors for a field, it is highlighted in red with a validation error message asking you to fill in the required information. Enter the necessary information and click **Save**.
 {{< /c8y-admon-info>}}
 
-If there is no property definition meeting your requirements when you search, click **New property definition**. For more details on how to create a new Property definition see [To create a property definition](#to-create-an-asset-property).
+If there is no property definition meeting your requirements when you search, click **New property definition**. For more details on how to create a new Property definition see [To create a property definition](#to-create-a-property-definition).
 
 
 
