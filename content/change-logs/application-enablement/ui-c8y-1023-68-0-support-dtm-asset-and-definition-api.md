@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Support DTM Asset and Definition API
+title: Digital Twin Manager asset and definition API support in Asset properties selector
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
