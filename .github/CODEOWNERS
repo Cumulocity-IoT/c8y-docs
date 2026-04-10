@@ -22,6 +22,7 @@
 /content/authentication/ @mgrumann @BeateRixen
 /content/cloud-remote-access/ @aaronraab @l2p- @BeateRixen
 /content/cockpit/ @janhommes @BeateRixen
+/content/console/ @bbyreddy @tydunne @BeateRixen
 /content/data-broker/ @scmi-c8y @BeateRixen
 /content/datahub/ @cheinz-sag @BeateRixen
 /content/device-certificate-authentication/ @mgrumann @BeateRixen
@@ -38,7 +39,6 @@
 /content/smartrest/ @l2p- @BeateRixen
 /content/standard-tenant/ @mgrumann @BeateRixen
 /content/web/ @janhommes @BeateRixen
-/content/console/ @bbyreddy @tydunne @BeateRixen
 
 /content/streaming-analytics/ @skom-c8y @ben-c8y @BeateRixen
 # 'block-reference-bundle' is automatically and frequently committed to - don't bother _too many_ CODEOWNERS

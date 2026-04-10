@@ -16,6 +16,16 @@ version: 1024.3.1
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-03-19'
+  - label: apj.cumulocity.com
+    date: '2026-03-25'
+  - label: jp.cumulocity.com
+    date: '2026-03-25'
+  - label: emea.cumulocity.com
+    date: '2026-03-30'
+  - label: us.cumulocity.com
+    date: '2026-03-30'
+  - label: cumulocity.com
+    date: '2026-03-31'
 ---
 The unnecessary `$schema` elements have been removed from all properties in the asset definition and other type definitions. Properties now follow the correct JSON Schema structure, with the `$schema` declaration appearing only at the document level where appropriate. This ensures that asset models conform to proper JSON schema standards and eliminates potential validation errors.
 

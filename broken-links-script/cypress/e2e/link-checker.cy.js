@@ -4,12 +4,28 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   let completedTests = 0;
   const totalTests = urls.length;
 
+  /**
+   * Links to skip during validation.
+   * Each entry is either an exact URL string or a RegExp that is tested against the link.
+   * Add entries here for links that are known to fail due to anti-bot protection, timeouts,
+   * or other external factors unrelated to broken links in the documentation.
+   *
+   * @type {Array<string|RegExp>}
+   */
   const excludedLinks = [
     // MathWorks URL uses anti-bot protection, Cypress cannot reliably load it
     "https://de.mathworks.com/help/predmaint/ug/remaining-useful-life-estimation-using-convolutional-neural-network.html",
 
     // Medium blog uses anti-bot protection, Cypress cannot reliably load it
-    "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6"
+    "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6",
+    
+    // Links from opentelemetry.io always time out although they load fine in a browser
+    /https:\/\/opentelemetry.io\//,
+
+    // Timeout links
+    "https://openjdk.org/jeps/252",
+
+
   ];
 
 
@@ -64,7 +80,6 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
   Cypress.on('fail', (error) => {
     const sourceFiles = Cypress.env('sourceFiles');
-
     const shortMessage = error.message.split('\n')[0];
 
     const message = [
@@ -77,8 +92,13 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     throw cleanError;
   });
 
+  const isExcluded = link =>
+    excludedLinks.some(entry =>
+      entry instanceof RegExp ? entry.test(link) : entry === link
+    );
+
   urls.forEach((item) => {
-    if (excludedLinks.includes(item.link)) {
+    if (isExcluded(item.link)) {
       it.skip(`should validate URL (excluded): ${item.link}`, () => {});
       return;
     }
@@ -185,16 +205,19 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         checkRegularFragment(fragment);
       }
       else {
-        cy.log(`Validating HTML page with curl: ${url}`);
-        cy.task('curlRequest', url).then(({ status, content }) => {
-          expect(status).to.be.oneOf([200,301,302,429]);
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(
-            content,
-            'text/html'
-          );
-          const body = doc && doc.body ? doc.body.textContent.trim() : '';
-          expect( body, `<body> content for ${url} should not be empty`).to.not.be.empty;
+        cy.request({
+          url: url,
+          failOnStatusCode: false
+        }).then((response) => {
+          const contentType = response.headers['content-type'] || '';
+          if (!contentType.includes('text/html')) {
+            cy.log(`Non-HTML content detected for ${url}, skipping cy.visit()`);
+            expect(response.status).to.be.oneOf([200, 201, 202, 203, 204, 301, 302, 304]);
+            expect(response.body).not.to.be.empty;
+          } else {
+            cy.visit(url);
+            cy.document().its('body').should('not.be.empty');
+          }
         });
       }
       
