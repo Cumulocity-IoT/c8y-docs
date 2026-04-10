@@ -1,18 +1,21 @@
 ---
-date: ""
-title: "Transformed DTM homepage into a customizable dashboard"
-product_area: "Application enablement & solutions"
+date: '2026-04-09'
+title: Transformed DTM homepage into a customizable dashboard
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-QHu1GdukP"
-      label: "Feature"
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-2684"
-version: "1025.0.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-2684
+version: 1025.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-04-09'
 ---
 The Digital Twin Manager homepage has been enhanced from a static
 overview page to a fully customizable dashboard, consistent with the
