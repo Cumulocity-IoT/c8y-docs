@@ -91,14 +91,14 @@ The asset definitions provided here are root asset definitions. Root asset defin
 
 5. Under the **Property definitions**,  provide the values for all asset properties. The corresponding property definitions are defined when [creating the asset definition](/dtm/asset-types/#to-create-an-asset-definition).
 
-If the selected asset definition has **Allow any property** enabled, **Add property** button is displayed in the **Property definitions** section. Click **Add property**, select the desired properties in the resulting dialog, and click **Select**. The selected properties appear in the **Property definitions** section. Click the remove icon next to a property to remove it.
+-  If the selected asset definition has **Allow any property** enabled, **Add property** button is displayed in the **Property definitions** section. Click **Add property**, select the desired properties in the resulting dialog, and click **Select**. The selected properties appear in the **Property definitions** section. Click the remove icon next to a property to remove it.
 
 
     {{< c8y-admon-info>}}
 For complex properties, the keys are ordered as specified in the property definition.
     {{< /c8y-admon-info>}}
 
-    For an asset with a **Location** property, click **Choose on map** to set the values for latitude and longitude. Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen. The marker is positioned at the default value set in the **Location** property. Click or drag the marker to the preferred position to set the value for both latitude and longitude. If you do not enter a latitude or longitude value, you will not see a marker on the map.
+-  For an asset with a **Location** property, click **Choose on map** to set the values for latitude and longitude. Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen. The marker is positioned at the default value set in the **Location** property. Click or drag the marker to the preferred position to set the value for both latitude and longitude. If you do not enter a latitude or longitude value, you will not see a marker on the map.
 
     {{< c8y-admon-info>}}
 The values of latitude and longitude are automatically updated whenever a new location is selected on the map and vice-versa. The altitude value is not represented on the map.
