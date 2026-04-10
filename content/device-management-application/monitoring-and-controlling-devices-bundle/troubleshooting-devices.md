@@ -25,7 +25,7 @@ Troubleshooting devices at a more detailed level can be done with the help of ev
 
 ![Events](/images/users-guide/DeviceManagement/devmgmt-events.png)
 
-Per default, events are shown as coming in from the devices in real time. To disable real-time updates, click **Realtime** at the right of the top menu bar.
+By default, events are displayed as they come in from the devices at selected intervals (30 seconds by default). To pause pooling updates, click the button with the countdown timer next to the **Auto refresh** label.
 
 For each event, the following information is provided:
 
@@ -37,8 +37,8 @@ For each event, the following information is provided:
 
 In the event list, the latest entry is displayed on top.
 
-Clicking a row expands it and displays further details on the event (as type and position of the device).
+Clicking a row opens a details of selected event and displays further details on the event (as type and position of the device). 
 
 Since devices may send large amounts of event data, you can filter the data to be displayed by date.
 
-Select a start date and an end date from the fields in the top menu bar and click **Apply** to apply the filter. Click **Clear** to clear the filter again.
+To do this, select the date filter in the top menu bar and choose one of the predefined date ranges or create a custom one. After selecting and filling in a custom date range, click the **Apply** button.
