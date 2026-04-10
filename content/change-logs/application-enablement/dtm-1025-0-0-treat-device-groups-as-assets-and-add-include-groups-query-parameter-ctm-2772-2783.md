@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Treat device groups as assets and add includeGroups query parameter. [CTM-2772] (#2783)"
+title: "The Asset API now handles device groups as assets and offers the includeGroups query parameter."
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
@@ -15,8 +15,8 @@ ticket: "CTM-2772"
 version: "1025.0.0"
 ---
 The Asset API has been changed to treat groups as assets. Previously, an
-asset was identified solely by the presence of the `c8y_IsAsset
-fragment`. Now, the presence of `c8y_IsDeviceGroup` is also sufficient
+asset was identified solely by the presence of the `c8y_IsAsset` fragment. 
+Now, the presence of `c8y_IsDeviceGroup` is also sufficient
 to classify an entity as an asset.
 
 A new query parameter `includeGroups` (default: `false`) has been
