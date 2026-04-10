@@ -14,7 +14,4 @@ build_artifact:
 ticket: "CTM-2775"
 version: "1025.0.0"
 ---
-Updates the onboarding process of library definitions so that changes to
-`title` and `description` in the pre-defined definitions are applied
-only when the values of the definitions in the tenant’s inventory
-During the onboarding process for library definitions, customizations made to the title and description fields were being lost when the library definitions were updated. The update process now preserves any customizations you make to the title and description fields during onboarding.
+During the onboarding process for library definitions, customizations made to the title and description fields were being lost when the library definitions were updated. The update process during onboarding now preserves any customizations you make to the title and description fields.
