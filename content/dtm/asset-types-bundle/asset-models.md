@@ -116,6 +116,8 @@ By default, no asset definitions are selected.</td>
 
 Once all required asset definitions are created, you can start creating [assets](/dtm/asset-hierarchy/#assets) using these asset definitions.
 
+![Create asset definition](/images/dtm/asset-type/dtm-asset-type-create-generic.png)
+
 #### To select an icon {#to-select-an-icon}
 
 1. Click the **Select icon** button on the left.
@@ -160,7 +162,6 @@ If there are any validation errors for a field, it is highlighted in red with a 
 {{< /c8y-admon-info>}}
 
 If there is no property definition meeting your requirements when you search, click **New property definition**. For more details on how to create a new Property definition see [To create a property definition](#to-create-a-property-definition).
-
 
 
 ### Root asset definition {#root-asset-definition}
