@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "The AvailableActions fragment must not allow any actions for definitions which are shared from an enterprise tenant"
+title: "The AvailableActions fragment indicates the read-only status for definitions that are shared from an enterprise tenant"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Change JsonSchema#additionalProperties depending on the composition of a *Definition."
+title: "Change JsonSchema#additionalProperties depending on the composition of a *Definition"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
