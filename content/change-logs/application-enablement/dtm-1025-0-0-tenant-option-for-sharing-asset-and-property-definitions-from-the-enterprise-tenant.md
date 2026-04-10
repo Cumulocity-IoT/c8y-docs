@@ -20,18 +20,4 @@ The new tenant option `definitions.multitenant.sharing.mode` lets you
 configure from where asset definitions and MEA definitions are stored and
 retrieved across your {{< enterprise-tenant >}} hierarchy.
 
-The option supports two modes: disabled (default) and enabled. When set
-to disabled, definitions are stored directly on each tenant
-independently. When set to enabled on both the {{< enterprise-tenant >}} and a
-subtenant, definitions are stored on the {{< enterprise-tenant >}} and made
-available to all subtenants where the option is enabled. Read requests
-from a subtenant are transparently forwarded to the {{< enterprise-tenant >}}.
-Create, update, and delete requests are only permitted on the {{< enterprise-tenant >}}
-and are rejected on the subtenant. If a tenant does not belong to
-an {{< enterprise-tenant >}}, definitions are stored on the tenant itself and
-the sharing rules do not apply.
-
-After updating this tenant option, allow up to 10 minutes for the change
-to take effect. Setting enabled on a subtenant while the {{< enterprise-tenant >}}
-is set to disabled is an invalid configuration and results in an
-error when requesting definitions from the subtenant.
+More details can be found in the [documentation]([url](https://c8y-ops-docs.c8y.io/release/develop/dtm/dtm-configuration/#option-definitions.multitenant.sharing.mode)).
