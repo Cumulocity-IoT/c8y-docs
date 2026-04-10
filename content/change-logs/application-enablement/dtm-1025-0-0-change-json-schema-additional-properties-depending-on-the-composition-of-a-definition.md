@@ -14,12 +14,12 @@ build_artifact:
 ticket: "CTM-2319"
 version: "1025.0.0"
 ---
-Updated the JSON Schema generation to dynamically control the
-additionalProperties flag depending on how an AssetDefinition is
+The JSON schema generation has been updated to dynamically control the
+`additionalProperties` flag depending on how an `AssetDefinition` is
 composed.
 
-- When an AssetDefinition allows all Property Definitions within its
-composition, additionalProperties is now set to true to allow flexible
+- When an `AssetDefinition` allows all property definitions within its
+composition, the `additionalProperties` flag is now set to true to allow flexible
 extensions.
-- When the composition is strict and fully defined, additionalProperties
+- When the composition is strict and fully defined, the `additionalProperties` flag
 is set to false to enforce a closed schema.

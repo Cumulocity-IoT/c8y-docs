@@ -22,6 +22,6 @@ to classify an entity as an asset.
 A new query parameter `includeGroups` (default: `false`) has been
 introduced for the `/assets` and `/assets/count` endpoints:
 
-- When true, results include entities with either `c8y_IsAsset` or
-`c8y_IsDeviceGroup`
-- When false, results are limited to entities with `c8y_IsAsset` only
+- When true, the results include entities with either `c8y_IsAsset` or
+`c8y_IsDeviceGroup`.
+- When false, the results are limited to entities with `c8y_IsAsset` only.
