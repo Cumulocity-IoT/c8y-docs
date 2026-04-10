@@ -8,7 +8,7 @@ helpcontent:
   content: "To create an asset, use asset definitions as the blueprint, which consists of one or more property definitions as well as one or more subasset definitions.  
 
 
-  An asset hierarchy consist of a root asset definition followed by all its subsequent subasset definitions. Each hierarchy level can consist of property definitions for the asset, as well as its subassets and devices.
+  An asset hierarchy consists of a root asset definition followed by all its subsequent subasset definitions. Each hierarchy level can consist of property definitions for the asset, as well as its subassets and devices.
 
 
   To get started, open the **Libraries** menu in the navigator and create the necessary asset and property definitions in the **Asset definitions** and **Property definitions** pages respectively. Afterwards, navigate back to the **Assets** menu in the navigator and click **Add asset** on the top right corner to create the assets."
