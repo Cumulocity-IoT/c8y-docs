@@ -24,6 +24,8 @@ environment_availability:
     date: '2026-03-30'
   - label: us.cumulocity.com
     date: '2026-03-30'
+  - label: cumulocity.com
+    date: '2026-03-31'
 ---
 A newer, high-performance variant of the endpoint for querying opposite assets was introduced in DTM version 1024.1.0. To align with this improvement and maintain a consistent API, the original endpoint variant is now deprecated.
 

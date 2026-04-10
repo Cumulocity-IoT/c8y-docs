@@ -53,7 +53,7 @@ const shortcodeMapping = {
 const hasRenderFalse = (fileContent) => {
   try {
     const { data } = matter(fileContent);
-    return data?._build?.render === false;
+    return data?.build?.render === false || data?._build?.render === false;
   } catch {
     return false;
   }
@@ -72,8 +72,9 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
   }
 
   if (link.startsWith("#")) {
-    const fileDir = path.dirname(relativePath).replaceAll(path.sep, '/');
+    const fileDir = path.dirname(relativePath).replaceAll(path.sep, "/");
     const fileName = path.basename(relativePath, ".md");
+
     let segments = fileDir.split("/").filter(Boolean);
     let hasBundle = false;
 

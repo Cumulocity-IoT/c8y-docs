@@ -165,7 +165,7 @@ In either case, the backlog must be cleared before continuing work. There are va
 ##### Consume messages {#mqtt-service-consume-messages}
 
 If the topic and subscriber were created, there are probably also valuable messages stored in the Messaging Service that should be consumed.
-Use the [MQTT Service SDK]({{< link-c8y-github >}}/cumulocity-examples/blob/develop/mqtt-service-examples) to consume and acknowledge the messages for a given topic and subscriber.
+Use the [MQTT Service SDK]({{< link-c8y-github >}}/cumulocity-examples/blob/develop/mqtt-service) to consume and acknowledge the messages for a given topic and subscriber.
 
 After consuming all the messages, the backlog is cleared, and the topic is ready to store new messages.
 
