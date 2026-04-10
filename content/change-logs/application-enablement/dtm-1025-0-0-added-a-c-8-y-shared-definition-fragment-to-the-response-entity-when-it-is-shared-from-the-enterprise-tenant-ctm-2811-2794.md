@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "When a definition is shared from the enterprise tenant, the c8y_SharedDefinition fragment is added [CTM-2811]"
+title: "When a definition is shared from the enterprise tenant, the c8y_SharedDefinition fragment is added"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
