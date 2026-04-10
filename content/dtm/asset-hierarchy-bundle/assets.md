@@ -40,7 +40,7 @@ In the **Assets** page, select an asset to view its details, such as subassets, 
 
 The **Subassets** tab shows all asset details:
 
-- At the top left of the asset header, the icon, the asset definition as well as asset name and description are presented.
+- At the top left of the asset header, the icon and the asset definition as well as asset name and description are presented.
 - Next to it, the **Created** and **Last updated** time as well as, if configured, the **External ID** of the asset are shown.
 - In the **Subassets** section at the left, all subassets and devices are listed.
 - At the right, the asset properties are displayed.
@@ -251,7 +251,7 @@ Only a maximum of 10 assets can be moved at a time.
 The **Move selected** option is disabled in the following scenarios:
 
 * One or more root assets are selected.
-* Assets of different asset definitions are selected. Only assets of the same asset definition can be moved.
+* Assets described by different asset definitions are selected. Only assets of the same asset definition can be moved.
 * The selected asset's asset definition is no longer a child of its parent asset definition.
 * One or more assets with the same name are selected.
 

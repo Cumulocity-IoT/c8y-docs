@@ -5,7 +5,7 @@ layout: redirect
 helpcontent:
 - label: asset-types
   title: Asset definitions
-  content: "An asset definition is a blueprint or template to create one or multiple assets. It defines how an asset will look like after it is created. An asset definition consists of one or more property definitions or child asset definitions.
+  content: "An asset definition is a blueprint or template used to create one or more assets. It defines how an asset will look like after it is created. An asset definition consists of one or more property definitions or child asset definitions.
 
 
   Click **Add asset definition** in the top menu bar to create a new asset definition. To edit an existing asset definition, click the edit option from the actions menu on the right of the asset definition."
@@ -165,7 +165,7 @@ If there is no property definition meeting your requirements when you search, cl
 
 ### Root asset definition {#root-asset-definition}
 
-To create a root asset definition follow a bottom-up approach by defining all subasset and property definitions in the provided templates first.
+To create a root asset definition, follow a bottom-up approach by defining all subasset and property definitions in the provided templates first.
 
 This root asset definition can then be used to create an asset hierarchy, which then defines all the assets, subassets, asset properties and devices in the DTM application.
 
@@ -178,7 +178,7 @@ As a result you can use the asset hierarchy in other {{< product-c8y-iot >}} app
 2. Then [create the asset definitions](#to-create-an-asset-definition) in a bottom-up approach, that is, all the subasset definitions are created first, followed by the root asset definition at the end.
 3. [Create assets](/dtm/asset-hierarchy/#to-create-an-asset) for the new asset hierarchy.
 
-This approach, allows you to create the desired hierarchy including all asset and property definitions in one process.
+This approach allows you to create the desired hierarchy, including all asset and property definitions in one process.
 
 ### To modify an asset definition {#to-modify-an-asset-definition}
 

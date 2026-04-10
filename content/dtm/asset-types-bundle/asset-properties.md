@@ -52,7 +52,7 @@ ROLES & PERMISSIONS
 
 When you navigate to the **Property definitions** page for the first time, there will be no property definitions present in the system except the default property definitions. See [Default property definitions](#default-property-definitions) to view the list of property definitions available.
 
-To create an property definition, click **Add property definition** on the top menu bar. Enter the required data in the form (see description below) and click **Save**.
+To create a property definition, click **Add property definition** on the top menu bar. Enter the required data in the form (see description below) and click **Save**.
 
 ![Create a new property definiton](/images/dtm/custom-property/dtm-property-library-create-property.png)
 
@@ -148,7 +148,7 @@ If you do not select any of the restrictions above, it is not applicable for the
 
 #### Number {#number}
 
-For this type you must provide a numeric value during the asset creation, for example, the height of a wind turbine tower.
+For this type, you must provide a numeric value during the asset creation, for example, the height of a wind turbine tower.
 
 The type **Number** contains the following fields for additional validation rules:
 
@@ -295,8 +295,8 @@ You can import property definitions from any context, regardless of which tab yo
 
 ### Characteristics {#characteristics-of-default-property-definitions}
 
-* Default property defintions are readily available when you open the application.
-* Default property defintions cannot be deleted.
+* Default property definitions are readily available when you open the application.
+* Default property definitions cannot be deleted.
 * Only selected fields within a default property definition are editable and the editable fields vary depending on the specific property.
 * Default properties cannot be exported.
 
