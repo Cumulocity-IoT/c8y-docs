@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "The Asset API now handles device groups as assets and offers the includeGroups query parameter."
+title: "The Asset API now handles device groups as assets and offers the includeGroups query parameter"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
