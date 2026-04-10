@@ -1,6 +1,6 @@
 ---
-date: ""
-title: Improvements in endpoint authorization and permissions
+date: '2026-04-02'
+title: Sigfox service improvements in endpoint authorization and permissions
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
