@@ -29,4 +29,4 @@ The following differences apply:
 |Streaming Analytics|Included|Optional
 |OPC UA|Included|Optional
 |Cloud Field Bus|Included|Optional
-|Data Hub|No|Optional
+|Data Hub|Not included in the standard Edge distribution; available as a custom engagement through Professional Services — contact your account team for options|Optional
