@@ -25,7 +25,7 @@ Starting with version 1024.0.0, the {{< product-c8y-iot >}} platform changes the
 
 Two categories of changes were made:
 
-* **AngularJS (legacy modules)**: A new HTTP interceptor `c8yInventoryWithChildrenInterceptor` was added. It automatically appends `withChildren=true` to all GET requests to `/inventory/managedObjects` endpoints (list and detail, including `/childAssets` and `/childDevices` sub-resources) if the parameter is not already set. This preserves the old behavior for all legacy AngularJS code without requiring individual call-site changes.
+* **AngularJS (legacy modules)**: A new HTTP interceptor `c8yInventoryWithChildrenInterceptor` was added. It automatically appends `withChildren=true` to all GET requests to `/inventory/managedObjects` endpoints (list and detail, including `/childAssets` and `/childDevices` subresources) if the parameter is not already set. This preserves the old behavior for all legacy AngularJS code without requiring individual call-site changes.
 * **Angular (@c8y/ngx-components)**: Every `InventoryService.detail()`, `InventoryService.list()`, and `InventoryService.childAssetsList()` call across `@c8y/ngx-components` was updated to explicitly pass `withChildren: false` where child references are not needed, or `withChildren: true` where they are. This makes each call site's intent explicit rather than relying on the server default.
 
 **Breaking change**
