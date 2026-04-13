@@ -1,6 +1,7 @@
 ---
 date: ""
-title: "Change JsonSchema#additionalProperties depending on the composition of a *Definition"
+title: "The JSON schema generation has been enhanced to dynamically control the
+additionalProperties flag based on the composition of an AssetDefinition."
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
