@@ -29,4 +29,4 @@ The following differences apply:
 |Streaming Analytics|Included|Optional
 |OPC UA|Included|Optional
 |Cloud Field Bus|Included|Optional
-|Data Hub|No|Optional
+|Data Hub|On request via Professional Services|Optional
