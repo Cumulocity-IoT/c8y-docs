@@ -1,6 +1,6 @@
 ---
 date: ""
-title: search for MO id does not happen if value is pasted into search box (#11681) [GRAFT][release/cd] (#11756)
+title: Search for managed object ID now works when pasting values into the search box
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
