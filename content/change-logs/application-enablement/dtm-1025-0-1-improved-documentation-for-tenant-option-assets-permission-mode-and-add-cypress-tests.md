@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2827"
 version: "1025.0.1"
 ---
-The API documentation for the tenant option `assets.permission.mode` had been improved.
+The API documentation for the tenant option `assets.permission.mode` has been improved.
