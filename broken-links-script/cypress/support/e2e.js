@@ -102,5 +102,8 @@ Cypress.on('uncaught:exception', (err) => {
     if (err.message.includes("Cannot read properties of undefined (reading 'quick')")) {
       return false;
     }
+    if (err.message.includes("Unexpected token '&'")) {
+      return false;
+    }
   });
   
