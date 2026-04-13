@@ -4,7 +4,7 @@ title: Upgrading Edge
 layout: redirect
 ---
 {{< c8y-admon-caution >}}
-Before upgrading your Edge environment, ensure that all prerequisites are met.
+Significant changes to prerequisites are generally introduced in major releases. Nevertheless, prerequisites should be verified before each upgrade.
 <br>See [Prerequisites](/edge/installing-edge/#prerequisites) for the supported Kubernetes versions and requirements.
 {{< /c8y-admon-caution >}}
 
