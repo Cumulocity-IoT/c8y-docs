@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-04-08'
   - label: jp.cumulocity.com
     date: '2026-04-08'
+  - label: emea.cumulocity.com
+    date: '2026-04-13'
+  - label: us.cumulocity.com
+    date: '2026-04-13'
 ---
 The LWM2M agent failed to execute operations immediately after their creation. This issue has been fixed.
