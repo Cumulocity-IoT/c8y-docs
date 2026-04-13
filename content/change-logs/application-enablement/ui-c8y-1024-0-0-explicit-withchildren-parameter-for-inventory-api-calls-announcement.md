@@ -14,12 +14,6 @@ build_artifact:
 ticket: MTM-64714
 version: 1024.0.0
 environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Starting with version 1024.0.0, the {{< product-c8y-iot >}} platform changes the server-side default of the `withChildren` query parameter on `/inventory/managedObjects` REST endpoints from `true` to `false` for performance optimization. The entire UI codebase has been adapted to be compatible with the new default.
 
