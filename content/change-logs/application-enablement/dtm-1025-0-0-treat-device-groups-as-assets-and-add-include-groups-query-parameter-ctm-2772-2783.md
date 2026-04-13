@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2026-04-09"
 title: "The Asset API now handles device groups as assets and offers the includeGroups query parameter"
 product_area: "Application enablement & solutions"
 change_type:
@@ -17,7 +17,7 @@ version: "1025.0.0"
 The Asset API has been changed to treat groups as assets. Previously, an
 asset was identified solely by the presence of the `c8y_IsAsset` fragment. 
 Now, the presence of `c8y_IsDeviceGroup` is also sufficient
-to classify the entity as an asset.
+to classify an entity as an asset.
 
 A new query parameter `includeGroups` (default: `false`) has been
 introduced for the `/assets` and `/assets/count` endpoints:

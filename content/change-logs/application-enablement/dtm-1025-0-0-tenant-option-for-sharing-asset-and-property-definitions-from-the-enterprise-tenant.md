@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2026-04-09"
 title: "New tenant option for sharing asset and property definitions from the Enterprise tenant"
 product_area: "Application enablement & solutions"
 change_type:
