@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Improved documentation for tenant option assets.permission.mode and add Cypress tests"
+title: "Improved the API documentation for the tenant option assets.permission.mode"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
@@ -14,5 +14,4 @@ build_artifact:
 ticket: "CTM-2827"
 version: "1025.0.1"
 ---
-Co-authored-by: mvoigt-sag-bot <mvoigt-sag-bot@users.noreply.github.com>
-Co-authored-by: Frédéric Joulin <53534562+frej-c8y@users.noreply.github.com>
+The API documentation for the tenant option `assets.permission.mode` had been improved.
