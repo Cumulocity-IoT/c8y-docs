@@ -22,5 +22,11 @@ environment_availability:
     date: '2026-03-30'
   - label: jp.cumulocity.com
     date: '2026-03-30'
+  - label: emea.cumulocity.com
+    date: '2026-03-31'
+  - label: us.cumulocity.com
+    date: '2026-03-31'
+  - label: cumulocity.com
+    date: '2026-03-31'
 ---
 When using the asset property selector in single-select mode, selecting a computed property with configuration opened the configuration modal twice instead of once, creating a confusing user experience. The configuration modal now opens only once, as expected. This fix ensures that configuring computed properties in single-select mode works smoothly without duplicate modal windows.

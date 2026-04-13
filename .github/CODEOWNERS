@@ -22,6 +22,7 @@
 /content/authentication/ @mgrumann @BeateRixen
 /content/cloud-remote-access/ @aaronraab @l2p- @BeateRixen
 /content/cockpit/ @janhommes @BeateRixen
+/content/console/ @bbyreddy @tydunne @BeateRixen
 /content/data-broker/ @scmi-c8y @BeateRixen
 /content/datahub/ @cheinz-sag @BeateRixen
 /content/device-certificate-authentication/ @mgrumann @BeateRixen
@@ -30,7 +31,6 @@
 /content/dtm/ @lara-c8y @BeateRixen
 /content/edge/ @bbyreddy @rthrippleton @BeateRixen
 /content/edge-kubernetes/ @bbyreddy @rthrippleton @BeateRixen
-<<<<<<< Update-codeowners
 /content/enterprise-tenant/ @jend-c8y @mgrumann @maga1961 @bbyreddy @BeateRixen
 /content/get-familiar-with-the-ui/ @janhommes @BeateRixen
 /content/microservice-sdk/ @jend-c8y @mgrumann @BeateRixen
@@ -38,9 +38,6 @@
 /content/smartrest/ @l2p- @BeateRixen
 /content/standard-tenant/ @mgrumann @BeateRixen
 /content/web/ @janhommes @BeateRixen
-=======
-/content/console/ @bbyreddy @tydunne @BeateRixen
->>>>>>> develop
 
 /content/streaming-analytics/ @skom-c8y @ben-c8y @BeateRixen
 # 'block-reference-bundle' is automatically and frequently committed to - don't bother _too many_ CODEOWNERS

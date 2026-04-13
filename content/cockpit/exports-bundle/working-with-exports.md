@@ -9,13 +9,18 @@ sector:
   - app_enablement
 ---
 
-While the export functionality itself is a standalone feature, you can combine it with other features that allow you to select data points. To use the export functionality in this way, you must integrate it in the respective feature, for example, the [Data points table](/cockpit/widgets-collection/#data-point-table) widget.
+While the export functionality itself is a standalone feature, you can combine it with other features that allow you to select data points. To use the export
+functionality in this way, you must integrate it in the respective feature, for example, the [Data points table](/cockpit/widgets-collection/#data-point-table)
+widget or the [Data points list](/cockpit/widgets-collection/#data-point-list) widget.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
-- To generate exports in a widget: READ permission permission type "Measurement"
-{{< /c8y-admon-req >}}
+To generate exports in a widget, you must meet at least one of these criteria:
+
+- Have READ permission for the "Measurements" permission type (either as a global role or for the specific source).
+- Be the owner of the source you want to export data from.
+  {{< /c8y-admon-req >}}
 
 ### To create an export in a widget {#to-create-an-export-in-a-widget}
 
@@ -24,13 +29,12 @@ The following example shows you how the export functionality is integrated with 
 1. Click the export icon <i class="dlt-c8y-icon-data-export text-primary icon-20"></i> at the top right of your data point table:
 
 2. You see the **Generate export** dialog window, which allows you to configure the export further in the following categories:
-
    - **Time range**: Select the time range for your export. By default, it uses the same time range as configured in the widget's settings.
-   - **Data scope**:
-     - **Export mode**:  
+   - **Data scope** (not available for the [Data points list](/cockpit/widgets-collection/#data-point-list) widget, where data is exported as currently):
+     - **Export mode**:
        - Compact (selected by default) - all data will be exported to one file and downloaded directly by your browser.
        - Full - depending on the number of records to be processed, the data will either be available in a single ZIP file (containing one file per data point), sent by email or not exportable at all.
-       Refer to [Export modes](#export-modes) for further details.
+         Refer to [Export modes](#export-modes) for further details.
      - **Aggregation**: Only available when you select the **Compact** mode. The default value is the same as in the widget's configuration. The following four options are available:
        - None
        - Minutely
