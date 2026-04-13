@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Preserve customization of name and description of pre-defined library definitions"
+title: "Preserve customization of the name and description of pre-defined library definitions"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
