@@ -20,4 +20,4 @@ The new tenant option `definitions.multitenant.sharing.mode` lets you
 configure from where asset definitions and MEA definitions are stored and
 retrieved across your {{< enterprise-tenant >}} hierarchy.
 
-For more details, refer to the [documentation]([url](https://cumulocity.com/docs/dtm/)).
+For more details, refer to the [documentation](https://cumulocity.com/docs/dtm/).
