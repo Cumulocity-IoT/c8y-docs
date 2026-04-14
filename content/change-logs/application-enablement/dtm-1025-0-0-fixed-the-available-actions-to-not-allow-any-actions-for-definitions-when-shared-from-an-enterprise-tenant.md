@@ -16,6 +16,6 @@ version: "1025.0.0"
 ---
 When the sharing mode is enabled, all definitions are shared from the
 {{< enterprise-tenant >}}. When a definition is requested from a subtenant,
-it is basically read-only. Therefore all actions in the `AvailableActions`
+it is read-only. Therefore all actions in the `AvailableActions`
 fragment must be set to false to indicate that they cannot be altered or
 deleted.
