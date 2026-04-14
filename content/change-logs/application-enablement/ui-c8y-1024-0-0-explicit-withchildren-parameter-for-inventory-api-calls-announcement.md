@@ -1,5 +1,5 @@
 ---
-date: '2026-04-08'
+date: 
 title: Explicit withChildren parameter for Inventory API calls
 product_area: Application enablement & solutions
 change_type:
