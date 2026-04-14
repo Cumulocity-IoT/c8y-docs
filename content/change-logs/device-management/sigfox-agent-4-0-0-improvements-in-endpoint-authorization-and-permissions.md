@@ -24,6 +24,8 @@ environment_availability:
     date: '2026-04-13'
   - label: us.cumulocity.com
     date: '2026-04-13'
+  - label: cumulocity.com
+    date: '2026-04-14'
 ---
 To improve security and access control for Sigfox device connectivity, the permission requirements for managing Sigfox connections have been clarified and enforced.
 Users now need specific Sigfox permissions to work with connections under **Administration > Connectivity**. To view Sigfox connections, users require the Sigfox READ permission, while creating, updating, or deleting connections requires the Sigfox ADMIN permission. Additionally, Sigfox callback endpoints such as `sigfoxDataCallback` and `sigfoxErrorCallback` now require either the Sigfox ADMIN permission or the Inventory READ permission.

@@ -1,18 +1,23 @@
 ---
-date: "2026-04-09"
-title: "Asset API now handles device groups as assets and offers the includeGroups query parameter"
-product_area: "Application enablement & solutions"
+date: '2026-04-09'
+title: >-
+  Asset API now handles device groups as assets and offers the includeGroups
+  query parameter
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-QHu1GdukP"
-      label: "Feature"
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-2772"
-version: "1025.0.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-2772
+version: 1025.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-04-14'
 ---
 The Asset API has been changed to treat groups as assets. Previously, an
 asset was identified solely by the presence of the `c8y_IsAsset` fragment. 
