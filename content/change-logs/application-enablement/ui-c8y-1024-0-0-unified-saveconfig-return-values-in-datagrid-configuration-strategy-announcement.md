@@ -1,5 +1,5 @@
 ---
-date: '2026-04-08'
+date: 
 title: Unified saveConfig$() return values in DataGridConfigurationStrategy
 product_area: Application enablement & solutions
 change_type:
