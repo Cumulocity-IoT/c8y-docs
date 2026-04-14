@@ -41,4 +41,4 @@ Clicking a row opens the details of the selected event and displays further deta
 
 Since devices may send large amounts of event data, you can filter the data to be displayed by date.
 
-To do this, select the date filter in the top menu bar and choose one of the predefined date ranges or create a custom one. After selecting and filling in a custom date range, click the **Apply** button.
+To do this, select the date filter in the top menu bar and choose one of the predefined date ranges or create a custom one. After selecting and filling in a custom date range, click *Apply**.
