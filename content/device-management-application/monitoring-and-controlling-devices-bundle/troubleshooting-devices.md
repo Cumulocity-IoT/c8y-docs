@@ -37,7 +37,7 @@ For each event, the following information is provided:
 
 In the event list, the latest entry is displayed on top.
 
-Clicking a row opens a details of selected event and displays further details on the event (as type and position of the device). 
+Clicking a row opens the details of the selected event and displays further details on the event (such as the type and position of the device). 
 
 Since devices may send large amounts of event data, you can filter the data to be displayed by date.
 
