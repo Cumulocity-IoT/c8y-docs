@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66484
 version: 1023.68.4
 ---
-Previously, pasting a **Managed Object ID** into the search box failed to trigger a search, forcing user to type it manually. The search function now correctly detects pasted values and executes automatically.
+Previously, pasting a managed object ID into the search box failed to trigger a search, forcing the user to enter it manually. The search function now correctly detects pasted values and executes automatically.
