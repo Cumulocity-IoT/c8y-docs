@@ -186,7 +186,14 @@ The "latest data" versions of the tables reflect this update:
 
 ##### Deleting inventory data
 
-Currently, delete operations are not processed.
+Currently, delete operations of inventory entries are only written for CDC tables. When a managed object is deleted, an 
+update is written to `cdc_inventory.inventory` like the following:
+
+| id    | lastUpdated              | eventType             | name | fragments | …   | creationTime | someProperty |
+| ----- | ------------------------ |-----------------------|------|-----------| --- |--------------|--------------|
+| 47635 | 2026-04-14T12:10:00.009Z | MANAGED_OBJECT_DELETE | null | null      | …   | null         | null         |
+
+Only the key columns are updated.
 
 <!--
 Finally, assume that you delete the device. This results in a record with `eventType` "MANAGED_OBJECT_DELETE" and the last properties stored on the device. Records of deleted devices currently remain visible in the `latest_inventory` tables.
