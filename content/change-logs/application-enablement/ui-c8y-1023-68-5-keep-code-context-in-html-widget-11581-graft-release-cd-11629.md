@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Keep code context in html widget (#11581) [GRAFT][release/cd] (#11629)
+title: HTML widget preserves code context
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
