@@ -128,17 +128,11 @@ Select **Text** if the value is a string, for example, a wind turbine manufactur
 
  If you select **Advanced validation rules** for text, the following fields appear:
 
-* **Min Length**:
+* **Min Length** - If selected, enter the minimum length of the text that must be provided for this asset property during the asset creation. Any text below the minimum length is not accepted.
 
-If selected, enter the minimum length of the text that must be provided for this asset property during the asset creation. Any text below the minimum length is not accepted.
+* **Max Length** - If selected, enter the maximum length of the text that must be provided for this asset property during the asset creation. Any text above the maximum length is not accepted.
 
-* **Max Length**:
-
-If selected, enter the maximum length of the text that must be provided for this asset property during the asset creation. Any text above the maximum length is not accepted.
-
-* **RegExp**:
-
-If selected, enter a valid regular expression. During the asset creation, you must provide the asset property value, which adheres to the regular expression.
+* **RegExp** - If selected, enter a valid regular expression. During the asset creation, you must provide the asset property value, which adheres to the regular expression.
 
 **Example:**
 
@@ -152,13 +146,9 @@ For this type, you must provide a numeric value during the asset creation, for e
 
 The type **Number** contains the following fields for additional validation rules:
 
-* **Minimum**:
+* **Minimum** - If selected, enter a number in the field **Minimum** on the right. When you create the asset, the asset property value cannot be lower or less than provided in the field.
 
-If selected, enter a number in the field **Minimum** on the right. When you create the asset, the asset property value cannot be lower or less than provided in the field.
-
-* **Maximum**:
-
-If selected, enter a number in the field on the right. When you create the asset, the asset property value cannot exceed the **Maximum** provided.
+* **Maximum** - If selected, enter a number in the field on the right. When you create the asset, the asset property value cannot exceed the **Maximum** provided.
 
 **Example:**
 
@@ -258,7 +248,7 @@ Follow the steps below:
 
 1. On the **Property definitions** page, click **Export**. In the resulting dialog box, you see the list of property definitions along with their description and type.
 2. Select one or more desired definitions and click **Export**.
-3. The dialog closes and a JSON file named 'Export-properties.json' downloads.
+3. The dialog closes and a JSON file named *Export-properties.json* downloads.
 
 Use the downloaded file to import the property definitions into a DTM application on another tenant.
 
@@ -293,7 +283,7 @@ You can import property definitions from any context, regardless of which tab yo
 
 ### Default property definitions {#default-property-definitions}
 
-### Characteristics {#characteristics-of-default-property-definitions}
+#### Characteristics {#characteristics-of-default-property-definitions}
 
 * Default property definitions are readily available when you open the application.
 * Default property definitions cannot be deleted.
