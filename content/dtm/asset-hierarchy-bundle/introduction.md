@@ -5,7 +5,7 @@ layout: redirect
 helpcontent:
 - label: asset-hierarchy
   title: Assets
-  content: "To create an asset, use asset definitions as the blueprint, which consists of one or more property definitions as well as one or more subasset definitions.  
+  content: "To create an asset, use asset definitions as the blueprint, which consist of one or more property definitions as well as one or more subasset definitions.  
 
 
   An asset hierarchy consists of a root asset definition followed by all its subsequent subasset definitions. Each hierarchy level can consist of property definitions for the asset, as well as its subassets and devices.

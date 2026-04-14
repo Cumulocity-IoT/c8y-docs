@@ -25,15 +25,15 @@ When you open the DTM application, default property definitions are readily avai
 
 In the overview you see the following categories:
 
-* **Name**: Name of the property definition
-* **Key**: Unique identifier for the property definition
-* **Description**: Brief description of the property definition
-* **Data type**: The data type of the property definition, for example, String, Number, or Complex
-* **Default**: Default value for the property definition
-* **Min-Max**: Minimum and maximum values allowed for the property definition
-* **Applicable to**: The asset types, alarms, measurements, operations, or events contexts to which the property definition applies
-* **Last updated**: Date and time of the last update
-* **Actions**: Available actions for the property definition
+* **Name**: Name of the property definition.
+* **Key**: Unique identifier for the property definition.
+* **Description**: Brief description of the property definition.
+* **Data type**: The data type of the property definition, for example, String, Number, or Complex.
+* **Default**: Default value for the property definition.
+* **Min-Max**: Minimum and maximum values allowed for the property definition.
+* **Applicable to**: The asset types, alarms, measurements, operations, or events contexts to which the property definition applies.
+* **Last updated**: Date and time of the last update.
+* **Actions**: Available actions for the property definition.
 
 Click **Configure columns** to configure the displayed columns.
 
@@ -54,7 +54,7 @@ When you navigate to the **Property definitions** page for the first time, there
 
 To create a property definition, click **Add property definition** on the top menu bar. Enter the required data in the form (see description below) and click **Save**.
 
-![Create a new property definiton](/images/dtm/custom-property/dtm-property-library-create-property.png)
+![Create a new property definition](/images/dtm/custom-property/dtm-property-library-create-property.png)
 
 Asset properties have the following parameters:
 
@@ -134,7 +134,7 @@ If selected, enter the minimum length of the text that must be provided for this
 
 * **Max Length**:
 
-If selected , enter the maximum length of the text that must be provided for this asset property during the asset creation. Any text above the maximum length is not accepted.
+If selected, enter the maximum length of the text that must be provided for this asset property during the asset creation. Any text above the maximum length is not accepted.
 
 * **RegExp**:
 
@@ -220,9 +220,9 @@ To prevent security threats, sanitize your files beforehand.
 To upload the schematic diagram for a wind turbine, you name the property definition "Wind turbine schematic" and specify the file type of the schematic file. Then upload the respective file. Once the asset is created, you can view this file for future reference.
 
 #### Complex {#complex}
-A complex property definition consists of multiple key-value pairs, meaning, it contains a root object followed by one or more key-value pairs. You must define each key-value pair as well as providing a type for each pair. You can arrange the properties in the required order by dragging and dropping them. Hover over the row to see the drag icon. Click and drag the drag icon for reordering. On the right side of each key-value pair, you see an expand icon <i class="dlt-c8y-icon-expand-arrow text-muted icon-20"></i>. Click the expand icon <i class="dlt-c8y-icon-expand-arrow text-muted icon-20"></i> to see a specific property. Note that when you add a new key-value pair, it automatically expands. To hide it, click the collapse icon <i class="dlt-c8y-icon-collapse-arrow text-muted icon-20"></i>.
+A complex property definition consists of multiple key-value pairs, which means it contains a root object followed by one or more key-value pairs. You must define each key-value pair and provide a type for each pair. You can arrange the properties in the required order by dragging and dropping them. Hover over the row to see the drag icon. Click and drag the drag icon for reordering. On the right side of each key-value pair, you see an expand icon <i class="dlt-c8y-icon-expand-arrow text-muted icon-20"></i>. Click the expand icon <i class="dlt-c8y-icon-expand-arrow text-muted icon-20"></i> to see a specific property. Note that when you add a new key-value pair, it automatically expands. To hide it, click the collapse icon <i class="dlt-c8y-icon-collapse-arrow text-muted icon-20"></i>.
 
-You see the preview of data model on the right side of properties section.
+You see the preview of the data model on the right of the **Properties** section.
 
  **Example:**
 
@@ -232,7 +232,7 @@ If the asset property is called "Gearbox specifications" with the key "gearbox_s
 
 ### To edit a property definition {#to-edit-a-property-definition}
 
-1. Click the name of the property definition to view or edit the details. Alternatively, click **Edit** option in the action menu to the right.
+1. Click the name of the property definition to view or edit the details. Alternatively, click **Edit** in the action menu to the right.
 2. Edit any content of the definition.
 3. Click **Save** to save your changes.
 

@@ -40,7 +40,7 @@ In the **Assets** page, select an asset to view its details, such as subassets, 
 
 The **Subassets** tab shows all asset details:
 
-- At the top left of the asset header, the icon and the asset definition as well as asset name and description are presented.
+- At the top left of the asset header, the icon, the asset definition, the asset name, and the description are presented.
 - Next to it, the **Created** and **Last updated** time as well as, if configured, the **External ID** of the asset are shown.
 - In the **Subassets** section at the left, all subassets and devices are listed.
 - At the right, the asset properties are displayed.
@@ -51,7 +51,7 @@ For assets with the **Allow any property** option enabled, you can add additiona
 
 ![Subassets](/images/dtm/assets/dtm-assets-subassets-page.png)
 
-If the asset has a **Location** property or the asset definition of the asset specifies Location as a selected [property definition](/dtm/asset-types/#asset-properties), a map is shown at the bottom right corner of the page. In DTM, the Location property definition represents the formal model of a `c8y_Position` fragment used in {{< product-c8y-iot >}} to [track the geographical location of assets and devices](https://cumulocity.com/docs/device-integration/fragment-library/#tracking). Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen. You cannot modify the marker when viewing the asset. Edit the property to change the position of the marker.
+If the asset has a **Location** property or the asset definition of the asset specifies Location as a selected [property definition](/dtm/asset-types/#asset-properties), a map is shown at the bottom right of the page. In DTM, the Location property definition represents the formal model of a `c8y_Position` fragment used in {{< product-c8y-iot >}} to [track the geographical location of assets and devices](/device-integration/fragment-library/#tracking). Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right of the map to view it in full screen. You cannot modify the marker when viewing the asset. Edit the property to change the position of the marker.
 
 {{< c8y-admon-info>}}
 - The **Add asset** button is not displayed for the last hierarchical level, except for generic assets with the **Allow any asset** option enabled in their asset definition.
@@ -87,18 +87,18 @@ The asset definitions provided here are root asset definitions. Root asset defin
 
     ![Adding a new asset](/images/dtm/assets/dtm-assets-new-asset.png)
 
-4. If the selected asset definition has **Allow any asset** enabled, a **Subassets** section is displayed. Click **Add/Create asset** to add a row and select an asset definition to add as a subasset. Click the remove icon next to a row to remove it.
+4. If the selected asset definition has **Allow any asset** enabled, a **Subassets** section is displayed. Click **Add/Create asset** to add a row and select an asset definition to add as a subasset. Click the remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i> next to a row to remove it.
 
 5. Under the **Property definitions**,  provide the values for all asset properties. The corresponding property definitions are defined when [creating the asset definition](/dtm/asset-types/#to-create-an-asset-definition).
 
--  If the selected asset definition has **Allow any property** enabled, **Add property** button is displayed in the **Property definitions** section. Click **Add property**, select the desired properties in the resulting dialog, and click **Select**. The selected properties appear in the **Property definitions** section. Click the remove icon next to a property to remove it.
+-  If the selected asset definition has **Allow any property** enabled, the **Add property** button is displayed in the **Property definitions** section. Click **Add property**, select the desired properties in the resulting dialog, and click **Select**. The selected properties appear in the **Property definitions** section. Click the remove icon next to a property to remove it.
 
 
     {{< c8y-admon-info>}}
 For complex properties, the keys are ordered as specified in the property definition.
     {{< /c8y-admon-info>}}
 
--  For an asset with a **Location** property, click **Choose on map** to set the values for latitude and longitude. Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen. The marker is positioned at the default value set in the **Location** property. Click or drag the marker to the preferred position to set the value for both latitude and longitude. If you do not enter a latitude or longitude value, you will not see a marker on the map.
+-  For an asset with a **Location** property, click **Choose on map** to set the values for latitude and longitude. Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right of the map to view it in full screen. The marker is positioned at the default value set in the **Location** property. Click or drag the marker to the preferred position to set the value for both latitude and longitude. If you do not enter a latitude or longitude value, you will not see a marker on the map.
 
     {{< c8y-admon-info>}}
 The values of latitude and longitude are automatically updated whenever a new location is selected on the map and vice-versa. The altitude value is not represented on the map.
