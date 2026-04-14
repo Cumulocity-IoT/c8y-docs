@@ -1,6 +1,6 @@
 ---
 date: "2026-04-09"
-title: "When a definition is shared from the enterprise tenant, the c8y_SharedDefinition fragment is added"
+title: "c8y_SharedDefinition fragment added when a definition is shared from the Enterprise tenant"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"

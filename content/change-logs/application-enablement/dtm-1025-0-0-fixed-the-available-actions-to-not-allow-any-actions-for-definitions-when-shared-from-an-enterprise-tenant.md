@@ -1,6 +1,6 @@
 ---
 date: "2026-04-09"
-title: "The AvailableActions fragment indicates the read-only status for definitions that are shared from an enterprise tenant"
+title: "AvailableActions fragment indicates the read-only status for definitions shared from an Enterprise tenant"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
