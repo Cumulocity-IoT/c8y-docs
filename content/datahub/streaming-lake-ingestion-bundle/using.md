@@ -186,9 +186,9 @@ The "latest data" versions of the tables reflect this update:
 
 ##### Deleting inventory data
 
-Currently, delete operations of inventory entries are only written for CDC tables with the fields `id`, `eventType` and `lastUpdated`, 
-where the latter one is set to the publishing time of the event. All other values will be `null`.
-Fragment tables are not being updated for delete operations.
+Currently, delete operations of inventory entries are only written for CDC tables. The written records only contain the 
+fields `id`, `eventType` and `lastUpdated`, where the latter one is set to the publishing time of the event. 
+All other values will be `null`. Fragment tables are not being updated for delete operations.
 
 Sending a delete operation of an inventory entry results in a main table record like the following:
 
@@ -196,7 +196,10 @@ Sending a delete operation of an inventory entry results in a main table record 
 | ----- | ------------------------ |-----------------------|------|-----------| --- |--------------|--------------|
 | 47635 | 2026-04-14T12:10:00.009Z | MANAGED_OBJECT_DELETE | null | null      | …   | null         | null         |
 
-For the `latest_inventory.inventory` table no record is written, currently.
+For the `latest` tables no records are written, currently. The same holds true for delete operations on measurements,
+events, alarms and operations, where no records are written neither to the `latest` nor to `cdc` tables. 
+Including also delete operations on other types of record is a planned feature for the future,
+but is currently not available in the private preview.
 
 <!--
 Finally, assume that you delete the device. This results in a record with `eventType` "MANAGED_OBJECT_DELETE" and the last properties stored on the device. Records of deleted devices currently remain visible in the `latest_inventory` tables.
