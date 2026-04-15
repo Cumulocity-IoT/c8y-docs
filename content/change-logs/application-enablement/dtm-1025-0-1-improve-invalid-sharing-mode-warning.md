@@ -16,4 +16,3 @@ version: "1025.0.1"
 ---
 The warning shown when the sharing mode is invalid has been improved. Instead of displaying a long inline message
 a short label with an info icon is now displayed.
-message.
