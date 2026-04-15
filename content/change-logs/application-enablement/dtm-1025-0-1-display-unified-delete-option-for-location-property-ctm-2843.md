@@ -16,6 +16,6 @@ version: "1025.0.1"
 ---
 In the **Add asset** view, previously, two remove buttons appeared, one for the fields and
 one for the map when the Location property was selected.
-that allowed to add additional properties in new Add asset screen. This
+This
 update ensures that only a single remove button appears for the
 property.
