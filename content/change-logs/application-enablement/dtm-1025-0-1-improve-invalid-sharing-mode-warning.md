@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Improve invalid sharing mode warning."
+title: "Improved invalid sharing mode warning"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
