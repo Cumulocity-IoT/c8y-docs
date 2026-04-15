@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Breadcrumbs in Data Point Library plugin now use the configured parent node"
+title: "Breadcrumbs in Data point library plugin now display correct navigation path"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
