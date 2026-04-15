@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-66395
 version: 1023.68.5
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(web sdk): [MTM-66395] Keep code context in html widget
-(#11581)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11581)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66395]:
-https://cumulocity.atlassian.net/browse/MTM-66395?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Jan Hommes <janhommes@users.noreply.github.com>
-Co-authored-by: Jakub Drewniak <103751383+jdre-c8y@users.noreply.github.com>
+When using the AI assistant in the HTML widget to build a widget, the widget previously lost the code context during re-visited, which would not allow you to align the existing code. The HTML widget now preserves the code context properly, ensuring that code can be changed with prompts again. This fix improves the AI code assistant when asking for changes.
