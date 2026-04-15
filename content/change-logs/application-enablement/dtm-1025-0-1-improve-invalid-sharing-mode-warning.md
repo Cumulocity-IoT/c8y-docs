@@ -14,6 +14,6 @@ build_artifact:
 ticket: "CTM-2845"
 version: "1025.0.1"
 ---
-Improves the warning shown when the sharing mode is invalid by
+The warning shown when the sharing mode is invalid has been improved. Instead of displaying a long inline message
 displaying a short label with an info icon instead of a long inline
 message.
