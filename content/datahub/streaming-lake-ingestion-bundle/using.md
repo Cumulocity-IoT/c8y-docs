@@ -20,12 +20,174 @@ The service stores only new data incoming after subscription. It does not automa
 You can now analyze your data from any Apache Iceberg compliant tool. For example:
 
 * Through the user interface of the [embedded query engine](/datahub/setting-up-datahub/#dremio-api-user).
-* By connecting query engines, BI tools and database browsers through [JDBC or ODBC](/datahub/setting-up-datahub/#dremio-api-user).
-* By using the secure and high performance [querying APIs](https://cumulocity.com/api/datahub/) from applications.
+* By using the secure and high performance [querying APIs](https://cumulocity.com/api/datahub/) from applications and by using JDBC or ODBC with query engines and database tools.
+* By connecting applications directly to the Cumulocity Iceberg catalog.
 
-<!-- Todo: Examples of configuring the tools, show Dremio UI and some other setups, like Spark, Databricks etc. -->
+#### Using DataHub Query to analyze lake data
+
+If your tenant includes a subscription to DataHub Query (Dremio), a data source with your tenant ID is automatically set up for querying the lake.
+
+* Click on the data source to view the Iceberg folders ("namespaces") that contain the tables of your data lake.
+* Click a table to open the query editor and run SQL queries on the table. You will see an example of a query as shown in the screenshot below.
+* To refer to a table, use the pattern `tenant.namespace.table`. For example, if your tenant is "mytenant", the inventory would be referred to as `mytenant.cdc_inventory.inventory`.
+* To simplify your SQL statement, click on the "Context:" link just above the query editor. You can select a data source and namespace that will be used as context for queries in the editor. For example, if you use "mytenant" as context, you can refer to the inventory using only `cdc_inventory.inventory`. If you use "mytenant.cdc_inventory" as context, you can refer to the inventory using only `inventory`.
 
 ![Example of querying the lake](/images/datahub-guide/querying.png)
+
+#### Using DataHub Query APIs and drivers to analyze lake data programmatically
+
+If your tenant includes a subscription to DataHub Query, you can use the [DataHub APIs](https://cumulocity.com/api/datahub) as well as the [JDBC](/datahub/working-with-datahub/#connecting-via-jdbc) and [ODBC](/datahub/working-with-datahub/#connecting-via-odbc) drivers.
+
+For example, use the REST API to submit a query job to DataHub Query.
+
+```shell
+$ curl -H "Content-Type: application/json" -u "<USER>:<PASS>" \
+  https://<TENATN_DOMAIN>/service/datahub/dremio/api/v3/sql -d @- <<EOF \
+{
+  "sql": "SELECT * FROM inventory",
+  "context": [ "<TENANT>", "cdc_inventory" ]
+}
+EOF
+
+{"id":"12345678-1234-5678-1234-5678901234567"}
+```
+
+Then fetch the results of the query job once the job has finished.
+
+```shell
+$ curl -u "admin:$PASS" \
+  https://<TENANT_DOMAIN>/service/datahub/dremio/api/v3/job/12345678-1234-5678-1234-5678901234567/results
+
+{
+  "rowCount": 7,
+  "schema": [
+    { "name": "id", "type": { "name": "VARCHAR" } },
+    …
+  ],
+  "rows": [
+    {
+      "id": "99266201",
+      "lastUpdated": "2026-03-30 15:27:35.781",
+      "name": "Temperature #1",
+      "owner": "service_device-simulator",
+      "type": "c8y_MQTTDevice",
+      "eventType": "MANAGED_OBJECT_UPDATE",
+    …
+  ]
+}
+```
+
+#### Using the Iceberg catalog from Apache Spark
+
+[Apache Spark](https://spark.apache.org/) is a distributed computing framework that seamlessly integrates with the Cumulocity Iceberg catalogs to provide full SQL-based data processing through a standard [Iceberg REST catalog interface](https://iceberg.apache.org/rest-catalog-spec/).
+
+To authenticate against the Cumulocity Iceberg REST catalog, [OpenID Connect](https://openid.net/developers/how-connect-works/) with a client credentials grant type is used.
+
+{{< c8y-admon-info >}}
+For the preview release, obtain your personal client ID and client credentials by contacting the preview support.
+{{< /c8y-admon-info >}}
+
+The URL of the OpenID Connect server is
+
+`https://iceberg.<INSTANCE>:19120/api/catalog/v1/oauth/tokens`
+
+For example, if your tenant is `mytenant.cumulocity.com`, the URL is
+
+`https://iceberg.cumulocity.com:19120/api/catalog/v1/oauth/tokens`.
+
+See below for an example on how to run Spark SQL queries with the Cumulocity Iceberg catalog on an AWS S3 object store. In the example, replace
+
+* The version number of the Iceberg Spark Runtime to match the Spark version that you use (here Spark 4.0.x).
+* The `<CLIENTID>` and `<CLIENT_SECRET>` with the credentials obtained from support.
+* `<INSTANCE>` and `<TENANT_ID>` with your instance URL and tenant ID.
+* `<REGION>`, `<AWS_ACCESS_KEY>` and `<AWS_SECRET_ACCESS_KEY>` with credentials to access your AWS S3 store.
+
+```shell
+bin/spark-sql \
+  --packages org.apache.iceberg:iceberg-spark-runtime-4.0_2.13:1.10.1,org.apache.iceberg:iceberg-aws-bundle:1.10.1 \
+  --conf spark.sql.extensions=org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions \
+  --conf spark.sql.catalog.polaris.credential="<CLIENT_ID>:<CLIENT_SECRET>" \
+  --conf spark.sql.catalog.polaris.oauth2-server-uri="https://iceberg.<INSTANCE>:19120/api/catalog/v1/oauth/tokens" \
+  --conf spark.sql.catalog.polaris.scope="PRINCIPAL_ROLE:ALL" \
+  --conf spark.sql.catalog.c8y.rest-metrics-reporting-enabled=false \
+  --conf spark.sql.catalog.c8y=org.apache.iceberg.spark.SparkCatalog \
+  --conf spark.sql.catalog.c8y.type=rest \
+  --conf spark.sql.catalog.c8y.uri=https://iceberg.<INSTANCE>:19120/api/catalog \
+  --conf spark.sql.catalog.c8y.warehouse=<TENANT_ID> \
+  --conf spark.sql.catalog.c8y.io-impl=org.apache.iceberg.aws.s3.S3FileIO \
+  --conf spark.sql.catalog.c8y.s3.endpoint=https://s3.amazonaws.com \
+  --conf spark.sql.catalog.c8y.s3.region=<REGION> \
+  --conf spark.sql.catalog.c8y.s3.access-key-id=<AWS_ACCESS_KEY_ID> \
+  --conf "spark.sql.catalog.c8y.s3.secret-access-key=<AWS_SECRET_ACCESS_KEY>"
+
+spark-sql (default)> show namespaces in c8y;
+cdc_alarm
+cdc_event
+cdc_inventory
+cdc_measurement
+…
+spark-sql (default)> select * from c8y.cdc_inventory.inventory;
+99266201	2026-03-30 17:27:35.781	Temperature #1	service_device-simulator	c8y_MQTTDevice	MANAGED_OBJECT_UPDATE	["supportedMeasurements","com_cumulocity_model_Agent","c8y_IsDevice","c8y_SupportedOperations"]	NULL	NULL	NULL	["c8y_Temperature.T"]	2026-03-30 17:07:13.37
+99266201	2026-03-30 17:27:44.838	Temperature #1	service_device-simulator	c8y_MQTTDevice	MANAGED_OBJECT_UPDATE	["supportedMeasurements","com_cumulocity_model_Agent","c8y_IsDevice","c8y_SupportedOperations"]	NULL	NULL	NULL	["c8y_Temperature.T"]	2026-03-30 17:07:13.37
+```
+
+#### Using the Iceberg catalog from other applications
+
+Similarly, you can access the catalog from other applications. Below is an example on how to use a `curl` command line to access the catalog. First, get an access token to the catalog.
+
+```shell
+$  curl -X POST https://iceberg.<INSTANCE>:19120/api/catalog/v1/oauth/tokens \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "grant_type=client_credentials" \
+  -d "client_id=<CLIENT_ID>" \
+  -d "client_secret=<CLIENT_SECRET>" \
+  -d "scope=PRINCIPAL_ROLE:ALL"
+
+{"access_token":"ey…","token_type":"bearer","issued_token_type":"urn:ietf:params:oauth:token-type:access_token","expires_in":900}
+```
+
+Then use the token to access the catalog configuration and metadata:
+
+```shell
+$ curl "https://iceberg.<INSTANCE>:19120/api/catalog/v1/config?warehouse=<TENANT>" \
+  -H "Authorization: Bearer <ACCESS_TOKEN>"
+
+{
+  "defaults": { "default-base-location": "s3://…>" },
+  "overrides": { "prefix": "…" },
+  "endpoints": [
+    "GET /v1/{prefix}/namespaces",
+    "GET /v1/{prefix}/namespaces/{namespace}",
+    "HEAD /v1/{prefix}/namespaces/{namespace}",
+    "POST /v1/{prefix}/namespaces",
+    "POST /v1/{prefix}/namespaces/{namespace}/properties",
+    "DELETE /v1/{prefix}/namespaces/{namespace}",
+    "GET /v1/{prefix}/namespaces/{namespace}/tables",
+    "GET /v1/{prefix}/namespaces/{namespace}/tables/{table}",
+    …
+}
+
+$ curl https://iceberg.<INSTANCE>:19120/api/catalog/v1/<TENANT>/namespaces/cdc_inventory/tables/inventory' \
+  -H "Authorization: Bearer <ACCESS_TOKEN>"
+
+{
+  "metadata": {
+    "format-version": 2,
+    …
+    "schemas": [
+      {
+        "type": "struct",
+        "schema-id": 0,
+        "fields": [
+          { "id": 1, "name": "id", "required": true, "type": "string" },
+          { "id": 2, "name": "lastUpdated", "required": true, "type": "timestamptz" },
+          { "id": 3, "name": "name", "required": false, "type": "string" },
+    …
+```
+
+{{< c8y-admon-info >}}
+While Iceberg is widely supported, the degree of support currently still varies and we cannot guarantee the catalog to be interoperable with all setups and applications.
+{{< /c8y-admon-info >}}
 
 ### Understanding the data lake structure
 
@@ -186,11 +348,11 @@ The "latest data" versions of the tables reflect this update:
 
 ##### Deleting inventory data
 
-Currently, delete operations of inventory entries are only written for CDC tables. When a managed object is deleted, an 
+Currently, delete operations of inventory entries are only written for CDC tables. When a managed object is deleted, an
 update is written to `cdc_inventory.inventory` like the following:
 
 | id    | lastUpdated              | eventType             | name | fragments | …   | creationTime | someProperty |
-| ----- | ------------------------ |-----------------------|------|-----------| --- |--------------|--------------|
+| ----- | ------------------------ | --------------------- | ---- | --------- | --- | ------------ | ------------ |
 | 47635 | 2026-04-14T12:10:00.009Z | MANAGED_OBJECT_DELETE | null | null      | …   | null         | null         |
 
 Only the key columns are updated.
