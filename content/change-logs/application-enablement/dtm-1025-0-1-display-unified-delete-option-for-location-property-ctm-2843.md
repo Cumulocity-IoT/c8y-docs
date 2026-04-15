@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Display unified delete option for Location property"
+title: "Display unified remove option for Location property"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
