@@ -15,7 +15,7 @@ ticket: "CTM-2844"
 version: "1025.0.1"
 ---
 The breadcrumbs in the Data point library plugin previously displayed a
-fixed path of "Configuration > Data Point Library" regardless of your
+fixed path of "Configuration > Data point library" regardless of your
 tenant configuration. The breadcrumbs now dynamically reflect the
 configured parent node, providing accurate navigation context that
 aligns with your application's hierarchy.
