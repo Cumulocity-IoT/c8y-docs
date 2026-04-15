@@ -26,8 +26,8 @@ _Appears in:_
 
 | Field | Description | CLI | Default | Validation |
 | --- | --- | --- | --- | --- |
-| `domain` _string_ | Edge can be managed, configured, and monitored remotely via a Cumulocity cloud tenant. This requires registering Edge as a device within that tenant.<br />The domain of your tenant. For example, 'acme.cumulocity.com' on cumulocity.com, where 'acme' is the subdomain of your tenant.<br /> | c8yedge config --set domain=value |  |  |
-| `tlsSecretName` _string_ | Edge uses X.509 certificates to authenticate its connection to the cloud via MQTT. By default, Edge generates and assigns its own self-signed certificates.<br />To provide your own trusted certificates, you must set both of the following keys:<br />&nbsp;&nbsp;- tls.key: TLS/SSL private key in PEM format.<br />&nbsp;&nbsp;- tls.crt: TLS/SSL certificate chain associated with the private key in PEM format.<br />    For TLS validation to succeed, the certificates must be concatenated in the following order:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- End-entity (Leaf) Certificate: The certificate issued to your specific Edge server.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Intermediate Certificate(s): The link(s) between your leaf and the root CA. If multiple intermediates exist, they must be ordered correctly.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Root CA Certificate: The final authority in the chain (generally included last).<br /> | c8yedge config --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt> |  |  |
+| `domain` _string_ | Edge can be managed, configured, and monitored remotely via a Cumulocity cloud tenant. This requires registering Edge as a device within that tenant.<br />The domain of your tenant. For example, 'acme.cumulocity.com' on cumulocity.com, where 'acme' is the subdomain of your tenant.<br /> | `c8yedge config --set domain=value` |  |  |
+| `tlsSecretName` _string_ | Edge uses X.509 certificates to authenticate its connection to the cloud via MQTT. By default, Edge generates and assigns its own self-signed certificates.<br />To provide your own trusted certificates, you must set both of the following keys:<br />&nbsp;&nbsp;- tls.key: TLS/SSL private key in PEM format.<br />&nbsp;&nbsp;- tls.crt: TLS/SSL certificate chain associated with the private key in PEM format.<br />    For TLS validation to succeed, the certificates must be concatenated in the following order:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- End-entity (Leaf) Certificate: The certificate issued to your specific Edge server.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Intermediate Certificate(s): The link(s) between your leaf and the root CA. If multiple intermediates exist, they must be ordered correctly.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Root CA Certificate: The final authority in the chain (generally included last).<br /> | `c8yedge config --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>` |  |  |
 
 
 #### CoreSpec
@@ -43,7 +43,7 @@ _Appears in:_
 
 | Field | Description | CLI | Default | Validation |
 | --- | --- | --- | --- | --- |
-| `resources` _[PodResourcesWithLimits](#podresourceswithlimits)_ | Specify resource limits for the Cumulocity Core container. For more information, see Resource limits specification.<br /> | c8yedge config --set core.resources.limits.cpu=value --set core.resources.limits.memory=value |  |  |
+| `resources` _[PodResourcesWithLimits](#podresourceswithlimits)_ | Specify resource limits for the Cumulocity Core container. For more information, see Resource limits specification.<br /> | `c8yedge config --set core.resources.limits.cpu=value --set core.resources.limits.memory=value` |  |  |
 
 
 
@@ -79,7 +79,7 @@ _Appears in:_
 
 | Field | Description | CLI | Default | Validation |
 | --- | --- | --- | --- | --- |
-| `version` _[IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util)_ | Edge version to install.<br />Specify "2025" to install the latest available version from the release, or use a fully qualified version like "2025.0.1" to install a specific patch version. |  |  |  |
+| `version` _[IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util)_ | Edge version to install.<br />Specify Major version to install the latest available version from the release, or use a fully qualified version to install a specific patch version. |  |  |  |
 | `licenseKey` _string_ | Edge license file you received for the domain.<br />If you do not have a license, you must request one from product support at https://cumulocity.com/docs/additional-resources/contacting-support/<br />When requesting license, you must provide the following details:<br />&nbsp;&nbsp;- Domain Name: The domain name assigned to your Edge installation (for example, 'edge.mycompany.com').<br />&nbsp;&nbsp;- Company Name: The name under which the license was purchased.<br /> | `c8yedge config --set-file licenseKey=<path/to/license.txt>` |  |  |
 | `company` _string_ | The name of your local Edge tenant (for example, your company’s name).<br />This value is used only during the initial Edge installation and cannot be changed for existing installations.<br />Once Edge is installed, company name must be changed via the user interface or the API.<br /> | `c8yedge config --set company=value` |  |  |
 | `domain` _string_ | The Fully Qualified Domain Name (FQDN) where Edge will be hosted (for example, 'edge.mycompany.com').<br />The domain name provided here must match the scope of your Edge license, either the exact subdomain domain, or the parent domain.<br /> | `c8yedge config --set domain=value` |  |  |
@@ -95,40 +95,6 @@ _Appears in:_
 
 
 
-
-#### EdgeStatusType
-
-_Underlying type:_ _string_
-
-
-
-
-
-_Appears in:_
-- [CumulocityIoTEdgeStatus](#cumulocityiotedgestatus)
-
-| Field | Description |
-| --- | --- |
-| `Installing` |  |
-| `Updating` |  |
-| `Deleting` |  |
-| `Ready` |  |
-| `Deleted` |  |
-| `InstallLoopBackOff` |  |
-| `UpdateLoopBackOff` |  |
-| `DeleteLoopBackOff` |  |
-
-
-#### HelpCommandsKeyType
-
-_Underlying type:_ _string_
-
-
-
-
-
-_Appears in:_
-- [CumulocityIoTEdgeStatus](#cumulocityiotedgestatus)
 
 
 
