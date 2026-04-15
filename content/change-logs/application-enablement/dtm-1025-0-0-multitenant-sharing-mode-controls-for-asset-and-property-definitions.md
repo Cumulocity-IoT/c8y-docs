@@ -1,18 +1,21 @@
 ---
-date: ""
-title: "Multitenant sharing mode controls for asset and property definitions"
-product_area: "Application enablement & solutions"
+date: '2026-04-09'
+title: Multitenant sharing mode controls for asset and property definitions
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-QHu1GdukP"
-      label: "Feature"
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-2810"
-version: "1025.0.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-2810
+version: 1025.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-04-09'
 ---
 In subtenants in {{< enterprise-tenant >}} setups, the Digital Twin Manager previously
 lacked controls to reflect the active multitenant sharing configuration.

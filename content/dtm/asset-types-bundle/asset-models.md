@@ -13,7 +13,7 @@ helpcontent:
 
 The asset definition is a blueprint or template to create one or multiple [assets](/dtm/asset-hierarchy/#assets). It defines how the asset will look like after it is created. An asset definition consists of one or more [property definitions](/dtm/asset-types/#asset-properties) and/or subasset definitions.
 
-To get a quick start to use the DTM application, import pre-defined asset definitions from **Asset definition samples** page. These asset definitions and associated property definitions are defined based on best practices. For details about how to import asset definitions from samples, see [To import asset definition samples](#to-import-asset-definition-samples).
+To quickly get started using the DTM application, import pre-defined asset definitions from the **Asset definition samples** page. These asset definitions and associated property definitions are defined based on best practices. For details on importing asset definitions from samples, see [To import asset definition samples](#to-import-asset-definition-samples).
 
 To reach the **Asset definitions** page, navigate to **Libraries > Asset definitions**.
 
@@ -34,7 +34,7 @@ Click **Configure columns** to configure the displayed columns.
 Click **Reload** to reload the screen.
 The total number of asset definitions is displayed on the bottom left of the page.
 
-Use the **Export asset definitions** and **Import asset defintions** feature to transfer asset definitions between tenants. This is useful for replicating the asset definitions in multiple tenants. By exporting and importing asset definitions, you can ensure consistency and reduce the time and effort required for manual configuration. See [To export asset definitions](#to-export-asset-definitions) and [To import asset definitions](#to-import-asset-definitions) on how to export or import asset defintions.
+Use the **Export asset definitions** and **Import asset definitions** feature to transfer asset definitions between tenants. This is useful for replicating the asset definitions in multiple tenants. By exporting and importing asset definitions, you can ensure consistency and reduce the time and effort required for manual configuration. See [To export asset definitions](#to-export-asset-definitions) and [To import asset definitions](#to-import-asset-definitions) on how to export or import asset definitions.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS
@@ -42,15 +42,15 @@ ROLES & PERMISSIONS
 - To add/update/delete/import asset definitions: CREATE/ADMIN permission for permission type "Inventory"
 {{< /c8y-admon-req >}}
 
-#### Using generic asset definitions for flexibility {#using-generic-asset-definitions-for-flexibility}
-Traditional asset definitions require a strict, sequential process where you must fully define definitions, data schemas, and hierarchical relationships before creating asset instances. You can make this more flexible by selecting the **Allow any asset** option when creating an asset definition. This creates a generic asset definition, which allows you to build your asset hierarchy without enforcing a predefined structure. Generic asset definitions are useful when:
+### Using generic asset definitions for flexibility {#using-generic-asset-definitions-for-flexibility}
+Traditional asset definitions require a strict, sequential process where you must fully define definitions, data schemas, and hierarchical relationships before creating asset instances. You can make this more flexible by selecting the **Allow any asset** option when creating an asset definition. This creates a generic asset definition, which allows you to build your asset hierarchy without enforcing a predefined structure. Generic asset definitions are useful for:
 - **Rapid prototyping**: Create asset representations quickly without predefining formal structures.
 - **System integration**: Integrate data from external systems (such as MES or ERP) where the full schema is not yet known.
 - **Evolving requirements**: Start with a flexible "container" and add structure as the project matures.
 
 ### To create an asset definition {#to-create-an-asset-definition}
 
-Click **Add asset definition** on the top right to create a new asset definition. This opens the **New Asset definition** page.
+Click **Add asset definition** on the top right to create a new asset definition. This opens the **New asset definition** page.
 Here, provide the following parameters:
 
 <table>
@@ -97,7 +97,7 @@ By default, no subassets are allowed if this field is not set.</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Allow any asset</b></td>
-<td style="text-align:left">When selected, allows any asset to be added as a subasset, along with the ones set in the Subassets section.</td>
+<td style="text-align:left">When selected, allows any asset to be added as a subasset, along with the ones set in the **Subassets** section.</td>
 <td style="text-align:left">Optional</td>
 </tr>
 <tr>
@@ -108,7 +108,7 @@ By default, no asset definitions are selected.</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Allow any property</b></td>
-<td style="text-align:left">When selected, allows any property to be added to an asset, along with the ones set in the Properties section.</td>
+<td style="text-align:left">When selected, allows any property to be added to an asset, along with the ones set in the **Properties** section.</td>
 <td style="text-align:left">Optional</td>
 </tr>
 </tbody>
@@ -153,7 +153,7 @@ If the asset definition is "Rotor" and you select "Blade" as an allowed subasset
    If the asset definition requires this property definition, select the checkbox. By default, it remains clear.
 4. Reorder the property definitions via drag and drop.
 5. To remove the property definition from the asset definition, click the remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i> next to the checkbox.
-6. Select **Allow any property** to allow any property to be added to an asset, in addition to the property definitions set in the Properties section.
+6. Select **Allow any property** to allow any property to be added to an asset, in addition to the property definitions set in the **Properties** section.
 7. Click **Save** to save your settings.
 
 {{< c8y-admon-info>}}
@@ -161,7 +161,7 @@ To assign a location to an asset, add the default property definition Location t
 If there are any validation errors for a field, it is highlighted in red with a validation error message asking you to fill in the required information. Enter the necessary information and click **Save**.
 {{< /c8y-admon-info>}}
 
-If there is no property definition meeting your requirements when you search, click **New property definition**. For more details on how to create a new Property definition see [To create a property definition](#to-create-a-property-definition).
+If there is no property definition meeting your requirements when you search, click **New property definition**. For more details on how to create a new property definition, see [To create a property definition](#to-create-a-property-definition).
 
 
 ### Root asset definition {#root-asset-definition}
@@ -183,7 +183,7 @@ This approach allows you to create the desired hierarchy, including all asset an
 
 ### To modify an asset definition {#to-modify-an-asset-definition}
 
-1. Click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> on the right side of each asset definition.
+1. Click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> at the right of each asset definition.
 2. Make your changes in the editor.
 3. Click **Save**.
 4. If this asset definition is used by any asset, select **Confirm** in the resulting confirmation dialog to continue saving your changes.
@@ -276,7 +276,7 @@ Review the errors that are reported, resolve them and attempt the action again.
 
 
 ### Default asset definitions {#default-asset-definitions}
-#### Group asset definition
+#### Group asset definition {#group-asset-definition}
 Groups are used in {{< product-c8y-iot >}} to organize devices or other groups. The default group asset definition allows any group to be treated as an asset, providing a unified, flexible, and consistent approach to managing assets. Unlike other asset definitions in the Digital Twin Manager application, the group asset definition does not enforce hierarchical relationships.
 
 ##### Characteristics of the group asset definition {#default-group-definition-characteristics}
@@ -288,7 +288,7 @@ Groups are used in {{< product-c8y-iot >}} to organize devices or other groups. 
 
 #### Generic asset definition {#default-generic-asset-definition}
 
-The default generic asset definition allows you to create asset hierarchies without first configuring strict definition hierarchy. This is helpful when your requirements are still evolving and you want to prototype your asset structure. 
+The default generic asset definition allows you to create asset hierarchies without first configuring a strict definition hierarchy. This is helpful when your requirements are still evolving, and you want to prototype your asset structure. 
 
 ##### Characteristics of the default generic asset definition {#default-generic-definition-characteristics}
 

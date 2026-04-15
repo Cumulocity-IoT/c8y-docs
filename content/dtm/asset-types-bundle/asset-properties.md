@@ -25,15 +25,15 @@ When you open the DTM application, default property definitions are readily avai
 
 In the overview you see the following categories:
 
-* **Name**: Name of the property definition
-* **Key**: Unique identifier for the property definition
-* **Description**: Brief description of the property definition
-* **Data type**: The data type of the property definition, for example, String, Number, or Complex
-* **Default**: Default value for the property definition
-* **Min-Max**: Minimum and maximum values allowed for the property definition
-* **Applicable to**: The asset types, alarms, measurements, operations, or events contexts to which the property definition applies
-* **Last updated**: Date and time of the last update
-* **Actions**: Available actions for the property definition
+* **Name**: Name of the property definition.
+* **Key**: Unique identifier for the property definition.
+* **Description**: Brief description of the property definition.
+* **Data type**: The data type of the property definition, for example, String, Number, or Complex.
+* **Default**: Default value for the property definition.
+* **Min-Max**: Minimum and maximum values allowed for the property definition.
+* **Applicable to**: The asset types, alarms, measurements, operations, or events contexts to which the property definition applies.
+* **Last updated**: Date and time of the last update.
+* **Actions**: Available actions for the property definition.
 
 Click **Configure columns** to configure the displayed columns.
 
@@ -54,7 +54,7 @@ When you navigate to the **Property definitions** page for the first time, there
 
 To create a property definition, click **Add property definition** on the top menu bar. Enter the required data in the form (see description below) and click **Save**.
 
-![Create a new property definiton](/images/dtm/custom-property/dtm-property-library-create-property.png)
+![Create a new property definition](/images/dtm/custom-property/dtm-property-library-create-property.png)
 
 Asset properties have the following parameters:
 
@@ -128,17 +128,11 @@ Select **Text** if the value is a string, for example, a wind turbine manufactur
 
  If you select **Advanced validation rules** for text, the following fields appear:
 
-* **Min Length**:
+* **Min Length** - If selected, enter the minimum length of the text that must be provided for this asset property during the asset creation. Any text below the minimum length is not accepted.
 
-If selected, enter the minimum length of the text that must be provided for this asset property during the asset creation. Any text below the minimum length is not accepted.
+* **Max Length** - If selected, enter the maximum length of the text that must be provided for this asset property during the asset creation. Any text above the maximum length is not accepted.
 
-* **Max Length**:
-
-If selected , enter the maximum length of the text that must be provided for this asset property during the asset creation. Any text above the maximum length is not accepted.
-
-* **RegExp**:
-
-If selected, enter a valid regular expression. During the asset creation, you must provide the asset property value, which adheres to the regular expression.
+* **RegExp** - If selected, enter a valid regular expression. During the asset creation, you must provide the asset property value, which adheres to the regular expression.
 
 **Example:**
 
@@ -152,13 +146,9 @@ For this type, you must provide a numeric value during the asset creation, for e
 
 The type **Number** contains the following fields for additional validation rules:
 
-* **Minimum**:
+* **Minimum** - If selected, enter a number in the field **Minimum** on the right. When you create the asset, the asset property value cannot be lower or less than provided in the field.
 
-If selected, enter a number in the field **Minimum** on the right. When you create the asset, the asset property value cannot be lower or less than provided in the field.
-
-* **Maximum**:
-
-If selected, enter a number in the field on the right. When you create the asset, the asset property value cannot exceed the **Maximum** provided.
+* **Maximum** - If selected, enter a number in the field on the right. When you create the asset, the asset property value cannot exceed the **Maximum** provided.
 
 **Example:**
 
@@ -220,9 +210,9 @@ To prevent security threats, sanitize your files beforehand.
 To upload the schematic diagram for a wind turbine, you name the property definition "Wind turbine schematic" and specify the file type of the schematic file. Then upload the respective file. Once the asset is created, you can view this file for future reference.
 
 #### Complex {#complex}
-A complex property definition consists of multiple key-value pairs, meaning, it contains a root object followed by one or more key-value pairs. You must define each key-value pair as well as providing a type for each pair. You can arrange the properties in the required order by dragging and dropping them. Hover over the row to see the drag icon. Click and drag the drag icon for reordering. On the right side of each key-value pair, you see an expand icon <i class="dlt-c8y-icon-expand-arrow text-muted icon-20"></i>. Click the expand icon <i class="dlt-c8y-icon-expand-arrow text-muted icon-20"></i> to see a specific property. Note that when you add a new key-value pair, it automatically expands. To hide it, click the collapse icon <i class="dlt-c8y-icon-collapse-arrow text-muted icon-20"></i>.
+A complex property definition consists of multiple key-value pairs, which means it contains a root object followed by one or more key-value pairs. You must define each key-value pair and provide a type for each pair. You can arrange the properties in the required order by dragging and dropping them. Hover over the row to see the drag icon. Click and drag the drag icon for reordering. On the right side of each key-value pair, you see an expand icon <i class="dlt-c8y-icon-expand-arrow text-muted icon-20"></i>. Click the expand icon <i class="dlt-c8y-icon-expand-arrow text-muted icon-20"></i> to see a specific property. Note that when you add a new key-value pair, it automatically expands. To hide it, click the collapse icon <i class="dlt-c8y-icon-collapse-arrow text-muted icon-20"></i>.
 
-You see the preview of data model on the right side of properties section.
+You see the preview of the data model on the right of the **Properties** section.
 
  **Example:**
 
@@ -232,7 +222,7 @@ If the asset property is called "Gearbox specifications" with the key "gearbox_s
 
 ### To edit a property definition {#to-edit-a-property-definition}
 
-1. Click the name of the property definition to view or edit the details. Alternatively, click **Edit** option in the action menu to the right.
+1. Click the name of the property definition to view or edit the details. Alternatively, click **Edit** in the action menu to the right.
 2. Edit any content of the definition.
 3. Click **Save** to save your changes.
 
@@ -258,7 +248,7 @@ Follow the steps below:
 
 1. On the **Property definitions** page, click **Export**. In the resulting dialog box, you see the list of property definitions along with their description and type.
 2. Select one or more desired definitions and click **Export**.
-3. The dialog closes and a JSON file named 'Export-properties.json' downloads.
+3. The dialog closes and a JSON file named *Export-properties.json* downloads.
 
 Use the downloaded file to import the property definitions into a DTM application on another tenant.
 
@@ -293,7 +283,7 @@ You can import property definitions from any context, regardless of which tab yo
 
 ### Default property definitions {#default-property-definitions}
 
-### Characteristics {#characteristics-of-default-property-definitions}
+#### Characteristics {#characteristics-of-default-property-definitions}
 
 * Default property definitions are readily available when you open the application.
 * Default property definitions cannot be deleted.
