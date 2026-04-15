@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Widget layout displays correctly after saving dashboard changes. [CTM-2849] (#2846)"
+title: "Widget layout displays correctly after saving dashboard changes"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
