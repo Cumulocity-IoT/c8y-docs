@@ -25,24 +25,24 @@ You can now analyze your data from any Apache Iceberg compliant tool. For exampl
 
 #### Using DataHub Query to analyze lake data
 
-If your tenant includes a subscription to DataHub Query (Dremio), a data source with your tenant ID is automatically set up for querying the lake.
+If your tenant includes a subscription to DataHub Query (Dremio), the system automatically sets up a data source with your tenant ID for querying the lake.
 
-* Click on the data source to view the Iceberg folders ("namespaces") that contain the tables of your data lake.
-* Click a table to open the query editor and run SQL queries on the table. You will see an example of a query as shown in the screenshot below.
+* Click the data source in the user interface to view the Iceberg folders ("namespaces") that contain the tables of your data lake.
+* Click a table to open the query editor and run SQL queries on the table. You see an example of a query as shown in the screenshot below.
 * To refer to a table, use the pattern `tenant.namespace.table`. For example, if your tenant is "mytenant", the inventory would be referred to as `mytenant.cdc_inventory.inventory`.
-* To simplify your SQL statement, click on the "Context:" link just above the query editor. You can select a data source and namespace that will be used as context for queries in the editor. For example, if you use "mytenant" as context, you can refer to the inventory using only `cdc_inventory.inventory`. If you use "mytenant.cdc_inventory" as context, you can refer to the inventory using only `inventory`.
+* To simplify your SQL statement, click the "Context:" link just above the query editor. You can select a data source and namespace that will be used as context for queries in the editor. For example, if you use "mytenant" as context, you can refer to the inventory using only `cdc_inventory.inventory`. If you use "mytenant.cdc_inventory" as context, you can refer to the inventory using only `inventory`.
 
 ![Example of querying the lake](/images/datahub-guide/querying.png)
 
 #### Using DataHub Query APIs and drivers to analyze lake data programmatically
 
-If your tenant includes a subscription to DataHub Query, you can use the [DataHub APIs](https://cumulocity.com/api/datahub) as well as the [JDBC](/datahub/working-with-datahub/#connecting-via-jdbc) and [ODBC](/datahub/working-with-datahub/#connecting-via-odbc) drivers.
+If your tenant includes a subscription to DataHub Query, use the [DataHub APIs](https://cumulocity.com/api/datahub) as well as the [JDBC](/datahub/working-with-datahub/#connecting-via-jdbc) and [ODBC](/datahub/working-with-datahub/#connecting-via-odbc) drivers.
 
 For example, use the REST API to submit a query job to DataHub Query.
 
 ```shell
 $ curl -H "Content-Type: application/json" -u "<USER>:<PASS>" \
-  https://<TENATN_DOMAIN>/service/datahub/dremio/api/v3/sql -d @- <<EOF \
+  https://<TENANT_DOMAIN>/service/datahub/dremio/api/v3/sql -d @- <<EOF \
 {
   "sql": "SELECT * FROM inventory",
   "context": [ "<TENANT>", "cdc_inventory" ]
@@ -81,7 +81,7 @@ $ curl -u "admin:$PASS" \
 
 [Apache Spark](https://spark.apache.org/) is a distributed computing framework that seamlessly integrates with the Cumulocity Iceberg catalogs to provide full SQL-based data processing through a standard [Iceberg REST catalog interface](https://iceberg.apache.org/rest-catalog-spec/).
 
-To authenticate against the Cumulocity Iceberg REST catalog, [OpenID Connect](https://openid.net/developers/how-connect-works/) with a client credentials grant type is used.
+Use [OpenID Connect](https://openid.net/developers/how-connect-works/) with a client credentials grant type to authenticate against the Cumulocity Iceberg REST catalog.
 
 {{< c8y-admon-info >}}
 For the preview release, obtain your personal client ID and client credentials by contacting the preview support.
@@ -95,7 +95,7 @@ For example, if your tenant is `mytenant.cumulocity.com`, the URL is
 
 `https://iceberg.cumulocity.com:19120/api/catalog/v1/oauth/tokens`.
 
-See below for an example on how to run Spark SQL queries with the Cumulocity Iceberg catalog on an AWS S3 object store. In the example, replace
+Run Spark SQL queries with the Cumulocity Iceberg catalog on an AWS S3 object store using the example below. In the example, replace
 
 * The version number of the Iceberg Spark Runtime to match the Spark version that you use (here Spark 4.0.x).
 * The `<CLIENTID>` and `<CLIENT_SECRET>` with the credentials obtained from support.
@@ -133,7 +133,7 @@ spark-sql (default)> select * from c8y.cdc_inventory.inventory;
 
 #### Using the Iceberg catalog from other applications
 
-Similarly, you can access the catalog from other applications. Below is an example on how to use a `curl` command line to access the catalog. First, get an access token to the catalog.
+Access the catalog from other applications using the `curl` example below. First, get an access token to the catalog.
 
 ```shell
 $  curl -X POST https://iceberg.<INSTANCE>:19120/api/catalog/v1/oauth/tokens \
