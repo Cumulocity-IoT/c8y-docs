@@ -1,18 +1,21 @@
 ---
-date: ""
-title: "Breadcrumbs in Data point library plugin now display correct navigation path"
-product_area: "Application enablement & solutions"
+date: '2026-04-14'
+title: Breadcrumbs in Data point library plugin now display correct navigation path
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-VSkj2iV9m"
-      label: "Fix"
+  - value: change-VSkj2iV9m
+    label: Fix
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-2844"
-version: "1025.0.1"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-2844
+version: 1025.0.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-04-14'
 ---
 The breadcrumbs in the Data point library plugin previously displayed a
 fixed path of "Configuration > Data point library" regardless of your
