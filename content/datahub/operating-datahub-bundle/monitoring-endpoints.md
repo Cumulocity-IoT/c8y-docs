@@ -35,8 +35,8 @@ The endpoint examines the latest job executions of qualified jobs and classifies
 * If the job has failed, it is reported as CRITICAL.
 * If the job is still running, it is categorized as follows:
     * If it is running for up to one hour, its health is classified as STEADY.
-    * If it is running for up to six hours, its health is classified as WARNING.
-    * If it is running for more than six hours, its health is classified as CRITICAL.
+    * If it is running for more than one hour, but less than twelve hours, its health is classified as WARNING.
+    * If it is running for more than twelve hours, its health is classified as CRITICAL.
 * If the job has succeeded, it is checked whether it was the last job that should have been run for this configuration. If there should have been a new run of this job and the system is already 10 minutes behind the scheduled execution time, the job is classified as CRITICAL. Otherwise, the job is classified as STEADY.
 
 If all jobs are classified as STEADY, the endpoint returns the HTTP status code 200 with the following message:
