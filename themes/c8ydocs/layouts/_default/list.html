@@ -56,7 +56,11 @@ the PDFs in this section"
         {{end}}
       ' >
         <div class="product-card__header">
-          <i class="c8y-icon-duocolor {{.Params.icon}}"></i>
+          {{if hasSuffix .Params.icon ".svg"}}
+            <img src="{{.Params.icon}}" class="icon-20" alt="" aria-hidden="true">
+          {{else}}
+            <i class="c8y-icon-duocolor {{.Params.icon}}"></i>
+          {{end}}
           <h2>{{.Title}}
             {{if (isset .Params "external") }}
               <i class="dlt-c8y-icon-external-link" style="font-size: 14px;" title="External website"></i>
