@@ -229,7 +229,7 @@ The "HTML" widget displays user-defined content that can be formatted using HTML
 **Parameters to configure**
 
 * **Asset selection**: Optionally, select the asset whose managed object will be accessible via `c8yContext` expressions.
-* **Asset properties**: In the **Asset properties** section, you can add mappings to properties. Click **Add mappings**. Then select an asset and select properties from **Asset properties**, **Custom properties**, and **Computed properties** tabs. Use the icon buttons to copy a code expression, clear a mapping, assign another property, or remove a mapping. At runtime, all mapped values are accessible in the HTML code under `c8yProperties`, a plain object keyed by the mapping names. If you rename a mapping key, the references in the HTML code will be updated.
+* **Asset properties**: In the **Asset properties** section, you can add mappings to properties. Click **Add mappings**. Then select an asset and select properties from the **Asset properties**, **Custom properties**, and **Computed properties** tabs. Use the icon buttons to copy a code expression, clear a mapping, assign another property, or remove a mapping. At runtime, all mapped values are accessible in the HTML code under `c8yProperties`, a plain object keyed by the mapping names. If you rename a mapping key, the references in the HTML code will be updated.
 
 The widget offers two distinct modes:
 
