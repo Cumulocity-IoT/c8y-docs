@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issue with validation errors when exporting dashboards. (#11634) [GRAFT][release/y2026] (#11771)
+title: Fixed validation errors when exporting dashboards
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
