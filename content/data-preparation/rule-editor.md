@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Data Preparation Application (UI)
+title: Rule Editor
 layout: bundle
 outputs:
   - html
@@ -9,4 +9,4 @@ sector:
   - device_management
 ---
 
-Data preparation application (UI).
+Rule editor.

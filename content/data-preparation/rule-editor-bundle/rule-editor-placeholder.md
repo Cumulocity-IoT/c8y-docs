@@ -1,6 +1,6 @@
 ---
 weight: 5
-title: UI Subsection (placeholder)
+title: Rule Editor Subsection (placeholder)
 layout: bundle
 outputs:
   - html
@@ -9,7 +9,7 @@ sector:
   - device_management
 ---
 
-UI subsection.
+Rule editor subsection.
 
 ### Placeholder Heading {#placeholder-heading}
 
