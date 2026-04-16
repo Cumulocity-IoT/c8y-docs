@@ -862,7 +862,7 @@ WHERE source = '47635' AND
 ORDER BY "time" DESC
 ```
 
-You can build on the previous query by adding a condition to filter for values that cross a certain threshold limit.
+Note that Dremio SQL requires you to add a table name or table reference when accessing structured properties. In the example, it is not enough to only refer to `voltage."value"`, `b.voltage."value"` has to be used. You can build on the previous query by adding a condition to filter for values that cross a certain threshold limit.
 
 ```sql
 SELECT "time", b.voltage."value" AS voltage, b.temperature."value" AS temperature
