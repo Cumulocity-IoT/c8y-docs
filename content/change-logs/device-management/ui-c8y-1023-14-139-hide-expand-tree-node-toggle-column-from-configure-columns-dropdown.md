@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Remove "Detail toggle" and "Tree node toggle" from **Configure columns** dropdown
+title: Removed internal options from column configuration dropdown
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5934
 version: 1023.14.139
 ---
-Previously, two technical settings - Detail toggle and Tree node toggle - were visible within the column configuration menu. These options were intended for internal system logic rather than end-user customization. These options have been removed from the display to prevent confusion and accidental layout changes.
+In the device parameter list, two technical settings - "Detail toggle" and "Tree node toggle" - were visible within the column configuration dropdown, which were intended for internal system logic rather than end-user customization. These options have been removed from the display to prevent confusion and accidental layout changes.
