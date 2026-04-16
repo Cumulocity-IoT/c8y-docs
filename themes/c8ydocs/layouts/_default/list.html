@@ -57,7 +57,7 @@ the PDFs in this section"
       ' >
         <div class="product-card__header">
           {{if hasSuffix .Params.icon ".svg"}}
-            <img src="{{.Params.icon}}" class="icon-20" alt="{{.Title}} icon">
+            <img src="{{.Params.icon}}" class="icon-20" alt="" aria-hidden="true">
           {{else}}
             <i class="c8y-icon-duocolor {{.Params.icon}}"></i>
           {{end}}

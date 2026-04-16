@@ -44,7 +44,14 @@
                 {{$rootclass.Set "active" "" }}
                 {{ if eq .Params.bundlefolder $current.Section }}
                   {{$rootclass.Set "active" "active" }}
-                  <span class="current-app">{{if hasSuffix .Params.icon ".svg"}}<img src="{{.Params.icon}}" alt="{{.Title}} icon" style="height:1.3em;width:1.3em;margin:0em;display:inline;filter:saturate(0);">{{else}}<i class="{{.Params.icon}}"></i>{{end}} {{.Title}}</span>
+                  <span class="current-app">
+                    {{if hasSuffix .Params.icon ".svg"}}
+                      <img src="{{.Params.icon}}" alt="" aria-hidden="true" style="height:1.3em;width:1.3em;margin:0em;display:inline;filter:grayscale(100%)">
+                    {{else}}
+                      <i class="{{.Params.icon}}"></i>
+                    {{end}}
+                    {{.Title}}
+                  </span>
                   {{ $currentBundle.Set "bundle" (printf "/%s-%s" .Params.bundlefolder "bundle") }}
                 {{ else}}
                   {{ if and (eq .Params.layout "single") (eq .Title $current.Title) }}
@@ -63,7 +70,14 @@
                     {{else}}
                       {{$url}}
                     {{end}}'
-                  title="{{.Title}}">{{if hasSuffix .Params.icon ".svg"}}<img src="{{.Params.icon}}" alt="{{.Title}} icon" style="height:1.2em;width:1.2em;margin:0em;margin-right:0.5em;display:inline;filter:grayscale(100%);">{{else}}<i class="{{.Params.icon}}"></i>{{end}}{{.Title}}</a>
+                  title="{{.Title}}">
+                  {{if hasSuffix .Params.icon ".svg"}}
+                    <img src="{{.Params.icon}}" alt="" aria-hidden="true" style="height:1.2em;width:1.2em;margin:0em;margin-right:0.5em;display:inline;filter:grayscale(100%);">
+                  {{else}}
+                    <i class="{{.Params.icon}}"></i>
+                  {{end}}
+                  {{.Title}}
+                </a>
               {{ end }}
           </div>
         </div>
