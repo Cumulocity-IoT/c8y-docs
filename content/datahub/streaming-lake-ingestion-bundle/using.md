@@ -793,15 +793,101 @@ The following data is moved to the `trash` table.
 }
 ```
 
+### Example queries {#example-queries}
 
-<!-- ### Example queries
+The following example queries demonstrate how to extract common metrics and insights from the data lake using the Dremio SQL dialect. To keep the queries concise, they assume that you set the query context to your tenant as described in [Analyzing lake data](#analyzing-lake-data-using-sql). This allows you to omit the tenant prefix in the `FROM` clauses.
 
-TBD:
-* Base query for measurements on a device.
-* Determine the status of certain devices.
-* Join with inventory.
-* ...?
-* Should give examples of interesting and tested query profiles -->
+#### Basic inventory queries
+
+To list all devices registered in your tenant, use the `latest_inventory` tables to get the most recent state and filter for the marker fragment `c8y_IsDevice` in the `fragments` array.
+
+```sql
+SELECT id, name
+FROM latest_inventory.inventory
+WHERE ARRAY_CONTAINS(fragments, 'c8y_IsDevice')
+```
+
+To find the current location of all devices within a specific geographic boundary, query the `c8y_Position` fragment in the `latest_inventory` folder.
+
+```sql
+SELECT id, lat, lng
+FROM latest_inventory.c8y_Position
+WHERE lat BETWEEN 50.0 AND 52.0
+  AND lng BETWEEN 6.0 AND 8.0
+```
+
+#### Basic time series queries
+
+To retrieve all events recorded for a specific device within a given timespan, query the `cdc_event.event` table. Note that `time` is a reserved word in Dremio SQL, so it needs to be quoted.
+
+```sql
+SELECT "time", type, text
+FROM cdc_event.event
+WHERE source = '52277201'
+  AND "time" BETWEEN '2026-04-16 00:00:00' AND '2026-04-16 23:59:59'
+ORDER BY "time" DESC
+```
+
+#### Parent and child queries
+
+To find a parent device or asset linked to a specific device, you can search for the child's ID within the `childDevices` array.
+
+```sql
+SELECT id, name
+FROM latest_inventory.inventory
+WHERE ARRAY_CONTAINS(childDevices, '102938')
+```
+
+Conversely, to retrieve all child devices belonging to a specific asset, use Dremio's `FLATTEN` function to unroll the asset's `childDevices` array and select the matching devices.
+
+```sql
+SELECT id, name
+FROM latest_inventory.inventory
+WHERE id IN (
+  SELECT FLATTEN(childDevices)
+  FROM latest_inventory.inventory
+  WHERE id = '102938'
+)
+```
+
+#### Measurement queries
+
+To view a specific measurement series for a device over time, query the corresponding measurement fragment table. The following example fetches voltage measurements.
+
+```sql
+SELECT "time", b.voltage."value" AS voltage, b.temperature."value" AS temperature
+FROM cdc_measurement.c8y_Battery b
+WHERE source = '47635' AND
+ "time" BETWEEN '2026-04-02 00:00:00' AND '2026-04-02 23:59:59'
+ORDER BY "time" DESC
+```
+
+You can build on the previous query by adding a condition to filter for values that cross a certain threshold limit.
+
+```sql
+SELECT "time", b.voltage."value" AS voltage, b.temperature."value" AS temperature
+FROM cdc_measurement.c8y_Battery b
+WHERE source = '47635' AND
+ "time" BETWEEN '2026-04-02 00:00:00' AND '2026-04-02 23:59:59' AND
+ b.voltage."value" < 11.5
+ORDER BY "time" DESC
+```
+
+{{< c8y-admon-info >}}
+Complex analytics with conditions other than timestamps and devices as well as large joins of multiple tables can be slow. For reporting use cases that require high performance on complex models, process the data into a dedicated "gold layer", where you store the pre-aggregated and materialized results.
+{{< /c8y-admon-info >}}
+
+To create reports that are easier to read, you can join the historical measurement data together with the latest inventory data. This allows you to display the current device name alongside the recorded measurement values.
+
+```sql
+SELECT b."time", i.name, b.voltage."value" AS voltage
+FROM cdc_measurement.c8y_Battery b JOIN latest_inventory.inventory i ON b.source = i.id
+WHERE source = '47635' AND
+ "time" BETWEEN '2026-04-02 00:00:00' AND '2026-04-02 23:59:59' AND
+ b.voltage."value" < 11.5
+ORDER BY "time" DESC
+```
+
 
 ### Ensuring good query performance
 
