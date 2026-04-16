@@ -14,6 +14,14 @@ This agreement is made between {{< company-c8y >}} ("Provider") and the Customer
 
 The agreement applies solely to the base platform excluding optional features or features not in general availability. Optional features outside the base platform may require a separate service-level agreement. For custom applications developed using the Microservice Hosting functionality, refer to the [Microservices hosting service-level agreement](/service-terms/service-level/#microservices-sla).
 
+##### Scope of software covered
+
+This agreement applies to the {{< product-c8y-iot >}} platform operated as Software-as-a-Service (SaaS), including its APIs and standard web applications ("Cumulocity Product"). It does not apply to:
+
+* device-side software or firmware developed by Customer or third parties;
+* open-source software projects such as thin-edge.io; and
+* software development kits (SDKs), code samples, and reference implementations, except as explicitly stated in the Support service-level agreement for Premium support.
+
 ### Service features
 
 The {{< product-c8y-iot >}} platform offers a comprehensive set of features designed to support the needs of enterprise IoT deployments, ensuring robust performance, security, and flexibility. Key service features include:
@@ -53,7 +61,7 @@ As a Customer of the {{< product-c8y-iot >}} platform, we request your acknowled
 * **Device security:** While the {{< product-c8y-iot >}} platform provides robust security measures, Customer is responsible for the security of devices and device credentials. {{< company-c8y >}} cannot be held liable for any leaked credentials from devices. Customer acknowledges that communication protocols and ciphers may require periodic updates to address evolving security threats. This may necessitate updates to the devices themselves.
 * **End user access security:** To protect the integrity of the cloud platform, Customer is encouraged to educate users on secure usage practices, such as implementing multi-factor authentication. Customer is responsible for managing user credentials, and {{< company-c8y >}} cannot be held responsible for any compromised credentials.
 * **Certificate management:** Customer is responsible for monitoring the expiration of their certificates. Expired certificates can result in service unavailability for the associated clients, and Customer expressly acknowledges this responsibility.
-* **Library updates:** Customers utilizing {{< company-c8y >}}-provided libraries to build their own applications are responsible for ensuring these libraries are kept up to date with respect to security. In the event of a security vulnerability or other critical update, it is Customer's responsibility to implement the necessary updates in their applications to maintain the integrity and security of their systems. {{< company-c8y >}} cannot be held liable for any security issues arising from outdated libraries in Customer applications.
+* **Library and SDK updates:** Customers utilizing {{< company-c8y >}}-provided libraries, SDKs, or client code samples to build their own applications are responsible for keeping these components up to date, including applying security updates in a timely manner. {{< company-c8y >}} cannot be held liable for any security issues arising from outdated SDKs, libraries, or code samples in Customer applications. For the avoidance of doubt, {{< company-c8y >}}-provided SDKs, libraries, and thin-edge.io are provided on a community-support basis. For Premium support, refer to the Support service-level agreement.
 
 ##### **Capacity management**
 
@@ -188,7 +196,13 @@ service availability requirements are set forth in this service credit commitmen
 #### **Support**
 
 * **Customer support:** Support is provided in accordance with Customer’s selected support plan, as detailed in the [support agreement](/service-terms/service-level/#support-sla).
-* **Non-production environments:** For non-production environments, Bronze support is generally provided, with support tickets handled at standard priority.
+* **Non-production environments:** For Premium support customers, Premium support response times and service commitments do not apply to non-production environments.
+* **SDKs, code samples, and device-side software:**
+    * {{< company-c8y >}}-provided SDKs, client libraries, code samples, and reference implementations are provided "as-is" under their respective license terms. They are intended as examples and integration aids and may require adaptation by Customer.
+    * Device-side software, including thin-edge.io agents, device firmware, operating systems, and connectivity stacks, is developed, deployed, and operated under Customer's sole responsibility.
+    * Support for these components is limited to community support channels.
+    * For Premium support, additional support obligations apply as defined in the Support service-level agreement.
+* **thin-edge.io:** thin-edge.io is an open-source edge framework provided under an open-source license, independently of the Cumulocity Product. It may be used by Customer to connect devices to {{< product-c8y-iot >}} and other platforms. For customers without Premium support, {{< company-c8y >}} does not provide any service-level commitment or support obligation for thin-edge.io beyond maintaining public documentation and community channels. For Premium support customers, {{< company-c8y >}} provides incident support for thin-edge.io when used with the Cumulocity Product on a recent supported version. All other usages remain outside the scope of this agreement.
 
 #### **Maintenance**
 

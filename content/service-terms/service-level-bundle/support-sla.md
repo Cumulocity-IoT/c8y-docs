@@ -35,7 +35,7 @@ The following terms apply across all support levels unless otherwise specified:
 * **Authorized Technical Contact (ATC)**: A uniquely identified individual authorized by the Customer to access the Provider’s Support Portal, submit support requests, and receive support-related communications, with appropriate professional and technical qualifications. Shared group accounts are not allowed.
 * **Support**: The Provider’s Support Organization responsible for delivering maintenance and support services to the Customer.
 * **Support Portal**: The Provider’s web-based support system that permits browsing and submitting support tickets.
-* **Support Region**: The region of a customer is the region where that customer is located or has opted to define that region as their region. For example the region for an EMEA customer is EMEA, however an EMEA customer may opt for another region, say APJ, to be their default region. For Gold support, the region can be chosen per ATC.
+* **Support Region**: The region of a customer is the region where that customer is located or has opted to define that region as their region. For example the region for an EMEA customer is EMEA, however an EMEA customer may opt for another region, say APJ, to be their default region. For Premium support, the region can be chosen per ATC.
 
 
 ### Incident classification
@@ -58,6 +58,7 @@ Support will classify support tickets into three levels of severity according to
 | **Prioritized queuing**              | No                         | Yes                      |
 | **Ticket escalation**                | Yes                        | Yes                      |
 | **Onboarding**                       | Email                      | Email and/or web meeting |
+| **SDKs, thin-edge.io and device-side software** | Community support only | Incident support for supported versions; see below |
 
 
 
@@ -79,11 +80,30 @@ The services are defined as follows:
 * **Crisis phone**: The support telephone number is available in the Support Portal. Telephone support is provided in English only.
 * **Response times**: Customer will receive an initial human response to a new support ticket within the defined initial response times. Follow-up communication times of updates to existing support tickets are targeted but not guaranteed.
 * **Resolution plan for Crisis:** Provider aims to provide a concrete resolution plan within the first 4 hours, detailing the intended solution, a workaround, or a documented action plan with timelines.
-* **Follow-the-sun:** For Gold customers, Provider actively hands over Crisis tickets between global regions (EMEA, APJ, AME) to ensure 24/7 progress.
+* **Follow-the-sun:** For Premium customers, Provider actively hands over Crisis tickets between global regions (EMEA, APJ, AME) to ensure 24/7 progress.
 * **Number of ATCs**: Restrictions to the number of ATCs apply per Customer, not per contract. Customer may contract for additional ATCs.
 * **Prioritized queuing**: Support tickets are prioritized ahead of other support incidents of the same severity level but lower support level.
 * **Ticket escalation:** If a support ticket requires extra attention due to a serious change in business impact (for example, an approaching deadline or increased severity), Customer can raise an escalation request via the Support Portal or email. Provider will review the new context and will ensure high visibility on its internal dashboards.
 * **Onboarding:** Provider welcomes new ATCs and provides information about the Support Portal access, support ticket handling process and Support team.
+* **SDKs, thin-edge.io and device-side software:** For Standard support, {{< company-c8y >}}-provided SDKs, libraries, and thin-edge.io are available on a community-support basis only. Support may, at its discretion, provide general guidance but does not assume incident ownership for these components. For Premium support, refer to the section below.
+
+#### Scope of Premium support for SDKs and device-side software
+
+For Customers with Premium support, the following additional services are included:
+
+* Assistance with incident analysis and troubleshooting where the issue can be reproduced using supported SDK versions or thin-edge.io versions together with Cumulocity Product in documented reference architectures.
+* Guidance on recommended configuration and upgrade paths for supported SDKs and the most recent thin-edge.io version.
+* Coordination of Error Corrections for confirmed defects in supported SDKs or thin-edge.io versions that materially affect the operation of Cumulocity Product.
+
+Premium support does not include:
+
+* Development services (for example, implementing features, refactoring Customer code, or writing custom device firmware).
+* Support for forks, custom builds, or third-party modifications of SDKs or thin-edge.io.
+* Support for device-side operating systems, drivers, or connectivity services not controlled by {{< company-c8y >}}.
+
+#### Professional Services for SDKs and device-side software
+
+Assistance with developing, debugging, or customizing SDKs, thin-edge.io, device firmware, or other device-side software is outside the scope of all support levels. Such services can be requested separately from {{< company-c8y >}} Professional Services.
 
 ### Processing customer requests
 
