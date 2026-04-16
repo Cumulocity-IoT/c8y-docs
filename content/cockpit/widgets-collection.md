@@ -229,12 +229,12 @@ The "HTML" widget displays user-defined content that can be formatted using HTML
 **Parameters to configure**
 
 * **Target assets or devices**: Select the objects for which optional HTML expressions are evaluated.
-* **Asset properties**: In the **Asset properties** section, you can copy the properties of the selected asset and paste them into the code editor under the **Settings** section.
+* **Asset properties**: In the **Asset properties** section, you can add mappings to asset properties. Click **Add mappings**, then select an asset, then select an asset/regular/computed property you'd like to use in the HTML code. Use icon buttons to copy a code expression, clear a mapping, assign another property, or remove a mapping. When you rename a mapping key, all references in the HTML code are updated automatically. At runtime, all mapped values are accessible in the HTML code under `this.c8yProperties`, a plain object keyed by the mapping names.
 
 The widget offers two distinct modes:
 
 1. **Normal mode**: You can apply HTML and CSS while adding properties as template literals. You can use simple expressions such as:
-   `${this.c8yContext ? this.c8yContext.name : 'No device selected'}`. The `${this.c8yContext}` variable always refers to the selected target asset.
+   `${this.c8yContext ? this.c8yContext?.name : 'No device selected'}`. The `${this.c8yContext}` variable always refers to the selected target asset. Use `${this.c8yProperties?.<mappingName>}` to access mapped asset properties.
 
 2. **Advanced mode**: When enabled, you can build complex web components using the Lit framework. You can import supported ECMAScript modules. By default, leaflet, echarts, fetch, and lit are provided. Whatever is rendered in the web component will be displayed to the end user. Additional requests can be performed by importing the fetch library. The following shows the available imports:
 
@@ -246,9 +246,28 @@ The widget offers two distinct modes:
    import { fetch } from 'fetch'; // Use this instead of default fetch to avoid potential issues
    ```
 
+**Inserting mapped properties into the code**
+
+When asset property mappings are configured, a dropdown button with plus icon appears in the code editor toolbar. Click a key to insert the appropriate template expression (for example, `${this.c8yProperties?.temperature}`) at the cursor position. Mapped keys also appear as autocomplete suggestions when typing `this.c8yProperties?.` or the name of a mapping.
+
+**Note**: in case the referenced property is a complex object (for example, a full measurement object), you need to explicitly access a specific field (for example, `${this.c8yProperties?.temperature?.value}` or `${this.c8yProperties?.temperature?.unit}`) or use `JSON.stringify(this.c8yProperties?.temperature)` to display whole object as a string.
+
+**Auto-refresh**
+
+The HTML widget is integrated with the dashboard's global time context for auto-refresh control. On a dashboard, a link/unlink button is displayed in the widget's title bar. When unlinked from the global time context, an auto-refresh toggle appears directly in the widget. Values in both `c8yContext` and `c8yProperties` are updated automatically when auto-refresh is enabled.
+
+**Translations**
+
+The HTML widget supports translations via `c8yTranslate`:
+
+- `${this.c8yTranslate('Text to translate')}`
+- `${this.c8yTranslate('text {{ var }}', { var: value })}`
+
+**Note**: texts must be written in English and their translations must be available in the standard application translations, or in the custom ones provided via the [localization feature](/standard-tenant/changing-settings/#localization), or in the [application options](/web/application-configuration/#languages-customization).
+
 **Styling and security considerations**
 
-When using styles, global styles can be applied if encapsulation is not enabled. Styles should always use CSS variables and tokens to ensure compatibility with dark mode and custom brandings. 
+When using styles, global styles can be applied if encapsulation is not enabled. Styles should always use CSS variables and tokens to ensure compatibility with dark mode and custom brandings.
 
 By default, the normal HTML widget is sanitized for security, while in advanced mode the developer is responsible for proper sanitization. You can modify the default sanitization behavior in the [Cockpit application configuration](/cockpit/cockpit-configuration/).
 
