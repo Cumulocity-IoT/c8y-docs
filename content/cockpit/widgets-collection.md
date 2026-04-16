@@ -228,14 +228,14 @@ The "HTML" widget displays user-defined content that can be formatted using HTML
 
 **Parameters to configure**
 
-* **Target assets or devices**: Select the objects for which optional HTML expressions are evaluated.
-* **Asset properties**: In the **Asset properties** section, you can add mappings to properties. Click **Add mappings**. Then select an asset and select properties from **Asset properties**, **Custom properties**, and **Computed properties** tabs. Use the icon buttons to copy a code expression, clear a mapping, assign another property, or remove a mapping. At runtime, all mapped values are accessible in the HTML code under `this.c8yProperties`, a plain object keyed by the mapping names. If you rename a mapping key, the references in the HTML code will be updated.
+* **Asset selection**: Optionally, select the asset whose managed object will be accessible via `c8yContext` expressions.
+* **Asset properties**: In the **Asset properties** section, you can add mappings to properties. Click **Add mappings**. Then select an asset and select properties from **Asset properties**, **Custom properties**, and **Computed properties** tabs. Use the icon buttons to copy a code expression, clear a mapping, assign another property, or remove a mapping. At runtime, all mapped values are accessible in the HTML code under `c8yProperties`, a plain object keyed by the mapping names. If you rename a mapping key, the references in the HTML code will be updated.
+
 The widget offers two distinct modes:
 
-1. **Normal mode**: You can apply HTML and CSS while adding properties as template literals. You can use simple expressions such as:
-   - `${this.c8yContext ? this.c8yContext?.name : 'No device selected'}` where `c8yContext` variable always refers to the widget's selected asset
+1. **Normal mode**: You can apply HTML and CSS while adding properties as template literals. You can use simple expressions such as (always use optional chaining `?.` because these objects may be `undefined` while data is loading):
+   - `${this.c8yContext ? this.c8yContext?.name : 'No device selected'}` (where `c8yContext` refers to the widget's selected asset)
    - `${this.c8yProperties?.<mappingName>}` to access values of the mapped asset properties
-   - always use optional chaining `?.` because these objects may be `undefined` while data is loading
 
 2. **Advanced mode**: When enabled, you can build complex web components using the Lit framework. You can import supported ECMAScript modules. By default, leaflet, echarts, fetch, and lit are provided. Whatever is rendered in the web component will be displayed to the end user. Additional requests can be performed by importing the fetch library. The following shows the available imports:
 
