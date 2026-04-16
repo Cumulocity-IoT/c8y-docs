@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2827"
 version: "1025.0.1"
 ---
-The API documentation for the tenant option `assets.permission.mode` has been improved to allow a better understanding of the available settings and its impact on the API's permission checks.
+The [API documentation](https://cumulocity.com/api/dtm/#tag/Assets#:~:text=assets.permission.mode) for the tenant option `assets.permission.mode` has been improved to allow a better understanding of the available settings and its impact on the API's permission checks.
