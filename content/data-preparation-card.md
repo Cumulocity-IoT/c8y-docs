@@ -1,6 +1,6 @@
 ---
 title: Data Preparation
-icon: "c8y-icon c8y-icon-" # No icon yet
+icon: "/images/data-preparation/c8y-icon-data-prep-duocolor.svg"
 type: root
 layout: redirect
 bundlefolder: data-preparation
