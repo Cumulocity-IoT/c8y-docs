@@ -20,7 +20,7 @@ The {{< product-c8y-iot >}}'s [Certificate Authority service](/device-certificat
 1. In the **Register general devices** dialog box, fill in the following fields and click **Next**.
     - Select the **Create device certificates during device registration** option.
     - Enter the Edge domain name, for example, **edgebootstrap.example**, in the **Device ID** field.
-    - Enter a random password in the **One-time password** field *(make a note of this one-time password as this will be required while configuring Edge in subsequent steps)*.
+    - Enter a random password in the **One-time password** field. Make a note of this one-time password. You need it when you configure Edge later.
 1. Close the form.
 
 If you installed Edge using the **c8yedge** tool, you can configure the Edge with your cloud tenant's domain (for example, `sub-domain.cumulocity.com`) and one-time password using the command below.
@@ -29,6 +29,7 @@ c8yedge config \
     --set cloudTenant.domain=<cloud tenant's domain> \
     --set cloudTenant.otp=<one-time password>
 ```
+If you installed Edge on a self-managed Kubernetes cluster, you can configure the Edge with your cloud tenant details by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudTenant). For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
 
 ### Using third-party Certificate Authority {#third-party-ca}
 If you installed Edge using the **c8yedge** tool, you can configure the Edge with your cloud tenant's domain (for example, `sub-domain.cumulocity.com`), TLS/SSL key, and certificate chain using the command below.
@@ -38,6 +39,7 @@ c8yedge config \
     --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> \
     --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>
 ```
+If you installed Edge on a self-managed Kubernetes cluster, you can configure the Edge with your cloud tenant details by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudTenant). For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
 
 To complete the registration process, you must sign in to your cloud tenant and follow the steps outlined in [Managing trusted certificates](/device-certificate-authentication/managing-trusted-certificates) to upload the third-party CA certificate into your tenant’s trusted certificates.
 
@@ -47,12 +49,9 @@ If you do not provide a TLS/SSL key and certificate chain or a one-time password
 c8yedge config \
     --set cloudTenant.domain=<cloud tenant's domain>
 ```
+If you installed Edge on a self-managed Kubernetes cluster, you can configure the Edge with your cloud tenant details by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudTenant). For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
 
 To complete the registration process, you must sign in to your cloud tenant and follow the steps outlined in [Managing trusted certificates](/device-certificate-authentication/managing-trusted-certificates) to upload the Edge generated CA certificate into your tenant’s trusted certificates. You can download the Edge generated CA certificate using the command below:
 ```shell
 kubectl get edge c8yedge -n c8yedge --output jsonpath='{.status.helpCommands.fetchGeneratedCACrt}' | sh
 ```
-
-{{< c8y-admon-info >}}
-If you installed Edge on a self-managed Kubernetes cluster, you can configure the Edge with your cloud tenant details by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudTenant). For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
-{{< /c8y-admon-info >}}
