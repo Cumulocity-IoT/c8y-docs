@@ -168,7 +168,7 @@ The expected subscribers for each topic are:
 
 - **`from-device`**: One or more subscribers used in custom microservice implementations or Streaming Analytics. This is the most important topic to monitor for custom integrations.
 - **`to-device`**, **`smartrest-to-device`**: One subscriber per MQTT Service instance, for example, `c8y-mqtt-service-0`, `c8y-mqtt-service-1`.
-- **`smartrest-from-device`**: One subscriber per {{< product-c8y-iot >}} core instance, for example, `cumulocity-core`.
+- **`smartrest-from-device`**: One subscriber with one consumer per {{< product-c8y-iot >}} core instance, for example, `cumulocity-core`.
 
 #### Clear the backlog {#mqtt-service-clear-the-backlog}
 
@@ -220,4 +220,6 @@ Multiple subscribers are expected when multiple distinct clients consume from th
 
 For the MQTT Service `from-device` topic, the number of subscribers depends on your implementation.
 If you have a single custom microservice or Streaming Analytics flow consuming device messages, you should see a single subscriber.
-For the `to-device`, `smartrest-from-device`, and `smartrest-to-device` topics, the number of subscribers should match the number of MQTT Service or {{< product-c8y-iot >}} core instances running in your environment.
+For the `to-device` and `smartrest-to-device` topics, the number of subscribers should match the number of MQTT Service instances running in your environment.
+For the `smartrest-from-device` topic, there should be one subscriber with a number of consumers that matches the number of {{< product-c8y-iot >}} core instances in your environment.
+These consumers will partition the messages on the topic across the core instances so that each message is processed by a single core.
