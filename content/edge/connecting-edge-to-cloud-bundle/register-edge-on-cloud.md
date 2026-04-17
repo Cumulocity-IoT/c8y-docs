@@ -26,7 +26,7 @@ The {{< product-c8y-iot >}}'s [Certificate Authority service](/device-certificat
 If you installed Edge using the **c8yedge** tool, you can configure the Edge with your cloud tenant's domain (for example, <sub-domain>.cumulocity.com) and one-time password using the command below.
 ```shell
 c8yedge config \
-    --set cloudTenant.domain=<cloud tenant's domain name> \
+    --set cloudTenant.domain=<cloud tenant's domain> \
     --set cloudTenant.otp=<one-time password>
 ```
 
@@ -34,7 +34,7 @@ c8yedge config \
 If you installed Edge using the **c8yedge** tool, you can configure the Edge with your cloud tenant's domain (for example, <sub-domain>.cumulocity.com), TLS/SSL key, and certificate chain using the command below.
 ```shell
 c8yedge config \
-    --set cloudTenant.domain=<cloud tenant's domain name> \
+    --set cloudTenant.domain=<cloud tenant's domain> \
     --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> \
     --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>
 ```
