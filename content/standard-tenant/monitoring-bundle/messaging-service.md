@@ -148,7 +148,7 @@ The MQTT Service creates a fixed set of topics per tenant for routing device tra
 These topics are the primary way to monitor whether the MQTT Service data flow is working correctly.
 
 {{< c8y-admon-important >}}
-These topics are shared across all devices in the tenant. Any action that modifies subscribers affects the message backlog for all devices in the tenant.
+These topics are shared across all devices in the tenant. Any action that modifies subscribers affects the message backlog on that topic for all devices in the tenant.
 {{< /c8y-admon-important >}}
 
 #### Topics {#mqtt-service-topics}
