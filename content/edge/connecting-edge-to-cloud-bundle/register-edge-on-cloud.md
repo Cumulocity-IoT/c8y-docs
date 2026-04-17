@@ -4,25 +4,51 @@ title: Registering Edge in the cloud tenant
 layout: redirect
 ---
 
-To remotely manage, configure, and monitor Edge through a {{< product-c8y-iot >}} cloud tenant, you must first register it as a device within the cloud tenant. This registration process requires providing the {{< product-c8y-iot >}} cloud tenant URI, along with an optional TLS/SSL key and certificate chain. These credentials authenticate Edge when connecting to the cloud via the MQTT protocol using X.509 certificate-based authentication. 
+To remotely manage, configure, and monitor Edge through a {{< product-c8y-iot >}} cloud tenant, you must first connect to your cloud tenant. Edge uses a X.509 certificate to authenticate to the cloud tenant and this certificate must be trusted by your cloud tenant before a connection can be established. You should either provide a certificate issued by your trusted third-party Certificate Authority (CA), where the CA's certificate is uploaded to your cloud tenant as a trusted certificate or use the recommended {{< product-c8y-iot >}}'s Certificate Authority service. Alternatively, you can let Edge generate and use a self-signed certificate (suitable for development and testing).
 
-If you installed Edge using the **c8yedge** tool, you can configure the cloud tenant URI, TLS/SSL key, and certificate chain using the command below.
+### Using {{< product-c8y-iot >}} Certificate Authority (Recommended) {#cloud-tenant-ca}
+The {{< product-c8y-iot >}}'s [Certificate Authority service](/device-certificate-authentication/certificate-authority) requires you to first create a CA certificate for the cloud tenant before devices can use it. For more information on creating a CA certificate for your cloud tenant refer to [Creating a CA certificate via REST](/device-certificate-authentication/certificate-authority/#creating-a-ca-certificate-via-the-rest) and [Creating a CA certificate via the UI](/device-certificate-authentication/certificate-authority/#creating-a-ca-certificate-via-the-ui).
+
+Subsequently you need to register a device in your cloud tenant using the {{< product-c8y-iot >}} Device Management Application, following the steps below:
+1. Sign in to your cloud tenant.
+1. Open the {{< product-c8y-iot >}} Device Management UI Application.
+1. Navigate to *Devices* → *Registration*.
+1. Click *Register device* and select *General*
+1. In the *Register general devices* dialog box, fill in the following fields and click *Next*.
+    - Select the **Create device certificates during device registration** option.
+    - Enter the Edge domain name, for example, *edgebootstrap.example*, in the **Device ID** field.
+    - Enter a random password in the **One-time password** field *(make sure you copy the one-time password as this will be required while configuring Edge in subsequent steps)*.
+1. Close the form.
+
+If you installed Edge using the **c8yedge** tool, you can configure the Edge with your cloud tenant URI and one-time password using the command below.
+```shell
+c8yedge config \
+    --set cloudTenant.domain=<CLOUD-TENANT-URI> \
+    --set cloudTenant.otp=<ONE-TIME PASSWORD>
+```
+
+### Using third-party Certificate Authority {#third-party-ca}
+
+If you installed Edge using the **c8yedge** tool, you can configure the Edge with your cloud tenant URI, TLS/SSL key, and certificate chain using the command below.
 ```shell
 c8yedge config \
     --set cloudTenant.domain=<CLOUD-TENANT-URI> \
     --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> \
     --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>
 ```
-Alternatively, you can configure the same by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudTenant).
 
-For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
+To complete the registration process, you must sign in to your cloud tenant and follow the steps outlined in [Upload your CA certificate](/device-certificate-authentication/device-certificates/) to upload the CA certificate into your tenant’s trusted certificate list.
 
-If you do not provide a TLS/SSL key and certificate chain, the Edge operator automatically generates an internal TLS/SSL key and certificate for authentication. In this case, Edge will identify itself using the domain name of the instance.
+### Using self-signed certificates {#self-signed-ca}
+If you do not provide a TLS/SSL key and certificate chain or a one-time password, the Edge operator automatically generates an internal TLS/SSL key and certificate for authentication. If you installed Edge using the **c8yedge** tool, you can configure the Edge with your cloud tenant URI and Edge generated self-signed certificate using the command below.
+```shell
+c8yedge config \
+    --set cloudTenant.domain=<CLOUD-TENANT-URI> 
+```
 
-To complete the registration process, you must sign in to your cloud tenant and follow the steps outlined in [certificates](/device-certificate-authentication/device-certificates/) to add the appropriate Certificate Authority (CA) certificate to your tenant’s trusted certificate list.
+To complete the registration process, you must sign in to your cloud tenant and follow the steps outlined in [Upload your CA certificate](/device-certificate-authentication/device-certificates/) to upload the Edge generated CA certificate into your tenant’s trusted certificate list.
 
-If Edge uses an internally generated TLS/SSL key and certificate, you can download the corresponding CA certificate by running the following command:
-
+You can download the Edge generated CA certificate using the command below:
 ```shell
 kubectl get edge c8yedge -n c8yedge --output jsonpath='{.status.helpCommands.fetchGeneratedCACrt}' | sh
 ```
@@ -30,5 +56,11 @@ kubectl get edge c8yedge -n c8yedge --output jsonpath='{.status.helpCommands.fet
 Substitute the Edge name and namespace name *c8yedge* in the command above with the specific Edge name and namespace name you have specified in your Edge CR.
 {{< /c8y-admon-info >}}
 
-Once registered, the Edge instance appears in your cloud tenant as a device with the device type `c8y_EdgeAgent`. The device name is determined by the Common Name (CN) specified in the TLS/SSL certificate used for authentication. If you provided a custom TLS/SSL key and certificate, the device name matches the CN. However, if the Edge operator generated the TLS/SSL certificate internally, the device name defaults to the domain name of the Edge.
-For example, if your Edge instance is configured with the domain **myown.iot.com**, it will appear as a device named **myown.iot.com** in the cloud tenant. Once registered, you can remotely access your Edge instance, monitor its metrics, perform version upgrades, and collect diagnostic data for troubleshooting and analysis.
+
+If you installed Edge on a self-managed Kubernetes cluster, you can configure the Edge with your cloud tenant details by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudTenant).
+
+For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
+
+Once registered, the Edge instance appears in your cloud tenant as a device with the device type `c8y_EdgeAgent`. The Edge device appears with the domain name as the domain name of the Edge. For example, if your Edge instance is configured with the domain **edgebootstrap.example**, it will appear as a device named **edgebootstrap.example** in the cloud tenant. 
+
+Once registered, you can remotely access your Edge instance, monitor its metrics, perform version upgrades, and collect diagnostic data for troubleshooting and analysis.
