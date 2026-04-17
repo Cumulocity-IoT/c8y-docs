@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Require asset selection also for regular properties in `AssetPropertySelectorDrawerComponent` (#11777) [GRAFT][release/cd] (#11803)
+title: Asset selection now required for regular properties in asset property selector
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-66612
 version: 1023.69.2
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-66612] Require asset selection also for regular
-properties in &#x60;AssetPropertySelectorDrawerComponent&#x60;
-(#11777)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11777)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66612]:
-https://cumulocity.atlassian.net/browse/MTM-66612?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
+The asset property selector component previously allowed users to proceed without selecting an asset when working with regular properties, which could lead to incomplete or invalid configurations. The component now requires users to explicitly select an asset before they can confirm their selection, regardless of whether they are working with regular or custom properties. This change ensures that all asset property selections are complete and valid, preventing configuration errors in your applications that use the asset property selector component.
