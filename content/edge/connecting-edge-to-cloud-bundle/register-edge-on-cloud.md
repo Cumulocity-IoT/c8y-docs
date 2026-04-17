@@ -51,7 +51,10 @@ c8yedge config \
 ```
 If you installed Edge on a self-managed Kubernetes cluster, you can configure the Edge with your cloud tenant details by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudTenant). For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
 
-To complete the registration process, you must sign in to your cloud tenant and follow the steps outlined in [Managing trusted certificates](/device-certificate-authentication/managing-trusted-certificates) to upload the Edge generated CA certificate into your tenant’s trusted certificates. You can download the Edge generated CA certificate using the command below:
+To complete the registration process, you must sign in to your cloud tenant and follow the steps outlined in [Managing trusted certificates](/device-certificate-authentication/managing-trusted-certificates) to upload the Edge-generated CA certificate into your tenant’s trusted certificates. You can download the Edge-generated CA certificate using the command below:
 ```shell
 kubectl get edge c8yedge -n c8yedge --output jsonpath='{.status.helpCommands.fetchGeneratedCACrt}' | sh
 ```
+{{< c8y-admon-info >}}
+Substitute the Edge name and namespace name *c8yedge* in the command above with the specific Edge name and namespace name you have specified in your Edge CR.
+{{< /c8y-admon-info >}}
