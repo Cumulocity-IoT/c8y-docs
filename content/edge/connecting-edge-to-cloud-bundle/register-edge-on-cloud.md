@@ -6,12 +6,13 @@ layout: redirect
 
 To remotely manage, configure, and monitor Edge through a {{< product-c8y-iot >}} cloud tenant, you must first connect the Edge to your cloud tenant. Edge uses a X.509 certificate to authenticate to the cloud tenant and this certificate must be trusted by your cloud tenant before a connection can be established. You should either provide a certificate issued by your trusted third-party Certificate Authority (CA), where the CA's certificate is uploaded to your cloud tenant as a trusted certificate or use the recommended {{< product-c8y-iot >}}'s Certificate Authority service. Alternatively, you can also let the Edge generate and use a self-signed certificate (suitable for development and testing).
 
-### Using {{< product-c8y-iot >}} Certificate Authority (Recommended) {#cloud-tenant-ca}
-The {{< product-c8y-iot >}}'s [Certificate Authority service](/device-certificate-authentication/certificate-authority) requires you to first create a CA certificate for the cloud tenant before devices can use it. For more information on creating a CA certificate for your cloud tenant refer to [Creating a CA certificate via REST](/device-certificate-authentication/certificate-authority/#creating-a-ca-certificate-via-the-rest) and [Creating a CA certificate via the UI](/device-certificate-authentication/certificate-authority/#creating-a-ca-certificate-via-the-ui).
+Once connected, the Edge instance appears in your cloud tenant as a device of type `c8y_EdgeAgent` and named with the domain name of the Edge. For example, if your Edge instance is configured with the domain **edgebootstrap.example**, it will appear as a device named **edgebootstrap.example** in the cloud tenant. You can [download diagnostics](/edge/connecting-edge-to-cloud/#downloading-diagnostics-remotely), [manage software](/edge/connecting-edge-to-cloud/#software-management-docs), [upgrade](/edge/connecting-edge-to-cloud/#upgrading-edge-remotely) and [monitor](/edge/edge-operations/#monitoring-edge-metrics) Edge from your cloud tenant via this device.
 
-Subsequently you need to register a device in your cloud tenant using the {{< product-c8y-iot >}} Device Management Application, following the steps below:
-1. Sign in to your cloud tenant.
-1. Open the {{< product-c8y-iot >}} Device Management UI Application.
+### Using {{< product-c8y-iot >}} Certificate Authority (Recommended) {#cloud-tenant-ca}
+The {{< product-c8y-iot >}}'s [Certificate Authority service](/device-certificate-authentication/certificate-authority) requires you to first create a CA certificate for the cloud tenant before devices can use it. For more information on creating a CA certificate for your cloud tenant refer to [Creating a CA certificate via the UI](/device-certificate-authentication/certificate-authority/#creating-a-ca-certificate-via-the-ui) or [Creating a CA certificate via REST](/device-certificate-authentication/certificate-authority/#creating-a-ca-certificate-via-the-rest).
+
+Subsequently you need to register a device in your cloud tenant using the {{< product-c8y-iot >}} Device Management application, following the steps below:
+1. Sign in to your cloud tenant and open the {{< product-c8y-iot >}} Device Management application.
 1. Navigate to *Devices* → *Registration*.
 1. Click *Register device* and select *General*
 1. In the *Register general devices* dialog box, fill in the following fields and click *Next*.
@@ -53,10 +54,8 @@ You can download the Edge generated CA certificate using the command below:
 kubectl get edge c8yedge -n c8yedge --output jsonpath='{.status.helpCommands.fetchGeneratedCACrt}' | sh
 ```
 
+{{< c8y-admon-info >}}
 If you installed Edge on a self-managed Kubernetes cluster, you can configure the Edge with your cloud tenant details by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudTenant).
 
 For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
-
-Once registered, the Edge instance appears in your cloud tenant as a device of type `c8y_EdgeAgent` and named with the domain name of the Edge. For example, if your Edge instance is configured with the domain **edgebootstrap.example**, it will appear as a device named **edgebootstrap.example** in the cloud tenant. 
-
-Once registered, you can remotely access your Edge instance, monitor its metrics, perform version upgrades, and collect diagnostic data for troubleshooting and analysis.
+{{< /c8y-admon-info >}}
