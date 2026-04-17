@@ -157,8 +157,8 @@ The MQTT Service creates the following topics:
 
 | Topic                   | Description                                                                                                                                                              |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `to-device`             | Messages to be sent to devices. Topic contains messages for all the outbound traffic to devices excluding {{< product-c8y-iot >}} SmartREST topics.                      |
-| `from-device`           | Messages arriving from devices to the MQTT Service. Topic contains messages for all the inbound traffic from devices excluding {{< product-c8y-iot >}} SmartREST topics. |
+| `to-device`             | Messages to be sent to devices. Topic contains messages for all outbound traffic to devices excluding {{< product-c8y-iot >}} SmartREST topics.                      |
+| `from-device`           | Messages arriving from devices to the MQTT Service. Topic contains messages for all inbound traffic from devices excluding {{< product-c8y-iot >}} SmartREST topics. |
 | `smartrest-from-device` | Internal topic used to forward SmartREST traffic from devices to the {{< product-c8y-iot >}} core for processing.                                                        |
 | `smartrest-to-device`   | Internal topic used to forward SmartREST traffic from the {{< product-c8y-iot >}} core back to devices.                                                                  |
 
@@ -187,7 +187,7 @@ For the `to-device`, `smartrest-from-device`, and `smartrest-to-device` topics, 
 These subscribers are managed by the MQTT Service and {{< product-c8y-iot >}} core, which re-create them automatically after unsubscription.
 If the backlog is full on one of these topics, contact [product support](/additional-resources/contacting-support/).
 
-##### Clear the `from-device` backlog {#mqtt-service-clear-from-device-backlog}
+##### Clear the from-device backlog {#mqtt-service-clear-from-device-backlog}
 
 If the backlog is full on the `from-device` topic, first check whether your consumer (custom microservice or Streaming Analytics) is running and actively processing messages.
 If the consumer is healthy, the backlog will decrease over time.
