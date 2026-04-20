@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Rule Editor
+title: Rule editor
 layout: bundle
 outputs:
   - html
