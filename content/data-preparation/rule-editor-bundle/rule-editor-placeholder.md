@@ -1,6 +1,6 @@
 ---
 weight: 5
-title: Rule Editor Subsection (placeholder)
+title: Rule editor subsection (placeholder)
 layout: bundle
 outputs:
   - html
