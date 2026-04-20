@@ -793,6 +793,11 @@ The following data is moved to the `trash` table.
 }
 ```
 
+## Integration with query engines {#integration-with-query-engines}
+
+As Streaming Lake Ingestion stores data in the Apache Iceberg format, you can integrate it with a variety of query engine that support Apache Iceberg, such as Dremio, Trino, Spark, Databricks, etc.
+For Dremio, Streaming Lake Ingestion supports the automated setup of the data source as an Iceberg REST catalog. The name of the data source is simply defined by the tenant ID, for example `t4711`. Streaming Lake Ingestion periodically checks for users prefixed with the tenant ID and a forward slash (for example `t4711/Alice`) and grants query permissions to them.
+
 ### Example queries {#example-queries}
 
 The following example queries demonstrate how to extract common metrics and insights from the data lake using the Dremio SQL dialect. To keep the queries concise, they assume that you set the query context to your tenant as described in [Analyzing lake data](#analyzing-lake-data-using-sql). This allows you to omit the tenant prefix in the `FROM` clauses.
