@@ -1,5 +1,5 @@
 ---
-date: '2026-04-17'
+date: 
 title: New valueAsText placeholder for OPC UA custom actions
 product_area: Device management & connectivity
 change_type:
