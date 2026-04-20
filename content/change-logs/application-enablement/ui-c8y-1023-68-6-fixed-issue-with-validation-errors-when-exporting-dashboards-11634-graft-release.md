@@ -20,5 +20,11 @@ environment_availability:
     date: '2026-04-17'
   - label: jp.cumulocity.com
     date: '2026-04-17'
+  - label: emea.cumulocity.com
+    date: '2026-04-20'
+  - label: us.cumulocity.com
+    date: '2026-04-20'
+  - label: cumulocity.com
+    date: '2026-04-20'
 ---
 Validation errors were incorrectly triggered during the dashboard export process, preventing users from successfully exporting their configurations. This issue has now been resolved. We fixed cases where validation errors appeared for empty dashboards, as well as when dashboards included data graph widgets.
