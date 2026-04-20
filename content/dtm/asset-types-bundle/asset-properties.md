@@ -290,7 +290,7 @@ You can import property definitions from any context, regardless of which tab yo
 * Only selected fields within a default property definition are editable and the editable fields vary depending on the specific property.
 * Default properties cannot be exported.
 
-### Location {#location}
+#### Location {#location}
 
 The **Location** property definition enables you to assign location (latitude and longitude) to an asset. You can set the default values of the latitude and longitude by entering the corresponding values or alternatively using the map view.
 
