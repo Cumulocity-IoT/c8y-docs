@@ -23,28 +23,28 @@ The {{< product-c8y-iot >}}'s [Certificate Authority service](/device-certificat
     - Enter a random password in the **One-time password** field. Make a note of this one-time password. You need it when you configure Edge later.
 1. Close the form.
 
-If you installed Edge using the **c8yedge** tool, you can configure the Edge with your cloud tenant's domain (for example, `sub-domain.cumulocity.com`) and one-time password using the command below.
+If you installed Edge using the **c8yedge** tool, you can configure Edge with your cloud tenant's domain (for example, `sub-domain.cumulocity.com`) and one-time password using the command below.
 ```shell
 c8yedge config \
     --set cloudTenant.domain=<cloud tenant's domain> \
     --set cloudTenant.otp=<one-time password>
 ```
-If you installed Edge on a self-managed Kubernetes cluster, you can configure the Edge with your cloud tenant details by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudTenant). For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
+If you installed Edge on a self-managed Kubernetes cluster, you can configure Edge with your cloud tenant details by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudTenant). For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
 
 ### Using third-party Certificate Authority {#third-party-ca}
-If you installed Edge using the **c8yedge** tool, you can configure the Edge with your cloud tenant's domain (for example, `sub-domain.cumulocity.com`), TLS/SSL key, and certificate chain using the command below.
+If you installed Edge using the **c8yedge** tool, you can configure Edge with your cloud tenant's domain (for example, `sub-domain.cumulocity.com`), TLS/SSL key, and certificate chain using the command below.
 ```shell
 c8yedge config \
     --set cloudTenant.domain=<cloud tenant's domain> \
     --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> \
     --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>
 ```
-If you installed Edge on a self-managed Kubernetes cluster, you can configure the Edge with your cloud tenant details by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudTenant). For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
+If you installed Edge on a self-managed Kubernetes cluster, you can configure Edge with your cloud tenant details by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudTenant). For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
 
 To complete the registration process, you must sign in to your cloud tenant and follow the steps outlined in [Managing trusted certificates](/device-certificate-authentication/managing-trusted-certificates) to upload the third-party CA certificate into your tenant’s trusted certificates.
 
 ### Using self-signed certificate {#self-signed-ca}
-If you do not provide a TLS/SSL key and certificate chain or a one-time password, the Edge operator automatically generates an internal TLS/SSL key and certificate for authentication. If you installed Edge using the **c8yedge** tool, you can configure the Edge with your cloud tenant's domain (for example, `sub-domain.cumulocity.com`) using the command below.
+If you do not provide a TLS/SSL key and certificate chain or a one-time password, the Edge operator automatically generates an internal TLS/SSL key and certificate for authentication. If you installed Edge using the **c8yedge** tool, you can configure Edge with your cloud tenant's domain (for example, `sub-domain.cumulocity.com`) using the command below.
 ```shell
 c8yedge config \
     --set cloudTenant.domain=<cloud tenant's domain>
