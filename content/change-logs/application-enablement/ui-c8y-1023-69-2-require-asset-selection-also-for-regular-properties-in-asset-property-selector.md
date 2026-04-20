@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Asset selection now required for custom properties in asset property selector
+title: Asset selection now mandatory for custom properties in asset property selector
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
