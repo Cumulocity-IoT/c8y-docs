@@ -11,6 +11,6 @@ sector:
 
 Rule editor subsection.
 
-### Placeholder Heading {#placeholder-heading}
+### Placeholder heading {#placeholder-heading}
 
 Text.
