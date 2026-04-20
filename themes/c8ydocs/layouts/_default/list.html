@@ -3,18 +3,32 @@
 {{ if not .Data.Term }}
 <meta http-equiv="refresh" content='0; URL={{.Site.BaseURL}}'/>
 {{end}}
+
+{{/*  redirect when there's an external link defined  */}}
 {{ if .Params.external }}
   <meta http-equiv="refresh" content='0; URL={{.Params.external}}'/>
 {{else}}
-<main>
-  <div class="breadcrumbs-container">
-    {{- partial "breadcrumbs.html" . -}}
-  </div>
-  <div class="home-top">
-    <section class="home-top__content">
-        <h1>{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
+  <main>
+    <div class="breadcrumbs-container">
+      {{- partial "breadcrumbs.html" . -}}
+    </div>
+    <div class="home-top">
+      <section class="home-top__content">
+          <h1>{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
 
           {{.Content}}
+
+      {{- if .Params.pdf -}}
+      {{- $zip := (printf "zips/%s.zip" .Data.Term) | absURL -}}
+      <div class="m-b-16 p-relative">
+        <a class="btn-metadata btn-tooltip" href="{{ $zip }}" aria-label="A ZIP file containing all the PDFs in this section"
+          data-tooltip="A ZIP file containing all the PDFs in this section"
+        >
+          <i class="dlt-c8y-icon-export-pdf"></i>
+          Download PDFs
+        </a>
+      </div>
+    {{- end -}}
       </section>
       {{.Params.svg | safeHTML}}
     </div>
@@ -32,13 +46,14 @@
           {{ $scratch.Set "url" .RelPermalink }}
         {{ end }}
       {{ end }}
+      <div class="product-card">
     <a href='
         {{if (isset .Params "external") }}
           {{.Params.external}}
         {{else}}
           {{$scratch.Get "url"}}
         {{end}}
-      ' class="product-card">
+      ' >
         <div class="product-card__header">
           <i class="c8y-icon-duocolor {{.Params.icon}}"></i>
           <h2>{{.Title}}
@@ -48,7 +63,7 @@
           </h2>
         </div>
         {{.Content }}
-         {{- $pdf := "" -}}
+        {{- $pdf := "" -}}
         {{- if .Params.pdf_url -}}
           {{- $u := .Params.pdf_url -}}
           {{- if hasPrefix $u "http" -}}
@@ -62,45 +77,45 @@
           {{- $path := printf "pdfs/%s.pdf" $safe -}}
           {{- $pdf = $path | absURL -}}
         {{- end -}}
-
-        <div class="m-t-auto d-flex gap-8 a-i-center">
-              {{ if (isset .Params "audience")}}
-                {{ range $t := .Params.audience }}
-                  <div class="label 
-                    {{if eq $t "Users"}}
-                      label-primary 
-                    {{ else if eq $t "Administrators"}}
-                    label-success
-                    {{ else if eq $t "Developers"}}
-                    label-info
-                    {{ else if eq $t "Business"}}
-                      label-warning
-                    {{end}}
-                      ">
-                    <i class='
-                    {{if eq $t "Users"}}
-                      dlt-c8y-icon-users
-                    {{ else if eq $t "Administrators"}}
-                      dlt-c8y-icon-male-user
-                    {{ else if eq $t "Developers"}}
-                      dlt-c8y-icon-programming
-                    {{ else if eq $t "Business"}}
-                      dlt-c8y-icon-permanent-job
-                    {{end}}
-                    '></i> 
-                    {{$t}}
-                  </div>
-                {{end}}
-              {{end}}
-              {{- if $pdf -}}
-                <form class="m-l-auto pdf-download-form" data-pdf="{{ $pdf }}">
-                  <button type="submit" class="btn-tooltip bnt-dot" title="Download PDF" data-tooltip="Download PDF">
-                    <i class="dlt-c8y-icon-export-pdf" style="font-size: 20px;"></i>
-                  </button>
-                </form>
-              {{- end -}}
-            </div>
       </a>
+      <div class="m-t-auto p-l-32 p-r-32 p-b-24 d-flex gap-8 a-i-center">
+        {{ if (isset .Params "audience")}}
+          {{ range $t := .Params.audience }}
+            <div class="label 
+              {{if eq $t "Users"}}
+                label-primary 
+              {{ else if eq $t "Administrators"}}
+              label-success
+              {{ else if eq $t "Developers"}}
+              label-info
+              {{ else if eq $t "Business"}}
+                label-warning
+              {{end}}
+                ">
+              <i class='
+              {{if eq $t "Users"}}
+                dlt-c8y-icon-users
+              {{ else if eq $t "Administrators"}}
+                dlt-c8y-icon-male-user
+              {{ else if eq $t "Developers"}}
+                dlt-c8y-icon-programming
+              {{ else if eq $t "Business"}}
+                dlt-c8y-icon-permanent-job
+              {{end}}
+              '></i> 
+              {{$t}}
+            </div>
+          {{end}}
+        {{end}}
+        {{- if $pdf -}}
+          <form class="m-l-auto pdf-download-form" data-pdf="{{ $pdf }}">
+            <button type="submit" class="btn-tooltip bnt-dot" aria-label="Download PDF" data-tooltip="Download PDF">
+              <i class="dlt-c8y-icon-export-pdf" style="font-size: 20px;"></i>
+            </button>
+          </form>
+        {{- end -}}
+      </div>
+      </div>
       {{end}}
     </div>
   </main>
@@ -115,6 +130,6 @@
         });
     });
   }); </script>
-{{- partial "footer.html" . -}}
+  {{- partial "footer.html" . -}}
 {{ end }}
 {{ end }}

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-04-02
 title: Fixed LWM2M composite read and observe operation failure when it contains a non existing object/resource
 product_area: Device management & connectivity
 change_type:

@@ -98,7 +98,7 @@ jobs:
         sudo apt-get install -y ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
         wkhtmltopdf --version
 
-    - name: Generate PDFs
+    - name: Generate PDFs and Zips
       run: |
         cd pdf-generator
         npm ci
@@ -107,3 +107,8 @@ jobs:
     - name: Upload PDFs
       run: |
         rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/pdfs/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }}/pdfs --delete-after
+
+    - name: Upload Zips
+      run: |
+        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/zips/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }}/zips --delete-after
+

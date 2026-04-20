@@ -2,6 +2,7 @@
 title: "Terms and conditions"
 icon: "dlt-c8y-icon-gavel"
 weight: 80
+pdf: true
 svg: '<svg width="1103" height="880" viewBox="0 0 1103 880" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_925_45612)">
 <rect width="1103" height="880" fill="#F9FAFB"/>
