@@ -899,7 +899,7 @@ Conversely, other types of queries may exhibit slower responses. These include q
 
 To improve query performance for your specific applications, you have several options:
 
-* Pre-process the data before it enters {{< product-c8y-iot >}} using Edge functionality or inbound data preparation rules.
+* Pre-process the data before it enters {{< product-c8y-iot >}} using Edge functionality or Data Preparation functions.
 * Process the data within {{< product-c8y-iot >}} using Streaming Analytics or a custom microservice to create refined data streams.
 * Post-process the data in the data lake by creating your own aggregated "gold layer" tables using external data lake tools.
 
