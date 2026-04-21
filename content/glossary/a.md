@@ -79,40 +79,40 @@ The application switcher UI lists applications accessible to the user. This list
 
 ### Asset {#asset}
 
-An asset is the digital representation of a business object within the {{< product-c8y-iot >}} [inventory](#inventory), such as a machine, building, or vehicle. Technically, an asset is a [managed object](#managed-object) that can be structured into a logical hierarchy (the [asset hierarchy](#asset-hierarchy)) using child asset relationships. Assets can take several forms: simple [groups](#group) used for organization, [devices](#device) that send telemetry data, or complex custom assets defined by an [asset model](#asset-model) in the [Digital Twin Manager (DTM)](#dtm).  
+An asset is the digital representation of a business object within the {{< product-c8y-iot >}} [inventory](#inventory), such as a machine, building, or vehicle. Technically, an asset is a [managed object](#managed-object) that can be structured into a logical hierarchy (the [asset hierarchy](#asset-hierarchy)) using child asset relationships. Assets can take several forms: simple [groups](#group) used for organization, [devices](#device) that send telemetry data, or complex custom assets defined by an [asset definition](#asset-model) in the [Digital Twin Manager (DTM)](#dtm).  
 
 See also [Digital Twin Manager](/dtm/dtm-introduction/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
-Assets are represented as managed objects in the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) (`/inventory/managedObjects`). They use the `childAssets` property and associated endpoints (`/inventory/managedObjects/{id}/childAssets`) for hierarchy management. Assets created via the the Digital Twin Manager application are enriched with custom fragments defined by their asset model.
+Assets are represented as managed objects in the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) (`/inventory/managedObjects`). They use the `childAssets` property and associated endpoints (`/inventory/managedObjects/{id}/childAssets`) for hierarchy management. Assets created via the the Digital Twin Manager application are enriched with custom fragments defined by their asset definition.
 {{< /c8y-details >}}
 
 
 ### Asset hierarchy {#asset-hierarchy}
 
-An asset hierarchy is a structure within the [inventory](#inventory) that organizes [assets](#asset) (based on [asset models](#asset-model)) and [devices](#device) to reflect their logical or business relationships, such as a factory containing production lines, which in turn contain individual machines. The asset hierarchy is built by nesting assets with one another to form parent-child relationships ([child assets](#child-asset)). It is fundamentally distinct from the [communication hierarchy](#communication-hierarchy), which models the physical network topology ([child devices](#child-device)).
+An asset hierarchy is a structure within the [inventory](#inventory) that organizes [assets](#asset) (based on [asset definitions](#asset-model)) and [devices](#device) to reflect their logical or business relationships, such as a factory containing production lines, which in turn contain individual machines. The asset hierarchy is built by nesting assets with one another to form parent-child relationships ([child assets](#child-asset)). It is fundamentally distinct from the [communication hierarchy](#communication-hierarchy), which models the physical network topology ([child devices](#child-device)).
 
 See also [Asset hierarchy](/dtm/asset-hierarchy/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
-The asset hierarchy is composed of managed objects linked via the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API)'s child asset endpoints: `GET /inventory/managedObjects/{id}/childAssets`, `POST /inventory/managedObjects/{id}/childAssets`, and `DELETE /inventory/managedObjects/{id}/childAssets/{childId}`. The DTM application is supported by a dedicated dtm-ms microservice and API (for example, `/service/dtm-ms/...`) for managing the underlying asset models and properties.
+The asset hierarchy is composed of managed objects linked via the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API)'s child asset endpoints: `GET /inventory/managedObjects/{id}/childAssets`, `POST /inventory/managedObjects/{id}/childAssets`, and `DELETE /inventory/managedObjects/{id}/childAssets/{childId}`. The DTM application is supported by a dedicated dtm-ms microservice and API (for example, `/service/dtm/...`) for managing the underlying asset and property definitions.
 {{< /c8y-details >}}
 
 
-### Asset model {#asset-model}
+### Asset definition {#asset-model}
 
-An asset model is a reusable blueprint defined in the [Digital Twin Manager (DTM)](#dtm) that specifies the structure, properties, and relationships of a particular type of [asset](#asset). It includes a unique key and label, [asset properties](#asset-property), and optionally references to [child asset](#child-asset) models to support the composition of [asset hierarchies](#asset-hierarchy) (for example, a wind turbine model composed of rotor and tower sub-models). Once published, an asset model governs how assets of that type are created, validated, and visualized across {{< product-c8y-iot >}} [applications](#application).  
+An asset definition is a reusable blueprint defined in the [Digital Twin Manager (DTM)](#dtm) that specifies the structure, properties, and relationships of a particular type of [asset](#asset). It includes a unique key and label, [property definitions](#asset-property), and optionally references to [child asset](#child-asset) definitions to support the composition of [asset hierarchies](#asset-hierarchy) (for example, a wind turbine model composed of rotor and tower sub-models). Once published, an asset definition governs how assets of that type are created, validated, and visualized across {{< product-c8y-iot >}} [applications](#application).  
 
-See also [Asset models](/dtm/asset-types/) in the documentation.
+See also [Asset definitions](/dtm/asset-types/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 Assets are represented as managed objects in the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) (`/inventory/managedObjects`). They use the child assets property and associated endpoints (`/inventory/managedObjects/{id}/childAssets`) for hierarchy management. Specific asset characteristics are defined using custom JSON fragments. See also [Asset definitions](https://cumulocity.com/api/dtm/#tag/Asset-Definitions).
 {{< /c8y-details >}}
 
 
-### Asset property {#asset-property}
+### Property definition {#asset-property}
 
-Asset properties are configurable attributes within an [asset model](#asset-model) that define, describe, and enrich an [asset´s](#asset) characteristics (for example, *tower height* in a wind turbine model). They can be of various data types, such as text, number, date, file, boolean, complex object, or custom. Properties may be simple (single values), complex (nested structures), or custom (additional metadata), and they act as reusable building blocks to ensure consistent data structures, metadata enrichment, and governed information across assets.  
+Property definitions are configurable attributes within an [asset definition](#asset-model) that define, describe, and enrich an [asset´s](#asset) characteristics (for example, *tower height* in a wind turbine model). They can be of various data types, such as text, number, date, file, boolean, complex object, or custom. Property definitions may be simple (single values), complex (nested structures), or custom (additional metadata), and they act as reusable building blocks to ensure consistent data structures, metadata enrichment, and governed information across assets.  
 
 
 ### Audit log {#audit-log}
