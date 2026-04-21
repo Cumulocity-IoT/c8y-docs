@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Home dashboard general tab now properly hidden in dashboard settings."
+title: "Home dashboard general tab now properly hidden in dashboard settings"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -11,7 +11,7 @@ component:
 build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
-ticket: ""
+ticket: "CTM-2850"
 version: "1025.2.0"
 ---
 The Home dashboard was displaying the General tab in Dashboard settings,
