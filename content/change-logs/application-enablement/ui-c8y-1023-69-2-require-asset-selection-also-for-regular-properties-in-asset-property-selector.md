@@ -16,5 +16,9 @@ version: 1023.69.2
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-04-20'
+  - label: apj.cumulocity.com
+    date: '2026-04-21'
+  - label: jp.cumulocity.com
+    date: '2026-04-21'
 ---
 The asset property selector component previously allowed users to proceed without selecting an asset when working with custom properties, which could lead to incomplete or invalid configurations. The component now requires users to explicitly select an asset before they select a property from one of the three tabs. This change ensures that all asset property selections are complete and valid, preventing configuration errors.

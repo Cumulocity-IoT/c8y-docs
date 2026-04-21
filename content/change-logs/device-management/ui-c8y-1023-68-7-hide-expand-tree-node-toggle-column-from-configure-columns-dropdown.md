@@ -20,5 +20,11 @@ environment_availability:
     date: '2026-04-20'
   - label: jp.cumulocity.com
     date: '2026-04-20'
+  - label: emea.cumulocity.com
+    date: '2026-04-21'
+  - label: us.cumulocity.com
+    date: '2026-04-21'
+  - label: cumulocity.com
+    date: '2026-04-21'
 ---
 In the device parameter list, two technical settings - "Detail toggle" and "Tree node toggle" - were visible within the column configuration dropdown, which were intended for internal system logic rather than end-user customization. These options have been removed from the display to prevent confusion and accidental layout changes.
