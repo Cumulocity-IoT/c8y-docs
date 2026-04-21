@@ -11,7 +11,7 @@ component:
 build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
-ticket: ""
+ticket: "CTM-2782"
 version: "1025.2.0"
 ---
 The `LinkedSeries` `source.id` field is optional, but previously
