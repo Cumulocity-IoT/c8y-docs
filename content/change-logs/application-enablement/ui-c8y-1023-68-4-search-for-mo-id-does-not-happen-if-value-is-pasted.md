@@ -20,5 +20,11 @@ environment_availability:
     date: '2026-04-17'
   - label: jp.cumulocity.com
     date: '2026-04-17'
+  - label: emea.cumulocity.com
+    date: '2026-04-20'
+  - label: us.cumulocity.com
+    date: '2026-04-20'
+  - label: cumulocity.com
+    date: '2026-04-20'
 ---
 Previously, pasting a managed object ID into the search box failed to trigger a search, forcing the user to enter it manually. The search function now correctly detects pasted values and executes automatically.
