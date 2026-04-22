@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Not able to assign a different Device Profile in the UI (#11842)
+title: Resolved device profile selection reset on the Device profile tab
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5985
 version: 1023.75.1
 ---
-Not able to assign a different Device Profile in the UI (#11842)
+Previously, the Device profile tab prevented users from switching device profiles if one was already assigned, as the selection dropdown would automatically reset to the current device profile before the assignment could be completed. This issue has been resolved — the UI now correctly maintains the selected value, ensuring that users can successfully reassign or update profiles for any device.
