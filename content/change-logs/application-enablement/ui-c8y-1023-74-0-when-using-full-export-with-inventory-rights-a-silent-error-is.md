@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Full export for users with only inventory rights no longer causes silent errors
+title: Full export disabled for users with inventory rights only
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
