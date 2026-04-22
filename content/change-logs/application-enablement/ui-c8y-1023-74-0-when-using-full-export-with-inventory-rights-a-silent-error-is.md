@@ -1,6 +1,6 @@
 ---
 date: ""
-title: When using Full Export with inventory-rights, a silent error is thown (#11254) [GRAFT][release/cd] (#11838)
+title: Full export for users with only inventory rights no longer causes silent errors
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
