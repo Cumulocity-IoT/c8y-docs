@@ -1587,7 +1587,13 @@ Argument details: <ul> <li><tt>inputs</tt> is a list of ten <tt>Value</tt> objec
 <p></p>
 <li><tt>context</tt> is an object with the following members: <ul> <li><tt>params</tt> - List that contains the block parameters as specified in the block configuration.</li> <li><tt>getState(key, def = null)</tt> - Method that retrieves a value previously stored in the context under the given key. If no value is found, returns <tt>def</tt>.</li> <li><tt>setState(key, value)</tt> - Method that stores the given value in the context under the given key.</li> </ul> </li> </ul>
 <p></p>
-In addition, the <tt>console</tt> object has <tt>log</tt>, <tt>warn</tt>, <tt>error</tt> and <tt>debug</tt> members that can be used to log messages to the microservice log.
+In addition, the <tt>console</tt> object has <tt>log</tt>, <tt>warn</tt>, <tt>error</tt>, <tt>info</tt> and <tt>debug</tt> members that can be used to log messages to the microservice log. These all have the signature:
+<p></p>
+<pre>function log(...args: any[]): void</pre>
+<p></p>
+Arguments are formatted and separated by spaces. String interpolation can be done with Javascript interpolation syntax. For example:
+<p></p>
+<pre> console.log("Server started");<br/> // -> Server started<br/> <br/> console.log("User", "logged", "in");<br/> // -> User logged in<br/> <br/> console.log("User login", { userId: 123, role: "admin" });<br/> // -> User login { userId: 123, role: 'admin' }<br/> <br/> const userId = 123;<br/> const role = "admin";<br/> console.log(`User ${userId} logged in as ${role}`);<br/> // -> User 123 logged in as admin<br/> </pre>
 <p></p>
 The return value of the function is a list of up to ten values corresponding to the block outputs. These can either be bare values, or <tt>Value</tt> objects, with members <tt>value</tt>, <tt>properties</tt> and <tt>timestamp</tt>. If the function does not generate a value, return <tt>null</tt> instead.
 <p></p>
