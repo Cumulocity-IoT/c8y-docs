@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added possibility to configure decimal places for computed properties.
+title: Decimal places can now be configured for computed properties in the asset selector
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
