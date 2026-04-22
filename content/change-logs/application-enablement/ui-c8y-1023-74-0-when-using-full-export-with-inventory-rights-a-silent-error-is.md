@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66010
 version: 1023.74.0
 ---
-With the current change, the `Full export` option will be disabled for users with only inventory rights. This will prevent data from being exported, even if the UI does not display an error message.
+The `Full export` option is now disabled for users who only have inventory rights. Previously, data could be exported without even an error message being displayed in the UI. This issue is now fixed.
