@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-66619
 version: 2026.131.0
 ---
-Introduced automated audit logging to track device certificate renewals and replacements. When a device uses the [Re-enroll API](/device-certificate-authentication/device-enroll-and-re-enroll/#re-issue-device-certificate) to refresh or replace its certificate via existing credentials, a dedicated entry is now recorded in the system logs.
+Automated audit logging has been introduced to track device certificate renewals and replacements. When a device uses the [Re-enroll API](/device-certificate-authentication/device-enroll-and-re-enroll/#re-issue-device-certificate) to refresh or replace its certificate via existing credentials, a dedicated entry is now recorded in the system logs.
 
 **Log Specifications:**
 - **Activity:** `Tenant certificate authority(CA) re-signed certificate for device: %s.`
