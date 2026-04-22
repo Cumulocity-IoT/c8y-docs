@@ -1,6 +1,6 @@
 ---
 date: ''
-title: Audit Logging for Device Re-enrollment
+title: Automated audit logging for device re-enrollment
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
