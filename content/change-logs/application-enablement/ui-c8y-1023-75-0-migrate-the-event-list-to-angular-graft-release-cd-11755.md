@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Migrate the event list to Angular [GRAFT][release/cd] (#11755)
+title: Events list and widget migrated to Angular
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
