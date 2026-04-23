@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5985
 version: 1023.75.1
 ---
-Previously, the Device Profile tab prevented users from switching device profiles if one was already assigned, as the selection dropdown would automatically reset to the current device profile before the assignment could be completed. This issue has been resolved. The UI now correctly maintains the selected value, ensuring that users can successfully reassign or update profiles for any device.
+Previously, the **Device profile** tab prevented users from switching device profiles if one profile was already assigned. The selection dropdown would automatically reset to the current device profile before the assignment could be completed. This issue has been resolved. The UI now correctly maintains the selected value, ensuring that users can successfully reassign or update profiles for any device.
