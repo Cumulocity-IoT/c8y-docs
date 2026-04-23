@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fix frozen pagination and row expansion in Assets page"
+title: "Pagination and row expansion in Assets page no longer frozen"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-2895"
 version: "1025.2.1"
 ---
-Previously, the pagination and row expansion froze in the Assets page when displaying large datasets. This is now resolved to provide a reliable pagination and row expansion.
+Previously, the pagination and row expansion in the **Assets** page were frozen when displaying large datasets. This issue is now resolved to provide a reliable pagination and row expansion.
