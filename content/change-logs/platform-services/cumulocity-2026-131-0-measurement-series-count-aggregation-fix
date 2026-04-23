@@ -1,5 +1,5 @@
 ---
-date: '2026-04-22'
+date: 
 title: Fixed issues with COUNT aggregation and missing unit in the measurement series endpoint
 change_type:
   - value: change-VSkj2iV9m
@@ -15,4 +15,4 @@ ticket: MTM-65900
 version: 2026.131.0
 ---
 Previously, when requesting COUNT aggregation in the measurement series endpoint, the response included incorrect counts for measurement series that contained no data. The response now only includes buckets with data for the requested series.
-Previously, when requesting more than one measurement series, the unit information was missing from the response. The unit is now included in the response for all series.
+Moreover, when requesting more than one measurement series, the unit information was missing from the response. The unit is now included in the response for all series.
