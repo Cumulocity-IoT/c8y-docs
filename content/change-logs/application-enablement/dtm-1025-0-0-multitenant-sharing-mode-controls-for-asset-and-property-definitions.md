@@ -20,6 +20,12 @@ environment_availability:
     date: '2026-04-22'
   - label: jp.cumulocity.com
     date: '2026-04-22'
+  - label: emea.cumulocity.com
+    date: '2026-04-23'
+  - label: us.cumulocity.com
+    date: '2026-04-23'
+  - label: cumulocity.com
+    date: '2026-04-23'
 ---
 In subtenants in {{< enterprise-tenant >}} setups, the Digital Twin Manager previously
 lacked controls to reflect the active multitenant sharing configuration.

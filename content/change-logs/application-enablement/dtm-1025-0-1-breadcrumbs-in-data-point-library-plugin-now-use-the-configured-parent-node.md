@@ -20,6 +20,12 @@ environment_availability:
     date: '2026-04-22'
   - label: jp.cumulocity.com
     date: '2026-04-22'
+  - label: emea.cumulocity.com
+    date: '2026-04-23'
+  - label: us.cumulocity.com
+    date: '2026-04-23'
+  - label: cumulocity.com
+    date: '2026-04-23'
 ---
 The breadcrumbs in the Data point library plugin previously displayed a
 fixed path of "Configuration > Data point library" regardless of your
