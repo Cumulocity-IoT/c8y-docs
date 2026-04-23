@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Asset property mappings in HTML widget and global time context integration (#11376) [GRAFT][release/cd] (#11814)
+title: Asset property mappings and global time context integration in HTML widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,22 +14,9 @@ build_artifact:
 ticket: MTM-66200
 version: 1023.73.0
 ---
-# Backport
+The HTML widget in Cockpit got two improvements:
 
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Cockpit): [MTM-66200] Asset property mappings in HTML widget and
-global time context integration
-(#11376)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11376)
+- **Asset properties configuration**: instead of a read-only list of properties from the currently selected asset, which you could copy and paste as expressions into the HTML code editor, now you can browse and select properties not only from that asset but also from its children, including computed properties; selected properties can be pasted into HTML code as expressions.
+- **Global time context integration**: the HTML widget is now integrated with dashboard's global time context,  and both `c8yContext` and the new `c8yProperties` objects update automatically when auto-refresh is enabled.
 
-<!--- Backport version: 11.0.2 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66200]:
-https://cumulocity.atlassian.net/browse/MTM-66200?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
----------
-
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+For more details, refer to the [HTML widget documentation](https://cumulocity.com/docs/cockpit/widgets-collection/#html).
