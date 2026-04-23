@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Remove column custom popover and replace with ngx-bootstrap
+title: Replace custom column popover with standard popover implementation
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
