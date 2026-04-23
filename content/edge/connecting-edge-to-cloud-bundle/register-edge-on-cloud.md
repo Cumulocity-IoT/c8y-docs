@@ -21,7 +21,7 @@ The {{< product-c8y-iot >}}'s [Certificate Authority service](/device-certificat
     - Select the **Create device certificates during device registration** option.
     - Enter the Edge domain name, for example, **edgebootstrap.example**, in the **Device ID** field.
     - Enter a random password in the **One-time password** field. Make a note of this one-time password. You need it when you configure Edge later.
-1. Close the form.
+1. Click **Close**.
 
 If you installed Edge using the **c8yedge** tool, you can configure Edge with your cloud tenant's domain (for example, `sub-domain.cumulocity.com`) and one-time password using the command below.
 ```shell
