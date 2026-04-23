@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5058
 version: 1023.75.2
 ---
-Improved the column removal popover so it is fully visible and no longer hidden or overlapping with the dropdown.
+In data-grid, the confirmation dialog for deleting a custom column in the Configure columns dropdown used to appear on top of and obscure the columns dropdown, making it difficult for users to see the underlying content while confirming the deletion. This change adjusts the positioning an behaviour of the deletion confirmation modal so it no longer overlaps the relevant view, ensuring the dialog is clearly visible without hiding the configured columns behind it. 
