@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Resolved device profile selection reset on the Device Profile tab
+title: Device profiles can properly be reassigned
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
