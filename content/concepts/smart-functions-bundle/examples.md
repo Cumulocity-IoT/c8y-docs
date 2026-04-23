@@ -256,8 +256,8 @@ These examples demonstrate recurring patterns:
 
 ## Next steps
 
-See the [Development](../development/) section for detailed guidance on writing and testing smart functions.
+See the [Development](development/) section for detailed guidance on writing and testing smart functions.
 
-Check [Deployment](../deployment/) for instructions on packaging and deploying your smart function.
+Check [Deployment](deployment/) for instructions on packaging and deploying your smart function.
 
 For component-specific examples and features, refer to the documentation for your implementation (Data Preparation, Streaming Analytics, or thin-edge.io).

@@ -68,6 +68,6 @@ All smart function executions are subject to the same audit and compliance requi
 
 ## Next steps
 
-Learn which implementations of smart functions are available and how they differ in [Implementations](../implementations/).
+Learn which implementations of smart functions are available and how they differ in [Implementations](implementations/).
 
-Get started developing your own smart function in [Development](../development/).
+Get started developing your own smart function in [Development](development/).

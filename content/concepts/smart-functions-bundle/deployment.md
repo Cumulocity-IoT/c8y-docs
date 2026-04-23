@@ -127,8 +127,8 @@ Deployment details vary by component. For specific instructions, see:
 
 ## Next steps
 
-See practical examples of deployed smart functions in [Examples](../examples/).
+See practical examples of deployed smart functions in [Examples](examples/).
 
-Understand the security and resource limits that apply to your deployed function in [Sandbox and limits](../sandbox-and-limits/).
+Understand the security and resource limits that apply to your deployed function in [Sandbox and limits](sandbox-and-limits/).
 
 For component-specific features and configuration, check the documentation for your implementation.

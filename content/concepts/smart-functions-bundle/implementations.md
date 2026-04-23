@@ -97,8 +97,8 @@ All implementations share:
 
 ## Next steps
 
-Understand the technical details and universal features in [Common features](../common-features/).
+Understand the technical details and universal features in [Common features](common-features/).
 
-Learn about security, isolation, and resource constraints in [Sandbox and limits](../sandbox-and-limits/).
+Learn about security, isolation, and resource constraints in [Sandbox and limits](sandbox-and-limits/).
 
-Start developing your first smart function in [Development](../development/).
+Start developing your first smart function in [Development](development/).

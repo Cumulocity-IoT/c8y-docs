@@ -50,8 +50,8 @@ Different components of the platform use smart functions in different ways, tail
 
 ## Next steps
 
-To understand the technical details and universal features that all smart functions share, see [Common features](../common-features/).
+To understand the technical details and universal features that all smart functions share, see [Common features](common-features/).
 
-To learn how smart functions differ across implementations and which one suits your use case, see [Implementations](../implementations/).
+To learn how smart functions differ across implementations and which one suits your use case, see [Implementations](implementations/).
 
-To get started developing your own smart function, see [Development](../development/).
+To get started developing your own smart function, see [Development](development/).
