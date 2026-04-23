@@ -14,22 +14,11 @@ build_artifact:
 ticket: MTM-64563
 version: 1023.75.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
- - https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11266
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
----------
-
-Co-authored-by: Lukasz Janusz <lukasz.janusz@cumuloicty.com>
-Co-authored-by: Jakub Drewniak <103751383+jdre-c8y@users.noreply.github.com>
-Co-authored-by: Dawid Janusz <96060763+DawidSAG@users.noreply.github.com>
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
-Co-authored-by: amio <amio@softwareag.com>
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
+The "Events list" widget has been migrated to Angular and enhanced to improve usability and performance, providing a modern, consistent foundation with the current UI framework. Updates include:                                                                                                                                                                                                                                                                 
+  - **Events view in Cockpit**: The events view node is now available in Cockpit, not just Device management.                                                          
+  - **Events tab in Cockpit groups**: The events tab with the events list is now available on Cockpit groups, where previously wasn't.                              
+  - **Auto-refresh**: Integrated with the global time context to enable real-time updates that reflect the dashboard's selected time range.                            
+  - **Child device events**: Optionally display events from child devices, mirroring functionality from the Alarms widget — enabled by default in groups.
+  - **Image preview**: Binary image attachments can be previewed inline with consistent dimensions, without opening the full event view.                               
+  - **Custom metadata preview**: Custom event properties are displayed consistently with the Alarm view.                                                               
+  - **Shareable events**: Each event has a direct URL that can be copied from the browser address bar and shared - opening the link takes the recipient straight to that event's details, the same pattern used for alarms. 
