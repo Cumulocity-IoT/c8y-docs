@@ -14,20 +14,4 @@ build_artifact:
 ticket: DM-5058
 version: 1023.75.2
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Device management app): [DM-5058] Remove column custom popover
-replaces with
-ngx-bootstrap.](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11685)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[DM-5058]:
-https://cumulocity.atlassian.net/browse/DM-5058?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dafina Karamanoleva <92030501+dafkk@users.noreply.github.com>
+The device management app previously used a custom popover component for column headers that had limited functionality and required custom maintenance. The popover component has been replaced with ngx-bootstrap, which provides a more robust and standardized popover implementation. This change improves the reliability and consistency of the popover behavior in the device management app, and reduces the maintenance burden by using a well-supported third-party library instead of a custom solution. Existing column popovers in the device management app will now use the ngx-bootstrap implementation without any action required from you.
