@@ -1,12 +1,12 @@
 ---
 weight: 30
 title: Sandbox and limits
-layout: bundle
+layout: redirect
 ---
 
 Smart functions run in a sandboxed environment designed to protect your data, ensure platform stability, and prevent resource abuse. This section explains the security model and constraints that apply to all smart function implementations.
 
-## Sandboxing and isolation
+### Sandboxing and isolation {#sandboxing-and-isolation}
 
 Every smart function executes in a confined environment with strict access controls:
 
@@ -22,11 +22,11 @@ If your {{< product-c8y-iot >}} instance hosts multiple tenants, each smart func
 **Limited system resource access**
 Smart functions cannot read environment variables, access the host clock in ways that compromise security, or interact with the operating system in privileged ways.
 
-## Multi-tenant and -user safety
+### Multi-tenant and -user safety {#multi-tenant-and-user-safety}
 
 The sandboxing layer ensures that one smart function cannot interfere with any other smart functions whether deployed in other tenants or by other users. Each function runs with only the data and context explicitly passed to it. 
 
-## Resource consumption limits
+### Resource consumption limits {#resource-consumption-limits}
 
 To prevent a single smart function from consuming all available resources and degrading the platform for others, the system enforces limits on:
 

@@ -1,12 +1,12 @@
 ---
 weight: 70
 title: Examples
-layout: bundle
+layout: redirect
 ---
 
 This section provides practical examples of smart functions from different components and domains.
 
-## Data Preparation: Parse and create measurements
+### Data Preparation: Parse and create measurements {#data-preparation-example}
 
 This example parses an incoming device message and creates a Cumulocity measurement:
 
@@ -33,7 +33,7 @@ export function onMessage(message, context) {
 }
 ```
 
-## Streaming Analytics: Calculate moving average
+### Streaming Analytics: Calculate moving average {#streaming-analytics-example}
 
 This example maintains state to compute a moving average of input values:
 
@@ -51,7 +51,7 @@ export function onInput(inputs, context) {
 }
 ```
 
-## thin-edge.io: Filter and forward edge messages
+### thin-edge.io: Filter and forward edge messages {#thin-edge-io-example}
 
 This example filters messages at the edge to reduce bandwidth:
 
