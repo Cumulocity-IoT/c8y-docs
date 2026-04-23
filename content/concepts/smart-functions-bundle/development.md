@@ -184,8 +184,8 @@ Remember that your function has CPU and memory constraints. Test with realistic 
 
 ## Next steps
 
-Learn how to package and deploy your smart function in [Deployment](deployment/).
+Learn how to package and deploy your smart function in [Deployment](#deployment).
 
-See practical examples from different components in [Examples](examples/).
+See practical examples from different components in [Examples](#examples).
 
 For component-specific details, check the documentation for your implementation (Data Preparation, Streaming Analytics, or thin-edge.io).
