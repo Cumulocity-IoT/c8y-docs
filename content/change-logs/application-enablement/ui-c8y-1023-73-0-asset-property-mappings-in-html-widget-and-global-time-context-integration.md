@@ -14,9 +14,9 @@ build_artifact:
 ticket: MTM-66200
 version: 1023.73.0
 ---
-The HTML widget in Cockpit got two improvements:
+This change provides two enhancements to the HTML widget:
 
-- **Asset properties configuration**: instead of a read-only list of properties from the currently selected asset, which you could copy and paste as expressions into the HTML code editor, now you can browse and select properties not only from that asset but also from its children, including computed properties; selected properties can be pasted into HTML code as expressions.
-- **Global time context integration**: the HTML widget is now integrated with dashboard's global time context,  and both `c8yContext` and the new `c8yProperties` objects update automatically when auto-refresh is enabled.
+- **Asset properties** configuration: instead of a read-only list of properties from the currently selected asset, you can now browse and assign properties (asset, custom, and computed ones) to named keys - sourced not only from the main selected asset but also from its descendants. These keys can then be inserted into the HTML code editor as expressions.
+- **Time context** integration: the widget can now be controlled by the dashboard's global time context settings or by widget's local settings; both the `c8yContext` object and the new `c8yProperties` object update automatically when the auto-refresh mode is enabled.
 
 For more details, refer to the [HTML widget documentation](https://cumulocity.com/docs/cockpit/widgets-collection/#html).
