@@ -53,9 +53,3 @@ For detailed documentation on Streaming Analytics smart functions, see the Strea
 - Route messages based on local rules before cloud transmission.
 
 For detailed documentation on thin-edge.io smart functions, see the thin-edge.io guide.
-
-## Next steps
-
-Understand the technical details and universal features in [Common features](#common-features).
-
-Learn about security, isolation, and resource constraints in [Sandbox and limits](#sandbox-and-limits).

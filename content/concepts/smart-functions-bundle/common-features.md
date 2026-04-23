@@ -93,10 +93,3 @@ export function onMessage(message, context) {
     return []; // Or handle gracefully based on your needs
   }
 }
-```
-
-## Next steps
-
-Learn about the security model and resource limits that protect your smart functions and the platform in [Sandbox and limits](#sandbox-and-limits).
-
-Explore which implementations are available and how to choose the right one for your use case in [Implementations](#implementations).

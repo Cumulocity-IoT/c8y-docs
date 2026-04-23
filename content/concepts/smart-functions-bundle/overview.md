@@ -32,9 +32,3 @@ Different components of the platform use smart functions in different ways, tail
 - **Streaming Analytics** uses smart functions as custom processing blocks in analytics models, allowing you to apply business logic to real-time data streams.
 - **thin-edge.io** uses smart functions to process messages at the edge, reducing bandwidth and enabling local processing before data reaches the cloud.
 - Other components will add smart functions support over time, each applying the pattern to their domain.
-
-## Next steps
-
-To understand the technical details and universal features that all smart functions share, see [Common features](#common-features).
-
-To learn how smart functions differ across implementations and which one suits your use case, see [Implementations](#implementations).

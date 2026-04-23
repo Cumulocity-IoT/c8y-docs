@@ -35,7 +35,3 @@ Smart functions must complete within a reasonable time window. Long-running comp
 
 **Memory usage**
 Each smart function is allocated a fixed memory budget. If your function exceeds this budget (for example, by creating very large objects or accumulating data without releasing it), execution will be terminated. The specific limit depends on your deployment and component, but you should write functions that process data efficiently without accumulating large data structures unnecessarily.
-
-## Next steps
-
-Learn which implementations of smart functions are available and how they differ in [Implementations](#implementations).
