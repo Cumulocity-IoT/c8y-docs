@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Remove column custom popover replaces with ngx-bootstrap. [GRAFT][release/cd]
+title: Remove column custom popover and replace with ngx-bootstrap
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
