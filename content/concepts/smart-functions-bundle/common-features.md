@@ -21,7 +21,7 @@ The final parameter is always a `context` object provided by the system. This ob
 
 ## Language and runtime
 
-Smart functions run in a Javascript runtime and support **ECMAScript 2023** features and later. You write and transpile your code outside the platform—using Javascript directly or TypeScript with your own build toolchain—and upload the resulting Javascript file for execution.
+Smart functions run in a Javascript runtime and support **ECMAScript 2023** features and later. Some components allow you to write Javascript code directly within the platform in the Cumulocity UI. Alternatively, you can write and transpile your code outside the platform—using Javascript directly or TypeScript with your own build toolchain—and upload the resulting Javascript file for execution.
 
 Supported language features include:
 
@@ -31,13 +31,11 @@ Supported language features include:
 
 ## Standard library
 
-The system provides a lightweight standard library available in all smart functions:
+In addition to the standard library features within the ES2023 standard, all smart functions also provide a Console API: `console.log()`, `console.info()`, `console.warn()`, `console.error()`, and `console.debug()` for logging messages visible in the system.
 
-- **Console API**: `console.log()`, `console.info()`, `console.warn()`, `console.error()`, and `console.debug()` for logging messages visible in the system.
-- **TextEncoder and TextDecoder**: Convert strings to and from UTF-8 byte arrays.
-- **Base64 utilities**: Encode and decode Base64 strings for working with binary data.
+Some components my provide other libraries in addition depending on the needs of that component. 
 
-These utilities are sufficient for most common tasks. If you need additional functionality, you can include external libraries in your deployment package.
+These utilities are sufficient for most common tasks. If you need additional functionality, additional libraries can be deployed with all smart functions via transpilation when you write your code outside of the platform. On a per-component-basis it may also be possible to provide further libraries that can be included at runtime within the Javascript.
 
 ## Context object
 
@@ -51,7 +49,7 @@ export function onMessage(message, context) {
 }
 ```
 
-All smart functions receive a `context` object with a `runtime` property that identifies the execution environment (for example, `"data-preparation"` or `"streaming-analytics"`). Different implementations may add additional properties to the context for component-specific functionality.
+All smart functions receive a `context` object with a `runtime` property that identifies the execution environment (for example, `"data-preparation"` or `"streaming-analytics"`). Different implementations may add additional functions and properties to the context for component-specific functionality.
 
 ## Asynchronous operations
 
@@ -76,11 +74,11 @@ This design ensures that smart functions are stateless, scalable, and predictabl
 
 The data your smart function returns depends on the component using it. For example:
 
-- Data Preparation expects an array of objects or messages.
+- Data Preparation expects an array of objects.
 - Streaming Analytics expects an array of block values.
 - thin-edge.io expects an array of edge messages.
 
-Always check the documentation for your specific component to understand the expected return type. If your function returns `null` or `undefined`, the system typically treats this as "no output" and does not propagate any data downstream.
+Always check the documentation for your specific component to understand the expected return type. 
 
 ## Error handling
 
@@ -92,7 +90,7 @@ export function onMessage(message, context) {
     return processMessage(message);
   } catch (error) {
     console.error('Processing failed:', error);
-    return null; // Or handle gracefully based on your needs
+    return []; // Or handle gracefully based on your needs
   }
 }
 ```

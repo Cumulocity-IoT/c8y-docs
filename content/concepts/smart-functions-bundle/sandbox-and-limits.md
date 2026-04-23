@@ -22,9 +22,9 @@ If your {{< product-c8y-iot >}} instance hosts multiple tenants, each smart func
 **Limited system resource access**
 Smart functions cannot read environment variables, access the host clock in ways that compromise security, or interact with the operating system in privileged ways.
 
-## Multi-tenant safety
+## Multi-tenant and -user safety
 
-The sandboxing layer ensures that smart functions deployed by one tenant cannot interfere with smart functions or data from other tenants. Each function runs with only the data and context explicitly passed to it. This multi-tenant isolation is mandatory and non-negotiable.
+The sandboxing layer ensures that one smart function cannot interfere with any other smart functions whether deployed in other tenants or by other users. Each function runs with only the data and context explicitly passed to it. 
 
 ## Resource consumption limits
 
@@ -36,38 +36,6 @@ Smart functions must complete within a reasonable time window. Long-running comp
 **Memory usage**
 Each smart function is allocated a fixed memory budget. If your function exceeds this budget (for example, by creating very large objects or accumulating data without releasing it), execution will be terminated. The specific limit depends on your deployment and component, but you should write functions that process data efficiently without accumulating large data structures unnecessarily.
 
-## What smart functions can do
-
-Within these constraints, smart functions have significant power:
-
-- Process and transform input data using all available ECMAScript 2023 language features.
-- Perform calculations, filtering, aggregation, and complex logic on inputs.
-- Call included standard library functions (console, Base64, text encoding).
-- Use synchronous or asynchronous patterns as supported by your component.
-- Return structured data to be handled by the next step in the processing pipeline.
-
-## Security best practices
-
-When writing smart functions, keep these practices in mind:
-
-**Validate all inputs**
-Never assume that input data is safe, well-formed, or trustworthy. Validate and sanitize data before using it in logic or passing it downstream.
-
-**Avoid blocking operations**
-Use async/await instead of blocking calls when possible. This keeps your function responsive and allows the platform to process other requests while yours is waiting.
-
-**Keep functions focused**
-A smart function with a single responsibility is easier to understand, test, and secure. Avoid trying to do too much in one function.
-
-**Monitor performance**
-Use console logging to track function execution and identify performance bottlenecks. Logs are available in the system and help with debugging and optimization.
-
-## Compliance and audit
-
-All smart function executions are subject to the same audit and compliance requirements as other platform operations. Logs, errors, and invocations may be retained for audit purposes according to your tenant's retention policies.
-
 ## Next steps
 
 Learn which implementations of smart functions are available and how they differ in [Implementations](#implementations).
-
-Get started developing your own smart function in [Development](#development).

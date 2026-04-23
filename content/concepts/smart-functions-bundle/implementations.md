@@ -54,51 +54,8 @@ For detailed documentation on Streaming Analytics smart functions, see the Strea
 
 For detailed documentation on thin-edge.io smart functions, see the thin-edge.io guide.
 
-## Comparing implementations
-
-The table below provides a quick comparison of smart functions across available implementations:
-
-| Feature | Data Preparation | Streaming Analytics | thin-edge.io |
-|---------|------------------|---------------------|--------------|
-| **Primary use** | Message transformation at ingestion | Real-time stream analytics | Edge processing |
-| **Function name** | `onMessage` | `onInput` | `onMessage` |
-| **Input type** | Device messages | Block values from preceding analytics blocks | Edge device messages |
-| **Output type** | Array of messages or objects | Array of block values | Array of edge messages |
-| **State management** | Stateless per invocation | Context-based state support | Stateless per invocation |
-| **Execution environment** | Cloud-hosted | Cloud-hosted | Edge device |
-| **Typical latency** | Milliseconds | Milliseconds to seconds | Milliseconds |
-| **Scaling** | Automatic, per platform capacity | Automatic, per model requirements | Per-device capacity |
-
-## Choosing an implementation
-
-Use this decision tree to select the right implementation for your scenario:
-
-1. **Are you processing messages as they arrive in {{< product-c8y-iot >}}?**
-   - Yes → Use **Data Preparation**.
-   - No → Continue to step 2.
-
-2. **Are you building a real-time analytics model with custom calculations?**
-   - Yes → Use **Streaming Analytics**.
-   - No → Continue to step 3.
-
-3. **Are you processing data on edge devices before cloud transmission?**
-   - Yes → Use **thin-edge.io**.
-   - No → Consider whether smart functions are the right approach.
-
-## Common patterns across implementations
-
-All implementations share:
-
-- **Function signature pattern**: `export [async] function FUNCTION_NAME(inputs..., context) { ... }`
-- **ECMAScript 2023 support**: Use modern Javascript language features in all implementations.
-- **Standard library**: TextEncoder, TextDecoder, Base64, and console logging available everywhere.
-- **Sandboxing**: Security and multi-tenant isolation enforced in all implementations.
-- **Resource limits**: CPU and memory constraints protect platform stability.
-
 ## Next steps
 
 Understand the technical details and universal features in [Common features](#common-features).
 
 Learn about security, isolation, and resource constraints in [Sandbox and limits](#sandbox-and-limits).
-
-Start developing your first smart function in [Development](#development).
