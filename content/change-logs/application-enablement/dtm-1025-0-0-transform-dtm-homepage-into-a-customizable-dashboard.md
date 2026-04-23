@@ -16,6 +16,10 @@ version: 1025.0.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-04-09'
+  - label: apj.cumulocity.com
+    date: '2026-04-22'
+  - label: jp.cumulocity.com
+    date: '2026-04-22'
 ---
 The Digital Twin Manager homepage has been enhanced from a static
 overview page to a fully customizable dashboard, consistent with the
