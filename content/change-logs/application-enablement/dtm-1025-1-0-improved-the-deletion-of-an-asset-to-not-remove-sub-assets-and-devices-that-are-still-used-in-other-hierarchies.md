@@ -1,18 +1,31 @@
 ---
-date: "2026-04-21"
-title: "Improved deletion of assets in hierarchies"
-product_area: "Application enablement & solutions"
+date: '2026-04-21'
+title: Improved deletion of assets in hierarchies
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-QHu1GdukP"
-      label: "Feature"
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-2713"
-version: "1025.1.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-2713
+version: 1025.1.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-04-21'
+  - label: apj.cumulocity.com
+    date: '2026-04-22'
+  - label: jp.cumulocity.com
+    date: '2026-04-22'
+  - label: emea.cumulocity.com
+    date: '2026-04-23'
+  - label: us.cumulocity.com
+    date: '2026-04-23'
+  - label: cumulocity.com
+    date: '2026-04-23'
 ---
 Previously, the deletion of an asset caused cascaded deletion of all
 subassets and assigned devices, even if they were still used in a

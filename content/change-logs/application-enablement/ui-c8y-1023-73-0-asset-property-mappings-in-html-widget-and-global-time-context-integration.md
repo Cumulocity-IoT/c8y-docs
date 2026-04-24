@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-04-24'
 title: Asset property mappings and time context integration in HTML widget
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-66200
 version: 1023.73.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-04-24'
 ---
 The "HTML" widget has been enhanced with the following features:
 

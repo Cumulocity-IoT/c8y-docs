@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-04-24'
 title: Enhanced Event list view and widget
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-64563
 version: 1023.75.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-04-24'
 ---
 The event list view and the "Event list" widget have been migrated to Angular and enhanced to improve usability and performance, providing a modern, consistent
   foundation with the current UI framework. Updates include:
