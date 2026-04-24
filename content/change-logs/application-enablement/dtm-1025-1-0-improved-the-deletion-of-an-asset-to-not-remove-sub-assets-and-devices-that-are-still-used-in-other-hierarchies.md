@@ -19,7 +19,7 @@ subassets and assigned devices, even if they were still used in a
 different asset or hierarchy. This could cause unwanted side effects to
 other parts of the asset hierarchy. This behavior has been improved and now only
 subassets that are exclusively used in the hierarchy of the asset are
-removed. Other subassets will remain as is, and the whole hierarchy will
+removed. Other subassets will remain unchanged, and the whole hierarchy will
 stay intact.
 
 Furthermore, a new query parameter `deleteDevices` has been added to control
