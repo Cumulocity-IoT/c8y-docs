@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Make tenant option editable checkbox always visible
+title: Make tenant options editable checkbox visible for all users with appropriate permissions
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
