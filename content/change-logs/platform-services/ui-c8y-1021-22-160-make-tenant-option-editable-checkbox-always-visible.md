@@ -14,15 +14,4 @@ build_artifact:
 ticket: MTM-66520
 version: 1021.22.160
 ---
-The "Allow subtenants to edit this tenant option" checkbox is now always
-visible when creating or editing tenant options, regardless of tenant level.
-
-Previously, only management tenants could see and control this checkbox. This
-was unnecessarily restrictive since:
-- Any user with permission to create/edit tenant options should be able to
-  decide whether subtenants can modify them
-- Subtenants without tenant creation permissions cannot exploit this setting
-- The Cumulocity API allows all authorized users to set the editable property
-
-Users can now consistently control tenant option editability from any tenant
-level where they have the appropriate permissions.
+When creating or editing tenant options, you can now always see and control the "Allow subtenants to edit this tenant option" checkbox, regardless of your tenant level. Previously, only management tenants could access this checkbox, which prevented users in other tenant levels from deciding whether subtenants could modify their tenant options. Since any user with permission to create or edit tenant options should be able to control this setting, and the Cumulocity API already allows all authorized users to set the editable property, the checkbox is now consistently available to all users with the appropriate permissions across all tenant levels.
