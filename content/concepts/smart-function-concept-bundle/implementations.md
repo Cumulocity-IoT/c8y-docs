@@ -20,7 +20,7 @@ A Data Preparation rule contains exactly one smart function, which is applied to
 - Drop duplicate or malformed messages before they consume storage.
 - Route messages to different processing pipelines based on content.
 
-For detailed documentation on Data Preparation smart functions, see the Data Preparation guide.
+For detailed documentation on Data Preparation smart functions, see [Smart functions in Data Preparation](/data-preparation/smart-functions/).
 
 ### Streaming Analytics {#streaming-analytics}
 
