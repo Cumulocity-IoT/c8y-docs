@@ -18,6 +18,16 @@ version: 1025.0.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-04-14'
+  - label: apj.cumulocity.com
+    date: '2026-04-22'
+  - label: jp.cumulocity.com
+    date: '2026-04-22'
+  - label: emea.cumulocity.com
+    date: '2026-04-23'
+  - label: us.cumulocity.com
+    date: '2026-04-23'
+  - label: cumulocity.com
+    date: '2026-04-23'
 ---
 The Asset API has been changed to treat groups as assets. Previously, an
 asset was identified solely by the presence of the `c8y_IsAsset` fragment. 

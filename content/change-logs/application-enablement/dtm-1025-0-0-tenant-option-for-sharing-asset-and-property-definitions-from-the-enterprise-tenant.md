@@ -18,6 +18,16 @@ version: 1025.0.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-04-14'
+  - label: apj.cumulocity.com
+    date: '2026-04-22'
+  - label: jp.cumulocity.com
+    date: '2026-04-22'
+  - label: emea.cumulocity.com
+    date: '2026-04-23'
+  - label: us.cumulocity.com
+    date: '2026-04-23'
+  - label: cumulocity.com
+    date: '2026-04-23'
 ---
 Managing asset definitions across multiple subtenants previously
 required each tenant to maintain its own independent set of definitions.
