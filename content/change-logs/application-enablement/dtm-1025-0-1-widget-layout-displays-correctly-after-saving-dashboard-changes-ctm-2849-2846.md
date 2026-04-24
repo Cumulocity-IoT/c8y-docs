@@ -16,6 +16,16 @@ version: 1025.0.1
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-04-14'
+  - label: apj.cumulocity.com
+    date: '2026-04-22'
+  - label: jp.cumulocity.com
+    date: '2026-04-22'
+  - label: emea.cumulocity.com
+    date: '2026-04-23'
+  - label: us.cumulocity.com
+    date: '2026-04-23'
+  - label: cumulocity.com
+    date: '2026-04-23'
 ---
 Dashboard widgets previously displayed with incorrect sizes after saving
 the dashboard changes, causing layout misalignment and poor visibility
