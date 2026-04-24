@@ -28,7 +28,7 @@ For detailed documentation on Data Preparation smart functions, see the Data Pre
 
 **Function name**: `onInput`
 
-A Streaming Analytics model defines a processing pipeline made up of connected blocks. Smart functions appear as custom blocks within that pipeline. The function receives the output values from the preceding blocks and returns values for the next. The context provides `getState()` and `setState()` for maintaining state across invocations within a model partition.
+A Streaming Analytics model defines a processing pipeline made up of connected blocks. Smart Functions use the Smart Function block to provide custom implementations within that pipeline. The function receives the output values from the preceding blocks and returns values for the next. The context provides `getState()` and `setState()` for maintaining state across invocations within a model partition.
 
 **Example use cases**:
 - Calculate custom metrics or aggregations from real-time data streams.
@@ -36,13 +36,13 @@ A Streaming Analytics model defines a processing pipeline made up of connected b
 - Combine multiple data streams with custom fusion logic.
 - Maintain running state (for example, counters or history buffers) across events.
 
-For detailed documentation on Streaming Analytics smart functions, see the Streaming Analytics guide.
+For detailed documentation on Streaming Analytics smart functions, see the [Streaming Analytics guide](/streaming-analytics/). To learn about the smart function block specifically, see [Smart function block](/streaming-analytics/block-reference/#smart-function).
 
 ### thin-edge.io {#thin-edge-io}
 
 **Deployed as**: thin-edge.io flow
 
-**Function name**: `onMessage`
+**Function name**: `onMessage`, `onInterval` and `onStartup`
 
 A thin-edge.io flow defines a message-processing pipeline on the edge device and can include one or more smart functions at different stages. Each function receives a `DeviceMessage` and returns an array of `DeviceMessage` values, allowing you to filter, transform, or enrich data locally before it leaves the device.
 
@@ -52,4 +52,4 @@ A thin-edge.io flow defines a message-processing pipeline on the edge device and
 - Enrich device messages with local context or time-series calculations.
 - Route messages based on local rules before cloud transmission.
 
-For detailed documentation on thin-edge.io smart functions, see the thin-edge.io guide.
+For detailed documentation on thin-edge.io smart functions, see the [thin-edge.io flows documentation](https://thin-edge.github.io/thin-edge.io/extend/flows/).

@@ -8,7 +8,7 @@ layout: redirect
 
 Smart functions are a common extension mechanism built into {{< product-c8y-iot >}}. They let you embed custom Javascript logic directly into platform components—without building or deploying a custom microservice.
 
-Think of them as function-as-a-service for the IoT: each smart function is a focused piece of logic that runs inside a platform component, triggered by the component at the right moment. You write the function, configure it in the UI, and the platform handles execution, security, and scaling.
+Think of them as function-as-a-service for the Internet of Things: each smart function is a focused piece of logic that runs inside a platform component, triggered by the component at the right moment. You write the function, configure it in the UI, and the platform handles execution, security, and scaling.
 
 Smart functions sit between two extremes. They are more powerful and flexible than static configuration, letting you apply custom logic to your data and workflows. At the same time, they are far simpler than microservices—there is no container to build, no infrastructure to manage, and no separate deployment pipeline.
 

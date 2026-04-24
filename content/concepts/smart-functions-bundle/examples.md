@@ -65,5 +65,6 @@ export function onMessage(message, context) {
 }
 ```
 
+For further thin-edge.io examples, see [Flows examples](https://thin-edge.github.io/thin-edge.io/extend/flows/#examples).
 
 For detailed examples and component-specific patterns, refer to the documentation for each component (Data Preparation, Streaming Analytics, or thin-edge.io).
