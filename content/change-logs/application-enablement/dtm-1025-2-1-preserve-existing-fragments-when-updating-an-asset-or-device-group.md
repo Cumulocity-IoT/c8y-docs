@@ -15,7 +15,7 @@ ticket: "CTM-2789"
 version: "1025.2.1"
 ---
 The Digital Twin Manager now correctly preserves the existing fragments
-when you update an Asset or DeviceGroup. Previously, updating either
+when you update an asset or device group. Previously, updating either
 object type would incorrectly add both `c8y_IsAsset` and
 `c8y_IsDeviceGroup` fragments regardless of which fragments were
 originally present. This caused pure Assets to gain the DeviceGroup
