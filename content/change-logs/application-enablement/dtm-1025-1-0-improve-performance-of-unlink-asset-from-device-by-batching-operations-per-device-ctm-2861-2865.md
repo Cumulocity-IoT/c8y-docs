@@ -1,6 +1,6 @@
 ---
-date: ""
-title: "Improve performance of unlinkAssetFromDevice by batching operations per device. [CTM-2861] (#2865)"
+date: "2026-04-21"
+title: "Improved performance of unlinkAssetFromDevice by batching operations per device"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
@@ -14,6 +14,6 @@ build_artifact:
 ticket: "CTM-2861"
 version: "1025.1.0"
 ---
-Optimized unlinkAssetFromDevice(...) by grouping operations per device,
+Optimized unlinkAssetFromDevice endpoint of Assets API by grouping operations per device,
 reducing redundant lookups and ensuring a single update or delete per
 device instead of per linked series.

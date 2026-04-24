@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2026-04-21"
 title: "Improved the deletion of an asset to not remove sub-assets and devices that are still used in other hierarchies"
 product_area: "Application enablement & solutions"
 change_type:
