@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Asset property mappings and global time context integration in HTML widget
+title: Asset property mappings and time context integration in HTML widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
