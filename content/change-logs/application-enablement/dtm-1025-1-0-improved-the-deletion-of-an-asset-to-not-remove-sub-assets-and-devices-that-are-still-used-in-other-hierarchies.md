@@ -17,12 +17,12 @@ version: "1025.1.0"
 Previously, the deletion of an asset caused cascaded deletion of all
 subassets and assigned devices, even if they were still used in a
 different asset or hierarchy. This could cause unwanted side effects to
-other parts of the asset hierarchy. This had been improved and now only
-sub-assets that are exclusively used in the hierarchy of the asset are
-removed. Other sub-assets will remain as is and the whole hierarchy will
+other parts of the asset hierarchy. This behavior has been improved and now only
+subassets that are exclusively used in the hierarchy of the asset are
+removed. Other subassets will remain as is, and the whole hierarchy will
 stay intact.
 
-Furthermore a new query parameter `deleteDevices` is added to control
+Furthermore, a new query parameter `deleteDevices` has been added to control
 the deletion of assigned devices. If set to `true`, all exclusively
 assigned devices will be removed. Devices that are still assigned to
 other assets, will not be removed. If set to `false`, no devices will be
