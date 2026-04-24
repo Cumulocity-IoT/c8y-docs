@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-66200
 version: 1023.73.0
 ---
-The "HTML" widget has been enhanced by the following features:
+The "HTML" widget has been enhanced with the following features:
 
 - **Asset properties configuration**: Instead of a read-only list of properties from the currently selected asset, you can now browse and assign properties (asset, custom, and computed ones) to named keys - sourced not only from the main selected asset but also from its descendants. These keys can then be inserted into the HTML code editor as expressions.
 - **Time context integration**: The widget can now be controlled by the dashboard's global time context settings or by widget's local settings; both the `c8yContext` object and the new `c8yProperties` object update automatically when the auto-refresh mode is enabled.
