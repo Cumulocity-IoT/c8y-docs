@@ -16,3 +16,4 @@ The current preview version includes a number of functional limitations as outli
 * You may see an `internal` folder with tables for internal service information. Do not modify these tables.
 * The service does not offload any Cumulocity-internal inventory entries, events, measurements and alarms.
 * Iceberg credential vending is not yet supported. If you use the Iceberg catalog from another application, you have to provide credentials for the object store that you use.
+* Users automatically get read permissions to the Dremio data source assigned. These read permissions cannot be manually revoked.
