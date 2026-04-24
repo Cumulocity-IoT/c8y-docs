@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-64563
 version: 1023.75.0
 ---
-The event list and the "Event list" widget have been migrated to Angular and enhanced to improve usability and performance, providing a modern, consistent
+The event list view and the "Event list" widget have been migrated to Angular and enhanced to improve usability and performance, providing a modern, consistent
   foundation with the current UI framework. Updates include:
  **Events page in Cockpit**: An **Events** page is now available in the Cockpit application, not only in the Device Management application.                         
   - **Events tab in Cockpit groups**: The **Events** tab with the events list is now available for Cockpit groups.                                                     
