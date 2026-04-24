@@ -14,6 +14,6 @@ build_artifact:
 ticket: "CTM-2861"
 version: "1025.1.0"
 ---
-Optimized unlinkAssetFromDevice endpoint of Assets API by grouping operations per device,
+To improve the performance, the `unlinkAssetFromDevice` endpoint of the Assets API has been optimized by grouping operations per device,
 reducing redundant lookups and ensuring a single update or delete per
 device instead of per linked series.
