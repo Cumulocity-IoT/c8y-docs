@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Replace custom column popover with standard popover implementation
+title: Deletion confirmation dialog no longer overlaps relevant content
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5058
 version: 1023.75.2
 ---
-In data-grid, the confirmation dialog for deleting a custom column in the Configure columns dropdown used to appear on top of and obscure the columns dropdown, making it difficult for users to see the underlying content while confirming the deletion. This change adjusts the positioning an behaviour of the deletion confirmation modal so it no longer overlaps the relevant view, ensuring the dialog is clearly visible without hiding the configured columns behind it. 
+The confirmation dialog for deleting a custom column in the **Configure columns** dropdown used to appear on top of and obscure the columns dropdown, making it difficult for users to see the underlying content while confirming the deletion. This change adjusts the positioning and behaviour of the deletion confirmation modal so it no longer overlaps relevant content, ensuring the dialog is clearly visible without hiding the configured columns behind it. 
