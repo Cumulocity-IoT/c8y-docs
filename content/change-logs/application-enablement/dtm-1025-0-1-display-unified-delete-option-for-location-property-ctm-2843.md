@@ -20,6 +20,12 @@ environment_availability:
     date: '2026-04-22'
   - label: jp.cumulocity.com
     date: '2026-04-22'
+  - label: emea.cumulocity.com
+    date: '2026-04-23'
+  - label: us.cumulocity.com
+    date: '2026-04-23'
+  - label: cumulocity.com
+    date: '2026-04-23'
 ---
 In the **Add asset** view, previously, two remove buttons appeared, one for the fields and
 one for the map when the Location property was selected.
