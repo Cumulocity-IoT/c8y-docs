@@ -76,6 +76,16 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     });
   };
 
+  // Text fragment directives: #:~:text=[prefix-,]textStart[,textEnd][,-suffix]
+  const checkTextFragment = (fragment) => {
+    const textParam = fragment.replace(/^:~:text=/, '');
+    const parts = textParam.split(',');
+    // Skip prefix- (ends with '-') and suffix (starts with '-'); take first plain part
+    const textStart = parts.find(p => !p.endsWith('-') && !p.startsWith('-')) || parts[0];
+    const decodedText = decodeURIComponent(textStart);
+    cy.contains(decodedText).should('exist');
+  };
+
   Cypress.on('fail', (error) => {
     const sourceFiles = Cypress.env('sourceFiles');
     if (sourceFiles) {
@@ -98,6 +108,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     it(`should validate URL: ${item.link}`, () => {
       const url = item.link;
       const fragment = url.includes('#') ? url.split('#').slice(-1)[0] : null;
+      const isTextFragment = fragment !== null && fragment.startsWith(':~:text=');
       const isCodexPage = url.includes('/codex/');
       const isApiPage = url.includes('/api/');
       const isGithubPage = url.includes('github.com');
@@ -171,7 +182,11 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       else if (isApiPage) {
         cy.visit(url);
         if (fragment) {
-          cy.get(`[id="${fragment}"]`).should('exist');
+          if (isTextFragment) {
+            checkTextFragment(fragment);
+          } else {
+            cy.get(`[id="${fragment}"]`).should('exist');
+          }
         }
       }
       else if (isGithubBlobLine) {
@@ -190,11 +205,19 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       }
       else if (isGithubPage && fragment) {
         cy.visit(url);
-        checkGithubFragment(fragment);
+        if (isTextFragment) {
+          checkTextFragment(fragment);
+        } else {
+          checkGithubFragment(fragment);
+        }
       }
       else if (fragment) {
         cy.visit(url, {failOnStatusCode: false, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122.0 Safari/537.36' }});
-        checkRegularFragment(fragment);
+        if (isTextFragment) {
+          checkTextFragment(fragment);
+        } else {
+          checkRegularFragment(fragment);
+        }
       }
       else {
         cy.request({
