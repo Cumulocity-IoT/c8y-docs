@@ -15,7 +15,7 @@ ticket: "CTM-2713"
 version: "1025.1.0"
 ---
 Previously, the deletion of an asset caused cascaded deletion of all
-sub-assets and assigned devices, even if they are still used in a
+subassets and assigned devices, even if they were still used in a
 different asset or hierarchy. This could cause unwanted side effects to
 other parts of the asset hierarchy. This had been improved and now only
 sub-assets that are exclusively used in the hierarchy of the asset are
