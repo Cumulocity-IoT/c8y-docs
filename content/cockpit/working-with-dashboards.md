@@ -16,7 +16,7 @@ helpcontent:
     The availability of the options described below may vary based on the context, for example, whether you are in a home, group or device dashboard.
 
 
-    Click **Add dashboard** in the tab bar to add a new dashboard. By default, the dashboard is locked until the edit mode is enabled. To do so, click **Edit widgets** in the top menu bar. Click **Add widget** in the top menu bar to add a new widget to the dashboard. Use the cogwheel icon to edit or remove widgets. Rearrange widgets by drag and drop. Resize widgets using the diagonal arrows icon located in the bottom right corner of the widget.
+    Click **Add dashboard** in the tab bar to add a new dashboard. Enable the edit mode by clicking **Edit widgets** in the top menu bar. Then click **Add widget** to add a new widget to the dashboard. Use the cogwheel icon to edit or remove widgets. Rearrange widgets by drag and drop. Resize widgets using the diagonal arrows icon located in the bottom right corner of the widget.
 
 
     To copy a dashboard to another group or device, open the **More** dropdown menu and select **Copy dashboard**. To share a dashboard with all devices of the same type, click **Dashboard settings** and enable the **Dashboard template** option.
