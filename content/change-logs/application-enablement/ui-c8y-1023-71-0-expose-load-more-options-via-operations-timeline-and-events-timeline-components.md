@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5963
 version: 1023.71.0
 ---
-The operations-timeline and events-timeline components previously did not expose options to customize the load more behavior when retrieving additional timeline entries. You can now configure loadMore options directly through these components, giving you more control over how additional operations and events are loaded and displayed in your applications. This change allows you to customize pagination and loading behavior to better match your application's requirements and user experience needs.
+The operations-timeline and events-timeline components previously did not expose options to customize the load more behavior when retrieving additional timeline entries. You can now configure `loadMore` options directly through these components, giving you more control over how additional operations and events are loaded and displayed in your applications. This change allows you to customize pagination and loading behavior to better match your application's requirements and user experience needs.
