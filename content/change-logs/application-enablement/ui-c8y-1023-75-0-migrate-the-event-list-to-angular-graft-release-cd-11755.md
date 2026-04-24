@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Event list and Event list widget migrated to Angular
+title: Enhanced Event list view and widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
