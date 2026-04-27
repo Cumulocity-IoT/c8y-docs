@@ -16,5 +16,9 @@ version: 1023.75.1
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-04-24'
+  - label: apj.cumulocity.com
+    date: '2026-04-27'
+  - label: jp.cumulocity.com
+    date: '2026-04-27'
 ---
 Previously, the **Device profile** tab prevented users from switching device profiles if one profile was already assigned. The selection dropdown would automatically reset to the current device profile before the assignment could be completed. This issue has been resolved. The UI now correctly maintains the selected value, ensuring that users can successfully reassign or update profiles for any device.

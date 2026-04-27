@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-04-27'
 title: Expose loadMore options via operations-timeline and events-timeline components
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,18 @@ build_artifact:
     label: ui-c8y
 ticket: DM-5963
 version: 1023.71.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-04-27'
+  - label: apj.cumulocity.com
+    date: '2026-04-27'
+  - label: jp.cumulocity.com
+    date: '2026-04-27'
+  - label: emea.cumulocity.com
+    date: '2026-04-24'
+  - label: us.cumulocity.com
+    date: '2026-04-24'
+  - label: cumulocity.com
+    date: '2026-04-24'
 ---
 The operations-timeline and events-timeline components previously did not expose options to customize the load more behavior when retrieving additional timeline entries. You can now configure `loadMore` options directly through these components, giving you more control over how additional operations and events are loaded and displayed in your applications. This change allows you to customize pagination and loading behavior to better match your application's requirements and user experience needs.
