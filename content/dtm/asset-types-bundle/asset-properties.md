@@ -15,7 +15,7 @@ helpContent:
   To add a new Property definition, click **Add property definition**."
 ---
 
-Property definitions are the parameters that define an [asset definition](#asset-definitions). One or more property definitions are used to define an asset definition. Property definitions are created in the **Property definitions** page.
+Property definitions are the parameters that define an [asset definition](/dtm/asset-types/#asset-models). One or more property definitions are used to define an asset definition. Property definitions are created in the **Property definitions** page.
 
 To reach the **Property definitions** page, navigate to **Libraries > Property definitions**.
 
@@ -116,7 +116,7 @@ The **Default value** field is only shown if the selected **Type** is either "Te
 The default value must adhere to all validations provided beforehand.
 {{< /c8y-admon-info>}}
 
-Once you have defined all necessary property definitions for your project, you must define the [asset definitions](/dtm/asset-types/#asset-definitions).
+Once you have defined all necessary property definitions for your project, you must define the [asset definitions](/dtm/asset-types/#asset-models).
 
 ### Property definition types {#property-definition-types}
 
