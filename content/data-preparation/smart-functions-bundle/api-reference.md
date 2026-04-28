@@ -1,131 +1,60 @@
 ---
-weight: 20
+weight: 80
 title: API reference
 layout: redirect
 ---
 
-### Function signature {#function-signature}
+The full TypeScript API for Data Preparation smart functions is published as an NPM package. The package contains the type definitions for all input and output types, the context object, and the function declarations themselves.
 
-```javascript
-export function onMessage(message, context) {
-  // Your implementation
-  return [/* array of CumulocityObject or DeviceMessage */];
+You can use the package directly when developing in TypeScript outside the platform. The same types also drive AI-assisted code generation and the in-UI editing experience.
+
+### Package {#package}
+
+**Package name**: To be confirmed.
+
+**Install**:
+
+```bash
+npm install <package-name>
+```
+
+**Usage in TypeScript**:
+
+```typescript
+import {
+  DeviceMessage,
+  DataPrepContext,
+  CumulocityObject,
+  Measurement,
+  Event,
+  Alarm,
+  Operation,
+  ExternalId,
+  MeasurementValue
+} from "<package-name>";
+
+export function onMessage(
+  msg: DeviceMessage,
+  context: DataPrepContext
+): CumulocityObject[] {
+  // ...
 }
 ```
 
-### Input: DeviceMessage {#input-devicemessage}
+### Online reference {#online-reference}
 
-The `DeviceMessage` object represents a message received from a device or transport protocol:
+The generated API documentation is hosted at:
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `payload` | `Uint8Array` | The message payload as bytes. Use `TextDecoder` to decode JSON or text, or use specialized libraries for binary formats. |
-| `transportID` | `string` | The transport identifier (for example, "mqtt", "opc-ua", "http") indicating the protocol the message arrived through. |
-| `clientID` | `string` (optional) | The transport client identifier, such as MQTT client ID or OPC UA node identifier. |
-| `topic` | `string` | The message topic or path on the transport (for example, MQTT topic or OPC UA object path). |
-| `transportFields` | `object` (optional) | Protocol-specific metadata. For MQTT, may include quality of service (QoS) or retain flags. |
-| `time` | `Date` (optional) | The timestamp when the message was received by the platform. |
+**URL**: To be confirmed.
 
-### Output: CumulocityObject {#output-cumulocityobject}
+The online reference contains the same definitions as the NPM package, in browseable form, with full type information and inline documentation.
 
-The `CumulocityObject` represents a domain object to be created or updated in Cumulocity. The base interface has the following structure:
+### Things to consider when writing the section {#section-considerations}
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `cumulocityType` | `string` | The type of object: "measurement", "event", "alarm", or "operation". |
-| `payload` | `object` | The object data specific to the type (see specialized interfaces below). |
-| `externalSource` | `ExternalId[]` | Array of external IDs that identify the device. At least one is required to look up the Cumulocity device ID. |
-| `destination` | `string` (optional) | Advanced: Where to send the object. Defaults to "cumulocity" for Cumulocity platform. |
+<!-- Notes for the documentation team — remove before publishing. -->
 
-### Specialized output types {#specialized-output-types}
-
-#### Measurement
-
-```javascript
-{
-  cumulocityType: 'measurement',
-  payload: {
-    type: 'c8y_Temperature',  // measurement type
-    time: new Date(),
-    c8y_Temperature: {         // measurement fragment
-      T: { value: 25.5, unit: 'C' }
-    }
-  },
-  externalSource: [{ externalId: 'device123', type: 'c8y_Serial' }]
-}
-```
-
-#### Event
-
-```javascript
-{
-  cumulocityType: 'event',
-  payload: {
-    type: 'c8y_LocationUpdate',
-    text: 'Device location updated',
-    time: new Date(),
-    c8y_Position: {            // custom fragment
-      lat: 52.5200,
-      lng: 13.4050
-    }
-  },
-  externalSource: [{ externalId: 'device123', type: 'c8y_Serial' }]
-}
-```
-
-#### Alarm
-
-```javascript
-{
-  cumulocityType: 'alarm',
-  payload: {
-    type: 'c8y_Temperature',
-    severity: 'CRITICAL',
-    text: 'Temperature exceeds threshold',
-    time: new Date()
-  },
-  externalSource: [{ externalId: 'device123', type: 'c8y_Serial' }]
-}
-```
-
-#### Operation
-
-```javascript
-{
-  cumulocityType: 'operation',
-  payload: {
-    status: 'PENDING',
-    c8y_Restart: {}
-  },
-  externalSource: [{ externalId: 'device123', type: 'c8y_Serial' }]
-}
-```
-
-### Context object {#context-object}
-
-The `context` parameter provides metadata about the execution environment:
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `runtime` | `string` | Always "c8y-data-preparation" for Data Preparation smart functions. |
-
-### Behavior {#behavior}
-
-**Invocation**: The `onMessage` function is called synchronously for each message matching the rule's conditions. The rule stops processing and waits for the function to complete before proceeding.
-
-**Error handling**: If your function throws an error, the message is dropped and an error is logged. Return an empty array to drop a message intentionally.
-
-**Return values**: Return an array of `CumulocityObject` or `DeviceMessage` instances. Each object in the array is processed independently:
-- `CumulocityObject` instances are created/updated in Cumulocity
-- `DeviceMessage` instances can be forwarded to subsequent rules or destinations
-
-Returning an empty array (`[]`) drops the message without creating anything.
-
-### Statefulness {#statefulness}
-
-Data Preparation smart functions are **stateless**. Each function invocation is independent and cannot access data from previous invocations. If you need to maintain state across messages, consider:
-
-- Using Streaming Analytics models with state management capabilities
-- Pre-aggregating data externally before processing in Data Preparation
-- Implementing a stateless aggregation pattern within the function (for example, calculating percentiles from a single message)
-
+- Once the package name and URL are published, fill them in.
+- Should we mirror the entire reference here, or just link out and keep the inline documentation in [Data types](#data-types) and [Context object](#context)?
+- Add the `declare global` strategy if we adopt it — this enforces the function signature in TypeScript projects.
+- Consider linking to a starter template repo, if one exists.
+- Note any versioning policy for the package — semver, breaking-change policy.

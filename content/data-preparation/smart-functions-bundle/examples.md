@@ -1,8 +1,12 @@
 ---
-weight: 30
+weight: 70
 title: Examples
 layout: redirect
 ---
+
+This section provides practical, task-oriented examples of `onMessage` smart functions for Data Preparation. Each example focuses on a single common pattern.
+
+For the data types used (`DeviceMessage`, `CumulocityObject`, etc.), see [Data types](#data-types). For the runtime guarantees that apply to all examples, see [Runtime behavior and limits](#runtime-behavior-and-limits).
 
 ### Parse JSON and create a measurement {#parse-json-measurement}
 
@@ -146,3 +150,21 @@ export function onMessage(message, context) {
 }
 ```
 
+### Things to consider when writing the section {#section-considerations}
+
+<!-- Notes for the documentation team — remove before publishing. -->
+
+- Group examples by task category? Suggested groupings:
+  - Decoding payloads (JSON, Base64, binary, protobuf, CBOR)
+  - Producing measurements (single value, multi-series, with custom fragments)
+  - Producing events, alarms, operations
+  - Filtering and dropping (silent drops vs. validation failures)
+  - Routing to alternative destinations
+  - Error handling patterns
+- Should each example show both the input it expects and the output it produces?
+- Worth a "before/after" pattern for each example showing the transformation visually?
+- Do we want a "minimal hello world" first example that just creates a fixed measurement?
+- Add an example using async/await once we have a use case for it (for example, an async library).
+- Add an example showing a TypeScript version alongside a Javascript version, for users developing externally.
+- Examples should ideally compile and run unchanged — consider running them through the actual runtime as part of doc CI.
+- Should we link each example to a corresponding page in a starter repo?
