@@ -6,7 +6,7 @@ layout: redirect
 
 ### What are smart functions? {#what-are-smart-functions}
 
-Smart functions are a common extension mechanism built into {{< product-c8y-iot >}}. They let you embed custom Javascript logic directly into platform components—without building or deploying a custom microservice.
+Smart functions are a consistent extension approach built into {{< product-c8y-iot >}}. They let you embed custom Javascript logic directly into platform components—without building or deploying a custom microservice.
 
 Think of them as function-as-a-service for the Internet of Things: each smart function is a focused piece of logic that runs inside a platform component, triggered by the component at the right moment. You write the function, configure it in the UI, and the platform handles execution, security, and scaling.
 
@@ -14,9 +14,9 @@ Smart functions sit between two extremes. They are more powerful and flexible th
 
 ### How smart functions are deployed {#how-smart-functions-are-deployed}
 
-Smart functions do not exist in isolation. Each component has its own object type that you create, configure, and manage, and smart functions are embedded within it.
+Smart functions do not exist in isolation. Each component has its own object type that you create, configure, and manage, and smart functions are embedded within it. For example:
 
-In **Data Preparation**, the object is a **rule**. Each rule contains exactly one smart function, which is applied to every inbound device message that the rule matches.
+In **Data Preparation**, the object is a **rule**. Each rule contains exactly one smart function, which is applied to every message that the rule matches.
 
 In **Streaming Analytics**, the object is a **model**. A model defines a processing pipeline made up of connected blocks. Smart functions appear as one type of block within that pipeline, alongside built-in blocks for filtering, aggregation, and output. A model can contain any number of blocks, including multiple smart function blocks.
 
@@ -26,7 +26,7 @@ You create and manage rules, models, and flows through each component's UI or AP
 
 ### Key advantages {#key-advantages}
 
-**A consistent extension mechanism across the platform**
+**A consistent extension approach across the platform**
 Smart functions follow the same concepts and patterns wherever they appear. Learn the model once, and apply it across Data Preparation, Streaming Analytics, thin-edge.io, and future components. This consistency also reduces the learning required to build end-to-end solutions: the same mental model, tooling, and development workflow applies whether you are writing logic for the cloud or the edge.
 
 **Easy movement of logic between cloud and edge**
@@ -40,6 +40,9 @@ Microservices are the right tool when you need a fully independent service with 
 
 **Integrated into platform components and UI**
 Smart functions are first-class citizens of each component. You write and manage them through the component's own UI, not through a separate development or deployment tool.
+
+**Automatically scalable and secure**
+The platform handles execution of smart functions, automatically scaling them as needed and ensuring they run securely in a sandboxed environment. You can focus on writing your logic without worrying about infrastructure, security, or performance.
 
 **AI-assisted development**
 Smart functions are designed to work well with AI code generation. The function signatures are simple and well-typed, which makes them easy to describe to an AI tool and easy to review. Where components provide an in-platform editing experience, AI assistance is integrated directly into the editor, allowing you to generate, refine, and explain smart functions without leaving the platform.
