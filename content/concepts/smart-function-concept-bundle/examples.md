@@ -33,7 +33,7 @@ export function onMessage(message, context) {
 }
 ```
 
-### Streaming Analytics: Calculate moving average {#streaming-analytics-example}
+### Streaming analytics: Calculate moving average {#streaming-analytics-example}
 
 This example maintains state to compute a moving average of input values:
 
