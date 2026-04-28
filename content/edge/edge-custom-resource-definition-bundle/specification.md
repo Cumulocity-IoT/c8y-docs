@@ -255,12 +255,12 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 ##### Fields
 
 - `limits` _[LimitValues](#limitvalues)_ Optional
-  - 
+  - Specify resource limits for the component.
   
 
 
 - `requests` _[RequestValues](#requestvalues)_ Optional
-  - 
+  - Specify resource requests for the component.
   
 
 
