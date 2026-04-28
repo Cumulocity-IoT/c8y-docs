@@ -1,5 +1,5 @@
 ---
-title: Asset models
+title: Asset definitions
 layout: bundle
 outputs:
   - html

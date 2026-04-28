@@ -275,6 +275,7 @@ This type of audit logs may be created for both hosted applications and microser
 <li>Tenant certificate authority(CA) renewed</li>
 <li>Tenant certificate authority(CA) renewal failed</li>
 <li>Tenant certificate authority(CA) signed certificate</li>
+<li>Tenant certificate authority(CA) re-signed certificate</li>
 </ul></td>
 </tr>
 
