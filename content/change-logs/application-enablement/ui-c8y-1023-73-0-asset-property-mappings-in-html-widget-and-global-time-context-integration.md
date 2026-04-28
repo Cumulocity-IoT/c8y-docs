@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-04-27'
   - label: jp.cumulocity.com
     date: '2026-04-27'
+  - label: us.cumulocity.com
+    date: '2026-04-28'
+  - label: cumulocity.com
+    date: '2026-04-28'
 ---
 The "HTML" widget has been enhanced with the following features:
 
