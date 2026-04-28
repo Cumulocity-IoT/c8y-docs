@@ -8,7 +8,7 @@ This section provides practical examples of smart functions from different compo
 
 ### Data Preparation: Parse and create measurements {#data-preparation-example}
 
-This example parses an incoming device message and creates a Cumulocity measurement:
+This example parses an incoming device message and creates a {{< product-c8y-iot >}} measurement:
 
 ```javascript
 export function onMessage(message, context) {
