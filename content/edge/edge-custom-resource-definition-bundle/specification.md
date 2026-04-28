@@ -28,7 +28,7 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
 
 - `licenseKey` _string_ Required
-  - Edge license file you received for the domain.<br />If you do not have a license, you must request one from product support at https://cumulocity.com/docs/additional-resources/contacting-support/<br />When requesting license, you must provide the following details:<br />&nbsp;&nbsp;- Domain Name: The domain name assigned to your Edge installation (for example, 'edge.mycompany.com').<br />&nbsp;&nbsp;- Company Name: The name under which the license was purchased.<br />For more information, see [Edge license](/edge/installing-edge/#domain-name-validation-for-edge-license-key-generation).<br />
+  - Edge license file you received for the domain.<br />If you do not have a license, you must request one from [product support](/additional-resources/contacting-support/).<br />When requesting license, you must provide the following details:<br />&nbsp;&nbsp;- Domain Name: The domain name assigned to your Edge installation (for example, 'edge.mycompany.com').<br />&nbsp;&nbsp;- Company Name: The name under which the license was purchased.<br />For more information, see [Edge license](/edge/installing-edge/#domain-name-validation-for-edge-license-key-generation).<br />
   - **c8yedge tool:**
     ```shell
     c8yedge config --set-file licenseKey=<path/to/license.txt>
