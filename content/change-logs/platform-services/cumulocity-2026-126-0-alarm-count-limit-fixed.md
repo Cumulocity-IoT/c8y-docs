@@ -1,6 +1,6 @@
 ---
 date: '2026-04-21'
-title: Fixed issue in the alarm counting API
+title: Fixed incorrect alarm count limit for users with global read permissions
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
