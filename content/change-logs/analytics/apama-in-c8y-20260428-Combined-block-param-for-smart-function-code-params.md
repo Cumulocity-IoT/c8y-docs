@@ -1,6 +1,6 @@
 ---
 date: '2026-02-05'
-title: Combined block parameter for Smart Function code parameters
+title: Combined block parameter for function code in Smart Function block
 change_type:
   - value: change-pXAlHAWka
     label: Preview
@@ -16,7 +16,7 @@ version: 27.103.0
 
 ---
 
-The Smart Function block now uses a single, dynamically sized block parameter instead of a fixed set of parameters for providing values to the Smart Function code.
+The Smart Function block now uses a single, dynamically sized block parameter instead of a fixed set of parameters for providing values to the smart function code.
 
 {{< c8y-admon-preview >}}
 The Smart Function block is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
@@ -24,7 +24,7 @@ The Smart Function block is in Public Preview, that is, it is not enabled by def
 
 Specifically, block parameters **params[0]**, **params[1]**, **params[2]**, **params[3]**, and **params[4]** have been replaced by the **Parameters for the Smart Function code** parameter, which is of list type. You can add any number of values to it.
 
-The way to access the parameter values inside the Smart Function code remains the same:
+The way to access the parameter values inside the smart function code remains the same:
 
 ```javascript
 let firstParam = context.params[0];
