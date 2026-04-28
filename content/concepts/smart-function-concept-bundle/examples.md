@@ -6,7 +6,7 @@ layout: redirect
 
 This section provides practical examples of smart functions from different components and domains.
 
-### Data Preparation: Parse and create measurements {#data-preparation-example}
+### Data preparation: Parse and create measurements {#data-preparation-example}
 
 This example parses an incoming device message and creates a {{< product-c8y-iot >}} measurement:
 
