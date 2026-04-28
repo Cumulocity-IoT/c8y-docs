@@ -15,7 +15,7 @@ Smart functions are available across multiple components of {{< product-c8y-iot 
 A Data Preparation rule contains exactly one smart function, which is applied to every inbound device message that the rule matches. The function receives a `DeviceMessage` and returns an array of `CumulocityObject` or `DeviceMessage` values.
 
 **Example use cases**:
-- Parse raw device payloads and create Cumulocity measurements, events, or alarms.
+- Parse raw device payloads and create {{< product-c8y-iot >}} measurements, events, or alarms.
 - Enrich messages with additional context or calculated fields.
 - Drop duplicate or malformed messages before they consume storage.
 - Route messages to different processing pipelines based on content.
