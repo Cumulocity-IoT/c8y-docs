@@ -33,7 +33,7 @@ Supported language features include:
 
 In addition to the standard library features within the ES2023 standard, all smart functions also provide a Console API: `console.log()`, `console.info()`, `console.warn()`, `console.error()`, and `console.debug()` for logging messages visible in the system.
 
-Some components my provide other libraries in addition depending on the needs of that component. 
+Some components may provide other libraries in addition depending on the needs of that component.
 
 These utilities are sufficient for most common tasks. If you need additional functionality, additional libraries can be deployed with all smart functions via transpilation when you write your code outside of the platform. On a per-component-basis it may also be possible to provide further libraries that can be included at runtime within the Javascript.
 
