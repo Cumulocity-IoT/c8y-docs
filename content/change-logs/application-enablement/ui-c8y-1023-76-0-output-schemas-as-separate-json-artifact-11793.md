@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Output JSON schemas of Web SDK based applications as separate JSON artifacts
+title: Output JSON schemas of Web SDK-based applications as separate JSON artifacts
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
