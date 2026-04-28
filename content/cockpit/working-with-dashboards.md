@@ -9,14 +9,17 @@ sector:
 weight: 40
 helpcontent:
   - label: working-with-dashboards
-    title: Working with Dashboards
+    title: Working with dashboards
     content: "Dashboards let you visualize your data by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
+    
+    
+    The availability of the options described below may vary based on the context, for example, whether you are in a home, group or device dashboard.
 
 
-    Click the plus icon next to the dashboard tabs to add a dashboard. You may copy a dashboard from one device to another or you may share a dashboard with all devices of a specific device type.
+    Click **Add dashboard** in the tab bar to add a new dashboard. Enable the edit mode by clicking **Edit widgets** in the top menu bar. Then click **Add widget** to add a new widget to the dashboard. Use the cogwheel icon to edit or remove widgets. Rearrange widgets by drag and drop. Resize widgets using the diagonal arrows icon located in the bottom right corner of the widget.
 
 
-    The dashboard is locked until the edit mode is enabled. To do so click **Edit widgets** in the top menu bar. On a dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon. Click **Add widget** in the top menu bar to add a new widget to the dashboard or use the cogwheel icon to edit or remove widgets.
+    To copy a dashboard to another group or device, open the **More** dropdown menu and select **Copy dashboard**. To share a dashboard with all devices of the same type, click **Dashboard settings** and enable the **Dashboard template** option.
 
 
     Cumulocity includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Widgets collection* in the user documentation for details on each widget type and its configuration."
