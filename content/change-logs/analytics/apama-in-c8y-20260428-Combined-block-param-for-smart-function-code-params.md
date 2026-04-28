@@ -22,7 +22,7 @@ The Smart Function block now uses a single, dynamically sized block parameter in
 The Smart Function block is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
 {{< /c8y-admon-preview >}}
 
-Specifically, block parameters **params[0]**, **params[1]**, **params[2]**, **params[3]**, and **params[4]** have been replaced by the **Parameters for the Smart Function code** parameter, which is of list type. You can add any number of values to it.
+Specifically, the block parameters **params[0]**, **params[1]**, **params[2]**, **params[3]**, and **params[4]** have been replaced by the **Parameters for the Smart Function code** parameter, which is of the list type. You can add any number of values to it.
 
 The way to access the parameter values inside the smart function code remains the same:
 
