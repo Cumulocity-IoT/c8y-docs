@@ -28,7 +28,7 @@ For detailed documentation on Data Preparation smart functions, see [Smart funct
 
 **Function name**: `onInput`
 
-A Streaming Analytics model defines a processing pipeline made up of connected blocks. Smart Functions use the Smart Function block to provide custom implementations within that pipeline. The function receives the output values from the preceding blocks and returns values for the next. The context provides `getState()` and `setState()` for maintaining state across invocations within a model partition.
+A Streaming Analytics model defines a processing pipeline made up of connected blocks. Smart functions use the Smart function block to provide custom implementations within that pipeline. The function receives the output values from the preceding blocks and returns values for the next. The context provides `getState()` and `setState()` for maintaining state across invocations within a model partition.
 
 **Example use cases**:
 - Calculate custom metrics or aggregations from real-time data streams.

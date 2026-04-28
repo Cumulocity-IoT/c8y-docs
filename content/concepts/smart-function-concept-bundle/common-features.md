@@ -21,7 +21,7 @@ The final parameter is always a `context` object provided by the system. This ob
 
 ### Language and runtime {#language-and-runtime}
 
-Smart functions run in a Javascript runtime and support **ECMAScript 2023** features and later. Some components allow you to write Javascript code directly within the platform in the Cumulocity UI. Alternatively, you can write and transpile your code outside the platform—using Javascript directly or TypeScript with your own build toolchain—and upload the resulting Javascript file for execution.
+Smart functions run in a Javascript runtime and support **ECMAScript 2023** features and later. Some components allow you to write Javascript code directly within the platform in the {{< product-c8y-iot >}} UI. Alternatively, you can write and transpile your code outside the platform—using Javascript directly or TypeScript with your own build toolchain—and upload the resulting Javascript file for execution.
 
 Supported language features include:
 
@@ -35,7 +35,7 @@ In addition to the standard library features within the ES2023 standard, all sma
 
 Some components may provide other libraries in addition depending on the needs of that component.
 
-These utilities are sufficient for most common tasks. If you need additional functionality, additional libraries can be deployed with all smart functions via transpilation when you write your code outside of the platform. On a per-component-basis it may also be possible to provide further libraries that can be included at runtime within the Javascript.
+These utilities are sufficient for most common tasks. If you need additional functionality, you can deploy additional libraries with all smart functions via transpilation when you write your code outside of the platform. On a per-component-basis it may also be possible to provide further libraries that can be included at runtime within the Javascript.
 
 ### Context object {#context-object}
 
