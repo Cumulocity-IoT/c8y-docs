@@ -66,7 +66,7 @@ The system automatically handles both synchronous and asynchronous function sign
 
 ### No global state {#no-global-state}
 
-Each invocation of your smart function runs in isolation. You must not rely on global variables or state that persists between invocations. Every execution receives fresh inputs, and any side effects outside your function's inputs and outputs are not guaranteed to persist.
+Each invocation of your smart function runs in isolation. You must not rely on global variables or state that persists between invocations. Every execution receives fresh inputs, and the system does not guarantee that any side effects outside your function's inputs and outputs will persist.
 
 This design ensures that smart functions are stateless, scalable, and predictable. If you need to maintain state (for example, counters or caches), use the context object or implementation-specific utilities provided by your component.
 
