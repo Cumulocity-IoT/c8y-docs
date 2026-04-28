@@ -1,5 +1,5 @@
 ---
-date: '2026-04-21'
+date:
 title: Fixed issue in the alarm counting API
 change_type:
   - value: change-VSkj2iV9m
