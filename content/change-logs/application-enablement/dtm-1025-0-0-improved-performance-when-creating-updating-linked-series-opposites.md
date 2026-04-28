@@ -20,6 +20,12 @@ environment_availability:
     date: '2026-04-22'
   - label: jp.cumulocity.com
     date: '2026-04-22'
+  - label: emea.cumulocity.com
+    date: '2026-04-23'
+  - label: us.cumulocity.com
+    date: '2026-04-23'
+  - label: cumulocity.com
+    date: '2026-04-23'
 ---
 When creating or updating linked data points via the API, the endpoint previously made separate Inventory API calls to look up the source device and resolve the corresponding opposite-series entries. This increased latency, particularly in environments with large asset hierarchies containing many linked data points.
 
