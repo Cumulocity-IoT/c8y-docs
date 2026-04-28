@@ -1,5 +1,5 @@
 ---
-date: '2026-04-27'
+date: 
 title: New REST endpoints for inventory bulk create and update operations
 product_area: Platform services
 change_type:
