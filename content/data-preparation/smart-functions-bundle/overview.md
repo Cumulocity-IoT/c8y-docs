@@ -8,7 +8,7 @@ This section explains how to write smart functions for use within {{< product-c8
 
 ### What's covered here {#whats-covered}
 
-This section focuses on **writing the function code itself** — semantics, APIs, types, and runtime behavior. It assumes you have a rule in which to deploy the function, and that you understand the broader concept of smart functions.
+This section focuses on **writing the function code itself** --- semantics, APIs, types, and runtime behavior. It assumes you have a rule in which to deploy the function, and that you understand the broader concept of smart functions.
 
 You will find:
 
@@ -36,7 +36,7 @@ A Data Preparation smart function is a small Javascript function that runs insid
 
 You write the function in Javascript. The function has a fixed name and signature determined by its role within the rule. You implement the function body to perform the mapping or transformation you need.
 
-You can also use TypeScript for type safety while developing externally. The platform itself runs Javascript only — TypeScript must be transpiled before deployment.
+You can also use TypeScript for type safety while developing externally. The platform itself runs Javascript only --- TypeScript must be transpiled before deployment.
 
 ### Why use smart functions in Data Preparation? {#why-use}
 
@@ -47,7 +47,7 @@ Within Data Preparation, smart functions let you:
 - Drop malformed or duplicate messages before they reach storage.
 - Route messages to different destinations based on content.
 
-This gives you full programmatic control over the mapping between device protocols and the Cumulocity domain model — without building, deploying, or operating a separate microservice.
+This gives you full programmatic control over the mapping between device protocols and the Cumulocity domain model --- without building, deploying, or operating a separate microservice.
 
 ### Things to consider when writing the section {#section-considerations}
 

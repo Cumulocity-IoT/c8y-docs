@@ -41,7 +41,7 @@ The context object is the extension point for any per-invocation utilities the p
 - Access to per-device or per-rule metadata
 - Lookup helpers for finding related Cumulocity objects
 
-These additions will be backwards compatible — existing functions will continue to work when new fields appear on the context.
+These additions will be backwards compatible --- existing functions will continue to work when new fields appear on the context.
 
 ### Things to consider when writing the section {#section-considerations}
 

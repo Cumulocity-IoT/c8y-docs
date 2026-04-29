@@ -48,7 +48,7 @@ export function onMessage(message, context) {
   const decoder = new TextDecoder();
   const data = JSON.parse(decoder.decode(message.payload));
 
-  // Only process temperature readings above 0°C
+  // Only process temperature readings above 0 degrees C
   if (data.temperature > 0) {
     return [{
       cumulocityType: 'measurement',

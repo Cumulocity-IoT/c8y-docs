@@ -6,7 +6,7 @@ layout: redirect
 
 This section covers the execution environment your smart function runs in: how it is invoked, what guarantees the platform makes about ordering and concurrency, what limits apply, and what happens when things go wrong.
 
-For the cross-component view of sandboxing and resource limits that applies to all smart functions, see [Sandbox and limits](/concepts/smart-function-concept/#sandbox-and-limits). This section adds Data Preparation–specific detail.
+For the cross-component view of sandboxing and resource limits that applies to all smart functions, see [Sandbox and limits](/concepts/smart-function-concept/#sandbox-and-limits). This section adds Data Preparation--specific detail.
 
 ### Execution model {#execution-model}
 
@@ -28,7 +28,7 @@ Each Data Preparation rule runs across multiple shards to scale throughput. With
 
 - Each shard has its own Javascript runtime instance. Code loaded in one shard is not visible in another, even for the same rule.
 - This is the reason global state is not shared across invocations: even if your code runs back-to-back for the same `clientID`, the runtime may have been reinstantiated between calls, and a different shard handling the same device after a failover would have a fresh runtime.
-- The platform may reinstantiate runtimes at any time — for example, after rule updates, scaling events, or recovery from errors.
+- The platform may reinstantiate runtimes at any time --- for example, after rule updates, scaling events, or recovery from errors.
 
 ### Statelessness {#statelessness}
 
@@ -77,12 +77,12 @@ When a limit is exceeded, the function is terminated mid-execution, the message 
 
 Smart functions run in a sandboxed Javascript environment. Within Data Preparation specifically:
 
-- **No filesystem access** — there is no `fs` or equivalent.
-- **No network access** — you cannot open sockets, perform HTTP requests, or contact external services. All I/O happens through the function's input arguments and return value.
-- **No process control** — you cannot spawn workers, threads, or subprocesses.
-- **No access to other tenants' data** — the runtime is scoped to a single tenant.
-- **No access to other rules' data** — runtimes are scoped to a single rule.
-- **No environment variables or system info** — `process` is not available.
+- **No filesystem access** --- there is no `fs` or equivalent.
+- **No network access** --- you cannot open sockets, perform HTTP requests, or contact external services. All I/O happens through the function's input arguments and return value.
+- **No process control** --- you cannot spawn workers, threads, or subprocesses.
+- **No access to other tenants' data** --- the runtime is scoped to a single tenant.
+- **No access to other rules' data** --- runtimes are scoped to a single rule.
+- **No environment variables or system info** --- `process` is not available.
 
 For the underlying security model, see [Sandbox and limits](/concepts/smart-function-concept/#sandbox-and-limits).
 

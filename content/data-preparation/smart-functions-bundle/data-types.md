@@ -59,9 +59,9 @@ A `Measurement` extends `CumulocityObject` with `cumulocityType: "measurement"`.
 
 A measurement payload contains:
 
-- `type` — the measurement type (for example, `"c8y_Temperature"`).
-- `time` — the measurement timestamp.
-- One or more **fragments** — objects mapping series names to `MeasurementValue` for measurement series, or any custom data for other fragments.
+- `type` --- the measurement type (for example, `"c8y_Temperature"`).
+- `time` --- the measurement timestamp.
+- One or more **fragments** --- objects mapping series names to `MeasurementValue` for measurement series, or any custom data for other fragments.
 
 #### MeasurementValue
 
@@ -91,9 +91,9 @@ An `Event` extends `CumulocityObject` with `cumulocityType: "event"`.
 
 An event payload contains:
 
-- `type` — the event type (for example, `"c8y_LocationUpdate"`).
-- `text` — a human-readable description.
-- `time` — the event timestamp.
+- `type` --- the event type (for example, `"c8y_LocationUpdate"`).
+- `text` --- a human-readable description.
+- `time` --- the event timestamp.
 - Optional custom or standard fragments (for example, `c8y_Position`).
 
 ### Alarm {#alarm}
@@ -116,10 +116,10 @@ An `Alarm` extends `CumulocityObject` with `cumulocityType: "alarm"`.
 
 An alarm payload requires:
 
-- `type` — the alarm type.
-- `severity` — one of `CRITICAL`, `MAJOR`, `MINOR`, `WARNING`.
-- `text` — a human-readable description.
-- `time` — the alarm timestamp.
+- `type` --- the alarm type.
+- `severity` --- one of `CRITICAL`, `MAJOR`, `MINOR`, `WARNING`.
+- `text` --- a human-readable description.
+- `time` --- the alarm timestamp.
 
 Alarms can only be **created** through smart functions in this release. Updating existing alarms is not yet supported.
 
@@ -139,7 +139,7 @@ An `Operation` extends `CumulocityObject` with `cumulocityType: "operation"`.
 }
 ```
 
-Operations are typically used for device control — for example, including a `c8y_Restart` fragment to issue a restart operation to a device.
+Operations are typically used for device control --- for example, including a `c8y_Restart` fragment to issue a restart operation to a device.
 
 ### Things to consider when writing the section {#section-considerations}
 

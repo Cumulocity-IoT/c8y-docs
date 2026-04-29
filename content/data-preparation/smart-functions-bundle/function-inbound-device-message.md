@@ -30,7 +30,7 @@ The function is invoked once per inbound `DeviceMessage` that matches the rule's
 
 - Each message arriving on a transport that matches the rule's filters (device, topic, transport) triggers exactly one invocation.
 - Messages that do not match the rule's conditions never reach the function.
-- The function is invoked synchronously with respect to the message — the rule waits for the function (or its returned promise) to complete before proceeding to the next message in the same shard.
+- The function is invoked synchronously with respect to the message --- the rule waits for the function (or its returned promise) to complete before proceeding to the next message in the same shard.
 
 For details on how invocations are sharded and ordered, see [Runtime behavior and limits](#runtime-behavior-and-limits).
 
@@ -56,7 +56,7 @@ export async function onMessage(
 
 The function receives two arguments:
 
-- `msg` — a [`DeviceMessage`](#data-types) representing the inbound message. The `payload` is always present (as a `Uint8Array`), the `transportID` and `topic` are always present, and `clientID`, `transportFields`, and `time` may be present depending on the transport.
+- `msg` --- a [`DeviceMessage`](#data-types) representing the inbound message. The `payload` is always present (as a `Uint8Array`), the `transportID` and `topic` are always present, and `clientID`, `transportFields`, and `time` may be present depending on the transport.
 - `context` — a [`DataPrepContext`](#context) providing runtime metadata.
 
 For the full list of fields available on `DeviceMessage`, see [Data types](#data-types).
