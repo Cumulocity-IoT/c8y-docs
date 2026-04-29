@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Asset properties selector filtering by translated label.
+title: Asset properties selector now filters by translated labels
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
