@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-04-27'
   - label: jp.cumulocity.com
     date: '2026-04-27'
+  - label: us.cumulocity.com
+    date: '2026-04-28'
+  - label: cumulocity.com
+    date: '2026-04-28'
 ---
 The `Full export` option is now disabled for users who only have inventory rights. Previously, data could be exported without even an error message being displayed in the UI. This issue is now fixed.

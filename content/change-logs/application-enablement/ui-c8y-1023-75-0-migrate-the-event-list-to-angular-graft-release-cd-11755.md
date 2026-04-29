@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-04-27'
   - label: jp.cumulocity.com
     date: '2026-04-27'
+  - label: us.cumulocity.com
+    date: '2026-04-28'
+  - label: cumulocity.com
+    date: '2026-04-28'
 ---
 The event list view and the "Event list" widget have been migrated to Angular and enhanced to improve usability and performance, providing a modern, consistent foundation with the current UI framework. Updates include:
 
