@@ -17,5 +17,5 @@ version: 3.1.0
 To improve security and access control for Actility device connectivity, the permission requirements for managing 
 Actility connections have been clarified and enforced. Users now need specific Actility permissions to work with 
 connections under **Administration > Connectivity**. To view Actility connections, users require READ 
-permission, while creating, updating, or deleting connections requires the Actility ADMIN permission. Administrators 
+permission for the "Actility" permission type, while creating, updating, or deleting connections requires ADMIN permission for the "Actility" permission type. Administrators 
 can assign the necessary permissions to users in Administration > Accounts > User, Roles.oper request handling.
