@@ -8,7 +8,8 @@ sector:
   - device_management
 audience:
   - Users
-weight: 100
+  - Developers
+weight: 50
 outputs:
 - html
 ---
