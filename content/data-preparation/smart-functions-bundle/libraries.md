@@ -4,88 +4,98 @@ title: Standard libraries and imports
 layout: redirect
 ---
 
-Data Preparation smart functions have access to a set of standard and specialized libraries to help with common data transformation tasks. Some libraries are always available in the global scope; others must be imported.
+Data Preparation smart functions run in a Javascript environment conforming to ES2023. The following additional global objects and functions are available without any import statement. Additional libraries for specific data formats can be imported explicitly.
 
-### Standard Javascript libraries {#standard-libraries}
+### Globals {#globals}
 
-**TextEncoder / TextDecoder**: Encode and decode text and binary data.
+#### console {#console}
+
+Logs output for debugging. All methods accept any number of arguments, which are converted to strings and joined with spaces. Use Javascript string interpolation rather than relying on format strings.
+
+| Method | Description |
+|--------|-------------|
+| `console.log(...args)` | Alias for `console.info`. |
+| `console.info(...args)` | Informational message. |
+| `console.warn(...args)` | Warning message. |
+| `console.error(...args)` | Error message. |
+| `console.debug(...args)` | Debug-level output. |
+
+#### TextEncoder {#text-encoder}
+
+Encodes strings as UTF-8 bytes. Instantiate with a zero-argument constructor.
+
+| Method / Property | Description |
+|-------------------|-------------|
+| `encode(input)` | Encodes a string and returns a `Uint8Array`. |
+| `encodeInto(input, dest)` | Encodes a string into an existing `Uint8Array`. |
+| `encoding` | Always returns `"utf-8"`. |
 
 ```javascript
-const decoder = new TextDecoder();
-const text = decoder.decode(message.payload);
-
 const encoder = new TextEncoder();
 const bytes = encoder.encode('Hello World');
 ```
 
-**Base64 encoding**: Encode and decode Base64 data using browser APIs.
+#### TextDecoder {#text-decoder}
+
+Decodes bytes into a string. Instantiate with the encoding name as the first argument.
+
+| Method / Property | Description |
+|-------------------|-------------|
+| `decode(input)` | Decodes a `Uint8Array` and returns a string. |
+| `encoding` | Returns the encoding specified at construction. |
 
 ```javascript
-// Encode
-const base64 = btoa('Hello World');
-
-// Decode
-const original = atob(base64);
+const decoder = new TextDecoder('utf-8');
+const text = decoder.decode(msg.payload);
 ```
 
-### Specialized libraries {#specialized-libraries}
+#### Base64 {#base64}
 
-The following libraries are available for parsing and working with specific data formats:
+Encodes and decodes Base64 data. All methods are static.
 
-#### Protobuf
+| Method | Description |
+|--------|-------------|
+| `Base64.encode(bytes)` | Encodes a `Uint8Array` to a Base64 string. |
+| `Base64.decode(str)` | Decodes a Base64 string to a `Uint8Array`. |
+| `Base64.encodeStr(str)` | Encodes a plain string to a Base64 string. |
+| `Base64.decodeStr(str)` | Decodes a Base64 string to a plain string. |
 
-Parse Protocol Buffer messages.
+#### OPCUACodec {#opcua-codec}
 
-**Status**: To be documented. Details will be added when library documentation is finalized.
+Encodes and decodes OPC UA binary data. Instantiate with a zero-argument constructor.
 
-#### CBOR
+| Method | Description |
+|--------|-------------|
+| `decode(bytes)` | Decodes OPC UA binary data. |
+| `decodeDataValue(bytes)` | Decodes an OPC UA DataValue. |
+| `encode(value)` | Encodes a value to OPC UA binary. |
+| `encodeDataValue(value)` | Encodes a value as an OPC UA DataValue. |
+
+### Importable libraries {#importable-libraries}
+
+The following libraries are available as explicit imports.
+
+#### protobufjs {#protobufjs}
+
+Parse and encode Protocol Buffer messages.
+
+```javascript
+import { /* exported names */ } from 'protobufjs.js';
+```
+
+#### cbor2 {#cbor2}
 
 Work with CBOR (Concise Binary Object Representation) encoded data.
 
-**Status**: To be documented. Details will be added when library documentation is finalized.
-
-#### OPC UA
-
-Interact with OPC UA data structures and types.
-
-**Status**: To be documented. Details will be added when library documentation is finalized.
-
-### Importing libraries {#importing-libraries}
-
-Specialized libraries are imported at the top of your smart function:
-
 ```javascript
-import { /* exported names */ } from 'library-name';
-
-export function onMessage(message, context) {
-  // Use imported functions
-}
+import { /* exported names */ } from 'cbor2.js';
 ```
-
-Specific import syntax and available exports will be documented as each library is finalized.
 
 ### Bundling external libraries {#bundling-external-libraries}
 
 When developing outside the platform, you can use any third-party Javascript or TypeScript library by bundling it into a single file with your smart function. The result is uploaded as a single Javascript module.
 
-This is the recommended approach for libraries that are not provided by the platform. The platform itself does not download libraries from package registries at runtime.
+
+This is the recommended approach for libraries that are not provided by the platform. The platform does not download libraries from package registries at runtime.
 
 For details on the external development workflow, including transpilation and bundling, see the external development section.
-
-### Things to consider when writing the section {#section-considerations}
-
-<!-- Notes for the documentation team — remove before publishing. -->
-
-- Confirm exact list of globals: `console`, `TextEncoder`, `TextDecoder`, `atob`, `btoa`, `Date`, `JSON`, `Math`, `Promise`, `URL`, `URLSearchParams`, `structuredClone`?
-- Decide on terminology: "always available", "global", "built-in" — pick one and stick to it.
-- Document the version of each global where relevant (for example, which spec version of `TextDecoder`).
-- For each specialized library, document:
-  - The exact import path
-  - The functions/classes exported
-  - The version provided by the platform
-  - Any deviations from the standard library API
-  - A short example of typical use
-- Should the specialized libraries each be a separate page? They might grow large.
-- Cross-reference where each library is most useful (for example, OPC UA library inside the OPC UA transport context).
-- What happens if a user imports a name we don't provide? Compile-time error, runtime error, silent failure?
-- Note about treeshaking: if libraries are large, do users pay for everything or only what they import?

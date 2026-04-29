@@ -4,167 +4,198 @@ title: Examples
 layout: redirect
 ---
 
-This section provides practical, task-oriented examples of `onMessage` smart functions for Data Preparation. Each example focuses on a single common pattern.
+This section provides practical examples of `onMessage` smart functions for Data Preparation. Each example shows the input message, the function, and the output it produces.
 
-For the data types used (`DeviceMessage`, `CumulocityObject`, etc.), see [Data types](#data-types). For the runtime guarantees that apply to all examples, see [Runtime behavior and limits](#runtime-behavior-and-limits).
+For the data types used in these examples, see [Data types](#data-types). For the runtime guarantees that apply, see [Runtime behavior and limits](#runtime-behavior-and-limits).
 
 ### Parse JSON and create a measurement {#parse-json-measurement}
 
-This example decodes a JSON payload and creates a temperature measurement:
+Decode a JSON payload and produce a temperature measurement.
 
-```javascript
-export function onMessage(message, context) {
-  try {
-    const decoder = new TextDecoder();
-    const jsonData = JSON.parse(decoder.decode(message.payload));
+**Example input** (`msg.payload` decoded as UTF-8):
 
-    return [{
-      cumulocityType: 'measurement',
-      payload: {
-        type: 'c8y_Temperature',
-        time: new Date(),
-        c8y_Temperature: {
-          T: { value: jsonData.tempCelsius, unit: 'C' }
-        }
-      },
-      externalSource: [{ 
-        externalId: jsonData.deviceId, 
-        type: 'c8y_Serial' 
-      }]
-    }];
-  } catch (error) {
-    // Drop malformed messages
-    return [];
-  }
-}
+```json
+{ "deviceId": "SN-001", "tempCelsius": 22.5 }
 ```
 
-### Filter messages by condition {#filter-messages}
-
-This example only processes messages with specific criteria and drops others:
+**Function**:
 
 ```javascript
-export function onMessage(message, context) {
-  const decoder = new TextDecoder();
-  const data = JSON.parse(decoder.decode(message.payload));
-
-  // Only process temperature readings above 0 degrees C
-  if (data.temperature > 0) {
-    return [{
-      cumulocityType: 'measurement',
-      payload: {
-        type: 'c8y_Temperature',
-        time: new Date(),
-        c8y_Temperature: {
-          T: { value: data.temperature, unit: 'C' }
-        }
-      },
-      externalSource: [{ externalId: data.deviceId, type: 'c8y_Serial' }]
-    }];
-  }
-
-  // Drop messages that don't meet criteria
-  return [];
-}
-```
-
-### Create an event with custom fragments {#create-event}
-
-This example creates a location event with additional custom data:
-
-```javascript
-export function onMessage(message, context) {
-  const decoder = new TextDecoder();
-  const data = JSON.parse(decoder.decode(message.payload));
+export function onMessage(msg, context) {
+  const data = JSON.parse(new TextDecoder("utf-8").decode(msg.payload));
 
   return [{
-    cumulocityType: 'event',
+    cumulocityType: "measurement",
     payload: {
-      type: 'c8y_LocationUpdate',
-      text: 'Device location changed',
-      time: new Date(),
-      c8y_Position: {
-        lat: data.latitude,
-        lng: data.longitude,
-        alt: data.altitude
-      },
-      customFragment: {
-        accuracy: data.gpsAccuracy,
-        speed: data.gpsSpeed
+      type: "c8y_Temperature",
+      time: msg.time,
+      c8y_Temperature: {
+        T: { value: data.tempCelsius, unit: "C" }
       }
     },
-    externalSource: [{ externalId: data.deviceId, type: 'c8y_Serial' }]
+    externalSource: [{ externalId: data.deviceId, type: "c8y_Serial" }]
   }];
 }
 ```
 
-### Enrich a message before forwarding {#enrich-message}
+**Output**: one `Measurement` of type `c8y_Temperature` for device `SN-001`.
 
-This example adds context to a device message and forwards it for further processing:
+---
 
-```javascript
-export function onMessage(message, context) {
-  // Add custom metadata to the message
-  const enrichedMessage = {
-    ...message,
-    transportFields: {
-      ...message.transportFields,
-      processedAt: new Date().toISOString(),
-      processingRule: 'enrich-location'
-    }
-  };
+### Filter messages by condition {#filter-messages}
 
-  return [enrichedMessage];
-}
+Only produce output for messages that meet a condition; silently drop the rest.
+
+**Example input** (`msg.payload` decoded as UTF-8):
+
+```json
+{ "deviceId": "SN-002", "temperature": -5 }
 ```
 
-### Handle binary data with Base64 {#handle-binary-base64}
-
-This example decodes a binary payload using Base64 encoding:
+**Function**:
 
 ```javascript
-export function onMessage(message, context) {
-  try {
-    // Assume payload is Base64-encoded JSON
-    const base64String = new TextDecoder().decode(message.payload);
-    const binaryData = Uint8Array.from(
-      atob(base64String), 
-      c => c.charCodeAt(0)
-    );
-    const jsonData = JSON.parse(new TextDecoder().decode(binaryData));
+export function onMessage(msg, context) {
+  const data = JSON.parse(new TextDecoder("utf-8").decode(msg.payload));
 
-    return [{
-      cumulocityType: 'measurement',
-      payload: {
-        type: 'c8y_Humidity',
-        time: new Date(),
-        c8y_Humidity: {
-          H: { value: jsonData.humidityPercent, unit: '%' }
-        }
-      },
-      externalSource: [{ externalId: jsonData.deviceId, type: 'c8y_Serial' }]
-    }];
-  } catch (error) {
+  if (data.temperature <= 0) {
+    // Drop sub-zero readings
     return [];
   }
+
+  return [{
+    cumulocityType: "measurement",
+    payload: {
+      type: "c8y_Temperature",
+      time: msg.time,
+      c8y_Temperature: {
+        T: { value: data.temperature, unit: "C" }
+      }
+    },
+    externalSource: [{ externalId: data.deviceId, type: "c8y_Serial" }]
+  }];
 }
 ```
 
-### Things to consider when writing the section {#section-considerations}
+**Output**: no output (message dropped because temperature is -5).
 
-<!-- Notes for the documentation team — remove before publishing. -->
+---
 
-- Group examples by task category? Suggested groupings:
-  - Decoding payloads (JSON, Base64, binary, protobuf, CBOR)
-  - Producing measurements (single value, multi-series, with custom fragments)
-  - Producing events, alarms, operations
-  - Filtering and dropping (silent drops vs. validation failures)
-  - Routing to alternative destinations
-  - Error handling patterns
-- Should each example show both the input it expects and the output it produces?
-- Worth a "before/after" pattern for each example showing the transformation visually?
-- Do we want a "minimal hello world" first example that just creates a fixed measurement?
-- Add an example using async/await once we have a use case for it (for example, an async library).
-- Add an example showing a TypeScript version alongside a Javascript version, for users developing externally.
-- Examples should ideally compile and run unchanged — consider running them through the actual runtime as part of doc CI.
-- Should we link each example to a corresponding page in a starter repo?
+### Create an alarm {#create-alarm}
+
+Raise a MAJOR alarm when a sensor reading exceeds a threshold.
+
+**Example input** (`msg.payload` decoded as UTF-8):
+
+```json
+{ "deviceId": "SN-003", "pressure": 1100 }
+```
+
+**Function**:
+
+```javascript
+export function onMessage(msg, context) {
+  const data = JSON.parse(new TextDecoder("utf-8").decode(msg.payload));
+
+  if (data.pressure > 1050) {
+    return [{
+      cumulocityType: "alarm",
+      payload: {
+        type: "c8y_PressureAlarm",
+        severity: "MAJOR",
+        text: `Pressure exceeded threshold: ${data.pressure} hPa`,
+        time: msg.time
+      },
+      externalSource: [{ externalId: data.deviceId, type: "c8y_Serial" }]
+    }];
+  }
+
+  return [];
+}
+```
+
+**Output**: one `Alarm` of type `c8y_PressureAlarm` with severity `MAJOR` for device `SN-003`.
+
+---
+
+### Create a location event {#create-event}
+
+Produce a location update event with a standard `c8y_Position` fragment.
+
+**Example input** (`msg.payload` decoded as UTF-8):
+
+```json
+{ "deviceId": "SN-004", "lat": 51.5, "lng": -0.1, "alt": 10 }
+```
+
+**Function**:
+
+```javascript
+export function onMessage(msg, context) {
+  const data = JSON.parse(new TextDecoder("utf-8").decode(msg.payload));
+
+  return [{
+    cumulocityType: "event",
+    payload: {
+      type: "c8y_LocationUpdate",
+      text: "Location update",
+      time: msg.time,
+      c8y_Position: {
+        lat: data.lat,
+        lng: data.lng,
+        alt: data.alt
+      }
+    },
+    externalSource: [{ externalId: data.deviceId, type: "c8y_Serial" }]
+  }];
+}
+```
+
+**Output**: one `Event` of type `c8y_LocationUpdate` with a `c8y_Position` fragment for device `SN-004`.
+
+---
+
+### Parse binary data directly {#parse-binary}
+
+Extract values directly from a binary payload with a known fixed structure, without text decoding.
+
+**Example input**: a 9-byte binary payload structured as:
+
+- Bytes 0--3: device ID as a 32-bit big-endian unsigned integer
+- Bytes 4--7: temperature as a 32-bit big-endian IEEE 754 float
+- Byte 8: battery level as an unsigned integer (0--100)
+
+**Function**:
+
+```javascript
+export function onMessage(msg, context) {
+  const view = new DataView(msg.payload.buffer, msg.payload.byteOffset, msg.payload.byteLength);
+
+  const deviceId = view.getUint32(0, false).toString();
+  const temperature = view.getFloat32(4, false);
+  const battery = view.getUint8(8);
+
+  return [
+    {
+      cumulocityType: "measurement",
+      payload: {
+        type: "c8y_Temperature",
+        time: msg.time,
+        c8y_Temperature: { T: { value: temperature, unit: "C" } }
+      },
+      externalSource: [{ externalId: deviceId, type: "c8y_Serial" }]
+    },
+    {
+      cumulocityType: "measurement",
+      payload: {
+        type: "c8y_Battery",
+        time: msg.time,
+        c8y_Battery: { level: { value: battery, unit: "%" } }
+      },
+      externalSource: [{ externalId: deviceId, type: "c8y_Serial" }]
+    }
+  ];
+}
+```
+
+**Output**: two `Measurement` objects --- one `c8y_Temperature` and one `c8y_Battery` --- for the device identified by the first four bytes of the payload.
