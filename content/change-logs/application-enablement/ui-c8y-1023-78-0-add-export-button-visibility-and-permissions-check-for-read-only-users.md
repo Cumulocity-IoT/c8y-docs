@@ -1,6 +1,6 @@
 ---
 date: ""
-title: add export button visibility and permissions check for read-only users (#11840) [GRAFT][release/cd] (#11902)
+title: Export actions disabled for users without inventory write permissions
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
