@@ -15,9 +15,9 @@ ticket: MTM-66381
 version: 2026.111.0
 ---
 
-{{< product-c8y-iot >}} now provides new REST API endpoint that allows to lookup global identifiers
+{{< product-c8y-iot >}} now provides a new REST API endpoint for looking up global identifiers
 given a list of external identifiers. This endpoint allows to prepare batch inventory requests in situations
 where external identifiers are known and global identifiers need to be looked up first.
 
-For details refer to the [identity search](https://{{< domain-c8y >}}/api/core/#operation/postIdentitySearch) 
-operation in the [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/#tag/Identity-API).
+For details, refer to the [identity search operation](https://{{< domain-c8y >}}/api/core/#operation/postIdentitySearch) 
+in the [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/#tag/Identity-API).
