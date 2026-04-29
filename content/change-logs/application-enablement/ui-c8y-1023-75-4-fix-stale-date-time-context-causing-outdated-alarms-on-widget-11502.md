@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66181
 version: 1023.75.4
 ---
-Fix stale dateTimeContext causing outdated alarms on widget (#11502)   [GRAFT][release/cd] (#11846)
+In live mode, Alarm list widgets showed alarms from the previously saved date range instead of the current time. They now correctly refresh on load using the range defined by the widget or the global time context.
