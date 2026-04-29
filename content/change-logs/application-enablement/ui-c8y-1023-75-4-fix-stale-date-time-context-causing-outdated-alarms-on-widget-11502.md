@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix stale dateTimeContext causing outdated alarms on widget (#11502)   [GRAFT][release/cd] (#11846)
+title: Fix Alarm list widgets showing stale alarms on initial load in live mode
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
