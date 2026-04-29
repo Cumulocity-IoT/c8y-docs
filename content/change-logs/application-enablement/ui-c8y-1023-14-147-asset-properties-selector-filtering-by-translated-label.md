@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66468
 version: 1023.14.147
 ---
-When you use the asset properties selector, you previously could only filter results by the original English label, which made it difficult to find properties when working in other languages. The selector now filters by the displayed, translated label, allowing you to search using the language you are currently working in. This improvement makes it easier to locate the properties you need regardless of which language your interface is set to.
+When you used the asset properties selector, you could previously filter results only by the original English label, which made it difficult to find properties when working in other languages. The selector now filters by the displayed, translated label, allowing you to search using the language you are currently working in. This improvement makes it easier to locate the properties you need, regardless of which language your interface is set to.
