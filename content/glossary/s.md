@@ -38,6 +38,12 @@ Devices communicate dedicated MQTT topics with {{< product-c8y-iot >}}. Each row
 {{< /c8y-details >}}
 
 
+### Smart function {#smart-function}
+
+A smart function is user-supplied Javascript code embedded directly into a {{< product-c8y-iot >}} component to extend its behavior. Smart functions are more powerful and flexible than static configuration, but much simpler than building a [microservice](#microservice) --- there is no container to build, no infrastructure to manage, and no separate deployment pipeline. They run in a secure, isolated environment with platform-enforced resource limits, and are used across components such as [Data Preparation](#data-preparation) to process data, transform messages, build analytics, or customize behavior.
+
+See also [Smart functions](/concepts/smart-function-concept-bundle/) in the documentation.
+
 ### Smart rules {#smart-rules}
 
 With smart rules, you can analyze real-time data and perform actions based on predefined conditions without writing any code. For example, you can create a rule to send an email or generate an [alarm](#alarm) when a [measurement](#measurement) exceeds a specific threshold.
