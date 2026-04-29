@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-04-30
 title: Chart axis labels now use the text-muted color from the applied branding
 product_area: Application enablement & solutions
 change_type:

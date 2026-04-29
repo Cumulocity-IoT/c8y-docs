@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-04-30
 title: Fixed failing JWT token refresh in Device Parameter microservice
 product_area: Device management & connectivity
 change_type:
