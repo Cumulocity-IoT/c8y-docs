@@ -6,8 +6,8 @@ change_type:
   - value: change-QHu1GdukP
     label: Feature
 component:
-  - value: component--KIsStyzM
-    label: Device Management app
+  - value: component-TCiiCOknp5
+    label: LPWAN
 build_artifact:
   - value: tc--fVxjY7du
     label: actility-agent
