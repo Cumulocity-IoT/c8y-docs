@@ -14,22 +14,4 @@ build_artifact:
 ticket: MTM-66664
 version: 1023.78.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Web SDK): [MTM-66664] add export button visibility and
-permissions check for read-only users
-(#11840)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11840)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66664]:
-https://cumulocity.atlassian.net/browse/MTM-66664?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Lukasz Janusz <114157358+luja-c8y@users.noreply.github.com>
-Co-authored-by: Lukasz Janusz <lukasz.janusz@cumuloicty.com>
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
+Previously, users without inventory write permissions could access all export actions on the Cockpit Exports page and only received an error after attempting to save. This is now fixed. The "Add export" button is disabled with a tooltip explaining insufficient permissions. Duplicate and Delete row actions are hidden for read-only users. The Edit action is replaced with a View action so read-only users can still inspect export details without being able to modify them. In the export detail view, Save buttons are disabled for users without the required permissions.
