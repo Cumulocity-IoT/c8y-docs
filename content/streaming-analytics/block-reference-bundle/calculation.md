@@ -1628,49 +1628,12 @@ For example: <pre> export function onInput(inputs, context) {<br/> &nbsp;&nbsp;c
 </td>
 </tr>
 <tr>
-<th scope="row">params[0]</th>
-<td><span>An arbitrary parameter that can be templated into the Smart Function code. Can be accessed using <tt>context.params[0]</tt>.</span>
+<th scope="row">Parameters for the Smart Function code</th>
+<td><span>List of parameters that can be templated into the Smart Function code. Can be accessed using <tt>context.params[N]</tt>.</span>
 </td>
-<td><span>string</span>
+<td><span>sequence&lt;string&gt;</span>
 </td>
-<td><span>Optional</span>
-</td>
-</tr>
-<tr>
-<th scope="row">params[1]</th>
-<td><span>An arbitrary parameter that can be templated into the Smart Function code. Can be accessed using <tt>context.params[1]</tt>.</span>
-</td>
-<td><span>string</span>
-</td>
-<td><span>Optional</span>
-</td>
-</tr>
-<tr>
-<th scope="row">params[2]</th>
-<td><span>An arbitrary parameter that can be templated into the Smart Function code. Can be accessed using <tt>context.params[2]</tt>.</span>
-</td>
-<td><span>string</span>
-</td>
-<td><span>Optional</span>
-</td>
-</tr>
-<tr>
-<th scope="row">params[3]</th>
-<td><span>An arbitrary parameter that can be templated into the Smart Function code. Can be accessed using <tt>context.params[3]</tt>.</span>
-</td>
-<td><span>string</span>
-</td>
-<td><span>Optional</span>
-</td>
-</tr>
-<tr>
-<th scope="row">params[4]</th>
-<td><span>An arbitrary parameter that can be templated into the Smart Function code. Can be accessed using <tt>context.params[4]</tt>.</span>
-</td>
-<td><span>string</span>
-</td>
-<td><span>Optional</span>
-</td>
+<td></td>
 </tr>
 <tr>
 <th scope="row">Smart Function</th>

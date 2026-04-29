@@ -1042,6 +1042,8 @@ The identifiers prefixed with <tt>source.</tt> (for example, <tt>#{source.name}<
 <p></p>
 The identifiers not prefixed with <tt>source.</tt> are searched for in the value received on the Object input port.
 <p></p>
+Note: The output of Managed Object Input block must always be connected to the Source input port, and the output of any other block must always be connected to the Object input port.
+<p></p>
 Nested identifiers can be specified by separating them with a dot (.). For example, when the Object input port has received the value <tt>{ "address": { "street": { "name": "example_street" }}}</tt>, then the identifier <tt>#{address.street.name}</tt> is resolved to <tt>example_street</tt>.
 <p></p>
 Keys with a dot (.) in them are not supported, so if the Object input port value is of the form <tt>{ "address.street": { "name": "example_street" }}</tt>, then the <tt>example_street</tt> value cannot be resolved because the identifier <tt>#{address.street.name}</tt> expects <tt>street</tt> to be nested inside the <tt>address</tt> entry.
@@ -1104,14 +1106,14 @@ For more information, see the <a target="_blank" rel="external noopener" href="{
 <tbody>
 <tr>
 <th scope="row">Object</th>
-<td><span>Used to substitute identifiers that are not prefixed with <tt>source.</tt>. For example, <tt>#{name}</tt> or <tt>#{timestamp}</tt>.</span>
+<td><span>Used to substitute identifiers that are not prefixed with <tt>source.</tt>. For example, <tt>#{name}</tt> or <tt>#{timestamp}</tt>. Only output of any block other than Managed Object Input block should be connected to this input port.</span>
 </td>
 <td><span>any</span>
 </td>
 </tr>
 <tr>
 <th scope="row">Source</th>
-<td><span>Used to substitute identifiers that are prefixed with <tt>source.</tt>. For example, <tt>#{source.name}</tt>.</span>
+<td><span>Used to substitute identifiers that are prefixed with <tt>source.</tt>. For example, <tt>#{source.name}</tt>. Only output of Managed Object Input block should be connected to this input port.</span>
 </td>
 <td><span>any</span>
 </td>
