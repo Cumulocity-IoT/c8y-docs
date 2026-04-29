@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-66468
 version: 1023.77.2
 ---
-In Asset properties selector there was an issue related to nested properties. User trying to search for property that was child of complex property was getting no results. Currently, if user tries to search for nested property, it will be displayed as a result (and also parent of this property). 
-Other thing that was fixed was filtering also by translated label of the property- previously, only original label (in english) was taken into account for filtering.
+The asset properties selector previously had issues when searching for nested properties. When you searched for a property that was a child of a complex property, no results were displayed, and filtering only worked with the original English label of properties, not translated labels. Now when you search for a nested property, the selector displays the matching property along with its parent property in the results. Additionally, filtering now works with both the original property labels and their translated versions, making it easier to find properties regardless of the language setting you use.
