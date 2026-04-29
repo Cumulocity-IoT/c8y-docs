@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Asset properties selector nested properties filtering issue fix.
+title: Asset properties selector now filters nested properties and translated labels correctly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
