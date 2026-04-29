@@ -4,7 +4,6 @@ title: Smart functions
 layout: bundle
 sector:
   - getting_started
-  - platform
 audience:
   - Developers
 ---
