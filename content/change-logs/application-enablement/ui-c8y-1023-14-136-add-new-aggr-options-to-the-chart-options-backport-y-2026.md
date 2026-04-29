@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-04-30
 title: New aggregation options added to the data graph and data explorer 
 product_area: Application enablement & solutions
 change_type:

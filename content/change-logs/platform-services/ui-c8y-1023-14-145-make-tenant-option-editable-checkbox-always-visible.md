@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-04-30
 title: Make tenant options editable checkbox visible for all users with appropriate permissions
 product_area: Platform services
 change_type:

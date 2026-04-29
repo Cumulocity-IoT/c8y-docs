@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-04-30
 title: Fixed LWM2M operation execution delay
 product_area: Device management & connectivity
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-04-30
 title: Notification dot now hidden when preview features are disabled
 product_area: Application enablement & solutions
 change_type:

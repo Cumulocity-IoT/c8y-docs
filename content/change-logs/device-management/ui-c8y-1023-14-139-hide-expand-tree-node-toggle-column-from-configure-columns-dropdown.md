@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-04-30
 title: Removed internal options from column configuration dropdown
 product_area: Device management & connectivity
 change_type:

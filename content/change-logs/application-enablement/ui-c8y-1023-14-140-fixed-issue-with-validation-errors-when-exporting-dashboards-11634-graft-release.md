@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-04-30
 title: Fixed validation errors when exporting dashboards
 product_area: Application enablement & solutions
 change_type:
