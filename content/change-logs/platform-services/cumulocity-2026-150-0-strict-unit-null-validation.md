@@ -1,5 +1,5 @@
 ---
-date: '2026-04-23'
+date:
 title: Strict validation of unit values in measurement fragments is now enforced
 change_type:
   - value: change-3BQrQ6adS
