@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix Alarm list widgets showing stale alarms on initial load in live mode
+title: Alarm list widgets now display alarms for the correct data range
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
