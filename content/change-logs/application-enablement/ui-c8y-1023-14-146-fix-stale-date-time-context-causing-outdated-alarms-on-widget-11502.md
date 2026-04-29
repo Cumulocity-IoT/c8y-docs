@@ -1,6 +1,6 @@
 ---
-date: ""
-title: Fix Alarm list widgets showing stale alarms on initial load in live mode
+date: 2026-04-30
+title: Alarm list widgets now display alarms for the correct data range
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66181
 version: 1023.14.146
 ---
-In live mode, Alarm list widgets showed alarms from the previously saved date range instead of the current time. They now correctly refresh on load using the range defined by the widget or the global time context.
+In live mode, "Alarm list" widgets displayed alarms from the previously saved date range rather than the current time. This issue has been fixed. They now correctly refresh on load using the range defined by the widget or the global time context.
