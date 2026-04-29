@@ -4,8 +4,6 @@ title: Smart functions
 layout: bundle
 sector:
   - getting_started
-audience:
-  - Developers
 ---
 
 Smart functions provide a lightweight way to extend the functionality of {{< product-c8y-iot >}} across multiple components. They let you write small Javascript functions that run in a secure, isolated environment—more powerful than configuration but much simpler than building a full microservice.
