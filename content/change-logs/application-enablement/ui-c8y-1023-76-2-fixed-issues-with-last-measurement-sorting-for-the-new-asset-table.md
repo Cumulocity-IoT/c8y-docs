@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issues with last measurement sorting for the new asset table
+title: Fixed issues with last measurement sorting in the new asset table
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
