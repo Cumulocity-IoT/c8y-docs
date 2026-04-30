@@ -94,7 +94,7 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 - `email` | string | Required
 
     Email used for the admin user.  
-  **Info:**This value is used only during the Edge installation and can’t be changed for existing installations. All subsequent admin user changes are made via the [user interface](/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API.
+  **Info:** This value is used only during the Edge installation and can’t be changed for existing installations. All subsequent admin user changes are made via the [user interface](/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
@@ -241,7 +241,7 @@ See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#regis
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
-  c8yedge config --set cloudTenant.domain=<cloud tenant's domain> --set cloudTenant.otp=<one-time password>
+  c8yedge config --set cloudTenant.otp=<one-time password>
   ```
   <br/>
 
@@ -342,7 +342,7 @@ The core specification specifies the fields for configuring the Cumulocity core 
 
 
 
-
+The microservice specification allows specifying resources to allocate to default microservices, including the Apama, Smart Rules, OPCUA Management Service, and microservice-based data broker microservices.
 
 
 
