@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Export actions disabled for users without inventory write permissions
+title: Export operations disabled for users without appropriate permissions
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
