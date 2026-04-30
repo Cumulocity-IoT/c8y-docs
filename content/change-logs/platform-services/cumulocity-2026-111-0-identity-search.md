@@ -19,5 +19,10 @@ version: 2026.111.0
 given a list of external identifiers. This endpoint allows to prepare batch inventory requests in situations
 where external identifiers are known and global identifiers need to be looked up first.
 
+This is useful in scenarios where recently added bulk inventory operations are needed. Those bulk inventory operations
+require global identifiers, but in some customer systems only external identifiers are available. With old API customer
+needed to retrieve global identifiers one request per identifier. This new endpoint allows to prepare a bulk update request
+for managed objects with much less HTTP overhead.
+
 For details, refer to the [identity search operation](https://{{< domain-c8y >}}/api/core/#operation/postIdentitySearch) 
 in the [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/#tag/Identity-API).
