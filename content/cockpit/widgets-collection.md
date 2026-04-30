@@ -271,7 +271,7 @@ The "KPI" (Key Performance Indicators) widget visualizes a data point as a label
 **Parameters to configure**
 
 On the left side, select the data point you want to display.
-You must select only one active datapoint to create the "KPI" widget. If you select multiple data points at once, you cannot save the configuration.
+You must select only one active data point to create the "KPI" widget. If you select multiple data points at once, you cannot save the configuration.
 
 On the right side, you can adjust how the data point is going to be displayed. This includes:
 * Icon: The icon to be displayed next to the data point
