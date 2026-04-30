@@ -20,7 +20,7 @@ given a list of external identifiers. This endpoint allows to prepare batch inve
 where external identifiers are known and global identifiers need to be looked up first.
 
 This is useful in scenarios where recently added bulk inventory operations are needed. Those bulk inventory operations
-require global identifiers, but in some customer systems only external identifiers are available. With old API customer
+require global identifiers, but in some customer systems only external identifiers are available. With the old API customers
 needed to retrieve global identifiers one request per identifier. This new endpoint allows to prepare a bulk update request
 for managed objects with much less HTTP overhead.
 
