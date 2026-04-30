@@ -1,5 +1,5 @@
 ---
-date: ''
+date: '2026-04-30'
 title: New REST endpoint for looking up global identifiers
 product_area: Platform services
 change_type:
@@ -13,6 +13,19 @@ build_artifact:
     label: cumulocity
 ticket: MTM-66381
 version: 2026.111.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-04-30'
+  - label: apj.cumulocity.com
+    date: '2026-04-29'
+  - label: jp.cumulocity.com
+    date: '2026-04-29'
+  - label: emea.cumulocity.com
+    date: '2026-04-27'
+  - label: us.cumulocity.com
+    date: '2026-04-27'
+  - label: cumulocity.com
+    date: '2026-04-28'
 ---
 
 {{< product-c8y-iot >}} now provides a new REST API endpoint for looking up global identifiers

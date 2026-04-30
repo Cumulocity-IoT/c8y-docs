@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2026-04-30'
 title: Actility service improvements in endpoint authorization and permissions
 product_area: Device management & connectivity
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: actility-agent
 ticket: DM-5337
 version: 3.1.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-04-30'
 ---
 To improve security and access control for Actility device connectivity, the permission requirements for managing 
 Actility connections have been clarified and enforced. Users now need specific Actility permissions to work with 
