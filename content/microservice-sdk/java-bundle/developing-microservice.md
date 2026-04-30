@@ -594,7 +594,7 @@ If you have defined the custom properties in your pom.xml file you can specify t
 mvn clean install -Dcustom-property.metaspace.min=400m -Dcustom-property.metaspace.max=500m
 ```
 
-#### Validate REST security goal {#validate-rest-security-goal}
+#### Validate REST security goal (since version 2026.29.0) {#validate-rest-security-goal}
 
 The validate REST security goal scans compiled classes to ensure all REST controller endpoints have proper security annotations. This provides build-time verification that your microservice endpoints are adequately secured.
 
