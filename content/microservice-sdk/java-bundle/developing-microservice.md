@@ -608,7 +608,7 @@ Add the following to your microservice *pom.xml* file:
 <plugin>
     <groupId>com.nsn.cumulocity.clients-java</groupId>
     <artifactId>microservice-package-maven-plugin</artifactId>
-    <version>...</version>
+    <version>${c8y.version}</version>
     <executions>
         <execution>
             <id>validate-rest-security</id>
