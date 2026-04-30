@@ -22,91 +22,113 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
 ##### Fields
 
-- `version` _[IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util)_ Required
-  - Edge version to install.<br />Specify Major version to install the latest available version from the release, or use a fully qualified version to install a specific patch version.
+- `version` | [IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util) | Required<br/>
+  Edge version to install.<br />Specify Major version to install the latest available version from the release, or use a fully qualified version to install a specific patch version.<br/>
   
+  <br/>
 
 
-- `licenseKey` _string_ Required
-  - Edge license file you received for the domain.<br />If you do not have a license, you must request one from [product support](/additional-resources/contacting-support/).<br />When requesting license, you must provide the following details:<br />&nbsp;&nbsp;- Domain Name: The domain name assigned to your Edge installation (for example, 'edge.mycompany.com').<br />&nbsp;&nbsp;- Company Name: The name under which the license was purchased.<br />For more information, see [Edge license](/edge/installing-edge/#domain-name-validation-for-edge-license-key-generation).<br />
-  - **c8yedge tool:**
-    ```shell
-    c8yedge config --set-file licenseKey=<path/to/license.txt>
-    ```
-
-
-- `company` _string_ Required
-  - Name of the “edge” tenant, for example, the company’s name.<br />**Info:** This value is used only during the Edge installation and can’t be changed for existing installations.<br />All subsequent tenant changes are made via the user [interface](/enterprise-tenant/managing-tenants/#to-view-or-edit-subtenant-properties) or the Cumulocity API.<br />
-  - **c8yedge tool:**
-    ```shell
-    c8yedge config --set company=value
-    ```
-
-
-- `domain` _string_ Required
-  - The Fully Qualified Domain Name (FQDN) where Edge will be hosted (for example, 'edge.mycompany.com').<br />The domain name provided here must match the scope of your Edge license, either the exact subdomain domain, or the parent domain.<br />
-  - **c8yedge tool:**
-    ```shell
-    c8yedge config --set domain=value
-    ```
-
-
-- `cumulocityPasswordSecretName` _string_ Required
-  - Name of the Kubernetes secret containing the Cumulocity admin user password for both the Management tenant and the Edge tenant.<br />This secret must contain a key named `INITIAL_C8Y_ADMIN_PASSWORD` with the initial password.<br />For more information, see [Cumulocity password secret](/edge/edge-custom-resource-definition/#k8-edge-cumulocity-password-secret).<br />**Info:** The Edge operator retrieves this secret from the EDGE-CR-NAMESPACE.<br />Ensure that this secret is created before initiating the Edge deployment process.<br />**Info:** This value is used only during the Edge installation and can’t be changed for existing installations.<br />All subsequent password changes are made via the user [interface](/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API.
+- `licenseKey` | string | Required<br/>
+  Edge license file you received for the domain.<br />If you do not have a license, you must request one from [product support](/additional-resources/contacting-support/).<br />When requesting license, you must provide the following details:<br />&nbsp;&nbsp;- Domain Name: The domain name assigned to your Edge installation (for example, 'edge.mycompany.com').<br />&nbsp;&nbsp;- Company Name: The name under which the license was purchased.<br />For more information, see [Edge license](/edge/installing-edge/#domain-name-validation-for-edge-license-key-generation).<br/>
+  If you used **c8yedge** tool to install, you can configure this field using the below command:
   
+  ```shell
+  c8yedge config --set-file licenseKey=<path/to/license.txt>
+  ```
+  <br/>
 
 
-- `email` _string_ Required
-  - The email address associated with the administrator account.<br />This value is used only during the initial Edge installation to bootstrap the admin account and cannot be changed for existing installations.<br />Once Edge is installed, the admin account must be changed via the user [interface](/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API.<br />
-  - **c8yedge tool:**
-    ```shell
-    c8yedge config --set email=value
-    ```
-
-
-- `tlsSecretName` _string_ Optional
-  - This defines the identity of your Edge domain. If not provided, Edge automatically generates and assigns self-signed certificates.<br />To use your own certificates, you must set both of the following keys:<br />&nbsp;&nbsp;- tls.key: TLS/SSL private key in PEM format.<br />&nbsp;&nbsp;- tls.crt: TLS/SSL certificate chain associated with the private key in PEM format.<br />    For TLS validation to succeed, the certificates must be concatenated in the following order:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- End-entity (Leaf) Certificate: The certificate issued to your specific Edge server.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Intermediate Certificate(s): The link(s) between your leaf and the root CA. If multiple intermediates exist, they must be ordered correctly.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Root CA Certificate: The final authority in the chain (generally included last).<br />For more information, see [Edge TLS secret](edge/edge-custom-resource-definition/#tls-secret).<br />**Info:** The Edge operator retrieves this secret from the `EDGE-CR-NAMESPACE`.<br />Ensure that this secret is created before initiating the Edge deployment or update process.<br />
-  - **c8yedge tool:**
-    ```shell
-    c8yedge config --set-file tlsSecret.tls.key=<path/to/tls.key> --set-file tlsSecret.tls.crt=<path/to/tls.crt>
-    ```
-
-
-- `cloudTenant` _[CloudTenantSpec](#cloudtenantspec)_ Optional
-  - Cumulocity cloud tenant details to configure and manage Edge remotely.<br />For more information, see [Edge cloud tenant](/edge/edge-custom-resource-definition/#cloud-tenant).<br />
-  - **c8yedge tool:**
-    ```shell
-    c8yedge config --set cloudTenant.domain=value --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>
-    ```
-
-
-- `storageClassName` _string_ Optional
-  - The Edge operator requests three PVCs, as outlined below.<br />- 75 GB, PVC named mongod-data-edge-db-rs0-0 made by MongoDB server for persisting application data.<br />  75 GB is the default, and its value can be configured through the Edge CR field spec.mongodb.resources.requests.storage.<br />- 10 GB, PVC named microservices-registry-data made by the private registry for persisting microservice images.<br />- 5 GB, PVC named edge-logs made by the Edge logging component for persisting application and system logs.<br />  Each of these PVCs utilizes the StorageClass if specified within the storageClassName field of the Edge CR.<br />- In case you omit the storageClassName, the Edge operator requests PVCs without a StorageClass,<br />  thereby instructing Kubernetes to utilize the default StorageClass configured in the cluster.<br />- Finally, if you specify the name of an existing StorageClass for which dynamic provisioning is enabled,<br />  the Operator requests PVCs with that class name, thereby instructing Kubernetes to utilize dynamic provisioning according to the specified class.<br />**Info:** This value is used only during the Edge installation and can’t be changed for existing installations.
+- `company` | string | Required<br/>
+  Name of the “edge” tenant, for example, the company’s name.<br />**Info:** This value is used only during the Edge installation and can’t be changed for existing installations.<br />All subsequent tenant changes are made via the [user interface](/enterprise-tenant/managing-tenants/#to-view-or-edit-subtenant-properties) or the Cumulocity API.<br/>
+  If you used **c8yedge** tool to install, you can configure this field using the below command:
   
+  ```shell
+  c8yedge config --set company=value
+  ```
+  <br/>
 
 
-- `core` _[CoreSpec](#corespec)_ Optional
-  - Specify resource limits for the Cumulocity Core container.<br />For more information, see [Cumulocity Core configurations](/edge/edge-custom-resource-definition/#c8y-core-config).<br />
-  - **c8yedge tool:**
-    ```shell
-    c8yedge config --set core.resources.limits.cpu=value --set core.resources.limits.memory=value
-    ```
+- `domain` | string | Required<br/>
+  The Fully Qualified Domain Name (FQDN) where Edge will be hosted (for example, 'edge.mycompany.com').<br />The domain name provided here must match the scope of your Edge license, either the exact subdomain domain, or the parent domain.<br/>
+  If you used **c8yedge** tool to install, you can configure this field using the below command:
+  
+  ```shell
+  c8yedge config --set domain=value
+  ```
+  <br/>
 
 
-- `mongodb` _[MongodbSpec](#mongodbspec)_ Optional
-  - Configurations needed to deploy the MongoDB server.<br />For more information, see [MongoDB](/edge/edge-custom-resource-definition/#mongodb).<br />
-  - **c8yedge tool:**
-    ```shell
-    c8yedge config --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_USER=value --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_PASSWORD=value
-    ```
+- `cumulocityPasswordSecretName` | string | Required<br/>
+  Name of the Kubernetes secret containing the Cumulocity admin user password for both the Management tenant and the Edge tenant.<br />This secret must contain a key named `INITIAL_C8Y_ADMIN_PASSWORD` with the initial password.<br /><br />**Info:** The Edge operator retrieves this secret from the `EDGE-CR-NAMESPACE`.<br />Ensure that this secret is created before initiating the Edge deployment process.<br />**Info:** This value is used only during the Edge installation and can’t be changed for existing installations.<br />All subsequent password changes are made via the [user interface](/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API.<br/>
+  
+  <br/>
 
 
-- `microservices` _[MicroserviceSpec](#microservicespec) array_ Optional
-  - Specify resources to allocate to each of the default Cumulocity microservices deployed.<br />For more information, see [Microservices](/edge/edge-custom-resource-definition/#microservices).<br />
-  - **c8yedge tool:**
-    ```shell
-    c8yedge config --set microservices.<microservice-name>.resources.limits.cpu=value
-    ```
+- `email` | string | Required<br/>
+  The email address associated with the administrator account.<br />This value is used only during the initial Edge installation to bootstrap the admin account and cannot be changed for existing installations.<br />Once Edge is installed, the admin account must be changed via the [user interface](/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API.<br/>
+  If you used **c8yedge** tool to install, you can configure this field using the below command:
+  
+  ```shell
+  c8yedge config --set email=value
+  ```
+  <br/>
+
+
+- `tlsSecretName` | string | Optional<br/>
+  This defines the identity of your Edge domain. If not provided, Edge automatically generates and assigns self-signed certificates.<br />To use your own certificates, you must set both of the following keys:<br />&nbsp;&nbsp;- tls.key: TLS/SSL private key in PEM format.<br />&nbsp;&nbsp;- tls.crt: TLS/SSL certificate chain associated with the private key in PEM format.<br />&nbsp;&nbsp;&nbsp;&nbsp;For TLS validation to succeed, the certificates must be concatenated in the following order:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- End-entity (Leaf) Certificate: The certificate issued to your specific Edge server.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Intermediate Certificate(s): The link(s) between your leaf and the root CA. If multiple intermediates exist, they must be ordered correctly.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Root CA Certificate: The final authority in the chain (generally included last).<br />**Info:** The Edge operator retrieves this secret from the `EDGE-CR-NAMESPACE`.<br />Ensure that this secret is created before initiating the Edge deployment or update process.<br/>
+  If you used **c8yedge** tool to install, you can configure this field using the below command:
+  
+  ```shell
+  c8yedge config --set-file tlsSecret.tls.key=<path/to/tls.key> --set-file tlsSecret.tls.crt=<path/to/tls.crt>
+  ```
+  <br/>
+
+
+- `cloudTenant` | [CloudTenantSpec](#cloudtenantspec) | Optional<br/>
+  Cumulocity cloud tenant details to configure and manage Edge remotely.<br/>
+  If you used **c8yedge** tool to install, you can configure this field using the below command:
+  
+  ```shell
+  c8yedge config --set cloudTenant.domain=value --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>
+  ```
+  <br/>
+
+
+- `storageClassName` | string | Optional<br/>
+  The Edge operator requests three PVCs, as outlined below.<br />&nbsp;&nbsp; - 75 GB, PVC named mongod-data-edge-db-rs0-0 made by MongoDB server for persisting application data.<br />&nbsp;&nbsp;&nbsp;&nbsp;75 GB is the default, and its value can be configured through the Edge CR field `spec.mongodb.resources.requests.storage`.<br />&nbsp;&nbsp; - 10 GB, PVC named microservices-registry-data made by the private registry for persisting microservice images.<br />&nbsp;&nbsp; - 5 GB, PVC named edge-logs made by the Edge logging component for persisting application and system logs.<br />&nbsp;&nbsp;&nbsp;&nbsp;Each of these PVCs utilizes the StorageClass if specified within the storageClassName field of the Edge CR.<br />&nbsp;&nbsp; - In case you omit the storageClassName, the Edge operator requests PVCs without a StorageClass,<br />&nbsp;&nbsp;&nbsp;&nbsp;thereby instructing Kubernetes to utilize the default StorageClass configured in the cluster.<br />&nbsp;&nbsp; - Finally, if you specify the name of an existing StorageClass for which dynamic provisioning is enabled,<br />&nbsp;&nbsp;&nbsp;&nbsp;the Operator requests PVCs with that class name, thereby instructing Kubernetes to utilize dynamic provisioning according to the specified class.<br />**Info:** This value is used only during the Edge installation and can’t be changed for existing installations.<br/>
+  
+  <br/>
+
+
+- `core` | [CoreSpec](#corespec) | Optional<br/>
+  Specify resource limits for the Cumulocity Core container.<br/>
+  If you used **c8yedge** tool to install, you can configure this field using the below command:
+  
+  ```shell
+  c8yedge config --set core.resources.limits.cpu=value --set core.resources.limits.memory=value
+  ```
+  <br/>
+
+
+- `mongodb` | [MongodbSpec](#mongodbspec) | Optional<br/>
+  Configurations needed to deploy the MongoDB server.<br/>
+  If you used **c8yedge** tool to install, you can configure this field using the below command:
+  
+  ```shell
+  c8yedge config --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_USER=value --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_PASSWORD=value
+  ```
+  <br/>
+
+
+- `microservices` | [MicroserviceSpec](#microservicespec) array | Optional<br/>
+  Specify resources to allocate to each of the default Cumulocity microservices deployed.<br />For more information, see [Microservices](/edge/edge-custom-resource-definition/#microservices).<br/>
+  If you used **c8yedge** tool to install, you can configure this field using the below command:
+  
+  ```shell
+  c8yedge config --set microservices.<microservice-name>.resources.limits.cpu=value
+  ```
+  <br/>
+
 
 
 
@@ -122,28 +144,35 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
 ##### Fields
 
-- `domain` _string_ Required
-  - Edge can be managed, configured, and monitored remotely via a Cumulocity cloud tenant. This requires registering Edge as a device within that tenant.<br />The domain of your tenant. For example, 'acme.cumulocity.com' on cumulocity.com, where 'acme' is the subdomain of your tenant.<br />
-  - **c8yedge tool:**
-    ```shell
-    c8yedge config --set domain=value
-    ```
+- `domain` | string | Required<br/>
+  Edge can be managed, configured, and monitored remotely via a Cumulocity cloud tenant. This requires registering Edge as a device within that tenant.<br />The domain of your tenant. For example, 'acme.cumulocity.com' on cumulocity.com, where 'acme' is the subdomain of your tenant.<br/>
+  If you used **c8yedge** tool to install, you can configure this field using the below command:
+  
+  ```shell
+  c8yedge config --set domain=value
+  ```
+  <br/>
 
 
-- `otp` _string_ Optional
-  - One-time password (OTP) for initial registration of Edge as a device in the cloud tenant.<br />If both this and `cloudTenant.tlsSecret` are not provided, Edge generates and uses self-signed certificates.<br />For more information see [Connecting Edge to a cloud tenant](/edge/connecting-edge-to-cloud/#register-edge-on-cloud).<br />
-  - **c8yedge tool:**
-    ```shell
-    c8yedge config --set cloudTenant.domain=<cloud tenant's domain> --set cloudTenant.otp=<one-time password>
-    ```
+- `otp` | string | Optional<br/>
+  One-time password (OTP) for initial registration of Edge as a device in the cloud tenant.<br />If both this and `cloudTenant.tlsSecret` are not provided, Edge generates and uses self-signed certificates.<br />For more information see [Connecting Edge to a cloud tenant](/edge/connecting-edge-to-cloud/#register-edge-on-cloud).<br/>
+  If you used **c8yedge** tool to install, you can configure this field using the below command:
+  
+  ```shell
+  c8yedge config --set cloudTenant.domain=<cloud tenant's domain> --set cloudTenant.otp=<one-time password>
+  ```
+  <br/>
 
 
-- `tlsSecretName` _string_ Optional
-  - Edge uses X.509 certificates to authenticate its connection to the cloud via MQTT. If both this and `cloudTenant.otp` are not provided, Edge generates and uses self-signed certificates.<br />To provide your own trusted certificates, you must set both of the following keys:<br />&nbsp;&nbsp;- tls.key: TLS/SSL private key in PEM format.<br />&nbsp;&nbsp;- tls.crt: TLS/SSL certificate chain associated with the private key in PEM format.<br />    For TLS validation to succeed, the certificates must be concatenated in the following order:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- End-entity (Leaf) Certificate: The certificate issued to your specific Edge server.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Intermediate Certificate(s): The link(s) between your leaf and the root CA. If multiple intermediates exist, they must be ordered correctly.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Root CA Certificate: The final authority in the chain (generally included last).<br />For more information, see [Edge TLS secret](edge/edge-custom-resource-definition/#tls-secret).<br />
-  - **c8yedge tool:**
-    ```shell
-    c8yedge config --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>
-    ```
+- `tlsSecretName` | string | Optional<br/>
+  Edge uses X.509 certificates to authenticate its connection to the cloud via MQTT. If both this and `cloudTenant.otp` are not provided, Edge generates and uses self-signed certificates.<br />To provide your own trusted certificates, you must set both of the following keys:<br />&nbsp;&nbsp;- tls.key: TLS/SSL private key in PEM format.<br />&nbsp;&nbsp;- tls.crt: TLS/SSL certificate chain associated with the private key in PEM format.<br />&nbsp;&nbsp;&nbsp;&nbsp;For TLS validation to succeed, the certificates must be concatenated in the following order:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- End-entity (Leaf) Certificate: The certificate issued to your specific Edge server.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Intermediate Certificate(s): The link(s) between your leaf and the root CA. If multiple intermediates exist, they must be ordered correctly.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Root CA Certificate: The final authority in the chain (generally included last).<br/>
+  If you used **c8yedge** tool to install, you can configure this field using the below command:
+  
+  ```shell
+  c8yedge config --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>
+  ```
+  <br/>
+
 
 
 #### CoreSpec
@@ -157,12 +186,15 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
 ##### Fields
 
-- `resources` _[PodResourcesWithLimits](#podresourceswithlimits)_ Optional
-  - Specify resource limits for the Cumulocity Core container. For more information, see Resource limits specification.<br />
-  - **c8yedge tool:**
-    ```shell
-    c8yedge config --set core.resources.limits.cpu=value --set core.resources.limits.memory=value
-    ```
+- `resources` | [PodResourcesWithLimits](#podresourceswithlimits) | Optional<br/>
+  Specify resource limits for the Cumulocity Core container.<br />**Defaults:**<br />&nbsp;&nbsp;- CPU Limit: 3000m<br />&nbsp;&nbsp;- Memory Limit: 6GB<br/>
+  If you used **c8yedge** tool to install, you can configure this field using the below command:
+  
+  ```shell
+  c8yedge config --set core.resources.limits.cpu=value --set core.resources.limits.memory=value
+  ```
+  <br/>
+
 
 
 
@@ -182,14 +214,17 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
 ##### Fields
 
-- `cpu` _[Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api)_ Optional
-  - Maximum compute resources allocated to this component. Values are specified in CPU units: for example, 1000m (1000 millicores) or 1 (1 full core).
+- `cpu` | [Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api) | Optional<br/>
+  Maximum compute resources allocated to this component. Values are specified in CPU units: for example, 1000m (1000 millicores) or 1 (1 full core).<br/>
   
+  <br/>
 
 
-- `memory` _[Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api)_ Optional
-  - Maximum RAM allocated to this component. Values are specified in bytes or with suffixes: for example, 512Mi (Mebibytes) or 2Gi (Gibibytes).
+- `memory` | [Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api) | Optional<br/>
+  Maximum RAM allocated to this component. Values are specified in bytes or with suffixes: for example, 512Mi (Mebibytes) or 2Gi (Gibibytes).<br/>
   
+  <br/>
+
 
 
 #### MicroserviceSpec
@@ -203,17 +238,21 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
 ##### Fields
 
-- `name` _string_ Required
-  - The name of the Cumulocity microservice. The allowed values are apama-ctrl, smartrule, opcua-mgmt-service, databroker-agent-server and datahub.
+- `name` | string | Required<br/>
+  The name of the Cumulocity microservice. The allowed values are `apama-ctrl`, `smartrule`, `opcua-mgmt-service`, `databroker-agent-server` and `datahub`.<br/>
   
+  <br/>
 
 
-- `resources` _[PodResourcesWithLimits](#podresourceswithlimits)_ Optional
-  - Specify resource limits for the Cumulocity microservice container. For more information, see Resource limits specification.<br />
-  - **c8yedge tool:**
-    ```shell
-    c8yedge config --set microservices.<microservice-name>.resources.limits.cpu=value
-    ```
+- `resources` | [PodResourcesWithLimits](#podresourceswithlimits) | Optional<br/>
+  Specify resource limits for the Cumulocity microservice container.<br />**Defaults:**<br />&nbsp;&nbsp;- CPU Limit: 1000m<br />&nbsp;&nbsp;- Memory Limit: 1GB<br/>
+  If you used **c8yedge** tool to install, you can configure this field using the below command:
+  
+  ```shell
+  c8yedge config --set microservices.<microservice-name>.resources.limits.cpu=value
+  ```
+  <br/>
+
 
 
 #### MongodbSpec
@@ -227,20 +266,25 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
 ##### Fields
 
-- `credentialsSecretName` _string_ Optional
-  - By default, MongoDB is configured with the username 'databaseAdmin' and a randomly generated password.<br />To provide your own credentials, you must set both of the following keys:<br />&nbsp;&nbsp;- MONGODB_DATABASE_ADMIN_USER: Database admin username.<br />&nbsp;&nbsp;- MONGODB_DATABASE_ADMIN_PASSWORD: Database admin password.<br />
-  - **c8yedge tool:**
-    ```shell
-    c8yedge config --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_USER=value --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_PASSWORD=value
-    ```
+- `credentialsSecretName` | string | Optional<br/>
+  This field is necessary for one or more of the following reasons:<br />&nbsp;&nbsp;- To specify the MongoDB admin credentials.<br />&nbsp;&nbsp;- To specify resource limits for the MongoDB server containers deployed by the Edge operator.<br />By default, MongoDB is configured with the username 'databaseAdmin' and a randomly generated password.<br />To provide your own credentials, you must set both of the following keys:<br />&nbsp;&nbsp;- MONGODB_DATABASE_ADMIN_USER: Database admin username.<br />&nbsp;&nbsp;- MONGODB_DATABASE_ADMIN_PASSWORD: Database admin password.<br />For self managed users, specify the Kubernetes secret containing the admin credentials with which the MongoDB server must be configured.<br />The Edge operator retrieves this secret from the namespace EDGE-CR-NAMESPACE.<br />**Info**: This secret is created before initiating the Edge deployment or update process.<br/>
+  If you used **c8yedge** tool to install, you can configure this field using the below command:
+  
+  ```shell
+  c8yedge config --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_USER=value --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_PASSWORD=value
+  ```
+  <br/>
 
 
-- `resources` _[PodResources](#podresources)_ Optional
-  - Specify resource limits for the MongoDB server. Specify the size of the Persistent Volume Claim (PVC) named mongod-data-edge-db-rs0-0 made by MongoDB server for persisting application data.``<br />
-  - **c8yedge tool:**
-    ```shell
-    c8yedge config --set mongodb.resources.limits.cpu=value --set mongodb.resources.limits.memory=value --set mongodb.resources.requests.storage=value
-    ```
+- `resources` | [PodResources](#podresources) | Optional<br/>
+  Specify resource limits for the MongoDB server. Specify the size of the Persistent Volume Claim (PVC) named mongod-data-edge-db-rs0-0 made by MongoDB server for persisting application data.<br />**Defaults:**<br />&nbsp;&nbsp;- CPU Limit: 3000m<br />&nbsp;&nbsp;- Memory Limit: 6GB<br />&nbsp;&nbsp;- Storage: 75GB<br/>
+  If you used **c8yedge** tool to install, you can configure this field using the below command:
+  
+  ```shell
+  c8yedge config --set mongodb.resources.limits.cpu=value --set mongodb.resources.limits.memory=value --set mongodb.resources.requests.storage=value
+  ```
+  <br/>
+
 
 
 #### PodResources
@@ -254,14 +298,17 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
 ##### Fields
 
-- `limits` _[LimitValues](#limitvalues)_ Optional
-  - Specify resource limits for the component.
+- `limits` | [LimitValues](#limitvalues) | Optional<br/>
+  Specify resource limits for the component.<br/>
   
+  <br/>
 
 
-- `requests` _[RequestValues](#requestvalues)_ Optional
-  - Specify resource requests for the component.
+- `requests` | [RequestValues](#requestvalues) | Optional<br/>
+  Specify resource requests for the component.<br/>
   
+  <br/>
+
 
 
 #### PodResourcesWithLimits
@@ -275,9 +322,11 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
 ##### Fields
 
-- `limits` _[LimitValues](#limitvalues)_ Optional
-  - Specify resource limits for the component. For more information, see Resource limits specification.
+- `limits` | [LimitValues](#limitvalues) | Optional<br/>
+  Specify resource limits for the component. For more information, see Resource limits specification.<br/>
   
+  <br/>
+
 
 
 #### RequestValues
@@ -291,9 +340,11 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
 ##### Fields
 
-- `storage` _[Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api)_ Optional
-  - The amount of persistent storage allocated to this component. Values are specified with suffixes: for example, 10Gi (10 Gibibytes) or 100Gi.<br />Note: Storage can only be increased, decreasing is not supported.
+- `storage` | [Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api) | Optional<br/>
+  The amount of persistent storage allocated to this component. Values are specified with suffixes: for example, 10Gi (10 Gibibytes) or 100Gi.<br />Note: Storage can only be increased, decreasing is not supported.<br/>
   
+  <br/>
+
 
 
 
