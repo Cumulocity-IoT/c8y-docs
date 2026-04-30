@@ -22,7 +22,7 @@ To access the OPC UA management service APIs, users must be assigned the require
 
 **Required role**
 
-OPC UA service - Admin
+OPC UA service - ADMIN
 
 **Description**
 
@@ -279,7 +279,7 @@ For better performance an in-memory map is used to store the alarm type and the 
 
 **Required role**
 
-OPC UA service - Read
+OPC UA service - READ
 
 **Parameters**
 
@@ -350,7 +350,7 @@ OPC UA service - Read
 
 **Required role**
 
-OPC UA service - Admin
+OPC UA service - ADMIN
 
 **Description**
 
@@ -395,7 +395,7 @@ The service will retain all the child devices of the server, and their correspon
 
 **Required role**
 
-OPC UA service - Read
+OPC UA service - READ
 
 **Description**
 
@@ -490,7 +490,7 @@ Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/get?nodeId=
 
 **Required role**
 
-OPC UA service - Read
+OPC UA service - READ
 
 **Description**
 
@@ -590,7 +590,7 @@ Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/children?no
 
 **Required role**
 
-OPC UA service - Read
+OPC UA service - READ
 
 **Description**
 
@@ -699,7 +699,7 @@ These resources provide the APIs for manipulating device types.
 
 **Required role**
 
-OPC UA service - Admin
+OPC UA service - ADMIN
 
 **Sample payloads**
 
@@ -1580,7 +1580,7 @@ This has exactly the same fields as *EventCreation*, however the *text* and *typ
 
 **Required role**
 
-OPC UA service - Read
+OPC UA service - READ
 
 **Payload**
 
@@ -1594,7 +1594,7 @@ The endpoint returns a JSON array of all OPC UA device types.
 
 **Required role**
 
-OPC UA service - Read
+OPC UA service - READ
 
 **Payload**
 
@@ -1614,7 +1614,7 @@ A JSON representation of the device type with the given ID if it exists. If not,
 
 **Required role**
 
-OPC UA service - Admin
+OPC UA service - ADMIN
 
 **Payload**
 
@@ -1628,7 +1628,7 @@ The payload of updating a device type is exactly the same as the payload of crea
 
 **Required role**
 
-OPC UA service - Admin
+OPC UA service - ADMIN
 
 **Success response**
 
