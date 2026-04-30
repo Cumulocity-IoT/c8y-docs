@@ -15,7 +15,7 @@ ticket: MTM-63637
 version: 2026.128.0
 ---
 We are introducing stricter validation for user email addresses.
-The domain part after the '@' symbol may now only include
+The part of the domain name following the ‘@’ symbol may now only contain
 alphanumeric characters, hyphens, and dots.
 
 This change ensures that system notifications - such as password resets or smart rule alerts - are delivered reliably.
