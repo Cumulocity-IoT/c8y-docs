@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-04-28'
   - label: jp.cumulocity.com
     date: '2026-04-28'
+  - label: us.cumulocity.com
+    date: '2026-04-29'
+  - label: cumulocity.com
+    date: '2026-04-29'
 ---
 The functionality in the Web SDK to generate a JSON schema based on a `TypeScript` type has been enhanced to store all generated schemas in a single *c8y-schemas.json* per application. The file can, for example, be retrieved from */apps/cockpit/c8y-schemas.json* for the Cockpit application. The different schemas are grouped by type if a type has been provided.
 

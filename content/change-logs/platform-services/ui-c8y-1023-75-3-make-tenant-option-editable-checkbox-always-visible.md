@@ -22,5 +22,9 @@ environment_availability:
     date: '2026-04-28'
   - label: jp.cumulocity.com
     date: '2026-04-28'
+  - label: us.cumulocity.com
+    date: '2026-04-29'
+  - label: cumulocity.com
+    date: '2026-04-29'
 ---
 When creating or editing tenant options, you can now always see and control the **Allow subtenants to edit this tenant option** checkbox, regardless of your tenant level. Previously, only {{< management-tenant >}}s could access this checkbox, which prevented users on other tenant levels from controlling whether subtenants can modify their tenant options. Since any user with permission to create or edit tenant options should be able to control this setting, and the {{< product-c8y-iot >}} API already allows all authorized users to set the editable property, the checkbox is now consistently available to all users with the appropriate permissions across all tenant levels.

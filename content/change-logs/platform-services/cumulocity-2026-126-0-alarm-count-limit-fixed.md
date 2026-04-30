@@ -1,5 +1,5 @@
 ---
-date:
+date: '2026-04-23'
 title: Fixed incorrect alarm count limit for users with global read permissions
 change_type:
   - value: change-VSkj2iV9m
@@ -13,6 +13,13 @@ build_artifact:
     label: cumulocity
 ticket: MTM-66609
 version: 2026.126.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-04-23'
+  - label: apj.cumulocity.com
+    date: '2026-04-29'
+  - label: jp.cumulocity.com
+    date: '2026-04-29'
 ---
 The `/alarm/alarmCount` endpoint now returns the correct alarm count for users with global read permissions. 
 Previously, the count was limited to a maximum of 100 alarms.

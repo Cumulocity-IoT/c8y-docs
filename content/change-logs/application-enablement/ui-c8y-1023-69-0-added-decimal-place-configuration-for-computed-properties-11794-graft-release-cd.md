@@ -27,4 +27,4 @@ environment_availability:
   - label: cumulocity.com
     date: '2026-04-28'
 ---
-You can now configure the number of decimal places displayed for computed properties in the asset selector when selecting datapoints, allowing you to control the display precision to match your specific requirements. This enhancement is available in widgets that use this component, such as the **HTML widget** and the preview version of the **[Asset table widget](https://cumulocity.com/docs/change-logs/#ui-c8y-1023-49-0-add-configurable-data-grid-as-asset-table-widget)**.
+You can now configure the number of decimal places displayed for computed properties in the asset selector when selecting data points, allowing you to control the display precision to match your specific requirements. This enhancement is available in widgets that use this component, such as the **HTML widget** and the preview version of the **[Asset table widget](https://cumulocity.com/docs/change-logs/#ui-c8y-1023-49-0-add-configurable-data-grid-as-asset-table-widget)**.

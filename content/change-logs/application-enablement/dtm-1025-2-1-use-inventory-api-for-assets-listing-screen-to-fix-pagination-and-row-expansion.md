@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-04-28'
   - label: jp.cumulocity.com
     date: '2026-04-28'
+  - label: us.cumulocity.com
+    date: '2026-04-29'
+  - label: cumulocity.com
+    date: '2026-04-29'
 ---
 Previously, the pagination and row expansion in the **Assets** page were frozen when displaying large datasets. This issue is now resolved to provide a reliable pagination and row expansion.
