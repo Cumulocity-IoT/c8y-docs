@@ -21,13 +21,13 @@ You need:
 ### Step 1: Create your first rule {#create-rule}
 
 1. Open the Data Preparation application. The landing page shows your list of rules. On a fresh tenant the list is empty.
-2. Click **Create rule**. The rule creation wizard opens.
+2. Click **Create rule** to open the rule creation wizard.
 
 The wizard has three pages:
 
-1. **Source transport** --- select the transport from which messages will be received. MQTT is currently the only supported transport.
-2. **Filter** --- specify a topic filter and a client ID filter. These determine which incoming messages this rule processes. Both fields support `*` as a wildcard. Note that these are not MQTT-style filters --- use `*` rather than `#` or `+`.
-3. **Confirm** --- review the source, topic, and client ID, then enter a **name** and **description** for the rule.
+1. **Source transport**: select the transport from which messages will be received. MQTT is currently the only supported transport.
+2. **Filter**: specify a topic filter and a client ID filter. These determine which incoming messages this rule processes. Both fields support `*` as a wildcard. Note that these are not MQTT-style filters --- use `*` rather than `#` or `+`.
+3. **Confirm**: review the source, topic, and client ID, then enter a **name** and **description** for the rule.
 
 Click **Create** to finish. The new rule is created in the **draft** state and the rule editor opens.
 
@@ -55,7 +55,7 @@ For more on what the AI assistant can do and how it works, see the [AI chat](/da
 
 ### Step 4: Test the rule {#test-rule}
 
-The test output panel appears alongside the generated code. To check that the smart function does what you expect:
+The test output panel appears alongside the sample data. To check that the smart function does what you expect:
 
 1. Make sure your sample data is in the test input area. See [Test data](/data-preparation/rule-editor/#test-data) for details on managing test inputs.
 2. Click **Run tests**. The platform compiles and executes your smart function against the sample input.
@@ -65,7 +65,7 @@ If the output is not what you expect, ask the AI to refine the code, then run th
 
 ### Step 5: Deploy the rule {#deploy-rule}
 
-When you are happy with the smart function, click **Save and deploy**. The platform:
+When you have finished editing your smart function, click **Save and deploy**. The platform:
 
 - Saves the current draft as the deployed version of the rule.
 - Starts the rule running against live device traffic.
