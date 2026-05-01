@@ -16,5 +16,9 @@ version: 1023.76.2
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-04-30'
+  - label: apj.cumulocity.com
+    date: '2026-05-01'
+  - label: jp.cumulocity.com
+    date: '2026-05-01'
 ---
 The new asset table previously did not sort measurements correctly when you selected the last measurement column, causing the table to display data in an unexpected order. This issue has been fixed, and the last measurement column now sorts as expected.

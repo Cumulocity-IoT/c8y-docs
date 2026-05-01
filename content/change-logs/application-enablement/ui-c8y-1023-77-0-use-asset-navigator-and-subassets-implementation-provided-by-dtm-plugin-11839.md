@@ -18,6 +18,10 @@ version: 1023.77.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-04-30'
+  - label: apj.cumulocity.com
+    date: '2026-05-01'
+  - label: jp.cumulocity.com
+    date: '2026-05-01'
 ---
 Previously, the Cockpit application utilized the asset navigator and subassets implementations provided by the Web SDK. With this change, the Cockpit application utilizes the corresponding implementations provided by the DTM (Digital Twin Manager) plugin instead.
 
