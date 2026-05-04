@@ -74,3 +74,37 @@ Processes incoming messages using the following sub-components:
 
 The Cumulocity platform data store where transformed and validated data is persisted and made available for applications, dashboards, and downstream integrations.
 
+### Smart Functions {#smart-functions}
+
+A Smart Function is a single function exported from an ECMAScript file with a standard name and signature. It is executed by the platform in response to events — such as incoming messages, requests, or other inputs — as configured for the given Smart Function.
+
+Smart Functions provide a consistent, code-based micro-extension model across the platform. They are designed for cases where applying processing logic inside a component is necessary, but where a full custom microservice would be too heavy-weight. Smart Functions are written in ECMAScript 6 (ES6), a well-established language with a mature developer ecosystem and strong support from generative AI tools.
+
+A Smart Function uses one of the following signatures:
+
+```js
+export function onMessage(message, context);
+export async function onMessage(message, context);
+```
+
+The `context` object is provided by the platform and exposes implementation-specific members and methods. It also includes a `runtime` string that identifies the component the Smart Function is running within.
+
+Smart Functions have the following key characteristics:
+
+* **Sandboxed** — each Smart Function runs in an isolated environment. Access to other tenant state, the host filesystem, sockets, and uncontrolled CPU or memory usage is restricted.
+* **Stateless by design** — Smart Functions must not rely on global state. The platform may reinstantiate or run multiple instances of a Smart Function at any time. Where state persistence is needed, the `context` object provides dedicated methods.
+* **ECMAScript 6** — Smart Functions are deployed as single ES6 files. TypeScript is supported as a development language and can be transpiled to ES6 for deployment.
+* **AI-friendly** — the ECMAScript language choice and the TypeScript API provided with each implementation are optimized for use with generative AI authoring tools, both inside and outside the platform.
+
+### Rules {#rules}
+
+A Rule is the deployable unit in Data Preparation that combines a Smart Function with its configuration and activation state. When a Rule is active, it runs continuously and processes every incoming message posted to its subscribed MQTT topic, applying the transformation logic defined in its Smart Function to produce Cumulocity-compliant output.
+
+A Rule consists of the following:
+
+* **Smart Function** — the ECMAScript transformation logic that processes each incoming message.
+* **Topic subscription** — the MQTT topic the Rule listens on for incoming device messages.
+* **Activation state** — a Rule can be active (processing live data) or inactive (paused). Only active Rules consume platform resources.
+
+Rules are managed through the Data Preparation application, where you can create, test, activate, deactivate, and delete them. You can test a Rule using sample payloads before activating it in production.
+
