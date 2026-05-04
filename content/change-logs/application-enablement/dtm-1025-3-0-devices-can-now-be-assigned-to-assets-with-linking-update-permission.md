@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "devices can now be assigned to assets with LINKING_UPDATE permission"
+title: "Devices can now be assigned to assets with LINKING_UPDATE permission"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
