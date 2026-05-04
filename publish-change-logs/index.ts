@@ -447,6 +447,7 @@ function formatContent(content: string) {
   formattedContent = formattedContent.replaceAll("{{< openapi >}}", "Cumulocity OpenAPI Specification");
   formattedContent = formattedContent.replaceAll("{{< link-c8y-github >}}", "https://github.com/Cumulocity-IoT");
   formattedContent = formattedContent.replaceAll("(/", "(https://cumulocity.com/docs/");
+  formattedContent = formattedContent.replaceAll("{{< domain-c8y >}}", "https://cumulocity.com");
   return formattedContent.replaceAll("{{< product-c8y-iot >}}", "Cumulocity").replaceAll("{{< enterprise-tenant >}}", "Enterprise Tenant"); 
 }
 function getSubCategoryFromProductArea(productArea: string): number {
