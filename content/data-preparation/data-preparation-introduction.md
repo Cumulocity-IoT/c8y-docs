@@ -37,3 +37,40 @@ Data Preparation empowers you to:
 The Data Preparation application utilizes an Apama-based Data Plane and a Java-based Control Plane to manage the lifecycle of your data. Currently, the application supports data ingestion via the Cumulocity MQTT Service. Data Preparation allows you to write Rules in JavaScript. 
 
 
+### Architecture {#architecture}
+
+The diagram below illustrates the Dataprep Service flows within a tenant.
+
+<p align="center" width="100%">
+    <img width="80%" src="/images/data-preparation/datprep_architecture.png" alt="Dataprep Service architecture">
+</p>
+
+The architecture consists of the following components:
+
+**Thin edge**
+
+A lightweight runtime that runs on resource-constrained devices and gateways, enabling local data processing and forwarding to Cumulocity.
+
+**Devices / Gateways**
+
+Physical devices or gateway hardware that collect sensor data and communicate with the platform using supported protocols.
+
+**Device Integration**
+
+Handles the connection and communication between external devices and the platform. It includes a microservice that translates device-specific protocols and forwards data to the Messaging Service.
+
+**Messaging Service**
+
+The central message broker that decouples data producers (Device Integration) from data consumers (Data Preparation). It queues and routes incoming messages to the Data Preparation service.
+
+**Data Preparation**
+
+Processes incoming messages using the following sub-components:
+
+- **Microservice** – the core runtime that orchestrates message processing, manages the lifecycle of Smart Functions, and forwards transformed data to the Operational Store.
+- **Smart Function** – a modular, user-defined piece of JavaScript logic that transforms raw device payloads into Cumulocity-compliant objects such as measurements, events, alarms, and inventory entries.
+
+**Operational Store**
+
+The Cumulocity platform data store where transformed and validated data is persisted and made available for applications, dashboards, and downstream integrations.
+
