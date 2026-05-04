@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-6253
 version: 1023.78.2
 ---
-The Device Management welcome widget now translates quick link labels according to the user's language preference. In earlier versions, changing the user's language preference does not affect the quick link labels.
+The Device Management welcome widget now translates quick link labels according to the user's language preference. In earlier versions, changing the user's language preference did not affect the quick link labels.
