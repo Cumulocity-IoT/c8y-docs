@@ -14,7 +14,7 @@ build_artifact:
 ticket: "CTM-2864"
 version: "1025.3.0"
 ---
-The Asset properties widget configuration now includes a live preview
+The "Asset properties" widget configuration now includes a live preview
 panel to help you visualize your widget before saving. When you select
 an asset and its properties, the preview panel displays the selected
 property and its values in read-only mode, showing exactly how the
@@ -23,5 +23,5 @@ widget will appear in your application.
 This enhancement eliminates guesswork when configuring the widget, as
 you can see real-time updates as you make selections. Existing widget
 configurations remain unchanged, and the preview panel appears
-automatically when you configure a new Asset properties widget or edit
+automatically when you configure a new "Asset properties" widget or edit
 an existing one.
