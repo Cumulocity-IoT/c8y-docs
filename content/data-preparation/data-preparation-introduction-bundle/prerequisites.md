@@ -13,6 +13,7 @@ Verify that your user role includes the following permissions:
 |---------------------------------------|------------------------------------------------------------------|
 | Data Preparation rules                | Create and manage data transformation rules                      |
 | Data Preparation deployments          | Deploy and manage rules in production                            |
+
 Assign these permissions to your user role in the Administration app. See [Managing permissions and roles](/standard-tenant/managing-permissions/) for details.
 
 ### AI configuration {#ai-configuration}
