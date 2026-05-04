@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAB-5192
-version: 27.103.0
+version: 27.104.0
 
 ---
 
