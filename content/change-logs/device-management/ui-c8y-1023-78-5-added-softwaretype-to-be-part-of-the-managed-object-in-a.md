@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Added softwaretype to be part of the managed object in a device profile always. [GRAFT][release/cd] (#11921)
+title: Device profile now always includes software type in the managed object
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
