@@ -14,20 +14,4 @@ build_artifact:
 ticket: DM-5994
 version: 1023.78.5
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Device management app): [DM-5994] Added softwaretype to be part
-of the managed object in a device profile
-always.](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11835)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[DM-5994]:
-https://cumulocity.atlassian.net/browse/DM-5994?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dafina Karamanoleva <92030501+dafkk@users.noreply.github.com>
+When creating or updating a device profile, the software type information was not consistently included in the managed object data structure, which could cause issues when retrieving or managing device profiles. The device profile now always includes the software type as part of the managed object, ensuring that all software type information is properly stored and available when you access device profiles. This change ensures consistency in how device profiles are managed and prevents data loss or incomplete profile information when working with devices that have software type configurations.
