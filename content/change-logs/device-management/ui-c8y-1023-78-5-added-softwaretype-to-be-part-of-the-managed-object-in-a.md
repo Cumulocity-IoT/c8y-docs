@@ -14,5 +14,5 @@ build_artifact:
 ticket: DM-5994
 version: 1023.78.5
 ---
-When assigning a device profile, the software type defined in the profile was not included in the generated operation.
+When assigning a device profile, the software type defined in the profile was not included in the generated operation. This issue has been fixed.
 The operation now includes the software type when it is defined in the profile, ensuring correct profile application on devices.
