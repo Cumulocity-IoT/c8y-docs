@@ -22,7 +22,7 @@ The AI assistant helps you describe your business context and automatically gene
 
 ### Subscription {#subscription}
 Ensure your tenant meets the following subscription requirements:
-• Your tenant is subscribed to the `Data Preparation` application
-• Your tenant is subscribed to the `mqtt-service`
+* Your tenant is subscribed to the `Data Preparation` application
+* Your tenant is subscribed to the `mqtt-service`
 
 To gain access to the Private Preview of Data Preparation, reach out to Cumulocity support.
