@@ -7,13 +7,13 @@ sector:
 ---
 
 {{< c8y-admon-preview >}}
-This feature is in Public Preview and may be subject to change in the future.
+This feature is in Public Preview and is subject to change in the future.
 {{< /c8y-admon-preview >}}
 
 
-The Dashboard manager in Device management brings more flexibility, consistency, and control over device dashboards.
+The dashboard manager in Device Management application brings more flexibility, consistency, and control over device dashboards.
 
-You can create template dashboards that automatically apply to devices of the same type, ensuring consistent views across your environment. The Dashboard Manager makes it simple to organize dashboards in one place, while support for multiple dashboards per device gives you the freedom to tailor different perspectives for different use cases. You can also name dashboards in ways that match your workflows, so finding the right view is effortless.
+You can create template dashboards that automatically apply to devices of the same type, ensuring consistent views across your environment. The dashboard manager makes it simple to organize dashboards in one place, while support for multiple dashboards per device gives you the freedom to tailor different perspectives for different use cases. You can also name dashboards in ways that match your workflows, so finding the right view is effortless.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
@@ -43,18 +43,18 @@ Here are a few advantages:
 Dashboards are application-specific. A dashboard created within Device Management is unique to that specific instance. It does not appear in other applications like Cockpit or in renamed, duplicated versions of the Device Management application.
 {{< /c8y-admon-info >}}
 
-### To add, edit or delete a device or type based dashboards {#device-management-device-or-type-dashboards}
+### To add, edit or delete device or type-based dashboards {#device-management-device-or-type-dashboards}
 
 {{< c8y-admon-info >}}
-With the rollout of the Dashboard Manager, the default Info dashboard is deprecated and can no longer be edited. Your new custom dashboard will replace the Info dashboard and become the primary view for your device.
+With the rollout of the dashboard manager, the default Info dashboard is deprecated and can no longer be edited. Your new custom dashboard will replace the Info dashboard and become the primary view for your device.
 {{< /c8y-admon-info >}}
 
 To add a new dashboard for a device, click **Add dashboard** in the device's navigator.
 
-When you enable the template option for the dashboard, the dashboard becomes available to all devices with the same type. These shared dashboards are marked with a "T" icon, making them easy to distinguish from device-specific views.
+To share a dashboard with devices of the same type, enable the template option for the dashboard. Template dashboards become available to all devices with the same type. These shared dashboards are marked with a "T" icon, making them easy to distinguish from device-specific views.
 
 Start customizing your view by adding widgets as soon as the dashboard is created. You have full control in this view to refine your widgets, update settings, or remove the dashboard entirely.
 
-### Dashboard Manager
+### Dashboard manager {#dashboard-manager}
 
-To view, edit or delete dashboard templates created across the Device management application, click **Dashboard manager** in the **Management** menu of the navigator.
+To view, edit or delete dashboard templates created across the Device Management application, click **Dashboard manager** in the **Management** menu of the navigator.
