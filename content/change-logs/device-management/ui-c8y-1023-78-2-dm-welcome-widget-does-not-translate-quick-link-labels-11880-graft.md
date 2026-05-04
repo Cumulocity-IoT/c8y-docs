@@ -1,6 +1,6 @@
 ---
 date: ""
-title: DM welcome widget does not translate quick link labels (#11880) [GRAFT][release/cd] (#11913)
+title: Device Management welcome widget now translates quick link labels
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-6253
 version: 1023.78.2
 ---
-DM welcome widget does not translate quick link labels (#11880) [GRAFT][release/cd] (#11913)
+The Device Management welcome widget now translates quick link labels according to the user's language preference. In earlier versions, changing the user's language preference does not affect the quick link labels.
