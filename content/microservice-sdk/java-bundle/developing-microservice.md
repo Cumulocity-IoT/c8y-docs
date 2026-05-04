@@ -594,6 +594,107 @@ If you have defined the custom properties in your pom.xml file you can specify t
 mvn clean install -Dcustom-property.metaspace.min=400m -Dcustom-property.metaspace.max=500m
 ```
 
+#### Validate REST security goal {#validate-rest-security-goal}
+
+Available since version 2026.29.0, the validate REST security goal scans compiled classes to ensure all REST controller endpoints have proper security annotations. This provides build-time verification that your microservice endpoints are adequately secured.
+
+The goal verifies that all REST endpoints are either secured with one of the recognized security annotations or explicitly marked as unsecured.
+
+##### Configuring the goal {#configuring-the-goal}
+
+Add the following to your microservice *pom.xml* file:
+
+```xml
+<plugin>
+    <groupId>com.nsn.cumulocity.clients-java</groupId>
+    <artifactId>microservice-package-maven-plugin</artifactId>
+    <version>${c8y.version}</version>
+    <executions>
+        <execution>
+            <id>validate-rest-security</id>
+            <goals>
+                <goal>validate-rest-security</goal>
+            </goals>
+            <phase>prepare-package</phase>
+            <configuration>
+                <enabled>true</enabled>
+                <failOnError>true</failOnError>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+```
+
+##### Configuration parameters {#configuration-parameters}
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| enabled | false | Enable the validation. Must be set to `true` to activate. |
+| failOnError | true | Fail the build if unsecured endpoints are found. Set to `false` to log warnings only. |
+
+##### Securing your endpoints {#securing-your-endpoints}
+
+All endpoints in your @RestController classes must be either secured or explicitly marked as unsecured.
+
+**Securing an endpoint with role-based access:**
+
+```java
+@RestController
+@RequestMapping("/api")
+public class UserController {
+    
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/users")
+    public List<User> getUsers() {
+        return userService.findAll();
+    }
+}
+```
+
+**Marking an endpoint as explicitly unsecured:**
+
+```java
+@RestController
+@RequestMapping("/api")
+public class HealthController {
+    
+    @UnauthorizedEndpoint("Public health check endpoint")
+    @GetMapping("/health")
+    public ResponseEntity<String> health() {
+        return ResponseEntity.ok("OK");
+    }
+}
+```
+
+The validator recognizes the following security annotations:
+
+* `@org.springframework.security.access.prepost.PreAuthorize`
+* `@org.springframework.security.access.annotation.Secured`
+* `@jakarta.annotation.security.RolesAllowed`
+* `@javax.annotation.security.RolesAllowed`
+
+Use the `@UnauthorizedEndpoint` annotation from the `com.cumulocity.microservice.security.annotation` package to mark endpoints that intentionally do not require authentication. The annotation accepts an optional parameter to document why the endpoint is unsecured.
+
+##### Example build output {#example-build-output}
+
+When validation succeeds, you see a message similar to:
+
+```
+[INFO] Starting REST endpoint security validation...
+[INFO] Found 5 REST controller classes
+[INFO] ✓ All REST endpoints are properly secured!
+```
+
+When validation fails with unsecured endpoints, the build stops with error messages:
+
+```
+[ERROR] Found 2 unsecured REST endpoints:
+[ERROR]   - REST endpoint not secured: com.example.UserController.deleteAll.
+[ERROR]     Must be annotated with @PreAuthorize, @Secured, @RolesAllowed, or @UnauthorizedEndpoint.
+[ERROR]   - REST endpoint not secured: com.example.ConfigController.reset.
+[ERROR]     Must be annotated with @PreAuthorize, @Secured, @RolesAllowed, or @UnauthorizedEndpoint.
+```
+
 #### Push goal {#push-goal}
 
 The push plugin is responsible for pushing the Docker image to a registry. The registry can be configured by:
