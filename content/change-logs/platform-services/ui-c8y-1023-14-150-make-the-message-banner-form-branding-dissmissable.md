@@ -14,21 +14,10 @@ build_artifact:
 ticket: MTM-65885
 version: 1023.14.150
 ---
-# Backport
+Users can now permanently dismiss custom messages configured under **Branding** > **Message Banner**. Previously, these messages reappeared every time the page was refreshed, which could disrupt the user experience.
 
-This will backport the following commits from `develop` to
-`release/y2026`:
-- [feat(Administration): [MTM-65885] Make the message banner form
-branding
-dissmissable.](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10858)
+Users can clear these messages from the top of their screen in two ways:
+- Close: Temporarily hides the message. It will reappear the next time the page is refreshed.
+- Acknowledge and close: Confirms the user has read the message. The application will remember this preference for the specific browser being used and will not show the message again.
 
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65885]:
-https://cumulocity.atlassian.net/browse/MTM-65885?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Jakub Drewniak <103751383+jdre-c8y@users.noreply.github.com>
+Note: The message will reappear if the administrator updates the banner configuration with a new text or if the user clears their browser cache.
