@@ -600,7 +600,7 @@ Available since version 2026.29.0, the validate REST security goal scans compile
 
 The goal verifies that all REST endpoints are either secured with one of the recognized security annotations or explicitly marked as unsecured.
 
-##### Configuring the goal
+##### Configuring the goal {#configuring-the-goal}
 
 Add the following to your microservice *pom.xml* file:
 
@@ -625,14 +625,14 @@ Add the following to your microservice *pom.xml* file:
 </plugin>
 ```
 
-##### Configuration parameters
+##### Configuration parameters {#configuration-parameters}
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
 | enabled | false | Enable the validation. Must be set to `true` to activate. |
 | failOnError | true | Fail the build if unsecured endpoints are found. Set to `false` to log warnings only. |
 
-##### Securing your endpoints
+##### Securing your endpoints {#securing-your-endpoints}
 
 All endpoints in your @RestController classes must be either secured or explicitly marked as unsecured.
 
@@ -675,7 +675,7 @@ The validator recognizes the following security annotations:
 
 Use the `@UnauthorizedEndpoint` annotation from the `com.cumulocity.microservice.security.annotation` package to mark endpoints that intentionally do not require authentication. The annotation accepts an optional parameter to document why the endpoint is unsecured.
 
-##### Example build output
+##### Example build output {#example-build-output}
 
 When validation succeeds, you see a message similar to:
 
