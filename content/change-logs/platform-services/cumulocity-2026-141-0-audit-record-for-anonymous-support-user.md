@@ -1,6 +1,6 @@
 ---
 date: ''
-title: Enhanced Traceability for Support User Logins in Audit Logs
+title: Enhanced traceability for support user logins in audit logs
 product_area: Platform services
 change_type:
   - value: change-2c7RdTdXo4
