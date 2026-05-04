@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-65573
 version: 2026.141.0
 ---
-Improvements have been made to the audit logging logic for **User login** actions to ensure full visibility during sub-tenant access.
+The audit logging logic for **User login** actions has been improved to ensure full visibility during subtenant access.
 
 When a support user logs into a sub-tenant, the audit log entry now consistently records the specific target user being accessed. Previously, if the system used only the `<managementTenantUserId>$` identifier, the audit log would omit the impersonated user's identity.
 
