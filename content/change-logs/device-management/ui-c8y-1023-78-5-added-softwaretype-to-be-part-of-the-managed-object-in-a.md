@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Device profile now always includes software type in the managed object
+title: Device profile assignment now includes software type in operations
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
