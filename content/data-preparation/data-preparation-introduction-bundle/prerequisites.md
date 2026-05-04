@@ -7,7 +7,7 @@ To use the Data Preparation application, ensure you have the following prerequis
 
 ### Permissions {#permissions}
 
-Verify that your user role includes the following permissions:
+Verify that your user includes the following role permissions:
 
 | Role                                  | Access granted                                                   |
 |---------------------------------------|------------------------------------------------------------------|
@@ -17,9 +17,8 @@ Verify that your user role includes the following permissions:
 Assign these permissions to your user role in the Administration app. See [Managing permissions and roles](/standard-tenant/managing-permissions/) for details.
 
 ### AI configuration {#ai-configuration}
-Set up a global provider with the AI Agent Manager to enable the AI assistant in Data Preparation.
-The AI assistant helps you describe your business context and automatically generates the necessary transformation code in a Smart Function.
-Supported providers include Anthropic and other AI services. Contact your administrator to configure the global provider.
+Set up a [global provider](/ai/aim-introduction/#getting-started-by-configuring-a-global-provider) with the AI Agent Manager to enable the AI assistant in Data Preparation.
+The AI assistant helps you describe your business context and automatically generates the necessary transformation code in a Smart Function.Supported providers include Anthropic and other AI services.
 
 ### Subscription {#subscription}
 Ensure your tenant meets the following subscription requirements:
