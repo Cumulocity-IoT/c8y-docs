@@ -19,24 +19,17 @@ Data Preparation uses Smart Functions - modular pieces of logic that independent
 Data Preparation empowers you to:
 
 • Easily convert raw payloads into standard Cumulocity measurements, events, alarms, and inventory objects.
-
 • Use a conversational AI chat interface to describe your business context and automatically generate the necessary transformation code in a Smart Function.
-
 • Perform real-time calculations (e.g. converting Fahrenheit to Celsius) or correct values based on predefined normal ranges.
-
 • Automatically map and create devices based on external IDs found in the payload, source client ID, or topic path.
-
 • Scale with support for high-volume data ingestion, as Data Preparation is built on high-performant, horizontally scalable infrastructure.
 
 
 **Key Capabilities**
 
 • AI-First Experience – the primary user interface is an AI assistant that writes and optimizes JavaScript-based transformation logic based on your prompts (leveraging the [AI Agent Manager](/ai/aim-introduction/)).
-
-• Build-in Code Editor – a simplified IDE is available to manually view, edit, or paste pre-written logic. 
-
-• Testing & Validation – run tests using sample data (either manually uploaded or captured live from an MQTT topic) with a visual comparison. 
-
+• Build-in Code Editor – a simplified IDE is available to manually view, edit, or paste pre-written logic.
+• Testing & Validation – run tests using sample data (either manually uploaded or captured live from an MQTT topic) with a visual comparison.
 • Integrated Deployment – once a Rule is active, it runs continuously as data is posted to the subscribed [MQTT Service](/device-integration/mqtt-service/) topics.
 
 **How does Data Preparation work?**
