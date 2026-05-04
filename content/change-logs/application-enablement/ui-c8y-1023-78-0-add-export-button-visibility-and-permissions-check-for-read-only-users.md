@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-05-04'
 title: Export operations disabled for users without appropriate permissions
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-66664
 version: 1023.78.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-05-04'
 ---
 Previously, users without Inventory WRITE permission could access all export operations on the **Exports** page and only received an error after attempting to save. This issue has been fixed. 
 

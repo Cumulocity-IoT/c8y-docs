@@ -20,6 +20,8 @@ environment_availability:
     date: '2026-04-29'
   - label: jp.cumulocity.com
     date: '2026-04-29'
+  - label: us.cumulocity.com
+    date: '2026-05-04'
 ---
 The `/alarm/alarmCount` endpoint now returns the correct alarm count for users with global read permissions. 
 Previously, the count was limited to a maximum of 100 alarms.

@@ -20,6 +20,8 @@ environment_availability:
     date: '2026-04-29'
   - label: jp.cumulocity.com
     date: '2026-04-29'
+  - label: us.cumulocity.com
+    date: '2026-05-04'
 ---
 We are introducing stricter validation for user email addresses.
 The part of the domain name following the ‘@’ symbol may now only contain

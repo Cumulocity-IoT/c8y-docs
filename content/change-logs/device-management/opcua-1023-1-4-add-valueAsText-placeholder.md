@@ -20,5 +20,7 @@ environment_availability:
     date: '2026-04-29'
   - label: jp.cumulocity.com
     date: '2026-04-29'
+  - label: us.cumulocity.com
+    date: '2026-05-04'
 ---
 A new `${valueAsText}` placeholder is now available in the body template for OPC UA custom actions. Unlike the existing `${value}` placeholder which inserts the JSON-serialized value, `${valueAsText}` provides a plain text representation of the node value. This is useful for embedding values directly in strings without JSON formatting. The placeholder is available for both HTTP POST custom actions and MQTT forwarding custom actions.
