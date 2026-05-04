@@ -30,7 +30,7 @@ ROLES & PERMISSIONS:
 - To visualize already selected data points: READ permission for permission type "Measurements" or READ permission for "Measurements" in the inventory roles
 - To send as widget to report/dashboard: ADMIN permission for permission type "Inventory"
 
-Note that datapoints existing in the data point library are visible by anyone without the need of any permission.
+Note that data points existing in the data point library are visible by anyone without the need of any permission.
 {{< /c8y-admon-req >}}
 
 The data explorer is available for all assets at once or just for a particular asset. To access the data explorer:

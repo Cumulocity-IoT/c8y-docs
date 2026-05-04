@@ -29,11 +29,9 @@ Cloud instances are separated into *non-production* and *production* cloud insta
 
 The upgrade process for instances follows a staged approach.
  * After an upgrade has passed {{< product-c8y-iot >}}’s internal quality assurance, it is first deployed to non-production instances.
- * Following this initial deployment and based on the scope and complexity of the upgrade, production instances are then upgraded, typically two to three weeks after non-production deployment.
+ * Following initial deployment, production instances are upgraded on a schedule tailored to the update's scope. Low-risk enhancements, such as user interface improvements, are typically promoted to production within hours. More complex upgrades are rolled out over a period of two to three weeks, providing an intentional window for customer testing and feedback. Additionally, critical security patches and hotfixes are deployed immediately across all instances to ensure continuous protection and platform stability.
 
 In rare circumstances, upgrades may be rolled back if significant issues are detected post-deployment.
-
-Additionally, critical fixes, referred to as “hotfixes”, may be applied as necessary to address, for example, security vulnerabilities. Hotfixes can be applied to any {{< product-c8y-iot >}} instance at any time, ensuring that high-priority concerns are addressed rapidly.
 
 ### Device integration and application enablement
 
