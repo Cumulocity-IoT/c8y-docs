@@ -14,4 +14,5 @@ build_artifact:
 ticket: DM-5994
 version: 1023.78.5
 ---
-When creating or updating a device profile, the software type information was not consistently included in the managed object data structure, which could cause issues when retrieving or managing device profiles. The device profile now always includes the software type as part of the managed object, ensuring that all software type information is properly stored and available when you access device profiles. This change ensures consistency in how device profiles are managed and prevents data loss or incomplete profile information when working with devices that have software type configurations.
+When assigning a device profile, the software type defined in the profile was not included in the generated operation.
+The operation now includes the software type when it is defined in the profile, ensuring correct profile application on devices.
