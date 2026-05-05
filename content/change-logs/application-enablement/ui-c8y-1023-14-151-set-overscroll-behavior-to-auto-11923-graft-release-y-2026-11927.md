@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix overscroll behavior on web applications
+title: Fixed overscroll behavior in web applications
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
