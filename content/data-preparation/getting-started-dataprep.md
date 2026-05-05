@@ -15,7 +15,7 @@ For background on what Data Preparation is and what rules do, see [Introduction]
 You need:
 
 - A tenant with Data Preparation enabled. Data Preparation is currently in Private Preview --- contact [product support](/additional-resources/contacting-support/) to enable it.
-- Access to the AI agent manager for AI-assisted code generation. See the [AI agent manager](/ai/) documentation.
+- Access to the AI Agent Manager for AI-assisted code generation. See the [AI Agent Manager](/ai/) documentation.
 - A sample message payload you want to process. For this walkthrough, any JSON payload works.
 
 ### Step 1: Create your first rule {#create-rule}
