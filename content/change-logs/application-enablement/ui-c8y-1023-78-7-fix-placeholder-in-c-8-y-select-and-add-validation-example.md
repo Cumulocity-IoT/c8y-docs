@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix placeholder in c8y-select component and add validation example to Codex
+title: Fixed placeholder in c8y-select component
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
