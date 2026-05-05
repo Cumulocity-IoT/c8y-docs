@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "query parameter withSubAssets deprecated in favor of dedicated endpoint"
+title: "Query parameter withSubAssets deprecated in favor of dedicated endpoint"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"

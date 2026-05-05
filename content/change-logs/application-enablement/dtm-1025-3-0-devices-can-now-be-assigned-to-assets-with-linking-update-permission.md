@@ -19,5 +19,5 @@ the INVENTORY_UPDATE permission, which was overly restrictive for users
 who only needed to manage asset linking and relationships. The Asset API
 now allows users with the LINKING_UPDATE permission to assign devices to
 assets if the `assets.permission.mode` is set to either `ALL`, or
-`EXTERNAL` and the asset is an external Asset. An Asset is considered
+`EXTERNAL` and the asset is an external asset. An asset is considered
 external if it has the marker fragment `c8y_ExternalAsset`.
