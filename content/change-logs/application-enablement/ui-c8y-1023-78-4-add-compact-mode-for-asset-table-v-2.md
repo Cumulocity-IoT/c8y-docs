@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add compact mode option for the new asset table v2
+title: Added compact mode option for the new Asset table v2
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
