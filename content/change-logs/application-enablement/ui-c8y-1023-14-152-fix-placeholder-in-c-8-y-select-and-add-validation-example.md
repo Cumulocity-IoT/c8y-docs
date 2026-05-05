@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix placeholder in c8y-select component and add validation example to Codex
+title: Fixed placeholder in c8y-select component
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66503
 version: 1023.14.152
 ---
-Fixes an issue where the c8y-select placeholder did not display in some cases when no value was selected, and adds a validation example to the documentation.
+Previously, the `c8y-select` placeholder did not display in some cases when no value was selected. This issue has been fixed. Moreover, a validation example has been added to the Codex documentation.
