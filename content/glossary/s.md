@@ -17,6 +17,11 @@ A service user is a non-human user account that is created automatically when a 
 A microservice retrieves the credentials for its service user by making an authenticated GET request to `/application/currentApplication/subscriptions` using its bootstrap credentials. To obtain the service user, a service bootstrap user must be used. The service bootstrap user is provisioned to the microservice in its [microservice runtime](/microservice-sdk/general-aspects/#microservice-runtime) environment variables.
 {{< /c8y-details >}}
 
+### Smart function {#smart-function}
+
+A smart function is user-supplied Javascript code embedded directly into a {{< product-c8y-iot >}} component to extend its behavior. Smart functions are more powerful and flexible than static configuration, but much simpler than building a [microservice](#microservice) --- there is no container to build, no infrastructure to manage, and no separate deployment pipeline. They run in a secure, isolated environment with platform-enforced resource limits, and are used across components such as [Data Preparation](#data-preparation) to process data, transform messages, build analytics, or customize behavior.
+
+See also [smart functions](/concepts/smart-function-concept-bundle/) in the documentation.
 
 ### Smart group {#smart-group}
 
@@ -36,7 +41,6 @@ SmartREST is a lightweight, CSV-based [device protocol](#device-protocol) to exc
 {{< c8y-details title="Developer details" >}}
 Devices communicate dedicated MQTT topics with {{< product-c8y-iot >}}. Each row of CSV data begins with a message ID that corresponds to either a specific, pre-registered request template or an extensive suite of built-in templates.
 {{< /c8y-details >}}
-
 
 ### Smart rules {#smart-rules}
 
