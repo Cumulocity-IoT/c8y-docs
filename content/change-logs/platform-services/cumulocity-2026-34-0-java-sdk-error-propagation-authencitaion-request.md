@@ -14,5 +14,5 @@ build_artifact:
 ticket: MTM-61220
 version: 2026.34.0
 ---
-Fixed an issue where unexpected exceptions during token-authenticated service calls were incorrectly mapped to 401 Unauthorized. The SDK now correctly propagates the original error status and metadata, ensuring accurate debugging and preventing misleading authentication alerts.
+Previously, unexpected exceptions during token-authenticated service calls were incorrectly mapped to "401 Unauthorized". This issue has been fixed. The Java SDK now correctly propagates the original error status and metadata, ensuring accurate debugging and preventing misleading authentication alerts.
 
