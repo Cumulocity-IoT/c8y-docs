@@ -1,6 +1,6 @@
 ---
 date: ""
-title: set overscroll behavior to auto (#11923) [GRAFT][release/cd] (#11926)
+title: Fix overscroll behavior on web applications
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
