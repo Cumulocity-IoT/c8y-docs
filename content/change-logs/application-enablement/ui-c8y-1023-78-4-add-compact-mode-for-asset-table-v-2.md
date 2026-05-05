@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66755
 version: 1023.78.4
 ---
-The asset table v2 now includes a compact mode option that will hide the grid header and footer. With this update, you can toggle to compact mode to see more assets on smaller sized widgets.
+The Asset table v2 feature now includes a compact mode option that will hide the grid header and footer. With this update, you can toggle to compact mode to see more assets on smaller-sized widgets.
