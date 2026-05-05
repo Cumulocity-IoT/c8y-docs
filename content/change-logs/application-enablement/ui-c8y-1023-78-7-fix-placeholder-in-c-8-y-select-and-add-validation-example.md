@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66503
 version: 1023.78.7
 ---
-Fixes an issue where the c8y-select placeholder did not display in some cases when no value was selected, and adds a validation example to the documentation.
+Previously, the `c8y-select` placeholder did not display in some cases when no value was selected. This issue has been fixed. Moreover, a validation example has been added to the Codex documentation.
