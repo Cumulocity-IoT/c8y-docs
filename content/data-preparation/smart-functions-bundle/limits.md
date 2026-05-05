@@ -23,8 +23,8 @@ Each Data Preparation rule runs across multiple shards to scale throughput. With
 **Per-shard runtime isolation**:
 
 - Each shard has its own Javascript runtime instance. Code loaded in one shard is not visible in another, even for the same rule.
-- This is the reason global state is not shared across invocations: even if your code runs back-to-back for the same `clientID`, the runtime may have been reinstantiated between calls.
 - The platform may reinstantiate runtimes at any time --- for example, after rule updates, scaling events, or recovery from errors.
+- This is the reason global state is not shared across invocations: even if your code runs back-to-back for the same `clientID`, the runtime may have been reinstantiated between calls.
 
 ### State handling {#statelessness}
 
@@ -47,7 +47,7 @@ Even when async, the function executes serially within its shard. The platform w
 
 ### Error handling {#error-handling}
 
-If your function throws synchronously, its returned promise rejects or the return values are not parseable
+If your function throws synchronously, its returned promise rejects, or the return values are not parseable:
 
 - The message that caused the error is dropped.
 - An error is logged with the function name, error message, and (where possible) stack trace.

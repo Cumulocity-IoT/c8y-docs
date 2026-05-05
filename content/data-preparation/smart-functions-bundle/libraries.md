@@ -80,7 +80,7 @@ The following libraries are available as explicit imports.
 Parse and encode Protocol Buffer messages.
 
 ```javascript
-import { /* exported names */ } from 'protobufjs.js';
+import protobuf from 'protobufjs.js';
 ```
 
 #### cbor2 {#cbor2}

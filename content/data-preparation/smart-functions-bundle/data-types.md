@@ -12,7 +12,7 @@ A `DeviceMessage` represents a message received from a device transport.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `payload` | `Uint8Array` | Yes | The message payload as bytes. Always present, even if empty. Use `TextDecoder` to decode text-based payloads, or use a binary library (protobuf, CBOR) for binary formats. |
+| `payload` | `Uint8Array` | Yes | The message payload as bytes. Always present, even if empty. Use `TextDecoder` to decode text-based payloads, or use a [binary library](#libraries) (protobufjs, cbor2) for binary formats. |
 | `transportID` | `string` | Yes | Identifier of the source transport, for example `"mqtt"`. |
 | `clientID` | `string` | No | Identifier of the transport client. For MQTT, this is the MQTT client ID. |
 | `topic` | `string` | Yes | The topic, path, or equivalent on the transport. For MQTT this is the MQTT topic. |

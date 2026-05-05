@@ -51,7 +51,7 @@ The function returns an array of {{< product-c8y-iot >}} domain objects: `Measur
 
 - Each object is created in the {{< product-c8y-iot >}} operational store.
 - Returning an empty array (`[]`) drops the message --- no objects are created and no error is reported.
-- Each object must specify an `externalSource` to identify the target device 
+- Each object must specify an `externalSource` to identify the target device.
 
 ### When devices are created {#when-devices-created}
 
