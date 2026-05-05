@@ -16,6 +16,10 @@ version: 1023.78.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-05-04'
+  - label: apj.cumulocity.com
+    date: '2026-05-05'
+  - label: jp.cumulocity.com
+    date: '2026-05-05'
 ---
 Previously, users without Inventory WRITE permission could access all export operations on the **Exports** page and only received an error after attempting to save. This issue has been fixed. 
 

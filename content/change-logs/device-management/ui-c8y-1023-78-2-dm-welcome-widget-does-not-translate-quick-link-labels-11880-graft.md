@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-05-05'
 title: Device Management welcome widget now translates quick link labels
 product_area: Device management & connectivity
 change_type:
@@ -13,5 +13,8 @@ build_artifact:
     label: ui-c8y
 ticket: DM-6253
 version: 1023.78.2
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-05-05'
 ---
 The Device Management welcome widget now translates quick link labels according to the user's language preference. In earlier versions, changing the user's language preference did not affect the quick link labels.
