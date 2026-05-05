@@ -1,6 +1,6 @@
 ---
 title: Console
-icon: "dlt-c8y-icon-manager"
+icon: "c8y-icon c8y-icon-layers"
 layout: redirect
 type: root
 bundlefolder: console

@@ -1284,7 +1284,7 @@ If <em>alarmStatusMappings</em> are defined, also the variables used in the expr
 <td>bodyTemplate</td>
 <td>string</td>
 <td>yes</td>
-<td>Template of the request body. This can be parameterized by the following placeholders:<br><code>${value}</code>: Data value of the OPC UA node.&nbsp;<br><code>${serverId}</code>: OPC UA server managed object ID.<br><code>${nodeId}</code>: ID of the node where the data is coming from.<br><code>${deviceId}</code>: Managed object ID of the source manage object.</td>
+<td>Template of the request body. This can be parameterized by the following placeholders:<br><code>${value}</code>: JSON-serialized data value of the OPC UA node.<br><code>${valueAsText}</code>: Plain text representation of the node value, useful for embedding values directly in strings without JSON formatting.<br><code>${serverId}</code>: OPC UA server managed object ID.<br><code>${nodeId}</code>: ID of the node where the data is coming from.<br><code>${deviceId}</code>: Managed object ID of the source managed object.<br><code>${receivedTimestampInMs}</code>: Timestamp when the node value is received by the OPC UA device gateway in milliseconds.</td>
 </tr>
 <tr>
 <td>retryEnabled</td>
