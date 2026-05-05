@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix placeholder in c8y-select and add validation example to codex (#11799) [GRAFT][release/y2026] (#11930)
+title: Fix placeholder in c8y-select component and add validation example to Codex
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
