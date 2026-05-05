@@ -7,7 +7,7 @@ sector:
 ---
 
 {{< c8y-admon-preview >}}
-This feature is in Public Preview and is subject to change in the future.
+This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
 {{< /c8y-admon-preview >}}
 
 
@@ -40,7 +40,7 @@ Here are a few advantages:
   Label dashboards with meaningful names so your teams can quickly find the views they need.
 
 {{< c8y-admon-info >}}
-Dashboards are application-specific. A dashboard created within Device Management is unique to that specific instance. It does not appear in other applications like Cockpit or in renamed, duplicated versions of the Device Management application.
+Dashboards are application-specific. A dashboard created within the Device Management application is unique to that specific instance. It does not appear in other applications like Cockpit or in renamed, duplicated versions of the Device Management application.
 {{< /c8y-admon-info >}}
 
 ### To add device or type-based dashboards {#device-management-device-or-type-dashboards}
@@ -70,4 +70,4 @@ If you delete a device type-based dashboard, it gets deleted from all devices th
 ### To edit type-based dashboard {#device-management-to-edit-type-dashboard}
 
 Click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> on the corresponding row to open a list of all devices that have access to the dashboard.
-In the "Select dashboard instance to edit" dialog, select the desired device and click the open icon <i class="dlt-c8y-icon-file-create text-primary icon-20"></i> on the right to navigate to the dashboard assigned to this device. Now you can edit the dashboard settings or widgets. See [To edit a dashboard](/cockpit/working-with-dashboards/#to-edit-a-dashboard) for more detailed information.
+In the **Select dashboard instance to edit** dialog, select the desired device and click the open icon <i class="dlt-c8y-icon-file-create text-primary icon-20"></i> on the right to navigate to the dashboard assigned to this device. Now you can edit the dashboard settings or widgets. See [To edit a dashboard](/cockpit/working-with-dashboards/#to-edit-a-dashboard) for more detailed information.
