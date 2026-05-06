@@ -10,22 +10,11 @@ sector:
 This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
 {{< /c8y-admon-preview >}}
 
+The dashboard manager in the Device Management application brings more flexibility, consistency, and control over device dashboards. In particular, it offers the following options:
 
-The dashboard manager in the Device Management application brings more flexibility, consistency, and control over device dashboards.
-
-The dashboard manager provides the following advantages:
-
-* Type-based dashboard templates
-
-  Build once, apply everywhere. Create dashboards that automatically apply to devices of the same type, saving time and ensuring consistency across your environment.
----
-* Multiple dashboards per device
-
-  Add as many dashboards as you need to a single device to tailor different perspectives for different use cases.
----
-* Custom dashboard names
-
-  Label dashboards with meaningful names that match your workflows, so your teams can quickly find the views they need.
+* **Type-based dashboard templates** - Build once, apply everywhere. Create dashboards that automatically apply to devices of the same type, saving time and ensuring consistency across your environment.
+* **Multiple dashboards per device** - Add as many dashboards as you need to a single device to tailor different perspectives for different use cases.
+* **Custom dashboard names** - Label dashboards with meaningful names that match your workflows, so your teams can quickly find the views they need.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
