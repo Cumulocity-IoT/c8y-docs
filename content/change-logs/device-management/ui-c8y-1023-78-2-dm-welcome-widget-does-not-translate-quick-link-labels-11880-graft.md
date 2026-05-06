@@ -16,5 +16,9 @@ version: 1023.78.2
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-05-05'
+  - label: apj.cumulocity.com
+    date: '2026-05-06'
+  - label: jp.cumulocity.com
+    date: '2026-05-06'
 ---
 The Device Management welcome widget now translates quick link labels according to the user's language preference. In earlier versions, changing the user's language preference did not affect the quick link labels.

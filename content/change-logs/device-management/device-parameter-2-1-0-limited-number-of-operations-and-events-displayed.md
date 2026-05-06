@@ -16,6 +16,10 @@ version: 2.1.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-05-01'
+  - label: apj.cumulocity.com
+    date: '2026-05-06'
+  - label: jp.cumulocity.com
+    date: '2026-05-06'
 ---
 
 In the device parameter details, the automatic loading of historical operations and events has been replaced by a **Load More** button. Previously, the seamless fetching of older entries often prevented the user from scrolling to subsequent parameters in the list, as the page length kept increasing. With this change, older data is only retrieved upon an explicit click, ensuring that page navigation remains consistent and that subsequent parameters can be reached without interruption.
