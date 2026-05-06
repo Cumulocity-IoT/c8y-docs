@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Support for automatic clearing of conflicting tenant option categories during microservice upload
+title: Automatic clearing of conflicting tenant option categories during microservice upload
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
