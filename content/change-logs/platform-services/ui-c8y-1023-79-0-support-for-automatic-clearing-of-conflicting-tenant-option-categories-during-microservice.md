@@ -14,5 +14,4 @@ build_artifact:
 ticket: MTM-66091
 version: 1023.79.0
 ---
-Previously, if user tried to upload a microservice that was defining tenant options of category that was already exisiting in tenant options, error was thrown and user was not able to upload the microservice until tenant options of these category were cleared (or removed from microservice manifest). 
-Now user will see the warning that it is possible to upload microservice but current tenant options category that is conflicting will be cleared and supreseded by microservice category value.
+When uploading a microservice that defines tenant options with a category that already exists in your tenant, the system previously rejected the upload and required you to manually remove the conflicting tenant options before proceeding. Now user gets informed about it and can retry uploading the microservice and system automatically clears the existing tenant option category and replaces it with the category defined in the microservice manifest. You see a warning message that informs you about this action before the upload completes, giving you the opportunity to review the change. This streamlines the microservice deployment process and eliminates the need for manual cleanup of conflicting tenant options in your tenant.
