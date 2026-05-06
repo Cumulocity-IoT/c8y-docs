@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Upgrade webSDK version to 1023.14.148"
+title: "Upgraded Web SDK version in DTM to 1023.14.148"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -14,4 +14,4 @@ build_artifact:
 ticket: ""
 version: "1023.3.4"
 ---
-The Digital Twin Manager application has been upgraded to the Cumulocity Web SDK version 1023.14.148 to address styling related issues.
+The Digital Twin Manager application has been upgraded to the {{< product-c8y-iot >}} Web SDK version 1023.14.148 to address styling-related issues.
