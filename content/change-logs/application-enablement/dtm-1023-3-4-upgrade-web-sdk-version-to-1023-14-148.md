@@ -11,7 +11,7 @@ component:
 build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
-ticket: ""
+ticket: "CTM-2893"
 version: "1023.3.4"
 ---
 The Digital Twin Manager application has been upgraded to the {{< product-c8y-iot >}} Web SDK version 1023.14.148 to address styling-related issues.
