@@ -133,7 +133,7 @@ stringData:
 ## You can edit this file and apply it to your Kubernetes cluster to deploy or update your Edge.
 ##
 ## For more information about the CR specification, 
-## see https://cumulocity.com/docs/edge/edge-custom-resource-definition
+## see https://cumulocity.com/docs/2026/edge/edge-custom-resource-definition
 ##
 
 apiVersion: edge.cumulocity.com/v1
@@ -154,7 +154,7 @@ spec:
   domain: <DOMAIN-NAME>
 
   ## Edge license key you received for the domain.
-  ## To request the license file for Edge, contact support - https://cumulocity.com/docs/additional-resources/contacting-support
+  ## To request the license file for Edge, contact support - https://cumulocity.com/docs/2026/additional-resources/contacting-support
   ##
   ## In the email, you must include
   ## - Your company name, under which the license has been bought
@@ -164,13 +164,13 @@ spec:
   ## Name of the “edge” tenant, for example, the company’s name.
   ## This value is used only during the Edge installation and can’t be changed for existing installations.
   ## All subsequent tenant changes are made via the user interface 
-  ## (https://cumulocity.com/docs/enterprise-tenant/managing-tenants/#to-view-or-edit-subtenant-properties) or the Cumulocity API.
+  ## (https://cumulocity.com/docs/2026/enterprise-tenant/managing-tenants/#to-view-or-edit-subtenant-properties) or the Cumulocity API.
   company: <COMPANY-NAME>
 
   ## Replace with a valid email, used for admin account.
   ## This value is used only during the Edge installation and can’t be changed for existing installations.
   ## All subsequent admin user changes are made via the user interface 
-  ## (https://cumulocity.com/docs/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API.
+  ## (https://cumulocity.com/docs/2026/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API.
   email: <ADMIN-EMAIL>
 
   ## Name of the Kubernetes secret containing the Cumulocity admin user password for both the Management tenant and the Edge tenant.
@@ -178,7 +178,7 @@ spec:
   ##  - INITIAL_C8Y_ADMIN_PASSWORD: Password used to initialize the Cumulocity admin user for both the Management tenant and the Edge tenant.
   ## This value is used only during the Edge installation and can’t be changed for existing installations.
   ## All subsequent password changes are made via the user interface 
-  ## (https://cumulocity.com/docs/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API. 
+  ## (https://cumulocity.com/docs/2026/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API. 
   cumulocityPasswordSecretName: c8y-admin-password
 
   ## Name of the Kubernetes secret containing the TLS/SSL private key and certificates for the domain name 
@@ -204,9 +204,14 @@ spec:
   # tlsSecretName: myown-iot-com-tls
 
   ## Cumulocity Cloud tenant details to configure and manage Edge remotely.
+  ## For more information see connecting Edge to a cloud tenant at https://cumulocity.com/docs/2026/edge/connecting-edge-to-cloud.
   # cloudTenant:
       ## Cumulocity cloud tenant domain. For example, <tenantid>.cumulocity.com
       # domain: <TENANT-ID>.cumulocity.com
+
+      ## One-time password (OTP) for initial registration of Edge as a device in the cloud tenant.
+      ## If both this and 'cloudTenant.tlsSecretName' are not provided, Edge generates and uses self-signed certificates.
+      # otp: <ONE-TIME PASSWORD>
 
       ## Name of the Kubernetes secret containing the TLS/SSL private key and certificates with which Edge connects to the cloud through 
       ## MQTT protocol using a X.509 certificate for authentication.
@@ -227,7 +232,7 @@ spec:
       ## by an intermediate Certificate Authority (CA) within your organization and can be added to the trusted certificate list of your 
       ## Cumulocity cloud tenant.
       ##
-      ## This is an optional field and if not provided the Edge operator will generate self-signed certificates.
+      ## This is an optional field and if both this and 'cloudTenant.otp' are not provided, Edge generates and uses self-signed certificates.
       # tlsSecretName: edge-device-tls
 
   ## The Edge operator requests three PVCs, as outlined below.
