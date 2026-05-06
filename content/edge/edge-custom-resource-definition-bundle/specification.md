@@ -11,21 +11,16 @@ This section defines the Edge deployment’s configurations.
 
 
 
-#### CumulocityIoTEdgeSpec
+### CumulocityIoTEdge {#cumulocityiotedgespec}
 
+{{< company-c8y >}}EdgeSpec defines the desired state of {{< company-c8y >}}Edge
 
-
-CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
-
-
-
-
-##### Fields
+#### Fields
 
 - `version` | [IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util) | Required
 
     Edge version to install.  
-  Specify Major version to install the latest available version from the release, or use a fully qualified version to install a specific patch version.
+  Specify `{{< c8y-edge-current-version >}}` to install the latest available version from the release, or use a fully qualified version like `{{< c8y-edge-current-version >}}.0.1` to install a specific patch version.
 
   
   <br/>
@@ -60,7 +55,7 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
-  c8yedge config --set company=value
+  c8yedge config --set company=<company-name>
   ```
   <br/>
 
@@ -72,7 +67,7 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
-  c8yedge config --set domain=value
+  c8yedge config --set domain=<domain-name>
   ```
   <br/>
 
@@ -80,7 +75,7 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
 - `cumulocityPasswordSecretName` | string | Required
 
-    Name of the Kubernetes secret containing the Cumulocity admin user password for both the Management tenant and the Edge tenant. This secret must contain a key named `INITIAL_C8Y_ADMIN_PASSWORD` with the initial password.  
+    Name of the Kubernetes secret containing the {{< company-c8y >}} admin user password for both the Management tenant and the Edge tenant. This secret must contain a key named `INITIAL_C8Y_ADMIN_PASSWORD` with the initial password.  
     
   {{< c8y-admon-info >}}
   
@@ -102,7 +97,7 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
-  c8yedge config --set email=value
+  c8yedge config --set email=<email-address>
   ```
   <br/>
 
@@ -135,11 +130,11 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
 - `cloudTenant` | [CloudTenantSpec](#cloudtenantspec) | Optional
 
-    Cumulocity cloud tenant details to configure and manage Edge remotely.
+    {{< company-c8y >}} cloud tenant details to configure and manage Edge remotely.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
-  c8yedge config --set cloudTenant.domain=value --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>
+  c8yedge config --set cloudTenant.domain=<domain-name> --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>
   ```
   <br/>
 
@@ -170,11 +165,11 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
 - `core` | [CoreSpec](#corespec) | Optional
 
-    Cumulocity platform configurations.
+    {{< company-c8y >}} platform configurations.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
-  c8yedge config --set core.resources.limits.cpu=value --set core.resources.limits.memory=value
+  c8yedge config --set core.resources.limits.cpu=<cpu-limit> --set core.resources.limits.memory=<memory-limit>
   ```
   <br/>
 
@@ -186,7 +181,7 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
-  c8yedge config --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_USER=value --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_PASSWORD=value
+  c8yedge config --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_USER=<database-admin-user> --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_PASSWORD=<database-admin-password>
   ```
   <br/>
 
@@ -194,12 +189,12 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
 - `microservices` | [MicroserviceSpec](#microservicespec) array | Optional
 
-    Specify resources to allocate to each of the default Cumulocity microservices deployed.  
-  **Default:** The Edge operator deploys all the default Cumulocity microservices, which include the Apama, Smart Rules, OPCUA Management Server and microservice-based data broker microservices.
+    Specify resources to allocate to each of the default {{< company-c8y >}} microservices deployed.  
+  **Default:** The Edge operator deploys all the default {{< company-c8y >}} microservices, which include the Apama, Smart Rules, OPCUA Management Server and microservice-based data broker microservices.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
-  c8yedge config --set microservices.<microservice-name>.resources.limits.cpu=value
+  c8yedge config --set microservices.<microservice-name>.resources.limits.cpu=<cpu-limit>
   ```
   <br/>
 
@@ -208,31 +203,26 @@ CumulocityIoTEdgeSpec defines the desired state of CumulocityIoTEdge
 
 
 
-#### CloudTenantSpec
+### CloudTenant {#cloudtenantspec}
 
-
-
-Edge can be managed, configured, and monitored remotely through a Cumulocity cloud tenant.
+Edge can be managed, configured, and monitored remotely through a {{< company-c8y >}} cloud tenant.
 You can control and troubleshoot your Edge deployments remotely.
 
 To enable this, you must first register Edge as a device within the cloud tenant.
-This registration process requires providing the Cumulocity cloud tenant URI, along with an optional TLS/SSL key and certificate chain.
+This registration process requires providing the {{< company-c8y >}} cloud tenant URI, along with an optional TLS/SSL key and certificate chain.
 These credentials authenticate Edge when connecting to the cloud via the MQTT protocol using X.509 certificate-based authentication.
 
 See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#register-edge-on-cloud) for more details.
 
-
-
-
-##### Fields
+#### Fields
 
 - `domain` | string | Required
 
-    Cumulocity cloud tenant domain. For example, `<tenantid>.cumulocity.com`
+    {{< company-c8y >}} cloud tenant domain. For example, `<tenantid>.cumulocity.com`
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
-  c8yedge config --set domain=value
+  c8yedge config --set cloudTenant.domain=<domain-name>
   ```
   <br/>
 
@@ -281,20 +271,15 @@ See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#regis
 
 
 
-#### CoreSpec
+### Core {#corespec}
 
+The core specification specifies the fields for configuring the {{< company-c8y >}} core node and its resource limits.
 
-
-The core specification specifies the fields for configuring the Cumulocity core node and its resource limits.
-
-
-
-
-##### Fields
+#### Fields
 
 - `resources` | [PodResourcesWithLimits](#podresourceswithlimits) | Optional
 
-    Specify resource limits for the Cumulocity Core container.  
+    Specify resource limits for the {{< company-c8y >}} Core container.  
   **Defaults:**
   
     - CPU Limit: 3000m
@@ -303,7 +288,7 @@ The core specification specifies the fields for configuring the Cumulocity core 
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
-  c8yedge config --set core.resources.limits.cpu=value --set core.resources.limits.memory=value
+  c8yedge config --set core.resources.limits.cpu=<cpu-limit> --set core.resources.limits.memory=<memory-limit>
   ```
   <br/>
 
@@ -316,16 +301,11 @@ The core specification specifies the fields for configuring the Cumulocity core 
 
 
 
-#### LimitValues
+### LimitValues {#limitvalues}
 
 
 
-
-
-
-
-
-##### Fields
+#### Fields
 
 - `cpu` | [Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api) | Optional
 
@@ -346,20 +326,15 @@ The core specification specifies the fields for configuring the Cumulocity core 
 
 
 
-#### MicroserviceSpec
-
-
+### Microservice {#microservicespec}
 
 The microservice specification allows specifying resources to allocate to default microservices, including the Apama, Smart Rules, OPCUA Management Service, and microservice-based data broker microservices.
 
-
-
-
-##### Fields
+#### Fields
 
 - `name` | string | Required
 
-    The name of the Cumulocity microservice. The allowed values are `apama-ctrl`, `smartrule`, `opcua-mgmt-service`, `databroker-agent-server` and `datahub`.
+    The name of the {{< company-c8y >}} microservice. The allowed values are `apama-ctrl`, `smartrule`, `opcua-mgmt-service`, `databroker-agent-server` and `datahub`.
 
   
   <br/>
@@ -368,7 +343,7 @@ The microservice specification allows specifying resources to allocate to defaul
 
 - `resources` | [PodResourcesWithLimits](#podresourceswithlimits) | Optional
 
-    Specify resource limits for the Cumulocity microservice container.  
+    Specify resource limits for the {{< company-c8y >}} microservice container.  
   **Defaults:**
   
     - CPU Limit: 1000m
@@ -377,25 +352,20 @@ The microservice specification allows specifying resources to allocate to defaul
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
-  c8yedge config --set microservices.<microservice-name>.resources.limits.cpu=value
+  c8yedge config --set microservices.<microservice-name>.resources.limits.cpu=<cpu-limit> --set microservices.<microservice-name>.resources.limits.memory=<memory-limit>
   ```
   <br/>
 
 
 
 
-#### MongodbSpec
-
-
+### Mongodb {#mongodbspec}
 
 This field is necessary for one or more of the following reasons:
 - To specify the MongoDB admin credentials.
 - To specify resource limits for the MongoDB server containers deployed by the Edge operator.
 
-
-
-
-##### Fields
+#### Fields
 
 - `credentialsSecretName` | string | Optional
 
@@ -412,7 +382,7 @@ This field is necessary for one or more of the following reasons:
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
-  c8yedge config --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_USER=value --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_PASSWORD=value
+  c8yedge config --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_USER=<database-admin-user> --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_PASSWORD=<database-admin-password>
   ```
   <br/>
 
@@ -433,23 +403,18 @@ This field is necessary for one or more of the following reasons:
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
-  c8yedge config --set mongodb.resources.limits.cpu=value --set mongodb.resources.limits.memory=value --set mongodb.resources.requests.storage=value
+  c8yedge config --set mongodb.resources.limits.cpu=<cpu-limit> --set mongodb.resources.limits.memory=<memory-limit> --set mongodb.resources.requests.storage=<storage-size>
   ```
   <br/>
 
 
 
 
-#### PodResources
+### PodResources {#podresources}
 
 
 
-
-
-
-
-
-##### Fields
+#### Fields
 
 - `limits` | [LimitValues](#limitvalues) | Optional
 
@@ -470,16 +435,11 @@ This field is necessary for one or more of the following reasons:
 
 
 
-#### PodResourcesWithLimits
+### PodResourcesWithLimits {#podresourceswithlimits}
 
 
 
-
-
-
-
-
-##### Fields
+#### Fields
 
 - `limits` | [LimitValues](#limitvalues) | Optional
 
@@ -491,16 +451,11 @@ This field is necessary for one or more of the following reasons:
 
 
 
-#### RequestValues
+### RequestValues {#requestvalues}
 
 
 
-
-
-
-
-
-##### Fields
+#### Fields
 
 - `storage` | [Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api) | Optional
 
