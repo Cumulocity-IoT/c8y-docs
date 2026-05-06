@@ -23,10 +23,10 @@ For example, you could install and customize Edge on a VM in your development en
 {{< /c8y-admon-info >}}
 
 ### Downloading c8yedge
-You can download the tool from the [{{< company-c8y >}} Download Center](https://download.cumulocity.com/Cumulocity-Edge/Installer) or by running the following commands:
+You can download the tool from the [{{< company-c8y >}} Download Center](https://download.cumulocity.com/Cumulocity-Edge) or by running the following commands:
 
 ```shell
-curl -sfL https://download.cumulocity.com/Cumulocity-Edge/Installer/{{< c8y-edge-current-version >}}/c8yedge -o c8yedge
+curl -sfL https://download.cumulocity.com/Cumulocity-Edge/{{< c8y-edge-current-version >}}/c8yedge -o c8yedge
 sudo chmod +x c8yedge
 sudo mv c8yedge /usr/local/bin/
 ```
