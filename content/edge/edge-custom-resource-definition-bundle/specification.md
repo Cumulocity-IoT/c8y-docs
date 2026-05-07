@@ -101,9 +101,9 @@ This section defines the Edge deployment’s configurations.
 
     Name of the Kubernetes secret containing the TLS/SSL private key and certificates for the domain name specified in the `spec.domain` field. This secret must contain two keys:
   
-  	- **tls.key:** TLS/SSL private key in the PEM format.<br>Generate a TLS/SSL key pair and a Certificate Signing Request (CSR) following your organization's policies, specifying either a wildcard domain in the Common Name (CN) (for example, **.iot.com*) or listing required domains in the Subject Alternative Name (SAN) field, including the Edge tenant and {{< management-tenant >}} tenant domains (for example, *myown.iot.com*, *management-myown.iot.com*).
+  	- `tls.key`: TLS/SSL private key in the PEM format.<br>Generate a TLS/SSL key pair and a Certificate Signing Request (CSR) following your organization's policies, specifying either a wildcard domain in the Common Name (CN) (for example, **.iot.com*) or listing required domains in the Subject Alternative Name (SAN) field, including the Edge tenant and {{< management-tenant >}} tenant domains (for example, *myown.iot.com*, *management-myown.iot.com*).
   
-  	- **tls.crt:** The TLS/SSL certificate chain associated with the private key in PEM format. It's essential to ensure the certificates are arranged in the correct sequence for TLS/SSL validation to succeed. The proper order of the certificate chain is:
+  	- `tls.crt`: The TLS/SSL certificate chain associated with the private key in PEM format. It's essential to ensure the certificates are arranged in the correct sequence for TLS/SSL validation to succeed. The proper order of the certificate chain is:
   
    	- **End-entity (Leaf) Certificate:** This is the TLS/SSL certificate issued to your domain or server, sometimes referred to as the "leaf" or "server" certificate.
   
@@ -143,6 +143,16 @@ This section defines the Edge deployment’s configurations.
 
 
 
+
+- `mongodb` | [MongodbSpec](#mongodbspec) | Optional
+
+    Configurations needed to deploy the MongoDB server.
+
+  If you used **c8yedge** tool to install, you can configure this field using the below command: 
+  ```shell
+  c8yedge config --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_USER=<database-admin-user> --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_PASSWORD=<database-admin-password>
+  ```
+  <br/>
 
 
 
@@ -191,9 +201,9 @@ See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#regis
 
     Name of the Kubernetes secret containing the TLS/SSL private key and certificates with which Edge connects to the cloud through MQTT protocol using a X.509 certificate for authentication. This secret must contain two keys:
   
-    - **tls.key:** TLS/SSL private key in the PEM format.
+    - `tls.key`: TLS/SSL private key in the PEM format.
   
-    - **tls.crt:** The TLS/SSL certificate chain associated with the private key in PEM format. It's essential to ensure the certificates are arranged in the correct sequence for TLS/SSL validation to succeed. The proper order of the certificate chain is:
+    - `tls.crt`: The TLS/SSL certificate chain associated with the private key in PEM format. It's essential to ensure the certificates are arranged in the correct sequence for TLS/SSL validation to succeed. The proper order of the certificate chain is:
   
     	- **End-entity (Leaf) Certificate:** This is the TLS/SSL certificate issued to your domain or server, sometimes referred to as the "leaf" or "server" certificate.
   
@@ -205,7 +215,8 @@ See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#regis
   
    - You can also reuse the secret name provided in the `spec.tlsSecretName` provided that the TLS/SSL certificate it references is issued by an intermediate Certificate Authority (CA) within your organization and can be added to the trusted certificate list of your {{< product-c8y-iot >}} cloud tenant.
   
-   - The Edge operator retrieves this secret from the **EDGE-CR-NAMESPACE**. Ensure that this secret is created before initiating the Edge deployment or update process. {{< /c8y-admon-info >}}
+   - The Edge operator retrieves this secret from the **EDGE-CR-NAMESPACE**. Ensure that this secret is created before initiating the Edge deployment or update process.  
+  {{< /c8y-admon-info >}}
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
@@ -306,24 +317,19 @@ The microservice specification allows specifying resources to allocate to defaul
 
 ### Mongodb {#mongodbspec}
 
-This field is necessary for one or more of the following reasons:
-- To specify the MongoDB admin credentials.
-- To specify resource limits for the MongoDB server containers deployed by the Edge operator.
+This field is used to specify the MongoDB admin credentials and .
 
 #### Fields
 
 - `credentialsSecretName` | string | Optional
 
-    Name of the Kubernetes Secret containing the database admin credentials with which the MongoDB server must be configured.  
-  This secret should contain the fields described in the table below:  
-    
-  |Field|Required|Type|Default|Description|  
-  |:---|:---|:---|:---|:---|  
-  |MONGODB_DATABASE_ADMIN_USER|Yes|String||Database admin username with which the MongoDB server is configured.|  
-  |MONGODB_DATABASE_ADMIN_PASSWORD|Yes|String||Database admin password with which the MongoDB server is configured.|  
-    
-  **Info**: The Edge operator retrieves this secret from the `EDGE-CR-NAMESPACE`. Ensure that this secret is created before initiating the Edge deployment or update process.  
-  **Default:** Defaults to `databaseAdmin` and a generated password as the database admin user and password.
+    Name of the Kubernetes Secret containing the database admin credentials with which the MongoDB server must be configured. If not provided, `databaseAdmin` and a generated password are used as the database admin user and password.  
+  This secret must contain two keys:
+  
+    - `MONGODB_DATABASE_ADMIN_USER`: Database admin username with which the MongoDB server is configured.
+  
+    - `MONGODB_DATABASE_ADMIN_PASSWORD`: Database admin password with which the MongoDB server is configured.  
+  {{< c8y-admon-info >}}The Edge operator retrieves this secret from the `EDGE-CR-NAMESPACE`. Ensure that this secret is created before initiating the Edge deployment or update process.{{< /c8y-admon-info >}}
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
@@ -360,13 +366,6 @@ This field is necessary for one or more of the following reasons:
 
 
 #### Fields
-
-- `limits` | [LimitValues](#limitvalues) | Optional
-
-    Specify resource limits for the component.
-
-  
-  <br/>
 
 
 
