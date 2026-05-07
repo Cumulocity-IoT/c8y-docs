@@ -9,11 +9,11 @@ layout: redirect
 
 
 
-## Cumulocity Edge {#cumulocityiotedgespec}
+### Cumulocity Edge {#cumulocityiotedgespec}
 
 
 
-### Fields
+#### Fields
 
 - `version` | [IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util) | Required
 
@@ -142,13 +142,13 @@ layout: redirect
 
 
 
-## Cloud Tenant {#cloudtenantspec}
+### Cloud Tenant {#cloudtenantspec}
 
 Edge can be managed, configured, and monitored remotely through a Cumulocity cloud tenant. You can control and troubleshoot your Edge deployments remotely. To enable this, you must first register Edge as a device within the cloud tenant.
 
 See [Connecting Edge to a cloud tenant](/edge/connecting-edge-to-cloud/#register-edge-on-cloud) for more details.
 
-### Fields
+#### Fields
 
 - `domain` | string | Required
 
@@ -199,11 +199,11 @@ See [Connecting Edge to a cloud tenant](/edge/connecting-edge-to-cloud/#register
 
 
 
-## Mongodb {#mongodbspec}
+### Mongodb {#mongodbspec}
 
 This field is used to specify the MongoDB admin credentials and persistent volume storage size.
 
-### Fields
+#### Fields
 
 - `credentialsSecretName` | string | Optional
 
@@ -237,11 +237,11 @@ This field is used to specify the MongoDB admin credentials and persistent volum
 
 
 
-## Pod Resources {#podresources}
+### Pod Resources {#podresources}
 
 
 
-### Fields
+#### Fields
 
 - `requests` | [RequestValues](#requestvalues) | Optional
 
@@ -252,11 +252,11 @@ This field is used to specify the MongoDB admin credentials and persistent volum
 
 
 
-## Request Values {#requestvalues}
+### Request Values {#requestvalues}
 
 
 
-### Fields
+#### Fields
 
 - `storage` | [Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api) | Optional
 
