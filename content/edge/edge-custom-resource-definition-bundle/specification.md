@@ -19,8 +19,7 @@ This section defines the Edge deployment’s configurations.
 
 - `version` | [IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util) | Required
 
-    Edge version to install.  
-  Specify `{{< c8y-edge-current-version >}}` to install the latest available version from the release, or use a fully qualified version like `{{< c8y-edge-current-version >}}.0.1` to install a specific patch version.
+    Edge version to install. Specify `2026` to install the latest available version from the release, or use a fully qualified version like `2026.0.1` to install a specific patch version.
 
   
   <br/>
@@ -41,14 +40,12 @@ This section defines the Edge deployment’s configurations.
 
 - `licenseKey` | string | Required
 
-    Edge license key you received for the domain.  
-  If you do not have a license key, you must request one from [product support](/additional-resources/contacting-support/)  
+    Edge license key you received for the domain. If you do not have a license key, you must request one from [product support](/additional-resources/contacting-support/). For more information, see [Domain name validation for Edge license key generation](/edge/installing-edge/#domain-name-validation-for-edge-license-key-generation).  
   When requesting license, you must provide the following details:
   
-    - Your company name, under which the license has been bought
+    - Your company name, under which the license has been bought.
   
-    - The domain name (for example, myown.iot.com), where Edge will be reachable  
-  For more information, see [Domain name validation for Edge license key generation](/edge/installing-edge/#domain-name-validation-for-edge-license-key-generation).
+    - The domain name (for example, myown.iot.com), where Edge will be reachable.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
@@ -61,18 +58,21 @@ This section defines the Edge deployment’s configurations.
 - `company` | string | Required
 
     Name of the “edge” tenant, for example, the company’s name.  
-  {{< c8y-admon-info >}} This value is used only during the Edge installation and can’t be changed for existing installations. {{< /c8y-admon-info >}}  
-  All subsequent tenant changes are made via the [user interface](/enterprise-tenant/managing-tenants/#to-view-or-edit-subtenant-properties) or the Cumulocity API.
+  **Info**: This value is used only during the Edge installation and can’t be changed for existing installations.  
+  All subsequent tenant changes must be made via the [user interface](/enterprise-tenant/managing-tenants/#to-view-or-edit-subtenant-properties) or the Cumulocity API.
 
-  
+  If you used **c8yedge** tool to install, you can configure this field using the below command: 
+  ```shell
+  c8yedge config --set company=<company-name>
+  ```
   <br/>
 
 
 
 - `email` | string | Required
 
-    Email used for the admin user.  
-  {{< c8y-admon-info >}} This value is used only during the Edge installation and can’t be changed for existing installations. All subsequent admin user changes are made via the [user interface](/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API. {{< /c8y-admon-info >}}
+    The email address associated with the platform administrator account.  
+  **Info**: This value is used only during the initial Edge installation to bootstrap the admin account and cannot be changed for existing installations. All subsequent admin user changes must be made via the [user interface](/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
@@ -84,13 +84,10 @@ This section defines the Edge deployment’s configurations.
 
 - `cumulocityPasswordSecretName` | string | Required
 
-    Name of the Kubernetes secret containing the {{< company-c8y >}} admin user password for both the {{< management-tenant >}} and the Edge tenant. This secret must contain a key named `INITIAL_C8Y_ADMIN_PASSWORD` with the initial password.  
-    
-  {{< c8y-admon-info >}}  
-  The Edge operator retrieves this secret from the **EDGE-CR-NAMESPACE**. Ensure that this secret is created before initiating the Edge deployment process.  
-  This value is used only during the Edge installation and can’t be changed for existing installations. All subsequent password changes are made via the [user interface](/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API.  
-  {{< /c8y-admon-info >}}  
-  {{< c8y-admon-important >}} The password must be at least 8 letters long. {{< /c8y-admon-important >}}
+    Name of the Kubernetes secret containing the Cumulocity admin user password for both the Management tenant and the Edge tenant. This secret must contain a key named `INITIAL_C8Y_ADMIN_PASSWORD` with the initial password.  
+  **Info**: This value is used only during the Edge installation and can’t be changed for existing installations. All subsequent password changes must be made via the [user interface](/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API.  
+  **Info**: The Edge operator retrieves this secret from the **EDGE-CR-NAMESPACE**. Ensure that this secret is created before initiating the Edge deployment process.  
+  **Important**: The password must be at least 8 letters long.
 
   
   <br/>
@@ -99,19 +96,20 @@ This section defines the Edge deployment’s configurations.
 
 - `tlsSecretName` | string | Optional
 
-    Name of the Kubernetes secret containing the TLS/SSL private key and certificates for the domain name specified in the `spec.domain` field. If not provided, Edge automatically generates and assigns self-signed certificates. This secret must contain two keys:
+    Name of the Kubernetes secret containing the TLS/SSL private key and certificates for the domain name specified in the `spec.domain` field. If not provided, Edge automatically generates and assigns self-signed certificates.  
+  This secret must contain two keys:
   
-  	- `tls.key`: TLS/SSL private key in the PEM format.<br>Generate a TLS/SSL key pair and a Certificate Signing Request (CSR) following your organization's policies, specifying either a wildcard domain in the Common Name (CN) (for example, **.iot.com*) or listing required domains in the Subject Alternative Name (SAN) field, including the Edge tenant and {{< management-tenant >}} tenant domains (for example, *myown.iot.com*, *management-myown.iot.com*).
+      - `tls.key`: TLS/SSL private key in the PEM format.<br>Generate a TLS/SSL key pair and a Certificate Signing Request (CSR) following your organization's policies, specifying either a wildcard domain in the Common Name (CN) (for example, **.iot.com*) or listing required domains in the Subject Alternative Name (SAN) field, including the Edge tenant and Management tenant tenant domains (for example, *myown.iot.com*, *management-myown.iot.com*).
   
-  	- `tls.crt`: The TLS/SSL certificate chain associated with the private key in PEM format. It's essential to ensure the certificates are arranged in the correct sequence for TLS/SSL validation to succeed. The proper order of the certificate chain is:
+      - `tls.crt`: The TLS/SSL certificate chain associated with the private key in PEM format. It's essential to ensure the certificates are arranged in the correct sequence for TLS/SSL validation to succeed. The proper order of the certificate chain is:
   
-   	- **End-entity (Leaf) Certificate:** This is the TLS/SSL certificate issued to your domain or server, sometimes referred to as the "leaf" or "server" certificate.
+        - **End-entity (Leaf) Certificate:** This is the TLS/SSL certificate issued to your domain or server, sometimes referred to as the "leaf" or "server" certificate.
   
-   	- **Intermediate certificate(s):** These certificates link your end-entity certificate to the trusted root certificate. If there are multiple intermediate certificates, they must be ordered correctly as well.
+        - **Intermediate certificate(s):** These certificates link your end-entity certificate to the trusted root certificate. If there are multiple intermediate certificates, they must be ordered correctly as well.
   
-   	- **Root CA certificate:** This is the certificate for the Certificate Authority (CA) that is trusted by browsers and other clients. It's generally included last in the chain.  
+        - **Root CA certificate:** This is the certificate for the Certificate Authority (CA) that is trusted by browsers and other clients. It's generally included last in the chain.  
     
-  {{< c8y-admon-info >}} The Edge operator retrieves this secret from the **EDGE-CR-NAMESPACE**. Ensure that this secret is created before initiating the Edge deployment or update process. {{< /c8y-admon-info >}}
+  **Info**: The Edge operator retrieves this secret from the **EDGE-CR-NAMESPACE**. Ensure that this secret is created before initiating the Edge deployment or update process.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
@@ -123,7 +121,7 @@ This section defines the Edge deployment’s configurations.
 
 - `cloudTenant` | [CloudTenantSpec](#cloudtenantspec) | Optional
 
-    {{< company-c8y >}} cloud tenant details to configure and manage Edge remotely.
+    Cumulocity cloud tenant details to configure and manage Edge remotely.
 
   
   <br/>
@@ -143,7 +141,7 @@ This section defines the Edge deployment’s configurations.
 
     The StorageClass to be used for Persistent Volume Claims (PVCs) requested by the Edge operator for persisting application data, microservice images, and logs.  
   If the `storageClassName` is not provided, the Edge operator requests PVCs without a StorageClass, thereby instructing Kubernetes to utilize the default StorageClass configured in the cluster. If you specify the name of an existing StorageClass for which dynamic provisioning is enabled, the Operator requests PVCs with that class name, thereby instructing Kubernetes to utilize dynamic provisioning according to the specified class.  
-  {{< c8y-admon-info >}} This value is used only during the Edge installation and can’t be changed for existing installations. {{< /c8y-admon-info >}}
+  **Info**: This value is used only during the Edge installation and can’t be changed for existing installations.
 
   
   <br/>
@@ -155,9 +153,9 @@ This section defines the Edge deployment’s configurations.
 
 ### CloudTenant {#cloudtenantspec}
 
-Edge can be managed, configured, and monitored remotely through a {{< product-c8y-iot >}} cloud tenant. You can control and troubleshoot your Edge deployments remotely.
+Edge can be managed, configured, and monitored remotely through a Cumulocity cloud tenant. You can control and troubleshoot your Edge deployments remotely.
 
-To enable this, you must first register Edge as a device within the cloud tenant. This registration process requires providing the {{< product-c8y-iot >}} cloud tenant URI, along with an optional TLS/SSL key and certificate chain. These credentials authenticate Edge when connecting to the cloud via the MQTT protocol using X.509 certificate-based authentication.
+To enable this, you must first register Edge as a device within the cloud tenant. This registration process requires providing the Cumulocity cloud tenant URI, along with an optional TLS/SSL key and certificate chain. These credentials authenticate Edge when connecting to the cloud via the MQTT protocol using X.509 certificate-based authentication.
 
 See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#register-edge-on-cloud) for more details.
 
@@ -165,8 +163,7 @@ See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#regis
 
 - `domain` | string | Required
 
-    {{< product-c8y-iot >}} cloud tenant domain. For example, `<tenantid>.cumulocity.com`.  
-  See [Connecting Edge to a cloud tenant](/edge/connecting-edge-to-cloud) for more details.
+    Cumulocity cloud tenant domain. For example, `<tenantid>.cumulocity.com`. See [Connecting Edge to a cloud tenant](/edge/connecting-edge-to-cloud) for more details.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
@@ -178,8 +175,7 @@ See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#regis
 
 - `otp` | string | Optional
 
-    One-time password (OTP) for initial registration of Edge as a device in the cloud tenant. If both this and `cloudTenant.tlsSecretName` are not provided, Edge generates and uses self-signed certificates.  
-  See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#register-edge-on-cloud) for more details.
+    One-time password (OTP) for initial registration of Edge as a device in the cloud tenant. If both this and `cloudTenant.tlsSecretName` are not provided, Edge generates and uses self-signed certificates. See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#register-edge-on-cloud) for more details.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
@@ -193,22 +189,18 @@ See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#regis
 
     Name of the Kubernetes secret containing the TLS/SSL private key and certificates with which Edge connects to the cloud through MQTT protocol using a X.509 certificate for authentication. If both this and `cloudTenant.otp` are not provided, Edge generates and uses self-signed certificates. This secret must contain two keys:
   
-    - `tls.key`: TLS/SSL private key in the PEM format.
+      - `tls.key`: TLS/SSL private key in the PEM format.
   
-    - `tls.crt`: The TLS/SSL certificate chain associated with the private key in PEM format. It's essential to ensure the certificates are arranged in the correct sequence for TLS/SSL validation to succeed. The proper order of the certificate chain is:
+      - `tls.crt`: The TLS/SSL certificate chain associated with the private key in PEM format. It's essential to ensure the certificates are arranged in the correct sequence for TLS/SSL validation to succeed. The proper order of the certificate chain is:
   
-    	- **End-entity (Leaf) Certificate:** This is the TLS/SSL certificate issued to your domain or server, sometimes referred to as the "leaf" or "server" certificate.
+        - **End-entity (Leaf) Certificate:** This is the TLS/SSL certificate issued to your domain or server, sometimes referred to as the "leaf" or "server" certificate.
   
-    	- **Intermediate certificate(s):** These certificates link your end-entity certificate to the trusted root certificate. If there are multiple intermediate certificates, they must be ordered correctly as well.
+        - **Intermediate certificate(s):** These certificates link your end-entity certificate to the trusted root certificate. If there are multiple intermediate certificates, they must be ordered correctly as well.
   
-    	- **Root CA certificate:** This is the certificate for the Certificate Authority (CA) that is trusted by browsers and other clients. It's generally included last in the chain.  
+        - **Root CA certificate:** This is the certificate for the Certificate Authority (CA) that is trusted by browsers and other clients. It's generally included last in the chain.  
     
-  {{< c8y-admon-info >}}
-  
-   - You can also reuse the secret name provided in the `spec.tlsSecretName` provided that the TLS/SSL certificate it references is issued by an intermediate Certificate Authority (CA) within your organization and can be added to the trusted certificate list of your {{< product-c8y-iot >}} cloud tenant.
-  
-   - The Edge operator retrieves this secret from the **EDGE-CR-NAMESPACE**. Ensure that this secret is created before initiating the Edge deployment or update process.  
-  {{< /c8y-admon-info >}}  
+  **Info**: You can also reuse the secret name provided in the `spec.tlsSecretName` provided that the TLS/SSL certificate it references is issued by an intermediate Certificate Authority (CA) within your organization and can be added to the trusted certificate list of your Cumulocity cloud tenant.  
+  **Info**: The Edge operator retrieves this secret from the **EDGE-CR-NAMESPACE**. Ensure that this secret is created before initiating the Edge deployment or update process.  
   See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#register-edge-on-cloud) for more details.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
@@ -259,7 +251,7 @@ This field is used to specify the MongoDB admin credentials and persistent volum
     - `MONGODB_DATABASE_ADMIN_USER`: Database admin username with which the MongoDB server is configured.
   
     - `MONGODB_DATABASE_ADMIN_PASSWORD`: Database admin password with which the MongoDB server is configured.  
-  {{< c8y-admon-info >}}The Edge operator retrieves this secret from the `EDGE-CR-NAMESPACE`. Ensure that this secret is created before initiating the Edge deployment or update process.{{< /c8y-admon-info >}}
+  **Info**: The Edge operator retrieves this secret from the `EDGE-CR-NAMESPACE`. Ensure that this secret is created before initiating the Edge deployment or update process.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
@@ -272,7 +264,7 @@ This field is used to specify the MongoDB admin credentials and persistent volum
 - `resources` | [PodResources](#podresources) | Optional
 
     Specify the size of the Persistent Volume Claim (PVC) named `mongod-data-edge-db-rs0-0` made by MongoDB server for persisting application data. If not provided, it defaults to 75GB.  
-  {{< c8y-admon-info >}} Once Edge is installed, you can only increase this value, but cannot reduce. {{< /c8y-admon-info >}}
+  **Info**: Once Edge is installed, you can only increase this value, but cannot reduce.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
@@ -311,7 +303,10 @@ This field is used to specify the MongoDB admin credentials and persistent volum
 
     The amount of persistent storage allocated. Values are specified with suffixes, for example, 10Gi (10 Gibibytes) or 100Gi.
 
-  
+  If you used **c8yedge** tool to install, you can configure this field using the below command: 
+  ```shell
+  c8yedge config --set mongodb.resources.requests.storage=<storage-size>
+  ```
   <br/>
 
 
