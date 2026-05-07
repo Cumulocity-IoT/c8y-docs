@@ -212,31 +212,6 @@ See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#regis
 
 
 
-### LimitValues {#limitvalues}
-
-
-
-#### Fields
-
-- `cpu` | [Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api) | Optional
-
-    Maximum compute resources allocated to this component. Values are specified in CPU units: for example, 1000m (1000 millicores) or 1 (1 full core).
-
-  
-  <br/>
-
-
-
-- `memory` | [Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api) | Optional
-
-    Maximum RAM allocated to this component. Values are specified in bytes or with suffixes: for example, 512Mi (Mebibytes) or 2Gi (Gibibytes).
-
-  
-  <br/>
-
-
-
-
 ### Mongodb {#mongodbspec}
 
 This field is used to specify the MongoDB admin credentials and persistent volume storage size.
@@ -280,8 +255,6 @@ This field is used to specify the MongoDB admin credentials and persistent volum
 
 
 #### Fields
-
-
 
 - `requests` | [RequestValues](#requestvalues) | Optional
 
