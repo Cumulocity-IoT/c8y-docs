@@ -99,7 +99,7 @@ This section defines the Edge deployment’s configurations.
 
 - `tlsSecretName` | string | Optional
 
-    Name of the Kubernetes secret containing the TLS/SSL private key and certificates for the domain name specified in the `spec.domain` field. This secret must contain two keys:
+    Name of the Kubernetes secret containing the TLS/SSL private key and certificates for the domain name specified in the `spec.domain` field. If not provided, Edge automatically generates and assigns self-signed certificates. This secret must contain two keys:
   
   	- `tls.key`: TLS/SSL private key in the PEM format.<br>Generate a TLS/SSL key pair and a Certificate Signing Request (CSR) following your organization's policies, specifying either a wildcard domain in the Common Name (CN) (for example, **.iot.com*) or listing required domains in the Subject Alternative Name (SAN) field, including the Edge tenant and {{< management-tenant >}} tenant domains (for example, *myown.iot.com*, *management-myown.iot.com*).
   
@@ -111,8 +111,7 @@ This section defines the Edge deployment’s configurations.
   
    	- **Root CA certificate:** This is the certificate for the Certificate Authority (CA) that is trusted by browsers and other clients. It's generally included last in the chain.  
     
-  {{< c8y-admon-info >}} The Edge operator retrieves this secret from the **EDGE-CR-NAMESPACE**. Ensure that this secret is created before initiating the Edge deployment or update process. {{< /c8y-admon-info >}}  
-  **Default:** The Edge operator generates and assigns self-signed TLS/SSL private key and certificates.
+  {{< c8y-admon-info >}} The Edge operator retrieves this secret from the **EDGE-CR-NAMESPACE**. Ensure that this secret is created before initiating the Edge deployment or update process. {{< /c8y-admon-info >}}
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
@@ -142,19 +141,12 @@ This section defines the Edge deployment’s configurations.
 
 
 
-
-
 - `mongodb` | [MongodbSpec](#mongodbspec) | Optional
 
     Configurations needed to deploy the MongoDB server.
 
-  If you used **c8yedge** tool to install, you can configure this field using the below command: 
-  ```shell
-  c8yedge config --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_USER=<database-admin-user> --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_PASSWORD=<database-admin-password>
-  ```
+  
   <br/>
-
-
 
 
 
@@ -186,7 +178,7 @@ See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#regis
 - `otp` | string | Optional
 
     One-time password (OTP) for initial registration of Edge as a device in the cloud tenant.  
-  If both this and `cloudTenant.tlsSecret` are not provided, Edge generates and uses self-signed certificates.  
+  If both this and `cloudTenant.tlsSecretName` are not provided, Edge generates and uses self-signed certificates.  
   For more information see [Connecting Edge to a cloud tenant](/edge/connecting-edge-to-cloud/#register-edge-on-cloud).
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
@@ -199,7 +191,7 @@ See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#regis
 
 - `tlsSecretName` | string | Optional
 
-    Name of the Kubernetes secret containing the TLS/SSL private key and certificates with which Edge connects to the cloud through MQTT protocol using a X.509 certificate for authentication. This secret must contain two keys:
+    Name of the Kubernetes secret containing the TLS/SSL private key and certificates with which Edge connects to the cloud through MQTT protocol using a X.509 certificate for authentication. If both this and `cloudTenant.otp` are not provided, Edge generates and uses self-signed certificates. This secret must contain two keys:
   
     - `tls.key`: TLS/SSL private key in the PEM format.
   
@@ -223,36 +215,6 @@ See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#regis
   c8yedge config --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>
   ```
   <br/>
-
-
-
-
-### Core {#corespec}
-
-The core specification specifies the fields for configuring the {{< company-c8y >}} core node and its resource limits.
-
-#### Fields
-
-- `resources` | [PodResourcesWithLimits](#podresourceswithlimits) | Optional
-
-    Specify resource limits for the {{< company-c8y >}} Core container.  
-  **Defaults:**
-  
-    - CPU Limit: 3000m
-  
-    - Memory Limit: 6GB
-
-  If you used **c8yedge** tool to install, you can configure this field using the below command: 
-  ```shell
-  c8yedge config --set core.resources.limits.cpu=<cpu-limit> --set core.resources.limits.memory=<memory-limit>
-  ```
-  <br/>
-
-
-
-
-
-
 
 
 
@@ -282,42 +244,9 @@ The core specification specifies the fields for configuring the {{< company-c8y 
 
 
 
-### Microservice {#microservicespec}
-
-The microservice specification allows specifying resources to allocate to default microservices, including the Apama, Smart Rules, OPCUA Management Service, and microservice-based data broker microservices.
-
-#### Fields
-
-- `name` | string | Required
-
-    The name of the {{< company-c8y >}} microservice. The allowed values are `apama-ctrl`, `smartrule`, `opcua-mgmt-service`, `databroker-agent-server` and `datahub`.
-
-  
-  <br/>
-
-
-
-- `resources` | [PodResourcesWithLimits](#podresourceswithlimits) | Optional
-
-    Specify resource limits for the {{< company-c8y >}} microservice container.  
-  **Defaults:**
-  
-    - CPU Limit: 1000m
-  
-    - Memory Limit: 1GB
-
-  If you used **c8yedge** tool to install, you can configure this field using the below command: 
-  ```shell
-  c8yedge config --set microservices.<microservice-name>.resources.limits.cpu=<cpu-limit> --set microservices.<microservice-name>.resources.limits.memory=<memory-limit>
-  ```
-  <br/>
-
-
-
-
 ### Mongodb {#mongodbspec}
 
-This field is used to specify the MongoDB admin credentials and .
+This field is used to specify the MongoDB admin credentials and persistent volume storage size.
 
 #### Fields
 
@@ -341,20 +270,12 @@ This field is used to specify the MongoDB admin credentials and .
 
 - `resources` | [PodResources](#podresources) | Optional
 
-    Specify resource limits for the MongoDB server. Specify the size of the Persistent Volume Claim (PVC) named mongod-data-edge-db-rs0-0 made by MongoDB server for persisting application data.  
-  **Defaults:**
-  
-    - CPU Limit: 3000m
-  
-    - Memory Limit: 6GB
-  
-    - Storage: 75GB  
-    
+    Specify the size of the Persistent Volume Claim (PVC) named `mongod-data-edge-db-rs0-0` made by MongoDB server for persisting application data. If not provided, it defaults to 75GB.  
   {{< c8y-admon-info >}} Once Edge is installed, you can only increase this value, but cannot reduce. {{< /c8y-admon-info >}}
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
-  c8yedge config --set mongodb.resources.limits.cpu=<cpu-limit> --set mongodb.resources.limits.memory=<memory-limit> --set mongodb.resources.requests.storage=<storage-size>
+  c8yedge config --set mongodb.resources.requests.storage=<storage-size>
   ```
   <br/>
 
@@ -379,22 +300,6 @@ This field is used to specify the MongoDB admin credentials and .
 
 
 
-### PodResourcesWithLimits {#podresourceswithlimits}
-
-
-
-#### Fields
-
-- `limits` | [LimitValues](#limitvalues) | Optional
-
-    Specify resource limits for the component.
-
-  
-  <br/>
-
-
-
-
 ### RequestValues {#requestvalues}
 
 
@@ -403,8 +308,7 @@ This field is used to specify the MongoDB admin credentials and .
 
 - `storage` | [Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api) | Optional
 
-    The amount of persistent storage allocated to this component. Values are specified with suffixes: for example, 10Gi (10 Gibibytes) or 100Gi.  
-  Note: Storage can only be increased, decreasing is not supported.
+    The amount of persistent storage allocated. Values are specified with suffixes, for example, 10Gi (10 Gibibytes) or 100Gi.
 
   
   <br/>
