@@ -20,7 +20,7 @@ export function onMessage(message, context) {
       cumulocityType: 'measurement',
       payload: {
         type: 'c8y_Temperature',
-        time: new Date(),
+        time: message.time,
         c8y_Temperature: {
           T: { value: data.tempCelsius, unit: 'C' }
         }
