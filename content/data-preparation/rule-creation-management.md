@@ -6,10 +6,6 @@ sector:
   - device_management
 ---
 
-{{< c8y-admon-preview >}}
-Data Preparation is currently in Private Preview. This means it is not enabled by default and may be subject to change in the future. To enable this feature for your tenant, contact [product support](/additional-resources/contacting-support/).
-{{< /c8y-admon-preview >}}
-
 The Data Preparation landing page is the central place to create, view, and manage your rules. Each rule defines how incoming device messages from a specific source are processed and mapped into {{< product-c8y-iot >}} objects.
 
 For a guided walkthrough of the full process, see [Getting started](/data-preparation/getting-started-dataprep/). For details on writing and editing smart functions in the rule editor, see [Rule editor](/data-preparation/rule-editor/).
@@ -19,7 +15,7 @@ For a guided walkthrough of the full process, see [Getting started](/data-prepar
 1. Open the Data Preparation application. The landing page shows the list of existing rules.
 2. Click **Create rule**. A wizard opens to guide you through the setup. The wizard has three pages:
    - **Source transport**: select the transport that delivers the messages this rule processes. MQTT is currently the only supported transport. Click **Next**.
-   - **Filter**: enter a **Topic filter** and a **Client ID filter**. These determine which incoming messages the rule processes. Note these are not standard MQTT topic filters. Use `*` instead of `#` or `+`.
+   - **Filter**: enter a **Topic filter** and a **Client ID filter**. These determine which incoming messages the rule processes. Note that these are not standard MQTT topic filters. Use `*` instead of `#` or `+`.
    - **Confirm**: review the source, topic filter, and client ID filter. Enter a **Name** and an optional **Description** for the rule. Click **Create**.
 
 The rule is created in the **Draft** state and the rule editor opens. The rule does not process any live messages until you deploy it.
