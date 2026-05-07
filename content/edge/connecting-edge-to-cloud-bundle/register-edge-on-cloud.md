@@ -29,7 +29,7 @@ c8yedge config \
     --set cloudTenant.domain=<cloud tenant's domain> \
     --set cloudTenant.otp=<one-time password>
 ```
-If you installed Edge on a self-managed Kubernetes cluster, you can configure Edge with your cloud tenant details by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudTenant). For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
+If you installed Edge on a self-managed Kubernetes cluster, you can configure Edge with your cloud tenant details by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudtenantspec). For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
 
 ### Using third-party Certificate Authority {#third-party-ca}
 If you installed Edge using the **c8yedge** tool, you can configure Edge with your cloud tenant's domain (for example, `sub-domain.cumulocity.com`), TLS/SSL key, and certificate chain using the command below.
@@ -39,7 +39,7 @@ c8yedge config \
     --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> \
     --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>
 ```
-If you installed Edge on a self-managed Kubernetes cluster, you can configure Edge with your cloud tenant details by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudTenant). For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
+If you installed Edge on a self-managed Kubernetes cluster, you can configure Edge with your cloud tenant details by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudtenantspec). For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
 
 To complete the registration process, you must sign in to your cloud tenant and follow the steps outlined in [Managing trusted certificates](/device-certificate-authentication/managing-trusted-certificates) to upload the third-party CA certificate into your tenant’s trusted certificates.
 
@@ -49,7 +49,7 @@ If you do not provide a TLS/SSL key and certificate chain or a one-time password
 c8yedge config \
     --set cloudTenant.domain=<cloud tenant's domain>
 ```
-If you installed Edge on a self-managed Kubernetes cluster, you can configure Edge with your cloud tenant details by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudTenant). For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
+If you installed Edge on a self-managed Kubernetes cluster, you can configure Edge with your cloud tenant details by updating the `spec.cloudTenant` field in the Edge CR. For more details, refer to [Edge custom resource > Cloud tenant](/edge/edge-custom-resource-definition/#cloudtenantspec). For general guidance on configuring Edge, see [Modifying Edge](/edge/manage-edge/#modify-edge).
 
 To complete the registration process, you must sign in to your cloud tenant and follow the steps outlined in [Managing trusted certificates](/device-certificate-authentication/managing-trusted-certificates) to upload the Edge-generated CA certificate into your tenant’s trusted certificates. You can download the Edge-generated CA certificate using the command below:
 ```shell
