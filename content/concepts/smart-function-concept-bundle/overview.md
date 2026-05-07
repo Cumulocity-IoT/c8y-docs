@@ -32,14 +32,14 @@ Smart functions follow the same concepts and patterns wherever they appear. Lear
 **Easy movement of logic between cloud and edge**
 Because smart functions share the same language and API patterns across components, it is straightforward to move business logic between environments. A transformation written for Data Preparation in the cloud can be adapted for a thin-edge.io flow on the device, without switching languages or development tools.
 
-**Common tooling for development and packaging**
+**Standard tooling for development and packaging**
 Smart functions use standard Javascript tooling. You can write them in any editor, use TypeScript for type safety, and bundle external libraries using any standard Javascript build tool. The same workflow and packaging approach applies regardless of which component you are targeting.
 
 **Lighter weight than custom microservices**
 Microservices are the right tool when you need a fully independent service with its own lifecycle. Smart functions are the right tool when you need targeted custom logic embedded in an existing component. There is no container orchestration, no dependency management, and no complex CI/CD pipeline—just a Javascript function deployed as part of a rule, model, or flow.
 
 **Integrated into platform components and UI**
-Smart functions are first-class citizens of each component. You write and manage them through the component's own UI, not through a separate development or deployment tool.
+Smart functions are first-class citizens of each component. Many components allow you to write and manage them through the component's own UI, in addition to using common external development tooling.
 
 **Automatically scalable and secure**
 The platform handles execution of smart functions, automatically scaling them as needed and ensuring they run securely in a sandboxed environment. You can focus on writing your logic without worrying about infrastructure, security, or performance.
@@ -52,7 +52,7 @@ Smart functions run in a sandboxed environment. They cannot access the host file
 
 ### How smart functions fit into {{< product-c8y-iot >}} {#how-smart-functions-fit}
 
-- **Data Preparation** uses smart functions inside rules to transform inbound device messages before they are stored, enabling data normalization, enrichment, and filtering at ingestion time.
+- **Data Preparation** uses smart functions inside rules to transform inbound device messages before sending the result into the platform, enabling data normalization, enrichment, and filtering at ingestion time.
 - **Streaming Analytics** uses smart functions as custom blocks inside models, allowing you to apply business logic to real-time data streams.
 - **thin-edge.io** uses smart functions inside flows to process messages at the edge, reducing bandwidth and enabling local processing before data reaches the cloud.
 - Other components will add smart functions support over time, each applying the pattern to their domain.

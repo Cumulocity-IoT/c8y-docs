@@ -22,7 +22,7 @@ If your {{< product-c8y-iot >}} instance hosts multiple tenants, each smart func
 **Limited system resource access**
 Smart functions cannot read environment variables, access the host clock in ways that compromise security, or interact with the operating system in privileged ways.
 
-### Multi-tenant and -user safety {#multi-tenant-and-user-safety}
+### Multi-tenant and Multi-user safety {#multi-tenant-and-multi-user-safety}
 
 The sandboxing layer ensures that one smart function cannot interfere with any other smart functions whether deployed in other tenants or by other users. Each function runs with only the data and context explicitly passed to it. 
 
