@@ -4,14 +4,12 @@ title: Specification
 layout: redirect
 ---
 
-This section defines the Edge deployment’s configurations.
 
 
 
 
 
-
-### CumulocityIoTEdge {#cumulocityiotedgespec}
+### Cumulocity Edge {#cumulocityiotedgespec}
 
 
 
@@ -144,7 +142,7 @@ This section defines the Edge deployment’s configurations.
 
 
 
-### CloudTenant {#cloudtenantspec}
+### Cloud Tenant {#cloudtenantspec}
 
 Edge can be managed, configured, and monitored remotely through a Cumulocity cloud tenant. You can control and troubleshoot your Edge deployments remotely. To enable this, you must first register Edge as a device within the cloud tenant.
 
@@ -239,7 +237,7 @@ This field is used to specify the MongoDB admin credentials and persistent volum
 
 
 
-### PodResources {#podresources}
+### Pod Resources {#podresources}
 
 
 
@@ -254,7 +252,7 @@ This field is used to specify the MongoDB admin credentials and persistent volum
 
 
 
-### RequestValues {#requestvalues}
+### Request Values {#requestvalues}
 
 
 
