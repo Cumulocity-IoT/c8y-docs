@@ -38,7 +38,8 @@ This section defines the Edge deployment’s configurations.
   
     - Your company name, under which the license has been bought.
   
-    - The domain name (for example, myown.iot.com), where Edge will be reachable.
+    - The domain name (for example, myown.iot.com), where Edge will be reachable.  
+  <p/>
   <br/><br/>If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
   c8yedge config --set-file licenseKey=<path/to/license.txt>
@@ -91,7 +92,7 @@ This section defines the Edge deployment’s configurations.
       - **Intermediate certificate(s):** These certificates link your end-entity certificate to the trusted root certificate. If there are multiple intermediate certificates, they must be ordered correctly as well.
   
       - **Root CA certificate:** This is the certificate for the Certificate Authority (CA) that is trusted by browsers and other clients. It's generally included last in the chain.  
-    
+  <p/>  
   <br/>  
   **Info**: The Edge operator retrieves this secret from the **EDGE-CR-NAMESPACE**. Ensure that this secret is created before initiating the Edge deployment or update process.
   <br/><br/>If you used **c8yedge** tool to install, you can configure this field using the below command: 
@@ -163,7 +164,7 @@ See [Connecting Edge to a cloud tenant](/edge/connecting-edge-to-cloud/#register
       - **Intermediate certificate(s):** These certificates link your end-entity certificate to the trusted root certificate. If there are multiple intermediate certificates, they must be ordered correctly as well.
   
       - **Root CA certificate:** This is the certificate for the Certificate Authority (CA) that is trusted by browsers and other clients. It's generally included last in the chain.  
-    
+  <p/>  
   <br/>  
   **Info**: You can also reuse the secret name provided in the `spec.tlsSecretName` provided that the TLS/SSL certificate it references is issued by an intermediate Certificate Authority (CA) within your organization and can be added to the trusted certificate list of your Cumulocity cloud tenant.  
   **Info**: The Edge operator retrieves this secret from the **EDGE-CR-NAMESPACE**. Ensure that this secret is created before initiating the Edge deployment or update process.  
@@ -190,6 +191,7 @@ This field is used to specify the MongoDB admin credentials and persistent volum
     - `MONGODB_DATABASE_ADMIN_USER`: Database admin username with which the MongoDB server is configured.
   
     - `MONGODB_DATABASE_ADMIN_PASSWORD`: Database admin password with which the MongoDB server is configured.  
+  <p/>  
   <br/>  
   **Info**: The Edge operator retrieves this secret from the `EDGE-CR-NAMESPACE`. Ensure that this secret is created before initiating the Edge deployment or update process.
   <br/><br/>If you used **c8yedge** tool to install, you can configure this field using the below command: 
