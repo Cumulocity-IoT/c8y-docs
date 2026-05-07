@@ -204,7 +204,7 @@ spec:
   # tlsSecretName: myown-iot-com-tls
 
   ## Cumulocity Cloud tenant details to configure and manage Edge remotely.
-  ## For more information see connecting Edge to a cloud tenant at https://cumulocity.com/docs/2026/edge/connecting-edge-to-cloud.
+  ## For more information, see Connecting Edge to a cloud tenant at https://cumulocity.com/docs/2026/edge/connecting-edge-to-cloud.
   # cloudTenant:
       ## Cumulocity cloud tenant domain. For example, <tenantid>.cumulocity.com
       # domain: <TENANT-ID>.cumulocity.com
