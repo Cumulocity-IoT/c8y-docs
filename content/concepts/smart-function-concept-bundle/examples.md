@@ -28,7 +28,8 @@ export function onMessage(message, context) {
       externalSource: [{ externalId: message.clientID, type: 'c8y_Serial' }]
     }];
   } catch (error) {
-    return []; // Drop malformed messages
+    console.error("Failed to process message:", error);
+    return []; // Drop malformed messages with error
   }
 }
 ```
