@@ -22,7 +22,7 @@ This section defines the Edge deployment’s configurations.
     Edge version to install. Specify `2026` to install the latest available version from the release, or use a fully qualified version like `2026.0.1` to install a specific patch version.
 
   
-
+<br/>
 
 
 - `domain` | string | Required
@@ -33,7 +33,7 @@ This section defines the Edge deployment’s configurations.
   ```shell
   c8yedge config --set domain=<domain-name>
   ```
-
+<br/>
 
 
 - `licenseKey` | string | Required
@@ -49,7 +49,7 @@ This section defines the Edge deployment’s configurations.
   ```shell
   c8yedge config --set-file licenseKey=<path/to/license.txt>
   ```
-
+<br/>
 
 
 - `company` | string | Required
@@ -62,7 +62,7 @@ This section defines the Edge deployment’s configurations.
   ```shell
   c8yedge config --set company=<company-name>
   ```
-
+<br/>
 
 
 - `email` | string | Required
@@ -75,7 +75,7 @@ This section defines the Edge deployment’s configurations.
   ```shell
   c8yedge config --set email=<email-address>
   ```
-
+<br/>
 
 
 - `cumulocityPasswordSecretName` | string | Required
@@ -87,7 +87,7 @@ This section defines the Edge deployment’s configurations.
   **Info**: The Edge operator retrieves this secret from the **EDGE-CR-NAMESPACE**. Ensure that this secret is created before initiating the Edge deployment process.
 
   
-
+<br/>
 
 
 - `tlsSecretName` | string | Optional
@@ -111,7 +111,7 @@ This section defines the Edge deployment’s configurations.
   ```shell
   c8yedge config --set-file tlsSecret.tls.key=<path/to/tls.key> --set-file tlsSecret.tls.crt=<path/to/tls.crt>
   ```
-
+<br/>
 
 
 - `cloudTenant` | [CloudTenantSpec](#cloudtenantspec) | Optional
@@ -119,7 +119,7 @@ This section defines the Edge deployment’s configurations.
     Cumulocity cloud tenant details to configure and manage Edge remotely.
 
   
-
+<br/>
 
 
 - `mongodb` | [MongodbSpec](#mongodbspec) | Optional
@@ -127,7 +127,7 @@ This section defines the Edge deployment’s configurations.
     Configurations needed to deploy the MongoDB server.
 
   
-
+<br/>
 
 
 - `storageClassName` | string | Optional
@@ -138,7 +138,7 @@ This section defines the Edge deployment’s configurations.
   **Info**: This value is used only during the Edge installation and can’t be changed for existing installations.
 
   
-
+<br/>
 
 
 
@@ -160,7 +160,7 @@ See [Connecting Edge to a cloud tenant](/edge/connecting-edge-to-cloud/#register
   ```shell
   c8yedge config --set cloudTenant.domain=<cloud-tenant-domain>
   ```
-
+<br/>
 
 
 - `otp` | string | Optional
@@ -171,7 +171,7 @@ See [Connecting Edge to a cloud tenant](/edge/connecting-edge-to-cloud/#register
   ```shell
   c8yedge config --set cloudTenant.otp=<one-time password>
   ```
-
+<br/>
 
 
 - `tlsSecretName` | string | Optional
@@ -197,7 +197,7 @@ See [Connecting Edge to a cloud tenant](/edge/connecting-edge-to-cloud/#register
   ```shell
   c8yedge config --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>
   ```
-
+<br/>
 
 
 
@@ -222,7 +222,7 @@ This field is used to specify the MongoDB admin credentials and persistent volum
   ```shell
   c8yedge config --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_USER=<database-admin-user> --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_PASSWORD=<database-admin-password>
   ```
-
+<br/>
 
 
 - `resources` | [PodResources](#podresources) | Optional
@@ -235,7 +235,7 @@ This field is used to specify the MongoDB admin credentials and persistent volum
   ```shell
   c8yedge config --set mongodb.resources.requests.storage=<storage-size>
   ```
-
+<br/>
 
 
 
@@ -250,7 +250,7 @@ This field is used to specify the MongoDB admin credentials and persistent volum
     Specify resource requests for the component.
 
   
-
+<br/>
 
 
 
@@ -268,7 +268,7 @@ This field is used to specify the MongoDB admin credentials and persistent volum
   ```shell
   c8yedge config --set mongodb.resources.requests.storage=<storage-size>
   ```
-
+<br/>
 
 
 
