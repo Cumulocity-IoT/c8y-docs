@@ -27,6 +27,18 @@ This section defines the Edge deployment’s configurations.
 
 
 
+- `domain` | string | Required
+
+    A fully qualified domain name where Edge will be hosted, for example, myown.iot.com. The domain name provided here must match the scope of your Edge license, either the exact subdomain domain, or the parent domain.
+
+  If you used **c8yedge** tool to install, you can configure this field using the below command: 
+  ```shell
+  c8yedge config --set domain=<domain-name>
+  ```
+  <br/>
+
+
+
 - `licenseKey` | string | Required
 
     Edge license key you received for the domain.  
@@ -57,13 +69,14 @@ This section defines the Edge deployment’s configurations.
 
 
 
-- `domain` | string | Required
+- `email` | string | Required
 
-    A fully qualified domain name where Edge will be hosted, for example, myown.iot.com. The domain name provided here must match the scope of your Edge license, either the exact subdomain domain, or the parent domain.
+    Email used for the admin user.  
+  {{< c8y-admon-info >}} This value is used only during the Edge installation and can’t be changed for existing installations. All subsequent admin user changes are made via the [user interface](/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API. {{< /c8y-admon-info >}}
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
-  c8yedge config --set domain=<domain-name>
+  c8yedge config --set email=<email-address>
   ```
   <br/>
 
@@ -80,19 +93,6 @@ This section defines the Edge deployment’s configurations.
   {{< c8y-admon-important >}} The password must be at least 8 letters long. {{< /c8y-admon-important >}}
 
   
-  <br/>
-
-
-
-- `email` | string | Required
-
-    Email used for the admin user.  
-  {{< c8y-admon-info >}} This value is used only during the Edge installation and can’t be changed for existing installations. All subsequent admin user changes are made via the [user interface](/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API. {{< /c8y-admon-info >}}
-
-  If you used **c8yedge** tool to install, you can configure this field using the below command: 
-  ```shell
-  c8yedge config --set email=<email-address>
-  ```
   <br/>
 
 
@@ -130,20 +130,20 @@ This section defines the Edge deployment’s configurations.
 
 
 
-- `storageClassName` | string | Optional
+- `mongodb` | [MongodbSpec](#mongodbspec) | Optional
 
-    The StorageClass to be used for Persistent Volume Claims (PVCs) requested by the Edge operator for persisting application data, microservice images, and logs.  
-  If the `storageClassName` is not provided, the Edge operator requests PVCs without a StorageClass, thereby instructing Kubernetes to utilize the default StorageClass configured in the cluster. If you specify the name of an existing StorageClass for which dynamic provisioning is enabled, the Operator requests PVCs with that class name, thereby instructing Kubernetes to utilize dynamic provisioning according to the specified class.  
-  {{< c8y-admon-info >}} This value is used only during the Edge installation and can’t be changed for existing installations. {{< /c8y-admon-info >}}
+    Configurations needed to deploy the MongoDB server.
 
   
   <br/>
 
 
 
-- `mongodb` | [MongodbSpec](#mongodbspec) | Optional
+- `storageClassName` | string | Optional
 
-    Configurations needed to deploy the MongoDB server.
+    The StorageClass to be used for Persistent Volume Claims (PVCs) requested by the Edge operator for persisting application data, microservice images, and logs.  
+  If the `storageClassName` is not provided, the Edge operator requests PVCs without a StorageClass, thereby instructing Kubernetes to utilize the default StorageClass configured in the cluster. If you specify the name of an existing StorageClass for which dynamic provisioning is enabled, the Operator requests PVCs with that class name, thereby instructing Kubernetes to utilize dynamic provisioning according to the specified class.  
+  {{< c8y-admon-info >}} This value is used only during the Edge installation and can’t be changed for existing installations. {{< /c8y-admon-info >}}
 
   
   <br/>
@@ -165,7 +165,8 @@ See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#regis
 
 - `domain` | string | Required
 
-    {{< product-c8y-iot >}} cloud tenant domain. For example, `<tenantid>.cumulocity.com`
+    {{< product-c8y-iot >}} cloud tenant domain. For example, `<tenantid>.cumulocity.com`.  
+  See [Connecting Edge to a cloud tenant](/edge/connecting-edge-to-cloud) for more details.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
@@ -177,9 +178,8 @@ See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#regis
 
 - `otp` | string | Optional
 
-    One-time password (OTP) for initial registration of Edge as a device in the cloud tenant.  
-  If both this and `cloudTenant.tlsSecretName` are not provided, Edge generates and uses self-signed certificates.  
-  For more information see [Connecting Edge to a cloud tenant](/edge/connecting-edge-to-cloud/#register-edge-on-cloud).
+    One-time password (OTP) for initial registration of Edge as a device in the cloud tenant. If both this and `cloudTenant.tlsSecretName` are not provided, Edge generates and uses self-signed certificates.  
+  See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#register-edge-on-cloud) for more details.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
@@ -208,7 +208,8 @@ See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#regis
    - You can also reuse the secret name provided in the `spec.tlsSecretName` provided that the TLS/SSL certificate it references is issued by an intermediate Certificate Authority (CA) within your organization and can be added to the trusted certificate list of your {{< product-c8y-iot >}} cloud tenant.
   
    - The Edge operator retrieves this secret from the **EDGE-CR-NAMESPACE**. Ensure that this secret is created before initiating the Edge deployment or update process.  
-  {{< /c8y-admon-info >}}
+  {{< /c8y-admon-info >}}  
+  See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#register-edge-on-cloud) for more details.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
