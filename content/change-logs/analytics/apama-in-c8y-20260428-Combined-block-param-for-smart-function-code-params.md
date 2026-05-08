@@ -1,5 +1,5 @@
 ---
-date: '2026-02-05'
+date: '2026-05-07'
 title: Combined block parameter for function code in the Smart Function block
 change_type:
   - value: change-pXAlHAWka
