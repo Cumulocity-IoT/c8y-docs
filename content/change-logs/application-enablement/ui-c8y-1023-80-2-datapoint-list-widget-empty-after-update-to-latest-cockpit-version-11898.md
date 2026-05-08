@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Datapoint list widget empty after update to latest cockpit version (#11898) [GRAFT][release/cd] (#11965)
+title: Data point list widget displays data correctly after cockpit update
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
