@@ -43,7 +43,7 @@ A single test can contain more than one message. This is useful for grouping rel
 
 #### Managing tests {#managing-tests}
 
-Click the test name dropdown. From within the dropdown you can:
+Click the test name dropdown. From within the dropdown, you can:
 
 - **Duplicate** the current test: Click the **Duplicate test** button. Enter a name for the new test.
 - **Rename** a test: Click the rename icon next to the test. Enter a new name for the test and confirm.
@@ -52,11 +52,11 @@ Click the test name dropdown. From within the dropdown you can:
 
 ### Generating tests with the AI assistant {#generating-tests-with-ai}
 
-The AI assistant helps you to expand test coverage quickly, especially for edge cases you have not considered.
+The AI assistant helps you expand test coverage quickly, especially for edge cases you have not considered.
 
 1. Ask the AI assistant to create test cases for you.
 2. The AI assistant adds new tests with relevant sample payloads.
-3. Review the payloads and save expected outputs so they serve as regression checks going forward.
+3. Review the payloads and save expected outputs so they serve as regression checks in future test runs.
 
 To protect your test suite, the AI assistant cannot delete tests.
 
@@ -64,7 +64,7 @@ To protect your test suite, the AI assistant cannot delete tests.
 
 - Click **Run tests**.
 
-The platform compiles and executes your smart function against every test input. 
+The platform compiles and executes your smart function against every test input.
 
 #### Inspecting outputs {#inspecting-outputs}
 
@@ -79,6 +79,7 @@ Review the output carefully to confirm that the smart function produces the corr
 #### Detecting failures {#detecting-failures}
 
 If one or more tests are failing:
+
 - A red error icon appears next to the test name dropdown.
 - Within the dropdown, a red error icon appears next to the specific tests that are failing.
 
@@ -110,7 +111,7 @@ Run the tests after each change to your smart function and check for regressions
 If one or more tests are failing, a red error icon appears next to the test name dropdown. To fix the code automatically:
 
 1. Click **Fix smart function**.
-2. The AI agent analyzes the failing tests and updates the smart function so that all tests pass.
+2. The AI assistant analyzes the failing tests and updates the smart function so that all tests pass.
 3. Run the tests again to verify the fix.
 
 Review the AI's changes before deploying. The AI adjusts the code to match your expected outputs, so confirm that the changes are correct for all scenarios, not only the failing tests.
