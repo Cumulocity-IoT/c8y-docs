@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Data point list widget displays data correctly after cockpit update
+title: Data point list widget displays data correctly after application update
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
