@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66503
 version: 1023.14.152
 ---
-Previously, the `c8y-select` placeholder did not display in some cases when no value was selected. This issue has been fixed. Moreover, a validation example has been added to the Codex documentation.
+Previously, the `c8y-select` placeholder did not display in some cases when no value was selected. This issue has been fixed. Moreover, a validation example has been added to the [Codex documentation](https://cumulocity.com/codex/components/forms/select/overview).
