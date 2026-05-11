@@ -13,7 +13,7 @@ This agreement is made between {{< company-c8y >}} ("Provider") and the Customer
 This document outlines the maintenance and support services provided for different levels of support.
 The services are provided as follows for the different pricing packs, as detailed on Provider's pricing page: https://www.cumulocity.com/pricing/.
 
-* **Starter** and **free trial** include community-based support via Provider's Tech Community, https://community.cumulocity.com/, where the team responds on a best-effort basis.
+* **Starter** and **free trial** include community-based support via {{< company-c8y >}}'s Tech Community, https://community.cumulocity.com/, where the team responds on a best-effort basis.
 * **Business** includes **Standard** support by default. Upgrading to **Premium** is possible for a fee.
 * **Enterprise** includes **Premium** support by default.
 
@@ -58,7 +58,7 @@ Support will classify support tickets into three levels of severity according to
 | **Prioritized queuing**              | No                         | Yes                      |
 | **Ticket escalation**                | Yes                        | Yes                      |
 | **Onboarding**                       | Email                      | Email and/or web meeting |
-| **SDKs, thin-edge.io and device-side software** | Community support only | Incident support for supported versions; see below |
+| **SDKs & thin-edge.io** | Community support only | Incident support for supported versions; see below |
 
 
 
@@ -93,7 +93,7 @@ For Customers with Premium support, the following additional services are includ
 
 * Assistance with incident analysis and troubleshooting where the issue can be reproduced using supported SDK versions or thin-edge.io versions together with Cumulocity Product in documented reference architectures.
 * Guidance on recommended configuration and upgrade paths for supported SDKs and the most recent thin-edge.io version.
-* Coordination of Error Corrections for confirmed defects in supported SDKs or thin-edge.io versions that materially affect the operation of Cumulocity Product.
+* Coordination of Error Corrections for confirmed defects in supported SDKs or thin-edge.io versions that materially affect the operation of {{< product-c8y-iot >}}.
 
 Premium support does not include:
 
@@ -103,7 +103,7 @@ Premium support does not include:
 
 #### Professional Services for SDKs and device-side software
 
-Assistance with developing, debugging, or customizing SDKs, thin-edge.io, device firmware, or other device-side software is outside the scope of all support levels. Such services can be requested separately from {{< company-c8y >}} Professional Services.
+Assistance with developing, debugging, or customizing SDKs, thin-edge.io, device firmware, or other device-side software is outside the scope of all support levels. Such services can be requested separately from {{< company-c8y >}} [Professional Services](https://www.cumulocity.com/professional-services/).
 
 ### Processing customer requests
 

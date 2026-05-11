@@ -16,7 +16,7 @@ The agreement applies solely to the base platform excluding optional features or
 
 ##### Scope of software covered
 
-This agreement applies to the {{< product-c8y-iot >}} platform operated as Software-as-a-Service (SaaS), including its APIs and standard web applications ("Cumulocity Product"). It does not apply to:
+This agreement applies to the {{< product-c8y-iot >}} platform operated as Software-as-a-Service (SaaS), including its APIs and standard web applications. It does not apply to:
 
 * device-side software or firmware developed by Customer or third parties;
 * open-source software projects such as thin-edge.io; and
@@ -61,7 +61,7 @@ As a Customer of the {{< product-c8y-iot >}} platform, we request your acknowled
 * **Device security:** While the {{< product-c8y-iot >}} platform provides robust security measures, Customer is responsible for the security of devices and device credentials. {{< company-c8y >}} cannot be held liable for any leaked credentials from devices. Customer acknowledges that communication protocols and ciphers may require periodic updates to address evolving security threats. This may necessitate updates to the devices themselves.
 * **End user access security:** To protect the integrity of the cloud platform, Customer is encouraged to educate users on secure usage practices, such as implementing multi-factor authentication. Customer is responsible for managing user credentials, and {{< company-c8y >}} cannot be held responsible for any compromised credentials.
 * **Certificate management:** Customer is responsible for monitoring the expiration of their certificates. Expired certificates can result in service unavailability for the associated clients, and Customer expressly acknowledges this responsibility.
-* **Library and SDK updates:** Customers utilizing {{< company-c8y >}}-provided libraries, SDKs, or client code samples to build their own applications are responsible for keeping these components up to date, including applying security updates in a timely manner. {{< company-c8y >}} cannot be held liable for any security issues arising from outdated SDKs, libraries, or code samples in Customer applications. For the avoidance of doubt, {{< company-c8y >}}-provided SDKs, libraries, and thin-edge.io are provided on a community-support basis. For Premium support, refer to the Support service-level agreement.
+* **Library and SDK updates:** Customers utilizing {{< company-c8y >}}-provided libraries, SDKs, or client code samples to build their own applications are responsible for keeping these components up to date, including applying security updates in a timely manner. {{< company-c8y >}} cannot be held liable for any security issues arising from outdated SDKs, libraries, or code samples in Customer applications.
 
 ##### **Capacity management**
 
@@ -203,7 +203,7 @@ service availability requirements are set forth in this service credit commitmen
     * Device-side software, including thin-edge.io agents, device firmware, operating systems, and connectivity stacks, is developed, deployed, and operated under Customer's sole responsibility.
     * Support for these components is limited to community support channels.
     * For Premium support, additional support obligations apply as defined in the Support service-level agreement.
-* **thin-edge.io:** thin-edge.io is an open-source edge framework provided under an open-source license, independently of the Cumulocity Product. It may be used by Customer to connect devices to {{< product-c8y-iot >}} and other platforms. For customers without Premium support, {{< company-c8y >}} does not provide any service-level commitment or support obligation for thin-edge.io beyond maintaining public documentation and community channels. For Premium support customers, {{< company-c8y >}} provides incident support for thin-edge.io when used with the Cumulocity Product on a recent supported version. All other usages remain outside the scope of this agreement.
+* **thin-edge.io:** thin-edge.io is an open-source edge framework provided under the Apache 2.0 license, independently of the Cumulocity Product. It may be used by Customer to connect devices to {{< product-c8y-iot >}} and other platforms. For customers without Premium support, {{< company-c8y >}} does not provide any service-level commitment or support obligation for thin-edge.io beyond maintaining public documentation and community channels. For Premium support customers, {{< company-c8y >}} provides incident support for thin-edge.io when used with the Cumulocity Product on a recent supported version. All other usages remain outside the scope of this agreement.
 
 #### **Maintenance**
 
