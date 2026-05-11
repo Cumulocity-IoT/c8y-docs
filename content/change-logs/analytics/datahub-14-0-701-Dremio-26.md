@@ -1,5 +1,5 @@
 ---
-date: 2026-04-13
+date: '2026-04-13'
 title: New Dremio version 26
 product_area: Analytics
 change_type:
@@ -14,6 +14,10 @@ build_artifact:
 version: 14.0.701
 environment_availability:
   - label: eu-latest.cumulocity.com
-    date: 2026-04-13
+    date: 2026-04-13T00:00:00.000Z
+  - label: apj.cumulocity.com
+    date: '2026-05-06'
+  - label: jp.cumulocity.com
+    date: '2026-05-06'
 ---
 {{< product-c8y-iot >}} DataHub now leverages version 26.1 of Dremio as its internal query engine.

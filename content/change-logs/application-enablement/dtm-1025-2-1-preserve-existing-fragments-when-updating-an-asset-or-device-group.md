@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-04-28'
   - label: jp.cumulocity.com
     date: '2026-04-28'
+  - label: us.cumulocity.com
+    date: '2026-04-29'
+  - label: cumulocity.com
+    date: '2026-04-29'
 ---
 The Digital Twin Manager now correctly preserves the existing fragments
 when you update an `Asset` or `DeviceGroup`. Previously, updating either

@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-04-28'
   - label: jp.cumulocity.com
     date: '2026-04-28'
+  - label: us.cumulocity.com
+    date: '2026-04-29'
+  - label: cumulocity.com
+    date: '2026-04-29'
 ---
 The confirmation dialog for deleting a custom column in the **Configure columns** dropdown used to appear on top of and obscure the columns dropdown, making it difficult for users to see the underlying content while confirming the deletion. This change adjusts the positioning and behaviour of the deletion confirmation modal so it no longer overlaps relevant content, ensuring the dialog is clearly visible without hiding the configured columns behind it. 

@@ -1,18 +1,18 @@
 ---
 date: '2026-04-27'
-title: Pagination and row expansion in Assets page no longer frozen
+title: Alarm list widgets now display alarms for the correct data range
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
 component:
-  - value: component-Tl88RYb4A
-    label: Digital Twin Manager
+  - value: component-YbYJ3gLU_
+    label: Web SDK
 build_artifact:
-  - value: tc-wYIY0MBDO
-    label: dtm
-ticket: CTM-2895
-version: 1025.2.1
+  - value: tc-pjJiURv9Y
+    label: ui-c8y
+ticket: MTM-66181
+version: 1023.75.4
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-04-27'
@@ -25,4 +25,4 @@ environment_availability:
   - label: cumulocity.com
     date: '2026-04-29'
 ---
-Previously, the pagination and row expansion in the **Assets** page were frozen when displaying large datasets. This issue is now resolved to provide a reliable pagination and row expansion.
+In live mode, "Alarm list" widgets displayed alarms from the previously saved date range rather than the current time. This issue has been fixed. They now correctly refresh on load using the range defined by the widget or the global time context.
