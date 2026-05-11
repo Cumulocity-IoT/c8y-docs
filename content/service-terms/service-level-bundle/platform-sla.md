@@ -18,9 +18,9 @@ The agreement applies solely to the base platform excluding optional features or
 
 This agreement applies to the {{< product-c8y-iot >}} platform operated as Software-as-a-Service (SaaS), including its APIs and standard web applications. It does not apply to:
 
-* device-side software or firmware developed by Customer or third parties;
-* open-source software projects such as thin-edge.io; and
-* software development kits (SDKs), code samples, and reference implementations, except as explicitly stated in the Support service-level agreement for Premium support.
+* Device-side software or firmware developed by Customer or third parties.
+* Open-source software projects such as thin-edge.io.
+* Software development kits (SDKs), code samples, and reference implementations, except as explicitly stated in the Support service-level agreement for Premium support.
 
 ### Service features
 
