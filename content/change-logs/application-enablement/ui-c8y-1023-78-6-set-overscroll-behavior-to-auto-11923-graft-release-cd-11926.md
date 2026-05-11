@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-05-08'
   - label: jp.cumulocity.com
     date: '2026-05-08'
+  - label: us.cumulocity.com
+    date: '2026-05-11'
+  - label: cumulocity.com
+    date: '2026-05-11'
 ---
 The overscroll behavior was previously set to ‎`contain`, which caused usability issues, especially in dashboards. It has now been updated to ‎`auto`, improving the scrolling experience in web applications.

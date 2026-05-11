@@ -20,6 +20,8 @@ environment_availability:
     date: '2026-05-06'
   - label: jp.cumulocity.com
     date: '2026-05-06'
+  - label: us.cumulocity.com
+    date: '2026-05-11'
 ---
 {{< product-c8y-iot >}} now provides new REST API endpoints for creating and updating inventory managed objects in bulk.
 These endpoints allow you to perform batch operations on multiple managed objects in a single request, improving efficiency and reducing the number of API calls needed for large-scale inventory management.
