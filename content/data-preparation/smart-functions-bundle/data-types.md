@@ -21,7 +21,7 @@ A `DeviceMessage` represents a message received from a device transport.
 
 ### {{< product-c8y-iot >}} Objects {#cumulocity-objects}
 
-When you return objects from `onMessage`, you return one of four domain object types: `Measurement`, `Event`, `Alarm`, or `Operation`. All four share the same common fields and differ only in their payload structure.
+When you return objects from `onMessage`, you return one of five domain object types: `Measurement`, `Event`, `Alarm`, `Operation`, or `Managed object`. All five share the same common fields and differ only in their payload structure.
 
 #### Common fields {#common-fields}
 
@@ -90,7 +90,7 @@ The external ID you provide in `externalSource` is used to identify the target m
 Every field in the Managed Object API is optional, so you only need to include the fields you want to change. To remove a fragment, set its value to `null`.
 
 {{< c8y-admon-important >}}
-Managed object updates are designed for updating custom fragments. They should not be used for creating new managed objects. The `managedObject` type does not have the ability to make hierarchy changes (for example, assigning child devices or assets).
+Managed object updates are designed for updating existing managed objects, not as the primary way to create new managed objects. The `managedObject` type does not have the ability to make hierarchy changes (for example, assigning child devices or assets).
 {{< /c8y-admon-important >}}
 
 | Field | Type | Required | Description |

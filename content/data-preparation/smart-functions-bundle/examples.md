@@ -162,7 +162,7 @@ Apply an update to a managed object to edit its details. The platform identifies
 **Example input** (`msg.payload` decoded as UTF-8):
 
 ```json
-{ "deviceId": "SN-005", "name": "Temperature sensor 5", "firmwareVersion": "2.1.0", "hwModel": "SensorX" }
+{ "deviceId": "SN-005", "name": "Sensor 5", "firmwareVersion": "2.1.0", "hwModel": "SensorX" }
 ```
 
 **Function**:
