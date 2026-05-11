@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fix empty rows in add asset dropdown when asset definition lacks icon"
+title: "Fixed empty rows in Add asset dropdown when asset definition lacks icon"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -15,8 +15,8 @@ ticket: "CTM-2934"
 version: "1025.4.0"
 ---
 Asset definitions created without custom icons previously displayed as
-empty rows in the add asset dropdown, making it difficult for users to
-identify and select available assets. The add asset dropdown now
+empty rows in the Add asset dropdown, making it difficult for users to
+identify and select available assets. The Add asset dropdown now
 displays asset definitions correctly regardless of whether a custom icon
 is present, improving the user experience when adding assets to your
 application.
