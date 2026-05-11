@@ -14,9 +14,9 @@ build_artifact:
 ticket: "CTM-2934"
 version: "1025.4.0"
 ---
-Asset definitions created without custom icons previously displayed as
-empty rows in the Add asset dropdown, making it difficult for users to
-identify and select available assets. The Add asset dropdown now
+Asset definitions created without custom icons were previously displayed as
+empty rows in the **Add asset** dropdown, making it difficult for users to
+identify and select available assets. The **Add asset** dropdown now
 displays asset definitions correctly regardless of whether a custom icon
 is present, improving the user experience when adding assets to your
 application.
