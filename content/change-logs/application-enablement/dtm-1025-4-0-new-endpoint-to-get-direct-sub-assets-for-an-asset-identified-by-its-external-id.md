@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "New endpoint to get direct sub-assets for an asset identified by its external ID"
+title: "New endpoint to get direct subassets for an asset identified by its external ID"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
@@ -14,16 +14,16 @@ build_artifact:
 ticket: "CTM-2900"
 version: "1025.4.0"
 ---
-The Digital Twin microservice now includes a new endpoint
+The Dtm microservice now includes a new endpoint
 `/assets/externalIds/{externalId}/subAssets` that allows you to fetch
-direct sub-assets using an asset's external ID. Previously, you could
-only retrieve sub-assets by using the asset's ID, which required an
+direct subassets using an asset's external ID. Previously, you could
+only retrieve subassets by using the asset's ID, which required an
 additional lookup step if you were working with external identifiers.
 This new endpoint streamlines workflows by enabling direct queries based
 on external IDs, eliminating the need for intermediate ID resolution.
 
 With this addition, applications and integrations that manage assets
-through external identifiers can now access sub-asset hierarchies more
+through external identifiers can now access subasset hierarchies more
 efficiently. Your existing code using internal IDs continues to work
 without changes, and you can adopt the new endpoint at your own pace to
 improve performance and reduce complexity in asset management
