@@ -183,6 +183,10 @@ If a published message includes any properties other than those listed here, tho
 | `tx.responseTopic`                | NO                | String                                                                | MQTT v5 Response Topic                                                     |
 | `tx.correlationData`              | NO                | Sequence of bytes, encoded as a Base64 string                         | MQTT v5 Correlation Data                                                   |
 | `tx.userProperties.<name>`        | NO                | String                                                                | MQTT v5 User Property with name `name`<sup>(4)</sup>                       |
+| `tx.lastWillMessage`              | NO                | String ("true")                                                       | Present on Will Messages only. Indicates the message was published on behalf of a device that disconnected unexpectedly. |
+| `tx.clientDisconnectTimestamp`    | NO                | Unix timestamp (milliseconds since 1 January 1970 00:00:00 UTC)      | Present on Will Messages only. The time at which the device disconnected. |
+| `tx.willDelayInterval`            | NO                | Integer (seconds)                                                     | Present on MQTT v5 Will Messages only, when the _Will Delay Interval_ is greater than zero. |
+| `tx.messageExpiryInterval`        | NO                | Integer (seconds)                                                     | Present on MQTT v5 Will Messages only, when a _Message Expiry Interval_ was set. |
 
 Notes:
 1. The `clientID` property can be omitted from a published message only in special case of a _broadcast_ message, described below in [broadcast messages](#broadcast-messages).
