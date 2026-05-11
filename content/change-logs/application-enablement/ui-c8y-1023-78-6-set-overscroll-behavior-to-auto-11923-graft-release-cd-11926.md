@@ -16,5 +16,9 @@ version: 1023.78.6
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-05-07'
+  - label: apj.cumulocity.com
+    date: '2026-05-08'
+  - label: jp.cumulocity.com
+    date: '2026-05-08'
 ---
 The overscroll behavior was previously set to ‎`contain`, which caused usability issues, especially in dashboards. It has now been updated to ‎`auto`, improving the scrolling experience in web applications.

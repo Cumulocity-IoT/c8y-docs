@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-05-07'
   - label: jp.cumulocity.com
     date: '2026-05-07'
+  - label: us.cumulocity.com
+    date: '2026-05-08'
+  - label: cumulocity.com
+    date: '2026-05-08'
 ---
 When assigning a device profile, the software type defined in the profile was not included in the generated operation. This issue has been fixed.
 The operation now includes the software type when it is defined in the profile, ensuring correct profile application on devices.

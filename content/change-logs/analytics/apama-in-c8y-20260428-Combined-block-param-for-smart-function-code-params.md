@@ -13,7 +13,9 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-5192
 version: 27.104.0
-
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-05-08'
 ---
 
 The Smart Function block now uses a single, dynamically sized block parameter instead of a fixed set of parameters for providing values to the smart function code.
