@@ -27,7 +27,8 @@
 /content/datahub/ @cheinz-sag @BeateRixen
 /content/device-certificate-authentication/ @mgrumann @BeateRixen
 /content/device-integration/ @Oezge-Akin @l2p- @eliasweingaertner
-/content/device-integration/mqtt-service/ @scmi-c8y @BeateRixen
+/content/device-integration/mqtt*.md @scmi-c8y @BeateRixen
+/content/device-integration/mqtt*-bundle/ @scmi-c8y @BeateRixen
 /content/device-management-application/ @Oezge-Akin @l2p- @eliasweingaertner @BeateRixen
 /content/dtm/ @lara-c8y @BeateRixen
 /content/edge/ @bbyreddy @rthrippleton @BeateRixen
