@@ -89,9 +89,14 @@ The services are defined as follows:
 
 #### Scope of Premium support for SDKs and device-side software
 
-For Customers with Premium support, the following additional services are included:
+Premium support also covers additional components  that are not part of {{< product-c8y-iot >}} platform operated as Software-as-a-Service (SaaS). This includes versions of the following components that have been published within the last 12 months:
 
-* Assistance with incident analysis and troubleshooting where the issue can be reproduced using supported SDK versions or thin-edge.io versions together with Cumulocity Product in documented reference architectures.
+- [thin-edge.io ](https://thin-edge.io/)
+- {{< product-c8y-iot >}} [webSDK](https://cumulocity.com/docs/web/introduction/)
+- {{< product-c8y-iot >}} [Microservice SDK for Java](https://cumulocity.com/docs/microservice-sdk/java/)
+
+For those components, the following services are included:
+* Assistance with incident analysis and troubleshooting where the issue can be reproduced on the latest  SDK or thin-edge.io version.
 * Guidance on recommended configuration and upgrade paths for supported SDKs and the most recent thin-edge.io version.
 * Coordination of Error Corrections for confirmed defects in supported SDKs or thin-edge.io versions that materially affect the operation of {{< product-c8y-iot >}}.
 
@@ -100,6 +105,7 @@ Premium support does not include:
 * Development services (for example, implementing features, refactoring Customer code, or writing custom device firmware).
 * Support for forks, custom builds, or third-party modifications of SDKs or thin-edge.io.
 * Support for device-side operating systems, drivers, or connectivity services not controlled by {{< company-c8y >}}.
+* Support for **thin-edge.io** when not used in conjunction with the {{< product-c8y-iot >}} platform.
 
 #### Professional Services for SDKs and device-side software
 

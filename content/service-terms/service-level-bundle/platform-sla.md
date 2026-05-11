@@ -203,7 +203,6 @@ service availability requirements are set forth in this service credit commitmen
     * Device-side software, including thin-edge.io agents, device firmware, operating systems, and connectivity stacks, is developed, deployed, and operated under Customer's sole responsibility.
     * Support for these components is limited to community support channels.
     * For Premium support, additional support obligations apply as defined in the Support service-level agreement.
-* **thin-edge.io:** thin-edge.io is an open-source edge framework provided under the Apache 2.0 license, independently of the Cumulocity Product. It may be used by Customer to connect devices to {{< product-c8y-iot >}} and other platforms. For customers without Premium support, {{< company-c8y >}} does not provide any service-level commitment or support obligation for thin-edge.io beyond maintaining public documentation and community channels. For Premium support customers, {{< company-c8y >}} provides incident support for thin-edge.io when used with the Cumulocity Product on a recent supported version. All other usages remain outside the scope of this agreement.
 
 #### **Maintenance**
 
