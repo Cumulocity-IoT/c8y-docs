@@ -81,14 +81,24 @@ Always check the documentation for your specific component to understand the exp
 
 ### Error handling {#error-handling}
 
-If your smart function throws an error, the system catches it and handles it according to component-specific policies. For example, some components may discard the input, retry the function, or log the error for inspection. You can use standard Javascript try/catch blocks to handle expected errors within your function.
+If your smart function throws an error, the system catches it and handles it according to component-specific policies. For example, some components may discard the input, retry the function, log the error for inspection, or raise an alarm in the tenant. You can use standard Javascript try/catch blocks to handle expected errors where you have a recovery strategy.
 
 ```javascript
 export function onMessage(message, context) {
-  try {
-    return processMessage(message);
-  } catch (error) {
-    console.error('Processing failed:', error);
-    return []; // Or handle gracefully based on your needs
+  const deviceList = JSON.parse(new TextDecoder().decode(message.payload));
+  const results = [];
+  
+  for (const device of deviceList) {
+    try {
+      results.push(parseMeasurementData(device.data));
+    } catch (error) {
+      console.warn(`Skipping device ${device.id}: ${error.message}`);
+      // Skip this device and continue with the next
+    }
   }
+  
+  return results;
 }
+```
+
+Only catch errors when you have a meaningful recovery path. In this example, the recovery strategy is to skip the failed device but continue processing others. If there is no recovery strategy, let the error propagate --- the component will handle it appropriately.
