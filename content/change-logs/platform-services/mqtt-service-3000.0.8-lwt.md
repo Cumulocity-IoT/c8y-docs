@@ -1,7 +1,7 @@
 ---
-date: 2026-05-20
+date: ""
 title: >-
-  MQTT Service now supports Last Will and Testament messages
+  MQTT Service now supports Will Message
 change_type:
   - value: change-QHu1GdukP
     label: Feature
@@ -16,7 +16,7 @@ ticket: MTM-66683
 version: 3000.0.8
 ---
 
-The {{< product-c8y-iot >}} MQTT Service now supports the MQTT _Last Will and Testament_ (LWT) feature for both MQTT version 3.1.1 and 5.0 devices.
+The {{< product-c8y-iot >}} MQTT Service now supports the MQTT _Will Message_ feature for both MQTT version 3.1.1 and 5.0 devices.
 
 When a device that connected with a Will Message disconnects unexpectedly, the MQTT Service publishes the Will Message to the Messaging Service `from-device` topic, where it can be consumed by microservice and external application clients like any other device message.
 Clients can identify Will Messages using the `tx.lastWillMessage` Pulsar message property.
