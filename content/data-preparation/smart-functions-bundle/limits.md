@@ -70,7 +70,7 @@ The platform enforces per-invocation limits to protect against runaway functions
 - **Execution time**: 1 second elapsed time per invocation. Functions that exceed this limit are terminated and the message is dropped.
 - **Memory**: 100 MB per rule. This covers function compilation, input consumption, stack, processing, and output production, which implicitly limits input and output size.
 
-When a limit is exceeded, the function is terminated mid-execution, the message is dropped, and an error is logged.
+When a limit is exceeded, the function is terminated mid-execution, the message is dropped, an error is logged and an alarm is raised in the tenant.
 
 These limits are designed to protect the platform, not as a target to build towards. You should not expect to be able to consume the full limits on every function invocation within the resources deployed to the platform.
 
