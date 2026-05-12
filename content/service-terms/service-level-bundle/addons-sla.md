@@ -62,7 +62,7 @@ Customer acknowledges the following limitations and constraints in using the VPN
 {{< company-c8y >}} is committed to providing reliable service. The specific service availability targets are as follows:
 
 * **Production environments:** 99.90% availability
-* **Non-production environments:** 98.50% availability
+* **Non-production environments:** 95.00% availability
 
 {{< company-c8y >}} monitors the availability according to the state (up, down) reported by the employed hyperscaler.
 
