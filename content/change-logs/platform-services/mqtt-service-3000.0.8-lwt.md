@@ -1,5 +1,5 @@
 ---
-date: 2026-05-XX
+date: 2026-05-20
 title: >-
   MQTT Service now supports Last Will and Testament messages
 change_type:
