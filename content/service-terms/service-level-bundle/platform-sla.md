@@ -74,6 +74,9 @@ For details on non-permitted uses of {{< product-c8y-iot >}}, refer to the {{< p
 
 In the interest of transparency and to ensure a mutual understanding of the service capabilities, we kindly ask Customer to acknowledge the following limitations and constraints of the {{< product-c8y-iot >}} platform:
 
+* **SDKs, code samples, and device-side software:**
+    * {{< company-c8y >}}-provided SDKs, client libraries, code samples, and reference implementations are provided "as-is" under their respective license terms. They are intended as examples and integration aids and may require adaptation by Customer.
+    * Device-side software, including thin-edge.io agents, device firmware, operating systems, and connectivity stacks, is developed, deployed, and operated under Customer's sole responsibility.
 * **Hard quotas:** Customer acknowledges the existence of hard quotas as detailed in [Service quotas](/service-terms/quotas/). These quotas define maximum thresholds that the platform can support and are essential for maintaining overall system stability.
 * **Shared environment considerations:** Customers not utilizing {{< product-c8y-iot >}} Dedicated plans should be aware that their tenant is hosted within a shared environment. As a result, response times may occasionally vary due to shared resource usage, and Customer acknowledges such variations. Furthermore, infrastructure-level information such as HTTP or MQTT access logs cannot be shared with Customer.
 * **Data retention and storage costs:** Customer acknowledges that reducing data retention periods does not immediately lead to the reclamation of storage space or a reduction in storage costs due to technical processing requirements.
@@ -196,12 +199,6 @@ service availability requirements are set forth in this service credit commitmen
 #### **Support**
 
 * **Customer support:** Support is provided in accordance with Customer’s selected support plan, as detailed in the [support agreement](/service-terms/service-level/#support-sla).
-* **Non-production environments:** For Premium support customers, Premium support response times and service commitments do not apply to non-production environments.
-* **SDKs, code samples, and device-side software:**
-    * {{< company-c8y >}}-provided SDKs, client libraries, code samples, and reference implementations are provided "as-is" under their respective license terms. They are intended as examples and integration aids and may require adaptation by Customer.
-    * Device-side software, including thin-edge.io agents, device firmware, operating systems, and connectivity stacks, is developed, deployed, and operated under Customer's sole responsibility.
-    * Support for these components is limited to community support channels.
-    * For Premium support, additional support obligations apply as defined in the Support service-level agreement.
 
 #### **Maintenance**
 

@@ -86,10 +86,11 @@ The services are defined as follows:
 * **Ticket escalation:** If a support ticket requires extra attention due to a serious change in business impact (for example, an approaching deadline or increased severity), Customer can raise an escalation request via the Support Portal or email. Provider will review the new context and will ensure high visibility on its internal dashboards.
 * **Onboarding:** Provider welcomes new ATCs and provides information about the Support Portal access, support ticket handling process and Support team.
 * **SDKs, thin-edge.io and device-side software:** For Standard support, {{< company-c8y >}}-provided SDKs, libraries, and thin-edge.io are available on a community-support basis only. Support may, at its discretion, provide general guidance but does not assume incident ownership for these components. For Premium support, refer to the section below.
+* **Non-production environments:** For Premium support customers, Premium support response times and service commitments do not apply to non-production environments.
 
 #### Scope of Premium support for SDKs and device-side software
 
-Premium support also covers additional components  that are not part of {{< product-c8y-iot >}} platform operated as Software-as-a-Service (SaaS). This includes versions of the following components that have been published within the last 12 months:
+Premium support also covers additional components  that are not part of {{< product-c8y-iot >}} platform operated as Software-as-a-Service (SaaS). Incidents related to these components are always handled at standard response times. This includes versions of the following components that have been published within the last 12 months:
 
 - [thin-edge.io ](https://thin-edge.io/)
 - {{< product-c8y-iot >}} [Web SDK](https://cumulocity.com/docs/web/introduction/)
