@@ -6,7 +6,7 @@ layout: redirect
 
 This section provides practical examples of smart functions from different components and domains.
 
-### Data preparation: Parse and create measurements {#data-preparation-example}
+### Data Preparation: Parse and create measurements {#data-preparation-example}
 
 This example parses an incoming device message and creates a {{< product-c8y-iot >}} measurement:
 
@@ -29,7 +29,7 @@ export function onMessage(message, context) {
 }
 ```
 
-For further Data preparation examples, see [Smart functions examples in Data Preparation](/data-preparation/smart-functions/#examples).
+For further Data Preparation examples, see [Smart functions examples in Data Preparation](/data-preparation/smart-functions/#examples).
 
 ### Streaming analytics: Calculate moving average {#streaming-analytics-example}
 

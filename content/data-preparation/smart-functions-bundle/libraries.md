@@ -89,7 +89,7 @@ Parse and encode Protocol Buffer messages.
 import protobuf from 'protobufjs.js';
 ```
 
-Data preparation provides [protobufjs](https://protobufjs.github.io/protobuf.js/) version 8.
+Data Preparation provides [protobufjs](https://protobufjs.github.io/protobuf.js/) version 8.
 
 #### cbor2 {#cbor2}
 
@@ -99,7 +99,7 @@ Work with CBOR (Concise Binary Object Representation) encoded data.
 import { /* exported names */ } from 'cbor2.js';
 ```
 
-Data preparation provides [cbor2](https://hildjj.github.io/cbor2/) version 1.
+Data Preparation provides [cbor2](https://hildjj.github.io/cbor2/) version 1.
 
 ### Bundling external libraries {#bundling-external-libraries}
 
