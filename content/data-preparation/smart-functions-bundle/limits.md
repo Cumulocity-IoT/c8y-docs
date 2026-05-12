@@ -32,7 +32,7 @@ Smart functions must not rely on global Javascript state to persist data between
 
 - Top-level `let`, `const`, and `var` declarations may be reset between calls. Do not store mutable data in them.
 - Module-level objects (caches, counters) are unreliable because runtimes can be recreated at any time.
-- Static configuration loaded once at module load is acceptable, as long as you accept it may be re-loaded any time.
+- Static configuration loaded once at module load is acceptable, as long as you accept it may be reloaded at any time.
 
 If you need state across messages, persist it externally (for example, by emitting it as a Cumulocity object).
 
@@ -47,7 +47,7 @@ Even when async, the function executes serially within its shard. The platform w
 
 ### Error handling {#error-handling}
 
-If your function throws synchronously, its returned promise rejects, or the return values are not parseable:
+If your function throws synchronously, the returned promise rejects, or the return values are not parseable:
 
 - The message that caused the error is dropped.
 - An error is logged with the function name, error message, and (where possible) stack trace.
@@ -59,7 +59,7 @@ To drop a message without raising an error, return an empty array (`[]`).
 
 ### Logs {#logs}
 
-All output written with `console.log`, `console.info`, `console.warn`, `console.error`, and `console.debug` is written to the Apama microservice log file. For per-tenant microservices, this log is visible in the Administration application.
+All output written with `console.log`, `console.info`, `console.warn`, `console.error`, and `console.debug` is written to the Apama microservice log file. For per-tenant microservices, this log is visible in the Administration application. More detail is available in the [Streaming Analytics documentation](/streaming-analytics/troubleshooting/#logfiles).
 
 When running tests in the rule editor before deployment, all log output is also shown directly in the test UI.
 
@@ -68,7 +68,7 @@ When running tests in the rule editor before deployment, all log output is also 
 The platform enforces per-invocation limits to protect against runaway functions:
 
 - **Execution time**: 1 second elapsed time per invocation. Functions that exceed this limit are terminated and the message is dropped.
-- **Memory**: 100 MB per runtime. This covers function compilation, input consumption, stack, processing, and output production, which implicitly limits input and output size.
+- **Memory**: 100 MB per rule. This covers function compilation, input consumption, stack, processing, and output production, which implicitly limits input and output size.
 
 When a limit is exceeded, the function is terminated mid-execution, the message is dropped, and an error is logged.
 
