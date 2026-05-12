@@ -12,7 +12,7 @@ If you have performed the install on a self-managed Kubernetes cluster rather th
 
 When signing into Edge this way, you will first be prompted for the {{< product-c8y-iot >}} tenant ID. Edge has two tenants, `management` and `edge`. For both the {{< management-tenant >}} and the Edge tenant, use the following credentials:
 * **Username:** `admin`
-* **Password:** Use the password you provided during the Edge installation. This password was set either via the c8yedge tool's `--cumulocity-password` flag or through the Kubernetes Secret specified in the Edge CR field `spec.cumulocityPasswordSecretName`.
+* **Password:** Use the password you provided during the Edge installation. This password was set either via the c8yedge tool's `--cumulocity-password` flag (see `c8yedge install --help`) or through the Kubernetes Secret specified in the Edge CR field `spec.cumulocityPasswordSecretName` (see [Edge custom resource](/edge-kubernetes/edge-custom-resource-definition/)).
 
 ### Accessing Edge using the domain name {#accessing-cumulocity-iot-edge-using-the-domain-name}
 {{< c8y-admon-info >}}
@@ -31,7 +31,7 @@ The first option is always preferable so that Edge is accessible over LAN.
 
 #### Adding the alias {#add-alias}
 
-On Linux machines, add the following entry to */etc/hosts*:
+On Linux machines, add the following entry to */etc/hosts* (you need root or `sudo` to edit this file):
 
 ```text
 <IP address> <domain_name>
@@ -39,9 +39,9 @@ On Linux machines, add the following entry to */etc/hosts*:
 ```
 If you do not know the external IP address of your host, see [Accessing Edge via an external IP](/edge-kubernetes/manage-edge/#external-ip).
 
-On Windows machines, add the same entry to *C:\Windows\System32\drivers\etc\hosts*.
+On Windows machines, add the same entry to *C:\Windows\System32\drivers\etc\hosts* (you need Administrator rights to edit this file).
 
-Ping the &#60;domain_name> to verify it.
+Ping `<domain_name>` to verify it.
 
 ```shell
 ping <domain_name>
@@ -56,38 +56,17 @@ To access Edge, enter one of the following URLs in the browser:
 - For the "edge" tenant, use the URL `https://<domain_name>`.
 - For the {{< management-tenant >}}, use the URL `https://management-<domain_name>`.
 
-This will bring up the below login screen. For both the {{< management-tenant >}} and the Edge tenant, use the following credentials:
-* **Username:** `admin`
-* **Password:** Use the password you provided during the Edge installation. This password was set either via the c8yedge tool's `--cumulocity-password` flag or through the Kubernetes Secret specified in the Edge CR field `spec.cumulocityPasswordSecretName`.
+This will bring up the login screen. Sign in with the same admin credentials as above.
 
 {{< c8y-admon-info >}}
-You can change the {{< management-tenant >}} and the Edge tenant admin password independently using the [user interface](/standard-tenant/managing-users/) or the {{< product-c8y-iot >}} API. 
+You can change the {{< management-tenant >}} and the Edge tenant admin password independently using the [user interface](/standard-tenant/managing-users/) or the {{< product-c8y-iot >}} API.
 {{< /c8y-admon-info >}}
 
 ![Login prompt](/images/edge-k8s/edge-k8s-login-banner.png)
 
-If you are logging in for the first time, you will see a cookie banner at the bottom of the login screen:
+On first login, a cookie banner appears. Accept or configure it as you would in any {{< product-c8y-iot >}} application; the banner can be disabled or customized, see [Branding](/edge-kubernetes/k8-using-edge/#branding). For details on cookie categories and opt-out, see the [{{< company-c8y >}} privacy statement](/legal-notices/privacy-notice/).
 
-![Cookie Banner](/images/edge-k8s/edge-k8s-cookie-banner.png)
-
-{{< c8y-admon-info >}}
-The cookie banner is turned on by default. This feature can be configured. For more information, see [Branding](/edge-kubernetes/k8-using-edge/#branding).
-{{< /c8y-admon-info >}}
-
-* Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
-* Click **Reject all** to reject all of the default cookie settings.
-* Click **Preferences** to select your individual cookie preferences:
-	* **Required** - Required to enable core site functionality. They perform a task or operation without which a site's functionality would not be possible. Required cookies cannot be disabled.
-	* **Functional** - Used to track site usage and to process personal data to measure and improve usability and performance. Functional cookies must be actively enabled.
-* Click **See also our Privacy Notice** to open the [{{< company-c8y >}} privacy statement](/legal-notices/privacy-notice/) with details on the {{< company-c8y >}} privacy policy.
-
-{{< c8y-admon-info >}}
-If you have enabled functional cookies you can opt out of the product experience tracking later on via the **User settings** dialog, see [User options and settings](/get-familiar-with-the-ui/user-settings/).
-{{< /c8y-admon-info >}}
-
-Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between {{< product-c8y-iot >}} applications, as Edge requests you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
-
-Finally, click **Login** to enter Edge. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application, if not configured differently. For further information about the {{< product-c8y-iot >}} standard applications see [Available applications](/get-familiar-with-the-ui/available-applications/).
+Tick **Remember me** if you want the browser to keep you signed in. Then click **Login**. By default you are taken to the [Cockpit](/cockpit/cockpit-introduction/) application; see [Available applications](/get-familiar-with-the-ui/available-applications/) for an overview.
 
 ![Cockpit home screen](/images/users-guide/cockpit/cockpit-home-screen.png)
 
@@ -99,10 +78,6 @@ The maximum number of failed logins (due to invalid credentials), after which a 
 
 ### How to reset or change your password {#how-to-reset-your-password}
 
-To reset your password, you must first configure the "reset password" template and email server settings in Edge. For information about configuring the email server, see [Configuring the email server](/edge-kubernetes/manage-edge/#email-server).  
+To reset your password, you must first configure the "reset password" template and email server settings in Edge. For information about configuring the email server, see [Configuring the email server](/edge-kubernetes/manage-edge/#email-server).
 
-For information about changing the password, see [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password).
-
-### How to access pages using URLs {#how-to-access-pages-using-urls}
-
-For information about accessing pages using the URLs, see [URL](/get-familiar-with-the-ui/platform-access/#url).
+To change a password from the user interface, see [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password). For deep-linking to Edge pages via URLs, see [URL](/get-familiar-with-the-ui/platform-access/#url).

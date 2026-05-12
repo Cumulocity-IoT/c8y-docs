@@ -32,8 +32,8 @@ An Internationalized Domain Name (IDN) is an internet domain name that contains 
 	{{< /c8y-admon-info >}}
 
 * Ensure that you adhere to the following domain name validation rules:
-	* The domain name must be a combination of case-insensitive alphanumeric characters separated by dot ( . ) or hyphen ( - ).
-		* Cannot contain any letters of languages like Chinese, Latin or Arabic.
+	* The domain name must be a combination of case-insensitive alphanumeric characters (a-z, 0-9) separated by dot ( . ) or hyphen ( - ).
+		* Cannot contain non-ASCII letters from scripts such as Chinese, Cyrillic, or Arabic, or Latin letters with diacritics. If your domain contains such characters, supply its Punycode (xn--...) ASCII equivalent, as described above.
 		* Cannot contain any special characters like (+ , ! @ # $ % ^ & * ( ) ; \ \ / | < > \ " \ ' ) other than dot ( . ) or hyphen ( - ).
 	* The length of the domain name including the dot must not exceed 255 characters.
 	* The domain name must contain at least one dot.
