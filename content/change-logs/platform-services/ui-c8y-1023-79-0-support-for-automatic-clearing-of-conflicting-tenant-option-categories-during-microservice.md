@@ -22,5 +22,9 @@ environment_availability:
     date: '2026-05-11'
   - label: jp.cumulocity.com
     date: '2026-05-11'
+  - label: us.cumulocity.com
+    date: '2026-05-12'
+  - label: cumulocity.com
+    date: '2026-05-12'
 ---
 Previously, when uploading a microservice that defined tenant options with a category that already existed in your tenant, the platform rejected the upload. It required you to manually remove the conflicting tenant options before proceeding. You are now informed about the conflict, and after you retry the upload, the platform automatically clears the existing tenant option category and replaces it with the category defined in the microservice manifest. A warning message appears before the upload completes, allowing you to review the change. This streamlines the microservice deployment process and eliminates the need for manual cleanup of conflicting tenant options in your tenant.

@@ -22,6 +22,8 @@ environment_availability:
     date: '2026-05-06'
   - label: us.cumulocity.com
     date: '2026-05-11'
+  - label: cumulocity.com
+    date: '2026-05-12'
 ---
 To improve security and access control for Actility device connectivity, the permission requirements for managing 
 Actility connections have been clarified and enforced. Users now need specific Actility permissions to work with 
