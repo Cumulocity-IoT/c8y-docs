@@ -14,14 +14,4 @@ build_artifact:
 ticket: MTM-65903
 version: 1023.14.157
 ---
-Backport of #10896 to `release/y2026`.
-
-Manual backport — automated backport failed due to merge conflict with
-[DM-5463](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/10733).
-
-**Conflict resolution:** `translateWidgetTitle` expectation was already
-removed from the spec in `release/y2026`, so only the `columns: 24`
-assertion was added.
-
-[DM-5463]:
-https://cumulocity.atlassian.net/browse/DM-5463?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
+The default dashboard configuration previously used a different column layout that could cause inconsistent widget sizing and positioning across dashboards. The ContextDashboardService now sets 24 columns as the default configuration for all new dashboards, providing a more consistent and flexible grid system for organizing dashboard widgets. This change ensures that all dashboards use a standardized column layout, which improves the visual consistency of your dashboards and makes it easier to arrange widgets in a predictable manner. Existing dashboards are not affected by this change, and you can still customize the column configuration for individual dashboards as needed.
