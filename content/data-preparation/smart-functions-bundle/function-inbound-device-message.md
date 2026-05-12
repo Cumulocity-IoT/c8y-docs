@@ -10,7 +10,7 @@ This page describes the smart function used to process inbound messages received
 
 Use this function to:
 
-- Decode raw device payloads from a device transport (Currently only MQTT service is supported).
+- Decode raw device payloads from a device transport (currently only MQTT service is supported).
 - Map device data to {{< product-c8y-iot >}} domain objects.
 - Enrich messages with calculated fields, lookups, or context.
 - Filter or drop messages based on content.
