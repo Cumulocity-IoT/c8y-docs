@@ -92,10 +92,10 @@ The services are defined as follows:
 Premium support also covers additional components  that are not part of {{< product-c8y-iot >}} platform operated as Software-as-a-Service (SaaS). This includes versions of the following components that have been published within the last 12 months:
 
 - [thin-edge.io ](https://thin-edge.io/)
-- {{< product-c8y-iot >}} [webSDK](https://cumulocity.com/docs/web/introduction/)
+- {{< product-c8y-iot >}} [Web SDK](https://cumulocity.com/docs/web/introduction/)
 - {{< product-c8y-iot >}} [Microservice SDK for Java](https://cumulocity.com/docs/microservice-sdk/java/)
 
-For those components, the following services are included:
+For these components, the following services are included:
 * Assistance with incident analysis and troubleshooting where the issue can be reproduced on the latest  SDK or thin-edge.io version.
 * Guidance on recommended configuration and upgrade paths for supported SDKs and the most recent thin-edge.io version.
 * Coordination of Error Corrections for confirmed defects in supported SDKs or thin-edge.io versions that materially affect the operation of {{< product-c8y-iot >}}.
