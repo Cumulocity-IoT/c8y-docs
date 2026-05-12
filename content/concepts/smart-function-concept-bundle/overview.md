@@ -56,3 +56,5 @@ Smart functions run in a sandboxed environment. They cannot access the host file
 - **Streaming Analytics** uses smart functions as custom blocks inside models, allowing you to apply business logic to real-time data streams.
 - **thin-edge.io** uses smart functions inside flows to process messages at the edge, reducing bandwidth and enabling local processing before data reaches the cloud.
 - Other components will add smart functions support over time, each applying the pattern to their domain.
+
+For more detail on the different implementations see [Implementations](#implementations).

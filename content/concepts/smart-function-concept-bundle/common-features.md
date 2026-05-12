@@ -21,12 +21,11 @@ The final parameter is always a `context` object provided by the system. This ob
 
 ### Language and runtime {#language-and-runtime}
 
-Smart functions run in a Javascript runtime and support **ECMAScript 2023** features and later. Some components allow you to write Javascript code directly within the platform in the {{< product-c8y-iot >}} UI. Alternatively, you can write and transpile your code outside the platform—using Javascript directly or TypeScript with your own build toolchain—and upload the resulting Javascript file for execution.
+Smart functions run in a Javascript runtime and support **ECMAScript 2023** features. Some components allow you to write Javascript code directly within the platform in the {{< product-c8y-iot >}} UI. Alternatively, you can write and transpile your code outside the platform—using Javascript directly or TypeScript with your own build toolchain—and upload the resulting Javascript file for execution.
 
 Supported language features include:
 
 - Arrow functions, destructuring, spread operators, and other modern syntax
-- `async` and `await` for asynchronous operations
 - Template literals, classes, modules, and more
 
 ### Standard library {#standard-library}
@@ -62,7 +61,7 @@ export async function onMessage(message, context) {
 }
 ```
 
-The system automatically handles both synchronous and asynchronous function signatures. Async functions should return promises that resolve to the expected output type for your implementation.
+The system automatically handles both synchronous and asynchronous function signatures. Async functions should return promises that resolve to the expected output type for your implementation. By default, no unfulfilled promises can be created within a smart function runtime, so use of async is purely for convenience with APIs, they cannot actually run asynchronously. Some implementations may provide true asynchronous operations.
 
 ### No global state {#no-global-state}
 
