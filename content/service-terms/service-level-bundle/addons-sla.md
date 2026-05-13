@@ -69,7 +69,7 @@ Customer acknowledges the following limitations and constraints in using the VPN
 #### Support
 
 * **Customer support:** Support is provided in accordance with the Customer’s selected support plan (Standard or Premium), as detailed in a separate support agreement.
-* **Non-production environments:** For Premium support customers, Premium support response times and service commitments do not apply to non-production environments and all support tickets are handled at standard priority.
+* **Non-production environments:** For Premium support customers, Premium support response times and service commitments do not apply to non-production environments, and all support tickets are handled at standard priority.
 
 {{< company-c8y >}} will not be able to provide logs or packet captures from the VPN or leased line data or signalling.
 
