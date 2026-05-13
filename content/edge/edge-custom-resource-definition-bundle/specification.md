@@ -15,7 +15,7 @@ layout: redirect
 
 #### Fields
 
-- `version` | [IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util) | Required
+- `version` | string | Required
 
     Edge version to install. Specify `2026` to install the latest available version from the release, or use a fully qualified version like `2026.0.1` to install a specific patch version.
 
@@ -258,7 +258,7 @@ This field is used to specify the MongoDB admin credentials and persistent volum
 
 #### Fields
 
-- `storage` | [Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api) | Optional
+- `storage` | string | Optional
 
     The amount of persistent storage allocated. Values are specified with suffixes, for example, 10Gi (10 Gibibytes) or 100Gi.
 
