@@ -144,42 +144,61 @@ All information about this being a permanent action and clearing the backlog is 
 
 ### Monitoring the MQTT Service {#monitoring-the-mqtt-service}
 
-#### Topic and subscriber {#mqtt-service-topic-and-subscriber}
+The MQTT Service creates a fixed set of topics per tenant for routing device traffic.
+These topics are the primary way to monitor whether the MQTT Service data flow is working correctly.
 
-The topic name is mapped 1:1 to the topic name used by the MQTT Service client.
+{{< c8y-admon-important >}}
+These topics are shared across all devices in the tenant. Any action that modifies subscribers affects the message backlog on that topic for all devices in the tenant.
+{{< /c8y-admon-important >}}
 
-When working with the [MQTT Service SDK]({{< link-c8y-github >}}/cumulocity-clients-java/tree/develop/mqtt-service), the subscriber name is the same as the name defined in the [subscriber configuration]({{< link-c8y-github >}}/cumulocity-clients-java/blob/develop/mqtt-service/websocket/src/main/java/com/cumulocity/mqtt/service/sdk/subscriber/SubscriberConfig.java#L56).
+#### Topics {#mqtt-service-topics}
 
-Subscribers created by MQTT clients are deleted automatically once the client disconnects, so it is unlikely that they will persist for a long time and require manual cleanup.
+The MQTT Service creates the following topics:
+
+| Topic                   | Description                                                                                                                                                              |
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `to-device`             | Messages to be sent to devices. Topic contains messages for all outbound traffic to devices excluding {{< product-c8y-iot >}} SmartREST topics.                      |
+| `from-device`           | Messages arriving from devices to the MQTT Service. Topic contains messages for all inbound traffic from devices excluding {{< product-c8y-iot >}} SmartREST topics. |
+| `smartrest-from-device` | Internal topic used to forward SmartREST traffic from devices to the {{< product-c8y-iot >}} core for processing.                                                        |
+| `smartrest-to-device`   | Internal topic used to forward SmartREST traffic from the {{< product-c8y-iot >}} core back to devices.                                                                  |
+
+#### Subscribers {#mqtt-service-subscribers}
+
+The expected subscribers for each topic are:
+
+- **`from-device`**: One or more subscribers used in custom microservice implementations or Streaming Analytics. This is the most important topic to monitor for custom integrations.
+- **`to-device`**, **`smartrest-to-device`**: One subscriber per MQTT Service instance, for example, `c8y-mqtt-service-0`, `c8y-mqtt-service-1`.
+- **`smartrest-from-device`**: One subscriber with one consumer per {{< product-c8y-iot >}} core instance, for example, `cumulocity-core`.
 
 #### Clear the backlog {#mqtt-service-clear-the-backlog}
 
 When the Messaging Service backlog is full, no new messages can be added to the backlog until it is cleared.
 In this situation, client behavior depends on the MQTT protocol version used:
 * An MQTT client using protocol version 3.1.1 will simply be disconnected.
-* An MQTT client using protocol version 5 will get negative PUBACK response with `0x97` (quota exceeded) reason code, but it will still remain connected.
+* An MQTT client using protocol version 5 will get a negative PUBACK response with `0x97` (quota exceeded) reason code, but it will still remain connected.
 
 Implementations connecting to the MQTT Service must be aware of this and handle these errors appropriately.
-In either case, the backlog must be cleared before continuing work. There are various ways to clear the backlog from MQTT Service topics.
 
-##### Consume messages {#mqtt-service-consume-messages}
+{{< c8y-admon-caution >}}
+Clearing the backlog by unsubscribing a subscriber removes messages for **all devices** on that topic, not for a specific device.
+{{< /c8y-admon-caution >}}
 
-If the topic and subscriber were created, there are probably also valuable messages stored in the Messaging Service that should be consumed.
-Use the [MQTT Service SDK]({{< link-c8y-github >}}/cumulocity-examples/tree/develop/mqtt-service-examples) to consume and acknowledge the messages for a given topic and subscriber.
+For the `to-device`, `smartrest-from-device`, and `smartrest-to-device` topics, do not attempt to clear the backlog manually.
+These subscribers are managed by the MQTT Service and {{< product-c8y-iot >}} core, which re-create them automatically after unsubscription.
+If the backlog is full on one of these topics, contact [product support](/additional-resources/contacting-support/).
 
-After consuming all the messages, the backlog is cleared, and the topic is ready to store new messages.
+##### Clear the from-device backlog {#mqtt-service-clear-from-device-backlog}
 
-##### Unsubscribe the subscriber using the MQTT Service SDK {#unsubscribe-the-subscriber-using-mqtt-service-sdk}
+If the backlog is full on the `from-device` topic, first check whether your consumer (custom microservice or Streaming Analytics) is running and actively processing messages.
+If the consumer is healthy, the backlog will decrease over time.
 
-If the subscriber is no longer needed and there are no valuable messages that should be consumed, the subscriber can be unsubscribed.
-Use the [unsubscribe action]({{< link-c8y-github >}}/cumulocity-clients-java/blob/develop/mqtt-service/websocket/src/main/java/com/cumulocity/mqtt/service/sdk/websocket/WebSocketSubscriber.java#L60) from the MQTT Service SDK.
-This will remove the subscriber from the Messaging Service and clear the backlog for the given subscriber, and potentially the whole topic if there are no more subscribers with unconsumed messages.
-
-##### Unsubscribe the subscriber via the UI {#mqtt-service-unsubscribe-the-subscriber-via-the-ui}
-
-If the subscriber is no longer needed and there are no valuable messages that should be consumed, the subscriber can be unsubscribed directly from the UI.
+If the consumer cannot process the messages and the backlog must be cleared immediately, you can unsubscribe the subscriber via the UI.
 To do this, select the subscriber from the subscriber list in the **Messaging Service** page and click the unsubscribe icon.
-This action is equivalent to [unsubscribing the subscriber using the MQTT Service SDK](#unsubscribe-the-subscriber-using-mqtt-service-sdk).
+
+Be aware that this action:
+* Removes the subscriber and clears the backlog for **all devices** on the `from-device` topic.
+* Permanently discards all messages that were in the backlog at the time of unsubscription.
+* Does not affect the MQTT devices themselves — they continue sending messages, and new messages are delivered once the consumer reconnects and re-subscribes.
 
 ### Frequently Asked Questions (FAQ) {#messaging-service-monitoring-faq}
 
@@ -189,10 +208,18 @@ A high number of topics could be normal behavior when dealing with many devices,
 * Test topics that were never cleared - check for unused topics that can be cleaned up.
 * Topics carrying the same data - topic names should be reused where possible to avoid unnecessary resource consumption. If you have multiple topics carrying the same data, consider merging them into a single topic.
 
+Note that the MQTT Service creates a fixed set of topics per tenant (for example, `to-device`, `from-device`, `smartrest-from-device`, `smartrest-to-device`). A high topic count in the MQTT Service section is not expected and may indicate an issue.
+
 #### What should I do when encountering a high number of subscribers?
 
 If you have a single microservice or a single client consuming messages from the Messaging Service, you should typically only have a single subscriber.
 Check if the subscriber name used by your client is unique and reused consistently when connecting to the Messaging Service.
 A common pitfall is generating a random subscriber name each time a new connection to the Messaging Service is established.
 
-Multiple subscribers are expected when multiple distinct clients consume from the same topic or when using [shared consumer tokens](https://cumulocity.com/api/core/#section/Overview/Shared-consumer-tokens).
+Multiple subscribers are expected when multiple distinct clients consume from the same topic or when using [shared consumer tokens](https://{{< domain-c8y >}}/api/core/#section/Overview/Shared-consumer-tokens).
+
+For the MQTT Service `from-device` topic, the number of subscribers depends on your implementation.
+If you have a single custom microservice or Streaming Analytics flow consuming device messages, you should see a single subscriber.
+For the `to-device` and `smartrest-to-device` topics, the number of subscribers should match the number of MQTT Service instances running in your environment.
+For the `smartrest-from-device` topic, there should be one subscriber with a number of consumers that matches the number of {{< product-c8y-iot >}} core instances in your environment.
+These consumers will partition the messages on the topic across the core instances so that each message is processed by a single core.

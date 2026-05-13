@@ -4,12 +4,23 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   let completedTests = 0;
   const totalTests = urls.length;
 
+  /**
+   * Links to skip during validation.
+   * Each entry is either an exact URL string or a RegExp that is tested against the link.
+   * Add entries here for links that are known to fail due to anti-bot protection, timeouts,
+   * or other external factors unrelated to broken links in the documentation.
+   *
+   * @type {Array<string|RegExp>}
+   */
   const excludedLinks = [
     // MathWorks URL uses anti-bot protection, Cypress cannot reliably load it
     "https://de.mathworks.com/help/predmaint/ug/remaining-useful-life-estimation-using-convolutional-neural-network.html",
 
     // Medium blog uses anti-bot protection, Cypress cannot reliably load it
     "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6",
+    
+    // Links from opentelemetry.io always time out although they load fine in a browser
+    /https:\/\/opentelemetry.io\//,
 
     // Always times out in the automated tests but loads fine in the browser
     "https://openjdk.org/jeps/252",
@@ -65,6 +76,16 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     });
   };
 
+  // Text fragment directives: #:~:text=[prefix-,]textStart[,textEnd][,-suffix]
+  const checkTextFragment = (fragment) => {
+    const textParam = fragment.replace(/^:~:text=/, '');
+    const parts = textParam.split(',');
+    // Skip prefix- (ends with '-') and suffix (starts with '-'); take first plain part
+    const textStart = parts.find(p => !p.endsWith('-') && !p.startsWith('-')) || parts[0];
+    const decodedText = decodeURIComponent(textStart);
+    cy.contains(decodedText).should('exist');
+  };
+
   Cypress.on('fail', (error) => {
     const sourceFiles = Cypress.env('sourceFiles');
     if (sourceFiles) {
@@ -73,8 +94,13 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     throw error;
   });
 
+  const isExcluded = link =>
+    excludedLinks.some(entry =>
+      entry instanceof RegExp ? entry.test(link) : entry === link
+    );
+
   urls.forEach((item) => {
-    if (excludedLinks.includes(item.link)) {
+    if (isExcluded(item.link)) {
       it.skip(`should validate URL (excluded): ${item.link}`, () => {});
       return;
     }
@@ -82,6 +108,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     it(`should validate URL: ${item.link}`, () => {
       const url = item.link;
       const fragment = url.includes('#') ? url.split('#').slice(-1)[0] : null;
+      const isTextFragment = fragment !== null && fragment.startsWith(':~:text=');
       const isCodexPage = url.includes('/codex/');
       const isApiPage = url.includes('/api/');
       const isGithubPage = url.includes('github.com');
@@ -155,7 +182,11 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       else if (isApiPage) {
         cy.visit(url);
         if (fragment) {
-          cy.get(`[id="${fragment}"]`).should('exist');
+          if (isTextFragment) {
+            checkTextFragment(fragment);
+          } else {
+            cy.get(`[id="${fragment}"]`).should('exist');
+          }
         }
       }
       else if (isGithubBlobLine) {
@@ -174,11 +205,19 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       }
       else if (isGithubPage && fragment) {
         cy.visit(url);
-        checkGithubFragment(fragment);
+        if (isTextFragment) {
+          checkTextFragment(fragment);
+        } else {
+          checkGithubFragment(fragment);
+        }
       }
       else if (fragment) {
         cy.visit(url, {failOnStatusCode: false, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122.0 Safari/537.36' }});
-        checkRegularFragment(fragment);
+        if (isTextFragment) {
+          checkTextFragment(fragment);
+        } else {
+          checkRegularFragment(fragment);
+        }
       }
       else {
         cy.request({

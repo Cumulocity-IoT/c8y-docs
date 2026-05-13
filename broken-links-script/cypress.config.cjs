@@ -8,16 +8,16 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     retries: {
-      runMode: 3,
+      runMode: 10,
       openMode: 0   
     },
     chromeWebSecurity: false, 
-    pageLoadTimeout: 20000,
-    defaultCommandTimeout: 20000,
-    requestTimeout: 20000,
-    responseTimeout: 20000,
-    execTimeout: 20000,
-    taskTimeout: 20000,
+    pageLoadTimeout: 10000,
+    defaultCommandTimeout: 10000,
+    requestTimeout: 10000,
+    responseTimeout: 10000,
+    execTimeout: 10000,
+    taskTimeout: 10000,
     numTestsKeptInMemory: 0,
     experimentalMemoryManagement: true,
     viewportWidth: 1280,

@@ -9,7 +9,7 @@ This method is suitable for users who already have a Kubernetes cluster and want
 You will need Helm version 3.x available on your system. Refer to [Installing Helm](https://helm.sh/docs/intro/install/) for the installation instructions.
 
 {{< c8y-admon-info >}}
-Edge has been tested and officially supported on Kubernetes version 1.32.x, the latest GA version at the time of release. Support is limited to this version. We aim to support deployments on CNCF-certified Kubernetes distributions provided they use upstream Kubernetes version 1.32.x and meet the documented resource and environment prerequisites. We are committed to maintaining alignment with the Kubernetes support lifecycle and will validate and support newer versions in future maintenance releases, ensuring continuity when version 1.32.x reaches end-of-life.
+Edge has been tested and officially supported on Kubernetes version 1.34.x, the latest GA version at the time of release. Support is limited to this version. We aim to support deployments on CNCF-certified Kubernetes distributions provided they use upstream Kubernetes version 1.34.x and meet the documented resource and environment prerequisites. We are committed to maintaining alignment with the Kubernetes support lifecycle and will validate and support newer versions in future maintenance releases, ensuring continuity when version 1.34.x reaches end-of-life.
 
 **Important:**
 * Edge requires that your Kubernetes cluster has support for **LoadBalancer services**.
@@ -17,6 +17,8 @@ Edge has been tested and officially supported on Kubernetes version 1.32.x, the 
 * Edge requires that your Kubernetes cluster has **dynamic volume provisioning** enabled with a default storage class.
 * Edge is tested and supported on **single-node Kubernetes clusters** only.
 {{< /c8y-admon-info >}}
+
+Because resource consumption can be very use-case specific, many containers have memory limits significantly higher than the memory request. Workloads that consume a lot of memory can result in inevitable out-of-memory kills of processes on the host. In order to protect the underlying operating system and Kubernetes infrastructure from this, we recommend setting reserved resources. See [Reserve Compute Resources for System Daemons](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/) for more details.
 
 ### Installing the Edge operator {#installing-edge-operator}
 The Edge operator is available as a Helm chart in the Edge registry, and can be installed like any other chart. You will need your registry credentials, which can be acquired from [product support](/additional-resources/contacting-support/). Assuming you are installing the {{< c8y-edge-current-version >}} release of Edge, and that you wish all Edge workloads to be running in the namespace `c8yedge`, run the following command:
