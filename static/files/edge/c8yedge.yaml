@@ -250,58 +250,15 @@ spec:
   ##      with that class name, thereby instructing Kubernetes to utilize dynamic provisioning according to the specified class.
   # storageClassName: <STORAGE-CLASS>
 
-  ## Cumulocity platform configurations.
-  # core:
-    ##  Resource limits for the Cumulocity Core container.
-    # resources:
-      # limits:
-        ## CPU limit in CPU units. For example, 1000m or 1M. Defaults to 3000m.
-        # cpu: 3000m
-        ## Memory limit in memory units. For example, 1000M or 1G. Defaults to 6144M
-        # memory: 6144M
-
-  ## This field is necessary for one or more of the following reasons:
-  ##    - To specify the MongoDB admin credentials.
-  ##    - To specify resource limits for the MongoDB server containers deployed by the Edge operator.
   # mongodb:
     ## Name of the Kubernetes Secret containing the database admin credentials with which the MongoDB server must be configured.
     ## Defaults to `databaseAdmin` and a generated password as the database admin user.
     # credentialsSecretName: mongodb-credentials
 
-    ## Resource limits for the MongoDB server pod.
+    ## Resource use for the MongoDB server pod.
     # resources:
-      # limits:
-        ## CPU limit in CPU units. For example, 1000m or 1M. Defaults to 3000m.
-        # cpu: 3000m
-        ## Memory limit in memory units. For example, 1000M or 1G. Defaults to 6144M
-        # memory: 6144M
       # requests:
         ## Size of the Persistent Volume Claim (PVC) named `mongod-data-edge-db-rs0-0` made by 
         ## MongoDB server for persisting application data.
         ## Defaults to 75 GB.
         # storage: 75G
-
-  ## Resources to allocate to each of the default Cumulocity microservices 
-  ## (apama-ctrl, smartrule, opcua-mgmt-service and databroker-agent-server) deployed.
-  ## Default CPU limit is 1000m and memory limit is 1024M.
-  # microservices:
-    # - name: apama-ctrl
-      # resources:
-        # limits:
-          # cpu: 1000m
-          # memory: 1024M
-    # - name: smartrule
-      # resources:
-        # limits:
-          # cpu: 1000m
-          # memory: 1024M
-    # - name: opcua-mgmt-service
-      # resources:
-        # limits:
-          # cpu: 1000m
-          # memory: 1024M
-    # - name: databroker-agent-server
-      # resources:
-        # limits:
-          # cpu: 1000m
-          # memory: 1024M
