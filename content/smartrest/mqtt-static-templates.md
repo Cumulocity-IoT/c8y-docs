@@ -73,6 +73,7 @@ If a parameter is in square brackets, it is optional.
 <li><a href="#401">401,latitude,longitude,altitude,accuracy[,time]</a></li>
 <li><a href="#402">402,latitude,longitude,altitude,accuracy[,time] (incl. inv. update)</a></li>
 <li><a href="#407">407,eventType,fragmentToBeRemoved1,fragment2,...</a></li>
+<li><a href="#408">408,[text],[time],[change detect],parameterPath1,parameterType1,parameterValue1[,path2,type2,value2,]...</a></li>
 </ul>
 
 <strong><a href="#operation-templates">Operation templates</a></strong>
@@ -105,12 +106,7 @@ If a parameter is in square brackets, it is optional.
 <li><a href="#529">529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...</a></li>
 <li><a href="#530">530,serial,hostname,port,connectionKey</a></li>
 <li><a href="#531">531,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,type,url,action,configurationMarker,url,type</a></li>
-<li><a href="#532">532,serial,PARAM_DEF_0,PARAM_DEF_1,...,PARAM_DEF_N</a></li>
-</ul>
-
-<strong><a href="#device-parameter-templates">Device parameter templates</a></strong>
-<ul>
-<li><a href="#408">408,[text],[time],[change detect],path1,type1,value1[,path2,type2,value2,]...</a></li>
+<li><a href="#532">532,serial,parameterPath1,parameterType1,parameterValue1[,path2,type2,value2,]...</a></li>
 </ul>
 
 <strong><a href="#platform-capabilites-templates">Platform capabilities templates</a></strong>
@@ -851,6 +847,8 @@ Remove one or more fragments from an event of a specific type.
 
 ##### Create device parameter update events (408) {#408}
 
+{{< c8y-admon-preview-feature >}}
+
 Create parameter update events for a device. This event always has the type `c8y_ParameterUpdate` and contains the fragments and properties specified in the payload. If `change detect` is enabled, events are only created if the given state in the event was not already known at the time. 
 
 |Position|Parameter|Mandatory|Type|Default value|
@@ -868,6 +866,8 @@ Create parameter update events for a device. This event always has the type `c8y
 ```text
 408,,,,c8y_RelayStatus.left,BOOLEAN,true,c8y_RelayStatus.right,BOOLEAN,false
 ```
+
+{{< /c8y-admon-preview-feature >}}
 
 
 #### Operation templates (5xx) {#operation-templates}
@@ -1395,6 +1395,8 @@ When a device profile operation contains a type in one of the software entries i
 
 ##### Parameter update operation (532) {#532}
 
+{{< c8y-admon-preview-feature >}}
+
 Notifies the device that a **c8y_ParameterUpdate** operation has been created. 
 
 | Position | Parameter          | Type   | Description                                                         |
@@ -1432,6 +1434,8 @@ Will result in the message:
 ```
 
 The maximum number of parameters is **100**. Operations containing more parameters cannot be pushed through this template.
+
+{{< /c8y-admon-preview-feature >}}
 
 
 #### Platform capabilities templates (6xx) {#subscribe-platform-capabilities} 

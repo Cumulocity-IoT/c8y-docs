@@ -9,6 +9,10 @@
       "option": "advanced-software-mgmt"
     },
     {
+      "id": "tc--gWykZ78v",
+      "option": "ai-agents"
+    },
+    {
       "id": "tc-KXXmo2SUR",
       "option": "apama-in-c8y"
     },
@@ -79,6 +83,10 @@
     {
       "id": "tc-pjJiURv9Y",
       "option": "ui-c8y"
+    },
+    {
+      "id": "tc-b8TjK2mPz",
+      "option": "console"      
     }
   ]
 }

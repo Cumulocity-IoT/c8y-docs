@@ -63,7 +63,30 @@ In the view mode, this widget only displays the properties which are not empty.
 
 ### Asset table {#asset-table}
 
-The "Asset table" widget shows details of a selected asset and all its child devices in a table. This is a very powerful widget, allowing to arrange selected properties of objects in a table.
+The "Asset table" widget shows details of a selected asset and all its child devices in a table. This is a very powerful widget, allowing you to arrange selected properties of objects in a table.
+
+{{< c8y-admon-preview >}}
+This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
+
+The new asset table widget provides enhanced customization and flexibility. You can configure columns, filter data, and view all descendants of the selected asset. The following settings are available:
+
+**Settings options**
+
+| Setting | Description |
+|:---|:---|
+| **Include descendants** | Show all descendant assets of the currently selected asset. (As a reference, the old widget was only displaying direct children of the selected asset.) |
+| **Show status icon column** | Display a status icon column which matches the type of the asset. |
+| **Table header** | Display the data grid header. |
+| **Active filters** | Show applied filters in the header. |
+| **Configure columns** | Enable column customization and show configuration button. |
+| **Striped rows** | Alternate row background for readability. |
+| **Hover highlight** | Change row background color on hover. |
+| **Loading indicator** | Show a spinner while data loads. |
+| **Cell borders** | Draw borders around table cells. |
+| **Icon with value** | When cell rendering is set to icon, show both icon and value. |
+| **First column link** | Render the first column (excluding computed and alarm types) as a link to asset details. |
+
+{{< /c8y-admon-preview >}}
 
 **Parameters to configure**
 
@@ -205,13 +228,14 @@ The "HTML" widget displays user-defined content that can be formatted using HTML
 
 **Parameters to configure**
 
-* **Target assets or devices**: Select the objects for which optional HTML expressions are evaluated.
-* **Asset properties**: In the **Asset properties** section, you can copy the properties of the selected asset and paste them into the code editor under the **Settings** section.
+* **Asset selection**: Optionally, select the asset whose managed object will be accessible via `c8yContext` expressions.
+* **Asset properties**: In the **Asset properties** section, you can add mappings to properties. Click **Add mappings**. Then select an asset and select properties from the **Asset properties**, **Custom properties**, and **Computed properties** tabs. Use the icon buttons to copy a code expression, clear a mapping, assign another property, or remove a mapping. At runtime, all mapped values are accessible in the HTML code under `c8yProperties`, a plain object keyed by the mapping names. If you rename a mapping key, the references in the HTML code will be updated.
 
 The widget offers two distinct modes:
 
-1. **Normal mode**: You can apply HTML and CSS while adding properties as template literals. You can use simple expressions such as:
-   `${this.c8yContext ? this.c8yContext.name : 'No device selected'}`. The `${this.c8yContext}` variable always refers to the selected target asset.
+1. **Normal mode**: You can apply HTML and CSS while adding properties as template literals. You can use simple expressions such as (always use optional chaining `?.` because these objects may be `undefined` while data is loading):
+   - `${this.c8yContext ? this.c8yContext?.name : 'No device selected'}` (where `c8yContext` refers to the widget's selected asset)
+   - `${this.c8yProperties?.<mappingName>}` to access values of the mapped asset properties
 
 2. **Advanced mode**: When enabled, you can build complex web components using the Lit framework. You can import supported ECMAScript modules. By default, leaflet, echarts, fetch, and lit are provided. Whatever is rendered in the web component will be displayed to the end user. Additional requests can be performed by importing the fetch library. The following shows the available imports:
 
@@ -223,9 +247,28 @@ The widget offers two distinct modes:
    import { fetch } from 'fetch'; // Use this instead of default fetch to avoid potential issues
    ```
 
+**Inserting mapped properties into the code**
+
+When asset property mappings are configured, a dropdown button with a plus icon appears in the code editor toolbar. Select a key to insert the appropriate template expression (for example, `${this.c8yProperties?.temperature}`) at the cursor position. Mapped keys also appear as autocomplete suggestions when typing `this.c8yProperties?.` or the name of a mapping.
+
+**Note**: In case the referenced property is a complex object (for example, a full measurement object), you need to explicitly access a specific field (for example, `${this.c8yProperties?.temperature?.value}` or `${this.c8yProperties?.temperature?.unit}`) or use `JSON.stringify(this.c8yProperties?.temperature)` to display the whole object as a string.
+
+**Auto-refresh**
+
+The HTML widget is integrated with the dashboard's global time context for auto-refresh control. On a dashboard, a link/unlink button is displayed in the widget's title bar. When unlinked from the global time context, an auto-refresh toggle appears directly in the widget. Values in both `c8yContext` and `c8yProperties` are updated automatically when auto-refresh is enabled.
+
+**Translations**
+
+The HTML widget supports translations via `c8yTranslate`:
+
+- `${this.c8yTranslate('Text to translate')}`
+- `${this.c8yTranslate('text {{ var }}', { var: value })}`
+
+**Note**: Texts must be written in English and their translations must be available in the standard application translations, or in the custom ones provided via the [localization feature](/standard-tenant/changing-settings/#localization), or in the [application options](/web/application-configuration/#languages-customization).
+
 **Styling and security considerations**
 
-When using styles, global styles can be applied if encapsulation is not enabled. Styles should always use CSS variables and tokens to ensure compatibility with dark mode and custom brandings. 
+When using styles, global styles can be applied if encapsulation is not enabled. Styles should always use CSS variables and tokens to ensure compatibility with dark mode and custom brandings.
 
 By default, the normal HTML widget is sanitized for security, while in advanced mode the developer is responsible for proper sanitization. You can modify the default sanitization behavior in the [Cockpit application configuration](/cockpit/cockpit-configuration/).
 
@@ -422,7 +465,7 @@ The "KPI" (Key Performance Indicators) widget visualizes a data point as a label
 **Parameters to configure**
 
 On the left side, select the data point you want to display.
-You must select only one active datapoint to create the "KPI" widget. If you select multiple data points at once, you cannot save the configuration.
+You must select only one active data point to create the "KPI" widget. If you select multiple data points at once, you cannot save the configuration.
 
 On the right side, you can adjust how the data point is going to be displayed. This includes:
 * Icon: The icon to be displayed next to the data point
@@ -447,6 +490,10 @@ You must enable at least one data point to create the "Linear gauge" widget.
 The "Map" widget shows the location of a device or all devices of a group.
 
 ![Map widget](/images/users-guide/cockpit/cockpit-widget-map.png)
+
+{{< c8y-admon-important >}}
+Map tiles are loaded from community-driven tile servers, which are bound to their [policies](https://operations.osmfoundation.org/policies/tiles/). If a wider map usage is assumed, a custom tile layer [must be configured](https://cumulocity.com/codex/components/data-display-and-visualization/map/overview#changing-the-map-configuration-different-layers-or-map-centers).
+{{< /c8y-admon-important >}}
 
 You can drag the map and move its content, and you can zoom in and out by using the **Plus** and **Minus** buttons.
 

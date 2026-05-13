@@ -4,7 +4,7 @@ title: C
 layout: bundle
 sector:
   - getting_started
-_build:
+build:
   render: false
 
 ---
@@ -134,6 +134,25 @@ See also [Edge](/{{< c8y-edge-current-version >}}/edge) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 Core REST APIs (such as [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API), [Event API](https://cumulocity.com/api/core/#tag/Event-API), [Alarm API](https://cumulocity.com/api/core/#tag/Alarm-API), [Measurement API](https://cumulocity.com/api/core/#tag/Measurement-API)) are typically available locally on the Edge instance.
+{{< /c8y-details >}}
+
+
+### {{< product-c8y-iot >}} Messaging Service {#messaging-service}
+
+The {{< product-c8y-iot >}} Messaging Service is a publish/subscribe messaging bus that provides decoupled, asynchronous data transfer between {{< product-c8y-iot >}} components, as well as to and from hosted microservices and external client applications.
+Amongst other things, it is used by the [data broker](#data-broker), [Notifications 2.0](https://cumulocity.com/api/core/#tag/About-notifications-2.0), [Streaming Analytics](#streaming-analytics) and the [MQTT Service](#mqtt-service).
+
+
+### {{< product-c8y-iot >}} MQTT Service {#mqtt-service}
+
+The {{< product-c8y-iot >}} MQTT Service is a unified endpoint for all MQTT protocol traffic flowing in and out of the {{< product-c8y-iot >}} platform.
+It supports MQTT devices that implement the {{< product-c8y-iot >}} "core MQTT" protocols ([SmartREST](#smartrest) and JSON-over-MQTT), and "generic" devices that implement non-{{< product-c8y-iot >}} protocols.
+
+See also [MQTT Service](/device-integration/mqtt-service/) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+Generic devices are integrated using a custom [microservice](#microservice) or external client that implements a mapping between the device protocol and the {{< product-c8y-iot >}} [domain model](#domain-model).
+Microservices and external clients interact with the MQTT Service through the [Messaging Service](#messaging-service), using the Apache Pulsar publish/subscribe API.
 {{< /c8y-details >}}
 
 

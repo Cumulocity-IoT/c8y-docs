@@ -75,13 +75,16 @@ In the interest of transparency and to ensure a mutual understanding of the serv
     * **Third-party connectivity services:** Connectivity may involve third-party services such as LPWAN or mobile network operators. Customer acknowledges that while {{< product-c8y-iot >}} facilitates the transfer of data through these services, it does not operate, monitor, or troubleshoot these third-party networks. Connectivity between Customer's devices and {{< product-c8y-iot >}} service is in the sole responsibility of Customer.
 * **Data recovery**: While {{< company-c8y >}} maintains backups of data for its own business continuity management, disaster recovery on behalf of Customer (for example, after accidental data deletion by Customer) is a separate service. Customer expressly acknowledges the backup retention period and RPO outline above.
 * **Email notification**:  {{< company-c8y >}} provides a basic notification service via standard SMTP (unencrypted, port 25) for Customer to use via the {{< company-c8y >}} infrastructure components (SMTP relay). This infrastructure has been setup to transfer emails using the {{< company-c8y >}} domain, including, for example, correct SPF records for this domain. Customers using an {{< enterprise-tenant>}} can configure their own email domain and relay and use, for example, encrypted SMTP (STARTTLS) or SMTPS with their own SMTP relay. If Customer uses their own email domain, it is in the responsibility of Customer to configure, for example, the correct SPF records for that domain.
+* **{{< management-tenant>}}**: For {{< product-c8y-iot >}} Start or Business, {{< company-c8y >}} is operating the {{< management-tenant>}}; customers do not have access to it. For Enterprise (dedicated), {{< company-c8y >}} and the customer share the {{< management-tenant>}}. For the {{< management-tenant>}}, single sign on (SSO) is not available as customer service.   
 
 ### Service availability
 
 {{< company-c8y >}} is committed to providing reliable service. The specific service availability targets are as follows:
 
-* **Production environments:** 99.90% availability
-* **Non-production environments:** 95.00% availability
+| Deployment type | Production environments | Non-production environments |
+| --------------- | ----------------------- | --------------------------- |
+| Shared Cloud    | 99.00%                  | 95.00%                      |
+| Dedicated Cloud | 99.90%                  | 95.00%                      |
 
 Service availability for {{< product-c8y-iot >}} is calculated as follows:
 
@@ -128,17 +131,24 @@ Emergency maintenance may be announced on short notice or without prior warning.
 
 If the service is available for less than the availability outlined above during any full calendar month during the cloud services term, Customer will be eligible for a service credit for the particular service in accordance with the formula below (a “Service Credit”).
 
-For services with 99.90% availability target:
+For services with 99.90% availability target (Dedicated Cloud):
 
-| Monthly availability | Percentage of the pro-rata monthly service fee for the covered service |
+| Monthly availability | Credit (% of monthly fee) |
 | -------------------- | ---------------------------------------------------------------------- |
 | 99.50% to < 99.90%   | 10%                                                                    |
-| 99.50% to < 99.00%   | 15%                                                                    |
+| 99.00% to < 99.50%   | 15%                                                                    |
 | < 99.00%             | 25%                                                                    |
 
-For services with 95.00% availability target:
+For services with 99.00% availability target (Shared Cloud):
 
-| Monthly availability | Percentage of the pro-rata monthly service Fee for the covered service |
+| Monthly availability | Credit (% of monthly fee) |
+| -------------------- | ---------------------------------------------------------------------- |
+| 98.00% to < 99.00%   | 10%                                                                    |
+| < 98.00%             | 25%                                                                    |
+
+For services with 95.00% availability target (non-production):
+
+| Monthly availability | Credit (% of monthly fee) |
 | -------------------- | ---------------------------------------------------------------------- |
 | < 95.00%             | 10%                                                                    |
 
@@ -179,7 +189,7 @@ service availability requirements are set forth in this service credit commitmen
 #### **Support**
 
 * **Customer support:** Support is provided in accordance with Customer’s selected support plan, as detailed in the [support agreement](/service-terms/service-level/#support-sla).
-* **Non-production environments:** For non-production environments, Starter-level support is generally provided, with support tickets handled at standard priority.
+* **Non-production environments:** For non-production environments, Bronze support is generally provided, with support tickets handled at standard priority.
 
 #### **Maintenance**
 

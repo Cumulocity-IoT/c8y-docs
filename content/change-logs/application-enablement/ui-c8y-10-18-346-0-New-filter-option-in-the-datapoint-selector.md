@@ -1,6 +1,6 @@
 ---
 date: '2023-12-06'
-title: New filter option in the datapoint selector
+title: New filter option in the data point selector
 change_type:
   - value: change-QHu1GdukP
     label: Feature
@@ -21,4 +21,4 @@ environment_availability:
   - label: us.cumulocity.com
   - label: cumulocity.com
 ---
-The asset selection in the datapoint selector is now filterable.
+The asset selection in the data point selector is now filterable.
