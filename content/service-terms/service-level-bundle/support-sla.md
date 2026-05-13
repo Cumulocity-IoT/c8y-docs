@@ -35,7 +35,7 @@ The following terms apply across all support levels unless otherwise specified:
 * **Authorized Technical Contact (ATC)**: A uniquely identified individual authorized by the Customer to access the Provider’s Support Portal, submit support requests, and receive support-related communications, with appropriate professional and technical qualifications. Shared group accounts are not allowed.
 * **Support**: The Provider’s Support Organization responsible for delivering maintenance and support services to the Customer.
 * **Support Portal**: The Provider’s web-based support system that permits browsing and submitting support tickets.
-* **Support Region**: The region of a customer is the region where that customer is located or has opted to define that region as their region. For example the region for an EMEA customer is EMEA, however an EMEA customer may opt for another region, say APJ, to be their default region. For Premium support, the region can be chosen per ATC.
+* **Support Region**: The region of a customer is the region where that customer is located or has opted to define that region as their region. For example, the region for an EMEA customer is EMEA, however an EMEA customer may opt for another region, say APJ, to be their default region. For Premium support, the region can be chosen per ATC.
 
 
 ### Incident classification
