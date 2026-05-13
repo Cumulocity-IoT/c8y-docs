@@ -26,7 +26,6 @@ c8yedge config \
   --set company=<COMPANY-NAME> \
   --set email=<ADMIN-EMAIL>
 ```
-Note that the company name and the admin user email can also be changed later using the [user interface](/standard-tenant/managing-users/#to-edit-a-user) or {{< product-c8y-iot >}} API.
 
 Upon successful configuration, the tool will exit automatically.
 

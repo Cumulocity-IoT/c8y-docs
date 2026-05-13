@@ -52,9 +52,7 @@ layout: redirect
 
 - `company` | string | Required
 
-    Name of the “edge” tenant, for example, the company’s name.  
-    
-  **Info**: This value is used only during the Edge installation and can’t be changed for existing installations. All subsequent tenant changes must be made via the [user interface](/enterprise-tenant/managing-tenants/#to-view-or-edit-subtenant-properties) or the Cumulocity API.
+    Name of the "edge" tenant, for example, the company’s name.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
@@ -65,9 +63,8 @@ layout: redirect
 
 - `email` | string | Required
 
-    The email address associated with the platform administrator account.  
-    
-  **Info**: This value is used only during the initial Edge installation to bootstrap the admin account and cannot be changed for existing installations. All subsequent admin user changes must be made via the [user interface](/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API.
+    The email address to configure for the platform administrator account.  
+  Changes made to the administrator email using the user interface or Cumulocity API will be overwritten by the Edge operator. Modify this field instead to permanently update the email.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
