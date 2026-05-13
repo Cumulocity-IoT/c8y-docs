@@ -21,6 +21,6 @@ The {{< product-c8y-iot >}} MQTT Service now supports the MQTT _Will Message_ fe
 When a device that connected with a Will Message disconnects unexpectedly, the MQTT Service publishes the Will Message to the Messaging Service `from-device` topic, where it can be consumed by microservice and external application clients like any other device message.
 Clients can identify Will Messages using the `tx.lastWillMessage` Pulsar message property.
 
-The MQTT version 5.0 Will Message properties _Delay Interval_, _Payload Format Indicator_, _Content Type_, _Response Topic_, _Correlation Data_, _Message Expiry Interval_ and _User Property_ are forwarded to consumers using the MQTT Service standard Pulsar message properties.
+The MQTT version 5.0 Will Message properties _Delay Interval_, _Payload Format Indicator_, _Content Type_, _Response Topic_, _Correlation Data_, _Message Expiry Interval_, and _User Property_ are forwarded to consumers using the MQTT Service standard Pulsar message properties.
 
 See the [Will Message](/device-integration/mqtt-service/#will-message) and [Message payloads and properties](/device-integration/mqtt-service/#message-payloads-properties) documentation for details.
