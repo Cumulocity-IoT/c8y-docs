@@ -18,6 +18,8 @@ Edge has been tested and officially supported on Kubernetes version 1.34.x, the 
 * Edge is tested and supported on **single-node Kubernetes clusters** only.
 {{< /c8y-admon-info >}}
 
+Because resource consumption can be very use-case specific, many containers have memory limits significantly higher than the memory request. Workloads that consume a lot of memory can result in inevitable out-of-memory kills of processes on the host. In order to protect the underlying operating system and Kubernetes infrastructure from this, we recommend setting reserved resources. See [Reserve Compute Resources for System Daemons](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/) for more details.
+
 ### Installing the Edge operator {#installing-edge-operator}
 The Edge operator is available as a Helm chart in the Edge registry, and can be installed like any other chart. You will need your registry credentials, which can be acquired from [product support](/additional-resources/contacting-support/). Assuming you are installing the {{< c8y-edge-current-version >}} release of Edge, and that you wish all Edge workloads to be running in the namespace `c8yedge`, run the following command:
 ```shell
