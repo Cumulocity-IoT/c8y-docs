@@ -3,6 +3,11 @@ weight: 15
 title: Upgrading Edge
 layout: redirect
 ---
+{{< c8y-admon-caution >}}
+Significant changes to prerequisites are generally introduced in major releases. Nevertheless, prerequisites should be verified before each upgrade.
+<br>See [Prerequisites](/edge/installing-edge/#prerequisites) for the supported Kubernetes versions and requirements.
+{{< /c8y-admon-caution >}}
+
 The Edge operator follows the recreate update strategy to upgrade the Edge deployment.
 
 Recreating update strategy is an all-or-nothing process that updates all aspects of the system at once with a brief downtime period. The Edge operator selects all the outdated pods and deactivates them at once. Once all old pods are deactivated, the Edge operator creates updated pods for the entire system. Edge is not operational while the old pods are deactivating and until the final updated pod is created.
