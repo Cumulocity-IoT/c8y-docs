@@ -16,6 +16,14 @@ version: 2026.131.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-04-30'
+  - label: apj.cumulocity.com
+    date: '2026-05-06'
+  - label: jp.cumulocity.com
+    date: '2026-05-06'
+  - label: us.cumulocity.com
+    date: '2026-05-11'
+  - label: cumulocity.com
+    date: '2026-05-12'
 ---
 The platform now automatically generates audit logs for device certificate renewals and replacements. When a device uses the [Re-enroll API](/device-certificate-authentication/device-enroll-and-re-enroll/#re-issue-device-certificate) to refresh or replace its certificate via existing credentials, a dedicated entry is now recorded in the system logs.
 
