@@ -162,6 +162,8 @@ spec:
   licenseKey:  <LICENSE-KEY>
 
   ## Name of the "edge" tenant, for example, the company’s name.
+  ## Changes made to the Edge tenant's name using the user interface or Cumulocity API will be overwritten by the Edge operator.
+  ## Modify this field instead to permanently update the name.
   company: <COMPANY-NAME>
 
   ## The email address to configure for the platform administrator account.

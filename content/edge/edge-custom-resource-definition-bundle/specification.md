@@ -52,7 +52,8 @@ layout: redirect
 
 - `company` | string | Required
 
-    Name of the "edge" tenant, for example, the company’s name.
+    Name of the Edge tenant, for example, the company’s name.  
+  Changes made to the Edge tenant's name using the user interface or Cumulocity API will be overwritten by the Edge operator. Modify this field instead to permanently update the name.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
