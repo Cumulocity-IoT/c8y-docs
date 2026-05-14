@@ -13,12 +13,9 @@ For a guided walkthrough of the full process, see [Getting started](/data-prepar
 ### To create a rule {#create-rule}
 
 1. Open the Data Preparation application. The landing page shows the list of existing rules.
-2. Click **Create rule**. A wizard opens to guide you through the setup. The wizard has three pages:
-   - **Source transport**: select the transport that delivers the messages this rule processes. MQTT is currently the only supported transport. Click **Next**.
-   - **Filter**: enter a **Topic filter** and a **Client ID filter**. These determine which incoming messages the rule processes. Note that these are not standard MQTT topic filters. Use `*` instead of `#` or `+`.
-   - **Confirm**: review the source, topic filter, and client ID filter. Enter a **Name** and an optional **Description** for the rule. Click **Create**.
+2. Click **Create rule** to open the rule creation wizard.
 
-The rule is created in the **Draft** state and the rule editor opens. The rule does not process any live messages until you deploy it.
+For a step-by-step guide to creating a rule, see [Create your first rule](/data-preparation/getting-started-dataprep/#create-rule).
 
 ### To save or deploy a rule {#save-deploy-rule}
 
@@ -27,11 +24,11 @@ In the rule editor, you have two options:
 - Click **Save draft** to save the current code and test data without deploying. The rule continues to run (if deployed) with the previously deployed version.
 - Click **Save and deploy** to save the current draft and start deploying it. The rule begins processing live messages immediately. If the rule was not previously deployed, it becomes active. If it was already deployed, the deployed version is updated to the current draft.
 
-When a rule is first deployed and a measurement is produced for a device that the platform has not seen before, a new device is created automatically. The device is based on the `externalId` specified in the measurement.
+When a rule is first deployed and a measurement is produced for a device that the platform has not seen before, a new device is created automatically. See [Creating devices](/data-preparation/creating-devices/) for more details about how devices are created.
 
-### Rule states {#rule-states}
+### Deployment status {#deployment-status}
 
-Each rule has a deployment status that indicates whether it is currently processing live messages:
+Each rule has deployment status chips that indicate whether it is currently processing live messages, and if the current draft is different to the deployed version:
 
 | Status | Description |
 |---|---|
@@ -76,7 +73,3 @@ In the rule editor you can update the smart function code, add test data, and ru
 {{< c8y-admon-important >}}
 Deleting a deployed rule stops it immediately. No further messages are processed by that rule after deletion.
 {{< /c8y-admon-important >}}
-
-### To import rules {#import-rules}
-
-- Click **Import** to import one or more rules from a file. The imported rules are added to the list in the **Draft** state.
