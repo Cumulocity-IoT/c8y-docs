@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improve ng add instructions with custom Web SDK instructions
+title: Custom Web SDK coding agent instructions adding during app creation
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
