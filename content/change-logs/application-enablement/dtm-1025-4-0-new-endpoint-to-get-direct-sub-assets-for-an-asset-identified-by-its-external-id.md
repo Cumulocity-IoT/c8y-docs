@@ -18,6 +18,10 @@ version: 1025.4.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-05-13'
+  - label: apj.cumulocity.com
+    date: '2026-05-14'
+  - label: jp.cumulocity.com
+    date: '2026-05-14'
 ---
 The Dtm microservice now includes a new endpoint
 `/assets/externalIds/{externalId}/subAssets` that allows you to fetch

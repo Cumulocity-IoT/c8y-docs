@@ -16,6 +16,10 @@ version: 1025.4.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-05-13'
+  - label: apj.cumulocity.com
+    date: '2026-05-14'
+  - label: jp.cumulocity.com
+    date: '2026-05-14'
 ---
 Asset definitions created without custom icons were previously displayed as
 empty rows in the **Add asset** dropdown, making it difficult for users to
