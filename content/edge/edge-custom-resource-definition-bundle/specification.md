@@ -87,8 +87,7 @@ c8yedge config --set-file tlsSecret.tls.key=<path/to/tls.key> --set-file tlsSecr
 
 ##
 ## cloudTenant {#cloudtenant}
-Edge can be managed, configured, and monitored remotely through a Cumulocity cloud tenant. You can control and troubleshoot your Edge deployments remotely. To enable this, you must first register Edge as a device within the cloud tenant.
-See [Connecting Edge to a cloud tenant](/edge/connecting-edge-to-cloud/#register-edge-on-cloud) for more details.
+Cumulocity cloud tenant details to configure and manage Edge remotely.
             
             
 
@@ -134,7 +133,7 @@ c8yedge config --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> --set-
 
 ##
 ## mongodb {#mongodb}
-This field is used to specify the MongoDB admin credentials and persistent volume storage size.
+Configurations needed to deploy the MongoDB server.
             
             
 
