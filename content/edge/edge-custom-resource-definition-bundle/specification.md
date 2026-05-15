@@ -84,7 +84,7 @@ If you used **c8yedge** tool to install, you can configure this field using the 
 ```shell
 c8yedge config --set-file tlsSecret.tls.key=<path/to/tls.key> --set-file tlsSecret.tls.crt=<path/to/tls.crt>
 ```
-## cloudTenant {#cloudtenant}
+### cloudTenant {#cloudtenant}
             
             
 
@@ -127,7 +127,7 @@ If you used **c8yedge** tool to install, you can configure this field using the 
 ```shell
 c8yedge config --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>
 ```
-## mongodb {#mongodb}
+### mongodb {#mongodb}
             
             
 
