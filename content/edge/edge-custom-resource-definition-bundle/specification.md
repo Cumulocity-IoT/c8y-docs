@@ -87,7 +87,7 @@ c8yedge config --set-file tlsSecret.tls.key=<path/to/tls.key> --set-file tlsSecr
 
 ##
 ## cloudTenant {#cloudtenant}
-Cumulocity cloud tenant details to configure and manage Edge remotely.
+Cumulocity cloud tenant details to configure and manage Edge remotely. See [Connecting Edge to a cloud tenant](/edge/connecting-edge-to-cloud) for more details.
             
             
 
