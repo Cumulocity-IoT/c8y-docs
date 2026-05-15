@@ -4,14 +4,14 @@ title: Specification
 layout: redirect
 ---
 
-### `spec.version`  {#spec-version}
+### spec.version  {#spec-version}
 `spec.version` | string | Required
 
 Edge version to install. Specify `2026` to install the latest available version from the release, or use a fully qualified version like `2026.0.1` to install a specific patch version.
 
 
 
-### `spec.domain`  {#spec-domain}
+### spec.domain  {#spec-domain}
 `spec.domain` | string | Required
 
 A fully qualified domain name where Edge will be hosted, for example, myown.iot.com. The domain name provided here must match the scope of your Edge license, either the exact subdomain domain, or the parent domain.
@@ -21,7 +21,7 @@ If you used **c8yedge** tool to install, you can configure this field using the 
   c8yedge config --set domain=<domain-name>
 ```
 
-### `spec.licenseKey`  {#spec-licensekey}
+### spec.licenseKey  {#spec-licensekey}
 `spec.licenseKey` | string | Required
 
 Edge license key you received for the domain. If you do not have a license key, you must request one from [product support](/additional-resources/contacting-support/). For more information, see [Domain name validation for Edge license key generation](/edge/installing-edge/#domain-name-validation-for-edge-license-key-generation).
@@ -34,7 +34,7 @@ If you used **c8yedge** tool to install, you can configure this field using the 
   c8yedge config --set-file licenseKey=<path/to/license.txt>
 ```
 
-### `spec.company`  {#spec-company}
+### spec.company  {#spec-company}
 `spec.company` | string | Required
 
 Name of the “edge” tenant, for example, the company’s name.
@@ -46,7 +46,7 @@ If you used **c8yedge** tool to install, you can configure this field using the 
   c8yedge config --set company=<company-name>
 ```
 
-### `spec.email`  {#spec-email}
+### spec.email  {#spec-email}
 `spec.email` | string | Required
 
 The email address associated with the platform administrator account.
@@ -58,7 +58,7 @@ If you used **c8yedge** tool to install, you can configure this field using the 
   c8yedge config --set email=<email-address>
 ```
 
-### `spec.cumulocityPasswordSecretName`  {#spec-cumulocitypasswordsecretname}
+### spec.cumulocityPasswordSecretName  {#spec-cumulocitypasswordsecretname}
 `spec.cumulocityPasswordSecretName` | string | Required
 
 Name of the Kubernetes secret containing the Cumulocity admin user password for both the Management tenant and the Edge tenant. This secret must contain a key named `INITIAL_C8Y_ADMIN_PASSWORD` with the initial password.
@@ -69,7 +69,7 @@ Name of the Kubernetes secret containing the Cumulocity admin user password for 
 
 
 
-### `spec.tlsSecretName`  {#spec-tlssecretname}
+### spec.tlsSecretName  {#spec-tlssecretname}
 `spec.tlsSecretName` | string | Optional
 
 Name of the Kubernetes secret containing the TLS/SSL private key and certificates for the domain name specified in the `spec.domain` field. If not provided, Edge automatically generates and assigns self-signed certificates.
@@ -87,7 +87,7 @@ If you used **c8yedge** tool to install, you can configure this field using the 
   c8yedge config --set-file tlsSecret.tls.key=<path/to/tls.key> --set-file tlsSecret.tls.crt=<path/to/tls.crt>
 ```
 
-### `spec.cloudTenant.domain`  {#spec-cloudtenant-domain}
+### spec.cloudTenant.domain  {#spec-cloudtenant-domain}
 `spec.cloudTenant.domain` | string | Required
 
 Cumulocity cloud tenant domain. For example, `<tenantid>.cumulocity.com`. See [Connecting Edge to a cloud tenant](/edge/connecting-edge-to-cloud) for more details.
@@ -97,7 +97,7 @@ If you used **c8yedge** tool to install, you can configure this field using the 
   c8yedge config --set cloudTenant.domain=<cloud-tenant-domain>
 ```
 
-### `spec.cloudTenant.otp`  {#spec-cloudtenant-otp}
+### spec.cloudTenant.otp  {#spec-cloudtenant-otp}
 `spec.cloudTenant.otp` | string | Optional
 
 One-time password (OTP) for initial registration of Edge as a device in the cloud tenant. If both this and `cloudTenant.tlsSecretName` are not provided, Edge generates and uses self-signed certificates. See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#register-edge-on-cloud) for more details.
@@ -107,7 +107,7 @@ If you used **c8yedge** tool to install, you can configure this field using the 
   c8yedge config --set cloudTenant.otp=<one-time password>
 ```
 
-### `spec.cloudTenant.tlsSecretName`  {#spec-cloudtenant-tlssecretname}
+### spec.cloudTenant.tlsSecretName  {#spec-cloudtenant-tlssecretname}
 `spec.cloudTenant.tlsSecretName` | string | Optional
 
 Name of the Kubernetes secret containing the TLS/SSL private key and certificates with which Edge connects to the cloud through MQTT protocol using a X.509 certificate for authentication. If both this and `cloudTenant.otp` are not provided, Edge generates and uses self-signed certificates. This secret must contain two keys:
@@ -127,7 +127,7 @@ If you used **c8yedge** tool to install, you can configure this field using the 
   c8yedge config --set-file cloudTenant.tlsSecret.tls.key=<path/to/tls.key> --set-file cloudTenant.tlsSecret.tls.crt=<path/to/tls.crt>
 ```
 
-### `spec.mongodb.credentialsSecretName`  {#spec-mongodb-credentialssecretname}
+### spec.mongodb.credentialsSecretName  {#spec-mongodb-credentialssecretname}
 `spec.mongodb.credentialsSecretName` | string | Optional
 
 Name of the Kubernetes Secret containing the database admin credentials with which the MongoDB server must be configured. If not provided, `databaseAdmin` and a generated password are used as the database admin user and password.
@@ -142,7 +142,7 @@ If you used **c8yedge** tool to install, you can configure this field using the 
   c8yedge config --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_USER=<database-admin-user> --set mongodb.credentialsSecret.MONGODB_DATABASE_ADMIN_PASSWORD=<database-admin-password>
 ```
 
-### `spec.mongodb.resources.requests.storage`  {#spec-mongodb-resources-requests-storage}
+### spec.mongodb.resources.requests.storage  {#spec-mongodb-resources-requests-storage}
 `spec.mongodb.resources.requests.storage` | string | Optional
 
 The amount of persistent storage allocated. Values are specified with suffixes, for example, 10Gi (10 Gibibytes) or 100Gi.
@@ -152,7 +152,7 @@ If you used **c8yedge** tool to install, you can configure this field using the 
   c8yedge config --set mongodb.resources.requests.storage=<storage-size>
 ```
 
-### `spec.storageClassName`  {#spec-storageclassname}
+### spec.storageClassName  {#spec-storageclassname}
 `spec.storageClassName` | string | Optional
 
 The StorageClass to be used for Persistent Volume Claims (PVCs) requested by the Edge operator for persisting application data, microservice images, and logs.
