@@ -139,3 +139,7 @@ version = "Edge-2025.0.13"
 [[versions]]
 date = "January 15, 2024"
 version = "Edge-2025.0.14"
+
+[[versions]]
+date = "January 16, 2024"
+version = "Edge-2025.0.15"
