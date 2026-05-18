@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Fixed schema type in OpenAPI documentation for retrieval of child devices of an asset"
+title: "Fixed schema type for retrieval of child devices of an asset in OpenAPI documentation"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
