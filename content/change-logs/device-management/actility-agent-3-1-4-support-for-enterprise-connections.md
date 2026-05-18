@@ -1,6 +1,6 @@
 ---
-date: ''
-title: Added support for device routing references in ThingPark Enterprise connections
+date: 2026-05-15
+title: Automatic routing setup for pre-existing Actility ThingPark Enterprise devices
 product_area: Device management & connectivity
 change_type:
     - value: change-QHu1GdukP
@@ -15,5 +15,4 @@ ticket: DM-6019
 version: 3.1.4
 ---
 The Actility agent now supports device routing for both ThingPark Wireless and Enterprise connections.
-When registering a device in {{< product-c8y-iot >}} that already exists in ThingPark, the agent automatically updates its routing configuration using routing profiles for Wireless connections and route references for Enterprise connections. 
-Moreover, the agent creates the necessary routes in ThingPark if they do not yet exist.
+When registering a device in {{< product-c8y-iot >}} that already exists in the connected ThingPark Enterprise account, the agent automatically updates device's routing configuration in ThingPark to include the new route if it does not yet exist and preserve any previously assigned routes.
