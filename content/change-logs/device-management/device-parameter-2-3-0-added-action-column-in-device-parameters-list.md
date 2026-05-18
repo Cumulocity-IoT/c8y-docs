@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5961
 version: 2.3.0
 ---
-If parameter is editable an action is available in the list that opens the edit modal for the selected parameter.
+In the Device Management application, editable device parameters can now be modified directly from the parameter list through a dedicated edit action.
