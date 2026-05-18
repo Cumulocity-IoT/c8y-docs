@@ -31,7 +31,7 @@ Each entry in this view can be expanded into a detailed view. This view shows th
 
 ![Parameter Tab - List of parameters](/images/users-guide/DeviceManagement/devmgmt-parameters-detail.png)
 
-If the parameter itself is defined as editable and the device supports updating its parameters, the corresponding **Edit** action is available in the row actions column and in the parameter details view. Editing a parameter value results in a corresponding operation towards the device.
+If the parameter itself is defined as editable and the device supports updating its parameters, the corresponding **Edit** action is available in the row's actions column and in the parameter details view. Editing a parameter value results in a corresponding operation towards the device.
 
 #### Modeling device parameters {#modeling-device-parameters}
 
