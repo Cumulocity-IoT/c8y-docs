@@ -22,6 +22,10 @@ environment_availability:
     date: '2026-05-14'
   - label: jp.cumulocity.com
     date: '2026-05-14'
+  - label: us.cumulocity.com
+    date: '2026-05-18'
+  - label: cumulocity.com
+    date: '2026-05-18'
 ---
 The Dtm microservice now includes a new endpoint
 `/assets/externalIds/{externalId}/subAssets` that allows you to fetch

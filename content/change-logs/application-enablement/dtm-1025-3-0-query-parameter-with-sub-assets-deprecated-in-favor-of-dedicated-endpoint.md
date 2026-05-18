@@ -1,18 +1,29 @@
 ---
-date: ""
-title: "Query parameter withSubAssets deprecated in favor of dedicated endpoint"
-product_area: "Application enablement & solutions"
+date: '2026-05-15'
+title: Query parameter withSubAssets deprecated in favor of dedicated endpoint
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-VSkj2iV9m"
-      label: "Fix"
+  - value: change-VSkj2iV9m
+    label: Fix
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-2796"
-version: "1025.3.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-2796
+version: 1025.3.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-05-15'
+  - label: apj.cumulocity.com
+    date: '2026-05-18'
+  - label: jp.cumulocity.com
+    date: '2026-05-18'
+  - label: us.cumulocity.com
+    date: '2026-05-18'
+  - label: cumulocity.com
+    date: '2026-05-18'
 ---
 The `withSubAssets` query parameter has been deprecated to simplify the
 API and provide a more focused approach to retrieving subasset data.
