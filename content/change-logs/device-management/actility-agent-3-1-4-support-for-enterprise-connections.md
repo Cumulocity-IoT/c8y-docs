@@ -1,10 +1,10 @@
 ---
 date: 2026-05-15
-title: Automatic routing setup for pre-existing Actility ThingPark Enterprise devices
+title: Fix routing issues for pre-existing Actility ThingPark Enterprise devices
 product_area: Device management & connectivity
 change_type:
-    - value: change-QHu1GdukP
-      label: Feature
+    - value: change-VSkj2iV9m
+      label: Fix
 component:
     - value: component-TCiiCOknp5
       label: LPWAN
