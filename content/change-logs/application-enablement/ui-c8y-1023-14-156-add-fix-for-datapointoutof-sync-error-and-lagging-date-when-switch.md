@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add fix for datapointoutofSync error and lagging date when switch out
+title: Fixed chart synchronization error
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
