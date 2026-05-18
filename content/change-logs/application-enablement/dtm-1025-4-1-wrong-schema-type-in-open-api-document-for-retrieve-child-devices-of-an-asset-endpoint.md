@@ -14,6 +14,6 @@ build_artifact:
 ticket: "CTM-2682"
 version: "1025.4.1"
 ---
-The OpenAPI specification for the retrieval of child devices of an asset previously displayed an incorrect schema type that did not match the actual response structure. The endpoint now correctly shows a paginated list of devices as the response schema, providing accurate documentation that reflects the actual data returned.
+The OpenAPI specification for the retrieval of child devices of an asset previously displayed an incorrect schema type that did not match the actual response structure. The [endpoint](https://cumulocity.com/api/dtm/#tag/Assets/operation/getChildDevices) now correctly shows a paginated list of devices as the response schema, providing accurate documentation that reflects the actual data returned.
 
 This fix ensures that developers using the OpenAPI specification to generate client code or understand the API response structure receive accurate type information. Your existing API calls continue to work without any changes, and the corrected documentation now matches the actual behavior of the endpoint.
