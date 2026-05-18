@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed data point synchronization error and date lag when switching out
+title: Fixed chart synchronization error
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
