@@ -17,7 +17,7 @@ version: "1025.5.0"
 During asset creation, users can now click directly on asset model tree
 nodes in the left-side hierarchy view to navigate between models.
 Previously, users could only view the selected root asset model
-hierarchy but had to use the Next and Previous buttons to move through
+hierarchy, but had to use the **Next** and **Previous** buttons to move through
 the tree, limiting their ability to quickly access specific models in
 the hierarchy.
 
