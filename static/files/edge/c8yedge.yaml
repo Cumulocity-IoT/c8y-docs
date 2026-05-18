@@ -82,11 +82,10 @@ stringData:
 ########################################################################################################################
 ---
 ##
-## This Custom Resource (CR) YAML file has the Cumulocity Edge deployment settings.
-## You can edit this file and apply it to your Kubernetes cluster to deploy or update your Edge.
+## This Custom Resource (CR) YAML has the Cumulocity Edge deployment settings.
 ##
 ## For more information about the CR specification, 
-## see https://cumulocity.com/docs/2026/edge/edge-custom-resource-definition/#specification
+## see https://cumulocity.com/docs/2026/edge/edge-custom-resource-definition
 ##
 
 apiVersion: edge.cumulocity.com/v1
