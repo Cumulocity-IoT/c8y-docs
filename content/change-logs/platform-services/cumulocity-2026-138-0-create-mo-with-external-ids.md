@@ -1,5 +1,5 @@
 ---
-date: ''
+date: '2026-05-14'
 title: Binding external identifiers when creating managed objects
 product_area: Platform services
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: cumulocity
 ticket: MTM-66625
 version: 2026.138.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-05-14'
 ---
 
 {{< product-c8y-iot >}} now provides the ability to bind external identifiers within managed object

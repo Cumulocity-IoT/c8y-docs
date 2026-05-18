@@ -16,5 +16,13 @@ version: 1023.80.2
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-05-12'
+  - label: apj.cumulocity.com
+    date: '2026-05-13'
+  - label: jp.cumulocity.com
+    date: '2026-05-13'
+  - label: us.cumulocity.com
+    date: '2026-05-15'
+  - label: cumulocity.com
+    date: '2026-05-15'
 ---
 To maintain backward compatibility, the "Data point list" widget is not bound to the dashboard time context after an application update. This ensures that the date range remains unchanged.
