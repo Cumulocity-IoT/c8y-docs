@@ -1,18 +1,25 @@
 ---
-date: ""
-title: "Fixed empty rows in Add asset dropdown when asset definition lacks icon"
-product_area: "Application enablement & solutions"
+date: '2026-05-13'
+title: Fixed empty rows in Add asset dropdown when asset definition lacks icon
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-VSkj2iV9m"
-      label: "Fix"
+  - value: change-VSkj2iV9m
+    label: Fix
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-2934"
-version: "1025.4.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-2934
+version: 1025.4.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-05-13'
+  - label: apj.cumulocity.com
+    date: '2026-05-14'
+  - label: jp.cumulocity.com
+    date: '2026-05-14'
 ---
 Asset definitions created without custom icons were previously displayed as
 empty rows in the **Add asset** dropdown, making it difficult for users to

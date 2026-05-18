@@ -1,5 +1,5 @@
 ---
-date:
+date: '2026-05-14'
 title: Strict validation of unit values in measurement fragments is now enforced
 change_type:
   - value: change-3BQrQ6adS
@@ -13,6 +13,9 @@ build_artifact:
     label: cumulocity
 ticket: MTM-64519
 version: 2026.150.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-05-14'
 ---
 As [announced earlier](/change-logs/?component=.component-OG_650_b2#cumulocity-undefined-pre-announce-unit-null-validation), {{< product-c8y-iot >}} now strictly validates unit values in measurement fragments.
 
