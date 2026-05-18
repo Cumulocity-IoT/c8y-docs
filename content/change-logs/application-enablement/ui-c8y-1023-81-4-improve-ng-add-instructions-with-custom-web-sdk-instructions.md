@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Custom Web SDK coding agent instructions adding during app creation
+title: Custom Web SDK coding agent instructions added during app creation
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
