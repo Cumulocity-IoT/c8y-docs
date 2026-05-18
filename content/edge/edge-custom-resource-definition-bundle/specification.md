@@ -53,7 +53,7 @@ layout: redirect
 - `company` | string | Required
 
     Name of the Edge tenant, for example, the company’s name.  
-  Changes made to the Edge tenant's name using the user interface or Cumulocity API will be overwritten by the Edge operator. Modify this field instead to permanently update the name.
+  Changes made to the Edge tenant's name using the user interface or the {{< product-c8y-iot >}}  API will be overwritten by the Edge operator. Modify this field instead to permanently update the name.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
@@ -65,7 +65,7 @@ layout: redirect
 - `email` | string | Required
 
     The email address to configure for the platform administrator account.  
-  Changes made to the administrator email using the user interface or Cumulocity API will be overwritten by the Edge operator. Modify this field instead to permanently update the email.
+  Changes made to the administrator email using the user interface or the {{< product-c8y-iot >}} API will be overwritten by the Edge operator. Modify this field instead to permanently update the email.
 
   If you used **c8yedge** tool to install, you can configure this field using the below command: 
   ```shell
