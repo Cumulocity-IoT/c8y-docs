@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Wrong schema type in Open API document for retrieve child devices of an asset endpoint"
+title: "Fixed schema type in OpenAPI documentation for retrieval of child devices of an asset"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -14,5 +14,6 @@ build_artifact:
 ticket: "CTM-2682"
 version: "1025.5.0"
 ---
-Retrieve child devices of an asset Open API document should be fixed to
-show the proper schema/example of PaginatedDeviceList
+The OpenAPI specification for the retrieval of child devices of an asset previously displayed an incorrect schema type that did not match the actual response structure. The endpoint now correctly shows a paginated list of devices as the response schema, providing accurate documentation that reflects the actual data returned.
+
+This fix ensures that developers using the OpenAPI specification to generate client code or understand the API response structure receive accurate type information. Your existing API calls continue to work without any changes, and the corrected documentation now matches the actual behavior of the endpoint.
