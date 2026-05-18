@@ -139,7 +139,7 @@ stringData:
 apiVersion: edge.cumulocity.com/v1
 kind: CumulocityIoTEdge
 metadata:
-  ## Name of the C8y Edge deployment.
+  ## Name of the Edge deployment.
   name: c8yedge
   ## Namespace name into which you installed the Edge operator. By default, the Edge operator is installed in `c8yedge`.
   namespace: c8yedge
@@ -161,16 +161,14 @@ spec:
   ## - The domain name (for example, myown.iot.com), where Edge will be reachable
   licenseKey:  <LICENSE-KEY>
 
-  ## Name of the “edge” tenant, for example, the company’s name.
-  ## This value is used only during the Edge installation and can’t be changed for existing installations.
-  ## All subsequent tenant changes are made via the user interface 
-  ## (https://cumulocity.com/docs/2026/enterprise-tenant/managing-tenants/#to-view-or-edit-subtenant-properties) or the Cumulocity API.
+  ## Name of the Edge tenant, for example, the company’s name.
+  ## Changes made to the Edge tenant's name using the user interface or Cumulocity API will be overwritten by the Edge operator.
+  ## Modify this field instead to permanently update the name.
   company: <COMPANY-NAME>
 
-  ## Replace with a valid email, used for admin account.
-  ## This value is used only during the Edge installation and can’t be changed for existing installations.
-  ## All subsequent admin user changes are made via the user interface 
-  ## (https://cumulocity.com/docs/2026/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API.
+  ## The email address to configure for the platform administrator account.
+  ## Changes made to the administrator email using the user interface or Cumulocity API will be overwritten by the Edge operator.
+  ## Modify this field instead to permanently update the email.
   email: <ADMIN-EMAIL>
 
   ## Name of the Kubernetes secret containing the Cumulocity admin user password for both the Management tenant and the Edge tenant.

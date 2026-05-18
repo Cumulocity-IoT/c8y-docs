@@ -13,7 +13,7 @@ After installing Edge using the c8yedge tool, you might want to configure an SSL
 First, ensure that your certificate and private key are in separate files, in PEM format. Then use the following command to configure your domain, license key, and SSL certificate.
 ```bash
 c8yedge config \
-  --set domain=<DOMAIN-NAME> \
+  --set domain=<domain-name> \
   --set-file licenseKey=<path/to/license.txt> \
   --set-file tlsSecret.tls.key=<path/to/tls.key> \
   --set-file tlsSecret.tls.crt=<path/to/tls.crt>
@@ -23,10 +23,9 @@ Note that the license key must always be valid for the domain name, so any chang
 Use the following command to modify the Edge tenant's name and the administrator's email address.
 ```bash
 c8yedge config \
-  --set company=<COMPANY-NAME> \
-  --set email=<ADMIN-EMAIL>
+  --set company=<company-name> \
+  --set email=<email-address>
 ```
-Note that the company name and the admin user email can also be changed later using the [user interface](/standard-tenant/managing-users/#to-edit-a-user) or {{< product-c8y-iot >}} API.
 
 Upon successful configuration, the tool will exit automatically.
 
@@ -45,8 +44,8 @@ kubectl get --namespace=c8yedge edge/c8yedge -o yaml > edge.yaml
 
 Edit this file, referring to [Edge custom resource](/edge/edge-custom-resource-definition/) for an exhaustive listing of what could be changed. For example, you might add
 ```bash
-  domain: <DOMAIN-NAME>
-  licenseKey: <CONTENTS-OF-THE-LICENSE-FILE>
+  domain: <domain-name>
+  licenseKey: <contents-of-the-license-file>
   tlsSecretName: edge-tls-secret
 ```
 indented under the custom resource's `spec` for configuring an SSL certificate for your Edge and giving it a custom domain. Note that the license key must always be valid for the domain name, so any change of domain name should be made simultaneously with a change of license key. 
