@@ -139,7 +139,7 @@ stringData:
 apiVersion: edge.cumulocity.com/v1
 kind: CumulocityIoTEdge
 metadata:
-  ## Name of the C8y Edge deployment.
+  ## Name of the Edge deployment.
   name: c8yedge
   ## Namespace name into which you installed the Edge operator. By default, the Edge operator is installed in `c8yedge`.
   namespace: c8yedge
