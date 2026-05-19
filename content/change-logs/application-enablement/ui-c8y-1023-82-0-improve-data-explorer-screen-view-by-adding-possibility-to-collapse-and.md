@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-05-18'
 title: Extended data explorer view with collapse and full-screen mode
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-66510
 version: 1023.82.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-05-18'
+  - label: apj.cumulocity.com
+    date: '2026-05-19'
+  - label: jp.cumulocity.com
+    date: '2026-05-19'
 ---
 The data explorer view now provides better control over your workspace layout. You can collapse sections in the data explorer to focus on specific areas and use full-screen mode to maximize your viewing area when analyzing data. These improvements make it easier to work with large datasets and complex visualizations by giving you more flexibility in how you arrange and display information on your screen.

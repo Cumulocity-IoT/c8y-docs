@@ -22,6 +22,8 @@ environment_availability:
     date: '2026-05-13'
   - label: us.cumulocity.com
     date: '2026-05-18'
+  - label: cumulocity.com
+    date: '2026-05-19'
 ---
 
 The Smart Function block now uses a single, dynamically sized block parameter instead of a fixed set of parameters for providing values to the smart function code.
