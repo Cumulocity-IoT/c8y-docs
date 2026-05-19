@@ -20,10 +20,7 @@ const BASE_URL = "https://cumulocity.com/docs";
 
 const shortcodeMapping = {
   "c8y-current-version": "",
-  "c8y-edge-current-version-alt": "10.18",
-  "c8y-edge-version-major": "2025",
-  "c8y-edge-version-minor": "0",
-  "c8y-edge-version-patch": "0",
+  "c8y-edge-current-version": "2026",
   "c8y-resources-server-link": "https://download.cumulocity.com/",
   "c8y-resources-server": "Cumulocity Download Center",
   "c8y-support-link": "https://cumulocity.com/support",
