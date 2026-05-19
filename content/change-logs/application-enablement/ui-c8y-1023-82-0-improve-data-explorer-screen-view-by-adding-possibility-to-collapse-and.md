@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improve data explorer screen view with collapse and full screen mode
+title: Extended data explorer view with collapse and full-screen mode
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
