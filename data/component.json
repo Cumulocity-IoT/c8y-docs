@@ -279,6 +279,16 @@
           "label": "Application enablement & solutions"
         }
       ]
+    },
+    {
+      "id": "component-g7hnfbu4J",
+      "option": "Edge",
+      "product_area": [
+        {
+          "value": "product_area-v8mvxKJVc",
+          "label": "Edge"
+        }
+      ]
     }
   ]
 }
