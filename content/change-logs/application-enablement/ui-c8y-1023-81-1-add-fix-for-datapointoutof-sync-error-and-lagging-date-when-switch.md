@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-05-18'
 title: Fixed chart synchronization error
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,17 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-65579
 version: 1023.81.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-05-18'
+  - label: apj.cumulocity.com
+    date: '2026-05-18'
+  - label: jp.cumulocity.com
+    date: '2026-05-18'
+  - label: us.cumulocity.com
+    date: '2026-05-18'
+  - label: cumulocity.com
+    date: '2026-05-18'
 ---
 In some cases, when a chart became out of sync, a warning was displayed to indicate that timestamps or data points might be outdated. However, once synchronization was restored, the warning was not cleared correctly, causing stale sync warnings to persist even though the data was up to date.
 

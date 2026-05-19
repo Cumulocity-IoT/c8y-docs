@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-05-14'
   - label: jp.cumulocity.com
     date: '2026-05-14'
+  - label: us.cumulocity.com
+    date: '2026-05-18'
+  - label: cumulocity.com
+    date: '2026-05-18'
 ---
 The "Asset properties" widget configuration now includes a live preview
 panel to help you visualize your widget before saving. When you select
