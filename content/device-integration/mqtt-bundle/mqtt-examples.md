@@ -669,7 +669,7 @@ Use the following values for a successful certificate-based connection:
 * Set `BROKER_URL` to `ssl://<your tenant domain>:8883`.
 * Set `CLIENT_ID` to the common name of the device certificate.
 * The certificate common name must not contain `:`. For details, refer to [MQTT ClientId](#mqtt-clientid).
-* Keep the `"d:"` prefix in `new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence())`.
+* Keep the `"d:"` prefix in `new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence())`, because it identifies device connections in {{< product-c8y-iot >}}.
 
 The device can now publish and subscribe as a standard device. Note that before the first connect no other actions are required, for example, creating a user. The user is created during the [auto registration](/device-certificate-authentication/device-certificates/) process.
 
