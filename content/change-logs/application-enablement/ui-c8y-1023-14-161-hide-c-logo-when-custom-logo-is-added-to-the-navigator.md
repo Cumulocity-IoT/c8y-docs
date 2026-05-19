@@ -1,6 +1,6 @@
 ---
 date: ""
-title: hide "C" logo when custom logo is added to the navigator in branding (#12025) [GRAFT][release/y2026] (#12049)
+title: Custom logo in navigator hides the default cumulocity symbol in the illustration
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
