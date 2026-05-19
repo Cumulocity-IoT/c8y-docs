@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66854
 version: 1023.82.1
 ---
-When adding a custom logo to the navigator through branding settings, the default Cumulocity "C" logo in the illustration is hidden.
+When adding a custom logo to the navigator through the branding settings, the default Cumulocity "C" logo in the illustration is now hidden.
