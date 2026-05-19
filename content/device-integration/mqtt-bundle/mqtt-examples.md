@@ -664,6 +664,13 @@ private MqttClient connect() throws MqttException {
 }
 ```  
 
+Use the following values for a successful certificate-based connection:
+
+* Set `BROKER_URL` to `ssl://<your tenant domain>:8883`.
+* Set `CLIENT_ID` to the common name of the device certificate.
+* Do not use `:` in the certificate common name. For details, see [MQTT ClientId](#mqtt-clientid).
+* Keep the `"d:"` prefix in `new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence())`.
+
 The device can now publish and subscribe as a standard device. Note that before the first connect no other actions are required, for example, creating a user. The user is created during the [auto registration](/device-certificate-authentication/device-certificates/) process.
 
 {{< c8y-admon-info >}}
