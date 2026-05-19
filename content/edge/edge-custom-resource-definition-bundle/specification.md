@@ -62,8 +62,10 @@ c8yedge config --set email=<email-address>
 Name of the Kubernetes secret containing the Cumulocity admin user password for both the Management tenant and the Edge tenant. This secret must contain a key named `INITIAL_C8Y_ADMIN_PASSWORD` with the initial password.
 
 **Important**: The password must be at least 8 letters long.
+
 **Info**: This value is used only during the Edge installation and can’t be changed for existing installations. All subsequent password changes must be made via the [user interface](/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API.
-**Info**: The Edge operator retrieves this secret from the **EDGE-CR-NAMESPACE**. Ensure that this secret is created before initiating the Edge deployment process.
+
+**Info**: The Edge operator retrieves this secret from the `EDGE-CR-NAMESPACE`. Ensure that this secret is created before initiating the Edge deployment process.
 
 
 
@@ -78,7 +80,7 @@ This secret must contain two keys:
     - **Intermediate certificate(s):** These certificates link your end-entity certificate to the trusted root certificate. If there are multiple intermediate certificates, they must be ordered correctly as well.
     - **Root CA certificate:** This is the certificate for the Certificate Authority (CA) that is trusted by browsers and other clients. It's generally included last in the chain.
 
-**Info**: The Edge operator retrieves this secret from the **EDGE-CR-NAMESPACE**. Ensure that this secret is created before initiating the Edge deployment or update process.
+**Info**: The Edge operator retrieves this secret from the `EDGE-CR-NAMESPACE`. Ensure that this secret is created before initiating the Edge deployment or update process.
 
 If you used **c8yedge** tool to install, you can configure this field using the below command: 
 ```shell
@@ -122,7 +124,8 @@ Name of the Kubernetes secret containing the TLS/SSL private key and certificate
     - **Root CA certificate:** This is the certificate for the Certificate Authority (CA) that is trusted by browsers and other clients. It's generally included last in the chain.
 
 **Info**: You can also reuse the secret name provided in the `spec.tlsSecretName` provided that the TLS/SSL certificate it references is issued by an intermediate Certificate Authority (CA) within your organization and can be added to the trusted certificate list of your Cumulocity cloud tenant.
-**Info**: The Edge operator retrieves this secret from the **EDGE-CR-NAMESPACE**. Ensure that this secret is created before initiating the Edge deployment or update process.
+
+**Info**: The Edge operator retrieves this secret from the `EDGE-CR-NAMESPACE`. Ensure that this secret is created before initiating the Edge deployment or update process.
 
 See [Registering Edge in the cloud tenant](/edge/connecting-edge-to-cloud/#register-edge-on-cloud) for more details.
 
