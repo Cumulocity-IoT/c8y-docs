@@ -664,7 +664,7 @@ private MqttClient connect() throws MqttException {
 }
 ```  
 
-Use the following values for a successful certificate-based connection:
+Use the following values for a successful certificate-based connection.
 
 * Set `BROKER_URL` to `ssl://<your tenant domain>:8883`.
 * Set `CLIENT_ID` to the common name of the device certificate.
