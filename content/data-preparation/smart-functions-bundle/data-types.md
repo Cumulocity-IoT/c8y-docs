@@ -21,13 +21,13 @@ A `DeviceMessage` represents a message received from a device transport.
 
 ### {{< product-c8y-iot >}} Objects {#cumulocity-objects}
 
-When you return objects from `onMessage`, you return one of four domain object types: `Measurement`, `Event`, `Alarm`, or `Operation`. All four share the same common fields and differ only in their payload structure.
+When you return objects from `onMessage`, you return one of five domain object types: `Measurement`, `Event`, `Alarm`, `Operation`, or `Managed object`. All five share the same common fields and differ only in their payload structure.
 
 #### Common fields {#common-fields}
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `cumulocityType` | `string` | Yes | Discriminator for the object type. One of: `"measurement"`, `"event"`, `"alarm"`, `"operation"`. |
+| `cumulocityType` | `string` | Yes | Discriminator for the object type. One of: `"measurement"`, `"event"`, `"alarm"`, `"operation"`, `"managedObject"`. |
 | `payload` | `object` | Yes | The object data, in the same shape as the {{< product-c8y-iot >}} REST API, but without the source field. |
 | `externalSource` | `ExternalId[]` | Yes | One or more external IDs (externalId and type pair) identifying the target device. The platform looks these up to find the {{< product-c8y-iot >}} device. |
 | `destination` | `string` | No | Advanced. Destination for the object. Defaults to `"cumulocity"`, to create the object in the operational store. |
@@ -80,4 +80,25 @@ An operation represents a request to perform an action on a device, such as rest
 | `status` | `"PENDING"` \| `"SUCCESSFUL"` \| `"FAILED"` \| `"EXECUTING"` | No | The operation status. |
 | `description` | `string` | No | Human-readable description. |
 | `[fragment: string]` | `any` | No | Custom fragments (for example, `c8y_Restart` to issue a restart operation). |
+
+#### Managed object {#managed-object}
+
+A managed object update applies an update to an existing managed object (MO) in the {{< product-c8y-iot >}} inventory. Use this type to update managed object details and custom fragments on a device or asset.
+
+The external ID you provide in `externalSource` is used to identify the target managed object. If no managed object exists for that external ID, the platform creates one automatically before applying the update.
+
+Every field in the Managed Object API is optional, so you only need to include the fields you want to change. To remove a fragment, set its value to `null`.
+
+{{< c8y-admon-important >}}
+Managed object updates are designed for updating existing managed objects, not as the primary way to create new managed objects. The `managedObject` type does not have the ability to make hierarchy changes (for example, assigning child devices or assets).
+{{< /c8y-admon-important >}}
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `name` | `string` | No | The display name of the managed object. |
+| `owner` | `string` | No | The owner of the managed object. |
+| `type` | `string` | No | The managed object type. |
+| `c8y_IsDevice` | `{}` | No | Marks the managed object as a device. Set to an empty object to add this marker. Set to `null` to remove it. |
+| `c8y_SupportedOperations` | `string[]` | No | List of operation types the device supports. |
+| `[fragment: string]` | `any` | No | Any custom fragment to add, update, or remove. Set to `null` to remove a fragment. |
 

@@ -155,6 +155,68 @@ export function onMessage(msg, context) {
 
 ---
 
+### Update a managed object {#update-managed-object}
+
+Apply an update to a managed object to edit its details. The platform identifies the managed object by the external ID and only updates the fields you include.
+
+**Example input** (`msg.payload` decoded as UTF-8):
+
+```json
+{ "deviceId": "SN-005", "name": "Sensor 5", "firmwareVersion": "2.1.0", "hwModel": "SensorX" }
+```
+
+**Function**:
+
+```javascript
+export function onMessage(msg, context) {
+  const data = JSON.parse(new TextDecoder("utf-8").decode(msg.payload));
+
+  return [{
+    cumulocityType: "managedObject",
+    payload: {
+      name: data.name,
+      c8y_Firmware: { version: data.firmwareVersion },
+      c8y_Hardware: { model: data.hwModel }
+    },
+    externalSource: [{ externalId: data.deviceId, type: "c8y_Serial" }]
+  }];
+}
+```
+
+**Output**: one `managedObject` update for device `SN-005`, changing the name to `Sensor 5`, and setting the `c8y_Firmware` and `c8y_Hardware` fragments. All other fragments on the managed object are unchanged.
+
+---
+
+### Remove a fragment from a managed object {#remove-managed-object-fragment}
+
+Set a fragment to `null` to remove it from a managed object.
+
+**Example input** (`msg.payload` decoded as UTF-8):
+
+```json
+{ "deviceId": "SN-006" }
+```
+
+**Function**:
+
+```javascript
+export function onMessage(msg, context) {
+  const data = JSON.parse(new TextDecoder("utf-8").decode(msg.payload));
+
+  return [{
+    cumulocityType: "managedObject",
+    payload: {
+      c8y_Firmware: null
+    },
+    externalSource: [{ externalId: data.deviceId, type: "c8y_Serial" }]
+  }];
+}
+```
+
+**Output**: one `managedObject` update. The `c8y_Firmware` fragment is removed from the managed object for device `SN-006`.
+
+---
+
 ### Parse binary data directly {#parse-binary}
 
 Extract values directly from a binary payload with a known fixed structure, without text decoding.
