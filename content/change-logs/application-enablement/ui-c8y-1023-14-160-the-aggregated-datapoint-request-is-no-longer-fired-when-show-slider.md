@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Aggregated data point requests no longer fire when the slider is disabled
+title: Aggregated data point requests now skipped when the slider is disabled
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
