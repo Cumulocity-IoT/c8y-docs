@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-66883
 version: 1023.82.3
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-66883] restore AngularJS event list implementation
-(#12069)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12069)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66883]:
-https://cumulocity.atlassian.net/browse/MTM-66883?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Lukasz Janusz <114157358+luja-c8y@users.noreply.github.com>
-Co-authored-by: Lukasz Janusz <lukasz.janusz@cumuloicty.com>
+Restored the AngularJS event list in @c8y/ng1-modules, removed during the migration to the new Event list. Its removal broke custom applications scaffolded before the migration that still reference the old module in their own bootstrap, causing build failures after a Web SDK upgrade.
