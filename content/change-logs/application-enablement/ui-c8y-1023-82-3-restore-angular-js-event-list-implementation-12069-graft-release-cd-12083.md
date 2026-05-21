@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66883
 version: 1023.82.3
 ---
-Restored the AngularJS event list in @c8y/ng1-modules, removed during the migration to the new Event list. Its removal broke custom applications scaffolded before the migration that still reference the old module in their own bootstrap, causing build failures after a Web SDK upgrade.
+The AngularJS event list in @c8y/ng1-modules has been restored, which was removed during the migration to the new event list. Its removal broke custom applications scaffolded before the migration that still reference the old module in their own bootstrap, causing build failures after a Web SDK upgrade.
