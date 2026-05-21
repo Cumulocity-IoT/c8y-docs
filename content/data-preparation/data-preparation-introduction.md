@@ -45,9 +45,9 @@ The diagram below illustrates the Dataprep Service flows within a tenant.
 
 ## How Data Preparation works {#how-it-works}
 
-Data Preparation listens for incoming device messages on [MQTT Service](/device-integration/mqtt-service/) topics. When a message arrives, it evaluates all active Rules whose topic subscriptions match the message topic. Each matching Rule runs its smart functions against the payload and the resulting Cumulocity objects — measurements, events, alarms, or managed objects — are forwarded to the platform and persisted.
+Data Preparation listens for incoming device messages on [MQTT Service](/device-integration/mqtt-service/) topics. When a message arrives, it evaluates all active Rules subscribed to patterns that match the message topic. Each matching Rule runs its smart functions against the payload and the resulting Cumulocity objects — measurements, events, alarms, or managed objects — are forwarded to the platform and persisted.
 
-Multiple active Rules can subscribe to the same topic and execute independently. A single message can trigger multiple Rules, and each Rule can produce multiple output objects.
+Multiple active Rules can subscribe to patterns that match the same topic and execute independently. A single message can trigger multiple Rules, and each Rule can produce multiple output objects.
 
 ## Key concepts {#key-concepts}
 
