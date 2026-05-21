@@ -71,7 +71,7 @@ The data point library is managed via the Cockpit UI. The entries are stored in 
 
 ### Data Preparation {#data-preparation}
 
-Data Preparation is a {{< product-c8y-iot >}} component that processes inbound device messages before they enter the platform's operational store. It is used to decode device payloads from any transport, map them to {{< product-c8y-iot >}} domain objects, enrich or filter them, and route the result for storage. Data Preparation is built around [Data Preparation rules](#data-preparation-rule), each of which carries a [smart function](#smart-function) that performs the actual processing.
+Data Preparation is a {{< product-c8y-iot >}} component that processes inbound device messages before they enter the platform's operational store. It is used to decode device payloads from any transport, map them to {{< product-c8y-iot >}} domain objects, enrich or filter them, and send the result into the platform. Data Preparation is built around [Data Preparation rules](#data-preparation-rule), each of which carries a [smart function](#smart-function) that performs the actual processing.
 
 See also [Data Preparation](/data-preparation/) in the documentation.
 
