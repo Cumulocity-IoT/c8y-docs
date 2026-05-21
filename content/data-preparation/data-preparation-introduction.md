@@ -59,12 +59,12 @@ Smart functions provide a lightweight way to extend the functionality of Cumuloc
 
 A Rule is the deployable unit in Data Preparation. It pairs a smart function with an MQTT topic subscription and an activation state. When active, a Rule processes every message posted to its subscribed topic. Rules can be created, tested with sample data, activated, deactivated, and deleted through the Data Preparation application.
 
-For details, see [Rule](#).
+For details, see [Rule](/data-preparation/rule-editor/).
 
 ### Test data {#test-data}
 
 Test data is sample device payload that you use to validate your smart fnction before activating a Rule. You provide an input payload in the device's native format and run it through the smart function to see the resulting Cumulocity output side by side. You can define multiple test cases per Rule, add payloads manually, or capture live messages directly from an MQTT topic.
 
-For details, see [Rule editor](#).
+For details, see [Rule editor](/data-preparation/rule-editor/#test-data).
 
 
