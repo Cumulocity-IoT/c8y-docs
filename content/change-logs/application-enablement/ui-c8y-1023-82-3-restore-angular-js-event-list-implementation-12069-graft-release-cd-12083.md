@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Restored AngularJS Event list implementation
+title: Restored AngularJS event list
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
