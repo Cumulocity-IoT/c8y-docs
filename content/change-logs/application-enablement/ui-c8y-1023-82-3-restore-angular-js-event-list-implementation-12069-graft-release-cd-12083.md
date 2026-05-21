@@ -1,6 +1,6 @@
 ---
 date: ""
-title: restore AngularJS event list implementation (#12069) [GRAFT][release/cd] (#12083)
+title: Restored AngularJS Event list implementation
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
