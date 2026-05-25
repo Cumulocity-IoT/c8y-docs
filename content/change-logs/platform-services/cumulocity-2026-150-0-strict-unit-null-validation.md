@@ -20,6 +20,8 @@ environment_availability:
     date: '2026-05-20'
   - label: jp.cumulocity.com
     date: '2026-05-20'
+  - label: us.cumulocity.com
+    date: '2026-05-25'
 ---
 As [announced earlier](/change-logs/?component=.component-OG_650_b2#cumulocity-undefined-pre-announce-unit-null-validation), {{< product-c8y-iot >}} now strictly validates unit values in measurement fragments.
 

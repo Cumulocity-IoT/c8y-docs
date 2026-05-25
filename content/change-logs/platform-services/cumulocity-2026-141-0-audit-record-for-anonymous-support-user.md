@@ -20,6 +20,8 @@ environment_availability:
     date: '2026-05-20'
   - label: jp.cumulocity.com
     date: '2026-05-20'
+  - label: us.cumulocity.com
+    date: '2026-05-25'
 ---
 The audit logging logic for **User login** actions has been improved to ensure full visibility during subtenant access.
 

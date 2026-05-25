@@ -16,5 +16,9 @@ version: 1023.82.3
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-05-22'
+  - label: apj.cumulocity.com
+    date: '2026-05-25'
+  - label: jp.cumulocity.com
+    date: '2026-05-25'
 ---
 The former AngularJS event list in @c8y/ng1-modules has been restored. It was removed during the migration to the new Angular event list. Its removal broke custom applications scaffolded before the migration that still reference the old module in their own bootstrap, causing build failures after a Web SDK upgrade.

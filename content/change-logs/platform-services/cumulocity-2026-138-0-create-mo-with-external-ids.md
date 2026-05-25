@@ -20,6 +20,8 @@ environment_availability:
     date: '2026-05-20'
   - label: jp.cumulocity.com
     date: '2026-05-20'
+  - label: us.cumulocity.com
+    date: '2026-05-25'
 ---
 
 {{< product-c8y-iot >}} now provides the ability to bind external identifiers within managed object

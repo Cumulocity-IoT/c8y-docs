@@ -22,5 +22,9 @@ environment_availability:
     date: '2026-05-21'
   - label: jp.cumulocity.com
     date: '2026-05-21'
+  - label: us.cumulocity.com
+    date: '2026-05-25'
+  - label: cumulocity.com
+    date: '2026-05-25'
 ---
 When adding a custom logo to the navigator through the branding settings, the default Cumulocity "C" logo in the illustration is now hidden.
