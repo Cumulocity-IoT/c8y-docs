@@ -35,7 +35,7 @@ This endpoint requires the `currentPassword` field for validation.
 
 ## Timeline
 
-In Q4 2025 for the SaaS instances and in 2026 for the yearly releases, the `password` field in general user endpoints will be ignored.
+In Q4 2026 for the SaaS instances and in 2027 for the yearly releases, the `password` field in general user endpoints will be ignored.
 
 {{< c8y-admon-important >}}
 Update all client applications and scripts to use the dedicated password endpoint. This transition is mandatory to ensure enhanced security and prevent unauthorized password modifications.
