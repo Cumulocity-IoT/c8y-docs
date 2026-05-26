@@ -11,9 +11,9 @@ The results in this section are to give a very rough impression of what can be a
 When sizing your Edge installation, execute tests with realistic data against your actual application before committing to any specific hardware.
 {{< /c8y-admon-caution >}}
 
-These test scenarios drive a number of MQTT clients sending measurements into the platform. They are connecting to the [MQTT service](/device-integration/mqtt-service) using the [JSON via MQTT protocol](/smartrest/json-via-mqtt/). All measurements go into Streaming Analytics, and the test asserts that they are received at the rate they are sent into the platform.
+These end-to-end test scenarios drive a number of MQTT clients sending measurements into the platform. The clients are connecting to the [MQTT service](/device-integration/mqtt-service) and sending measurements using the [JSON via MQTT protocol](/smartrest/json-via-mqtt/). All measurements are received and processed by Streaming Analytics, and the test asserts that they are received at the rate they are sent into the platform.
 
-The **Narrow** scenario features a small number of MQTT clients sending a very high rate of measurements into the platform. The **Wide** scenario features a very large number of devices sending 1 measurement/s into the platform. The test measures how far it can scale the scenario just short of running out of CPU and RAM.
+The **Narrow** scenario features a small number of MQTT clients sending a very high rate of measurements into the platform. The **Wide** scenario features a very large number of devices sending 1 measurement/s into the platform. The maximum achievable result is the highest result that could be achieved without Edge running out of CPU and RAM.
 
 | Scenario                                       | CPU threads | RAM  | Maximum achievable result |
 |------------------------------------------------|-------------|------|-----------------------------|
