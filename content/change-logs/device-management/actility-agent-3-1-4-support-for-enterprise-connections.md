@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-05-18'
   - label: jp.cumulocity.com
     date: '2026-05-18'
+  - label: us.cumulocity.com
+    date: '2026-05-25'
+  - label: cumulocity.com
+    date: '2026-05-26'
 ---
 The Actility agent now supports device routing for both ThingPark Wireless and Enterprise connections.
 When registering a device in {{< product-c8y-iot >}} that already exists in the connected ThingPark Enterprise account, the agent automatically updates device's routing configuration in ThingPark to include the new route if it does not yet exist and preserve any previously assigned routes.
