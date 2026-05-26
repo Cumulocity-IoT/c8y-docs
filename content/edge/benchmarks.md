@@ -13,7 +13,7 @@ When sizing your Edge installation, execute tests with realistic data against yo
 
 These test scenarios drive a number of MQTT clients sending measurements into the platform. They are connecting to the [MQTT service](/device-integration/mqtt-service) using the [JSON via MQTT protocol](/smartrest/json-via-mqtt/). All measurements go into Streaming Analytics, and the test asserts that they are received at the rate they are sent into the platform.
 
-The **Narrow** scenario features a small number of MQTT clients sending a very high rate of measurements into the platform. The **Wide** scenario features a very large number of devices sending 1 measurement/s into the platform. In both of these the test measures how far it can push the scenario just short of running out of CPU and RAM.
+The **Narrow** scenario features a small number of MQTT clients sending a very high rate of measurements into the platform. The **Wide** scenario features a very large number of devices sending 1 measurement/s into the platform. The test measures how far it can scale the scenario just short of running out of CPU and RAM.
 
 | Scenario                                       | CPU threads | RAM  | Maximum achievable result |
 |------------------------------------------------|-------------|------|-----------------------------|
