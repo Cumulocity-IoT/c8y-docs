@@ -16,7 +16,7 @@ These test scenarios drive a number of MQTT clients sending measurements into th
 The **Narrow** scenario features a small number of MQTT clients sending a very high rate of measurements into the platform. The **Wide** scenario features a very large number of devices sending 1 measurement/s into the platform. In both of these we measure the maximum that we can push the scenario before running out of resources.
 
 | Scenario                                       | CPU threads | RAM  | Maximum result | 
-----------------------------------------------------------------------------------------------------
+|------------------------------------------------|-------------|------|-----------------------------|
 | **Narrow** - 10 clients connected              | 8           | 16GB | 2500 measurements per second per client |
 |                                                | 16          | 32GB | 4750 measurements per second per client |
 | **Wide** - Each client sending 1 measurement/s | 8           | 16GB | 1200 connected clients |
