@@ -13,7 +13,7 @@ build_artifact:
   - value: tc-hc5Tfixeqqei
     label: mqtt-service
 ticket: MTM-66683
-version: 3000.0.8
+version: 2026.0.7
 ---
 
 The {{< product-c8y-iot >}} MQTT Service now supports the MQTT _Will Message_ feature for both MQTT version 3.1.1 and 5.0 devices.
