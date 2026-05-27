@@ -6,14 +6,14 @@ sector:
   - edge
 ---
 {{< c8y-admon-caution >}}
-The results in this section are to give a very rough impression of what can be achieved with a {{< product-c8y-iot >}} Edge installation, on given hardware. They are based on benchmark tests run internally that can never precisely mimic the variety of realistic applications for an Edge installation, nor mimic the exact hardware used in your environment.
+These internal benchmark results are for illustrative purposes only and cannot precisely replicate your specific hardware or application behavior.
 
-When sizing your Edge installation, execute tests with realistic data against your actual application before committing to any specific hardware.
+Validate your sizing requirements by testing your actual application with realistic data and measuring the actual resource requirements.
 {{< /c8y-admon-caution >}}
 
-These end-to-end test scenarios drive a number of MQTT clients sending measurements into the platform. The clients are connecting to the [MQTT service](/device-integration/mqtt-service) and sending measurements using the [JSON via MQTT protocol](/smartrest/json-via-mqtt/). All measurements are received and processed by Streaming Analytics, and the test asserts that they are received at the rate they are sent into the platform.
+These end-to-end test scenarios drive a number of MQTT clients sending measurements into the platform. The clients are connecting to the [MQTT service](/device-integration/mqtt-service) and sending measurements using the [JSON via MQTT protocol](/smartrest/json-via-mqtt/). All measurements are received and processed by Streaming Analytics at the rate they are sent into the platform.
 
-The **Narrow** scenario features a small number of MQTT clients, each of them sending an equal and high rate of measurements per second into the platform, recording the aggregate throughput across all clients. The **Wide** scenario features a very large number of devices sending 1 measurement per second into the platform. The maximum achievable result is the highest result that could be achieved without Edge running out of CPU and RAM.
+The **Narrow** scenario features a small number of MQTT clients, each of them sending an equal and high rate of measurements per second into the platform, recording the aggregate throughput across all clients. The **Wide** scenario features a very large number of devices each of them sending 1 measurement per second into the platform. The maximum achievable result is the best result that could be achieved without Edge running out of CPU and RAM.
 
 | Scenario                                       | CPU threads | RAM  | Maximum achievable result |
 |------------------------------------------------|-------------|------|-----------------------------|
