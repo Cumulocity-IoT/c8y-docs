@@ -140,7 +140,7 @@ Ask the AI to generate test cases for your current code. The AI creates tests th
 
 To protect your test suite, the AI only adds or modifies tests — it never deletes existing tests. If you ask the AI to remove a test, it explains this limitation and offers to create a new test with updated content instead.
 
-When the number of tests grows large, the AI may offer to **consolidate** related tests by grouping similar scenarios into a single test with multiple inputs, while leaving the original tests untouched for you to clean up manually.
+When the number of tests grows large, the AI can offer to **consolidate** related tests by grouping similar scenarios into a single test with multiple inputs, while leaving the original tests untouched for you to clean up manually.
 
 ### Limitations {#limitations}
 
