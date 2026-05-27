@@ -69,7 +69,7 @@ Good prompts include:
 
 - Vague requests without sample data or context (for example, *"Write me some code"*).
 - Prompts that assume the AI knows your specific device without providing its data format.
-- Requests to use features not supported by the smart function API — the AI will inform you if something is not possible.
+- Requests to use features not supported by the smart function API — the AI informs you if something is not possible.
 
 ### Using suggestions {#using-suggestions}
 
