@@ -26,7 +26,7 @@ Custom applications that reference the removed modules in their AngularJS bootst
 
 The build fails with a `Module not found` error for these paths.
 
-**Impact**: Applications scaffolded from the Device Management or Cockpit application before the event list was migrated to Angular still contain these imports and are affected. The standard Device Management and Cockpit applications are not affected.
+**Impact**: Custom applications scaffolded from the Device Management or Cockpit application before the event list was migrated to Angular still contain these imports and are affected. The standard Device Management and Cockpit applications are not affected.
 
 **Migration**: Remove the two imports from your `ng1.ts`. The Angular event list is provided by:
 
