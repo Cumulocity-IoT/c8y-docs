@@ -6,9 +6,9 @@ sector:
   - device_management
 ---
 
-### Automatically created devices {#automatically-created-devices}
-
 When a data preparation rule produces a message containing an external ID that does not yet exist in {{< product-c8y-iot >}}, the platform automatically creates a new device and associates that external ID with it. This ensures that data flowing through your rules is never lost due to a missing device.
+
+### Automatically created devices {#automatically-created-devices}
 
 Each automatically created device is configured with the following properties:
 
