@@ -55,8 +55,8 @@ For more information about the structure and configuration options available in 
 
 ### Configuring the Edge operator with a proxy and trusted TLS/SSL certificates
 
-You can configure {{< product-c8y-iot >}} Edge operator to:
-  - route outbound internet traffic through the proxy server, when it is deployed behind a proxy server
+You can configure the Edge operator to:
+  - route outbound internet traffic through a proxy server when it is deployed behind a proxy
   - trust the TLS/SSL certificates presented by external endpoints
 
 To configure proxy settings and trusted certificates, create or update a ConfigMap in the `c8yedge` namespace (or the namespace where Edge is deployed) with the required configuration keys described below:
@@ -69,7 +69,7 @@ To configure proxy settings and trusted certificates, create or update a ConfigM
       - Kubernetes Service CIDR (Cluster service IP address range)
       - Any additional domains, hosts or IP addresses that should bypass the proxy
       Example: `127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain names, e.g. management-myown.iot.com,myown.iot.com>,<kubernetes cluster IP range, e.g. 10.43.0.0/16>`
-  - `ca.crt` - One or more certificates in PEM format that the Edge should trust in addition to the certificates already included in the system trust store. Multiple certificates can be provided by concatenating them into a single PEM bundle.
+  - `ca.crt` - One or more certificates in PEM format that the Edge operator and the Edge should trust in addition to the certificates already included in the system trust store. Multiple certificates can be provided by concatenating them into a single PEM bundle.
 
 The following example shows a ConfigMap with proxy settings and trusted certificates:
 
