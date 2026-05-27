@@ -1,6 +1,6 @@
 ---
 weight: 7
-title: AI assistant chat
+title: AI assistant
 layout: bundle
 outputs:
   - html
@@ -9,7 +9,7 @@ sector:
   - device_management
 ---
 
-The AI assistant chat is the primary interface for creating and refining smart functions in Data Preparation. Instead of writing code manually, you describe what your device data looks like and what you want to achieve, and the AI generates the JavaScript transformation logic for you.
+The AI assistant is the primary interface for creating and refining smart functions in Data Preparation. Instead of writing code manually, you describe what your device data looks like and what you want to achieve, and the AI generates the JavaScript transformation logic for you.
 
 {{< c8y-admon-important >}}
 AI-generated code is produced on a best-effort basis. Always review the generated smart function and test cases before deploying a rule to production. Verify that the code handles your data correctly by running the provided tests and inspecting the outputs.
@@ -19,9 +19,9 @@ The AI assistant is powered by the [AI Agent Manager](/ai/aim-introduction/). To
 
 ### Overview {#overview}
 
-The AI assistant chat panel is on the left side of the rule editor. You interact with it by typing messages in the text box or by selecting one of the suggested actions. The AI responds with explanations in the chat and updates the smart function code and test cases directly in their respective panels.
+The AI assistant panel is on the left side of the rule editor. You interact with it by typing messages in the text box or by selecting one of the suggested actions. The AI responds with explanations in the chat and updates the smart function code and test cases directly in their respective panels.
 
-When you open a new rule, the AI greets you and offers several starting points:
+When you create/open a new rule, the AI greets you and offers several starting points:
 
 - **Convert to a Cumulocity measurement** — generate code to map device data to measurements.
 - **Convert to a Cumulocity alarm** — generate code to create alarms from device conditions.
@@ -140,7 +140,7 @@ Ask the AI to generate test cases for your current code. The AI creates tests th
 
 To protect your test suite, the AI only adds or modifies tests — it never deletes existing tests. If you ask the AI to remove a test, it explains this limitation and offers to create a new test with updated content instead.
 
-When the number of tests grows large, the AI can offer to **consolidate** related tests by grouping similar scenarios into a single test with multiple inputs, while leaving the original tests untouched for you to clean up manually.
+When the number of tests grows large, the AI can offer to consolidate related tests by grouping similar scenarios into a single test with multiple inputs, while leaving the original tests untouched for you to clean up manually.
 
 ### Limitations {#limitations}
 
@@ -148,6 +148,5 @@ The AI assistant is designed to help you work efficiently while protecting your 
 
 - **Tests are protected** — the AI adds and updates tests but never deletes them. Your test suite only grows, ensuring previously validated scenarios remain covered.
 - **Code stays within the smart function API** — the AI only generates code that uses the supported [smart function interfaces](/data-preparation/smart-functions/). If you request something outside the API capabilities, the AI informs you of the limitation.
-- **Context is per conversation** — the AI remembers the current conversation context. If you navigate away and return, the AI reads the current state of the code and tests, but does not recall prior conversations.
 - **Best-effort generation** — while the AI produces high-quality code for most IoT scenarios, always run tests and review the output before deploying. Complex or unusual data formats may require additional prompts or manual adjustments.
-- **Supported AI model** — the assistant uses the AI model configured in your tenant's AI Agent Manager. The quality of responses depends on the configured provider. Anthropic Claude is the tested and recommended provider.
+- **Recommended AI model** — the assistant uses the AI model configured in your tenant's AI Agent Manager. The quality of responses depends on the configured provider. Anthropic’s claude-sonnet-4-5 is the recommended and tested model.
