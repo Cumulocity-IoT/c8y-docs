@@ -24,7 +24,7 @@ In the rule editor, you have two options:
 - Click **Save draft** to save the current code and test data without deploying. The rule continues to run (if deployed) with the previously deployed version.
 - Click **Save and deploy** to save the current draft and start deploying it. The rule begins processing live messages immediately. If the rule was not previously deployed, it becomes active. If it was already deployed, the deployed version is updated to the current draft.
 
-When a rule is first deployed and a measurement is produced for a device that the platform has not seen before, a new device is created automatically.
+When a rule is first deployed and a measurement is produced for a device that the platform has not seen before, a new device is created automatically. <!-- TODO: Add link once page exists. See [Creating devices](/data-preparation/creating-devices/) for more details about how devices are created. -->
 
 ### Deployment status {#deployment-status}
 
