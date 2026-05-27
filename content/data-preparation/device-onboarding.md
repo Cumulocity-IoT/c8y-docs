@@ -1,18 +1,14 @@
 ---
-weight: 50
+weight: 55
 title: Device onboarding
 layout: bundle
 sector:
   - device_management
 ---
 
-When a data preparation rule processes an inbound message, it produces output containing an external ID that identifies the source device. If that external ID does not yet exist in {{< product-c8y-iot >}}, the platform automatically creates a new device and associates the external ID with it.
+### Automatically created devices {#automatically-created-devices}
 
-### Automatic device creation {#automatic-device-creation}
-
-A device is created automatically whenever a data preparation rule produces a message referencing an external ID that is not already registered in the platform. This ensures that data flowing through your rules is never lost due to a missing device.
-
-### Device properties {#device-properties}
+When a data preparation rule produces a message containing an external ID that does not yet exist in {{< product-c8y-iot >}}, the platform automatically creates a new device and associates that external ID with it. This ensures that data flowing through your rules is never lost due to a missing device.
 
 Each automatically created device is configured with the following properties:
 
