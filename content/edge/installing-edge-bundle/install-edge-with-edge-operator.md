@@ -53,54 +53,64 @@ This command will complete immediately, and the installation will proceed in the
 
 For more information about the structure and configuration options available in the Edge CR, see [Edge custom resource](/edge/edge-custom-resource-definition/).
 
-### Configuring proxy
+### Configuring the Edge operator with a proxy and trusted TLS/SSL certificates
 
-When {{< product-c8y-iot >}} Edge is deployed behind a proxy, it must be configured to communicate with external endpoints over the internet through the proxy server.
-To configure Edge to use a proxy, you must create or update a ConfigMap named `custom-environment-variables` in the c8yedge namespace (or the one you deployed Edge into) with the required proxy settings. The keys `http_proxy`, `https_proxy` and `socks_proxy` must be set to the URLs of the HTTP, HTTPS and Socks proxies, respectively. The key `no_proxy` must be set to specify a comma-separated list of domain suffixes, IP addresses, or CIDR ranges that Edge should bypass the proxy server for.
+When {{< product-c8y-iot >}} Edge is deployed behind a proxy server, the Edge operator must be configured to route outbound internet traffic through the proxy and to trust the TLS/SSL certificates presented by external endpoints.
 
-Here is an example of a ConfigMap with proxy settings:
+To configure proxy settings and additional trusted certificates, create or update a ConfigMap in the `c8yedge` namespace (or the namespace where Edge is deployed) with the required configuration keys:
+  - `http_proxy` - URL of the HTTP proxy server
+  - `https_proxy` - URL of the HTTPS proxy server
+  - `socks_proxy` - URL of the SOCKS proxy server
+  - `no_proxy` - Comma-separated list of domain suffixes, IP addresses, or CIDR ranges that should bypass the proxy. This list must include:
+      - {{< management-tenant >}} and the Edge tenant domain names
+      - Kubernetes Pod CIDR (Cluster pod IP address range)
+      - Kubernetes Service CIDR (Cluster service IP address range)
+      - any other domains, hosts or IP addresses that should not use the proxy
+      ```shell
+      127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain names, e.g. management-myown.iot.com,myown.iot.com>,<kubernetes cluster IP range, e.g. 10.43.0.0/16>
+      ```
+To configure additional trusted certificates, add the key `ca.crt` to the same ConfigMap. The value must contain one or more certificates in PEM format that Edge should trust in addition to the certificates already included in the system trust store. Multiple certificates can be provided by concatenating them into a single PEM bundle.
+
+The following example shows a ConfigMap with proxy settings and trusted certificates:
 
 ```yaml
 ##
-## An optional ConfigMap to configure the Edge operator with
-##    - Proxy details when accessing external endpoints through a Proxy
-##    - TLS/SSL certificates to trust
-##
-## http_proxy, https_proxy and optionally socks_proxy must be configured with the relevant URLs.
-## no_proxy must be configured with a comma-separated list of addresses or domains for which the proxy should be bypassed.
+## Optional ConfigMap used to configure:
+##   - Proxy settings for accessing external endpoints
+##   - Additional trusted TLS/SSL certificates
 ##
 
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  ## The name is fixed and cannot be changed.
-  name: custom-environment-variables
-  ## Namespace name into which you installed the Edge operator.
+  # Name of the ConfigMap
+  name: edge-operator-config
+  
+  # Namespace where the Edge operator is installed
   namespace: c8yedge
 data:
   http_proxy: <HTTP Proxy URL>
   https_proxy: <HTTPS Proxy URL>
   socks_proxy: <SOCKS Proxy URL>
 
-  ## A comma-separated list of addresses or domains for which the proxy will be bypassed.
-  ## This must be configured with the specified entries, Edge domain name, Kubernetes Pod CIDR (Cluster Pod IP Address Range), 
-  ## Kubernetes Service CIDR (Cluster Service IP Address Range) and any other domains, hosts or IPs 
-  ## you want to bypass the proxy when accessed.
-  no_proxy: 127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain name, for example, myown.iot.com>,<kubernetes cluster IP range, for example, 10.43.0.0/16>
+  # Comma-separated list of domain suffixes, IP addresses, or CIDR ranges that should bypass the proxy
+  no_proxy: 127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain names, e.g. management-myown.iot.com,myown.iot.com>,<kubernetes cluster IP range, e.g. 10.43.0.0/16>
 
-  ## TLS/SSL certificates in PEM format that the Edge operator can trust, in addition to those included in the default system trust store.
-  ## You can provide multiple TLS/SSL certificates for trust by combining them into a single string.
-  ca.crt: <CA-CERTIFICATES TO TRUST>
+  # Trusted TLS/SSL certificates in PEM format
+  ca.crt: |
+    <CA_CERTIFICATES_TO_TRUST>
 ```
 
-By configuring Edge with the appropriate proxy settings, you ensure that it can seamlessly communicate with external endpoints through the proxy server, allowing it to function effectively in environments where proxy usage is mandated.
+After creating or updating the ConfigMap, configure the Edge operator to use it by setting the `operatorConfigCMName` Helm value during installation or upgrade:
+```shell
+helm registry login registry.c8y.io --username="<Edge registry username>" --password="<Edge registry password>"
 
-The table below provides more information:
-
-|<div style="width:150px">Field</div>|Required|<div style="width:115px">Type</div>|Default|Description|
-|:---|:---|:---|:---|:---|
-|http_proxy|No|String||Specifies the URL of the HTTP proxy to be used for network connections.|
-|https_proxy|No|String||Specifies the URL of the HTTPS proxy to be used for secure network connections.|
-|socks_proxy|No|String||Specifies the URL of a SOCKS proxy.|
-|no_proxy|No|String||Specifies a comma-separated list of addresses or domains for which the proxy will be bypassed. This is configured with the specified entries, Edge domain name, Kubernetes Pod CIDR (Cluster Pod IP Address Range), Kubernetes Service CIDR (Cluster Service IP Address Range) and any other domains, hosts or IPs you want to bypass the proxy when accessed.|
-|ca.crt|No|String||TLS/SSL certificates in PEM format that the Edge operator can trust, in addition to those included in the default system trust store.<br>You can provide multiple TLS/SSL certificates for trust by combining them into a single string.|
+helm upgrade --install c8yedge-operator oci://registry.c8y.io/edge/helm-charts/cumulocity-iot-edge-operator \
+    --version={{< c8y-edge-current-version >}} \
+    --namespace c8yedge \
+    --create-namespace \
+    --set imageCredentials.username="<Edge registry username>" \
+    --set imageCredentials.password="<Edge registry password>" \
+    --set operatorConfigCMName="edge-operator-config" \
+    --wait
+```
