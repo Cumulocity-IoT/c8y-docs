@@ -9,4 +9,6 @@ sector:
   - device_management
 ---
 
-Rule editor.
+The rule editor is where you create and refine the smart function for a Data Preparation rule. It provides an AI assistant for code generation, a JavaScript code editor, and a test data panel for validating your transformation logic before deployment.
+
+Explore the topics below to learn about each part of the rule editor.
