@@ -14,7 +14,7 @@ Each automatically created device is configured with the following properties:
 
 | Property | Value |
 |----------|-------|
-| `name` | `Auto generated device for {externalIDType}/{externalID}` |
+| `name` | `Auto generated device for {type}/{externalId}` |
 | `type` | `c8y_GeneratedDeviceType` |
 | `c8y_IsDevice` | `{}` |
 | `com_cumulocity_model_Agent` | `{}` |
@@ -22,5 +22,5 @@ Each automatically created device is configured with the following properties:
 The external ID that triggered the creation is registered as an external identity for the new device.
 
 {{< c8y-admon-info >}}
-The properties of automatically created devices cannot be customized at this time.
+The properties of automatically created devices cannot be customized.
 {{< /c8y-admon-info >}}
