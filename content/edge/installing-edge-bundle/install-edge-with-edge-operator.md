@@ -84,7 +84,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   # Name of the ConfigMap
-  name: edge-operator-config
+  name: c8yedge-operator-config
   
   # Namespace where the Edge operator is installed
   namespace: c8yedge
@@ -111,6 +111,6 @@ helm upgrade --install c8yedge-operator oci://registry.c8y.io/edge/helm-charts/c
     --create-namespace \
     --set imageCredentials.username="<Edge registry username>" \
     --set imageCredentials.password="<Edge registry password>" \
-    --set operatorConfigCMName="edge-operator-config" \
+    --set operatorConfigCMName="c8yedge-operator-config" \
     --wait
 ```
