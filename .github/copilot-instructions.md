@@ -229,4 +229,29 @@ For each piece of content, verify:
 - Is formatting consistent with standards?
 - Are all UI elements properly formatted in bold?
 - Does it follow active voice and present tense?
+
+## Pull request review guidance
+
+When reviewing pull request changes, apply the following approach based on the file path.
+
+### Changelog files (`content/change-logs/**`)
+
+Use the rules in `.github/prompts/change-log-prompt.md`. Check for:
+
+- **Structure**: The body must follow the Context → Change → Impact flow as flowing paragraphs (no labels, no headings, no bullet lists).
+- **Length**: Maximum 2-3 paragraphs.
+- **Documentation link**: Required when the change relates to a documented feature.
+- **Style**: Active voice, present tense, sentence-style capitalization, bold for UI elements, correct variable shortcodes, American English.
+- **Prohibited patterns**: No "Context:", "Change:", or "Impact:" labels. No passive voice. No future tense ("will").
+
+### Regular documentation files (`content/**`)
+
+Use the rules in `.github/prompts/standard-review-prompt.md`. Check for:
+
+- **Headings**: Sentence-style capitalization, correct heading IDs (lowercase, hyphen-separated).
+- **Lists**: Numbered for sequential steps only; bulleted for non-sequential items; Oxford comma in series of 3 or more.
+- **Procedures**: Start with "To [action]" heading, end with a result description outside the list.
+- **Terminology**: Correct use of proper names, no prohibited terms, correct variable shortcodes for Cumulocity names.
+- **Formatting**: Bold for UI elements, italics for file names and paths, correct code formatting.
+- **Voice and tense**: Active voice, present tense, second person.
 ```

@@ -1,5 +1,6 @@
 ---
-agent: agent
+mode: agent
+applyTo: "content/**/*.md"
 ---
 
 Review the given text against the Cumulocity documentation style guide in .github/copilot-instructions.md.

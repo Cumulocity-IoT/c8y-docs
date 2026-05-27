@@ -1,6 +1,9 @@
 ---
-agent: agent
+mode: agent
+applyTo: "content/change-logs/**/*.md"
 ---
+
+## Writing a changelog entry
 
 Write a change log entry from the provided input following the Cumulocity documentation style guide in .github/copilot-instructions.md.
 
@@ -33,3 +36,30 @@ Include a link when the change relates to documented features or requires user a
 - Changes with significant installation or upgrade impacts
 
 Keep the entry concise but complete. Prioritize accuracy and user-relevant details over brevity.
+
+---
+
+## Reviewing a changelog entry
+
+When reviewing an existing changelog entry, check the following:
+
+### Structure
+- Does the body follow the Context → Change → Impact flow (without using those words as labels)?
+- Is it written as flowing paragraphs (not a list or separate sections with headings)?
+- Are there 2-3 paragraphs maximum?
+- If the change affects documented features, is a documentation link included at the end?
+
+### Style guide compliance
+Apply all rules from .github/copilot-instructions.md, including:
+- Active voice and present tense
+- Sentence-style capitalization
+- Bold formatting for UI elements
+- Correct variable shortcodes for Cumulocity product and company names
+- No prohibited terms (for example, "please", "blacklist", "clone")
+- American English spelling
+- Serial (Oxford) commas in lists of 3 or more items
+
+For each issue found:
+1. Quote the original text
+2. Describe the specific violation
+3. Provide a corrected version with a brief explanation
