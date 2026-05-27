@@ -14,7 +14,7 @@ Each automatically created device is configured with the following properties:
 
 | Property | Value |
 |----------|-------|
-| `name` | `Auto generated device for {type}/{externalId}` |
+| `name` | `Auto generated device for {externalIdType}/{externalId}` |
 | `type` | `c8y_GeneratedDeviceType` |
 | `c8y_IsDevice` | `{}` |
 | `com_cumulocity_model_Agent` | `{}` |
