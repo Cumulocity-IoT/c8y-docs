@@ -55,9 +55,11 @@ For more information about the structure and configuration options available in 
 
 ### Configuring the Edge operator with a proxy and trusted TLS/SSL certificates
 
-When {{< product-c8y-iot >}} Edge is deployed behind a proxy server, the Edge operator must be configured to route outbound internet traffic through the proxy and to trust the TLS/SSL certificates presented by external endpoints.
+You can configure {{< product-c8y-iot >}} Edge operator to:
+  - route outbound internet traffic through the proxy server, when it is deployed behind a proxy server
+  - trust the TLS/SSL certificates presented by external endpoints
 
-To configure proxy settings and additional trusted certificates, create or update a ConfigMap in the `c8yedge` namespace (or the namespace where Edge is deployed) with the required configuration keys:
+To configure proxy settings and trusted certificates, create or update a ConfigMap in the `c8yedge` namespace (or the namespace where Edge is deployed) with the required configuration keys described below:
   - `http_proxy` - URL of the HTTP proxy server
   - `https_proxy` - URL of the HTTPS proxy server
   - `socks_proxy` - URL of the SOCKS proxy server
@@ -65,11 +67,9 @@ To configure proxy settings and additional trusted certificates, create or updat
       - {{< management-tenant >}} and the Edge tenant domain names
       - Kubernetes Pod CIDR (Cluster pod IP address range)
       - Kubernetes Service CIDR (Cluster service IP address range)
-      - any other domains, hosts or IP addresses that should not use the proxy
-      ```shell
-      127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain names, e.g. management-myown.iot.com,myown.iot.com>,<kubernetes cluster IP range, e.g. 10.43.0.0/16>
-      ```
-To configure additional trusted certificates, add the key `ca.crt` to the same ConfigMap. The value must contain one or more certificates in PEM format that Edge should trust in addition to the certificates already included in the system trust store. Multiple certificates can be provided by concatenating them into a single PEM bundle.
+      - Any additional domains, hosts or IP addresses that should bypass the proxy
+      Example: `127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain names, e.g. management-myown.iot.com,myown.iot.com>,<kubernetes cluster IP range, e.g. 10.43.0.0/16>`
+  - `ca.crt` - One or more certificates in PEM format that the Edge should trust in addition to the certificates already included in the system trust store. Multiple certificates can be provided by concatenating them into a single PEM bundle.
 
 The following example shows a ConfigMap with proxy settings and trusted certificates:
 
