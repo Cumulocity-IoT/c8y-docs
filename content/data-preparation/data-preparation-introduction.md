@@ -46,13 +46,13 @@ The diagram below illustrates the Data Preparation service flows within a tenant
 
  Data Preparation receives raw device messages, applies user-defined transformation logic, and forwards the resulting Cumulocity objects to the platform for persistence and use by applications(e.g. Streaming Analytics).  
 
-## How Data Preparation works {#how-it-works}
+### How Data Preparation works {#how-it-works}
 
 Data Preparation listens for incoming device messages on [MQTT Service](/device-integration/mqtt-service/) topics. When a message arrives, it evaluates all active Rules subscribed to patterns that match the message topic. Each matching Rule runs its smart functions against the payload and the resulting Cumulocity objects --- measurements, events, alarms, or managed objects --- are forwarded to the platform and persisted.
 
 Multiple active rules can subscribe to patterns that match the same topic and execute independently. A single message can trigger multiple rules, and each rule can produce multiple output objects.
 
-## Key concepts {#key-concepts}
+### Key concepts {#key-concepts}
 
 ### Smart Functions {#smart-functions}
 
