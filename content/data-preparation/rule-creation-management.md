@@ -24,7 +24,7 @@ In the rule editor, you have two options:
 - Click **Save draft** to save the current code and test data without deploying. The rule continues to run (if deployed) with the previously deployed version.
 - Click **Save and deploy** to save the current draft and start deploying it. The rule begins processing live messages immediately. If the rule was not previously deployed, it becomes active. If it was already deployed, the deployed version is updated to the current draft.
 
-When a rule is first deployed and a measurement is produced for a device that the platform has not seen before, a new device is created automatically. <!-- TODO: Add link once page exists. See [Creating devices](/data-preparation/creating-devices/) for more details about how devices are created. -->
+When you first deploy a rule and it produces a measurement for a device that the platform has not seen before, the platform creates a new device automatically. For details, see [Device onboarding](/data-preparation/device-onboarding/).
 
 ### Deployment status {#deployment-status}
 
@@ -36,12 +36,12 @@ Each rule has deployment status chips that indicate whether it is currently proc
 | **Not deployed** | The rule exists but is not active. |
 | **Draft changed since last deployment** | The rule is deployed, but the draft has been edited since the last deployment. Live processing continues with the last deployed version. |
 
-The draft and deployed versions of a rule are independent. You can edit a draft freely without affecting the deployed version. The deployed version is only updated when you click **Save and deploy** in the rule editor.
+The draft and deployed versions of a rule are independent. You can edit a draft freely without affecting the deployed version. The platform only updates the deployed version when you click **Save and deploy** in the rule editor.
 
 
 ### Managing rules {#managing-rules}
 
-The rules list gives you an overview of all rules in your tenant. Click **Configure columns** to select which rule details to show/hide:
+The rules list gives you an overview of all rules in your tenant. Click **Configure columns** to select which rule details to show or hide:
 
 - **Name**: the rule name. Click the name to open the rule editor.
 - **Source**: the transport and filters configured for the rule.
