@@ -8,13 +8,13 @@ sector:
 
 {{< c8y-admon-preview >}} Data Preparation is currently in Private Preview. This means it is not enabled by default and may be subject to change in the future. To enable this feature for your tenant, contact [product support](/additional-resources/contacting-support/). {{< /c8y-admon-preview >}}
 
-**Introduction to Data Preparation**
+### Data Preparation {#datapreparation}
 
 The Data Preparation application provides a modern, AI-first environment for creating and managing data transformation logic to help you convert raw device data into the Cumulocity [data model](/concepts/domain-model). As IoT devices often communicate in various formats (from standard JSON to IoT-specific binary protocols), Data Preparation acts as a bridge that ensures your data is standardized, corrected, and ready for use across the platform and downstream.
 
 Data Preparation uses smart functions - modular pieces of logic that independently process incoming messages to generate one or more Cumulocity-compliant outputs. For details, see the [Smart functions concept](/concepts/smart-function-concept/) and [Smart functions in Data Preparation](/data-preparation/smart-functions/).
 
-**Why use Data Preparation?**
+### Why use Data Preparation {#why-use-data-preparation}
 
 Data Preparation empowers you to:
 
@@ -25,7 +25,7 @@ Data Preparation empowers you to:
 * Scale with support for high-volume data ingestion, as Data Preparation is built on high-performant, scalable infrastructure.
 
 
-**Key Capabilities**
+### Key Capabilities {#key-capabilities}
 
 * AI-First Experience – the primary user interface is an AI assistant that writes and optimizes JavaScript-based transformation logic based on your prompts (leveraging the [AI Agent Manager](/ai/aim-introduction/)).
 * Built-in Code Editor – a simplified IDE is available to manually view, edit, or paste pre-written logic.
