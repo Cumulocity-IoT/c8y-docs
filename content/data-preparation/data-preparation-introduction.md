@@ -58,13 +58,9 @@ Multiple active rules can subscribe to patterns that match the same topic and ex
 Smart functions provide a lightweight way to extend the functionality of Cumulocity across multiple components. They let you write small JavaScript functions that run in a secure, isolated environment, more powerful than configuration but much simpler than building a full microservice. For details, see [Smart functions](/data-preparation/smart-functions/) and [Smart functions concept](/concepts/smart-function-concept/).
 
 ### Rules {#rules}
-A rule is the deployable unit in Data Preparation. It pairs a smart function with an MQTT topic subscription and an activation state. When active, a rule processes every message posted to its subscribed topic. Rules can be created, tested with sample data, activated, deactivated, and deleted through the Data Preparation application.
-
-For details, see [Rule creation and management](/data-preparation/rule-creation-management/) and [Rule editor](/data-preparation/rule-editor/).
+A rule is the deployable unit in Data Preparation. It pairs a smart function with an MQTT topic subscription and an activation state. When active, a rule processes every message posted to its subscribed topic. Rules can be created, tested with sample data, activated, deactivated, and deleted through the Data Preparation application.For details, see [Rule creation and management](/data-preparation/rule-creation-management/) and [Rule editor](/data-preparation/rule-editor/).
 
 ### Test data {#test-data}
-Test data is sample device payload that you use to validate your smart function before activating a rule. Data Preparation runs an input payload in the device's native format through the smart function to compare the resulting Cumulocity output side by side. You can define multiple test cases per rule, capture live messages directly from an MQTT topic, or add payloads manually.
-
-For details, see [Test data](data-preparation/rule-editor/#test-data).
+Test data is sample device payload that you use to validate your smart function before activating a rule. Data Preparation runs an input payload in the device's native format through the smart function to compare the resulting Cumulocity output side by side. You can define multiple test cases per rule, capture live messages directly from an MQTT topic, or add payloads manually.For details, see [Test data](data-preparation/rule-editor/#test-data).
 
 
