@@ -27,7 +27,7 @@ Data Preparation empowers you to:
 
 **Key Capabilities**
 
-* AI-First Experience – the primary user interface is an AI assistant that writes and optimizes JavaScript-based transformation logic based on your prompts (leveraging the [AI Agent Manager](/ai/aim-introduction/)).
+* AI-First Experience – the primary user interface is an AI assistant that writes and optimizes Javascript-based transformation logic based on your prompts (leveraging the [AI Agent Manager](/ai/aim-introduction/)).
 * Built-in Code Editor – a simplified IDE is available to manually view, edit, or paste pre-written logic.
 * Testing & Validation – run tests using sample data (either manually uploaded or captured live from an MQTT topic) with a visual comparison.
 * Integrated Deployment – once a Rule is active, it runs continuously as data is posted to the subscribed [MQTT Service](/device-integration/mqtt-service/) topics.  
