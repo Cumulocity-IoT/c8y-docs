@@ -44,7 +44,7 @@ The diagram below illustrates the Data Preparation service flows within a tenant
     <img width="80%" src="/images/data-preparation/datprep_architecture.png" alt="Data Preparation Service architecture">
 </p>
 
- Data Preparation receives raw device messages, applies user-defined transformation logic, and forwards the resulting Cumulocity objects to the platform for persistence and use by applications(e,g Streaming analytics).  
+ Data Preparation receives raw device messages, applies user-defined transformation logic, and forwards the resulting Cumulocity objects to the platform for persistence and use by applications(e.g. Streaming Analytics).  
 
 ## How Data Preparation works {#how-it-works}
 
