@@ -8,6 +8,8 @@ sector:
 
 {{< c8y-admon-preview >}} Data Preparation is currently in Private Preview. This means it is not enabled by default and may be subject to change in the future. To enable this feature for your tenant, contact [product support](/additional-resources/contacting-support/). {{< /c8y-admon-preview >}}
 
+## Introduction
+
 ### Data Preparation {#datapreparation}
 
 The Data Preparation application provides a modern, AI-first environment for creating and managing data transformation logic to help you convert raw device data into the Cumulocity [data model](/concepts/domain-model). As IoT devices often communicate in various formats (from standard JSON to IoT-specific binary protocols), Data Preparation acts as a bridge that ensures your data is standardized, corrected, and ready for use across the platform and downstream.
@@ -44,11 +46,11 @@ The diagram below illustrates the Data Preparation service flows within a tenant
     <img width="80%" src="/images/data-preparation/datprep_architecture.png" alt="Data Preparation Service architecture">
 </p>
 
- Data Preparation receives raw device messages, applies user-defined transformation logic, and forwards the resulting Cumulocity objects to the platform for persistence and use by applications(e.g. Streaming Analytics).  
+ Data Preparation receives raw device messages, applies user-defined transformation logic, and forwards the resulting Cumulocity objects to the platform for persistence and use by applications (e.g. Streaming Analytics).  
 
 ### How Data Preparation works {#how-it-works}
 
-Data Preparation listens for incoming device messages on [MQTT Service](/device-integration/mqtt-service/) topics. When a message arrives, it evaluates all active Rules subscribed to patterns that match the message topic. Each matching Rule runs its smart functions against the payload and the resulting Cumulocity objects --- measurements, events, alarms, or managed objects --- are forwarded to the platform and persisted.
+Data Preparation listens for incoming device messages on [MQTT Service](/device-integration/mqtt-service/) topics. When a message arrives, it evaluates all active Rules subscribed to patterns that match the message topic. Each matching rule runs its smart functions against the payload and the resulting Cumulocity objects --- measurements, events, alarms, or managed objects --- are forwarded to the platform and persisted.
 
 Multiple active rules can subscribe to patterns that match the same topic and execute independently. A single message can trigger multiple rules, and each rule can produce multiple output objects.
 
@@ -56,7 +58,7 @@ Multiple active rules can subscribe to patterns that match the same topic and ex
 
 ### Smart Functions {#smart-functions}
 
-Smart functions provide a lightweight way to extend the functionality of Cumulocity across multiple components. They let you write small Javascript functions that run in a secure, isolated environment --- more powerful than configuration but much simpler than building a full microservice. For details, see [Overview](/concepts/smart-function-concept/) and its Function signature etc.
+Smart functions provide a lightweight way to extend the functionality of Cumulocity across multiple components. They let you write small Javascript functions that run in a secure, isolated environment --- more powerful than configuration but much simpler than building a full microservice. For details, see [Smart function concept](/concepts/smart-function-concept/) and [Smart functions](/data-preparation/smart-functions/).
 
 ### Rules {#rules}
 A rule is the deployable unit in Data Preparation. It pairs a smart function with an MQTT topic subscription and an activation state. When active, a rule processes every message posted to its subscribed topic. Rules can be created, tested with sample data, activated, deactivated, and deleted through the Data Preparation application.For details, see [Rule creation and management](/data-preparation/rule-creation-management/) and [Rule editor](/data-preparation/rule-editor/).
