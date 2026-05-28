@@ -6,33 +6,30 @@ layout: redirect
 
 This section provides practical examples of smart functions from different components and domains.
 
-### Data preparation: Parse and create measurements {#data-preparation-example}
+### Data Preparation: Parse and create measurements {#data-preparation-example}
 
 This example parses an incoming device message and creates a {{< product-c8y-iot >}} measurement:
 
 ```javascript
 export function onMessage(message, context) {
-  try {
-    const decoder = new TextDecoder();
-    const data = JSON.parse(decoder.decode(message.payload));
+  const decoder = new TextDecoder();
+  const data = JSON.parse(decoder.decode(message.payload));
 
-    return [{
-      cumulocityType: 'measurement',
-      payload: {
-        type: 'c8y_Temperature',
-        time: message.time,
-        c8y_Temperature: {
-          T: { value: data.tempCelsius, unit: 'C' }
-        }
-      },
-      externalSource: [{ externalId: message.clientID, type: 'c8y_Serial' }]
-    }];
-  } catch (error) {
-    console.error("Failed to process message:", error);
-    return []; // Drop malformed messages with error
-  }
+  return [{
+    cumulocityType: 'measurement',
+    payload: {
+      type: 'c8y_Temperature',
+      time: message.time,
+      c8y_Temperature: {
+        T: { value: data.tempCelsius, unit: 'C' }
+      }
+    },
+    externalSource: [{ externalId: message.clientID, type: 'c8y_Serial' }]
+  }];
 }
 ```
+
+For further Data Preparation examples, see [Smart functions examples in Data Preparation](/data-preparation/smart-functions/#examples).
 
 ### Streaming analytics: Calculate moving average {#streaming-analytics-example}
 
@@ -52,6 +49,8 @@ export function onInput(inputs, context) {
 }
 ```
 
+For more details see the [Smart function block reference](/streaming-analytics/block-reference/#smart-function).
+
 ### thin-edge.io: Filter and forward edge messages {#thin-edge-io-example}
 
 This example filters messages at the edge to reduce bandwidth:
@@ -67,5 +66,3 @@ export function onMessage(message, context) {
 ```
 
 For further thin-edge.io examples, see [Flows examples](https://thin-edge.github.io/thin-edge.io/extend/flows/#examples).
-
-For detailed examples and component-specific patterns, refer to the documentation for each component (Data Preparation, Streaming Analytics, or thin-edge.io).

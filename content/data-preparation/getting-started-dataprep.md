@@ -6,7 +6,7 @@ sector:
   - device_management
 ---
 
-This walkthrough takes you from an empty Data Preparation tenant to a deployed rule that maps device messages into {{< product-c8y-iot >}} measurements. It covers the full journey: creating a rule, generating code with the AI assistant, testing it, and deploying it.
+This walkthrough guides you through creating and deploying your first Data Preparation rule that maps device messages into {{< product-c8y-iot >}} measurements. It covers the full journey: creating a rule, generating code with the AI assistant, testing it, and deploying it.
 
 For background on what Data Preparation is and what rules do, see [Introduction](/data-preparation/). For a reference of the rule editor's panels, see [Rule editor](/data-preparation/rule-editor/). For details on writing smart functions, see [Smart functions](/data-preparation/smart-functions/).
 
@@ -26,7 +26,11 @@ You need:
 The wizard has three pages:
 
 1. **Source transport**: select the transport from which messages will be received. MQTT is currently the only supported transport.
-2. **Filter**: specify a topic filter and a client ID filter. These determine which incoming messages this rule processes. Both fields support `*` as a wildcard. Note that these are not MQTT-style filters --- use `*` rather than `#` or `+`.
+2. **Filter**: specify a topic filter or a client ID filter. These determine which incoming messages this rule processes.
+   - **Topic filter**: Only process messages about specific data types or device functions. For example, `sensors/temperature` captures all temperature readings. Use `*` as a wildcard (e.g., `sensors/factories/France/*` captures all sensor data from that region).
+   - **Client ID filter**: If you do not know the topic for your device data, use the client ID to filter for messages from specific devices or device gateways. For example, your device's serial number or assigned device ID. Use `*` as a wildcard (e.g., `serial-number-1af2`, `gateway-*`).
+   
+   Note that these are not MQTT-style filters --- use `*` rather than `#` or `+`.
 3. **Confirm**: review the source, topic, and client ID, then enter a **name** and **description** for the rule.
 
 Click **Create** to finish. The new rule is created in the **draft** state and the rule editor opens.
