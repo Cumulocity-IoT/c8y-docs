@@ -10,7 +10,7 @@ sector:
 
 **Introduction to Data Preparation**
 
-The Data Preparation application provides a modern, **AI-first** environment for creating and managing data transformation logic to help you convert raw device data into the Cumulocity [data model](/concepts/domain-model). As IoT devices often communicate in various formats (from standard JSON to IoT-specific binary protocols), Data Preparation acts as a bridge that ensures your data is standardized, corrected, and ready for use across the platform and downstream.
+The Data Preparation application provides a modern, AI-first environment for creating and managing data transformation logic to help you convert raw device data into the Cumulocity [data model](/concepts/domain-model). As IoT devices often communicate in various formats (from standard JSON to IoT-specific binary protocols), Data Preparation acts as a bridge that ensures your data is standardized, corrected, and ready for use across the platform and downstream.
 
 Data Preparation uses smart functions - modular pieces of logic that independently process incoming messages to generate one or more Cumulocity-compliant outputs. For details, see the [Smart functions concept](/concepts/smart-function-concept/) and [Smart functions in Data Preparation](/data-preparation/smart-functions/).
 
@@ -44,7 +44,7 @@ The diagram below illustrates the Data Preparation service flows within a tenant
     <img width="80%" src="/images/data-preparation/datprep_architecture.png" alt="Data Preparation Service architecture">
 </p>
 
- Data Preparation receives raw device messages, applies user-defined transformation logic, and forwards the resulting Cumulocity objects to the platform for persistence and use by applications.  
+ Data Preparation receives raw device messages, applies user-defined transformation logic, and forwards the resulting Cumulocity objects to the platform for persistence and use by applications(e,g Streaming analytics).  
 
 ## How Data Preparation works {#how-it-works}
 
@@ -58,12 +58,12 @@ Multiple active rules can subscribe to patterns that match the same topic and ex
 Smart functions provide a lightweight way to extend the functionality of Cumulocity across multiple components. They let you write small JavaScript functions that run in a secure, isolated environment, more powerful than configuration but much simpler than building a full microservice. For details, see [Smart functions](/data-preparation/smart-functions/) and [Smart functions concept](/concepts/smart-function-concept/).
 
 ### Rules {#rules}
-A rule is the deployable unit in Data Preparation. It pairs a smart function with an MQTT topic subscription and an activation state. When active, a rule processes every message posted to its subscribed topic. rules can be created, tested with sample data, activated, deactivated, and deleted through the Data Preparation application.
+A rule is the deployable unit in Data Preparation. It pairs a smart function with an MQTT topic subscription and an activation state. When active, a rule processes every message posted to its subscribed topic. Rules can be created, tested with sample data, activated, deactivated, and deleted through the Data Preparation application.
 
 For details, see [Rule creation and management](/data-preparation/rule-creation-management/) and [Rule editor](/data-preparation/rule-editor/).
 
 ### Test data {#test-data}
-Test data is sample device payload that you use to validate your smart function before activating a rule. You provide an input payload in the device's native format and run it through the smart function to see the resulting Cumulocity output side by side. You can define multiple test cases per rule, add payloads manually, or capture live messages directly from an MQTT topic.
+Test data is sample device payload that you use to validate your smart function before activating a rule. Data Preparation runs an input payload in the device's native format through the smart function to compare the resulting Cumulocity output side by side. You can define multiple test cases per rule, capture live messages directly from an MQTT topic, or add payloads manually.
 
 For details, see [Test data](data-preparation/rule-editor/#test-data).
 
