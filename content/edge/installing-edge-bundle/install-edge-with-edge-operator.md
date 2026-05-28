@@ -69,7 +69,7 @@ To configure proxy settings and trusted certificates, create or update a ConfigM
       - Kubernetes Service CIDR (Cluster service IP address range)
       - Any additional domains, hosts or IP addresses that should bypass the proxy
       Example: `127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain names, e.g. management-myown.iot.com,myown.iot.com>,<kubernetes cluster IP range, e.g. 10.43.0.0/16>`
-  - `ca.crt` - One or more certificates in PEM format that the Edge operator and the Edge should trust in addition to the certificates already included in the system trust store. Multiple certificates can be provided by concatenating them into a single PEM bundle.
+  - `ca.crt` - One or more certificates in PEM format that the Edge operator and the Edge should trust in addition to publicly known certificate authorities. Multiple certificates can be provided by concatenating them into a single PEM bundle.
 
 The following example shows a ConfigMap with proxy settings and trusted certificates:
 
