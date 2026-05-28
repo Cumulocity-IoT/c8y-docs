@@ -9,7 +9,7 @@ sector:
 This guide will setup your first application. The first step is to install the `@angular/cli` in the right version. Server Side Rendering (SSR) and applications based on the standalone API are not supported and therefore set to `false`:
 
 ```bash
-npx @angular/cli@19 new --style=less --ssr=false
+npx @angular/cli@20 new --style=less --ssr=false
 ```
 
 Second, navigate to the folder and add the `@c8y/websdk` package to your Angular application:

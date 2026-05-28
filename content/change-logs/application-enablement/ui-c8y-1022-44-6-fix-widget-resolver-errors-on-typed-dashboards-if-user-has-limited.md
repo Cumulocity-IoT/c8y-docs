@@ -25,4 +25,4 @@ environment_availability:
 ---
 Previously, widgets on typed dashboards such as `c8y_Device` could display resolver errors for users with limited permissions. This occurred because permission checks were executed on the originally configured device before the context override was applied.
 
-With this fix, widget configurations are now updated with the correct context device, replacing both device and __target fields in datapoint objects before resolvers are executed. This ensures that permission checks target the appropriate device and that widgets render correctly for all users.
+With this fix, widget configurations are now updated with the correct context device, replacing both device and __target fields in data point objects before resolvers are executed. This ensures that permission checks target the appropriate device and that widgets render correctly for all users.

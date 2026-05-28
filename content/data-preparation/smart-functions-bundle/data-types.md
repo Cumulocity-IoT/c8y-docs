@@ -28,15 +28,15 @@ When you return objects from `onMessage`, you return one of five domain object t
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `cumulocityType` | `string` | Yes | Discriminator for the object type. One of: `"measurement"`, `"event"`, `"alarm"`, `"operation"`, `"managedObject"`. |
-| `payload` | `object` | Yes | The object data, in the same shape as the {{< product-c8y-iot >}} REST API, but without the source field. |
+| `payload` | `object` | Yes | The object data, in the same shape as the {{< product-c8y-iot >}} REST API, but without the source field. These are described for each type below. |
 | `externalSource` | `ExternalId[]` | Yes | One or more external IDs (externalId and type pair) identifying the target device. The platform looks these up to find the {{< product-c8y-iot >}} device. |
 | `destination` | `string` | No | Advanced. Destination for the object. Defaults to `"cumulocity"`, to create the object in the operational store. |
 
 #### Measurement {#measurement}
 
-A measurement includes sensor data as numeric values. Each measurement has a type and one or more fragments (object properties mapping series names to numeric values and units).
+A measurement payload includes sensor data as numeric values. Each measurement has a type and one or more fragments (object properties mapping series names to numeric values and units).
 
-| Field | Type | Required | Description |
+| Payload Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `type` | `string` | Yes | The measurement type (for example, `"c8y_Temperature"`). |
 | `time` | `Date` | Yes | The measurement timestamp. |
@@ -51,9 +51,9 @@ A measurement includes sensor data as numeric values. Each measurement has a typ
 
 #### Event {#event}
 
-An event records an occurrence or state change. Events typically include a type, timestamp, and human-readable description.
+An event records an occurrence or state change. Event payloads typically include a type, timestamp, and human-readable description.
 
-| Field | Type | Required | Description |
+| Payload Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `type` | `string` | Yes | The event type (for example, `"c8y_LocationUpdate"`). |
 | `text` | `string` | Yes | A human-readable description. |
@@ -62,9 +62,9 @@ An event records an occurrence or state change. Events typically include a type,
 
 #### Alarm {#alarm}
 
-An alarm represents an error or alert condition. Alarms include a severity level and optional context fragments.
+An alarm represents an error or alert condition. Alarm payloads include a severity level and optional context fragments.
 
-| Field | Type | Required | Description |
+| Payload Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `type` | `string` | Yes | The alarm type. |
 | `severity` | `"CRITICAL"` \| `"MAJOR"` \| `"MINOR"` \| `"WARNING"` | Yes | The alarm severity level. |
@@ -75,7 +75,7 @@ An alarm represents an error or alert condition. Alarms include a severity level
 
 An operation represents a request to perform an action on a device, such as restart or firmware update. Operations are typically used for device control.
 
-| Field | Type | Required | Description |
+| Payload Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `status` | `"PENDING"` \| `"SUCCESSFUL"` \| `"FAILED"` \| `"EXECUTING"` | No | The operation status. |
 | `description` | `string` | No | Human-readable description. |

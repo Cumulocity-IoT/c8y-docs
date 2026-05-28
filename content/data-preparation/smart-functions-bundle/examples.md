@@ -10,12 +10,12 @@ For the data types used in these examples, see [Data types](#data-types). For th
 
 ### Parse JSON and create a measurement {#parse-json-measurement}
 
-Decode a JSON payload and produce a temperature measurement.
+Decode a JSON payload and produce a temperature measurement. This example also parses a timestamp from the payload and uses it instead of the message arrival time.
 
 **Example input** (`msg.payload` decoded as UTF-8):
 
 ```json
-{ "deviceId": "SN-001", "tempCelsius": 22.5 }
+{ "deviceId": "SN-001", "tempCelsius": 22.5, "timestamp": "2026-05-12T14:30:00Z" }
 ```
 
 **Function**:
@@ -28,7 +28,7 @@ export function onMessage(msg, context) {
     cumulocityType: "measurement",
     payload: {
       type: "c8y_Temperature",
-      time: msg.time,
+      time: new Date(data.timestamp),
       c8y_Temperature: {
         T: { value: data.tempCelsius, unit: "C" }
       }
@@ -38,7 +38,7 @@ export function onMessage(msg, context) {
 }
 ```
 
-**Output**: one `Measurement` of type `c8y_Temperature` for device `SN-001`.
+**Output**: one `Measurement` of type `c8y_Temperature` for device `SN-001`, with the timestamp parsed from the payload.
 
 ---
 
@@ -220,6 +220,10 @@ export function onMessage(msg, context) {
 ### Parse binary data directly {#parse-binary}
 
 Extract values directly from a binary payload with a known fixed structure, without text decoding.
+
+{{< c8y-admon-info >}}
+The Sample Data and Testing portions of the UI currently do not support non-JSON payload types, however the rest of the Data Preparation application supports any payload type, including binary.
+{{</ c8y-admon-info >}}
 
 **Example input**: a 9-byte binary payload structured as:
 

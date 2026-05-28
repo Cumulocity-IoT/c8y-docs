@@ -80,8 +80,8 @@ Review the output carefully to confirm that the smart function produces the corr
 
 If one or more tests are failing:
 
-- A red error icon appears next to the test name dropdown.
-- Within the dropdown, a red error icon appears next to the specific tests that are failing.
+- An error icon appears next to the test name dropdown.
+- Within the dropdown, an error icon appears next to the specific tests that are failing.
 
 ### Expected output {#expected-output}
 
@@ -100,15 +100,15 @@ The current output is now stored as the expected output for that test.
 
 After you save expected outputs, every subsequent test run compares the actual output against the saved expectation. If the output no longer matches:
 
-- A red error icon appears next to the test name dropdown.
-- Within the dropdown, a red error icon appears next to the specific tests that are failing.
+- An error icon appears next to the test name dropdown.
+- Within the dropdown, an error icon appears next to the specific tests that are failing.
 - A comparison between the **Actual output** and **Expected output** is displayed. This helps to identify which part of the output has changed.
 
 Run the tests after each change to your smart function and check for regressions against your saved expected outputs.
 
 ### To fix failing tests {#fixing-failing-tests}
 
-If one or more tests are failing, a red error icon appears next to the test name dropdown. To fix the code automatically:
+If one or more tests are failing, an error icon appears next to the test name dropdown. To fix the code automatically:
 
 1. Click **Fix smart function**.
 2. The AI assistant analyzes the failing tests and updates the smart function so that all tests pass.

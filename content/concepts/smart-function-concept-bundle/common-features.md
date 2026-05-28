@@ -21,12 +21,11 @@ The final parameter is always a `context` object provided by the system. This ob
 
 ### Language and runtime {#language-and-runtime}
 
-Smart functions run in a Javascript runtime and support **ECMAScript 2023** features and later. Some components allow you to write Javascript code directly within the platform in the {{< product-c8y-iot >}} UI. Alternatively, you can write and transpile your code outside the platform—using Javascript directly or TypeScript with your own build toolchain—and upload the resulting Javascript file for execution.
+Smart functions run in a Javascript runtime and support **ECMAScript 2023** features. Some components allow you to write Javascript code directly within the platform in the {{< product-c8y-iot >}} UI. Alternatively, you can write and transpile your code outside the platform—using Javascript directly or TypeScript with your own build toolchain—and upload the resulting Javascript file for execution.
 
 Supported language features include:
 
 - Arrow functions, destructuring, spread operators, and other modern syntax
-- `async` and `await` for asynchronous operations
 - Template literals, classes, modules, and more
 
 ### Standard library {#standard-library}
@@ -62,7 +61,7 @@ export async function onMessage(message, context) {
 }
 ```
 
-The system automatically handles both synchronous and asynchronous function signatures. Async functions should return promises that resolve to the expected output type for your implementation.
+The system automatically handles both synchronous and asynchronous function signatures. Async functions should return promises that resolve to the expected output type for your implementation. By default, no unfulfilled promises can be created within a smart function runtime, so use of async is purely for convenience with APIs, they cannot actually run asynchronously. Some implementations may provide true asynchronous operations.
 
 ### No global state {#no-global-state}
 
@@ -82,14 +81,24 @@ Always check the documentation for your specific component to understand the exp
 
 ### Error handling {#error-handling}
 
-If your smart function throws an error, the system catches it and handles it according to component-specific policies. For example, some components may discard the input, retry the function, or log the error for inspection. You can use standard Javascript try/catch blocks to handle expected errors within your function.
+If your smart function throws an error, the system catches it and handles it according to component-specific policies. For example, some components may discard the input, retry the function, log the error for inspection, or raise an alarm in the tenant. You can use standard Javascript try/catch blocks to handle expected errors where you have a recovery strategy.
 
 ```javascript
 export function onMessage(message, context) {
-  try {
-    return processMessage(message);
-  } catch (error) {
-    console.error('Processing failed:', error);
-    return []; // Or handle gracefully based on your needs
+  const deviceList = JSON.parse(new TextDecoder().decode(message.payload));
+  const results = [];
+  
+  for (const device of deviceList) {
+    try {
+      results.push(parseMeasurementData(device.data));
+    } catch (error) {
+      console.warn(`Skipping device ${device.id}: ${error.message}`);
+      // Skip this device and continue with the next
+    }
   }
+  
+  return results;
 }
+```
+
+Only catch errors when you have a meaningful recovery path. In this example, the recovery strategy is to skip the failed device but continue processing others. If there is no recovery strategy, let the error propagate --- the component will handle it appropriately.

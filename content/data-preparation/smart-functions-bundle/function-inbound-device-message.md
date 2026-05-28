@@ -10,7 +10,7 @@ This page describes the smart function used to process inbound messages received
 
 Use this function to:
 
-- Decode raw device payloads from any transport (MQTT, OPC UA, HTTP, and others).
+- Decode raw device payloads from a device transport (currently only MQTT service is supported).
 - Map device data to {{< product-c8y-iot >}} domain objects.
 - Enrich messages with calculated fields, lookups, or context.
 - Filter or drop messages based on content.
@@ -40,10 +40,10 @@ For details on how invocations are sharded and ordered, see [Runtime behavior an
 
 The function receives two arguments:
 
-- `msg` --- a [`DeviceMessage`](#data-types) representing the inbound message. The `payload` is always present (as a `Uint8Array`), the `transportID`, `topic`, `clientID` and `time` will always be present. Additional information may be present in `transportFields` depending on the transport.
+- `msg` --- a [`DeviceMessage`](#device-message) representing the inbound message. The `payload` is always present (as a `Uint8Array`), the `transportID`, `topic`, `clientID` and `time` will always be present. Additional information may be present in `transportFields` depending on the transport.
 - `context` — a [`DataPrepContext`](#context) providing runtime metadata.
 
-For the full list of fields available on `DeviceMessage`, see [Data types](#data-types). For details on the context object, see [Context](#context).
+For the full list of fields available on `DeviceMessage`, see [DeviceMessage](#device-message). For details on the context object, see [Context](#context).
 
 ### Outputs {#outputs}
 
@@ -52,6 +52,8 @@ The function returns an array of {{< product-c8y-iot >}} domain objects: `Measur
 - Each object is created in the {{< product-c8y-iot >}} operational store.
 - Returning an empty array (`[]`) drops the message --- no objects are created and no error is reported.
 - Each object must specify an `externalSource` to identify the target device.
+
+For the full list of domain object fields, see [Cumulocity Objects](#cumulocity-objects).
 
 ### When devices are created {#when-devices-created}
 

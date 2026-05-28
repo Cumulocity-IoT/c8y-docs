@@ -10,7 +10,11 @@ Data Preparation smart functions run in a Javascript environment conforming to E
 
 #### console {#console}
 
-Logs output for debugging. All methods accept any number of arguments, which are converted to strings and joined with spaces. Use Javascript string interpolation rather than relying on format strings.
+Logs output for debugging. All methods accept any number of arguments, which are converted to strings and joined with spaces. Use Javascript string interpolation rather than relying on format strings, for example:
+
+```javascript
+console.info(`Device ${deviceId} reported temperature: ${temperature}`);
+```
 
 | Method | Description |
 |--------|-------------|
@@ -19,6 +23,8 @@ Logs output for debugging. All methods accept any number of arguments, which are
 | `console.warn(...args)` | Warning message. |
 | `console.error(...args)` | Error message. |
 | `console.debug(...args)` | Debug-level output. |
+
+For more detail about how to view the logs see [Runtime behavior and limits](#logs).
 
 #### TextEncoder {#text-encoder}
 
@@ -83,6 +89,8 @@ Parse and encode Protocol Buffer messages.
 import protobuf from 'protobufjs.js';
 ```
 
+Data Preparation provides [protobufjs](https://protobufjs.github.io/protobuf.js/) version 8.
+
 #### cbor2 {#cbor2}
 
 Work with CBOR (Concise Binary Object Representation) encoded data.
@@ -90,6 +98,8 @@ Work with CBOR (Concise Binary Object Representation) encoded data.
 ```javascript
 import { /* exported names */ } from 'cbor2.js';
 ```
+
+Data Preparation provides [cbor2](https://hildjj.github.io/cbor2/) version 1.
 
 ### Bundling external libraries {#bundling-external-libraries}
 

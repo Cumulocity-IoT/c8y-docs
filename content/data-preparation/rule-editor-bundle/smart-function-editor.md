@@ -1,6 +1,6 @@
 ---
 weight: 9
-title: Smart function UI
+title: Smart function editor
 layout: bundle
 outputs:
   - html
