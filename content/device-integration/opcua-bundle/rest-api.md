@@ -8,6 +8,10 @@ While the {{< product-c8y-iot >}} user interface for OPC UA provides an easy and
 
 The full API definitions can be found at */service/opcua-mgmt-service/swagger-ui.html*.
 
+{{< c8y-admon-info >}}
+To access the OPC UA management service APIs, users must be assigned the required OPC UA service roles. You can assign these roles in the Administration application under **Accounts > Users, Roles**.
+{{< /c8y-admon-info >}}
+
 ### OPC UA server resources {#opc-ua-server-resources}
 
 #### Connect a new OPC UA server to the gateway {#connect-a-new-opc-ua-server-to-the-gateway}
@@ -15,6 +19,10 @@ The full API definitions can be found at */service/opcua-mgmt-service/swagger-ui
 **Endpoint**
 
  `POST /service/opcua-mgmt-service/gateways/{gatewayId}/servers`
+
+**Required role**
+
+OPC UA service - ADMIN
 
 **Description**
 
@@ -269,6 +277,10 @@ For better performance an in-memory map is used to store the alarm type and the 
 
 `GET /service/opcua-mgmt-service/gateways/{gatewayId}/servers`
 
+**Required role**
+
+OPC UA service - READ
+
 **Parameters**
 
 <table>
@@ -336,6 +348,10 @@ For better performance an in-memory map is used to store the alarm type and the 
 
 `DELETE /service/opcua-mgmt-service/servers/{serverId}`
 
+**Required role**
+
+OPC UA service - ADMIN
+
 **Description**
 
 Delete the OPC UA server managed object. Once the DELETE request is received by the OPC UA management service, the specified server along with all its address space nodes created in the {{< product-c8y-iot >}} platform will be deleted.
@@ -376,6 +392,10 @@ The service will retain all the child devices of the server, and their correspon
 **Endpoint**
 
 `GET /service/opcua-mgmt-service/servers/{serverId}/address-spaces/get`
+
+**Required role**
+
+OPC UA service - READ
 
 **Description**
 
@@ -467,6 +487,10 @@ Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/get?nodeId=
 **Endpoint**
 
 `GET /service/opcua-mgmt-service/servers/{serverId}/address-spaces/children`
+
+**Required role**
+
+OPC UA service - READ
 
 **Description**
 
@@ -563,6 +587,10 @@ Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/children?no
 **Endpoint**
 
 `GET /service/opcua-mgmt-service/servers/{serverId}/address-spaces/browse`
+
+**Required role**
+
+OPC UA service - READ
 
 **Description**
 
@@ -668,6 +696,10 @@ These resources provide the APIs for manipulating device types.
 **Endpoint**
 
 `POST /service/opcua-mgmt-service/device-types`
+
+**Required role**
+
+OPC UA service - ADMIN
 
 **Sample payloads**
 
@@ -1284,7 +1316,7 @@ If <em>alarmStatusMappings</em> are defined, also the variables used in the expr
 <td>bodyTemplate</td>
 <td>string</td>
 <td>yes</td>
-<td>Template of the request body. This can be parameterized by the following placeholders:<br><code>${value}</code>: Data value of the OPC UA node.&nbsp;<br><code>${serverId}</code>: OPC UA server managed object ID.<br><code>${nodeId}</code>: ID of the node where the data is coming from.<br><code>${deviceId}</code>: Managed object ID of the source manage object.</td>
+<td>Template of the request body. This can be parameterized by the following placeholders:<br><code>${value}</code>: JSON-serialized data value of the OPC UA node.<br><code>${valueAsText}</code>: Plain text representation of the node value, useful for embedding values directly in strings without JSON formatting.<br><code>${serverId}</code>: OPC UA server managed object ID.<br><code>${nodeId}</code>: ID of the node where the data is coming from.<br><code>${deviceId}</code>: Managed object ID of the source managed object.<br><code>${receivedTimestampInMs}</code>: Timestamp when the node value is received by the OPC UA device gateway in milliseconds.</td>
 </tr>
 <tr>
 <td>retryEnabled</td>
@@ -1546,6 +1578,10 @@ This has exactly the same fields as *EventCreation*, however the *text* and *typ
 
 `GET /service/opcua-mgmt-service/device-types`
 
+**Required role**
+
+OPC UA service - READ
+
 **Payload**
 
 The endpoint returns a JSON array of all OPC UA device types.
@@ -1555,6 +1591,10 @@ The endpoint returns a JSON array of all OPC UA device types.
 **Endpoint**
 
 `GET /service/opcua-mgmt-service/device-types/{deviceTypeId}`
+
+**Required role**
+
+OPC UA service - READ
 
 **Payload**
 
@@ -1572,6 +1612,10 @@ A JSON representation of the device type with the given ID if it exists. If not,
 
 `PUT /service/opcua-mgmt-service/device-types/{deviceTypeId}`
 
+**Required role**
+
+OPC UA service - ADMIN
+
 **Payload**
 
 The payload of updating a device type is exactly the same as the payload of creating it. Please note that partial update is not supported. All information must be provided in the update request and will completely override the existing device type.
@@ -1581,6 +1625,10 @@ The payload of updating a device type is exactly the same as the payload of crea
 **Endpoint**
 
 `DELETE /service/opcua-mgmt-service/device-types/{deviceTypeId}`
+
+**Required role**
+
+OPC UA service - ADMIN
 
 **Success response**
 

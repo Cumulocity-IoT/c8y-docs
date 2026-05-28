@@ -21,4 +21,4 @@ environment_availability:
   - label: us.cumulocity.com
   - label: cumulocity.com
 ---
-In the data point graph, the y-axis labels could overlap with the axis lines in some cases, making them difficult to read. Additionally, when the **Force merge all datapoints to a single axis** option was enabled, the unit was not displayed. This change fixes both issues. Y-axis labels no longer overlap with the axis lines, and the unit is now displayed properly when all data points are merged to a single axis, improving the readability and clarity of the data point graph.
+In the data point graph, the y-axis labels could overlap with the axis lines in some cases, making them difficult to read. Additionally, when the **Force merge all data points to a single axis** option was enabled, the unit was not displayed. This change fixes both issues. Y-axis labels no longer overlap with the axis lines, and the unit is now displayed properly when all data points are merged to a single axis, improving the readability and clarity of the data point graph.

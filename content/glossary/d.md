@@ -139,7 +139,7 @@ The Digital Twin Manager (DTM) is a schema-based modeling [application](#applica
 See also [Digital Twin Manager](/dtm/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
-The DTM application is supported by a dedicated dtm microservice and a dedicated API (`/service/dtm/`) to manage the lifecycle of asset models, asset properties, and asset instances.
+The DTM application is supported by a dedicated Dtm microservice and a dedicated API (`/service/dtm/`) to manage the lifecycle of asset definitions, property definitions, and asset instances.
 {{< /c8y-details >}}
 
 
