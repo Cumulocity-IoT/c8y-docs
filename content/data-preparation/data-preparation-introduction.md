@@ -8,9 +8,7 @@ sector:
 
 {{< c8y-admon-preview >}} Data Preparation is currently in Private Preview. This means it is not enabled by default and may be subject to change in the future. To enable this feature for your tenant, contact [product support](/additional-resources/contacting-support/). {{< /c8y-admon-preview >}}
 
-## Introduction
-
-### Data Preparation {#datapreparation}
+## Data Preparation {#datapreparation}
 
 The Data Preparation application provides a modern, AI-first environment for creating and managing data transformation logic to help you convert raw device data into the Cumulocity [data model](/concepts/domain-model). As IoT devices often communicate in various formats (from standard JSON to IoT-specific binary protocols), Data Preparation acts as a bridge that ensures your data is standardized, corrected, and ready for use across the platform and downstream.
 
