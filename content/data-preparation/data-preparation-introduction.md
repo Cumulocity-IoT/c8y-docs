@@ -12,7 +12,7 @@ sector:
 
 The Data Preparation application provides a modern, **AI-first** environment for creating and managing data transformation logic to help you convert raw device data into the Cumulocity [data model](/concepts/domain-model). As IoT devices often communicate in various formats (from standard JSON to IoT-specific binary protocols), Data Preparation acts as a bridge that ensures your data is standardized, corrected, and ready for use across the platform and downstream.
 
-Data Preparation uses smart functions - modular pieces of logic that independently process incoming messages to generate one or more Cumulocity-compliant outputs. see [smart functions](/concepts/smart-function-concept/) concept details.
+Data Preparation uses smart functions --- modular pieces of logic that independently process incoming messages to generate one or more Cumulocity-compliant outputs. For details, see [Smart functions](/concepts/smart-function-concept/).
 
 **Why use Data Preparation?**
 
@@ -20,17 +20,17 @@ Data Preparation empowers you to:
 
 * Easily convert raw payloads into standard Cumulocity measurements, events, alarms, and inventory objects.
 * Use a conversational AI chat interface to describe your business context and automatically generate the necessary transformation code in a Smart Function.
-* Perform real-time calculations (e.g. converting Fahrenheit to Celsius) or correct values based on predefined normal ranges.
+* Perform real-time calculations (for example, converting Fahrenheit to Celsius) or correct values based on predefined normal ranges.
 * Automatically map and create devices based on external IDs found in the payload, source client ID, or topic path.
 * Scale with support for high-volume data ingestion, as Data Preparation is built on high-performant, scalable infrastructure.
 
 
 **Key Capabilities**
 
-* AI-First Experience – the primary user interface is an AI assistant that writes and optimizes Javascript-based transformation logic based on your prompts (leveraging the [AI Agent Manager](/ai/aim-introduction/)).
-* Built-in Code Editor – a simplified IDE is available to manually view, edit, or paste pre-written logic.
-* Testing & Validation – run tests using sample data (either manually uploaded or captured live from an MQTT topic) with a visual comparison.
-* Integrated Deployment – once a Rule is active, it runs continuously as data is posted to the subscribed [MQTT Service](/device-integration/mqtt-service/) topics.  
+* AI-first experience --- the primary user interface is an AI assistant that writes and optimizes Javascript-based transformation logic based on your prompts (leveraging the [AI Agent Manager](/ai/aim-introduction/)).
+* Built-in code editor --- a simplified IDE is available to manually view, edit, or paste pre-written logic.
+* Testing and validation --- run tests using sample data (either manually uploaded or captured live from an MQTT topic) with a visual comparison.
+* Integrated deployment --- once a rule is active, it runs continuously as data is posted to the subscribed [MQTT Service](/device-integration/mqtt-service/) topics.  
 
 
 ### Architecture {#architecture}
@@ -45,7 +45,7 @@ The diagram below illustrates the Dataprep Service flows within a tenant.
 
 ## How Data Preparation works {#how-it-works}
 
-Data Preparation listens for incoming device messages on [MQTT Service](/device-integration/mqtt-service/) topics. When a message arrives, it evaluates all active Rules subscribed to patterns that match the message topic. Each matching Rule runs its smart functions against the payload and the resulting Cumulocity objects — measurements, events, alarms, or managed objects — are forwarded to the platform and persisted.
+Data Preparation listens for incoming device messages on [MQTT Service](/device-integration/mqtt-service/) topics. When a message arrives, it evaluates all active Rules subscribed to patterns that match the message topic. Each matching Rule runs its smart functions against the payload and the resulting Cumulocity objects --- measurements, events, alarms, or managed objects --- are forwarded to the platform and persisted.
 
 Multiple active Rules can subscribe to patterns that match the same topic and execute independently. A single message can trigger multiple Rules, and each Rule can produce multiple output objects.
 
@@ -53,7 +53,7 @@ Multiple active Rules can subscribe to patterns that match the same topic and ex
 
 ### Smart Functions {#smart-functions}
 
-Smart functions provide a lightweight way to extend the functionality of Cumulocity across multiple components. They let you write small Javascript functions that run in a secure, isolated environment—more powerful than configuration but much simpler than building a full microservice. For details, see [Overview](/concepts/smart-function-concept/) and its Function signature etc.
+Smart functions provide a lightweight way to extend the functionality of Cumulocity across multiple components. They let you write small Javascript functions that run in a secure, isolated environment --- more powerful than configuration but much simpler than building a full microservice. For details, see [Overview](/concepts/smart-function-concept/) and its Function signature etc.
 
 ### Rules {#rules}
 
