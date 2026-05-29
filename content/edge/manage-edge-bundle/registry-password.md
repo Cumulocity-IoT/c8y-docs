@@ -11,6 +11,11 @@ At some point the credentials you use for the registry might change. In that cas
 These credentials are stored as a secret within the Kubernetes cluster, and can be modified with `kubectl` commands on the environment in which Edge is installed:
 
 ```shell
-kubectl delete secret docker-registry c8yedge-operator-regcred --namespace=c8yedge
-kubectl create secret docker-registry c8yedge-operator-regcred --docker-server=registry.c8y.io --docker-username=<registry username> --docker-password=<registry password> --namespace=c8yedge
+kubectl create secret docker-registry c8yedge-operator-regcred --namespace=c8yedge \
+  --docker-server=registry1.stage.c8y.io \
+  --docker-username=a \
+  --docker-password=b \
+  --dry-run=client -o yaml | kubectl apply -f -
 ```
+
+After updating the secret, restart the Edge operator as described in [Restarting the Edge operator](/edge/manage-edge/#restart-operator)

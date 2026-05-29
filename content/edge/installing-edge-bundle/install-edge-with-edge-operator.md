@@ -53,40 +53,32 @@ This command will complete immediately, and the installation will proceed in the
 
 For more information about the structure and configuration options available in the Edge CR, see [Edge custom resource](/edge/edge-custom-resource-definition/).
 
-### Configuring the Edge operator with a proxy and trusted TLS/SSL certificates
+### Configuring the Edge operator with a proxy and trusted TLS certificates
 
 You can configure the Edge operator to:
-  - route outbound internet traffic through a proxy server when it is deployed behind a proxy
-  - trust the TLS/SSL certificates presented by external endpoints
+  - Route outbound traffic through a proxy server when deployed behind a proxy
+  - Trust additional TLS certificates for external endpoints
 
-To configure proxy settings and trusted certificates, create or update a ConfigMap in the `c8yedge` namespace (or the namespace where Edge is deployed) with the required configuration keys described below:
-  - `http_proxy` - URL of the HTTP proxy server
-  - `https_proxy` - URL of the HTTPS proxy server
-  - `socks_proxy` - URL of the SOCKS proxy server
-  - `no_proxy` - Comma-separated list of domain suffixes, IP addresses, or CIDR ranges that should bypass the proxy. This list must include:
+To configure proxy settings and trusted certificates, create or update a ConfigMap named `c8yedge-operator-config` in the `c8yedge` namespace (or the namespace where Edge is deployed) with the required configuration keys described below:
+  - `http_proxy` - HTTP proxy URL
+  - `https_proxy` - HTTPS proxy URL
+  - `socks_proxy` - SOCKS proxy URL
+  - `no_proxy` - Comma-separated list of domain suffixes, IP addresses, or CIDR ranges that bypass the proxy. This must include:
       - {{< management-tenant >}} and the Edge tenant domain names
       - Kubernetes Pod CIDR (Cluster pod IP address range)
       - Kubernetes Service CIDR (Cluster service IP address range)
-      - Any additional domains, hosts or IP addresses that should bypass the proxy
-      Example: `127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain names, e.g. management-myown.iot.com,myown.iot.com>,<kubernetes cluster IP range, e.g. 10.43.0.0/16>`
-  - `ca.crt` - One or more certificates in PEM format that the Edge operator and the Edge should trust in addition to publicly known certificate authorities. Multiple certificates can be provided by concatenating them into a single PEM bundle.
+      - Any additional domains, hosts or IP addresses that bypass the proxy
+      Example: 
+        `127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain names, e.g. management-myown.iot.com,myown.iot.com>,<kubernetes cluster IP range, e.g. 10.43.0.0/16>`
+  - `ca.crt` - One or more trusted TLS certificates in PEM format that the Edge operator and the Edge should trust in addition to publicly known certificate authorities. Multiple certificates can be provided by concatenating them into a single PEM bundle.
 
-The following example shows a ConfigMap with proxy settings and trusted certificates:
+#### Example c8yedge-operator-config ConfigMap
 
 ```yaml
-##
-## Optional ConfigMap used to configure:
-##   - Proxy settings for accessing external endpoints
-##   - Additional trusted TLS/SSL certificates
-##
-
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  # Name of the ConfigMap
   name: c8yedge-operator-config
-  
-  # Namespace where the Edge operator is installed
   namespace: c8yedge
 data:
   http_proxy: <HTTP Proxy URL>
@@ -96,21 +88,10 @@ data:
   # Comma-separated list of domain suffixes, IP addresses, or CIDR ranges that should bypass the proxy
   no_proxy: 127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain names, e.g. management-myown.iot.com,myown.iot.com>,<kubernetes cluster IP range, e.g. 10.43.0.0/16>
 
-  # Trusted TLS/SSL certificates in PEM format
+  # Trusted TLS certificates in PEM format
   ca.crt: |
-    <CA_CERTIFICATES_TO_TRUST>
+    <CERTIFICATES_TO_TRUST>
 ```
 
-After creating or updating the ConfigMap, configure the Edge operator to use it by setting the `operatorConfigCMName` Helm value during installation or upgrade:
-```shell
-helm registry login registry.c8y.io --username="<Edge registry username>" --password="<Edge registry password>"
-
-helm upgrade --install c8yedge-operator oci://registry.c8y.io/edge/helm-charts/cumulocity-iot-edge-operator \
-    --version={{< c8y-edge-current-version >}} \
-    --namespace c8yedge \
-    --create-namespace \
-    --set imageCredentials.username="<Edge registry username>" \
-    --set imageCredentials.password="<Edge registry password>" \
-    --set operatorConfigCMName="c8yedge-operator-config" \
-    --wait
-```
+#### Apply changes
+After creating or updating the ConfigMap, restart the Edge operator as described in [Restarting the Edge operator](/edge/manage-edge/#restart-operator)
