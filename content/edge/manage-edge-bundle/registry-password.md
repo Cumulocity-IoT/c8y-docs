@@ -8,7 +8,7 @@ sector:
 
 At some point the credentials you use for the registry might change. In that case, Edge needs to be updated so that it can access the artifacts for any future upgrade.
 
-These credentials are stored as a Kubernetes Secret, and can be updated using `kubectl` command:
+These credentials are stored as a Kubernetes Secret, and can be updated using the `kubectl` command:
 {{< c8y-admon-caution >}}
 Replace the value of the `--docker-server` flag in the command below with your private registry hostname if you installed Edge using a custom registry.
 {{< /c8y-admon-caution >}}
