@@ -8,13 +8,17 @@ sector:
 
 At some point the credentials you use for the registry might change. In that case, Edge needs to be updated so that it can access the artifacts for any future upgrade.
 
-These credentials are stored as a secret within the Kubernetes cluster, and can be modified with `kubectl` commands on the environment in which Edge is installed:
+These credentials are stored as a Kubernetes Secret, and can be updated using `kubectl` command:
+{{< c8y-admon-caution >}}
+Replace the value of the --docker-server flag in the command below with your private registry hostname if you installed Edge using a custom registry.
+{{< /c8y-admon-caution >}}
 
 ```shell
-kubectl create secret docker-registry c8yedge-operator-regcred --namespace=c8yedge \
-  --docker-server=registry1.stage.c8y.io \
-  --docker-username=a \
-  --docker-password=b \
+kubectl create secret docker-registry c8yedge-operator-regcred 
+  --namespace=c8yedge \
+  --docker-server=registry.c8y.io \
+  --docker-username=<registry username> \
+  --docker-password=<registry password> \
   --dry-run=client -o yaml | kubectl apply -f -
 ```
 
