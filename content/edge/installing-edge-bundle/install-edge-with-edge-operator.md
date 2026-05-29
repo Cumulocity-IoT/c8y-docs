@@ -64,16 +64,16 @@ To configure proxy settings and trusted certificates, create or update a ConfigM
   - `https_proxy` - HTTPS proxy URL
   - `socks_proxy` - SOCKS proxy URL
   - `no_proxy` - Comma-separated list of domain suffixes, IP addresses, or CIDR ranges that bypass the proxy. This must include:
-      - {{< management-tenant >}} and the Edge tenant domain names
-      - Kubernetes Pod CIDR (Cluster pod IP address range)
-      - Kubernetes Service CIDR (Cluster service IP address range)
-      - Any additional domains, hosts or IP addresses that bypass the proxy
-      Example: 
-        `127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain names, e.g. management-myown.iot.com,myown.iot.com>,<kubernetes cluster IP range, e.g. 10.43.0.0/16>`
+      - {{< management-tenant >}} and the Edge tenant domain names.
+      - Kubernetes Pod CIDR (Cluster pod IP address range).
+      - Kubernetes Service CIDR (Cluster service IP address range).
+      - Any additional domains, hosts or IP addresses that bypass the proxy.
   - `ca.crt` - One or more trusted TLS certificates in PEM format that the Edge operator and the Edge should trust in addition to publicly known certificate authorities. Multiple certificates can be provided by concatenating them into a single PEM bundle.
 
-#### Example c8yedge-operator-config ConfigMap
+#### Apply changes
+After creating or updating the ConfigMap, restart the Edge operator as described in [Restarting the Edge operator](/edge/manage-edge/#restart-operator)
 
+#### Sample ConfigMap
 ```yaml
 apiVersion: v1
 kind: ConfigMap
@@ -92,6 +92,3 @@ data:
   ca.crt: |
     <CERTIFICATES_TO_TRUST>
 ```
-
-#### Apply changes
-After creating or updating the ConfigMap, restart the Edge operator as described in [Restarting the Edge operator](/edge/manage-edge/#restart-operator)
