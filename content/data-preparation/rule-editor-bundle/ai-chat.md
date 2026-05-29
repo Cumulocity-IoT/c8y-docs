@@ -9,7 +9,7 @@ sector:
   - device_management
 ---
 
-The AI assistant is the primary interface for creating and refining smart functions in Data Preparation. Instead of writing code manually, you describe what your device data looks like and what you want to achieve, and the AI generates the JavaScript transformation logic for you.
+The AI assistant is the primary interface for creating and refining smart functions in Data Preparation. Instead of writing code manually, you describe what your device data looks like and what you want to achieve, and the AI generates the Javascript transformation logic for you.
 
 {{< c8y-admon-important >}}
 AI-generated code is produced on a best-effort basis. Always review the generated smart function and test cases before deploying a rule to production. Verify that the code handles your data correctly by running the provided tests and inspecting the outputs.
@@ -88,7 +88,7 @@ Click any suggestion to send it as your next message. You can also ignore sugges
 
 When the AI updates the smart function or test cases, you see confirmation indicators in the chat:
 
-- **Updated smart function** — the AI has modified the JavaScript code in the code editor.
+- **Updated smart function** — the AI has modified the Javascript code in the code editor.
 - **Updated tests** — the AI has added or modified test cases in the test data panel.
 
 These indicators confirm that the corresponding panel has been updated. Expand them to see a summary of what changed.
