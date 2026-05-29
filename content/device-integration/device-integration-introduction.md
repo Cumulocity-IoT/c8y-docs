@@ -33,7 +33,7 @@ For highly constrained devices with microcontrollers that cannot run thin-edge.i
 Not all devices are directly connected to the internet. In such cases, IoT gateways act as intermediaries, collecting data from devices and forwarding it to {{< product-c8y-iot >}}. Several data integration options are available:
 
 * **[OPC UA](/device-integration/opcua/)**: Industrial automation protocol for connecting PLCs and industrial equipment.
-* **[MQTT Service](/device-integration/mqtt-service/)**: Flexible MQTT endpoint allowing user-provided microservices to map between custom device payloads and the {{< product-c8y-iot >}} data model.
+* **[MQTT Service](/device-integration/mqtt-service/)**: Flexible MQTT endpoint allowing [Data Preparation](/data-preparation/) or user-provided microservices to map between custom device payloads and the {{< product-c8y-iot >}} data model. Data Preparation also [creates devices automatically](/data-preparation/device-onboarding/) for unknown external IDs.
 * **thin-edge.io protocol drivers**: Extend thin-edge.io with custom protocol support for proprietary or specialized device protocols.
 * **Partner gateways**: Use pre-integrated partner gateways that bring support for the required protocol. Explore certified partner devices in the [Device Partner Portal](https://ecosystem.cumulocity.com/).
 

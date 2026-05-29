@@ -85,7 +85,7 @@ An operation represents a request to perform an action on a device, such as rest
 
 A managed object update applies an update to an existing managed object (MO) in the {{< product-c8y-iot >}} inventory. Use this type to update managed object details and custom fragments on a device or asset.
 
-The external ID you provide in `externalSource` is used to identify the target managed object. If no managed object exists for that external ID, the platform creates one automatically before applying the update.
+The external ID you provide in `externalSource` is used to identify the target managed object. If no managed object exists for that external ID, the platform creates one automatically before applying the update. For details on automatically created devices, see [Device onboarding](/data-preparation/device-onboarding/).
 
 Every field in the Managed Object API is optional, so you only need to include the fields you want to change. To remove a fragment, set its value to `null`.
 
