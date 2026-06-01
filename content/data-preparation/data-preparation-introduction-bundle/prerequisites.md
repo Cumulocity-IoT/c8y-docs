@@ -30,4 +30,4 @@ Ensure your tenant meets the following subscription requirements:
 Set up a [global provider](/ai/aim-introduction/#getting-started-by-configuring-a-global-provider) with the AI Agent Manager to enable the AI assistant in Data Preparation (for details on enabling preview features and learning about the AI Agent Manager, see the [AI Agent Manager documentation](/ai/aim-introduction/)).
 The AI assistant helps you describe your business context and automatically generates the necessary transformation code in a Smart function. We recommend using Anthropic `claude-sonnet-4-6` as the provider for optimal results. 
 
-To gain access to the Private Preview of Data Preparation, reach out to Cumulocity support.
+To enable Data Preparation, open the right drawer (by clicking on your username initials) in the **Administration** application and select **Manage preview features**. Then activate the toggle next to **Data Preparation**.
