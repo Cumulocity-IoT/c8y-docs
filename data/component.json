@@ -91,6 +91,16 @@
       ]
     },
     {
+      "id": "component-dPrp1xK9z",
+      "option": "Data Preparation",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
+    },
+    {
       "id": "component--KIsStyzM",
       "option": "Device Management app",
       "product_area": [
