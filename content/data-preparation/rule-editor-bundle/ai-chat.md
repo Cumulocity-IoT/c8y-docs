@@ -121,7 +121,6 @@ The AI supports a range of IoT data formats beyond JSON:
 - **CBOR** — Concise Binary Object Representation, common in constrained IoT devices.
 - **Protobuf** — Protocol Buffers, used by gRPC and Sparkplug B.
 - **OPC UA** — Binary DataValue and Variant encoding for industrial protocols.
-- **LoRaWAN** — Binary payloads with custom decode functions.
 - **Base64-encoded payloads** — the AI can decode and process these.
 
 When working with binary data, provide either:
