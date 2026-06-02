@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Integrate the DTM OpenAPI into the API documentation app"
+title: "DTM OpenAPI is available in the API Documentation app"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
