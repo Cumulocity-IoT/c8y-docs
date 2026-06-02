@@ -18,16 +18,16 @@ Streaming Lake Ingestion has no configuration options and stores all incoming re
 
 DataHub Query is optional if you want to post-process or query data using own tools. Note that views are currently only generate for engines compatible with Dremio and Spark SQL. While we designed the service to be as compliant as possible with common tool restrictions, we cannot guarantee compliance with all Iceberg tools.
 
-## I see a device, alarm, measurement, event or operation in the operational store but not in the lake.
+### I see a device, alarm, measurement, event or operation in the operational store but not in the lake.
 
 Only changes after subscription to Streaming Lake Ingestion are visible in the lake. If you have recently subscribed and the data was not changed since then, it will not be transferred to the lake.
 
 If the data was changed and it is not visible, check the "Alarms" overview page in the Cockpit application for warnings. You may have breached a limit. In this case, data breaching the limit is insert into the `trash` table.
 
-## I see a device in the lake, but not in the operational store.
+### I see a device in the lake, but not in the operational store.
 
 After you delete a device, the device is removed from the operational store but remains visible in the historic data in the lake for long-term reporting.
 
-## My device, alarm … appears several times in the inventory in the lake.
+### My device, alarm … appears several times in the inventory in the lake.
 
 The change data capture of the device inventory (`cdc_inventory`) records all changes to devices together with the kind of change that was applied. Inspect the `eventType` property and the `lastUpdated` to understand what change was applied when.
