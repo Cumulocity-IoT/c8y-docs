@@ -17,7 +17,7 @@ Data Preparation empowers you to:
 * Easily convert raw payloads into standard Cumulocity measurements, events, alarms, and inventory objects.
 * Use a conversational AI chat interface to describe your business context and automatically generate the necessary transformation code in a Smart Function.
 * Perform real-time calculations (for example, converting Fahrenheit to Celsius) or correct values based on predefined normal ranges.
-* Automatically map and create devices based on external IDs found in the payload, source client ID, or topic path.
+* Automatically map and [create devices](/data-preparation/device-onboarding/) based on external IDs found in the payload, source client ID, or topic path.
 * Scale with support for high-volume data ingestion, as Data Preparation is built on high-performant, scalable infrastructure.
 
 
