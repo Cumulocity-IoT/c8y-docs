@@ -75,14 +75,7 @@ Good prompts include:
 
 After each response, the AI offers clickable **suggested next requests** that guide you toward common next steps. These suggestions are contextual — they change based on the current state of your code and conversation.
 
-Typical suggestions include:
-
-- Adding error handling for missing or null fields.
-- Adding an alarm for threshold conditions.
-- Adding a test for edge cases.
-- Generating test cases for the current code.
-
-Click any suggestion to send it as your next message. You can also ignore suggestions and type your own request.
+Click any suggestion to send it as your next message. You can also type your own request instead.
 
 ### Tool call indicators {#tool-call-indicators}
 
