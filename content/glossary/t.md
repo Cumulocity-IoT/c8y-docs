@@ -81,3 +81,13 @@ Thick Edge is an informal term for {{< product-c8y-iot >}} Edge, see [{{< produc
 {{< c8y-details title="Developer details" >}}
 thin-edge.io exposes a local {{< product-c8y-iot >}} proxy endpoint to give device components access to the full {{< product-c8y-iot >}} REST API.
 {{< /c8y-details >}}
+
+
+### Topic {#topic}
+
+A channel on which messages are sent and received, by a device connected to a [protocol adapter](#protocol-adapter) or by a microservice using the [Messaging Service](#messaging-service).
+With devices, the topic typically describes the kind of data that is being sent.
+For example, an MQTT device connected to the [MQTT Service](#mqtt-service) might publish messages on topics `meters/123456/current` and `meters/123456/temperature`.
+The Messaging Service uses its own topic namespace for passing messages between protocol adapters, microservices, and internal {{< product-c8y-iot >}} components.
+For example, all messages published by devices using the MQTT Service will be delivered to microservices on the `from-device` topic, regardless of the MQTT topic that was used.
+See [Core MQTT topics](/device-integration/mqtt-service/#core-mqtt-topics) for another example of a topic schema used by MQTT devices, in this case devices that use the [SmartREST](#smartrest) device protocol.

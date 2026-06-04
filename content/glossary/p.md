@@ -40,6 +40,15 @@ For REST, the processing mode is specified using the `X-Cumulocity-Processing-Mo
 {{< /c8y-details >}}  
 
 
+### Protocol adapter {#protocol-adapter}
+
+A service that allows devices using a specific protocol to connect to the {{< product-c8y-iot >}} platform.
+An adapter is *payload-agnostic*, meaning that it manages the communication with the devices and routes payloads to and from the [Messaging Service](#messaging-service) without translating between the device message format and the {{< product-c8y-iot >}} domain model.
+Contrast this with a [device agent](#device-agent) that does actively translate device messages to and from the {{< product-c8y-iot >}} domain model.
+The [MQTT Service](#mqtt-service) is a good example of a protocol adapter.
+It allows *any* device that uses the MQTT protocol to connect, but the mapping to {{< product-c8y-iot >}} measurements, alarms, etc. much be implemented by a separate microservice.
+
+
 ### Public Preview {#public-preview}
 
 Public Preview denotes a feature release stage in the [Continuous Deployment model](#continuous-deployment) where a new feature is made available to any customer who opts in to use it. Features in this stage are not yet considered generally available as opposed to [Private Preview](#private-preview) and [General Availability](#ga).

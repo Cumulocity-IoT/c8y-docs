@@ -43,6 +43,13 @@ The child devices relationship is managed via the [Inventory API](https://cumulo
 {{< /c8y-details >}}
 
 
+### Client ID {#client-id}
+
+A unique identifier for a device, client, or gateway connecting to a [protocol adapter](#protocol-adapter).
+The client ID should be unique within a {{< product-c8y-iot >}} [tenant](#tenant).
+For example, devices connecting to the [MQTT Service](#mqtt-service) will use the MQTT client identifier as their client ID.
+
+
 ### Cockpit application {#cockpit-application}
 
 The Cockpit application is one of the default [applications](#application) of {{< product-c8y-iot >}}. It provides a self-service UI to manage and monitor IoT assets and data from a business perspective, like managing [assets](#asset), visualizing data, working with [dashboards](#dashboard) and managing [reports](#report).   
