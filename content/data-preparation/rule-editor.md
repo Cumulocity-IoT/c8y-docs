@@ -10,7 +10,7 @@ sector:
 helpcontent:
 - label: rule-editor
   title: Rule editor
-  content: "The rule editor is where you create and refine the smart function for a Data Preparation rule. It consists of three main areas: an AI assistant for generating and refining transformation code through natural language prompts, a JavaScript code editor for viewing and editing the smart function directly, and a test data panel for validating outputs against sample payloads before deployment.
+  content: "The rule editor is where you create and refine the smart function for a Data Preparation rule. It consists of three main areas: an AI assistant for generating and refining transformation code through natural language prompts, a Javascript code editor for viewing and editing the smart function directly, and a test data panel for validating outputs against sample payloads before deployment.
 
 
   Use the AI assistant to describe your device data and desired output, and it generates the transformation logic automatically. You can also edit code manually in the smart function editor and use undo or redo to step through changes.
