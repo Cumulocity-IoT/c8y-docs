@@ -46,7 +46,7 @@ A service that allows devices using a specific protocol to connect to the {{< pr
 An adapter is *payload-agnostic*, meaning that it manages the communication with the devices and routes payloads to and from the [Messaging Service](#messaging-service) without translating between the device message format and the {{< product-c8y-iot >}} domain model.
 Contrast this with a [device agent](#device-agent) that actively translates device messages to and from the {{< product-c8y-iot >}} domain model.
 The [MQTT Service](#mqtt-service) is a good example of a protocol adapter.
-It allows *any* device that uses the MQTT protocol to connect, but a separate microservice must implement the mapping to {{< product-c8y-iot >}} measurements, alarms, and events.
+It allows *any* device that uses the MQTT protocol to connect, but a separate microservice must implement the mapping to {{< product-c8y-iot >}} measurements, alarms, events and other data types.
 
 
 ### Public Preview {#public-preview}
