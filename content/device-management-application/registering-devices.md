@@ -64,6 +64,10 @@ If a device registration is **blocked**, you will need to delete it first and th
 
 Devices can be connected to your {{< product-c8y-iot >}} account in different ways.
 
+{{< c8y-admon-info >}}
+If you use [Data Preparation](/data-preparation/) to process device messages from the MQTT Service, devices are [created automatically](/data-preparation/device-onboarding/) when an unknown external ID is encountered. Manual registration is not required in this case.
+{{< /c8y-admon-info >}}
+
 To register devices, you can select one of the following options:
 
 * **[Single device registration](#single-device-registration)** - to manually connect one device or several devices one by one.

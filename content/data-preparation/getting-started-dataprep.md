@@ -75,7 +75,7 @@ When you have finished editing your smart function, click **Save and deploy**. T
 - Starts the rule running against live device traffic.
 - Begins mapping incoming messages into {{< product-c8y-iot >}} objects according to your smart function.
 
-If a measurement is produced for a device the platform has not seen before, a new device is created automatically based on the `externalId` in the measurement.
+If a measurement is produced for a device the platform has not seen before, a new device is created automatically based on the `externalId` in the measurement. For details, see [Device onboarding](/data-preparation/device-onboarding/).
 
 ### Draft and deployed states {#draft-deployed}
 

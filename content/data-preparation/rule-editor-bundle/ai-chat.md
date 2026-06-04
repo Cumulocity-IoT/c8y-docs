@@ -75,14 +75,7 @@ Good prompts include:
 
 After each response, the AI offers clickable **suggested next requests** that guide you toward common next steps. These suggestions are contextual — they change based on the current state of your code and conversation.
 
-Typical suggestions include:
-
-- Adding error handling for missing or null fields.
-- Adding an alarm for threshold conditions.
-- Adding a test for edge cases.
-- Generating test cases for the current code.
-
-Click any suggestion to send it as your next message. You can also ignore suggestions and type your own request.
+Click any suggestion to send it as your next message. You can also type your own request instead.
 
 ### Tool call indicators {#tool-call-indicators}
 
@@ -121,7 +114,6 @@ The AI supports a range of IoT data formats beyond JSON:
 - **CBOR** — Concise Binary Object Representation, common in constrained IoT devices.
 - **Protobuf** — Protocol Buffers, used by gRPC and Sparkplug B.
 - **OPC UA** — Binary DataValue and Variant encoding for industrial protocols.
-- **LoRaWAN** — Binary payloads with custom decode functions.
 - **Base64-encoded payloads** — the AI can decode and process these.
 
 When working with binary data, provide either:
@@ -149,4 +141,4 @@ The AI assistant is designed to help you work efficiently while protecting your 
 - **Tests are protected** — the AI adds and updates tests but never deletes them. Your test suite only grows, ensuring previously validated scenarios remain covered.
 - **Code stays within the smart function API** — the AI only generates code that uses the supported [smart function interfaces](/data-preparation/smart-functions/). If you request something outside the API capabilities, the AI informs you of the limitation.
 - **Best-effort generation** — while the AI produces high-quality code for most IoT scenarios, always run tests and review the output before deploying. Complex or unusual data formats may require additional prompts or manual adjustments.
-- **Recommended AI model** — the assistant uses the AI model configured in your tenant's AI Agent Manager. The quality of responses depends on the configured provider. Anthropic’s claude-sonnet-4-5 is the recommended and tested model.
+- **Recommended AI model** — the assistant uses the AI model configured in your tenant's AI Agent Manager. The quality of responses depends on the configured provider. Anthropic’s claude-sonnet-4-6 is the recommended and tested model.
