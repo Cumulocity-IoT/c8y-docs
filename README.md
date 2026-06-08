@@ -191,6 +191,12 @@ In case of a merge conflict while cherry-picking to a specific release branch, t
 In that case you will have to take care of cherry-picking manually and resolve the conflicts.
 This is not going to influence the other release branches as long as they do not have conflicts.
 
+## VS Code Copilot review
+
+This repository includes standard prompts for reviewing documentation against Cumulocity standards and style. They use the `c8y` prefix.
+
+c8y-standard-review.prompt.md - Review of documentation with particular focus on Cumulocity standards and style.
+c8y-change-log-review.prompt.md - Specific review of a change log entry.
 
 ---
 Copyright © 2018-present Cumulocity GmbH. All rights reserved.
