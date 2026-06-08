@@ -22,5 +22,7 @@ environment_availability:
     date: '2026-05-18'
   - label: us.cumulocity.com
     date: '2026-05-25'
+  - label: cumulocity.com
+    date: '2026-06-08'
 ---
 In the Device Management application, editable device parameters can now be modified directly from the parameter list through a dedicated edit action.
