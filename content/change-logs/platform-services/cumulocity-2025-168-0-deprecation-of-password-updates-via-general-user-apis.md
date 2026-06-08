@@ -18,14 +18,14 @@ environment_availability:
 
 To improve platform security, the ability to update passwords through general user endpoints is being deprecated. Password changes will soon require verification of the current password to prevent unauthorized account takeovers.
 
-## Affected endpoints
+**Affected endpoints**
 
 The `password` field is deprecated in the following endpoints:
 
 - **PUT /user/currentUser** - https://cumulocity.com/api/core/#operation/putCurrentUserResource
 - **PUT /tenant/users/{userId}** - https://cumulocity.com/api/core/#operation/putUserResource
 
-## New requirement
+**New requirement**
 
 All password updates must use the dedicated endpoint for Update current user's password :
 
@@ -33,7 +33,7 @@ All password updates must use the dedicated endpoint for Update current user's p
 
 This endpoint requires the `currentPassword` field for validation.
 
-## Timeline
+**Timeline**
 
 In Q4 2026 for the SaaS instances and in 2027 for the yearly releases, the `password` field in general user endpoints will be ignored.
 
