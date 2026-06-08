@@ -1,6 +1,6 @@
 ---
 date: ''
-title: Improved reliability of LWM2M data forwarding to MQTT service
+title: Improved reliability of LWM2M data forwarding to the MQTT Service
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
