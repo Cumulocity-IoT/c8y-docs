@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-06-08
 title: Asset properties selector now filters by translated labels
 product_area: Application enablement & solutions
 change_type:

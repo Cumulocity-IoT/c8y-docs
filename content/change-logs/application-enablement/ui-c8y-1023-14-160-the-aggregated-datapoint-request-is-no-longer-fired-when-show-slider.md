@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-06-08
 title: Aggregated data point requests now skipped when the slider is disabled
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-06-08
 title: Device Management welcome widget now translates quick link labels
 product_area: Device management & connectivity
 change_type:

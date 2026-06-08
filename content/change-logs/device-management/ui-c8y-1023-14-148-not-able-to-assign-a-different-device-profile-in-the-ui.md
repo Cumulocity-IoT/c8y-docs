@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-06-08
 title: Device profiles can properly be reassigned
 product_area: Device management & connectivity
 change_type:

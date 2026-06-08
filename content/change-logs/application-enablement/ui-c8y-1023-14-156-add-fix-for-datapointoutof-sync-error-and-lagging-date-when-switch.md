@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-06-08
 title: Fixed chart synchronization error
 product_area: Application enablement & solutions
 change_type:
