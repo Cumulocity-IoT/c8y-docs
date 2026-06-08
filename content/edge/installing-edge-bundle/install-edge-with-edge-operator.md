@@ -56,8 +56,8 @@ For more information about the structure and configuration options available in 
 ### Configuring the Edge operator with a proxy and trusted TLS certificates
 
 You can configure the Edge operator to:
-  - Route outbound traffic through a proxy server when deployed behind a proxy
-  - Trust additional TLS certificates for external endpoints
+  - Route outbound traffic through a proxy server when deployed behind a proxy.
+  - Trust additional TLS certificates for external endpoints.
 
 To configure proxy settings and trusted certificates, create or update a ConfigMap named `c8yedge-operator-config` in the `c8yedge` namespace (or the namespace where Edge is deployed) with the required configuration keys described below:
   - `http_proxy` - HTTP proxy URL
