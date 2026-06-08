@@ -45,7 +45,7 @@ The child devices relationship is managed via the [Inventory API](https://cumulo
 
 ### Client ID {#client-id}
 
-A unique identifier for a device, client, or gateway connecting to a [protocol adapter](#protocol-adapter).
+A client ID is a unique identifier for a device, client, or gateway connecting to a [protocol adapter](#protocol-adapter).
 The client ID must be unique within a {{< product-c8y-iot >}} [tenant](#tenant).
 For example, devices connecting to the [MQTT Service](#mqtt-service) use the MQTT client identifier as their client ID.
 

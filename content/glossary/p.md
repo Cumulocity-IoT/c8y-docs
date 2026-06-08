@@ -42,7 +42,7 @@ For REST, the processing mode is specified using the `X-Cumulocity-Processing-Mo
 
 ### Protocol adapter {#protocol-adapter}
 
-A service that allows devices using a specific protocol to connect to the {{< product-c8y-iot >}} platform.
+A protocol adapter is a service that allows devices using a specific protocol to connect to the {{< product-c8y-iot >}} platform.
 An adapter is *payload-agnostic*, meaning that it manages the communication with the devices and routes payloads to and from the [Messaging Service](#messaging-service) without translating between the device message format and the {{< product-c8y-iot >}} domain model.
 Contrast this with a [device agent](#device-agent) that actively translates device messages to and from the {{< product-c8y-iot >}} domain model.
 The [MQTT Service](#mqtt-service) is a good example of a protocol adapter.
