@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-06-08
 title: Custom logo in navigator hides the default cumulocity symbol in the illustration
 product_area: Application enablement & solutions
 change_type:

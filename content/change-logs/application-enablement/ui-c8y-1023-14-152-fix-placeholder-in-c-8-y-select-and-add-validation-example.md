@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-06-08
 title: Fixed placeholder in c8y-select component
 product_area: Application enablement & solutions
 change_type:

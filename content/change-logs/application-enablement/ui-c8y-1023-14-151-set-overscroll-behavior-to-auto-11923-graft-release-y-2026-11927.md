@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-06-08
 title: Fixed overscroll behavior in web applications
 product_area: Application enablement & solutions
 change_type:

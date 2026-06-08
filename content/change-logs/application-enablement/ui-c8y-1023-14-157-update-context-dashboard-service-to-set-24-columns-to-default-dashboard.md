@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-06-08
 title: Default dashboard configuration now uses 24 columns
 product_area: Application enablement & solutions
 change_type:

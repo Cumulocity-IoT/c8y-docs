@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-06-08
 title: Password validation consistently aligned with configured rules
 product_area: Application enablement & solutions
 change_type:

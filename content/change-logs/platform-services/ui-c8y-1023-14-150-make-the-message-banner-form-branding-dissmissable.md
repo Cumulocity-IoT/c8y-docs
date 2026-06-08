@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-06-08
 title: Custom message banners in branding can now be acknowledged and dismissed
 product_area: Platform services
 change_type:
