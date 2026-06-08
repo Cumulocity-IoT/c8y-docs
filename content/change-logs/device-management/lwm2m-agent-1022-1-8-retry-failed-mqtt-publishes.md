@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-6238
 version: 
 ---
-Previously, when the LWM2M service forwarded device data to MQTT service and the publish failed (for example, when the messaging backend was unavailable or quota-limited), the message was dropped and never retried. Failed publishes are now buffered and retried on a scheduled interval, reducing message loss during transient backend outages. The retry queue size, per-message retry cap, and retry interval are configurable.
+Previously, when the LWM2M service forwarded device data to the MQTT Service and the publish failed (for example, when the messaging backend was unavailable or quota-limited), the message was dropped and never retried. Failed publishes are now buffered and retried on a scheduled interval, reducing message loss during transient backend outages. The retry queue size, per-message retry cap, and retry interval are configurable.
