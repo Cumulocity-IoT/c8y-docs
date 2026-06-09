@@ -1,18 +1,21 @@
 ---
-date: ''
+date: '2026-06-05'
 title: Alarm upsert endpoint
 product_area: Platform services
 change_type:
-- value: change-QHu1GdukP
-  label: Feature
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-- value: component-JlFdtOPva
-  label: REST API
+  - value: component-JlFdtOPva
+    label: REST API
 build_artifact:
-- value: tc-QHwMfWtBk7
-  label: cumulocity
+  - value: tc-QHwMfWtBk7
+    label: cumulocity
 ticket: MTM-66518
 version: 2026.165.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-06-05'
 ---
 
 {{< product-c8y-iot >}} now provides a dedicated alarm upsert endpoint (`POST /alarm/alarms/upsert`).
