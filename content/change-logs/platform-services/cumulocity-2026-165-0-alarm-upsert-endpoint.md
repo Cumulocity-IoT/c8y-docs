@@ -16,8 +16,8 @@ version: 2026.165.0
 ---
 
 {{< product-c8y-iot >}} now provides a dedicated alarm upsert endpoint (`POST /alarm/alarms/upsert`).
-The operation creates a new alarm if no non-cleared alarm with the same source and type exists,
-or updates the existing one otherwise. The response status reflects the outcome: `201 Created`
+The operation creates a new alarm if no uncleared alarm with the same source and type exists,
+or updates the existing one otherwise. The response status reflects the outcome `201 Created`
 for a newly created alarm, or `200 OK` when an existing alarm was updated.
 
 For details refer to the [upsert alarm operation](https://{{< domain-c8y >}}/api/core/#operation/postAlarmUpsertResource)
