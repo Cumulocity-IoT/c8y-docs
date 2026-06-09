@@ -189,6 +189,12 @@ $ curl https://iceberg.<INSTANCE>:19120/api/catalog/v1/<TENANT>/namespaces/cdc_i
 While Iceberg is widely supported, the degree of support currently still varies and we cannot guarantee the catalog to be interoperable with all setups and applications.
 {{< /c8y-admon-info >}}
 
+### Setting the default base location for the Iceberg catalog {#setting-default-base-location}
+
+You can set a default base location for the Iceberg catalog per tenant. Streaming Lake Ingestion checks for the tenant option `manager.polaris.catalog.default-base-location` in the `offloading` category after subscription. Attempts continue for up to three times. If the option is not found, the service falls back to a preconfigured default.
+
+Set the tenant option **before** subscribing to Streaming Lake Ingestion to use your own default base location. Use the [Tenant Options API](https://cumulocity.com/api/core/#tag/Options) to configure this option.
+
 ### Understanding the data lake structure
 
 Streaming Lake Ingestion provides three types of data:
@@ -215,7 +221,6 @@ The following columns are present in some tables, depending on the type of data:
 
 For change data capture tables and views, the following column is present:
 * `eventType`: The type of change indicated by the record. For example, `MANAGED_OBJECT_UPDATE` indicates an update of a managed object.
-
 
 #### Inventory {#inventory}
 
