@@ -95,6 +95,9 @@ The following conditions apply to all support levels:
 * When reaching Support by telephone, Customer is to provide the support ticket number so that work on the issue can commence.
 * Support has no obligation to solve the Customer’s issue within the response or any other time frame.
 
+#### Security-Related Incidents
+We treat all security-related issues with the highest priority. If you suspect that your support request involves a security vulnerability or incident, you must explicitly indicate this when opening your ticket. Please do this by clearly noting your suspicion within the ticket description. Once an issue is identified as a security concern, it is immediately flagged on our internal priority dashboards. The ticket is then handled according to our specialized Security Incident Management process, which includes an accelerated escalation path and direct involvement from our IT Security Team and Chief Information Security Officer (CISO) to ensure rapid containment and resolution.
+
 ### Customer responsibilities
 
 * Customer assigns Authorized Technical Contacts (ATCs) and communicates any changes to the list of ATCs to Provider.
