@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix for chart not showing correct y-scale for visible data (#11760) [GRAFT][release/cd] (#12149)
+title: chart now shows correct y-scale for visible data
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,21 +14,4 @@ build_artifact:
 ticket: MTM-66547
 version: 1023.83.3
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-66547] fix for chart not showing correct y-scale
-for visible data
-(#11760)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11760)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66547]:
-https://cumulocity.atlassian.net/browse/MTM-66547?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
-Co-authored-by: Adrian Mioduszewski <amio@softwareag.com>
+Charts were not displaying the correct y-axis scale when showing visible data, which could make it difficult to accurately interpret the chart values. The y-axis scale calculation has been fixed to properly reflect the range of data currently displayed in the chart. This ensures that charts now render with an appropriate y-axis scale that accurately represents the visible data points, making it easier for you to analyze and understand the information presented.
