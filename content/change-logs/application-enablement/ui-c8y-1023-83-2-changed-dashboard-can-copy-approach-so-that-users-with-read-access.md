@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Changed dashboard canCopy approach so that users with read access can always copy. [GRAFT][release/cd] (#12147)
+title: Users with read access can now copy dashboards
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,21 +14,4 @@ build_artifact:
 ticket: MTM-66313
 version: 1023.83.2
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-66313] Changed dashboard canCopy approach so that
-users with read access can always
-copy.](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11641)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66313]:
-https://cumulocity.atlassian.net/browse/MTM-66313?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
-Co-authored-by: Adrian Mioduszewski <amio@softwareag.com>
+Previously, the ability to copy a dashboard was restricted based on user permissions, which prevented users with read-only access from creating copies of dashboards they could view, but not edit. The dashboard copy functionality now allows any user with read access to a dashboard to copy it, regardless of their other permissions. This change makes it easier for users to work with dashboards by enabling them to create their own copies for customization or reference purposes without requiring additional permissions. The copied dashboards can only be pasted to assets of the same kind to which the user has admin access.
