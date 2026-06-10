@@ -20,12 +20,6 @@ Assign these permissions to your user role in the Administration app. See [Manag
 Editing existing rules and undeploying deployed rules are not available in this release.
 {{< /c8y-admon-important >}}
 
-### Subscription {#subscription}
-Ensure your tenant meets the following subscription requirements:
-* Your tenant is subscribed to the `Data-prep-ctrl` microservice
-* Your tenant is subscribed to the `Data Preparation` application
-
-
 ### AI configuration {#ai-configuration}
 Set up a [global provider](/ai/aim-introduction/#getting-started-by-configuring-a-global-provider) with the AI Agent Manager to enable the AI assistant in Data Preparation (for details on enabling preview features and learning about the AI Agent Manager, see the [AI Agent Manager documentation](/ai/aim-introduction/)).
 The AI assistant helps you describe your business context and automatically generates the necessary transformation code in a Smart function. We recommend using Anthropic `claude-sonnet-4-6` as the provider for optimal results. 
