@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Changed dashboard canCopy approach so that users with read access can always copy. [GRAFT][release/y2026] (#12148)
+title: Users with read access can now copy dashboards
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66313
 version: 1023.14.170
 ---
-Changed dashboard canCopy approach so that users with read access can always copy. [GRAFT][release/y2026] (#12148)
+Previously, the ability to copy a dashboard was restricted based on user permissions, which prevented users with read-only access from creating copies of dashboards they could view, but not edit. The dashboard copy functionality now allows any user with read access to a dashboard to copy it, regardless of their other permissions. This change makes it easier for users to work with dashboards by enabling them to create their own copies for customization or reference purposes without requiring additional permissions. The copied dashboards can only be pasted to assets of the same kind to which the user has admin access.
