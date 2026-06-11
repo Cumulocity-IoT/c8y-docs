@@ -17,7 +17,7 @@ For a guided walkthrough of the full process, see [Getting started](/data-prepar
 
 The wizard guides you through three steps:
 
-1. **Source** — configure the transport and topic or client ID filter. Then choose whether to start by capturing live messages from the transport, or skip so you can manually enter test data after the rule is created. 
+1. **Source** — configure the transport, and the topic or client ID filter. Then choose whether to start by capturing live messages from the transport, or skip capture and manually enter test data after the rule is created. 
 2. **Live capture** (optional) — if you choose to capture, the platform listens for messages matching your filters and displays them in real time. Select a captured message to use as the initial test data for your rule. For details, see [Live capture](#live-capture).
 3. **Confirm and create** — review or edit the source configuration, then enter a **name** and optional **description** for the rule. On this page you can edit the source configuration if the filter for the rule itself should be different from the filter you used to capture the sample data. 
 
@@ -30,12 +30,12 @@ For a step-by-step guide to creating a rule, see [Create your first rule](/data-
 Live capture lets you inspect real incoming device messages to get a sample message to use for creating and testing your rule. This is the easiest way to get started when your devices are already connected and sending data to the platform.
 
 To use live capture to select a sample message for your new rule:
-- Click **Create rule** to open the rule creation wizard. 
-- Use the **Source** fields on the first page to specify which messages should be captured for the rule you are creating. You can use `*` wildcards if you don't know the exact topic or client ID, but make sure your filters are specific enough to focus on the device you wish to onboard. 
-- Click **Start live capture from device**. The wizard advances to the live capture step and begins listening for messages that match your filters. Incoming messages appear in a list as they arrive. Each entry shows the timestamp, topic, and client ID.
-- Click a message in the list to select it. The selected message is added as a test message when the rule is created.
-- If you do not see the expected messages or realize you have entered the wrong filters, click **Edit capture source** to change the topic or client ID filter and start a new capture session. Alternatively, you can click **Back** to cancel live capture and click **Enter test data later** to proceed directly to the confirm step.
-- Click **Next** to proceed to the confirm step and finish creating the rule.
+1. Click **Create rule** to open the rule creation wizard. 
+2. Use the **Source** fields on the first page to specify which messages should be captured for the rule you are creating. You can use `*` wildcards if you don't know the exact topic or client ID, but make sure your filters are specific enough to focus on the device you wish to onboard. 
+3. Click **Start live capture from device**. The wizard advances to the live capture step and begins listening for messages that match your filters. Incoming messages appear in a list as they arrive. Each entry shows the timestamp, topic, and client ID.
+4. Click a message in the list to select it. The selected message is added as a test message when the rule is created.
+5. If you do not see the expected messages or realize you have entered the wrong filters, click **Edit capture source** to change the topic or client ID filter and start a new capture session. Alternatively, you can click **Back** to cancel live capture and click **Enter test data later** to proceed directly to the confirm step.
+6. Click **Next** to proceed to the confirm step and finish creating the rule.
 
 Live capture stops automatically after 20 messages are received, or after 5 minutes. When capture stops, you can click **Resume** to continue capturing more messages. 
 
@@ -57,7 +57,7 @@ Each rule has deployment status chips that indicate whether it is currently proc
 | Status | Description |
 |---|---|
 | **Deployed** | The rule is active and processing incoming messages. |
-| **Not deployed** | The rule exists but is not active. |
+| **Not deployed** | The draft rule exists but is not deployed. |
 | **Draft changed since last deployment** | The rule is deployed, but the draft has been edited since the last deployment. Live processing continues with the last deployed version. |
 
 The draft and deployed versions of a rule are independent. You can edit a draft freely without affecting the deployed version. The platform only updates the deployed version when you click **Save and deploy** in the rule editor.
@@ -81,7 +81,7 @@ Click the **Reload** button to refresh the rules list and show the latest deploy
 
 ### To edit a rule {#edit-rule}
 
-- Click the rule name in the list. The rule editor opens for that rule.
+Click the rule name in the list. The rule editor opens for that rule.
 
 In the rule editor you can update the smart function code, add test data, and run tests. For a full reference of the rule editor and its panels, see [Rule editor](/data-preparation/rule-editor/).
 
