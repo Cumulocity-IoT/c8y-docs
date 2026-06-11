@@ -7,18 +7,16 @@ To use the Data Preparation application, ensure you have the following prerequis
 
 ### Permissions {#permissions}
 
-Verify that your user includes the following role permissions:
+Verify that your user's role includes the required permissions:
 
-| Role | Access granted |
-|---|---|
-| Data Preparation rules | Create, edit, and delete draft rules. |
-| Data Preparation deployments | Deploy and undeploy rules in production. |
+| Permission type | Level | Access granted |
+|---|---|--|
+| Data Preparation rules | ADMIN | View, create, edit, and delete draft rules. |
+| Data Preparation rules | READ | View rules. |
+| Data Preparation deployments | ADMIN | Deploy and undeploy rules to production. Does not include permission to view or edit the rules. |
+| Data Preparation deployments | READ | View deployment status and errors. |
 
-Assign these permissions to your user role in the Administration application. See [Managing permissions and roles](/standard-tenant/managing-permissions/) for details.
-
-{{< c8y-admon-important >}}
-Editing existing rules and undeploying deployed rules are not available in Private Preview or Public Preview.
-{{< /c8y-admon-important >}}
+Assign these permissions to your global role in the Administration application, and make sure this role has access to the Data Preparation application. See [Managing permissions and roles](/standard-tenant/managing-permissions/) for details.
 
 ### Subscription {#subscription}
 Ensure your tenant meets the following subscription requirements:
