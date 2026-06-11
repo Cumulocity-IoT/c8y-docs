@@ -17,8 +17,8 @@ The code editor is minimized by default when a rule is first created. It opens a
 
 Alternatively, the layout of the editor can be manually adjusted to suit your workflow:
 
-- Click the <i class="dlt-c8y-icon-resize-expand icon-20"></i> maximize icon to expand the code editor to full height, covering the test data panel.
-- Click the <i class="dlt-c8y-icon-resize-collapse icon-20"></i> restore icon to reveal the test data panel again.
+- Click the **Maximize code editor** icon to expand the code editor to full height, covering the test data panel.
+- Click the **Show input** icon to reveal the test data panel again.
 - Drag the resize handle at the top edge of the code editor to adjust its height.
 
 ### Editing code {#editing-code}

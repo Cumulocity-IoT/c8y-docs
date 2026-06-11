@@ -14,6 +14,6 @@ outputs:
 - html
 ---
 
-Data Preparation manages transformation logic to convert between raw IoT device formats and the Cumulocity data model.
+The Data Preparation application manages data transformation logic to convert raw device data into the Cumulocity data model for downstream use.
 
 

@@ -90,7 +90,7 @@ The external ID you provide in `externalSource` is used to identify the target m
 Every field in the Managed Object API is optional, so you only need to include the fields you want to change. To remove a fragment, set its value to `null`.
 
 {{< c8y-admon-important >}}
-Managed object updates are designed for updating existing managed objects, not as the primary way to create new managed objects. The `ManagedObject` type does not have the ability to make hierarchy changes (for example, assigning child devices or assets).
+Managed object updates are designed for updating existing managed objects, not as the primary way to create new managed objects. The `managedObject` type does not have the ability to make hierarchy changes (for example, assigning child devices or assets).
 {{< /c8y-admon-important >}}
 
 | Field | Type | Required | Description |
