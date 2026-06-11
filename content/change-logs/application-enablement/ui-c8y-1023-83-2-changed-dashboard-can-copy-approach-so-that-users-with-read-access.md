@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Users with READ access can now copy dashboards
+title: Users with read access can now copy dashboards
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
