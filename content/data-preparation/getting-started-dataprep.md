@@ -39,7 +39,7 @@ Click **Create** to add the rule and open the rule editor.
 
 The rule editor shows the AI assistant panel, and the test data area where you enter expected device messages to guide the AI assistant and to check your data preparation rule handles the messages correctly. 
 
-If you selected a message using live capture during rule creation, the captured message is already shown as a test input. If not, you can manually enter paste a typical payload into the input area, for example:
+If you selected a message using live capture during rule creation, the captured message is already shown as a test input. If not, you can manually enter a typical payload into the input area, for example:
 
 ```json
 { "deviceId": "SN-001", "tempCelsius": 22.5 }
@@ -64,10 +64,10 @@ The test output panel appears alongside the input data. To check that the smart 
 2. Click **Run tests**. The platform executes your smart function against the test input.
 3. Review the resulting output: the {{< product-c8y-iot >}} objects (measurements, events, alarms, operations) the function would produce and the {{< product-c8y-iot >}} external "source" device it would create them on. Any `console.log` output from the smart function is also displayed here. 
 4. If the output is not what you expect, ask the AI to refine the code, then run the tests again. Repeat until the output is correct.
-5. (Optional) Once the output is correct, click *Save expected output* to record the correct output for this test. If you make further changes that produce different output when you run the tests in future, this will be flagged as an error. This automated verification avoids the need to keep manually checking the output to avoid regressions. 
-6. (Optional) You can now add more tests to check for edge cases such as missing values, out of range values, and other inputs that might require special handling in your rule. To do this, open the tests drop-down, and duplicate the existing test to a new one that describes what it's for. You can also generate tests using the AI assistant. For any edge cases where it's not possible to generate a valid {{< product-c8y-iot >}} object, you should raise a Javascript exception so that an alarm will be created to notify you about the problem. 
+5. (Optional) Once the output is correct, click **Save expected output** to record the correct output for this test. If you make further changes that produce different output when you run the tests in future, this will be flagged as an error. This automated verification avoids the need to keep manually checking the output to avoid regressions. 
+6. (Optional) You can now add more tests to check for edge cases such as missing values, out of range values, and other inputs that might require special handling in your rule. To do this, open the tests drop-down, and duplicate the existing test to a new one that describes what it's for. You can also generate tests using the AI assistant. For any edge cases where it's not possible to generate a valid {{< product-c8y-iot >}} object, raise a Javascript exception so that an alarm will be created to notify you about the problem. 
 
-While working on the draft rule, you should regularly press **Save** to ensure your changes are persisted. 
+While working on the draft rule, click **Save** regularly to ensure your changes are persisted. 
 
 ### Step 5: Deploy the rule {#deploy-rule}
 
@@ -85,7 +85,7 @@ Each rule has two versions:
 - The **draft** version is what you edit in the rule editor. Changes to the draft do not affect live processing.
 - The **deployed** version is what runs against live device traffic. It is updated only when you click **Save and deploy**.
 
-This separation lets you safely iterate on a rule --- including with the AI assistant and test runs --- without disturbing the running version. You can edit the draft as much as you like; the deployed rule keeps running with its last-saved smart function until you redeploy.
+This separation lets you safely iterate on a rule --- including with the AI assistant and test runs --- without disturbing the running version. You can edit the draft as much as you like. The deployed rule keeps running with its last-saved smart function until you redeploy.
 
 ### Next steps {#next-steps}
 
