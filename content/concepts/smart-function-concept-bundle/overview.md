@@ -57,4 +57,4 @@ Smart functions run in a sandboxed environment. They cannot access the host file
 - **thin-edge.io** uses smart functions inside flows to process messages at the edge, reducing bandwidth and enabling local processing before data reaches the cloud.
 - Other components will add smart functions support over time, each applying the pattern to their domain.
 
-For more detail on the different implementations see [Implementations](#implementations).
+For more details on the different implementations, see [Implementations](#implementations).

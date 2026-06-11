@@ -19,9 +19,9 @@ A `DeviceMessage` represents a message received from a device transport.
 | `transportFields` | `{ [key: string]: string }` | No | Optional dictionary of transport-specific metadata. Values are strings. |
 | `time` | `Date` | No | Timestamp the message was received by the platform. |
 
-### {{< product-c8y-iot >}} Objects {#cumulocity-objects}
+### {{< product-c8y-iot >}} objects {#cumulocity-objects}
 
-When you return objects from `onMessage`, you return one of five domain object types: `Measurement`, `Event`, `Alarm`, `Operation`, or `Managed object`. All five share the same common fields and differ only in their payload structure.
+When you return objects from `onMessage`, you return one of five domain object types: `Measurement`, `Event`, `Alarm`, `Operation`, or `ManagedObject`. All five share the same common fields and differ only in their payload structure.
 
 #### Common fields {#common-fields}
 

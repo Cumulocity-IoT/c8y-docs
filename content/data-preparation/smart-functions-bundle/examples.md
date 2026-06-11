@@ -222,8 +222,8 @@ export function onMessage(msg, context) {
 Extract values directly from a binary payload with a known fixed structure, without text decoding.
 
 {{< c8y-admon-info >}}
-The Sample Data and Testing portions of the UI currently do not support non-JSON payload types, however the rest of the Data Preparation application supports any payload type, including binary.
-{{</ c8y-admon-info >}}
+The Test data portion of the UI currently does not support non-JSON payload types. However, the rest of the Data Preparation application supports any payload type, including binary.
+{{< /c8y-admon-info >}}
 
 **Example input**: a 9-byte binary payload structured as:
 

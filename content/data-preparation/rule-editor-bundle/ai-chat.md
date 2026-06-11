@@ -42,7 +42,7 @@ For example, enter a JSON payload in the test data input:
 {"temperature": 22.5, "humidity": 65, "batteryLevel": 87}
 ```
 
-Then ask: *"Convert to a Cumulocity measurement"*
+Then ask: "Convert to a Cumulocity measurement"
 
 The AI uses the field names, value types, and structure from your sample to produce precise transformation code.
 
@@ -60,14 +60,14 @@ Good prompts include:
 
 | Prompt | Why it works |
 |--------|--------------|
-| *"My device sends JSON with fields temp and vibration. Convert into two measurements using the clientID as the externalId."* | Specifies format, fields, output type, and device identity. |
-| *"My HVAC device gives a temperature reading. Always send a measurement. If temperature is above 76°F, also raise an alarm."* | Describes conditional logic clearly. |
-| *"I have a Modbus device sending binary data. Here is the decode function..."* | Provides the codec so the AI can integrate it directly. |
-| *"Convert this climate sensor JSON to a measurement. Filter out readings where temperature is below 15°C or above 35°C."* | Includes validation requirements. |
+| "My device sends JSON with fields temp and vibration. Convert into two measurements using the clientID as the externalId." | Specifies format, fields, output type, and device identity. |
+| "My HVAC device gives a temperature reading. Always send a measurement. If temperature is above 76°F, also raise an alarm." | Describes conditional logic clearly. |
+| "I have a Modbus device sending binary data. Here is the decode function..." | Provides the codec so the AI can integrate it directly. |
+| "Convert this climate sensor JSON to a measurement. Filter out readings where temperature is below 15°C or above 35°C." | Includes validation requirements. |
 
 #### Prompts to avoid {#prompts-to-avoid}
 
-- Vague requests without sample data or context (for example, *"Write me some code"*).
+- Vague requests without sample data or context (for example, "Write me some code").
 - Prompts that assume the AI knows your specific device without providing its data format.
 - Requests to use features not supported by the smart function API — the AI informs you if something is not possible.
 
@@ -96,10 +96,10 @@ This is useful when you inherit a rule from another user or want to verify the b
 
 You do not need to get everything right in a single prompt. The AI maintains context across the conversation, so you can build up your smart function step by step:
 
-1. Start with a simple conversion (for example, *"Convert to a Cumulocity measurement"*).
-2. Add complexity (for example, *"Also group humidity and pressure into a separate fragment called c8y_Environment"*).
-3. Handle edge cases (for example, *"Add error handling for missing fields"*).
-4. Generate tests (for example, *"Generate test cases to validate this code"*).
+1. Start with a simple conversion (for example, "Convert to a Cumulocity measurement").
+2. Add complexity (for example, "Also group humidity and pressure into a separate fragment called c8y_Environment").
+3. Handle edge cases (for example, "Add error handling for missing fields").
+4. Generate tests (for example, "Generate test cases to validate this code").
 
 Each iteration builds on the previous code. The AI does not start from scratch unless you explicitly ask it to.
 

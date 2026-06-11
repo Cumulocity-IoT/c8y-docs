@@ -9,9 +9,9 @@ sector:
   - device_management
 ---
 
-The smart function code editor allows you to view and edit the smart function code for the current rule. For a full reference on writing smart functions, including the API and examples, see [Smart functions](/data-preparation/smart-functions/).
+The smart function editor allows you to view and edit the smart function for the current rule. For a full reference on writing smart functions, including the API and examples, see [Smart functions](/data-preparation/smart-functions/).
 
-### Code editor visibility {#code-editor-visibility}
+### Smart function editor visibility {#code-editor-visibility}
 
 The code editor is minimized by default when a rule is first created. It opens automatically when the AI assistant creates your smart function. 
 

@@ -53,7 +53,7 @@ The function returns an array of {{< product-c8y-iot >}} domain objects: `Measur
 - Returning an empty array (`[]`) drops the message --- no objects are created and no error is reported.
 - Each object must specify an `externalSource` to identify the target device.
 
-For the full list of domain object fields, see [Cumulocity Objects](#cumulocity-objects).
+For the full list of domain object fields, see [{{< product-c8y-iot >}} objects](#cumulocity-objects).
 
 ### When devices are created {#when-devices-created}
 

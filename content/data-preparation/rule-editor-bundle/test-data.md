@@ -41,7 +41,7 @@ A single test can contain more than one message. This is useful for grouping rel
 2. Select **Add message to this test**.
 3. Enter the additional payload.
 
-#### Managing tests {#managing-tests}
+#### To manage tests {#managing-tests}
 
 Click the test name dropdown. From within the dropdown, you can:
 
@@ -66,7 +66,7 @@ To protect your test suite, the AI assistant cannot delete tests.
 
 The platform compiles and executes your smart function against every test input.
 
-#### Inspecting outputs {#inspecting-outputs}
+#### To inspect outputs {#inspecting-outputs}
 
 The **Outputs** section displays the results for each test after a test run. Each test produces its own output, so you can review results individually. The output includes:
 
@@ -76,7 +76,7 @@ The **Outputs** section displays the results for each test after a test run. Eac
 
 Review the output carefully to confirm that the smart function produces the correct {{< product-c8y-iot >}} objects and does not create any unexpected errors.
 
-#### Detecting failures {#detecting-failures}
+#### To detect failures {#detecting-failures}
 
 If one or more tests are failing:
 
@@ -96,7 +96,7 @@ Save the output of a test as the **expected output** to create a baseline. If a 
 
 The current output is now stored as the expected output for that test.
 
-#### Detecting regressions {#detecting-regressions}
+#### To detect regressions {#detecting-regressions}
 
 After you save expected outputs, every subsequent test run compares the actual output against the saved expectation. If the output no longer matches:
 
