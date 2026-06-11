@@ -10,12 +10,12 @@ This walkthrough guides you through creating and deploying your first Data Prepa
 
 For background on what Data Preparation is and what rules do, see [Introduction](/data-preparation/). For a reference of the rule editor's panels, see [Rule editor](/data-preparation/rule-editor/). For details on writing smart functions, see [Smart functions](/data-preparation/smart-functions/).
 
-### Before you start
+### Before you start {#getting-started-prerequisites}
 
 You need:
 
 - A tenant with Data Preparation enabled. Data Preparation is currently in Private Preview --- contact [product support](/additional-resources/contacting-support/) to enable it.
-- Access to the AI Agent Manager for AI-assisted code generation, and an AI global provide configured. See the [AI configuration](/data-preparation/data-preparation-introduction/#ai-configuration) prerequisites for more information.
+- Access to the AI Agent Manager for AI-assisted code generation, and a configured AI global provider. See the [AI configuration](/data-preparation/data-preparation-introduction/#ai-configuration) prerequisites for more information.
 
 ### Step 1: Create your first rule {#create-rule}
 
@@ -62,8 +62,8 @@ The test output panel appears alongside the input data. To check that the smart 
 2. Click **Run tests**. The platform executes your smart function against the test input.
 3. Review the resulting output: the {{< product-c8y-iot >}} objects (measurements, events, alarms, operations) the function would produce and the {{< product-c8y-iot >}} external "source" device it would create them on. Any `console.log` output from the smart function is also displayed here. 
 4. If the output is not what you expect, ask the AI to refine the code, then run the tests again. Repeat until the output is correct.
-5. (Optional) Once the output is correct, click **Save expected output** to record the correct output for this test. If you make further changes that produce different output when you run the tests in future, this will be flagged as an error. This automated verification avoids regressions without the need to manually checking the output every time. 
-6. (Optional) You can now add more tests to check for edge cases such as missing values, out of range values, and other inputs that might require special handling in your rule. To do this, open the tests drop-down, and duplicate the existing test to a new one that describes what it's for. You can also generate tests using the AI assistant. For any edge cases where it's not possible to generate a valid {{< product-c8y-iot >}} object, raise a Javascript exception so that an alarm will be created to notify you about the problem. 
+5. (Optional) Once the output is correct, click **Save expected output** to record the correct output for this test. If you make further changes that produce different output when you run the tests in future, this will be flagged as an error. This automated verification avoids regressions without the need to manually check the output every time. 
+6. (Optional) You can now add more tests to check for edge cases such as missing values, out of range values, and other inputs that might require special handling in your rule. To do this, open the tests drop-down, and duplicate the existing test to a new one that describes what it's for. You can also generate tests using the AI assistant. For any edge cases where it's not possible to generate a valid {{< product-c8y-iot >}} object, raise a Javascript exception so that an alarm is created to notify you about the problem. 
 
 While working on the draft rule, click **Save** regularly to ensure your changes are persisted. 
 
