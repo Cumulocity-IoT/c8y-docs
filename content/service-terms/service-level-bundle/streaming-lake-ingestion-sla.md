@@ -63,7 +63,6 @@ The quality of the Service is measured by the following objectives:
 | Service level indicator | Monthly target                   |
 | ----------------------- | -------------------------------- |
 | Catalog availability    | ≥ 99.9%                          |
-| Data durability         | ≥ 99.99%                         |
 | Data freshness          | ≤ 10 minutes in 95% of the cases |
 
 
@@ -72,5 +71,4 @@ The quality of the Service is measured by the following objectives:
 The service quality indicators are defined as follows:
 
 * **Catalog Availability**: The uptime of the Iceberg catalog service, as defined by the [{{< company-c8y >}} service availability terms](/service-terms/service-level/#service-availability).
-* **Data Durability**: The percentage of compliant inbound data records that are successfully and permanently stored in the data lake within a calendar month. A data record is considered compliant if it adheres to the [{{< product-c8y-iot >}} general quotas and limits](/service-terms/quotas/) as well as the quotas and limits specifically addressed in the [Streaming Lake Ingestion documentation](/datahub/streaming-lake-ingestion/#limits-of-streaming-lake-ingestion).
 * **Data Freshness**: The average time between a data record's arrival in the {{< product-c8y-iot >}} platform (post-preparation) and its availability for query in the data lake, measured over a calendar month.
