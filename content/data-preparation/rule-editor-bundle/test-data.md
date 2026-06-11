@@ -40,7 +40,7 @@ We recommend creating additional tests to check for edge cases such as missing v
 1. Click the test name dropdown at the top of the test data panel.
 2. Select an existing test to use as a starting point and click **Duplicate test**. 
 3. Enter a short name for the new test.
-4. Edit the **Input** payload for the case you wish to test, for example missing values, different field types or out of range values.
+4. Edit the **Input** payload for the case you wish to test, for example, missing values, different field types, or out-of-range values.
 
 Each test is independent and runs separately against the smart function. Create a test for every distinct message format, edge case, or error scenario you want to validate.
 
