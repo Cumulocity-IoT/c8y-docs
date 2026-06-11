@@ -6,7 +6,7 @@ layout: redirect
 
 ### Data Preparation {#datapreparation}
 
-The Data Preparation application provides a modern, AI-first environment for creating and managing data transformation logic to help you convert raw device data into the {{< product-c8y-iot >}} [data model](/concepts/domain-model). As IoT devices often communicate in various formats (from standard JSON to IoT-specific binary protocols), Data Preparation acts as a bridge that ensures your data is standardized, corrected, and ready for use across the platform and downstream.
+Data Preparation provides a modern, AI-first environment for creating and managing data transformation logic to help you convert raw device data into the {{< product-c8y-iot >}} [data model](/concepts/domain-model). As IoT devices often communicate in various formats (from standard JSON to IoT-specific binary protocols), Data Preparation acts as a bridge that ensures your data is standardized, corrected, and ready for use across the platform and downstream.
 
 Data Preparation uses smart functions --- modular pieces of logic that independently process incoming messages to generate one or more Cumulocity-compliant outputs. For details, see [Smart functions](/concepts/smart-function-concept/).
 
@@ -28,9 +28,9 @@ Data Preparation empowers you to:
 * Testing and validation --- run tests using sample data (either manually uploaded or captured live from an MQTT topic) with a visual comparison.
 * Integrated deployment --- once a rule is active, it runs continuously as data is posted to the subscribed [MQTT Service](/device-integration/mqtt-service/) topics.  
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-info >}}
 Data Preparation handles data normalization only. For complex event processing, aggregations, or real-time analytics IoT use cases, use [Streaming Analytics](/streaming-analytics/introduction-analytics/) after Data Preparation has normalized your data.
-{{< /c8y-admon-important >}}
+{{< /c8y-admon-info >}}
 
 ### Architecture {#architecture}
 

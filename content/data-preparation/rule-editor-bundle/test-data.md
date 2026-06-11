@@ -39,7 +39,7 @@ We recommend creating additional tests to check for edge cases such as missing v
 
 1. Click the test name dropdown at the top of the test data panel.
 2. Select an existing test to use as a starting point and click **Duplicate test**. 
-3. Enter a short name for the new test.
+3. Enter a short name describing what the new test covers, for example "Null values", "Out-of-range values", "Device protocol v2".
 4. Edit the **Input** payload for the case you wish to test, for example, missing values, different field types, or out-of-range values.
 
 Each test is independent and runs separately against the smart function. Create a test for every distinct message format, edge case, or error scenario you want to validate.
@@ -52,18 +52,18 @@ You can also add multiple messages to group related test cases and avoid having 
 
 To add additional messages to a single test:
 
-1. Click the menu icon in the test data panel.
-2. Select **Add message to this test**.
+1. Click the <i class="dlt-c8y-icon-ellipsis-v text-primary icon-20"></i> menu icon in the test data panel.
+2. Select <i class="dlt-c8y-icon-plus-circle text-primary icon-20"></i> **Add message to this test**.
 3. Enter the additional payload.
 
 #### To manage tests {#managing-tests}
 
 Click the test name dropdown. From within the dropdown, you can:
 
-- **Duplicate** the current test: Click the **Duplicate test** button. Enter a name for the new test.
-- **Create a new test**: Click the **Create new test** button to create a new empty test. 
-- **Rename** a test: Click the rename icon next to the test. Enter a new name for the test and confirm.
-- **Delete** a test: Click the delete icon next to the test.
+- **Duplicate** the current test: Click the <i class="dlt-c8y-icon-duplicate text-primary icon-20"></i> **Duplicate test** button. Enter a name for the new test.
+- **Create a new test**: Click the <i class="dlt-c8y-icon-plus-circle text-primary icon-20"></i> **Create new test** button to create a new empty test. 
+- **Rename** a test: Click the <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> rename icon next to the test. Enter a new name for the test and confirm.
+- **Delete** a test: Click the <i class="dlt-c8y-icon-minus-circle text-primary icon-20"></i> delete icon next to the test.
 
 ### Generating tests with the AI assistant {#generating-tests-with-ai}
 
@@ -77,7 +77,7 @@ To protect your test suite, the AI assistant cannot delete tests.
 
 ### To run tests {#running-tests}
 
-- Click **Run tests**.
+- Click <i class="dlt-c8y-icon-play-arrow text-primary icon-20"></i> **Run tests**.
 
 The platform executes your smart function against every test input. The outputs from each invocation of the smart function are displayed for you to inspect, but are not sent to the platform itself. 
 
@@ -110,7 +110,7 @@ To ensure the expected output can be compared, avoid using the current time (`ne
 
 1. Run the tests to produce output.
 2. Review the output and confirm it is correct.
-3. Click the menu icon in the output section.
+3. Click the <i class="dlt-c8y-icon-ellipsis-v text-primary icon-20"></i> menu icon in the output section.
 4. Under **EXPECTED OUTPUT** click **Save**.
 
 The current output is now stored as the expected output for that test.
