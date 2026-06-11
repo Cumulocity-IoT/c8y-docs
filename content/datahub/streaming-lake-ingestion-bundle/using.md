@@ -13,6 +13,8 @@ Streaming Lake Ingestion is an optional service in {{< product-c8y-iot >}}. To s
 The download may take a while to complete. For more information, see [Monitoring the data lake storage](#monitoring-the-data-lake-storage).
 
 The service stores only new data incoming after subscription. It does not automatically move data stored in the {{< product-c8y-iot >}} operational store before subscription. For more information, see [Migrating to data lake storage](#migrating-to-data-lake-storage).
+
+The tenant option `CDH_ASSET_WHITELIST` is automatically set on your tenant. This allows granting the tenant's default Dremio user access to the Iceberg source, which is required to read data via the DataHub REST API. Do not change this option.
 {{< /c8y-admon-info >}}
 
 ### Analyzing lake data {#analyzing-lake-data-using-sql}
