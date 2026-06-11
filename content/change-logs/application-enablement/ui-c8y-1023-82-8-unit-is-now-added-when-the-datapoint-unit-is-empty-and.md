@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66548
 version: 1023.82.8
 ---
-When a new measurements is added, the data graph widget tooltip now properly displays the unit of measurement even when the data point itself does not have a unit defined. Previously, if a data point lacked a unit value, the measurement's unit would not be shown, making it unclear what unit the data was measured in. This change improves data clarity and helps you better understand the measurements in your dashboards without having to manually add units to each data point.
+When a new measurement is added, the "Data graph" widget tooltip now properly displays the measurement's unit, even when the data point itself does not have a unit defined. Previously, if a data point lacked a unit, the measurement's unit would not be shown, making it unclear which unit the data was measured in. This change improves data clarity and helps you better understand the measurements in your dashboards without having to manually add units to each data point.
