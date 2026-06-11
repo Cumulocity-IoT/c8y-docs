@@ -31,7 +31,7 @@ Each input message displays the following properties as chips below the payload 
 - **Client ID** — the client (typically a device identifier or device gateway) that sent the message.
 - **Topic** — the MQTT topic the message was published to.
 
-To edit these properties, click the edit icon next to the chips. 
+To edit these properties, click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> next to the chips. 
 
 #### To create additional tests {#creating-additional-tests}
 
