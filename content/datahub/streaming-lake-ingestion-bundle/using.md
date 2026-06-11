@@ -76,6 +76,9 @@ $ curl -u "admin:$PASS" \
   ]
 }
 ```
+{{< c8y-admon-info >}}
+When you subscribe to Streaming Lake Ingestion, the tenant option `CDH_ASSET_WHITELIST` is automatically set on your tenant. This allows granting the tenant's default Dremio user access to the Iceberg source, which is required to read data via the DataHub REST API.
+{{< /c8y-admon-info >}}
 
 #### Using the Iceberg catalog from Apache Spark
 
