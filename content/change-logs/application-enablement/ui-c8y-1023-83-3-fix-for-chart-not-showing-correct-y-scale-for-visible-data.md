@@ -1,6 +1,6 @@
 ---
 date: ""
-title: chart now shows correct y-scale for visible data
+title: Chart now shows correct y-scale for visible data
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
