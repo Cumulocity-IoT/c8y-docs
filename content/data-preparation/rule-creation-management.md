@@ -34,7 +34,7 @@ To use live capture to select a sample message for your new rule:
 - Use the **Source** fields on the first page to specify which messages should be captured for the rule you are creating. You can use `*` wildcards if you don't know the exact topic or client ID, but make sure your filters are specific enough to focus on the device you wish to onboard. 
 - Click **Start live capture from device**. The wizard advances to the live capture step and begins listening for messages that match your filters. Incoming messages appear in a list as they arrive. Each entry shows the timestamp, topic, and client ID.
 - Click a message in the list to select it. The selected message is added as a test message when the rule is created.
-- If you do not see the expected messages or realize you have entered the wrong filters, click **Edit Capture Source** to change the topic or client ID filter and start a new capture session. Alternatively, you can click **Back** to cancel live capture and click **Enter test data later** to proceed directly to the confirm step.
+- If you do not see the expected messages or realize you have entered the wrong filters, click **Edit capture source** to change the topic or client ID filter and start a new capture session. Alternatively, you can click **Back** to cancel live capture and click **Enter test data later** to proceed directly to the confirm step.
 - Click **Next** to proceed to the confirm step and finish creating the rule.
 
 Live capture stops automatically after 20 messages are received, or after 5 minutes. When capture stops, you can click **Resume** to continue capturing more messages. 
