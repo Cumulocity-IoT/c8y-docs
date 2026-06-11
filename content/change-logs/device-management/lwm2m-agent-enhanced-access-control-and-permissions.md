@@ -14,5 +14,5 @@ build_artifact:
 ticket: DM-5341
 version: 1022.3.0
 ---
-To improve security for the LWM2M service, a stricter access control is enforced. To work with device-specific configurations from the Device management application, including **Device settings**, **Connectivity**, and **Bootstrap**, etc., **Device protocols**, **Device registration**, users must now be granted explicit LWM2M Admin and Read permissions. Administrators can assign the necessary permissions to users in **Administration** > **Accounts** > **Users**, **Roles**.
+To improve security for the LWM2M service, stricter access control has been enforced. To work with device-specific configurations from the Device management application, including **Device settings**, **Connectivity**, and **Bootstrap**, **Device protocols**, **Device registration**, users must now be granted explicit LWM2M ADMIN and READ permissions. Administrators can assign the necessary permissions to users in **Administration** > **Accounts** > **Users** > **Roles**.
 
