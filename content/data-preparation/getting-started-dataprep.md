@@ -27,7 +27,7 @@ The wizard has three steps:
 
 1. **Source** — configure which messages will be handled by this Data Preparation rule by specifying the transport and at least one filter:
    - **Source transport**: select the transport from which messages are received. Currently this is always MQTT.
-   - **Topic filter**: filter based on the MQTT topic the device messages are received from. Use `*` as a wildcard to match zero or more characters, for example  `/sensors/factories/France/*/temperature/*` captures all temperature sensor data from that region. Note that transport-specific wildcards such as `+` and `#` are not supported here. 
+   - **Topic filter**: filter based on the MQTT topic the device messages are received from. Use `*` as a wildcard to match zero or more characters, for example,  `/sensors/factories/France/*/temperature/*` captures all temperature sensor data from that region. Note that transport-specific wildcards such as `+` and `#` are not supported here. 
    - **Client ID filter**: if you do not know the topic, filter by the client ID of your device or gateway instead. Use `*` as a wildcard if needed, for example `serialnumber-1aaaf2ac-*`, `device-gateway-1234*`.
    If your device is already connected to Cumulocity you can now capture a device message to test with using the source data you entered. Alternatively you can skip the live capture and enter your device messages for testing manually after creating the rule. 
 2. **Live capture** (optional) — if you started a live capture, messages matching your filters appear in a list as they arrive. Select one message to use as the initial test data for your rule, then click **Next**. See [Live capture](/data-preparation/rule-creation-management/#live-capture) for more information.
