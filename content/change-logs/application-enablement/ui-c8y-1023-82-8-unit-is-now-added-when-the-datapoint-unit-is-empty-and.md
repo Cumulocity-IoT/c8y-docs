@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Measurement's unit is now displayed when the data point has no unit defined
+title: Measurement's unit is now displayed even if the data point has no unit defined
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
