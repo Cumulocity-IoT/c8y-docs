@@ -1,18 +1,31 @@
 ---
-date: ""
-title: "New endpoint to get direct subassets for an asset identified by its external ID"
-product_area: "Application enablement & solutions"
+date: '2026-05-13'
+title: >-
+  New endpoint to get direct subassets for an asset identified by its external
+  ID
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-QHu1GdukP"
-      label: "Feature"
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-2900"
-version: "1025.4.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-2900
+version: 1025.4.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-05-13'
+  - label: apj.cumulocity.com
+    date: '2026-05-14'
+  - label: jp.cumulocity.com
+    date: '2026-05-14'
+  - label: us.cumulocity.com
+    date: '2026-05-18'
+  - label: cumulocity.com
+    date: '2026-05-18'
 ---
 The Dtm microservice now includes a new endpoint
 `/assets/externalIds/{externalId}/subAssets` that allows you to fetch

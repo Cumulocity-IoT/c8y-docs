@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-05-06'
   - label: jp.cumulocity.com
     date: '2026-05-06'
+  - label: us.cumulocity.com
+    date: '2026-05-11'
+  - label: cumulocity.com
+    date: '2026-06-08'
 ---
 The device parameter list now automatically synchronizes to ensure displayed data remains current during active configuration. The interface triggers a refresh during common actions - such as receiving an event, updating an operation status, or navigating through rows - and provides immediate interactive notifications to confirm when changes are complete. This update ensures a consistent and up-to-date view of device parameters without requiring manual refreshes.

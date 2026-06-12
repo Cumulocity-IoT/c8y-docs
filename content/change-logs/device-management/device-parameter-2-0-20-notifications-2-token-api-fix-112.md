@@ -22,5 +22,7 @@ environment_availability:
     date: '2026-04-08'
   - label: us.cumulocity.com
     date: '2026-04-20'
+  - label: cumulocity.com
+    date: '2026-06-08'
 ---
 The Device Parameter microservice failed to refresh JWT tokens following periods of inactivity, preventing automatic recovery and requiring a manual service restart. This issue has been fixed.

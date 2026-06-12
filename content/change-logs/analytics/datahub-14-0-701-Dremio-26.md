@@ -19,5 +19,9 @@ environment_availability:
     date: '2026-05-06'
   - label: jp.cumulocity.com
     date: '2026-05-06'
+  - label: us.cumulocity.com
+    date: '2026-05-18'
+  - label: cumulocity.com
+    date: '2026-05-19'
 ---
 {{< product-c8y-iot >}} DataHub now leverages version 26.1 of Dremio as its internal query engine.

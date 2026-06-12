@@ -59,11 +59,13 @@ The DUP flag is supported by the MQTT Service in accordance with the MQTT specif
 The MQTT _Will Message_ feature allows a device to provide a message in the `CONNECT` packet that will be published on behalf of the device if it disconnects unexpectedly.
 Will Message is supported by the MQTT Service with these restrictions:
 * Because of _device isolation_, the Will Message will not be delivered to any other connected MQTT device.
-  The Will Message will be published onto the Messaging Service where it can be consumed by a microservice or external application client.
-* The QoS level of the Will Message can be QoS 0 (at most once) or Qos 1 (at least once).
+  The Will Message will be published to the Messaging Service `from-device` topic where it can be consumed by a microservice or external application client, just like any other device message.
+  Consumers can distinguish Will Messages from regular device messages using the `tx.lastWillMessage` Pulsar message property.
+  See [Message payloads and properties](#message-payloads-properties) for details.
+* The QoS level of the Will Message can be QoS 0 (at most once) or QoS 1 (at least once).
   QoS level 2 (exactly once) is not supported.
 * Retained Will Messages are not supported.
-  If the retain flag is set on the Will Message, the message will not be accepted.
+  If the retain flag is set on the Will Message, the connection will be rejected.
 
 #### Retained Message {#retained-message}
 
@@ -112,7 +114,7 @@ Using features described as "not supported" may cause messages to be rejected, o
 |------------------------------|---------------|------------------------------------------------------------------------------------------------------------------|
 | Client Identifier            | Mandatory     | As for [version 3.1.1](#client-id).                                                                              |
 | Clean Start                  | Mandatory     | As for [version 3.1.1](#clean-session). _Clean Start_ is **required** on all device connections.                 |
-| Will Message                 | Supported     | With the same restrictions on QoS level, retained messages and device isolation as for [version 3.1.1](#will-message).<br>These additional version 5.0 properties on the Will Message are supported:<br>_Delay Interval_, _Payload Format Indicator_, _Content Type_, _Response Topic_, _Correlation Data_ and _User Property_.<br>The _Message Expiry Interval_ property on the Will Message is ignored. |
+| Will Message                 | Supported     | With the same restrictions on QoS level, retained messages and device isolation as for [version 3.1.1](#will-message).<br>These additional version 5.0 properties on the Will Message are forwarded to Messaging Service consumers:<br>_Delay Interval_, _Payload Format Indicator_, _Content Type_, _Response Topic_, _Correlation Data_, _Message Expiry Interval_ and _User Property_. |
 | Receive Maximum              | Supported     | The MQTT Service will limit the number of unacknowledged QoS 1 messages for the device to the requested maximum. |
 | Maximum Packet Size          | Supported     | The MQTT Service will not send any message larger than the requested size to this device.<br>Note that messages larger than the reqeusted size will be **silently discarded**. |
 | Request Problem Information  | Supported     | A device should not assume that the MQTT Service will send a reason string, even when this has been requested.   |

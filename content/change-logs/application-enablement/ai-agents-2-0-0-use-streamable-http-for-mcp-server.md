@@ -18,6 +18,14 @@ version: 2.0.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-05-08'
+  - label: apj.cumulocity.com
+    date: '2026-05-13'
+  - label: jp.cumulocity.com
+    date: '2026-05-13'
+  - label: us.cumulocity.com
+    date: '2026-05-18'
+  - label: cumulocity.com
+    date: '2026-05-19'
 ---
 {{< c8y-admon-preview >}}
 This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
