@@ -85,9 +85,6 @@ thin-edge.io exposes a local {{< product-c8y-iot >}} proxy endpoint to give devi
 
 ### Topic {#topic}
 
-A topic is a channel for messages sent and received by a device connected to a [protocol adapter](#protocol-adapter) or by a microservice using the [Messaging Service](#messaging-service).
-For devices, the topic typically describes the kind of data sent.
-For example, a metering device connected to the [MQTT Service](#mqtt-service) publishes messages on topics `meters/123456/current` and `meters/123456/temperature`.
-The Messaging Service uses its own topic namespace to pass messages between protocol adapters, microservices, and internal {{< product-c8y-iot >}} components.
-For example, all messages published by devices using the MQTT Service are delivered to microservices on the `from-device` topic, regardless of the MQTT topic used.
-See [Core MQTT topics](/device-integration/mqtt-service/#core-mqtt-topics) for another example of a topic schema used by MQTT devices, in this case devices that use the [SmartREST](#smartrest) device protocol.
+A topic is a channel for messages sent by one or more _publishers_ and received by one or more _subscribers_.
+Messages are delivered in the same order they were published, and will be reliably delivered to all subscribers.
+In {{< product-c8y-iot >}}, a topic can refer to a [device topic](#device-topic) or a [Messaging Service topic](#messaging-service-topic).
