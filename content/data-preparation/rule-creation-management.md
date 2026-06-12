@@ -87,7 +87,7 @@ In the rule editor you can update the smart function code, add test data, and ru
 
 ### To delete a rule {#delete-rule}
 
-- Click the **Delete** icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> next to the rule in the list. The rule is permanently deleted from both the draft and deployed state. This action cannot be undone.
+- Click delete <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> next to the rule in the list. The rule is permanently deleted from both the draft and deployed state. This action cannot be undone.
 
 {{< c8y-admon-important >}}
 Deleting a deployed rule stops it immediately. No further messages are processed by that rule after deletion.
