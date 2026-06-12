@@ -60,4 +60,13 @@ A rule is the deployable unit in Data Preparation. It pairs a smart function wit
 #### Test data {#test-data}
 Test data is sample device payload that you use to validate your smart function before activating a rule. Data Preparation runs an input payload in the device's native format through the smart function to compare the resulting Cumulocity output side by side. You can define multiple test cases per rule, capture live messages directly from an MQTT topic, or add payloads manually. For details, see [Test data](/data-preparation/rule-editor/#test-data).
 
+### REST API reference {#rest-api-reference}
+
+The public Data Preparation control plane endpoints are documented in the [{{< product-c8y-iot >}} API documentation](https://{{< domain-c8y >}}/api/).
+
+An interactive Swagger UI is available on each tenant at `https://<your-tenant>/service/dataprep/swagger-ui.html`, and the raw OpenAPI specification is at `https://<your-tenant>/service/dataprep/v3/api-docs`.
+
+{{< c8y-admon-info >}}
+The Data Preparation API is also discoverable via the {{< product-c8y-iot >}} API documentation portal, where it is registered through the microservice manifest `openApiSpec` field.
+{{< /c8y-admon-info >}}
 
