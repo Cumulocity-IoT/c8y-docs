@@ -98,8 +98,8 @@ You do not need to get everything right in a single prompt. The AI maintains con
 
 1. Start with a simple conversion (for example, "Convert to a Cumulocity measurement").
 2. Add complexity (for example, "Also group humidity and pressure into a separate fragment called c8y_Environment").
-3. Handle edge cases (for example, "Add error handling for missing fields").
-4. Generate tests (for example, "Generate test cases to validate this code").
+3. Handle edge cases (for example, "Raise an exception if fields are missing or any value is greater than 100.0").
+4. Generate tests (for example, "Generate test cases for edge cases such as missing values to validate this code").
 
 Each iteration builds on the previous code. The AI does not start from scratch unless you explicitly ask it to.
 

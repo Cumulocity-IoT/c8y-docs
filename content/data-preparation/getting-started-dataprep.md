@@ -10,13 +10,12 @@ This walkthrough guides you through creating and deploying your first Data Prepa
 
 For background on what Data Preparation is and what rules do, see [Introduction](/data-preparation/). For a reference of the rule editor's panels, see [Rule editor](/data-preparation/rule-editor/). For details on writing smart functions, see [Smart functions](/data-preparation/smart-functions/).
 
-### Before you start {#prerequisites}
+### Before you start {#getting-started-prerequisites}
 
 You need:
 
 - A tenant with Data Preparation enabled. Data Preparation is currently in Private Preview --- contact [product support](/additional-resources/contacting-support/) to enable it.
-- Access to the AI Agent Manager for AI-assisted code generation. See the [AI Agent Manager](/ai/) documentation.
-- A sample message payload you want to process. For this walkthrough, any JSON payload works.
+- Access to the AI Agent Manager for AI-assisted code generation, and a configured AI global provider. See the [AI configuration](/data-preparation/data-preparation-introduction/#ai-configuration) prerequisites for more information.
 
 ### Step 1: Create your first rule {#create-rule}
 
@@ -29,8 +28,7 @@ The wizard has three steps:
    - **Source transport**: select the transport from which messages are received. Currently this is always MQTT.
    - **Topic filter**: filter based on the MQTT topic the device messages are received from. Use `*` as a wildcard to match zero or more characters, for example,  `/sensors/factories/France/*/temperature/*` captures all temperature sensor data from that region. Note that transport-specific wildcards such as `+` and `#` are not supported here. 
    - **Client ID filter**: if you do not know the topic, filter by the client ID of your device or gateway instead. Use `*` as a wildcard if needed, for example, `serialnumber-1aaaf2ac-*`, `device-gateway-1234*`.
-   If your device is already connected to {{< product-c8y-iot >}}, you can now capture a device message to test with using the source data you entered. Alternatively, you can skip the live capture and enter your device messages for testing manually after creating the rule. 
-2. **Live capture** (optional) — if you started a live capture, messages matching your filters appear in a list as they arrive. Select one message to use as the initial test data for your rule, then click **Next**. See [Live capture](/data-preparation/rule-creation-management/#live-capture) for more information.
+2. **Live capture** (optional) — if your device is already connected to {{< product-c8y-iot >}}, you can now capture a device message to test with using the source data you entered. Alternatively, you can skip the live capture and enter your device messages for testing manually after creating the rule. If you started a live capture, messages matching your filters appear in a list as they arrive. Select one message to use as the initial test data for your rule, then click **Next**. See [Live capture](/data-preparation/rule-creation-management/#live-capture) for more information.
 3. **Confirm and create** — review the source configuration and enter a **name** and optional **description** for the rule. On this page you can edit the source configuration if the filter for the rule itself should be different from the filter you used to capture the sample data. 
 
 Click **Create** to add the rule and open the rule editor.
@@ -64,8 +62,8 @@ The test output panel appears alongside the input data. To check that the smart 
 2. Click **Run tests**. The platform executes your smart function against the test input.
 3. Review the resulting output: the {{< product-c8y-iot >}} objects (measurements, events, alarms, operations) the function would produce and the {{< product-c8y-iot >}} external "source" device it would create them on. Any `console.log` output from the smart function is also displayed here. 
 4. If the output is not what you expect, ask the AI to refine the code, then run the tests again. Repeat until the output is correct.
-5. (Optional) Once the output is correct, click **Save expected output** to record the correct output for this test. If you make further changes that produce different output when you run the tests in future, this will be flagged as an error. This automated verification avoids the need to keep manually checking the output to avoid regressions. 
-6. (Optional) You can now add more tests to check for edge cases such as missing values, out of range values, and other inputs that might require special handling in your rule. To do this, open the tests drop-down, and duplicate the existing test to a new one that describes what it's for. You can also generate tests using the AI assistant. For any edge cases where it's not possible to generate a valid {{< product-c8y-iot >}} object, raise a Javascript exception so that an alarm will be created to notify you about the problem. 
+5. (Optional) Once the output is correct, click **Save expected output** to record the correct output for this test. If you make further changes that produce different output when you run the tests in future, this will be flagged as an error. This automated verification avoids regressions without the need to manually check the output every time. 
+6. (Optional) You can now add more tests to check for edge cases such as missing values, out of range values, and other inputs that might require special handling in your rule. To do this, open the tests drop-down, and duplicate the existing test to a new one that describes what it's for. You can also generate tests using the AI assistant. For any edge cases where it's not possible to generate a valid {{< product-c8y-iot >}} object, raise a Javascript exception so that an alarm is created to notify you about the problem. 
 
 While working on the draft rule, click **Save** regularly to ensure your changes are persisted. 
 
@@ -76,7 +74,7 @@ When you have finished editing your smart function, click **Save and deploy**. T
 - Saves the current draft code and also copies it to the deployed version of the rule.
 - Starts the rule running against live device traffic, so that incoming messages will be transformed into {{< product-c8y-iot >}} objects using your smart function.
 
-If a measurement or alarm is produced for a device the platform has not seen before, a new device is created automatically based on the `externalId` in the measurement. For details, see [Device onboarding](/data-preparation/device-onboarding/).
+If a measurement or alarm is produced for a device the platform has not seen before, a new device is created automatically based on the `externalSource` in the object returned by the smart function. For details, see [Device onboarding](/data-preparation/device-onboarding/).
 
 ### Draft and deployed states {#draft-deployed}
 

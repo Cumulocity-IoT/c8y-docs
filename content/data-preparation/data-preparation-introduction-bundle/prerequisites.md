@@ -3,7 +3,7 @@ weight: 20
 title: Prerequisites
 ---
 
-To use the Data Preparation application, ensure you have the following prerequisites set up.
+To use Data Preparation, ensure you have the following prerequisites set up.
 
 ### Permissions {#permissions}
 
@@ -23,9 +23,10 @@ Ensure your tenant meets the following subscription requirements:
 * Your tenant is subscribed to the `Data-prep-ctrl` microservice
 * Your tenant is subscribed to the `Data Preparation` application
 
+To gain access to the Private Preview of Data Preparation, reach out to Cumulocity support.
 
 ### AI configuration {#ai-configuration}
 Set up a [global provider](/ai/aim-introduction/#getting-started-by-configuring-a-global-provider) with the AI Agent Manager to enable the AI assistant in Data Preparation (for details on enabling preview features and learning about the AI Agent Manager, see the [AI Agent Manager documentation](/ai/aim-introduction/)).
-The AI assistant helps you describe your business context and automatically generates the necessary transformation code in a smart function. We recommend using Anthropic `claude-sonnet-4-6` as the provider for optimal results.
+The AI assistant helps you describe your business context and automatically generates the necessary transformation code in a smart function. 
 
-To gain access to the Private Preview of Data Preparation, reach out to Cumulocity support.
+We recommend using Anthropic `claude-sonnet-4-6` as the provider for optimal results.
