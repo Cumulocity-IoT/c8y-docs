@@ -24,7 +24,7 @@ console.info(`Device ${deviceId} reported temperature: ${temperature}`);
 | `console.error(...args)` | Error message. |
 | `console.debug(...args)` | Debug-level output. |
 
-For more detail about how to view the logs see [Runtime behavior and limits](#logs).
+For more details about how to view the logs, see [Runtime behavior and limits](#logs).
 
 #### TextEncoder {#text-encoder}
 

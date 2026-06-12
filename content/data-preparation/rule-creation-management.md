@@ -66,10 +66,10 @@ The draft and deployed versions of a rule are independent. You can edit a draft 
 
 The rules list gives you an overview of all rules in your tenant. Click **Configure columns** to select which rule details to show or hide:
 
-- **Name**: the rule name. Click the name to open the rule editor.
-- **Source**: the transport and filters configured for the rule.
-- **Description**: the optional description entered when the rule was created.
-- **Deployment status**: the current deployment status of the rule.
+- **Name**: The rule name. Click the name to open the rule editor.
+- **Source**: The transport and filters configured for the rule.
+- **Description**: The optional description entered when the rule was created.
+- **Deployment status**: The current deployment status of the rule.
 
 #### Searching and filtering {#search-filter}
 
