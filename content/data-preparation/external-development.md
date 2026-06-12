@@ -26,7 +26,7 @@ Fork or clone the [template repository](https://github.com/Cumulocity-IoT/datapr
 
 1. **Create** a rule from the provided scaffolding command.
 2. **Validate** it offline (type-check, lint, schema validation).
-3. **Test** it against your tenant using the platform's run-tests endpoint.
+3. **Test** it against your tenant using the platform's testing endpoint.
 4. **Deploy** it to your tenant.
 
 Refer to the template repository's README for the full developer guide, including prerequisites, credentials, and CI/CD setup.
@@ -37,4 +37,4 @@ Smart function input and output types are published as the [`@c8y/dataprep-types
 
 ### REST API {#rest-api}
 
-The Data Preparation control plane REST API --- used by the template's test and deploy tooling --- is documented in the public [{{< product-c8y-iot >}} API documentation](https://{{< domain-c8y >}}/api/). An interactive Swagger UI is also available within your tenant at */service/dataprep/swagger-ui.html*.
+The Data Preparation control plane REST API --- used by the template's test and deploy tooling --- is documented in the public [{{< product-c8y-iot >}} API documentation](https://{{< domain-c8y >}}/api/). An interactive Swagger UI is also available within your tenant at `https://<your-tenant>/service/dataprep/swagger-ui.html`.
