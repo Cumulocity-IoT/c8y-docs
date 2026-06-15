@@ -15,7 +15,7 @@ ticket: ""
 version: ""
 ---
 {{< c8y-admon-preview >}}
-This feature is in Public Preview, that is, it may be subject to change in the future.
+This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
 {{< /c8y-admon-preview >}}
 
 Data Preparation is a new application that lets you transform incoming device messages before they are stored in {{< product-c8y-iot >}}. You create rules that receive raw payloads over MQTT, process them with custom code, and produce standard {{< product-c8y-iot >}} measurements—for example, converting proprietary sensor data from a device into a format the platform can store and display.
