@@ -29,6 +29,6 @@ Key capabilities include:
 - A rule editor with live testing against sample data before deployment.
 - Draft and deployed states for safe iteration without affecting live traffic.
 
-To enable Data Preparation, open the right drawer (by clicking on your username initials) in the **Administration** application and select **Manage preview features**. Then activate the toggle next to **Data Preparation**.
+To enable Data Preparation, open the right drawer (by clicking on your username initials) in the Administration application and select **Manage preview features**. Then activate the toggle next to **Data Preparation**.
 
 For details, see [Data Preparation](/data-preparation/).
