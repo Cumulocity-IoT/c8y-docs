@@ -20,6 +20,8 @@ environment_availability:
     date: '2026-06-10'
   - label: jp.cumulocity.com
     date: '2026-06-10'
+  - label: us.cumulocity.com
+    date: '2026-06-15'
 ---
 
 {{< product-c8y-iot >}} now provides a dedicated alarm upsert endpoint (`POST /alarm/alarms/upsert`).
