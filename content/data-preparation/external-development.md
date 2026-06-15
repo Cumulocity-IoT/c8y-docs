@@ -33,7 +33,7 @@ Refer to the template repository's README for the full developer guide, includin
 
 ### TypeScript API reference {#typescript-api-reference}
 
-Smart function input and output types are published as the [`@c8y/dataprep-types`](https://www.npmjs.com/package/@c8y/dataprep-types) npm package. The generated TypeScript API reference (TypeDoc) is available at [Data Preparation Smart Function API](https://cumulocity-iot.github.io/datapreparation-rules-template/).
+Smart function input and output types are published as the [`@c8y/dataprep-types`](https://www.npmjs.com/package/@c8y/dataprep-types) npm package. The generated TypeScript API reference (TypeDoc) is available at [Data Preparation smart function API](https://cumulocity-iot.github.io/datapreparation-rules-template/).
 
 ### REST API {#rest-api}
 
