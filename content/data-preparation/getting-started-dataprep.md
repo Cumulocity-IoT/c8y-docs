@@ -52,7 +52,7 @@ The AI assistant offers a set of suggested prompts to get you started. For this 
 3. You can refine the code by sending further prompts to the AI. The AI also suggests follow-up actions you can apply with one click.
 4. To get a more detailed explanation of the code at any time, click **Explain code**.
 
-For more on what the AI assistant can do and how it works, see the [AI chat](/data-preparation/rule-editor/#ai-chat) section of the rule editor reference.
+For more on what the AI assistant can do and how it works, see the [AI chat](/data-preparation/rule-editor/#ai-assistant) section of the rule editor reference.
 
 ### Step 4: Test the rule {#test-rule}
 
