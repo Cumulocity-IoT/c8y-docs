@@ -6,7 +6,7 @@ sector:
   - device_management
 ---
 
-Besides authoring rules in the Data Preparation application, you can develop, version, test, and deploy rules from your own development environment using the open-source [Data Preparation rules template](https://github.com/Cumulocity-IoT/datapreparation-rules-template) repository.
+Besides authoring rules in the Data Preparation application, you can develop, version, test, and deploy rules from your own development environment using the open-source [Data Preparation rules template](https://github.com/Cumulocity-IoT/data-preparation-rules-template) repository.
 
 ### What it is {#what-it-is}
 
@@ -22,7 +22,7 @@ Developing rules externally gives you:
 
 ### Getting started {#getting-started}
 
-Fork or clone the [template repository](https://github.com/Cumulocity-IoT/datapreparation-rules-template) and follow its README. The typical workflow is:
+Fork or clone the [template repository](https://github.com/Cumulocity-IoT/data-preparation-rules-template) and follow its README. The typical workflow is:
 
 1. **Create** a rule from the provided scaffolding command.
 2. **Validate** it offline (type-check, lint, schema validation).
@@ -33,7 +33,7 @@ Refer to the template repository's README for the full developer guide, includin
 
 ### TypeScript API reference {#typescript-api-reference}
 
-Smart function input and output types are published as the [`@c8y/dataprep-types`](https://www.npmjs.com/package/@c8y/dataprep-types) npm package. The generated TypeScript API reference (TypeDoc) is available at [Data Preparation Smart Function API](https://cumulocity-iot.github.io/datapreparation-rules-template/).
+Smart function input and output types are published as the [`@c8y/dataprep-types`](https://www.npmjs.com/package/@c8y/dataprep-types) npm package. The generated TypeScript API reference (TypeDoc) is available at [Data Preparation Smart Function API](https://cumulocity-iot.github.io/data-preparation-rules-template/).
 
 ### REST API {#rest-api}
 
