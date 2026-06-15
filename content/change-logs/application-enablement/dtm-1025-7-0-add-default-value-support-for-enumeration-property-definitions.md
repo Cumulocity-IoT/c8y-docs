@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Add default value support for enumeration property definitions"
+title: "Default value support for enumeration property definitions"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
