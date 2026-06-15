@@ -25,7 +25,7 @@ Each rule targets a specific MQTT topic or client ID filter and runs a Smart fun
 Key capabilities include:
 
 - A guided wizard for creating rules with topic and client ID filters.
-- An AI assistant that generates Smart function code from sample payloads.
+- An AI assistant that generates smart function code from sample payloads.
 - A rule editor with live testing against sample data before deployment.
 - Draft and deployed states for safe iteration without affecting live traffic.
 
