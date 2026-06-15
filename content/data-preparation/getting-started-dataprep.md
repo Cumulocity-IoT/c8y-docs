@@ -14,7 +14,7 @@ For background on what Data Preparation is and what rules do, see [Introduction]
 
 You need:
 
-- A tenant with Data Preparation enabled. Data Preparation is currently in Public Preview. To enable it, open the right drawer (by clicking on your username initials) in the **Administration** application, select **Manage preview features**, and activate the toggle next to **Data Preparation**.
+- A tenant with Data Preparation enabled. Data Preparation is currently in Public Preview. To enable it, open the right drawer (by clicking on your username initials) in the Administration application, select **Manage preview features**, and activate the toggle next to **Data Preparation**.
 - Access to the AI Agent Manager for AI-assisted code generation. See the [AI Agent Manager](/ai/) documentation.
 - A sample message payload you want to process. For this walkthrough, any JSON payload works.
 
