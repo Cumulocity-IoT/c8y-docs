@@ -163,7 +163,7 @@ Click **Next** to proceed with the next configuration step. Click **Previous** t
 
 #### Set task details {#set-task-details}
 
-The task configuration step includes the offloading task name and the description. The **Offloading task name** is an identifier for the offloading pipeline. It must have at minimum one non-whitespace character. Even though the task name does not have to be unique, it is advisable to use a unique name.
+The task configuration step includes the offloading task name and the description. The **Offloading task name** is an identifier for the offloading pipeline. It must have at minimum one non-whitespace character and must not contain HTML tokens like backticks or ampersand. Even though the task name does not have to be unique, it is advisable to use a unique name.
 
 In the **Description** field, you can add a description for this offloading pipeline. The description is optional, but we recommend you to use it, as it provides additional information about the pipeline and its purpose.
 
