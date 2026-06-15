@@ -34,7 +34,7 @@ Smart functions must not rely on global Javascript state to persist data between
 - Module-level objects (caches, counters) are unreliable because runtimes can be recreated at any time.
 - Static configuration loaded once at module load is acceptable, as long as you accept it may be reloaded at any time.
 
-If you need state across messages, persist it externally (for example, by emitting it as a Cumulocity object).
+If you need state across messages, persist it externally (for example, by emitting it as a {{< product-c8y-iot >}} object).
 
 ### Synchronous vs. asynchronous functions {#sync-vs-async}
 
@@ -59,7 +59,7 @@ To drop a message without raising an error, return an empty array (`[]`).
 
 ### Logs {#logs}
 
-All output written with `console.log`, `console.info`, `console.warn`, `console.error`, and `console.debug` is written to the Apama microservice log file. For per-tenant microservices, this log is visible in the Administration application. More detail is available in the [Streaming Analytics documentation](/streaming-analytics/troubleshooting/#logfiles).
+All output written with `console.log`, `console.info`, `console.warn`, `console.error`, and `console.debug` is written to the Apama microservice log file. For per-tenant microservices, this log is visible in the Administration application. More details are available in the [Streaming Analytics documentation](/streaming-analytics/troubleshooting/#logfiles).
 
 When running tests in the rule editor before deployment, all log output is also shown directly in the test UI.
 

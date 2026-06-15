@@ -36,7 +36,7 @@ A Streaming Analytics model defines a processing pipeline made up of connected b
 - Combine multiple data streams with custom fusion logic.
 - Maintain running state (for example, counters or history buffers) across events.
 
-For detailed documentation on Streaming Analytics smart functions, see the [Streaming Analytics guide](/streaming-analytics/). To learn about the smart function block specifically, see [Smart function block](/streaming-analytics/block-reference/#smart-function).
+For detailed documentation on Streaming Analytics smart functions, see the [Streaming Analytics documentation](/streaming-analytics/). To learn about the smart function block specifically, see [Smart function block](/streaming-analytics/block-reference/#smart-function).
 
 ### thin-edge.io {#thin-edge-io}
 

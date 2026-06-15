@@ -9,16 +9,16 @@ sector:
   - device_management
 ---
 
-The smart function code editor allows you to view and edit the smart function code for the current rule. For a full reference on writing smart functions, including the API and examples, see [Smart functions](/data-preparation/smart-functions/).
+The smart function editor allows you to view and edit the smart function for the current rule. For a full reference on writing smart functions, including the API and examples, see [Smart functions](/data-preparation/smart-functions/).
 
-### Code editor visibility {#code-editor-visibility}
+### Smart function editor visibility {#code-editor-visibility}
 
 The code editor is minimized by default when a rule is first created. It opens automatically when the AI assistant creates your smart function. 
 
 Alternatively, the layout of the editor can be manually adjusted to suit your workflow:
 
-- Click the **Maximize code editor** icon to expand the code editor to full height, covering the test data panel.
-- Click the **Show input** icon to reveal the test data panel again.
+- Click the maximize icon <i class="dlt-c8y-icon-resize-expand icon-20"></i> to expand the code editor to full height, covering the test data panel.
+- Click the restore icon <i class="dlt-c8y-icon-resize-collapse icon-20"></i> to reveal the test data panel again.
 - Drag the resize handle at the top edge of the code editor to adjust its height.
 
 ### Editing code {#editing-code}

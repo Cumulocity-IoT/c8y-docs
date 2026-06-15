@@ -19,9 +19,9 @@ A `DeviceMessage` represents a message received from a device transport.
 | `transportFields` | `{ [key: string]: string }` | No | Optional dictionary of transport-specific metadata. Values are strings. |
 | `time` | `Date` | No | Timestamp the message was received by the platform. |
 
-### {{< product-c8y-iot >}} Objects {#cumulocity-objects}
+### {{< product-c8y-iot >}} objects {#cumulocity-objects}
 
-When you return objects from `onMessage`, you return one of five domain object types: `Measurement`, `Event`, `Alarm`, `Operation`, or `Managed object`. All five share the same common fields and differ only in their payload structure.
+When you return objects from `onMessage`, you return one of five domain object types: `Measurement`, `Event`, `Alarm`, `Operation`, or `ManagedObject`. All five share the same common fields and differ only in their payload structure.
 
 #### Common fields {#common-fields}
 
@@ -85,12 +85,12 @@ An operation represents a request to perform an action on a device, such as rest
 
 A managed object update applies an update to an existing managed object (MO) in the {{< product-c8y-iot >}} inventory. Use this type to update managed object details and custom fragments on a device or asset.
 
-The external ID you provide in `externalSource` is used to identify the target managed object. If no managed object exists for that external ID, the platform creates one automatically before applying the update.
+The external ID you provide in `externalSource` is used to identify the target managed object. If no managed object exists for that external ID, the platform creates one automatically before applying the update. For details on automatically created devices, see [Device onboarding](/data-preparation/device-onboarding/).
 
 Every field in the Managed Object API is optional, so you only need to include the fields you want to change. To remove a fragment, set its value to `null`.
 
 {{< c8y-admon-important >}}
-Managed object updates are designed for updating existing managed objects, not as the primary way to create new managed objects. The `managedObject` type does not have the ability to make hierarchy changes (for example, assigning child devices or assets).
+Managed object updates are designed for updating existing managed objects, not as the primary way to create new managed objects. The `ManagedObject` type does not have the ability to make hierarchy changes (for example, assigning child devices or assets).
 {{< /c8y-admon-important >}}
 
 | Field | Type | Required | Description |

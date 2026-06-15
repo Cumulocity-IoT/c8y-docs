@@ -8,7 +8,8 @@ The MQTT Service works together with the Messaging Service to quickly and secure
 Devices that already understand the {{< product-c8y-iot >}} domain model can use the [Core MQTT](/device-integration/mqtt/) protocols (SmartREST and JSON-over-MQTT) to communicate directly with {{< product-c8y-iot >}}.
 Alternatively, devices can send and receive messages with arbitrary payloads on arbitrary MQTT topics.
 For these _generic_ devices, the tenant is responsible for converting between the device's protocol and the {{< product-c8y-iot >}} domain model.
-This conversion can be implemented in a microservice running inside the platform, or in an external client application.
+This conversion can be implemented using [Data Preparation](/data-preparation/), in a microservice running inside the platform, or in an external client application.
+Data Preparation also [automatically creates devices](/data-preparation/device-onboarding/) when it encounters unknown external IDs.
 
 The MQTT Service should be regarded as an MQTT _endpoint_ rather than a full MQTT _broker_.
 It is optimized for the _IoT device integration_ use case, which has some highly asymmetric properties:
@@ -63,6 +64,8 @@ The diagram below illustrates the MQTT Service data flows within a tenant.
 All messages published by MQTT devices are forwarded to the Messaging Service, where they are persisted until they are consumed.
 {{< product-c8y-iot >}} domain model messages published to the MQTT topics used by the Core MQTT protocols are consumed directly by the {{< product-c8y-iot >}} core.
 Messages published to other MQTT topics are consumed by microservices and/or external clients that are responsible for mapping the messages to the {{< product-c8y-iot >}} domain model.
+[Data Preparation](/data-preparation/) can consume these messages and automatically create devices when unknown external IDs arrive.
+For details, see [Device onboarding](/data-preparation/device-onboarding/).
 Similarly, the {{< product-c8y-iot >}} core and clients can publish messages to the Messaging Service that will be consumed by the MQTT Service and forwarded to devices.
 
 <p align="center" width="100%">
