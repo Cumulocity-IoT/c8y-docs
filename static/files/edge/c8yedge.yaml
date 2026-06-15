@@ -61,7 +61,7 @@ stringData:
 
 ---
 ##
-## For details, see https://cumulocity.com/docs/2026/edge/installing-edge/#configuring-proxy
+## For details, see https://cumulocity.com/docs/2026/edge/installing-edge/#configure-proxy
 ##
 
 # apiVersion: v1
