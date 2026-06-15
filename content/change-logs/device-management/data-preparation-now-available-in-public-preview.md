@@ -20,7 +20,7 @@ This feature is in Public Preview, that is, it is not enabled by default and may
 
 Data Preparation is a new application that lets you transform incoming device messages before they are stored in {{< product-c8y-iot >}}. You create rules that receive raw payloads over MQTT, process them with custom code, and produce standard {{< product-c8y-iot >}} measurements—for example, converting proprietary sensor data from a device into a format the platform can store and display.
 
-Each rule targets a specific MQTT topic or client ID filter and runs a Smart function—a Javascript snippet—that processes the incoming message. The built-in AI assistant (powered by the AI Agent Manager) helps you generate the transformation code from a sample payload and a plain-language description of your goal.
+Each rule targets a specific MQTT topic or client ID filter and runs a smart function—a Javascript snippet—that processes the incoming message. The built-in AI assistant (powered by the AI Agent Manager) helps you generate the transformation code from a sample payload and a plain-language description of your goal.
 
 Key capabilities include:
 
