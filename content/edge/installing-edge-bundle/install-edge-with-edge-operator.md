@@ -25,7 +25,7 @@ The Edge operator is available as a Helm chart and a container image in the [Edg
 ```shell
 helm registry login registry.c8y.io --username="<Edge registry username>" --password="<Edge registry password>"
 
-helm upgrade --install c8yedge-operator oci://registry.c8y.io/edge/helm-charts/cumulocity-iot-edge-operator \
+helm upgrade --install cumulocity-iot-edge-operator oci://registry.c8y.io/edge/helm-charts/cumulocity-iot-edge-operator \
     --version={{< c8y-edge-current-version >}} \
     --namespace c8yedge \
     --create-namespace \
@@ -73,12 +73,12 @@ Keep a note of the path you provided for **Root path in the target registry**, w
 {{< /c8y-admon-info >}}
 
 #### Installing the Edge operator
-The Edge operator is new available in your private registry and can be installed like any other chart. Assuming you have synced the {{< c8y-edge-current-version >}} release of Edge, and that you wish all Edge workloads to be running in the namespace `c8yedge`, run the following command replacing the `PRIVATE-REGSITRY-HOST`, `PRIVATE-REGSITRY-USERNAME`, `PRIVATE-REGSITRY-PASSWORD` and the `REPOSITORY-ROOT-PATH` with the appropriate values: 
+The Edge operator is now available in your private registry and can be installed like any other chart. Assuming you have synced the {{< c8y-edge-current-version >}}.0.x version of Edge, and that you wish all Edge workloads to be running in the namespace `c8yedge`, run the following command replacing the `PRIVATE-REGSITRY-HOST`, `PRIVATE-REGSITRY-USERNAME`, `PRIVATE-REGSITRY-PASSWORD` and the `REPOSITORY-ROOT-PATH` with the appropriate values: 
 ```shell
 helm registry login <PRIVATE-REGSITRY-HOST> --username="<PRIVATE-REGSITRY-USERNAME>" --password="<PRIVATE-REGSITRY-PASSWORD>"
 
-helm upgrade --install c8yedge-operator oci://<PRIVATE-REGSITRY-HOST>/<REPOSITORY-ROOT-PATH>/edge/helm-charts/cumulocity-iot-edge-operator \
-    --version={{< c8y-edge-current-version >}} \
+helm upgrade --install cumulocity-iot-edge-operator oci://<PRIVATE-REGSITRY-HOST>/<REPOSITORY-ROOT-PATH>/edge/helm-charts/cumulocity-iot-edge-operator \
+    --version={{< c8y-edge-current-version >}}.0.x \
     --namespace c8yedge \
     --create-namespace \
     --set imageCredentials.username="<PRIVATE-REGSITRY-USERNAME>" \
