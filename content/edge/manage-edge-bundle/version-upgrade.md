@@ -3,6 +3,14 @@ weight: 15
 title: Upgrading Edge
 layout: redirect
 ---
+{{< c8y-admon-info >}}
+Edge supports upgrades only between consecutive major releases. If your deployment is several major versions behind, you must upgrade through each intermediate major release before upgrading to the target version.
+{{< /c8y-admon-info >}}
+
+{{< c8y-admon-info >}}
+Direct upgrades from Edge Appliance VM 10.17 or 10.18 to the 2026 release are not supported. To reach the 2026 release, you must first [migrate to the 2025 release](/2025/edge-kubernetes/manage-edge/#migrating-edge-appliance). Once the migration has been successfully completed and validated, you can upgrade from the 2025 release to the 2026 release.
+{{< /c8y-admon-info >}}
+
 {{< c8y-admon-caution >}}
 Significant changes to prerequisites are generally introduced in major releases. Nevertheless, prerequisites should be verified before each upgrade.
 <br>See [Prerequisites](/edge/installing-edge/#prerequisites) for the supported Kubernetes versions and requirements.
