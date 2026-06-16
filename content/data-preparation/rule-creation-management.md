@@ -73,14 +73,14 @@ The rules list gives you an overview of all rules in your tenant. Click **Config
 
 #### To enable or disable a rule {#enable-disable-rule}
 
-You can temporarily suspend a deployed rule without deleting it directly from the rules list. This lets you quickly stop a misbehaving rule in production from processing data while retaining its configuration. 
+You can temporarily pause a deployed rule from the rules list without deleting it. This stops the rule from processing incoming data and keeps its configuration.
 
-Using the single-action toggle in the rules list, you can switch a deployed rule between enabled and disabled states:
-- Click the **Pause deployed rule** icon next to an active rule to disable it. Disabled rules do not process incoming data.
-- Click the **Unpause deployed rule** icon to re-enable a suspended rule and immediately resume processing. 
+Use the action icon in the rules list to switch a deployed rule between enabled and disabled states:
+- Click the **Pause deployed rule** icon next to an enabled rule to disable it. Disabled rules do not process incoming data.
+- Click the **Unpause deployed rule** icon next to a disabled rule to enable it and resume processing.
 
 {{< c8y-admon-important >}}
-If you have unsaved draft changes and unpause a rule from the rules list, the draft changes are ignored and only the already-deployed version goes into the enabled state.
+If you have unsaved draft changes and click **Unpause deployed rule** in the rules list, the platform enables the last deployed version. It does not deploy your draft changes.
 {{< /c8y-admon-important >}}
 
 #### Searching and filtering {#search-filter}
