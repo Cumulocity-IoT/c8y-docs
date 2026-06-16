@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Agent chat- show error if output tokens limit is reached.
+title: Agent chat shows error when output token limit is reached
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
