@@ -20,8 +20,8 @@ Edge has been tested and officially supported on Kubernetes version 1.34.x, the 
 
 Because resource consumption can be very use-case specific, many containers have memory limits significantly higher than the memory request. Workloads that consume a lot of memory can result in inevitable out-of-memory kills of processes on the host. In order to protect the underlying operating system and Kubernetes infrastructure from this, we recommend setting reserved resources. See [Reserve Compute Resources for System Daemons](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/) for more details.
 
-### Installing the Edge operator {#installing-edge-operator}
-The Edge operator is available as a Helm chart in the Edge registry, and can be installed like any other chart. You will need your registry credentials, which can be acquired from [product support](/additional-resources/contacting-support/). Assuming you are installing the {{< c8y-edge-current-version >}} release of Edge, and that you wish all Edge workloads to be running in the namespace `c8yedge`, run the following command:
+### Installing the Edge operator from the Edge registry {#installing-edge-operator}
+The Edge operator is available as a Helm chart and a container image in the [Edge registry](https://registry.c8y.io/), and can be installed like any other chart. You will need your registry credentials, which can be acquired from [product support](/additional-resources/contacting-support/). Assuming you are installing the {{< c8y-edge-current-version >}} release of Edge, and that you wish all Edge workloads to be running in the namespace `c8yedge`, run the following command:
 ```shell
 helm registry login registry.c8y.io --username="<Edge registry username>" --password="<Edge registry password>"
 
@@ -37,6 +37,54 @@ helm upgrade --install c8yedge-operator oci://registry.c8y.io/edge/helm-charts/c
 {{< c8y-admon-info >}}
 If you are installing Edge on an environment that has no or limited internet access, we strongly recommend using the **c8yedge** tool for installing and upgrading Edge.
 {{< /c8y-admon-info >}}
+
+Run the following command to follow the logs for the Edge operator pod:
+```shell
+kubectl logs -f -n c8yedge deployment/c8yedge-operator-controller-manager manager
+```
+
+### Installing the Edge operator from a private OCI registry {#installing-edge-operator-from-private-registry}
+You can install the Edge operator and Edge using helm charts and container images hosted in a private [Open Container Initiative](https://opencontainers.org/) (OCI) compliant registry, rather than the default Edge registry. This approach is typically used in restricted or air-gapped environments, or where organizations require full control over container image distribution through their own registry infrastructure.
+
+To enable this setup, you need to pull the Edge artifacts from the [Edge registry](https://registry.c8y.io/) and push them to the private registry in your restricted network environment. For this, you must have an OCI-compliant registry accessible from the Kubernetes cluster where Edge will be installed and also a workstation with full internet access.
+
+#### Push the Edge artifacts to the private registry {#push-edge-artifacts-to-private-registry}
+You can push the Edge artifacts to the private registry using the c8yedge tool. Refer to [Downloading c8yedge](/edge/installing-edge/#downloading-c8yedge) for downloading the tool.
+
+To push the Edge artifacts to the private registry, execute the following command and follow the interactive prompts:
+```bash
+c8yedge registry-sync
+```
+You can discover more options with `c8yedge registry-sync --help`, such as the ability to sync a very specific Edge version. 
+
+If you intend to run the `registry-sync` command in an environment that has no or limited internet access, you will have to use the c8yedge tool to create an offline package first. This has to be executed in an environment with internet access. Execute the following command and follow the interactive prompts:
+```bash
+c8yedge package
+```
+The tool generates a tarball suffixed with the specific version of Edge downloaded (for example, `c8yedge-{{< c8y-edge-current-version >}}_0_0.tar`). By default, this file is created in your current directory and contains the latest release of Edge {{< c8y-edge-current-version >}}. You can discover more options with `c8yedge package --help`, such as the ability to package a very specific Edge version.
+
+The offline package can be used to push the Edge artifacts to the private registry. You need to transfer this file, as well as the c8yedge tool, into your airgapped environment. Once in the airgapped environment, run the `registry-sync` command referencing the offline package file the tool generated earlier:
+```bash
+# Replace <OFFLINE-PACKAGE-FILENAME> with the path to the generated offline package file
+sudo c8yedge registry-sync -s "<OFFLINE-PACKAGE-FILENAME>"
+```
+{{< c8y-admon-info >}}
+Keep a note of the path you provided for **Root path in the target registry**, which is required while installing the operator in the following step.
+{{< /c8y-admon-info >}}
+
+#### Installing the Edge operator
+The Edge operator is new available in your private registry and can be installed like any other chart. Assuming you have synced the {{< c8y-edge-current-version >}} release of Edge, and that you wish all Edge workloads to be running in the namespace `c8yedge`, run the following command replacing the `PRIVATE-REGSITRY-HOST`, `PRIVATE-REGSITRY-USERNAME`, `PRIVATE-REGSITRY-PASSWORD` and the `REPOSITORY-ROOT-PATH` with the appropriate values: 
+```shell
+helm registry login <PRIVATE-REGSITRY-HOST> --username="<PRIVATE-REGSITRY-USERNAME>" --password="<PRIVATE-REGSITRY-PASSWORD>"
+
+helm upgrade --install c8yedge-operator oci://<PRIVATE-REGSITRY-HOST>/<REPOSITORY-ROOT-PATH>/edge/helm-charts/cumulocity-iot-edge-operator \
+    --version={{< c8y-edge-current-version >}} \
+    --namespace c8yedge \
+    --create-namespace \
+    --set imageCredentials.username="<PRIVATE-REGSITRY-USERNAME>" \
+    --set imageCredentials.password="<PRIVATE-REGSITRY-PASSWORD>" \
+    --wait
+```
 
 Run the following command to follow the logs for the Edge operator pod:
 ```shell
