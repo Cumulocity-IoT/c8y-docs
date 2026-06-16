@@ -37,4 +37,10 @@ Smart function input and output types are published as the [`@c8y/dataprep-types
 
 ### REST API {#rest-api}
 
-The Data Preparation control plane REST API --- used by the template's test and deploy tooling --- is documented in the public [{{< product-c8y-iot >}} API documentation](https://{{< domain-c8y >}}/api/). An interactive Swagger UI is also available within your tenant at `https://<your-tenant>/service/dataprep/swagger-ui.html`.
+The Data Preparation control plane REST API --- used by the template's test and deploy tooling --- is documented at the [OpenAPI specifications website](https://cumulocity.com/api/data-preparation). To access interactive API documentation within your tenant, subscribe to and install the **Api-doc** extension from **Administration** > **Ecosystem** > **Extensions** and open the **API documentation** app > **Data Preparation** tab.
+
+You can also retrieve the raw OpenAPI JSON specification directly:
+
+```shell
+curl -u '<username>' 'https://<your-tenant>/service/dataprep/v3/api-docs'
+```

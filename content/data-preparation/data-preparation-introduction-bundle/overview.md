@@ -62,11 +62,13 @@ Test data is sample device payload that you use to validate your smart function 
 
 ### REST API reference {#rest-api-reference}
 
-The public Data Preparation control plane endpoints are documented in the [{{< product-c8y-iot >}} API documentation](https://{{< domain-c8y >}}/api/).
+The Data Preparation REST API is documented at the [OpenAPI specifications website](https://cumulocity.com/api/data-preparation).
 
-An interactive Swagger UI is available on each tenant at `https://<your-tenant>/service/dataprep/swagger-ui.html`, and the raw OpenAPI specification is at `https://<your-tenant>/service/dataprep/v3/api-docs`.
+To access interactive API documentation within your tenant, subscribe to and install the **Api-doc** extension from **Administration** > **Ecosystem** > **Extensions**, then open the **API documentation** app and select the **Data Preparation** tab.
 
-{{< c8y-admon-info >}}
-The Data Preparation API is also discoverable via the {{< product-c8y-iot >}} API documentation portal, where it is registered through the microservice manifest `openApiSpec` field.
-{{< /c8y-admon-info >}}
+You can also retrieve the raw OpenAPI JSON specification directly:
+
+```shell
+curl -u '<username>' 'https://<your-tenant>/service/dataprep/v3/api-docs'
+```
 
