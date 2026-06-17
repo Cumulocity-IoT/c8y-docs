@@ -55,23 +55,23 @@ To complete this installation, you will need:
 Depending on your environment's network connectivity, choose the appropriate synchronization method below.
 
 * **Direct Sync (Online)**
-  If your environment has direct internet access, use the c8yedge tool to sync artifacts directly:
+  <p>If your environment has direct internet access, use the c8yedge tool to sync artifacts directly:
   ```bash
   c8yedge registry-sync
   ```
 
 * **Offline Package (Air-gapped)**
-  If you are working in an air-gapped environment, execute these steps to sync your artifacts:
+  <p>If you are working in an air-gapped environment, execute these steps to sync your artifacts:
   1. **Create the offline package** on an internet-connected machine:
-    ```bash
-    c8yedge package
-    ```
-  1. **Transfer the generated tarball** (for example, `c8yedge-{{< c8y-edge-current-version >}}_0_0.tar`) and the c8yedge binary to your air-gapped environment. 
-  1. **Sync to the private registry** from within the air-gapped environment:
-    ```bash
-    # Replace <OFFLINE-PACKAGE-FILENAME> with the path to the generated offline package file
-    sudo c8yedge registry-sync -s "<OFFLINE-PACKAGE-FILENAME>"
-    ```
+      ```bash
+      c8yedge package
+      ```
+  2. **Transfer the generated tarball** (for example, `c8yedge-{{< c8y-edge-current-version >}}_0_0.tar`) and the c8yedge binary to your air-gapped environment. 
+  3. **Sync to the private registry** from within the air-gapped environment:
+      ```bash
+      # Replace <OFFLINE-PACKAGE-FILENAME> with the path to the generated offline package file
+      sudo c8yedge registry-sync -s "<OFFLINE-PACKAGE-FILENAME>"
+      ```
 
 {{< c8y-admon-info >}}
 * You can discover more options with `c8yedge package --help` and `c8yedge registry-sync --help`, such as the ability to sync a very specific Edge version.
@@ -82,26 +82,26 @@ Depending on your environment's network connectivity, choose the appropriate syn
 Once the artifacts are available in your private registry, install the operator using Helm.
 
 1. **Authenticate with your registry:**
-  ```shell
-  helm registry login <PRIVATE-REGISTRY-HOST> \
-    --username="<PRIVATE-REGISTRY-USERNAME>" \
-    --password="<PRIVATE-REGISTRY-PASSWORD>"
-  ```
+    ```shell
+    helm registry login <PRIVATE-REGISTRY-HOST> \
+      --username="<PRIVATE-REGISTRY-USERNAME>" \
+      --password="<PRIVATE-REGISTRY-PASSWORD>"
+    ```
 1. **Install the operator:**
-  ```shell
-  helm upgrade --install cumulocity-iot-edge-operator oci://<PRIVATE-REGISTRY-HOST>/<REPOSITORY-ROOT-PATH>/edge/helm-charts/cumulocity-iot-edge-operator \
-      --version={{< c8y-edge-current-version >}}.0.x \
-      --namespace c8yedge \
-      --create-namespace \
-      --set imageCredentials.username="<PRIVATE-REGISTRY-USERNAME>" \
-      --set imageCredentials.password="<PRIVATE-REGISTRY-PASSWORD>" \
-      --wait
-  ```
+    ```shell
+    helm upgrade --install cumulocity-iot-edge-operator oci://<PRIVATE-REGISTRY-HOST>/<REPOSITORY-ROOT-PATH>/edge/helm-charts/cumulocity-iot-edge-operator \
+        --version={{< c8y-edge-current-version >}}.0.x \
+        --namespace c8yedge \
+        --create-namespace \
+        --set imageCredentials.username="<PRIVATE-REGISTRY-USERNAME>" \
+        --set imageCredentials.password="<PRIVATE-REGISTRY-PASSWORD>" \
+        --wait
+    ```
 1. **Verify the installation:**
-  Follow the operator logs to ensure successful startup:
-  ```shell
-  kubectl logs -f -n c8yedge deployment/c8yedge-operator-controller-manager manager
-  ```
+  <p>Follow the operator logs to ensure successful startup:
+    ```shell
+    kubectl logs -f -n c8yedge deployment/c8yedge-operator-controller-manager manager
+    ```
 
 ### Installing Edge
 Download and edit the Edge CR ([c8yedge.yaml](/files/edge/c8yedge.yaml)), before applying it to your Kubernetes cluster by running the command below:
