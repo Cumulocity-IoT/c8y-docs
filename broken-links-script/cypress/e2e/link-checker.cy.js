@@ -24,6 +24,9 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
     // Timeout links
     "https://openjdk.org/jeps/252",
+
+    // latlong.net fails to load in Cypress (getting 403)
+    "https://www.latlong.net/",
   ];
 
 
