@@ -73,7 +73,7 @@ The rules list gives you an overview of all rules in your tenant. Click **Config
 
 #### To enable or disable a rule {#enable-disable-rule}
 
-You can temporarily pause a deployed rule from the rules list without deleting it. This stops the rule from processing incoming data and keeps its configuration.
+Temporarily pause a deployed rule from the rules list without deleting it. This stops the rule from processing incoming data and keeps its configuration.
 
 Use the action icon in the rules list to switch a deployed rule between enabled and disabled states:
 - Click the **Pause deployed rule** icon next to an enabled rule to disable it. Disabled rules do not process incoming data.
