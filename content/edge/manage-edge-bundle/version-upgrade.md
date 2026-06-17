@@ -46,14 +46,14 @@ Upgrading the version of your self-managed Kubernetes is outside the scope of th
 {{< /c8y-admon-info >}}
 
 Upgrading Edge works similarly to applying a configuration change, with the target version specified as a configuration value.
-To upgrade to the latest available version from the current release, set the version to `"{{< c8y-edge-current-version >}}"`. To upgrade to a specific patch version, use a fully qualified version string such as `"{{< c8y-edge-current-version >}}.0.1"`.
+To upgrade to the latest available version from the current release, set the version to `{{< c8y-edge-current-version >}}`. To upgrade to a specific patch version, use a fully qualified version string such as `{{< c8y-edge-current-version >}}.0.1`.
 
 {{< c8y-admon-info >}}
-If you installed Edge from a private regsitry, then you need to push the Edge artifacts of the version (for example, {{< c8y-edge-current-version >}}.0.x) you want to upgrade to the private registry by following the steps detailed at [Push the Edge artifacts to the private registry](/edge/installing-edge/#push-edge-artifacts-to-private-registry).
+If you installed Edge from a private regsitry, then you need to push the Edge artifacts of the version `{{< c8y-edge-current-version >}}` to the private registry by following the steps detailed in [Push the Edge artifacts to the private registry](/edge/installing-edge/#push-edge-artifacts-to-private-registry).
 {{< /c8y-admon-info >}}
 
 ```bash
-kubectl --namespace=c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"version":"{{< c8y-edge-current-version >}}"}}'
+kubectl --namespace=c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"version":{{< c8y-edge-current-version >}}}}'
 ```
 The operator will also upgrade itself as part of this process. See [Monitoring changes](/edge/manage-edge/#monitoring-changes) to follow the progress of the upgrade.
 
