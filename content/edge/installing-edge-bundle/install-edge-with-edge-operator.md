@@ -21,27 +21,33 @@ Edge has been tested and officially supported on Kubernetes version 1.34.x, the 
 Because resource consumption can be very use-case specific, many containers have memory limits significantly higher than the memory request. Workloads that consume a lot of memory can result in inevitable out-of-memory kills of processes on the host. In order to protect the underlying operating system and Kubernetes infrastructure from this, we recommend setting reserved resources. See [Reserve Compute Resources for System Daemons](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/) for more details.
 
 ### Installing the Edge operator from the Edge registry {#installing-edge-operator-from-edge-registry}
-The Edge operator is available as a Helm chart and a container image in the [Edge registry](https://registry.c8y.io/), and can be installed like any other chart. You will need your registry credentials, which can be acquired from [product support](/additional-resources/contacting-support/). Assuming you are installing the {{< c8y-edge-current-version >}} release of Edge, and that you wish all Edge workloads to be running in the namespace `c8yedge`, run the following command:
-```shell
-helm registry login registry.c8y.io --username="<Edge registry username>" --password="<Edge registry password>"
+The Edge operator is available as a Helm chart and a container image in the [Edge registry](https://registry.c8y.io/), and can be installed like any other chart. You will need your registry credentials, which can be acquired from [product support](/additional-resources/contacting-support/). Assuming you are installing the {{< c8y-edge-current-version >}} release of Edge, and that you wish all Edge workloads to be running in the namespace `c8yedge`, run the following commands:
 
-helm upgrade --install cumulocity-iot-edge-operator oci://registry.c8y.io/edge/helm-charts/cumulocity-iot-edge-operator \
-    --version={{< c8y-edge-current-version >}} \
-    --namespace c8yedge \
-    --create-namespace \
-    --set imageCredentials.username="<Edge registry username>" \
-    --set imageCredentials.password="<Edge registry password>" \
-    --wait
-```
+1. **Authenticate with Edge registry:**
+    ```shell
+    helm registry login registry.c8y.io \
+      --username="<Edge registry username>" \
+      --password="<Edge registry password>"
+    ```
+1. **Install the operator:**
+    ```shell
+    helm upgrade --install cumulocity-iot-edge-operator oci://registry.c8y.io/edge/helm-charts/cumulocity-iot-edge-operator \
+      --version="{{< c8y-edge-current-version >}}" \
+      --namespace c8yedge \
+      --create-namespace \
+      --set imageCredentials.username="<Edge registry username>" \
+      --set imageCredentials.password="<Edge registry password>" \
+      --wait
+    ```
+1. **Verify the installation:**
+    <br>Follow the operator logs to ensure successful startup:
+    ```shell
+    kubectl logs -f --namespace c8yedge deployment/c8yedge-operator-controller-manager manager
+    ```
 
 {{< c8y-admon-info >}}
 If you are installing Edge on an environment that has no or limited internet access, we strongly recommend using the **c8yedge** tool for installing and upgrading Edge.
 {{< /c8y-admon-info >}}
-
-Run the following command to follow the logs for the Edge operator pod:
-```shell
-kubectl logs -f -n c8yedge deployment/c8yedge-operator-controller-manager manager
-```
 
 ### Installing the Edge operator from a private OCI registry {#installing-edge-operator-from-private-registry}
 You can install the Edge operator using Helm charts and container images hosted in a private [Open Container Initiative](https://opencontainers.org/) (OCI) compliant registry. This is the recommended approach for organizations requiring strict control over container image distribution.
@@ -70,7 +76,7 @@ Depending on your environment's network connectivity, choose the appropriate syn
   2. **Transfer the generated tarball** (for example, `c8yedge-{{< c8y-edge-current-version >}}_0_0.tar`) and the c8yedge binary to your air-gapped environment. 
   3. **Sync to the private registry** from within the air-gapped environment:
       ```bash
-      sudo c8yedge registry-sync -s "<OFFLINE-PACKAGE-FILE>"
+      c8yedge registry-sync -s "<OFFLINE-PACKAGE-FILE>"
       ```
 
 {{< c8y-admon-info >}}
@@ -90,17 +96,17 @@ Once the artifacts are available in your private registry, install the operator 
 1. **Install the operator:**
     ```shell
     helm upgrade --install cumulocity-iot-edge-operator oci://<PRIVATE-REGISTRY-HOST>/<REPOSITORY-ROOT-PATH>/edge/helm-charts/cumulocity-iot-edge-operator \
-        --version={{< c8y-edge-current-version >}}.0.x \
-        --namespace c8yedge \
-        --create-namespace \
-        --set imageCredentials.username="<PRIVATE-REGISTRY-USERNAME>" \
-        --set imageCredentials.password="<PRIVATE-REGISTRY-PASSWORD>" \
-        --wait
+      --version="{{< c8y-edge-current-version >}}.0.x" \
+      --namespace c8yedge \
+      --create-namespace \
+      --set imageCredentials.username="<PRIVATE-REGISTRY-USERNAME>" \
+      --set imageCredentials.password="<PRIVATE-REGISTRY-PASSWORD>" \
+      --wait
     ```
 1. **Verify the installation:**
     <br>Follow the operator logs to ensure successful startup:
     ```shell
-    kubectl logs -f -n c8yedge deployment/c8yedge-operator-controller-manager manager
+    kubectl logs -f --namespace c8yedge deployment/c8yedge-operator-controller-manager manager
     ```
 
 ### Installing Edge

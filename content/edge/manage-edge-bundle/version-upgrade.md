@@ -52,7 +52,9 @@ If your Edge instance was installed using a private OCI-compliant registry, you 
 {{< /c8y-admon-info >}}
 
 ```bash
-kubectl --namespace=c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"version":{{< c8y-edge-current-version >}}}}'
+kubectl patch edge c8yedge --namespace c8yedge \
+  --type merge \
+  --patch '{"spec":{"version":"{{< c8y-edge-current-version >}}"}}'	
 ```
 The operator will also upgrade itself as part of this process. See [Monitoring changes](/edge/manage-edge/#monitoring-changes) to follow the progress of the upgrade.
 
