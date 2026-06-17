@@ -21,3 +21,5 @@ This feature is in Public Preview. It is not enabled by default and may be subje
 The DTM Data Service processes data point links configured through the DTM Data Points plugin and automatically associates incoming device measurements with the corresponding assets in the Digital Twin hierarchy. This allows operational data to be accessed and visualized from assets instead of directly from device measurements.
 
 By making data available in asset context, the service enables asset-centric dashboards, analytics, smart rules, and business applications.
+
+**Important:** For enabling DTM Data Service, tenant administrators must enable the `notification2.tenant.all.apis` tenant option.
