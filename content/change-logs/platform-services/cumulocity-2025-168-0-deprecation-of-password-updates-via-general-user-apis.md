@@ -27,7 +27,7 @@ The `password` field is deprecated in the following endpoints:
 
 **New requirement**
 
-All password updates must use the dedicated endpoint for Update current user's password :
+All password updates must use the dedicated endpoint for updating the current user's password:
 
 - **PUT /user/currentUser/password** - https://cumulocity.com/api/core/#operation/putCurrentUserPasswordResource
 
