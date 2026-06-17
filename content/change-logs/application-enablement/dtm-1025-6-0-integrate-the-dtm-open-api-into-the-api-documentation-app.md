@@ -1,18 +1,21 @@
 ---
-date: ""
-title: "DTM OpenAPI is available in the API Documentation app"
-product_area: "Application enablement & solutions"
+date: '2026-06-17'
+title: DTM OpenAPI is available in the API Documentation app
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-QHu1GdukP"
-      label: "Feature"
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-2841"
-version: "1025.6.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-2841
+version: 1025.6.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-06-17'
 ---
 The OpenAPI of DTM is now available in the API Documentation application which
 shows all known OpenAPI documentations in the current tenant.
