@@ -79,8 +79,10 @@ Use the action icon in the rules list to switch a deployed rule between enabled 
 - Click the **Pause deployed rule** icon next to an enabled rule to disable it. Disabled rules do not process incoming data.
 - Click the **Unpause deployed rule** icon next to a disabled rule to enable it and resume processing.
 
-{{< c8y-admon-important >}}
 If you have unsaved draft changes and click **Unpause deployed rule** in the rules list, the platform enables the last deployed version. It does not deploy your draft changes.
+
+{{< c8y-admon-important >}}
+The **Pause deployed rule** or **Unpause deployed rule** icons are only visible if you have the Data Preparation deployments admin permission and no deployment or undeployment process is in progress.
 {{< /c8y-admon-important >}}
 
 #### Searching and filtering {#search-filter}
