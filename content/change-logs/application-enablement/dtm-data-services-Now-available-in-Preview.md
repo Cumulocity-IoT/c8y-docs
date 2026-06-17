@@ -18,6 +18,6 @@ version: "1.0.0"
 This feature is in Public Preview. It is not enabled by default and may be subject to change in future releases.
 {{< /c8y-admon-preview >}}
 
-The DTM Data Service enables device measurements linked through the Data Points plugin to be automatically associated with assets and stored in asset context. This allows applications to access and visualize operational data from the perspective of assets rather than individual devices.
+The DTM Data Service processes data point links configured through the DTM Data Points plugin and automatically associates incoming device measurements with the corresponding assets in the Digital Twin hierarchy. This allows operational data to be accessed and visualized from assets instead of directly from device measurements.
 
-By resolving device data to the corresponding assets defined in the Digital Twin hierarchy, the service provides a foundation for building asset-centric dashboards, applications, and analytics.
+By making data available in asset context, the service enables asset-centric dashboards, analytics, smart rules, and business applications.
