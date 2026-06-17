@@ -24,6 +24,9 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
     // Always times out in the automated tests but loads fine in the browser
     "https://openjdk.org/jeps/252",
+
+    // latlong.net fails to load in Cypress (getting 403)
+    "https://www.latlong.net/",
   ];
 
 
