@@ -99,6 +99,7 @@ Once the artifacts are available in your private registry, install the operator 
       --version="{{< c8y-edge-current-version >}}.0.x" \
       --namespace c8yedge \
       --create-namespace \
+      --set image.repository="<PRIVATE-REGISTRY-HOST>/<REPOSITORY-ROOT-PATH>/edge/cumulocity-iot-edge-operator" \
       --set imageCredentials.username="<PRIVATE-REGISTRY-USERNAME>" \
       --set imageCredentials.password="<PRIVATE-REGISTRY-PASSWORD>" \
       --wait
