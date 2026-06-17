@@ -55,13 +55,16 @@ To complete this installation, you will need:
 Depending on your environment's network connectivity, choose the appropriate synchronization method below.
 
 * **Direct Sync (Online)**
-  <p>If your environment has direct internet access, use the c8yedge tool to sync artifacts directly:
+  
+  If your environment has direct internet access, use the c8yedge tool to sync artifacts directly:
   ```bash
   c8yedge registry-sync
   ```
 
 * **Offline Package (Air-gapped)**
-  <p>If you are working in an air-gapped environment, execute these steps to sync your artifacts:
+  
+  If you are working in an air-gapped environment, execute these steps to sync your artifacts:
+  
   1. **Create the offline package** on an internet-connected machine:
       ```bash
       c8yedge package
@@ -98,7 +101,7 @@ Once the artifacts are available in your private registry, install the operator 
         --wait
     ```
 1. **Verify the installation:**
-  <p>Follow the operator logs to ensure successful startup:
+    Follow the operator logs to ensure successful startup:
     ```shell
     kubectl logs -f -n c8yedge deployment/c8yedge-operator-controller-manager manager
     ```
