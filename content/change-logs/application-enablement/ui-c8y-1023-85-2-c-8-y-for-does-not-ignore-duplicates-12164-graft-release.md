@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Duplicate items no longer rendered in lists using the c8yFor directive
+title: Duplicate operations no longer appear on the Device Management Control page
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
