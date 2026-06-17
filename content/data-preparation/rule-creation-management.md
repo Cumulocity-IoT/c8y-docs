@@ -82,7 +82,7 @@ Use the action icon in the rules list to switch a deployed rule between enabled 
 If you have unsaved draft changes and click **Unpause deployed rule** in the rules list, the platform enables the last deployed version. It does not deploy your draft changes.
 
 {{< c8y-admon-important >}}
-The **Pause deployed rule** or **Unpause deployed rule** icons are only visible if you have the Data Preparation deployments admin permission and no deployment or undeployment process is in progress.
+The **Pause deployed rule** and **Unpause deployed rule** icons are only visible if your role has ADMIN permission for "Data Preparation deployments" and no deployment or undeployment process is in progress.
 {{< /c8y-admon-important >}}
 
 #### Searching and filtering {#search-filter}
