@@ -18,7 +18,7 @@ version: "1.0.0"
 This feature is in Public Preview. It is not enabled by default and may be subject to change in future releases.
 {{< /c8y-admon-preview >}}
 
-The DTM Data Service microservice processes data point links configured through the DTM Data Points plugin and automatically propagates incoming device measurements to the corresponding assets in the Digital Twin hierarchy via `c8y_LinkedSeries`.
+The DTM Data Service microservice processes data point links configured through the DTM [Data Points plugin](https://cumulocity.com/docs/dtm/asset-hierarchy/#datapoints) and automatically propagates incoming device measurements to the corresponding assets in the Digital Twin hierarchy via `c8y_LinkedSeries`.
 
 By transforming raw device measurements into structured asset-context data, the service enables operational data to be accessed and visualized directly from assets, powering asset-centric dashboards, analytics, smart rules, and business applications without requiring direct queries to individual devices.
 
