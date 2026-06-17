@@ -49,7 +49,7 @@ Upgrading Edge works similarly to applying a configuration change, with the targ
 To upgrade to the latest available version from the current release, set the version to `{{< c8y-edge-current-version >}}`. To upgrade to a specific patch version, use a fully qualified version string such as `{{< c8y-edge-current-version >}}.0.1`.
 
 {{< c8y-admon-info >}}
-If you installed Edge from a private regsitry, then you need to push the Edge artifacts of the version `{{< c8y-edge-current-version >}}` to the private registry by following the steps detailed in [Push the Edge artifacts to the private registry](/edge/installing-edge/#push-edge-artifacts-to-private-registry).
+If your Edge instance was installed using a private OCI-compliant registry, you must sync the artifacts for the new version `{{< c8y-edge-current-version >}}` to your private registry before beginning the upgrade. Refer to [Sync Edge artifacts to your private registry](/edge/installing-edge/#sync-edge-artifacts-to-private-registry) for the required steps.
 {{< /c8y-admon-info >}}
 
 ```bash
