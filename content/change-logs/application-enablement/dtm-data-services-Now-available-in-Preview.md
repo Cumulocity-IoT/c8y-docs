@@ -18,8 +18,8 @@ version: "1.0.0"
 This feature is in Public Preview. It is not enabled by default and may be subject to change in future releases.
 {{< /c8y-admon-preview >}}
 
-The DTM Data Service processes data point links configured through the DTM Data Points plugin and automatically associates incoming device measurements with the corresponding assets in the Digital Twin hierarchy. This allows operational data to be accessed and visualized from assets instead of directly from device measurements.
+The DTM Data Service microservice processes data point links configured through the DTM Data Points plugin and automatically propagates incoming device measurements to the corresponding assets in the Digital Twin hierarchy via `c8y_LinkedSeries`.
 
-By making data available in asset context, the service enables asset-centric dashboards, analytics, smart rules, and business applications.
+By transforming raw device measurements into structured asset-context data, the service enables operational data to be accessed and visualized directly from assets, powering asset-centric dashboards, analytics, smart rules, and business applications without requiring direct queries to individual devices.
 
-**Important:** For enabling DTM Data Service, tenant administrators must enable the `notification2.tenant.all.apis` tenant option.
+**Note:** For enabling DTM Data Service, tenant administrators must enable the `notification2.tenant.all.apis` tenant option.
