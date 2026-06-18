@@ -1,5 +1,5 @@
 ---
-date: ''
+date: '2026-06-18'
 title: Deprecation of password updates via general user APIs
 product_area: Platform services
 change_type:
@@ -14,6 +14,16 @@ build_artifact:
 ticket: MTM-66931
 version: 2026.168.0
 environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-06-18'
+  - label: apj.cumulocity.com
+    date: '2026-06-10'
+  - label: jp.cumulocity.com
+    date: '2026-06-10'
+  - label: us.cumulocity.com
+    date: '2026-06-15'
+  - label: cumulocity.com
+    date: '2026-06-16'
 ---
 
 To improve platform security, the ability to update passwords through general user endpoints is being deprecated. Password changes will soon require verification of the current password to prevent unauthorized account takeovers.

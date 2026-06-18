@@ -18,6 +18,10 @@ version: 1025.6.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-06-17'
+  - label: apj.cumulocity.com
+    date: '2026-06-18'
+  - label: jp.cumulocity.com
+    date: '2026-06-18'
 ---
 When an asset links to a measurement source on a device, the platform
 maintains a reverse index (`c8y_LinkedSeriesReverseIndex`) on the device
