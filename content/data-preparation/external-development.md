@@ -61,7 +61,7 @@ Files must be at the **root level** of the archive:
 
 Any other files in the archive are silently ignored.
 
-Archives are subject to the following default limits, configurable per tenant via [tenant options](https://{{< domain-c8y >}}/api/core/#tag/Options):
+Archives are subject to the following limits:
 
 - Maximum **100 entries** per archive.
 - Maximum **1 MB** per file (`dataprep` / `rule-import.max-file-size`).
