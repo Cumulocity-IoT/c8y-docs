@@ -23,10 +23,10 @@ Data Preparation empowers you to:
 
 ### Key capabilities {#key-capabilities}
 
-* AI-first experience --- the primary user interface is an AI assistant that writes and optimizes Javascript-based transformation logic based on your prompts (leveraging the [AI Agent Manager](/ai/aim-introduction/)).
-* Built-in code editor --- a simplified IDE is available to manually view, edit, or paste pre-written logic.
-* Testing and validation --- run tests using sample data (either manually uploaded or captured live from an MQTT topic) with a visual comparison.
-* Integrated deployment --- once a rule is active, it runs continuously as data is posted to the subscribed [MQTT Service](/device-integration/mqtt-service/) topics.  
+* AI-first experience --- The primary user interface is an AI assistant that writes and optimizes Javascript-based transformation logic based on your prompts (leveraging the [AI Agent Manager](/ai/aim-introduction/)).
+* Built-in code editor --- A simplified IDE is available to manually view, edit, or paste pre-written logic.
+* Testing and validation --- Run tests using sample data (either manually uploaded or captured live from an MQTT topic) with a visual comparison.
+* Integrated deployment --- Once a rule is active, it runs continuously as data is posted to the subscribed [MQTT Service](/device-integration/mqtt-service/) topics.  
 
 {{< c8y-admon-info >}}
 Data Preparation handles data normalization only. For complex event processing, aggregations, or real-time analytics IoT use cases, use [Streaming Analytics](/streaming-analytics/introduction-analytics/) after Data Preparation has normalized your data.
