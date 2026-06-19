@@ -677,7 +677,7 @@ To configure the "SCADA" widget, follow these steps:
 
 1. Go to a dashboard, switch to edit mode, and click **Add widget** in the top menu.
 2. Select the **SCADA** widget and provide a title.
-3. Optionally, select the asset or device in the **Asset selection** section.
+3. Optionally, select the asset or device in the **Asset selection** section (its child assets or devices can be selected in the mappings, too).
 4. In the **SVG configuration** section, select the SVG source:
    - **Upload file** — browse or drop an SVG file.
    - **Paste text** — paste SVG code directly into the editor.
@@ -825,7 +825,7 @@ Moreover, JavaScript event attributes (like onclick, onmouseover) can be used in
 
 Data from devices (like latest measurements and other properties) are provided via placeholders. There are also predefined helper functions which can be used.
 
-For creating SVG files, it is recommended to use [https://boxy-svg.com/](https://boxy-svg.com/). It is an easy to use, quality Chrome extension.
+For creating SVG files, it is recommended to use [https://boxy-svg.com/](https://boxy-svg.com/). It is an easy-to-use, quality Chrome extension.
 
 ##### Placeholders {#legacy-placeholders}
 

@@ -62,7 +62,7 @@ Registers and coils that can be changed are represented by active widgets. If yo
 The "SCADA" widget provides a graphic representation of the status of a device and its fieldbus properties.
 
 {{< c8y-admon-info >}}
-For the full SCADA widget documentation — including SVG authoring, display options, and migration from legacy widgets — refer to the [SCADA widget](/cockpit/widgets-collection/#scada) section.
+For the full SCADA widget documentation — including SVG authoring, display options, and migration from legacy widgets — refer to [SCADA widget](/cockpit/widgets-collection/#scada).
 {{< /c8y-admon-info >}}
 
 #### Mapping fieldbus properties to SCADA placeholders {#mapping-fieldbus-properties-to-scada-placeholders}
