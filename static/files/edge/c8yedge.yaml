@@ -1,7 +1,7 @@
 ########################################################################################################################
 ##     Defines the Edge Custom Resource and the Kubernetes Secrets/ComfigMaps required to install Cumulocity Edge.    ##
 ########################################################################################################################
----
+
 ##
 ## For details, see https://cumulocity.com/docs/2026/edge/edge-custom-resource-definition/#cumulocitypasswordsecretname
 ##
@@ -59,28 +59,12 @@ stringData:
   # MONGODB_DATABASE_ADMIN_USER: databaseAdmin
   # MONGODB_DATABASE_ADMIN_PASSWORD: <DB-ADMIN-PASSWORD>
 
+
 ---
-##
-## For details, see https://cumulocity.com/docs/2026/edge/installing-edge/#configure-proxy
-##
-
-# apiVersion: v1
-# kind: ConfigMap
-# metadata:
-  # name: custom-environment-variables
-  # namespace: c8yedge
-# data:
-  # http_proxy: <HTTP Proxy URL>
-  # https_proxy: <HTTPS Proxy URL>
-  # socks_proxy: <SOCKS Proxy URL>
-  # no_proxy: 127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain name, for example, myown.iot.com>,<kubernetes cluster IP range, for example, 10.43.0.0/16>
-  # ca.crt: <CA-CERTIFICATES TO TRUST>
-
-
 ########################################################################################################################
 ##                                        Defines Edge Custom Resource                                                ##
 ########################################################################################################################
----
+
 ##
 ## This Custom Resource (CR) YAML has the Cumulocity Edge deployment settings.
 ##
