@@ -81,7 +81,7 @@ Use the deployment action icon in the rules list to switch a deployed rule betwe
 
 If you have unsaved draft changes and click the deployment enable icon <i class="dlt-c8y-icon-deploy icon-20"></i> in the rules list, the platform re-enables the last deployed version. It does not deploy your draft changes.
 
-If you click **Save and deploy** in the rule editor for a disabled/enabled rule with draft changes, the platform replaces the deployed version with the draft.
+If you click **Save and deploy** in the rule editor for a deployed rule with draft changes, the platform replaces the deployed version with the draft and sets the deployment status to enabled.
 
 {{< c8y-admon-important >}}
 The disable and enable deployed rule icons are only visible if:
