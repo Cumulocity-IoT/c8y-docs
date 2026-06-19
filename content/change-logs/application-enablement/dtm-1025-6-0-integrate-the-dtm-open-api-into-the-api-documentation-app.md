@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-06-18'
   - label: jp.cumulocity.com
     date: '2026-06-18'
+  - label: us.cumulocity.com
+    date: '2026-06-19'
+  - label: cumulocity.com
+    date: '2026-06-19'
 ---
 The OpenAPI of DTM is now available in the API Documentation application which
 shows all known OpenAPI documentations in the current tenant.
