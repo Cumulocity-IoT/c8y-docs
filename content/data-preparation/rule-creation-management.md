@@ -71,6 +71,25 @@ The rules list gives you an overview of all rules in your tenant. Click **Config
 - **Description**: The optional description entered when the rule was created.
 - **Deployment status**: The current deployment status of the rule.
 
+#### To enable or disable a deployed rule {#enable-disable-rule}
+
+You can temporarily disable (pause) a deployed rule from the rules list without deleting it. This stops the rule from processing incoming data but keeps its configuration.
+
+Use the deployment action icon in the rules list to switch a deployed rule between enabled and disabled states:
+- Click the deployment disable (pause) icon <i class="dlt-c8y-icon-pause icon-20 text-primary"></i> next to a deployed rule to disable it. Disabled rules do not process incoming data.
+- Click the deployment enable icon <i class="dlt-c8y-icon-deploy icon-20 text-primary"></i> next to a disabled rule to enable it and resume processing.
+
+If you have unsaved draft changes and click the deployment enable icon <i class="dlt-c8y-icon-deploy icon-20 text-primary"></i> in the rules list, the platform re-enables the last deployed version. It does not deploy your draft changes.
+
+If you click **Save and deploy** in the rule editor for a deployed rule with draft changes, the platform replaces the deployed version with the draft and sets the deployment status to enabled.
+
+{{< c8y-admon-important >}}
+The disable and enable deployed rule icons are only visible if:
+- The rule has been deployed previously.
+- No deployment or undeployment process is in progress.
+- Your role has ADMIN permission for "Data Preparation deployments".
+{{< /c8y-admon-important >}}
+
 #### Searching and filtering {#search-filter}
 
 Use the search bar at the top of the list to filter rules by name, source, or description. The list updates as you type.
