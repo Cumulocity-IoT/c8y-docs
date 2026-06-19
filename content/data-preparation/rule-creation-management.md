@@ -84,7 +84,10 @@ If you have unsaved draft changes and click the deployment enable icon <i class=
 If you click **Save and deploy** in the rule editor for a disabled/enabled rule with draft changes, the platform replaces the deployed version with the draft.
 
 {{< c8y-admon-important >}}
-The disable and enable deployed rule icons are only visible if the rule has been deployed previously, no deployment or undeployment process is in progress, and your role has ADMIN permission for "Data Preparation deployments".
+The disable and enable deployed rule icons are only visible if:
+- The rule has been deployed previously.
+- No deployment or undeployment process is in progress.
+- Your role has ADMIN permission for "Data Preparation deployments".
 {{< /c8y-admon-important >}}
 
 #### Searching and filtering {#search-filter}
