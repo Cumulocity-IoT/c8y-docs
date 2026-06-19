@@ -20,7 +20,7 @@ Edge has been tested and officially supported on Kubernetes version 1.34.x, the 
 
 Because resource consumption can be very use-case specific, many containers have memory limits significantly higher than the memory request. Workloads that consume a lot of memory can result in inevitable out-of-memory kills of processes on the host. In order to protect the underlying operating system and Kubernetes infrastructure from this, we recommend setting reserved resources. See [Reserve Compute Resources for System Daemons](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/) for more details.
 
-### Installing the Edge operator {#installing-edge-operator}
+### Installing the Edge operator {#install-edge-operator}
 The Edge operator is available as a Helm chart in the Edge registry, and can be installed like any other chart. You will need your registry credentials, which can be acquired from [product support](/additional-resources/contacting-support/). Assuming you are installing the {{< c8y-edge-current-version >}} release of Edge, and that you wish all Edge workloads to be running in the namespace `c8yedge`, run the following command:
 ```shell
 helm registry login registry.c8y.io --username="<Edge registry username>" --password="<Edge registry password>"
@@ -43,7 +43,7 @@ Run the following command to follow the logs for the Edge operator pod:
 kubectl logs -f -n c8yedge deployment/c8yedge-operator-controller-manager manager
 ```
 
-### Installing Edge
+### Installing Edge {#install-edge-using-operator}
 Download and edit the Edge CR ([c8yedge.yaml](/files/edge/c8yedge.yaml)), before applying it to your Kubernetes cluster by running the command below:
 
 ```bash
@@ -53,7 +53,7 @@ This command will complete immediately, and the installation will proceed in the
 
 For more information about the structure and configuration options available in the Edge CR, see [Edge custom resource](/edge/edge-custom-resource-definition/).
 
-### Configuring the Edge operator with a proxy and trusted TLS certificates
+### Configuring the Edge operator with trusted TLS certificates and proxy {#configure-edge-operator-with-trusted-tls-certificates-and-proxy}
 
 You can configure the Edge operator to:
   - Route outbound traffic through a proxy server when deployed behind a proxy.

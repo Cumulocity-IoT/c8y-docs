@@ -1,7 +1,7 @@
 ########################################################################################################################
 ##     Defines the Edge Custom Resource and the Kubernetes Secrets/ComfigMaps required to install Cumulocity Edge.    ##
 ########################################################################################################################
----
+
 ##
 ## For details, see https://cumulocity.com/docs/2026/edge/edge-custom-resource-definition/#cumulocitypasswordsecretname
 ##
@@ -60,10 +60,11 @@ stringData:
   # MONGODB_DATABASE_ADMIN_PASSWORD: <DB-ADMIN-PASSWORD>
 
 
+---
 ########################################################################################################################
 ##                                        Defines Edge Custom Resource                                                ##
 ########################################################################################################################
----
+
 ##
 ## This Custom Resource (CR) YAML has the Cumulocity Edge deployment settings.
 ##
