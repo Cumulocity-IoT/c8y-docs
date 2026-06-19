@@ -71,20 +71,20 @@ The rules list gives you an overview of all rules in your tenant. Click **Config
 - **Description**: The optional description entered when the rule was created.
 - **Deployment status**: The current deployment status of the rule.
 
-#### To enable or disable a rule {#enable-disable-rule}
+#### To enable or disable a deployed rule {#enable-disable-rule}
 
-You can temporarily pause a deployed rule from the rules list without deleting it. This stops the rule from processing incoming data and keeps its configuration.
+You can temporarily disable (pause) a deployed rule from the rules list without deleting it. This stops the rule from processing incoming data but keeps its configuration.
 
 Use the action icon in the rules list to switch a deployed rule between enabled and disabled states:
-- Click the **Disable deployed rule** icon next to an enabled rule to disable it. Disabled rules do not process incoming data.
-- Click the **Enable deployed rule** icon next to a disabled rule to enable it and resume processing.
+- Click the deployment disable (pause) icon <i class="dlt-c8y-icon-pause icon-20"></i> next to a deployed rule to disable it. Disabled rules do not process incoming data.
+- Click the deployment enable icon <i class="dlt-c8y-icon-deploy icon-20"></i> next to a disabled rule to enable it and resume processing.
 
-If you have unsaved draft changes and click **Enable deployed rule** in the rules list, the platform enables the last deployed version. It does not deploy your draft changes.
+If you have unsaved draft changes and click the deployment enable icon <i class="dlt-c8y-icon-deploy icon-20"></i> in the rules list, the platform re-enables the last deployed version. It does not deploy your draft changes.
 
-If you click **Save and deploy** in the rule editor for a disabled/ enabled rule with draft changes, the platform updates the deployed version with the draft.
+If you click **Save and deploy** in the rule editor for a disabled/enabled rule with draft changes, the platform replaces the deployed version with the draft.
 
 {{< c8y-admon-important >}}
-The **Disable deployed rule** and **Enable deployed rule** icons are only visible if your role has ADMIN permission for "Data Preparation deployments" and no deployment or undeployment process is in progress.
+The disable and enable deployed rule icons are only visible if the rule has been deployed previously, no deployment or undeployment process is in progress, and your role has ADMIN permission for "Data Preparation deployments".
 {{< /c8y-admon-important >}}
 
 #### Searching and filtering {#search-filter}
