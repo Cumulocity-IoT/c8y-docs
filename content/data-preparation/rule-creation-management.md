@@ -81,7 +81,7 @@ Use the action icon in the rules list to switch a deployed rule between enabled 
 
 If you have unsaved draft changes and click **Enable deployed rule** in the rules list, the platform enables the last deployed version. It does not deploy your draft changes.
 
-If you click **Save and deploy** in the rule editor for a paused rule with draft changes, the platform updates the deployed version with the draft.
+If you click **Save and deploy** in the rule editor for a disabled/ enabled rule with draft changes, the platform updates the deployed version with the draft.
 
 {{< c8y-admon-important >}}
 The **Disable deployed rule** and **Enable deployed rule** icons are only visible if your role has ADMIN permission for "Data Preparation deployments" and no deployment or undeployment process is in progress.
