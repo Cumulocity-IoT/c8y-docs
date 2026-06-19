@@ -75,7 +75,7 @@ The rules list gives you an overview of all rules in your tenant. Click **Config
 
 You can temporarily disable (pause) a deployed rule from the rules list without deleting it. This stops the rule from processing incoming data but keeps its configuration.
 
-Use the action icon in the rules list to switch a deployed rule between enabled and disabled states:
+Use the deployment action icon in the rules list to switch a deployed rule between enabled and disabled states:
 - Click the deployment disable (pause) icon <i class="dlt-c8y-icon-pause icon-20"></i> next to a deployed rule to disable it. Disabled rules do not process incoming data.
 - Click the deployment enable icon <i class="dlt-c8y-icon-deploy icon-20"></i> next to a disabled rule to enable it and resume processing.
 
