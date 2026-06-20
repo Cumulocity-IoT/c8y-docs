@@ -31,9 +31,15 @@ In {{< product-c8y-iot >}}, data points are inherently associated with managed o
 
 **Linked association:** The Digital Twin Manager allows linking of data points from one managed object (typically a device) to an asset. This means the asset itself does not generate the measurement and does not have the measurement directly associated, but it points to a measurement originating from another source, usually a connected device that is part of or related to the asset's hierarchy.
  
-{{< c8y-admon-info>}}
-Data point linking enables the contextualization of raw, device-level measurements within the logical framework of an asset hierarchy. This linking allows for a unified view of an asset's performance and status by aggregating relevant data from multiple underlying devices into the asset, transforming disparate sensor readings into actionable information for the asset itself. By centralizing data at the asset level, it facilitates the calculation of asset-specific Key Performance Indicators (KPIs) and enables holistic visualization in dashboards, supporting more accurate decision-making for complex systems that comprise multiple devices.
-{{< /c8y-admon-info>}}
+{{< c8y-admon-preview >}}
+Data point linking enables the contextualization of raw, device-level measurements within the logical framework of an asset hierarchy. This linking allows for a unified view of an asset's performance and status by aggregating relevant data from multiple underlying devices into the asset, transforming disparate sensor readings into actionable information for the asset itself. 
+
+The new **DTM Data Service** now available in **Public Preview** processes configured data point links and automatically propagates incoming device measurements to the corresponding assets in the Digital Twin hierarchy. As soon as a data point link is created in the DTM application, the DTM Data Service starts forwarding incoming measurements from the source device to the linked data point on the asset. 
+
+This feature is in **Public Preview**, that is, it is not enabled by default and may be subject to change in the future. Please contact your Cumulocity support and request to enable the DTM Data Service for your tenant.
+
+Note, the number of measurements propagated to assets through data point linking depends on the number of linked assets per incoming measurement. For example, if a device measurement is linked to 3 different assets, the DTM Data Service will create 3 measurements on the asset level for each incoming device measurement. 
+{{< /c8y-admon-preview >}}
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS
