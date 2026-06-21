@@ -1,18 +1,29 @@
 ---
-date: ""
-title: "Preventing potential data loss from highly concurrent updates on assets"
-product_area: "Application enablement & solutions"
+date: '2026-06-17'
+title: Preventing potential data loss from highly concurrent updates on assets
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-QHu1GdukP"
-      label: "Feature"
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-2926"
-version: "1025.7.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-2926
+version: 1025.7.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-06-17'
+  - label: apj.cumulocity.com
+    date: '2026-06-18'
+  - label: jp.cumulocity.com
+    date: '2026-06-18'
+  - label: us.cumulocity.com
+    date: '2026-06-19'
+  - label: cumulocity.com
+    date: '2026-06-19'
 ---
 The Asset API now implements per-asset and per-device locking to
 serialize concurrent create and update operations. Previously, when
