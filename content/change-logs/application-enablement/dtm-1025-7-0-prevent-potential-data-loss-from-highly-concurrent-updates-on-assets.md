@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Prevent potential data loss from highly concurrent updates on assets"
+title: "Preventing potential data loss from highly concurrent updates on assets"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
