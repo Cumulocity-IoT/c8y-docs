@@ -10,7 +10,7 @@ Besides authoring rules in the Data Preparation application, you can develop, ve
 
 ### What it is {#what-it-is}
 
-The template repository is a ready-to-use project for developing Data Preparation rules in an IDE such as Visual Studio Code instead of the in-app editor. Each rule lives in its own folder with a TypeScript smart function, a `data-prep.yaml` configuration, and test cases. The repository ships with the tooling to type-check, lint, validate, test, and deploy rules.
+The template repository is a ready-to-use project for developing Data Preparation rules in an IDE such as Visual Studio Code instead of the in-app editor. Each rule lives in its own folder with a TypeScript smart function, a *data-prep.yaml* configuration, and test cases. The repository ships with the tooling to type-check, lint, validate, test, and deploy rules.
 
 ### Why use it {#why-use-it}
 
@@ -47,7 +47,7 @@ curl -u '<username>' 'https://<your-tenant>/service/dataprep/v3/api-docs'
 
 ### Rule package format {#rule-package-format}
 
-Rules are deployed as a gzip-compressed TAR archive (`tar.gz`). This section describes the archive structure required by the deploy endpoint. The `npm run deploy` script in the [template repository](https://github.com/Cumulocity-IoT/data-preparation-rules-template) builds archives in this format automatically.
+Rules are deployed as a gzip-compressed TAR archive (*tar.gz*). This section describes the archive structure required by the deploy endpoint. The `npm run deploy` script in the [template repository](https://github.com/Cumulocity-IoT/data-preparation-rules-template) builds archives in this format automatically.
 
 #### Archive structure {#archive-structure}
 
@@ -55,9 +55,9 @@ Files must be at the **root level** of the archive:
 
 | Path | Required | Description |
 |------|----------|-------------|
-| `data-prep.yaml` | Yes | Rule configuration (see below) |
-| `<smartFunctionFile>` | Yes | Bundled JavaScript file; the filename must match the `smartFunctionFile` field in `data-prep.yaml` |
-| `tests/*.yaml` | No | Test cases; each file becomes a named test stored on the deployed rule |
+| *data-prep.yaml* | Yes | Rule configuration (see below). |
+| `<smartFunctionFile>` | Yes | Bundled Javascript file. The filename must match the `smartFunctionFile` field in *data-prep.yaml*. |
+| *tests/\*.yaml* | No | Test cases; each file becomes a named test stored on the deployed rule. |
 
 Any other files in the archive are silently ignored.
 
@@ -68,26 +68,26 @@ Archives are subject to the following limits:
 - Maximum **10 MB** total extracted size (`dataprep` / `rule-import.max-total-size`).
 - Entries containing path traversal segments (`..`) are rejected.
 
-#### `data-prep.yaml` schema {#data-prep-yaml-schema}
+#### *data-prep.yaml* schema {#data-prep-yaml-schema}
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `smartFunctionFile` | string | Yes | Filename of the bundled JavaScript file at the archive root |
-| `input` | object | Yes | Transport and topic configuration (see below) |
-| `description` | string | No | Human-readable rule description |
-| `tags` | string[] | No | Tag list |
-| `disabled` | boolean | No | Whether the rule deploys as disabled; defaults to `false` |
+| `smartFunctionFile` | string | Yes | Filename of the bundled Javascript file at the archive root. |
+| `input` | object | Yes | Transport and topic configuration (see below). |
+| `description` | string | No | Human-readable rule description. |
+| `tags` | string[] | No | Tag list. |
+| `disabled` | boolean | No | Whether the rule deploys as disabled; defaults to `false`. |
 
 The `input` object:
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `transport` | string | Yes | Transport type; currently only `"mqtt"` is supported |
-| `topicPattern` | string | Yes | Topic filter; use `*` as a wildcard to match zero or more characters. Note that transport-specific wildcards such as `+` and `#` are not supported here. |
-| `clientIDPattern` | string | No | Device client ID filter; use `*` as a wildcard to match zero or more characters. |
-| `transportID` | string | No | Transport connection identifier. If not specified, falls back to the `transport` value |
+| `transport` | string | Yes | Transport type. Currently, only `"mqtt"` is supported. |
+| `topicPattern` | string | Yes | Topic filter. Use `*` as a wildcard to match zero or more characters. Transport-specific wildcards such as `+` and `#` are not supported. |
+| `clientIDPattern` | string | No | Device client ID filter. Use `*` as a wildcard to match zero or more characters. |
+| `transportID` | string | No | Transport connection identifier. If not specified, this field falls back to the `transport` value. |
 
-Example `data-prep.yaml`:
+Example *data-prep.yaml*:
 
 ```yaml
 smartFunctionFile: transform.js
@@ -103,24 +103,24 @@ input:
 
 #### Test file format {#test-file-format}
 
-Each `.yaml` file under `tests/` defines a named test case. The filename without extension is the test name. Test files are optional — if included in the archive they are stored server-side on the deployed rule.
+Each *.yaml* file under *tests/* defines a named test case. The filename without extension is the test name. Test files are optional — if included in the archive they are stored server-side on the deployed rule.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `inputs` | array | Yes | One or more device messages to send as input (see below) |
-| `expectedOutput` | array | No | Expected [{{< product-c8y-iot >}} object](/data-preparation/smart-functions/#cumulocity-objects) outputs; used for comparing against actual outputs when running tests|
+| `inputs` | array | Yes | One or more device messages to send as input (see below). |
+| `expectedOutput` | array | No | Expected [{{< product-c8y-iot >}} object](/data-preparation/smart-functions/#cumulocity-objects) outputs used for comparison against actual outputs when running tests. |
 
 Each item in `inputs` has the following fields:
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `payload` | string | Yes | Message payload |
-| `topic` | string | Yes | Topic string |
-| `clientID` | string | Yes | Device client ID |
-| `time` | string | Yes | ISO 8601 timestamp, for example `2026-01-01T12:00:00.000Z` |
-| `payloadFormat` | string | Yes | Format of the `payload` field; one of `text`, `json`, or `base64` |
+| `payload` | string | Yes | Message payload. |
+| `topic` | string | Yes | Topic string. |
+| `clientID` | string | Yes | Device client ID. |
+| `time` | string | Yes | ISO 8601 timestamp, for example `2026-01-01T12:00:00.000Z`. |
+| `payloadFormat` | string | Yes | Format of the `payload` field. One of `text`, `json`, or `base64`. |
 
-Example `tests/temperature-reading.yaml`:
+Example *tests/temperature-reading.yaml*:
 
 ```yaml
 inputs:
@@ -151,14 +151,14 @@ PUT /service/dataprep/v1/rules/{name}/deployed
 Content-Type: application/gzip
 ```
 
-The rule name comes from the URL path, not from the archive. If a rule with the given name already exists it is overwritten. The endpoint requires the `DATA_PREPARATION_DEPLOYMENTS_ADMIN` permission.
+The rule name comes from the URL path, not from the archive. If a rule with the given name already exists, it is overwritten. The endpoint requires the `DATA_PREPARATION_DEPLOYMENTS_ADMIN` permission.
 
 | Response code | Meaning |
 |---------------|---------|
-| `200` | Rule deployed successfully |
-| `400` | Malformed archive, missing required files, invalid YAML, or invalid rule name |
-| `413` | An archive entry exceeds the maximum permitted size |
-| `422` | Package is structurally valid but the rule fails domain validation (for example, `topicPattern` contains `**`) |
+| `200` | Rule deployed successfully. |
+| `400` | Malformed archive, missing required files, invalid YAML, or invalid rule name. |
+| `413` | An archive entry exceeds the maximum permitted size. |
+| `422` | Package is structurally valid but the rule fails domain validation (for example, `topicPattern` contains `**`). |
 
 Example using `curl`:
 
