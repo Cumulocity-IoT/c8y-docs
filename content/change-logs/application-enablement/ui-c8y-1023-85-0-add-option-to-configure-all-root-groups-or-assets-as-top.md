@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add option to configure all root groups or assets as top nodes entries in the navigator (#12211)
+title: Configure root groups or assets as top node entries in the navigator
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
