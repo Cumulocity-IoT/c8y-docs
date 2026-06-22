@@ -22,4 +22,4 @@ The DTM Data Service microservice processes data point links configured through 
 
 By transforming raw device measurements into structured asset-context data, the service enables operational data to be accessed and visualized directly from assets, powering asset-centric dashboards, analytics, smart rules, and business applications without requiring direct queries to individual devices.
 
-**Note:** For enabling DTM Data Service, tenant administrators must enable the `notification2.tenant.all.apis` tenant option.
+**Note:** To enable the DTM Data Service, tenant administrators must enable the `notification2.tenant.all.apis` tenant option.
