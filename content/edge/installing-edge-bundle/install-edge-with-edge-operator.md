@@ -21,7 +21,7 @@ Edge has been tested and officially supported on Kubernetes version 1.34.x, the 
 Because resource consumption can be very use-case specific, many containers have memory limits significantly higher than the memory request. Workloads that consume a lot of memory can result in inevitable out-of-memory kills of processes on the host. In order to protect the underlying operating system and Kubernetes infrastructure from this, we recommend setting reserved resources. See [Reserve Compute Resources for System Daemons](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/) for more details.
 
 ### Install Edge operator from Edge registry {#install-edge-operator-from-edge-registry}
-The Edge operator is available as a Helm chart and a container image in the [Edge registry](https://registry.c8y.io/), and can be installed like any other chart. You will need your registry credentials, which can be acquired from [product support](/additional-resources/contacting-support/). Assuming you are installing the {{< c8y-edge-current-version >}} release of Edge, and that you wish all Edge workloads to be running in the namespace `c8yedge`, run the following commands:
+The Edge operator is available as a Helm chart and a container image in the [Edge registry](https://registry.c8y.io/), and can be installed like any other chart. You need your registry credentials, which can be acquired from [product support](/additional-resources/contacting-support/). Assuming you are installing the {{< c8y-edge-current-version >}} release of Edge, and that you wish all Edge workloads to be running in the namespace `c8yedge`, run the following commands:
 
 1. **Authenticate with Edge registry:**
     ```shell
@@ -52,9 +52,9 @@ If you are installing Edge on an environment that has no or limited internet acc
 ### Install Edge operator from private OCI registry {#install-edge-operator-from-private-registry}
 You can install the Edge operator using Helm charts and container images hosted in a private [Open Container Initiative](https://opencontainers.org/) (OCI) compliant registry. This is the recommended approach for organizations requiring strict control over container image distribution.
 
-To complete this installation, you will need:
+To complete this installation, you will need the following:
 * **Workstation:** A machine with full internet access to download artifacts.
-* **Target Environment:** A Kubernetes cluster with access to your private, OCI-compliant registry.
+* **Target environment:** A Kubernetes cluster with access to your private, OCI-compliant registry.
 * **Tooling:** The c8yedge tool (see [Downloading c8yedge](/edge/installing-edge/#downloading-c8yedge)).
 
 #### Step 1: Sync Edge artifacts to your private registry {#sync-edge-artifacts-to-private-registry}
@@ -81,7 +81,7 @@ Depending on your environment's network connectivity, choose the appropriate syn
 
 {{< c8y-admon-info >}}
 * You can discover more options with `c8yedge package --help` and `c8yedge registry-sync --help`, such as the ability to sync a very specific Edge version.
-* Record the **Root path in the target registry** provided during the sync process. You will need this for installing the operator.
+* Record the **Root path in the target registry** provided during the sync process. You need this to install the operator.
 {{< /c8y-admon-info >}}
 
 #### Step 2: Install Edge operator

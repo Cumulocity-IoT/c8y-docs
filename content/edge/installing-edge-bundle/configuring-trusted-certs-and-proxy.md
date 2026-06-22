@@ -4,13 +4,13 @@ title: Configuring trusted TLS certificates and proxy settings
 layout: redirect
 ---
 
-You can configure the Edge to:
+You can configure {{< product-c8y-iot >}} Edge to:
 * **Trust additional TLS certificates** for external endpoints.
 * **Route outbound traffic** through a proxy server when deployed behind a proxy.
 
 To apply these settings, create or update a ConfigMap named `c8yedge-operator-config` in the `c8yedge` namespace (or the specific namespace where Edge is deployed) using the keys described below.
 
-### Configuration Keys
+### Configuration keys
 * `ca.crt` - One or more trusted TLS certificates in PEM format that the Edge operator and the Edge should trust in addition to public certificate authorities. Multiple certificates can be provided by concatenating them into a single PEM bundle.
 * `http_proxy` - The URL for your HTTP proxy server.
 * `https_proxy` -  The URL for your HTTPS proxy server.
