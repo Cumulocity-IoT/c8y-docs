@@ -841,35 +841,36 @@ The following predefined functions are available for use in expressions:
 
 ##### Example {#legacy-example}
 
-	svg
-	<?xml version="1.0" encoding="utf-8"?>
-	<svg width="600px" height="600px" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-	  <!-- Annotate placeholders in comments: -->
-	  <!-- {{batteryValue}} -->
-	  <!-- {{alarmsStatus}} -->
+```svg
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="600px" height="600px" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Annotate placeholders in comments: -->
+  <!-- {{batteryValue}} -->
+  <!-- {{alarmsStatus}} -->
 
-	  <style>
-	    .critical {
-	      fill: red;
-	    }
-	  </style>
+  <style>
+    .critical {
+      fill: red;
+    }
+  </style>
 
-	  <!-- or in an attribute: -->
-	  <text data-placeholder="{{batteryValue}}"
-	    class="text"
-	    x="50"
-	    y="200"
-	    width="200">
-	    <!-- pass placeholder's value to a predefined function to get alarms status CSS class: -->
-	    <tspan ng-class="getActiveAlarmsStatusClass(alarmsStatus)" style="font-size: 45pt;">
-	      <!-- or in an element's content: -->
-	      {{batteryValue}}
+  <!-- or in an attribute: -->
+  <text data-placeholder="{{batteryValue}}"
+    class="text"
+    x="50"
+    y="200"
+    width="200">
+    <!-- pass placeholder's value to a predefined function to get alarms status CSS class: -->
+    <tspan ng-class="getActiveAlarmsStatusClass(alarmsStatus)" style="font-size: 45pt;">
+      <!-- or in an element's content: -->
+      {{batteryValue}}
 
-	      <!-- a placeholder can be also a part of expression, for example,: -->
-	      {{batteryValue * 100}} %
-	    </tspan>
-	  </text>
-	</svg>
+      <!-- a placeholder can be also a part of expression, for example,: -->
+      {{batteryValue * 100}} %
+    </tspan>
+  </text>
+</svg>
+```
 
 ### Silo {#silo}
 
