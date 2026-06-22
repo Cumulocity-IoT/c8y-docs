@@ -37,7 +37,7 @@ Smart function input and output types are published as the [`@c8y/dataprep-types
 
 ### REST API {#rest-api}
 
-The Data Preparation control plane REST API --- used by the template's test and deploy tooling --- is documented at the [OpenAPI specifications website](https://cumulocity.com/api/data-preparation). To access interactive API documentation within your tenant, subscribe to and install the **Api-doc** extension from **Administration** > **Ecosystem** > **Extensions** and open the **API documentation** app > **Data Preparation** tab.
+The Data Preparation control plane REST API --- used by the template's test and deploy tooling --- is documented it the [{{< openapi >}}](https://cumulocity.com/api/data-preparation). To access interactive API documentation within your tenant, subscribe to and install the **Api-doc** extension from **Administration** > **Ecosystem** > **Extensions** and open the **API documentation** application > **Data Preparation** tab.
 
 You can also retrieve the raw OpenAPI JSON specification directly:
 
@@ -108,7 +108,7 @@ Each `.yaml` file under `tests/` defines a named test case. The filename without
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `inputs` | array | Yes | One or more device messages to send as input (see below) |
-| `expectedOutput` | array | No | Expected [Cumulocity object](/data-preparation/smart-functions/#cumulocity-objects) outputs; used for comparing against actual outputs when running tests |
+| `expectedOutput` | array | No | Expected [{{< product-c8y-iot >}} object](/data-preparation/smart-functions/#cumulocity-objects) outputs; used for comparing against actual outputs when running tests|
 
 Each item in `inputs` has the following fields:
 
@@ -151,7 +151,7 @@ PUT /service/dataprep/v1/rules/{name}/deployed
 Content-Type: application/gzip
 ```
 
-The rule name comes from the URL path, not from the archive. If a rule with the given name already exists it is overwritten. The endpoint requires the `DATA_PREPARATION_DEPLOYMENTS_ADMIN` role.
+The rule name comes from the URL path, not from the archive. If a rule with the given name already exists it is overwritten. The endpoint requires the `DATA_PREPARATION_DEPLOYMENTS_ADMIN` permission.
 
 | Response code | Meaning |
 |---------------|---------|

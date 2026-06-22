@@ -62,9 +62,9 @@ Test data is sample device payload that you use to validate your smart function 
 
 ### REST API reference {#rest-api-reference}
 
-The Data Preparation REST API is documented at the [OpenAPI specifications website](https://cumulocity.com/api/data-preparation).
+The Data Preparation REST API is documented in the [{{< openapi >}}](https://cumulocity.com/api/data-preparation).
 
-To access interactive API documentation within your tenant, subscribe to and install the **Api-doc** extension from **Administration** > **Ecosystem** > **Extensions**, then open the **API documentation** app and select the **Data Preparation** tab.
+To access interactive API documentation within your tenant, subscribe to and install the **Api-doc** extension from **Administration** > **Ecosystem** > **Extensions**, then open the **API documentation** application and select the **Data Preparation** tab.
 
 You can also retrieve the raw OpenAPI JSON specification directly:
 
