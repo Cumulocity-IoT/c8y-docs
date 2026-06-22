@@ -71,6 +71,12 @@ An alarm represents an error or alert condition. Alarm payloads include a severi
 | `text` | `string` | Yes | A human-readable description. |
 | `time` | `Date` | Yes | The alarm timestamp. |
 
+When Data Preparation sends an `Alarm`, the platform applies upsert behavior equivalent to [Create or update an alarm](https://cumulocity.com/api/core/#operation/postAlarmUpsertResource).
+
+- The platform resolves the source device from `externalSource`.
+- If an alarm with the same source and `type` exists and its status is not `"CLEARED"`, the existing alarm is updated.
+- If no matching non-cleared alarm exists, a new alarm is created. 
+
 #### Operation {#operation}
 
 An operation represents a request to perform an action on a device, such as restart or firmware update. Operations are typically used for device control.
