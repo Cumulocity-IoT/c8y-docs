@@ -10,7 +10,7 @@ You can configure {{< product-c8y-iot >}} Edge to:
 
 To apply these settings, create or update a ConfigMap named `c8yedge-operator-config` in the `c8yedge` namespace (or the specific namespace where Edge is deployed) using the keys described below.
 
-### Configuration keys
+### Configuration keys {#configuration-keys}
 * `ca.crt` - One or more trusted TLS certificates in PEM format that the Edge operator and the Edge should trust in addition to public certificate authorities. Multiple certificates can be provided by concatenating them into a single PEM bundle.
 * `http_proxy` - The URL for your HTTP proxy server.
 * `https_proxy` -  The URL for your HTTPS proxy server.
@@ -21,10 +21,10 @@ To apply these settings, create or update a ConfigMap named `c8yedge-operator-co
   * The Kubernetes **Service CIDR** (Cluster service IP address range).
   * Any additional domains, hosts, or IP addresses that should bypass the proxy.        
 
-### Apply changes
+### Apply changes {#apply-changes}
 After creating or updating the ConfigMap, restart the Edge operator to apply the configurations. For detailed steps, see [Restarting the Edge operator](/edge/manage-edge/#restart-operator).
 
-### Sample ConfigMap
+### Sample ConfigMap {#sample-config-map}
 ```yaml
 apiVersion: v1
 kind: ConfigMap
