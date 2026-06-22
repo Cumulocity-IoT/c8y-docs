@@ -74,7 +74,6 @@ An alarm represents an error or alert condition. Alarm payloads include a severi
 
 When Data Preparation sends an `Alarm`, the platform applies upsert API behavior equivalent to [Create or update an alarm](https://cumulocity.com/api/core/#operation/postAlarmUpsertResource).
 
-- The platform resolves the source device from `externalSource`.
 - If an alarm with the same source and `type` exists and its status is not `"CLEARED"`, the existing alarm is updated.
 - If no matching non-cleared alarm exists, a new alarm is created.
 - On create, if omitted, `severity` defaults to `"MAJOR"`, `status` defaults to `"ACTIVE"`, and `time` defaults to the current time.
