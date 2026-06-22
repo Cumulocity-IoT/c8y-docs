@@ -40,5 +40,6 @@
 /content/web/ @janhommes @BeateRixen
 
 /content/streaming-analytics/ @skom-c8y @ben-c8y @BeateRixen
+/content/data-preparation/ @skom-c8y @ben-c8y @BeateRixen
 # 'block-reference-bundle' is automatically and frequently committed to - don't bother _too many_ CODEOWNERS
 /content/streaming-analytics/block-reference-bundle/ @skom-c8y @ben-c8y
