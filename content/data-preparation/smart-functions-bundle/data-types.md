@@ -67,9 +67,16 @@ An alarm represents an error or alert condition. Alarm payloads include a severi
 | Payload Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `type` | `string` | Yes | The alarm type. |
-| `severity` | `"CRITICAL"` \| `"MAJOR"` \| `"MINOR"` \| `"WARNING"` | Yes | The alarm severity level. |
-| `text` | `string` | Yes | A human-readable description. |
-| `time` | `Date` | Yes | The alarm timestamp. |
+| `severity` | `"CRITICAL"` \| `"MAJOR"` \| `"MINOR"` \| `"WARNING"` | No | The alarm severity level. |
+| `status` | `"ACTIVE"` \| `"ACKNOWLEDGED"` \| `"CLEARED"` | No | The status of the alarm. |
+| `text` | `string` | No | A human-readable description. |
+| `time` | `Date` | No | The alarm timestamp. |
+
+When Data Preparation sends an `Alarm`, the platform applies upsert API behavior equivalent to [Create or update an alarm](https://cumulocity.com/api/core/#operation/postAlarmUpsertResource).
+
+- If an alarm with the same source and `type` exists and its status is not `"CLEARED"`, the existing alarm is updated.
+- If no matching non-cleared alarm exists, a new alarm is created.
+- On create, if omitted, `severity` defaults to `"MAJOR"`, `status` defaults to `"ACTIVE"`, and `time` defaults to the current time.
 
 #### Operation {#operation}
 
