@@ -1,6 +1,6 @@
 ---
 date: ""
-title: ui introduce global context collapsible widget title header (#11469) [GRAFT][release/cd] (#12123)
+title: Global context controls can now be collapsed in the widget header
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66260
 version: 1023.89.0
 ---
-ui introduce global context collapsible widget title header (#11469) [GRAFT][release/cd] (#12123)
+Global context controls in a widget header can now be toggled between an expanded and a collapsed view. Collapsed, the controls shrink to a compact set of icons that keeps the header tidy; expanding them reveals the full controls inline. This works both for widgets linked to a dashboard's global context and for standalone widgets.
