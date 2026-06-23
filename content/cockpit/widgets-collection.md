@@ -671,30 +671,30 @@ Toggle on the preview feature documentation to see upcoming changes to the exist
 {{< c8y-admon-preview-feature >}}
 The "SCADA" widget displays a dynamic SVG image representing an asset or device status. It is ideal for building custom dashboards simulating SCADA panels, showing live states, measurement values, and alarms.
 
-#### Setting up the SCADA widget {#setting-up-the-scada-widget}
+#### Setting up the "SCADA" widget {#setting-up-the-scada-widget}
 
 To configure the "SCADA" widget, follow these steps:
 
 1. Go to a dashboard, switch to edit mode, and click **Add widget** in the top menu.
-2. Select the **SCADA** widget and provide a title.
+2. Select the "SCADA" widget and provide a title.
 3. Optionally, select the asset or device in the **Asset selection** section (its child assets or devices can be selected in the mappings, too).
 4. In the **SVG configuration** section, select the SVG source:
    - **Upload file** — browse or drop an SVG file.
    - **Paste text** — paste SVG code directly into the editor.
    - **Generate with AI** — the AI agent analyzes the selected asset's properties, measurements, alarms, and events. Use the built-in suggestions to get started quickly: **Analyze and suggest** proposes up to 3 distinct visualization options to explore, while **Best guess** automatically selects the most useful single visualization. You can also type a custom prompt — effective prompts typically describe the type of system or device (for example, "water pump", "cooling unit", "temperature monitoring panel"), the key values to display (for example, "show temperature, pressure, and flow rate"), and any visual preferences such as color-coded alarm indicators. The agent can look up available measurements automatically, so you do not need to know the exact fragment or series names.
 
-   If you upload or paste your own SVG files, you can enhance them with Lit syntax for dynamic content — see [Preparing SVG files for the SCADA widget](#preparing-svg-files-for-the-scada-widget) for details.
+   If you upload or paste your own SVG files, you can enhance them with Lit syntax for dynamic content — see [Preparing SVG files for the "SCADA" widget](#preparing-svg-files-for-the-scada-widget) for details.
 5. Optionally, configure **Display settings** — see [Display options](#display-options-scada) below.
 6. **Add placeholders**: If the imported SVG file does not have the desired placeholders yet, in the preview area, click `text` or `tspan` elements to convert them into dynamic placeholders.
 7. For each placeholder, assign an asset/device property in **Placeholder mappings** — these properties (like ID, name, status, temperature) will be displayed dynamically in the SVG.
 8. Optionally, use the **Advanced editor** for complex visualizations using Lit syntax and direct web component editing.
 9. After confirming all settings, preview the widget and click **Save** to add it to your dashboard.
 
-#### Preparing SVG files for the SCADA widget {#preparing-svg-files-for-the-scada-widget}
+#### Preparing SVG files for the "SCADA" widget {#preparing-svg-files-for-the-scada-widget}
 
 This section applies when you edit SVG code in the built-in editor or when you prepare an SVG in an external tool. If you prefer an external tool, [https://boxy-svg.com/](https://boxy-svg.com/) is an easy-to-use Chrome extension well suited for this purpose.
 
-The SCADA widget uses **Lit syntax** (`${...}`) for dynamic content, conditions, and interactivity. All argument values passed to utility functions (such as `deviceId`, `groupId`, `alarmsStatus`) are typically taken from `this.c8yScadaValues` (which means they will appear in the placeholder mappings section and should be mapped to corresponding asset/device properties).
+The "SCADA" widget uses **Lit syntax** (`${...}`) for dynamic content, conditions, and interactivity. All argument values passed to utility functions (such as `deviceId`, `groupId`, `alarmsStatus`) are typically taken from `this.c8yScadaValues` (which means they will appear in the placeholder mappings section and should be mapped to corresponding asset/device properties).
 
 **How it works:**
 
@@ -752,12 +752,12 @@ The **Display settings** section controls how the SVG is fitted inside the widge
 
 - **Full-width** — the SVG stretches to fill the widget width (default).
 - **Contain** — the SVG fits within the widget boundaries while preserving its aspect ratio. When this option is selected, additional alignment controls become available:
-  - **Horizontal alignment**: left, center, or right.
-  - **Vertical alignment**: top, center, or bottom.
+  - **Horizontal alignment** — left, center, or right.
+  - **Vertical alignment** — top, center, or bottom.
 
 ---
 
-#### Migration from the legacy SCADA widget {#migration-from-legacy-scada}
+#### Migration from the legacy "SCADA" widget {#migration-from-legacy-scada}
 
 Old "SCADA" widgets relying on AngularJS syntax continue to work as before — they are automatically detected and run in compatibility mode, labelled **Legacy** in the widget configuration. Legacy widgets can still be viewed and edited within their original configuration.
 
@@ -796,7 +796,7 @@ Lit:
 
 {{< /c8y-admon-preview-feature >}}
 
-#### Legacy SCADA widget {#legacy-scada-widget}
+#### Legacy "SCADA" widget {#legacy-scada-widget}
 
 The "SCADA" widget provides a graphic representation of the status of a device.
 
@@ -805,23 +805,23 @@ To use the "SCADA" widget, follow these steps:
 1. Select a dashboard and click **Add widget** in the top menu bar.
 2. Select the "SCADA" widget and edit the title of the widget.
 3. Select the device that should be shown in the widget in the **Asset selection** section.
-4. Upload an SVG file with the graphic representation of the device. SVG files are vector graphics that must be specifically prepared with placeholders for the status information. See [Preparing SVG files for the legacy SCADA widget](#preparing-svg-files-for-the-legacy-scada-widget) below.
+4. Upload an SVG file with the graphic representation of the device. SVG files are vector graphics that must be specifically prepared with placeholders for the status information. See [Preparing SVG files for the legacy "SCADA" widget](#preparing-svg-files-for-the-legacy-scada-widget) below.
 5. Assign placeholders to devices. Note that multiple devices can be taken as source.
 6. You now must assign each placeholder to a property of the device. Hover over each placeholder and select **Assign device property** or **Assign fieldbus property**. In the upcoming dialog box, basic device properties or fieldbus properties (that is, status coils and registers) can be selected. Select the desired property and click **Select**.
 7. After assigning all placeholders, a preview of the widget with the current values of the properties is shown. Click **Save** to place the widget on the dashboard.
 
 The following code sanitization options can be selected:
- - strict - Does not allow any JS or AngularJS directives.
- - lax (default) - Allows partly JS (events) and all AngularJS directives.
- - none - Allows everything.
+ - **strict** - Does not allow any JS or AngularJS directives.
+ - **lax** (default) - Allows partly JS (events) and all AngularJS directives.
+ - **none** - Allows everything.
 
-![SCADA widget](/images/users-guide/cockpit/cockpit-widget-scada.png)
+!["SCADA" widget](/images/users-guide/cockpit/cockpit-widget-scada.png)
 
-#### Preparing SVG files for the legacy SCADA widget {#preparing-svg-files-for-the-legacy-scada-widget}
+#### Preparing SVG files for the legacy "SCADA" widget {#preparing-svg-files-for-the-legacy-scada-widget}
 
-The SCADA widget accepts SVG files which use AngularJS directives, for example `ng-if`, `ng-show`, `ng-style`, `ng-repeat`, `ng-click`, for dynamic data presentation.
+The "SCADA" widget accepts SVG files that use AngularJS directives, for example, `ng-if`, `ng-show`, `ng-style`, `ng-repeat`, `ng-click`, for dynamic data presentation.
 
-Moreover, JavaScript event attributes (like onclick, onmouseover) can be used in SVG files uploaded to SCADA widgets.
+Moreover, JavaScript event attributes (like onclick, onmouseover) can be used in SVG files uploaded to "SCADA" widgets.
 
 Data from devices (like latest measurements and other properties) are provided via placeholders. There are also predefined helper functions which can be used.
 
@@ -829,7 +829,7 @@ For creating SVG files, it is recommended to use [https://boxy-svg.com/](https:/
 
 ##### Placeholders {#legacy-placeholders}
 
-For a placeholder to be recognized by the SCADA widget, it must occur at least once in double curly braces with no other expression, for example `{{placeholderName}}` (in a comment, attribute's value, or element's content - see example). Once annotated, the placeholder can be used within other expressions, for example `{{placeholderName * 3.1415}}`, `ng-class="{ active: placeholderName > 100 }"` or `ng-if="placeholderName === 'VALUE'"`.
+For a placeholder to be recognized by the "SCADA" widget, it must occur at least once in double curly braces with no other expression, for example `{{placeholderName}}` (in a comment, attribute's value, or element's content - see example). Once annotated, the placeholder can be used within other expressions, for example `{{placeholderName * 3.1415}}`, `ng-class="{ active: placeholderName > 100 }"` or `ng-if="placeholderName === 'VALUE'"`.
 
 ##### Predefined functions {#legacy-predefined-functions}
 

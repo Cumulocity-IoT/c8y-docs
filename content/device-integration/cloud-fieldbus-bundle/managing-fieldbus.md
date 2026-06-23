@@ -57,17 +57,17 @@ In the widget, the selected coils and registers are grouped into display categor
 
 Registers and coils that can be changed are represented by active widgets. If you click a switch, an operation to change the corresponding coil or register is sent to the terminal. Similar, if you change a value and click **Set**, an operation is created. The terminal will then carry out the configuration change on the device, as requested through the operation. While the operation is being processed, a progress indicator is shown.
 
-### Monitoring the device status using the SCADA widget {#monitoring-the-device-status-using-the-scada-widget}
+### Monitoring the device status using the "SCADA" widget {#monitoring-the-device-status-using-the-scada-widget}
 
 The "SCADA" widget provides a graphic representation of the status of a device and its fieldbus properties.
 
 {{< c8y-admon-info >}}
-For the full SCADA widget documentation — including SVG authoring, display options, and migration from legacy widgets — refer to [SCADA widget](/cockpit/widgets-collection/#scada).
+For the full "SCADA" widget documentation — including SVG authoring, display options, and migration from legacy widgets — refer to ["SCADA" widget](/cockpit/widgets-collection/#scada).
 {{< /c8y-admon-info >}}
 
-#### Mapping fieldbus properties to SCADA placeholders {#mapping-fieldbus-properties-to-scada-placeholders}
+#### Mapping Fieldbus properties to placeholders {#mapping-fieldbus-properties-to-placeholders}
 
-In the **Placeholder mappings** section of the SCADA widget configuration, you can map placeholders to fieldbus coils and registers using the **Fieldbus item status** computed property. This allows the widget to display live fieldbus values directly in the SVG visualization.
+In the **Placeholder mappings** section of the "SCADA" widget configuration, you can map placeholders to fieldbus coils and registers using the **Fieldbus item status** computed property. This allows the widget to display live fieldbus values directly in the SVG visualization.
 
 To map a placeholder to a fieldbus property:
 
