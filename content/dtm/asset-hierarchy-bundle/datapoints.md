@@ -34,7 +34,7 @@ In {{< product-c8y-iot >}}, data points are inherently associated with managed o
 {{< c8y-admon-preview >}}
 Data point linking enables the contextualization of raw, device-level measurements within the logical framework of an asset hierarchy. This linking allows for a unified view of an asset's performance and status by aggregating relevant data from multiple underlying devices into the asset, transforming disparate sensor readings into actionable information for the asset itself. 
 
-The new **DTM Data Service** now available in **Public Preview** processes configured data point links and automatically propagates incoming device measurements to the corresponding assets in the Digital Twin hierarchy. As soon as a data point link is created in the DTM application, the DTM Data Service starts forwarding incoming measurements from the source device to the linked data point on the asset. 
+The new **DTM Data Service** processes configured data point links and automatically propagates incoming device measurements to the corresponding assets in the digital twin hierarchy. As soon as a data point link is created in the DTM application, the DTM Data Service starts forwarding incoming measurements from the source device to the linked data point on the asset. 
 
 This feature is in **Public Preview**, that is, it is not enabled by default and may be subject to change in the future. Please contact your Cumulocity support and request to enable the DTM Data Service for your tenant.
 
