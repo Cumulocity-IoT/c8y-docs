@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66800
 version: 1023.88.1
 ---
-The FormGroupComponent did not reliably show validation errors in some cases, for example, when a numeric input was adjusted using keyboard arrow keys, the red border and error message appeared inconsistently. The component now correctly displays error messages and visual indicators when form validation fails. This ensures that users receive clear feedback about form validation issues and can take appropriate action to correct their input.
+The FormGroupComponent did not reliably show validation errors in some cases. For example, when a numeric input was adjusted using keyboard arrow keys, the red border and error message appeared inconsistently. The component now correctly displays error messages and visual indicators when form validation fails. This ensures that users receive clear feedback about form validation issues and can take appropriate action to correct their input.
