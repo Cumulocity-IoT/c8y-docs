@@ -38,7 +38,7 @@ The new **DTM Data Service** processes configured data point links and automatic
 
 This feature is in **Public Preview**, that is, it is not enabled by default and may be subject to change in the future. To enable the DTM Data Service for your tenant, please contact [{{< product-c8y-iot >}} support](/additional-resources/contacting-support).
 
-Note, the number of measurements propagated to assets through data point linking depends on the number of linked assets per incoming measurement. For example, if a device measurement is linked to 3 different assets, the DTM Data Service will create 3 measurements on the asset level for each incoming device measurement. 
+Note that the number of measurements propagated to assets through data point linking depends on the number of linked assets per incoming measurement. For example, if a device measurement is linked to 3 different assets, the DTM Data Service will create 3 measurements on the asset level for each incoming device measurement. 
 {{< /c8y-admon-preview >}}
 
 {{< c8y-admon-req >}}
