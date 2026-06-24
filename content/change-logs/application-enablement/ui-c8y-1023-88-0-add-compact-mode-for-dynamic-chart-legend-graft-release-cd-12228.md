@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add compact mode for dynamic chart legend. [GRAFT][release/cd] (#12228)
+title: Add compact mode for dynamic chart legend
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,20 +14,6 @@ build_artifact:
 ticket: MTM-66511
 version: 1023.88.0
 ---
-# Backport
+When viewing dynamic charts with numerous data series, the hover tooltip can become large and consume significant screen space, occasionally obstructing the chart data itself. To address this, a new compact mode has been introduced for tooltips in both the data graph widget and data explorer.
 
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Web SDK): [MTM-66511] Add compact mode for dynamic chart
-legend.](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11680)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66511]:
-https://cumulocity.atlassian.net/browse/MTM-66511?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
-Co-authored-by: Dawid Janusz <96060763+DawidSAG@users.noreply.github.com>
+This compact mode is automatically activated whenever a tooltip contains more than 5 data points. By reducing the visual footprint of the tooltip in high-density charts, this update ensures you can view more of your actual chart content while still maintaining full access to all relevant data point details.
