@@ -14,6 +14,6 @@ build_artifact:
 ticket: MTM-66736
 version: 1023.90.0
 ---
-The widget hook has been updated to support dynamic widget selection.
+The widget hook component has been updated to support dynamic widget selection.
 
 This enhancement allows you to programmatically choose and load widgets based on different conditions and user preferences. For more details, see [Widget hook](https://cumulocity.com/codex/advanced-development/hooks/widget-hook/overview) in the {{< product-c8y-iot >}} Codex.
