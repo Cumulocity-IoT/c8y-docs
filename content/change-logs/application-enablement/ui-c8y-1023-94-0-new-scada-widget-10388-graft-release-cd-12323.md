@@ -20,7 +20,7 @@ replacing the previous AngularJS-based approach. Key improvements include:
 - **AI-assisted SVG generation** — analyzes the selected asset's properties, measurements, alarms, and events to propose visualizations or generate one based on user's instructions, and maps corresponding data to placeholders.
 - **Interactive placeholder mapping** — click directly on `text` or `tspan` elements in the widget preview to convert them into dynamic placeholders.
 - **Flexible display settings** — control how the SVG fits within the widget, with alignment options.
-- **Advanced editor** — for complex visualizations using Lit syntax and direct web component editing.
+- **Advanced editor** — for complex visualizations using Lit syntax and direct web component editing without a need to switch to an external editor.
 
 This enhancement is available as a preview feature. To enable it, open the **Preview features** page from the right drawer and turn on
 the corresponding option. For details on new configuration options and SVG with Lit syntax, see [SCADA 
