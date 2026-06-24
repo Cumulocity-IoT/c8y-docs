@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Support refresh on demand in HTML widget (#12082) [GRAFT][release/cd] (#12327)
+title: Support for on-demand refresh in the HTML widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,17 +14,4 @@ build_artifact:
 ticket: MTM-66887
 version: 1023.93.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Cockpit): [MTM-66887] Support refresh on demand in HTML widget
-(#12082)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12082)
-
-<!--- Backport version: 12.0.4 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66887]:
-https://cumulocity.atlassian.net/browse/MTM-66887?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
+HTML widgets in Cockpit previously did not support manual refresh functionality of the global time context feature, which meant users could not update widget content on demand when the automatic refresh was paused. HTML widgets now include a functional refresh button that allows you to manually refresh the widget content. This gives you more control over when widget data is updated.
