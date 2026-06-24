@@ -79,6 +79,72 @@ $ curl -u "admin:$PASS" \
 }
 ```
 
+#### Obtaining Iceberg catalog credentials {#obtaining-iceberg-catalog-credentials}
+
+To connect to the Cumulocity Iceberg catalog directly — for example, from Apache Spark, Databricks, or a custom application — you need OAuth2 client credentials. As a tenant administrator, you can create and manage named catalog principals using the Manager API.
+
+**Prerequisites**
+
+* Your Cumulocity user must have the `ROLE_TENANT_ADMIN` role.
+* Your tenant must be subscribed to Streaming Lake Ingestion.
+* Principal names must be strictly alphanumeric — letters and digits only, no dashes or underscores (for example, `spark1` or `dremioqa`).
+
+**Creating a principal**
+
+Send a `POST` request to create a named principal. The response contains the `clientId` and `clientSecret` required to authenticate against the Iceberg catalog.
+
+```shell
+curl -s -X POST \
+  "https://<TENANT_DOMAIN>/service/offloading/api/v1/principals/<NAME>" \
+  -u "<USER>:<PASS>"
+```
+
+```json
+{
+  "name":         "<NAME>",
+  "clientId":     "<TENANTID>-<NAME>",
+  "clientSecret": "<SECRET>"
+}
+```
+
+{{< c8y-admon-important >}}
+The `clientSecret` is returned only once and is never stored by the service. Store it securely immediately after creation. If the secret is lost, rotate the principal to issue new credentials — rotating immediately invalidates the previous secret.
+{{< /c8y-admon-important >}}
+
+**Listing principals**
+
+To list the names of all principals for your tenant:
+
+```shell
+curl -s \
+  "https://<TENANT_DOMAIN>/service/offloading/api/v1/principals" \
+  -u "<USER>:<PASS>"
+```
+
+**Rotating credentials**
+
+To replace a lost or compromised secret. The previous secret is immediately invalidated.
+
+```shell
+curl -s -X PUT \
+  "https://<TENANT_DOMAIN>/service/offloading/api/v1/principals/<NAME>" \
+  -u "<USER>:<PASS>"
+```
+
+**Deleting a principal**
+
+To revoke a principal's catalog access immediately:
+
+```shell
+curl -s -X DELETE \
+  "https://<TENANT_DOMAIN>/service/offloading/api/v1/principals/<NAME>" \
+  -u "<USER>:<PASS>"
+```
+
+{{< c8y-admon-info >}}
+A maximum of 100 principals can be created per tenant by default.
+{{< /c8y-admon-info >}}
+
 #### Using the Iceberg catalog from Apache Spark
 
 [Apache Spark](https://spark.apache.org/) is a distributed computing framework that seamlessly integrates with the Cumulocity Iceberg catalogs to provide full SQL-based data processing through a standard [Iceberg REST catalog interface](https://iceberg.apache.org/rest-catalog-spec/).
@@ -86,7 +152,7 @@ $ curl -u "admin:$PASS" \
 Use [OpenID Connect](https://openid.net/developers/how-connect-works/) with a client credentials grant type to authenticate against the Cumulocity Iceberg REST catalog.
 
 {{< c8y-admon-info >}}
-For the preview release, obtain your personal client ID and client credentials by contacting the preview support.
+To obtain client credentials for the Iceberg catalog, see [Obtaining Iceberg catalog credentials](#obtaining-iceberg-catalog-credentials).
 {{< /c8y-admon-info >}}
 
 The URL of the OpenID Connect server is
@@ -135,7 +201,7 @@ spark-sql (default)> select * from c8y.cdc_inventory.inventory;
 
 #### Using the Iceberg catalog from other applications
 
-Access the catalog from other applications using the `curl` example below. First, get an access token to the catalog.
+Access the catalog from other applications using the `curl` example below. To obtain the `<CLIENT_ID>` and `<CLIENT_SECRET>` referenced in this section, see [Obtaining Iceberg catalog credentials](#obtaining-iceberg-catalog-credentials). First, get an access token to the catalog.
 
 ```shell
 $  curl -X POST https://iceberg.<INSTANCE>:19120/api/catalog/v1/oauth/tokens \
@@ -904,4 +970,5 @@ To improve query performance for your specific applications, you have several op
 * Pre-process the data before it enters {{< product-c8y-iot >}} using Edge functionality or Data Preparation functions.
 * Process the data within {{< product-c8y-iot >}} using Streaming Analytics or a custom microservice to create refined data streams.
 * Post-process the data in the data lake by creating your own aggregated "gold layer" tables using external data lake tools.
+
 
