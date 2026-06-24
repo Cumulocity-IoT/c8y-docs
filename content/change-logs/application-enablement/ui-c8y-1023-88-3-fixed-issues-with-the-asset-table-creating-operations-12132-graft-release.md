@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issues with the asset table creating operations. (#12132) [GRAFT][release/cd] (#12270)
+title: Fixed issues with the asset table v2 creating operations
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-66905
 version: 1023.88.3
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-66905] Fixed issues with the asset table creating
-operations.
-(#12132)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12132)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66905]:
-https://cumulocity.atlassian.net/browse/MTM-66905?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+When creating operations directly from the asset table v2, users encountered an issue where changes made to the operation command were not retained, causing the system to save the default command instead. This has been resolved.
