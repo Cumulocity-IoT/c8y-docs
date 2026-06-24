@@ -76,7 +76,7 @@ When Data Preparation sends an `Alarm`, the platform applies upsert API behavior
 
 - If an alarm with the same source and `type` exists and its status is not `"CLEARED"`, the existing alarm is updated.
 - If no matching non-cleared alarm exists, a new alarm is created.
-- Omitted fields retain current values during partial upsert updates.
+- On create, if omitted, `severity` defaults to `"MAJOR"`, `status` defaults to `"ACTIVE"`, and `time` defaults to the current time.
 
 #### Operation {#operation}
 
