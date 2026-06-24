@@ -9,8 +9,8 @@ component:
   - value: "component-dPrp1xK9z"
     label: "Data Preparation"
 build_artifact:
-  - value: "tc-QHwMfWtBk7"
-    label: "cumulocity"
+  - value: "tc-KXXmo2SUR"
+    label: "apama-in-c8y"
 ticket: ""
 version: ""
 ---
