@@ -16,4 +16,4 @@ version: 1023.90.0
 ---
 The widget hook has been updated to support dynamic widget selection.
 
-This enhancement allows you to programmatically choose and load widgets based on different conditions and user preferences. For more info, see the widget hook component page in codex.
+This enhancement allows you to programmatically choose and load widgets based on different conditions and user preferences. For more details, see [Widget hook](https://cumulocity.com/codex/advanced-development/hooks/widget-hook/overview) in the {{< product-c8y-iot >}} Codex.
