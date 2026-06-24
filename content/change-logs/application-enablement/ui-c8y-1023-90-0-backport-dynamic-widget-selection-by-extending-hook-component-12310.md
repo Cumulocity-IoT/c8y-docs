@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-06-23'
 title: Dynamic widget selection now available through extended widget hook component
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-66736
 version: 1023.90.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-06-23'
+  - label: apj.cumulocity.com
+    date: '2026-06-24'
+  - label: jp.cumulocity.com
+    date: '2026-06-24'
 ---
 The widget hook component has been updated to support dynamic widget selection.
 
