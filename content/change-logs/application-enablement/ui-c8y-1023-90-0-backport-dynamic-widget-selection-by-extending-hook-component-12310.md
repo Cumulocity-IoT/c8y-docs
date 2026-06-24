@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Backport dynamic widget selection by extending hook component. (#12310)
+title: Dynamic widget selection now available through extended widget hook component
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,6 @@ build_artifact:
 ticket: MTM-66736
 version: 1023.90.0
 ---
-Backport dynamic widget selection by extending hook component. (#12310)
+The widget hook has been updated to support dynamic widget selection.
+
+This enhancement allows you to programmatically choose and load widgets based on different conditions and user preferences. For more info, see the widget hook component page in codex.
