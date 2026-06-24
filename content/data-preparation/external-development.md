@@ -115,16 +115,19 @@ Each item in `inputs` has the following fields:
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `payload` | string | Yes | Message payload. |
+| `payloadFormat` | string | Yes | Format of the `payload` field. One of `text`, `json`, or `base64`. |
 | `topic` | string | Yes | Topic string. |
 | `clientID` | string | Yes | Device client ID. |
 | `time` | string | Yes | ISO 8601 timestamp, for example `2026-01-01T12:00:00.000Z`. |
-| `payloadFormat` | string | Yes | Format of the `payload` field. One of `text`, `json`, or `base64`. |
 
 Example *tests/temperature-reading.yaml*:
 
 ```yaml
 inputs:
-  - payload: '{"temperature": 25.5}'
+  - payload: |
+      {
+        "temperature": 25.5
+      }
     payloadFormat: json
     topic: "devices/sensor01/data"
     clientID: "sensor01"
