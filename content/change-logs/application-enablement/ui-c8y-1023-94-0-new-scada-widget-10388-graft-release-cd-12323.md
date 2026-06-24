@@ -17,7 +17,7 @@ version: 1023.94.0
 The "SCADA" widget has been significantly enhanced. The new version is built on modern web component technology with Lit syntax,
 replacing the previous AngularJS-based approach. Key improvements include:
 
-- **AI-assisted SVG generation** — analyzes the selected asset's properties, measurements, alarms, and events to propose visualizations and map necessary data to placeholders.
+- **AI-assisted SVG generation** — analyzes the selected asset's properties, measurements, alarms, and events to propose visualizations or generate one based on user's instructions, and maps corresponding data to placeholders.
 - **Interactive placeholder mapping** — click directly on `text` or `tspan` elements in the widget preview to convert them into dynamic placeholders.
 - **Flexible display settings** — control how the SVG fits within the widget, with alignment options.
 - **Advanced editor** — for complex visualizations using Lit syntax and direct web component editing.
