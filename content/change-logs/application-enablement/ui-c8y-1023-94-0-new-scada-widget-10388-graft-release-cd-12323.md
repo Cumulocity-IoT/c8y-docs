@@ -27,4 +27,4 @@ the corresponding option. For details on new configuration options and SVG with 
 widget](https://cumulocity.com/docs/cockpit/widgets-collection/#scada) in the user documentation.
 
 Existing "SCADA" widgets using AngularJS syntax continue to work without any changes in the legacy mode. If you want to reuse existing SVGs in the new
-  widget, the documentation includes a migration guide for adapting them to Lit syntax.
+  widgets, the documentation includes a migration guide for adapting them to Lit syntax.
