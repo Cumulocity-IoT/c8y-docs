@@ -1,6 +1,6 @@
 ---
 date: ""
-title: UI extend tenant configuration UI to support m tls (#11960) [GRAFT][release/cd] (#12321)
+title: Single sign-on configuration now supports mutual TLS (mTLS)
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-65498
 version: 1023.91.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Web SDK): [MTM-65498] UI extend tenant configuration UI to
-support m tls
-(#11960)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11960)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65498]:
-https://cumulocity.atlassian.net/browse/MTM-65498?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dawid Janusz <96060763+DawidSAG@users.noreply.github.com>
+Previously, single sign-on (SSO) configurations could authenticate to the external authorization server only with a client secret. You can now enable mutual TLS (mTLS) in the SSO configuration and upload a client certificate and private key for certificate-based authentication. The private key is encrypted on the server after saving.
