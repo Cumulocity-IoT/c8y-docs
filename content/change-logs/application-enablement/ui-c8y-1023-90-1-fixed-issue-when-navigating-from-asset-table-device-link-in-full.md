@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issue when navigating from asset table device link in full screen mode to another dashboard. (#12128) [GRAFT][release/cd] (#12313)
+title: Fixed navigation issue when using device links from asset table in full screen mode
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-66941
 version: 1023.90.1
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-66941] Fixed issue when navigating from asset
-table device link in full screen mode to another dashboard.
-(#12128)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12128)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66941]:
-https://cumulocity.atlassian.net/browse/MTM-66941?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+When you clicked a device link in the asset table while in full screen mode and then navigated to another dashboard, the view was sometimes empty, causing unexpected behavior. This issue has been fixed so that you can now seamlessly navigate when in full screen mode from a device link in the asset table to another dashboard without any issues.
