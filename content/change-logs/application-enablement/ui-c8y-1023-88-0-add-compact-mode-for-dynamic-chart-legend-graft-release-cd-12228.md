@@ -14,6 +14,6 @@ build_artifact:
 ticket: MTM-66511
 version: 1023.88.0
 ---
-When viewing dynamic charts with numerous data series, the hover tooltip can become large and consume significant screen space, occasionally obstructing the chart data itself. To address this, a new compact mode has been introduced for tooltips in both the data graph widget and data explorer.
+When viewing dynamic charts with numerous data series, the hover tooltip can become large and consume significant screen space, occasionally obstructing the chart data itself. To address this, a new compact mode has been introduced for tooltips in both the "Data graph" widget and the data explorer.
 
 This compact mode is automatically activated whenever a tooltip contains more than 5 data points. By reducing the visual footprint of the tooltip in high-density charts, this update ensures you can view more of your actual chart content while still maintaining full access to all relevant data point details.
