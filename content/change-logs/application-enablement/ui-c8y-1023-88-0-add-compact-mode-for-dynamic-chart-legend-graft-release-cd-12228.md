@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add compact mode for dynamic chart legend
+title: Added compact mode for dynamic chart legend
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
