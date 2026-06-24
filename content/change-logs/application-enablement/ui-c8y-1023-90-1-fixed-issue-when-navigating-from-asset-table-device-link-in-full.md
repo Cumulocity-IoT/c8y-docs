@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed navigation issue when using device links from asset table in full screen mode
+title: Fixed navigation issue when using device links from an asset table in full-screen mode
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
