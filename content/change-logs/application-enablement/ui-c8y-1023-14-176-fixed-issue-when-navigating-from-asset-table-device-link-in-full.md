@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66941
 version: 1023.14.176
 ---
-When you clicked a device link in the asset table while in full screen mode and then navigated to another dashboard, the view was sometimes empty, causing unexpected behavior. This issue has been fixed so that you can now seamlessly navigate when in full screen mode from a device link in the asset table to another dashboard without any issues.
+When users clicked a device link in the asset table while in full-screen mode and then navigated to another dashboard, the view was sometimes empty, causing unexpected behavior. This issue has been fixed so that users, when in full-screen mode, can now seamlessly navigate from a device link in the asset table to another dashboard without any issues.
