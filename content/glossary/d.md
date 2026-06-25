@@ -118,9 +118,10 @@ The  device replacement process is centered around the [Identity API](https://{{
 ### Device topic {#device-topic}
 
 A device topic is a [topic](#topic) used by a device connected to a [protocol adapter](#protocol-adapter).
-Typically, the topic will describe the type of data being sent and received by the device.
+Typically, the topic describes the type of data being sent and received by the device.
 For example, a metering device connected to the [MQTT Service](#mqtt-service) publishes messages on topics `meters/123456/current` and `meters/123456/temperature`.
 The naming and meaning of device topics is specific to the device type, protocol, and the application using the devices.
+
 See [Core MQTT topics](/device-integration/mqtt-service/#core-mqtt-topics) for another example of a topic schema used by MQTT devices, in this case devices that use the [SmartREST](#smartrest) device protocol.
 See the [MQTT protocol specification](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901241) for more information about MQTT topics.
 
