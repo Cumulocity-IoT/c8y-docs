@@ -60,4 +60,15 @@ A rule is the deployable unit in Data Preparation. It pairs a smart function wit
 #### Test data {#test-data}
 Test data is sample device payload that you use to validate your smart function before activating a rule. Data Preparation runs an input payload in the device's native format through the smart function to compare the resulting Cumulocity output side by side. You can define multiple test cases per rule, capture live messages directly from an MQTT topic, or add payloads manually. For details, see [Test data](/data-preparation/rule-editor/#test-data).
 
+### REST API reference {#rest-api-reference}
+
+The Data Preparation REST API is documented in the [{{< openapi >}}](https://cumulocity.com/api/data-preparation).
+
+To access interactive API documentation within your tenant, subscribe to and install the **Api-doc** extension from **Administration** > **Ecosystem** > **Extensions**, then open the **API documentation** application and select the **Data Preparation** tab.
+
+You can also retrieve the raw OpenAPI JSON specification directly:
+
+```shell
+curl -u '<username>' 'https://<your-tenant>/service/dataprep/v3/api-docs'
+```
 
