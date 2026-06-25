@@ -19,5 +19,5 @@ helpcontent:
   For a step-by-step walkthrough of creating and deploying your first rule, refer to [Getting started](https://cumulocity.com/docs/data-preparation/getting-started-dataprep/)."
 ---
 
-{{< c8y-admon-preview >}} Data Preparation is currently in Private Preview. This means it is not enabled by default and may be subject to change in the future. To enable this feature for your tenant, contact [product support](/additional-resources/contacting-support/). {{< /c8y-admon-preview >}}
+{{< c8y-admon-preview >}} Data Preparation is currently in Public Preview and might change or is not feature complete. While we try to keep changes as low as possible, breaking changes and feature removals happen. To enable the feature, open the right drawer (by clicking on your username initials) in the Administration application and select **Manage preview features**. Then activate the toggle next to **Data Preparation**. {{< /c8y-admon-preview >}}
 
