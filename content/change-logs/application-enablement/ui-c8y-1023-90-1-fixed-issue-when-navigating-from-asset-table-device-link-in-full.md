@@ -22,5 +22,9 @@ environment_availability:
     date: '2026-06-24'
   - label: jp.cumulocity.com
     date: '2026-06-24'
+  - label: us.cumulocity.com
+    date: '2026-06-25'
+  - label: cumulocity.com
+    date: '2026-06-25'
 ---
 When users clicked a device link in the asset table while in full-screen mode and then navigated to another dashboard, the view was sometimes empty, causing unexpected behavior. This issue has been fixed so that users, when in full-screen mode, can now seamlessly navigate from a device link in the asset table to another dashboard without any issues.

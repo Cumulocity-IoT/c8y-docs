@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-06-23'
   - label: jp.cumulocity.com
     date: '2026-06-23'
+  - label: us.cumulocity.com
+    date: '2026-06-25'
+  - label: cumulocity.com
+    date: '2026-06-25'
 ---
 Global context controls in a widget header can now be toggled between an expanded and a collapsed view. Collapsed, the controls shrink to a compact set of icons that keeps the header tidy; expanding them reveals the full controls inline. This works both for widgets linked to a dashboard's global context and for standalone widgets.

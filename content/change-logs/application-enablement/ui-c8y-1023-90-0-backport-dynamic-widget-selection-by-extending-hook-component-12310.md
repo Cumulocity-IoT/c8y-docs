@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-06-24'
   - label: jp.cumulocity.com
     date: '2026-06-24'
+  - label: us.cumulocity.com
+    date: '2026-06-25'
+  - label: cumulocity.com
+    date: '2026-06-25'
 ---
 The widget hook component has been updated to support dynamic widget selection.
 
