@@ -25,7 +25,7 @@ Port 8883 supports two types of SSL: two-way SSL using certificates for client a
 Both methods are always enabled, and the one that will be used depends on whether the client provides a certificate at connection time.
 If the client provides a certificate, it will be used to authenticate the client.
 Otherwise, the client is expected to provide a username and password for authentication, in the MQTT `CONNECT` packet.
-See [MQTT authentication](#mqtt-authentication) and [device certificates](/device-certificate-authentication/#device-certificates) for more details.
+See [MQTT authentication](#mqtt-authentication) and [device certificates](/device-certificate-authentication/device-certificates/) for more details.
 
 {{< c8y-admon-info >}}
 To use WebSockets you must connect to the path <kbd>/mqtt</kbd> and follow the [MQTT standard](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718127) for WebSocket communication.

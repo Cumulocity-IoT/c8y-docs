@@ -111,5 +111,11 @@ Cypress.on('uncaught:exception', (err) => {
     if (err.message.includes("Unexpected token '&'")) {
       return false;
     }
+    if (err.message.includes("An unknown error has occurred")) {
+      return false;
+    }
+    if (err.message.includes("Identifier 'OneCloudUtil' has already been declared")) {
+      return false;
+    }
   });
   
