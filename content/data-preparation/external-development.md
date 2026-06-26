@@ -22,7 +22,7 @@ Developing rules externally gives you:
 
 ### Getting started {#getting-started}
 
-Click 'Use this template' to create a copy of the [template repository](https://github.com/Cumulocity-IoT/data-preparation-rules-template) and follow its README. The typical workflow is:
+Click **Use this template** to create a copy of the [template repository](https://github.com/Cumulocity-IoT/data-preparation-rules-template) and follow its README. The typical workflow is:
 
 1. **Create** a rule template using the provided command.
 2. **Validate** it offline (type-check, lint, schema validation).
