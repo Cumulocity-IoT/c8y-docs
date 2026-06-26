@@ -9,6 +9,7 @@
 /content/change-logs/application-enablement/ @rahulc8y @janhommes @BeateRixen
 /content/change-logs/application-enablement/dtm* @rahulc8y @lara-c8y @BeateRixen
 /content/change-logs/device-management/ @Oezge-Akin @aaronraab @l2p- @eliasweingaertner @BeateRixen
+/content/change-logs/device-management/data-preparation* @skom-c8y @ben-c8y @BeateRixen
 /content/change-logs/platform-services/ @maga1961 @mgrumann @scmi-c8y @JanePorter @BeateRixen
 /content/change-logs/platform-services/ui-c8y* @rahulc8y @janhommes @BeateRixen
 /content/change-logs/analytics/apama-in-c8y* @skom-c8y @ben-c8y @BeateRixen
@@ -40,5 +41,6 @@
 /content/web/ @janhommes @BeateRixen
 
 /content/streaming-analytics/ @skom-c8y @ben-c8y @BeateRixen
+/content/data-preparation/ @skom-c8y @ben-c8y @BeateRixen
 # 'block-reference-bundle' is automatically and frequently committed to - don't bother _too many_ CODEOWNERS
 /content/streaming-analytics/block-reference-bundle/ @skom-c8y @ben-c8y
