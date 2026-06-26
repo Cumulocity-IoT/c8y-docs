@@ -22,9 +22,9 @@ Developing rules externally gives you:
 
 ### Getting started {#getting-started}
 
-Fork or clone the [template repository](https://github.com/Cumulocity-IoT/data-preparation-rules-template) and follow its README. The typical workflow is:
+Click 'Use this template' to create a copy of the [template repository](https://github.com/Cumulocity-IoT/data-preparation-rules-template) and follow its README. The typical workflow is:
 
-1. **Create** a rule from the provided scaffolding command.
+1. **Create** a rule template using the provided command.
 2. **Validate** it offline (type-check, lint, schema validation).
 3. **Test** it against your tenant using the platform's testing endpoint.
 4. **Deploy** it to your tenant.
