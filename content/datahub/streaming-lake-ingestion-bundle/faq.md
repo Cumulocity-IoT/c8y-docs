@@ -28,6 +28,10 @@ If the data was changed and it is not visible, check the "Alarms" overview page 
 
 After you delete a device, the device is removed from the operational store but remains visible in the historic data in the lake for long-term reporting.
 
+
+### I see a device in  but not in . Is this expected?
+
+Yes. The  tables are pre-populated with all managed objects that existed at the time of subscription, while the  tables only record changes that occur after subscription. If you need the full history of changes to a device, you will only see changes made after you subscribed to the service.
 ### My device, alarm … appears several times in the inventory in the lake.
 
 The change data capture of the device inventory (`cdc_inventory`) records all changes to devices together with the kind of change that was applied. Inspect the `eventType` property and the `lastUpdated` to understand what change was applied when.
