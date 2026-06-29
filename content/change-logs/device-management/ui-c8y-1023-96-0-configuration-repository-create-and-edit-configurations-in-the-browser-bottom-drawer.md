@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Configuration repository create and edit configurations in the browser bottom drawer
+title: Configuration repository now supports creating and editing configurations in the browser
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
@@ -14,20 +14,4 @@ build_artifact:
 ticket: DM-6312
 version: 1023.96.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Device Management): [DM-6312] Configuration repository create
-and edit configurations in the browser bottom
-drawer](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12177)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[DM-6312]:
-https://cumulocity.atlassian.net/browse/DM-6312?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Bozhidar Dedov <95280800+bozhidardedov@users.noreply.github.com>
+Users can now create and edit configuration repository entries directly in the browser using a built-in code editor, without having to prepare a file outside the application. The configuration detail form has been moved from a modal to a bottom drawer, providing more screen space. Three content modes are available: upload a binary file, enter an external URL, or edit the content inline. When a text file is dropped or selected, the editor automatically loads its content and detects the syntax from the file extension. A language selector lets users override the auto-detected highlighting.
