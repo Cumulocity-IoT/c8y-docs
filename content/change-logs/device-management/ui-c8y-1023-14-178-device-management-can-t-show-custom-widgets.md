@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Device management can t show custom widgets
+title: Custom widgets now shown correctly in device dashboards
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,20 +14,4 @@ build_artifact:
 ticket: DM-5725
 version: 1023.14.178
 ---
-# Backport
-
-This will backport the following commits from `develop` to
-`release/y2026`:
-- [fix(Device Management): [DM-5725] Device management can t show custom
-widgets](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12225)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[DM-5725]:
-https://cumulocity.atlassian.net/browse/DM-5725?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Bozhidar Dedov <95280800+bozhidardedov@users.noreply.github.com>
+In the Device Management application, custom widgets configured for specific application dashboards were not displayed because legacy dashboards without an explicit application association were being included in the dashboard resolution process, which conflicted with app-specific dashboards. The Device Management app now filters device dashboards strictly to those explicitly bound to the current application. Legacy dashboards that lack a c8y_AppliedToApplications fragment are no longer included, ensuring custom widgets appear as expected.
