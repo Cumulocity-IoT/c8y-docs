@@ -1,6 +1,11 @@
-const urls = require('../../all_links.json');
+const allUrls = require('../../all_links.json');
 
 describe('Link and Routing Validation - Individual URL Checks', () => {
+  const urlsWith = Cypress.env('urlsWith') || null;
+  const urls = urlsWith
+    ? allUrls.filter(item => item.link.includes(urlsWith))
+    : allUrls;
+
   let completedTests = 0;
   const totalTests = urls.length;
 
@@ -24,6 +29,9 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
     // Always times out in the automated tests but loads fine in the browser
     "https://openjdk.org/jeps/252",
+
+    // latlong.net fails to load in Cypress (getting 403)
+    "https://www.latlong.net/",
   ];
 
 
@@ -100,7 +108,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     );
 
   urls.forEach((item) => {
-    if (isExcluded(item.link)) {
+    if (!urlsWith && isExcluded(item.link)) {
       it.skip(`should validate URL (excluded): ${item.link}`, () => {});
       return;
     }
