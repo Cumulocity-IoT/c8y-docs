@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-06-30
 title: Fixed navigation issue when using device links from an asset table in full-screen mode
 product_area: Application enablement & solutions
 change_type:
