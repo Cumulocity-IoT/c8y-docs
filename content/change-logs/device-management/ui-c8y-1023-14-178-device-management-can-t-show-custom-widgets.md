@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Custom widgets now shown correctly in device dashboards
+title: Legacy dashboards no longer shown in the Device Management application
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5725
 version: 1023.14.178
 ---
-In the Device Management application, custom widgets configured for specific application dashboards were not displayed because legacy dashboards without an explicit application association were being included in the dashboard resolution process, which conflicted with app-specific dashboards. The Device Management app now filters device dashboards strictly to those explicitly bound to the current application. Legacy dashboards that lack a c8y_AppliedToApplications fragment are no longer included, ensuring custom widgets appear as expected.
+Dashboards created without an explicit application association (legacy dashboards lacking the c8y_AppliedToApplications fragment) were incorrectly included when resolving device dashboards in the Device Management application. The Device Management app now only shows dashboards explicitly bound to it, preventing unintended display of dashboards that belong to other applications or were created before application-scoped dashboards were introduced.
