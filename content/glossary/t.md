@@ -81,3 +81,10 @@ Thick Edge is an informal term for {{< product-c8y-iot >}} Edge, see [{{< produc
 {{< c8y-details title="Developer details" >}}
 thin-edge.io exposes a local {{< product-c8y-iot >}} proxy endpoint to give device components access to the full {{< product-c8y-iot >}} REST API.
 {{< /c8y-details >}}
+
+
+### Topic {#topic}
+
+A topic is a channel for messages sent by one or more _publishers_ and received by one or more _subscribers_.
+Messages are delivered in the same order they were published, and will be reliably delivered to all subscribers.
+In {{< product-c8y-iot >}}, a topic can refer to a [device topic](#device-topic) or a [Messaging Service topic](#messaging-service-topic).
