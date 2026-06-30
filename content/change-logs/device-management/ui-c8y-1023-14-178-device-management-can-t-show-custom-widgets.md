@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5725
 version: 1023.14.178
 ---
-Dashboards created without an explicit application association (legacy dashboards lacking the c8y_AppliedToApplications fragment) were incorrectly included when resolving device dashboards in the Device Management application. The Device Management app now only shows dashboards explicitly bound to it, preventing unintended display of dashboards that belong to other applications or were created before application-scoped dashboards were introduced.
+Dashboards created without an explicit application association (legacy dashboards lacking the `c8y_AppliedToApplications` fragment) were incorrectly included when resolving device dashboards in the Device Management application. The Device Management application now only shows dashboards explicitly bound to it, preventing unintended display of dashboards that belong to other applications or were created before application-scoped dashboards were introduced.
