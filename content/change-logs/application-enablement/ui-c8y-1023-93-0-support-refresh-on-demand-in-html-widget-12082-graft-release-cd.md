@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66887
 version: 1023.93.0
 ---
-HTML widgets in Cockpit previously did not support manual refresh functionality of the global time context feature, which meant users could not update widget content on demand when the automatic refresh was paused. HTML widgets now include a functional refresh button that allows you to manually refresh the widget content. This gives you more control over when widget data is updated.
+HTML widgets in the Cockpit application previously did not support the manual refresh functionality of the global time context feature, which meant that users could not update the widget content on demand when the automatic refresh was paused. HTML widgets now include a functional refresh button that allows users to manually refresh the widget content. This change gives you more control when widget data is updated.
