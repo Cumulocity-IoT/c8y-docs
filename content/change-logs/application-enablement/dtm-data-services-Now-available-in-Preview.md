@@ -1,6 +1,6 @@
 ---
 date: '2026-06-17'
-title: DTM Data Service now available in Public Previw
+title: DTM Data Service now available in Public Preview
 product_area: Application enablement & solutions
 change_type:
   - value: change-feature-rollout
