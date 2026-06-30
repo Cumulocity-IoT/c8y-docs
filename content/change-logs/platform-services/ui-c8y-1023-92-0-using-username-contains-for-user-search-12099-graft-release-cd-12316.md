@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-06-25'
 title: User search now supports partial username matching
 product_area: Platform services
 change_type:
@@ -13,5 +13,16 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-66776
 version: 1023.92.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-06-25'
+  - label: apj.cumulocity.com
+    date: '2026-06-26'
+  - label: jp.cumulocity.com
+    date: '2026-06-26'
+  - label: us.cumulocity.com
+    date: '2026-06-29'
+  - label: cumulocity.com
+    date: '2026-06-29'
 ---
 Previously, when searching for users in the administration interface, you had to enter the exact username to find a user. Now, the user search supports partial username matching, allowing you to search by entering just a portion of a username. This makes it easier to locate users when you do not remember their complete username, improving the user search experience in the administration interface.
