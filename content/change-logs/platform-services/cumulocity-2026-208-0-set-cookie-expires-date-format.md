@@ -22,7 +22,7 @@ format (`Fri, 10-Jul-2026 07:30:15 GMT`).
 
 To facilitate the adaptation of customer integrations, the platform will keep backwards compatibility and
 continue returning the legacy dash-separated format until the end of the year. Starting next year
-and with the next `2027` yearly release, the backwards compatibility patch will be removed
+and with the 2027 yearly release, the backwards compatibility patch will be removed
 and the `Expires` date will be returned in accordance with the standards described in the RFC.
 
 Use this transition period to make sure your integrations support the RFC date format. The Apache HTTP Client
