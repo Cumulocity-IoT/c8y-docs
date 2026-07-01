@@ -97,13 +97,22 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   // an intercept callback (it runs outside Cypress's normal command queue);
   // flushed via the afterEach hook below instead. Wrapped in try/catch so a
   // bug in the logger itself can never block the request pipeline.
+  //
+  // Uses req.on('response', cb) rather than req.continue(cb): the latter is
+  // documented to raise an uncaught exception (failing the test) if the
+  // request errors at the network level rather than receiving an HTTP
+  // response - which, watching every single sub-resource on a page, is
+  // routine transient noise unrelated to the link under test. req.on()
+  // simply never fires for such a request, which for our purposes reads the
+  // same as a hang (START with no DONE) - the correct signal either way,
+  // without turning an unrelated resource's blip into a false failure.
   const applyDiagnosticNetworkLogging = () => {
     if (!DIAGNOSTICS) return;
     cy.intercept('**', (req) => {
       try {
         const start = Date.now();
         diagnosticLog.push(`START ${req.method} ${req.url}`);
-        req.continue((res) => {
+        req.on('response', (res) => {
           try {
             diagnosticLog.push(`DONE ${res.statusCode} ${Date.now() - start}ms ${req.url}`);
           } catch (e) {
@@ -111,7 +120,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
           }
         });
       } catch (e) {
-        req.continue();
+        // ignore - request proceeds normally either way
       }
     });
   };
