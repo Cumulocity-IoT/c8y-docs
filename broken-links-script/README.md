@@ -133,34 +133,39 @@ The workflow file is `.github/workflows/link-checker.yml`.
 
 It runs:
 
-* every Monday at 06:00 UTC
+* every Monday at 06:00 UTC, against the default branch matrix
 * manually using `workflow_dispatch`
+* automatically on a pull request when the `broken-link-check` label is added
+  (checks that PR's branch only, and posts a summary comment instead of
+  filing an issue)
+
+### Manual dispatch inputs
+
+All optional - omit all of them to reproduce the default scheduled run.
+
+| Input | Effect |
+| --- | --- |
+| `branch` | Check only this branch instead of the default matrix |
+| `urlsWith` | Only check links containing this substring |
+| `diagnostics` | Verbose network + console logging (see "Case 5" below) |
 
 ### Branches checked
 
-The workflow runs against this matrix:
-
-* `develop`
-* `release/y2025`
-* `release/y2026`
+By default (schedule, or manual dispatch without `branch`), the workflow
+checks the branches listed in the `determine-branches` job's fallback array
+in `.github/workflows/link-checker.yml` (search for `branches_json=`).
 
 ### What happens in CI
 
 For each branch, the workflow:
 
-1. checks out the branch
+1. checks out the branch (or, for the PR-label trigger, that PR's head commit)
 2. installs dependencies
 3. runs the broken-link test suite
-4. creates a branch-specific label if needed
-5. creates a GitHub issue if the test fails
-
-Example issue labels:
-
-```text
-broken-link-develop
-broken-link-release/y2025
-broken-link-release/y2026
-```
+4. uploads the full Cypress log as an artifact (kept for 8 days)
+5. for the default scheduled/full-matrix runs only: creates a
+   branch-specific label if needed, and a GitHub issue if the test fails
+6. for the PR-label trigger only: posts a summary comment on the PR
 
 ## Where to update the code
 
@@ -351,29 +356,35 @@ If `cy.visit()` times out waiting for `load`, but the URL itself responds
 quickly and correctly (check with `curl -w '%{http_code} %{time_total}'`),
 the page it points to is probably pulling in a slow/unreachable third-party
 resource (analytics, an embed, a tracking pixel) that blocks `load` even
-when it has nothing to do with the link being valid.
+when it has nothing to do with the link being valid - or the page throws a
+console error/uncaught exception unrelated to the link's validity. This is
+also the case to reach for when a link fails only in CI and you can't
+reproduce it locally at all (different network egress on GitHub Actions
+runners than a local machine is a common cause).
 
-To confirm before mocking anything, temporarily add a per-request logger
-scoped to the target host in the relevant branch of `link-checker.cy.js`,
-run it filtered to just that URL (`node run.cjs --urls-with=<substring>`,
-or the workflow's `urlsWith` dispatch input to reproduce on an actual
-runner), and look for a request that logs a start but never a completion:
+Use the workflow's **diagnostics mode** to confirm before mocking anything -
+no code changes needed. Dispatch the "Link Checker" workflow manually with:
 
-```js
-cy.intercept(`${new URL(url).origin}/**`, (req) => {
-  const start = Date.now();
-  diagnosticLog.push(`START ${req.method} ${req.url}`);
-  req.continue((res) => {
-    diagnosticLog.push(`DONE ${res.statusCode} ${Date.now() - start}ms ${req.url}`);
-  });
-});
-```
+* `branch` set to the branch the failing link lives on
+* `urlsWith` set to a substring that narrows it down to just that URL (or a
+  small handful)
+* `diagnostics` set to `true`
 
-(`cy.task()`/`cy.log()` can't be called directly inside the intercept
-callback — push to a plain array and flush it via `cy.task()` in
-`afterEach` instead.) Once you've identified the exact resource, add it to
+This logs every network request's start/completion (so a hang shows as a
+`START` with no matching `DONE`), plus any `console.error`/`console.warn`
+calls and uncaught exceptions from the page - all without changing pass/fail
+behavior. Grab the results either from the run's `cypress-log-<branch>`
+artifact (uploaded on every run, kept for 8 days) or by grepping the run's
+logs for `[DIAGNOSTIC]`.
+
+Once you've identified the exact resource or error, add it to
 `known-resource-mocks.cjs` (see item 2 above) rather than excluding the
-link — remove the temporary logger afterwards.
+link.
+
+(For reference, the underlying instrumentation lives in
+`cypress/e2e/link-checker.cy.js` behind the `DIAGNOSTICS` flag -
+`applyDiagnosticNetworkLogging` and `visitWithDiagnostics` - in case it ever
+needs extending, e.g. to capture something beyond network/console activity.)
 
 ## Recommended maintenance process
 
