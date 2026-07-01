@@ -8,7 +8,6 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
   let completedTests = 0;
   const totalTests = urls.length;
-  let diagnosticLog = []; // [DIAGNOSTIC]
 
   /**
    * Links to skip during validation.
@@ -239,31 +238,13 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
             expect(response.status).to.be.oneOf([200, 201, 202, 203, 204, 301, 302, 304]);
             expect(response.body).not.to.be.empty;
           } else {
-            // [DIAGNOSTIC] log every resource request's start and completion so a
-            // request that never fires its completion log is the one blocking `load`.
-            // Scoped to the target host + likely third-party culprits rather than
-            // '**', since intercepting literally everything also catches Chrome's
-            // own background requests (safebrowsing, variations, accounts) and
-            // interferes with those unrelated to the page under test.
-            const diagnosticPatterns = [
-              `${new URL(url).origin}/**`,
-              '**://www.google-analytics.com/**',
-              '**://www.googletagmanager.com/**',
-              '**://*.algolia.net/**',
-              '**://asciinema.org/**',
-            ];
-            // Plain array push only - cy.task()/cy.log() cannot be called from
-            // inside an intercept callback (it runs outside Cypress's normal
-            // command queue); flushed via the afterEach hook below instead.
-            diagnosticPatterns.forEach((pattern) => {
-              cy.intercept(pattern, (req) => {
-                const start = Date.now();
-                diagnosticLog.push(`START ${req.method} ${req.url}`);
-                req.continue((res) => {
-                  diagnosticLog.push(`DONE ${res.statusCode} ${Date.now() - start}ms ${req.url}`);
-                });
-              });
-            });
+            // asciinema.org's embed script (used on some go-c8y-cli docs pages)
+            // never responds when requested from CI runners - confirmed via a
+            // diagnostic run logging every request's start/completion, where this
+            // was the only resource that logged a start but never a completion.
+            // It still blocks the browser's `load` event despite `async`, hanging
+            // cy.visit() indefinitely. Stub it so `load` fires promptly.
+            cy.intercept('**://asciinema.org/**', { statusCode: 204, body: '' });
             cy.visit(url);
             cy.document().its('body').should('not.be.empty');
           }
@@ -276,10 +257,5 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
   afterEach(() => {
     cy.log(`Progress: ${completedTests}/${totalTests}`);
-    // [DIAGNOSTIC]
-    if (diagnosticLog.length) {
-      cy.task('log', `[DIAGNOSTIC]\n${diagnosticLog.join('\n')}`);
-      diagnosticLog = [];
-    }
   });
 });
