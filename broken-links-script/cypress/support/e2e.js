@@ -117,5 +117,12 @@ Cypress.on('uncaught:exception', (err) => {
     if (err.message.includes("Identifier 'OneCloudUtil' has already been declared")) {
       return false;
     }
+    // docker.com pages embed a Vector tracking pixel (cdn.vector.co/pixel.js)
+    // that throws this unhandled rejection when it can't establish a visitor
+    // ID on a fresh Cypress session (no cookie/consent state) - unrelated to
+    // whether the docker.com link/page itself is valid.
+    if (err.message.includes('No visitor ID available. Load may have failed.')) {
+      return false;
+    }
   });
   
