@@ -1,6 +1,14 @@
 const allUrls = require('../../all_links.json');
 const KNOWN_RESOURCE_MOCKS = require('../../known-resource-mocks.cjs');
 
+// Domains we actually own/publish - a JS error on one of these could mean a
+// real bug worth catching. Everywhere else, an uncaught exception isn't
+// signal about whether the link is valid (see the describe-level
+// uncaught:exception handler below); what matters there is already covered
+// by the test's real assertions (status code, non-empty body, fragment
+// existence).
+const OWN_DOMAINS = ['cumulocity.com'];
+
 describe('Link and Routing Validation - Individual URL Checks', () => {
   const urlsWith = Cypress.env('urlsWith') || null;
   const urls = urlsWith
@@ -15,6 +23,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   // another way could still arrive as the string "true" - handle both.
   const DIAGNOSTICS = String(Cypress.env('diagnostics')) === 'true';
   let diagnosticLog = [];
+  let currentUrl = null;
 
   let completedTests = 0;
   const totalTests = urls.length;
@@ -191,6 +200,19 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     throw cleanError;
   });
 
+  // Only fail on an uncaught exception when it happens on a page we own
+  // (see OWN_DOMAINS above) - a JS error on some third-party site a link
+  // points to isn't signal about whether that link is valid. Registered
+  // once here (not per-test) since Cypress.on persists for the whole run;
+  // cypress/support/e2e.js still has its own uncaught:exception handler for
+  // the rare case of a genuine cumulocity.com-domain error that turns out
+  // to be known-harmless - both handlers run independently, and either one
+  // returning `false` suppresses the failure.
+  Cypress.on('uncaught:exception', () => {
+    const isOwnDomain = currentUrl && OWN_DOMAINS.some((d) => currentUrl.includes(d));
+    if (!isOwnDomain) return false;
+  });
+
   // Diagnostics mode: log uncaught page errors without changing today's
   // fail-on-uncaught-exception behavior (not returning `false` here leaves
   // the default handling - and any other registered handler - untouched).
@@ -215,6 +237,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     
     it(`should validate URL: ${item.link}`, () => {
       const url = item.link;
+      currentUrl = url;
       // Order matters: cy.intercept() gives priority to the most-recently
       // registered matching handler, and an explicit req.continue() sends
       // the request straight to the real server, bypassing earlier
