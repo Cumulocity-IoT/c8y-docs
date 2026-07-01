@@ -246,17 +246,25 @@ this) — don't reach for this to paper over an actually broken link.
 
 ### 3. Add known browser exceptions
 
-Some third-party sites throw JavaScript errors that do not actually mean the page is broken.
+Uncaught JS exceptions are already tolerated automatically for any page
+outside `cumulocity.com` (see `OWN_DOMAINS` in `cypress/e2e/link-checker.cy.js`)
+- a third-party site's own console errors (analytics pixels, chat widgets,
+etc.) aren't signal about whether the link pointing to it is valid, so we
+don't fail on them regardless of message text. What still matters for those
+pages is covered by the test's real assertions: status code, non-empty body,
+fragment existence.
 
-Those global exceptions should be added in `cypress/support/e2e.js`.
-
-This file is the right place for known harmless `uncaught:exception` cases.
+`cypress/support/e2e.js` is now only for the rare case of a genuine
+**`cumulocity.com`-domain** exception that's confirmed harmless. Before
+adding anything here, confirm the error is actually happening on our own
+domain - if it's a third-party page, it's already handled and doesn't need
+an entry.
 
 Example:
 
 ```js
 Cypress.on('uncaught:exception', (err) => {
-  if (err.message.includes('Some known harmless error')) {
+  if (err.message.includes('Some known harmless error on our own docs site')) {
     return false;
   }
 });
@@ -264,6 +272,7 @@ Cypress.on('uncaught:exception', (err) => {
 
 Add new exceptions here only when:
 
+* the error occurs on a `cumulocity.com` page
 * the page itself still loads correctly
 * the error is unrelated to link validity
 * the error is consistently harmless
@@ -327,12 +336,13 @@ Example:
 
 ### Case 3: The page loads but throws harmless JavaScript errors
 
-Add the error pattern to `cypress/support/e2e.js`.
-
-Example:
+If this is on a third-party page (anything outside `cumulocity.com`),
+nothing to do - it's already tolerated automatically regardless of message
+text (see item 3 above). Only add an entry to `cypress/support/e2e.js` if
+the error is happening on a **`cumulocity.com`** page:
 
 ```js
-if (err.message.includes('jQuery is not defined')) {
+if (err.message.includes('Some known harmless error on our own docs site')) {
   return false;
 }
 ```
