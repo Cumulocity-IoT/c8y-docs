@@ -38,4 +38,4 @@ Applications and plugins that already consume the SCSS styles are not affected.
 * Import variables from `@c8y/style/variables/index.scss` instead of the `.less` file.
 * Update the import syntax from LESS `@import 'file.less'` to SCSS `@use 'file'` or `@forward 'file'`, and change LESS variable overrides from `@variable-name` to `$variable-name`.
 
-For the full list of supported SCSS variables and mixins, refer to the styling documentation. <!-- TODO: add SCSS styling / Codex migration URL once available -->
+Detailed guidance on styling components and applications with SCSS will be added to the Web SDK Codex documentation when the release is published. <!-- TODO: when the release is published, link to the Codex pages: Component styles (https://cumulocity.com/codex/common-tasks/component-styles) and Application styles (https://cumulocity.com/codex/common-tasks/application-styles) -->
