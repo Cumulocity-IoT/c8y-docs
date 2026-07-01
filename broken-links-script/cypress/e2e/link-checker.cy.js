@@ -7,6 +7,15 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     ? allUrls.filter(item => item.link.includes(urlsWith))
     : allUrls;
 
+  // Diagnostics mode: verbose network + console logging to investigate a
+  // failure that isn't reproducible locally. Enable via the workflow's
+  // `diagnostics` dispatch input (combine with `branch` + `urlsWith` to
+  // scope it to one failing case) - see README.md "Case 5".
+  // Cypress coerces --env true/false into real booleans, but env vars set
+  // another way could still arrive as the string "true" - handle both.
+  const DIAGNOSTICS = String(Cypress.env('diagnostics')) === 'true';
+  let diagnosticLog = [];
+
   let completedTests = 0;
   const totalTests = urls.length;
 
@@ -81,6 +90,58 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     });
   };
 
+  // Logs every request's start/completion so a request that starts but never
+  // completes is visible as the likely cause of a `load` timeout - this is
+  // what found the asciinema.org hang. Only active in diagnostics mode.
+  // Plain array push only - cy.task()/cy.log() cannot be called from inside
+  // an intercept callback (it runs outside Cypress's normal command queue);
+  // flushed via the afterEach hook below instead. Wrapped in try/catch so a
+  // bug in the logger itself can never block the request pipeline.
+  const applyDiagnosticNetworkLogging = () => {
+    if (!DIAGNOSTICS) return;
+    cy.intercept('**', (req) => {
+      try {
+        const start = Date.now();
+        diagnosticLog.push(`START ${req.method} ${req.url}`);
+        req.continue((res) => {
+          try {
+            diagnosticLog.push(`DONE ${res.statusCode} ${Date.now() - start}ms ${req.url}`);
+          } catch (e) {
+            // never let logging break the request
+          }
+        });
+      } catch (e) {
+        req.continue();
+      }
+    });
+  };
+
+  // Visits a URL like cy.visit(), additionally capturing console.error/warn
+  // calls and (via the describe-level uncaught:exception listener below)
+  // unhandled page errors into diagnosticLog when diagnostics mode is on.
+  // A no-op wrapper (byte-for-byte cy.visit(url, options)) otherwise.
+  const visitWithDiagnostics = (url, options = {}) => {
+    if (!DIAGNOSTICS) {
+      cy.visit(url, options);
+      return;
+    }
+    const onBeforeLoad = (win) => {
+      options.onBeforeLoad?.(win);
+      ['error', 'warn'].forEach((level) => {
+        const original = win.console[level];
+        win.console[level] = (...args) => {
+          try {
+            diagnosticLog.push(`console.${level}: ${args.map(String).join(' ')}`);
+          } catch (e) {
+            // ignore
+          }
+          original.apply(win.console, args);
+        };
+      });
+    };
+    cy.visit(url, { ...options, onBeforeLoad });
+  };
+
 // Note: On GitHub pages, heading IDs are prefixed with "user-content-".
   const checkGithubFragment = (fragment) => {
     cy.document().then((doc) => {
@@ -115,6 +176,17 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     throw error;
   });
 
+  // Diagnostics mode: log uncaught page errors without changing today's
+  // fail-on-uncaught-exception behavior (not returning `false` here leaves
+  // the default handling - and any other registered handler - untouched).
+  // Registered once here rather than per-test to avoid stacking a new
+  // listener (and duplicate log lines) for every URL under test.
+  if (DIAGNOSTICS) {
+    Cypress.on('uncaught:exception', (err) => {
+      diagnosticLog.push(`uncaught exception: ${err.message}`);
+    });
+  }
+
   const isExcluded = link =>
     excludedLinks.some(entry =>
       entry instanceof RegExp ? entry.test(link) : entry === link
@@ -128,6 +200,13 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     
     it(`should validate URL: ${item.link}`, () => {
       const url = item.link;
+      // Order matters: cy.intercept() gives priority to the most-recently
+      // registered matching handler, and an explicit req.continue() sends
+      // the request straight to the real server, bypassing earlier
+      // registrations entirely. Mocks must be registered AFTER (i.e. win
+      // over) the diagnostic logger, or diagnostics mode would silently
+      // re-introduce hangs that are already fixed via known-resource-mocks.
+      applyDiagnosticNetworkLogging();
       applyKnownResourceMocks(url);
       const fragment = url.includes('#') ? url.split('#').slice(-1)[0] : null;
       const isTextFragment = fragment !== null && fragment.startsWith(':~:text=');
@@ -177,7 +256,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       }
 
       if (isCodexPage) {
-        cy.visit(url);
+        visitWithDiagnostics(url);
       
         cy.get('[data-cy="c8y-title--title-outlet"] .text-truncate')
           .invoke('text')
@@ -202,7 +281,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         }
       }
       else if (isApiPage) {
-        cy.visit(url);
+        visitWithDiagnostics(url);
         if (fragment) {
           if (isTextFragment) {
             checkTextFragment(fragment);
@@ -220,13 +299,13 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
             .to.be.oneOf([200, 301, 302]);
         });
         if (lineNumber) {
-          cy.visit(baseUrl);
+          visitWithDiagnostics(baseUrl);
           const selector = `#L${lineNumber}, #LC${lineNumber}`;
           cy.get(selector).should('exist');
         }
       }
       else if (isGithubPage && fragment) {
-        cy.visit(url);
+        visitWithDiagnostics(url);
         if (isTextFragment) {
           checkTextFragment(fragment);
         } else {
@@ -234,7 +313,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         }
       }
       else if (fragment) {
-        cy.visit(url, {failOnStatusCode: false, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122.0 Safari/537.36' }});
+        visitWithDiagnostics(url, {failOnStatusCode: false, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122.0 Safari/537.36' }});
         if (isTextFragment) {
           checkTextFragment(fragment);
         } else {
@@ -252,7 +331,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
             expect(response.status).to.be.oneOf([200, 201, 202, 203, 204, 301, 302, 304]);
             expect(response.body).not.to.be.empty;
           } else {
-            cy.visit(url);
+            visitWithDiagnostics(url);
             cy.document().its('body').should('not.be.empty');
           }
         });
@@ -264,5 +343,9 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
   afterEach(() => {
     cy.log(`Progress: ${completedTests}/${totalTests}`);
+    if (diagnosticLog.length) {
+      cy.task('log', `[DIAGNOSTIC]\n${diagnosticLog.join('\n')}`);
+      diagnosticLog = [];
+    }
   });
 });
