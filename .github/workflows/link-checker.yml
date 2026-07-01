@@ -1,18 +1,51 @@
 name: Link Checker
 
 on:
- schedule:
-  - cron: '0 6 * * 1'
- workflow_dispatch: 
-  
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch to check links on (by default checks all maintained branches)"
+        required: false
+        type: string
+      urlsWith:
+        description: "Only check links containing this substring (by default checks all links)"
+        required: false
+        type: string
+
 permissions:
-    contents: read
-    pull-requests: write
-    issues: write
+  contents: read
+  pull-requests: write
+  issues: write
 
 jobs:
-  link-check:
+  determine-branches:
+    name: Determine branches to check
     runs-on: ubuntu-latest
+    outputs:
+      branches: ${{ steps.set-branches.outputs.branches }}
+    steps:
+      - name: Set branches
+        id: set-branches
+        env:
+          BRANCH_INPUT: ${{ inputs.branch }}
+        run: |
+          if [ -n "$BRANCH_INPUT" ]; then
+            branches_json=$(jq -cn --arg b "$BRANCH_INPUT" '[$b]')
+          else
+            branches_json='["develop", "release/y2025", "release/y2026"]'
+          fi
+          echo "branches=$branches_json" >> "$GITHUB_OUTPUT"
+
+  link-check:
+    name: Run Link Check
+    needs: determine-branches
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        branch: ${{ fromJson(needs.determine-branches.outputs.branches) }}
 
     steps:
       - name: Checkout repository
@@ -21,7 +54,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 'latest'
+          node-version: "latest"
 
       - name: Install Dependencies
         run: |
@@ -29,15 +62,45 @@ jobs:
           npm ci
 
       - name: Run Cypress tests
+        env:
+          URLS_WITH_INPUT: ${{ inputs.urlsWith }}
         run: |
           cd broken-links-script
-          npm test
+          if [ -n "$URLS_WITH_INPUT" ]; then
+            npm test -- "--urls-with=$URLS_WITH_INPUT"
+          else
+            npm test
+          fi
 
-      - name: Create GitHub issue if tests fail
-        if: failure()
+      - name: Determine label based on branch
+        if: always() && !inputs.branch
+        id: label
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          BRANCH_NAME: ${{ matrix.branch }}
         run: |
+          LABEL_NAME="broken-link-${BRANCH_NAME}"
+          if gh api "repos/$GH_REPO/labels/$LABEL_NAME" &>/dev/null; then
+            echo "Label ${LABEL_NAME} already exists"
+          else
+            echo "Creating label ${LABEL_NAME}"
+            gh label create "${LABEL_NAME}" \
+              --description "Indicates broken links in branch ${BRANCH_NAME}"
+          fi
+          echo "label=$LABEL_NAME" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub issue if tests fail
+        if: failure() && !inputs.branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LABEL: ${{ steps.label.outputs.label }}
+          BRANCH_NAME: ${{ matrix.branch }}
+        run: |
+          label="$LABEL"
+          branch_name="$BRANCH_NAME"
+          echo "Creating issue for branch: ${branch_name} with label: ${label}"
+
           issue_url=$(gh issue create \
             --title "Weekly Link Check Failed" \
             --body "Broken links detected in workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
