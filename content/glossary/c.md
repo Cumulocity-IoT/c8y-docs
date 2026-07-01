@@ -43,6 +43,13 @@ The child devices relationship is managed via the [Inventory API](https://cumulo
 {{< /c8y-details >}}
 
 
+### Client ID {#client-id}
+
+A client ID is a unique identifier for a device, client, or gateway connecting to a [protocol adapter](#protocol-adapter).
+The client ID must be unique within a {{< product-c8y-iot >}} [tenant](#tenant).
+For example, devices connecting to the [MQTT Service](#mqtt-service) use the MQTT client identifier as their client ID.
+
+
 ### Cockpit application {#cockpit-application}
 
 The Cockpit application is one of the default [applications](#application) of {{< product-c8y-iot >}}. It provides a self-service UI to manage and monitor IoT assets and data from a business perspective, like managing [assets](#asset), visualizing data, working with [dashboards](#dashboard) and managing [reports](#report).   
@@ -130,7 +137,7 @@ The [{{< product-c8y-iot >}} Developer Codex](https://cumulocity.com/codex/) is 
 
 {{< product-c8y-iot >}} Edge is the onsite solution of {{< product-c8y-iot >}} intended to run as a local software application on industrial PC’s or local servers.
 
-See also [Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/k8-edge-introduction/) in the documentation.
+See also [Edge](/{{< c8y-edge-current-version >}}/edge) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 Core REST APIs (such as [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API), [Event API](https://cumulocity.com/api/core/#tag/Event-API), [Alarm API](https://cumulocity.com/api/core/#tag/Alarm-API), [Measurement API](https://cumulocity.com/api/core/#tag/Measurement-API)) are typically available locally on the Edge instance.

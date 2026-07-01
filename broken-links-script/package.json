@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test": "node Extractlinks.js && npx cypress run --browser chrome --headless"
+    "test": "node run.cjs"
   },
   "author": "",
   "license": "ISC",

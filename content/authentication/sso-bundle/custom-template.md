@@ -37,7 +37,28 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 | Button name                                |Name displayed on the button on the **Login** page
 | Provider name                              |Name of the provider
 | Audience                                   |Expected aud parameter of JWT
+| Enable mTLS authentication                 |Enables mutual TLS (mTLS) authentication for requests sent to the authorization server. When enabled, the **Certificate (PEM)** and **Private key (PEM)** fields become visible. Disabled by default.
+| Certificate (PEM)                          |PEM-encoded X.509 client certificate used for mTLS authentication. The certificate must start with `-----BEGIN CERTIFICATE-----` and end with `-----END CERTIFICATE-----`. Visible only when **Enable mTLS authentication** is turned on.
+| Private key (PEM)                          |PEM-encoded PKCS#8 private key corresponding to the client certificate. After the first upload, the key is encrypted on the server side and can no longer be retrieved or displayed. Visible only when **Enable mTLS authentication** is turned on.
 | Visible on Login screen                    |Indicates whether the login option is enabled or not
+
+### Mutual TLS (mTLS) authentication {#mutual-tls-mtls-authentication}
+
+Mutual TLS (mTLS) is an extension of the standard TLS protocol in which both the client and the server authenticate each other using certificates. Enabling mTLS allows {{< product-c8y-iot >}} to present a client certificate to the authorization server during token requests. Use this option only when the authorization server is configured to enforce certificate-based client authentication.
+
+#### To configure mTLS authentication {#to-configure-mtls-authentication}
+
+1. In the **Basic** section of the **Single sign-on** page, turn on the **Enable mTLS authentication** toggle.
+
+   The **Certificate (PEM)** and **Private key (PEM)** fields appear.
+
+2. Upload a PEM-encoded X.509 certificate in the **Certificate (PEM)** field and a PEM-encoded PKCS#8 private key in the **Private key (PEM)** field.
+
+3. Click **Save** to apply the configuration.
+
+{{< c8y-admon-important >}}
+After the first save, the private key is encrypted and cannot be retrieved from {{< product-c8y-iot >}}. Store it securely before uploading. To replace it, use the **Drop a new private key to replace** control.
+{{< /c8y-admon-important >}}
 
 Each time you log in, the content of the access token and ID token is verified and serves as the basis for your access to the {{< product-c8y-iot >}} platform. The following section provides the mapping between JWT claims and access to the platform.
 

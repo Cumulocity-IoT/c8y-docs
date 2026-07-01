@@ -16,7 +16,7 @@ The following types of quotas are used:
 * **Soft**: Services are guaranteed to operate within the specified service-level agreements as long as the quotas are not exceeded; however, exceeding the quotas may result in a degraded user experience and no assurance of meeting the service-level agreements.
 <!-- * **Configurable**: Services enforce this quota, but a change of the quota may be requested through technical support. A change in the quota may impact the service price.-->
 
-The quotas listed here reflect the maximum values for the cloud subscriptions unless indicated otherwise. If you're unsure whether a specific cloud service quota is sufficient for your use case, we recommend reaching out to your sales contact to discuss your needs and explore potential options. Some quotas may be adjustable through professional services, depending on the system dimensioning and your specific requirements. For Edge deployments, consult the [{{< product-c8y-iot >}} Edge documentation](/{{< c8y-edge-version-major >}}/edge-kubernetes).
+The quotas listed here reflect the maximum values for the cloud subscriptions unless indicated otherwise. If you're unsure whether a specific cloud service quota is sufficient for your use case, we recommend reaching out to your sales contact to discuss your needs and explore potential options. Some quotas may be adjustable through professional services, depending on the system dimensioning and your specific requirements. For Edge deployments, consult the [{{< product-c8y-iot >}} Edge documentation](/{{< c8y-edge-current-version >}}/edge).
 
 ### Platform
 
@@ -49,9 +49,12 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 ### REST API
 
-| Quota                | Type |     Value |
-| -------------------- | ---- | --------: |
-| API request duration | Hard | 5 minutes |
+| Quota                    | Type |     Value |
+| ------------------------ | ---- | --------: |
+| API request duration     | Hard | 5 minutes |
+| Database query execution | Hard | 2 minutes |
+
+The database query execution timeout applies to every individual database query triggered by an API request. This limit is independent of the API request duration timeout.
 
 ### Realtime APIs
 
@@ -62,6 +65,7 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 | [Notifications 2.0 time-to-live](https://{{< domain-c8y >}}/api/core/#tag/About-notifications-2.0)                                    | Hard | 36 hours |
 | [Microservice-based data broker message backlog](/data-broker/ms-data-broker/#microservice-based-data-broker-service-quotas) | Hard |   50 MiB |
 | [Microservice-based data broker time-to-live](/data-broker/ms-data-broker/#microservice-based-data-broker-service-quotas)    | Hard | 36 hours |
+| Streaming Analytics and Streaming Lake offloading message backlog                                                           | Hard |     1 Gi |
 
 ### MQTT Service {#mqtt-service}
 

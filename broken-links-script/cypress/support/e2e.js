@@ -102,8 +102,20 @@ Cypress.on('uncaught:exception', (err) => {
     if (err.message.includes("window.clarity is not a function")) {
       return false;
     }
-
-    
-    
+    if (err.message.includes('EA is not defined')) {
+      return false;
+    }
+    if (err.message.includes("Cannot read properties of undefined (reading 'quick')")) {
+      return false;
+    }
+    if (err.message.includes("Unexpected token '&'")) {
+      return false;
+    }
+    if (err.message.includes("An unknown error has occurred")) {
+      return false;
+    }
+    if (err.message.includes("Identifier 'OneCloudUtil' has already been declared")) {
+      return false;
+    }
   });
   

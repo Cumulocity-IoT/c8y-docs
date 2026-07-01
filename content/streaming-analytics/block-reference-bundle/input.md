@@ -148,6 +148,17 @@ Note: When running in simulation mode, because only the creation time of the ala
 </td>
 <td><span>Default: False</span></td>
 </tr>
+<tr>
+<th scope="row">Properties to Output</th>
+<td><span>When specified, only the properties mentioned in this parameter are included in the output. If empty, all properties are included in the output.</span>
+<p>Each property could be either: <ul> <li>Name of a property, for example <tt>MyCounter</tt></li> <li>Path to a nested property, for example <tt>Speed.value</tt></li> <li>Text substitution string that refers to any property, for example <tt>"Speed is #{Speed.value} #{Speed.unit}"</tt></li> </ul>
+<p></p>
+When using text substitutions, only the placeholders not starting with "source." are considered and any placeholders starting with "source." are ignored.</p>
+</td>
+<td><span>sequence&lt;string&gt;</span>
+</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -248,6 +259,17 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 </td>
 <td><span>Default: False</span></td>
 </tr>
+<tr>
+<th scope="row">Properties to Output</th>
+<td><span>When specified, only the properties mentioned in this parameter are included in the output. If empty, all properties are included in the output.</span>
+<p>Each property could be either: <ul> <li>Name of a property, for example <tt>MyCounter</tt></li> <li>Path to a nested property, for example <tt>Speed.value</tt></li> <li>Text substitution string that refers to any property, for example <tt>"Speed is #{Speed.value} #{Speed.unit}"</tt></li> </ul>
+<p></p>
+When using text substitutions, only the placeholders not starting with "source." are considered and any placeholders starting with "source." are ignored.</p>
+</td>
+<td><span>sequence&lt;string&gt;</span>
+</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -330,7 +352,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 <tr>
 <th scope="row">Property Name</th>
 <td><span>The name of the property for which to listen.</span>
-<p>The <tt>ManagedObject</tt> object must have a property of this name. Otherwise, it is ignored. If not set, the objects are not filtered. Every update generates a pulse output with all of the properties from the <tt>ManagedObject</tt>.</p>
+<p>The <tt>ManagedObject</tt> object must have a property of this name. Otherwise, it is ignored. If not set, the objects are not filtered. Every update generates a pulse output with all of the properties from the <tt>ManagedObject</tt>. This property is always included in the output.</p>
 </td>
 <td><span>string</span>
 </td>
@@ -344,6 +366,19 @@ The parameters that define the input stream of the block are "Input Source" and 
 <td><span>boolean</span>
 </td>
 <td><span>Default: False</span></td>
+</tr>
+<tr>
+<th scope="row">Properties to Output</th>
+<td><span>When specified, only the properties mentioned in this parameter are included in the output. If empty, all properties are included in the output.</span>
+<p>Each property could be either: <ul> <li>Name of a property, for example <tt>MyCounter</tt></li> <li>Path to a nested property, for example <tt>Speed.value</tt></li> <li>Text substitution string that refers to any property on the source object, for example <tt>"Speed is #{source.Speed.value} #{source.Speed.unit}"</tt></li> </ul>
+<p></p>
+When using text substitutions, only the placeholders starting with "source." are considered and any placeholders not starting with "source." are ignored. The name of the property is derived from the placeholder by removing the "source." prefix. For example, if the placeholder is <tt>#{source.Speed}</tt>, then the property name will be <tt>Speed</tt>.
+<p></p>
+The properties specified here are in addition to the property specified by the Property Name parameter, which is always included in the output if the parameter is specified.</p>
+</td>
+<td><span>sequence&lt;string&gt;</span>
+</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -433,6 +468,17 @@ Note: When running in simulation mode, because historical input data is used, ti
 <td><span>boolean</span>
 </td>
 <td><span>Default: False</span></td>
+</tr>
+<tr>
+<th scope="row">Properties to Output</th>
+<td><span>When specified, only the properties mentioned in this parameter are included in the output. If empty, all properties are included in the output.</span>
+<p>Each property could be either: <ul> <li>Name of a property, for example <tt>MyCounter</tt></li> <li>Path to a nested property, for example <tt>Speed.value</tt></li> <li>Text substitution string that refers to any property, for example <tt>"Speed is #{Speed.value} #{Speed.unit}"</tt></li> </ul>
+<p></p>
+When using text substitutions, only the placeholders not starting with "source." are considered and any placeholders starting with "source." are ignored.</p>
+</td>
+<td><span>sequence&lt;string&gt;</span>
+</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -549,6 +595,17 @@ Note: A history of changes is not maintained for <tt>Operation</tt> objects, and
 </span>
 </td>
 <td><span>Default: All</span></td>
+</tr>
+<tr>
+<th scope="row">Properties to Output</th>
+<td><span>When specified, only the properties mentioned in this parameter are included in the output. If empty, all properties are included in the output.</span>
+<p>Each property could be either: <ul> <li>Name of a property, for example <tt>MyCounter</tt></li> <li>Path to a nested property, for example <tt>Speed.value</tt></li> <li>Text substitution string that refers to any property, for example <tt>"Speed is #{Speed.value} #{Speed.unit}"</tt></li> </ul>
+<p></p>
+When using text substitutions, only the placeholders not starting with "source." are considered and any placeholders starting with "source." are ignored.</p>
+</td>
+<td><span>sequence&lt;string&gt;</span>
+</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -671,6 +728,17 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 </td>
 <td><span>Optional</span>
 </td>
+</tr>
+<tr>
+<th scope="row">Properties to Output</th>
+<td><span>When specified, only the properties mentioned in this parameter are included in the output. If empty, all properties are included in the output.</span>
+<p>Each property could be either: <ul> <li>Name of a property, for example <tt>MyCounter</tt></li> <li>Path to a nested property, for example <tt>Speed.value</tt></li> <li>Text substitution string that refers to any property, for example <tt>"Speed is #{Speed.value} #{Speed.unit}"</tt></li> </ul>
+<p></p>
+When using text substitutions, only the placeholders not starting with "source." are considered and any placeholders starting with "source." are ignored.</p>
+</td>
+<td><span>sequence&lt;string&gt;</span>
+</td>
+<td></td>
 </tr>
 </tbody>
 </table>

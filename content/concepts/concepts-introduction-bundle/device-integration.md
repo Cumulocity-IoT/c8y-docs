@@ -13,7 +13,9 @@ title: Device integration
 
 - **LPWAN support**: Native [LWM2M support](/device-integration/lwm2m/) and [LoRa Network Server integration](/device-integration/lpwan/#loriot-lora) for Low-Power-Wide-Area-Network devices.
 
-Once a device is connected to {{< product-c8y-iot >}}, it can start streaming equipment data into the platform. A common practice is to use a gateway device for data acquisition. These gateways are often connected to the different sensors and fieldbus devices of the equipment and responsible for collecting and forwarding relevant data to the IoT platform.
+Once a device is connected to {{< product-c8y-iot >}}, it can start streaming equipment data into the platform. For devices sending arbitrary payloads via the [MQTT Service](/device-integration/mqtt-service/), [Data Preparation](/data-preparation/) can transform the data and [automatically create devices](/data-preparation/device-onboarding/) as needed.
+
+A common practice is to use a gateway device for data acquisition. These gateways are often connected to the different sensors and fieldbus devices of the equipment and responsible for collecting and forwarding relevant data to the IoT platform.
 
 To facilitate the data integration, {{< product-c8y-iot >}} comes with an [OPC UA](/device-integration/opcua/) integration and the [Cloud Fieldbus](/device-integration/cloud-fieldbus/) technology. These provide configuration-driven ways to easily integrate OPC UA-enabled equipment and prominent fieldbus protocols like CAN, Profibus or Modbus.
 
