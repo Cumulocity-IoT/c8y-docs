@@ -1,4 +1,5 @@
 const allUrls = require('../../all_links.json');
+const KNOWN_RESOURCE_MOCKS = require('../../known-resource-mocks.cjs');
 
 describe('Link and Routing Validation - Individual URL Checks', () => {
   const urlsWith = Cypress.env('urlsWith') || null;
@@ -68,6 +69,18 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     cy.wrap(url).should('not.match', /[()]/, `URL should not contain unencoded parentheses: ${url}`);
   };
 
+  // See known-resource-mocks.cjs for what's mocked and why.
+  const applyKnownResourceMocks = (link) => {
+    KNOWN_RESOURCE_MOCKS.forEach(({ pattern, response, overrides }) => {
+      const override = overrides?.find((o) =>
+        o.link instanceof RegExp ? o.link.test(link) : o.link === link
+      );
+      const effectiveResponse = override ? override.response : response;
+      if (effectiveResponse === null) return; // explicit opt-out via override
+      cy.intercept(pattern, effectiveResponse);
+    });
+  };
+
 // Note: On GitHub pages, heading IDs are prefixed with "user-content-".
   const checkGithubFragment = (fragment) => {
     cy.document().then((doc) => {
@@ -121,6 +134,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     
     it(`should validate URL: ${item.link}`, () => {
       const url = item.link;
+      applyKnownResourceMocks(url);
       const fragment = url.includes('#') ? url.split('#').slice(-1)[0] : null;
       const isTextFragment = fragment !== null && fragment.startsWith(':~:text=');
       const isCodexPage = url.includes('/codex/');
@@ -244,13 +258,6 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
             expect(response.status).to.be.oneOf([200, 201, 202, 203, 204, 301, 302, 304]);
             expect(response.body).not.to.be.empty;
           } else {
-            // asciinema.org's embed script (used on some go-c8y-cli docs pages)
-            // never responds when requested from CI runners - confirmed via a
-            // diagnostic run logging every request's start/completion, where this
-            // was the only resource that logged a start but never a completion.
-            // It still blocks the browser's `load` event despite `async`, hanging
-            // cy.visit() indefinitely. Stub it so `load` fires promptly.
-            cy.intercept('**://asciinema.org/**', { statusCode: 204, body: '' });
             cy.visit(url);
             cy.document().its('body').should('not.be.empty');
           }
