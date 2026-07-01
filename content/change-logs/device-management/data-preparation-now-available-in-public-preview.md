@@ -1,5 +1,5 @@
 ---
-date: "2026-06-01"
+date: "2026-07-01"
 title: "Data Preparation now available in Public Preview"
 product_area: "Device management & connectivity"
 change_type:
@@ -31,4 +31,7 @@ Key capabilities include:
 
 To enable Data Preparation, open the right drawer (by clicking on your username initials) in the Administration application and select **Manage preview features**. Then activate the toggle next to **Data Preparation**.
 
+If you use any custom or cloned application (for example a clone of Cockpit or Administration), you may need to upgrade to the latest Web SDK or re-clone the application so that the Data Preparation icon appears in the app switcher from those applications. 
+
 For details, see [Data Preparation](/data-preparation/).
+
