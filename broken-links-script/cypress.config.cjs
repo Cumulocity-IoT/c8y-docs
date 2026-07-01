@@ -5,7 +5,26 @@ module.exports = defineConfig({
   screenshotOnRunFailure: false,
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      // Surfaces cy.task('log', ...) calls to the terminal - used by
+      // diagnostics mode to print request/console logging from the browser.
+      on('task', {
+        log(message) {
+          console.log(message);
+          return null;
+        },
+      });
+
+      // Diagnostics mode: fewer retries and a longer page load timeout give
+      // faster, more informative single-shot runs when investigating one
+      // specific failure, instead of burning through 10 retries at 10s each.
+      // Cypress coerces --env true/false into real booleans, but env vars
+      // set another way could still arrive as the string "true" - handle both.
+      if (config.env && String(config.env.diagnostics) === 'true') {
+        config.pageLoadTimeout = 60000;
+        config.retries = { runMode: 2, openMode: 0 };
+      }
+
+      return config;
     },
     retries: {
       runMode: 10,

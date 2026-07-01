@@ -13,6 +13,11 @@ on:
         description: "Only check links containing this substring (by default checks all links)"
         required: false
         type: string
+      diagnostics:
+        description: 'Enable verbose diagnostics (every network request + console/uncaught errors) - combine with branch + urlsWith to investigate a specific failure'
+        required: false
+        type: boolean
+        default: false
   pull_request:
     types: [labeled]
 
@@ -61,6 +66,12 @@ jobs:
           repository: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name || github.repository }}
           ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || matrix.branch }}
 
+      - name: Sanitize branch name for artifact naming
+        id: sanitize-branch
+        env:
+          BRANCH_NAME: ${{ matrix.branch }}
+        run: echo "name=${BRANCH_NAME//\//-}" >> "$GITHUB_OUTPUT"
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -74,14 +85,26 @@ jobs:
       - name: Run Cypress tests
         env:
           URLS_WITH_INPUT: ${{ inputs.urlsWith }}
+          DIAGNOSTICS_INPUT: ${{ inputs.diagnostics }}
         run: |
           cd broken-links-script
           set -o pipefail
+          args=()
           if [ -n "$URLS_WITH_INPUT" ]; then
-            npm test -- "--urls-with=$URLS_WITH_INPUT" 2>&1 | tee cypress-output.log
-          else
-            npm test 2>&1 | tee cypress-output.log
+            args+=("--urls-with=$URLS_WITH_INPUT")
           fi
+          if [ "$DIAGNOSTICS_INPUT" = "true" ]; then
+            args+=("--diagnostics")
+          fi
+          npm test -- "${args[@]}" 2>&1 | tee cypress-output.log
+
+      - name: Upload Cypress log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-log-${{ steps.sanitize-branch.outputs.name }}
+          path: broken-links-script/cypress-output.log
+          retention-days: 8
 
       - name: Determine label based on branch
         if: always() && github.event_name != 'pull_request' && !inputs.branch
