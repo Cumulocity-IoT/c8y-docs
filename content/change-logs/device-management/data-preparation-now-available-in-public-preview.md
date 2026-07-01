@@ -29,9 +29,7 @@ Key capabilities include:
 - A rule editor with live testing against sample data before deployment.
 - Draft and deployed states for safe iteration without affecting live traffic.
 
-To enable Data Preparation, open the right drawer (by clicking on your username initials) in the Administration application and select **Manage preview features**. Then activate the toggle next to **Data Preparation**.
-
-If you use a custom or duplicated application (for example, a duplicate of Cockpit or Administration), upgrade to the latest Web SDK or duplicate the application again. Otherwise, the Data Preparation icon does not appear in the app switcher in those applications.
+To enable Data Preparation, open the right drawer (by clicking on your username initials) in the Administration application and select **Manage preview features**. Then activate the toggle next to **Data Preparation**. If you use a custom or duplicated application (for example, a duplicate of Cockpit or Administration), upgrade to the latest Web SDK or duplicate the application again. Otherwise, the Data Preparation icon does not appear in the app switcher in those applications.
 
 For details, see [Data Preparation](/data-preparation/).
 
