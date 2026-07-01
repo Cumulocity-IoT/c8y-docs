@@ -25,7 +25,7 @@ jobs:
   determine-branches:
     name: Determine branches to check
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request' || github.event.label.name == 'check-links'
+    if: github.event_name != 'pull_request' || github.event.label.name == 'broken-link-check'
     outputs:
       branches: ${{ steps.set-branches.outputs.branches }}
     steps:
@@ -131,6 +131,6 @@ jobs:
           cd broken-links-script
           node summarize-failures.cjs cypress-output.log "$RUN_URL" > pr-comment.md
 
-          # A new comment per check-links label addition, so the PR history
-          # shows when each check was requested and what it found at the time.
+          # A new comment per broken-link-check label addition, so the PR
+          # history shows when each check was requested and what it found.
           gh api "repos/$GH_REPO/issues/$PR_NUMBER/comments" -X POST -f body=@pr-comment.md
