@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Re-enabled duplication of global smart rules in local contexts
+title: Restored option to duplicate global smart rules in local contexts
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67052
 version: 1023.97.0
 ---
-An earlier update to smart rule management options accidentally disabled duplication of global smart rules into local contexts. This fix restores that capability, so global smart rules can again be duplicated and applied in the context of specific groups and devices.
+An earlier update to smart rule management options removed the option to duplicate global smart rules in local contexts. This fix restores that capability as a "Duplicate as local" option in the smart rule's drop down menu, so global smart rules can again be duplicated and applied in the context of specific group or device.
