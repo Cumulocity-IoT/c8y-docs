@@ -31,7 +31,7 @@ Key capabilities include:
 
 To enable Data Preparation, open the right drawer (by clicking on your username initials) in the Administration application and select **Manage preview features**. Then activate the toggle next to **Data Preparation**.
 
-If you use any custom or cloned application (for example a clone of Cockpit or Administration), you may need to upgrade to the latest Web SDK or re-clone the application so that the Data Preparation icon appears in the app switcher from those applications. 
+If you use a custom or duplicated application (for example, a duplicate of Cockpit or Administration), upgrade to the latest Web SDK or duplicate the application again. Otherwise, the Data Preparation icon does not appear in the app switcher in those applications.
 
 For details, see [Data Preparation](/data-preparation/).
 
