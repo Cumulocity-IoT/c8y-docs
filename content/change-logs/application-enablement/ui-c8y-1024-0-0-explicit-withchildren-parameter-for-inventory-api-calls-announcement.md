@@ -15,17 +15,23 @@ ticket: MTM-64714
 version: 1024.0.0
 environment_availability:
 ---
-Starting with version 1024.0.0, the {{< product-c8y-iot >}} platform changes the server-side default of the `withChildren` query parameter on `/inventory/managedObjects` REST endpoints from `true` to `false` for performance optimization. The entire UI codebase has been adapted to be compatible with the new default.
+Starting with version 1024.0.0, the {{< product-c8y-iot >}} platform changes the server-side
+default of the `withChildren` query parameter on `/inventory/managedObjects` GET endpoints from
+`true` to `false` for performance optimization. Responses no longer include the `childAssets`,
+`childDevices`, and `childAdditions` reference arrays unless `withChildren=true` is set.
 
-Two categories of changes were made:
+This is a server-side change. The Web SDK's `InventoryService` is unchanged — it passes
+`withChildren` straight through and never set a default. The UI codebase has been adapted:
 
-* **AngularJS (legacy modules)**: A new HTTP interceptor `c8yInventoryWithChildrenInterceptor` was added. It automatically appends `withChildren=true` to all GET requests to `/inventory/managedObjects` endpoints (list and detail, including `/childAssets` and `/childDevices` subresources) if the parameter is not already set. This preserves the old behavior for all legacy AngularJS code without requiring individual call-site changes.
-* **Angular (@c8y/ngx-components)**: Every `InventoryService.detail()`, `InventoryService.list()`, and `InventoryService.childAssetsList()` call across `@c8y/ngx-components` was updated to explicitly pass `withChildren: false` where child references are not needed, or `withChildren: true` where they are. This makes each call site's intent explicit rather than relying on the server default.
+* **AngularJS (legacy modules)**: A new HTTP interceptor `c8yInventoryWithChildrenInterceptor`
+  appends `withChildren=true` to `/inventory/managedObjects` GET requests when the parameter is
+  not already set, preserving existing behavior without call-site changes.
+* **Angular (`@c8y/ngx-components`)**: Inventory call sites now pass `withChildren` explicitly.
+  Shipped components behave correctly under the new default; no action is required.
 
-**Breaking change**
+**Migration**
 
-SDK consumers who call `InventoryService.detail()`, `.list()`, `.listQuery()`, `.childAssetsList()`, or `.childDevicesList()` without specifying `withChildren` are affected. Previously, the server returned child references by default; now it does not. Responses have smaller payloads but are missing `childAssets`, `childDevices`, and `childAdditions` references unless explicitly requested.
-
-AngularJS plugin developers are shielded by the interceptor and their existing code continues to work as before.
-
-**Migration**: All `InventoryService` calls that need child references in the response must now explicitly pass `withChildren: true`. Calls that do not need child references should pass `withChildren: false` or omit the parameter, which now defaults to `false` on the server. Review all `inventoryService.detail()` and `inventoryService.list()` call sites in custom code.
+If your custom code reads `childAssets`, `childDevices`, or `childAdditions` from an
+`InventoryService.detail()`, `.list()`, or `.listQuery()` response, add `withChildren: true` to
+those calls. Otherwise those references will be missing once the new default is active for the
+tenant.
