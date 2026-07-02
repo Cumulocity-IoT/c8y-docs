@@ -396,6 +396,54 @@ link.
 `applyDiagnosticNetworkLogging` and `visitWithDiagnostics` - in case it ever
 needs extending, e.g. to capture something beyond network/console activity.)
 
+### Case 6: The target URL itself is intermittently blocked (not a sub-resource)
+
+Easy to confuse with Case 5, but the fix is different, so check which one
+you actually have first:
+
+* **Case 5** (`known-resource-mocks.cjs`): the *link's own* response is fine
+  - it's some *other* resource the page pulls in that hangs/fails.
+* **Case 6** (this case, `excludedLinks`): the link's **own** request/page
+  load is what times out or fails - there's no sub-resource to mock, because
+  the thing that's blocked is the thing under test.
+
+The telltale sign of Case 6 is *inconsistency across otherwise-identical
+runs*: the same URL passes fine on one branch/run and fails completely on
+another run at roughly the same time, or passes fast locally/via `curl` but
+times out in CI. This pattern showed up for `logback.qos.ch`: in one
+historical run, `develop` and `release/y2025` passed it in 2-3s while
+`release/y2026` failed all 4 `logback.qos.ch` URLs, each exhausting all 10
+retries spaced ~10.3s apart (the exact request timeout, every single
+attempt). GitHub Actions assigns a fresh ephemeral IP per job - this pattern
+(one job's every single retry fails identically, at exactly the timeout
+duration, while a sibling job at the same time is fine) points to
+IP-reputation-based blocking on the target site's side, not anything wrong
+with our content. Retries don't help here since the block persists for the
+runner's whole job lifetime, so a longer timeout or more retries wouldn't
+fix it either - the only real fix is `excludedLinks`.
+
+To confirm you have Case 6 rather than Case 5 or a real break:
+
+1. `curl -w '%{http_code} %{time_total}\n' -o /dev/null <url>` - if it's
+   fast and correct from outside CI too, that only rules out "genuinely
+   broken," not Case 5 vs Case 6.
+2. Use diagnostics mode (`branch` + `urlsWith` + `diagnostics=true`) on the
+   failing branch to get one real CI-runner data point.
+3. **Look at other branches/runs around the same time** in the workflow run
+   history (`gh run list --workflow "Link Checker"`, then
+   `gh run view <id> --log-failed`) - if the same URL passed cleanly and
+   fast on a sibling matrix job in the very same run, that's strong evidence
+   you're looking at IP/runner-specific flakiness (Case 6), not a real
+   problem in the page's own content or an embedded resource.
+4. Check the retry timing in the failed job's log: consistent spacing at
+   exactly the configured timeout, on every single attempt, indicates a hard
+   per-job block (Case 6). A mix of fast passes and occasional slow/failed
+   attempts is more consistent with genuine transient network flakiness.
+
+Only add to `excludedLinks` once you've confirmed there's no specific
+sub-resource to mock (Case 5) and no content issue (Case 1/4) - this is the
+"nothing else fits" fallback the file's own comment describes it as.
+
 ## Recommended maintenance process
 
 When a link-check issue is created:
@@ -403,18 +451,32 @@ When a link-check issue is created:
 1. Open the failed workflow run.
 2. Check the failed URL.
 3. Identify the source Markdown file.
-4. Decide whether it is:
+4. If it's not obviously a real broken link/anchor (Case 1/4), don't guess -
+   reproduce with evidence rather than pattern-matching on the error text.
+   Dispatch the workflow with `branch` + `urlsWith` + `diagnostics=true` on
+   the actual failing branch (many of these failures don't reproduce
+   locally at all - CI runners have different network egress than a laptop).
+5. Decide which case it is (see "How to handle failing links" above for the
+   full decision criteria for each):
 
-   * a real broken link
-   * a timeout or anti-bot case affecting the link itself
-   * a hang caused by an unrelated third-party resource on the target page
-   * a harmless JavaScript exception
-5. Apply the fix in the correct place:
+   * a real broken link or anchor mismatch (Case 1/4)
+   * a timeout/block affecting the **target URL itself**, inconsistent
+     across sibling branches/runs at the same time (Case 6)
+   * a hang caused by an unrelated **sub-resource** on the target page
+     (Case 5)
+   * a harmless JavaScript exception - only actionable if it's on a
+     `cumulocity.com` page (Case 3); everything else is already handled
+6. Apply the fix in the correct place:
 
    * source Markdown content
-   * `excludedLinks` in `link-checker.cy.js`
-   * `known-resource-mocks.cjs`
-   * exception handling in `cypress/support/e2e.js`
-6. Re-run locally.
-7. Commit and push the fix.
+   * `excludedLinks` in `link-checker.cy.js` (Case 2/6)
+   * `known-resource-mocks.cjs` (Case 5)
+   * exception handling in `cypress/support/e2e.js` (Case 3, `cumulocity.com` only)
+7. Re-run locally to confirm the specific fix.
+8. If the fix touched `excludedLinks`, `known-resource-mocks.cjs`, or the
+   exception-handling logic (as opposed to a single link's content), run the
+   **full, unfiltered** suite at least once (locally if time allows,
+   otherwise via CI dispatch with no `urlsWith` filter) before considering
+   it safe.
+9. Commit and push the fix.
 
