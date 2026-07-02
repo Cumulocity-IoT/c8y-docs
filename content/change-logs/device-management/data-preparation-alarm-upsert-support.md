@@ -20,7 +20,4 @@ This feature is in Public Preview, that is, it is not enabled by default and may
 
 Data Preparation now supports alarm updates. This applies upsert behavior equivalent to [Create or update an alarm](https://cumulocity.com/api/core/#operation/postAlarmUpsertResource):
 
-- If an alarm with the same device and `type` exists and is not `"CLEARED"`, that alarm is updated.
-- Otherwise, a new alarm is created, defaulting `severity` to `"MAJOR"`, `status` to `"ACTIVE"`, and `time` to the current time.
-
-For details, see [Alarm](/data-preparation/smart-functions-bundle/data-types/#alarm).
+For details, see [Alarm](/data-preparation/smart-functions/#alarm).
