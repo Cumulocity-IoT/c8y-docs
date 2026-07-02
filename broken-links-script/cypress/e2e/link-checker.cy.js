@@ -46,6 +46,17 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     // Links from opentelemetry.io always time out although they load fine in a browser
     /https:\/\/opentelemetry.io\//,
 
+    // logback.qos.ch intermittently hard-blocks an entire CI job (all
+    // retries fail identically, consistently spaced ~10s apart - the exact
+    // request timeout) while passing fine on other runs/branches in the
+    // same workflow run at the same time. Confirmed via a diagnostics-mode
+    // run and cross-referencing parallel matrix jobs: this points to
+    // IP-reputation-based blocking on logback.qos.ch's side tied to
+    // whichever ephemeral runner IP GitHub Actions assigns - unrelated to
+    // whether the link is valid, and retries don't help since the block
+    // persists for the runner's whole job lifetime.
+    /logback\.qos\.ch/,
+
     // Timeout links
     "https://openjdk.org/jeps/252",
 
