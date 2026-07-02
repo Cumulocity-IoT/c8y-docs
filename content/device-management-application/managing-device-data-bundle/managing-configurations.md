@@ -27,14 +27,18 @@ Click **Configuration repository** in the the **Management** menu in the navigat
 3. In the **Device type** field, enter a device type. The device type can be found in the **Info** tab of the target device.
 4. Optionally enter a description for the configuration.
 5. Enter the configuration type, for example "ssh".
-6. Specify the configuration snapshot file by either uploading it from the file system, specifying a URL from where the configuration snapshot can be obtained or choosing a file.
-7. Click **Add configuration**.
+6. Select how to provide the configuration content:
+   - To upload an existing file, upload it from the file system, specify a URL from where the configuration snapshot can be obtained, or select a file from the repository.
+   - To create a configuration directly in the browser, open the bottom drawer editor and enter the content in the Codex Editor component. If required, use the full-screen editor mode in the drawer for larger files.
+7. Save the content and click **Add configuration**.
 
 The configuration snapshot will be added to the configuration repository.
 
 ### To edit a configuration snapshot {#to-edit-a-configuration-snapshot}
 
 To edit a configuration snapshot, click on the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the row and then click **Edit**.
+
+You can update the metadata fields and edit the configuration content directly in the browser. The configuration opens in the bottom drawer editor with the Codex Editor component, where you can work in place and use the full-screen mode for better visibility.
 
 For details on the fields, see [To add a configuration snapshot](#to-add-a-configuration-snapshot).
 
