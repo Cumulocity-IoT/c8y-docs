@@ -1106,14 +1106,14 @@ For more information, see the <a target="_blank" rel="external noopener" href="{
 <tbody>
 <tr>
 <th scope="row">Object</th>
-<td><span>Used to substitute identifiers that are not prefixed with <tt>source.</tt>. For example, <tt>#{name}</tt> or <tt>#{timestamp}</tt>. Only output of any block other than Managed Object Input block should be connected to this input port.</span>
+<td><span>Used to substitute identifiers that are not prefixed with <tt>source.</tt>. For example, <tt>#{name}</tt> or <tt>#{timestamp}</tt>. The output of the Managed Object Input block should be connected to the Source input port instead of this input port.</span>
 </td>
 <td><span>any</span>
 </td>
 </tr>
 <tr>
 <th scope="row">Source</th>
-<td><span>Used to substitute identifiers that are prefixed with <tt>source.</tt>. For example, <tt>#{source.name}</tt>. Only output of Managed Object Input block should be connected to this input port.</span>
+<td><span>Used to substitute identifiers that are prefixed with <tt>source.</tt>. For example, <tt>#{source.name}</tt>. Only the output of the Managed Object Input block should be connected to this input port.</span>
 </td>
 <td><span>any</span>
 </td>
