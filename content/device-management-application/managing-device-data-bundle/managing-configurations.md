@@ -38,7 +38,7 @@ The configuration snapshot will be added to the configuration repository.
 
 To edit a configuration snapshot, click on the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the row and then click **Edit**.
 
-You can update the metadata fields and edit the configuration content directly in the browser. The configuration opens in the bottom drawer editor with the **Codex editor** component. You can work in place and use full-screen mode for better visibility.
+You can update the metadata fields and edit the configuration content directly in the browser. The configuration opens in the bottom drawer editor with the **Codex editor** component. You can work in-place and use full-screen mode for better visibility.
 
 For details on the fields, see [To add a configuration snapshot](#to-add-a-configuration-snapshot).
 
