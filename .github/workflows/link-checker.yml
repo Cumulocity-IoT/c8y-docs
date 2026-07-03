@@ -14,7 +14,7 @@ on:
         required: false
         type: string
       diagnostics:
-        description: 'Enable verbose diagnostics (every network request + console/uncaught errors) - combine with branch + urlsWith to investigate a specific failure'
+        description: "Enable verbose diagnostics (every network request + console/uncaught errors) - combine with branch + urlsWith to investigate a specific failure"
         required: false
         type: boolean
         default: false
@@ -156,4 +156,4 @@ jobs:
 
           # A new comment per broken-link-check label addition, so the PR
           # history shows when each check was requested and what it found.
-          gh api "repos/$GH_REPO/issues/$PR_NUMBER/comments" -X POST -f body=@pr-comment.md
+          gh api "repos/$GH_REPO/issues/$PR_NUMBER/comments" -X POST -F body=@pr-comment.md
