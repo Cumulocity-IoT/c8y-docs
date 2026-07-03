@@ -136,7 +136,8 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
           try {
             diagnosticLog.push(`DONE ${res.statusCode} ${Date.now() - start}ms ${req.url}`);
           } catch (e) {
-            // never let logging break the request
+            // never let logging break the request, but don't lose the exception either
+            diagnosticLog.push(`[diagnostic logger error] ${e.message}`);
           }
         });
       } catch (e) {
@@ -162,7 +163,8 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
           try {
             diagnosticLog.push(`console.${level}: ${args.map(String).join(' ')}`);
           } catch (e) {
-            // ignore
+            // never let logging break the page, but don't lose the exception either
+            diagnosticLog.push(`[diagnostic logger error] ${e.message}`);
           }
           original.apply(win.console, args);
         };
