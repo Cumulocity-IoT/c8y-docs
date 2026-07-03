@@ -19,7 +19,7 @@ broken-links-script/
 │   └── support/
 │       └── e2e.js
 ├── Extractlinks.js
-├── known-resource-mocks.cjs
+├── config.cjs
 ├── package.json
 └── README.md
 ```
@@ -169,6 +169,12 @@ For each branch, the workflow:
 
 ## Where to update the code
 
+All repo/site-specific customization - own domains, excluded links, and
+third-party resource mocks - lives in `config.cjs`. The mechanisms that
+consume it (`cypress/e2e/link-checker.cy.js`) are meant to stay generic, so
+adapting this checker for a different repo should mostly mean editing
+`config.cjs`, not the test file itself.
+
 ### 1. Add or update timeout or excluded links
 
 If a link is valid in a browser but fails in automation because of:
@@ -179,14 +185,14 @@ If a link is valid in a browser but fails in automation because of:
 * access restrictions
 * unstable third-party behavior
 
-add it to the `excludedLinks` array in `cypress/e2e/link-checker.cy.js`.
+add it to the `excludedLinks` array in `config.cjs`.
 
 Example:
 
 ```js
-const excludedLinks = [
-  "https://example.com/some-page"
-];
+excludedLinks: [
+  "https://example.com/some-page",
+]
 ```
 
 You can also leave a short reason above it:
@@ -207,8 +213,8 @@ browser's `load` event and causing `cy.visit()` to time out. This is
 different from `excludedLinks`: the link itself is valid, only some
 incidental sub-resource the page pulls in is the problem.
 
-For this case, add an entry to `known-resource-mocks.cjs` instead of
-excluding the link. Every entry there is applied automatically before every
+For this case, add an entry to the `resourceMocks` array in `config.cjs`
+instead of excluding the link. Every entry there is applied automatically before every
 `cy.visit()`, via `cy.intercept()`, so the flaky resource gets an immediate
 mocked response instead of hitting the real network:
 
@@ -247,7 +253,7 @@ this) — don't reach for this to paper over an actually broken link.
 ### 3. Add known browser exceptions
 
 Uncaught JS exceptions are already tolerated automatically for any page
-outside `cumulocity.com` (see `OWN_DOMAINS` in `cypress/e2e/link-checker.cy.js`)
+outside the domains listed in `ownDomains` in `config.cjs`
 - a third-party site's own console errors (analytics pixels, chat widgets,
 etc.) aren't signal about whether the link pointing to it is valid, so we
 don't fail on them regardless of message text. What still matters for those
@@ -323,7 +329,7 @@ So the error message should help trace where the link came from.
 
 ### Case 2: The link works manually but times out in Cypress
 
-If the site is slow, blocks bots, or is unstable, add it to `excludedLinks` in `cypress/e2e/link-checker.cy.js`.
+If the site is slow, blocks bots, or is unstable, add it to `excludedLinks` in `config.cjs`.
 
 Add a short comment explaining why.
 
@@ -388,7 +394,7 @@ artifact (uploaded on every run, kept for 8 days) or by grepping the run's
 logs for `[DIAGNOSTIC]`.
 
 Once you've identified the exact resource or error, add it to
-`known-resource-mocks.cjs` (see item 2 above) rather than excluding the
+`resourceMocks` in `config.cjs` (see item 2 above) rather than excluding the
 link.
 
 (For reference, the underlying instrumentation lives in
@@ -401,7 +407,7 @@ needs extending, e.g. to capture something beyond network/console activity.)
 Easy to confuse with Case 5, but the fix is different, so check which one
 you actually have first:
 
-* **Case 5** (`known-resource-mocks.cjs`): the *link's own* response is fine
+* **Case 5** (`resourceMocks` in `config.cjs`): the *link's own* response is fine
   - it's some *other* resource the page pulls in that hangs/fails.
 * **Case 6** (this case, `excludedLinks`): the link's **own** request/page
   load is what times out or fails - there's no sub-resource to mock, because
@@ -469,11 +475,11 @@ When a link-check issue is created:
 6. Apply the fix in the correct place:
 
    * source Markdown content
-   * `excludedLinks` in `link-checker.cy.js` (Case 2/6)
-   * `known-resource-mocks.cjs` (Case 5)
+   * `excludedLinks` in `config.cjs` (Case 2/6)
+   * `resourceMocks` in `config.cjs` (Case 5)
    * exception handling in `cypress/support/e2e.js` (Case 3, `cumulocity.com` only)
 7. Re-run locally to confirm the specific fix.
-8. If the fix touched `excludedLinks`, `known-resource-mocks.cjs`, or the
+8. If the fix touched `excludedLinks`, `resourceMocks`, or the
    exception-handling logic (as opposed to a single link's content), run the
    **full, unfiltered** suite at least once (locally if time allows,
    otherwise via CI dispatch with no `urlsWith` filter) before considering
