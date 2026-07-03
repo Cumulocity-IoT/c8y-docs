@@ -53,6 +53,7 @@ The following limitations and constraints apply to the Service:
 * **Data model performance**: The Service stores data using a standardized tabular schema optimized for write performance and a broad range of analytical use cases. This schema is not optimally performant for all query patterns. For applications requiring maximum query performance, you must implement post-processing to create optimized data models (for example, "gold-layer" tables) or leverage query acceleration features within the query engine (for example, "reflections").
 * **Cost profile variations**: The Service balances data timeliness against cost-efficiency of the underlying storage operations (for example, Amazon S3). The internal mechanisms that manage this trade-off (for example, data batching frequency) are part of the Service's evolving software implementation. As the Service is updated and optimized over time, the hyperscaler cost profile of your usage varies. For example, a future update designed to improve query performance might result in a different ratio of API requests to data volume than a previous version.
 * **Storage reclamation delay**: Apache Iceberg retains historical data versions and deleted files for a period of time to ensure data integrity. These files are permanently removed during periodic, automated cleanup cycles. This intentional delay in file deletion affects your total billed storage, as physical storage space is not reclaimed in real-time.
+* **Per tenant traffic limit**: A maximum of 1,500 sustained messages per second can currently be processed for a single tenant.
 
 ### Service quality
 
@@ -60,10 +61,10 @@ The following limitations and constraints apply to the Service:
 
 The quality of the Service is measured by the following objectives:
 
-| Service level indicator | Monthly target                   |
-| ----------------------- | -------------------------------- |
-| Catalog availability    | ≥ 99.9%                          |
-| Data freshness          | ≤ 10 minutes in 95% of the cases |
+| Service level indicator | Monthly target                               |
+| ----------------------- | -------------------------------------------- |
+| Catalog availability    | ≥ 99.9%                                      |
+| Data freshness          | 95 percentile of sustained load ≤ 10 minutes |
 
 
 #### Service-level indicator definitions
@@ -71,4 +72,6 @@ The quality of the Service is measured by the following objectives:
 The service quality indicators are defined as follows:
 
 * **Catalog Availability**: The uptime of the Iceberg catalog service, as defined by the [{{< company-c8y >}} service availability terms](/service-terms/service-level/#service-availability).
-* **Data Freshness**: The average time between a data record's arrival in the {{< product-c8y-iot >}} platform (post-preparation) and its availability for query in the data lake, measured over a calendar month.
+* **Data Freshness**: The time between message arrival in the {{< product-c8y-iot >}} platform (post-preparation) and its availability for query in the data lake, measured over a calendar month.
+* **95 percentile**: 95 percent of the messages arrived within the service level objective.
+* **Sustained load**: The regular and predictable steady-state traffic imposed on the cloud service APIs. Sustained load is the 95 percentile of the previous 30 day requests per second.
