@@ -12,7 +12,9 @@ Streaming Lake Ingestion is an optional service in {{< product-c8y-iot >}}. To s
 {{< c8y-admon-info >}}
 The download may take a while to complete. For more information, see [Monitoring the data lake storage](#monitoring-the-data-lake-storage).
 
-The service stores only new data incoming after subscription. It does not automatically move data stored in the {{< product-c8y-iot >}} operational store before subscription. For more information, see [Migrating to data lake storage](#migrating-to-data-lake-storage).
+The `latest_inventory` tables are pre-populated with your full current inventory at subscription time. Alarms, events, measurements and operations are only recorded for changes that occur after subscription. For historical data, see [Migrating to data lake storage](#migrating-to-data-lake-storage).
+
+The tenant option `CDH_ASSET_WHITELIST` is automatically set on your tenant. This allows granting the tenant's default Dremio user access to the Iceberg source, which is required to read data via the DataHub REST API. Do not change this option.
 {{< /c8y-admon-info >}}
 
 ### Analyzing lake data {#analyzing-lake-data-using-sql}
@@ -77,6 +79,72 @@ $ curl -u "admin:$PASS" \
 }
 ```
 
+#### Obtaining Iceberg catalog credentials {#obtaining-iceberg-catalog-credentials}
+
+To connect to the Cumulocity Iceberg catalog directly — for example, from Apache Spark, Databricks, or a custom application — you need OAuth2 client credentials. As a tenant administrator, you can create and manage named catalog principals using the Manager API.
+
+**Prerequisites**
+
+* Your Cumulocity user must have the `ROLE_TENANT_ADMIN` role.
+* Your tenant must be subscribed to Streaming Lake Ingestion.
+* Principal names must be strictly alphanumeric — letters and digits only, no dashes or underscores (for example, `spark1` or `dremioqa`).
+
+**Creating a principal**
+
+Send a `POST` request to create a named principal. The response contains the `clientId` and `clientSecret` required to authenticate against the Iceberg catalog.
+
+```shell
+curl -s -X POST \
+  "https://<TENANT_DOMAIN>/service/offloading/api/v1/principals/<NAME>" \
+  -u "<USER>:<PASS>"
+```
+
+```json
+{
+  "name":         "<NAME>",
+  "clientId":     "<TENANTID>-<NAME>",
+  "clientSecret": "<SECRET>"
+}
+```
+
+{{< c8y-admon-important >}}
+The `clientSecret` is returned only once and is never stored by the service. Store it securely immediately after creation. If the secret is lost, rotate the principal to issue new credentials — rotating immediately invalidates the previous secret.
+{{< /c8y-admon-important >}}
+
+**Listing principals**
+
+To list the names of all principals for your tenant:
+
+```shell
+curl -s \
+  "https://<TENANT_DOMAIN>/service/offloading/api/v1/principals" \
+  -u "<USER>:<PASS>"
+```
+
+**Rotating credentials**
+
+To replace a lost or compromised secret. The previous secret is immediately invalidated.
+
+```shell
+curl -s -X PUT \
+  "https://<TENANT_DOMAIN>/service/offloading/api/v1/principals/<NAME>" \
+  -u "<USER>:<PASS>"
+```
+
+**Deleting a principal**
+
+To revoke a principal's catalog access immediately:
+
+```shell
+curl -s -X DELETE \
+  "https://<TENANT_DOMAIN>/service/offloading/api/v1/principals/<NAME>" \
+  -u "<USER>:<PASS>"
+```
+
+{{< c8y-admon-info >}}
+A maximum of 100 principals can be created per tenant by default.
+{{< /c8y-admon-info >}}
+
 #### Using the Iceberg catalog from Apache Spark
 
 [Apache Spark](https://spark.apache.org/) is a distributed computing framework that seamlessly integrates with the Cumulocity Iceberg catalogs to provide full SQL-based data processing through a standard [Iceberg REST catalog interface](https://iceberg.apache.org/rest-catalog-spec/).
@@ -84,7 +152,7 @@ $ curl -u "admin:$PASS" \
 Use [OpenID Connect](https://openid.net/developers/how-connect-works/) with a client credentials grant type to authenticate against the Cumulocity Iceberg REST catalog.
 
 {{< c8y-admon-info >}}
-For the preview release, obtain your personal client ID and client credentials by contacting the preview support.
+To obtain client credentials for the Iceberg catalog, see [Obtaining Iceberg catalog credentials](#obtaining-iceberg-catalog-credentials).
 {{< /c8y-admon-info >}}
 
 The URL of the OpenID Connect server is
@@ -133,7 +201,7 @@ spark-sql (default)> select * from c8y.cdc_inventory.inventory;
 
 #### Using the Iceberg catalog from other applications
 
-Access the catalog from other applications using the `curl` example below. First, get an access token to the catalog.
+Access the catalog from other applications using the `curl` example below. To obtain the `<CLIENT_ID>` and `<CLIENT_SECRET>` referenced in this section, see [Obtaining Iceberg catalog credentials](#obtaining-iceberg-catalog-credentials). First, get an access token to the catalog.
 
 ```shell
 $  curl -X POST https://iceberg.<INSTANCE>:19120/api/catalog/v1/oauth/tokens \
@@ -294,6 +362,10 @@ In addition, the service stores the latest data in corresponding tables in the `
 | 47635 | 2025-08-20T13:41:39.678Z | Tracker #1 | device_123 | sb_nano | …   | 10           |
 
 Since the table reflects the only latest state of the inventory and not the entire change history, no `eventType` column is provided.
+
+{{< c8y-admon-info >}}
+The `latest_inventory` tables are pre-populated at subscription time with all managed objects that exist in your inventory. Unlike the change data capture tables, which only record changes that occur after subscription, `latest_inventory` reflects the complete current state from the start. The initial population may take a while for large tenants.
+{{< /c8y-admon-info >}}
 
 **Table: latest_inventory.c8y_Position**
 
@@ -902,4 +974,5 @@ To improve query performance for your specific applications, you have several op
 * Pre-process the data before it enters {{< product-c8y-iot >}} using Edge functionality or Data Preparation functions.
 * Process the data within {{< product-c8y-iot >}} using Streaming Analytics or a custom microservice to create refined data streams.
 * Post-process the data in the data lake by creating your own aggregated "gold layer" tables using external data lake tools.
+
 

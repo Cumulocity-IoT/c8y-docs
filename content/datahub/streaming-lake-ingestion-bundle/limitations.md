@@ -6,7 +6,6 @@ layout: redirect
 
 The current preview version includes a number of functional limitations as outlined in this section.
 
-* Inventory synchronization is not yet automatically executed on subscription.
 * `latest` data is only recorded for the inventory.
 * Delete events are only recorded for the inventory change data capture, not for the latest inventory.
 * Custom top-level properties in measurements are ignored.
