@@ -200,8 +200,8 @@ Use this for links that should be skipped completely.
 
 ### 2. Mock a known-problematic third-party resource
 
-Sometimes the link under test is fine, but the page it points to embeds a
-third-party resource (analytics, an embed widget, a tracking pixel, etc.)
+Sometimes the link under test is fine, but the page it points to loads a
+third-party resource (analytics, an embedded widget, a tracking pixel, etc.)
 that is unreachable or hangs specifically from CI runners, blocking the
 browser's `load` event and causing `cy.visit()` to time out. This is
 different from `excludedLinks`: the link itself is valid, only some
