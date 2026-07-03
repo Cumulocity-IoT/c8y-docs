@@ -1,13 +1,5 @@
 const allUrls = require('../../all_links.json');
-const KNOWN_RESOURCE_MOCKS = require('../../known-resource-mocks.cjs');
-
-// Domains we actually own/publish - a JS error on one of these could mean a
-// real bug worth catching. Everywhere else, an uncaught exception isn't
-// signal about whether the link is valid (see the describe-level
-// uncaught:exception handler below); what matters there is already covered
-// by the test's real assertions (status code, non-empty body, fragment
-// existence).
-const OWN_DOMAINS = ['cumulocity.com'];
+const { ownDomains: OWN_DOMAINS, excludedLinks, resourceMocks: KNOWN_RESOURCE_MOCKS } = require('../../config.cjs');
 
 describe('Link and Routing Validation - Individual URL Checks', () => {
   const urlsWith = Cypress.env('urlsWith') || null;
@@ -27,43 +19,6 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
   let completedTests = 0;
   const totalTests = urls.length;
-
-  /**
-   * Links to skip during validation.
-   * Each entry is either an exact URL string or a RegExp that is tested against the link.
-   * Add entries here for links that are known to fail due to anti-bot protection, timeouts,
-   * or other external factors unrelated to broken links in the documentation.
-   *
-   * @type {Array<string|RegExp>}
-   */
-  const excludedLinks = [
-    // MathWorks URL uses anti-bot protection, Cypress cannot reliably load it
-    "https://de.mathworks.com/help/predmaint/ug/remaining-useful-life-estimation-using-convolutional-neural-network.html",
-
-    // Medium blog uses anti-bot protection, Cypress cannot reliably load it
-    "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6",
-    
-    // Links from opentelemetry.io always time out although they load fine in a browser
-    /https:\/\/opentelemetry.io\//,
-
-    // logback.qos.ch intermittently hard-blocks an entire CI job (all
-    // retries fail identically, consistently spaced ~10s apart - the exact
-    // request timeout) while passing fine on other runs/branches in the
-    // same workflow run at the same time. Confirmed via a diagnostics-mode
-    // run and cross-referencing parallel matrix jobs: this points to
-    // IP-reputation-based blocking on logback.qos.ch's side tied to
-    // whichever ephemeral runner IP GitHub Actions assigns - unrelated to
-    // whether the link is valid, and retries don't help since the block
-    // persists for the runner's whole job lifetime.
-    /logback\.qos\.ch/,
-
-    // Timeout links
-    "https://openjdk.org/jeps/252",
-
-    // latlong.net fails to load in Cypress (getting 403)
-    "https://www.latlong.net/",
-  ];
-
 
   const expectFragmentExists = (doc, fragment) => {
     const decodedFragment = decodeURIComponent(fragment);
@@ -98,7 +53,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     cy.wrap(url).should('not.match', /[()]/, `URL should not contain unencoded parentheses: ${url}`);
   };
 
-  // See known-resource-mocks.cjs for what's mocked and why.
+  // See config.cjs (resourceMocks) for what's mocked and why.
   const applyKnownResourceMocks = (link) => {
     KNOWN_RESOURCE_MOCKS.forEach(({ pattern, response, overrides }) => {
       const override = overrides?.find((o) =>
@@ -208,7 +163,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   });
 
   // Only fail on an uncaught exception when it happens on a page we own
-  // (see OWN_DOMAINS above) - a JS error on some third-party site a link
+  // (see ownDomains in config.cjs) - a JS error on some third-party site a link
   // points to isn't signal about whether that link is valid. Registered
   // once here (not per-test) since Cypress.on persists for the whole run;
   // cypress/support/e2e.js still has its own uncaught:exception handler for
@@ -250,7 +205,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       // the request straight to the real server, bypassing earlier
       // registrations entirely. Mocks must be registered AFTER (i.e. win
       // over) the diagnostic logger, or diagnostics mode would silently
-      // re-introduce hangs that are already fixed via known-resource-mocks.
+      // re-introduce hangs that are already fixed via config.cjs's resourceMocks.
       applyDiagnosticNetworkLogging();
       applyKnownResourceMocks(url);
       const fragment = url.includes('#') ? url.split('#').slice(-1)[0] : null;
