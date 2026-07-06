@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix dashboard themes to inherit custom brandings (#11809) [backport release/y2026] (#12335)
+title: Dashboards now correctly inherit custom branding
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
