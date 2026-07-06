@@ -74,8 +74,8 @@ An alarm represents an error or alert condition. Alarm payloads include a severi
 
 When Data Preparation sends an `Alarm`, the platform applies upsert API behavior equivalent to [Create or update an alarm](https://cumulocity.com/api/core/#operation/postAlarmUpsertResource).
 
-- If an alarm with the same device (identified via `externalSource`, see [Common fields](#common-fields)) and `type` exists and its status is not `"CLEARED"`, the existing alarm is updated.
-- If no matching non-cleared alarm exists, a new alarm is created. On create, if omitted, `severity` defaults to `"MAJOR"`, `status` defaults to `"ACTIVE"`, and `time` defaults to the current time.
+- If an alarm with the same device (identified via `externalSource`, see [Common fields](#common-fields)) and `type` exists and its status is not `"CLEARED"`, the existing alarm is updated and the count is incremented. Custom fragments that are set to null will be deleted. Other fragments that are set to null or omitted, will retain their existing values.
+- If no matching non-cleared alarm exists, a new alarm is created. On create, if omitted or set to null, `severity` defaults to `"MAJOR"`, `status` defaults to `"ACTIVE"`, and `time` defaults to the current time.
 
 #### Operation {#operation}
 
