@@ -11,8 +11,8 @@ component:
 build_artifact:
     - value: "tc-wYIY0MBDO"
       label: "dtm"
-ticket: ""
+ticket: "CTM-3059"
 version: "1023.3.5"
 ---
 The Digital Twin Manager application has been upgraded to the Cumulocity
-Web SDK version 1023.14.180 to address customer reported vulnerability.
+Web SDK version 1023.14.180.
