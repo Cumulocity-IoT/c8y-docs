@@ -16,7 +16,7 @@ version: "1025.8.0"
 ---
 The OpenAPI of DTM is now available in the API Documentation application
 which shows all known OpenAPI documentations in the current tenant. The
-OpenAPI Documentation plugin in the DTM application is now removedand
+OpenAPI Documentation plugin in the DTM application is now removed and
 users should migrate to the API Documentation application.
 If the API Documentation application is not visible in your application
 switcher, you can deploy it through **Administration** > **Ecosystem** >
