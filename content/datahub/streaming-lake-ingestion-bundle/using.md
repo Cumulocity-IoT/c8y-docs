@@ -570,6 +570,8 @@ The columns represent the [properties of a {{< product-c8y-iot >}} operation](ht
 
 "Null" values are stored as Iceberg "null" values.
 
+Empty JSON objects (`{}`) and empty arrays (`[]`) carry no data to store. They are omitted from the input and treated the same as an absent or "null" property, rather than being converted to a value of the column's data type.
+
 {{< c8y-admon-info >}}
 For more information related to Iceberg data types, please refer to the [Iceberg specification](https://iceberg.apache.org/spec/#semi-structured-types). Note that there are various [structural limits](/service-terms/quotas/) that the service implements to ensure that common upstream query engines can interact with the data produced by the service.
 {{< /c8y-admon-info >}}
