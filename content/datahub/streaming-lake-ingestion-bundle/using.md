@@ -661,13 +661,13 @@ The first-character restriction is checked before escaping is applied. If the fi
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
-In the character string "\_x", the "\_" is encoded to its binary representation "\_x005F" to prevent name clashes. For example, "axis_x" would be shown as "axis_0x005Fx".
+In the character string "\_x", the "\_" is encoded to its binary representation "\_x005F" to prevent name clashes. For example, "axis_x" would be shown as "axis_x005Fx".
 
 The sanitization method originates from
 the [Apache Avro specification](https://avro.apache.org/docs/1.8.1/spec.html#names) and Iceberg's Avro support.
 {{< /c8y-admon-info >}}
 
-Characters are case-sensitive, but identifiers of tables and columns must be unique in a case-insensitive way. When the column or table name is not unique, a unique suffix is automatically appended to the name.The suffix is generated based on the original name as a binary code where uppercase letters are represented as 1 and lowercase letters as 0. This binary code is then converted to a hexadecimal number and appended to the name in the format `{name}__{suffix}`. For example:
+Characters are case-sensitive, but identifiers of tables and columns must be unique in a case-insensitive way. When the column or table name is not unique, a unique suffix is automatically appended to the name. The suffix is generated based on the original name as a binary code where uppercase letters are represented as 1 and lowercase letters as 0. This binary code is then converted to a hexadecimal number and appended to the name in the format `{name}__{suffix}`. For example:
 
 | Input  | Binary | Hex | Output     |
 | ------ | ------ | --- | ---------- |
