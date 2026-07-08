@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Raise Quick Links widget URL limit to 2000 with validation message.
+title: Increased length limit of URLs in Quick Links widget to 2000 characters
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
