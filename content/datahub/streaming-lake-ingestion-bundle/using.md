@@ -553,8 +553,8 @@ This results in the following data in the data lake:
 **Table: cdc_operation.operation**
 
 | <span style="display: inline-block; width: 160px;">eventType</span> | <span style="display: inline-block; width: 210px;">creationTime</span> | <span style="display: inline-block; width: 80px;">deviceId</span> | <span style="display: inline-block; width: 80px;">agentId</span> | <span style="display: inline-block; width: 80px;">status</span> | <span style="display: inline-block; width: 100px;">description</span> | <span style="display: inline-block; width: 60px;">id</span> | <span style="display: inline-block; width: 210px;">lastUpdated</span> | <span style="display: inline-block; width: 130px;">fragments</span> |
-| ------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| OPERATION_CREATE                                                    | 2025-08-21T13:42:39.678Z                                               | 47635                                                             | 47635                                                            | PENDING                                                         | null                                                                  | 12345                                                       | 2025-08-21T13:42:39.678Z                                              | \[c8y_Restart\]                                                     |
+| ------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| OPERATION_CREATE                                                    | 2025-08-21T13:42:39.678Z                                               | 47635                                                             | 47635                                                            | PENDING                                                           | null                                                                  | 12345                                                        | 2025-08-21T13:42:39.678Z                                                | \[c8y_Restart\]                                                       |
 
 The columns represent the [properties of a {{< product-c8y-iot >}} operation](https://cumulocity.com/api/core/#operation/getOperationCollectionResource). If you do not provide an optional property, the service stores it as a SQL "null" value.
 
@@ -652,9 +652,13 @@ Note that the order in which messages are sent to {{< product-c8y-iot >}} and th
 
 #### Naming {#naming}
 
-The Iceberg data lake supports only names consisting of characters, numbers (if not the first character), underscores, and dashes. Other characters are represented by the character string "\_x" followed by the hexadecimal Unicode value of the character. This applies to table and property names.
+The Iceberg data lake supports names consisting of characters, numbers, underscores, and dashes — **except as the first character, which must always be a letter (a-z, A-Z)**. Digits, underscores, dashes, and any other character are not permitted in the first position, even though they are permitted elsewhere in the name. Other characters are represented by the character string "\_x" followed by the hexadecimal Unicode value of the character. This applies to table and property names, at any nesting level.
 
 For example, if you use the property name "switch:status" in the data sent to {{< product-c8y-iot >}}, the corresponding Iceberg column name is "switch_x003Astatus".
+
+{{< c8y-admon-info >}}
+The first-character restriction is checked before escaping is applied. If the first character of a name is not already a letter, the whole field or fragment is rejected as an [illegal field name](#limits-of-streaming-lake-ingestion) rather than being escaped. For example, replacing a leading special character with an underscore (a common client-side sanitization approach) does not make the name valid, since an underscore is not a letter.
+{{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
 In the character string "\_x", the "\_" is encoded to its binary representation "\_x005F" to prevent name clashes. For example, "axis_x" would be shown as "axis_0x005Fx".
@@ -775,7 +779,7 @@ The following data is moved to the `trash` table.
 
 ##### Examples
 
-**Illegal field name**: An underscore cannot be the first character of a property.
+**Illegal field name**: The first character of a property or fragment name must be a letter (a-z, A-Z). Digits, underscores, dashes, or any other character in the first position cause the field to be rejected rather than escaped. See [Naming](#naming) for details.
 
 ```json
 {
@@ -783,6 +787,16 @@ The following data is moved to the `trash` table.
         "nestedObject": {
             "_invalidFieldName": "test"
         }
+    }
+}
+```
+
+The same rule applies to fragment (table) names and to a number in the first position, for example:
+
+```json
+{
+    "3invalidFragmentName": {
+        "test": "test"
     }
 }
 ```
@@ -976,5 +990,3 @@ To improve query performance for your specific applications, you have several op
 * Pre-process the data before it enters {{< product-c8y-iot >}} using Edge functionality or Data Preparation functions.
 * Process the data within {{< product-c8y-iot >}} using Streaming Analytics or a custom microservice to create refined data streams.
 * Post-process the data in the data lake by creating your own aggregated "gold layer" tables using external data lake tools.
-
-
