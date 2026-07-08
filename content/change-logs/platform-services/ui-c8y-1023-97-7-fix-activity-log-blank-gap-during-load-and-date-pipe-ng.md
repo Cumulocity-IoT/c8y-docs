@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix activity log blank gap during load and DatePipe NG02100 error (#12360) [GRAFT][release/cd] (#12460)
+title: Activity log displays correctly without blank gaps or console errors
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
