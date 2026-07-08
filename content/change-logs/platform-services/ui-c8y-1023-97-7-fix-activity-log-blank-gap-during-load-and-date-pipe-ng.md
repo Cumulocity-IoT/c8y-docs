@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Activity log displays correctly without blank gaps or console errors
+title: Activity log displays dates correctly and loads without visual gaps or console errors
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
