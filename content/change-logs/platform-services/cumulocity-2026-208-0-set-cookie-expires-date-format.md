@@ -1,5 +1,5 @@
 ---
-date: ''
+date: '2026-07-09'
 title: Standardized Expires date format in Set-Cookie header
 product_area: Platform services
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: cumulocity
 ticket: MTM-67152
 version: 2026.208.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-07-09'
 ---
 
 The Jetty servlet container has been updated from version 11 to version 12. As a result, the `Expires`
