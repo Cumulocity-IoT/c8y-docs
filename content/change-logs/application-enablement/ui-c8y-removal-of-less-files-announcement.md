@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-67215
 environment_availability:
 ---
-The {{< product-c8y-iot >}} Web SDK styles in the `@c8y/style` package have been migrated from LESS to SCSS. As a follow-up, the redundant `.less` files will be **removed** from `@c8y/style`. This change is currently in develop and will ship in an upcoming Continuous Deployment (CD) version of the 2026 release; a separate announcement will confirm the exact version.
+The {{< product-c8y-iot >}} Web SDK styles in the `@c8y/style` package have been migrated from LESS to SCSS. As a follow-up, the redundant `.less` files will be **removed** from `@c8y/style`. This change is currently available in the `develop` branch and will ship in an upcoming Continuous Deployment (CD) version of the 2026 release. The exact release version will be announced separately. 
 
 **What changes?**
 
