@@ -19,7 +19,7 @@ Starting with the next major Web SDK release, version 1024.0.0, we are updating 
 
 As part of this change, every application that uses the Web SDK dashboarding technology must import the `gridstack` dependency.
 
-Additionally, we removed a significant part of the custom implementation in the `DashboardChildChange` class.
+Additionally, a significant part of the custom implementation in the DashboardChildChange class has been removed.
 
 **Breaking change**
 
