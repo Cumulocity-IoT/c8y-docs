@@ -22,7 +22,7 @@ All styling is now authored in SCSS. The `.less` files, LESS variables, and LESS
 
 **Breaking change**
 
-Custom applications, plugins, or themes that import the removed `.less` files — or that override LESS variables and mixins — will no longer build after upgrading. The build fails with a `Module not found` error for the removed paths.
+Custom applications, plugins, or themes that import the removed `.less` files — or that override LESS variables and mixins — will no longer build after upgrading. The build will fail with a `Module not found` error for the removed paths.
 
 **Impact**: Any UI customization that relies on the LESS styles is affected, including:
 
