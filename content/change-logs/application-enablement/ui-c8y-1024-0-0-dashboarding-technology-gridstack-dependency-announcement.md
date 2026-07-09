@@ -15,7 +15,7 @@ ticket: MTM-66389
 version: 1024.0.0
 environment_availability:
 ---
-Starting with the next major Web SDK release, version 1024.0.0, we are changing the underlying dashboarding technology.
+Starting with the next major Web SDK release, version 1024.0.0, we are updating the underlying dashboarding technology.
 
 As part of this change, every application that uses the Web SDK dashboarding technology must import the `gridstack` dependency.
 
