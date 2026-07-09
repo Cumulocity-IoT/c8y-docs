@@ -1,6 +1,6 @@
 ---
 date: ""
-title: SCADA widget enhanced
+title: Enhanced SCADA widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -24,7 +24,7 @@ replacing the previous AngularJS-based approach. Key improvements include:
 
 This enhancement is available as a preview feature. To enable it, open the **Preview features** page from the right drawer and turn on
 the corresponding option. For details on new configuration options and SVG with Lit syntax, see [SCADA 
-widget](https://cumulocity.com/docs/cockpit/widgets-collection/#scada) in the user documentation.
+widget](/cockpit/widgets-collection/#scada) in the user documentation.
 
 Existing "SCADA" widgets using AngularJS syntax continue to work without any changes in the legacy mode. If you want to reuse existing SVGs in the new
-  widgets, the documentation includes a migration guide for adapting them to Lit syntax.
+  widgets, the documentation includes migration instructions for adapting them to Lit syntax.
