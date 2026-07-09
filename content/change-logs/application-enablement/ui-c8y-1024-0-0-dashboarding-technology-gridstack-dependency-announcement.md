@@ -30,4 +30,4 @@ Applications that rely on dashboarding features but do not import `gridstack` wi
 **Migration**:
 
 * Add `gridstack` as a dependency and import it in each application that uses dashboarding features.
-* Review custom integrations that depend on `DashboardChildChange` behavior and adapt them to the new implementation.
+* Review custom integrations that depend on the previous `DashboardChildChange` implementation and update them as required.
