@@ -59,15 +59,16 @@ c8yedge config --set email=<email-address>
 ### cumulocityPasswordSecretName {#cumulocitypasswordsecretname}
 `spec.cumulocityPasswordSecretName` | string | Required
 
-Name of the Kubernetes secret containing the Cumulocity admin user password for both the Management tenant and the Edge tenant. This secret must contain a key named `INITIAL_C8Y_ADMIN_PASSWORD` with the initial password.
+Name of the Kubernetes secret containing the Cumulocity admin user password for both the Management tenant and the Edge tenant. This secret must contain a key named `C8Y_ADMIN_PASSWORD` with the password.
 
 **Important**: The password must be at least 8 letters long.
 
-**Info**: This value is used only during the Edge installation and can’t be changed for existing installations. All subsequent password changes must be made via the [user interface](/standard-tenant/managing-users/#to-edit-a-user) or the Cumulocity API.
-
 **Info**: The Edge operator retrieves this secret from the `EDGE-CR-NAMESPACE`. Ensure that this secret is created before initiating the Edge deployment process.
 
-
+If you used **c8yedge** tool to install, you can configure this field using the below command: 
+```shell
+c8yedge config --set cumulocityPasswordSecret.C8Y_ADMIN_PASSWORD=<admin password>
+```
 
 ### tlsSecretName {#tlssecretname}
 `spec.tlsSecretName` | string | Optional
