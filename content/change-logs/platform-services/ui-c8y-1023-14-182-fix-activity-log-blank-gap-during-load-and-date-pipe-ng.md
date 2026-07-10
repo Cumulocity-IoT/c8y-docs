@@ -14,6 +14,4 @@ build_artifact:
 ticket: MTM-67114
 version: 1023.14.182
 ---
-Two independent bugs in application's Activity log
-1. Blank gap during archive load- loading state for archive entries loading
-2. DatePipe NG02100 error flooding the console- fixed, no errors in console anymore.
+The Activity log in applications previously displayed a blank gap while loading archive entries and dates for these entries were not displayed (also the console was flooded with DatePipe NG02100 errors). The Activity log now loads archive entries smoothly without blank gaps, date for each entry is displayed and the DatePipe errors no longer appear in the console.
