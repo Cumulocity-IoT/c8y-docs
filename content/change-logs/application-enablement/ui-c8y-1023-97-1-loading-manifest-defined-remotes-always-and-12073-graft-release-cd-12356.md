@@ -14,21 +14,4 @@ build_artifact:
 ticket: MTM-66892
 version: 1023.97.1
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(web sdk): [MTM-66892] loading manifest defined remotes always
-and…
-(#12073)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12073)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66892]:
-https://cumulocity.atlassian.net/browse/MTM-66892?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Jan Hommes <janhommes@users.noreply.github.com>
-Co-authored-by: Dawid Janusz <96060763+DawidSAG@users.noreply.github.com>
+The web SDK previously failed to load remotes that were defined in the manifest configuration, causing applications that relied on these remote modules to not function properly. The SDK now correctly loads all manifest-defined remotes during initialization, ensuring that remote modules are available when your application needs them. This fix resolves issues where applications using remote module federation could not access their configured remote dependencies.
