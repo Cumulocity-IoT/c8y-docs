@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Read only editor preview and add jump to repository button
+title: Syntax highlighting in configuration preview and edit in repository
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
@@ -14,20 +14,8 @@ build_artifact:
 ticket: DM-6359
 version: 1024.1.0
 ---
-# Backport
+In the **Device management** application, the read-only configuration preview on a device's **Configurations** tab now applies syntax highlighting. Snapshots retrieved from a device are shown in a syntax-highlighted editor, with the correct language applied automatically based on the file type, making them easier to read.
 
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Device Management): [DM-6359] Read only editor preview and add
-jump to repository
-button](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12413)
+A new **Edit in repository** button lets you edit an available configuration and save it to the repository before it is sent to the device. It opens a drawer that is pre-filled with the selected configuration, where you can review and adjust it.
 
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[DM-6359]:
-https://cumulocity.atlassian.net/browse/DM-6359?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Bozhidar Dedov <95280800+bozhidardedov@users.noreply.github.com>
+The **Save to repository** action now lets you edit the configuration retrieved from the device before it is saved to the repository, so you can adjust a snapshot on the way in instead of saving it as-is.
