@@ -1,6 +1,6 @@
 ---
 date: ""
-title: memory leak in alarms view (#12357) [GRAFT][release/cd] (#12377)
+title: Memory leak in alarms view fixed
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
