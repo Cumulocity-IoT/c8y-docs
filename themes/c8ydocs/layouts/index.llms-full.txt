@@ -14,7 +14,7 @@
     {{- if $seen.Get .Permalink }}{{ continue }}{{ end }}
     {{- $seen.Set .Permalink true }}
     {{- $title := .Title }}
-    {{- if and (eq (lower $title) "introduction") .Section }}{{ $title = printf "%s — %s" (.Section | humanize) $title }}{{ end }}
+    {{- if and (eq (lower $title) "introduction") .Section }}{{ $title = printf "%s — %s" (partial "section-title.txt" .Section) $title }}{{ end }}
 
 # {{ $title }}
 

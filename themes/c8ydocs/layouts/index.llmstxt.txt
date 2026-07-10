@@ -1,11 +1,10 @@
+{{- $sectors := .Site.GetPage "/sector" -}}
+{{- $optional := slice "terms_conditions" "change-logs" -}}
 # Cumulocity documentation
 
 > The official documentation for the Cumulocity IoT platform, covering both user and developer perspectives across device management, application enablement, analytics, and platform administration.
 
 This file helps large language models navigate the Cumulocity documentation. Each entry under Documentation sets links to a focused llms.txt spoke for one topic area; llms-full.txt contains the complete documentation as plain text.
-
-{{- $sectors := .Site.GetPage "/sector" }}
-{{- $optional := slice "terms_conditions" "change-logs" }}
 
 ## Documentation sets
 {{ range $sectors.Pages.ByWeight -}}
@@ -15,29 +14,27 @@ This file helps large language models navigate the Cumulocity documentation. Eac
   {{- $llm := .OutputFormats.Get "llmstxt" -}}
   {{- if not $llm }}{{ continue }}{{ end -}}
   {{- $d := .Params.description | default .Summary | default (printf "%s documentation." .Title) -}}
-  {{- $d = $d | plainify | replaceRE "\\s+" " " | strings.TrimSpace | truncate 200 }}
-- [{{ .Title }}]({{ $llm.Permalink }}): {{ $d }}
-{{ end -}}
-
-## Documentation
-- [Cumulocity documentation]({{ .Site.Home.Permalink }}): Complete HTML documentation for the Cumulocity platform.
-- [Glossary]({{ absURL "glossary/" }}): Definitions of Cumulocity terminology and concepts.
-{{ range $sectors.Pages.ByWeight -}}
+  {{- $d = $d | plainify | replaceRE "\\s+" " " | strings.TrimSpace | truncate 200 -}}
+  {{- printf "- [%s](%s): %s\n" .Title $llm.Permalink $d -}}
+{{- end -}}
+{{- printf "\n## Documentation\n" -}}
+{{- printf "- [Cumulocity documentation](%s): Complete HTML documentation for the Cumulocity platform.\n" .Site.Home.Permalink -}}
+{{- printf "- [Glossary](%s): Definitions of Cumulocity terminology and concepts.\n" (absURL "glossary/") -}}
+{{- range $sectors.Pages.ByWeight -}}
   {{- if not .Params.external }}{{ continue }}{{ end -}}
   {{- $d := .Params.description | default .Summary | default (printf "%s (external documentation)." .Title) -}}
-  {{- $d = $d | plainify | replaceRE "\\s+" " " | strings.TrimSpace | truncate 200 }}
-- [{{ .Title }}]({{ .Params.external }}): {{ $d }}
-{{ end -}}
-- [Developers codex](https://cumulocity.com/codex/llms.txt): Cumulocity Web SDK component and developer documentation (llms.txt).
-
-## Optional
-- [Full documentation corpus]({{ (.OutputFormats.Get "llms-full").Permalink }}): Every documentation page concatenated as plain text (llms-full.txt).
-{{ range $sectors.Pages.ByWeight -}}
+  {{- $d = $d | plainify | replaceRE "\\s+" " " | strings.TrimSpace | truncate 200 -}}
+  {{- printf "- [%s](%s): %s\n" .Title .Params.external $d -}}
+{{- end -}}
+{{- printf "- [Developers codex](https://cumulocity.com/codex/llms.txt): Cumulocity Web SDK component and developer documentation (llms.txt).\n" -}}
+{{- printf "\n## Optional\n" -}}
+{{- printf "- [Full documentation corpus](%s): Every documentation page concatenated as plain text (llms-full.txt).\n" (.OutputFormats.Get "llms-full").Permalink -}}
+{{- range $sectors.Pages.ByWeight -}}
   {{- $term := "" }}{{ with .File }}{{ $term = .ContentBaseName }}{{ end -}}
   {{- if not (in $optional $term) }}{{ continue }}{{ end -}}
   {{- $llm := .OutputFormats.Get "llmstxt" -}}
   {{- if not $llm }}{{ continue }}{{ end -}}
   {{- $d := .Params.description | default .Summary | default (printf "%s documentation." .Title) -}}
-  {{- $d = $d | plainify | replaceRE "\\s+" " " | strings.TrimSpace | truncate 200 }}
-- [{{ .Title }}]({{ $llm.Permalink }}): {{ $d }}
-{{ end -}}
+  {{- $d = $d | plainify | replaceRE "\\s+" " " | strings.TrimSpace | truncate 200 -}}
+  {{- printf "- [%s](%s): %s\n" .Title $llm.Permalink $d -}}
+{{- end -}}

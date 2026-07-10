@@ -12,9 +12,13 @@ Part of the Cumulocity documentation. Root index: {{ (.Site.Home.OutputFormats.G
   {{- if eq .Params._build.render false }}{{ continue }}{{ end -}}
   {{- $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end -}}
   {{- if $isCard }}{{ continue }}{{ end -}}
+  {{- $title := .Title -}}
+  {{- if and (eq (lower $title) "introduction") .Section }}{{ $title = printf "%s — %s" (partial "section-title.txt" .Section) $title }}{{ end -}}
   {{- $pd := .Params.description | default .Summary | default "" -}}
   {{- $pd = $pd | plainify | replaceRE "\\s+" " " | strings.TrimSpace | truncate 200 -}}
-  {{- $title := .Title -}}
-  {{- if and (eq (lower $title) "introduction") .Section }}{{ $title = printf "%s — %s" (.Section | humanize) $title }}{{ end }}
-- [{{ $title }}]({{ .Permalink }}){{ with $pd }}: {{ . }}{{ end }}
-{{ end -}}
+  {{- if $pd -}}
+    {{- printf "- [%s](%s): %s\n" $title .Permalink $pd -}}
+  {{- else -}}
+    {{- printf "- [%s](%s)\n" $title .Permalink -}}
+  {{- end -}}
+{{- end -}}
