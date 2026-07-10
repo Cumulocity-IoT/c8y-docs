@@ -4,13 +4,14 @@ title: Overview
 layout: redirect
 ---
 
-Edge is a cloud-native solution for the delivery, deployment, and management of the single-server variant of the {{< product-c8y-iot >}} platform. In contrast to the {{< product-c8y-iot >}} platform, which is available in the cloud (for example, using AWS, Azure, or other data centers), Edge is installed in factories, that is, in the same site ("onsite") in which the IoT assets are located.
+Edge is a single-server variant of the {{< product-c8y-iot >}} platform designed for easy, self-service operations, offering the flexibility to deploy anywhere from a standard local network to fully offline, air-gapped environments. Because it shares the exact same architecture as the {{< product-c8y-iot >}} cloud, it enables a "develop once, deploy anywhere" approach where cloud-built solutions, customizations, and extensions can be seamlessly ported to the edge.
 
 Reasons for using an onsite installation of Edge include:
 
 * **Autonomy**: Even if there is no cloud connection, tasks like data collection and data analysis can still be performed.
 * **Data reduction**: Data is analyzed and aggregated close to assets, and thus less data needs to be sent to the cloud.
 * **Reactivity**: Both Edge and the {{< product-c8y-iot >}} platform include real-time streaming analytics engines. However, placing the rule execution in Edge reduces latency, because the round-trip to cloud is omitted.
+* **IT Security**: Processing and storing data locally keeps sensitive information strictly within your own network perimeter, reducing exposure to external threats and simplifying compliance with strict data privacy regulations.
 
 Features of Edge include:
 
