@@ -1,5 +1,5 @@
 {{- $d := .Params.description | default .Summary | default (printf "%s documentation for the Cumulocity platform." .Title) -}}
-{{- $d = $d | plainify | replaceRE "\\s+" " " | strings.TrimSpace | truncate 240 -}}
+{{- $d = truncate 240 (trim ($d | plainify | replaceRE "\\s+" " ") " ") -}}
 # {{ .Site.Title }} — {{ .Title }}
 
 > {{ $d }}
@@ -15,7 +15,7 @@ Part of the Cumulocity documentation. Root index: {{ (.Site.Home.OutputFormats.G
   {{- $title := .Title -}}
   {{- if and (eq (lower $title) "introduction") .Section }}{{ $title = printf "%s — %s" (partial "section-title.txt" .Section) $title }}{{ end -}}
   {{- $pd := .Params.description | default .Summary | default "" -}}
-  {{- $pd = $pd | plainify | replaceRE "\\s+" " " | strings.TrimSpace | truncate 200 -}}
+  {{- $pd = truncate 200 (trim ($pd | plainify | replaceRE "\\s+" " ") " ") -}}
   {{- if $pd -}}
     {{- printf "- [%s](%s): %s\n" $title .Permalink $pd -}}
   {{- else -}}
