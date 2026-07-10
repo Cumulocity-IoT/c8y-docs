@@ -14,19 +14,4 @@ build_artifact:
 ticket: MTM-67019
 version: 1023.97.3
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(web sdk): [MTM-67019] memory leak in alarms view
-(#12357)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12357)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67019]:
-https://cumulocity.atlassian.net/browse/MTM-67019?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Jan Hommes <janhommes@users.noreply.github.com>
+The alarms view was consuming increasing amounts of memory over time due to event listeners and subscriptions not being properly cleaned up when the view was closed or navigated away from. This memory leak could cause performance degradation and eventual application slowdown, especially for users who frequently accessed the alarms view. The underlying cause has been fixed by ensuring all event listeners and subscriptions are properly removed when the alarms view is destroyed. Users will now experience consistent performance when using the alarms view repeatedly without memory accumulation over time.
