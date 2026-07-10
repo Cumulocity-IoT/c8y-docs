@@ -1,6 +1,6 @@
 ---
 date: ""
-title: loading manifest defined remotes always and… (#12073) [GRAFT][release/cd] (#12356)
+title: Web SDK manifest-defined remotes now load correctly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
