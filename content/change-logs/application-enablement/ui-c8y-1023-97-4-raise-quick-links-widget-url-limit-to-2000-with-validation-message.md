@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Quick Links widget now supports URLs up to 2000 characters
+title: Increased length limit of URLs in Quick Links widget to 2000 characters
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
