@@ -1,6 +1,6 @@
 ---
 date: ""
-title: ux revisited widget configurations sections preview and screenshots [BACKPORT] [release/cd] (#12217)
+title: Reorganized widget configuration view with a preview section
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
