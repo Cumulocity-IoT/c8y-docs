@@ -4,7 +4,7 @@ title: Overview
 layout: redirect
 ---
 
-Edge is a single-server variant of the {{< product-c8y-iot >}} platform designed for easy, self-service operations, offering the flexibility to deploy anywhere from a standard local network to fully offline, air-gapped environments. Because it shares the same architecture as the {{< product-c8y-iot >}} cloud, it enables a "develop once, deploy anywhere" approach, allowing cloud-built solutions, customizations, and extensions to be seamlessly ported to the edge.
+Edge is a single-server deployment of the {{< product-c8y-iot >}} platform, designed for simple deployment and self-service operation. It can be deployed anywhere, from a standard local network to fully offline, air-gapped environments. Because it shares the same architecture as the {{< product-c8y-iot >}} cloud, it enables a "develop once, deploy anywhere" approach, allowing cloud-developed solutions, customizations, and extensions to be seamlessly deployed at the edge.
 
 Reasons for using an onsite installation of Edge include:
 
