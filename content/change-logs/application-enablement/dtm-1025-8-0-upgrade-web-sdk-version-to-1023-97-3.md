@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Upgrade webSDK version to 1023.97.3"
+title: "Upgrade of Web SDK version to 1023.97.3"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -14,5 +14,5 @@ build_artifact:
 ticket: "CTM-3060"
 version: "1025.8.0"
 ---
-The Digital Twin Manager application has been upgraded to the Cumulocity
-Web SDK version 1023.97.3
+The Digital Twin Manager application has been upgraded to the {{< product-c8y-iot >}}
+Web SDK version 1023.97.3.
