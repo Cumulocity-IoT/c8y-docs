@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67052
 version: 1023.97.0
 ---
-An earlier update to smart rule management options removed the option to duplicate global smart rules in local contexts. This fix restores that capability as a "Duplicate as local" option in the smart rule's drop down menu, so global smart rules can again be duplicated and applied in the context of specific group or device.
+An earlier update to the smart rule management options removed the option to duplicate global smart rules in local contexts. This fix restores that capability as a **Duplicate as local** option in the smart rule's dropdown menu, so global smart rules can again be duplicated and applied in the context of a specific group or device.
