@@ -14,13 +14,4 @@ build_artifact:
 ticket: MTM-66536
 version: 1023.14.177
 ---
-Backport of #11809 to `release/y2026`.
-
-Cherry-picked `5b194660c15`. Conflicts resolved:
-- `widget-preview.component.html` → took PR version (the fix)
-- `.husky/pre-commit`, `convert-scss-to-less.sh` → kept release-branch
-tooling (diverged independently, not part of theme fix)
-
----------
-
-Co-authored-by: Paweł Rynarzewski <pawel.rynarzewski@cumulocity.com>
+Dashboard themes now correctly inherit the custom brandings configured in the tenant, so every dashboard automatically displays with the organization's branding colors and styles.
