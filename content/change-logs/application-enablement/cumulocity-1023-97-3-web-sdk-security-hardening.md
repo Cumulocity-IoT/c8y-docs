@@ -1,5 +1,5 @@
 ---
-date: ''
+date: 2026-07-13
 title: Web SDK security hardening update
 product_area: Application enablement & solutions
 change_type:
