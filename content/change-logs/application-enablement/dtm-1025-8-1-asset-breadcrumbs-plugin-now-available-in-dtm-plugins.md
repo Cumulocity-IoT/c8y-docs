@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-3026"
 version: "1025.8.1"
 ---
-Dtm-plugins now includes the Asset breadcrumbs plugin which can be integrated into custom web applications to display navigation paths within hierarchical asset structures. This requires the path in the url to be /group/:id or /device/:id.
+Dtm-plugins now include the Asset breadcrumbs plugin, which can be integrated into custom web applications to display navigation paths within hierarchical asset structures. This requires the path in the URL to be */group/:id* or */device/:id*.
