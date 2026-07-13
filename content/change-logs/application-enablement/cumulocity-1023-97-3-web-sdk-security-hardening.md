@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ticket: MTM-67203
-version: 1023.97.3
+version: 1023.14.180
 environment_availability:
   - label: eu-latest.cumulocity.com
   - label: apj.cumulocity.com
