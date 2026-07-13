@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-07-13
 title: Dashboards now correctly inherit custom branding
 product_area: Application enablement & solutions
 change_type:

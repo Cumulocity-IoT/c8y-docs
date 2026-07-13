@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-07-13
 title: Restored option to duplicate global smart rules in local contexts
 product_area: Application enablement & solutions
 change_type:
