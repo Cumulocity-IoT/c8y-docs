@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix dashboard themes to inherit custom brandings (#11809) [GRAFT][release/cd] (#12320)
+title: Dashboard themes now inherit custom brandings
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
