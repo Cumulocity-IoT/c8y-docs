@@ -1,5 +1,5 @@
 ---
-date: 2026-0607-13
+date: 2026-07-13
 title: Increased length limit of URLs in Quick Links widget to 2000 characters
 product_area: Application enablement & solutions
 change_type:
