@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Bulk operations filter by all statuses (#12508) [GRAFT][release/cd] (#12531)
+title: Bulk operations status filter now resets correctly when selecting "All statuses"
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5762
 version: 1024.1.5
 ---
-Bulk operations filter by all statuses (#12508) [GRAFT][release/cd] (#12531)
+In the bulk operations overview, selecting "All statuses" from the status filter repeated the previous filter request instead of clearing it. The filter now correctly resets and displays bulk operations across all statuses.
