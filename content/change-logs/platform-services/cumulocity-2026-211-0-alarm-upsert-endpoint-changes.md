@@ -1,5 +1,5 @@
 ---
-date: ''
+date: '2026-07-09'
 title: Alarm upsert endpoint changes
 product_area: Platform services
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: cumulocity
 ticket: MTM-67007
 version: 2026.211.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-07-09'
 ---
 
 The `POST /alarm/alarms/upsert` endpoint has been updated with the following changes:

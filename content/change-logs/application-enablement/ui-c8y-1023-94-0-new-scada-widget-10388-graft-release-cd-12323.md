@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-07-13'
 title: Enhanced SCADA widget
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,17 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-61471
 version: 1023.94.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-07-13'
+  - label: apj.cumulocity.com
+    date: '2026-07-13'
+  - label: jp.cumulocity.com
+    date: '2026-07-13'
+  - label: us.cumulocity.com
+    date: '2026-07-10'
+  - label: cumulocity.com
+    date: '2026-07-10'
 ---
 The "SCADA" widget has been significantly enhanced. The new version is built on modern web component technology with Lit syntax,
 replacing the previous AngularJS-based approach. Key improvements include:
