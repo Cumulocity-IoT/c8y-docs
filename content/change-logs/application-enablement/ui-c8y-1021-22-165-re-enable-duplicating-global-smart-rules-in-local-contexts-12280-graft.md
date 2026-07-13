@@ -14,19 +14,4 @@ build_artifact:
 ticket: MTM-67052
 version: 1021.22.165
 ---
-# Backport
-
-This will backport the following commits from `develop` to
-`release/y2025`:
-- [fix(Cockpit): [MTM-67052] Re-enable duplicating global smart rules
-in local contexts
-(#12280)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12280)
-
-<!--- Backport version: 12.0.4 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67052]:
-https://cumulocity.atlassian.net/browse/MTM-67052?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
+An earlier update to the smart rule management options removed the option to duplicate global smart rules in local contexts. This fix restores that capability as a **Duplicate as local** option in the smart rule's dropdown menu, so global smart rules can again be duplicated and applied in the context of a specific group or device.
