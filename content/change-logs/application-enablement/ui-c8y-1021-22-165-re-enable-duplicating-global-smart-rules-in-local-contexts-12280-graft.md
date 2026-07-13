@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Re-enable duplicating global smart rules in local contexts (#12280) [GRAFT][release/y2025] (#12354)
+title: Restored option to duplicate global smart rules in local contexts
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
