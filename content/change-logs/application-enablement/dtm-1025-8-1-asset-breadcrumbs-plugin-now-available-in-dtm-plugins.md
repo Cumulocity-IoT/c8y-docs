@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Asset breadcrumbs plugin now available in DTM plugins"
+title: "Asset breadcrumbs plugin now available in Dtm-plugins"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
@@ -14,13 +14,4 @@ build_artifact:
 ticket: "CTM-3026"
 version: "1025.8.1"
 ---
-With the new Asset Breadcrumbs Provider Plugin in Digital twin manager
-plugins (DTM Plugins). Users can integrate this plugin into custom web
-applications to display the asset breadcrumbs path on the subassets
-page, making it easier to navigate hierarchical asset structures.
-
-The plugin provides a reusable breadcrumbs component that automatically
-generates the navigation path from the root asset to the current
-subasset. This enhancement reduces navigation complexity and improves
-the user experience when working with nested asset hierarchies in custom
-applications.
+Dtm-plugins now includes the Asset breadcrumbs plugin which can be integrated into custom web applications to display navigation paths within hierarchical asset structures. This requires the path in the url to be /group/:id or /device/:id.
