@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66390
 version: 1023.87.0
 ---
-The widget configuration view has been reorganized for better consistency and now includes a preview section that shows how settings will appear before they are applied. Also updated the screenshots of available widgets in the widget selection.
+The widget configuration view has been reorganized for better consistency and now includes a preview section that shows how settings will appear before they are applied. Moreover, the screenshots of the available widgets in the widget selection drawer have been updated.
