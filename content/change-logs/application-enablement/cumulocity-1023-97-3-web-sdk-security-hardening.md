@@ -1,6 +1,6 @@
 ---
 date: '2026-07-09'
-title: Web SDK security hardening update
+title: Web SDK security update
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -21,4 +21,4 @@ environment_availability:
   - label: us.cumulocity.com
   - label: cumulocity.com
 ---
-Starting with version 1023.97.3, the Web SDK includes a security hardening update that improves protection for users across cloud environments. This fix has been rolled out to all default Web SDK-based applications on the maintenance release lines.
+Starting with version 1023.97.3, the Web SDK includes a security update that improves protection for users across cloud environments. This fix has been rolled out to all default Web SDK-based applications on the maintenance release lines.
