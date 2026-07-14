@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Validate device references before creating or updating linked series."
+title: "Validate device references before creating or updating linked series"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
