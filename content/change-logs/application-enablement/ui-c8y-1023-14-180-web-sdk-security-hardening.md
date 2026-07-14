@@ -13,12 +13,5 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-67203
 version: 1023.14.180
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 Starting with version 1023.14.180, the Web SDK includes a security hardening update that improves protection for users across cloud environments. This fix has been rolled out to all default Web SDK-based applications on the maintenance release lines.
