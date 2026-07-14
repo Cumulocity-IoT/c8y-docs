@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Support assigning legacy child devices without c8y_IsDevice marker to assets."
+title: "Support assigning legacy child devices without c8y_IsDevice marker to assets"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
