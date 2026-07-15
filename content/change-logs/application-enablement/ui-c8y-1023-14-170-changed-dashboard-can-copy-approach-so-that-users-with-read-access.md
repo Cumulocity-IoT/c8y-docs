@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-06-30
 title: Users with read access can now copy dashboards
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2026-06-30
 title: >-
   MQTT Service now supports Will Message
 change_type:

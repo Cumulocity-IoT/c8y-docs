@@ -12,7 +12,7 @@ metadata:
   namespace: c8yedge
 type: Opaque
 stringData:
-  INITIAL_C8Y_ADMIN_PASSWORD: <C8Y-ADMIN-PASSWORD>
+  C8Y_ADMIN_PASSWORD: <C8Y-ADMIN-PASSWORD>
 
 ---
 ##

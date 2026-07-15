@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-06-30
 title: Chart now displays correct y-axis scale for visible data
 product_area: Application enablement & solutions
 change_type:
