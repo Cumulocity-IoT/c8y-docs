@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2026-07-15'
 title: Unified saveConfig$() return values in DataGridConfigurationStrategy
 product_area: Application enablement & solutions
 change_type:
@@ -14,6 +14,8 @@ build_artifact:
 ticket: MTM-47390
 version: 1024.0.0
 environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-07-15'
 ---
 Starting with version 1024.0.0, the `saveConfig$()` method on all built-in `DataGridConfigurationStrategy` implementations consistently returns `of(undefined)` when there is no context or nothing to persist. Previously, return values were inconsistent, for example, `VoidConfigurationStrategy` returned `of(null)` while others returned `of(undefined)`.
 

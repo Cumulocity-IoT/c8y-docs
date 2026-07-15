@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-07-15'
 title: Syntax highlighting in configuration preview and new edit option
 product_area: Device management & connectivity
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: ui-c8y
 ticket: DM-6359
 version: 1024.1.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-07-15'
 ---
 In the Device management application, the read-only configuration preview on a device's **Configurations** tab now applies syntax highlighting. Snapshots retrieved from a device are shown in a syntax-highlighting editor, with the correct language applied automatically based on the file type, making them easier to read.
 

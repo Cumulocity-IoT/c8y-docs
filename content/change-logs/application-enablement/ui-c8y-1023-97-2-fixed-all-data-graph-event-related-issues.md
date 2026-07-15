@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-07-15'
 title: Fixed data graph event issues
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,16 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-67092
 version: 1023.97.2
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-07-15'
+  - label: apj.cumulocity.com
+    date: '2026-07-14'
+  - label: jp.cumulocity.com
+    date: '2026-07-14'
+  - label: us.cumulocity.com
+    date: '2026-07-15'
+  - label: cumulocity.com
+    date: '2026-07-15'
 ---
 Data graph events were not functioning correctly, displaying the wrong time on the chart, causing issues with event handling and data visualization. This change fixes all identified data graph event-related issues to ensure that events are properly processed and displayed in the data graphs.
