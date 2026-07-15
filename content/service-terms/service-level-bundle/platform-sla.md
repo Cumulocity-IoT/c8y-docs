@@ -119,7 +119,7 @@ For non-production instances, the following are also excluded from the availabil
 
 {{< company-c8y >}} communicates service availability and events impacting the service through the following status pages:
 
-* [cumulocity-iot.instatus.com](https://cumulocity-iot.instatus.com/) for all {{< company-c8y >}} public instances.
+* [status.cumulocity.com)](http://status.cumulocity.com) for all {{< company-c8y >}} public instances.
 * a dedicated location for {{< product-c8y-iot >}} Dedicated instances.
 
 Planned and unplanned downtimes are communicated via the appropriate {{< product-c8y-iot >}} status page. The communication includes the expected time of service restoration.
