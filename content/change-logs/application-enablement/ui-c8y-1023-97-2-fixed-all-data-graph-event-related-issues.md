@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67092
 version: 1023.97.2
 ---
-Data graph events were not functioning correctly dysplaying the wrong time on the chart, causing issues with event handling and data visualization. This release fixes all identified data graph event-related issues to ensure that events are properly processed and displayed in the data graphs.
+Data graph events were not functioning correctly, displaying the wrong time on the chart, causing issues with event handling and data visualization. This change fixes all identified data graph event-related issues to ensure that events are properly processed and displayed in the data graphs.
