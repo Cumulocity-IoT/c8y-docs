@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-6380
 version: 1024.1.1
 ---
-The Data explorer in **Device Management** previously did not support the "Generate export" feature, which prevented users from exporting data directly from the explorer interface. This feature is now enabled, allowing you to generate and download exports of your data directly from the Data explorer.
+The data explorer in the Device Management application previously did not support the "Generate export" feature, which prevented users from exporting data directly from the explorer interface. This feature is now enabled, allowing you to generate and download exports of your data directly from the data explorer.
