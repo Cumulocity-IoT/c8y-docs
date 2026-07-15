@@ -69,7 +69,10 @@ We recommend you to use typed file-based configuration. With typed file-based co
 2. Under **Device-supported configurations**, select the desired configuration type and click
    **Get snapshot from device** at the right.
 
-Once retrieved, you can save or download the snapshot in the **Preview** section. The snapshot will be added to the **Configuration repository**, accessible from the **Management** menu in the navigator.
+Once retrieved, the snapshot is shown in the **Preview** section in a read-only editor with automatic syntax highlighting. From there you can:
+
+- Click **Download** to save the snapshot as a file.
+- Click **Save to repository** to store the snapshot in the **Configuration repository**, accessible from the **Management** menu in the navigator. This opens the configuration in a drawer, prefilled with the retrieved content, where you can review and adjust it before saving.
 
 ![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 
@@ -83,6 +86,8 @@ To apply a configuration snapshot to a device which supports multiple configurat
 2. Under **Device-supported configurations**, select the desired configuration type.
 3. Under **Available supported configurations**, select a configuration file.
 4. Click **Send configuration to device** at the right to apply the selected snapshot to the device.
+
+When you select a configuration from **Available supported configurations**, an **Edit in repository** button is also shown next to **Send configuration to device**. Click it to open the corresponding entry in the **Configuration repository** directly in a drawer for editing, without having to navigate to the **Configuration repository** page.
 
 ![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
