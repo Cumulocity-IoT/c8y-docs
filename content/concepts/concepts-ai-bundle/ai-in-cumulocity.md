@@ -133,6 +133,6 @@ A. {{< company-c8y >}} regularly executes a diverse set of scenario-based testin
 
 Qualitative evaluation is done automatically by other LLMs that evaluate the performance of the prompt (and we have separate testing evaluating the performance of those LLMs), but manual checks with human review are also done whenever we change the prompts.
 
-**Q. Is there any internal use of AI**
+**Q. Is there any internal use of AI?**
 
 A. Yes, for Data Preparation {{< product-c8y-iot >}} sends AI queries and responses to Gainsight (which can be disabled) to evaluate system health, token consumption, response quality, and overall product performance. This information is used for performance assessment and product improvement. 
