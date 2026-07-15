@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed all data graph event related issues. [BACKPORT] (#12390)
+title: Fixed data graph event issues
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
