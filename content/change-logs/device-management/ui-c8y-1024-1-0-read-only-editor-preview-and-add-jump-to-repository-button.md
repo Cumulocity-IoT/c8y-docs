@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Syntax highlighting in configuration preview and edit in repository
+title: Syntax highlighting in configuration preview and new edit in repository option
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
@@ -14,7 +14,7 @@ build_artifact:
 ticket: DM-6359
 version: 1024.1.0
 ---
-In the **Device management** application, the read-only configuration preview on a device's **Configurations** tab now applies syntax highlighting. Snapshots retrieved from a device are shown in a syntax-highlighted editor, with the correct language applied automatically based on the file type, making them easier to read.
+In the Device management application, the read-only configuration preview on a device's **Configurations** tab now applies syntax highlighting. Snapshots retrieved from a device are shown in a syntax-highlighting editor, with the correct language applied automatically based on the file type, making them easier to read.
 
 A new **Edit in repository** button lets you edit an available configuration and save it to the repository before it is sent to the device. It opens a drawer that is pre-filled with the selected configuration, where you can review and adjust it.
 
