@@ -15,7 +15,7 @@ ticket: "CTM-3027"
 version: "1025.8.0"
 ---
 The Asset API previously required separate requests to create a
-sub-asset and then assign it to a parent asset. You can now create and
+subasset and then assign it to a parent asset. You can now create and
 assign a sub-asset in a single operation by providing the complete
 sub-asset representation during assignment, streamlining your asset
 management workflows.

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "clarify applicableTo and context query parameters in the OpenAPI specification"
+title: "Clarify applicableTo and context query parameters in the OpenAPI specification"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
@@ -16,7 +16,7 @@ version: "1025.8.0"
 ---
 The OpenAPI documentation for the Asset API now provides clearer
 guidance on how the `applicableTo` and `context` query parameters affect
-Property Definition selection. Previously, the documentation did not
+Property definition selection. Previously, the documentation did not
 adequately explain the distinction between context-specific definitions
 and definitions without context, which could lead to confusion when
 querying properties.
