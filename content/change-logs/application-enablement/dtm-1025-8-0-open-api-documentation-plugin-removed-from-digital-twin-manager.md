@@ -14,7 +14,7 @@ build_artifact:
 ticket: "CTM-2840"
 version: "1025.8.0"
 ---
-The OpenAPI of DTM is now available in the API Documentation application
+The OpenAPI of the Digital Twin Manager (DTM) is now available in the API Documentation application
 which shows all known OpenAPI documentations in the current tenant. The
 OpenAPI Documentation plugin in the DTM application is now removed and
 users should migrate to the API Documentation application.

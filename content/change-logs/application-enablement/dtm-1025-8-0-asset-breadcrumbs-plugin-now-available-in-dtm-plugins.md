@@ -14,8 +14,8 @@ build_artifact:
 ticket: "CTM-3026"
 version: "1025.8.0"
 ---
-The Asset breadcrumbs plugin displays the asset path in Group and Device contexts (i.e., when the url path is /group/:id or /device/:id), making it easier to navigate through hierarchical asset structures.
+The Asset breadcrumbs plugin displays the asset path in group and device contexts (that is, when the URL path is */group/:id* or */device/:id*), making it easier to navigate through hierarchical asset structures.
 
 It automatically generates the navigation path from the root asset to the current
-subasset, thus reducing navigation complexity and improves
+subasset, thus reducing navigation complexity and improving
 the user experience when working with nested asset hierarchies.
