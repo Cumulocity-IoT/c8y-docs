@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Syntax highlighting in configuration preview and new edit in repository option
+title: Syntax highlighting in configuration preview and new edit option
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
