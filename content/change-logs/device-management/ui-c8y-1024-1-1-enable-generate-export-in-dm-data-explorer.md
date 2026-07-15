@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Enable "Generate export" in Device Management Data explorer
+title: Generating exports from the data explorer
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
