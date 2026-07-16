@@ -80,7 +80,7 @@ Process the following step to configure the connectivity in {{< product-c8y-iot 
 1. Switch to the Administration application.
 1. Click **Connectivity** in the **Settings** menu of the navigator. If the menu item is not displayed, make sure that your user has [READ and ADMIN permissions for Connectivity](/standard-tenant/managing-permissions/). If the menu item is still not available, please contact [product support](/additional-resources/contacting-support/) to make the Connectivity agent available in your tenant.
 2. Switch to the **SIM provider settings** tab.
-3. Select a provider from the drop-down list.
+3. Select a provider from the dropdown list.
 1. Enter the credentials for the respective SIM provider account. If you do not have any credentials, ask your administrator.
 2. Set a **Cache duration** in seconds to determine how long information from the provider is cached. This will prevent timeout issues.
 3. Click **Save** to save your settings.
@@ -137,7 +137,7 @@ The **Status** section lists summary information for the SIM card.
 
 The first row shows if the device is currently running a data session. If it is, the start of the session and the current WAN IP address of the device is displayed.
 
-The second row shows further status information: The ICCID of the SIM card, the activation state of the SIM card and, if set, the fixed IP address assigned to the SIM card. Provided you have ADMIN permission for Connectivity, you can change the activation state by using the drop-down menu.
+The second row shows further status information: The ICCID of the SIM card, the activation state of the SIM card and, if set, the fixed IP address assigned to the SIM card. Provided you have ADMIN permission for Connectivity, you can change the activation state by using the dropdown menu.
 
 At the bottom you will find usage information for the current month, that is, from the first of the month till today. Hovering over the tooltip shows the covered time period, including the usage during the past month.
 
@@ -164,7 +164,7 @@ If you suspect that a device is not correctly reporting to {{< product-c8y-iot >
 
 In the **Connectivity** tab, check the following conditions:
 
-* The SIM is activated. If the SIM card is not activated, you can activate it selecting "ACTIVE" from the "SIM status" drop-down menu. It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
+* The SIM is activated. If the SIM card is not activated, you can activate it selecting "ACTIVE" from the "SIM status" dropdown menu. It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
 * The device is connected to the network. If the device is not connected to the network, this may have several reasons:
 
   * The device is in a location without mobile network coverage. If the device reports network quality parameters, you can navigate to the [**Measurements** tab](/device-management-application/viewing-device-details/#measurements) of the device and verify the last reported signal strength and error rate parameters.
