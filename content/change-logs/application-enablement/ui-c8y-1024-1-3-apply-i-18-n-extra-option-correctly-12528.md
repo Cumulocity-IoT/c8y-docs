@@ -1,6 +1,6 @@
 ---
 date: ""
-title: apply i18nExtra option correctly (#12528)
+title: Internationalization extra option now applied correctly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67185
 version: 1024.1.3
 ---
-Co-authored-by: Tristan Bastian <tristan.bastian@cumulocity.com>
+The internationalization extra option was not being applied correctly in certain scenarios, which could result in incomplete or missing translations in the user interface. The system now properly processes and applies the i18nExtra option during initialization, ensuring that all custom internationalization settings are respected and loaded as expected. This fix ensures that your custom translation configurations work reliably across your applications and installations, providing a consistent user experience with properly localized content.
