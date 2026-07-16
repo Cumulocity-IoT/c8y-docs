@@ -12,7 +12,7 @@ The **Account** page provides comprehensive information about your account, cont
 
 The **Overview** tab provides a high-level summary of your account and environments.
 
-<img src="/images/console/account/account-overview page.png" alt="Account overview">
+<img src="/images/console/account/account-overview%20page.png" alt="Account overview">
 
 #### Account information {#account-information}
 
@@ -54,7 +54,7 @@ Each environment also displays usage graphs showing **Storage** and **Messages**
 
 The **Consumption** tab shows monthly drawdowns and commitment details.
 
-<img src="/images/console/account/account-consumption page.png" alt="Consumption">
+<img src="/images/console/account/account-consumption%20page.png" alt="Consumption">
 
 #### Commit to consume {#commit-to-consume}
 
@@ -89,7 +89,7 @@ Toggle **Show Breakdown** to view detailed breakdowns of the selected metric. Th
 
 The **Details & History** tab provides a detailed breakdown of monthly consumption for each billable product.
 
-<img src="/images/console/account/account-details&history.png" alt="Details & History">
+<img src="/images/console/account/account-details&amp;history.png" alt="Details & History">
 
 #### Consumption details {#consumption-details}
 
