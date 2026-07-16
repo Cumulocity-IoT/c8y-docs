@@ -1,6 +1,6 @@
 ---
 date: ""
-title: internationalization extra option now applied correctly
+title: Internationalization extra option now applied correctly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
