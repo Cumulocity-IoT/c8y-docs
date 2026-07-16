@@ -1,5 +1,7 @@
 ---
 title: "Terms and conditions"
+description: "Legal notices, service terms, quotas, and platform conditions for using Cumulocity."
+outputs: ["HTML", "llmstxt"]
 icon: "dlt-c8y-icon-gavel"
 weight: 80
 pdf: true

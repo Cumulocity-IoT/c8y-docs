@@ -1,5 +1,7 @@
 ---
 title: "Analytics"
+description: "Analyze and act on IoT data with Streaming Analytics, DataHub, and machine learning."
+outputs: ["HTML", "llmstxt"]
 icon: "c8y-icon c8y-icon-data-explorer"
 weight: 50
 pdf: true

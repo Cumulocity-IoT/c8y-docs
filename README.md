@@ -126,6 +126,32 @@ Keep all file names URL-friendly (lowercase, no special characters, and no empty
 To use the images in your pages, just add the relative path, for example: `![image title](/images/<directory name>/<file name>)`.
 
 
+## llms.txt for AI agents
+
+The site publishes an [llms.txt](https://llmstxt.org/) catalog so AI agents can navigate the documentation efficiently. It is **generated at build time** — never commit a static copy, and never hardcode the host in the templates.
+
+Three tiers are produced:
+
+- `/docs/llms.txt` — a lean hub with one link per documentation set (sector), plus canonical links and an `Optional` section.
+- `/docs/sector/<sector>/llms.txt` — one spoke per sector, indexing every page in that sector.
+- `/docs/llms-full.txt` — the full text of every page, for bulk ingestion.
+
+How it works:
+
+- The `llmstxt` and `llms-full` output formats are defined in `config.toml` and enabled on the home page.
+- Templates live in the theme: `themes/c8ydocs/layouts/index.llmstxt.txt` (hub), `_default/term.llmstxt.txt` (spokes), and `index.llms-full.txt` (full text).
+- Sectors come from the `sector` taxonomy. A page joins its sector spoke automatically through its `sector` front-matter field — no extra step.
+- URLs are built from `baseURL`.
+
+To add or change a documentation set, edit its landing page at `content/sector/<sector>/_index.md`: set a `title`, a one-line `description` (used as the catalog note), and `outputs: ["HTML", "llmstxt"]` to publish its spoke.
+
+The generated files must follow the llms.txt grammar (every non-blank line after the first `##` heading is a heading or a link). Verify after building:
+
+```bash
+hugo
+node scripts/lint-llmstxt.mjs
+```
+
 ## Redirects
 
 Redirects must be processed through aliases. Add aliases as an array, and make sure to remove `/docs` or `/guides` out of the URL. Check the following example:
