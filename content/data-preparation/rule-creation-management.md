@@ -17,7 +17,7 @@ For a guided walkthrough of the full process, see [Getting started](/data-prepar
 
 The wizard guides you through three steps:
 
-1. **Source** — configure the transport, and the topic or client ID filter. If other rules already exist, the **Topic filter** field suggests topics used by those rules as you type. Although you would not want to use exactly the same topic that is already handled by another rule, this helps with entering similar topic names, for example where only the version suffix of a device is sufferent. Then choose whether to start by capturing live messages from the transport, or skip capture and manually enter test data after the rule is created. 
+1. **Source** — configure the transport, and the topic or client ID filter. If other rules already exist, the **Topic filter** field suggests topics used by those rules as you type. Although you would not want to use exactly the same topic that is already handled by another rule, this helps with entering similar topic names, for example, where only the version suffix of a device is different. Then choose whether to start by capturing live messages from the transport, or skip capture and manually enter test data after the rule is created. 
 2. **Live capture** (optional) — if you choose to capture, the platform listens for messages matching your filters and displays them in real time. Select a captured message to use as the initial test data for your rule. For details, see [Live capture](#live-capture).
 3. **Confirm and create** — review or edit the source configuration, then enter a **name** and optional **description** for the rule. On this page you can edit the source configuration if the filter for the rule itself should be different from the filter you used to capture the sample data. 
 
@@ -112,7 +112,7 @@ You can change rule settings such as the topic filter and rule description witho
 2. Open the **more** menu and select **Edit rule settings**. Alternatively, hover over the topic name at the top of the editor and click the edit icon <i class="dlt-c8y-icon-edit1 icon-20 text-primary"></i> that appears.
 3. Update the settings as needed, then click **Update**.
 
-If you enter a topic filter that is already handled by another rule, a warning is shown, but you can still save and deploy your changes. 
+If you enter a topic filter that is already handled by another rule, the dialog shows a warning, but you can still save and deploy your changes. 
 
 {{< c8y-admon-important >}}
 Editing rule settings only updates the rule editor's current draft. Your changes appear in the editor immediately, but they are not saved until you click **Save draft** or **Save and deploy**. They are not visible in the rules list until you deploy the updated rule.
@@ -127,7 +127,7 @@ Duplicating a rule creates a new, independent rule that starts with the same sou
 1. In the rules list, hover over the rule you want to duplicate and click the duplicate icon <i class="dlt-c8y-icon-duplicate icon-20 text-primary"></i>. The icon may be shown under a "..." menu.
 2. Enter a name for the new rule. A suggested name based on the original rule's name is pre-filled, and you can change it. The name must be unique among existing rules.
 3. Update the transport, topic filter, client ID filter, or description to match the purpose of the new rule. Usually you should change at least the topic filter.
-4. You can either copy the AI chat history from the previous rule or start with an empty conversation. Since AI performs better with a small window of previous messages, do not include the history if you're creating a rule for a different device where the previous messages may be unnecessary or misleading. However if you are duplicating to try out improvements to an existing rule, or to rename an existing rule, then including the previous messages may be helpful.
+4. You can either copy the AI chat history from the previous rule or start with an empty conversation. Since AI performs better with a small window of previous messages, do not include the history if you are creating a rule for a different device where the previous messages may be unnecessary or misleading. However, if you are duplicating to try out improvements to an existing rule, or to rename an existing rule, then including the previous messages may be helpful.
 5. Click **Duplicate** to create the duplicate.
 
 The new rule is created as an undeployed draft, even if the original rule was deployed. Deploy it separately from the rule editor when you are ready. Duplicating a rule always uses the original rule's latest saved draft, whether or not that draft has been deployed.
