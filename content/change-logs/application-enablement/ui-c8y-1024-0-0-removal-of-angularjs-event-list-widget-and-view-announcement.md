@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2026-07-15'
 title: Removal of the AngularJS event list widget and view from @c8y/ng1-modules
 product_area: Application enablement & solutions
 change_type:
@@ -14,6 +14,8 @@ build_artifact:
 ticket: MTM-66925
 version: 1024.0.0
 environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-07-15'
 ---
 Starting with version 1024.0.0, the AngularJS event list has been removed from the `@c8y/ng1-modules` package. This covers both the Device Management event list view and the event list dashboard widget, together with their binary-event preview components. The functionality is fully replaced by the Angular event list shipped in `@c8y/ngx-components`, which the standard Device Management and Cockpit applications already use.
 

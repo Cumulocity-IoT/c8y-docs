@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2026-07-15'
 title: Dashboarding technology update and required gridstack dependency
 product_area: Application enablement & solutions
 change_type:
@@ -14,6 +14,8 @@ build_artifact:
 ticket: MTM-66389
 version: 1024.0.0
 environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-07-15'
 ---
 Starting with the next major Web SDK release, version 1024.0.0, we are updating the underlying dashboarding technology.
 

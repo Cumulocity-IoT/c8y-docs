@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2026-07-15'
 title: Explicit withChildren parameter for Inventory API calls
 product_area: Application enablement & solutions
 change_type:
@@ -14,6 +14,8 @@ build_artifact:
 ticket: MTM-64714
 version: 1024.0.0
 environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-07-15'
 ---
 The {{< product-c8y-iot >}} platform will soon change the server-side default of the
 `withChildren` query parameter on `/inventory/managedObjects` GET endpoints from `true` to `false`
