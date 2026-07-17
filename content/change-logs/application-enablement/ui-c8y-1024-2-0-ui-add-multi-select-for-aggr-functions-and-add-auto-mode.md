@@ -1,6 +1,6 @@
 ---
 date: ""
-title: UI add multi select for aggr functions and add auto mode (#11837) [GRAFT][release/cd] (#12550)
+title: Multi-select support for aggregation functions and auto aggregation mode
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,21 +14,6 @@ build_artifact:
 ticket: MTM-66621
 version: 1024.2.0
 ---
-# Backport
+Previously, the data point graph widget and the data explorer supported only a single aggregation function per data point. Now you can select multiple aggregation functions at once (for example minimum, maximum, and average) and compare them in parallel on the same chart, including a band display for minimum/maximum.
 
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Web SDK): [MTM-66621] UI add multi select for aggr functions and
-add auto mode
-(#11837)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11837)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66621]:
-https://cumulocity.atlassian.net/browse/MTM-66621?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+In addition, the new "Auto" aggregation mode calculates the aggregation interval automatically from the selected time range and a configurable number of data points per chart. When zooming in, the chart can either load data at a finer interval or reuse the already loaded data. Auto mode is available on tenants migrated to time series. Existing widget configurations continue to work unchanged. 
