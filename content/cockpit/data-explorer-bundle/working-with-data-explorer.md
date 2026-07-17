@@ -128,7 +128,7 @@ The following fields may be modified:
 </tr>
 <tr>
 <td style="text-align:left">Display</td>
-<td style="text-align:left">Value displayed when data is aggregated. May be "Minimum", Maximum", Minimum and maximum".</td>
+<td style="text-align:left">Value displayed when data is aggregated. May be "Minimum", "Maximum", "Minimum and maximum", "Average", "Count" or "Sum". While aggregation is active, multiple functions can be displayed at once, see <a href="/cockpit/data-explorer/#aggregation-functions">Aggregation functions</a>.</td>
 </tr>
 <tr>
 <td style="text-align:left">Chart type</td>
