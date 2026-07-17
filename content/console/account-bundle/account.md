@@ -105,3 +105,8 @@ Each bill contains the following information:
 * **Drawdown (Balance consumed)** - How much the commitment was drawn based on the usage charges. This usually equals the total usage charges unless there is an overage scenario, in which case the values will be different (the remaining commitment is less than the total usage charges for that month).
 * **Overage** - Any charges exceeding the available commitment for the month.
 * **Total bill amount** - The final bill amount for the month.
+
+Each bill can be one of the following states:
+* **NEW** - The usage month has passed and an empty consumption bill has been created, but not yet filled in with usage details.
+* **PENDING** - The usage details and consumption drawdown have been added to the bill. Bills in this status can still be modified if needed. 
+* **APPROVED** - The finalized bill has been created and no longer can be modified or deleted, as it has been passed to the {{< company-c8y >}} finance department for reconciliation. 
