@@ -34,7 +34,7 @@ The function is invoked once per inbound `DeviceMessage` that matches the rule's
 - Messages that do not match the rule's conditions never reach the function.
 - The function is invoked synchronously with respect to the message --- the rule waits for the function (or its returned promise) to complete before proceeding to the next message in the same shard.
 
-For details on how invocations are sharded and ordered, see [Runtime behavior and limits](#runtime-behavior-and-limits).
+For details on how invocations are sharded and ordered, see [Runtime behavior and limits](#limits).
 
 ### Inputs {#inputs}
 
@@ -61,7 +61,7 @@ If a returned object specifies an `externalSource` that does not match an existi
 
 ### Behavior notes {#behavior-notes}
 
-**Ordering**: Within a single shard (one device's `clientID`), invocations are strictly serial and in-order. The function is never called concurrently for the same source client ID. See [Runtime behavior and limits](#runtime-behavior-and-limits) for details.
+**Ordering**: Within a single shard (one device's `clientID`), invocations are strictly serial and in-order. The function is never called concurrently for the same source client ID. See [Runtime behavior and limits](#limits) for details.
 
 **Errors**: If the function throws an error or returns an unparsable object, the message is dropped, an error is logged and an alarm is raised. The platform does not retry. To drop a message intentionally, return an empty array.
 

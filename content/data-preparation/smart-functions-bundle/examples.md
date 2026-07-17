@@ -6,7 +6,7 @@ layout: redirect
 
 This section provides practical examples of `onMessage` smart functions for Data Preparation. Each example shows the input message, the function, and the output it produces.
 
-For the data types used in these examples, see [Data types](#data-types). For the runtime guarantees that apply, see [Runtime behavior and limits](#runtime-behavior-and-limits).
+For the data types used in these examples, see [Data types](#data-types). For the runtime guarantees that apply, see [Runtime behavior and limits](#limits).
 
 ### Parse JSON and create a measurement {#parse-json-measurement}
 
