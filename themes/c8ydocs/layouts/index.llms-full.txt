@@ -1,0 +1,25 @@
+# Cumulocity documentation — full corpus
+
+> The complete Cumulocity IoT platform documentation, concatenated as plain text for LLM ingestion. Ordered by topic; see llms.txt for the navigable index.
+
+{{- $sectors := .Site.GetPage "/sector" }}
+{{- $seen := newScratch }}
+{{- range $sectors.Pages.ByWeight }}
+  {{- if .Params.external }}{{ continue }}{{ end }}
+  {{- range .Pages.ByTitle.ByWeight }}
+    {{- if eq .Kind "section" }}{{ continue }}{{ end }}
+    {{- if eq .Params._build.render false }}{{ continue }}{{ end }}
+    {{- $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}
+    {{- if $isCard }}{{ continue }}{{ end }}
+    {{- if $seen.Get .Permalink }}{{ continue }}{{ end }}
+    {{- $seen.Set .Permalink true }}
+    {{- $title := .Title }}
+    {{- if and (eq (lower $title) "introduction") .Section }}{{ $title = printf "%s — %s" (partial "section-title.txt" .Section) $title }}{{ end }}
+
+# {{ $title }}
+
+Source: {{ .Permalink }}
+
+{{ .RenderShortcodes }}
+  {{- end }}
+{{- end }}
