@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Create and assign sub-assets in a single request"
+title: "Create and assign subassets in a single request"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
@@ -16,11 +16,11 @@ version: "1025.8.0"
 ---
 The Asset API previously required separate requests to create a
 subasset and then assign it to a parent asset. You can now create and
-assign a sub-asset in a single operation by providing the complete
-sub-asset representation during assignment, streamlining your asset
+assign a subasset in a single operation by providing the complete
+subasset representation during assignment, streamlining your asset
 management workflows.
 
-This change reduces the number of API calls required for sub-asset
+This change reduces the number of API calls required for subasset
 operations, improving performance and simplifying integration logic.
 Existing code that uses separate create and assign operations continues
 to work without modification, so you can adopt this new capability at
