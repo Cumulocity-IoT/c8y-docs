@@ -83,7 +83,7 @@ Note that the example contains placeholders, in this case a placeholder _{{url}}
 * Enter a name for the environment (for example, your tenant ID), then add values for the placeholders.
 * Configure a key _url_ with a value of _https://&lt;TENANT_NAME&gt;.{{< domain-c8y >}}_. Click **Submit**.
 * Configure a key _auth_ with the value of the Authorization header for the REST requests.
-* Click **Add**, then close the dialog. Now select your newly created environment from the drop-down box on the top right, that initially reads "No environment".
+* Click **Add**, then close the dialog. Now select your newly created environment from the dropdown box on the top right, that initially reads "No environment".
 
 <img src="/images/rest/postmanenvironment.png" alt="Postman environment setup" style="max-width: 50%">
 

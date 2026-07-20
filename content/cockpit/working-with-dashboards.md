@@ -9,14 +9,17 @@ sector:
 weight: 40
 helpcontent:
   - label: working-with-dashboards
-    title: Working with Dashboards
+    title: Working with dashboards
     content: "Dashboards let you visualize your data by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
+    
+    
+    The availability of the options described below may vary based on the context, for example, whether you are in a home, group or device dashboard.
 
 
-    Click the plus icon next to the dashboard tabs to add a dashboard. You may copy a dashboard from one device to another or you may share a dashboard with all devices of a specific device type.
+    Click **Add dashboard** in the tab bar to add a new dashboard. Enable the edit mode by clicking **Edit widgets** in the top menu bar. Then click **Add widget** to add a new widget to the dashboard. Use the cogwheel icon to edit or remove widgets. Rearrange widgets by drag and drop. Resize widgets using the diagonal arrows icon located in the bottom right corner of the widget.
 
 
-    The dashboard is locked until the edit mode is enabled. To do so click **Edit widgets** in the top menu bar. On a dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon. Click **Add widget** in the top menu bar to add a new widget to the dashboard or use the cogwheel icon to edit or remove widgets.
+    To copy a dashboard to another group or device, open the **More** dropdown menu and select **Copy dashboard**. To share a dashboard with all devices of the same type, click **Dashboard settings** and enable the **Dashboard template** option.
 
 
     Cumulocity includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Widgets collection* in the user documentation for details on each widget type and its configuration."
@@ -66,7 +69,9 @@ To create your individualized dashboard, execute the following steps:
 
 5. Enable the option **Dashboard template** to share the dashboard with all devices of this type. This option is only available for devices dashboards. See [To share a dashboard](#dashboard-template)
 
-6. In the **Appearance** tab you can select a theme for the dashboard (one of "Match UI", "Light", "Dark" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 12 px).
+6. In the **Appearance** tab, you can select a theme for the dashboard (one of "Match UI", "Light", "Dark" or "Branded"), a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"), and the gap between the widgets. Moreover, you can select from two different layout modes:
+ - **Grid**: The default one, which lets each widget snap into a fixed grid.
+ - **Responsive**: Lets you define the responsive look of the dashboard. You can define the number of columns, select that widgets can be freely positioned (not snapping to the top), or fit the rows into the viewport to create full height.
 
 7. Under the **Translate if possible** option, you can select to have the dashboard and/or widget titles translated. For this option to work, the titles must be written in English and the corresponding translations must be available in the loaded translation resources, for example in the standard application translations, or in the custom ones provided via the [localization feature](/standard-tenant/changing-settings/#localization) or in the [application options](/web/application-configuration/#languages-customization).
 

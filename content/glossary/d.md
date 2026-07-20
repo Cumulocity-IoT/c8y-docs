@@ -69,6 +69,18 @@ See also [Data point library](/cockpit/data-point-library/) in the documentation
 The data point library is managed via the Cockpit UI. The entries are stored in the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) with a fragment called `c8y_Kpi`.
 {{< /c8y-details >}}
 
+### Data Preparation {#data-preparation}
+
+Data Preparation is a {{< product-c8y-iot >}} component that processes inbound device messages before they enter the platform's operational store. It is used to decode device payloads from any transport, map them to {{< product-c8y-iot >}} domain objects, enrich or filter them, and send the result into the platform. Data Preparation is built around [Data Preparation rules](#data-preparation-rule), each of which carries a [smart function](#smart-function) that performs the actual processing.
+
+See also [Data Preparation](/data-preparation/) in the documentation.
+
+### Data Preparation rule {#data-preparation-rule}
+
+A Data Preparation rule is a configurable pipeline that selects a subset of inbound device traffic and processes it through a [smart function](#smart-function) to produce {{< product-c8y-iot >}} domain objects such as [measurements](#measurement), [events](#event), [alarms](#alarm), or [operations](#operation). Each rule comprises exactly one smart function, which performs all transformation, enrichment, and mapping.
+
+See also [Data Preparation](/data-preparation/) in the documentation.
+
 ### Device {#device}
 
 A device is a special type of [asset](#asset) that represents a physical piece of equipment connected to the {{< product-c8y-iot >}} platform. Devices are distinct from other assets because they can send data and can receive remote operations.
@@ -115,6 +127,21 @@ The  device replacement process is centered around the [Identity API](https://{{
 {{< /c8y-details >}}
 
 
+### Device topic {#device-topic}
+
+A device topic is a [topic](#topic) used by a device connected to a [protocol adapter](#protocol-adapter).
+Typically, the topic describes the type of data being sent and received by the device.
+For example, a metering device connected to the [MQTT Service](#mqtt-service) publishes messages on topics `meters/123456/current` and `meters/123456/temperature`.
+The naming and meaning of device topics is specific to the device type, protocol, and the application using the devices.
+
+See [Core MQTT topics](/device-integration/mqtt-service/#core-mqtt-topics) for another example of a topic schema used by MQTT devices, in this case devices that use the [SmartREST](#smartrest) device protocol.
+See the [MQTT protocol specification](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901241) for more information about MQTT topics.
+
+{{< c8y-details title="Developer details" >}}
+See [Connecting MQTT devices](/device-integration/mqtt-service/#connecting-devices) for more information about integrating devices with the MQTT Service.
+{{< /c8y-details >}}
+
+
 ### Digital twin {#digital-twin}
 
 A digital twin is a virtual representation of a physical asset or system that is continuously updated with real-time IoT data from connected [devices](#device). This data-driven digital counterpart enables monitoring, analysis, and optimization of physical assets by combining sensor [measurements](#measurement) with business context.  
@@ -127,7 +154,7 @@ The Digital Twin Manager (DTM) is a schema-based modeling [application](#applica
 See also [Digital Twin Manager](/dtm/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
-The DTM application is supported by a dedicated dtm microservice and a dedicated API (`/service/dtm/`) to manage the lifecycle of asset models, asset properties, and asset instances.
+The DTM application is supported by a dedicated Dtm microservice and a dedicated API (`/service/dtm/`) to manage the lifecycle of asset definitions, property definitions, and asset instances.
 {{< /c8y-details >}}
 
 

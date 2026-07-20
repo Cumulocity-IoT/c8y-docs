@@ -1,25 +1,24 @@
-const urls = require('../../all_links.json');
+const allUrls = require('../../all_links.json');
+const { ownDomains: OWN_DOMAINS, excludedLinks, resourceMocks: KNOWN_RESOURCE_MOCKS } = require('../../config.cjs');
 
 describe('Link and Routing Validation - Individual URL Checks', () => {
+  const urlsWith = Cypress.env('urlsWith') || null;
+  const urls = urlsWith
+    ? allUrls.filter(item => item.link.includes(urlsWith))
+    : allUrls;
+
+  // Diagnostics mode: verbose network + console logging to investigate a
+  // failure that isn't reproducible locally. Enable via the workflow's
+  // `diagnostics` dispatch input (combine with `branch` + `urlsWith` to
+  // scope it to one failing case) - see README.md "Case 5".
+  // Cypress coerces --env true/false into real booleans, but env vars set
+  // another way could still arrive as the string "true" - handle both.
+  const DIAGNOSTICS = String(Cypress.env('diagnostics')) === 'true';
+  let diagnosticLog = [];
+  let currentUrl = null;
+
   let completedTests = 0;
   const totalTests = urls.length;
-
-  const excludedLinks = [
-    // MathWorks URL uses anti-bot protection, Cypress cannot reliably load it
-    "https://de.mathworks.com/help/predmaint/ug/remaining-useful-life-estimation-using-convolutional-neural-network.html",
-
-    // Medium blog uses anti-bot protection, Cypress cannot reliably load it
-    "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6",
-    
-    // Timeout links
-    "https://opentelemetry.io/",
-
-    // Timeout links
-    "https://openjdk.org/jeps/252",
-
-
-  ];
-
 
   const expectFragmentExists = (doc, fragment) => {
     const decodedFragment = decodeURIComponent(fragment);
@@ -54,6 +53,81 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     cy.wrap(url).should('not.match', /[()]/, `URL should not contain unencoded parentheses: ${url}`);
   };
 
+  // See config.cjs (resourceMocks) for what's mocked and why.
+  const applyKnownResourceMocks = (link) => {
+    KNOWN_RESOURCE_MOCKS.forEach(({ pattern, response, overrides }) => {
+      const override = overrides?.find((o) =>
+        o.link instanceof RegExp ? o.link.test(link) : o.link === link
+      );
+      const effectiveResponse = override ? override.response : response;
+      if (effectiveResponse === null) return; // explicit opt-out via override
+      cy.intercept(pattern, effectiveResponse);
+    });
+  };
+
+  // Logs every request's start/completion so a request that starts but never
+  // completes is visible as the likely cause of a `load` timeout - this is
+  // what found the asciinema.org hang. Only active in diagnostics mode.
+  // Plain array push only - cy.task()/cy.log() cannot be called from inside
+  // an intercept callback (it runs outside Cypress's normal command queue);
+  // flushed via the afterEach hook below instead. Wrapped in try/catch so a
+  // bug in the logger itself can never block the request pipeline.
+  //
+  // Uses req.on('response', cb) rather than req.continue(cb): the latter is
+  // documented to raise an uncaught exception (failing the test) if the
+  // request errors at the network level rather than receiving an HTTP
+  // response - which, watching every single sub-resource on a page, is
+  // routine transient noise unrelated to the link under test. req.on()
+  // simply never fires for such a request, which for our purposes reads the
+  // same as a hang (START with no DONE) - the correct signal either way,
+  // without turning an unrelated resource's blip into a false failure.
+  const applyDiagnosticNetworkLogging = () => {
+    if (!DIAGNOSTICS) return;
+    cy.intercept('**', (req) => {
+      try {
+        const start = Date.now();
+        diagnosticLog.push(`START ${req.method} ${req.url}`);
+        req.on('response', (res) => {
+          try {
+            diagnosticLog.push(`DONE ${res.statusCode} ${Date.now() - start}ms ${req.url}`);
+          } catch (e) {
+            // never let logging break the request, but don't lose the exception either
+            diagnosticLog.push(`[diagnostic logger error] ${e.message}`);
+          }
+        });
+      } catch (e) {
+        // ignore - request proceeds normally either way
+      }
+    });
+  };
+
+  // Visits a URL like cy.visit(), additionally capturing console.error/warn
+  // calls and (via the describe-level uncaught:exception listener below)
+  // unhandled page errors into diagnosticLog when diagnostics mode is on.
+  // A no-op wrapper (byte-for-byte cy.visit(url, options)) otherwise.
+  const visitWithDiagnostics = (url, options = {}) => {
+    if (!DIAGNOSTICS) {
+      cy.visit(url, options);
+      return;
+    }
+    const onBeforeLoad = (win) => {
+      options.onBeforeLoad?.(win);
+      ['error', 'warn'].forEach((level) => {
+        const original = win.console[level];
+        win.console[level] = (...args) => {
+          try {
+            diagnosticLog.push(`console.${level}: ${args.map(String).join(' ')}`);
+          } catch (e) {
+            // never let logging break the page, but don't lose the exception either
+            diagnosticLog.push(`[diagnostic logger error] ${e.message}`);
+          }
+          original.apply(win.console, args);
+        };
+      });
+    };
+    cy.visit(url, { ...options, onBeforeLoad });
+  };
+
 // Note: On GitHub pages, heading IDs are prefixed with "user-content-".
   const checkGithubFragment = (fragment) => {
     cy.document().then((doc) => {
@@ -70,6 +144,16 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     });
   };
 
+  // Text fragment directives: #:~:text=[prefix-,]textStart[,textEnd][,-suffix]
+  const checkTextFragment = (fragment) => {
+    const textParam = fragment.replace(/^:~:text=/, '');
+    const parts = textParam.split(',');
+    // Skip prefix- (ends with '-') and suffix (starts with '-'); take first plain part
+    const textStart = parts.find(p => !p.endsWith('-') && !p.startsWith('-')) || parts[0];
+    const decodedText = decodeURIComponent(textStart);
+    cy.contains(decodedText).should('exist');
+  };
+
   Cypress.on('fail', (error) => {
     const sourceFiles = Cypress.env('sourceFiles');
     const shortMessage = error.message.split('\n')[0];
@@ -84,15 +168,54 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     throw cleanError;
   });
 
+  // Only fail on an uncaught exception when it happens on a page we own
+  // (see ownDomains in config.cjs) - a JS error on some third-party site a link
+  // points to isn't signal about whether that link is valid. Registered
+  // once here (not per-test) since Cypress.on persists for the whole run;
+  // cypress/support/e2e.js still has its own uncaught:exception handler for
+  // the rare case of a genuine cumulocity.com-domain error that turns out
+  // to be known-harmless - both handlers run independently, and either one
+  // returning `false` suppresses the failure.
+  Cypress.on('uncaught:exception', () => {
+    const isOwnDomain = currentUrl && OWN_DOMAINS.some((d) => currentUrl.includes(d));
+    if (!isOwnDomain) return false;
+  });
+
+  // Diagnostics mode: log uncaught page errors without changing today's
+  // fail-on-uncaught-exception behavior (not returning `false` here leaves
+  // the default handling - and any other registered handler - untouched).
+  // Registered once here rather than per-test to avoid stacking a new
+  // listener (and duplicate log lines) for every URL under test.
+  if (DIAGNOSTICS) {
+    Cypress.on('uncaught:exception', (err) => {
+      diagnosticLog.push(`uncaught exception: ${err.message}`);
+    });
+  }
+
+  const isExcluded = link =>
+    excludedLinks.some(entry =>
+      entry instanceof RegExp ? entry.test(link) : entry === link
+    );
+
   urls.forEach((item) => {
-    if (excludedLinks.includes(item.link)) {
+    if (!urlsWith && isExcluded(item.link)) {
       it.skip(`should validate URL (excluded): ${item.link}`, () => {});
       return;
     }
     
     it(`should validate URL: ${item.link}`, () => {
       const url = item.link;
+      currentUrl = url;
+      // Order matters: cy.intercept() gives priority to the most-recently
+      // registered matching handler, and an explicit req.continue() sends
+      // the request straight to the real server, bypassing earlier
+      // registrations entirely. Mocks must be registered AFTER (i.e. win
+      // over) the diagnostic logger, or diagnostics mode would silently
+      // re-introduce hangs that are already fixed via config.cjs's resourceMocks.
+      applyDiagnosticNetworkLogging();
+      applyKnownResourceMocks(url);
       const fragment = url.includes('#') ? url.split('#').slice(-1)[0] : null;
+      const isTextFragment = fragment !== null && fragment.startsWith(':~:text=');
       const isCodexPage = url.includes('/codex/');
       const isApiPage = url.includes('/api/');
       const isGithubPage = url.includes('github.com');
@@ -139,7 +262,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       }
 
       if (isCodexPage) {
-        cy.visit(url);
+        visitWithDiagnostics(url);
       
         cy.get('[data-cy="c8y-title--title-outlet"] .text-truncate')
           .invoke('text')
@@ -164,9 +287,13 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         }
       }
       else if (isApiPage) {
-        cy.visit(url);
+        visitWithDiagnostics(url);
         if (fragment) {
-          cy.get(`[id="${fragment}"]`).should('exist');
+          if (isTextFragment) {
+            checkTextFragment(fragment);
+          } else {
+            cy.get(`[id="${fragment}"]`).should('exist');
+          }
         }
       }
       else if (isGithubBlobLine) {
@@ -178,18 +305,26 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
             .to.be.oneOf([200, 301, 302]);
         });
         if (lineNumber) {
-          cy.visit(baseUrl);
+          visitWithDiagnostics(baseUrl);
           const selector = `#L${lineNumber}, #LC${lineNumber}`;
           cy.get(selector).should('exist');
         }
       }
       else if (isGithubPage && fragment) {
-        cy.visit(url);
-        checkGithubFragment(fragment);
+        visitWithDiagnostics(url);
+        if (isTextFragment) {
+          checkTextFragment(fragment);
+        } else {
+          checkGithubFragment(fragment);
+        }
       }
       else if (fragment) {
-        cy.visit(url, {failOnStatusCode: false, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122.0 Safari/537.36' }});
-        checkRegularFragment(fragment);
+        visitWithDiagnostics(url, {failOnStatusCode: false, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122.0 Safari/537.36' }});
+        if (isTextFragment) {
+          checkTextFragment(fragment);
+        } else {
+          checkRegularFragment(fragment);
+        }
       }
       else {
         cy.request({
@@ -202,7 +337,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
             expect(response.status).to.be.oneOf([200, 201, 202, 203, 204, 301, 302, 304]);
             expect(response.body).not.to.be.empty;
           } else {
-            cy.visit(url);
+            visitWithDiagnostics(url);
             cy.document().its('body').should('not.be.empty');
           }
         });
@@ -214,5 +349,9 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
   afterEach(() => {
     cy.log(`Progress: ${completedTests}/${totalTests}`);
+    if (diagnosticLog.length) {
+      cy.task('log', `[DIAGNOSTIC]\n${diagnosticLog.join('\n')}`);
+      diagnosticLog = [];
+    }
   });
 });

@@ -43,6 +43,13 @@ The child devices relationship is managed via the [Inventory API](https://cumulo
 {{< /c8y-details >}}
 
 
+### Client ID {#client-id}
+
+A client ID is a unique identifier for a device, client, or gateway connecting to a [protocol adapter](#protocol-adapter).
+The client ID must be unique within a {{< product-c8y-iot >}} [tenant](#tenant).
+For example, devices connecting to the [MQTT Service](#mqtt-service) use the MQTT client identifier as their client ID.
+
+
 ### Cockpit application {#cockpit-application}
 
 The Cockpit application is one of the default [applications](#application) of {{< product-c8y-iot >}}. It provides a self-service UI to manage and monitor IoT assets and data from a business perspective, like managing [assets](#asset), visualizing data, working with [dashboards](#dashboard) and managing [reports](#report).   
@@ -130,10 +137,29 @@ The [{{< product-c8y-iot >}} Developer Codex](https://cumulocity.com/codex/) is 
 
 {{< product-c8y-iot >}} Edge is the onsite solution of {{< product-c8y-iot >}} intended to run as a local software application on industrial PC’s or local servers.
 
-See also [Edge](/{{< c8y-edge-version-major >}}/edge-kubernetes/k8-edge-introduction/) in the documentation.
+See also [Edge](/{{< c8y-edge-current-version >}}/edge) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 Core REST APIs (such as [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API), [Event API](https://cumulocity.com/api/core/#tag/Event-API), [Alarm API](https://cumulocity.com/api/core/#tag/Alarm-API), [Measurement API](https://cumulocity.com/api/core/#tag/Measurement-API)) are typically available locally on the Edge instance.
+{{< /c8y-details >}}
+
+
+### {{< product-c8y-iot >}} Messaging Service {#messaging-service}
+
+The {{< product-c8y-iot >}} Messaging Service is a publish/subscribe messaging bus that provides decoupled, asynchronous data transfer between {{< product-c8y-iot >}} components, as well as to and from hosted microservices and external client applications.
+Amongst other things, it is used by the [data broker](#data-broker), [Notifications 2.0](https://cumulocity.com/api/core/#tag/About-notifications-2.0), [Streaming Analytics](#streaming-analytics) and the [MQTT Service](#mqtt-service).
+
+
+### {{< product-c8y-iot >}} MQTT Service {#mqtt-service}
+
+The {{< product-c8y-iot >}} MQTT Service is a unified endpoint for all MQTT protocol traffic flowing in and out of the {{< product-c8y-iot >}} platform.
+It supports MQTT devices that implement the {{< product-c8y-iot >}} "core MQTT" protocols ([SmartREST](#smartrest) and JSON-over-MQTT), and "generic" devices that implement non-{{< product-c8y-iot >}} protocols.
+
+See also [MQTT Service](/device-integration/mqtt-service/) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+Generic devices are integrated using a custom [microservice](#microservice) or external client that implements a mapping between the device protocol and the {{< product-c8y-iot >}} [domain model](#domain-model).
+Microservices and external clients interact with the MQTT Service through the [Messaging Service](#messaging-service), using the Apache Pulsar publish/subscribe API.
 {{< /c8y-details >}}
 
 

@@ -17,11 +17,18 @@ enableGitInfo          = true
   sectors = "sector"
 
 [outputs]
-  home = ["HTML", "llmstxt"]
+  home = ["HTML", "llmstxt", "llms-full"]
 
 [outputFormats.llmstxt]
   mediaType    = "text/plain"
   baseName     = "llms"
+  isPlainText  = true
+  notAlternative = true
+  suffixes     = ["txt"]
+
+[outputFormats.llms-full]
+  mediaType    = "text/plain"
+  baseName     = "llms-full"
   isPlainText  = true
   notAlternative = true
   suffixes     = ["txt"]

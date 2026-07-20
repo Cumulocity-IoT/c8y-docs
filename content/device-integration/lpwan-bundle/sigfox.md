@@ -269,7 +269,7 @@ In the next window, fill in the required information:
 - **PAC:** Porting authorization code for your device. The value must be a hexadecimal number.
 - **Connection**: Lists all configured Sigfox connections in the tenant. The following contract option is populated based on the selected Sigfox connection.
 - **Contract:** Select your desired contract (all contracts are listed including active and expired).
-- **Device protocol:** Select your desired device protocol from the drop-down list.
+- **Device protocol:** Select your desired device protocol from the dropdown list.
 - **Product certificate key:** This key can be located in *https://partners.sigfox.com/*. Navigate to your device and copy the certificate key. If the checkbox is not selected and no product certificate key is specified, the device will be considered a prototype.
 
 
