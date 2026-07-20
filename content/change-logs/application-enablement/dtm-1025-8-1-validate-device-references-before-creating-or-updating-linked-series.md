@@ -1,18 +1,21 @@
 ---
-date: ""
-title: "Validate device references before creating or updating linked series"
-product_area: "Application enablement & solutions"
+date: '2026-07-20'
+title: Validate device references before creating or updating linked series
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-VSkj2iV9m"
-      label: "Fix"
+  - value: change-VSkj2iV9m
+    label: Fix
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-2712"
-version: "1025.8.1"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-2712
+version: 1025.8.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-07-20'
 ---
 The Asset API previously accepted requests to create or update assets
 with linked series that referenced non-existing devices. This caused
