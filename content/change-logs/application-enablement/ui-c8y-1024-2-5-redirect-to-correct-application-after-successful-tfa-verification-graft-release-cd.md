@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Redirect to correct application after successful TFA verification [GRAFT][release/cd] (#12599)
+title: Redirect to correct application after successful two-factor authentication
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
