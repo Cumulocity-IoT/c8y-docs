@@ -23,14 +23,21 @@ Click **Configuration repository** in the the **Management** menu in the navigat
 ### To add a configuration snapshot {#to-add-a-configuration-snapshot}
 
 1. Click **Add configuration snapshot** at the right of the top menu bar.
-2. In the resulting dialog box, enter a unique name.
+2. In the panel that opens, enter a unique name.
 3. In the **Device type** field, enter a device type. The device type can be found in the **Info** tab of the target device.
 4. Optionally enter a description for the configuration.
 5. Enter the configuration type, for example "ssh".
-6. Specify the configuration snapshot file by either uploading it from the file system, specifying a URL from where the configuration snapshot can be obtained or choosing a file.
+6. Under **Configuration file**, provide the configuration content in one of the following ways:
+   - **Upload a binary**: Drag a file into the drop area or browse for a file on your file system. When you upload a text file, its content opens in the code editor so that you can review and adjust it before saving.
+   - **Provide a file path**: Enter a URL from which the device can obtain the configuration snapshot. External URLs only work with devices that support typed file-based configuration, not with devices using legacy configuration.
+   - **Edit inline**: Enter a filename and write the configuration content directly in the built-in code editor. This lets you create a configuration snapshot without preparing a file outside the application.
 7. Click **Add configuration**.
 
 The configuration snapshot will be added to the configuration repository.
+
+{{< c8y-admon-info >}}
+When a text file is opened in the editor, its syntax highlighting is detected automatically from the file extension. Use the **Language** selector to override the detected highlighting or set it manually.
+{{< /c8y-admon-info >}}
 
 ### To edit a configuration snapshot {#to-edit-a-configuration-snapshot}
 
@@ -39,6 +46,8 @@ To edit a configuration snapshot, click on the menu icon <i class="dlt-c8y-icon-
 For details on the fields, see [To add a configuration snapshot](#to-add-a-configuration-snapshot).
 
 ![Configuration Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepoedit.png)
+
+If the configuration content is a text file, it opens in the code editor so that you can adjust it inline. If the content is sourced from a remote URL, it cannot be edited inline; only the file URL is shown.
 
 Click **Update configuration** to save your changes.
 
@@ -60,7 +69,10 @@ We recommend you to use typed file-based configuration. With typed file-based co
 2. Under **Device-supported configurations**, select the desired configuration type and click
    **Get snapshot from device** at the right.
 
-Once retrieved, you can save or download the snapshot in the **Preview** section. The snapshot will be added to the **Configuration repository**, accessible from the **Management** menu in the navigator.
+Once retrieved, the snapshot is shown in the **Preview** section in a read-only editor with automatic syntax highlighting. From there you can:
+
+- Click **Download** to save the snapshot as a file.
+- Click **Save to repository** to store the snapshot in the **Configuration repository**, accessible from the **Management** menu in the navigator. This opens the configuration in a drawer, prefilled with the retrieved content, where you can review and adjust it before saving.
 
 ![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 
@@ -74,6 +86,8 @@ To apply a configuration snapshot to a device which supports multiple configurat
 2. Under **Device-supported configurations**, select the desired configuration type.
 3. Under **Available supported configurations**, select a configuration file.
 4. Click **Send configuration to device** at the right to apply the selected snapshot to the device.
+
+When you select a configuration from **Available supported configurations**, an **Edit in repository** button is also shown next to **Send configuration to device**. Click it to open the corresponding entry in the **Configuration repository** directly in a drawer for editing, without having to navigate to the **Configuration repository** page.
 
 ![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 

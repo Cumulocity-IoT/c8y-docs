@@ -1,5 +1,6 @@
 ---
 title: Edge
+description: "Cumulocity Edge, the on-site deployment that runs locally on industrial PCs or on-premises servers."
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: new-tab
 external: "https://cumulocity.com/docs/2026/edge"

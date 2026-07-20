@@ -1,5 +1,7 @@
 ---
 title: "Device management & connectivity"
+description: "Connect, provision, monitor, and control devices, including device integration, protocols, connectivity options, and certified hardware."
+outputs: ["HTML", "llmstxt"]
 icon: "c8y-icon c8y-icon-device-management"
 weight: 30
 pdf: true
