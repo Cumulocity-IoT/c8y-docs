@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Redirect to correct application after successful two-factor authentication
+title: Redirect to accessible applications after successful two-factor authentication
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
