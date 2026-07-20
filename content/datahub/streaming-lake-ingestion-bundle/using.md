@@ -12,9 +12,9 @@ Streaming Lake Ingestion is an optional service in {{< product-c8y-iot >}}. To s
 {{< c8y-admon-info >}}
 The download may take a while to complete. For more information, see [Monitoring the data lake storage](#monitoring-the-data-lake-storage).
 
-The `latest_inventory` tables are pre-populated with your full current inventory at subscription time. Alarms, events, measurements and operations are only recorded for changes that occur after subscription. For historical data, see [Migrating to data lake storage](#migrating-to-data-lake-storage).
+The `latest_inventory` tables are pre-populated with your full current inventory at subscription time. Alarms, events, measurements and operations are only recorded for changes that occur after subscription.
 
-The tenant option `CDH_ASSET_WHITELIST` is automatically set on your tenant. This allows granting the tenant's default Dremio user access to the Iceberg source, which is required to read data via the DataHub REST API. Do not change this option.
+For users of DataHub Query (Dremio), the option `CDH_ASSET_WHITELIST` is automatically set on your tenant. This allows granting the tenant's default Dremio user access to the Iceberg source, which is required to read data via the DataHub REST API. Do not change this option.
 {{< /c8y-admon-info >}}
 
 ### Analyzing lake data {#analyzing-lake-data-using-sql}
@@ -31,7 +31,7 @@ If your tenant includes a subscription to DataHub Query (Dremio), the system aut
 
 * Click the data source in the user interface to view the Iceberg folders ("namespaces") that contain the tables of your data lake.
 * Click a table to open the query editor and run SQL queries on the table. You see an example of a query as shown in the screenshot below.
-* To refer to a table, use the pattern `tenant.namespace.table`. For example, if your tenant is "mytenant", the inventory would be referred to as `mytenant.cdc_inventory.inventory`.
+* To refer to a table, use the pattern `<tenant>.<namespace>.<table>`. For example, if your tenant is "mytenant", the inventory would be referred to as `mytenant.cdc_inventory.inventory`.
 * To simplify your SQL statement, click the "Context:" link just above the query editor. You can select a data source and namespace that will be used as context for queries in the editor. For example, if you use "mytenant" as context, you can refer to the inventory using only `cdc_inventory.inventory`. If you use "mytenant.cdc_inventory" as context, you can refer to the inventory using only `inventory`.
 
 ![Example of querying the lake](/images/datahub-guide/querying.png)
@@ -108,7 +108,7 @@ curl -s -X POST \
 ```
 
 {{< c8y-admon-important >}}
-The `clientSecret` is returned only once and is never stored by the service. Store it securely immediately after creation. If the secret is lost, rotate the principal to issue new credentials — rotating immediately invalidates the previous secret.
+The `clientSecret` is returned only once and is never stored by the service. Store it securely immediately after creation. If the secret is lost, rotate the principal to issue new credentials using a `PUT` request — rotating immediately invalidates the previous secret.
 {{< /c8y-admon-important >}}
 
 **Listing principals**
@@ -331,7 +331,7 @@ Additional columns may be visible depending on your use of Cumulocity. For examp
 {{< c8y-admon-info >}}
 Use top-level properties with care. For example, if you have custom properties that you want to store for all devices, such properties may be a good choice.
 However, the total number of top-level properties is limited through a [table width limit](#limits-of-streaming-lake-ingestion). If you exceed the table width limit,
-additional properties will not be written to the inventory table but "binned" (see below).
+additional properties will not be written to the inventory table but "[binned](#binning)".
 Note also that very wide tables with many properties will lead to more inefficient storage and querying.
 We advise you to prefer fragments for custom data when modeling your device data model.
 {{< /c8y-admon-info >}}
@@ -553,8 +553,8 @@ This results in the following data in the data lake:
 **Table: cdc_operation.operation**
 
 | <span style="display: inline-block; width: 160px;">eventType</span> | <span style="display: inline-block; width: 210px;">creationTime</span> | <span style="display: inline-block; width: 80px;">deviceId</span> | <span style="display: inline-block; width: 80px;">agentId</span> | <span style="display: inline-block; width: 80px;">status</span> | <span style="display: inline-block; width: 100px;">description</span> | <span style="display: inline-block; width: 60px;">id</span> | <span style="display: inline-block; width: 210px;">lastUpdated</span> | <span style="display: inline-block; width: 130px;">fragments</span> |
-| ------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| OPERATION_CREATE                                                    | 2025-08-21T13:42:39.678Z                                               | 47635                                                             | 47635                                                            | PENDING                                                           | null                                                                  | 12345                                                        | 2025-08-21T13:42:39.678Z                                                | \[c8y_Restart\]                                                       |
+| ------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| OPERATION_CREATE                                                    | 2025-08-21T13:42:39.678Z                                               | 47635                                                             | 47635                                                            | PENDING                                                         | null                                                                  | 12345                                                       | 2025-08-21T13:42:39.678Z                                              | \[c8y_Restart\]                                                     |
 
 The columns represent the [properties of a {{< product-c8y-iot >}} operation](https://cumulocity.com/api/core/#operation/getOperationCollectionResource). If you do not provide an optional property, the service stores it as a SQL "null" value.
 
@@ -573,7 +573,7 @@ The columns represent the [properties of a {{< product-c8y-iot >}} operation](ht
 Empty JSON objects (`{}`) and empty arrays (`[]`) carry no data to store. They are omitted from the input and treated the same as an absent or "null" property, rather than being converted to a value of the column's data type.
 
 {{< c8y-admon-info >}}
-For more information related to Iceberg data types, please refer to the [Iceberg specification](https://iceberg.apache.org/spec/#semi-structured-types). Note that there are various [structural limits](/service-terms/quotas/) that the service implements to ensure that common upstream query engines can interact with the data produced by the service.
+For more information related to Iceberg data types, please refer to the [Iceberg specification](https://iceberg.apache.org/spec/#semi-structured-types). Note that there are various [structural limits](#limits-of-streaming-lake-ingestion) that the service implements to ensure that common upstream query engines can interact with the data produced by the service.
 {{< /c8y-admon-info >}}
 
 #### Schema evolution {#schema-evolution}
@@ -652,7 +652,7 @@ Note that the order in which messages are sent to {{< product-c8y-iot >}} and th
 
 #### Naming {#naming}
 
-The Iceberg data lake supports names consisting of characters, numbers, underscores, and dashes — **except as the first character, which must always be a letter (a-z, A-Z)**. Digits, underscores, dashes, and any other character are not permitted in the first position, even though they are permitted elsewhere in the name. Other characters are represented by the character string "\_x" followed by the hexadecimal Unicode value of the character. This applies to table and property names, at any nesting level.
+The Iceberg data lake supports names consisting of characters, numbers, underscores, and dashes — except as the first character, which must always be a letter (a-z, A-Z). Digits, underscores, dashes, and any other character are not permitted in the first position, even though they are permitted elsewhere in the name. Other characters are represented by the character string "\_x" followed by the hexadecimal Unicode value of the character. This applies to table and property names, at any nesting level.
 
 For example, if you use the property name "switch:status" in the data sent to {{< product-c8y-iot >}}, the corresponding Iceberg column name is "switch_x003Astatus".
 

@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 {{< c8y-admon-preview >}}
-Streaming Lake Ingestion is currently in Private Preview for selected customers. It is continuously being developed. Features described in the documentation may not be fully available or differ from the documentation text. For more information on Private Previews, see [Previewing features](/service-terms/previews/#private-preview). For limitations of the preview, see [Current preview limitations.](#limitations)
+Streaming Lake Ingestion is currently in preview. It is continuously being developed. Features described in the documentation may not be fully available in your tenant, or differ from the documentation text. For more information on previews, see [Previewing features](/service-terms/previews/). For limitations of the preview, see [Current preview limitations.](#limitations)
 {{< /c8y-admon-preview >}}
 
 The Streaming Lake Ingestion feature in DataHub bridges the gap between real-time IoT data and large-scale business analytics and artificial intelligence needs. It takes the continuous stream of IoT data flowing into {{< product-c8y-iot >}} and automatically transforms it into a queryable and AI-ready format in your data lake. This fully managed process requires no configuration to start. When enabled, it processes your data transparently, continuously, reliably, and scalably, making it available for analysis within minutes.
@@ -16,7 +16,7 @@ At a high level, the service consists of three parts:
 
 * **Data ingestion**: The service subscribes to the real-time data feed from the {{< product-c8y-iot >}} Messaging Service (powered by [Apache Pulsar](http://pulsar.apache.org/)).
 * **Processing and optimization**: It intelligently batches, structures, and writes this data into [Apache Iceberg](https://iceberg.apache.org/) tables within your data lake.
-* **Data access**: The structured data is almost immediately available for high-performance querying from multiple endpoints, such as the built-in capabilities of {{< product-c8y-iot >}} Cockpit, Jupyter notebooks, AI/ML platforms like TensorFlow or PyTorch, or Business Intelligence tools like PowerBI or Tableau.
+* **Data access**: The structured data is almost immediately available for high-performance querying from multiple endpoints, such as the built-in capabilities of {{< product-c8y-iot >}} Cockpit, Jupyter notebooks, AI/ML platforms like TensorFlow or PyTorch, or Business Intelligence tools.
 
 ### A foundation for advanced analytics and AI
 
