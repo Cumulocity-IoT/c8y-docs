@@ -12,7 +12,7 @@ Streaming Lake Ingestion is an optional service in {{< product-c8y-iot >}}. To s
 {{< c8y-admon-info >}}
 The download may take a while to complete. For more information, see [Monitoring the data lake storage](#monitoring-the-data-lake-storage).
 
-The `latest_inventory` tables are pre-populated with your full current inventory at subscription time. Alarms, events, measurements and operations are only recorded for changes that occur after subscription.
+The `latest_inventory` tables are pre-populated with your full current inventory at subscription time. Alarms, events, measurements, and operations are only recorded for changes that occur after subscription.
 
 For users of DataHub Query (Dremio), the option `CDH_ASSET_WHITELIST` is automatically set on your tenant. This allows granting the tenant's default Dremio user access to the Iceberg source, which is required to read data via the DataHub REST API. Do not change this option.
 {{< /c8y-admon-info >}}
