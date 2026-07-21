@@ -23,7 +23,7 @@ You can now analyze your data from any Apache Iceberg compliant tool. For exampl
 
 * Through the user interface of the [embedded query engine](/datahub/setting-up-datahub/#dremio-api-user).
 * By using the secure and high performance [querying APIs](https://cumulocity.com/api/datahub/) from applications and by using JDBC or ODBC with query engines and database tools.
-* By connecting applications directly to the Cumulocity Iceberg catalog.
+* By connecting applications directly to the {{< product-c8y-iot >}} Iceberg catalog.
 
 #### Using DataHub Query to analyze lake data {#using-datahub-query}
 
