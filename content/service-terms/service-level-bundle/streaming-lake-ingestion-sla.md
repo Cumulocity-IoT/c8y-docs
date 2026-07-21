@@ -5,14 +5,14 @@ weight: 22
 ---
 
 {{< c8y-admon-info >}}
-Streaming Lake Ingestion is currently in Private Preview. Preview features are not subject to a service-level agreement. The following text is for information purposes only.
+Streaming Lake Ingestion is currently in Preview. Preview features are not subject to a service-level agreement. The following text is for information purposes only.
 {{< /c8y-admon-info >}}
 
 This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who uses {{< product-c8y-iot >}} Streaming Lake Ingestion ("Service") for offloading and analyzing Internet of Things ("IoT") data using Provider's cloud instances ("software-as-a-service", "SaaS").
 
 ### Service description
 
-The Service provides automated data ingestion and structuring for real-time IoT data, making it available for query through analytics tools such as {{< product-c8y-iot >}} DataHub. The Service performs the following core functions:
+The Service provides automated data ingestion and structuring for real-time IoT data, making it available for querying through analytics tools such as {{< product-c8y-iot >}} DataHub. The Service performs the following core functions:
 
 * Automatically discovers and maps the schema of incoming IoT data to Apache Iceberg tables, including support for schema evolution without manual configuration.
 * Publishes the discovered and evolved schemas to a queryable Iceberg catalog.
@@ -22,9 +22,16 @@ The Service provides automated data ingestion and structuring for real-time IoT 
 
 To ensure the successful operation of the Service, you must fulfill the following responsibilities.
 
+#### Object store
+
+To achieve the service-level objective, we require you to provision an object store (S3 bucket, Azure container) in the same hyperscaler and region that your tenant is hosted on. Make sure that
+
+* The object store is reachable from your Cumulocity instance.
+* The object store permissions are correctly configured to permit Cumulocity to list, write, and delete files as well as to delegate access to the object store through the embedded catalog (Iceberg "credential vending").
+
 #### Schema limits
 
-The service limits the schema that can be ingested into the lake. Data violating the limits is:
+The Service limits the schema that can be ingested into the lake. Data violating the limits is:
 
 * **Binned**: Stored in a secondary location that is not optimized for high-performance queries.
 * **Rejected**: Not stored if it violates system-wide schema constraints.
@@ -51,15 +58,15 @@ Manage data consistency where required, either by enforcing a specific ingestion
 The following limitations and constraints apply to the Service:
 
 * **Data model performance**: The Service stores data using a standardized tabular schema optimized for write performance and a broad range of analytical use cases. This schema is not optimally performant for all query patterns. For applications requiring maximum query performance, you must implement post-processing to create optimized data models (for example, "gold-layer" tables) or leverage query acceleration features within the query engine (for example, "reflections").
-* **Cost profile variations**: The Service balances data timeliness against cost-efficiency of the underlying storage operations (for example, Amazon S3). The internal mechanisms that manage this trade-off (for example, data batching frequency) are part of the Service's evolving software implementation. As the Service is updated and optimized over time, the hyperscaler cost profile of your usage varies. For example, a future update designed to improve query performance might result in a different ratio of API requests to data volume than a previous version.
-* **Storage reclamation delay**: Apache Iceberg retains historical data versions and deleted files for a period of time to ensure data integrity. These files are permanently removed during periodic, automated cleanup cycles. This intentional delay in file deletion affects your total billed storage, as physical storage space is not reclaimed in realtime.
-* **Per tenant traffic limit**: A maximum of 1,500 sustained messages per second can currently be processed for a single tenant.
+* **Cost profile variations**: The Service balances data timeliness against cost-efficiency of the underlying storage operations (for example, Amazon S3). The internal mechanisms that manage this trade-off (for example, data batching frequency) are part of the Service's evolving software implementation. As we update and optimize the Service over time, the hyperscaler cost profile of your usage varies. For example, a future update designed to improve query performance can result in a different ratio of API requests to data volume than a previous version.
+* **Storage reclamation delay**: Apache Iceberg retains historical data versions and deleted files for a period of time to ensure data integrity. The Service permanently removes these files during periodic, automated cleanup cycles. This intentional delay in file deletion affects your total billed storage, as the system does not reclaim physical storage space in real time.
+* **Per tenant traffic limit**: The Service can currently process a maximum of 1,500 sustained messages per second for a single tenant.
 
 ### Service quality
 
 #### Service-level objectives
 
-The quality of the Service is measured by the following objectives:
+The following objectives measure the quality of the Service:
 
 | Service level indicator | Monthly target                               |
 | ----------------------- | -------------------------------------------- |
@@ -72,6 +79,6 @@ The quality of the Service is measured by the following objectives:
 The service quality indicators are defined as follows:
 
 * **Catalog availability**: The uptime of the Iceberg catalog service, as defined by the [{{< company-c8y >}} service availability terms](/service-terms/service-level/#service-availability).
-* **Data freshness**: The time between message arrival in the {{< product-c8y-iot >}} platform (post-preparation) and its availability for query in the data lake, measured over a calendar month.
-* **95 percentile**: 95 percent of the messages arrived within the service level objective.
-* **Sustained load**: The regular and predictable steady-state traffic imposed on the cloud service APIs. Sustained load is the 95 percentile of the previous 30 day requests per second.
+* **Data freshness**: The time between message arrival in the {{< product-c8y-iot >}} platform (post-preparation) and its availability for querying in the data lake, measured over a calendar month.
+* **95th percentile**: 95 percent of the messages arrive within the service level objective.
+* **Sustained load**: The regular and predictable steady-state traffic on the cloud service APIs. Sustained load is the 95 percentile of the previous 30 day requests per second.
