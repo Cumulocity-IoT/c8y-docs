@@ -147,7 +147,7 @@ A maximum of 100 principals can be created per tenant by default.
 
 #### Using the Iceberg catalog from Apache Spark {#using-iceberg-catalog-with-spark}
 
-[Apache Spark](https://spark.apache.org/) is a distributed computing framework that seamlessly integrates with the Cumulocity Iceberg catalogs to provide full SQL-based data processing through a standard [Iceberg REST catalog interface](https://iceberg.apache.org/rest-catalog-spec/).
+[Apache Spark](https://spark.apache.org/) is a distributed computing framework that seamlessly integrates with the {{< product-c8y-iot >}} Iceberg catalogs to provide full SQL-based data processing through a standard [Iceberg REST catalog interface](https://iceberg.apache.org/rest-catalog-spec/).
 
 Use [OpenID Connect](https://openid.net/developers/how-connect-works/) with a client credentials grant type to authenticate against the Cumulocity Iceberg REST catalog.
 
