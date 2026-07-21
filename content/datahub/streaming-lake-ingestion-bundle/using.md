@@ -278,7 +278,7 @@ All tables contain the following column:
 The following columns are present in some tables, depending on the type of data:
 * `source`: For alarms, events, or measurement, this column contains the [managed object ID](/concepts/domain-model/#object-identification) of the device or asset associated with the change.
 * `deviceId`: For operations, this column contains the [managed object ID](/concepts/domain-model/#object-identification) of the device targeted for the operation.
-* `time`: The timestamp of the change as sent by the device. This column is present for alarms, events and measurements.
+* `time`: The timestamp of the change as sent by the device. This column is present for alarms, events, and measurements.
 * `type`: The type property of the device, measurement and so on.
 
 For change data capture tables and views, the following column is present:
