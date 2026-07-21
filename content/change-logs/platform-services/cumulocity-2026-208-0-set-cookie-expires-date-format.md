@@ -20,6 +20,8 @@ environment_availability:
     date: '2026-07-15'
   - label: jp.cumulocity.com
     date: '2026-07-15'
+  - label: us.cumulocity.com
+    date: '2026-07-20'
 ---
 
 The Jetty servlet container has been updated from version 11 to version 12. As a result, the `Expires`
