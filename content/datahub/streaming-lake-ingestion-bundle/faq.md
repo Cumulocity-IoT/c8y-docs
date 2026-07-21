@@ -22,7 +22,7 @@ DataHub Query is optional if you want to post-process or query data using your o
 
 Only changes after subscription to Streaming Lake Ingestion are visible in the lake. If you have recently subscribed and the data was not changed since then, it will not be transferred to the lake.
 
-If the data was changed and it is not visible, check the "Alarms" overview page in the Cockpit application for warnings. You may have breached a limit. In this case, data breaching the limit is insert into the `trash` table.
+If the data was changed and it is not visible, check the **Alarms** page in the Cockpit application for warnings. You may have breached a limit. In this case, data that breaches the limit is inserted into the `trash` table.
 
 ### I see a device in the lake, but not in the operational store. {#device-not-in-operational-store}
 
