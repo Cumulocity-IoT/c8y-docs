@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 {{< c8y-admon-preview >}}
-Streaming Lake Ingestion is currently in preview. It is continuously being developed. Features described in the documentation may not be fully available in your tenant, or differ from the documentation text. For more information on previews, see [Previewing features](/service-terms/previews/). For limitations of the preview, see [Current preview limitations.](#limitations)
+Streaming Lake Ingestion is currently in preview. It is continuously being developed. Features described in the documentation may not be fully available in your tenant, or differ from the documentation text. For more information on previews, see [Previewing features](/service-terms/previews/). For limitations of the preview, see [Current preview limitations](#limitations).
 {{< /c8y-admon-preview >}}
 
 The Streaming Lake Ingestion feature in DataHub bridges the gap between real-time IoT data and large-scale business analytics and artificial intelligence needs. It takes the continuous stream of IoT data flowing into {{< product-c8y-iot >}} and automatically transforms it into a queryable and AI-ready format in your data lake. This fully managed process requires no configuration to start. When enabled, it processes your data transparently, continuously, reliably, and scalably, making it available for analysis within minutes.
