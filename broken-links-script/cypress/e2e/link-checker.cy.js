@@ -10,10 +10,15 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   // Diagnostics mode: verbose network + console logging to investigate a
   // failure that isn't reproducible locally. Enable via the workflow's
   // `diagnostics` dispatch input (combine with `branch` + `urlsWith` to
-  // scope it to one failing case) - see README.md "Case 5".
+  // scope it to one failing case) - see the `fix-broken-links` skill or
+  // README.md "Investigating and fixing a failing run".
   // Cypress coerces --env true/false into real booleans, but env vars set
   // another way could still arrive as the string "true" - handle both.
   const DIAGNOSTICS = String(Cypress.env('diagnostics')) === 'true';
+  // Each entry is a plain object, flushed as one NDJSON line per entry
+  // (see afterEach below) rather than one free-text blob per test - this
+  // lets entries be parsed/aggregated (e.g. grep '[DIAGNOSTIC]' log | sed
+  // 's/^.*\[DIAGNOSTIC\] //' | jq -s '...') instead of only eyeballed.
   let diagnosticLog = [];
   let currentUrl = null;
 
@@ -79,25 +84,44 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   // response - which, watching every single sub-resource on a page, is
   // routine transient noise unrelated to the link under test. req.on()
   // simply never fires for such a request, which for our purposes reads the
-  // same as a hang (START with no DONE) - the correct signal either way,
-  // without turning an unrelated resource's blip into a false failure.
+  // same as a hang (a 'network-start' entry with no matching 'network-done')
+  // - the correct signal either way, without turning an unrelated resource's
+  // blip into a false failure.
   const applyDiagnosticNetworkLogging = () => {
     if (!DIAGNOSTICS) return;
     cy.intercept('**', (req) => {
       try {
         const start = Date.now();
-        diagnosticLog.push(`START ${req.method} ${req.url}`);
+        diagnosticLog.push({ type: 'network-start', method: req.method, url: req.url, timestamp: new Date().toISOString() });
         req.on('response', (res) => {
           try {
-            diagnosticLog.push(`DONE ${res.statusCode} ${Date.now() - start}ms ${req.url}`);
+            diagnosticLog.push({ type: 'network-done', url: req.url, statusCode: res.statusCode, ms: Date.now() - start, timestamp: new Date().toISOString() });
           } catch (e) {
             // never let logging break the request, but don't lose the exception either
-            diagnosticLog.push(`[diagnostic logger error] ${e.message}`);
+            diagnosticLog.push({ type: 'logger-error', message: e.message, timestamp: new Date().toISOString() });
           }
         });
       } catch (e) {
         // ignore - request proceeds normally either way
       }
+    });
+  };
+
+  // Timing wrapper for cy.request() calls (npm registry lookups, non-HTML
+  // resource checks, GitHub blob-file existence checks, content-type
+  // sniffing). cy.intercept() only sees requests made by the browser
+  // page under test, not cy.request() (which Cypress proxies directly) -
+  // so without this, diagnostics mode saw nothing for any URL that never
+  // reaches a cy.visit(). Transparent pass-through (byte-for-byte
+  // cy.request(options)) when diagnostics is off.
+  const requestWithDiagnostics = (options) => {
+    if (!DIAGNOSTICS) return cy.request(options);
+    const url = typeof options === 'string' ? options : options.url;
+    const start = Date.now();
+    diagnosticLog.push({ type: 'request-start', url, timestamp: new Date().toISOString() });
+    return cy.request(options).then((response) => {
+      diagnosticLog.push({ type: 'request-done', url, statusCode: response.status, ms: Date.now() - start, timestamp: new Date().toISOString() });
+      return response;
     });
   };
 
@@ -116,10 +140,10 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         const original = win.console[level];
         win.console[level] = (...args) => {
           try {
-            diagnosticLog.push(`console.${level}: ${args.map(String).join(' ')}`);
+            diagnosticLog.push({ type: 'console', level, message: args.map(String).join(' '), timestamp: new Date().toISOString() });
           } catch (e) {
             // never let logging break the page, but don't lose the exception either
-            diagnosticLog.push(`[diagnostic logger error] ${e.message}`);
+            diagnosticLog.push({ type: 'logger-error', message: e.message, timestamp: new Date().toISOString() });
           }
           original.apply(win.console, args);
         };
@@ -188,7 +212,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   // listener (and duplicate log lines) for every URL under test.
   if (DIAGNOSTICS) {
     Cypress.on('uncaught:exception', (err) => {
-      diagnosticLog.push(`uncaught exception: ${err.message}`);
+      diagnosticLog.push({ type: 'uncaught-exception', message: err.message, timestamp: new Date().toISOString() });
     });
   }
 
@@ -230,7 +254,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         const encodedUrl = pkg ? url.replace(pkg, encodeURIComponent(pkg)) : url;
 
         if (pkg) {
-          cy.request({
+          requestWithDiagnostics({
             url: `https://registry.npmjs.org/${pkg}`,
             failOnStatusCode: false,
             headers: { Accept: 'application/vnd.npm.install-v1+json' }
@@ -247,9 +271,9 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
       if (isNonHtmlResource) {
         cy.log(`Validating non-HTML resource: ${url}`);
-        cy.request({
+        requestWithDiagnostics({
           url: url,
-          failOnStatusCode: false 
+          failOnStatusCode: false
         }).then((response) => {
           expect(response.status).to.be.oneOf([200, 201, 202, 203, 204, 301, 302, 304]);
   
@@ -300,7 +324,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         const baseUrl = url.split('#')[0];
         const match = url.match(/#L(\d+)/);
         const lineNumber = match ? match[1] : null;
-        cy.request({ url: baseUrl, failOnStatusCode: false }).then((res) => {
+        requestWithDiagnostics({ url: baseUrl, failOnStatusCode: false }).then((res) => {
           expect(res.status, `GitHub blob file should exist: ${baseUrl}`)
             .to.be.oneOf([200, 301, 302]);
         });
@@ -327,7 +351,7 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
         }
       }
       else {
-        cy.request({
+        requestWithDiagnostics({
           url: url,
           failOnStatusCode: false
         }).then((response) => {
@@ -350,7 +374,13 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
   afterEach(() => {
     cy.log(`Progress: ${completedTests}/${totalTests}`);
     if (diagnosticLog.length) {
-      cy.task('log', `[DIAGNOSTIC]\n${diagnosticLog.join('\n')}`);
+      // One NDJSON line per entry, each tagged with the URL under test
+      // (`link`) so entries can be grouped/filtered after the fact even
+      // though a single test can log several sub-resource requests -
+      // e.g.: grep '\[DIAGNOSTIC\]' log | sed 's/^.*\[DIAGNOSTIC\] //' | jq -s '.'
+      diagnosticLog.forEach((entry) => {
+        cy.task('log', `[DIAGNOSTIC] ${JSON.stringify({ link: currentUrl, ...entry })}`);
+      });
       diagnosticLog = [];
     }
   });
