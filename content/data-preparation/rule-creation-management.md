@@ -109,8 +109,8 @@ In the rule editor you can update the smart function code, add test data, and ru
 You can change rule settings such as the topic filter and rule description without leaving the rule editor.
 
 1. Open the rule editor for the rule.
-2. Open the **more** menu and select **Edit rule settings**. Alternatively, hover over the topic name at the top of the editor and click the edit icon <i class="dlt-c8y-icon-edit1 icon-20 text-primary"></i> that appears.
-3. Update the settings as needed, then click **Update**.
+2. Click **More…** in the action bar and select **Edit rule settings** from the dropdown menu. Alternatively, hover over the topic name at the top of the editor and click the edit icon <i class="dlt-c8y-icon-edit1 icon-20 text-primary"></i> that appears.
+4. Update the settings as needed, then click **Update**.
 
 If you enter a topic filter that is already handled by another rule, the dialog shows a warning, but you can still save and deploy your changes. 
 
@@ -124,7 +124,7 @@ The list of topic filters already handled by other rules excludes draft changes 
 
 Duplicating a rule creates a new, independent rule that starts with the same source configuration, description, smart function code, and test data as an existing rule. Use this to reuse a rule as a starting point for a similar device such as a newer version. You can also use this feature to rename an existing rule by creating a duplicate and then deleting the original rule. 
 
-1. In the rules list, hover over the rule you want to duplicate and click the duplicate icon <i class="dlt-c8y-icon-duplicate icon-20 text-primary"></i>. The icon may be shown under a "..." menu.
+1. In the rules list, hover over the rule you want to duplicate and click the duplicate icon <i class="dlt-c8y-icon-duplicate icon-20 text-primary"></i>. The icon may be shown under a 3-dot menu.
 2. Enter a name for the new rule. A suggested name based on the original rule's name is pre-filled, and you can change it. The name must be unique among existing rules.
 3. Update the transport, topic filter, client ID filter, or description to match the purpose of the new rule. Usually you should change at least the topic filter.
 4. You can either copy the AI chat history from the previous rule or start with an empty conversation. Since AI performs better with a small window of previous messages, do not include the history if you are creating a rule for a different device where the previous messages may be unnecessary or misleading. However, if you are duplicating to try out improvements to an existing rule, or to rename an existing rule, then including the previous messages may be helpful.
