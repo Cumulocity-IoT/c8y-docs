@@ -11,7 +11,7 @@ Streaming Lake Ingestion has no configuration options and stores all incoming re
 * Use Edge or Data Preparation to change data to more user friendly names, execute simple calculations or route data using processing modes.
 * Use Digital Twin Manager to promote data points to asset level.
 * Use Streaming Analytics to create new data in your desired output format.
-* Use Data Broker to transfer data between tenants.
+* Use data broker to transfer data between tenants.
 * Use a so-called "gold layer" to post-process IoT data together with your IT data into an joint and aggregated target format.
 
 ### Is DataHub Query (Dremio) required for Streaming Lake Ingestion?
