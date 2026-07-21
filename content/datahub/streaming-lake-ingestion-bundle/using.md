@@ -81,7 +81,7 @@ $ curl -u "admin:$PASS" \
 
 #### Obtaining Iceberg catalog credentials {#obtaining-iceberg-catalog-credentials}
 
-To connect to the Cumulocity Iceberg catalog directly — for example, from Apache Spark, Databricks, or a custom application — you need OAuth2 client credentials. As a tenant administrator, you can create and manage named catalog principals using the Manager API.
+To connect to the {{< product-c8y-iot >}} Iceberg catalog directly — for example, from Apache Spark, Databricks, or a custom application — you need OAuth2 client credentials. As a tenant administrator, you can create and manage named catalog principals using the Manager API.
 
 **Prerequisites**
 
