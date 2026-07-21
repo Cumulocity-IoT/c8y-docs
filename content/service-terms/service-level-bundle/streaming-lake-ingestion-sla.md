@@ -71,7 +71,7 @@ The quality of the Service is measured by the following objectives:
 
 The service quality indicators are defined as follows:
 
-* **Catalog Availability**: The uptime of the Iceberg catalog service, as defined by the [{{< company-c8y >}} service availability terms](/service-terms/service-level/#service-availability).
+* **Catalog availability**: The uptime of the Iceberg catalog service, as defined by the [{{< company-c8y >}} service availability terms](/service-terms/service-level/#service-availability).
 * **Data freshness**: The time between message arrival in the {{< product-c8y-iot >}} platform (post-preparation) and its availability for query in the data lake, measured over a calendar month.
 * **95 percentile**: 95 percent of the messages arrived within the service level objective.
 * **Sustained load**: The regular and predictable steady-state traffic imposed on the cloud service APIs. Sustained load is the 95 percentile of the previous 30 day requests per second.
