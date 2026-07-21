@@ -85,7 +85,7 @@ To connect to the {{< product-c8y-iot >}} Iceberg catalog directly — for examp
 
 **Prerequisites**
 
-* Your Cumulocity user must have the `ROLE_TENANT_ADMIN` role.
+* Your {{< product-c8y-iot >}} user must have the ROLE_TENANT_ADMIN permission.
 * Your tenant must be subscribed to Streaming Lake Ingestion.
 * Principal names must be strictly alphanumeric — letters and digits only, no dashes or underscores (for example, `spark1` or `dremioqa`).
 
