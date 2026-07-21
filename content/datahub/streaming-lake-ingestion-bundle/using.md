@@ -273,7 +273,7 @@ The following sections discuss the general table structure for each {{< product-
 
 All tables contain the following column:
 * `id`: The record ID of the device, asset, alarm, event, measurement or operation associated with the change.
-  In the inventory tables, this is the [managed object ID](https://cumulocity.com/docs/concepts/domain-model/#object-identification).
+  In the inventory tables, this is the [managed object ID](/concepts/domain-model/#object-identification).
 
 The following columns are present in some tables, depending on the type of data:
 * `source`: For alarms, events or measurement, this columns contains the [managed object ID](https://cumulocity.com/docs/concepts/domain-model/#object-identification) of the device or asset associated with the change.
