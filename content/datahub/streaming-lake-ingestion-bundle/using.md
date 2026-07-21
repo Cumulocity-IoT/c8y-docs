@@ -317,7 +317,7 @@ The columns of the `inventory` table are:
 * `id` contains "47635", the managed object ID assigned to the new device by {{< product-c8y-iot >}}.
 * `lastUpdated` contains "2025-08-20T13:41:39.678Z", the timestamp of the most recent update to the managed object in {{< product-c8y-iot >}}.
 * `name` contains "Tracker #1", the name of the managed object as used in the request.
-* `owner` contains the user who created the managed object
+* `owner` contains the user who created the managed object.
 * `type` contains "sb_nano", the type of the managed object as used in the request to create the managed object.
 * `eventType` contains "MANAGED_OBJECT_CREATE", the event type for creating a new managed object.
 * `fragments` contains a list of all fragments used in the managed object.
