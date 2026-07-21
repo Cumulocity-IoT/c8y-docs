@@ -149,7 +149,7 @@ A maximum of 100 principals can be created per tenant by default.
 
 [Apache Spark](https://spark.apache.org/) is a distributed computing framework that seamlessly integrates with the {{< product-c8y-iot >}} Iceberg catalogs to provide full SQL-based data processing through a standard [Iceberg REST catalog interface](https://iceberg.apache.org/rest-catalog-spec/).
 
-Use [OpenID Connect](https://openid.net/developers/how-connect-works/) with a client credentials grant type to authenticate against the Cumulocity Iceberg REST catalog.
+Use [OpenID Connect](https://openid.net/developers/how-connect-works/) with a client credentials grant type to authenticate against the {{< product-c8y-iot >}} Iceberg REST catalog.
 
 {{< c8y-admon-info >}}
 To obtain client credentials for the Iceberg catalog, see [Obtaining Iceberg catalog credentials](#obtaining-iceberg-catalog-credentials).
