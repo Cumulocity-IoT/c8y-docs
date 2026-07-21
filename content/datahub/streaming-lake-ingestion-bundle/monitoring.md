@@ -7,7 +7,7 @@ layout: redirect
 
 <!--
 
-### Monitoring the data flow
+### Monitoring the data flow {#monitoring-the-data-flow}
 
 The service stores IoT data in the lake in near-realtime batches. When the service writes a batch of IoT data, it provides metrics on the data volumes:
 
@@ -16,7 +16,7 @@ The service stores IoT data in the lake in near-realtime batches. When the servi
 
 Use {{< product-c8y-iot >}} visualization tools to confirm that data arrives as expected and to understand data growth patterns.
 
-### Schema change and violation notifications (#schema-change-and-violation-notifications)
+### Schema change and violation notifications {#schema-change-and-violation-notifications}
 
 -->
 

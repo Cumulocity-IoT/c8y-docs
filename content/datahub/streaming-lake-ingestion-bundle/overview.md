@@ -10,7 +10,7 @@ Streaming Lake Ingestion is currently in preview. It is continuously being devel
 
 The Streaming Lake Ingestion feature in DataHub bridges the gap between real-time IoT data and large-scale business analytics and artificial intelligence needs. It takes the continuous stream of IoT data flowing into {{< product-c8y-iot >}} and automatically transforms it into a queryable and AI-ready format in your data lake. This fully managed process requires no configuration to start. When enabled, it processes your data transparently, continuously, reliably, and scalably, making it available for analysis within minutes.
 
-### From live stream to analytics
+### From live stream to analytics {#stream-to-analytics}
 
 At a high level, the service consists of three parts:
 
@@ -18,7 +18,7 @@ At a high level, the service consists of three parts:
 * **Processing and optimization**: It intelligently batches, structures, and writes this data into [Apache Iceberg](https://iceberg.apache.org/) tables within your data lake.
 * **Data access**: The structured data is almost immediately available for high-performance querying from multiple endpoints, such as the built-in capabilities of {{< product-c8y-iot >}} Cockpit, Jupyter notebooks, AI/ML platforms like TensorFlow or PyTorch, or Business Intelligence tools.
 
-### A foundation for advanced analytics and AI
+### A foundation for advanced analytics and AI {#analytics-ai-foundation}
 
 While powerful for business intelligence and ad-hoc queries, the true long-term value of your IoT data lies in its potential to fuel AI and Machine Learning (ML) models. However, raw device data alone is not enough. Technical data from your devices—such as PLC registers or sensor values—exists as cryptic identifiers (for example, `register_012f` or `sensor_4a2b`). These identifiers are typically associated with sensors and machine components, not with business-level assets. For AI and ML models to be useful, this raw data must be transformed into understandable, business-meaningful information.
 
@@ -26,7 +26,7 @@ While powerful for business intelligence and ad-hoc queries, the true long-term 
 * To automatically maintain cleaned, harmonized and historically complete data in a long-term data archive for any data science workflow, so that your data science team can focus on model development instead of data preparation.
 * To contextualize it into business-relevant assets through **Digital Twin Manager**'s **Data Service** so that AI models can understand what the data represents and extract meaningful insights.
 
-### Reliability, performance, and an open standard for your data
+### Reliability, performance, and an open standard for your data {#reliability-performance-open-standard}
 
 Apache Iceberg is the strategic choice of {{< product-c8y-iot >}} to provide you with a reliable and future-proof foundation for your data lake. It is an open source table format governed by the Apache Software Foundation that has rapidly become an industry standard supported by major data platforms such as Dremio, Databricks, and Snowflake. It ensures that all your data assets remain portable and valuable for years to come.
 

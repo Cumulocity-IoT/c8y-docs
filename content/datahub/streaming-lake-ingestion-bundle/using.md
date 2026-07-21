@@ -25,7 +25,7 @@ You can now analyze your data from any Apache Iceberg compliant tool. For exampl
 * By using the secure and high performance [querying APIs](https://cumulocity.com/api/datahub/) from applications and by using JDBC or ODBC with query engines and database tools.
 * By connecting applications directly to the Cumulocity Iceberg catalog.
 
-#### Using DataHub Query to analyze lake data
+#### Using DataHub Query to analyze lake data {#using-datahub-query}
 
 If your tenant includes a subscription to DataHub Query (Dremio), the system automatically sets up a data source with your tenant ID for querying the lake.
 
@@ -36,7 +36,7 @@ If your tenant includes a subscription to DataHub Query (Dremio), the system aut
 
 ![Example of querying the lake](/images/datahub-guide/querying.png)
 
-#### Using DataHub Query APIs and drivers to analyze lake data programmatically
+#### Using DataHub Query APIs and drivers to analyze lake data programmatically {#using-query-apis-and-drivers}
 
 If your tenant includes a subscription to DataHub Query, use the [DataHub APIs](https://cumulocity.com/api/datahub) as well as the [JDBC](/datahub/working-with-datahub/#connecting-via-jdbc) and [ODBC](/datahub/working-with-datahub/#connecting-via-odbc) drivers.
 
@@ -145,7 +145,7 @@ curl -s -X DELETE \
 A maximum of 100 principals can be created per tenant by default.
 {{< /c8y-admon-info >}}
 
-#### Using the Iceberg catalog from Apache Spark
+#### Using the Iceberg catalog from Apache Spark {#using-iceberg-catalog-with-spark}
 
 [Apache Spark](https://spark.apache.org/) is a distributed computing framework that seamlessly integrates with the Cumulocity Iceberg catalogs to provide full SQL-based data processing through a standard [Iceberg REST catalog interface](https://iceberg.apache.org/rest-catalog-spec/).
 
@@ -199,7 +199,7 @@ spark-sql (default)> select * from c8y.cdc_inventory.inventory;
 99266201	2026-03-30 17:27:44.838	Temperature #1	service_device-simulator	c8y_MQTTDevice	MANAGED_OBJECT_UPDATE	["supportedMeasurements","com_cumulocity_model_Agent","c8y_IsDevice","c8y_SupportedOperations"]	NULL	NULL	NULL	["c8y_Temperature.T"]	2026-03-30 17:07:13.37
 ```
 
-#### Using the Iceberg catalog from other applications
+#### Using the Iceberg catalog from other applications {#using-iceberg-catalog-from-apps}
 
 Access the catalog from other applications using the `curl` example below. To obtain the `<CLIENT_ID>` and `<CLIENT_SECRET>` referenced in this section, see [Obtaining Iceberg catalog credentials](#obtaining-iceberg-catalog-credentials). First, get an access token to the catalog.
 
@@ -257,7 +257,7 @@ $ curl https://iceberg.<INSTANCE>:19120/api/catalog/v1/<TENANT>/namespaces/cdc_i
 While Iceberg is widely supported, the degree of support currently still varies and we cannot guarantee the catalog to be interoperable with all setups and applications.
 {{< /c8y-admon-info >}}
 
-### Understanding the data lake structure
+### Understanding the data lake structure {#understanding-lake-structure}
 
 Streaming Lake Ingestion provides three types of data:
 
@@ -287,7 +287,7 @@ For change data capture tables and views, the following column is present:
 
 #### Inventory {#inventory}
 
-##### Creating inventory data
+##### Creating inventory data {#creating-inventory-data}
 
 To understand how the service captures inventory data in the data lake, assume that the device user "device_123" creates a new tracking device "Tracking #1" with the following data:
 
@@ -375,7 +375,7 @@ Accordingly, the latest custom data is visible in the `c8y_Position` table in `l
 | ----- | ------------------------ | --- | ------- | --------- |
 | 47635 | 2025-08-20T13:41:39.678Z | 67  | 6.15173 | 51.211977 |
 
-##### Updating inventory data
+##### Updating inventory data {#updating-inventory-data}
 
 Assume that the tracking device updates its location:
 ```
@@ -418,7 +418,7 @@ The "latest data" versions of the tables reflect this update:
 | ----- | ------------------------ | ------- | --- | ------ | ------ |
 | 47635 | 2025-08-20T13:45:20.002Z | sb_nano | 69  | 6.3213 | 50.425 |
 
-##### Deleting inventory data
+##### Deleting inventory data {#deleting-inventory-data}
 
 Currently, delete operations of inventory entries are only written for CDC tables. When a managed object is deleted, an
 update is written to `cdc_inventory.inventory` like the following:
@@ -558,7 +558,7 @@ This results in the following data in the data lake:
 
 The columns represent the [properties of a {{< product-c8y-iot >}} operation](https://cumulocity.com/api/core/#operation/getOperationCollectionResource). If you do not provide an optional property, the service stores it as a SQL "null" value.
 
-#### Data types
+#### Data types {#data-types}
 
 {{< product-c8y-iot >}} relies on JSON as data exchange format in its APIs. JSON data types map to Iceberg data types as follows:
 
@@ -777,7 +777,7 @@ The following data is moved to the `trash` table.
 * More than 1,000 fragments.
 * Fragment or property names with more than 255 characters.
 
-##### Examples
+##### Examples {#binning-examples}
 
 **Illegal field name**: The first character of a property or fragment name must be a letter (a-z, A-Z). Digits, underscores, dashes, or any other character in the first position cause the field to be rejected rather than escaped. See [Naming](#naming) for details.
 
@@ -885,7 +885,7 @@ The same rule applies to fragment (table) names and to a number in the first pos
 
 The following example queries demonstrate how to extract common metrics and insights from the data lake using the Dremio SQL dialect. To keep the queries concise, they assume that you set the query context to your tenant as described in [Analyzing lake data](#analyzing-lake-data-using-sql). This allows you to omit the tenant prefix in the `FROM` clauses.
 
-#### Basic inventory queries
+#### Basic inventory queries {#basic-inventory-queries}
 
 To list all devices registered in your tenant, use the `latest_inventory` tables to get the most recent state and filter for the marker fragment `c8y_IsDevice` in the `fragments` array.
 
@@ -904,7 +904,7 @@ WHERE lat BETWEEN 50.0 AND 52.0
   AND lng BETWEEN 6.0 AND 8.0
 ```
 
-#### Basic time series queries
+#### Basic time series queries {#basic-time-series-queries}
 
 To retrieve all events recorded for a specific device within a given timespan, query the `cdc_event.event` table. Note that `time` is a reserved word in Dremio SQL, so it needs to be quoted.
 
@@ -916,7 +916,7 @@ WHERE source = '52277201'
 ORDER BY "time" DESC
 ```
 
-#### Parent and child queries
+#### Parent and child queries {#parent-and-child-queries}
 
 To find a parent device or asset linked to a specific device, you can search for the child's ID within the `childDevices` array.
 
@@ -938,7 +938,7 @@ WHERE id IN (
 )
 ```
 
-#### Measurement queries
+#### Measurement queries {#measurement-queries}
 
 To view a specific measurement series for a device over time, query the corresponding measurement fragment table. The following example fetches voltage measurements.
 
@@ -977,7 +977,7 @@ ORDER BY "time" DESC
 ```
 
 
-### Ensuring good query performance
+### Ensuring good query performance {#ensuring-good-query-performance}
 
 While the data lake offers the flexibility of arbitrary SQL querying, performance can vary depending on the complexity of your query. Unlike the operational store, {{< product-c8y-iot >}} cannot provide a general response time guarantee for all possible SQL statements.
 
