@@ -163,7 +163,7 @@ For example, if your tenant is `mytenant.cumulocity.com`, the URL is
 
 `https://iceberg.cumulocity.com:19120/api/catalog/v1/oauth/tokens`.
 
-Run Spark SQL queries with the Cumulocity Iceberg catalog on an AWS S3 object store using the example below. In the example, replace
+Run Spark SQL queries with the {{< product-c8y-iot >}} Iceberg catalog on an AWS S3 object store using the example below. In the example, replace
 
 * The version number of the Iceberg Spark Runtime to match the Spark version that you use (here Spark 4.0.x).
 * The `<CLIENTID>` and `<CLIENT_SECRET>` with the credentials obtained from support.
