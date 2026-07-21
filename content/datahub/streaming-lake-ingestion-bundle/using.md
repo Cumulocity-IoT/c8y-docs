@@ -906,7 +906,7 @@ WHERE lat BETWEEN 50.0 AND 52.0
 
 #### Basic time series queries {#basic-time-series-queries}
 
-To retrieve all events recorded for a specific device within a given timespan, query the `cdc_event.event` table. Note that `time` is a reserved word in Dremio SQL, so it needs to be quoted.
+To retrieve all events recorded for a specific device within a given timespan, query the `cdc_event.event` table. Note that `time` is a reserved word in Dremio SQL, so it must be quoted.
 
 ```sql
 SELECT "time", type, text
