@@ -326,7 +326,7 @@ The columns of the `inventory` table are:
 * `childDevices` contains a list of IDs of child devices of an asset or device.
 * `someproperty` contains 10. {{< product-c8y-iot >}} creates additional columns in the `inventory` table when there are top-level properties of an atomic type in the managed object (character strings, numbers, booleans).
 
-Additional columns may be visible depending on your use of Cumulocity. For example, once the device has emitted measurements, you will see a column `supportedMeasurements` with a list of the measurement fragments sent by the device.
+Additional columns may be visible depending on your use of {{< product-c8y-iot >}}. For example, once the device has emitted measurements, you will see a column `supportedMeasurements` with a list of the measurement fragments sent by the device.
 
 {{< c8y-admon-info >}}
 Use top-level properties with care. For example, if you have custom properties that you want to store for all devices, such properties may be a good choice.
