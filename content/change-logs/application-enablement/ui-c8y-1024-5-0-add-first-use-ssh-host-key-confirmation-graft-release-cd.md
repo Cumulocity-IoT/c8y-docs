@@ -1,6 +1,6 @@
 ---
 date: ""
-title: SSH host-key confirmation on first use
+title: Improved security by SSH host-key confirmation on first use
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
