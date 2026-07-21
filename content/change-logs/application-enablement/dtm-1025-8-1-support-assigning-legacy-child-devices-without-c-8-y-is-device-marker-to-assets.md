@@ -16,6 +16,10 @@ version: 1025.8.1
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-07-20'
+  - label: apj.cumulocity.com
+    date: '2026-07-21'
+  - label: jp.cumulocity.com
+    date: '2026-07-21'
 ---
 The Asset API previously rejected child devices that lacked the
 `c8y_IsDevice` marker fragment, even if they were already registered as
