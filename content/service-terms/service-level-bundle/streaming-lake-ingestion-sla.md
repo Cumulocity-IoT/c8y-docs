@@ -10,7 +10,7 @@ Streaming Lake Ingestion is currently in Private Preview. Preview features are n
 
 This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who uses {{< product-c8y-iot >}} Streaming Lake Ingestion ("Service") for offloading and analyzing Internet of Things ("IoT") data using Provider's cloud instances ("software-as-a-service", "SaaS").
 
-### Service Description
+### Service description
 
 The Service provides automated data ingestion and structuring for real-time IoT data, making it available for query through analytics tools such as {{< product-c8y-iot >}} DataHub. The Service performs the following core functions:
 
