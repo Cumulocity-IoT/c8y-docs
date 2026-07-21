@@ -22,7 +22,7 @@ Use {{< product-c8y-iot >}} visualization tools to confirm that data arrives as 
 
 
 The service automatically updates the data lake schema when the structure of the incoming data changes. You receive notifications
-in the form of Cumulocity events for schema changes and alarms for schema violations. These notifications help you stay informed about changes and be able to address any issues.
+in the form of {{< product-c8y-iot >}} events for schema changes and alarms for schema violations. These notifications help you stay informed about changes and be able to address any issues.
 
 The following notifications appear in the system:
 
