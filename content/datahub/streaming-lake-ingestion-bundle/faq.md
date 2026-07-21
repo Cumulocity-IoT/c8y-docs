@@ -16,7 +16,7 @@ Streaming Lake Ingestion has no configuration options and stores all incoming re
 
 ### Is DataHub Query (Dremio) required for Streaming Lake Ingestion? {#is-datahub-query-required}
 
-DataHub Query is optional if you want to post-process or query data using own tools. Note that views are currently only generate for engines compatible with Dremio and Spark SQL. While we designed the service to be as compliant as possible with common tool restrictions, we cannot guarantee compliance with all Iceberg tools.
+DataHub Query is optional if you want to post-process or query data using your own tools. Note that views are currently only generated for engines compatible with Dremio and Spark SQL. While we designed the service to be as compliant as possible with common tool restrictions, we cannot guarantee compliance with all Iceberg tools.
 
 ### I see a device, alarm, measurement, event or operation in the operational store but not in the lake. {#data-not-in-lake}
 
