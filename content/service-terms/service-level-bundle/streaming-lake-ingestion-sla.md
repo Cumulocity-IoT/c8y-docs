@@ -31,7 +31,7 @@ The service limits the schema that can be ingested into the lake. Data violating
 
 You are responsible for:
 
-* Monitoring for {{< product-c8y-iot >}} alarms related to data rejection. For details, see ["Monitoring the data flow"](/datahub/streaming-lake-ingestion/#monitoring).
+* Monitoring for {{< product-c8y-iot >}} alarms related to data rejection. For details, see [Monitoring the data flow](/datahub/streaming-lake-ingestion/#monitoring).
 * Implementing pre-processing logic to ensure inbound data conforms to required schemas, using tools such as {{< product-c8y-iot >}} [Dynamic Mapper](https://community.cumulocity.com/t/dynamic-mapper-map-mqtt-device-data-in-a-zero-code-approach/3043).
 
 #### Schema evolution
