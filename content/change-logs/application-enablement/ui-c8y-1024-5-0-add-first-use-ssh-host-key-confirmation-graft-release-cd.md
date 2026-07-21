@@ -1,6 +1,6 @@
 ---
 date: ""
-title: add first-use SSH host-key confirmation [GRAFT][release/cd]
+title: SSH host-key confirmation on first use
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-6421
 version: 1024.5.0
 ---
-feat(Web SDK): [DM-6421] add first-use SSH host-key confirmation [GRAFT][release/cd]
+When you connect to a device via SSH for the first time, the system now prompts you to confirm the host key before establishing the connection. Previously, SSH connections could be established without explicit host-key verification, which posed a security risk by making it possible to connect to unverified or potentially compromised devices. With this change, you must verify and accept the host key during the initial connection attempt, ensuring that you are connecting to the intended device and protecting against man-in-the-middle attacks. This security enhancement applies to all new SSH connections and helps you maintain a secure connection to your devices.
