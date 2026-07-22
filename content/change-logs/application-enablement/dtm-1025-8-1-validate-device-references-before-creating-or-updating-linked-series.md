@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-07-21'
   - label: jp.cumulocity.com
     date: '2026-07-21'
+  - label: us.cumulocity.com
+    date: '2026-07-22'
+  - label: cumulocity.com
+    date: '2026-07-22'
 ---
 The Asset API previously accepted requests to create or update assets
 with linked series that referenced non-existing devices. This caused
