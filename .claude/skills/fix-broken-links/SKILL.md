@@ -84,6 +84,22 @@ The target page 404s, DNS fails, or otherwise doesn't exist/isn't reachable
 in any environment. **Fix:** edit the source Markdown file to point at the
 correct URL (or remove the link if there's no longer a valid target).
 
+If the correct replacement isn't obvious - e.g. a marketing/campaign
+landing page, a private-preview access form, or anything else you can't
+confidently re-derive from the docs site's own structure - do not guess at
+a replacement URL. Instead:
+
+1. Find who originally added the link:
+   `git log --all --follow -S'<distinctive part of the URL>' --format="%H %an %ad" -- <file>`,
+   then resolve their GitHub handle for that commit:
+   `gh api repos/<owner>/<repo>/commits/<hash> -q '.author.login'`.
+2. Leave the link in place, but add an HTML comment directly after it in
+   the Markdown flagging the issue, e.g.:
+   `<!-- TODO(<github-handle>): This link returned 404 as of <date> (Link Checker run <run-url>). Please verify/update. -->`
+3. Once the PR is open (Step 6), add an inline review comment on that exact
+   line tagging the person and briefly explaining what needs verifying:
+   `gh api repos/<owner>/<repo>/pulls/<pr-number>/comments -f commit_id=<head-sha> -f path=<file> -F line=<line-number> -f side=RIGHT -f body="@<github-handle> this link 404s as of <date> - could you confirm the correct URL (or that it should be removed)?"`
+
 ### Case 2: Fragment (`#section`) check fails
 
 The base page loads but the named anchor isn't found. Check whether:
@@ -265,5 +281,8 @@ Once fixes are ready to commit:
    and where the fix landed (content vs. `config.cjs` vs. exception list vs.
    script). Call out any reliability-angle findings from Step 4 that weren't
    acted on, so a maintainer can decide on them separately.
+4. If any fix left a Case 1 TODO comment for the original author to verify
+   (see Case 1 above), add the inline PR review comment tagging them once
+   the PR exists and you have its number and head SHA.
 
 Always confirm with the user before pushing the branch or opening the PR.
