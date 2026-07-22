@@ -4,9 +4,11 @@ title: Data flow
 layout: redirect
 ---
 
-The data flow architecture follows data through {{< product-c8y-iot >}} in real time, from a device on the left to storage and analytics on the right. Each stage has a single, clear responsibility, and a Messaging Service decouples the high-throughput stages so that each one can scale and operate independently. The diagram is a high-level view; the routes described below fill in detail that it glosses over.
+The data flow architecture follows data through {{< product-c8y-iot >}} in real time, from a device on the left to storage and analytics on the right. Each stage has a single, clear responsibility, and a Messaging Service decouples the high-throughput stages so that each one can scale and operate independently.
 
 ![Data flow architecture](/images/concepts-guide/dataflow-architecture.png)
+
+The diagram is a high-level view. The routes described below fill in detail that it glosses over.
 
 **Device integration** connects devices to the platform. The route data takes depends on the protocol and the format the device sends:
 
