@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix c8y select dropdown menu scrollbar (#12465) [GRAFT][release/cd] (#12571)
+title: Fix c8y select dropdown menu scrollbar
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
