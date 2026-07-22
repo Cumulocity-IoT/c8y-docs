@@ -15,9 +15,7 @@ The data flow architecture follows data through {{< product-c8y-iot >}} in real 
 - **[thin-edge.io](https://thin-edge.io/)** automatically converts its data to SmartREST and delivers it to the core.
 - Other protocols, such as **[OPC UA](/device-integration/opcua/)**, LWM2M, and fieldbus protocols, use their own integrations to bring data into the core.
 
-The diagram traces the **MQTT Service** path, which is the most involved: device-specific messages cross the Messaging Service to Data Preparation before reaching the core. Every other method delivers data to the core more directly, in a format it already understands. To support a protocol that is not built in, you can add a **microservice**.
-
-**The Messaging Service** is the platform's internal messaging backbone, powered by [Apache Pulsar](https://pulsar.apache.org/). On the device side, it currently carries only the MQTT Service traffic to Data Preparation, buffering and distributing it reliably and durably so that a burst of device traffic never overwhelms the components downstream.
+**The Messaging Service** is the platform's internal messaging backbone, powered by [Apache Pulsar](https://pulsar.apache.org/). On the device side, it carries only the MQTT Service traffic to Data Preparation, buffering and distributing it reliably and durably so that a burst of device traffic never overwhelms the components downstream.
 
 **Data Preparation** turns the device-specific messages from the MQTT Service into {{< product-c8y-iot >}}'s [domain model](/concepts/domain-model/). It does this with a **[smart function](/concepts/smart-function-concept/)** — or a custom **microservice** for more complex cases — and can also normalize, enrich, or filter the data before storing it.
 
