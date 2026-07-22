@@ -16,3 +16,4 @@ pdf-generator/node_modules/
 CLAUDE.md
 broken-links-script/cypress-output.log
 broken-links-script/pr-comment.md
+broken-links-script/all_links.json

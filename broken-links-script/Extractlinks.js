@@ -102,7 +102,17 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
   if (/^https?:\/\//i.test(resolvedLink)) {
     return resolvedLink;
   }
-  return `${BASE_URL.replace(/\/$/, "")}/${resolvedLink.replace(/^\//, "")}`;
+  // A link written with a leading "/" is root-relative (a shared page like
+  // "/legal-notices/..." or a cross-version reference like
+  // "/2025/edge-kubernetes/...") and resolves against the unversioned site
+  // root, not this branch's own version prefix - prefixing both would
+  // produce an invalid doubled path like ".../docs/2026/2025/...". Only
+  // links without a leading slash are meant to resolve against BASE_URL.
+  if (resolvedLink.startsWith("/")) {
+    const rootUrl = BASE_URL.replace(/\/\d{4}$/, "");
+    return `${rootUrl}${resolvedLink}`.replace(/([^:]\/)\/+/g, '$1');
+  }
+  return `${BASE_URL.replace(/\/$/, "")}/${resolvedLink}`;
 };
 
 (() => {
