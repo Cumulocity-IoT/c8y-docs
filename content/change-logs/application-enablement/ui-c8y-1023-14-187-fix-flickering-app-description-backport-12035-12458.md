@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66856
 version: 1023.14.187
 ---
-Fixed the description field for custom or cloned apps in Administration flickering on hover due to a width change from the autoresize behavior.
+The description field for custom or cloned applications in the Administration application was flickering on hover due to a width change from the auto-resize behavior. This issue has been fixed.
