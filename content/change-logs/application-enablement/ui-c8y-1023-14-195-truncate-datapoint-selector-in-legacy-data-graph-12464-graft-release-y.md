@@ -1,6 +1,6 @@
 ---
 date: ""
-title: truncate datapoint selector in legacy data graph (#12464) [GRAFT][release/y2026] (#12573)
+title: Truncate datapoint selector in legacy data graph
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
