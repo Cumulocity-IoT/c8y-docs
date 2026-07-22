@@ -14,21 +14,4 @@ build_artifact:
 ticket: MTM-66855
 version: 1023.14.195
 ---
-# Backport
-
-This will backport the following commits from `develop` to
-`release/y2026`:
-- [fix(Web SDK): [MTM-66855] truncate datapoint selector in legacy data
-graph
-(#12464)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12464)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66855]:
-https://cumulocity.atlassian.net/browse/MTM-66855?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+Fixed long text overflowing the datapoint selector dropdown in the legacy data graph widget; it now truncates.
