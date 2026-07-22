@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Truncate datapoint selector in legacy data graph
+title: Fixed layout issue of datapoint selector in legacy Data graph widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
