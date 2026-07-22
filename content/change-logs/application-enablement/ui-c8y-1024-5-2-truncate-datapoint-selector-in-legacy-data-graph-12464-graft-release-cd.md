@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66855
 version: 1024.5.2
 ---
-Fixed long text overflowing the datapoint selector dropdown in the legacy data graph widget; it now truncates.
+Long text was overflowing the datapoint selector dropdown in the legacy "Data graph" widget. This issue has been fixed, and it now truncates.
