@@ -5,7 +5,7 @@ weight: 10
 
 The **Overview** tab provides a high-level summary of your account and environments.
 
-<img src="/images/console/account/account-overview%20page.png" alt="Account overview">
+<img src="/images/console/account/account-overview-page.png" alt="Account overview">
 
 ### Account information {#account-information}
 
