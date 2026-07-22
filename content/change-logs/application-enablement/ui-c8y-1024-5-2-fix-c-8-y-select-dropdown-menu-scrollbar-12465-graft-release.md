@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix c8y select dropdown menu scrollbar
+title: Fixed layout issues of select dropdown menu scrollbar
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
