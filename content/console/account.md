@@ -6,4 +6,4 @@ sector:
 weight: 40
 ---
 
-The **Account** section of the Console application contains consumption information relating to the CTC contract and the drawdown.
+The **Account** page provides comprehensive information about your account, contract details, consumption data, and billing history. The page is organized into three tabs: **Overview**, **Consumption**, and **Details & History**. 
