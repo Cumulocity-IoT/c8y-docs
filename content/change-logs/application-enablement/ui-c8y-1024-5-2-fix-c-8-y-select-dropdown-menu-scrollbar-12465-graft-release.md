@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67161
 version: 1024.5.2
 ---
-Fixed the scrollbar not displaying correctly in select dropdown menus, making long lists of options hard to navigate.
+The scrollbar did not display correctly in select dropdown menus, making long lists of options hard to navigate. This issue has been fixed.
