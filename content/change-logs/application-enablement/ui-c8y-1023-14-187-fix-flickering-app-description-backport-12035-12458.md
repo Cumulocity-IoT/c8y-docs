@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix flickering app description in Administration
+title: Fixed flickering of application description 
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
