@@ -1,6 +1,6 @@
 ---
 date: ""
-title: advertise host-key probe support on the SSH socket (#12631) [GRAFT][release/cd] (#12639)
+title: Cloud Remote Access hostkey approval feature is now fully backwards compatible with older CRA microservice versions
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-6421
 version: 1024.6.0
 ---
-feat(Web SDK): [DM-6421] advertise host-key probe support on the SSH socket (#12631) [GRAFT][release/cd] (#12639)
+When users establish remote connections via SSH, they may be prompted for approval of remote servers SSH public key. This prompt will be shown only when CRA microservice supports this feature. Older microservice versions will work exactly as they used to so far.
