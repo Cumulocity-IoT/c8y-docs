@@ -4,17 +4,24 @@ title: Data flow
 layout: redirect
 ---
 
-The data flow architecture follows data through {{< product-c8y-iot >}} in real time, from a device on the left to storage and analytics on the right. Each stage has a single, clear responsibility, and a Messaging Service decouples them so that each one can scale and operate independently.
+The data flow architecture follows data through {{< product-c8y-iot >}} in real time, from a device on the left to storage and analytics on the right. Each stage has a single, clear responsibility, and a Messaging Service decouples the high-throughput stages so that each one can scale and operate independently. The diagram is a high-level view; the routes described below fill in detail that it glosses over.
 
 ![Data flow architecture](/images/concepts-guide/dataflow-architecture.png)
 
-**Device integration** connects devices to the platform, whatever protocol they speak — the [MQTT Service](/device-integration/mqtt-service/), OPC UA, LWM2M, thin-edge.io, REST, or fieldbus protocols. Data enters in the device's own native format. To support a protocol or connectivity method that is not built in, you can add a **microservice** at this stage.
+**Device integration** connects devices to the platform. The route data takes depends on the protocol and the format the device sends:
 
-**The Messaging Service** is the platform's internal messaging backbone, powered by [Apache Pulsar](https://pulsar.apache.org/). A device-side queue buffers and distributes incoming data reliably and durably, decoupling ingestion from processing so that a burst of device traffic never overwhelms the components downstream.
+- Devices connecting over **[REST](/device-integration/device-integration-rest/)** send data directly into the core, already in the {{< product-c8y-iot >}} [domain model](/concepts/domain-model/) format.
+- Devices connecting over **[MQTT](/device-integration/mqtt/)** have two options. They can publish **[SmartREST](/smartrest/)** directly into the core — a defined format that the core automatically converts into the domain model — or they can connect through the **[MQTT Service](/device-integration/mqtt-service/)** in their own device-specific format.
+- **[thin-edge.io](https://thin-edge.io/)** automatically converts its data to SmartREST and delivers it to the core.
+- Other protocols, such as **[OPC UA](/device-integration/opcua/)**, LWM2M, and fieldbus protocols, use their own integrations to bring data into the core.
 
-**Data Preparation** maps each message from its native format into {{< product-c8y-iot >}}'s [domain model](/concepts/domain-model/) and applies any preprocessing — normalizing, enriching, or filtering the data before storing it. You extend this stage with a **microservice** or, more lightly, a **[smart function](/concepts/smart-function-concept/)**.
+The diagram traces the **MQTT Service** path, which is the most involved: device-specific messages cross the Messaging Service to Data Preparation before reaching the core. Every other method delivers data to the core more directly, in a format it already understands. To support a protocol that is not built in, you can add a **microservice**.
 
-**The core** is the heart of the platform. It writes prepared data into the operational store and serves the live state of the system — inventory, measurements, events, alarms, and operations — through its APIs. This is the system of record for current and recent data.
+**The Messaging Service** is the platform's internal messaging backbone, powered by [Apache Pulsar](https://pulsar.apache.org/). On the device side, it currently carries only the MQTT Service traffic to Data Preparation, buffering and distributing it reliably and durably so that a burst of device traffic never overwhelms the components downstream.
+
+**Data Preparation** turns the device-specific messages from the MQTT Service into {{< product-c8y-iot >}}'s [domain model](/concepts/domain-model/). It does this with a **[smart function](/concepts/smart-function-concept/)** — or a custom **microservice** for more complex cases — and can also normalize, enrich, or filter the data before storing it.
+
+**The core** is the heart of the platform, where all paths converge. It holds data in the operational store and serves the live state of the system — inventory, measurements, events, alarms, and operations — through its APIs. This is the system of record for current and recent data.
 
 **A second, application-side Messaging Service** makes data in the core available to everything that consumes it: applications, streaming analytics, and ingestion into the data lake. This second decoupling lets read-side consumers scale independently of ingestion.
 
