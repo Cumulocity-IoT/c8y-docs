@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix flickering app description (backport #12035) (#12458)
+title: Fix flickering app description in Administration
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
