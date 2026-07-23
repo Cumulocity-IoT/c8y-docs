@@ -14,20 +14,4 @@ build_artifact:
 ticket: DM-6360
 version: 1024.7.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Device Management): [DM-6360] Device text based configuration
-tab replace textarea with c8y
-editor](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12585)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[DM-6360]:
-https://cumulocity.atlassian.net/browse/DM-6360?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Bozhidar Dedov <95280800+bozhidardedov@users.noreply.github.com>
+When editing device text-based configurations, you previously used a basic text area that lacked syntax highlighting and code formatting features. The device text-based configuration tab now uses the Cumulocity code editor, which provides syntax highlighting, better code formatting, and improved editing capabilities. This change enhances your editing experience by making it easier to write and review configuration code with visual feedback and better readability.
