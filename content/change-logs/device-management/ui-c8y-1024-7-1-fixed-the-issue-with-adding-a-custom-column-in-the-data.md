@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed the issue with adding a custom column in the data grid [GRAFT][release/cd]
+title: Custom columns in data grids now work correctly
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
