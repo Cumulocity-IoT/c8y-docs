@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Device text-based configuration tab now uses code editor
+title: Text-based configuration tab now uses code editor
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
