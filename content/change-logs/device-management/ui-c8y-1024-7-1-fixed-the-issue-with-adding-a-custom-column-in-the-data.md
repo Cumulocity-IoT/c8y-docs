@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Custom columns in data grids now work correctly
+title: Custom columns using Digital Twin Manager properties now work correctly in data grids
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
