@@ -8,7 +8,7 @@ The application architecture shows how applications and business logic build on 
 
 ![Application architecture](/images/concepts-guide/application-architecture.png)
 
-**The core and its stores** — described in [Data flow](#data-flow) — are the shared foundation. Everything above them works against the same live [domain model](/concepts/domain-model/) in the operational store, and the archive in the data lake.
+The **core and its stores** — described in [Data flow](#data-flow) — are the shared foundation. Everything above them works against the same live [domain model](/concepts/domain-model/) in the operational store, and the archive in the data lake.
 
 **Business logic** runs as server-side [microservices](/microservice-sdk/microservice-sdk-introduction/) alongside the platform's own services. Use it to add custom server-side behavior, or to integrate {{< product-c8y-iot >}} with external and enterprise systems such as ERP or CRM.
 
