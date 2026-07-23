@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-6360
 version: 1024.7.0
 ---
-The text-based configuration tab in device details now uses the code editor instead of a plain text area, adding syntax highlighting and code formatting.
+The **Text-based configuration** on the **Configuration** tab in the device details now uses the code editor instead of a plain text area, adding syntax highlighting and code formatting.
