@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-6421
 version: 1024.6.0
 ---
-When users establish remote connections via SSH, the system now prompts them to approve the remote server's host key only if the cloud-remote-access microservice supports host-key probing on the SSH socket. With older microservice versions, SSH connections work as before.
+When users establish remote connections via SSH, the system now only prompts them to approve the remote server's host key if the cloud-remote-access microservice supports host-key probing on the SSH socket. With older microservice versions, SSH connections work as before.
