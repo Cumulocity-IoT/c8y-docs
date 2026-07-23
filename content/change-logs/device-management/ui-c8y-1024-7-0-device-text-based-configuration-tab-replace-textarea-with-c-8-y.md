@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-6360
 version: 1024.7.0
 ---
-When editing device text-based configurations, you previously used a basic text area that lacked syntax highlighting and code formatting features. The device text-based configuration tab now uses the Cumulocity code editor, which provides syntax highlighting, better code formatting, and improved editing capabilities. This change enhances your editing experience by making it easier to write and review configuration code with visual feedback and better readability.
+The text-based configuration tab in device details now uses the code editor instead of a plain text area, adding syntax highlighting and code formatting.
