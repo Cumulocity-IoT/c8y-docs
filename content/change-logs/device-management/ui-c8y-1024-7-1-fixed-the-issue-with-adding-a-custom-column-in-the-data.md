@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66948
 version: 1024.7.1
 ---
-Fixed the issue with adding a custom column in the data grid [GRAFT][release/cd]
+The data grid feature allows you to customize which columns display your data, helping you focus on the information most relevant to your work. Previously, when you attempted to add a custom column to a data grid, the operation would fail and the column would not be added. Now, adding custom columns works as expected, and your selected columns display correctly in the data grid. This fix ensures that you can fully customize your data grid views without encountering errors, improving your ability to organize and view your data efficiently.
