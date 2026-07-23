@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Device certificates
+title: Trusted certificates
 layout: bundle
 sector:
   - device_management
