@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Cloud Remote Access host-key approval is backward compatible with older cloud-remote-access microservice versions
+title: Cloud Remote Access host key approval is backward compatible with older cloud-remote-access microservice versions
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
