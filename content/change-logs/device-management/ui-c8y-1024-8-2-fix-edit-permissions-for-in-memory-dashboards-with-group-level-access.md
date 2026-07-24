@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix edit permissions for in-memory dashboards with group-level access. [GRAFT][release/cd]
+title: Fixed edit permissions for in-memory dashboards with group-level access
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
