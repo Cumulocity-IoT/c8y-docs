@@ -136,7 +136,7 @@ The client sends its PEM-encoded leaf certificate or certificate chain to the en
 
 The endpoint reuses the existing certificate validation and tenant trust configuration: the certificate chain must be trusted according to the tenant's trust configuration, the same way as for device authentication with certificates. This tab does not repeat how trusted certificates (CA certificates) are uploaded and managed. For those details refer to:
 
-- [Trusted certificates](/device-certificate-authentication/device-certificates/) for an introduction to certificate-based authentication and X.509 certificates.
+- [Connecting devices using certificates](/device-certificate-authentication/device-certificates/) for an introduction to certificate-based authentication and X.509 certificates.
 - [Managing trusted certificates](/device-certificate-authentication/managing-trusted-certificates/) for uploading and managing the trusted (CA) certificates in a tenant.
 
 {{< c8y-admon-info >}}

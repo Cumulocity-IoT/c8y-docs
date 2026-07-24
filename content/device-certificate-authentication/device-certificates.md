@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Trusted certificates
+title: Connecting devices using certificates
 layout: bundle
 sector:
   - device_management
