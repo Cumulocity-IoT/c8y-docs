@@ -85,7 +85,7 @@ The toggle can only be managed by a tenant administrator. Additionally, the feat
 If external communication to the {{< management-tenant >}} has been blocked, then it is only possible to access the tenant in a secure way (for example via an SSH tunnel). This means that you can just as well use basic authentication. Additionally, it is not possible to use single sign-on since the communication from the external authorization server is also blocked. Therefore, the authentication method is automatically set to "Basic authentication" if the {{< management-tenant >}} is configured to block external communication.
 {{< /c8y-admon-info >}}
 
-For details on the OAI-Secure session configuration, token generation, and certificate-based token retrieval, see the [OAI-Secure](/authentication/oai-secure/) tab.
+For details on the OAI-Secure session configuration, token generation, and certificate-based token retrieval, see the [**OAI-Secure**](/authentication/oai-secure/) tab.
 
 ### Basic Auth restrictions {#basic-auth-restrictions}
 
