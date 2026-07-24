@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-6671
 version: 1024.8.2
 ---
-fix edit permissions for in-memory dashboards with group-level access. [GRAFT][release/cd]
+In-memory dashboards are dashboards that exist only in your browser session and are not saved to the server. Previously, when you had group-level access to a dashboard, you were unable to edit it even if your group permissions allowed editing. This prevented you from making necessary changes to dashboards shared with your group. The edit permissions for in-memory dashboards now correctly respect group-level access controls, allowing you to edit dashboards when your group has the appropriate permissions. This change ensures that group-based access controls work consistently across all dashboard types, whether they are saved to the server or exist only in your browser session.
