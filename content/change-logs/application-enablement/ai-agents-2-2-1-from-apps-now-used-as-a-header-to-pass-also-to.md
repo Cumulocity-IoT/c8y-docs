@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fromApps now used as a header to pass also to agent-2-agent tool (#662)
+title: Agent-to-agent calls now use x-from-app header for proper agent routing
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
