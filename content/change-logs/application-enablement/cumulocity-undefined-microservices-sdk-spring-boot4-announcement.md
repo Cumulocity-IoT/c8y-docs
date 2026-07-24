@@ -22,7 +22,7 @@ We are pleased to announce the update to Spring Boot version 4 used in the Micro
 
 **Impact**: Each of these updates may impact your microservices, potentially requiring code changes.
 
-The update is available in Continuous Deployment (CD) versions starting in Q3 2026 and in the annual releases 2026 and 2027.
+This update is now available in the Microservice SDK Continuous Deployment (CD) version X.Y.Z. We will share a separate announcement to confirm the 2026 release version that includes this change.
 
 **Migration Resources**: Refer to the following guides for assistance with the changes:
 
