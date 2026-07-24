@@ -143,7 +143,7 @@ The endpoint reuses the existing certificate validation and tenant trust configu
 Unlike the existing device certificate authentication, this endpoint is not limited to device users. A token can be issued for any eligible {{< product-c8y-iot >}} user type &mdash; device users, regular users, and microservice service users &mdash; provided the user exists in the tenant and is eligible for certificate-based authentication.
 {{< /c8y-admon-info >}}
 
-The endpoint is intentionally reachable without bearer-token authentication, because the submitted certificate and the platform-side certificate validation are the authentication proof. It must therefore be exposed only over TLS and protected with normal gateway controls such as rate limiting and monitoring. Invalid, expired, revoked, untrusted, unsupported, or unmapped certificates are rejected.
+The endpoint is intentionally reachable without bearer-token authentication, because the submitted certificate and the platform-side certificate validation are the authentication proof. Invalid, expired, revoked, untrusted, unsupported, or unmapped certificates are rejected.
 
 For the request and response details, including the required headers and the supported token response modes, see [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/#operation/postCertificateAccessToken).
 
