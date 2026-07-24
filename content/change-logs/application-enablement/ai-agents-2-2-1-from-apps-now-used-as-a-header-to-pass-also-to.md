@@ -14,17 +14,4 @@ build_artifact:
 ticket: MTM-66754
 version: 2.2.1
 ---
-Main issue was, that a agent-2-agent call with subscribed agents wasn't
-working, as the fromApps url parameter was not passed. Now we changed it
-from url-parameter to `x-from-app` header which can be easily attached
-to follow up request. The URL parameter still exist, but is marked as
-deprecated.
-
-Before - agent not found:
-<img width="1786" height="1027" alt="fromApp-before-fix"
-src="https://github.com/user-attachments/assets/98425046-642c-4073-a8f0-c3ee5e6a88b4"
-/>
-
----------
-
-Co-authored-by: Copilot Autofix powered by AI <175728472+Copilot@users.noreply.github.com>
+When making agent-to-agent calls with subscribed agents, the system was unable to locate the target agent because the fromApps information was not being passed along in follow-up requests. The fromApps parameter has been changed from a URL parameter to an `x-from-app` header, which is automatically included in subsequent requests and ensures proper agent routing. The URL parameter still exists for backward compatibility but is now deprecated. Your agent-to-agent calls with subscribed agents now work as expected without requiring manual parameter passing.
