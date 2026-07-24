@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed edit permissions for in-memory dashboards with group-level access
+title: Default device info dashboard now respects group-level edit permissions
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
