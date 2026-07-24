@@ -299,6 +299,16 @@
           "label": "Platform services"
         }
       ]
+    },
+    {
+      "id": "component-VtytA3d55",
+      "option": "AI Agents",
+      "product_area": [
+        {
+          "value": "product_area-eC7h0SiQ2b",
+          "label": "Application enablement & solutions"
+        }
+      ]
     }
   ]
 }

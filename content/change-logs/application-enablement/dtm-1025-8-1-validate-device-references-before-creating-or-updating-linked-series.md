@@ -16,6 +16,14 @@ version: 1025.8.1
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-07-20'
+  - label: apj.cumulocity.com
+    date: '2026-07-21'
+  - label: jp.cumulocity.com
+    date: '2026-07-21'
+  - label: us.cumulocity.com
+    date: '2026-07-22'
+  - label: cumulocity.com
+    date: '2026-07-22'
 ---
 The Asset API previously accepted requests to create or update assets
 with linked series that referenced non-existing devices. This caused
