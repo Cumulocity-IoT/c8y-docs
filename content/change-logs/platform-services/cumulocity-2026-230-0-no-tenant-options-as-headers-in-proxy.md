@@ -19,7 +19,7 @@ The deprecation of attaching microservices' tenant options as request headers by
 
 Until now, tenant options were attached to each microservice request unless this functionality was explicitly disabled via a feature toggle. The microservice proxy added the tenant options to the request headers and forwarded the request to the respective microservice. This functionality is now disabled by default. Tenant options are no longer attached as headers to requests to microservices. The retrieval of the tenant options remains possible through the endpoint <TENANT_DOMAIN>/application/currentApplication/settings.
 
-This change is now available by default. The old behaviour can still be enabled via the feature toggle `core.ms-proxy.no-tenant-options-in-headers`.
+This change is now available by default.
 
 {{< c8y-admon-caution >}}
 Migration from Public Preview to General Availability - action required.
