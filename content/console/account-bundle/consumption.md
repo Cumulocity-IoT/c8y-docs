@@ -5,7 +5,7 @@ weight: 20
 
 The **Consumption** tab shows monthly drawdowns and commitment details.
 
-<img src="/images/console/account/account-consumption%20page.png" alt="Consumption">
+<img src="/images/console/account/account-consumption-page.png" alt="Consumption">
 
 ### Commit to consume {#commit-to-consume}
 
