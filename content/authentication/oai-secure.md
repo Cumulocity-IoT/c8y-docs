@@ -21,7 +21,7 @@ For selecting the preferred login mode, switch to the **Basic settings** tab."
 
 OAI-Secure is the recommended login mode in {{< product-c8y-iot >}}. This tab describes the OAI-Secure session configuration and the available token generation options, as well as how to retrieve a platform token using an X.509 certificate over standard HTTPS.
 
-To select OAI-Secure as the preferred login mode for your tenant, switch to the [Basic settings](/authentication/basic-settings/#login-settings) tab.
+To select OAI-Secure as the preferred login mode for your tenant, switch to the [**Basic settings**](/authentication/basic-settings/#login-settings) tab.
 
 ### OAI-Secure session configuration {#oai-secure-session-configuration}
 
