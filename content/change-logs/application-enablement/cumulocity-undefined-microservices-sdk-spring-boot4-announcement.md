@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ---
-We are pleased to announce the update to Spring Boot version 4.0.7 used in the Microservice SDK. This update requires updates to several third-party libraries and frameworks. These mandatory changes include:
+We are pleased to announce the update to Spring Boot version 4 used in the Microservice SDK. This update requires updates to several third-party libraries and frameworks. These mandatory changes include:
 
 * Jetty 12.1.10
 
