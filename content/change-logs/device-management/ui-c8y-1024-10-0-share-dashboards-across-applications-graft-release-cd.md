@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-6516
 version: 1024.10.0
 ---
-In the Dashboard Manager tab, type dashboards can now be shared across applications. Use the new Data sharing action to pull in dashboards from other applications, or the Manage visibility row action to push a dashboard to specific applications.
+In the dashboard manager, type dashboards can now be shared across applications. Use the new **Data sharing** option to pull in dashboards from other applications, or the **Manage visibility row** option to push a dashboard to specific applications.
