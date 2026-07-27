@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-07-13
 title: Legacy dashboards no longer shown in the Device Management application
 product_area: Device management & connectivity
 change_type:
