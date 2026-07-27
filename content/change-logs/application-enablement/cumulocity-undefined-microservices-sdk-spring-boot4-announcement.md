@@ -24,7 +24,7 @@ We are pleased to announce the update to Spring Boot version 4 used in the Micro
 
 This update is now available in the Microservice SDK Continuous Deployment (CD) version 2026.43.0. We will share a separate announcement to confirm the 2026 release version that includes this change.
 
-**Migration Resources**: Refer to the following guides for assistance with the changes:
+**Migration resources**: Refer to the following guides for assistance with the changes:
 
 * [Spring Boot 4.0 Migration Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide)
 
