@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "support "text/plain" content type and deprecate "application/json" for updating LinkedSeries label and measurement type"
+title: "support 'text/plain' content type and deprecate 'application/json' for updating LinkedSeries label and measurement type"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
