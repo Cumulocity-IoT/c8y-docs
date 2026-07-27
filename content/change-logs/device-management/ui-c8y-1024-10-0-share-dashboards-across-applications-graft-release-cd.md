@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-6516
 version: 1024.10.0
 ---
-Dashboards are often used across multiple applications within your tenant, but previously you had to duplicate dashboards manually to use them in different applications. Now you can share dashboards across applications, allowing you to create a dashboard once and reuse it in multiple applications without duplication. This reduces maintenance overhead and ensures consistency across your applications, as any updates to a shared dashboard are automatically reflected in all applications that use it.
+In the Dashboard Manager tab, type dashboards can now be shared across applications. Use the new Data sharing action to pull in dashboards from other applications, or the Manage visibility row action to push a dashboard to specific applications.
