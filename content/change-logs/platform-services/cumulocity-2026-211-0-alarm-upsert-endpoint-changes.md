@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-07-15'
   - label: jp.cumulocity.com
     date: '2026-07-15'
+  - label: us.cumulocity.com
+    date: '2026-07-20'
+  - label: cumulocity.com
+    date: '2026-07-21'
 ---
 
 The `POST /alarm/alarms/upsert` endpoint has been updated with the following changes:

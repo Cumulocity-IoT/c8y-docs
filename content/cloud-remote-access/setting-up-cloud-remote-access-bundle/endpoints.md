@@ -133,6 +133,9 @@ To terminate the connection, click **Disconnect**.
 
 A host key is a public key of the server which is generated when an SSH server is installed. It is used to verify the identity of the server.
 
-By enabling the auto-saving host key functionality you will no longer need to enter the host key after each connection. Instead, the host key can be automatically saved after the first successfully established connection to a remote access endpoint.
+The host-key handling for SSH endpoints is controlled by the `hostkey-autosave` tenant option in the `remoteaccess` category.
 
-In order to enable the auto-save host key functionality, navigate to the **Remote access** page under the **Settings** menu in the **Administration** application. Activate the checkbox and then click **Save**.
+* When `hostkey-autosave` is `false`, which is the default value, connecting to a remote access endpoint that has no host key stored yet first probes the server and shows you its host key fingerprint. The connection continues only after you confirm the fingerprint, and the confirmed host key is then saved for later connections.
+* When `hostkey-autosave` is `true`, the server host key is instead trusted and saved automatically on the first successful connection, without asking you to enter or confirm it.
+
+In both cases, once a host key is stored, it is used to verify the server identity on every following connection.
