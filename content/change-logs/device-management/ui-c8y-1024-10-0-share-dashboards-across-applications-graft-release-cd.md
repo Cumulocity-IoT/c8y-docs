@@ -14,19 +14,4 @@ build_artifact:
 ticket: DM-6516
 version: 1024.10.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Device management): [DM-6516] Share dashboards across
-applications.](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12359)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[DM-6516]:
-https://cumulocity.atlassian.net/browse/DM-6516?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Bozhidar Dedov <95280800+bozhidardedov@users.noreply.github.com>
+Dashboards are often used across multiple applications within your tenant, but previously you had to duplicate dashboards manually to use them in different applications. Now you can share dashboards across applications, allowing you to create a dashboard once and reuse it in multiple applications without duplication. This reduces maintenance overhead and ensures consistency across your applications, as any updates to a shared dashboard are automatically reflected in all applications that use it.
