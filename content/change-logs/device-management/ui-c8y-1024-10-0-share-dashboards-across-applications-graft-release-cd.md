@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Share dashboards across applications
+title: Share type dashboards across applications
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
