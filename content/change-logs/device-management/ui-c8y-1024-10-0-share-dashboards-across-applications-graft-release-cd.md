@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Share dashboards across applications. [GRAFT][release/cd]
+title: Share dashboards across applications
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
