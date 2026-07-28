@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Support download links in Login app
+title: Support download links in login app
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
