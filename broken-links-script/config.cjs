@@ -42,6 +42,13 @@ module.exports = {
 
     // latlong.net fails to load in Cypress (getting 403)
     "https://www.latlong.net/",
+
+    // oreilly.com's Akamai bot protection returns 403 for automated
+    // requests consistently - reproduced outside CI too (curl gets 403 on
+    // every attempt), and failed on every branch in both the 2026-07-13 and
+    // 2026-07-20 weekly runs. Not CI-specific flakiness - genuine anti-bot
+    // blocking of non-browser clients.
+    /oreilly\.com/,
   ],
 
   // Registry of third-party resources known to cause link-checker flakiness
