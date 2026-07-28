@@ -51,7 +51,7 @@ To control in which applications a type dashboard is visible, click the **Manage
 <img src="/images/users-guide/cockpit/dashboard-manager-visibility.png" name="Manage dashboard visibility"/>
 
 {{< c8y-admon-info >}}
-The **Manage visibility** action is only available for dashboards that belong to the current application. Dashboards inherited via data sharing cannot be managed from the consuming application.
+The **Manage visibility** option is only available for dashboards that belong to the current application. Dashboards inherited via data sharing cannot be managed from the consuming application.
 {{< /c8y-admon-info >}}
 
 ### To configure data sharing {#to-configure-data-sharing}
