@@ -46,7 +46,7 @@ In the **Select dashboard instance to edit** dialog window, select the desired d
 
 ### To manage dashboard visibility {#to-manage-dashboard-visibility}
 
-To control in which applications a type dashboard is visible, click the **Manage visibility** icon in the row of the selected dashboard. In the dialog, select the applications in which the dashboard should appear and click **Save**. The dashboard will be visible in the selected applications.
+To control in which applications a type dashboard is visible, click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> in the row of the selected dashboard and select **Manage visibility**. In the dialog, select the applications in which the dashboard should appear and click **Save**. The dashboard will be visible in the selected applications.
 
 <img src="/images/users-guide/cockpit/dashboard-manager-visibility.png" name="Manage dashboard visibility"/>
 
