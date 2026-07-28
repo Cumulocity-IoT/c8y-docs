@@ -24,10 +24,14 @@ To ensure the successful operation of the Service, you must fulfill the followin
 
 #### Object store
 
-To achieve the service-level objective, we require you to provision an object store (S3 bucket, Azure container) in the same hyperscaler and region that your tenant is hosted on. Make sure that
+To achieve the service-level objective, you must provision an object store in the same hyperscaler and region where your tenant is hosted. Ensure that
 
-* The object store is reachable from your Cumulocity instance.
-* The object store permissions are correctly configured to permit Cumulocity to list, write, and delete files as well as to delegate access to the object store through the embedded catalog (Iceberg "credential vending").
+* The object store is reachable from your {{< product-c8y-iot >}} instance.
+* The object store permissions are correctly configured to permit Streaming Lake Ingestion to list, write, delete files, and delegate access to the object store through the embedded catalog (Iceberg "credential vending").
+* Backup is enabled ([Bucket versioning](https://docs.aws.amazon.com/AmazonS3/latest/userguide/manage-versioning-examples.html) on AWS, [Soft delete](https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-enable?tabs=azure-portal) on Azure).
+* Only Streaming Lake Ingestion has write access to the object store.
+
+Streaming Lake Ingestion optimizes the storage allocation and may periodically delete unused files to reclaim storage space. {{< company-c8y >}} is not responsible for files written outside of Streaming Lake Ingestion.
 
 #### Schema limits
 
