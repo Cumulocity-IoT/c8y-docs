@@ -93,10 +93,17 @@ jobs:
           if [ -n "$URLS_WITH_INPUT" ]; then
             args+=("--urls-with=$URLS_WITH_INPUT")
           fi
+          : > cypress-output.log
           if [ "$DIAGNOSTICS_INPUT" = "true" ]; then
             args+=("--diagnostics")
+            # Runner IP is stamped once per job so Case 3 (IP-reputation
+            # blocking) can be confirmed by diffing this value across
+            # sibling branch runs in the same workflow run, instead of
+            # inferring it purely from retry timing.
+            egress_ip=$(curl -s --max-time 5 https://ifconfig.me || echo "unknown")
+            echo "[DIAGNOSTIC] {\"type\":\"runner-egress-ip\",\"branch\":\"${{ matrix.branch }}\",\"ip\":\"$egress_ip\"}" | tee -a cypress-output.log
           fi
-          npm test -- "${args[@]}" 2>&1 | tee cypress-output.log
+          npm test -- "${args[@]}" 2>&1 | tee -a cypress-output.log
 
       - name: Upload Cypress log
         if: always()
