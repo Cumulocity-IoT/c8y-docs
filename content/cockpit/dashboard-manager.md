@@ -56,7 +56,7 @@ The **Manage visibility** option is only available for dashboards that belong to
 
 ### To configure data sharing {#to-configure-data-sharing}
 
-Application owners can pull in type dashboards from other applications. Click **Data sharing** in the action bar to open the data sharing configuration. Select the applications whose type dashboards should also appear in the current application and click **Save**.
+Application owners can pull in type dashboards from other applications. Click **Data sharing** in the menu bar to open the data sharing configuration. Select the applications whose type dashboards should also appear in the current application and click **Save**.
 
 <img src="/images/users-guide/cockpit/dashboard-manager-sharing.png" name="Data sharing configuration"/>
 
