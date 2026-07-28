@@ -61,7 +61,7 @@ Application owners can pull in type dashboards from other applications. Click **
 <img src="/images/users-guide/cockpit/dashboard-manager-sharing.png" name="Data sharing configuration"/>
 
 {{< c8y-admon-info >}}
-The **Data sharing** option is only available to owners of the application. It is not visible for the default Device Management and Cockpit applications, which are owned by the management tenant.
+The **Data sharing** option is only available to owners of the application. It is not visible for the default Device Management and Cockpit applications, which are owned by the {{< management-tenant >}}.
 {{< /c8y-admon-info >}}
 
-Dashboards inherited via data sharing are displayed with a badge showing the source application name. To manage the visibility of an inherited dashboard, navigate to the source application's Dashboard Manager.
+Dashboards inherited via data sharing are displayed with a badge showing the source application name. To manage the visibility of an inherited dashboard, navigate to the source application's dashboard manager.
