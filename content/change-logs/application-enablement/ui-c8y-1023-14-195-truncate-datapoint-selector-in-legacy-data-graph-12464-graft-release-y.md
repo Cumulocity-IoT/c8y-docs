@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-07-29
 title: Fixed layout issue of datapoint selector in legacy Data graph widget
 product_area: Application enablement & solutions
 change_type:

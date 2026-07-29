@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-07-29
 title: Fixed flickering of application description 
 product_area: Application enablement & solutions
 change_type:
