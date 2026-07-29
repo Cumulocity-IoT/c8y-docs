@@ -28,7 +28,7 @@ To manage trusted certificates, you must be the initial admin user (first create
 {{< /c8y-admon-req >}}
 
 {{< c8y-admon-info >}}
-This section describes how to manage trusted certificates. For information on connecting devices using certificates refer to [Device certificates](/device-certificate-authentication/device-certificates/).
+This section describes how to manage trusted certificates. For information on connecting devices using certificates refer to [Connecting devices using certificates](/device-certificate-authentication/device-certificates/).
 {{< /c8y-admon-info >}}
 
 Click **Trusted certificates** in the **Management** menu in the navigator.
