@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-07-29
 title: Generating exports from the data explorer
 product_area: Device management & connectivity
 change_type:
