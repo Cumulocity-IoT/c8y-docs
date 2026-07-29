@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-07-29
 title: String escaping behavior adjusted for queries performed through @c8y/client package
 product_area: Application enablement & solutions
 change_type:

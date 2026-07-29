@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-07-29
 title: Redirect to accessible applications after successful two-factor authentication
 product_area: Application enablement & solutions
 change_type:
