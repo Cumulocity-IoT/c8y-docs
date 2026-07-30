@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix edit permissions for in-memory dashboards with group-level access. [GRAFT][release/y2026]
+title: Default device info dashboard now respects group-level edit permissions
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,19 +14,4 @@ build_artifact:
 ticket: DM-6671
 version: 1023.14.196
 ---
-# Backport
-
-This will backport the following commits from `develop` to
-`release/y2026`:
-- [fix(Device Management): [DM-6671] fix edit permissions for in-memory
-dashboards with group-level
-access.](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12560)
-
-<!--- Backport version: 12.0.4 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[DM-6671]:
-https://cumulocity.atlassian.net/browse/DM-6671?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
+When dashboards were created in-memory and shared with groups, users with group-level access were unable to edit these dashboards even when they had the appropriate permissions. The edit permissions for in-memory dashboards with group-level access have been corrected so that users with the proper permissions can now edit these dashboards as expected. This fix ensures that group-level access controls work consistently for in-memory dashboards, allowing authorized users to make necessary modifications without encountering permission errors.
