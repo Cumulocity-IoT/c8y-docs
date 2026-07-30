@@ -43,6 +43,21 @@ module.exports = {
     // latlong.net fails to load in Cypress (getting 403)
     "https://www.latlong.net/",
 
+    // unpkg.com returns 403 to automated requests from some GitHub Actions
+    // runner IPs for a whole job at a time: in run 30535957097 (2026-07-30)
+    // this exact URL failed all 11 attempts on both release/y2025 and
+    // release/y2026 while passing on develop in the same run, and returns 200
+    // from a normal network. Runner-IP reputation, not a broken link, and
+    // retries can't help because the block lasts the job's lifetime.
+    /^https:\/\/unpkg\.com\//,
+
+    // YouTube rate-limits automated requests per runner IP, answering with
+    // 429 and a redirect to google.com/sorry. In run 30535957097 (2026-07-30)
+    // this video failed all 11 attempts on release/y2025 while passing on
+    // both develop and release/y2026 in the same run, and returns 200 from a
+    // normal network - runner-IP rate-limiting, not a broken link.
+    /^https:\/\/www\.youtube\.com\/watch/,
+
     // oreilly.com's Akamai bot protection returns 403 for automated
     // requests consistently - reproduced outside CI too (curl gets 403 on
     // every attempt), and failed on every branch in both the 2026-07-13 and

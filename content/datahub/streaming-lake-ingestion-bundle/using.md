@@ -10,7 +10,7 @@ Streaming Lake Ingestion is an optional service in {{< product-c8y-iot >}}. To s
 * All new incoming data is stored in the lake.
 
 {{< c8y-admon-info >}}
-The download may take a while to complete. For more information, see [Monitoring the data lake storage](#monitoring-the-data-lake-storage).
+The download may take a while to complete. For more information, see [Monitoring the data flow](#monitoring).
 
 The `latest_inventory` tables are pre-populated with your full current inventory at subscription time. Alarms, events, measurements, and operations are only recorded for changes that occur after subscription.
 

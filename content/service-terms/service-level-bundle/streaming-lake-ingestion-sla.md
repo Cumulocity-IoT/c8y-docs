@@ -53,7 +53,7 @@ Ensure that your data queries are robust against schema changes. Specifically, u
 
 #### Type conflict resolution
 
-The Service [automatically resolves](/datahub/streaming-lake-ingestion/#understanding-the-data-lake-structure) type conflicts in inbound data to maintain storage reliability. In multi-tenant environments, the order in which data with conflicting types is received can lead to schema variations between tenants.
+The Service [automatically resolves](/datahub/streaming-lake-ingestion/#understanding-lake-structure) type conflicts in inbound data to maintain storage reliability. In multi-tenant environments, the order in which data with conflicting types is received can lead to schema variations between tenants.
 
 Manage data consistency where required, either by enforcing a specific ingestion order or by using inbound data preparation to resolve conflicts before they reach the Service.
 
