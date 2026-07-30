@@ -116,7 +116,7 @@ When **Auto** is selected, the following options appear:
 - **Keep loading data when zooming in** - When enabled (default), zooming into the chart loads data at a finer interval to keep the set number of data points. When disabled, zooming in reuses the already loaded data without further requests. Zooming out always loads new data.
 
 {{< c8y-admon-info >}}
-**Auto** is currently supported by the "Data point graph" widget only and appears disabled for other widgets. It requires the tenant to use [Enhanced time series support](/standard-tenant/enhanced-time-series-support/).
+**Auto** is currently supported by the "Data graph" widget only and appears disabled for other widgets. It requires the tenant to use [Enhanced time series support](/standard-tenant/enhanced-time-series-support/).
 {{< /c8y-admon-info >}}
 
 ### To link or unlink a widget {#to-link-unlink-widget}
