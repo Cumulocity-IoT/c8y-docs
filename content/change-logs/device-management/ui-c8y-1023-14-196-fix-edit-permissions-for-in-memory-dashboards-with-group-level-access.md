@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-6671
 version: 1023.14.196
 ---
-When dashboards were created in-memory and shared with groups, users with group-level access were unable to edit these dashboards even when they had the appropriate permissions. The edit permissions for in-memory dashboards with group-level access have been corrected so that users with the proper permissions can now edit these dashboards as expected. This fix ensures that group-level access controls work consistently for in-memory dashboards, allowing authorized users to make necessary modifications without encountering permission errors.
+In the Device Management application, users with group-level edit permissions were unable to edit the default device info dashboard when opening a device. Edit permissions are now correctly applied based on group-level access.
