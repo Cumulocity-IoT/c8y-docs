@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67019
 version: 1023.97.6
 ---
-Dashboard and widget DOM, subscriptions, and legacy scopes were retained after navigating away from a view, causing memory usage to grow until a full page reload. They are now released on navigation.
+Dashboards, widgets, and other view content were not fully released from memory after navigating away, causing memory usage to grow until a full page reload. They are now cleaned up on navigation.
