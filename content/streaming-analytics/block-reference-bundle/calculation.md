@@ -1136,7 +1136,7 @@ If the model execution fails, the output properties will contain a single "error
 <tbody>
 <tr>
 <th scope="row">ONNX model name</th>
-<td><span>The name of the ONNX model to run, which must include one of the following file extensions: <ul> <li><b>.onnx</b> - for a standalone ONNX model file (for example, <tt>MyModel.onnx</tt>).</li> <li><b>.zip</b> - for a zip archive containing an ONNX model of the same base name (for example, <tt>MyModel.zip</tt> containing <tt>MyModel.onnx</tt>). Useful when the model requires additional files alongside the <tt>.onnx</tt> file.</li> </ul> The model/zip must be deployed to the Cumulocity Files repository under this name.</span>
+<td><span>The name of the ONNX model to run, which must include one of the following file extensions: <ul> <li><b>.onnx</b> - for a standalone ONNX model file (for example, <tt>MyModel.onnx</tt>).</li> <li><b>.zip</b> - for a zip archive containing an ONNX model of the same base name (for example, <tt>MyModel.zip</tt> containing <tt>MyModel.onnx</tt>). Useful when the model requires additional files alongside the <tt>.onnx</tt> file.</li> </ul> The model/zip must be deployed to the platform's Files repository under this name.</span>
 </td>
 <td><span>string</span>
 </td>
