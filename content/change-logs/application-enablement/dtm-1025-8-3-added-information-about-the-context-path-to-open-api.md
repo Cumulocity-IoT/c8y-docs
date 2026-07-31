@@ -14,6 +14,6 @@ build_artifact:
 ticket: "CTM-3065"
 version: "1025.8.3"
 ---
-Added documentation on proxied request URL structure for the DTM API,
+Documentation on proxied request URL structure for the DTM API has been added,
 including microservice path and REST API path composition, with a working
 example for querying assets.
