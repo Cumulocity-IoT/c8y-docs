@@ -94,15 +94,29 @@ Aggregation groups multiple data points into summarized values. This improves pe
 
 In the **Aggregation** section of the toolbar, select one of the available options:
 
-| Type     | Description                         |
-| :------- | :---------------------------------- |
-| None     | No grouping, shows raw data points  |
-| Minutely | Groups data into 1-minute intervals |
-| Hourly   | Groups data into 1-hour intervals   |
-| Daily    | Groups data into 1-day intervals    |
+| Type     | Description                                                              |
+| :------- | :----------------------------------------------------------------------- |
+| None     | No grouping, shows raw data points                                       |
+| Minutely | Groups data into 1-minute intervals                                      |
+| Hourly   | Groups data into 1-hour intervals                                        |
+| Daily    | Groups data into 1-day intervals                                         |
+| Auto     | Calculates the aggregation interval automatically, see [Automatic aggregation](#automatic-aggregation) |
 
 {{< c8y-admon-info >}}
 Some aggregation options may be disabled if they don't apply to your selected time range. For example, **Daily** aggregation is disabled for ranges less than 1 day.
+{{< /c8y-admon-info >}}
+
+#### Automatic aggregation {#automatic-aggregation}
+
+With **Auto**, the aggregation interval is calculated automatically from the selected time range and the number of aggregated values you want to see per chart. This keeps charts readable and fast for any time range, without selecting an interval manually.
+
+When **Auto** is selected, the following options appear:
+
+- **Data points per chart** - The number of aggregated values to display per chart (2 - 2000, default 300). The aggregation interval is derived from this value: the larger the time range, the coarser the interval.
+- **Keep loading data when zooming in** - When enabled (default), zooming into the chart loads data at a finer interval to keep the set number of data points. When disabled, zooming in reuses the already loaded data without further requests. Zooming out always loads new data.
+
+{{< c8y-admon-info >}}
+**Auto** is currently supported by the "Data graph" widget only and appears disabled for other widgets. It requires the tenant to use [Enhanced time series support](/standard-tenant/enhanced-time-series-support/).
 {{< /c8y-admon-info >}}
 
 ### To link or unlink a widget {#to-link-unlink-widget}
