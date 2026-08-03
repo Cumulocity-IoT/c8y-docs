@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Device Control always shows operation description. [GRAFT][release/cd]
+title: Device control always shows operation description
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
