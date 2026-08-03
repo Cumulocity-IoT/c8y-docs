@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Asset definition schema now reflects removal of allowed property definitions."
+title: "Asset definition schema now reflects removal of allowed property definitions"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
