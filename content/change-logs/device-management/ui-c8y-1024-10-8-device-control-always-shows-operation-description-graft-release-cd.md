@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5726
 version: 1024.10.8
 ---
-When viewing device operations in the Device Control interface, the operation description was always displayed regardless of user preference or configuration settings. This caused the interface to appear cluttered and made it difficult to focus on the essential operation details. The operation description is now only displayed when appropriate, allowing you to have a cleaner view of your device operations and better control over the information displayed in the Device Control interface.
+Fixed an issue where the Device Control tab displayed the raw command text instead of the operation description as the operation title. Shell operations now always set the command text as the operation description.
