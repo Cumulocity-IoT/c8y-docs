@@ -28,7 +28,13 @@ Real-time updates will be switched off if you set a time range in the past.
 
 You may aggregate the data being displayed to get an efficient overview over larger time periods.
 
-By default, aggregation is set to "None". This value may be changed in the **Aggregation** field in the top menu bar. Available values are "Minutely", "Hourly" or "Daily", depending on the selected time range.
+By default, aggregation is set to "None". This value may be changed in the **Aggregation** field in the top menu bar. Available values are "Minutely", "Hourly", "Daily", or "Auto", depending on the selected time range.
+
+With "Auto", the aggregation interval is calculated automatically from the selected time range and the **Data points per chart** value (2 - 2000, default 300), so you always see a readable number of values regardless of the time range. When zooming into the chart, data is loaded at a finer interval to keep this number of data points. Disable **Keep loading data when zooming in** to reuse the already loaded data instead.
+
+{{< c8y-admon-info >}}
+The "Auto" option is only available on tenants using [Enhanced time series support](/standard-tenant/enhanced-time-series-support/).
+{{< /c8y-admon-info >}}
 
 When aggregation is activated, the timestamp which is displayed in data graphs or data point tables changes slightly as follows to improve transparency:
 
@@ -36,6 +42,20 @@ When aggregation is activated, the timestamp which is displayed in data graphs o
 - If minutely aggregation is selected, the second indication will not be shown:<br> 27 Jan 2020 17:27-17:28
 - If hourly aggregation is selected, the minute and second indication will not be shown:<br> 27 Jan 2020 05:00-06:00
 - If daily aggregation is selected, only the day will be shown:<br> 27 Jan 2020-28 Jan 2020.
+
+### Aggregation functions {#aggregation-functions}
+
+While aggregation is active, you can select which aggregation functions are displayed for the data points: "Minimum", "Maximum", "Average", "Count", and "Sum".
+
+Use the **Aggregation display** checkboxes above the data point list to select the functions for all data points at once. At least one function must remain selected.
+
+Each selected function is drawn as a separate line in a shade of the data point color and appears as a separate entry in the legend, so you can compare, for example, the minimum, maximum, and average of the same data point in parallel.
+
+To configure the functions per data point, expand the data point entry. There you can set the display, ranges, chart type, and Y-axis per function. When both "Minimum" and "Maximum" are selected, enable **Render as band** to replace the two lines with a shaded area between them.
+
+{{< c8y-admon-info >}}
+If the aggregation interval is too coarse to differentiate the functions (all return the same values), the chart collapses them into a single line and shows a hint. Aggregation functions are only available on tenants using [Enhanced time series support](/standard-tenant/enhanced-time-series-support/).
+{{< /c8y-admon-info >}}
 
 ### Realtime updating {#realtime-updating}
 
