@@ -14,21 +14,4 @@ build_artifact:
 ticket: DM-5726
 version: 1024.10.8
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Device Management): [DM-5726] Device Control always shows
-operation
-description.](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12720)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[DM-5726]:
-https://cumulocity.atlassian.net/browse/DM-5726?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dafina Karamanoleva <92030501+dafkk@users.noreply.github.com>
-Co-authored-by: Claude Sonnet 4.6 <noreply@anthropic.com>
+When viewing device operations in the Device Control interface, the operation description was always displayed regardless of user preference or configuration settings. This caused the interface to appear cluttered and made it difficult to focus on the essential operation details. The operation description is now only displayed when appropriate, allowing you to have a cleaner view of your device operations and better control over the information displayed in the Device Control interface.
