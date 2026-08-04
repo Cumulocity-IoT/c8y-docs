@@ -1,6 +1,6 @@
 ---
 date: ""
-title: min-width is not enforced via CSS, but instead enforced via gridstack engine (#12682) [GRAFT][release/cd] (#12723)
+title: Dashboard widgets now enforce their minimum size through the grid engine
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-67422
 version: 1024.10.5
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(web sdk): [MTM-67422] min-width is not enforced via CSS, but
-instead enforced via gridstack engine
-(#12682)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12682)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67422]:
-https://cumulocity.atlassian.net/browse/MTM-67422?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Jan Hommes <janhommes@users.noreply.github.com>
+Dashboard widgets previously took their minimum width from a styling rule that disagreed with the dashboard grid, so widgets could end up at inconsistent widths when resized. The minimum size is now controlled by the grid itself, so widgets resize predictably and keep a consistent minimum across dashboard layouts.
