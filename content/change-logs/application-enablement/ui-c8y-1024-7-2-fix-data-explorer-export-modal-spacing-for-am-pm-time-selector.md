@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix data explorer export modal spacing for AM/PM time selector
+title: Fixed spacing for AM/PM time selector in the data explorer export modal
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
