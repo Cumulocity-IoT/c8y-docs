@@ -6,17 +6,21 @@ sector:
   - platform_administration
 ---
 
-{{< c8y-admon-req >}}
-To allow support users to log in as a user of your tenant, **support user access** must be enabled. This option is available at tenant level and applies to all users of the tenant.
-{{< /c8y-admon-req >}}
-
 The support user access feature enables {{< product-c8y-iot >}} platform providers ({{< company-c8y >}} in case of the public cloud instances or service providers in case of individual on-prem installations) to support their customers by accessing their users using a support user. A support user is a user in the {{< management-tenant >}} that has specific permissions, that is, to access subtenant users in case of any issues.
 
 {{< c8y-admon-req >}}
-To use this feature, support user access must be configured and the required support users must be created in the {{< management-tenant >}}. Contact your Operations team on how to configure this feature according to your needs.
+For a support user to log in as a user of a tenant, all of the following requirements must be met:
 
-On the {{< product-c8y-iot >}} public cloud instances, the support user functionality can only be used by the {{< company-c8y >}} team for providing customer support. It is not available for {{< enterprise-tenant >}} customers to support their customers/subtenants.
+|Requirement|Description|
+|:---|:---|
+|Support user access enabled|**Support user access** must be enabled for the tenant. The option is available at tenant level and applies to all users of the tenant, see [To configure support user access](#to-configure-support-user-access).|
+|Configuration in the {{< management-tenant >}}|Support user access must be configured and the required support users must be created in the {{< management-tenant >}}. Contact your Operations team on how to configure this feature according to your needs.|
+|Login with username and password|The support user must log in with a username and password, that is, either Basic auth or OAI-Secure, see [Authentication](/authentication/basic-settings/). A single sign-on (SSO) session in the {{< management-tenant >}} cannot be used to access a subtenant. If you log in to the {{< management-tenant >}} through SSO, you need a separate non-SSO user account in the {{< management-tenant >}}.|
 {{< /c8y-admon-req >}}
+
+{{< c8y-admon-info >}}
+On the {{< product-c8y-iot >}} public cloud instances, the support user functionality can only be used by the {{< company-c8y >}} team for providing customer support. It is not available for {{< enterprise-tenant >}} customers to support their customers/subtenants.
+{{< /c8y-admon-info >}}
 
 
 ### To configure support user access {#to-configure-support-user-access}
