@@ -1,6 +1,6 @@
 ---
 date: ""
-title: custom icon management and icon selector improvements (#11866) [GRAFT][release/cd] (#12646)
+title: Create and manage custom icons with an improved icon selector
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
