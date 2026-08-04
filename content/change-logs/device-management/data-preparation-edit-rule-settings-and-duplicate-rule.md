@@ -11,8 +11,8 @@ component:
 build_artifact:
   - value: "tc-KXXmo2SUR"
     label: "apama-in-c8y"
-ticket: ""
-version: ""
+ticket: "PAB-5133"
+version: "27.179.0"
 ---
 {{< c8y-admon-preview >}}
 This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
