@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67005
 version: 1024.7.2
 ---
-Fixed misaligned spacing around the AM/PM time selector in the data explorer export modal.
+The spacing around the AM/PM time selector in the data explorer export modal was misaligned. This issue has been fixed.
