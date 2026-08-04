@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Some descriptions in the advanced branding editor are wrong (#12509) [GRAFT][release/y2026] (#12740)
+title: Advanced branding editor shows correct descriptions for branding properties
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
