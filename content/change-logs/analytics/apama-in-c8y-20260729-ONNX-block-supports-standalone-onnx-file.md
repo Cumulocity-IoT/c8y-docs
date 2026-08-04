@@ -1,5 +1,5 @@
 ---
-date:
+date: 2026-08-28
 title: ONNX block in Analytics Builder now requires file extension in model name
 change_type:
   - value: change-3BQrQ6adS
@@ -23,4 +23,4 @@ The `ONNX model name` parameter must now include an explicit `.onnx` or `.zip` f
 
 Previously, `<modelName>`, `<modelName>.onnx`, and `<modelName>.zip` were always resolved by extracting a `<modelName>.zip` archive and looking for `<modelName>.onnx` inside.
 
-**This is a breaking change** for existing models that omit the file extension, or that use a `.onnx` extension but have only a `.zip` file uploaded to the Files repository. In both cases, the block now looks for a standalone `.onnx` binary instead of extracting a zip archive. To migrate, ensure the file extension used in your Analytics Builder model matches the type of file you have uploaded.
+**This is a breaking change** for existing models that omit the file extension, or that use a `.onnx` extension to extract a model from a `.zip` file uploaded to the Files repository. To migrate, ensure the file extension used in your Analytics Builder model matches the type of file you have uploaded.
