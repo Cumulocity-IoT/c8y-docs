@@ -69,7 +69,9 @@ To create your individualized dashboard, execute the following steps:
 
 5. Enable the option **Dashboard template** to share the dashboard with all devices of this type. This option is only available for devices dashboards. See [To share a dashboard](#dashboard-template)
 
-6. In the **Appearance** tab you can select a theme for the dashboard (one of "Match UI", "Light", "Dark" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 12 px).
+6. In the **Appearance** tab, you can select a theme for the dashboard (one of "Match UI", "Light", "Dark" or "Branded"), a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"), and the gap between the widgets. Moreover, you can select from two different layout modes:
+ - **Grid**: The default one, which lets each widget snap into a fixed grid.
+ - **Responsive**: Lets you define the responsive look of the dashboard. You can define the number of columns, select that widgets can be freely positioned (not snapping to the top), or fit the rows into the viewport to create full height.
 
 7. Under the **Translate if possible** option, you can select to have the dashboard and/or widget titles translated. For this option to work, the titles must be written in English and the corresponding translations must be available in the loaded translation resources, for example in the standard application translations, or in the custom ones provided via the [localization feature](/standard-tenant/changing-settings/#localization) or in the [application options](/web/application-configuration/#languages-customization).
 

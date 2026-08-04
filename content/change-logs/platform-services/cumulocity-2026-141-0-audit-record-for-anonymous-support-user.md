@@ -16,6 +16,14 @@ version: 2026.141.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-05-14'
+  - label: apj.cumulocity.com
+    date: '2026-05-20'
+  - label: jp.cumulocity.com
+    date: '2026-05-20'
+  - label: us.cumulocity.com
+    date: '2026-05-25'
+  - label: cumulocity.com
+    date: '2026-05-26'
 ---
 The audit logging logic for **User login** actions has been improved to ensure full visibility during subtenant access.
 

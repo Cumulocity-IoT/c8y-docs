@@ -170,8 +170,8 @@ Optionally, add the email address of the sender for reply.
 
 Specify the subject of the email. This field is pre-filled, but may be modified.
 
-Enter the actual email message. Available placeholders are {host}, {binaryId}. The default value is "File with exported data can be downloaded from {host}/inventory/binaries/{binaryId}".
-Note that to create a clickable link in the email, you must add "https://" to the link. For example: "A file with exported data can be downloaded from https://{tenant-domain}/inventory/binaries/{binaryId}."
+Enter the actual email message. Available placeholders are {host}, {binaryId}. The default value is "File with exported data can be downloaded from {host}/apps/public/login/index.html#/?download={binaryId}".
+Note that to create a clickable link in the email, you must add "https://" to the link. For example: "A file with exported data can be downloaded from https://{tenant-domain}/apps/public/login/index.html#/?download={binaryId}."
 
 {{< c8y-admon-info >}}
 Note that the corresponding emails are sent with "text/html" as the `Content-Type` header.

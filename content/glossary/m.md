@@ -43,6 +43,19 @@ Measurements are managed via the [Measurement API](https://cumulocity.com/api/co
 {{< /c8y-details >}}
 
 
+### Messaging Service topic {#messaging-service-topic}
+
+A Messaging Service topic is a [topic](#topic) used by the [Messaging Service](#messaging-service) to pass messages between [protocol adapters](#protocol-adapter), microservices, and internal {{< product-c8y-iot >}} components.
+The Messaging Service uses its own topic namespace, with specific topics used by each of the services supported by the Messaging Service.
+For example, all messages published by devices using the [MQTT Service](#mqtt-service) are delivered to microservices on the `from-device` topic, regardless of the MQTT topic used.
+In this case, the MQTT topic will be passed as a metadata field on the message.
+Other protocol adapters follow the same convention for mapping their [device topics](#device-topic) to Messaging Service topics.
+
+{{< c8y-details title="Developer details" >}}
+See [Integrating with microservice and external applications](/device-integration/mqtt-service/#pulsar-client) for more information about building microservices to work with devices connected to the MQTT Service.
+{{< /c8y-details >}}
+
+
 ### Microfrontend {#microfrontend}
 
 Microfrontend refers to an architectural style for [web applications](#web-application) where the UI is decomposed into smaller, independently deployable [applications](#application) or plugins. {{< product-c8y-iot >}}'s web UI is built on this architecture with the [Web SDK](#web-sdk), allowing a "shell" application (like [Cockpit](#cockpit-application)) to be extended by loading "remote" modules (plugins) from other web applications.

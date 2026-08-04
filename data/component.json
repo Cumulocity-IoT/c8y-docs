@@ -91,6 +91,16 @@
       ]
     },
     {
+      "id": "component-dPrp1xK9z",
+      "option": "Data Preparation",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
+    },
+    {
       "id": "component--KIsStyzM",
       "option": "Device Management app",
       "product_area": [
@@ -287,6 +297,16 @@
         {
           "value": "product_area-T1-_TpDyv",
           "label": "Platform services"
+        }
+      ]
+    },
+    {
+      "id": "component-VtytA3d55",
+      "option": "AI Agents",
+      "product_area": [
+        {
+          "value": "product_area-eC7h0SiQ2b",
+          "label": "Application enablement & solutions"
         }
       ]
     }

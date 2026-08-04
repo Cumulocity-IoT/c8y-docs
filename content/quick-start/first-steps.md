@@ -58,6 +58,10 @@ See [User options and settings](/get-familiar-with-the-ui/user-settings/) for de
 
 To connect a device to {{< product-c8y-iot >}}, you must register it in the platform. This is done in the **Device Management application**. Under [Registering devices](/device-management-application/registering-devices/) you find a detailed description of the general registration process.
 
+{{< c8y-admon-info >}}
+If you use [Data Preparation](/data-preparation/) with the MQTT Service, devices are [created automatically](/data-preparation/device-onboarding/) and do not require manual registration.
+{{< /c8y-admon-info >}}
+
 Moreover, we offer two step-by-step descriptions to easily register a first device to your {{< product-c8y-iot >}} account:
 
 * Connect a smartphone to {{< product-c8y-iot >}} using the [{{< sensor-app >}}](/sensor-app/sensorapp-introduction/). The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones.

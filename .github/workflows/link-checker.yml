@@ -4,6 +4,22 @@ on:
   schedule:
     - cron: '0 6 * * 1'
   workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to check links on (by default checks all maintained branches)'
+        required: false
+        type: string
+      urlsWith:
+        description: 'Only check links containing this substring (by default checks all links)'
+        required: false
+        type: string
+      diagnostics:
+        description: 'Enable verbose diagnostics (every network request + console/uncaught errors) - combine with branch + urlsWith to investigate a specific failure'
+        required: false
+        type: boolean
+        default: false
+  pull_request:
+    types: [labeled]
 
 permissions:
   contents: read
@@ -11,22 +27,53 @@ permissions:
   issues: write
 
 jobs:
+  determine-branches:
+    name: Determine branches to check
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.label.name == 'broken-link-check'
+    outputs:
+      branches: ${{ steps.set-branches.outputs.branches }}
+    steps:
+      - name: Set branches
+        id: set-branches
+        env:
+          BRANCH_INPUT: ${{ inputs.branch }}
+          EVENT_NAME: ${{ github.event_name }}
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            branches_json=$(jq -cn --arg b "$PR_HEAD_REF" '[$b]')
+          elif [ -n "$BRANCH_INPUT" ]; then
+            branches_json=$(jq -cn --arg b "$BRANCH_INPUT" '[$b]')
+          else
+            branches_json='["develop", "release/y2025", "release/y2026"]'
+          fi
+          echo "branches=$branches_json" >> "$GITHUB_OUTPUT"
+
   link-check:
     name: Run Link Check
+    needs: determine-branches
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        branch: [develop, release/y2025, release/y2026]
+        branch: ${{ fromJson(needs.determine-branches.outputs.branches) }}
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          ref: ${{ matrix.branch }}
+          repository: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || matrix.branch }}
+
+      - name: Sanitize branch name for artifact naming
+        id: sanitize-branch
+        env:
+          BRANCH_NAME: ${{ matrix.branch }}
+        run: echo "name=${BRANCH_NAME//\//-}" >> "$GITHUB_OUTPUT"
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 'latest'
 
@@ -36,34 +83,63 @@ jobs:
           npm install
 
       - name: Run Cypress tests
+        env:
+          URLS_WITH_INPUT: ${{ inputs.urlsWith }}
+          DIAGNOSTICS_INPUT: ${{ inputs.diagnostics }}
         run: |
           cd broken-links-script
-          npm test
+          set -o pipefail
+          args=()
+          if [ -n "$URLS_WITH_INPUT" ]; then
+            args+=("--urls-with=$URLS_WITH_INPUT")
+          fi
+          : > cypress-output.log
+          if [ "$DIAGNOSTICS_INPUT" = "true" ]; then
+            args+=("--diagnostics")
+            # Runner IP is stamped once per job so Case 3 (IP-reputation
+            # blocking) can be confirmed by diffing this value across
+            # sibling branch runs in the same workflow run, instead of
+            # inferring it purely from retry timing.
+            egress_ip=$(curl -s --max-time 5 https://ifconfig.me || echo "unknown")
+            echo "[DIAGNOSTIC] {\"type\":\"runner-egress-ip\",\"branch\":\"${{ matrix.branch }}\",\"ip\":\"$egress_ip\"}" | tee -a cypress-output.log
+          fi
+          npm test -- "${args[@]}" 2>&1 | tee -a cypress-output.log
+
+      - name: Upload Cypress log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-log-${{ steps.sanitize-branch.outputs.name }}
+          path: broken-links-script/cypress-output.log
+          retention-days: 8
 
       - name: Determine label based on branch
-        if: always()
+        if: always() && github.event_name != 'pull_request' && !inputs.branch
         id: label
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
+          BRANCH_NAME: ${{ matrix.branch }}
         run: |
-          LABEL_NAME="broken-link-${{ matrix.branch }}"
+          LABEL_NAME="broken-link-${BRANCH_NAME}"
           if gh api "repos/$GH_REPO/labels/$LABEL_NAME" &>/dev/null; then
             echo "Label ${LABEL_NAME} already exists"
           else
             echo "Creating label ${LABEL_NAME}"
             gh label create "${LABEL_NAME}" \
-              --description "Indicates broken links in branch ${{ matrix.branch }}"
+              --description "Indicates broken links in branch ${BRANCH_NAME}"
           fi
           echo "label=$LABEL_NAME" >> $GITHUB_OUTPUT
 
       - name: Create GitHub issue if tests fail
-        if: failure()
+        if: failure() && github.event_name != 'pull_request' && !inputs.branch
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LABEL: ${{ steps.label.outputs.label }}
+          BRANCH_NAME: ${{ matrix.branch }}
         run: |
-          label="${{ steps.label.outputs.label }}"
-          branch_name="${{ matrix.branch }}"
+          label="$LABEL"
+          branch_name="$BRANCH_NAME"
           echo "Creating issue for branch: ${branch_name} with label: ${label}"
 
           issue_url=$(gh issue create \
@@ -73,3 +149,18 @@ jobs:
             --assignee "BeateRixen")
 
           echo "Result: ${issue_url}"
+
+      - name: Post PR comment with link check summary
+        if: always() && github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          cd broken-links-script
+          node summarize-failures.cjs cypress-output.log "$RUN_URL" > pr-comment.md
+
+          # A new comment per broken-link-check label addition, so the PR
+          # history shows when each check was requested and what it found.
+          gh api "repos/$GH_REPO/issues/$PR_NUMBER/comments" -X POST -F body=@pr-comment.md

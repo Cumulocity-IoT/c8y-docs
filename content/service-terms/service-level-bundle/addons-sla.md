@@ -62,14 +62,14 @@ Customer acknowledges the following limitations and constraints in using the VPN
 {{< company-c8y >}} is committed to providing reliable service. The specific service availability targets are as follows:
 
 * **Production environments:** 99.90% availability
-* **Non-production environments:** 98.50% availability
+* **Non-production environments:** 95.00% availability
 
 {{< company-c8y >}} monitors the availability according to the state (up, down) reported by the employed hyperscaler.
 
 #### Support
 
-* **Customer support:** Support is provided in accordance with the Customer’s selected support plan (Bronze, Silver, or Gold), as detailed in a separate support agreement.
-* **Pre-production environments:** For pre-production environments, Bronze-level support is generally provided, with support tickets handled at standard priority.
+* **Customer support:** Support is provided in accordance with the Customer’s selected support plan (Standard or Premium), as detailed in a separate support agreement.
+* **Non-production environments:** For Premium support customers, Premium support response times and service commitments do not apply to non-production environments, and all support tickets are handled at standard priority.
 
 {{< company-c8y >}} will not be able to provide logs or packet captures from the VPN or leased line data or signalling.
 

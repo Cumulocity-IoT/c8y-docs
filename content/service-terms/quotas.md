@@ -49,9 +49,12 @@ The quotas listed here reflect the maximum values for the cloud subscriptions un
 
 ### REST API
 
-| Quota                | Type |     Value |
-| -------------------- | ---- | --------: |
-| API request duration | Hard | 5 minutes |
+| Quota                    | Type |     Value |
+| ------------------------ | ---- | --------: |
+| API request duration     | Hard | 5 minutes |
+| Database query execution | Hard | 2 minutes |
+
+The database query execution timeout applies to every individual database query triggered by an API request. This limit is independent of the API request duration timeout.
 
 ### Realtime APIs
 

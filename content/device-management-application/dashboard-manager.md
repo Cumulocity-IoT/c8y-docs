@@ -28,7 +28,7 @@ ROLES & PERMISSIONS:
 
 
 {{< c8y-admon-info >}}
-Dashboards are application-specific. A dashboard created within the Device Management application is unique to that specific instance. It does not appear in other applications like Cockpit or in renamed, duplicated versions of the Device Management application.
+By default, dashboards are application-specific. Type dashboards can be shared across applications using data sharing or by managing dashboard visibility.
 {{< /c8y-admon-info >}}
 
 ### To add device or type-based dashboards {#device-management-device-or-type-dashboards}
@@ -47,6 +47,8 @@ Refer to [To create a dashboard](/cockpit/working-with-dashboards/#to-create-a-d
 
 To view, edit or delete dashboard templates created across the Device Management application, click **Dashboard manager** in the **Management** menu of the navigator.
 
+<img src="/images/users-guide/DeviceManagement/devmngmt-dashboard-manager.png" name="Dashboard manager"/>
+
 ### To delete type-based dashboard {#device-management-to-delete-type-dashboard}
 
 To delete a device type-based dashboard, navigate to a device that has that type or to the **Dashboard manager** in the **Management** menu. In the row of the selected dashboard, click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> on the right.
@@ -59,3 +61,5 @@ If you delete a device type-based dashboard, it gets deleted from all devices th
 
 Click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> on the corresponding row to open a list of all devices that have access to the dashboard.
 In the **Select dashboard instance to edit** dialog, select the desired device and click the open icon <i class="dlt-c8y-icon-file-create text-primary icon-20"></i> on the right to navigate to the dashboard assigned to this device. Now you can edit the dashboard settings or widgets. See [To edit a dashboard](/cockpit/working-with-dashboards/#to-edit-a-dashboard) for more detailed information.
+
+Type dashboards in the Device Management application can be shared across applications in the same way as in the Cockpit application. See [To manage dashboard visibility](/cockpit/dashboard-manager/#to-manage-dashboard-visibility) and [To configure data sharing](/cockpit/dashboard-manager/#to-configure-data-sharing).
