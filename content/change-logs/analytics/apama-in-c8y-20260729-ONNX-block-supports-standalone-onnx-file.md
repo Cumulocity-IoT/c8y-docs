@@ -1,6 +1,6 @@
 ---
 date:
-title: ONNX block in Analytics Builder now supports standalone .onnx model files
+title: ONNX block in Analytics Builder now requires file extension in model name
 change_type:
   - value: change-3BQrQ6adS
     label: API change
