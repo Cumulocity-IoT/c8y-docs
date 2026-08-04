@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5726
 version: 1024.10.8
 ---
-Fixed an issue where the Device Control tab displayed the raw command text instead of the operation description as the operation title. Shell operations now always set the command text as the operation description.
+The **Device control** tab displayed the raw command text instead of the operation description as the operation title. This issue has been fixed. Shell operations now always set the command text as the operation description.
