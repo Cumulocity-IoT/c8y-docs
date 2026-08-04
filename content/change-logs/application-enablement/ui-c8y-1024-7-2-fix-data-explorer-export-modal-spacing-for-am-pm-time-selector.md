@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix data explorer export modal spacing for AM/PM time selector (#12463) [GRAFT][release/cd] (#12523)
+title: Fix data explorer export modal spacing for AM/PM time selector
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
