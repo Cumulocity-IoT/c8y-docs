@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Device Control tab now shows operation description as title
+title: Device control tab now shows operation description as title
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
