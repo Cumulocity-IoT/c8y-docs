@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Asset deletion modal displays info message for unclassified managed objects"
+title: "Asset deletion modal displays clearer info message for unclassified managed objects"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
