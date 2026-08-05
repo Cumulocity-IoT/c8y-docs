@@ -48,6 +48,7 @@ configured with the `otelJavaAgentInclude` element set to `true` in the Maven `p
                         <configuration>
                             ...
                             <otelJavaAgentInclude>true</otelJavaAgentInclude>
+                            <otelJavaAgentDownloadUrl>https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v2.21.0/opentelemetry-javaagent.jar</otelJavaAgentDownloadUrl>
                             ...
                         </configuration>
                     </execution>
@@ -55,6 +56,7 @@ configured with the `otelJavaAgentInclude` element set to `true` in the Maven `p
             </plugin>
 ```
 
+The download URL including the version of the Java agent JAR file can be set with the parameter `otelJavaAgentDownloadUrl`.
 
 {{< c8y-admon-important >}}
 If the Java agent JAR file is not contained in the microservice image 
