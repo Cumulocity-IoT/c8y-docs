@@ -146,15 +146,6 @@ Unlike the existing device certificate authentication, this endpoint is not limi
 The endpoint is intentionally reachable without bearer-token authentication, because the submitted certificate and the platform-side certificate validation are the authentication proof. Invalid, expired, revoked, untrusted, unsupported, or unmapped certificates are rejected.
 
 For the request and response details, including the required headers and the supported token response modes, see [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/#operation/postCertificateAccessToken).
-<!-- TODO(mbak-c8y): The anchor "operation/postCertificateAccessToken" does not exist in the
-     published OpenAPI spec (https://cumulocity.com/api/core/dist/c8y-oas.yml) as of 2026-07-30,
-     so the Link Checker fails on it (run
-     https://github.com/Cumulocity-IoT/c8y-docs/actions/runs/30535957097). The closest published
-     operationIds are postDeviceAccessTokenResource and postTrustedCertificatePopResource, which
-     are different endpoints - so this was not auto-corrected. Please confirm the final
-     operationId, or that this is expected to stay broken until the spec for the release that
-     ships this endpoint is published. -->
-
 
 {{< c8y-admon-important >}}
 A single certificate Common Name (CN) can potentially resolve to more than one {{< product-c8y-iot >}} user. For example, a regular user may be represented by the username derived directly from the certificate CN (`my-client`), while a device user may be represented by applying the `device_` prefix to the same CN (`device_my-client`).
