@@ -64,7 +64,7 @@ The offline package can be used for either an initial installation, or an upgrad
 {{< c8y-admon-caution >}}
 **SELinux configuration responsibility**
 
-If SELinux is enabled, ensuring all required configurations are in place for K3s is strictly the customer's responsibility. SELinux introduces host-specific variables like `fapolicyd`, custom policies, and dynamic context labeling that our tooling cannot fully account for. Customers must properly prepare and validate their SELinux environment prior to deploying {{< company-c8y >}} Edge (c8yedge).
+If SELinux is enabled, it is the customer's responsibility to ensure that all required configurations are in place for K3s. SELinux introduces host-specific variables such as `fapolicyd`, custom policies, and dynamic context labeling that {{< company-c8y >}}'s tooling cannot fully account for. Customers must properly prepare and validate their SELinux environment prior to deploying {{< product-c8y-iot >}} Edge (c8yedge).
 {{< /c8y-admon-caution >}}
 
 The c8yedge tool installs [Lightweight Kubernetes (K3s)](https://docs.k3s.io/), which has prerequisites for running in an airgapped environment. If your environment has no network interface with a default route, or SELinux is enabled, pay attention to and follow the two relevant sections under [Prerequisites](https://docs.k3s.io/installation/airgap#prerequisites).
