@@ -22,6 +22,14 @@ Although the virtual or physical nature of the platform is unimportant to Edge, 
 For example, you could install and customize Edge on a VM in your development environment. You can then then hand-off a self-contained VM image to be installed at a remote site in a reliable and reproducable way.
 {{< /c8y-admon-info >}}
 
+{{< c8y-admon-caution >}}
+**Host security hardening**
+
+{{< product-c8y-iot >}} Edge (c8yedge) also supports hosts with standard SELinux to the extent supported by [K3s](https://docs.k3s.io/advanced#selinux-support).
+
+Additional host hardening, such as custom SELinux policies, AppArmor, Smack, fapolicyd, or similar controls, is the customer's responsibility. These host-specific security mechanisms can interfere with Kubernetes, the container runtime, or networking required by c8yedge. Validate your hardened environment to facilitate c8yedge operations.
+{{< /c8y-admon-caution >}}
+
 ### Downloading c8yedge
 You can download the tool from the [{{< company-c8y >}} Download Center](https://download.cumulocity.com/Cumulocity-Edge) or by running the following commands:
 
@@ -60,12 +68,6 @@ c8yedge package
 The tool generates a tarball suffixed with the specific version of Edge downloaded (for example, `c8yedge-{{< c8y-edge-current-version >}}_0_0.tar`). By default, this file is created in your current directory and contains the latest release of Edge {{< c8y-edge-current-version >}}. You can discover more options with `c8yedge package --help`, such as the ability to package a very specific version.
 
 The offline package can be used for either an initial installation, or an upgrade of an existing installation. You need to transfer this file, as well as the c8yedge tool, into your airgapped environment.
-
-{{< c8y-admon-caution >}}
-**SELinux Configuration Responsibility**
-
-If SELinux is enabled, ensuring all required configurations are in place for K3s is strictly the customer's responsibility. SELinux introduces host-specific variables like `fapolicyd`, custom policies, and dynamic context labeling that our tooling cannot fully account for. Customers must properly prepare and validate their SELinux environment prior to deploying Cumulocity IoT Edge (c8yedge).
-{{< /c8y-admon-caution >}}
 
 The c8yedge tool installs [Lightweight Kubernetes (K3s)](https://docs.k3s.io/), which has prerequisites for running in an airgapped environment. If your environment has no network interface with a default route, or SELinux is enabled, pay attention to and follow the two relevant sections under [Prerequisites](https://docs.k3s.io/installation/airgap#prerequisites).
 
