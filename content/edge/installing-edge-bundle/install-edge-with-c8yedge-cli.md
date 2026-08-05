@@ -27,7 +27,7 @@ For example, you could install and customize Edge on a VM in your development en
 
 Installing {{< product-c8y-iot >}} Edge with c8yedge also supports hosts with standard SELinux to the extent supported by [K3s](https://docs.k3s.io/advanced#selinux-support).
 
-Additional host hardening, such as custom SELinux policies, AppArmor, Smack, fapolicyd, or similar controls, is the customer's responsibility. These host-specific security mechanisms can interfere with Kubernetes, the container runtime, or networking required by c8yedge. Validate your hardened environment to facilitate c8yedge operations.
+Additional host hardening, such as custom SELinux policies, AppArmor, Smack, fapolicyd, or similar controls, is the customer's responsibility. These host-specific security mechanisms can interfere with Kubernetes, the container runtime, or networking required by c8yedge. 
 {{< /c8y-admon-caution >}}
 
 ### Downloading c8yedge
