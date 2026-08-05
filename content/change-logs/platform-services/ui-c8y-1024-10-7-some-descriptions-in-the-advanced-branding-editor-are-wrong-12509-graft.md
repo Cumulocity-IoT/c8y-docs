@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66035
 version: 1024.10.7
 ---
-The advanced branding JSON editor showed Angular's internal FormControl class documentation as the "description" for several branding properties (e.g. darkThemeAvailable, all ~120 brandingCssVars keys), instead of anything meaningful — only in CI-built apps, never locally. Fixed darkThemeAvailable and brandingCssVars's own description with real doc comments; fixed all brandingCssVars leaf keys with a small runtime sanitizer, since they're generated dynamically and can't carry individual JSDoc comments.
+The advanced branding JSON editor previously displayed Angular's internal FormControl class documentation as descriptions for several branding properties, such as darkThemeAvailable and brandingCssVars keys. You now see meaningful descriptions for these properties. The darkThemeAvailable and brandingCssVars properties display updated documentation comments, and all brandingCssVar keys are processed through a runtime sanitizer to ensure accurate descriptions, since these keys are generated dynamically and cannot include individual documentation comments.
