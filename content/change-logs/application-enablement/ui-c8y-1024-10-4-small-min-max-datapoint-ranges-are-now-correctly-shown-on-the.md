@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67256
 version: 1024.10.4
 ---
-We improved how chart Y-axes render when handling tight value ranges. Instead of repeating identical numbers on the axis, charts now automatically adjust tick intervals to show accurate intermediate decimal values. This makes tracking subtle data variations significantly easier and prevents distorted chart visuals.
+The rendering of the chart Y-axis when handling tight value ranges has been improved. Instead of repeating identical numbers on the axis, charts now automatically adjust tick intervals to show accurate intermediate decimal values. This makes tracking subtle data variations significantly easier and prevents distorted chart visuals.
