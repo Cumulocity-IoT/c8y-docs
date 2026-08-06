@@ -1,6 +1,6 @@
 ---
 date: ""
-title: forceMerge option in the data graph now works as expected. [BACKPORT] (#12733)
+title: Fix Y-Axis Internationalization and Number Formatting
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67082
 version: 1023.14.200
 ---
-Backport of https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12304
+We updated Y-axis labels to use the same internationalization standards as chart tooltips. Numbers on the Y-axis now match your preferred region and language settings using clean, compact formatting, making chart navigation seamless and consistent.
