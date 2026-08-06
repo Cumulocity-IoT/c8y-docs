@@ -1,5 +1,5 @@
 ---
-date:
+date: '2026-08-06'
 title: ONNX block in Analytics Builder now requires file extension in model name
 change_type:
   - value: change-3BQrQ6adS
