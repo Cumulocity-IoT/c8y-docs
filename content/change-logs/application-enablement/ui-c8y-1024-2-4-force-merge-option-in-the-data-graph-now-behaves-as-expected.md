@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67082
 version: 1024.2.4
 ---
-We updated Y-axis labels to use the same internationalization standards as chart tooltips. Numbers on the Y-axis now match your preferred region and language settings using clean, compact formatting, making chart navigation seamless and consistent.
+Y-axis labels have been updated to use the same internationalization standards as chart tooltips. Numbers on the Y-axis now match your preferred region and language settings using clean, compact formatting, making chart navigation seamless and consistent.
