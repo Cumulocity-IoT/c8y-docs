@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix Y-Axis Internationalization and Number Formatting
+title: Updated Y-Axis internationalization and number formatting
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
