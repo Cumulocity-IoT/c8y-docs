@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Small min-max datapoint ranges are now correctly shown on the chart Y-axis- [BACKPORT]
+title: Small min-max data point ranges now display correctly on chart Y-axis
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67256
 version: 1023.14.201
 ---
-Backport of https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12502
+We improved how chart Y-axes render when handling tight value ranges. Instead of repeating identical numbers on the axis, charts now automatically adjust tick intervals to show accurate intermediate decimal values. This makes tracking subtle data variations significantly easier and prevents distorted chart visuals.
