@@ -795,7 +795,7 @@ The following locations are searched for the Logback configuration file:
 
 A Spring Boot library was upgraded to 2.5.8, hence upgrading Microservice SDK to 10.13+ may require some additional development.
 
-* The `content(matcher)` method of RestAssured has been replaced with `body(matcher)`, see [RequestSpecification#content()](https://javadoc.io/doc/io.rest-assured/rest-assured/3.0.0/io/restassured/specification/RequestSpecification.html#content-byte:A-)
+* The `content(matcher)` method of RestAssured has been replaced with `body(matcher)`, see [RequestSpecification#content()](https://javadoc.io/static/io.rest-assured/rest-assured/3.0.0/io/restassured/specification/RequestSpecification.html#content-byte:A-)
 * Spring Boot BOM does not define a version for joda-time, you may need to explicitly define version.
 
   Maven example:
