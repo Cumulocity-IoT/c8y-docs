@@ -6,9 +6,9 @@ sector:
   - edge
 ---
 
-{{< c8y-admon-caution>}}
-This section only applies to an installation managed by the **c8yedge** tool. If Edge is installed on a self-managed Kubernetes cluster, then host network configuration is outside the scope of this documentation.
-{{< /c8y-admon-caution>}}
+{{< c8y-admon-caution >}}
+This section applies only to an installation managed by the **c8yedge** tool. If you install Edge on a self-managed Kubernetes cluster, host network configuration is outside the scope of this documentation.
+{{< /c8y-admon-caution >}}
 
 Edge runs on top of the Kubernetes platform. Kubernetes is server infrastructure and not adapted for dynamic network environments, unlike desktop applications. Changing the IP address of the host that Edge is running on will lead to undefined behavior.
 
