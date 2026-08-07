@@ -1,0 +1,27 @@
+{{- /*
+Renders /.well-known/security.txt as defined by RFC 9116
+(https://www.rfc-editor.org/rfc/rfc9116).
+
+The Expires field is generated at build time and always points 11 months into
+the future, so every deployment pushes the expiry date forward and the file
+never goes stale on its own. RFC 9116 recommends a value less than a year
+ahead, hence 11 rather than 12 months.
+*/ -}}
+{{- $expires := now.UTC.AddDate 0 11 0 -}}
+# Cumulocity vulnerability disclosure contact information.
+# Format defined by RFC 9116 (https://www.rfc-editor.org/rfc/rfc9116).
+#
+# If you believe you have found a security vulnerability in a Cumulocity
+# product or service, please report it to the contact below and follow the
+# responsible disclosure policy linked in the Policy field.
+#
+# This file is generated on every build; do not edit it in the deployed site.
+# Source: layouts/index.securitytxt.txt in github.com/Cumulocity-IoT/c8y-docs
+
+Contact: mailto:csirt@cumulocity.com
+Contact: https://cumulocity.com/docs/legal-notices/responsible-disclosure-policy/
+Expires: {{ $expires.Format "2006-01-02" }}T00:00:00.000Z
+Policy: https://cumulocity.com/docs/legal-notices/responsible-disclosure-policy/
+Preferred-Languages: en
+Canonical: https://cumulocity.com/.well-known/security.txt
+Canonical: https://cumulocity.com/docs/.well-known/security.txt

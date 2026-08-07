@@ -17,7 +17,7 @@ enableGitInfo          = true
   sectors = "sector"
 
 [outputs]
-  home = ["HTML", "llmstxt", "llms-full"]
+  home = ["HTML", "llmstxt", "llms-full", "securitytxt"]
 
 [outputFormats.llmstxt]
   mediaType    = "text/plain"
@@ -29,6 +29,15 @@ enableGitInfo          = true
 [outputFormats.llms-full]
   mediaType    = "text/plain"
   baseName     = "llms-full"
+  isPlainText  = true
+  notAlternative = true
+  suffixes     = ["txt"]
+
+# RFC 9116 security.txt, rendered by layouts/index.securitytxt.txt
+[outputFormats.securitytxt]
+  mediaType    = "text/plain"
+  baseName     = "security"
+  path         = ".well-known"
   isPlainText  = true
   notAlternative = true
   suffixes     = ["txt"]
