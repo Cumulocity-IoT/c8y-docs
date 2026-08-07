@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix SVG upload being stuck on loading state after the first upload in SCADA widget
+title: Fixed SVG upload issues in SCADA widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
