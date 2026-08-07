@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67282
 version: 1024.13.1
 ---
-When uploading an SVG file in the SCADA widget, the upload process would become stuck after the first successful upload, preventing you from uploading another file without reopening widget config. This issue has been fixed so that you can now upload another SVG file without encountering any stuck states or needing to reopen widget config.
+When uploading an SVG file in the SCADA widget, the upload process got stuck after the first successful upload, preventing you from uploading another file without reopening the widget configuration. This issue has been fixed. You can now upload another SVG file without encountering any stuck states or having to reopen the widget configuration.
