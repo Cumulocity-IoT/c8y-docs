@@ -1,6 +1,6 @@
 ---
 date: ""
-title: validate package version for semver compatibility before upload (#12692)
+title: Package version validation for semantic versioning compatibility
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67047
 version: 1024.10.2
 ---
-Co-authored-by: Tristan Bastian <tristan.bastian@cumulocity.com>
+When uploading application packages, it is important to ensure that package versions follow semantic versioning standards to maintain compatibility and consistency across your deployments. Previously, the system did not validate package versions before upload, which could result in invalid or inconsistent version formats being stored in your repository. Now, the system validates that package versions conform to semantic versioning requirements before allowing the upload to proceed. This validation helps prevent version-related issues and ensures that all packages in your repository follow a consistent versioning scheme, making it easier to manage dependencies and track application updates across your installations.
