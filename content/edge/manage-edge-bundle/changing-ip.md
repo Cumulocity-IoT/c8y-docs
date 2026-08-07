@@ -12,4 +12,4 @@ This section only applies to an installation managed by the **c8yedge** tool. If
 
 Edge runs on top of the Kubernetes platform, which is very much a server application and not adapted for dynamic network environments, unlike desktop applications. Changing the IP address of the host that Edge is running on will lead to undefined behaviour.
 
-If possible, change of IP address should be immediately followed by a reboot of the host.
+To avoid this, change of IP address should be immediately followed by a reboot of the host.
