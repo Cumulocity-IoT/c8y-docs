@@ -1,6 +1,6 @@
 ---
 weight: 110
-title: Changing IP address of the host
+title: Modifying the registry credentials used by Edge
 layout: bundle
 sector:
   - edge
