@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-08-05'
 title: Redirect to accessible applications after successful two-factor authentication
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,16 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-67315
 version: 1024.2.5
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-08-05'
+  - label: apj.cumulocity.com
+    date: '2026-08-05'
+  - label: jp.cumulocity.com
+    date: '2026-08-05'
+  - label: us.cumulocity.com
+    date: '2026-08-06'
+  - label: cumulocity.com
+    date: '2026-08-06'
 ---
 When users logged in with two-factor authentication (TOTP), they could get stuck on the TOTP verification screen if they did not have access to the application they were trying to reach. For example, if a user tried to open the Administration application but did not have permission to access it, they would remain on the TOTP screen even after successful authentication. Now, after successful two-factor authentication verification, users who do not have access to the requested application see an "Access not available" message and a list of applications they have permission to access, allowing them to select which application to open instead of being stuck on the authentication screen.

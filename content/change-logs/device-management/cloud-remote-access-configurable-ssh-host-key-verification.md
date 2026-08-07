@@ -1,5 +1,5 @@
 ---
-date: 2026-07-23
+date: '2026-07-23'
 title: Configurable SSH host key verification for Cloud Remote Access
 product_area: Device management & connectivity
 change_type:
@@ -13,6 +13,17 @@ build_artifact:
     label: cloud-remote-access
 ticket: DM-6421
 version: 3.3.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-07-27'
+  - label: apj.cumulocity.com
+    date: '2026-07-28'
+  - label: jp.cumulocity.com
+    date: '2026-07-28'
+  - label: us.cumulocity.com
+    date: '2026-07-29'
+  - label: cumulocity.com
+    date: '2026-07-29'
 ---
 The handling of the SSH server host key for Cloud Remote Access endpoints is now controlled by the `hostkey-autosave` tenant option in the `remoteaccess` category. The option defaults to `false`, so the server host key must be confirmed on first connect. This is a deliberate security change from the previous silent-autosave behavior.
 

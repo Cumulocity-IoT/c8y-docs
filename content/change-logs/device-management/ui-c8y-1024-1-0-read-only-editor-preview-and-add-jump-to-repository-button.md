@@ -16,6 +16,14 @@ version: 1024.1.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-07-15'
+  - label: apj.cumulocity.com
+    date: '2026-08-05'
+  - label: jp.cumulocity.com
+    date: '2026-08-05'
+  - label: us.cumulocity.com
+    date: '2026-08-06'
+  - label: cumulocity.com
+    date: '2026-08-06'
 ---
 In the Device management application, the read-only configuration preview on a device's **Configurations** tab now applies syntax highlighting. Snapshots retrieved from a device are shown in a syntax-highlighting editor, with the correct language applied automatically based on the file type, making them easier to read.
 

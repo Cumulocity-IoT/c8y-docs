@@ -1,18 +1,25 @@
 ---
-date: ""
-title: "Asset definition schema now reflects removal of allowed property definitions"
-product_area: "Application enablement & solutions"
+date: '2026-08-05'
+title: Asset definition schema now reflects removal of allowed property definitions
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-VSkj2iV9m"
-      label: "Fix"
+  - value: change-VSkj2iV9m
+    label: Fix
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-3086"
-version: "1025.8.4"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-3086
+version: 1025.8.4
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-08-05'
+  - label: apj.cumulocity.com
+    date: '2026-08-05'
+  - label: jp.cumulocity.com
+    date: '2026-08-05'
 ---
 Asset definition schemas previously retained removed property
 definitions in the generated JSON schema, which could cause validation

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-08-05'
 title: Multi-select support for aggregation functions and new auto aggregation mode
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,17 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-66621
 version: 1024.2.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-08-05'
+  - label: apj.cumulocity.com
+    date: '2026-08-05'
+  - label: jp.cumulocity.com
+    date: '2026-08-05'
+  - label: us.cumulocity.com
+    date: '2026-08-06'
+  - label: cumulocity.com
+    date: '2026-08-06'
 ---
 Previously, the "Data graph" widget and the data explorer supported only a single aggregation function per data point. Now you can select multiple aggregation functions at once (for example, minimum, maximum, and average) and compare them in parallel on the same chart, including a band display for minimum/maximum.
 

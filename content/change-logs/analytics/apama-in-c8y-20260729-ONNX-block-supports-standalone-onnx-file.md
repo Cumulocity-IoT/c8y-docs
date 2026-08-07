@@ -13,6 +13,13 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-5326
 version: 27.180.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-07-30'
+  - label: apj.cumulocity.com
+    date: '2026-08-05'
+  - label: jp.cumulocity.com
+    date: '2026-08-05'
 ---
 
 The ONNX block (Public Preview) in Analytics Builder now supports models uploaded to the {{< product-c8y-iot >}} files repository as a standalone `.onnx` file. Previously, the block only supported models packaged inside a `.zip` archive.

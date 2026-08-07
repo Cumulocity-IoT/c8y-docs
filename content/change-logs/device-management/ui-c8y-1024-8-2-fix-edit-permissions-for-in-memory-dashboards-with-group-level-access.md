@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-08-05'
 title: Default device info dashboard now respects group-level edit permissions
 product_area: Device management & connectivity
 change_type:
@@ -13,5 +13,16 @@ build_artifact:
     label: ui-c8y
 ticket: DM-6671
 version: 1024.8.2
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-08-05'
+  - label: apj.cumulocity.com
+    date: '2026-08-05'
+  - label: jp.cumulocity.com
+    date: '2026-08-05'
+  - label: us.cumulocity.com
+    date: '2026-08-06'
+  - label: cumulocity.com
+    date: '2026-08-06'
 ---
 In the Device Management application, users with group-level edit permissions were unable to edit the default device info dashboard when opening a device. Edit permissions are now correctly applied based on group-level access.

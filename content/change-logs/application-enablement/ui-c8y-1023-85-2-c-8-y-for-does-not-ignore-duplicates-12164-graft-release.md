@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-08-05'
 title: Duplicate operations no longer appear in the Device Management Control page
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,17 @@ build_artifact:
     label: ui-c8y
 ticket: DM-5997
 version: 1023.85.2
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-08-05'
+  - label: apj.cumulocity.com
+    date: '2026-08-05'
+  - label: jp.cumulocity.com
+    date: '2026-08-05'
+  - label: us.cumulocity.com
+    date: '2026-08-06'
+  - label: cumulocity.com
+    date: '2026-08-06'
 ---
 In the Device Management application, the **Control** page uses real-time notifications to keep the operations list up to date. When a new operation was created while the **Control** page was open, the real-time update could occasionally cause the operation to appear twice in the list. 
 

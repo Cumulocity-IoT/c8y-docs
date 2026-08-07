@@ -16,6 +16,14 @@ version: 1024.0.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-07-15'
+  - label: apj.cumulocity.com
+    date: '2026-08-05'
+  - label: jp.cumulocity.com
+    date: '2026-08-05'
+  - label: us.cumulocity.com
+    date: '2026-08-06'
+  - label: cumulocity.com
+    date: '2026-08-06'
 ---
 
 In a future version of the Web SDK, we will update the Angular version used in the Web SDK to version 21. This update brings improvements and new features, but may also introduce breaking changes that could impact your existing implementations.

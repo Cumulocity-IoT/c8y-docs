@@ -16,6 +16,14 @@ version: 1024.0.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-07-15'
+  - label: apj.cumulocity.com
+    date: '2026-08-05'
+  - label: jp.cumulocity.com
+    date: '2026-08-05'
+  - label: us.cumulocity.com
+    date: '2026-08-06'
+  - label: cumulocity.com
+    date: '2026-08-06'
 ---
 Starting with the next major Web SDK release, version 1024.0.0, we are updating the underlying dashboarding technology.
 

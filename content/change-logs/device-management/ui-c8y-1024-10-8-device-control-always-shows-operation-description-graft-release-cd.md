@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-08-05'
 title: Device control tab now shows operation description as title
 product_area: Device management & connectivity
 change_type:
@@ -13,5 +13,14 @@ build_artifact:
     label: ui-c8y
 ticket: DM-5726
 version: 1024.10.8
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-08-05'
+  - label: apj.cumulocity.com
+    date: '2026-08-05'
+  - label: us.cumulocity.com
+    date: '2026-08-06'
+  - label: cumulocity.com
+    date: '2026-08-06'
 ---
 The **Device control** tab displayed the raw command text instead of the operation description as the operation title. This issue has been fixed. Shell operations now always set the command text as the operation description.

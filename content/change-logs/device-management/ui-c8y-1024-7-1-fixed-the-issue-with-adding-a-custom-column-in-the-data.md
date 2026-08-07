@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Custom columns using Digital Twin Manager properties now display correctly in data grids
+date: '2026-08-05'
+title: >-
+  Custom columns using Digital Twin Manager properties now display correctly in
+  data grids
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -13,5 +15,16 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-66948
 version: 1024.7.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-08-05'
+  - label: apj.cumulocity.com
+    date: '2026-08-05'
+  - label: jp.cumulocity.com
+    date: '2026-08-05'
+  - label: us.cumulocity.com
+    date: '2026-08-06'
+  - label: cumulocity.com
+    date: '2026-08-06'
 ---
 Custom columns based on Digital Twin Manager properties that were added to a data grid were silently dropped and never appeared. The selected columns now display as expected.

@@ -16,6 +16,14 @@ version: 1024.0.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-07-15'
+  - label: apj.cumulocity.com
+    date: '2026-08-05'
+  - label: jp.cumulocity.com
+    date: '2026-08-05'
+  - label: us.cumulocity.com
+    date: '2026-08-06'
+  - label: cumulocity.com
+    date: '2026-08-06'
 ---
 Starting with version 1024.0.0, the `saveConfig$()` method on all built-in `DataGridConfigurationStrategy` implementations consistently returns `of(undefined)` when there is no context or nothing to persist. Previously, return values were inconsistent, for example, `VoidConfigurationStrategy` returned `of(null)` while others returned `of(undefined)`.
 

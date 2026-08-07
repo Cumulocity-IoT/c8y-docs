@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-08-05'
 title: Generating exports from the data explorer
 product_area: Device management & connectivity
 change_type:
@@ -13,5 +13,16 @@ build_artifact:
     label: ui-c8y
 ticket: DM-6380
 version: 1024.1.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-08-05'
+  - label: apj.cumulocity.com
+    date: '2026-08-05'
+  - label: jp.cumulocity.com
+    date: '2026-08-05'
+  - label: us.cumulocity.com
+    date: '2026-08-06'
+  - label: cumulocity.com
+    date: '2026-08-06'
 ---
 The data explorer in the Device Management application previously did not support the "Generate export" feature, which prevented users from exporting data directly from the explorer interface. This feature is now enabled, allowing you to generate and download exports of your data directly from the data explorer.
