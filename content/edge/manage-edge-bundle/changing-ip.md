@@ -10,6 +10,6 @@ sector:
 This section only applies to an installation managed by the **c8yedge** tool. If Edge is installed on a self-managed Kubernetes cluster, then host network configuration is outside the scope of this documentation.
 {{< /c8y-admon-caution>}}
 
-Edge runs on top of the Kubernetes platform, which is very much a server application and not adapted for dynamic network environments, unlike desktop applications. Changing the IP address of the host that Edge is running on will lead to undefined behaviour.
+Edge runs on top of the Kubernetes platform. Kubernetes is server infrastructure and not adapted for dynamic network environments, unlike desktop applications. Changing the IP address of the host that Edge is running on will lead to undefined behavior.
 
-To avoid this, change of IP address should be immediately followed by a reboot of the host.
+To avoid this, immediately reboot the host after changing the IP address.
