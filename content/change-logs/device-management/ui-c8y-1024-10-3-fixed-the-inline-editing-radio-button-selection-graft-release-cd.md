@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-6805
 version: 1024.10.3
 ---
-When editing device properties inline in the device management app, radio button selections were not being saved correctly. This issue has been fixed, and radio button selections now work as expected when you edit them inline. Users can now reliably update radio button fields directly in the device management interface without encountering selection errors.
+In the Device Management app, when using inline editing in the create/edit view of a configuration, the radio button was not properly selected. This has been fixed.
