@@ -14,20 +14,4 @@ build_artifact:
 ticket: DM-6805
 version: 1024.10.3
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Device management app): [DM-6805] Fixed the inline editing radio
-button
-selection.](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12690)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[DM-6805]:
-https://cumulocity.atlassian.net/browse/DM-6805?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dafina Karamanoleva <92030501+dafkk@users.noreply.github.com>
+When editing device properties inline in the device management app, radio button selections were not being saved correctly. This issue has been fixed, and radio button selections now work as expected when you edit them inline. Users can now reliably update radio button fields directly in the device management interface without encountering selection errors.
