@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed the inline editing radio button selection. [GRAFT][release/cd]
+title: Fixed radio button not properly selected in configuration inline editing
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
