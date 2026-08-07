@@ -1,19 +1,21 @@
 ---
-date: 
-title: Tenant options are not attached as request headers by microservices proxy 
+date: '2026-08-07'
+title: Tenant options are not attached as request headers by microservices proxy
 product_area: Platform services
 change_type:
   - value: change-inv-3bw8e
-    label: Announcement 
+    label: Announcement
 component:
   - value: component-JlFdtOPva
     label: REST API
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-ticket: MTM-66671 
+ticket: MTM-66671
 version: 2026.230.0
 environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-08-07'
 ---
 The deprecation of attaching microservices' tenant options as request headers by the microservices proxy was under [Public Preview](/change-logs/?change-type=.change-type-announcement#cumulocity-2025-322-0-deprecation-of-tenant-options-in-request-headers), and is now Generally Available (GA) for CD versions 2026.230.0 and higher, and will be present in the 2027 annual release.
 

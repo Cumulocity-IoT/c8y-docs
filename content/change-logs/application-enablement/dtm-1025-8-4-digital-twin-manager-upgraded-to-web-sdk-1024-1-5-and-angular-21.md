@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-08-05'
   - label: jp.cumulocity.com
     date: '2026-08-05'
+  - label: us.cumulocity.com
+    date: '2026-08-07'
+  - label: cumulocity.com
+    date: '2026-08-07'
 ---
 The Digital Twin Manager application now uses {{< product-c8y-iot >}} Web SDK version
 1024.1.5 and Angular version 21. This upgrade aligns the application

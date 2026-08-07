@@ -22,6 +22,10 @@ environment_availability:
     date: '2026-08-05'
   - label: jp.cumulocity.com
     date: '2026-08-05'
+  - label: us.cumulocity.com
+    date: '2026-08-07'
+  - label: cumulocity.com
+    date: '2026-08-07'
 ---
 When deleting managed objects from the subassets list, the confirmation dialog previously showed only the title and action buttons for items without a device, asset, or device group classification. The deletion modal now displays a clear info message stating that only the selected object will be deleted, providing users with better context before confirming the action.
 This change improves the user experience when managing assets by ensuring all deletion confirmations include meaningful information, regardless of the managed object's classification. Users can now make informed decisions about which objects will be affected by the deletion.

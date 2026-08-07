@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-08-05'
   - label: jp.cumulocity.com
     date: '2026-08-05'
+  - label: us.cumulocity.com
+    date: '2026-08-07'
+  - label: cumulocity.com
+    date: '2026-08-07'
 ---
 Asset definition schemas previously retained removed property
 definitions in the generated JSON schema, which could cause validation
