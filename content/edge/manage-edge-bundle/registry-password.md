@@ -1,5 +1,5 @@
 ---
-weight: 120
+weight: 110
 title: Changing IP address of the host
 layout: bundle
 sector:
