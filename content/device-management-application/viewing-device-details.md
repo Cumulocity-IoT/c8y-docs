@@ -55,6 +55,10 @@ For more details about smart rules (NEW), refer to [Smart rules plugin](/streami
 
 ### Availability {#availability}
 
+{{< c8y-admon-info >}}
+The **Availability** tab is deprecated and planned for removal in y2027. See the [deprecation announcement](/change-logs/device-management/ui-c8y-DM-7021-deprecate-availability-donut-charts) for details.
+{{< /c8y-admon-info >}}
+
 The Availability tab offers availability monitoring for machines, see [Availability](/device-management-application/monitoring-and-controlling-devices/#availability) for more information.
 
 ### Child devices {#child-devices}
