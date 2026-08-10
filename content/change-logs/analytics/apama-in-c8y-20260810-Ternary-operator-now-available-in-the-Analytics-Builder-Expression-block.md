@@ -1,5 +1,5 @@
 ---
-date: 2026-08-10
+date: 
 title: Ternary operator now available in the Analytics Builder Expression block
 change_type:
   - value: change-2c7RdTdXo4
