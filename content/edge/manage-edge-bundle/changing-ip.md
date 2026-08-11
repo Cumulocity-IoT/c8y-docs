@@ -14,4 +14,4 @@ Edge runs on top of the Kubernetes platform. Kubernetes is server infrastructure
 
 To avoid this, immediately reboot the host after changing the IP address.
 
-Alternatively, if Edge is running in a hypervisor that supports running a guest behind NAT or an internal/private network, you can have it maintain a static IP address for the guest. This will insulate running software such as Edge from any changes imposed by the outer network.
+Alternatively, if Edge is running in a hypervisor that supports running a guest behind NAT, you can have it maintain a static IP address for the guest within a private/virtual network. This isolates running software such as Edge from any changes imposed by the outer network.
