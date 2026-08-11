@@ -22,5 +22,7 @@ environment_availability:
     date: '2026-08-06'
   - label: cumulocity.com
     date: '2026-08-06'
+  - label: jp.cumulocity.com
+    date: '2026-08-11'
 ---
 The advanced branding JSON editor previously displayed Angular's internal FormControl class documentation as descriptions for several branding properties, such as darkThemeAvailable and brandingCssVars keys. You now see meaningful descriptions for these properties. The darkThemeAvailable and brandingCssVars properties display updated documentation comments, and all brandingCssVar keys are processed through a runtime sanitizer to ensure accurate descriptions, since these keys are generated dynamically and cannot include individual documentation comments.

@@ -22,5 +22,7 @@ environment_availability:
     date: '2026-08-06'
   - label: cumulocity.com
     date: '2026-08-06'
+  - label: jp.cumulocity.com
+    date: '2026-08-11'
 ---
 The **Device control** tab displayed the raw command text instead of the operation description as the operation title. This issue has been fixed. Shell operations now always set the command text as the operation description.

@@ -22,6 +22,8 @@ environment_availability:
     date: '2026-08-05'
   - label: us.cumulocity.com
     date: '2026-08-10'
+  - label: cumulocity.com
+    date: '2026-08-11'
 ---
 
 The ONNX block (Public Preview) in Analytics Builder now supports models uploaded to the {{< product-c8y-iot >}} files repository as a standalone `.onnx` file. Previously, the block only supported models packaged inside a `.zip` archive.
