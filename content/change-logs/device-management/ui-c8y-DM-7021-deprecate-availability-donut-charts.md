@@ -31,11 +31,11 @@ The per-device **Availability** tab and the fleet-wide **Devices > Availability*
 
 **Consequence**
 
-Existing tenants and users will continue to see the Availability views until the removal date. No immediate action is required. After removal, the views will no longer be accessible in the Device Management application. The underlying alarm-based availability data remains available via the [Cumulocity IoT REST API](https://{{< domain-c8y >}}/api/core/#tag/Alarms).
+Existing tenants and users will continue to see the availability views until the removal date. No immediate action is required. After removal, the views will no longer be accessible in the Device Management application. The underlying alarm-based availability data remains available via the [{{< product-c8y-iot >}} REST API](https://{{< domain-c8y >}}/api/core/#tag/Alarms).
 
 **Persona**
 
-This deprecation affects **Device Management application users** who rely on the Availability views for operational monitoring, as well as **developers** who have built custom applications referencing the `c8y.parts.availability` AngularJS module from the `@c8y/ng1-modules` package.
+This deprecation affects **Device Management application users** who rely on the availability views for operational monitoring, as well as **developers** who have built custom applications referencing the `c8y.parts.availability` AngularJS module from the `@c8y/ng1-modules` package.
 
 **Action**
 
