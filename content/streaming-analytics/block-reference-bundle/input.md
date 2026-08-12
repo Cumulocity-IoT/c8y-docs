@@ -153,7 +153,9 @@ Note: When running in simulation mode, because only the creation time of the ala
 <td><span>When specified, only the properties mentioned in this parameter are included in the output. If empty, all properties are included in the output.</span>
 <p>Each property could be either: <ul> <li>Name of a property, for example <tt>MyCounter</tt></li> <li>Path to a nested property, for example <tt>Speed.value</tt></li> <li>Text substitution string that refers to any property, for example <tt>"Speed is #{Speed.value} #{Speed.unit}"</tt></li> </ul>
 <p></p>
-When using text substitutions, only the placeholders not starting with "source." are considered and any placeholders starting with "source." are ignored.</p>
+When using text substitutions, only the placeholders not starting with "source." are considered and any placeholders starting with "source." are ignored.
+<p></p>
+Use this parameter to limit the output to only used properties to reduce the memory usage of the model. For example, if the input alarm has 10 properties but only 2 are used in the model, then specifying those 2 properties in this parameter can reduce the memory usage significantly. If no property is used in the model, then specify a single blank property to exclude all properties in the output.</p>
 </td>
 <td><span>sequence&lt;string&gt;</span>
 </td>
@@ -264,7 +266,9 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 <td><span>When specified, only the properties mentioned in this parameter are included in the output. If empty, all properties are included in the output.</span>
 <p>Each property could be either: <ul> <li>Name of a property, for example <tt>MyCounter</tt></li> <li>Path to a nested property, for example <tt>Speed.value</tt></li> <li>Text substitution string that refers to any property, for example <tt>"Speed is #{Speed.value} #{Speed.unit}"</tt></li> </ul>
 <p></p>
-When using text substitutions, only the placeholders not starting with "source." are considered and any placeholders starting with "source." are ignored.</p>
+When using text substitutions, only the placeholders not starting with "source." are considered and any placeholders starting with "source." are ignored.
+<p></p>
+Use this parameter to limit the output to only used properties to reduce the memory usage of the model. For example, if the input event has 10 properties but only 2 are used in the model, then specifying those 2 properties in this parameter can reduce the memory usage significantly. If no property is used in the model, then specify a single blank property to exclude all properties in the output.</p>
 </td>
 <td><span>sequence&lt;string&gt;</span>
 </td>
@@ -374,7 +378,9 @@ The parameters that define the input stream of the block are "Input Source" and 
 <p></p>
 When using text substitutions, only the placeholders starting with "source." are considered and any placeholders not starting with "source." are ignored. The name of the property is derived from the placeholder by removing the "source." prefix. For example, if the placeholder is <tt>#{source.Speed}</tt>, then the property name will be <tt>Speed</tt>.
 <p></p>
-The properties specified here are in addition to the property specified by the Property Name parameter, which is always included in the output if the parameter is specified.</p>
+The properties specified here are in addition to the property specified by the Property Name parameter, which is always included in the output if the parameter is specified.
+<p></p>
+Use this parameter to limit the output to only used properties to reduce the memory usage of the model. For example, if the input managed object has 10 properties but only 2 are used in the model, then specifying those 2 properties in this parameter can reduce the memory usage significantly. If no property is used in the model, then specify a single blank property to exclude all properties in the output.</p>
 </td>
 <td><span>sequence&lt;string&gt;</span>
 </td>
@@ -474,7 +480,9 @@ Note: When running in simulation mode, because historical input data is used, ti
 <td><span>When specified, only the properties mentioned in this parameter are included in the output. If empty, all properties are included in the output.</span>
 <p>Each property could be either: <ul> <li>Name of a property, for example <tt>MyCounter</tt></li> <li>Path to a nested property, for example <tt>Speed.value</tt></li> <li>Text substitution string that refers to any property, for example <tt>"Speed is #{Speed.value} #{Speed.unit}"</tt></li> </ul>
 <p></p>
-When using text substitutions, only the placeholders not starting with "source." are considered and any placeholders starting with "source." are ignored.</p>
+When using text substitutions, only the placeholders not starting with "source." are considered and any placeholders starting with "source." are ignored.
+<p></p>
+Use this parameter to limit the output to only used properties to reduce the memory usage of the model. For example, if the input measurement has 10 properties but only 2 are used in the model, then specifying those 2 properties in this parameter can reduce the memory usage significantly. If no property is used in the model, then specify a single blank property to exclude all properties in the output.</p>
 </td>
 <td><span>sequence&lt;string&gt;</span>
 </td>
@@ -601,7 +609,9 @@ Note: A history of changes is not maintained for <tt>Operation</tt> objects, and
 <td><span>When specified, only the properties mentioned in this parameter are included in the output. If empty, all properties are included in the output.</span>
 <p>Each property could be either: <ul> <li>Name of a property, for example <tt>MyCounter</tt></li> <li>Path to a nested property, for example <tt>Speed.value</tt></li> <li>Text substitution string that refers to any property, for example <tt>"Speed is #{Speed.value} #{Speed.unit}"</tt></li> </ul>
 <p></p>
-When using text substitutions, only the placeholders not starting with "source." are considered and any placeholders starting with "source." are ignored.</p>
+When using text substitutions, only the placeholders not starting with "source." are considered and any placeholders starting with "source." are ignored.
+<p></p>
+Use this parameter to limit the output to only used properties to reduce the memory usage of the model. For example, if the input operation has 10 properties but only 2 are used in the model, then specifying those 2 properties in this parameter can reduce the memory usage significantly. If no property is used in the model, then specify a single blank property to exclude all properties in the output.</p>
 </td>
 <td><span>sequence&lt;string&gt;</span>
 </td>
@@ -734,7 +744,9 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 <td><span>When specified, only the properties mentioned in this parameter are included in the output. If empty, all properties are included in the output.</span>
 <p>Each property could be either: <ul> <li>Name of a property, for example <tt>MyCounter</tt></li> <li>Path to a nested property, for example <tt>Speed.value</tt></li> <li>Text substitution string that refers to any property, for example <tt>"Speed is #{Speed.value} #{Speed.unit}"</tt></li> </ul>
 <p></p>
-When using text substitutions, only the placeholders not starting with "source." are considered and any placeholders starting with "source." are ignored.</p>
+When using text substitutions, only the placeholders not starting with "source." are considered and any placeholders starting with "source." are ignored.
+<p></p>
+Use this parameter to limit the output to only used properties to reduce the memory usage of the model. For example, if the input event has 10 properties but only 2 are used in the model, then specifying those 2 properties in this parameter can reduce the memory usage significantly. If no property is used in the model, then specify a single blank property to exclude all properties in the output except for mandatory position-related properties.</p>
 </td>
 <td><span>sequence&lt;string&gt;</span>
 </td>
