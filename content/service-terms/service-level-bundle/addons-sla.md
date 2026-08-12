@@ -101,7 +101,7 @@ The second region is selected by {{< company-c8y >}}.
 
 The following SLA is valid for the service:
 
-* Data durability: 99,999999999%
+* Data durability: 99,99999%
 
 Recovery Time Objective (RTO) and Recovery Point Objective (RPO) are the same as for non-replicated backup.
 
