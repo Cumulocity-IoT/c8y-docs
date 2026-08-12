@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAB-4727
-version: 
+version: 27.206.0
 ---
 
 The **Duration** block in Analytics Builder has been enhanced with a new **Restart** input port that allows you to reset the elapsed duration and immediately restart measurement from that point, without deactivating the block.
