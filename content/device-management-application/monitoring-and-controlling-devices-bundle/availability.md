@@ -9,7 +9,7 @@ helpcontent:
 ---
 
 {{< c8y-admon-info >}}
-The **Availability** tab on device detail pages and the **Devices > Availability** page are deprecated and planned for removal in y2027. See the [deprecation announcement](/change-logs/device-management/ui-c8y-DM-7021-deprecate-availability-donut-charts) for details.
+The **Availability** tab on device detail pages and the **Devices > Availability** page are deprecated and planned for removal before the y2028 release. See the [deprecation announcement](/change-logs/#ui-c8y-DM-7021-deprecate-availability-donut-charts) for details.
 {{< /c8y-admon-info >}}
 
 {{< product-c8y-iot >}} distinguishes between connection monitoring and availability. Connection monitoring, as described in the previous section, only indicates if the device is communicating with {{< product-c8y-iot >}}, it does not automatically indicate if it is functional or not.
