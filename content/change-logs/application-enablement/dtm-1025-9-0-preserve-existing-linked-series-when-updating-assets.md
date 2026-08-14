@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "preserve existing linked series when updating assets"
+title: "Preserved existing linked series when updating assets"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
