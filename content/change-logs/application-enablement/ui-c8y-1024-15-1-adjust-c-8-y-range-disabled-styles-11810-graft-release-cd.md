@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improve styling for disabled range input fields
+title: Improved styling for disabled range input fields
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
