@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67450
 version: 1024.14.1
 ---
-Some Web SDK SVG icons were missing CSS classes or had merged classes, breaking styling. We've restored the missing classes and split the merged ones, so each icon can now be styled and referenced independently.
+Some Web SDK SVG icons were missing CSS classes or had merged classes, breaking the styling. The missing classes have been restored and the merged classes have been split, so each icon can now be styled and referenced independently.
