@@ -1,6 +1,6 @@
 ---
 date: ""
-title: SVG icon classes restored and merged ones split
+title: Missing SVG icon classes restored and merged classes split
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
