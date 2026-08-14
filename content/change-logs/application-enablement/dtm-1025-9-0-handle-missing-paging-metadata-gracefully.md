@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "handle missing paging metadata gracefully"
+title: "Handling missing paging metadata gracefully"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
