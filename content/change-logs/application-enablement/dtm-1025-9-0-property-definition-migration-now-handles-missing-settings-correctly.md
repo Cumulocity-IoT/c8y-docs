@@ -14,7 +14,7 @@ build_artifact:
 ticket: "CTM-3083"
 version: "1025.9.0"
 ---
-In specific scenarios, Property library definitions failed to migrate
+In specific scenarios, property library definitions failed to migrate
 during startup when required settings were not present. The loading of
 the settings at startup is fixed now, allowing property definitions to
 migrate successfully without errors.
