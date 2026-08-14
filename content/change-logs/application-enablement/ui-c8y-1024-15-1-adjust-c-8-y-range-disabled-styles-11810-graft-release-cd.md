@@ -14,21 +14,4 @@ build_artifact:
 ticket: MTM-65981
 version: 1024.15.1
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-65981] adjust c8y-range disabled styles
-(#11810)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11810)
-
-<!--- Backport version: 9.5.1 -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65981]:
-https://cumulocity.atlassian.net/browse/MTM-65981?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
----------
-
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+Disabled range input fields (‎`c8y-range`) weren’t visually distinct enough to signal their state. They now have clearer disabled styling, making it obvious the field isn’t interactive. This applies to all existing range inputs for a consistent, accessible experience.
