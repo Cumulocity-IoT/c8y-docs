@@ -15,7 +15,7 @@ ticket: "CTM-3116"
 version: "1025.9.0"
 ---
 The Asset API now gracefully handles responses where paging metadata
-omits the `totalPages` field instead of throwing an exception that
+omits the `totalPages` field, instead of throwing an exception that
 returns an error 500. Previously, incomplete paging information caused
 requests to fail. The API now logs a warning when paging metadata is
 incomplete, making the issue observable while allowing the request to
