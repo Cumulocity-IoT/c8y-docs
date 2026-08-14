@@ -15,7 +15,7 @@ ticket: "CTM-3139"
 version: "1025.9.0"
 ---
 The Asset API previously dropped duplicate Linked Asset entries when
-multiple series on the same asset referenced identical source ids,
+multiple series on the same asset referenced identical source IDs,
 fragments, and series.
 
 The Asset API now correctly maintains all Linked Asset entries, even
