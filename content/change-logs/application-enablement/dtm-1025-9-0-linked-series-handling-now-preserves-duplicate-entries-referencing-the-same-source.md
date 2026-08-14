@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "linked series handling now preserves duplicate entries referencing the same source"
+title: "Linked series handling now preserves duplicate entries referencing the same source"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
