@@ -1,6 +1,6 @@
 ---
 date: ""
-title: adjust c8y-range disabled styles (#11810) [GRAFT][release/cd] (#11829)
+title: Improve styling for disabled range input fields
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
