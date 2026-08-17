@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix double slashes in documentation links
+title: Web SDK removes double slashes from documentation links
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
