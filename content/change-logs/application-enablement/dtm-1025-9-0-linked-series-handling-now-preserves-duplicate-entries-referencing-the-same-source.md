@@ -1,18 +1,23 @@
 ---
-date: ""
-title: "Linked series handling now preserves duplicate entries referencing the same source"
-product_area: "Application enablement & solutions"
+date: '2026-08-18'
+title: >-
+  Linked series handling now preserves duplicate entries referencing the same
+  source
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-VSkj2iV9m"
-      label: "Fix"
+  - value: change-VSkj2iV9m
+    label: Fix
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-3139"
-version: "1025.9.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-3139
+version: 1025.9.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-08-18'
 ---
 The Asset API previously dropped duplicate linked asset entries when
 multiple series on the same asset referenced identical source IDs,

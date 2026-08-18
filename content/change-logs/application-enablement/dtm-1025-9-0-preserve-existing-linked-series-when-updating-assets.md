@@ -1,18 +1,21 @@
 ---
-date: ""
-title: "Preserved existing linked series when updating assets"
-product_area: "Application enablement & solutions"
+date: '2026-08-18'
+title: Preserved existing linked series when updating assets
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-VSkj2iV9m"
-      label: "Fix"
+  - value: change-VSkj2iV9m
+    label: Fix
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-3124"
-version: "1025.9.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-3124
+version: 1025.9.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-08-18'
 ---
 When you update an asset using the `/assets/{id}` endpoint or the upsert
 `/assets` endpoint, the Asset API now preserves any existing

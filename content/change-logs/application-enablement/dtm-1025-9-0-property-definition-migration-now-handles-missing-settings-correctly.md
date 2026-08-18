@@ -1,18 +1,21 @@
 ---
-date: ""
-title: "Property definition migration now handles missing settings correctly"
-product_area: "Application enablement & solutions"
+date: '2026-08-18'
+title: Property definition migration now handles missing settings correctly
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-VSkj2iV9m"
-      label: "Fix"
+  - value: change-VSkj2iV9m
+    label: Fix
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-3083"
-version: "1025.9.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-3083
+version: 1025.9.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-08-18'
 ---
 In specific scenarios, property library definitions failed to migrate
 during startup when required settings were not present. The loading of
