@@ -18,6 +18,10 @@ version: 1025.9.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-08-18'
+  - label: apj.cumulocity.com
+    date: '2026-08-19'
+  - label: jp.cumulocity.com
+    date: '2026-08-19'
 ---
 The Asset API previously dropped duplicate linked asset entries when
 multiple series on the same asset referenced identical source IDs,

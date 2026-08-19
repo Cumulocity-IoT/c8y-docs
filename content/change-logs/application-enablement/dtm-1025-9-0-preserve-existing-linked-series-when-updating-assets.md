@@ -16,6 +16,10 @@ version: 1025.9.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-08-18'
+  - label: apj.cumulocity.com
+    date: '2026-08-19'
+  - label: jp.cumulocity.com
+    date: '2026-08-19'
 ---
 When you update an asset using the `/assets/{id}` endpoint or the upsert
 `/assets` endpoint, the Asset API now preserves any existing
