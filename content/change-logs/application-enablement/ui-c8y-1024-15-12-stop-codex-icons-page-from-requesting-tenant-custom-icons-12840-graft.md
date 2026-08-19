@@ -1,6 +1,6 @@
 ---
 date: ""
-title: stop Codex icons page from requesting tenant custom icons (#12840) [GRAFT][release/cd] (#12944)
+title: New option to hide custom icons in the icon selector
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,21 +14,6 @@ build_artifact:
 ticket: MTM-67558
 version: 1024.15.12
 ---
-# Backport
+The `c8y-icon-selector` component now accepts a `disableCustomIcons` input. When set, the component skips the request for the tenant's custom icon options (`/apps/public/public-icon-options/icons.json`) and hides the custom icon management UI, so only the built-in icon set is offered.
 
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-67558] stop Codex icons page from requesting
-tenant custom icons
-(#12840)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12840)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67558]:
-https://cumulocity.atlassian.net/browse/MTM-67558?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
-Co-authored-by: Claude Opus 5 (1M context) <noreply@anthropic.com>
+This is useful wherever the icon selector runs outside a {{< product-c8y-iot >}} tenant, where that request cannot succeed and previously surfaced a "Failed to fetch" alert - for example the icons page of the static Codex documentation, which now sets the new input. Existing usages are unaffected: without `disableCustomIcons`, custom icons are still loaded and a genuine loading failure is still reported.
