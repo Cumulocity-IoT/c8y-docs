@@ -157,7 +157,7 @@ There are two ways of creating a bulk operation:
 * [Schedule a single operation as bulk operation](#to-schedule-a-single-operation-as-bulk-operation)
 
 {{< c8y-admon-important >}}
-Bulk operations are an asynchronous, best-effort mechanism to distribute an operation to a group of devices. They are not a precision scheduling tool. The platform starts creating the single operations at the scheduled start date, but the exact creation and delivery times of the single operations can vary. If the devices must execute an operation at a precise time, deliver the operation to the devices ahead of time and include the desired execution time in the operation payload. The devices then trigger the execution locally at the specified time.
+Bulk operations are an asynchronous, best-effort mechanism to distribute an operation to a group of devices. They are not a precision scheduling tool. The platform starts creating the single operations at the scheduled start date, but the exact creation and delivery times of the single operations can vary. 
 {{< /c8y-admon-important >}}
 
 #### To add a bulk operation using the wizard {#to-add-a-bulk-operation-using-the-wizard}
