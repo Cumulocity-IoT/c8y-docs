@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fix tooltip/popover aria-label and aria-describedby guidance (#12802) [GRAFT][release/cd] (#12910)
+title: Improved tooltip and popover accessibility guidance
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
