@@ -14,21 +14,4 @@ build_artifact:
 ticket: MTM-67538
 version: 1024.15.8
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [docs(Web SDK): [MTM-67538] fix tooltip/popover aria-label and
-aria-describedby guidance
-(#12802)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12802)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67538]:
-https://cumulocity.atlassian.net/browse/MTM-67538?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
-Co-authored-by: Claude Opus 5 (1M context) <noreply@anthropic.com>
+The Web SDK documentation for tooltips and popovers now provides clear guidance on when to use `aria-label` and `aria-describedby`. This replaces the previous unclear guidance that led to inconsistent implementations and poor screen reader experiences, helping developers build accessible components consistently.
