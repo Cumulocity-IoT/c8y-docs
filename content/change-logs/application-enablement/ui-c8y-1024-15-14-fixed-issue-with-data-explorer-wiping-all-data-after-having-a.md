@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issue with data explorer wiping all data after having a datapoint without permissions
+title: Fixed data explorer clearing all data when encountering a data point without permissions
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-67455
 version: 1024.15.14
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-67455] Fixed issue with data explorer wiping all
-data after having a datapoint without permissions
-(#12848)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12848)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67455]:
-https://cumulocity.atlassian.net/browse/MTM-67455?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+The data explorer previously cleared all displayed data when it encountered a data point that the user did not have permissions to access. This issue has been fixed so that the data explorer now handles permission restrictions gracefully and retains all accessible data in the view.
