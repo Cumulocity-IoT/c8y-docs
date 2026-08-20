@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-08-19'
   - label: jp.cumulocity.com
     date: '2026-08-19'
+  - label: us.cumulocity.com
+    date: '2026-08-20'
+  - label: cumulocity.com
+    date: '2026-08-20'
 ---
 The Asset API now gracefully handles responses where paging metadata
 omits the `totalPages` field, instead of throwing an exception that

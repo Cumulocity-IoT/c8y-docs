@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-08-19'
   - label: jp.cumulocity.com
     date: '2026-08-19'
+  - label: us.cumulocity.com
+    date: '2026-08-20'
+  - label: cumulocity.com
+    date: '2026-08-20'
 ---
 In specific scenarios, property library definitions failed to migrate
 during startup when required settings were not present. The loading of

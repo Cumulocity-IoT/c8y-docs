@@ -1,6 +1,8 @@
 ---
-date: 
-title: Duration block now provides a Restart input port to reset elapsed time without deactivation
+date: '2026-08-20'
+title: >-
+  Duration block now provides a Restart input port to reset elapsed time without
+  deactivation
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
@@ -13,6 +15,9 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-4727
 version: 27.206.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-08-20'
 ---
 
 The **Duration** block in Analytics Builder has been enhanced with a new **Restart** input port that allows you to reset the elapsed duration and immediately restart measurement from that point, without deactivating the block.

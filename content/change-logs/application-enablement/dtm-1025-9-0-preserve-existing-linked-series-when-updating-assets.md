@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-08-19'
   - label: jp.cumulocity.com
     date: '2026-08-19'
+  - label: us.cumulocity.com
+    date: '2026-08-20'
+  - label: cumulocity.com
+    date: '2026-08-20'
 ---
 When you update an asset using the `/assets/{id}` endpoint or the upsert
 `/assets` endpoint, the Asset API now preserves any existing
