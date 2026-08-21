@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-08-21'
 title: Fixed issue with icons display in the asset table
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,16 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-67327
 version: 1024.13.2
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-08-21'
+  - label: apj.cumulocity.com
+    date: '2026-08-21'
+  - label: jp.cumulocity.com
+    date: '2026-08-21'
+  - label: us.cumulocity.com
+    date: '2026-08-20'
+  - label: cumulocity.com
+    date: '2026-08-20'
 ---
 Icons were not displaying correctly in the asset table. This issue has been fixed. Users can now see all icons displayed as expected when using the icon filters, improving the visual clarity and usability of the asset table icon filters.
