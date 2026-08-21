@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67327
 version: 1024.13.2
 ---
-Icons were not displaying correctly in the asset table. This issue has been fixed, and icons now appear properly in the asset table. Users can now see all icons displayed when using the icon filters as expected, improving the visual clarity and usability of the asset table icon filters.
+Icons were not displaying correctly in the asset table. This issue has been fixed. Users can now see all icons displayed as expected when using the icon filters, improving the visual clarity and usability of the asset table icon filters.
