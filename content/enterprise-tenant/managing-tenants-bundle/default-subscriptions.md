@@ -20,7 +20,7 @@ These default lists can be overridden for particular subtenants by setting addit
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
-Listing an application or microservice here only takes effect for a tenant if it is owned by, or shared as a MARKET application by, that tenant's parent, or by the {{< management-tenant >}} if the tenant has no parent. The tenant's own ownership of, or a subscription it once had to, an application is not taken into account for this - only its parent's is.
+Listing an application or microservice here only takes effect for a tenant if it is owned or shared as a MARKET application by that tenant's parent, or by the {{< management-tenant >}} if the tenant has no parent. The tenant's own ownership of, or a subscription it once had to, an application is not taken into account for this - only its parent's is.
 {{< /c8y-admon-info >}}
 
 On the left, the list of subscribable applications (both web applications and microservices) is displayed, which consists of:
