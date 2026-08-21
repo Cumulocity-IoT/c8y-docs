@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issue with icons not appearing in the asset table
+title: Fixed issue with icons display in the asset table
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
