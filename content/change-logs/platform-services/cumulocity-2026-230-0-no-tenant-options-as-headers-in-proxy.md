@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-08-12'
   - label: jp.cumulocity.com
     date: '2026-08-12'
+  - label: us.cumulocity.com
+    date: '2026-08-17'
+  - label: cumulocity.com
+    date: '2026-08-18'
 ---
 The deprecation of attaching microservices' tenant options as request headers by the microservices proxy was under [Public Preview](/change-logs/?change-type=.change-type-announcement#cumulocity-2025-322-0-deprecation-of-tenant-options-in-request-headers), and is now Generally Available (GA) for CD versions 2026.230.0 and higher, and will be present in the 2027 annual release.
 
