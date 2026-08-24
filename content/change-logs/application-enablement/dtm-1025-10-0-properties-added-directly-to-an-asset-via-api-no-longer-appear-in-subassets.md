@@ -19,7 +19,7 @@ part of the asset definition or the DTM property definitions were
 displayed in the **Subassets** page along with the properties configured for
 the asset definition, regardless of whether **Allow any property** was
 enabled. This behaviour has now been corrected to ensure that properties
-added directly to the asset are no longer displayed in the Subassets
+added directly to the asset are no longer displayed in the **Subassets**
 page. When **Allow any property** is enabled, users can still add
 additional properties from the DTM Properties Library using the **Add
 Property** option, and the selected properties will be displayed
