@@ -1,7 +1,33 @@
 ---
 title: Overview
 weight: 10
+helpcontent:
+  - label: usage-overview
+    title: usage-overview
+    content: "The **Overview** tab provides a dashboard with comprehensive usage statistics for all your environments and tenants. Use the filters at the top of the page to customize your view:
+
+
+      **Environment filter** - Select which environment or specific tenant you want to view data from. You can view data from any environment without logging into it directly.
+
+      **Date filter** - Select the time range for the displayed data. Only completed month's data is available.
+
+
+      The dashboard displays usage data across multiple widgets and graphs, showing metrics for storage, messages, devices, microservices (CPU and memory), and add-ons. Each metric includes percentage change indicators comparing the first and last months in your selected time range.
+        
+      The **Overview** tab includes several sections for analyzing usage data:
+
+      **Usage statistics tiles** - Display the latest metrics from the last available month for environments, tenants, storage (Operational Data Store), messages, devices, and microservices (CPU and memory). All tenants across all environments are aggregated in these metrics.
+
+      **Messages graph** - Shows the total number of messages across the selected time range. Toggle **Show breakdown** to view all components of the messages metric.
+
+      **Operational Data Store graph** - Displays the total aggregated storage used across all selected environments and tenants.
+
+      **Add-ons graph** - Select any deployed add-on from the selector to view its specific usage metrics over the selected time range.
+
+
+      For details see also the user documentation."
 ---
+
 
 The **Overview** tab provides a dashboard with all usage statistics relating to your environments and tenants.
 
