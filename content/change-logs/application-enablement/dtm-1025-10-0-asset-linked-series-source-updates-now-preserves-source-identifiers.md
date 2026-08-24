@@ -23,11 +23,7 @@ validates and preserves source identifiers during updates, allowing you
 to reliably update linked series source data without losing source
 reference information.
 
-The endpoint now correctly handles the `source.id` field, ensuring that
-source identifiers are properly validated and preserved during updates.
-Users can now reliably update linked series source data without losing
-or corrupting source reference information. If you need to deliberately
-remove the link from a LinkedSeries to a device, use the DELETE
-`/assets/{assetId}/linkedSeries/{fragment}/{series}/source` endpoint.
-Existing installations with linked series data continue to work as
+If you need to deliberately remove the link from a LinkedSeries to a device,
+use the DELETE `/assets/{assetId}/linkedSeries/{fragment}/{series}/source` 
+endpoint. Existing installations with linked series data continue to work as
 expected with improved reliability for future updates.
