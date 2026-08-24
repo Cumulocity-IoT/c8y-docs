@@ -1,6 +1,6 @@
 ---
 date: ""
-title: improve dashboard history and live mode configuration layouts (#12484) [GRAFT][release/cd] (#12909)
+title: Improve dashboard history and live mode configuration layouts
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
