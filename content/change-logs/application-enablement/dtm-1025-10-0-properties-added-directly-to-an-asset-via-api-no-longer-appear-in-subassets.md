@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Properties added directly to an asset via API no longer appear in Subassets"
+title: "Properties added directly to an asset via API no longer appear in Subassets page"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
