@@ -15,7 +15,7 @@ ticket: "CTM-3148"
 version: "1025.10.0"
 ---
 Previously, properties added directly to an asset via API that were not
-part of the asset definition or the DTM property definitions were being
+part of the asset definition or the DTM property definitions were
 displayed in the **Subassets** page along with the properties configured for
 the asset definition, regardless of whether **Allow any property** was
 enabled. This behaviour has now been corrected to ensure that properties
