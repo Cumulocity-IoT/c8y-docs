@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "asset linked series source updates now preserves source identifiers"
+title: "Asset linked series source updates now preserve source identifiers"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
