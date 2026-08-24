@@ -1,6 +1,9 @@
 ---
 title: Overview
 layout: bundle
+outputs:
+  - html
+  - json
 sector:
   - platform_administration
 weight: 20

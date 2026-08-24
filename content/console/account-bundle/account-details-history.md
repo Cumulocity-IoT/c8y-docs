@@ -1,5 +1,8 @@
 ---
 title: Details & History
+outputs:
+  - html
+  - json
 weight: 30
 helpcontent:
   - label: account-details-history
@@ -7,12 +10,12 @@ helpcontent:
     content: "The **Details & History** tab provides a detailed breakdown of monthly consumption for each billable product.
 
 
-      **Consumption details table** - Contains a row for each billable month for the duration of the contract. Expand and collapse each row using the caret icon to view details. The **Bill date** corresponds to the date on which the drawdown occurs, while the **Usage Month** is the month in which the usage occurred. For billing purposes, UTC time is used.
+      **Consumption details table** - Contains a row for each billable month for the duration of the contract. Expand and collapse each row using the caret icon to view details. The **Bill date** corresponds to the date on which the drawdown occurs, while the **Usage month** is the month in which the usage occurred. For billing purposes, UTC time is used.
 
 
       Each bill contains the following information:
 
-      **Base product** - Shows line item details including the standard set of {{< company-c8y >}} pricing metrics such as Deployments, Messages, and Operational Data Store (ODS). Usage is calculated into billable units.
+      **Base product** - Shows line item details including the standard set of Cumulocity pricing metrics such as Deployments, Messages, and Operational Data Store (ODS). Usage is calculated into billable units.
 
       **Add-ons** - Can be expanded to view line item details. Includes any add-ons that were activated and had usage during the usage month.
 

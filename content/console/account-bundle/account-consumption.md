@@ -1,5 +1,8 @@
 ---
 title: Consumption
+outputs:
+  - html
+  - json
 weight: 20
 helpcontent:
   - label: account-consumption
@@ -11,7 +14,7 @@ helpcontent:
 
       **Monthly spend analysis** - Provides a month-over-month comparison of total usage charges for each active month of the contract. The bar chart displays three categories: Drawdown (commitment drawn for the month), Overage (any overage charges), and Surcharge (additional surcharges).
 
-      **Product usage analysis** - Allows you to analyze usage patterns for specific pricing components. Use the dropdown menu to select different pricing metrics (for example, Messages, Devices, Storage). Toggle **Show Breakdown** to view detailed breakdowns of the selected metric with both total usage and associated costs over time."
+      **Product usage analysis** - Allows you to analyze usage patterns for specific pricing components. Use the dropdown menu to select different pricing metrics (for example, Messages, Devices, Storage). Toggle **Show breakdown** to view detailed breakdowns of the selected metric with both total usage and associated costs over time."
 ---
 
 The **Consumption** tab shows monthly drawdowns and commitment details.

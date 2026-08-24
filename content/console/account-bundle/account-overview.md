@@ -1,5 +1,8 @@
 ---
 title: Overview
+outputs:
+  - html
+  - json
 weight: 10
 helpcontent:
   - label: account-overview
@@ -7,9 +10,9 @@ helpcontent:
     content: "The **Overview** tab provides a high-level summary of your account, contract details, and environments.
 
 
-      **Account information** - Displays your account details including account name, account number, associated since date, business contact, technical contact, and your assigned {{< product-c8y-iot >}} account executive.
+      **Account information** - Displays your account details including account name, account number, associated since date, business contact, technical contact, and your assigned Cumulocity account executive.
 
-      **Contract details** - Shows important information about your contract with {{< company-c8y >}}, including contract ID, start date, end date, total commitment, and billing period.
+      **Contract details** - Shows important information about your contract with Cumulocity, including contract ID, start date, end date, total commitment, and billing period.
 
       **Environments section** - Lists all environments associated with your account. For each environment, you can view the environment name and description (editable), type, hosting region, hosting provider, status, domain URL, tenant ID, and provisioned date. Each environment also displays usage graphs showing storage and messages trends over time."
 ---

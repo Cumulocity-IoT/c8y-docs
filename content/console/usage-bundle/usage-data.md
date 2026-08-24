@@ -1,5 +1,8 @@
 ---
 title: Data
+outputs:
+  - html
+  - json
 weight: 20
 helpcontent:
   - label: usage-data

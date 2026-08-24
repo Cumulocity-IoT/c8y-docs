@@ -1,5 +1,8 @@
 ---
 title: Overview
+outputs:
+  - html
+  - json
 weight: 10
 helpcontent:
   - label: usage-overview
