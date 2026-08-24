@@ -23,5 +23,5 @@ added directly to the asset are no longer displayed in the **Subassets**
 page. When **Allow any property** is enabled, users can still add
 additional properties from the DTM Properties Library using the **Add
 Property** option, and the selected properties will be displayed
-alongside the properties defined for the asset model within sub-assets
+alongside the properties defined for the asset model within the **Subassets**
 page.
