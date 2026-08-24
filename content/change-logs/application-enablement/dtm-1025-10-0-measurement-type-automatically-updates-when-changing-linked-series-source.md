@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "measurement type automatically updates when changing linked series source"
+title: "Measurement type automatically updates when changing linked series source"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
