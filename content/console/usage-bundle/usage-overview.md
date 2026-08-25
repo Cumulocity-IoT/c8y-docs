@@ -19,7 +19,7 @@ helpcontent:
         
       The **Overview** tab includes several sections for analyzing usage data:
 
-      **Usage statistics tiles** - Display the latest metrics from the last available month for environments, tenants, storage (Operational Data Store), messages, devices, and microservices (CPU and memory). All tenants across all environments are aggregated in these metrics.
+      **Usage statistics** - Display the latest metrics from the last available month for environments, tenants, storage (Operational Data Store), messages, devices, and microservices (CPU and memory). All tenants across all environments are aggregated in these metrics.
 
       **Messages graph** - Shows the total number of messages across the selected time range. Toggle **Show breakdown** to view all components of the messages metric.
 

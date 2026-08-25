@@ -10,7 +10,7 @@ helpcontent:
     content: "The **Data** tab provides access to the raw underlying data that powers the graphs on the **Overview** tab. This table displays all usage data with the same filters available as the visualizations.
 
 
-      **Data table** - Shows tenant-level usage data. Use **Configure columns** to add or remove metrics from the table, allowing you to customize which metrics you want to view.
+      **Data** - Shows tenant-level usage data. Use **Configure columns** to add or remove metrics from the table, allowing you to customize which metrics you want to view.
 
       **Filters** - Use the environment and date filters at the top of the page to customize the data displayed, just like on the **Overview** tab.
 
