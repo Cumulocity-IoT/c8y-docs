@@ -16,7 +16,7 @@ version: "1025.10.0"
 ---
 The icon selector now supports custom SVG icons, allowing users to upload their own icons in addition to the built-in collections.
 
-Icons can be configured at the Asset definition level and inherited by its assets, or overridden for an individual asset from the Subassets view.
+Icons can be configured at the asset definition level and inherited by its assets, or overridden for an individual asset from the subassets view.
 
 When an asset is displayed, the icon is resolved in the following order:
 
