@@ -10,9 +10,9 @@ helpcontent:
     content: "The **Consumption** tab displays monthly drawdowns and commitment details for your contract.
 
 
-      **Commit to consume widget** - Shows a pie chart displaying consumed versus available commitment, including cumulative spend, percentage consumed, and total overage (if applicable). A line graph shows the consumed and remaining commitment over the contract duration.
+      **Commit to consume** - Shows a pie chart displaying consumed versus available commitment, including cumulative spend, percentage consumed, and total overage (if applicable). A line graph shows the consumed and remaining commitment over the contract duration.
 
-      **Monthly spend analysis** - Provides a month-over-month comparison of total usage charges for each active month of the contract. The bar chart displays three categories: Drawdown (commitment drawn for the month), Overage (any overage charges), and Surcharge (additional surcharges).
+      **Monthly spend analysis** - Provides a month-over-month comparison of total charges for each active month of the contract. The bar chart displays three categories: Drawdown (commitment drawn for the month), Overage (any overage charges), and Surcharge (additional surcharges).
 
       **Product usage analysis** - Allows you to analyze usage patterns for specific pricing components. Use the dropdown menu to select different pricing metrics (for example, Messages, Devices, Storage). Toggle **Show breakdown** to view detailed breakdowns of the selected metric with both total usage and associated costs over time."
 ---
