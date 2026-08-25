@@ -14,15 +14,14 @@ build_artifact:
 ticket: "CTM-2989"
 version: "1025.10.0"
 ---
-The icon selector previously limited users to built-in icon collections,
-which restricted customization options for asset representation. Now you
-can upload custom SVG icons directly in the icon selector and update the
-icon at the asset level in the subassets view. The custom icon you
-select replaces the existing icon everywhere the asset appears across
-the system. The icon display follows this priority: if the Asset
-instance has a custom icon, it displays that icon; otherwise, it
-retrieves the icon information from the Asset definition to which the
-asset is associated; if neither exists, it falls back to the default
-icon.
-This change improves asset management by giving you greater control over
-how assets are visually represented in your applications and dashboards.
+The icon selector now supports custom SVG icons, allowing users to upload their own icons in addition to the built-in collections.
+
+Icons can be configured at the Asset definition level and inherited by its assets, or overridden for an individual asset from the Subassets view.
+
+When an asset is displayed, the icon is resolved in the following order:
+
+1. Asset icon – used when an icon is configured directly on the asset.
+2. Asset definition icon – used when no asset-level icon is configured.
+3. Default icon – used when neither is configured.
+
+The resolved icon is applied consistently wherever the asset is displayed across applications and dashboards.
