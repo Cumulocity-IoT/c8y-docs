@@ -1,18 +1,23 @@
 ---
-date: ""
-title: "Properties added directly to an asset via API no longer appear in Subassets page"
-product_area: "Application enablement & solutions"
+date: '2026-08-25'
+title: >-
+  Properties added directly to an asset via API no longer appear in Subassets
+  page
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-VSkj2iV9m"
-      label: "Fix"
+  - value: change-VSkj2iV9m
+    label: Fix
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-3148"
-version: "1025.10.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-3148
+version: 1025.10.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-08-25'
 ---
 Previously, properties added directly to an asset via API that were not
 part of the asset definition or the DTM property definitions were

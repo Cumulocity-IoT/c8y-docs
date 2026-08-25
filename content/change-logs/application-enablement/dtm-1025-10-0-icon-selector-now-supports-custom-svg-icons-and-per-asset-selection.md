@@ -1,18 +1,21 @@
 ---
-date: ""
-title: "Icon selector now supports custom SVG icons and per-asset selection"
-product_area: "Application enablement & solutions"
+date: '2026-08-25'
+title: Icon selector now supports custom SVG icons and per-asset selection
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-QHu1GdukP"
-      label: "Feature"
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-2989"
-version: "1025.10.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-2989
+version: 1025.10.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-08-25'
 ---
 The icon selector now supports custom SVG icons, allowing users to upload their own icons in addition to the built-in collections.
 
