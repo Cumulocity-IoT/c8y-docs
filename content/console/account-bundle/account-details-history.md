@@ -10,7 +10,7 @@ helpcontent:
     content: "The **Details & History** tab provides a detailed breakdown of monthly consumption for each billable product.
 
 
-      **Consumption details table** - Contains a row for each billable month for the duration of the contract. Expand and collapse each row using the caret icon to view details. The **Bill date** corresponds to the date on which the drawdown occurs, while the **Usage month** is the month in which the usage occurred. For billing purposes, UTC time is used.
+      **Consumption details** - Contains a row for each billable month for the duration of the contract. Expand and collapse each row using the caret icon to view details. The **Bill date** corresponds to the date on which the drawdown occurs, while the **Usage month** is the month in which the usage occurred. For billing purposes, UTC time is used.
 
 
       Each bill contains the following information:
