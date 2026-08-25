@@ -36,9 +36,19 @@
 
                 {{$rootclass := newScratch}}
                 {{/* grab the link from the first child page  */}}
+                {{ $scratch.Set "url" "" }}
                 {{ range $sub := first 1 $subs}}
                   {{ $scratch.Set "url" $sub.Permalink}}
                 {{end}}
+                {{/* Same fallback as root-nav.html: a section whose children set
+                     `build.render: false` exposes no child page to link to. */}}
+                {{ if not ($scratch.Get "url") }}
+                  {{ with .Params.target }}
+                    {{ $scratch.Set "url" (printf "%s%s" $.Site.BaseURL .) }}
+                  {{ else }}
+                    {{ $scratch.Set "url" $.Site.BaseURL }}
+                  {{ end }}
+                {{ end }}
 
                 {{/* Check the current page to highlight the right root section  */}}
                 {{$rootclass.Set "active" "" }}
