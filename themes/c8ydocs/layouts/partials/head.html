@@ -35,7 +35,13 @@
     <link rel="manifest" href="{{"images/favicon/site.webmanifest" | absURL}}">
 
 
-    <link rel="canonical" href="{{ .Permalink }}">
+    {{ if eq $version "Latest" }}
+      <link rel="canonical" href="{{ .Permalink }}">
+    {{ else }}
+      {{/* Archived release. Keep it out of search results so it cannot outrank
+           the equivalent page in the current documentation. */}}
+      <meta name="robots" content="noindex">
+    {{ end }}
 
     <meta name="msapplication-TileColor" content="#212121">
     <meta name="theme-color" content="#ffbe00">
