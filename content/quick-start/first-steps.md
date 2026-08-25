@@ -11,7 +11,7 @@ The following section highlights the basic steps to take if you are new to the {
 If you are technically interested in our IoT platform, you might want to learn about the architecture, technical concepts and domain models behind {{< product-c8y-iot >}} described in [Technical concepts](/concepts/concepts-introduction/).
 
 
-### Step 1: Logging into {{< product-c8y-iot >}} for the first time
+### Step 1: Logging into {{< product-c8y-iot >}} for the first time {#step-1-logging-in-for-the-first-time}
 
 To log in to the {{< product-c8y-iot >}} platform and access your tenant, use the following URL:
 
@@ -29,7 +29,7 @@ Click **Login** to enter the {{< product-c8y-iot >}} platform. Initially, you wi
 
 Go to [Accessing and logging into the platform](/get-familiar-with-the-ui/platform-access/) for more details on supported URLs, password reset, and more.
 
-### Step 2: Learn about {{< product-c8y-iot >}}'s basic UI functionalities and features
+### Step 2: Learn about {{< product-c8y-iot >}}'s basic UI functionalities and features {#step-2-basic-ui-functionalities-and-features}
 
 #### Main screen elements
 
@@ -69,7 +69,7 @@ Moreover, we offer two step-by-step descriptions to easily register a first devi
 
 For the purpose of this tutorial, we will register a device via the {{< sensor-app >}}.
 
-#### Connecting a smartphone with the {{< sensor-app >}}
+#### Connecting a smartphone with the {{< sensor-app >}} {#connecting-a-smartphone-with-the-sensor-app}
 
 The {{< sensor-app >}} is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. The {{< sensor-app >}} can also send commands to the smartphone directly from the phone dashboard.
 
