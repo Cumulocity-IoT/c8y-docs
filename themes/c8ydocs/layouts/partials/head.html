@@ -33,6 +33,14 @@
     <link rel="shortcut icon" href="{{"images/favicon/favicon.ico" | absURL}}">
     <link rel="mask-icon" href="{{"images/favicon/safari-pinned-tab.svg" | absURL}}" color="#212121">
     <link rel="manifest" href="{{"images/favicon/site.webmanifest" | absURL}}">
+
+    {{ if eq $version "Latest" }}
+      <link rel="canonical" href="{{ .Permalink }}">
+    {{ else }}
+      {{/* Archived release. Keep it out of search results so it cannot outrank
+           the equivalent page in the current documentation. */}}
+      <meta name="robots" content="noindex">
+    {{ end }}
     <meta name="msapplication-TileColor" content="#212121">
     <meta name="theme-color" content="#ffbe00">
     <meta name="msapplication-TileColor" content="#212121">
