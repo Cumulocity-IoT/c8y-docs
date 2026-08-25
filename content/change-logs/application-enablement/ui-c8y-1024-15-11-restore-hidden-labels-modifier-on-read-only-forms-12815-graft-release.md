@@ -16,5 +16,9 @@ version: 1024.15.11
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-08-21'
+  - label: apj.cumulocity.com
+    date: '2026-08-24'
+  - label: jp.cumulocity.com
+    date: '2026-08-24'
 ---
 The `hidden-labels` modifier was not being applied correctly to read-only forms, which caused labels to display when they should have been hidden. This modifier is now properly restored and applied to read-only forms, ensuring that labels remain hidden as expected when you use the `hidden-labels` modifier on your forms.

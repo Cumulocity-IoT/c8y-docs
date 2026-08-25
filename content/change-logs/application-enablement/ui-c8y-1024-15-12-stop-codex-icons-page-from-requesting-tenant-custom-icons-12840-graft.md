@@ -16,6 +16,10 @@ version: 1024.15.12
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-08-21'
+  - label: apj.cumulocity.com
+    date: '2026-08-24'
+  - label: jp.cumulocity.com
+    date: '2026-08-24'
 ---
 The `c8y-icon-selector` component now accepts a `disableCustomIcons` input. When set, the component skips the request for the tenant's custom icon options (`/apps/public/public-icon-options/icons.json`) and hides the custom icon management UI, so only the built-in icon set is offered.
 

@@ -16,5 +16,9 @@ version: 1024.15.8
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-08-21'
+  - label: apj.cumulocity.com
+    date: '2026-08-24'
+  - label: jp.cumulocity.com
+    date: '2026-08-24'
 ---
 The Web SDK documentation for [tooltips](https://cumulocity.com/codex/components/data-display-and-visualization/tooltip/overview) and [popovers](https://cumulocity.com/codex/components/data-display-and-visualization/popover/overview) now provides clear guidance on when to use `aria-label` and `aria-describedby`. This replaces the previous unclear guidance that led to inconsistent implementations and poor screen reader experiences, helping developers build accessible components consistently.
