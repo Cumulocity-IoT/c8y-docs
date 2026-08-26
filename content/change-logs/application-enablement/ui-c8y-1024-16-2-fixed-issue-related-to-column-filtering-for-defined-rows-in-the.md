@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed column filtering issue in the asset table
+title: Column filtering in the asset table now works properly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
