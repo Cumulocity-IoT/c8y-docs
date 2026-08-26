@@ -35,7 +35,7 @@ To edit these properties, click the edit icon <i class="dlt-c8y-icon-edit1 text-
 
 #### Editing binary payloads {#editing-binary-payloads}
 
-Set the **Payload type** to a binary format whenever your device messages contain raw binary data, to edit them in a hex editor instead of the text editor. The hex editor displays the payload as hexadecimal byte values alongside an ASCII representation, and supports the following:
+Set the **Payload type** to a binary format when your device messages contain raw binary data. This opens a hex editor instead of the text editor. The hex editor displays the payload as hexadecimal byte values alongside an ASCII representation, and supports the following:
 
 - **Insert and replace mode** — Toggle between modes using the toolbar switch or by pressing **Insert**.
   - In **Replace** mode (the default), typing overwrites the byte under the cursor, and typing at or past the last byte appends a new byte. Use Replace mode for fixed-length payload fields, to preserve strict byte offsets.
