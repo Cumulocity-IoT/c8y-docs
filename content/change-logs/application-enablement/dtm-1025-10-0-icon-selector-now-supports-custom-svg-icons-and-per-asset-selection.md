@@ -16,6 +16,10 @@ version: 1025.10.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-08-25'
+  - label: apj.cumulocity.com
+    date: '2026-08-26'
+  - label: jp.cumulocity.com
+    date: '2026-08-26'
 ---
 The icon selector now supports custom SVG icons, allowing users to upload their own icons in addition to the built-in collections.
 

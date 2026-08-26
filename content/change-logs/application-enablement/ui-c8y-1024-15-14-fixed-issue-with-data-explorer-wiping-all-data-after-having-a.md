@@ -22,5 +22,9 @@ environment_availability:
     date: '2026-08-25'
   - label: jp.cumulocity.com
     date: '2026-08-25'
+  - label: us.cumulocity.com
+    date: '2026-08-26'
+  - label: cumulocity.com
+    date: '2026-08-26'
 ---
 The data explorer previously cleared all displayed data when it encountered a data point that the user did not have permissions to access. This issue has been fixed so that the data explorer now handles permission restrictions gracefully and retains all accessible data in the view.

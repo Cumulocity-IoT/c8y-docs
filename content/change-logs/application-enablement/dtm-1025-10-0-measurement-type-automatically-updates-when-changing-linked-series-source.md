@@ -16,6 +16,10 @@ version: 1025.10.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-08-25'
+  - label: apj.cumulocity.com
+    date: '2026-08-26'
+  - label: jp.cumulocity.com
+    date: '2026-08-26'
 ---
 The `type` field of a linked series source was not updated when you
 changed the source device using the `/assets/{assetId}/linkedSeries`

@@ -16,6 +16,10 @@ version: 1025.10.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-08-25'
+  - label: apj.cumulocity.com
+    date: '2026-08-26'
+  - label: jp.cumulocity.com
+    date: '2026-08-26'
 ---
 The REST API endpoint
 `/assets/{assetId}/linkedSeries/{fragment}/{series}/source` for updating
