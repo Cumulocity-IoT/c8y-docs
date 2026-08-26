@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed broken styling for save button.
+title: Save button styling is now displayed correctly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
