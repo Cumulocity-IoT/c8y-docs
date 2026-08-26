@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67593
 version: 1024.16.2
 ---
-Column filters in the asset table were improperly rendering undefined/unfiltered rows. Fixed filter logic to ensure only defined values matching the filter criteria are displayed while non-defined rows are hidden.
+Column filters in the asset table were improperly rendering undefined/unfiltered rows. The filter logic has been changed to ensure that only defined values matching the filter criteria are displayed, while undefined rows are hidden.
