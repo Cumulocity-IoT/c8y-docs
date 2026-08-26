@@ -37,9 +37,14 @@
 
     {{ if eq $version "Latest" }}
       <link rel="canonical" href="{{ .Permalink }}">
-    {{ else }}
+    {{ else if ne .Section "edge" }}
       {{/* Archived release. Keep it out of search results so it cannot outrank
-           the equivalent page in the current documentation. */}}
+           the equivalent page in the current documentation.
+
+           The Edge section is the exception: it exists on the yearly branches
+           only, so these pages are the only copy and have nothing to outrank.
+           Matching on .Section rather than the URL keeps this working on the
+           next yearly branch, where the baseURL prefix differs. */}}
       <meta name="robots" content="noindex">
     {{ end }}
 
