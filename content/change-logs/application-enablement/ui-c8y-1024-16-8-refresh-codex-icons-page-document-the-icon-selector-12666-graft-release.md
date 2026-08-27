@@ -14,21 +14,4 @@ build_artifact:
 ticket: MTM-65712
 version: 1024.16.8
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [docs(Web SDK): [MTM-65712] refresh Codex Icons page + document the
-icon selector
-(#12666)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12666)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-65712]:
-https://cumulocity.atlassian.net/browse/MTM-65712?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
-Co-authored-by: Claude Opus 4.8 (1M context) <noreply@anthropic.com>
+The Codex Icons page and icon selector documentation have been updated with clearer guidance for developers. It now documents the icon selector component, how to use it, and a refreshed reference of all available Codex icons—making icons easier to find, apply, and keep consistent across projects.
