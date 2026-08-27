@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Merging remotes correctly to allow updating remotes (#12724) [GRAFT][release/cd] (#12984)
+title: Plugins are now merged correctly when official plugins are updated
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
