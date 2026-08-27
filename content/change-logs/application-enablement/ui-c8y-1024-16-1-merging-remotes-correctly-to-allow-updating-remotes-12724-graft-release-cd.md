@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Plugins are now merged correctly when official plugins are updated
+title: Plugins are now merged correctly during update operations
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
