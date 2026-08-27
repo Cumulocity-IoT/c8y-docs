@@ -22,6 +22,10 @@ environment_availability:
     date: '2026-08-26'
   - label: jp.cumulocity.com
     date: '2026-08-26'
+  - label: us.cumulocity.com
+    date: '2026-08-27'
+  - label: cumulocity.com
+    date: '2026-08-27'
 ---
 Previously, properties added directly to an asset via API that were not
 part of the asset definition or the DTM property definitions were

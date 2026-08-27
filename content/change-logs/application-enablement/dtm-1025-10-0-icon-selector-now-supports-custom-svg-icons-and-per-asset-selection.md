@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-08-26'
   - label: jp.cumulocity.com
     date: '2026-08-26'
+  - label: us.cumulocity.com
+    date: '2026-08-27'
+  - label: cumulocity.com
+    date: '2026-08-27'
 ---
 The icon selector now supports custom SVG icons, allowing users to upload their own icons in addition to the built-in collections.
 

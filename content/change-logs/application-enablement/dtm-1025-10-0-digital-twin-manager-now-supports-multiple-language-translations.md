@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-08-26'
   - label: jp.cumulocity.com
     date: '2026-08-26'
+  - label: us.cumulocity.com
+    date: '2026-08-27'
+  - label: cumulocity.com
+    date: '2026-08-27'
 ---
 Digital Twin Manager now supports translations for Chinese, Dutch, French, Korean, Polish, Portuguese (Brazilian), and Spanish, in addition to English and German. This brings the application in line with other {{< product-c8y-iot >}} platform applications and allows users to work in their preferred language, improving accessibility and usability across regions.
