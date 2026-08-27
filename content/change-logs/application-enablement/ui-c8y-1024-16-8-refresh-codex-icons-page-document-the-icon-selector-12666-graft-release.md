@@ -1,6 +1,6 @@
 ---
 date: ""
-title: refresh Codex Icons page + document the icon selector (#12666) [GRAFT][release/cd] (#13004)
+title: Update and improve Codex Icons page
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
