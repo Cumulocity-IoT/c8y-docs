@@ -14,21 +14,4 @@ build_artifact:
 ticket: MTM-66892
 version: 1024.16.1
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(web sdk): [MTM-66892] Merging remotes correctly to allow updating
-remotes
-(#12724)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12724)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66892]:
-https://cumulocity.atlassian.net/browse/MTM-66892?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Jan Hommes <janhommes@users.noreply.github.com>
-Co-authored-by: Dawid Janusz <96060763+DawidSAG@users.noreply.github.com>
+When updating plugins in the Web SDK, the merging process was not handling the merge correctly, which could cause updates to fail or produce unexpected results. Plugins are now merged properly during update operations, ensuring that all plugins are updated as expected.
