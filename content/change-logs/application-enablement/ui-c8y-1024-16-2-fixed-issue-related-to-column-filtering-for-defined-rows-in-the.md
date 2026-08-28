@@ -16,5 +16,9 @@ version: 1024.16.2
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-08-27'
+  - label: apj.cumulocity.com
+    date: '2026-08-28'
+  - label: jp.cumulocity.com
+    date: '2026-08-28'
 ---
 Column filters in the asset table were improperly rendering undefined/unfiltered rows. The filter logic has been changed to ensure that only defined values matching the filter criteria are displayed, while undefined rows are hidden.
