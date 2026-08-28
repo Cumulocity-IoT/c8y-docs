@@ -79,6 +79,10 @@ In the **Protocol and encryption** field, select a protocol/encryption type from
 
 Provide the host, port, username, password, and sender address for the email server. The empty password configuration is supported for the {{< enterprise-tenant >}}.
 
+{{< c8y-admon-caution >}}
+The sender address configured here is used for all emails which the platform sends on behalf of your tenant. It is also used for the emails which users send through the `POST /email/emails` endpoint, so such emails appear to come from your tenant. Only grant the CREATE permission for the "Email" permission type (`ROLE_EMAIL_CREATE`) to administrators and trusted technical users. For details, see [Global roles](/standard-tenant/managing-permissions/#to-add-a-global-role).
+{{< /c8y-admon-caution >}}
+
 ### Data export {#data-export}
 
 In the **Data export** section, you can set the email subject and email template for data export and specify the **User unauthorized error message**.

@@ -167,6 +167,11 @@ The following permission categories are available by default:
 </tr>
 
 <tr>
+<td align="left">Email</td>
+<td align="left">Send emails through the platform.</td>
+</tr>
+
+<tr>
 <td align="left">Events</td>
 <td align="left">View or create events.</td>
 </tr>
@@ -239,6 +244,14 @@ The following permission categories are available by default:
 </table>
 
 There may be additional permissions visible depending on the features in your subscription plan. These are documented along with the respective feature.
+
+{{< c8y-admon-caution >}}
+Treat the CREATE permission for the "Email" permission type (`ROLE_EMAIL_CREATE`) as equivalent to administrator-level access.
+
+A user holding this permission can send emails to any recipient through the `POST /email/emails` endpoint of the platform. The user controls the recipients, the reply-to address, the subject, and the message body, which is sent as HTML. The sender address, however, is always the one configured for the platform or for your tenant (see [Email server](/enterprise-tenant/customization/#email-server)), so recipients cannot distinguish such emails from emails sent by the platform itself, such as password reset or tenant suspension emails.
+
+Grant this permission only to administrators and to trusted technical users, such as microservice users which must send emails as part of their function. Do not include it in roles that you assign to regular tenant users or to devices, and review the roles which contain it whenever you review your tenant's permissions.
+{{< /c8y-admon-caution >}}
 
 {{< c8y-admon-important >}}
 When new features with new permissions are added to {{< product-c8y-iot >}}, these are not automatically added to existing roles. If you notice that you cannot use a new feature that was recently announced, check your permissions.
