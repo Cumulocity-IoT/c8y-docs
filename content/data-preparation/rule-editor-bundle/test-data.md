@@ -37,7 +37,7 @@ To edit these properties, click the edit icon <i class="dlt-c8y-icon-edit1 text-
 
 Set the **Payload type** to a binary format when your device messages contain raw binary data. This opens a hex editor instead of the text editor. The hex editor displays the payload as hexadecimal byte values alongside an ASCII representation, and supports the following:
 
-- **Insert and replace mode** — Toggle between modes using the toolbar switch or by pressing **Insert**.
+- **Insert and replace mode** — Toggle between modes using the toolbar switch or by clicking **Insert**.
   - In **Replace** mode (the default), typing overwrites the byte under the cursor, and typing at or past the last byte appends a new byte. Use Replace mode for fixed-length payload fields, to preserve strict byte offsets.
   - In **Insert** mode, typing shifts the following bytes to the right. This applies to both typed input and pasted content. Use Insert mode only for variable-length structures, such as type-length-value fields or strings — and remember to adjust any total-length fields and checksums afterward.
 - **Extending the payload** — Click an empty cell past the end of the payload, or start typing while nothing is selected, to append zero-filled bytes automatically, without needing a separate "add byte" action.

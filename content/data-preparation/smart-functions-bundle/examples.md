@@ -222,7 +222,7 @@ export function onMessage(msg, context) {
 Extract values directly from a binary payload with a known fixed structure, without text decoding.
 
 {{< c8y-admon-info >}}
-For binary payload types, the Test data panel provides a hex editor for viewing and editing the payload. For details, see [Editing binary payloads](/data-preparation/rule-editor/#editing-binary-payloads).
+For binary payload types, the **Test data** panel provides a hex editor for viewing and editing the payload. For details, see [Editing binary payloads](/data-preparation/rule-editor/#editing-binary-payloads).
 {{< /c8y-admon-info >}}
 
 **Example input**: a 9-byte binary payload structured as:
