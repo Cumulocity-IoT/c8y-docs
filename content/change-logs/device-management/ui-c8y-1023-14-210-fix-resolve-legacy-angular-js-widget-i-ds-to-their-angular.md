@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-7067
 version: 1023.14.210
 ---
-An "Asset notes" widget added to a dashboard in an earlier version could fail to load because the dashboard stored it under its legacy AngularJS identifier. The widget is now recognized under that identifier again, so that existing dashboards display the widget and its notes correctly. No manual changes are required.
+An "Asset notes" widget added to a dashboard created in an earlier version could fail to load because the dashboard stored it under its legacy AngularJS identifier. The widget is now recognized under that identifier again, so that existing dashboards display the widget and its notes correctly. No manual changes are required.
