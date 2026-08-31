@@ -1591,6 +1591,8 @@ In addition, the <tt>console</tt> object has <tt>log</tt>, <tt>warn</tt>, <tt>er
 <p></p>
 <pre>function log(...args: any[]): void</pre>
 <p></p>
+Logging is configured by the block's log level parameter and the model's shared logger category threshold; the effective level is whichever is stricter. By default, the block log level is set to <tt>WARN</tt>; only <tt>console.warn</tt> and <tt>console.error</tt> are written; <tt>console.log</tt>, <tt>console.info</tt> and <tt>console.debug</tt> are not. Raise the log level to <tt>INFO</tt> or <tt>DEBUG</tt> to see more, or set it to <tt>OFF</tt> to silence everything.
+<p></p>
 Arguments are formatted and separated by spaces. String interpolation can be done with Javascript interpolation syntax. For example:
 <p></p>
 <pre> console.log("Server started");<br/> // -> Server started<br/> <br/> console.log("User", "logged", "in");<br/> // -> User logged in<br/> <br/> console.log("User login", { userId: 123, role: "admin" });<br/> // -> User login { userId: 123, role: 'admin' }<br/> <br/> const userId = 123;<br/> const role = "admin";<br/> console.log(`User ${userId} logged in as ${role}`);<br/> // -> User 123 logged in as admin<br/> </pre>
@@ -1645,6 +1647,21 @@ For example: <pre> export function onInput(inputs, context) {<br/> &nbsp;&nbsp;c
   return null;
 }
 </span></td>
+</tr>
+<tr>
+<th scope="row">Log level</th>
+<td><span>This block's <tt>console.*</tt> verbosity. The effective level is determined by this setting and the model's shared logger category threshold; whichever is stricter.</span>
+</td>
+<td><span><p>Option - one of:</p>
+<ul>
+<li>OFF</li>
+<li>ERROR</li>
+<li>WARN</li>
+<li>INFO</li>
+<li>DEBUG</li></ul>
+</span>
+</td>
+<td><span>Default: WARN</span></td>
 </tr>
 </tbody>
 </table>

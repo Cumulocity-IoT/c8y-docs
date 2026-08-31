@@ -685,7 +685,7 @@ Note: To extract a custom property from the Measurement Input block, you must ad
 <p></p>
 Example log message with logger tag "demoLog" at log level "ERROR":
 <p></p>
-<tt>ERROR ... &lt;demoLog&gt; value=any(float,5.09) properties={"ignore":any(string,"false")}</tt></p>
+<tt>ERROR ... [t510007|model=87104] &lt;demoLog&gt; value=any(float,5.09) properties={"ignore":any(string,"false")}</tt></p>
 
 
 #### Parameters {#logger-parameters}
