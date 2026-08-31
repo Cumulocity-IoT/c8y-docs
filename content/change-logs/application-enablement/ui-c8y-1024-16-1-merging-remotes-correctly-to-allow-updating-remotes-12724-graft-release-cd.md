@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-08-28'
   - label: jp.cumulocity.com
     date: '2026-08-28'
+  - label: us.cumulocity.com
+    date: '2026-08-31'
+  - label: cumulocity.com
+    date: '2026-08-31'
 ---
 When updating plugins in the Web SDK, the merging process was not handling the merge correctly, which could cause updates to fail or produce unexpected results. Plugins are now merged properly during update operations, ensuring that all plugins are updated as expected.
