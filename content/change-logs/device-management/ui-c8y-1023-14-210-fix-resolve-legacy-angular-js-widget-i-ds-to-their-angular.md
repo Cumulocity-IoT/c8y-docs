@@ -14,23 +14,4 @@ build_artifact:
 ticket: DM-7067
 version: 1023.14.210
 ---
-# Backport
-
-This will backport the following commits from `develop` to
-`release/y2026`:
-- [fix(Device management app): [DM-7067] [Fix] Resolve legacy AngularJS
-widget IDs to their Angular
-equivalents](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12945)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[DM-7067]:
-https://cumulocity.atlassian.net/browse/DM-7067?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dafina Karamanoleva <92030501+dafkk@users.noreply.github.com>
-Co-authored-by: Claude Sonnet 4.6 <noreply@anthropic.com>
-Co-authored-by: Alekhya Kelallatur <alekhya.margam@cumulocity.com>
+When you migrated custom widgets from AngularJS to Angular in the Device management app, the system did not properly resolve legacy widget IDs to their new Angular equivalents. This caused custom widgets to fail loading or display incorrectly after the migration. The system now correctly maps legacy AngularJS widget IDs to their corresponding Angular widget IDs, ensuring that your existing custom widgets continue to work seamlessly after the migration. This fix applies to all custom widgets in your Device management app installations, allowing you to upgrade without losing functionality or needing to manually update widget references.
