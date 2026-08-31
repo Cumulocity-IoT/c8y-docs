@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Asset Notes widget now loads correctly on dashboards created in earlier versions
+title: Asset notes widget now loads correctly on dashboards created in earlier versions
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
