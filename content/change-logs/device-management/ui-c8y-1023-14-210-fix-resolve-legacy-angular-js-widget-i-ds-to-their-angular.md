@@ -1,6 +1,6 @@
 ---
 date: ""
-title: [Fix] Resolve legacy AngularJS widget IDs to their Angular equivalents [GRAFT][release/y2026]
+title: Fix legacy AngularJS widget IDs resolving to their Angular equivalents
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
