@@ -1,6 +1,6 @@
 ---
 date: ""
-title: [Fix] Resolve legacy AngularJS widget IDs to their Angular equivalents [GRAFT][release/cd]
+title: Asset notes widget now loads correctly on dashboards created in earlier versions
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
