@@ -14,22 +14,4 @@ build_artifact:
 ticket: DM-7067
 version: 1024.16.14
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Device management app): [DM-7067] [Fix] Resolve legacy AngularJS
-widget IDs to their Angular
-equivalents](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12945)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[DM-7067]:
-https://cumulocity.atlassian.net/browse/DM-7067?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dafina Karamanoleva <92030501+dafkk@users.noreply.github.com>
-Co-authored-by: Claude Sonnet 4.6 <noreply@anthropic.com>
-Co-authored-by: Alekhya Kelallatur <alekhya.margam@cumulocity.com>
+An "Asset notes" widget added to a dashboard created in an earlier version could fail to load because the dashboard stored it under its legacy AngularJS identifier. The widget is now recognized under that identifier again, so that existing dashboards display the widget and its notes correctly. No manual changes are required.
