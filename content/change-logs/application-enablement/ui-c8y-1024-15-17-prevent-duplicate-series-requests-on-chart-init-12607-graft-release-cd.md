@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67342
 version: 1024.15.17
 ---
-The data explorer sent duplicate requests for the same data when opening the view, changing the aggregation or switching workspaces. The redundant requests are now removed, so charts load faster.
+The data explorer sent duplicate requests for the same data when opening the view, changing the aggregation or switching workspaces. The redundant requests have now been removed, so charts load faster.
