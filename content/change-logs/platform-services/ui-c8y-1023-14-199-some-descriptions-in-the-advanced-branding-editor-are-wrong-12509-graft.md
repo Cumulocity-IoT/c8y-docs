@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-09-01
 title: Advanced branding editor shows correct descriptions for branding properties
 product_area: Platform services
 change_type:
