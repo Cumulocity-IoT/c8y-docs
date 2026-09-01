@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-09-01
 title: Default device info dashboard now respects group-level edit permissions
 product_area: Device management & connectivity
 change_type:
