@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed duplicate data requests in the data explorer
+title: Improved performance by removing duplicate data requests in the data explorer
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
