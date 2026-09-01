@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Enable asset properties widget 2.0 with backward compatibility"
+title: "Enabled asset properties widget 2.0 with backward compatibility"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
