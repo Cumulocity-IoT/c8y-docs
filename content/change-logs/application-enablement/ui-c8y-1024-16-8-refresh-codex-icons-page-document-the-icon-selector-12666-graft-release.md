@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Update and improve Codex Icons page
+title: Improved icon documentation in the Codex
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
