@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-65712
 version: 1024.16.8
 ---
-The Codex Icons page and icon selector documentation have been updated with clearer guidance for developers. It now documents the icon selector component, how to use it, and a refreshed reference of all available Codex icons—making icons easier to find, apply, and keep consistent across projects.
+The Codex documentation on icons and the icon selector has been updated with clearer guidance for developers. It now documents how to use the [icon selector component](https://cumulocity.com/codex/components/data-input/icon-selector/overview) and includes a refreshed reference of all available [icons](https://cumulocity.com/codex/design-system/icons/overview)—making icons easier to find, apply, and keep consistent across projects.
