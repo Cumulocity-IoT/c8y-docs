@@ -1599,7 +1599,9 @@ Arguments are formatted and separated by spaces. String interpolation can be don
 <p></p>
 The return value of the function is a list of up to ten values corresponding to the block outputs. These can either be bare values, or <tt>Value</tt> objects, with members <tt>value</tt>, <tt>properties</tt> and <tt>timestamp</tt>. If the function does not generate a value, return <tt>null</tt> instead.
 <p></p>
-For example: <pre> export function onInput(inputs, context) {<br/> &nbsp;&nbsp;console.log("Processing inputs");<br/> &nbsp;&nbsp;context.setState("count", context.getState("count", 0) + 1);<br/> &nbsp;&nbsp;if (inputs[0].value !== null && inputs[1].value !== context.params[0]) {<br/> &nbsp;&nbsp;&nbsp;&nbsp;return [<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inputs[0].value - inputs[1].value, // outputs[0]<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: inputs[0].value - inputs[1].value,<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties: { ...inputs[0].properties, ...inputs[1].properties }<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} // outputs[1]<br/> &nbsp;&nbsp;&nbsp;&nbsp;];<br/> &nbsp;&nbsp;}<br/> &nbsp;&nbsp;return null;<br/> }<br/> </pre></p>
+For example:
+<p></p>
+<pre> export function onInput(inputs, context) {<br/> &nbsp;&nbsp;console.log("Processing inputs");<br/> &nbsp;&nbsp;context.setState("count", context.getState("count", 0) + 1);<br/> &nbsp;&nbsp;if (inputs[0].value !== null && inputs[1].value !== context.params[0]) {<br/> &nbsp;&nbsp;&nbsp;&nbsp;return [<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inputs[0].value - inputs[1].value, // outputs[0]<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: inputs[0].value - inputs[1].value,<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties: { ...inputs[0].properties, ...inputs[1].properties }<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} // outputs[1]<br/> &nbsp;&nbsp;&nbsp;&nbsp;];<br/> &nbsp;&nbsp;}<br/> &nbsp;&nbsp;return null;<br/> }<br/> </pre></p>
 
 
 #### Parameters {#smart-function-parameters}
