@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "retrieve asset definitions for multiple assets with a single REST API call"
+title: "Retrieve asset definitions for multiple assets with a single REST API call"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
@@ -21,7 +21,7 @@ access the endpoint `/assets/definitions`. A new REST API endpoint GET
 `/definitions/assets/resolve` now allows you to retrieve asset
 definitions for a given list of asset IDs in a single request, reducing
 the number of API calls and network overhead. The new endpoint also
-works with Inventory Roles, so you no longer need the `INVENTORY_READ`
+works with inventory roles, so you no longer need the `INVENTORY_READ`
 permission if your role grants access to the specific assets.
 
 The new endpoint accepts multiple asset IDs as input and returns the
