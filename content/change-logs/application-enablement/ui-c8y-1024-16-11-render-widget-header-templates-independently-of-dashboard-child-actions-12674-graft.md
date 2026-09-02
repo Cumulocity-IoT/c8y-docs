@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-09-01'
   - label: jp.cumulocity.com
     date: '2026-09-01'
+  - label: us.cumulocity.com
+    date: '2026-09-02'
+  - label: cumulocity.com
+    date: '2026-09-02'
 ---
 In custom dashboards, widgets could stay on a loading skeleton and never request their data, because the widget header and the controls it contains were not always rendered. The header now renders whenever a widget provides controls, so the time, refresh and export controls appear again and widgets load as expected.
