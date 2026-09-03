@@ -192,7 +192,7 @@ Caution: The default behavior of the Alarm Output block is to produce a synchron
 </tr>
 <tr>
 <th scope="row">Severity</th>
-<td><span>The severity of the alarm - should be one of the severity values (WARNING, MINOR, MAJOR, CRITICAL) or CLEARED.</span>
+<td><span>The severity of the alarm: one of WARNING, MINOR, MAJOR or CRITICAL. The value can also be CLEARED, in which case the alarm is cleared instead of a severity being set.</span>
 </td>
 <td><span>string</span>
 </td>

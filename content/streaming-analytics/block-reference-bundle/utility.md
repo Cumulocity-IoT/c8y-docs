@@ -310,9 +310,11 @@ This block is not supported in simulation mode.</p>
 <p>Measures the time elapsed from a set start time.</p>
 <p>The start time is set by a start signal which activates the block. If the block is already active, then a start signal is ignored and the existing measurement remains unaffected. The block is deactivated with a reset signal which also disables any periodic outputs.
 <p></p>
-The block generates a float output of the time elapsed since the start signal, measured in seconds. If the block is inactive at the time it receives a measure signal, then 0.0 is generated as the output.
+A restart signal resets the elapsed time and immediately restarts measurement from that point, without deactivating the block.
 <p></p>
-If multiple signals are received at the same time, they are processed in the order of measure, reset and start. Thus, for example, if measure and reset signals are received together, the block first generates an output with the current duration and then resets its state. Processing the inputs in this order allows the current state of the block to be output and the block to be restarted within a single unit of time, if desired.</p>
+The block generates a float output of the time elapsed since the start (or last restart) signal, measured in seconds. If the block is inactive at the time it receives a measure signal, then 0.0 is generated as the output.
+<p></p>
+If multiple signals are received at the same time, they are processed in the order of measure, restart, reset, and start. Thus, for example, if measure and reset and deactivate signals are received together, the block first generates an output with the current duration and then resets its state. Processing the inputs in this order allows the current state of the block to be output and the block to be restarted within a single unit of time, if desired.</p>
 
 
 #### Parameters {#duration-parameters}
@@ -365,6 +367,13 @@ If multiple signals are received at the same time, they are processed in the ord
 <tr>
 <th scope="row">Measure</th>
 <td><span>Triggers an output of the duration (in seconds) since the block was activated. If the block is inactive, then 0.0 is output.</span>
+</td>
+<td><span>pulse</span>
+</td>
+</tr>
+<tr>
+<th scope="row">Restart</th>
+<td><span>Resets the elapsed duration and immediately restarts measurement from this point, without deactivating the block.</span>
 </td>
 <td><span>pulse</span>
 </td>
@@ -676,7 +685,7 @@ Note: To extract a custom property from the Measurement Input block, you must ad
 <p></p>
 Example log message with logger tag "demoLog" at log level "ERROR":
 <p></p>
-<tt>ERROR ... &lt;demoLog&gt; value=any(float,5.09) properties={"ignore":any(string,"false")}</tt></p>
+<tt>ERROR ... [t510007|model=87104] &lt;demoLog&gt; value=any(float,5.09) properties={"ignore":any(string,"false")}</tt></p>
 
 
 #### Parameters {#logger-parameters}
