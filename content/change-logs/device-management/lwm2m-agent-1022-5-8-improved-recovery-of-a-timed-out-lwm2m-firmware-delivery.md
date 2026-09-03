@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-09-03'
 title: Improved recovery of a timed out LWM2M firmware delivery
 product_area: Device management & connectivity
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-7085
 version: 1022.5.8
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-09-03'
 ---
 The LWM2M agent gives each firmware delivery a limited amount of time to complete. When that time expired, the agent restarted the update process and asked the device for its firmware update state, which the process accepts only as **Idle**. A device that was still working on the transfer could not report **Idle**, so the operation failed with the misleading reason "Another firmware update process is still in progress".
 
