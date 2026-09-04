@@ -16,6 +16,10 @@ version: 1025.11.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-09-03'
+  - label: apj.cumulocity.com
+    date: '2026-09-04'
+  - label: jp.cumulocity.com
+    date: '2026-09-04'
 ---
 Previously, retrieving the corresponding asset definitions for a set of
 assets required a separate REST API call after collecting all `type`s of
