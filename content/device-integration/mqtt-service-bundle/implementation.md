@@ -173,7 +173,7 @@ See the [Service Quotas](/service-terms/quotas#mqtt-service) section for details
 Certain topics are reserved for devices using the Core MQTT protcols.
 See [Core MQTT topics](#core-mqtt-topics) for the complete list.
 There is no overlap between the Core MQTT and generic device topic spaces, and all other topics are available for use by "generic" MQTT devices.
-Generic devices should avoid using any topic name starting with the Core MQTT prefixes listed below, even though some topics under those prefixes are not used by Core MQTT.
+Generic devices should avoid using any topic name treated by the MQTT Service as a Core MQTT topic, even though some of these topics are not currently used by Core MQTT.
 This will help to avoid situations where it is not obvious how a given topic should be handled, which may be difficult to debug.
 
 ### Payloads {#mqtt-payloads}
@@ -273,7 +273,9 @@ In particular:
 #### Core MQTT topics {#core-mqtt-topics}
 
 The Core MQTT protocols use a specific set of topics defined in the [MQTT quick reference](/smartrest/quick-reference/#topic-format).
-All message publication and subscription on these topics is assumed to be for Core MQTT devices and will be routed to and from the {{< product-c8y-iot >}} core.
+The MQTT Service assumes that all publication and subscription activity on these topics is for Core MQTT devices and routes messages to and from the {{< product-c8y-iot >}} core.
+
+The MQTT Service treats any topic name that starts with one of the following **prefixes** as a Core MQTT topic. For example, `s/e`, `s/us`, and `event/events/create` are Core MQTT topics:
 
 * `s/`
 * `t/`
@@ -283,6 +285,10 @@ All message publication and subscription on these topics is assumed to be for Co
 * `event/events/`
 * `measurement/measurements/`
 * `inventory/managedObjects/`
+
+In addition, these specific topic names are Core MQTT topics.
+These topic names are matched exactly, so `error` is a Core MQTT topic but `errortopic` is not:
+
 * `error`
 * `devicecontrol/notifications`
 
