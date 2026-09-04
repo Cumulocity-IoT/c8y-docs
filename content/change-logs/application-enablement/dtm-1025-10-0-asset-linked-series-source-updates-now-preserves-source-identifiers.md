@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-08-26'
   - label: jp.cumulocity.com
     date: '2026-08-26'
+  - label: us.cumulocity.com
+    date: '2026-08-27'
+  - label: cumulocity.com
+    date: '2026-08-27'
 ---
 The REST API endpoint
 `/assets/{assetId}/linkedSeries/{fragment}/{series}/source` for updating

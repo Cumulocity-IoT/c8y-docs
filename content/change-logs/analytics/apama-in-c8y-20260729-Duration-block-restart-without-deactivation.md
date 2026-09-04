@@ -22,6 +22,10 @@ environment_availability:
     date: '2026-08-26'
   - label: jp.cumulocity.com
     date: '2026-08-26'
+  - label: us.cumulocity.com
+    date: '2026-08-31'
+  - label: cumulocity.com
+    date: '2026-09-01'
 ---
 
 The **Duration** block in Analytics Builder has been enhanced with a new **Restart** input port that allows you to reset the elapsed duration and immediately restart measurement from that point, without deactivating the block.
