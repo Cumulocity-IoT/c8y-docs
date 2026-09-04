@@ -1,6 +1,9 @@
 ---
 title: Account
 layout: bundle
+outputs:
+  - html
+  - json
 sector:
   - platform_administration
 weight: 40
