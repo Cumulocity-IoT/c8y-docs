@@ -17,7 +17,7 @@ version: 3000.0.19
 The [MQTT Service documentation](/device-integration/mqtt-service/#core-mqtt-topics) describes the set of MQTT topic names that will be treated as Core MQTT topics.
 These topics can only be used with Core MQTT protocols and must not be used by "generic" MQTT devices.
 
-Previously, topic names that were documented as being *prefixes* for Core MQTT topics were incorrectly matching any topic name *containing* the Core MQTT prefix.
+Previously, the MQTT Service incorrectly treated any topic name containing a Core MQTT prefix as a Core MQTT topic instead of matching the prefix only at the start of the topic name.
 For example, the topic name `sensors/12345` was treated as a Core MQTT topic because it contained the reserved topic prefix `s/`.
 
 In addition, some Core MQTT reserved topic names were incorrectly treated as prefixes when they are specific names for single topics.

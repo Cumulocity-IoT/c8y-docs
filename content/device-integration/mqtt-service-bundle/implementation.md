@@ -273,9 +273,9 @@ In particular:
 #### Core MQTT topics {#core-mqtt-topics}
 
 The Core MQTT protocols use a specific set of topics defined in the [MQTT quick reference](/smartrest/quick-reference/#topic-format).
-All messages publication and subscription on these topics is assumed to be for Core MQTT devices and will be routed to the {{< product-c8y-iot >}} core.
+The MQTT Service assumes that all publication and subscription activity on these topics is for Core MQTT devices and routes messages to and from the {{< product-c8y-iot >}} core.
 
-Any topic name starting with one of the following **prefixes** is treated as a Core MQTT topic, so for example `s/e`, `s/us` and `event/events/create` are all Core MQTT topics:
+The MQTT Service treats any topic name that starts with one of the following **prefixes** as a Core MQTT topic. For example, `s/e`, `s/us`, and `event/events/create` are Core MQTT topics:
 
 * `s/`
 * `t/`
