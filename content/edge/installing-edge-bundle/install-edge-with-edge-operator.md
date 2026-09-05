@@ -20,30 +20,97 @@ Edge has been tested and officially supported on Kubernetes version 1.34.x, the 
 
 Because resource consumption can be very use-case specific, many containers have memory limits significantly higher than the memory request. Workloads that consume a lot of memory can result in inevitable out-of-memory kills of processes on the host. In order to protect the underlying operating system and Kubernetes infrastructure from this, we recommend setting reserved resources. See [Reserve Compute Resources for System Daemons](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/) for more details.
 
-### Installing the Edge operator {#install-edge-operator}
-The Edge operator is available as a Helm chart in the Edge registry, and can be installed like any other chart. You will need your registry credentials, which can be acquired from [product support](/additional-resources/contacting-support/). Assuming you are installing the {{< c8y-edge-current-version >}} release of Edge, and that you wish all Edge workloads to be running in the namespace `c8yedge`, run the following command:
-```shell
-helm registry login registry.c8y.io --username="<Edge registry username>" --password="<Edge registry password>"
+### Install Edge operator from Edge registry {#install-edge-operator-from-edge-registry}
+The Edge operator is available as a Helm chart and a container image in the [Edge registry](https://registry.c8y.io/), and can be installed like any other chart. You need your registry credentials, which can be acquired from [product support](/additional-resources/contacting-support/). Assuming you are installing the {{< c8y-edge-current-version >}} release of Edge, and that you wish all Edge workloads to be running in the namespace `c8yedge`, run the following commands:
 
-helm upgrade --install c8yedge-operator oci://registry.c8y.io/edge/helm-charts/cumulocity-iot-edge-operator \
-    --version={{< c8y-edge-current-version >}} \
-    --namespace c8yedge \
-    --create-namespace \
-    --set imageCredentials.username="<Edge registry username>" \
-    --set imageCredentials.password="<Edge registry password>" \
-    --wait
-```
+1. **Authenticate with Edge registry:**
+    ```shell
+    helm registry login registry.c8y.io \
+      --username="<Edge registry username>" \
+      --password="<Edge registry password>"
+    ```
+1. **Install the operator:**
+    ```shell
+    helm upgrade --install cumulocity-iot-edge-operator oci://registry.c8y.io/edge/helm-charts/cumulocity-iot-edge-operator \
+      --version="{{< c8y-edge-current-version >}}" \
+      --namespace c8yedge \
+      --create-namespace \
+      --set imageCredentials.username="<Edge registry username>" \
+      --set imageCredentials.password="<Edge registry password>" \
+      --wait
+    ```
+1. **Verify the installation:**
+    <br>Follow the operator logs to ensure successful startup:
+    ```shell
+    kubectl logs -f --namespace c8yedge deployment/c8yedge-operator-controller-manager manager
+    ```
 
 {{< c8y-admon-info >}}
 If you are installing Edge on an environment that has no or limited internet access, we strongly recommend using the **c8yedge** tool for installing and upgrading Edge.
 {{< /c8y-admon-info >}}
 
-Run the following command to follow the logs for the Edge operator pod:
-```shell
-kubectl logs -f -n c8yedge deployment/c8yedge-operator-controller-manager manager
-```
+### Install Edge operator from private OCI registry {#install-edge-operator-from-private-registry}
+You can install the Edge operator using Helm charts and container images hosted in a private [Open Container Initiative](https://opencontainers.org/) (OCI) compliant registry. This is the recommended approach for organizations requiring strict control over container image distribution.
 
-### Installing Edge {#install-edge-using-operator}
+To complete this installation, you will need the following:
+* **Workstation:** A machine with full internet access to download artifacts.
+* **Target environment:** A Kubernetes cluster with access to your private, OCI-compliant registry.
+* **Tooling:** The c8yedge tool (see [Downloading c8yedge](/edge/installing-edge/#downloading-c8yedge)).
+
+#### Step 1: Sync Edge artifacts to your private registry {#sync-edge-artifacts-to-private-registry}
+Depending on your environment's network connectivity, choose the appropriate synchronization method below.
+
+* **Direct Sync (Online)**
+  <br>If your environment has direct internet access, use the c8yedge tool to sync artifacts directly:
+  ```bash
+  c8yedge registry-sync
+  ```
+
+* **Offline Package (Air-gapped)**
+  <br>If you are working in an air-gapped environment, execute these steps to sync your artifacts:
+  
+  1. **Create the offline package** on an internet-connected machine:
+      ```bash
+      c8yedge package
+      ```
+  2. **Transfer the generated tarball** (for example, `c8yedge-{{< c8y-edge-current-version >}}_0_0.tar`) and the c8yedge binary to your air-gapped environment. 
+  3. **Sync to the private registry** from within the air-gapped environment:
+      ```bash
+      c8yedge registry-sync -s "<OFFLINE-PACKAGE-FILE>"
+      ```
+
+{{< c8y-admon-info >}}
+* You can discover more options with `c8yedge package --help` and `c8yedge registry-sync --help`, such as the ability to sync a very specific Edge version.
+* Record the **Root path in the target registry** provided during the sync process. You need this to install the operator.
+{{< /c8y-admon-info >}}
+
+#### Step 2: Install Edge operator
+Once the artifacts are available in your private registry, install the operator using Helm.
+
+1. **Authenticate with your registry:**
+    ```shell
+    helm registry login <PRIVATE-REGISTRY-HOST> \
+      --username="<PRIVATE-REGISTRY-USERNAME>" \
+      --password="<PRIVATE-REGISTRY-PASSWORD>"
+    ```
+1. **Install the operator:**
+    ```shell
+    helm upgrade --install cumulocity-iot-edge-operator oci://<PRIVATE-REGISTRY-HOST>/<REPOSITORY-ROOT-PATH>/edge/helm-charts/cumulocity-iot-edge-operator \
+      --version="{{< c8y-edge-current-version >}}.0.x" \
+      --namespace c8yedge \
+      --create-namespace \
+      --set image.repository="<PRIVATE-REGISTRY-HOST>/<REPOSITORY-ROOT-PATH>/edge/cumulocity-iot-edge-operator" \
+      --set imageCredentials.username="<PRIVATE-REGISTRY-USERNAME>" \
+      --set imageCredentials.password="<PRIVATE-REGISTRY-PASSWORD>" \
+      --wait
+    ```
+1. **Verify the installation:**
+    <br>Follow the operator logs to ensure successful startup:
+    ```shell
+    kubectl logs -f --namespace c8yedge deployment/c8yedge-operator-controller-manager manager
+    ```
+
+### Install Edge {#install-edge-using-kubectl-command}
 Download and edit the Edge CR ([c8yedge.yaml](/files/edge/c8yedge.yaml)), before applying it to your Kubernetes cluster by running the command below:
 
 ```bash
@@ -52,43 +119,3 @@ kubectl apply -f c8yedge.yaml
 This command will complete immediately, and the installation will proceed in the background. See [Monitoring changes](/edge/manage-edge/#monitoring-changes) to track the progress of the installation.
 
 For more information about the structure and configuration options available in the Edge CR, see [Edge custom resource](/edge/edge-custom-resource-definition/).
-
-### Configuring the Edge operator with trusted TLS certificates and proxy {#configure-edge-operator-with-trusted-tls-certificates-and-proxy}
-
-You can configure the Edge operator to:
-  - Route outbound traffic through a proxy server when deployed behind a proxy.
-  - Trust additional TLS certificates for external endpoints.
-
-To configure proxy settings and trusted certificates, create or update a ConfigMap named `c8yedge-operator-config` in the `c8yedge` namespace (or the namespace where Edge is deployed) with the required configuration keys described below:
-  - `http_proxy` - HTTP proxy URL
-  - `https_proxy` - HTTPS proxy URL
-  - `socks_proxy` - SOCKS proxy URL
-  - `no_proxy` - Comma-separated list of domain suffixes, IP addresses, or CIDR ranges that bypass the proxy. This must include:
-      - {{< management-tenant >}} and the Edge tenant domain names.
-      - Kubernetes Pod CIDR (Cluster pod IP address range).
-      - Kubernetes Service CIDR (Cluster service IP address range).
-      - Any additional domains, hosts or IP addresses that bypass the proxy.
-  - `ca.crt` - One or more trusted TLS certificates in PEM format that the Edge operator and the Edge should trust in addition to publicly known certificate authorities. Multiple certificates can be provided by concatenating them into a single PEM bundle.
-
-#### Apply changes
-After creating or updating the ConfigMap, restart the Edge operator as described in [Restarting the Edge operator](/edge/manage-edge/#restart-operator)
-
-#### Sample ConfigMap
-```yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: c8yedge-operator-config
-  namespace: c8yedge
-data:
-  http_proxy: <HTTP Proxy URL>
-  https_proxy: <HTTPS Proxy URL>
-  socks_proxy: <SOCKS Proxy URL>
-
-  # Comma-separated list of domain suffixes, IP addresses, or CIDR ranges that should bypass the proxy
-  no_proxy: 127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain names, e.g. management-myown.iot.com,myown.iot.com>,<kubernetes cluster IP range, e.g. 10.43.0.0/16>
-
-  # Trusted TLS certificates in PEM format
-  ca.crt: |
-    <CERTIFICATES_TO_TRUST>
-```
