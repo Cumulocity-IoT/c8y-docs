@@ -68,6 +68,8 @@ To configure proxy settings and trusted certificates, create or update a ConfigM
       - Kubernetes Pod CIDR (Cluster pod IP address range).
       - Kubernetes Service CIDR (Cluster service IP address range).
       - Any additional domains, hosts or IP addresses that bypass the proxy.
+
+    Specify each Pod and Service CIDR in both formats: subnet/CIDR notation (for example, `10.42.0.0/16`) for Go-based components, and wildcard notation (for example, `10.42.*`) for JVM-based components.
   - `ca.crt` - One or more trusted TLS certificates in PEM format that the Edge operator and the Edge should trust in addition to publicly known certificate authorities. Multiple certificates can be provided by concatenating them into a single PEM bundle.
 
 #### Apply changes
@@ -85,8 +87,10 @@ data:
   https_proxy: <HTTPS Proxy URL>
   socks_proxy: <SOCKS Proxy URL>
 
-  # Comma-separated list of domain suffixes, IP addresses, or CIDR ranges that should bypass the proxy
-  no_proxy: 127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain names, e.g. management-myown.iot.com,myown.iot.com>,<kubernetes cluster IP range, e.g. 10.43.0.0/16>
+  # Comma-separated list of domain suffixes, IP addresses, or CIDR ranges that should bypass the proxy.
+  # Specify each Pod and Service CIDR in both formats: subnet/CIDR notation (for example, 10.42.0.0/16)
+  # for Go-based components, and wildcard notation (for example, 10.42.*) for JVM-based components.
+  no_proxy: 127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain names, e.g. management-myown.iot.com,myown.iot.com>,<kubernetes cluster IP ranges, e.g. 10.42.0.0/16,10.42.*,10.43.0.0/16,10.43.*>
 
   # Trusted TLS certificates in PEM format
   ca.crt: |
