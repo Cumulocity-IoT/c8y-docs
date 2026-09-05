@@ -1,0 +1,37 @@
+name: Synchronize to c8y-docs-public
+on:
+  workflow_dispatch:
+  push:
+    branches: 
+      - develop
+      - release/y**
+  # TODO - temporary for testing
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 1
+
+      - shell: bash
+        run: |
+          for branch in `git branch --list release/* ; echo develop`
+          do
+            git checkout $branch
+            git pull --unshallow
+            git remote add c8y-docs-public git@github.com:rthrippleton/c8y-docs-public.git
+            # git push c8y-docs-public $branch
+          done
+        
+
