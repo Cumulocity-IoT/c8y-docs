@@ -81,7 +81,7 @@ Depending on your environment's network connectivity, choose the appropriate syn
 
 {{< c8y-admon-info >}}
 * You can discover more options with `c8yedge package --help` and `c8yedge registry-sync --help`, such as the ability to sync a very specific Edge version.
-* Record the **Root path in the target registry** provided during the sync process. You need this to install the operator.
+* Record the **Root path in the target registry** that you choose during the sync process. You need this to install the operator.
 {{< /c8y-admon-info >}}
 
 #### Step 2: Install Edge operator
