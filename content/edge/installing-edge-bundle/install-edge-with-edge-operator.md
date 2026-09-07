@@ -49,43 +49,35 @@ The Edge operator is available as a Helm chart and a container image in the [Edg
 If you are installing Edge on an environment that has no or limited internet access, we strongly recommend using the **c8yedge** tool for installing and upgrading Edge.
 {{< /c8y-admon-info >}}
 
-### Install Edge operator from private OCI registry {#install-edge-operator-from-private-registry}
-You can install the Edge operator using Helm charts and container images hosted in a private [Open Container Initiative](https://opencontainers.org/) (OCI) compliant registry. This is the recommended approach for organizations requiring strict control over container image distribution.
+After the Edge operator is installed successfully, continue with the standard Edge installation procedure. See [Install Edge](/edge/installing-edge/#install-edge-using-kubectl-command) to install Edge by applying the Edge CR.
 
-To complete this installation, you will need the following:
-* **Workstation:** A machine with full internet access to download artifacts.
-* **Target environment:** A Kubernetes cluster with access to your private, OCI-compliant registry.
-* **Tooling:** The c8yedge tool (see [Downloading c8yedge](/edge/installing-edge/#downloading-c8yedge)).
+### Install Edge operator from private OCI registry {#install-edge-operator-from-private-registry}
+You can install the Edge operator using Helm charts and container images hosted in a private [Open Container Initiative](https://opencontainers.org/) (OCI) compliant registry. This is useful for organizations that require strict control over container image distribution.
+
+Before you begin, ensure that you have the following:
+* **Tooling:** The c8yedge tool to sync Edge artifacts. See [Downloading c8yedge](/edge/installing-edge/#downloading-c8yedge).
+* **Private registry** A running OCI-compliant registry that is accessible from the environment where you will install the Edge operator.
 
 #### Step 1: Sync Edge artifacts to your private registry {#sync-edge-artifacts-to-private-registry}
-Depending on your environment's network connectivity, choose the appropriate synchronization method below.
+Choose one of the following synchronization methods based on the network connectivity of your environment.
 
 * **Direct Sync (Online)**
-  <br>If your environment has direct internet access, use the c8yedge tool to sync artifacts directly:
-  ```bash
-  c8yedge registry-sync
-  ```
+  <br>Run the `c8yedge registry-sync` command on a machine that has access to both the internet and your private registry.
 
 * **Offline Package (Air-gapped)**
-  <br>If you are working in an air-gapped environment, execute these steps to sync your artifacts:
+  <br>If no single machine has access to both the internet and your private registry, use an offline package to transfer the required artifacts:
   
-  1. **Create the offline package** on an internet-connected machine:
-      ```bash
-      c8yedge package
-      ```
-  2. **Transfer the generated tarball** (for example, `c8yedge-{{< c8y-edge-current-version >}}_0_0.tar`) and the c8yedge binary to your air-gapped environment. 
-  3. **Sync to the private registry** from within the air-gapped environment:
-      ```bash
-      c8yedge registry-sync -s "<OFFLINE-PACKAGE-FILE>"
-      ```
+  1. **Create the offline package** by running `c8yedge package` on a machine with internet access.
+  2. **Transfer the generated tarball and c8yedge binary** to a machine that has access to the private registry. For example, the generated tarball might be named `c8yedge-{{< c8y-edge-current-version >}}_0_0.tar`.
+  3. **Sync the artifacts to the private registry** by running the `c8yedge registry-sync -s "<OFFLINE-PACKAGE-FILE>"` command on the machine with access to the private registry.
 
 {{< c8y-admon-info >}}
-* You can discover more options with `c8yedge package --help` and `c8yedge registry-sync --help`, such as the ability to sync a very specific Edge version.
-* Record the **Root path in the target registry** that you choose during the sync process. You need this to install the operator.
+* You can discover more options with `c8yedge package --help` and `c8yedge registry-sync --help`, such as the ability to sync a specific Edge version.
+* Record the **root path in the target registry** that you choose during the sync process. You will need this when installing the operator.
 {{< /c8y-admon-info >}}
 
 #### Step 2: Install Edge operator
-Once the artifacts are available in your private registry, install the operator using Helm.
+Once the Edge artifacts are available in your private registry, install the Edge operator using Helm.
 
 1. **Authenticate with your registry:**
     ```shell
@@ -105,10 +97,12 @@ Once the artifacts are available in your private registry, install the operator 
       --wait
     ```
 1. **Verify the installation:**
-    <br>Follow the operator logs to ensure successful startup:
+    <br>Follow the operator logs to verify that the operator starts successfully:
     ```shell
     kubectl logs -f --namespace c8yedge deployment/c8yedge-operator-controller-manager manager
     ```
+
+After the Edge operator is installed successfully, continue with the standard Edge installation procedure. See [Install Edge](/edge/installing-edge/#install-edge-using-kubectl-command) to install Edge by applying the Edge CR.
 
 ### Install Edge {#install-edge-using-kubectl-command}
 Download and edit the Edge CR ([c8yedge.yaml](/files/edge/c8yedge.yaml)), before applying it to your Kubernetes cluster by running the command below:
