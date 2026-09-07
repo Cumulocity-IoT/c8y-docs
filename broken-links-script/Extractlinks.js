@@ -102,7 +102,24 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
   if (/^https?:\/\//i.test(resolvedLink)) {
     return resolvedLink;
   }
-  return `${BASE_URL.replace(/\/$/, "")}/${resolvedLink.replace(/^\//, "")}`;
+  // A root-relative link that already names a version ("/2025/edge-kubernetes/...")
+  // is an explicit cross-version reference: it must resolve against the
+  // unversioned site root, because prefixing this branch's own version too
+  // would produce an invalid doubled path like ".../docs/2026/2025/...".
+  //
+  // Every other root-relative link ("/edge-kubernetes/datahub",
+  // "/legal-notices/copyright/") is an ordinary same-version internal link
+  // and resolves against BASE_URL, version prefix included. Stripping the
+  // prefix for those is what silently pointed release-branch content at the
+  // *current* published docs instead of that release's own, which 404s as
+  // soon as the release stops being current. Shared pages are mirrored under
+  // every version prefix, so keeping the prefix is safe for them too.
+  if (resolvedLink.startsWith("/")) {
+    const isCrossVersion = /^\/\d{4}(\/|$)/.test(resolvedLink);
+    const base = isCrossVersion ? BASE_URL.replace(/\/\d{4}$/, "") : BASE_URL.replace(/\/$/, "");
+    return `${base}${resolvedLink}`.replace(/([^:]\/)\/+/g, '$1');
+  }
+  return `${BASE_URL.replace(/\/$/, "")}/${resolvedLink}`;
 };
 
 (() => {

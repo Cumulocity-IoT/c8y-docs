@@ -22,6 +22,14 @@ Although the virtual or physical nature of the platform is unimportant to Edge, 
 For example, you could install and customize Edge on a VM in your development environment. You can then then hand-off a self-contained VM image to be installed at a remote site in a reliable and reproducable way.
 {{< /c8y-admon-info >}}
 
+{{< c8y-admon-caution >}}
+**Host security hardening**
+
+Installing {{< product-c8y-iot >}} Edge with c8yedge also supports hosts with standard SELinux to the extent supported by [K3s](https://docs.k3s.io/advanced#selinux-support).
+
+Additional host hardening, such as custom SELinux policies, AppArmor, Smack, fapolicyd, or similar controls, is the customer's responsibility. These host-specific security mechanisms can interfere with Kubernetes, the container runtime, or networking required by c8yedge. 
+{{< /c8y-admon-caution >}}
+
 ### Downloading c8yedge
 You can download the tool from the [{{< company-c8y >}} Download Center](https://download.cumulocity.com/Cumulocity-Edge) or by running the following commands:
 

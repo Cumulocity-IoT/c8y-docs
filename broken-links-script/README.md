@@ -19,6 +19,7 @@ broken-links-script/
 │   └── support/
 │       └── e2e.js
 ├── Extractlinks.js
+├── config.cjs
 ├── package.json
 └── README.md
 ```
@@ -132,36 +133,47 @@ The workflow file is `.github/workflows/link-checker.yml`.
 
 It runs:
 
-* every Monday at 06:00 UTC
+* every Monday at 06:00 UTC, against the default branch matrix
 * manually using `workflow_dispatch`
+* automatically on a pull request when the `broken-link-check` label is added
+  (checks that PR's branch only, and posts a summary comment instead of
+  filing an issue)
+
+### Manual dispatch inputs
+
+All optional - omit all of them to reproduce the default scheduled run.
+
+| Input | Effect |
+| --- | --- |
+| `branch` | Check only this branch instead of the default matrix |
+| `urlsWith` | Only check links containing this substring |
+| `diagnostics` | Verbose network + console logging (see "Investigating and fixing a failing run" below) |
 
 ### Branches checked
 
-The workflow runs against this matrix:
-
-* `develop`
-* `release/y2025`
-* `release/y2026`
+By default (schedule, or manual dispatch without `branch`), the workflow
+checks the branches listed in the `determine-branches` job's fallback array
+in `.github/workflows/link-checker.yml` (search for `branches_json=`).
 
 ### What happens in CI
 
 For each branch, the workflow:
 
-1. checks out the branch
+1. checks out the branch (or, for the PR-label trigger, that PR's head commit)
 2. installs dependencies
 3. runs the broken-link test suite
-4. creates a branch-specific label if needed
-5. creates a GitHub issue if the test fails
-
-Example issue labels:
-
-```text
-broken-link-develop
-broken-link-release/y2025
-broken-link-release/y2026
-```
+4. uploads the full Cypress log as an artifact (kept for 8 days)
+5. for the default scheduled/full-matrix runs only: creates a
+   branch-specific label if needed, and a GitHub issue if the test fails
+6. for the PR-label trigger only: posts a summary comment on the PR
 
 ## Where to update the code
+
+All repo/site-specific customization - own domains, excluded links, and
+third-party resource mocks - lives in `config.cjs`. The mechanisms that
+consume it (`cypress/e2e/link-checker.cy.js`) are meant to stay generic, so
+adapting this checker for a different repo should mostly mean editing
+`config.cjs`, not the test file itself.
 
 ### 1. Add or update timeout or excluded links
 
@@ -173,14 +185,14 @@ If a link is valid in a browser but fails in automation because of:
 * access restrictions
 * unstable third-party behavior
 
-add it to the `excludedLinks` array in `cypress/e2e/link-checker.cy.js`.
+add it to the `excludedLinks` array in `config.cjs`.
 
 Example:
 
 ```js
-const excludedLinks = [
-  "https://example.com/some-page"
-];
+excludedLinks: [
+  "https://example.com/some-page",
+]
 ```
 
 You can also leave a short reason above it:
@@ -192,19 +204,74 @@ You can also leave a short reason above it:
 
 Use this for links that should be skipped completely.
 
-### 2. Add known browser exceptions
+### 2. Mock a known-problematic third-party resource
 
-Some third-party sites throw JavaScript errors that do not actually mean the page is broken.
+Sometimes the link under test is fine, but the page it points to loads a
+third-party resource (analytics, an embedded widget, a tracking pixel, etc.)
+that is unreachable or hangs specifically from CI runners, blocking the
+browser's `load` event and causing `cy.visit()` to time out. This is
+different from `excludedLinks`: the link itself is valid, only some
+incidental sub-resource the page pulls in is the problem.
 
-Those global exceptions should be added in `cypress/support/e2e.js`.
+For this case, add an entry to the `resourceMocks` array in `config.cjs`
+instead of excluding the link. Every entry there is applied automatically before every
+`cy.visit()`, via `cy.intercept()`, so the flaky resource gets an immediate
+mocked response instead of hitting the real network:
 
-This file is the right place for known harmless `uncaught:exception` cases.
+```js
+{
+  name: 'asciinema-embed',
+  pattern: '**://asciinema.org/**',
+  reason: 'Embed script never responds from GitHub Actions runners; ' +
+          'still blocks the load event despite being async.',
+  response: { statusCode: 204, body: '' },
+  overrides: [],
+}
+```
+
+* `pattern` / `response` are passed straight to `cy.intercept(pattern, response)`
+  — `response` can be a static object or a route handler function.
+* Always fill in `reason` — this is what stops the list from turning into an
+  unexplained pile of mocks nobody understands six months later.
+* If one specific link actually needs the real resource to load (e.g. a page
+  that specifically tests that embed), add it to that entry's `overrides`
+  instead of weakening the mock for everyone:
+
+  ```js
+  overrides: [
+    { link: 'https://example.com/docs/page-that-checks-the-embed/', response: null },
+  ],
+  ```
+
+  `response: null` in an override means "don't intercept this domain for
+  this particular link — let it hit the real network."
+
+Only add a mock here once you've confirmed the flaky resource is genuinely
+unrelated to the link's own validity (see "Investigating and fixing a
+failing run" below, or the `fix-broken-links` skill, for how to confirm
+this) — don't reach for this to paper over an actually broken link.
+
+### 3. Add known browser exceptions
+
+Uncaught JS exceptions are already tolerated automatically for any page
+outside the domains listed in `ownDomains` in `config.cjs`
+- a third-party site's own console errors (analytics pixels, chat widgets,
+etc.) aren't signal about whether the link pointing to it is valid, so we
+don't fail on them regardless of message text. What still matters for those
+pages is covered by the test's real assertions: status code, non-empty body,
+fragment existence.
+
+`cypress/support/e2e.js` is now only for the rare case of a genuine
+**`cumulocity.com`-domain** exception that's confirmed harmless. Before
+adding anything here, confirm the error is actually happening on our own
+domain - if it's a third-party page, it's already handled and doesn't need
+an entry.
 
 Example:
 
 ```js
 Cypress.on('uncaught:exception', (err) => {
-  if (err.message.includes('Some known harmless error')) {
+  if (err.message.includes('Some known harmless error on our own docs site')) {
     return false;
   }
 });
@@ -212,13 +279,14 @@ Cypress.on('uncaught:exception', (err) => {
 
 Add new exceptions here only when:
 
+* the error occurs on a `cumulocity.com` page
 * the page itself still loads correctly
 * the error is unrelated to link validity
 * the error is consistently harmless
 
 Do not add real content or navigation failures here.
 
-### 3. Update shortcode resolution
+### 4. Update shortcode resolution
 
 If docs introduce new Hugo shortcodes used inside links, update `Extractlinks.js`.
 
@@ -234,7 +302,7 @@ const shortcodeMapping = {
 
 Without this, extracted URLs may be incomplete or wrong.
 
-### 4. Update file types treated as non-HTML
+### 5. Update file types treated as non-HTML
 
 If you need to support additional downloadable resource types, update this section in `cypress/e2e/link-checker.cy.js`:
 
@@ -244,77 +312,40 @@ const nonHtmlExtensions = ['.txt', '.json', '.pdf'];
 
 Use this when a link points to a file rather than a web page.
 
-## How to handle failing links
+## Investigating and fixing a failing run
 
-When a test fails, first identify the type of failure.
+When a link-check issue is filed or a run fails, the failure needs to be
+triaged (is the link actually broken? does it just fail in CI? is a
+third-party page throwing a harmless error?) before deciding where to apply
+a fix - in the Markdown content, `excludedLinks`, `resourceMocks`, the
+Cypress exception list, or the checker scripts themselves.
 
-### Case 1: The link is actually broken
+If you're working with Claude Code, the `fix-broken-links` skill
+(`.claude/skills/fix-broken-links/SKILL.md`) automates this: point it at a
+workflow run (or let it infer one from the current branch/PR/issue) and it
+will fetch the run's logs, triage each failure, apply the appropriate fix,
+and open a PR.
 
-Fix the link in the source Markdown file shown in the test output.
+To do it by hand, use the workflow's **diagnostics mode** to get real
+evidence instead of guessing from error text - dispatch "Link Checker"
+manually with `branch` (the failing branch), `urlsWith` (a substring
+narrowing it to the failing URL(s)), and `diagnostics: true`. This logs:
 
-The test already includes source file information using:
+* every network request's start/completion, for both browser sub-resources
+  during `cy.visit()` and the checker's own `cy.request()` calls (so a hang
+  shows as a `network-start`/`request-start` entry with no matching `-done`)
+* console errors/uncaught exceptions from the visited page
+* the runner's own egress IP, once per job - useful for confirming an
+  IP-reputation block (a failing branch's IP differs from a sibling
+  branch's, or matches a previously-blocked IP)
 
-```js
-Cypress.env('sourceFiles', item.files);
+without changing pass/fail behavior. Each diagnostic entry is logged as its
+own line, prefixed `[DIAGNOSTIC]` and followed by a JSON object (type,
+url/link, timestamps, status codes, etc.) - pull the results from the run's
+`cypress-log-<branch>` artifact (kept 8 days), or extract and parse them
+locally:
+
+```bash
+grep '\[DIAGNOSTIC\]' cypress-output.log | sed 's/^.*\[DIAGNOSTIC\] //' | jq -s '.'
 ```
-
-So the error message should help trace where the link came from.
-
-### Case 2: The link works manually but times out in Cypress
-
-If the site is slow, blocks bots, or is unstable, add it to `excludedLinks` in `cypress/e2e/link-checker.cy.js`.
-
-Add a short comment explaining why.
-
-Example:
-
-```js
-// Site blocks automation requests
-"https://example.com/protected-page",
-```
-
-### Case 3: The page loads but throws harmless JavaScript errors
-
-Add the error pattern to `cypress/support/e2e.js`.
-
-Example:
-
-```js
-if (err.message.includes('jQuery is not defined')) {
-  return false;
-}
-```
-
-Only do this if the page still loads and the link is valid.
-
-### Case 4: Fragment check fails
-
-If the link contains `#fragment`, verify whether:
-
-* the fragment is correct
-* the target page still contains that anchor
-* the anchor name has changed
-* GitHub adds `user-content-` prefix handling
-
-If the page structure changed, update the source link instead of excluding it.
-
-## Recommended maintenance process
-
-When a link-check issue is created:
-
-1. Open the failed workflow run.
-2. Check the failed URL.
-3. Identify the source Markdown file.
-4. Decide whether it is:
-
-   * a real broken link
-   * a timeout or anti-bot case
-   * a harmless JavaScript exception
-5. Apply the fix in the correct place:
-
-   * source Markdown content
-   * `excludedLinks` in `link-checker.cy.js`
-   * exception handling in `cypress/support/e2e.js`
-6. Re-run locally.
-7. Commit and push the fix.
 
