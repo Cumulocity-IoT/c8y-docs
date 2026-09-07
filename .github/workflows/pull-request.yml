@@ -14,7 +14,7 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.number }}-${{ github.event.action == 'opened' }}
+  group: ${{ github.workflow }}-${{ github.event.number }}
   cancel-in-progress: true
 
 defaults:
@@ -37,7 +37,11 @@ jobs:
 
     - name: Setup base URL env var
       run: |
-        echo BASEURL="https://${{ github.repository_owner }}-${{ github.event.repository.name }}-${{ github.job }}-pr-${{ github.event.number }}.surge.sh" >> $GITHUB_ENV
+        PR_NUM="${{ github.event.number }}"
+        OWNER_LOWER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+        REPO_LOWER=$(echo "${{ github.event.repository.name }}" | tr '[:upper:]' '[:lower:]')
+        JOB_LOWER=$(echo "${{ github.job }}" | tr '[:upper:]' '[:lower:]')
+        echo BASEURL="https://${OWNER_LOWER}-${REPO_LOWER}-${JOB_LOWER}-pr-${PR_NUM}.surge.sh" >> $GITHUB_ENV
 
     - name: Report base URL env var
       run: echo "${{ env.BASEURL }}"
@@ -69,12 +73,24 @@ jobs:
     - name: Deploy to surge
       if: ${{ github.event.pull_request.state != 'closed' }}
       run: |
-        surge ./public ${{ env.BASEURL }} --token ${{ secrets.SURGE_TOKEN }}
+        if ! surge ./public ${{ env.BASEURL }} --token ${{ secrets.SURGE_TOKEN }}; then
+          echo "Primary Surge deployment failed. Retrying with fallback preview domain..."
+          PR_NUM="${{ github.event.number }}"
+          OWNER_LOWER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          REPO_LOWER=$(echo "${{ github.event.repository.name }}" | tr '[:upper:]' '[:lower:]')
+          FALLBACK_URL="https://${OWNER_LOWER}-${REPO_LOWER}-preview-pr-${PR_NUM}.surge.sh"
+          surge ./public "${FALLBACK_URL}" --token ${{ secrets.SURGE_TOKEN }}
+          echo "BASEURL=${FALLBACK_URL}" >> $GITHUB_ENV
+        fi
 
     - name: Remove from surge
       if: ${{ github.event.pull_request.state == 'closed' }}
       run: |
-        surge teardown ${{ env.BASEURL }} --token ${{ secrets.SURGE_TOKEN }}
+        surge teardown ${{ env.BASEURL }} --token ${{ secrets.SURGE_TOKEN }} || true
+        PR_NUM="${{ github.event.number }}"
+        OWNER_LOWER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+        REPO_LOWER=$(echo "${{ github.event.repository.name }}" | tr '[:upper:]' '[:lower:]')
+        surge teardown "https://${OWNER_LOWER}-${REPO_LOWER}-preview-pr-${PR_NUM}.surge.sh" --token ${{ secrets.SURGE_TOKEN }} || true
 
     - name: Run Summary
       if: ${{ github.event.pull_request.state != 'closed' }}
