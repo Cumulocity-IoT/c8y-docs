@@ -22,5 +22,9 @@ environment_availability:
     date: '2026-09-03'
   - label: jp.cumulocity.com
     date: '2026-09-03'
+  - label: us.cumulocity.com
+    date: '2026-09-04'
+  - label: cumulocity.com
+    date: '2026-09-04'
 ---
 An "Asset notes" widget added to a dashboard created in an earlier version could fail to load because the dashboard stored it under its legacy AngularJS identifier. The widget is now recognized under that identifier again, so that existing dashboards display the widget and its notes correctly. No manual changes are required.
