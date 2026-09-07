@@ -22,6 +22,10 @@ environment_availability:
     date: '2026-09-04'
   - label: jp.cumulocity.com
     date: '2026-09-04'
+  - label: us.cumulocity.com
+    date: '2026-09-07'
+  - label: cumulocity.com
+    date: '2026-09-07'
 ---
 The Asset API previously allowed custom fragments in the source of a
 linked series, which was inconsistent with the documentation and OpenAPI

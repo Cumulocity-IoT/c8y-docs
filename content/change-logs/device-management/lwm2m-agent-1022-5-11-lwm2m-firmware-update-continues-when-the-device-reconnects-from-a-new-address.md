@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-09-07'
 title: LWM2M firmware update continues when the device reconnects from a new address
 product_area: Device management & connectivity
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-6481
 version: 1022.5.11
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-09-07'
 ---
 A device can change its IP address or port in the middle of a firmware update, for example, when the network drops an idle connection and the device reconnects, or when a mobile network assigns it a new port. Whenever that happens, the LWM2M stack cancels the request that is still on its way to the old address. The agent treated such a cancelled request like an error reported by the device and failed the firmware update, even though the device was reachable again at its new address and a DTLS connection ID had kept the security context alive. The operation ended with a failure, such as "Unexpected result while querying device firmware update data" and the firmware update had to be started again manually.
 

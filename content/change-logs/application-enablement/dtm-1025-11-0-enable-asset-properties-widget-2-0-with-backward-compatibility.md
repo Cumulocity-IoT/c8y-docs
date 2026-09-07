@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-09-04'
   - label: jp.cumulocity.com
     date: '2026-09-04'
+  - label: us.cumulocity.com
+    date: '2026-09-07'
+  - label: cumulocity.com
+    date: '2026-09-07'
 ---
 Previously, DTM could not fully support replacing the legacy Asset
 Properties 1.0 widget with Asset Properties 2.0 while preserving

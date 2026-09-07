@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-09-04'
   - label: jp.cumulocity.com
     date: '2026-09-04'
+  - label: us.cumulocity.com
+    date: '2026-09-07'
+  - label: cumulocity.com
+    date: '2026-09-07'
 ---
 Previously, retrieving the corresponding asset definitions for a set of
 assets required a separate REST API call after collecting all `type`s of
