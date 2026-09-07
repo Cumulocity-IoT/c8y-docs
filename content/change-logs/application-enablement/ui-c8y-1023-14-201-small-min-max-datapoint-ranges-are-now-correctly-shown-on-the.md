@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-09-01
 title: Small min-max data point ranges now display correctly on chart Y-axis
 product_area: Application enablement & solutions
 change_type:

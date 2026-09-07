@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-09-01
 title: Web SDK removes double slashes from documentation links
 product_area: Application enablement & solutions
 change_type:
