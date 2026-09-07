@@ -1,6 +1,6 @@
 ---
 date: 
-title: Fix problems with the identification of Core MQTT topics
+title: Fixed issues with the identification of Core MQTT topics
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
