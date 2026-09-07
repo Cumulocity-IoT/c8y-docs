@@ -31,7 +31,7 @@ The Edge operator is available as a Helm chart and a container image in the [Edg
     ```
 1. **Install the operator:**
     ```shell
-    helm upgrade --install cumulocity-iot-edge-operator oci://registry.c8y.io/edge/helm-charts/cumulocity-iot-edge-operator \
+    helm install cumulocity-iot-edge-operator oci://registry.c8y.io/edge/helm-charts/cumulocity-iot-edge-operator \
       --version="{{< c8y-edge-current-version >}}" \
       --namespace c8yedge \
       --create-namespace \
@@ -95,7 +95,7 @@ Once the artifacts are available in your private registry, install the operator 
     ```
 1. **Install the operator:**
     ```shell
-    helm upgrade --install cumulocity-iot-edge-operator oci://<PRIVATE-REGISTRY-HOST>/<REPOSITORY-ROOT-PATH>/edge/helm-charts/cumulocity-iot-edge-operator \
+    helm install cumulocity-iot-edge-operator oci://<PRIVATE-REGISTRY-HOST>/<REPOSITORY-ROOT-PATH>/edge/helm-charts/cumulocity-iot-edge-operator \
       --version="{{< c8y-edge-current-version >}}.0.x" \
       --namespace c8yedge \
       --create-namespace \
