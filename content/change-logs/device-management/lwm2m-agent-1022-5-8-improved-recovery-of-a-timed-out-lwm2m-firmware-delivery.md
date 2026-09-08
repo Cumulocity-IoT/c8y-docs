@@ -22,6 +22,8 @@ environment_availability:
     date: '2026-09-04'
   - label: us.cumulocity.com
     date: '2026-09-07'
+  - label: cumulocity.com
+    date: '2026-09-08'
 ---
 The LWM2M agent gives each firmware delivery a limited amount of time to complete. When that time expired, the agent restarted the update process and asked the device for its firmware update state, which the process accepts only as **Idle**. A device that was still working on the transfer could not report **Idle**, so the operation failed with the misleading reason "Another firmware update process is still in progress".
 
