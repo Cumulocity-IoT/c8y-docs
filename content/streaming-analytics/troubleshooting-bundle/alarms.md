@@ -36,6 +36,7 @@ The following is a list of the alarms. The information further down below explai
 - [An EPL file throws an uncaught exception](#apama_ctrl_error)
 - [An EPL app is running in an infinite or long-running loop](#apama_ctrl_warn)
 - [EPL app restore timeout on restart of Apama-ctrl](#eplapp_restore_timeout)
+- [EPL app restore taking longer than usual on restart of Apama-ctrl](#eplapps_restore_slow)
 - [Multiple extensions with the same name](#extension_error)
 - [Smart rule configuration failed](#smart-rule-configuration-failed)
 - [Smart rule restore failed](#smart-rule-restore-failed)
@@ -270,6 +271,43 @@ If this continues to fail, the Apama-ctrl microservice will enter safe mode, dis
 The following information is only included in the alarm text if the Apama-ctrl microservice detects that the timeout is due to some EPL apps:
 "The following EPL apps may be the cause of this: &lt;comma-separated list of app names&gt;.".
 If no such apps are detected, this information is omitted from the alarm text.
+
+
+#### EPL app restore taking longer than usual on restart of Apama-ctrl {#eplapps_restore_slow}
+
+When the Apama-ctrl microservice restarts, it becomes available for requests before it has finished restoring your EPL apps.
+This keeps the microservice responsive, but it means that for a period after a restart the microservice is running while your
+EPL apps are not yet processing events. Restoring normally completes quickly. If it is still in progress after the time limit
+specified by the `recovery.slowRestoreAlarmSecs` tenant option (in the `streaminganalytics` category) or a default of 600 seconds,
+the Apama-ctrl microservice raises an alarm so that you know why your EPL apps are not yet running.
+
+- Alarm type: `eplapps_restore_slow`
+- Alarm text: Restoring EPL apps is still in progress after &lt;number&gt; seconds. The microservice is available but customer EPL apps are not yet running. This is not treated as a failure and no restart will be triggered; restoring will continue.
+- Alarm severity: MAJOR
+
+This alarm reports slowness only. Unlike [EPL app restore timeout on restart of Apama-ctrl](#eplapp_restore_timeout), which applies
+to a single EPL app and restarts the microservice, this alarm covers the restore as a whole, does not restart the microservice and
+does not disable any EPL apps. Restoring continues in the background, and the alarm is cleared automatically once it has finished,
+so you do not need to clear this alarm yourself.
+
+To check whether restoring is still in progress, make a REST request to */service/cep/diagnostics/apamaCtrlStatus* and look at the
+`epl_restore_state` field of the response:
+
+| `epl_restore_state` | Description                                                                       |
+| ------------------- | --------------------------------------------------------------------------------- |
+| `restoring`         | Restoring is still in progress and your EPL apps are not yet running.             |
+| `complete`          | Restoring has finished and your EPL apps are running.                             |
+| `failed`            | Restoring failed. The microservice is shutting down and will restart.             |
+
+While restoring is in progress, requests to */service/cep/eplfiles* do not wait for it to finish. They return an
+HTTP `503 SERVICE UNAVAILABLE` code together with a `Retry-After` header, so that you can retry the request shortly afterwards
+rather than treating it as a failure.
+
+If you see this alarm repeatedly, the most likely causes are a large number of EPL apps to restore, EPL apps that are slow to
+inject, or slow responses from the {{< product-c8y-iot >}} tenant while the apps are being read from the inventory. To diagnose it,
+check the log files of the Apama-ctrl microservice, which record the progress of restoring each EPL app.
+See [Log files of the Apama-ctrl microservice](#logfiles). If restoring legitimately takes longer than the limit for your
+deployment, you can raise the value of the `recovery.slowRestoreAlarmSecs` tenant option.
 
 
 #### Multiple extensions with the same name {#extension_error}
