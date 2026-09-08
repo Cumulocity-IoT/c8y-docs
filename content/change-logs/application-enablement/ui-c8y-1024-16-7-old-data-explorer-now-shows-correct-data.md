@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Old data explorer now shows correct data.
+title: Old data explorer no longer renders blank data
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,19 +14,4 @@ build_artifact:
 ticket: MTM-67500
 version: 1024.16.7
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-67500] Old data explorer now shows correct data.
-](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12776)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67500]:
-https://cumulocity.atlassian.net/browse/MTM-67500?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+Resolved an issue in the old Data Explorer where charts rendered blank despite valid data being available. Graphs now accurately display both historical and recent data
