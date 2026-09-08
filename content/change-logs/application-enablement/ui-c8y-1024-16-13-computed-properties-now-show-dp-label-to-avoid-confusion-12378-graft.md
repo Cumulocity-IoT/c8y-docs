@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Computed properties now show dp label to avoid confusion. (#12378) [GRAFT][release/cd] (#13023)
+title: Computed properties now display data point labels
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-66737
 version: 1024.16.13
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-66737] Computed properties now show dp label to
-avoid confusion.
-(#12378)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12378)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66737]:
-https://cumulocity.atlassian.net/browse/MTM-66737?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+Resolved an issue in the Asset Table widget where multiple computed properties of the same type generated identical column labels both in the widget configuration and in the app view. Labels are now automatically populated using the associated data point name, allowing users to easily distinguish between multiple instances (such as last measurements or alarm/event counts).
