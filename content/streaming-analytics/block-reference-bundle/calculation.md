@@ -1593,6 +1593,12 @@ In addition, the <tt>console</tt> object has <tt>log</tt>, <tt>warn</tt>, <tt>er
 <p></p>
 Logging is configured by the block's log level parameter and the model's shared logger category threshold; the effective level is whichever is stricter. By default, the block log level is set to <tt>WARN</tt>; only <tt>console.warn</tt> and <tt>console.error</tt> are written; <tt>console.log</tt>, <tt>console.info</tt> and <tt>console.debug</tt> are not. Raise the log level to <tt>INFO</tt> or <tt>DEBUG</tt> to see more, or set it to <tt>OFF</tt> to silence everything.
 <p></p>
+If the block's label parameter is set, messages are tagged with it so that the output of several Smart Function blocks in the same model can be told apart. For example, a block labelled "temperature check" logs:
+<p></p>
+<pre>INFO ... [t510007|model=87104] &lt;temperature check&gt; Processing inputs</pre>
+<p></p>
+Messages from a block with no label carry only the tenant and model prefix.
+<p></p>
 Arguments are formatted and separated by spaces. String interpolation can be done with Javascript interpolation syntax. For example:
 <p></p>
 <pre> console.log("Server started");<br/> // -> Server started<br/> <br/> console.log("User", "logged", "in");<br/> // -> User logged in<br/> <br/> console.log("User login", { userId: 123, role: "admin" });<br/> // -> User login { userId: 123, role: 'admin' }<br/> <br/> const userId = 123;<br/> const role = "admin";<br/> console.log(`User ${userId} logged in as ${role}`);<br/> // -> User 123 logged in as admin<br/> </pre>
@@ -1625,6 +1631,7 @@ For example:
 <tr>
 <th scope="row">Label</th>
 <td><span>An arbitrary label for the block instance.</span>
+<p>If set, it also tags this block's <tt>console.*</tt> messages in the microservice log.</p>
 </td>
 <td><span>string</span>
 </td>
