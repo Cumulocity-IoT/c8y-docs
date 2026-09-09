@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67500
 version: 1024.16.7
 ---
-Resolved an issue in the old Data Explorer where charts rendered blank despite valid data being available. Graphs now accurately display both historical and recent data
+In the old data explorer, charts rendered blank despite valid available data. This issue has been resolved. Graphs now accurately display both historical and recent data.
