@@ -316,6 +316,22 @@ This means that a device will not be automatically disconnected even if it:
 In these cases, the device will remain connected, but invalid messages will not be processed and no messages will be received from invalid topics.
 A device can subscribe to the `s/e` topic to monitor any error messages sent by the Core MQTT implementation in these cases.
 
+#### MQTT version 5.0 behavior {#core-mqtt-mqtt-5-behavior}
+
+Devices may connect to the MQTT Service using either MQTT version 3.1.1 or MQTT version 5.0, and publish or subscribe to [Core MQTT topics](#core-mqtt-topics) in both cases.
+
+Handling of Core MQTT topics is **identical** for both protocol versions. None of the additional [MQTT version 5.0 features](#mqtt-50-features) described elsewhere in this section are honored on Core MQTT topics, namely:
+
+* MQTT version 5.0 reason codes on `PUBACK`, `SUBACK` or `DISCONNECT` packets, described in [Error reporting](#mqtt-error-reporting), are not used to report problems related to processing on Core MQTT topics. Instead, the existing mechanism is applied:
+  * On the `s/e` topic for SmartREST.
+  * On the `error` topic for [JSON via MQTT](/smartrest/json-via-mqtt/#error-handling).
+* Client disconnect behavior is identical for both protocol versions. Regardless of whether a client is using MQTT version 3.1.1 or MQTT version 5.0, the disconnect behavior on Core MQTT topics is exactly the same, for example when sending an invalid message or in the case of a server error.
+* MQTT version 5.0 publish properties — _Content Type_, _Response Topic_, _Correlation Data_ and _User Property_ — are not used, set or forwarded on Core MQTT topics, even though they are [supported](#mqtt-50-publish-features) for generic MQTT topics.
+
+{{< c8y-admon-caution >}}
+Devices using MQTT version 5.0 that are using Core MQTT topics must not rely on any MQTT version 5.0 feature being honored on those topics.
+{{< /c8y-admon-caution >}}
+
 #### Connection monitoring {#core-mqtt-connection-monitoring}
 
 [Connection monitoring](/device-management-application/monitoring-and-controlling-devices/#connection-monitoring) for "send connection" traffic _from_ the device will work as expected.
