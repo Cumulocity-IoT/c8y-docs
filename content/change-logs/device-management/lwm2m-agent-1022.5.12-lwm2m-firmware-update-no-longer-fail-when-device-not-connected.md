@@ -1,6 +1,8 @@
 ---
 date: '2026-09-09'
-title: LWM2M device's firmware update operation no longer fails when the device is not connected
+title: >-
+  LWM2M device's firmware update operation no longer fails when the device is
+  not connected
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -13,6 +15,9 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-6527
 version: 1022.5.12
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-09-09'
 ---
 An issue has been fixed in the LWM2M service where a firmware update could fail if the device went offline during the update process. This affected two situations:
 

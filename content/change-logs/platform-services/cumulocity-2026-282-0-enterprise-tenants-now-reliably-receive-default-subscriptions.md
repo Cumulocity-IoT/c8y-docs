@@ -18,6 +18,10 @@ version: 2026.282.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-09-03'
+  - label: apj.cumulocity.com
+    date: '2026-09-09'
+  - label: jp.cumulocity.com
+    date: '2026-09-09'
 ---
 Previously, an {{< enterprise-tenant >}} that had customized its default or on-update application and microservice subscription options could be skipped when {{< company-c8y >}} rolled out new default subscriptions, since that option was also consulted for the tenant itself rather than only for its subtenants.
 
