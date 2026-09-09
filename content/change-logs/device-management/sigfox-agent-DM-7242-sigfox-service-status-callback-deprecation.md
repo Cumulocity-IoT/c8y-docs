@@ -37,11 +37,11 @@ Sigfox provides no replacement callback that carries battery or temperature valu
 
 **Change**
 
-The Sigfox agent stops registering the Service Status callback for new device types, because the Sigfox backend rejects it from September 2026. When Sigfox rejects the Service Status callback during device registration, the Sigfox agent no longer raises a CRITICAL `c8y_ProviderCallbackAlarm_<deviceTypeId>` alarm and logs the rejection instead. All other callbacks (uplink data, service acknowledge, error, and advanced data) are not affected and continue to be registered and monitored as before.
+The Sigfox agent continues to request the Service Status callback for every new device type, so the callback is still created for as long as the Sigfox backend accepts it. Once the Sigfox backend rejects the request, the Sigfox agent no longer raises a CRITICAL `c8y_ProviderCallbackAlarm_<deviceTypeId>` alarm for this specific callback and logs the rejection instead. Device type registration completes without an alarm as long as all other callbacks are created successfully. All other callbacks (uplink data, service acknowledge, error, and advanced data) are not affected and continue to be created and monitored as before.
 
 **Consequence**
 
-- Sigfox devices that are registered with a **new device type** from September 2026 do not receive `c8y_BatteryMeasurement` and `c8y_TemperatureMeasurement` measurements from Sigfox status messages.
+- Sigfox devices that are registered with a **new device type** after the Sigfox backend starts rejecting the Service Status callback (September 2026) do not receive `c8y_BatteryMeasurement` and `c8y_TemperatureMeasurement` measurements from Sigfox status messages.
 - Sigfox devices that belong to a device type with an **existing** Service Status callback continue to receive these measurements until Sigfox discontinues the service in April 2027.
 - From April 2027, no Sigfox device receives battery or temperature measurements from Sigfox status messages anymore.
 - Anything that depends on these two measurements stops updating. This includes dashboards and data point widgets, smart rules and alarms on battery level or temperature, data exports, and integrations that query these measurement types through the Measurement API.

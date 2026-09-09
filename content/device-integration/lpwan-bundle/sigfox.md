@@ -332,7 +332,7 @@ On receiving an uplink message, the {{< product-c8y-iot >}} platform creates the
 {{< c8y-admon-important >}}
 Sigfox is discontinuing its Service Status callback service. This callback delivered the Sigfox out-of-band (OOB) status messages that the Sigfox agent turned into the `c8y_BatteryMeasurement` (battery voltage) and `c8y_TemperatureMeasurement` (device temperature) measurements.
 
-- From September 2026, the Sigfox backend no longer accepts new Service Status callbacks. Devices registered with a new device type do not receive these two measurements.
+- From September 2026, the Sigfox backend no longer accepts new Service Status callbacks. The Sigfox agent still requests the callback for every new device type, but Sigfox rejects it. Devices registered with a new device type therefore do not receive these two measurements.
 - From April 2027, Sigfox discontinues the service entirely. No Sigfox device receives these two measurements anymore.
 
 This is a change on the Sigfox side and cannot be compensated by {{< product-c8y-iot >}}, because no other Sigfox callback carries battery or temperature values. If you rely on these measurements, for example in dashboards, smart rules, or integrations, transmit battery voltage and temperature in the regular application payload of your device, as recommended by Sigfox, and map them to measurements in your [device protocol](#sigfox-creating-device-protocols). Use the same fragment and series names to keep existing dashboards and rules working.
@@ -422,7 +422,7 @@ The status is updated asynchronously which means that sometimes you might have t
 This alarm is created when one or more callback creation requests have failed in the Sigfox platform. You can view the alarm either in the **Alarms** page or in the **Home** page.
 
 {{< c8y-admon-info >}}
-The Sigfox backend rejects the creation of Service Status callbacks (type `SERVICE_STATUS`) since September 2026, because Sigfox is discontinuing this callback service. The Sigfox agent does not raise this alarm for a rejected Service Status callback. The rejection is only written to the microservice log. Do not create the Service Status callback manually. See [Uplink message processing](#sigfox-uplink-message-processing) for the impact on battery and temperature measurements.
+The Sigfox backend rejects the creation of Service Status callbacks (type `SERVICE_STATUS`) since September 2026, because Sigfox is discontinuing this callback service. The Sigfox agent still requests this callback during device type registration, but it does not raise this alarm when Sigfox rejects it. The rejection is only written to the microservice log. Do not create the Service Status callback manually. See [Uplink message processing](#sigfox-uplink-message-processing) for the impact on battery and temperature measurements.
 {{< /c8y-admon-info >}}
 
 In order to fix this issue, navigate to the Sigfox platform web interface and check the device type with the id mentioned in the alarm.
