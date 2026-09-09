@@ -1,0 +1,32 @@
+---
+date: ""
+title: [Fix] Fall back to the dashboard context device for legacy Asset Notes widgets. [GRAFT][release/y2026]
+product_area: Application enablement & solutions
+change_type:
+  - value: change-VSkj2iV9m
+    label: Fix
+component:
+  - value: component-YbYJ3gLU_
+    label: Web SDK
+build_artifact:
+  - value: tc-pjJiURv9Y
+    label: ui-c8y
+ticket: DM-7301
+version: 1023.14.214
+---
+# Backport
+
+This will backport the following commits from `develop` to
+`release/y2026`:
+- [fix(Web SDK): [DM-7301] [Fix] Fall back to the dashboard context
+device for legacy Asset Notes widgets
+(#13074)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13074)
+
+<!--- Backport version: 12.0.4 -->
+
+### Questions ?
+Please refer to the [Backport tool
+documentation](https://github.com/sorenlouv/backport)
+
+[DM-7301]:
+https://cumulocity.atlassian.net/browse/DM-7301?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
