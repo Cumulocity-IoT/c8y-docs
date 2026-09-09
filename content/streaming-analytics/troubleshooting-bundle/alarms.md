@@ -303,11 +303,19 @@ While restoring is in progress, requests to */service/cep/eplfiles* do not wait 
 HTTP `503 SERVICE UNAVAILABLE` code together with a `Retry-After` header, so that you can retry the request shortly afterwards
 rather than treating it as a failure.
 
-If you see this alarm repeatedly, the most likely causes are a large number of EPL apps to restore, EPL apps that are slow to
-inject, or slow responses from the {{< product-c8y-iot >}} tenant while the apps are being read from the inventory. To diagnose it,
-check the log files of the Apama-ctrl microservice, which record the progress of restoring each EPL app.
-See [Log files of the Apama-ctrl microservice](#logfiles). If restoring legitimately takes longer than the limit for your
-deployment, you can raise the value of the `recovery.slowRestoreAlarmSecs` tenant option.
+If you see this alarm repeatedly, the most likely cause is an EPL app that performs an expensive operation when it starts up.
+Restoring an EPL app injects it into the correlator and runs its `onload()` action, so work started there competes with the rest
+of the restore. Typical examples are looking up all objects in the inventory, or making an unbounded query for measurements or
+events. Restrict such queries to the data that the app actually needs, for example by applying a filter or a bounded time range.
+Less commonly, restoring can be slow simply because there are a large number of EPL apps to restore, or because the
+{{< product-c8y-iot >}} tenant is responding slowly while the apps are read from the inventory.
+
+To diagnose it, check the log files of the Apama-ctrl microservice, which record the progress of restoring each EPL app.
+See [Log files of the Apama-ctrl microservice](#logfiles). An EPL app that occupies the correlator for a long time also raises
+an alarm of its own, which names the app concerned; see
+[An EPL app is running in an infinite or long-running loop](#apama_ctrl_warn).
+If restoring legitimately takes longer than the limit for your deployment, you can raise the value of the
+`recovery.slowRestoreAlarmSecs` tenant option.
 
 
 #### Multiple extensions with the same name {#extension_error}
