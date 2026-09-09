@@ -18,6 +18,6 @@ Fixed an issue in the LWM2M service where a firmware update could fail if the de
 
   * Checking the update result. When the device reported the firmware update as finished but did not answer the follow-up read of the update result, the LWM2M Service tried to evaluate a result that was never received. The service now records an event stating that the device is not connected, keeps the operation open and resumes the check when the device connects again.
   
-  * Resetting the firmware state machine. When the device did not answer the read of its supported delivery method, the agent guessed a method and attempted a reset write that could not reach the device either. The agent now skips the reset and retries it when the device connects again.
+  * Resetting the firmware state machine. When the device did not answer the read of its supported delivery method, the LWM2M service guessed a method and attempted a reset write that could not reach the device either. The LWM2M service now skips the reset and retries it when the device connects again.
 
 In both cases the firmware update operation is no longer marked as failed and resumes after the device reconnects.
