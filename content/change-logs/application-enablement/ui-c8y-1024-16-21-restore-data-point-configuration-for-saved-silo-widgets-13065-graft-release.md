@@ -1,6 +1,6 @@
 ---
 date: ""
-title: restore data point configuration for saved silo widgets (#13065) [GRAFT][release/cd] (#13070)
+title: Data point selection restored for existing Silo widgets
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-67752
 version: 1024.16.21
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-67752] restore data point configuration for saved
-silo widgets
-(#13065)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13065)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67752]:
-https://cumulocity.atlassian.net/browse/MTM-67752?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dawid Janusz <96060763+DawidSAG@users.noreply.github.com>
+The "Data point selection" section was missing from the configuration of existing "Silo" widgets, so their data point, value ranges and target could not be changed. This issue has been resolved and the section is available again.
