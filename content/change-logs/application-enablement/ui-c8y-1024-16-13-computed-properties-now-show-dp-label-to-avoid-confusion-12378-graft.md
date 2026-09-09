@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66737
 version: 1024.16.13
 ---
-Resolved an issue in the Asset Table widget where multiple computed properties of the same type generated identical column labels both in the widget configuration and in the app view. Labels are now automatically populated using the associated data point name, allowing users to easily distinguish between multiple instances (such as last measurements or alarm/event counts).
+In the "Asset table" widget, multiple computed properties of the same type generated identical column labels, both in the widget configuration and in the application view. This issue has been resolved. Labels are now automatically populated using the associated data point name, allowing users to easily distinguish between multiple instances (such as last measurements or alarm/event counts).
