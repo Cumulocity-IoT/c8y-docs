@@ -1,6 +1,6 @@
 ---
 date: ""
-title: event list widget accepts epoch dates and keeps dateless widgets unfiltered (#12989)
+title: Event list widgets without a date filter show all events again
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67664
 version: 1023.14.212
 ---
-event list widget accepts epoch dates and keeps dateless widgets unfiltered (#12989)
+"Event list" widgets saved without a date configuration were migrated to a "Last hour" filter, so dashboards from earlier versions showed almost no events. They are now left unfiltered again, and custom ranges starting on 1 January 1970 are no longer rejected. Widgets already re-saved with "Last hour" keep it until you reconfigure them.
