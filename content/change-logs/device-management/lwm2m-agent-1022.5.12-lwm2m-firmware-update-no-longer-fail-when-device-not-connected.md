@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-09-09'
 title: LWM2M device's firmware update operation no longer fails when the device is not connected
 product_area: Device management & connectivity
 change_type:
