@@ -14,7 +14,7 @@ build_artifact:
 ticket: DM-6527
 version: 1022.5.12
 ---
-Fixed an issue in the LWM2M service where a firmware update could fail if the device went offline during the update process. This affected two situations:
+An issue has been fixed in the LWM2M service where a firmware update could fail if the device went offline during the update process. This affected two situations:
 
   * Checking the update result. When the device reported the firmware update as finished but did not answer the follow-up read of the update result, the LWM2M Service tried to evaluate a result that was never received. The service now records an event stating that the device is not connected, keeps the operation open and resumes the check when the device connects again.
   
