@@ -42,7 +42,7 @@ ROLES & PERMISSIONS:
 
 {{< c8y-admon-related >}}
 - Refer to the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) to learn how to develop your own widgets and add them to your {{< product-c8y-iot >}} account.
-- [Web SDK > Application configuration](/web/application-configuration/) for further information on how to customize the {{< product-c8y-iot >}} environment.
+- [{{< product-c8y-iot >}} Codex](https://cumulocity.com/codex/) for further information on how to customize the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
 ### To create a dashboard {#to-create-a-dashboard}
@@ -73,7 +73,7 @@ To create your individualized dashboard, execute the following steps:
  - **Grid**: The default one, which lets each widget snap into a fixed grid.
  - **Responsive**: Lets you define the responsive look of the dashboard. You can define the number of columns, select that widgets can be freely positioned (not snapping to the top), or fit the rows into the viewport to create full height.
 
-7. Under the **Translate if possible** option, you can select to have the dashboard and/or widget titles translated. For this option to work, the titles must be written in English and the corresponding translations must be available in the loaded translation resources, for example in the standard application translations, or in the custom ones provided via the [localization feature](/standard-tenant/changing-settings/#localization) or in the [application options](/web/application-configuration/#languages-customization).
+7. Under the **Translate if possible** option, you can select to have the dashboard and/or widget titles translated. For this option to work, the titles must be written in English and the corresponding translations must be available in the loaded translation resources, for example in the standard application translations, or in the custom ones provided via the [localization feature](/standard-tenant/changing-settings/#localization) or in the [application options](https://cumulocity.com/codex/advanced-development/services/options-service/overview).
 
 8. All changes are immediately displayed to visualize your selections in the dashboard below the dashboard settings.
 

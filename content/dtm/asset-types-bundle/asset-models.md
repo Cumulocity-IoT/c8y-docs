@@ -281,7 +281,7 @@ Groups are used in {{< product-c8y-iot >}} to organize devices or other groups. 
 
 ##### Characteristics of the group asset definition {#default-group-definition-characteristics}
 - Available by default, it cannot be deleted.
-- Allows updating of label, description, and icon for the definition. This can be restricted by setting the value of the flag **isDefaultGroupEditDisabled** to "true" in the application options. For details, refer to [Application options](/web/application-configuration/#application-options).
+- Allows updating of label, description, and icon for the definition. This can be restricted by setting the value of the flag **isDefaultGroupEditDisabled** to "true" in the application options. For details, refer to [Options service](https://cumulocity.com/codex/advanced-development/services/options-service/overview).
 - Does not support custom asset properties.
 - Since the definition doesn't enforce a hierarchy, it does not require the definition of subassets.
 - The definition can be easily identified by the "(Default)" suffix throughout the Digital Twin Manager application.

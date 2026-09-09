@@ -264,7 +264,7 @@ The HTML widget supports translations via `c8yTranslate`:
 - `${this.c8yTranslate('Text to translate')}`
 - `${this.c8yTranslate('text {{ var }}', { var: value })}`
 
-**Note**: Texts must be written in English and their translations must be available in the standard application translations, or in the custom ones provided via the [localization feature](/standard-tenant/changing-settings/#localization), or in the [application options](/web/application-configuration/#languages-customization).
+**Note**: Texts must be written in English and their translations must be available in the standard application translations, or in the custom ones provided via the [localization feature](/standard-tenant/changing-settings/#localization), or in the [application options](https://cumulocity.com/codex/advanced-development/services/options-service/overview).
 
 **Styling and security considerations**
 
