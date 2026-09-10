@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67754
 version: 1024.16.22
 ---
-On the **Global roles** tab, only the first 100 global roles were listed. On larger tenants with more than 100 roles, additional roles could not be assigned. This issue has been fixed. The list now loads up to 1000 roles on a single page.
+On the **Global roles** tab, only the first 100 global roles were listed for a user. On larger tenants with more than 100 roles, additional roles could not be assigned. This issue has been fixed. The list now loads up to 1000 roles on a single page.
