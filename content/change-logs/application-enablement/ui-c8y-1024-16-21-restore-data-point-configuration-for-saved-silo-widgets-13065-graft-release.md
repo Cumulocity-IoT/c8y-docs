@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67752
 version: 1024.16.21
 ---
-The "Data point selection" section was missing from the configuration of existing "Silo" widgets, so their data point, value ranges and target could not be changed. This issue has been resolved and the section is available again.
+The "Data point selection" section was missing from the configuration of existing "Silo" widgets, so their data points, value ranges, and targets could not be changed. This issue has been resolved and the section is available again.
