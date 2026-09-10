@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-09-10
 title: Asset notes widget now loads correctly on dashboards created in earlier versions
 product_area: Device management & connectivity
 change_type:
