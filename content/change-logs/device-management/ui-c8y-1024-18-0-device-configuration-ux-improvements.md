@@ -14,19 +14,4 @@ build_artifact:
 ticket: DM-6429
 version: 1024.18.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Device Management): [DM-6429] Device configuration UX
-improvements](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12804)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[DM-6429]:
-https://cumulocity.atlassian.net/browse/DM-6429?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Bozhidar Dedov <95280800+bozhidardedov@users.noreply.github.com>
+In the **Configuration** tab in the device details, the layout has been reorganized. The subtabs are now named **From repository** and **Custom**, the configurations reported by the device are listed under **On device**, and the matching repository entries under **Available from repository**. A draggable divider between the two sections allows users to resize them, and the position is remembered. Binary configurations are no longer shown as unreadable text in the preview. In the configuration drawer, the description field has moved next to the name and now grows with its content, and the drawer states that changes are saved to the shared configuration repository.
