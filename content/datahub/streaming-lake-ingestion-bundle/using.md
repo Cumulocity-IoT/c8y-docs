@@ -81,11 +81,11 @@ $ curl -u "admin:$PASS" \
 
 #### Obtaining Iceberg catalog credentials {#obtaining-iceberg-catalog-credentials}
 
-To connect to the {{< product-c8y-iot >}} Iceberg catalog directly — for example, from Apache Spark, Databricks, or a custom application — you need OAuth2 client credentials. As a tenant administrator, you can create and manage named catalog principals using the Manager API.
+To connect to the {{< product-c8y-iot >}} Iceberg catalog directly — for example, from Apache Spark, Databricks, or a custom application — you need OAuth2 client credentials. You can create and manage named catalog principals using the Manager API.
 
 **Prerequisites**
 
-* Your {{< product-c8y-iot >}} user must have the ROLE_TENANT_ADMIN permission.
+* Your {{< product-c8y-iot >}} user must have the ROLE_OFFLOADING_ADMIN or the ROLE_TENANT_ADMIN permission. Every tenant subscribed to Streaming Lake Ingestion has a global role, **OFFLOADING_ADMINISTRATOR**, that carries ROLE_OFFLOADING_ADMIN: assign it to a user in the Administration application under **Accounts** > **Roles**.
 * Your tenant must be subscribed to Streaming Lake Ingestion.
 * Principal names must be strictly alphanumeric — letters and digits only, no dashes or underscores (for example, `spark1` or `dremioqa`).
 
