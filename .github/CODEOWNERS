@@ -25,6 +25,7 @@
 /content/console/ @bbyreddy @tydunne @BeateRixen
 /content/data-broker/ @scmi-c8y @BeateRixen
 /content/datahub/ @cheinz-sag @BeateRixen
+/content/datahub/streaming-lake-ingestion-bundle/ @eickler @jaro-herod @riemenschneider @afri-c8y @flsc-c8y @BeateRixen
 /content/device-certificate-authentication/ @mgrumann @BeateRixen
 /content/device-integration/ @Oezge-Akin @l2p- @eliasweingaertner
 /content/device-integration/mqtt*.md @scmi-c8y @BeateRixen
