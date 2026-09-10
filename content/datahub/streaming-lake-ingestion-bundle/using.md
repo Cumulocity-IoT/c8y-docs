@@ -768,7 +768,7 @@ The following limits apply to data processed by Streaming Lake Ingestion. If any
 * Arrays with inconsistent types in the array fields.
 * Numbers requiring larger precision than the maximum Iceberg `decimal` precision of (38, 9).
 * More than 1,000 fragments per data type (inventory, alarms, …; corresponding to tables in a namespace).
-* More than 1,000 total leaf properties per fragment (corresponding to leaf columns in an Iceberg table; across all data for the same fragment including columns generated as part of conflict resolution and base columns like type, source, time etc  ).
+* More than 1,000 total leaf properties per fragment (corresponding to leaf columns in an Iceberg table; across all data for the same fragment including columns generated as part of conflict resolution and base columns like type, source, and time).
 
 **Structure limits**
 
