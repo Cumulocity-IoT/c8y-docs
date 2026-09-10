@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67381
 version: 1024.16.18
 ---
-Users whose measurement read permission came from an inventory role restricted to specific fragment types saw data in the chart, but "Generate export" failed with a permission error. The export now succeeds, and if a device has both readable and unreadable data points, the readable ones are exported.
+Users whose measurement READ permission came from an inventory role restricted to specific fragment types could see data in the data explorer, but "Generate export" failed with a permission error. The export now succeeds, and if a device has both readable and unreadable data points, the readable ones are exported.
