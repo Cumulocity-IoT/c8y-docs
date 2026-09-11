@@ -8,6 +8,10 @@ helpcontent:
   content: "Availability shows the availability across all devices for the last 24 hours, last 7 days and last 30 days. The availability is based on raised and cleared alarms and shown in percentage."
 ---
 
+{{< c8y-admon-info >}}
+The **Availability** tab on device detail pages and the **Devices > Availability** page are deprecated and planned for removal before the y2028 release. See the [deprecation announcement](/change-logs/#ui-c8y-DM-7021-deprecate-availability-donut-charts) for details.
+{{< /c8y-admon-info >}}
+
 {{< product-c8y-iot >}} distinguishes between connection monitoring and availability. Connection monitoring, as described in the previous section, only indicates if the device is communicating with {{< product-c8y-iot >}}, it does not automatically indicate if it is functional or not.
 
 Availability indicates if a device is in service. For example, a vending machine is in service if it is ready to sell goods. A vending machine can sell goods using cash money without a connection to {{< product-c8y-iot >}}. From the perspective of a merchant, it is in service. Similar, if you switch off the power on a gateway, the devices behind the gateway can still continue to work.

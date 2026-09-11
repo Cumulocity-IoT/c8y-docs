@@ -31,7 +31,9 @@ To achieve the service-level objective, you must provision an object store in th
 * Backup is enabled ([Bucket versioning](https://docs.aws.amazon.com/AmazonS3/latest/userguide/manage-versioning-examples.html) on AWS, [Soft delete](https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-enable?tabs=azure-portal) on Azure).
 * Only Streaming Lake Ingestion has write access to the object store.
 
-Streaming Lake Ingestion optimizes the storage allocation and may periodically delete unused files to reclaim storage space. {{< company-c8y >}} is not responsible for files written outside of Streaming Lake Ingestion.
+Streaming Lake Ingestion optimizes the storage allocation and may periodically delete unused files to reclaim storage space. {{< company-c8y >}} is not responsible for files written outside of Streaming Lake Ingestion into the storage space.
+
+{{< product-c8y-iot >}} ensures in-transit durability for messages successfully acknowledged by the ingestion pipeline until they are delivered to your target object store. Once data is written to your object store, data durability at rest is governed by your cloud provider and bucket configuration.
 
 #### Schema limits
 
@@ -64,7 +66,9 @@ The following limitations and constraints apply to the Service:
 * **Data model performance**: The Service stores data using a standardized tabular schema optimized for write performance and a broad range of analytical use cases. This schema is not optimally performant for all query patterns. For applications requiring maximum query performance, you must implement post-processing to create optimized data models (for example, "gold-layer" tables) or leverage query acceleration features within the query engine (for example, "reflections").
 * **Cost profile variations**: The Service balances data timeliness against cost-efficiency of the underlying storage operations (for example, Amazon S3). The internal mechanisms that manage this trade-off (for example, data batching frequency) are part of the Service's evolving software implementation. As we update and optimize the Service over time, the hyperscaler cost profile of your usage varies. For example, a future update designed to improve query performance can result in a different ratio of API requests to data volume than a previous version.
 * **Storage reclamation delay**: Apache Iceberg retains historical data versions and deleted files for a period of time to ensure data integrity. The Service permanently removes these files during periodic, automated cleanup cycles. This intentional delay in file deletion affects your total billed storage, as the system does not reclaim physical storage space in real time.
+* **Individual message tracing**: The Service is engineered as a high-throughput streaming pipeline and does not maintain per-message transaction logs or audit trails. {{< company-c8y >}} does not perform ad-hoc tracing or investigations for individual missing or delayed message claims without client-side logs demonstrating a deterministic, reproducible defect (for example, a valid QoS 1 acknowledgment received at the endpoint without corresponding data arrival in the destination object store).
 * **Per tenant traffic limit**: The Service can currently process a maximum of 1,500 sustained messages per second for a single tenant.
+
 
 ### Service quality
 
@@ -72,11 +76,11 @@ The following limitations and constraints apply to the Service:
 
 The following objectives measure the quality of the Service:
 
-| Service level indicator | Monthly target                               |
-| ----------------------- | -------------------------------------------- |
-| Catalog availability    | ≥ 99.9%                                      |
-| Data freshness          | 95 percentile of sustained load ≤ 10 minutes |
-
+| Service level indicator    | Monthly target                               |
+| -------------------------- | -------------------------------------------- |
+| Catalog availability       | ≥ 99.9%                                      |
+| Data freshness             | 95 percentile of sustained load ≤ 10 minutes |
+| Pipeline buffer durability | Designed for ≥ 99.99999% (in-transit)        |
 
 #### Service-level indicator definitions
 
@@ -86,3 +90,4 @@ The service quality indicators are defined as follows:
 * **Data freshness**: The time between message arrival in the {{< product-c8y-iot >}} platform (post-preparation) and its availability for querying in the data lake, measured over a calendar month.
 * **95th percentile**: 95 percent of the messages arrive within the service level objective.
 * **Sustained load**: The regular and predictable steady-state traffic on the cloud service APIs. Sustained load is the 95 percentile of the previous 30 day requests per second.
+* **Pipeline buffer durability**: The design objective for retaining messages in the platform's streaming buffer after a Quality of Service 1 (QoS 1) ingestion acknowledgment has been issued to the client, up to the point of successful write delivery to the Customer's object store.

@@ -33,6 +33,19 @@ Each input message displays the following properties as chips below the payload 
 
 To edit these properties, click the edit icon <i class="dlt-c8y-icon-edit1 text-primary icon-20"></i> next to the chips. 
 
+#### Editing binary payloads {#editing-binary-payloads}
+
+Set the **Payload type** to a binary format when your device messages contain raw binary data. This opens a hex editor instead of the text editor. The hex editor displays the payload as hexadecimal byte values alongside an ASCII representation, and supports the following:
+
+- **Insert and replace mode** — Toggle between modes using the toolbar switch or by clicking **Insert**.
+  - In **Replace** mode (the default), typing overwrites the byte under the cursor, and typing at or past the last byte appends a new byte. Use Replace mode for fixed-length payload fields, to preserve strict byte offsets.
+  - In **Insert** mode, typing shifts the following bytes to the right. This applies to both typed input and pasted content. Use Insert mode only for variable-length structures, such as type-length-value fields or strings — and remember to adjust any total-length fields and checksums afterward.
+- **Extending the payload** — Click an empty cell past the end of the payload, or start typing while nothing is selected, to append zero-filled bytes automatically, without needing a separate "add byte" action.
+- **Copy and paste** — Copying from the hex panel copies the selection as hex text (for example, `DE AD BE EF`). Copying from the ASCII panel copies the equivalent raw ASCII text instead. When pasting, the clipboard content is parsed according to whichever panel currently has focus.
+- **Find** — Press **Ctrl+F** to search the payload. Use the ASCII/Hex switch in the find widget to choose whether you're searching for a byte sequence or an ASCII text sequence. Overlapping occurrences are all reported as separate matches, for example searching for `AA` within `AAA` returns two matches.
+- **Undo and redo** — Use the standard undo and redo shortcuts to step backward and forward through your edits, up to the last 100 changes.
+- **Upload and download** — Use the toolbar's upload and download options to load a binary file as the payload, or save the current payload to a file.
+
 #### To create additional tests {#creating-additional-tests}
 
 We recommend creating additional tests to check for edge cases such as missing values, out of range values, and other inputs that might require special handling in your rule. To do this, open the tests drop-down, and duplicate the existing test to a new one that describes what it's for. You can also generate tests using the AI assistant. For any edge cases where it's not possible to generate a valid {{< product-c8y-iot >}} object, raise a Javascript exception so that an alarm will be created to notify you about the problem. 

@@ -36,9 +36,21 @@
 
                 {{$rootclass := newScratch}}
                 {{/* grab the link from the first child page  */}}
+                {{ $scratch.Set "url" "" }}
                 {{ range $sub := first 1 $subs}}
                   {{ $scratch.Set "url" $sub.Permalink}}
                 {{end}}
+                {{/* Sections whose children set `build.render: false` expose no child
+                     page to link to - the glossary is one. Fall back to the root
+                     page's own `target`, then to the documentation root, so the item
+                     can never render with an empty href and do nothing when clicked. */}}
+                {{ if not ($scratch.Get "url") }}
+                  {{ with .Params.target }}
+                    {{ $scratch.Set "url" (printf "%s%s" $.Site.BaseURL .) }}
+                  {{ else }}
+                    {{ $scratch.Set "url" $.Site.BaseURL }}
+                  {{ end }}
+                {{ end }}
 
                 {{/* Check the current page to highlight the right root section  */}}
                 {{$rootclass.Set "active" "" }}

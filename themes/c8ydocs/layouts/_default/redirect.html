@@ -18,6 +18,12 @@
       {{ $sub := index $subs 0}}
       {{ $scratch.Set "url" $sub.Permalink}}
     {{ end }}
+    {{/* No section matched, so the refresh URL would be empty and the page would
+         reload itself forever. Use the external link if the page declares one,
+         otherwise send the reader to the documentation root. */}}
+    {{ if not ($scratch.Get "url") }}
+      {{ $scratch.Set "url" (or .Params.external .Site.BaseURL) }}
+    {{ end }}
     <meta http-equiv="refresh" content='0; URL={{ $scratch.Get "url"}}'/>
     <style>
       body{ 
