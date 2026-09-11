@@ -16,3 +16,5 @@ The current preview version includes a number of functional limitations as outli
 * The service does not offload any {{< product-c8y-iot >}}-internal inventory entries, events, measurements, and alarms.
 * Iceberg credential vending is not yet supported. If you use the Iceberg catalog from another application, you have to provide credentials for the object store that you use.
 * Users automatically get read permissions to the Dremio data source assigned. These read permissions cannot be manually revoked.
+* When [using your own data lake](#own-data-lake) on AWS, a bucket encrypted with a customer-managed KMS key is not supported. Use the default encryption that S3 provides.
+* When [using your own data lake](#own-data-lake), the base location cannot be changed after the setup has succeeded.

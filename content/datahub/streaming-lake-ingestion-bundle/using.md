@@ -6,8 +6,11 @@ layout: redirect
 
 Streaming Lake Ingestion is an optional service in {{< product-c8y-iot >}}. To subscribe to the service, contact the [{{< company-c8y >}} support](/additional-resources/contacting-support/). After subscription,
 
+
 * Your current device and asset inventory is downloaded from the operational store into the lake.
 * All new incoming data is stored in the lake.
+
+By default, the data is written into a data lake that {{< company-c8y >}} operates for you. To have it written into object storage of your own instead, see [Using your own data lake](#own-data-lake).
 
 {{< c8y-admon-info >}}
 The download may take a while to complete. For more information, see [Monitoring the data flow](#monitoring).
