@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-hc5Tfixeqqei
     label: mqtt-service
 ticket: MTM-67722
-version: 3000.0.18
+version: 2026.0.18
 ---
 The [MQTT Service](/device-integration/mqtt-service) treats a set of MQTT topic names as "Core MQTT" topics.
 These topics can only be used with Core MQTT protocols and must not be used by "generic MQTT" devices.
