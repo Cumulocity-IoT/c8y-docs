@@ -272,25 +272,17 @@ In particular:
 
 #### Core MQTT topics {#core-mqtt-topics}
 
-The Core MQTT protocols use a specific set of topics defined in the [MQTT quick reference](/smartrest/quick-reference/#topic-format).
+The Core MQTT protocols use a specific set of topic names and topic name prefixes.
 The MQTT Service assumes that all publication and subscription activity on these topics is for Core MQTT devices and routes messages to and from the {{< product-c8y-iot >}} core.
+A device may use both Core MQTT and generic topics, but messages on a given topic will always be routed to _either_ the {{<product-c8y-iot >}} core _or_ to a generic messaging service client, never to both.
 
-The MQTT Service treats any topic name that starts with one of the following **prefixes** as a Core MQTT topic. For example, `s/e`, `s/us`, and `event/events/create` are Core MQTT topics:
+The following topic names are handled as Core MQTT topics:
 
-* `s/`
-* `t/`
-* `q/`
-* `c/`
-* `alarm/alarms/`
-* `event/events/`
-* `measurement/measurements/`
-* `inventory/managedObjects/`
+1. The SmartREST topics documented in the [MQTT quick reference](/smartrest/quick-reference/#topic-format). 
+2. The JSON via MQTT topics documented in [JSON via MQTT](/smartrest/json-via-mqtt/#topic-structure). These are matched as _prefixes_ so any topic name _starting with_ a JSON via MQTT topic name is considered to be a Core MQTT topic. For backwards compatibility, these topic names are also accepted with a leading slash (`/`) character.
+3. The special topics `error` and `devicecontrol/notifications`. These are matched _exactly_, so names such as `errorTopic` or `/error` are _not_ considered to be Core MQTT topics.
 
-In addition, these specific topic names are Core MQTT topics.
-These topic names are matched exactly, so `error` is a Core MQTT topic but `errortopic` is not:
-
-* `error`
-* `devicecontrol/notifications`
+We strongly recommend that generic MQTT devices avoid using any topic names that could be confused with Core MQTT topics.
 
 #### Connect-time behaviour {#core-mqtt-connections}
 

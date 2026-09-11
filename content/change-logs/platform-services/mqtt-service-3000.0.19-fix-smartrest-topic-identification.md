@@ -25,4 +25,4 @@ In addition, some Core MQTT reserved topic names were incorrectly treated as pre
 For example, the topic name `errortopic` was treated as a Core MQTT topic because it begins with the reserved topic name `error`.
 
 Both of these issues have now been corrected.
-The documentation has been updated to clarify which topic names are matched as prefixes and which as complete topic names.
+The documentation has been updated to clarify which topic names are considered to be Core MQTT topics.
