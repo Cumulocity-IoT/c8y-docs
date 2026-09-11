@@ -14,10 +14,6 @@ build_artifact:
 ticket: DM-7013
 version: 2026.313.0
 ---
-A bulk operation is carried out by a single node of the platform, which keeps the plan for the remaining devices in memory. When a bulk operation was scheduled to start at a future time and that node restarted before the start time was reached, the plan was lost. Nothing restored it, and the bulk operation was only picked up again by the general recovery mechanism, which by design takes effect after the planned start time has already passed. In the worst case, a bulk operation started up to 13 hours later than the time it was scheduled for. This was most likely to happen when the platform was upgraded between the moment a bulk operation was created and the moment it was due to start.
+A bulk operation scheduled to start at a future time could start significantly later than scheduled if the platform was restarted before its start time was reached, for example during a platform upgrade. This issue is now fixed, and scheduled bulk operations start at the time they were scheduled for.
 
-Scheduled bulk operations are now restored when a node restarts, and they start at the time they were scheduled for. This also covers the case where the node that was carrying out the bulk operation is replaced by a different one, which is what happens during a rolling platform upgrade.
-
-A bulk operation whose node stops while its device operations are still being created is now also taken over within minutes, instead of waiting for the abandonment timeout to elapse.
-
-Each device still receives exactly one operation per bulk operation, and existing installations require no configuration changes.
+Failover handling has also been improved for bulk operations that are interrupted while they are being carried out, so that their execution resumes noticeably faster.
