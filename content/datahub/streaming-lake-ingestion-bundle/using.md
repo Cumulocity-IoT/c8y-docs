@@ -760,22 +760,23 @@ The following schema is used:
 
 ##### Limits of Streaming Lake Ingestion {#limits-of-streaming-lake-ingestion}
 
-The following data is moved to the `trash` table.
+The following limits apply to data processed by Streaming Lake Ingestion. If any part of the processed data exceeds a limit, that part is moved to the `trash` table.
 
-**Type limits**
+**Schema limits**
 
 * Multidimensional arrays. (Note that arrays holding nested `struct` types are permitted.)
 * Arrays with inconsistent types in the array fields.
 * Numbers requiring larger precision than the maximum Iceberg `decimal` precision of (38, 9).
+* More than 1,000 fragments per data type (inventory, alarms, …; corresponding to tables in a namespace).
+* More than 1,000 total leaf properties per fragment (corresponding to leaf columns in an Iceberg table; across all data for the same fragment including columns generated as part of conflict resolution and base columns like type, source, and time).
 
 **Structure limits**
 
 * Strings larger than 32,768 characters.
 * Arrays larger than 128 entries
 * Objects nested deeper than 16 levels.
-* More than 1,000 total leaf properties per fragment.
-* More than 1,000 fragments.
 * Fragment or property names with more than 255 characters.
+
 
 ##### Examples {#binning-examples}
 
