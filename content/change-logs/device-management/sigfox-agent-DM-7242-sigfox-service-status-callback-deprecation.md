@@ -37,7 +37,7 @@ Sigfox provides no replacement callback that carries battery or temperature valu
 
 **Change**
 
-The Sigfox agent continues to request the Service Status callback for every new device type, so the callback is still created as long as the Sigfox backend accepts it. Once the Sigfox backend rejects the request, the Sigfox agent no longer raises a CRITICAL `c8y_ProviderCallbackAlarm_<deviceTypeId>` alarm for this specific callback and logs the rejection instead. Device type registration completes without an alarm as long as all other callbacks are created successfully. All other callbacks (uplink data, service acknowledge, error, and advanced data) are not affected and continue to be created and monitored as before.
+The Sigfox agent continues to request the Service Status callback for every new device type, so the callback is still created as long as the Sigfox backend accepts it. Once the Sigfox backend rejects the request, the Sigfox agent no longer raises a CRITICAL `c8y_ProviderCallbackAlarm_<deviceTypeId>` alarm for this specific callback. Device type registration completes without an alarm as long as all other callbacks are created successfully. All other callbacks (uplink data, service acknowledge, error, and advanced data) are not affected and continue to be created and monitored as before.
 
 **Consequence**
 
