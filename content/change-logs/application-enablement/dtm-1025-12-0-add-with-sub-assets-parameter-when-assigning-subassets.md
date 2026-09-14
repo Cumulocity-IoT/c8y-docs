@@ -14,7 +14,7 @@ build_artifact:
 ticket: "CTM-3204"
 version: "1025.12.0"
 ---
-The sub-asset assignment endpoint now provide a `withSubAssets` query parameter to optimize response handling. Previously, assignment operations always returned the complete sub-asset collection for the parent object, which caused performance issues when parents had large numbers of sub-assets or child devices requiring multiple inventory reads.
+The subasset assignment endpoint now provides a `withSubAssets` query parameter to optimize response handling. Previously, assignment operations always returned the entire subasset collection for the parent object, which caused performance issues when parents had large numbers of subassets or child devices requiring multiple inventory reads.
 
 With this change, you can now control whether the parent's full subasset collection is included in the response by setting the `withSubAssets` parameter. This allows you to skip the costly expansion of the subasset collection when you don't need this information, improving performance for assignments on parents with large subasset hierarchies.
 
