@@ -16,5 +16,9 @@ version: 1024.16.21
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-09-11'
+  - label: apj.cumulocity.com
+    date: '2026-09-14'
+  - label: jp.cumulocity.com
+    date: '2026-09-14'
 ---
 The "Data point selection" section was missing from the configuration of existing "Silo" widgets, so their data points, value ranges, and targets could not be changed. This issue has been resolved and the section is available again.

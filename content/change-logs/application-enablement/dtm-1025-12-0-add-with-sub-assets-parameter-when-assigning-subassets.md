@@ -1,18 +1,21 @@
 ---
-date: ""
-title: "Add withSubAssets parameter to sub-asset assignment endpoint"
-product_area: "Application enablement & solutions"
+date: '2026-09-14'
+title: Add withSubAssets parameter to sub-asset assignment endpoint
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-QHu1GdukP"
-      label: "Feature"
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-3204"
-version: "1025.12.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-3204
+version: 1025.12.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-09-14'
 ---
 The subasset assignment endpoint now provides a `withSubAssets` query parameter to optimize response handling. Previously, assignment operations always returned the entire subasset collection for the parent object, which caused performance issues when parents had large numbers of subassets or child devices requiring multiple inventory reads.
 
