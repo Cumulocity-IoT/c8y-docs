@@ -18,4 +18,4 @@ The sub-asset assignment endpoint now provide a `withSubAssets` query parameter 
 
 With this change, you can now control whether the parent's full subasset collection is included in the response by setting the `withSubAssets` parameter. This allows you to skip the costly expansion of the subasset collection when you don't need this information, improving performance for assignments on parents with large subasset hierarchies.
 
-Existing integrations continue to work without changes, as the parameter is optional and maintains backward-compatible behavior by default. Applications managing assets with extensive sub-asset relationships benefit from faster response times when performing assignments.
+Existing integrations continue to work without changes, as the parameter is optional and maintains backward-compatible behavior by default. Applications managing assets with extensive subasset relationships benefit from faster response times when performing assignments.
