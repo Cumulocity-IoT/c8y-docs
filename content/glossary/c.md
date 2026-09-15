@@ -147,7 +147,7 @@ Core REST APIs (such as [Inventory API](https://cumulocity.com/api/core/#tag/Inv
 ### {{< product-c8y-iot >}} Messaging Service {#messaging-service}
 
 The {{< product-c8y-iot >}} Messaging Service is a publish/subscribe messaging bus that provides decoupled, asynchronous data transfer between {{< product-c8y-iot >}} components, as well as to and from hosted microservices and external client applications.
-Amongst other things, it is used by the [data broker](#data-broker), [Notifications 2.0](https://cumulocity.com/api/core/#tag/About-notifications-2.0), [Streaming Analytics](#streaming-analytics) and the [MQTT Service](#mqtt-service).
+Amongst other things, it is used by the [data broker](#data-broker), [Notifications 2.0](/notifications/), [Streaming Analytics](#streaming-analytics) and the [MQTT Service](#mqtt-service).
 
 
 ### {{< product-c8y-iot >}} MQTT Service {#mqtt-service}
