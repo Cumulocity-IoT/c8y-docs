@@ -16,6 +16,10 @@ version: 1025.12.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-09-14'
+  - label: apj.cumulocity.com
+    date: '2026-09-15'
+  - label: jp.cumulocity.com
+    date: '2026-09-15'
 ---
 The subasset assignment endpoint now provides a `withSubAssets` query parameter to optimize response handling. Previously, assignment operations always returned the entire subasset collection for the parent object, which caused performance issues when parents had large numbers of subassets or child devices requiring multiple inventory reads.
 
