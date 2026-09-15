@@ -11,9 +11,11 @@ The data then lives in your account. You create the access grant, you scope it, 
 Which of the two clouds applies to you is not a choice you make here: it follows the {{< product-c8y-iot >}} environment your tenant runs in. The setup page named below states which cloud it expects, and provisioning refuses storage belonging to the other one.
 
 {{< c8y-admon-info >}}
-You perform the setup yourself, in the **Administration** application under **Settings** > **Data Lake**. You need the tenant administrator role to open that page.
+You perform the setup yourself, in the **Administration** application under **Settings** > **Data Lake**. Your {{< product-c8y-iot >}} user must have the ROLE_OFFLOADING_ADMIN or the ROLE_TENANT_ADMIN permission. The **OFFLOADING_ADMINISTRATOR** global role carries ROLE_OFFLOADING_ADMIN: assign it to a user in the Administration application under **Accounts** > **Roles**.
 
-The page is also where the values specific to your environment appear — the identity your grant has to name, the region your storage has to be in, and, on AWS, a suggested External ID. Those values differ per environment, so this documentation refers to them rather than repeating them.
+The page is also where the values specific to your environment appear — the identity your grant has to name, the region the environment runs in, and, on AWS, a suggested External ID. Those values differ per environment, so this documentation refers to them rather than repeating them.
+
+The page carries the same procedure as a setup guide alongside the fields, with your own values substituted into the commands. This section is the version to read before you start, or away from the browser.
 {{< /c8y-admon-info >}}
 
 ### What you set up, and what it means {#own-lake-what-you-set-up}
@@ -62,8 +64,47 @@ Three properties hold on both clouds:
 |:---|:---|
 |**Cloud Application Administrator** or **Application Administrator** in the storage Entra directory (**Privileged Role Administrator** also works)|To approve the application|
 |**Owner** or **User Access Administrator** on the storage account, or any role that can write role assignments|To assign the two storage roles|
-|An ADLS Gen2 storage account with **hierarchical namespace enabled**, and a container for the data|Iceberg tables are written there. Provisioning refuses a storage account whose hierarchical namespace is disabled, and it cannot be enabled after the account is created|
+|Permission to create a storage account and container in the subscription (**Contributor**, or any role that can write storage accounts)|To create the account as described below|
 |Certainty about which Entra directory that storage account's subscription belongs to|Every step happens in that directory, and its ID is one of the values you enter|
+
+The storage account itself has to meet four requirements, and the first of them cannot be corrected afterwards:
+
+|Requirement|Why|Can it be changed later?|
+|:---|:---|:---|
+|**Hierarchical namespace enabled**|This is what makes the account ADLS Gen2. Iceberg's table maintenance renames and deletes directories; on a flat blob account those are per-blob operations, not atomic ones|**No.** It is set when the account is created. An existing account without it has to be migrated, which is a separate and disruptive exercise|
+|**Account kind `StorageV2`**|Hierarchical namespace requires it|No|
+|**Public network access enabled**|{{< company-c8y >}} connects from outside your virtual network, so the account's endpoints have to be reachable from it|Yes — but see the caution below|
+|**Anonymous access disabled**|A different setting despite the similar name: it decides whether anyone with the URL can read your blobs **without credentials**. {{< company-c8y >}} never does — it authenticates as the application you approve and reads with the roles you grant|Yes|
+
+Redundancy and performance tier are yours to choose; nothing here depends on either. Neither does the region — unlike on AWS, provisioning does not refuse an account in another region. Keep it in the same region as the {{< product-c8y-iot >}} environment anyway, or you pay cross-region egress on every read a query engine makes.
+
+{{< c8y-admon-caution >}}
+**Locking the account down to selected networks is possible, but not by you alone.** {{< company-c8y >}} reaches your account from its own network, so a firewall that allows only your virtual networks shuts ingestion out. Permitting it means adding the environment's egress identity to your network rules, and that value differs per environment and can only come from {{< company-c8y >}}. [Contact support](/additional-resources/contacting-support/) before restricting network access — do it first, and provisioning or a running tenant stops with a connectivity error that names nothing about the firewall.
+{{< /c8y-admon-caution >}}
+
+With the Azure CLI, hierarchical namespace is what `--enable-hierarchical-namespace true` sets, and it cannot be added to an account afterwards:
+
+```bash
+az storage account create \
+  --name <account> \
+  --resource-group <resource-group> \
+  --kind StorageV2 \
+  --enable-hierarchical-namespace true \
+  --public-network-access Enabled \
+  --allow-blob-public-access false
+
+az storage container create \
+  --name <container> \
+  --account-name <account> \
+  --auth-mode login
+
+# must print True; False means a flat blob account that has to be recreated
+az storage account show --name <account> --query isHnsEnabled -o tsv
+```
+
+In the Azure portal, **Enable hierarchical namespace** is on the **Advanced** tab of **Storage accounts** > **Create**, next to the anonymous-access setting; public network access is on the **Networking** tab. Afterwards, **Overview** > **Properties** must report **Hierarchical namespace: Enabled**.
+
+`--auth-mode login` uses your own identity on the data plane, which is not the same as owning the account: creating an account makes you its administrator, not a reader or writer of its blobs. If the container call fails with `AuthorizationPermissionMismatch`, grant yourself **Storage Blob Data Contributor** on the account and retry after a minute. Grant it rather than falling back to `--auth-mode key`, since an account with shared-key access disabled — a common policy — has no key to fall back on.
 
 <!-- SCREENSHOT: /images/datahub-guide/sli-own-lake-setup-page.png
      Caption: "The Data Lake setup page under Settings in the Administration application"
@@ -88,16 +129,13 @@ Encryption needs no decision: S3 encrypts every object at rest with keys it mana
 In the AWS console, go to **S3** > **Create bucket**, set **AWS Region** and set **Bucket Versioning** to **Enable**. With the AWS CLI, creating the bucket and enabling versioning are two calls:
 
 ```bash
-aws s3api create-bucket \
-  --bucket <bucket> \
-  --region <region> \
-  --create-bucket-configuration LocationConstraint=<region>
+aws s3 mb s3://<bucket> --region <region>
 
 aws s3api put-bucket-versioning --bucket <bucket> \
   --versioning-configuration Status=Enabled
 ```
 
-`--create-bucket-configuration` is required for every region except `us-east-1`.
+Use `aws s3 mb` rather than the lower-level `aws s3api create-bucket`: that one needs `--create-bucket-configuration LocationConstraint=<region>` in every region *except* `us-east-1`, where the same flag is rejected. `mb` resolves it from `--region` and is correct in all of them.
 
 To verify, confirm that the reported location equals the region the setup page named (`us-east-1` reports `null`) and that versioning reports `Enabled`:
 
@@ -116,7 +154,9 @@ Create the role in the **same account as the bucket**. It has two policies and b
 |**Permissions policy**|What the role may do to your bucket|Granting the whole bucket where one prefix would do|
 
 {{< c8y-admon-important >}}
-**The role name has to begin with `c8y-streaming-lake-ingestion-`.** The base principal is allowed to assume roles with that name prefix and no others, so a role named anything else cannot be assumed at all — and the resulting failure is indistinguishable from a wrong principal or a wrong External ID. Everything after the prefix is yours to choose; including the tenant name is a good habit, since each tenant gets its own role.
+**The role name has to begin with `c8y-streaming-lake-ingestion-`.** The base principal is allowed to assume roles matching `arn:aws:iam::*:role/c8y-streaming-lake-ingestion-*` and no others, so a role named outside that pattern cannot be assumed however correct its trust policy is — and the resulting failure is indistinguishable from a wrong principal or a wrong External ID. Anything may follow the prefix; including the tenant name is a good habit, since each tenant gets its own role.
+
+**An IAM role cannot be renamed**, so getting the name wrong means deleting the role and creating it again. Create it at the default path `/` as well: a role created under a path has that path where the prefix has to be, and a role's path cannot be changed after creation either.
 {{< /c8y-admon-important >}}
 
 ##### The External ID {#own-lake-aws-external-id}
@@ -131,7 +171,12 @@ Three things to know about it:
 
 ##### Creating the role {#own-lake-aws-create-role}
 
-In the AWS console, go to **IAM** > **Roles** > **Create role** > **Custom trust policy**, paste the trust policy below, then attach the permissions policy as an inline policy. Once the role is created, its page opens with the **ARN** at the top of the summary panel.
+In the AWS console, go to **IAM** > **Roles** > **Create role**, and choose **Custom trust policy** as the trusted entity type. Two details of that form matter:
+
+* The form opens on **AWS service**, which is the wrong choice here — that is for services inside your own account. **AWS account** is closer but still not enough: it names the account {{< company-c8y >}}'s principal lives in without letting you require the External ID. Only **Custom trust policy** lets you state both.
+* On the **Add permissions** page, continue **without selecting a policy**. The policy this role needs does not exist yet; you create it on the role itself afterwards, under **Permissions** > **Add permissions** > **Create inline policy** > the **JSON** tab, and name it `c8y-streaming-lake-ingestion`.
+
+Once the role is created, its page opens with the **ARN** at the top of the summary panel.
 
 With the AWS CLI:
 
@@ -213,7 +258,7 @@ Three ways this goes wrong, all of which produce a well-formed ARN that fails la
 
 * **Wrong account.** A role of the same name in another of your accounts gives a valid-looking ARN that cannot be used, because the bucket lives in the other account. Confirm with `aws sts get-caller-identity --query Account --output text` that you are in the bucket's account.
 * **Not a role ARN.** An IAM user ARN or an instance-profile ARN is not accepted. The ARN must contain `:role/`.
-* **A role created under a path.** A role created with `--path /cumulocity/` has the path as part of its ARN. Send the ARN exactly as AWS reports it rather than reconstructing it from the role name.
+* **A role created under a path.** A role created with `--path /cumulocity/` has an ARN of the form `arn:aws:iam::<your-account-id>:role/cumulocity/<role-name>`, and that ARN **cannot be assumed at all**, because the path sits where the required `c8y-streaming-lake-ingestion-` prefix has to be. A role's path cannot be changed after creation, so create the role at the default path `/` and leave `--path` out. Otherwise, send the ARN exactly as AWS reports it rather than reconstructing it from the role name.
 
 ##### Narrowing further {#own-lake-aws-narrowing}
 
@@ -231,7 +276,7 @@ Open **Settings** > **Data Lake** in the **Administration** application and ente
 
 * **Role ARN** — as retrieved above.
 * **External ID** — the value you actually put in the trust policy, whether that is the suggestion or your own. Read it back from the role rather than from your notes: **IAM** > **Roles** > your role > **Trust relationships**.
-* **Base location** — `s3://<bucket>/<prefix>`. See [Choosing a base location](#own-lake-base-location).
+* **Bucket** and **prefix** — which together form the base location `s3://<bucket>/<prefix>`. See [Choosing a base location](#own-lake-base-location).
 
 The region is not one of them, because the setup page gave it to you in the first place. Do confirm that the bucket landed there, since a mismatch fails the setup.
 
@@ -381,7 +426,7 @@ Three rules apply on both clouds:
 
 ### What the setup verifies {#own-lake-verification}
 
-The setup does not take your word for the grant. It exercises it, end to end, through the identity that will actually be used:
+The setup does not take your word for the grant. It exercises it, end to end, through the identity that will actually be used — rather than inspecting your cloud account's settings, which this onboarding gives it no permission to read:
 
 1. **The grant.** On AWS it assumes your role with your External ID; on Azure it acquires a token for your directory as the consented application.
 2. **The data path.** With those credentials it lists, writes, reads back and deletes a test object under the base location.
@@ -419,9 +464,11 @@ The result names the step that failed and the cause. The table below lists the c
 |Admin consent is missing or was revoked|Step 1 was not completed in this directory, or the enterprise application has since been deleted|Repeat step 1 in the storage Entra directory|
 |A role assignment is missing, or sits at the wrong scope|Most often **Storage Blob Delegator** assigned at container scope instead of storage account scope|Re-read the **Scope** column on both assignments and reassign the Delegator at storage account scope|
 |The container or filesystem does not exist|The container named in the base location was never created, or its name is misspelled|Create it, or correct the base location|
-|Region mismatch|The storage account is not in the region the setup page names|Storage accounts cannot be moved between regions. Create one in the right region|
-|Hierarchical namespace is not enabled|The storage account is a flat blob account rather than ADLS Gen2|It cannot be enabled after creation. Create an ADLS Gen2 account with hierarchical namespace enabled and repeat steps 2 and 3 against it|
 |The consent link returns `AADSTS50011`|The environment's application has no static redirect URI registered|Use the Azure CLI path in step 1, which needs no redirect URI, and report the error to support so the registration is fixed|
+
+{{< c8y-admon-important >}}
+On Azure, three of the account's properties are **not** checked during the setup: its region, whether soft delete is on, and whether hierarchical namespace is enabled. Reading them requires **Reader** on the storage account, which this onboarding deliberately does not ask you to grant — so the setup exercises the grant you did give instead. A flat blob account therefore passes the setup and fails later, at ingestion time, which is why hierarchical namespace belongs to the checks you perform yourself in [Before you start](#own-lake-azure-prerequisites).
+{{< /c8y-admon-important >}}
 
 #### On both clouds {#own-lake-common-troubleshooting}
 
