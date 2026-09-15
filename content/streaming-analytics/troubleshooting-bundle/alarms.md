@@ -312,7 +312,7 @@ Less commonly, restoring can be slow simply because there are a large number of 
 
 To diagnose it, check the log files of the Apama-ctrl microservice, which record the progress of restoring each EPL app.
 See [Log files of the Apama-ctrl microservice](#logfiles). An EPL app that occupies the correlator for a long time also raises
-an alarm of its own, which names the app concerned; see
+an alarm of its own, which names the app concerned. See
 [An EPL app is running in an infinite or long-running loop](#apama_ctrl_warn).
 If restoring legitimately takes longer than the limit for your deployment, you can raise the value of the
 `recovery.slowRestoreAlarmSecs` tenant option.
