@@ -167,6 +167,11 @@ The following permission categories are available by default:
 </tr>
 
 <tr>
+<td align="left">Email</td>
+<td align="left">Send emails through the platform.</td>
+</tr>
+
+<tr>
 <td align="left">Events</td>
 <td align="left">View or create events.</td>
 </tr>
