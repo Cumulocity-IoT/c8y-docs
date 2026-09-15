@@ -286,7 +286,7 @@ the Apama-ctrl microservice raises an alarm so that you know why your EPL apps a
 - Alarm severity: MAJOR
 
 This alarm reports slowness only. Unlike [EPL app restore timeout on restart of Apama-ctrl](#eplapp_restore_timeout), which applies
-to a single EPL app and restarts the microservice, this alarm covers the restore as a whole, does not restart the microservice and
+to a single EPL app and restarts the microservice, this alarm covers the restore as a whole, does not restart the microservice, and
 does not disable any EPL apps. Restoring continues in the background, and the alarm is cleared automatically once it has finished,
 so you do not need to clear this alarm yourself.
 
