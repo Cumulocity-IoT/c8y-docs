@@ -6,7 +6,7 @@ outputs:
 weight: 10
 helpcontent:
   - label: account-overview
-    title: account-overview
+    title: Overview
     content: "The **Overview** tab provides a high-level summary of your account, contract details, and environments.
 
 

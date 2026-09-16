@@ -6,7 +6,7 @@ outputs:
 weight: 20
 helpcontent:
   - label: usage-data
-    title: usage-data
+    title: Details
     content: "The **Data** tab provides access to the raw underlying data that powers the graphs on the **Overview** tab. This table displays all usage data with the same filters available as the visualizations.
 
 

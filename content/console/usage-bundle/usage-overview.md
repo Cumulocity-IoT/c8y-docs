@@ -6,7 +6,7 @@ outputs:
 weight: 10
 helpcontent:
   - label: usage-overview
-    title: usage-overview
+    title: Overview
     content: "The **Overview** tab provides a dashboard with comprehensive usage statistics for all your environments and tenants. Use the filters at the top of the page to customize your view:
 
 

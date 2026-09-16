@@ -9,15 +9,14 @@ sector:
 weight: 20
 helpcontent:
   - label: overview
-    title: overview
-    content: "The **Overview** page serves as the homepage of the Console application and provides a variety of information at a glance.
+    title: Home
+    content: "The **Overview** page gives you a snapshot of your account's usage and contract status. 
+    
+    
+    It shows your **usage** metrics for messages, storage, CPU, devices and database resources, each with a trend indicator so you can see at a glance whether usage is going up or down.
 
 
-      **Usage** - Displays statistics showing your consumption metrics including messages, devices, storage (GB), CPUs, and database usage, with trend indicators to show changes over time.
-
-      **Commit to consume** - Shows details of the CTC contract, including the start and end dates and the total commitment value. A pie chart displays consumed versus available commitment.
-
-      **Environments** - Lists all the environments that are associated with your account, providing quick access to environment details."
+    It also displays your **Commit to Consume** (CTC) contract details — including the contract period and total commitment value — plotted as consumed versus available commitment, along with a list of all **environments** linked to your account."
 ---
 
 The **Overview** page of the Console application serves as the homepage and contains a variety of information.

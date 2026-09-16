@@ -6,7 +6,7 @@ outputs:
 weight: 20
 helpcontent:
   - label: account-consumption
-    title: account-consumption
+    title: Consumption
     content: "The **Consumption** tab displays monthly drawdowns and commitment details for your contract.
 
 
