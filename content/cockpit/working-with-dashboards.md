@@ -42,7 +42,7 @@ ROLES & PERMISSIONS:
 
 {{< c8y-admon-related >}}
 - Refer to the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) to learn how to develop your own widgets and add them to your {{< product-c8y-iot >}} account.
-- [{{< product-c8y-iot >}} Codex](https://cumulocity.com/codex/) for further information on how to customize the {{< product-c8y-iot >}} environment.
+- [{{< product-c8y-iot >}} Web developer codex](https://cumulocity.com/codex/) for further information on how to customize the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
 ### To create a dashboard {#to-create-a-dashboard}
