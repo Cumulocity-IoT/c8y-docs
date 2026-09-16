@@ -31,7 +31,7 @@ Click **Configuration repository** in the the **Management** menu in the navigat
    - **Upload a binary**: Drag a file into the drop area or browse for a file on your file system. When you upload a text file, its content opens in the code editor so that you can review and adjust it before saving.
    - **Provide a file path**: Enter a URL from which the device can obtain the configuration snapshot. External URLs only work with devices that support typed file-based configuration, not with devices using legacy configuration.
    - **Edit inline**: Enter a filename and write the configuration content directly in the built-in code editor. This lets you create a configuration snapshot without preparing a file outside the application.
-7. Click **Add configuration**.
+7. Click **Save**.
 
 The configuration snapshot will be added to the configuration repository.
 
@@ -41,7 +41,7 @@ When a text file is opened in the editor, its syntax highlighting is detected au
 
 ### To edit a configuration snapshot {#to-edit-a-configuration-snapshot}
 
-To edit a configuration snapshot, click on the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the row and then click **Edit**.
+To edit a configuration snapshot, click on the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of the row and then click **Edit**. The **Edit configuration** drawer opens.
 
 For details on the fields, see [To add a configuration snapshot](#to-add-a-configuration-snapshot).
 
@@ -49,7 +49,7 @@ For details on the fields, see [To add a configuration snapshot](#to-add-a-confi
 
 If the configuration content is a text file, it opens in the code editor so that you can adjust it inline. If the content is sourced from a remote URL, it cannot be edited inline; only the file URL is shown.
 
-Click **Update configuration** to save your changes.
+Click **Save** to apply your changes.
 
 ### To delete a configuration snapshot {#to-delete-a-configuration-snapshot}
 
@@ -66,13 +66,15 @@ Managing configurations, that is requesting a configuration from a device and se
 We recommend you to use typed file-based configuration. With typed file-based configuration, devices can manage multiple configurations at the same time. You can upload or retrieve different configurations for different types. Using this approach is more versatile because the configurations are handled as events rather than as files, which is more efficient.
 
 1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
-2. Under **Device-supported configurations**, select the desired configuration type and click
+2. Under **On device**, select the desired configuration type and click
    **Get snapshot from device** at the right.
 
 Once retrieved, the snapshot is shown in the **Preview** section in a read-only editor with automatic syntax highlighting. From there you can:
 
 - Click **Download** to save the snapshot as a file.
-- Click **Save to repository** to store the snapshot in the **Configuration repository**, accessible from the **Management** menu in the navigator. This opens the configuration in a drawer, prefilled with the retrieved content, where you can review and adjust it before saving.
+- Click **Save to repository** to store the snapshot in the **Configuration repository**, accessible from the **Management** menu in the navigator. This opens the **Save configuration to repository** drawer, prefilled with the retrieved content, where you can review and adjust it before saving. A warning in the drawer reminds you that the entry is shared, so your changes affect ongoing updates and future device deployments.
+
+Binary configurations are not shown as text. If the retrieved snapshot is a binary file, the **Preview** section reports that no preview is available. Use **Download** to inspect the file outside the application.
 
 ![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 
@@ -83,16 +85,16 @@ Clicking **Get snapshot from device** creates a new operation. If the operation 
 To apply a configuration snapshot to a device which supports multiple configuration types:
 
 1. Navigate to the desired device and open its **Configuration** tab.
-2. Under **Device-supported configurations**, select the desired configuration type.
-3. Under **Available supported configurations**, select a configuration file.
+2. Under **On device**, select the desired configuration type.
+3. Under **Available from repository**, select a configuration file.
 4. Click **Send configuration to device** at the right to apply the selected snapshot to the device.
 
-When you select a configuration from **Available supported configurations**, an **Edit in repository** button is also shown next to **Send configuration to device**. Click it to open the corresponding entry in the **Configuration repository** directly in a drawer for editing, without having to navigate to the **Configuration repository** page.
+When you select a configuration from **Available from repository**, an **Edit in repository** button is also shown at the bottom of the **Preview** section. Click it to open the corresponding entry in the **Configuration repository** directly in a drawer for editing, without having to navigate to the **Configuration repository** page. The drawer is titled **Edit configuration in repository** and warns you that the entry is shared, so your changes affect ongoing updates and future device deployments.
 
 ![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
 {{< c8y-admon-info >}}
-Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type (ones that match the device type or have no device type specified).
+Under **Available from repository**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type (ones that match the device type or have no device type specified).
 {{< /c8y-admon-info >}}
 
 ### To retrieve and apply a configuration snapshot to a device which supports legacy file-based configuration {#to-retrieve-and-apply-a-configuration-snapshot-to-a-device-which-supports-legacy-file-based-configuration}
