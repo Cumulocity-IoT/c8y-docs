@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-09-15'
   - label: jp.cumulocity.com
     date: '2026-09-15'
+  - label: us.cumulocity.com
+    date: '2026-09-16'
+  - label: cumulocity.com
+    date: '2026-09-16'
 ---
 The Asset API previously deleted all existing linked series when you sent an explicit "`c8y_LinkedSeries": null` value during PUT `/assets/{id}` or POST `/assets` operations. This behavior contradicted the documented API contract, which specifies that linked series can only be removed through dedicated DELETE endpoints. The Asset API now correctly preserves all linked series when you send an explicit `null` value, aligning the actual behavior with the documented specification.
 

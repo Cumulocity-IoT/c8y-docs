@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-09-15'
   - label: jp.cumulocity.com
     date: '2026-09-15'
+  - label: us.cumulocity.com
+    date: '2026-09-16'
+  - label: cumulocity.com
+    date: '2026-09-16'
 ---
 In the **Configuration** tab in the device details, the layout has been reorganized. The subtabs are now named **From repository** and **Custom**, the configurations reported by the device are listed under **On device**, and the matching repository entries under **Available from repository**. A draggable divider between the two sections allows users to resize them, and the position is remembered. Binary configurations are no longer shown as unreadable text in the preview. In the configuration drawer, the description field has moved next to the name and now grows with its content, and the drawer states that changes are saved to the shared configuration repository.

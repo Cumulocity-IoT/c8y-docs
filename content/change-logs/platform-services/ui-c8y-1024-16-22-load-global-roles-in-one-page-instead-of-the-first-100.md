@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-09-15'
   - label: jp.cumulocity.com
     date: '2026-09-15'
+  - label: us.cumulocity.com
+    date: '2026-09-16'
+  - label: cumulocity.com
+    date: '2026-09-16'
 ---
 On the **Global roles** tab, only the first 100 global roles were listed for a user. On larger tenants with more than 100 roles, additional roles could not be assigned. This issue has been fixed. The list now loads up to 1000 roles on a single page.
