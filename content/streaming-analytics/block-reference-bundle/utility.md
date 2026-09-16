@@ -681,9 +681,7 @@ Note: To extract a custom property from the Measurement Input block, you must ad
 `apama.analyticsbuilder.blocks.Logger`
 
 <p>Writes a message to the microservice log file for each input.</p>
-<p><b>This block is currently in public preview and may be subject to change.</b>
-<p></p>
-Example log message with logger tag "demoLog" at log level "ERROR":
+<p>Example log message with logger tag "demoLog" at log level "ERROR":
 <p></p>
 <tt>ERROR ... [t510007|model=87104] &lt;demoLog&gt; value=any(float,5.09) properties={"ignore":any(string,"false")}</tt></p>
 
