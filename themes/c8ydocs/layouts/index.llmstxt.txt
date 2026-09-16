@@ -26,7 +26,7 @@ This file helps large language models navigate the Cumulocity documentation. Eac
   {{- $d = truncate 200 (trim ($d | plainify | replaceRE "\\s+" " ") " ") -}}
   {{- printf "- [%s](%s): %s\n" .Title .Params.external $d -}}
 {{- end -}}
-{{- printf "- [Developers codex](https://cumulocity.com/codex/llms.txt): Cumulocity Web SDK component and developer documentation (llms.txt).\n" -}}
+{{- printf "- [Web developer codex](https://cumulocity.com/codex/llms.txt): Cumulocity Web SDK component and developer documentation (llms.txt).\n" -}}
 {{- printf "\n## Optional\n" -}}
 {{- printf "- [Full documentation corpus](%s): Every documentation page concatenated as plain text (llms-full.txt).\n" (.OutputFormats.Get "llms-full").Permalink -}}
 {{- range $sectors.Pages.ByWeight -}}
