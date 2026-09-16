@@ -169,6 +169,8 @@ Three things to know about it:
 * **Use a different value for each of your {{< product-c8y-iot >}} tenants.** This is not enforced, but a value shared between two tenants removes the protection it exists to provide.
 * **Keep a record of it.** It is written into your trust policy, and {{< company-c8y >}} may have to ask you for it again if your tenant is ever provisioned from scratch.
 
+If the setup rejects an External ID, it is always one you supplied rather than the suggestion: a suggested value satisfies these rules by construction.
+
 ##### Creating the role {#own-lake-aws-create-role}
 
 In the AWS console, go to **IAM** > **Roles** > **Create role**, and choose **Custom trust policy** as the trusted entity type. Two details of that form matter:
@@ -430,10 +432,12 @@ The setup does not take your word for the grant. It exercises it, end to end, th
 
 1. **The grant.** On AWS it assumes your role with your External ID; on Azure it acquires a token for your directory as the consented application.
 2. **The data path.** With those credentials it lists, writes, reads back and deletes a test object under the base location.
-3. **Short-lived credentials.** It requests short-lived credentials once — a scoped session on AWS, a user-delegation token on Azure — and confirms that they work. This is how every read and write into your storage is actually performed, so it is verified rather than assumed.
-4. **The catalog.** Your tenant's Iceberg catalog is created against the values you entered.
+3. **The catalog.** Your tenant's Iceberg catalog is created against the values you entered.
+4. **Credential vending.** It then checks that the catalog can hand out the short-lived credentials queries need — a scoped session on AWS, a user-delegation token on Azure. This step comes last because credentials are vended per table, so there has to be a table to ask about: the check creates a temporary namespace and table named `iceflow_provisioning_check`, requests credentials for it, and removes both afterwards, whether the check passed or failed. If you audit your storage, that is what those short-lived objects were.
 
-**Setup is complete when that verification passes**, not when the catalog exists. If a step fails, the result names which one and what to fix, and nothing is created.
+**Setup is complete when all of that passes**, not when the catalog exists — a catalog can exist and still be unable to hand out a credential, and the first sign of that would otherwise be a failed query long afterwards.
+
+If a step fails, the result names which step and which cause, using the same vocabulary on both clouds: the grant refused us, the grant is too narrow, the region is wrong, the container is missing, the encryption key refused, vending failed. The tables below say what to do about each.
 
 <!-- SCREENSHOT: /images/datahub-guide/sli-own-lake-verification-result.png
      Caption: "The setup result, reporting the grant, the test write and credential vending as verified"
@@ -453,7 +457,7 @@ The result names the step that failed and the cause. The table below lists the c
 |The External ID is too short, or uses an unaccepted character|It is below 32 characters, or contains a character outside `A-Z a-z 0-9 _ + = , . @ : / -`. A `#` or a space is the usual cause|Correct it in **both** the trust policy and the setup page, then retry|
 |Region mismatch, or the bucket cannot be found|The bucket is not in the region the setup page names|Buckets cannot be moved. Create one in the right region and repeat step 2 against it|
 |The prefix is not covered by the role's policy|The permissions policy does not cover the base location's prefix, or the `s3:prefix` condition does not match it|Confirm that the prefix in the policy is the same one as in the base location you entered|
-|Access denied on the encryption key|The bucket is encrypted with a customer-managed KMS key, which this setup does not cover yet|Use S3's own default encryption, or raise the customer-managed key with support|
+|Access denied on the encryption key|The bucket is encrypted with a customer-managed KMS key, which this setup does not cover yet. S3 reports this as an ordinary denial, so the setup tells it apart from a plain object denial for you — the fix is on the key policy, not on the bucket|Use S3's own default encryption, or raise the customer-managed key with support|
 
 #### On Microsoft Azure {#own-lake-azure-troubleshooting}
 
