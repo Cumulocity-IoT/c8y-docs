@@ -167,7 +167,7 @@ Three things to know about it:
 
 * **Its length and character set are checked.** At least 32 characters — the suggestion is exactly that long, so keeping it is always safe. The character set is AWS's own: `A-Z a-z 0-9 _ + = , . @ : / -`, with no spaces and no `#`. A value outside it is rejected when you enter it, rather than being rejected later by AWS, where the error would surface far from its cause.
 * **Use a different value for each of your {{< product-c8y-iot >}} tenants.** This is not enforced, but a value shared between two tenants removes the protection it exists to provide.
-* **Keep a record of it.** It is written into your trust policy, and {{< company-c8y >}} may have to ask you for it again if your tenant is ever provisioned from scratch.
+* **Keep a record of it.** It is written into your trust policy, and the settings page never shows the value it holds — only its last few characters, enough to recognize which one is recorded.
 
 If the setup rejects an External ID, it is always one you supplied rather than the suggestion: a suggested value satisfies these rules by construction.
 
@@ -424,7 +424,15 @@ Three rules apply on both clouds:
 
 * **One base location per {{< product-c8y-iot >}} tenant.** Two tenants must never share one. Each tenant's data already lands in its own `/<tenant-id>` folder, but that is not a substitute.
 * **Overlapping locations are rejected.** A location that contains, or is contained by, one already in use on the same environment is refused, and the message names the other tenant. Choose a location that neither contains nor is contained by it.
-* **The base location is fixed once the setup has succeeded.** It is recorded when your tenant's Iceberg catalog is created, and running the setup again does not rewrite it. Entering a different one later therefore moves nothing: the tables stay where they are, and anything already written under the old path would be stranded rather than migrated. [Contact {{< company-c8y >}} support](/additional-resources/contacting-support/) to change it.
+* **The base location is fixed once the setup has succeeded.** It is recorded when your tenant's Iceberg catalog is created, and running the setup again does not rewrite it. Entering a different one later therefore moves nothing: the tables stay where they are, and anything already written under the old path would be stranded rather than migrated. [Contact {{< company-c8y >}} support](/additional-resources/contacting-support/) to change it. The same holds for the storage type and, on Azure, the Entra directory.
+
+### Changing the role or the External ID later {#own-lake-rotating-the-grant}
+
+On AWS, the role ARN and the External ID are **not** fixed: you change them yourself on the **Data Lake** settings page, without repeating the onboarding. Do that whenever you rotate the role, delete and re-create it, or rename it.
+
+* **Saving re-runs the verification.** The new role is assumed, and a write, a read-back and a delete are exercised under your base location, so a trust policy that no longer admits {{< company-c8y >}} is reported there and then rather than breaking ingestion later.
+* **Rotate the External ID in your trust policy first, then save it here.** The two have to agree: while they do not, every assume-role call fails and Iceberg commits stop. Leaving the field blank keeps the stored value, so you can replace the role alone.
+* **The replacement role has to be in the same AWS account.** That account is fixed when your catalog is created, because your bucket lives in it, and a role in another account is refused with a message naming both. Moving the data lake to a different account is a change to raise with support.
 
 ### What the setup verifies {#own-lake-verification}
 
@@ -458,6 +466,7 @@ The result names the step that failed and the cause. The table below lists the c
 |Region mismatch, or the bucket cannot be found|The bucket is not in the region the setup page names|Buckets cannot be moved. Create one in the right region and repeat step 2 against it|
 |The prefix is not covered by the role's policy|The permissions policy does not cover the base location's prefix, or the `s3:prefix` condition does not match it|Confirm that the prefix in the policy is the same one as in the base location you entered|
 |Access denied on the encryption key|The bucket is encrypted with a customer-managed KMS key, which this setup does not cover yet. S3 reports this as an ordinary denial, so the setup tells it apart from a plain object denial for you — the fix is on the key policy, not on the bucket|Use S3's own default encryption, or raise the customer-managed key with support|
+|A replacement role ARN is rejected as being in a different AWS account|The catalog is bound to the account its bucket is in, and that cannot change|Supply a role in the account named in the message. If the data lake itself has to move, raise the change with support|
 
 #### On Microsoft Azure {#own-lake-azure-troubleshooting}
 
