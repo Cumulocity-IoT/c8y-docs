@@ -1,6 +1,6 @@
 ---
 date: ""
-title: [BACKPORT] clicking on a datapoint now provides selected property in the config for target and timestamp.
+title: Data point selection now provides target and timestamp properties in configuration
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-66816
 version: 1023.14.216
 ---
-[BACKPORT] clicking on a datapoint now provides selected property in the config for target and timestamp.
+Clicking a data point within the data point graph widget now automatically selects it and updates the widget configuration in real time. This restores support for dashboard interactions that rely on data point selection to trigger actions across other widgets.
