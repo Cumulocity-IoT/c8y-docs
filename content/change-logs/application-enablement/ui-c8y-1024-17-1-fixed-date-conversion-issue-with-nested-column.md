@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67326
 version: 1024.17.1
 ---
-Asset table widgets now correctly convert and display nested timestamp fragments (such as UTC strings) into localized dates when the Date display format is selected. We have also resolved an issue where conditional formatting with the Icon display type caused date and time values to vanish, ensuring both the icon and text value render properly.
+The "Asset table" widget now correctly converts and displays nested timestamp fragments (such as UTC strings) into localized dates when the date display format is selected. Moreover, an issue has been resolved where conditional formatting with the icon display type caused date and time values to vanish, ensuring both the icon and text values render properly.
