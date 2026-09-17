@@ -72,30 +72,33 @@ If the notification is binary data or includes binary data then it will be [Base
 
 The header lines for a notification are as follows (separated by `\n` newlines):
 
-* Required message identifier for message acknowledgment. This opaque value is an encoded binary 64-bit value. After the consumer has finished processing a notification, it must send this header back to the server to [acknowledge the notification](#notification-acknowledgements).
+1. Encoded message identifier for message acknowledgment.
+   After the consumer has finished processing a notification, it must send this header back to the server to [acknowledge the notification](#notification-acknowledgements).
 
-* The [Notification description header](#notification-description-header) on the second header line. This is a string describing what type of notification this is and its source. Measurements ("measurements"), events ("events") and alarms ("alarms") are examples of notifications, as are inventory creates, updates and deletes ("managedObjects"). There is a direct correspondence with realtime notifications which features similar notification descriptions. These are not enumerated here and are expected to increase in number in the future. For REST API notifications, they follow a three-part format, separated by "/". For more details on notification descriptions see [Notification description header](#notification-description-header).
+2. Notification description.
+   This is a `/`-separated string with three components that describe the type and source of the notification:
+   * tenant: This the identifier for the tenant under which the notification was generated.
+   * type: The type of the notification generated.
+     These correspond to the APIs that can be used in notification subscriptions, for example `measurements` or `alarms`.
+   * source: The identifier of the managed object that generated or is the subject of the notification.
 
-* An action string is the third header. Examples are CREATE, UPDATE and DELETE. More actions may be added in the future. Together with the notification type they describe the logical event that generated the notification, such as a CREATE of an alarm or measurement.
+3. An action string is the third header.
+This will be `CREATE`, `UPDATE` or `DELETE`.
+Together with the notification type the action describes the logical event that generated the notification, such as the creation of a new alarm or measurement.
 
-Depending on the second header there may be further headers to follow but currently notifications only use the above three.
-In order to be future proof and forward compatible, we encourage consumer code to cope with more headers by parsing them out but ignoring them.
+After the headers, the notification body follows as UTF-8 text. This is typically a JSON document. Some examples are provided in [Traces](/notifications/traces/).
 
-See the *hello-world-notification-microservice* example in the [cumulocity-examples repository](https://github.com/Cumulocity-IoT/cumulocity-examples/tree/develop/hello-world-notification-microservice) on how to do this.
+{{< c8y-admon-info >}}
+To allow for backwards-compatible evolution of the protcol, consumer code:
+* **Must** continue to read header lines until the `\n\n` marker is found.
+  Do not assume that there are only three header lines.
+  Additional header lines beyond the three documented above are optional and can be safely ignored.
+* **Must** accept and acknowledge every message, even if the consumer did not expect to receive it.
+  Do not assume that the description header and action type will always use the values documented above.
+  Notifications with unexpected descriptions or actions can be safely ignored, but must still be acknowledged.
 
-After the headers, the notification body follows as UTF-8 text. This is typically a JSON document.
-
-#### Notification description header {#notification-description-header}
-
-The second header line is the notification description string in the form of a `/`-separated path. For API notifications descriptions have three parts: tenantId, type and sourceId.
-
-* tenantId - this the identifier for the tenant under which the notification was generated.
-
-* type - the platform type of the notification generated. For example, event, measurement, alarm or managed object.
-
-* sourceId - the identifier of the "source" object that generated or is the subject of the notification. Source is a very loose term here, much as in "event sourcing" but generally indicates which managed object the notification is about.
-
-Some examples are provided in [Traces](/notifications/traces/) and backwards compatibility to real-time notifications is provided for.
+See the ["hello world" microservice](https://github.com/Cumulocity-IoT/cumulocity-examples/tree/develop/notification2-examples/hello-world-microservice) for an example of a consumer service that follows these guidelines.
+{{< /c8y-admon-info >}}
 
 ### Dealing with notification duplication {#dealing-with-notification-duplication} 
 
