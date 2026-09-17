@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Loading indicator is now present on the chart.
+title: Loading indicator now displays on charts
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,21 +14,4 @@ build_artifact:
 ticket: MTM-67769
 version: 1024.18.5
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-67769] Loading indicator is now present on the
-chart.
-(#13090)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13090)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67769]:
-https://cumulocity.atlassian.net/browse/MTM-67769?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+When loading chart data, users previously had no visual feedback indicating that the system was processing the request, which could create confusion about whether the application was responding. The chart now displays a loading indicator while data is being fetched and processed, providing clear visual feedback that the operation is in progress. This improvement enhances the user experience by making the application's state more transparent and reducing uncertainty during data loading operations.
