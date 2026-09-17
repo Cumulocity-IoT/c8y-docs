@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed date conversion issue in the asset table widget
+title: Fixed date conversion issue in the Asset table widget
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
