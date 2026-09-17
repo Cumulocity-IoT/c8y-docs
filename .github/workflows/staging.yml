@@ -86,11 +86,23 @@ jobs:
         ssh-agent -a $SSH_AUTH_SOCK > /dev/null
         ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
 
-    - name: Upload documentation (without PDFs)
+    # PDFs and ZIPs are excluded here on purpose. They are not produced by the Hugo build but
+    # by the "Generate PDFs" step further down, so at this point ./public/pdfs and ./public/zips
+    # do not exist yet and --delete-after would wipe the ones already published - leaving the
+    # per-section PDFs and the sector ZIP downloads broken for the rest of the job, or until the
+    # next green deploy if this run is cancelled. They are uploaded by their own steps below.
+    - name: Upload documentation (without PDFs and ZIPs)
       run: |
-        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh --exclude='pdfs' ./public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }} --delete-after
+        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh --exclude='pdfs' --exclude='zips' ./public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }} --delete-after
 
+    # PDFs are only generated for the 'prod' environment. The 'staging-resources' host is behind
+    # HTTP basic auth, so wkhtmltopdf cannot fetch any page there and every render fails with
+    # "Authentication Required" - producing empty PDFs and empty ZIPs, and costing ~15 minutes
+    # per run. If PDFs are ever needed on staging, pass credentials to wkhtmltopdf via
+    # --username/--password in pdf-generator/templates/command.template.sh rather than
+    # re-enabling these steps as-is.
     - name: Install wkhtmltopdf
+      if: matrix.env == 'prod'
       run: |
         sudo apt-get update
         sudo apt-get install -y xfonts-base xfonts-75dpi
@@ -99,16 +111,26 @@ jobs:
         wkhtmltopdf --version
 
     - name: Generate PDFs
+      id: generate_pdfs
+      if: matrix.env == 'prod'
       run: |
         cd pdf-generator
         npm ci
         npm run generate
 
+    # Stale files are pruned with --delete-after only when the generator reports a complete run.
+    # After a partial one, upload additively: deleting what this run failed to produce would take
+    # the affected PDFs and sector ZIPs offline until the next fully green deploy.
     - name: Upload PDFs
+      if: matrix.env == 'prod'
       run: |
-        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/pdfs/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }}/pdfs --delete-after
+        PRUNE=""
+        if [ "${{ steps.generate_pdfs.outputs.complete }}" = "true" ]; then PRUNE="--delete-after"; fi
+        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/pdfs/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }}/pdfs $PRUNE
 
     - name: Upload ZIPs
+      if: matrix.env == 'prod'
       run: |
-        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/zips/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }}/zips --delete-after
-        
+        PRUNE=""
+        if [ "${{ steps.generate_pdfs.outputs.complete }}" = "true" ]; then PRUNE="--delete-after"; fi
+        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/zips/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }}/zips $PRUNE
