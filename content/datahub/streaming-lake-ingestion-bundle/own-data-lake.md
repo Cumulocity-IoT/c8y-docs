@@ -6,7 +6,9 @@ layout: redirect
 
 By default, Streaming Lake Ingestion writes your IoT data into a data lake that {{< company-c8y >}} operates for you. Alternatively, you can have it write into object storage of your own: an **AWS S3 bucket** or an **Azure Data Lake Storage Gen2 storage account** that belongs to your organization.
 
-The data then lives in your account. You create the access grant, you scope it, and you remove it when you want the data flow to stop. This section describes what to set up in your cloud account and how to complete the setup in {{< product-c8y-iot >}}.
+The data then lives in your account, and the access {{< company-c8y >}} has to it is a grant you create, scope and can withdraw. This section describes what to set up in your cloud account and how to complete the setup in {{< product-c8y-iot >}}.
+
+To stop the data flow, unsubscribe the tenant from Streaming Lake Ingestion. Withdrawing the grant or removing the storage instead leaves the service writing into something it can no longer reach, which is a failure state rather than an off switch — see [Removing access](#own-lake-removing-access).
 
 Which of the two clouds applies to you is not a choice you make here: it follows the {{< product-c8y-iot >}} environment your tenant runs in. The setup page named below states which cloud it expects, and provisioning refuses storage belonging to the other one.
 
@@ -15,7 +17,7 @@ You perform the setup yourself, in the **Administration** application under **Se
 
 The page is also where the values specific to your environment appear — the identity your grant has to name, the region the environment runs in, and, on AWS, a suggested External ID. Those values differ per environment, so this documentation refers to them rather than repeating them.
 
-The page carries the same procedure as a setup guide alongside the fields, with your own values substituted into the commands. This section is the version to read before you start, or away from the browser.
+The page also carries this procedure as a setup guide next to the fields, with your own values already substituted into the commands. Use that while you work through the setup; use this section to read ahead, or when you are not in front of the page.
 {{< /c8y-admon-info >}}
 
 ### What you set up, and what it means {#own-lake-what-you-set-up}
@@ -38,7 +40,7 @@ Three properties hold on both clouds:
 
 |Term|What it means here|
 |:---|:---|
-|**Base location**|Where your data is written. On AWS `s3://<bucket>/<prefix>`, on Azure `abfss://<container>@<account>.dfs.core.windows.net/<path>`. {{< product-c8y-iot >}} appends the tenant's ID, so that tenant's tables live under `<base location>/<tenant-id>/`|
+|**Base location**|Where your data is written. On AWS `s3://<bucket>/<prefix>`, on Azure `abfss://<container>@<account>.dfs.core.windows.net/<path>`. The prefix or path may be left empty, in which case the data is written at the root of the bucket or container. {{< product-c8y-iot >}} appends the tenant's ID either way, so that tenant's tables live under `<base location>/<tenant-id>/`|
 |**{{< product-c8y-iot >}} tenant**|Your tenant in the {{< product-c8y-iot >}} platform. One tenant gets one Iceberg catalog and one base location|
 |**Base principal** (AWS)|The IAM identity in {{< company-c8y >}}'s AWS account that assumes your role. Your trust policy has to name it exactly. The setup page shows its ARN|
 |**Trust policy** (AWS)|The policy on a role that says *who* may assume it. Also called the assume-role policy document|
@@ -67,7 +69,7 @@ Three properties hold on both clouds:
 |Permission to create a storage account and container in the subscription (**Contributor**, or any role that can write storage accounts)|To create the account as described below|
 |Certainty about which Entra directory that storage account's subscription belongs to|Every step happens in that directory, and its ID is one of the values you enter|
 
-The storage account itself has to meet four requirements, and the first of them cannot be corrected afterwards:
+The storage account itself has to meet four requirements, and the first two are set when the account is created and cannot be corrected afterwards:
 
 |Requirement|Why|Can it be changed later?|
 |:---|:---|:---|
@@ -441,7 +443,9 @@ The setup does not take your word for the grant. It exercises it, end to end, th
 1. **The grant.** On AWS it assumes your role with your External ID; on Azure it acquires a token for your directory as the consented application.
 2. **The data path.** With those credentials it lists, writes, reads back and deletes a test object under the base location.
 3. **The catalog.** Your tenant's Iceberg catalog is created against the values you entered.
-4. **Credential vending.** It then checks that the catalog can hand out the short-lived credentials queries need — a scoped session on AWS, a user-delegation token on Azure. This step comes last because credentials are vended per table, so there has to be a table to ask about: the check creates a temporary namespace and table named `iceflow_provisioning_check`, requests credentials for it, and removes both afterwards, whether the check passed or failed. If you audit your storage, that is what those short-lived objects were.
+4. **Credential vending.** It then checks that the catalog can hand out the short-lived credentials queries need — a scoped session on AWS, a user-delegation token on Azure. This step comes last because credentials are vended per table, so there has to be a table to ask about: the check creates an empty one called `vending_check`, in a namespace called `iceflow_provisioning_check`, and requests credentials for it.
+
+    That table is created once and **left in place**, rather than dropped after each run: dropping it without purging would abandon its metadata in your storage every time, where nothing would later clean it up. It stays empty and costs nothing. If you find it while auditing your storage, that is what it is — leave it, and later runs reuse it.
 
 **Setup is complete when all of that passes**, not when the catalog exists — a catalog can exist and still be unable to hand out a credential, and the first sign of that would otherwise be a failed query long afterwards.
 
