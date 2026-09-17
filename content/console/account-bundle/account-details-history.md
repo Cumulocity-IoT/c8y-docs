@@ -1,5 +1,5 @@
 ---
-title: Details & History
+title: Cost & Billing
 outputs:
   - html
   - json
@@ -16,9 +16,9 @@ helpcontent:
     The **Bill date** corresponds to the date on which the drawdown occurs, while the Usage month is the month in which the usage occurred. For billing purposes, UTC time is used."
 ---
 
-The **Details & History** tab provides a detailed breakdown of monthly consumption for each billable product.
+The **Cost & Billing** tab provides a detailed breakdown of monthly consumption for each billable product.
 
-<img src="/images/console/account/account-details-history.png" alt="Details & History">
+<img src="/images/console/account/account-details-history.png" alt="Cost & Billing">
 
 ### Consumption details {#consumption-details}
 
