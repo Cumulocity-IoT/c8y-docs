@@ -17,7 +17,7 @@ You perform the setup yourself, in the **Administration** application under **Se
 
 The page is also where the values specific to your environment appear — the identity your grant has to name, the region the environment runs in, and, on AWS, a suggested External ID. Those values differ per environment, so this documentation refers to them rather than repeating them.
 
-The page also carries this procedure as a setup guide next to the fields, with your own values already substituted into the commands. Use that while you work through the setup; use this section to read ahead, or when you are not in front of the page.
+The page shows the steps below as a setup guide next to the fields, with those values already filled into the commands.
 {{< /c8y-admon-info >}}
 
 ### What you set up, and what it means {#own-lake-what-you-set-up}
