@@ -424,8 +424,8 @@ The base location is the path your tenant's data is written under. {{< product-c
 
 Three rules apply on both clouds:
 
-* **One base location per {{< product-c8y-iot >}} tenant.** Two tenants must never share one. Each tenant's data already lands in its own `/<tenant-id>` folder, but that is not a substitute.
-* **Overlapping locations are rejected.** A location that contains, or is contained by, one already in use on the same environment is refused, and the message names the other tenant. Choose a location that neither contains nor is contained by it.
+* **Several tenants may share one prefix.** Because each tenant's data lands one level down, under its own ID, two tenants given the same base location end up in sibling directories rather than on top of each other. Pointing your tenants at one common prefix is a supported layout.
+* **What is refused is one tenant nested inside another's.** If the location your tenant would write to contains, or is contained by, one another tenant on the environment already holds, the setup refuses it and asks you to pick another — nothing is created, and your storage is not touched. For privacy the refusal does not name the other tenant, since it may belong to a different customer. Choose a location that neither contains nor sits inside the other one.
 * **The base location is fixed once the setup has succeeded.** It is recorded when your tenant's Iceberg catalog is created, and running the setup again does not rewrite it. Entering a different one later therefore moves nothing: the tables stay where they are, and anything already written under the old path would be stranded rather than migrated. [Contact {{< company-c8y >}} support](/additional-resources/contacting-support/) to change it. The same holds for the storage type and, on Azure, the Entra directory.
 
 ### Changing the role or the External ID later {#own-lake-rotating-the-grant}
@@ -493,7 +493,7 @@ On Azure, three of the account's properties are **not** checked during the setup
 |:---|:---|:---|
 |The setup fails immediately after you changed a policy or a role assignment|Propagation. Neither AWS IAM nor Azure RBAC is effective instantly|Wait a few minutes and retry before changing anything|
 |The storage cannot be reached|The bucket or storage account restricts public network access|The storage has to be reachable, and {{< company-c8y >}}'s egress identity has to be permitted. Raise it with support|
-|The base location overlaps one already in use|Another tenant on this environment is provisioned against a location that contains, or is contained by, yours. The message names it|Choose a location that neither contains nor is contained by the other one|
+|The base location conflicts with one already in use|Another tenant on this environment holds a location that contains, or is contained by, the one your tenant would write to. It is not named, because it may belong to a different customer|Choose a location that neither contains nor sits inside the other one. Sharing a common prefix with your other tenants is fine — only nesting is refused|
 
 If the cause is not in these tables, [contact {{< company-c8y >}} support](/additional-resources/contacting-support/) with the reported step and cause.
 
@@ -501,7 +501,7 @@ If the cause is not in these tables, [contact {{< company-c8y >}} support](/addi
 
 Each {{< product-c8y-iot >}} tenant is one Iceberg catalog with one base location, and the work per additional tenant differs by cloud.
 
-**On AWS**, each tenant gets **its own role, its own External ID and its own prefix**. Reuse the same bucket if you like, but repeat step 2 for the new tenant and run the setup with its own base location. A bucket in a **different** AWS account needs nothing extra: create the role in that account, with the same base principal and that tenant's External ID. Onboarding the same tenant on a **second** {{< product-c8y-iot >}} environment means a second role, because that environment has a different base principal and the existing trust policy does not name it.
+**On AWS**, each tenant gets **its own role and its own External ID**. Reuse the same bucket if you like, and a common prefix too — each tenant writes under its own ID beneath it — but repeat step 2 for the new tenant and run the setup for it. A bucket in a **different** AWS account needs nothing extra: create the role in that account, with the same base principal and that tenant's External ID. Onboarding the same tenant on a **second** {{< product-c8y-iot >}} environment means a second role, because that environment has a different base principal and the existing trust policy does not name it.
 
 **On Azure**, consent is per directory and application, so step 1 happens **once per storage Entra directory**. A second tenant writing into the same directory needs only a container, the two role assignments for it, and its own setup run. A container in a **different** Entra directory is a different storage Entra directory: step 1 has to be repeated there, and that directory's ID is what the new tenant's setup reports.
 
