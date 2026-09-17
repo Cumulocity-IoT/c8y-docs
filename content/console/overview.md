@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Home
 layout: bundle
 outputs:
   - html
@@ -16,7 +16,7 @@ helpcontent:
     It also displays your **Commit to Consume (CTC)** contract details — including the contract period and total commitment value — plotted as consumed versus available commitment, along with a list of all **environments** linked to your account."
 ---
 
-The **Overview** page of the Console application serves as the homepage and contains a variety of information.
+The **Home** page of the Console application serves as the homepage and contains a variety of information.
 
 <img src="/images/console/overview-page.png" alt="Overview page">
 
