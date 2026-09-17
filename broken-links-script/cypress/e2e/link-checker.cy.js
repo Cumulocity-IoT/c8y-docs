@@ -47,11 +47,28 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
 
     const exists = allFragments.some(f => f === decodedFragment);
 
+    // A fragment that matches except for case is by far the most common way
+    // this assertion fails - Hugo's `urlize` lowercases change-log anchors,
+    // but the source filenames they're derived from often carry a ticket
+    // ID's original casing (e.g. `DM-7021`), and browsers match id
+    // fragments case-sensitively. Naming the near-match turns an opaque
+    // "should exist" into an obvious one-character fix.
+    const caseMatch = exists
+      ? null
+      : allFragments.find(f => f.toLowerCase() === decodedFragment.toLowerCase());
+
     if (!exists) {
       cy.log(`Available fragments (including frames):\n${allFragments.join('\n')}`);
     }
 
-    expect(exists, `An element with id or name = "${fragment}" should exist in HTML or frames`).to.be.true;
+    // Kept on a single line: the Cypress.on('fail') handler below reports
+    // only error.message.split('\n')[0], so a hint on a second line would
+    // be dropped from the run summary.
+    const caseHint = caseMatch
+      ? ` - but "${caseMatch}" exists, which differs only by case, so the link's fragment casing is wrong`
+      : '';
+
+    expect(exists, `An element with id or name = "${fragment}" should exist in HTML or frames${caseHint}`).to.be.true;
   };
 
   const expectNoUnencodedParentheses = (url) => {
