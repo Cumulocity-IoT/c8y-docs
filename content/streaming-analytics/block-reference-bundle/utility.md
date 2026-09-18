@@ -683,7 +683,7 @@ Note: To extract a custom property from the Measurement Input block, you must ad
 <p>Writes a message to the microservice log file for each input.</p>
 <p>Example log message with logger tag "demoLog" at log level "ERROR":
 <p></p>
-<tt>ERROR ... [t510007|model=87104] &lt;demoLog&gt; value=any(float,5.09) properties={"ignore":any(string,"false")}</tt></p>
+<pre>ERROR ... [t510007|model=87104] &lt;demoLog&gt; value=any(float,5.09) properties={"ignore":any(string,"false")}</pre></p>
 
 
 #### Parameters {#logger-parameters}
