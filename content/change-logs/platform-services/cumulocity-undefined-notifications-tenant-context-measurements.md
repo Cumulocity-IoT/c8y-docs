@@ -15,8 +15,8 @@ ticket: MTM-67821
 version: 
 ---
 
-Notifications 2.0 subscriptions in the tenant context now support the measurements API.
-They already supported the alarms, events, inventory (managed objects), and operations APIs.
+Notifications 2.0 subscriptions in the tenant context now support the measurement API.
+They already supported the alarm, event, inventory (managed object), and operation APIs.
 To receive measurement notifications, add `measurements` to the subscription's `apis` filter explicitly.
 For details, see the [notification subscription API documentation](https://cumulocity.com/api/core/#operation/postNotificationSubscriptionResource).
 
