@@ -285,7 +285,7 @@ Open **Settings** > **Data Lake** in the **Administration** application and ente
 The region is not one of them, because the setup page gave it to you in the first place. Do confirm that the bucket landed there, since a mismatch fails the setup.
 
 <!-- SCREENSHOT: /images/datahub-guide/sli-own-lake-aws-input.png
-     Caption: "Entering the role ARN, External ID and base location"
+     Caption: "Entering the role ARN, External ID, bucket and prefix"
      Blocked: the setup page is not final yet. -->
 
 Then start the setup. It does not start on its own: nothing watches your AWS account for the role, because only you know when it is actually in place. What happens next is described in [What the setup verifies](#own-lake-verification).
@@ -431,6 +431,10 @@ Three rules apply on both clouds:
 ### Changing the role or the External ID later {#own-lake-rotating-the-grant}
 
 On AWS, the role ARN and the External ID are **not** fixed: you change them yourself on the **Data Lake** settings page, without repeating the onboarding. Do that whenever you rotate the role, delete and re-create it, or rename it.
+
+<!-- SCREENSHOT: /images/datahub-guide/sli-own-lake-catalog-identity.png
+     Caption: "Editing the role ARN and External ID after onboarding, with the stored External ID masked"
+     Blocked: the setup page is not final yet; this form arrives with CDH-7086. -->
 
 * **Saving re-runs the verification.** The new role is assumed, and a write, a read-back and a delete are exercised under your base location, so a trust policy that no longer admits {{< company-c8y >}} is reported there and then rather than breaking ingestion later.
 * **Rotate the External ID in your trust policy first, then save it here.** The two have to agree: while they do not, every assume-role call fails and Iceberg commits stop. Leaving the field blank keeps the stored value, so you can replace the role alone.
