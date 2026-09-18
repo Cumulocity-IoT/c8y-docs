@@ -1,5 +1,5 @@
 ---
-date: '2026-09-17'
+date: 
 title: >-
   Cumulocity Streaming Analytics runtime images move to Debian 13 and Java 25
 change_type:
