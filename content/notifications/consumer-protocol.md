@@ -32,7 +32,7 @@ wss://your.cumulocity.environment.fullqualifieddomainname/notification2/consumer
 
 ### WebSocket timeouts {#websocket-timeouts}
 
-There is a timeout of 5 minutes set on idle WebSocket connections after which the connection will be closed by the server side. Therefore the consumer must be prepared to handle closed connections which is required for fault-tolerant operation in any case. All consuming microservices or applications should handle the WebSocket being closed and re-connect as necessary. Alternatively, if you would like to keep the connection from being closed due to idle timeout, implement a ping-pong handler in the WebSocket consumer. For example, you can implement this mechanism in Jetty by following [Jetty Programming Guide > Client Libraries > WebSocket Client > WebSocket Session > Sending Ping/Pong](https://eclipse.dev/jetty/documentation/jetty-11/programming-guide/index.html#pg-websocket-session-ping). A few libraries also provide built-in support for keeping the connection open. [Java-WebSocket](https://github.com/TooTallNate/Java-WebSocket), for example, does this by sending the ping requests to the server every minute by default.
+There is a timeout of 5 minutes set on idle WebSocket connections after which the connection will be closed by the server side. Therefore the consumer must be prepared to handle closed connections which is required for fault-tolerant operation in any case. All consuming microservices or applications should handle the WebSocket being closed and re-connect as necessary. Alternatively, if you would like to keep the connection from being closed due to idle timeout, implement a ping-pong handler in the WebSocket consumer. For example, you can implement this mechanism in Jetty by following [Jetty Programming Guide > Client Libraries > WebSocket Client > WebSocket Session > Sending Ping/Pong](https://eclipse.dev/jetty/documentation/jetty-11/programming-guide/index.html#session-ping). A few libraries also provide built-in support for keeping the connection open. [Java-WebSocket](https://github.com/TooTallNate/Java-WebSocket), for example, does this by sending the ping requests to the server every minute by default.
 
 
 ### Notification acknowledgments {#notification-acknowledgements}
@@ -108,7 +108,7 @@ This can result in duplicate messages being received by the consumer.
 Those duplicates can sometimes include acknowledged messages as these may be on-the-wire from the consumer to the server when the connection is lost.
 
 Notification messages do not contain any specific unique identifiers to aid in de-duplication.
-Therefore, any de-duplication of messages must be done by the consumer based upon the [Notification description header](#notification-description-header) and payload.
+Therefore, any de-duplication of messages must be done by the consumer based upon the [Notification description header](#notification-message-header-and-content) and payload.
 Note that the acknowledgment header is not guaranteed to be unique across consumer reconnections, which is when duplicates are most likely.
 
 Some events are easy to de-duplicate, such as inventory events where a unique source object is first created and then deleted.

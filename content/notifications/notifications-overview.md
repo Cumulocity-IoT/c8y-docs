@@ -118,7 +118,7 @@ The rightmost client identifies its consumer as "alarmmonitor" and that consumer
 
 The second to right client identifies its consumer as "tempaudit" and that consumer receives messages from the `temperature` subscription topic.
 
-The leftmost two consumer clients are two shares of a (logically single) [shared consumer](#Shared-consumer-tokens),
+The leftmost two consumer clients are two shares of a (logically single) [shared consumer](#shared-consumer-tokens),
 and so share the same copy of topic messages. They both identify the same "tempmonitor" consumer; each receives a non-overlapping subset of the messages in the `temperature` topic.
 Collectively, they receive all of the messages in the topic.
 
@@ -514,4 +514,3 @@ The implementation can be a microservice running internally to, or an applicatio
 Java developers do not need to code to the protocol specification directly.
 The API and the protocol have been implemented in the [{{< product-c8y-iot >}} Clients Java API](https://github.com/Cumulocity-IoT/cumulocity-clients-java/tree/develop/java-client/src/main/java/com/cumulocity/sdk/client/messaging/notifications). Examples using that can be found
 in the [cumulocity-examples repository](https://github.com/Cumulocity-IoT/cumulocity-examples/tree/develop/notification2-examples).
-
