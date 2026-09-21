@@ -15,7 +15,7 @@ build_artifact:
 ticket: PAM-35403
 ---
 
-The {{< product-c8y-iot >}} Streaming Analytics (Apama) runtime images will be upgraded to Debian 13 (Trixie) as their base operating system in a forthcoming “27.x” release, replacing Debian 12 (Bookworm). The upgrade also brings a new Java version, multi-architecture image support, and a change to the location of the Python 3 interpreter.
+The {{< product-c8y-iot >}} Streaming Analytics (Apama) runtime images will be upgraded to Debian 13 (Trixie) as their base operating system in a forthcoming “27.x” release, replacing Debian 12 (Bookworm). The upgrade also brings a new Java version and a change to the location of the Python 3 interpreter.
 
 {{< c8y-admon-important >}}
 If you use custom Java or Python code in an Analytics Builder block uploaded to the apama-ctrl microservice, make the required changes promptly so that you are ready before the update is rolled out to your environment.
@@ -32,10 +32,6 @@ The published Apama runtime images are now based on Debian 13 (Trixie) instead o
 Apama now ships with OpenJDK 25 instead of OpenJDK 17. All Java code executed within the correlator now runs on Java 25, so if you have custom EPL plugins or connectivity plugins you should recompile them with Java 25 and test that they still behave as expected. If you use Java in a block uploaded to an apama-ctrl microservice, make any required changes promptly so you are ready when the update is rolled out to SaaS environments.
 
 See the [JDK release notes](https://www.oracle.com/java/technologies/javase/25-relnote-issues.html) for details of the breaking changes and new features between Java 17 and Java 25. Some applications may require updates to third-party library dependencies, but in most cases we expect Apama plugins to continue to work without changes.
-
-**Multi-architecture images (arm64)**
-
-The published runtime image tags are now multi-architecture manifest lists covering both `amd64` and `arm64`. Pulling an image tag on an arm64 machine now gives you a native arm64 image, so you can build and run custom microservices on arm64 hardware without emulation.
 
 **Python interpreter path change**
 
