@@ -21,23 +21,23 @@ In an upcoming release, the {{< product-c8y-iot >}} Streaming Analytics (Apama) 
 If you use custom Java or Python code in an Analytics Builder block uploaded to the apama-ctrl microservice, make the required changes promptly so that you are ready before the update is rolled out to your environment.
 {{< /c8y-admon-important >}}
 
-We expect **most applications to be unaffected**. The changes matter if you build custom microservices on the Apama base image, use custom Java EPL or connectivity plugins, or run Python code from a block or extension uploaded to the apama-ctrl microservice.
+**Most applications are unaffected**. The changes matter if you build custom microservices on the Apama base image, use custom Java EPL or connectivity plugins, or run Python code from a block or extension uploaded to the apama-ctrl microservice.
 
 **Debian 13 base image**
 
-The published Apama runtime images will be based on Debian 13 (Trixie) instead of Debian 12 (Bookworm). If you build a custom {{< product-c8y-iot >}} microservice on the [Apama base image](https://gallery.ecr.aws/apama) and install extra operating system packages, check that those packages are still available and that their names have not changed in Debian 13.
+The published Apama runtime images are based on Debian 13 (Trixie) instead of Debian 12 (Bookworm). If you build a custom {{< product-c8y-iot >}} microservice on the [Apama base image](https://gallery.ecr.aws/apama) and install extra operating system packages, check that those packages are still available and that their names have not changed in Debian 13.
 
 **Java 25**
 
-Apama will ship with OpenJDK 25 instead of OpenJDK 17. All Java code executed within the correlator will run on Java 25, so if you have custom EPL plugins or connectivity plugins you should recompile them with Java 25 and test that they still behave as expected. If you use Java in a block uploaded to an apama-ctrl microservice, make any required changes promptly so you are ready when the update is rolled out to SaaS environments.
+Apama ships with OpenJDK 25 instead of OpenJDK 17. All Java code executed within the correlator runs on Java 25, so if you have custom EPL plugins or connectivity plugins you should recompile them with Java 25 and test that they still behave as expected. If you use Java in a block uploaded to an apama-ctrl microservice, make any required changes promptly so you are ready when the update is rolled out to SaaS environments.
 
-See the [JDK release notes](https://www.oracle.com/java/technologies/javase/25-relnote-issues.html) for details of the breaking changes and new features between Java 17 and Java 25. Some applications may require updates to third-party library dependencies, but in most cases we expect Apama plugins to continue to work without changes.
+See the [JDK release notes](https://www.oracle.com/java/technologies/javase/25-relnote-issues.html) for details of the breaking changes and new features between Java 17 and Java 25. Some applications may require updates to third-party library dependencies, but in most cases Apama plugins continue to work without changes.
 
 **Python interpreter path change**
 
-The Python 3 interpreter will be the operating-system-provided `/usr/bin/python3` (Python 3.13 from Debian 13) rather than a Python 3 installation shipped inside the Apama directory. If you have hardcoded the old Apama-provided Python 3 path anywhere — for example in a script, Dockerfile, or test configuration — update it to `/usr/bin/python3`.
+The Python 3 interpreter is the operating-system-provided `/usr/bin/python3` (Python 3.13 from Debian 13) rather than a Python 3 installation shipped inside the Apama directory. If you have hardcoded the old Apama-provided Python 3 path anywhere — for example in a script, Dockerfile, or test configuration — update it to `/usr/bin/python3`.
 
-PySys and the Apama PySys extensions will still be shipped with Apama; only the interpreter itself will be provided by the operating system. Review [What's New in Python](https://docs.python.org/3/whatsnew/index.html) for any language changes that may affect your code.
+Apama still ships PySys and the Apama PySys extensions; only the interpreter itself comes from the operating system. Review [What's New in Python](https://docs.python.org/3/whatsnew/index.html) for any language changes that may affect your code.
 
 **References & feedback**
 
