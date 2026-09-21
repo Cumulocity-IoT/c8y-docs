@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2026-09-21'
 title: >-
   Cumulocity Streaming Analytics runtime images move to Debian 13 and Java 25
 change_type:
@@ -13,7 +13,6 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAM-35403
-version: 27.0.0
 ---
 
 The {{< product-c8y-iot >}} Streaming Analytics runtime images have been upgraded to Debian 13 (Trixie), together with a new Java version, multi-architecture image support, and a change to the Python interpreter that is used.
