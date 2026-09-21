@@ -1,6 +1,6 @@
 ---
 date: ""
-title: A new Loriot output user is created without an e-mail address
+title: New Loriot output user now created without an email address
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
