@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Widget-specific paste hook for SCADA dashboard copy/paste (#12644) [GRAFT][release/cd] (#13127)
+title: Enhanced SCADA widgets now show correct data in copied dashboards
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,21 +14,6 @@ build_artifact:
 ticket: MTM-66272
 version: 1024.18.6
 ---
-# Backport
+When a dashboard containing the enhanced ["SCADA" widget](/cockpit/widgets-collection/#scada) was copied and pasted onto another device or asset, the asset references in the widget's placeholder mappings still pointed at the original object, so the pasted widget kept displaying data from the source device. These references are now remapped to the target device, and the copied dashboard shows the correct data.
 
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Cockpit): [MTM-66272] Widget-specific paste hook for SCADA
-dashboard copy/paste
-(#12644)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12644)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66272]:
-https://cumulocity.atlassian.net/browse/MTM-66272?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
-Co-authored-by: Claude Sonnet 5 <noreply@anthropic.com>
+**For widget developers:** until now, only a fixed set of widget configuration properties, such as `device`, `deviceIds` and the various data point properties, was rebound on paste. Widget definitions can now implement an optional `paste(config, newContext, oldContext)` hook, following the same convention as the existing `export` and `import` hooks, to adapt their own configuration to the new context. A widget that implements the hook takes over the whole adaptation, so every reference, including `device`, must be rebound there; widgets without the hook keep the previous behavior. The hook is listed with the other widget definition options in the [widget guide](https://cumulocity.com/codex/common-tasks/widget-guide/overview).
