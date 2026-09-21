@@ -1,6 +1,6 @@
 ---
 date: 
-title: Notifications 2.0 tenant context subscriptions now support the measurements API
+title: Notifications 2.0 tenant context subscriptions now support the measurement API
 change_type:
   - value: change-QHu1GdukP
     label: Feature
