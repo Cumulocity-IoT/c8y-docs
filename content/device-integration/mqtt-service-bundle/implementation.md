@@ -173,7 +173,7 @@ See the [Service Quotas](/service-terms/quotas#mqtt-service) section for details
 Certain topics are reserved for devices using the Core MQTT protcols.
 See [Core MQTT topics](#core-mqtt-topics) for the complete list.
 There is no overlap between the Core MQTT and generic device topic spaces, and all other topics are available for use by "generic" MQTT devices.
-Generic devices should avoid using any topic name starting with the Core MQTT prefixes listed below, even though some topics under those prefixes are not used by Core MQTT.
+Generic devices should avoid using any topic name treated by the MQTT Service as a Core MQTT topic, even though some of these topics are not currently used by Core MQTT.
 This will help to avoid situations where it is not obvious how a given topic should be handled, which may be difficult to debug.
 
 ### Payloads {#mqtt-payloads}
@@ -272,19 +272,17 @@ In particular:
 
 #### Core MQTT topics {#core-mqtt-topics}
 
-The Core MQTT protocols use a specific set of topics defined in the [MQTT quick reference](/smartrest/quick-reference/#topic-format).
-All message publication and subscription on these topics is assumed to be for Core MQTT devices and will be routed to and from the {{< product-c8y-iot >}} core.
+The Core MQTT protocols use a specific set of topic names and topic name prefixes.
+The MQTT Service assumes that all publication and subscription activity on these topics is for Core MQTT devices and routes messages to and from the {{< product-c8y-iot >}} core.
+A device may use both Core MQTT and generic topics, but messages on a given topic will always be routed to _either_ the {{<product-c8y-iot >}} core _or_ to a generic messaging service client, never to both.
 
-* `s/`
-* `t/`
-* `q/`
-* `c/`
-* `alarm/alarms/`
-* `event/events/`
-* `measurement/measurements/`
-* `inventory/managedObjects/`
-* `error`
-* `devicecontrol/notifications`
+The following topic names are handled as Core MQTT topics:
+
+1. The SmartREST topics documented in the [MQTT quick reference](/smartrest/quick-reference/#topic-format). 
+2. The JSON via MQTT topics documented in [JSON via MQTT](/smartrest/json-via-mqtt/#topic-structure). These are matched as _prefixes_ so any topic name _starting with_ a JSON via MQTT topic name is considered to be a Core MQTT topic. For backwards compatibility, these topic names are also accepted with a leading slash (`/`) character.
+3. The special topics `error` and `devicecontrol/notifications`. These are matched _exactly_, so names such as `errorTopic` or `/error` are _not_ considered to be Core MQTT topics.
+
+We strongly recommend that generic MQTT devices avoid using any topic names that could be confused with Core MQTT topics.
 
 #### Connect-time behaviour {#core-mqtt-connections}
 
@@ -315,6 +313,22 @@ This means that a device will not be automatically disconnected even if it:
 
 In these cases, the device will remain connected, but invalid messages will not be processed and no messages will be received from invalid topics.
 A device can subscribe to the `s/e` topic to monitor any error messages sent by the Core MQTT implementation in these cases.
+
+#### MQTT version 5.0 behavior {#core-mqtt-mqtt-5-behavior}
+
+Devices may connect to the MQTT Service using either MQTT version 3.1.1 or MQTT version 5.0, and publish or subscribe to [Core MQTT topics](#core-mqtt-topics) in both cases.
+
+Handling of Core MQTT topics is **identical** for both protocol versions. None of the additional [MQTT version 5.0 features](#mqtt-50-features) described elsewhere in this section are honored on Core MQTT topics, namely:
+
+* MQTT version 5.0 reason codes on `PUBACK`, `SUBACK` or `DISCONNECT` packets, described in [Error reporting](#mqtt-error-reporting), are not used to report problems related to processing on Core MQTT topics. Instead, the existing mechanism is applied:
+  * On the `s/e` topic for SmartREST.
+  * On the `error` topic for [JSON via MQTT](/smartrest/json-via-mqtt/#error-handling).
+* Client disconnect behavior is identical for both protocol versions. Regardless of whether a client is using MQTT version 3.1.1 or MQTT version 5.0, the disconnect behavior on Core MQTT topics is exactly the same, for example when sending an invalid message or in the case of a server error.
+* MQTT version 5.0 publish properties — _Content Type_, _Response Topic_, _Correlation Data_ and _User Property_ — are not used, set or forwarded on Core MQTT topics, even though they are [supported](#mqtt-50-publish-features) for generic MQTT topics.
+
+{{< c8y-admon-caution >}}
+Devices using MQTT version 5.0 that are using Core MQTT topics must not rely on any MQTT version 5.0 feature being honored on those topics.
+{{< /c8y-admon-caution >}}
 
 #### Connection monitoring {#core-mqtt-connection-monitoring}
 
