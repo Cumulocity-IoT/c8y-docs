@@ -15,7 +15,11 @@ build_artifact:
 ticket: PAM-35403
 ---
 
-The {{< product-c8y-iot >}} Streaming Analytics runtime images have been upgraded to Debian 13 (Trixie), together with a new Java version, multi-architecture image support, and a change to the Python interpreter that is used.
+The {{< product-c8y-iot >}} Streaming Analytics (Apama) runtime images will be upgraded to Debian 13 (Trixie) as their base operating system in a forthcoming “27.x” release, replacing Debian 12 (Bookworm). The upgrade also brings a new Java version, multi-architecture image support, and a change to the location of the Python 3 interpreter.
+
+{{< c8y-admon-important >}}
+If you use custom Java or Python code in an Analytics Builder block uploaded to the apama-ctrl microservice, make the required changes promptly so that you are ready before the update is rolled out to your environment.
+{{< /c8y-admon-important >}}
 
 We expect **most applications to be unaffected**. The changes matter if you build custom microservices on the Apama base image, use custom Java EPL or connectivity plugins, or run Python code from a block or extension uploaded to the apama-ctrl microservice.
 
