@@ -23,4 +23,4 @@ environment_availability:
 ---
 Starting with version 1023.0.0, the Web SDK has been upgraded to Angular 20. This update brings performance improvements and new features, but may also introduce breaking changes that could impact your existing implementations.
 
-Comprehensive upgrade documentation is available to help developers navigate the transition and update their codebases accordingly, see the [Angular 20 upgrade documentation](/web/upgrade/#upgrading-to-angular-20).
+Comprehensive upgrade documentation is available to help developers navigate the transition and update their codebases accordingly, see [Updating the Web SDK version](https://cumulocity.com/codex/migration-guides/updating-web-sdk-version/overview).

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-09-17'
 title: Fixed delayed start of scheduled bulk operations after a platform restart
 change_type:
   - value: change-VSkj2iV9m
@@ -13,6 +13,9 @@ build_artifact:
     label: cumulocity
 ticket: DM-7013
 version: 2026.313.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-09-17'
 ---
 A bulk operation scheduled to start at a future time could start significantly later than scheduled if the platform was restarted before its start time was reached, for example during a platform upgrade. This issue is now fixed, and scheduled bulk operations start at the time they were scheduled for.
 
