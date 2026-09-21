@@ -1,6 +1,6 @@
 ---
 date: ""
-title: clicking on a datapoint now provides selected property in the config for target and timestamp.
+title: Data point selection now provides target and timestamp properties in configuration
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-66816
 version: 1024.18.4
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-66816] clicking on a datapoint now provides
-selected property in the config for target and timestamp.
-(#12074)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12074)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66816]:
-https://cumulocity.atlassian.net/browse/MTM-66816?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+Clicking a data point within the "Data graph" widget now automatically selects it and updates the widget configuration in real time. This restores support for dashboard interactions that rely on data point selection to trigger actions across other widgets.
