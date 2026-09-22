@@ -132,6 +132,8 @@ Refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API) i
 
 {{< product-c8y-iot >}} provides a REST endpoint that lets a client obtain a platform API access token by presenting an X.509 certificate over standard HTTPS (port 443), without requiring mutual TLS or MQTT. This is useful for clients that cannot use MQTT or the dedicated mTLS REST endpoint (typically exposed on port 8443) because of firewall, network, regulatory, or operational constraints.
 
+Except for device users, obtaining and using such a token is only possible for accounts that have explicitly opted in to certificate authentication, see [Certificate authentication opt-in](#certificate-authentication-opt-in) below. An account that has not opted in is rejected with a `401`, even when the presented certificate chain is otherwise valid and trusted by the tenant. Single sign-on (SSO) users are always rejected, regardless of the opt-in setting, because their identity is owned by the external identity provider rather than by {{< product-c8y-iot >}}.
+
 The client sends its PEM-encoded leaf certificate or certificate chain to the endpoint and receives a platform access token in return. By default, the token is returned as a JWE encrypted with the public key from the presented certificate, so that only the holder of the corresponding private key can decrypt and use it; a plain JWT response is available only if that mode is explicitly enabled. The encryption profile (JWE compact serialization with RSA-OAEP-256 and AES-256-GCM) requires RSA certificates.
 
 The endpoint reuses the existing certificate validation and tenant trust configuration: the certificate chain must be trusted according to the tenant's trust configuration, the same way as for device authentication with certificates. This tab does not repeat how trusted certificates (CA certificates) are uploaded and managed. For those details refer to:
@@ -151,4 +153,14 @@ For the request and response details, including the required headers and the sup
 A single certificate Common Name (CN) can potentially resolve to more than one {{< product-c8y-iot >}} user. For example, a regular user may be represented by the username derived directly from the certificate CN (`my-client`), while a device user may be represented by applying the `device_` prefix to the same CN (`device_my-client`).
 
 If a certificate identity resolves to more than one eligible user, the platform does not choose one implicitly. Instead, the token request is rejected and no token is issued (fail-closed behavior). This prevents the same certificate from being used silently for different user identities.
+{{< /c8y-admon-important >}}
+
+#### Certificate authentication opt-in {#certificate-authentication-opt-in}
+
+A regular user decides for their own account whether certificate authentication is required, by setting `requiredAuthType` to `CERTIFICATES` through [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/#operation/putCurrentUserResource), and back to `NONE` the same way, at any time. This is strictly self-service: the field is only readable and writable through this endpoint, not through the administrative user endpoints, so nobody, not even a tenant administrator, can opt another user in.
+
+Once set to `CERTIFICATES`, the account can exchange a certificate for a platform access token (see [Obtain an access token with a certificate](#retrieving-a-platform-token-using-an-x509-certificate)), and from then on only certificate-derived tokens are accepted for it; password-derived tokens are rejected. Every change is recorded in the user's audit trail ("User updated"). Microservice service users opt in the same way, through a different, service-user-specific endpoint, see [Certificate authentication opt-in](/microservice-sdk/general-aspects/#certificate-authentication-opt-in) in the microservice developer guide.
+
+{{< c8y-admon-important >}}
+Opting in before a usable certificate is available for the account (none issued yet, expired, or a no-longer-trusted CA) locks it out of both password and certificate login. A regular user recovers through the "forgot password" email flow, which resets `requiredAuthType` back to `NONE` along with the new password; changing your password while already logged in does not. A locked-out service user is recovered by an administrator, see the microservice developer guide linked above. Device users and MQTT certificate authentication are unaffected by any of this.
 {{< /c8y-admon-important >}}
