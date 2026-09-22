@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-6988
 version: 
 ---
-The Loriot agent used to create its output user with an e-mail address at a domain that was never registered. The user is now created through the device registration flow, which needs no e-mail address, so the account is more secured. Existing tenants are migrated automatically when the agent starts: every Loriot cumulocity output is re-pushed with the new credentials before the previous user is removed, so uplinks keep arriving throughout. No action is required.
+The Loriot agent used to create its output user with an email address at a domain that was never registered. The user is now created through the device registration flow, which doesn´t need an email address, so that the account is more secure. Existing tenants are migrated automatically when the agent starts: Every Loriot {{< product-c8y-iot >}} output is re-pushed with the new credentials before the previous user is removed, so uplinks keep arriving throughout. No action is required.
