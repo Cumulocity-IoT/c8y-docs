@@ -8,7 +8,7 @@ sector:
   - platform_administration
 weight: 20
 helpcontent:
-  - label: overview
+  - label: home
     title: Home
     content: "This home page gives you a snapshot of your account's usage and contract status. It shows your **usage** metrics for messages, storage, CPU, devices and database resources, each with a trend indicator so you can see at a glance whether usage is going up or down.
 
