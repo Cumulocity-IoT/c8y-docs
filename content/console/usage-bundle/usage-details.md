@@ -5,7 +5,7 @@ outputs:
   - json
 weight: 20
 helpcontent:
-  - label: usage-data
+  - label: usage-details
     title: Details
     content: "This raw data view is useful for detailed analysis or when you need precise numerical values instead of visualizations for tenant-level usage data. 
     

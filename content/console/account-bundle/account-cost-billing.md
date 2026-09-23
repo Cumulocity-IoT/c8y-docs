@@ -5,7 +5,7 @@ outputs:
   - json
 weight: 30
 helpcontent:
-  - label: account-details-history
+  - label: account-cost-billing
     title: Cost & billing
     content: "The **Cost & billing** tab provides you with a detailed breakdown of monthly consumption for each billable product.
 
