@@ -16,6 +16,10 @@ version: 2026.313.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-09-17'
+  - label: apj.cumulocity.com
+    date: '2026-09-23'
+  - label: jp.cumulocity.com
+    date: '2026-09-23'
 ---
 A bulk operation scheduled to start at a future time could start significantly later than scheduled if the platform was restarted before its start time was reached, for example during a platform upgrade. This issue is now fixed, and scheduled bulk operations start at the time they were scheduled for.
 

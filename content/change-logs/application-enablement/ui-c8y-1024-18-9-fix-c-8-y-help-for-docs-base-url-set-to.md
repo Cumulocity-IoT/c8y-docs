@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-09-23'
 title: Context help now loads when docsBaseUrl is set to a single slash
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-67541
 version: 1024.18.9
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-09-23'
 ---
 The "About this page" help drawer did not load its content when the `docsBaseUrl` application option was set to `/`. Instead, it showed a loading indicator indefinitely and logged an "Invalid URL" error in the browser console. A `docsBaseUrl` that is relative to the application host is now resolved against that host, so the help content is loaded from the root of the host the application is served from.
 

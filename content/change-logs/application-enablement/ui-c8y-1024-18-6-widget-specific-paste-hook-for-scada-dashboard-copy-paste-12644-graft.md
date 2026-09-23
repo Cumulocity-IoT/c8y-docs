@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-09-23'
 title: Enhanced SCADA widgets now show correct data in copied dashboards
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-66272
 version: 1024.18.6
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-09-23'
 ---
 When a dashboard containing the enhanced ["SCADA" widget](/cockpit/widgets-collection/#scada) was copied and pasted onto another device or asset, the asset references in the widget's placeholder mappings still pointed to the original object, so the pasted widget kept displaying data from the source device. These references are now remapped to the target device, and the copied dashboard shows the correct data.
 
