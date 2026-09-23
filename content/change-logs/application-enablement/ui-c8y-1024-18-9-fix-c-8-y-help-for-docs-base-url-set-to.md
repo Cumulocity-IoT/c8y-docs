@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix c8y-help for docsBaseUrl set to a single slash (#12854) [GRAFT][release/cd] (#13129)
+title: Context help now loads when docsBaseUrl is set to a single slash
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,21 +14,6 @@ build_artifact:
 ticket: MTM-67541
 version: 1024.18.9
 ---
-# Backport
+The "About this page" help drawer did not load its content when the `docsBaseUrl` application option was set to `/`. Instead, it showed a loading indicator indefinitely and logged an "Invalid URL" error in the browser console. A `docsBaseUrl` that is relative to the application host is now resolved against that host, so the help content is loaded from the root of the host the application is served from.
 
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-67541] Fix c8y-help for docsBaseUrl set to a
-single slash
-(#12854)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12854)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67541]:
-https://cumulocity.atlassian.net/browse/MTM-67541?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
-Co-authored-by: Claude Opus 5 (1M context) <noreply@anthropic.com>
+In addition, the help button is no longer displayed when documentation links are switched off (`docsBaseUrl` set to `null` or an empty string), as no help content can be loaded in that case.
