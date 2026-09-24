@@ -205,6 +205,16 @@ Steps:
 4. The microservice iterates over the service user credentials and uses them to create alarms to each tenant.
 5. The microservice returns the result to the platform, and the platform to the invoking user.
 
+### Certificate authentication opt-in {#certificate-authentication-opt-in}
+
+A microservice's service user can require certificate authentication for itself, the same way a regular user can, see [Certificate authentication opt-in](/authentication/oai-secure/#certificate-authentication-opt-in) for the general behavior. It opts in through a dedicated API instead, restricted to the service user itself; the bootstrap user cannot use it on the service user's behalf. See [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/#operation/putCurrentApplicationResourceAuthType) for the request details.
+
+{{< c8y-admon-important >}}
+Switching to `CERTIFICATES` takes effect immediately. From that point on, the service user's password is no longer accepted, so the microservice must already be able to obtain and verify a usable leaf certificate for the tenant before making this call, not after. A service user that switches without a usable certificate (none issued yet, an expired one, or a tenant CA that is no longer trusted) locks itself out: it can no longer authenticate to call this endpoint and revert the change.
+{{< /c8y-admon-important >}}
+
+Recovering a locked-out service user is admin-driven: a tenant administrator can reset `requiredAuthType` back to `NONE` (but not to `CERTIFICATES`) for the application's service user through a separate API, see [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/#operation/putApplicationResourceAuthType). Both calls are audited as part of the affected user's existing "User updated" audit record.
+
 ### Encryption {#encryption}
 
 There is a mechanism to encrypt the tenant options.
