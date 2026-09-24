@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-67821
-version: 
+version: 2026.343.0
 ---
 
 Notifications 2.0 subscriptions in the tenant context now support the measurement API.
