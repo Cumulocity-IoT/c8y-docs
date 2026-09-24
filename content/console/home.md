@@ -18,7 +18,7 @@ helpcontent:
 
 The **Home** page of the Console application serves as the homepage and contains a variety of information.
 
-<img src="/images/console/overview-page.png" alt="Overview page">
+<img src="/images/console/home-page.png" alt="Home page">
 
 This page contains the following sections:
 

@@ -18,7 +18,7 @@ helpcontent:
 
 The **Details** tab provides access to the raw underlying data that powers the graphs on the **Overview** tab. It is a table with all the data, available for use with the same filters as the visualizations.
 
-<img src="/images/console/usage/usage-data/usage-data.png" alt="Usage Details">
+<img src="/images/console/usage/usage-data/usage-details.png" alt="Usage Details">
 
 The data is available at the tenant level. Use **Configure columns** to add or remove metrics from the table.
 

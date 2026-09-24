@@ -18,7 +18,7 @@ helpcontent:
 
 The **Cost & Billing** tab provides a detailed breakdown of monthly consumption for each billable product.
 
-<img src="/images/console/account/account-details-history.png" alt="Cost & Billing">
+<img src="/images/console/account/account-cost-billing.png" alt="Cost & Billing">
 
 ### Consumption details {#consumption-details}
 
