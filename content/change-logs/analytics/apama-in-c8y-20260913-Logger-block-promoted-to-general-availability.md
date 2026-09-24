@@ -1,5 +1,5 @@
 ---
-date:
+date: '2026-09-24'
 title: Logger block in Analytics Builder is now generally available
 change_type:
   - value: change-QHu1GdukP
@@ -13,6 +13,9 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-5383
 version: 27.246.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-09-24'
 ---
 
 The [Logger](/streaming-analytics/block-reference/#logger) block, previously released in [Public Preview](/change-logs/?component=.component-M5-cepIIS#apama-in-c8y-20260126-add-logger-block-in-public-preview), is now Generally Available (GA).
