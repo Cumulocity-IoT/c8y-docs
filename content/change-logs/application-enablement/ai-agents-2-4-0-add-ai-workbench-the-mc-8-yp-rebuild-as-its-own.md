@@ -1,6 +1,6 @@
 ---
 date: ""
-title: add ai-workbench, the mc8yp rebuild as its own microservice (#709)
+title: AI Workbench microservice now available enabling code-mode MCP
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
