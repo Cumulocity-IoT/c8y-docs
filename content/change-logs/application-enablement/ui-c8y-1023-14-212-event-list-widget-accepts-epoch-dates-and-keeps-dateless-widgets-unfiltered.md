@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-09-24
 title: Event list widgets without a date filter show all events again
 product_area: Application enablement & solutions
 change_type:

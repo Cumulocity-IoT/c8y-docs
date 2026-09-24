@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-09-24
 title: Data point selection now provides target and timestamp properties in configuration
 product_area: Application enablement & solutions
 change_type:

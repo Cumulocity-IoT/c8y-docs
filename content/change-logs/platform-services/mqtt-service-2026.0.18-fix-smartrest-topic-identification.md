@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2026-09-24
 title: Fixed issues with the identification of Core MQTT topics
 change_type:
   - value: change-VSkj2iV9m
