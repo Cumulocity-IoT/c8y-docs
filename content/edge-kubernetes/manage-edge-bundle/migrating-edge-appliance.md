@@ -9,12 +9,9 @@ This section outlines the procedure for migrating from Edge appliance VM 10.17 o
 {{< c8y-admon-important >}}
 If you are using an Edge appliance VM version earlier than 10.17, you must first update to 10.17. If you are using a version prior to 10.13, you must first update to 10.13 before updating to 10.17.
 
-For information about upgrading from an earlier version to Edge 10.17, see:
-  * [Updating Edge using the GUI](https://cumulocity.com/docs/2024/edge/edge-update/#updating-edge-gui)
-  * [Updating Edge using the REST APIs](https://cumulocity.com/docs/2024/edge/edge-update/#updating-edge-rest)
-in the 2024 {{< product-c8y-iot >}} Edge documentation.
+For information about upgrading from an earlier version to Edge 10.17, see **Updating Edge** section in the [2024 {{< product-c8y-iot >}} Edge documentation](/about_documentation/documentation-repository/#product-documentation-for-previous-releases).
 
-Before proceeding, back up your Edge appliance VM and make sure there is enough disk space to store the MongoDB and DataHub (data lake) backups. For instructions on expanding disk size, refer to [Expanding the disk size](https://cumulocity.com/docs/2024/edge/operating-edge/#expanding-the-disk-size).
+Before proceeding, back up your Edge appliance VM and make sure there is enough disk space to store the MongoDB and DataHub (data lake) backups. For instructions on expanding disk size, refer to **Expanding the disk size** section in the [2024 {{< product-c8y-iot >}} Edge documentation](/about_documentation/documentation-repository/#product-documentation-for-previous-releases).
 
 **Note:** This document does not cover {{< product-c8y-iot >}} DataHub migration.
 {{< /c8y-admon-important >}}
