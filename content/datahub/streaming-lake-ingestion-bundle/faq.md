@@ -6,7 +6,9 @@ layout: redirect
 
 ### How can I configure Streaming Lake Ingestion? {#configure-streaming-lake-ingestion}
 
-Streaming Lake Ingestion has no configuration options and stores all incoming realtime data into your lake. Depending on your use case, you can use a combination of options outside of Streaming Lake Ingestion to influence how data appears in your lake:
+Streaming Lake Ingestion stores all incoming realtime data into your lake and has no configuration options for *what* it offloads or *how* the data is shaped. The one thing you can configure is *where* it writes: by default a data lake that {{< company-c8y >}} operates, or object storage of your own, as described in [Using your own data lake](#own-data-lake).
+
+Depending on your use case, you can use a combination of options outside of Streaming Lake Ingestion to influence how data appears in your lake:
 
 * Use Edge or Data Preparation to change data to more user friendly names, execute simple calculations or route data using processing modes.
 * Use Digital Twin Manager to promote data points to asset level.
