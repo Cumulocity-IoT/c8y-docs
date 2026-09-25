@@ -57,14 +57,14 @@ In all cases it is important to ensure that the MQTT username is set correctly s
 
 #### Disabling basic authentication {#disabling-basic-authentication}
 
-A tenant admin can require certificate authentication for every device connecting to the MQTT Service, by disabling basic authentication for the tenant.
+A tenant administrator can require certificate authentication for every device connecting to the MQTT Service by disabling basic authentication for the tenant.
 Once disabled, the MQTT Service refuses every basic authentication connection attempt, and certificate authentication becomes the only accepted mechanism.
 
 Basic authentication has no automatic binding between the authenticated user and the connecting client, so any client holding valid user credentials can connect under any client ID.
 Certificate authentication does not have this weakness, because the certificate binds the connection to a specific client identity.
 
-To disable basic authentication, navigate to **Settings > Feature toggles** in the Administration application and set the `mqtt-service.basic-authentication` toggle key status to Disabled.
-To allow basic authentication again, set the status back to Enabled.
+To disable basic authentication, navigate to **Settings > Feature toggles** in the Administration application and set the `mqtt-service.basic-authentication` toggle key status to "Disabled".
+To re-enable basic authentication, set the status back to "Enabled".
 Basic authentication is enabled by default, so existing tenants are unaffected until an admin makes this change.
 
 {{< c8y-admon-caution >}}
