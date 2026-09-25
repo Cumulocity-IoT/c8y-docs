@@ -41,4 +41,4 @@ The **Product usage analysis** section allows you to analyze usage patterns for 
 
 Use the dropdown menu in the top right to select different pricing metrics (for example, Messages, Devices, Storage).
 
-Toggle **Show Breakdown** to view detailed breakdowns of the selected metric. The chart displays both the total usage and the associated costs over time.
+Toggle **Show breakdown** to view detailed breakdowns of the selected metric. The chart displays both the total usage and the associated costs over time.
