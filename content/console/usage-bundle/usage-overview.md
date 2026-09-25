@@ -7,7 +7,7 @@ weight: 10
 helpcontent:
   - label: usage-overview
     title: Overview
-    content: "The usage dashboard provides you with comprehensive statistics for all your environments and tenants. Use the filters at the top of the page to customize your view.
+    content: "The usage dashboard provides comprehensive statistics for all your environments and tenants. Use the filters at the top of the page to customize your view.
 
 
     The dashboard displays usage data across multiple widgets and graphs. Each metric includes percentage change indicators comparing the first and last months in your selected time range.

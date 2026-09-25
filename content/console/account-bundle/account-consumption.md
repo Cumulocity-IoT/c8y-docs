@@ -7,7 +7,7 @@ weight: 20
 helpcontent:
   - label: account-consumption
     title: Consumption
-    content: "The **Consumption** tracks commitment usage and month-over-month spend across drawdown, overage, and surcharge, and lets you analyze usage by product metric such as messages, devices, or storage."
+    content: "The **Consumption** tab tracks commitment usage and month-over-month spend across drawdown, overage, and surcharge, and lets you analyze usage by product metrics such as messages, devices, or storage."
 ---
 
 The **Consumption** tab shows monthly drawdowns and commitment details.

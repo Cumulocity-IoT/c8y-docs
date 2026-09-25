@@ -9,4 +9,4 @@ sector:
 weight: 40
 ---
 
-The **Account** page provides comprehensive information about your account, contract details, consumption data, and billing history. The page is organized into three tabs: **Overview**, **Consumption**, and **Cost & Billing**. 
+The **Account** page provides comprehensive information about your account, contract details, consumption data, and billing history. The page is organized into three tabs: **Overview**, **Consumption**, and **Cost & billing**. 
