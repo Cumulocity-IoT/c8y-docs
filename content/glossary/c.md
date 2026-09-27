@@ -128,9 +128,9 @@ DataHub provides a REST API (`/service/datahub/`) to proxy query-related request
 {{< /c8y-details >}}
 
 
-### {{< product-c8y-iot >}} Developer Codex {#developer-codex}
+### {{< product-c8y-iot >}} Web developer codex {#developer-codex}
 
-The [{{< product-c8y-iot >}} Developer Codex](https://cumulocity.com/codex/) is {{< product-c8y-iot >}}'s comprehensive design system aimed at developers building custom [web applications](#web-application). The {{< product-c8y-iot >}} Developer Codex provides a set of UI guidelines, a library of reusable Angular components ([Web SDK](#web-sdk)), and styling utilities to ensure that custom [applications](#application) maintain a consistent look and feel, and user experience with standard {{< product-c8y-iot >}} applications.  
+The [{{< product-c8y-iot >}} Web developer codex](https://cumulocity.com/codex/) is {{< product-c8y-iot >}}'s comprehensive design system aimed at developers building custom [web applications](#web-application). The {{< product-c8y-iot >}} Web developer codex provides a set of UI guidelines, a library of reusable Angular components ([Web SDK](#web-sdk)), and styling utilities to ensure that custom [applications](#application) maintain a consistent look and feel, and user experience with standard {{< product-c8y-iot >}} applications.  
 
 
 ### {{< product-c8y-iot >}} Edge {#edge}
@@ -147,7 +147,7 @@ Core REST APIs (such as [Inventory API](https://cumulocity.com/api/core/#tag/Inv
 ### {{< product-c8y-iot >}} Messaging Service {#messaging-service}
 
 The {{< product-c8y-iot >}} Messaging Service is a publish/subscribe messaging bus that provides decoupled, asynchronous data transfer between {{< product-c8y-iot >}} components, as well as to and from hosted microservices and external client applications.
-Amongst other things, it is used by the [data broker](#data-broker), [Notifications 2.0](https://cumulocity.com/api/core/#tag/About-notifications-2.0), [Streaming Analytics](#streaming-analytics) and the [MQTT Service](#mqtt-service).
+Amongst other things, it is used by the [data broker](#data-broker), [Notifications 2.0](/notifications/), [Streaming Analytics](#streaming-analytics) and the [MQTT Service](#mqtt-service).
 
 
 ### {{< product-c8y-iot >}} MQTT Service {#mqtt-service}

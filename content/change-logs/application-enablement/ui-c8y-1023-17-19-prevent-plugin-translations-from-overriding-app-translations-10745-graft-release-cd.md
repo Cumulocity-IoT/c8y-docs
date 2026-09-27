@@ -22,4 +22,4 @@ environment_availability:
   - label: cumulocity.com
 ---
 This fix prevents plugins from overriding the translations in the shell application. Still, within a plugin, the translations provided by this plugin take precedence over the shell application's ones.
-If you want to override a shell application translation, you may use [application options](/web/application-configuration/#languages-customization) or [the localization feature](/standard-tenant/changing-settings/#localization).
+If you want to override a shell application translation, you may use [application options](https://cumulocity.com/codex/advanced-development/services/options-service/overview) or [the localization feature](/standard-tenant/changing-settings/#localization).
