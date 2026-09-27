@@ -118,7 +118,7 @@ Three steps. The **AWS console** path is the authoritative one; an AWS CLI equiv
 
 #### Step 1: Create the bucket {#own-lake-aws-bucket}
 
-The bucket has to live in the region the setup page names, which is the region the {{< product-c8y-iot >}} environment runs in. Provisioning compares the two and refuses a bucket anywhere else, and S3 would reject the signed request regardless: every call is signed for that one region. Cross-region access is not merely slower, it is not configured.
+The bucket has to live in the region the setup page names, which is the region the {{< product-c8y-iot >}} environment runs in. Provisioning compares the two and refuses a bucket anywhere else.
 
 Three settings while you create the bucket:
 
@@ -167,7 +167,7 @@ The External ID is **your** value, not {{< company-c8y >}}'s. The setup page pre
 
 Three things to know about it:
 
-* **Its length and character set are checked.** At least 32 characters — the suggestion is exactly that long, so keeping it is always safe. The character set is AWS's own: `A-Z a-z 0-9 _ + = , . @ : / -`, with no spaces and no `#`. A value outside it is rejected when you enter it, rather than being rejected later by AWS, where the error would surface far from its cause.
+* **Its length and character set are checked.** At least 32 characters with a special character set `A-Z a-z 0-9 _ + = , . @ : / -`, no spaces and no `#`.
 * **Use a different value for each of your {{< product-c8y-iot >}} tenants.** This is not enforced, but a value shared between two tenants removes the protection it exists to provide.
 * **Keep a record of it.** It is written into your trust policy, and the settings page never shows the value it holds — only its last few characters, enough to recognize which one is recorded.
 
@@ -175,10 +175,9 @@ If the setup rejects an External ID, it is always one you supplied rather than t
 
 ##### Creating the role {#own-lake-aws-create-role}
 
-In the AWS console, go to **IAM** > **Roles** > **Create role**, and choose **Custom trust policy** as the trusted entity type. Two details of that form matter:
+In the AWS console, go to **IAM** > **Roles** > **Create role**, and choose **Custom trust policy** as the trusted entity type. One detail of that form matters:
 
 * The form opens on **AWS service**, which is the wrong choice here — that is for services inside your own account. **AWS account** is closer but still not enough: it names the account {{< company-c8y >}}'s principal lives in without letting you require the External ID. Only **Custom trust policy** lets you state both.
-* On the **Add permissions** page, continue **without selecting a policy**. The policy this role needs does not exist yet; you create it on the role itself afterwards, under **Permissions** > **Add permissions** > **Create inline policy** > the **JSON** tab, and name it `c8y-streaming-lake-ingestion`.
 
 Once the role is created, its page opens with the **ARN** at the top of the summary panel.
 
@@ -248,11 +247,11 @@ aws iam get-role-policy --role-name c8y-streaming-lake-ingestion-<suffix> \
   --policy-name c8y-streaming-lake-ingestion
 ```
 
-The principal must be exactly the base principal ARN from the setup page, and the External ID in the condition must be the same value you enter there — character for character. A trust policy that is otherwise correct but carries a different External ID is the most common mistake here, and it looks identical in any listing.
+The principal must be exactly the base principal ARN from the setup page, and the External ID in the condition must be the same value you enter there. A trust policy that is otherwise correct but carries a different External ID is the most common mistake here.
 
 ##### Finding the role ARN {#own-lake-aws-role-arn}
 
-The role ARN looks like `arn:aws:iam::<your-account-id>:role/c8y-streaming-lake-ingestion-<suffix>`. In the AWS console, go to **IAM** > **Roles**, open the role and copy the **ARN** from the top of its summary panel; there is a copy button next to it, and copying the value by hand is where transcription mistakes come from. With the CLI:
+The role ARN looks like `arn:aws:iam::<your-account-id>:role/c8y-streaming-lake-ingestion-<suffix>`. In the AWS console, go to **IAM** > **Roles**, open the role and copy the **ARN** from the top of its summary panel. With the CLI:
 
 ```bash
 aws iam get-role --role-name c8y-streaming-lake-ingestion-<suffix> --query Role.Arn --output text
@@ -279,10 +278,10 @@ You can add conditions to either policy — `"Bool": {"aws:SecureTransport": "tr
 Open **Settings** > **Data Lake** in the **Administration** application and enter three values:
 
 * **Role ARN** — as retrieved above.
-* **External ID** — the value you actually put in the trust policy, whether that is the suggestion or your own. Read it back from the role rather than from your notes: **IAM** > **Roles** > your role > **Trust relationships**.
+* **External ID** — the value you put in the trust policy. To be found here: **IAM** > **Roles** > your role > **Trust relationships**.
 * **Bucket** and **prefix** — which together form the base location `s3://<bucket>/<prefix>`. See [Choosing a base location](#own-lake-base-location).
 
-The region is not one of them, because the setup page gave it to you in the first place. Do confirm that the bucket landed there, since a mismatch fails the setup.
+The region is not one of them, because the setup page gave it to you in the first place.
 
 <!-- SCREENSHOT: /images/datahub-guide/sli-own-lake-aws-input.png
      Caption: "Entering the role ARN, External ID, bucket and prefix"
@@ -294,7 +293,7 @@ Then start the setup. It does not start on its own: nothing watches your AWS acc
 
 Four steps. The **Azure portal** path is the authoritative one; an Azure CLI equivalent is given alongside it.
 
-Everything happens in the **storage Entra directory** — the directory that your storage account's subscription belongs to. Azure only allows a storage account to be granted to a service principal that exists in that storage account's own directory. An approval recorded in any other directory cannot even be found in the storage account's access-control picker, and the directory ID you enter in step 4 has to be that same one.
+Everything happens in the **storage Entra directory** — the directory that your storage account's subscription belongs to. Azure only allows a storage account to be granted to a service principal that exists in that storage account's own directory.
 
 #### Step 1: Approve the Streaming Lake Ingestion application {#own-lake-azure-consent}
 
@@ -304,7 +303,7 @@ You are not creating an application here: {{< company-c8y >}}'s already exists, 
 **The application requests no API permissions.** It cannot read your directory, its users, or any other resource. The only thing it can ever do is what you grant it with Azure RBAC in step 2.
 {{< /c8y-admon-info >}}
 
-In the Azure portal, open the consent link shown on the setup page, signed in as an administrator **of the storage Entra directory**. Review the prompt: it names the application and states that no permissions are requested. **Check the directory name shown on the sign-in and consent screens** — if you hold accounts in several directories, the browser may already be signed in to a different one, and approving there records the approval where it cannot be used. Then accept.
+In the Azure portal, open the consent link shown on the setup page, signed in as an administrator **of the storage Entra directory**. Review the prompt: it names the application and states that no permissions are requested. Make sure you are signed in to the correct directory, then accept.
 
 <!-- SCREENSHOT: /images/datahub-guide/sli-own-lake-azure-consent.png
      Caption: "The consent step and the Directory (tenant) ID field on the setup page"
@@ -320,7 +319,7 @@ az ad sp create --id <client-id>
 az ad sp show --id <client-id> --query "{name:displayName, appId:appId, objectId:id}" -o table
 ```
 
-The last call must return one row whose `appId` equals the client ID. Confirm which directory the commands ran against with `az account show --query tenantId -o tsv`; a portal session tells you nothing about where the CLI is pointed.
+The last call must return one row whose `appId` equals the client ID. Confirm which directory the commands ran against with `az account show --query tenantId -o tsv`.
 
 If either path reports the application as missing, or asks for a single-tenant application owned by your directory, the signed-in account is short of privileges rather than the application being wrong. See [If something fails](#own-lake-troubleshooting).
 
@@ -365,7 +364,7 @@ Role assignments are not effective instantly. If step 4 fails immediately after 
 #### Step 3: Enable soft delete {#own-lake-azure-soft-delete}
 
 {{< c8y-admon-req >}}
-Enable **blob soft delete** and **container soft delete** on the storage account before you use Streaming Lake Ingestion in production. Each keeps deleted data recoverable for a retention window you choose. Without them a delete is immediate and final: an accidentally deleted container, or a delete run against the wrong path, takes the tables and their metadata with it, and nothing can bring them back. The service level agreement requires this for production use, so treat it as a step to complete rather than an option to weigh.
+Enable **blob soft delete** and **container soft delete** on the storage account before you use Streaming Lake Ingestion in production. Each keeps deleted data recoverable for a retention window you choose. Without them a delete is immediate and final: an accidentally deleted container, or a delete run against the wrong path, permanently deletes tables and their metadata. The service level agreement requires this for production use.
 {{< /c8y-admon-req >}}
 
 Blob versioning, the other Azure protection of this kind, is **not available on accounts with hierarchical namespace**, which this setup requires, so soft delete is the one to enable.
@@ -425,7 +424,7 @@ The base location is the path your tenant's data is written under. {{< product-c
 Three rules apply on both clouds:
 
 * **Several tenants may share one prefix.** Because each tenant's data lands one level down, under its own ID, two tenants given the same base location end up in sibling directories rather than on top of each other. Pointing your tenants at one common prefix is a supported layout.
-* **What is refused is one tenant nested inside another's.** If the location your tenant would write to contains, or is contained by, one another tenant on the environment already holds, the setup refuses it and asks you to pick another — nothing is created, and your storage is not touched. For privacy the refusal does not name the other tenant, since it may belong to a different customer. Choose a location that neither contains nor sits inside the other one.
+* **What is refused is one tenant nested inside another's.** If the location your tenant would write to contains, or is contained by, one another tenant on the environment already holds, the setup refuses it and asks you to pick another — nothing is created, and your storage is not touched. Choose a location that neither contains nor sits inside the other one.
 * **The base location is fixed once the setup has succeeded.** It is recorded when your tenant's Iceberg catalog is created, and running the setup again does not rewrite it. Entering a different one later therefore moves nothing: the tables stay where they are, and anything already written under the old path would be stranded rather than migrated. [Contact {{< company-c8y >}} support](/additional-resources/contacting-support/) to change it. The same holds for the storage type and, on Azure, the Entra directory.
 
 ### Changing the role or the External ID later {#own-lake-rotating-the-grant}
