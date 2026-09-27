@@ -2,7 +2,7 @@ name: Build and deploy
 on:
   workflow_dispatch:
   push:
-    branches: 
+    branches:
       - develop
       - release/y**
 
@@ -21,7 +21,7 @@ env:
   SSH_AUTH_SOCK: /tmp/ssh_agent.sock
 
 jobs:
-# Build job
+  # Build job
   build:
     name: Build Hugo
     runs-on: ubuntu-latest
@@ -30,84 +30,101 @@ jobs:
       cancel-in-progress: false
     strategy:
       matrix:
-        env: [staging-resources,prod]
+        env: [staging-resources, prod]
     env:
       HUGO_VERSION: 0.132.2
     environment:
-        name: ${{ matrix.env }}
+      name: ${{ matrix.env }}
     steps:
-    - name: Install Hugo CLI
-      run: |
-        wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-        && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
 
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        submodules: recursive
-        fetch-depth: 1
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 1
 
-    - name: Extract branch name
-      shell: bash
-      run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
-      id: extract_branch
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
 
-    - name: Set path and baseURL
-      run: |
-        echo "Branch: ${{ steps.extract_branch.outputs.branch }}"
-        if [[ "${{ steps.extract_branch.outputs.branch }}" == "develop" ]]; then
-          echo "Branch is develop"
-          echo BASEURL="${{ secrets.BASE_URL }}" >> $GITHUB_ENV
-          echo DESTINATION_PATH="${{ secrets.DESTINATION_PATH }}/cd" >> $GITHUB_ENV
-        else
-          suffix=$(echo "${{ steps.extract_branch.outputs.branch }}" | sed  's/release\/y//g')
-          echo "Suffix: ${suffix}"
-          echo BASEURL="${{ secrets.BASE_URL }}/${suffix}" >> $GITHUB_ENV
-          echo DESTINATION_PATH="${{ secrets.DESTINATION_PATH }}/${suffix}" >> $GITHUB_ENV
-        fi
-      id: path_to_append
+      - name: Set path and baseURL
+        run: |
+          echo "Branch: ${{ steps.extract_branch.outputs.branch }}"
+          if [[ "${{ steps.extract_branch.outputs.branch }}" == "develop" ]]; then
+            echo "Branch is develop"
+            echo BASEURL="${{ secrets.BASE_URL }}" >> $GITHUB_ENV
+            echo DESTINATION_PATH="${{ secrets.DESTINATION_PATH }}/cd" >> $GITHUB_ENV
+          else
+            suffix=$(echo "${{ steps.extract_branch.outputs.branch }}" | sed  's/release\/y//g')
+            echo "Suffix: ${suffix}"
+            echo BASEURL="${{ secrets.BASE_URL }}/${suffix}" >> $GITHUB_ENV
+            echo DESTINATION_PATH="${{ secrets.DESTINATION_PATH }}/${suffix}" >> $GITHUB_ENV
+          fi
+        id: path_to_append
 
-    - name: Build with Hugo
-      env:
-        # For maximum backward compatibility with Hugo modules
-        HUGO_ENVIRONMENT: production
-        HUGO_ENV: production
-      run: |
-        hugo \
-          --baseURL "${{ env.BASEURL }}/"
+      - name: Build with Hugo
+        env:
+          # For maximum backward compatibility with Hugo modules
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo \
+            --baseURL "${{ env.BASEURL }}/"
 
-    - name: Set known SSH hosts
-      run: |
-        mkdir -p ~/.ssh/
-        echo "${{ secrets.KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+      - name: Set known SSH hosts
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.KNOWN_HOSTS }}" > ~/.ssh/known_hosts
 
-    - name: Start SSH agent and import private key from secrets
-      run: |
-        ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-        ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
+      - name: Start SSH agent and import private key from secrets
+        run: |
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
 
-    - name: Upload documentation (without PDFs)
-      run: |
-        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh --exclude='pdfs' ./public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }} --delete-after
+      # pdfs and zips are generated later in this job, so they are not in ./public yet.
+      # Without these excludes, --delete-after would remove the published ones until the
+      # upload steps below run again - or for good, if this run is cancelled in between.
+      - name: Upload documentation (without PDFs and ZIPs)
+        run: |
+          rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh --exclude='pdfs' --exclude='zips' ./public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }} --delete-after
 
-    - name: Install wkhtmltopdf
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y xfonts-base xfonts-75dpi
-        wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
-        sudo apt-get install -y ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
-        wkhtmltopdf --version
+      # prod only: the staging-resources host is behind HTTP basic auth, so every render there
+      # fails with "Authentication Required" and uploads empty files. To enable it, pass
+      # credentials via --username/--password in pdf-generator/templates/command.template.sh.
+      - name: Install wkhtmltopdf
+        if: matrix.env == 'prod'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xfonts-base xfonts-75dpi
+          wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+          sudo apt-get install -y ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+          wkhtmltopdf --version
 
-    - name: Generate PDFs
-      run: |
-        cd pdf-generator
-        npm ci
-        npm run generate
+      - name: Generate PDFs
+        id: generate_pdfs
+        if: matrix.env == 'prod'
+        run: |
+          cd pdf-generator
+          npm ci
+          npm run generate
 
-    - name: Upload PDFs
-      run: |
-        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/pdfs/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }}/pdfs --delete-after
+      # Prune stale files only after a complete run; otherwise upload additively, so a failed
+      # render cannot take an already published PDF or ZIP offline.
+      - name: Upload PDFs
+        if: matrix.env == 'prod'
+        run: |
+          PRUNE=""
+          if [ "${{ steps.generate_pdfs.outputs.complete }}" = "true" ]; then PRUNE="--delete-after"; fi
+          rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/pdfs/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }}/pdfs $PRUNE
 
-    - name: Upload Zips
-      run: |
-        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/zips/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }}/zips --delete-after
+      - name: Upload ZIPs
+        if: matrix.env == 'prod'
+        run: |
+          PRUNE=""
+          if [ "${{ steps.generate_pdfs.outputs.complete }}" = "true" ]; then PRUNE="--delete-after"; fi
+          rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/zips/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }}/zips $PRUNE

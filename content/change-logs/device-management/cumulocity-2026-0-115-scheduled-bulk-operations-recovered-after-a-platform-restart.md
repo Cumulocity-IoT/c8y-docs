@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-09-24
 title: Fixed delayed start of scheduled bulk operations after a platform restart
 change_type:
   - value: change-VSkj2iV9m
