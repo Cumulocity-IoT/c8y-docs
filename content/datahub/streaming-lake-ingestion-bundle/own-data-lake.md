@@ -4,20 +4,16 @@ title: Using your own data lake
 layout: redirect
 ---
 
-By default, Streaming Lake Ingestion writes your IoT data into a data lake that {{< company-c8y >}} operates for you. Alternatively, you can have it write into object storage of your own: an **AWS S3 bucket** or an **Azure Data Lake Storage Gen2 storage account** that belongs to your organization.
+Streaming Lake Ingestion writes your IoT data into object storage of your own: an **AWS S3 bucket** or an **Azure Data Lake Storage Gen2 container** that belongs to your organization.
 
 The data then lives in your account, and the access {{< company-c8y >}} has to it is a grant you create, scope and can withdraw. This section describes what to set up in your cloud account and how to complete the setup in {{< product-c8y-iot >}}.
 
-To stop the data flow, unsubscribe the tenant from Streaming Lake Ingestion. Withdrawing the grant or removing the storage instead leaves the service writing into something it can no longer reach, which is a failure state rather than an off switch — see [Removing access](#own-lake-removing-access).
+To stop the data flow, unsubscribe the tenant from Streaming Lake Ingestion. If you only remove the grant or the storage, the service treats this as a temporary failure state and will still apply the service surcharge for Streaming Lake Ingestion — see [Removing access](#own-lake-removing-access).
 
-Which of the two clouds applies to you is not a choice you make here: it follows the {{< product-c8y-iot >}} environment your tenant runs in. The setup page named below states which cloud it expects, and provisioning refuses storage belonging to the other one.
+The service requires you to use the same cloud, and the same cloud region, that your {{< product-c8y-iot >}} environment runs in. The setup page named below guides you accordingly.
 
 {{< c8y-admon-info >}}
-You perform the setup yourself, in the **Administration** application under **Settings** > **Data Lake**. Your {{< product-c8y-iot >}} user must have the ROLE_OFFLOADING_ADMIN or the ROLE_TENANT_ADMIN permission. The **OFFLOADING_ADMINISTRATOR** global role carries ROLE_OFFLOADING_ADMIN: assign it to a user in the Administration application under **Accounts** > **Roles**.
-
-The page is also where the values specific to your environment appear — the identity your grant has to name, the region the environment runs in, and, on AWS, a suggested External ID. Those values differ per environment, so this documentation refers to them rather than repeating them.
-
-The page shows the steps below as a setup guide next to the fields, with those values already filled into the commands.
+You perform the setup yourself, in the **Administration** application under **Settings** > **Data Lake**. Your {{< product-c8y-iot >}} user must have the ROLE_OFFLOADING_ADMIN permission. The **OFFLOADING_ADMINISTRATOR** global role carries it: assign it to a user in the Administration application under **Accounts** > **Roles**.
 {{< /c8y-admon-info >}}
 
 ### What you set up, and what it means {#own-lake-what-you-set-up}
@@ -433,7 +429,7 @@ On AWS, the role ARN and the External ID are **not** fixed: you change them your
 
 <!-- SCREENSHOT: /images/datahub-guide/sli-own-lake-catalog-identity.png
      Caption: "Editing the role ARN and External ID after onboarding, with the stored External ID masked"
-     Blocked: the setup page is not final yet; this form arrives with CDH-7086. -->
+     Blocked: the setup page is not final yet. -->
 
 * **Saving re-runs the verification.** The new role is assumed, and a write, a read-back and a delete are exercised under your base location, so a trust policy that no longer admits {{< company-c8y >}} is reported there and then rather than breaking ingestion later.
 * **Rotate the External ID in your trust policy first, then save it here.** The two have to agree: while they do not, every assume-role call fails and Iceberg commits stop. Leaving the field blank keeps the stored value, so you can replace the role alone.
