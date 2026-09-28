@@ -5,6 +5,7 @@ layout: bundle
 outputs:
   - html
   - json
+  - markdown
 weight: 20
 sector:
   - platform_administration
