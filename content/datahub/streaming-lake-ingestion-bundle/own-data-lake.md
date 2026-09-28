@@ -159,7 +159,7 @@ Create the role in the **same account as the bucket**. It has two policies and b
 
 ##### The External ID {#own-lake-aws-external-id}
 
-The External ID is **your** value, not {{< company-c8y >}}'s. The setup page pre-fills a fresh suggestion each time it is opened, so that you need not invent one, and you are free to replace it with anything you prefer. Whatever you write into the trust policy is the value that counts, and the setup page is where you state which value that was.
+The External ID is **your** value, not {{< company-c8y >}}'s: keep the suggestion the setup page pre-fills, or replace it with one of your own. Either way, put that value in the trust policy's `sts:ExternalId` condition, then enter the same value on the setup page.
 
 Three things to know about it:
 
