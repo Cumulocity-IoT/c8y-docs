@@ -14,8 +14,4 @@ build_artifact:
 ticket: MTM-67388
 version: 2.5.0
 ---
-This includes:
- - spitted layout with control panel view
- - Improved model configuration
- - Kill switch
-- Telemetry settings
+The AI Agent Manager now includes a control panel that gives you one place to manage the AI features in your tenant. The new control panel uses a split layout that keeps the controls separate from the configuration details. A kill switch lets you disable all AI features at once, so you can quickly stop AI activity when needed. You can also manage model configuration directly from the control panel. This change affects administrators who manage AI features, because they can now control AI usage and model settings from a single location.
