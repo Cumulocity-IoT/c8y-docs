@@ -1,6 +1,6 @@
 ---
 date: ""
-title: MTM-67394 Control panel and kill switch (#695)
+title: Control panel and kill switch for AI features
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
