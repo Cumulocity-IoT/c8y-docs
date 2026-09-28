@@ -41,6 +41,9 @@
     {{- with .OutputFormats.Get "markdown" }}
     <link rel="alternate" type="text/markdown" href="{{ .Permalink }}">
     {{- end }}
+    {{- with site.Home.OutputFormats.Get "llmstxt" }}
+    <link rel="describedby" href="{{ .Permalink }}">
+    {{- end }}
     
     <meta name="msapplication-TileColor" content="#212121">
     <meta name="theme-color" content="#ffbe00">
