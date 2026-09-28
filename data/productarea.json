@@ -1,0 +1,24 @@
+{
+  "options": [
+    {
+      "option": "Analytics",
+      "id": "product_area-whzlZT2MhT"
+    },
+    {
+      "option": "Application enablement & solutions",
+      "id": "product_area-eC7h0SiQ2b"
+    },
+    {
+      "option": "Device management & connectivity",
+      "id": "product_area-m1iHjqikD"
+    },
+    {
+      "option": "Platform services",
+      "id": "product_area-T1-_TpDyv"
+    },
+    {
+      "option": "Edge",
+      "id": "product_area-v8mvxKJVc"
+    }
+  ]
+}

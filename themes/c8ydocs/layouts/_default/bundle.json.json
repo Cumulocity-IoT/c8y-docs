@@ -1,0 +1,37 @@
+{
+  {{- $url := .Permalink -}}
+  {{- $bundle := printf "%s-%s" .File.BaseFileName "bundle" -}}
+  {{- $list:= newScratch -}}
+  {{- $headless := .Site.GetPage $bundle -}}
+  {{- if $headless -}}
+    {{- $cont := .Params.helpcontent -}}
+    {{- range $i, $help := $cont -}}
+      {{- $maxb := len $cont -}}
+      {{- $anchor := printf "%s#%s" $url $help.label -}} 
+      {{- $content := $help.content | markdownify -}}
+      "{{- $help.label -}}": {{- dict "helpcontent" $content "url" $url "title" $help.title | jsonify -}}
+      {{- if lt $i (sub $maxb 1) -}},{{- end -}}
+    {{- end -}}
+    {{- $reusablePages := sort ($headless.Resources.ByType "page") ".Params.weight" -}}
+    {{- range $index, $el:= $reusablePages -}}
+      {{- $cont := $el.Params.helpcontent -}}
+      {{- if $cont -}}
+        {{- if ($list.Get "added") -}},{{- end -}}
+        {{- $maxb := len $cont -}}
+        {{- range $i, $help := $cont -}}
+          {{- $anchor := printf "%s#%s" $url $help.label -}}
+          {{- $content := $help.content | markdownify -}}
+          "{{- $help.label -}}": {{- dict "helpcontent" $content "url" $anchor "title" $help.title | jsonify -}}
+          {{- if lt $i (sub $maxb 1) -}},{{- end -}}
+        {{- end -}}
+        {{- $list.Set "added" true -}}
+      {{- end -}}
+    {{- end -}}
+  {{- else -}}
+    {{- range $i, $help := .Params.helpcontent -}}
+      {{- $anchor := printf "%s#%s" $url $help.label -}} 
+      {{- $content := $help.content | markdownify -}}
+      "{{- $help.label -}}": {{- dict "helpcontent" $content "url" $url "title" $help.title | jsonify -}}
+    {{- end -}}
+  {{ end }}
+}

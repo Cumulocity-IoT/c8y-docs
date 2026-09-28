@@ -1,0 +1,44 @@
+# Production
+baseURL = "/docs"
+
+languageCode = "en-us"
+defaultContentLanguage = "en-us"
+title = "Cumulocity Guides"
+theme = "c8ydocs"
+# canonifyurls = false
+# publishDir = "public/site"
+# googleAnalytics = "UA-xxxxxxxx-x"
+summaryLength = 30
+buildFuture = true
+
+
+[author]
+  name = "Carlos Ceia @ Cumulocity"
+
+
+
+[params]
+  # Customize date format use to render blog post date, categories and other
+  # You must use date format used by Go Time package https://golang.org/pkg/time/
+  # Months (not work with short month like "jan", "feb", etc) are translated if translation exists on i18n folders
+  # Default format is: January 2, 2006
+  # dateFormat = "2 January 2006"
+
+  # Global keywords configuration. Following keywords will be add to every pages
+  keywords = ["Cumulocity", "Internet of things", "analytics", "devices", "connect"]
+
+  description = "Resources for connecting your machines and devices to the Internet of Things"
+  # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
+  thumbnailImage = true
+
+  logo = "images/cumulocity-iot.svg"
+
+  guidesRedirect = "https://cumulocity.com/docs"
+
+  # Your favicon path, default is "/favicon.png"
+  favicon = "/favicon.ico"
+
+# Customize
+  [params.footer]
+    copyright = "Cumulocity GmbH | All rights reserved"
+    c8ylink = "https://cumulocity.com"

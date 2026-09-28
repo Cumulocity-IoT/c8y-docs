@@ -1,0 +1,12 @@
+{{ define "main" }}
+{{- partial "change-log-filters.html" . -}}
+
+<main class="main-content">
+  <div class="breadcrumbs-container">
+    {{- partial "breadcrumbs.html" . -}}
+  </div>
+  {{- partial "change-logs-list.html" . -}}
+
+</main>
+{{- partial "footer.html" . -}}
+{{ end }}

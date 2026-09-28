@@ -1,0 +1,19 @@
+$gray-text: var(--c8y-text-color);
+$text-muted: var(--c8y-text-muted);
+$link-color: var(--c8y-root-component-color-link);
+$link-hover-color: var(--c8y-root-component-color-link-hover);
+$link-hover-decoration: none;
+
+$error-color:var(--c8y-palette-status-danger);
+$info-color: var(--c8y-palette-status-info);
+$warning-color: var(--c8y-palette-status-warning);
+$success-color: var(--c8y-palette-status-success);
+$preview-color: var(--c8y-palette-status-preview);
+
+$body-bg-color: var(--c8y-body-background-color);
+$body-bg: $body-bg-color;
+$body-color: $gray-text;
+
+$input-border-focus:var(--c8y-form-control-color-focus);
+
+$brand-primary: var(--c8y-brand-primary);

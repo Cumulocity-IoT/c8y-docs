@@ -1,0 +1,188 @@
+.admonition {
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  margin-left: 1px;
+  border-left: 0.5rem solid transparent;
+  font-weight: normal;
+  font-size: 14px;
+  border-radius: 0.5rem;
+  box-shadow: var(--c8y-elevation-sm);
+}
+
+.admonition .title {
+  margin: 0 0 1rem;
+  // padding-bottom: .5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-left: 3px;
+  // border: 1px solid;
+  // border-style: hidden hidden solid;
+  font-size: 1.125rem;
+  &:before {
+    margin-right: 0.5rem;
+  }
+}
+
+.info {
+  border-color: var(--c8y-palette-status-info);
+  background-color: var(--c8y-palette-status-info-light);
+}
+
+.info .title {
+  color: var(--c8y-palette-status-info);
+  border-color: rgba(0, 0, 0, 0.2);
+
+  &:before {
+    @include dlt-c8y-icon('info-circle');
+  }
+}
+
+.tip {
+  border-color: var(--c8y-palette-status-info);
+  background-color: var(--c8y-palette-status-info-light);
+}
+
+.tip .title {
+  color: var(--c8y-palette-status-info);
+  border-color: var(--c8y-palette-status-info);
+  &:before {
+    @include dlt-c8y-icon('info-circle');
+  }
+}
+
+.req {
+  border-color: var(--c8y-palette-status-success);
+  background-color: var(--c8y-palette-status-success-light);
+}
+
+.req .title {
+  color: var(--c8y-palette-status-success);
+  border-color: var(--c8y-palette-status-success);
+  &:before {
+    @include dlt-c8y-icon('check-circle');
+  }
+}
+
+.related {
+  border-color: var(--c8y-palette-status-info);
+  background-color: var(--c8y-palette-status-info-light);
+}
+
+.related .title {
+  color: var(--c8y-palette-status-info);
+  border-color: var(--c8y-palette-status-info);
+  &:before {
+    @include dlt-c8y-icon('info-circle');
+  }
+}
+
+.howto {
+  border-color: var(--c8y-palette-status-info);
+  background-color: var(--c8y-palette-status-info-light);
+}
+
+.howto .title {
+  color: var(--c8y-palette-status-info);
+  border-color: var(--c8y-palette-status-info);
+  &:before {
+    @include dlt-c8y-icon('info-circle');
+  }
+}
+
+.caution {
+  border-color: var(--c8y-palette-status-warning);
+  background-color: var(--c8y-palette-status-warning-high);
+}
+
+.caution .title {
+  color: var(--c8y-palette-status-warning);
+  border-color: var(--c8y-palette-status-warning);
+  &:before {
+    @include dlt-c8y-icon('warning');
+  }
+}
+
+.important {
+  border-color: var(--c8y-palette-status-danger);
+  background-color: var(--c8y-palette-status-danger-light);
+}
+
+.important .title {
+  color: var(--c8y-palette-status-danger);
+  border-color: var(--c8y-palette-status-danger);
+  &:before {
+    @include dlt-c8y-icon('exclamation-circle');
+  }
+}
+
+.preview:not(.page-section) {
+  border-color: var(--c8y-palette-status-info);
+  background-color: var(--c8y-palette-status-info-light);
+}
+
+.preview .title {
+  color: var(--c8y-palette-status-info);
+  border-color: var(--c8y-palette-status-info);
+  &:before {
+    @include dlt-c8y-icon('file-preview');
+  }
+}
+
+#preview-banner {
+  max-width: 105ch;
+  margin: 0 auto 1rem;
+}
+
+.admonition.preview-content-toggle {
+  position: sticky;
+  top: 110px;
+  z-index: 100;
+  border: 0;
+  background-color: var(--c8y-brand-70);
+  // color: white;
+  --c8y-form-control-color-default: currentColor;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 1.5rem;
+  .title {
+    text-transform: none;
+    font-weight: 400;
+    display: flex;
+    text-wrap-style: pretty;
+    flex: 1;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.3;
+    &:before {
+      margin-right: 0.5rem;
+      @include dlt-c8y-icon('file-preview');
+      font-size: 2.5rem;
+    }
+  }
+
+  .toggle-wrapper {
+    background: white;
+    border-radius: 40px;
+    display: inline-flex;
+    padding: 1rem 1.5rem 1rem 1rem;
+    flex-shrink: 0;
+    width: fit-content;
+  }
+}
+
+.preview-content {
+  outline: 1px dashed var(--c8y-brand-30);
+  outline-offset: 2rem;
+  border-radius: 1rem;
+  margin: 2rem 0;
+  &:before {
+    content: "preview";
+    display: inline-block;
+    font-size: 0.675rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    transform: translate(1rem, -0.5rem);
+    color: var(--c8y-brand-30);
+  }
+}

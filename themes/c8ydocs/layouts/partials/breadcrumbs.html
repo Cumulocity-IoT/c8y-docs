@@ -1,0 +1,27 @@
+<div id="breadcrumbs" class="breadcrumbs">
+    {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+    {{ define "breadcrumbnav" }}
+    {{ if and (.p1.Parent) (ne .p1.Type "sector") }}
+      {{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
+    {{ else if not .p1.IsHome }}
+      {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
+    {{ end }}
+    <span>
+      {{ if and (eq .p1 .p2) (eq .p1.Title .p2.Title) }}
+        {{ .p1.Title}}
+      {{else}}
+        {{ if ne .p1.Title .p2.Title }}
+          {{ if eq .p1.Title "Cumulocity documentation" }}
+            
+          <a href="{{ .p1.Permalink }}" class="breadcrumbs-link"><i class="dlt-c8y-icon-home"></i></a>
+
+            <i class="dlt-c8y-icon-forward"></i>
+          {{ else }}
+            <a href="{{ .p1.Permalink }}" class="breadcrumbs-link">{{ .p1.Title }}</a>
+            <i class="dlt-c8y-icon-forward"></i>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </span>
+  {{ end }}
+</div>

@@ -1,0 +1,115 @@
+{{$current := . }}
+
+{{$currentSection := ""}}
+{{ with .Params.section}}
+  {{$currentSection =  index . 0}}
+{{end}}
+<nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="{{.Page.Permalink}}" class="text-center d-block p-t-8 p-b-8" >
+      <i style="font-size:46px;" class="c8y-icon-duocolor dlt-c8y-icon-logs"></i>
+      <strong class="text-truncate text-muted" title="Change logs">
+        {{ if site.Data.date_settings.yearly_release}}
+          Release notes
+        {{else}}
+          Change logs
+        {{end}}
+      </strong>
+    </a>
+  </header>
+
+  <nav id="main-nav"
+    class="nav-sections p-l-16 p-r-16 change-logs--filters">
+    <div class="p-t-16 d-flex nav-sections__sticky-header" >
+      <p class="m-b-0">
+        <strong>Filters</strong>
+      </p>
+      <a href="javascript: clearAllFilters();" class="m-l-auto clearBtn">
+        <i class="dlt-c8y-icon-clear"></i>
+        Clear filters
+      </a>
+    </div>
+    <fieldset class="filter-fieldset c8y-fieldset" data-filter-group="change-type">
+      <legend>Type</legend>
+      {{ if site.Data.date_settings.yearly_release}}
+        {{ range site.Data.changetype.options }}
+        <label class="c8y-checkbox m-b-4">
+          <input type="checkbox" class="filter-btn" name="change-type-{{.option | urlize}}">
+          <span></span>
+          <span>
+            {{.option}}
+          </span>
+        </label>
+        {{ end }}
+      {{else}}
+        {{ range sort site.Data.changetype.options "option" "asc" }}
+          <label class='c8y-checkbox m-b-4 {{ if eq .option "Fix"}} hidden {{end}}' {{ if eq .option "Fix"}} data-internal {{end}}>
+            <input type="checkbox" class="filter-btn" name="change-type-{{.option | urlize}}">
+            <span></span>
+            <span>
+              {{.option}}
+            </span>
+          </label>
+        {{ end }}
+      {{ end }}
+    </fieldset>
+    <fieldset class="filter-fieldset c8y-fieldset" data-filter-group="productarea">
+      <legend>Product area</legend>
+      {{ if site.Data.date_settings.yearly_release}}
+      {{ range sort site.Data.productarea.options "option" "asc" }}
+      <label class="c8y-checkbox m-b-4">
+        <input type="checkbox" class="filter-btn" 
+        name="productarea-{{.option | urlize}}">
+        <span></span>
+        <span>
+          {{.option}}
+        </span>
+      </label>
+      {{ end }}
+      {{else}}
+      {{ range sort site.Data.productarea.options "option" "asc" }}
+        {{ if ne .option "Edge"}}
+          <label class="c8y-checkbox m-b-4">
+            <input type="checkbox" class="filter-btn" 
+            name="productarea-{{.option | urlize}}">
+            <span></span>
+            <span>
+              {{.option}}
+            </span>
+          </label>
+        {{end}}
+      {{end}}
+      {{end}}
+
+    </fieldset>
+    <fieldset class="filter-fieldset c8y-fieldset" data-filter-group="component">
+      <legend>Component</legend>
+      {{ range sort site.Data.component.options "option" "asc"}}
+      <label class="c8y-checkbox m-b-4">
+        <input type="checkbox" class="filter-btn" 
+          data-pa="{{ if .product_area }}{{ (index .product_area 0).label | urlize}}{{end}}"
+          name="component-{{.option | urlize}}">
+        <span></span>
+        <span>
+          {{.option}}
+        </span>
+      </label>
+      {{ end }}
+    </fieldset>
+    <fieldset class="filter-fieldset c8y-fieldset" data-filter-group="technicalcomponent">
+      <legend>Build artifact</legend>
+      {{ range sort site.Data.buildartifact.options "option" "asc"}}
+      <label class="c8y-checkbox m-b-4">
+        <input type="checkbox" class="filter-btn" name="technicalcomponent-{{.option | urlize}}">
+        <span></span>
+        <span>
+          {{.option}}
+        </span>
+      </label>
+      {{ end }}
+    </fieldset>
+    
+    <script src="{{ "js/cl-filters.js" | absURL }}"></script>
+  </nav>
+</nav>
+<div class="cover"></div>

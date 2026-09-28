@@ -1,0 +1,283 @@
+{{ define "main" }}
+
+{{- partial "glossary-nav.html" . -}}
+
+<main class="main-content bundle-layout">
+  <div class="breadcrumbs-container">
+    {{- partial "breadcrumbs.html" . -}}
+  </div>
+  <div class="article-list glossary-list">
+    <article id="{{substr .File.LogicalName 0 -3}}" class="page-section">
+      <div class="article-content">
+        <header class="section-header">
+          <h1 class="text-light">{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
+        </header>
+        <div class="lead">
+          {{ partial "headline-hash.html" .Content }}
+        </div>
+      </div>
+    </article>
+    <div class="search-bar">
+      <!-- Search functionality -->
+      <div>
+        <div class="glossary-search input-group input-group-search">
+          <input type="text" id="glossary-search" autocomplete="off" placeholder="Search glossary terms and definitions... (Press / to focus)" class="form-control input-lg">
+          <div class="input-group-addon">
+            <button class="btn-clean" id="glossary-search-clear" title="Clear" style="display: none;">&times;</button>
+            <button class="btn-clean" title="Search" id="glossary-search-button" style="display: block;"><i class="dlt-c8y-icon-search" style="font-size: 20px;"></i></button>
+          </div>
+        </div>
+        <div id="search-results-count" class="text-muted text-italic p-l-16 p-t-4" style="display: none;"></div>
+      </div>
+    </div>
+      <!-- All glossary entries -->
+      {{ range .Pages.ByWeight }}
+        {{ $content := .Content }}
+        {{ $letterTitle := .Title }}
+        
+      <article id="letter-{{- $letterTitle | lower -}}" class="page-section">
+        <div class="article-content">
+          <h2 id="{{ $letterTitle | lower }}" class="letter-header" >
+              {{ $letterTitle }}
+            </h2>
+
+            <!-- Parse individual glossary terms from content -->
+            <div class="glossary-content">
+            {{ $content }}
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    <article class="page-section" >
+      <div class="article-content" id="emptystate" style="display: none;">
+        <div class="d-flex a-i-center gap-16 text-muted">
+          <i class="dlt-c8y-icon-search" style="font-size: 4rem;"></i>
+          <div>
+            <p><strong>No glossary entries found matching your search.</strong><br>
+              <small>Refine or <a href="javascript: void(0)" id="clearEmptyState">clear</a> your input.</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- Search JavaScript with improvements -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.getElementById('glossary-search');
+      const searchClearButton = document.getElementById('glossary-search-clear');
+      const searchButton = document.getElementById('glossary-search-button');
+      const emptystate = document.getElementById('emptystate');
+      const clearEmptyState = document.getElementById('clearEmptyState');
+      const resultsCount = document.getElementById('search-results-count');
+
+      let debounceTimer;
+
+      // Keyboard shortcut: Press "/" to focus search
+      document.addEventListener('keydown', function(e) {
+        if (e.key === '/' && document.activeElement !== searchInput) {
+          e.preventDefault();
+          searchInput.focus();
+        }
+        // Press Escape to clear search
+        if (e.key === 'Escape' && document.activeElement === searchInput) {
+          searchInput.value = '';
+          searchInput.blur();
+          performSearch('');
+        }
+      });
+
+      // Substring match function - only matches if search term actually appears in text
+      function fuzzyMatch(text, pattern) {
+        text = text.toLowerCase();
+        pattern = pattern.toLowerCase();
+
+        // Only use exact substring matching to ensure we can highlight the match
+        return text.includes(pattern);
+      }
+
+      // Highlight matching text
+      function highlightText(element, searchTerm) {
+        if (!searchTerm) return;
+
+        const walker = document.createTreeWalker(
+          element,
+          NodeFilter.SHOW_TEXT,
+          null,
+          false
+        );
+
+        const nodesToReplace = [];
+        while (walker.nextNode()) {
+          const node = walker.currentNode;
+          if (node.nodeValue.trim()) {
+            nodesToReplace.push(node);
+          }
+        }
+
+        nodesToReplace.forEach(function(node) {
+          const text = node.nodeValue;
+          const regex = new RegExp(`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+          if (regex.test(text)) {
+            const span = document.createElement('span');
+            span.innerHTML = text.replace(regex, '<span class="highlight-match">$1</span>');
+            node.parentNode.replaceChild(span, node);
+          }
+        });
+      }
+
+      // Remove highlights
+      function removeHighlights() {
+        document.querySelectorAll('.highlight-match').forEach(function(el) {
+          const parent = el.parentNode;
+          parent.replaceWith(parent.textContent);
+        });
+        // Normalize text nodes
+        document.querySelectorAll('article[id^="letter-"] h3, article[id^="letter-"] p').forEach(function(el) {
+          el.normalize();
+        });
+      }
+
+      function performSearch(searchTerm) {
+        searchTerm = searchTerm.toLowerCase().trim();
+
+        // Remove previous highlights
+        removeHighlights();
+
+        if(searchTerm.length > 0){
+          searchClearButton.style = null;
+          searchButton.style.display = 'none';
+        } else {
+          searchClearButton.style.display = 'none';
+          searchButton.style = null;
+          resultsCount.style.display = 'none';
+        }
+
+        const letterArticles = document.querySelectorAll('article[id^="letter-"]');
+        let hasAnyResults = false;
+        let totalMatches = 0;
+
+        letterArticles.forEach(function(article) {
+          const h3Elements = article.querySelectorAll('h3');
+          const letterHeader = article.querySelector('.letter-header, h2');
+          let sectionHasVisibleEntries = false;
+
+          if (searchTerm === '') {
+            // Show everything
+            article.classList.remove('glossary-hidden');
+            if (letterHeader) letterHeader.classList.remove('glossary-hidden');
+            h3Elements.forEach(function(h3) {
+              h3.classList.remove('glossary-hidden');
+              let nextElement = h3.nextElementSibling;
+              while (nextElement && nextElement.tagName !== 'H3') {
+                nextElement.classList.remove('glossary-hidden');
+                nextElement = nextElement.nextElementSibling;
+              }
+            });
+            sectionHasVisibleEntries = true;
+          } else {
+            // Check each h3 entry and its content
+            h3Elements.forEach(function(h3) {
+              const headingText = h3.textContent.toLowerCase();
+
+              // Get content following this h3
+              let contentText = '';
+              let nextElement = h3.nextElementSibling;
+              const contentElements = [];
+              while (nextElement && nextElement.tagName !== 'H3') {
+                contentText += ' ' + nextElement.textContent.toLowerCase();
+                contentElements.push(nextElement);
+                nextElement = nextElement.nextElementSibling;
+              }
+
+              // Search in both heading and content with fuzzy matching
+              const matchesHeading = fuzzyMatch(headingText, searchTerm);
+              const matchesContent = fuzzyMatch(contentText, searchTerm);
+
+              if (matchesHeading || matchesContent) {
+                // Show this entry
+                h3.classList.remove('glossary-hidden');
+                totalMatches++;
+
+                // Highlight matches in heading
+                if (matchesHeading && searchTerm.length > 2) {
+                  highlightText(h3, searchTerm);
+                }
+
+                // Show and highlight content
+                contentElements.forEach(function(el) {
+                  el.classList.remove('glossary-hidden');
+                  if (matchesContent && searchTerm.length > 2) {
+                    highlightText(el, searchTerm);
+                  }
+                });
+
+                sectionHasVisibleEntries = true;
+              } else {
+                // Hide this entry
+                h3.classList.add('glossary-hidden');
+                contentElements.forEach(function(el) {
+                  el.classList.add('glossary-hidden');
+                });
+              }
+            });
+
+            // Show/hide the entire article and letter header based on whether it has matches
+            if (sectionHasVisibleEntries) {
+              article.classList.remove('glossary-hidden');
+              if (letterHeader) letterHeader.classList.remove('glossary-hidden');
+            } else {
+              article.classList.add('glossary-hidden');
+              if (letterHeader) letterHeader.classList.add('glossary-hidden');
+            }
+          }
+
+          if (sectionHasVisibleEntries) {
+            hasAnyResults = true;
+          }
+        });
+
+        // Show results count
+        if (searchTerm !== '') {
+          resultsCount.style.display = 'block';
+          resultsCount.textContent = totalMatches === 0
+            ? 'No results found'
+            : `Found ${totalMatches} ${totalMatches === 1 ? 'term' : 'terms'}`;
+        } else {
+          resultsCount.style.display = 'none';
+        }
+
+        // Show "No results" message if no entries are visible
+        if (!hasAnyResults && searchTerm !== '') {
+          emptystate.style.display = 'block';
+        } else {
+          emptystate.style.display = 'none';
+        }
+      }
+
+      // Debounced search (300ms delay)
+      searchInput.addEventListener('input', function() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(function() {
+          performSearch(searchInput.value);
+        }, 300);
+      });
+
+      searchClearButton.addEventListener('click', function() {
+        searchInput.value = '';
+        performSearch('');
+        this.style.display = 'none';
+        searchInput.focus();
+      });
+
+      clearEmptyState.addEventListener('click', function() {
+        searchInput.value = '';
+        performSearch('');
+        searchInput.focus();
+      });
+    });
+  </script>
+</main>
+  {{- partial "footer.html" . -}}
+{{ end }}

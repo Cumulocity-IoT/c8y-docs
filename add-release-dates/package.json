@@ -1,0 +1,22 @@
+{
+  "name": "add-release-dates",
+  "version": "0.0.1",
+  "description": "Adds the release dates of already released cumulocity components into their changelogs",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tristan Bastian",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "semver": "^7.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "@types/semver": "^7.5.8",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}

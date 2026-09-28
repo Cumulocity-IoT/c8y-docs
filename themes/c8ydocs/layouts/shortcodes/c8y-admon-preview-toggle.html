@@ -1,0 +1,16 @@
+<div class="preview-content-toggle admonition">
+  <div class="title">
+    <span>{{ printf "%s" .Inner | markdownify }}</span>
+  </div>
+  <div class="toggle-wrapper">
+    <label class="m-b-0 c8y-switch">
+      <input
+        type="checkbox"
+        id="preview-toggle"
+        onchange="toggleBetaContent()"
+      />
+      <span></span>
+      <span>Show preview feature documentation</span>
+    </label>
+  </div>
+</div>

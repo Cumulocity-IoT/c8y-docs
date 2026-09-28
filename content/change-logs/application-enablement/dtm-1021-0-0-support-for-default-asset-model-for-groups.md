@@ -1,0 +1,24 @@
+---
+date: '2025-02-06'
+title: Added support in DTM plugins for default asset model for groups
+product_area: Application enablement & solutions
+change_type:
+  - value: change-QHu1GdukP
+    label: Feature
+component:
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
+build_artifact:
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-1437
+version: 1021.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
+---
+DTM plugins now support creating and visualizing groups based on their default asset model. Users can create multiple groups simultaneously and organize devices within these groups. The updated view also displays the current labels and icons assigned to the default asset model for groups.

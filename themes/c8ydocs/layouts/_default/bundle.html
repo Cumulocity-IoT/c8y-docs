@@ -1,0 +1,40 @@
+{{ define "main" }}
+{{- partial "root-nav.html" . -}}
+
+{{ $bundle := printf "%s-%s" .File.BaseFileName "bundle"  }}
+{{ $headless := .Site.GetPage $bundle }}
+<main class="main-content bundle-layout">
+  <div class="breadcrumbs-container">
+    {{- partial "breadcrumbs.html" . -}}
+  </div>
+  <div class="article-list">
+    <article id="{{substr .File.LogicalName 0 -3}}" class="page-section {{if not $headless}} single-section {{end}}">
+      <div class="article-content">
+        <header class="section-header">
+          <h1 class="text-light">{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
+        </header>
+        <div class="lead">
+          {{ partial "headline-hash.html" .Content }}
+        </div>
+      </div>
+    </article>
+
+    {{ if $headless }}
+      {{ $reusablePages := sort ($headless.Resources.ByType "page") ".Params.weight" }}
+      {{ range $reusablePages}}
+        <article id="{{substr .Name 0 -3}}" class="page-section">
+          <div class="article-content">
+            <h2>
+              <button class="btn-link bookmark" data-clipboard-text="#{{substr .Name 0 -3}}">
+                <span class="fa dlt-c8y-icon-link"></span>
+              </button>
+              {{replace .Title "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h2>
+            {{ partial "headline-hash.html" .Content }}
+          </div>
+        </article>
+      {{ end }}
+    {{ end }}
+  </div>
+</main>
+{{- partial "footer.html" . -}}
+{{ end }}

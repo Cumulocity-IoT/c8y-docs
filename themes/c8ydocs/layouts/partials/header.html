@@ -1,0 +1,206 @@
+<!-- Google Tag Manager -->
+<noscript><iframe src="
+  https://www.googletagmanager.com/ns.html?id=GTM-TM3L5WBK"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!--  /Google Tag Manager -->
+<header class="main-top-bar">
+  <button
+    class="sidebar-toggle"
+    type="button"
+  >
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span>MENU</span>
+  </button>
+  <div class="brand-logo p-r-16">
+    <a href="/" class="logo">
+      <img
+        class="no-zoom"
+        src="{{ with .Site.Params.logo }}{{ . | absURL }}{{ end }}"
+        alt="Cumulocity"
+      >
+    </a>
+  </div>
+
+  <nav class="d-flex m-l-auto">
+
+    <div class="m-l-auto nav flex-end nav-right search-container">
+      <!--
+      -->
+      <script
+        async
+        src="https://cse.google.com/cse.js?cx=85d98525b40de4670"
+      >
+      </script>
+      <div class="gcse-search"></div>
+    </div>
+    <div class="dropdown version">
+      <a
+        class="dropdown-toggle version"
+        title="Cumulocity website"
+        href="https://www.cumulocity.com/"
+      >
+        <i class="dlt-c8y-icon-communication-internet"></i> <span>Cumulocity website</span></a>
+    </div>
+        <div class="dropdown version">
+      <a
+        class="dropdown-toggle version btn-free-trial"
+        title="Try for free"
+        href="https://www.cumulocity.com/start-your-journey/free-trial/"
+      >
+        Try Cumulocity free</a>
+    </div>
+    <div class="dropdown version">
+      <button
+        class="dropdown-toggle version"
+        type="button"
+        title="Releases"
+        aria-expanded="false"
+        aria-haspopup="true"
+        aria-label="Releases"
+        id="releasesLinks"
+        data-toggle="dropdown"
+      >
+
+        <i class="c8y-icon c8y-icon-cumulocity-iot"></i> <span>{{ if eq .Site.Data.date_settings.version "Latest" }}Latest version{{ else }}Release {{ .Site.Data.date_settings.version }}{{ end }}</span>
+        <div class="caret"></div>
+      </button>
+      <ul
+        class="dropdown-menu"
+        aria-labelledby="releasesLinks"
+        role="listbox"
+      >
+        {{ $currentVersion := .Site.Data.date_settings.version }}
+        <li class="text-normal">
+          <a class='icon-flex {{ if eq $currentVersion "Latest" }}p-l-4 {{else}} p-l-24 {{end}}' href="//cumulocity.com/docs">
+            {{ if eq $currentVersion "Latest" }}<i class="dlt-c8y-icon-check text-success"></i>{{ end }}
+            <span>Latest version</span>
+          </a>
+        </li>
+        <li class="text-normal">
+          <a class='icon-flex {{ if eq $currentVersion "2026" }}p-l-4 {{else}} p-l-24 {{end}}' href="//cumulocity.com/docs/2026">
+            {{ if eq $currentVersion "2026" }}<i class="dlt-c8y-icon-check text-success"></i>{{ end }} 
+            <span>Release 2026</span> 
+          </a>
+        </li>
+        <li class="text-normal">
+          <a class='icon-flex {{ if eq $currentVersion "2025" }}p-l-4 {{else}} p-l-24 {{end}}' href="//cumulocity.com/docs/2025">
+            {{ if eq $currentVersion "2025" }}<i class="dlt-c8y-icon-check text-success"></i>{{ end }} 
+            <span>Release 2025</span> 
+          </a>
+        </li>
+        <li class="text-normal"><a class="icon-flex p-l-24" href="//cumulocity.com/docs/about_documentation/documentation-repository/">
+          <span>Previous versions</span>
+        </a></li>
+      </ul>
+    </div>
+    <div class="dropdown version">
+      <button
+        class="dropdown-toggle version"
+        type="button"
+        title="External links"
+        aria-expanded="false"
+        aria-haspopup="true"
+        aria-label="Resources"
+        id="resourcesLinks"
+        data-toggle="dropdown"
+      >
+        <i class="dlt-c8y-icon-box-settings icon-20"></i> <span>Additional resources</span>
+        <div class="caret"></div>
+      </button>
+      <ul
+        class="dropdown-menu dropdown-menu-right"
+        aria-labelledby="resourcesLinks"
+        role="listbox"
+      >
+        {{ range $index, $resource := .Site.Params.additionalResources }}
+        <li class="text-normal"><a class="dd-link" href="{{ $resource.link }}">{{ $resource.name }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+
+    <div
+      class="dropdown visible-lg"
+      id="sections-selection"
+    >
+      <button
+        class="dropdown-toggle btn-dot p-l-4 p-r-4"
+        style="width: auto;"
+        type="button"
+        title="Sections"
+        aria-expanded="false"
+        aria-haspopup="true"
+        aria-label="Sections"
+        id="sectionLinks"
+        data-toggle="dropdown"
+      >
+        <i class="dlt-c8y-icon-menu-vertical icon-20"></i>
+      </button>
+      <ul
+        role="listbox"
+        class="dropdown-menu dropdown-menu-right"
+        aria-labelledby="sectionLinks"
+      >
+        {{- partial "sections-selector.html" . -}}
+      </ul>
+    </div>
+    <div class="dropdown mobile">
+      <button
+        class="dropdown-toggle btn-dot p-l-4 p-r-4"
+        type="button"
+        title="Resources"
+        aria-expanded="false"
+        aria-haspopup="true"
+        aria-label="Resources"
+        id="allResources"
+        data-toggle="dropdown"
+      >
+        <i class="dlt-c8y-icon-ellipsis-v"></i>
+      </button>
+      <ul
+        class="dropdown-menu dropdown-menu-right"
+        aria-labelledby="allResources"
+        role="listbox"
+      >
+        <li class="text-normal">
+          <a class="dd-link"
+            title="REST API documentation"
+            href="https://cumulocity.com/api/"
+          >
+            <i class="dlt-c8y-icon-rest-api"></i> <span>REST API &nbsp;</span>
+          </a>
+        </li>
+        <li class="dropdown-header separator-bottom p-t-8 p-b-8"><b>Releases</b></li>
+        {{ $currentVersion := .Site.Data.date_settings.version }}
+        <li class="text-normal">
+          <a class="dd-link" href="//cumulocity.com/docs">
+            <i class="c8y-icon c8y-icon-cumulocity-iot"></i> Latest version {{ if eq $currentVersion "Latest" }}<i class="dlt-c8y-icon-check text-success"></i>{{ end }}
+          </a>
+        </li>
+        <li class="text-normal">
+          <a class="dd-link" href="//cumulocity.com/docs/2026">
+            <i class="c8y-icon c8y-icon-cumulocity-iot"></i> Release 2026 {{ if eq $currentVersion "2026" }}<i class="dlt-c8y-icon-check text-success"></i>{{ end }}
+          </a>
+        </li>
+        <li class="text-normal">
+          <a class="dd-link" href="//cumulocity.com/docs/2025">
+            <i class="c8y-icon c8y-icon-cumulocity-iot"></i> Release 2025 {{ if eq $currentVersion "2025" }}<i class="dlt-c8y-icon-check text-success"></i>{{ end }}
+          </a>
+        </li>
+        <li class="text-normal">
+          <a class="dd-link" href="//cumulocity.com/docs/about_documentation/documentation-repository/"><i class="c8y-icon c8y-icon-cumulocity-iot"></i> Previous versions</a>
+        </li>
+        <li class="dropdown-header separator-bottom p-t-8 p-b-8"><b>Additional resources</b></li>
+        {{ range $index, $resource := .Site.Params.additionalResources }}
+        <li class="text-normal">
+          <a class="dd-link" href="{{ $resource.link }}">
+            {{ $resource.name }}
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+
+  </nav>
+</header>

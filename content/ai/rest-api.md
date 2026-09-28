@@ -1,0 +1,147 @@
+---
+title: REST API
+layout: bundle
+outputs:
+  - html
+  - json
+sector:
+  - app_enablement
+weight: 60
+---
+
+The AI Agent Manager provides a REST API for programmatic management of agents, providers, and conversations. This allows you to integrate AI agents into your own applications and workflows.
+
+### API overview {#api-overview}
+
+The API is exposed by the AI Agent Manager microservice at:
+
+```
+/service/ai/
+```
+
+All API endpoints require authentication with valid {{< product-c8y-iot >}} credentials. The API supports standard CRUD operations for agents, tools, and providers that mostly require the `ROLE_AI_AGENT_ADMIN` permission. You best explore the full CRUD API via the OpenAPI documentation. You access this documentation in multiple ways:
+
+- Download the OpenAPI JSON by accessing /service/ai/api-json. This file then loads into a tool like Postman or similar.
+- Install the **AI Agent Manager OpenAPI** plugin from AI-Plugins in your **Administration** > **Ecosystem** > **Extensions** view into a cloned application. This lists all endpoints.
+
+The following documentation only covers how to integrate agents that are already created into any UI or third-party server. All endpoints are explained in the OpenAPI documentation.
+
+### Interacting with agents {#interacting-with-agents}
+
+To talk to an agent, you only require the `ROLE_AI_AGENT_READ` permission. The idea is that any end-user can talk to an agent, but not all users can create, update, or delete such agents. The following examples show how to use the API to talk to an already defined agent:
+
+
+**Simple prompt:**
+
+```
+POST /service/ai/agent/text/{agent-name}
+{
+  "prompt": "What is the temperature of device 12345?"
+}
+```
+
+Returns a plain text response.
+
+**With variables:**
+
+Use variables to inject dynamic data into prompts or system prompts:
+
+```
+POST /service/ai/agent/text/{agent-name}
+{
+  "variables": {
+    "deviceId": "12345"
+  },
+  "prompt": "What is the status of device {{deviceId}}?"
+}
+```
+
+Define variables in the system prompt using double curly brackets: `{{variableName}}`.
+
+**Maintaining conversations:**
+
+Use the `messages` array to maintain conversation context:
+
+```
+POST /service/ai/agent/text/{agent-name}
+{
+  "messages": [
+    { "role": "user", "content": "Hi!" },
+    { "role": "assistant", "content": "Hello! How can I help you?" },
+    { "role": "user", "content": "Tell me about device 12345." }
+  ]
+}
+```
+
+The agent uses the conversation history to provide contextual responses.
+
+**Full response format:**
+
+Add `?fullResponse=true` to receive a detailed JSON response:
+
+```
+POST /service/ai/agent/text/{agent-name}?fullResponse=true
+{
+  "prompt": "Hello"
+}
+```
+
+The full response includes:
+- Text response
+- Tool calls and results
+- Token usage statistics
+- Reasoning steps (if enabled)
+- Provider metadata
+
+{{< c8y-admon-info >}}
+The same APIs exist for an object agent. Only replace `text` with `object` in the URL.
+{{< /c8y-admon-info >}}
+
+### Streaming {#streaming}
+
+By switching the content type to a streaming type, you get a streaming response from the API. Two modes are currently supported:
+
+- Text only is returned if no query parameter is attached.
+- A data SSE stream that also includes tool calls and status information is returned if the `?fullResponse=true` parameter is set.
+
+Add the `text/event-stream` or `application/x-ndjson` accept header to force streaming. A `fullResponse` return is determined by two line breaks and the keyword `data:`. 
+
+As an example a call for `hello world` with `?fullResponse=true` returns:
+
+```
+data: {"type":"start"}
+
+data: {"type":"start-step","request":{"body":{"model":"claude-sonnet-4-5","max_tokens":64000,"system":[{"type":"text","text":"A test"}],"messages":[{"role":"user","content":[{"type":"text","text":"hello world"}]}],"stream":true}},"warnings":[]}
+
+data: {"type":"text-start","id":"0"}
+
+data: {"type":"text-delta","text":"Hello! ","id":"0"}
+
+data: {"type":"text-delta","text":"👋 ","id":"0"}
+
+data: {"type":"text-delta","text":"How ","id":"0"}
+
+data: {"type":"text-delta","text":"can ","id":"0"}
+
+data: {"type":"text-delta","text":"I ","id":"0"}
+
+data: {"type":"text-delta","text":"help ","id":"0"}
+
+data: {"type":"text-delta","text":"you ","id":"0"}
+
+data: {"type":"text-delta","text":"today?","id":"0"}
+
+data: {"type":"text-end","id":"0"}
+
+data: {"type":"finish-step","finishReason":"stop","usage":{"inputTokens":11,"outputTokens":16,"totalTokens":27,"cachedInputTokens":0},"providerMetadata":{"anthropic":{"usage":{"input_tokens":11,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"output_tokens":16,"service_tier":"standard"},"cacheCreationInputTokens":0,"stopSequence":null,"container":null}},"response":{"id":"msg_017QQpgqQMUeUbCs7MastWLp","timestamp":"2026-02-04T16:44:09.231Z","modelId":"claude-sonnet-4-5-20250929","headers":{"anthropic-organization-id":"3f82821e-6dbf-463c-934f-a2f81b555764","anthropic-ratelimit-input-tokens-limit":"2000000","anthropic-ratelimit-input-tokens-remaining":"2000000","anthropic-ratelimit-input-tokens-reset":"2026-02-04T16:44:08Z","anthropic-ratelimit-output-tokens-limit":"400000","anthropic-ratelimit-output-tokens-remaining":"400000","anthropic-ratelimit-output-tokens-reset":"2026-02-04T16:44:08Z","anthropic-ratelimit-tokens-limit":"2400000","anthropic-ratelimit-tokens-remaining":"2400000","anthropic-ratelimit-tokens-reset":"2026-02-04T16:44:08Z","cache-control":"no-cache","cf-cache-status":"DYNAMIC","cf-ray":"9c8ba186efd17fa0-FRA","connection":"keep-alive","content-security-policy":"default-src 'none'; frame-ancestors 'none'","content-type":"text/event-stream; charset=utf-8","date":"Wed, 04 Feb 2026 16:44:09 GMT","request-id":"req_011CXoN8S7HVR6WWGFy7r32J","server":"cloudflare","strict-transport-security":"max-age=31536000; includeSubDomains; preload","transfer-encoding":"chunked","x-envoy-upstream-service-time":"973","x-robots-tag":"none"}}}
+
+data: {"type":"finish","finishReason":"stop","totalUsage":{"inputTokens":11,"outputTokens":16,"totalTokens":27,"cachedInputTokens":0}}
+
+``` 
+
+
+While a call without `?fullResponse=true` simply returns: 
+
+```
+Hello! 👋 How can I help you today?
+```

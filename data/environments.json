@@ -1,0 +1,32 @@
+[
+    {
+        "zone": "c8y-ops-zone-1",
+        "cluster": "eu-latest-cumulocity-com-eks",
+        "label": "eu-latest.cumulocity.com"
+    },
+    {
+        "zone": "c8y-ops-zone-2",
+        "cluster": "apj-cumulocity-com-eks",
+        "label": "apj.cumulocity.com"
+    },
+    {
+        "zone": "c8y-ops-zone-2",
+        "cluster": "jp-cumulocity-com-eks",
+        "label": "jp.cumulocity.com"
+    },
+    {
+        "zone": "c8y-ops-zone-3",
+        "cluster": "emea-cumulocity-com",
+        "label": "emea.cumulocity.com"
+    },
+    {
+        "zone": "c8y-ops-zone-3",
+        "cluster": "us-cumulocity-com-eks",
+        "label": "us.cumulocity.com"
+    },
+    {
+        "zone": "c8y-ops-zone-3",
+        "cluster": "c8y-cumulocity-com-eks",
+        "label": "cumulocity.com"
+    }
+]

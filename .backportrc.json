@@ -1,0 +1,5 @@
+{
+  "repoOwner": "Cumulocity-IoT",
+  "repoName": "c8y-docs",
+  "prTitle": "[GRAFT][{{targetBranch}}] {{commitMessages}}"
+}

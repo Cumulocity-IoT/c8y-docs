@@ -1,0 +1,11 @@
+{{ $content := . }}
+{{ $content := replace $content "Improvement" "<label class='change-log__label--change'>Improvement</label>" }}
+{{ $content := replace $content "Announcement" "<label class='change-log__label--announcement'>Announcement</label>" }}
+{{ $content := replace $content "Feature" "<label class='change-log__label--feature'>Feature</label>" }}
+{{ $content := replace $content "Preview" "<label class='change-log__label--preview'>Preview</label>" }}
+{{ $content := replace $content "Fix" "<label class='change-log__label--fix'>Fix</label>" }}
+{{ $content := replace $content "API change" "<label class='change-log__label--issue'>API Change</label>" }}
+{{ $content := replace $content "Security" "<label class='change-log__label--security'>Security</label>" }}
+{{ $content | safeHTML }}
+
+

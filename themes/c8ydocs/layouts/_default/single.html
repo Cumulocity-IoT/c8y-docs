@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{- partial "root-nav.html" . -}}
+
+<main class="main-content">
+  {{- partial "breadcrumbs.html" . -}}
+  <div class="article-list">
+  <article id="{{substr .File.LogicalName 0 -3}}" class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
+    </header>
+    <div class="lead">
+      {{.Content}}
+    </div>
+  </article>
+  </div>
+  <aside>
+    <div id="toc" class="toc">
+    </div>
+  </aside>
+</main>
+{{- partial "footer.html" . -}}
+{{ end }}

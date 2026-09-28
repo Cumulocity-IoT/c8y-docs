@@ -1,0 +1,24 @@
+{{- $d := .Params.description | default .Summary | default (printf "%s documentation for the Cumulocity platform." .Title) -}}
+{{- $d = truncate 240 (trim ($d | plainify | replaceRE "\\s+" " ") " ") -}}
+# {{ .Site.Title }} — {{ .Title }}
+
+> {{ $d }}
+
+Part of the Cumulocity documentation. Root index: {{ (.Site.Home.OutputFormats.Get "llmstxt").Permalink }} — Full corpus: {{ (.Site.Home.OutputFormats.Get "llms-full").Permalink }}
+
+## {{ .Title }}
+{{ range .Pages.ByTitle.ByWeight -}}
+  {{- if eq .Kind "section" }}{{ continue }}{{ end -}}
+  {{- if eq .Params._build.render false }}{{ continue }}{{ end -}}
+  {{- $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end -}}
+  {{- if $isCard }}{{ continue }}{{ end -}}
+  {{- $title := .Title -}}
+  {{- if and (eq (lower $title) "introduction") .Section }}{{ $title = printf "%s — %s" (partial "section-title.txt" .Section) $title }}{{ end -}}
+  {{- $pd := .Params.description | default .Summary | default "" -}}
+  {{- $pd = truncate 200 (trim ($pd | plainify | replaceRE "\\s+" " ") " ") -}}
+  {{- if $pd -}}
+    {{- printf "- [%s](%s): %s\n" $title .Permalink $pd -}}
+  {{- else -}}
+    {{- printf "- [%s](%s)\n" $title .Permalink -}}
+  {{- end -}}
+{{- end -}}

@@ -1,0 +1,314 @@
+{
+  "options": [
+    {
+      "id": "component-0UgqXH1Ys",
+      "option": "Administration",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
+    },
+    {
+      "id": "component-hI65AAlZ1",
+      "option": "Advanced Software Management",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
+    },
+    {
+      "option": "Authentication",
+      "id": "q3kclF6pO",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
+    },
+    {
+      "id": "component-wWIzHJ12j",
+      "option": "Cloud Fieldbus",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
+    },
+    {
+      "id": "component-KHZSGmQm0",
+      "option": "Cloud Remote Access",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
+    },
+    {
+      "id": "component-YdSEScrEC",
+      "option": "Cockpit",
+      "product_area": [
+        {
+          "value": "product_area-eC7h0SiQ2b",
+          "label": "Application enablement & solutions"
+        }
+      ]
+    },
+    {
+      "id": "component-OG_650_b2",
+      "option": "Core platform",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
+    },
+    {
+      "id": "component-A8vMaVaTg",
+      "option": "DataHub",
+      "product_area": [
+        {
+          "value": "product_area-whzlZT2MhT",
+          "label": "Analytics"
+        }
+      ]
+    },
+    {
+      "id": "component-V6J_FcOT2",
+      "option": "Data broker",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
+    },
+    {
+      "id": "component-dPrp1xK9z",
+      "option": "Data Preparation",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
+    },
+    {
+      "id": "component--KIsStyzM",
+      "option": "Device Management app",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
+    },
+    {
+      "id": "component--LJtTuzaN",
+      "option": "Device Parameter",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
+    },
+    {
+      "id": "component-gH76BBkY0",
+      "option": "Device simulator",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
+    },
+    {
+      "id": "component-Tl88RYb4A",
+      "option": "Digital Twin Manager",
+      "product_area": [
+        {
+          "value": "product_area-eC7h0SiQ2b",
+          "label": "Application enablement & solutions"
+        }
+      ]
+    },
+    {
+      "id": "component-docs-123",
+      "option": "Documentation",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
+    },
+    {
+      "id": "component-fG87CCjX9",
+      "option": "Grid Migration",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
+    },
+    {
+      "id": "component-QWPx3rFfn",
+      "option": "Java SDK",
+      "product_area": [
+        {
+          "value": "product_area-eC7h0SiQ2b",
+          "label": "Application enablement & solutions"
+        }
+      ]
+    },
+    {
+      "id": "component-TCiiCOknp5",
+      "option": "LPWAN",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
+    },
+    {
+      "id": "component-1KLUzmqfe",
+      "option": "LWM2M",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
+    },
+    {
+      "id": "component-2Yri1-l3n",
+      "option": "Messaging Service",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
+    },
+    {
+      "id": "component-rlV-4nEfO",
+      "option": "Microservice Hosting",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
+    },
+    {
+      "id": "component-Sv2buFZ5l",
+      "option": "Microservice SDK",
+      "product_area": [
+        {
+          "value": "product_area-eC7h0SiQ2b",
+          "label": "Application enablement & solutions"
+        }
+      ]
+    },
+    {
+      "id": "component-muqLO0F0Z",
+      "option": "Mobile connectivity",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
+    },
+    {
+      "id": "component-LcWEQW5gs",
+      "option": "MQTT",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
+    },
+    {
+      "id": "component-Tf05_KQ-B",
+      "option": "OPC UA",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
+    },
+    {
+      "id": "component-JlFdtOPva",
+      "option": "REST API",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
+    },
+    {
+      "id": "component-OwVpu2mA6",
+      "option": "SMS microservice",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
+    },
+    {
+      "id": "component-M5-cepIIS",
+      "option": "Streaming Analytics",
+      "product_area": [
+        {
+          "value": "product_area-whzlZT2MhT",
+          "label": "Analytics"
+        }
+      ]
+    },
+    {
+      "id": "component-YbYJ3gLU_",
+      "option": "Web SDK",
+      "product_area": [
+        {
+          "value": "product_area-eC7h0SiQ2b",
+          "label": "Application enablement & solutions"
+        }
+      ]
+    },
+    {
+      "id": "component-Wq9N5xLcZ",
+      "option": "Console",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
+    },
+    {
+      "id": "component-VtytA3d55",
+      "option": "AI Agents",
+      "product_area": [
+        {
+          "value": "product_area-eC7h0SiQ2b",
+          "label": "Application enablement & solutions"
+        }
+      ]
+    }
+  ]
+}

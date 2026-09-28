@@ -1,0 +1,41 @@
+.toc-container{
+  display: none;
+  @media (min-width: $grid-breakpoint) {
+    display: block;
+  }
+}
+
+.toc{
+  margin: 0;
+  padding: 2rem 0 4rem .3rem;
+  font-size: 12px;
+  @media (min-width: $grid-breakpoint) {
+    display: block;
+  }
+  [data-toc]{
+    &.current{
+      display: block;
+    }
+  }
+  ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+    padding: 0 .25rem;
+    margin: .15rem 0 ;
+    display: block;
+    color: $text-muted;
+    transition: all .25s ease;
+    &.active{
+      font-weight: 500;
+      color: $gray-text;
+      box-shadow: -4px 0 0 $brand-primary;
+    }
+    &:not(.active):hover{
+      color: $brand-primary;
+    }
+  }
+}

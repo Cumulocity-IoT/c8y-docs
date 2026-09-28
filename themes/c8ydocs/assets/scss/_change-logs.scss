@@ -1,0 +1,201 @@
+[class^="change-log__label"],
+[class*=" change-log__label"]{
+  padding: 3px 1rem;
+  border-radius: 1rem;
+  font-weight: 400;
+  font-size: 75%;
+  text-transform: uppercase;
+  margin: 0;
+  min-width: 130px;
+  text-align: center;
+}
+
+
+
+.change-log__label{
+  &--announcement{
+    background-color: var(--c8y-palette-status-info-dark);
+    color: var(--c8y-palette-status-info-light);
+  
+  }
+  &--change{
+    background-color: var(--c8y-brand-primary);
+    color: var(--c8y-palette-high);
+  }
+  &--feature{
+    background-color: var(--c8y-palette-status-success-dark);
+    color: var(--c8y-palette-status-success-light);
+  }
+  &--preview{
+    background-color: var(--c8y-brand-accent);
+    color: var(--c8y-palette-high);
+  }
+  &--fix{
+    background-color: var(--c8y-palette-status-success);
+    color: var(--c8y-palette-high);
+  }
+  &--issue{
+    background-color: var(--c8y-palette-status-warning);
+    color: var(--c8y-palette-high);
+  }
+  &--security{
+    background-color: var(--c8y-palette-status-danger);
+    color: var(--c8y-palette-status-danger-light);
+  }
+}
+
+
+.change-logs{
+  &--list{
+    position: relative;
+    z-index: 5;
+  }
+  &--filters{
+    height: calc(100vh - 182px);
+
+    label.c8y-checkbox input[type='checkbox']+span+span,
+    label.c8y-checkbox input[type='radio']+span+span, 
+    label.c8y-radio input[type='checkbox']+span+span, 
+    label.c8y-radio input[type='radio']+span+span{
+      font-size: 12px;
+    }
+  }
+}
+
+.change-log{
+  &.top > .article-content{
+    padding-bottom: 2rem;
+    .lead{
+      font-size: 1.15rem;
+    }
+  }
+  h2{
+    margin-bottom: 0;
+    margin-top:0;
+    text-transform: none;
+  }
+  &__date{
+      position: sticky;
+      top: 106px;
+      background-color: var(--c8y-palette-high);
+      border-top: 1px solid var(--c8y-root-component-separator-color);
+      border-bottom: 1px dotted var(--c8y-root-component-separator-color);
+      padding: .5rem 1rem .5rem 0;
+      border-radius: 0;
+      z-index: 10;
+      h5{
+       margin: 0;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+    
+  }
+   + .change-log__date{
+    margin-top: 2rem;
+   }
+  &__header{
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+    h2{
+      text-wrap: balance;
+      font-size: 18px;
+    }
+  }
+  &__summary{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    > label{
+      flex: 0 0 auto;
+    }
+  }
+  &__details{
+    margin-bottom: 1rem;
+    margin-top: -.5rem;
+    display: block;
+    .collapse-btn{
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: currentColor;
+      background: var(--c8y-palette-gray-100);
+      padding: .3rem .5rem;
+      border-radius: .25rem;
+      border: 1px solid var(--c8y-root-component-border-color);
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      > i{
+        transition: rotate 0.3s ease;
+        rotate: -180deg;
+      }
+      &.collapsed > i{
+        rotate: 0deg;
+      }
+    }
+   .metadata{
+      background-color: var(--c8y-palette-gray-100);
+      &:last-child{
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+      }
+      > div, .btn-metadata{
+        background-color: var(--c8y-palette-high);
+      }
+    }
+  }
+  .metadata {
+    flex-grow: 1;
+    display: flex;
+    gap: 1rem;
+    > div, .btn-metadata{
+      flex: 0 1 33%;
+      font-size: $font-size-sm;
+      border: 1px solid var(--c8y-root-component-separator-color);
+      padding: 0 .5rem .5rem;
+      border-radius: .25rem;
+      p{
+        font-weight: bold;
+        line-height: 1;
+        font-size: 85%;
+        color: var(--c8y-palette-gray-30);
+      }
+    }
+  }
+  &__version{
+    padding: .5rem 0 .5rem 9.1rem;
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+
+.isotope {
+  position: static!important;
+  height: auto!important;
+  .page-section{
+    width: 100%!important;
+    position: static!important;
+    &.change-log__date{
+      position: sticky!important;
+      top: 106px!important;
+      margin-bottom: 4rem; 
+    }
+  }
+  &:has(.no-results){
+    .change-log__date{
+      display: none;
+    }
+  }
+}
+
+#emptystate{
+  padding: 1.5rem;
+  border-radius: .25rem;
+  border: 1px solid var(--c8y-root-component-separator-color);
+  background-color: var(--c8y-palette-gray-100);
+}

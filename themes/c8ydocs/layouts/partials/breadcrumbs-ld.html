@@ -1,0 +1,18 @@
+{{- $scratch := newScratch -}}
+{{- $scratch.Set "items" slice -}}
+{{- $currentPage := . -}}
+{{- range seq 1 10 -}}
+  {{- if $currentPage -}}
+    {{- $name := "" -}}
+    {{- if $currentPage.IsHome -}}
+      {{- $name = "Home" -}}
+    {{- else -}}
+      {{- $name = $currentPage.Title -}}
+    {{- end -}}
+    {{- $scratch.Set "items" (slice (dict "name" $name "item" $currentPage.Permalink) | append ($scratch.Get "items")) -}}
+    {{- $currentPage = $currentPage.Parent -}}
+  {{- else -}}
+    {{- break -}}
+  {{- end -}}
+{{- end -}}
+{{- return ($scratch.Get "items") -}}

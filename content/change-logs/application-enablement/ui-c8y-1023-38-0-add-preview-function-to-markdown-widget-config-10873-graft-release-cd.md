@@ -1,0 +1,30 @@
+---
+date: '2026-02-12'
+title: Added live preview to Markdown widget configuration
+product_area: Application enablement & solutions
+change_type:
+  - value: change-QHu1GdukP
+    label: Feature
+component:
+  - value: component-YbYJ3gLU_
+    label: Web SDK
+build_artifact:
+  - value: tc-pjJiURv9Y
+    label: ui-c8y
+ticket: MTM-65892
+version: 1023.38.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-02-12'
+  - label: apj.cumulocity.com
+    date: '2026-02-13'
+  - label: jp.cumulocity.com
+    date: '2026-02-13'
+  - label: emea.cumulocity.com
+    date: '2026-02-16'
+  - label: us.cumulocity.com
+    date: '2026-02-16'
+  - label: cumulocity.com
+    date: '2026-02-16'
+---
+Previously, when configuring the "Markdown" widget, there was no way to see how the content would look without saving and closing the configuration. With this change, a live preview panel is now displayed alongside the configuration, showing the rendered markdown content in real time as users upload a file or provide a URL.

@@ -1,0 +1,82 @@
+pipeline {
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))
+    skipStagesAfterUnstable()
+    disableConcurrentBuilds()
+  }
+  agent {
+    kubernetes {
+      inheritFrom 'c8y-hugo'
+      defaultContainer 'default'
+    }
+  }
+  environment {
+    YUM_SRV = 'staging-resources.cumulocity.com'
+    YUM_USR = 'hudson'
+    YUM_DEST_DIR = '/var/www/staging-resources/staticpage-guides/guides/'
+    HUGO_PARAMS = ""
+  }
+  stages {
+    stage('Checkout') {
+      steps {
+      checkout([
+        $class: 'GitSCM', branches: [[name: 'master']],
+        extensions: [[$class: 'CleanCheckout']],
+        userRemoteConfigs: [[url: 'git@github.com:SoftwareAG/c8y-docs.git', credentialsId:'jenkins-master']] ])
+      }
+    }
+    stage('Build') {
+      steps {
+        sh '''bash --login
+        python /previewScanner.py
+        python /qa.py
+        echo \"Starting hugo with params ${HUGO_PARAMS}\"
+        ls
+        hugo ${HUGO_PARAMS}
+        '''
+      }
+    }
+    stage('Deploy') {
+      steps {
+        sshagent(['jenkins-master']) {
+          sh '''bash --login
+          python /docsRepoScannerForPreview.py ./
+          pwd
+          ls
+          cp output.json ./public/releases.json
+          echo "rsync -e 'ssh -o StrictHostKeyChecking=no' -avh ./public/* ${YUM_USR}@${YUM_SRV}:${YUM_DEST_DIR} --delete"
+          rsync -e 'ssh -o StrictHostKeyChecking=no' -avh ./public/* ${YUM_USR}@${YUM_SRV}:${YUM_DEST_DIR} --delete
+          '''
+        }
+      }
+    }
+    stage('Linkchecker') {
+      steps {
+        sh '''bash --login
+        linkchecker \
+        https://cumulocity.com/guides/images/ \
+        https://cumulocity.com/guides/welcome/ \
+        https://cumulocity.com/guides/concepts/ \
+        https://cumulocity.com/guides/users-guide/ \
+        https://cumulocity.com/guides/benutzerhandbuch/ \
+        https://cumulocity.com/guides/device-integration/ \
+        https://cumulocity.com/guides/device-tutorials/ \
+        https://cumulocity.com/guides/edge/ \
+        https://cumulocity.com/guides/thin-edge/ \
+        https://cumulocity.com/guides/cloud-remote-access/ \
+        https://cumulocity.com/guides/oee/ \
+        https://cumulocity.com/guides/device-sdk/ \
+        https://cumulocity.com/guides/microservice-sdk/ \
+        https://cumulocity.com/guides/web/ \
+        https://cumulocity.com/guides/reference/ \
+        https://cumulocity.com/guides/apama/ \
+        https://cumulocity.com/guides/machine-learning/ \
+        https://cumulocity.com/guides/datahub/ \
+        https://cumulocity.com/guides/dtm/ \
+        https://cumulocity.com/guides/about-doc/ \
+        || true
+        '''
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "C8ydocs"
+license = "MIT"
+licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+description = ""
+homepage = "http://example.com/"
+tags = []
+features = []
+min_version = "0.41"
+
+[author]
+  name = "Carlos Ceia @ Cumulocity"
+  homepage = ""
+
+# Site Menus
+[menu]
+  # Navbar Menus
+
+  [[menu.main]]
+    weight = 10
+    identifier = "release-notes"
+    name = "Release notes"
+    icon = "book"
+    url = "/release-notes/"
+
+
+  [[menu.main]]
+    weight = 20
+    identifier = "concept-guide"
+    name = "Concepts Guide"
+    icon = "c8y-icon-c8y-engine"
+    url = "concepts-guide"
+
+  [[menu.main]]
+    weight = 30
+    identifier = "users-guide"
+    name = "User Guide"
+    icon = "c8y-icon-user"
+    url = "users-guide"
+    

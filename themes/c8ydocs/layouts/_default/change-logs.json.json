@@ -1,0 +1,5 @@
+{
+  "changetype": {{site.Data.changetype.options | jsonify }},
+  "component": {{site.Data.component.options | jsonify }},
+  "buildartifact": {{site.Data.buildartifact.options | jsonify }}
+}

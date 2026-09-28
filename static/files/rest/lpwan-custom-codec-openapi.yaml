@@ -1,0 +1,388 @@
+openapi: 3.0.1
+info:
+  title: LPWAN custom codec OpenAPI definition
+  version: v0
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+paths:
+  /decode:
+    post:
+      operationId: decode
+      tags:
+        - LPWAN Custom Codec Decode API
+      summary: "Decodes the payload based on the inputs like deviceManufacturer, deviceModel, sourceDeviceEui and fport."
+      description: "This API endpoint decodes the input payload based on inputs like deviceManufacturer, deviceModel, sourceDeviceEui and fport and returns the result populated with measurements, events, alarms and alarm types to update. Also flag whether the decoding payload is successful or not."
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              sourceDeviceId: '1025'
+              value: '202355251812984589'
+              args:
+                deviceManufacturer: LANSITEC
+                deviceModel: Asset Tracker
+                sourceDeviceEui: AA02030405060708
+                updateTime: '1643121312'
+                fport: '123'
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/DecoderInputData'
+                - required:
+                    - sourceDeviceId
+                    - value
+                    - args
+      responses:
+        '200':
+          description: "The decoder input is successfully decoded and returns the DecoderResult."
+          content:
+            application/json:
+              example:
+                alarms:
+                  - type: c8yDemoDecoderalarm
+                    text: I am an decoder alarm
+                    severity: MINOR
+                    status: ACTIVE
+                    time: '2020-03-03T12:03:23.845Z'
+                alarmTypesToUpdate:
+                  ACKNOWLEDGED:
+                  - c8y_Test
+                  - c8y_Temp
+                  CLEARED:
+                  - c8y_Ack
+                  - c8y_Unavailable
+                events:
+                  - type: c8y_LocationUpdate
+                    text: Location updated
+                    time: '2020-03-03T12:03:23.845Z'
+                measurements:
+                 - type: c8y_Battery
+                   series: c8y_Battery
+                   time: '2020-03-03T12:03:23.845Z'
+                   values:
+                    - type: c8y_Battery
+                      seriesName: level
+                      unit: c
+                      value: 35
+                dataFragments:
+                 - key: c8y_Position/lat,
+                   value: null
+                   valueAsObject: 9.609690346957522E-28
+                success: true or false
+                message: "Description of decoding success or failure."
+              schema:
+                $ref: '#/components/schemas/DecoderResult'
+        '400':
+          description: "The decoder input has missing fields or has `null` as its input data. The DecoderResult is returned with a failure message."
+          content:
+            application/json:
+              example:
+                message:
+                  - "DecoderInputData is missing mandatory fields: 'sourceDeviceId', 'sourceDeviceEui', 'inputData', 'manufacturer and/or model'"
+                  - "Decoder is invoked with null input data."
+                success: false
+              schema:
+                $ref: '#/components/schemas/DecoderResult'
+        '501':
+          description:  "There is no implementation for the DecoderService. The DecoderResult is returned with a failure message."
+          content:
+            application/json:
+              example:
+                message:
+                  - "No implementation provided for the DecoderService"
+                success: false
+              schema:
+                $ref: '#/components/schemas/DecoderResult'
+  /encode:
+    post:
+      tags:
+        - LPWAN Custom Codec Encode API
+      summary: "Encodes the input command and returns the encoded command."
+      operationId: encode
+      requestBody:
+        content:
+          application/json:
+            example:
+              commandName: position request,
+              commandData : '{position request -latitude 10.25 -longitude -5.67}'
+              sourceDeviceId : 26413,
+              args:
+                deviceManufacturer: LANSITEC,
+                deviceModel: Asset Tracker,
+                sourceDeviceEui: AABB03AABB030000
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/EncoderInputData'
+                - required:
+                    - commandName
+                    - commandData
+                    - sourceDeviceId
+                    - args
+      responses:
+        '200':
+          description: default response
+          content:
+            application/json:
+              example:
+                encodedCommand: 9F5000
+                properties:
+                - fport: 20
+              schema:
+                $ref: '#/components/schemas/EncoderResult'
+        '400':
+          description:  "The encoder input has missing fields or has `null`as its input data. The EncoderResult is returned with a failure message."
+          content:
+            application/json:
+              example:
+                message:
+                  - "EncoderInputData is missing mandatory fields: 'sourceDeviceId', 'sourceDeviceEui', 'manufacturer, model and/or supportedCommands', 'commandName'"
+                  - "Encoder is invoked with null input data."
+                success: false
+              schema:
+                $ref: '#/components/schemas/EncoderResult'
+        '501':
+          description:  "There is no implementation for the EncoderService. The EncoderResult is returned with a failure message."
+          content:
+            application/json:
+              example:
+                message:
+                  - "No implementation provided for the EncoderService"
+                success: false
+              schema:
+                $ref: '#/components/schemas/EncoderResult'
+components:
+  schemas:
+    DecoderInputData:
+      type: object
+      description: "Contains all the relevant information which is required to decode the payload for the selected device."
+      required:
+        - sourceDeviceId
+        - value
+        - args
+      properties:
+        sourceDeviceId:
+          type: string
+          description: "Device managed object ID."
+        value:
+          type: string
+          description: "Device payload to decode."
+        args:
+          type: object
+          description: "Its a map object that contain required information used by the payload like deviceManufacturer, deviceModel, sourceDeviceEui, updateTime and fport."
+          additionalProperties:
+            $ref: '#/components/schemas/DecoderInputArgs'
+
+
+    DecoderResult:
+      type: object
+      description: "Contains a list of alarms, alarm types to udpate, events, measurements and data fragments to be updated."
+      properties:
+        alarms:
+          type: array
+          description: "List of alarms to be created."
+          items:
+            type : object
+            description: "AlarmRepresentation"
+        alarmTypesToUpdate:
+          type: object
+          description: "Map of alarm types to be updated with a specific status"
+          additionalProperties:
+            $ref: '#/components/schemas/AlarmTypesToUpdate'
+        events:
+          type: array
+          description: "List of events to be created."
+          items:
+            type: object
+            description: "EventRepresentation"
+        measurements:
+          type: array
+          description: "List of measurements to be created."
+          items:
+            $ref: '#/components/schemas/MeasurementDto'
+        dataFragments:
+          type: array
+          description: "List of data fragments to be updated with a specified status."
+          items:
+            $ref: '#/components/schemas/DataFragmentUpdate'
+        message:
+          type: string
+          description: "Message description regarding decode."
+        success:
+          type: boolean
+          description: "Boolen value that indicates whether decoding was successful or not."
+
+    EncoderInputData:
+      type: object
+      description: "Contains all of the information about the device operation for the selected device to encode the command for the selected device."
+      required:
+        - commandName
+        - commandData
+        - sourceDeviceId
+        - args
+      properties:
+        commandName:
+          type: string
+          description: "Command name."
+        commandData:
+          type: string
+          description: "Command data to be encoded."
+        sourceDeviceId:
+          type: string
+          description: "Managed object ID of the device."
+        args:
+          type: object
+          description: "This is a map object that contain required information used by the codec to decode the payload such as deviceModel, deviceManufacturer and sourceDeviceEui."
+          additionalProperties:
+            $ref: '#/components/schemas/EncoderInputArgs'
+        status:
+          type: string
+          description: "This is an optional attribute provided for the LPWAN custom codec which is not used at present."
+
+    EncoderResult:
+      type: object
+      description: "Contains encoded command and fport information for the selected device."
+      properties:
+        encodedCommand:
+          type: string
+          description: "Encoded command Value."
+        properties:
+          type: object
+          description: "This is a map object to send additional required information like fport."
+          additionalProperties:
+            $ref: '#/components/schemas/EncoderOutputArgs'
+        message:
+          type: string
+          description:  "Message description regarding the encode operation."
+        success:
+          description: "Boolen value that indicates whether encoding was successful or not."
+          type: boolean
+
+    DecoderInputArgs:
+      type: object
+      description: "Required inputs for the decode API like deviceManufacturer, deviceModel, sourceDeviceEui, updateTime and fport."
+      required:
+        - deviceManufacturer
+        - deviceModel
+        - sourceDeviceEui
+      properties:
+        deviceManufacturer:
+          description: "Device manufacturer of the LPWAN device."
+          type: string
+        deviceModel:
+          description: "Device model of the LPWAN device."
+          type: string
+        sourceDeviceEui:
+          description: "LPWAN device external identifier."
+          type: string
+        updateTime:
+          description: "Time stamp."
+          type: string
+        fport:
+          description: "fport value."
+          type: string
+
+    AlarmTypesToUpdate:
+      type: object
+      description: "Map of alarm types to be updated."
+      properties:
+        ACKNOWLEDGED:
+          type: array
+          items:
+            type: string
+        CLEARED:
+          type: array
+          items:
+            type: string
+
+    EncoderInputArgs:
+      type: object
+      description: "Required inputs for the encode API like deviceManufacturer, deviceModel, sourceDeviceEui."
+      required:
+        - deviceManufacturer
+        - deviceModel
+        - sourceDeviceEui
+      properties:
+        deviceManufacturer:
+          description: "Device manufacturer of the LPWAN device."
+          type: string
+        deviceModel:
+          description: "Device model of the LPWAN device."
+          type: string
+        sourceDeviceEui:
+          description: "LPWAN device external identifier."
+          type: string
+
+    EncoderOutputArgs:
+      type: object
+      description: "Map that contains information like fport."
+      required:
+        - fport
+      properties:
+        fport:
+          description: "fport value."
+          type: string
+
+    DataFragmentUpdate:
+      type: object
+      description: "DatafragmentUpdate"
+      properties:
+        key:
+          type: string
+          description: "Fragment key to be updated."
+        value:
+          type: string
+          description: "Value of the fragment."
+        valueAsObject:
+          type: object
+          description: "Value object."
+
+    MeasurementDto:
+      type: object
+      description: "Measurement data transfert object."
+      properties:
+        type:
+          type: string
+          description: "Measurement type."
+        series:
+          type: string
+          description: "Measurement series."
+        time:
+          type: string
+          description: "Date and time."
+          format: date-time
+        fragmentsToCopyFromSourceDevice:
+          type: array
+          description: "Array fragments to copy from source device."
+          items:
+            type: string
+        deviceFragmentPrefix:
+          type: string
+          description: "Device fragment prefix."
+        deviceNameFragment:
+          type: string
+          description: "Device name fragment."
+        includeDeviceName:
+          type: boolean
+          description: "Included device name or not."
+        additionalProperties:
+          type: object
+          description: "Additonal properties map."
+          additionalProperties: {}
+        values:
+          type: array
+          description: "List of MeasurementValueDtos."
+          items:
+            $ref: '#/components/schemas/MeasurementValueDto'
+    MeasurementValueDto:
+      type: object
+      properties:
+        seriesName:
+          type: string
+          description: "Measurement series name."
+        unit:
+          type: string
+          description: "Measurement unit."
+        value:
+          type: number
+          description: "Measurement value."

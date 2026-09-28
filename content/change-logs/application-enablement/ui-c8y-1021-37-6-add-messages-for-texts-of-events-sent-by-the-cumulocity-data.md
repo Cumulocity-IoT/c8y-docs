@@ -1,0 +1,24 @@
+---
+date: '2025-02-27'
+title: Added messages for events sent by the DataHub microservice
+product_area: Application enablement & solutions
+change_type:
+  - value: change-VSkj2iV9m
+    label: Fix
+component:
+  - value: component-YbYJ3gLU_
+    label: Web SDK
+build_artifact:
+  - value: tc-pjJiURv9Y
+    label: ui-c8y
+ticket: MTM-62551
+version: 1021.37.6
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
+---
+Recently, {{< product-c8y-iot >}} DataHub was updated to send events to the {{< product-c8y-iot >}} platform in case an offloading or compaction job finishes. Therefore, new messages for the {{< product-c8y-iot >}} platform were introduced to translate these events.

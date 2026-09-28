@@ -1,0 +1,30 @@
+---
+date: '2026-03-25'
+title: Improved performance of SCADA widgets in dashboard templates
+product_area: Application enablement & solutions
+change_type:
+  - value: change-VSkj2iV9m
+    label: Fix
+component:
+  - value: component-YdSEScrEC
+    label: Cockpit
+build_artifact:
+  - value: tc-pjJiURv9Y
+    label: ui-c8y
+ticket: MTM-66383
+version: 1023.62.2
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-03-25'
+  - label: apj.cumulocity.com
+    date: '2026-03-26'
+  - label: jp.cumulocity.com
+    date: '2026-03-26'
+  - label: emea.cumulocity.com
+    date: '2026-03-27'
+  - label: us.cumulocity.com
+    date: '2026-03-27'
+  - label: cumulocity.com
+    date: '2026-03-27'
+---
+This change fixes performance issues with SCADA widgets in dashboards with template mode enabled, particularly when widgets contain many placeholders or assigned devices have large managed objects. Dashboard templates with SCADA widgets now load faster and respond more smoothly.

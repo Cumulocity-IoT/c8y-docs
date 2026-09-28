@@ -1,0 +1,70 @@
+.label {
+  display: inline;
+  padding: 0.2em 0.6em 0.2em;
+  border-radius: 0.25em;
+  color: var(--text-color);
+  vertical-align: baseline;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: var(--c8y-font-size-small);
+  line-height: 1;
+  > i{
+    font-size: inherit!important;
+  }
+  
+  &:empty {
+    display: none;
+  }
+  .btn & {
+    position: relative;
+    top: -1px;
+  }
+  &.chip{
+    display: inline-flex;
+    align-items: center;
+    margin-right: 4px;
+    .btn-clean{
+      padding: 0!important;
+    }
+  }
+}
+
+// Colors
+// Contextual variations (linked labels get darker on :hover)
+.label-default {
+  background-color: var(--c8y-palette-gray-80);
+  color: var(--text-color,var(--c8y-component-color-default,var(--c8y-root-component-color-default)));
+}
+
+.label-primary {
+  background-color: var(--c8y-brand-80);
+  color: var(--c8y-brand-primary);
+}
+
+.label-success {
+  background-color: var(--c8y-palette-status-success-light);
+  color: var(--c8y-palette-status-success-dark);
+}
+
+.label-info {
+  background-color: var(--c8y-palette-status-info-light);
+  color: var(--c8y-palette-status-info);
+}
+
+.label-warning {
+  background-color: var(--c8y-palette-status-warning-high);
+  color: var(--c8y-palette-status-warning-dark);
+}
+
+.label-danger {
+  background-color: var(--c8y-palette-status-danger-light);
+  color: var(--c8y-palette-status-danger-dark);
+}
+
+.label-truncated {
+  display: inline-block;
+  overflow: hidden;
+  max-width: 150px;
+  text-overflow: ellipsis;
+}

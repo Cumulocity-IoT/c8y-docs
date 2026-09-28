@@ -1,0 +1,32 @@
+{
+  "options": [
+    {
+      "id": "change-QHu1GdukP",
+      "option": "Feature"
+    },
+    {
+      "id": "change-pXAlHAWka",
+      "option": "Preview"
+    },
+    {
+      "id": "change-2c7RdTdXo4",
+      "option": "Improvement"
+    },
+    {
+      "id": "change-VSkj2iV9m",
+      "option": "Fix"
+    },
+    {
+      "id": "change-inv-3bw8e",
+      "option": "Announcement"
+    },
+    {
+      "id": "change-3BQrQ6adS",
+      "option": "API change"
+    },
+    {
+      "id": "change-4CRsR7beT",
+      "option": "Security"
+    }
+  ]
+}

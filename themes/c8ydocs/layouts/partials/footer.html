@@ -1,0 +1,25 @@
+
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="text-center">
+      <p class="small ">Copyright &copy; 2018—{{ now.Format "2006" }} {{ with .Site.Params.footer.copyright }}{{ . | safeHTML }}{{ end }} | <a href="javascript: Cookiebot.renew()">Cookie settings</a>.</p>
+    </div>
+  </div>
+</footer>
+
+{{ "<!-- Essential Scripts -->" | safeHTML }}
+
+{{ "<!-- jQuery -->" | safeHTML }}
+
+<script src="{{ "js/vendor/jquery.min.js" | absURL }}"></script>
+<script src="{{ "js/vendor/bootstrap.bundle.min.js" | absURL }}"></script>
+<script src="{{ "js/vendor/clipboard.js" | absURL }}"></script>
+
+<script src="{{ "js/vendor/zoom.js" | absURL }}"></script>
+<script src="{{ "js/main.js" | absURL }}"></script>
+{{ if eq .Title "Change logs" }}
+<script src="{{ "js/vendor/isotope.pkgd.min.js" | absURL }}"></script>
+{{ end }}
+{{ if eq .Title "Release notes" }}
+<script src="{{ "js/vendor/isotope.pkgd.min.js" | absURL }}"></script>
+{{ end }}

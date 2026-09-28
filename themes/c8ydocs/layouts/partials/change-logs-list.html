@@ -1,0 +1,228 @@
+<div class="article-list change-logs--list">
+  <article>
+    <div class="isotope">
+      <article
+        id="{{substr .File.LogicalName 0 -3}}"
+        class="page-section change-log top"
+      >
+        <div class="article-content">
+          <header class="section-header">
+            {{ if site.Data.date_settings.yearly_release}}
+              {{ if eq .Title "Change logs"}}
+                <h1 class="text-light">Release notes</h1>
+              {{else}}
+                <h1 class="text-light">{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant) "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
+              {{end}}
+            {{else}}
+            <h1 class="text-light">{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant) "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
+            {{end}}
+          </header>
+          <div class="lead">
+            {{ .Content }}
+            {{ if site.Data.date_settings.yearly_release}} 
+              <p class="small">Displaying all changes since Release 10.18</p>
+              <hr> 
+            {{else}}
+              <p class="small">Displaying all changes since {{site.Data.date_settings.date.Format "January 2, 2006"}}</p>
+            {{end}}
+          </div>
+        </div>
+      </article>
+      {{/*  Get the page resources from the right folder  */}}
+      {{ $bundle1 := "/change-logs/analytics" }}
+      {{ $headless1 := .Site.GetPage $bundle1 }}
+      {{ $bundle2 := "/change-logs/application-enablement" }}
+      {{ $headless2 := .Site.GetPage $bundle2 }}
+      {{ $bundle3 := "/change-logs/device-management" }}
+      {{ $headless3 := .Site.GetPage $bundle3 }}
+      {{ $bundle4 := "/change-logs/platform-services" }}
+      {{ $headless4 := .Site.GetPage $bundle4 }}
+      {{ $currentCollections := newScratch }}
+      {{ if site.Data.date_settings.yearly_release}}
+      {{ $bundle5 := "/change-logs/edge" }}
+      {{ $headless5 := .Site.GetPage $bundle5 }}
+        {{ $currentCollections.Set "list" ($headless1.Resources | union $headless2.Resources | union $headless3.Resources | union $headless4.Resources | union $headless5.Resources) }}
+        {{else}}
+        {{ $currentCollections.Set "list" ($headless1.Resources | union $headless2.Resources | union $headless3.Resources | union $headless4.Resources ) }}
+      {{end}}
+      
+      {{ $merged := $currentCollections.Get "list" }}
+
+      <div id="emptystate" style="display: none">
+        <div class="d-flex a-i-center gap-16 text-muted">
+          <i class="dlt-c8y-icon-search" style="font-size: 4rem;"></i>
+          <div>
+            <p><strong>No change logs to display.</strong><br>
+             <small>Refine or <a href="javascript: void(0)" id="clearFilters">clear</a> your filters.</small>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {{ $reusablePages := sort ($merged.ByType "page") ".Date" "desc"}}
+
+      {{/*  retrieve the starting date from the settings  */}}
+      {{ $currentDate := newScratch }}
+      {{ $currentDate.Set "date" ""}}
+      {{ $dateLimit := site.Data.date_settings.date }}
+
+      {{ range where $reusablePages "Date" "ge" $dateLimit}}
+
+      {{/*  ====================  */}}
+      {{/*  DEPRECATED 
+       * now displaying all change types is handled by  the yearly release 
+       and / or by the "internal=true" url parameter
+      */}}
+        
+      {{/*  Based on the yearly release boolean, retrives 
+          * yearly_release: true -  show all entries
+          * yearly_release: false - don't show "Fix" entries
+         */}}
+      {{$classes := slice}}
+      {{ $currentDate.Set "out" ""}}
+      {{/*  {{ if site.Data.date_settings.yearly_release}}
+      {{else}}
+      {{ $currentDate.Set "out" "Fix"}}
+      {{end}}  */}}
+
+      {{ if ne (index .Params.change_type 0).label ($currentDate.Get "out")}}
+
+      <!-- Dates, only adds a new one when it changes -->
+      {{$listDate := .Date.Format "January 2, 2006" }}
+      {{ if ne $listDate ($currentDate.Get "date")}}
+      {{ $currentDate.Set "date" $listDate}}
+       {{/*  pick the CSS class names from the entries sharing the same date  */}}
+      {{ range $reusablePages }}
+        {{ if ne (index .Params.change_type 0).label ($currentDate.Get "out")}}
+          {{ $recordDate := .Date.Format "January 2, 2006" }}
+          {{ if eq $recordDate $listDate }}
+            {{$changeTypeClass := print "change-type-" (index .Params.change_type 0).label | urlize}}
+            {{$productAreaClass := print "productarea-" .Params.product_area | urlize}}
+            {{$componentClass := print "component-" (index .Params.component 0).label | urlize}}
+            {{$technicalComponentClass := print "technicalcomponent-" (index .Params.build_artifact 0).label | urlize}}
+            {{ if not (in $classes $changeTypeClass) }}
+            {{$classes = $classes | append $changeTypeClass}}
+            {{end}}
+            {{ if not (in $classes $productAreaClass) }}
+            {{$classes = $classes | append $productAreaClass}}
+            {{end}}
+            {{ if not (in $classes $componentClass) }}
+            {{$classes = $classes | append $componentClass}}
+            {{end}}
+            {{ if not (in $classes $technicalComponentClass) }}
+            {{$classes = $classes | append $technicalComponentClass}}
+            {{end}}
+          {{end}}
+        {{end}}
+      {{end}}
+
+      {{ if or (not site.Data.date_settings.yearly_release) site.Data.date_settings.yearly_release_preview }}
+        {{- /* 1) Detect if there is any OTHER change-type-* class */ -}}
+        {{- $hasOtherChangeType := false -}}
+        {{- range $classes }}
+          {{- if and (hasPrefix . "change-type-") (ne . "change-type-fix") -}}
+            {{- $hasOtherChangeType = true -}}
+          {{- end -}}
+        {{- end -}}
+
+        <div
+          id="cl-{{ $listDate | urlize }}"
+          class='page-section change-log__date 
+          {{ range $classes }}
+            {{- if and (eq . "change-type-fix") (not $hasOtherChangeType) -}}
+              change-type-fix hidden {{ else }} {{ . }} {{ end }}
+          {{- end -}}'
+          {{- if and (in $classes "change-type-fix") (not $hasOtherChangeType) -}}
+            data-internal
+          {{- end -}}
+        >
+          <h5>{{$listDate}}</h5>
+        </div>
+      {{else}}
+        {{ range $index, $v := site.Data.date_settings.versions }}
+          {{ if eq $v.date $listDate}}
+            <div
+              id="cl-{{$listDate | urlize }}"
+              class="page-section change-log__date {{range $classes}}{{.}} {{end}}"
+            >
+              <h5>{{$v.version}}</h5>
+            </div>
+          {{end}}
+        {{end}}
+      {{end}}
+    {{end}}
+
+
+
+      <section
+        id='{{(replace .Name ".md" "") | urlize }}'
+        class="page-section change-type-{{(index .Params.change_type 0).label | urlize}} component-{{ (index .Params.component 0).label | urlize }}  productarea-{{.Params.product_area | urlize}} technicalcomponent-{{(index .Params.build_artifact 0).label | urlize}} {{if and (not site.Data.date_settings.yearly_release) (eq ((index .Params.change_type 0).label | urlize) "fix") }} hidden {{end}}"
+        data-date="{{.Date}}"
+        {{if and (not site.Data.date_settings.yearly_release) (eq ((index .Params.change_type 0).label | urlize) "fix") }} data-internal {{end}}
+      >
+        <div class="article-content change-log">
+          <div class="change-log__header">
+            <h2>
+              {{replace .Title "var-product-c8y-iot" .Site.Params.product_c8y_iot}}
+              <button
+                title="Copy link"
+                class="btn-link bookmark"
+                data-clipboard-text='#{{(replace .Name ".md" "") | urlize }}'
+              >
+                <span class="fa dlt-c8y-icon-link"></span>
+              </button>
+            </h2>
+          </div>
+          <div class="change-log__summary">
+            {{ partial "change-log-labels.html" (index .Params.change_type 0).label}}
+            <div class="metadata">
+              <button class="btn-metadata" data-tag="productarea-{{.Params.product_area | urlize}}">
+                <small class="text-muted">Product area</small><br>
+                <p>{{.Params.product_area}}</p>
+              </button>
+            
+              <button class="btn-metadata" data-tag="component-{{(index .Params.component 0).label | urlize}}">
+                <small class="text-muted">Component</small>
+                <p>{{(index .Params.component 0).label}}</p>
+              </button>
+            </div>
+          </div>
+          {{- .Content | replaceRE `<script[\s\S]*?</script>` "" | replaceRE `\s+on\w+\s*=\s*"[^"]*"` "" | replaceRE `\s+on\w+\s*=\s*'[^']*'` "" | safeHTML -}}
+          <div class="change-log__details">
+            <button class="collapse-btn btn-clean collapsed d-flex a-i-center" data-toggle="collapse" data-target="#collapse-{{(replace .Title "var-product-c8y-iot" .Site.Params.product_c8y_iot) | urlize }}">
+              Technical details
+              <i class="dlt-c8y-icon-chevron-down "></i>
+            </button>
+            <div id="collapse-{{(replace .Title "var-product-c8y-iot" .Site.Params.product_c8y_iot) | urlize }}" class="collapse">
+              <div class="metadata p-16">
+                <button class="btn-metadata " data-tag="technicalcomponent-{{(index .Params.build_artifact 0).label | urlize}}">
+                  <small class="text-muted">Build artifact {{ if .Params.version}}/ version{{end}}</small>
+                  <p>{{(index .Params.build_artifact 0).label}}
+                  {{ if .Params.version}} - {{ .Params.version}}{{end}}
+                  </p>
+                </button>
+                {{ if .Params.ticket }}
+                <!-- {{ if not site.Data.date_settings.yearly_release}} hidden {{end}} -->
+                  <div class="p-t-4 ">
+                    <small class="text-muted">Ticket</small>
+                    <p><strong>{{.Params.ticket}}</strong></p>
+                  </div>
+                {{end}}
+              </div>
+              {{ if .Params.environment_availability}}
+                <div class="metadata p-l-16 p-r-16 p-b-16">
+                  <div class="p-t-4" style="flex-basis:auto;">
+                    <small class="text-muted">Environment availability</small>
+                    <p>{{ range $i, $env:= .Params.environment_availability }}{{ if $i }}, {{end}}{{- $env.label -}}{{end}}</p>
+                  </div>
+                </div>
+              {{end}}
+            </div>
+          </div>
+        </div>
+      </section>
+      {{ end }}
+      {{ end }}
+    </div>
+  </article>
+</div>

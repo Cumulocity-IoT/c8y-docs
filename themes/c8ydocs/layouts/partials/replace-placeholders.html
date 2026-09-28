@@ -1,0 +1,8 @@
+{{- define "replacePlaceholders" -}}
+  {{- $text := .text -}}
+  {{- $siteParams := .siteParams -}}
+  {{- $text = replace $text "var-company-sag" ($siteParams.company_sag | default "") -}}
+  {{- $text = replace $text "var-enterprise-tenant" ($siteParams.enterprise_tenant | default "") -}}
+  {{- $text = replace $text "var-product-c8y-iot" ($siteParams.product_c8y_iot | default "") -}}
+  {{- return $text -}}
+{{- end -}}

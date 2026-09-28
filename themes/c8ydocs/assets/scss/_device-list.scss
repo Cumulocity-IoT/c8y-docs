@@ -1,0 +1,48 @@
+.device-title{
+  line-height: 1.2;
+  &::before{
+    content: '';
+    display: block;
+    max-width: 100px;
+    margin: 0 auto .5rem;
+    border-top: 1px solid rgba(0,0,0,.1);
+  }
+}
+
+.device-brand{
+  color: $brand-primary;
+  margin: 0.5rem 0 0 0;
+}
+.device-slot{
+  color: $gray-text;
+  padding: 1rem;
+  display: flex;
+  flex-flow: column;
+  transition: box-shadow 0.25s ease;
+  text-align: center;
+  border-radius: 1rem;
+  align-items: center;
+  &:hover{
+    box-shadow: 0 4px 4px rgba(0,0,0,0.01), 0 8px 8px rgba(0,0,0,0.01), 0 16px 16px rgba(0,0,0,0.03), 0 32px 32px rgba(0,0,0,0.05), 0 16px 64px rgba(0,0,0,0.1);
+    z-index: 10;
+  }
+  &:hover, &:focus{
+    text-decoration: none;
+    color: $gray-text;
+  }
+  .device-title{
+    margin-top: auto; 
+  }
+
+  width: 100%;
+
+  @media(min-width: $screen-sm-min){
+    width: 50%
+  }
+  @media(min-width: $screen-md-min){
+    width: 33.333333%
+  }
+  @media(min-width: $screen-lg){
+    width: 25%
+  }
+}

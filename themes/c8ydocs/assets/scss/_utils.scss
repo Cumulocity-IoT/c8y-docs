@@ -1,0 +1,210 @@
+// Spacing
+$sizes: (
+ "0": 0,
+ "4": 0.25rem,
+ "8": 0.5rem,
+ "16": 1rem,
+ "24": 1.5rem,
+ "32": 2rem,
+ "40": 2.5rem,
+ "48": 3rem
+);
+
+$grid-breakpoints: (
+ xs: 0,
+ sm: 576px,
+ md: 768px,
+ lg: 992px,
+ xl: 1200px,
+ xxl: 1400px
+);
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+ $min: map-get($breakpoints, $name);
+ @return if($min != 0, $min, null);
+}
+
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+ @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+}
+// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
+// Makes the @content apply to the given breakpoint and wider.
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+ $min: breakpoint-min($name, $breakpoints);
+ @if $min {
+  @media (min-width: $min) {
+   @content;
+  }
+ } @else {
+  @content;
+ }
+}
+
+@mixin spacer($prefix: m, $property: margin, $breakpoints: $grid-breakpoints) {
+ @each $breakpoint in map-keys($breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+  @each $name, $size in $sizes {
+   @include media-breakpoint-up($breakpoint) {
+    .#{$prefix}-#{$name}#{$infix} {
+     #{$property}: map-get($sizes, $name) !important;
+    }
+    .#{$prefix}-t-#{$name}#{$infix} {
+     #{$property}-top: map-get($sizes, $name) !important;
+    }
+    .#{$prefix}-r-#{$name}#{$infix} {
+     #{$property}-right: map-get($sizes, $name) !important;
+    }
+    .#{$prefix}-b-#{$name}#{$infix} {
+     #{$property}-bottom: map-get($sizes, $name) !important;
+    }
+    .#{$prefix}-l-#{$name}#{$infix} {
+     #{$property}-left: map-get($sizes, $name) !important;
+    }
+   }
+  }
+
+  @include media-breakpoint-up($breakpoint) {
+   .#{$prefix}-auto#{$infix} {
+    #{$property}: auto !important;
+   }
+   .#{$prefix}-t-auto#{$infix} {
+    #{$property}-top: auto !important;
+   }
+   .#{$prefix}-r-auto#{$infix} {
+    #{$property}-right: auto !important;
+   }
+   .#{$prefix}-b-auto#{$infix} {
+    #{$property}-bottom: auto !important;
+   }
+   .#{$prefix}-l-auto#{$infix} {
+    #{$property}-left: auto !important;
+   }
+  }
+ }
+}
+@include spacer();
+@include spacer(p, padding);
+
+
+.separator-bottom{
+  box-shadow: inset 0 -1px 0 0 var(--c8y-root-component-border-color);
+}
+
+.sr-only,
+.cdk-visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+}
+
+
+.hidden{
+  display: none!important;
+}
+
+.visible-xs{
+  display: none!important;
+  @media (max-width: $screen-sm-min) {
+    display: block!important;
+  }
+}
+.hidden-xs{
+  @media (max-width: $screen-sm-min) {
+    display: none!important;
+  }
+}
+.visible-sm{
+  display: none!important;
+  @media (max-width: $screen-sm-max) {
+    display: block!important;
+  }
+}
+.hidden-sm{
+  @media (max-width: $screen-sm-max) {
+    display: none!important;
+  }
+}
+.visible-md{
+  display: none!important;
+  @media (max-width: $screen-md-max) {
+    display: block!important;
+  }
+}
+.hidden-md{
+  @media (max-width: $screen-md-max) {
+    display: none!important;
+  }
+}
+
+.text-warning {
+  color: var(--c8y-palette-status-warning)!important;
+}
+.text-danger {
+  color: var(--c8y-palette-status-danger)!important;
+}
+.text-info {
+  color: var(--c8y-palette-status-info)!important;
+}
+.text-success {
+  color: var(--c8y-palette-status-success)!important;
+}
+.text-success-dark {
+  color: var(--c8y-palette-status-success-dark)!important;
+}
+.text-primary {
+  color: var(--c8y-brand-primary)!important;
+}
+
+
+
+.icon-12 {
+  font-size: 12px;
+}
+.icon-14 {
+  font-size: 14px;
+}
+.icon-16 {
+  font-size: 16px;
+}
+.icon-20 {
+  font-size: 20px;
+}
+.icon-24 {
+  font-size: 24px;
+}
+.icon-28 {
+  font-size: 28px;
+}
+.icon-32 {
+  font-size: 32px;
+}
+.icon-36 {
+  font-size: 36px;
+}
+.icon-40 {
+  font-size: 40px;
+}
+.icon-44 {
+  font-size: 44px;
+}
+.icon-48 {
+  font-size: 48px;
+}
+.icon-52 {
+  font-size: 52px;
+}
+.icon-56 {
+  font-size: 56px;
+}
+.icon-60 {
+  font-size: 60px;
+}
+.icon-64 {
+  font-size: 64px;
+}

@@ -1,0 +1,2990 @@
+{
+    "info": {
+        "_postman_id": "8c023c63-3157-25bc-72d2-6f740e9fa98d",
+        "name": "Cumulocity API",
+        "description": "Environment variables for this Postman Collection:\n\nurl = the IP adress/domain of your cumulocity server\nauth = your base64 encoded tenant/username:password or username:password",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Alarm",
+            "item": [
+                {
+                    "name": "Get collection of alarms",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/alarm/alarms",
+                        "description": "#### For a detailed description of the API please check out our [Alarm Reference Guide](http://cumulocity.com/guides/reference/alarms/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create new alarm",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/vnd.com.nsn.cumulocity.alarm+json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/vnd.com.nsn.cumulocity.alarm+json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"source\": {\n    \t\"id\": \"10200\" },\n    \"type\": \"TestAlarm\",\n    \"text\": \"I am an alarm\",\n    \"severity\": \"MINOR\",\n    \"status\": \"ACTIVE\",\n    \"time\": \"2014-03-03T12:03:27.845Z\"\n}"
+                        },
+                        "url": "{{url}}/alarm/alarms",
+                        "description": "#### For a detailed description of the API please check out our [Alarm Reference Guide](http://cumulocity.com/guides/reference/alarms/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Acknowledge an alarm",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/vnd.com.nsn.cumulocity.alarm+json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/vnd.com.nsn.cumulocity.alarm+json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"status\": \"ACKNOWLEDGED\"\n}"
+                        },
+                        "url": "{{url}}/alarm/alarms/{{alarmId}}",
+                        "description": "#### For a detailed description of the API please check out our [Measurement Reference Guide](http://cumulocity.com/guides/reference/measurements/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Clear an alarm",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/vnd.com.nsn.cumulocity.alarm+json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/vnd.com.nsn.cumulocity.alarm+json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"status\": \"CLEARED\"\n}"
+                        },
+                        "url": "{{url}}/alarm/alarms/{{alarmId}}",
+                        "description": "#### For a detailed description of the API please check out our [Measurement Reference Guide](http://cumulocity.com/guides/reference/measurements/)"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "item": [
+                {
+                    "name": "Get plugin collection",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "object",
+                                    "value": "{\"name\":\"HelloWorld\",\"type\":\"text/plain\"}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "filesize",
+                                    "value": "12",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "file",
+                                    "value": "",
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "url": "{{url}}/application/plugins",
+                        "description": "#### For a detailed description of the API please check out our [Application Reference Guide](http://cumulocity.com/guides/reference/applications/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get application collection",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/application/applications",
+                        "description": "#### For a detailed description of the API please check out our [Application Reference Guide](http://cumulocity.com/guides/reference/applications/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get specific application",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "object",
+                                    "value": "{\"name\":\"HelloWorld\",\"type\":\"text/plain\"}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "filesize",
+                                    "value": "12",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "file",
+                                    "value": "",
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "url": "{{url}}/application/applications/{{applicationId}}",
+                        "description": "#### For a detailed description of the API please check out our [Application Reference Guide](http://cumulocity.com/guides/reference/applications/)"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Audit",
+            "item": [
+                {
+                    "name": "Get audit records",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/audit/auditRecords",
+                        "description": "#### For a detailed description of the API please check out our [Auditing Reference Guide](http://cumulocity.com/guides/reference/auditing/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create audit record",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"type\" : \"com_cumulocity_audit_LoginFailure\",\n  \"time\" : \"2011-09-06T12:03:27.845Z\",\n  \"text\" : \"Login failed after 3 attempts.\",\n  \"user\" : \"Spock\",\n  \"application\" : \"Omniscape\",\n  \"activity\" : \"login\",\n  \"severity\" : \"warning\"\n}"
+                        },
+                        "url": "{{url}}/audit/auditRecords",
+                        "description": "#### For a detailed description of the API please check out our [Auditing Reference Guide](http://cumulocity.com/guides/reference/auditing/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete audit records for time filter",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": {
+                            "raw": "{{url}}/audit/auditRecords?dateTo={{dateTo}}&dateFrom={{dateFrom}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "audit",
+                                "auditRecords"
+                            ],
+                            "query": [
+                                {
+                                    "key": "dateTo",
+                                    "value": "{{dateTo}}"
+                                },
+                                {
+                                    "key": "dateFrom",
+                                    "value": "{{dateFrom}}"
+                                }
+                            ]
+                        },
+                        "description": "#### For a detailed description of the API please check out our [Auditing Reference Guide](http://cumulocity.com/guides/reference/auditing/)"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Binaries",
+            "item": [
+                {
+                    "name": "Get collection of Binaries (no download)",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "object",
+                                    "value": "{\"name\":\"HelloWorld\",\"type\":\"text/plain\"}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "filesize",
+                                    "value": "12",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "file",
+                                    "value": "",
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "url": "{{url}}/inventory/binaries",
+                        "description": "#### For a detailed description of the API please check out our [Binaries Reference Guide](http://cumulocity.com/guides/reference/binaries/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Download a binary",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "object",
+                                    "value": "{\"name\":\"HelloWorld\",\"type\":\"text/plain\"}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "filesize",
+                                    "value": "12",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "file",
+                                    "type": "file",
+                                    "value": ""
+                                }
+                            ]
+                        },
+                        "url": "{{url}}/inventory/binaries/{{binaryId}}",
+                        "description": "#### For a detailed description of the API please check out our [Binaries Reference Guide](http://cumulocity.com/guides/reference/binaries/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Upload text file",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "object",
+                                    "value": "{\"name\":\"HelloWorld\",\"type\":\"text/plain\"}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "filesize",
+                                    "value": "12",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "file",
+                                    "value": "",
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "url": "{{url}}/inventory/binaries",
+                        "description": "#### For a detailed description of the API please check out our [Binaries Reference Guide](http://cumulocity.com/guides/reference/binaries/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Replace a binary",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "{{file_mime_type}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": "{{url}}/inventory/binaries/{{binaryId}}",
+                        "description": "#### For a detailed description of the API please check out our [Binaries Reference Guide](http://cumulocity.com/guides/reference/binaries/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete a binary",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": "{{url}}/inventory/binaries/{{binaryId}}",
+                        "description": "#### For a detailed description of the API please check out our [Binaries Reference Guide](http://cumulocity.com/guides/reference/binaries/)"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "CEP",
+            "item": [
+                {
+                    "name": "Get all CEP modules",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/cep/modules"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get single CEP module",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/cep/modules/{{id}}"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get content of single module",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "text/plain"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/cep/modules/{{id}}"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Example: SendSms On Alarm",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "text/plain"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "module SMSTESTSINGLE; \n\ninsert into SendSms \nselect \n  \"+49123456789\" as receiver, \n  \"Hello World\" as text \nfrom AlarmCreated a \nwhere a.type = \"smsSingleTestAlarm\";"
+                        },
+                        "url": "{{url}}/cep/modules"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Example: Discard operations if device unavailable",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "text/plain"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "module DISCARDOPERATIONS; \n\ninsert into UpdateOperation\nselect\n  \"FAILED\" as status,\n  e.operation.deviceId.value as deviceId\nfrom OperationCreated e \nwhere getString(findManagedObjectById(e.operation.deviceId.value), \"c8y_Availability.status\") = \"UNAVAILABLE\";"
+                        },
+                        "url": "{{url}}/cep/modules"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Example: Monitor if device handles operations",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "text/plain"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "module OPERATION_MONITORING;\n\ncreate constant variable int operation_timeout_in_seconds = 120;\n\ncreate constant variable string opAlarmSeverity = \"CRITICAL\";\ncreate constant variable string opAlarmText = \"Operation with id=#{id.value} hasn't been finished!\";\ncreate constant variable string opAlarmType = \"c8y_OperationNotFinished\";\n\ncreate schema OperationNotFinished (\n\toperation com.cumulocity.model.operation.Operation\n);\n\ncreate schema OperationFinished (\n\toperation com.cumulocity.model.operation.Operation,\n\talarm Alarm\n);\n\n@Name(\"create_alarm_from_not_finished_operation\")\ninsert into CreateAlarm\nselect \n    operation.deviceId as source,\n    \"ACTIVE\" as status,\n    opAlarmSeverity as severity,\n    opAlarmType as type,\n    current_timestamp().toDate() as time,\n    replaceAllPlaceholders(opAlarmText, operation) as text,\n    {\n    \t\"operationId\", operation.id.value\n    } as fragments\nfrom OperationNotFinished;\n\ninsert into AlarmCreated\nselect\n    new Alarm(new GId(), opAlarmType, current_timestamp().toDate(), replaceAllPlaceholders(opAlarmText, operation), a.operation.deviceId, CumulocityAlarmStatuses.ACTIVE, CumulocitySeverities.CRITICAL) as alarm\nfrom OperationNotFinished a;\n\n@Name(\"set operation to failed\")\ninsert into UpdateOperation\nselect\n   operation.id as id,\n   OperationStatus.FAILED as status,\n   {\n      \"failureReason\",\"Device did not handle operation in time\"\n   } as fragments\nfrom OperationNotFinished;\n\n@Name(\"handle_not_finished_operation\")\ninsert into OperationNotFinished  \nselect \n    prevOp.operation as operation\nfrom pattern [\n    every prevOp = OperationCreated \n    \t-> (timer:interval(operation_timeout_in_seconds second) \n    \tand not OperationUpdated(\n    \t\toperation.id.value = prevOp.operation.id.value\n    \t\tand (operation.status in (OperationStatus.SUCCESSFUL, OperationStatus.FAILED))\n    \t))\n];\n\ncreate schema NewMessageFromDevice (\n   alarm Alarm\n);\n\ninsert into NewMessageFromDevice\nselect    findFirstAlarmBySourceAndStatusAndType(op.operation.deviceId.value,\"ACTIVE\",opAlarmType) as alarm\nfrom OperationUpdated op\nwhere op.operation.status = OperationStatus.SUCCESSFUL;\n\ninsert into NewMessageFromDevice\nselect    findFirstAlarmBySourceAndStatusAndType(m.measurement.source.value,\"ACTIVE\",opAlarmType) as alarm\nfrom MeasurementCreated m;\n\ninsert into NewMessageFromDevice\nselect    findFirstAlarmBySourceAndStatusAndType(m.event.source.value,\"ACTIVE\",opAlarmType) as alarm\nfrom EventCreated m;\n\n@Name(\"clear_alarm_from_not_finished_operation\")\ninsert into UpdateAlarm\nselect\n   input.alarm.id as id,\n   CumulocityAlarmStatuses.CLEARED as status\nfrom NewMessageFromDevice input\nwhere input.alarm is not null;"
+                        },
+                        "url": "{{url}}/cep/modules"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Example: MeasurementSimulator",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "text/plain"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "module MeasurementSimulator;\ncreate variable Random random = new Random();\n\ninsert into CreateMeasurement\nselect\n  current_timestamp().toDate() as time,\n  \"c8y_TemperatureMeasurement\" as type,\n  \"13809\" as source,\n  {\n    \"c8y_TemperatureMeasurement.T.value\", random.nextInt(30),\n    \"c8y_TemperatureMeasurement.T.unit\", \"C\"\n  } as fragments\nfrom pattern[every timer:interval(1 minutes)];"
+                        },
+                        "url": "{{url}}/cep/modules"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Deploy CEP module",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"status\": \"DEPLOYED\"    \n}"
+                        },
+                        "url": "{{url}}/cep/modules/{{id}}"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Undeploy CEP module",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"status\": \"NOT_DEPLOYED\"    \n}"
+                        },
+                        "url": "{{url}}/cep/modules/{{id}}"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete CEP module",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/cep/modules/{{id}}"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Cumulocity API Overview",
+            "item": [
+                {
+                    "name": "Platform",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/platform"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Alarm",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/alarm"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Audit",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/audit"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DeviceControl",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/devicecontrol"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Event",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/event"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Identity",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/identity"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Inventory",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/inventory"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Measurement",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/measurement"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "User",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/user"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "DeviceControl",
+            "item": [
+                {
+                    "name": "Get collection of operations",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/devicecontrol/operations",
+                        "description": "#### For a detailed description of the API please check out our [Device Control Reference Guide](http://cumulocity.com/guides/reference/device-control/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get PENDING operations",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": {
+                            "raw": "{{url}}/devicecontrol/operations?status=PENDING",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "devicecontrol",
+                                "operations"
+                            ],
+                            "query": [
+                                {
+                                    "key": "status",
+                                    "value": "PENDING"
+                                }
+                            ]
+                        },
+                        "description": "#### For a detailed description of the API please check out our [Device Control Reference Guide](http://cumulocity.com/guides/reference/device-control/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get a specific operation",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/devicecontrol/operations/{{operationId}}",
+                        "description": "#### For a detailed description of the API please check out our [Device Control Reference Guide](http://cumulocity.com/guides/reference/device-control/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create an operation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/vnd.com.nsn.cumulocity.operation+json;"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"deviceId\" : \"10200\",\n  \"com_cumulocity_model_WebCamDevice\": {\n    \"name\": \"take picture\",\n    \"parameters\": {\n      \"duration\": \"5s\",\n      \"quality\": \"HD\"\n    }\n  },\n  \"description\": \"WebCam picture\"\n}"
+                        },
+                        "url": "{{url}}/devicecontrol/operations/",
+                        "description": "#### For a detailed description of the API please check out our [Device Control Reference Guide](http://cumulocity.com/guides/reference/device-control/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create restart operation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/vnd.com.nsn.cumulocity.operation+json;"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"deviceId\" : \"10200\",\n  \"c8y_Restart\": {},\n  \"description\": \"Restart device\"\n}"
+                        },
+                        "url": "{{url}}/devicecontrol/operations/",
+                        "description": "#### For a detailed description of the API please check out our [Device Control Reference Guide](http://cumulocity.com/guides/reference/device-control/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create shell operation",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/vnd.com.nsn.cumulocity.operation+json;"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"deviceId\" : \"10200\",\n  \"c8y_Command\": {\n      \"text\": \"myCommand\"\n  },\n  \"description\": \"Shell command\"\n}"
+                        },
+                        "url": "{{url}}/devicecontrol/operations/",
+                        "description": "#### For a detailed description of the API please check out our [Device Control Reference Guide](http://cumulocity.com/guides/reference/device-control/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Execute operation",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/vnd.com.nsn.cumulocity.operation+json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"status\": \"EXECUTING\"\n}"
+                        },
+                        "url": "{{url}}/devicecontrol/operations/{{operationId}}",
+                        "description": "#### For a detailed description of the API please check out our [Device Control Reference Guide](http://cumulocity.com/guides/reference/device-control/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Success operation",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/vnd.com.nsn.cumulocity.operation+json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"status\": \"SUCCESSFUL\"\n}"
+                        },
+                        "url": "{{url}}/devicecontrol/operations/{{operationId}}",
+                        "description": "#### For a detailed description of the API please check out our [Device Control Reference Guide](http://cumulocity.com/guides/reference/device-control/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Fail operation",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/vnd.com.nsn.cumulocity.operation+json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"status\": \"FAILED\",\n\t\"failureReason\": \"Could not handle operation\"\n}"
+                        },
+                        "url": "{{url}}/devicecontrol/operations/{{operationId}}",
+                        "description": "#### For a detailed description of the API please check out our [Device Control Reference Guide](http://cumulocity.com/guides/reference/device-control/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete operations for time filter",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": {
+                            "raw": "{{url}}/devicecontrol/operations?dateTo={{dateTo}}&dateFrom={{dateFrom}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "devicecontrol",
+                                "operations"
+                            ],
+                            "query": [
+                                {
+                                    "key": "dateTo",
+                                    "value": "{{dateTo}}"
+                                },
+                                {
+                                    "key": "dateFrom",
+                                    "value": "{{dateFrom}}"
+                                }
+                            ]
+                        },
+                        "description": "#### For a detailed description of the API please check out our [Device Control Reference Guide](http://cumulocity.com/guides/reference/device-control/)"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "DeviceControl DevicePush",
+            "item": [
+                {
+                    "name": "Device Push Handshake session",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[\n\t{\n    \t\"version\":\"1.0\",\n        \"minimumVersion\":\"0.9\",\n        \"channel\":\"/meta/handshake\",\n        \"supportedConnectionTypes\":[\"long-polling\"]\n    }\n]"
+                        },
+                        "url": "{{url}}/notification/operations",
+                        "description": "#### For a detailed description of the API please check out our [Real-time Notification Reference Guide](http://cumulocity.com/guides/reference/real-time-notifications/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Device Push Subscribe",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[\n\t{\n    \t\"channel\":\"/meta/subscribe\",\n      \t\"subscription\":\"/*\",\n      \t\"clientId\":\"{{clientId}}\"\n    }\n]"
+                        },
+                        "url": "{{url}}/notification/operations",
+                        "description": "#### For a detailed description of the API please check out our [Real-time Notification Reference Guide](http://cumulocity.com/guides/reference/real-time-notifications/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Device Push Connect",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[\n\t{\n    \t\"channel\":\"/meta/connect\",\n      \t\"connectionType\":\"long-polling\",\n      \t\"clientId\":\"{{clientId}}\"\n    }\n]"
+                        },
+                        "url": "{{url}}/notification/operations",
+                        "description": "#### For a detailed description of the API please check out our [Real-time Notification Reference Guide](http://cumulocity.com/guides/reference/real-time-notifications/)"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "DeviceRequest",
+            "item": [
+                {
+                    "name": "Add new device request",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/vnd.com.nsn.cumulocity.newDeviceRequest+json;"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"id\": \"test_id\"\n}"
+                        },
+                        "url": "{{url}}/devicecontrol/newDeviceRequests",
+                        "description": "#### For a detailed description of the API please check out our [Device Control Reference Guide](http://cumulocity.com/guides/reference/device-control/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Accept device request",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"status\": \"ACCEPTED\"\n}"
+                        },
+                        "url": "{{url}}/devicecontrol/newDeviceRequests/{{id}}"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Event",
+            "item": [
+                {
+                    "name": "Get collection of events",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/event/events",
+                        "description": "#### For a detailed description of the API please check out our [Event Reference Guide](http://cumulocity.com/guides/reference/events/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create new event",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/vnd.com.nsn.cumulocity.event+json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"source\": {\n    \t\"id\":\"10200\" },\n    \"type\": \"TestEvent\",\n    \"text\": \"sensor was triggered\",\n    \"time\": \"2014-03-03T12:03:27.845Z\"\n}"
+                        },
+                        "url": "{{url}}/event/events",
+                        "description": "#### For a detailed description of the API please check out our [Event Reference Guide](http://cumulocity.com/guides/reference/events/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create LocationUpdate event for motion tracking",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/vnd.com.nsn.cumulocity.event+json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"c8y_Position\": {\n    \t\"alt\": 67,\n      \t\"lng\": 6.95173,\n      \t\"lat\": 51.151977 },\n\t\"time\":\"2013-06-22T17:03:14.000+02:00\",\n    \"source\": {\n    \t\"id\":\"10300\" }, \n    \"type\": \"c8y_LocationUpdate\",\n    \"text\": \"LocUpdate\"\n}"
+                        },
+                        "url": "{{url}}/event/events",
+                        "description": "#### For a detailed description of the API please check out our [Event Reference Guide](http://cumulocity.com/guides/reference/events/)"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Identity",
+            "item": [
+                {
+                    "name": "Get all externalIds registered for a managedObject",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/identity/globalIds/{{deviceId}}/externalIds",
+                        "description": "#### For a detailed description of the API please check out our [Identity Reference Guide](http://cumulocity.com/guides/reference/identity/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get ManagedObject for a specific externalId",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/identity/externalIds/{{externalIdType}}/{{externalId}}",
+                        "description": "#### For a detailed description of the API please check out our [Identity Reference Guide](http://cumulocity.com/guides/reference/identity/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create an externalId for a managedObject",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/vnd.com.nsn.cumulocity.externalId+json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/vnd.com.nsn.cumulocity.externalId+json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"externalId\": \"useThisTestId\",\n    \"type\": \"testExternalId\"\n}"
+                        },
+                        "url": "{{url}}/identity/globalIds/{{deviceId}}/externalIds",
+                        "description": "#### For a detailed description of the API please check out our [Identity Reference Guide](http://cumulocity.com/guides/reference/identity/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove externalId from a managed object",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": "{{url}}//identity/externalIds/{{type}}/{{externalId}}",
+                        "description": "#### For a detailed description of the API please check out our [Identity Reference Guide](http://cumulocity.com/guides/reference/identity/)"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Inventory",
+            "item": [
+                {
+                    "name": "Get collection of managedObjects",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/inventory/managedObjects",
+                        "description": "#### For a detailed description of the API please check out our [Inventory Reference Guide](http://cumulocity.com/guides/reference/inventory/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get collection of devices",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": {
+                            "raw": "{{url}}/inventory/managedObjects?fragmentType=c8y_IsDevice",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "inventory",
+                                "managedObjects"
+                            ],
+                            "query": [
+                                {
+                                    "key": "fragmentType",
+                                    "value": "c8y_IsDevice"
+                                }
+                            ]
+                        },
+                        "description": "#### For a detailed description of the API please check out our [Inventory Reference Guide](http://cumulocity.com/guides/reference/inventory/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get a specific managedObject",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/inventory/managedObjects/{{deviceId}}",
+                        "description": "#### For a detailed description of the API please check out our [Inventory Reference Guide](http://cumulocity.com/guides/reference/inventory/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get collection of SmartREST templates",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "file",
+                                    "value": "module newmodule; insert into SendSms select     \"4917634025784\" as receiver,     \"Alarm\" as text from AlarmCreated m where m.type = \"c8y_testSmsAlarm\";",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/inventory/managedObjects?fragmentType=com_cumulocity_model_smartrest_SmartRestTemplate",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "inventory",
+                                "managedObjects"
+                            ],
+                            "query": [
+                                {
+                                    "key": "fragmentType",
+                                    "value": "com_cumulocity_model_smartrest_SmartRestTemplate"
+                                }
+                            ]
+                        },
+                        "description": "#### For a detailed description of the API please check out our [Inventory Reference Guide](http://cumulocity.com/guides/reference/inventory/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get collection of groups",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "file",
+                                    "value": "module newmodule; insert into SendSms select     \"4917634025784\" as receiver,     \"Alarm\" as text from AlarmCreated m where m.type = \"c8y_testSmsAlarm\";",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/inventory/managedObjects?fragmentType=c8y_IsDeviceGroup",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "inventory",
+                                "managedObjects"
+                            ],
+                            "query": [
+                                {
+                                    "key": "fragmentType",
+                                    "value": "c8y_IsDeviceGroup"
+                                }
+                            ]
+                        },
+                        "description": "#### For a detailed description of the API please check out our [Inventory Reference Guide](http://cumulocity.com/guides/reference/inventory/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create device with temperature measurement support",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"name\": \"testMeasurementDevice\", \n    \"c8y_IsDevice\": {}, \n    \"c8y_SupportedMeasurements\": [\n    \t\"c8y_TemperatureMeasurement\"]\n}"
+                        },
+                        "url": "{{url}}/inventory/managedObjects",
+                        "description": "#### For a detailed description of the API please check out our [Inventory Reference Guide](http://cumulocity.com/guides/reference/inventory/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create device with agent fragment",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"name\": \"testAgent\", \n    \"c8y_IsDevice\": {},\n    \"com_cumulocity_model_Agent\": {}\n}"
+                        },
+                        "url": "{{url}}/inventory/managedObjects",
+                        "description": "#### For a detailed description of the API please check out our [Inventory Reference Guide](http://cumulocity.com/guides/reference/inventory/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Add a managedObject reference to the childDevices of another managedObject as childDevice",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"managedObject\": {\"id\":\"10200\"}\n}"
+                        },
+                        "url": "{{url}}/inventory/managedObjects/{{deviceId}}/childDevices",
+                        "description": "#### For a detailed description of the API please check out our [Inventory Reference Guide](http://cumulocity.com/guides/reference/inventory/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Add a managedObject reference to the childDevices of another managedObject as childAsset",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"managedObject\": {\"id\":\"10200\"}\n}"
+                        },
+                        "url": "{{url}}/inventory/managedObjects/{{deviceId}}/childAssets",
+                        "description": "#### For a detailed description of the API please check out our [Inventory Reference Guide](http://cumulocity.com/guides/reference/inventory/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Agent",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"name\": \"testAgent\", \n    \"com_cumulocity_model_Agent\": {}\n}"
+                        },
+                        "url": "{{url}}/inventory/managedObjects",
+                        "description": "#### For a detailed description of the API please check out our [Inventory Reference Guide](http://cumulocity.com/guides/reference/inventory/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Add motion tracking to a device",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"c8y_MotionTracking\": {\n\t\t\"active\": true }\n}"
+                        },
+                        "url": "{{url}}/inventory/managedObjects/{{deviceId}}",
+                        "description": "#### For a detailed description of the API please check out our [Inventory Reference Guide](http://cumulocity.com/guides/reference/inventory/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update device position",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"c8y_Position\": {\n    \t\"alt\": 67,\n      \t\"lng\": 6.95173,\n      \t\"lat\": 51.151977 }\n}"
+                        },
+                        "url": "{{url}}/inventory/managedObjects/{{deviceId}}",
+                        "description": "#### For a detailed description of the API please check out our [Inventory Reference Guide](http://cumulocity.com/guides/reference/inventory/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update hardware fragment",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"c8y_Hardware\": {\n        \"revision\": \"1.0\",\n        \"model\": \"My device model\",\n        \"serialNumber\": \"1234567890\"\n      }\n}"
+                        },
+                        "url": "{{url}}/inventory/managedObjects/{{deviceId}}",
+                        "description": "#### For a detailed description of the API please check out our [Inventory Reference Guide](http://cumulocity.com/guides/reference/inventory/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update mobile fragment",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"c8y_Mobile\": {\n        \"ecn0\": \"5.5\",\n        \"mcc\": \"262\",\n        \"msisdn\": \"\",\n        \"currentOperator\": \"o2 - de\",\n        \"rcsp\": \"77\",\n        \"imei\": \"xxxx\",\n        \"iccid\": \"xxx\",\n        \"lac\": \"7B86\",\n        \"currentBand\": \"WCDMA2100\",\n        \"cellId\": \"21132502\",\n        \"connType\": \"3g\",\n        \"mnc\": \"7\",\n        \"rssi\": \"-77\",\n        \"imsi\": \"xxx\"\n      }\n}"
+                        },
+                        "url": "{{url}}/inventory/managedObjects/{{deviceId}}",
+                        "description": "#### For a detailed description of the API please check out our [Inventory Reference Guide](http://cumulocity.com/guides/reference/inventory/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update configuration",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"c8y_Configuration\": {\n        \"config\": \"myConfiguration\"\n      }\n}"
+                        },
+                        "url": "{{url}}/inventory/managedObjects/{{deviceId}}",
+                        "description": "#### For a detailed description of the API please check out our [Inventory Reference Guide](http://cumulocity.com/guides/reference/inventory/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete a specific managedObject",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": "{{url}}/inventory/managedObjects/{{deviceId}}",
+                        "description": "#### For a detailed description of the API please check out our [Inventory Reference Guide](http://cumulocity.com/guides/reference/inventory/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Unassign a child from childDevices",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": "{{url}}inventory/managedObjects/{{parentId}}/childDevices/{{childId}}",
+                        "description": "#### For a detailed description of the API please check out our [Inventory Reference Guide](http://cumulocity.com/guides/reference/inventory/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Unassign a child from childAssets",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": "{{url}}inventory/managedObjects/{{parentId}}/childAssets/{{childId}}",
+                        "description": "#### For a detailed description of the API please check out our [Inventory Reference Guide](http://cumulocity.com/guides/reference/inventory/)"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Measurement",
+            "item": [
+                {
+                    "name": "Get collection of measurements",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/measurement/measurements",
+                        "description": "#### For a detailed description of the API please check out our [Measurement Reference Guide](http://cumulocity.com/guides/reference/measurements/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get specific measurement",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/measurement/measurements/{{measurementId}}",
+                        "description": "#### For a detailed description of the API please check out our [Measurement Reference Guide](http://cumulocity.com/guides/reference/measurements/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get measurments for time range",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": {
+                            "raw": "{{url}}/measurement/measurements?dateTo={{dateTo}}&dateFrom={{dateFrom}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "measurement",
+                                "measurements"
+                            ],
+                            "query": [
+                                {
+                                    "key": "dateTo",
+                                    "value": "{{dateTo}}"
+                                },
+                                {
+                                    "key": "dateFrom",
+                                    "value": "{{dateFrom}}"
+                                }
+                            ]
+                        },
+                        "description": "#### For a detailed description of the API please check out our [Measurement Reference Guide](http://cumulocity.com/guides/reference/measurements/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get measurement series",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": {
+                            "raw": "{{url}}/measurement/measurements/series?source={{deviceId}}&dateFrom={{dateFrom}}&dateTo={{dateTo}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "measurement",
+                                "measurements",
+                                "series"
+                            ],
+                            "query": [
+                                {
+                                    "key": "source",
+                                    "value": "{{deviceId}}"
+                                },
+                                {
+                                    "key": "dateFrom",
+                                    "value": "{{dateFrom}}"
+                                },
+                                {
+                                    "key": "dateTo",
+                                    "value": "{{dateTo}}"
+                                }
+                            ]
+                        },
+                        "description": "#### For a detailed description of the API please check out our [Measurement Reference Guide](http://cumulocity.com/guides/reference/measurements/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create temperature measurement",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/vnd.com.nsn.cumulocity.measurement+json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"c8y_TemperatureMeasurement\": {\n    \t\"T\": { \n        \t\"value\": 25,\n            \"unit\": \"C\" }\n        },\n    \"time\":\"2013-06-22T17:03:14.000+02:00\", \n    \"source\": {\n    \t\"id\":\"10200\" }, \n    \"type\": \"c8y_TemperatureMeasurement\"\n}"
+                        },
+                        "url": "{{url}}/measurement/measurements",
+                        "description": "#### For a detailed description of the API please check out our [Measurement Reference Guide](http://cumulocity.com/guides/reference/measurements/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create signal measurement",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/vnd.com.nsn.cumulocity.measurement+json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"c8y_SignalStrength\": {\n    \t\"rssi\": { \n        \t\"value\": -80,\n            \"unit\": \"db\" }\n        },\n    \"time\":\"2013-06-22T17:03:14.000+02:00\", \n    \"source\": {\n    \t\"id\":\"10200\" }, \n    \"type\": \"c8y_SignalMeasurement\"\n}"
+                        },
+                        "url": "{{url}}/measurement/measurements",
+                        "description": "#### For a detailed description of the API please check out our [Measurement Reference Guide](http://cumulocity.com/guides/reference/measurements/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create speed measurement",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/vnd.com.nsn.cumulocity.measurement+json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"c8y_SpeedMeasurement\": {\n    \t\"speed\": { \n        \t\"value\": 25,\n            \"unit\": \"km/h\" }\n        },\n    \"time\":\"2013-06-22T17:03:14.000+02:00\", \n    \"source\": {\n    \t\"id\":\"10200\" }, \n    \"type\": \"c8y_SpeedMeasurement\"\n}"
+                        },
+                        "url": "{{url}}/measurement/measurements",
+                        "description": "#### For a detailed description of the API please check out our [Measurement Reference Guide](http://cumulocity.com/guides/reference/measurements/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create multiple measurements",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/vnd.com.nsn.cumulocity.measurementCollection+json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"measurements\": [\n        {\n        \t\"c8y_SpeedMeasurement\": {\n            \t\"speed\": { \n                \t\"value\": 25,\n                    \"unit\": \"km/h\" }\n                },\n            \"time\":\"2013-06-22T17:03:14.000+02:00\", \n            \"source\": {\n            \t\"id\":\"10200\" }, \n            \"type\": \"c8y_SpeedMeasurement\"\n        },\n        {\n        \t\"c8y_SpeedMeasurement\": {\n            \t\"speed\": { \n                \t\"value\": 22,\n                    \"unit\": \"km/h\" }\n                },\n            \"time\":\"2013-06-22T17:05:14.000+02:00\", \n            \"source\": {\n            \t\"id\":\"10200\" }, \n            \"type\": \"c8y_SpeedMeasurement\"\n        }\n    ]\n}"
+                        },
+                        "url": "{{url}}/measurement/measurements",
+                        "description": "#### For a detailed description of the API please check out our [Measurement Reference Guide](http://cumulocity.com/guides/reference/measurements/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete measurements for time filter ",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": {
+                            "raw": "{{url}}/measurement/measurements?dateTo={{dateTo}}&dateFrom={{dateFrom}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "measurement",
+                                "measurements"
+                            ],
+                            "query": [
+                                {
+                                    "key": "dateTo",
+                                    "value": "{{dateTo}}"
+                                },
+                                {
+                                    "key": "dateFrom",
+                                    "value": "{{dateFrom}}"
+                                }
+                            ]
+                        },
+                        "description": "#### For a detailed description of the API please check out our [Measurement Reference Guide](http://cumulocity.com/guides/reference/measurements/)"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Real-time",
+            "item": [
+                {
+                    "name": "Handshake session",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[\n\t{\n    \t\"version\":\"1.0\",\n        \"minimumVersion\":\"0.9\",\n        \"channel\":\"/meta/handshake\",\n        \"supportedConnectionTypes\":[\"long-polling\"]\n    }\n]"
+                        },
+                        "url": "{{url}}/notification/realtime",
+                        "description": "#### For a detailed description of the API please check out our [Real-time Notification Reference Guide](http://cumulocity.com/guides/reference/real-time-notifications/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Subscribe a channel",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[\n\t{\n    \t\"channel\":\"/meta/subscribe\",\n      \t\"subscription\":\"/managedobjects/*\",\n      \t\"clientId\":\"{{clientId}}\"\n    }\n]"
+                        },
+                        "url": "{{url}}/notification/realtime",
+                        "description": "#### For a detailed description of the API please check out our [Real-time Notification Reference Guide](http://cumulocity.com/guides/reference/real-time-notifications/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Unsubscribe a channel",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[\n\t{\n    \t\"channel\":\"/meta/unsubscribe\",\n      \t\"subscription\":\"/managedobjects/*\",\n      \t\"clientId\":\"{{clientId}}\"\n    }\n]"
+                        },
+                        "url": "{{url}}/notification/realtime",
+                        "description": "#### For a detailed description of the API please check out our [Real-time Notification Reference Guide](http://cumulocity.com/guides/reference/real-time-notifications/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Long Polling connection for retrieving notifications",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[\n\t{\n    \t\"channel\":\"/meta/connect\",\n      \t\"connectionType\":\"long-polling\",\n      \t\"clientId\":\"{{clientId}}\",\n      \t\"advice\": {\n      \t\t\"timeout\": 60000,\n      \t\t\"interval\": 0\n      \t}\n    }\n]"
+                        },
+                        "url": "{{url}}/notification/realtime",
+                        "description": "#### For a detailed description of the API please check out our [Real-time Notification Reference Guide](http://cumulocity.com/guides/reference/real-time-notifications/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Disconnect session",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[\n\t{\n    \t\"channel\":\"/meta/disconnect\",\n        \"clientId\":\"{{clientId}}\"\n    }\n]"
+                        },
+                        "url": "{{url}}/notification/realtime",
+                        "description": "#### For a detailed description of the API please check out our [Real-time Notification Reference Guide](http://cumulocity.com/guides/reference/real-time-notifications/)"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "SmartREST",
+            "item": [
+                {
+                    "name": "Register Request Templates",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "X-Id",
+                                "value": "{{my_xid}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "10,100,POST,/alarm/alarms,application/vnd.com.nsn.cumulocity.alarm+json,application/vnd.com.nsn.cumulocity.alarm+json,&&,UNSIGNED NOW,\"{\"\"source\"\":{\"\"id\"\":\"\"&&\"\"},\"\"type\"\":\"\"c8y_MyAlarmFromSmartREST\"\",\"\"text\"\":\"\"This alarm was created by using SmartREST\"\",\"\"severity\"\":\"\"MAJOR\"\",\"\"status\"\":\"\"ACTIVE\"\",\"\"time\"\":\"\"&&\"\"}\"\n10,200,POST,/measurement/measurements,application/vnd.com.nsn.cumulocity.measurement+json,application/vnd.com.nsn.cumulocity.measurement+json,&&,UNSIGNED UNSIGNED NOW UNSIGNED,\"{\"\"c8y_SmartMeasurement\"\":{\"\"temp1\"\":{\"\"value\"\":&&,\"\"unit\"\":\"\"C\"\"},\"\"temp2\"\":{\"\"value\"\":&&,\"\"unit\"\":\"\"F\"\"}},\"\"time\"\":\"\"&&\"\",\"\"source\"\":{\"\"id\"\":\"\"&&\"\"},\"\"type\"\":\"\"c8y_SmartMeasurement\"\"}\"\n10,300,PUT,/inventory/managedObjects/&&,application/vnd.com.nsn.cumulocity.managedObject+json,,&&,,\"{\"\"c8y_Hardware\"\":{\"\"model\"\":\"\"&&\"\",\"\"revision\"\":\"\"&&\"\"}}\"\n10,301,PUT,/alarm/alarms/&&,application/vnd.com.nsn.cumulocity.alarm+json,,&&,,\"{\"\"status\"\":\"\"CLEARED\"\"}\"\n10,302,PUT,/devicecontrol/operations/&&,application/vnd.com.nsn.cumulocity.operation+json,,&&,,\"{\"\"status\"\":\"\"SUCCESSFUL\"\"}\"\n10,600,GET,/identity/externalIds/c8y_Serial/&&,,,&&,,\n10,601,GET,/devicecontrol/operations?deviceId=##&status=PENDING,,,##,,\n10,602,GET,/inventory/managedObjects/&&,,,&&,,"
+                        },
+                        "url": "{{url}}/s/",
+                        "description": "#### For a detailed description of the API please check out our [SmartREST Reference Guide](http://cumulocity.com/guides/reference/smartrest/)\n\nYou have to register all templates (request and response) in one single request.\n\nFor a better overview this example contains only request templates.\n\n###### Syntax:\n10,{unique id},{request method},{uri},{content type},{accept},{placeholder},{parameter type},{template string}\n\n\n* unique id: message identifier inside die SmartREST template\n* request method: HTTP method to use for the request\n* uri: the uri to the Cumulocity ressource\n* content type: HTTP Content-Type header\n* accept: HTTP Accept header\n* placeholder: string that will be replaced in the template string with the values of a SmartREST request\n* parameter type: optional list to set data type of parameters for validation in SmartREST\n* template string: request body including placeholders that will be send by SmartREST"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Register Response Templates",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "X-Id",
+                                "value": "{{my_xid}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "11,500,,$.c8y_IsDevice,$.id,$.c8y_Configuration.config\n11,501,,$.externalId,$.managedObject.id\n11,502,,$.severity,$.id\n11,503,$.operations,$.c8y_Configuration,$.id,$.c8y_Configuration.config"
+                        },
+                        "url": "{{url}}/s/",
+                        "description": "#### For a detailed description of the API please check out our [SmartREST Reference Guide](http://cumulocity.com/guides/reference/smartrest/)\n\nYou have to register all templates (request and response) in one single request.\n\nFor a better overview this example contains only response templates.\n\n###### Syntax:\n11,{unique id},{base},{condition},{response value},{response value}, ...\n\n\n* unique id: message identifier inside die SmartREST template\n* base: the base object that should be check for objects (e.g. $.operations in an operation collection)\n* condition: only objects with this fragments will be returned\n* response value: value to return from the object"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "SmartREST device push",
+            "item": [
+                {
+                    "name": "Handshake session",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "X-Id",
+                                "value": "{{my_xid}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "80"
+                        },
+                        "url": "{{url}}/notification/operations",
+                        "description": "#### For a detailed description of the API please check out our [SmartREST Reference Guide](http://cumulocity.com/guides/reference/smartrest/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Subscribe a channel",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "X-Id",
+                                "value": "{{my_xid}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "81,{{clientId}},/{{agentId}}"
+                        },
+                        "url": "{{url}}/notification/operations",
+                        "description": "#### For a detailed description of the API please check out our [SmartREST Reference Guide](http://cumulocity.com/guides/reference/smartrest/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Unsubscribe a channel",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "X-Id",
+                                "value": "{{my_xid}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "82,{{clientId}},/{{agentId}}"
+                        },
+                        "url": "{{url}}/notification/operations",
+                        "description": "#### For a detailed description of the API please check out our [SmartREST Reference Guide](http://cumulocity.com/guides/reference/smartrest/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Long Polling connection for retrieving notifications",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "X-Id",
+                                "value": "{{my_xid}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "83,{{clientId}}"
+                        },
+                        "url": "{{url}}/notification/operations",
+                        "description": "#### For a detailed description of the API please check out our [SmartREST Reference Guide](http://cumulocity.com/guides/reference/smartrest/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Disconnect session",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "X-Id",
+                                "value": "{{my_xid}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "84,{{clientId}}"
+                        },
+                        "url": "{{url}}/notification/operations",
+                        "description": "#### For a detailed description of the API please check out our [SmartREST Reference Guide](http://cumulocity.com/guides/reference/smartrest/)"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Tenant",
+            "item": [
+                {
+                    "name": "Get collection of tenants",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n   \"id\" : \"mytenant\",\n   \"company\" : \"Cumulocity GmbH\",\n   \"domain\" : \"mytenant.cumulocity.com\",\n   \"contactName\" : \"Mr. Smith\",\n   \"contactPhone\" : \"0123-4567829\",\n   \"adminName\" : \"firstAdmin\",\n   \"adminPass\" : \"myPassword\"\n }"
+                        },
+                        "url": "{{url}}/tenant/tenants",
+                        "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get specific tenant",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n   \"id\" : \"mytenant\",\n   \"company\" : \"Cumulocity GmbH\",\n   \"domain\" : \"mytenant.cumulocity.com\",\n   \"contactName\" : \"Mr. Smith\",\n   \"contactPhone\" : \"0123-4567829\",\n   \"adminName\" : \"firstAdmin\",\n   \"adminPass\" : \"myPassword\"\n }"
+                        },
+                        "url": "{{url}}/tenant/tenants/{{tenantId}}",
+                        "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get collection of tenant statistics",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n   \"id\" : \"mytenant\",\n   \"company\" : \"Cumulocity GmbH\",\n   \"domain\" : \"mytenant.cumulocity.com\",\n   \"contactName\" : \"Mr. Smith\",\n   \"contactPhone\" : \"0123-4567829\",\n   \"adminName\" : \"firstAdmin\",\n   \"adminPass\" : \"myPassword\"\n }"
+                        },
+                        "url": "{{url}}/tenant/statistics",
+                        "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get  tenant statistic summary",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n   \"id\" : \"mytenant\",\n   \"company\" : \"Cumulocity GmbH\",\n   \"domain\" : \"mytenant.cumulocity.com\",\n   \"contactName\" : \"Mr. Smith\",\n   \"contactPhone\" : \"0123-4567829\",\n   \"adminName\" : \"firstAdmin\",\n   \"adminPass\" : \"myPassword\"\n }"
+                        },
+                        "url": "{{url}}/tenant/statistics/summary",
+                        "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get  tenant statistic summary over all tenants",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n   \"id\" : \"mytenant\",\n   \"company\" : \"Cumulocity GmbH\",\n   \"domain\" : \"mytenant.cumulocity.com\",\n   \"contactName\" : \"Mr. Smith\",\n   \"contactPhone\" : \"0123-4567829\",\n   \"adminName\" : \"firstAdmin\",\n   \"adminPass\" : \"myPassword\"\n }"
+                        },
+                        "url": "{{url}}/tenant/statistics/allTenantsSummary",
+                        "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create tenant",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n   \"id\" : \"mytenant\",\n   \"company\" : \"Cumulocity GmbH\",\n   \"domain\" : \"mytenant.cumulocity.com\",\n   \"contactName\" : \"Mr. Smith\",\n   \"contactPhone\" : \"0123-4567829\",\n   \"adminName\" : \"firstAdmin\",\n   \"adminPass\" : \"myPassword\"\n }"
+                        },
+                        "url": "{{url}}/tenant/tenants",
+                        "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update a tenant",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n   \"contactPhone\" : \"0123-4567829\"\n }"
+                        },
+                        "url": "{{url}}/tenant/tenants",
+                        "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete specific tenant",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": "{{url}}/tenant/tenants/{{tenantId}}",
+                        "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Tenant Applications",
+            "item": [
+                {
+                    "name": "Get collection of tenant applications",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n  \"application\": {\r\n    \"self\": \"{{url to application}}\"\r\n  }\r\n}"
+                        },
+                        "url": "{{url}}/tenant/tenants/{{tenantId}}/applications",
+                        "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Add application to tenant",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n  \"application\": {\r\n    \"self\": \"{{url to application}}\"\r\n  }\r\n}"
+                        },
+                        "url": "{{url}}/tenant/tenants/{{tenantId}}/applications",
+                        "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Tenant Options",
+            "item": [
+                {
+                    "name": "Get collection of tenant options",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/tenant/options",
+                        "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get collection of system options",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/tenant/system/options",
+                        "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get specific tenant option",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/tenant/options/{{category}}/{{key}}",
+                        "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get specific system option",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/tenant/system/options/{{category}}/{{key}}",
+                        "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get system version",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/tenant/system/options/system/version",
+                        "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create tenant option",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"category\": \"mycategory\",\n    \"key\": \"mykey\",\n    \"value\": \"myvalue\"\n}"
+                        },
+                        "url": "{{url}}/tenant/options",
+                        "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update tenant option",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"value\": \"myNewValue\"\n}"
+                        },
+                        "url": "{{url}}/tenant/options/{{category}}/{{key}}",
+                        "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete tenant option",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": "{{url}}/tenant/options/{{category}}/{{key}}",
+                        "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "User",
+            "item": [
+                {
+                    "name": "Get current user information",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/user/currentUser",
+                        "description": "#### For a detailed description of the API please check out our [User Reference Guide](http://cumulocity.com/guides/reference/users/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get collection of roles for user",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/user/roles",
+                        "description": "#### For a detailed description of the API please check out our [User Reference Guide](http://cumulocity.com/guides/reference/users/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get User Groups",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": "{{url}}/user/{{tenant}}/groups",
+                        "description": "#### For a detailed description of the API please check out our [User Reference Guide](http://cumulocity.com/guides/reference/users/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create new user",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/vnd.com.nsn.cumulocity.user+json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"enabled\":true,\n    \"userName\":\"yourUserName\",\n    \"firstName\":\"yourFirstName\",\n    \"lastName\":\"yourLastName\",\n    \"password\":\"yourPassword\"\n}"
+                        },
+                        "url": "{{url}}/user/{{tenant}}/users",
+                        "description": "#### For a detailed description of the API please check out our [User Reference Guide](http://cumulocity.com/guides/reference/users/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create new user with device permissions",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\t\"enabled\":true,\n    \"userName\":\"yourUserName\",\n    \"firstName\":\"yourFirstName\",\n    \"lastName\":\"yourLastName\",\n    \"password\":\"yourPassword\",\n    \"devicePermissions\":{\"{{deviceId}}\":[\"*:*:READ\"]}\n}"
+                        },
+                        "url": "{{url}}/user/{{tenant}}/users",
+                        "description": "#### For a detailed description of the API please check out our [User Reference Guide](http://cumulocity.com/guides/reference/users/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete a User",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": "{{url}}/user/{{tenant}}/users/{{yourUserName}}",
+                        "description": "#### For a detailed description of the API please check out our [User Reference Guide](http://cumulocity.com/guides/reference/users/)"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove a User from a Usergroup",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "{{auth}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": "{{url}}/user/{{tenant}}/groups/{{groupId}}/users/{{yourUserName}}",
+                        "description": "#### For a detailed description of the API please check out our [User Reference Guide](http://cumulocity.com/guides/reference/users/)"
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ]
+}

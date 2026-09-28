@@ -1,0 +1,356 @@
+backend:
+  name: git-gateway
+  repo: SoftwareAG/c8y-docs
+  branch: "change-logs"
+
+
+# Enable for using the cms locally and run
+# `npx netlify-cms-proxy-server` on your local repo
+# backend:
+#   name: git-gateway
+
+# when using the default proxy server port
+local_backend: true
+
+# Enable editorial workflow
+publish_mode: editorial_workflow
+
+media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+
+
+collections:
+  #  ============================== 
+  # Change logs
+  #  ============================== 
+
+  - name: "analytics"
+    label: "Analytics"
+    folder: "content/change-logs/analytics"
+    description: "Change log entries for the Analytics product area"
+    create: true
+    slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
+    fields:
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD", required: false}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Product area", name: "product_area", widget: "hidden", default: "Analytics"}
+      - label: Change type
+        name: change_type
+        widget: ncw-file-relation
+        collection: configs
+        file: change_type
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: true
+
+      - label: Component
+        name: component
+        widget: ncw-file-relation
+        collection: configs
+        file: component
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: true
+
+      - label: Build artifact
+        name: build_artifact
+        widget: ncw-file-relation
+        collection: configs
+        file: build_artifact
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: true
+      
+      - {label: "Ticket", name: "ticket", widget: "string", required: false, hint: "The ticket number, e.g. MTM-50245"}
+      - {label: "Version", name: "version", widget: "string", required: false, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
+      - { label: "Body", name: "body", widget: "markdown"}
+        
+  - name: "application_enablement"
+    label: "Application enablement & solutions"
+    folder: "content/change-logs/application-enablement"
+    description: "Change log entries for the Application enablement & solutions product area"
+    create: true
+    slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
+    fields:
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD", default: "", required: false}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Product area", name: "product_area", widget: "hidden", default: "Application enablement & solutions"}
+      - label: Change type
+        name: change_type
+        widget: ncw-file-relation
+        collection: configs
+        file: change_type
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: true
+
+      - label: Component
+        name: component
+        widget: ncw-file-relation
+        collection: configs
+        file: component
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: true
+
+      - label: Build artifact
+        name: build_artifact
+        widget: ncw-file-relation
+        collection: configs
+        file: build_artifact
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: true
+      
+      - {label: "Ticket", name: "ticket", widget: "string", required: false, hint: "The ticket number, e.g. MTM-50245"}
+      - {label: "Version", name: "version", widget: "string", required: true, hint: "You can add multiple versions separated by a coma"} # this is for the yearly only and support multiple
+      - { label: "Body", name: "body", widget: "markdown"}
+        
+  - name: "device_management"
+    label: "Device management & connectivity"
+    folder: "content/change-logs/device-management"
+    description: "Change log entries for the Device management & connectivity product area"
+    create: true
+    slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
+    fields:
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD", default: "", required: false}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Product area", name: "product_area", widget: "hidden", default: "Device management & connectivity"}
+      - label: Change type
+        name: change_type
+        widget: ncw-file-relation
+        collection: configs
+        file: change_type
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: true
+
+      - label: Component
+        name: component
+        widget: ncw-file-relation
+        collection: configs
+        file: component
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: true
+
+      - label: Build artifact
+        name: build_artifact
+        widget: ncw-file-relation
+        collection: configs
+        file: build_artifact
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: true
+      
+      - {label: "Ticket", name: "ticket", widget: "string", required: false, hint: "The ticket number, e.g. MTM-50245"}
+      - {label: "Version", name: "version", widget: "string", required: true, hint: "You can add multiple versions separated by a coma"} # this is for the yearly only and support multiple
+      - { label: "Body", name: "body", widget: "markdown"}
+        
+  - name: "platform_services"
+    label: "Platform services"
+    folder: "content/change-logs/platform-services"
+    description: "Change log entries for the Platform services product area"
+    create: true
+    slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
+    fields:
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD", default: "", required: false}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Product area", name: "product_area", widget: "hidden", default: "Platform services"}
+      - label: Change type
+        name: change_type
+        widget: ncw-file-relation
+        collection: configs
+        file: change_type
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: true
+
+      - label: Component
+        name: component
+        widget: ncw-file-relation
+        collection: configs
+        file: component
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: true
+
+      - label: Build artifact
+        name: build_artifact
+        widget: ncw-file-relation
+        collection: configs
+        file: build_artifact
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: true
+      
+      - {label: "Ticket", name: "ticket", widget: "string", required: false, hint: "The ticket number, e.g. MTM-50245"}
+      - {label: "Version", name: "version", widget: "string", required: true, hint: "You can add multiple versions separated by a coma"} # this is for the yearly only and support multiple
+      - { label: "Body", name: "body", widget: "markdown"}
+        
+  - name: "edge"
+    label: "Edge"
+    folder: "content/change-logs/edge"
+    description: "Change log entries for the Edge product area"
+    create: true
+    slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
+    fields:
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD", default: "", required: false}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Product area", name: "product_area", widget: "hidden", default: "Edge"}
+      - label: Change type
+        name: change_type
+        widget: ncw-file-relation
+        collection: configs
+        file: change_type
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: true
+
+      - label: Component
+        name: component
+        widget: ncw-file-relation
+        collection: configs
+        file: component
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: false
+
+      - label: Build artifact
+        name: build_artifact
+        widget: ncw-file-relation
+        collection: configs
+        file: build_artifact
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: true
+      
+      - {label: "Ticket", name: "ticket", widget: "string", required: false, hint: "The ticket number, e.g. MTM-50245"}
+      - {label: "Version", name: "version", widget: "string", required: true, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
+      - { label: "Body", name: "body", widget: "markdown"}
+
+
+  - label: Change logs config
+    name: configs
+    files:
+      - name: date_settings
+        label: Date settings
+        file: data/date_settings.toml
+        fields:
+          - name: yearly_release
+            label: Yearly release
+            widget: boolean
+            default: false
+            hint: If it is a yearly release, switch on
+          - name: yearly_release_name
+            label: Yearly release name
+            widget: string
+            required: false
+            hint: If it is a yearly release, add the name of the release
+          - name: yearly_release_preview
+            label: Yearly release preview
+            widget: boolean
+            default: false
+            hint: If it is a yearly release preview, switch on to display dates intead of versions
+          - name: date
+            label: Starting from
+            widget: datetime
+            hint: Starting date to display the change logs (90 days for change logs)
+          - name: versions
+            label: Versions
+            widget: list
+            fields:
+              - label: Date
+                name: date
+                widget: string
+              - label: Version
+                name: version
+                widget: string
+      - name: component
+        label: Component options
+        file: data/component.json
+        fields:
+          - name: options
+            label: Options
+            widget: list
+            fields:
+              - label: Option
+                name: option
+                widget: string
+              - label: ID
+                name: id
+                widget: ncw-id
+                prefix: component
+              - label: Product Area
+                name: product_area
+                widget: ncw-file-relation
+                collection: configs
+                file: product_area
+                target_field: options
+                id_field: id
+                display_fields: option
+                required: false 
+
+      - name: product_area
+        label: Product Area options
+        file: data/productarea.json
+        fields:
+          - name: options
+            label: Options
+            widget: list
+            fields:
+              - label: Option
+                name: option
+                widget: string
+              - label: ID
+                name: id
+                widget: ncw-id
+                prefix: product_area
+              
+
+      - name: change_type
+        label: Change type options
+        file: data/changetype.json
+        fields:
+          - name: options
+            label: Options
+            widget: list
+            fields:
+              - label: Option
+                name: option
+                widget: string
+              - label: ID
+                name: id
+                widget: ncw-id
+                prefix: change
+
+      - name: build_artifact
+        label: Build artifacts options
+        file: data/buildartifact.json
+        fields:
+          - name: options
+            label: Options
+            widget: list
+            fields:
+              - label: Option
+                name: option
+                widget: string
+              - label: ID
+                name: id
+                widget: ncw-id
+                prefix: tc
