@@ -77,7 +77,7 @@ The storage account itself has to meet four requirements, and the first two are 
 Redundancy and performance tier are yours to choose; nothing here depends on either. Neither does the region — unlike on AWS, provisioning does not refuse an account in another region. Keep it in the same region as the {{< product-c8y-iot >}} environment anyway, or you pay cross-region egress on every read a query engine makes.
 
 {{< c8y-admon-caution >}}
-**Locking the account down to selected networks is possible, but not by you alone.** {{< company-c8y >}} reaches your account from its own network, so a firewall that allows only your virtual networks shuts ingestion out. Permitting it means adding the environment's egress identity to your network rules, and that value differs per environment and can only come from {{< company-c8y >}}. [Contact support](/additional-resources/contacting-support/) before restricting network access — do it first, and provisioning or a running tenant stops with a connectivity error that names nothing about the firewall.
+**Locking the account down to selected networks is only possible in collaboration with {{< company-c8y >}} support.** {{< company-c8y >}} reaches your account from its own network, so a firewall that allows only your virtual networks shuts ingestion out. Permitting it means adding the environment's egress identity to your network rules — a value only support can give you. [Contact support](/additional-resources/contacting-support/) before restricting network access, or provisioning and running tenants fail with an unrelated-looking connectivity error.
 {{< /c8y-admon-caution >}}
 
 With the Azure CLI, hierarchical namespace is what `--enable-hierarchical-namespace true` sets, and it cannot be added to an account afterwards:
@@ -442,9 +442,7 @@ The setup does not take your word for the grant. It exercises it, end to end, th
 1. **The grant.** On AWS it assumes your role with your External ID; on Azure it acquires a token for your directory as the consented application.
 2. **The data path.** With those credentials it lists, writes, reads back and deletes a test object under the base location.
 3. **The catalog.** Your tenant's Iceberg catalog is created against the values you entered.
-4. **Credential vending.** It then checks that the catalog can hand out the short-lived credentials queries need — a scoped session on AWS, a user-delegation token on Azure. This step comes last because credentials are vended per table, so there has to be a table to ask about: the check creates an empty one called `vending_check`, in a namespace called `iceflow_provisioning_check`, and requests credentials for it.
-
-    That table is created once and **left in place**, rather than dropped after each run: dropping it without purging would abandon its metadata in your storage every time, where nothing would later clean it up. It stays empty and costs nothing. If you find it while auditing your storage, that is what it is — leave it, and later runs reuse it.
+4. **Credential vending.** It then checks that the catalog can hand out the short-lived credentials queries need — a scoped session on AWS, a user-delegation token on Azure. This step comes last because credentials are vended per table, so it uses a small table of its own, created once and reused on every later run. It lives under the `internal` namespace, so it falls under the note in [Current preview limitations](#limitations) about not touching those tables.
 
 **Setup is complete when all of that passes**, not when the catalog exists — a catalog can exist and still be unable to hand out a credential, and the first sign of that would otherwise be a failed query long afterwards.
 
