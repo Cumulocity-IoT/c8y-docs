@@ -22,5 +22,9 @@ environment_availability:
     date: '2026-09-25'
   - label: jp.cumulocity.com
     date: '2026-09-25'
+  - label: us.cumulocity.com
+    date: '2026-09-28'
+  - label: cumulocity.com
+    date: '2026-09-28'
 ---
 Clicking a data point within the "Data graph" widget now automatically selects it and updates the widget configuration in real time. This restores support for dashboard interactions that rely on data point selection to trigger actions across other widgets.
