@@ -1,5 +1,4 @@
-{{- $d := .Params.description | default .Summary | default (printf "%s documentation for the Cumulocity platform." .Title) -}}
-{{- $d = truncate 240 (trim ($d | plainify | replaceRE "\\s+" " ") " ") -}}
+{{- $d := partial "page-description.html" (dict "page" . "length" 240) | default (printf "%s documentation for the Cumulocity platform." .Title) -}}
 # {{ .Site.Title }} — {{ .Title }}
 
 > {{ $d }}
@@ -14,8 +13,7 @@ Part of the Cumulocity documentation. Root index: {{ (.Site.Home.OutputFormats.G
   {{- if $isCard }}{{ continue }}{{ end -}}
   {{- $title := .Title -}}
   {{- if and (eq (lower $title) "introduction") .Section }}{{ $title = printf "%s — %s" (partial "section-title.txt" .Section) $title }}{{ end -}}
-  {{- $pd := .Params.description | default .Summary | default "" -}}
-  {{- $pd = truncate 200 (trim ($pd | plainify | replaceRE "\\s+" " ") " ") -}}
+  {{- $pd := partial "page-description.html" (dict "page" . "length" 200) -}}
   {{- if $pd -}}
     {{- printf "- [%s](%s): %s\n" $title .Permalink $pd -}}
   {{- else -}}

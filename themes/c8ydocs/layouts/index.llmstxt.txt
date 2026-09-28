@@ -13,8 +13,7 @@ This file helps large language models navigate the Cumulocity documentation. Eac
   {{- if in $optional $term }}{{ continue }}{{ end -}}
   {{- $llm := .OutputFormats.Get "llmstxt" -}}
   {{- if not $llm }}{{ continue }}{{ end -}}
-  {{- $d := .Params.description | default .Summary | default (printf "%s documentation." .Title) -}}
-  {{- $d = truncate 200 (trim ($d | plainify | replaceRE "\\s+" " ") " ") -}}
+  {{- $d := partial "page-description.html" (dict "page" . "length" 200) | default (printf "%s documentation." .Title) -}}
   {{- printf "- [%s](%s): %s\n" .Title $llm.Permalink $d -}}
 {{- end -}}
 {{- printf "\n## Documentation\n" -}}
@@ -22,8 +21,7 @@ This file helps large language models navigate the Cumulocity documentation. Eac
 {{- printf "- [Glossary](%s): Definitions of Cumulocity terminology and concepts.\n" (absURL "glossary/") -}}
 {{- range $sectors.Pages.ByWeight -}}
   {{- if not .Params.external }}{{ continue }}{{ end -}}
-  {{- $d := .Params.description | default .Summary | default (printf "%s (external documentation)." .Title) -}}
-  {{- $d = truncate 200 (trim ($d | plainify | replaceRE "\\s+" " ") " ") -}}
+  {{- $d := partial "page-description.html" (dict "page" . "length" 200) | default (printf "%s (external documentation)." .Title) -}}
   {{- printf "- [%s](%s): %s\n" .Title .Params.external $d -}}
 {{- end -}}
 {{- printf "- [Web developer codex](https://cumulocity.com/codex/llms.txt): Cumulocity Web SDK component and developer documentation (llms.txt).\n" -}}
@@ -34,7 +32,6 @@ This file helps large language models navigate the Cumulocity documentation. Eac
   {{- if not (in $optional $term) }}{{ continue }}{{ end -}}
   {{- $llm := .OutputFormats.Get "llmstxt" -}}
   {{- if not $llm }}{{ continue }}{{ end -}}
-  {{- $d := .Params.description | default .Summary | default (printf "%s documentation." .Title) -}}
-  {{- $d = truncate 200 (trim ($d | plainify | replaceRE "\\s+" " ") " ") -}}
+  {{- $d := partial "page-description.html" (dict "page" . "length" 200) | default (printf "%s documentation." .Title) -}}
   {{- printf "- [%s](%s): %s\n" .Title $llm.Permalink $d -}}
 {{- end -}}
