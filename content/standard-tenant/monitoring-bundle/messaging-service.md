@@ -119,7 +119,7 @@ If the topic and subscriber were created, there are probably also valuable messa
 To consume and acknowledge the messages for a given topic and subscriber:
 * Create the [Notifications 2.0 Token](https://{{< domain-c8y >}}/api/core/#operation/postNotificationTokenResource) for the selected topic and subscriber.
 * Use the token to create a [Notifications 2.0 WebSocket connection](/notifications/consumer-protocol) to the topic.
-* Process and [acknowledge](/notifications/consumer-protocol#notification-acknowledgements) all the messages received via the WebSocket connection.
+* Process and [acknowledge](/notifications/consumer-protocol#notification-acknowledgments) all the messages received via the WebSocket connection.
 
 This will remove the messages from the Messaging Service and clear the backlog for the given topic and subscriber, but the action is not permanent.
 Since the Notifications 2.0 subscription and the subscriber still exist, the backlog can fill again with new messages if they are not consumed continuously.

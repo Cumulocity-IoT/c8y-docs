@@ -35,7 +35,7 @@ wss://your.cumulocity.environment.fullqualifieddomainname/notification2/consumer
 There is a timeout of 5 minutes set on idle WebSocket connections after which the connection will be closed by the server side. Therefore the consumer must be prepared to handle closed connections which is required for fault-tolerant operation in any case. All consuming microservices or applications should handle the WebSocket being closed and re-connect as necessary. Alternatively, if you would like to keep the connection from being closed due to idle timeout, implement a ping-pong handler in the WebSocket consumer. For example, you can implement this mechanism in Jetty by following [Jetty Programming Guide > Client Libraries > WebSocket Client > WebSocket Session > Sending Ping/Pong](https://jetty.org/docs/jetty/11/programming-guide/client/websocket.html#session-ping). A few libraries also provide built-in support for keeping the connection open. [Java-WebSocket](https://github.com/TooTallNate/Java-WebSocket), for example, does this by sending the ping requests to the server every minute by default.
 
 
-### Notification acknowledgments {#notification-acknowledgements}
+### Notification acknowledgments {#notification-acknowledgments}
 
 The WebSocket service sends a sequence of UTF-8 encoded textual notification messages to the consumer.
 Each notification message includes headers and a data payload.
@@ -73,7 +73,7 @@ If the notification is binary data or includes binary data then it will be [Base
 The header lines for a notification are as follows (separated by `\n` newlines):
 
 1. Encoded message identifier for message acknowledgment.
-   After the consumer has finished processing a notification, it must send this header back to the server to [acknowledge the notification](#notification-acknowledgements).
+   After the consumer has finished processing a notification, it must send this header back to the server to [acknowledge the notification](#notification-acknowledgments).
 
 2. Notification description.
    This is a `/`-separated string with three components that describe the type and source of the notification:
