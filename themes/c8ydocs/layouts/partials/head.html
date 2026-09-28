@@ -38,6 +38,9 @@
     
 
     <link rel="canonical" href="{{ .Permalink }}">
+    {{- with .OutputFormats.Get "markdown" }}
+    <link rel="alternate" type="text/markdown" href="{{ .Permalink }}">
+    {{- end }}
     
     <meta name="msapplication-TileColor" content="#212121">
     <meta name="theme-color" content="#ffbe00">

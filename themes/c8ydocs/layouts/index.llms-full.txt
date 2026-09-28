@@ -16,44 +16,12 @@ Release: {{ $release }}
     {{- if $isCard }}{{ continue }}{{ end }}
     {{- if $seen.Get .Permalink }}{{ continue }}{{ end }}
     {{- $seen.Set .Permalink true }}
-    {{- $title := .Title }}
-    {{- if and (eq (lower $title) "introduction") .Section }}{{ $title = printf "%s — %s" (partial "section-title.txt" .Section) $title }}{{ end }}
-    {{- $sectorTitles := slice }}
-    {{- range .Params.sector }}{{ with site.GetPage (printf "/sector/%s" .) }}{{ $sectorTitles = $sectorTitles | append .Title }}{{ end }}{{ end }}
-    {{- /* Bundle pages keep most of their text in the headless <name>-bundle folder, which the HTML layout (_default/bundle.html) appends in weight order. Do the same here. */}}
-    {{- $body := string .RenderShortcodes }}
-    {{- if eq .Layout "bundle" }}
-      {{- with .File }}{{ with site.GetPage (printf "%s-bundle" .BaseFileName) }}
-        {{- range sort (.Resources.ByType "page") ".Params.weight" }}
-          {{- $body = printf "%s\n\n## %s\n\n%s" $body .Title (strings.Trim .RenderShortcodes " \t\r\n") }}
-        {{- end }}
-      {{- end }}{{ end }}
-    {{- end }}
-    {{- $body = partial "llms-absolute-links.txt" (dict "text" $body "permalink" .Permalink) }}
 
-# {{ $title }}
-
-Source: {{ .Permalink }}
-{{ with $sectorTitles }}Sector: {{ delimit . ", " }}
-{{ end }}{{ with .Params.audience }}Audience: {{ delimit . ", " }}
-{{ end }}Release: {{ $release }}
-{{ with .Params.description }}Description: {{ . }}
-{{ end }}
-{{ strings.Trim $body " \t\r\n" }}
+{{ partial "llms-page.txt" . }}
   {{- end }}
 {{- end }}
-{{- /* The glossary is a section whose letter pages are not rendered on their own, so the loop above skips it. Mirror glossary/list.html. */}}
+{{- /* The glossary is a section whose letter pages are not rendered on their own, so the loop above skips it. */}}
 {{- with site.GetPage "/glossary" }}
-  {{- $body := string .RenderShortcodes }}
-  {{- range .Pages.ByWeight }}
-    {{- $body = printf "%s\n\n## %s\n\n%s" $body .Title (strings.Trim .RenderShortcodes " \t\r\n") }}
-  {{- end }}
-  {{- $body = partial "llms-absolute-links.txt" (dict "text" $body "permalink" .Permalink) }}
 
-# {{ .Title }}
-
-Source: {{ .Permalink }}
-Release: {{ $release }}
-
-{{ strings.Trim $body " \t\r\n" }}
+{{ partial "llms-page.txt" . }}
 {{- end }}

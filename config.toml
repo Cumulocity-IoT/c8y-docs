@@ -18,6 +18,7 @@ enableGitInfo          = true
 
 [outputs]
   home = ["HTML", "llmstxt", "llms-full"]
+  page = ["HTML", "markdown"]
 
 [outputFormats.llmstxt]
   mediaType    = "text/plain"

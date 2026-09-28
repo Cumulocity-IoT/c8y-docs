@@ -4,7 +4,7 @@
 
 > The official documentation for the Cumulocity IoT platform, covering both user and developer perspectives across device management, application enablement, analytics, and platform administration.
 
-This file helps large language models navigate the Cumulocity documentation. Each entry under Documentation sets links to a focused llms.txt spoke for one topic area; llms-full.txt contains the complete documentation as plain text.
+This file helps large language models navigate the Cumulocity documentation. Each entry under Documentation sets links to a focused llms.txt spoke for one topic area; llms-full.txt contains the complete documentation as plain text. Every documentation page is also available as Markdown: append `index.md` to its URL.
 
 ## Documentation sets
 {{ range $sectors.Pages.ByWeight -}}
@@ -18,7 +18,8 @@ This file helps large language models navigate the Cumulocity documentation. Eac
 {{- end -}}
 {{- printf "\n## Documentation\n" -}}
 {{- printf "- [Cumulocity documentation](%s): Complete HTML documentation for the Cumulocity platform.\n" .Site.Home.Permalink -}}
-{{- printf "- [Glossary](%s): Definitions of Cumulocity terminology and concepts.\n" (absURL "glossary/") -}}
+{{- $glossary := absURL "glossary/" }}{{ with site.GetPage "/glossary" }}{{ with .OutputFormats.Get "markdown" }}{{ $glossary = .Permalink }}{{ end }}{{ end -}}
+{{- printf "- [Glossary](%s): Definitions of Cumulocity terminology and concepts.\n" $glossary -}}
 {{- range $sectors.Pages.ByWeight -}}
   {{- if not .Params.external }}{{ continue }}{{ end -}}
   {{- $d := partial "page-description.html" (dict "page" . "length" 200) | default (printf "%s (external documentation)." .Title) -}}

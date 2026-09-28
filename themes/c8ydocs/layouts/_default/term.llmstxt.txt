@@ -14,9 +14,11 @@ Part of the Cumulocity documentation. Root index: {{ (.Site.Home.OutputFormats.G
   {{- $title := .Title -}}
   {{- if and (eq (lower $title) "introduction") .Section }}{{ $title = printf "%s — %s" (partial "section-title.txt" .Section) $title }}{{ end -}}
   {{- $pd := partial "page-description.html" (dict "page" . "length" 200) -}}
+  {{- /* Redirect pages publish no index.md (_default/redirect.md renders empty), so keep their HTML link. */ -}}
+  {{- $url := .Permalink }}{{ if ne .Layout "redirect" }}{{ with .OutputFormats.Get "markdown" }}{{ $url = .Permalink }}{{ end }}{{ end -}}
   {{- if $pd -}}
-    {{- printf "- [%s](%s): %s\n" $title .Permalink $pd -}}
+    {{- printf "- [%s](%s): %s\n" $title $url $pd -}}
   {{- else -}}
-    {{- printf "- [%s](%s)\n" $title .Permalink -}}
+    {{- printf "- [%s](%s)\n" $title $url -}}
   {{- end -}}
 {{- end -}}
