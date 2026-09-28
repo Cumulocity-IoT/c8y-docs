@@ -104,7 +104,7 @@ The subscriber is created the first time that a Notifications 2.0 WebSocket conn
 The topic itself is created the first time that _any_ Notifications 2.0 WebSocket connection is established using a token with the given subscription name.
 However, once the subscriber is created it will not be deleted even if the WebSocket connection is disconnected.
 That is, the Messaging Service will collect and persist the messages under the given topic until either they are consumed, they reach the configured time-to-live (TTL) interval, or the [subscriber is explicitly unsubscribed](https://{{< domain-c8y >}}/api/core/#operation/postNotificationTokenUnsubscribeResource) from the topic.
-Refer to the [consumer lifecycle](https://{{< domain-c8y >}}/api/core/#section/Overview/Consumer-lifecycle) for more details.
+Refer to the [consumer lifecycle](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/Overview/Consumer-lifecycle) for more details.
 
 #### Clear the backlog {#notifications-clear-the-backlog}
 
@@ -118,8 +118,8 @@ In this situation, the backlog must be cleared before continuing work. There are
 If the topic and subscriber were created, there are probably also valuable messages stored in the Messaging Service that should be consumed.
 To consume and acknowledge the messages for a given topic and subscriber:
 * Create the [Notifications 2.0 Token](https://{{< domain-c8y >}}/api/core/#operation/postNotificationTokenResource) for the selected topic and subscriber.
-* Use the token to create a [Notifications 2.0 WebSocket connection](https://{{< domain-c8y >}}/api/core/#section/Consumer-protocol) to the topic.
-* Process and [acknowledge](https://{{< domain-c8y >}}/api/core/#section/Consumer-protocol/Notification-acknowledgements) all the messages received via the WebSocket connection.
+* Use the token to create a [Notifications 2.0 WebSocket connection](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/Consumer-protocol) to the topic.
+* Process and [acknowledge](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/Consumer-protocol/Notification-acknowledgements) all the messages received via the WebSocket connection.
 
 This will remove the messages from the Messaging Service and clear the backlog for the given topic and subscriber, but the action is not permanent.
 Since the Notifications 2.0 subscription and the subscriber still exist, the backlog can fill again with new messages if they are not consumed continuously.
@@ -132,7 +132,7 @@ To do this:
 * Use the token to unsubscribe the subscriber from the topic by calling the [Notifications 2.0 Token Unsubscribe API](https://{{< domain-c8y >}}/api/core/#operation/postNotificationTokenUnsubscribeResource).
 
 This will remove the subscriber from the Messaging Service and clear the backlog for the given subscriber, and potentially the whole topic if there are no more subscribers with unconsumed messages.
-If the subscriber is not recreated by establishing a [Notifications 2.0 WebSocket connection](https://{{< domain-c8y >}}/api/core/#section/Consumer-protocol) to the topic, this action is permanent, meaning the backlog won't grow again.
+If the subscriber is not recreated by establishing a [Notifications 2.0 WebSocket connection](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/Consumer-protocol) to the topic, this action is permanent, meaning the backlog won't grow again.
 If there are no more active subscribers for the topic, it is also recommended to delete the [Notifications 2.0 Subscription](https://{{< domain-c8y >}}/api/core/#operation/deleteNotificationSubscriptionResource).
 
 ##### Unsubscribe the subscriber via the UI {#notifications-unsubscribe-the-subscriber-via-the-UI}
@@ -216,7 +216,7 @@ If you have a single microservice or a single client consuming messages from the
 Check if the subscriber name used by your client is unique and reused consistently when connecting to the Messaging Service.
 A common pitfall is generating a random subscriber name each time a new connection to the Messaging Service is established.
 
-Multiple subscribers are expected when multiple distinct clients consume from the same topic or when using [shared consumer tokens](https://{{< domain-c8y >}}/api/core/#section/Overview/Shared-consumer-tokens).
+Multiple subscribers are expected when multiple distinct clients consume from the same topic or when using [shared consumer tokens](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/Overview/Shared-consumer-tokens).
 
 For the MQTT Service `from-device` topic, the number of subscribers depends on your implementation.
 If you have a single custom microservice or Streaming Analytics flow consuming device messages, you should see a single subscriber.
