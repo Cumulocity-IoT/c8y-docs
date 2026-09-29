@@ -1,0 +1,34 @@
+---
+date: '2026-09-29'
+title: DTM Data Service now generally available
+product_area: Application enablement & solutions
+change_type:
+  - value: change-Tsrbcjmmlsd
+    label: Feature
+component:
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
+build_artifact:
+  - value: "tc-wYIY0MBDO"
+    label: dtm
+ticket: ""
+version: 1.6.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-09-29'
+  - label: apj.cumulocity.com
+    date: '2026-09-29'
+  - label: jp.cumulocity.com
+    date: '2026-09-29'
+  - label: us.cumulocity.com
+    date: '2026-09-29'
+  - label: cumulocity.com
+    date: '2026-09-29'
+---
+The DTM Data Service, previously released as a Public Preview, is now generally available. The microservice processes data point links configured through the DTM [Data Points plugin](/dtm/asset-hierarchy/#datapoints) and automatically propagates incoming device measurements to the corresponding assets in the digital twin hierarchy through `c8y_LinkedSeries`. As soon as a data point link is created in DTM, the service starts forwarding incoming measurements from the source device to the linked data point on the asset.
+
+This makes operational data available directly on assets, so you can build asset-centric dashboards, analytics, smart rules, and business applications without querying individual devices. The number of measurements created on assets depends on how many assets a device measurement is linked to. For example, if a device measurement is linked to three assets, the DTM Data Service creates three measurements on the asset level for each incoming device measurement.
+
+{{< c8y-admon-info >}}
+The DTM Data Service is not enabled by default. To enable it for your tenant, contact [{{< product-c8y-iot >}} support](/additional-resources/contacting-support).
+{{< /c8y-admon-info >}}
