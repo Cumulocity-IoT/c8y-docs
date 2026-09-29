@@ -18,11 +18,11 @@ version: 27.256.0
 
 As [previously announced](/change-logs/#apama-in-c8y-20260917-debian13-upgrade), the {{< product-c8y-iot >}} Streaming Analytics microservices have been upgraded to Debian 13 (Trixie) as their base operating system, replacing Debian 12 (Bookworm). This release delivers that change.
 
-**Most applications are unaffected**. The changes matter if you have uploaded custom Java or Python code to the apama-ctrl microservice, for example in an Analytics Builder block or an EPL or connectivity plugin.
+**Most applications are unaffected**. The changes matter if you have uploaded custom Java or Python code to the apama-ctrl microservice, for example in an Analytics Builder block, an EPL plugin, or a connectivity plugin.
 
 **Java 25**
 
-The apama-ctrl microservices now run OpenJDK 25 instead of OpenJDK 17. All Java code executed within the correlator now runs on Java 25, so if you have custom EPL plugins or connectivity plugins you should recompile them with Java 25 and test that they still behave as expected.
+The apama-ctrl microservice now runs OpenJDK 25 instead of OpenJDK 17. All Java code executed within the correlator runs on Java 25, so if you have custom EPL plugins or connectivity plugins you should recompile them with Java 25 and test that they still behave as expected.
 
 See the [JDK release notes](https://www.oracle.com/java/technologies/javase/25-relnote-issues.html) for details of the breaking changes and new features between Java 17 and Java 25. Some applications may require updates to third-party library dependencies, but in most cases Apama plugins continue to work without changes.
 
