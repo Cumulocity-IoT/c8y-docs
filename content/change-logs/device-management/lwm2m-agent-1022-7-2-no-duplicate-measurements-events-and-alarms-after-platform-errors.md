@@ -16,8 +16,6 @@ version: 1022.7.2
 environment_availability:
 
 ---
-When the {{< product-c8y-iot >}} platform is under load, it can answer a request to create measurements, events or alarms with a server error although it has already stored the data. Previously, the LWM2M agent retried every such request, which created the same measurements, events and alarms several times for a device, in one case millions of duplicate measurements within minutes.
+If the {{< product-c8y-iot >}} platform temporarily rejected requests from the LWM2M agent, for example under high load, the agent retried them. In rare cases this led to duplicate measurements, events or alarms for a device.
 
-The LWM2M agent now checks with the platform which of the failed measurements, events and alarms already exist before it sends them again, and retries only the ones that are missing. For measurements, which the agent sends in bulks, the agent additionally pauses the sending for the affected tenant for a short time after a failed bulk and delivers the accumulated data step by step once the platform accepts requests again, instead of retrying continuously. Both behaviors are enabled by default and can be configured with the properties `C8Y.lwm2m.sinks.crossCheck.enabled` and `C8Y.lwm2m.sinks.measurements.flushPauseSecondsInCaseOfError`.
-
-Existing installations do not require any action. Data that devices send during a platform outage is still delivered once the platform is available again, without duplicates. For details, see [LWM2M](/device-integration/lwm2m/).
+The LWM2M agent now verifies the outcome of a rejected request with the platform before retrying it and resends only data that has not been delivered yet. Measurements are resent in a controlled manner once the platform accepts requests again. Data that devices send during a platform outage is delivered without duplicates, and no action is required for existing installations. For details, see [LWM2M](/device-integration/lwm2m/).
