@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-ggH2M4hf3
     label: lwm2m-agent
 ticket: DM-7155
-version: 1022.7.2
+version: 1022.7.8
 environment_availability:
 
 ---
