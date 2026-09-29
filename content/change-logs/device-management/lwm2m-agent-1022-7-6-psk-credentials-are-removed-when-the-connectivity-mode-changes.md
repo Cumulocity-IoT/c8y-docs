@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-ggH2M4hf3
     label: lwm2m-agent
 ticket: DM-6379
-version: 1022.7.2
+version: 1022.7.6
 ---
 A bootstrap or server PSK ID must be unique across all tenants, so a PSK ID that stays attached to a device blocks any other device from using it. Previously, switching the bootstrap or server authentication of an LWM2M device away from **PSK** kept the stored PSK ID and key attached to the device until the device was deleted, and only disabling the server authentication cleared the security information.
 
