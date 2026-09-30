@@ -283,7 +283,7 @@ The region is not one of them, because the setup page gave it to you in the firs
      Caption: "Entering the role ARN, External ID, bucket and prefix"
      Blocked: the setup page is not final yet. -->
 
-Then start the setup. It does not start on its own: nothing watches your AWS account for the role, because only you know when it is actually in place. What happens next is described in [What the setup verifies](#own-lake-verification).
+Then start the setup. What happens next is described in [What the setup verifies](#own-lake-verification).
 
 ### Setting up your Azure storage account {#own-lake-setting-up-azure}
 
@@ -411,7 +411,7 @@ Open **Settings** > **Data Lake** in the **Administration** application and ente
 
 * **Base location** — `abfss://<container>@<account>.dfs.core.windows.net/<path>`. See [Choosing a base location](#own-lake-base-location).
 
-Then start the setup. It does not start on its own: nothing watches for the role assignments from step 2, because only you know when they are actually in place.
+Then start the setup.
 
 ### Choosing a base location {#own-lake-base-location}
 
