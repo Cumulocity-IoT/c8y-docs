@@ -18,4 +18,4 @@ environment_availability:
 ---
 If the {{< product-c8y-iot >}} platform temporarily rejected requests from the LWM2M agent, for example under high load, the agent retried them. In rare cases this led to duplicate measurements, events or alarms for a device.
 
-The LWM2M agent now verifies the outcome of a rejected request with the platform before retrying it and resends only data that has not been delivered yet. Measurements are resent in a controlled manner once the platform accepts requests again. Data that devices send during a platform outage is delivered without duplicates, and no action is required for existing installations. For details, see [LWM2M](/device-integration/lwm2m/).
+The LWM2M agent now verifies the outcome of a rejected request with the platform before retrying it and resends only data that has not been delivered yet. Measurements are resent in a controlled manner once the platform accepts requests again. Data that devices send during a platform outage is delivered without duplicates, and no action is required for existing installations.
