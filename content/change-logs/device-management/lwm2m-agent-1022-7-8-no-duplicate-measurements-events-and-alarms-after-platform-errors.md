@@ -1,6 +1,6 @@
 ---
 date: 
-title: No duplicate measurements, events and alarms after platform errors
+title: LWM2M service prevents duplicate measurements, events and alarms after platform errors
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
