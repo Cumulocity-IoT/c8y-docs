@@ -56,7 +56,7 @@ For more details about smart rules (NEW), refer to [Smart rules plugin](/streami
 ### Availability {#availability}
 
 {{< c8y-admon-info >}}
-The **Availability** tab is deprecated and planned for removal before the y2028 release. See the [deprecation announcement](/change-logs/#ui-c8y-DM-7021-deprecate-availability-donut-charts) for details.
+The **Availability** tab is deprecated and planned for removal before the y2028 release. See the [deprecation announcement](/change-logs/#ui-c8y-dm-7021-deprecate-availability-donut-charts) for details.
 {{< /c8y-admon-info >}}
 
 The Availability tab offers availability monitoring for machines, see [Availability](/device-management-application/monitoring-and-controlling-devices/#availability) for more information.
@@ -77,19 +77,18 @@ For more details on managing binary-based configuration snapshots, see [Managing
 
 #### To request the current text-based configuration snapshot {#to-request-the-current-text-based-configuration-snapshot}
 
-1. Navigate to the **Configuration** tab.
-2. Select one of the device-supported configurations in the list.
-3. Click **Get snapshot from device**.
+1. Navigate to the **Configuration** tab and open the **Custom** subtab.
+2. Click **Get configuration from device**.
 
 #### To add or edit a text-based configuration snapshot {#to-add-or-edit-a-text-based-configuration-snapshot}
 
-1. In the **Configuration** tab, you can manually add or edit the device configuration in the text field.
+1. In the **Custom** subtab, you can manually add or edit the device configuration in the code editor. Use the **Language** selector to set the syntax highlighting.
 2. Click **Send configuration to device** to save your edits.
 
 ![Text-based configuration](/images/users-guide/DeviceManagement/devmgmt-devices-textconfig.png)
 
 {{< c8y-admon-info >}}
-If a device supports both text-based and binary-based configuration the **Configuration** tab shows a subtab for each configuration type.
+If a device supports both text-based and binary-based configuration the **Configuration** tab shows a subtab for each: **From repository** for binary-based configuration snapshots, and **Custom** for text-based configuration.
 {{< /c8y-admon-info >}}
 
 ### Control {#control}

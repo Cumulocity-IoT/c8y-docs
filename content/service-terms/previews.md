@@ -20,7 +20,7 @@ The program is divided into two stages: *Private Preview* and *Public Preview*. 
 
 ### Public Preview
 
-* **Participation**: Any customer can opt into the Public Preview via the change log.
+* **Participation**: Any customer can opt into the Public Preview via the feature toggle.
 * **Stability & testing**: Additional testing has been done beyond the Private Preview stage, but the same limitations regarding stability and backwards compatibility apply.Customers are advised to use the features only in development and testing.
 * **Documentation**: Documentation is publicly accessible and clearly marked as relevant to preview features. It will be integrated into the main documentation once the feature reaches GA.
 * **Support**: Similar to Private Preview, limited support is provided, and SLAs do not apply.

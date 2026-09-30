@@ -23,7 +23,7 @@ environment_availability:
 ---
 Starting with version 1022.0.0, the Web SDK has been upgraded to Angular 19. This update brings performance improvements and new features, but may also introduce breaking changes that could impact your existing implementations.
 
-Comprehensive upgrade documentation is available to help developers navigate the transition and update their codebases accordingly, see the [Angular 19 Upgrade Guide](/web/upgrade/#upgrading-to-angular-19).
+Comprehensive upgrade documentation is available to help developers navigate the transition and update their codebases accordingly, see [Updating the Web SDK version](https://cumulocity.com/codex/migration-guides/updating-web-sdk-version/overview).
 
 To ensure a day one compatibility of your plugins with applications based on the v1022 Web SDK, you should add the standalone flag to all components/pipes/directives of your plugins.
 You do not have to migrate your components/pipes/directives to `standalone: true`, you can also set them to `false`. You just need to ensure that you've set the standalone flag.

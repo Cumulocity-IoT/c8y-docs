@@ -1023,8 +1023,7 @@ tenant      = "<<tenant_ID>>"
 username    = "<<username>>"
 password    = "<<password>>"
 
-# task queue to overcome issue with paho when using multiple threads:
-#   https://github.com/eclipse/paho.mqtt.python/issues/354
+# task queue to overcome a deadlock issue in the Python Paho library when using multiple threads
 task_queue = mp.Queue()
 
 # display all incoming messages
@@ -1116,7 +1115,7 @@ What does the script do?
 -   Update the device hardware information by putting a `"S123456789"` serial, a `"MQTT test model"` model and a `"Rev0.1"` revision.
 -   Subscribe to the static operation templates for the device – this will result in an ``on_message`` method call every time a new operation is created.
 -   Start the ``device_loop_thread`` which sends a temperature measurement every 7 seconds.
--   Prepare a ``task_queue``, which runs all tasks one by one.
+-   Prepare a ``task_queue``, used mainly to overcome a deadlock issue in the Python Paho library when using multiple threads. The task queue will run all tasks one by one.
 
 What does the ``publish`` message do?
 

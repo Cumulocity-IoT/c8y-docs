@@ -64,9 +64,16 @@ After the data is imported, you will get feedback on the number of devices that 
 
 For your convenience, we provide CSV template files for both bulk registration types (simple/full) which you can download from the registration wizard to view or copy the structure.
 
-{{< c8y-admon-info >}}
-If the device with the given identifier already exists, it will be updated with the data from the CSV file.
-{{< /c8y-admon-info >}}
+{{< c8y-admon-important >}}
+If a device with the given identifier already exists, it is **not** updated with all the data from the CSV file. Only the following is applied:
+
+* The group assignment from the PATH column. The device is added to the group; existing group assignments are not removed.
+* Any new external identifiers.
+
+Other columns, such as TYPE, NAME, ICCID and SHELL, as well as any custom fragments, are ignored for existing devices.
+
+To update the data of existing devices, use the [Inventory API](https://{{< domain-c8y >}}/api/core/#tag/Inventory-API) in the {{< openapi >}}.
+{{< /c8y-admon-important >}}
 
 ### To import CSV data in Microsoft Excel {#to-import-csv-data-in-microsoft-excel}
 

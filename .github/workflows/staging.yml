@@ -86,11 +86,18 @@ jobs:
         ssh-agent -a $SSH_AUTH_SOCK > /dev/null
         ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
 
-    - name: Upload documentation (without PDFs)
+    # pdfs and zips are generated later in this job, so they are not in ./public yet.
+    # Without these excludes, --delete-after would remove the published ones until the
+    # upload steps below run again - or for good, if this run is cancelled in between.
+    - name: Upload documentation (without PDFs and ZIPs)
       run: |
-        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh --exclude='pdfs' ./public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }} --delete-after
+        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh --exclude='pdfs' --exclude='zips' ./public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }} --delete-after
 
+    # prod only: the staging-resources host is behind HTTP basic auth, so every render there
+    # fails with "Authentication Required" and uploads empty files. To enable it, pass
+    # credentials via --username/--password in pdf-generator/templates/command.template.sh.
     - name: Install wkhtmltopdf
+      if: matrix.env == 'prod'
       run: |
         sudo apt-get update
         sudo apt-get install -y xfonts-base xfonts-75dpi
@@ -99,16 +106,25 @@ jobs:
         wkhtmltopdf --version
 
     - name: Generate PDFs
+      id: generate_pdfs
+      if: matrix.env == 'prod'
       run: |
         cd pdf-generator
         npm ci
         npm run generate
 
+    # Prune stale files only after a complete run; otherwise upload additively, so a failed
+    # render cannot take an already published PDF or ZIP offline.
     - name: Upload PDFs
+      if: matrix.env == 'prod'
       run: |
-        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/pdfs/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }}/pdfs --delete-after
+        PRUNE=""
+        if [ "${{ steps.generate_pdfs.outputs.complete }}" = "true" ]; then PRUNE="--delete-after"; fi
+        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/pdfs/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }}/pdfs $PRUNE
 
     - name: Upload ZIPs
+      if: matrix.env == 'prod'
       run: |
-        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/zips/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }}/zips --delete-after
-        
+        PRUNE=""
+        if [ "${{ steps.generate_pdfs.outputs.complete }}" = "true" ]; then PRUNE="--delete-after"; fi
+        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/zips/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }}/zips $PRUNE
