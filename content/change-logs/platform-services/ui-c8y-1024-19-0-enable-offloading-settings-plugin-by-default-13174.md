@@ -1,6 +1,6 @@
 ---
 date: ""
-title: enable offloading settings plugin by default (#13174)
+title: Offloading settings plugin is now enabled by default
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
