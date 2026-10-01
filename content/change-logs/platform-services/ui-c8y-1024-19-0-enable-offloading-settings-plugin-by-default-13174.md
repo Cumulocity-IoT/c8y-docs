@@ -14,4 +14,4 @@ build_artifact:
 ticket: CDH-6696
 version: 1024.19.0
 ---
-Co-authored-by: Jarek Heród <jaroslaw.herod@cumulocity.com>
+The offloading settings plugin was previously disabled by default, requiring manual configuration to enable it in your installation. The plugin is now enabled by default, allowing you to immediately use offloading features without additional setup steps. This change simplifies the initial configuration of your system and makes offloading capabilities available out of the box for all new installations.
