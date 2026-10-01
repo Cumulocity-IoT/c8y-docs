@@ -29,8 +29,6 @@ If this flag is not set, the client connection will be rejected by the MQTT Serv
 {{< c8y-admon-caution >}}
 This means that messages sent _to_ a device while it is disconnected will **not** be automatically delivered to it when it reconnects.
 Your devices and clients should implement an application-level protocol to send missed messages if this is important for your use case.
-This limitation also applies to the experimental support for Core MQTT devices.
-Pending {{< product-c8y-iot >}} device operations will **not** be sent to a Core MQTT device when it connects.
 {{< /c8y-admon-caution >}}
 
 #### Quality of Service {#quality-of-service-qos}
@@ -235,41 +233,32 @@ However, tenant users will still be aware that devices are publishing too-large 
 
 The table below describes the alarms that will be raised for problems related to device connections:
 
-| Alarm type                                          | Description                                                                                                                                               |
-|-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `c8y_MqttService_MaximumPacketSize_Connect`         | A device sent a `CONNECT` packet larger than the allowed maximum size.                                                                                    |
-| `c8y_MqttService_MaximumPacketSize_Publish`         | A device sent a `PUBLISH` packet larger than the allowed maximum size.                                                                                    |
-| `c8y_MqttService_MaximumPacketSize_Subscribe`       | A device sent a `SUBSCRIBE` packet larger than the allowed maximum size.                                                                                  |
-| `c8y_MqttService_MaximumPacketSize_Unsubscribe`     | A device sent an `UNSUBSCRIBE` packet larger than the allowed maximum size.                                                                               |
-| `c8y_MqttService_TenantConnectionsLimitExceeded`    | The number of connected devices has exceeded the allowed maximum.                                                                                         |
-| `c8y_MqttService_TenantConnectionRateLimitExceeded` | The number of device connection attempts per second has exceeded the allowed maximum.                                                                     |
-| `c8y_MqttService_IncomingPublishRateLimitExceeded`  | The number of incoming (from device) messages per second has exceeded the allowed maximum.                                                                |
-| `c8y_MqttService_OutgoingPublishRateLimitExceeded`  | The number of outgoing (to device) messages per second has exceeded the allowed maximum.                                                                  |
-| `c8y_MqttService_SubscriptionNotAllowed`            | A device subscribed to a topic it is not allowed to receive messages on, see [Subscriptions to not allowed topics](#core-mqtt-not-allowed-subscriptions). |
+| Alarm type                                          | Description                                                                                                                                                                              |
+|-----------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `c8y_MqttService_MaximumPacketSize_Connect`         | A device sent a `CONNECT` packet larger than the allowed maximum size.                                                                                                                   |
+| `c8y_MqttService_MaximumPacketSize_Publish`         | A device sent a `PUBLISH` packet larger than the allowed maximum size.                                                                                                                   |
+| `c8y_MqttService_MaximumPacketSize_Subscribe`       | A device sent a `SUBSCRIBE` packet larger than the allowed maximum size.                                                                                                                 |
+| `c8y_MqttService_MaximumPacketSize_Unsubscribe`     | A device sent an `UNSUBSCRIBE` packet larger than the allowed maximum size.                                                                                                              |
+| `c8y_MqttService_TenantConnectionsLimitExceeded`    | The number of connected devices has exceeded the allowed maximum.                                                                                                                        |
+| `c8y_MqttService_TenantConnectionRateLimitExceeded` | The number of device connection attempts per second has exceeded the allowed maximum.                                                                                                    |
+| `c8y_MqttService_IncomingPublishRateLimitExceeded`  | The number of incoming (from device) messages per second has exceeded the allowed maximum.                                                                                               |
+| `c8y_MqttService_OutgoingPublishRateLimitExceeded`  | The number of outgoing (to device) messages per second has exceeded the allowed maximum.                                                                                                 |
+| `c8y_MqttService_SubscriptionNotAllowed`            | A device subscribed to a topic it is not allowed to receive messages on, see [Subscriptions to not allowed topics](#core-mqtt-not-allowed-subscriptions).                                |
+| `c8y_MqttService_AutoRegistrationDisabled`          | A device was disconnected because it used a Core MQTT topic, but auto-registration is disabled for its trusted certificate, see [Device disconnection](#core-mqtt-device-disconnection). |
 
 ### Core MQTT device support {#core-mqtt-support}
 
-{{< c8y-admon-preview >}}
-This feature is in **Public Preview**.
-That is, it is not yet generally available and may be subject to change in the future.
-
-Core MQTT support is disabled by default and must be explicitly enabled for your tenant.
-To enable Core MQTT support, navigate to **Settings > Feature toggles** in the Administration application and set the `mqtt-service.smartrest` toggle key status to Enabled.
-While Core MQTT support is disabled, any messages published to [Core MQTT topics](#core-mqtt-topics) will be treated as invalid and may cause the MQTT client to be disconnected.
-{{< /c8y-admon-preview >}}
-
-The preview [Core MQTT](/device-integration/mqtt) support in the MQTT Service has some differences in behaviour, compared to connecting devices directly to the {{< product-c8y-iot >}} core.
+The [Core MQTT](/device-integration/mqtt) support in the MQTT Service has some differences in behaviour, compared to connecting devices directly to the {{< product-c8y-iot >}} core.
 Some of these differences happen because the MQTT Service is _decoupled_ from the {{< product-c8y-iot >}} core, with messages transferred _asynchronously_ between them, as shown in the [architecture diagram](#architecture).
-This means firstly that messages received, and potentially acknowledged, by the MQTT Service have not necessarily been processed by the Core MQTT implementation yet.
-Secondly, the Core MQTT implementation does not have full visiblity of the connection lifecycle and topic subscriptions made by devices connected to the MQTT Service.
-We expect to resolve many of these differences before the Core MQTT support in the MQTT Service reaches Generally Available status.
+This means that messages received, and potentially acknowledged, by the MQTT Service have not necessarily been processed by the Core MQTT implementation yet.
 
-Using Core MQTT protocols through the MQTT Service shares the same features and restrictions documented elsewhere in this section, which may differ from accessing Core MQTT directly through the {{< product-c8y-iot >}} core.
-In particular:
+Core MQTT devices connected through the MQTT Service are subject to the same [MQTT protocol features and restrictions](#implementation) as all other devices.
+In contrast to connecting devices directly to the {{< product-c8y-iot >}} core:
 * WebSocket connections are not supported
 * QoS level 2 is not supported
 * MQTT version 5.0 clients are supported
 * Messages with the RETAIN flag set will be rejected, rather than the flag being ignored
+* [Wildcard subscriptions](#wildcard-subscriptions) to Core MQTT topics are accepted, but not supported
 
 #### Core MQTT topics {#core-mqtt-topics}
 
@@ -295,25 +284,20 @@ The structured MQTT [client identifiers](/device-integration/mqtt/#mqtt-clientid
   However, the `d:` prefix will **not** be handled specially for new devices connecting to the {{< product-c8y-iot >}} platform for the first time.
   When a new device connects for the first time, any `d:` prefix will be treated as simply part of the client ID, with no special handling.
 
-##### Pending operations {#core-mqtt-pending-operations}
-
-Pending operations will not be automatically sent to a device when it connects to the MQTT Service.
-Devices should send a [Get PENDING operations](/smartrest/mqtt-static-templates/#500) SmartREST message (template `500`) to request an update on any pending operations to be sent.
-
-##### Device registration {#core-mqtt-device-registration}
-
-When a device authenticates to the MQTT Service using a certificate, it will be automatically registered as a new device by the {{< product-c8y-iot >}} core the first time it interacts with a Core MQTT topic.
-This automatic behaviour cannot be disabled.
-
 #### Device error handling {#core-mqtt-error-handling}
 
-As mentioned above, the decoupled, asynchronous architecture of the MQTT Service means that the {{< product-c8y-iot >}} core has less visiblity of connected MQTT devices.
-This means that a device will not be automatically disconnected even if it:
-1. Subscribes to an invalid or unavailable Core MQTT Topic.
-2. Sends an invalid Core MQTT message.
+Invalid Core MQTT messages are handled in the same way as by the Core MQTT implementation.
+Errors are reported on the `s/e` topic for SmartREST and on the `error` topic for [JSON via MQTT](/smartrest/json-via-mqtt/#error-handling).
 
-In these cases, the device will remain connected, but invalid messages will not be processed and no messages will be received from invalid topics.
-A device can subscribe to the `s/e` topic to monitor any error messages sent by the Core MQTT implementation in these cases.
+##### Device disconnection {#core-mqtt-device-disconnection}
+
+Device disconnection works slightly differently compared to Core MQTT, because the MQTT Service cannot determine at connect time whether a device will use Core MQTT topics or generic topics.
+A connection is therefore always accepted, even in cases where Core MQTT would reject it, and the device may be disconnected later, when it publishes or subscribes to a Core MQTT topic, for example if:
+
+* The device sends a message that cannot be processed.
+* The device is authenticated with username and password, and its user is not the owner of the device identified by the client ID.
+* The device is authenticated with a certificate, auto-registration is disabled for the trusted certificate, and the device user does not exist yet.
+  A `c8y_MqttService_AutoRegistrationDisabled` alarm is also created in this case.
 
 ##### Subscriptions to not allowed topics {#core-mqtt-not-allowed-subscriptions}
 
@@ -340,12 +324,6 @@ Handling of Core MQTT topics is **identical** for both protocol versions. None o
 {{< c8y-admon-caution >}}
 Devices using MQTT version 5.0 that are using Core MQTT topics must not rely on any MQTT version 5.0 feature being honored on those topics.
 {{< /c8y-admon-caution >}}
-
-#### Connection monitoring {#core-mqtt-connection-monitoring}
-
-[Connection monitoring](/device-management-application/monitoring-and-controlling-devices/#connection-monitoring) for "send connection" traffic _from_ the device will work as expected.
-
-However, monitoring of "push connection" traffic _to_ the device is not supported by the MQTT Service.
 
 #### Rate limiting {#core-mqtt-rate-limiting}
 
