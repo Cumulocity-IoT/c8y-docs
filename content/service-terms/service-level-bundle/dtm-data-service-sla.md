@@ -62,8 +62,8 @@ The following objectives measure the quality of the Service:
 | Service-level indicator  | 30-day target                                 |
 | ------------------------ | --------------------------------------------- |
 | Service availability     | As per [Platform service-level agreement](/service-terms/service-level/#service-availability) |
-| Propagation latency      | 95th percentile of sustained load ≤ 30 seconds |
-| Propagation durability   | ≥ 99.9% of sustained load                     |
+| Propagation latency      | 95th percentile ≤ 30 seconds under sustained load |
+| Propagation durability   | ≥ 99.9% under sustained load                      |
 
 #### Service-level indicator definitions
 
