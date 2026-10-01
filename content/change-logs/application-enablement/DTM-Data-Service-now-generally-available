@@ -1,0 +1,34 @@
+---
+date: '2026-09-29'
+title: DTM Data Service now generally available
+product_area: Application enablement & solutions
+change_type:
+  - value: change-Tsrbcjmmlsd
+    label: Feature
+component:
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
+build_artifact:
+  - value: "tc-wYIY0MBDO"
+    label: dtm
+ticket: ""
+version: 1.6.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-09-29'
+  - label: apj.cumulocity.com
+    date: '2026-09-29'
+  - label: jp.cumulocity.com
+    date: '2026-09-29'
+  - label: us.cumulocity.com
+    date: '2026-09-29'
+  - label: cumulocity.com
+    date: '2026-09-29'
+---
+The DTM Data Service, previously released as a Public Preview, is now generally available. The microservice processes data point links configured in DTM and automatically propagates incoming device measurements to the linked assets in the digital twin hierarchy. This makes operational data available directly on assets for dashboards, analytics, smart rules, and business applications, without querying individual devices.
+
+{{< c8y-admon-info >}}
+The DTM Data Service is not enabled by default. To enable it for your tenant, contact [{{< product-c8y-iot >}} support](/additional-resources/contacting-support).
+{{< /c8y-admon-info >}}
+
+For details, see [Data points](/dtm/asset-hierarchy/#datapoints)
