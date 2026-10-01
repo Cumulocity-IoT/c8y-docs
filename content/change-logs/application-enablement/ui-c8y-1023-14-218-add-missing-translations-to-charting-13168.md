@@ -1,6 +1,6 @@
 ---
 date: ""
-title: add missing translations to charting (#13168)
+title: Add missing translations to charting
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
