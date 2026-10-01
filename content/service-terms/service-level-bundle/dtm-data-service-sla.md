@@ -18,7 +18,7 @@ The Service is stateless. Both the device measurement and the created asset meas
 
 ### Load model {#dtm-load-model}
 
-The load the Service puts on the platform is not determined by the number of measurements Customer's devices send, but by the number of asset measurements the Service creates from them. This number is called the **upstream measurement rate**. It is the quantity against which the Service is dimensioned and measured:
+The load the Service puts on the platform is not determined by the number of measurements Customer's devices send, but by the number of asset measurements required by Customer's linking configuration for those measurements. This number is called the **upstream measurement rate**. It is the quantity against which the Service is dimensioned and measured:
 
 ```text
 upstream measurements per second
