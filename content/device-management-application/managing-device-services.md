@@ -17,13 +17,15 @@ sector:
 The Device Management application lets you monitor the data that your devices send about the services they are running.
 
 The [Services](/device-management-application/viewing-device-details/#services) tab on the device details view provides an overview of the services running on a given device and acts as an entry point to the service details view.
-There you can see detailed information about measurements, events and alarms sent for every service.
+There you can see detailed information about the alarms, events, and measurements sent for every service, and use the device functionality that the service supports, such as logs, location, or remote access.
 
 For services that support commands, actions like **Start**, **Stop**, **Restart**, or custom commands appear in the menu of each service. This allows users to quickly send commands without opening the full service details.
 
 ![Services list](/images/users-guide/DeviceManagement/devmgmt-services-list.png)
 
-The following tabs make up the service details view, each described in detail in a separate sector:
+The service details view is divided into tabs. Like on the device details view, the number of tabs is dynamic. A tab is only displayed if the service supports the related functionality. Every service shows at least the **Info**, **Alarms**, **Events**, and **Commands** tabs.
+
+The following tabs are described in detail in separate sections below:
 <table>
 <thead>
 <colgroup>
@@ -51,12 +53,35 @@ The following tabs make up the service details view, each described in detail in
 </tr>
 <tr>
 <td align="left"><a href="#service-commands">Commands</a></td>
-<td align="left">Allows users to send command actions to a service and view the history of executed commands.</td>
+<td align="left">Allows users to send command actions to a service and view the history of executed commands. Available for each service.</td>
 </tr>
 </tbody>
 </table>
 
 ![Service details](/images/users-guide/DeviceManagement/devmgmt-service-details.png)
+
+### Tabs shared with devices {#tabs-shared-with-devices}
+
+The service details view also shows the tabs of the [device details view](/device-management-application/viewing-device-details/) that apply to a service. Each tab appears under the same conditions as on a device. That means, the service must declare the same fragments that a device requires for the tab. For example, the **Location** and **Tracking** tabs require the `c8y_Position` fragment, and the **Shell** tab requires `c8y_Command` in the supported operations of the service.
+
+The following tabs work the same way as on the device details view:
+
+* [Info](/device-management-application/viewing-device-details/#info)
+* [Logs](/device-management-application/viewing-device-details/#logs)
+* [Shell](/device-management-application/viewing-device-details/#shell)
+* [Tracking](/device-management-application/viewing-device-details/#tracking)
+* [Location](/device-management-application/viewing-device-details/#location)
+* [Network](/device-management-application/viewing-device-details/#network)
+* [Software](/device-management-application/viewing-device-details/#software)
+* [Firmware](/device-management-application/viewing-device-details/#firmware)
+* [Configuration](/device-management-application/viewing-device-details/#configuration)
+* [Device profile](/device-management-application/viewing-device-details/#device-profile)
+* Diagnostics
+* [Remote access](/device-integration/fragment-library/#remote-access)
+
+{{< c8y-admon-info >}}
+The following tabs are only available for devices and do not appear on the service details view: **Control**, **Services**, **Child devices**, **Identity**, **Availability**, and tabs that plugins add only for devices, such as **Parameters**. To send operations to a service, use the [Commands](#service-commands) tab.
+{{< /c8y-admon-info >}}
 
 ### Service commands {#service-commands}
 
@@ -82,6 +107,7 @@ The **Commands** tab displays a history of executed commands, including:
 
 The **Alarms** tab provides information on the alarms of a service.
 See [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for detailed information on alarms.
+When you click an alarm, its details open within the service details view.
 
 {{< c8y-admon-info >}}
 The service details **Alarms** tab displays only alarms which have the particular service as a source. It does not display any alarms sourced by the device itself.
@@ -91,6 +117,7 @@ The service details **Alarms** tab displays only alarms which have the particula
 
 The **Events** tab displays events related to a service.
 See [Troubleshooting devices](/device-management-application/monitoring-and-controlling-devices/#troubleshooting-devices) for detailed information.
+When you click an event, its details open within the service details view.
 
 {{< c8y-admon-info >}}
 The service details **Events** tab displays only events which have the particular service as a source. It does not display any events sourced by the device itself.
