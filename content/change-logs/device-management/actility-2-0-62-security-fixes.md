@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-10-02
 title: Security fixes in the Actility agent
 product_area: Device management & connectivity
 change_type:
