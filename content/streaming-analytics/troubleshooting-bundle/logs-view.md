@@ -45,13 +45,15 @@ For example:
 
 Entries are listed oldest first. A download contains the entries in the same format and order. See [Downloading the logs](#downloading-logs).
 
-The Logs page only shows messages from the current run of the microservice. Messages written before the microservice was last restarted are not available.
-
 {{< c8y-admon-info >}}
 The **Log level** parameter of the Smart Function block sets which `console` output is written: the default `WARN` writes only `console.warn` and `console.error`, and `INFO` adds `console.log` and `console.info`. `DEBUG` adds `console.debug`, but only if the log level of the microservice has also been raised from its default of `INFO` (see [Management requests]({{< link-apama-webhelp >}}/command-line-tools/engine_management/#management-requests) in the Apama documentation).
 {{< /c8y-admon-info >}}
 
 To view the logs, you need READ permission for "CEP management". See [Managing permissions and roles](/standard-tenant/managing-permissions/) for more information.
+
+#### How far back the logs go {#log-history}
+
+The Logs page reads the log of the microservice, which only keeps its most recent 35 MB of output and starts again when the microservice restarts. See [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices). If the microservice writes a lot of output, for example, because it serves many tenants, older messages are removed sooner. The page then shows "Showing recent logs. Earlier entries may no longer be visible." The Logs page is for diagnosing current problems, not a long-term log archive.
 
 ### Filtering the logs by model {#filtering-logs-by-model}
 
@@ -75,10 +77,6 @@ When you open the Logs page, or select a different model, it shows the messages 
 
 To pause the updates, click **Auto-refresh** in the toolbar. Click it again to resume. The page also stops checking for new messages when you leave it.
 
-{{< c8y-admon-info >}}
-The logs are read from the log of the microservice, which only keeps the most recent part of its output (about 30 MB). If the microservice writes a lot of output, for example, because it serves many tenants, older messages can already be removed. The Logs page is a tool for diagnosing current problems, not a long-term log archive.
-{{< /c8y-admon-info >}}
-
 ### Downloading the logs {#downloading-logs}
 
 You can download the messages that are shown on the Logs page as a text file named *&lt;tenantId&gt;-logs.log*. The download uses the same filters as the page: only your tenant's Streaming Analytics messages, and only those of the selected model or instance, if any.
@@ -88,3 +86,5 @@ You can download the messages that are shown on the Logs page as a text file nam
 1. Click **Download** in the toolbar.
 2. Optionally select a **Start** and **End** date and time. If no dates are selected, the last 10 minutes of logs for the whole tenant are downloaded.
 3. Click **Download**.
+
+Messages that the microservice log no longer holds cannot be downloaded. See [How far back the logs go](#log-history).

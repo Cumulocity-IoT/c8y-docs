@@ -120,6 +120,18 @@ Editing rule settings only updates the rule editor's current draft. Your changes
 The list of topic filters already handled by other rules excludes draft changes that are different to the deployed state. 
 {{< /c8y-admon-important >}}
 
+### To view the logs of a rule {#view-rule-logs}
+
+From the rule editor:
+
+- Click **More…** in the action bar and select **View logs**.
+
+Alternatively, you can use the application navigator:
+
+- Click Logs in the navigator and select the rule in the Rule drop-down list.
+
+The **Logs** page opens in a new browser tab and shows the log messages of the rule. You can view the logs of a rule for any deployment status. For details, see [Logs and diagnostics](/data-preparation/logs-and-diagnostics/).
+
 ### To duplicate a rule {#duplicate-rule}
 
 Duplicating a rule creates a new, independent rule that starts with the same source configuration, description, smart function code, and test data as an existing rule. Use this to reuse a rule as a starting point for a similar device such as a newer version. You can also use this feature to rename an existing rule by creating a duplicate and then deleting the original rule. 

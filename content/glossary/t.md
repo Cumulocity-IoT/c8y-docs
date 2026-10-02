@@ -18,6 +18,13 @@ Tenants are managed via the [Tenant API](https://cumulocity.com/api/core/#tag/Te
 {{< /c8y-details >}}
 
 
+### Tenant diagnostic archive {#tenant-diagnostic-archive}
+
+A tenant diagnostic archive is a ZIP file of diagnostics information that a user downloads from the Streaming Analytics or Data Preparation application, for example, to send to product support. It only contains data of the user's own [tenant](#tenant), such as its models, smart rules, alarms, and log messages. The archive from the Data Preparation application also contains the [Data Preparation rules](#data-preparation-rule) of the tenant. When the [microservice](#microservice) is shared by several tenants, the archive contains no data of other tenants and no information about the shared microservice as a whole.
+
+See also [Downloading diagnostics and logs](/streaming-analytics/troubleshooting/#diagnostics-download) and [Downloading diagnostics](/data-preparation/logs-and-diagnostics/#download-diagnostics) in the documentation.
+
+
 ### Tenant domain {#tenant-domain}
 
 The tenant domain refers to the domain name used to access a {{< product-c8y-iot >}} [tenant](#tenant), in the format `<tenant-name\>.\<instance-name\>`. It is used for login and API access and is distinct from the tenant’s unique identifier ([tenant ID](#tenant-id)). For example, a tenant named "acme" on the instance cumulocity.com would have the tenant domain "acme.cumulocity.com". [Enterprise tenants](#enterprise-tenant) and their [subtenants](#subtenant) can optionally configure custom domains for access using the platform’s custom domain feature.
@@ -62,6 +69,13 @@ See also [Tenant policies](/enterprise-tenant/managing-tenants/#tenant-policies)
 {{< c8y-details title="Developer details" >}}
 Tenant policies are stored in the inventory and managed through the [Inventory API](https://cumulocity.com/api/core/#tag/Inventory-API) endpoints (`/inventory/managedObjects`). When creating or updating a policy the request body must follow a specific format, for example, must contain the `c8y_TenantPolicy` fragment.
 {{< /c8y-details >}}    
+
+
+### Tenant-scoped log view {#tenant-scoped-log-view}
+
+A tenant-scoped log view is the **Logs** page of the Streaming Analytics or Data Preparation application. It shows the log messages that the application writes for the user's own [tenant](#tenant), without requiring access to the Administration application, and can be narrowed to a single Analytics Builder [model](#model) or [Data Preparation rule](#data-preparation-rule). Messages of other tenants are never shown, even when the [microservice](#microservice) is shared by several tenants.
+
+See also [Viewing logs in the Streaming Analytics application](/streaming-analytics/troubleshooting/#logs-view) and [Logs and diagnostics](/data-preparation/logs-and-diagnostics/) in the documentation.
 
 
 ### Tech Community {#tech-community}
