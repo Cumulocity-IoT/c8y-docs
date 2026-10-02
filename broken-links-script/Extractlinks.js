@@ -18,34 +18,35 @@ const getMarkdownFiles = (dir) => {
 
 const BASE_URL = "https://cumulocity.com/docs/2026";
 
-const shortcodeMapping = {
-  "c8y-current-version": "2026",
-  "c8y-edge-current-version": "2026",
-  "c8y-resources-server-link": "https://download.cumulocity.com/",
-  "c8y-resources-server": "Cumulocity Download Center",
-  "c8y-support-link": "https://cumulocity.com/support",
-  "c8y-support-portal": "Cumulocity Customer Service Desk",
-  "c8y-tech-community-link": "https://community.cumulocity.com/",
-  "c8y-tech-community": "Cumulocity Tech Community",
-  "company-c8y": "Cumulocity",
-  "device-portal": "Partner Devices Ecosystem",
-  "domain-c8y": "cumulocity.com",
-  "email-c8y-info": "info@cumulocity.com",
-  "enterprise-tenant": "Enterprise tenant",
-  "learning-portal": "Cumulocity Learning Portal",
-  "link-apama-webhelp": "https://cumulocity.com/apama/docs/latest",
-  "link-apamadoc-api": "https://cumulocity.com/apama/docs/latest/related/ApamaDoc/",
-  "link-c8y-github": "https://github.com/Cumulocity-IoT/",
-  "link-c8y-training": "https://learning.cumulocity.com/",
-  "link-device-portal": "https://ecosystem.cumulocity.com/devices/?filter_cumulocity_certified=yes",
-  "management-tenant": "Management tenant",
-  "openapi": "Cumulocity OpenAPI Specification",
-  "product-c8y-iot": "Cumulocity",
-  "sensor-app": "Cumulocity Sensor App",
-  "standard-tenant": "Standard tenant",
-  "c8y-support-email": "support@cumulocity.com",
-  "email-c8y-info": "info@cumulocity.com",
+// Shortcodes used inside links are resolved from the theme's own templates,
+// so each branch is checked against exactly the URLs it renders (e.g. a
+// release branch that pins c8y-current-version to "2026"). Only templates that
+// are a single string literal, like {{- "https://..." -}}, can be read this
+// way; a template with logic needs an entry in shortcodeOverrides.
+const SHORTCODES_DIR = "../themes/c8ydocs/layouts/shortcodes";
+
+const shortcodeOverrides = {
+  // {{ .Page.Site.BaseURL | lower }}
+  "link-c8y-doc-baseurl": `${BASE_URL}/`,
 };
+
+const loadShortcodeMapping = () => {
+  const mapping = {};
+  for (const file of fs.readdirSync(SHORTCODES_DIR)) {
+    if (!file.endsWith(".html")) continue;
+    const template = fs.readFileSync(path.join(SHORTCODES_DIR, file), "utf8");
+    const literal = template.match(/^\s*\{\{-?\s*"([^"]*)"\s*-?\}\}\s*$/);
+    if (literal) {
+      mapping[path.basename(file, ".html")] = literal[1];
+    }
+  }
+  return { ...mapping, ...shortcodeOverrides };
+};
+
+const shortcodeMapping = loadShortcodeMapping();
+
+// shortcode -> files whose links use it but it couldn't be resolved
+const unresolvedShortcodes = new Map();
 
 const hasRenderFalse = (fileContent) => {
   try {
@@ -56,10 +57,16 @@ const hasRenderFalse = (fileContent) => {
   }
 };
 
-const resolveHugoShortcode = (link) => {
+const resolveHugoShortcode = (link, relativePath) => {
   return link.replace(/\{\{<\s*(.*?)\s*>\}\}/g, (match, shortcode) => {
-    const resolvedValue = shortcodeMapping[shortcode];
-    return resolvedValue !== undefined && resolvedValue !== null ? resolvedValue : "";
+    if (Object.hasOwn(shortcodeMapping, shortcode)) {
+      return shortcodeMapping[shortcode];
+    }
+    if (!unresolvedShortcodes.has(shortcode)) {
+      unresolvedShortcodes.set(shortcode, new Set());
+    }
+    unresolvedShortcodes.get(shortcode).add(relativePath);
+    return "";
   });
 };
 
@@ -98,7 +105,7 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
     return url;
   }
 
-  const resolvedLink = resolveHugoShortcode(link);
+  const resolvedLink = resolveHugoShortcode(link, relativePath);
   if (/^https?:\/\//i.test(resolvedLink)) {
     return resolvedLink;
   }
@@ -152,4 +159,11 @@ const resolveFullUrl = (link, relativePath, fileContent) => {
 
   fs.writeFileSync("all_links.json", JSON.stringify(result, null, 2));
   console.log("All links and their file paths saved to all_links.json");
+
+  for (const [shortcode, files] of unresolvedShortcodes) {
+    console.warn(
+      `Warning: shortcode "${shortcode}" could not be resolved (its template isn't a plain string; ` +
+      `add it to shortcodeOverrides). Used in: ${Array.from(files).join(", ")}`
+    );
+  }
 })();
