@@ -104,9 +104,7 @@ In the Azure portal, **Enable hierarchical namespace** is on the **Advanced** ta
 
 `--auth-mode login` uses your own identity on the data plane, which is not the same as owning the account: creating an account makes you its administrator, not a reader or writer of its blobs. If the container call fails with `AuthorizationPermissionMismatch`, grant yourself **Storage Blob Data Contributor** on the account and retry after a minute. Grant it rather than falling back to `--auth-mode key`, since an account with shared-key access disabled — a common policy — has no key to fall back on.
 
-<!-- SCREENSHOT: /images/datahub-guide/sli-own-lake-setup-page.png
-     Caption: "The Data Lake setup page under Settings in the Administration application"
-     Blocked: the setup page is not final yet. -->
+![The Data Lake setup page under Settings in the Administration application, at the first step of the AWS setup](/images/datahub-guide/sli-own-lake-setup-page.png)
 
 ### Setting up your AWS account {#own-lake-setting-up-aws}
 
@@ -267,21 +265,15 @@ You can add conditions to either policy — `"Bool": {"aws:SecureTransport": "tr
 
 #### Step 3: Complete the setup in {{< product-c8y-iot >}} {#own-lake-aws-provision}
 
-<!-- SCREENSHOT: /images/datahub-guide/sli-own-lake-aws-values.png
-     Caption: "The setup page showing the base principal ARN, the suggested External ID and the required region"
-     Blocked: the setup page is not final yet. -->
+The setup page under **Settings** > **Data Lake** in the **Administration** application asks for three values, each in the step that uses it:
 
-Open **Settings** > **Data Lake** in the **Administration** application and enter three values:
-
-* **Role ARN** — as retrieved above.
-* **External ID** — the value you put in the trust policy. To be found here: **IAM** > **Roles** > your role > **Trust relationships**.
-* **Bucket** and **prefix** — which together form the base location `s3://<bucket>/<prefix>`. See [Choosing a base location](#own-lake-base-location).
+* **Bucket** and **prefix** — in the steps that create the bucket and grant the role access to your prefix. Together they form the base location `s3://<bucket>/<prefix>`. See [Choosing a base location](#own-lake-base-location).
+* **Role ARN** — as retrieved above, in the **Provision the tenant** step.
+* **External ID** — the value you put in the trust policy, in the same step. To be found here: **IAM** > **Roles** > your role > **Trust relationships**.
 
 The region is not one of them, because the setup page gave it to you in the first place.
 
-<!-- SCREENSHOT: /images/datahub-guide/sli-own-lake-aws-input.png
-     Caption: "Entering the role ARN, External ID, bucket and prefix"
-     Blocked: the setup page is not final yet. -->
+![The Provision the tenant step, with the Role ARN and External ID fields](/images/datahub-guide/sli-own-lake-aws-input.png)
 
 Then start the setup. What happens next is described in [What the setup verifies](#own-lake-verification).
 
@@ -301,9 +293,7 @@ You are not creating an application here: {{< company-c8y >}}'s already exists, 
 
 In the Azure portal, open the consent link shown on the setup page, signed in as an administrator **of the storage Entra directory**. Review the prompt: it names the application and states that no permissions are requested. Make sure you are signed in to the correct directory, then accept.
 
-<!-- SCREENSHOT: /images/datahub-guide/sli-own-lake-azure-consent.png
-     Caption: "The consent step and the Directory (tenant) ID field on the setup page"
-     Blocked: the setup page is not final yet. -->
+![The approval step on the setup page, with the Entra tenant ID field, the Consent button, and the application's display name and client ID](/images/datahub-guide/sli-own-lake-azure-consent.png)
 
 To verify, go to **Microsoft Entra ID** > **Enterprise applications** and search by the application's **display name**, which the setup page shows. If it does not appear, clear the **Application type** filter before concluding anything. Open the entry and confirm that its **Application ID** equals the client ID on the setup page: that is what distinguishes {{< company-c8y >}}'s application from any similarly named one.
 
@@ -425,11 +415,9 @@ Three rules apply on both clouds:
 
 ### Changing the role or the External ID later {#own-lake-rotating-the-grant}
 
-On AWS, the role ARN and the External ID are **not** fixed: you change them yourself on the **Data Lake** settings page, without repeating the onboarding. Do that whenever you rotate the role, delete and re-create it, or rename it.
+On AWS, the role ARN and the External ID are **not** fixed: you change them yourself under **Catalog identity** on the **Data Lake** settings page, without repeating the onboarding. Do that whenever you rotate the role, delete and re-create it, or rename it.
 
-<!-- SCREENSHOT: /images/datahub-guide/sli-own-lake-catalog-identity.png
-     Caption: "Editing the role ARN and External ID after onboarding, with the stored External ID masked"
-     Blocked: the setup page is not final yet. -->
+![The Catalog identity section, with the Role ARN field and the stored External ID masked down to its last characters](/images/datahub-guide/sli-own-lake-catalog-identity.png)
 
 * **Saving re-runs the verification.** The new role is assumed, and a write, a read-back and a delete are exercised under your base location, so a trust policy that no longer admits {{< company-c8y >}} is reported there and then rather than breaking ingestion later.
 * **Rotate the External ID in your trust policy first, then save it here.** The two have to agree: while they do not, every assume-role call fails and Iceberg commits stop. Leaving the field blank keeps the stored value, so you can replace the role alone.
@@ -448,9 +436,9 @@ The setup does not take your word for the grant. It exercises it, end to end, th
 
 If a step fails, the result names which step and which cause, using the same vocabulary on both clouds: the grant refused us, the grant is too narrow, the region is wrong, the container is missing, the encryption key refused, vending failed. The tables below say what to do about each.
 
-<!-- SCREENSHOT: /images/datahub-guide/sli-own-lake-verification-result.png
-     Caption: "The setup result, reporting the grant, the test write and credential vending as verified"
-     Blocked: the setup page is not final yet. -->
+After provisioning, the **Setup status** on the same page lists each provisioning step with an icon. Hover over or focus the icon to see whether the step was successful or failed.
+
+![The setup status after a successful setup, with the tooltip of a provisioning step reading Successful](/images/datahub-guide/sli-own-lake-verification-result.png)
 
 Once the setup has succeeded, your data arrives as described in [Using Streaming Lake Ingestion](#using). Running the setup again with the same values is safe and changes nothing.
 
