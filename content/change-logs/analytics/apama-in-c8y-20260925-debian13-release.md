@@ -1,7 +1,6 @@
 ---
-date: 
-title: >-
-  Cumulocity Streaming Analytics microservices now use Debian 13 and Java 25
+date: '2026-10-01'
+title: Cumulocity Streaming Analytics microservices now use Debian 13 and Java 25
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
@@ -14,6 +13,9 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAM-35403
 version: 27.256.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-01'
 ---
 
 As [previously announced](/change-logs/#apama-in-c8y-20260917-debian13-upgrade), the {{< product-c8y-iot >}} Streaming Analytics microservices have been upgraded to Debian 13 (Trixie) as their base operating system, replacing Debian 12 (Bookworm). This release delivers that change.
