@@ -1,6 +1,6 @@
 ---
 date: ""
-title: add MqttService filter option to audit logs (#13178)
+title: Filter audit logs by MQTT service
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
