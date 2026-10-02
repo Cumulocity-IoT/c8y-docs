@@ -304,7 +304,9 @@ const shortcodeOverrides = {
 };
 ```
 
-`Extractlinks.js` prints a warning for every shortcode used in a link that it could not resolve.
+If a link uses a shortcode that can't be resolved this way, `Extractlinks.js` fails and names the shortcode and the files that use it.
+
+The base URL for internal links is also derived automatically: Hugo's `baseURL` from `config.toml`, plus the value of `c8y-current-version` (empty on `develop`, `2026` on `release/y2026`). This matches how `staging.yml` publishes each branch, so there is nothing to update per release branch.
 
 Without this, extracted URLs may be incomplete or wrong.
 
