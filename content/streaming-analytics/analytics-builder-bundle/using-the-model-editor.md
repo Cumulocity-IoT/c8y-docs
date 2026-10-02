@@ -22,6 +22,12 @@ The overview area at bottom right of the canvas shows the entire model. This is 
 
 The documentation pane on the right allows you to view reference information for the currently selected block. See also [Viewing the documentation for a block](/streaming-analytics/analytics-builder/#viewing-the-documentation-for-a-block).
 
+For a model without template parameters, the toolbar also shows the following:
+
+- The mode of the model, for example, **Mode: Test**. The mode is not shown for models in production mode. You change the mode in the model manager. See [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model).
+- A toggle button showing **Active** or **Inactive**. Use it to activate or deactivate the model without leaving the model editor. See [Activating a model from the model editor](/streaming-analytics/analytics-builder/#activating-a-model-from-the-model-editor).
+- The logs icon <i class="dlt-c8y-icon-logs icon-20"></i>, which shows or hides the log messages of the model below the canvas. See [Viewing the logs of a model](/streaming-analytics/analytics-builder/#viewing-the-logs-of-a-model).
+
 {{< c8y-admon-caution>}}
 Changes are only saved when you click the save icon <i class="dlt-c8y-icon-save icon-20"></i>.
 See also [Saving a model](/streaming-analytics/analytics-builder/#saving-a-model). The editor warns you if you attempt to navigate away from the editor and there are unsaved changes. However, you should always ensure that your changes are saved before disconnecting the browser from the network or suspending a laptop.
@@ -44,8 +50,8 @@ You add and design a model as follows:
     {{< c8y-admon-info>}}
 Only saved models are listed in the model manager. When you add a new model and then leave the model editor without saving the model, it will not be listed in the model manager, and all the edits you made will be lost.
     {{< /c8y-admon-info>}}
-7.  Leave the model editor. This takes you back to the model manager. See also [Leaving the model editor](/streaming-analytics/analytics-builder/#leaving-the-model-editor).
-8.  A newly added model is automatically set to draft mode in the model manager. If you want to test it, simulate it, or make it available in production, see [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model).
+7.  A newly added model is automatically set to production mode and inactive state. To activate it, click the toggle button in the toolbar of the model editor. See [Activating a model from the model editor](/streaming-analytics/analytics-builder/#activating-a-model-from-the-model-editor). If you want to test or simulate it instead, change its mode in the model manager first. See [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model).
+8.  Leave the model editor. This takes you back to the model manager. See also [Leaving the model editor](/streaming-analytics/analytics-builder/#leaving-the-model-editor).
 
 For detailed background information, including restrictions, see [Wires and blocks](/streaming-analytics/analytics-builder/#wires-and-blocks).
 
@@ -83,6 +89,38 @@ It may happen that you and another user are editing the same model at the same t
 In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i>.
 
 The save icon <i class="dlt-c8y-icon-save icon-20"></i> is only enabled when changes have been applied to the model and the model has been given a name.
+
+#### Activating a model from the model editor {#activating-a-model-from-the-model-editor}
+
+You can activate (deploy) and deactivate a model without leaving the model editor. This lets you try out a change, check the result in the logs of the model, and go back to editing, all in one place.
+
+This is only possible for models without template parameters. To activate the instances of a template model, use the instance editor. See [Deploying an instance](/streaming-analytics/analytics-builder/#deploying-an-instance).
+
+The model is activated in the mode that is set for it in the model manager. A model in draft mode cannot be activated, so the toggle button is disabled for such a model. Before you activate a model in simulation mode, define its time range in the model manager. See [Simulation parameters](/streaming-analytics/analytics-builder/#simulation-parameters).
+
+While the model is active, you cannot edit it. The toolbar shows **Editing is disabled**. You can still navigate the canvas, view the block parameters, and view the logs of the model.
+
+##### To activate or deactivate a model from the model editor {#to-activate-or-deactivate-a-model-from-the-model-editor}
+
+- In the toolbar of the model editor, click the toggle button.
+
+When the button shows **Inactive**, clicking it saves any unsaved changes and activates the model. The button then shows **Active**. When the button shows **Active**, clicking it deactivates the model. The button then shows **Inactive** and you can edit the model again.
+
+To activate or deactivate a model, you need ADMIN permission for "CEP management".
+
+#### Viewing the logs of a model {#viewing-the-logs-of-a-model}
+
+You can view the log messages of a model below the canvas while you edit it. This includes the output of the [Logger](/streaming-analytics/block-reference/#logger) and [Smart Function](/streaming-analytics/block-reference/#smart-function) blocks, errors raised while the model is running, and messages about the model starting, stopping, or failing. Messages are also shown for an inactive model, for example, to find out why it failed.
+
+This is only possible for saved models without template parameters. To view the logs of a template model instance, use the **Logs** page of the Streaming Analytics application. See [Viewing logs in the Streaming Analytics application](/streaming-analytics/troubleshooting/#logs-view).
+
+##### To view the logs of a model {#to-view-the-logs-of-a-model}
+
+1.  In the toolbar of the model editor, click the logs icon <i class="dlt-c8y-icon-logs icon-20"></i>. A pane titled **Model logs** opens below the canvas. It shows the recent messages of the model and checks for new messages every 5 seconds.
+2.  To see the messages of all models and smart rules of your tenant, click **View all Analytics Builder logs**. This opens the **Logs** page of the Streaming Analytics application in a new browser tab.
+3.  To close the pane, click **Close logs** or click the logs icon again. The pane only checks for new messages while it is open.
+
+To download the logs of the model, use the **Logs** page. See [Downloading the logs](/streaming-analytics/troubleshooting/#downloading-logs).
 
 #### Leaving the model editor {#leaving-the-model-editor}
 

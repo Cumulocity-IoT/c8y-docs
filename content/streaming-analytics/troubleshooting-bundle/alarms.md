@@ -11,7 +11,7 @@ You can view alarms in the following ways:
 1. In the Cockpit application. See [Cockpit](/cockpit/) for detailed information.
 2. In the Administration application, under **Ecosystem** > **Microservices**. Click the Apama-ctrl microservice and then click **Status**.
    See [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices) for detailed information.
-3. From the Streaming Analytics application. Click the **User** button to display the right drawer and then click one of the links in the **Diagnostics** section to download a ZIP file that contains alarms information under */alarm/alarms_apama-ctrl-object.json*. See [Downloading diagnostics and logs](#diagnostics-download) for detailed information.
+3. From the Streaming Analytics application. Click the **User** button to display the right drawer and then click **Download diagnostics** in the **Diagnostics** section to download a ZIP file that contains alarms information. For a per-tenant microservice, the alarms are under */alarm/alarms_apama-ctrl-object.json*. For a multi-tenant microservice, the ZIP file contains the alarms of your tenant instead. See [Downloading diagnostics and logs](#diagnostics-download) for detailed information.
 
 ### Alarm severities {#alarm-severities}
 
@@ -139,7 +139,7 @@ To diagnose high-memory-consuming models and EPL apps, you can try the following
 
 - Download the automatically generated basic diagnostics ZIP file (refer to the alarm text for its location) and look at *correlator/inspect.json* and *correlator/status.json* for the number of listeners. This number may be large in the case of a listener leak. Note that this ZIP file includes the EPL memory profiler snapshots.
 
-- Download the diagnostics information from the Streaming Analytics application. Click the **User** button to display the right drawer and then click one of the links in the **Diagnostics** section (as described in [Downloading diagnostics and logs](#diagnostics-download)). The EPL memory profiler from the **Basic diagnostics (ZIP)** link in */diagnostics/eplMemoryProfiler.csv* gives the memory consumed by each monitor along with details such as the number of listeners or the number of monitor instances running something like shown in the snippet below. This can help you to understand which monitor is consuming more memory and try to reduce it.
+- Download the diagnostics information from the Streaming Analytics application. Click the **User** button to display the right drawer and then click **Download diagnostics** in the **Diagnostics** section (as described in [Downloading diagnostics and logs](#diagnostics-download)). For a per-tenant microservice, the EPL memory profiler from **Basic diagnostics (ZIP)** in */diagnostics/eplMemoryProfiler.csv* gives the memory consumed by each monitor along with details such as the number of listeners or the number of monitor instances running something like shown in the snippet below. This can help you to understand which monitor is consuming more memory and try to reduce it.
 
     | Monitor | Monitor instances | EPL objects | Listeners | Bytes   | Overhead bytes |
     | ------- | ----------------- | ----------- | --------- | ------- | -------------- |
