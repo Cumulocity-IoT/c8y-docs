@@ -19,7 +19,7 @@ const getMarkdownFiles = (dir) => {
 const BASE_URL = "https://cumulocity.com/docs/2026";
 
 const shortcodeMapping = {
-  "c8y-current-version": "",
+  "c8y-current-version": "2026",
   "c8y-edge-current-version": "2026",
   "c8y-resources-server-link": "https://download.cumulocity.com/",
   "c8y-resources-server": "Cumulocity Download Center",
