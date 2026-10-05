@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 
 title: New Logs page in the Streaming Analytics application
 change_type:
   - value: change-QHu1GdukP
@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAB-5355
-version: ""
+version: 
 ---
 
 The Streaming Analytics application has a new **Logs** page, which shows the log messages of Analytics Builder models, smart rules, and the Streaming Analytics framework for your tenant. You no longer need access to the Administration application to find out why a model fails to activate or does not produce the expected output.

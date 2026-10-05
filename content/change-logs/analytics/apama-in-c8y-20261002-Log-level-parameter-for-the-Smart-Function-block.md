@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 
 title: New Log level parameter for the Smart Function block
 change_type:
   - value: change-2c7RdTdXo4
@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAB-5353
-version: ""
+version: 
 ---
 
 To keep the log of the Apama-ctrl microservice readable, you can now control how much `console` output the [Smart Function](/streaming-analytics/block-reference/#smart-function) block writes to the log. The block, which is in Public Preview, has a new **Log level** parameter with the values `OFF`, `ERROR`, `WARN`, `INFO`, and `DEBUG`.
@@ -20,5 +20,9 @@ To keep the log of the Apama-ctrl microservice readable, you can now control how
 {{< c8y-admon-important >}}
 The default is `WARN`. In existing models, the `console.log`, `console.info`, and `console.debug` output of the block is therefore no longer written to the log. To see the `console.log` and `console.info` output again, set the **Log level** parameter to `INFO`. Uncaught errors are always written.
 {{< /c8y-admon-important >}}
+
+{{< c8y-admon-info >}}
+The **Log level** parameter cannot make the block write more detailed output than the log level of the microservice allows. For example, the microservice log level is set to `INFO` by default, so `console.debug` output is not written, even when the Smart Function block parameter is set to `DEBUG`. To change the log level of the microservice, see [Management requests]({{< link-apama-webhelp >}}/command-line-tools/engine_management/#management-requests) in the Apama documentation.
+{{< /c8y-admon-info >}}
 
 For details, see [Viewing logs in the Streaming Analytics application](/streaming-analytics/troubleshooting/#logs-view).

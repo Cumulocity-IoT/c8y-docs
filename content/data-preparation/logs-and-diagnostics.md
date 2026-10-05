@@ -11,7 +11,7 @@ sector:
 
 When a deployed rule does not do what you expect, for example, it produces wrong output or no output at all without raising an alarm, its log messages are often the quickest way to find out why. The **Logs** page of the Data Preparation application shows the log messages of your rules, including the `console` output of their smart functions. You do not need access to the Administration application to use it.
 
-The Data Preparation application also lets you download a diagnostics archive for your tenant, which is useful when you contact [product support](/additional-resources/contacting-support/).
+The Data Preparation application also lets you download a diagnostics archive for your tenant, for example, to investigate a problem with your rules.
 
 {{< c8y-admon-info >}}
 Errors that a smart function throws while processing a message are also raised as alarms, which include the failing message and the error. Alarms are kept, while the Logs page only shows recent messages. See [Runtime behavior and limits](/data-preparation/smart-functions/#logs).
@@ -27,7 +27,7 @@ The Logs page shows only messages that belong to the Data Preparation applicatio
 
 - Messages about the deployment of your rules, for example, why a rule failed to deploy.
 - Errors thrown by smart functions, and output written with `console.error`. These are always shown.
-- Other `console` output of smart functions (`console.log`, `console.info`, `console.warn`, and `console.debug`). This is only shown while console capture is active for the rule. See [Console capture](#console-capture) for more details.
+- Other `console` output of smart functions (`console.log`, `console.info`, `console.warn`, and `console.debug`). This is only shown while the Logs page is open with the rule selected, or while a background capture is running for it. See [Console capture](#console-capture) for more details.
 - Other messages from the Data Preparation framework for your tenant.
 
 Messages from Analytics Builder models, smart rules, and other parts of the Streaming Analytics application are not shown. These are shown on the **Logs** page of the Streaming Analytics application. See [Viewing logs in the Streaming Analytics application](/streaming-analytics/troubleshooting/#logs-view).
@@ -67,9 +67,9 @@ By default, the Logs page shows all Data Preparation messages for your tenant. U
 
 - Type in the drop-down list to search for a rule by name.
 - Each entry shows the deployment status of the rule: **Deployed**, **Deploying**, **Disabled**, **Deploy failed**, or **Not deployed**. You can select any rule, whatever its status, so that you can see why a rule failed to deploy.
-- Selecting a deployed rule also starts console capture for it. See [Console capture](#console-capture).
+- Selecting a deployed rule also shows all of its `console` output. See [Console capture](#console-capture).
 
-To show all messages again, clear the selection. This also stops console capture.
+To show all messages again, clear the selection. The ordinary `console` output of the rule is then no longer written to the log.
 
 When you select a rule, the URL of the page changes to include the rule. You can bookmark this URL or share it with other users of your tenant to open the page with the same rule already selected. If the rule no longer exists, the page shows a message and lists all messages instead.
 
@@ -78,7 +78,7 @@ When you select a rule, the URL of the page changes to include the rule. You can
 1. Open the rule in the [rule editor](/data-preparation/rule-editor/).
 2. Click **More…** in the action bar and select **View logs**.
 
-The Logs page opens in a new browser tab, with the rule already selected. If the rule is deployed, console capture starts at once, so you can send a device message and watch the rule process it.
+The Logs page opens in a new browser tab, with the rule already selected. If the rule is deployed, all of its `console` output is shown from then on, so you can send a device message and watch the rule process it.
 
 ### Console capture {#console-capture}
 
