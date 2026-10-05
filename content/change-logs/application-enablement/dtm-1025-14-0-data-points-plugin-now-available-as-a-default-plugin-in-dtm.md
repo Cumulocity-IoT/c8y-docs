@@ -14,7 +14,7 @@ build_artifact:
 ticket: "CTM-3251"
 version: "1025.14.0"
 ---
-Previously, the Data points plugin, which is part of DTM plugins
-extention had to be installed manually into the DTM application. Now, It
+Previously, the Data points plugin, which is part of the DTM plugins
+extention had to be installed manually into the DTM application. Now, it
 is made available as a default plugin in DTM, without requiring a
 separate manual installation.
