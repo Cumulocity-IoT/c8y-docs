@@ -1,6 +1,6 @@
 ---
 date: ""
-title: translate remaining data point units and examples (#13194) [GRAFT][release/cd] (#13247)
+title: Data point labels, descriptions and units are now translated consistently
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
