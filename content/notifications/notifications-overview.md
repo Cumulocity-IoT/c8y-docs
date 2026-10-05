@@ -232,14 +232,18 @@ Therefore, to receive notifications informing of new managed object creations, c
 An application can use this to discover new managed objects.
 It can then choose to create subscriptions with "mo" `context` for those managed objects.
 
-Subscriptions with "tenant" `context` can also use the alarms API, the events API, and/or the operations API to forward all alarms, events, and/or operations, respectively, which occur within the tenant, applying filters as desired.
+Subscriptions with "tenant" `context` can also use the measurements API, the alarms API, the events API, and/or the operations API to forward all measurements, alarms, events, and/or operations, respectively, which occur within the tenant, applying filters as desired.
 
-The following summarizes the context and API support.
+<p id="context-api-table">The following table summarizes the context and API support:</p>
 
-| Context  | ManagedObject Create | ManagedObject Update & Delete   | Alarms    | Events    | Measurements  | operations   |
-|----------|----------------------|---------------------------------|-----------|-----------|---------------|--------------|
-| mo       | &cross;              | &check;                         | &check;   | &check;   | &check;       | &check;      |
-| tenant   | &check;              | &cross;                         | &check;   | &check;   | &cross;       | &check;      |
+| Context    | Managed object create | Managed object update & delete   | Alarms    | Events    | Measurements  | Operations   |
+|------------|-----------------------|----------------------------------|-----------|-----------|---------------|--------------|
+| `mo`       | &cross;               | &check;                          | &check;   | &check;   | &check;       | &check;      |
+| `tenant`   | &check;               | &cross;                          | &check;   | &check;   | &check;       | &check;      |
+
+{{< c8y-admon-info >}}
+The `measurements` API must be selected explicitly in the `tenant` context; it is not included by the `*` wildcard API selector.
+{{< /c8y-admon-info >}}
 
 ### Subscription filters {#subscription-filters}
 
@@ -249,9 +253,10 @@ It is a JSON object with `apis` and `typeFilter` fields.
 Filters can provide either or both filter fields.
 
 The `apis` field is a JSON array that specifies which {{< product-c8y-iot >}} API messages to include.
-Use an array containing just the wildcard value, "*", to include messages from all APIs.
+Use an array containing just the wildcard value, "*", to include messages from all supported APIs.
 To include messages from a subset of the APIs, use an array containing any single or multiple selection from
 "alarms", "alarmsWithChildren", "events", "eventsWithChildren", "measurements", "managedobjects" and "operations".
+See the <a href="#context-api-table">table above</a> for details of the API support in each context.
 
 For example, to include messages from all APIs:
 
@@ -318,7 +323,7 @@ To include messages of `type` "temperature" only:
   }
 }
 ```
-## Persistent and non-persistent subscriptions {#persistent-and-non-persistent-subscriptions}
+### Persistent and non-persistent subscriptions {#persistent-and-non-persistent-subscriptions}
 
 A subscription can be persistent or non-persistent, implying that the Messaging Service topic for it is either persistent or non-persistent, respectively.
 These have different qualities which can be useful to satisfy the varying needs of differing use cases.
