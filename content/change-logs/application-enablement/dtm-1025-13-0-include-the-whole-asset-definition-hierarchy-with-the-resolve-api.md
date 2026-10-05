@@ -16,4 +16,4 @@ version: "1025.13.0"
 ---
 The Asset API endpoint `/definitions/assets/resolve` previously returned only the definition information for the provided assets, which required the client to recursively call this endpoint to get the whole hierarchy of asset definitions.
 
-The Asset API now returns the complete hierarchy of asset definitions. This enables users to get all asset  definitions with a single API call, eliminating the need for multiple requests and providing better visibility into available asset definition structures.
+The Asset API now returns the complete hierarchy of asset definitions. This enables users to get all asset definitions with a single API call, eliminating the need for multiple requests and providing better visibility into available asset definition structures.
