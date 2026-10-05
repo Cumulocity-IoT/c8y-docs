@@ -139,7 +139,7 @@ To diagnose high-memory-consuming models and EPL apps, you can try the following
 
 - Download the automatically generated basic diagnostics ZIP file (refer to the alarm text for its location) and look at *correlator/inspect.json* and *correlator/status.json* for the number of listeners. This number may be large in the case of a listener leak. Note that this ZIP file includes the EPL memory profiler snapshots.
 
-- Download the diagnostics information from the Streaming Analytics application. Click the **User** button to display the right drawer and then click **Download diagnostics** in the **Diagnostics** section (as described in [Downloading diagnostics and logs](#diagnostics-download)). For a per-tenant microservice, the EPL memory profiler from **Basic diagnostics (ZIP)** in */diagnostics/eplMemoryProfiler.csv* gives the memory consumed by each monitor along with details such as the number of listeners or the number of monitor instances running something like shown in the snippet below. This can help you to understand which monitor is consuming more memory and try to reduce it.
+- Download the diagnostics information from the Streaming Analytics application. Click the **User** button to display the right drawer and then click **Download diagnostics** in the **Diagnostics** section (as described in [Downloading diagnostics and logs](#diagnostics-download)). For a per-tenant microservice, the EPL memory profiler from the **Basic diagnostics (ZIP)** option in */diagnostics/eplMemoryProfiler.csv* gives the memory consumed by each monitor along with details such as the number of listeners or the number of monitor instances running something like shown in the snippet below. This can help you to understand which monitor is consuming more memory and try to reduce it.
 
     | Monitor | Monitor instances | EPL objects | Listeners | Bytes   | Overhead bytes |
     | ------- | ----------------- | ----------- | --------- | ------- | -------------- |
@@ -147,9 +147,9 @@ To diagnose high-memory-consuming models and EPL apps, you can try the following
     | mon2    | 1                 | 2           | 2         | 696     | 2280           |
     | mon3    | 1                 | 4           | 1         | 840     | 752            |
 
-- When using the **Enhanced diagnostics (ZIP)** link in the Streaming Analytics application, the diagnostics information includes, in addition to the information that you get with the **Basic diagnostics (ZIP)** link, requests that are more resource-intensive and may significantly slow down the correlator. This includes the contents of the queues. So when diagnosing the cause for the first time, it is recommended to use the ZIP file from the **Basic diagnostics (ZIP)** link, unless additional information is required.
+- When selecting the **Enhanced diagnostics (ZIP)** option after clicking **Download diagnostics** in the Streaming Analytics application, the diagnostics information includes, in addition to the information that you get with the **Basic diagnostics (ZIP)** option, requests that are more resource-intensive and may significantly slow down the correlator. This includes the contents of the queues. So when diagnosing the cause for the first time, it is recommended to use the **Basic diagnostics (ZIP)** option, unless additional information is required.
 
-- Also check for memory usage on all the input and output queues available from the **Enhanced diagnostics (ZIP)** link in */diagnostics/toStringQueues.txt*.
+- Also check for memory usage on all the input and output queues available from the **Enhanced diagnostics (ZIP)** option in */diagnostics/toStringQueues.txt*.
 
 If the memory continues to grow, then when it reaches the limit, the correlator will run out of memory and Apama-ctrl will shut down. To prevent the microservice from going down, you must fix this as a priority.
 

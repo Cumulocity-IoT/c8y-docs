@@ -97,7 +97,7 @@ To pass the values from one block to another, you must connect the blocks with w
 1. Click the **Value** output port of the input block and drag the mouse to the **Value** input port of the **Average \(Mean\)** block.
 2. Click the **Average** output port of the **Average \(Mean\)** block and drag the mouse to the **Value** input port of the output block.
 
-#### Step 7: Save the model {#step-7-save-the-model}
+#### Step 7: Save the model {#step-7-save-the-model-and-go-back-to-the-model-manager}
 
 - In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save your newly created model.
 
@@ -105,7 +105,7 @@ To pass the values from one block to another, you must connect the blocks with w
 Only saved models are listed on the **Models** tab of the model manager. When you add a new model and then leave the model editor without saving the model, it will not be listed in the model manager, and all the edits you made will be lost.
 {{< /c8y-admon-info>}}
 
-#### Step 8: Activate the model {#step-8-activate-the-model}
+#### Step 8: Activate the model {#step-8-activate-the-model-in-production-mode}
 
 A new model is automatically set to production mode and inactive state. Now activate your new model. This deploys the model so that the measurements from your device are processed.
 

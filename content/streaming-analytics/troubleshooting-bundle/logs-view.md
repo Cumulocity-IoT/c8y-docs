@@ -84,7 +84,7 @@ You can download the messages that are shown on the Logs page as a text file nam
 #### To download the logs {#to-download-the-logs}
 
 1. Click **Download** in the toolbar.
-2. Optionally select a **Start** and **End** date and time. If no dates are selected, the last 10 minutes of logs for the whole tenant are downloaded.
+2. Optionally select a **Start** and **End** date and time. If no dates are selected, the last 10 minutes of logs are downloaded.
 3. Click **Download**.
 
 Messages that the microservice log no longer holds cannot be downloaded. See [How far back the logs go](#log-history).

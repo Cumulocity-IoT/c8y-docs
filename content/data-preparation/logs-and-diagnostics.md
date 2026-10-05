@@ -147,7 +147,7 @@ You can download the messages that are shown on the Logs page as a text file nam
 #### To download the logs {#to-download-logs}
 
 1. Click **Download** in the toolbar.
-2. Optionally select a **Start** and **End** date and time. If no dates are selected, the last 10 minutes of logs for the whole tenant are downloaded.
+2. Optionally select a **Start** and **End** date and time. If no dates are selected, the last 10 minutes of logs are downloaded.
 3. Click **Download**.
 
 ### Downloading diagnostics {#download-diagnostics}
@@ -165,6 +165,6 @@ The ZIP file is named *dataprep-diagnostics_&lt;timestamp&gt;.zip* and contains 
 
 - *data-preparation/rules.json*: the draft and deployed versions of all rules of your tenant, including their smart functions. Conversations with the AI assistant are not included.
 - *data-preparation/configuration.json*: the Data Preparation tenant options of your tenant without credentials, the versions of the Data Preparation components, and details of your tenant and the application.
-- *apama-ctrl/diagnostic-overview.zip*: the basic diagnostics information of the microservice that runs the rules. See [Downloading diagnostics and logs](/streaming-analytics/troubleshooting/#diagnostics-download).
+- *apama-ctrl/diagnostic-overview.zip*: the basic diagnostics information of the microservice that runs the rules. This is only included if you have READ permission for "CEP management". See [Downloading diagnostics and logs](/streaming-analytics/troubleshooting/#diagnostics-download).
 
 The archive only contains data that belongs to your own tenant.

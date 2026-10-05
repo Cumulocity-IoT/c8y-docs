@@ -124,13 +124,13 @@ The list of topic filters already handled by other rules excludes draft changes 
 
 From the rule editor:
 
-- Click **More…** in the action bar and select **View logs**.
+- Click **More…** in the action bar and select **View logs**. The **Logs** page opens in a new browser tab with the rule already selected.
 
 Alternatively, you can use the application navigator:
 
-- Click Logs in the navigator and select the rule in the Rule drop-down list.
+- Click **Logs** in the navigator and select the rule in the **Rule** drop-down list.
 
-The **Logs** page opens in a new browser tab and shows the log messages of the rule. You can view the logs of a rule for any deployment status. For details, see [Logs and diagnostics](/data-preparation/logs-and-diagnostics/).
+You can view the logs of a rule for any deployment status. For details, see [Logs and diagnostics](/data-preparation/logs-and-diagnostics/).
 
 ### To duplicate a rule {#duplicate-rule}
 
