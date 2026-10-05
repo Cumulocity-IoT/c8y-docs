@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix chart flickering issues.
+title: Fix chart flickering issues
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,19 +14,4 @@ build_artifact:
 ticket: MTM-66998
 version: 1024.19.4
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-66998] Fix chart flickering issues.
-](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13204)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66998]:
-https://cumulocity.atlassian.net/browse/MTM-66998?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+Data explorer or data graph charts were flickering unnecessarily when hovering over different data points. The chart options have been optimized to prevent unnecessary redraws and ensure smooth visual updates. Charts now display data consistently without flickering when you interact with the data points, apply filters, or refresh data, providing a more stable and better viewing experience.
