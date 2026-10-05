@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-09-25'
   - label: jp.cumulocity.com
     date: '2026-09-25'
+  - label: us.cumulocity.com
+    date: '2026-09-28'
+  - label: cumulocity.com
+    date: '2026-09-28'
 ---
 The "About this page" help drawer did not load its content when the `docsBaseUrl` application option was set to `/`. Instead, it showed a loading indicator indefinitely and logged an "Invalid URL" error in the browser console. A `docsBaseUrl` that is relative to the application host is now resolved against that host, so the help content is loaded from the root of the host the application is served from.
 
