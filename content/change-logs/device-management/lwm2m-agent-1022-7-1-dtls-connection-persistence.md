@@ -1,5 +1,5 @@
 ---
-date: '2026-09-25'
+date: 
 title: LWM2M service can now restore DTLS connections after restart
 product_area: Device management & connectivity
 change_type:
