@@ -14,7 +14,7 @@ build_artifact:
 ticket: "CTM-3008"
 version: "1025.14.0"
 ---
-A new Tenant property library plugin is now available to
+A new Administration tenant property library plugin is now available to
 help you manage tenant-specific properties. Once installed, the plugin
 appears under **Administration > Tenants > Tenant properties**, where
 you can add property definitions scoped to the tenant option context.
