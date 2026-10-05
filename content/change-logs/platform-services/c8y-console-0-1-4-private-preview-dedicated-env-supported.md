@@ -1,5 +1,5 @@
 ---
-date: 2026-02-04
+date: 2026-10-05
 title: Console application Private Preview release
 change_type:
   - value: change-pXAlHAWka
