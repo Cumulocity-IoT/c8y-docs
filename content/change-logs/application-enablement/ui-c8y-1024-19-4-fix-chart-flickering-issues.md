@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix chart flickering issues
+title: Fixed chart flickering issues
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
