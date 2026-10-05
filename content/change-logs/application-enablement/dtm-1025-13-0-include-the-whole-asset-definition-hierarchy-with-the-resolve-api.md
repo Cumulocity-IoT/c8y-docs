@@ -1,18 +1,31 @@
 ---
-date: ""
-title: "Include the whole hierarchy of asset definitions in the resolve endpoint of the Asset API"
-product_area: "Application enablement & solutions"
+date: '2026-09-24'
+title: >-
+  Include the whole hierarchy of asset definitions in the resolve endpoint of
+  the Asset API
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-QHu1GdukP"
-      label: "Feature"
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-3243"
-version: "1025.13.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-3243
+version: 1025.13.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-09-24'
+  - label: apj.cumulocity.com
+    date: '2026-09-28'
+  - label: jp.cumulocity.com
+    date: '2026-09-28'
+  - label: us.cumulocity.com
+    date: '2026-09-29'
+  - label: cumulocity.com
+    date: '2026-09-29'
 ---
 The Asset API endpoint `/definitions/assets/resolve` previously returned only the definition information for the provided assets, which required the client to recursively call this endpoint to get the whole hierarchy of asset definitions.
 

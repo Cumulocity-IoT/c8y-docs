@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-10-05'
 title: Fixed chart flickering issues
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,16 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-66998
 version: 1024.19.4
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-05'
+  - label: apj.cumulocity.com
+    date: '2026-10-05'
+  - label: jp.cumulocity.com
+    date: '2026-10-05'
+  - label: us.cumulocity.com
+    date: '2026-10-05'
+  - label: cumulocity.com
+    date: '2026-10-05'
 ---
 Data explorer or data graph charts were flickering unnecessarily when hovering over different data points. The chart options have been optimized to prevent unnecessary redraws and ensure smooth visual updates. Charts now display data consistently without flickering when you interact with the data points, apply filters, or refresh data, providing a more stable and better viewing experience.
