@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-b8TjK2mPz
     label: console
-ticket: MTM-62393
+ticket: MTM-67998
 version: 0.1.38
 ---
 
