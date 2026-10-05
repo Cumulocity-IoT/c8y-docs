@@ -77,6 +77,44 @@ Encodes and decodes OPC UA binary data. Instantiate with a zero-argument constru
 | `encode(value)` | Encodes a value to OPC UA binary. |
 | `encodeDataValue(value)` | Encodes a value as an OPC UA DataValue. |
 
+#### structuredClone {#structured-clone}
+
+Creates a deep copy of a value, following the standard [structuredClone](https://developer.mozilla.org/en-US/docs/Web/API/Window/structuredClone) behavior. Use it when you want to change a value without changing the original, for example to start from shared default settings:
+
+```javascript
+const DEFAULTS = { unit: 'C', thresholds: new Map([['high', 80], ['low', 10]]) };
+
+const settings = structuredClone(DEFAULTS);
+settings.thresholds.set('high', 90); // DEFAULTS still has a high threshold of 80
+```
+
+Unlike `JSON.parse(JSON.stringify(value))`, `structuredClone` keeps `Map`, `Set`, `Date` and typed array values, `undefined` members and `BigInt` values. Objects that are referenced more than once, or that refer to themselves, are copied once and referenced the same way in the copy.
+
+The following values can be copied:
+
+| Value | What is copied |
+|-------|----------------|
+| Primitive values, including `BigInt` | The value itself. |
+| Objects and arrays | Own enumerable properties with string keys, including array holes. Getters are called and their results are copied as plain values. Properties with symbol keys and non-enumerable properties are not copied. |
+| Instances of classes | Copied as plain objects with the instance's own data properties only. The copy has no class, methods, getters or private fields. This also applies to instances of `TextEncoder`, `TextDecoder` and `OPCUACodec`. |
+| `Map`, `Set` | All entries, in order. |
+| `Date` | The date and time. |
+| `RegExp` | The pattern and flags. `lastIndex` is reset to 0. |
+| `ArrayBuffer`, typed arrays such as `Uint8Array`, `DataView` | The contents. Views that share a buffer in the original also share one buffer in the copy. |
+| `Error`, `EvalError`, `RangeError`, `ReferenceError`, `SyntaxError`, `TypeError`, `URIError` | The error type, `message` and `stack`. Other error types, such as `AggregateError` or your own subclasses of `Error`, are copied as `Error`. |
+
+Any other value causes `structuredClone` to throw a `DOMException` named `DataCloneError`, instead of returning an incomplete copy. This includes functions, symbols, `Proxy`, `WeakMap`, `WeakSet`, `WeakRef`, `Promise`, wrapper objects such as `new Number(1)`, `SharedArrayBuffer`, resizable or detached `ArrayBuffer` objects, `arguments` objects, and the `console` and `Base64` globals. A value that contains one of these anywhere inside it is rejected too:
+
+```javascript
+try {
+  structuredClone({ id: 1, format: () => 'text' });
+} catch (e) {
+  console.warn(`${e.name}: ${e.message}`); // DataCloneError: structuredClone: functions cannot be cloned
+}
+```
+
+The `transfer` option is not supported, because smart functions do not run in separate workers. Passing a non-empty `transfer` list throws a `DataCloneError`.
+
 ### Importable libraries {#importable-libraries}
 
 The following libraries are available as explicit imports.
