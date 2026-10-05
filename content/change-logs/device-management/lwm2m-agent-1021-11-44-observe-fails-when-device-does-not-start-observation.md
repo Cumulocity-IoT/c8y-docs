@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed stuck LWM2M observe operations when the device does not start the observation
+title: Fixed stuck LWM2M observe operations
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
