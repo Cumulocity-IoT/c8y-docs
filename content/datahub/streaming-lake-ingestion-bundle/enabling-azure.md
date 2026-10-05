@@ -27,14 +27,14 @@ You can also use an existing storage account that has the following settings.
 2. On the **Advanced** tab, select **Enable hierarchical namespace**. You cannot enable it later.
 3. On the **Advanced** tab, leave **Allow enabling anonymous access on individual containers** cleared.
 4. On the **Networking** tab, leave **Enable public network access from all networks** selected.
-5. On the **Data protection** tab, select **Enable soft delete for blobs** and **Enable soft delete for containers**, and set a retention period for each.
+5. On the **Data protection** tab, select **Enable soft delete for blobs** and **Enable soft delete for containers**, and set a retention period for each. The service level agreement requires soft delete for production use.
 6. Click **Review + create** and then **Create**.
 7. Open the storage account, go to **Data storage** > **Containers**, and create a container with the anonymous access level **Private**.
 
 Enter the names of the storage account and the container on the setup page. Under **Overview** > **Properties**, the storage account shows **Hierarchical namespace: Enabled**.
 
 {{< c8y-admon-important >}}
-The setup does not check hierarchical namespace or soft delete. Without hierarchical namespace, the setup succeeds, but ingestion fails later. Without soft delete, you cannot recover deleted data. The service level agreement requires soft delete for production use.
+The setup does not check hierarchical namespace. Without it, the setup succeeds, but ingestion fails later.
 {{< /c8y-admon-important >}}
 
 {{< c8y-admon-caution >}}
@@ -66,6 +66,7 @@ The two roles need different scopes:
 2. Select **Storage Blob Data Contributor**. Under **Members**, select **User, group, or service principal** and search for the display name of the application. A search by client ID does not find it.
 3. Go to **Access control (IAM)** of the storage account, not of the container, and click **Add role assignment**.
 4. Select **Storage Blob Delegator** and add the application as a member in the same way.
+5. Optional: To let the setup check soft delete, assign the **Reader** role on the storage account in the same way. Reader gives access to the settings of the storage account, not to your data.
 
 On the **Role assignments** tab of the container, search for the display name. The **Scope** column shows **This resource** for **Storage Blob Data Contributor** and the storage account for **Storage Blob Delegator**. If the Delegator shows **This resource**, it is assigned to the container. Remove it and assign it to the storage account.
 
@@ -75,7 +76,7 @@ On the **Role assignments** tab of the container, search for the display name. T
 2. In the **Review and provision** step, check the base location `abfss://<container>@<account>.dfs.core.windows.net/<path>`.
 3. Select **These values are correct** and click **Save**.
 
-{{< company-c8y >}} creates the Iceberg catalog of your tenant and tests a write and a delegation key request. When all checks pass, the **Setup status** shows "Provisioned", and your data arrives as described in [Using Streaming Lake Ingestion](#using).
+{{< company-c8y >}} creates the Iceberg catalog of your tenant and tests a write and a delegation key request. When all checks pass, the **Setup status** shows "Provisioned", and your data arrives as described in [Using Streaming Lake Ingestion](#using). If you assigned **Reader**, the last check confirms that soft delete is on. If it is off, the setup still completes, but the page shows a warning.
 
 {{< product-c8y-iot >}} stores your tables under `<base location>/<tenant-id>/`. Several of your tenants can therefore share one path. You cannot change the base location, the storage account, or the Entra directory after the setup. To change them, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
 
@@ -91,13 +92,14 @@ If a check fails, the setup page shows the reason. If the catalog was already cr
 |The storage cannot be reached.|Check that **Storage Blob Data Contributor** is assigned to the container, and that the storage account allows public network access.|
 |The directory is unknown, or authentication fails.|The Entra tenant ID belongs to another directory. Enter the ID of the directory that the subscription of the storage account belongs to.|
 |The base location overlaps the location of another tenant.|Choose a path that neither contains nor is contained in the other location. Sharing the same path is allowed.|
+|The page warns that your storage cannot recover overwritten or deleted files.|Soft delete is off for blobs or for containers. Enable both, then click **Retry provisioning**.|
 |The setup fails right after you assigned the roles.|Role assignments take a few minutes to become effective. Wait and try again.|
 
 If the cause is not listed, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/) with the reason that the setup page shows.
 
 ### Adding more tenants {#adding-more-tenants-on-azure}
 
-You approve the application once per Entra directory. For each additional tenant, assign **Storage Blob Data Contributor** on its container and run the setup. **Storage Blob Delegator** is needed only once per storage account.
+You approve the application once per Entra directory. For each additional tenant, assign **Storage Blob Data Contributor** on its container and run the setup. **Storage Blob Delegator**, and **Reader** if you use it, are needed only once per storage account.
 
 ### Removing access {#removing-access-on-azure}
 

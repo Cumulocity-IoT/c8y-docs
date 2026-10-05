@@ -66,9 +66,9 @@ The role name must begin with `c8y-streaming-lake-ingestion-`. {{< company-c8y >
      "Version": "2012-10-17",
      "Statement": [
        {
-         "Sid": "LocateBucket",
+         "Sid": "ReadBucketSettings",
          "Effect": "Allow",
-         "Action": ["s3:GetBucketLocation"],
+         "Action": ["s3:GetBucketLocation", "s3:GetBucketVersioning"],
          "Resource": "arn:aws:s3:::<bucket>"
        },
        {
@@ -91,7 +91,7 @@ The role name must begin with `c8y-streaming-lake-ingestion-`. {{< company-c8y >
 3. Click **Next**, enter "c8y-streaming-lake-ingestion" as the policy name, and click **Create policy**.
 4. On the setup page, enter the prefix. Leave it empty to write to the root of the bucket.
 
-The **Permissions** tab of the role lists the inline policy. The role can now read and write under your prefix and nothing else in the bucket. It needs `s3:DeleteObject` because Iceberg table maintenance replaces and removes files.
+The **Permissions** tab of the role lists the inline policy. The role can now read and write under your prefix and nothing else in the bucket. It needs `s3:DeleteObject` because Iceberg table maintenance replaces and removes files. It can also read whether versioning is on, so that the setup can warn you if it is off.
 
 ### To provision the tenant {#to-provision-the-tenant-on-aws}
 
@@ -102,7 +102,7 @@ The **Permissions** tab of the role lists the inline policy. The role can now re
 
 ![The Provision the tenant step, with the Role ARN and External ID fields](/images/datahub-guide/sli-own-lake-aws-input.png)
 
-{{< company-c8y >}} assumes your role, tests a write, a read, and a delete under the base location, and creates the Iceberg catalog of your tenant. When all checks pass, the **Setup status** shows "Provisioned", and your data arrives as described in [Using Streaming Lake Ingestion](#using).
+{{< company-c8y >}} assumes your role, tests a write, a read, and a delete under the base location, and creates the Iceberg catalog of your tenant. When all checks pass, the **Setup status** shows "Provisioned", and your data arrives as described in [Using Streaming Lake Ingestion](#using). The last check confirms that bucket versioning is on. If it is off, the setup still completes, but the page shows a warning.
 
 ![The setup status after a successful setup, with the tooltip of a provisioning step reading Successful](/images/datahub-guide/sli-own-lake-verification-result.png)
 
@@ -125,6 +125,7 @@ If a check fails, the setup page shows the reason. If the catalog was already cr
 |The bucket is in a different region, or cannot be found.|Create a bucket in the region that the setup page shows. You cannot move a bucket.|
 |Access to the prefix is denied.|Check that the prefix in the permissions policy is the same as the one in the base location.|
 |The base location overlaps the location of another tenant.|Choose a prefix that neither contains nor is contained in the other location. Sharing the same prefix is allowed.|
+|The page warns that your storage cannot recover overwritten or deleted files.|Bucket versioning is off. Enable it, then click **Save** in the **Catalog identity** section.|
 |The setup fails right after you changed the role.|IAM changes take up to a minute to become effective. Wait and try again.|
 
 If the cause is not listed, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/) with the reason that the setup page shows.
