@@ -4,12 +4,12 @@ title: Using Streaming Lake Ingestion
 layout: redirect
 ---
 
-Streaming Lake Ingestion is an optional service in {{< product-c8y-iot >}}. To subscribe to the service, contact the [{{< company-c8y >}} support](/additional-resources/contacting-support/). After subscription,
+Streaming Lake Ingestion is an optional service in {{< product-c8y-iot >}}. To subscribe to the service, contact the [{{< company-c8y >}} support](/additional-resources/contacting-support/). After subscription and the one-time setup of your object storage,
 
 * Your current device and asset inventory is downloaded from the operational store into the lake.
 * All new incoming data is stored in the lake.
 
-The data is written into object storage of your own; see [Using your own data lake](#own-data-lake) for the one-time setup.
+For the setup, see [Enabling Streaming Lake Ingestion on AWS](#enabling-aws) or [Enabling Streaming Lake Ingestion on Microsoft Azure](#enabling-azure).
 
 {{< c8y-admon-info >}}
 The download may take a while to complete. For more information, see [Monitoring the data flow](#monitoring).
@@ -88,7 +88,7 @@ To connect to the {{< product-c8y-iot >}} Iceberg catalog directly — for examp
 **Prerequisites**
 
 * Your tenant must be subscribed to Streaming Lake Ingestion.
-* Your {{< product-c8y-iot >}} user must have the ROLE_OFFLOADING_ADMIN or the ROLE_TENANT_ADMIN permission. The **OFFLOADING_ADMINISTRATOR** global role carries ROLE_OFFLOADING_ADMIN: assign it to a user in the Administration application under **Accounts** > **Roles**.
+* Your {{< product-c8y-iot >}} user must have the ROLE_OFFLOADING_ADMIN permission. The **OFFLOADING_ADMINISTRATOR** global role carries ROLE_OFFLOADING_ADMIN: assign it to a user in the Administration application under **Accounts** > **Roles**.
 * Principal names must be strictly alphanumeric — letters and digits only, no dashes or underscores (for example, `spark1` or `dremioqa`).
 
 **Creating a principal**
@@ -555,8 +555,8 @@ This results in the following data in the data lake:
 **Table: cdc_operation.operation**
 
 | <span style="display: inline-block; width: 160px;">eventType</span> | <span style="display: inline-block; width: 210px;">creationTime</span> | <span style="display: inline-block; width: 80px;">deviceId</span> | <span style="display: inline-block; width: 80px;">agentId</span> | <span style="display: inline-block; width: 80px;">status</span> | <span style="display: inline-block; width: 100px;">description</span> | <span style="display: inline-block; width: 60px;">id</span> | <span style="display: inline-block; width: 210px;">lastUpdated</span> | <span style="display: inline-block; width: 130px;">fragments</span> |
-| ------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| OPERATION_CREATE                                                    | 2025-08-21T13:42:39.678Z                                               | 47635                                                             | 47635                                                            | PENDING                                                          | null                                                                  | 12345                                                       | 2025-08-21T13:42:39.678Z                                              | \[c8y_Restart\]                                                     |
+| ------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| OPERATION_CREATE                                                    | 2025-08-21T13:42:39.678Z                                               | 47635                                                             | 47635                                                            | PENDING                                                         | null                                                                  | 12345                                                       | 2025-08-21T13:42:39.678Z                                              | \[c8y_Restart\]                                                     |
 
 The columns represent the [properties of a {{< product-c8y-iot >}} operation](https://cumulocity.com/api/core/#operation/getOperationCollectionResource). If you do not provide an optional property, the service stores it as a SQL "null" value.
 
@@ -723,7 +723,7 @@ Corresponding to the table, a view is created automatically as shown below. Note
 **View: view_measurement.c8y_Battery**
 
 | <span style="display: inline-block; width: 50px;">id</span> | <span style="display: inline-block; width: 60px;">source</span> | <span style="display: inline-block; width: 200px;">eventType</span> | <span style="display: inline-block; width: 210px;">time</span> | <span style="display: inline-block; width: 200px;">type</span> | <span style="display: inline-block; width: 130px;">voltage\\value</span> | <span style="display: inline-block; width: 110px;">voltage\\unit</span> | <span style="display: inline-block; width: 30px;">...</span> | <span style="display: inline-block; width: 160px;">temperature\\value</span> | <span style="display: inline-block; width: 160px;">temperature\\unit</span> |
-| ----------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| ----------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | 12345                                                       | 47635                                                           | MEASUREMENT_CREATE                                                  | 2026-02-19T13:09:39.678Z                                       | c8y_BatteryMeasurement                                         | 12.8                                                                     | V                                                                       | ...                                                          | 22.5                                                                         | C                                                                           |
 
 This makes it possible to operate directly on nested fields and, for example, do analytics for measurement values in BI tools.

@@ -6,7 +6,7 @@ layout: redirect
 
 ### How can I configure Streaming Lake Ingestion? {#configure-streaming-lake-ingestion}
 
-Streaming Lake Ingestion stores all incoming realtime data into your lake and has no configuration options for *what* it offloads or *how* the data is shaped. The one thing you can configure is *where* it writes: object storage of your own, set up once as described in [Using your own data lake](#own-data-lake).
+Streaming Lake Ingestion stores all incoming realtime data into your lake. It has no configuration options beyond a one-time setup that points it to a folder in your object storage. For details, see [Enabling Streaming Lake Ingestion on AWS](#enabling-aws) or [Enabling Streaming Lake Ingestion on Microsoft Azure](#enabling-azure).
 
 Depending on your use case, you can use a combination of options outside of Streaming Lake Ingestion to influence how data appears in your lake:
 
