@@ -22,7 +22,7 @@ The default is `WARN`. In existing models, the `console.log`, `console.info`, an
 {{< /c8y-admon-important >}}
 
 {{< c8y-admon-info >}}
-The **Log level** parameter cannot make the block write more detailed output than the log level of the microservice allows. For example, the microservice log level is set to `INFO` by default, so `console.debug` output is not written, even when the Smart Function block parameter is set to `DEBUG`. To change the log level of the microservice, see [Management requests]({{< link-apama-webhelp >}}/command-line-tools/engine_management/#management-requests) in the Apama documentation.
+The **Log level** parameter cannot make the block write more detailed output than the log level of the correlator allows. In {{< product-c8y-iot >}}, the microservice log level is `INFO`, so `console.debug` output is not written, even when the parameter is set to `DEBUG`. `DEBUG` is intended for testing models locally with the [Analytics Builder Block SDK](https://cumulocity-iot.github.io/apama-analytics-builder-block-sdk/), where you can set the correlator log level yourself.
 {{< /c8y-admon-info >}}
 
 For details, see [Viewing logs in the Streaming Analytics application](/streaming-analytics/troubleshooting/#logs-view).

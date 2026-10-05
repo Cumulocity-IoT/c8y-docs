@@ -29,7 +29,7 @@ Each log entry is shown on one line with the following structure:
 ```
 
 - `<timestamp>` is the date and time at which the message was written.
-- `<level>` is the log level of the message: `FORCE`, `CRIT`, `FATAL`, `ERROR`, `WARN`, or `INFO`. `DEBUG` and `TRACE` messages are only shown if the log level of the microservice has been raised (see [Management requests]({{< link-apama-webhelp >}}/command-line-tools/engine_management/#management-requests) in the Apama documentation).
+- `<level>` is the log level of the message: for example `INFO`, `WARN`, or `ERROR`.
 - `<origin>` shows where the message comes from:
   - `model=<id>` for a message from an Analytics Builder model, where `<id>` is the ID of the model. For a template model instance, it is the ID of the instance. You can find the ID of a model in the URL of the model editor.
   - `streaminganalytics` for all other messages, for example, from smart rules or the Streaming Analytics framework.
@@ -46,7 +46,7 @@ For example:
 Entries are listed oldest first. A download contains the entries in the same format and order. See [Downloading the logs](#downloading-logs).
 
 {{< c8y-admon-info >}}
-The **Log level** parameter of the Smart Function block sets which `console` output is written: the default `WARN` writes only `console.warn` and `console.error`, and `INFO` adds `console.log` and `console.info`. `DEBUG` adds `console.debug`, but only if the log level of the microservice has also been raised from its default of `INFO` (see [Management requests]({{< link-apama-webhelp >}}/command-line-tools/engine_management/#management-requests) in the Apama documentation).
+The **Log level** parameter of the Smart Function block sets which `console` output is written: the default `WARN` writes only `console.warn` and `console.error`, and `INFO` adds `console.log` and `console.info`. Note that `DEBUG` requires the correlator log level to also be set to `DEBUG` or higher to output `console.debug` logs.
 {{< /c8y-admon-info >}}
 
 To view the logs, you need READ permission for "CEP management". See [Managing permissions and roles](/standard-tenant/managing-permissions/) for more information.
