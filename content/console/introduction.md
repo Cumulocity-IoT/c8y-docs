@@ -10,18 +10,17 @@ The contracting and pricing model of {{< company-c8y >}} is referred to as **Com
 
 Given that the spend amount is drawn down by usage each month, it is important for customers to have transparency with their usage and consumption details. The Console application is a new application within {{< product-c8y-iot >}} where customers on the CTC model can view their usage and consumption.
 
-{{< c8y-admon-preview >}}
-The Console application is in Private Preview, that is, it is not enabled by default and may be subject to change in the future. This application is subscribed to your tenant if you are on the new CTC model. If you are unable to access this application, please contact [product support](/additional-resources/contacting-support/) to request the application subscription for your tenant.
-
-At this time, the Console application is not supported on Dedicated environments. This will be enabled soon.
-{{< /c8y-admon-preview >}}
-
 {{< c8y-admon-req >}}
-To use the Console application, you need:
-* The Console application and stratos-client microservice subscribed to your tenant.
-* READ permission for the permission type "Console".
+The Console application is available exclusively to customers on the **Commit-to-Consume** (CTC) contract model. 
+
+To access and use the Console application, you must have:
+* The **Console** web application and **stratos-client** microservice subscribed to your tenant.
+* **READ** permission for the **Console** permission type assigned to your user account.
 {{< /c8y-admon-req >}}
 
+{{< c8y-admon-preview >}}
+The Console application is in Private Preview. It is not enabled by default and may be subject to change in the future. This application is subscribed to your tenant if you are on the CTC model. If you are unable to access this application, contact [product support](/additional-resources/contacting-support/) to request the subscription for your tenant.
+{{< /c8y-admon-preview >}}
 
 ### Glossary {#glossary}
 This glossary provides definitions for key terms and concepts used throughout this documentation.

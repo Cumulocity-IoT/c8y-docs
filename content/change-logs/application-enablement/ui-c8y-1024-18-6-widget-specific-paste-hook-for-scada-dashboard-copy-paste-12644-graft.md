@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-09-25'
   - label: jp.cumulocity.com
     date: '2026-09-25'
+  - label: us.cumulocity.com
+    date: '2026-09-28'
+  - label: cumulocity.com
+    date: '2026-09-28'
 ---
 When a dashboard containing the enhanced ["SCADA" widget](/cockpit/widgets-collection/#scada) was copied and pasted onto another device or asset, the asset references in the widget's placeholder mappings still pointed to the original object, so the pasted widget kept displaying data from the source device. These references are now remapped to the target device, and the copied dashboard shows the correct data.
 
