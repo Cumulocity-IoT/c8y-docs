@@ -1,6 +1,6 @@
 ---
 date: ""
-title: stop a layout change crashing the dashboard (#13117) [GRAFT][release/cd] (#13222)
+title: Prevent dashboard crashes when changing layout
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
