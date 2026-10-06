@@ -18,4 +18,4 @@ A bootstrap or server PSK ID must be unique across all tenants, so a PSK ID that
 
 Now, saving the **Connectivity** settings with a mode other than **PSK** (**Disabled**, **Unsecured** or **X.509**) removes the stored PSK ID and key for that connection, for bootstrap and server authentication alike. The freed PSK ID can be used by another device immediately. Before you save such a change, the **Connectivity** tab under **LWM2M Configuration** shows a warning that the pre-shared key is deleted permanently and must be entered again to use **PSK** later.
 
-Existing devices are not changed until their connectivity settings are saved again. For details, see [LWM2M device details](/device-integration/lwm2m/#lwm2m-device-details).
+Existing devices are not changed until their connectivity settings are saved again. For details, see [LWM2M device details](/device-integration/lwm2m/#device-details).
