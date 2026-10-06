@@ -1,6 +1,6 @@
 ---
 date: ""
-title: only show the alarm severity filter when an alarm is active (#13115) [GRAFT][release/cd] (#13185)
+title: Alarm severity filter only displays when an alarm is active
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
