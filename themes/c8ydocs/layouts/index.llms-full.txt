@@ -1,6 +1,9 @@
+{{- $release := site.Data.date_settings.version | default "Latest" -}}
 # Cumulocity documentation — full corpus
 
 > The complete Cumulocity IoT platform documentation, concatenated as plain text for LLM ingestion. Ordered by topic; see llms.txt for the navigable index.
+
+Release: {{ $release }}
 
 {{- $sectors := .Site.GetPage "/sector" }}
 {{- $seen := newScratch }}
@@ -13,13 +16,12 @@
     {{- if $isCard }}{{ continue }}{{ end }}
     {{- if $seen.Get .Permalink }}{{ continue }}{{ end }}
     {{- $seen.Set .Permalink true }}
-    {{- $title := .Title }}
-    {{- if and (eq (lower $title) "introduction") .Section }}{{ $title = printf "%s — %s" (partial "section-title.txt" .Section) $title }}{{ end }}
 
-# {{ $title }}
-
-Source: {{ .Permalink }}
-
-{{ .RenderShortcodes }}
+{{ partial "llms-page.txt" . }}
   {{- end }}
+{{- end }}
+{{- /* The glossary is a section whose letter pages are not rendered on their own, so the loop above skips it. */}}
+{{- with site.GetPage "/glossary" }}
+
+{{ partial "llms-page.txt" . }}
 {{- end }}
