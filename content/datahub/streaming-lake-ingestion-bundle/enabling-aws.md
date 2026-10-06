@@ -12,7 +12,8 @@ You perform the setup in the Administration application under **Settings** > **D
 
 {{< c8y-admon-req >}}
 * Your {{< product-c8y-iot >}} user has the ROLE_OFFLOADING_ADMIN permission. The **OFFLOADING_ADMINISTRATOR** global role carries it. Assign it to a user in the Administration application under **Accounts** > **Roles**.
-* In AWS, you have permission to create an S3 bucket, an IAM role, and an inline policy in the account that holds the bucket.
+* In AWS, you have permission to create an S3 bucket.
+* In the same AWS account, you have permission to create an IAM role and attach an inline policy to it (`iam:CreateRole` and `iam:PutRolePolicy`).
 {{< /c8y-admon-req >}}
 
 The bucket must meet the following requirements:
