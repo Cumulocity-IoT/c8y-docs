@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-67837
 version: 1024.19.9
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-67837] stop the widgets of one dashboard being
-saved onto another
-(#13118)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13118)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67837]:
-https://cumulocity.atlassian.net/browse/MTM-67837?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+Fixed an issue where widget changes made on one dashboard could be incorrectly saved to another. Changes now apply only to the dashboard you're currently editing.
