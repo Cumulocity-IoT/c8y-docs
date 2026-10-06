@@ -1,6 +1,6 @@
 ---
 date: ""
-title: stop the widgets of one dashboard being saved onto another (#13118) [GRAFT][release/cd] (#13223)
+title: Prevent dashboard widgets from being saved to another dashboard
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
