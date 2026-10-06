@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-67300
 version: 1024.19.3
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-67300] let the device status widget fill its
-dashboard card
-(#13106)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13106)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67300]:
-https://cumulocity.atlassian.net/browse/MTM-67300?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+The device status widget now fills its entire dashboard card instead of leaving unused white space, applied automatically to all existing dashboards with no configuration needed.
