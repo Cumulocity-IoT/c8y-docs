@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAB-5359
-version: 
+version: 27.244.0
 ---
 
 You can now activate and deactivate an Analytics Builder model without leaving the model editor, so that you can try out a change, check its log messages, and go back to editing in one place.

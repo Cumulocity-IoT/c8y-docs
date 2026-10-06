@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAB-5353
-version: 
+version: 27.228.0
 ---
 
 To keep the log of the Apama-ctrl microservice readable, you can now control how much `console` output the [Smart Function](/streaming-analytics/block-reference/#smart-function) block writes to the log. The block, which is in Public Preview, has a new **Log level** parameter with the values `OFF`, `ERROR`, `WARN`, `INFO`, and `DEBUG`.
