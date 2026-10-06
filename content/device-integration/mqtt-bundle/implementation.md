@@ -146,7 +146,7 @@ The {{< product-c8y-iot >}} implementation supports all 3 levels of MQTT QoS:
     - The client just sends the message once (fire and forget).
     - No reaction from the server.
 * QoS 1: At least once
-    - The client repeats the message until it receives a server acknowledgement.
+    - The client repeats the message until it receives a server acknowledgment.
 * QoS 2: Exactly once
     - The client sends a message.
     - The server acknowledges (holds the message).

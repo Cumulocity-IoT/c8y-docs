@@ -40,8 +40,8 @@ The desired QoS level is specified in the MQTT `PUBLISH` packet when a device se
 
 | Level                 | Supported | Description   |
 |-----------------------|-----------|---------------|
-| QoS 0 (at most once)  | Yes       | The service does not acknowledge messages sent by the device, and there is no guarantee that messages will be delivered.<br>For subscriptions, the service does not expect any acknowledgement from the device and will not send any message more than once. |
-| QoS 1 (at least once) | Yes       | The service will acknowledge messages sent by the device, and the device may re-send a message if no acknowledgement is received.<br>Acknowledged messages are guaranteed to be delivered at least once to Messaging Service clients.<br>For subscriptions, the device must acknowledge messages sent to it by the service, and the service may send the same message more than once.<sup>(1)</sup> |
+| QoS 0 (at most once)  | Yes       | The service does not acknowledge messages sent by the device, and there is no guarantee that messages will be delivered.<br>For subscriptions, the service does not expect any acknowledgment from the device and will not send any message more than once. |
+| QoS 1 (at least once) | Yes       | The service will acknowledge messages sent by the device, and the device may re-send a message if no acknowledgment is received.<br>Acknowledged messages are guaranteed to be delivered at least once to Messaging Service clients.<br>For subscriptions, the device must acknowledge messages sent to it by the service, and the service may send the same message more than once.<sup>(1)</sup> |
 | QoS 2 (exactly once)  | No        | Not supported |
 
 Notes:
@@ -173,7 +173,7 @@ See the [Service Quotas](/service-terms/quotas#mqtt-service) section for details
 Certain topics are reserved for devices using the Core MQTT protcols.
 See [Core MQTT topics](#core-mqtt-topics) for the complete list.
 There is no overlap between the Core MQTT and generic device topic spaces, and all other topics are available for use by "generic" MQTT devices.
-Generic devices should avoid using any topic name starting with the Core MQTT prefixes listed below, even though some topics under those prefixes are not used by Core MQTT.
+Generic devices should avoid using any topic name treated by the MQTT Service as a Core MQTT topic, even though some of these topics are not currently used by Core MQTT.
 This will help to avoid situations where it is not obvious how a given topic should be handled, which may be difficult to debug.
 
 ### Payloads {#mqtt-payloads}
@@ -235,16 +235,17 @@ However, tenant users will still be aware that devices are publishing too-large 
 
 The table below describes the alarms that will be raised for problems related to device connections:
 
-| Alarm type                                          | Description                                                                                |
-|-----------------------------------------------------|--------------------------------------------------------------------------------------------|
-| `c8y_MqttService_MaximumPacketSize_Connect`         | A device sent a `CONNECT` packet larger than the allowed maximum size.                     |
-| `c8y_MqttService_MaximumPacketSize_Publish`         | A device sent a `PUBLISH` packet larger than the allowed maximum size.                     |
-| `c8y_MqttService_MaximumPacketSize_Subscribe`       | A device sent a `SUBSCRIBE` packet larger than the allowed maximum size.                   |
-| `c8y_MqttService_MaximumPacketSize_Unsubscribe`     | A device sent an `UNSUBSCRIBE` packet larger than the allowed maximum size.                |
-| `c8y_MqttService_TenantConnectionsLimitExceeded`    | The number of connected devices has exceeded the allowed maximum.                          |
-| `c8y_MqttService_TenantConnectionRateLimitExceeded` | The number of device connection attempts per second has exceeded the allowed maximum.      |
-| `c8y_MqttService_IncomingPublishRateLimitExceeded`  | The number of incoming (from device) messages per second has exceeded the allowed maximum. |
-| `c8y_MqttService_OutgoingPublishRateLimitExceeded`  | The number of outgoing (to device) messages per second has exceeded the allowed maximum.   |
+| Alarm type                                          | Description                                                                                                                                               |
+|-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `c8y_MqttService_MaximumPacketSize_Connect`         | A device sent a `CONNECT` packet larger than the allowed maximum size.                                                                                    |
+| `c8y_MqttService_MaximumPacketSize_Publish`         | A device sent a `PUBLISH` packet larger than the allowed maximum size.                                                                                    |
+| `c8y_MqttService_MaximumPacketSize_Subscribe`       | A device sent a `SUBSCRIBE` packet larger than the allowed maximum size.                                                                                  |
+| `c8y_MqttService_MaximumPacketSize_Unsubscribe`     | A device sent an `UNSUBSCRIBE` packet larger than the allowed maximum size.                                                                               |
+| `c8y_MqttService_TenantConnectionsLimitExceeded`    | The number of connected devices has exceeded the allowed maximum.                                                                                         |
+| `c8y_MqttService_TenantConnectionRateLimitExceeded` | The number of device connection attempts per second has exceeded the allowed maximum.                                                                     |
+| `c8y_MqttService_IncomingPublishRateLimitExceeded`  | The number of incoming (from device) messages per second has exceeded the allowed maximum.                                                                |
+| `c8y_MqttService_OutgoingPublishRateLimitExceeded`  | The number of outgoing (to device) messages per second has exceeded the allowed maximum.                                                                  |
+| `c8y_MqttService_SubscriptionNotAllowed`            | A device subscribed to a topic it is not allowed to receive messages on, see [Subscriptions to not allowed topics](#core-mqtt-not-allowed-subscriptions). |
 
 ### Core MQTT device support {#core-mqtt-support}
 
@@ -272,19 +273,17 @@ In particular:
 
 #### Core MQTT topics {#core-mqtt-topics}
 
-The Core MQTT protocols use a specific set of topics defined in the [MQTT quick reference](/smartrest/quick-reference/#topic-format).
-All message publication and subscription on these topics is assumed to be for Core MQTT devices and will be routed to and from the {{< product-c8y-iot >}} core.
+The Core MQTT protocols use a specific set of topic names and topic name prefixes.
+The MQTT Service assumes that all publication and subscription activity on these topics is for Core MQTT devices and routes messages to and from the {{< product-c8y-iot >}} core.
+A device may use both Core MQTT and generic topics, but messages on a given topic will always be routed to _either_ the {{<product-c8y-iot >}} core _or_ to a generic messaging service client, never to both.
 
-* `s/`
-* `t/`
-* `q/`
-* `c/`
-* `alarm/alarms/`
-* `event/events/`
-* `measurement/measurements/`
-* `inventory/managedObjects/`
-* `error`
-* `devicecontrol/notifications`
+The following topic names are handled as Core MQTT topics:
+
+1. The SmartREST topics documented in the [MQTT quick reference](/smartrest/quick-reference/#topic-format). 
+2. The JSON via MQTT topics documented in [JSON via MQTT](/smartrest/json-via-mqtt/#topic-structure). These are matched as _prefixes_ so any topic name _starting with_ a JSON via MQTT topic name is considered to be a Core MQTT topic. For backwards compatibility, these topic names are also accepted with a leading slash (`/`) character.
+3. The special topics `error` and `devicecontrol/notifications`. These are matched _exactly_, so names such as `errorTopic` or `/error` are _not_ considered to be Core MQTT topics.
+
+We strongly recommend that generic MQTT devices avoid using any topic names that could be confused with Core MQTT topics.
 
 #### Connect-time behaviour {#core-mqtt-connections}
 
@@ -315,6 +314,16 @@ This means that a device will not be automatically disconnected even if it:
 
 In these cases, the device will remain connected, but invalid messages will not be processed and no messages will be received from invalid topics.
 A device can subscribe to the `s/e` topic to monitor any error messages sent by the Core MQTT implementation in these cases.
+
+##### Subscriptions to not allowed topics {#core-mqtt-not-allowed-subscriptions}
+
+Core MQTT rejects a subscription when the device is not allowed to receive messages on that topic, for example a subscription to the operation topics by a device that is not an agent.
+The MQTT Service accepts the subscription instead, but the device receives nothing on those topics.
+
+To simplify onboarding and debugging, such an idle subscription is reported in two places:
+
+* An error message is sent on the `s/e` topic, for example `41,,Subscription to topic 's/ds' is not allowed`.
+* A `c8y_MqttService_SubscriptionNotAllowed` alarm is created for the device, or for the MQTT Service device of the tenant if the device does not exist yet.
 
 #### MQTT version 5.0 behavior {#core-mqtt-mqtt-5-behavior}
 

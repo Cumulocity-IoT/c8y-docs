@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-09-14'
 title: More than 100 global roles are now listed for a user
 product_area: Platform services
 change_type:
@@ -13,5 +13,16 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-67754
 version: 1024.16.22
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-09-14'
+  - label: apj.cumulocity.com
+    date: '2026-09-15'
+  - label: jp.cumulocity.com
+    date: '2026-09-15'
+  - label: us.cumulocity.com
+    date: '2026-09-16'
+  - label: cumulocity.com
+    date: '2026-09-16'
 ---
 On the **Global roles** tab, only the first 100 global roles were listed for a user. On larger tenants with more than 100 roles, additional roles could not be assigned. This issue has been fixed. The list now loads up to 1000 roles on a single page.

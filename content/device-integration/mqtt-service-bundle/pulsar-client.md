@@ -227,7 +227,7 @@ If untrusted users have access to your tenant, these users should **not** be per
 This recommendation also applies in the case of multiple customers, who do not mutually trust each other, sharing a single tenant.
 {{< /c8y-admon-caution >}}
 
-#### Durable subscriptions and message acknowledgement {#durable-subscriptions-message-acknowledgement}
+#### Durable subscriptions and message acknowledgment {#durable-subscriptions-message-acknowledgment}
 
 Subscribing a consumer to a topic establishes a _durable subscription_ to the topic.
 This means that the Messaging Service will retain messages published to the topic until they have been delivered to, and acknowledged by, a client.

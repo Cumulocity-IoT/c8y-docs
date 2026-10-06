@@ -18,6 +18,14 @@ version: 1022.5.12
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-09-09'
+  - label: apj.cumulocity.com
+    date: '2026-09-10'
+  - label: jp.cumulocity.com
+    date: '2026-09-10'
+  - label: us.cumulocity.com
+    date: '2026-09-11'
+  - label: cumulocity.com
+    date: '2026-09-11'
 ---
 An issue has been fixed in the LWM2M service where a firmware update could fail if the device went offline during the update process. This affected two situations:
 

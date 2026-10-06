@@ -20,6 +20,6 @@ Both architectures share a consistent set of extension points, so you can adapt 
 
 **[Smart rules](/cockpit/smart-rules/)** apply a [Streaming Analytics](/streaming-analytics/introduction-analytics/) model to automate a common real-time reaction. A set of defaults is available out of the box, and you customize their behavior with your own analytics models.
 
-**[Web applications](/web/introduction/) and HTML widgets** customize the user-facing layer, from an individual dashboard widget to a complete application.
+**[Web applications](https://cumulocity.com/codex/) and [HTML widgets](/cockpit/widgets-collection/#html)** customize the user-facing layer, from an individual dashboard widget to a complete application.
 
 **[AI agents](/ai/agents/)** bring generative and agentic AI into applications, grounded in your platform data.
