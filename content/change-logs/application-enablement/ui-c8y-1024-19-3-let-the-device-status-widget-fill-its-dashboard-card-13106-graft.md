@@ -1,6 +1,6 @@
 ---
 date: ""
-title: let the device status widget fill its dashboard card (#13106) [GRAFT][release/cd] (#13186)
+title: Device status widget now fills its dashboard card
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
