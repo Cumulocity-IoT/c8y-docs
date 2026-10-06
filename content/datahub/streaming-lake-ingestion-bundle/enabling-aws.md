@@ -8,7 +8,8 @@ Streaming Lake Ingestion writes your data into an S3 bucket in your AWS account.
 
 {{< c8y-admon-req >}}
 * Your {{< product-c8y-iot >}} user has the ROLE_OFFLOADING_ADMIN permission. The **OFFLOADING_ADMINISTRATOR** global role carries it. Assign it to a user in the Administration application under **Accounts** > **Roles**.
-* In AWS, you have permission to create an S3 bucket and an IAM role in the account that holds the bucket.
+* In AWS, you have permission to create an S3 bucket.
+* In the same AWS account, you have permission to create an IAM role and attach an inline policy to it (`iam:CreateRole` and `iam:PutRolePolicy`).
 {{< /c8y-admon-req >}}
 
 You perform the setup in the Administration application under **Settings** > **Data Lake**. The page guides you through each step and fills in the values that apply to your environment, such as the region and the ARN of the {{< company-c8y >}} identity that assumes your role. Under **Instructions for**, select **AWS console** or **AWS CLI**. If the page shows "You cannot complete the setup yet", contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
