@@ -13,8 +13,6 @@ Streaming Lake Ingestion writes your data into an Azure Data Lake Storage Gen2 c
 * In the subscription, you have permission to create a storage account, for example, with the **Contributor** role.
 {{< /c8y-admon-req >}}
 
-In many organizations, the Entra administrator and the storage administrator are different people. In this case, the Entra administrator signs in during the approval step.
-
 You perform the setup in the Administration application under **Settings** > **Data Lake**. The page guides you through each step and fills in the values that apply to your environment, such as the name of the {{< company-c8y >}} application. Under **Instructions for**, select **Azure portal** or **Azure CLI**. If the page shows "You cannot complete the setup yet", contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
 
 All steps take place in the Entra directory that the subscription of your storage account belongs to. An approval or role assignment in another directory does not work.
