@@ -1,0 +1,11 @@
+{{- /*
+  Site-root and same-page links only resolve inside the HTML site. Returns the text with
+  them made absolute, so an agent reading llms-full.txt can follow them.
+  Call with (dict "text" $body "permalink" .Permalink).
+*/ -}}
+{{- $root := strings.TrimSuffix "/" site.BaseURL -}}
+{{- $out := .text
+  | replaceRE `\]\(/` (printf "](%s/" $root)
+  | replaceRE `\]\(#` (printf "](%s#" .permalink)
+  | replaceRE `(href|src)="/` (printf `${1}="%s/` $root) -}}
+{{- return $out -}}
