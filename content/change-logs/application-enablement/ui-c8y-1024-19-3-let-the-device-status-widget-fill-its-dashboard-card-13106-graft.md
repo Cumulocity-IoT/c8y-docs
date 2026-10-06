@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67300
 version: 1024.19.3
 ---
-The device status widget now fills its entire dashboard card instead of leaving unused white space, applied automatically to all existing dashboards with no configuration needed.
+The device status widget now fills its entire dashboard card instead of leaving unused white space. This is applied automatically to all existing dashboards, with no configuration needed.
