@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67837
 version: 1024.19.9
 ---
-Fixed an issue where widget changes made on one dashboard could be incorrectly saved to another. Changes now apply only to the dashboard you're currently editing.
+Widget changes made on one dashboard could be incorrectly saved to another dashboard. This issue has been fixed. Changes now apply only to the dashboard you're currently editing.
