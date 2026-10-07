@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67837
 version: 1024.19.8
 ---
-Changing the dashboard layout could previously crash the dashboard; this has been fixed, so it now stays stable when you switch between layout configurations.
+Changing the dashboard layout could previously crash the dashboard. This issue has been fixed, so it now stays stable when you switch between layout configurations.
