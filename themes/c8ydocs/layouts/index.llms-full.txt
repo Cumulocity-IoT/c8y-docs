@@ -1,7 +1,7 @@
 {{- $release := site.Data.date_settings.version | default "Latest" -}}
-# Cumulocity documentation — full corpus
+# {{ partial "docs-title.txt" . }} — full corpus
 
-> The complete Cumulocity IoT platform documentation, concatenated as plain text for LLM ingestion. Ordered by topic; see llms.txt for the navigable index.
+> The pages of every Cumulocity documentation spoke in llms.txt except the change logs, concatenated as plain text for LLM ingestion and ordered by topic. Redirects and links to other sites are not included; see llms.txt for those and for the change logs.
 
 Release: {{ $release }}
 
@@ -10,10 +10,7 @@ Release: {{ $release }}
 {{- range $sectors.Pages.ByWeight }}
   {{- if .Params.external }}{{ continue }}{{ end }}
   {{- range .Pages.ByTitle.ByWeight }}
-    {{- if eq .Kind "section" }}{{ continue }}{{ end }}
-    {{- if eq .Params._build.render false }}{{ continue }}{{ end }}
-    {{- $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}
-    {{- if $isCard }}{{ continue }}{{ end }}
+    {{- if not (partialCached "llms-exportable.txt" . .Path) }}{{ continue }}{{ end }}
     {{- if $seen.Get .Permalink }}{{ continue }}{{ end }}
     {{- $seen.Set .Permalink true }}
 
