@@ -8,12 +8,7 @@
     <base href="" />
     <meta name="generator" content="Hugo {{ hugo.Version }} with theme C8yDocs">
     {{ $version := .Site.Data.date_settings.version }}
-    {{ $siteTitle := "" }}
-    {{ if eq $version "Latest" }}
-      {{ $siteTitle = "Cumulocity documentation" }}
-    {{ else }}
-      {{ $siteTitle = printf "Cumulocity Release %s documentation" $version }}
-    {{ end }}
+    {{ $siteTitle := partial "docs-title.txt" . }}
     {{if eq .Title $.Site.Title }}
       <title>{{ $siteTitle }}</title>
     {{else}}
@@ -38,7 +33,7 @@
     
 
     <link rel="canonical" href="{{ .Permalink }}">
-    {{- if or (ne .Kind "page") (partial "llms-exportable.txt" .) }}
+    {{- if or (ne .Kind "page") (partialCached "llms-exportable.txt" . .Path) }}
     {{- with .OutputFormats.Get "markdown" }}
     <link rel="alternate" type="text/markdown" href="{{ .Permalink }}">
     {{- end }}
