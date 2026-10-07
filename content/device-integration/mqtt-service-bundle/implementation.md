@@ -235,16 +235,17 @@ However, tenant users will still be aware that devices are publishing too-large 
 
 The table below describes the alarms that will be raised for problems related to device connections:
 
-| Alarm type                                          | Description                                                                                |
-|-----------------------------------------------------|--------------------------------------------------------------------------------------------|
-| `c8y_MqttService_MaximumPacketSize_Connect`         | A device sent a `CONNECT` packet larger than the allowed maximum size.                     |
-| `c8y_MqttService_MaximumPacketSize_Publish`         | A device sent a `PUBLISH` packet larger than the allowed maximum size.                     |
-| `c8y_MqttService_MaximumPacketSize_Subscribe`       | A device sent a `SUBSCRIBE` packet larger than the allowed maximum size.                   |
-| `c8y_MqttService_MaximumPacketSize_Unsubscribe`     | A device sent an `UNSUBSCRIBE` packet larger than the allowed maximum size.                |
-| `c8y_MqttService_TenantConnectionsLimitExceeded`    | The number of connected devices has exceeded the allowed maximum.                          |
-| `c8y_MqttService_TenantConnectionRateLimitExceeded` | The number of device connection attempts per second has exceeded the allowed maximum.      |
-| `c8y_MqttService_IncomingPublishRateLimitExceeded`  | The number of incoming (from device) messages per second has exceeded the allowed maximum. |
-| `c8y_MqttService_OutgoingPublishRateLimitExceeded`  | The number of outgoing (to device) messages per second has exceeded the allowed maximum.   |
+| Alarm type                                          | Description                                                                                                                                               |
+|-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `c8y_MqttService_MaximumPacketSize_Connect`         | A device sent a `CONNECT` packet larger than the allowed maximum size.                                                                                    |
+| `c8y_MqttService_MaximumPacketSize_Publish`         | A device sent a `PUBLISH` packet larger than the allowed maximum size.                                                                                    |
+| `c8y_MqttService_MaximumPacketSize_Subscribe`       | A device sent a `SUBSCRIBE` packet larger than the allowed maximum size.                                                                                  |
+| `c8y_MqttService_MaximumPacketSize_Unsubscribe`     | A device sent an `UNSUBSCRIBE` packet larger than the allowed maximum size.                                                                               |
+| `c8y_MqttService_TenantConnectionsLimitExceeded`    | The number of connected devices has exceeded the allowed maximum.                                                                                         |
+| `c8y_MqttService_TenantConnectionRateLimitExceeded` | The number of device connection attempts per second has exceeded the allowed maximum.                                                                     |
+| `c8y_MqttService_IncomingPublishRateLimitExceeded`  | The number of incoming (from device) messages per second has exceeded the allowed maximum.                                                                |
+| `c8y_MqttService_OutgoingPublishRateLimitExceeded`  | The number of outgoing (to device) messages per second has exceeded the allowed maximum.                                                                  |
+| `c8y_MqttService_SubscriptionNotAllowed`            | A device subscribed to a topic it is not allowed to receive messages on, see [Subscriptions to not allowed topics](#core-mqtt-not-allowed-subscriptions). |
 
 ### Core MQTT device support {#core-mqtt-support}
 
@@ -313,6 +314,16 @@ This means that a device will not be automatically disconnected even if it:
 
 In these cases, the device will remain connected, but invalid messages will not be processed and no messages will be received from invalid topics.
 A device can subscribe to the `s/e` topic to monitor any error messages sent by the Core MQTT implementation in these cases.
+
+##### Subscriptions to not allowed topics {#core-mqtt-not-allowed-subscriptions}
+
+Core MQTT rejects a subscription when the device is not allowed to receive messages on that topic, for example a subscription to the operation topics by a device that is not an agent.
+The MQTT Service accepts the subscription instead, but the device receives nothing on those topics.
+
+To simplify onboarding and debugging, such an idle subscription is reported in two places:
+
+* An error message is sent on the `s/e` topic, for example `41,,Subscription to topic 's/ds' is not allowed`.
+* A `c8y_MqttService_SubscriptionNotAllowed` alarm is created for the device, or for the MQTT Service device of the tenant if the device does not exist yet.
 
 #### MQTT version 5.0 behavior {#core-mqtt-mqtt-5-behavior}
 
