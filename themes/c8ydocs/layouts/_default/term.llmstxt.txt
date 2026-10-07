@@ -1,5 +1,5 @@
 {{- $d := partial "page-description.html" (dict "page" . "length" 240) | default (printf "%s documentation for the Cumulocity platform." .Title) -}}
-# {{ .Site.Title }} — {{ .Title }}
+# {{ partial "llms-site-title.txt" . }} — {{ .Title }}
 
 > {{ $d }}
 
@@ -7,15 +7,20 @@ Part of the Cumulocity documentation. Root index: {{ (.Site.Home.OutputFormats.G
 
 ## {{ .Title }}
 {{ range .Pages.ByTitle.ByWeight -}}
-  {{- if eq .Kind "section" }}{{ continue }}{{ end -}}
-  {{- if eq .Params._build.render false }}{{ continue }}{{ end -}}
-  {{- $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end -}}
-  {{- if $isCard }}{{ continue }}{{ end -}}
+  {{- if not (partial "llms-listable.txt" .) }}{{ continue }}{{ end -}}
   {{- $title := .Title -}}
   {{- if and (eq (lower $title) "introduction") .Section }}{{ $title = printf "%s — %s" (partial "section-title.txt" .Section) $title }}{{ end -}}
   {{- $pd := partial "page-description.html" (dict "page" . "length" 200) -}}
-  {{- /* Redirect pages publish no index.md (_default/redirect.md renders empty), so keep their HTML link. */ -}}
-  {{- $url := .Permalink }}{{ if ne .Layout "redirect" }}{{ with .OutputFormats.Get "markdown" }}{{ $url = .Permalink }}{{ end }}{{ end -}}
+  {{- /* Link the Markdown copy. Redirect and external pages have none: link the redirect's
+       target page (its Markdown copy when it has one), else the page itself. */ -}}
+  {{- $url := .Permalink -}}
+  {{- if partial "llms-exportable.txt" . -}}
+    {{- with .OutputFormats.Get "markdown" }}{{ $url = .Permalink }}{{ end -}}
+  {{- else -}}
+    {{- with .Params.target }}{{ with site.GetPage (printf "/%s" (strings.Trim . "/")) -}}
+      {{- $url = .Permalink }}{{ with .OutputFormats.Get "markdown" }}{{ $url = .Permalink }}{{ end -}}
+    {{- end }}{{ end -}}
+  {{- end -}}
   {{- if $pd -}}
     {{- printf "- [%s](%s): %s\n" $title $url $pd -}}
   {{- else -}}
