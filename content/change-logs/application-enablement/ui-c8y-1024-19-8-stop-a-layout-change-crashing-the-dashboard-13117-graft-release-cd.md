@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Prevent dashboard crashes when changing layout
+title: Preventing dashboard crashes when changing layout
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
