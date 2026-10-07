@@ -17,13 +17,13 @@ sector:
 The Device Management application lets you monitor the data that your devices send about the services they are running.
 
 The [Services](/device-management-application/viewing-device-details/#services) tab on the device details view provides an overview of the services running on a given device and acts as an entry point to the service details view.
-There you can see detailed information about the alarms, events, and measurements sent for every service, and use the device functionality that the service supports, such as logs, location, or remote access.
+There you can see detailed information about the alarms, events, and measurements sent for every service, and use the functionality that the service supports, such as logs, location, or remote access.
 
 For services that support commands, actions like **Start**, **Stop**, **Restart**, or custom commands appear in the menu of each service. This allows users to quickly send commands without opening the full service details.
 
 ![Services list](/images/users-guide/DeviceManagement/devmgmt-services-list.png)
 
-The service details view is divided into tabs. Like on the device details view, the number of tabs is dynamic. A tab is only displayed if the service supports the related functionality. Every service shows at least the **Info**, **Alarms**, **Events**, and **Commands** tabs.
+The service details view is divided into tabs. The number of tabs is dynamic. A tab is only displayed if the service supports the related functionality. Every service shows at least the **Info**, **Alarms**, **Events**, and **Commands** tabs.
 
 The following tabs are described in detail in separate sections below:
 <table>
