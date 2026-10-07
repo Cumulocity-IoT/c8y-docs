@@ -49,8 +49,11 @@
            next yearly branch, where the baseURL prefix differs. */}}
       <meta name="robots" content="noindex">
     {{ end }}
+    {{- /* Advertise the Markdown copy only on indexable pages: a .md file cannot carry the noindex above. */}}
+    {{- if or (eq $version "Latest") (eq .Section "edge") }}
     {{- with .OutputFormats.Get "markdown" }}
     <link rel="alternate" type="text/markdown" href="{{ .Permalink }}">
+    {{- end }}
     {{- end }}
     {{- with site.Home.OutputFormats.Get "llmstxt" }}
     <link rel="describedby" href="{{ .Permalink }}">

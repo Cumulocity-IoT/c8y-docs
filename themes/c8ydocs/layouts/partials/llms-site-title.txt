@@ -1,0 +1,10 @@
+{{- /*
+  The documentation set's name for llms.txt files, matching the HTML <title> in
+  partials/head.html: "Cumulocity documentation" for the current docs, and
+  "Cumulocity Release <year> documentation" on a yearly release branch, so an agent
+  can tell an archived release from the current docs.
+*/ -}}
+{{- $version := site.Data.date_settings.version | default "Latest" -}}
+{{- $title := "Cumulocity documentation" -}}
+{{- if ne $version "Latest" }}{{ $title = printf "Cumulocity Release %s documentation" $version }}{{ end -}}
+{{- return $title -}}

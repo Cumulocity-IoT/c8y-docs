@@ -1,5 +1,5 @@
 {{- $d := partial "page-description.html" (dict "page" . "length" 240) | default (printf "%s documentation for the Cumulocity platform." .Title) -}}
-# {{ .Site.Title }} — {{ .Title }}
+# {{ partial "llms-site-title.txt" . }} — {{ .Title }}
 
 > {{ $d }}
 

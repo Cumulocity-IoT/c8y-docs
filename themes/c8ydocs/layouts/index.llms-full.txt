@@ -1,5 +1,5 @@
 {{- $release := site.Data.date_settings.version | default "Latest" -}}
-# Cumulocity documentation — full corpus
+# {{ partial "llms-site-title.txt" . }} — full corpus
 
 > The complete Cumulocity IoT platform documentation, concatenated as plain text for LLM ingestion. Ordered by topic; see llms.txt for the navigable index.
 
