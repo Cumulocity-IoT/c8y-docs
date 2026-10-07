@@ -4,16 +4,16 @@ title: Enabling Streaming Lake Ingestion on Microsoft Azure
 layout: redirect
 ---
 
-Streaming Lake Ingestion writes your data into an Azure Data Lake Storage Gen2 container in your Azure subscription. To enable it, you complete a one-time setup: you approve a {{< company-c8y >}} application in your Microsoft Entra directory and assign it two storage roles. Beyond this setup, the service needs no configuration.
+Streaming Lake Ingestion writes your data into an Azure Data Lake Storage Gen2 container in your Azure subscription. To enable it, you complete a one-time setup: you approve a {{< product-c8y-iot >}} application in your Microsoft Entra directory and assign it two storage roles. Beyond this setup, the service needs no configuration.
 
 {{< c8y-admon-req >}}
-* Your {{< product-c8y-iot >}} user has the ROLE_OFFLOADING_ADMIN permission. The **OFFLOADING_ADMINISTRATOR** global role carries it. Assign it to a user in the Administration application under **Accounts** > **Roles**.
+* Your {{< product-c8y-iot >}} user has the ROLE_OFFLOADING_ADMIN permission. The OFFLOADING_ADMINISTRATOR global role carries it. Assign it to a user in the Administration application under **Accounts** > **Roles**.
 * In the Entra directory of your storage account, you have the **Cloud Application Administrator** or **Application Administrator** role to approve the application.
 * On the storage account, you have the **Owner** or **User Access Administrator** role to assign the storage roles.
 * In the subscription, you have permission to create a storage account, for example, with the **Contributor** role.
 {{< /c8y-admon-req >}}
 
-You perform the setup in the Administration application under **Settings** > **Data Lake**. The page guides you through each step and fills in the values that apply to your environment, such as the name of the {{< company-c8y >}} application. Under **Instructions for**, select **Azure portal** or **Azure CLI**. If the page shows "You cannot complete the setup yet", contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
+You perform the setup in the Administration application under **Settings** > **Data Lake**. The page guides you through each step and fills in the values that apply to your environment, such as the name of the {{< product-c8y-iot >}} application. Under **Instructions for**, select **Azure portal** or **Azure CLI**. If the page shows "You cannot complete the setup yet", contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
 
 All steps take place in the Entra directory that the subscription of your storage account belongs to. An approval or role assignment in another directory does not work.
 
@@ -41,7 +41,7 @@ To restrict network access to selected networks, contact [{{< company-c8y >}} su
 
 ### To approve the application {#to-approve-the-application}
 
-The approval creates an enterprise application for {{< company-c8y >}} in your directory. The application requests no API permissions. It can access only what you grant with the storage roles in the next step.
+The approval creates an enterprise application for {{< product-c8y-iot >}} in your directory. The application requests no API permissions. It can access only what you grant with the storage roles in the next step.
 
 1. In the Azure portal, go to **Microsoft Entra ID** > **Overview** in the directory of your storage account, and copy the **Tenant ID**.
 2. On the setup page, enter the ID as **Entra tenant ID** and click **Consent**.
@@ -74,7 +74,7 @@ On the **Role assignments** tab of the container, search for the display name. T
 2. In the **Review and provision** step, check the base location `abfss://<container>@<account>.dfs.core.windows.net/<path>`.
 3. Select **These values are correct** and click **Save**.
 
-{{< company-c8y >}} creates the Iceberg catalog of your tenant and tests a write and a delegation key request. When all checks pass, the **Setup status** shows "Provisioned", and your data arrives as described in [Using Streaming Lake Ingestion](#using). If you assigned **Reader**, the last check confirms that soft delete is on. If it is off, the setup still completes, but the page shows a warning.
+{{< product-c8y-iot >}} creates the Iceberg catalog of your tenant and tests a write and a delegation key request. When all checks pass, the **Setup status** shows "Provisioned", and your data arrives as described in [Using Streaming Lake Ingestion](#using). If you assigned **Reader**, the last check confirms that soft delete is on. If it is off, the setup still completes, but the page shows a warning.
 
 {{< product-c8y-iot >}} stores your tables under `<base location>/<tenant-id>/`. Several of your tenants can therefore share one path. You cannot change the base location, the storage account, or the Entra directory after the setup. To change them, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
 
