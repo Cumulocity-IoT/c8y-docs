@@ -12,9 +12,6 @@ helpContent:
 
 
   Use **Link data points** to link measurements from a device. The **Status** column shows whether a data point is **Linked**, **Incomplete**, or **Source missing**. Use **Link source** or the **Source** dropdown to assign or change the source device and resolve source issues.
-
-
-  For linked data points, DTM Data Service automatically propagates new measurements from the source device to the corresponding data points on the asset."
 ---
 
 Data points represent the numerical measurements collected from connected devices and sensors. These are the fundamental real-time data streams that offer insights into the operational status, performance, and environmental conditions of your physical assets. These data streams are key to monitoring asset health, identifying trends, and making informed decisions over time.
