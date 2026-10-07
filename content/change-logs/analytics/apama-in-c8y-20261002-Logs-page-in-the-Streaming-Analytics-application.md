@@ -22,6 +22,6 @@ The Streaming Analytics application has a new **Logs** page, which shows the log
 - **Logs in the model editor**: Click the logs icon <i class="dlt-c8y-icon-logs icon-20"></i> in the toolbar of the model editor to see the messages of the model below the canvas while you work on it.
 - **Automatic refresh and download**: The page shows new messages as they arrive. You can download the messages for a date and time range as a text file.
 
-The Logs page does not show the output of EPL apps. This remains available in the log file of the microservice in the Administration application.
+The **Logs page** does not show the output of EPL apps. This remains available in the log file of the microservice in the Administration application.
 
 For details, see [Viewing logs in the Streaming Analytics application](/streaming-analytics/troubleshooting/#logs-view) and [Viewing the logs of a model](/streaming-analytics/analytics-builder/#viewing-the-logs-of-a-model).

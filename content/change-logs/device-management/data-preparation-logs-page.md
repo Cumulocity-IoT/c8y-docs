@@ -22,7 +22,7 @@ The Data Preparation application has a new **Logs** page, which shows the log me
 
 - **Tenant-scoped**: The page only shows Data Preparation messages of your own tenant, whether the microservice serves one tenant or many.
 - **Filter by rule**: Select a rule to show only its messages. You can select a rule whatever its deployment status.
-- **View logs from the rule editor**: In the rule editor, click **More…** and select **View logs** to open the Logs page for the rule in a new browser tab.
+- **View logs from the rule editor**: In the rule editor, click **More…** and select **View logs** to open the **Logs** page for the rule in a new browser tab.
 - **Console capture**: Selecting a deployed rule starts capturing all of its `console` output while the page is open. Up to 3 rules per tenant can be captured at the same time. You can change this limit with a tenant option.
 - **Download**: You can download the messages for a date and time range as a text file.
 

@@ -14,20 +14,20 @@ When a deployed rule does not do what you expect, for example, it produces wrong
 The Data Preparation application also lets you download a diagnostics archive for your tenant, for example, to investigate a problem with your rules.
 
 {{< c8y-admon-info >}}
-Errors that a smart function throws while processing a message are also raised as alarms, which include the failing message and the error. Alarms are kept, while the Logs page only shows recent messages. See [Runtime behavior and limits](/data-preparation/smart-functions/#logs).
+Errors that a smart function throws while processing a message are also raised as alarms, which include the failing message and the error. Alarms are kept, while the **Logs** page only shows recent messages. See [Runtime behavior and limits](/data-preparation/smart-functions/#logs).
 {{< /c8y-admon-info >}}
 
 ### Viewing the logs {#view-logs}
 
-To open the Logs page, click **Logs** in the Data Preparation application navigator.
+To open the **Logs** page, click **Logs** in the Data Preparation application navigator.
 
-The Logs page shows only the log messages of your own tenant. A log message that cannot be attributed to a single tenant is not shown to anyone.
+The **Log** page shows only the log messages of your own tenant. A log message that cannot be attributed to a single tenant is not shown to anyone.
 
-The Logs page shows only messages that belong to the Data Preparation application:
+The **Logs** page shows only messages that belong to the Data Preparation application:
 
 - Messages about the deployment of your rules, for example, why a rule failed to deploy.
 - Errors thrown by smart functions, and output written with `console.error`. These are always shown.
-- Other `console` output of smart functions (`console.log`, `console.info`, `console.warn`, and `console.debug`). This is only shown while the Logs page is open with the rule selected, or while a background capture is running for it. See [Console capture](#console-capture) for more details.
+- Other `console` output of smart functions (`console.log`, `console.info`, `console.warn`, and `console.debug`). This is only shown while the **Logs** page is open with the rule selected, or while a background capture is running for it. See [Console capture](#console-capture) for more details.
 - Other messages from the Data Preparation framework for your tenant.
 
 Messages from Analytics Builder models, smart rules, and other parts of the Streaming Analytics application are not shown. These are shown on the **Logs** page of the Streaming Analytics application. See [Viewing logs in the Streaming Analytics application](/streaming-analytics/troubleshooting/#logs-view).
@@ -59,11 +59,11 @@ To view the logs, you need READ permission for "Data Preparation rules". See [Pe
 
 #### How far back the logs go {#log-history}
 
-The logs are read from the log of the microservice, which only keeps the most recent part of its output (about 30 MB). If the microservice writes a lot of output, for example, because it serves many tenants, older messages can already be removed. The Logs page is a tool for diagnosing current problems, not a long-term log archive.
+The logs are read from the log of the microservice, which only keeps the most recent part of its output (about 30 MB). If the microservice writes a lot of output, for example, because it serves many tenants, older messages can already be removed. The **Logs** page is a tool for diagnosing current problems, not a long-term log archive.
 
 ### Filtering the logs by rule {#filter-by-rule}
 
-By default, the Logs page shows all Data Preparation messages for your tenant. Use the **Rule** drop-down list at the top of the page to show only the messages of one rule:
+By default, the **Logs** page shows all Data Preparation messages for your tenant. Use the **Rule** drop-down list at the top of the page to show only the messages for one rule:
 
 - Type in the drop-down list to search for a rule by name.
 - Each entry shows the deployment status of the rule: **Deployed**, **Deploying**, **Disabled**, **Deploy failed**, or **Not deployed**. You can select any rule, whatever its status, so that you can see why a rule failed to deploy.
@@ -78,7 +78,7 @@ When you select a rule, the URL of the page changes to include the rule. You can
 1. Open the rule in the [rule editor](/data-preparation/rule-editor/).
 2. Click **More…** in the action bar and select **View logs**.
 
-The Logs page opens in a new browser tab, with the rule already selected. If the rule is deployed, all of its `console` output is shown from then on, so you can send a device message and watch the rule process it.
+The **Logs** page opens in a new browser tab, with the rule already selected. If the rule is deployed, all of its `console` output is shown from then on, so you can send a device message and watch the rule process it.
 
 ### Console capture {#console-capture}
 

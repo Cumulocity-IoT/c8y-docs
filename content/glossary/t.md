@@ -20,7 +20,7 @@ Tenants are managed via the [Tenant API](https://cumulocity.com/api/core/#tag/Te
 
 ### Tenant diagnostic archive {#tenant-diagnostic-archive}
 
-A tenant diagnostic archive is a ZIP file of diagnostics information that a user downloads from the Streaming Analytics or Data Preparation application, for example, to investigate a problem with its models or rules. It only contains data of the user's own [tenant](#tenant), such as its models, smart rules, alarms, and log messages. The archive from the Data Preparation application also contains the [Data Preparation rules](#data-preparation-rule) of the tenant. When the [microservice](#microservice) is shared by several tenants, the archive contains no data of other tenants and no information about the shared microservice as a whole.
+A tenant diagnostic archive is a ZIP file of diagnostics information that a user downloads from the Streaming Analytics or Data Preparation application, for example, to investigate a problem with its models or rules. It only contains data of the user's own [tenant](#tenant), such as its models, [smart rules](#smart-rules), alarms, and log messages. The archive from the Data Preparation application also contains the [Data Preparation rules](#data-preparation-rule) of the tenant. When the [microservice](#microservice) is shared by several tenants, the archive contains no data from other tenants and no information about the shared microservice as a whole.
 
 See also [Downloading diagnostics and logs](/streaming-analytics/troubleshooting/#diagnostics-download) and [Downloading diagnostics](/data-preparation/logs-and-diagnostics/#download-diagnostics) in the documentation.
 
