@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Prevented dashboard widgets from being saved to another dashboard
+title: Preventing dashboard widgets from being saved to another dashboard
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
