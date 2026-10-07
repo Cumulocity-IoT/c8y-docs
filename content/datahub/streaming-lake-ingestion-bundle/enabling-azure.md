@@ -37,7 +37,7 @@ The setup page leads you through the following steps:
 4. **Provision the tenant**: Enter a path in the container, or leave it empty to use the root of the container.
 5. **Review and provision**: Check the base location `abfss://<container>@<account>.dfs.core.windows.net/<path>`, select **These values are correct**, and click **Save**.
 
-When you click **Save**, {{< product-c8y-iot >}} creates the Iceberg catalog of your tenant and tests a write and a delegation key request. If you assigned **Reader**, it also checks soft delete and shows a warning if it is off. When all checks pass, the **Setup status** shows "Provisioned", and your data arrives as described in [Using Streaming Lake Ingestion](#using).
+When you click **Save**, {{< product-c8y-iot >}} creates the Iceberg catalog of your tenant and tests a write and a delegation key request. If you assigned **Reader**, it also checks soft delete. If soft delete is off, the setup completes and your data arrives, but the page shows a warning and the **Setup status** shows "Provisioning failed" until you enable it and click **Retry provisioning**. When all checks pass, the **Setup status** shows "Provisioned", and your data arrives as described in [Using Streaming Lake Ingestion](#using).
 
 {{< product-c8y-iot >}} stores your tables under `<base location>/<tenant-id>/`. Several of your tenants can therefore share one path. You cannot change the base location, the storage account, or the Entra directory after the setup. To change them, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
 
@@ -62,7 +62,7 @@ If a check fails, the setup page shows the reason. If the catalog was already cr
 |The storage cannot be reached.|Check that **Storage Blob Data Contributor** is assigned to the container, and that the storage account allows public network access.|
 |The directory is unknown, or authentication fails.|The Entra tenant ID belongs to another directory. Enter the ID of the directory that the subscription of the storage account belongs to.|
 |The base location overlaps the location of another tenant.|Choose a path that neither contains nor is contained in the other location. Sharing the same path is allowed.|
-|The page warns that your storage cannot recover overwritten or deleted files.|Soft delete is off for blobs or for containers. Enable both, then click **Retry provisioning**.|
+|The page warns that data loss protection is off.|Soft delete is off for blobs or for containers. Enable both, then click **Retry provisioning**.|
 |The setup fails right after you assigned the roles.|Role assignments take a few minutes to become effective. Wait and try again.|
 
 If the cause is not listed, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/) with the reason that the setup page shows.
