@@ -22,6 +22,8 @@ environment_availability:
     date: '2026-09-30'
   - label: us.cumulocity.com
     date: '2026-10-05'
+  - label: cumulocity.com
+    date: '2026-10-06'
 ---
 
 The [Logger](/streaming-analytics/block-reference/#logger) block, previously released in [Public Preview](/change-logs/?component=.component-M5-cepIIS#apama-in-c8y-20260126-add-logger-block-in-public-preview), is now Generally Available (GA).

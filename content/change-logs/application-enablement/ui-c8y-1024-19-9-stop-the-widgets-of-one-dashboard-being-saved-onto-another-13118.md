@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-10-07'
 title: Preventing dashboard widgets from being saved to another dashboard
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-67837
 version: 1024.19.9
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-07'
+  - label: apj.cumulocity.com
+    date: '2026-10-07'
+  - label: jp.cumulocity.com
+    date: '2026-10-07'
 ---
 Widget changes made on one dashboard could be incorrectly saved to another dashboard. This issue has been fixed. Changes now apply only to the dashboard you're currently editing.
